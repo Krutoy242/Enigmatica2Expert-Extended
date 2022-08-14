@@ -1,0 +1,26 @@
+{ 
+   "font":{
+      "characters":{
+         "default":{
+            "width":16.0,
+            "spacing":1.5,
+            "left":0.0
+         },
+         "0":{
+            "width":16.0,
+            "spacing":1.5,
+            "left":0.0
+         },
+         "47":{
+            "width":8.0,
+            "spacing":1.5,
+            "left":0.0
+         },
+         "255":{
+            "width":16.0,
+            "spacing":1.5,
+            "left":0.0
+         }
+      }
+   }
+}
