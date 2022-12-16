@@ -401,3 +401,8 @@ for lang, items in {
 		desc.jei(item, lang);
 	}
 }
+
+#morb-like items limitation hint
+desc.jei(<thermalexpansion:morb:*>, "morb_resist");
+desc.jei(<cyclicmagic:magic_net>, "morb_resist");
+
