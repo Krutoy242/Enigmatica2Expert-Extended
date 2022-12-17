@@ -1,8 +1,10 @@
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
+import crafttweaker.entity.IEntityDefinition;
+import crafttweaker.text.ITextComponent.fromTranslation;
 
 #loader crafttweaker reloadableevents
-   
+
 events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileImpactThrowableEvent){
 	
 	if (isNull(e.thrower)||
@@ -26,12 +28,60 @@ events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileIm
 	val pokemon as IEntityLivingBase=e.rayTrace.entity;
 	
 	if pokemon.maxHealth==0 return;
-	    
+
+	val uncapturables=[<entity:iceandfire:cyclops>,
+			   <entity:iceandfire:deathwormegg>,
+			   <entity:iceandfire:dragonegg>,
+			   <entity:iceandfire:dragonskull>,
+			   <entity:iceandfire:firedragon>,
+			   <entity:iceandfire:gorgon>,
+			   <entity:iceandfire:hippogryphegg>,
+			   <entity:iceandfire:icedragon>,
+			   <entity:iceandfire:if_cockatriceegg>,
+			   <entity:iceandfire:if_mob_skull>,
+			   <entity:iceandfire:myrmex_egg>,
+			   <entity:iceandfire:myrmex_queen>,
+			   <entity:iceandfire:stonestatue>,
+			   <entity:iceandfire:tide_trident>,
+			   <entity:botania:doppleganger>,
+			   <entity:draconicevolution:guardiancrystal>,
+			   <entity:extrabotany:gaiaiii>,
+			   <entity:extrabotany:voidherrscher>,
+			   <entity:minecraft:ender_dragon>,
+			   <entity:minecraft:evocation_illager>,
+			   <entity:minecraft:vindication_illager>,
+			   <entity:minecraft:wither>,
+			   <entity:twilightforest:armored_giant>,
+			   <entity:twilightforest:armored_giant>,
+			   <entity:twilightforest:giant_miner>,
+			   <entity:twilightforest:giant_miner>,
+			   <entity:twilightforest:hydra>,
+			   <entity:twilightforest:knight_phantom>,
+			   <entity:twilightforest:lich>,
+			   <entity:twilightforest:minoshroom>,
+			   <entity:twilightforest:naga>,
+			   <entity:twilightforest:snow_queen>,
+			   <entity:twilightforest:ur_ghast>,
+			   <entity:twilightforest:yeti_alpha>] as IEntityDefinition[];
+
+	var capturable=true;
+	for ii in uncapturables {
+		if(isNull(ii)||isNull(ii.id)){
+		    continue;
+		}
+		if (pokemon.definition.id==ii.id){
+		    capturable=false;
+		    break;
+		}
+	    }
+
+	
 	val hpPortion=pokemon.health/pokemon.maxHealth;
-	if ( hpPortion > 0.3 && pokemon.health > 8){
+	if ( !capturable || (hpPortion > 0.3 && pokemon.health > 8) ){
 	    
 	    //TODO find correct localized displayName for entity, not pokemon.definition.name
-	    val message = crafttweaker.text.ITextComponent.fromTranslation("e2ee.creature_resisted_morb",item.displayName);
+	    val message = capturable? fromTranslation("e2ee.creature_resisted_morb",item.displayName)
+		: fromTranslation("e2ee.creature_uncapturable");
 	    
 	    val x=projectile.position3f.x;
 	    val y=projectile.position3f.y;
