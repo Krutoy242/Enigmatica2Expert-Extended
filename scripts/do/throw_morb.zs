@@ -30,9 +30,7 @@ events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileIm
 	
 	val pokemon as crafttweaker.entity.IEntityLivingBase=e.rayTrace.entity;
 	    
-	if (pokemon.maxHealth==0||
-	    isNull(pokemon.definition)||
-	    isNull(pokemon.definition.name))return;
+	if pokemon.maxHealth==0 return;
 	    
 	val hpPortion=pokemon.health/pokemon.maxHealth;
 	if ( hpPortion > 0.3 && pokemon.health > 8){
