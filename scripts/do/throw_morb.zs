@@ -69,6 +69,7 @@ events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileIm
 		if(isNull(ii)||isNull(ii.id)){
 		    continue;
 		}
+		if(isNull(pokemon.definition)||isNull(pokemon.definition.id))return;//why does this happen?
 		if (pokemon.definition.id==ii.id){
 		    capturable=false;
 		    break;
