@@ -1,21 +1,16 @@
-import crafttweaker.events.IEventManager;
-import crafttweaker.event.ProjectileImpactThrowableEvent;
-import crafttweaker.event.IEventCancelable;
-import crafttweaker.event.IEntityEvent;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
-import crafttweaker.entity.IEntityItem;
-import crafttweaker.block.IBlockState;
-import crafttweaker.item.IItemStack;
 
 #loader crafttweaker reloadableevents
    
 events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileImpactThrowableEvent){
 	
 	if (isNull(e.thrower)||
-	    !(e.thrower instanceof crafttweaker.player.IPlayer)||
+	    !(e.thrower instanceof IPlayer)||
+	    e.thrower.world.remote||
 	    isNull(e.rayTrace.entity)||
-	    !(e.rayTrace.entity instanceof crafttweaker.entity.IEntityLivingBase)){return;}
+	    !(e.rayTrace.entity instanceof IEntityLivingBase)||
+	    e.rayTrace.entity instanceof crafttweaker.entity.IEntityAnimal) return;
 
 	val player as IPlayer = e.thrower;
 	if player.creative return;
@@ -28,8 +23,8 @@ events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileIm
 	    : null;
 	if isNull(item) return;
 	
-	val pokemon as crafttweaker.entity.IEntityLivingBase=e.rayTrace.entity;
-	    
+	val pokemon as IEntityLivingBase=e.rayTrace.entity;
+	
 	if pokemon.maxHealth==0 return;
 	    
 	val hpPortion=pokemon.health/pokemon.maxHealth;
@@ -48,10 +43,9 @@ events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileIm
 
 	    player.sendPlaySoundPacket("mekanism:etc.error", "ambient", pokemon.position, 2.0f, 1.5f);
 	    
-	    if(!player.world.remote){//always true but just in case
-		val itemEntity=item.createEntityItem(projectile.world,x,y,z);
-		projectile.world.spawnEntity(itemEntity);
-	    }
+	    val itemEntity=item.createEntityItem(projectile.world,x,y,z);
+	    projectile.world.spawnEntity(itemEntity);
+
 	    
 	    player.sendRichTextMessage(message);
 
@@ -60,4 +54,6 @@ events.onProjectileImpactThrowable(function(e as crafttweaker.event.ProjectileIm
 	}
 	
     });
+
+
 
