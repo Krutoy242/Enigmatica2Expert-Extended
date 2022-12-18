@@ -17,8 +17,8 @@ import crafttweaker.text.ITextComponent.fromTranslation;
 
 #loader crafttweaker reloadableevents
 
-static hpPortionTreshold as double = 0.3;
-static ignoredHealth as double = 8.0;
+static hpPortionTreshold as double = 0.8;
+static ignoredHealth as double = 20.0;
 
 // morb-like items limitation hint
 scripts.category.tooltip_utils.desc.both(<thermalexpansion:morb:*>, "morb_resist", hpPortionTreshold * 100, ignoredHealth / 2);
