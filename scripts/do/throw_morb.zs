@@ -20,6 +20,10 @@ import crafttweaker.text.ITextComponent.fromTranslation;
 static hpPortionTreshold as double = 0.3;
 static ignoredHealth as double = 8.0;
 
+// morb-like items limitation hint
+scripts.category.tooltip_utils.desc.both(<thermalexpansion:morb:*>, "morb_resist", hpPortionTreshold * 100, ignoredHealth / 2);
+scripts.category.tooltip_utils.desc.both(<cyclicmagic:magic_net>  , "morb_resist", hpPortionTreshold * 100, ignoredHealth / 2);
+
 static uncapturables as IEntityDefinition[] = [
 /*Inject_js(
   config('config/cofh/thermalexpansion/morbs.cfg')

@@ -24,7 +24,7 @@ e2ee.danknull_dock.must_have=§7Вам понадобится §f%s§r в сво
 e2ee.restrict.vis_seeds=§7Вы можете сажать §6Семена Вис§7 только в §nМире пустоты§r§7 или на §nпланетах§r§7. Им также необходим кислород.
 e2ee.creature_resisted_morb=Существо сопротивлялось захвату %s.
 e2ee.creature_uncapturable=Это существо нельзя поймать.
-tooltips.lang.morb_resist=Эффективен против монстров с менее чем 30% сердец или менее 4 сердец.
+tooltips.lang.morb_resist=Эффективен против монстров с менее чем %s%% сердец или менее %s сердец.
 
 # Bugged langs that losed their names
 entity.Villager.shady_merchant=Тенистый торговец
