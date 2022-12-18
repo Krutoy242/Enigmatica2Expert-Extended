@@ -1,3 +1,15 @@
+/*
+
+Prevent some throwable stackable Entity Cells
+(like Thermal Expansion Morbs) from working, if
+mob not damaged
+
+Authors:
+https://github.com/git-confused
+https://github.com/Krutoy242
+
+*/
+
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
 import crafttweaker.entity.IEntityDefinition;
