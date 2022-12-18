@@ -17,6 +17,51 @@ import crafttweaker.text.ITextComponent.fromTranslation;
 
 #loader crafttweaker reloadableevents
 
+static hpPortionTreshold as double = 0.3;
+static ignoredHealth as double = 8.0;
+
+static uncapturables as IEntityDefinition[] = [
+/*Inject_js(
+  config('config/cofh/thermalexpansion/morbs.cfg')
+  .Blacklist.Blacklist.map(s=>`  <entity:${s}>,`)
+)*/
+  <entity:iceandfire:cyclops>,
+  <entity:iceandfire:deathwormegg>,
+  <entity:iceandfire:dragonegg>,
+  <entity:iceandfire:dragonskull>,
+  <entity:iceandfire:firedragon>,
+  <entity:iceandfire:gorgon>,
+  <entity:iceandfire:hippogryphegg>,
+  <entity:iceandfire:icedragon>,
+  <entity:iceandfire:if_cockatriceegg>,
+  <entity:iceandfire:if_mob_skull>,
+  <entity:iceandfire:myrmex_egg>,
+  <entity:iceandfire:myrmex_queen>,
+  <entity:iceandfire:stonestatue>,
+  <entity:iceandfire:tide_trident>,
+  <entity:botania:doppleganger>,
+  <entity:draconicevolution:guardiancrystal>,
+  <entity:extrabotany:gaiaiii>,
+  <entity:extrabotany:voidherrscher>,
+  <entity:minecraft:ender_dragon>,
+  <entity:minecraft:evocation_illager>,
+  <entity:minecraft:vindication_illager>,
+  <entity:minecraft:wither>,
+  <entity:twilightforest:armored_giant>,
+  <entity:twilightforest:armored_giant>,
+  <entity:twilightforest:giant_miner>,
+  <entity:twilightforest:giant_miner>,
+  <entity:twilightforest:hydra>,
+  <entity:twilightforest:knight_phantom>,
+  <entity:twilightforest:lich>,
+  <entity:twilightforest:minoshroom>,
+  <entity:twilightforest:naga>,
+  <entity:twilightforest:snow_queen>,
+  <entity:twilightforest:ur_ghast>,
+  <entity:twilightforest:yeti_alpha>,
+/**/
+] as IEntityDefinition[];
+
 events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileImpactThrowableEvent) {
   if (isNull(e.thrower)
       || !(e.thrower instanceof IPlayer)
@@ -29,8 +74,11 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
   val player as IPlayer = e.thrower;
   if (player.creative) return;
 
-  val projectile = e.entity;
+  val pokemon as IEntityLivingBase = e.rayTrace.entity;
+  if (pokemon.maxHealth == 0) return;
+  if (isNull(pokemon.definition) || isNull(pokemon.definition.id)) return; // why does this happen?
 
+  val projectile = e.entity;
   val item = projectile.definition.id == <entity:thermalexpansion:morb>.id && projectile.nbt.EntityData.length == 0
     ? (projectile.nbt.Type == 1 ? <thermalexpansion:morb:1> : <thermalexpansion:morb:0>)
     : projectile.definition.id == <entity:cyclicmagic:magicnetempty>.id
@@ -38,53 +86,9 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
       : null;
   if (isNull(item)) return;
 
-  val pokemon as IEntityLivingBase = e.rayTrace.entity;
-
-  if (pokemon.maxHealth == 0) return;
-
-  val uncapturables = [
-    <entity:iceandfire:cyclops>,
-    <entity:iceandfire:deathwormegg>,
-    <entity:iceandfire:dragonegg>,
-    <entity:iceandfire:dragonskull>,
-    <entity:iceandfire:firedragon>,
-    <entity:iceandfire:gorgon>,
-    <entity:iceandfire:hippogryphegg>,
-    <entity:iceandfire:icedragon>,
-    <entity:iceandfire:if_cockatriceegg>,
-    <entity:iceandfire:if_mob_skull>,
-    <entity:iceandfire:myrmex_egg>,
-    <entity:iceandfire:myrmex_queen>,
-    <entity:iceandfire:stonestatue>,
-    <entity:iceandfire:tide_trident>,
-    <entity:botania:doppleganger>,
-    <entity:draconicevolution:guardiancrystal>,
-    <entity:extrabotany:gaiaiii>,
-    <entity:extrabotany:voidherrscher>,
-    <entity:minecraft:ender_dragon>,
-    <entity:minecraft:evocation_illager>,
-    <entity:minecraft:vindication_illager>,
-    <entity:minecraft:wither>,
-    <entity:twilightforest:armored_giant>,
-    <entity:twilightforest:armored_giant>,
-    <entity:twilightforest:giant_miner>,
-    <entity:twilightforest:giant_miner>,
-    <entity:twilightforest:hydra>,
-    <entity:twilightforest:knight_phantom>,
-    <entity:twilightforest:lich>,
-    <entity:twilightforest:minoshroom>,
-    <entity:twilightforest:naga>,
-    <entity:twilightforest:snow_queen>,
-    <entity:twilightforest:ur_ghast>,
-    <entity:twilightforest:yeti_alpha>
-  ] as IEntityDefinition[];
-
   var capturable = true;
   for ii in uncapturables {
-    if (isNull(ii) || isNull(ii.id)) {
-      continue;
-    }
-    if (isNull(pokemon.definition) || isNull(pokemon.definition.id)) return;// why does this happen?
+    if (isNull(ii) || isNull(ii.id)) continue;
     if (pokemon.definition.id == ii.id) {
       capturable = false;
       break;
@@ -92,26 +96,24 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
   }
 
   val hpPortion = pokemon.health / pokemon.maxHealth;
-  if (!capturable || (hpPortion > 0.3 && pokemon.health > 8)) {
-    // TODO find correct localized displayName for entity, not pokemon.definition.name
-    val message = capturable
-      ? fromTranslation('e2ee.creature_resisted_morb', item.displayName)
-      : fromTranslation('e2ee.creature_uncapturable');
+  if (capturable && (hpPortion <= hpPortionTreshold || pokemon.health <= ignoredHealth)) return;
 
-    val x = projectile.position3f.x;
-    val y = projectile.position3f.y;
-    val z = projectile.position3f.z;
+  val x = projectile.position3f.x;
+  val y = projectile.position3f.y;
+  val z = projectile.position3f.z;
 
-    server.commandManager.executeCommandSilent(pokemon, '/particle angryVillager ' ~ x ~ ' ' ~ y ~ ' ' ~ z ~ ' 0.2 0.1 0.2 0.1 3 ');
+  server.commandManager.executeCommandSilent(pokemon, '/particle angryVillager ' ~ x ~ ' ' ~ y ~ ' ' ~ z ~ ' 0.2 0.1 0.2 0.1 3 ');
+  player.sendPlaySoundPacket('mekanism:etc.error', 'ambient', pokemon.position, 2.0f, 1.5f);
 
-    player.sendPlaySoundPacket('mekanism:etc.error', 'ambient', pokemon.position, 2.0f, 1.5f);
+  val itemEntity = item.createEntityItem(projectile.world, x, y, z);
+  projectile.world.spawnEntity(itemEntity);
 
-    val itemEntity = item.createEntityItem(projectile.world, x, y, z);
-    projectile.world.spawnEntity(itemEntity);
+  val message = capturable
+    ? fromTranslation('e2ee.creature_resisted_morb', item.displayName)
+    : fromTranslation('e2ee.creature_uncapturable');
 
-    player.sendRichTextMessage(message);
+  player.sendRichTextMessage(message);
 
-    e.cancel();
-    projectile.setDead();
-  }
+  e.cancel();
+  projectile.setDead();
 });
