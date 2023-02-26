@@ -380,7 +380,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:thaumometer");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("thaumometer", 
 "FIRSTSTEPS@2", 
 20,
-[<aspect:aer>,<aspect:ignis>,<aspect:aqua>,<aspect:terra>,<aspect:ordo>,<aspect:perditio>], 
+[<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>], 
 <thaumcraft:thaumometer>, 
   Grid(["pretty",
   "  C  ",
@@ -395,7 +395,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:thaumometer");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("thaumometer", 
 "FIRSTSTEPS@2", 
 20,
-[<aspect:aer>,<aspect:ignis>,<aspect:aqua>,<aspect:terra>,<aspect:ordo>,<aspect:perditio>], 
+[<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>], 
 <thaumcraft:thaumometer>, 
   Grid(["pretty",
   "  C  ",
@@ -410,7 +410,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:vis_resonator");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("vis_resonator", 
 "UNLOCKAUROMANCY@1", 
 20,
-[<aspect:aer>,<aspect:terra>], 
+[<aspect:aer>, <aspect:terra>], 
 <thaumcraft:vis_resonator>, 
   Grid(["pretty",
   "A A A",
@@ -471,7 +471,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:alchemicalconstruct");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("alchemicalconstruct", 
 "TUBES", 
 50,
-[<aspect:aer>*2,<aspect:ignis>*2,<aspect:aqua>*2,<aspect:terra>*2,<aspect:ordo>*2,<aspect:perditio>*2], 
+[<aspect:aer>*2, <aspect:ignis>*2, <aspect:aqua>*2, <aspect:terra>*2, <aspect:ordo>*2, <aspect:perditio>*2], 
 <thaumcraft:metal_alchemical>*2, 
   Grid(["pretty",
   "G T G",
@@ -534,7 +534,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:condenserlattice");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("condenserlattice", 
 "FLUXCLEANUP", 
 25,
-[<aspect:aer>,<aspect:terra>], 
+[<aspect:aer>, <aspect:terra>], 
 <thaumcraft:condenser_lattice>*8, 
   Grid(["pretty",
   "S Q S",
@@ -550,7 +550,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:bellows");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("bellows", 
 "BELLOWS", 
 25,
-[<aspect:aer>,<aspect:terra>], 
+[<aspect:aer>, <aspect:terra>], 
 <thaumcraft:bellows>, 
   Grid(["pretty",
   "W W  ",
@@ -584,7 +584,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:smelteraux");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("smelteraux", 
 "IMPROVEDSMELTING", 
 100,
-[<aspect:aer>,<aspect:terra>], 
+[<aspect:aer>, <aspect:terra>], 
 <thaumcraft:smelter_aux>, 
   Grid(["pretty",
   "B T B",
@@ -602,7 +602,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:essentiatransportout");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("essentiatransportout", 
 "ESSENTIATRANSPORT", 
 100,
-[<aspect:aer>,<aspect:aqua>], 
+[<aspect:aer>, <aspect:aqua>], 
 <thaumcraft:essentia_output>, 
   Grid(["pretty",
   "B H B",
@@ -618,7 +618,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe("thaumcraft:essentiatransportin");
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe("essentiatransportin", 
 "ESSENTIATRANSPORT", 
 100,
-[<aspect:aer>,<aspect:aqua>], 
+[<aspect:aer>, <aspect:aqua>], 
 <thaumcraft:essentia_input>, 
   Grid(["pretty",
   "B D B",
@@ -821,7 +821,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "TCONEVO_PRIMALMETAL", # Research
   <tconevo:metal:20>, # Output
   2, # Instability
-  [<aspect:aer>*10,<aspect:ignis>*10,<aspect:ordo>*10,<aspect:aqua>*10,<aspect:terra>*10,<aspect:perditio>*10,<aspect:metallum>*30],
+  [<aspect:aer>*10, <aspect:ignis>*10, <aspect:ordo>*10, <aspect:aqua>*10, <aspect:terra>*10, <aspect:perditio>*10, <aspect:metallum>*30],
   <tconevo:material>, # CentralItem
   [<thaumicwonders:primordial_grain>,<thaumcraft:salis_mundus>]
 );
@@ -970,7 +970,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   "BASEAUROMANCY@1", # Research
   <thaumcraft:focus_1>, # Output
   <thaumcraft:quicksilver>, # Input
-  [<aspect:auram> * 5,<aspect:praecantatio>*10,<aspect:vitreus>*20]
+  [<aspect:auram>*5, <aspect:praecantatio>*10, <aspect:vitreus>*20]
 );
 
 # [Alumentum]
@@ -980,7 +980,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   "ALUMENTUM", # Research
   <thaumcraft:alumentum>*10, # Output
   <minecraft:coal>, # Input
-  [<aspect:potentia> * 10,<aspect:ignis>*10,<aspect:perditio>*5]
+  [<aspect:potentia>*10, <aspect:ignis>*10, <aspect:perditio>*5]
 );
 
 /*
