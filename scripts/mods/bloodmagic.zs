@@ -257,16 +257,6 @@ for item in alcTableOres {
 # [Blood Wood] from [Spectre Wood]*2
 mods.bloodmagic.BloodAltar.addRecipe(<animus:blockbloodwood>, <randomthings:spectrelog>, 0, 2000, 12, 12);
 
-# "I dont want to kill anyone" mode
-# [Weak Blood Shard] from [Phial of Aversio Essentia][+1]
-mods.thaumcraft.Crucible.registerRecipe(
-  "blood_shard", # Name
-  "BASEALCHEMY", # Research
-  <bloodmagic:blood_shard>, # Output
-  <ore:nuggetAdaminite>, # Input
-  [<aspect:aversio> * 10]
-);
-
 # [Crystal Cluster]*64 from [Benitoite][+3]
 # mods.bloodmagic.AlchemyTable.addRecipe(IItemStack output, IItemStack[] inputs, int syphon, int ticks, int minTier);
 mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:decorative_brick:2> * 64, [
