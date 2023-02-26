@@ -270,3 +270,6 @@ mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:decorative_brick:2> * 64, [
 craft.shapeless(<bloodmagic:decorative_brick:3> * 4, "****", {
   "*": <bloodmagic:decorative_brick:2>, # Crystal Cluster
 });
+
+# [Sigil of the whirlwind]
+mods.bloodmagic.AlchemyArray.addRecipe(<bloodmagic:sigil_whirlwind>, <minecraft:shield>, <bloodmagic:slate>);
