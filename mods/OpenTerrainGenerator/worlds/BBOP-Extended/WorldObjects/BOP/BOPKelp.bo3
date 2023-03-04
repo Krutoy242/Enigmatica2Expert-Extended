@@ -79,9 +79,6 @@ IsOTGPlus: false
 #######################################################################
 
 Block(0,0,0,biomesoplenty:seaweed)
-Block(0,1,0,biomesoplenty:seaweed)
-Block(0,2,0,biomesoplenty:seaweed)
-Block(0,3,0,biomesoplenty:seaweed)
 Block(0,-1,0,DIRT)
 
 #######################################################################
