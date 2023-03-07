@@ -236,4 +236,10 @@
   "path":"stages/1/recipes",
   "value":["thaumcraft:energetic_nitor"]}
 ]}
+
+,{"key":"IMPETUS_GENERATOR","ops":[
+  {"op":"replace",
+  "path":"stages/1/text",
+  "value": "thaumicaugmentation.research.impetus_generatorfix.1"}
+]}
 ]
