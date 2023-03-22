@@ -872,12 +872,9 @@ mods.thaumcraft.Crucible.registerRecipe("Tallow from tallow" , "HEDGEALCHEMY@1",
 mods.thaumcraft.Crucible.registerRecipe("Tallow from blubber", "HEDGEALCHEMY@1", <thaumcraft:tallow>*8, utils.tryCatch('betteranimalsplus:blubber', <animania:raw_prime_pork>), [<aspect:ignis>*4]);
 
 
-function L(legend as string) as string{
-  if(legend=="hvanilla"){
+function LH(legend as string) as string{
+  if(legend=="vanilla"){
     return "CREATION_HOSTILE_VANILLA";
-  }
-  if(legend=="pvanilla"){
-    return "CREATION_PASSIVE_VANILLA";
   }
   if(legend=="vanilla_nether"){
     return "CREATION_HOSTILE_VANILLA_NETHER";
@@ -888,95 +885,65 @@ function L(legend as string) as string{
   if(legend=="elementals"){
     return "CREATION_HOSTILE_ELEMENTALS";
   }
-  if(legend=="cow"){
-    return "CREATION_ANIMANIA_COWS";
-  }
 }
 
-function soulRecipe(entityId as string ,research as string ,aspects as CTAspectStack[] ,items as IItemStack[] = []) as void {
-  if (items.length==0){
-    mods.thaumcraft.Crucible.registerRecipe(
-    entityId, L(research),
+function soulRecipe(entityId as string, research as string ,aspects as CTAspectStack[]) as void {
+  mods.thaumcraft.Crucible.registerRecipe(
+    entityId, LH(research),
     <enderio:item_soul_vial:1>.withTag({entityId: entityId}),
     <enderio:item_soul_vial>,
     aspects
   );
-  }
-  else{
-  mods.thaumcraft.Infusion.registerRecipe(
-    entityId, L(research),
-    <enderio:item_soul_vial:1>.withTag({entityId: entityId}),
-    2,
-    aspects,
-    <enderio:item_soul_vial>,
-    items
-  );
+}
+
+function LP(legend as string) as string{
+  if(legend=="vanilla"){
+    return "CREATION_PASSIVE_VANILLA";
   }
 }
 
-function IsThatEgg(egg as IItemStack, entityId as string) as IItemStack{
-  if (egg.name == <minecraft:spawn_egg>.name){
-    return <minecraft:spawn_egg>.withTag({EntityTag: {id: entityId}});
-  }
-  else{
-    return egg;
-  }
-}
-
-function eggRecipe(entityId as string ,research as string ,aspects as CTAspectStack[] ,output as IItemStack = <minecraft:spawn_egg> ,input as IIngredient = <ore:egg> ,items as IItemStack[] = []) as void {
-  if (items.length==0){
-    mods.thaumcraft.Crucible.registerRecipe(
-    entityId, L(research),
-    IsThatEgg(output, entityId),
-    input,
+function eggRecipe(entityId as string, research as string ,aspects as CTAspectStack[]) as void {
+  mods.thaumcraft.Crucible.registerRecipe(
+    entityId, LP(research),
+    <minecraft:spawn_egg>.withTag({EntityTag: {id: entityId}}),
+    <ore:egg>,
     aspects
   );
-  }
-  else{
-  mods.thaumcraft.Infusion.registerRecipe(
-    entityId, L(research),
-    IsThatEgg(output, entityId),
-    2,
-    aspects,
-    <enderio:item_soul_vial>,
-    items
-  );
-  }
 }
 
 #Passive Vanilla
-eggRecipe("minecraft:cow"               ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:praemunio>*15]);
-eggRecipe("minecraft:sheep"             ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:fabrico>*15]);
-eggRecipe("minecraft:pig"               ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:victus>*15]);
-eggRecipe("minecraft:chicken"           ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:volatus>*30        ,<aspect:ventus>*15]);
-eggRecipe("minecraft:rabbit"            ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:visum>*15]);
-eggRecipe("minecraft:wolf"              ,"pvanilla"         , [<aspect:bestia>*60    ,<aspect:terra>*30          ,<aspect:aversio>*15]);
-eggRecipe("minecraft:ocelot"            ,"pvanilla"         , [<aspect:bestia>*60    ,<aspect:terra>*30          ,<aspect:desiderium>*15]);
-eggRecipe("minecraft:parrot"            ,"pvanilla"         , [<aspect:bestia>*60    ,<aspect:volatus>*30        ,<aspect:sonus>*15]);
-eggRecipe("minecraft:horse"             ,"pvanilla"         , [<aspect:bestia>*120   ,<aspect:terra>*30          ,<aspect:motus>*15]);
-eggRecipe("minecraft:donkey"            ,"pvanilla"         , [<aspect:bestia>*90    ,<aspect:terra>*30          ,<aspect:vinculum>*15]);
-eggRecipe("minecraft:mule"              ,"pvanilla"         , [<aspect:bestia>*90    ,<aspect:terra>*30          ,<aspect:imperium>*15]);
-eggRecipe("minecraft:llama"             ,"pvanilla"         , [<aspect:bestia>*90    ,<aspect:terra>*30          ,<aspect:permutatio>*15]);
-eggRecipe("minecraft:squid"             ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:aqua>*30           ,<aspect:tenebrae>*15]);
-eggRecipe("minecraft:bat"               ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:volatus>*30        ,<aspect:tenebrae>*15]);
-#eggRecipe("minecraft:mooshroom"         ,"pvanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:vitium>*15]);
-eggRecipe("minecraft:polar_bear"        ,"pvanilla"         , [<aspect:bestia>*150   ,<aspect:terra>*30          ,<aspect:gelum>*60]);
+eggRecipe("minecraft:cow"               ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:praemunio>*15]);
+eggRecipe("minecraft:sheep"             ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:fabrico>*15]);
+eggRecipe("minecraft:pig"               ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:victus>*15]);
+eggRecipe("minecraft:chicken"           ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:volatus>*30        ,<aspect:ventus>*15]);
+eggRecipe("minecraft:rabbit"            ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:visum>*15]);
+eggRecipe("minecraft:wolf"              ,"vanilla"         , [<aspect:bestia>*60    ,<aspect:terra>*30          ,<aspect:aversio>*15]);
+eggRecipe("minecraft:ocelot"            ,"vanilla"         , [<aspect:bestia>*60    ,<aspect:terra>*30          ,<aspect:desiderium>*15]);
+eggRecipe("minecraft:parrot"            ,"vanilla"         , [<aspect:bestia>*60    ,<aspect:volatus>*30        ,<aspect:sonus>*15]);
+eggRecipe("minecraft:horse"             ,"vanilla"         , [<aspect:bestia>*120   ,<aspect:terra>*30          ,<aspect:motus>*15]);
+eggRecipe("minecraft:donkey"            ,"vanilla"         , [<aspect:bestia>*90    ,<aspect:terra>*30          ,<aspect:vinculum>*15]);
+eggRecipe("minecraft:mule"              ,"vanilla"         , [<aspect:bestia>*90    ,<aspect:terra>*30          ,<aspect:imperium>*15]);
+eggRecipe("minecraft:llama"             ,"vanilla"         , [<aspect:bestia>*90    ,<aspect:terra>*30          ,<aspect:permutatio>*15]);
+eggRecipe("minecraft:squid"             ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:aqua>*30           ,<aspect:tenebrae>*15]);
+eggRecipe("minecraft:bat"               ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:volatus>*30        ,<aspect:tenebrae>*15]);
+#eggRecipe("minecraft:mooshroom"         ,"vanilla"         , [<aspect:bestia>*30    ,<aspect:terra>*30          ,<aspect:vitium>*15]);
+eggRecipe("minecraft:polar_bear"        ,"vanilla"         , [<aspect:bestia>*150   ,<aspect:terra>*30          ,<aspect:gelum>*60]);
 
 #Hostile Vanilla Overworld
-soulRecipe("minecraft:zombie"           ,"hvanilla"         , [<aspect:exanimis>*50  ,<aspect:mortuus>*50        ,<aspect:humanus>*100]);
-soulRecipe("minecraft:husk"             ,"hvanilla"         , [<aspect:exanimis>*50  ,<aspect:mortuus>*50        ,<aspect:humanus>*100       ,<aspect:perditio>*50]);
-soulRecipe("minecraft:skeleton"         ,"hvanilla"         , [<aspect:mortuus>*50   ,<aspect:perditio>*50       ,<aspect:aversio>*100]);
-soulRecipe("minecraft:stray"            ,"hvanilla"         , [<aspect:mortuus>*50   ,<aspect:perditio>*50       ,<aspect:aversio>*100       ,<aspect:gelum>*50]);
-soulRecipe("minecraft:creeper"          ,"hvanilla"         , [<aspect:exitium>*100  ,<aspect:ignis>*50          ,<aspect:alkimia>*25        ,<aspect:perditio>*50]);
-soulRecipe("minecraft:spider"           ,"hvanilla"         , [<aspect:bestia>*100   ,<aspect:vinculum>*50       ,<aspect:sensus>*50]);
-soulRecipe("minecraft:cave_spider"      ,"hvanilla"         , [<aspect:bestia>*75    ,<aspect:vinculum>*50       ,<aspect:sensus>*50         ,<aspect:alkimia>*25]);
-soulRecipe("minecraft:witch"            ,"hvanilla"         , [<aspect:humanus>*100  ,<aspect:praecantatio>*50   ,<aspect:alkimia>*50]);
-soulRecipe("minecraft:slime"            ,"hvanilla"         , [<aspect:aqua>*50      ,<aspect:victus>*50]);
-soulRecipe("minecraft:guardian"         ,"hvanilla"         , [<aspect:aqua>*100     ,<aspect:praemunio>*50      ,<aspect:sensus>*50]);
-soulRecipe("minecraft:silverfish"       ,"hvanilla"         , [<aspect:perditio>*100 ,<aspect:vacuos>*50         ,<aspect:vinculum>*50]);
-soulRecipe("minecraft:zombie_horse"     ,"hvanilla"         , [<aspect:bestia>*100   ,<aspect:exanimis>*50       ,<aspect:motus>*50]);
-soulRecipe("minecraft:skeleton_horse"   ,"hvanilla"         , [<aspect:bestia>*100   ,<aspect:mortuus>*50        ,<aspect:motus>*50]);
-soulRecipe("minecraft:giant"            ,"hvanilla"         , [<aspect:exanimis>*500 ,<aspect:praemunio>*500     ,<aspect:mythus>*500]); #Probably recipe to delete
+soulRecipe("minecraft:zombie"           ,"vanilla"         , [<aspect:exanimis>*50  ,<aspect:mortuus>*50        ,<aspect:humanus>*100]);
+soulRecipe("minecraft:husk"             ,"vanilla"         , [<aspect:exanimis>*50  ,<aspect:mortuus>*50        ,<aspect:humanus>*100       ,<aspect:perditio>*50]);
+soulRecipe("minecraft:skeleton"         ,"vanilla"         , [<aspect:mortuus>*50   ,<aspect:perditio>*50       ,<aspect:aversio>*100]);
+soulRecipe("minecraft:stray"            ,"vanilla"         , [<aspect:mortuus>*50   ,<aspect:perditio>*50       ,<aspect:aversio>*100       ,<aspect:gelum>*50]);
+soulRecipe("minecraft:creeper"          ,"vanilla"         , [<aspect:exitium>*100  ,<aspect:ignis>*50          ,<aspect:alkimia>*25        ,<aspect:perditio>*50]);
+soulRecipe("minecraft:spider"           ,"vanilla"         , [<aspect:bestia>*100   ,<aspect:vinculum>*50       ,<aspect:sensus>*50]);
+soulRecipe("minecraft:cave_spider"      ,"vanilla"         , [<aspect:bestia>*75    ,<aspect:vinculum>*50       ,<aspect:sensus>*50         ,<aspect:alkimia>*25]);
+soulRecipe("minecraft:witch"            ,"vanilla"         , [<aspect:humanus>*100  ,<aspect:praecantatio>*50   ,<aspect:alkimia>*50]);
+soulRecipe("minecraft:slime"            ,"vanilla"         , [<aspect:aqua>*50      ,<aspect:victus>*50]);
+soulRecipe("minecraft:guardian"         ,"vanilla"         , [<aspect:aqua>*100     ,<aspect:praemunio>*50      ,<aspect:sensus>*50]);
+soulRecipe("minecraft:silverfish"       ,"vanilla"         , [<aspect:perditio>*100 ,<aspect:vacuos>*50         ,<aspect:vinculum>*50]);
+soulRecipe("minecraft:zombie_horse"     ,"vanilla"         , [<aspect:bestia>*100   ,<aspect:exanimis>*50       ,<aspect:motus>*50]);
+soulRecipe("minecraft:skeleton_horse"   ,"vanilla"         , [<aspect:bestia>*100   ,<aspect:mortuus>*50        ,<aspect:motus>*50]);
+soulRecipe("minecraft:giant"            ,"vanilla"         , [<aspect:exanimis>*500 ,<aspect:praemunio>*500     ,<aspect:mythus>*500]); #Probably recipe to delete
 
 #Hostile Vanilla Nether
 soulRecipe("minecraft:zombie_pigman"    ,"vanilla_nether"  , [<aspect:exanimis>*50  ,<aspect:mortuus>*50        ,<aspect:bestia>*100]);
