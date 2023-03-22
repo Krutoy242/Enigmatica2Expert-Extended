@@ -27,6 +27,50 @@ Actually additions
 /*
 #######################################################
 
+Animania
+
+#######################################################
+*/
+
+#Cows
+<animania:entity_egg_bull_angus>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:tenebrae>*10); 
+<entity:animania:bull_angus>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:tenebrae>*10); 
+<animania:entity_egg_cow_angus>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:tenebrae>*10); 
+<entity:animania:cow_angus>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:tenebrae>*10); 
+
+<animania:entity_egg_bull_friesian>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:aer>*10); 
+<entity:animania:bull_friesian>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:aer>*10); 
+<animania:entity_egg_cow_friesian>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:aer>*10); 
+<entity:animania:cow_friesian>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:aer>*10); 
+
+<animania:entity_egg_bull_hereford>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:gelum>*10); 
+<entity:animania:bull_hereford>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:gelum>*10); 
+<animania:entity_egg_cow_hereford>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:gelum>*10); 
+<entity:animania:cow_hereford>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:gelum>*10); 
+
+<animania:entity_egg_bull_holstein>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ordo>*10); 
+<entity:animania:bull_holstein>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ordo>*10); 
+<animania:entity_egg_cow_holstein>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ordo>*10); 
+<entity:animania:cow_holstein>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ordo>*10); 
+
+<animania:entity_egg_bull_longhorn>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ignis>*10); 
+<entity:animania:bull_longhorn>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ignis>*10); 
+<animania:entity_egg_cow_longhorn>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ignis>*10); 
+<entity:animania:cow_longhorn>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:ignis>*10); 
+
+<animania:entity_egg_bull_highland>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:desiderium>*10); 
+<entity:animania:bull_highland>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:desiderium>*10); 
+<animania:entity_egg_cow_highland>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:desiderium>*10); 
+<entity:animania:cow_highland>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:desiderium>*10); 
+
+<animania:entity_egg_bull_jersey>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:permutatio>*10); 
+<entity:animania:bull_jersey>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:permutatio>*10); 
+<animania:entity_egg_cow_jersey>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:permutatio>*10); 
+<entity:animania:cow_jersey>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:permutatio>*10);  
+
+/*
+#######################################################
+
 Animus
 
 #######################################################
