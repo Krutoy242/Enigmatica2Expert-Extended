@@ -231,6 +231,40 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "CREATION_ANIMANIA_COW",    
+            "name": "research_name.CREATION_ANIMANIA_COW",
+            "icons": [ "thaumcraft:textures/cow.png" ],
+            "category": "INFUSION", "location": [ 5,5 ], 
+            "parents": [ "CREATION_PASSIVE_VANILLA" ],
+            "meta":["ROUND"],     
+            "stages": [
+                {
+                    "text": "research.CREATION_ANIMANIA_COW.1", 
+                    "required_knowledge":["OBSERVATION;INFUSION;1"],
+                    "required_item":["minecraft:dirt;4","minecraft:dirt;4;1","biomesoplenty:dirt;4","biomesoplenty:dirt;4;2","biomesoplenty:dirt;4;1","biomesoplenty:grass;4;1"]
+                },
+                {
+                    "text": "research.CREATION_ANIMANIA_COW.2",
+                    "recipes":[
+                        "thaumcraft:animania:cow_angus",
+                        "thaumcraft:animania:bull_angus",
+                        "thaumcraft:animania:cow_friesian",
+                        "thaumcraft:animania:bull_friesian",
+                        "thaumcraft:animania:cow_hereford",
+                        "thaumcraft:animania:bull_hereford",
+                        "thaumcraft:animania:cow_holstein",
+                        "thaumcraft:animania:bull_holstein",
+                        "thaumcraft:animania:cow_longhorn",
+                        "thaumcraft:animania:bull_longhorn",
+                        "thaumcraft:animania:cow_highland",
+                        "thaumcraft:animania:bull_highland",
+                        "thaumcraft:animania:cow_jersey",
+                        "thaumcraft:animania:bull_jersey"
+                    ]
+                }
+            ]
         }
     ]
 }
