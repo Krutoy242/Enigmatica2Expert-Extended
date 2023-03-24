@@ -1023,6 +1023,9 @@ function L(legend as string) as string{
   if(legend=="cow"){
     return "CREATION_ANIMANIA_COW";
   }
+  if(legend=="sheep"){
+    return "CREATION_ANIMANIA_SHEEP";
+  }
 }
 
 function soulRecipe(entityId as string ,research as string ,aspects as CTAspectStack[] ,items as IIngredient[] = []) as void {
@@ -1214,6 +1217,63 @@ eggRecipe("animania:bull_jersey"        ,"cow",
 [<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:praemunio>*30    ,<aspect:permutatio>*30],
 <animania:entity_egg_bull_jersey>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:cow"}}),
 [<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<harvestcraft:freshmilkitem> ,<minecraft:beef> ,<biomesoplenty:mudball>]);
+
+#Sheeps
+
+eggRecipe("animania:ewe_dorper"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:ignis>*30],
+<animania:entity_egg_ewe_dorper>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<botania:doubleflower2:7> ,<minecraft:mutton> ,<minecraft:mutton> ,<botania:doubleflower2:7>]);
+eggRecipe("animania:ram_dorper"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:ignis>*30],
+<animania:entity_egg_ewe_dorper>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<botania:doubleflower2:7> ,<minecraft:mutton> ,<minecraft:mutton> ,<botania:doubleflower2:7>]);
+
+eggRecipe("animania:ewe_dorset"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:gelum>*30],
+<animania:entity_egg_ewe_dorset>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<botania:doubleflower1:6> ,<minecraft:mutton> ,<minecraft:mutton> ,<botania:doubleflower1:6>]);
+eggRecipe("animania:ram_dorset"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:gelum>*30],
+<animania:entity_egg_ewe_dorset>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<botania:doubleflower1:6> ,<minecraft:mutton> ,<minecraft:mutton> ,<botania:doubleflower1:6>]);
+
+eggRecipe("animania:ewe_friesian"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:ordo>*30],
+<animania:entity_egg_ewe_friesian>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<botania:doubleflower2:4> ,<ore:wool> ,<ore:wool> ,<botania:doubleflower2:4>]);
+eggRecipe("animania:ram_friesian"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:ordo>*30],
+<animania:entity_egg_ewe_friesian>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<botania:doubleflower2:4> ,<ore:wool> ,<ore:wool> ,<botania:doubleflower2:4>]);
+
+eggRecipe("animania:ewe_jacob"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:herba>*30],
+<animania:entity_egg_ewe_jacob>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<botania:doubleflower2> ,<ore:wool> ,<ore:wool> ,<botania:doubleflower2>]);
+eggRecipe("animania:ram_jacob"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:herba>*30],
+<animania:entity_egg_ewe_jacob>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<botania:doubleflower2> ,<ore:wool> ,<ore:wool> ,<botania:doubleflower2>]);
+
+eggRecipe("animania:ewe_merino"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:aer>*30],
+<animania:entity_egg_ewe_merino>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<botania:doubleflower1> ,<ore:wool> ,<ore:wool> ,<botania:doubleflower1>]);
+eggRecipe("animania:ram_merino"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:aer>*30],
+<animania:entity_egg_ewe_merino>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<botania:doubleflower1> ,<ore:wool> ,<ore:wool> ,<botania:doubleflower1>]);
+
+eggRecipe("animania:ewe_suffolk"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:visum>*30],
+<animania:entity_egg_ewe_suffolk>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<botania:doubleflower2:5> ,<minecraft:mutton> ,<ore:wool> ,<botania:doubleflower2:5>]);
+eggRecipe("animania:ram_suffolk"        ,"sheep", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:fabrico>*30    ,<aspect:visum>*30],
+<animania:entity_egg_ewe_suffolk>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<botania:doubleflower2:5> ,<minecraft:mutton> ,<ore:wool> ,<botania:doubleflower2:5>]);
+
 
 /*
  ██████╗ ████████╗██╗  ██╗███████╗██████╗ 

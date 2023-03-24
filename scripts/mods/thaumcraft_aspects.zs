@@ -68,6 +68,39 @@ Animania
 <animania:entity_egg_cow_jersey>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:permutatio>*10); 
 <entity:animania:cow_jersey>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:praemunio>*10    ,<aspect:permutatio>*10);  
 
+#Sheeps
+
+<animania:entity_egg_ram_dorper>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ignis>*10); 
+<entity:animania:ram_dorper>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ignis>*10); 
+<animania:entity_egg_ewe_dorper>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ignis>*10); 
+<entity:animania:ewe_dorper>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ignis>*10);  
+
+<animania:entity_egg_ram_dorset>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:gelum>*10); 
+<entity:animania:ram_dorset>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:gelum>*10); 
+<animania:entity_egg_ewe_dorset>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:gelum>*10); 
+<entity:animania:ewe_dorset>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:gelum>*10);  
+
+<animania:entity_egg_ram_friesian>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ordo>*10); 
+<entity:animania:ram_friesian>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ordo>*10); 
+<animania:entity_egg_ewe_friesian>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ordo>*10); 
+<entity:animania:ewe_friesian>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:ordo>*10);  
+
+<animania:entity_egg_ram_jacob>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:herba>*10); 
+<entity:animania:ram_jacob>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:herba>*10); 
+<animania:entity_egg_ewe_jacob>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:herba>*10); 
+<entity:animania:ewe_jacob>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:herba>*10);  
+
+<animania:entity_egg_ram_merino>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:aer>*10); 
+<entity:animania:ram_merino>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:aer>*10); 
+<animania:entity_egg_ewe_merino>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:aer>*10); 
+<entity:animania:ewe_merino>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:aer>*10);  
+
+<animania:entity_egg_ram_suffolk>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:visum>*10); 
+<entity:animania:ram_suffolk>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:visum>*10); 
+<animania:entity_egg_ewe_suffolk>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:visum>*10); 
+<entity:animania:ewe_suffolk>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:visum>*10);  
+
+
 /*
 #######################################################
 

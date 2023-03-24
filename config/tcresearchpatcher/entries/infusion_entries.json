@@ -265,6 +265,38 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "CREATION_ANIMANIA_SHEEP",    
+            "name": "research_name.CREATION_ANIMANIA_SHEEP",
+            "icons": [ "thaumcraft:textures/sheep.png" ],
+            "category": "INFUSION", "location": [ 6,5 ], 
+            "parents": [ "CREATION_PASSIVE_VANILLA" ],
+            "meta":["ROUND"],     
+            "stages": [
+                {
+                    "text": "research.CREATION_ANIMANIA_SHEEP.1", 
+                    "required_knowledge":["OBSERVATION;INFUSION;1"],
+                    "required_item":["minecraft:red_flower;4;8","minecraft:red_flower;4;2","minecraft:red_flower;4;3","minecraft:red_flower;4;1"]
+                },
+                {
+                    "text": "research.CREATION_ANIMANIA_SHEEP.2",
+                    "recipes":[
+                        "thaumcraft:animania:ram_dorper",
+                        "thaumcraft:animania:ewe_dorper",
+                        "thaumcraft:animania:ram_dorset",
+                        "thaumcraft:animania:ewe_dorset",
+                        "thaumcraft:animania:ram_friesian",
+                        "thaumcraft:animania:ewe_friesian",
+                        "thaumcraft:animania:ram_jacob",
+                        "thaumcraft:animania:ewe_jacob",
+                        "thaumcraft:animania:ram_merino",
+                        "thaumcraft:animania:ewe_merino",
+                        "thaumcraft:animania:ram_suffolk",
+                        "thaumcraft:animania:ewe_suffolk"
+                    ]
+                }
+            ]
         }
     ]
 }
