@@ -100,6 +100,38 @@ Animania
 <animania:entity_egg_ewe_suffolk>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:visum>*10); 
 <entity:animania:ewe_suffolk>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:fabrico>*10      ,<aspect:visum>*10);  
 
+#Pigs
+
+<animania:entity_egg_hog_yorkshire>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:ordo>*10); 
+<entity:animania:hog_yorkshire>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:ordo>*10);  
+<animania:entity_egg_sow_yorkshire>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:ordo>*10); 
+<entity:animania:sow_yorkshire>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:ordo>*10); 
+
+<animania:entity_egg_hog_old_spot>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:perditio>*10); 
+<entity:animania:hog_old_spot>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:perditio>*10);  
+<animania:entity_egg_sow_old_spot>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:perditio>*10); 
+<entity:animania:sow_old_spot>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:perditio>*10); 
+
+<animania:entity_egg_hog_large_black>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:tenebrae>*10); 
+<entity:animania:hog_large_black>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:tenebrae>*10);  
+<animania:entity_egg_sow_large_black>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:tenebrae>*10); 
+<entity:animania:sow_large_black>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:tenebrae>*10); 
+
+<animania:entity_egg_hog_large_white>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:fluctus>*10); 
+<entity:animania:hog_large_white>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:fluctus>*10);  
+<animania:entity_egg_sow_large_white>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:fluctus>*10); 
+<entity:animania:sow_large_white>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:fluctus>*10); 
+
+<animania:entity_egg_hog_hampshire>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:gelum>*10); 
+<entity:animania:hog_hampshire>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:gelum>*10);  
+<animania:entity_egg_sow_hampshire>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:gelum>*10); 
+<entity:animania:sow_hampshire>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:gelum>*10); 
+
+<animania:entity_egg_hog_duroc>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:infernum>*10); 
+<entity:animania:hog_duroc>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:infernum>*10);  
+<animania:entity_egg_sow_duroc>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:infernum>*10); 
+<entity:animania:sow_duroc>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:victus>*10       ,<aspect:infernum>*10); 
+
 
 /*
 #######################################################

@@ -1274,6 +1274,61 @@ eggRecipe("animania:ram_suffolk"        ,"sheep",
 <animania:entity_egg_ewe_suffolk>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
 [<minecraft:pumpkin_seeds> ,<botania:doubleflower2:5> ,<minecraft:mutton> ,<ore:wool> ,<botania:doubleflower2:5>]);
 
+#Pigs
+
+eggRecipe("animania:sow_yorkshire"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:ordo>*30],
+<animania:entity_egg_sow_yorkshire>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<rustic:grape_stem> ,<biomesoplenty:mudball> ,<minecraft:porkchop> ,<minecraft:porkchop> ,<biomesoplenty:mudball>]);
+eggRecipe("animania:hog_yorkshire"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:ordo>*30],
+<animania:entity_egg_hog_yorkshire>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<minecraft:porkchop> ,<minecraft:porkchop> ,<biomesoplenty:mudball>]);
+
+eggRecipe("animania:sow_old_spot"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:perditio>*30],
+<animania:entity_egg_sow_old_spot>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<rustic:grape_stem> ,<biomesoplenty:mudball> ,<exnihilocreatio:item_material:3> ,<exnihilocreatio:item_material:3> ,<biomesoplenty:mudball>]);
+eggRecipe("animania:hog_old_spot"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:perditio>*30],
+<animania:entity_egg_hog_old_spot>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<exnihilocreatio:item_material:3> ,<exnihilocreatio:item_material:3> ,<biomesoplenty:mudball>]);
+
+eggRecipe("animania:sow_large_black"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:tenebrae>*30],
+<animania:entity_egg_sow_large_black>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<rustic:grape_stem> ,<biomesoplenty:mudball> ,<minecraft:brown_mushroom> ,<minecraft:brown_mushroom> ,<biomesoplenty:mudball>]);
+eggRecipe("animania:hog_large_black"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:tenebrae>*30],
+<animania:entity_egg_hog_large_black>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<minecraft:brown_mushroom> ,<minecraft:brown_mushroom> ,<biomesoplenty:mudball>]);
+
+eggRecipe("animania:sow_large_white"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:fluctus>*30],
+<animania:entity_egg_sow_large_white>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<rustic:grape_stem> ,<biomesoplenty:mudball> ,<harvestcraft:whitemushroomitem> ,<harvestcraft:whitemushroomitem> ,<biomesoplenty:mudball>]);
+eggRecipe("animania:hog_large_white"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:fluctus>*30],
+<animania:entity_egg_hog_large_white>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<harvestcraft:whitemushroomitem> ,<harvestcraft:whitemushroomitem> ,<biomesoplenty:mudball>]);
+
+eggRecipe("animania:sow_hampshire"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:gelum>*30],
+<animania:entity_egg_sow_hampshire>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<rustic:grape_stem> ,<biomesoplenty:mudball> ,<minecraft:snowball> ,<minecraft:snowball> ,<biomesoplenty:mudball>]);
+eggRecipe("animania:hog_hampshire"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:gelum>*30],
+<animania:entity_egg_hog_hampshire>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<minecraft:snowball> ,<minecraft:snowball> ,<biomesoplenty:mudball>]);
+
+eggRecipe("animania:sow_duroc"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:infernum>*30],
+<animania:entity_egg_sow_duroc>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<rustic:grape_stem> ,<biomesoplenty:mudball> ,<harvestcraft:netherwingsitem> ,<harvestcraft:netherwingsitem> ,<biomesoplenty:mudball>]);
+eggRecipe("animania:hog_duroc"        ,"pig", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:infernum>*30],
+<animania:entity_egg_hog_duroc>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<harvestcraft:netherwingsitem> ,<harvestcraft:netherwingsitem> ,<biomesoplenty:mudball>]);
 
 /*
  ██████╗ ████████╗██╗  ██╗███████╗██████╗ 

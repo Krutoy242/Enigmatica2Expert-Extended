@@ -297,6 +297,38 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "CREATION_ANIMANIA_PIG",    
+            "name": "research_name.CREATION_ANIMANIA_PIG",
+            "icons": [ "thaumcraft:textures/pig.png" ],
+            "category": "INFUSION", "location": [ 7,5 ], 
+            "parents": [ "CREATION_PASSIVE_VANILLA" ],
+            "meta":["ROUND"],     
+            "stages": [
+                {
+                    "text": "research.CREATION_ANIMANIA_PIG.1", 
+                    "required_knowledge":["OBSERVATION;INFUSION;1"],
+                    "required_item":["biomesoplenty:mudball;28"]
+                },
+                {
+                    "text": "research.CREATION_ANIMANIA_PIG.2",
+                    "recipes":[
+                        "animania:sow_yorkshire",
+                        "animania:hog_yorkshire",
+                        "animania:sow_old_spot",
+                        "animania:hog_old_spot",
+                        "animania:sow_large_black",
+                        "animania:hog_large_black",
+                        "animania:sow_large_white",
+                        "animania:hog_large_white",
+                        "animania:sow_hampshire",
+                        "animania:hog_hampshire",
+                        "animania:sow_duroc",
+                        "animania:hog_duroc"
+                    ]
+                }
+            ]
         }
     ]
 }
