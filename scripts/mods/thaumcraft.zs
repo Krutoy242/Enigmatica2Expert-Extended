@@ -1026,6 +1026,9 @@ function L(legend as string) as string{
   if(legend=="sheep"){
     return "CREATION_ANIMANIA_SHEEP";
   }
+  if(legend=="pig"){
+    return "CREATION_ANIMANIA_PIG";
+  }
 }
 
 function soulRecipe(entityId as string ,research as string ,aspects as CTAspectStack[] ,items as IIngredient[] = []) as void {
