@@ -120,7 +120,7 @@ recipes.remove(<quark:gravisand>);
 recipes.removeByRecipeName("quark:turf");
 recipes.addShapeless('turf any grass', <quark:turf>, [<ore:grassTall>, <ore:grassTall>, <ore:grassTall>, <ore:grassTall>]);
 
-# [Blue sprout]
+# [Cave root]
 mods.thaumcraft.Crucible.registerRecipe(
   "quark:root", # Name
   "HEDGEALCHEMY@1", # Research
