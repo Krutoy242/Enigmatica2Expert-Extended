@@ -201,42 +201,42 @@ Animania
 <animania:entity_egg_buck_lop>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10); 
 <entity:animania:buck_lop>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10);
 
-#Goats
+#Goats (Disabled directs aspects on entity due to bug)
 
 <animania:entity_egg_doe_alpine>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:gelum>*10); 
-<entity:animania:doe_alpine>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:gelum>*10);  
+#<entity:animania:doe_alpine>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:gelum>*10);  
 <animania:entity_egg_buck_alpine>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:gelum>*10); 
-<entity:animania:buck_alpine>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:gelum>*10);
+#<entity:animania:buck_alpine>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:gelum>*10);
 
 <animania:entity_egg_doe_angora>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:ordo>*10); 
-<entity:animania:doe_angora>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:ordo>*10);  
+#<entity:animania:doe_angora>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:ordo>*10);  
 <animania:entity_egg_buck_angora>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:ordo>*10); 
-<entity:animania:buck_angora>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:ordo>*10);
+#<entity:animania:buck_angora>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:ordo>*10);
 
 <animania:entity_egg_doe_fainting>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:imperium>*10); 
-<entity:animania:doe_fainting>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:imperium>*10);  
+#<entity:animania:doe_fainting>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:imperium>*10);  
 <animania:entity_egg_buck_fainting>             .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:imperium>*10); 
-<entity:animania:buck_fainting>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:imperium>*10);
+#<entity:animania:buck_fainting>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:imperium>*10);
 
 <animania:entity_egg_doe_kiko>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:sensus>*10); 
-<entity:animania:doe_kiko>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:sensus>*10);  
+#<entity:animania:doe_kiko>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:sensus>*10);  
 <animania:entity_egg_buck_kiko>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:sensus>*10); 
-<entity:animania:buck_kiko>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:sensus>*10);
+#<entity:animania:buck_kiko>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:sensus>*10);
 
 <animania:entity_egg_doe_kinder>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:vacuos>*10); 
-<entity:animania:doe_kinder>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:vacuos>*10);  
+#<entity:animania:doe_kinder>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:vacuos>*10);  
 <animania:entity_egg_buck_kinder>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:vacuos>*10); 
-<entity:animania:buck_kinder>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:vacuos>*10);
+#<entity:animania:buck_kinder>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:vacuos>*10);
 
 <animania:entity_egg_doe_nigerian_dwarf>        .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:perditio>*10); 
-<entity:animania:doe_nigerian_dwarf>            .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:perditio>*10);  
+#<entity:animania:doe_nigerian_dwarf>            .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:perditio>*10);  
 <animania:entity_egg_buck_nigerian_dwarf>       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:perditio>*10); 
-<entity:animania:buck_nigerian_dwarf>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:perditio>*10);
+#<entity:animania:buck_nigerian_dwarf>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:perditio>*10);
 
 <animania:entity_egg_doe_pygmy>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:fluctus>*10); 
-<entity:animania:doe_pygmy>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:fluctus>*10);  
+#<entity:animania:doe_pygmy>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:fluctus>*10);  
 <animania:entity_egg_buck_pygmy>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:fluctus>*10); 
-<entity:animania:buck_pygmy>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:fluctus>*10);
+#<entity:animania:buck_pygmy>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:sanguis>*10        ,<aspect:fluctus>*10);
 
 #Horse
 
@@ -612,6 +612,11 @@ Chisell/Quark - general stones
 <quark:jasper>                                  .setAspects(<aspect:terra>*4      ,<aspect:ignis>*2); #jasper
 
 <quark:black_ash>                               .setAspects(<aspect:perditio>*4      ,<aspect:tenebrae>*2); #wither ash
+
+<quark:root>                                    .setAspects(<aspect:herba>*5); 
+<quark:root_flower>                             .setAspects(<aspect:herba>*3      ,<aspect:instrumentum>*2); 
+<quark:root_flower:1>                           .setAspects(<aspect:herba>*3      ,<aspect:tenebrae>*2); 
+<quark:root_flower:2>                           .setAspects(<aspect:herba>*3      ,<aspect:potentia>*2); 
 
 /*
 #######################################################
