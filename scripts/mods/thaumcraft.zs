@@ -1029,6 +1029,27 @@ function L(legend as string) as string{
   if(legend=="pig"){
     return "CREATION_ANIMANIA_PIG";
   }
+  if(legend=="goat"){
+    return "CREATION_ANIMANIA_GOAT";
+  }
+  if(legend=="chicken"){
+    return "CREATION_ANIMANIA_CHICKEN";
+  }
+  if(legend=="rabbit"){
+    return "CREATION_ANIMANIA_RABBIT";
+  }
+  if(legend=="horse"){
+    return "CREATION_ANIMANIA_HORSE";
+  }
+  if(legend=="peacock"){
+    return "CREATION_ANIMANIA_PEACOCK";
+  }
+  if(legend=="frog"){
+    return "CREATION_ANIMANIA_FROG";
+  }
+  if(legend=="exotic"){
+    return "CREATION_ANIMANIA_EXOTIC";
+  }
 }
 
 function soulRecipe(entityId as string ,research as string ,aspects as CTAspectStack[] ,items as IIngredient[] = []) as void {
@@ -1332,6 +1353,312 @@ eggRecipe("animania:hog_duroc"        ,"pig",
 [<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:victus>*30    ,<aspect:infernum>*30],
 <animania:entity_egg_hog_duroc>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:pig"}}),
 [<minecraft:pumpkin_seeds> ,<biomesoplenty:mudball> ,<harvestcraft:netherwingsitem> ,<harvestcraft:netherwingsitem> ,<biomesoplenty:mudball>]);
+
+#Chickens
+
+eggRecipe("animania:hen_leghorn"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:ordo>*30],
+<animania:entity_egg_hen_leghorn>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<minecraft:wheat_seeds> ,<ore:feather> ,<ore:feather> ,<minecraft:wheat_seeds>]);
+eggRecipe("animania:rooster_leghorn"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:ordo>*30],
+<animania:entity_egg_rooster_leghorn>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<minecraft:wheat_seeds> ,<ore:feather> ,<ore:feather> ,<minecraft:wheat_seeds>]);
+
+eggRecipe("animania:hen_orpington"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:sonus>*30],
+<animania:entity_egg_hen_orpington>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<minecraft:vine> ,<minecraft:chicken> ,<minecraft:chicken> ,<minecraft:vine>]);
+eggRecipe("animania:rooster_orpington"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:sonus>*30],
+<animania:entity_egg_rooster_orpington>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<minecraft:vine> ,<minecraft:chicken> ,<minecraft:chicken> ,<minecraft:vine>]);
+
+eggRecipe("animania:hen_plymouth_rock"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:exitium>*30],
+<animania:entity_egg_hen_plymouth_rock>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<biomesoplenty:grass:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<biomesoplenty:grass:1>]);
+eggRecipe("animania:rooster_plymouth_rock"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:exitium>*30],
+<animania:entity_egg_rooster_plymouth_rock>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:grass:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<biomesoplenty:grass:1>]);
+
+eggRecipe("animania:hen_rhode_island_red"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:ignis>*30],
+<animania:entity_egg_hen_rhode_island_red>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<minecraft:sand:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<minecraft:sand:1>]);
+eggRecipe("animania:rooster_rhode_island_red"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:ignis>*30],
+<animania:entity_egg_rooster_rhode_island_red>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<minecraft:sand:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<minecraft:sand:1>]);
+
+eggRecipe("animania:hen_wyandotte"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:visum>*30],
+<animania:entity_egg_hen_wyandotte>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<tconstruct:brownstone:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<tconstruct:brownstone:1>]);
+eggRecipe("animania:rooster_wyandotte"        ,"chicken", 
+[<aspect:bestia>*60    ,<aspect:volatus>*60        ,<aspect:ventus>*30       ,<aspect:visum>*30],
+<animania:entity_egg_rooster_wyandotte>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<tconstruct:brownstone:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<tconstruct:brownstone:1>]);
+
+#Rabbits
+
+eggRecipe("animania:doe_cottontail"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:fabrico>*30],
+<animania:entity_egg_doe_cottontail>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:14> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:14>]);
+eggRecipe("animania:buck_cottontail"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:fabrico>*30],
+<animania:entity_egg_buck_cottontail>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:14> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:14>]);
+
+eggRecipe("animania:doe_chinchilla"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:aer>*30],
+<animania:entity_egg_doe_chinchilla>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:13> ,<minecraft:rabbit> ,<minecraft:rabbit> ,<botania:biomestonea:13>]);
+eggRecipe("animania:buck_chinchilla"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:aer>*30],
+<animania:entity_egg_buck_chinchilla>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:13> ,<minecraft:rabbit> ,<minecraft:rabbit> ,<botania:biomestonea:13>]);
+
+eggRecipe("animania:doe_dutch"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:fluctus>*30],
+<animania:entity_egg_doe_dutch>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:9> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:9>]);
+eggRecipe("animania:buck_dutch"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:fluctus>*30],
+<animania:entity_egg_buck_dutch>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:9> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:9>]);
+
+eggRecipe("animania:doe_havana"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:exitium>*30],
+<animania:entity_egg_doe_havana>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:10> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:10>]);
+eggRecipe("animania:buck_havana"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:exitium>*30],
+<animania:entity_egg_buck_havana>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:10> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:10>]);
+
+eggRecipe("animania:doe_jack"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:vinculum>*30],
+<animania:entity_egg_doe_jack>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:12> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:12>]);
+eggRecipe("animania:buck_jack"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:vinculum>*30],
+<animania:entity_egg_buck_jack>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:12> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:12>]);
+
+eggRecipe("animania:doe_new_zealand"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:ordo>*30],
+<animania:entity_egg_doe_new_zealand>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:8> ,<minecraft:rabbit> ,<minecraft:rabbit> ,<botania:biomestonea:8>]);
+eggRecipe("animania:buck_new_zealand"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:ordo>*30],
+<animania:entity_egg_buck_new_zealand>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:8> ,<minecraft:rabbit> ,<minecraft:rabbit> ,<botania:biomestonea:8>]);
+
+eggRecipe("animania:doe_rex"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:imperium>*30],
+<animania:entity_egg_doe_rex>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:15> ,<minecraft:rabbit> ,<minecraft:rabbit> ,<botania:biomestonea:15>]);
+eggRecipe("animania:buck_rex"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:imperium>*30],
+<animania:entity_egg_buck_rex>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:15> ,<minecraft:rabbit> ,<minecraft:rabbit> ,<botania:biomestonea:15>]);
+
+eggRecipe("animania:doe_lop"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:cognitio>*30],
+<animania:entity_egg_doe_lop>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<rustic:grape_stem> ,<botania:biomestonea:11> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:11>]);
+eggRecipe("animania:buck_lop"        ,"rabbit", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:visum>*30        ,<aspect:cognitio>*30],
+<animania:entity_egg_buck_lop>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:rabbit"}}),
+[<minecraft:pumpkin_seeds> ,<botania:biomestonea:11> ,<minecraft:leather> ,<minecraft:leather> ,<botania:biomestonea:11>]);
+
+#Goats
+
+eggRecipe("animania:doe_alpine"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:gelum>*30],
+<animania:entity_egg_doe_alpine>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<minecraft:bone> ,<minecraft:mutton> ,<minecraft:mutton> ,<minecraft:bone>]);
+eggRecipe("animania:buck_alpine"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:gelum>*30],
+<animania:entity_egg_buck_alpine>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<minecraft:bone> ,<minecraft:mutton> ,<minecraft:mutton> ,<minecraft:bone>]);
+
+eggRecipe("animania:doe_angora"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:ordo>*30],
+<animania:entity_egg_doe_angora>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<minecraft:bone> ,<ore:wool> ,<ore:wool> ,<minecraft:bone>]);
+eggRecipe("animania:buck_angora"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:ordo>*30],
+<animania:entity_egg_buck_angora>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<minecraft:bone> ,<ore:wool> ,<ore:wool> ,<minecraft:bone>]);
+
+eggRecipe("animania:doe_fainting"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:imperium>*30],
+<animania:entity_egg_doe_fainting>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<biomesoplenty:plant_1:7> ,<minecraft:leather> ,<minecraft:leather> ,<biomesoplenty:plant_1:7>]);
+eggRecipe("animania:buck_fainting"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:imperium>*30],
+<animania:entity_egg_buck_fainting>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:plant_1:7> ,<minecraft:leather> ,<minecraft:leather> ,<biomesoplenty:plant_1:7>]);
+
+eggRecipe("animania:doe_kiko"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:sensus>*30],
+<animania:entity_egg_doe_kiko>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<biomesoplenty:plant_0:10> ,<minecraft:mutton> ,<minecraft:mutton> ,<biomesoplenty:plant_0:10>]);
+eggRecipe("animania:buck_kiko"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:sensus>*30],
+<animania:entity_egg_buck_kiko>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:plant_0:10> ,<minecraft:mutton> ,<minecraft:mutton> ,<biomesoplenty:plant_0:10>]);
+
+eggRecipe("animania:doe_kinder"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:vacuos>*30],
+<animania:entity_egg_doe_kinder>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<biomesoplenty:plant_1> ,<minecraft:leather> ,<minecraft:leather> ,<biomesoplenty:plant_1>]);
+eggRecipe("animania:buck_kinder"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:vacuos>*30],
+<animania:entity_egg_buck_kinder>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:plant_1> ,<minecraft:leather> ,<minecraft:leather> ,<biomesoplenty:plant_1>]);
+
+eggRecipe("animania:doe_nigerian_dwarf"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:perditio>*30],
+<animania:entity_egg_doe_nigerian_dwarf>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<biomesoplenty:plant_0:7> ,<minecraft:leather> ,<minecraft:leather> ,<biomesoplenty:plant_0:7>]);
+eggRecipe("animania:buck_nigerian_dwarf"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:perditio>*30],
+<animania:entity_egg_buck_nigerian_dwarf>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:plant_0:7> ,<minecraft:leather> ,<minecraft:leather> ,<biomesoplenty:plant_0:7>]);
+
+eggRecipe("animania:doe_pygmy"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:fluctus>*30],
+<animania:entity_egg_doe_pygmy>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<rustic:grape_stem> ,<biomesoplenty:plant_0:6> ,<minecraft:mutton> ,<minecraft:mutton> ,<biomesoplenty:plant_0:6>]);
+eggRecipe("animania:buck_pygmy"        ,"goat", 
+[<aspect:bestia>*60    ,<aspect:terra>*60          ,<aspect:sanguis>*30        ,<aspect:fluctus>*30],
+<animania:entity_egg_buck_pygmy>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:sheep"}}),
+[<minecraft:pumpkin_seeds> ,<biomesoplenty:plant_0:6> ,<minecraft:mutton> ,<minecraft:mutton> ,<biomesoplenty:plant_0:6>]);
+
+#Horse
+
+eggRecipe("animania:mare_draft"        ,"horse", 
+[<aspect:bestia>*150    ,<aspect:terra>*90          ,<aspect:motus>*90          ,<aspect:victus>*150],
+<animania:entity_egg_doe_pygmy>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:horse"}}),
+[<rustic:grape_stem> ,<minecraft:hay_block> ,<minecraft:hay_block> ,<minecraft:hay_block> ,<minecraft:hay_block>]);
+eggRecipe("animania:stallion_draft"        ,"horse", 
+[<aspect:bestia>*150    ,<aspect:terra>*90          ,<aspect:motus>*90          ,<aspect:victus>*150],
+<animania:entity_egg_buck_pygmy>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:horse"}}),
+[<minecraft:pumpkin_seeds> ,<minecraft:hay_block> ,<minecraft:hay_block> ,<minecraft:hay_block> ,<minecraft:hay_block>]);
+
+#Peacocks
+
+eggRecipe("animania:peahen_charcoal"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:tenebrae>*30],
+<animania:entity_egg_peahen_charcoal>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune:15> ,<ore:feather> ,<ore:feather> ,<quark:rune:15>]);
+eggRecipe("animania:peacock_charcoal"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:tenebrae>*30],
+<animania:entity_egg_peacock_charcoal>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune:15> ,<ore:feather> ,<ore:feather> ,<quark:rune:15>]);
+
+eggRecipe("animania:peahen_opal"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:fluctus>*30],
+<animania:entity_egg_peahen_opal>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune:11> ,<ore:feather> ,<ore:feather> ,<quark:rune:11>]);
+eggRecipe("animania:peacock_opal"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:fluctus>*30],
+<animania:entity_egg_peacock_opal>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune:11> ,<ore:feather> ,<ore:feather> ,<quark:rune:11>]);
+
+eggRecipe("animania:peahen_peach"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:vinculum>*30],
+<animania:entity_egg_peahen_peach>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune:1>]);
+eggRecipe("animania:peacock_peach"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:vinculum>*30],
+<animania:entity_egg_peacock_peach>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune:1> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune:1>]);
+
+eggRecipe("animania:peahen_purple"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:alienis>*30],
+<animania:entity_egg_peahen_purple>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune:2> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune:2>]);
+eggRecipe("animania:peacock_purple"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:alienis>*30],
+<animania:entity_egg_peacock_purple>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune:2> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune:2>]);
+
+eggRecipe("animania:peahen_taupe"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:sonus>*30],
+<animania:entity_egg_peahen_taupe>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune:4> ,<ore:feather> ,<ore:feather> ,<quark:rune:4>]);
+eggRecipe("animania:peacock_taupe"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:sonus>*30],
+<animania:entity_egg_peacock_taupe>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune:4> ,<ore:feather> ,<ore:feather> ,<quark:rune:4>]);
+
+eggRecipe("animania:peahen_blue"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:aqua>*30],
+<animania:entity_egg_peahen_blue>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune:3> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune:3>]);
+eggRecipe("animania:peacock_blue"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:aqua>*30],
+<animania:entity_egg_peacock_blue>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune:3> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune:3>]);
+
+eggRecipe("animania:peahen_white"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:ordo>*30],
+<animania:entity_egg_peahen_white>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<rustic:grape_stem> ,<quark:rune> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune>]);
+eggRecipe("animania:peacock_white"        ,"peacock", 
+[<aspect:bestia>*60    ,<aspect:ventus>*60         ,<aspect:auram>*30          ,<aspect:ordo>*30],
+<animania:entity_egg_peacock_white>       ,<minecraft:spawn_egg>.withTag({EntityTag: {id: "minecraft:chicken"}}),
+[<minecraft:pumpkin_seeds> ,<quark:rune> ,<minecraft:chicken> ,<minecraft:chicken> ,<quark:rune>]);
+
+#Frogs
+
+eggRecipe("animania:frog"        ,"frog", 
+[<aspect:bestia>*60    ,<aspect:exanimis>*60       ,<aspect:perditio>*30          ,<aspect:victus>*30],
+<animania:entity_egg_frog>       ,<ore:egg>,
+[<biomesoplenty:flower_0:1> ,<minecraft:waterlily> ,<minecraft:waterlily>]);
+
+eggRecipe("animania:toad"        ,"frog", 
+[<aspect:bestia>*60    ,<aspect:exanimis>*60       ,<aspect:perditio>*30          ,<aspect:vinculum>*30],
+<animania:entity_egg_toad>       ,<ore:egg>,
+[<biomesoplenty:mushroom:4> ,<minecraft:waterlily> ,<minecraft:waterlily>]);
+
+eggRecipe("animania:dart_frog"        ,"frog", 
+[<aspect:bestia>*60    ,<aspect:exanimis>*60       ,<aspect:perditio>*30          ,<aspect:alkimia>*30],
+<animania:entity_egg_dart_frog>       ,<ore:egg>,
+[<biomesoplenty:plant_0:4> ,<minecraft:waterlily> ,<minecraft:waterlily>]);
+
+#Exotics
+
+eggRecipe("animania:hedgehog"        ,"exotic", 
+[<aspect:bestia>*60    ,<aspect:terra>*60       ,<aspect:aversio>*30          ,<aspect:praemunio>*30],
+<animania:entity_egg_hedgehog>       ,<ore:egg>,
+[<quark:root_flower:2> ,<extrautils2:spike_wood> ,<extrautils2:spike_wood> ,<extrautils2:spike_wood>]);
+
+eggRecipe("animania:hedgehog_albino"        ,"exotic", 
+[<aspect:bestia>*60    ,<aspect:terra>*60       ,<aspect:aversio>*30          ,<aspect:ordo>*30],
+<animania:entity_egg_hedgehog_albino>       ,<ore:egg>,
+[<quark:root_flower:1> ,<extrautils2:spike_wood> ,<extrautils2:spike_wood> ,<extrautils2:spike_wood>]);
+
+eggRecipe("animania:hamster"        ,"exotic", 
+[<aspect:bestia>*60    ,<aspect:terra>*60       ,<aspect:machina>*30          ,<aspect:motus>*30],
+<animania:entity_egg_hamster>       ,<ore:egg>,
+[<animania:hamster_ball_colored:*> ,<ore:listAllseed> ,<ore:listAllseed>]);
+
+eggRecipe("animania:ferret_white"        ,"exotic", 
+[<aspect:bestia>*60    ,<aspect:terra>*60       ,<aspect:desiderium>*30          ,<aspect:ordo>*30],
+<animania:entity_egg_ferret_white>       ,<ore:egg>,
+[<botania:petal> ,<quark:golden_frog_leg> ,<quark:golden_frog_leg>]);
+
+eggRecipe("animania:ferret_grey"        ,"exotic", 
+[<aspect:bestia>*60    ,<aspect:terra>*60       ,<aspect:desiderium>*30          ,<aspect:perditio>*30],
+<animania:entity_egg_ferret_grey>       ,<ore:egg>,
+[<botania:petal:7> ,<quark:golden_frog_leg> ,<quark:golden_frog_leg>]);
 
 /*
  ██████╗ ████████╗██╗  ██╗███████╗██████╗ 
