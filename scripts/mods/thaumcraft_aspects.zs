@@ -162,44 +162,44 @@ Animania
 #Rabbits
 
 <animania:entity_egg_doe_cottontail>            .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fabrico>*10); 
-<entity:animania:doe_cottontail>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fabrico>*10);  
+#<entity:animania:doe_cottontail>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fabrico>*10);  
 <animania:entity_egg_buck_cottontail>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fabrico>*10); 
-<entity:animania:buck_cottontail>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fabrico>*10);
+#<entity:animania:buck_cottontail>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fabrico>*10);
 
 <animania:entity_egg_doe_chinchilla>            .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:aer>*10); 
-<entity:animania:doe_chinchilla>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:aer>*10);  
+#<entity:animania:doe_chinchilla>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:aer>*10);  
 <animania:entity_egg_buck_chinchilla>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:aer>*10); 
-<entity:animania:buck_chinchilla>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:aer>*10);
+#<entity:animania:buck_chinchilla>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:aer>*10);
 
 <animania:entity_egg_doe_dutch>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fluctus>*10); 
-<entity:animania:doe_dutch>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fluctus>*10);  
+#<entity:animania:doe_dutch>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fluctus>*10);  
 <animania:entity_egg_buck_dutch>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fluctus>*10); 
-<entity:animania:buck_dutch>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fluctus>*10);
+#<entity:animania:buck_dutch>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:fluctus>*10);
 
 <animania:entity_egg_doe_havana>                .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:exitium>*10); 
-<entity:animania:doe_havana>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:exitium>*10);  
+#<entity:animania:doe_havana>                    .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:exitium>*10);  
 <animania:entity_egg_buck_havana>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:exitium>*10); 
-<entity:animania:buck_havana>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:exitium>*10);
+#<entity:animania:buck_havana>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:exitium>*10);
 
 <animania:entity_egg_doe_jack>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:vinculum>*10); 
-<entity:animania:doe_jack>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:vinculum>*10);  
+#<entity:animania:doe_jack>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:vinculum>*10);  
 <animania:entity_egg_buck_jack>                 .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:vinculum>*10); 
-<entity:animania:buck_jack>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:vinculum>*10);
+#<entity:animania:buck_jack>                     .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:vinculum>*10);
 
 <animania:entity_egg_doe_new_zealand>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:ordo>*10); 
-<entity:animania:doe_new_zealand>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:ordo>*10);  
+#<entity:animania:doe_new_zealand>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:ordo>*10);  
 <animania:entity_egg_buck_new_zealand>          .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:ordo>*10); 
-<entity:animania:buck_new_zealand>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:ordo>*10);
+#<entity:animania:buck_new_zealand>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:ordo>*10);
 
 <animania:entity_egg_doe_rex>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:imperium>*10); 
-<entity:animania:doe_rex>                       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:imperium>*10);  
+#<entity:animania:doe_rex>                       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:imperium>*10);  
 <animania:entity_egg_buck_rex>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:imperium>*10); 
-<entity:animania:buck_rex>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:imperium>*10);
+#<entity:animania:buck_rex>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:imperium>*10);
 
 <animania:entity_egg_doe_lop>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10); 
-<entity:animania:doe_lop>                       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10);  
+#<entity:animania:doe_lop>                       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10);  
 <animania:entity_egg_buck_lop>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10); 
-<entity:animania:buck_lop>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10);
+#<entity:animania:buck_lop>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:visum>*10        ,<aspect:cognitio>*10);
 
 #Goats (Disabled directs aspects on entity due to bug)
 
@@ -241,74 +241,74 @@ Animania
 #Horse
 
 <animania:entity_egg_mare_draft>                .setAspects(<aspect:bestia>*50    ,<aspect:terra>*30          ,<aspect:motus>*30          ,<aspect:victus>*50); 
-<entity:animania:mare_draft>                    .setAspects(<aspect:bestia>*50    ,<aspect:terra>*30          ,<aspect:motus>*30          ,<aspect:victus>*50); 
+#<entity:animania:mare_draft>                    .setAspects(<aspect:bestia>*50    ,<aspect:terra>*30          ,<aspect:motus>*30          ,<aspect:victus>*50); 
 <animania:entity_egg_stallion_draft>            .setAspects(<aspect:bestia>*50    ,<aspect:terra>*30          ,<aspect:motus>*30          ,<aspect:victus>*50); 
-<entity:animania:stallion_draft>                .setAspects(<aspect:bestia>*50    ,<aspect:terra>*30          ,<aspect:motus>*30          ,<aspect:victus>*50); 
+#<entity:animania:stallion_draft>                .setAspects(<aspect:bestia>*50    ,<aspect:terra>*30          ,<aspect:motus>*30          ,<aspect:victus>*50); 
 
 #Peacocks
 
 <animania:entity_egg_peahen_charcoal>           .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:tenebrae>*10); 
-<entity:animania:peahen_charcoal>               .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:tenebrae>*10);  
+#<entity:animania:peahen_charcoal>               .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:tenebrae>*10);  
 <animania:entity_egg_peacock_charcoal>          .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:tenebrae>*10); 
-<entity:animania:peacock_charcoal>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:tenebrae>*10);
+#<entity:animania:peacock_charcoal>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:tenebrae>*10);
 
 <animania:entity_egg_peahen_opal>               .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:fluctus>*10); 
-<entity:animania:peahen_opal>                   .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:fluctus>*10);  
+#<entity:animania:peahen_opal>                   .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:fluctus>*10);  
 <animania:entity_egg_peacock_opal>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:fluctus>*10); 
-<entity:animania:peacock_opal>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:fluctus>*10);
+#<entity:animania:peacock_opal>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:fluctus>*10);
 
 <animania:entity_egg_peahen_peach>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:vinculum>*10); 
-<entity:animania:peahen_peach>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:vinculum>*10);  
+#<entity:animania:peahen_peach>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:vinculum>*10);  
 <animania:entity_egg_peacock_peach>             .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:vinculum>*10); 
-<entity:animania:peacock_peach>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:vinculum>*10);
+#<entity:animania:peacock_peach>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:vinculum>*10);
 
 <animania:entity_egg_peahen_purple>             .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:alienis>*10); 
-<entity:animania:peahen_purple>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:alienis>*10);  
+#<entity:animania:peahen_purple>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:alienis>*10);  
 <animania:entity_egg_peacock_purple>            .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:alienis>*10); 
-<entity:animania:peacock_purple>                .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:alienis>*10);
+#<entity:animania:peacock_purple>                .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:alienis>*10);
 
 <animania:entity_egg_peahen_taupe>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:sonus>*10); 
-<entity:animania:peahen_taupe>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:sonus>*10);  
+#<entity:animania:peahen_taupe>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:sonus>*10);  
 <animania:entity_egg_peacock_taupe>             .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:sonus>*10); 
-<entity:animania:peacock_taupe>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:sonus>*10);
+#<entity:animania:peacock_taupe>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:sonus>*10);
 
 <animania:entity_egg_peahen_blue>               .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:aqua>*10); 
-<entity:animania:peahen_blue>                   .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:aqua>*10);  
+#<entity:animania:peahen_blue>                   .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:aqua>*10);  
 <animania:entity_egg_peacock_blue>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:aqua>*10); 
-<entity:animania:peacock_blue>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:aqua>*10);
+#<entity:animania:peacock_blue>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:aqua>*10);
 
 <animania:entity_egg_peahen_white>              .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:ordo>*10); 
-<entity:animania:peahen_white>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:ordo>*10);  
+#<entity:animania:peahen_white>                  .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:ordo>*10);  
 <animania:entity_egg_peacock_white>             .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:ordo>*10); 
-<entity:animania:peacock_white>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:ordo>*10);
+#<entity:animania:peacock_white>                 .setAspects(<aspect:bestia>*20    ,<aspect:ventus>*20         ,<aspect:auram>*10          ,<aspect:ordo>*10);
 
 #Frogs
 
 <animania:entity_egg_frog>                      .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:victus>*10); 
-<entity:animania:frog>                          .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:victus>*10);  
+#<entity:animania:frog>                          .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:victus>*10);  
 
 <animania:entity_egg_toad>                      .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:vinculum>*10); 
-<entity:animania:toad>                          .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:vinculum>*10); 
+#<entity:animania:toad>                          .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:vinculum>*10); 
 
 <animania:entity_egg_dart_frog>                 .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:alkimia>*10); 
-<entity:animania:dart_frog>                     .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:alkimia>*10); 
+#<entity:animania:dart_frog>                     .setAspects(<aspect:bestia>*20    ,<aspect:exanimis>*20       ,<aspect:perditio>*10          ,<aspect:alkimia>*10); 
 
 #Exotics
 
 <animania:entity_egg_hedgehog>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:aversio>*10          ,<aspect:praemunio>*10); 
-<entity:animania:hedgehog>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:aversio>*10          ,<aspect:praemunio>*10); 
+#<entity:animania:hedgehog>                      .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:aversio>*10          ,<aspect:praemunio>*10); 
 
 <animania:entity_egg_hedgehog_albino>           .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:aversio>*10          ,<aspect:ordo>*10); 
-<entity:animania:hedgehog_albino>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:aversio>*10          ,<aspect:ordo>*10); 
+#<entity:animania:hedgehog_albino>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:aversio>*10          ,<aspect:ordo>*10); 
 
 <animania:entity_egg_hamster>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:machina>*10          ,<aspect:motus>*10); 
-<entity:animania:hamster>                       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:machina>*10          ,<aspect:motus>*10); 
+#<entity:animania:hamster>                       .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:machina>*10          ,<aspect:motus>*10); 
 
 <animania:entity_egg_ferret_white>              .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:desiderium>*10       ,<aspect:ordo>*10); 
-<entity:animania:ferret_white>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:desiderium>*10       ,<aspect:ordo>*10); 
+#<entity:animania:ferret_white>                  .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:desiderium>*10       ,<aspect:ordo>*10); 
 
 <animania:entity_egg_ferret_grey>               .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:desiderium>*10       ,<aspect:perditio>*10); 
-<entity:animania:ferret_grey>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:desiderium>*10       ,<aspect:perditio>*10); 
+#<entity:animania:ferret_grey>                   .setAspects(<aspect:bestia>*20    ,<aspect:terra>*20          ,<aspect:desiderium>*10       ,<aspect:perditio>*10); 
 
 /*
 #######################################################
