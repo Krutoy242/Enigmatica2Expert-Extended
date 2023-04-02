@@ -5,8 +5,7 @@
             "name": "research_name.thaumadditions:traveller_belt",
             "icons": [ "thaumadditions:traveller_belt" ],
             "category": "INFUSION", "location": [ -2,0 ], 
-            "parents": [ "BOOTSTRAVELLER" ],
-            "meta":["HIDDEN"],     
+            "parents": [ "BOOTSTRAVELLER" ],    
             "stages": [
                 {
                     "text": "research_stage.thaumadditions:traveller_belt.1", 
@@ -24,7 +23,6 @@
             "icons": [ "thaumadditions:striding_belt" ],
             "category": "INFUSION", "location": [ -2,-2 ], 
             "parents": [ "TRAVELLERBELT" ],
-            "meta":["HIDDEN"],     
             "stages": [
                 {
                     "text": "research_stage.thaumadditions:striding_belt.1", 
@@ -41,8 +39,7 @@
             "name": "research_name.thaumadditions:meteor_belt",
             "icons": [ "thaumadditions:meteor_belt" ],
             "category": "INFUSION", "location": [ -2,-4 ], 
-            "parents": [ "STRIDINGBELT" ],
-            "meta":["HIDDEN"],     
+            "parents": [ "STRIDINGBELT" ],   
             "stages": [
                 {
                     "text": "research_stage.thaumadditions:meteor_belt.1", 
@@ -60,8 +57,7 @@
             "name": "item.thaumadditions:recharge_charm.name",
             "icons": [ "thaumadditions:recharge_charm" ],
             "category": "INFUSION", "location": [ 6,3 ], 
-            "parents": [ "VERDANTCHARMS","VISAMULET" ],
-            "meta":["HIDDEN"],     
+            "parents": [ "VERDANTCHARMS","VISAMULET" ],  
             "stages": [
                 {
                     "text": "research.recharge_charm.1", 
@@ -79,7 +75,6 @@
             "icons": [ "thaumadditions:entity_summoner" ],
             "category": "INFUSION", "location": [ 2,6 ], 
             "parents": [ "INFUSIONSTABLE" ],
-            "meta":["HIDDEN"],     
             "stages": [
                 {
                     "text": "research_stage.thaumadditions:mob_summoning.1", 
