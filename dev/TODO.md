@@ -3,10 +3,15 @@
 List of priorities:
 
 - [ ] 💥 `world.catenation()` doesnt working anymore
-- [ ] 💥 bow On Dragon Causing Crash
-- [ ] 💥 Placing something on Rustic's slabs crashing game
 - [ ] 💥 going Between Dims Causing Client Freezez
-- [ ] ✏️ dev/null/ with infinite Scaffold, Cobblestone
+- [ ] ✏️ Basic Processor QMD alt recipe (for players who won't build Irradiator)
+- [ ] 📀 Remove, 8% FPS `de.sanandrew.mods.immersivecables.client.render.RenderTileIWConnectable.setLightmap()`
+- [ ] 🍱 Add screenshots to main meny
+- [ ] 🔄 More Defaul Options not copy jei.cfg file
+- [ ] 🟢 Add https://www.curseforge.com/minecraft/mc-mods/packageddraconic
+- [ ] 🟢 Add https://www.curseforge.com/minecraft/mc-mods/ender-storage-1-12-continuation
+- [ ] 🟢 Add? https://www.curseforge.com/minecraft/mc-mods/blocks-booster
+- [ ] 🟢 Add? https://www.curseforge.com/minecraft/customization/moar-reactor-functionality
 
 ### v0.89.0 -> Next
 - Turn off Fusion reactors since plasma
@@ -19,6 +24,15 @@ List of priorities:
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] 📖 Fix completion of quest chapters
+- [ ] 🔄 Dispencers still converted into Lootr chests even when blacklisted https://github.com/noobanidus/Lootr/issues/183
+- [ ] 📀 Tweak Myrmex trades
+- [ ] ✏️ `Conglomerate of Life` spawns Foxes and Pigmen near portal
+- [ ] ✏️ `Conglomerate of Coal` should buff portal spread with `onRandomTick`
+- [ ] 🔨 rework Difficulty Trait
+- [ ] ✏️ Quark Frog Drop Cooked Legs on death
+- [ ] 🔄 Giant chest disable sort buttons
+- [ ] 📀 Rebalance Sage and Druids trades
 - [ ] ✏️ Add compressed `Charged Creeper chunk`
 - [ ] ✏️ Make Seared Stone + Essence alternative in adv. machinesl
 - [ ] 📀 Make Vase accept only unstackable items, increase size https://github.com/cadaverous-eris/Rustic/blob/master/src/main/java/rustic/common/tileentity/ContainerVase.java

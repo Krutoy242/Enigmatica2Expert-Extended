@@ -73,7 +73,7 @@ val merchData = {
         [E*10, <animania:entity_egg_sheep_random>],
         [E*50, <openblocks:trophy>.withTag({entity_id: "minecraft:sheep"})],
         [E*2, <thermalfoundation:rockwool:7>],
-        [<thermalfoundation:rockwool:*>, E],
+        [<thermalfoundation:rockwool>, E],
       ],
     },
     "farmer": {
@@ -106,8 +106,8 @@ val merchData = {
         [E*10, <mia:packed_paper> * 2],
       ],
       6: [
-        [E*10, <minecraft:bookshelf:*>, <cyclicmagic:block_library>],
-        [E*40, <minecraft:bookshelf:*>, <cyclicmagic:block_library_ctrl>],
+        [E*10, <minecraft:bookshelf>, <cyclicmagic:block_library>],
+        [E*40, <minecraft:bookshelf>, <cyclicmagic:block_library_ctrl>],
       ],
     },
     "librarian": {
@@ -134,6 +134,9 @@ val merchData = {
       ],
       6: [
         [E*48, <tconevo:part_arcane_focus>.withTag({Material: "pulsating_crystal"})],
+      ],
+      7: [
+        [E*64, <thermalfoundation:material:895>, <advancedrocketry:aliensapling>],
       ],
     },
   },

@@ -12,6 +12,10 @@ mods.jei.JEI.hideCategory('nuclearcraft_pebble_fission');
 <ore:ingotPlutonium239All>.add(<ic2:nuclear:3>);
 recipes.addShapeless('Plutonium conversion', <nuclearcraft:plutonium:5> * 2, [<ic2:nuclear:3>, <ic2:nuclear:3>]);
 
+// Add missed Manganese Blocks recipes
+utils.compact(<nuclearcraft:ingot:14>, <nuclearcraft:ingot_block:14>);
+utils.compact(<nuclearcraft:ingot:15>, <nuclearcraft:ingot_block:15>);
+
 // ------------------------------------------------------------------
 // Recipes and integrations
 // ------------------------------------------------------------------
@@ -173,6 +177,11 @@ mods.mekanism.infuser.addRecipe("GLOWSTONE", 10, <minecraft:redstone>, <nuclearc
 
 # Graphite from coal
 furnace.addRecipe(<nuclearcraft:ingot:8>, <minecraft:coal:*>);
+
+# Coal casted into graphite block
+mods.tconstruct.Casting.removeBasinRecipe(<nuclearcraft:ingot_block:8>);
+mods.tconstruct.Casting.addBasinRecipe(<nuclearcraft:ingot_block:8>, null, <liquid:coal>, 900);
+mods.tconstruct.Melting.addRecipe(<liquid:coal> * 900, <nuclearcraft:ingot_block:8>);
 
 # Diamond from 64 graphite
 scripts.process.compress(<ore:dustGraphite> * 64, <minecraft:diamond>, "except: Compressor");
@@ -543,6 +552,14 @@ for mod, types in nuclearData {
       // if(!isNull(isotope)) furnace.remove(isotope);
       if(!isNull(pellet)) furnace.remove(pellet);
       if(!isNull(fuel)) furnace.remove(fuel);
+      
+      // Add un-zirconium recipes
+      if(
+        !isNull(isotope_zirc) &&
+        !(key == 'curium' && (i == 4 || i == 5)) &&
+        !(key == 'uranium' && i == 3)
+      )
+        furnace.addRecipe(isotope, isotope_zirc);
 
       // Pebbles
       utils.rh(fuel);
