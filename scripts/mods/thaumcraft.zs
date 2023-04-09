@@ -6,8 +6,6 @@ import crafttweaker.data.IData;
 
 #modloaded thaumcraft
 
-val apple = <minecraft:apple>;
-
 # Add durability to scribbing tools
 <thaumcraft:scribing_tools>.maxDamage = 600;
 
