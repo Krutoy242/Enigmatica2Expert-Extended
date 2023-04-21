@@ -1,7 +1,7 @@
 #TODO: Provide instructions for modpack devs.
 ---
 ModPackConfigName: "BBOP-Extended"
-ModPackConfigVersion: 1
+ModPackConfigVersion: 10
 ShowOTGWorldCreationMenu: true
 version: 1
 WorldName: "BBOP-Extended"
@@ -26,7 +26,7 @@ Overworld:
     PortalMobSpawnChance: 2000
     IsOTGPlus: false
     DimensionBelow: ""
-    DimensionAbove: "Void"
+    DimensionAbove: ""
     DimensionBelowHeight: 0
     DimensionAboveHeight: 342
     TeleportToSpawnOnly: false
@@ -91,7 +91,7 @@ Overworld:
 Dimensions:
 - PresetName: "Void"
   DimensionId: 3
-  ShowInWorldCreationGUI: true
+  ShowInWorldCreationGUI: false
   LowestSupportedModPackConfigVersion: 999
   RemoveOnUpdate: true
   Seed: ""
@@ -108,7 +108,7 @@ Dimensions:
     PortalMobType: "zombie_pigman"
     PortalMobSpawnChance: 2000
     IsOTGPlus: false
-    DimensionBelow: "BBOP-Extended"
+    DimensionBelow: ""
     DimensionAbove: ""
     DimensionBelowHeight: -50
     DimensionAboveHeight: 256
@@ -176,7 +176,7 @@ Dimensions:
   ShowInWorldCreationGUI: false
   LowestSupportedModPackConfigVersion: 0
   RemoveOnUpdate: false
-  Seed: "5300750530647233536"
+  Seed: ""
   GameType: "Survival"
   BonusChest: false
   AllowCheats: false
