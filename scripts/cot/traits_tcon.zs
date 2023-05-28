@@ -2,6 +2,7 @@
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
+import crafttweaker.item.WeightedItemStack;
 import crafttweaker.block.IBlockState;
 import crafttweaker.event.IBlockEvent;
 import crafttweaker.player.IPlayer;
@@ -394,86 +395,122 @@ t.register();
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
-
-# -------------------------------
-# Mithrillium
-# -------------------------------
-
+/*
+███╗   ███╗██╗████████╗██╗  ██╗██████╗ ██╗██╗     ██╗     ██╗██╗   ██╗███╗   ███╗
+████╗ ████║██║╚══██╔══╝██║  ██║██╔══██╗██║██║     ██║     ██║██║   ██║████╗ ████║
+██╔████╔██║██║   ██║   ███████║██████╔╝██║██║     ██║     ██║██║   ██║██╔████╔██║
+██║╚██╔╝██║██║   ██║   ██╔══██║██╔══██╗██║██║     ██║     ██║██║   ██║██║╚██╔╝██║
+██║ ╚═╝ ██║██║   ██║   ██║  ██║██║  ██║██║███████╗███████╗██║╚██████╔╝██║ ╚═╝ ██║
+╚═╝     ╚═╝╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝     ╚═╝
+*/
 # Vis Siphon (tools)
+/*
+_  _ _ ____    ____ _ ___  _  _ ____ _  _    ___ ____ ____ _    ____ 
+|  | | [__     [__  | |__] |__| |  | |\ |     |  |  | |  | |    [__  
+ \/  | ___]    ___] | |    |  | |__| | \|     |  |__| |__| |___ ___] 
+                                                                     
+*/ 
 
-val auraTrait = TraitBuilder.create("vis_siphon");
-auraTrait.color = 2852604;
-auraTrait.localizedName = game.localize("e2ee.tconstruct.material.vis_siphon.name");
-auraTrait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_siphon.description");
-auraTrait.maxLevel = 1;
-auraTrait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
+val visSiphon_Trait = TraitBuilder.create("vis_siphon");
+visSiphon_Trait.color = 2852604;
+visSiphon_Trait.localizedName = game.localize("e2ee.tconstruct.material.vis_siphon.name");
+visSiphon_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_siphon.description");
+visSiphon_Trait.maxLevel = 1;
+visSiphon_Trait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
+  if(world.isRemote()) return;                  # world is remote
+  if(!owner instanceof IPlayer) return;         # no player
+  if(tool.damage == 0) return;                   # tool max durability
+  if(world.getVis(owner.position)<1.0f) return; # no vis in aura
+
+  tool.mutable().damageItem(-1, owner);
+  world.drainVis(owner.position, 0.3f); #that value is actually x3
+};
+visSiphon_Trait.register();
+
+/*
+_  _ _ ____    ____ _ ___  _  _ ____ _  _    ____ ____ _  _ ____ ____ 
+|  | | [__     [__  | |__] |__| |  | |\ |    |__| |__/ |\/| |  | |__/ 
+ \/  | ___]    ___] | |    |  | |__| | \|    |  | |  \ |  | |__| |  \ 
+                                                                      
+*/
+
+val visSiphonArmor_Trait = ArmorTraitBuilder.create("vis_siphon");
+visSiphonArmor_Trait.color = 2852604;
+visSiphonArmor_Trait.localizedName = game.localize("e2ee.tconstruct.material.vis_siphon.name");
+visSiphonArmor_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_siphon.description");
+visSiphonArmor_Trait.maxLevel = 1;
+visSiphonArmor_Trait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
+  if(world.isRemote()) return;                  # world is remote
+  if(!owner instanceof IPlayer) return;         # no player
+  if(tool.damage == 0) return;                   # tool max durability
+  if(world.getVis(owner.position)<1.0f) return; # no vis in aura
+
+  tool.mutable().damageItem(-1, owner);
+  world.drainVis(owner.position, 0.3f); #that value is actually x3
+};
+visSiphonArmor_Trait.register();
+
+/*
+_  _ _ ____    ____ ____ _  _ _ _    _ ___  ____ _ _  _ _  _    ___ ____ ____ _    ____ 
+|  | | [__     |___ |  | |  | | |    | |__] |__/ | |  | |\/|     |  |  | |  | |    [__  
+ \/  | ___]    |___ |_\| |__| | |___ | |__] |  \ | |__| |  |     |  |__| |__| |___ ___] 
+                                                                                        
+*/
+
+val equilibrium_Trait = TraitBuilder.create("vis_equilibrium");
+equilibrium_Trait.color = 2852604;
+equilibrium_Trait.localizedName = game.localize("e2ee.tconstruct.material.vis_equilibrium.name");
+equilibrium_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_equilibrium.description");
+
+//Bonus mining speed depending on vis in aura
+equilibrium_Trait.getMiningSpeed = function(trait, tool, event) {
+  if(event.player.world.isRemote()) return; # world is remote
+  //val bonus = min(3.0f,event.player.world.getVis(event.position)*0.01f) as float;
+  event.newSpeed = event.originalSpeed + (min(3.0f,event.player.world.getVis(event.position)*0.01f) as float);
+};
+//Bonus dmg multiplier depending on vis in aura
+equilibrium_Trait.calcDamage = function(trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
+  if(attacker.world.isRemote()) return newDamage;     # world is not remote
+  if(!attacker instanceof IPlayer) return newDamage;  # not player
+  //val mult = 1+min(3.0f,attacker.world.getVis(attacker.position)*0.01f) as float;
+	return newDamage*((1+min(3.0f,attacker.world.getVis(attacker.position)*0.01f)) as float);
+};
+//Relese vis on kill
+equilibrium_Trait.onHit = function(trait, tool, attacker, target, damage, isCritical) {
+  if(attacker.world.isRemote()) return;     # world is remote
+  if(!attacker instanceof IPlayer) return;  # not player
+  var player as IPlayer = attacker;
   
-  /*val x = owner.getX() as float;
-  val y = owner.getY() as float;
-  val z = owner.getZ() as float;
-  val pos = crafttweaker.util.Position3f.create( x, y, z) as IBlockPos;*/
-  if (tool.damage > 0 & world.getVis(owner.position)>1){ 
-    tool.mutable().damageItem(-1, owner);
-    world.drainVis(owner.position, 0.3f); #that value is actually x3
+  if(target.health - damage < 0) player.world.addVis(player.position, (target.maxHealth/2.0f) as float); # release vis
+  return;
+};
+equilibrium_Trait.register();
+
+/*
+_  _ _ ____    ____ ____ _  _ _ _    _ ___  ____ _ _  _ _  _    ____ ____ _  _ ____ ____ 
+|  | | [__     |___ |  | |  | | |    | |__] |__/ | |  | |\/|    |__| |__/ |\/| |  | |__/ 
+ \/  | ___]    |___ |_\| |__| | |___ | |__] |  \ | |__| |  |    |  | |  \ |  | |__| |  \ 
+                                                                                         
+*/
+
+val equilibriumArmor_Trait = ArmorTraitBuilder.create("vis_equilibrium");
+equilibriumArmor_Trait.color = 2852604;
+equilibriumArmor_Trait.localizedName = game.localize("e2ee.tconstruct.material.vis_equilibrium.name");
+equilibriumArmor_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_equilibrium.description");
+equilibriumArmor_Trait.getModifications = function(trait, player, mods, armor, damageSource, damage, index) {
+  if(!player.world.isRemote()){
+    mods.effectiveness += max(3.0f,player.world.getVis(player.position)*0.01f);
   }
-};
-auraTrait.register();
-
-# Vis Siphon (armor)
-
-val aura2Trait = ArmorTraitBuilder.create("vis_siphon");
-aura2Trait.color = 2852604;
-aura2Trait.localizedName = game.localize("e2ee.tconstruct.material.vis_siphon.name");
-aura2Trait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_siphon.description");
-aura2Trait.maxLevel = 1;
-aura2Trait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
-  /*val x = owner.getX() as float;
-  val y = owner.getY() as float;
-  val z = owner.getZ() as float;
-  val pos = crafttweaker.util.Position3f.create( x, y, z) as IBlockPos;*/
-  if (tool.damage > 0 & world.getVis(owner.position)>1){ 
-    tool.mutable().damageItem(-1, owner);
-    world.drainVis(owner.position, 0.3f); #that value is actually x3
-  }
-};
-aura2Trait.register();
-
-# Vis Equilibrium (tools)
-
-val equilibriumTrait = TraitBuilder.create("vis_equilibrium");
-equilibriumTrait.color = 2852604;
-equilibriumTrait.localizedName = game.localize("e2ee.tconstruct.material.vis_equilibrium.name");
-equilibriumTrait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_equilibrium.description");
-equilibriumTrait.getMiningSpeed = function(trait, tool, event) {
-  val bonus = min(3.0f,event.player.world.getVis(event.position)*0.01f) as float;
-  event.newSpeed = event.originalSpeed + bonus;
-};
-equilibriumTrait.calcDamage = function(trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-  /*val x = attacker.getX() as float;
-  val y = attacker.getY() as float;
-  val z = attacker.getZ() as float;
-  val pos = crafttweaker.util.Position3f.create( x, y, z) as IBlockPos;*/
-  val mult = 1+min(3.0f,attacker.world.getVis(attacker.position)*0.01f) as float;
-	return originalDamage*mult;
-};
-equilibriumTrait.register();
-
-# Vis Equilibrium (armor)
-
-val equilibrium2Trait = ArmorTraitBuilder.create("vis_equilibrium");
-equilibrium2Trait.color = 2852604;
-equilibrium2Trait.localizedName = game.localize("e2ee.tconstruct.material.vis_equilibrium.name");
-equilibrium2Trait.localizedDescription = game.localize("e2ee.tconstruct.material.vis_equilibrium.description");
-equilibrium2Trait.getModifications = function(trait, player, mods, armor, damageSource, damage, index) {
-  /*val x = player.getX() as float;
-  val y = player.getY() as float;
-  val z = player.getZ() as float;
-  val pos = crafttweaker.util.Position3f.create( x, y, z) as IBlockPos;*/
-  mods.effectiveness += max(3.0f,player.world.getVis(player.position)*0.01f);
   return mods;
 };
-equilibrium2Trait.register();
+equilibriumArmor_Trait.register();
 
+/*
+_  _ _ ___ _  _ ____ _ _    _    _ _  _ _  _    ___  _  _ _ _    ___  
+|\/| |  |  |__| |__/ | |    |    | |  | |\/|    |__] |  | | |    |  \ 
+|  | |  |  |  | |  \ | |___ |___ | |__| |  |    |__] |__| | |___ |__/ 
+                                                                      
+*/
 
 val mithrillium = ExtendedMaterialBuilder.create("Mithrillium");
 mithrillium.color = 2852604;
@@ -486,45 +523,47 @@ mithrillium.addHeadMaterialStats(1000, 7.5f, 8.5f, 11);
 mithrillium.addHandleMaterialStats(1.5, -100);
 mithrillium.addExtraMaterialStats(50);
 mithrillium.addBowMaterialStats(1.0f, 3.0f, 1.0f);
+mithrillium.addProjectileMaterialStats();
 
 mithrillium.addCoreMaterialStats(9.0, 27.5);
 mithrillium.addPlatesMaterialStats(12.3, 12.5, 3.0);
 mithrillium.addTrimMaterialStats(5);
 
-mithrillium.itemLocalizer = function(thisMaterial, itemName){return "Mithrill " + itemName;};
-mithrillium.localizedName = "Mithrillium";
+mithrillium.itemLocalizer = function(thisMaterial, itemName){
+  return game.localize("e2ee.tconstruct.material.mithrillium.name") + " " + itemName;
+  };
+mithrillium.localizedName = game.localize("e2ee.tconstruct.material.mithrillium.name");
 
 mithrillium.addMaterialTrait("vis_siphon");
 mithrillium.addMaterialTrait("vis_siphon","head");
 mithrillium.addMaterialTrait("vis_equilibrium","head");
-mithrillium.addMaterialTrait("vis_siphon_armor","core");
+
+mithrillium.addMaterialTrait("vis_siphon_armor", "core");
+mithrillium.addMaterialTrait("vis_siphon_armor", "plates");
+mithrillium.addMaterialTrait("vis_siphon_armor", "trim");
 mithrillium.addMaterialTrait("vis_equilibrium_armor","core");
 mithrillium.register();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
-# -------------------------------
-# Adaminite
-# -------------------------------
+/*
+ █████╗ ██████╗  █████╗ ███╗   ███╗██╗███╗   ██╗██╗████████╗███████╗
+██╔══██╗██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║██║╚══██╔══╝██╔════╝
+███████║██║  ██║███████║██╔████╔██║██║██╔██╗ ██║██║   ██║   █████╗  
+██╔══██║██║  ██║██╔══██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║   ██╔══╝  
+██║  ██║██████╔╝██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║   ██║   ███████╗
+╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
+*/
+
+/*
+____ ____ ____ ___  _ ___  ___  ____ _  _ 
+|___ |  | |__/ |__] | |  \ |  \ |___ |\ | 
+|    |__| |  \ |__] | |__/ |__/ |___ | \| 
+                                          
+*/
 
 # Spin effect on player
 function spin(player as IPlayer) as void {
-  if (player.world.isRemote()) return;
   player.addPotionEffect(<potion:potioncore:spin>.makePotionEffect(7,1));
   player.sendStatusMessage(game.localize("warp.sword.warning"));
   return;
@@ -539,136 +578,198 @@ function debuffenemy(target as IEntityLivingBase, warp as int) as void{
       target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(600, min(1 , (warp - 100)/500 )));
       if(warp>=300){
         target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(600, min(3 , (warp - 300)/300 )));
-  }}else return;
-
-  print("wykonano funkcje deuff enemy");
+      }
+    }
   return;
 }
 
-function speakKill(player as IPlayer, world as IWorld) as void{
-  val k = "warp.sword.speak.random";
-  val r = world.random.nextInt(4);
-  player.sendStatusMessage(game.localize(k+r));
-  //player.playSound("thaumcraft:sounds/brain4.ogg", 0.5f, 0.5f);
-}
+# Trait
+val forbidden_Trait = TraitBuilder.create("forbidden");
+forbidden_Trait.color = 2852604;
+forbidden_Trait.localizedName = game.localize("e2ee.tconstruct.material.forbidden.name");
+forbidden_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.forbidden.description");
 
-val forbiddenTrait = TraitBuilder.create("forbidden");
-forbiddenTrait.color = 2852604;
-forbiddenTrait.localizedName = game.localize("e2ee.tconstruct.material.forbidden.name");
-forbiddenTrait.localizedDescription = game.localize("e2ee.tconstruct.material.forbidden.description");
-
-forbiddenTrait.onHit = function(trait, tool, attacker, target, damage, isCritical) {
-  if(attacker instanceof IPlayer){
+forbidden_Trait.onHit = function(trait, tool, attacker, target, damage, isCritical) {
+  if(attacker.world.isRemote()) return;
+  if(!attacker instanceof IPlayer) return;
   val player as IPlayer = attacker;
   val warp as int = player.warpNormal + player.warpTemporary + player.warpPermanent;
-    if(warp<50){
-      spin(player);
-      print("malo warpu");
-    }else{
-      debuffenemy(target, warp);
-    }
+  if(warp<50){
+        spin(player);
+        return;
+  } else {
+        debuffenemy(target, warp);
+        if(target.health - damage < 0) speakKill(player, player.world);
+        return;
+  }
+};
+forbidden_Trait.register();
 
-    if(target.health - damage < 0){
-      speakKill(player, player.world);
+/*
+___  ____ ____ ____ ____ ____ ____ ____ ___  
+|__] |  | [__  [__  |___ [__  [__  |___ |  \ 
+|    |__| ___] ___] |___ ___] ___] |___ |__/ 
+                                             
+*/
+
+val possessed_Trait = TraitBuilder.create("possessed");
+possessed_Trait.color = 2852604;
+possessed_Trait.localizedName = game.localize("e2ee.tconstruct.material.possessed.name");
+possessed_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.possessed.description");
+
+function checkIfWeapon(tool as IItemStack) as bool {
+  if(
+    !isNull(tool.tag)
+    && !isNull(tool.tag.Special)
+    && !isNull(tool.tag.Special.Categories)
+    && !isNull(tool.tag.Special.Categories.asList())
+    ) {
+      for tag in tool.tag.Special.Categories.asList() {
+        if(tag == "weapon") return true;
+      }
     }
+  return false;
+}
+
+# Speak randomly
+function speakRandom(player as IPlayer, world as IWorld) as void{
+  val k = "warp.sword.speak.random.";
+  val r = world.random.nextInt(9);
+  player.sendStatusMessage(game.localize(k+r));
+  player.sendPlaySoundPacket("thaumcraft:brain", "voice", player.position, 1.0f, 0.5f);
+}
+
+possessed_Trait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
+  if(world.isRemote()) return;
+  if(!checkIfWeapon(tool)) return;
+
+  if(!owner instanceof IPlayer) return;
+  val player as IPlayer = owner;
+  
+  if(player.warpNormal + player.warpTemporary + player.warpPermanent>=100){
+    if(world.random.nextInt(12000)<1) speakRandom(player, world);
   }
 };
 
-# Porous effect
-/*
-val dirt = <blockstate:thaumcraft:stone_porous>;
-
-function blockMatch(block as IBlockState) as bool{
-  val id as string = block.block.definition.id;
-  return id == "minecraft:stone" || id == "minecraft:cobblestone";
-  
+# Speak on kill
+function speakKill(player as IPlayer, world as IWorld) as void{
+  val k = "warp.sword.speak.kill.";
+  val r = world.random.nextInt(8);
+  player.sendStatusMessage(game.localize(k+r));
+  if(player.isPlayerMP()) player.sendPlaySoundPacket("thaumcraft:brain", "voice", player.position, 1.0f, 0.5f);
 }
 
+possessed_Trait.onHit = function(trait, tool, attacker, target, damage, isCritical) {
+  if(attacker.world.isRemote()) return;
+  if(!checkIfWeapon(tool)) return;
+
+  if(!attacker instanceof IPlayer) return;
+  val player as IPlayer = attacker;
+  val warp as int = player.warpNormal + player.warpTemporary + player.warpPermanent;
+  
+  if(warp<50) return;
+  if(target.health - damage < 0) speakKill(player, player.world);
+  return;
+};
+
+possessed_Trait.register();
+
+/*
+___  ____ ____ ____ _  _ ____ 
+|__] |  | |__/ |  | |  | [__  
+|    |__| |  \ |__| |__| ___] 
+                             
+*/
+
+val porous_Trait = ArmorTraitBuilder.create("porous");
+porous_Trait.color = 2852604;
+porous_Trait.localizedName = game.localize("e2ee.tconstruct.material.porous.name");
+porous_Trait.localizedDescription = game.localize("e2ee.tconstruct.material.porous.description");
 
 function porous(player as IPlayer) as void {
-  val world as IWorld = player.world;
+  var world as IWorld = player.world;
   val x = player.getX() as float;
   val y = player.getY() as float;
   val z = player.getZ() as float;
-  #val porousStone = <minecraft:dirt>.asBlock();
-  for i in 0 to 5 {
-    for j in 0 to 5 {
-      for k in 0 to 5 {
-        if(y+j- 2.0f<255 & y+j- 2.0f>1){
-          val pos = crafttweaker.util.Position3f.create( x+i- 2.0f , y+j- 2.0f , z+k- 2.0f ) as IBlockPos;
-          val block as IBlockState = world.getBlock(pos);
-          if(blockMatch(block)){
-            print("co");
-            #world.setBlockState(porousStone.definition.defaultState, pos); 
-          }
+  val porousStone = <item:thaumcraft:taint_rock>.asBlock();
+  if((y - 2)>255 || (y - 2)<3) return;
+  val pos = crafttweaker.util.Position3f.create(x - 1, y - 1, z - 1) as IBlockPos;
+  val block as IBlock = world.getBlock(pos);
+  if(isNull(block)) return;
+  if(block.definition.id != "minecraft:stone") return;
+  world.setBlockState(porousStone.definition.defaultState, pos);
+  //utils.spawnParticles(world, 'fireworksSpark', x+i, y+j, z+k, 0.1, 0.1, 0.1, 0.1, 2);
+  player.sendPlaySoundPacket("thaumcraft:roots", "ambient", pos.asPosition3f(), 0.5f, 0.8f);
+  
+  /*
+  OLD FUNCTION HERE, STILL GONNA KEEP IT!
+
+  val rangeXZ = [-5,-4,-3,-2,-1,0,1,2,3] as int[]; 
+  val rangeY = [-3,-2,-1,0,1,2,3] as int[]; 
+  for i in rangeXZ {
+    for j in rangeY {
+      for k in rangeXZ {
+        if((y+j)<255 
+        && (y+j)>1){
+          val pos = crafttweaker.util.Position3f.create(x+i, y+j, z+k) as IBlockPos;
+          if (player.world.isAirBlock(pos)) continue;
+          val block as IBlock = world.getBlock(pos);
+          if(isNull(block)) continue;
+          //print(block.definition.id);
+          if(block.definition.id != "minecraft:stone") continue;
+          world.setBlockState(<blockstate:minecraft:air>, pos);
+          world.setBlockState(porousStone.definition.defaultState, pos);
+          //utils.spawnParticles(world, 'fireworksSpark', x+i, y+j, z+k, 0.1, 0.1, 0.1, 0.1, 2);
+          player.sendPlaySoundPacket("thaumcraft:poof", "ambient", pos.asPosition3f(), 0.5f, 0.5f);
+          //print("success!");
         }
       }
     }
-  }
+  }*/
+
 }
 
-forbiddenTrait.onToolDamage = function(trait, tool, unmodifiedAmount, newAmount, holder) {
-  if(holder instanceof IPlayer){
-  val player as IPlayer = holder;
+porous_Trait.onArmorTick = function(trait, armor, world, player) {
+  if(world.isRemote()) return;
+  //if(!checkArmorType) return;
   porous(player);
-  return newAmount;
-  } else return newAmount;
+  return;
 };
+porous_Trait.register();
+
+/*
+_  _ ____ _ ___     ____ _  _ ____ _    _    
+|  | |  | | |  \    [__  |__| |___ |    |    
+ \/  |__| | |__/    ___] |  | |___ |___ |___ 
+                                             
 */
-function speakRandom(player as IPlayer, world as IWorld) as void{
-  val k = "warp.sword.speak.";
-  val r = world.random.nextInt(4);
-  player.sendStatusMessage(game.localize(k+r));
-  //player.playSound("thaumcraft:sounds/brain4.ogg", 0.5f, 0.5f);
-}
-
-forbiddenTrait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
-  if(owner instanceof IPlayer & world.isRemote()){
-    val player as IPlayer = owner;
-    if(world.random.nextInt(12000)<1){
-      speakRandom(player, world);
-    }
-  }
-};
-
-forbiddenTrait.register();
-
-
-
-
-
-static gazeUpdateTime as int = 80;
-
-function gazeMechanic(world as IWorld, player as IPlayer) as void {
-  if (world.isRemote()) return;
-  if (isNull(player)) return;
-  val newEffect = <potion:thaumcraft:deathgaze>;
-  if (!player.isPotionActive(newEffect)) {
-    player.addPotionEffect(newEffect.makePotionEffect(gazeUpdateTime, 3));
-    return;
-  }
-  val existEffect = player.getActivePotionEffect(newEffect);
-  player.addPotionEffect(newEffect.makePotionEffect(gazeUpdateTime, 3));
-}
-
-val gaze_trait = ArmorTraitBuilder.create("gaze");
-gaze_trait.color = 11141165;
-gaze_trait.localizedName = game.localize("e2ee.tconstruct.material.gaze.name");
-gaze_trait.localizedDescription = game.localize("e2ee.tconstruct.material.gaze.description");
-gaze_trait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
-  if (!isSelected) return;
-  if (world.getWorldTime() % gazeUpdateTime != 0) return;
-  if (! owner instanceof IPlayer) return;
-  val player as IPlayer = owner;
-  gazeMechanic(world, player);
-};
-gaze_trait.register();
 
 val voidShell_trait = ArmorTraitBuilder.create("void_shell");
 voidShell_trait.color = 11141165;
 voidShell_trait.localizedName = game.localize("e2ee.tconstruct.material.void_shell.name");
 voidShell_trait.localizedDescription = game.localize("e2ee.tconstruct.material.void_shell.description");
-voidShell_trait.onHurt = function(trait, armor, player, source, damage, newDamage, evt) {
+
+
+voidShell_trait.getModifications = function(trait, player, mods, armor, damageSource, damage, index) {
+  val warp = player.warpNormal + player.warpTemporary + player.warpPermanent; 
+  mods.effectiveness += max( 3.0f, (warp as float)*0.0025f);
+  return mods;
+};
+voidShell_trait.register();
+
+/*
+____ _    ___  ____ _ ___ ____ _  _     ____ ____ ___ ____ _ ___  _  _ ___ _ ____ _  _ 
+|___ |    |  \ |__/ |  |  |    |__|     |__/ |___  |  |__/ | |__] |  |  |  | |  | |\ | 
+|___ |___ |__/ |  \ |  |  |___ |  | ___ |  \ |___  |  |  \ | |__] |__|  |  | |__| | \| 
+                                                                                      
+*/
+
+val eldritchRetribution_trait = ArmorTraitBuilder.create("eldritch_retribution");
+eldritchRetribution_trait.color = 11141165;
+eldritchRetribution_trait.localizedName = game.localize("e2ee.tconstruct.material.eldritch_retribution.name");
+eldritchRetribution_trait.localizedDescription = game.localize("e2ee.tconstruct.material.eldritch_retribution.description");
+
+eldritchRetribution_trait.onHurt = function(trait, armor, player, source, damage, newDamage, evt) {
   if(source.trueSource instanceof IEntityLivingBase & !player.world.isRemote() & player.warpNormal + player.warpTemporary + player.warpPermanent>=100){
     val mobTrue as IEntityLivingBase = source.trueSource;
     val i = player.world.random.nextInt(4);
@@ -687,18 +788,49 @@ voidShell_trait.onHurt = function(trait, armor, player, source, damage, newDamag
   }
   return newDamage;
 };
+eldritchRetribution_trait.register();
+
 /*
-voidShell_trait.getModifications = function(trait, player, mods, armor, damageSource, damage, index) {
-    val warp as float = player.warpNormal + player.warpTemporary + player.warpPermanent; 
-    mods.effectiveness += max( 3.0f, warp*0.0025f);
-    return mods;
-};*/
-voidShell_trait.register();
+____ ____ ___  ____ 
+| __ |__|   /  |___ 
+|__] |  |  /__ |___ 
+                    
+*/
 
+val gaze_trait = ArmorTraitBuilder.create("gaze");
+gaze_trait.color = 11141165;
+gaze_trait.localizedName = game.localize("e2ee.tconstruct.material.gaze.name");
+gaze_trait.localizedDescription = game.localize("e2ee.tconstruct.material.gaze.description");
 
+static gazeUpdateTime as int = 80;
 
+function gazeMechanic(world as IWorld, player as IPlayer) as void {
+  if (world.isRemote()) return;
+  if (isNull(player)) return;
+  val newEffect = <potion:thaumcraft:deathgaze>;
+  if (!player.isPotionActive(newEffect)) {
+    player.addPotionEffect(newEffect.makePotionEffect(gazeUpdateTime, 3));
+    return;
+  }
+  val existEffect = player.getActivePotionEffect(newEffect);
+  player.addPotionEffect(newEffect.makePotionEffect(gazeUpdateTime, 3));
+}
 
+gaze_trait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
+  if (!isSelected) return;
+  if (world.getWorldTime() % gazeUpdateTime != 0) return;
+  if (! owner instanceof IPlayer) return;
+  val player as IPlayer = owner;
+  gazeMechanic(world, player);
+};
+gaze_trait.register();
 
+/*
+____ ___  ____ _  _ _ _  _ _ ___ ____    ___  _  _ _ _    ___  
+|__| |  \ |__| |\/| | |\ | |  |  |___    |__] |  | | |    |  \ 
+|  | |__/ |  | |  | | | \| |  |  |___    |__] |__| | |___ |__/ 
+                                                               
+*/
 
 val adaminite = ExtendedMaterialBuilder.create("Adaminite");
 adaminite.color = 11141165;
@@ -711,102 +843,323 @@ adaminite.addHeadMaterialStats(666, 5.5f, 21.5f, 12);
 adaminite.addHandleMaterialStats(0.6, 60);
 adaminite.addExtraMaterialStats(666);
 adaminite.addBowMaterialStats(1.66f, 1.5f, 6.6f);
+adaminite.addProjectileMaterialStats();
 
 adaminite.addCoreMaterialStats(6.0, 36.6);
 adaminite.addPlatesMaterialStats(16.6, 6.6, 6.6);
 adaminite.addTrimMaterialStats(6);
 
-adaminite.itemLocalizer = function(thisMaterial, itemName){return "Adaminite " + itemName;};
-adaminite.localizedName = "Adaminite";
+adaminite.itemLocalizer = function(thisMaterial, itemName){
+  return game.localize("e2ee.tconstruct.material.adaminite.name") + " " + itemName;
+  };
+adaminite.localizedName = game.localize("e2ee.tconstruct.material.adaminite.name");
 
 adaminite.addMaterialTrait("forbidden","head");
-adaminite.addMaterialTrait("gaze_armor","core");
+adaminite.addMaterialTrait("forbidden","bow");
+adaminite.addMaterialTrait("possessed","head");
+adaminite.addMaterialTrait("possessed");
+
 adaminite.addMaterialTrait("void_shell_armor","core");
+adaminite.addMaterialTrait("eldritch_retribution_armor","core");
+adaminite.addMaterialTrait("gaze_armor", "trim");
+adaminite.addMaterialTrait("porous_armor", "core");
+adaminite.addMaterialTrait("porous_armor", "plates");
+adaminite.addMaterialTrait("porous_armor", "trim");
 
 adaminite.register();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
-# -------------------------------
-# Mithminite
-# -------------------------------
+/*
+███╗   ███╗██╗████████╗██╗  ██╗███╗   ███╗██╗███╗   ██╗██╗████████╗███████╗
+████╗ ████║██║╚══██╔══╝██║  ██║████╗ ████║██║████╗  ██║██║╚══██╔══╝██╔════╝
+██╔████╔██║██║   ██║   ███████║██╔████╔██║██║██╔██╗ ██║██║   ██║   █████╗  
+██║╚██╔╝██║██║   ██║   ██╔══██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║   ██╔══╝  
+██║ ╚═╝ ██║██║   ██║   ██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║   ██║   ███████╗
+╚═╝     ╚═╝╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
+*/
 
+/*
+____ ____ ____ ____ ____ ____ ____ _  _ ____ ____ 
+|__/ |___ [__  |___ |__| |__/ |    |__| |___ |__/ 
+|  \ |___ ___] |___ |  | |  \ |___ |  | |___ |  \ 
+                                                  
+*/
 
 val researcherTrait = TraitBuilder.create("researcher");
 researcherTrait.color = 16744631;
 researcherTrait.localizedName = game.localize("e2ee.tconstruct.material.researcher.name");
 researcherTrait.localizedDescription = game.localize("e2ee.tconstruct.material.researcher.description");
+researcherTrait.calcDamage = function(trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
+  if(target.world.isRemote()) return newDamage;
+
+  if(!attacker instanceof IPlayer) return newDamage;
+  val player as IPlayer = attacker;
+  var dmg as float = originalDamage;
+  
+  if(player.thaumcraftKnowledge.isResearchComplete("FLUX_STRIKE")){
+    if(tool.tag.flux>0){
+      tool.mutable().updateTag({flux: tool.tag.flux - 1});
+      dmg=dmg*2.0f;
+    }
+  }
+  if(player.thaumcraftKnowledge.isResearchComplete("PURE_SMITE")){
+    if(target.isUndead){
+      dmg+=20.0f;
+    }
+  }
+  return dmg as float;
+};
 
 researcherTrait.onHit = function(trait, tool, attacker, target, damage, isCritical) {
+  if(target.world.isRemote()) return;
+
+  if(!attacker instanceof IPlayer) return;
+  val player as IPlayer = attacker;
+
+  if(!player.thaumcraftKnowledge.isResearchComplete("GOD_WRAITH")) return;
+  
   target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(10, 0));
-  //hit with flux!
-
-  //is Undead? BONUS DAMAGE
-
-  //Add bonus drop
 };
+
+/*
+____ _    _  _ _  _    ____ ___ ____ _ _  _ ____    ___ ____ ____    _  _ ___  ___  ____ ___ ____ 
+|___ |    |  |  \/     [__   |  |__/ | |_/  |___     |  |__| | __    |  | |__] |  \ |__|  |  |___ 
+|    |___ |__| _/\_    ___]  |  |  \ | | \_ |___     |  |  | |__]    |__| |    |__/ |  |  |  |___ 
+                                                                                                  
+*/
+
+researcherTrait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
+  if (world.isRemote()) return;
+  if (!owner instanceof IPlayer) return;
+  tool.mutable();
+
+  if(isNull(tool.tag) || isNull(tool.tag.flux)) tool.updateTag({flux: 0} as IData);
+
+  if(tool.tag.flux >= 100) return;
+  if (world.getFlux(owner.position)<=1.0f) return;
+  world.drainFlux(owner.position, 1.0f);
+  tool.updateTag({flux: tool.tag.flux+1} as IData);
+  return;
+};
+
+/*
+____ ____ ____    ___  _  _ ____ _ ____ _ ____ ____ 
+|  | |__/ |___    |__] |  | |__/ | |___ | |___ |__/ 
+|__| |  \ |___    |    |__| |  \ | |    | |___ |  \ 
+                                                    
+*/
+
+static clusterList as IItemStack[string] = {
+  "actuallyadditions:block_misc:3":<item:jaopca:item_clusterquartzblack>,
+  "astralsorcery:blockcustomore:1":<item:jaopca:item_clusterastralstarmetal>,
+  "astralsorcery:blockcustomsandore:0":<item:jaopca:item_clusteraquamarine>,
+  "appliedenergistics2:charged_quartz_ore:0":<item:jaopca:item_clusterchargedcertusquartz>,
+  "appliedenergistics2:quartz_ore:0":<item:jaopca:item_clustercertusquartz>,
+  "biomesoplenty:gem_ore:3":<item:jaopca:item_clustertopaz>,
+  "biomesoplenty:gem_ore:4":<item:jaopca:item_clustertanzanite>,
+  "biomesoplenty:gem_ore:6":<item:jaopca:item_clustersapphire>,
+  "biomesoplenty:gem_ore:1":<item:jaopca:item_clusterruby>,
+  "biomesoplenty:gem_ore:5":<item:jaopca:item_clustermalachite>,
+  "biomesoplenty:gem_ore:0":<item:jaopca:item_clusteramethyst>,
+  "biomesoplenty:gem_ore:2":<item:jaopca:item_clusterperidot>,
+  "draconicevolution:draconium_ore:0":<item:jaopca:item_clusterdraconium>,
+  "forestry:resources:0":<item:jaopca:item_clusterapatite>,
+  "endreborn:block_wolframium_ore:0":<item:jaopca:item_clustertungsten>,
+  "immersiveengineering:ore:5":<item:jaopca:item_clusteruranium>,
+  "libvulpes:ore0:0":<item:jaopca:item_clusterdilithium>,
+  "libvulpes:ore0:8":<item:jaopca:item_clustertitanium>,
+  "nuclearcraft:ore:7":<item:jaopca:item_clustermagnesium>,
+  "nuclearcraft:ore:5":<item:jaopca:item_clusterboron>,
+  "nuclearcraft:ore:6":<item:jaopca:item_clusterlithium>,
+  "nuclearcraft:ore:3":<item:jaopca:item_clusterthorium>,
+  "mekanism:oreblock:0":<item:jaopca:item_clusterosmium>,
+  "minecraft:iron_ore:0":<item:thaumcraft:cluster>,
+  "minecraft:gold_ore:0":<item:thaumcraft:cluster:1>,
+  "minecraft:lapis_ore:0":<item:jaopca:item_clusterlapis>,
+  "minecraft:emerald_ore:0":<item:jaopca:item_clusteremerald>,
+  "minecraft:diamond_ore:0":<item:jaopca:item_clusterdiamond>,
+  "minecraft:coal_ore:0":<item:jaopca:item_clustercoal>,
+  "minecraft:redstone_ore:0":<item:jaopca:item_clusterredstone>,
+  "minecraft:quartz_ore:0":<item:thaumcraft:cluster:7>,
+  "rftools:dimensional_shard_ore:0":<item:jaopca:item_clusterdimensionalshard>,
+  "tconstruct:ore:0":<item:jaopca:item_clustercobalt>,
+  "tconstruct:ore:1":<item:jaopca:item_clusterardite>,
+  "thaumcraft:ore_amber:0":<item:jaopca:item_clusteramber>,
+  "thermalfoundation:ore:0":<item:thaumcraft:cluster:2>,
+  "thermalfoundation:ore:3":<item:thaumcraft:cluster:5>,
+  "thermalfoundation:ore:7":<item:jaopca:item_clusteriridium>,
+  "thermalfoundation:ore:4":<item:jaopca:item_clusteraluminium>,
+  "thermalfoundation:ore:2":<item:thaumcraft:cluster:4>,
+  "thermalfoundation:ore:6":<item:jaopca:item_clusterplatinum>,
+  "thermalfoundation:ore:5":<item:jaopca:item_clusternickel>,
+  "thermalfoundation:ore:8":<item:jaopca:item_clustermithril>,
+  "thermalfoundation:ore:1":<item:thaumcraft:cluster:3>,
+  "trinity:trinitite:0":<item:jaopca:item_clustertrinitite>,
+} as IItemStack[string];
+
+static shardList as IItemStack[string] = {
+  "actuallyadditions:block_misc:3":<item:jaopca:item_crystalshardquartzblack>,
+  "astralsorcery:blockcustomore:1":<item:jaopca:item_crystalshardastralstarmetal>,
+  "astralsorcery:blockcustomsandore:0":<item:jaopca:item_crystalshardaquamarine>,
+  "appliedenergistics2:charged_quartz_ore:0":<item:jaopca:item_crystalshardchargedcertusquartz>,
+  "appliedenergistics2:quartz_ore:0":<item:jaopca:item_crystalshardcertusquartz>,
+  "biomesoplenty:gem_ore:3":<item:jaopca:item_crystalshardtopaz>,
+  "biomesoplenty:gem_ore:4":<item:jaopca:item_crystalshardtanzanite>,
+  "biomesoplenty:gem_ore:6":<item:jaopca:item_crystalshardsapphire>,
+  "biomesoplenty:gem_ore:1":<item:jaopca:item_crystalshardruby>,
+  "biomesoplenty:gem_ore:5":<item:jaopca:item_crystalshardmalachite>,
+  "biomesoplenty:gem_ore:0":<item:jaopca:item_crystalshardamethyst>,
+  "biomesoplenty:gem_ore:2":<item:jaopca:item_crystalshardperidot>,
+  "draconicevolution:draconium_ore:0":<item:jaopca:item_crystalsharddraconium>,
+  "forestry:resources:0":<item:jaopca:item_crystalshardapatite>,
+  "endreborn:block_wolframium_ore:0":<item:jaopca:item_crystalshardtungsten>,
+  "immersiveengineering:ore:5":<item:jaopca:item_crystalsharduranium>,
+  "libvulpes:ore0:0":<item:jaopca:item_crystalsharddilithium>,
+  "libvulpes:ore0:8":<item:jaopca:item_crystalshardtitanium>,
+  "nuclearcraft:ore:7":<item:jaopca:item_crystalshardmagnesium>,
+  "nuclearcraft:ore:5":<item:jaopca:item_crystalshardboron>,
+  "nuclearcraft:ore:6":<item:jaopca:item_crystalshardlithium>,
+  "nuclearcraft:ore:3":<item:jaopca:item_crystalshardthorium>,
+  "mekanism:oreblock:0":<item:jaopca:item_crystalshardosmium>,
+  "minecraft:iron_ore:0":<item:jaopca:item_crystalshardiron>,
+  "minecraft:gold_ore:0":<item:jaopca:item_crystalshardgold>,
+  "minecraft:lapis_ore:0":<item:jaopca:item_crystalshardlapis>,
+  "minecraft:emerald_ore:0":<item:jaopca:item_crystalshardemerald>,
+  "minecraft:diamond_ore:0":<item:jaopca:item_crystalsharddiamond>,
+  "minecraft:coal_ore:0":<item:jaopca:item_crystalshardcoal>,
+  "minecraft:redstone_ore:0":<item:jaopca:item_crystalshardredstone>,
+  "minecraft:quartz_ore:0":<item:jaopca:item_crystalshardquartz>,
+  "rftools:dimensional_shard_ore:0":<item:jaopca:item_crystalsharddimensionalshard>,
+  "tconstruct:ore:0":<item:jaopca:item_crystalshardcobalt>,
+  "tconstruct:ore:1":<item:jaopca:item_crystalshardardite>,
+  "thaumcraft:ore_amber:0":<item:jaopca:item_crystalshardamber>,
+  "thermalfoundation:ore:0":<item:jaopca:item_crystalshardcopper>,
+  "thermalfoundation:ore:3":<item:jaopca:item_crystalshardlead>,
+  "thermalfoundation:ore:7":<item:jaopca:item_crystalshardiridium>,
+  "thermalfoundation:ore:4":<item:jaopca:item_crystalshardaluminium>,
+  "thermalfoundation:ore:2":<item:jaopca:item_crystalshardsilver>,
+  "thermalfoundation:ore:6":<item:jaopca:item_crystalshardplatinum>,
+  "thermalfoundation:ore:5":<item:jaopca:item_crystalshardnickel>,
+  "thermalfoundation:ore:8":<item:jaopca:item_crystalshardmithril>,
+  "thermalfoundation:ore:1":<item:jaopca:item_crystalshardtin>,
+  "trinity:trinitite:0":<item:jaopca:item_crystalshardtrinitite>,
+} as IItemStack[string];
+
+function checkRefineEnchant(tool as IItemStack) as int {
+  if(
+    !isNull(tool.tag)
+    && !isNull(tool.tag.infench)
+    && !isNull(tool.tag.infench.asList())
+  ) {
+    for tag in tool.tag.infench.asList() {
+        if((tag.id as int) == 4) return (tag.lvl as int);
+    }
+  }
+  return 0;
+}
 
 researcherTrait.onBlockHarvestDrops = function(trait, tool, event) {
 	//DROP BONUS crystalized chunks
-};
-/*
-researcherTrait.onUpdate = function(trait, tool, world, owner, itemSlot, isSelected) {
-	//collect and update flux
-  if (world.getFlux(owner.position)>1 & !world.isRemote()){
-    val data = tool.tag;
-    if(data){
-      tool.mutable().updateTag({Flux: 0});
-    }
-    data=data+{Flux: data.Flux+1 };
-    world.drainFlux(owner.position, 0.3f);
-    tool.mutable().updateTag(data);
+  if(event.player.world.isRemote()) return; # world is remote
+
+  if(!event.isPlayer) return; # no player
+  //if(event.silkTouch) return; # silk touch
+
+  val lvl = checkRefineEnchant(tool);
+
+  if(isNull(event.block)) return;
+  val block as IBlock = event.block;
+  val result = shardList[block.definition.id + ':' + block.meta] as IItemStack;
+  if(isNull(result)) return; # block doesn't match
+
+  if(lvl==0) {
+    if(event.player.world.getRandom().nextInt(2)==0) return;
+    
+    event.drops = [clusterList[block.definition.id + ':' + block.meta].weight(1.0f)] as WeightedItemStack[];
+    return;
   }
+  if(lvl==1){
+    if(event.player.world.getRandom().nextInt(2)==1){
+      event.drops = [result.weight(1.0f)] as WeightedItemStack[];
+      return;
+    } else {
+      event.drops = [clusterList[block.definition.id + ':' + block.meta].weight(1.0f)] as WeightedItemStack[];
+      return;
+    }
+  }
+  if(lvl>1) event.drops = [result.weight(1.0f)] as WeightedItemStack[];
+  if(lvl==3) event.addItem(result.weight(0.5f));
+  if(lvl==4) event.addItem(result.weight(0.75f));
+  return;
 };
-*/
 researcherTrait.register();
 
+/*
+____ _ ____ ____ ___    ____ ___ ____ _  _ ___  
+|___ | |__/ [__   |     [__   |  |__| |\ | |  \ 
+|    | |  \ ___]  |     ___]  |  |  | | \| |__/ 
+                                                
+*/
 
+val firstStand_trait = ArmorTraitBuilder.create("first_stand");
+firstStand_trait.color = 11141165;
+firstStand_trait.localizedName = game.localize("e2ee.tconstruct.material.first_stand.name");
+firstStand_trait.localizedDescription = game.localize("e2ee.tconstruct.material.first_stand.description");
 
+function calcLevel(exp as int) as int {
+  if(exp>=1508) {
+    return (81.0/10.0 + sqrt(2.0/5.0*(exp - 7839.0/40.0))) as int;
+  } 
+  if(exp>=353) {
+    return (325.0/18.0 + sqrt(2.0/9.0*(exp - 54215.0/72.0))) as int;
+  }
+  return (sqrt(exp+9.0) - 3.0) as int;
+}
+
+function calcExpTotalForLevel(level as int) as int {
+  if(level>=32){
+    return ((9*level*level + 325*level + 4440)/2) as int;
+  }
+  if(level>=17){
+    return ((5*level*level + 81*level + 720)/2);
+  } else{
+    return level*(level+6);
+  }
+}
+
+function calculateExpDrain(player as IPlayer, damage as float) as bool {
+  var exp as int = player.getTotalXP();
+  val expRemove as int = (damage*2.0f) as int;
+  if(exp<expRemove) return false; //if player have enought exp  
+  
+  //if in range of the level: (doesn't makes sound)
+  if(calcExpTotalForLevel(player.xp)<exp) {
+    player.removeExperience(expRemove);
+  }
+  //if out of the range of the level (makes sound)
+  player.removeExperience(exp);
+  player.xp=0;
+  player.addExperience(exp-expRemove);
+  return true;
+}
+
+firstStand_trait.onHurt = function(trait, armor, player, source, damage, newDamage, evt) {
+  if(newDamage<=0.0f) return newDamage;
+  if(player.thaumcraftKnowledge.isResearchComplete("FIRST_STAND") && calculateExpDrain(player, newDamage)){
+    evt.cancel();
+    return -0.1f;
+  }
+  return newDamage;
+};
+firstStand_trait.register();
+
+/*
+_  _ _ ___ _  _ _  _ _ _  _ _ ___ ____    ___  _  _ _ _    ___  
+|\/| |  |  |__| |\/| | |\ | |  |  |___    |__] |  | | |    |  \ 
+|  | |  |  |  | |  | | | \| |  |  |___    |__] |__| | |___ |__/ 
+                                                                
+*/
 
 val mithminite = ExtendedMaterialBuilder.create("Mithminite");
 mithminite.color = 16744631;
@@ -819,98 +1172,19 @@ mithminite.addHeadMaterialStats(1420, 9.5f, 12.5f, 12);
 mithminite.addHandleMaterialStats(2.1, 0);
 mithminite.addExtraMaterialStats(420);
 mithminite.addBowMaterialStats(2.40f, 3.0f, 4.2f);
+mithminite.addProjectileMaterialStats();
 
 mithminite.addCoreMaterialStats(14.0, 42.0);
 mithminite.addPlatesMaterialStats(24.0, 42.0, 0.0);
 mithminite.addTrimMaterialStats(42);
 
-mithminite.itemLocalizer = function(thisMaterial, itemName){return "Mithminite " + itemName;};
-mithminite.localizedName = "Mithminite";
+mithminite.itemLocalizer = function(thisMaterial, itemName){
+  return game.localize("e2ee.tconstruct.material.mithminite.name") + " " + itemName;
+};
+mithminite.localizedName = game.localize("e2ee.tconstruct.material.mithminite.name");
 
 mithminite.addMaterialTrait("researcher","head");
 
+mithminite.addMaterialTrait("first_stand_armor","core");
+
 mithminite.register();
-
-/*
-<enderio:item_soul_vial:1>.withTag(
-  {entityId: "minecraft:zombie",
-
-  entity: {
-    HurtByTimestamp: 0,
-
-    ForgeData: {
-      "scalinghealth:difficulty": 252 as short, excompressum: {NoCompress: 1 as byte},
-      "Potion Core - Health Fix": 188.51987 as float,
-      "Potion Core - Jump Boost Updated": 1 as byte,
-      HungerOverhaulCheck: 6
-    },
-
-    RelativeAABB: [-0.30000001192092896, 0.0, -0.30000001192092896, 0.30000001192092896, 1.9500000476837158, 0.30000001192092896],
-
-    Attributes: [{Base: -2.0, Modifiers: [{UUIDMost: 2189974539282499591 as long, UUIDLeast: -6477178668949725305 as long, Amount: 1.0, Operation: 0, Name: "normal"}],
-      Name: "tc.mobmod"}, {Base: 0.0, Name: "tc.mobmodtaint"}, {Base: 1.0, Name: "potioncore.projectileDamage"},
-      {Base: 1.0, Name: "potioncore.magicDamage"},
-      {Base: 1.0, Name: "potioncore.jumpHeight"},
-      {Base: 1.0, Name: "potioncore.damageResistance"},
-      {Base: 0.0, Name: "potioncore.magicShielding"},
-      {Base: 0.05, Name: "tconevo.flightSpeed"}, {Base: 1.0, Name: "tconevo.damageTaken"},
-      {Base: 1.0, Name: "tconevo.evasionChance"},
-      {Base: 20.0, Modifiers: [{UUIDMost: -4557935957806527035 as long, UUIDLeast: -4950522221421205810 as long, Amount: 8.425992965698242, Operation: 1, Name: "ScalingHealth.HealthModifier"}], Name: "generic.maxHealth"},
-      {Base: 0.0, Modifiers: [{UUIDMost: 536379819591615452 as long, UUIDLeast: -9190709600305771094 as long, Amount: 0.007420447987122287, Operation: 0, Name: "Random spawn bonus"}], Name: "generic.knockbackResistance"},
-      {Base: 0.23000000417232513, Name: "generic.movementSpeed"},
-      {Base: 2.0, Name: "generic.armor"},
-      {Base: 0.0, Name: "generic.armorToughness"}, {Base: 1.0, Name: "forge.swimSpeed"},
-      {Base: 35.0, Modifiers: [{UUIDMost: 186899165940435936 as long, UUIDLeast: -6890417367074505433 as long, Amount: 0.03313183418661442, Operation: 1, Name: "Random spawn bonus"}], Name: "generic.followRange"},
-      {Base: 3.0, Modifiers: [{UUIDMost: -3218372695593237220 as long, UUIDLeast: -8743736172551149415 as long, Amount: 3.5494492053985596, Operation: 0, Name: "ScalingHealth.DamageModifier"}], Name: "generic.attackDamage"},
-      {Base: 0.0840110647417053, Name: "zombie.spawnReinforcements"}],
-
-    Invulnerable: 0 as byte,
-    FallFlying: 0 as byte,
-    PortalCooldown: 0,
-    AbsorptionAmount: 0.0 as float,
-    FallDistance: 0.0 as float,
-    DeathTime: 0 as short,
-    ForgeCaps: {
-      "plethora:disableai": {}, "betterhurttimer:hurt": {ticksToShieldDamage: 0, ticksToArmorDamage: 0},
-      "nuclearcraft:capability_entity_rads": {consumed: 0 as byte, radawayBuffer: 0.0, shouldWarn: 0 as byte, radXUsed: 0 as byte, poisonBuffer: 0.0, radXCooldown: 0.0, radXWoreOff: 0 as byte, radawayCooldown: 0.0, recentRadawayAddition: 0.0, maxRads: 1000.0, setMaxRads: 1 as byte, radawayBufferSlow: 0.0, externalRadiationResistance: 0.0, messageCooldownTime: 0, totalRads: 0.015512127633756015, radiationLevel: 1.690571818847032E-5, recentPoisonAddition: 0.0, recentRadXAddition: 0.0, radiationImmunityStage: 0 as byte, giveGuidebook: 0 as byte, internalRadiationResistance: 0.0, radiationImmunityTime: 0.0},
-      "tinkertoolleveling:entityxp": [],
-      "llibrary:extendedentitydatacapability": {
-        "Ice And Fire - Siren Property Tracker": {CharmedBySiren: 0 as byte, SirenID: 0},
-        "Ice And Fire - Frozen Property Tracker": {TicksUntilUnfrozen: 0, IsFrozen: 0 as byte},
-        "Ice and Fire - Player Property Tracker": {DismountedDragon: 0 as byte, GauntletDamage: 0, DreadPortalZ: 0, DreadPortalY: 0, DreadPortalX: 0},
-        "Ice And Fire - Chain Property Tracker": {ConnectedEntities: []},
-        "Ice And Fire - Stone Property Tracker": {StoneBreakLvl: 0, TurnedToStone: 0 as byte}
-      },
-      "twilightforest:cap_shield": {permshields: 0, tempshields: 0},
-      "thaumicaugmentation:portal_state": {inPortal: 0 as byte}
-    },
-
-    HandDropChances: [0.085 as float, 0.085 as float],
-    PersistenceRequired: 0 as byte, id: "minecraft:zombie",
-    Motion: [0.0, -0.0784000015258789, 0.0],
-    Leashed: 0 as byte,
-    UUIDLeast: -9044928370786251929 as long,
-    Health: 188.51987 as float,
-    LeftHanded: 0 as byte,
-    Air: 300 as short,
-    OnGround: 1 as byte, Dimension: 0,
-    Rotation: [-149.6732 as float, 3.6092982 as float],
-    UpdateBlocked: 0 as byte,
-    HandItems: [{}, {}],
-    ArmorDropChances: [0.085 as float, 0.085 as float, 0.085 as float, 0.085 as float],
-    UUIDMost: -1716941176686949392 as long,
-    Pos: [-1044.5, 91.0, -1022.168150844842],
-    CanBreakDoors: 0 as byte,
-    Fire: -1 as short,
-    ArmorItems: [{}, {}, {}, {}],
-    CanPickUpLoot: 0 as byte,
-    HurtTime: 0 as short,
-    AABB: [-1044.800000011921, 91.0, -1022.4681508567629, -1044.199999988079, 92.95000004768372, -1021.8681508329211],
-
-    ActiveEffects: [
-      {Ambient: 1 as byte, CurativeItems: [], ShowParticles: 1 as byte, Duration: 149, Id: 44, Amplifier: 2 as byte},
-      {Ambient: 0 as byte, CurativeItems: [{id: "minecraft:milk_bucket", Count: 1, Damage: 0 as short}], ShowParticles: 1 as byte, Duration: 98, Id: 43, Amplifier: 0 as byte}]
-    }
-  }
-);
-*/
