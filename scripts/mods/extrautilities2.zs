@@ -6,7 +6,10 @@ import crafttweaker.item.IIngredient;
 function getCreativeHarvest(item as IItemStack) as IItemStack{
 	return <extrautils2:creativeharvest>.withTag({creative_block: {meta: item.damage, block: item.definition.id}, display_stack: {id: item.definition.id, Count: 1 as byte, Damage: item.damage as short}});
 }
-	
+
+# Recycle spikes
+scripts.process.melt(<extrautils2:spike_gold>, <fluid:gold> * (144 * 4));
+
 # Bag of Holding
 	recipes.remove(<extrautils2:bagofholding>);
 	
@@ -77,7 +80,7 @@ craft.shapeless(<extrautils2:enderlilly>, "EEEEEEEEE", {
 	recipes.addShaped("Rainbow Generator", 
 	<extrautils2:rainbowgenerator>, 
 	[[<extrautils2:opinium:4>, <extrautils2:rainbowgenerator:2>, <extrautils2:opinium:4>],
-	[<extrautils2:ingredients:16>, <draconicevolution:draconium_capacitor:1>, <extrautils2:ingredients:16>], 
+	[<extrautils2:ingredients:16>, <draconicevolution:crafting_injector:1>, <extrautils2:ingredients:16>], 
 	[<extrautils2:opinium:4>, <extrautils2:rainbowgenerator:1>, <extrautils2:opinium:4>]]);
 	
 # Transper Pipe
@@ -532,3 +535,6 @@ remakeEnchanterRecipe(<minecraft:gold_block>, <minecraft:dye:4> * 9      , <ore:
 remakeEnchanterRecipe(<minecraft:gold_ingot>, <minecraft:dye:4>          , <ore:ingotElectrum>, <ore:gemLapis>        , <extrautils2:ingredients:12>    ,   8000, 20*10);
 remakeEnchanterRecipe(<minecraft:iron_block> * 8, <minecraft:nether_star> * 9, <ore:blockPigiron> , <ore:netherStar>      , <extrautils2:simpledecorative:2>, 500000, 4800);
 remakeEnchanterRecipe(<minecraft:iron_ingot> * 8, <minecraft:nether_star>    , <ore:ingotPigiron> , <ore:nuggetNetherStar>, <extrautils2:ingredients:17>    ,  80000, 480);
+
+# Turn Red Orchids straight into redstone Ore
+scripts.do.burnt_in_fluid.add('extrautils2:redorchid', <blockstate:minecraft:redstone_ore>, 'stone', 1.0 / 3.0);

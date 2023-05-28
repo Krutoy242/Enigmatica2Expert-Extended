@@ -53,6 +53,7 @@ mods.rustic.CrushingTub.addRecipe(<liquid:water> * 1000, <minecraft:dye:2>, <min
 mods.forestry.Squeezer.removeRecipe(<liquid:ironberryjuice>);
 mods.rustic.EvaporatingBasin.removeRecipe(<rustic:dust_tiny_iron>);
 mods.rustic.EvaporatingBasin.addRecipe(<exnihilocreatio:item_ore_iron>, <liquid:ironberryjuice> * 1000, 30*20);
+utils.compact(<rustic:dust_tiny_iron>, <thermalfoundation:material>);
 
 # [Liquid Barrel] from [Oak Wood Slab][+2]
 craft.remake(<rustic:liquid_barrel>, ["pretty",
@@ -108,45 +109,10 @@ recipes.addShapeless(<rustic:chili_pepper_seeds>, [<rustic:chili_pepper>]);
 vanilla.seeds.removeSeed(<rustic:tomato_seeds>);
 vanilla.seeds.removeSeed(<rustic:chili_pepper_seeds>);
 
-/* ------------------------------------------------------------ 
-
-Fix of exception when right-clicking anything over Rustic's slabs:
-
-Caused by: java.lang.ClassCastException: net.minecraft.block.BlockSlab$EnumBlockHalf cannot be cast to java.lang.Integer
-    at java.lang.Integer.compareTo(Integer.java:52)
-    at thecodex6824.thaumicaugmentation.common.internal.TAHooksCommon.isCompatibleSlab(TAHooksCommon.java:129)
-    at thecodex6824.thaumicaugmentation.common.internal.TAHooksCommon.checkWardSlab(TAHooksCommon.java:136)
-    at net.minecraft.item.ItemSlab.onItemUse(ItemSlab.java:49)
-    at net.minecraftforge.common.ForgeHooks.onPlaceItemIntoWorld(ForgeHooks.java:889)
-    at net.minecraft.item.ItemStack.onItemUse(ItemStack.java:186)
-    at net.minecraft.server.management.PlayerInteractionManager.processRightClickBlock(PlayerInteractionManager.java:481)
-    at net.minecraft.network.NetHandlerPlayServer.processTryUseItemOnBlock(NetHandlerPlayServer.java:741)
-
-TODO:
-Remove when fixed https://github.com/TheCodex6824/ThaumicAugmentation/issues/335
-
------------------------------------------------------------- */
-# [Slab_ Olive Wood Planks]*6 from [Olive Wood Planks]
-recipes.remove(<rustic:olive_slab_item>);
-recipes.addShaped('alt slab fix Olive Wood',
-  <architecturecraft:shape>.withTag({Shape: 90, BaseName: "rustic:planks", BaseData: 0}) * 6, 
-  [[<rustic:planks>, <rustic:planks>, <rustic:planks>]]
-);
-
-# [Slab_ Ironwood Planks]*6 from [Ironwood Planks]
-recipes.remove(<rustic:ironwood_slab_item>);
-recipes.addShaped('alt slab fix Ironwood',
-  <architecturecraft:shape>.withTag({Shape: 90, BaseName: "rustic:planks", BaseData: 1}) * 6, 
-  [[<rustic:planks:1>, <rustic:planks:1>, <rustic:planks:1>]]
-);
-
-# [Olive Wood Planks] from [Slab_ Olive Wood Planks]
-craft.make(<rustic:planks>, ["#", "#"], {
-  "#": <architecturecraft:shape>.withTag({Shape: 90, BaseName: "rustic:planks", BaseData: 0}), # Slab: Olive Wood Planks
+# [Pot] from [White Glazed Terracotta]
+craft.remake(<rustic:vase>, ["pretty",
+  "  W  ",
+  "W   W",
+  "W W W"], {
+  "W": <ore:terracottaGlazed>,
 });
-
-# [Ironwood Planks] from [Slab_ Ironwood Planks]
-craft.make(<rustic:planks:1>, ["S", "S"], {
-  "S": <architecturecraft:shape>.withTag({Shape: 90, BaseName: "rustic:planks", BaseData: 1}), # Slab: Ironwood Planks
-});
-// ------------------------------------------------------------ 

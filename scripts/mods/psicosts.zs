@@ -39,14 +39,14 @@ craft.remake(<psicosts:psi_cell>, ["pretty",
 
 # [PSI-O Cell] from [PSI Cell][+3]
 craft.remake(<psicosts:psi_cell:1>, ["pretty",
-  "◊ - ◊",
+  "= - =",
   "M 1 M",
   "□ - □"], ingrs,
 utils.upgradeFnc);
 
 # [PSI-Dyne Cell] from [PSI-O Cell][+3]
 craft.remake(<psicosts:psi_cell:2>, ["pretty",
-  "= _ =",
+  "◊ _ ◊",
   "M 2 M",
   "□ _ □"], ingrs,
 utils.upgradeFnc);
@@ -67,7 +67,7 @@ craft.remake(<psicosts:creative_cell>, ["pretty",
   "  ▬ D ▬ §",
   "P § §   P"], {
   "P": <ore:ingotSpectre>,
-  "D": <bloodmagic:decorative_brick:3>,         # Crystal Cluster Brick
+  "D": <thaumadditions:taintwood_planks>,
   "§": <deepmoblearning:glitch_infused_ingot>,  # Glitch Infused Ingot
   "◘": <psicosts:psi_cell:2>,                   # PSI-Dyne Cell
   "▬": <ore:ingotEbonyPsi>,                     # Ebony Psimetal Ingot

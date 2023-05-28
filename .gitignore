@@ -36,7 +36,6 @@ mods/OpenTerrainGenerator/worlds/BBOP-Extended/WorldObjects/_Copies
 mods/OpenTerrainGenerator/worlds/Void/WorldObjects/_Copies
 
 # 3d party mods
-!mods/thaumicenergistics-*.jar
 !mods/Sound-Physics-*.jar
 !mods/Nutrition-*.jar
 
@@ -86,10 +85,11 @@ config/triumph/documentation/*
 config/tinker_ore_dict_melting_cache.dat
 config/tconstruct_oredictcache.dat
 config/jeiexporter
-config/jei/jei.cfg
 config/smoothfont/smoothfont.cfg
 config/fantasticlib/**/*
 config/bogosorter/config.json
 config/FBP/*
 config/startuptimer/startup_times.json
 config/ChatFlow.dat
+config/nuclearcraft.info
+config/acronym/saved

@@ -279,6 +279,10 @@ function avdRockXmlRecipe(filename as string,
   avdRockXmlRecipeEx(filename, inputItems, inputLiquids, outputItems, outputLiquids, null);
 }
 
+static fluidMaxInput as int[string] = {
+  PrecisionAssembler: 64000
+} as int[string];
+
 function avdRockXmlRecipeFlatten(
   filename as string,
   output as IItemStack,
@@ -293,6 +297,13 @@ function avdRockXmlRecipeFlatten(
   # Flatten ingredients
   var ingrs = [] as IIngredient[];
   var countRaw = [] as int[];
+  var maxStackSize = altMaxMult;
+
+  # Clamp max fluid size to 16 buckets
+  if(!isNull(fluidInput)) maxStackSize = min(
+    (!isNull(fluidMaxInput[filename]) ? fluidMaxInput[filename] as int : 16000)
+    / fluidInput.amount, maxStackSize
+  );
 
   # Iterate the grid
   for y, row in ingredients {
@@ -313,12 +324,18 @@ function avdRockXmlRecipeFlatten(
       if(!merged) {
         ingrs += ingr;
         countRaw += ingr.amount;
+        
+        # Calculate max stack size for ingredient
+        var maxSize = 1;
+        for item in ingr.items { maxSize = max(maxSize, item.maxStackSize); }
+        maxStackSize = min(maxStackSize, maxSize);
       }
     }
   }
 
+  # Separately add box item
   if (!isNull(box)) {
-    ingrs += box as IIngredient;
+    ingrs += (box.damage == 32767 ? box.withDamage(0) : box) as IIngredient;
     countRaw += box.amount;
   }
 
@@ -336,12 +353,16 @@ function avdRockXmlRecipeFlatten(
 
   # Get multiplier - how many times we can make recipe
   # with even input and output
-  val multiplier = min(altMaxMult, max(1, (64.0 / maxAmount as double) as int));
+  val multiplier = min(maxStackSize, max(1, (64.0 / maxAmount as double) as int));
 
   # Reassemble ingredients with another amount
   var trueIngrs = [] as IIngredient[];
   for i, ingr in ingrs {
-    trueIngrs += ingr * (count[i] * multiplier);
+    var maxIngrSize = 1;
+    for it in ingr.itemArray { maxIngrSize = max(it.maxStackSize, maxIngrSize); }
+    // Set amount. Note that item amount could not be more than max item stack size
+    // This is useful for boxes
+    trueIngrs += ingr * min(maxIngrSize, count[i] * multiplier);
   }
 
   avdRockXmlRecipeEx(

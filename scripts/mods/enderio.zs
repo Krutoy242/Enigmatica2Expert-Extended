@@ -142,16 +142,18 @@ craft.remake(<enderio:item_material:66>, ["pretty",
 });
 
 # [Basic Capacitor] from [Redstone Conductance Coil][+3]
-craft.remake(<enderio:item_basic_capacitor>, ["pretty",
-  "  H  ",
-  "I ♥ I",
-  "  ■  "], {
-  "■": <immersivecables:coil_block:1>,         # Dense Fluix Coil Block
-  "♥": <thermalfoundation:material:515>,       # Redstone Conductance Coil
-  "H": <immersiveengineering:metal_device0:2>, # HV Capacitor
-  "I": <ore:itemInfinityGoop>,                 # Infinity Reagent
-});
-
+val BCIngrs = Grid(["pretty",
+  "  ╱  ",
+  "▲ ♥ ▲",
+  "  ▬  "], {
+  "╱": <ore:stickTitaniumIridium>,       # Titanium Iridium Alloy Rod
+  "▲": <ore:dustBedrock>,                # Grains of Infinity
+  "♥": <thermalfoundation:material:515>, # Redstone Conductance Coil
+  "▬": <ore:ingotFluixSteel>,            # Fluix Steel Ingot
+}).shaped();
+recipes.remove(<enderio:item_basic_capacitor>);
+recipes.addShaped('EIO capacitor', <enderio:item_basic_capacitor>, BCIngrs);
+scripts.processUtils.avdRockXmlRecipeFlatten("PrecisionAssembler", <enderio:item_basic_capacitor>, BCIngrs);
 
 # [Fluid Tank] from [Clear Glass][+1]
 recipes.remove(<enderio:block_tank>);
@@ -532,6 +534,7 @@ craft.reshapeless(<enderio:item_material:38>, "▲▲▲©S©▲▲▲", {
 scripts.process.compress(<ore:itemPowderPhotovoltaic> * 4, <enderio:item_material:3>, "Except: Compressor");
 mods.mekanism.compressor.addRecipe(<ore:itemPowderPhotovoltaic> * 4, <enderio:item_material:3>);
 mods.immersiveengineering.MetalPress.addRecipe(<enderio:item_material:3>, <ore:itemPowderPhotovoltaic> * 4, <immersiveengineering:mold:0>, 2000);
+mods.qmd.target_chamber.addRecipe(<ore:itemPowderPhotovoltaic>, (<particle:boron_ion>*100000)^2000, <enderio:item_material:3>, null, null, null, 10000, 1.0, 0, 0);
 
 # Cheaper to match other solar panels
 # [Simple Photovoltaic Cell] from [Infinity Bimetal Gear][+3]
@@ -796,8 +799,10 @@ function addBrewAlt(fluid as ILiquidStack, ingrs as IIngredient[], output as str
   );
 }
 
-addBrewAlt(<fluid:mead>       * 2000, [<minecraft:porkchop>, <minecraft:sugar>], 'nutrient_distillation');
-addBrewAlt(<fluid:short.mead> * 2000, [<minecraft:porkchop>, <minecraft:sugar>], 'nutrient_distillation');
+addBrewAlt(<fluid:mead>       * 2000, [<additionalcompression:meatporkchop_compressed>, <minecraft:sugar>], 'nutrient_distillation');
+addBrewAlt(<fluid:short.mead> * 2000, [<additionalcompression:meatporkchop_compressed>, <minecraft:sugar>], 'nutrient_distillation');
+addBrewAlt(<fluid:mead>       * 2000, [<minecraft:skull:2>, <minecraft:sugar>], 'nutrient_distillation');
+addBrewAlt(<fluid:short.mead> * 2000, [<minecraft:skull:2>, <minecraft:sugar>], 'nutrient_distillation');
 addBrewAlt(<fluid:milk_goat>  * 2000, [<minecraft:beetroot_seeds>, <minecraft:sugar>], 'hootch');
 addBrewAlt(<fluid:milk_sheep> * 2000, [<minecraft:beetroot_seeds>, <minecraft:sugar>], 'hootch');
 addBrewAlt(<fluid:milk>       * 8000, [<rats:assorted_vegetables>, <additionalcompression:dustsugar_compressed:1>], 'hootch');

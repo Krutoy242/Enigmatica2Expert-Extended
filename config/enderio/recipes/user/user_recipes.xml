@@ -250,14 +250,6 @@
       <output name="tconstruct:materials:19"/>
     </tanking>
   </recipe>
-  <!-- Water Washing -->
-  <recipe name="Soot-Covered Washing">
-    <tanking type="FILL" logic="NONE">
-      <input name="deepmoblearning:soot_covered_redstone"/>
-      <fluid name="water" amount="20"/>
-      <output name="minecraft:redstone"/>
-    </tanking>
-  </recipe>
   <!-- Treating planks alt -->
   <recipe name="Treated Planks IC2">
     <tanking type="FILL" logic="NONE">
@@ -726,7 +718,7 @@
   <!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
   <recipe name="Super Alloy Ingot">
     <alloying energy="10000">
-      <input name="ingotNichrome" amount="4"/>
+      <input name="ingotNichrome" amount="2"/>
       <input name="ingotNiobiumTitanium"/>
       <output name="qmd:ingot_alloy:6" amount="3"/>
     </alloying>

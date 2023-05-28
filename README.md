@@ -68,6 +68,12 @@ Generated with:
 
 ## Installation
 
+### ⚠️ Update your Java
+
+To play this pack you **must** update your Java from verson `1.8.0_51` to newer one.
+
+You can check out your current Java version in F3 menu or on 5th line of file `logs/latest.log`.
+
 ### From Curse Forge
 
 Just use *New Instance* feature of your launcher. [GDLauncher example](https://i.imgur.com/1KV7r6T.png).
@@ -79,10 +85,13 @@ Just use *New Instance* feature of your launcher. [GDLauncher example](https://i
 
 ### Skyblock 🌌
 
-When you creating new world, there is Skyblock option. You can play it without preparation, but with standard settings, structures will be generated in an void world. It is desirable (but not necessary) to turn them off.
+In Skyblock mode, you cannot leave the starting Void dimension (with a couple of exceptions).
 
-Download and overwrite [this configs](https://github.com/Krutoy242/Enigmatica2Expert-Extended/tree/master/dev/skyblock_overrides) over your installed instance.  
-New configs would disable some generation in void world, like Slime Islands or Dragon corpses.  
+In order to create a new Skyblock world, you need:
+
+1. In main menu go to `Mods` => `Just Enough Dimensions` Config => `Generic` => `initialSpawnDimensionId` set to `3`
+2. Then `Create New World` => `Create New World`
+
 If you play on a server on which have already made these changes, the client does not need to change the configs.
 
 -----------------
@@ -114,7 +123,7 @@ If you play on a server on which have already made these changes, the client doe
 
 ## Recommended mods
 
-- [**Entity Culling**](https://www.curseforge.com/minecraft/mc-mods/entityculling) - increase performance, but can cause crashes on some machines
+- [**Entity Culling**](https://www.curseforge.com/minecraft/mc-mods/entity-culling) - increase performance, but can cause crashes on some machines
 
 - [**Dynamic Surroundings**](https://www.curseforge.com/minecraft/mc-mods/dynamic-surroundings) - better sounds and environmental, but increaing load time and lower FPS a bit
 

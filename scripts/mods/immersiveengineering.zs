@@ -15,6 +15,10 @@ import crafttweaker.potions.IPotionEffect;
 	recipes.remove(<immersiveengineering:material:3>);
 	utils.rh(<immersiveengineering:material:24>);
 
+# Fix IC2 block
+val UI = <ore:ingotUranium>;
+recipes.addShapeless(<immersiveengineering:storage:5>, [UI, UI, UI, UI, UI, UI, UI, UI, UI]);
+
 # Removing Recycling recipes that produce IE Iron Nuggets
 	mods.immersiveengineering.ArcFurnace.removeRecipe(<immersiveengineering:metal:29>);
 
@@ -114,21 +118,42 @@ craft.make(<immersiveengineering:stone_decoration:5> * 8, ["pretty",
 	mods.thermalexpansion.Pulverizer.addRecipe(<immersiveengineering:material:17>, <thermalfoundation:material:802>, 4000);
 	mods.thermalexpansion.Pulverizer.addRecipe(<immersiveengineering:material:17>, <immersiveengineering:material:6>, 4000);
 
-# Energy Capacitors
-	recipes.remove(<immersiveengineering:metal_device0:1>);
-	recipes.addShaped("MV Capacitor", 
-	<immersiveengineering:metal_device0:1>, 
-	[[<ore:ingotFakeIron>, <ore:ingotFakeIron>, <ore:ingotFakeIron>],
-	[<ore:ingotElectrum>, <immersiveengineering:metal_device0>, <ore:ingotElectrum>], 
-	[<ore:plankTreatedWood>, <ore:blockRedstone>, <ore:plankTreatedWood>]]);
-	
-	recipes.remove(<immersiveengineering:metal_device0:2>);
-	recipes.addShaped("HV Capacitor", 
-	<immersiveengineering:metal_device0:2>, 
-	[[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>],
-	[<ore:blockLead>, <immersiveengineering:metal_device0:1>, <ore:blockLead>], 
-	[<ore:plankTreatedWood>, <ore:blockRedstone>, <ore:plankTreatedWood>]]);
-	
+# [LV Capacitor] from [Lead Item Casing][+4]
+craft.remake(<immersiveengineering:metal_device0>, ["pretty",
+  "⌂ □ ⌂",
+  "⌂ L ⌂",
+  "# ♥ #"], {
+  "⌂": <ic2:casing:1>,         # Copper Item Casing
+  "□": <ore:plateIron>,        # Iron Plate
+  "L": <ic2:casing:4>,         # Lead Item Casing
+  "#": <ore:stickTreatedWood>, # Treated Stick
+  "♥": <ore:dustRedstone>,     # Redstone
+});
+
+# [MV Capacitor] from [LV Capacitor][+4]
+craft.remake(<immersiveengineering:metal_device0:1>, ["pretty",
+  "⌂ □ ⌂",
+  "⌂ L ⌂",
+  "# ♥ #"], {
+  "⌂": <ic2:casing:3>,                       # Iron Item Casing
+  "□": <ore:plateElectrum>,                  # Electrum Plate
+  "L": <immersiveengineering:metal_device0>, # LV Capacitor
+  "#": <ore:stickTreatedWood>,               # Treated Stick
+  "♥": <ore:blockRedstone>,                  # Block of Redstone
+});
+
+# [HV Capacitor] from [MV Capacitor][+4]
+craft.remake(<immersiveengineering:metal_device0:2>, ["pretty",
+  "⌂ □ ⌂",
+  "⌂ M ⌂",
+  "# ♥ #"], {
+  "⌂": <ic2:casing:5>,                         # Steel Item Casing
+  "□": <ore:plateDenseLead>,                   # Dense Lead Plate
+  "M": <immersiveengineering:metal_device0:1>, # MV Capacitor
+  "#": <ore:stickTreatedWood>,                 # Treated Stick
+  "♥": <ore:blockRedstone>,                    # Block of Redstone
+});
+
 # LV - MV Connectors/Relays
 	recipes.addShapeless("LV - MV Connector", <immersiveengineering:connector:2>, [<immersiveengineering:connector>, <ore:ingotFakeIron>]);
 	recipes.addShapeless("LV - MV Relay", <immersiveengineering:connector:3>, [<immersiveengineering:connector:1>, <ore:ingotFakeIron>]);
@@ -183,7 +208,7 @@ craft.remake(<immersiveengineering:stone_decoration> * 3, ["pretty",
 
 # Garden Cloche
 	recipes.remove(<immersiveengineering:metal_device1:13>);
-	mods.forestry.ThermionicFabricator.addCast(<immersiveengineering:metal_device1:13>, 
+	scripts.mods.forestry.ThermionicFabricator.addCast(<immersiveengineering:metal_device1:13>, 
 	[[null, <actuallyadditions:block_greenhouse_glass>, null],
 	[null, <ic2:upgrade:4>, null], 
 	[<ore:plankTreatedWood>, <immersiveengineering:metal_decoration0:5>, <ore:plankTreatedWood>]], 
@@ -216,8 +241,11 @@ craft.remake(<immersiveengineering:stone_decoration> * 3, ["pretty",
 	mods.immersiveengineering.Crusher.addRecipe(<thermalfoundation:material:895> * 3, <ore:oreClathrateEnder>, 6000);
 	
 # Unbreakable Graphite Electrodes
-	mods.thermalexpansion.InductionSmelter.addRecipe(<immersiveengineering:graphite_electrode>.withTag({Unbreakable: 1, display: {Lore: ["Reinforced with Titanium Iridium Alloy"], Name: "Unbreakable Graphite Electrode"}}), <immersiveengineering:graphite_electrode>, <advancedrocketry:productingot:1> * 4, 25000);
-	mods.jei.JEI.addItem(<immersiveengineering:graphite_electrode>.withTag({Unbreakable: 1, display: {Lore: ["Reinforced with Titanium Iridium Alloy"], Name: "Unbreakable Graphite Electrode"}}));
+val electrodeTag = {Unbreakable: 1, display: {Lore: ["Reinforced with Titanium Iridium Alloy"], Name: "Unbreakable Graphite Electrode"}} as crafttweaker.data.IData;
+val electrodeItem= <immersiveengineering:graphite_electrode>.withTag(electrodeTag);
+mods.thermalexpansion.InductionSmelter.addRecipe(electrodeItem, <immersiveengineering:graphite_electrode>, <advancedrocketry:productingot:1> * 4, 25000);
+mods.jei.JEI.addItem(electrodeItem);
+mods.jei.JEI.addDescription(electrodeItem, "Reinforced Graphite Eletrode. Repaired Graphite Electrodes are insufficient for this process");
 
 # Add missed Quickdry Concrete
 mods.jei.JEI.addItem(<immersiveengineering:stone_decoration:9>);
@@ -227,8 +255,10 @@ mods.jei.JEI.addItem(<immersiveengineering:stone_decoration:9>);
 mods.immersiveengineering.Excavator.addMineral("Osmium", 50, 0.005, ["oreTin", "oreOsmium", "oreSilver"], [0.01, 0.006, 0.003]);
 mods.immersiveengineering.Excavator.addMineral("Nuclear Ore", 20, 0.005, ["oreBoron", "oreThorium"], [0.01, 0.01]);
 mods.immersiveengineering.Excavator.addMineral("Black Quartz", 20, 0.005, ["oreQuartzBlack", "oreCoal"], [0.3, 0.2]);
-mods.immersiveengineering.Excavator.getMineral("Platinum").removeOre("oreIridium");
 mods.immersiveengineering.Excavator.getMineral("Coal").removeOre("oreEmerald");
+mods.immersiveengineering.Excavator.getMineral("Nickel").removeOre("orePlatinum");
+mods.immersiveengineering.Excavator.getMineral("Cinnabar").removeOre("oreRuby");
+mods.immersiveengineering.Excavator.removeMineral("Platinum");
 
 # *======= Railgun rods =======*
 
@@ -531,7 +561,7 @@ craft.make(<immersiveengineering:stone_decoration:8>, ["pretty",
 });
 
 # [Insulating Glass*4] from [Cactus Green][+1]
-mods.forestry.ThermionicFabricator.addCast(<immersiveengineering:stone_decoration:8> * 6, Grid([
+scripts.mods.forestry.ThermionicFabricator.addCast(<immersiveengineering:stone_decoration:8> * 6, Grid([
   "▲d▲"], {
   "▲": <ore:dustIron>, # Pulverized Iron
   "d": <ore:dyeGreen>, # Cactus Green

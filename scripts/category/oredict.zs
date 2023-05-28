@@ -115,6 +115,25 @@ addItems(<ore:boat>, [
 	<ic2:boat:3>
 ]);
 
+addItems(<ore:terracottaGlazed>, [
+	<minecraft:orange_glazed_terracotta>,
+	<minecraft:magenta_glazed_terracotta>,
+	<minecraft:light_blue_glazed_terracotta>,
+	<minecraft:yellow_glazed_terracotta>,
+	<minecraft:lime_glazed_terracotta>,
+	<minecraft:pink_glazed_terracotta>,
+	<minecraft:gray_glazed_terracotta>,
+	<minecraft:silver_glazed_terracotta>,
+	<minecraft:cyan_glazed_terracotta>,
+	<minecraft:purple_glazed_terracotta>,
+	<minecraft:blue_glazed_terracotta>,
+	<minecraft:brown_glazed_terracotta>,
+	<minecraft:green_glazed_terracotta>,
+	<minecraft:red_glazed_terracotta>,
+	<minecraft:black_glazed_terracotta>,
+	<minecraft:white_glazed_terracotta>,
+]);
+
 # Mycelium Oredict
 add(<ore:mycelium>, <biomesoplenty:grass:8>);
 
@@ -125,6 +144,14 @@ addItems(<ore:dirt>, [
 	<biomesoplenty:dirt:1>,
 	<biomesoplenty:dirt:10>,
 	<biomesoplenty:dirt:2>
+]);
+
+# Coarse Dirt
+addItems(<ore:dirtCoarse>, [
+	<minecraft:dirt:1>,
+	<biomesoplenty:dirt:8>,
+	<biomesoplenty:dirt:9>,
+	<biomesoplenty:dirt:10>,
 ]);
 
 # Enhanced Ender Ingot
@@ -149,11 +176,9 @@ add(<ore:blockAmber>, <biomesoplenty:gem_block:7>);
 add(<ore:blockAmber>, <thaumcraft:amber_block>);
 add(<ore:blockAmber>, <thaumcraft:amber_brick>);
 
-# Astral Sorcery Rock Crystals
-add(<ore:crystalAstralAny>, <astralsorcery:itemrockcrystalsimple>.withEmptyTag());
-add(<ore:crystalAstralAny>, <astralsorcery:itemtunedrockcrystal>.withEmptyTag());
-add(<ore:crystalAstralAny>, <astralsorcery:itemcelestialcrystal>.withEmptyTag());
-add(<ore:crystalAstralAny>, <astralsorcery:itemtunedcelestialcrystal>.withEmptyTag());
+add(<ore:gemPerk>, <astralsorcery:itemperkgem:0>.withEmptyTag());
+add(<ore:gemPerk>, <astralsorcery:itemperkgem:1>.withEmptyTag());
+add(<ore:gemPerk>, <astralsorcery:itemperkgem:2>.withEmptyTag());
 
 # Blood Magic Runes
 add(<ore:runeBlood>, <bloodmagic:blood_rune:*>);
@@ -407,7 +432,7 @@ recipes.addShapeless("trapdoororedict1", <minecraft:trapdoor>, [<ore:trapdoorWoo
 recipes.addShapeless("bedoredict1", <minecraft:bed>, [<ore:bed>]);
 
 # Rats
-addItems(<ore:hatArcheologist>, [<quark:archaeologist_hat>, <rats:archeologist_hat>]);
+addItems(<ore:hatArcheologist>, [<quark:archaeologist_hat:*>, <rats:archeologist_hat:*>]);
 addItems(<ore:hatPirate>, [<quark:pirate_hat>, <rats:pirat_hat>]);
 
 # Some dusts

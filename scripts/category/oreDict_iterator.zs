@@ -33,9 +33,12 @@ for ore_entry in oreDict {
 		val oreBlock = oreDict.get("ore" ~ ore_name);
 		if(isNull(oreBlock) || oreBlock.empty) continue;
 
-		val p = ore_entry;
-		recipes.addShaped("Ex Nihilo " ~ name ~ " x8", oreBlock.firstItem * 2, [[p, p, p], [p, p, p], [p, p, p]]);
-		scripts.process.compress(p * 4, oreBlock.firstItem, "except: Compressor");
+    for item in oreBlock.items {
+      val asBlock = item.asBlock();
+      if(isNull(asBlock) || asBlock.definition.id == 'minecraft:air') continue;
+      val oreBlockState = asBlock.definition.getStateFromMeta(item.damage);
+      scripts.do.burnt_in_fluid.add(ore_entry.itemArray[0].definition.id, oreBlockState, 'stone', 1.0 / 3.0);
+    }
     continue;
 	}
 
@@ -89,6 +92,7 @@ for ore_entry in oreDict {
 			: oreDict["block"~ore_name];
 		if(inpOre.items.length <= 0) continue;
 		scripts.process.compress(inpOre, ore_entry.firstItem, "only: Compactor");
+    mods.immersiveengineering.MetalPress.addRecipe(ore_entry.firstItem, oreDict["plate"~ore_name], <immersiveengineering:mold:6>, 16000, 9);
     continue;
 	}
 }

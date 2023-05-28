@@ -8,6 +8,8 @@
 
 #priority 3000
 #ignoreBracketErrors
+
+import crafttweaker.item.IItemStack;
 	
 # MFE -> MFSU Upgrade Kit removal
 utils.rh(<ic2:upgrade_kit>);
@@ -44,6 +46,7 @@ utils.rh(<openblocks:cursor>);
 utils.rh(<actuallyadditions:item_misc:17>);
 utils.rh(<avaritia:compressed_crafting_table>);
 utils.rh(<avaritia:double_compressed_crafting_table>);
+utils.rh(<avaritia:resource>); # Diamond Lattice
 
 # Purge saltpeter and sulfur
 utils.rh(<bloodmagic:component:24>);
@@ -111,15 +114,6 @@ furnace.remove(<*>, <immersiveengineering:ore:2>);
 furnace.remove(<*>, <immersiveengineering:ore:3>);
 furnace.remove(<*>, <immersiveengineering:ore:4>);
 furnace.remove(<*>, <immersiveengineering:ore>);
-furnace.remove(<*>, <nuclearcraft:dust:1>);
-furnace.remove(<*>, <nuclearcraft:dust:2>);
-furnace.remove(<*>, <nuclearcraft:dust:4>);
-furnace.remove(<*>, <nuclearcraft:dust>);
-furnace.remove(<*>, <nuclearcraft:gem_dust:2>);
-furnace.remove(<*>, <nuclearcraft:ore:1>);
-furnace.remove(<*>, <nuclearcraft:ore:2>);
-furnace.remove(<*>, <nuclearcraft:ore:4>);
-furnace.remove(<*>, <nuclearcraft:ore>);
 furnace.remove(<*>, <twilightforest:raw_venison:*>);
 /**/
 
@@ -204,4 +198,38 @@ utils.rh(<thaumicwonders:eldritch_cluster:8>);
 # Purge removed items from furnace
 for item in itemUtils.getItemsByRegexRegistryName("thermalfoundation:((tool|armor)\\.|horse_armor_).*") {
 	furnace.remove(<*>, item);
+}
+
+// Gears
+val gearsToRemove = [
+	<appliedenergistics2:material:40>,
+	<thermalfoundation:material:22>,
+	<thermalfoundation:material:23>,
+	<thermalfoundation:material:24>,
+	<thermalfoundation:material:25>,
+	<thermalfoundation:material:26>,
+	<thermalfoundation:material:27>,
+	<thermalfoundation:material:256>,
+	<thermalfoundation:material:257>,
+	<thermalfoundation:material:258>,
+	<thermalfoundation:material:259>,
+	<thermalfoundation:material:260>,
+	<thermalfoundation:material:261>,
+	<thermalfoundation:material:262>,
+	<thermalfoundation:material:263>,
+	<thermalfoundation:material:264>,
+	<thermalfoundation:material:288>,
+	<thermalfoundation:material:289>,
+	<thermalfoundation:material:290>,
+	<thermalfoundation:material:291>,
+	<thermalfoundation:material:292>,
+	<thermalfoundation:material:293>,
+	<thermalfoundation:material:294>,
+	<thermalfoundation:material:295>,
+	<redstonearsenal:material:96>,
+	<jaopca:item_geardraconium>,
+] as IItemStack[];
+
+for items in gearsToRemove {
+	recipes.remove(items);
 }

@@ -1,8 +1,7 @@
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 import mods.cyclicmagic.Hydrator;  
-import mods.cyclicmagic.Solidifier;  
-import mods.cyclicmagic.Dehydrator;
+import mods.cyclicmagic.Solidifier;
 import crafttweaker.data.IData;
 #modloaded cyclicmagic
 
@@ -275,30 +274,10 @@ for i in 0 .. 16 {
 
 Hydrator.removeShapedRecipe(<minecraft:wool>);
 
-/*
-
-  🌢 Dehydrator
-
-*/
-
-# Bug: Dehydrator always output only 100mb of water
-// Dehydrator.addRecipe(<ae2fc:fluid_drop>.withTag({Fluid: "water"}), <mysticalagriculture:water_essence>, 250);
-
-// Terracotta
-Dehydrator.removeShapedRecipe(<minecraft:hardened_clay>);
-
-# Remove default useless concrete recipes
-for i in 0 .. 16 {
-  Dehydrator.removeShapedRecipe(<minecraft:concrete_powder>.definition.makeStack(i));
-}
+# Dehydrator replace
+mods.tconstruct.Drying.addRecipe(<cyclicmagic:stone_pebble>, <ore:ballMud>, 100);
 
 recipes.remove(<cyclicmagic:stone_pebble>);
-Dehydrator.addRecipe(<cyclicmagic:stone_pebble>, <biomesoplenty:mudball>, 100);
-
-# Fast dryed clay
-Dehydrator.addRecipe(<tconstruct:materials:2>, <minecraft:clay_ball> * 2, 100);
-Dehydrator.addRecipe(<tconstruct:dried_clay>, <minecraft:clay> * 2, 100);
-
 
 /*
 
@@ -332,34 +311,40 @@ Solidifier.addRecipe(<forestry:oak_stick> * 2, [<ore:logWood>.firstItem * 2], "s
 # ---------------------------------------------
 
 # [Sword of Atrophy] from [Iron Sword][+2]
-craft.remake(<cyclicmagic:sword_weakness>, ["pretty",
+recipes.remove(<cyclicmagic:sword_weakness>);
+utils.addEnchRecipe(<cyclicmagic:sword_weakness>,
+  <enchantment:cyclicmagic:enchantment.beheading>, Grid(["pretty",
   "    ◊",
   "  I  ",
   "T    "], {
   "◊": <ore:gemPeridot>,                   # Peridot
   "I": <minecraft:iron_sword>.anyDamage(), # Iron Sword
   "T": <cyclicmagic:glass_strong>,         # Tempered Glass
-});
+}).shaped());
 
 # [Sword of Decay] from [Iron Sword][+2]
-craft.remake(<cyclicmagic:sword_slowness>, ["pretty",
+recipes.remove(<cyclicmagic:sword_slowness>);
+utils.addEnchRecipe(<cyclicmagic:sword_slowness>,
+  <enchantment:cyclicmagic:enchantment.beheading>, Grid(["pretty",
   "    ◊",
   "  I  ",
   "T    "], {
   "◊": <ore:gemSapphire>,                  # Sapphire
   "I": <minecraft:iron_sword>.anyDamage(), # Iron Sword
   "T": <cyclicmagic:glass_strong>,         # Tempered Glass
-});
+}).shaped());
 
 # [Sword of Evasion] from [Iron Sword][+2]
-craft.remake(<cyclicmagic:sword_ender>, ["pretty",
+recipes.remove(<cyclicmagic:sword_ender>);
+utils.addEnchRecipe(<cyclicmagic:sword_ender>,
+  <enchantment:cyclicmagic:enchantment.beheading>, Grid(["pretty",
   "    *",
   "  I  ",
   "T    "], {
   "*": <biomesoplenty:crystal_shard>,      # Celestial Crystal Shard
   "I": <minecraft:iron_sword>.anyDamage(), # Iron Sword
   "T": <cyclicmagic:glass_strong>,         # Tempered Glass
-});
+}).shaped());
 
 # Fix color of conveyor (was purple)
 # [Conveyor_Belt] from [Clay][+2]
@@ -374,16 +359,6 @@ craft.remake(<cyclicmagic:plate_push> * 8, ["pretty",
 
 # Remove because transcended by Conarm modifiers
 utils.rh(<cyclicmagic:glowing_helmet>);
-
-# [Experience Pylon] from [Mending Moss][+2]
-craft.remake(<cyclicmagic:exp_pylon>, ["pretty",
-  "S ▲ S",
-  "S M S",
-  "S ▲ S"], {
-  "▲": <ore:dustEmerald>,         # Crushed Emerald
-  "S": <ore:itemXP>, # Solidified Experience
-  "M": <tconstruct:materials:19>, # Mending Moss
-});
 
 # [Empty Sack of Holding] from [Propolis][+2]
 craft.remake(<cyclicmagic:chest_sack_empty>, ["pretty",
@@ -425,8 +400,8 @@ craft.remake(<cyclicmagic:apple_emerald>, ["pretty",
 recipes.remove(<cyclicmagic:apple>);
 recipes.remove(<cyclicmagic:corrupted_chorus>);
 recipes.remove(<cyclicmagic:glowing_chorus>);
-scripts.category.tooltip_utils.desc.both(<cyclicmagic:apple>, "kill.slime.by.zombie");
-scripts.category.tooltip_utils.desc.both(<cyclicmagic:corrupted_chorus>, "kill.slime.by.enderman");
+scripts.lib.tooltip.desc.both(<cyclicmagic:apple>, "kill.slime.by.zombie");
+scripts.lib.tooltip.desc.both(<cyclicmagic:corrupted_chorus>, "kill.slime.by.enderman");
 scripts.do.entity_kill_entity.add("minecraft:slime", "minecraft:zombie", <cyclicmagic:apple>);
 scripts.do.entity_kill_entity.add("minecraft:slime", "minecraft:enderman", <cyclicmagic:corrupted_chorus>);
 
@@ -444,16 +419,6 @@ craft.remake(<cyclicmagic:corrupted_chorus> * 16, ["pretty",
   "  T  "], {
   "T": <mysticalagriculture:slime_essence>,     # Slime Essence
   "i": <mysticalagriculture:draconium_essence>, # Draconium Essence
-});
-
-# [Dehydrator] from [Iron Rod][+2]
-craft.remake(<cyclicmagic:dehydrator>, ["pretty",
-  "c   c",
-  "c / c",
-  "# # #"], {
-  "c": <ore:clay>, # Clay
-  "/": <quark:iron_rod>, # Iron Rod
-  "#": <ore:plankWood>, # Oak Wood Planks
 });
 
 # [Magic Bean]*4 from [Pebble]*2[+7]

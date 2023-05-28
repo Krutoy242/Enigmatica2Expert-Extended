@@ -40,6 +40,9 @@ scripts.process.compress(<minecraft:packed_ice> * 2, <biomesoplenty:hard_ice>);
 	mods.thermalexpansion.Centrifuge.addRecipe([rawMeat[0], rawMeat[1], rawMeat[2], rawMeat[3]
 		] as WeightedItemStack[],<biomesoplenty:flesh>, null, 2000);
 
+# Blood from flesh
+scripts.process.melt(<biomesoplenty:fleshchunk>, <liquid:blood> * 20);
+
 # Honey Block -> Honey Drop
 	mods.forestry.Centrifuge.addRecipe([(<forestry:honey_drop> * 5) % 80, (<thermalfoundation:material:99> % 25), (<thermalfoundation:material:100> % 25)], <biomesoplenty:honey_block>, 100);
 	mods.thermalexpansion.Centrifuge.addRecipe([(<forestry:honey_drop>) * 5 % 80, <thermalfoundation:material:99> % 25, <thermalfoundation:material:100> % 25], <biomesoplenty:honey_block>, null, 2000);
@@ -139,8 +142,7 @@ scripts.process.squeeze([<biomesoplenty:planks_0:11>], <liquid:lava> * 750, "onl
 scripts.process.squeeze([<biomesoplenty:leaves_3:8>], <liquid:lava> * 240, "only: Squeezer MechanicalSqueezer", null);
 
 # [Celestial Crystal Shard] from [Obsidian Shard][+1]
-scripts.process.alloy([<ore:crystalPureFluix>, <tconstruct:shard>.withTag({Material: "obsidian"})], <biomesoplenty:crystal_shard>, "only: Kiln");
-scripts.process.alloy([<ore:crystalPureFluix>, <tconstruct:shard>.withTag({Material: "obsidian"})], <biomesoplenty:crystal_shard> * 4, "only: AdvRockArc");
+scripts.process.alloy([<ore:crystalPureFluix>, <tconstruct:shard>.withTag({Material: "obsidian"})], <biomesoplenty:crystal_shard>, "only: Kiln AlloySmelter");
 
 # [Biome Finder] from [Cobweb][+2]
 craft.remake(<biomesoplenty:biome_finder>, ["pretty",
@@ -172,7 +174,7 @@ craft.shapeless(<biomesoplenty:mud>, "Ad", {
 
 recipes.addShapeless("Biome Essence clear tag", <biomesoplenty:biome_essence>, [<biomesoplenty:biome_essence>]);
 
-<entity:biomesoplenty:wasp>.addPlayerOnlyDrop(<extrautils2:spike_gold> % 30, 1, 1);
+<entity:biomesoplenty:wasp>.addPlayerOnlyDrop(<extrautils2:spike_gold> % 50, 1, 1);
 
 # Higher efficient stick conversion
 # [Framed Trim] from [Bamboo]

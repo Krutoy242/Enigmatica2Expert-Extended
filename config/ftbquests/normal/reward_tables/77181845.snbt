@@ -639,6 +639,19 @@
 		icon: "extrautils2:largishchest 3",
 		item: "extrautils2:largishchest",
 		count: 3
+	},
+	{
+		item: {
+			id: "draconicevolution:draconium_chest",
+			tag: {
+				ChestColour: 6553750
+			}
+		}
+	},
+	{
+		icon: "rustic:vase 10 1",
+		item: "rustic:vase 1 1",
+		count: 10
 	}],
 	loot_crate: {
 		string_id: "storage",

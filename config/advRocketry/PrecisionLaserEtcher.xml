@@ -33,20 +33,6 @@
 <!-->
 <Recipes useDefault="false">
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Vivid Alloy Block] -->
-	<Recipe timeRequired="20" power="160000">
-		<input>
-			<oreDict>blockEnderium 1</oreDict>
-			<oreDict>blockAlumite 1</oreDict>
-			<itemStack>draconicevolution:infused_obsidian 1</itemStack>
-			<oreDict>blockPlutonium242 1</oreDict>
-			<fluidStack>mutagen 1000</fluidStack>
-		</input>
-		<output>
-			<itemStack>enderio:block_alloy_endergy 1 6</itemStack>
-		</output>
-	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Elite Plating] -->
 	<Recipe timeRequired="20" power="160000">
 		<input>
@@ -134,7 +120,7 @@
 	<Recipe timeRequired="20" power="100000">
 		<input>
 			<oreDict>netherStar 1</oreDict>
-			<itemStack>avaritia:resource 1</itemStack>
+			<oreDict>gemDilithium 1</oreDict>
 		</input>
 		<output>
 			<itemStack>avaritia:resource 1 1</itemStack>

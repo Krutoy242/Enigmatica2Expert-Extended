@@ -144,18 +144,36 @@
 			<itemStack>rats:arcane_technology</itemStack>
 		</output>
 	</Recipe>
-	<!-- 2x faster and cheaper EiO capaciotr, using iridium coils -->
-	<Recipe timeRequired="10" power="20000">
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Machine Frame] -->
+	<Recipe timeRequired="20" power="80000">
 		<input>
-			<!-- HV Capacitor -->
-			<itemStack>immersiveengineering:metal_device0 1 2</itemStack>
-			<!-- Redstone Conductance Coil -->
-			<itemStack>thermalfoundation:material 1 515</itemStack>
-			<!-- Grains of Infinity -->
-			<oreDict>dustBedrock 2</oreDict>
+			<oreDict>blockOsmium 4</oreDict>
+			<itemStack>advancedrocketry:basalt 4</itemStack>
+			<itemStack>rftools:machine_frame 4</itemStack>
+			<itemStack>thermalexpansion:frame 4 64</itemStack>
+			<itemStack>actuallyadditions:block_misc 4 9</itemStack>
+			<itemStack>actuallyadditions:block_crystal 4 3</itemStack>
+			<itemStack>immersiveengineering:metal_decoration0 4 5</itemStack>
+			<fluidStack>glass 24000</fluidStack>
 		</input>
 		<output>
-			<itemStack>enderio:item_basic_capacitor</itemStack>
+			<itemStack>thermalexpansion:frame 8 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Resonant Cell Frame (Empty)] -->
+	<Recipe timeRequired="20" power="80000">
+		<input>
+			<itemStack>thermalfoundation:material 4 166</itemStack>
+			<itemStack>actuallyadditions:block_misc 4 8</itemStack>
+			<itemStack>thermalfoundation:glass_alloy 4 7</itemStack>
+			<itemStack>thermalexpansion:frame 4 147</itemStack>
+			<itemStack>thermalfoundation:material 8 1028</itemStack>
+			<fluidStack>glass 16000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalexpansion:frame 4 132</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -170,6 +188,20 @@
 		</input>
 		<output>
 			<itemStack>forestry:crafting_material 32 4</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Garden Cloche] -->
+	<Recipe timeRequired="80" power="320000">
+		<input>
+			<itemStack>actuallyadditions:block_greenhouse_glass 16</itemStack>
+			<itemStack>ic2:upgrade 16 4</itemStack>
+			<oreDict>plankTreatedWood 16</oreDict>
+			<itemStack>immersiveengineering:metal_decoration0 16 5</itemStack>
+			<fluidStack>glass 64000</fluidStack>
+		</input>
+		<output>
+			<itemStack>immersiveengineering:metal_device1 16 13</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -215,17 +247,31 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Wyvern Core] -->
-	<Recipe timeRequired="10" power="40000">
+	<!-- [Vivid Alloy Block] -->
+	<Recipe timeRequired="20" power="160000">
 		<input>
-			<itemStack>draconicevolution:draconic_core 4</itemStack>
-			<itemStack>minecraft:sponge 2</itemStack>
-			<oreDict>ingotVividAlloy 2</oreDict>
-			<itemStack>environmentaltech:pladium 2</itemStack>
-			<fluidStack>ic2hot_coolant 4000</fluidStack>
+			<oreDict>blockEnderium 1</oreDict>
+			<oreDict>blockAlumite 1</oreDict>
+			<itemStack>draconicevolution:infused_obsidian 1</itemStack>
+			<oreDict>blockPlutonium242 1</oreDict>
+			<fluidStack>mutagen 1000</fluidStack>
 		</input>
 		<output>
-			<itemStack>draconicevolution:wyvern_core 2 0</itemStack>
+			<itemStack>enderio:block_alloy_endergy 1 6</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Wyvern Core] -->
+	<Recipe timeRequired="5" power="20000">
+		<input>
+			<itemStack>draconicevolution:draconic_core 2</itemStack>
+			<itemStack>minecraft:sponge 1</itemStack>
+			<oreDict>ingotVividAlloy 1</oreDict>
+			<itemStack>environmentaltech:pladium 1</itemStack>
+			<fluidStack>ic2hot_coolant 2000</fluidStack>
+		</input>
+		<output>
+			<itemStack>draconicevolution:wyvern_core 1 0</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -255,6 +301,19 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Biome Glass] -->
+	<Recipe timeRequired="40" power="160000">
+		<input>
+			<oreDict>itemPulsatingCrystal 8</oreDict>
+			<itemStack>actuallyadditions:block_crystal_empowered 8 1</itemStack>
+			<oreDict>ingotPlatinum 8</oreDict>
+			<fluidStack>glass 32000</fluidStack>
+		</input>
+		<output>
+			<itemStack>randomthings:biomeglass 64 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Bog Earth] -->
 	<Recipe timeRequired="40" power="160000">
 		<input>
@@ -281,6 +340,19 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Device Frame] -->
+	<Recipe timeRequired="160" power="640000">
+		<input>
+			<oreDict>ingotTin 64</oreDict>
+			<oreDict>gearCopper 32</oreDict>
+			<itemStack>forestry:wax_cast 1</itemStack>
+			<fluidStack>glass 32000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalexpansion:frame 32 64</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Draconic Energy Core] -->
 	<Recipe timeRequired="10" power="40000">
 		<input>
@@ -304,6 +376,19 @@
 		</input>
 		<output>
 			<itemStack>forestry:flexible_casing 32 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Insulating Glass] -->
+	<Recipe timeRequired="50" power="200000">
+		<input>
+			<oreDict>dustIron 10</oreDict>
+			<oreDict>dyeGreen 10</oreDict>
+			<itemStack>forestry:wax_cast 1</itemStack>
+			<fluidStack>glass 10000</fluidStack>
+		</input>
+		<output>
+			<itemStack>immersiveengineering:stone_decoration 60 8</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -449,6 +534,19 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Basic Capacitor] -->
+	<Recipe timeRequired="160" power="1280000">
+		<input>
+			<oreDict>stickTitaniumIridium 64</oreDict>
+			<oreDict>dustBedrock 64</oreDict>
+			<oreDict>ingotFluixSteel 64</oreDict>
+			<itemStack>thermalfoundation:material 64 515</itemStack>
+		</input>
+		<output>
+			<itemStack>enderio:item_basic_capacitor 64 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Basic Circuit Board] -->
 	<Recipe timeRequired="105" power="420000">
 		<input>
@@ -521,6 +619,18 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Device Frame] -->
+	<Recipe timeRequired="80" power="320000">
+		<input>
+			<oreDict>ingotTin 64</oreDict>
+			<oreDict>gearCopper 16</oreDict>
+			<fluidStack>glass 16000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalexpansion:frame 16 64</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Diamantine Electron Tube] -->
 	<Recipe timeRequired="80" power="320000">
 		<input>
@@ -582,14 +692,14 @@
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Hardened Casing] -->
-	<Recipe timeRequired="160" power="640000">
+	<Recipe timeRequired="60" power="240000">
 		<input>
-			<oreDict>gemDiamondRat 64</oreDict>
-			<itemStack>forestry:sturdy_machine 32</itemStack>
-			<fluidStack>water 160000</fluidStack>
+			<oreDict>gemDiamondRat 24</oreDict>
+			<itemStack>forestry:sturdy_machine 12</itemStack>
+			<fluidStack>water 60000</fluidStack>
 		</input>
 		<output>
-			<itemStack>forestry:hardened_machine 32 0</itemStack>
+			<itemStack>forestry:hardened_machine 12 0</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -879,13 +989,13 @@
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Ender Electron Tube] -->
-	<Recipe timeRequired="80" power="320000">
+	<Recipe timeRequired="5" power="20000">
 		<input>
-			<oreDict>oc:stoneEndstone 48</oreDict>
-			<fluidStack>glass 8000</fluidStack>
+			<oreDict>oc:stoneEndstone 3</oreDict>
+			<fluidStack>glass 500</fluidStack>
 		</input>
 		<output>
-			<itemStack>forestry:thermionic_tubes 64 12</itemStack>
+			<itemStack>forestry:thermionic_tubes 4 12</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -1085,22 +1195,22 @@
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Pickaxe Kit] -->
-	<Recipe timeRequired="160" power="640000">
+	<Recipe timeRequired="5" power="20000">
 		<input>
-			<oreDict>ingotBronze 64</oreDict>
+			<oreDict>ingotBronze 2</oreDict>
 		</input>
 		<output>
-			<itemStack>forestry:kit_pickaxe 32 0</itemStack>
+			<itemStack>forestry:kit_pickaxe 1 0</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Shovel Kit] -->
-	<Recipe timeRequired="320" power="1280000">
+	<Recipe timeRequired="5" power="20000">
 		<input>
-			<oreDict>ingotBronze 64</oreDict>
+			<oreDict>ingotBronze 1</oreDict>
 		</input>
 		<output>
-			<itemStack>forestry:kit_shovel 64 0</itemStack>
+			<itemStack>forestry:kit_shovel 1 0</itemStack>
 		</output>
 	</Recipe>
 </Recipes>

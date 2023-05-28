@@ -1,7 +1,7 @@
 {
 	icon: "mctsmelteryio:machine 1 1",
 	x: -0.875d,
-	y: 0.5d,
+	y: 0.6d,
 	text: [
 		"{q.getting_started.casting_machine.desc}"
 	],
@@ -17,18 +17,17 @@
 		ignore_nbt: 1b
 	},
 	{
-		uid: "ac31c9f0",
-		type: "item",
-		items: [{
-			item: "mctsmelteryio:upgrade 1 1"
-		}],
-		ignore_nbt: 1b
-	},
-	{
 		uid: "b71d724e",
 		type: "item",
 		items: [{
 			item: "mctsmelteryio:iceball"
+		}]
+	},
+	{
+		uid: "0165fa37",
+		type: "item",
+		items: [{
+			item: "mctsmelteryio:upgrade 1 4"
 		}]
 	}],
 	rewards: [{

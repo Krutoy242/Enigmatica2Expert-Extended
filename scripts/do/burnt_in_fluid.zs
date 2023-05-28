@@ -13,29 +13,55 @@ static fluidToBlock as string[string] = {
 } as string[string];
 
 # Item and respective block
-static burntRecipes as IBlockState[string][string] = {} as IBlockState[string][string];
+#                      chance blockOutput fluidId inputId
+static burntRecipes as double[IBlockState][string][string]
+               = {} as double[IBlockState][string][string];
 
-function add(inputId as string, fluidInput as string, blockOutput as IBlockState) as void {
+function add(inputId as string, blockOutput as IBlockState, fluidId as string = 'stone', chance as double = 1.0) as void {
+  if(blockOutput.block.definition.id == 'minecraft:air') {
+    logger.logWarning("[Burn In Fluid] Failed to add recipe since block is Air. inputId: " ~ inputId
+      ~ " blockOutput: " ~ blockOutput.commandString
+      ~ " fluidId: " ~ fluidId
+      ~ " chance: " ~ chance
+    );
+    return;
+  }
+
   if (isNull(burntRecipes[inputId])) burntRecipes[inputId] = {};
-  burntRecipes[inputId][fluidInput] = blockOutput;
+  if (isNull(burntRecipes[inputId][fluidId])) burntRecipes[inputId][fluidId] = {};
+  burntRecipes[inputId][fluidId][blockOutput] = chance;
 }
 
+// This function should be called once
+// warding `/ct reload`
 function postInit() as void {
-  for itemId, tuple in burntRecipes {
-    val item = itemUtils.getItem(itemId);
-    for fluid, state in tuple {
-      val f = game.getLiquid(fluid);
-      scripts.category.tooltip_utils.desc.both(
-        item,
-        "burn_in_fluid",
-        item.displayName,
-        f.displayName
-      );
-      scripts.jei.crafting_hints.fill(
-        item,
-        f * 1000,
-        itemUtils.getItem(state.block.definition.id, state.meta)
-      );
+  for inputId, tuple in burntRecipes {
+    val item = itemUtils.getItem(inputId);
+    if(isNull(item)) {
+      logger.logWarning("[Burn In Fluid] Cannot find item for input: " ~ inputId);
+      continue;
+    }
+    for fluidId, stateChance in tuple {
+      for state, chance in stateChance {
+        val f = game.getLiquid(fluidId);
+        scripts.lib.tooltip.desc.both(
+          item,
+          chance >= 1.0 ? 'burn_in_fluid' : 'burn_in_fluid_chance',
+          item.displayName,
+          f.displayName
+        );
+
+        val blockAsItem = itemUtils.getItem(state.block.definition.id, state.meta);
+        if(isNull(blockAsItem)) {
+          logger.logWarning("[Burn In Fluid] Cannot convert block to item <" ~ state.block.definition.id ~ ":" ~ state.meta ~ ">");
+          continue;
+        }
+        scripts.jei.crafting_hints.fill(
+          item * ((1.0 / chance + 0.00001) as int),
+          f * 1000,
+          blockAsItem
+        );
+      }
     }
   }
 }
@@ -62,13 +88,22 @@ events.onEntityRemove(function(e as mods.zenutils.event.EntityRemoveEvent){
     // Check appropriate liquid
     if(blockState.meta != 0) continue;
 
-    for fluid, state in result {
-      if(blockState.block.definition.id != fluidToBlock[fluid]) continue;
+    for fluid, stateChance in result {
+      for state, chance in stateChance {
+        if(blockState.block.definition.id != fluidToBlock[fluid]) continue;
 
-      // Replace block
-      world.destroyBlock(blockPos, false);
-      world.setBlockState(state, blockPos);
-      return;
+        val total = chance * entityItem.item.amount as double;
+        if(total < 1.0 && total < world.random.nextDouble()) {
+          // Conversion failure
+          utils.spawnParticles(e.entity, 'fallingdust', e.entity.x, e.entity.y+0.5, e.entity.z, 0.1, 0.4, 0.1,0, 6);
+          continue;
+        }
+
+        // Replace block
+        world.destroyBlock(blockPos, false);
+        world.setBlockState(state, blockPos);
+        return;
+      }
     }
   }
 });

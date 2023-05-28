@@ -159,18 +159,18 @@ craft.remake(<appliedenergistics2:energy_acceptor>, ["pretty",
 	if (isNull(controller)) {
 		recipes.addShapedMirrored("Quantum Ring", 
 		<appliedenergistics2:quantum_ring>, 
-		[[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell>, <appliedenergistics2:material:24>],
-		[<appliedenergistics2:energy_cell>, <enderio:item_me_conduit:1>, <appliedenergistics2:energy_cell>], 
-		[<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell>, <appliedenergistics2:material:23>]]);
+		[[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:24>],
+		[<appliedenergistics2:energy_cell:*>, <enderio:item_me_conduit:1>, <appliedenergistics2:energy_cell:*>], 
+		[<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:23>]]);
 	} else {
 		recipes.addShapedMirrored("Quantum Ring", 
 		<appliedenergistics2:quantum_ring>, 
-		[[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell>, <appliedenergistics2:material:24>],
-		[<appliedenergistics2:energy_cell>, <appliedenergistics2:part:76>, <appliedenergistics2:energy_cell>], 
-		[<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell>, <appliedenergistics2:material:23>]]);
+		[[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:24>],
+		[<appliedenergistics2:energy_cell:*>, <appliedenergistics2:part:76>, <appliedenergistics2:energy_cell:*>], 
+		[<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:23>]]);
 
 		# [ME Controller] from [Industrial Machine Chassis][+4]
-		craft.remake(<appliedenergistics2:controller>, ["pretty",
+		craft.remake(controller, ["pretty",
 			"C I C",
 			"Ϟ M Ϟ",
 			"C A C"], {
@@ -570,3 +570,8 @@ craft.remake(<appliedenergistics2:part:360>, ["pretty",
 # Remake recipe that making hundred of its copies
 mods.appliedenergistics2.Inscriber.removeRecipe(<appliedenergistics2:material:60>);
 mods.appliedenergistics2.Inscriber.addRecipe(<appliedenergistics2:material:60>, <appliedenergistics2:material:25>, false, <minecraft:redstone_block>, <minecraft:lapis_block>);
+
+# Pure crystals instant growing in Witch Water
+mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:10>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed>], true);
+mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:11>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed:600>], true);
+mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:12>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed:1200>], true);

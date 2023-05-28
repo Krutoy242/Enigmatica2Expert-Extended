@@ -38,22 +38,18 @@ function isForbidTravel(player as IPlayer, dimension as int) as bool {
   if(player.hasGameStage("skyblock")) {
     # Show message that player playing skyblock and cant visit any dims
     if(isNether || restrictedDims has dimension) {
-      // player.world.catenation().sleep(1).then(function(world, ctx) {
-        player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation("tooltips.dim_stages.restricted"));
-      // }).start();
+      player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation("tooltips.dim_stages.restricted"));
       return true;
     }
   }
   else {
     if(isNether && !player.hasGameStage("healthy")) {
       # Show message that player not healthy anough
-      // player.world.catenation().sleep(1).then(function(world, ctx) {
-        player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation(
-          "tooltips.dim_stages.healthy",
-          health_require as int,
-          (health_require / 2.0f + 0.5f) as int
-        ));
-      // }).start();
+      player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation(
+        "tooltips.dim_stages.healthy",
+        health_require as int,
+        (health_require / 2.0f + 0.5f) as int
+      ));
       return true;
     }
   }
@@ -73,7 +69,7 @@ events.onPlayerChangedDimension(function(e as crafttweaker.event.PlayerChangedDi
   if(e.entity.world.isRemote()) return;
   if(!e.player.creative && isForbidTravel(e.player, e.to)) {
     e.player.world.catenation().sleep(20).then(function(world, ctx) {
-      server.commandManager.executeCommand(server, '/tpx '~e.player.name~' 0');
+      server.commandManager.executeCommand(server, '/tpx '~e.player.name~' '~e.from);
     }).start();
   }
 });
@@ -82,7 +78,11 @@ events.onPlayerChangedDimension(function(e as crafttweaker.event.PlayerChangedDi
 static restrictedDims as int[] = [
 /*Inject_js(
 getCSV('config/tellme/dimensions-csv.csv')
-.filter(l=>![0,144,-343800852,2,-2].includes(parseInt(l.ID)))
+.filter(l=>
+  ![0,144,-343800852,2,-2,3].includes(parseInt(l.ID)) // Allowed dims
+  && l.name !== 'rftools_dimension'
+)
+.concat([{ID:200}]) // Hardcoded dimensions (OTG ones)
 .map(l=>`  ${l.ID},`)
 )*/
   1,
@@ -92,7 +92,6 @@ getCSV('config/tellme/dimensions-csv.csv')
   4598,
   -8,
   7,
-  200,
   100,
   101,
   102,
@@ -113,5 +112,8 @@ getCSV('config/tellme/dimensions-csv.csv')
   121,
   122,
   123,
+  124,
+  125,
+  200,
 /**/
 ] as int[];

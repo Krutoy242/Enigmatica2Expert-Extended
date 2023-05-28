@@ -3,7 +3,7 @@ import crafttweaker.oredict.IOreDictEntry;
 
 #ignoreBracketErrors
 
-val desc = scripts.category.tooltip_utils.desc;
+val desc = scripts.lib.tooltip.desc;
 
 // Some Quark tooltips from https://github.com/Level-5-Pidgey/FantasTek/tree/master/mods
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -21,6 +21,7 @@ for item in [
   <actuallyadditions:block_farmer>,
   <advgenerators:gas_input>,
   <ae2stuff:visualiser>,
+  <bibliocraft:fancysign>,
   <bloodmagic:blood_rune:1>,
   <bloodmagic:blood_rune:3>,
   <bloodmagic:blood_rune:4>,
@@ -91,7 +92,6 @@ desc.jei(<enderio:item_material:17>, "enticing_crystal"); # Enticing Crystal
 desc.jei(<extendedcrafting:crafting_core>, "maximum_allowed_input"); # Crafting Core
 desc.jei(<astralsorcery:blockinfusedwood>, "wood_in_starlight"); # Infused Wood
 desc.jei(<advancedrocketry:platepress>, "plate_presser"); # Small Plate Press
-desc.jei(<guideapi:bloodmagic-guide>, "right_click_blood_altair"); # BM Guide
 desc.jei(<thaumcraft:thaumonomicon>, "click.bookshelf"); # Thaumonomicon
 desc.jei(<thaumcraft:arcane_workbench>, "click.crafting"); # Arcane Workbench
 desc.jei(<thaumcraft:crucible>, "click.cauldron"); # Crucible
@@ -313,6 +313,8 @@ desc.tooltip(<travelersbackpack:travelers_backpack:67>, 'backpack.Slime');
 desc.tooltip(<travelersbackpack:travelers_backpack:62>, 'backpack.Squid');
 desc.tooltip(<travelersbackpack:travelers_backpack:63>, 'backpack.Sunflower');
 desc.tooltip(<travelersbackpack:travelers_backpack:73>, 'backpack.Wolf');
+desc.tooltip(<ic2:jetpack_electric:26>, 'sponge.removed_with');
+desc.tooltip(<minecraft:sponge>, 'sponge.can_remove');
 
 desc.tooltip(<openblocks:trophy>.withTag({entity_id: "minecraft:blaze"})            , 'trophy.blaze');
 desc.tooltip(<openblocks:trophy>.withTag({entity_id: "minecraft:cave_spider"})      , 'trophy.cave_spider');

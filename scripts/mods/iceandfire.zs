@@ -514,7 +514,7 @@ mods.iceandfire.recipes.addIceDragonForgeRecipe(
 scripts.processUtils.avdRockXmlRecipeEx("Crystallizer", [<cyclicmagic:heart_toxic>], [<fluid:lifeessence> * 1000], [<scalinghealth:heartcontainer>], null, {power: 100000, timeRequired: 20});
 
 # [Crystal Matrix Ingot] from [Diamond Lattice][+1]
-scripts.processUtils.avdRockXmlRecipeEx("PrecisionLaserEtcher", [<ore:netherStar>, <avaritia:resource>], null, [<avaritia:resource:1>], null, {power: 100000, timeRequired: 20});
+scripts.processUtils.avdRockXmlRecipeEx("PrecisionLaserEtcher", [<ore:netherStar>, <ore:gemDilithium>], null, [<avaritia:resource:1>], null, {power: 100000, timeRequired: 20});
 
 # [Fire Dragonsteel Ingot] from [Fire Dragon Blood][+1]
 scripts.process.alloy([
@@ -584,7 +584,7 @@ mods.iceandfire.recipes.addFireDragonForgeRecipe(<ore:blockPigiron>.firstItem, <
 mods.iceandfire.recipes.addIceDragonForgeRecipe(<ore:blockPigiron>.firstItem, <darkutils:wither_block>, <extrautils2:simpledecorative:2>);
 
 # Skyblock alt for dragon scales
-scripts.category.tooltip_utils.desc.both(<mysticalagradditions:stuff:3>, "kill.slime.by.cockatrice");
+scripts.lib.tooltip.desc.both(<mysticalagradditions:stuff:3>, "kill.slime.by.cockatrice");
 scripts.do.entity_kill_entity.add("minecraft:slime", "iceandfire:if_cockatrice", <mysticalagradditions:stuff:3>);
 
 # Dragon Scales

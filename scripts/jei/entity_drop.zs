@@ -237,19 +237,18 @@ return list.map(({ groups: { id, display, items } }) => {
   add('betteranimalsplus:walrus'               , [<betteranimalsplus:blubber> * 202, <minecraft:leather> * 147]); // Walrus
   add('betteranimalsplus:whale'                , [<betteranimalsplus:blubber> * 725]); // Whale
   add('betteranimalsplus:zotzpyre'             , [<harvestcraft:hardenedleatheritem> * 131, <harvestcraft:netherwingsitem> * 196]); // Zotzpyre
-  add('biomesoplenty:wasp'                     , [<extrautils2:spike_gold> * 35]); // Nether Wasp
+  add('biomesoplenty:wasp'                     , [<extrautils2:spike_gold> * 50]); // Nether Wasp
   add('botania:pink_wither'                    , [<enderio:item_alloy_endergy_ingot:4> * 389, <industrialforegoing:pink_slime_ingot> * 585, <mysticalagradditions:stuff:1> * 38, <mysticalagriculture:crafting:4> * 100, <quark:black_ash> * 1606, <thermalfoundation:material:771> * 16]); // Pink Wither
 # add('botania:pixie'                          , []); // Pixie
   add('deepmoblearning:glitch'                 , [<deepmoblearning:glitch_heart> * 100]); // System Glitch
   add('deepmoblearning:trial_cave_spider'      , [<minecraft:spider_eye> * 30, <minecraft:string> * 96]); // Trial Cave Spider
-  add('deepmoblearning:trial_enderman'         , [<enderio:block_enderman_skull> * 1, <endreborn:food_ender_flesh> * 100, <minecraft:ender_pearl> * 100, <rftoolsdim:dimlet_parcel> * 3]); // Trial Enderman
+  add('deepmoblearning:trial_enderman'         , [<enderio:block_enderman_skull> * 1, <endreborn:food_ender_flesh> * 100, <minecraft:ender_pearl> * 100]); // Trial Enderman
   add('deepmoblearning:trial_slime'            , [<minecraft:slime_ball> * 34]); // Trial Slime
   add('deepmoblearning:trial_spider'           , [<minecraft:spider_eye> * 30, <minecraft:string> * 98]); // Trial Spider
   add('emberroot:creeper'                      , [<minecraft:gunpowder> * 311, <minecraft:skull:4> * 8]); // Cursed Creeper
 # add('emberroot:deers'                        , []); // Wild Deer
   add('emberroot:dire_wolf'                    , [<minecraft:bone> * 47, <minecraft:rotten_flesh> * 48]); // Dire Wolf
   add('emberroot:enderminy'                    , [<minecraft:ender_eye> * 21, <minecraft:ender_pearl> * 19]); // Mini Enderman
-  add('emberroot:fairies'                      , [<astralsorcery:itemusabledust> * 344, <minecraft:dye:10> * 93, <minecraft:glowstone_dust> * 86]); // Rainbow Fairy
   add('emberroot:fallenmount'                  , [<minecraft:bone> * 46, <minecraft:rotten_flesh> * 52, <minecraft:saddle> * 4]); // Fallen Mount
   add('emberroot:hero'                         , [<actuallyadditions:item_void_bag> * 12, <cyclicmagic:charm_void> * 8, <cyclicmagic:sack_ender> * 11, <cyclicmagic:storage_bag> * 10, <minecraft:dye> * 25, <minecraft:golden_axe> * 4, <minecraft:golden_sword> * 6, <minecraft:shield> * 2, <minecraft:stone_sword> * 6, <thermalexpansion:satchel:100> * 9]); // Fallen Hero
   add('emberroot:knight_fallen'                , [<minecraft:arrow> * 121, <minecraft:bone> * 136, <minecraft:iron_sword> * 6, <minecraft:rotten_flesh> * 141, <minecraft:skull:2> * 1, <minecraft:skull> * 3, <minecraft:stone_sword> * 2]); // Fallen Knight
@@ -310,7 +309,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add('minecraft:creeper'                      , [<minecraft:gunpowder> * 99, <minecraft:skull:4> * 2]); // Creeper
   add('minecraft:donkey'                       , [<minecraft:leather> * 93]); // Donkey
   add('minecraft:elder_guardian'               , [<enderio:item_material:56> * 100, <minecraft:fish> * 48, <minecraft:prismarine_crystals> * 34, <minecraft:prismarine_shard> * 92, <minecraft:sponge:1> * 100]); // Elder Guardian
-  add('minecraft:enderman'                     , [<enderio:block_enderman_skull> * 4, <endreborn:food_ender_flesh> * 100, <minecraft:ender_pearl> * 100, <rftoolsdim:dimlet_parcel> * 4]); // Enderman
+  add('minecraft:enderman'                     , [<enderio:block_enderman_skull> * 4, <endreborn:food_ender_flesh> * 100, <minecraft:ender_pearl> * 100]); // Enderman
   add('minecraft:endermite'                    , [<appliedenergistics2:material:46> * 208, <endreborn:wolframium_nugget> * 364]); // Endermite
   add('minecraft:evocation_illager'            , [<minecraft:emerald> * 50, <minecraft:totem_of_undying> * 100]); // Evoker
   add('minecraft:ghast'                        , [<minecraft:ghast_tear> * 46, <minecraft:gunpowder> * 111, <thermalfoundation:material:771> * 16]); // Ghast
@@ -474,4 +473,5 @@ return list.map(({ groups: { id, display, items } }) => {
 add('emberroot:rootsonespriteboss', [<minecraft:totem_of_undying> * 100, <mysticalagriculture:crafting:3> * 2000]); // Guardian of Sprites
 add('betteranimalsplus:hirschgeist', [<mysticalagriculture:crafting:2> * 400, <randomthings:ingredient:2> * 400, <betteranimalsplus:hirschgeistskull_1> * 25]);
 add('thaumcraft:cultistleader', [ <thaumcraft:crimson_praetor_helm>.withLore(["§4Need to be stripped"]) * 100, <thaumcraft:crimson_praetor_chest>.withLore(["§6Need to be stripped"]) * 100, <thaumcraft:crimson_praetor_legs>.withLore(["§6Need to be stripped"]) * 100, <thaumcraft:crimson_blade>.withLore(["§6Need to be stripped"]) * 100]);
+add('botania:pixie', [<jaopca:item_dusttinytitanium> * 150]);
 

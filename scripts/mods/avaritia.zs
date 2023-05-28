@@ -79,7 +79,7 @@ craft.make(<avaritia:endest_pearl>, ["pretty",
   "P": <deepmoblearning:pristine_matter_enderman>, # Pristine Enderman Matter
   "⌂": <actuallyadditions:block_misc:8>,           # Ender Casing
   "D": <minecraft:dragon_breath>,                  # Dragon's Breath
-  "E": <cyclicmagic:exp_pylon>,                    # Experience Pylon
+  "E": <darkutils:monolith>,
   "▬": <ore:ingotEndorium>,                        # Endorium Ingot
   "-": <ore:ingotEndSteel>,                        # End Steel Ingot
 });
@@ -348,14 +348,7 @@ function addDragonForgeRecipe(input1 as IItemStack, input2 as IItemStack, output
 }
 
 recipes.removeByRecipeName("avaritia:items/resource/crystal_matrix_ingot");
-addDragonForgeRecipe(<minecraft:nether_star>, <avaritia:resource>, <avaritia:resource:1>);
-
-# Lattice
-var CD = <mekanism:compresseddiamond>;
-recipes.remove(<avaritia:resource>);
-mods.extendedcrafting.CombinationCrafting.addRecipe(<avaritia:resource>, 200000000, 2000000, CD, [CD, CD]);
-# Somehow infuser craft item/tick after first item
-# mods.thermalexpansion.Infuser.addRecipe(<avaritia:resource>, CD, 50000000);
+addDragonForgeRecipe(<minecraft:nether_star>, <ore:gemDilithium>.firstItem, <avaritia:resource:1>);
 
 # Oredicting recipe
 # [Compressed Crafting Table] from [Crafting Table]
@@ -395,8 +388,8 @@ val maxBonus = 10.0;
 val factor = pow(1.0 / maxBonus, 1.0 / 28.0) + 0.0000000000000001; // about 0.92
 
 furnace.setFuel(R, needCharge);
-scripts.category.tooltip_utils.desc.jei(F, "singularity.heat", maxBonus * 100.0 as int, needCharge as int);
-scripts.category.tooltip_utils.desc.jei(R, "singularity.burn", maxBonus * 100.0 as int, needCharge as int);
+scripts.lib.tooltip.desc.jei(F, "singularity.heat", maxBonus * 100.0 as int, needCharge as int);
+scripts.lib.tooltip.desc.jei(R, "singularity.burn", maxBonus * 100.0 as int, needCharge as int);
 
 // Fake recipe
 val a = <contenttweaker:any_burnable>;

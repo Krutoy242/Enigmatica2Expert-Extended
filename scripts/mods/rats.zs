@@ -176,28 +176,6 @@ remake("rat_upgrade_archeologist", <rats:rat_upgrade_archeologist>, [
 # Rat flowers
 scripts.process.grow(<rats:ratglove_flower>, <rats:ratglove_flower> * 9, "No exceptions", null, 0);
 
-# [Creative Cheese] from [Block of Cheese][+12]
-craft.remake(<rats:creative_cheese>, ["pretty",
-  "C e S e C",
-  "h ♀ ∞ W h",
-  "○ ● ■ ● ○",
-  "h ♂ ⌀ ☻ h",
-  "C e S e C"], {
-  "C": <rats:cheese_cannonball>,         # Cheese Cannonball
-  "e": <animania:cheese_omelette>,       # Cheese Omelette
-  "S": <rats:string_cheese>,             # String Cheese
-  "h": <harvestcraft:cheeseitem>,        # Cheese
-  "♀": <animania:friesian_cheese_wheel>, # Cheese Wheel (Friesian)
-  "∞": <animania:holstein_cheese_wheel>, # Cheese Wheel (Holstein)
-  "W": <animania:jersey_cheese_wheel>,   # Cheese Wheel (Jersey)
-  "○": <culinaryconstruct:sandwich:*>,   # Cheese Wedge (Sheep), Cheese Wedge (Goat), Cheese Wedge (Friesian), Cheese Wedge (Holstein), and Cheese Wedge (Jersey) Sandwich
-  "●": <actuallyadditions:item_food>,    # Cheese
-  "■": <rats:block_of_cheese>,           # Block of Cheese
-  "♂": <animania:goat_cheese_wheel>,     # Cheese Wheel (Goat)
-  "⌀": <betteranimalsplus:goatcheese>,   # Goat Cheese
-  "☻": <animania:sheep_cheese_wheel>,    # Cheese Wheel (Sheep)
-});
-
 # ######################################################################
 #
 # Compat material using
@@ -286,6 +264,7 @@ remake("rats idol_of_ratlantis", <rats:idol_of_ratlantis>, [
 scripts.process.melt(<rats:rat_diamond>, <liquid:diamond> * 165, "Except: Melter Crucible");
 scripts.process.alloy([<ore:ingotGraphite> * 2, <rats:rat_diamond>], <nuclearcraft:alloy:2> * 2, "only: Kiln AlloySmelter");
 mods.appliedenergistics2.Inscriber.addRecipe(<appliedenergistics2:material:17>, <rats:rat_diamond>, true, <appliedenergistics2:material:14>);
+mods.threng.Etcher.addRecipe(<appliedenergistics2:material:24>, <rats:rat_diamond>, <ore:dustRedstone>, <ore:itemSilicon>);
 mods.thermalexpansion.Compactor.addGearRecipe(<thermalfoundation:material:26>, <rats:rat_diamond> * 4, 36000);
 mods.immersiveengineering.MetalPress.addRecipe(<thermalfoundation:material:26>, <rats:rat_diamond>, <immersiveengineering:mold:1>, 16000, 4);
 recipes.addShapeless("gem_crystal_flux from rat", <redstonearsenal:material:160> * 2, [<rats:rat_diamond>, <rats:rat_diamond>, Bucket('redstone')]);
@@ -386,7 +365,7 @@ craft.shapeless(<actuallyadditions:item_misc:23>, "PPPPCPPPP", {
 });
 
 # Make alt recipe for tokens
-scripts.category.tooltip_utils.desc.both(<rats:token_piece>, "kill.slime.by.marbled_cheese_golem");
+scripts.lib.tooltip.desc.both(<rats:token_piece>, "kill.slime.by.marbled_cheese_golem");
 scripts.do.entity_kill_entity.add("minecraft:slime", "rats:marbled_cheese_golem", <rats:token_piece>);
 
 # Bonus loot
@@ -432,4 +411,4 @@ mods.immersiveengineering.MetalPress.addRecipe(<rats:string_cheese>, <ore:foodCh
 
 # Containment food 
 # [Contaminated Food] alter non-rat recipe
-mods.nuclearcraft.FissionIrradiator.addRecipe(<ore:foodNutrients5>, <rats:contaminated_food>, 10000, 0, 0, 0);
+mods.nuclearcraft.FissionIrradiator.addRecipe(<ore:foodNutrients5>, <rats:contaminated_food>, 5000000, 0, 0, 0);

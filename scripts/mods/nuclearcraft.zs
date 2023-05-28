@@ -146,6 +146,16 @@ craft.remake(<nuclearcraft:rock_crusher>, ["pretty",
   "■": <mechanics:crushing_block>, # Crushing Block
 });
 
+# [Empty Heat Sink]*64 from [Steel Ingot][+2]
+craft.remake(<nuclearcraft:part:14> * 64, ["pretty",
+  "□ - □",
+  "▬   ▬",
+  "□ - □"], {
+  "□": <ore:plateAdvanced>, # Advanced Plating
+  "-": <ore:ingotSteel>,    # Steel Ingot
+  "▬": <ore:ingotTough>,    # Tough Alloy Ingot
+});
+
 # [Fission Reactor Casing]*64 from [Steel Chassis][+1]
 craft.remake(<nuclearcraft:fission_casing> * 64, ["pretty",
   "  □  ",
@@ -171,6 +181,21 @@ craft.reshapeless(<nuclearcraft:bin> * 3, "aTr", {
   "r": <extrautils2:trashcanenergy>, # Trash Can (Energy)
 });
 
+# Way cheaper since radiation choking
+# [Radiation Scrubber] from [Graphite Block][+2]
+craft.remake(<nuclearcraft:radiation_scrubber>, ["pretty",
+  "□ ▲ □",
+  "▲ ■ ▲",
+  "□ ▲ □"], {
+  "□": <ore:plateBasic>,      # Basic Plating
+  "▲": <ore:dustVilliaumite>, # Crushed Villiaumite
+  "■": <ore:blockGraphite>, # Graphite Block
+});
+
+# Missed Corium Recipe
+mods.nuclearcraft.Melter.addRecipe(<nuclearcraft:solidified_corium>, <fluid:corium> * 1000);
+mods.nuclearcraft.IngotFormer.addRecipe(<fluid:corium> * 1000, <nuclearcraft:solidified_corium>);
+
 # [Energetic Blend] harder
 recipes.remove(<nuclearcraft:compound:2>);
 mods.mekanism.infuser.addRecipe("GLOWSTONE", 10, <minecraft:redstone>, <nuclearcraft:compound:2>);
@@ -181,7 +206,7 @@ furnace.addRecipe(<nuclearcraft:ingot:8>, <minecraft:coal:*>);
 # Coal casted into graphite block
 mods.tconstruct.Casting.removeBasinRecipe(<nuclearcraft:ingot_block:8>);
 mods.tconstruct.Casting.addBasinRecipe(<nuclearcraft:ingot_block:8>, null, <liquid:coal>, 900);
-mods.tconstruct.Melting.addRecipe(<liquid:coal> * 900, <nuclearcraft:ingot_block:8>);
+mods.thermalexpansion.Crucible.addRecipe(<liquid:coal> * 900, <nuclearcraft:ingot_block:8>, 2000);
 
 # Diamond from 64 graphite
 scripts.process.compress(<ore:dustGraphite> * 64, <minecraft:diamond>, "except: Compressor");
@@ -209,7 +234,7 @@ if(!isNull(loadedMods["immersivetech"])) {
 }
 
 # Sic-Sic ingots
-scripts.process.fill(<exnihilocreatio:item_mesh:2>, <fluid:sic_vapor> * 1000, <nuclearcraft:part:13>, "only: NCInfuser Transposer");
+scripts.process.fill(<exnihilocreatio:item_mesh:2>, <fluid:sic_vapor> * 1000, <nuclearcraft:part:13> * 4, "only: NCInfuser Transposer");
 scripts.process.alloy([<ore:bouleSilicon>, <ore:fiberSiliconCarbide>], <nuclearcraft:alloy:14>, "only: advrockarc");
 
 // Unify Silicon
@@ -310,8 +335,6 @@ for ingr, fluid in {
   <psi:material:0>           : <liquid:psimetal> * 144,
   <psi:psi_decorative:1>     : <liquid:psimetal> * 1296,
   <psi:psi_decorative:0>     : <liquid:psimetal> * 1296,
-  <ore:ingotInfinity>        : <liquid:infinity> * 144,
-  <ore:blockInfinity>        : <liquid:infinity> * 1296,
   <ore:nuggetThaumium>       : <liquid:thaumium> * 16,
   <ore:ingotThaumium>        : <liquid:thaumium> * 144,
   <ore:blockThaumium>        : <liquid:thaumium> * 1296,
@@ -456,12 +479,31 @@ scripts.process.electrolyze(<fluid:nitric_oxide> * 100, [<fluid:nitrogen> * 500,
 // Remove worthless recipes
 // ------------------------------------------------------------
 
+// Common resources
+utils.rh(<nuclearcraft:alloy>);
+utils.rh(<nuclearcraft:alloy:5>);
+utils.rh(<nuclearcraft:dust>);
+utils.rh(<nuclearcraft:dust:1>);
+utils.rh(<nuclearcraft:dust:2>);
+utils.rh(<nuclearcraft:dust:4>);
+utils.rh(<nuclearcraft:gem_dust>);
+utils.rh(<nuclearcraft:gem_dust:2>);
+utils.rh(<nuclearcraft:gem_dust:3>);
+utils.rh(<nuclearcraft:gem_dust:6>);
+utils.rh(<nuclearcraft:gem:6>);
+utils.rh(<nuclearcraft:ingot>);
+utils.rh(<nuclearcraft:ingot:1>);
+utils.rh(<nuclearcraft:ingot:2>);
+utils.rh(<nuclearcraft:ingot:4>);
+utils.rh(<nuclearcraft:ore>);
+utils.rh(<nuclearcraft:ore:1>);
+utils.rh(<nuclearcraft:ore:2>);
+utils.rh(<nuclearcraft:ore:4>);
+
 // Unimplemented multiblocks
 utils.rh(<nuclearcraft:heat_exchanger_controller>);
 utils.rh(<nuclearcraft:condenser_controller>);
-utils.rh(<nuclearcraft:fission_monitor>);
 utils.rh(<nuclearcraft:fission_computer_port>);
-utils.rh(<nuclearcraft:fission_shield_manager>);
 utils.rh(<nuclearcraft:turbine_computer_port>);
 utils.rh(<nuclearcraft:heat_exchanger_casing>);
 utils.rh(<nuclearcraft:heat_exchanger_glass>);
@@ -525,13 +567,6 @@ val nuclearData = {
   }
 } as int[string][string];
 
-function get(mod as string, pfx as string, key as string, i as int) as IItemStack {
-  val j = i * (pfx==''?5:pfx.endsWith('fuel_')?4:2);
-  val item = itemUtils.getItem(mod+':'+pfx+key, j);
-  if(isNull(item)) print('~~ this item doesnt exist: '+mod+':'+key+':'+j);
-  return item;
-}
-
 for mod, types in nuclearData {
   for key, value in types {
     for i in 0 .. value {
@@ -583,7 +618,7 @@ for mod, types in nuclearData {
           );
         }
       }
-      if(key!='americium' && i==2) {
+      if(!(key=='americium' && i==2)) {
         mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(pellet_carbide);
         utils.rh(pellet_carbide);
       }

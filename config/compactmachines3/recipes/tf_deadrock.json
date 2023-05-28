@@ -1,0 +1,35 @@
+{
+  "name": "compactmachines3:tf_deadrock",
+  "target-item": "twilightforest:deadrock",
+  "target-meta": 2,
+  "target-count": 27,
+
+  "duration": 20,
+
+  "catalyst": "twilightforest:cicada",
+
+  "input-types": {
+    "w": { "id": "sonarcore:reinforcedstoneblock" },
+    "o": { "id": "jaopca:block_blockdimensionalshard" }
+  },
+
+  "symmetrical": true,
+  "shape": [
+    [
+      ["w","w","w"],
+      ["w","w","w"],
+      ["w","w","w"]
+    ],
+    [
+      ["w","w","w"],
+      ["w","o","w"],
+      ["w","w","w"]
+    ],
+    [
+      ["w","w","w"],
+      ["w","w","w"],
+      ["w","w","w"]
+    ]
+  ]
+
+}

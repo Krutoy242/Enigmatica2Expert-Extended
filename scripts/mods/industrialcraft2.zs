@@ -27,6 +27,27 @@ furnace.addRecipe(<immersiveengineering:metal:5>,   <ic2:crushed:6>);
 furnace.addRecipe(<thermalfoundation:material:131>, <ic2:purified:3>);
 furnace.addRecipe(<immersiveengineering:metal:5>,   <ic2:purified:6>);
 
+# [RE-Battery] from [Rubber][+2]
+craft.make(<ic2:re_battery:26>.withTag({}), ["pretty",
+  "  R  ",
+  "⌂ ♥ ⌂",
+  "⌂ ♥ ⌂"], {
+  "R": <ore:itemRubber>,   # Rubber
+  "⌂": <ic2:casing:6>,     # Tin Item Casing
+  "♥": <ore:dustRedstone>, # Redstone
+});
+
+# [Advanced RE-Battery] from [Sulfur][+3]
+craft.make(<ic2:advanced_re_battery:26>.withTag({}), ["pretty",
+  "R ⌂ R",
+  "⌂ ♠ ⌂",
+  "⌂ ▲ ⌂"], {
+  "R": <ore:itemRubber>, # Rubber
+  "⌂": <ic2:casing>,     # Bronze Item Casing
+  "♠": <ore:dustSulfur>, # Sulfur
+  "▲": <ore:dustLead>,   # Pulverized Lead
+});
+
 # Removing IC2 coal coke
 	recipes.remove(<ic2:coke>);
 
@@ -281,7 +302,7 @@ recipes.addShapeless(<thermalfoundation:material:65> * 2, [<ic2:dust:17>, <ic2:d
 function crystalRecipe(name as string, item as IItemStack, ingrs as IIngredient[]) {
 	recipes.remove(item);
 	recipes.addShapeless(name, <ic2:crystal_memory>.withTag({Pattern: {id: item.definition.id, Count: 1 as byte, Damage: item.damage as short}}), ingrs);
-	scripts.category.tooltip_utils.desc.both(item, "crystal_memory");
+	scripts.lib.tooltip.desc.both(item, "crystal_memory");
 }
 
 crystalRecipe("[Shape Card] crystal", <rftools:shape_card>,      [<ore:circuitElite>, <immersiveengineering:blueprint>.withTag({blueprint: "molds"}), <ic2:crystal_memory>, <ore:paper>, <ore:paper>]);
@@ -301,6 +322,13 @@ craft.reshapeless(<ic2:containment_plating>, "п□□□", {
 
 # Reprocess plutonium
 mods.nuclearcraft.DecayHastener.addRecipe(<ic2:nuclear:3>, <nuclearcraft:uranium:5>, 2.0, 2.0);
+
+# Remove Uranium 238 and replace it with simple uranium
+mods.nuclearcraft.FuelReprocessor.removeRecipeWithInput(<nuclearcraft:depleted_fuel_ic2>);
+mods.nuclearcraft.FuelReprocessor.addRecipe(<ore:depletedFuelIC2U>, 
+	<nuclearcraft:uranium:10> * 2, <nuclearcraft:uranium:10>, <nuclearcraft:uranium:10>, <ic2:nuclear:7>,
+	null, null, null, null
+);
 
 # Batch crafting recipe for reflector, skipping microcraftings
 scripts.processUtils.avdRockXmlRecipeEx("PrecisionAssembler", [
@@ -325,7 +353,7 @@ craft.make(<immersiveengineering:treated_wood> * 8, ["pretty",
   "# ~ #",
   "# # #"], {
   "#": <ore:plankWood>, # Oak Wood Planks
-  "~": Bucket('ic2creosote'), # Creosote Bucket
+  "~": <fluid:ic2creosote> * 1000, # Creosote Bucket
 });
 
 # Alternative without scrap
@@ -342,6 +370,24 @@ scripts.process.crush(<ic2:crop_seed_bag>, <ic2:crafting:23>, "only: Macerator",
 craft.shapeless(<ic2:crafting:23> * 64, "G~", {
   "G": <rats:garbage_pile>, # Garbage Pile
   "~": <fluid:condensate_water> * 1000, # Condensate Water
+});
+
+# [Scrap]*64
+craft.shapeless(<ic2:crafting:23> * 64, "G~", {
+  "G": <nuclearcraft:wasteland_earth>,
+  "~": <fluid:condensate_water> * 1000, # Condensate Water
+});
+
+# [Scrap Box]*64
+craft.shapeless(<ic2:crafting:24> * 32, "G~", {
+  "G": <trinity:radioactive_earth>,
+  "~": <fluid:condensate_water> * 1000, # Condensate Water
+});
+
+# [Scrap Box]*64
+craft.shapeless(<ic2:crafting:24> * 64, "G~", {
+  "G": <trinity:radioactive_earth2>,
+  "~": <fluid:water> * 1000, # Condensate Water
 });
 
 # --------------------------------------------------------------------------------------------
@@ -496,46 +542,7 @@ craft.remake(<extrautils2:decorativesolid:7>, ["pretty",
   "⌃": <ore:blockQuartzBlack>, # Black Quartz
 });
 
-#-----------------------------------------------------
-# Basalt remake for Basalt Sediment Alt
-#-----------------------------------------------------
 <ic2:resource>.displayName = game.localize('e2ee.tile.unsalted_basalt');
-val saltConversion = {
-	{<blockstate:ic2:resource>                       : <ic2:resource>}       : {<blockstate:advancedrocketry:basalt>                       : <advancedrocketry:basalt>},
-	{<blockstate:minecraft:grass>                    : <minecraft:grass>}    : {<blockstate:biomesoplenty:grass:variant=silty>             : <biomesoplenty:grass:4>},
-	{<blockstate:minecraft:dirt:variant=dirt>        : <minecraft:dirt>}     : {<blockstate:biomesoplenty:dirt:coarse=false,variant=silty> : <biomesoplenty:dirt:10>},
-	{<blockstate:minecraft:dirt:variant=coarse_dirt> : <minecraft:dirt:1>}   : {<blockstate:biomesoplenty:dirt:coarse=true,variant=silty>  : <biomesoplenty:dirt:2>},
-	{<blockstate:minecraft:farmland>                 : <minecraft:farmland>} : {<blockstate:biomesoplenty:farmland_1>                      : <biomesoplenty:farmland_1>},
-} as IItemStack[crafttweaker.block.IBlockState][IItemStack[crafttweaker.block.IBlockState]];
-
-for inputs, outputs in saltConversion {
-	for inB, inS in inputs {
-		for outB, outS in outputs {
-			scripts.jei.mod.immersiveengineering.addChemthrower(<liquid:moltensalt>, inS, outS);
-		}
-	}
-}
-
-mods.alfinivia.ImmersiveEngineering.addChemthrowerEffect(<liquid:moltensalt>, false, false, 
-	# IChemEntityEffect
-	function(target,shooter,throwerstack,fluid) {},
-
-	# IChemBlockEffect
-	function(world,pos,side,shooter,throwerstack,fluid) {
-		if(world.remote) return;
-		val blockState = world.getBlockState(pos);
-		for inputs, outputs in saltConversion {
-			for inB, inS in inputs {
-				for outB, outS in outputs {
-					if(inB.matches(blockState)) {
-						world.destroyBlock(pos, false);
-						world.setBlockState(outB, pos);
-					}
-				}
-			}
-		}
-	}
-);
 
 # Semifluid generator usages
 function addSemifluidRecipe(fluid as ILiquidStack, eu_t as double) as void {
@@ -553,7 +560,7 @@ recipes.addShapeless('firebox_ashes', <forestry:ash>, [<ic2:misc_resource>]);
 
 # Shortcut for AR
 # [Lapotron Crystal] from [Advanced Circuit][+1]
-scripts.processUtils.avdRockXmlRecipe("Crystallizer", [<ore:circuitAdvanced> * 4], [<fluid:lapis> * 10000], [<ic2:lapotron_crystal>.withTag({}) * 4], null);
+scripts.processUtils.avdRockXmlRecipe("Crystallizer", [<ore:circuitAdvanced> * 4], [<fluid:lapis> * 10000], [<ic2:lapotron_crystal> * 4], null);
 
 # [Scaffold]*20 from [Stick][+1]
 craft.remake(<ic2:scaffold> * 20, ["pretty",

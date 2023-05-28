@@ -1,6 +1,6 @@
 {
-	x: -19.5d,
-	y: 23.0d,
+	x: -22.2d,
+	y: 20.4d,
 	text: [
 		"{q.utils.liquid_barrel.desc}"
 	],

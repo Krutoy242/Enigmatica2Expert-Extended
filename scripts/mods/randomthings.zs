@@ -325,14 +325,14 @@ craft.remake(<randomthings:spectreenergyinjector>, ["pretty",
 
 # ----------------------------
 
-# [Nature Core] from [Experience Pylon][+2]
+# [Nature Core]
 craft.remake(<randomthings:naturecore>, ["pretty",
   "# § #",
   "§ E §",
   "# § #"], {
   "#": <twilightforest:twilight_log:*>,
   "§": <randomthings:slimecube>,     # Slime Cube
-  "E": <cyclicmagic:exp_pylon>,      # Experience Pylon
+  "E": <darkutils:monolith>,
 });
 
 # Cheaper (used ender pearl)
@@ -544,7 +544,7 @@ scripts.jei.crafting_hints.add1to1(<randomthings:beans:2>, <randomthings:beanpod
 # Used as ingredient
 # [Biome Glass]*8 from [Empowered Palis Crystal Block][+2]
 recipes.remove(<randomthings:biomeglass>);
-mods.forestry.ThermionicFabricator.addCast(<randomthings:biomeglass> * 8, Grid([
+scripts.mods.forestry.ThermionicFabricator.addCast(<randomthings:biomeglass> * 8, Grid([
   " ╳",
   " *",
   " ▬"], {
@@ -552,3 +552,22 @@ mods.forestry.ThermionicFabricator.addCast(<randomthings:biomeglass> * 8, Grid([
   "*": <actuallyadditions:block_crystal_empowered:1>, # Empowered Palis Crystal Block
   "▬": <ore:ingotPlatinum>,        # Platinum Ingot
 }).shaped(), <fluid:glass> * 4000);
+
+# Cheaper to use as ingredient
+craft.remake(<darkutils:monolith>, ["pretty",
+  "S ▲ S",
+  "S M S",
+  "S ▲ S"], {
+  "▲": <ore:dustEmerald>,         # Crushed Emerald
+  "S": <ore:itemXP>, # Solidified Experience
+  "M": <tconstruct:materials:19>, # Mending Moss
+});
+
+# Cheaper platforms
+craft.remake(<randomthings:platform> * 6, ["###", " F "], {"#": <minecraft:planks>,"F": <randomthings:ingredient:7>,});
+craft.remake(<randomthings:platform:1> * 6, ["###", " F "], {"#": <minecraft:planks:1>,"F": <randomthings:ingredient:7>,});
+craft.remake(<randomthings:platform:2> * 6, ["###", " F "], {"#": <minecraft:planks:2>,"F": <randomthings:ingredient:7>,});
+craft.remake(<randomthings:platform:3> * 6, ["###", " F "], {"#": <minecraft:planks:3>,"F": <randomthings:ingredient:7>,});
+craft.remake(<randomthings:platform:4> * 6, ["###", " F "], {"#": <minecraft:planks:4>,"F": <randomthings:ingredient:7>,});
+craft.remake(<randomthings:platform:5> * 6, ["###", " F "], {"#": <minecraft:planks:5>,"F": <randomthings:ingredient:7>,});
+craft.remake(<randomthings:superlubricentplatform> * 6, ["SSS", " F "], {"S": <randomthings:superlubricentice>,"F": <randomthings:ingredient:7>,});

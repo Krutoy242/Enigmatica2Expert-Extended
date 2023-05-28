@@ -42,6 +42,7 @@ recipes.addShapeless(<ic2:misc_resource:1> * 2, [<thermalfoundation:material:135
 	mods.thermalexpansion.CompressionDynamo.removeFuel(<liquid:empoweredoil>);
 
 	mods.thermalexpansion.CompressionDynamo.addFuel(<liquid:refinedcanolaoil>, 250000);
+	mods.thermalexpansion.CompressionDynamo.addFuel(<liquid:biofuel>, 500000);
 	mods.thermalexpansion.CompressionDynamo.addFuel(<liquid:crystaloil>, 1000000);
 	mods.thermalexpansion.CompressionDynamo.addFuel(<liquid:empoweredoil>, 1750000);
 
@@ -102,10 +103,10 @@ craft.make(<thermalexpansion:frame:130>, ["pretty",
 	mods.thermalexpansion.InductionSmelter.addRecipe(<thermalexpansion:frame:147>, <thermalexpansion:frame:131>, <minecraft:redstone_block> * 40, 100000);
 
 # Resonant Cell Frame (Empty)
-	mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame:132>, 
+	scripts.mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame:132>, 
 	[[<thermalfoundation:material:166>, <actuallyadditions:block_misc:8>, <thermalfoundation:material:166>],
 	[<thermalfoundation:glass_alloy:7>, <thermalexpansion:frame:147>, <thermalfoundation:glass_alloy:7>],
-	[<thermalfoundation:material:1028>, <thermalfoundation:material:1028>, <thermalfoundation:material:1028>]], <liquid:glass> * 4000);
+	[<thermalfoundation:material:1028>, <thermalfoundation:material:1028>, <thermalfoundation:material:1028>]], <liquid:glass> * 4000, null, 4);
 
 # Resonant Cell Frame (Full)
 	mods.extendedcrafting.CombinationCrafting.addRecipe(<thermalexpansion:frame:148>, 
@@ -156,7 +157,7 @@ craft.remake(<thermalfoundation:material:1028> * 2, ["pretty",
 
 # [Machine Frame]*2 from [Device Frame][+6]
 	recipes.remove(<thermalexpansion:frame>);
-	mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame> * 2, 
+	scripts.mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame> * 2, 
 		Grid(["pretty",
 			"■ B ■",
 			"M ◙ ⌂",
@@ -169,7 +170,7 @@ craft.remake(<thermalfoundation:material:1028> * 2, ["pretty",
 			"*": <actuallyadditions:block_crystal:3>,        # Void Crystal Block
 			"▄": <immersiveengineering:metal_decoration0:5>, # Heavy Engineering Block
 		}).shaped(), 
-	<liquid:glass> * 6000);
+	<liquid:glass> * 6000, null, 4);
 	
 # Removing craftable Bronze 
 	recipes.removeShapeless(<thermalfoundation:material:163> * 4, 
@@ -307,6 +308,8 @@ function reworkClathrate(ore as IItemStack, crystal as IItemStack, dust as IItem
 reworkClathrate(<thermalfoundation:ore_fluid:2>, <thermalfoundation:material:893>, <thermalfoundation:material:101>, <liquid:redstone> * 1000);
 reworkClathrate(<thermalfoundation:ore_fluid:3>, <thermalfoundation:material:894>, <thermalfoundation:material:102>, <liquid:glowstone> * 2500);
 reworkClathrate(<thermalfoundation:ore_fluid:4>, <thermalfoundation:material:895>, <thermalfoundation:material:103>, <liquid:ender> * 2500);
+
+recipes.addShapeless('Carminite cheap recipe', <twilightforest:carminite> * 2, [<twilightforest:borer_essence>, <ore:clathrateRedstone>]);
 
 #####################################
 
@@ -532,14 +535,14 @@ for i in 0 to 5 {
 
 # [Device Frame] from [Copper Gear][+2]
 recipes.remove(<thermalexpansion:frame:64>);
-mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame:64>, Grid(["pretty",
+scripts.mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame:64>, Grid(["pretty",
   "▬   ▬",
   "  C  ",
   "▬   ▬"], {
   "C": <ore:gearCopper>, # Copper Gear
   "▬": <ore:ingotTin>,   # Tin Ingot
 }).shaped(), <liquid:glass> * 1000, <forestry:wax_cast:*>);
-mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame:64>, Grid(["pretty",
+scripts.mods.forestry.ThermionicFabricator.addCast(<thermalexpansion:frame:64>, Grid(["pretty",
   "▬ ▬ ▬",
   "▬ C ▬",
   "▬ ▬ ▬"], {
@@ -788,3 +791,8 @@ craft.remake(<thermaldynamics:duct_64:1> * 64, ["pretty",
   "□": <thermalfoundation:material:323>, # Lead Plate
   "■": <tconstruct:clear_glass>,         # Clear Glass
 });
+
+# Remove AE2 Seeds from Phytogenic Insolator (recipe is bugged - seeds can't be inserted)
+mods.thermalexpansion.Insolator.removeRecipe(<appliedenergistics2:crystal_seed:0>, <minecraft:glowstone_dust>);
+mods.thermalexpansion.Insolator.removeRecipe(<appliedenergistics2:crystal_seed:600>, <minecraft:glowstone_dust>);
+mods.thermalexpansion.Insolator.removeRecipe(<appliedenergistics2:crystal_seed:1200>, <minecraft:glowstone_dust>);

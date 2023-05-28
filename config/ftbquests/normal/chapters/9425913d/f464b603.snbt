@@ -1,4 +1,6 @@
 {
+	title: "{q.gates.conflux_iii.name}",
+	icon: "extendedcrafting:material 1 10",
 	x: 14.6d,
 	y: 3.8333333333333335d,
 	shape: "square",
@@ -16,11 +18,6 @@
 		"48f0d63f"
 	],
 	size: 0.75d,
-	tasks: [{
-		uid: "6c0a7a2b",
-		type: "checkmark",
-		title: "Conflux III"
-	}],
 	rewards: [{
 		uid: "726bdd9e",
 		type: "custom",

@@ -1,0 +1,28 @@
+{
+	x: -21.9d,
+	y: 22.3d,
+	shape: "gear",
+	text: [
+		"{q.utils.pot.desc}"
+	],
+	dependencies: [
+		"3ecc3fbe"
+	],
+	tasks: [{
+		uid: "4b53f41f",
+		type: "item",
+		items: [{
+			item: "rustic:vase"
+		}]
+	}],
+	rewards: [{
+		uid: "aa45f1c6",
+		type: "item",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "decor"
+			}
+		}
+	}]
+}
