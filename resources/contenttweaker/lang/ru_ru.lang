@@ -9,9 +9,9 @@ fluid.spectre=Спектр
 fluid.perfect_fuel=Идеальное Топливо
 fluid.electronics=Плавленная Электроника
 fluid.terrestrial=Расплавленный Земленный Артефакт
-fluid.mithrillium=Растворимый митриллиум
-fluid.adaminite=Расплавленный адаминит
-fluid.mithrillium=Растворенный митминит
+fluid.mithrillium=Растворимый Митриллиум
+fluid.adaminite=Расплавленный Адаминит
+fluid.mithrillium=Растворенный Митминит
 
 item.contenttweaker.compressed_glowstone.name=Сжатая Светопыль
 item.contenttweaker.compressed_ender.name=Сжатый Эндер Жемчуг

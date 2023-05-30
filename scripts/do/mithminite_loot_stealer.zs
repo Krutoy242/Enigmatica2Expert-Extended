@@ -24,7 +24,7 @@ function checkTool(tool as IItemStack) as bool {
 }
 
 events.onEntityLivingDeathDrops(function(e as crafttweaker.event.EntityLivingDeathDropsEvent){
-    if(e.entity.world.isRemote()) return;                   # Remove world
+    if(e.entity.world.isRemote()) return;                   # Remote world
     if(!(e.entity instanceof IEntityLivingBase)) return;    # Is not entity
 
     val entity as IEntityLivingBase = e.entity;
