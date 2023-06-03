@@ -893,14 +893,18 @@ ____ _    _  _ _  _    ____ ___ ____ _ _  _ ____    ___ ____ ____    _  _ ___  _
 researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
   if (world.isRemote()) return;
   if (!owner instanceof IPlayer) return;
-  tool.mutable();
 
-  if (isNull(tool.tag) || isNull(tool.tag.flux)) tool.updateTag({ flux: 0 } as IData);
+  if (isNull(tool.tag)) return;         # all tinkers tools should have tags
+  if (isNull(tool.tag.flux)) {
+    tool.mutable().updateTag({ flux: 0 } as IData);
+    return;
+  }
 
   if (tool.tag.flux >= 100) return;
   if (world.getFlux(owner.position) <= 1.0f) return;
   world.drainFlux(owner.position, 1.0f);
-  tool.updateTag({ flux: tool.tag.flux + 1 } as IData);
+  tool.mutable().updateTag({ flux: tool.tag.flux + 1 } as IData);
+  return;
 };
 
 /*
