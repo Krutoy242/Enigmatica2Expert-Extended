@@ -45,7 +45,6 @@ events.onEntityLivingDeathDrops(function(e as crafttweaker.event.EntityLivingDea
     }
 
     if(!check) return;                                          # None of tools have research tag
-    print("succes!");
     return;
     //e.addItem(<thaumcraft:bottle_taint>);
 

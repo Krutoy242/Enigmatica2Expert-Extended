@@ -1670,8 +1670,6 @@ eggRecipe("animania:ferret_grey"        ,"exotic",
  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 */
 
-<ore:crystalShardCinnabar>.add(<thaumcraft:cluster:6>);
-
 scripts.process.crushRock(<thaumicaugmentation:stone>, 
 [<jaopca:item_dusttanzanite>,<jaopca:item_dustdimensionalshard>,<actuallyadditions:item_dust:7>], 
 [0.8, 0.2, 0.1], 

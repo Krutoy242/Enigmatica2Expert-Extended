@@ -872,14 +872,14 @@ researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
 
   if (isNull(tool.tag)) return;         # all tinkers tools should have tags
   if (isNull(tool.tag.flux)) {
-    tool.mutable().updateTag({ flux: 0 } as IData);
+    tool.mutable().updateTag({ flux: 0 });
     return;
   }
 
   if (tool.tag.flux >= 100) return;
   if (world.getFlux(owner.position) <= 1.0f) return;
   world.drainFlux(owner.position, 1.0f);
-  tool.mutable().updateTag({ flux: tool.tag.flux + 1 } as IData);
+  tool.mutable().updateTag({ flux: tool.tag.flux + 1 });
   return;
 };
 
@@ -939,11 +939,20 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
     
     if (lvl == 0) { // it's ore! add matching cluster/shard
       val item = oreDict['cluster' ~oreName].firstItem;
-      if (!isNull(item)) newDrops += item % weightedItem.percent;
-    } else {
+      newDrops += (!isNull(item) && event.player.world.getRandom().nextInt(2)==1) ? item % weightedItem.percent : weightedItem;
+    } 
+    else if (lvl ==1){
+      val item =  oreDict[(event.player.world.getRandom().nextInt(2)==0 ? 'cluster' : 'crystalShard') ~oreName].firstItem;
+      newDrops += !isNull(item) ? item % weightedItem.percent : weightedItem;
+    }
+    else {
       val item = oreDict['crystalShard' ~oreName].firstItem;
-      if (!isNull(item)) newDrops += item % weightedItem.percent;
-      if (!isNull(item) && lvl >1) newDrops +=  item % ((lvl - 1) * 25);
+      if (isNull(item)){
+        newDrops += weightedItem;
+      } else{
+        newDrops += item % weightedItem.percent;
+        if (lvl >2) newDrops +=  item % ((lvl - 1) * 25);
+      }
     }
   }
 
