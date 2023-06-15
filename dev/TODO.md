@@ -2,25 +2,12 @@
 
 List of priorities:
 
-- [ ] 📖 Placing a Essentia buffer right above the Essentia Combiner seems to circumvent the issue
-- [ ] 📖 Describe Skyblock quests
-- [ ] 🌍 Remove common blocks from JER planets if they appear in Overworld. For example, we dont need 20 pages of Iron Ore for each planet
-- [ ] 🟢 Integrate ☢️ `New Turbine Parts`
-- [ ] 🟣 Implement `IBlock#getItem(world, pos, blockState)`
+- [ ] 📖 addNoteAboutLiquidHeliumCooler
+- [ ] 📖 Add Info about Void Beacon https://t.ly/46Fm
 - [ ] 🌍 Alien Forest add JER data
-- [ ] 🔄 Disable Skeletons on horses since they cause random explosions
-- [ ] 🔄 disable Caves In TF
-- [ ] ✏️ Use potion numerical ID https://github.com/friendlyhj/ZenUtils/commit/52f60859d4609dffec519b9325b56e54e49046d5
-- [ ] ✏️ Fix `Brass Plate` => `Thaumium Ingot` in `Induction Smelter`
-- [ ] ✏️ Make Mek reactor cheaper
-- [ ] ✏️ `Burnt in fluid` fix accept any meta
-- [ ] ✏️ `Precision Assembler` fix conflict between Inpreg. Sticks and Casing, Basic Coil and Advanced Coil, bronze ingot recipes
-- [ ] ✏️ add Dilithium Magic only, maybe By Building Multiblocks
-- [ ] ✏️ Spawn Pechs in TF
-- [ ] ✏️ Scented Hives Not Working In Skyblock. Still not working, even with config changes
-- [ ] ✏️ Implement BoP drop improvments https://github.com/ProjectHDS/Herodotus/blob/d097ba6b2be402715bf759730c14ebfbd5e42fd4/.minecraft/scripts/hds_main/utils/bopCompat.zs
 - [ ] 💥 going Between Dims Causing Client Freezez / memory leak
-- [ ] ✏️ void Beacon Not Working. Probably because of `Bansoukou` OR `Thaumcraft Aspect Creator`
+- [ ] 🔄 Disable Skeletons on horses since they cause random explosions
+- [ ] 🔴 Remove `Animania`
 
 ---
 
@@ -30,6 +17,8 @@ List of priorities:
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] ✏️ `Burnt in fluid` fix accept any meta
+- [ ] 📖 Describe Skyblock quests
 - [ ] 📀 Rustic's barrel make as x4 chests but without GUI or change somehow else to make more fun.
 - [ ] ✏️ Add recipes of throwing items into Ratlantis portal
 - [ ] 💥 Remove Bansoukou patches that makes unable to run game from first time. This happens not always.

@@ -485,6 +485,17 @@
     "block": "biomesoplenty:double_plant:0",
     "distrib": "0,0.0;59,0.0;60,3.90625E-7;61,3.90625E-7;62,0.0;63,4.6875E-6;64,7.421875E-6;65,9.375E-6;66,1.171875E-5;67,3.0859374E-5;68,4.1796877E-5;69,3.4765624E-5;70,2.65625E-5;71,2.265625E-5;72,2.1484375E-5;73,2.03125E-5;74,2.265625E-5;75,1.8359375E-5;76,8.59375E-6;77,5.859375E-6;78,6.640625E-6;79,5.46875E-6;80,7.8125E-7;81,3.90625E-7;82,1.5625E-6;83,1.5625E-6;84,3.90625E-7;85,3.90625E-7;86,7.8125E-7;87,1.953125E-6;88,1.953125E-6;89,3.90625E-6;90,4.296875E-6;91,1.5625E-6;92,1.953125E-6;93,1.5625E-6;94,3.90625E-7;95,1.953125E-6;96,2.34375E-6;97,1.5625E-6;98,3.515625E-6;99,2.734375E-6;100,1.5625E-6;101,1.5625E-6;102,7.8125E-7;103,3.90625E-7;104,0.0;105,7.8125E-7;107,7.8125E-7;108,1.5625E-6;109,7.8125E-7;110,0.0;111,0.0;112,3.90625E-7;113,1.171875E-6;114,1.171875E-6;115,3.90625E-7;116,3.90625E-7;117,7.8125E-7;118,3.90625E-7;119,0.0;",
     "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "minecraft:dye:12",
+        "fortunes": {
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
+        }
+      }
+    ],
     "dim": "Overworld (0)"
   },
   {
@@ -505,12 +516,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:0",
+        "itemStack": "minecraft:dye:7",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -522,12 +533,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:1",
+        "itemStack": "minecraft:dye:6",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -539,12 +550,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:11",
+        "itemStack": "minecraft:dye:1",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -556,12 +567,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:12",
+        "itemStack": "minecraft:dye:8",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -573,12 +584,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:14",
+        "itemStack": "biomesoplenty:white_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -590,12 +601,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:2",
+        "itemStack": "biomesoplenty:black_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -607,12 +618,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:3",
+        "itemStack": "minecraft:dye:6",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -624,12 +635,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:4",
+        "itemStack": "minecraft:dye:12",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -641,12 +652,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:5",
+        "itemStack": "minecraft:dye:14",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -658,12 +669,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:6",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -675,12 +686,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:7",
+        "itemStack": "minecraft:dye:13",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -692,12 +703,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:8",
+        "itemStack": "minecraft:dye:5",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -709,12 +720,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:9",
+        "itemStack": "biomesoplenty:white_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -726,12 +737,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:0",
+        "itemStack": "minecraft:dye:5",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -743,12 +754,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:1",
+        "itemStack": "minecraft:dye:11",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -760,12 +771,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:2",
+        "itemStack": "biomesoplenty:blue_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -777,12 +788,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -1413,12 +1424,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:0",
+        "itemStack": "biomesoplenty:shroompowder:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -1447,12 +1458,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:2",
+        "itemStack": "biomesoplenty:blue_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -1464,12 +1475,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -1481,12 +1492,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:4",
+        "itemStack": "biomesoplenty:brown_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -1657,12 +1668,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:plant_1:10",
+        "itemStack": "minecraft:dye:1",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -1714,12 +1725,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:plant_1:4",
+        "itemStack": "biomesoplenty:brown_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -8442,12 +8453,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:15",
+        "itemStack": "minecraft:dye:14",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -8580,12 +8591,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:0",
+        "itemStack": "biomesoplenty:shroompowder:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -8597,12 +8608,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -8614,12 +8625,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:4",
+        "itemStack": "biomesoplenty:brown_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -9437,10 +9448,10 @@
       {
         "itemStack": "minecraft:purpur_slab:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -9454,10 +9465,10 @@
       {
         "itemStack": "minecraft:obsidian:0",
         "fortunes": {
-          "0": 8.0,
-          "1": 8.0,
-          "2": 8.0,
-          "3": 8.0
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 8
         }
       }
     ],
@@ -9477,10 +9488,10 @@
       {
         "itemStack": "minecraft:chest:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -9506,10 +9517,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"aqua\",amount:1}]}",
         "fortunes": {
-          "0": 4.0,
-          "1": 4.0,
-          "2": 4.0,
-          "3": 4.0
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
         }
       }
     ],
@@ -9538,10 +9549,10 @@
       {
         "itemStack": "forestry:bee_princess_ge:0:{IsAnalyzed:0b,Health:60,MaxH:60,Genome:{Chromosomes:[{Slot:0b,UID0:\"forestry.speciesEnded\",UID1:\"forestry.speciesEnded\"},{Slot:1b,UID0:\"forestry.speedSlower\",UID1:\"forestry.speedSlower\"},{Slot:2b,UID0:\"forestry.lifespanLonger\",UID1:\"forestry.lifespanLonger\"},{Slot:3b,UID0:\"forestry.fertilityLow\",UID1:\"forestry.fertilityLow\"},{Slot:4b,UID0:\"forestry.toleranceUp1\",UID1:\"forestry.toleranceUp1\"},{Slot:5b,UID0:\"forestry.boolTrue\",UID1:\"forestry.boolTrue\"},{Slot:6b,UID0:\"forestry.toleranceNone\",UID1:\"forestry.toleranceNone\"},{Slot:7b,UID0:\"forestry.boolFalse\",UID1:\"forestry.boolFalse\"},{Slot:8b,UID0:\"forestry.boolFalse\",UID1:\"forestry.boolFalse\"},{Slot:9b,UID0:\"forestry.flowersEnd\",UID1:\"forestry.flowersEnd\"},{Slot:10b,UID0:\"forestry.floweringSlowest\",UID1:\"forestry.floweringSlowest\"},{Slot:11b,UID0:\"forestry.territoryLarge\",UID1:\"forestry.territoryLarge\"},{Slot:12b,UID0:\"forestry.effectMisanthrope\",UID1:\"forestry.effectMisanthrope\"}]}}",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       },
       {
@@ -9564,10 +9575,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"ignis\",amount:1}]}",
         "fortunes": {
-          "0": 4.0,
-          "1": 4.0,
-          "2": 4.0,
-          "3": 4.0
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
         }
       }
     ],
@@ -9587,10 +9598,10 @@
       {
         "itemStack": "minecraft:purpur_stairs:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -9604,10 +9615,10 @@
       {
         "itemStack": "minecraft:end_rod:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -9621,10 +9632,10 @@
       {
         "itemStack": "minecraft:banner:13:{BlockEntityTag:{Patterns:[{Pattern:\"tt\",Color:0},{Pattern:\"bt\",Color:0}]}}",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -10687,10 +10698,10 @@
       {
         "itemStack": "biomesoplenty:crystal_shard:0",
         "fortunes": {
-          "0": 4.0,
-          "1": 4.0,
-          "2": 4.0,
-          "3": 4.0
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
         }
       }
     ],
@@ -10704,10 +10715,10 @@
       {
         "itemStack": "minecraft:ender_pearl:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       },
       {
@@ -10759,10 +10770,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"terra\",amount:1}]}",
         "fortunes": {
-          "0": 4.0,
-          "1": 4.0,
-          "2": 4.0,
-          "3": 4.0
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
         }
       }
     ],
@@ -10776,10 +10787,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"perditio\",amount:1}]}",
         "fortunes": {
-          "0": 2.0,
-          "1": 2.0,
-          "2": 2.0,
-          "3": 2.0
+          "0": 2,
+          "1": 2,
+          "2": 2,
+          "3": 2
         }
       }
     ],
@@ -10799,10 +10810,10 @@
       {
         "itemStack": "minecraft:ladder:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -10816,7 +10827,7 @@
       {
         "itemStack": "biomesoplenty:gem:0",
         "fortunes": {
-          "0": 1.0,
+          "0": 1,
           "1": 1.3345,
           "2": 1.7446,
           "3": 2.1907
@@ -10833,7 +10844,7 @@
       {
         "itemStack": "endreborn:death_essence:0",
         "fortunes": {
-          "0": 1.0,
+          "0": 1,
           "1": 1.3345,
           "2": 1.7446,
           "3": 2.1907
@@ -10850,10 +10861,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"ordo\",amount:1}]}",
         "fortunes": {
-          "0": 3.0,
-          "1": 3.0,
-          "2": 3.0,
-          "3": 3.0
+          "0": 3,
+          "1": 3,
+          "2": 3,
+          "3": 3
         }
       }
     ],
@@ -10873,10 +10884,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"aer\",amount:1}]}",
         "fortunes": {
-          "0": 3.0,
-          "1": 3.0,
-          "2": 3.0,
-          "3": 3.0
+          "0": 3,
+          "1": 3,
+          "2": 3,
+          "3": 3
         }
       }
     ],
@@ -10902,10 +10913,10 @@
       {
         "itemStack": "endreborn:item_end_essence:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -10914,7 +10925,18 @@
   {
     "block": "endreborn:block_lormyte_crystal:0",
     "distrib": "0,0.0;23,0.0;24,5.2578124E-4;25,0.0015916015;26,0.003065625;27,0.005019922;28,0.007317578;29,0.009969922;30,0.0123751955;31,0.01439668;32,0.015988672;33,0.017245509;34,0.017803712;35,0.018065039;36,0.018213673;37,0.0183625;38,0.018457618;39,0.018600976;40,0.018850977;41,0.018734962;42,0.018220313;43,0.017147265;44,0.01558164;45,0.013563672;46,0.01105625;47,0.008238477;48,0.0030226563;49,0.0018638672;50,9.201172E-4;51,3.1679688E-4;52,0.0;",
-    "silktouch": false,
+    "silktouch": true,
+    "dropsList": [
+      {
+        "itemStack": "endreborn:item_lormyte_crystal:0",
+        "fortunes": {
+          "0": 1.5,
+          "1": 3,
+          "2": 7.5,
+          "3": 15
+        }
+      }
+    ],
     "dim": "The End (1)"
   },
   {
@@ -11032,12 +11054,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -11049,12 +11071,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -16593,12 +16615,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -16610,12 +16632,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -18590,12 +18612,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -18607,12 +18629,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -19915,12 +19937,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -19932,12 +19954,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -20747,12 +20769,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -20764,12 +20786,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -21613,12 +21635,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -21630,12 +21652,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -22514,12 +22536,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -22531,12 +22553,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -23397,12 +23419,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -23414,12 +23436,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -25417,12 +25439,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -25434,12 +25456,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -26324,12 +26346,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -26341,12 +26363,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -27316,12 +27338,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -27339,12 +27361,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -28400,12 +28422,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -28434,12 +28456,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -29251,12 +29273,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -29319,12 +29341,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -30771,12 +30793,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -30788,12 +30810,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31730,12 +31752,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:0",
+        "itemStack": "minecraft:dye:7",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31747,12 +31769,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:3",
+        "itemStack": "minecraft:dye:6",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31764,12 +31786,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:4",
+        "itemStack": "minecraft:dye:12",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31781,12 +31803,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:6",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31798,12 +31820,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:9",
+        "itemStack": "biomesoplenty:white_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31815,12 +31837,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31959,12 +31981,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:2",
+        "itemStack": "biomesoplenty:blue_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -31976,12 +31998,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -32065,12 +32087,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:plant_1:10",
+        "itemStack": "minecraft:dye:1",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -34969,12 +34991,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -34986,12 +35008,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -35721,12 +35743,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -35784,12 +35806,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -37005,12 +37027,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_0:2",
+        "itemStack": "biomesoplenty:black_dye:0",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -37022,12 +37044,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -37160,12 +37182,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -39068,12 +39090,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -39085,12 +39107,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1,
-          "1": 1,
-          "2": 1,
-          "3": 1
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -39557,12 +39579,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:mushroom:3",
+        "itemStack": "minecraft:dye:10",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -39576,10 +39598,10 @@
       {
         "itemStack": "botania:mushroom:1",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39593,10 +39615,10 @@
       {
         "itemStack": "botania:mushroom:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39610,10 +39632,10 @@
       {
         "itemStack": "botania:mushroom:3",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39627,10 +39649,10 @@
       {
         "itemStack": "botania:mushroom:2",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39667,10 +39689,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"ignis\",amount:1}]}",
         "fortunes": {
-          "0": 2.0,
-          "1": 2.0,
-          "2": 2.0,
-          "3": 2.0
+          "0": 2,
+          "1": 2,
+          "2": 2,
+          "3": 2
         }
       }
     ],
@@ -39707,10 +39729,10 @@
       {
         "itemStack": "botania:mushroom:11",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39724,10 +39746,10 @@
       {
         "itemStack": "botania:mushroom:14",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39764,10 +39786,10 @@
       {
         "itemStack": "botania:mushroom:10",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39784,7 +39806,7 @@
           "0": 0.1009,
           "1": 0.1407,
           "2": 0.2475,
-          "3": 1.0
+          "3": 1
         }
       }
     ],
@@ -39804,10 +39826,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"terra\",amount:1}]}",
         "fortunes": {
-          "0": 2.0,
-          "1": 2.0,
-          "2": 2.0,
-          "3": 2.0
+          "0": 2,
+          "1": 2,
+          "2": 2,
+          "3": 2
         }
       }
     ],
@@ -39830,7 +39852,7 @@
       {
         "itemStack": "minecraft:redstone:0",
         "fortunes": {
-          "0": 1.0,
+          "0": 1,
           "1": 1.4958,
           "2": 2.0072,
           "3": 2.5026
@@ -39847,10 +39869,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"perditio\",amount:1}]}",
         "fortunes": {
-          "0": 3.0,
-          "1": 3.0,
-          "2": 3.0,
-          "3": 3.0
+          "0": 3,
+          "1": 3,
+          "2": 3,
+          "3": 3
         }
       }
     ],
@@ -39881,7 +39903,7 @@
       {
         "itemStack": "minecraft:diamond:0",
         "fortunes": {
-          "0": 1.0,
+          "0": 1,
           "1": 1.3355,
           "2": 1.756,
           "3": 2.1996
@@ -39898,10 +39920,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"aer\",amount:1}]}",
         "fortunes": {
-          "0": 2.0,
-          "1": 2.0,
-          "2": 2.0,
-          "3": 2.0
+          "0": 2,
+          "1": 2,
+          "2": 2,
+          "3": 2
         }
       }
     ],
@@ -39950,10 +39972,10 @@
       {
         "itemStack": "minecraft:clay_ball:0",
         "fortunes": {
-          "0": 4.0,
-          "1": 4.0,
-          "2": 4.0,
-          "3": 4.0
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
         }
       }
     ],
@@ -39967,10 +39989,10 @@
       {
         "itemStack": "minecraft:red_mushroom:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -39984,10 +40006,10 @@
       {
         "itemStack": "minecraft:dirt:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40001,7 +40023,7 @@
       {
         "itemStack": "minecraft:coal:0",
         "fortunes": {
-          "0": 1.0,
+          "0": 1,
           "1": 1.3374,
           "2": 1.7408,
           "3": 2.2002
@@ -40036,10 +40058,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"aqua\",amount:1}]}",
         "fortunes": {
-          "0": 3.0,
-          "1": 3.0,
-          "2": 3.0,
-          "3": 3.0
+          "0": 3,
+          "1": 3,
+          "2": 3,
+          "3": 3
         }
       }
     ],
@@ -40053,7 +40075,7 @@
       {
         "itemStack": "thermalfoundation:material:895",
         "fortunes": {
-          "0": 1.0,
+          "0": 1,
           "1": 1.4991,
           "2": 2.0019,
           "3": 2.5014
@@ -40076,10 +40098,10 @@
       {
         "itemStack": "advancedrocketry:electricmushroom:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40093,10 +40115,10 @@
       {
         "itemStack": "botania:flower:4",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40110,10 +40132,10 @@
       {
         "itemStack": "minecraft:cobblestone:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40162,8 +40184,8 @@
       {
         "itemStack": "minecraft:coal:1",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
+          "0": 1,
+          "1": 1,
           "2": 1.5005,
           "3": 1.9954
         }
@@ -40235,10 +40257,10 @@
       {
         "itemStack": "botania:flower:12",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40252,10 +40274,10 @@
       {
         "itemStack": "botania:flower:13",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40281,10 +40303,10 @@
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"ordo\",amount:1}]}",
         "fortunes": {
-          "0": 2.0,
-          "1": 2.0,
-          "2": 2.0,
-          "3": 2.0
+          "0": 2,
+          "1": 2,
+          "2": 2,
+          "3": 2
         }
       }
     ],
@@ -40354,10 +40376,10 @@
       {
         "itemStack": "botania:mushroom:5",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40371,10 +40393,10 @@
       {
         "itemStack": "botania:mushroom:7",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40388,10 +40410,10 @@
       {
         "itemStack": "botania:mushroom:9",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -40403,12 +40425,12 @@
     "silktouch": false,
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:flower_1:3",
+        "itemStack": "minecraft:dye:9",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1.5,
+          "1": 3,
+          "2": 6,
+          "3": 7.5
         }
       }
     ],
@@ -40557,7 +40579,7 @@
       {
         "itemStack": "thaumcraft:primordial_pearl:1",
         "fortunes": {
-          "0": 9.0E-4,
+          "0": 0.0009,
           "1": 0.0014,
           "2": 0.001,
           "3": 0.0014
@@ -40566,10 +40588,10 @@
       {
         "itemStack": "thaumcraft:primordial_pearl:2",
         "fortunes": {
-          "0": 3.0E-4,
-          "1": 7.0E-4,
-          "2": 5.0E-4,
-          "3": 9.0E-4
+          "0": 0.0003,
+          "1": 0.0007,
+          "2": 0.0005,
+          "3": 0.0009
         }
       },
       {
@@ -41049,10 +41071,10 @@
       {
         "itemStack": "thaumcraft:slab_eldritch:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41102,10 +41124,10 @@
       {
         "itemStack": "thaumcraft:pedestal_eldritch:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41119,10 +41141,10 @@
       {
         "itemStack": "thaumcraft:stairs_ancient:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41136,10 +41158,10 @@
       {
         "itemStack": "thaumicaugmentation:stairs_ancient:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41171,10 +41193,10 @@
       {
         "itemStack": "biomesoplenty:ash:0",
         "fortunes": {
-          "0": 4.0,
-          "1": 4.0,
-          "2": 4.0,
-          "3": 4.0
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
         }
       }
     ],
@@ -41217,10 +41239,10 @@
       {
         "itemStack": "thaumicaugmentation:slab:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41263,10 +41285,10 @@
       {
         "itemStack": "minecraft:dirt:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41280,10 +41302,10 @@
       {
         "itemStack": "minecraft:netherrack:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41303,10 +41325,10 @@
       {
         "itemStack": "biomesoplenty:dirt:2",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41350,10 +41372,10 @@
       {
         "itemStack": "biomesoplenty:dirt:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41415,10 +41437,10 @@
       {
         "itemStack": "minecraft:cobblestone:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41438,10 +41460,10 @@
       {
         "itemStack": "thaumcraft:pedestal_ancient:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41473,10 +41495,10 @@
       {
         "itemStack": "minecraft:string:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41981,10 +42003,10 @@
       {
         "itemStack": "thaumicaugmentation:stairs_eldritch_tile:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
@@ -41998,10 +42020,10 @@
       {
         "itemStack": "thaumcraft:slab_ancient:0",
         "fortunes": {
-          "0": 1.0,
-          "1": 1.0,
-          "2": 1.0,
-          "3": 1.0
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1
         }
       }
     ],
