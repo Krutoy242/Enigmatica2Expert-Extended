@@ -667,4 +667,13 @@
   "value": [-2,0]}
 ]}
 
+,{"key":"TT_PRISMARINE","ops":[
+  {"op":"add",
+  "path":"stages/-",
+  "value": {
+    "text": "thaumictinkerer.research.prismarine.1", 
+    "recipes": ["thaumictinkerer:prismarine"]
+}}
+]}
+
 ]
