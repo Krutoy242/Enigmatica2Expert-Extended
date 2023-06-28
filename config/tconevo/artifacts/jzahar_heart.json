@@ -1,0 +1,14 @@
+{
+    "weight": 120,
+    "type": "tconevo:armour",
+    "name": "J'zahar Heart",
+    "lore": "The tainted core of the ancient.",
+    "armour": "chestplate",
+    "materials": [
+        "adaminite", 
+        "void_metal", 
+        "amethyst"
+    ],
+    "data_tag": {"TC.WARP": 6},
+    "free_mods": 2
+}

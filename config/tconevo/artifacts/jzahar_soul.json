@@ -1,0 +1,14 @@
+{
+  "weight": 120,
+  "type": "tconevo:armour",
+  "name": "J'zahar Soul",
+  "lore": "Enchanted in the cries of stray servant souls.",
+  "armour": "leggings",
+  "materials": [
+    "primal_metal", 
+    "void_metal", 
+    "soularium"
+  ],
+  "data_tag": {"TC.WARP": 5},
+  "free_mods": 2
+}
