@@ -10,5 +10,9 @@
     "soularium"
   ],
   "data_tag": {"TC.WARP": 5},
-  "free_mods": 2
+  "free_mods": 3,
+  "mods": [
+      "potion_belt_armor",
+      "soulbound_armor"
+    ]
 }

@@ -10,5 +10,12 @@
         "amethyst"
     ],
     "data_tag": {"TC.WARP": 6},
-    "free_mods": 2
+    "free_mods": 3,
+    "mods": [
+        "parasitic_armor",
+        {
+            "id": "speedy_armor",
+            "level": 2
+        }
+      ]
 }

@@ -10,6 +10,13 @@
         "adaminite",
         "ruby"
     ],
-    "data_tag": {"TC.WARP": 6, "infench": [{"lvl": 3, "id": 5}]}
+    "data_tag": {"TC.WARP": 6, "infench": [{"lvl": 3, "id": 5}]},
+    "free_mods": 5,
+    "mods": [
+        {
+            "id": "necrotic",
+            "level": 2
+        }
+      ]
 }
   
