@@ -577,7 +577,6 @@ forbidden_Trait.onHit = function (trait, tool, attacker, target, damage, isCriti
   }
   else {
     debuffenemy(target, warp, player);
-    if (target.health - damage < 0) speakKill(player, player.world);
   }
 };
 forbidden_Trait.register();
