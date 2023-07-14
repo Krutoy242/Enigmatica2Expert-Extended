@@ -39,6 +39,8 @@ events.onEntityLivingDeathDrops(function(e as crafttweaker.event.EntityLivingDea
     if(!(e.damageSource.trueSource instanceof IPlayer)) return;                 # Source not an player
 
     val player as IPlayer = e.damageSource.trueSource;
+    if(isNull(player)) return;
+
     if(!player.thaumcraftKnowledge.isResearchComplete("LOOT_STEALER")) return;  # Player don't have research
 
     var check as bool = false;
@@ -52,6 +54,6 @@ events.onEntityLivingDeathDrops(function(e as crafttweaker.event.EntityLivingDea
 
     for drop in e.drops {
         if(isNull(drop.item)) continue;
-        if(drop.item.amount > 1) e.addItem(drop.item*(e.entity.world.getRandom().nextInt(1,((drop.item.amount*0.5)+1) as int)));
+        if(drop.item.amount > 1) e.addItem(drop.item*e.entity.world.getRandom().nextInt(1,drop.item.amount/2));
     }
 });
