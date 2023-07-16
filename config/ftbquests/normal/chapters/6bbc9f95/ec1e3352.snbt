@@ -1,0 +1,25 @@
+{
+	x: 0.0d,
+	y: 5.0d,
+	text: [
+		"Some of research require §9celestial notes§r, you can get them by right clicking §bsky§r while holding §6thaumometer§r and having paper in inventory...",
+		"",
+		"Or you can use §6Celestial Observer§r! It will do it automaticaly for you!"
+	],
+	dependencies: [
+		"adef62af"
+	],
+	tasks: [{
+		uid: "222f5181",
+		type: "item",
+		items: [{
+			item: "thaumicaugmentation:celestial_observer_placer"
+		}]
+	}],
+	rewards: [{
+		uid: "8019c9b5",
+		type: "item",
+		item: "thaumcraft:curio 1 5",
+		count: 5
+	}]
+}

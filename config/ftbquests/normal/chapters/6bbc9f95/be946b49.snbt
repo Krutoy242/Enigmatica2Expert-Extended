@@ -1,0 +1,53 @@
+{
+	icon: "thaumicaugmentation:rift_jar",
+	x: 14.4d,
+	y: -1.1d,
+	shape: "circle",
+	text: [
+		"While polluting base with §5flux§r isn't good idea, you can still want to have under control §0rift§r in base.",
+		"",
+		"Firstly you need §6Reinforced Jar§r and §6Metaspatial Accumulator§r. You need to place §6Metaspatial Accumulator§r right under rift and right on the §6Reinforced Jar§r. Just don't accidentaly place it in §0rfit§r because you'll lose machine.",
+		"",
+		"If you have prepared setup simply use gauntlet on §6Metaspatial Accumulator§r. There is a chance that process will result in failure. That depends on §0rift§r size and stability.",
+		"",
+		"Now that you have §6Rift in a Jar§r you can use it as item trash or take it out using §6Metaspatial Extruder§r the same way as containing.",
+		"",
+		"§7Have you ever wondered what would happen if you place rift in the rift🤔🤔🤔?§r"
+	],
+	dependencies: [
+		"6f49eb69"
+	],
+	size: 0.75d,
+	tasks: [{
+		uid: "baf8f52a",
+		type: "item",
+		items: [{
+			item: "thaumicaugmentation:rift_jar"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "84457d5f",
+		type: "item",
+		items: [{
+			item: "thaumicaugmentation:rift_mover_input"
+		}]
+	},
+	{
+		uid: "853b239c",
+		type: "item",
+		items: [{
+			item: "thaumicaugmentation:rift_mover_output"
+		}]
+	}],
+	rewards: [{
+		uid: "61cbbb74",
+		type: "item",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "uncommon"
+			}
+		}
+	}]
+}
