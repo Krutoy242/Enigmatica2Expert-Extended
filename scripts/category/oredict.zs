@@ -49,6 +49,8 @@ add(<ore:mushroomAny>, <harvestcraft:whitemushroomitem>);
 # Removing Pam's in-world Apple from cropApple
 remove(<ore:cropApple>, <harvestcraft:pamapple>);
 
+add(<ore:foodButter>, <nuclearcraft:cocoa_butter>);
+
 # Cobalt Block issues
 remove(<ore:oreCobalt>, <tconstruct:metal>);
 removeItems(<ore:oreArdite>, [<tconstruct:metal>, <tconstruct:ore>]);
@@ -164,6 +166,7 @@ add(<ore:listAllmeatraw>, <twilightforest:raw_venison>);
 add(<ore:listAllbeefcooked>, <twilightforest:cooked_venison>);
 add(<ore:listAllmeatcooked>, <twilightforest:cooked_venison>);
 add(<ore:listAllmeatcooked>, <twilightforest:cooked_meef>);
+remove(<ore:feather>, <twilightforest:raven_feather>);
 
 # Void Metal Block
 add(<ore:blockVoid>, <thaumcraft:metal_void>);
@@ -238,6 +241,26 @@ add(<ore:heartDragon>, <iceandfire:ice_dragon_heart>);
 # Hippogryphs
 add(<ore:hippogryphEgg>, <iceandfire:hippogryph_egg:*>);
 
+# Who would ever use hyppogryphs eggs in craft?
+removeItems(<ore:egg>, [
+	<iceandfire:hippogryph_egg:*>,
+	<iceandfire:iceandfire.deathworm_egg:*>,
+	<iceandfire:myrmex_jungle_egg:*>,
+	<iceandfire:myrmex_desert_egg:*>,
+]);
+
+# Dragon Eggs
+addItems(<ore:dragonEgg>, [
+	<iceandfire:dragonegg_red>,
+	<iceandfire:dragonegg_green>,
+	<iceandfire:dragonegg_bronze>,
+	<iceandfire:dragonegg_gray>,
+	<iceandfire:dragonegg_blue>,
+	<iceandfire:dragonegg_white>,
+	<iceandfire:dragonegg_sapphire>,
+	<iceandfire:dragonegg_silver>,
+]);
+
 # Crafting hammers
 add(<ore:craftingToolForgeHammer>, <immersiveengineering:tool>);
 
@@ -268,6 +291,14 @@ add(<ore:stoneGranite>, <quark:world_stone_bricks>);
 add(<ore:stoneDiorite>, <quark:world_stone_bricks:1>);
 add(<ore:stoneAndesite>, <quark:world_stone_bricks:2>);
 add(<ore:stoneBasalt>, <quark:world_stone_bricks:3>);
+
+addItems(<ore:slabBasalt>, [
+	<quark:stone_basalt_slab>,
+	<environmentalmaterials:basalt_slab>,
+	<environmentalmaterials:basalt_paver_slab>,
+	<environmentalmaterials:basalt_brick_slab>,
+	<environmentalmaterials:basalt_tile_slab>,
+]);
 
 addItems(<ore:grassTall>, [
   <biomesoplenty:plant_0>,
@@ -485,11 +516,10 @@ addItems(<ore:bitumen>, [<thermalfoundation:material:892>, <immersivepetroleum:m
 
 # Additional essence added with mysticalcreations
 addItems(<ore:essenceTier1>, [<mysticalcreations:creosolite_essence>]);
-addItems(<ore:essenceTier2>, [<mysticalcreations:cheese_essence>]);
 addItems(<ore:essenceTier3>, [<mysticalagriculture:starmetal_essence>]);
 add(<ore:essenceTier6>, <mysticalcreations:ultimate_essence>);
 
-addItems(<ore:seedsTier2>, [<mysticalcreations:cheese_seeds>, <mysticalcreations:creosolite_seeds>]);
+addItems(<ore:seedsTier2>, [<mysticalcreations:creosolite_seeds>]);
 addItems(<ore:seedsTier3>, [<mysticalagriculture:starmetal_seeds>]);
 add(<ore:seedsTier6>, <mysticalcreations:ultimate_seeds>);
 
@@ -497,73 +527,6 @@ add(<ore:seedsTier6>, <mysticalcreations:ultimate_seeds>);
 for item in <ore:dustAshes>.items {
 	add(<ore:dustAsh>, item);
 }
-
-##################
-# Animania
-##################
-
-# Animania wool
-add(<ore:woolPrime>, <animania:wool:*>);
-
-<ore:peacockFeathers>.add([
-	<animania:blue_peacock_feather>,
-	<animania:white_peacock_feather>,
-	<animania:charcoal_peacock_feather>,
-	<animania:opal_peacock_feather>,
-	<animania:peach_peacock_feather>,
-	<animania:purple_peacock_feather>,
-	<animania:taupe_peacock_feather>
-]);
-
-<ore:animaniaEggs>.add([
-	<animania:brown_egg>,
-	<animania:peacock_egg_blue>,
-	<animania:peacock_egg_white>
-]);
-
-<ore:cheeseWheels>.add([
-	<animania:friesian_cheese_wheel>,
-	<animania:holstein_cheese_wheel>,
-	<animania:jersey_cheese_wheel>,
-	<animania:goat_cheese_wheel>,
-	<animania:sheep_cheese_wheel>
-]);
-
-<ore:cheeseAnimania>.add([
-	<animania:friesian_cheese_wedge>,
-	<animania:holstein_cheese_wedge>,
-	<animania:jersey_cheese_wedge>,
-	<animania:goat_cheese_wedge>,
-	<animania:sheep_cheese_wedge>
-]);
-
-
-var primeMeatRaw = [
-  <tconstruct:edible>,
-  <animania:raw_prime_beef>,
-  <animania:raw_prime_steak>,
-  <animania:raw_prime_pork>,
-  <animania:raw_prime_bacon>,
-  <animania:raw_prime_chicken>,
-  <animania:raw_prime_mutton>,
-  <animania:raw_prime_rabbit>,
-  <animania:raw_prime_chevon>,
-  <animania:raw_prime_peacock>,
-] as IItemStack[];
-<ore:primeMeatRaw>.add(primeMeatRaw);
-
-var primeMeatCooked = [
-	<animania:cooked_prime_beef>,
-	<animania:cooked_prime_steak>,
-	<animania:cooked_prime_pork>,
-	<animania:cooked_prime_bacon>,
-	<animania:cooked_prime_chicken>,
-	<animania:cooked_prime_mutton>,
-	<animania:cooked_prime_rabbit>,
-	<animania:cooked_prime_chevon>,
-	<animania:cooked_prime_peacock>,
-] as IItemStack[];
-<ore:primeMeatCooked>.add(primeMeatCooked);
 
 # Its too hard to craft for being just obsidian
 remove(<ore:gemObsidian>, <cyclicmagic:crystallized_obsidian>);
@@ -692,8 +655,6 @@ addItems(<ore:foodNutrients5>, [
 ]);
 
 addItems(<ore:listAllmeatraw>, [
-	<animania:raw_peacock>,
-	<animania:raw_prime_peacock>,
 	<twilightforest:raw_meef>,
 ]);
 

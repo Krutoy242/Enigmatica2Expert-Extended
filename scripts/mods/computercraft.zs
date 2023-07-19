@@ -50,12 +50,6 @@ craft.make(<computercraft:turtle_advanced>, ["pretty",
 	mods.immersiveengineering.MetalPress.addRecipe(<computercraft:pocket_computer:1>, <computercraft:computer:16384>, <immersiveengineering:mold:0>, 2000);
 	mods.mechanics.addCrushingBlockRecipe(<computercraft:computer:16384>, [<computercraft:pocket_computer:1>], [1.0]);
 
-# Get rid of recipe that uses every weapon in game
-remakeEx(<plethora:module:1>, [
-	[<ore:ingotFakeIron>, <ore:ingotFakeIron>, <ore:ingotFakeIron>],
-	[<ore:blockGlass>, <ore:gemDiamondRat>, <actuallyadditions:block_laser_relay>],
-	[null, null, <ore:ingotFakeIron>]]);
-
 # Add missed items to JEI
 mods.jei.JEI.addItem(<opencomputers:print>);
 mods.jei.JEI.addItem(<opencomputers:misc>);

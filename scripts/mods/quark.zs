@@ -23,8 +23,17 @@ recipes.addShaped('Quark Marble Wall',
 // Prevent melting dupe
 craft.remake(<quark:obsidian_pressure_plate>, ['AA', 'AA'], { A: <ore:obsidian> });
 
+// Melt sugar
+scripts.process.melt(<ore:blockSugar>, <fluid:sugar> * (144 * 9));
+
 // Conflict recipes
 recipes.removeByRecipeName('quark:basalt_1');
+
+// Too easy recipe
+recipes.removeByRecipeName("quark:basalt");
+
+recipes.remove(<quark:stone_basalt_slab>);
+recipes.addShaped('oredicted_slab', <quark:stone_basalt_slab> * 6, [[<ore:stoneBasalt>, <ore:stoneBasalt>, <ore:stoneBasalt>]]);
 
 # Fix recipes (each original quark recipe use basalt bricks for some reason)
 for i in [
@@ -109,9 +118,9 @@ craft.shapeless(<quark:slime_bucket>, "§~", {
 });
 
 # [Monster Box] from [Truffle][+1]
-craft.shapeless(<quark:monster_box>, "MT", {
+craft.shaped(<quark:monster_box>, ["---", "-M-", "---"], {
   "M": <minecraft:mob_spawner>, # Monster Spawner
-  "T": <animania:truffle>,      # Truffle
+  "-": <iceandfire:dreadwood_planks>,
 });
 
 # Recipe added with another mod

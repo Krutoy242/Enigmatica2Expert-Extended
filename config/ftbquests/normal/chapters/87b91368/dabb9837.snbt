@@ -1,11 +1,11 @@
 {
-	x: 0.75d,
-	y: 1.25d,
+	x: 8.6d,
+	y: -2.0d,
 	text: [
 		"{q.animals.giant_death_worm_egg.desc}"
 	],
 	dependencies: [
-		"e4f22972"
+		"e875aec9"
 	],
 	tasks: [{
 		uid: "efc8cea3",
@@ -18,6 +18,6 @@
 	rewards: [{
 		uid: "84aef371",
 		type: "choice",
-		table: 79
+		table: 77
 	}]
 }

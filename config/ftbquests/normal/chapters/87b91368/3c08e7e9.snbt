@@ -1,0 +1,23 @@
+{
+	x: 5.9d,
+	y: -2.5d,
+	text: [
+		"{q.animals.conglomerate_of_life.desc}"
+	],
+	dependencies: [
+		"91a85050",
+		"235e1eb1"
+	],
+	tasks: [{
+		uid: "8cac523f",
+		type: "item",
+		items: [{
+			item: "contenttweaker:conglomerate_of_life"
+		}]
+	}],
+	rewards: [{
+		uid: "576ac4cc",
+		type: "choice",
+		table: 127
+	}]
+}

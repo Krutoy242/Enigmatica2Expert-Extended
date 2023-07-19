@@ -6,80 +6,65 @@ import crafttweaker.item.IItemStack;
 // Entity brewing
 // ---------------------------
 for output, ingrs in {
-  # [Random Peacock] from [Ground Turkey]*2[+3]
-  <animania:entity_egg_peacock_random> * 4 : [
-    <harvestcraft:groundturkeyitem>,   # Ground Turkey
-    <mysticalagriculture:crafting:24>, # Mystical Feather
-    <rats:feathery_wing>,              # Feathery Wing
+
+  itemUtils.getItem("betteranimalsplus:pheasant_egg") : [
+    <ore:feather>,
+    <ore:foodGroundchicken>, # Ground Chicken
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # [Random Rabbit] from [Ground Rabbit]*2[+2]
-  <animania:entity_egg_rabbit_random> * 4 : [
-    <harvestcraft:groundrabbititem>, # Ground Rabbit
-    <minecraft:rabbit_foot>,         # Rabbit's Foot
-    <tconstruct:edible:15>,          # Rabbit Jerky
+  itemUtils.getItem("betteranimalsplus:turkey_egg") : [
+    <ore:feather>,
+    <ore:foodGroundturkey>, # Ground Turkey
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # [Random Cow] from [Ground Beef]*2[+2]
-  <animania:entity_egg_cow_random> * 4 : [
-    <harvestcraft:groundbeefitem>,  # Ground Beef
-    <cookingforblockheads:cow_jar>, # Cow in a Jar
-    <ore:blockCheese>,              # Block of Cheese
+  itemUtils.getItem("betteranimalsplus:goose_egg") : [
+    <ore:feather>,
+    <ore:foodGroundduck>, # Ground Duck
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # [Random Pig] from [Ground Pork]*2[+2]
-  <animania:entity_egg_pig_random> * 4 : [
-    <harvestcraft:groundporkitem>, # Ground Pork
-    <tconstruct:edible>,           # Bacon
-    <ore:nuggetPigiron>,           # Pigiron Nugget
+  <emberroot:owl_egg> : [
+    <ore:feather>,
+    <minecraft:spider_eye>, # Spider Eye
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # [Random Chicken] from [Ground Chicken]*2[+2]
-  <animania:entity_egg_chicken_random> * 4 : [
-    <harvestcraft:groundchickenitem>, # Ground Chicken
-    <tconstruct:edible:12>,           # Chicken Jerky
-    <ore:blockMeatChicken>,           # Single Compressed Chicken
+  <quark:parrot_egg> : [
+    <ore:feather>,
+    <ore:dyeGray>, # Gray Dye
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # [Random Goat] from [Ground Venison]*2[+2]
-  <animania:entity_egg_goat_random> * 4 : [
-    <harvestcraft:groundvenisonitem>, # Ground Venison
-    <ore:boneWither>,                 # Necrotic Bone
-    <endreborn:food_ender_flesh>,     # Mysical Flesh
+  <quark:parrot_egg:1> : [
+    <ore:feather>,
+    <ore:dyeRed>, # Rose Red
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # [Random Sheep] from [Ground Mutton]*2[+2]
-  <animania:entity_egg_sheep_random> * 4 : [
-    <harvestcraft:groundmuttonitem>,    # Ground Mutton
-    <ore:wool>,                         # White Wool
-    <harvestcraft:hardenedleatheritem>, # Hardened Leather
+  <quark:parrot_egg:2> : [
+    <ore:feather>,
+    <ore:dyeBlue>, # Blue Dye
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # Hamster
-  <animania:entity_egg_hamster> * 4 : [
-    <ore:foodGroundnutmeg>,
-    <animania:hamster_food>,
-    <animania:hamster_ball_clear>,
+  <quark:parrot_egg:3> : [
+    <ore:feather>,
+    <ore:dyeGreen>, # Cactus Green
+    <nuclearcraft:cocoa_solids>,
   ],
 
-  # Frog
-  <animania:entity_egg_frog> : [
-    <quark:golden_frog_leg>,    # Golden Frog Leg
-    <ore:ballMud>,              # Mud Ball
-    <harvestcraft:frograwitem>, # Raw Frog
-  ],
-
-  # Dart Frog
-  <animania:entity_egg_dart_frog> : [
-    <quark:golden_frog_leg>,    # Golden Frog Leg
-    <ore:plantPoisonivy>,       # Poison Ivy
-    <harvestcraft:frograwitem>, # Raw Frog
+  <quark:parrot_egg:4> : [
+    <ore:feather>,
+    <ore:dyeCyan>, # Cyan Dye
+    <nuclearcraft:cocoa_solids>,
   ],
 
   # Small worm
   <iceandfire:iceandfire.deathworm_egg> : [
     <twilightforest:moonworm>,
-    <ore:animaniaEggs>,
+    utils.tryCatch("betteranimalsplus:goose_egg", <iceandfire:iceandfire.deathworm_egg>),
     <actuallyadditions:item_worm>,
   ],
 
@@ -119,14 +104,48 @@ for output, ingrs in {
   ],
 
   # Hippogryphs
-  <iceandfire:hippogryph_egg:0> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:1>],
-  <iceandfire:hippogryph_egg:1> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:0>],
-  <iceandfire:hippogryph_egg:2> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:2>],
-  <iceandfire:hippogryph_egg:3> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:4>],
-  <iceandfire:hippogryph_egg:4> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:3>],
-  <iceandfire:hippogryph_egg:5> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:6>],
-  <iceandfire:hippogryph_egg:6> : [<ore:foodGroundduck>, <animania:raw_horse>, <animania:wool:5>],
+  <iceandfire:hippogryph_egg:0> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool>],
+  <iceandfire:hippogryph_egg:1> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool:3>],
+  <iceandfire:hippogryph_egg:2> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool:7>],
+  <iceandfire:hippogryph_egg:3> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool:14>],
+  <iceandfire:hippogryph_egg:4> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool:9>],
+  <iceandfire:hippogryph_egg:5> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool:8>],
+  <iceandfire:hippogryph_egg:6> : [<ore:foodGroundduck>, <actuallyadditions:item_misc:15>, <thermalfoundation:rockwool:15>],
+
+  <iceandfire:jar_pixie:0> : [<biomesoplenty:jar_filled:1>, <tconstruct:materials:19>, <quark:crystal:1>],
+  <iceandfire:jar_pixie:1> : [<biomesoplenty:jar_filled:1>, <tconstruct:materials:19>, <quark:crystal:7>],
+  <iceandfire:jar_pixie:2> : [<biomesoplenty:jar_filled:1>, <tconstruct:materials:19>, <quark:crystal:5>],
+  <iceandfire:jar_pixie:3> : [<biomesoplenty:jar_filled:1>, <tconstruct:materials:19>, <quark:crystal:4>],
+  <iceandfire:jar_pixie:4> : [<biomesoplenty:jar_filled:1>, <tconstruct:materials:19>, <quark:crystal:3>],
+
+  <iceandfire:dragonegg_red>      : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_red>],
+  <iceandfire:dragonegg_green>    : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_green>],
+  <iceandfire:dragonegg_bronze>   : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_bronze>],
+  <iceandfire:dragonegg_gray>     : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_gray>],
+  <iceandfire:dragonegg_blue>     : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_blue>],
+  <iceandfire:dragonegg_white>    : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_white>],
+  <iceandfire:dragonegg_sapphire> : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_sapphire>],
+  <iceandfire:dragonegg_silver>   : [<ore:heartDragon>, <ore:seaSerpentScales>, <iceandfire:dragonscale_silver>],
+
+  <thermalexpansion:morb>.withTag({Generic: 1 as byte, id: "iceandfire:hippocampus"}) : [
+    <iceandfire:ambrosia>,  # Ambrosia
+    <ore:dustPrismarine>, # Prismarine Crystals
+    <tconstruct:edible:20>, # Fish Jerky
+  ],
+
+  <thermalexpansion:morb>.withTag({Generic: 1 as byte, id: "iceandfire:amphithere"}) : [
+    <iceandfire:rotten_egg>,       # Rotten Egg
+    <iceandfire:shiny_scales>,     # Shiny Scales
+    <iceandfire:hippogryph_talon>, # Hippogryph Talon
+  ],
+
+  <thermalexpansion:morb>.withTag({Generic: 1 as byte, id: "iceandfire:seaserpent"}) : [
+    <iceandfire:amphithere_skull>, # Amphithere Skull
+    <ore:dragonscaleBlock>, # Block of Dragon Scales
+    <iceandfire:hippocampus_fin>, # Hippocampus Fin
+  ],
 
 } as IIngredient[][IItemStack] {
+  if(isNull(output)) continue;
   mods.rustic.Condenser.addRecipe(output, ingrs, <scalinghealth:heartdust>, <tconstruct:edible:33>, <fluid:wine> * 1000, 40);
 }

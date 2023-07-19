@@ -66,13 +66,25 @@ mods.tconstruct.Melting.removeRecipe(<liquid:iron>, <minecraft:hopper>);
 # Blank Cast Resmelting
 	mods.tconstruct.Melting.addRecipe(<liquid:alubrass> * 144, <tconstruct:cast>);
 
-# Reinforcement Modifier
-	recipes.remove(<tconstruct:materials:14>);
-	recipes.addShapedMirrored("Reinforcement Modifier",
-	<tconstruct:materials:14> * 2, 
-	[[<ore:blockSheetmetalGold>, <ore:plateDenseObsidian>, <ore:blockSheetmetalGold>],
-	[<ore:blockSheetmetalGold>, <ic2:casing:2>, <ore:blockSheetmetalGold>],
-	[<ore:blockSheetmetalGold>, <ore:plateDenseObsidian>, <ore:blockSheetmetalGold>]]);
+# [Reinforcement] from [Gold Item Casing][+2]
+craft.remake(<tconstruct:materials:14>, ["pretty",
+  "■ □ ■",
+  "■ ⌂ ■",
+  "■ □ ■"], {
+  "■": <ore:blockSheetmetalGold>, # Gold Sheetmetal
+  "□": <tconstruct:large_plate>.withTag({Material: "obsidian"}), # Obsidian Large Plate
+  "⌂": <ic2:casing:2>,            # Gold Item Casing
+});
+
+# [Reinforcement]*2 from [Gold Item Casing][+2]
+craft.make(<tconstruct:materials:14> * 2, ["pretty",
+  "■ □ ■",
+  "■ ⌂ ■",
+  "■ □ ■"], {
+  "■": <ore:blockSheetmetalGold>, # Gold Sheetmetal
+  "□": <ore:plateDenseObsidian>,  # Dense Obsidian Plate
+  "⌂": <ic2:casing:2>,            # Gold Item Casing
+});
 
 # Faster Alumite Alloying
 mods.tconstruct.Alloy.removeRecipe(<liquid:alumite>); // Magically, removing Alumite have effect
@@ -100,7 +112,7 @@ scripts.process.alloy([<ore:blockFakeIron> * 2, <ore:blockAluminium> * 5, <ore:o
 	mods.tconstruct.Alloy.addRecipe(<liquid:alubrass> * 576, [<liquid:copper> * 144, <liquid:aluminum> * 432]);
 
 // Aluminium Brass in other machines
-scripts.process.alloy([<ore:ingotCopper>, <ore:ingotAluminium> * 4], <tconstruct:ingots:5>, "only: Kiln");
+scripts.process.alloy([<ore:ingotCopper>, <ore:ingotAluminium> * 3], <tconstruct:ingots:5> * 4, "only: Kiln");
 
 # Tinkers' Complement Melter
 	recipes.remove(<tcomplement:melter>);
@@ -121,6 +133,7 @@ val pressPlates = {
 	black_quartz     : <ore:blockQuartzBlack>,
 	heavy            : <ore:blockHeavy>,
 	constantan       : <ore:blockConstantan>,
+	manyullyn        : <ore:blockManyullyn>,
 } as IIngredient[string];
 for out,inp in pressPlates {
 	mods.immersiveengineering.MetalPress.addRecipe(<tconstruct:large_plate>.withTag({Material: out}), inp, <immersiveengineering:mold>, 16000, inp.amount);

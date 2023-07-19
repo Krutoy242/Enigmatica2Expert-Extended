@@ -32,7 +32,6 @@ function addRecipe(
   altMaxMult as int = 64
 ) as void {
   mods.forestry.Carpenter.addRecipe(output, ingredients, packagingTime, fluidInput, box);
-  if (!utils.DEBUG) return;
   addAltRecipe(output, ingredients, packagingTime, fluidInput, box, altMaxMult);
 }
 
@@ -57,8 +56,6 @@ return loadJson('exports/recipes/forestry__carpenter.json').recipes
   ]).map(a => a.map(b => b.replace(/:0>/g, '>').replace(/:32767>/g, ':*>')))
 }*/
 // addAltRecipe(<actuallyadditions:block_misc:6> * 4 , [[<forestry:crafting_material:1>, <forestry:crafting_material:1>, null], [<forestry:crafting_material:1>, <forestry:crafting_material:1>, null], [null, null, null]], 100);
-// addAltRecipe(<animania:entity_egg_random>         , [[null, <cyclicmagic:sprout_seed>, null], [<minecraft:egg>, <minecraft:egg>, <minecraft:egg>], [null, <cyclicmagic:sprout_seed>, null]], 100, <fluid:liquiddna> * 250);
-// addAltRecipe(<animania:entity_egg_random>         , [[null, <cyclicmagic:sprout_seed>, null], [<minecraft:egg>, <minecraft:egg>, <minecraft:egg>], [null, <cyclicmagic:sprout_seed>, null]], 100, <fluid:meat> * 500);
 // addAltRecipe(<draconicevolution:draconic_energy_core>, [[<draconicevolution:draconic_ingot>, <draconicevolution:wyvern_energy_core>, <draconicevolution:draconic_ingot>], [<draconicevolution:wyvern_energy_core>, <draconicevolution:wyvern_core>, <draconicevolution:wyvern_energy_core>], [<draconicevolution:draconic_ingot>, <draconicevolution:wyvern_energy_core>, <draconicevolution:draconic_ingot>]], 100, <fluid:ic2hot_coolant> * 2000);
 // addAltRecipe(<draconicevolution:wyvern_core>      , [[<minecraft:shulker_shell>, <draconicevolution:draconic_core>, <minecraft:shulker_shell>], [<draconicevolution:draconic_core>, <minecraft:sponge>, <draconicevolution:draconic_core>], [<enderio:item_alloy_endergy_ingot:6>, <environmentaltech:pladium>, <enderio:item_alloy_endergy_ingot:6>]], 100, <fluid:ic2hot_coolant> * 2000);
 // addAltRecipe(<extendedcrafting:crafting_core>     , [[<extendedcrafting:material:18>, <extendedcrafting:material:18>, <extendedcrafting:material:18>], [<plustic:osmiridiumingot>, <extendedcrafting:pedestal>, <plustic:osmiridiumingot>], [<extendedcrafting:pedestal>, <extendedcrafting:pedestal>, <extendedcrafting:pedestal>]], 100, <fluid:coal> * 5000);
@@ -87,8 +84,8 @@ addAltRecipe(<forestry:humus> * 9                    , [[<ore:dirt>, <ore:dirt>,
 // addAltRecipe(<forestry:impregnated_casing>        , [[<ore:logWood>, <ore:logWood>, <ore:logWood>], [<ore:logWood>, null, <ore:logWood>], [<ore:logWood>, <ore:logWood>, <ore:logWood>]], 100, <fluid:oliveoil> * 250);
 // addAltRecipe(<forestry:impregnated_casing>        , [[<ore:logWood>, <ore:logWood>, <ore:logWood>], [<ore:logWood>, null, <ore:logWood>], [<ore:logWood>, <ore:logWood>, <ore:logWood>]], 100, <fluid:seed.oil> * 250);
 addAltRecipe(<forestry:iodine_capsule>               , [[<forestry:honey_drop>, <forestry:pollen>, <forestry:honey_drop>], [<forestry:pollen>, <forestry:can>, <forestry:pollen>], [<minecraft:gunpowder>, <forestry:pollen>, <minecraft:gunpowder>]], 100, <fluid:water> * 1000);
-addAltRecipe(<forestry:kit_pickaxe>                  , [[<ore:ingotBronze>, <ore:ingotBronze>, <ore:ingotBronze>], [null, <ore:stick>, null], [null, <ore:stick>, null]], 100);
-// addAltRecipe(<forestry:kit_shovel>                , [[null, <ore:ingotBronze>, null], [null, <ore:stick>, null], [null, <ore:stick>, null]], 100);
+addAltRecipe(<forestry:kit_pickaxe>                  , [[<ore:ingotBronze>, <ore:ingotBronze>, <ore:ingotBronze>], [null, <ore:stickWood>, null], [null, <ore:stickWood>, null]], 100);
+// addAltRecipe(<forestry:kit_shovel>                , [[null, <ore:ingotBronze>, null], [null, <ore:stickWood>, null], [null, <ore:stickWood>, null]], 100);
 addAltRecipe(<forestry:letters>                      , [[<thermalfoundation:material:800>, <thermalfoundation:material:800>, <thermalfoundation:material:800>], [<thermalfoundation:material:800>, <thermalfoundation:material:800>, <thermalfoundation:material:800>], [null, null, null]], 100, <fluid:water> * 250);
 // addAltRecipe(<forestry:oak_stick> * 2             , [[<ore:logWood>, null, null], [<ore:logWood>, null, null], [null, null, null]], 100, <fluid:seed.oil> * 100);
 addAltRecipe(<forestry:stamps:1> * 9                 , [[<ore:ingotCopper>, <ore:ingotCopper>, <ore:ingotCopper>], [<minecraft:paper>, <minecraft:paper>, <minecraft:paper>], [null, null, null]], 100, <fluid:oliveoil> * 300);

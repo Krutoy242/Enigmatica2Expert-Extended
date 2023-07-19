@@ -44,6 +44,7 @@ utils.rh(<openblocks:generic:4>);
 utils.rh(<openblocks:generic:5>);
 utils.rh(<openblocks:cursor>);
 utils.rh(<actuallyadditions:item_misc:17>);
+utils.rh(<actuallyadditions:item_food:9>);
 utils.rh(<avaritia:compressed_crafting_table>);
 utils.rh(<avaritia:double_compressed_crafting_table>);
 utils.rh(<avaritia:resource>); # Diamond Lattice
@@ -147,6 +148,7 @@ utils.rh(<ic2:ingot:1>);
 # *============================*
 
 utils.rh(<contenttweaker:item_ore_tungsten:1>);
+utils.rh(<contenttweaker:item_ore_tungsten:2>);
 utils.rh(<contenttweaker:item_ore_tungsten:3>);
 utils.rh(<jaopca:block_blocktungsten>);
 utils.rh(<jaopca:item_nuggettungsten>);
@@ -187,6 +189,8 @@ utils.rh(<harvestcraft:beanseeditem>);
 utils.rh(<harvestcraft:beanitem>);
 utils.rh(<harvestcraft:riceseeditem>);
 utils.rh(<harvestcraft:riceitem>);
+utils.rh(<harvestcraft:cocoapowderitem>);
+utils.rh(<harvestcraft:chocolatebaritem>);
 
 utils.rh(<thaumicwonders:eldritch_cluster:0>);
 utils.rh(<thaumicwonders:eldritch_cluster:1>);
