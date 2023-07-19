@@ -14,7 +14,7 @@
 		"",
 		"§dVis Scribing Tools§r require only to be charged with §dvis§r.",
 		"",
-		"§bBotanurgist's Inkwell§r require botania §bmana§r."
+		"§bBotanurgist's Inkwell§r require Botania §bmana§r."
 	],
 	dependencies: [
 		"adef62af"

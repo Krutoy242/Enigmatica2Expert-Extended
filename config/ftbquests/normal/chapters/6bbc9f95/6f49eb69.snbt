@@ -1,4 +1,5 @@
 {
+	title: "Impetus",
 	icon: {
 		id: "thaumicaugmentation:impetus_linker",
 		ForgeCaps: {

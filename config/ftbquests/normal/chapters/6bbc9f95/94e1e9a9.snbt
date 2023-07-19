@@ -2,7 +2,7 @@
 	x: 1.4d,
 	y: 5.75d,
 	text: [
-		"§6Headband of Curiosity§r convers part of picked §aexperience§r into knowledge. Just put it into babule slot."
+		"§6Headband of Curiosity§r converts part of picked §aexperience§r into knowledge. Just put it into babule slot."
 	],
 	dependencies: [
 		"adef62af"

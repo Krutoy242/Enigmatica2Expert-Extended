@@ -4,15 +4,13 @@
 	y: -1.1d,
 	shape: "circle",
 	text: [
-		"While polluting base with §5flux§r isn't good idea, you can still want to have under control §0rift§r in base.",
+		"While polluting base with §5flux§r isn't a good idea, having under control §0rift§r in base is wanted.",
 		"",
-		"Firstly you need §6Reinforced Jar§r and §6Metaspatial Accumulator§r. You need to place §6Metaspatial Accumulator§r right under rift and right on the §6Reinforced Jar§r. Just don't accidentaly place it in §0rfit§r because you'll lose machine.",
+		"Firstly, §6Reinforced Jar§r and §6Metaspatial Accumulator§r are needed. Place §6Metaspatial Accumulator§r right under the §0rift§r and right on the §6Reinforced Jar§r. Just don't accidentally place it in §0rfit§r because the machine will be destroyed.",
 		"",
-		"If you have prepared setup simply use gauntlet on §6Metaspatial Accumulator§r. There is a chance that process will result in failure. That depends on §0rift§r size and stability.",
+		"With prepared setup, simply use gauntlet on §6Metaspatial Accumulator§r. There is a chance that the process will result in failure. That depends on §0rift§r size and stability.",
 		"",
-		"Now that you have §6Rift in a Jar§r you can use it as item trash or take it out using §6Metaspatial Extruder§r the same way as containing.",
-		"",
-		"§7Have you ever wondered what would happen if you place rift in the rift🤔🤔🤔?§r"
+		"§6Rift in a Jar§r can work as item thrasher or allow to take contained §0rift§r out using §6Metaspatial Extruder§r the same way as containing."
 	],
 	dependencies: [
 		"6f49eb69"

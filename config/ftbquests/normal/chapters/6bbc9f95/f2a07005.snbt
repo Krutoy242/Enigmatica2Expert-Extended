@@ -10,7 +10,7 @@
 	y: -2.0d,
 	shape: "pentagon",
 	text: [
-		"Each §6Caster's Gauntlet§r can have up to 3 modifier. You can apply/remove them simply in §6crafting grind§r.",
+		"Each §6Caster's Gauntlet§r can have up to 3 modifiers. To apply/remove them, simply place them in §6crafting grind§r.",
 		"",
 		"Most modifiers have two things: §aeffect§r and §bbase§r.",
 		"",
@@ -19,19 +19,19 @@
 		"§2- §bCost§r - gives §dvis discount§r bonus",
 		"§2- §dSpeed§r - dicrease §bcast cooldown§r",
 		"",
-		"And some §bbases§r that determinate condition you must fufill:",
+		"And some §bbases§r that determinate condition you must fulfill:",
 		"§2- §3Dimension§r - be in correct dimension",
 		"§2- §aExperience§r - have high level §7(capped at 100 levlels)§r",
-		"§2- §cFrenzy§r - cast lot of spells §7(after short time - 5 sec - bonus wears off)§r",
-		"§2- §eElemental§r - spell effect need to match §eelement§r",
+		"§2- §cFrenzy§r - cast lots of spells §7(after a short time - 5 sec - bonus wears off)§r",
+		"§2- §eElemental§r - spell effect needs to match §eelement§r",
 		"",
 		"You link them in §6crafting grind§r.",
 		"",
-		"And two exeptions:",
-		"§2- §3Vis Battery§r - stores §dvis§r in gauntlet in case there won't be enought in aura",
+		"And two exceptions:",
+		"§2- §3Vis Battery§r - stores §dvis§r in gauntlet in case there won't be enough in the aura",
 		"§2- §8Impetus Conductor§r - stores §8impetus§r in gauntlet (only power effect)",
 		"",
-		"§7You can't have several of the same modifier bases unlike effects."
+		"§7It's impossible have several of the same modifier bases unlike effects."
 	],
 	dependencies: [
 		"376e781b"

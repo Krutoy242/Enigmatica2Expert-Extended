@@ -1,4 +1,5 @@
 {
+	title: "Mithminite Armor Set",
 	icon: {
 		id: "thaumadditions:mithminite_robe",
 		tag: {}
@@ -15,7 +16,7 @@
 		"§2- §eMending§r effect on any held items",
 		"§2- §rBonus §c10 hearts§r",
 		"§2- §rCreative flight",
-		"§2- §rImproved movementspeed"
+		"§2- §rImproved movement speed"
 	],
 	dependencies: [
 		"64c42db9",

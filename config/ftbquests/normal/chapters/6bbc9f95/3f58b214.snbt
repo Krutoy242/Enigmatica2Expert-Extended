@@ -1,4 +1,5 @@
 {
+	title: "Thaumium Fortress Armor Set",
 	icon: {
 		id: "thaumcraft:fortress_chest",
 		tag: {
@@ -8,7 +9,7 @@
 	x: 10.0d,
 	y: 6.0d,
 	text: [
-		"§6Thaumium Fortress Armor§r provides great defence. §6Helmet§r can be upgraded with §dInfusion§r"
+		"§6Thaumium Fortress Armor§r provides greater defence. §6Helmet§r can be upgraded with §dInfusion§r"
 	],
 	dependencies: [
 		"8535b078"

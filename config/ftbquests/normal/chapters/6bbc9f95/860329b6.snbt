@@ -19,7 +19,7 @@
 		"",
 		"To charged it you need §6Void Recharge Pedestal§r with §8impetus§r source.",
 		"",
-		"Additionaly it have 2 modules to install to change shot mode."
+		"Additionaly, it have 2 modules to install to change shot mode."
 	],
 	dependencies: [
 		"6f49eb69"

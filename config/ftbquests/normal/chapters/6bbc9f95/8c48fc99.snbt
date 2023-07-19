@@ -6,7 +6,7 @@
 	text: [
 		"Eating is ok! §nBut not this!§r",
 		"",
-		"§6Hunk of Something§r affects direcly your mind giving you all types of §5warp§r! But in return it also gives you diverse type of curiosities."
+		"§6Hunk of Something§r affects directly mind giving all types of §5warp§r, but in return it also gives a diverse type of curiosities."
 	],
 	dependencies: [
 		"ccd89357"

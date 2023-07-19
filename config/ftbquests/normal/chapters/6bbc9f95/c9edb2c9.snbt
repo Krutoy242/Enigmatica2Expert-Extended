@@ -2,9 +2,9 @@
 	x: 1.0d,
 	y: -0.5d,
 	text: [
-		"§6Cleansing Charm§r will passively remove non permament §5warp§r. ",
+		"§6Cleansing Charm§r will passively remove non permanent §5warp§r. ",
 		"",
-		"While process is taking long time, it will also produce §5flux§r."
+		"While the process is taking a long time, it will also produce §5flux§r."
 	],
 	dependencies: [
 		"ccd89357"

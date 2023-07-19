@@ -1,4 +1,5 @@
 {
+	title: "Void Thaumaturge Set",
 	icon: {
 		id: "thaumcraft:void_robe_chest",
 		tag: {
@@ -8,7 +9,7 @@
 	x: 12.0d,
 	y: 7.5d,
 	text: [
-		"This set when worn will give you:",
+		"This set, when worn gives:",
 		"",
 		"§2- §dVis discount§r depending on your §5warp§r",
 		"§2- §rSelf repair",

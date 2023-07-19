@@ -1,4 +1,5 @@
 {
+	title: "Adaminite Armor Set",
 	icon: {
 		id: "thaumadditions:adaminite_robe",
 		tag: {}
@@ -6,7 +7,7 @@
 	x: 15.0d,
 	y: 6.0d,
 	text: [
-		"§cAdaminite Armor Set§r provides huge protection and §dvis discount§r. It is also unbreakable. And Hood have properties of §6Goggles of Revealing§r."
+		"§cAdaminite Armor Set§r provides huge protection and §dvis discount§r. It is also unbreakable. And Hood has properties of §6Goggles of Revealing§r."
 	],
 	dependencies: [
 		"f166c6ff",

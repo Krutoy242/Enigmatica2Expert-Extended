@@ -4,11 +4,11 @@
 	x: 7.5d,
 	y: -0.75d,
 	text: [
-		"It's upgraded version on §6Infusion Altar§r. ",
+		"It's an upgraded version on §6Infusion Altar§r. ",
 		"",
-		"It boost §binfusion speed§r by 2 points and stabilization, but §ndecrease§r §dessentia efficiency§r by 20%.",
+		"It boosts §binfusion speed§r by 2 points and stabilization, but §ndecrease§r §dessentia efficiency§r by 20%.",
 		"",
-		"Placing §6Eldritch Pedestal§r near Infusion Altar will slightly increase §dessentia cost§r and stabilization (if used symetrically)."
+		"Placing §6Eldritch Pedestal§r near Infusion Altar will slightly increase §dessentia cost§r and stabilization (if used symmetrically)."
 	],
 	dependencies: [
 		"38a388cd"

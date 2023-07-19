@@ -3,9 +3,9 @@
 	x: 0.0d,
 	y: -0.5d,
 	text: [
-		"Protecting from §5warp events§r require systematic bathing, but most of time you just probably forgot and still get §5warp event§r.",
+		"Protecting from §5warp events§r requires systematic bathing, however it's easy to forget about this and still get §5warp event§r.",
 		"",
-		"§6Fragrant Pendant§r will apply salts for you! Just have some §6Odour Powder§r in inventory."
+		"§6Fragrant Pendant§r will apply the salts for you! Just have some §6Odour Powder§r in inventory."
 	],
 	dependencies: [
 		"cdeef867"

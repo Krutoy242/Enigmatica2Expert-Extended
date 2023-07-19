@@ -2,7 +2,7 @@
 	x: 8.0d,
 	y: 9.0d,
 	text: [
-		"Some of items require to be charged with §dvis§r to function. Just place item on §6Recharge Pedestal§r to charge it."
+		"Some of the items require to be charged with §dvis§r to function. Just place item on §6Recharge Pedestal§r to charge it."
 	],
 	dependencies: [
 		"461ba345"

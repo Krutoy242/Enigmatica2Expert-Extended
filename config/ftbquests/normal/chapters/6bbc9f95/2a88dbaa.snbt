@@ -3,9 +3,9 @@
 	y: 2.5d,
 	shape: "circle",
 	text: [
-		"Some of recipes require greater amount of §dvis§r, you can't aquire from only one chunk.",
+		"Some recipes require a greater amount of §dvis§r, that can't be acquired from only one chunk.",
 		"",
-		"§6Workbench Charger§r allow you to increase range of  §6Arcane Workbench§r to take §dvis§r from attached chunks."
+		"§6Workbench Charger§r allows to increase range of §6Arcane Workbench§r to take §dvis§r from attached chunks."
 	],
 	dependencies: [
 		"2e8e4ce7"

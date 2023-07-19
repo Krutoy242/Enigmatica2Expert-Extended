@@ -2,7 +2,7 @@
 	x: 7.0d,
 	y: 9.0d,
 	text: [
-		"§6Amulet of Vis§r will automatically charge all you items in inventory."
+		"§6Amulet of Vis§r will automatically charge all items in inventory."
 	],
 	dependencies: [
 		"7deecf3a"

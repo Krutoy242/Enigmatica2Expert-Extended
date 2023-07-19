@@ -4,9 +4,9 @@
 	x: 6.5d,
 	y: -0.75d,
 	text: [
-		"It's upgraded version on §6Infusion Altar§r. ",
+		"It's an upgraded version on §6Infusion Altar§r. ",
 		"",
-		"It boost §dessentia efficiency§r by 20%.",
+		"It boosts §dessentia efficiency§r by 20%.",
 		"",
 		"Placing §6Ancient Pedestal§r near Infusion Altar will slightly decrease §dessentia cost§r."
 	],

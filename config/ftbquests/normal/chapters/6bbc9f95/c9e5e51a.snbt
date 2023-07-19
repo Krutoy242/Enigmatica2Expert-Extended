@@ -2,7 +2,7 @@
 	x: 6.1d,
 	y: 9.0d,
 	text: [
-		"§6Rechage Charm§r works the same as §6Amulet of Vis§r but for §6charm§r slot."
+		"§6Rechage Charm§r works the same as §6Amulet of Vis§r but §6charm§r slot."
 	],
 	dependencies: [
 		"587dc05a"

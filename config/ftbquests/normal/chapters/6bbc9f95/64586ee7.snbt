@@ -7,7 +7,7 @@
 		"",
 		"§6Auxiliart Slurry Pump§r will speed up smelting process.",
 		"",
-		"Each smelter have 3 sides that can connect to any §6Auxiliary Addon§r. Attaching more then one icreases effect."
+		"Each smelter has 3 sides that can connect to any §6Auxiliary Addon§r. Attaching more than one icreases effect."
 	],
 	dependencies: [
 		"f85506a2"

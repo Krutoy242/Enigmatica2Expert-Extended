@@ -2,7 +2,7 @@
 	x: 8.5d,
 	y: 10.0d,
 	text: [
-		"§6Night-Vision Goggles§r simply gives you §9night vision§r. These does §nnot§r have properties of §6Goggles of Revealing§r."
+		"§6Night-Vision Goggles§r simply gives §9night vision§r. These does §nnot§r have properties of §6Goggles of Revealing§r."
 	],
 	dependencies: [
 		"7deecf3a"

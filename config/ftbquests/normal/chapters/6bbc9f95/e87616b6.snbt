@@ -2,9 +2,9 @@
 	x: 0.6d,
 	y: 6.4d,
 	text: [
-		"§5Madness Enigne§r works similary to §6Inspiration Engine§r, but there are few diffrents:",
+		"§5Madness Enigne§r works similarly to §6Inspiration Engine§r, but there are few differences:",
 		"§2- §rrequire §5Alienis§r aspect",
-		"§2- §ris higly focused on §5Eldritch§r knowledge",
+		"§2- §ris highly focused on §5Eldritch§r knowledge",
 		"§2- §rgives §5warp§r"
 	],
 	dependencies: [
