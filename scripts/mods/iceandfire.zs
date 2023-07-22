@@ -407,78 +407,15 @@ remakeEx(<iceandfire:dragonforge_ice_brick> * 2, [
 
 # Dragon meal
 recipes.remove(<iceandfire:dragon_meal>);
-mods.inworldcrafting.FluidToItem.transform(<iceandfire:dragon_meal>, <fluid:blood>, [<ore:primeMeatCooked>*4]);
+mods.inworldcrafting.FluidToItem.transform(<iceandfire:dragon_meal> * 4, <fluid:blood>, [
+	<harvestcraft:groundporkitem> * 4,
+	<harvestcraft:groundrabbititem> * 4,
+	<harvestcraft:groundfishitem> * 4,
+], true);
 
 # Remove craft table dragon recipes
 recipes.remove(<iceandfire:dragonforge_fire_core_disabled>);
 recipes.remove(<iceandfire:dragonforge_ice_core_disabled>);
-
-
-function envelopCheese(name as string, result as IItemStack, mat as IIngredient){
-	recipes.addShaped(name, result, [
-		[mat, mat, mat], 
-		[mat, <rats:chunky_cheese_token>, mat], 
-		[mat, mat, mat]
-	]);
-}
-
-##################
-# DRAGONS
-val dragonCrafIngredients as IItemStack[] = [
-	<iceandfire:dragonscales_red>,
-	<iceandfire:dragonscales_green>,
-	<iceandfire:dragonscales_bronze>,
-	<iceandfire:dragonscales_gray>,
-	<iceandfire:dragonscales_blue>,
-	<iceandfire:dragonscales_white>,
-	<iceandfire:dragonscales_sapphire>,
-	<iceandfire:dragonscales_silver>,
-];
-val dragonCraftEggs as IItemStack[] = [
-	<iceandfire:dragonegg_red>,
-	<iceandfire:dragonegg_green>,
-	<iceandfire:dragonegg_bronze>,
-	<iceandfire:dragonegg_gray>,
-	<iceandfire:dragonegg_blue>,
-	<iceandfire:dragonegg_white>,
-	<iceandfire:dragonegg_sapphire>,
-	<iceandfire:dragonegg_silver>,
-];
-<ore:dragonEgg>.add(dragonCraftEggs);
-
-
-for i in 0 to dragonCrafIngredients.length {
-	envelopCheese("dragonEgg_"~i, dragonCraftEggs[i], dragonCrafIngredients[i]);
-}
-
-##################
-# Pixies
-var pixieJars as IItemStack[] = [
-    <iceandfire:jar_pixie>,
-    <iceandfire:jar_pixie:1>,
-    <iceandfire:jar_pixie:2>,
-    <iceandfire:jar_pixie:3>,
-    <iceandfire:jar_pixie:4>
-];
-var pixieDyes as IIngredient[] = [
-    <ore:dyeRed>,
-    <ore:dyeMagenta>,
-    <ore:dyeLightBlue>,
-    <ore:dyeLime>,
-    <ore:dyeOrange>
-];
-
-function makePixieJar(name as string, result as IItemStack, mat as IIngredient){
-	recipes.addShaped(name, result, [
-        [<ore:peacockFeathers>, mat, <ore:peacockFeathers>], 
-        [<ore:peacockFeathers>, <rats:chunky_cheese_token>, <ore:peacockFeathers>], 
-        [<ore:peacockFeathers>, <iceandfire:jar_empty>, <ore:peacockFeathers>]
-	]);
-}
-
-for i, jar in pixieJars {
-    makePixieJar("pixie_jar_"~i, jar, pixieDyes[i]);
-}
 
 # Spring water recipe
 mods.iceandfire.recipes.addIceDragonForgeRecipe( 
@@ -527,12 +464,6 @@ scripts.process.alloy([
   <ore:ingotThermoconducting>,   # Thermoconducting Alloy
   <iceandfire:ice_dragon_blood>, # Ice Dragon Blood
 ], <iceandfire:dragonsteel_ice_ingot>, 'Only: AdvRockArc');
-
-##################
-# Other
-envelopCheese("amphithereMorb",  <thermalexpansion:morb>.withTag({Generic: 1 as byte, id: "iceandfire:amphithere"}) * 3, <minecraft:cookie>);
-envelopCheese("hippocampusMorb", <thermalexpansion:morb>.withTag({Generic: 1 as byte, id: "iceandfire:hippocampus"}) * 3, <minecraft:prismarine_shard>);
-envelopCheese("serpentMorb",     <thermalexpansion:morb>.withTag({Generic: 1 as byte, id: "iceandfire:seaserpent"}), <iceandfire:shiny_scales>);
 
 # Lily crafts
 mods.inworldcrafting.FluidToItem.transform(<iceandfire:fire_lily>, <liquid:pyrotheum>, [<extrautils2:enderlilly>]);

@@ -244,15 +244,7 @@ var listCatFur as string[] = [
 "immersivecables:wire_coil"      , "1"    , "25",
 "twilightforest:alpha_fur"       , "0"    , "3",
 "twilightforest:arctic_fur"      , "0"    , "15",
-"animania:wool"                  , "3"    , "55",
 
-"animania:blue_peacock_feather"      ,"0" ,"50",
-"animania:charcoal_peacock_feather"  ,"0" ,"50",
-"animania:opal_peacock_feather"      ,"0" ,"50",
-"animania:peach_peacock_feather"     ,"0" ,"50",
-"animania:purple_peacock_feather"    ,"0" ,"50",
-"animania:taupe_peacock_feather"     ,"0" ,"50",
-"animania:white_peacock_feather"     ,"0" ,"50",
 "betteranimalsplus:bear_skin_black"  ,"0" ,"15",
 "betteranimalsplus:bear_skin_brown"  ,"0" ,"15",
 "betteranimalsplus:bear_skin_kermode","0" ,"15",
@@ -471,7 +463,7 @@ val ringsIngredients = [
 	<minecraft:repeater>,
 	<ore:dustBlaze>,
 	<ore:craftingPiston>,
-	utils.tryCatch("animania:plain_omelette", <minecraft:egg>),
+	<ore:foodCheese>,
 	<ore:slimeball>,
 	<minecraft:magma_cream>,
 	<ore:fish>,
@@ -599,6 +591,18 @@ mods.rustic.CrushingTub.addRecipe(<liquid:water>, <actuallyadditions:item_misc:4
 recipes.remove(<actuallyadditions:item_food:10>);
 recipes.addShapeless("Toast from baguette", <actuallyadditions:item_food:10>, [<actuallyadditions:item_food:15>]);
 scripts.process.mash(<actuallyadditions:item_food:15>, <actuallyadditions:item_food:10>*4, "no exceptions");
+
+recipes.addShapeless("chocolate toast oredicted", <actuallyadditions:item_food:19>, [<actuallyadditions:item_food:10>, <ore:ingotChocolate>]);
+
+# [Cheese]*2 from [Mushroom Stew][+2]
+craft.remake(<actuallyadditions:item_food> * 2, ["pretty",
+  "A A A",
+  "e M e",
+  "A A A"], {
+  "A": <ore:listAllmilk>, # Fresh Milk
+  "e": <ore:egg>, # Egg
+  "M": <minecraft:mushroom_stew>, # Mushroom Stew
+});
 
 # [Pizza] from [Carrot][+5]
 craft.remake(<actuallyadditions:item_food:14>, ["pretty",

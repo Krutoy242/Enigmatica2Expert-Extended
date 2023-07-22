@@ -1,5 +1,6 @@
 # Various fixes
 modifier.excompressum:smashingii.desc=Hammering compressed blocks
+tile.spectreCoil_number.info=Generates 32 RF/t and outputs it into the block it's attached to. They can be found in dungeon chests.
 
 itemGroup.other=ContentTweaker
 fluid.heavy_metal=Heavy Metal
@@ -37,6 +38,8 @@ tile.contenttweaker.compressed_pumpkin.name=Compressed Pumpkin
 tile.contenttweaker.compressed_pumpkin_double.name=Double Compressed Pumpkin
 tile.contenttweaker.compressed_string.name=Compressed String
 tile.contenttweaker.compressed_string_double.name=Double Compressed String
+tile.contenttweaker.compressed_basalt.name=Compressed Basalt
+tile.contenttweaker.compressed_basalt_double.name=Double Compressed Basalt
 tile.contenttweaker.conglomerate_of_life.name=Conglomerate Of Life
 tile.contenttweaker.conglomerate_of_coal.name=Conglomerate Of Coal
 tile.contenttweaker.conglomerate_of_sun.name=Conglomerate Of Sun
@@ -169,7 +172,7 @@ e2ee.danknull_dock.must_have=§7You need a §f%s§7 in the offhand to insert %s�
 e2ee.restrict.vis_seeds=§7§eVis Seeds§7 can only be planted in §nthe Void§7 dimension or on §nplanets§7. They also need Oxygen.
 e2ee.creature_resisted_morb=§8This creature resist capture by the §n§8%s.
 e2ee.creature_uncapturable=§7This creature can't be captured.
-tooltips.lang.morb_resist=Effective against monsters at §4<%s%%§r hearts, or with fewer than §c%s§r hearts total.
+tooltips.lang.morb_resist=§rEffective against monsters at §4<%s%%§r hearts, or with fewer than §c%s§r hearts total.
 # >
 
 # Bugged langs that losed their names
@@ -241,7 +244,6 @@ tooltips.lang.ic2wrench=You can safely break IC2 machines with a Pickaxe.
 
 tooltips.lang.small_plate_presser=The earliest (and cheapest) way of making Metal Rods is with the Small Plate Presser from Advanced Rocketry.
 tooltips.lang.astralsorcery.blockaltar=The Luminous Crafting Table has to be crafted near a Floating Crystal, commonly found in Marble structures throughout the world.\nSee the Astral Tome for the recipe.
-tooltips.lang.cheese_in_mold=Made by right clicking Animania Milk into a placed Cheese Mold.
 tooltips.lang.enticing_crystal=Villagers can be spawned by the following means:\nEnderIO Powered Spawner\nVanilla Spawner, changed with Spawner Changer\nResturbed Mob Spawner\nRFTools Spawner\nIndustrial Foregoing Mob Duplicator
 tooltips.lang.forge_from_metal=(The Forge can be crafted with any 4 Metal Blocks)
 tooltips.lang.obtained.fluid_transposer=Obtainable through the Fluid Transposer.
@@ -363,7 +365,6 @@ requious.jei.recipe.pech_trades=Pech Trades
 requious.jei.recipe.petro_petunia=Petro Petunia
 requious.jei.recipe.scented_hive=Scented Hive
 requious.jei.recipe.syngas_producer=Syngas Producer
-requious.jei.recipe.tinkers_disassembler=Tinkers' Disassembler
 requious.jei.recipe.transmuters_stone=Transmuters Stone
 requious.jei.recipe.turbine=Turbine
 requious.jei.recipe.typewriter=Typewriter
@@ -371,7 +372,6 @@ requious.jei.recipe.witch_water=Witch Water
 
 tile.adv_bee_analyzer.name=Advanced Analyzer
 tile.infinity_furnace.name=Infinity Furnace
-tile.tinkers_disassembler.name=Tinkers' Disassembler
 tile.replicator.name=§5Replicator
 
 # --------------------------------------

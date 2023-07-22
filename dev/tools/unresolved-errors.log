@@ -1,2 +1,204 @@
-[main/WARN] [mixin]: @Mixin target net/minecraft/client/renderer/RenderGlobal$ContainerLocalRenderInformation is public in mixins.ondemand_sprites.json:ContainerLocalRenderInformationAccessor and should be specified in value
-[CraftPresence/ERROR] [craftpresence]: Unable to connect to Discord...
+[main/WARN] [LoliASM]: Replacing CA Certs with an updated one...
+[Client thread/WARN] [Config]: [OptiFine] Ambiguous shader option: colortexR
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh: colortex5
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh: colortex0
+[Client thread/WARN] [Config]: [OptiFine] Ambiguous shader option: colortexR
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh, world-1/deferred1.fsh: colortex5
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.fsh: colortex0
+[Client thread/WARN] [Config]: [OptiFine] Ambiguous shader option: colortexR
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh, world-1/deferred1.fsh, world0/deferred1.vsh: colortex5
+[Client thread/WARN] [Config]: [OptiFine]  - in world0/deferred1.vsh: colortex0
+[Client thread/WARN] [Config]: [OptiFine] Ambiguous shader option: colortexR
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh, world-1/deferred1.fsh, world0/deferred1.vsh, world0/deferred1.fsh: colortex5
+[Client thread/WARN] [Config]: [OptiFine]  - in world0/deferred1.fsh: colortex0
+[Client thread/WARN] [Config]: [OptiFine] Ambiguous shader option: colortexR
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh, world-1/deferred1.fsh, world0/deferred1.vsh, world0/deferred1.fsh, world1/deferred1.vsh: colortex5
+[Client thread/WARN] [Config]: [OptiFine]  - in world1/deferred1.vsh: colortex0
+[Client thread/WARN] [Config]: [OptiFine] Ambiguous shader option: colortexR
+[Client thread/WARN] [Config]: [OptiFine]  - in world-1/deferred1.vsh, world-1/deferred1.fsh, world0/deferred1.vsh, world0/deferred1.fsh, world1/deferred1.vsh, world1/deferred1.fsh: colortex5
+[Client thread/WARN] [Config]: [OptiFine]  - in world1/deferred1.fsh: colortex0
+[Client thread/ERROR] [FML]: An exception was thrown, the game will display an error screen and halt.
+net.minecraftforge.fml.common.MissingModsException: Mod dsurround (Dynamic Surroundings) requires [orelib@[3.6.0.1,)]
+	at net.minecraftforge.fml.common.Loader.sortModList(Loader.java:266) ~[Loader.class:?]
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:572) ~[Loader.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232) [FMLClientHandler.class:?]
+  [...]
+[Client thread/WARN] [FML]: EventBus 0 shutting down - future events will not be posted.
+[Client thread/WARN] [FML]: There were errors previously. Not beginning mod initialization phase
+[Thread-10/ERROR] [net.minecraft.client.audio.SoundManager]: Error in class 'LibraryLWJGLOpenAL'
+[Thread-10/ERROR] [net.minecraft.client.audio.SoundManager]: Unable to initialize OpenAL.  Probable cause: OpenAL not supported.
+[Thread-10/WARN] [net.minecraft.client.audio.SoundManager]: ERROR MESSAGE:
+[Thread-10/WARN] [net.minecraft.client.audio.SoundManager]: STACK TRACE:
+[Client thread/WARN] [VintageFix]: Cannot list resources from pack CustomResources (lumien.resourceloader.loader.NormalResourceLoader)
+[Client thread/WARN] [VintageFix]: Cannot list resources from pack BetterFps (guichaguri.betterfps.gui.BetterFpsResourcePack)
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model thaumicaugmentation:ward_foci_no_coremod
+[Client thread/ERROR] [VintageFix]: Early load error for thaumicaugmentation:ward_foci_no_coremod
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model tconstruct:item/tools/battlesign.tcon
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/battlesign.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model tconstruct:item/tools/shortbow.tcon
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/shortbow.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/WARN] [VintageFix]: Path mixins.sledgehammer.conarm.json is not a valid model location
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model dsurround:data/saltmod
+[Client thread/ERROR] [VintageFix]: Early load error for dsurround:data/saltmod
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model thaumicaugmentation:ward_foci_no_coremod
+[Client thread/ERROR] [VintageFix]: Early load error for thaumicaugmentation:ward_foci_no_coremod
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/WARN] [VintageFix]: Path fabric.mod.json is not a valid model location
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model tconstruct:item/tools/shortbow.tcon
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/shortbow.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model tconstruct:item/tools/longbow.tcon
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/longbow.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model tconstruct:item/tools/longbow.tcon
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/longbow.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model tconstruct:item/tools/crossbow.tcon
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/crossbow.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/WARN] [VintageFix]: Path mixins.mods.epicsiegemod.json is not a valid model location
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model dsurround:data/conarm
+[Client thread/ERROR] [VintageFix]: Early load error for dsurround:data/conarm
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model thaumicaugmentation:ward_foci_coremod
+[Client thread/ERROR] [VintageFix]: Early load error for thaumicaugmentation:ward_foci_coremod
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model thaumicaugmentation:ward_foci_coremod
+[Client thread/ERROR] [VintageFix]: Early load error for thaumicaugmentation:ward_foci_coremod
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [VintageFix]: Suppressing further model loading errors for namespace 'tconstruct'
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/crossbow.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model dsurround:data/conarm
+[Client thread/ERROR] [VintageFix]: Early load error for dsurround:data/conarm
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/ERROR] [org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider]: Failed to load model dsurround:data/saltmod
+[Client thread/ERROR] [VintageFix]: Early load error for dsurround:data/saltmod
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Sound Library Loader/WARN] [net.minecraft.client.audio.SoundManager]: ERROR MESSAGE:
+[Client thread/ERROR] [VintageFix]: Early load error for tconstruct:item/tools/battlesign.tcon
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:63) ~[DynamicModelProvider.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.doEarlyModelLoading(ModelManager.java:1079) [cgc.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:1196) [cgc.class:?]
+  [...]
+[Client thread/WARN] [VintageFix]: Path mixins.searchtree_mod.json is not a valid model location
+[Sound Library Loader/ERROR] [soundphysics]: Failed to init EFX
+[Sound Library Loader/ERROR] [soundphysics]: java.lang.UnsatisfiedLinkError: org.lwjgl.openal.ALC10.nalcGetCurrentContext()J
+[Client thread/WARN] [mixin]: Static binding violation: PRIVATE @Overwrite method func_76615_h in mixins.phosphor.json:common.MixinChunk from mod phosphor_1_12_2_0_2_9_2_SNAPSHOT_universal cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/dirt was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/dirt was not discovered during texture pass
+[Client thread/WARN] [Config]: [OptiFine] Shaders: Block not found for name: minecraft:cobweb
+[Client thread/WARN] [Config]: [OptiFine] Shaders: Block not found for name: minecraft:repeater
+[Client thread/WARN] [Config]: [OptiFine] Shaders: Block not found for name: minecraft:comparator
+[Client thread/WARN] [Config]: [OptiFine] Shaders: Block not found for name: minecraft:lit_redstone_torch
+[Client thread/WARN] [Config]: [OptiFine] Shaders: Block not found for name: minecraft:nether_portal
+[Client thread/WARN] [Config]: [OptiFine] [Shaders] Invalid block ID mapping: block.10303=minecraft:nether_portal
+[Client thread/WARN] [Config]: [OptiFine] Shaders: Block not found for name: minecraft:sign
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_acacia was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_birch was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_big_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_jungle was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_oak was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider]: Texture minecraft:blocks/leaves_spruce was not discovered during texture pass
+[Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com

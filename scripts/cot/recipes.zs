@@ -11,7 +11,7 @@ scripts.process.melt(<ore:tallow>, <liquid:biomass> * 20);
 scripts.process.melt(<contenttweaker:compressed_tallow>, <liquid:biomass> * 1280);
 
 // Add missed furnace recipe
-furnace.addRecipe(<endreborn:item_ingot_wolframium>, <contenttweaker:item_ore_tungsten:2>, 4.0d);
+furnace.addRecipe(<endreborn:item_ingot_wolframium>, <qmd:dust>, 4.0d);
 
 // Remake usage of new dusts
 utils.compact(<contenttweaker:dust_tiny_gold>, <thermalfoundation:material:1>);
@@ -33,8 +33,14 @@ craft.remake(<exnihilocreatio:item_mesh:1>, ['pretty',
   's': <ore:string>, // String
 });
 
+// Compressed Basalt
+val B = <ore:stoneBasalt>;
+recipes.addShapeless(<contenttweaker:compressed_basalt>, [B,B,B,B,B,B,B,B,B]);
+recipes.addShapeless(<chisel:basalt2:7>, [<contenttweaker:compressed_basalt>]);
+utils.compact(<contenttweaker:compressed_basalt>, <contenttweaker:compressed_basalt_double>);
+
 // Molten Cheese
-scripts.process.melt(<ore:cheeseWheels> | <ore:blockCheese>, <liquid:cheese> * 1000);
+scripts.process.melt(<rats:block_of_cheese>, <liquid:cheese> * 1000);
 scripts.process.melt(<ore:foodCheese>, <liquid:cheese> * 250);
 mods.tconstruct.Casting.addBasinRecipe(<rats:block_of_cheese>, null, <liquid:cheese>, 1000);
 
@@ -49,15 +55,15 @@ mods.mechanics.addTubeRecipe([<contenttweaker:conglomerate_of_life>], <liquid:li
 craft.shapeless(<contenttweaker:silicon_block>, 'AAAAAAAAA', { A: <ore:ingotSilicon> });
 craft.shapeless(<libvulpes:productingot:3> * 9,   'A', { A: <ore:blockSilicon> });
 
-// [Conglomerate Of Life]*2 from [Cheese Wheel][+4]
-craft.make(<contenttweaker:conglomerate_of_life> * 4, ['pretty',
-  '▲ B ▲',
-  'D W D',
-  '▲ B ▲'], {
-  '▲': <scalinghealth:heartdust>, // Heart Dust
-  'B': <randomthings:rezstone>,   // Blood Stone
-  'D': <iceandfire:dragon_meal>,  // Dragon Meal
-  'W': <ore:cheeseAnimania>,
+// [Conglomerate Of Life] from [Heart Dust][+3]
+craft.remake(<contenttweaker:conglomerate_of_life>, ["pretty",
+  "w D w",
+  "C ▲ C",
+  "w D w"], {
+  "w": <ore:woolRed>, # Red Wool
+  "D": <iceandfire:dragon_meal>,  # Dragon Meal
+  "C": <ore:foodCheese>,          # Cheese
+  "▲": <scalinghealth:heartdust>, # Heart Dust
 });
 
 // [Conglomerate_Of_Sun*8] from [Totem_of_Undying][+3]

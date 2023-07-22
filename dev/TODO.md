@@ -1,31 +1,10 @@
 # TODO
 
-List of priorities:
+🚧✅❌ List of priorities:
 
-- [ ] 📖 Add `Computers` finishing quest
-- [ ] 📖 Add 3d prints usage quest
-- [ ] 📖 Harvest Level 7 fix task
-- [ ] 📖 `Chamelium Block` make smaller reward
-- [ ] 📖 Add note that crushing block can lifted with piston
-- [ ] 🔴 Remove `Animania` + `CraftStudioAPI`
-- [x] ✏️ Remove ring from creative Pool recipe
-- [ ] ✏️ fix `Burn in Fluid` Hopper Dupe
-- [ ] ✏️ Unify `Tungsten Dust` (ore => out)
-- [ ] ✏️ Fix `Tungsten Dust` => Ingot in Arc Furn
-- [ ] ✏️ `Dislocator` cheaper, `Pedestal` harder
-- [ ] ✏️ Fix Cottontail not turning into Dye
-- [ ] ✏️ Inventory Upgrade cheaper
-- [ ] ✏️ AE2fc fix dupe https://t.ly/Az_kQ
-- [ ] ✏️ Basalt should be main ingredient of OC
-- [ ] ✏️ Reinforcement Modifier should have magic alt recipe
-- [ ] ✏️ Add Compressed Granite
-- [ ] ✏️ inventToolForRobotWithLowDurability
-- [ ] ✏️ make8factorialRecipe
-- [ ] ✏️ Life Conglomerate increase Cat drop rate
-- [ ] ✏️ Mulch more usage (source: cherry)
 - [ ] 🟢 Move AdvRocketry to tweaker mod instead of XML
 - [ ] 🟢 Configure `Worldgen Indicators`
-- [ ] 🟢 Add `VintageFix`
+- [ ] 🟢 Configure `Villager Trade Tables`
 
 ---
 
@@ -35,6 +14,7 @@ List of priorities:
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] ✏️ invent Tool For Robot With Low Durability
 - [ ] ✏️ Printing and assembling Chaos Guardian spawns Chaos Guardian
 - [ ] 🔴 Do not update `MixinBooter` until fixed: https://github.com/LoliKingdom/MixinBooter/issues/31
 - [ ] 🔴 Do not update `CensoredASM` until fixed: https://github.com/LoliKingdom/LoliASM/issues/169
@@ -110,7 +90,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Some QBD / NCO craft MUST use <opencomputers:print>
 - [ ] ✏️ Remove Fiery fruit from Target Chamber recipe
 - [ ] 🔄 Inspect crash when placing Replicator near energy and break it
-- [ ] 🟢 Add **Villager Trade Tables**
 - [ ] 📖 Add quest book chapter about built-in excavators
 - [ ] 📖 Add message about mining Ores in Nether that aggro Pigman. Use whitelist, ignore if Peaceful.
 - [ ] 📖 Give player `Tier1 box` instead of putting Decor into Common boxes
@@ -244,6 +223,7 @@ Planned non-urgent changes, or just good ideas:
 - `<gendustry:gene_sample>.maxStackSize = 64;` **Transposer** dupe Samples when stackable
 - [ ] 📖 whenever you have a rewards for a quest containing three items of tinkers, the last item does not show your stats. (Cant be fixed - FTBQ bug)
 - [ ] ✏️ SAGmill stuck when produce too much Scrap with balls: best grinding balls produce X5 output that would make SAG mill without balls too weak
+- [ ] ✏️ Fix Cottontail not turning into Dye. Dont know how to determine double plant
 
 ---
 
@@ -253,14 +233,10 @@ Planned non-urgent changes, or just good ideas:
 
 Items that should have more uses:
 
-### Tier 1
-
-![](https://is.gd/9ro3hx "Antler")
-![](https://is.gd/rMpCFk "Wasteland Earth")
-![](https://is.gd/ooCy9P "Trillium")
-
 ### Tier 2
 
+![](https://github.com/Krutoy242/mc-icons/raw/master/i/forestry/mulch__0.png "Mulch")
+![](https://github.com/Krutoy242/mc-icons/raw/master/i/computercraft/printout__0.png "Printed Page")
 ![](https://git.io/JLhhL "Infinity Reagent")
 ![](https://git.io/JGGh7 "Mana Infused Ingot")
 ![](https://git.io/JnN1t "Sun Crystal")
@@ -268,16 +244,13 @@ Items that should have more uses:
 ![](https://git.io/JRnDa "Tar")
 ![](https://is.gd/ZmKHJr "Gorgon Head")
 ![](https://github.com/Krutoy242/mc-icons/raw/master/i/iceandfire/cyclops_eye__0.png "Eye of Cyclops")
-![](https://is.gd/x6hBwo "A book written by a Cow")
 
 ### Tier 3
 
 ![](https://git.io/JLjsf "Basalt Sediment")
 ![](https://git.io/JLhhf "Energized Clathrate")
 ![](https://git.io/JLhph "Destabilized Clathrate")
-![](https://git.io/JGGhx "Overworldian Matter")
 ![](https://git.io/JRLSU "Huge Stalk")
-![](https://is.gd/PpipIo "Osgloglas Ingot")
 ![](https://github.com/Krutoy242/mc-icons/raw/master/i/minecraft/shulker_shell__0.png "Shulker Shell")
 
 ### Tier 4
@@ -291,9 +264,7 @@ Items that should have more uses:
 
 ## 🔧 Crafting Methods
 
-![](https://git.io/J3hVP "Bursting Powder")
 ![](https://git.io/JG5U9 "Decay Generator")
-![](https://git.io/Jst3B "Crystal Memory")
 ![](https://git.io/JtDnO "Chemical Thrower")
 ![](https://is.gd/rneFnc "Blue Fire Jar")
 ![](https://is.gd/XqQPA0 "Radiator Block")
