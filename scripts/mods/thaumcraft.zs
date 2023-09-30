@@ -1226,6 +1226,7 @@ mods.astralsorcery.Altar.addConstellationAltarRecipe(
 );
 
 mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:filter>);
+mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:inlay>);
 
 # Add rare drop to loot crates
 # TODO: Seems like this tweak not working
