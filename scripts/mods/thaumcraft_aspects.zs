@@ -1228,6 +1228,8 @@ _  _ ____ _  _ _ _    _    ____   / _  _ _ _  _ ____ ____ ____ ____ ____ ___
 <minecraft:stone:5>                             .setAspects(<aspect:terra>*5      ,<aspect:perditio>); #andesite
 <minecraft:stone:1>                             .setAspects(<aspect:terra>*5      ,<aspect:ignis>); #granite
 <minecraft:web>                                 .setAspects(<aspect:bestia>*5     ,<aspect:vinculum>*2);
+<minecraft:iron_block>                          .setAspects(<aspect:metallum>*101);
+<minecraft:gold_block>                          .setAspects(<aspect:metallum>*67   ,<aspect:desiderium>*33);
 
 <minecraft:skull:1>                             .setAspects(<aspect:spiritus>*10  ,<aspect:infernum>*10       ,<aspect:tenebrae>*5       ,<aspect:perditio>*5); #wither skull
 
