@@ -1387,8 +1387,55 @@ _  _ _  _ _    ___  ____ ____    _    _ ___  ____ ____ ____ _   _
 <appliedenergistics2:sky_stone_block>          .setAspects(<aspect:alienis>*2     , <aspect:tenebrae>*7);
 <minecraft:sugar>                              .setAspects(<aspect:desiderium>    , <aspect:aqua>);
 
+/*
+██████╗ ███████╗███╗   ███╗ ██████╗ ██╗   ██╗███████╗     █████╗ ██╗     ██╗          █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗
+██╔══██╗██╔════╝████╗ ████║██╔═══██╗██║   ██║██╔════╝    ██╔══██╗██║     ██║         ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝
+██████╔╝█████╗  ██╔████╔██║██║   ██║██║   ██║█████╗      ███████║██║     ██║         ███████║███████╗██████╔╝█████╗  ██║        ██║   ███████╗
+██╔══██╗██╔══╝  ██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝      ██╔══██║██║     ██║         ██╔══██║╚════██║██╔═══╝ ██╔══╝  ██║        ██║   ╚════██║
+██║  ██║███████╗██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗    ██║  ██║███████╗███████╗    ██║  ██║███████║██║     ███████╗╚██████╗   ██║   ███████║
+╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝    ╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
+*/
 
-
+val removeItemAspectList = [
+<actuallyadditions:item_void_bag>,
+<actuallyadditions:item_bag>,
+<akashictome:tome:*>,
+<appliedenergistics2:wireless_terminal>,
+<appliedenergistics2:wireless_crafting_terminal>,
+<botania:flowerbag>,
+<botania:flowerbag:*>,
+<cyclicmagic:storage_bag>,
+<enderstorage:ender_pouch:*>,
+<forestry:digger_bag>,
+<forestry:builder_bag_t2>,
+<forestry:miner_bag_t2>,
+<forestry:miner_bag>,
+<forestry:lepidopterist_bag>,
+<forestry:apiarist_bag>,
+<forestry:forester_bag>,
+<forestry:builder_bag>,
+<forestry:adventurer_bag>,
+<forestry:adventurer_bag_t2>,
+<forestry:hunter_bag_t2>,
+<forestry:hunter_bag>,
+<forestry:digger_bag_t2>,
+<forestry:forester_bag_t2>,
+<littletiles:container>,
+<rftools:storage_module_tablet>,
+<spiceoflife:lunchbag:*>,
+<spiceoflife:lunchbox>,
+<thaumadditions:crystal_bag>,
+<thaumcraft:focus_pouch:*>,
+<thermalexpansion:satchel:*>,
+<travelersbackpack:travelers_backpack:*>,
+<wpt:wpt>,
+<wit:wit>,
+<wft:wft>,
+<wct:wct>
+] as IItemStack[];
+for item in removeItemAspectList {
+  item.removeAspects(allAspects);
+}
 
 /*
  ██████╗ ████████╗██╗  ██╗███████╗██████╗ 
