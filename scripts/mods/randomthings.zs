@@ -3,6 +3,17 @@ import crafttweaker.item.IIngredient;
 
 #modloaded randomthings
 
+
+// Add hints with Spectre trees mechanics
+scripts.jei.crafting_hints.addInsOutCatl(
+  [<randomthings:ingredient:2>, <ore:treeSapling>],
+  <randomthings:spectresapling>
+);
+scripts.jei.crafting_hints.addInsOutsCatl(
+  [<randomthings:spectresapling>],
+  [<randomthings:spectrelog> * 7, <randomthings:spectreleaf> * 50]
+);
+
 /*Inject_js{
 setBlockDrops('randomthings:beanpod', [
 {stack: 'randomthings:ingredient:11'},...
@@ -102,7 +113,7 @@ recipes.removeShaped(<randomthings:spectreanchor>);
 recipes.addShaped(<randomthings:spectreanchor>, [
 	[<randomthings:ingredient:2>],
 	[utils.tryCatch("tombmanygraves:death_list", <minecraft:paper>)],
-	[<randomthings:rezstone>]]);
+	[<extrautils2:ingredients:5>]]);
 
 # Spectre Ingot
 recipes.remove(<randomthings:ingredient:3>);
@@ -177,11 +188,6 @@ craft.remake(<randomthings:imbuingstation>, ["pretty",
 	D: <tconstruct:materials:18>,
 	E: <rats:raw_plastic>,
 });
-
-
-# Blood stone from moon stone
-mods.inworldcrafting.FluidToItem.transform(<randomthings:rezstone>, <fluid:blood>, [<extrautils2:ingredients:5>]);
-<randomthings:rezstone>.maxStackSize = 64;
 
 # [Blackout_Powder*4] from [Bio_Coal][+2]
 craft.reshapeless(<randomthings:ingredient:13>, "F☺▲", {
@@ -429,10 +435,10 @@ craft.remake(<randomthings:pitcherplant>, [
 });
 
 # [Stable Ender Pearl] from [Ender Pearl][+2]
-craft.remake(<randomthings:stableenderpearl> * 4, ["pretty",
-  "  F  ",
+craft.remake(<randomthings:stableenderpearl> * 16, ["pretty",
+  "F F F",
   "F e F",
-  "  o  "], {
+  "o o o"], {
   "F": <randomthings:ingredient:7>, # Floo Powder
   "e": <ore:enderpearl>,            # Ender Pearl
   "o": <fluxnetworks:flux>,

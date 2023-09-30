@@ -143,18 +143,22 @@ craft.remake(<enderio:item_material:66>, ["pretty",
 });
 
 # [Basic Capacitor] from [Redstone Conductance Coil][+3]
-val BCIngrs = Grid(["pretty",
+craft.remake(<enderio:item_basic_capacitor>, ["pretty",
   "  ╱  ",
   "▲ ♥ ▲",
   "  ▬  "], {
   "╱": <ore:stickTitaniumIridium>,       # Titanium Iridium Alloy Rod
   "▲": <ore:dustBedrock>,                # Grains of Infinity
   "♥": <thermalfoundation:material:515>, # Redstone Conductance Coil
-  "▬": <ore:ingotFluixSteel>,            # Fluix Steel Ingot
-}).shaped();
-recipes.remove(<enderio:item_basic_capacitor>);
-recipes.addShaped('EIO capacitor', <enderio:item_basic_capacitor>, BCIngrs);
-scripts.processUtils.avdRockXmlRecipeFlatten("PrecisionAssembler", <enderio:item_basic_capacitor>, BCIngrs);
+  "▬": <threng:material>,                # Fluix Steel Ingot
+});
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+	.outputs(<enderio:item_basic_capacitor> * 64)
+	.input(<ore:stickTitaniumIridium> * 64)
+	.input(<ore:dustBedrock> * 64)
+	.input(<thermalfoundation:material:515> * 64)
+	.input(<threng:material> * 32)
+	.power(320000).timeRequired(20).build();
 
 # [Fluid Tank] from [Clear Glass][+1]
 recipes.remove(<enderio:block_tank>);

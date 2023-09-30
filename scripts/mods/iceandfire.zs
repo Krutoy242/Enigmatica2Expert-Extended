@@ -2,6 +2,11 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 #modloaded iceandfire
 
+<iceandfire:myrmex_jungle_egg:*>.maxStackSize = 64;
+<iceandfire:myrmex_desert_egg:*>.maxStackSize = 64;
+<iceandfire:iceandfire.deathworm_egg>.maxStackSize = 64;
+<iceandfire:iceandfire.deathworm_egg:1>.maxStackSize = 64;
+
 # *======= Recipes =======*
 
 # Remove too powerful aspects
@@ -412,6 +417,11 @@ mods.inworldcrafting.FluidToItem.transform(<iceandfire:dragon_meal> * 4, <fluid:
 	<harvestcraft:groundrabbititem> * 4,
 	<harvestcraft:groundfishitem> * 4,
 ], true);
+mods.inworldcrafting.FluidToItem.transform(<iceandfire:dragon_meal> * 8, <fluid:blood>, [
+	<harvestcraft:groundvenisonitem>,
+	<harvestcraft:groundturkeyitem>,
+	<harvestcraft:groundduckitem>,
+], true);
 
 # Remove craft table dragon recipes
 recipes.remove(<iceandfire:dragonforge_fire_core_disabled>);
@@ -420,7 +430,7 @@ recipes.remove(<iceandfire:dragonforge_ice_core_disabled>);
 # Spring water recipe
 mods.iceandfire.recipes.addIceDragonForgeRecipe( 
     <biomesoplenty:jar_filled:1>, 
-    Bucket("ic2hot_water"), 
+    <minecraft:water_bucket>, 
     Bucket("hot_spring_water"));
 
 # Remove craft from shards

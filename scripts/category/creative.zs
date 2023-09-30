@@ -75,7 +75,7 @@ var list = {
 	"♦": <ore:gemBenitoite>,
 	"◰": <botania:manatablet>.withTag({mana: 500000}),
 	"◙": <compactsolars:compact_solar_block:2>,
-	"ж": <draconicevolution:awakened_core>,
+	"ж": <draconicevolution:crafting_injector:2>,
 	"Ж": <draconicevolution:draconium_capacitor:1>,
 	"☑": utils.tryCatch("threng:material", 14, <gendustry:genetics_processor>), # Speculative Processor
 	"☠": <extendedcrafting:material:13>,
@@ -304,9 +304,9 @@ var list = {
 // Mana ring cant be accepted on server, so i create immediate recipe
 # [Terra Truncator] from [Greater Band of Mana][+2]
 craft.remake(<botania:terraaxe>, ["pretty",
-  "▬ G",
-  "▬ T",
-  "  T"], {
+  "▬ G ▬",
+  "▬ T  ",
+  "  T  "], {
   "▬": <ore:ingotTerrasteel>, # Terrasteel Ingot
   "G": <botania:manaringgreater>.withTag({mana: 2000000}), # Greater Band of Mana
   "T": <ore:livingwoodTwig>,  # Livingwood Twig
@@ -385,7 +385,7 @@ craft.remake(<mekanism:gastank>.withTag({tier: 4}), ["pretty",
   "E": <advgenerators:turbine_enderium>,  # Enderium Turbine
   "◊": <ore:gemBenitoite>,                # Benitoite
   "G": <advancedrocketry:oxygencharger>,  # Gas Charge Pad
-  "A": <draconicevolution:awakened_core>, # Awakened Core
+  "A": <draconicevolution:crafting_injector:2>,
   "B": <bloodmagic:blood_tank:9>,         # Blood Tank Tier 10
   "C": <plustic:centrifuge>,              # Centrifuge Tank
   "n": FluidCell("aerotheum"),            # Universal Fluid Cell
@@ -416,7 +416,7 @@ recipes.addShapeless("creative Fluid Tank Frame", creativeFluidTankFrame, [
 
 # *======= Mekanism Creative Tank =======*
 list["⍤"] = <mekanism:gastank>.withTag({tier: 4});
-list["✝"] = <draconicevolution:chaotic_core>;
+list["✝"] = <draconicevolution:crafting_injector:3>;
 list["♥"] = creativeFluidTankFrame;
 list["♀"] = <mctsmelteryio:upgrade:4>;
 list["θ"] = <ic2:te:134>;
@@ -469,7 +469,7 @@ craft.remake(<tconstruct:materials:50>, ["pretty",
   "S": <cyclicmagic:soulstone>,          # Soulstone
   "s": <ore:blockOsgloglas>,             # Osgloglas Block
   "▄": <ore:blockAlumite>,               # Alumite Block
-  "G": <extendedcrafting:singularity:5>, # Gold Singularity
+  "G": <additionalcompression:ingotgold_compressed:2>,
   "M": <ore:blockMirion>,                # Mirion Block
   "O": <ore:blockOsmiridium>,            # Osmiridium Block
 });
@@ -524,7 +524,7 @@ craft.remake(<extrautils2:passivegenerator:6>, ["pretty",
   "C": <extendedcrafting:material:12>,   # Crystaltine Catalyst
   "D": <extrautils2:teleporter:1>,       # Deep Dark Portal
   "F": <extrautils2:passivegenerator:5>, # Fire Mill
-  "W": <draconicevolution:wyvern_core>,  # Wyvern Core
+  "W": <draconicevolution:wyvern_energy_core>,
   "i": <extrautils2:passivegenerator:4>, # Wind Mill
   "L": <extrautils2:passivegenerator:2>, # Lava Mill
   "O": <extrautils2:opinium:6>,          # Opinium Core (Amazing)
@@ -590,7 +590,7 @@ craft.make(<storagedrawers:upgrade_creative:1>, ["pretty",
   "S": <threng:material:14>,                  # Speculative Processor
   "1": <aeadditions:storage.component:3>,     # 16384k ME Storage Component
   "■": <ore:blockAethium>,                    # Aethium
-  "C": <draconicevolution:chaotic_core>,      # Chaotic Core
+  "C": <draconicevolution:crafting_injector:3>,# Chaotic Injector
   "◊": <ore:gemBenitoite>,                    # Benitoite
   "r": <tconstruct:large_plate>.withTag({Material: "red_matter"}),
   "▬": <ore:ingotInfinity>,                   # Infinity Ingot
@@ -607,5 +607,25 @@ recipes.addHiddenShapeless("Creative Storage Upgrade Duplication",
 [<storagedrawers:upgrade_creative:1>]);
 
 # Add later
-recipes.remove(<twilightforest:uncrafting_table>);
 recipes.remove(<cyclicmagic:uncrafting_block>);
+
+# [Uncrafting Table] from [Creative Modifier][+11]
+craft.remake(<twilightforest:uncrafting_table>, ["pretty",
+  "▄ ■ h ■ ▄",
+  "¤ E Ϟ E ¤",
+  "P C r C P",
+  "¤ E Ϟ E ¤",
+  "▀ M _ M ▀"], {
+  "▄": <ore:blockFiery>,                     # Block of Fiery Metal
+  "■": <twilightforest:block_storage:4>,     # Block of Carminite
+  "h": <draconicevolution:chaotic_core>,     # Chaotic Core
+  "¤": <ore:gearMithril>,                    # Mana Infused Gear
+  "E": <contenttweaker:empowered_phosphor>,  # Empowered Phosphor
+  "Ϟ": <draconicevolution:ender_energy_manipulator>, # Ender Energy Manipulator
+  "P": <twilightforest:castle_rune_brick:*>, # Pink Castle Rune Brick
+  "C": <storagedrawers:upgrade_creative>,    # Creative Storage Upgrade
+  "r": <tconstruct:materials:50>,            # Creative Modifier
+  "▀": <ore:blockKnightmetal>,               # Block of Knightmetal
+  "M": <quark:monster_box>,                  # Monster Box
+  "_": <ore:magic_snow_globe>,               # Magical Snow Globe
+});

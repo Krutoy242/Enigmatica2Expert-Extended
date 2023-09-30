@@ -438,7 +438,7 @@ for i, mat in materials {
 		"♥": <ore:ingotRedstoneAlloy>,
 		"▬": oreDict["ingot" ~ mat],
 		"-": i!=0
-			? <thermalexpansion:capacitor>.definition.makeStack(i - 1).marked("marked")
+			? <thermalexpansion:capacitor>.definition.makeStack(i - 1).withTag({}, false).marked("marked")
 			: <ore:ingotCopper>,
 	}, i!=0 ? utils.upgradeFnc : null);
 
@@ -826,3 +826,6 @@ mods.thermalexpansion.Sawmill.addRecipe(
 	1000,
 	<actuallyadditions:item_rice_seed>, 50
 );
+
+// Remove unused Obsidian melting recipes
+mods.thermalexpansion.Crucible.removeRecipe(<minecraft:obsidian>);

@@ -1,5 +1,13 @@
 #modloaded betteranimalsplus
 
+<betteranimalsplus:pheasant_egg>.maxStackSize = 64;
+<betteranimalsplus:turkey_egg>.maxStackSize = 64;
+<betteranimalsplus:goose_egg>.maxStackSize = 64;
+<betteranimalsplus:golden_goose_egg>.maxStackSize = 64;
+
+// --------------------------------
+// Hand Of Fate usage description
+// --------------------------------
 val handOfFatelocalized = mods.zenutils.I18n.format(scripts.lib.tooltip.desc.local(<betteranimalsplus:handoffate>), 
 	<minecraft:flint_and_steel>.displayName,
 	<minecraft:nether_wart>.displayName,
@@ -8,6 +16,18 @@ val handOfFatelocalized = mods.zenutils.I18n.format(scripts.lib.tooltip.desc.loc
 );
 <betteranimalsplus:handoffate>.addTooltip(handOfFatelocalized);
 mods.jei.JEI.addDescription(<betteranimalsplus:handoffate>, handOfFatelocalized);
+
+scripts.jei.crafting_hints.addInsOutCatl(
+	[
+		<minecraft:flint_and_steel>,
+		<minecraft:nether_wart>,
+		<betteranimalsplus:antler>,
+		<betteranimalsplus:venisonraw>,
+	],
+	Soul('betteranimalsplus:hirschgeist'),
+	<betteranimalsplus:handoffate>
+);
+// --------------------------------
 
 <entity:betteranimalsplus:zotzpyre>.addDrop(<harvestcraft:hardenedleatheritem> % 70, 1, 3);
 <entity:betteranimalsplus:zotzpyre>.addPlayerOnlyDrop(<harvestcraft:netherwingsitem>, 1, 3);
@@ -21,6 +41,10 @@ mods.jei.JEI.addDescription(<betteranimalsplus:handoffate>, handOfFatelocalized)
 <entity:betteranimalsplus:horseshoecrab>.addDrop(<iceandfire:sea_serpent_scales_bronze> % 50, 1, 1);
 <entity:betteranimalsplus:songbird>.addDrop(<twilightforest:raven_feather>, 1, 3);
 <entity:betteranimalsplus:tarantula>.addPlayerOnlyDrop(<randomthings:ingredient:1> % 50, 1, 1);
+
+// Add drops to other mods
+<entity:emberroot:deers>.addPlayerOnlyDrop(<betteranimalsplus:antler> % 50, 1, 1);
+<entity:twilightforest:deer>.addPlayerOnlyDrop(<betteranimalsplus:antler> % 50, 1, 1);
 
 <ore:pelt>.addItems([
 	<betteranimalsplus:bear_skin_black>,

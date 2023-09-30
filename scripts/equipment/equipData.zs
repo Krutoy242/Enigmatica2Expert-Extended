@@ -110,10 +110,8 @@ val defaultArmorMats as IData = [
   "leatherforesttroll"     , # 41
   "leathermountaintroll"   , # 41
   "vibrant_alloy"          , # 41
+  "mirion"                 , # 42
   "ma.soulium"             , # 42
-  "chitintandeathworm"     , # 42
-  "chitinwhitedeathworm"   , # 42
-  "chitinbrowndeathworm"   , # 42
   "pladium"                , # 42
   "amber"                  , # 42
   "tanzanite"              , # 42
@@ -133,7 +131,6 @@ val defaultArmorMats as IData = [
   "peridot"                , # 45
   "lonsdaleite"            , # 45
   "diamantine_crystal"     , # 46
-  "mirion"                 , # 46
   "pink_slime"             , # 46
   "refined_obsidian"       , # 46
   "lumium"                 , # 47
@@ -173,6 +170,9 @@ val defaultArmorMats as IData = [
   "scalegreendragon"       , # 60
   "scalereddragon"         , # 60
   "scalesilverdragon"      , # 60
+  "chitintandeathworm"     , # 60
+  "chitinwhitedeathworm"   , # 60
+  "chitinbrowndeathworm"   , # 60
   "scaleblueseaserpent"    , # 61
   "scalepurpleseaserpent"  , # 61
   "scaletealseaserpent"    , # 61
@@ -347,12 +347,13 @@ val defaultWeaponMats as IData = [
   "refined_glowstone"   , # 160
   "elementium"          , # 160
   "fluxed_electrum"     , # 162
-  "osmiridium"          , # 162
   "dark_steel"          , # 162
   "ma.prudentium"       , # 163
   "electrum"            , # 163
   "boron"               , # 165
+  "osmiridium"          , # 167
   "starmetal"           , # 170
+  "mirion"              , # 172
   "fierymetal"          , # 173
   "fusewood"            , # 177
   "refined_obsidian"    , # 178
@@ -363,12 +364,11 @@ val defaultWeaponMats as IData = [
   "thaumium"            , # 193
   "tough"               , # 199
   "enderium"            , # 200
-  "mirion"              , # 201
   "terrasteel"          , # 203
+  "iridium"             , # 203
   "cobalt"              , # 204
   "hard_carbon"         , # 204
   "heavy"               , # 207
-  "iridium"             , # 208
   "draconium"           , # 212
   "mithrillium"         , # 216
   "xu_evil_metal"       , # 222

@@ -4,13 +4,13 @@
 		id: "enderio:item_stellar_alloy_chestplate",
 		tag: {}
 	},
-	x: 7.7d,
-	y: 7.6d,
+	x: -0.5d,
+	y: 3.8d,
 	text: [
 		"{q.ender_io.stellar_helmet.desc}"
 	],
 	dependencies: [
-		"64f8083b"
+		"0c16a92b"
 	],
 	tasks: [{
 		uid: "4f435d42",

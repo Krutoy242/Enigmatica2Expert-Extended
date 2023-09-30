@@ -99,7 +99,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:deepmoblearning:trial_slime>            , [<minecraft:slime_ball> * 34]); // Trial Slime
   add(<entity:deepmoblearning:trial_spider>           , [<minecraft:spider_eye> * 30, <minecraft:string> * 98]); // Trial Spider
   add(<entity:emberroot:creeper>                      , [<minecraft:gunpowder> * 311, <minecraft:skull:4> * 8]); // Cursed Creeper
-# add(<entity:emberroot:deers>                        , []); // Wild Deer
+# add(<entity:emberroot:deers>                        , [<betteranimalsplus:antler> * 50]); // Wild Deer
   add(<entity:emberroot:dire_wolf>                    , [<minecraft:bone> * 47, <minecraft:rotten_flesh> * 48]); // Dire Wolf
   add(<entity:emberroot:enderminy>                    , [<minecraft:ender_eye> * 21, <minecraft:ender_pearl> * 19]); // Mini Enderman
   add(<entity:emberroot:fallenmount>                  , [<minecraft:bone> * 46, <minecraft:rotten_flesh> * 52, <minecraft:saddle> * 4]); // Fallen Mount
@@ -119,7 +119,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:emberroot:witherwitch>                  , [<minecraft:bone> * 32, <minecraft:glowstone> * 4, <minecraft:gunpowder> * 75, <minecraft:rotten_flesh> * 38, <minecraft:spider_eye> * 55, <minecraft:string> * 44, <minecraft:sugar> * 66]); // Toxic Witch
   add(<entity:endreborn:chronologist>                 , [<deepmoblearning:living_matter_extraterrestrial> * 149, <minecraft:ender_pearl> * 100]); // Chronologist
   add(<entity:endreborn:endguard>                     , [<endreborn:item_end_shard> * 79, <thermalfoundation:material:771> * 14]); // Purpur Guard
-  add(<entity:endreborn:endlord>                      , [<endreborn:sword_shard> * 1, <thermalfoundation:material:771> * 1]); // End-Mage Barclay
+  add(<entity:endreborn:endlord>                      , [<endreborn:sword_shard> * 100, <thermalfoundation:material:771> * 100, <storagedrawers:upgrade_storage:4> * 150]); // End-Mage Barclay
   add(<entity:endreborn:watcher>                      , [<endreborn:food_ender_flesh> * 100, <minecraft:ender_eye> * 100]); // Watcher
   add(<entity:excompressum:angry_chicken>             , [<excompressum:chicken_stick>.withTag({IsAngry: 1 as byte}) * 100, <minecraft:chicken> * 100, <minecraft:feather> * 103]); // Angry Chicken
   add(<entity:iceandfire:amphithere>                  , [<iceandfire:amphithere_feather> * 373, <iceandfire:amphithere_skull> * 2]); // Amphithere
@@ -260,7 +260,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:thaumicaugmentation:autocaster>         , [<thaumicaugmentation:autocaster_placer> * 100]); // Autocaster
 # add(<entity:thaumicaugmentation:celestial_observer> , []); // Celestial Observer
   add(<entity:thaumicaugmentation:eldritch_guardian>  , [<thaumcraft:curio:3> * 1, <thaumcraft:loot_bag:1> * 2, <thaumcraft:loot_bag> * 2]); // Eldritch Guardian
-  add(<entity:thaumicaugmentation:primal_wisp>        , [<thaumcraft:loot_bag:1> * 100, <thaumcraft:primordial_pearl> * 100]); // Primordial Wisp
+  add(<entity:thaumicaugmentation:primal_wisp>        , [<thaumcraft:loot_bag:1> * 100, <thaumcraft:primordial_pearl> * 100, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "amogus"}]}) * 2000, <randomthings:ingredient:2> * 1200, <rftools:infused_enderpearl> * 2]); // Primordial Wisp
 # add(<entity:thaumicwonders:corruption_avatar>       , []); // Avatar of Corruption
   add(<entity:thermalfoundation:basalz>               , [<thermalfoundation:material:770> * 108, <thermalfoundation:material:2052> * 45]); // Basalz
   add(<entity:thermalfoundation:blitz>                , [<thermalfoundation:material:772> * 105, <thermalfoundation:material:2050> * 55]); // Blitz
@@ -273,7 +273,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:twilightforest:bunny>                   , [<minecraft:rabbit_foot> * 6, <minecraft:rabbit_hide> * 58, <minecraft:rabbit> * 47]); // Dwarf Rabbit
 # add(<entity:twilightforest:castle_guardian>         , []); // Castle Guardian [NYI]
   add(<entity:twilightforest:death_tome>              , [<minecraft:book> * 90, <minecraft:enchanted_book>.withTag({StoredEnchantments: [{lvl: 1 as short, id: 16}]}) * 1, <minecraft:enchanted_book>.withTag({StoredEnchantments: [{lvl: 1 as short, id: 19}]}) * 1, <minecraft:enchanted_book>.withTag({StoredEnchantments: [{lvl: 1 as short, id: 32}]}) * 1, <minecraft:enchanted_book>.withTag({StoredEnchantments: [{lvl: 2 as short, id: 2}]}) * 1, <minecraft:enchanted_book>.withTag({StoredEnchantments: [{lvl: 2 as short, id: 32}, {lvl: 1 as short, id: 57}]}) * 1, <minecraft:enchanted_book>.withTag({StoredEnchantments: [{lvl: 3 as short, id: 34}]}) * 1, <minecraft:paper> * 352, <minecraft:writable_book> * 8, <twilightforest:magic_map_focus> * 2]); // Death Tome
-  add(<entity:twilightforest:deer>                    , [<harvestcraft:venisonrawitem> * 194, <minecraft:leather> * 106]); // Wild Deer
+  add(<entity:twilightforest:deer>                    , [<harvestcraft:venisonrawitem> * 194, <minecraft:leather> * 106, <betteranimalsplus:antler> * 50]); // Wild Deer
   add(<entity:twilightforest:fire_beetle>             , [<minecraft:gunpowder> * 99, <thermalfoundation:material:771> * 18]); // Fire Beetle
 # add(<entity:twilightforest:firefly>                 , []); // Firefly
   add(<entity:twilightforest:giant_miner>             , [<twilightforest:giant_pickaxe> * 100]); // Giant Miner
@@ -308,9 +308,9 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:twilightforest:stable_ice_core>         , [<minecraft:snowball> * 98, <mysticalagriculture:ice_essence> * 800]); // Stable Ice Core
   add(<entity:twilightforest:swarm_spider>            , [<minecraft:arrow> * 1, <minecraft:spider_eye> * 32, <minecraft:string> * 92]); // Swarm Spider
   add(<entity:twilightforest:tiny_bird>               , [<minecraft:feather> * 95]); // Tiny Bird
-  add(<entity:twilightforest:tower_broodling>         , [<minecraft:arrow> * 1, <minecraft:bone> * 1, <minecraft:spider_eye> * 32, <minecraft:string> * 100]); // Carminite Broodling
+  add(<entity:twilightforest:tower_broodling>         , [<minecraft:spider_eye> * 32, <minecraft:string> * 100, <plustic:osgloglasnugget> * 150]); // Carminite Broodling
   add(<entity:twilightforest:tower_ghast>             , [<minecraft:ghast_tear> * 50, <minecraft:gunpowder> * 102, <thermalfoundation:material:771> * 18]); // Carminite Ghastguard
-  add(<entity:twilightforest:tower_golem>             , [<minecraft:iron_ingot> * 101, <twilightforest:tower_wood> * 99]); // Carminite Golem
+  add(<entity:twilightforest:tower_golem>             , [<minecraft:iron_ingot> * 101, <twilightforest:tower_wood> * 99, <mekanism:enrichedalloy> * 75]); // Carminite Golem
   add(<entity:twilightforest:tower_termite>           , [<twilightforest:borer_essence> * 87]); // Towerwood Borer
   add(<entity:twilightforest:troll>                   , [<twilightforest:magic_beans> * 4]); // Cave Troll
   add(<entity:twilightforest:unstable_ice_core>       , [<forestry:crafting_material:5> * 591, <minecraft:snowball> * 96]); // Unstable Ice Core
