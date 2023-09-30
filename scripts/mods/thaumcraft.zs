@@ -1225,6 +1225,8 @@ mods.astralsorcery.Altar.addConstellationAltarRecipe(
   }).shapeless()
 );
 
+mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:filter>);
+
 # Add rare drop to loot crates
 # TODO: Seems like this tweak not working
 loottweaker.LootTweaker.getTable("thaumicaugmentation:block/loot_common").getPool("loot_common").addItemEntry(<qmd:semiconductor:1>, 1);
