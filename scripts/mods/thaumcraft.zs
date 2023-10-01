@@ -4,6 +4,13 @@ import crafttweaker.item.WeightedItemStack;
 import thaumcraft.aspect.CTAspectStack;
 import crafttweaker.data.IData;
 
+import loottweaker.LootTweaker;
+import loottweaker.vanilla.loot.LootTables;
+import loottweaker.vanilla.loot.LootTable;
+import loottweaker.vanilla.loot.LootPool;
+import loottweaker.vanilla.loot.Conditions;
+import loottweaker.vanilla.loot.Functions;
+
 #modloaded thaumcraft
 
 # Add durability to scribbing tools
@@ -1227,6 +1234,8 @@ mods.astralsorcery.Altar.addConstellationAltarRecipe(
 
 mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:filter>);
 mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:inlay>);
+
+LootTweaker.getTable("thaumicaugmentation:block/loot_rare").getPool("loot_rare").addItemEntryHelper(<thaumcraft:banner_crimson_cult>,10,0,[Functions.setCount(1, 2)],[]);
 
 # Add rare drop to loot crates
 # TODO: Seems like this tweak not working
