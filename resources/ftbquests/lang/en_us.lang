@@ -981,7 +981,6 @@ q.thaumcraft.thaumium_fortress_.desc=The §6Thaumium Fortress Armor§r provides 
 q.thaumcraft.amulet_of_vis.desc=The §6Amulet of Vis§r will automatically charge all items in the inventory as well as equipment and baubles.
 q.thaumcraft.causality_collapser.desc=The §6Causality Collapser§r will cause §0rifts§r to collapse. Simply throw it into one §7(don't drop)§r.
 q.thaumcraft.belt_of_the_travel.desc=The §6Belt of the Traveller§r provides the same effect as the §6Boots of the Traveller§r.
-
 q.thaumcraft.porous_stone.desc=Tainted Stone turns into Porous Stone if it runs out of taint (Taint Seed).\n\nHas a §620%% chance§r to drop non-gravel.\nGrows up to §c80%% chance§r with §oFortune III§r.
 q.thaumcraft.golem.desc=Golem health and armor has been buffed
 q.thaumcraft.totems.name=Totems
