@@ -34,6 +34,14 @@ for lang, entries in {
     slow_add : '§7With §6%s§7 placed, you feel the portal spreading slower.',
     slow_max : '§7Portal completely stopped spreading.',
   },
+  zh_cn: {
+    created_1: '§7来自下界传送门的腐化能量会缓慢扩散到传送门附近 §6%s§7 格的范围内，除非把 ',
+    created_2:          '§7 放置在传送门的四个角落。',
+    broken   : '§7下界传送门已被破坏，腐化能量不再扩散。',
+    slow_red : '§7有 §6%s§7 被移除了，你感到下界传送门扩散的速度正在加快。',
+    slow_add : '§7有 §6%s§7 被放置了，你感到下界传送门扩散的速度正在减缓。',
+    slow_max : '§7传送门完全停止了扩散。',
+  },
 } as string[string][string] {
   for k, v in entries {
     game.setLocalization(lang, 'portal_spread.'~k, v);
