@@ -1,3 +1,15 @@
 # Various fixes
-modifier.excompressum:smashingii.desc=锤击压缩块
-tile.spectreCoil_number.info=产生32个RF/t并输出到所连接的块中。它们可以在地牢箱子中找到。
+modifier.excompressum:smashingii.desc=锤击压缩方块
+tile.spectreCoil_number.info=产生32 RF/t并输出到所贴的方块中。它们可以在地牢箱子中找到。
+
+# itemGroup.other=ContentTweaker
+fluid.heavy_metal=熔融沉重金属
+fluid.cheese=奶酪
+# fluid.seed=Seed
+fluid.spectre=液态通灵
+fluid.perfect_fuel=完美燃料
+fluid.electronics=熔融电子器件
+fluid.terrestrial=熔融天地宝晶
+fluid.mithrillium=熔融秘银
+fluid.adaminite=熔融精金
+fluid.mithminite=熔融秘金
