@@ -20,10 +20,10 @@ game.setLocalization('ru_ru', 'chat.handitem.to'                 , 'игроку
 game.setLocalization('ru_ru', 'chat.handitem.you_have_been_given', 'Вам передали');
 game.setLocalization('ru_ru', 'chat.handitem.by'                 , 'от игрока');
 
-game.setLocalization('zh_cn', 'chat.handitem.you_have_given'     , '您已经将');
+game.setLocalization('zh_cn', 'chat.handitem.you_have_given'     , '你已经将');
 game.setLocalization('zh_cn', 'chat.handitem.to'                 , '交给');
-game.setLocalization('zh_cn', 'chat.handitem.you_have_been_given', '你从');
-game.setLocalization('zh_cn', 'chat.handitem.by'                 , '获得了');
+game.setLocalization('zh_cn', 'chat.handitem.you_have_been_given', '你获得了');
+game.setLocalization('zh_cn', 'chat.handitem.by'                 , '，来自');
 
 val mainHand = crafttweaker.entity.IEntityEquipmentSlot.mainHand();
 
