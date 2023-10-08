@@ -1,6 +1,6 @@
 # Various fixes
 modifier.excompressum:smashingii.desc=锤击压缩方块
-tile.spectreCoil_number.info=产生32 RF/t并输出到所贴的方块中。它们可以在地牢箱子中找到。
+tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
 
 # itemGroup.other=ContentTweaker
 fluid.heavy_metal=熔融沉重金属
@@ -43,5 +43,33 @@ tile.contenttweaker.compressed_basalt_double.name=双重压缩玄武岩
 tile.contenttweaker.conglomerate_of_life.name=生命团块
 tile.contenttweaker.conglomerate_of_coal.name=煤炭团块
 tile.contenttweaker.conglomerate_of_sun.name=耀阳团块
-tile.contenttweaker.silicon_block.name=硅方块
+tile.contenttweaker.silicon_block.name=硅块
 # item.contenttweaker.knowledge_absorber.name=Knowledge Absorber
+
+item.contenttweaker.supremium_boots_base.name=终极精华靴子核心基底
+item.contenttweaker.supremium_chest_base.name=终极精华胸甲核心基底
+item.contenttweaker.supremium_helmet_base.name=终极精华头盔核心基底
+item.contenttweaker.supremium_leggings_base.name=终极精华护腿核心基底
+item.contenttweaker.empowered_phosphor.name=充能荧光粉
+item.contenttweaker.saturated_phosphor.name=饱和荧光粉
+item.contenttweaker.blasted_coal.name=烈爆煤炭
+item.contenttweaker.any_different_item.name=§k--§r 任何§e不相同的§r物品 §k--§r
+item.contenttweaker.ore_phosphor.name=荧光粉矿石
+item.contenttweaker.nugget_phosphor.name=荧光粉粒
+item.contenttweaker.dust_tiny_gold.name=小堆金粉
+item.contenttweaker.dust_tiny_silver.name=小堆银粉
+item.contenttweaker.fruit_pill.name=水果营养药丸
+item.contenttweaker.dairy_pill.name=乳制品营养药丸
+item.contenttweaker.vegetable_pill.name=蔬菜营养药丸
+item.contenttweaker.protein_pill.name=蛋白质营养药丸
+item.contenttweaker.grain_pill.name=谷物营养药丸
+
+tile.contenttweaker.terrestrial_artifact_block.name=天地宝晶块
+tile.contenttweaker.benitoite.name=§b蓝锥矿晶体
+tile.contenttweaker.anglesite.name=§6硫酸铅矿晶体
+tile.contenttweaker.ore_benitoite.name=§b蓝锥矿
+tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
+
+# contenttweaker.part.fluid=%s
+
+item.contenttweaker.bee_diversity.name=蜜蜂集市
