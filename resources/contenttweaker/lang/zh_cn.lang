@@ -177,3 +177,26 @@ e2ee.creature_resisted_morb=§8这个生物在反抗 §n§8%s 的捕捉。
 e2ee.creature_uncapturable=§7该生物不能被捕捉。 
 tooltips.lang.morb_resist=§r对于血量低于总血量的 §4<%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
 # >
+
+# Bugged langs that losed their names
+entity.Villager.shady_merchant=黑心商人
+entity.Villager.red_mechanic=红石工程师
+entity.Villager.alchemist=炼金术师
+entity.Villager.endreborn.end_explorer=末地探险家
+entity.Villager.endreborn.nether_explorer=下界探险家
+entity.Villager.endreborn.overworld_explorer=主世界探险家
+entity.Villager.plague_doctor=瘟疫医生
+item.advgenerators.turbine_blade_gold.name=金制涡轮机叶片
+tile.witchwater.name=巫水
+tile.colored_waterfall_block.name=染色瀑布方块#*
+robot.name=泛用机器人
+material.Dilithium.name=双锂
+item.battery.0.name=单重电池
+item.battery.1.name=四重电池
+tile.rftdimtweak.dimension_builder.name=维度构建器
+tile.rftdimtweak.dimension_editor.name=维度编辑器
+entity.AngryChicken.name=愤怒的鸡
+tile.ocsensors.sensor.name=开放式传感器
+item.positron_unit.name=正电子单元
+# item.quantron.name=Quantron
+tile.industrialwires.hv_multiblock.marx.name=马克斯发生器
