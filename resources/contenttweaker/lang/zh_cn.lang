@@ -143,3 +143,11 @@ item.singularity.fluxed.name=§4燃烧奇点
 tooltips.lang.singularity.heat=§7中间产物。§r\n将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
 tooltips.lang.singularity.burn=将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
 item.contenttweaker.any_burnable.name=§6任何可燃物
+
+# Custom renames 重命名
+item.excompressum:bait_unknown.name=任何诱饵
+item.catalyst.name=§d黑曜石催化剂
+tile.block_decorative_lormyte.name=洛米特块
+e2ee.tile.basalt_sediment=沉积玄武岩
+e2ee.tile.unsalted_basalt=新近玄武岩
+
