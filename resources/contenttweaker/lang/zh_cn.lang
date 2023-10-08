@@ -114,3 +114,24 @@ e2ee.tconstruct.material.researcher.name=研究员
 e2ee.tconstruct.material.researcher.description=基于魔导手册中完成的研究，获得不同的状态效果
 e2ee.tconstruct.material.first_stand.name=First Stand#
 e2ee.tconstruct.material.first_stand.description=消耗经验完全抵挡受到的伤害
+
+warp.sword.warning=§o§5 你还不够疯狂，无法使用这等力量。§r
+
+# warp.sword.speak.random.0=§o§5I will put in the grave as many as I can, just one swing is enough!§r
+warp.sword.speak.random.1=§o§5血的河流，会变成汪洋...§r
+warp.sword.speak.random.2=§o§5我们就不能把活物全都杀了？...§r
+warp.sword.speak.random.3=§o§5扎哈尔要求献祭！§r
+warp.sword.speak.random.4=§o§5越多杀戮，越发饥渴
+warp.sword.speak.random.5=§o§5天空愈发暗沉，哭喊此时终止，生命走到了尽头...
+warp.sword.speak.random.6=§o§5等待，猩红的黎明和恐惧的眼泪
+warp.sword.speak.random.7=§o§5畏惧...憎恨...绝望...
+warp.sword.speak.random.8=§o§5守门人一直看着呢...
+
+warp.sword.speak.kill.0=§o§5我听得到它们的哭喊，它们的苦痛在我的血管里流动，像是吸毒。继续... 继续...§r
+warp.sword.speak.kill.1=§o§5继续啊! 继续啊! 继续啊!§r
+warp.sword.speak.kill.2=§o§5心脏还在跳，我听见了...
+warp.sword.speak.kill.3=§o§5无头，无命
+# warp.sword.speak.kill.4=§o§5Another tasty flash
+warp.sword.speak.kill.5=§o§5再多为扎哈尔献上一次献祭吧
+warp.sword.speak.kill.6=§o§5如同深渊之中... 又一个愚蠢的，死人!
+warp.sword.speak.kill.7=§o§5再献祭一条灵魂，扎哈尔就满意了
