@@ -163,3 +163,17 @@ e2ee.written_book.Dog=狗
 e2ee.written_book.Sheep=羊
 e2ee.written_book.Creeper=苦力怕
 e2ee.written_book.Zombie=僵尸
+
+# Misc 
+e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
+e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
+e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r
+e2ee.chapter_complete=§l%s§r 已经完成了 §n%s§r 章节，用时 §l%s§r ！§r ```祝贺!```
+e2ee.player_achieved=§l%s§r 达成了 §n%s§r 成就，用时 §l%s§r ！§r
+e2ee.eu2_drum_error=§7你需要留有至少一个空的背包槽位
+e2ee.danknull_dock.must_have=§7你需要在副手持有一个 §f%s§7 才能把 %s§7 插入 %s§7。§f%s§7 会被永久消耗。
+e2ee.restrict.vis_seeds=§7§e魔力种子§7只能被种在§nthe Void§7维度或是§n其他星球§7。种植这些种子需要氧气。
+e2ee.creature_resisted_morb=§8这个生物在反抗 §n§8%s 的捕捉。
+e2ee.creature_uncapturable=§7该生物不能被捕捉。 
+tooltips.lang.morb_resist=§r对于血量低于总血量的 §4<%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
+# >
