@@ -133,5 +133,13 @@ warp.sword.speak.kill.2=§o§5心脏还在跳，我听见了...
 warp.sword.speak.kill.3=§o§5无头，无命
 # warp.sword.speak.kill.4=§o§5Another tasty flash
 warp.sword.speak.kill.5=§o§5再多为扎哈尔献上一次献祭吧
-warp.sword.speak.kill.6=§o§5如同深渊之中... 又一个愚蠢的，死人!
+warp.sword.speak.kill.6=§o§5如同深渊之下... 又一个愚蠢的，死人!
 warp.sword.speak.kill.7=§o§5再献祭一条灵魂，扎哈尔就满意了
+
+item.singularity.silver.name=§b皮毛奇点
+item.singularity.iron.name=§7空奇点
+item.singularity.nickel.name=§e火热奇点
+item.singularity.fluxed.name=§4燃烧奇点
+tooltips.lang.singularity.heat=§7中间产物。§r\n将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
+tooltips.lang.singularity.burn=将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
+item.contenttweaker.any_burnable.name=§6任何可燃物
