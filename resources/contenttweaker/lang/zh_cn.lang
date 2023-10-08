@@ -73,3 +73,20 @@ tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
 # contenttweaker.part.fluid=%s
 
 item.contenttweaker.bee_diversity.name=蜜蜂集市
+
+e2ee.tconstruct.material.spectre.name=通灵
+e2ee.tconstruct.material.spectre.description=§b灵光\n每个部件都可以给予玩家额外的"延伸"药水效果
+e2ee.tconstruct.material.mentor.name=导师
+e2ee.tconstruct.material.mentor.description=§o知识的力量\n§r攻击时，每个部件会各消耗 1 级经验，然后额外造成总共 √(经验等级 * 导师部件数量) 的伤害
+e2ee.tconstruct.material.apprentice.name=学徒
+e2ee.tconstruct.material.apprentice.description=§o学习的力量\n§r受到攻击时会获得相当于所受伤害总量的 10% 的经验，同时多受到 10% 伤害
+e2ee.tconstruct.material.spectre_string.name=通灵纤维
+e2ee.tconstruct.material.alpha_fur.name=首领毛皮
+e2ee.tconstruct.material.alpha_fur.description=§b霜冻\n§r冻住攻击目标或伤害来源
+e2ee.tconstruct.material.grinding.name=磨碎
+e2ee.tconstruct.material.grinding.description=§o跳！\n§r在矿石上跳跃可以将其粉碎
+e2ee.tconstruct.material.heavy.name=沉重
+e2ee.tconstruct.material.axing.name=削砍
+e2ee.tconstruct.material.axing.description=§o木屑飞扬\n§r挖掘原木可以得到 4 个对应的木板
+e2ee.tconstruct.material.axing2.name=削砍 II
+e2ee.tconstruct.material.axing2.description=§o大开大合\n§r挖掘原木可以得到 6 个对应的木板
