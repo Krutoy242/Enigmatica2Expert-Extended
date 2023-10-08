@@ -151,3 +151,15 @@ tile.block_decorative_lormyte.name=洛米特块
 e2ee.tile.basalt_sediment=沉积玄武岩
 e2ee.tile.unsalted_basalt=新近玄武岩
 
+# Manual langs 手册
+e2ee.garbage.affect_output_amount=§6影响输出结果的数量§r
+e2ee.written_book.by=§6一本由 %s 写下的书
+e2ee.written_book.Cow=牛
+e2ee.written_book.Pig=猪
+e2ee.written_book.Cat=猫
+e2ee.written_book.Enderman=末影人
+e2ee.written_book.Chicken=鸡
+e2ee.written_book.Dog=狗
+e2ee.written_book.Sheep=羊
+e2ee.written_book.Creeper=苦力怕
+e2ee.written_book.Zombie=僵尸
