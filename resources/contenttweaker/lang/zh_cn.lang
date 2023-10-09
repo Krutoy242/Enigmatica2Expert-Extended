@@ -28,7 +28,7 @@ tile.contenttweaker.compressed_crushed_andesite.name=压缩粉碎安山岩
 tile.contenttweaker.compressed_crushed_diorite.name=压缩粉碎闪长岩
 tile.contenttweaker.compressed_crushed_granite.name=压缩粉碎花岗岩
 tile.contenttweaker.compressed_crushed_skystone.name=压缩粉碎陨石
-tile.contenttweaker.compressed_dried_sand.name=压缩干砂
+tile.contenttweaker.compressed_dried_sand.name=压缩干沙
 tile.contenttweaker.compressed_gravisand.name=压缩重力沙子
 tile.contenttweaker.compressed_red_sand.name=压缩红沙
 tile.contenttweaker.compressed_white_sand.name=压缩白沙
@@ -54,7 +54,7 @@ item.contenttweaker.empowered_phosphor.name=充能荧光粉
 item.contenttweaker.saturated_phosphor.name=饱和荧光粉
 item.contenttweaker.blasted_coal.name=烈爆煤炭
 item.contenttweaker.any_different_item.name=§k--§r 任何§e互不相同的§r物品 §k--§r
-item.contenttweaker.ore_phosphor.name=荧光粉矿石
+item.contenttweaker.ore_phosphor.name=荧光粉矿
 item.contenttweaker.nugget_phosphor.name=荧光粉粒
 item.contenttweaker.dust_tiny_gold.name=小堆金粉
 item.contenttweaker.dust_tiny_silver.name=小堆银粉
@@ -72,7 +72,7 @@ tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
 
 # contenttweaker.part.fluid=%s
 
-item.contenttweaker.bee_diversity.name=蜜蜂集市
+item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 
 e2ee.tconstruct.material.spectre.name=通灵
 e2ee.tconstruct.material.spectre.description=§b灵光\n每个部件都可以给予玩家额外的"延伸"药水效果
@@ -100,7 +100,7 @@ e2ee.tconstruct.material.adaminite.name=精金
 e2ee.tconstruct.material.forbidden.name=禁忌
 e2ee.tconstruct.material.forbidden.description= ̸̻͗̕ ̷͍̓͋ ̷̫͚̕ ̴̳̈ ̵̲͓͘ ̵̠͆ ̸̖̌̄ ̴̨̩̉́ ̸̞̺͝ ̷̢̖̒ ̶͍̺̉ ̴̦͉̊͝ ̸̦̽ ̷̺̽ ̷͖̼͌̌ ̴̹̪̀ ̷̩̜̐ ̶̩͑ ̷̢̝͗ ̵̞͕̔̆ ̴̡̀ ̸̛͓̞̎ ̴̻͑ ̸̛̤̈́ ̸̛͙͂ ̷̜̟̉.
 e2ee.tconstruct.material.possessed.name=鬼魂附着
-e2ee.tconstruct.material.possessed.description=扎哈尔的意志降临在用于毁灭的工具上，呼喊出生命的本质#
+e2ee.tconstruct.material.possessed.description=扎哈尔的意志降临在用于毁灭的工具上，呼喊出生命的本质
 e2ee.tconstruct.material.porous.name=千疮百孔
 e2ee.tconstruct.material.porous.description=脚下的石头腐化于你身上的衰朽气息
 e2ee.tconstruct.material.gaze.name=死亡凝视
