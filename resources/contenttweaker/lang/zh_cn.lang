@@ -101,8 +101,8 @@ e2ee.tconstruct.material.forbidden.name=禁忌
 e2ee.tconstruct.material.forbidden.description= ̸̻͗̕ ̷͍̓͋ ̷̫͚̕ ̴̳̈ ̵̲͓͘ ̵̠͆ ̸̖̌̄ ̴̨̩̉́ ̸̞̺͝ ̷̢̖̒ ̶͍̺̉ ̴̦͉̊͝ ̸̦̽ ̷̺̽ ̷͖̼͌̌ ̴̹̪̀ ̷̩̜̐ ̶̩͑ ̷̢̝͗ ̵̞͕̔̆ ̴̡̀ ̸̛͓̞̎ ̴̻͑ ̸̛̤̈́ ̸̛͙͂ ̷̜̟̉.
 e2ee.tconstruct.material.possessed.name=鬼魂附着
 e2ee.tconstruct.material.possessed.description=扎哈尔的意志降临在用于毁灭的工具上，呼喊出生命的本质#
-e2ee.tconstruct.material.porous.name=千疮百孔#
-e2ee.tconstruct.material.porous.description=脚下的石头腐化于你身上的衰朽气息#
+e2ee.tconstruct.material.porous.name=千疮百孔
+e2ee.tconstruct.material.porous.description=脚下的石头腐化于你身上的衰朽气息
 e2ee.tconstruct.material.gaze.name=死亡凝视
 e2ee.tconstruct.material.gaze.description=不时给予死亡凝视效果。§o§5强迫愚者屈膝于前§r
 e2ee.tconstruct.material.void_shell.name=虚空腔壳
@@ -112,8 +112,8 @@ e2ee.tconstruct.material.eldritch_retribution.description=胆敢反抗你的，�
 e2ee.tconstruct.material.mithminite.name=秘金
 e2ee.tconstruct.material.researcher.name=研究员
 e2ee.tconstruct.material.researcher.description=基于魔导手册中完成的研究，获得不同的状态效果
-e2ee.tconstruct.material.first_stand.name=First Stand#
-e2ee.tconstruct.material.first_stand.description=消耗经验完全抵挡受到的伤害
+e2ee.tconstruct.material.first_stand.name=首当其冲
+e2ee.tconstruct.material.first_stand.description=消耗经验来完全抵挡受到的伤害
 
 warp.sword.warning=§o§5 你还不够疯狂，无法使用这等力量。§r
 
@@ -133,7 +133,7 @@ warp.sword.speak.kill.2=§o§5心脏还在跳，我听见了...
 warp.sword.speak.kill.3=§o§5无头，无命
 # warp.sword.speak.kill.4=§o§5Another tasty flash
 warp.sword.speak.kill.5=§o§5再多为扎哈尔献上一次献祭吧
-warp.sword.speak.kill.6=§o§5如同深渊之下... 又一个愚蠢的，死人!
+warp.sword.speak.kill.6=§o§5如同深渊之下... 又一个愚蠢的，死人！
 warp.sword.speak.kill.7=§o§5再献祭一条灵魂，扎哈尔就满意了
 
 item.singularity.silver.name=§b皮毛奇点
@@ -152,8 +152,8 @@ e2ee.tile.basalt_sediment=沉积玄武岩
 e2ee.tile.unsalted_basalt=新近玄武岩
 
 # Manual langs 手册
-e2ee.garbage.affect_output_amount=§6影响输出结果的数量§r
-e2ee.written_book.by=§6一本由 %s 写下的书
+e2ee.garbage.affect_output_amount=§6影响输出结果的量§r
+e2ee.written_book.by=§6一本由%s写下的书
 e2ee.written_book.Cow=牛
 e2ee.written_book.Pig=猪
 e2ee.written_book.Cat=猫
@@ -188,7 +188,7 @@ entity.Villager.endreborn.overworld_explorer=主世界探险家
 entity.Villager.plague_doctor=瘟疫医生
 item.advgenerators.turbine_blade_gold.name=金制涡轮机叶片
 tile.witchwater.name=巫水
-tile.colored_waterfall_block.name=染色瀑布方块#*
+tile.colored_waterfall_block.name=染色瀑布方块
 robot.name=泛用机器人
 material.Dilithium.name=双锂
 item.battery.0.name=单重电池
@@ -197,8 +197,8 @@ tile.rftdimtweak.dimension_builder.name=维度构建器
 tile.rftdimtweak.dimension_editor.name=维度编辑器
 entity.AngryChicken.name=愤怒的鸡
 tile.ocsensors.sensor.name=开放式传感器
-item.positron_unit.name=正电子单元
-# item.quantron.name=Quantron
+item.positron_unit.name=正电子能量单元
+item.quantron.name=量子能量单元
 tile.industrialwires.hv_multiblock.marx.name=马克斯发生器
 
 tooltips.lang.tag.generator=§6#发电机
