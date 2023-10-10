@@ -362,19 +362,19 @@ requious.jei.recipe.liquid_heat_exchanger=流体热交换机
 requious.jei.recipe.liquid_interaction=流体接触
 requious.jei.recipe.meteor=流星
 requious.jei.recipe.mineralis=晶金座效应
-requious.jei.recipe.neromantic_prime=Neromantic Prime
-requious.jei.recipe.pech_trades=Pech Trades
-requious.jei.recipe.petro_petunia=Petro Petunia
-requious.jei.recipe.scented_hive=Scented Hive
-requious.jei.recipe.syngas_producer=Syngas Producer
-requious.jei.recipe.transmuters_stone=Transmuters Stone
-requious.jei.recipe.turbine=Turbine
-requious.jei.recipe.typewriter=Typewriter
-requious.jei.recipe.witch_water=Witch Water
+# requious.jei.recipe.neromantic_prime=Neromantic Prime
+requious.jei.recipe.pech_trades=岩精交易
+requious.jei.recipe.petro_petunia=石油矮牵牛花
+requious.jei.recipe.scented_hive=清香的人工蜂巢
+requious.jei.recipe.syngas_producer=合成气制造器
+requious.jei.recipe.transmuters_stone=转化之石
+requious.jei.recipe.turbine=涡轮机
+requious.jei.recipe.typewriter=打字机
+requious.jei.recipe.witch_water=巫水转化
 
 tile.adv_bee_analyzer.name=高级蜜蜂分析仪
-tile.infinity_furnace.name=Infinity Furnace
-tile.replicator.name=§5Replicator
+tile.infinity_furnace.name=无尽熔炉
+tile.replicator.name=§5复制机
 
 # --------------------------------------
 # Moar Reactor Functionality
