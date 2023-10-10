@@ -1,4 +1,4 @@
-# Various fixes
+# Various fixes 表述修复
 modifier.excompressum:smashingii.desc=锤击压缩方块
 tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
 
@@ -164,7 +164,7 @@ e2ee.written_book.Sheep=羊
 e2ee.written_book.Creeper=苦力怕
 e2ee.written_book.Zombie=僵尸
 
-# Misc 
+# Misc 杂项
 e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
 e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
 e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r
@@ -178,7 +178,7 @@ e2ee.creature_uncapturable=§7该生物不能被捕捉。
 tooltips.lang.morb_resist=§r对于血量低于总血量的 §4<%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
 # >
 
-# Bugged langs that losed their names
+# Bugged langs that losed their names 修复失去本地化的条目
 entity.Villager.shady_merchant=黑心商人
 entity.Villager.red_mechanic=红石工程师
 entity.Villager.alchemist=炼金术师
@@ -240,7 +240,7 @@ tooltips.lang.removed.crash=§4已被禁用，因为其会导致服务端崩溃
 
 tooltips.lang.requires.rf=需要消耗 %s RF 制作.
 tooltips.lang.craftable=可合成
-tooltips.lang.space_gen=只能在其他星球上自然生成。
+tooltips.lang.space_gen=只在其他星球上自然生成。
 tooltips.lang.mekanism_factories=工厂是通过对世界内的机器方块使用基础/高级/精英工厂安装器得到的。
 tooltips.lang.mekanism_t_ultimate=§d只对箱柜、能量立方、储罐、气体储罐有效
 tooltips.lang.ic2wrench=现在 IC2 机器可以放心地用镐挖掘，机器不会损毁。
@@ -255,7 +255,7 @@ tooltips.lang.et_cont_1=需要方块：\n%s 一级或更高级的结构方块\n%
 tooltips.lang.solar_cont=需要方块：\n%s 无效果或者压电强化部件\n%s 结构方块等级 %s\n任意种类 %s 太阳能电池
 tooltips.lang.et_miner_cont_any=需要方块：\n%s 无效果/速度/精度强化部件\n%s 结构方块等级 %s\n%s 结构镶板\n%s 激光核心\n1 任意激光透镜
 tooltips.lang.nano_cont_personal=需要方块：\n%s 无效果/任意对应有药水效果的强化部件\n%s 结构方块等级 %s\n%s 结构镶板
-tooltips.lang.lightning_cont=需要方块：\n%s 结构方块等级 %s\n%s 绝缘避雷针\n%s 绝缘避雷针
+tooltips.lang.lightning_cont=需要方块：\n%s 结构方块等级 %s\n%s 避雷针\n%s 绝缘避雷针
 tooltips.lang.et.or_above=或更高
 tooltips.lang.fuel.shift_for_list===按住 Shift 展开燃料列表==
 tooltips.lang.strike_with_lightning=通过雷击生命源质获得
@@ -362,7 +362,7 @@ requious.jei.recipe.liquid_heat_exchanger=流体热交换机
 requious.jei.recipe.liquid_interaction=流体接触
 requious.jei.recipe.meteor=流星
 requious.jei.recipe.mineralis=晶金座效应
-# requious.jei.recipe.neromantic_prime=Neromantic Prime
+requious.jei.recipe.neromantic_prime=纳尔狂曼喷口
 requious.jei.recipe.pech_trades=岩精交易
 requious.jei.recipe.petro_petunia=石油矮牵牛花
 requious.jei.recipe.scented_hive=清香的人工蜂巢
@@ -377,14 +377,14 @@ tile.infinity_furnace.name=无尽熔炉
 tile.replicator.name=§5复制机
 
 # --------------------------------------
-# Moar Reactor Functionality
+# Moar Reactor Functionality 为反应堆添加功能
 # --------------------------------------
 fluid.hot_carbon_dioxide=Hot Carbon Dioxide
 fluid.compr_carbon_dioxide=Compressed Carbon Dioxide
 fluid.supercritical_carbon_dioxide=Supercritical Carbon Dioxide
 fluid.critical_exhaust_carbon_dioxide=Critical Exhaust Carbon Dioxide
 # --------------------------------------
-# New Turbine Parts
+# New Turbine Parts 新的反应堆部件
 # --------------------------------------
 item.contenttweaker.elektron60_ingot.name=Elektron60-Alloy Ingot
 tile.contenttweaker.elektron60_block.name=Elektron60-Alloy Block
