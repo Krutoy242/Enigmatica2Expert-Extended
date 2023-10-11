@@ -269,7 +269,7 @@ tooltips.lang.thaum.artifice=炼化学
 tooltips.lang.drop_at_night=§3把 §n%s§r§3 扔到 §n%s§r§3 上方，其上需无遮挡地直通夜空
 tooltips.lang.must_see_night=§9上方需直通夜空
 tooltips.lang.burn_in_fluid=§3把 §n%s§r§3 扔入 §n%s§r§3 中烧熔
-tooltips.lang.burn_in_fluid_chance=§3把数个 §n%s§r§3 扔入  §n%s§r§3 中烧熔
+tooltips.lang.burn_in_fluid_chance=§3把数个 §n%s§r§3 扔入 §n%s§r§3 中烧熔
 tooltips.lang.infuse_bedrock=§3拿着 §n%s§r§3 右击 §n%s§r§3
 
 tooltips.lang.dropper_into_world=§c在死亡时掉落到了地上
@@ -386,10 +386,10 @@ fluid.critical_exhaust_carbon_dioxide=临界二氧化碳废气
 # --------------------------------------
 # New Turbine Parts 新的反应堆部件
 # --------------------------------------
-item.contenttweaker.elektron60_ingot.name=镁铝-60合金锭
-tile.contenttweaker.elektron60_block.name=镁铝-60合金块
-item.contenttweaker.blade_core.name=涡轮转子稀土叶片芯
-item.contenttweaker.steel_mould.name=超轻 Edelstahl 模具
-item.contenttweaker.alloy_mould.name=超轻 Edle Elektronlegierung 模具
-item.contenttweaker.sic_mould.name=超轻 Matrix-Legierung 模具
+item.contenttweaker.elektron60_ingot.name=镁钴60合金锭
+tile.contenttweaker.elektron60_block.name=镁钴60合金块
+item.contenttweaker.blade_core.name=稀土涡轮机转子叶片芯
+item.contenttweaker.steel_mould.name=超轻不锈钢粗模
+item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模
+item.contenttweaker.sic_mould.name=超轻矩阵合金粗模
 # --------------------------------------
