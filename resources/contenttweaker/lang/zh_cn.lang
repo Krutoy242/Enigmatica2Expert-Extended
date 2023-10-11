@@ -334,7 +334,7 @@ tooltips.lang.excavate.overrides=§6自带连锁挖掘。\n%s
 tooltips.dim_stages.healthy=§4你需要至少拥有 §6%s 点生命值§4 (%s 颗心) 才能前往§c下界
 tooltips.dim_stages.healthy_grant=你已经拥有了 §6%s 点生命值§r (%s 颗心)！§r你可以前往§c下界§r了！
 tooltips.dim_stages.restricted=§c在§b空岛§c世界中，你无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)§r.
-tooltips.dim_stages.enter_skyblock=§e你进入了一个§b空岛§e世界。你将无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)。另外你现在会拥有持续 3 小时的急迫 IV 效果。§r
+tooltips.dim_stages.enter_skyblock=§e你进入了一个§b空岛§e世界。你将无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)。另外你现在会获得持续 3 小时的急迫 IV 效果。§r
 tooltips.dim_stages.remind_skyblock=§e你再次进入了一个§b空岛§e世界。谨记：你无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)§r。
 
 requious.jei.recipe.adv_bee_analyzer=高级蜜蜂分析仪
@@ -379,17 +379,17 @@ tile.replicator.name=§5复制机
 # --------------------------------------
 # Moar Reactor Functionality 为反应堆添加功能
 # --------------------------------------
-fluid.hot_carbon_dioxide=Hot Carbon Dioxide
-fluid.compr_carbon_dioxide=Compressed Carbon Dioxide
-fluid.supercritical_carbon_dioxide=Supercritical Carbon Dioxide
-fluid.critical_exhaust_carbon_dioxide=Critical Exhaust Carbon Dioxide
+fluid.hot_carbon_dioxide=炽热二氧化碳
+fluid.compr_carbon_dioxide=高压二氧化碳
+fluid.supercritical_carbon_dioxide=超临界二氧化碳
+fluid.critical_exhaust_carbon_dioxide=临界二氧化碳废气
 # --------------------------------------
 # New Turbine Parts 新的反应堆部件
 # --------------------------------------
-item.contenttweaker.elektron60_ingot.name=Elektron60-Alloy Ingot
-tile.contenttweaker.elektron60_block.name=Elektron60-Alloy Block
-item.contenttweaker.blade_core.name=Turbine Rotor Actinide Blade Core
-item.contenttweaker.steel_mould.name=Ultra Light Edelstahl Mould
-item.contenttweaker.alloy_mould.name=Ultra Light Edle Elektronlegierung Mould
-item.contenttweaker.sic_mould.name=Ultra Light Matrix-Legierung Mould
+item.contenttweaker.elektron60_ingot.name=镁铝-60合金锭
+tile.contenttweaker.elektron60_block.name=镁铝-60合金块
+item.contenttweaker.blade_core.name=涡轮转子稀土叶片芯
+item.contenttweaker.steel_mould.name=超轻 Edelstahl 模具
+item.contenttweaker.alloy_mould.name=超轻 Edle Elektronlegierung 模具
+item.contenttweaker.sic_mould.name=超轻 Matrix-Legierung 模具
 # --------------------------------------
