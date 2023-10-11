@@ -16,7 +16,7 @@ fluid.mithminite=熔融秘金
 
 item.contenttweaker.compressed_glowstone.name=压缩荧石
 item.contenttweaker.compressed_ender.name=压缩末影
-item.contenttweaker.compressed_dimensional.name=压缩维度碎片
+item.contenttweaker.compressed_dimensional.name=压缩维度
 
 item.contenttweaker.compressed_tallow.name=压缩油脂
 tile.contenttweaker.compressed_andesite.name=压缩安山岩
@@ -75,7 +75,7 @@ tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
 item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 
 e2ee.tconstruct.material.spectre.name=通灵
-e2ee.tconstruct.material.spectre.description=§b灵光到处现\n每个部件都可以给予玩家额外的"延伸"药水效果
+e2ee.tconstruct.material.spectre.description=§b灵光到处现\n§r每个部件都可以给予玩家额外的"延伸"药水效果
 e2ee.tconstruct.material.mentor.name=导师
 e2ee.tconstruct.material.mentor.description=§o知识的力量\n§r攻击时，每个部件会各消耗 1 级经验，然后额外造成总共 √(经验等级 * 导师部件数量) 的伤害
 e2ee.tconstruct.material.apprentice.name=学徒
@@ -93,7 +93,7 @@ e2ee.tconstruct.material.axing2.description=§o大开大合\n§r挖掘原木可�
 
 e2ee.tconstruct.material.mithrillium.name=秘银
 e2ee.tconstruct.material.vis_siphon.name=Vis虹吸
-e2ee.tconstruct.material.vis_siphon.description=吸取临近区域的 Vis 修补工具
+e2ee.tconstruct.material.vis_siphon.description=可以吸取临近区域的 Vis 修补工具
 e2ee.tconstruct.material.vis_equilibrium.name=Vis平衡
 e2ee.tconstruct.material.vis_equilibrium.description=处在 Vis 水平高的区域时获得属性加成
 e2ee.tconstruct.material.adaminite.name=精金
@@ -228,8 +228,8 @@ tooltips.lang.click.cauldron=通过用世界盐右击炼药锅获得。
 tooltips.lang.obtained.forsaken=通过孤魂集会仪式获得。
 tooltips.lang.obtained.resonance=通过结晶共鸣仪式获得。
 tooltips.lang.pumpjack=采油机需要在底部接口处接一根直通基岩的输液管才能正常工作。
-# tooltips.lang.requires.redstone400=Requires 400 Redstone Units.
-# tooltips.lang.requires.redstone160=Requires 160 Redstone Units.
+tooltips.lang.requires.redstone400=需要 400 单位的红石。
+tooltips.lang.requires.redstone160=需要 160 单位的红石。
 tooltips.lang.reinforced_cell_frame=制作强化能量单元框架（满）需要流体转置机的内部能量储量多于 250,000 RF。
 tooltips.lang.obtained.fabricator_or_excavator=可以通过电弧高炉或者斗轮式挖掘机获得。
 tooltips.lang.obtained.mithril=可以通过§9元始魔力§r的世界内交互获得，也会生成在§1其他维度§r。
@@ -266,7 +266,7 @@ tooltips.lang.thaum.golemancy=傀儡学
 tooltips.lang.thaum.eldritch=邪术学
 tooltips.lang.thaum.arcane=奥术注魔
 tooltips.lang.thaum.artifice=炼化学
-tooltips.lang.drop_at_night=§3把 §n%s§r§3 扔到 §n%s§r§3 上方，其上需无遮挡地直通夜空
+tooltips.lang.drop_at_night=§3把 §n%s§r§3 扔到 §n%s§r§3 上方，上方需要无遮挡地直通夜空
 tooltips.lang.must_see_night=§9上方需直通夜空
 tooltips.lang.burn_in_fluid=§3把 §n%s§r§3 扔入 §n%s§r§3 中
 tooltips.lang.burn_in_fluid_chance=§3把数个 §n%s§r§3 扔入 §n%s§r§3 中
