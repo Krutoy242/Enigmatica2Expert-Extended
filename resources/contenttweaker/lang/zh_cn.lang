@@ -75,7 +75,7 @@ tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
 item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 
 e2ee.tconstruct.material.spectre.name=通灵
-e2ee.tconstruct.material.spectre.description=§b灵光\n每个部件都可以给予玩家额外的"延伸"药水效果
+e2ee.tconstruct.material.spectre.description=§b灵光到处现\n每个部件都可以给予玩家额外的"延伸"药水效果
 e2ee.tconstruct.material.mentor.name=导师
 e2ee.tconstruct.material.mentor.description=§o知识的力量\n§r攻击时，每个部件会各消耗 1 级经验，然后额外造成总共 √(经验等级 * 导师部件数量) 的伤害
 e2ee.tconstruct.material.apprentice.name=学徒
@@ -86,9 +86,9 @@ e2ee.tconstruct.material.alpha_fur.description=§b霜冻\n§r冻住攻击目标�
 e2ee.tconstruct.material.grinding.name=磨碎
 e2ee.tconstruct.material.grinding.description=§o跳！\n§r在矿石上跳跃可以将其粉碎
 e2ee.tconstruct.material.heavy.name=沉重
-e2ee.tconstruct.material.axing.name=削砍
+e2ee.tconstruct.material.axing.name=木材劈砍
 e2ee.tconstruct.material.axing.description=§o木屑飞扬\n§r挖掘原木可以得到 4 个对应的木板
-e2ee.tconstruct.material.axing2.name=削砍 II
+e2ee.tconstruct.material.axing2.name=木材劈砍 II
 e2ee.tconstruct.material.axing2.description=§o大开大合\n§r挖掘原木可以得到 6 个对应的木板
 
 e2ee.tconstruct.material.mithrillium.name=秘银
@@ -175,7 +175,7 @@ e2ee.danknull_dock.must_have=§7你需要在副手持有一个 §f%s§7 才能�
 e2ee.restrict.vis_seeds=§7§e魔力种子§7只能被种在§nthe Void§7维度或是§n其他星球§7。种植这些种子需要氧气。
 e2ee.creature_resisted_morb=§8这个生物在反抗 §n§8%s 的捕捉。
 e2ee.creature_uncapturable=§7该生物不能被捕捉。 
-tooltips.lang.morb_resist=§r对于血量低于总血量的 §4<%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
+tooltips.lang.morb_resist=§r对血量低于总血量的 §4<%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
 # >
 
 # Bugged langs that losed their names 修复失去本地化的条目
@@ -238,11 +238,11 @@ tooltips.lang.ethylene_convert=怎么让高级发电机接受乙烯作为燃料�
 tooltips.lang.redstone.need=§4需要通过红石信号启用
 tooltips.lang.removed.crash=§4已被禁用，因为其会导致服务端崩溃
 
-tooltips.lang.requires.rf=需要消耗 %s RF 制作.
+tooltips.lang.requires.rf=需要消耗 %s RF 制作。
 tooltips.lang.craftable=可合成
 tooltips.lang.space_gen=只在其他星球上自然生成。
 tooltips.lang.mekanism_factories=工厂是通过对世界内的机器方块使用基础/高级/精英工厂安装器得到的。
-tooltips.lang.mekanism_t_ultimate=§d只对箱柜、能量立方、储罐、气体储罐有效
+tooltips.lang.mekanism_t_ultimate=§d只对箱柜、能量立方、储罐、气体储罐有效。
 tooltips.lang.ic2wrench=现在 IC2 机器可以放心地用镐挖掘，机器不会损毁。
 
 tooltips.lang.small_plate_presser=高级火箭的小型压板机是最早可及（且机器造价最低）的金属板/金属杆获取方法。
@@ -268,8 +268,8 @@ tooltips.lang.thaum.arcane=奥术注魔
 tooltips.lang.thaum.artifice=炼化学
 tooltips.lang.drop_at_night=§3把 §n%s§r§3 扔到 §n%s§r§3 上方，其上需无遮挡地直通夜空
 tooltips.lang.must_see_night=§9上方需直通夜空
-tooltips.lang.burn_in_fluid=§3把 §n%s§r§3 扔入 §n%s§r§3 中烧熔
-tooltips.lang.burn_in_fluid_chance=§3把数个 §n%s§r§3 扔入 §n%s§r§3 中烧熔
+tooltips.lang.burn_in_fluid=§3把 §n%s§r§3 扔入 §n%s§r§3 中
+tooltips.lang.burn_in_fluid_chance=§3把数个 §n%s§r§3 扔入 §n%s§r§3 中
 tooltips.lang.infuse_bedrock=§3拿着 §n%s§r§3 右击 §n%s§r§3
 
 tooltips.lang.dropper_into_world=§c在死亡时掉落到了地上
