@@ -44,7 +44,7 @@ tile.contenttweaker.conglomerate_of_life.name=生命团块
 tile.contenttweaker.conglomerate_of_coal.name=煤炭团块
 tile.contenttweaker.conglomerate_of_sun.name=耀阳团块
 tile.contenttweaker.silicon_block.name=硅块
-# item.contenttweaker.knowledge_absorber.name=Knowledge Absorber
+item.contenttweaker.knowledge_absorber.name=知识吸收器
 
 item.contenttweaker.supremium_boots_base.name=终极精华靴子核心基底
 item.contenttweaker.supremium_chest_base.name=终极精华胸甲核心基底
@@ -117,7 +117,7 @@ e2ee.tconstruct.material.first_stand.description=消耗经验来完全抵挡受�
 
 warp.sword.warning=§o§5 你还不够疯狂，无法使用这等力量。§r
 
-# warp.sword.speak.random.0=§o§5I will put in the grave as many as I can, just one swing is enough!§r
+warp.sword.speak.random.0=§o§5把它们统统堕入坟墓，武器一挥就够了！§r
 warp.sword.speak.random.1=§o§5血的河流，会变成汪洋...§r
 warp.sword.speak.random.2=§o§5我们就不能把活物全都杀了？...§r
 warp.sword.speak.random.3=§o§5扎哈尔要求献祭！§r
@@ -131,7 +131,7 @@ warp.sword.speak.kill.0=§o§5我听得到它们的哭喊，它们的苦痛在�
 warp.sword.speak.kill.1=§o§5继续啊! 继续啊! 继续啊!§r
 warp.sword.speak.kill.2=§o§5心脏还在跳，我听见了...
 warp.sword.speak.kill.3=§o§5无头，无命
-# warp.sword.speak.kill.4=§o§5Another tasty flash
+warp.sword.speak.kill.4=§o§5又一份鲜美的血肉
 warp.sword.speak.kill.5=§o§5再多为扎哈尔献上一次献祭吧
 warp.sword.speak.kill.6=§o§5如同深渊之下... 又一个愚蠢的，死人！
 warp.sword.speak.kill.7=§o§5再献祭一条灵魂，扎哈尔就满意了
@@ -325,11 +325,11 @@ tooltips.lang.kill.slime.by.enderman=§2在§n史莱姆§2被§n末影人§2击�
 tooltips.lang.kill.slime.by.marbled_cheese_golem=§2在§n史莱姆§2被§nRatlanean Automaton§r击杀时掉落
 tooltips.lang.kill.slime.by.cockatrice=§2在§n史莱姆§2被§nCockatrice§r击杀时掉落
 tooltips.lang.excavate.overrides=§6自带连锁挖掘。\n%s
-# tooltips.lang.speed=Speed
-# tooltips.lang.limit=Limit
-# tooltips.lang.range=Range
-# tooltips.lang.exaustion=Exaustion
-# tooltips.lang.experience=Experience
+tooltips.lang.speed=速度
+tooltips.lang.limit=连锁数量限制
+tooltips.lang.range=范围
+tooltips.lang.exaustion=损耗
+tooltips.lang.experience=经验值
 
 tooltips.dim_stages.healthy=§4你需要至少拥有 §6%s 点生命值§4 (%s 颗心) 才能前往§c下界
 tooltips.dim_stages.healthy_grant=你已经拥有了 §6%s 点生命值§r (%s 颗心)！§r你可以前往§c下界§r了！
