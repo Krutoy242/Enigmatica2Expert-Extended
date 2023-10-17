@@ -71,6 +71,11 @@
 			}
 		}],
 		count: 108L
+	},
+	{
+		uid: "0373890f",
+		type: "fluid",
+		fluid: "liquid_helium"
 	}],
 	rewards: [{
 		uid: "246fad38",

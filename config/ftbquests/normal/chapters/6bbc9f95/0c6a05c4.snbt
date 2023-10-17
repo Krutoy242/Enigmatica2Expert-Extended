@@ -15,6 +15,7 @@
 		items: [{
 			item: "minecraft:nether_brick"
 		}],
+		count: 12L,
 		ignore_nbt: 1b
 	},
 	{

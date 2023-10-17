@@ -84,13 +84,29 @@ craft.remake(<enderio:block_buffer:1>, ["pretty",
 	[<enderio:block_solar_panel:2>, <enderio:block_solar_panel:2>, <enderio:block_solar_panel:2>],
 	[<enderio:item_basic_capacitor:2>, <ore:darkFusedQuartz>, <enderio:item_basic_capacitor:2>]]);
 
-# Dimensional Transceiver
-	recipes.remove(<enderio:block_transceiver>);
-	recipes.addShapedMirrored("Ender IO Dimensional Transceiver", 
-	<enderio:block_transceiver>, 
-	[[<ore:blockElectricalSteel>, <ore:skullEnderResonator>, <ore:blockElectricalSteel>],
-	[<enderio:item_basic_capacitor:2>, <mekanism:machineblock3>, <enderio:item_basic_capacitor:2>], 
-	[<ore:blockElectricalSteel>, <ore:itemEnderCrystal>, <ore:blockElectricalSteel>]]);
+# [Dimensional Transceiver] from [Quantum Entangloporter][+4]
+craft.remake(<enderio:block_transceiver>, ["pretty",
+  "■ E ■",
+  "O Q O",
+  "■ * ■"], {
+  "■": <ore:blockElectricalSteel>,       # Electrical Steel Block
+  "E": <ore:skullEnderResonator>,        # Ender Resonator
+  "O": <enderio:item_basic_capacitor:2>, # Octadic Capacitor
+  "Q": <mekanism:machineblock3>,         # Quantum Entangloporter
+  "*": <ore:itemEnderCrystal>,           # Ender Crystal
+});
+
+# [Dimensional Transceiver] from [Quantum Entangloporter][+4]
+craft.make(<enderio:block_transceiver>, ["pretty",
+  "■ E ■",
+  "T Q T",
+  "■ * ■"], {
+  "■": <ore:blockElectricalSteel>, # Electrical Steel Block
+  "E": <ore:skullEnderResonator>,  # Ender Resonator
+  "T": <enderio:item_capacitor_totemic>.anyDamage(), # Totemic Capacitor
+  "Q": <mekanism:machineblock3>,   # Quantum Entangloporter
+  "*": <ore:itemEnderCrystal>,     # Ender Crystal
+});
 
 # Enchanter
 	recipes.remove(<enderio:block_enchanter>);
@@ -506,15 +522,70 @@ craft.remake(<enderio:item_xp_transfer>, ["pretty",
   "▬": <ore:ingotPulsatingIron>,   # Pulsating Iron Ingot
 });
 
-# [Experience Obelisk] from [Fluid Tank][+3]
+# [Experience Obelisk] from [Pressurized Fluid Tank][+3]
 craft.remake(<enderio:block_experience_obelisk>, ["pretty",
   "  /  ",
-  "▬ F ▬",
+  "□ P □",
+  "C C C"], {
+  "/": <enderio:item_xp_transfer>, # Experience Rod
+  "□": <tconstruct:large_plate>.withTag({Material: "osgloglas"}), # Osgloglas Large Plate
+  "P": <enderio:block_tank:1>,     # Pressurized Fluid Tank
+  "C": <ore:itemChassiParts>,      # Machine Parts
+});
+
+# [Weather Obelisk] from [Rainmaker][+3]
+craft.remake(<enderio:block_weather_obelisk>, ["pretty",
+  "  R  ",
+  "□ a □",
   "S S S"], {
+  "R": <randomthings:rainshield>,   # Rain Shield
+  "□": <tconstruct:large_plate>.withTag({Material: "osgloglas"}), # Osgloglas Large Plate
+  "a": <forestry:rainmaker>,        # Rainmaker
   "S": <ore:itemSimpleChassiParts>, # Simple Machine Parts
-  "F": <enderio:block_tank>,        # Fluid Tank
-  "▬": <ore:ingotSoularium>,        # Soularium Ingot
-  "/": <enderio:item_xp_transfer>,  # Experience Rod
+});
+
+# [Inhibitor Obelisk] from [Infinity Bimetal Gear][+3]
+craft.remake(<enderio:block_inhibitor_obelisk>, ["pretty",
+  "  E  ",
+  "□ ¤ □",
+  "S S S"], {
+  "E": <darkutils:ender_tether>,    # Ender Tether
+  "□": <tconstruct:large_plate>.withTag({Material: "osgloglas"}), # Osgloglas Large Plate
+  "¤": <ore:gearIronInfinity>,      # Infinity Bimetal Gear
+  "S": <ore:itemSimpleChassiParts>, # Simple Machine Parts
+});
+
+# [Attractor Obelisk] from [Infinity Bimetal Gear][+3]
+craft.remake(<enderio:block_attractor_obelisk>, ["pretty",
+  "  *  ",
+  "□ ¤ □",
+  "S S S"], {
+  "*": <ore:itemAttractorCrystal>,  # Enticing Crystal
+  "□": <tconstruct:large_plate>.withTag({Material: "osgloglas"}), # Osgloglas Large Plate
+  "¤": <ore:gearIronInfinity>,      # Infinity Bimetal Gear
+  "S": <ore:itemSimpleChassiParts>, # Simple Machine Parts
+});
+
+# [Aversion Obelisk] from [Powered Lantern][+3]
+craft.remake(<enderio:block_aversion_obelisk>, ["pretty",
+  "  T  ",
+  "□ P □",
+  "S S S"], {
+  "T": <enderio:block_enderman_skull:2>,       # Tormented Enderman Head
+  "□": <tconstruct:large_plate>.withTag({Material: "osgloglas"}), # Osgloglas Large Plate
+  "P": <immersiveengineering:metal_device1:4>, # Powered Lantern
+  "S": <ore:itemSimpleChassiParts>,            # Simple Machine Parts
+});
+
+# [Relocator Obelisk] from [Fan][+3]
+craft.remake(<enderio:block_relocator_obelisk>, ["pretty",
+  "  C  ",
+  "□ F □",
+  "S S S"], {
+  "C": <contenttweaker:compressed_gravisand>, # Compressed Gravisand
+  "□": <tconstruct:large_plate>.withTag({Material: "osgloglas"}), # Osgloglas Large Plate
+  "F": <cyclicmagic:fan>,                     # Fan
+  "S": <ore:itemSimpleChassiParts>,           # Simple Machine Parts
 });
 
 # [Vibrant Crystal] from [Vibrant Alloy Ingot][+1]

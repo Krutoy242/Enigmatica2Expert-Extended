@@ -1,6 +1,6 @@
 {
 	title: "{q.ender_io.machine_chassis.name}",
-	x: 6.2d,
+	x: 5.4d,
 	y: 0.8d,
 	text: [
 		"{q.ender_io.machine_chassis.desc}"

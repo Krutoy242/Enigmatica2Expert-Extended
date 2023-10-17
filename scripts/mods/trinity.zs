@@ -23,3 +23,7 @@ craft.make(<rats:contaminated_food> * 64, [
   o: <ore:compressedCropApple1x>,
   i: <trinity:radioactive_earth2>,
 });
+
+// Replace Trinitite drop with Luck one
+// DOESNT WORK - trinitite still drop nothing.
+// scripts.lib.dropt.addDrop(<trinity:trinitite>, <trinity:trinitite_shard>);

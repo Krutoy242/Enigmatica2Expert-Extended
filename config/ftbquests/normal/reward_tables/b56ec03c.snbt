@@ -22,11 +22,8 @@
 		count: 5
 	},
 	{
-		item: {
-			id: "randomthings:soundpattern",
-			tag: {
-				sound: "nuclearcraft:player.geiger_tick"
-			}
-		}
+		icon: "flopper:flopper 6",
+		item: "flopper:flopper",
+		count: 6
 	}]
 }

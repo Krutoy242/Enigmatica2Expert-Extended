@@ -91,8 +91,33 @@ key_enderio.keybind.yetawrenchmode:0
 key_Extra information:211:CONTROL
 key_FpsReducer.key.forceIdle:197
 key_FpsReducer.key.guiOpen:0
+key_gui.xaero_alternative_list_players:0
+key_gui.xaero_display_all_sets:0
+key_gui.xaero_enlarge_map:56
+key_gui.xaero_instant_waypoint:0
+key_gui.xaero_map_zoom_in:0
+key_gui.xaero_map_zoom_out:0
+key_gui.xaero_minimap_settings:50:SHIFT
+key_gui.xaero_new_waypoint:0
+key_gui.xaero_open_map:50
+key_gui.xaero_open_settings:50:CONTROL
+key_gui.xaero_quick_confirm:54
+key_gui.xaero_reverse_entity_radar:0
+key_gui.xaero_switch_waypoint_set:0
+key_gui.xaero_toggle_entity_radar:0
+key_gui.xaero_toggle_grid:0
+key_gui.xaero_toggle_light_overlay:0
+key_gui.xaero_toggle_manual_cave_mode:0
+key_gui.xaero_toggle_map_waypoints:0
+key_gui.xaero_toggle_map:0
+key_gui.xaero_toggle_slime:0
+key_gui.xaero_toggle_tracked_players:0
+key_gui.xaero_toggle_waypoints:0
+key_gui.xaero_waypoints_key:0
+key_gui.xaero_zoom_in:0
+key_gui.xaero_zoom_out:0
 key_Hub Expand Key:0
-key_invtweaks.key.sort:79
+key_invtweaks.key.sort:0
 key_jecalculation.key.gui_craft:0
 key_jecalculation.key.gui_math:0
 key_key.advancements:38
@@ -277,8 +302,8 @@ key_key.settings_menu:34
 key_key.showhide:0
 key_key.smoothCamera:0
 key_key.sneak:42
-key_key.sort_config:34:CONTROL
-key_key.sort:0
+key_key.sort_config:37
+key_key.sort:-98
 key_key.spectatorOutlines:0
 key_key.sprint:29
 key_key.swapHands:33
@@ -377,7 +402,11 @@ key_Toggle Freeze Effect:0
 key_Toggle Jetpack:45
 key_Toggle Mining Speed Control:43
 key_Toggle RCS:0
-key_Toggle:15
+key_visualores.button.aura_flux:0
+key_visualores.button.excavator:0
+key_visualores.button.neromantic:0
+key_visualores.button.starlight:0
+key_visualores.key.action:211
 key_waila.keybind.liquid:0
 key_waila.keybind.recipe:0
 key_waila.keybind.usage:0

@@ -22,7 +22,7 @@
       "nuclearcraft:gem",
       "thermalfoundation:material,1,513",
       "tconstruct:tool_rod,1,0,{Material: ardite}",
-      "minecraft:red_nether_brick"
+      "quark:biome_cobblestone"
     ]
   },
   {
@@ -134,18 +134,17 @@
   {
     "mode": "ADD",
     "result": "draconicevolution:draconic_block,4,0",
-    "catalyst": "draconicevolution:crafting_injector,3",
+    "catalyst": "draconicevolution:draconium_block,4,1",
     "energy": 50000000,
     "tier": 1,
     "ingredients": [
-      "draconicevolution:draconium_block,1,1",
-      "draconicevolution:draconium_block,1,1",
+      "draconicevolution:crafting_injector",
+      "draconicevolution:crafting_injector",
       "ore:elvenDragonstone",
       "ore:itemEnderCrystalPowder",
       "ore:heartDragon",
       "ore:blockTopaz",
-      "draconicevolution:draconium_block,1,1",
-      "draconicevolution:draconium_block,1,1"
+      "draconicevolution:crafting_injector"
     ]
   },
   {

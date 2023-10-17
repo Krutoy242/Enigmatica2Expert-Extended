@@ -241,7 +241,7 @@ b.onRandomTick = function(world, p, blockState) {
       if(abs(entity.x - p.x) > 8 || abs(entity.y - p.y) > 8 || abs(entity.z - p.z) > 8) continue;
       if(world.getRandom().nextInt(outChance) != 1) continue;
       val w as IWorld = world;
-      val itemEntity = outItem.createEntityItem(w, entity.x as float, entity.y as float, entity.z as float);
+      val itemEntity = (outItem * 1).createEntityItem(w, entity.x as float, entity.y as float, entity.z as float);
       itemEntity.motionY = 0.4;
       world.spawnEntity(itemEntity);
       createParticles(world, p, 3);

@@ -147,7 +147,6 @@ val merchData = {
       ],
       5: [
         [<conarm:polishing_kit>.withTag({Material: "magmaslime"}) * 2, E*4],
-        [E*15, <nuclearcraft:rad_shielding>],
         [E*8, <conarm:resist_mat_blast>],
         [E*48, <conarm:gauntlet_mat_attack>],
         [E*12, <conarm:travel_potion>],
@@ -159,7 +158,6 @@ val merchData = {
         [E*10, pap, <conarm:polishing_kit>.withTag({Material: "chitintandeathworm"})],
       ],
       6: [
-        [E*15, <nuclearcraft:rad_shielding>, <nuclearcraft:rad_shielding:1>],
         [E*4, <conarm:travel_potion>],
         [E*22, <conarm:travel_goggles>],
         [E*5, <conarm:travel_sneak>],
@@ -169,7 +167,6 @@ val merchData = {
         [E*10, pap, <conarm:polishing_kit>.withTag({Material: "fusewood"})],
       ],
       7: [
-        [E*15, <nuclearcraft:rad_shielding:1>, <nuclearcraft:rad_shielding:2>],
         [E*50, <conarm:travel_soul>],
         [E*10, pap, <conarm:polishing_kit>.withTag({Material: "flux_crystal"})],
         [E*10, pap, <conarm:polishing_kit>.withTag({Material: "scalebronzeseaserpent"})],

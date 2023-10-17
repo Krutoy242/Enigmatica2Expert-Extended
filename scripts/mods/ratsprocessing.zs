@@ -1,10 +1,6 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
-import mods.jaopca.JAOPCA;
-import mods.jaopca.OreEntry;
-
-
 
 static listRatPoop as IItemStack[] = [
 /*Inject_js(
@@ -90,46 +86,31 @@ getFurnaceRecipes()
 /**/
 ] as IItemStack[];
 
-
-static jaopcaAllOre as OreEntry[]= mods.jaopca.JAOPCA.getAllOres() as OreEntry[];
-static matTypes as string[] = ["ingot", "gem", "dust"] as string[];
-
-
-function jaopcaGetEntry(item as IItemStack) as OreEntry{
-	for testJ in jaopcaAllOre {
-    for iType in matTypes {
-      var oredictEntryItems = testJ.getOreDictEntry(iType).items;
-      
-      if (oredictEntryItems.length > 0 && !isNull(oredictEntryItems[0])) {
-        var getByType = oredictEntryItems[0];
-
-        if ((getByType has item)||(item has getByType)) {
-          return testJ;
-        }
-        
-      }
-    }
+function getOreBase(item as IItemStack) as string {
+  val lookup = "^(oreEnd|oreNether|ingot|dust|gem)";
+  for ore in item.ores {
+    if(!ore.name.matches(lookup ~ '.+')) continue;
+    val base = ore.name.replaceAll(lookup, "");
+    if(base == '') continue;
+    return base;
   }
-	return null;
+  return null;
 }
 
-for poop in listRatPoop{
+for poop in listRatPoop {
   if (isNull(poop.tag.OreItem) || isNull(poop.tag.IngotItem)) continue;
+
   # Get what resource we got after processing
-  var pooResult = itemUtils.getItem(
-    poop.tag.IngotItem.id.asString(),
-    poop.tag.IngotItem.Damage.asString() as int);
+  val oreItem = IItemStack.fromData(poop.tag.OreItem);
+  val ingotItem = IItemStack.fromData(poop.tag.IngotItem);
+  if(isNull(ingotItem) || isNull(oreItem)) continue;
 
-  if(isNull(pooResult)) continue;
-  # Dust output
-  var poopEntry = jaopcaGetEntry(pooResult);
-  
-  # Check if listed item exist (can happen if mod was removed)
-  if(isNull(poopEntry)) continue;
+  var resultOreBase = getOreBase(ingotItem);
+  if(isNull(resultOreBase)) resultOreBase = getOreBase(oreItem);
+  if(isNull(resultOreBase)) continue;
 
-  val outputOre = oreDict.get('crystalShard' ~ poopEntry.oreName);
+  val outputOre = oreDict.get('crystalShard' ~ resultOreBase);
   if(isNull(outputOre) || outputOre.items.length <= 0) continue;
 
-  val outputItem = outputOre.items[0];
-  recipes.addShapeless('rat '~poopEntry.oreName, outputItem, [poop, poop, poop]);
+  recipes.addShapeless(outputOre.items[0] * ingotItem.amount, [poop, poop, poop]);
 }

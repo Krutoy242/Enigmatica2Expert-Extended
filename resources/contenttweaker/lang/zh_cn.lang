@@ -1,0 +1,395 @@
+# Various fixes 表述修复
+modifier.excompressum:smashingii.desc=锤击压缩方块
+tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
+
+# itemGroup.other=ContentTweaker
+fluid.heavy_metal=熔融沉重金属
+fluid.cheese=奶酪
+# fluid.seed=Seed
+fluid.spectre=液态通灵
+fluid.perfect_fuel=完美燃料
+fluid.electronics=熔融电子器件
+fluid.terrestrial=熔融天地宝晶
+fluid.mithrillium=熔融秘银
+fluid.adaminite=熔融精金
+fluid.mithminite=熔融秘金
+
+item.contenttweaker.compressed_glowstone.name=压缩荧石
+item.contenttweaker.compressed_ender.name=压缩末影
+item.contenttweaker.compressed_dimensional.name=压缩维度
+
+item.contenttweaker.compressed_tallow.name=压缩油脂
+tile.contenttweaker.compressed_andesite.name=压缩安山岩
+tile.contenttweaker.compressed_diorite.name=压缩闪长岩
+tile.contenttweaker.compressed_granite.name=压缩花岗岩
+tile.contenttweaker.compressed_skystone.name=压缩陨石
+tile.contenttweaker.compressed_garbage_pile.name=压缩垃圾堆
+tile.contenttweaker.compressed_crushed_andesite.name=压缩粉碎安山岩
+tile.contenttweaker.compressed_crushed_diorite.name=压缩粉碎闪长岩
+tile.contenttweaker.compressed_crushed_granite.name=压缩粉碎花岗岩
+tile.contenttweaker.compressed_crushed_skystone.name=压缩粉碎陨石
+tile.contenttweaker.compressed_dried_sand.name=压缩干沙
+tile.contenttweaker.compressed_gravisand.name=压缩重力沙子
+tile.contenttweaker.compressed_red_sand.name=压缩红沙
+tile.contenttweaker.compressed_white_sand.name=压缩白沙
+tile.contenttweaker.block_sulfur.name=硫块
+tile.contenttweaker.compressed_block_sulfur.name=压缩硫块
+tile.contenttweaker.compressed_pumpkin.name=压缩南瓜
+tile.contenttweaker.compressed_pumpkin_double.name=双重压缩南瓜
+tile.contenttweaker.compressed_string.name=压缩线
+tile.contenttweaker.compressed_string_double.name=双重压缩线
+tile.contenttweaker.compressed_basalt.name=压缩玄武岩
+tile.contenttweaker.compressed_basalt_double.name=双重压缩玄武岩
+tile.contenttweaker.conglomerate_of_life.name=生命团块
+tile.contenttweaker.conglomerate_of_coal.name=煤炭团块
+tile.contenttweaker.conglomerate_of_sun.name=耀阳团块
+tile.contenttweaker.silicon_block.name=硅块
+item.contenttweaker.knowledge_absorber.name=知识吸收器
+
+item.contenttweaker.supremium_boots_base.name=终极精华靴子核心基底
+item.contenttweaker.supremium_chest_base.name=终极精华胸甲核心基底
+item.contenttweaker.supremium_helmet_base.name=终极精华头盔核心基底
+item.contenttweaker.supremium_leggings_base.name=终极精华护腿核心基底
+item.contenttweaker.empowered_phosphor.name=充能荧光粉
+item.contenttweaker.saturated_phosphor.name=饱和荧光粉
+item.contenttweaker.blasted_coal.name=烈爆煤炭
+item.contenttweaker.any_different_item.name=§k--§r 任何§e互不相同的§r物品 §k--§r
+item.contenttweaker.ore_phosphor.name=荧光粉矿
+item.contenttweaker.nugget_phosphor.name=荧光粉粒
+item.contenttweaker.dust_tiny_gold.name=小堆金粉
+item.contenttweaker.dust_tiny_silver.name=小堆银粉
+item.contenttweaker.fruit_pill.name=水果营养药丸
+item.contenttweaker.dairy_pill.name=乳制品营养药丸
+item.contenttweaker.vegetable_pill.name=蔬菜营养药丸
+item.contenttweaker.protein_pill.name=蛋白质营养药丸
+item.contenttweaker.grain_pill.name=谷物营养药丸
+
+tile.contenttweaker.terrestrial_artifact_block.name=天地宝晶块
+tile.contenttweaker.benitoite.name=§b蓝锥矿晶体
+tile.contenttweaker.anglesite.name=§6硫酸铅矿晶体
+tile.contenttweaker.ore_benitoite.name=§b蓝锥矿
+tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
+
+# contenttweaker.part.fluid=%s
+
+item.contenttweaker.bee_diversity.name=蜜蜂回收集市
+
+e2ee.tconstruct.material.spectre.name=通灵
+e2ee.tconstruct.material.spectre.description=§b灵光到处现\n§r每个部件都可以给予玩家额外的"延伸"药水效果
+e2ee.tconstruct.material.mentor.name=导师
+e2ee.tconstruct.material.mentor.description=§o知识的力量\n§r攻击时，每个部件会各消耗 1 级经验，然后额外造成总共 √(经验等级 * 导师部件数量) 的伤害
+e2ee.tconstruct.material.apprentice.name=学徒
+e2ee.tconstruct.material.apprentice.description=§o学习的力量\n§r受到攻击时会获得相当于所受伤害总量的 10% 的经验，同时多受到 10% 伤害
+e2ee.tconstruct.material.spectre_string.name=通灵纤维
+e2ee.tconstruct.material.alpha_fur.name=首领毛皮
+e2ee.tconstruct.material.alpha_fur.description=§b霜冻\n§r冻住攻击目标或伤害来源
+e2ee.tconstruct.material.grinding.name=磨碎
+e2ee.tconstruct.material.grinding.description=§o跳！\n§r在矿石上跳跃可以将其粉碎
+e2ee.tconstruct.material.heavy.name=沉重
+e2ee.tconstruct.material.axing.name=木材劈砍
+e2ee.tconstruct.material.axing.description=§o木屑飞扬\n§r挖掘原木可以得到 4 个对应的木板
+e2ee.tconstruct.material.axing2.name=木材劈砍 II
+e2ee.tconstruct.material.axing2.description=§o大开大合\n§r挖掘原木可以得到 6 个对应的木板
+
+e2ee.tconstruct.material.mithrillium.name=秘银
+e2ee.tconstruct.material.vis_siphon.name=Vis虹吸
+e2ee.tconstruct.material.vis_siphon.description=可以吸取临近区域的 Vis 修补工具
+e2ee.tconstruct.material.vis_equilibrium.name=Vis平衡
+e2ee.tconstruct.material.vis_equilibrium.description=处在 Vis 水平高的区域时获得属性加成
+e2ee.tconstruct.material.adaminite.name=精金
+e2ee.tconstruct.material.forbidden.name=禁忌
+e2ee.tconstruct.material.forbidden.description= ̸̻͗̕ ̷͍̓͋ ̷̫͚̕ ̴̳̈ ̵̲͓͘ ̵̠͆ ̸̖̌̄ ̴̨̩̉́ ̸̞̺͝ ̷̢̖̒ ̶͍̺̉ ̴̦͉̊͝ ̸̦̽ ̷̺̽ ̷͖̼͌̌ ̴̹̪̀ ̷̩̜̐ ̶̩͑ ̷̢̝͗ ̵̞͕̔̆ ̴̡̀ ̸̛͓̞̎ ̴̻͑ ̸̛̤̈́ ̸̛͙͂ ̷̜̟̉.
+e2ee.tconstruct.material.possessed.name=鬼魂附着
+e2ee.tconstruct.material.possessed.description=扎哈尔的意志降临在用于毁灭的工具上，呼喊出生命的本质
+e2ee.tconstruct.material.porous.name=千疮百孔
+e2ee.tconstruct.material.porous.description=脚下的石头腐化于你身上的衰朽气息
+e2ee.tconstruct.material.gaze.name=死亡凝视
+e2ee.tconstruct.material.gaze.description=不时给予死亡凝视效果。§o§5强迫愚者屈膝于前§r
+e2ee.tconstruct.material.void_shell.name=虚空腔壳
+e2ee.tconstruct.material.void_shell.description=你身上的扭曲值越高，盔甲就越强力
+e2ee.tconstruct.material.eldritch_retribution.name=邪术惩戒
+e2ee.tconstruct.material.eldritch_retribution.description=胆敢反抗你的，将承受其后果
+e2ee.tconstruct.material.mithminite.name=秘金
+e2ee.tconstruct.material.researcher.name=研究员
+e2ee.tconstruct.material.researcher.description=基于魔导手册中完成的研究，获得不同的状态效果
+e2ee.tconstruct.material.first_stand.name=首当其冲
+e2ee.tconstruct.material.first_stand.description=消耗经验来完全抵挡受到的伤害
+
+warp.sword.warning=§o§5 你还不够疯狂，无法使用这等力量。§r
+
+warp.sword.speak.random.0=§o§5把它们统统堕入坟墓，武器一挥就够了！§r
+warp.sword.speak.random.1=§o§5血的河流，会变成汪洋...§r
+warp.sword.speak.random.2=§o§5我们就不能把活物全都杀了？...§r
+warp.sword.speak.random.3=§o§5扎哈尔要求献祭！§r
+warp.sword.speak.random.4=§o§5越多杀戮，越发饥渴
+warp.sword.speak.random.5=§o§5天空愈发暗沉，哭喊此时终止，生命走到了尽头...
+warp.sword.speak.random.6=§o§5等待，猩红的黎明和恐惧的眼泪
+warp.sword.speak.random.7=§o§5畏惧...憎恨...绝望...
+warp.sword.speak.random.8=§o§5守门人一直看着呢...
+
+warp.sword.speak.kill.0=§o§5我听得到它们的哭喊，它们的苦痛在我的血管里流动，像是吸毒。继续... 继续...§r
+warp.sword.speak.kill.1=§o§5继续啊! 继续啊! 继续啊!§r
+warp.sword.speak.kill.2=§o§5心脏还在跳，我听见了...
+warp.sword.speak.kill.3=§o§5无头，无命
+warp.sword.speak.kill.4=§o§5又一份鲜美的血肉
+warp.sword.speak.kill.5=§o§5再多为扎哈尔献上一次献祭吧
+warp.sword.speak.kill.6=§o§5如同深渊之下... 又一个愚蠢的，死人！
+warp.sword.speak.kill.7=§o§5再献祭一条灵魂，扎哈尔就满意了
+
+item.singularity.silver.name=§b皮毛奇点
+item.singularity.iron.name=§7空奇点
+item.singularity.nickel.name=§e火热奇点
+item.singularity.fluxed.name=§4燃烧奇点
+tooltips.lang.singularity.heat=§7中间产物。§r\n将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
+tooltips.lang.singularity.burn=将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
+item.contenttweaker.any_burnable.name=§6任何可燃物
+
+# Custom renames 重命名
+item.excompressum:bait_unknown.name=任何诱饵
+item.catalyst.name=§d黑曜石催化剂
+tile.block_decorative_lormyte.name=洛米特块
+e2ee.tile.basalt_sediment=沉积玄武岩
+e2ee.tile.unsalted_basalt=新近玄武岩
+
+# Manual langs 手册
+e2ee.garbage.affect_output_amount=§6影响输出结果的量§r
+e2ee.written_book.by=§6一本由%s写下的书
+e2ee.written_book.Cow=牛
+e2ee.written_book.Pig=猪
+e2ee.written_book.Cat=猫
+e2ee.written_book.Enderman=末影人
+e2ee.written_book.Chicken=鸡
+e2ee.written_book.Dog=狗
+e2ee.written_book.Sheep=羊
+e2ee.written_book.Creeper=苦力怕
+e2ee.written_book.Zombie=僵尸
+
+# Misc 杂项
+e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
+e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
+e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r
+e2ee.chapter_complete=§l%s§r 已经完成了 §n%s§r 章节，用时 §l%s§r ！§r ```祝贺!```
+e2ee.player_achieved=§l%s§r 达成了 §n%s§r 成就，用时 §l%s§r ！§r
+e2ee.eu2_drum_error=§7你需要留有至少一个空的背包槽位
+e2ee.danknull_dock.must_have=§7你需要在副手持有一个 §f%s§7 才能把 %s§7 插入 %s§7。§f%s§7 会被永久消耗。
+e2ee.restrict.vis_seeds=§7§e魔力种子§7只能被种在§nthe Void§7维度或是§n其他星球§7。种植这些种子需要氧气。
+e2ee.creature_resisted_morb=§8这个生物在反抗 §n§8%s 的捕捉。
+e2ee.creature_uncapturable=§7该生物不能被捕捉。 
+tooltips.lang.morb_resist=§r对血量低于总血量的 §4<%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
+# >
+
+# Bugged langs that losed their names 修复失去本地化的条目
+entity.Villager.shady_merchant=黑心商人
+entity.Villager.red_mechanic=红石工程师
+entity.Villager.alchemist=炼金术师
+entity.Villager.endreborn.end_explorer=末地探险家
+entity.Villager.endreborn.nether_explorer=下界探险家
+entity.Villager.endreborn.overworld_explorer=主世界探险家
+entity.Villager.plague_doctor=瘟疫医生
+item.advgenerators.turbine_blade_gold.name=金制涡轮机叶片
+tile.witchwater.name=巫水
+tile.colored_waterfall_block.name=染色瀑布方块
+robot.name=泛用机器人
+material.Dilithium.name=双锂
+item.battery.0.name=单重电池
+item.battery.1.name=四重电池
+tile.rftdimtweak.dimension_builder.name=维度构建器
+tile.rftdimtweak.dimension_editor.name=维度编辑器
+entity.AngryChicken.name=愤怒的鸡
+tile.ocsensors.sensor.name=开放式传感器
+item.positron_unit.name=正电子能量单元
+item.quantron.name=量子能量单元
+tile.industrialwires.hv_multiblock.marx.name=马克斯发生器
+
+tooltips.lang.tag.generator=§6#发电机
+tooltips.lang.tag.solar=§f#太阳能发电机
+tooltips.lang.tag.chunkloader=§9#区块加载器
+tooltips.lang.tag.tank=§b#储罐
+tooltips.lang.tag.user=§5#玩家模拟
+tooltips.lang.tag.crafter=§e#自动合成器
+tooltips.lang.tag.hopper=§2#漏斗
+tooltips.lang.tag.miner=§1#采矿机
+tooltips.lang.tag.voidminer=§3#虚空采矿机
+tooltips.lang.tag.flight=§b#飞行
+tooltips.lang.tag.repairer=§4#物品修理
+tooltips.lang.tag.charger=§a#充能器
+
+tooltips.lang.crescent_hammer=通过在下蹲状态下使用新月锤右击来拾取。\n会保留升级状态与其内物品。\n不要用镐挖掘！
+tooltips.lang.gauge_dropper=可以用于清除通用机械机器中的气体。只需要在机器界面中拿起滴管并Shift+左键存有气体的槽位即可清除。
+tooltips.lang.miner_tier_6_specializes=六级虚空采矿机只能用于获得稀有的矿石\n它不会产出常见的矿石。
+tooltips.lang.nitrogen_collectors=可以通过氮收集器获取。
+tooltips.lang.not_consumed=用于合成时不会消耗。
+tooltips.lang.maximum_allowed_input=合成核心的合成表中标注的能量消耗速率是最大消耗速率，实际输入速率任意均可。
+tooltips.lang.wood_in_starlight=通过把原木扔入星能液中获得。该合成表需要通过合成星辉合成台解锁。
+tooltips.lang.plate_presser=小型压板机是一个三格高一格宽的多方块结构，可以将方块变为板或是杆。多方块结构中顶部为小型压板机，底部为黑曜石，中间留空用于放置合成原料。合成时给予小型压板机一个红石信号即可进行合成。
+tooltips.lang.click.bookshelf=通过用世界盐右击书架获得。
+tooltips.lang.click.crafting=通过用世界盐右击合成台获得。
+tooltips.lang.click.cauldron=通过用世界盐右击炼药锅获得。
+tooltips.lang.obtained.forsaken=通过孤魂集会仪式获得。
+tooltips.lang.obtained.resonance=通过结晶共鸣仪式获得。
+tooltips.lang.pumpjack=采油机需要在底部接口处接一根直通基岩的输液管才能正常工作。
+tooltips.lang.requires.redstone400=需要 400 单位的红石。
+tooltips.lang.requires.redstone160=需要 160 单位的红石。
+tooltips.lang.reinforced_cell_frame=制作强化能量单元框架（满）需要流体转置机的内部能量储量多于 250,000 RF。
+tooltips.lang.obtained.fabricator_or_excavator=可以通过电弧高炉或者斗轮式挖掘机获得。
+tooltips.lang.obtained.mithril=可以通过§9元始魔力§r的世界内交互获得，也会生成在§1其他维度§r。
+tooltips.lang.removed.use_market=已禁用，请改用 Farming For Blockheads 的市场。
+tooltips.lang.ethylene_convert=怎么让高级发电机接受乙烯作为燃料呢？用回旋式气液转换机把乙烯转化为液体即可。
+tooltips.lang.redstone.need=§4需要通过红石信号启用
+tooltips.lang.removed.crash=§4已被禁用，因为其会导致服务端崩溃
+
+tooltips.lang.requires.rf=需要消耗 %s RF 制作。
+tooltips.lang.craftable=可合成
+tooltips.lang.space_gen=只在其他星球上自然生成。
+tooltips.lang.mekanism_factories=工厂是通过对世界内的机器方块使用基础/高级/精英工厂安装器得到的。
+tooltips.lang.mekanism_t_ultimate=§d只对箱柜、能量立方、储罐、气体储罐有效。
+tooltips.lang.ic2wrench=现在 IC2 机器可以放心地用镐挖掘，机器不会损毁。
+
+tooltips.lang.small_plate_presser=高级火箭的小型压板机是最早可及（且机器造价最低）的金属板/金属杆获取方法。
+tooltips.lang.astralsorcery.blockaltar=合成星辉合成台时所用的工作台需要处在浮动水晶旁边。浮动水晶常见于世界中的大理石结构内部。\n合成表见星芒宝典。
+tooltips.lang.enticing_crystal=村民可以通过以下途径生成：\n末影接口-电动刷怪箱\n使用刷怪箱控制工具调整过的原版刷怪笼\n更多实用设备-重构的刷怪箱\nRF工具-刷怪笼\n工业先锋-自动刷怪机
+tooltips.lang.forge_from_metal=（工具装配台合成表中的金属块可以为任意金属块）
+tooltips.lang.obtained.fluid_transposer=可以通过流体转置机获得。
+tooltips.lang.tier=等级
+tooltips.lang.et_cont_1=需要方块：\n%s 一级或更高级的结构方块\n%s 结构镶板\n%s 激光核心\n1 任意激光透镜
+tooltips.lang.solar_cont=需要方块：\n%s 无效果或者压电强化部件\n%s 结构方块等级 %s\n任意种类 %s 太阳能电池
+tooltips.lang.et_miner_cont_any=需要方块：\n%s 无效果/速度/精度强化部件\n%s 结构方块等级 %s\n%s 结构镶板\n%s 激光核心\n1 任意激光透镜
+tooltips.lang.nano_cont_personal=需要方块：\n%s 无效果/任意对应有药水效果的强化部件\n%s 结构方块等级 %s\n%s 结构镶板
+tooltips.lang.lightning_cont=需要方块：\n%s 结构方块等级 %s\n%s 避雷针\n%s 绝缘避雷针
+tooltips.lang.et.or_above=或更高
+tooltips.lang.fuel.shift_for_list===按住 Shift 展开燃料列表==
+tooltips.lang.strike_with_lightning=通过雷击生命源质获得
+tooltips.lang.thaum.progress=研究进度
+tooltips.lang.thaum.auromancy=神秘学
+tooltips.lang.thaum.alchemy=炼金术
+tooltips.lang.thaum.golemancy=傀儡学
+tooltips.lang.thaum.eldritch=邪术学
+tooltips.lang.thaum.arcane=奥术注魔
+tooltips.lang.thaum.artifice=炼化学
+tooltips.lang.drop_at_night=§3把 §n%s§r§3 扔到 §n%s§r§3 上方，上方需要无遮挡地直通夜空
+tooltips.lang.must_see_night=§9上方需直通夜空
+tooltips.lang.burn_in_fluid=§3把 §n%s§r§3 扔入 §n%s§r§3 中
+tooltips.lang.burn_in_fluid_chance=§3把数个 §n%s§r§3 扔入 §n%s§r§3 中
+tooltips.lang.infuse_bedrock=§3拿着 §n%s§r§3 右击 §n%s§r§3
+
+tooltips.lang.dropper_into_world=§c在死亡时掉落到了地上
+tooltips.lang.power_tier_5=§c能量等级 5, §4任何 IC2 的线缆都会融毁
+tooltips.lang.fluid.corium=§a可以通过使裂变反应堆融毁得到
+tooltips.lang.vanilla_tools=§4原版工具已被削弱，请改用匠魂工具
+tooltips.lang.ae_lag=§c不要把这个物品放入 AE 存储系统中，否则会造成卡顿。
+tooltips.lang.dont_put_into_ae=§c不要把这个物品放入 AE 存储系统中，否则会造成卡顿，也无法取出。
+tooltips.lang.tcon.diamond=§b可为匠魂工具提供 §l钻石§r 强化
+tooltips.lang.tcon.speedy=§c可为匠魂盔甲提供 §4迅腾§c 盔甲强化
+tooltips.lang.botania.decay1hour=§e会在 1 小时内凋败
+tooltips.lang.tcon.slot_each=§e每一级需要一个强化槽
+tooltips.lang.tcon.slot_first=§e总共只需要一个强化槽
+tooltips.lang.crystal_memory=§c无法合成，只能§4复制§r\n请查看§n模式存储水晶§r的合成表
+tooltips.lang.store_x_stacks=§b最多存储 %s 组物品
+tooltips.lang.backpack.Bat=§a让你在黑暗中看清东西！\n§a蝙蝠侠蝙蝠侠蝙↗蝠↘侠↘
+tooltips.lang.backpack.Bookshelf=§a不妨放在附魔台旁边\n§a可以像书架一样提供附魔点数！
+tooltips.lang.backpack.Cactus=§a如果玩家处在雨天的露天环境下，\n§a雨水就会缓缓填满背包里空的储罐。
+tooltips.lang.backpack.Chicken=§a你会下蛋！
+tooltips.lang.backpack.Creeper=§a在另一位玩家身边蹲下，然后\n§a看着对方惊恐地跳起来，因为对方会\n§以为那可怕的绿色怪物正在身旁。\n§a每次这么做之后背包会有几分钟的冷却时间。
+tooltips.lang.backpack.Dragon=§a为真正的战士准备的背包，\n§a同时具有僵尸猪灵和鱿鱼背包的能力，\n§a还额外给你力量和生命恢复效果！\n§a你将不可战胜！... 等等.. 这背包是拿什么做的？
+tooltips.lang.backpack.Emerald=§a给你一点炫酷的粒子效果，就这样。
+tooltips.lang.backpack.Pig=§a相信我，你不会喜欢这声音的。
+tooltips.lang.backpack.Pigman=§a提供防火药水效果。
+tooltips.lang.backpack.Rainbow=§a冲刺时会在身后留下一条尾迹。\n§a附加跳跃提升于速度效果 - 酷吧？
+tooltips.lang.backpack.Slime=§a提供一个惊为天人的，而且一点用没有的能力。\n§a玩家奔跑时会在背后留下一条粘液粒子尾迹，\n§a而且每走一步都会发出那粘滑的声音。
+tooltips.lang.backpack.Squid=§a泡水时获得水下呼吸效果。
+tooltips.lang.backpack.Sunflower=§a处在阳光下时能缓慢回复饥饿值。\n§a至少不会饿死了。
+tooltips.lang.backpack.Wolf=§a会检查附近的狼的状态。\n§a如果对应的狼正对你抱有敌意，\n§a它立马就会临时健忘，忘掉对你的敌意。\n§a另外，在满月的时候\n§a你能获得狼人的力量！
+tooltips.lang.sponge.removed_with=§6可以通过海绵从盔甲上移除。§r
+tooltips.lang.sponge.can_remove=§6可以移除盔甲上附着的喷气背包和匠魂工具上的强化。§r
+tooltips.lang.worldgen.disabled_use_sub=§6其世界生成§c已被禁止§r.
+tooltips.lang.syringe_craftable=§n注射器§r可以合成，只是在 JEI 中隐藏了
+tooltips.lang.tcon.fusewood=§n熔融木§r可以通过§n微光木§r合成获得
+tooltips.lang.tcon.darkwood=§n暗黑木§r可以通过§n轻木§r合成获得
+tooltips.lang.tcon.bloodwood=§n血木§r可以通过§n血木（原木）§r合成获得
+tooltips.lang.tcon.ghostwood=§n幽魂木§r可以通过§n悚木§r合成获得
+tooltips.lang.trophy.blaze=§e点燃玩家
+tooltips.lang.trophy.cave_spider=§e使玩家中毒
+tooltips.lang.trophy.creeper=§e发出爆炸
+tooltips.lang.trophy.enderman=§e发射末影珍珠
+tooltips.lang.trophy.evocation_illager=§e展示其图腾
+tooltips.lang.trophy.elder_guardian=§e展示其动画
+tooltips.lang.trophy.llama=§e对你吐痰，对，就你，乱摸战利品那个
+tooltips.lang.trophy.mooshroom=§e在附近生成蘑菇
+tooltips.lang.trophy.shulker=§e使玩家漂浮
+tooltips.lang.trophy.skeleton=§e发射箭矢
+tooltips.lang.trophy.snowman=§e产生雪
+tooltips.lang.trophy.squid=§e产生水
+tooltips.lang.trophy.witch=§e使玩家失明
+tooltips.lang.kill.slime.by.zombie=§2在§n史莱姆§2被§n僵尸§r击杀时掉落
+tooltips.lang.kill.slime.by.enderman=§2在§n史莱姆§2被§n末影人§2击杀时掉落。§r\n不妨试试§n生物催眠杖§r。
+tooltips.lang.kill.slime.by.marbled_cheese_golem=§2在§n史莱姆§2被§nRatlanean Automaton§r击杀时掉落
+tooltips.lang.kill.slime.by.cockatrice=§2在§n史莱姆§2被§nCockatrice§r击杀时掉落
+tooltips.lang.excavate.overrides=§6自带连锁挖掘。\n%s
+tooltips.lang.speed=速度
+tooltips.lang.limit=连锁数量限制
+tooltips.lang.range=范围
+tooltips.lang.exaustion=损耗
+tooltips.lang.experience=经验值
+
+tooltips.dim_stages.healthy=§4你需要至少拥有 §6%s 点生命值§4 (%s 颗心) 才能前往§c下界
+tooltips.dim_stages.healthy_grant=你已经拥有了 §6%s 点生命值§r (%s 颗心)！§r你可以前往§c下界§r了！
+tooltips.dim_stages.restricted=§c在§b空岛§c世界中，你无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)§r.
+tooltips.dim_stages.enter_skyblock=§e你进入了一个§b空岛§e世界。你将无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)。另外你现在会获得持续 3 小时的急迫 IV 效果。§r
+tooltips.dim_stages.remind_skyblock=§e你再次进入了一个§b空岛§e世界。谨记：你无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)§r。
+
+requious.jei.recipe.adv_bee_analyzer=高级蜜蜂分析仪
+requious.jei.recipe.alchemists_stone=炼金术士之石
+requious.jei.recipe.alienists_stone=异形之石
+requious.jei.recipe.asteroids=小行星
+requious.jei.recipe.barrel_milking=桶交互
+requious.jei.recipe.beacon_effects=信标效果
+requious.jei.recipe.chemthrower=化学喷射器
+requious.jei.recipe.crafting_hints=合成提示
+requious.jei.recipe.electronics_assembler=装配器
+requious.jei.recipe.entity_drop=实体掉落
+requious.jei.recipe.entity_kill_entity=实体击杀掉落
+requious.jei.recipe.everflow_chalice=圣杯互流
+requious.jei.recipe.expire_in_block=扔入方块中转化
+requious.jei.recipe.forestry_farm=林业农场
+requious.jei.recipe.garden_cloche=园艺玻璃罩
+requious.jei.recipe.heat_exchanger=热交换器
+requious.jei.recipe.ic2_crops=IC2 作物
+requious.jei.recipe.ic2_semifluid=半流质发电机
+requious.jei.recipe.infernal_furnace=炼狱熔炉
+requious.jei.recipe.infinity_furnace=无尽熔炉
+requious.jei.recipe.lens_of_the_miner=矿工透镜
+requious.jei.recipe.liquid_heat_exchanger=流体热交换机
+requious.jei.recipe.liquid_interaction=流体接触
+requious.jei.recipe.meteor=流星
+requious.jei.recipe.mineralis=晶金座效应
+requious.jei.recipe.neromantic_prime=纳尔狂曼喷口
+requious.jei.recipe.pech_trades=岩精交易
+requious.jei.recipe.petro_petunia=石油矮牵牛花
+requious.jei.recipe.scented_hive=清香的人工蜂巢
+requious.jei.recipe.syngas_producer=合成气制造器
+requious.jei.recipe.transmuters_stone=转化之石
+requious.jei.recipe.turbine=涡轮机
+requious.jei.recipe.typewriter=打字机
+requious.jei.recipe.witch_water=巫水转化
+
+tile.adv_bee_analyzer.name=高级蜜蜂分析仪
+tile.infinity_furnace.name=无尽熔炉
+tile.replicator.name=§5复制机
+
+# --------------------------------------
+# Moar Reactor Functionality 为反应堆添加功能
+# --------------------------------------
+fluid.hot_carbon_dioxide=炽热二氧化碳
+fluid.compr_carbon_dioxide=高压二氧化碳
+fluid.supercritical_carbon_dioxide=超临界二氧化碳
+fluid.critical_exhaust_carbon_dioxide=临界二氧化碳废气
+# --------------------------------------
+# New Turbine Parts 新的反应堆部件
+# --------------------------------------
+item.contenttweaker.elektron60_ingot.name=镁钴60合金锭
+tile.contenttweaker.elektron60_block.name=镁钴60合金块
+item.contenttweaker.blade_core.name=稀土涡轮机转子叶片芯
+item.contenttweaker.steel_mould.name=超轻不锈钢粗模
+item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模
+item.contenttweaker.sic_mould.name=超轻矩阵合金粗模
+# --------------------------------------

@@ -73,7 +73,7 @@
 			"enabled": false,
 			"dimension": {"restriction": "whitelist","value": [123]},
 			"distribution": "underfluid",
-			"fluid": "immersivepetroleum:fluid_crude_oil",
+			"fluid": "thermalfoundation:fluid_crude_oil",
 			"cluster-count": 3,
 			"generator": {
 				"radius": 2,

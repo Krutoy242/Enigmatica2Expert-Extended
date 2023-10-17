@@ -1,6 +1,6 @@
 {
-	x: 10.166666666666666d,
-	y: 0.8333333333333333d,
+	x: 8.7d,
+	y: 0.8d,
 	text: [
 		"{q.ender_io.soul_machine_chassis.desc}"
 	],

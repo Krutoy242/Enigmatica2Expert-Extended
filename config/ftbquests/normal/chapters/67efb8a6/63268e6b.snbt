@@ -5,7 +5,7 @@
 		"{q.draconic_evolution.celestial_manipula.desc}"
 	],
 	dependencies: [
-		"5dae2dc0"
+		"a9d391e5"
 	],
 	tasks: [{
 		uid: "8bb2b699",

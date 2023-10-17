@@ -1,158 +1,262 @@
-Name,Effect,Rating/10,Applicable materials...,,,,,,,,,
-Aftershock,Deals additional magic damage on fully charged hits,7,Diamatine,Crystal Matrix (3),Flux Crystal,Gelid Gem (2),Signalum,Fluxed String,,,,
-Alien,"800 points are created, and randomly distributed to durability, speed, and damage. Every 3.6 seconds, one of the distributed points is applied to the tool’s stats, unless you are currently breaking a block. Each point is worth 1 durability, 0.007 speed, or 0.005 damage.",8,End Steel,End Stone,Draconium,,,,,,,
-Alpha Fur,"Freezes enemies temporarily, significantly lowering their movement speed",8,Alpha Fur,,,,,,,,,
-Anti-Corrosion,Chance to heal the wielders poison while held,2,Osmiridium,Titanium,,,,,,,,
-Anti-Gravity,Projectile is immune to the pull of gravity,10,Stymphalian Bird Feather,,,,,,,,,
-Apocalypse,Struck enemies gain a stack of Wither,8,Amethyst,,,,,,,,,
-Aquadynamic,"Tool is not affected by being underwater, and increases mining speed during rain",8,Prismarine,Sapphire,,,,,,,,
-Aridiculous,Mining speed and attack speed is increased in drier environments,3,Netherrack,Constantan,,,,,,,,
-Astral,"See the ""Tool Attunement"" tab for information about attunements",10,Aquamarine,Starmetal,,,,,,,,
-Aura Siphon,Converts damage dealt into mana,7,Dreamwood,,,,,,,,,
-Autosmelt,Broken blocks will automatically be smelted,6,Fiery,Firewood,,,,,,,,
-Axing,Break wood logs to get +2 (per level) planks,9,Steeleaf (2),Knightmetal,,,,,,,,
-Baconlicious,0.05% chance for slain enemies to drop bacon. 0.005% chance for broken blocks to drop bacon,6,Pig Iron,,,,,,,,,
-Battle Furor,Repeated fully charged attacks increase damage,6,Kyronite,,,,,,,,,
-Blasting,"Chance to cause an explosion, dealing bonus damage",3,Shimmerwood,,,,,,,,,
-Blind Bandit,Fully charged hits have a chance of summoning a Blind Bandit to fight for you temporarily,8,Aethium,,,,,,,,,
-Blind Rage,Increased damage when blinded,2,Iron Alloy,,,,,,,,,
-Blizzard,Freezes enemies temporarily and deals additional dragon ice damage,9,Ice Dragonsteel (2),,,,,,,,,
-Bloodbound,Tool will drain from the users LP network to repair itself,9,Bound,,,,,,,,,
-Bloody Mary,Increases damage based on total HP loss of enemy; Chance to drop Coagulated Blood on strike,10,Signalum,,,,,,,,,
-Botanical,Gain +1 modifier (per stack),10,Mirion (2),,,,,,,,,
-Breakable,Projectile has a 50% chance of breaking on impact,0,Reeds,,,,,,,,,
-Brown Magic,"Press the ""set portal"" key (default ""N"") to set a virtual portal on the block you are pointing at. Press ""Y"" to teleport there at the cost of durability.",8,Dark Matter,Red Matter,,,,,,,,
-Cascading,"When breaking falling blocks (sand etc), break all falling blocks above it",7,Elementium,,,,,,,,,
-Chain Lightning,Fully charged attacks have a chance of causing chain lightning between enemies,8,Ionite,,,,,,,,,
-Cheap,Increases durability regained when repairing,3,Stone,HDPE,,,,,,,,
-Cheapskate,Overall durability decreased,0,Iron Alloy,Stone,Void Crystal,,,,,,,
-Chunky,Hit enemies have a chance to drop their mob chunk on death,7,Soulium,,,,,,,,,
-Cold-Blooded,Increases damage against targets at full HP,6,Manyullyn,Emeradic,Platinum,,,,,,,
-Condensing,Breaking blocks and killing enemies has a rare chance of leaving behind neutronium pieces,9,Neutronium,,,,,,,,,
-Corrupting,Struck enemies gain a stack of Wither,8,Primal Metal,Aethium,,,,,,,,
-Crude,Deals +5% (per stack) damage vs unarmored enemies,7,Redstone Alloy,Conductive Iron (2),Flint (2),Flint,Rubber,HDPE,Tin,,,
-Crumbling,Increases mining speed by 50% on blocks that do not need a tool,6,Knightslime,Sky Stone,UU-Metal,,,,,,,
-Crystalline,Weapons deal more damage at higher durability levels,8,Restonia,Palis,Diamatine,Void Crystal,Emeradic,Enori,Certus Quartz,Fluix,Aquamarine,Crystal Matrix
-Crystalys,Killing enemies has a chance to drop Blood Shards,8,Bound,,,,,,,,,
-Culling,Weapon will deal more damage to enemies with less HP than the player,9,Dark Matter,Primal Metal,,,,,,,,
-Cycle of Life,Damaging the tool will heal you for the equivalent amount,8,Restonia,,,,,,,,,
-Dark Traveler,Nearby mobs will occasionally take damage at the cost of durability,6,Amethyst,,,,,,,,,
-Deadly Precision,Critical hits are stronger,10,Ionite,Platinum,,,,,,,,
-Death Cloud,"Chance to summon a Plague Cloud when attacking, which deals half the total damage of the tool",5,Plague Metal,,,,,,,,,
-Dense,Decreases durability use as durability decreases,5,Dark Steel,Bronze,Neutronium,Advanced Alloy,Osmium,Boron,Tough Alloy,,,
-Depth Digger,Increases mining speed as your Y coordinate lowers,6,Black Quartz,Erodium,,,,,,,,
-Devil's Strength,Increases damage against non-Overworld enemies,6,Osmiridium,,,,,,,,,
-Difficulty,"Mining, attacking and receiving damage reduces difficulty",9,Pink Slime,,,,,,,,,
-Dire-Hit,All hits will be critical hits if you at max HP,8,Redstone Alloy,,,,,,,,,
-Direct,Teleports mined blocks directly into your inventory,8,Vibrant Alloy,Fluix Steel,,,,,,,,
-Diseased,Struck enemies gain the Plague,6,Plague Metal,,,,,,,,,
-Duritae,"Using the tool has a chance to increase durability used, decrease it, nullify it or do nothing",5,Obsidian,Supremium,Refined Obsidian,Invar,,,,,,
-Ecological,Slowly repairs over time,6,Shimmerwood,Lightwood,Bloodwood,Dreadwood,Treated Wood,Alpha Fur,Livingwood,Dreamwood,Wood,
-Electric,Tool will consume energy before durability,9,Energium,,,,,,,,,
-Elemental,"Gain random buffs when attacking enemies; When breaking gravity-affected blocks, break all blocks of the same type above and below",8,Emerald,,,,,,,,,
-Enderference,Prevents Endermen from teleporting temporarily after being hit,6,Dark Steel,End Steel,End Stone,Enderium,,,,,,
-Endspeed,Projectiles travel instantaneously,10,End Rod,,,,,,,,,
-Energized,Tool will consume energy before durability,10,Fluxed Electrum,Flux Crystal,Gelid Enderium (2),Gelid Gem (2),,,,,,
-Eternal Darkness,Increases damage when the light level is low,6,Evil-Infused Iron,,,,,,,,,
-Evil Aura,"When the tool is held, reduces the ""luck"" stat of the player. Also converts nearby grass/paths to dirt",1,Evil-Infused Iron,,,,,,,,,
-Evolved,Can be upgraded with draconic upgrades,9,Wyvern,Draconic,Chaotic,,,,,,,
-Experience Boost,Increases XP drops when mining blocks or killing enemies,8,Enchanted Metal,,,,,,,,,
-Explosive,An explosion is created on impact,4,TNT,,,,,,,,,
-Fertilizing,Tool can be used as Fertilizer for a durability cost,5,Apatite,,,,,,,,,
-Flammable,Blocking will block fire damage and getting hit sets the attacker on fire,3,Fiery,Soularium,Magma Slime,,,,,,,
-Fleet of Foot,Grants Speed II for a short period after a fully charged attack,4,Dreadwood,HDPE,,,,,,,,
-Flying Knockback,Projectile will strongly knock back impacted enemies,4,Amphithere Feather,,,,,,,,,
-Force of Impact,Increases damage based on player velocity,6,Advanced Alloy,Refined Obsidian,Nickel,,,,,,,
-Fractured,Overall tool damage is increased,8,Bone,Dragon Bone (2),,,,,,,,
-Freezing,Struck enemies gain a stack of Slowness,5,Constantan,Tanzanite,Ice,,,,,,,
-Gaia's Wrath,Fully charged hits fires a laser beam that consumes durability,8,Terrasteel,,,,,,,,,
-Global Traveler,Shift right-click a container to bind it. Broken blocks and dropped items from killing mobs will be teleported there,9,Alumite,Psimetal,,,,,,,,
-Grinding,Jumping on ores will crush them,6,Heavy Metal,,,,,,,,,
-He Who Must Not Be Named,Deals bonus damage for every duplicate entity is nearby,6,Lonsdaleite,,,,,,,,,
-Hearts,Weapon will deal more damage scaling with the players maximum HP,10,Ruby,,,,,,,,,
-Heavy,Prevents knockback,9,Lead,Heavy Metal,Neutronium,,,,,,,
-Heavy Metal,Increases knockback and gives Slowness to hit enemies,4,Demonic Metal,Platinum,,,,,,,,
-Hellish,Deals +4 (per stack) damage against non-Nether mobs,5,Soularium,Netherrack,,,,,,,,
-Hive Defender,"Deals +8 damage against death worms, and +4 damage against non-arthropods",5,Desert Myrmex Chitin,Jungle Myrmex Chitin,,,,,,,,
-Holy,Deals +5 (per stack) damage against undead enemies,3,Energetic Alloy,Silver,Magnesium,,,,,,,
-Hovering,"Projectile has a much straighter shot, but moves slower",4,Blaze Rod,,,,,,,,,
-Illuminati,"While held, turns the wielder invisible and nearby entities glow",1,Lumium,,,,,,,,,
-Inferno,Sets enemies on fire and deals additional dragon flame damage,7,Fire Dragonsteel (2),,,,,,,,,
-Infinitum,Tool is unbreakable,10,Infinity,,,,,,,,,
-Insatiable,Increases damage and durability use during combat,5,Manyullyn,Crystal Matrix,,,,,,,,
-Jagged,Increases damage as more durability is used,4,Prismarine,Black Quartz,Livingrock,Litherite,Boron Nitride,,,,,
-Juggernaut,Weapon will deal more damage scaling with the players current HP,10,Red Matter,Gelid Enderium,,,,,,,,
-Light Metal,Increases attack speed and mining speed,9,Titanium,,,,,,,,,
-Lightweight,Increases mining speed and attack speed,7,Electrical Steel,Conductive Iron,Cobalt,Certus Quartz,Erodium,Carbon Fiber,Aluminum,Hard Carbon,Magnesium,
-Luminiferous,Causes Glowing on enemies for a few seconds,1,Sunnarium,Refined Glowstone,,,,,,,,
-Magically Brittle,(Very low) Chance to completely break a tool. Can also break Unbreakable tools,0,Magical Wood,Apatite,,,,,,,,
-Magically Modifiable,Grants +3 modifiers,10,Magical Wood,,,,,,,,,
-Magnetic,"After breaking blocks or hitting enemies, items will be magnetised to the play temporarily",5,Iron (2),Iron,Enori,Fluxed Electrum (2),Nickel,,,,,
-Mana,Mana (Botania) can be used instead of durability; Will repair itself using Mana,10,Mirion,,,,,,,,,
-Mana-Infused,Tool will repair itself using mana,10,Manasteel,Terrasteel,Mana-Infused String,,,,,,,
-Mentor,Consumes 1 level (per part made of this material) to boost damage,2,Essence-Infused,,,,,,,,,
-Modifiable,Grants an extra modifier (1 per stack),9,Livingwood,Mica (2),Thaumium,Hemp Fiber,Enchanted Fabric,,,,,
-Moldable,Gain 1 modifier,5,Chocolate,,,,,,,,,
-Momentum,Mining speed increases the longer you are mining,7,Cobalt,Emeradic,Manasteel,Iridium,Tough Alloy,Mirion,,,,
-Moon Voice,Increases attack damage during a Full Moon,5,Endorium,,,,,,,,,
-Morgan Le Fay,Deals bonus Magic damage (0.0-5.0; Gaussian; Absolute),8,Prismarine,,,,,,,,,
-Mortal Wounds,Hits temporarily reduce enemies healing,6,Terrasteel,Pink Metal,Enderium,Mirion,,,,,,
-Nature's Blessing,Chance to drop bread when killing enemies and mining blocks; Rare chance to heal after killing a mob ,6,Peridot,,,,,,,,,
-Nature's Power,20% chance to ignite target; 20% chance to give the player Speed; 20% chance to give the player Strength,5,Topaz,,,,,,,,,
-Nature's Wrath,Chance to ignite the enemy and heal the player,4,Malachite,,,,,,,,,
-Omnipotence,???,???,Infinity,,,,,,,,,
-Opportunist,Deal more damage to enemies with a debuff,6,Elementium,Thaumium,Lumium,,,,,,,
-Overwhelm,Deals bonus damage against enemies wearing armour,7,Iridium,Red Matter,,,,,,,,
-Petramor,Chance to consume stone/cobblestone in place of durability,4,Energetic Alloy,Ardite,Litherite,,,,,,,
-Photosynthetic,Absorbs sunlight to repair itself,8,Sunnarium,,,,,,,,,
-PIezoelectric,Fully charged hits will recharge batteries in your inventory,7,Restonia,Fluix Steel,,,,,,,,
-Poisonous,Hit enemies gain Poison,5,Lead,Desert Myrmex Chitin,Jungle Myrmex Chitin,Thorium,Uranium,,,,,
-Portly Gentleman,"Shift right-click an entity to capture it at the cost of durability. Press the ""release entity"" key (default ""O"") to release it.",7,Fluix,Psigem,,,,,,,,
-Precipitate,Tool mines faster when at low HP,1,Naga Scale,,,,,,,,,
-Prickly,"After hit, if target is still alive and was hit, deal 0.5+NUMBER, where NUMBER is the greater of -0.5 or 0.75*RANDOM, where RANDOM is a random number from 0-1 along a pseudorandom Gaussian curve. This damage is cactus type, bypasses armor, and is absolute.",0,Cactus,,,,,,,,,
-Prosperous,Tools have a chance to drop Prosperity Shards,9,Base Essence,Inferium,Prudentium,Intermedium,Superium,Supremium,,,,
-Psicological,Tool heals with Psi mana,9,Psimetal,Psigem,,,,,,,,
-Rage,Critical hits increase attack speed,8,Endorium,,,,,,,,,
-Ratty,Chance to spawn a rat when attacking mobs or breaking blocks,8,Cheese,,,,,,,,,
-Rejuvenating,Attacked enemies gain Regeneration,1,Meat,,,,,,,,,
-Relentless,Struck enemies invulnerability timer is reduced,9,Pladium,Carbon Fiber,Signalum,,,,,,,
-Rude Awakening,Damage pierces armour (does not work against players),10,Lumium,,,,,,,,,
-Ruination,Tool deals percentage damage if struck enemy has full HP,9,UU-Metal,Void Metal,,,,,,,,
-Sassy,All hits on players and bosses will be Critical hits,10,Osgloglas,,,,,,,,,
-Sentient,Drains demonic will from Tartaric Gems to deal more damage,7,Sentient Ingot,,,,,,,,,
-Sharp,"Hit enemies gain Bleeding, dealing damage every 0.5 seconds",8,Steel,Fire Dragonsteel,Ice Dragonsteel,Refined Glowstone,Hard Carbon,Ruby,,,,
-Shocking,"Running, breaking blocks and hitting enemies charges the tool. Hitting an enemy will provide a damage boost and discharge. Mining blocks will provide a temporary mining boost and discharge.",1,Electrical Steel,Redstone Alloy,Electrum,Amber,,,,,,
-Slimey,Breaking a block has a 0.3% chance to spawn a slime,1,Slime,Blue Slime,Pink Slime,,,,,,,
-Soul Rend,???,???,Draconium,Wyvern,Draconic (2),Chaotic (3),,,,,,
-Spades,Tool deals more damage when you're at lower HP,6,Palis,,,,,,,,,
-Spectre,"Gain a Reach buff for every tool part made of Spectre, increasing block reach range",8,Spectre,,,,,,,,,
-Spiky,Blocking and taking damage will reflect a bit of damage back at the attacker,4,Cactus,,,,,,,,,
-Splintering,Increases damage the more you hit enemies,6,Bone,Dragon Bone (2),Boron Nitride,,,,,,,
-Splinters,1% chance to take 0.1 damage after breaking block or hitting enemy,0,Soularium,,,,,,,,,
-Splitting,Chance of projectile being doubled after fire,9,Bone,Dragon Bone (2),,,,,,,,
-Squeaky,"Grants silk touch to the tool, but it can no longer do damage",9,Sponge,Rubber,,,,,,,,
-Staggering,Fully charged hits temporarily freeze enemies,8,Terrasteel,Dark Matter,,,,,,,,
-Stalwart,Hitting enemies has a chance to gain Resistance for 10s,3,Knightmetal,,,,,,,,,
-Starfishy,"Press the ""set portal"" key (default ""N"") to set a virtual portal on the block you are pointing at. If you are on the brink of death, you have 32 Enori Crystals in your inventory, and the portal has enough space above, then the crystals are consumed and you are teleported to the location. (The tool must be in your hand to activate)",3,Enori,,,,,,,,,
-Stiff,Increases damage reduction from blocking,7,Steel,Osmium,Invar,Boron,,,,,,
-Stonebound,"Tool mines faster as it loses durability, but reduces tool damage",6,Ardite,Sky Stone,,,,,,,,
-Sundering,Causes weakness on enemies temporarily,2,Lightwood,Livingrock,Void Metal,,,,,,,
-Superheat, +35% bonus damage against burning targets,5,Fiery,Magma Slime,,,,,,,,
-Synergy,Will repair itself if you have Steeleaves in your hotbar,8,Steeleaf,,,,,,,,,
-Tasty,"While holding the tool and hungry, chance to consume 100 durability to increase hunger",4,Pig Iron,Meat,Chocolate,Cheese,,,,,,
-Terrafirma,"While equipped, regenerate HP quicker",9,Emerald,,,,,,,,,
-Thundering,Hitting enemies will cause a thunder strike,5,Electrical Steel,,,,,,,,,
-Twilit,"Grants +2 mining speed inside Twilight Forest, grants +2 damage outside Twilight Forest",6,Naga Scale,Steeleaf,Fiery,,,,,,,
-Unnatural,The tool will mine faster for every mining level it is above the block,4,Energetic Alloy,Dark Steel,End Steel,Knightslime,Starmetal,Pink Metal,,,,
-Uplifting,Breaking blocks and killing enemies has a chance to regenerate HP,7,Chocolate,,,,,,,,,
-Vampiric,Life-steals from hit enemies,4,Bloodwood,,,,,,,,,
-Vanishing,Chance to teleport hit enemies away,1,Vibrant Alloy,Pulsating Iron (3),Pulsating Iron,,,,,,,
-Veiled,Projectile becomes invisible,1,Raven Feather,,,,,,,,,
-Vindictive,Increases damage against players,2,Soulium,,,,,,,,,
-Voice of the Fae,Chance to summon a pixie to dive bomb the enemy,5,Elementium,Mirion,,,,,,,,
-Warping,Increases struck targets temporary Warp,1,Void Metal,,,,,,,,,
-Well-Established,Chance to drop extra XP when killing enemies and mining blocks,10,Copper,Enchanted Metal,,,,,,,,
-Whispering,Occasionally whispers it's thoughts,Lol,Demonic Metal,,,,,,,,,
-Willful,Chance for enemies to drop Demonic Wills,8,Sentient Ingot,,,,,,,,,
-Withering,Struck enemies gain Wither,5,Thorium,Uranium,,,,,,,,
-Writable,Grants +1 modifier,10,Redstone Alloy,Paper,Prosperity,Soularium,,,,,,
+Name,ID,Value,Description,Comment
+Absorbent,absorbent_armor,10,More absorbent than other brands.\nYour armor gets stronger in water and rain.,
+Aftershock,tconevo.aftershock,10,Laevatein!\nThis weapon deals additional magical damage on fully-charged hits.,Deals additional magic damage on fully charged hits
+Alien,alien_armor,60,The stats feel off...\n..as if they're changing! Maybe time will tell?,"800 points are created, and randomly distributed to durability, speed, and damage. Every 3.6 seconds, one of the distributed points is applied to the tool’s stats, unless you are currently breaking a block. Each point is worth 1 durability, 0.007 speed, or 0.005 damage."
+Alien,alien,80,The stats feel off...\n..as if they're changing! Maybe time will tell?,"800 points are created, and randomly distributed to durability, speed, and damage. Every 3.6 seconds, one of the distributed points is applied to the tool’s stats, unless you are currently breaking a block. Each point is worth 1 durability, 0.007 speed, or 0.005 damage."
+Alpha Fur,alpha_fur,10,Chilling\nChills targets or attackers.,"Freezes enemies temporarily, significantly lowering their movement speed"
+Alpha Fur,alpha_fur_armor,10,Chilling\nChills targets or attackers.,"Freezes enemies temporarily, significantly lowering their movement speed"
+Ambitious,ambitious_armor,45,On your way to glory!\nYou gain additional XP.,
+Anti-Corrosion,anticorrosion,10,"For the times when you splash the chemical\nEvery tick, there is a small chance that the holder's poison is healed (when held in hand).",Chance to heal the wielders poison while held
+Anti-Gravity,antigravity,40,"Onwards!\nThe arrow will maintain its height and will not be effected by gravity for the duration of the flight. Where you aim, it flies.",Projectile is immune to the pull of gravity
+Apocalypse,apocalypse,40,The end times...\nYour victim becomes moribund and is afflicted with increasing levels of Wither.,Struck enemies gain a stack of Wither
+Apprentice,,30,Power of study\n1/10 of incoming damage becomes experience but hurts you 10% more.,
+Aquadynamic,aquadynamic,10,It's getting wet in here!\nThe tool is unhindered by water and loves rainy evenings.,"Tool is not affected by being underwater, and increases mining speed during rain"
+Aquaspeed,aquaspeed_armor,15,It's getting wet in here!\nThe armor is unhindered by water and loves rainy evenings.,
+Aridiculous,aridiculous,15,Turn up the heat!\nThe tool works better in hotter environments.,Mining speed and attack speed is increased in drier environments
+Aridiculous,aridiculous_armor,15,Turn up the heat!\nThe armor works better in hotter environments.,Mining speed and attack speed is increased in drier environments
+Aspect of the Phoenix,tconevo.phoenix_aspect_armor,80,Heroes never die!\nThis armour sacrifices itself to save its wearer from death.,
+Astral,tconevo.astral,70,Shimmering!\nThis tool can be attuned to a constellation at an Attunement Altar.,"See the ""Tool Attunement"" tab for information about attunements"
+Astral,tconevo.astral_armor,90,Shimmering!\nThis armour piece can be attuned to a constellation at an Attunement Altar.,"See the ""Tool Attunement"" tab for information about attunements"
+Aura Affinity,tconevo.aura_affinity_armor,60,Warp included!\nThis armour reduces vis costs.,
+Aura Siphon,tconevo.aura_siphon,40,Wex trionis!\nThis weapon converts some damage dealt to bonus mana.,Converts damage dealt into mana
+Aura-Infused,tconevo.aura_infused_armor,50,Into the breach!\nThis armour passively generates mana.,
+Autoforge,autoforge_armor,70,"So hot, it fixes itself!\nThe armor repairs itself in fire.",
+Autosmelt,autosmelt,30,A furnace in tool form!\nHarvested blocks get smelted.,Broken blocks will automatically be smelted
+Baconlicious,baconlicious,30,BACON!\nHitting things sometimes gives bacon.,0.05% chance for slain enemies to drop bacon. 0.005% chance for broken blocks to drop bacon
+Baconlicious,baconlicious_armor,30,BACON!\nGetting hit sometimes gives bacon.,0.05% chance for slain enemies to drop bacon. 0.005% chance for broken blocks to drop bacon
+Battle Furor,tconevo.battle_furor,30,Hwæt!\nThis weapon grants its wielder increasing attack damage on fully-charged hits.,Repeated fully charged attacks increase damage
+Blasting,tconevo.blasting,15,I don't even think once!\nThis tool produces explosive results.,"Chance to cause an explosion, dealing bonus damage"
+Blessed,blessed_armor,30,"Undead, beware.\nWeakens undead on contact.",
+Blind Bandit,blindbandit,40,"Pulling a ... someone.\nA mob called the ""Blind Bandit"" will sometimes be summoned for a limited time after you attack or are attacked. She will attack hostile mobs, and will also attack those who dare attack her (except you), piercing armor on mobs.",Fully charged hits have a chance of summoning a Blind Bandit to fight for you temporarily
+Blind Rage,,10,Who said you need to see your enemies?\nDeal double damage when blinded.,Increased damage when blinded
+Blizzard II,frost2,20,"Ice-ice baby!\nFreezes enemies in a block of ice for 15 seconds with added knockback, and deals additional dragon frost damage.",
+Blood Lust,,10,I want more blood.\nAdds life essence to your soul network when killing.,
+Bloodbound,tconevo.bloodbound_armor,20,The multitudinous seas incarnadine...\nThis armour siphons its user's life essence to prevent damage to itself.,Tool will drain from the users LP network to repair itself
+Bloodbound,tconevo.bloodbound,60,The multitudinous seas incarnadine...\nThis tool siphons its user's life essence to prevent damage to itself.,Tool will drain from the users LP network to repair itself
+Bloody Mary,bloodymary,80,"Brought to you by the legendary Queen of England...\nDeals bonus damage depending on the amount of health already lost by the target. Also, a chance to drop a Coagulated Blood for each hit.",Increases damage based on total HP loss of enemy; Chance to drop Coagulated Blood on strike
+Botanical,botanical,20,I eat zombies for breakfast\nIncreases the amount of modifier slots; the effect stacks greatly.,Gain +1 modifier (per stack)
+Bouncy,bouncy_armor,50,Always a bounce house!\nYour armor tends to bounce around.,"Protects well from fall damage, ease of moving around."
+Breakable,breakable,-20,This side up!\nProjectiles have a 50% chance to break on impact.,Projectile has a 50% chance of breaking on impact
+Brown Magic,brownmagic,90,"You're weird.\nPress the ""set portal"" key (default ""N"") to set a virtual portal on the block you are pointing at. By default, press ""Y"" to teleport there (if there is enough space).","Press the ""set portal"" key (default ""N"") to set a virtual portal on the block you are pointing at. Press ""Y"" to teleport there at the cost of durability."
+Bulwark,tconevo.bulwark_armor,40,"Blocked!\nThis armour reduces incoming damage by one heart, to a minimum of one heart.",
+Calcic,calcic_armor,60,For stronger bones.\nMilk rejuvenates both you and your armor.,"Heals you, repears armor. Very useful."
+Cam Dai Bay,camdaibay_armor,20,"No, it's not some bay in Vietnam!\nIf the player is attacked and is blocking, inflicts the player's negative status effects on the attacker.",
+Cascading,tconevo.cascading,25,It's all coming down!\nThis tool destroys falling blocks in columns.,"When breaking falling blocks (sand etc), break all falling blocks above it"
+Celestial,tconevo.celestial_armor,500,Abyssal wings!\nThis armour grants creative flight.,
+Chain Lightning,tconevo.chain_lightning,20,Full bridge rectifier!\nThis weapon's fully-charged attacks have a chance of arcing to nearby enemies.,Fully charged attacks have a chance of causing chain lightning between enemies
+Cheap,cheap_armor,15,More bang for your buck!\nIncreases durability gained when repairing the armor.,Increases durability regained when repairing
+Cheap,cheap,15,More bang for your buck!\nIncreases durability gained when repairing the tool.,Increases durability regained when repairing
+Cheapskate,cheapskate,-20,Cheeky!\nStone is bad. Your tool has less durability.,Overall durability decreased
+Cheapskate,cheapskate_armor,-10,Might be a knockoff!\nStone is bad. Your armor has less durability.,Overall durability decreased
+Chilling Touch,tconevo.chilling_touch_armor,20,Ice is nice!\nThis armour briefly slows attackers.,
+Chunky,chunky,40,Makes your tool or weapon randomly drop Mob Chunks.,Hit enemies have a chance to drop their mob chunk on death
+Cold-Blooded,coldblooded,30,Savage!\nDeal increased damage to targets at full health.,Increases damage against targets at full HP
+Combustible,combustible_armor,50,This armor is on fiiiire!\nSets fire to surrounding creatures when ignited.,
+Condensing,tconevo.condensing,150,Try not to think about it.\nSlain foes and broken blocks may leave behind a smattering of neutrons.,Breaking blocks and killing enemies has a rare chance of leaving behind neutronium pieces
+Corrupting,tconevo.corrupting,30,A glimpse of the void...\nThis weapon inflicts increasing wither on fully-charged hits.,Struck enemies gain a stack of Wither
+Crude,crude,30,Armor is for cowards!\nBonus damage against unarmored targets.,Deals +5% (per stack) damage vs unarmored enemies
+Crumbling,crumbling,30,Crumble rumble rumble\nThe tool breaks soft blocks that don't need a tool faster.,Increases mining speed by 50% on blocks that do not need a tool
+Crystalline,tconevo.crystalline,40,You could buy a very small piano!\nThis weapon deals greater damage at higher durability.,Weapons deal more damage at higher durability levels
+Crystalys,tconevo.crystalys,30,I'm not afraid of the darkness!\nThis weapon shatters soul networks to manifest weak blood shards.,Killing enemies has a chance to drop Blood Shards
+Culling,tconevo.culling,60,Only the worthy will survive.\nThis weapon deals increased damage to enemies with less health than its wielder.,Weapon will deal more damage to enemies with less HP than the player. Give +1 damage for each heart difference (for each 2HP). Cannot be more that x2 of original damage.
+Cycle of Life,,20,From one to another.\nWhen your tool is damaged you are healed for the damaged amount.Piezo,Damaging the tool will heal you for the equivalent amount
+Deadly Precision,tconevo.deadly_precision,50,Just buy six daedalus 4Head\nThis weapon deals greatly increased damage on critical strikes.,Critical hits are stronger
+Death Cloud,plague_shot,25,"I Am Become Death\nSummons a plague cloud on use, which deals half the damage of the tool!","Chance to summon a Plague Cloud when attacking, which deals half the total damage of the tool"
+Dense,dense_armor,25,Hard...er.\nYour armor lasts longer when it has less durability.,Decreases durability use as durability decreases
+Dense,dense,25,Hard...er.\nYour tool lasts longer when it has less durability.,Decreases durability use as durability decreases
+Depth Digger,depthdigger,30,Fresh-air-a-phobia?\nThis tool becomes more efficient at lower elevations.,Increases mining speed as your Y coordinate lowers
+Devil's Strength,devilsstrength,30,Rivaling Satan...\nBonus damage to non-Overworld mobs.,Increases damage against non-Overworld enemies
+Dire-Hit,,50,It's super effective!\nYour tool will always land a critical hit so long as you are at full health!,All hits will be critical hits if you at max HP
+Direct,enderpickup,70,"It's mine, all mine!\nTeleports mined things directly into your inventory.",Teleports mined blocks directly into your inventory
+Diseased,disease,30,Fleas on Rats!\nOpponents get inflicted with Plague.,Struck enemies gain the Plague
+Divine Grace,tconevo.divine_grace_armor,50,Support's on the way!\nThis armour amplifies received healing.,
+Dramatic,dramatic_armor,40,What a rush!\nMight save you in a pinch? Who knows!,
+Dunans Transport,dunanstransport_armor,20,The FedEx of one square foot of land\nBonus armor protection and toughness for riding players.,
+Duritae,duritos,25,Doesn't taste as good as it sounds.\nYour tool lasts longer ...most of the time.,"Using the tool has a chance to increase durability used, decrease it, nullify it or do nothing"
+Duritae,duritos_ranch_armor,25,Doesn't taste as good as it sounds.\nYour armor lasts longer...most of the time.,"Using the tool has a chance to increase durability used, decrease it, nullify it or do nothing"
+Ecological,ecological,40,"Green Power!\nRenewable resources are so good, they regenerate by themselves!",Slowly repairs over time
+Ecological,ecological_armor,40,"Green Power!\nRenewable resources are so good, they regenerate by themselves!",Slowly repairs over time
+Electric,tconevo.electric_armor,30,HAYO!\nThis armour consumes electricity before durability.,Tool will consume energy before durability
+Electric,tconevo.electric,70,HAYO!\nThis tool consumes electricity before durability.,Tool will consume energy before durability
+Elemental,elemental,30,"Elemental...\nWhen gravity-affected blocks are destroyed, break all blocks of the same type above and below. Also, a chance to gain various benefits from a sucessful attack.","Gain random buffs when attacking enemies; When breaking gravity-affected blocks, break all blocks of the same type above and below"
+Enderference,enderference,30,Anti-Teleport!\nPrevents Endermen from teleporting around for a short time.,Prevents Endermen from teleporting temporarily after being hit
+Enderport,enderport,35,Just in time!\nMight teleport you out of dangerous situations.,
+Enderport,enderport_armor,40,Just in time!\nMight teleport you out of dangerous situations.,
+Endspeed,endspeed,40,Quantum speed!\nProjectiles instantly travel to their destination.,Projectiles travel instantaneously
+Energized,tconevo.energized_armor,40,Batteries included!\nThis armour consumes an internal energy buffer before durability.,Tool will consume energy before durability
+Energized,tconevo.energized,90,Batteries included!\nThis tool consumes an internal energy buffer before durability.,Tool will consume energy before durability
+Eternal Darkness,,30,Join the dark side...\nYour tool loves the dark so much;it does more damage in the dark.,Increases damage when the light level is low
+Eternity,tconevo.eternity_armor,300,Falling in and out of time...\nThis armour grants the immortality effect.,
+Evil Aura,xu_withering,-5,"When held, creates an aura of evil that brings misfortune to the wielder.","When the tool is held, reduces the ""luck"" stat of the player. Also converts nearby grass/paths to dirt"
+Evolved,tconevo.evolved,60,"Balanced, as all things should be.\nThis tool uses energy and can be upgraded by fusion crafting.",Can be upgraded with draconic upgrades
+Evolved,tconevo.evolved_armor,70,"Balanced, as all things should be.\nThis armour grants an energy shield and can be upgraded by fusion crafting.",Can be upgraded with draconic upgrades
+Executor,tconevo.executor,60,See ya! \nThis weapon deals bonus damage based on the target's missing health.,
+Experience Boost,xu_xp_boost,55,Gives bonus XP when mining or slaying mobs.,Increases XP drops when mining blocks or killing enemies
+Explosive,explosive,20,Ka-boom!\nAn explosion is created on each hit.,An explosion is created on impact
+Featherweight,featherweight_armor,30,"Light as a feather.\nYou're so light, you take less fall damage.",
+Fertilizing,tconevo.fertilizing,45,Green terra!\nThis tool can be used to fertilize crops at a large durability cost.,Tool can be used as Fertilizer for a durability cost
+Flammable,flammable,15,Can't have enough fire!\nBlocking blocks fire damage and getting hit sets the attacker on fire.,Blocking will block fire damage and getting hit sets the attacker on fire
+Fleet of Foot,tconevo.foot_fleet,20,Stay still--I'm trying to shoot you!\nThis weapon grants a burst of speed to its wielder on fully-charged hits.,Grants Speed II for a short period after a fully charged attack
+Flying Knockback,arrow_knockback,20,Up and At 'Um!\nThe arrow will inflict strong knockback when it hits an entity.,Projectile will strongly knock back impacted enemies
+Forbidden,,60,************************************,
+Force of Impact,tconevo.impact_force,30,Suffering is magic!\nThis weapon deals greater damage at high velocity.,Increases damage based on player velocity
+Fractured,fractured,50,Hurt!\nYour tools damage is increased.,Overall tool damage is increased
+Fractured II,fractured2,60,Hurt!\nYour tools damage is increased.,
+Freezing,freezing,25,Winter is Coming\nSuccessful hits slow your target more and more.,Struck enemies gain a stack of Slowness
+Gaia's Wrath,tconevo.gaia_wrath,30,Light and darkness!\nThis weapon fires damaging beams when swung.,Fully charged hits fires a laser beam that consumes durability
+Gale Force,tconevo.gale_force_armor,200,Wind blow!\nThis armour grants increased flight speed.,
+Glitch,,70,Catch an exception!\nDrops Glitch Heart sometimes when killing.,
+Global Traveler,global,80,Around the world... and back\nShift-right-click a block in order for items from broken blocks and killed entities to get transported in there if it is an inventory.,Shift right-click a container to bind it. Broken blocks and dropped items from killing mobs will be teleported there
+Good Friday Agreement,goodfridayagreement_armor,40,Troubles over?\nIron golems will not attack a player having this trait.\n,
+Griding,grinding_armor,60,Jump!\nJump on the Ore blocks to crush them into dust.,
+Haoran's Cult,haorans_cult_armor,90,"Harry, harry on the wall, who's the hairiest of them all?\nWhen withered, reduces HP of all mobs in a certain range by 30% every second.",
+Hearth's Embrace,tconevo.hearth_embrace_armor,60,"Heartwarming!\nThis armour extinguishes fires on its wearer, converting them to healing.",
+Heavy,heavy,20,Do you even lift?\nPrevents knockback.,Prevents knockback
+Heavy,heavy_armor,80,Do you even lift?\nPrevents knockback.,Prevents knockback
+Heavy Metal,,20,Heave-ho!\nIncreased knockback + Slowness on target.,Increases knockback and gives Slowness to hit enemies
+Hellish,hellish,25,From down below!\nDeal bonus damage to non-Nether mobs.,Deals +4 (per stack) damage against non-Nether mobs
+Hive Defender,hive_defender,25,For Queen and Colony!\nDeals +8 extra damage against death worms and +4 damage against non-arthropods.,"Deals +8 damage against death worms, and +4 damage against non-arthropods"
+Holy,holy,15,Radiant!\nDeal bonus damage to undead enemies.,Deals +5 (per stack) damage against undead enemies
+Hovering,hovering,20,Free like the wind\nProjectiles move slower but don't mind gravity as much.,"Projectile has a much straighter shot, but moves slower"
+I'm a Superstar,im_a_superstar,40,I am a superstar! [falls into the toilet]\nEffects depend on the player's attunement.,
+In The Garage,in_the_garage,25,"""In the garage where I belong...""\nDeals an additional 5 damage when player is not in direct sunlight.",
+Indomitable,indomitable_armor,35,Never give up!\nMakes your armor more effective.,
+Infernal,infernal_armor,35,The latest in demonic fashion.\nExtra protection from non-Nether mobs.,
+Inferno II,flame2,45,"Burn baby burn!\nSets enemies on fire for 15 seconds with added knockbacks, and deals additional dragon flame damage.",
+Infinitum,tconevo.infinitum,400,Proven by induction!\nThis equipment is indestructible.,Tool is unbreakable
+Insatiable,insatiable,25,Devour!\nDuring combat you deal more and more damage but also consume more and more durability.,Increases damage and durability use during combat
+Invigorating,invigorating_armor,40,"This feels great!\nSomehow, you feel healthier.",
+Jagged,jagged,20,Moves like jagged!\nEvery point durability lost increases damage.,Increases damage as more durability is used
+Juggernaut,tconevo.juggernaut,70,A titanic strike!\nThis weapon deals increased damage based on its wielder's current health.,Weapon will deal more damage scaling with the players current HP
+Light Metal,light,30,Low-weight\nAttack and mining speed increases.,Increases attack speed and mining speed
+Lightweight,lightweight_armor,40,Swift like the wind!\nIncreases your overall movement speed.,Increases mining speed and attack speed
+Lightweight,lightweight,40,Swift like the wind!\nIncreases the overall speed of your tool when mining and attacking.,Increases mining speed and attack speed
+Luminiferous,tconevo.luminiferous,45,Relativistic!\nThis weapon reveals the positions of struck enemies.,Causes Glowing on enemies for a few seconds
+Magically Brittle,brittle,-25,Has a random chance of breaking when it takes damage. Can break 'unbreakable' tools.,(Very low) Chance to completely break a tool. Can also break Unbreakable tools
+Magically Modifiable,magical_modifier,70,Adds 3 extra modifiers to a tool,Grants +3 modifiers
+Magnetic,magnetic,25,How do they work?!\nHitting things attracts nearby things?!,"After breaking blocks or hitting enemies, items will be magnetised to the play temporarily"
+Magnetic,magnetic_armor,25,Attractive armor!\nItems can't help but be drawn to you.,"After breaking blocks or hitting enemies, items will be magnetised to the play temporarily"
+Magnetic,magnetic,25,How do they work?!\nHitting things attracts nearby things?!,"After breaking blocks or hitting enemies, items will be magnetised to the play temporarily"
+Magnetic,magnetic_armor,25,Attractive armor!\nItems can't help but be drawn to you.,"After breaking blocks or hitting enemies, items will be magnetised to the play temporarily"
+Mana,mana,90,"Rechargeable... with flowers\nMana can be used in place of durability, and can heal the tool over time.",Mana (Botania) can be used instead of durability; Will repair itself using Mana
+Mana Affinity,tconevo.mana_affinity_armor,40,Warp not included!\nThis armour reduces mana costs.,
+Mana Affinity,tconevo.mana_affinity_armor,40,Warp not included!\nThis armour reduces mana costs.,
+Mana-Infused,tconevo.mana_infused_armor,45,Mining in the database?\nThis armour repairs itself using mana.,Tool will repair itself using mana
+Mana-Infused,tconevo.mana_infused,90,Mining in the database?\nThis tool repairs itself using mana.,Tool will repair itself using mana
+Mirabile Visu,mirabile,80,"Wonderful to see\nOccasionally, a gold or diamond ore will appear in stone immediately surrounding you (at the cost of durability).",
+Modifiable,tconevo.modifiable,50,The infinite spring!\nThis equipment has additional free modifier slots.,Grants an extra modifier (1 per stack)
+Moldable,moldable_armor,35,Maître Chocolatier.\nBlend additional modifiers into your armor.,Gain 1 modifier
+Moldable,moldable,50,Maître Chocolatier.\nBlend additional modifiers into your tool.,Gain 1 modifier
+Momentum,momentum,50,"Faster, keep going!\nMining blocks increases your speed, as long as you keep going.",Mining speed increases the longer you are mining
+Moon Voice,wolframium,25,The loneliness echo...\nGives strength on a full moon.,Increases attack damage during a Full Moon
+Morgan Le Fay,,20,Lancelot...\nBonus damage (ranging from 0.0 to 5.0:Gaussian distributed) is afflicted (it is absolute).,Deals bonus Magic damage (0.0-5.0; Gaussian; Absolute)
+Mortal Wounds,tconevo.mortal_wounds,30,A mortal reminder!\nThis weapon reduces the enemy's healing for a duration.,Hits temporarily reduce enemies healing
+Mundane,mundane_armor,25,Weapons are for chumps!\nBonus protection against unarmed attackers.,
+Nature's Blessing,naturesblessing,30,Wonderful...\nA chance to drop bread per mob killed or block broken. Sometimes heals the player by a bit after killing a mob.,"Chance to drop bread when killing enemies and mining blocks; Rare chance to heal after killing a mob "
+Nature's Power,naturespower,25,Feel the power...\nAfter attacking a mob: 20% chance to burn target. 20% chance to give player Speed. 20% chance to give player Strength.,20% chance to ignite target; 20% chance to give the player Speed; 20% chance to give the player Strength
+Nature's Wrath,natureswrath,20,"Nature's wrath burning...\nAfter attacking a mob, there is a chance to burn the target, as well as to heal the player.",Chance to ignite the enemy and heal the player
+Null Almighty,tconevo.null_almighty_armor,55,The power of the trickster!\nThis armour grants 25% resistance to all incoming damage.,
+Omnipotence,tconevo.omnipotence,300,Begone!\nThis tool defies the will of gods.,"Deals damage to Creative players, break unbreakable blocks like Bedrock"
+Opportunist,tconevo.opportunist,30,I've been waiting for this!\nThis weapon deals increased damage to debuffed targets.,Deal more damage to enemies with a debuff
+Overflow,,90,-2147483648\nThere is a 25% probability that this weapon directly wipes off half of target's health each attack.,
+Overwhelm,tconevo.overwhelm,45,Heavy is the hand...\nThis weapon deals greater damage to armoured targets.,Deals bonus damage against enemies wearing armour
+Petramor,petramor,30,"So much stone, must see it all!\nYour tool loves stone, it literally wants to absorb it (for durability).",Chance to consume stone/cobblestone in place of durability
+Petravidity,petravidity_armor,30,"So much stone, must see it all!\nYour armor loves stone, it operates better around it.",
+Photosynthetic,tconevo.photosynthetic,50,Photosynthesis... photosynthesis...\nThis tool absorbs sunlight to repair itself.,Absorbs sunlight to repair itself
+Photosynthetic,tconevo.photosynthetic_armor,50,Photosynthesis... photosynthesis...\nThis armour absorbs sunlight to repair itself.,Absorbs sunlight to repair itself
+Piezoelectric,tconevo.piezoelectric,45,Electromechanical!\nThis weapon converts damage from fully-charged hits into usable energy.,
+Poisonous,poisonous,25,Not exactly lead-free!\nPoisons enemies on hit.,Hit enemies gain Poison
+Poisonous,poisonous_armor,25,So many to kill... so little time.\nPoisons enemies on contact.,Hit enemies gain Poison
+Portly Gentleman,portly,70,"Testing nuclear bombs off the Korean coast, oh yeah!\nShift-right-click an entity to capture it (costs durability based on entity health). Press the ""release entity"" key (default ""0"") in order to release it.","Shift right-click an entity to capture it at the cost of durability. Press the ""release entity"" key (default ""O"") to release it."
+Possessed,,70,J'zhahar's will descends on the instrument of destruction crying out for the essences of life.,
+Precipitate,precipitate,25,"The last standing escape plan.\nThe less health you have, the speedier it is!",Tool mines faster when at low HP
+Prickly,prickly,25,"Ouch!\nNobody is safe from those thorns, they always hurt.","After hit, if target is still alive and was hit, deal 0.5+NUMBER, where NUMBER is the greater of -0.5 or 0.75*RANDOM, where RANDOM is a random number from 0-1 along a pseudorandom Gaussian curve. This damage is cactus type, bypasses armor, and is absolute."
+Prideful,prideful_armor,35,"What's narcissism?\nYou're tougher after getting attacked, at the cost of durability.",
+Prosperous,prosperous,50,Makes your tool or weapon randomly drop\nProsperity Shards,Tools have a chance to drop Prosperity Shards
+Psicological,psicological,80,...the reverse kind\nTools heal with Psi.,Tool heals with Psi mana
+Radiant,tconevo.radiant_armor,30,Shines like the sun!\nThis armour briefly blinds attackers.,
+Rage,endorium,40,Where is physics!?\nCritical strike increases attack speed.,Critical hits increase attack speed
+Ratty,ratty,30,"Rat Patootie\nRandomly summons rats when used. If used in a fight, summoned rats will try to defend you!",Chance to spawn a rat when attacking mobs or breaking blocks
+Reactive,tconevo.reactive_armor,35,They'll never get me in here!\nThis armour grants increasing damage resistance after being attacked.,
+Rejuvenating,tconevo.rejuvenating,5,Your weapons betray you!\nThis weapon applies regeneration to attacked targets.,Attacked enemies gain Regeneration
+Relentless,tconevo.relentless,20,Swift strikes!\nThis weapon induces a shorter invulnerability period in struck enemies.,Struck enemies invulnerability timer is reduced
+Researcher,,90,"Based on your research in thaumonomicon, there are various effects!",
+Rough,rough_armor,40,Please don't touch.\nDamages attackers on contact based on durability.,
+Ruination,tconevo.ruination,50,I met a traveller...\nThis weapon deals damage scaling with enemy health on fully-charged hits.,Tool deals percentage damage if struck enemy has full HP
+Sassy,sassy,60,The sass...\nCrit on players and bosses.,All hits on players and bosses will be Critical hits
+Second Wind,tconevo.second_wind_armor,55,The wind... it is blowing...\nThis armour provides regeneration after being attacked.,
+Sentient,tconevo.sentient_armor,20,It knows what you've done...\nThis armour consumes demon will to increase its power.,Drains demonic will from Tartaric Gems to deal more damage
+Sentient,tconevo.sentient,30,It knows what you've done...\nThis tool consumes demon will to increase its power.,Drains demonic will from Tartaric Gems to deal more damage
+Shadowstep,tconevo.shadowstep_armor,45,Nothing to see here...\nThis armour piece grants invisibility in the dark.,
+Sharp,sharp,20,Can even cut words!\nHitting an enemy leaves them bleeding for a short time.,"Hit enemies gain Bleeding, dealing damage every 0.5 seconds"
+Shielding,shielding_armor,25,"Not so special now, huh?\nAdditional protection from magical attacks.",
+Shocking,shocking,35,"Bzzzzzt!\nRunning around, breaking blocks or hitting things charges your tool. Hitting an enemy discharges it, dealing damage and providing a speed boost. Mining a block discharges it, giving a mining speed boost.","Running, breaking blocks and hitting enemies charges the tool. Hitting an enemy will provide a damage boost and discharge. Mining blocks will provide a temporary mining boost and discharge."
+Skeletal,skeletal_armor,30,Tough as...bones?\nMakes your armor tougher.,
+Slimey,tconevo.slimey_pink,5,"Eww, gooey!\nIt'll wash off.",Breaking a block has a 0.3% chance to spawn a slime
+Slimey,tconevo.slimey_pink_armor,5,"Eww, gooey!\nIt'll wash off.",Breaking a block has a 0.3% chance to spawn a slime
+Slimey,slimey_green,5,"Eww, gooey!\nIt'll wash off.",Breaking a block has a 0.3% chance to spawn a slime
+Slimey,slimey_green_armor,5,"Eww, gooey!\nIt'll wash off.",Breaking a block has a 0.3% chance to spawn a slime
+Slimey,slimey_blue,5,"Eww, gooey!\nIt'll wash off.",Breaking a block has a 0.3% chance to spawn a slime
+Slimey,slimey_blue_armor,5,"Eww, gooey!\nIt'll wash off.",Breaking a block has a 0.3% chance to spawn a slime
+Soul Guard,tconevo.soul_guard_armor,80,"On that day, the reaper laid down his scythe...\nThis armour siphons its user's life essence to mitigate a portion of incoming damage.",90% damage mitigate or 50% of armor-piercing
+Soul Rend,tconevo.soul_rend,40,Soul steal!\nThis weapon has innate soul-stealing abilities.,Drom Draconic's Evolution Mob Souls on kill
+Spades,,30,Trump suit: Make Tinkers Great Again!\nThe lower your health the more damage you do.,Tool deals more damage when you're at lower HP
+Spectral,tconevo.spectral_armor,45,It's all a blur!\nThis armour grants its wearer a chance to evade incoming attacks.,
+Spectre,spectre,70,Spectral\nEach part gives additional Reach potion effect.,"Gain a Reach buff for every tool part made of Spectre, increasing block reach range"
+Spectre,spectre_armor,70,Spectral\nEach part gives additional Reach potion effect.,"Gain a Reach buff for every tool part made of Spectre, increasing block reach range"
+Spiky,spiky,25,200% cooler with spikes!\nBlocking and getting hurt deals damage to the attacker.,Blocking and taking damage will reflect a bit of damage back at the attacker
+Spiny,spiny_armor,25,"They're called spines, not spikes!\nGetting hurt deals damage to the attacker at the cost of durability.",
+Splintering,splintering,30,A souvenir for your enemies!\nHit them more to deal more damage.,Increases damage the more you hit enemies
+Splintering II,splintering2,35,A souvenir for your enemies!\nHits them more to deal more damage.,
+Splinters,splinters,-2,Ouch!\nBe careful not to catch a splinter!,1% chance to take 0.1 damage after breaking block or hitting enemy
+Splitting,splitting,80,Two for one!\nThe sudden acceleration of releasing an arrow might cause it to split into two.,Chance of projectile being doubled after fire
+Splitting II,splitting2,90,Three for one!\The sudden acceleration of releasing an arrow cause it to split into three.,
+Squeaky,squeaky,30,"Cute.\nYour tool is so soft and squeaky it gained silktouch, but deals no damage.","Grants silk touch to the tool, but it can no longer do damage"
+Staggering,tconevo.staggering,30,...and stay bashed!\nThis weapon briefly immobilizes enemies on fully-charged hits.,Fully charged hits temporarily freeze enemies
+Stalwart,stalwart,25,The Brave and Bold.\nHitting an entity can make you feel emboldened.,Hitting enemies has a chance to gain Resistance for 10s
+Starfishy,,45,"2+2=5\nPress the �set portal� key (default �N�) to set a virtual portal on the block you are pointing at. If you are on the brink of death, you have 32 enori crystals to spare, and the portal has enough space above, then the crystals are consumed, you are teleported to the virtual portal, and you are spared. (The tool must be in your hand).","Press the ""set portal"" key (default ""N"") to set a virtual portal on the block you are pointing at. If you are on the brink of death, you have 32 Enori Crystals in your inventory, and the portal has enough space above, then the crystals are consumed and you are teleported to the location. (The tool must be in your hand to activate)"
+Steady,steady_armor,25,"Stand your ground!\nLess knockback for you, more for your attacker.",
+Stiff,stiff,20,Unmoving!\nBlocking reduces the damage taken even more.,Increases damage reduction from blocking
+Stifling,tconevo.stifling_armor,35,Like punching a rock!\nThis armour weakens attackers.,
+Stonebound,stonebound,30,"Your tool absolutely loves stone!\nThe tool mines faster as it wears out, but does less damage.","Tool mines faster as it loses durability, but reduces tool damage"
+Stonebound,tconevo.stonebound_armor,30,Your armour absolutely loves stone!\nThis armour grows more effective as it wears out.,"Tool mines faster as it loses durability, but reduces tool damage"
+Strength of Will,tconevo.will_strength_armor,55,Maintaining focus!\nThis armour grants immortality when hit at full health.,
+Subterranean,subterranean_armor,45,We have to go deeper!\nYour armor is more durable below sea level.,
+Sundering,tconevo.sundering,25,Balance is weakness...\nThis weapon weakens attacked enemies.,Causes weakness on enemies temporarily
+Superdense,tconevo.superdense_armor,45,Not overpowered!\nThis armour slightly mitigates most forms of incoming damage.,
+Superheat,superheat,25,Turn up the heat!\nDeal bonus damage to enemies on fire.," +35% bonus damage against burning targets"
+Superhot,superhot_armor,20,SUPER. HOT.\nYou run faster when you're on fire!,
+Surf Wax America,surf_wax_america,15,"""You take your car to work, I'll take my board...:""\nDeals an additional 5 damage when players are riding a mount.",
+Synergy,synergy,80,"Look ma, no moss!\nWill repair itself if you have Steeleaves in your hotbar.",Will repair itself if you have Steeleaves in your hotbar
+Tasty,tasty,20,Om Nom Nom\nSmells so good.. You'd rather eat your tool than starve.,"While holding the tool and hungry, chance to consume 100 durability to increase hunger"
+Tasty,tasty_armor,20,Om Nom Nom\nSmells so good...You'd rather eat your armor than starve.,"While holding the tool and hungry, chance to consume 100 durability to increase hunger"
+Terrafirma,terrafirma,35,"Solid earth\nWhile this tool is in your hand (or this armor is worn), you will heal over time.","While equipped, regenerate HP quicker"
+Thundergod's Favour,tconevo.thundergod_favour_armor,15,Insulated!\nThis armour grants immunity to lightning strikes.,
+Thundergod's Wrath,tconevo.thundergod_wrath,25,I condemn you!\nThis weapon calls down a bolt of lightning upon enemies struck at full health.,
+Thundering,thundering,25,"Rise, Thor!\nSummon a thunderbolt on impact.",Hitting enemies will cause a thunder strike
+Tom and Jerry,tom_and_jerry_armor,20,[laughs in flattening Tom]\nExplosions caused by a user with this trait slow down those affected.,
+Twilit,twilit,30,The Twilight Forest's illuminating blessing.\nSpeedier in the Twilight Forest.\nMore damage outside the Twilight Forest.,"Grants +2 mining speed inside Twilight Forest, grants +2 damage outside Twilight Forest"
+Ultradense,tconevo.ultradense_armor,65,Extremely not overpowered!\nThis armour significantly mitigates most forms of incoming damage.,
+Undone,sweater_song,55,"""If you want to destroy my sweater...""\nTargets wearing armor have a 30% chance of their armor being removed from a critical strike.",
+Unnatural,unnatural,50,Abomination!\nThe tool mines faster the higher its mining level is above the required one.,The tool will mine faster for every mining level it is above the block
+Uplifting,uplifting,35,This day we fight!\nOccasionally regenerates health on use.,Breaking blocks and killing enemies has a chance to regenerate HP
+Uplifting,uplifting_armor,35,I bid you stand!\nOccasionally regenerates health when hit.,Breaking blocks and killing enemies has a chance to regenerate HP
+Vampiric,tconevo.vampiric,45,Still befriending mortals?\nThis weapon drains life energy from enemies to heal its wielder.,Life-steals from hit enemies
+Vanishing,,5,Out of my way!\nChance to teleport enemies away.,Chance to teleport hit enemies away
+Veiled,veiled,5,Like a Specter!\nProjectile will be invisible.,Projectile becomes invisible
+Vengeful,vengeful_armor,35,They'll pay for this!\nYour attackers might not feel great after hitting you.,
+Vindictive,,10,"You are not forgiven!\nBonus damage to players, and you gain some health by attacking.",Increases damage against players
+Vis Equillibrium,,35,Depending on vis in aura your tool has better stats.,
+Vis Siphon,,45,Repairs tool using local vis in aura.,
+Voice of the Fae,tconevo.fae_voice,25,"Hey, listen!\nThis weapon may summon pixies to attack foes.",Chance to summon a pixie to dive bomb the enemy
+Voice of the Fae,tconevo.fae_voice_armor,25,"Hey, listen!\nThis armour may summon pixies to ward off attackers.",Chance to summon a pixie to dive bomb the enemy
+Voltaic,voltaic_armor,35,"Biribiri!\nGetting hit charges your armor. Once fully charged, get hit again to discharge and deal damage to all surrounding creatures.",
+Warping,tconevo.warping,5,Strange whispers reveal secrets...\nThis accursed weapon saps at the sanity of those that bear its strikes.,Increases struck targets temporary Warp
+Warping,tconevo.warping_armor,5,Strange whispers reveal secrets...\nThis accursed plate saps at the sanity of those that would strike it.,Increases struck targets temporary Warp
+Well-Established,established,70,Free bonus XP!\nYou gain additional XP.,Chance to drop extra XP when killing enemies and mining blocks
+Whispering,xu_whispering,-2,Will occasionally whisper it's will to you,Occasionally whispers it's thoughts
+Willful,tconevo.willful_armor,30,Your soul is mine!\nThis armour ensnares the souls of those that would attack it.,Chance for enemies to drop Demonic Wills
+Willful,tconevo.willful,50,Your soul is mine!\nThis weapon severs the strands of demonic will that bind its enemies.,Chance for enemies to drop Demonic Wills
+Withering,withering_armor,25,"We may have years, we may have hours...\nWithers enemies on contact.",Struck enemies gain Wither
+Withering,withering,40,Death makes monsters of us all.\nWithers enemies on hit.,Struck enemies gain Wither
+Writable,writable,50,Intellectual!\nMore words. More Modifiers. It's only logical!,Grants +1 modifier

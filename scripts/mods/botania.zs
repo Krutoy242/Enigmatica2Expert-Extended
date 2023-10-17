@@ -144,7 +144,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "▬   ▬",
   "* ◊ D"], {
   "S": <bloodmagic:item_demon_crystal:4>, # Steadfast Will Crystal
-  "◊": <ore:gemPerk>, 								    # Ourium Gem
+  "◊": <astralsorcery:itemcelestialcrystal:*>,
   "╳": <bloodmagic:item_demon_crystal:1>, # Corrosive Will Crystal
   "▬": <ore:ingotMirion>,                 # Mirion Ingot
   "*": <bloodmagic:item_demon_crystal:3>, # Vengeful Will Crystal

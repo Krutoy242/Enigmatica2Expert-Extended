@@ -785,7 +785,6 @@ static values as int[int][string] = {
   "libvulpes:coil0": { 9: 280 },
   "minecraft:hopper": { 0: 281 },
   "opencomputers:component": { 1: 2992, 8: 281 },
-  "nuclearcraft:rad_shielding": { 0: 285, 1: 2448, 2: 23673 },
   "thermalexpansion:frame": {
     0: 11648,
     64: 289,
@@ -1133,7 +1132,6 @@ static values as int[int][string] = {
   "minecraft:emerald_block": { 0: 90000 },
   "extendedcrafting:table_basic": { 0: 90504 },
   "mysticalagriculture:prudentium_helmet": { 0: 91002 },
-  "nuclearcraft:radiation_scrubber": { 0: 96454 },
   "plustic:osmiridiumblock": { 0: 98552 },
   "ic2:iridium_reflector": { 0: 99229 },
   "matc:inferiumcrystal": { 0: 102746 },

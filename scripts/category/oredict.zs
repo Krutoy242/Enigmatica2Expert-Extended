@@ -185,10 +185,6 @@ add(<ore:blockAmber>, <biomesoplenty:gem_block:7>);
 add(<ore:blockAmber>, <thaumcraft:amber_block>);
 add(<ore:blockAmber>, <thaumcraft:amber_brick>);
 
-add(<ore:gemPerk>, <astralsorcery:itemperkgem:0>.withTag({astralsorcery: {}}));
-add(<ore:gemPerk>, <astralsorcery:itemperkgem:1>.withTag({astralsorcery: {}}));
-add(<ore:gemPerk>, <astralsorcery:itemperkgem:2>.withTag({astralsorcery: {}}));
-
 # Blood Magic Runes
 add(<ore:runeBlood>, <bloodmagic:blood_rune:*>);
 
@@ -297,6 +293,13 @@ add(<ore:stoneGranite>, <quark:world_stone_bricks>);
 add(<ore:stoneDiorite>, <quark:world_stone_bricks:1>);
 add(<ore:stoneAndesite>, <quark:world_stone_bricks:2>);
 add(<ore:stoneBasalt>, <quark:world_stone_bricks:3>);
+
+addItems(<ore:blockBricks>, [
+	<minecraft:brick_block>,
+	<chisel:bricks:*>,
+	<engineersdecor:slag_brick_block>,
+	<randomthings:stainedbrick:*>,
+]);
 
 addItems(<ore:slabBasalt>, [
 	<quark:stone_basalt_slab>,

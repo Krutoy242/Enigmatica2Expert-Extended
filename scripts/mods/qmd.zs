@@ -94,12 +94,8 @@ craft.remake(<qmd:rtg_strontium>, ["pretty",
 
 val ingrs = {
   "O": <qmd:luminous_paint:2>, # Orange Radioluminescent Paint
-  "H": <nuclearcraft:rad_shielding:2>, # Heavy Radiation Shielding
+  "H": <nuclearcraft:part:2>, # DU Plating
   "R": <industrialforegoing:plastic>, # Plastic
-  "a": <nuclearcraft:helm_hazmat:*> | <nuclearcraft:helm_hazmat:*>.withTag({}, false), # Hazmat Suit Headwear
-  "z": <nuclearcraft:chest_hazmat:*> | <nuclearcraft:chest_hazmat:*>.withTag({}, false), # Hazmat Suit Chestpiece
-  "●": <nuclearcraft:legs_hazmat:*> | <nuclearcraft:legs_hazmat:*>.withTag({}, false), # Hazmat Suit Leggings
-  "m": <nuclearcraft:boots_hazmat:*> | <nuclearcraft:boots_hazmat:*>.withTag({}, false), # Hazmat Suit Boots
   "S": <ic2:hazmat_helmet:*> | <ic2:hazmat_helmet:*>.withTag({}, false), # Scuba Helmet
   "⌀": <ic2:hazmat_chestplate:*> | <ic2:hazmat_chestplate:*>.withTag({}, false), # Hazmat Suit
   "○": <ic2:hazmat_leggings:*> | <ic2:hazmat_leggings:*>.withTag({}, false), # Hazmat Suit Leggings
@@ -109,29 +105,29 @@ val ingrs = {
 # [HEV Helmet] from [Hazmat Suit Headwear][+4]
 craft.make(<qmd:helm_hev>, ["pretty",
   "O O O",
-  "H a H",
-  "R S R"], ingrs
+  "H S H",
+  "R   R"], ingrs
 );
 
 # [HEV Chestplate] from [Hazmat Suit Chestpiece][+4]
 craft.make(<qmd:chest_hev>, ["pretty",
   "O O O",
-  "H z H",
-  "R ⌀ R"], ingrs
+  "H ⌀ H",
+  "R   R"], ingrs
 );
 
 # [HEV Leggings] from [Hazmat Suit Leggings][+4]
 craft.make(<qmd:legs_hev>, ["pretty",
   "O O O",
-  "H ● H",
-  "R ○ R"], ingrs
+  "H ○ H",
+  "R   R"], ingrs
 );
 
 # [HEV Boots] from [Hazmat Suit Boots][+4]
 craft.make(<qmd:boots_hev>, ["pretty",
   "O O O",
-  "H m H",
-  "R u R"], ingrs
+  "H u H",
+  "R   R"], ingrs
 );
 
 # [Tungsten Filament] from [Tungsten Ingot]

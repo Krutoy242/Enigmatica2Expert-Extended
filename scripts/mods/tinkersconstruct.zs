@@ -6,6 +6,8 @@ import crafttweaker.data.IData;
 
 #modloaded tconstruct
 
+<tconstruct:throwball>.maxStackSize = 64;
+
 # Slime Dirt -> Slime
 var slimeDirts as IItemStack[][IItemStack] = {
 	<minecraft:slime_ball> : [

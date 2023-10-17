@@ -59,13 +59,13 @@ val rockRecycleTable as IItemStack[][IIngredient] = {
 <twilightforest:underbrick>          |
 <twilightforest:underbrick:1>        |
 <twilightforest:underbrick:2>        |
-<twilightforest:underbrick:3>        : [<ic2:dust:1>, <thermalfoundation:material:772>, <enderio:item_material:74>],
+<twilightforest:underbrick:3>        : [<ic2:dust:1>, <thermalfoundation:material:772>, <nuclearcraft:dust:3>],
 <twilightforest:castle_rune_brick>   : [<randomthings:runedust:6>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
 <twilightforest:castle_rune_brick:3> : [<randomthings:runedust:10>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
 <twilightforest:castle_rune_brick:1> : [<randomthings:runedust:11>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
 <twilightforest:castle_rune_brick:2> : [<randomthings:runedust:4>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
-<twilightforest:aurora_block>        : [<nuclearcraft:compound:7>, <botania:manaresource:23>, <nuclearcraft:plutonium:15>],
-<twilightforest:aurora_pillar>       : [<nuclearcraft:compound:7>, <ic2:dust:5>, <nuclearcraft:plutonium:15>],
+<twilightforest:aurora_block>        : [<nuclearcraft:compound:7>, <botania:manaresource:23>, <nuclearcraft:compound:11>],
+<twilightforest:aurora_pillar>       : [<nuclearcraft:compound:7>, <ic2:dust:5>, <nuclearcraft:compound:11>],
 };
 
 for input, output in rockRecycleTable{
@@ -405,7 +405,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   "M ▬ M",
   "  M  "], {
   "M": <botania:biomestonea:*>, # Metamorphic Swamp Stone
-  "▬": <ore:ingotPlutonium242All>, # Plutonium-242
+  "▬": <ore:dustAlugentum>,
 }).shaped());
 
 # [Auroralized Glass] from [Aurora Block][+1]

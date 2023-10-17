@@ -32,8 +32,8 @@ function stopWithDelay(world as IWorld) as void {
 
   world.catenation().sleep(60).then(function(world, ctx) {
     // send('stopping');
-    server.commandManager.executeCommand(server, '/say §8[§6ø§8]§r §4Server stopping by vote...');
-    server.commandManager.executeCommand(server, '/stop');
+    server.commandManager.executeCommandSilent(server, '/say §8[§6ø§8]§r §4Server stopping by vote...');
+    server.commandManager.executeCommandSilent(server, '/stop');
   }).start();
 }
 

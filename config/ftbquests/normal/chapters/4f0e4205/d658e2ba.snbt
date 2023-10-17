@@ -45,7 +45,7 @@
 	rewards: [{
 		uid: "2cccd0d8",
 		type: "choice",
-		table: 96
+		table: 95
 	},
 	{
 		uid: "6a30a717",

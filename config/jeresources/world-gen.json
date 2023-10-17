@@ -4485,7 +4485,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.02077422;1,0.021001171;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Overworld (0)"
   },
   {
@@ -12652,7 +12652,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.020584766;1,0.020961719;2,3.90625E-7;3,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Twilight Forest (7)"
   },
   {
@@ -17669,7 +17669,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.021566406;1,0.021697655;2,0.0;16,0.0;17,5.0546875E-4;18,0.0018539062;19,0.0031453124;20,0.0037328126;21,0.0038046874;22,0.0037328126;23,0.0037757813;24,0.0037476562;25,0.0036679688;26,0.003634375;27,0.0036445314;28,0.00385625;29,0.0039054689;30,0.0038015626;31,0.0038125;32,0.003871875;33,0.0041757813;34,0.004135156;35,0.0040984377;36,0.0039539062;37,0.0032726564;38,0.00186875;39,5.0546875E-4;40,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Ratlantis (-8)"
   },
   {
@@ -18601,6 +18601,12 @@
     "distrib": "0,0.0;2,0.0;3,4.8203126E-4;4,4.6484376E-4;5,4.8359376E-4;6,4.5703124E-4;7,4.5390625E-4;8,0.0;",
     "silktouch": false,
     "dim": "Ratlantis (-8)"
+  },
+  {
+    "block": "littletiles:multitiles:0:{structure:{blocks:[I;],id:\"fixed\",name:\"Curium-246 Stalactite\"},grid:8,size:[I;6,8,6],min:[I;1,0,2],tiles:[{tile:{block:\"nuclearcraft:fertile_isotope:4\"},boxes:[[I;3,0,2,5,8,4,-2146434816,131074],[I;5,2,3,7,8,5,-2147483072,-65538],[I;4,2,4,5,8,8,-2139092992,-196612],[I;1,6,4,4,8,6,-2142763904,-1,131074],[I;3,0,4,4,6,5,-2139092992,-1],[I;3,5,5,4,6,6,-2139229930,196607,196607,-131070,-2,196606,262143,-131069]]},{tile:{block:\"minecraft:stone\"},boxes:[[I;2,7,6,4,8,7],[I;2,5,3,3,8,4],[I;5,5,2,6,8,3],[I;2,6,2,3,8,3],[I;5,6,5,7,8,7],[I;5,3,5,6,6,6]]}],count:12}",
+    "distrib": "0,0.0;3,0.0;4,0.001;19,0.001;20,0.0;",
+    "silktouch": false,
+    "dim": "Deep Dark (-11325)"
   },
   {
     "block": "actuallyadditions:block_misc:3",
@@ -20389,7 +20395,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.004386719;1,0.0046015624;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Luna (100)"
   },
   {
@@ -21226,7 +21232,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.004953125;1,0.004877604;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Mercury (101)"
   },
   {
@@ -22092,7 +22098,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0053828126;1,0.0053203125;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Venus (102)"
   },
   {
@@ -22999,7 +23005,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.004769531;1,0.0046445313;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Mars (103)"
   },
   {
@@ -23871,7 +23877,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0045976564;1,0.0051015625;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Io (105)"
   },
   {
@@ -24847,7 +24853,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.004996094;1,0.0048671877;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Europa (106)"
   },
   {
@@ -25909,7 +25915,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0047734375;1,0.0046484377;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Titan (108)"
   },
   {
@@ -26792,7 +26798,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0043164063;1,0.0045078127;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Uranus (109)"
   },
   {
@@ -27790,7 +27796,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.005207031;1,0.0052851564;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Neptune (110)"
   },
   {
@@ -28872,7 +28878,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0044921874;1,0.0046484377;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Proxima B (111)"
   },
   {
@@ -30203,7 +30209,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.004628906;1,0.0046015624;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Terra Nova (112)"
   },
   {
@@ -31256,7 +31262,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.005353906;1,0.005327344;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Novus (113)"
   },
   {
@@ -33212,7 +33218,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0044570314;1,0.00465625;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Stella (114)"
   },
   {
@@ -34484,7 +34490,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0052539064;1,0.005140625;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "KELT-2ab (118)"
   },
   {
@@ -35419,7 +35425,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0050390624;1,0.005246094;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "KELT-3 (119)"
   },
   {
@@ -36349,7 +36355,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0047734375;1,0.004953125;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "KELT-4ab (120)"
   },
   {
@@ -38240,7 +38246,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0050078123;1,0.005;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "KELT-6a (121)"
   },
   {
@@ -38947,7 +38953,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0050546876;1,0.0048710937;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Kepler 0118 (122)"
   },
   {
@@ -39258,7 +39264,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0049765627;1,0.0049570315;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Kepler 0119 (123)"
   },
   {
@@ -39997,7 +40003,7 @@
   {
     "block": "mekanism:oreblock:0",
     "distrib": "0,0.0;1,0.00265625;2,0.0;",
-    "silktouch": true,
+    "silktouch": false,
     "dim": "Philucka (115)"
   },
   {

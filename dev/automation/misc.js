@@ -10,7 +10,6 @@
 import { join, parse } from 'node:path'
 
 import * as del from 'del'
-import fs_extra from 'fs-extra'
 import yargs from 'yargs'
 import fast_glob from 'fast-glob'
 
@@ -25,7 +24,6 @@ import {
   setBlockDropsList,
 } from '../lib/utils.js'
 
-const { copySync } = fs_extra
 const argv = yargs(process.argv.slice(2))
   .alias('k', 'keep-cache')
   .describe('k', 'Not delete cached files').argv
@@ -208,13 +206,34 @@ export async function init(h = defaultHelper, options = argv) {
   const mdoJson = loadJson('config/MoreDefaultOptions.json')
   mdoJson.forEach((o) => {
     const dest = join(moreDefOptsPath, o.sourceFilePath)
-    if (o.sourceFilePath !== 'options.txt') return copySync(o.destinationFilePath, dest)
 
-    const opts = loadText(o.destinationFilePath)
-    const list = opts
-      .split('\n')
-      .sort((a, b) => [a, b].every(l => l.startsWith('key_')) ? naturalSort(a, b) : 0)
-    saveText(list.join('\n'), dest)
+    const fileContent = loadText(o.destinationFilePath)
+    const optionsTransformers = {
+      'default': () => saveText(fileContent, dest),
+
+      // Remove config lines
+      'optionsof.txt': () => {
+        saveText(fileContent
+          .replace(/\nofAnimatedTerrain:false/gm, '\nofAnimatedTerrain:true')
+        , dest)
+      },
+
+      // Remove current player ranks
+      'ranks.txt': () => {
+        saveText(fileContent
+          .replace(/\n\/\/ .*\n\[\w+\]\n([\w\.]+: .*\n)*/gm, '')
+        , dest)
+      },
+
+      // Sort keys
+      'options.txt': () => {
+        const list = fileContent
+          .split('\n')
+          .sort((a, b) => [a, b].every(l => l.startsWith('key_')) ? naturalSort(a, b) : 0)
+        saveText(list.join('\n'), dest)
+      },
+    }
+    ;(optionsTransformers[o.sourceFilePath] ?? optionsTransformers.default)()
   })
 
   // ###############################################################################

@@ -1,5 +1,5 @@
 {
-	x: 7.5d,
+	x: 6.1d,
 	y: 2.5d,
 	text: [
 		"{q.ender_io.stirling_generator.desc}"

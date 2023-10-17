@@ -261,9 +261,6 @@ val RJ = <harvestcraft:royaljellyitem>; # Royal Jelly
 mods.actuallyadditions.Empowerer.addRecipe(<forestry:royal_jelly>, <actuallyadditions:item_worm>, RJ, RJ, RJ, RJ, 250000, 200, [1.0, 1.0, 0.0]);
 mods.extendedcrafting.CombinationCrafting.addRecipe(<forestry:royal_jelly>, 1000000, 1000000, <actuallyadditions:item_worm>, [RJ, RJ, RJ, RJ]);
 
-# Dust -> Gem conversion
-furnace.addRecipe(<forestry:apatite>, <jaopca:item_dustapatite>);
-
 # [Portable Analyzer] from [Redstone][+2]
 mods.forestry.Carpenter.removeRecipe(<forestry:portable_alyzer>);
 craft.make(<forestry:portable_alyzer>, ["pretty",

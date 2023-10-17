@@ -22,6 +22,20 @@
       "max-height": 70,
       "follow-terrain": false,
       "dimension": {"restriction": "whitelist","value": [-11325]}
-    }
+    },
+
+		"deepdark_curium_246_stalactite": {
+			"distribution": "cave",
+			"generator": {
+        "type": "structure",
+        "structure": "curium_246_stalactite.nbt",
+        "material": "extrautils2:decorativebedrock"
+			},
+			"cluster-count": 1,
+			"chunk-chance": 1,
+      "ceiling": true,
+			"ground-level": 20,
+			"dimension": {"restriction": "whitelist","value": [-11325]}
+		}
   }
 }

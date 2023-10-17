@@ -28,9 +28,7 @@ function add(entity as IEntityDefinition, dropList as IItemStack[]) as void {
       ? item * (item.amount / 100)
       : item.anyAmount().withLore(["§fChance: §b" ~ item.amount ~ "%"]);
   }
-  utils.log(['  ~~ adding:', fixedList.length]);
   scripts.jei.requious.add(<assembly:entity_drop>, {[Soul(entity.id)] as IIngredient[] : fixedList});
-  utils.log(['  ~~ finished']);
 }
 
 /*Inject_js{
@@ -219,7 +217,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:rats:black_death>                       , [<rats:black_death_mask> * 100, <rats:herb_bundle> * 300, <rats:plague_scythe> * 100, <rats:rat_pelt> * 50, <rats:rat_upgrade_fragment> * 1, <rats:raw_rat> * 100, <rats:token_piece> * 195]); // Black Death
   add(<entity:rats:feral_ratlantean>                  , [<rats:feral_rat_claw> * 33, <rats:marbled_cheese_rat_head> * 4, <rats:rat_pelt> * 114, <rats:rat_toga> * 31]); // Feral Ratlantean
   add(<entity:rats:illager_piper>                     , [<minecraft:dye:4> * 229, <minecraft:feather> * 100, <minecraft:gold_nugget> * 241, <rats:piper_hat> * 8, <rats:rat_flute> * 10, <rats:rat_pelt> * 251, <rats:rat_upgrade_fragment> * 2, <rats:raw_rat> * 250, <rats:token_fragment> * 6]); // Pied Piper
-  add(<entity:rats:marbled_cheese_golem>              , [<rats:ancient_sawblade> * 100, <rats:arcane_technology> * 100, <thermalfoundation:material:771> * 18]); // Ratlantean Automaton
+  add(<entity:rats:marbled_cheese_golem>              , [<rats:ancient_sawblade> * 100, <rats:arcane_technology> * 100, <ic2:crafting:3> * 300]); // Ratlantean Automaton
   add(<entity:rats:neo_ratlantean>                    , [<rats:psionic_rat_brain> * 100]); // Neo-Ratlantean
 # add(<entity:rats:pirat_boat>                        , []); // Pirat Boat
   add(<entity:rats:pirat>                             , [<actuallyadditions:block_misc:4> * 196, <rats:pirat_cutlass> * 22, <rats:pirat_hat> * 19, <rats:rat_pelt> * 50, <rats:rat_upgrade_fragment> * 1, <rats:raw_rat> * 100]); // Pirat

@@ -1,6 +1,29 @@
 [main/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.json could not be read. If this is a development environment you can ignore this message
+[main/WARN] [mixin]: Error loading class: journeymap/client/task/multi/TaskController (java.lang.ClassNotFoundException: The specified class 'journeymap.client.task.multi.TaskController' was not found)
+[main/WARN] [mixin]: @Mixin target journeymap.client.task.multi.TaskController was not found mixins.sledgehammer.journeymap.json:client.task.multi.TaskControllerMixin from mod unknown-owner
+[main/WARN] [mixin]: Error loading class: journeymap/client/JourneymapClient (java.lang.ClassNotFoundException: The specified class 'journeymap.client.JourneymapClient' was not found)
+[main/WARN] [mixin]: @Mixin target journeymap.client.JourneymapClient was not found mixins.sledgehammer.journeymap.json:client.JourneymapClientMixin from mod unknown-owner
+[main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:SlotMixin from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.SlotMixin
+[main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:GuiContainerAccessor from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.GuiContainerAccessor
+[main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:GuiContainerMixin from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.GuiContainerMixin
+[main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:KeyBindAccess from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.KeyBindAccess
+[main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:MinecraftMixin from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.MinecraftMixin
+[main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:SlotAccessorClient from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.SlotAccessorClient
 [main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.version_protest.MinecraftMixin' as 'mixin.version_protest' is disabled in config
 [main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.version_protest.FMLCommonHandlerMixin' as 'mixin.version_protest' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinTextureMap' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelManager' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelBakeEvent' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinVanillaModelWrapper' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinFMLClientHandler' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinItemLayerModel' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinRenderItem' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinBlockModelShapes' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinVariantLoader' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinItemModelMesherForge' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinSimpleReloadableResourceManager' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinWeightedRandomModel' as 'mixin.dynamic_resources' is disabled in config
+[main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelLoaderRegistry' as 'mixin.dynamic_resources' is disabled in config
 [Client thread/WARN] [mixin]: Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod unknown-owner, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.crafttweaker.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.jei.json could not be read. If this is a development environment you can ignore this message
@@ -8,9 +31,17 @@
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.forestry.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.avaritia.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.tconstruct.json could not be read. If this is a development environment you can ignore this message
-[Client thread/WARN] [mixin]: @Mixin target mod.chiselsandbits.chiseledblock.data.VoxelBlob was not found mixins.vintagefix.late.json:dynamic_resources.VoxelBlobMixin from mod unknown-owner
-[Client thread/WARN] [mixin]: @Mixin target com.raoulvdberge.refinedstorage.proxy.ProxyClient was not found mixins.vintagefix.late.json:dynamic_resources.RSProxyClientMixin from mod unknown-owner
-[Client thread/WARN] [mixin]: @Mixin target pl.asie.ucw.util.ModelLoaderEarlyView was not found mixins.vintagefix.late.json:dynamic_resources.MixinModelLoaderEarlyView from mod unknown-owner
-[Client thread/WARN] [mixin]: @Mixin target thebetweenlands.client.render.model.loader.CustomModelLoader was not found mixins.vintagefix.late.json:dynamic_resources.MixinCustomBetweenlandsModels from mod unknown-owner
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelLoaderEarlyViewDebark' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.VoxelBlobMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.OCModelInitializationMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.RSProxyClientMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinHammerRenderProxy' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.BakedToolModelListMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelLoaderEarlyView' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.Traverse2TexturesMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.AutoRotatingModelMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinCustomBetweenlandsModels' as 'mixin.dynamic_resources' is disabled in config
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.version_protest.F3Change' as 'mixin.version_protest' is disabled in config
-[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.version_protest.LoaderChange' as 'mixin.version_protest' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.version_protest.LoaderChange' as 'mixin.version_protest' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.dynamic_resources.SafeModelBakeWrapperMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.dynamic_resources.TextureCollectionMixin' as 'mixin.dynamic_resources' is disabled in config

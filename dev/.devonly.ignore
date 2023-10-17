@@ -48,11 +48,10 @@ mods/NoAdvancements-*
 mods/FantasticLib-*
 mods/simplelogin-*
 mods/zenrecipereload-*
+mods/ProbeZS-*
 
 # Mods in process of testing to add them later
 mods/effortlessbuilding-*
 config/EffortlessBuilding.cfg
-mods/modularui-*
-mods/bogosorter-*
 mods/Fancier-Block-Particles-*
 config/FBP/*

@@ -82,17 +82,16 @@ return loadJson("config/exnihilocreatio/MilkEntityRegistry.json")
   `, ${o.coolDown});`
 ])
 }*/
-add_barrel_milking(Soul("minecraft:cow")                 , WB, <liquid:milk>               * 10 , 20);
-add_barrel_milking(Soul("emberroot:timberwolf")          , WB, <liquid:tree_oil>           * 10 , 20);
-add_barrel_milking(Soul("emberroot:rainbow_golem")       , SB, <liquid:construction_alloy> * 10 , 20);
-add_barrel_milking(Soul("excompressum:angry_chicken")    , SB, <liquid:fiery_essence>      * 10 , 20);
-add_barrel_milking(Soul("emberroot:skeleton_frozen")     , WB, <liquid:ice>                * 10 , 20);
-add_barrel_milking(Soul("betteranimalsplus:walrus")      , WB, <liquid:lubricant>          * 10 , 20);
-add_barrel_milking(Soul("mekanism:robit")                , SB, <liquid:electronics>        * 10 , 20);
-add_barrel_milking(Soul("endreborn:watcher")             , SB, <liquid:obsidian>           * 40 , 20);
-add_barrel_milking(Soul("betteranimalsplus:hirschgeist") , SB, <liquid:platinum>           * 10 , 20);
-add_barrel_milking(Soul("industrialforegoing:pink_slime"), WB, <liquid:if.pink_slime>      * 10 , 20);
-add_barrel_milking(Soul("rats:neo_ratlantean")           , SB, <liquid:crystal_matrix>     * 1  , 20);
-add_barrel_milking(Soul("iceandfire:if_cockatrice")      , SB, <liquid:gelatin>            * 10 , 20);
-add_barrel_milking(Soul("openblocks:mini_me")            , WB, <liquid:blockfluiddirt>     * 100, 20);
+add_barrel_milking(Soul("minecraft:cow")                , WB, <liquid:milk>               * 10 , 20);
+add_barrel_milking(Soul("emberroot:timberwolf")         , WB, <liquid:tree_oil>           * 10 , 20);
+add_barrel_milking(Soul("emberroot:rainbow_golem")      , SB, <liquid:construction_alloy> * 10 , 20);
+add_barrel_milking(Soul("excompressum:angry_chicken")   , SB, <liquid:fiery_essence>      * 10 , 20);
+add_barrel_milking(Soul("emberroot:skeleton_frozen")    , WB, <liquid:ice>                * 10 , 20);
+add_barrel_milking(Soul("betteranimalsplus:walrus")     , WB, <liquid:lubricant>          * 10 , 20);
+add_barrel_milking(Soul("mekanism:robit")               , SB, <liquid:electronics>        * 10 , 20);
+add_barrel_milking(Soul("endreborn:watcher")            , SB, <liquid:obsidian>           * 40 , 20);
+add_barrel_milking(Soul("betteranimalsplus:hirschgeist"), SB, <liquid:platinum>           * 10 , 20);
+add_barrel_milking(Soul("rats:neo_ratlantean")          , SB, <liquid:crystal_matrix>     * 1  , 20);
+add_barrel_milking(Soul("iceandfire:if_cockatrice")     , SB, <liquid:gelatin>            * 10 , 20);
+add_barrel_milking(Soul("openblocks:mini_me")           , WB, <liquid:blockfluiddirt>     * 100, 20);
 /**/

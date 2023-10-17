@@ -90,9 +90,9 @@ val BT = <ore:gemBenitoite>;
 mods.extendedcrafting.TableCrafting.addShaped(0, <astralsorcery:itemknowledgeshare>.withTag({astralsorcery: {creativeKnowledge: 1 as byte}}), [
 	[IW, IW, PC, PC, null, null, null], 
 	[IW, IW, CO, CO, BT, BT, null], 
-	[PC, CO, <ore:gemPerk>, EI, <astralsorcery:itemknowledgeshare>, BT, null], 
+	[PC, CO, <astralsorcery:itemcelestialcrystal:*>, EI, <astralsorcery:itemknowledgeshare>, BT, null], 
 	[PC, CO, EI, TE, EI, CO, PC], 
-	[null, BT, <astralsorcery:itemknowledgeshare>, EI, <ore:gemPerk>, CO, PC], 
+	[null, BT, <astralsorcery:itemknowledgeshare>, EI, <astralsorcery:itemcelestialcrystal:*>, CO, PC], 
 	[null, BT, BT, CO, CO, IW, IW], 
 	[null, null, null, PC, PC, IW, IW]
 ]);
@@ -118,7 +118,7 @@ recipes.addShaped("Luminous Crafting Table - RecipeAction", <astralsorcery:block
 	if (isNull(player)) return;
   if (player.world.isRemote()) return;
 	val server = player.server;
-	server.commandManager.executeCommand(server, '/astralsorcery research '~player.name~' BASIC_CRAFT');
+	server.commandManager.executeCommandSilent(server, '/astralsorcery research '~player.name~' BASIC_CRAFT');
 });
 
 

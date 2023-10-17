@@ -260,7 +260,7 @@ function beneficiate(
     val nuggetExtra = utils.getSomething(JA.secondExtraName, ['nugget'], outTriple);
     if (!isNull(nuggetExtra)) {
       val input1 = input.itemArray[0].anyAmount();
-      workEx('infernalfurnace', exceptions, [input1], null, null, null, [nuggetExtra], extraChances, null);
+      workEx('infernalfurnace', exceptions, [input1], null, null, null, [nuggetExtra * min(nuggetExtra.amount, 24)], extraChances, null);
     }
   }
 

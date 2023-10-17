@@ -5,12 +5,12 @@
 		tag: {}
 	},
 	x: -0.5d,
-	y: 3.8d,
+	y: 4.3d,
 	text: [
 		"{q.ender_io.stellar_helmet.desc}"
 	],
 	dependencies: [
-		"0c16a92b"
+		"c1453b27"
 	],
 	tasks: [{
 		uid: "4f435d42",

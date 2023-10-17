@@ -283,7 +283,7 @@ mods.rats.recipes.addArcheologistRatRecipe(<rats:rat_pelt>, <iceandfire:troll_le
 mods.rats.recipes.addArcheologistRatRecipe(<harvestcraft:hardenedleatheritem>, <iceandfire:troll_leather_frost>);
 mods.rats.recipes.addArcheologistRatRecipe(<redstonerepository:tool.sword_gelid>, <endreborn:sword_shard>);
 mods.rats.recipes.addArcheologistRatRecipe(<mysticalagradditions:stuff:1>, <iceandfire:dread_shard> * 3);
-mods.rats.recipes.addArcheologistRatRecipe(<rats:raw_plastic> * 4, <industrialforegoing:plastic>);
+mods.rats.recipes.addArcheologistRatRecipe(<rats:raw_plastic>, <industrialforegoing:plastic>);
 
 ##################
 
@@ -472,6 +472,7 @@ mods.immersiveengineering.MetalPress.addRecipe(<rats:string_cheese>, <ore:foodCh
 
 <entity:rats:pirat_boat>.addPlayerOnlyDrop(<actuallyadditions:block_misc:4>, 1, 3);
 <entity:rats:plague_cloud>.addDrop(<quark:soul_bead>, 1, 3);
+<entity:rats:marbled_cheese_golem>.addPlayerOnlyDrop(<ic2:crafting:3>, 1, 5);
 
 # Containment food 
 # [Contaminated Food] alter non-rat recipe

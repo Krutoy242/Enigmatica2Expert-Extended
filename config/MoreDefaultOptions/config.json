@@ -2,9 +2,22 @@
   "General": {
     "enableAutoRefill": false,
     "refillDmgThreshold": 1,
-    "enableHotbarSwap": false
+    "enableHotbarSwap": false,
+    "sortSound": "minecraft:ui.button.click"
   },
   "ItemSortRules": [
+    {
+      "name": "block_type",
+      "inverted": false
+    },
+    {
+      "name": "ore_prefix",
+      "inverted": true
+    },
+    {
+      "name": "nbt_has",
+      "inverted": false
+    },
     {
       "name": "hunger",
       "inverted": false
@@ -14,11 +27,15 @@
       "inverted": false
     },
     {
-      "name": "block_type",
+      "name": "burn_time",
       "inverted": false
     },
     {
-      "name": "mod",
+      "name": "nbt_rules",
+      "inverted": false
+    },
+    {
+      "name": "nbt_all_values",
       "inverted": false
     },
     {
@@ -26,11 +43,7 @@
       "inverted": false
     },
     {
-      "name": "registry_order",
-      "inverted": false
-    },
-    {
-      "name": "color",
+      "name": "mod",
       "inverted": false
     }
   ],

@@ -353,7 +353,6 @@ zenClass BeeHelper {
 		# Add missed centrifuge recipes
 
 		val removeBlacklist = [1,3,4,5,7] as int[];
-		// val makeTERecipeBlacklist = [10, 9, 12] as int[];
 
 		for i in [
 /*Inject_js(
@@ -365,15 +364,17 @@ zenClass BeeHelper {
 1, 3, 4, 5, 7, 10, 11, 12, 15, 16
 /**/
 		] as int[] {
-			if(i >= beesOutputs.length) continue;
 			val drop = <gendustry:honey_drop>.definition.makeStack(i);
 			val comb = <gendustry:honey_comb>.definition.makeStack(i);
-			val beeOuts = beesOutputs[i];
+			val beeOuts = beesOutputs[i - 1];
 			val honey_drop = i==7 ? drop * 3 : drop;
-			if(!(removeBlacklist has i)) {
-				mods.thermalexpansion.Centrifuge.removeRecipe(comb);
-			}
+			if(!(removeBlacklist has i)) mods.thermalexpansion.Centrifuge.removeRecipe(comb);
 			scripts.processWork.work(["Centrifuge", "TECentrifuge"], null, [comb], null, [honey_drop], null, [beeOuts[0], beeOuts[1]], [beeHash(i, 1), beeHash(i, 2)]);
+			
+			mods.mechanics.addCrushingBlockRecipe(
+				comb, [honey_drop, beeOuts[0], beeOuts[1], <rustic:honeycomb>], // Honeycomb as penalty for using crushing block
+				scripts.processUtils.normalizeChances([1.0f, beeHash(i, 1), beeHash(i, 2), 3.0f])
+			);
 		}
 	}
 

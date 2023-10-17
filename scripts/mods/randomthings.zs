@@ -577,3 +577,14 @@ craft.remake(<randomthings:platform:3> * 6, ["###", " F "], {"#": <minecraft:pla
 craft.remake(<randomthings:platform:4> * 6, ["###", " F "], {"#": <minecraft:planks:4>,"F": <randomthings:ingredient:7>,});
 craft.remake(<randomthings:platform:5> * 6, ["###", " F "], {"#": <minecraft:planks:5>,"F": <randomthings:ingredient:7>,});
 craft.remake(<randomthings:superlubricentplatform> * 6, ["SSS", " F "], {"S": <randomthings:superlubricentice>,"F": <randomthings:ingredient:7>,});
+
+// Bricks from any brick
+for i, dye in scripts.vars.oreDye {
+  craft.remake(<randomthings:stainedbrick>.definition.makeStack(i) * 8, ["pretty",
+    "- - -",
+    "- d -",
+    "- - -"], {
+    "d": dye,
+    "-": <ore:blockBricks>,
+  });
+}

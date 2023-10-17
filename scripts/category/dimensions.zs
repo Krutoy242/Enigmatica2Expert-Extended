@@ -69,7 +69,7 @@ events.onPlayerChangedDimension(function(e as crafttweaker.event.PlayerChangedDi
   if(e.entity.world.isRemote()) return;
   if(!e.player.creative && isForbidTravel(e.player, e.to)) {
     e.player.world.catenation().sleep(20).then(function(world, ctx) {
-      server.commandManager.executeCommand(server, '/tpx '~e.player.name~' '~e.from);
+      server.commandManager.executeCommandSilent(server, '/tpx '~e.player.name~' '~e.from);
     }).start();
   }
 });

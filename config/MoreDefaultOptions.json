@@ -18,18 +18,6 @@
     "serverSide": false
   },
   {
-    "sourceFilePath": "journeymap.core.config",
-    "destinationFilePath": "journeymap/config/5.7/journeymap.core.config",
-    "clientSide": true,
-    "serverSide": true
-  },
-  {
-    "sourceFilePath": "journeymap.minimap.config",
-    "destinationFilePath": "journeymap/config/5.7/journeymap.minimap.config",
-    "clientSide": true,
-    "serverSide": false
-  },
-  {
     "sourceFilePath": "smoothfont.cfg",
     "destinationFilePath": "config/smoothfont/smoothfont.cfg",
     "clientSide": true,

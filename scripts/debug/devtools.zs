@@ -173,12 +173,12 @@ events.onPlayerInteractBlock(function(e as crafttweaker.event.PlayerInteractBloc
 });
 
 // events.onEntityStruckByLightning(function(e as crafttweaker.event.EntityStruckByLightningEvent){
-//   server.commandManager.executeCommand(server, '/say §8Lightning §8striked §6'~e.entity.id);
+//   server.commandManager.executeCommandSilent(server, '/say §8Lightning §8striked §6'~e.entity.id);
 // });
 
 
 // events.onEntityLivingAttacked(function(e as crafttweaker.event.EntityLivingAttackedEvent){
-//   server.commandManager.executeCommand(server,
+//   server.commandManager.executeCommandSilent(server,
 //     '/say §atype:§r '~e.damageSource.damageType
 //     ~' §ahas inmmediate:§r '~!isNull(e.damageSource.immediateSource)
 //     ~' §ahas true:§r '~!isNull(e.damageSource.trueSource)
@@ -186,6 +186,6 @@ events.onPlayerInteractBlock(function(e as crafttweaker.event.PlayerInteractBloc
 //   );
 //   if(isNull(e.damageSource) || isNull(e.damageSource.trueSource)) return;
 //   val source = isNull(e.damageSource.trueSource.definition) ? '' : '§asource_id:§r '~e.damageSource.trueSource.definition.id;
-//   server.commandManager.executeCommand(server, '/say '~source);
+//   server.commandManager.executeCommandSilent(server, '/say '~source);
   
 // });

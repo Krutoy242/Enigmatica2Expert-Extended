@@ -59,7 +59,7 @@
 				Material: "starmetal"
 			}
 		}],
-		ignore_nbt: 2b
+		ignore_nbt: 1b
 	},
 	{
 		uid: "2e3ab41e",
@@ -94,7 +94,7 @@
 				Material: "silver"
 			}
 		}],
-		ignore_nbt: 2b
+		ignore_nbt: 1b
 	},
 	{
 		uid: "be507bb6",
@@ -103,6 +103,7 @@
 			id: "plustic:pipe_piece",
 			tag: {}
 		}],
+		ignore_damage: true,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

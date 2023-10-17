@@ -1,0 +1,41 @@
+{
+	title: "{q.getting_started.obelisks.name}",
+	x: 11.1d,
+	y: 6.1d,
+	text: [
+		"{q.getting_started.obelisks.desc}"
+	],
+	dependencies: [
+		"857a6a1a"
+	],
+	tasks: [{
+		uid: "28d930aa",
+		type: "item",
+		icon: "enderio:block_experience_obelisk",
+		items: [{
+			item: "enderio:block_experience_obelisk"
+		},
+		{
+			item: "enderio:block_weather_obelisk"
+		},
+		{
+			item: "enderio:block_inhibitor_obelisk"
+		},
+		{
+			item: "enderio:block_attractor_obelisk"
+		},
+		{
+			item: "enderio:block_aversion_obelisk"
+		},
+		{
+			item: "enderio:block_relocator_obelisk"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "6dd669c3",
+		type: "item",
+		item: "enderio:item_capacitor_totemic"
+	}]
+}

@@ -1,0 +1,234 @@
+@@ -2,6 +2,7 @@
+  * Decompiled with CFR 0.152.
+  * 
+  * Could not load the following classes:
++ *  com.github.alexthe666.iceandfire.IceAndFire
+  *  com.github.alexthe666.iceandfire.block.IafBlockRegistry
+  *  com.github.alexthe666.iceandfire.entity.EntityMyrmexBase$BasicTrade
+  *  com.github.alexthe666.iceandfire.entity.IafVillagerRegistry$ListItemForSapphires
+@@ -21,11 +22,15 @@
+  *  net.minecraft.item.ItemFishFood$FishType
+  *  net.minecraft.item.ItemStack
+  *  net.minecraft.nbt.NBTTagCompound
++ *  net.minecraft.util.ResourceLocation
+  *  net.minecraftforge.fml.common.registry.VillagerRegistry$VillagerCareer
+  *  net.minecraftforge.fml.common.registry.VillagerRegistry$VillagerProfession
++ *  org.apache.logging.log4j.LogManager
++ *  org.apache.logging.log4j.Logger
+  */
+ package com.github.alexthe666.iceandfire.entity;
+ 
++import com.github.alexthe666.iceandfire.IceAndFire;
+ import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
+ import com.github.alexthe666.iceandfire.entity.EntityMyrmexBase;
+ import com.github.alexthe666.iceandfire.entity.IafVillagerRegistry;
+@@ -44,7 +49,10 @@ import net.minecraft.item.Item;
+ import net.minecraft.item.ItemFishFood;
+ import net.minecraft.item.ItemStack;
+ import net.minecraft.nbt.NBTTagCompound;
++import net.minecraft.util.ResourceLocation;
+ import net.minecraftforge.fml.common.registry.VillagerRegistry;
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
+ 
+ public class IafVillagerRegistry {
+     public static final IafVillagerRegistry INSTANCE = new IafVillagerRegistry();
+@@ -109,108 +117,96 @@ public class IafVillagerRegistry {
+         career.addTrade(2, new EntityVillager.ITradeList[]{new ListItemForSapphires(IafItemRegistry.witherbone, new EntityVillager.PriceInfo(2, 5))});
+         career.addTrade(2, new EntityVillager.ITradeList[]{new ListItemForSapphires(IafItemRegistry.wither_shard, new EntityVillager.PriceInfo(3, 2))});
+         this.register(this.shaman, 2);
+-        this.desertMyrmexWorker = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexWorker", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.desertMyrmexWorker, "desert_myrmex_worker");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Blocks.field_150346_d), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(32, 64), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack((Block)Blocks.field_150354_m), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(32, 64), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack((Block)Blocks.field_150330_I), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(5, 10), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Blocks.field_150366_p), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(10, 15), new EntityVillager.PriceInfo(1, 4))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151103_aS), new EntityVillager.PriceInfo(1, 5), new EntityVillager.PriceInfo(5, 15))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151102_aT), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(5, 8), new EntityVillager.PriceInfo(1, 2))});
+-        this.jungleMyrmexWorker = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexWorker", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.jungleMyrmexWorker, "jungle_myrmex_worker");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Blocks.field_150346_d), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(32, 64), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151127_ba), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(10, 20), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack((Block)Blocks.field_150362_t, 1, 3), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(48, 64), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Blocks.field_150352_o), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(7, 10), new EntityVillager.PriceInfo(1, 4))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151103_aS), new EntityVillager.PriceInfo(1, 5), new EntityVillager.PriceInfo(5, 15))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151102_aT), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(5, 8), new EntityVillager.PriceInfo(1, 2))});
+-        this.desertMyrmexSoldier = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexSoldier", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.desertMyrmexSoldier, "desert_myrmex_soldier");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151103_aS), new EntityVillager.PriceInfo(1, 5), new EntityVillager.PriceInfo(1, 15))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151008_G), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151007_F), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151016_H), new EntityVillager.PriceInfo(5, 7), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_179558_bo), new EntityVillager.PriceInfo(3, 6), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151100_aR, 1, 2), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_191525_da), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151076_bf), new EntityVillager.PriceInfo(3, 6), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151074_bl), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.silverNugget), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.troll_tusk), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(5, 15))});
+-        this.jungleMyrmexSoldier = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexSoldier", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.jungleMyrmexSoldier, "jungle_myrmex_soldier");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151103_aS), new EntityVillager.PriceInfo(1, 5), new EntityVillager.PriceInfo(1, 15))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151008_G), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151007_F), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151016_H), new EntityVillager.PriceInfo(5, 7), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_179558_bo), new EntityVillager.PriceInfo(3, 6), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151100_aR, 1, 3), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_191525_da), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151076_bf), new EntityVillager.PriceInfo(3, 6), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151074_bl), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.silverNugget), new EntityVillager.PriceInfo(1, 3), new EntityVillager.PriceInfo(1, 3))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.troll_tusk), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(5, 15))});
+-        this.desertMyrmexSentinel = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexSentinel", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.desertMyrmexSentinel, "desert_myrmex_sentinel");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151070_bp), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151137_ax), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(3, 4), new EntityVillager.PriceInfo(1, 4))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151110_aK), new EntityVillager.PriceInfo(3, 5), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151147_al), new EntityVillager.PriceInfo(3, 7), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151082_bd), new EntityVillager.PriceInfo(3, 7), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_179561_bm), new EntityVillager.PriceInfo(3, 7), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151170_bI), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(10, 20))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151115_aP, 1, 3), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(5, 10))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151144_bL), new EntityVillager.PriceInfo(20, 50), new EntityVillager.PriceInfo(1, 1))});
+-        this.jungleMyrmexSentinel = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexSentinel", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.jungleMyrmexSentinel, "jungle_myrmex_sentinel");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151070_bp), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(1, 2))});
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151137_ax), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(3, 4), new EntityVillager.PriceInfo(1, 4))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151110_aK), new EntityVillager.PriceInfo(3, 5), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151147_al), new EntityVillager.PriceInfo(3, 7), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151082_bd), new EntityVillager.PriceInfo(3, 7), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_179561_bm), new EntityVillager.PriceInfo(3, 7), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151170_bI), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(10, 20))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151115_aP, 1, 3), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(5, 10))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151144_bL), new EntityVillager.PriceInfo(20, 50), new EntityVillager.PriceInfo(1, 1))});
+-        this.desertMyrmexRoyal = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexRoyal", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.desertMyrmexRoyal, "desert_myrmex_royal");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.manuscript), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(4, 6))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151043_k), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 4), new EntityVillager.PriceInfo(5, 8))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.silverIngot), new ItemStack(IafItemRegistry.myrmex_desert_resin), new EntityVillager.PriceInfo(1, 4), new EntityVillager.PriceInfo(5, 8))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_179556_br), new EntityVillager.PriceInfo(5, 10), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151079_bi), new EntityVillager.PriceInfo(10, 15), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.wither_shard), new EntityVillager.PriceInfo(5, 8), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151064_bs), new EntityVillager.PriceInfo(6, 15), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151128_bU), new EntityVillager.PriceInfo(7, 15), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(6, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151150_bK), new EntityVillager.PriceInfo(15, 20), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(7, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(Items.field_151166_bC), new EntityVillager.PriceInfo(20, 30), new EntityVillager.PriceInfo(1, 1))});
+-        this.jungleMyrmexRoyal = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexRoyal", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.jungleMyrmexRoyal, "jungle_myrmex_royal");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.manuscript), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 1), new EntityVillager.PriceInfo(4, 6))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(Items.field_151043_k), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 4), new EntityVillager.PriceInfo(5, 8))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.silverIngot), new ItemStack(IafItemRegistry.myrmex_jungle_resin), new EntityVillager.PriceInfo(1, 4), new EntityVillager.PriceInfo(5, 8))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_179556_br), new EntityVillager.PriceInfo(5, 10), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151079_bi), new EntityVillager.PriceInfo(10, 15), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.wither_shard), new EntityVillager.PriceInfo(5, 8), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151064_bs), new EntityVillager.PriceInfo(6, 15), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151128_bU), new EntityVillager.PriceInfo(7, 15), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(6, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151150_bK), new EntityVillager.PriceInfo(15, 20), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(7, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(Items.field_151166_bC), new EntityVillager.PriceInfo(20, 30), new EntityVillager.PriceInfo(1, 1))});
+-        this.desertMyrmexQueen = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexQueen", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.desertMyrmexQueen, "desert_myrmex_queen");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.myrmex_desert_egg, 1, 0), new EntityVillager.PriceInfo(1, 10), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.myrmex_desert_egg, 1, 1), new EntityVillager.PriceInfo(10, 20), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.myrmex_desert_egg, 1, 2), new EntityVillager.PriceInfo(20, 30), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.myrmex_desert_egg, 1, 3), new EntityVillager.PriceInfo(30, 40), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_desert_resin), new ItemStack(IafItemRegistry.myrmex_desert_egg, 1, 4), new EntityVillager.PriceInfo(50, 64), new EntityVillager.PriceInfo(1, 1))});
+-        this.jungleMyrmexQueen = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexQueen", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
+-        career = new VillagerRegistry.VillagerCareer(this.jungleMyrmexQueen, "jungle_myrmex_queen");
+-        career.addTrade(1, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.myrmex_jungle_egg, 1, 0), new EntityVillager.PriceInfo(1, 10), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(2, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.myrmex_jungle_egg, 1, 1), new EntityVillager.PriceInfo(10, 20), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(3, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.myrmex_jungle_egg, 1, 2), new EntityVillager.PriceInfo(20, 30), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(4, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.myrmex_jungle_egg, 1, 3), new EntityVillager.PriceInfo(30, 40), new EntityVillager.PriceInfo(1, 1))});
+-        career.addTrade(5, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack(IafItemRegistry.myrmex_jungle_resin), new ItemStack(IafItemRegistry.myrmex_jungle_egg, 1, 4), new EntityVillager.PriceInfo(50, 64), new EntityVillager.PriceInfo(1, 1))});
++        VillagerRegistry.VillagerCareer dw = null;
++        VillagerRegistry.VillagerCareer jw = null;
++        VillagerRegistry.VillagerCareer ds = null;
++        VillagerRegistry.VillagerCareer js = null;
++        VillagerRegistry.VillagerCareer dt = null;
++        VillagerRegistry.VillagerCareer jt = null;
++        VillagerRegistry.VillagerCareer dr = null;
++        VillagerRegistry.VillagerCareer jr = null;
++        VillagerRegistry.VillagerCareer dq = null;
++        VillagerRegistry.VillagerCareer jq = null;
++        Logger logger = LogManager.getLogger((String)"Ice And Fire");
++        for (String line : IceAndFire.CONFIG.tradeRecipes) {
++            String lineNoSpace = line.replaceAll(" ", "");
++            logger.info("Parsing Myrmex trade: " + lineNoSpace);
++            String[] inputOutput = lineNoSpace.split("=>");
++            String[] inputBlock = inputOutput[0].split(";");
++            String[] keyLevel = inputBlock[0].split("~");
++            String key = keyLevel[0];
++            int lvl = Integer.parseInt(keyLevel[1]);
++            String[] inputItem = inputBlock[1].split(":");
++            String[] inputAmount = inputBlock[2].split("-");
++            String[] outputBlock = inputOutput[1].split(";");
++            String[] outputItem = outputBlock[0].split(":");
++            String[] outputAmount = outputBlock[1].split("-");
++            if (key.equals("dw")) {
++                if (dw == null) {
++                    this.desertMyrmexWorker = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexWorker", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    dw = new VillagerRegistry.VillagerCareer(this.desertMyrmexWorker, "desert_myrmex_worker");
++                }
++                career = dw;
++            } else if (key.equals("jw")) {
++                if (jw == null) {
++                    this.jungleMyrmexWorker = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexWorker", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    jw = new VillagerRegistry.VillagerCareer(this.jungleMyrmexWorker, "jungle_myrmex_worker");
++                }
++                career = jw;
++            } else if (key.equals("ds")) {
++                if (ds == null) {
++                    this.desertMyrmexSoldier = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexSoldier", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    ds = new VillagerRegistry.VillagerCareer(this.desertMyrmexSoldier, "desert_myrmex_soldier");
++                }
++                career = ds;
++            } else if (key.equals("js")) {
++                if (js == null) {
++                    this.jungleMyrmexSoldier = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexSoldier", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    js = new VillagerRegistry.VillagerCareer(this.jungleMyrmexSoldier, "jungle_myrmex_soldier");
++                }
++                career = js;
++            } else if (key.equals("dt")) {
++                if (dt == null) {
++                    this.desertMyrmexSentinel = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexSentinel", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    dt = new VillagerRegistry.VillagerCareer(this.desertMyrmexSentinel, "desert_myrmex_sentinel");
++                }
++                career = dt;
++            } else if (key.equals("jt")) {
++                if (jt == null) {
++                    this.jungleMyrmexSentinel = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexSentinel", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    jt = new VillagerRegistry.VillagerCareer(this.jungleMyrmexSentinel, "jungle_myrmex_sentinel");
++                }
++                career = jt;
++            } else if (key.equals("dr")) {
++                if (dr == null) {
++                    this.desertMyrmexRoyal = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexRoyal", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    dr = new VillagerRegistry.VillagerCareer(this.desertMyrmexRoyal, "desert_myrmex_royal");
++                }
++                career = dr;
++            } else if (key.equals("jr")) {
++                if (jr == null) {
++                    this.jungleMyrmexRoyal = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexRoyal", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    jr = new VillagerRegistry.VillagerCareer(this.jungleMyrmexRoyal, "jungle_myrmex_royal");
++                }
++                career = jr;
++            } else if (key.equals("dq")) {
++                if (dq == null) {
++                    this.desertMyrmexQueen = new VillagerRegistry.VillagerProfession("iceandfire:desertMyrmexQueen", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    dq = new VillagerRegistry.VillagerCareer(this.desertMyrmexQueen, "desert_myrmex_queen");
++                }
++                career = dq;
++            } else if (key.equals("jq")) {
++                if (jq == null) {
++                    this.jungleMyrmexQueen = new VillagerRegistry.VillagerProfession("iceandfire:jungleMyrmexQueen", "minecraft:textures/entity/zombie_villager/zombie_farmer.png", "minecraft:textures/entity/zombie_villager/zombie_farmer.png");
++                    jq = new VillagerRegistry.VillagerCareer(this.jungleMyrmexQueen, "jungle_myrmex_queen");
++                }
++                career = jq;
++            } else {
++                logger.error(" cant find key: " + key + " skipping trade.");
++                continue;
++            }
++            career.addTrade(lvl, new EntityVillager.ITradeList[]{new EntityMyrmexBase.BasicTrade(new ItemStack((Item)Item.field_150901_e.func_82594_a((Object)new ResourceLocation(inputItem[0], inputItem[1])), 1, Integer.parseInt(inputItem[2])), new ItemStack((Item)Item.field_150901_e.func_82594_a((Object)new ResourceLocation(outputItem[0], outputItem[1])), 1, Integer.parseInt(outputItem[2])), new EntityVillager.PriceInfo(Integer.parseInt(inputAmount[0]), Integer.parseInt(inputAmount[1])), new EntityVillager.PriceInfo(Integer.parseInt(outputAmount[0]), Integer.parseInt(outputAmount[1])))});
++        }
+     }
+ 
+     public void setRandomProfession(EntityVillager entity, Random rand) {

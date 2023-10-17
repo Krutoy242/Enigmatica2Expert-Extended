@@ -21,6 +21,6 @@
 		type: "choice",
 		title: "Any meat",
 		icon: "tconevo:edible",
-		table: 129
+		table: 128
 	}]
 }

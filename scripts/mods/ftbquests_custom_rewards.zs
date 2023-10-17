@@ -18,7 +18,7 @@ function formatPlayTime(player as IPlayer) as string {
 }
 
 function notifyEveryone(player as IPlayer, langCode as string, titleCode as string) as string {
-  server.commandManager.executeCommand(server,
+  server.commandManager.executeCommandSilent(server,
     // '/tellraw @a [{"translate": "' ~ langCode ~ '", "with": [' ~
     // '{"text": "' ~ player.name ~ '"},' ~
     // // '{"translate": "' ~ titleCode ~ '" },' ~
@@ -40,7 +40,7 @@ events.onCustomReward(function(e as mods.zenutils.ftbq.CustomRewardEvent) {
   */
   if(e.reward.tags has 'chapcomplete') {
     // notifyEveryone(e.player, 'e2ee.chapter_complete', e.reward.quest.chapter.titleText.formattedText);
-    server.commandManager.executeCommand(server,
+    server.commandManager.executeCommandSilent(server,
       '/say §l'~e.player.name
       ~'§r has fully completed the §n'~e.reward.quest.chapter.titleText.formattedText
       ~'§r chapter after §l'~formatPlayTime(e.player)~'§r of play!§r ```Congrats!```'
@@ -53,13 +53,13 @@ events.onCustomReward(function(e as mods.zenutils.ftbq.CustomRewardEvent) {
   for k in 'i ii iii iv'.split(' ') {
     if(e.reward.tags has 'conflux_' ~ k) {
       e.player.addGameStage('conflux_' ~ k);
-      server.commandManager.executeCommand(server,
+      server.commandManager.executeCommandSilent(server,
         '/ranks add ' ~ e.player.name ~ ' conflux_' ~ k
       );
 
       // notifyEveryone(e.player, 'e2ee.player_achieved', 'q.gates.conflux_'~k~'.name');
       // notifyEveryone(e.player, 'e2ee.player_achieved', e.reward.quest.titleText.formattedText);
-      server.commandManager.executeCommand(server,
+      server.commandManager.executeCommandSilent(server,
         '/say §l'~e.player.name~'§r achieved §nConflux §n'~k.toUpperCase()~'§r after §l'~formatPlayTime(e.player)~'§r of play!§r'
       );
     }
@@ -80,7 +80,7 @@ events.onPlayerLoggedIn(function(e as crafttweaker.event.PlayerLoggedInEvent){
   for k in 'i ii iii iv'.split(' ') {
     val conflux = 'conflux_' ~ k;
     if (e.player.hasGameStage(conflux)) 
-      server.commandManager.executeCommand(server,
+      server.commandManager.executeCommandSilent(server,
         '/ranks add ' ~ e.player.name ~ ' ' ~ conflux
       );
   }

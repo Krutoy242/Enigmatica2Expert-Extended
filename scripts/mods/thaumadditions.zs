@@ -1447,6 +1447,22 @@ val bookWithAllKnowledge = <thaumadditions:knowledge_tome>.withTag({
   ]
 });
 
+// Make sure player getting ALL THE RESEARCH when using Cow written tome
+events.onPlayerInteract(function(e as crafttweaker.event.PlayerInteractEvent) {
+  if(
+    isNull(e)
+    || isNull(e.player.world)
+    || e.player.world.remote
+    || isNull(e.item)
+    || e.item.definition.id != "thaumadditions:knowledge_tome"
+    || !e.item.hasTag
+    || isNull(e.item.tag.KnowledgeOwner)
+    || e.item.tag.KnowledgeOwner.asString() != "Thaumaturge Cow"
+  ) return;
+
+  mods.contenttweaker.Commands.call('/thaumcraft research @p all', e.player, e.player.world, false, true);
+});
+
 # [Tome of Sharing] from [Tome of Sharing][+3]
 craft.make(bookWithAllKnowledge, ["pretty",
   "▬ § ▬",

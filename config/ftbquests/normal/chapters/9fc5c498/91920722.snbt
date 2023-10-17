@@ -1,12 +1,11 @@
 {
-	x: 4.8d,
-	y: 5.2d,
+	x: 7.4d,
+	y: 2.5d,
 	text: [
 		"{q.ender_io.dimensional_transc.desc}"
 	],
 	dependencies: [
-		"0cce2fa6",
-		"1dcb614b"
+		"e3ba78e0"
 	],
 	tasks: [{
 		uid: "60b488d5",

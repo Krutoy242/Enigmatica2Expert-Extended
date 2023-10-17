@@ -187,25 +187,11 @@ static armorStaged as IData[string] =
       {id:"ic2:wrench_new"},
       {id:"ic2:tool_box"}
   ]},
-  armor_nc_hazmat:{
-    prev: "armor_leather", 
-    tier: 3,
-    material: "nuclearcraft:part",
-    recycle:  "nuclearcraft:part",
-    recipe: {manual: true},
-    list: [
-      {id:"nuclearcraft:helm_hazmat"},
-      {id:"nuclearcraft:chest_hazmat"},
-      {id:"nuclearcraft:legs_hazmat"},
-      {id:"nuclearcraft:boots_hazmat"},
-      {id:"nuclearcraft:multitool"},
-      {id:"nuclearcraft:rad_x"}
-  ]},
   armor_hev:{
     prev: "armor_leather", 
     tier: 5,
-    material: "nuclearcraft:rad_shielding:2",
-    recycle:  "nuclearcraft:rad_shielding:2",
+    material: "nuclearcraft:part:2",
+    recycle:  "nuclearcraft:part:2",
     recipe: {manual: true},
     list: [
       {id:"qmd:helm_hev", tag:{energyStorage: {energy: 1000000 as long, capacity: 1000000 as long}}},

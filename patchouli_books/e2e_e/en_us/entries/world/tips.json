@@ -91,25 +91,19 @@
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
-      "text": "$(li)The §nMaim Trap§r from Dark Utilities is the best way to kill mobs on high §5difficulty§r.$(li)Higher §oHigh Oven§rs output more §lheat§r.$(li)When you pick up a §nCore Sample§r, it's automatically added to your map. Change your map (default key \"J\") to §ltopography§r mode to see Mineral Deposits.",
+      "text": "$(li)The §nMaim Trap§r from Dark Utilities is the best way to kill mobs on high §5difficulty§r.$(li)Higher §oHigh Oven§rs output more §lheat§r.$(li)The Ice Bomb from Twilight Forest turns even flowing §nLava§r into §nObsidian§r.$(li)Press §lShift+F§r to lock stairs rotation.$(li)You can §lshear§r Creepers.",
       "title": "Tips"
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
-      "text": "$(li)The Ice Bomb from Twilight Forest turns even flowing §nLava§r into §nObsidian§r.$(li)Press §lShift+F§r to lock stairs rotation.$(li)You can §lshear§r Creepers.$(li)6+ mods support §2JEI dragging§r for item filters, just like §lEnderIO§r.$(li)Stop killing Ghasts to make §bGhast Tears§r. They cry every 60 seconds if you stay near.",
+      "text": "$(li)6+ mods support §2JEI dragging§r for item filters, just like §lEnderIO§r.$(li)[MP] Hover over an item in a GUI and press §lShift+T§r to show it in chat.$(li)[MP] §lCrouch + right-click§r another player to give them an item.$(li)[MP] Hold §lF4§r to ping a block.$(li)§bPSI Energy§r restores when you gather §aXP§r.",
       "title": "Tips"
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
-      "text": "$(li)[MP] Hover over an item in a GUI and press §lShift+T§r to show it in chat.$(li)[MP] §lCrouch + right-click§r another player to give them an item.$(li)[MP] Hold §lF4§r to ping a block.$(li)§bPSI Energy§r restores when you gather §aXP§r.$(li)Calm down the fastest tool by press \"§l\\§r\".",
-      "title": "Tips"
-    },
-    {
-      "item": "thaumicaugmentation:research_notes",
-      "type": "text",
-      "text": "$(li)Press \"§lShift+F8§r\" to refresh your sound device.$(li)§nFluid Tank§r from Ender IO - When trashing items in §6lava§r, a tiny amount of more §6lava§r will be produced.$(li)§nCarry on§r mob spawner trigger more mobs to spawn.$(li)Game stages don't actually prohibit anything.",
+      "text": "$(li)Calm down the fastest tool by press \"§l\\§r\".$(li)Press \"§lShift+F8§r\" to refresh your sound device.$(li)§nFluid Tank§r from Ender IO - When trashing items in §6lava§r, a tiny amount of more §6lava§r will be produced.$(li)§nCarry on§r mob spawner trigger more mobs to spawn.$(li)Game stages don't actually prohibit anything.",
       "title": "Tips"
     },
     {

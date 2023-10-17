@@ -12,7 +12,7 @@
 		uid: "45e13d0c",
 		type: "item",
 		items: [{
-			item: "draconicevolution:draconic_ingot"
+			item: "draconicevolution:draconic_block"
 		}]
 	}],
 	rewards: [{

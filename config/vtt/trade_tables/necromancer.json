@@ -80,6 +80,27 @@
                         }
                     }
                 }
+            },
+            {
+                "action": "add",
+                "CareerLevel": 5,
+                "buyB": {
+                    "id": "minecraft:emerald",
+                    "Count": {
+                        "min": 32,
+                        "max": 64
+                    }
+                },
+                "buy": {
+                    "id": "minecraft:totem_of_undying",
+                    "Count": 1,
+                    "Damage": 0
+                },
+                "sell": {
+                    "id": "enderio:item_material",
+                    "Count": 1,
+                    "Damage": 17
+                }
             }
         ]
     }

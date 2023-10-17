@@ -86,6 +86,9 @@ mods.immersiveengineering.Crusher.addRecipe(<qmd:dust> * 2, <ore:oreTungsten>, 2
 # [Essence Ore] from [Molten Obsidian Bucket][+1]
 mods.tconstruct.Casting.addBasinRecipe(<endreborn:block_essence_ore>, <endreborn:block_decorative_lormyte>, <liquid:obsidian>, 144, true);
 
+# Add missed ore => ingot
+mods.immersiveengineering.ArcFurnace.addRecipe(<endreborn:item_ingot_wolframium> * 2, <endreborn:block_wolframium_ore>, <immersiveengineering:material:7>, 20, 2048);
+
 # [Simple Machine Chassis] from [Hardened Cell Frame][+3]
 craft.remake(<enderio:item_material>, ["pretty",
   "□ ¤ □",

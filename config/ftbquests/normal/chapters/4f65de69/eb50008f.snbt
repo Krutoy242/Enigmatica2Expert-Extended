@@ -11,6 +11,7 @@
 		"ca359f03"
 	],
 	size: 0.1d,
+	optional: true,
 	tasks: [{
 		uid: "9d4e3656",
 		type: "item",

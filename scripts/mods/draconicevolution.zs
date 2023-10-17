@@ -105,7 +105,7 @@ craft.remake(<draconicevolution:awakened_core>, ["pretty",
   "◊": <ore:gemTopaz>,                  # Topaz
   "¤": <ore:gearVibrant>,               # Vibrant Bimetal Gear
 });
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
 	.outputs(<draconicevolution:awakened_core>)
 	.input(<draconicevolution:wyvern_core> * 2)
 	.input(<ore:gemTopaz> * 2)
@@ -124,7 +124,7 @@ craft.remake(<draconicevolution:chaotic_core>, ["pretty",
   "C": <draconicevolution:chaos_shard>,             # Chaos Shard
   "▄": <contenttweaker:terrestrial_artifact_block>, # Terrestrial Artifact Block
 });
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
 	.outputs(<draconicevolution:chaotic_core>)
 	.input(<draconicevolution:awakened_core> * 2)
 	.input(<draconicevolution:chaos_shard>)

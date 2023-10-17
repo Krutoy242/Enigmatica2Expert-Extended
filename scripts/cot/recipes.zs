@@ -155,7 +155,7 @@ val benitoiteIngrs = [
   <randomthings:ingredient:2>,
   <extrautils2:ingredients:5>,
   <cyclicmagic:soulstone>,
-  <ore:gemPerk>,
+  <astralsorcery:itemcelestialcrystal:*>,
 ] as IIngredient[];
 
 mods.extendedcrafting.CombinationCrafting.addRecipe(

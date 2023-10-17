@@ -476,7 +476,6 @@ val itemsToRecycle as string[] = [
 "nuclearcraft:legs_hazmat"   , "2", "nuclearcraft:part", "!shapeless",
 "nuclearcraft:boots_hazmat"  , "2", "nuclearcraft:part", "!shapeless",
 "nuclearcraft:multitool"     , "2", "thermalfoundation:material:160", "steel",
-"nuclearcraft:rad_x"         , "2", "nuclearcraft:part:6", "!saw",
 "qmd:helm_hev"               , "2", "nuclearcraft:rad_shielding:2", "!shapeless",
 "qmd:chest_hev"              , "2", "nuclearcraft:rad_shielding:2", "!shapeless",
 "qmd:legs_hev"               , "2", "nuclearcraft:rad_shielding:2", "!shapeless",

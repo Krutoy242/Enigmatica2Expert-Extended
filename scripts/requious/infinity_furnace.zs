@@ -141,10 +141,10 @@ ${filtered.join('\n')}`
 
 }*/
 
-# Total Furnace recipes registered: 949
+# Total Furnace recipes registered: 960
 # Filtered by JEI blacklist: 110
 # Filtered manuallly (antidupe): 16
-# Filtered by oredict: 177
+# Filtered by oredict: 188
 infinFurnace(utils.get("actuallyadditions:block_misc", 3), utils.get("actuallyadditions:item_misc", 5));
 #infinFurnace(utils.get("actuallyadditions:item_dust", 1), utils.get("minecraft:gold_ingot"));
 #infinFurnace(utils.get("actuallyadditions:item_dust", 2), utils.get("minecraft:diamond"));
@@ -587,7 +587,18 @@ infinFurnace(utils.get("jaopca:item_dustalchtin"), utils.get("jaopca:item_dirtyg
 infinFurnace(utils.get("jaopca:item_dustalchtopaz"), utils.get("jaopca:item_dirtygemtopaz", 0, 48));
 infinFurnace(utils.get("jaopca:item_dustalchtungsten"), utils.get("jaopca:item_dirtygemtungsten", 0, 48));
 infinFurnace(utils.get("jaopca:item_dustalchuranium"), utils.get("jaopca:item_dirtygemuranium", 0, 48));
+##infinFurnace(utils.get("jaopca:item_dustamber"), utils.get("biomesoplenty:gem", 7));
+##infinFurnace(utils.get("jaopca:item_dustamethyst"), utils.get("biomesoplenty:gem"));
 ##infinFurnace(utils.get("jaopca:item_dustapatite"), utils.get("forestry:apatite"));
+##infinFurnace(utils.get("jaopca:item_dustaquamarine"), utils.get("astralsorcery:itemcraftingcomponent"));
+##infinFurnace(utils.get("jaopca:item_dustchargedcertusquartz"), utils.get("appliedenergistics2:material", 1));
+##infinFurnace(utils.get("jaopca:item_dustmalachite"), utils.get("biomesoplenty:gem", 5));
+##infinFurnace(utils.get("jaopca:item_dustperidot"), utils.get("biomesoplenty:gem", 2));
+##infinFurnace(utils.get("jaopca:item_dustruby"), utils.get("biomesoplenty:gem", 1));
+##infinFurnace(utils.get("jaopca:item_dustsapphire"), utils.get("biomesoplenty:gem", 6));
+##infinFurnace(utils.get("jaopca:item_dusttanzanite"), utils.get("biomesoplenty:gem", 4));
+##infinFurnace(utils.get("jaopca:item_dusttopaz"), utils.get("biomesoplenty:gem", 3));
+##infinFurnace(utils.get("jaopca:item_dusttrinitite"), utils.get("trinity:trinitite_shard"));
 #infinFurnace(utils.get("jaopca:item_hunkastralstarmetal"), utils.get("astralsorcery:itemcraftingcomponent", 1));
 #infinFurnace(utils.get("jaopca:item_hunkboron"), utils.get("nuclearcraft:ingot", 5));
 #infinFurnace(utils.get("jaopca:item_hunkdraconium"), utils.get("draconicevolution:draconium_ingot"));

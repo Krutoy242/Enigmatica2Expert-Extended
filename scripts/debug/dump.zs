@@ -25,7 +25,7 @@ function logAdditionalDebugData(player as IPlayer) {
   ] as string[];
 
   for cmd in commandsToRun {
-    server.commandManager.executeCommand(server, cmd);
+    server.commandManager.executeCommandSilent(server, cmd);
   }
 }
 
@@ -98,7 +98,7 @@ function runAutomation(player as IPlayer) as void {
   
   .sleep(100).then(function(world, ctx) {
     player.sendMessage('Developing: Starting §c/ct conflict');
-    server.commandManager.executeCommand(server, '/ct conflict');
+    server.commandManager.executeCommandSilent(server, '/ct conflict');
   })
   
   .sleep(100).then(function(world, ctx) {
@@ -145,7 +145,7 @@ function runAutomation(player as IPlayer) as void {
     //'blockstates-by-state',             # 32959606
     ] as string[];
     for csvcode in csvList {
-      server.commandManager.executeCommand(server, '/tellme dump-csv ' ~ csvcode);
+      server.commandManager.executeCommandSilent(server, '/tellme dump-csv ' ~ csvcode);
     }
   })
   

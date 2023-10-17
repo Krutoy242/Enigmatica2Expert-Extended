@@ -58,7 +58,7 @@
 		item: "minecraft:writable_book"
 	},
 	{
-		uid: "46189159",
+		uid: "23a5540c",
 		type: "item",
 		item: {
 			id: "bibliocraft:bigbook",
@@ -126,7 +126,7 @@
 						"",
 						"§5Cat fur opener §7Upgrades: 4x Inventory, Inventory Controller",
 						"§7Setup: Inventory with Fur in front, Solid block on bottom, big chest on top",
-						"Rsk3ⓐIe!,~(Ru/0),_64/Rc|Rsel-Rd/1/q,s5",
+						"Rsk/3&16ⓐIe!,~_'Ru0',_16/Rc|Rsel-Rd/1/q",
 						"§l§5",
 						"§5§5Inventory compressor §7Upgrades: Inventory, Inventory Controller",
 						"§7Setup: Huge inventory in front. Note: change \"81\" to actual inventory size",

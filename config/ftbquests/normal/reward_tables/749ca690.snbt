@@ -6,5 +6,10 @@
 	},
 	{
 		item: "forestry:worktable"
+	},
+	{
+		icon: "rustic:vase 10 4",
+		item: "rustic:vase 1 4",
+		count: 10
 	}]
 }

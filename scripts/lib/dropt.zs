@@ -41,7 +41,10 @@ function addDrop(block as IItemStack, drop as IItemStack, exponent as double = 1
     rule.matchHarvester(Dropt.harvester().type("PLAYER").mainHand("BLACKLIST", [], tool));
   }
 
-  var logStr = "Modify drop; Block: "~block.definition.id ~" Drop: "~drop.definition.id~" [";
+  var logStr = "Modify drop;"
+    ~" Block: "~block.commandString.replaceAll('<|>.*', '')
+    ~" Drop: "~drop.commandString.replaceAll('<|>.*', '')~" ["
+  ;
   for i in 0 to 8 {
     val a = max(1, min(64, (pow((i as double), exponent) * 2.0) as int));
     val b = max(2, min(64, (pow((i as double), exponent) * 4.0) as int));

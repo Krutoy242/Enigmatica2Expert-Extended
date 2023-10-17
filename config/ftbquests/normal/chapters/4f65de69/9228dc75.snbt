@@ -1,0 +1,47 @@
+{
+	title: "{q.getting_started.chunk_loaders.name}",
+	icon: "ic2:te 1 82",
+	x: 8.75d,
+	y: 4.15d,
+	shape: "circle",
+	text: [
+		"{q.getting_started.chunk_loaders.desc}"
+	],
+	dependencies: [
+		"b1868c44"
+	],
+	size: 0.5d,
+	tasks: [{
+		uid: "684443c6",
+		type: "item",
+		items: [{
+			item: "extrautils2:chunkloader"
+		},
+		{
+			item: "ic2:te 1 82"
+		},
+		{
+			item: "mekanism:anchorupgrade"
+		},
+		{
+			item: "opencomputers:upgrade 1 4"
+		},
+		{
+			item: "randomthings:enderanchor"
+		},
+		{
+			item: "fluxnetworks:fluxpoint"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "00214f85",
+		type: "item",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "storage"
+			}
+		}
+	}]
+}

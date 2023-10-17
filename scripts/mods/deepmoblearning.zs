@@ -71,10 +71,6 @@ craft.remake(<deepmoblearning:data_model_blank>, ["pretty",
   "M": <endreborn:food_ender_flesh>,            # Mysical Flesh
 });
 
-# Redstone from Sool-covered version
-mods.tconstruct.Drying.addRecipe(<minecraft:redstone>, <deepmoblearning:soot_covered_redstone>, 100);
-mods.thermalexpansion.Transposer.addFillRecipe(<minecraft:redstone>, <deepmoblearning:soot_covered_redstone>, <fluid:water> * 10, 1000);
-
 # [Ender Air Bottle] from [End Stone][+2]
 craft.shapeless(<botania:manaresource:15> * 16, "EeG", {
   "E": <deepmoblearning:living_matter_extraterrestrial>, # Extraterrestrial Matter
