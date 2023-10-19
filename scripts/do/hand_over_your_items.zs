@@ -34,7 +34,7 @@ events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEnt
     # Player must be targeting another player
     || !e.target instanceof IPlayer
     # Fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/280
-    || e.player.fake`e.player.fake`
+    || e.player.fake
   ) return;
 
   val item = e.player.getItemInSlot(mainHand);
