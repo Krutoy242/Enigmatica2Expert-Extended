@@ -34,10 +34,9 @@ events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEnt
     # Player must be targeting another player
     || !e.target instanceof IPlayer
     # Fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/280
-    || e.player.uuid == "41C82C87-7AfB-4024-BB57-13D2C99CAE77" 
+    || e.player.name == "[IntegratedTunnels]"
     # See https://github.com/CyclopsMC/IntegratedTunnels/blob/800584c534a7c6a00cd3bc8bc3cf8cb33d7d529e/src/main/java/org/cyclops/integratedtunnels/core/ExtendedFakePlayer.java#L16C2-L16C2
-    # Also https://github.com/rwtema/Extra-Utilities-2-Source/blob/9e478a1f48b559c404747c663cbb29bd8acf93d9/1.10.2/src/main/java/com/rwtema/extrautils2/fakeplayer/XUFakePlayer.java#L22
-    # But I cannot find Cyclic's UUID for FakePlayer, maybe it uses different apporaches. 
+    # Cyclic and ExtraUtilities2 does not support sneaking, so no need to handle that
   ) return;
 
   val item = e.player.getItemInSlot(mainHand);
