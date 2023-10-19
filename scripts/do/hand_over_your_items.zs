@@ -34,9 +34,7 @@ events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEnt
     # Player must be targeting another player
     || !e.target instanceof IPlayer
     # Fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/280
-    || e.player.name == "[IntegratedTunnels]"
-    # See https://github.com/CyclopsMC/IntegratedTunnels/blob/800584c534a7c6a00cd3bc8bc3cf8cb33d7d529e/src/main/java/org/cyclops/integratedtunnels/core/ExtendedFakePlayer.java#L16C2-L16C2
-    # Cyclic and ExtraUtilities2 does not support sneaking, so no need to handle that
+    || e.player.fake`e.player.fake`
   ) return;
 
   val item = e.player.getItemInSlot(mainHand);
