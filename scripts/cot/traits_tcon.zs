@@ -611,7 +611,7 @@ function checkIfWeapon(tool as IItemStack) as bool {
 function speakRandom(player as IPlayer, world as IWorld) as void {
   val k = 'warp.sword.speak.random.';
   val r = world.random.nextInt(9);
-  player.sendStatusMessage(game.localize(k + r));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k+r));
   player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
 }
 
@@ -631,7 +631,7 @@ possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
 function speakKill(player as IPlayer, world as IWorld) as void {
   val k = 'warp.sword.speak.kill.';
   val r = world.random.nextInt(8);
-  player.sendStatusMessage(game.localize(k + r));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k+r));
   if (player.isPlayerMP()) player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
 }
 
