@@ -499,7 +499,7 @@ ____ ____ ____ ___  _ ___  ___  ____ _  _
 // Spin effect on player
 function spin(player as IPlayer) as void {
   player.addPotionEffect(<potion:potioncore:spin>.makePotionEffect(7, 1));
-  player.sendStatusMessage(game.localize('warp.sword.warning'));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation('warp.sword.warning'));
 }
 
 // Striping weared armor
