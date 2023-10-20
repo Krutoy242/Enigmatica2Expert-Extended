@@ -1157,6 +1157,20 @@ ___ _  _ ____ _  _ _  _ ____ ____ ____ ____ ___
 <thaumcraft:bath_salts>                        .setAspects(<aspect:ordo>*1        , <aspect:victus>*1);
 <thaumcraft:sanity_soap>                       .setAspects(<aspect:ordo>*2        , <aspect:victus>*2         ,<aspect:mana>*2);
 
+<thaumcraft:ingot>                              .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*5);
+<thaumcraft:nugget:6>                           .setAspects(<aspect:metallum>*1);
+<thaumcraft:metal_thaumium>                     .setAspects(<aspect:metallum>*67        , <aspect:praecantatio>*33);
+<thaumcraft:plate:2>                            .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*5,  <aspect:instrumentum>*2);
+<mysticalagriculture:thaumium_seeds>            .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*5,  <aspect:herba>*20);
+<mysticalagriculture:thaumium_essence>          .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*25);
+
+<thaumcraft:ingot:1>                            .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5);
+<thaumcraft:nugget:7>                           .setAspects(<aspect:metallum>*1);
+<thaumcraft:metal_void>                         .setAspects(<aspect:metallum>*67        , <aspect:vitium>*33);
+<thaumcraft:plate:3>                            .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:instrumentum>*2);
+<mysticalagriculture:void_metal_seeds>          .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:herba>*20);
+<mysticalagriculture:void_metal_essence>        .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:praecantatio>*20);
+
 val nitor = [
 <thaumcraft:nitor_white>,
 <thaumcraft:nitor_orange>,
