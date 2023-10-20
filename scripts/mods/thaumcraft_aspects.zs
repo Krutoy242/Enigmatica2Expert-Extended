@@ -1503,17 +1503,6 @@ function addMetallurgicAspects(mul as float, mulAs as float, tier as int,
   if(!isNull(essence))  essence   .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:praecantatio>*(((5.0*tier)as int)) );
 }
 
-/*
-addMetallurgicAspects
-(1,1,1,
-ingot/gem,nugget,block,dust,
-plate,densePlate,sheetBlock,case,gear,
-cluster, crystal, crystalCompacted, 
-rockyChunk, chunk, alchemicalDust,dirty,
-ore, oreNether, oreEnd, crushed, crushedPurfired,
-seed,essence,<aspect:metallum>);
-*/
-
 #Iron
 addMetallurgicAspects
 (1,1,3,
@@ -1966,7 +1955,7 @@ null,null,null,null,null,
 <nuclearcraft:ore:5>,null,null,
 <jaopca:item_crushedboron>,<jaopca:item_crushedpurifiedboron>,
 <mysticalagriculture:boron_seeds>,<mysticalagriculture:boron_essence>,
-<aspect:metallum>, <aspect:humanus>);//TODO
+<aspect:metallum>, <aspect:humanus>);
 
 #Lithium
 addMetallurgicAspects
