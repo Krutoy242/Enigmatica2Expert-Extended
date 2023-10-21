@@ -1066,6 +1066,8 @@ mods.thaumcraft.Infusion.registerRecipe(
   [<thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vacuos"}]}),<thaumcraft:vis_resonator>,<minecraft:potion>.withTag({Potion: "potioncore:strong_bless"}),<thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "auram"}]}),]
 );
 
+<thaumadditions:recharge_charm>.removeTooltipLine(2);
+
 #[Boots of traveller]
 mods.thaumcraft.Infusion.removeRecipe(<thaumcraft:traveller_boots>);
 mods.thaumcraft.Infusion.registerRecipe(
