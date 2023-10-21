@@ -2,26 +2,26 @@
 # New Turbine Parts
 # ---------------------------------------------
 # //Rotor
-tile.nuclearcraft.turbine_rotor_stator_thorium.name=Thorium tempered Turbine Rotor Stator
-tile.nuclearcraft.turbine_rotor_stator_uranium.name=DU tempered Turbine Rotor Stator
-tile.nuclearcraft.turbine_rotor_blade_neptunium.name=Neptunium tempered Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_plutonium.name=Plutonium tempered Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_americium.name=Americium tempered Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_curium.name=Curium tempered Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_berkelium.name=Berkelium tempered Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_californium.name=Californium tempered Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_niosteel.name=Niobium-Steel Alloy Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_extremenio.name=Extreme-Niobium Alloy Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_sicnio.name=SiC-Niobium-CMC Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_elektron90.name=Unwieldy Elektron90 Alloy Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_elektron192.name=Unwieldy Elektron192 Alloy Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_elektron231.name=Unwieldy Elektron231 Alloy Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_edelstahl.name=Ultra Light Edelstahl Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_legierung.name=Ultra Light Edle Elektronlegierung Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_matrix.name=Ultra Light Matrix-Legierung Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_blade_copernicum.name=Superalloyed Copernicum Turbine Rotor Blade
-tile.nuclearcraft.turbine_rotor_stator_elektron.name=Elektron60-Alloy Turbine Rotor Stator
-tile.nuclearcraft.turbine_rotor_stator_trinitite.name=Trinitite covered Turbine Rotor Stator
+tile.nuclearcraft.turbine_rotor_stator_thorium.name=强化钍涡轮机转子定子
+tile.nuclearcraft.turbine_rotor_stator_uranium.name=强化 DU 涡轮机转子定子
+tile.nuclearcraft.turbine_rotor_blade_neptunium.name=强化镎涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_plutonium.name=强化钚涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_americium.name=强化镅涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_curium.name=强化锔涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_berkelium.name=强化锫涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_californium.name=强化锎涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_niosteel.name=铌-钢合金涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_extremenio.name=铌-极限合金涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_sicnio.name=铌-复合碳化硅涡轮机转子叶片
+# tile.nuclearcraft.turbine_rotor_blade_elektron90.name=Unwieldy Elektron90 Alloy 涡轮机转子叶片
+# tile.nuclearcraft.turbine_rotor_blade_elektron192.name=Unwieldy Elektron192 Alloy 涡轮机转子叶片
+# tile.nuclearcraft.turbine_rotor_blade_elektron231.name=Unwieldy Elektron231 Alloy 涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_edelstahl.name=超轻不锈钢涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_legierung.name=超轻高超不锈钢涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_matrix.name=超轻矩阵合金涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_copernicum.name=超强钴合金涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_stator_elektron.name=镁-钴60合金涡轮机转子定子
+tile.nuclearcraft.turbine_rotor_stator_trinitite.name=托里尼体涡轮机转子定子
 
 
 # //Magnets
