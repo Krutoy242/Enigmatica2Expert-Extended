@@ -49,6 +49,7 @@ tile.nuclearcraft.turbine_dynamo_coil_samariummagnet.name=钐涡轮机电磁铁
 tile.nuclearcraft.turbine_dynamo_coil_nakmagnet.name=共晶钠钾涡轮机电磁铁
 tile.nuclearcraft.turbine_dynamo_coil_antihydrogenmagnet.name=反氢涡轮机电磁铁
 
+# Notes for later translator: 这里每种电磁铁都有两行，英文原文分别是xxx Magnet和xxx Magnets。但是中文不需要这种复数变体，所以翻译成一样的。
 nc.sf.basemagnet_coil0=%s基础感应涡轮机电磁铁
 nc.sf.basemagnet_coil1=%s基础感应涡轮机电磁铁
 nc.sf.ironmagnet_coil0=%s铁涡轮机电磁铁
