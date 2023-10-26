@@ -13,9 +13,10 @@ tile.nuclearcraft.turbine_rotor_blade_californium.name=强化锎涡轮机转子�
 tile.nuclearcraft.turbine_rotor_blade_niosteel.name=铌-钢合金涡轮机转子叶片
 tile.nuclearcraft.turbine_rotor_blade_extremenio.name=铌-极限合金涡轮机转子叶片
 tile.nuclearcraft.turbine_rotor_blade_sicnio.name=铌-复合碳化硅涡轮机转子叶片
-# tile.nuclearcraft.turbine_rotor_blade_elektron90.name=Unwieldy Elektron90 Alloy 涡轮机转子叶片
-# tile.nuclearcraft.turbine_rotor_blade_elektron192.name=Unwieldy Elektron192 Alloy 涡轮机转子叶片
-# tile.nuclearcraft.turbine_rotor_blade_elektron231.name=Unwieldy Elektron231 Alloy 涡轮机转子叶片
+# NOTE: 原文Elektron指的是一家公司(Magnesium Elektron Limited)的商标，见 https://encyclopedia.thefreedictionary.com/Elektron+(alloy)
+tile.nuclearcraft.turbine_rotor_blade_elektron90.name=沉重镁电90合金涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_elektron192.name=沉重镁电192合金涡轮机转子叶片
+tile.nuclearcraft.turbine_rotor_blade_elektron231.name=沉重镁电231合金涡轮机转子叶片
 tile.nuclearcraft.turbine_rotor_blade_edelstahl.name=超轻不锈钢涡轮机转子叶片
 tile.nuclearcraft.turbine_rotor_blade_legierung.name=超轻高超不锈钢涡轮机转子叶片
 tile.nuclearcraft.turbine_rotor_blade_matrix.name=超轻矩阵合金涡轮机转子叶片

@@ -386,8 +386,8 @@ fluid.critical_exhaust_carbon_dioxide=临界二氧化碳废气
 # --------------------------------------
 # New Turbine Parts 新的反应堆部件
 # --------------------------------------
-item.contenttweaker.elektron60_ingot.name=镁-钴60合金锭
-tile.contenttweaker.elektron60_block.name=镁-钴60合金块
+item.contenttweaker.elektron60_ingot.name=镁电60合金锭
+tile.contenttweaker.elektron60_block.name=镁电60合金块
 item.contenttweaker.blade_core.name=稀土涡轮机转子叶片芯
 item.contenttweaker.steel_mould.name=超轻不锈钢粗模
 item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模
