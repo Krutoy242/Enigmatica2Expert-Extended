@@ -381,3 +381,50 @@ mm.luminosity = 10;
 mm.stillLocation = 'astralsorcery:blocks/fluid/starlight_still';
 mm.flowingLocation = 'astralsorcery:blocks/fluid/starlight_flow';
 mm.register();
+
+// -------------------------------
+// New Coins
+// -------------------------------
+
+buildItem("coin_advancedalloy");
+buildItem("coin_alchemicalbrass");
+buildItem("coin_aluminumbrass");
+buildItem("coin_alumite");
+buildItem("coin_baseessence");
+buildItem("coin_beryllium");
+buildItem("coin_conductiveiron");
+buildItem("coin_darksteel");
+buildItem("coin_demonmetal");
+buildItem("coin_electricalsteel");
+buildItem("coin_enchantedmetal");
+buildItem("coin_ender");
+buildItem("coin_endorium");
+buildItem("coin_energizedalloy");
+buildItem("coin_evilinfusedmetal");
+buildItem("coin_extremealloy");
+buildItem("coin_fakeiron");
+buildItem("coin_ferroboron");
+buildItem("coin_fierymetal");
+buildItem("coin_glowstone");
+buildItem("coin_graphite");
+buildItem("coin_hardcarbon");
+buildItem("coin_heavymetal");
+buildItem("coin_hopgraphite");
+buildItem("coin_ironwood");
+buildItem("coin_knightmetal");
+buildItem("coin_knightslime");
+buildItem("coin_manasteel");
+buildItem("coin_manganese");
+buildItem("coin_manyullyn");
+buildItem("coin_osgloglas");
+buildItem("coin_osmiridium");
+buildItem("coin_pigiron");
+buildItem("coin_pulsatingiron");
+buildItem("coin_redstonealloy");
+buildItem("coin_refinedobsidian");
+buildItem("coin_soularium");
+buildItem("coin_spectre");
+buildItem("coin_thaumium");
+buildItem("coin_toughalloy");
+buildItem("coin_unstable");
+buildItem("coin_zirconium");
