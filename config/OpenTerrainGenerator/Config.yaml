@@ -91,13 +91,13 @@ Overworld:
 Dimensions:
 - PresetName: "Void"
   DimensionId: 3
-  ShowInWorldCreationGUI: false
+  ShowInWorldCreationGUI: true
   LowestSupportedModPackConfigVersion: 999
   RemoveOnUpdate: true
   Seed: ""
   GameType: "Survival"
   BonusChest: false
-  AllowCheats: false
+  AllowCheats: true
   WorldBorderRadiusInChunks: 0
   PregeneratorRadiusInChunks: 0
   Settings:
