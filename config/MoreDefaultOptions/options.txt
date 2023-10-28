@@ -11,7 +11,7 @@ bobView:false
 anaglyph3d:false
 maxFps:260
 fboEnable:true
-difficulty:2
+difficulty:3
 fancyGraphics:true
 ao:2
 renderClouds:fast
@@ -142,7 +142,7 @@ key_key.colytra.toggle.desc:0
 key_key.command:53
 key_key.conarm.toggle_chest.desc:58:SHIFT
 key_key.conarm.toggle_helm.desc:39
-key_key.conarm.toggle_leg.desc:58:CONTROL
+key_key.conarm.toggle_leg.desc:36
 key_key.connected_area:0
 key_key.craftingtweaks.balance:0
 key_key.craftingtweaks.clear:0
@@ -240,7 +240,7 @@ key_key.journeymap.zoom_in:13
 key_key.journeymap.zoom_out:12
 key_key.jump:57
 key_key.keyExtraCraftin:0
-key_key.keyExtraInvo:0
+key_key.keyExtraInvo:18:ALT
 key_key.keyWheel:0
 key_key.left:30
 key_key.little.config:46:CONTROL
@@ -302,7 +302,7 @@ key_key.settings_menu:34
 key_key.showhide:0
 key_key.smoothCamera:0
 key_key.sneak:42
-key_key.sort_config:37
+key_key.sort_config:37:CONTROL
 key_key.sort:-98
 key_key.spectatorOutlines:0
 key_key.sprint:29
@@ -336,7 +336,7 @@ key_mekanism.key.voice:22
 key_Misc Caster Toggle:35
 key_Mode Switch Key:47
 key_Move Vehicle Down:45
-key_Move Vehicle Up:0
+key_Move Vehicle Up:44
 key_neat.keybind.toggle:0
 key_nei.options.keys.gui.botania_corporea_request:0
 key_nimble.keybind.frontView:63:CONTROL
@@ -382,6 +382,7 @@ key_quark.keybind.chestRestock:0
 key_quark.keybind.chestSort:0
 key_quark.keybind.dropoff:0
 key_quark.keybind.lockBuilding:33:SHIFT
+key_quark.keybind.playerSort:0
 key_quark.keybind.toggleAutojump:0
 key_Rotate Vehicle Left:30
 key_Rotate Vehicle Right:32

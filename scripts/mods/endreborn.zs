@@ -12,26 +12,26 @@ import crafttweaker.item.IItemStack;
 
 # Remove excess items
 for item in [
-  <endreborn:tool_pickaxe_endorium>,
-  <endreborn:tool_sword_endorium>,
-  <endreborn:tool_hoe_endorium>,
-  <endreborn:tool_axe_endorium>,
-  <endreborn:tool_shovel_endorium>,
-  <endreborn:tool_hammer_iron>,
-  <endreborn:ender_bow>,
-  <endreborn:tool_pickaxe_wolframium>,
-  <endreborn:tool_sword_wolframium>,
-  <endreborn:tool_hoe_wolframium>,
-  <endreborn:tool_axe_wolframium>,
-  <endreborn:tool_shovel_wolframium>,
-  <endreborn:entropy_wand>,
-  <endreborn:block_end_forge>,
-  <endreborn:armour_chestplate_obsidian>,
-  <endreborn:armour_leggings_obsidian>,
   <endreborn:armour_boots_obsidian>,
+  <endreborn:armour_chestplate_obsidian>,
   <endreborn:armour_helmet_helmet>,
+  <endreborn:armour_leggings_obsidian>,
+  <endreborn:block_end_forge>,
+  <endreborn:ender_bow>,
+  <endreborn:entropy_wand>,
   <endreborn:ingot_infused>,
   <endreborn:item_shard_obsidian>,
+  <endreborn:tool_axe_endorium>,
+  <endreborn:tool_axe_wolframium>,
+  <endreborn:tool_hammer_iron>,
+  <endreborn:tool_hoe_endorium>,
+  <endreborn:tool_hoe_wolframium>,
+  <endreborn:tool_pickaxe_endorium>,
+  <endreborn:tool_pickaxe_wolframium>,
+  <endreborn:tool_shovel_endorium>,
+  <endreborn:tool_shovel_wolframium>,
+  <endreborn:tool_sword_endorium>,
+  <endreborn:tool_sword_wolframium>,
 ] as IItemStack[] {
   utils.rh(item);
 }
@@ -88,17 +88,6 @@ mods.tconstruct.Casting.addBasinRecipe(<endreborn:block_essence_ore>, <endreborn
 
 # Add missed ore => ingot
 mods.immersiveengineering.ArcFurnace.addRecipe(<endreborn:item_ingot_wolframium> * 2, <endreborn:block_wolframium_ore>, <immersiveengineering:material:7>, 20, 2048);
-
-# [Simple Machine Chassis] from [Hardened Cell Frame][+3]
-craft.remake(<enderio:item_material>, ["pretty",
-  "□ ¤ □",
-  "D ◘ D",
-  "□ ¤ □"], {
-  "□": <ore:plateTitaniumAluminide>,         # Titanium Aluminide Plate
-  "¤": <ore:gearIronInfinity>,               # Infinity Bimetal Gear
-  "D": <endreborn:block_decorative_lormyte>, # Decorative Lormyte Stone
-  "◘": <thermalexpansion:frame:129>,         # Hardened Cell Frame
-});
 
 # [Angel Feather] from [Blue Peacock Feather][+2]
 craft.remake(<endreborn:item_angel_feather>, ["pretty",
@@ -193,15 +182,6 @@ utils.addEnchRecipe(<endreborn:ender_sword>,
   "S": <endreborn:item_ender_string>, # String of Life
   "▬": <ore:ingotEndorium>,           # Endorium Ingot
 }).shaped());
-
-# [Xorcite Cluster]*64 from [Broken Sword Part][+1]
-craft.remake(<endreborn:dragon_essence> * 64, ["pretty",
-  "1 1 1",
-  "1 B 1",
-  "1 1 1"], {
-  "1": <ore:compressed1xEndStone>, # Compressed End Stone
-  "B": <endreborn:sword_shard>,    # Broken Sword Part
-});
 
 # [Materializer] from [Broken Sword Part][+3]
 craft.remake(<endreborn:entropy_user>, ["pretty",

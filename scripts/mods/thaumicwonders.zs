@@ -49,7 +49,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
 # ---------------------------------------------------------
 # Trans Stones rework
 # ---------------------------------------------------------
-static transStoneMaxDamage as int = 65534 as int;
+static transStoneMaxDamage as int = 32766;
 
 val transStones = [
   <thaumicwonders:alchemist_stone>,

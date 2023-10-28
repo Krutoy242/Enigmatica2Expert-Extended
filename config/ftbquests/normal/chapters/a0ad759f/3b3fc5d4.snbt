@@ -58,12 +58,11 @@
 		item: "minecraft:writable_book"
 	},
 	{
-		uid: "23a5540c",
+		uid: "1b97a59b",
 		type: "item",
 		item: {
 			id: "bibliocraft:bigbook",
 			tag: {
-				pagesTotal: 1,
 				pagesCurrent: 0,
 				pages: {
 					pageScale0: [I;
@@ -122,6 +121,7 @@
 						"#(1|#Rdt&3)<6ⓐRsw/3-s/1-Rsk/0-Ie-Ru/3-IeⓞRu3,s",
 						"",
 						"§5§lTrading Bot §7Upgrades: Inverntory, Inv. Controller, Trading",
+						"§7Setup: bottom - Drawer Controller with 16 slots total, villager within 8 blocks",
 						"a=-~Tg0\"_{g0}'n',~tr\",Rsel-Rd/0/k~16ⓡ_16'IgI/0&k''a[n]ⓐIsF/0&k'",
 						"",
 						"§5Cat fur opener §7Upgrades: 4x Inventory, Inventory Controller",
@@ -131,7 +131,6 @@
 						"§5§5Inventory compressor §7Upgrades: Inventory, Inventory Controller",
 						"§7Setup: Huge inventory in front. Note: change \"81\" to actual inventory size",
 						"-(_16-Rc&12)|Rd/3/q&Rsel,IsF/3/'_11/8/4&Rc!/9/RtT'|i81,Cc",
-						"",
 						"",
 						"",
 						"",
@@ -199,7 +198,8 @@
 				},
 				display: {
 					Name: "LostUser programs"
-				}
+				},
+				pagesTotal: 1
 			}
 		}
 	}]

@@ -318,6 +318,12 @@ Some screenshots of new worldgen:
 
 -----------------
 
+## Incompatible mods
+
+- `Essential Mod`: To play with this mod remove mod [CensoredASM](https://legacy.curseforge.com/minecraft/mc-mods/lolasm) first.
+
+-----------------
+
 ## Modpack Developing
 
 This is unofficial addon and not supported by **Enigmatica** dev team.

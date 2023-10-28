@@ -433,7 +433,7 @@ zenClass Utils {
      ██║   ███████╗███████╗███████╗██║  ██║██║  ██║╚███╔███╔╝
      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ 
   */
-  function tellrawItem(item as IItemStack, color as string = null) as string {
+  function tellrawItem(item as IItemStack, color as string = null, addName as bool = true) as string {
     val colorTag = isNull(color) ? '' : ',"color":"'~color~'"';
     val amount = item.amount > 1 ? '{"text":"'~item.amount~'"'~colorTag~'},{"text":" "},' : '';
     val itemName =
@@ -441,11 +441,11 @@ zenClass Utils {
         ~'{"action":"show_item","value":"'
           ~item.asData().toNBTString().replaceAll('"', '\\\\"')
         ~'"}'
-      ~',"extra":['
+      ~(addName ? (',"extra":['
         ~'{"text":"["'~colorTag~'}'
         ~',{"translate":"'~item.name~'.name"'~colorTag~'}'
         ~',{"text":"]"'~colorTag~'}'
-      ~']'
+      ~']') : '')
     ~'}';
 
     return amount ~ itemName;

@@ -31,7 +31,7 @@
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
-      "text": "$(li)The Immersive Petroleum §nPumpjack§r needs an Immersive Engineering §nFluid Pipe§r to bedrock to function.$(li)§nMob Spawners§r can be moved by using a §nDrop Of Evil§r on them, or by carrying them. (§lRight-shift + Click§r by default)",
+      "text": "$(li)The Immersive Petroleum §nPumpjack§r needs an Immersive Engineering §nFluid Pipe§r to bedrock to function.$(li)§nMob Spawners§r can be moved by using a §nDrop Of Evil§r on them, or by carrying them. (§lShift + Right-Click§r by default)",
       "title": "Tips"
     },
     {
@@ -49,7 +49,7 @@
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
-      "text": "$(li)§lHorologium§r only appears every 36 days, the next night after a §lSolar Eclipse§r.$(li)§5Mystical Agriculture§r plants have a 5%% chance of dropping §52 seeds§r when harvested with left click.$(li)There are many different valid fuels for the Tinkers' Construct §nSmeltery§r, all with different attributes.",
+      "text": "$(li)§lHorologium§r only appears every 36 days, the night after a §lSolar Eclipse§r.$(li)§5Mystical Agriculture§r plants have a 5%% chance of dropping §52 seeds§r when harvested with left click.$(li)There are many different valid fuels for the Tinkers' Construct §nSmeltery§r, all with different attributes.",
       "title": "Tips"
     },
     {
@@ -109,7 +109,7 @@
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
-      "text": "$(li)Full §nBackpacks§r in AE2 system cause lags, or even §5cant be taken out§r.$(li)§nIndustrial Wires§r - cheapest way to convert between RF and EU.$(li)§nCtrl+Delete§r thrashes item from inventory.$(li)§nInventory System Storage§r can't be accessed directly, but work with hoppers and VAULTOPIC",
+      "text": "$(li)Full §nBackpacks§r in AE2 system cause lags, or even §5cant be taken out§r.$(li)§nIndustrial Wires§r - cheapest way to convert between RF and EU.$(li)§nCtrl+Delete§r trashes item from inventory.$(li)§nInventory System Storage§r can't be accessed directly, but work with hoppers and VAULTOPIC",
       "title": "Tips"
     },
     {

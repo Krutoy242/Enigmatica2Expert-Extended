@@ -3,7 +3,6 @@
 	icon: "forestry:alveary.sieve",
 	x: 4.5d,
 	y: -1.7d,
-	description: "{q.forestry.alveary_sieve.desc}",
 	text: [
 		"{q.forestry.alveary_sieve.desc}"
 	],

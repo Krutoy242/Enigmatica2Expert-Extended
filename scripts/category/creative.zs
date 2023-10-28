@@ -454,24 +454,24 @@ recipes.addShapeless("Creative Tank Reset",
 	"            ☠ ☠  ", 
 	"                ◊"], list);
 
-# [Creative Modifier] from [Gold Singularity][+10]
-craft.remake(<tconstruct:materials:50>, ["pretty",
-  "S A A A S",
-  "▀ ■ □ ■ ▄",
-  "▀ s G M ▄",
-  "▀ ■ O ■ ▄",
-  "S P P P S"], {
-  "■": <tconstruct:metal:6>,             # Silky Block of Jewel
-  "▀": <ore:blockKnightslime>,           # Block of Knightslime
-  "P": <ore:blockPigiron>,               # Block of Pigiron
-  "A": <ore:blockAlubrass>,              # Block of Aluminum Brass
-  "□": <tconevo:material:2>,             # Plate of Unsealing
-  "S": <cyclicmagic:soulstone>,          # Soulstone
-  "s": <ore:blockOsgloglas>,             # Osgloglas Block
-  "▄": <ore:blockAlumite>,               # Alumite Block
-  "G": <additionalcompression:ingotgold_compressed:2>,
-  "M": <ore:blockMirion>,                # Mirion Block
-  "O": <ore:blockOsmiridium>,            # Osmiridium Block
+# [Creative Modifier] from [Plate of Unsealing][+10]
+craft.make(<tconstruct:materials:50>, ["pretty",
+  "S ▀ ▀ ▀ S",
+  "▄ G i G A",
+  "▄ O □ M A",
+  "▄ G s G A",
+  "S ■ ■ ■ S"], {
+  "S": <cyclicmagic:soulstone>, # Soulstone
+  "▀": <ore:blockAlubrass>,     # Block of Aluminum Brass
+  "▄": <ore:blockKnightslime>,  # Block of Knightslime
+  "G": <ore:compressedGold3x>,  # Triple Compressed Gold
+  "i": <tconstruct:metal:6>,    # Silky Block of Jewel
+  "A": <ore:blockAlumite>,      # Alumite Block
+  "O": <ore:blockOsgloglas>,    # Osgloglas Block
+  "□": <tconevo:material:2>,    # Plate of Unsealing
+  "M": <ore:blockMirion>,       # Mirion Block
+  "s": <ore:blockOsmiridium>,   # Osmiridium Block
+  "■": <ore:blockPigiron>,      # Block of Pigiron
 });
 
 

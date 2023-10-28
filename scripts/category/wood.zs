@@ -5,9 +5,9 @@ import crafttweaker.item.IIngredient;
 #reloadable
 
 # Logs to planks recipes
-static logPlank as IItemStack[IItemStack] = {
+static logPlank as IItemStack[IItemStack]$orderly = {
 # Vanilla
-  <minecraft:log>    : <minecraft:planks>, 
+  <minecraft:log>    : <minecraft:planks>,
   <minecraft:log:1>  : <minecraft:planks:1>,
   <minecraft:log:2>  : <minecraft:planks:2>,
   <minecraft:log:3>  : <minecraft:planks:3>,
@@ -72,7 +72,33 @@ static logPlank as IItemStack[IItemStack] = {
   <forestry:logs.2:2> : <forestry:planks.0:10>,
   <forestry:logs.6:3> : <forestry:planks.1:11>,
 
+# pam
+  <harvestcraft:pamcinnamon>  : <minecraft:planks:3>,
+  <harvestcraft:pammaple>     : <minecraft:planks:1>,
+  <harvestcraft:pampaperbark> : <minecraft:planks:3>,
+
+# Other Mods
+  <rustic:log>                   : <rustic:planks>,
+  <rustic:log:1>                 : <rustic:planks:1>,
+  <thaumcraft:log_greatwood>     : <thaumcraft:plank_greatwood>,
+  <thaumcraft:log_silverwood>    : <thaumcraft:plank_silverwood>,
+  <integrateddynamics:menril_log>: <integrateddynamics:menril_planks>,
+  <advancedrocketry:alienwood>   : <advancedrocketry:planks>,
+  <extrautils2:ironwood_log>     : <extrautils2:ironwood_planks>,
+  <extrautils2:ironwood_log:1>   : <extrautils2:ironwood_planks:1>,
+  <iceandfire:dreadwood_log>     : <iceandfire:dreadwood_planks>,
+  <randomthings:spectrelog>      : <randomthings:spectreplank>,
+
+# Magical wood special
+  <extrautils2:decorativesolidwood:1>: <extrautils2:decorativesolidwood>,
+  <thaumcraft:taint_log>             : <thaumadditions:taintwood_planks>,
+  <botania:livingwood>               : <botania:livingwood:1>,
+  <botania:dreamwood>                : <botania:dreamwood:1>,
+  <astralsorcery:blockinfusedwood>   : <astralsorcery:blockinfusedwood:1>,
+} as IItemStack[IItemStack];
+
 # Forestry fireproof
+static logPlankFireproof as IItemStack[IItemStack]$orderly = {
   <forestry:logs.fireproof.0:1>        : <forestry:planks.fireproof.0:1>,
   <forestry:logs.fireproof.0:2>        : <forestry:planks.fireproof.0:2>,
   <forestry:logs.fireproof.0:3>        : <forestry:planks.fireproof.0:3>,
@@ -108,28 +134,12 @@ static logPlank as IItemStack[IItemStack] = {
   <forestry:logs.vanilla.fireproof.0>  : <forestry:planks.vanilla.fireproof.0>,
   <forestry:logs.vanilla.fireproof.1:1>: <forestry:planks.vanilla.fireproof.0:5>,
   <forestry:logs.vanilla.fireproof.1>  : <forestry:planks.vanilla.fireproof.0:4>,
-
-# pam
-  <harvestcraft:pamcinnamon>  : <minecraft:planks:3>,
-  <harvestcraft:pammaple>     : <minecraft:planks:1>,
-  <harvestcraft:pampaperbark> : <minecraft:planks:3>,
-
-# Other Mods
-  <rustic:log>                   : <rustic:planks>,
-  <rustic:log:1>                 : <rustic:planks:1>,
-  <thaumcraft:log_greatwood>     : <thaumcraft:plank_greatwood>,
-  <thaumcraft:log_silverwood>    : <thaumcraft:plank_silverwood>,
-  <integrateddynamics:menril_log>: <integrateddynamics:menril_planks>,
-  <advancedrocketry:alienwood>   : <advancedrocketry:planks>,
-  <extrautils2:ironwood_log>     : <extrautils2:ironwood_planks>,
-  <extrautils2:ironwood_log:1>   : <extrautils2:ironwood_planks:1>,
-  <iceandfire:dreadwood_log>     : <iceandfire:dreadwood_planks>,
-  <randomthings:spectrelog>      : <randomthings:spectreplank>,
-
-# Magical wood special
-  <extrautils2:decorativesolidwood:1>: <extrautils2:decorativesolidwood>,
-  <thaumcraft:taint_log>             : <thaumadditions:taintwood_planks>,
-  <botania:livingwood>               : <botania:livingwood:1>,
-  <botania:dreamwood>                : <botania:dreamwood:1>,
-  <astralsorcery:blockinfusedwood>   : <astralsorcery:blockinfusedwood:1>,
 } as IItemStack[IItemStack];
+
+// Copy values to main list
+for log, plank in logPlankFireproof {
+  if(isNull(log) || isNull(plank)) continue;
+  logPlank[log] = plank;
+  <ore:logFireproof>.add(log);
+  <ore:plankFireproof>.add(plank);
+}

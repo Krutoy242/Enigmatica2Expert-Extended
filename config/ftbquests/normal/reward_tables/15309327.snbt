@@ -272,132 +272,7 @@
 					melee: 6.0f,
 					bullets: 6
 				},
-				bullets: [{
-					Slot: 0b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "he"
-					}
-				},
-				{
-					Slot: 1b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "terrasteel"
-					}
-				},
-				{
-					Slot: 2b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "armor_piercing"
-					}
-				},
-				{
-					Slot: 3b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "armor_piercing"
-					}
-				},
-				{
-					Slot: 4b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "armor_piercing"
-					}
-				},
-				{
-					Slot: 5b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "casull"
-					}
-				},
-				{
-					Slot: 6b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "armor_piercing"
-					}
-				},
-				{
-					Slot: 7b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "buckshot"
-					}
-				},
-				{
-					Slot: 8b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "crystalwill"
-					}
-				},
-				{
-					Slot: 9b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "silver"
-					}
-				},
-				{
-					Slot: 10b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "potion"
-					}
-				},
-				{
-					Slot: 11b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "flare"
-					}
-				},
-				{
-					Slot: 12b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "dragonsbreath"
-					}
-				},
-				{
-					Slot: 13b,
-					id: "immersiveengineering:bullet",
-					Count: 1b,
-					Damage: 2s,
-					tag: {
-						bullet: "wolfpack"
-					}
-				}]
+				bullets: []
 			},
 			ForgeCaps: {
 				Parent: {
@@ -477,6 +352,9 @@
 		icon: "forestry:kit_pickaxe 24",
 		item: "forestry:kit_pickaxe",
 		count: 24
+	},
+	{
+		item: "advancedrocketry:hovercraft"
 	}],
 	loot_crate: {
 		string_id: "uncommon",

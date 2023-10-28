@@ -194,7 +194,9 @@ export async function init(h = defaultHelper) {
 }
 
 // Test section:
-// console.log('\n', formatOutput((() => {return })()))
+// console.log('\n', formatOutput((() => {
+//   return
+// })()))
 // process.exit(0)
 
 if (import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href) init()

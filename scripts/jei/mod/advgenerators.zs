@@ -10,39 +10,53 @@ import mods.requious.SlotVisual;
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
-static turbineFuel as int[string][] = [
-/*Inject_js(
-[...
-  loadText('config/AdvGenerators/overrides/turbine.cfg')
-  .matchAll(/^\s+turbine-fuel\s*:\s*([^\s]+)\s+([^\s]+)\s+.*$/gm)
-].sort((a,b)=>a[2] - b[2])
-.map(([_, name, mj_mb])=>`  {${name.padEnd(16)}: ${mj_mb}},`)
-.join('\n')
-)*/
-  {liquidhydrogen  : 4},
-  {gasoline        : 5},
-  {canolaoil       : 10},
-  {refinedcanolaoil: 20},
-  {oil             : 25},
-  {biomass         : 30},
-  {biodiesel       : 40},
-  {crystaloil      : 40},
-  {ic2biogas       : 50},
-  {diesel          : 70},
-  {ethene          : 80},
-  {liquidethene    : 80},
-  {"bio.ethanol"   : 90},
-  {biofuel         : 90},
-  {refined_oil     : 95},
-  {rocket_fuel     : 95},
-  {refined_fuel    : 105},
-  {empoweredoil    : 120},
-  {fire_water      : 120},
-  {syngas          : 200},
-  {rocketfuel      : 410},
-  {perfect_fuel    : 3280000},
+static turbineFuel as int[string]$orderly = {
+/*Inject_js{
+const pairs = [...loadText('config/AdvGenerators/overrides/turbine.cfg')
+  .matchAll(/^\s+turbine-fuel\s*:\s*([^\s]+)\s+([^\s]+)\s+.*$/gm),
+].map(o => o.slice(1))
+  .sort((a, b) => Number(a[1]) - Number(b[1]))
+
+function findLeastCommonMultiple(arr) {
+  const maxNum = Math.max(...arr)
+  for (let i = maxNum; ; i += maxNum) {
+    if (i >= 100_000_000) return 100_000_000
+    if (arr.every(num => i % num === 0)) return i
+  }
+}
+// const common = findLeastCommonMultiple(
+//   pairs.map(o => Number(o[1])).filter(n => n <= 1_000_000)
+// )
+const common = 100000
+
+return `${pairs
+  .map(([name, mj_mb]) => `  ${name.padEnd(16)}: ${Math.max(1, Math.round(common / Number(mj_mb)))},`)
+  .join('\n')}\n};\nval rfProduced = ${common * 10};`
+}*/
+  gasoline        : 10000,
+  canolaoil       : 5000,
+  refinedcanolaoil: 2500,
+  oil             : 2000,
+  biomass         : 1667,
+  biodiesel       : 1250,
+  crystaloil      : 1250,
+  ic2biogas       : 1000,
+  diesel          : 714,
+  "bio.ethanol"   : 556,
+  biofuel         : 556,
+  refined_oil     : 526,
+  rocket_fuel     : 526,
+  refined_fuel    : 476,
+  empoweredoil    : 417,
+  fire_water      : 417,
+  ethene          : 313,
+  liquidethene    : 313,
+  syngas          : 250,
+  rocketfuel      : 122,
+  perfect_fuel    : 1,
+};
+val rfProduced = 1000000;
 /**/
-];
 
 var x = <assembly:turbine>;
 x.addJEICatalyst(<advgenerators:turbine_controller>);
@@ -50,17 +64,15 @@ x.setJEIDurationSlot(1,0,"duration", scripts.jei.requious.getVisGauge(0,5));
 x.setJEIFluidSlot(0, 0, 'liquid_input');
 x.setJEIEnergySlot(2, 0, 'energy_out', "rf");
 
-for map in turbineFuel {
-  for name, mj_mb in map {
-    val liq = game.getLiquid(name);
-    if(isNull(liq)) {
-      logger.logWarning('Liquid ['~name~'] not exist. Remove it from config/AdvGenerators/overrides/turbine.cfg');
-      continue;
-    }
-    x.addJEIRecipe(AssemblyRecipe.create(function(container) {
-      container.addEnergyOutput('energy_out', mj_mb, 0);
-    }).requireFluid('liquid_input', liq));
+for name, amount in turbineFuel {
+  val liq = game.getLiquid(name);
+  if(isNull(liq)) {
+    logger.logWarning('Liquid ['~name~'] not exist. Remove it from config/AdvGenerators/overrides/turbine.cfg');
+    continue;
   }
+  x.addJEIRecipe(AssemblyRecipe.create(function(container) {
+    container.addEnergyOutput('energy_out', name == 'perfect_fuel' ? 100000000 : rfProduced, 0);
+  }).requireFluid('liquid_input', liq * amount));
 }
 
 // -----------------------------------------------------------------------

@@ -505,6 +505,8 @@ regrind(<trinity:ingot_au_198>                  , <trinity:dust_au_198>);
 /**/
 
 regrind(<minecraft:obsidian>, <thermalfoundation:material:770>);
+regrind(<tconstruct:ingots>, <exnihilocreatio:item_ore_cobalt:2>);
+regrind(<tconstruct:ore>, <exnihilocreatio:item_ore_cobalt:2>);
 
 # [Pattern Expansion Card] from [ME Interface][+2]
 craft.remake(<appliedenergistics2:material:58>, ["pretty",

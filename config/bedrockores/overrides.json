@@ -43,6 +43,7 @@
     "groupOrder": "mekanism"
   },
   {
+    "comment": "dimension -11325 a.k.a 'Deep Dark' cant be recognized as valid dimension thus cant spawn Bedrock Ore in it.",
     "state": {
       "name": "draconicevolution:draconium_ore",
       "properties": {

@@ -75,4 +75,3 @@ function playerMessage(player as IPlayer, messageType as string) as void {
     player.sendRichTextMessage(fromString(prefix) + fromTranslation(msgLang));
   }
 }
-

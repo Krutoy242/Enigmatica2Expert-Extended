@@ -1,0 +1,35 @@
+{
+	icon: "randomthings:spectreplank",
+	x: -13.5d,
+	y: 10.4d,
+	text: [
+		"{q.utils.spectre_sapling.desc}"
+	],
+	dependencies: [
+		"9092f6f7"
+	],
+	tasks: [{
+		uid: "76c378f2",
+		type: "item",
+		items: [{
+			item: "randomthings:spectresapling"
+		}]
+	},
+	{
+		uid: "3315d545",
+		type: "item",
+		items: [{
+			item: "randomthings:spectreplank"
+		}]
+	}],
+	rewards: [{
+		uid: "ca2f9d8e",
+		type: "item",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "common"
+			}
+		}
+	}]
+}

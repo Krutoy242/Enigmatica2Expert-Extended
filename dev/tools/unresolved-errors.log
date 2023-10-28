@@ -1,8 +1,16 @@
 [main/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.json could not be read. If this is a development environment you can ignore this message
+[main/WARN] [mixin]: Error loading class: net/optifine/CustomColors (java.lang.ClassNotFoundException: The specified class 'net.optifine.CustomColors' was not found)
+[main/WARN] [mixin]: @Mixin target net.optifine.CustomColors was not found mixins.betterbiomeblend.json:MixinCustomColors from mod unknown-owner
 [main/WARN] [mixin]: Error loading class: journeymap/client/task/multi/TaskController (java.lang.ClassNotFoundException: The specified class 'journeymap.client.task.multi.TaskController' was not found)
 [main/WARN] [mixin]: @Mixin target journeymap.client.task.multi.TaskController was not found mixins.sledgehammer.journeymap.json:client.task.multi.TaskControllerMixin from mod unknown-owner
 [main/WARN] [mixin]: Error loading class: journeymap/client/JourneymapClient (java.lang.ClassNotFoundException: The specified class 'journeymap.client.JourneymapClient' was not found)
 [main/WARN] [mixin]: @Mixin target journeymap.client.JourneymapClient was not found mixins.sledgehammer.journeymap.json:client.JourneymapClientMixin from mod unknown-owner
+[main/ERROR] [ink.ikx.rt.classTransforms.RandomTweakerClassTransformer]: Error loading vanilla ASM
+java.lang.RuntimeException: java.lang.ClassNotFoundException: ge
+	at ink.ikx.rt.classTransforms.RandomTweakerClassWriter.getCommonSuperClass(RandomTweakerClassWriter.java:19) ~[RandomTweakerClassWriter.class:?]
+	at org.objectweb.asm.ClassWriter.getMergedType(ClassWriter.java:1698) ~[asm-debug-all-5.2.jar:5.2]
+	at org.objectweb.asm.Frame.merge(Frame.java:1530) ~[asm-debug-all-5.2.jar:5.2]
+  [...]
 [main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:SlotMixin from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.SlotMixin
 [main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:GuiContainerAccessor from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.GuiContainerAccessor
 [main/ERROR] [mixin]: Classloader restrictions [PACKAGE_TRANSFORMER_EXCLUSION] encountered loading mixin.modularui.json:GuiContainerMixin from mod unknown-owner, name: com.cleanroommc.modularui.core.mixin.GuiContainerMixin
@@ -24,13 +32,39 @@
 [main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinSimpleReloadableResourceManager' as 'mixin.dynamic_resources' is disabled in config
 [main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinWeightedRandomModel' as 'mixin.dynamic_resources' is disabled in config
 [main/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelLoaderRegistry' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/ERROR] [ink.ikx.rt.classTransforms.RandomTweakerClassTransformer]: Error loading vanilla ASM
+java.lang.RuntimeException: java.lang.ClassNotFoundException: ge
+	at ink.ikx.rt.classTransforms.RandomTweakerClassWriter.getCommonSuperClass(RandomTweakerClassWriter.java:19) ~[RandomTweakerClassWriter.class:?]
+	at org.objectweb.asm.ClassWriter.getMergedType(ClassWriter.java:1698) ~[asm-debug-all-5.2.jar:5.2]
+	at org.objectweb.asm.Frame.merge(Frame.java:1530) ~[asm-debug-all-5.2.jar:5.2]
+  [...]
 [Client thread/WARN] [mixin]: Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod unknown-owner, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
+[Client thread/ERROR] [FML]: Unable to read a class file correctly
+java.lang.IllegalArgumentException: null
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:185) ~[asm-debug-all-5.2.jar:5.2]
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:168) ~[asm-debug-all-5.2.jar:5.2]
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:439) ~[asm-debug-all-5.2.jar:5.2]
+  [...]
+[Client thread/ERROR] [FML]: There was a problem reading the entry META-INF/versions/9/module-info.class in the jar E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\ProbeZS-1.17.5.jar - probably a corrupt zip
+net.minecraftforge.fml.common.LoaderException: java.lang.IllegalArgumentException
+
+	at net.minecraftforge.fml.common.discovery.asm.ASMModParser.<init>(ASMModParser.java:63) ~[ASMModParser.class:?]
+	at net.minecraftforge.fml.common.discovery.JarDiscoverer.redirect$zlc000$redirectNewASMModParser(JarDiscoverer.java:561) ~[JarDiscoverer.class:?]
+  [...]
+[Client thread/WARN] [FML]: Zip file ProbeZS-1.17.5.jar failed to read properly, it will be ignored
+net.minecraftforge.fml.common.LoaderException: java.lang.IllegalArgumentException
+
+	at net.minecraftforge.fml.common.discovery.asm.ASMModParser.<init>(ASMModParser.java:63) ~[ASMModParser.class:?]
+	at net.minecraftforge.fml.common.discovery.JarDiscoverer.redirect$zlc000$redirectNewASMModParser(JarDiscoverer.java:561) ~[JarDiscoverer.class:?]
+  [...]
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.crafttweaker.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.jei.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.modtweaker.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.forestry.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.avaritia.json could not be read. If this is a development environment you can ignore this message
 [Client thread/WARN] [mixin]: Reference map 'mixins.zenrecipereloading.refmap.json' for mixins.zenrecipereloading.tconstruct.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.probezs.refmap.json' for mixins.probezs.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: @Mixin target com.feed_the_beast.mods.ftbultimine.client.FTBUltimineClient was not found mixins.randomtweaker.mods.json:ftbultimine.MixinFTBUltimineClient from mod unknown-owner
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinModelLoaderEarlyViewDebark' as 'mixin.dynamic_resources' is disabled in config
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.VoxelBlobMixin' as 'mixin.dynamic_resources' is disabled in config
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.OCModelInitializationMixin' as 'mixin.dynamic_resources' is disabled in config
@@ -43,5 +77,450 @@
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'org.embeddedt.vintagefix.mixin.dynamic_resources.MixinCustomBetweenlandsModels' as 'mixin.dynamic_resources' is disabled in config
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.version_protest.F3Change' as 'mixin.version_protest' is disabled in config
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.version_protest.LoaderChange' as 'mixin.version_protest' is disabled in config
+[Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class net.minecraft.entity.item.EntityMinecartFurnace from class com.lothrazar.cyclicmagic.item.minecart.EntityGoldFurnaceMinecart
+[Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class net.minecraft.entity.monster.EntitySlime from class teamroots.emberroot.entity.slime.EntityRainbowSlime
 [Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.dynamic_resources.SafeModelBakeWrapperMixin' as 'mixin.dynamic_resources' is disabled in config
-[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.dynamic_resources.TextureCollectionMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class malte0811.industrialwires.entities.EntityBrokenPart from class malte0811.industrialwires.IndustrialWires
+[Client thread/WARN] [VintageFix Mixin Loader]: Not applying mixin 'mixin.dynamic_resources.TextureCollectionMixin' as 'mixin.dynamic_resources' is disabled in config
+[Client thread/WARN] [VintageFix]: Can't preload sprite class xyz.phanta.tconevo.client.render.material.CosmicMaterialRenderInfo$CosmicTexture$CosmicMaskTexture (seen 160/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.InverseColoredTexture (seen 157/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.fluids.TexturePlasma (seen 3/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.modcompat.TinkersIntegration$3$1 (seen 142/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class twilightforest.compat.tcon.texture.FieryTConTexture (seen 64/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.MetalTextureTexture (seen 157/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.SimpleColoredTexture (seen 3888/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.modcompat.XUTConTextureMagicWood (seen 157/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class net.minecraftforge.client.model.ModelDynBucket$BucketCoverSprite (seen 1/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.modcompat.TinkersIntegration$4$1 (seen 157/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class xyz.phanta.tconevo.client.render.material.EdgeColourMaterialRenderInfo$EdgeColourTexture (seen 1271/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.MetalColoredTexture (seen 6379/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.textures.SpriteSub (seen 6/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class codechicken.lib.texture.TextureSpecial (seen 45/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class openblocks.client.renderer.item.stencil.StencilTextureManager$TexturePool$PoolTexture (seen 15/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.PatternTexture (seen 40/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class forestry.apiculture.render.TextureHabitatLocator (seen 1/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.TinkerTexture (seen 140/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class net.minecraftforge.client.model.ModelDynBucket$BucketBaseSprite (seen 1/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.textures.TextureRedstoneClock (seen 1/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class openblocks.client.renderer.block.canvas.CanvasTextureManager$CanvasTexture (seen 256/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class xyz.phanta.tconevo.client.render.material.CosmicMaterialRenderInfo$CosmicTexture (seen 160/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.CastTexture (seen 40/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class net.minecraftforge.client.model.ModelLoader$White (seen 1/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.modcompat.TinkersIntegration$2$1 (seen 142/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.textures.SpriteCompressed (seen 27/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class xyz.phanta.tconevo.client.render.texture.MaybeTextureColouredTexture (seen 793/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.GuiOutlineTexture (seen 40/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class slimeknights.tconstruct.library.client.texture.TextureColoredTexture (seen 1893/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class twilightforest.client.texture.GradientMappedTexture (seen 41/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class twilightforest.client.texture.MoltenFieryTexture (seen 2/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class com.rwtema.extrautils2.textures.SpriteConnectedTextures (seen 437/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class cofh.thermaldynamics.render.TextureTransparent (seen 6/44448 times)
+[Client thread/WARN] [VintageFix]: Can't preload sprite class twilightforest.compat.tcon.texture.GradientMappedTConTexture (seen 22/44448 times)
+[Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class com.github.alexthe666.iceandfire.entity.EntityDreadThrall from class com.github.alexthe666.iceandfire.entity.EntityDreadKnight
+[Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class com.github.alexthe666.rats.server.entity.EntityFeralRatlantean from class com.github.alexthe666.rats.server.entity.EntityNeoRatlantean
+[Client thread/WARN] [bedrockores]: Failed reading 'overrides.json'.
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was STRING at path $
+	at com.google.gson.Gson.fromJson(Gson.java:899) ~[Gson.class:?]
+	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
+  [...]
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraftforge.common.util.INBTSerializable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for fluke.treetweaker.zenscript.TreeRepresentation
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraftforge.common.util.INBTSerializable
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.tileentity.TileEntity
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.util.ITickable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.armoreablemobs.util.ZenWeightedRandom$Item
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.base.materialsystem.materials.Material
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for org.cyclops.cyclopscore.modcompat.crafttweaker.handlers.RecipeRegistryHandler
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.command.CommandBase
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.command.ICommandSender
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for requious.data.ItemData
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Collection
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for org.cyclops.cyclopscore.modcompat.crafttweaker.handlers.RecipeRegistryHandler
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.IRepresentation
+[Client thread/WARN] [probezs]: Do not know zenscript type for requious.data.BaseData
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for WayofTime.bloodmagic.api.IBloodMagicPlugin
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IChecker
+[Client thread/WARN] [probezs]: Do not know zenscript type for org.cyclops.cyclopscore.modcompat.crafttweaker.handlers.RecipeRegistryHandler
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for char
+[Client thread/WARN] [probezs]: Do not know zenscript type for char
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.command.ICommand
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.rwtema.extrautils2.tweaker.ObjWrapper
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for slimeknights.tconstruct.library.modifiers.ModifierNBT
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraftforge.event.entity.living.LivingHealEvent
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.function.Predicate
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for requious.item.Shape
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for org.cyclops.cyclopscore.modcompat.crafttweaker.handlers.RecipeRegistryHandler
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Enum
+[Client thread/WARN] [probezs]: Do not know zenscript type for slimeknights.tconstruct.library.traits.ITrait
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraftforge.server.command.CommandTreeBase
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.command.ICommandSender
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.rwtema.extrautils2.tweaker.ObjWrapper
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.IRepresentation
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.modules.vanilla.tileentity.TileEntityRepresentation
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ctobjects.tileentity.IMCTileEntity
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.modules.vanilla.tileentity.TileEntityRepresentation
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IChecker
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IChecker
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IChecker
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IChecker
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IChecker
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for requious.data.ItemData
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.io.Closeable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Iterable
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.util.ResourceLocation
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraft.util.ResourceLocation
+[Client thread/WARN] [probezs]: Do not know zenscript type for net.minecraftforge.fluids.Fluid
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Collection
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.Map
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for T
+[Client thread/WARN] [probezs]: Do not know zenscript type for slimeknights.tconstruct.library.traits.ITrait
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.IRepresentation
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Runnable
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Enum
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.teamacronymcoders.contenttweaker.api.ICTObject
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.buuz135.worldgenindicators.api.IIndicator
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.util.List
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for hellfirepvp.astralsorcery.common.integrations.mods.crafttweaker.BaseTweaker
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.codetaylor.mc.dropt.modules.dropt.compat.crafttweaker.ZenWeight
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.codetaylor.mc.dropt.modules.dropt.compat.crafttweaker.ZenWeight
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.codetaylor.mc.dropt.modules.dropt.compat.crafttweaker.ZenWeight
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.codetaylor.mc.dropt.modules.dropt.compat.crafttweaker.ZenWeight
+[Client thread/WARN] [probezs]: Do not know zenscript type for com.codetaylor.mc.dropt.modules.dropt.compat.crafttweaker.ZenWeight
+[Client thread/WARN] [probezs]: Do not know zenscript type for java.lang.Throwable
+[Client thread/ERROR] [Had Enough Items]: An interpreter is already registered for this item: exnihilocreatio.modules.tconstruct.tools.SledgeHammer@xxxxxxxx
+java.lang.IllegalArgumentException: null
+	at mezz.jei.runtime.SubtypeRegistry.registerSubtypeInterpreter(SubtypeRegistry.java:46) [SubtypeRegistry.class:?]
+	at slimeknights.tconstruct.plugin.jei.JEIPlugin.registerItemSubtypes(JEIPlugin.java:103) [JEIPlugin.class:?]
+	at mezz.jei.api.IModPlugin.registerSubtypes(IModPlugin.java:29) [IModPlugin.class:?]
+  [...]
+[Client thread/ERROR] [Had Enough Items]: An interpreter is already registered for this item: exnihilocreatio.modules.tconstruct.tools.TiCrook@xxxxxxxx
+java.lang.IllegalArgumentException: null
+	at mezz.jei.runtime.SubtypeRegistry.registerSubtypeInterpreter(SubtypeRegistry.java:46) [SubtypeRegistry.class:?]
+	at slimeknights.tconstruct.plugin.jei.JEIPlugin.registerItemSubtypes(JEIPlugin.java:103) [JEIPlugin.class:?]
+	at mezz.jei.api.IModPlugin.registerSubtypes(IModPlugin.java:29) [IModPlugin.class:?]
+  [...]
+[Client thread/ERROR] [loottweaker.sanity_checks]: Unexpected duplicate pool name 'shader' in table 'twilightforest:entities/questing_ram_rewards'. Duplicate added as 'shader0'.
+Report this to the loot adder.
+[Client thread/ERROR] [Had Enough Items]: Failed to register mod plugin: class com.blakebr0.mysticalagriculture.compat.jei.CompatJEI
+java.lang.IllegalArgumentException: Invalid ingredient found. Parameter Name: ingredient Ingredient Info: 1xtile.air@0 minecraft:air
+	at mezz.jei.util.ErrorUtil.checkIsValidIngredient(ErrorUtil.java:248) ~[ErrorUtil.class:?]
+	at mezz.jei.startup.ModRegistry.addIngredientInfo(ModRegistry.java:260) ~[ModRegistry.class:?]
+	at mezz.jei.startup.ModRegistry.addIngredientInfo(ModRegistry.java:271) ~[ModRegistry.class:?]
+  [...]
+[Client thread/ERROR] [Had Enough Items]: A Recipe Handler has already been registered for 'jeresources.plant': jeresources.entry.PlantEntry
+[Client thread/ERROR] [Had Enough Items]: A Recipe Handler has already been registered for 'jeresources.villager': jeresources.entry.VillagerEntry
+[Client thread/ERROR] [Had Enough Items]: A Recipe Handler has already been registered for this recipe class: com.github.alexthe666.rats.server.recipes.SharedRecipe
+[Client thread/ERROR] [Had Enough Items]: A Recipe Handler has already been registered for this recipe class: com.github.alexthe666.rats.server.recipes.SharedRecipe
+[Client thread/ERROR] [Had Enough Items]: A Recipe Handler has already been registered for this recipe class: com.github.alexthe666.iceandfire.recipe.DragonForgeRecipe
+[Client thread/WARN] [Had Enough Items]: Recipe registry plugin is slow, took 112.5 ms. class com.glodblock.github.integration.dynamistics.FluidPatternPlugin
+[Client thread/WARN] [LoliASM]: Clearing LoliVertexDataPool
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: The following texture errors were found.
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN minecraft
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain minecraft is missing 8 textures
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain minecraft has 24 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.DefaultResourcePack : Default
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:RandomPatches
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Actually Additions
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod betterbiomeblend resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\betterbiomeblend-1.12.2-1.1.7-forge.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod botania resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\Botania r1.10-364.4-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Dark Utilities
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:End: Reborn
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Extra Utilities 2
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod iceandfire resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\iceandfire-1.9.1-1.12.2-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod ic2 resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\industrialcraft-2-2.8.222-ex112-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod kirosblocks resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\kirosblocks-1.2.2.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Psi
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Quark: RotN Edition
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod rats resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\rats-3.2.21-1.12.2-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod sledgehammer resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\Sledgehammer-1.12.2-2.0.25.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod snowrealmagic resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\SnowRealMagic-1.12.2-0.7.1.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod thaumcraft resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\Thaumcraft-1.12.2-6.1.BETA26-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod thaumictinkerer resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\thaumictinkerer-1.12.2-5.0-620a0c5.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod universalmodifiers resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\valkyrielib-1.12.2-2.0.20.1.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod valkyrielib resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\valkyrielib-1.12.2-2.0.20.1.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod immersiveengineering resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\ImmersiveEngineering-0.12-98-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       resource pack at path E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\QuarkRotN-r1.6-188-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       resource pack at path E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\AquaAcrobatics-1.15.3.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain minecraft are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/\thaumcraft\thaumcraft110\src\main\resources\assets\thaumcraft\textures\blocks\thaumatorium.png.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/models/pillar_mid_d.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/missingno.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/\thaumcraft\thaumcraft110\src\main\resources\assets\thaumcraft\textures\blocks\arcane_workbench_charger.png.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/\thaumcraft\thaumcraft110\bin\assets\thaumcraft\textures\blocks\golembuilder.png.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/models/pillar_base_d.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/#texture.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain minecraft
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN additionalcompression
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain additionalcompression is missing 10 textures
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain additionalcompression has 2 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Additional Compression
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain additionalcompression are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/slime_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/ingotiron_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/coal_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/gemlapis_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/dustredstone_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/cropwheat_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/gemdiamond_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/gememerald_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/cropmelon_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/ingotgold_compressed_0.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain additionalcompression
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN neenergistics
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain neenergistics is missing 1 texture
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain neenergistics has 2 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod neenergistics resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\NotEnoughEnergistics-1.12.2-2.0.6.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain neenergistics are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/pattern_interface.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain neenergistics
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN thaumcraft
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain thaumcraft is missing 2 textures
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain thaumcraft has 5 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod thaumcraft resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\Thaumcraft-1.12.2-6.1.BETA26-patched.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod thaumicaugmentation resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\ThaumicAugmentation-1.12.2-2.1.11.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       resource pack at path E:\mc_client\GDLuncher\instances\E2E-E\minecraft\resources
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type lumien.resourceloader.loader.NormalResourceLoader : CustomResources
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain thaumcraft are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/items\scanscreen.png.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/items\scanner.png.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain thaumcraft
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN extrautils2
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain extrautils2 is missing 1 texture
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain extrautils2 has 2 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type net.minecraft.client.resources.LegacyV2Adapter : FMLFileResourcePack:Extra Utilities 2
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain extrautils2 are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/potions/purging.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain extrautils2
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN fluiddrawers
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain fluiddrawers is missing 3 textures
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain fluiddrawers has 2 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod fluiddrawers resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\fluiddrawers-1.12.2-1.0.7.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain fluiddrawers are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/generated/framing/front.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/generated/framing/side.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/generated/framing/trim.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain fluiddrawers
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN chisel
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain chisel is missing 1 texture
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain chisel has 2 locations:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod chisel resources at E:\mc_client\GDLuncher\instances\E2E-E\minecraft\mods\Chisel-MC1.12.2-1.0.2.45.jar
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       unknown resourcepack type com.zeitheron.hammercore.api.inconnect.EmptyModelPack : HammerCore Connected Models
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain chisel are:
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/bloodmagic/bloodrunearranged-ctm.png
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain chisel
+[Client thread/ERROR] [FML.TEXTURE_ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=

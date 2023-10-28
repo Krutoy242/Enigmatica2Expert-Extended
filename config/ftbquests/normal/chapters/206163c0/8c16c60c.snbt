@@ -60,7 +60,6 @@
 	},
 	x: 3.2d,
 	y: -1.7d,
-	description: "{q.forestry.the_pollen_path_.desc}",
 	text: [
 		"{q.forestry.the_pollen_path_.desc}"
 	],

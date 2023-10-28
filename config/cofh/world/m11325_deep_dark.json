@@ -1,0 +1,17 @@
+{
+  "dependencies": ["draconicevolution", "extrautils2"],
+  "populate": {
+
+		"deep_dark_draconium": {
+			"distribution": "uniform",
+			"generator": {
+				"block": "draconicevolution:draconium_ore",
+				"cluster-size": 4
+			},
+			"cluster-count": 7,
+			"min-height": 2,
+			"max-height": 7,
+			"dimension": {"restriction": "whitelist","value": [-11325]}
+		}
+  }
+}

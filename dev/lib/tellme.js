@@ -61,7 +61,7 @@ export function isJEIBlacklisted(def, meta) {
 let purgedSet
 /** @param {string} ctCapture */
 export function isPurged(ctCapture) {
-  return (purgedSet ??= new Set(
+  purgedSet ??= new Set(
     [
       ...loadText('crafttweaker.log').matchAll(
         /^\[INITIALIZATION\]\[CLIENT\]\[INFO\] purged: (.*)$/gm
@@ -70,7 +70,9 @@ export function isPurged(ctCapture) {
       .map(m => m[1])
       .map(s => s.match(/(<[^>]+?>(.withTag\(.*\))?)/)[1])
       .filter(s => s)
-  )).has(ctCapture)
+  )
+
+  return purgedSet.has(ctCapture) || purgedSet.has(ctCapture.replace(':0>', '>'))
 }
 
 let itemsTree

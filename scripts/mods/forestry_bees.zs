@@ -115,6 +115,12 @@ mods.forestry.Carpenter.addRecipe(<gendustry:gene_sample>.withTag({species: "roo
   "G": <gendustry:waste>,             # Genetic Waste
 }).shaped(), 20, <fluid:steadfast_will> * 1000);
 
+// Add alt recipe for Silk Wisp
+mods.mechanics.addCrushingBlockRecipe(
+	<forestry:propolis:3>, [<forestry:crafting_material:2>, <forestry:propolis>, <ic2:misc_resource:4>],
+	[0.3f, 0.05f, 0.65f]
+);
+
 # ---------------------------
 # Remake old combs
 function crushComb(comb as IItemStack, outputs as WeightedItemStack[]) as void {

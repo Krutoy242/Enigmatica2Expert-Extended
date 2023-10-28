@@ -148,6 +148,26 @@ trait_armor.onHurt = function (trait, armor, victim, source, damage, newDamage, 
 trait_armor.register();
 
 //
+// Fireproof Wood
+//
+var m = ExtendedMaterialBuilder.create('fireproof');
+m.color = 0xa64d00;
+m.craftable = true;
+m.castable = false;
+m.representativeItem = <item:avaritia:singularity:1>;
+m.addItem(<item:avaritia:singularity:1>, 1, 144);
+m.localizedName = game.localize('e2ee.tconstruct.material.fireproof.name');
+m.addHeadMaterialStats(100, 4, 3, 3);
+m.addHandleMaterialStats(1.5, 100);
+m.addExtraMaterialStats(50);
+m.addBowMaterialStats(1.0 / 1.25, 1, 0);
+m.addProjectileMaterialStats();
+m.addCoreMaterialStats(3, 10);
+m.addPlatesMaterialStats(1.0, 20, 1);
+m.addTrimMaterialStats(4);
+m.register();
+
+//
 // spectre
 //
 val spectre = ExtendedMaterialBuilder.create('spectre');

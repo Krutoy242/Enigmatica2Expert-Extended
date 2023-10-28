@@ -1,6 +1,7 @@
 # Various fixes
 modifier.excompressum:smashingii.desc=Hammering compressed blocks
 tile.spectreCoil_number.info=Generates 32 RF/t and outputs it into the block it's attached to. They can be found in dungeon chests.
+entity.twilightforest.harbinger_cube.name=Harbinger Cube
 
 itemGroup.other=ContentTweaker
 fluid.heavy_metal=Heavy Metal
@@ -119,6 +120,7 @@ item.contenttweaker.bee_diversity.name=Bee Diversity Store
 
 e2ee.tconstruct.material.spectre.name=Spectre
 e2ee.tconstruct.material.spectre.description=§bSpectral\nEach part gives additional Reach potion effect
+e2ee.tconstruct.material.fireproof.name=Fireproof
 e2ee.tconstruct.material.mentor.name=Mentor
 e2ee.tconstruct.material.mentor.description=§oPower of knowledge\n§rEach hit consumes 1 XP level (for each part) but deals additional √(XP * parts) damage
 e2ee.tconstruct.material.apprentice.name=Apprentice
@@ -160,7 +162,7 @@ e2ee.tconstruct.material.first_stand.description=Consume experience before takin
 
 warp.sword.warning=§o§5 You are too sane to use that power!§r
 
-warp.sword.speak.random.0=§o§5I will put in the grave as many as I can, just one swing is enough!§r
+warp.sword.speak.random.0=§o§5I will put as many as I can in the grave, just one swing is enough!§r
 warp.sword.speak.random.1=§o§5Rivers of blood will turn into seas...§r
 warp.sword.speak.random.2=§o§5Why don't we just kill all livings?...§r
 warp.sword.speak.random.3=§o§5The J'zahar calls for prey!§r
@@ -174,18 +176,31 @@ warp.sword.speak.kill.0=§o§5I can hear their cries, their suffering is flowing
 warp.sword.speak.kill.1=§o§5More! More! More!§r
 warp.sword.speak.kill.2=§o§5Still beating heart I hear...
 warp.sword.speak.kill.3=§o§5Headless, like lifeless
-warp.sword.speak.kill.4=§o§5Another tasty flash
+warp.sword.speak.kill.4=§o§5Another tasty flesh
 warp.sword.speak.kill.5=§o§5And another sacrifice for J'zahar
 warp.sword.speak.kill.6=§o§5Just like in abyss... Another dead fool!
 warp.sword.speak.kill.7=§o§5J'zahar will be pleased with another soul
 
-item.singularity.silver.name=§bFur Singularity
+##################################
+# Singularities
+##################################
 item.singularity.iron.name=§7Empty Singularity
+
+# Burn singularity
+item.singularity.silver.name=§bFur Singularity
 item.singularity.nickel.name=§eHeat Singularity
 item.singularity.fluxed.name=§4Burn Singularity
 tooltips.lang.singularity.heat=§7Intermediate ingredient.§r\nCombine with §lany burnable§r material to add a charge.\nWhen using burnable materials with different burning times, their effectiveness is §lincreased by up to %s%%§r.\nNeed §6%s§r charge.
 tooltips.lang.singularity.burn=Combine with §lany burnable§r material to add a charge.\nWhen using burnable materials with different burning times, their effectiveness is §lincreased by up to %s%%§r.\nNeed §6%s§r charge.
 item.contenttweaker.any_burnable.name=§6Any burnable
+
+# Wood singularity
+item.singularity.quartz.name=§eBark Singilarity
+item.singularity.gold.name=§cWoodweave Singularity
+tooltips.lang.singularity.bark=§7Intermediate ingredient.§r\nCombine with §6any fireproof planks§r to increase power.\nThe §6variety§r of plank types increases the power exponentially. Power is calculated by the formula §aM*2^(N-1)§r, where §aM§r is the median number of planks, §aN§r is the number of plank types.\n§2§nRight-Click§2 on something to see list of planks.
+tooltips.lang.singularity.woodweave=Combine with §6any fireproof planks§r to increase power.\nThe §6variety§r of plank types increases the power exponentially. Power is calculated by the formula §aM*2^(N-1)§r, where §aM§r is the median number of planks, §aN§r is the number of plank types.
+item.contenttweaker.any_fireproof.name=§6Any Fireproof Plank
+##################################
 
 # Custom renames
 item.excompressum:bait_unknown.name=Any Bait
@@ -273,7 +288,7 @@ tooltips.lang.obtained.resonance=Obtained through the Resonance of the Faceted C
 tooltips.lang.pumpjack=The Pumpjack needs a pipe to bedrock to function.
 tooltips.lang.requires.redstone400=Requires 400 Redstone Units.
 tooltips.lang.requires.redstone160=Requires 160 Redstone Units.
-tooltips.lang.reinforced_cell_frame=The Reinforced Cell Frame (Full) can only be made in a Fluid Transposer with an internal buffer of 250.000 RF or more.
+tooltips.lang.reinforced_cell_frame=The Reinforced Cell Frame (Full) can only be made in a Fluid Transposer with an internal buffer of 250,000 RF or more.
 tooltips.lang.obtained.fabricator_or_excavator=Obtainable through the Electric Arc Furnace OR from IE Excavator.
 tooltips.lang.obtained.mithril=Only obtainable through §9Primal Mana§r world interaction or in §1other dimensions§r
 tooltips.lang.removed.use_market=Disabled. Use the Market from Farming For Blockheads.
@@ -309,7 +324,7 @@ tooltips.lang.thaum.golemancy=Golemancy
 tooltips.lang.thaum.eldritch=Eldritch
 tooltips.lang.thaum.arcane=Arcane Infusion
 tooltips.lang.thaum.artifice=Artifice
-tooltips.lang.drop_at_night=§3Drop §n%s§r§3 on §n%s§r§3 undert night sky
+tooltips.lang.drop_at_night=§3Drop §n%s§r§3 on §n%s§r§3 under night sky
 tooltips.lang.must_see_night=§9Must see night sky
 tooltips.lang.burn_in_fluid=§3Burn §n%s§r§3 in §n%s§r§3
 tooltips.lang.burn_in_fluid_chance=§3Burn several §n%s§r§3 in §n%s§r§3
@@ -333,7 +348,7 @@ tooltips.lang.backpack.Bookshelf=§aPlace around enchanting table\n§ajust like 
 tooltips.lang.backpack.Cactus=§aIf it's raining and above backpack is clear sky,\n§athe backpack will fill empty tanks with water over time.
 tooltips.lang.backpack.Chicken=§aYou'll lay eggs! 
 tooltips.lang.backpack.Creeper=§aSneak on another player to make\n§athem jump in confusion as they think one of those\n§agreen monsters is behind him/her.\n§aYou can do it every few minutes.
-tooltips.lang.backpack.Dragon=§aBackpack for real warriors,\n§acombines Pigman's and Squid's backpack abilties,\n§aplus gives you strenght and regeneration!\n§aYou'll be invincible!... but.. what did it cost?
+tooltips.lang.backpack.Dragon=§aBackpack for real warriors,\n§acombines Pigman's and Squid's backpack abilties,\n§aplus gives you strength and regeneration!\n§aYou'll be invincible!... but.. what did it cost?
 tooltips.lang.backpack.Emerald=§aGives some cool particles, nothing special.
 tooltips.lang.backpack.Pig=§aYou'll hate this sound, believe me!
 tooltips.lang.backpack.Pigman=§aProvides fire resistance.
@@ -341,7 +356,7 @@ tooltips.lang.backpack.Rainbow=§aCreates a trail of notes behind player, while 
 tooltips.lang.backpack.Slime=§aHas an incredibly useless "ability".\n§aMakes the player leave a slimy trail of\n§aparticles whenever is running,\n§aand make that splishy splashy squishy\n§asound on each step as well!
 tooltips.lang.backpack.Squid=§aGrants water breathing effect while being in water.
 tooltips.lang.backpack.Sunflower=§aWill feed you while you stay in the sun, slowly.\n§aAt the very least you shouldn't starve.
-tooltips.lang.backpack.Wolf=§aChecks around for any wolves that may lurk around.\n§aIf any of them gets mad at you,\n§ait will promptly forget about the whole deal.\n§aAlso if it's full moon,\n§ayou'll gain werewolf strenght!
+tooltips.lang.backpack.Wolf=§aChecks around for any wolves that may lurk around.\n§aIf any of them gets mad at you,\n§ait will promptly forget about the whole deal.\n§aAlso if it's full moon,\n§ayou'll gain werewolf strength!
 tooltips.lang.sponge.removed_with=§6Can be removed from armor with a Sponge.§r
 tooltips.lang.sponge.can_remove=§6Can remove jetpacks from armor and tinkers modifiers from tools.§r
 tooltips.lang.worldgen.disabled_use_sub=§6World generation §cdisabled§r.

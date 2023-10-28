@@ -3,36 +3,32 @@
 🚧✅❌ List of priorities:
 
 - [ ] ✏️ nanomachines Dissaper On Rejoin Server
-- [ ] ✏️ Fix Portals on same positions in different dimensions conflicting
-- [ ] ✏️ Unify QMD cobalt dust
-- [ ] ✏️ Add more witches potions
-- [ ] 🟢 Configure `Villager Trade Tables`
-- [ ] 🟢 Make `Essential` work with modpack
-- [ ] 🌍 fix Mercury Have Water
-- [ ] ✏️ Sun Conglomerate instantly grow animals
-- [ ] ✏️ Geese should use holden items
 - [ ] ✏️ Make Elite Component craftable without tech
-- [ ] ✏️ `Harbinger` drop AE ingredients (printed Silicone for example). It must spawn with strong Iron/Diamond skin effects and as Blight
-- [ ] ✏️ Silky String add Crushing block recipe
 - [ ] ✏️ Stackable Fluid Containers duped when crafting with fluid
-- [ ] ✏️ Use only one Silky Jevel block in Creative Modifier recipe
-- [x] ✏️ Mossy Underbrick less beneficial output
-- [ ] ✏️ Fix Draconium Ore not spawning in Deep Dark
 - [ ] ✏️ Apiarist Villagest should seel Combs cor Cacoa
-- [ ] 📖 Add Manganese Oxide easy recipe quest
-- [ ] 📖 add Quest About Spectre Trees
-- [ ] 📖 add Quest About Bogosort Hotkeys
+- [ ] ✏️ Infinity Furnace should perform one recipe function for each recip instead of adding ~600 recipes
+- [ ] 🟢 Configure `Villager Trade Tables`
 - [ ] 📖 Stools and Tables less chance for Decor reward
 - [ ] 📖 Improve messages "Player Obtained [...]" with `tellraw` command
-- [ ] 📖 /levelupTool use in quest reward
-- [x] 📖 addBlisslemSchematic
-- [ ] 📖 move Spawner Changer Requirment
-- [ ] 🟢 install `Fairy Lights`
-- [ ] 🔴 Remove `Integrated Crafting`
+- [ ] 📖 `/levelupTool` use in quest reward
+- [ ] 🟢 moveToServerStarter
+- [ ] 🟢 add `Fairy Lights`
 - [ ] ⛑️ Add amount of blocks in Portal Spread message
-
-Useful Commands:
-`/spark tps, /list, /team info Krutoy242, /leaderboards ftbutilities:time_played, /leaderboards ftbquests:progress`
+- [ ] ✏️ Make recipe function for Rats Nuggets recipes
+- [ ] ✏️ Fix Some TCon generated tools/armor generated with 4th material (must be only 3)
+- [ ] ✏️ Add recipe for nuclear core of AdvRock rocket
+- [ ] ✏️ Remove Sand+IronPlate Induction smelter recipe
+- [ ] ✏️ buffAdvGenEthyleneOutput and other fuels
+- [ ] ✏️ Add Greater crimson portal recipe
+- [ ] 🌍 Generate Quicksand with Cofh instead of BoP to add lakes in OTG worlds
+- [ ] ✏️ Configure `Redstone Repository`
+- [ ] 📖 Add langs to "Fireproof" trait
+- [ ] ✏️ Fix Chemical Reactor nutrient distillation conflicts
+- [ ] ✏️ Prevent Dupes of uncrafting table:
+  > Castle doors
+  > Armor trims
+  > Dark Steel Upgrades
+  > Transmuter's stone
 
 ```sh
 /bcore_ticktime
@@ -86,6 +82,10 @@ minecraft:sponge
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] ✏️ `Harbinger Cube` must spawn with strong Iron/Diamond skin effects and as Blight
+- [ ] 🌍 fix Mercury Have Water
+- [ ] 🟢 Unify QMD cobalt dust after QMD update
+- [ ] 🟢 Install `Fairy Lights` when fixed: https://github.com/ACGaming/UniversalTweaks/issues/289
 - [ ] ✏️ Add more seeds compat for Graden Cloche https://github.com/michelegargiulo/ZenCloche/wiki
 - [ ] 🔨 fix Invincible Combo `Strength Of Will` + `Runic Shield`
 - [ ] ✏️ Fix Health boost potion recipe (one from gold ingot)

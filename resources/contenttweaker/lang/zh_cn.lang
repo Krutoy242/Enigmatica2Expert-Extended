@@ -1,6 +1,7 @@
 # Various fixes 表述修复
 modifier.excompressum:smashingii.desc=锤击压缩方块
 tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
+entity.twilightforest.harbinger_cube.name=先驱者立方体
 
 # itemGroup.other=ContentTweaker
 fluid.heavy_metal=熔融沉重金属
@@ -76,6 +77,7 @@ item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 
 e2ee.tconstruct.material.spectre.name=通灵
 e2ee.tconstruct.material.spectre.description=§b灵光到处现\n§r每个部件都可以给予玩家额外的"延伸"药水效果
+e2ee.tconstruct.material.fireproof.name=防火
 e2ee.tconstruct.material.mentor.name=导师
 e2ee.tconstruct.material.mentor.description=§o知识的力量\n§r攻击时，每个部件会各消耗 1 级经验，然后额外造成总共 √(经验等级 * 导师部件数量) 的伤害
 e2ee.tconstruct.material.apprentice.name=学徒
@@ -136,13 +138,26 @@ warp.sword.speak.kill.5=§o§5再多为扎哈尔献上一次献祭吧
 warp.sword.speak.kill.6=§o§5如同深渊之下... 又一个愚蠢的，死人！
 warp.sword.speak.kill.7=§o§5再献祭一条灵魂，扎哈尔就满意了
 
-item.singularity.silver.name=§b皮毛奇点
+##################################
+# Singularities
+##################################
 item.singularity.iron.name=§7空奇点
+
+# Burn singularity
+item.singularity.silver.name=§b皮毛奇点
 item.singularity.nickel.name=§e火热奇点
 item.singularity.fluxed.name=§4燃烧奇点
 tooltips.lang.singularity.heat=§7中间产物。§r\n将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
 tooltips.lang.singularity.burn=将此奇点与§l任何可燃物§r结合即可以添加 1 点充能。\n使用燃烧时长不同的可燃物时，充能上升的效率§l最高上升 %s %%§r.\n还需要 §6%s§r 点充能。
 item.contenttweaker.any_burnable.name=§6任何可燃物
+
+# Wood singularity
+item.singularity.quartz.name=§e树皮奇点
+item.singularity.gold.name=§c木纹奇点
+tooltips.lang.singularity.bark=§7中间材料。§r\n与§6任何防火木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为§aM*2^(N-1)§r，其中§aM§r是木板的中位数，§aN§r是木板类型的数量。\n§2§n右键§2某物品以查看木板列表。
+tooltips.lang.singularity.woodweave=与§6任何防火木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为§aM*2^(N-1)§r，其中§aM§r是木板的中位数，§aN§r是木板类型的数量。
+item.contenttweaker.any_fireproof.name=§6任何防火木板
+##################################
 
 # Custom renames 重命名
 item.excompressum:bait_unknown.name=任何诱饵
@@ -386,8 +401,8 @@ fluid.critical_exhaust_carbon_dioxide=临界二氧化碳废气
 # --------------------------------------
 # New Turbine Parts 新的反应堆部件
 # --------------------------------------
-item.contenttweaker.elektron60_ingot.name=镁钴60合金锭
-tile.contenttweaker.elektron60_block.name=镁钴60合金块
+item.contenttweaker.elektron60_ingot.name=镁电60合金锭
+tile.contenttweaker.elektron60_block.name=镁电60合金块
 item.contenttweaker.blade_core.name=稀土涡轮机转子叶片芯
 item.contenttweaker.steel_mould.name=超轻不锈钢粗模
 item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模

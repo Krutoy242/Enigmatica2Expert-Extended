@@ -202,12 +202,12 @@ function getPlayer(world as IWorld, p as IBlockPos) as IPlayer {
   return null;
 }
 
-function createParticles(world as IWorld, p as IBlockPos, amount as int = 10) as void {
+function createParticles(world as IWorld, p as IBlockPos, amount as int = 10, type as string = 'heart') as void {
   if(world.remote) return;
   val player = getPlayer(world, p);
   if(isNull(player)) return;
   server.commandManager.executeCommandSilent(<item:minecraft:dirt>.createEntityItem(world, p.x, p.y, p.z),
-    "/particle heart "~
+    "/particle "~type~" "~
     ((p.x+0.5))~" "~(p.y+0.5)~" "~((p.z+0.5))~
     " 0.25 0.25 0.25 0.02 "~amount
   );
@@ -221,7 +221,7 @@ b.toolLevel = 3;
 b.blockHardness = 3 * 1.6;
 b.blockResistance = 3 * 1.4;
 b.blockSoundType = <soundtype:ground>;
-b.lightValue = (3 as double / 15.0 + 0.00001) as int;
+b.lightValue = (3.0 / 15.0 + 0.00001) as int;
 b.onBlockPlace = function(world, p, blockState) { createParticles(world, p); };
 b.onBlockBreak = function(world, p, blockState) { createParticles(world, p); };
 
@@ -236,9 +236,9 @@ b.onRandomTick = function(world, p, blockState) {
     if(isNull(entity.definition)) continue;
     val output = lifeRecipes[entity.definition.id];
     if(isNull(output)) continue;
+    if(abs(entity.x - p.x) > 8 || abs(entity.y - p.y) > 8 || abs(entity.z - p.z) > 8) continue;
 
     for outItem, outChance in output {
-      if(abs(entity.x - p.x) > 8 || abs(entity.y - p.y) > 8 || abs(entity.z - p.z) > 8) continue;
       if(world.getRandom().nextInt(outChance) != 1) continue;
       val w as IWorld = world;
       val itemEntity = (outItem * 1).createEntityItem(w, entity.x as float, entity.y as float, entity.z as float);
@@ -250,7 +250,35 @@ b.onRandomTick = function(world, p, blockState) {
 };
 b.register();
 
-createBlockGround('conglomerate_of_sun',  5, <blockmaterial:clay>);
+b = VanillaFactory.createBlock('conglomerate_of_sun', <blockmaterial:clay>);
+b.toolClass = 'shovel';
+b.toolLevel = 5;
+b.blockHardness = 5 * 1.6;
+b.blockResistance = 5 * 1.4;
+b.blockSoundType = <soundtype:ground>;
+b.lightValue = (3.0 / 15.0 + 0.00001) as int;
+b.onBlockPlace = function(world, p, blockState) { createParticles(world, p, 10, "endRod"); };
+b.onBlockBreak = function(world, p, blockState) { createParticles(world, p, 10, "endRod"); };
+
+b.onRandomTick = function(world, p, blockState) {
+  if(world.remote) return;
+  var hadEffect = false;
+  for entity in world.getEntities() {
+    if(isNull(entity.definition)) continue;
+    if(!(entity instanceof crafttweaker.entity.IEntityAgeable)) continue;
+    val ageable as crafttweaker.entity.IEntityAgeable = entity;
+
+    // Already grown up
+    if(ageable.growingAge>=0) continue;
+
+    // Speed up growth of ageble mobs
+    ageable.addGrowth(300);
+    hadEffect = true;
+    createParticles(world, ageable.position, 10, "endRod");
+  }
+  if(hadEffect) createParticles(world, p, 10, "endRod");
+};
+b.register();
 
 // -------------------------------
 // Animal's items

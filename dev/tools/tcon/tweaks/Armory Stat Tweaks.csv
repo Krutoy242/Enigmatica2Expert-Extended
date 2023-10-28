@@ -1,6 +1,7 @@
 _names,CoreDurability,Defense,Modifier,PlatesDurability,Toughness,ExtraDurability
 _output,n,n,n,n,n,n
 _importancy,sqrt((n+10)*10),n*0.5,sqrt((n+1)*10),n*0.3,(n+2)**2,n*0.5
+adaminite,,,,,,
 advanced_alloy,,,,,,
 aethium,,,,,,
 alpha_fur,,,,,,
@@ -13,6 +14,7 @@ apatite,,/2,,,,
 aquamarine,,,,,,
 ardite,,,,,,
 black_quartz,,,,,,
+blood_infused_glitch,,,,,,
 bloodwood,,,,,,
 blueslime,,,,,,
 bone,,,,,,
@@ -109,6 +111,8 @@ manyullyn,,,,,,
 meat_metal,*1.5,*1.5,+1,*1.5,+0.25,+20
 mica,,*2,,,,
 mirion,/2,*0.75,/2,*0.75,,*0.75
+mithminite,,,,,,
+mithrillium,,,,,,
 nagascale,,*0.75,,,,
 netherrack,,,,,,
 neutronium,,,,,,

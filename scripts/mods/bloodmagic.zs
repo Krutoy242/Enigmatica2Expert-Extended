@@ -6,12 +6,32 @@ recipes.addShapeless('Blood Magic Guide',
   <guideapi:bloodmagic-guide>,
   [<minecraft:book>, <bloodmagic:soul_snare>]);
 
-# Rune of Speed
+// Alt recipes for non-tech players
+for ingr in [
+  <thaumcraft:stone_ancient_glyphed>,
+  <extrautils2:decorativesolid:3>,
+] as IItemStack[] {
+  # Rune of Speed
   recipes.remove(<bloodmagic:blood_rune:1>);
   recipes.addShaped("Rune of Speed", <bloodmagic:blood_rune:1>, 
-  [[<extrautils2:decorativesolid:3>, <bloodmagic:slate>, <extrautils2:decorativesolid:3>], 
+  [[ingr, <bloodmagic:slate>, ingr], 
   [<bloodmagic:blood_rune>, <ore:foodCake>, <bloodmagic:blood_rune>], 
-  [<extrautils2:decorativesolid:3>, <bloodmagic:slate>, <extrautils2:decorativesolid:3>]]);
+  [ingr, <bloodmagic:slate>, ingr]]);
+
+  # Rune of Sacrifice
+  recipes.remove(<bloodmagic:blood_rune:3>);
+  recipes.addShaped("Rune of Sacrifice", <bloodmagic:blood_rune:3> * 3, 
+  [[ingr, <bloodmagic:slate:1>, ingr], 
+  [<bloodmagic:slate:1>, <ore:orbTier2>.reuse(), <bloodmagic:slate:1>],
+  [ingr, <astralsorcery:itemcrystalsword:*>.withTag({astralsorcery:{}}), ingr]]);
+
+  # Imperfect Ritual Stone
+  recipes.remove(<bloodmagic:ritual_controller:1>);
+  recipes.addShaped("Imperfect Ritual Stone", <bloodmagic:ritual_controller:1>, 
+  [[<ore:obsidian>, ingr, <ore:obsidian>], 
+  [ingr, <ore:orbTier1>.reuse(), ingr], 
+  [<ore:obsidian>, ingr, <ore:obsidian>]]);
+}
 
 # [Rune of Capacity] from [Blank Rune][+3]
 craft.remake(<bloodmagic:blood_rune:6>, ["pretty",
@@ -23,13 +43,6 @@ craft.remake(<bloodmagic:blood_rune:6>, ["pretty",
   "B": <bloodmagic:blood_rune>, # Blank Rune
   "I": <bloodmagic:slate:2>,    # Imbued Slate
 });
-
-# Rune of Sacrifice
-  recipes.remove(<bloodmagic:blood_rune:3>);
-  recipes.addShaped("Rune of Sacrifice", <bloodmagic:blood_rune:3> * 3, 
-  [[<extrautils2:decorativesolid:3>, <bloodmagic:slate:1>, <extrautils2:decorativesolid:3>], 
-  [<bloodmagic:slate:1>, <ore:orbTier2>.reuse(), <bloodmagic:slate:1>],
-  [<extrautils2:decorativesolid:3>, <astralsorcery:itemcrystalsword:*>.withTag({astralsorcery:{}}), <extrautils2:decorativesolid:3>]]);
 
 # Rune of the orb
   recipes.remove(<bloodmagic:blood_rune:8>);
@@ -44,13 +57,6 @@ craft.remake(<bloodmagic:blood_rune:6>, ["pretty",
   [[<bloodmagic:blood_tank>, <bloodmagic:slate:3>, <bloodmagic:blood_tank>], 
   [<ore:ingotGold>, <actuallyadditions:item_drill_upgrade_speed_ii>, <minecraft:gold_ingot>], 
   [<bloodmagic:blood_tank>, <ore:orbTier4>.reuse(), <bloodmagic:blood_tank>]]);
-
-# Imperfect Ritual Stone
-  recipes.remove(<bloodmagic:ritual_controller:1>);
-  recipes.addShaped("Imperfect Ritual Stone", <bloodmagic:ritual_controller:1>, 
-  [[<ore:obsidian>, <extrautils2:decorativesolid:3>, <ore:obsidian>], 
-  [<extrautils2:decorativesolid:3>, <ore:orbTier1>.reuse(), <extrautils2:decorativesolid:3>], 
-  [<ore:obsidian>, <extrautils2:decorativesolid:3>, <ore:obsidian>]]);
 
 # Ritual Stone 
   recipes.remove(<bloodmagic:ritual_stone>);

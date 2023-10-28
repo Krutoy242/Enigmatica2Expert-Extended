@@ -48,13 +48,13 @@ val IV  = registerPowerTier(1600000000, 102400000);
 
 
 # Vanila
-registerReservoir("aquifer"                            , <liquid:water>   , 5000000 , 10000000,9000,25000, 30, I, [], [0,1,7,-11325] , [], []);
-registerReservoir("oil"                                , <liquid:oil>     , 2500000 , 15000000, 6  , 25  , 40, I, [], [0,7,-11325]   , [], []);
-registerReservoir("lava"                               , <liquid:lava>    , 250000  , 1000000 , 0  , 25  , 30, I, [], [0,-1,7,-11325], [], []);
-registerReservoir("Desert Oil Reservoir"               , <liquid:oil>     , 15000000, 30000000, 25 , 50  , 5 , I, [], [0]            , [], ["SANDY"]);
-registerReservoir("Deep Ocean Oil Reservoir"           , <liquid:oil>     , 15000000, 30000000, 25 , 50  , 5 , I, [], [0]            , [], ["OCEAN"]);
-registerReservoir("Low Pressure Magma Chamber (Nether)", <liquid:lava>    , 500000  , 1500000 , 500, 1500, 5 , I, [], [-1]           , [], []);
-registerReservoir("Molten Tungsten Reservoir (End)"    , <liquid:tungsten>, 720000  , 1440000 , 0  , 4   , 10, I, [], [1]            , [], []);
+registerReservoir("aquifer"                            , <liquid:water>   , 5000000 , 10000000,9000,25000, 30, I, [], [0, 1,3,7,-11325], [], []);
+registerReservoir("oil"                                , <liquid:oil>     , 2500000 , 15000000, 6  , 25  , 40, I, [], [0   ,3,7,-11325], [], []);
+registerReservoir("lava"                               , <liquid:lava>    , 250000  , 1000000 , 0  , 25  , 30, I, [], [0,-1,3,7,-11325], [], []);
+registerReservoir("Desert Oil Reservoir"               , <liquid:oil>     , 15000000, 30000000, 25 , 50  , 5 , I, [], [0]              , [], ["SANDY"]);
+registerReservoir("Deep Ocean Oil Reservoir"           , <liquid:oil>     , 15000000, 30000000, 25 , 50  , 5 , I, [], [0]              , [], ["OCEAN"]);
+registerReservoir("Low Pressure Magma Chamber (Nether)", <liquid:lava>    , 500000  , 1500000 , 500, 1500, 5 , I, [], [-1]             , [], []);
+registerReservoir("Molten Tungsten Reservoir (End)"    , <liquid:tungsten>, 720000  , 1440000 , 0  , 4   , 10, I, [], [1]              , [], []);
 
 
 # Deep Dark ID=-11325

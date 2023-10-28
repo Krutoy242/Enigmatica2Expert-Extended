@@ -1,0 +1,19 @@
+{
+	title: "Conglomerate of Sun",
+	loot_size: 1,
+	rewards: [{
+		icon: "iceandfire:myrmex_desert_resin 64",
+		item: "iceandfire:myrmex_desert_resin",
+		count: 64
+	},
+	{
+		icon: "iceandfire:myrmex_jungle_resin 64",
+		item: "iceandfire:myrmex_jungle_resin",
+		count: 64
+	},
+	{
+		icon: "forestry:royal_jelly 16",
+		item: "forestry:royal_jelly",
+		count: 16
+	}]
+}
