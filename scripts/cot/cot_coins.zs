@@ -20,6 +20,9 @@ val coinMap = {
 	<thermalfoundation:coin:98> : {energyData: 47900, override: true}, //Invar
 	<thermalfoundation:coin:99> : {energyData: 28750, override: true}, //Bronze
 	<thermalfoundation:coin:100> : {energyData: 43125, override: true}, //Constantan
+	<thermalfoundation:coin:101> : {energyData: 148510, override: true}, //Signalum
+	<thermalfoundation:coin:102> : {energyData: 129940, override: true}, //Lumium
+	<thermalfoundation:coin:103> : {energyData: 690625, override: true}, //Enderium
 	
 	<jaopca:item_coinardite>: {energyData: 90000, override: true},
 	<jaopca:item_coincobalt>: {energyData: 75000, override: true},
@@ -29,6 +32,7 @@ val coinMap = {
 	<jaopca:item_coinlithium>: {energyData: 50000, override: true},
 	<jaopca:item_coinboron>: {energyData: 40000, override: true},
 	<jaopca:item_coinmagnesium>: {energyData: 50000, override: true},
+	<jaopca:item_cointitanium>: {energyData: 120000, override: true},
 	<jaopca:item_cointungsten>: {energyData: 60000, override: true},
 	<jaopca:item_coinastralstarmetal>: {energyData: 45000, override: true},
 
@@ -73,7 +77,46 @@ val coinMap = {
 	<contenttweaker:coin_thaumium> : {energyData: 65000, inputItem: {id:"thaumcraft:ingot",Damage:0}},
 	<contenttweaker:coin_toughalloy> : {energyData: 68360, inputItem: {id:"nuclearcraft:alloy",Damage:1}},
 	<contenttweaker:coin_unstable> : {energyData: 400000, inputItem: {id:"extrautils2:unstableingots",Damage:2}},
-	<contenttweaker:coin_zirconium> : {energyData: 75000, inputItem: {id:"nuclearcraft:ingot",Damage:10}}
+	<contenttweaker:coin_zirconium> : {energyData: 75000, inputItem: {id:"nuclearcraft:ingot",Damage:10}},
+	
+	<contenttweaker:coin_blackiron> : {energyData: 168570, inputItem: {id:"extendedcrafting:material",Count:1,Damage:0s}},
+	<contenttweaker:coin_cookedmeat> : {energyData: 95250, inputItem: {id:"tconevo:edible",Count:1,Damage:1s}}, 
+	<contenttweaker:coin_crystallinealloy> : {energyData: 940250, inputItem: {id:"enderio:item_alloy_endergy_ingot",Count:1,Damage:1s}},
+	<contenttweaker:coin_crystallinepinkslimealloy> : {energyData: 2446600, inputItem: {id:"enderio:item_alloy_endergy_ingot",Count:1,Damage:4s}},
+	<contenttweaker:coin_ebonypsimetal> : {energyData: 433350, inputItem: {id:"psi:material",Count:1,Damage:3s}},
+	<contenttweaker:coin_elementium> : {energyData: 148500, inputItem: {id:"botania:manaresource",Count:1,Damage:7s}},
+	<contenttweaker:coin_endsteel> : {energyData: 181915, inputItem: {id:"enderio:item_alloy_ingot",Count:1,Damage:8s}},
+	<contenttweaker:coin_energium> : {energyData: 1022600, inputItem: {id:"tconevo:metal",Count:1,Damage:35s}},
+	<contenttweaker:coin_enhancedender> : {energyData: 528190, inputItem: {id:"extendedcrafting:material",Count:1,Damage:48s}},
+	<contenttweaker:coin_essenceinfused> : {energyData: 387190, inputItem: {id:"tconevo:metal",Count:1,Damage:15s}},
+	<contenttweaker:coin_firedragonsteel> : {energyData: 880765, inputItem: {id:"iceandfire:dragonsteel_fire_ingot",Count:1,Damage:0s}},
+	<contenttweaker:coin_fluixsteel> : {energyData: 216010, inputItem: {id:"threng:material",Count:1,Damage:0s}},
+	<contenttweaker:coin_fluxedelectrum> : {energyData: 165315, inputItem: {id:"redstonearsenal:material",Count:1,Damage:32s}},
+	<contenttweaker:coin_hslasteel> : {energyData: 36600, inputItem: {id:"nuclearcraft:alloy",Count:1,Damage:15s}},
+	<contenttweaker:coin_icedragonsteel> : {energyData: 880765, inputItem: {id:"iceandfire:dragonsteel_ice_ingot",Count:1,Damage:0s}},
+	<contenttweaker:coin_inferium> : {energyData: 58035, inputItem: {id:"mysticalagriculture:crafting",Count:1,Damage:33s}},
+	<contenttweaker:coin_insanium> : {energyData: 27338035, inputItem: {id:"mysticalagradditions:insanium",Count:1,Damage:2s}},
+	<contenttweaker:coin_intermedium> : {energyData: 458035, inputItem: {id:"mysticalagriculture:crafting",Count:1,Damage:35s}},
+	<contenttweaker:coin_ivorypsimetal> : {energyData: 397390, inputItem: {id:"psi:material",Count:1,Damage:4s}},
+	<contenttweaker:coin_lithiummanganesedioxide> : {energyData: 135000, inputItem: {id:"nuclearcraft:alloy",Count:1,Damage:4s}},
+	<contenttweaker:coin_magnesiumdiboride> : {energyData: 54170, inputItem: {id:"nuclearcraft:alloy",Count:1,Damage:3s}},
+	<contenttweaker:coin_manganesedioxide> : {energyData: 150000, inputItem: {id:"nuclearcraft:ingot",Count:1,Damage:15s}},
+	<contenttweaker:coin_manganeseoxide> : {energyData: 75000, inputItem: {id:"nuclearcraft:ingot",Count:1,Damage:14s}},
+	<contenttweaker:coin_melodicalloy> : {energyData: 4879000, inputItem: {id:"enderio:item_alloy_endergy_ingot",Count:1,Damage:2s}},
+	<contenttweaker:coin_mirion> : {energyData: 1852560, inputItem: {id:"plustic:mirioningot",Count:1,Damage:0s}},
+	<contenttweaker:coin_pinkmetal> : {energyData: 281250, inputItem: {id:"industrialforegoing:pink_slime_ingot",Count:1,Damage:0s}},
+	<contenttweaker:coin_prudentium> : {energyData: 138035, inputItem: {id:"mysticalagriculture:crafting",Count:1,Damage:34s}},
+	<contenttweaker:coin_psimetal> : {energyData: 81000, inputItem: {id:"psi:material",Count:1,Damage:1s}},
+	<contenttweaker:coin_sentient> : {energyData: 420140, inputItem: {id:"tconevo:metal",Count:1,Damage:30s}},
+	<contenttweaker:coin_soulium> : {energyData: 330000, inputItem: {id:"mysticalagriculture:crafting",Count:1,Damage:38s}},
+	<contenttweaker:coin_superium> : {energyData: 1738035, inputItem: {id:"mysticalagriculture:crafting",Count:1,Damage:36s}},
+	<contenttweaker:coin_suprerium> : {energyData: 6858035, inputItem: {id:"mysticalagriculture:crafting",Count:1,Damage:37s}},
+	<contenttweaker:coin_terrasteel> : {energyData: 4887000, inputItem: {id:"botania:manaresource",Count:1,Damage:4s}},
+	<contenttweaker:coin_thermoconductingalloy> : {energyData: 502415, inputItem: {id:"nuclearcraft:alloy",Count:1,Damage:11s}},
+	<contenttweaker:coin_uumetal> : {energyData: 180324690, inputItem: {id:"tconevo:metal",Count:1,Damage:40s}},
+	<contenttweaker:coin_vibrantalloy> : {energyData: 115810, inputItem: {id:"enderio:item_alloy_ingot",Count:1,Damage:2s}},
+	<contenttweaker:coin_zircaloy> : {energyData: 92815, inputItem: {id:"nuclearcraft:alloy",Count:1,Damage:12s}},
+	<contenttweaker:coin_zirconiummolybdenum> : {energyData: 386020, inputItem: {id:"nuclearcraft:alloy",Count:1,Damage:16s}},
 } as IData[IItemStack]$orderly;
 
 for coin, coinData in coinMap {
