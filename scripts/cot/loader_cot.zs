@@ -414,7 +414,7 @@ mm.register();
 // New Coins
 // -------------------------------
 
-mods.contenttweaker.VanillaFactory.createCreativeTab('coins_tab', <item:minecraft:coal:1>).register();
+mods.contenttweaker.VanillaFactory.createCreativeTab('coins_tab', <item:thermalfoundation:coin:64>).register();
 
 function buildCoin(name as string, glowing as bool = false) {
   val item = VanillaFactory.createItem(name) as Item;
