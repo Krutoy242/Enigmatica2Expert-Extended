@@ -224,7 +224,7 @@ remakeDynamo(<thermalexpansion:dynamo:1>, "Invar");
 remakeDynamo(<thermalexpansion:dynamo:2>, "Tin");
 remakeDynamo(<thermalexpansion:dynamo:3>, "Lead");
 remakeDynamo(<thermalexpansion:dynamo:4>, "Electrum");
-remakeDynamo(<thermalexpansion:dynamo:5>, "Constantan");
+remakeDynamo(<thermalexpansion:dynamo:5>, "Signalum");
 
 # Remove old non-working reservior clearings
 recipes.removeByRecipeName("thermalexpansion:reservoir_10");
