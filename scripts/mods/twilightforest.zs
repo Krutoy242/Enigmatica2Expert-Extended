@@ -59,7 +59,7 @@ for i, poolTuple in garanteedPools {
   }
   pool.addItemEntry(newDrops[i], 1);
 }
-scripts.jei.entity_drop.add(<entity:twilightforest:quest_ram>, newDrops);
+scripts.jei.entity_drop.add(<entity:twilightforest:quest_ram>, newDrops, false);
 /////////////////////////////////////////
 
 for tuple in [

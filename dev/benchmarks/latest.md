@@ -5,10 +5,10 @@
 
 <p align="center" style="font-size:160%;">
 MC total load time:<br>
-582.04 sec
+533.86 sec
 <br>
 <sup><sub>(
-9:42 min
+8:53 min
 )</sub></sup>
 </p>
 
@@ -20,8 +20,8 @@ MC total load time:<br>
   type: 'horizontalBar',
   data: {
     datasets: [
-      {label:      'MODS:', data: [386.05]},
-      {label: 'FML stuff:', data: [195.99]}
+      {label:      'MODS:', data: [343.07]},
+      {label: 'FML stuff:', data: [190.80]}
     ]
   },
   options: {
@@ -60,30 +60,30 @@ MC total load time:<br>
   },
   data: {...
 `
-436e17  59.13s Had Enough Items;
-813e81  14.35s OpenComputers;
-516fa8  13.95s Ender IO;
-5161a8   1.58s CraftTweaker2;
-495797  10.50s CraftTweaker2 (Script Loading);
-5c308f  10.35s Mod Tweaker;
-8f304e  10.21s Astral Sorcery;
-8f3087   9.83s Forge Mod Loader;
-a651a8   8.02s IndustrialCraft 2;
-6e175e   7.71s Recurrent Complex;
-cd922c   7.64s NuclearCraft;
-213664   7.09s Forestry;
+436e17  46.17s Had Enough Items;
+813e81  13.74s OpenComputers;
+516fa8  12.80s Ender IO;
+5161a8  10.61s CraftTweaker2;
+495797  11.07s CraftTweaker2 (Script Loading);
+8f3087   8.00s Forge Mod Loader;
+8f304e   7.58s Astral Sorcery;
+a651a8   7.14s IndustrialCraft 2;
+5c308f   6.75s Mod Tweaker;
 8c2ccd   6.61s Immersive Engineering;
-3e7d81   4.99s ProbeZS;
-8f4d30   4.95s Open Terrain Generator;
-308f7e   4.51s Quark: RotN Edition;
-308f53   4.40s Village Names;
-a86e51   4.33s Extra Utilities 2;
-436e17   3.95s Integrated Dynamics;
-649e21   3.87s OpenBlocks;
-ba3eb8   3.83s Cyclic;
-444444 110.37s 57 Other mods;
-333333  67.59s 188 'Fast' mods (load 1.0s - 0.1s);
-222222   6.27s 183 'Instant' mods (load %3C 0.1s)
+cd922c   6.50s NuclearCraft;
+213664   5.86s Forestry;
+6e175e   5.76s Recurrent Complex;
+8f4d30   4.40s Open Terrain Generator;
+308f53   4.14s Village Names;
+436e17   4.05s Integrated Dynamics;
+308f7e   3.93s Quark: RotN Edition;
+a86e51   3.88s Extra Utilities 2;
+3e8160   3.72s The Twilight Forest;
+216364   3.71s Xaero's Minimap;
+3e68ba   3.66s AE2 Unofficial Extended Life;
+444444 103.81s 54 Other mods;
+333333  63.65s 180 'Fast' mods (load 1.0s - 0.1s);
+222222   6.60s 194 'Instant' mods (load %3C 0.1s)
 `
     .split(';').reduce((a, l) => {
       l.match(/(\w{6}) *(\d*\.\d*)s (.*)/)
@@ -153,18 +153,18 @@ ba3eb8   3.83s Cyclic;
       .forEach(([name]) => a.datasets.push({ label: name, data: [] }));
 `
                            1      2      3      4      5      6      7      8  ;
-OpenComputers          |  0.43|  0.02|  9.04|  4.49|  0.37|  0.00|  0.00|  0.00;
-Ender IO               |  1.91|  0.02|  4.66|  0.57|  4.68|  0.20|  0.00|  1.91;
-CraftTweaker2          |  0.76|  0.00|  4.58|  0.01|  0.00|  6.71|  0.03|  0.00;
-Mod Tweaker            |  0.01|  0.00|  0.01|  0.00|  0.00|  0.00| 10.34|  0.00;
-Astral Sorcery         |  0.27|  0.01|  7.45|  1.84|  0.00|  0.65|  0.00|  0.00;
-IndustrialCraft 2      |  0.95|  0.02|  5.78|  0.97|  0.00|  0.31|  0.00|  0.00;
-Recurrent Complex      |  0.50|  0.00|  0.92|  1.00|  0.00|  5.29|  0.00|  0.00;
-NuclearCraft           |  0.71|  0.01|  4.92|  0.51|  0.00|  1.40|  0.00|  0.10;
-Forestry               |  0.46|  0.01|  4.96|  1.16|  0.00|  0.49|  0.00|  0.00;
-Immersive Engineering  |  1.03|  0.01|  1.36|  1.11|  0.00|  3.09|  0.00|  0.00;
-ProbeZS                |  0.04|  0.00|  0.11|  0.00|  0.00|  4.82|  0.00|  0.00;
-Open Terrain Generator |  0.08|  0.01|  0.00|  4.86|  0.00|  0.00|  0.00|  0.00
+OpenComputers          |  0.41|  0.02|  9.06|  4.01|  0.25|  0.00|  0.00|  0.00;
+Ender IO               |  2.18|  0.01|  4.46|  0.76|  4.20|  0.15|  0.00|  1.03;
+CraftTweaker2          |  0.72|  0.00|  4.35|  0.01|  0.00|  5.52|  0.01|  0.00;
+Astral Sorcery         |  0.26|  0.01|  4.83|  1.85|  0.00|  0.63|  0.00|  0.00;
+IndustrialCraft 2      |  0.84|  0.02|  4.80|  1.17|  0.00|  0.31|  0.00|  0.00;
+Mod Tweaker            |  0.00|  0.00|  0.01|  0.00|  0.00|  0.00|  6.74|  0.00;
+Immersive Engineering  |  1.21|  0.01|  1.35|  1.38|  0.00|  2.66|  0.00|  0.00;
+NuclearCraft           |  0.65|  0.01|  4.45|  0.51|  0.00|  0.83|  0.00|  0.06;
+Forestry               |  0.43|  0.01|  3.52|  1.43|  0.00|  0.46|  0.00|  0.00;
+Recurrent Complex      |  0.34|  0.00|  0.82|  1.03|  0.00|  3.57|  0.00|  0.00;
+Open Terrain Generator |  0.06|  0.01|  0.00|  4.33|  0.00|  0.00|  0.00|  0.00;
+Village Names          |  0.12|  0.00|  3.81|  0.21|  0.00|  0.00|  0.00|  0.00
 `
     .split(';').slice(1)
       .map(l => l.split('|').map(s => s.trim()))
@@ -232,7 +232,7 @@ Open Terrain Generator |  0.08|  0.01|  0.00|  4.86|  0.00|  0.00|  0.00|  0.00
             font: {size: 18}
           },
           {
-            text: [195.99,'s'].join(''),
+            text: [190.80,'s'].join(''),
             color: 'rgba(128, 128, 128, 1)',
             font: {size: 22}
           }
@@ -252,16 +252,16 @@ Open Terrain Generator |  0.08|  0.01|  0.00|  4.86|  0.00|  0.00|  0.00|  0.00
       }]
     };
 `
-993A00   0.88s Loading sounds;
-994400   0.97s Loading Resource - SoundHandler;
-994F00  46.75s ModelLoader: blocks;
-995900  14.75s ModelLoader: items;
-996300  19.64s ModelLoader: baking;
-996D00   2.81s Applying remove recipe actions;
-997700   0.14s Applying remove furnace recipe actions;
-998200   1.69s Indexing ingredients;
-998C00  12.59s Indexing ingredients;
-444444  95.77s Other
+993A00   0.72s Loading sounds;
+994400   0.79s Loading Resource - SoundHandler;
+994F00  45.59s ModelLoader: blocks;
+995900  15.10s ModelLoader: items;
+996300  21.29s ModelLoader: baking;
+996D00   2.29s Applying remove recipe actions;
+997700   0.15s Applying remove furnace recipe actions;
+998200   1.02s Indexing ingredients;
+998C00   9.97s Indexing ingredients;
+444444  93.87s Other
 `
     .split(';')
       .map(l => l.match(/(\w{6}) *(\d*\.\d*)s (.*)/))

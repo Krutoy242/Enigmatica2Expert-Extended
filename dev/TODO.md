@@ -11,6 +11,7 @@
 - [ ] 📖 Stools and Tables less chance for Decor reward
 - [ ] 📖 Improve messages "Player Obtained [...]" with `tellraw` command
 - [ ] 📖 `/levelupTool` use in quest reward
+- [ ] 📖 Awakened Draconium mining level add alternatives
 - [ ] 🟢 moveToServerStarter
 - [ ] 🟢 add `Fairy Lights`
 - [ ] ⛑️ Add amount of blocks in Portal Spread message
@@ -23,12 +24,18 @@
 - [ ] 🌍 Generate Quicksand with Cofh instead of BoP to add lakes in OTG worlds
 - [ ] ✏️ Configure `Redstone Repository`
 - [ ] 📖 Add langs to "Fireproof" trait
+- [ ] 📖 Laser Gun add Legendary reward
+- [ ] 📖 Compact Machine better reward
+- [ ] 📖 ExCr tables should be available from Conflux levels
+- [ ] 📖 Creative Modifier fix dependency
 - [ ] ✏️ Fix Chemical Reactor nutrient distillation conflicts
 - [ ] ✏️ Prevent Dupes of uncrafting table:
   > Castle doors
   > Armor trims
   > Dark Steel Upgrades
   > Transmuter's stone
+  > Gas Tanks, Fluid Tanks
+  > Loot Crates
 
 ```sh
 /bcore_ticktime

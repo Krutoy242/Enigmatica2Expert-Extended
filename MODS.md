@@ -214,7 +214,7 @@ Icon | Summary
 
 Mods that present only in `Extended` version:
 
-213 mods in this section.
+212 mods in this section.
 
 Icon | Summary
 ----:|:-------
@@ -354,7 +354,6 @@ Icon | Summary
 <img src="https://media.forgecdn.net/avatars/thumbnails/269/673/30/30/637242595025033364.png"            > |                       [**You Dropped This**](https://www.curseforge.com/minecraft/mc-mods/youdroppedthis)               <sup><sub>YouDroppedThis-1.1.0.jar                         </sub></sup><br>Simple customizable mod to play sounds when items are dropped.
 <img src="https://media.forgecdn.net/avatars/thumbnails/272/513/30/30/637251577817390313.png"            > |                            [**Dynamistics**](https://www.curseforge.com/minecraft/mc-mods/dynamistics)                  <sup><sub>dynamistics-1.0.2.jar                            </sub></sup><br>Adds certain dynamic JEI recipes for Applied Energistics 2 and PackagedAuto.
 <img src="https://media.forgecdn.net/avatars/thumbnails/273/618/30/30/637255642042590715.png"            > |                     [**Tinkers' Evolution**](https://www.curseforge.com/minecraft/mc-mods/tinkers-evolution)            <sup><sub>tconevo-1.12.2-1.0.45.jar                        </sub></sup><br>the fresh new tinkers&#x27; construct addon
-<img src="https://media.forgecdn.net/avatars/thumbnails/875/480/30/30/638298072228596362.png"            > |        [**Complementary Shaders - Unbound**](https://www.curseforge.com/minecraft/shaders/complementary-unbound)        <sup><sub>ComplementaryUnbound_r5.0.1.zip                  </sub></sup><br>Exceptional quality, detail and performance; while pushing the limits of Minecraft.
 <img src="https://media.forgecdn.net/avatars/thumbnails/881/107/30/30/638311012004755859.png"            > |       [**YUNG's Better Mineshafts (Forge)**](https://www.curseforge.com/minecraft/mc-mods/yungs-better-mineshafts-forge)<sup><sub>BetterMineshaftsForge-1.12.2-2.2.1.jar           </sub></sup><br>A long-awaited and much-needed abandoned mineshaft overhaul!
 <img src="https://media.forgecdn.net/avatars/thumbnails/284/308/30/30/637296797301571773.png"            > |              [**RFTools Dimension Tweaker**](https://www.curseforge.com/minecraft/mc-mods/rftools-dimension-tweaker)    <sup><sub>RFTDimTweak-1.12.2-1.1.jar                       </sub></sup><br>Provides end-game and overflow-free variants of dimension machines.
 <img src="https://media.forgecdn.net/avatars/thumbnails/482/727/30/30/637781780002046810.png"            > | [**Extended Crafting: Nomifactory Edition**](https://www.curseforge.com/minecraft/mc-mods/extended-crafting-nomifactory-edition)<sup><sub>extendedcrafting-nomifactory-edition-1.7.0.6.jar </sub></sup><br>Bigger crafting tables and more!

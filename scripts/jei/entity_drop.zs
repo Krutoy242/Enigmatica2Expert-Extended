@@ -18,15 +18,19 @@ scripts.jei.requious.addInsOuts(x, [[0,0]], [
 ]);
 x.setJEIDurationSlot(1,0,"duration", SlotVisual.arrowRight());
 
-function add(entity as IEntityDefinition, dropList as IItemStack[]) as void {
+function add(entity as IEntityDefinition, dropList as IItemStack[], percent as bool = true) as void {
   // utils.log(['Trying to add drop for:', entity]);
   // if (isNull(game.getEntity(entity))) return;
   var fixedList = [] as IItemStack[];
-  for item in dropList {
-    if(isNull(item)) continue;
-    fixedList += item.amount >= 100
-      ? item * (item.amount / 100)
-      : item.anyAmount().withLore(["§fChance: §b" ~ item.amount ~ "%"]);
+  if(percent) {
+    for item in dropList {
+      if(isNull(item)) continue;
+      fixedList += item.amount >= 100
+        ? item * (item.amount / 100)
+        : item.anyAmount().withLore(["§fChance: §b" ~ item.amount ~ "%"]);
+    }
+  } else {
+    fixedList = dropList;
   }
   scripts.jei.requious.add(<assembly:entity_drop>, {[Soul(entity.id)] as IIngredient[] : fixedList});
 }
