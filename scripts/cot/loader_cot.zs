@@ -493,7 +493,7 @@ buildCoin("coin_soularium");
 buildCoin("coin_soulium");
 buildCoin("coin_spectre");
 buildCoin("coin_superium");
-buildCoin("coin_suprerium");
+buildCoin("coin_supremium");
 buildCoin("coin_terrasteel");
 buildCoin("coin_thaumium");
 buildCoin("coin_thermoconductingalloy");

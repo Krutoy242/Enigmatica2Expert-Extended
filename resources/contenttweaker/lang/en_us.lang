@@ -19,6 +19,7 @@ item.contenttweaker.compressed_glowstone.name=Compressed Glowstone
 item.contenttweaker.compressed_ender.name=Compressed Ender
 item.contenttweaker.compressed_dimensional.name=Compressed Dimensional
 
+itemGroup.coins_tab=E2EE Custom Coins
 item.contenttweaker.coin_advancedalloy.name=Advanced Alloy Coin
 item.contenttweaker.coin_alchemicalbrass.name=Alchemical Brass Coin
 item.contenttweaker.coin_aluminumbrass.name=Aluminum Brass Coin
@@ -92,7 +93,7 @@ item.contenttweaker.coin_psimetal.name=Psimetal Coin
 item.contenttweaker.coin_sentient.name=Sentient Coin
 item.contenttweaker.coin_soulium.name=Soulium Coin
 item.contenttweaker.coin_superium.name=Superium Coin
-item.contenttweaker.coin_suprerium.name=Supremium Coin
+item.contenttweaker.coin_supremium.name=Supremium Coin
 item.contenttweaker.coin_terrasteel.name=Terrasteel Coin
 item.contenttweaker.coin_thermoconductingalloy.name=Thermoconducting Alloy Coin
 item.contenttweaker.coin_uumetal.name=UU-Metal Coin

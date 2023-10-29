@@ -110,7 +110,7 @@ val coinMap = {
 	<contenttweaker:coin_sentient> : {energyData: 420140, inputItem: {id:"tconevo:metal",Damage:30}},
 	<contenttweaker:coin_soulium> : {energyData: 330000, inputItem: {id:"mysticalagriculture:crafting",Damage:38}},
 	<contenttweaker:coin_superium> : {energyData: 1738035, inputItem: {id:"mysticalagriculture:crafting",Damage:36}},
-	<contenttweaker:coin_suprerium> : {energyData: 6858035, inputItem: {id:"mysticalagriculture:crafting",Damage:37}},
+	<contenttweaker:coin_supremium> : {energyData: 6858035, inputItem: {id:"mysticalagriculture:crafting",Damage:37}},
 	<contenttweaker:coin_terrasteel> : {energyData: 4887000, inputItem: {id:"botania:manaresource",Damage:4}},
 	<contenttweaker:coin_thermoconductingalloy> : {energyData: 502415, inputItem: {id:"nuclearcraft:alloy",Damage:11}},
 	<contenttweaker:coin_uumetal> : {energyData: 180324690, inputItem: {id:"tconevo:metal",Damage:40}},
