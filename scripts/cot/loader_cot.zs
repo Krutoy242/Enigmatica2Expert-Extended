@@ -446,7 +446,7 @@ buildCoin("coin_endorium");
 buildCoin("coin_endsteel");
 buildCoin("coin_energium");
 buildCoin("coin_energizedalloy");
-buildCoin("coin_enhancedender");
+buildCoin("coin_enhancedender", true);
 buildCoin("coin_essenceinfused");
 buildCoin("coin_evilinfusedmetal");
 buildCoin("coin_extremealloy");
