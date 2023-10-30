@@ -2080,7 +2080,7 @@ null,null,
 #Quartz
 addMetallurgicAspects
 (0.5,0.0,3,
-<minecraft:quartz>,<thaumcraft:nugget:9>,null,<appliedenergistics2:material:3>,
+<minecraft:quartz>,null,null,<appliedenergistics2:material:3>,
 null,null,null,null,null,
 <thaumcraft:cluster:7>,<jaopca:item_crystalshardquartz>,<jaopca:item_crystalabyssquartz>,<jaopca:item_rockychunkquartz>,
 <jaopca:item_chunkquartz>,<jaopca:item_dustalchquartz>,<jaopca:item_dirtygemquartz>,
