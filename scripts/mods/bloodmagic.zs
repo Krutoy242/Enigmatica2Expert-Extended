@@ -7,27 +7,27 @@ recipes.addShapeless('Blood Magic Guide',
   [<minecraft:book>, <bloodmagic:soul_snare>]);
 
 // Alt recipes for non-tech players
-for ingr in [
+for i, ingr in [
   <thaumcraft:stone_ancient_glyphed>,
   <extrautils2:decorativesolid:3>,
 ] as IItemStack[] {
   # Rune of Speed
   recipes.remove(<bloodmagic:blood_rune:1>);
-  recipes.addShaped("Rune of Speed", <bloodmagic:blood_rune:1>, 
+  recipes.addShaped("Rune of Speed "~i, <bloodmagic:blood_rune:1>, 
   [[ingr, <bloodmagic:slate>, ingr], 
   [<bloodmagic:blood_rune>, <ore:foodCake>, <bloodmagic:blood_rune>], 
   [ingr, <bloodmagic:slate>, ingr]]);
 
   # Rune of Sacrifice
   recipes.remove(<bloodmagic:blood_rune:3>);
-  recipes.addShaped("Rune of Sacrifice", <bloodmagic:blood_rune:3> * 3, 
+  recipes.addShaped("Rune of Sacrifice "~i, <bloodmagic:blood_rune:3> * 3, 
   [[ingr, <bloodmagic:slate:1>, ingr], 
   [<bloodmagic:slate:1>, <ore:orbTier2>.reuse(), <bloodmagic:slate:1>],
   [ingr, <astralsorcery:itemcrystalsword:*>.withTag({astralsorcery:{}}), ingr]]);
 
   # Imperfect Ritual Stone
   recipes.remove(<bloodmagic:ritual_controller:1>);
-  recipes.addShaped("Imperfect Ritual Stone", <bloodmagic:ritual_controller:1>, 
+  recipes.addShaped("Imperfect Ritual Stone "~i, <bloodmagic:ritual_controller:1>, 
   [[<ore:obsidian>, ingr, <ore:obsidian>], 
   [ingr, <ore:orbTier1>.reuse(), ingr], 
   [<ore:obsidian>, ingr, <ore:obsidian>]]);

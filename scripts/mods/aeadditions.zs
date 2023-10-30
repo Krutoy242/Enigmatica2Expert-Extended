@@ -25,24 +25,24 @@ craft.reshapeless(<aeadditions:certustank>, 'ABB', {
 
 function newAdvCellRecipe(input as IIngredient, output as IItemStack) {
   recipes.remove(output);
-  recipes.addShaped(output.displayName, output,
+  recipes.addShaped(output,
     [[<appliedenergistics2:quartz_glass>, <appliedenergistics2:material:8>, <appliedenergistics2:quartz_glass>],
       [<appliedenergistics2:material:8>, input, <appliedenergistics2:material:8>],
       [<ironchest:iron_chest:2>, <ironchest:iron_chest:2>, <ironchest:iron_chest:2>]]);
 
   if (!isNull(input)) {
-    recipes.addShapeless('Shapeless - ' ~ output.displayName, output, [<aeadditions:storage.casing>, input]);
+    recipes.addShapeless(output, [<aeadditions:storage.casing>, input]);
   }
 }
 
 function newGasCellRecipe(input as IIngredient, output as IItemStack) {
   recipes.remove(output);
-  recipes.addShaped(output.displayName, output,
+  recipes.addShaped(output,
     [[<appliedenergistics2:quartz_glass>, <appliedenergistics2:material:8>, <appliedenergistics2:quartz_glass>],
       [<appliedenergistics2:material:8>, input, <appliedenergistics2:material:8>],
       [<ore:plateGold>, <ironchest:iron_chest:1>, <ore:plateGold>]]);
   if (!isNull(input)) {
-    recipes.addShapeless('Shapeless - ' ~ output.displayName, output, [<aeadditions:storage.casing:2>, input]);
+    recipes.addShapeless(output, [<aeadditions:storage.casing:2>, input]);
   }
 }
 

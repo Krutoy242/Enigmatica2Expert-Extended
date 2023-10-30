@@ -533,8 +533,8 @@ val dustAlts = {
 } as IIngredient[][IItemStack];
 for out,list in dustAlts {
 	recipes.remove(out);
-	recipes.addShapeless(out.displayName~" x1", out,     [list[0], list[0],          <ore:dustRedstone>, list[1]]);
-	recipes.addShapeless(out.displayName~" x4", out * 4, [list[0], list[0], list[2], <ore:dustRedstone>, list[1]]);
+	recipes.addShapeless('te_dust_'~out.damage~" x1", out,     [list[0], list[0],          <ore:dustRedstone>, list[1]]);
+	recipes.addShapeless('te_dust_'~out.damage~" x4", out * 4, [list[0], list[0], list[2], <ore:dustRedstone>, list[1]]);
 }
 
 # Clear content of reserviors

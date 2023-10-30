@@ -286,7 +286,7 @@ for out, inp in {
 
 # Remake Dust compession recipes
 function tinyDustFix(a as IItemStack, b as IItemStack) as void {
-	recipes.addShapeless("Pack " ~ a.displayName, b, [a,a,a,a,a,a,a,a,a]);
+	recipes.addShapeless("Pack dist_" ~ a.damage, b, [a,a,a,a,a,a,a,a,a]);
 }
 
 tinyDustFix(<ic2:dust:22>, <ic2:dust:9>);

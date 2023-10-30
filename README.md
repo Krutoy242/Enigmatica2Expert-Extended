@@ -318,9 +318,67 @@ Some screenshots of new worldgen:
 
 -----------------
 
-## Incompatible mods
+## FAQ
 
-- `Essential Mod`: To play with this mod remove mod [CensoredASM](https://legacy.curseforge.com/minecraft/mc-mods/lolasm) first.
+- **Where can I download the entire modpack with mods?** <img alt="Prism Launcher E2E-E Window" src="https://i.imgur.com/yghYktN.png" align=right width=200>
+
+  You can't download the modpack in one archive. You can download everything except the mods, which are downloaded with the launcher.
+
+- **Where is the server pack?**
+
+  You can find the server pack on the GitHub release page under the "Assets" tab or on the CurseForge file page under "Additional Files." Note that CurseForge may delay this file for download for approximately five days after release.
+
+- **I launched E2E-E and got a crash with `Exit Code 1`.** <img alt="Prism Launcher E2E-E Window" src="https://i.imgur.com/iiKXQYv.png" align=right width=200>
+
+  Try loading the modpack a second time.
+
+- **I loaded the modpack a second time, and it still crashes with `Exit Code 1`.**
+
+  Try using a non-CurseForge launcher.
+
+- **I chose to download Optifine, but the Java process started, and the window won't appear.**
+
+  It seems like your firewall or proxy settings are not allowing you to download Optifine. Remove the file `config\mod-director\optifine.url.json`.
+
+- **I updated Java, but it still shows me the "Outdated Java" warning.** <img alt="Outdated Java Version message" src="https://i.imgur.com/1hBsDJU.png" align=right width=200>
+
+  The *CurseForge Launcher* and *Mojang Launcher* use their built-in 8-year-old Java. To fix this, explicitly configure the path to your new `javaw.exe` in BOTH launchers, or use another launcher such as [Prism](https://prismlauncher.org/).
+
+- **I can't see crash logs.**
+
+  Crash logs are located in the folder `crash-reports/`. If there are no files, check the file `logs/latest.log`. If there is still no information about the crash, enable debug logging and the generation of the file `debug.log` in your launcher.
+
+- **The game crashes on load, and the logs show something about `Unexpected error` and `IllegalStateException: Already building!`**
+
+  In any strange situation, remove `VintageFix` first.
+
+- **What Java arguments should I use?**
+
+  I recommend using *no arguments at all*.
+
+- **I installed the `Essential Mod`, and now I can't load the modpack.**
+
+  Remove the mod [CensoredASM](https://legacy.curseforge.com/minecraft/mc-mods/lolasm) since those two mods are incompatible.
+
+- **My world has 2 TPS, and it lags extremely hard.**
+
+  This happens when the OTG world rapidly generates new chunks. To fix this, pre-generate your world by pressing the "O" hotkey.
+
+- **I'm getting 2 FPS, and I can't play.**
+
+  Remove the `VintageFix` mod.
+
+- **There are too few hostile mobs at night.**
+
+  This is a known bug, and we are still looking for a solution.
+
+- **I updated the modpack version, and now it's reporting about mod duplicates.** <img alt="Forge Mod Loader mod duplicates screen" src="https://i.imgur.com/Sc18dli.png" align=right width=200>
+
+  The best way to update the modpack is to create a new instance and move your world/configs into the new one. You may also want to move the following files: `options.txt` for hotkeys and Minecraft configs, `hei_bookmarks.ini` for item bookmarks, `config\xaero*` for Xaero maps configs, and `saves/` folders for worlds.
+
+- **It's still reporting about duplicates.**
+
+  Remove `.jar` files without the `-patched` postfix.
 
 -----------------
 

@@ -416,7 +416,7 @@ zenClass Utils {
   }
 
   function addEnchRecipe(output as IItemStack, ench as crafttweaker.enchantments.IEnchantmentDefinition, inputs as IIngredient[][]) as void {
-    recipes.addShaped(output.displayName.replaceAll(":", "_").replaceAll('§.|"', "") ~ '_ench',
+    recipes.addShaped(output.definition.id.replaceAll(":", "_")~'_'~output.damage~'_ench',
       output.withTag({ench:[{lvl: 1 as short, id: ench.id as short}]}),
       inputs, function(out, ins, cInfo) {
         return output.withTag({ench:[{lvl: 1 as short, id: ench.id as short}]});
