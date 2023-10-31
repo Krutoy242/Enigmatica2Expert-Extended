@@ -65,6 +65,9 @@ addBurstSeedRecipe(<enderio:block_infinity>, <nuclearcraft:plutonium:15>, <mecha
 addBurstSeedRecipe(<enderio:block_infinity>, <forestry:phosphor>        , <mechanics:burst_seed_grainsofinfinity>);
 addBurstSeedRecipe(<contenttweaker:blasted_coal>, <thermalfoundation:material:162>, <mechanics:burst_seed_black_iron>);
 
+# Exclusive Recipe for Infinity Coin
+mods.nuclearcraft.Crystallizer.addRecipe(<liquid:infinity_metal>*1, <mechanics:burst_seed_infinity_coin>);
+
 # [Empty Rod] from [Glass][+1]
 craft.remake(<mechanics:empty_rod>, ["pretty",
   "  ▬ ■",

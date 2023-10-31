@@ -24,3 +24,4 @@ remove burst_seed_ice
 remove burst_seed_stone
 burst_seed_grainsofinfinity enderio:item_material 75 enderio:block_infinity_1
 burst_seed_black_iron extendedcrafting:material 1 contenttweaker:conglomerate_of_coal
+burst_seed_infinity_coin contenttweaker:coin_infinity 0 avaritia:resource/infinity

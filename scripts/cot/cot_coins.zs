@@ -96,7 +96,7 @@ val coinMap = {
 	<contenttweaker:coin_hslasteel> : {energyData: 36600, inputItem: {id:"nuclearcraft:alloy",Damage:15}},
 	<contenttweaker:coin_icedragonsteel> : {energyData: 880765, inputItem: {id:"iceandfire:dragonsteel_ice_ingot",Damage:0}},
 	<contenttweaker:coin_inferium> : {energyData: 58035, inputItem: {id:"mysticalagriculture:crafting",Damage:33}},
-	<contenttweaker:coin_insanium> : {energyData: 27338035, inputItem: {id:"mysticalagradditions:insanium",Damage:2}},
+	<contenttweaker:coin_insanium> : {energyData: 5467507, inputItem: {id:"mysticalagradditions:insanium",Damage:2}, coins: 15},
 	<contenttweaker:coin_intermedium> : {energyData: 458035, inputItem: {id:"mysticalagriculture:crafting",Damage:35}},
 	<contenttweaker:coin_ivorypsimetal> : {energyData: 397390, inputItem: {id:"psi:material",Damage:4}},
 	<contenttweaker:coin_lithiummanganesedioxide> : {energyData: 135000, inputItem: {id:"nuclearcraft:alloy",Damage:4}},
@@ -114,17 +114,17 @@ val coinMap = {
 	<contenttweaker:coin_supremium> : {energyData: 6858035, inputItem: {id:"mysticalagriculture:crafting",Damage:37}},
 	<contenttweaker:coin_terrasteel> : {energyData: 4887000, inputItem: {id:"botania:manaresource",Damage:4}},
 	<contenttweaker:coin_thermoconductingalloy> : {energyData: 502415, inputItem: {id:"nuclearcraft:alloy",Damage:11}},
-	<contenttweaker:coin_uumetal> : {energyData: 180324690, inputItem: {id:"tconevo:metal",Damage:40}},
+	<contenttweaker:coin_uumetal> : {energyData: 9016234, inputItem: {id:"tconevo:metal",Damage:40}, coins: 60},
 	<contenttweaker:coin_vibrantalloy> : {energyData: 115810, inputItem: {id:"enderio:item_alloy_ingot",Damage:2}},
 	<contenttweaker:coin_zircaloy> : {energyData: 92815, inputItem: {id:"nuclearcraft:alloy",Damage:12}},
 	<contenttweaker:coin_zirconiummolybdenum> : {energyData: 386020, inputItem: {id:"nuclearcraft:alloy",Damage:16}},
 	
 	<contenttweaker:coin_adaminite> : {energyData: 3645000, inputItem: {id:"thaumadditions:adaminite_ingot",Damage:0}},
-	<contenttweaker:coin_awakeneddraconium> : {energyData: 175481855, inputItem: {id:"draconicevolution:draconic_ingot",Damage:0}},
+	<contenttweaker:coin_awakeneddraconium> : {energyData: 8774093, inputItem: {id:"draconicevolution:draconic_ingot",Damage:0}, coins: 60},
 	<contenttweaker:coin_bloodglitchinfused> : {energyData: 1276000, inputItem: {id:"deepmoblearningbm:blood_infused_glitch_ingot",Damage:0}},
 	<contenttweaker:coin_bound> : {energyData: 553165, inputItem: {id:"tconevo:metal",Damage:25}},
 	<contenttweaker:coin_calcium> : {energyData: 200000, inputItem: {id:"qmd:ingot",Damage:13}},
-	<contenttweaker:coin_chaoticmetal> : {energyData: 1181539250, inputItem: {id:"tconevo:metal",Damage:10}},
+	<contenttweaker:coin_chaoticmetal> : {energyData: 14586905, inputItem: {id:"tconevo:metal",Damage:12}, coins: 27},
 	<contenttweaker:coin_chromium> : {energyData: 200000, inputItem: {id:"qmd:ingot",Damage:2}},
 	<contenttweaker:coin_crystalmatrix> : {energyData: 3842500, inputItem: {id:"avaritia:resource",Damage:1}},
 	<contenttweaker:coin_crystaltine> : {energyData: 7320045, inputItem: {id:"extendedcrafting:material",Damage:24}},
@@ -135,7 +135,7 @@ val coinMap = {
 	<contenttweaker:coin_gelidenderium> : {energyData: 3901410, inputItem: {id:"redstonerepository:material",Damage:1}},
 	<contenttweaker:coin_glitchinfused> : {energyData: 1203500, inputItem: {id:"deepmoblearning:glitch_infused_ingot",Damage:0}},
 	<contenttweaker:coin_hafnium> : {energyData: 250000, inputItem: {id:"qmd:ingot",Damage:6}},
-	<contenttweaker:coin_infinity> : {energyData: 2000000000, inputItem: {id:"avaritia:resource",Damage:6}},
+	<contenttweaker:coin_infinity> : {energyData: 9999999},
 	<contenttweaker:coin_mithminite> : {energyData: 8808750, inputItem: {id:"thaumadditions:mithminite_ingot",Damage:0}},
 	<contenttweaker:coin_mithrillium> : {energyData: 2340000, inputItem: {id:"thaumadditions:mithrillium_ingot",Damage:0}},
 	<contenttweaker:coin_neodymium> : {energyData: 400000, inputItem: {id:"qmd:ingot2",Damage:1}},
@@ -149,13 +149,13 @@ val coinMap = {
 	<contenttweaker:coin_smore> : {energyData: 76800, inputItem: {id:"nuclearcraft:smore",Damage:0}},
 	<contenttweaker:coin_sodium> : {energyData: 150000, inputItem: {id:"qmd:ingot",Damage:11}},
 	<contenttweaker:coin_stainlesssteel> : {energyData: 95625, inputItem: {id:"qmd:ingot_alloy",Damage:2}},
-	<contenttweaker:coin_stellaralloy> : {energyData: 269293275, inputItem: {id:"enderio:item_alloy_endergy_ingot",Damage:3}},
+	<contenttweaker:coin_stellaralloy> : {energyData: 17952885, inputItem: {id:"enderio:item_alloy_endergy_ingot",Damage:3}, coins: 45},
 	<contenttweaker:coin_strontium> : {energyData: 300000, inputItem: {id:"qmd:ingot",Damage:14}},
 	<contenttweaker:coin_superalloy> : {energyData: 300150, inputItem: {id:"qmd:ingot_alloy",Damage:6}},
 	<contenttweaker:coin_titaniumaluminide> : {energyData: 89170, inputItem: {id:"advancedrocketry:productingot",Damage:0}},
 	<contenttweaker:coin_titaniumiridium> : {energyData: 152250, inputItem: {id:"advancedrocketry:productingot",Damage:1}},
 	<contenttweaker:coin_tungstencarbide> : {energyData: 48440, inputItem: {id:"qmd:ingot_alloy",Damage:0}},
-	<contenttweaker:coin_ultimate> : {energyData: 580687390, inputItem: {id:"extendedcrafting:material",Damage:32}},
+	<contenttweaker:coin_ultimate> : {energyData: 6452082, inputItem: {id:"extendedcrafting:material",Damage:33}, coins: 30},
 	<contenttweaker:coin_vividalloy> : {energyData: 2106730, inputItem: {id:"enderio:item_alloy_endergy_ingot",Damage:6}},
 	<contenttweaker:coin_voidmetal> : {energyData: 607500, inputItem: {id:"thaumcraft:ingot",Damage:1}},
 	<contenttweaker:coin_wyvernmetal> : {energyData: 2182345, inputItem: {id:"tconevo:metal",Damage:0}},
@@ -170,7 +170,13 @@ for coin, coinData in coinMap {
 	NumisticDynamo.addFuel(coin, coinData.energyData.asInt());
 	if (coinData has "inputItem"){
 		val ingot = itemUtils.getItem(coinData.inputItem.id.asString(), coinData.inputItem.Damage.asInt());
-		if (!isNull(ingot))
-			Compactor.addMintRecipe(coin * 3, ingot, 4000);
+		if (!isNull(ingot)){
+			if (coinData has "coins"){
+				Compactor.addMintRecipe(coin * coinData.coins.asInt(), ingot, 4000);
+			}
+			else {
+				Compactor.addMintRecipe(coin * 3, ingot, 4000);
+			}
+		}
 	}
 }
