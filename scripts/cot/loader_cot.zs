@@ -10,6 +10,7 @@ import mods.contenttweaker.AxisAlignedBB;
 import mods.contenttweaker.BlockMaterial;
 import mods.contenttweaker.Color;
 import mods.contenttweaker.Item;
+import mods.contenttweaker.ItemFood;
 import mods.contenttweaker.MaterialSystem;
 import mods.contenttweaker.SoundType;
 import mods.contenttweaker.VanillaFactory;
@@ -424,6 +425,14 @@ function buildCoin(name as string, glowing as bool = false) {
   item.register();
 }
 
+function buildFoodyCoin(name as string, foodValue as int, foodSaturation as float) {
+  val item = VanillaFactory.createItemFood(name, foodValue) as ItemFood;
+  item.setCreativeTab(<creativetab:coins_tab>);
+  item.textureLocation = mods.contenttweaker.ResourceLocation.create("contenttweaker:items/coin/" ~ name);
+  item.saturation = foodSaturation;
+  item.register();
+}
+
 buildCoin("coin_adaminite");
 buildCoin("coin_advancedalloy");
 buildCoin("coin_alchemicalbrass");
@@ -446,7 +455,7 @@ buildCoin("coin_crystalmatrix");
 buildCoin("coin_crystaltine");
 buildCoin("coin_darksteel");
 buildCoin("coin_demonmetal");
-buildCoin("coin_doublesmore");
+buildFoodyCoin("coin_doublesmore", 6, 9.6);
 buildCoin("coin_draconicmetal");
 buildCoin("coin_ebonypsimetal");
 buildCoin("coin_electricalsteel");
@@ -468,6 +477,7 @@ buildCoin("coin_fierymetal");
 buildCoin("coin_firedragonsteel");
 buildCoin("coin_fluixsteel");
 buildCoin("coin_fluxedelectrum");
+buildFoodyCoin("coin_foursmore", 12, 47.45);
 buildCoin("coin_gaiaspirit");
 buildCoin("coin_gelidenderium");
 buildCoin("coin_glitchinfused");
@@ -516,7 +526,7 @@ buildCoin("coin_pulsatingiron");
 buildCoin("coin_redstonealloy");
 buildCoin("coin_refinedobsidian");
 buildCoin("coin_sentient");
-buildCoin("coin_smore");
+buildFoodyCoin("coin_smore", 4, 3);
 buildCoin("coin_sodium");
 buildCoin("coin_soularium");
 buildCoin("coin_soulium");

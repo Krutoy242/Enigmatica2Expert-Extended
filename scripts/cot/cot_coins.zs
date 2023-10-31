@@ -146,6 +146,7 @@ val coinMap = {
 	<contenttweaker:coin_niobiumtitanium> : {energyData: 283500, inputItem: {id:"qmd:ingot_alloy",Damage:3}},
 	<contenttweaker:coin_potassium> : {energyData: 150000, inputItem: {id:"qmd:ingot",Damage:11}},
 	<contenttweaker:coin_primalmetal> : {energyData: 1215000, inputItem: {id:"tconevo:metal",Damage:20}},
+	<contenttweaker:coin_foursmore> : {energyData: 284430, inputItem: {id:"nuclearcraft:foursmore",Damage:0}},
 	<contenttweaker:coin_smore> : {energyData: 76800, inputItem: {id:"nuclearcraft:smore",Damage:0}},
 	<contenttweaker:coin_sodium> : {energyData: 150000, inputItem: {id:"qmd:ingot",Damage:11}},
 	<contenttweaker:coin_stainlesssteel> : {energyData: 95625, inputItem: {id:"qmd:ingot_alloy",Damage:2}},
