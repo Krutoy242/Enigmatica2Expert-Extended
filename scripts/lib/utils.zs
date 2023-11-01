@@ -451,6 +451,8 @@ zenClass Utils {
         ~amount
         ~name
         ~'{"text":""}'
+        // `{"text":""}` is used so that when `showName` is false, the text can still be displayed.
+        // This also allows for simpler comma handling
       ~']}';
   }
 
