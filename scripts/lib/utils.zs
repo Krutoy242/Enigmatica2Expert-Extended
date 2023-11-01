@@ -433,22 +433,25 @@ zenClass Utils {
      ██║   ███████╗███████╗███████╗██║  ██║██║  ██║╚███╔███╔╝
      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ 
   */
-  function tellrawItem(item as IItemStack, color as string = null, addName as bool = true) as string {
-    val colorTag = isNull(color) ? '' : ',"color":"'~color~'"';
-    val amount = item.amount > 1 ? '{"text":"'~item.amount~'"'~colorTag~'},{"text":" "},' : '';
-    val itemName =
-    '{"text":"\u00A7f   ","hoverEvent":'
-        ~'{"action":"show_item","value":"'
-          ~item.asData().toNBTString().replaceAll('"', '\\\\"')
-        ~'"}'
-      ~(addName ? (',"extra":['
-        ~'{"text":"["'~colorTag~'}'
-        ~',{"translate":"'~item.name~'.name"'~colorTag~'}'
-        ~',{"text":"]"'~colorTag~'}'
-      ~']') : '')
-    ~'}';
+  function tellrawItem(item as IItemStack, color as string = null, showName as bool = true) as string {
+    val colorTag = isNull(color)
+      ? ''
+      : ',"color":"'~color~'"';
+    val amount = item.amount > 1
+      ? '{"translate":"%s ","with":["'~item.amount~'"]'~colorTag~'},'
+      : '';
+    val name = showName 
+      ? '{"translate":"[%s]","with":["'~item.displayName~'"]'~colorTag~'},'
+      : '';
 
-    return amount ~ itemName;
+    return 
+      '{"text":"\u00A7f   ","hoverEvent":{"action":"show_item","value":"'
+        ~item.asData().toNBTString().replaceAll('"', '\\\\"')
+      ~'"},"extra":['
+        ~amount
+        ~name
+        ~'{"text":""}'
+      ~']}';
   }
 
   function tellrawSend(player as IPlayer, message as string) as void {
