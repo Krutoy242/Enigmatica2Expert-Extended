@@ -18,14 +18,14 @@ for lang, entries in {
   ru_ru: {
     send   : 'Вы передали %s игроку %s',
     receive: 'Вам передали %s от игрока %s'
-  }
+  },
   zh_cn: {
     send   : '你已经将 %s 交给 %s',
     receive: '你获得了 %s ，来自 %s'
   },
 } as string[string][string] {
   for key, value in entries {
-    game.setLocalization(lang, 'chat.hand_over_your_items.'~k, value);
+    game.setLocalization(lang, 'chat.hand_over_your_items.'~key, value);
   }
 }
 
