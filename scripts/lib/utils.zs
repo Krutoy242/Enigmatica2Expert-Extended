@@ -440,13 +440,18 @@ zenClass Utils {
     val amount = item.amount > 1
       ? '{"translate":"%s ","with":["'~item.amount~'"]'~colorTag~'},'
       : '';
+    // NOTE: the name display is not perfect, due to its inability to show custom name
+    // say a Stone that's renamed to "Rock", it will only display "Stone"
     val name = showName 
-      ? ',{"translate":"[%s]","with":["'~item.displayName~'"]'~colorTag~'}'
+      ? ',{"translate":"[%s]","with":[{"translate":"'~item.definition.name~'.name"}]'~colorTag~'}'
       : '';
+    // The major part of `iconQuark` is actually 3 spaces, which are reserved for Quark item rendering
+    // So you needs Quark to get the icon
     val iconQuark = 
       '{"text":"\u00A7f   ","hoverEvent":{"action":"show_item","value":"'
         ~item.asData().toNBTString().replaceAll('"', '\\\\"')
       ~'"}}';
+    // Combine these pieces together, and return it
     return '{"text":"","extra":['~amount~iconQuark~name~']}';
   }
 
