@@ -441,19 +441,13 @@ zenClass Utils {
       ? '{"translate":"%s ","with":["'~item.amount~'"]'~colorTag~'},'
       : '';
     val name = showName 
-      ? '{"translate":"[%s]","with":["'~item.displayName~'"]'~colorTag~'},'
+      ? ',{"translate":"[%s]","with":["'~item.displayName~'"]'~colorTag~'}'
       : '';
-
-    return 
+    val iconQuark = 
       '{"text":"\u00A7f   ","hoverEvent":{"action":"show_item","value":"'
         ~item.asData().toNBTString().replaceAll('"', '\\\\"')
-      ~'"},"extra":['
-        ~amount
-        ~name
-        ~'{"text":""}'
-        // `{"text":""}` is used so that when `showName` is false, the text can still be displayed.
-        // This also allows for simpler comma handling
-      ~']}';
+      ~'"}}';
+    return '{"text":"","extra":['~amount~iconQuark~name~']}';
   }
 
   function tellrawSend(player as IPlayer, message as string) as void {
