@@ -40,13 +40,8 @@ events.onPlayerInteractEntity(function(event as crafttweaker.event.PlayerInterac
     || !player.isSneaking
     // Player must be holding something
     || !player.hasItemInSlot(MAIN_HAND)
-  ) {
-    return;
-  }
-  var target as IPlayer = event.target;
-  if (
     // Player must be targeting another player
-    !(target instanceof IPlayer)
+    || !(event.target instanceof IPlayer)
   ) {
     return;
   }
@@ -59,6 +54,7 @@ events.onPlayerInteractEntity(function(event as crafttweaker.event.PlayerInterac
     return;
   }
 
+  var target as IPlayer = event.target;
   var item = player.mainHandHeldItem;
   target.give(item);
   player.setItemToSlot(MAIN_HAND, null);
