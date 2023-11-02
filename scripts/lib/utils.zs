@@ -439,7 +439,7 @@ zenClass Utils {
       : ',"color":"'~color~'"';
     val displayName = item.hasDisplayName
       ? '"'~item.tag.display.Name.asString()~'"'
-      : '{"translate":"'~item.definition.name~'.name"}';
+      : '{"translate":"'~item.name~'.name"}';
 
     val amount = item.amount > 1
       ? '{"translate":"%s ","with":["'~item.amount~'"]'~colorTag~'},'
