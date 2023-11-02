@@ -31,8 +31,8 @@ for lang, entries in {
 
 val MAIN_HAND = crafttweaker.entity.IEntityEquipmentSlot.mainHand();
 
-events.onPlayerInteractEntity(function(event as crafttweaker.event.PlayerInteractEntityEvent){
-  var player = event.player;
+events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEntityEvent){
+  var player = e.player;
   if (
     // Fake player not allowed
     player.fake
@@ -41,20 +41,19 @@ events.onPlayerInteractEntity(function(event as crafttweaker.event.PlayerInterac
     // Player must be holding something
     || !player.hasItemInSlot(MAIN_HAND)
     // Player must be targeting another player
-    || !(event.target instanceof IPlayer)
+    || !(e.target instanceof IPlayer)
   ) {
     return;
   }
 
   // Cancel original interact event on both sides
-  event.cancel();
-
+  e.cancel();
   // Next only server-side actions
-  if(event.world.remote) {
+  if(e.world.remote) {
     return;
   }
 
-  var target as IPlayer = event.target;
+  var target as IPlayer = e.target;
   var item = player.mainHandHeldItem;
   target.give(item);
   player.setItemToSlot(MAIN_HAND, null);
