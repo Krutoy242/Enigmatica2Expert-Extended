@@ -36,6 +36,8 @@ val coinMap = {
 	<jaopca:item_cointitanium>: {energyData: 120000, override: true},
 	<jaopca:item_cointungsten>: {energyData: 60000, override: true},
 	<jaopca:item_coinastralstarmetal>: {energyData: 45000, override: true},
+	
+	<redstonerepository:material:9> : {energyData: 3901410, override: true},
 
 	<contenttweaker:coin_advancedalloy> : {energyData: 153290, inputItem: {id:"ic2:crafting",Damage:3}},
 	<contenttweaker:coin_alchemicalbrass> : {energyData: 14375, inputItem: {id:"thaumcraft:ingot",Damage:2}},
@@ -132,7 +134,6 @@ val coinMap = {
 	<contenttweaker:coin_draconicmetal> : {energyData: 19650770, inputItem: {id:"tconevo:metal",Damage:5}},
 	<contenttweaker:coin_elektron60> : {energyData: 139565, inputItem: {id:"contenttweaker:elektron60_ingot",Damage:0}},
 	<contenttweaker:coin_gaiaspirit> : {energyData: 15075650, inputItem: {id:"botania:manaresource",Damage:14}},
-	<contenttweaker:coin_gelidenderium> : {energyData: 3901410, inputItem: {id:"redstonerepository:material",Damage:1}},
 	<contenttweaker:coin_glitchinfused> : {energyData: 1203500, inputItem: {id:"deepmoblearning:glitch_infused_ingot",Damage:0}},
 	<contenttweaker:coin_hafnium> : {energyData: 250000, inputItem: {id:"qmd:ingot",Damage:6}},
 	<contenttweaker:coin_infinity> : {energyData: 9999999},

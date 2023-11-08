@@ -479,7 +479,6 @@ buildCoin("coin_fluixsteel");
 buildCoin("coin_fluxedelectrum");
 buildFoodyCoin("coin_foursmore", 12, 47.45);
 buildCoin("coin_gaiaspirit");
-buildCoin("coin_gelidenderium");
 buildCoin("coin_glitchinfused");
 buildCoin("coin_glowstone");
 buildCoin("coin_graphite");
