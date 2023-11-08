@@ -2,40 +2,21 @@
 
 🚧✅❌ List of priorities:
 
-- [ ] ✏️ nanomachines Dissaper On Rejoin Server
-- [ ] ✏️ Make Elite Component craftable without tech
 - [ ] ✏️ Stackable Fluid Containers duped when crafting with fluid
-- [ ] ✏️ Apiarist Villagest should seel Combs cor Cacoa
 - [ ] ✏️ Infinity Furnace should perform one recipe function for each recip instead of adding ~600 recipes
-- [ ] 🟢 Configure `Villager Trade Tables`
-- [ ] 📖 Stools and Tables less chance for Decor reward
-- [ ] 📖 Improve messages "Player Obtained [...]" with `tellraw` command
-- [ ] 📖 `/levelupTool` use in quest reward
-- [ ] 📖 Awakened Draconium mining level add alternatives
-- [ ] 🟢 moveToServerStarter
-- [ ] 🟢 add `Fairy Lights`
+- [ ] ✏️ Apiarist Villagest should sell Combs cor Cacoa
+- [ ] 🟢 move To Server Starter
 - [ ] ⛑️ Add amount of blocks in Portal Spread message
 - [ ] ✏️ Make recipe function for Rats Nuggets recipes
-- [ ] ✏️ Fix Some TCon generated tools/armor generated with 4th material (must be only 3)
-- [ ] ✏️ Add recipe for nuclear core of AdvRock rocket
-- [ ] ✏️ Remove Sand+IronPlate Induction smelter recipe
-- [ ] ✏️ buffAdvGenEthyleneOutput and other fuels
-- [ ] ✏️ Add Greater crimson portal recipe
 - [ ] 🌍 Generate Quicksand with Cofh instead of BoP to add lakes in OTG worlds
 - [ ] ✏️ Configure `Redstone Repository`
 - [ ] 📖 Add langs to "Fireproof" trait
-- [ ] 📖 Laser Gun add Legendary reward
-- [ ] 📖 Compact Machine better reward
+- [ ] 📖 sort TC book By Material Power
+- [ ] ✏️ nanomachines Dissaper On Rejoin Server
+- [ ] ✏️ Make Elite Component craftable without tech
+- [ ] 📖 `/levelupTool` use in quest reward
+- [ ] 🔴 Remove `Culinari Construct`
 - [ ] 📖 ExCr tables should be available from Conflux levels
-- [ ] 📖 Creative Modifier fix dependency
-- [ ] ✏️ Fix Chemical Reactor nutrient distillation conflicts
-- [ ] ✏️ Prevent Dupes of uncrafting table:
-  > Castle doors
-  > Armor trims
-  > Dark Steel Upgrades
-  > Transmuter's stone
-  > Gas Tanks, Fluid Tanks
-  > Loot Crates
 
 ```sh
 /bcore_ticktime
@@ -89,6 +70,8 @@ minecraft:sponge
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] 🟢 add `Fairy Lights` when released https://github.com/ACGaming/UniversalTweaks/pull/291
+- [ ] 📖 Improve messages "Player Obtained [...]" with `tellraw` command. Cant untill fix `/tellraw` for Discord
 - [ ] ✏️ `Harbinger Cube` must spawn with strong Iron/Diamond skin effects and as Blight
 - [ ] 🌍 fix Mercury Have Water
 - [ ] 🟢 Unify QMD cobalt dust after QMD update
@@ -97,7 +80,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🔨 fix Invincible Combo `Strength Of Will` + `Runic Shield`
 - [ ] ✏️ Fix Health boost potion recipe (one from gold ingot)
 - [ ] 📖 Add new `Conflux VI` level based on 100% trophy completion
-- [ ] 🔴 Remove `Culinari Construct`
 - [ ] ✏️ Add mobs that always blights (probably breedable mobs)
 - [ ] ✏️ Moon stone could be used in Animals chapter
 - [ ] ✏️ Dank Null go out of ExtendedCrafting (keep EC recipes for end-tier)
@@ -245,7 +227,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📖 Change Nether restriction to reward (probably Decuple Compressed Netherrack, or something more team-playable)
 - [ ] ✏️ Spray Pyrotheum or other liquids to turn blocks into charcoal or other stuff.
 - [ ] ✏️ Change `Expire in block` craft to be faster
-- [ ] ✏️ ![](https://is.gd/0IeIml "Ash") add to liquid interaction
+- [ ] ✏️ ![](https://github.com/Krutoy242/mc-icons/raw/master/i/iceandfire/ash__0.png "Ash") add to liquid interaction
 - [ ] ✏️ Remove wrong nuggets from Infernal Furnace
 - [ ] ✏️ Add ![](https://is.gd/enLvDu "Uncrafting Table")![](https://is.gd/OcNNZN "Uncrafting Grinder")![](https://is.gd/Qdrz8o "Creative Bin") as Endgame item, right before creative upgrade
 - [ ] ✏️ Fix Omega Potion Elixir ingredient have weird scrolling
@@ -306,7 +288,7 @@ Items that should have more uses:
 ![](https://git.io/JnN1t "Sun Crystal")
 ![](https://git.io/JRLSJ "Ice Shard")
 ![](https://git.io/JRnDa "Tar")
-![](https://is.gd/ZmKHJr "Gorgon Head")
+![](https://github.com/Krutoy242/mc-icons/raw/master/i/iceandfire/gorgon_head__0.png "Gorgon Head")
 ![](https://github.com/Krutoy242/mc-icons/raw/master/i/iceandfire/cyclops_eye__0.png "Eye of Cyclops")
 
 ### Tier 3
@@ -330,8 +312,8 @@ Items that should have more uses:
 
 ![](https://git.io/JG5U9 "Decay Generator")
 ![](https://git.io/JtDnO "Chemical Thrower")
-![](https://is.gd/rneFnc "Blue Fire Jar")
-![](https://is.gd/XqQPA0 "Radiator Block")
+![](https://github.com/Krutoy242/mc-icons/raw/master/i/biomesoplenty/jar_filled__1.png "Blue Fire Jar")
+![](https://github.com/Krutoy242/mc-icons/raw/master/i/immersiveengineering/metal_decoration0__7.png "Radiator Block")
 
 ---
 

@@ -25,10 +25,10 @@
 	<Recipe timeRequired="100" power="30000">
 		<input>
 			<fluidStack>short.mead 16000</fluidStack>
-			<oreDict>itemSkull 8</oreDict>
-			<oreDict>itemPulsatingPowder 2</oreDict>
-			<oreDict>itemEnderCrystalPowder 1</oreDict>
 			<oreDict>itemPrecientPowder 1</oreDict>
+			<oreDict>itemEnderCrystalPowder 1</oreDict>
+			<oreDict>itemPulsatingPowder 2</oreDict>
+			<oreDict>itemSkull 8</oreDict>
 		</input>
 		<output>
 			<fluidStack>vapor_of_levity 1000</fluidStack>
@@ -37,9 +37,9 @@
 	<Recipe timeRequired="40" power="30000">
 		<input>
 			<fluidStack>short.mead 16000</fluidStack>
-			<oreDict>itemSkull 8</oreDict>
-			<oreDict>itemPulsatingPowder 1</oreDict>
 			<oreDict>itemEnderCrystalPowder 1</oreDict>
+			<oreDict>itemPulsatingPowder 1</oreDict>
+			<oreDict>itemSkull 8</oreDict>
 		</input>
 		<output>
 			<fluidStack>ender_distillation 1000</fluidStack>

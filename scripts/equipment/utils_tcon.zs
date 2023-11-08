@@ -4,6 +4,7 @@ import mods.ctutils.utils.Math.max;
 import mods.ctutils.utils.Math.min;
 
 #priority 100
+#reloadable
 
 
 

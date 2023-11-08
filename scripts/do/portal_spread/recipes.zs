@@ -38,6 +38,9 @@ static wildcardedNumIds as bool[int][int][int]
 // Dimensions that copy its recipes from other dimensions
 static dimFallbacks as int[int] = {} as int[int];
 
+// Same as above but flipped - list of all dimensions that depends on this one
+static dimDependents as int[][int] = {} as int[][int];
+
 // Set of dimensions that have recipes
 static dimHasRecipes as bool[int] = {} as bool[int];
 
@@ -100,7 +103,14 @@ function setState(dimFrom as int, dimTo as int, blockFrom as IBlockState, blocks
   transformableBlockNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
 
   stateRecipes[dimFrom][dimTo][blockFrom] = blocksTo;
+  
+  // Update this dim and all dependent dims
   dimHasRecipes[dimFrom] = true;
+  if(!isNull(dimDependents[dimFrom])) {
+    for i, dep in dimDependents[dimFrom] {
+      dimHasRecipes[dep] = true;
+    }
+  }
 
   // Update untransformable blocks
   for blockTo in blocksTo {
@@ -152,6 +162,9 @@ function setOreBlocks(dimFrom as int, dimTo as int, oredict as IOreDictEntry, bl
  */
 function setDimensionFallback(copyDim as int, baseDim as int) as void {
   dimFallbacks[copyDim] = baseDim;
+  dimHasRecipes[copyDim] = dimHasRecipes[baseDim];
+  if(isNull(dimDependents[baseDim])) dimDependents[baseDim] = [] as int[];
+  dimDependents[baseDim] = dimDependents[baseDim] + copyDim;
 }
 
 ////////////////////////////////////////////////////////////

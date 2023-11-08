@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "io.github.jodlodi.twilighttweaks.mixin",
+  "minVersion": "0.8",
+  "setSourceFile": true,
+  "priority": 0,
+  "refmap": "twilighttweaks.mixin-refmap.json",
+  "mixins": [
+    "MixinTransformPowderItem",
+    "MixinUncraftingContainer"
+  ],
+  "client": [],
+  "server": []
+}

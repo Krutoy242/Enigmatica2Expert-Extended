@@ -131,7 +131,7 @@ craft.remake(<nuclearcraft:supercooler>, ["pretty",
   "T": <ic2:nuclear:7>,     # Tiny Pile of Plutonium
   "|": <ic2:crafting:42>,   # Shaft (Bronze)
   "c": <ore:chassis>,       # Machine Chassis
-  "~": <fluid:ic2coolant> * 1000, # IC2 Coolant
+  "~": LiquidIngr('ic2coolant'), # IC2 Coolant
 });
 
 # [Rock Crusher] from [Machine Chassis][+4]

@@ -11,11 +11,19 @@
 		count: 8
 	},
 	{
+		icon: {
+			id: "ftbquests:lootcrate",
+			Count: 6,
+			tag: {
+				type: "common"
+			}
+		},
 		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
 			}
-		}
+		},
+		count: 6
 	}]
 }

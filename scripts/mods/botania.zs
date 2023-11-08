@@ -369,11 +369,11 @@ mods.botania.ManaInfusion.addInfusion(<botania:tinypotato> * 640, <minecraft:pot
 
 # High-tech potato recipe
 mods.qmd.target_chamber.addRecipe(
-	<botania:tinypotato>,
+	<botania:tinypotato>, null,
 	(<particle:proton> * 2000000) ^ 100000000,
 	<botania_tweaks:compressed_tiny_potato_8>,
-	null, null, null,
-	200000000, 1.0, 0, 0
+	null, null, null, null,
+	200000000, 1.0, 0
 );
 
 # Make Crafty Crate tables free

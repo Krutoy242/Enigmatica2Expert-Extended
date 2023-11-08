@@ -18,10 +18,10 @@ import scripts.jei.mod.ic2.addCrop as addCrop;
 utils.rh(<ic2:te:76>); // Electrolyzer
 
 # Hydrated Coal Dust recipe consumes containers that can store 1000mB + liquid, this fixes that
-recipes.addShapeless("ic2_hydrated_coal_dust_liquid_fix", <ic2:dust:3>, [<ore:dustCoal>, <liquid:water> * 1000]);
-recipes.addShapeless("ic2_hydrated_tin_fix", <ic2:dust:29>, [<ore:dustTin>, <liquid:water> * 1000]);
-recipes.addShapeless("ic2_coffee_fix", <ic2:mug:1>, [<ic2:mug>, <ic2:crop_res:1>, <fluid:water> * 1000]);
-recipes.addShapeless("ic2_heat_storage_fix", <ic2:heat_storage>, [<ore:plateTin>, <ore:plateTin>, <fluid:ic2coolant> * 1000, <ore:plateTin>, <ore:plateTin>]);
+recipes.addShapeless("ic2_hydrated_coal_dust_liquid_fix", <ic2:dust:3>, [<ore:dustCoal>, LiquidIngr('water')]);
+recipes.addShapeless("ic2_hydrated_tin_fix", <ic2:dust:29>, [<ore:dustTin>, LiquidIngr('water')]);
+recipes.addShapeless("ic2_coffee_fix", <ic2:mug:1>, [<ic2:mug>, <ic2:crop_res:1>, LiquidIngr('water')]);
+recipes.addShapeless("ic2_heat_storage_fix", <ic2:heat_storage>, [<ore:plateTin>, <ore:plateTin>, LiquidIngr('ic2coolant'), <ore:plateTin>, <ore:plateTin>]);
 furnace.remove(<ic2:dust:2>);
 furnace.addRecipe(<thermalfoundation:material:768>, <ic2:dust:3>);
 
@@ -357,7 +357,7 @@ craft.make(<immersiveengineering:treated_wood> * 8, ["pretty",
   "# ~ #",
   "# # #"], {
   "#": <ore:plankWood>, # Oak Wood Planks
-  "~": <fluid:ic2creosote> * 1000, # Creosote Bucket
+  "~": LiquidIngr("ic2creosote"),
 });
 
 // Weed => Fertilizer => Green Fertilizer
@@ -370,25 +370,25 @@ scripts.process.crush(<ic2:crop_seed_bag>, <ic2:crafting:23>, "only: Macerator",
 # [Scrap]*64 from [Condensate Water Bucket][+1]
 craft.shapeless(<ic2:crafting:23> * 64, "G~", {
   "G": <rats:garbage_pile>, # Garbage Pile
-  "~": <fluid:condensate_water> * 1000, # Condensate Water
+  "~": LiquidIngr('condensate_water'), # Condensate Water
 });
 
 # [Scrap]*64
 craft.shapeless(<ic2:crafting:23> * 64, "G~", {
   "G": <nuclearcraft:wasteland_earth>,
-  "~": <fluid:condensate_water> * 1000, # Condensate Water
+  "~": LiquidIngr('condensate_water'), # Condensate Water
 });
 
 # [Scrap Box]*64
 craft.shapeless(<ic2:crafting:24> * 32, "G~", {
   "G": <trinity:radioactive_earth>,
-  "~": <fluid:condensate_water> * 1000, # Condensate Water
+  "~": LiquidIngr('condensate_water'), # Condensate Water
 });
 
 # [Scrap Box]*64
 craft.shapeless(<ic2:crafting:24> * 64, "G~", {
   "G": <trinity:radioactive_earth2>,
-  "~": <fluid:water> * 1000, # Condensate Water
+  "~": LiquidIngr('water'), # Condensate Water
 });
 
 # --------------------------------------------------------------------------------------------

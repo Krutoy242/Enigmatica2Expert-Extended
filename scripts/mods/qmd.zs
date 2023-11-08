@@ -169,9 +169,9 @@ scripts.process.saw(<ore:bouleSilicon>, <advancedrocketry:wafer>, "except: shape
 
 // Unify P-Type Doped Silicon
 mods.qmd.target_chamber.removeRecipeWithInput(<qmd:semiconductor:3>, ((<particle:boron_ion>*1000000)^600)~2.0);
-mods.qmd.target_chamber.addRecipe(<ore:waferSilicon>, ((<particle:boron_ion>*1000000)^600)~2.0, <qmd:semiconductor>, 
+mods.qmd.target_chamber.addRecipe(<ore:waferSilicon>, null, ((<particle:boron_ion>*1000000)^600)~2.0, <qmd:semiconductor>, null,
 null, null, null, 
-1000, 1.0, 0, 0);
+1000, 1.0, 0);
 
 //mods.qmd.nucleosynthesis_chamber.addRecipe(IIngredient inputFluid1, IIngredient inputFluid2, IIngredient inputParticle, IIngredient outputFluid1, IIngredient outputFluid2, {long maxEnergy}, {long heatRelased})
 mods.qmd.nucleosynthesis_chamber.addRecipe(<liquid:sky_stone>*52, <liquid:enrichedlava>*20, <particle:neutron>*1000000, <liquid:neutronium>*72, null, 1000000, 874000);
@@ -211,11 +211,10 @@ function remakeTarget(
   p3 as mod.qmd.particle.IParticleStack,
   maxEnergy as int,
   crossSection as double,
-  energyReleased as int = 0,
-  radiation as int = 0
+  energyReleased as int = 0
 ) as void {
   mods.qmd.target_chamber.removeRecipeWithInput(oldItem, particle);
-  mods.qmd.target_chamber.addRecipe(newItem, particle, output, p1, p2, p3, maxEnergy, crossSection, energyReleased, radiation);
+  mods.qmd.target_chamber.addRecipe(newItem, null, particle, output, null, p1, p2, p3, maxEnergy, crossSection, energyReleased);
 }
 
 // Tungsten ingot replacement
@@ -230,6 +229,11 @@ remakeTarget(<qmd:ingot>, (<particle:antideuteron>*10000000)     , TG, <qmd:wast
 
 // Melt tungsten misssed recipe
 scripts.process.melt(<endreborn:item_ingot_wolframium>, <fluid:tungsten> * 144);
+
+// Cast missing recipe
+mods.tconstruct.Casting.addTableRecipe(<endreborn:wolframium_nugget>, <tconstruct:cast_custom:1>, <liquid:tungsten>, 16, false, 40);
+mods.tconstruct.Casting.addTableRecipe(<endreborn:item_ingot_wolframium>, <tconstruct:cast_custom>, <liquid:tungsten>, 144, false, 200);
+mods.tconstruct.Casting.addBasinRecipe(<endreborn:block_wolframium>, null, <liquid:tungsten>, 1296, false, 800);
 
 # Sodium Chlorde (salt)
 mods.nuclearcraft.Crystallizer.removeRecipeWithOutput(<qmd:chemical_dust:3>);
@@ -246,7 +250,6 @@ utils.rh(<qmd:chemical_dust:2>);
 ////////////////////////////////////////
 
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<fluid:mercury> * 144);
-mods.nuclearcraft.IngotFormer.removeRecipeWithInput(<fluid:mercury> * 144);
 mods.qmd.nucleosynthesis_chamber.removeRecipeWithInput(<fluid:gold> * 144, null, (<particle:neutron>*13980000)~1);
 mods.qmd.nucleosynthesis_chamber.addRecipe(<fluid:gold> * 144, null, (<particle:neutron>*13980000)~1, <liquid:fluid_quicksilver>*144, null, 10000000, 3610);
 mods.qmd.nucleosynthesis_chamber.removeRecipeWithInput(<fluid:mercury> * 144, null, (<particle:neutron>*16940000)~1);
@@ -262,9 +265,6 @@ mods.qmd.nucleosynthesis_chamber_heater.addRecipe(<liquid:fluid_quicksilver>, <f
 // https://github.com/Filostorm/Multiblock-Madness/blob/19659008c64234f96d5607df3f9ca6df7adee778/scripts/Non%20Mod%20Scripts/unification.zs#L150-L301
 
 // New Ore Leacher Recipes
-mods.qmd.ore_leacher.removeRecipeWithOutput(<minecraft:redstone> * 12, <qmd:ingot2:2> * 3, null);
-mods.qmd.ore_leacher.removeRecipeWithOutput(<qmd:ingot2:2>, <thermalfoundation:material:771>, null);
-
 mods.qmd.ore_leacher.addRecipe(<ore:oreRedstone>, <liquid:nitric_acid>*16, <liquid:hydrochloric_acid>*16, <liquid:sulfuric_acid>*16, <minecraft:redstone>*12, <thaumcraft:quicksilver>*3, null, 1.0, 1.0, 0);
 mods.qmd.ore_leacher.addRecipe(<ore:dustRedstone>, <liquid:nitric_acid>*16, <liquid:hydrochloric_acid>*16, <liquid:sulfuric_acid>*16, 
 ChanceItemIngredient.create(<thaumcraft:quicksilver>, 50, 0), 
@@ -272,24 +272,6 @@ ChanceItemIngredient.create(<thermalfoundation:material:771>, 50, 0),
 null, 1.0, 1.0, 0.001);
 
 // New Fuel Reprocessor Recipes
-val fuelstorewrite =
-[
-<qmd:waste_spallation:1>,
-<qmd:waste_spallation:2>,
-<qmd:waste_spallation:3>,
-<qmd:waste_spallation:4>,
-<qmd:waste_spallation:5>,
-<qmd:waste_spallation:6>,
-<qmd:waste_spallation:8>,
-<qmd:waste_spallation:7>,
-<qmd:waste_spallation:9>
-]
- as IItemStack[];
-
-for item in fuelstorewrite {
-	mods.nuclearcraft.FuelReprocessor.removeRecipeWithInput(item);
-}
-
 mods.nuclearcraft.FuelReprocessor.addRecipe(<qmd:waste_spallation:1>, 
 ChanceItemIngredient.create(<nuclearcraft:fission_dust:1>, 9, 0), 
 ChanceItemIngredient.create(<nuclearcraft:fission_dust:2>, 15, 0), 
@@ -381,36 +363,29 @@ null,
 null);
 
 // New Target Chamber Recipes
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:ingot2:2>, (<particle:proton>*50000000)^200000);
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:ingot2:2>, (<particle:proton>*5000000)^6580000);
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:ingot2:2>, (<particle:proton>*5000000)^1540000);
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:ingot2:2>, <particle:antiproton>*1000000);
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:ingot2:2>, (<particle:deuteron>*10000000)^13100000);
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:ingot2:2>, <particle:antideuteron>*1000000);
-
-mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, (<particle:proton>*50000000)^200000, <qmd:waste_fission>, 
+mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, null, (<particle:proton>*50000000)^200000, <qmd:waste_fission>, null,
 null, <particle:neutron>, null, 
-1000000, 0.02, 0, 0);
+1000000, 0.02, 0);
 
-mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, (<particle:proton>*5000000)^6580000, <qmd:waste_spallation2:3>, 
+mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, null, (<particle:proton>*5000000)^6580000, <qmd:waste_spallation2:3>, null,
 <particle:proton>, null, <particle:antiproton>, 
-20000000, 0.2, -6580000, 0);
+20000000, 0.2, -6580000);
 
-mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, (<particle:proton>*5000000)^1540000, <qmd:waste_spallation2:3>, 
+mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, null, (<particle:proton>*5000000)^1540000, <qmd:waste_spallation2:3>, null,
 <particle:pion_plus>, null, <particle:pion_minus>, 
-5000000, 0.2, -1540000, 0);
+5000000, 0.2, -1540000);
 
-mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, <particle:antiproton>*1000000, <qmd:waste_spallation2:3>, 
+mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, null, <particle:antiproton>*1000000, <qmd:waste_spallation2:3>, null,
 <particle:pion_plus>, <particle:pion_naught>, <particle:pion_minus>, 
-10000000, 1.0, 1460000, 0);
+10000000, 1.0, 1460000);
 
-mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, (<particle:deuteron>*10000000)^13100000, <qmd:waste_spallation2:3>, 
+mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, null, (<particle:deuteron>*10000000)^13100000, <qmd:waste_spallation2:3>, null,
 <particle:deuteron>, null, <particle:antideuteron>, 
-20000000, 0.1, -13100000, 0);
+20000000, 0.1, -13100000);
 
-mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, <particle:antideuteron>*1000000, <qmd:waste_spallation2:3>, 
+mods.qmd.target_chamber.addRecipe(<thaumcraft:quicksilver>, null, <particle:antideuteron>*1000000, <qmd:waste_spallation2:3>, null,
 <particle:pion_plus>*4, <particle:pion_naught>*4, <particle:pion_minus>*4, 
-10000000, 1.0, 2090000, 0);
+10000000, 1.0, 2090000);
 
 utils.rh(<qmd:ingot2:2>);
 ////////////////////////////////////////
@@ -418,21 +393,21 @@ utils.rh(<qmd:ingot2:2>);
 // Low-energy alt recipe
 # [Basalt Sediment] from [Basalt]
 mods.qmd.target_chamber.addRecipe(
-  <ore:stoneBasalt>,
+  <ore:stoneBasalt>, null,
   (<particle:boron_ion>*1000000)^20,
   <advancedrocketry:basalt>,
-  null, null, null,
-  2000, 1.0, 0, 0
+  null, null, null, null,
+  2000, 1.0, 0
 );
 
 // Low-energy alt recipe
 # [Draconium Infused Obsidian] from [Obsidian]
 mods.qmd.target_chamber.addRecipe(
-  <ore:obsidian>,
+  <ore:obsidian>, null,
   (<particle:boron_ion>*1000000)^20,
   <draconicevolution:infused_obsidian>,
-  null, null, null,
-  2000, 1.0, 0, 0
+  null, null, null, null,
+  2000, 1.0, 0
 );
 
 // mods.qmd.target_chamber.addRecipe(

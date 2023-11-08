@@ -32,7 +32,7 @@ remakeEx(<deepmoblearning:machine_casing>, [
   [<deepmoblearning:soot_covered_plate>, <deepmoblearning:soot_covered_redstone>, <deepmoblearning:soot_covered_plate>]]);
 
 recipes.remove(<deepmoblearning:polymer_clay> * 16);
-recipes.addShapeless(<deepmoblearning:polymer_clay> * 16, [<fluid:concrete> * 1000, <ore:dustClay>, <ore:dustClay>, <ore:dustClay>, <ore:dustGold>, <ore:dustLapis>]);
+recipes.addShapeless(<deepmoblearning:polymer_clay> * 16, [LiquidIngr('concrete'), <ore:dustClay>, <ore:dustClay>, <ore:dustClay>, <ore:dustGold>, <ore:dustLapis>]);
 
 # Remove level-to-level conversions
 recipes.remove(<deepmoblearning:living_matter_hellish>);

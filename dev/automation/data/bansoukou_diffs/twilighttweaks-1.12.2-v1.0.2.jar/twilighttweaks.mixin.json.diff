@@ -1,0 +1,9 @@
+@@ -7,8 +7,6 @@
+   "priority": 0,
+   "refmap": "twilighttweaks.mixin-refmap.json",
+   "mixins": [
+-    "MixinFinalBossSpawnerTileEntity",
+-    "MixinFinalCastleBossGazeboComponent",
+     "MixinTransformPowderItem",
+     "MixinUncraftingContainer"
+   ],

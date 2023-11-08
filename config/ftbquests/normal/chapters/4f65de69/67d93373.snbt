@@ -38,5 +38,10 @@
 		type: "item",
 		item: "compactmachines3:tunneltool",
 		count: 6
+	},
+	{
+		uid: "315ca5bf",
+		type: "item",
+		item: "compactmachines3:machine 1 5"
 	}]
 }

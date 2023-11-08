@@ -119,13 +119,13 @@ remake("environmentaltech modifier_speed",
 	<environmentaltech:modifier_speed>, [
 		[<ore:blockRedstone>, <environmentaltech:erodium_crystal>, <ore:blockRedstone>], 
 		[<environmentaltech:mica>, <environmentaltech:modifier_null>, <environmentaltech:mica>], 
-		[<fluid:exhaust_steam> * 1000, <environmentaltech:lonsdaleite_crystal>, <fluid:exhaust_steam> * 1000]]);
+		[LiquidIngr('exhaust_steam'), <environmentaltech:lonsdaleite_crystal>, LiquidIngr('exhaust_steam')]]);
 
 remake("environmentaltech modifier_accuracy", 
 	<environmentaltech:modifier_accuracy>, [
 		[<ore:blockDiamond>, <environmentaltech:pladium_crystal>, <ore:blockDiamond>], 
 		[<environmentaltech:mica>, <environmentaltech:modifier_null>, <environmentaltech:mica>], 
-		[<fluid:exhaust_steam> * 1000, <environmentaltech:lonsdaleite_crystal>, <fluid:exhaust_steam> * 1000]]);
+		[LiquidIngr('exhaust_steam'), <environmentaltech:lonsdaleite_crystal>, LiquidIngr('exhaust_steam')]]);
 
 # Nanobot Oredict for Quest book
 <ore:nanoBotBeacon>.addItems([

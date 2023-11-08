@@ -21,7 +21,7 @@ for tomato in <ore:cropTomato>.items {
 	recipes.remove(<forestry:book_forester>);
 	recipes.addShapeless("Foresters Manual", 
 	<forestry:book_forester>, 
-	[<minecraft:book>, <ore:treeSapling>, <ore:treeSapling>]);
+	[<minecraft:book>, <minecraft:sapling:*>, <minecraft:sapling:*>]);
 
 # Intricate Circuit Board
 mods.forestry.Carpenter.removeRecipe(<forestry:chipsets:3>);
@@ -405,4 +405,14 @@ craft.make(<forestry:fertilizer_bio> * 6, ["pretty",
   "  ▲  "], {
   "▲": <ore:dustAsh>, # Ash
   "M": <ore:ballMud>, # Mud Ball
+});
+
+# [Arborist's Chest] from [Oak Chest][+2]
+craft.remake(<forestry:tree_chest>, ["pretty",
+  "  ■  ",
+  "P c P",
+  "P P P"], {
+  "■": <ore:blockGlass>, # Glass
+  "P": <ic2:crafting:20>, # Plantball
+  "c": <ore:chest>, # Oak Chest
 });

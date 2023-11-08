@@ -88,16 +88,6 @@
 		count: 64
 	},
 	{
-		icon: "rustic:chair_ironwood 64",
-		item: "rustic:chair_ironwood",
-		count: 64
-	},
-	{
-		icon: "rustic:table_ironwood 64",
-		item: "rustic:table_ironwood",
-		count: 64
-	},
-	{
 		icon: "quark:smoker 4",
 		item: "quark:smoker",
 		count: 4
@@ -111,11 +101,6 @@
 		icon: "tconstruct:throwball 16",
 		item: "tconstruct:throwball",
 		count: 16
-	},
-	{
-		icon: "rats:rat_tube_light_blue 64",
-		item: "rats:rat_tube_light_blue",
-		count: 64
 	},
 	{
 		icon: "rats:rat_lantern 64",
@@ -450,6 +435,11 @@
 		icon: "rustic:vase 4 2",
 		item: "rustic:vase 1 2",
 		count: 4
+	},
+	{
+		icon: "minecraft:sea_lantern 8",
+		item: "minecraft:sea_lantern",
+		count: 8
 	}],
 	loot_crate: {
 		string_id: "decor",

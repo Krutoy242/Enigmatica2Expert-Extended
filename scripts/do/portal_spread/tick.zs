@@ -17,10 +17,12 @@ import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IFacing;
 import crafttweaker.world.IWorld;
 
+import scripts.do.portal_spread.config.config;
 import scripts.do.portal_spread.data.getDimsMap;
 import scripts.do.portal_spread.data.portalIdToPos;
 import scripts.do.portal_spread.data.removePortal;
 import scripts.do.portal_spread.data.updatePortal;
+import scripts.do.portal_spread.message.log;
 import scripts.do.portal_spread.message.notifyPlayers;
 import scripts.do.portal_spread.modifiers.getCorners;
 import scripts.do.portal_spread.utils.getNextPoint;
@@ -28,19 +30,23 @@ import scripts.do.portal_spread.utils.getNextPoint;
 // Map of modifiers
 static MODIF as int[string] = scripts.do.portal_spread.modifiers.MODIF;
 
-static spreadDelay as double = scripts.do.portal_spread.config.spreadDelay;
-static blockChecks as int = scripts.do.portal_spread.config.blockChecks;
+static spreadDelay as double = config.spreadDelay;
+static blockChecks as int = config.blockChecks;
 static dimHasRecipes as bool[int] = scripts.do.portal_spread.recipes.dimHasRecipes;
 
 ////////////////////////////////////////////////////
 
 // Save new portal coordinates
 events.onPortalSpawn(function(e as crafttweaker.event.PortalSpawnEvent) {
-  if(!e.valid || e.world.remote) return;
+  log('onPortalSpawn event thrown in world §7'~e.world.dimension~' §8at pos: §7'~e.position.x~'§8:§7'~e.position.y~'§8:§7'~e.position.z, e.world);
+  if(!e.valid) return log('portal not valid', e.world);
+  if(e.world.remote) return log('event is client sided', e.world);
+  for dim, _ in dimHasRecipes {
+    log('dim with recipe: '~dim);
+  }
+  if(isNull(dimHasRecipes[e.world.dimension])) return log('this dimension doesn\'t have recipes', e.world);
 
-  // val blockPos = e.position.getOffset(crafttweaker.world.IFacing.up(), 1);
-  // val blockState = e.world.getBlockState(blockPos);
-  // server.commandManager.executeCommandSilent(server, '/say §8Spawned §6' ~ blockState.block.definition.id);
+
   updatePortal(e.world, -1, e.position);
 });
 

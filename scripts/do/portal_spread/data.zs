@@ -14,6 +14,7 @@ import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 
 import scripts.do.portal_spread.modifiers.getModifiers;
+import scripts.do.portal_spread.message.log;
 
 // Convert block position to string
 function portalPosToId(blockPos as IBlockPos) as string {
@@ -33,6 +34,10 @@ function updatePortal(world as IWorld, dimTo as int, pos as IBlockPos, newData a
   val portalId = portalPosToId(pos);
   val dimToStr = dimTo as string;
   val oldData = world.getCustomWorldData();
+  log('updating protal in dim: §7'~world.dimension~' §8dimTo: §7'~dimTo~' §8portalId: §7'~portalId
+    ~'\n§8oldData: §7'~(isNull(oldData.portalSpread) ? '' : oldData.portalSpread.asString())
+    ~'\n§8newData: §3'~newData.asString()
+  , world);
   world.setCustomWorldData(oldData.deepUpdate({portalSpread: {
     [dimToStr]: {[portalId]: newData}
   }}, mods.zenutils.DataUpdateOperation.MERGE));
@@ -40,12 +45,14 @@ function updatePortal(world as IWorld, dimTo as int, pos as IBlockPos, newData a
 
 // Remove portal from CustomWorldData
 function removePortal(world as IWorld, dimIdNum as int, portalId as string) as void {
+  log('removing portal: §7'~world.dimension~' §8dimIdNum: §7'~dimIdNum~' §8portalId: §7'~portalId, world);
   val dimId = dimIdNum as string;
   val data = world.getCustomWorldData();
   if(isNull(data) || isNull(data.portalSpread) || isNull(data.portalSpread[dimId])) return;
   world.updateCustomWorldData({portalSpread: (
     data.portalSpread - dimId + {[dimId]: data.portalSpread[dimId] - portalId} as IData
   )});
+  log('  portal removed.', world);
 }
 
 // Get map of {dimTo: { portalId: portalData }}

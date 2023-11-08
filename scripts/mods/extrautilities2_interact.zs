@@ -23,7 +23,6 @@ val lassoBlacklist = {
   'thaumadditions:chester': true,
 } as bool[string];
 events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEntityEvent) {
-  print(e.target.definition.id);
   if(
     isNull(e.item)
     || isNull(e.item.definition)

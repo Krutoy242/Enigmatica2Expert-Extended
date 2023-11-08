@@ -14,6 +14,7 @@
 import crafttweaker.world.IWorld;
 
 import scripts.do.portal_spread.data.serializePortals;
+import scripts.do.portal_spread.config.config;
 
 val cmd = mods.zenutils.command.ZenCommand.create("portal_spread");
 cmd.requiredPermissionLevel = 1;
@@ -22,12 +23,14 @@ cmd.requiredPermissionLevel = 1;
 static prefix as string = scripts.do.portal_spread.message.prefix;
 
 cmd.getCommandUsage = function(sender) { return
-  prefix ~ '§7/portal_spread §8<§7status§8>'
+  prefix ~ '§7/portal_spread §8<§7status§8§8|§7debug§8>'
+  ~ '\n§7status§8: show all registered portals'
+  ~ '\n§7debug§8: enable debug mode'
 ; };
 
 val tabCompletion as mods.zenutils.command.IGetTabCompletion = function(server, sender, pos) {
   return mods.zenutils.StringList.create([
-    "status"
+    "status", "debug"
   ]);
 };
 cmd.tabCompletionGetters = [tabCompletion];
@@ -35,9 +38,12 @@ cmd.tabCompletionGetters = [tabCompletion];
 cmd.execute = function(command, server, sender, args) {
   val player = mods.zenutils.command.CommandUtils.getCommandSenderAsPlayer(sender);
 
-  if(args.length >= 1) {
+  if(args.length == 1) {
     if (args[0] == 'status') {
       player.sendMessage(getStatus(player.world));
+      return;
+    } else if (args[0] == 'debug') {
+      player.sendMessage(enableDebug());
       return;
     }
   }
@@ -69,4 +75,15 @@ function getStatus(world as IWorld) as string {
   ~ (portalsStr == '' ? '' :
     prefix ~ '§7Portals§8:\n' ~ portalsStr ~ '\n')
   ;
+}
+
+function enableDebug() as string {
+  if(!config.debug) {
+    config.debug = true;
+    return prefix ~ '§7Debug mode §2enabled§7.'
+      ~'\n§8You must be in §7Creative Mode§8 to see debug messages in chat.'
+      ~'\n§8Messages also repeated in file §7crafttweaker.log';
+  }
+  config.debug = false;
+  return prefix ~ '§7Debug mode §3disabled§7.';
 }

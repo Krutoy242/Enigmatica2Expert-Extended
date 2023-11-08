@@ -174,10 +174,11 @@ for i in 0 .. 6 {
   val energy = 5000000 * (i+1);
   mods.qmd.target_chamber.addRecipe(
     <ore:gemDilithium>,
+    null,
     (<particle:proton>*2000000)^(5000000 * (i+1)),
     <advancedrocketry:crystal>.definition.makeStack(i),
-    null, null, null,
-    5000000 * (i+2), 1.0, 0, 0
+    null, null, null, null,
+    5000000 * (i+2), 1.0, 0
   );
 }
 
@@ -460,6 +461,17 @@ craft.remake(<libvulpes:productfan:6>, ["pretty",
   "⌂": <ic2:casing:5>,   # Steel Item Casing
   "S": <ore:wireSteel>,  # Steel Wire
   "╱": <ore:stickSteel>, # Steel Rod
+});
+
+# [Nuclear Thermal Fission Core] from [Solid Fuel Fission Controller][+3]
+craft.remake(<advancedrocketry:nuclearcore>, ["pretty",
+  "M P M",
+  "B S B",
+  "M P M"], {
+  "M": <libvulpes:structuremachine>,            # Machine Structure
+  "P": <advancedrocketry:liquidtank>,           # Pressurized Tank
+  "B": <ore:processorBasic>,                    # Basic Processor
+  "S": <nuclearcraft:solid_fission_controller>, # Solid Fuel Fission Controller
 });
 
 # Some Alts with advanced machines

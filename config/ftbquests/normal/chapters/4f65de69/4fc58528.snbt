@@ -44,18 +44,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "312cc253",
-		type: "item",
-		item: {
-			id: "minecraft:splash_potion",
-			tag: {
-				Potion: "minecraft:fire_resistance"
-			}
-		}
-	},
-	{
-		uid: "d62a28ba",
-		type: "item",
-		item: "minecraft:flint_and_steel"
+		uid: "e7291528",
+		type: "choice",
+		table: 146
 	}]
 }

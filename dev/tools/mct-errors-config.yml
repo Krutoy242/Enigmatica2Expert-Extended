@@ -33,6 +33,10 @@ replace:
   - from: '(?<cap>(^[^\n]*$\n){5})([^\n]*\n.*)+'
     to: $<cap>  [...]
 
+  # Plugin too slow report
+  - from: Recipe registry plugin is slow, took .+ ms
+    to: Recipe registry plugin is slow, took xxx.x ms
+
 # RegExps to remove entries from output
 ignore:
   # FML errors that most mods have, no harm
@@ -148,6 +152,9 @@ ignore:
 
   # Sledgehammer mod normal behaviour
   - '\[Sledgehammer\]: Skipping reloadSearchTrees'
+
+  # SledgeHammer and RenderLib fix same issue with banner, can be ignored
+  - WARN. .mixin.. Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod unknown-owner, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
 
   # Nutrition cant attach capabilities to Computercraft and Plethora. Doesnt matter since turtles cant eat anyway
   - 'Exception caught during firing event \S+AttachCapabilitiesEvent[\s\S\n]+nutrition.events.EventPlayerJoinWorld[\s\S\n]+'
@@ -275,6 +282,9 @@ ignore:
   # CraftPresence error - dont know how to configure this
   - ERROR. .craftpresence.. Asset name "enigmatica2expert-extended" does not exist, attempting to use an alternative icon "curse"...
 
+  # When modifying loot tables with same name, loottweaker explicitely rename this tables and write this in log
+  - ERROR. .loottweaker.sanity_checks.. Unexpected duplicate pool name 'shader' in table 'twilightforest:entities/questing_ram_rewards'. Duplicate added as 'shader0'.
+
   # Dynamic Surroundings errors that actually wont matter
   - ERROR. .soundphysicsinjector.. What the hell, DS's version is not properly formatted .
   - WARN. .dsurround.. Invalid fingerprint detected.
@@ -302,3 +312,7 @@ ignore:
 
   # Universal Tweaks Warns:
   - WARN. .mixin.. Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod \w+, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
+  - WARN. .probezs.. Do not know zenscript type for
+  - WARN. .VintageFix Mixin Loader.. Not applying mixin '.+' as '.+' is disabled in config
+  - WARN. .VintageFix.. Can't preload sprite class 
+

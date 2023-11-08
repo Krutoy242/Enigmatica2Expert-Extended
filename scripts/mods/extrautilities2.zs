@@ -425,7 +425,7 @@ craft.remake(<extrautils2:terraformer:9>, ["pretty",
   "▬ ◊ ▬"], {
   "▬": <ore:ingotFakeIron>,  # Iron Ingot
   "◊": <ore:gemDiamondRat>,  # Diamond
-  "S": <ore:treeSapling>,    # Olive Sapling
+  "S": <ic2:crafting:20>,
   "■": <extrautils2:machine>,# Machine Block
 });
 
@@ -436,7 +436,7 @@ scripts.skyblock.skyrecipes.add(<extrautils2:terraformer:9>, ["pretty",
   "S ■ S",
   "▬ S ▬"], {
   "▬": <ore:ingotFakeIron>,       # Iron Alloy Ingot
-  "S": <ore:treeSapling>,         # Oak Sapling
+  "S": <ic2:crafting:20>,
   "■": <ore:blockSheetmetalIron>, # Iron Sheetmetal
 });
 
@@ -453,6 +453,18 @@ craft.remake(<extrautils2:terraformer:1> * 16, ["pretty",
 #-----------------------------------------------------------------------------------------------
 #- Biome Markers
 #-----------------------------------------------------------------------------------------------
+
+# [Biome Marker] from [Plantball][+2]
+recipes.removeByRecipeName("extrautils2:biome_marker");
+craft.make(<extrautils2:biomemarker>, ["pretty",
+  "d ▬ d",
+  "▬ P ▬",
+  "d ▬ d"], {
+  "d": <ore:dyeMagenta>,  # Magenta Dye
+  "▬": <ore:ingotTin>,    # Tin Ingot
+  "P": <ic2:crafting:20>, # Plantball
+});
+
 for biome, input in {
 	"minecraft:hell"      : <ore:blockCobalt>,
 	"minecraft:sky"       : <endreborn:block_decorative_lormyte>,

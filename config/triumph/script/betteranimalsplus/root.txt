@@ -1,0 +1,8 @@
+setTitle("Better Animals Plus")
+setDescription("Start the game with Better Animals Plus installed")
+setIcon(<betteranimalsplus:antler>)
+setFrameType("task")
+setShowToast(false)
+setAnnounceToChat(false)
+setBackground("minecraft:textures/blocks/planks_big_oak.png")
+addCriteria("location", "minecraft:location")

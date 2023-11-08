@@ -153,11 +153,8 @@ craft.remake(<twilightforest:ice_bomb> * 8, ["pretty",
 scripts.do.expire_in_block.set(<ore:gemPearl>, {"cyclicmagic:fire_frost" : <twilightforest:ice_bomb>});
 
 # [Sickly Twilight Oak Sapling]*8 from [Moonworm][+1]
-craft.remake(<twilightforest:twilight_sapling> * 8, ["pretty",
-  "S S S",
-  "S M S",
-  "S S S"], {
-  "S": <ore:treeSapling>,         # Oak Sapling
+craft.reshapeless(<twilightforest:twilight_sapling> * 8, "SM", {
+  "S": <ic2:crafting:20>,
   "M": <twilightforest:moonworm>, # Moonworm
 });
 
@@ -341,6 +338,13 @@ craft.make(<twilightforest:castle_brick>, ["pretty",
   "L": <twilightforest:lamp_of_cinders>.anyDamage().transformDamage(1), # Lamp of Cinders
 });
 
+# [Blue Castle Door] from [Yellow Rune][+5]
+craft.shapeless(<twilightforest:castle_door:3>, "LYC", {
+  "L": <twilightforest:lamp_of_cinders>.anyDamage().transformDamage(1), # Lamp of Cinders
+  "Y": <quark:rune:*>,                  # Yellow Rune
+  "C": <twilightforest:castle_brick:*>, # Castle Brick
+});
+
 val castleIngrs = {
   "C": <twilightforest:castle_brick:*>, # Castle Brick
   "▲": <ore:dustCalciumSulfate>,        # Calcium Sulfate
@@ -504,10 +508,3 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   "M": <minecraft:brown_mushroom_block>, # Mushroom
   "g": <ore:glowstone>, # Glowstone
 }).shaped());
-
-# [Blue Castle Door] from [Yellow Rune][+5]
-craft.shapeless(<twilightforest:castle_door:3>, "LYC", {
-  "L": <twilightforest:lamp_of_cinders>.anyDamage().transformDamage(1), # Lamp of Cinders
-  "Y": <quark:rune:*>,                  # Yellow Rune
-  "C": <twilightforest:castle_brick:*>, # Castle Brick
-});
