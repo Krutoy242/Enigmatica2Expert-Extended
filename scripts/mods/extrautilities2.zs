@@ -551,3 +551,6 @@ remakeEnchanterRecipe(<minecraft:iron_ingot> * 8, <minecraft:nether_star>    , <
 
 # Turn Red Orchids straight into redstone Ore
 scripts.do.burnt_in_fluid.add('extrautils2:redorchid', <blockstate:minecraft:redstone_ore>, 'stone', 1.0 / 3.0);
+
+# Allow Ferrous-Juniper saplings to drop from Ferrous-Juniper Leaves when breaking with Crook
+mods.exnihilocreatio.Crook.addRecipe(<extrautils2:ironwood_leaves>, <extrautils2:ironwood_sapling>, 0.05, 0.07);
