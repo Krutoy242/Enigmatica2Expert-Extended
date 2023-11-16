@@ -2,21 +2,7 @@
 	title: "{q.getting_started.laser_gun.name}",
 	icon: {
 		id: "plustic:laser_gun",
-		tag: {},
-		ForgeCaps: {
-			"plustic:fruitsalad_cap": {
-				Items: [],
-				Size: 5
-			},
-			"plustic:": {
-				Items: [],
-				Size: 1
-			},
-			"plustic:musicofthespheres_cap": {
-				Items: [],
-				Size: 1
-			}
-		}
+		tag: {}
 	},
 	x: 17.125d,
 	y: 5.041666666666667d,
@@ -107,12 +93,12 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "6c558fdd",
+		uid: "b5867273",
 		type: "item",
 		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
-				type: "legendary"
+				type: "rare"
 			}
 		}
 	}]
