@@ -1,0 +1,12 @@
+{
+	x: 5.0d,
+	y: 4.0d,
+	dependencies: [
+		"1771faa6"
+	],
+	tasks: [{
+		uid: "b3ab42ec",
+		type: "fluid",
+		fluid: "ic2creosote"
+	}]
+}

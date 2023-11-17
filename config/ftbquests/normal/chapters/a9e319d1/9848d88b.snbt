@@ -1,0 +1,25 @@
+{
+	icon: "minecraft:diamond",
+	x: 15.2d,
+	y: 8.0d,
+	shape: "diamond",
+	dependencies: [
+		"6a0d464f"
+	],
+	optional: true,
+	tasks: [{
+		uid: "bdf5924c",
+		type: "item",
+		items: [{
+			item: "minecraft:diamond"
+		}]
+	},
+	{
+		uid: "862bdfb4",
+		type: "item",
+		items: [{
+			item: "ic2:crafting 1 17"
+		}],
+		count: 8L
+	}]
+}

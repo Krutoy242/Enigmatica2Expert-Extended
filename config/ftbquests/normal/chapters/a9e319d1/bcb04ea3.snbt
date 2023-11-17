@@ -1,0 +1,17 @@
+{
+	x: -5.5d,
+	y: 3.0d,
+	shape: "diamond",
+	dependencies: [
+		"1542ca01"
+	],
+	optional: true,
+	tasks: [{
+		uid: "712d0e4a",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:block_barrel0"
+		}],
+		count: 3L
+	}]
+}

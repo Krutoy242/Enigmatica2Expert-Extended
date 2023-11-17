@@ -1,11 +1,11 @@
 {
-	x: 3.5d,
-	y: 7.0d,
+	x: 3.6666666666666665d,
+	y: 6.5d,
 	text: [
 		"{q.actually_additions.spawner_changer.desc}"
 	],
 	dependencies: [
-		"9cda35c3"
+		"98a9cb2b"
 	],
 	tasks: [{
 		uid: "a5fe9db7",

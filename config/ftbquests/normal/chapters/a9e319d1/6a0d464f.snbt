@@ -1,0 +1,34 @@
+{
+	icon: "minecraft:coal",
+	x: 13.2d,
+	y: 8.0d,
+	shape: "diamond",
+	dependencies: [
+		"a358bb27"
+	],
+	optional: true,
+	tasks: [{
+		uid: "9ef59619",
+		type: "item",
+		items: [{
+			item: "minecraft:leaves"
+		}],
+		count: 32L
+	},
+	{
+		uid: "6829c985",
+		type: "item",
+		items: [{
+			item: "minecraft:coal"
+		}],
+		count: 9L
+	},
+	{
+		uid: "31e8bec4",
+		type: "item",
+		items: [{
+			item: "biomesoplenty:ash"
+		}],
+		count: 81L
+	}]
+}

@@ -90,15 +90,5 @@
 				Material: "endrod"
 			}
 		}]
-	}],
-	rewards: [{
-		uid: "1d35651c",
-		type: "item",
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "rare"
-			}
-		}
 	}]
 }

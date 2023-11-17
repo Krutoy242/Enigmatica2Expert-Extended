@@ -14,6 +14,7 @@
 		type: "item",
 		items: [{
 			id: "openblocks:trophy",
+			Damage: 2s,
 			tag: {
 				entity_id: "minecraft:cow"
 			}

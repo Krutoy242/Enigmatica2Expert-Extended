@@ -1,0 +1,22 @@
+{
+	x: 12.5d,
+	y: 2.0d,
+	shape: "diamond",
+	dependencies: [
+		"ad5c3646"
+	],
+	optional: true,
+	tasks: [{
+		uid: "5255e0da",
+		type: "item",
+		items: [{
+			item: "forestry:resources"
+		}]
+	}],
+	rewards: [{
+		uid: "d825750e",
+		type: "item",
+		item: "forestry:resources",
+		count: 8
+	}]
+}

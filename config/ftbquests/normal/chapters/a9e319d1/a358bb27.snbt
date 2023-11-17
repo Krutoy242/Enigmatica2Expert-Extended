@@ -1,0 +1,28 @@
+{
+	x: 12.2d,
+	y: 9.0d,
+	shape: "diamond",
+	dependencies: [
+		"e113d402"
+	],
+	optional: true,
+	tasks: [{
+		uid: "5b4ac4e5",
+		type: "item",
+		items: [{
+			item: "minecraft:obsidian"
+		}],
+		count: 10L
+	}],
+	rewards: [{
+		uid: "49647746",
+		type: "item",
+		item: "minecraft:flint_and_steel"
+	},
+	{
+		uid: "80e0fe57",
+		type: "item",
+		item: "minecraft:coal_block",
+		count: 4
+	}]
+}

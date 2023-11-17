@@ -19,15 +19,11 @@
 		uid: "5d242b8c",
 		type: "item",
 		items: [{
-			item: "tconevo:metal 1 5"
-		},
-		{
-			item: "redstonerepository:material 1 1"
-		},
-		{
-			item: "redstonerepository:material 1 5"
-		}],
-		count: 2L
+			id: "tconstruct:sharpening_kit",
+			tag: {
+				Material: "draconic_metal"
+			}
+		}]
 	}],
 	rewards: [{
 		uid: "88896799",

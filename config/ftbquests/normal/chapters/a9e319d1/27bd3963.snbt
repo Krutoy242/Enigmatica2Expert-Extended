@@ -1,0 +1,22 @@
+{
+	x: 13.2d,
+	y: 9.0d,
+	shape: "diamond",
+	dependencies: [
+		"a358bb27"
+	],
+	optional: true,
+	tasks: [{
+		uid: "69d725ff",
+		type: "item",
+		items: [{
+			item: "netherendingores:ore_nether_modded_1"
+		}]
+	}],
+	rewards: [{
+		uid: "994b8c8d",
+		type: "item",
+		item: "netherendingores:ore_nether_modded_1",
+		count: 8
+	}]
+}

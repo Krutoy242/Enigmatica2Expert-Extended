@@ -1,10 +1,11 @@
 {
-	title: "{q.animals.ice_and_fire.name}",
 	icon: "iceandfire:dragon_skull 1 1",
 	x: 7.9d,
 	y: -3.2d,
 	text: [
-		"{q.animals.dragon_skull.desc}"
+		"Weclome to Ice and Fire branch!",
+		"",
+		"All mobs required by quests can be found in Overworld OR can be spawned without exploration."
 	],
 	dependencies: [
 		"235e1eb1"

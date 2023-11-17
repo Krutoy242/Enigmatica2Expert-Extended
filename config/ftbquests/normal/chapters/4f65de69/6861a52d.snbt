@@ -1,5 +1,5 @@
 {
-	title: "{q.getting_started._difficulty_.name}",
+	title: "{q.getting_started.difficulty.name}",
 	icon: "scalinghealth:heartcontainer",
 	x: 0.625d,
 	y: 6.0d,

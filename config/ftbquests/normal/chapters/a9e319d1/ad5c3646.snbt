@@ -1,0 +1,16 @@
+{
+	x: 11.0d,
+	y: 3.0d,
+	shape: "diamond",
+	dependencies: [
+		"a312ec34"
+	],
+	optional: true,
+	tasks: [{
+		uid: "42c38644",
+		type: "item",
+		items: [{
+			item: "biomesoplenty:white_sand"
+		}]
+	}]
+}

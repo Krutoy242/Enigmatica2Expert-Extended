@@ -1,0 +1,105 @@
+{
+	x: -1.0d,
+	y: 5.0d,
+	shape: "diamond",
+	dependencies: [
+		"fa297383"
+	],
+	optional: true,
+	tasks: [{
+		uid: "d7a55d9b",
+		type: "item",
+		items: [{
+			id: "tcomplement:sledge_hammer",
+			tag: {},
+			ForgeCaps: {
+				"plustic:fruitsalad_cap": {
+					Items: [],
+					Size: 5
+				},
+				"plustic:": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:musicofthespheres_cap": {
+					Items: [],
+					Size: 1
+				}
+			}
+		}],
+		consume_items: true,
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "2620ff20",
+		type: "item",
+		item: {
+			id: "tcomplement:sledge_hammer",
+			tag: {
+				TinkerData: {
+					Materials: [
+						"wood",
+						"wood",
+						"wood"
+					],
+					Modifiers: [
+						"toolleveling",
+						"creative",
+						"reinforced"
+					],
+					UsedModifiers: 3
+				},
+				Stats: {
+					Durability: 56,
+					HarvestLevel: 0,
+					Attack: 1.5f,
+					MiningSpeed: 1.5f,
+					AttackSpeedMultiplier: 1.0f,
+					FreeModifiers: 2
+				},
+				StatsOriginal: {
+					Durability: 56,
+					HarvestLevel: 0,
+					Attack: 1.5f,
+					MiningSpeed: 1.5f,
+					AttackSpeedMultiplier: 1.0f,
+					FreeModifiers: 3
+				},
+				Special: {
+					Categories: [
+						"aoe",
+						"harvest",
+						"weapon",
+						"tool"
+					]
+				},
+				Modifiers: [{
+					identifier: "ecological",
+					color: -7444965,
+					level: 1
+				},
+				{
+					identifier: "toolleveling",
+					color: 16777215,
+					level: 1
+				},
+				{
+					identifier: "creative",
+					color: 0,
+					level: 3
+				},
+				{
+					identifier: "reinforced",
+					color: 11225020,
+					level: 3
+				}],
+				Traits: [
+					"ecological",
+					"toolleveling",
+					"reinforced"
+				]
+			}
+		}
+	}]
+}

@@ -1,0 +1,16 @@
+{
+	x: 16.5d,
+	y: 1.0d,
+	shape: "diamond",
+	dependencies: [
+		"1cbaa666"
+	],
+	optional: true,
+	tasks: [{
+		uid: "efbff1c2",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:block_skystone_crushed"
+		}]
+	}]
+}

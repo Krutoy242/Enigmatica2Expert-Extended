@@ -1,5 +1,5 @@
 {
-	x: 3.9d,
+	x: 3.6666666666666665d,
 	y: 9.5d,
 	text: [
 		"{q.actually_additions.vertical_digger.desc}"

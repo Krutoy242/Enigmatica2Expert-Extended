@@ -1,0 +1,34 @@
+{
+	x: -7.0d,
+	y: 3.0d,
+	shape: "diamond",
+	text: [
+		""
+	],
+	dependencies: [
+		"61020c3a"
+	],
+	hide: true,
+	optional: true,
+	tasks: [{
+		uid: "b170038f",
+		type: "checkmark",
+		title: "Skyblock Start",
+		icon: "minecraft:sapling",
+		tags: [
+			"go"
+		]
+	}],
+	rewards: [{
+		uid: "c5bcfffa",
+		type: "item",
+		item: "minecraft:sapling",
+		count: 9
+	},
+	{
+		uid: "7a89b310",
+		type: "item",
+		item: "minecraft:bone_block",
+		count: 64
+	}]
+}

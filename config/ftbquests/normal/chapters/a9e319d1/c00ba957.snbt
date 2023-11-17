@@ -1,0 +1,14 @@
+{
+	icon: "tconstruct:smeltery_controller",
+	x: 6.5d,
+	y: 4.0d,
+	shape: "diamond",
+	dependencies: [
+		"57d7f1cd"
+	],
+	optional: true,
+	tasks: [{
+		uid: "0640c082",
+		type: "checkmark"
+	}]
+}
