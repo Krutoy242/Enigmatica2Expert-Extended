@@ -1,7 +1,7 @@
 {
 	title: "{q.getting_started.welcome.name}",
 	icon: "thermalexpansion:satchel",
-	x: -10.5d,
+	x: -7.5d,
 	y: 3.5d,
 	text: [
 		"{q.getting_started.welcome.desc}"

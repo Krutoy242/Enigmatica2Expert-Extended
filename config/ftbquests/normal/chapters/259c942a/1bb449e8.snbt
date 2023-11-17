@@ -1,5 +1,10 @@
 {
-	icon: "portabledrill:portable_drill",
+	icon: {
+		id: "portabledrill:portable_drill",
+		ForgeCaps: {
+			"portabledrill:energy": 0
+		}
+	},
 	x: 4.5d,
 	y: 6.0d,
 	text: [
@@ -12,10 +17,7 @@
 		uid: "0ee3aa34",
 		type: "item",
 		items: [{
-			id: "portabledrill:portable_drill",
-			ForgeCaps: {
-				"portabledrill:energy": 0
-			}
+			item: "portabledrill:portable_drill"
 		}],
 		ignore_nbt: 1b
 	},

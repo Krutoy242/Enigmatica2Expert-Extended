@@ -6,7 +6,7 @@
 		"{q.nuclearcraft.lithium_ion_battery.desc}"
 	],
 	dependencies: [
-		"a7410660"
+		"bd335ea9"
 	],
 	tasks: [{
 		uid: "4b5f3495",

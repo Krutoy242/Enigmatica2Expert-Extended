@@ -1,0 +1,30 @@
+{
+	title: "{q.animals.geese.name}",
+	x: 4.4d,
+	y: -5.1d,
+	text: [
+		"{q.animals.geese.desc}"
+	],
+	dependencies: [
+		"dcb947b4"
+	],
+	tasks: [{
+		uid: "2624487d",
+		type: "interaction",
+		title: "Interract with Goose",
+		icon: {
+			id: "draconicevolution:mob_soul",
+			tag: {
+				EntityName: "betteranimalsplus:goose"
+			}
+		},
+		match_type: "entity_id",
+		match: "betteranimalsplus:goose"
+	}],
+	rewards: [{
+		uid: "33aed051",
+		type: "item",
+		item: "actuallyadditions:item_hairy_ball",
+		count: 64
+	}]
+}

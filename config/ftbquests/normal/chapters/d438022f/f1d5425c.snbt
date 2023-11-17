@@ -1,11 +1,11 @@
 {
-	x: -13.833333333333334d,
-	y: 10.166666666666666d,
+	x: -14.2d,
+	y: 9.8d,
 	text: [
 		"{q.utils.spectre_coil_nr_364.desc}"
 	],
 	dependencies: [
-		"9092f6f7"
+		"13f9a233"
 	],
 	tasks: [{
 		uid: "8778b257",

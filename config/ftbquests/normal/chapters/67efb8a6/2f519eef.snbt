@@ -17,12 +17,6 @@
 			id: "draconicevolution:draconic_staff_of_power",
 			tag: {
 				Energy: 48000000
-			},
-			ForgeCaps: {
-				Parent: {
-					Items: [],
-					Size: 27
-				}
 			}
 		}],
 		ignore_nbt: 1b

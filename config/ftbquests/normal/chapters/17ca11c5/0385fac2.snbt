@@ -1,11 +1,11 @@
 {
-	x: 6.416666666666666d,
-	y: -0.37499999999999956d,
+	x: 6.0d,
+	y: 0.0d,
 	text: [
 		"{q.bragging_rights.creative_modifier.desc}"
 	],
 	dependencies: [
-		"e93a2e6f"
+		"fbbabf40"
 	],
 	tasks: [{
 		uid: "f51c5019",

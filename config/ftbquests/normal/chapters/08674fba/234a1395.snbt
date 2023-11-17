@@ -23,13 +23,6 @@
 		}]
 	},
 	{
-		uid: "2b25c2a7",
-		type: "item",
-		items: [{
-			item: "libvulpes:coil0 2 4"
-		}]
-	},
-	{
 		uid: "d2ce94c0",
 		type: "item",
 		items: [{

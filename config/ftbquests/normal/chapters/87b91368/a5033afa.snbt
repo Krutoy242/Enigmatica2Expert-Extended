@@ -2,7 +2,6 @@
 	title: "{q.animals.ore_nuggets_.name}",
 	icon: {
 		id: "rats:rat_nugget_ore",
-		Damage: 89s,
 		tag: {
 			OreItem: {
 				Count: 1b,
@@ -28,7 +27,7 @@
 		uid: "c678ca62",
 		type: "item",
 		items: [{
-			item: "rats:rat_nugget_ore 1 85"
+			item: "rats:rat_nugget_ore 1 49"
 		}],
 		ignore_damage: true,
 		ignore_nbt: 1b

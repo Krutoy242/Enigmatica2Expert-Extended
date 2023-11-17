@@ -14,6 +14,7 @@
 	],
 	min_required_dependencies: 1,
 	dependencies: [
+		"39579596",
 		"e90285ae",
 		"4bc2899f",
 		"a1fb3576",
@@ -43,13 +44,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "312cc253",
-		type: "item",
-		item: {
-			id: "minecraft:splash_potion",
-			tag: {
-				Potion: "minecraft:fire_resistance"
-			}
-		}
+		uid: "e7291528",
+		type: "choice",
+		table: 146
 	}]
 }

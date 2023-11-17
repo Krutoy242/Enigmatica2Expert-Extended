@@ -1,0 +1,22 @@
+{
+	x: 9.7d,
+	y: -0.8d,
+	text: [
+		"{q.animals.conglomerate_of_sun.desc}"
+	],
+	dependencies: [
+		"3e7b8b7a"
+	],
+	tasks: [{
+		uid: "11ae74d5",
+		type: "item",
+		items: [{
+			item: "contenttweaker:conglomerate_of_sun"
+		}]
+	}],
+	rewards: [{
+		uid: "81180374",
+		type: "choice",
+		table: 145
+	}]
+}
