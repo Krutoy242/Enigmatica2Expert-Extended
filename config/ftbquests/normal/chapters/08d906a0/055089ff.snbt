@@ -1,0 +1,15 @@
+{
+	x: 7.5d,
+	y: -1.5d,
+	dependencies: [
+		"779ca002"
+	],
+	optional: true,
+	tasks: [{
+		uid: "a0021fce",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:item_mesh 1 1"
+		}]
+	}]
+}

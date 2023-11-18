@@ -1,0 +1,22 @@
+{
+	x: 10.5d,
+	y: -1.5d,
+	hide_dependency_lines: true,
+	dependencies: [
+		"aada5fc0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "29cdf577",
+		type: "item",
+		items: [{
+			item: "minecraft:bowl"
+		}]
+	}],
+	rewards: [{
+		uid: "60b0ad0a",
+		type: "item",
+		item: "randomthings:weatheregg 1 1",
+		count: 2
+	}]
+}

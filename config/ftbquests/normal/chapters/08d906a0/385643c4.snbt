@@ -1,0 +1,16 @@
+{
+	x: 19.5d,
+	y: -6.0d,
+	hide_dependency_lines: true,
+	dependencies: [
+		"055089ff"
+	],
+	optional: true,
+	tasks: [{
+		uid: "262a38b4",
+		type: "item",
+		items: [{
+			item: "excompressum:bait 1 3"
+		}]
+	}]
+}

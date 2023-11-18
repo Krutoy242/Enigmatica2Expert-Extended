@@ -1,0 +1,15 @@
+{
+	x: 22.5d,
+	y: 3.0d,
+	dependencies: [
+		"d37c34ce"
+	],
+	optional: true,
+	tasks: [{
+		uid: "71faae93",
+		type: "item",
+		items: [{
+			item: "netherendingores:ore_nether_modded_1"
+		}]
+	}]
+}

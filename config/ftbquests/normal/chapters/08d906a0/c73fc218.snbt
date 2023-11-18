@@ -1,0 +1,15 @@
+{
+	x: 25.5d,
+	y: 4.5d,
+	dependencies: [
+		"c550b73b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "12e32f0c",
+		type: "item",
+		items: [{
+			item: "minecraft:lapis_ore"
+		}]
+	}]
+}

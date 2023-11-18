@@ -1,0 +1,15 @@
+{
+	x: 27.0d,
+	y: 4.5d,
+	dependencies: [
+		"c550b73b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "59473b5e",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:block_endstone_crushed"
+		}]
+	}]
+}

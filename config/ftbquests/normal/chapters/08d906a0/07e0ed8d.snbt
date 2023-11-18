@@ -1,0 +1,15 @@
+{
+	x: 13.5d,
+	y: 1.5d,
+	dependencies: [
+		"9ce5d580"
+	],
+	optional: true,
+	tasks: [{
+		uid: "aa456767",
+		type: "item",
+		items: [{
+			item: "flopper:flopper"
+		}]
+	}]
+}

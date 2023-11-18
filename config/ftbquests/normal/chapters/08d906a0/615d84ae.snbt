@@ -1,0 +1,23 @@
+{
+	icon: {
+		id: "tconstruct:tooltables",
+		Damage: 2s,
+		tag: {
+			textureBlock: {
+				id: "minecraft:log",
+				Count: 1,
+				Damage: 0s
+			}
+		}
+	},
+	x: 4.6d,
+	y: 1.5d,
+	dependencies: [
+		"b5e950d9"
+	],
+	optional: true,
+	tasks: [{
+		uid: "140ad848",
+		type: "checkmark"
+	}]
+}

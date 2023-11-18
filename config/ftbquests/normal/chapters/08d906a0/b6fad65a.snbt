@@ -1,0 +1,15 @@
+{
+	x: 16.5d,
+	y: -1.5d,
+	dependencies: [
+		"35bfdba8"
+	],
+	optional: true,
+	tasks: [{
+		uid: "deef3d3f",
+		type: "item",
+		items: [{
+			item: "minecraft:rotten_flesh"
+		}]
+	}]
+}

@@ -1,0 +1,15 @@
+{
+	x: 22.5d,
+	y: 6.0d,
+	dependencies: [
+		"d37c34ce"
+	],
+	optional: true,
+	tasks: [{
+		uid: "2e1abcdf",
+		type: "item",
+		items: [{
+			item: "minecraft:quartz_ore"
+		}]
+	}]
+}

@@ -1,0 +1,15 @@
+{
+	x: 19.5d,
+	y: 0.0d,
+	dependencies: [
+		"eac1a466"
+	],
+	optional: true,
+	tasks: [{
+		uid: "19c8bf03",
+		type: "item",
+		items: [{
+			item: "minecraft:redstone_ore"
+		}]
+	}]
+}

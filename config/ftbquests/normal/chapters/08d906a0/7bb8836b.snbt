@@ -1,0 +1,31 @@
+{
+	x: 18.0d,
+	y: -1.5d,
+	dependencies: [
+		"6f3cff40",
+		"27a77a40"
+	],
+	dependency_requirement: "one_completed",
+	optional: true,
+	tasks: [{
+		uid: "37115573",
+		type: "item",
+		items: [{
+			item: "minecraft:stone 1 3"
+		}]
+	},
+	{
+		uid: "7dfbf904",
+		type: "item",
+		items: [{
+			item: "minecraft:stone 1 1"
+		}]
+	},
+	{
+		uid: "57554c69",
+		type: "item",
+		items: [{
+			item: "minecraft:stone 1 5"
+		}]
+	}]
+}

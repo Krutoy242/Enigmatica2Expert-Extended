@@ -1,0 +1,15 @@
+{
+	x: 28.5d,
+	y: 4.5d,
+	dependencies: [
+		"fd187ed3"
+	],
+	optional: true,
+	tasks: [{
+		uid: "9fb465c5",
+		type: "item",
+		items: [{
+			item: "immersiveengineering:ore 1 5"
+		}]
+	}]
+}

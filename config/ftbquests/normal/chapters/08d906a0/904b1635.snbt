@@ -1,0 +1,15 @@
+{
+	x: 28.5d,
+	y: -3.0d,
+	dependencies: [
+		"9e7e279c"
+	],
+	optional: true,
+	tasks: [{
+		uid: "3d22cec4",
+		type: "item",
+		items: [{
+			item: "actuallyadditions:block_misc 1 3"
+		}]
+	}]
+}

@@ -1,0 +1,16 @@
+{
+	x: 9.0d,
+	y: -1.5d,
+	dependencies: [
+		"0991db53",
+		"055089ff"
+	],
+	optional: true,
+	tasks: [{
+		uid: "c617b60d",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:item_pebble"
+		}]
+	}]
+}

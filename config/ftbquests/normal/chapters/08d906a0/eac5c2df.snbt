@@ -1,0 +1,15 @@
+{
+	x: 21.0d,
+	y: -3.0d,
+	dependencies: [
+		"c562ffc1"
+	],
+	optional: true,
+	tasks: [{
+		uid: "67b5e9d2",
+		type: "item",
+		items: [{
+			item: "forestry:resources"
+		}]
+	}]
+}

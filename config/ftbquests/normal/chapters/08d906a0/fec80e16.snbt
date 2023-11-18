@@ -1,0 +1,15 @@
+{
+	x: 9.0d,
+	y: 3.0d,
+	dependencies: [
+		"147b1b5f",
+		"41927ad7"
+	],
+	tasks: [{
+		uid: "edaa2653",
+		type: "item",
+		items: [{
+			item: "rustic:ironberries"
+		}]
+	}]
+}

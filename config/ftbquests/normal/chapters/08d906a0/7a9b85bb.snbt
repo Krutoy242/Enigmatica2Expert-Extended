@@ -1,0 +1,15 @@
+{
+	x: 13.5d,
+	y: -3.0d,
+	dependencies: [
+		"46d77fa0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "799cba71",
+		type: "item",
+		items: [{
+			item: "forestry:ash"
+		}]
+	}]
+}

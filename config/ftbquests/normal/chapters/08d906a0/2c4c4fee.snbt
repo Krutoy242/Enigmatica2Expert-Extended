@@ -1,0 +1,15 @@
+{
+	x: 21.0d,
+	y: -6.0d,
+	dependencies: [
+		"3862b201"
+	],
+	optional: true,
+	tasks: [{
+		uid: "7f5d18df",
+		type: "item",
+		items: [{
+			item: "minecraft:emerald"
+		}]
+	}]
+}

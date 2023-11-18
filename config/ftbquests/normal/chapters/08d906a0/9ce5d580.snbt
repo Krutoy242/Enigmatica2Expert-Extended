@@ -1,0 +1,15 @@
+{
+	x: 12.0d,
+	y: 1.5d,
+	dependencies: [
+		"49b100fb"
+	],
+	optional: true,
+	tasks: [{
+		uid: "47aa57e4",
+		type: "item",
+		items: [{
+			item: "tconstruct:dried_clay"
+		}]
+	}]
+}

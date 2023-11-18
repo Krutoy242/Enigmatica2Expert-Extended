@@ -1,0 +1,31 @@
+{
+	x: 6.0d,
+	y: 1.5d,
+	dependencies: [
+		"615d84ae"
+	],
+	optional: true,
+	tasks: [{
+		uid: "3aa0f172",
+		type: "item",
+		items: [{
+			id: "tconstruct:kama",
+			ForgeCaps: {
+				"plustic:fruitsalad_cap": {
+					Items: [],
+					Size: 5
+				},
+				"plustic:": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:musicofthespheres_cap": {
+					Items: [],
+					Size: 1
+				}
+			}
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}]
+}

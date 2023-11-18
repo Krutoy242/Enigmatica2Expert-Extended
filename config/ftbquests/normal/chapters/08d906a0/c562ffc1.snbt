@@ -1,0 +1,15 @@
+{
+	x: 19.5d,
+	y: -1.5d,
+	dependencies: [
+		"7bb8836b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "a9dfdeaa",
+		type: "item",
+		items: [{
+			item: "biomesoplenty:white_sand"
+		}]
+	}]
+}

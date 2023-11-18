@@ -1,0 +1,20 @@
+{
+	x: 30.0d,
+	y: 6.0d,
+	dependencies: [
+		"42ba97f5"
+	],
+	optional: true,
+	tasks: [{
+		uid: "6239b17d",
+		type: "item",
+		items: [{
+			item: "endreborn:block_essence_ore"
+		}]
+	}],
+	rewards: [{
+		uid: "52136591",
+		type: "item",
+		item: "endreborn:item_end_essence"
+	}]
+}

@@ -1,0 +1,14 @@
+{
+	title: "{q.skyblock.wood.name}",
+	icon: "minecraft:log",
+	x: 3.0d,
+	y: 0.0d,
+	dependencies: [
+		"aada5fc0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "2e4d8e45",
+		type: "checkmark"
+	}]
+}

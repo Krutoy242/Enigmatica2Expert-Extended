@@ -1,0 +1,15 @@
+{
+	x: 16.5d,
+	y: -4.5d,
+	dependencies: [
+		"e5dfeafc"
+	],
+	optional: true,
+	tasks: [{
+		uid: "4297285a",
+		type: "item",
+		items: [{
+			item: "minecraft:slime"
+		}]
+	}]
+}
