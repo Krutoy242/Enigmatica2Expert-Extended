@@ -1,0 +1,16 @@
+{
+	x: 18.0d,
+	y: 1.0d,
+	shape: "diamond",
+	dependencies: [
+		"529fbb8a"
+	],
+	optional: true,
+	tasks: [{
+		uid: "e3c476fd",
+		type: "item",
+		items: [{
+			item: "astralsorcery:itemcraftingcomponent 1 1"
+		}]
+	}]
+}

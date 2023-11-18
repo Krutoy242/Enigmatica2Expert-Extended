@@ -1,0 +1,15 @@
+{
+	x: -2.5d,
+	y: 7.5d,
+	dependencies: [
+		"fa297383"
+	],
+	optional: true,
+	tasks: [{
+		uid: "65e03d4c",
+		type: "item",
+		items: [{
+			item: "rustic:sapling 1 1"
+		}]
+	}]
+}

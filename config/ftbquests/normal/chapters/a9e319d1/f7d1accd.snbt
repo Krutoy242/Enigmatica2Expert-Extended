@@ -1,0 +1,25 @@
+{
+	x: -4.0d,
+	y: 3.0d,
+	shape: "diamond",
+	dependencies: [
+		"330afd9a",
+		"bcb04ea3"
+	],
+	optional: true,
+	tasks: [{
+		uid: "5784c999",
+		type: "item",
+		items: [{
+			item: "minecraft:dirt"
+		}],
+		count: 16L,
+		consume_items: false
+	}],
+	rewards: [{
+		uid: "c4e4b6cd",
+		type: "item",
+		item: "minecraft:dirt",
+		count: 64
+	}]
+}

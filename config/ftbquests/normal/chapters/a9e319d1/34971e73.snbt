@@ -1,0 +1,32 @@
+{
+	icon: "integrateddynamics:squeezer",
+	x: 8.0d,
+	y: 6.0d,
+	shape: "diamond",
+	dependencies: [
+		"994fe2e8"
+	],
+	dependency_requirement: "one_completed",
+	optional: true,
+	tasks: [{
+		uid: "fe4428b2",
+		type: "item",
+		items: [{
+			item: "integrateddynamics:squeezer"
+		}]
+	},
+	{
+		uid: "d65cdc85",
+		type: "item",
+		icon: "minecraft:iron_ingot",
+		items: [{
+			item: "minecraft:iron_ingot"
+		}],
+		count: 10L
+	}],
+	rewards: [{
+		uid: "55710edf",
+		type: "item",
+		item: "tconstruct:seared_tank"
+	}]
+}

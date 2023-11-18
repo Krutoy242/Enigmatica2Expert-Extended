@@ -1,0 +1,16 @@
+{
+	x: -1.0d,
+	y: 3.0d,
+	shape: "diamond",
+	dependencies: [
+		"a4ef7af8"
+	],
+	optional: true,
+	tasks: [{
+		uid: "24892877",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:item_pebble"
+		}]
+	}]
+}

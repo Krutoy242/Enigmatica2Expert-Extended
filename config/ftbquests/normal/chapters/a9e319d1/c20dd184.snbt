@@ -1,0 +1,16 @@
+{
+	x: 6.5d,
+	y: 7.5d,
+	shape: "diamond",
+	dependencies: [
+		"994fe2e8"
+	],
+	optional: true,
+	tasks: [{
+		uid: "815f1a63",
+		type: "item",
+		items: [{
+			item: "extrautils2:ironwood_sapling"
+		}]
+	}]
+}

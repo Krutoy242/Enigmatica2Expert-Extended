@@ -1,0 +1,22 @@
+{
+	x: 2.0d,
+	y: 5.0d,
+	shape: "diamond",
+	dependencies: [
+		"b8e55085"
+	],
+	optional: true,
+	tasks: [{
+		uid: "575d9ce6",
+		type: "item",
+		items: [{
+			item: "tconstruct:dried_clay"
+		}]
+	}],
+	rewards: [{
+		uid: "c94d03be",
+		type: "item",
+		item: "tconstruct:dried_clay",
+		count: 16
+	}]
+}

@@ -1,0 +1,25 @@
+{
+	icon: "forestry:wood_pile",
+	x: 2.0d,
+	y: 3.0d,
+	shape: "diamond",
+	hide_dependency_lines: true,
+	dependencies: [
+		"1542ca01"
+	],
+	optional: true,
+	tasks: [{
+		uid: "5fa85d88",
+		type: "item",
+		items: [{
+			item: "forestry:wood_pile"
+		}],
+		count: 32L
+	}],
+	rewards: [{
+		uid: "1daf2e1b",
+		type: "item",
+		item: "minecraft:dirt",
+		count: 36
+	}]
+}

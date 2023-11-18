@@ -1,0 +1,18 @@
+{
+	x: 8.0d,
+	y: 0.0d,
+	shape: "diamond",
+	hide_dependency_lines: true,
+	dependencies: [
+		"1542ca01"
+	],
+	optional: true,
+	tasks: [{
+		uid: "db62937e",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:item_material 1 3"
+		}],
+		count: 2L
+	}]
+}

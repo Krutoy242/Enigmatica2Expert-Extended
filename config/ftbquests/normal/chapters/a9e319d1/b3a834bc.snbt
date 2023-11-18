@@ -1,0 +1,17 @@
+{
+	x: 3.5d,
+	y: 3.0d,
+	shape: "diamond",
+	dependencies: [
+		"235e9d66"
+	],
+	dependency_requirement: "one_completed",
+	optional: true,
+	tasks: [{
+		uid: "6118d48c",
+		type: "item",
+		items: [{
+			item: "minecraft:furnace"
+		}]
+	}]
+}
