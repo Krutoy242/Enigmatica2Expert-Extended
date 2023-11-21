@@ -17,3 +17,20 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   e.player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation("e2ee.eu2_drum_error"));
   e.cancel();
 });
+
+// Forbid golden lasso to interract with some entities
+val lassoBlacklist = {
+  'thaumadditions:chester': true,
+} as bool[string];
+events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEntityEvent) {
+  if(
+    isNull(e.item)
+    || isNull(e.item.definition)
+    || e.item.definition.id != 'extrautils2:goldenlasso'
+    || isNull(e.target)
+    || isNull(e.target.definition)
+    || isNull(lassoBlacklist[e.target.definition.id])
+  ) return;
+
+  e.cancel();
+});

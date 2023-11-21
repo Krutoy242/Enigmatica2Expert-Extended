@@ -38,4 +38,4 @@ mods.tconstruct.Casting.addTableRecipe(
   <tconevo:metal:30>, # [Sentient Ingot]
   <tconevo:material>, # Coalescence Matrix
   <liquid:raw_will>, # Demonic Will
-1000);
+1000, true);

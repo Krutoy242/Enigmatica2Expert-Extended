@@ -36,10 +36,10 @@ Object.entries(
       .split('\n')
 
       // Filter unwanted ores
-      .filter((s) => !s.match(/yellorium/i))
+      .filter(s => !s.match(/yellorium/i))
 
       // Split into [in, out, chance]
-      .map((s) =>
+      .map(s =>
         s.match(/--in: (.*?), out: (.*?), change: (.*)/)?.splice(1)
       )
       .filter(Boolean)
@@ -48,7 +48,7 @@ Object.entries(
       .flatMap(([inp, out, chance]) => {
         const id = inp.match(/<([^:]+:[^:]+):\*>/)?.[1]
         if (!id) return [[inp, out, chance]]
-        return getSubMetas(id).map((meta) => [
+        return getSubMetas(id).map(meta => [
           `<${id}:${meta}>`,
           out,
           chance,
@@ -59,14 +59,17 @@ Object.entries(
 )
   // Filter only items that actually present in furnace
   .filter(([inp]) => {
+    if (isPurged(inp)) return false
     const oreName = inp.match(/<ore:([^>]+)>/)?.[1]
-    if (!oreName) return true
-    return getByOredict(oreName).some((tm) =>
+    const items = oreName
+      ? getByOredict(oreName)
+      : [inp.match(/<(?<id>[^:]+:[^:>]+)(:(?<damage>\d+|\*))?>/).groups]
+    return items.some(({ id, damage }) =>
       getFurnaceRecipes().some(
-        (fr) =>
-          fr.in_id === tm.id &&
-          (fr.in_meta === '*' ||
-            Number(fr.in_meta ?? 0) === tm.damage)
+        fr =>
+          fr.in_id === id
+          && (fr.in_meta === '*'
+            || Number(fr.in_meta ?? 0) === Number(damage ?? 0))
       )
     )
   })
@@ -75,9 +78,9 @@ Object.entries(
       `addInfFur(${inp.padEnd(41)}, [${arr
         .map(
           ([, out, chance]) =>
-            out.replace('<thaumcraft:nugget:10>', 'RE') +
-            ' % ' +
-            ((parseFloat(chance) * 100) | 0)
+            `${out.replace('<thaumcraft:nugget:10>', 'RE')
+            } % ${
+            (parseFloat(chance) * 100) | 0}`
         )
         .sort((a, b) => a.length - b.length)
         .join(', ')}]);`
@@ -172,8 +175,6 @@ addInfFur(<minecraft:beef>                         , [<thaumcraft:chunk> % 33]);
 addInfFur(<minecraft:chicken>                      , [<thaumcraft:chunk:1> % 33]);
 addInfFur(<minecraft:fish:0>                       , [<thaumcraft:chunk:3> % 33]);
 addInfFur(<minecraft:fish:1>                       , [<thaumcraft:chunk:3> % 33]);
-addInfFur(<minecraft:fish:2>                       , [<thaumcraft:chunk:3> % 33]);
-addInfFur(<minecraft:fish:3>                       , [<thaumcraft:chunk:3> % 33]);
 addInfFur(<minecraft:mutton>                       , [<thaumcraft:chunk:5> % 33]);
 addInfFur(<minecraft:porkchop>                     , [<thaumcraft:chunk:2> % 33]);
 addInfFur(<minecraft:rabbit>                       , [<thaumcraft:chunk:4> % 33]);
@@ -226,14 +227,4 @@ addInfFur(<thaumcraft:cluster:5>                   , [RE % 2, <thaumcraft:nugget
 addInfFur(<thaumcraft:cluster:6>                   , [RE % 2, <thaumcraft:nugget:5> % 33]);
 addInfFur(<thaumcraft:cluster:7>                   , [RE % 2, <thaumcraft:nugget:9> % 33, <thermalfoundation:material:16> * 6 % 32]);
 addInfFur(<thaumcraft:cluster>                     , [<minecraft:iron_nugget> % 33, <minecraft:gold_nugget> * 4 % 32]);
-addInfFur(<thaumicwonders:eldritch_cluster:0>      , [RE % 2, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:1>      , [RE % 2, <minecraft:gold_nugget> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:2>      , [RE % 2, <thaumcraft:nugget:1> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:3>      , [RE % 2, <thaumcraft:nugget:2> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:4>      , [RE % 2, <thaumcraft:nugget:3> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:5>      , [RE % 2, <thaumcraft:nugget:4> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:6>      , [RE % 2, <thaumcraft:nugget:5> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:7>      , [RE % 2, <thaumcraft:nugget:9> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster:8>      , [RE % 2, <thaumcraft:nugget:7> % 33, <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "vitium"}]}) % 10]);
-addInfFur(<thaumicwonders:eldritch_cluster>        , [<minecraft:iron_nugget> % 33]);
 /**/

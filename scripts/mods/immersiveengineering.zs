@@ -94,7 +94,7 @@ craft.make(<immersiveengineering:stone_decoration:5> * 12, ["pretty",
   "S": <ore:itemSlag>, # Slag
   "c": <ore:clay>, # Clay
   "g": <ore:gravel>, # Gravel
-  "A": <fluid:water> * 1000, # Water Bucket
+  "A": LiquidIngr('water'), # Water Bucket
 });
 
 # [Concrete]*8 from [Water Bucket][+3]
@@ -105,7 +105,7 @@ craft.make(<immersiveengineering:stone_decoration:5> * 8, ["pretty",
   "s": <ore:sand>, # Sand
   "c": <ore:clay>,  # Clay
   "g": <ore:gravel>, # Gravel
-  "A": <fluid:water> * 1000, # Water Bucket
+  "A": LiquidIngr('water'), # Water Bucket
 });
 
 # Coke Dust Compatibility
@@ -489,7 +489,7 @@ craft.remake(<immersivepetroleum:stone_decoration> * 12, [
 	A: <ore:itemSlag>,
 	B: <ore:bitumen>,
 	C: <ore:gravel>,
-	D: <fluid:water> * 1000,
+	D: LiquidIngr('water'),
 });
 craft.remake(<immersivepetroleum:stone_decoration> * 8, [
 	"ABA",
@@ -498,7 +498,7 @@ craft.remake(<immersivepetroleum:stone_decoration> * 8, [
 	A: <ore:sand>,
 	B: <ore:bitumen>,
 	C: <ore:gravel>,
-	D: <fluid:water> * 1000,
+	D: LiquidIngr('water'),
 });
 
 # [Portable_Drill] from [Bedrock_Miner][+2]

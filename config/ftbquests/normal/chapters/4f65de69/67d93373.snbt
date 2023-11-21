@@ -1,5 +1,6 @@
 {
 	title: "{q.getting_started.compact_machines.name}",
+	icon: "compactmachines3:machine 1 5",
 	x: 12.625d,
 	y: 5.041666666666667d,
 	text: [
@@ -12,8 +13,24 @@
 		uid: "d296a875",
 		type: "item",
 		items: [{
+			item: "compactmachines3:machine"
+		},
+		{
+			item: "compactmachines3:machine 1 1"
+		},
+		{
+			item: "compactmachines3:machine 1 2"
+		},
+		{
+			item: "compactmachines3:machine 1 3"
+		},
+		{
+			item: "compactmachines3:machine 1 4"
+		},
+		{
 			item: "compactmachines3:machine 1 5"
 		}],
+		ignore_damage: true,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -21,5 +38,10 @@
 		type: "item",
 		item: "compactmachines3:tunneltool",
 		count: 6
+	},
+	{
+		uid: "315ca5bf",
+		type: "item",
+		item: "compactmachines3:machine 1 5"
 	}]
 }

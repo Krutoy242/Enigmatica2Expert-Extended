@@ -48,4 +48,5 @@ multipleImagesExport:false
 nightExport:false
 highlightsExport:false
 exportScaleDownSquare:20
+mapWritingDistance:-1
 globalVersion:1

@@ -32,7 +32,7 @@ remakeEx(<deepmoblearning:machine_casing>, [
   [<deepmoblearning:soot_covered_plate>, <deepmoblearning:soot_covered_redstone>, <deepmoblearning:soot_covered_plate>]]);
 
 recipes.remove(<deepmoblearning:polymer_clay> * 16);
-recipes.addShapeless(<deepmoblearning:polymer_clay> * 16, [<fluid:concrete> * 1000, <ore:dustClay>, <ore:dustClay>, <ore:dustClay>, <ore:dustGold>, <ore:dustLapis>]);
+recipes.addShapeless(<deepmoblearning:polymer_clay> * 16, [LiquidIngr('concrete'), <ore:dustClay>, <ore:dustClay>, <ore:dustClay>, <ore:dustGold>, <ore:dustLapis>]);
 
 # Remove level-to-level conversions
 recipes.remove(<deepmoblearning:living_matter_hellish>);
@@ -168,3 +168,37 @@ mods.thaumcraft.Infusion.registerRecipe(
   "▬": <ore:ingotGlitch>, # Glitch Infused Ingot
   "-": <ore:itemInfinityGoop>,
 }).spiral(1));
+
+////////////////////////////////////
+// Twilight Forest matter
+////////////////////////////////////
+# [Borer Essence]*32 from [Twilight Matter][+1]
+craft.shapeless(<twilightforest:borer_essence> * 32, "▲§", {
+  "▲": <ore:dustPyrotheum>,                      # Pyrotheum Dust
+  "§": <deepmoblearning:living_matter_twilight>, # Twilight Matter
+});
+
+# [Transformation Powder]*64 from [Twilight Matter][+1]
+craft.shapeless(<twilightforest:transformation_powder> * 64, "▲§", {
+  "▲": <ore:dustAerotheum>,                      # Aerotheum Dust
+  "§": <deepmoblearning:living_matter_twilight>, # Twilight Matter
+});
+
+# [Ice Bomb]*8 from [Twilight Matter][+1]
+craft.shapeless(<twilightforest:ice_bomb> * 8, "▲§", {
+  "▲": <ore:dustCryotheum>,                      # Cryotheum Dust
+  "§": <deepmoblearning:living_matter_twilight>, # Twilight Matter
+});
+
+# [Armor Shard]*16 from [Twilight Matter][+1]
+craft.shapeless(<twilightforest:armor_shard> * 16, "▲§", {
+  "▲": <ore:dustPetrotheum>,                     # Petrotheum Dust
+  "§": <deepmoblearning:living_matter_twilight>, # Twilight Matter
+});
+
+# [Steeleaf] from [Twilight Matter][+1]
+craft.shapeless(<twilightforest:steeleaf_ingot>, "T§", {
+  "T": <ore:cropTea>,                            # Tea Leaf
+  "§": <deepmoblearning:living_matter_twilight>, # Twilight Matter
+});
+////////////////////////////////////

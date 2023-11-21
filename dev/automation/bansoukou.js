@@ -11,6 +11,7 @@ import { existsSync, mkdirSync, renameSync, statSync, unlinkSync } from 'node:fs
 import { dirname, join, parse } from 'node:path'
 import { URL, fileURLToPath } from 'node:url'
 
+import { spawn } from 'node:child_process'
 import AdmZip from 'adm-zip'
 import fast_glob from 'fast-glob'
 import levenshtein from 'fast-levenshtein'
@@ -21,7 +22,9 @@ import {
   defaultHelper,
   execSyncInherit,
   loadJson,
+  loadText,
   saveObjAsJson,
+  saveText,
 } from '../lib/utils.js'
 
 function relative(relPath = './') {
@@ -53,7 +56,11 @@ function injectJsonAdvancementFixes() {
  * @param {Object} advJson
  */
 function saveFile(jarPath, archievePath, advJson) {
-  saveObjAsJson(advJson, join('bansoukou/', getJarName(jarPath), archievePath))
+  const savePath = join('bansoukou/', getJarName(jarPath), archievePath)
+  const oldText = loadText(savePath)
+  const newText = JSON.stringify(advJson, null, 2)
+  if (oldText.length === newText.length && oldText === newText) return
+  saveText(newText, savePath)
 }
 
 function getJarName(jarPath) {
@@ -168,6 +175,16 @@ async function showDiffs(/** @type {typeof defaultHelper} */ h) {
             + ` "${newF}"`
             + ` > "${diffOut}"`
         )
+      }
+      catch (error) {
+        // Diff will end with error each time
+      }
+      try {
+        spawn(
+          'code --diff'
+          + ` "${oldF}"`
+          + ` "${newF}"`
+          , { stdio: 'inherit' })
       }
       catch (error) {}
 

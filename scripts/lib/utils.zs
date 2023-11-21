@@ -416,7 +416,7 @@ zenClass Utils {
   }
 
   function addEnchRecipe(output as IItemStack, ench as crafttweaker.enchantments.IEnchantmentDefinition, inputs as IIngredient[][]) as void {
-    recipes.addShaped(output.displayName.replaceAll(":", "_").replaceAll('§.|"', "") ~ '_ench',
+    recipes.addShaped(output.definition.id.replaceAll(":", "_")~'_'~output.damage~'_ench',
       output.withTag({ench:[{lvl: 1 as short, id: ench.id as short}]}),
       inputs, function(out, ins, cInfo) {
         return output.withTag({ench:[{lvl: 1 as short, id: ench.id as short}]});
@@ -433,22 +433,28 @@ zenClass Utils {
      ██║   ███████╗███████╗███████╗██║  ██║██║  ██║╚███╔███╔╝
      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ 
   */
-  function tellrawItem(item as IItemStack, color as string = null) as string {
-    val colorTag = isNull(color) ? '' : ',"color":"'~color~'"';
-    val amount = item.amount > 1 ? '{"text":"'~item.amount~'"'~colorTag~'},{"text":" "},' : '';
-    val itemName =
-    '{"text":"\u00A7f   ","hoverEvent":'
-        ~'{"action":"show_item","value":"'
-          ~item.asData().toNBTString().replaceAll('"', '\\\\"')
-        ~'"}'
-      ~',"extra":['
-        ~'{"text":"["'~colorTag~'}'
-        ~',{"translate":"'~item.name~'.name"'~colorTag~'}'
-        ~',{"text":"]"'~colorTag~'}'
-      ~']'
-    ~'}';
+  function tellrawItem(item as IItemStack, color as string = null, showName as bool = true) as string {
+    val colorTag = isNull(color)
+      ? ''
+      : ',"color":"'~color~'"';
+    val displayName = item.hasDisplayName
+      ? '"'~item.tag.display.Name.asString()~'"'
+      : '{"translate":"'~item.name~'.name"}';
 
-    return amount ~ itemName;
+    val amount = item.amount > 1
+      ? '{"translate":"%s ","with":["'~item.amount~'"]'~colorTag~'},'
+      : '';
+    val name = showName 
+      ? ',{"translate":"[%s]","with":['~displayName~']'~colorTag~'}'
+      : '';
+    // The major part of `iconQuark` is actually 3 spaces, which are reserved for Quark item rendering
+    // So you needs Quark to get the icon
+    val iconQuark = 
+      '{"text":"\u00A7f   ","hoverEvent":{"action":"show_item","value":"'
+        ~item.asData().toNBTString().replaceAll('"', '\\\\"')
+      ~'"}}';
+    // Combine these pieces together, and return it
+    return '{"text":"","extra":['~amount~iconQuark~name~']}';
   }
 
   function tellrawSend(player as IPlayer, message as string) as void {

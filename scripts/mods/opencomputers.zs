@@ -105,7 +105,7 @@ craft.make(<opencomputers:material:28> * 8, ["pretty",
   "▲ P ▲"], {
   "▲": <ore:dust>,          # Dust
   "P": <biomesoplenty:ash>, # Pile of Ashes
-  "~": <fluid:latex> * 1000, # Latex Bucket
+  "~": LiquidIngr('latex'), # Latex Bucket
 });
 
 # [Angel Upgrade] from [Angel Block][+1]

@@ -1,0 +1,20 @@
+commands.lang.usage="/lang" 或 "/lang hand" 命令可以把物品栏或手中物品的信息导出到 crafttweaker.log 文件里
+commands.lang.output=已将 %s 个物品的信息导出到 crafttweaker.log
+commands.lang.empty=你的物品栏是空的。请把未本地化的物品放到物品栏里
+commands.lang.hand=已将手持物品的信息输出到 crafttweaker.log
+
+commands.addtooltip.usage="§e/addtooltip §6[Item Description]§r" 命令可以将为手持物品添加工具提示的语言条目导出到 crafttweaker.log
+commands.addtooltip.needtext=§e/addtooltip§r 命令需要提供工具提示的内容。比如 §e/addtooltip §6Hello world!
+commands.addtooltip.needitem=§e/addtooltip§r 命令需要手持物品。
+commands.addtooltip.succes=§7新增工具提示的语言条目已经输出到 §n§fcrafttweaker.log
+commands.addtooltip.notag=§8注意：§7/addtooltip§8 命令不会考虑物品的 NBT
+
+commands.restart_server.usage=§8[§6ø§8]§r 需要服务器内的全体成员都执行这个命令，这样才可以重启服务器。
+commands.restart_server.you_want=§8[§6ø§8]§r 你请求§n重启服务器§r。其他玩家需要在 %s 秒内执行 §a/restart_server§r 命令同意你的请求。
+commands.restart_server.query=§8[§6ø§8]§r %s 请求§n重启服务器§r。如果你也希望§n重启服务器§r，执行 §a/restart_server§r 命令来同意其请求。
+commands.restart_server.failed=§8[§6ø§8]§r 请求没有通过。以下玩家没有在时间限制内执行 §a/restart_server§r 命令：%s
+commands.restart_server.cancelled=§8[§6ø§8]§r 针对§n重启服务器§r的玩家投票已取消。
+commands.restart_server.already_voted=§8[§6ø§8]§r 你已经同意过§n重启服务器§r请求了，正等待以下玩家投票同意请求：%s
+commands.restart_server.awaiting=§8[§6ø§8]§r 以下玩家仍未执行 §a/restart_server§r 命令同意请求：%s
+commands.restart_server.in_process=§8[§6ø§8]§r §c§n服务器即将重启§r...
+commands.restart_server.delay=§8[§6ø§8]§r §c服务器会在 3 秒内关闭！

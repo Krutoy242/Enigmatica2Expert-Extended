@@ -172,6 +172,7 @@ utils.rh(<mysticalagradditions:insanium:4>);
 utils.rh(<mysticalagradditions:stuff:69>);
 utils.rh(<immersiveengineering:ore:1>);
 utils.rh(<qmd:ingot:3>); // Titanium Ingot
+utils.rh(<betteranimalsplus:cheese>);
 
 # Pams replacements
 utils.rh(<harvestcraft:chilipepperitem>);

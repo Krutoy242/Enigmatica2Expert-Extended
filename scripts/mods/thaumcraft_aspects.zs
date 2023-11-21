@@ -76,8 +76,6 @@ ____ ____ ___ _  _ ____ _    _    _   _    ____ ___  ___  _ ___ _ ____ _  _ ____
 #######################################################
 */
 
-<actuallyadditions:block_misc:3>                .setAspects(<aspect:vitreus>*10     ,<aspect:tenebrae>*5        ,<aspect:terra>*10); #Black quartz ore
-<actuallyadditions:item_misc:5>                 .setAspects(<aspect:vitreus>*10     ,<aspect:tenebrae>*5); #Black quartz
 
 /*
 #######################################################
@@ -111,11 +109,8 @@ ____ ___  ___  _    _ ____ ___     ____ _  _ ____ ____ ____ ____ ___ _ ____ ____
 #######################################################
 */
 
-<appliedenergistics2:quartz_ore>                .setAspects(<aspect:vitreus>*10     ,<aspect:potentia>*5        ,<aspect:terra>*10); #Certus quartz ore
-<appliedenergistics2:material>                  .setAspects(<aspect:vitreus>*10     ,<aspect:potentia>*5); #Certus quartz
-<appliedenergistics2:charged_quartz_ore>        .setAspects(<aspect:vitreus>*10     ,<aspect:potentia>*20       ,<aspect:terra>*10); #Charged certus quartz ore
-<appliedenergistics2:material:1>                .setAspects(<aspect:vitreus>*10     ,<aspect:potentia>*20); #Charged certus quartz
-<appliedenergistics2:material:10>               .setAspects(<aspect:vitreus>*10     ,<aspect:potentia>*10       ,<aspect:ordo>*10); #Charged certus quartz
+<appliedenergistics2:quartz_block>              .setAspects(<aspect:vitreus>*30     ,<aspect:potentia>*15); #Certus quartz block
+<appliedenergistics2:material:10>               .setAspects(<aspect:vitreus>*10     ,<aspect:potentia>*10       ,<aspect:ordo>*10); #Pure certus quartz
 
 /*
 #######################################################
@@ -131,12 +126,7 @@ ____ ____ ___ ____ ____ _       ____ ____ ____ ____ ____ ____ _   _
 
 <astralsorcery:itemusabledust>                  .setAspects(<aspect:lux>*2          ,<aspect:sensus>*1); #illumination powder
 <astralsorcery:itemusabledust:1>                .setAspects(<aspect:tenebrae>*10    ,<aspect:potentia>*20); #nocturnal powder
-<astralsorcery:itemcraftingcomponent>           .setAspects(<aspect:aqua>*5         ,<aspect:vitreus>*5); #aquamarine
 <astralsorcery:itemcraftingcomponent:4>         .setAspects(<aspect:praecantatio>*5 ,<aspect:ordo>*10); #resonating gem
-<astralsorcery:itemcraftingcomponent:2>         .setAspects(<aspect:praecantatio>*5 ,<aspect:vitreus>*10        ,<aspect:tenebrae>*5); #stardust
-<astralsorcery:itemcraftingcomponent:1>         .setAspects(<aspect:praecantatio>*5 ,<aspect:metallum>*10       ,<aspect:tenebrae>*5); #starmetal ingot
-<astralsorcery:blockcustomsandore>              .setAspects(<aspect:aqua>*5         ,<aspect:terra>*5           ,<aspect:perditio>*5); #aquamarine ore
-<astralsorcery:blockcustomore:1>                .setAspects(<aspect:praecantatio>*5 ,<aspect:metallum>*10       ,<aspect:terra>*5       ,<aspect:tenebrae>*5); #starmetal ore
 <astralsorcery:blockinfusedwood>                .setAspects(<aspect:herba>*20        ,<aspect:praecantatio>*1); #infused wood
 <astralsorcery:blockinfusedwood:6>              .setAspects(<aspect:herba>*20        ,<aspect:praecantatio>*1); #vibrant infused wood
 
@@ -549,6 +539,8 @@ ___  ____ ____ ___     _  _ ____ ___     _    ____ ____ ____ _  _ _ _  _ ____
 <deepmoblearning:glitch_infused_ingot>              .setAspects(<aspect:metallum>*10  ,<aspect:machina>*20      ,<aspect:caeles>*10       ,<aspect:imperium>*20); 
 <deepmoblearning:glitch_heart>                      .setAspects(<aspect:victus>*30    ,<aspect:machina>*20      ,<aspect:caeles>*10       ,<aspect:imperium>*20); 
 
+<deepmoblearningbm:blood_infused_glitch_ingot>      .setAspects(<aspect:metallum>*10  ,<aspect:machina>*20      ,<aspect:caeles>*10       ,<aspect:imperium>*20       ,<aspect:sanguis>*15); 
+
 <deepmoblearning:living_matter_overworldian>        .setAspects(<aspect:machina>*20   ,<aspect:terra>*30        ,<aspect:victus>*30       ,<aspect:bestia>*30);
 <deepmoblearning:living_matter_hellish>             .setAspects(<aspect:machina>*20   ,<aspect:infernum>*30     ,<aspect:mortuus>*30      ,<aspect:ignis>*30);
 <deepmoblearning:living_matter_extraterrestrial>    .setAspects(<aspect:machina>*20   ,<aspect:alienis>*30      ,<aspect:vacuos>*30       ,<aspect:tenebrae>*30);
@@ -598,8 +590,6 @@ ____ _  _ ___     ____ ____ ___  ____ ____ _  _
 #######################################################
 */
 
-<endreborn:item_ingot_wolframium>               .setAspects(<aspect:metallum>*10  ,<aspect:vacuos>*5); #Tungsten ingot
-
 /*
 #######################################################
 ____ _  _ ___  ____ ____    _ ____ 
@@ -630,7 +620,6 @@ ____ ____ ____ ____ ____ ___ ____ _   _
 #######################################################
 */
 
-<forestry:apatite>                              .setAspects(<aspect:vitreus>*10  ,<aspect:herba>*5);
 <forestry:candle>                               .setAspects(<aspect:lux>*20      ,<aspect:herba>*5            ,<aspect:aer>*5);
 <forestry:stump>                                .setAspects(<aspect:lux>*20      ,<aspect:herba>*5            ,<aspect:aer>*5);
 <forestry:beeswax>                              .setAspects(<aspect:lux>*5       ,<aspect:aer>*2);
@@ -912,9 +901,14 @@ _  _ ____ _  _ ____ _  _ _ ____ _  _
 #######################################################
 */
 
-<mekanism:ingot>                                .setAspects(<aspect:metallum>*10  ,<aspect:tenebrae>*5        ,<aspect:terra>*10); #Refined obsidian ingot
-<mekanism:ingot:1>                              .setAspects(<aspect:metallum>*10  ,<aspect:terra>*5);                              #Osmium ingot
-<mekanism:ingot:3>                              .setAspects(<aspect:metallum>*10  ,<aspect:lux>*5             ,<aspect:terra>*10); #Refined glowstone ingot
+<mekanism:ingot>                                .setAspects(<aspect:metallum>*10  ,<aspect:tenebrae>*5        ,<aspect:terra>*10);  #Refined obsidian ingot
+<mekanism:nugget>                               .setAspects(<aspect:metallum>*1   ,<aspect:terra>*1);                               #Refined obsidian nugget
+<mekanism:basicblock:2>                         .setAspects(<aspect:metallum>*67  ,<aspect:tenebrae>*33       ,<aspect:terra>*67);  #Refined obsidian block
+<mekanism:otherdust:5>                          .setAspects(<aspect:metallum>*10  ,<aspect:tenebrae>*5        ,<aspect:terra>*10,    <aspect:perditio>*5); #Refined obsidian dust
+
+<mekanism:ingot:3>                              .setAspects(<aspect:metallum>*10  ,<aspect:lux>*10            ,<aspect:sensus>*5);  #Refined glowstone ingot
+<mekanism:nugget:3>                             .setAspects(<aspect:metallum>*1  ,<aspect:sensus>*1);                               #Refined glowstone nugget
+<mekanism:basicblock:4>                         .setAspects(<aspect:metallum>*67  ,<aspect:lux>*67            ,<aspect:sensus>*33); #Refined glowstone block
 
 /*
 #######################################################
@@ -926,9 +920,17 @@ ___  _    _  _ ____ ___ _ ____
 */
 
 <plustic:mirioningot>                           .setAspects(<aspect:metallum>*10  ,<aspect:mana>*10           ,<aspect:auram>*10); 
-<plustic:osgloglasingot>                        .setAspects(<aspect:metallum>*10  ,<aspect:potentia>*30); 
-<plustic:alumiteingot>                          .setAspects(<aspect:metallum>*10  ,<aspect:visum>*5); 
+<plustic:mirionnugget>                          .setAspects(<aspect:metallum>*1   ,<aspect:mana>*1            ,<aspect:auram>*1); 
+<plustic:mirionblock>                           .setAspects(<aspect:metallum>*67  ,<aspect:mana>*67           ,<aspect:auram>*67); 
+<plustic:osgloglasingot>                        .setAspects(<aspect:metallum>*10  ,<aspect:visum>*10); 
+<plustic:osgloglasnugget>                       .setAspects(<aspect:metallum>*1   ,<aspect:visum>*1); 
+<plustic:osgloglasblock>                        .setAspects(<aspect:metallum>*67  ,<aspect:visum>*67); 
+<plustic:alumiteingot>                          .setAspects(<aspect:metallum>*10  ,<aspect:sonus>*5); 
+<plustic:alumitenugget>                         .setAspects(<aspect:metallum>*1   ,<aspect:sonus>*1); 
+<plustic:alumiteblock>                          .setAspects(<aspect:metallum>*67  ,<aspect:sonus>*67); 
 <plustic:osmiridiumingot>                       .setAspects(<aspect:metallum>*10  ,<aspect:volatus>*5); 
+<plustic:osmiridiumnugget>                      .setAspects(<aspect:metallum>*1   ,<aspect:volatus>*1); 
+<plustic:osmiridiumblock>                       .setAspects(<aspect:metallum>*67  ,<aspect:volatus>*67); 
 
 /*
 #######################################################
@@ -1064,21 +1066,6 @@ ___ _  _ ____ ____ _  _ ____ _       ____ ____ _  _ _  _ ___  ____ ___ _ ____ _ 
 <thermalfoundation:material:2052>               .setAspects(<aspect:terra>*15     ,<aspect:exitium>*5); #Basalz rod
 <thermalfoundation:material:2050>               .setAspects(<aspect:aer>*15       ,<aspect:sonus>*5); #Blitz rod
 
-<thermalfoundation:material:130>                .setAspects(<aspect:metallum>*10  ,<aspect:mythus>*5); #Silver ingot
-<thermalfoundation:material:132>                .setAspects(<aspect:metallum>*10  ,<aspect:aer>*5); #Aluminum ingot
-<thermalfoundation:material:133>                .setAspects(<aspect:metallum>*10  ,<aspect:imperium>*5); #Nickiel ingot
-<thermalfoundation:material:134>                .setAspects(<aspect:metallum>*10  ,<aspect:sensus>*5); #Platinum ingot
-<thermalfoundation:material:135>                .setAspects(<aspect:metallum>*10  ,<aspect:fluctus>*5); #Iridium ingot
-<thermalfoundation:material:136>                .setAspects(<aspect:metallum>*10  ,<aspect:auram>*5); #Mana infused ingot
-
-<thermalfoundation:material:161>                .setAspects(<aspect:metallum>*10  ,<aspect:motus>*5); #Electrum ingot
-<thermalfoundation:material:162>                .setAspects(<aspect:metallum>*10  ,<aspect:fabrico>*5); #Invar ingot
-<thermalfoundation:material:163>                .setAspects(<aspect:metallum>*10  ,<aspect:vinculum>*5); #Bronze ingot
-<thermalfoundation:material:164>                .setAspects(<aspect:metallum>*10  ,<aspect:sonus>*5); #Constantan ingot
-<thermalfoundation:material:165>                .setAspects(<aspect:metallum>*10  ,<aspect:machina>*5); #Signalum ingot
-<thermalfoundation:material:166>                .setAspects(<aspect:metallum>*10  ,<aspect:lux>*5); #Lumium ingot
-<thermalfoundation:material:167>                .setAspects(<aspect:metallum>*10  ,<aspect:alienis>*5); #Enderium ingot
-
 /*
 #######################################################
 ___ _ _  _ _  _ ____ ____ . ____    ____ ____ _  _ ____ ___ ____ _  _ ____ ___ 
@@ -1094,12 +1081,15 @@ ___ _ _  _ _  _ ____ ____ . ____    ____ ____ _  _ ____ ___ ____ _  _ ____ ___
                                                 .setAspects(<aspect:aqua>*10      ,<aspect:victus>*10         ,<aspect:fabrico>*5); 
 <entity:tconstruct:blueslime>                   .setAspects(<aspect:aqua>*10      ,<aspect:victus>*10         ,<aspect:fabrico>*5); 
 
-<tconstruct:ingots>                             .setAspects(<aspect:metallum>*10  ,<aspect:volatus>*5); #Cobalt ingot
-<tconstruct:ingots:1>                           .setAspects(<aspect:metallum>*10  ,<aspect:exitium>*5); #Ardite ingot
 <tconstruct:ingots:2>                           .setAspects(<aspect:metallum>*10  ,<aspect:aversio>*5); #Manyullyn ingot
+<tconstruct:nuggets:2>                          .setAspects(<aspect:metallum>*1);                       #Manyullyn nugget
+<tconstruct:metal:2>                            .setAspects(<aspect:metallum>*67  ,<aspect:aversio>*33);#Manyullyn block
 <tconstruct:ingots:5>                           .setAspects(<aspect:metallum>*10  ,<aspect:alkimia>*5); #Alchemical brass ingot
-<tconstruct:ingots:3>                           .setAspects(<aspect:metallum>*10  ,<aspect:aqua>*5); #Knightslime ingot
+<tconstruct:nuggets:5>                          .setAspects(<aspect:metallum>*1);                       #Alchemical brass nugget
+<tconstruct:metal:5>                            .setAspects(<aspect:metallum>*67  ,<aspect:alkimia>*33);#Alchemical brass block
 <tconstruct:ingots:4>                           .setAspects(<aspect:metallum>*10  ,<aspect:bestia>*5); #Pigiron ingot
+<tconstruct:nuggets:4>                          .setAspects(<aspect:metallum>*1);                      #Pigiron ingot
+<tconstruct:metal:4>                            .setAspects(<aspect:metallum>*67  ,<aspect:bestia>*33);#Pigiron block
 
 /*
 #######################################################
@@ -1110,16 +1100,35 @@ ___ _ _  _ _  _ ____ ____ . ____    ____ _  _ ____ _    _  _ ___ _ ____ _  _
 #######################################################
 */
 
-<tconevo:metal:25>                              .setAspects(<aspect:metallum>*10  ,<aspect:sanguis>*5); #Bound ingot
-<tconevo:metal:30>                              .setAspects(<aspect:metallum>*10  ,<aspect:spiritus>*5); #Sentient ingot
-<tconevo:metal:35>                              .setAspects(<aspect:metallum>*10  ,<aspect:potentia>*5); #Energium ingot
-<tconevo:metal:40>                              .setAspects(<aspect:metallum>*10  ,<aspect:humanus>*5); #UU-metal ingot
+<tconevo:metal:25>                              .setAspects(<aspect:metallum>*20  ,<aspect:sanguis>*10); #Bound ingot
+<tconevo:metal:27>                              .setAspects(<aspect:metallum>*2   ,<aspect:sanguis>*1);  #Bound nugget
+<tconevo:metal_block:5>                         .setAspects(<aspect:metallum>*133 ,<aspect:sanguis>*67); #Bound block
+<tconevo:metal:30>                              .setAspects(<aspect:metallum>*20  ,<aspect:spiritus>*10); #Sentient ingot
+<tconevo:metal:32>                              .setAspects(<aspect:metallum>*2   ,<aspect:spiritus>*1);  #Sentient nugget
+<tconevo:metal_block:6>                         .setAspects(<aspect:metallum>*133 ,<aspect:spiritus>*67); #Sentient block
+<tconevo:metal:35>                              .setAspects(<aspect:metallum>*20  ,<aspect:potentia>*10); #Energium ingot
+<tconevo:metal:37>                              .setAspects(<aspect:metallum>*2   ,<aspect:potentia>*1);  #Energium nugget
+<tconevo:metal_block:7>                         .setAspects(<aspect:metallum>*133 ,<aspect:potentia>*67); #Energium block
+<tconevo:metal:40>                              .setAspects(<aspect:metallum>*20  ,<aspect:humanus>*10); #UU-metal ingot
+<tconevo:metal:42>                              .setAspects(<aspect:metallum>*2   ,<aspect:humanus>*1);  #UU-metal nugget
+<tconevo:metal_block:8>                         .setAspects(<aspect:metallum>*133 ,<aspect:humanus>*67); #UU-metal block
 <tconevo:edible>                                .setAspects(<aspect:metallum>*10  ,<aspect:victus>*5); #Raw meat ingot
 <tconevo:edible:1>                              .setAspects(<aspect:metallum>*10  ,<aspect:bestia>*5); #Cooked meat ingot
-<tconevo:metal:15>                              .setAspects(<aspect:metallum>*10  ,<aspect:exanimis>*5); #Essence-Infused ingot
+<tconevo:metal:15>                              .setAspects(<aspect:metallum>*20  ,<aspect:exanimis>*25); #Essence-Infused ingot
+<tconevo:metal:17>                              .setAspects(<aspect:metallum>*2   ,<aspect:exanimis>*2);  #Essence-Infused nugget
+<tconevo:metal_block:3>                         .setAspects(<aspect:metallum>*133 ,<aspect:exanimis>*167);#Essence-Infused block
 <tconevo:metal>                                 .setAspects(<aspect:metallum>*100 ,<aspect:caeles>*50); #Wyvern ingot
+<tconevo:metal:2>                               .setAspects(<aspect:metallum>*10  ,<aspect:caeles>*5);  #Wyvern nugget
+<tconevo:metal_block>                           .setAspects(<aspect:metallum>*500 ,<aspect:caeles>*333);#Wyvern block
 <tconevo:metal:5>                               .setAspects(<aspect:metallum>*100 ,<aspect:draco>*50); #Draconic ingot
+<tconevo:metal:7>                               .setAspects(<aspect:metallum>*10  ,<aspect:draco>*5);  #Draconic nugget
+<tconevo:metal_block:1>                         .setAspects(<aspect:metallum>*500 ,<aspect:draco>*333);#Draconic block
 <tconevo:metal:10>                              .setAspects(<aspect:metallum>*100 ,<aspect:rattus>*50); #Chaotic ingot
+<tconevo:metal:12>                              .setAspects(<aspect:metallum>*10  ,<aspect:rattus>*5);  #Chaotic nugget
+<tconevo:metal_block:2>                         .setAspects(<aspect:metallum>*500 ,<aspect:rattus>*333);#Chaotic block
+<tconevo:metal:20>                              .setAspects(<aspect:metallum>*20  ,<aspect:aqua>*10,<aspect:ignis>*10,<aspect:terra>*10,<aspect:perditio>*10,<aspect:ordo>*10,<aspect:aer>*10); #Primordial ingot
+<tconevo:metal:22>                              .setAspects(<aspect:metallum>*2   ,<aspect:aqua>*1, <aspect:ignis>*1, <aspect:terra>*1, <aspect:perditio>*1, <aspect:ordo>*1, <aspect:aer>*1); #Primordial nugget
+<tconevo:metal_block:4>                         .setAspects(<aspect:metallum>*133 ,<aspect:aqua>*67,<aspect:ignis>*67,<aspect:terra>*67,<aspect:perditio>*67,<aspect:ordo>*67,<aspect:aer>*167); #Primordial block
 
 /*
 #######################################################
@@ -1130,13 +1139,15 @@ ___ _  _ ____ _  _ _  _ ____ ____ ____ ____ ___
 #######################################################
 */
 
-<tconevo:metal:20>                              .setAspects(<aspect:metallum>*15  ,<aspect:aer>*5 ,<aspect:aqua>*5 ,<aspect:ordo>*5 ,<aspect:perditio>*5      ,<aspect:terra>*5 ,<aspect:ignis>*5);
 <thaumadditions:mithrillium_ingot>              .setAspects(<aspect:metallum>*15  ,<aspect:mana>*10           ,<aspect:praecantatio>*10 ,<aspect:ordo>*2      ,<aspect:vitreus>*3);
 <thaumadditions:mithrillium_block>              .setAspects(<aspect:metallum>*150 ,<aspect:mana>*100          ,<aspect:praecantatio>*100,<aspect:ordo>*20     ,<aspect:vitreus>*30);
+<thaumadditions:mithrillium_plate>              .setAspects(<aspect:metallum>*15  ,<aspect:mana>*10           ,<aspect:praecantatio>*10 ,<aspect:ordo>*2      ,<aspect:vitreus>*3, <aspect:instrumentum>*2);
 <thaumadditions:adaminite_ingot>                .setAspects(<aspect:metallum>*15  ,<aspect:infernum>*66       ,<aspect:sanguis>*10      ,<aspect:spiritus>*10 ,<aspect:vitium>*3);
 <thaumadditions:adaminite_block>                .setAspects(<aspect:metallum>*150 ,<aspect:infernum>*666      ,<aspect:sanguis>*100     ,<aspect:spiritus>*100,<aspect:vitium>*30);
+<thaumadditions:adaminite_plate>                .setAspects(<aspect:metallum>*15  ,<aspect:infernum>*66       ,<aspect:sanguis>*10      ,<aspect:spiritus>*10 ,<aspect:vitium>*3, <aspect:instrumentum>*2);
 <thaumadditions:mithminite_ingot>               .setAspects(<aspect:metallum>*15  ,<aspect:draco>*10          ,<aspect:mythus>*10       ,<aspect:caeles>*10   ,<aspect:auram>*20);
 <thaumadditions:mithminite_block>               .setAspects(<aspect:metallum>*150 ,<aspect:draco>*100         ,<aspect:mythus>*100      ,<aspect:caeles>*100  ,<aspect:auram>*200);
+<thaumadditions:mithminite_plate>               .setAspects(<aspect:metallum>*15  ,<aspect:draco>*10          ,<aspect:mythus>*10       ,<aspect:caeles>*10   ,<aspect:auram>*20, <aspect:instrumentum>*2);
 <thaumadditions:puriflower>                     .setAspects(<aspect:auram>*10     ,<aspect:herba>*20          ,<aspect:praecantatio>*10 ,<aspect:sensus>*20);
 
 <thaumcraft:alumentum>                         .setAspects(<aspect:ignis>*2       , <aspect:potentia>*2);
@@ -1145,6 +1156,20 @@ ___ _  _ ____ _  _ _  _ ____ ____ ____ ____ ___
 
 <thaumcraft:bath_salts>                        .setAspects(<aspect:ordo>*1        , <aspect:victus>*1);
 <thaumcraft:sanity_soap>                       .setAspects(<aspect:ordo>*2        , <aspect:victus>*2         ,<aspect:mana>*2);
+
+<thaumcraft:ingot>                              .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*5);
+<thaumcraft:nugget:6>                           .setAspects(<aspect:metallum>*1);
+<thaumcraft:metal_thaumium>                     .setAspects(<aspect:metallum>*67        , <aspect:praecantatio>*33);
+<thaumcraft:plate:2>                            .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*5,  <aspect:instrumentum>*2);
+<mysticalagriculture:thaumium_seeds>            .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*5,  <aspect:herba>*20);
+<mysticalagriculture:thaumium_essence>          .setAspects(<aspect:metallum>*10        , <aspect:praecantatio>*25);
+
+<thaumcraft:ingot:1>                            .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5);
+<thaumcraft:nugget:7>                           .setAspects(<aspect:metallum>*1);
+<thaumcraft:metal_void>                         .setAspects(<aspect:metallum>*67        , <aspect:vitium>*33);
+<thaumcraft:plate:3>                            .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:instrumentum>*2);
+<mysticalagriculture:void_metal_seeds>          .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:herba>*20);
+<mysticalagriculture:void_metal_essence>        .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:praecantatio>*20);
 
 val nitor = [
 <thaumcraft:nitor_white>,
@@ -1178,9 +1203,16 @@ ___ _ _ _ _ _    _ ____ _  _ ___    ____ ____ ____ ____ ____ ___
 #######################################################
 */
 
+<mysticalagriculture:fiery_ingot_seeds>         .setAspects(<aspect:metallum>*15  ,<aspect:ignis>*40    ,<aspect:auram>*12    ,<aspect:herba>*20); 
+<mysticalagriculture:fiery_ingot_essence>       .setAspects(<aspect:metallum>*15  ,<aspect:ignis>*40    ,<aspect:auram>*12    ,<aspect:praecantatio>*20); 
+
 <twilightforest:ironwood_ingot>                 .setAspects(<aspect:metallum>*10  ,<aspect:herba>*5); 
+<mysticalagriculture:ironwood_seeds>            .setAspects(<aspect:metallum>*10  ,<aspect:herba>*20); 
+<mysticalagriculture:ironwood_essence>          .setAspects(<aspect:metallum>*10  ,<aspect:herba>*5     ,<aspect:praecantatio>*15); 
 <twilightforest:knightmetal_ingot>              .setAspects(<aspect:metallum>*10  ,<aspect:praemunio>*5); 
 <twilightforest:armor_shard_cluster>            .setAspects(<aspect:metallum>*5  ,<aspect:praemunio>*10); 
+<mysticalagriculture:knightmetal_seeds>         .setAspects(<aspect:metallum>*10  ,<aspect:praemunio>*5 ,<aspect:herba>*20); 
+<mysticalagriculture:knightmetal_essence>       .setAspects(<aspect:metallum>*10  ,<aspect:praemunio>*5 ,<aspect:praecantatio>*20); 
 <twilightforest:auroralized_glass>              .setAspects(<aspect:vitreus>*5    ,<aspect:alienis>*10); 
 
 /*
@@ -1330,7 +1362,11 @@ _  _ _  _ _    ___  ____ ____    _    _ ___  ____ ____ ____ _   _
 #######################################################
 */
 
-<libvulpes:productingot:7>                      .setAspects(<aspect:metallum>*10  ,<aspect:gelum>*5); #Titanium ingot
+<libvulpes:productsheet:1>                    .setAspects(<aspect:metallum>*21); 
+<libvulpes:productsheet:4>                    .setAspects(<aspect:metallum>*14    ,<aspect:permutatio>*7); 
+<libvulpes:productsheet:6>                    .setAspects(<aspect:metallum>*21    ,<aspect:ordo>*7); 
+<libvulpes:productsheet:7>                    .setAspects(<aspect:metallum>*14    ,<aspect:gelum>*7); 
+<libvulpes:productsheet:9>                    .setAspects(<aspect:metallum>*14    ,<aspect:aer>*7); 
 
 # Removing wrong aspects from stuff
 <conarm:armor_trim:*>.setAspects(<aspect:terra>);
@@ -1354,6 +1390,764 @@ _  _ _  _ _    ___  ____ ____    _    _ ___  ____ ____ ____ _   _
 <biomesoplenty:hard_ice>                       .setAspects(<aspect:gelum>*21);
 <appliedenergistics2:sky_stone_block>          .setAspects(<aspect:alienis>*2     , <aspect:tenebrae>*7);
 <minecraft:sugar>                              .setAspects(<aspect:desiderium>    , <aspect:aqua>);
+
+/*
+███╗░░░███╗███████╗████████╗░█████╗░██╗░░░░░██╗░░░░░██╗░░░██╗██████╗░░██████╗░██╗░░░██╗
+████╗░████║██╔════╝╚══██╔══╝██╔══██╗██║░░░░░██║░░░░░██║░░░██║██╔══██╗██╔════╝░╚██╗░██╔╝
+██╔████╔██║█████╗░░░░░██║░░░███████║██║░░░░░██║░░░░░██║░░░██║██████╔╝██║░░██╗░░╚████╔╝░
+██║╚██╔╝██║██╔══╝░░░░░██║░░░██╔══██║██║░░░░░██║░░░░░██║░░░██║██╔══██╗██║░░╚██╗░░╚██╔╝░░
+██║░╚═╝░██║███████╗░░░██║░░░██║░░██║███████╗███████╗╚██████╔╝██║░░██║╚██████╔╝░░░██║░░░
+╚═╝░░░░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░
+*/
+
+/*
+Just a list of aspect - metal
+<aspect:amogus>,        - null
+<aspect:ignis>,         - fiery ingot
+<aspect:herba>,         - ironwood
+<aspect:ventus>,        - lithium
+<aspect:exanimis>,      - essence infused
+<aspect:praemunio>,     - knight metal
+<aspect:tenebrae>,      - thorium
+<aspect:instrumentum>,  - alchemical brass?
+<aspect:aer>,           - aluminium
+<aspect:terra>,         - osmium
+<aspect:rattus>,        - chaotic
+<aspect:spiritus>,      - sentient
+<aspect:aqua>,          - knightslime
+<aspect:perditio>,      - heavy metal
+<aspect:ordo>,          - lead
+<aspect:metallum>,      - iron
+<aspect:sanguis>,       - bounded
+<aspect:imperium>,      - nickiel
+<aspect:sensus>,        - platinum
+<aspect:alienis>,       - enderium
+<aspect:victus>,        - raw meat
+<aspect:mythus>,        - silver
+<aspect:praecantatio>,  - thaumium?
+<aspect:fluctus>,       - iridium
+<aspect:visum>,         - osgloglas
+<aspect:vinculum>,      - bronze
+<aspect:fabrico>,       - invar
+<aspect:alkimia>,       - alchemical brass
+<aspect:volatus>,       - cobalt
+<aspect:draco>,         - draconic metal
+<aspect:sonus>,         - constantant
+<aspect:vitium>,        - void metal
+<aspect:vacuos>,        - tungsten
+<aspect:caeles>,        - wyvern metal
+<aspect:lux>,           - lumium
+<aspect:permutatio>,    - copper
+<aspect:humanus>,       - UU metal, boron
+<aspect:machina>,       - signalium
+<aspect:desiderium>,    - gold
+<aspect:vitreus>,       - tin
+<aspect:motus>,         - electrum
+<aspect:exitium>,       - ardite
+<aspect:cognitio>,      - enchanted metal
+<aspect:mana>,          - manasteel
+<aspect:infernum>,      - demon metal
+<aspect:mortuus>,       - uranium
+<aspect:aversio>,       - manyullyn
+<aspect:potentia>,      - energium
+<aspect:auram>,         - mana infused, magnesium
+<aspect:bestia>,        - cooked meat, pigiron
+<aspect:gelum>,         - titanium
+*/
+
+function calculateAspects(main as float, secondary as float, a1 as CTAspectStack, a2 as CTAspectStack, a3 as CTAspectStack) as CTAspectStack[] {
+  var list = [] as CTAspectStack[];
+  list+=a1.setAmount(main as int);
+  list+=a2.setAmount(secondary as int);
+  if (!isNull(a3)) list+=a3.setAmount(main as int); 
+  return list;
+}
+
+function addMetallurgicAspects(mul as float, mulAs as float, tier as int,
+  ingot as IItemStack,          nugget as IItemStack,   block as IItemStack,    dust as IItemStack,
+  plate as IItemStack,      densePlate as IItemStack,    sheetBlock as IItemStack,    case as IItemStack, gear as IItemStack,     
+  cluster as IItemStack, crystal as IItemStack, crystalCompacted as IItemStack, rockyChunk as IItemStack,
+  chunk as IItemStack, alchemicalDust as IItemStack, dirty as IItemStack,
+  ore as IItemStack, oreNether as IItemStack, oreEnd as IItemStack,
+  crushed as IItemStack, crushedPurfired as IItemStack,
+  seed as IItemStack, essence as IItemStack,
+  aspectMain as CTAspectStack, aspectSec as CTAspectStack, aspectThird as CTAspectStack = null) as void
+{
+  if(!isNull(ingot))  ingot     .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird));
+  if(!isNull(nugget)) nugget    .setAspects(calculateAspects(1.0*mul, 0.5*mulAs, aspectMain, aspectSec, aspectThird));
+  if(!isNull(block))  block     .setAspects(calculateAspects(67.0*mul, 33.5*mulAs, aspectMain, aspectSec, aspectThird));
+  if(!isNull(dust))   dust      .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird) + <aspect:perditio>*5);
+
+  if(!isNull(plate))      plate     .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird) + <aspect:instrumentum>*2);
+  if(!isNull(densePlate)) densePlate.setAspects(calculateAspects(67.0*mul, 33.5*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:instrumentum>*13);
+  if(!isNull(sheetBlock)) sheetBlock.setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird));
+  if(!isNull(case))       case      .setAspects(calculateAspects(2.0*mul, 2.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:instrumentum>*2);
+  if(!isNull(gear))       gear      .setAspects(calculateAspects(30.0*mul, 15.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:machina>*5);
+  
+  if(!isNull(cluster))          cluster         .setAspects(calculateAspects(15.0*mul, 10.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:ordo>*5+ <aspect:terra>*5);
+  if(!isNull(crystal))          crystal         .setAspects(calculateAspects(15.0*mul, 10.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:ordo>*10 );
+  if(!isNull(crystalCompacted)) crystalCompacted.setAspects(calculateAspects(60.0*mul, 40.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:vitreus>*20 );
+  if(!isNull(rockyChunk))       rockyChunk      .setAspects(calculateAspects(150.0*mul, 100.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:vitreus>*50+ <aspect:desiderium>*100 );
+  if(!isNull(chunk))            chunk           .setAspects(calculateAspects(250.0*mul, 200.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:vitreus>*75+ <aspect:permutatio>*100 );
+  if(!isNull(alchemicalDust))   alchemicalDust  .setAspects(calculateAspects(500.0*mul, 500.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:ordo>*250+ <aspect:praecantatio>*250+ <aspect:caeles>*50 );
+  if(!isNull(dirty))            dirty           .setAspects(calculateAspects(60.0*mul, 40.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:permutatio>*30 );
+  
+  if(!isNull(ore))        ore       .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird)+  <aspect:terra>*5 );
+  if(!isNull(oreNether))  oreNether .setAspects(calculateAspects(20.0*mul, 10.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:ignis>*10 );
+  if(!isNull(oreEnd))     oreEnd    .setAspects(calculateAspects(40.0*mul, 20.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:alienis>*10 );
+
+  if(!isNull(crushed))          crushed         .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:perditio>*1 );
+  if(!isNull(crushedPurfired))  crushedPurfired .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:ordo>*1 );
+
+  if(!isNull(seed))     seed      .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:herba>*(((5.0*tier)as int)) );
+  if(!isNull(essence))  essence   .setAspects(calculateAspects(10.0*mul, 5.0*mulAs, aspectMain, aspectSec, aspectThird)+ <aspect:praecantatio>*(((5.0*tier)as int)) );
+}
+
+#Iron
+addMetallurgicAspects
+(1,1,3,
+<minecraft:iron_ingot>,<minecraft:iron_nugget>,<minecraft:iron_block>,<thermalfoundation:material>,
+<thermalfoundation:material:32>,<ic2:plate:12>,<immersiveengineering:sheetmetal:9>,<ic2:casing:3>,<thermalfoundation:material:24>,
+<thaumcraft:cluster>, <jaopca:item_crystalshardiron>, <jaopca:item_crystalabyssiron>, 
+<jaopca:item_rockychunkiron>, <jaopca:item_chunkiron>, <jaopca:item_dustalchiron>,<jaopca:item_dirtygemiron>,
+<minecraft:iron_ore>, <netherendingores:ore_nether_vanilla:4>, <netherendingores:ore_end_vanilla:4>, <ic2:crushed:2>, <ic2:purified:2>,
+<mysticalagriculture:iron_seeds>,<mysticalagriculture:iron_essence>,
+<aspect:metallum>,<aspect:metallum>);
+
+#Gold
+addMetallurgicAspects
+(1,2,4,
+<minecraft:gold_ingot>,<minecraft:gold_nugget>,<minecraft:gold_block>,<thermalfoundation:material:1>,
+<thermalfoundation:material:33>,<ic2:plate:11>,<immersiveengineering:sheetmetal:10>,<ic2:casing:2>,<thermalfoundation:material:25>,
+<thaumcraft:cluster:1>, <jaopca:item_crystalshardgold>, <jaopca:item_crystalabyssgold>, 
+<jaopca:item_rockychunkgold>, <jaopca:item_chunkgold>, <jaopca:item_dustalchgold>,<jaopca:item_dirtygemgold>,
+<minecraft:gold_ore>, <netherendingores:ore_nether_vanilla:3>, <netherendingores:ore_end_vanilla:3>, <ic2:crushed:1>, <ic2:purified:1>,
+<mysticalagriculture:gold_seeds>,<mysticalagriculture:gold_essence>,
+<aspect:metallum>,<aspect:desiderium>);
+
+#Diamond
+addMetallurgicAspects
+(2,2,4,
+<minecraft:diamond>,<thermalfoundation:material:16>,<minecraft:diamond_block>,<ic2:dust:5>,
+null,null,null,null,<thermalfoundation:material:26>,
+<jaopca:item_clusterdiamond>,<jaopca:item_crystalsharddiamond>,<jaopca:item_crystalabyssdiamond>,
+<jaopca:item_rockychunkdiamond>,<jaopca:item_chunkdiamond>,<jaopca:item_dustalchdiamond>,<jaopca:item_dirtygemdiamond>,
+<minecraft:diamond_ore>,<netherendingores:ore_nether_vanilla:1>,<netherendingores:ore_end_vanilla:1>,
+null,null,
+<mysticalagriculture:diamond_seeds>,<mysticalagriculture:diamond_essence>,
+<aspect:vitreus>, <aspect:desiderium>);
+
+#Emerald
+addMetallurgicAspects
+(1.5,2,4,
+<minecraft:emerald>,<thermalfoundation:material:17>,<minecraft:emerald_block>,<actuallyadditions:item_dust:3>,
+null,null,null,null,<thermalfoundation:material:27>,
+<jaopca:item_clusteremerald>,<jaopca:item_crystalshardemerald>,<jaopca:item_crystalabyssemerald>,
+<jaopca:item_rockychunkemerald>,<jaopca:item_chunkemerald>,<jaopca:item_dustalchemerald>,<jaopca:item_dirtygememerald>,
+<minecraft:emerald_ore>,<netherendingores:ore_nether_vanilla:2>,<netherendingores:ore_end_vanilla:2>,null,null,
+null,null,
+<aspect:vitreus>, <aspect:desiderium>);
+
+#Copper
+addMetallurgicAspects
+(1,1,2,
+<thermalfoundation:material:128>,<thermalfoundation:material:192>,<thermalfoundation:storage>,
+<thermalfoundation:material:64>,<thermalfoundation:material:320>,<ic2:plate:10>,<immersiveengineering:sheetmetal>,<ic2:casing:1>,<thermalfoundation:material:256>,
+<thaumcraft:cluster:2>,<jaopca:item_crystalshardcopper>,<jaopca:item_crystalabysscopper>,<jaopca:item_rockychunkcopper>,
+<jaopca:item_chunkcopper>,<jaopca:item_dustalchcopper>,<jaopca:item_dirtygemcopper>,
+<thermalfoundation:ore>,<netherendingores:ore_nether_modded_1:1>,<netherendingores:ore_end_modded_1:1>,
+<ic2:crushed>,<ic2:purified>,
+<mysticalagriculture:copper_seeds>,<mysticalagriculture:copper_essence>,
+<aspect:metallum>, <aspect:permutatio>);
+
+#Tin
+addMetallurgicAspects
+(1,1,2,
+<thermalfoundation:material:129>,<thermalfoundation:material:193>,<thermalfoundation:storage:1>,<thermalfoundation:material:65>,
+<thermalfoundation:material:321>,<ic2:plate:17>,null,<ic2:casing:6>,<thermalfoundation:material:257>,
+<thaumcraft:cluster:3>,<jaopca:item_crystalshardtin>,<jaopca:item_crystalabysstin>,<jaopca:item_rockychunktin>,
+<jaopca:item_chunktin>,<jaopca:item_dustalchtin>,<jaopca:item_dirtygemtin>,
+<thermalfoundation:ore:1>,<netherendingores:ore_nether_modded_1:8>,<netherendingores:ore_end_modded_1:8>,
+<ic2:crushed:5>,<ic2:purified:5>,
+<mysticalagriculture:tin_seeds>,<mysticalagriculture:tin_essence>,
+<aspect:metallum>, <aspect:vitreus>);
+
+#Silver
+addMetallurgicAspects
+(1,1,3,
+<thermalfoundation:material:130>,<thermalfoundation:material:194>,<thermalfoundation:storage:2>,<thermalfoundation:material:66>,
+<thermalfoundation:material:322>,null,<immersiveengineering:sheetmetal:3>,null,<thermalfoundation:material:258>,
+<thaumcraft:cluster:4>,<jaopca:item_crystalshardsilver>,<jaopca:item_crystalabysssilver>,<jaopca:item_rockychunksilver>,
+<jaopca:item_chunksilver>,<jaopca:item_dustalchsilver>,<jaopca:item_dirtygemsilver>,
+<thermalfoundation:ore:2>,<netherendingores:ore_nether_modded_1:7>,<netherendingores:ore_end_modded_1:7>,
+<ic2:crushed:4>,<ic2:purified:4>,
+<mysticalagriculture:silver_seeds>,<mysticalagriculture:silver_essence>,
+<aspect:metallum>, <aspect:mythus>);
+
+#Lead
+addMetallurgicAspects
+(1,1,3,
+<thermalfoundation:material:131>,<thermalfoundation:material:195>,<thermalfoundation:storage:3>,<thermalfoundation:material:67>,
+<thermalfoundation:material:323>,<ic2:plate:14>,<immersiveengineering:sheetmetal:2>,<ic2:casing:4>,<thermalfoundation:material:259>,
+<thaumcraft:cluster:5>,<jaopca:item_crystalshardlead>,<jaopca:item_crystalabysslead>,<jaopca:item_rockychunklead>,
+<jaopca:item_chunklead>,<jaopca:item_dustalchlead>,<jaopca:item_dirtygemlead>,
+<thermalfoundation:ore:3>,<netherendingores:ore_nether_modded_1:3>,<netherendingores:ore_end_modded_1:3>,
+<ic2:crushed:3>,<ic2:purified:3>,
+<mysticalagriculture:lead_seeds>,<mysticalagriculture:lead_essence>,
+<aspect:metallum>, <aspect:ordo>);
+
+#Aluminium
+addMetallurgicAspects
+(1,1,3,
+<thermalfoundation:material:132>,<thermalfoundation:material:196>,<thermalfoundation:storage:4>,<thermalfoundation:material:68>,
+<thermalfoundation:material:324>,null,<immersiveengineering:sheetmetal:1>,null,<thermalfoundation:material:260>,
+<jaopca:item_clusteraluminium>,<jaopca:item_crystalshardaluminium>,<jaopca:item_crystalabyssaluminium>,<jaopca:item_rockychunkaluminium>,
+<jaopca:item_chunkaluminium>,<jaopca:item_dustalchaluminium>,<jaopca:item_dirtygemaluminium>,
+<thermalfoundation:ore:4>,<netherendingores:ore_nether_modded_1>,<netherendingores:ore_end_modded_1>,
+<jaopca:item_crushedaluminium>,<jaopca:item_crushedpurifiedaluminium>,
+<mysticalagriculture:aluminum_seeds>,<mysticalagriculture:aluminum_essence>,
+<aspect:metallum>, <aspect:aer>);
+
+#Nickiel
+addMetallurgicAspects
+(1,1,4,
+<thermalfoundation:material:133>,<thermalfoundation:material:197>,<thermalfoundation:storage:5>,<thermalfoundation:material:69>,
+<thermalfoundation:material:325>,null,<immersiveengineering:sheetmetal:4>,null,<thermalfoundation:material:261>,
+<jaopca:item_clusternickel>,<jaopca:item_crystalshardnickel>,<jaopca:item_crystalabyssnickel>,<jaopca:item_rockychunknickel>,
+<jaopca:item_chunknickel>,<jaopca:item_dustalchnickel>,<jaopca:item_dirtygemnickel>,
+<thermalfoundation:ore:5>,<netherendingores:ore_nether_modded_1:5>,<netherendingores:ore_end_modded_1:5>,
+<jaopca:item_crushednickel>,<jaopca:item_crushedpurifiednickel>,
+<mysticalagriculture:nickel_seeds>,<mysticalagriculture:nickel_essence>,
+<aspect:metallum>, <aspect:imperium>);
+
+#Platinum
+addMetallurgicAspects
+(2,1,5,
+<thermalfoundation:material:134>,<thermalfoundation:material:198>,<thermalfoundation:storage:6>,<thermalfoundation:material:70>,
+<thermalfoundation:material:326>,null,null,null,<thermalfoundation:material:262>,
+<jaopca:item_clusterplatinum>,<jaopca:item_crystalshardplatinum>,<jaopca:item_crystalabyssplatinum>,<jaopca:item_rockychunkplatinum>,
+<jaopca:item_chunkplatinum>,<jaopca:item_dustalchplatinum>,<jaopca:item_dirtygemplatinum>,
+<thermalfoundation:ore:6>,<netherendingores:ore_nether_modded_1:6>,<netherendingores:ore_end_modded_1:6>,
+<jaopca:item_crushedplatinum>,<jaopca:item_crushedpurifiedplatinum>,
+<mysticalagriculture:platinum_seeds>,<mysticalagriculture:platinum_essence>,
+<aspect:metallum>, <aspect:sensus>);
+
+#Iridium
+addMetallurgicAspects
+(2,2,6,
+<thermalfoundation:material:135>,<thermalfoundation:material:199>,<thermalfoundation:storage:7>,<thermalfoundation:material:71>,
+<thermalfoundation:material:327>,null,null,null,<thermalfoundation:material:263>,
+<jaopca:item_clusteriridium>,<jaopca:item_crystalshardiridium>,<jaopca:item_crystalabyssiridium>,<jaopca:item_rockychunkiridium>,
+<jaopca:item_chunkiridium>,<jaopca:item_dustalchiridium>,<jaopca:item_dirtygemiridium>,
+<thermalfoundation:ore:7>,null,null,
+<jaopca:item_crushediridium>,<jaopca:item_crushedpurifiediridium>,
+<mysticalagriculture:iridium_seeds>,<mysticalagriculture:iridium_essence>,
+<aspect:metallum>, <aspect:fluctus>);
+
+#ManaInfused
+addMetallurgicAspects
+(2,1,0,
+<thermalfoundation:material:136>,<thermalfoundation:material:200>,<thermalfoundation:storage:8>,<thermalfoundation:material:72>,
+<thermalfoundation:material:328>,null,null,null,<thermalfoundation:material:264>,
+<jaopca:item_clustermithril>,<jaopca:item_crystalshardmithril>,<jaopca:item_crystalabyssmithril>,<jaopca:item_rockychunkmithril>,
+<jaopca:item_chunkmithril>,<jaopca:item_dustalchmithril>,<jaopca:item_dirtygemmithril>,
+<thermalfoundation:ore:8>,null,<netherendingores:ore_end_modded_1:4>,
+<jaopca:item_crushedmithril>,<jaopca:item_crushedpurifiedmithril>,
+null,null,
+<aspect:metallum>, <aspect:auram>);
+
+#Steel
+addMetallurgicAspects
+(1.5,1,0,
+<thermalfoundation:material:160>,<thermalfoundation:material:224>,<thermalfoundation:storage_alloy>,<thermalfoundation:material:96>,
+<thermalfoundation:material:352>,<ic2:plate:16>,<immersiveengineering:sheetmetal:8>,<ic2:casing:5>,<thermalfoundation:material:288>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:ordo>);
+
+#Electrum
+addMetallurgicAspects
+(1,1,0,
+<thermalfoundation:material:161>,<thermalfoundation:material:225>,<thermalfoundation:storage_alloy:1>,<thermalfoundation:material:97>,
+<thermalfoundation:material:353>,null,<immersiveengineering:sheetmetal:7>,null,<thermalfoundation:material:289>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:motus>);
+
+#Invar
+addMetallurgicAspects
+(1,1,0,
+<thermalfoundation:material:162>,<thermalfoundation:storage_alloy:2>,<thermalfoundation:material:226>,<thermalfoundation:material:98>,
+<thermalfoundation:material:354>,null,null,null,<thermalfoundation:material:290>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:fabrico>);
+
+#Bronze
+addMetallurgicAspects
+(1,1,0,
+<thermalfoundation:material:163>,<thermalfoundation:material:227>,<thermalfoundation:storage_alloy:3>,<thermalfoundation:material:99>,
+<thermalfoundation:material:355>,<ic2:plate:9>,null,<ic2:casing>,<thermalfoundation:material:291>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:vinculum>);
+
+#Constantant
+addMetallurgicAspects
+(1,1,0,
+<thermalfoundation:material:164>,<thermalfoundation:material:228>,<thermalfoundation:storage_alloy:4>,<thermalfoundation:material:100>,
+<thermalfoundation:material:356>,null,null,null,<thermalfoundation:material:292>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:sonus>);
+
+#Signalum
+addMetallurgicAspects
+(1,1,0,
+<thermalfoundation:material:165>,<thermalfoundation:material:229>,<thermalfoundation:storage_alloy:5>,<thermalfoundation:material:101>,
+<thermalfoundation:material:357>,null,null,null,<thermalfoundation:material:293>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:machina>);
+
+#Lumium
+addMetallurgicAspects
+(1,1,0,
+<thermalfoundation:material:166>,<thermalfoundation:material:230>,<thermalfoundation:storage_alloy:6>,<thermalfoundation:material:102>,
+<thermalfoundation:material:358>,null,null,null,<thermalfoundation:material:294>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:lux>);
+
+#Ednerium
+addMetallurgicAspects
+(2,2,6,
+<thermalfoundation:material:167>,<thermalfoundation:material:231>,<thermalfoundation:storage_alloy:7>,<thermalfoundation:material:103>,
+<thermalfoundation:material:359>,null,null,null,<thermalfoundation:material:295>,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+<mysticalagriculture:enderium_seeds>,
+<mysticalagriculture:enderium_essence>,
+<aspect:metallum>, <aspect:alienis>);
+
+#Coal
+addMetallurgicAspects
+(1,2,2,
+<minecraft:coal>,<actuallyadditions:item_misc:10>,<minecraft:coal_block>,<thermalfoundation:material:768>,
+null,null,null,null,null,
+<jaopca:item_clustercoal>,<jaopca:item_crystalshardcoal>,<jaopca:item_crystalabysscoal>,<jaopca:item_rockychunkcoal>,
+<jaopca:item_chunkcoal>,<jaopca:item_dustalchcoal>,<jaopca:item_dirtygemcoal>,
+<minecraft:coal_ore>,<netherendingores:ore_nether_vanilla>,<netherendingores:ore_end_vanilla>,
+null,null,
+<mysticalagriculture:coal_seeds>,<mysticalagriculture:coal_essence>,
+<aspect:ignis>, <aspect:potentia>);
+
+#Lapis
+addMetallurgicAspects
+(0.5,0.4,4,
+<minecraft:dye:4>,<jaopca:item_nuggetlapis>,<minecraft:lapis_block>,<ic2:dust:9>,
+<ic2:plate:4>,<ic2:plate:13>,null,null,null,
+<jaopca:item_clusterlapis>,<jaopca:item_crystalshardlapis>,<jaopca:item_crystalabysslapis>,<jaopca:item_rockychunklapis>,
+<jaopca:item_chunklapis>,<jaopca:item_dustalchlapis>,<jaopca:item_dirtygemlapis>,
+<minecraft:lapis_ore>,<netherendingores:ore_nether_vanilla:5>,<netherendingores:ore_end_vanilla:5>,
+null,null,
+<mysticalagriculture:lapis_lazuli_seeds>,<mysticalagriculture:lapis_lazuli_essence>,
+<aspect:sensus>, <aspect:desiderium>);
+
+#Redstone
+addMetallurgicAspects
+(1.0,0.0,4,
+<minecraft:redstone>,<jaopca:item_dusttinyredstone>,<minecraft:redstone_block>,null,
+null,null,null,null,null,
+<jaopca:item_clusterredstone>,<jaopca:item_crystalshardredstone>,<jaopca:item_crystalabyssredstone>,<jaopca:item_rockychunkredstone>,
+<jaopca:item_chunkredstone>,<jaopca:item_dustalchredstone>,<jaopca:item_dirtygemredstone>,
+<minecraft:redstone_ore>,<netherendingores:ore_nether_vanilla:6>,<netherendingores:ore_end_vanilla:6>,
+null,null,
+<mysticalagriculture:redstone_seeds>,<mysticalagriculture:redstone_essence>,
+<aspect:potentia>, <aspect:terra>);
+
+#Titanium
+addMetallurgicAspects
+(1.0,1.0,0,
+<libvulpes:productingot:7>,<libvulpes:productnugget:7>,<libvulpes:metal0:7>,<libvulpes:productdust:7>,
+<libvulpes:productplate:7>,null,null,null,<libvulpes:productgear:7>,
+<jaopca:item_clustertitanium>,<jaopca:item_crystalshardtitanium>,<jaopca:item_crystalabysstitanium>,<jaopca:item_rockychunktitanium>,
+<jaopca:item_chunktitanium>,<jaopca:item_dustalchtitanium>,<jaopca:item_dirtygemtitanium>,
+<libvulpes:ore0:8>,null,null,
+null,null,
+null,null,
+<aspect:metallum>, <aspect:gelum>);
+
+#Knightslime
+addMetallurgicAspects
+(1.0,1.0,3,
+<tconstruct:ingots:3>,<tconstruct:nuggets:3>,<tconstruct:metal:3>,null,
+null,null,null,null,null,
+null,null,null,null,
+null,null,null,
+null,null,null,
+null,null,
+<mysticalagriculture:knightslime_seeds>,<mysticalagriculture:knightslime_essence>,
+<aspect:metallum>, <aspect:aqua>);
+
+#Cobalt
+addMetallurgicAspects
+(1.0,1.0,4,
+<tconstruct:ingots>,<tconstruct:nuggets>,<tconstruct:metal>,<exnihilocreatio:item_ore_cobalt:2>,
+null,null,null,null,null,
+<jaopca:item_clustercobalt>,<jaopca:item_crystalshardcobalt>,<jaopca:item_crystalabysscobalt>,<jaopca:item_rockychunkcobalt>,
+<jaopca:item_chunkcobalt>,<jaopca:item_dustalchcobalt>,<jaopca:item_dirtygemcobalt>,
+<netherendingores:ore_other_1:4>,<tconstruct:ore>,<netherendingores:ore_other_1:5>,
+<jaopca:item_crushedcobalt>,<jaopca:item_crushedpurifiedcobalt>,
+<mysticalagriculture:cobalt_seeds>,<mysticalagriculture:cobalt_essence>,
+<aspect:metallum>, <aspect:volatus>);
+
+#Ardite
+addMetallurgicAspects
+(1.0,1.0,4,
+<tconstruct:ingots:1>,<tconstruct:nuggets:1>,<tconstruct:metal:1>,<exnihilocreatio:item_ore_ardite:2>,
+null,null,null,null,null,
+<jaopca:item_clusterardite>,<jaopca:item_crystalshardardite>,<jaopca:item_crystalabyssardite>,<jaopca:item_rockychunkardite>,
+<jaopca:item_chunkardite>,<jaopca:item_dustalchardite>,<jaopca:item_dirtygemardite>,
+<netherendingores:ore_other_1:2>,<tconstruct:ore:1>,<netherendingores:ore_other_1:3>,
+<jaopca:item_crushedardite>,<jaopca:item_crushedpurifiedardite>,
+<mysticalagriculture:ardite_seeds>,<mysticalagriculture:ardite_essence>,
+<aspect:metallum>, <aspect:exitium>);
+
+#Uranium
+addMetallurgicAspects
+(1.0,1.0,4,
+<immersiveengineering:metal:5>,<immersiveengineering:metal:25>,<immersiveengineering:storage:5>,<immersiveengineering:metal:14>,
+<immersiveengineering:metal:35>,null,<immersiveengineering:sheetmetal:5>,null,null,
+<jaopca:item_clusteruranium>,<jaopca:item_crystalsharduranium>,<jaopca:item_crystalabyssuranium>,<jaopca:item_rockychunkuranium>,
+<jaopca:item_chunkuranium>,<jaopca:item_dustalchuranium>,<jaopca:item_dirtygemuranium>,
+<immersiveengineering:ore:5>,<netherendingores:ore_nether_modded_1:12>,<netherendingores:ore_end_modded_1:12>,
+<ic2:crushed:6>,<ic2:purified:6>,
+<mysticalagriculture:uranium_seeds>,<mysticalagriculture:uranium_essence>,
+<aspect:metallum>, <aspect:mortuus>);
+
+#Starmetal
+addMetallurgicAspects
+(1.0,1.0,3,
+<astralsorcery:itemcraftingcomponent:1>,<jaopca:item_nuggetastralstarmetal>,<jaopca:block_blockastralstarmetal>,<astralsorcery:itemcraftingcomponent:2>,
+null,null,null,null,null,
+<jaopca:item_clusterastralstarmetal>,<jaopca:item_crystalshardastralstarmetal>,<jaopca:item_crystalabyssastralstarmetal>,<jaopca:item_rockychunkastralstarmetal>,
+<jaopca:item_chunkastralstarmetal>,<jaopca:item_dustalchastralstarmetal>,<jaopca:item_dirtygemastralstarmetal>,
+<astralsorcery:blockcustomore:1>,null,null,
+<jaopca:item_crushedastralstarmetal>,<jaopca:item_crushedpurifiedastralstarmetal>,
+<mysticalagriculture:starmetal_seeds>,<mysticalagriculture:starmetal_essence>,
+<aspect:metallum>, <aspect:praecantatio>, <aspect:tenebrae>);
+
+#Black quartz
+addMetallurgicAspects
+(1.0,1.0,3,
+<actuallyadditions:item_misc:5>,<jaopca:item_nuggetquartzblack>,<actuallyadditions:block_misc:2>,<actuallyadditions:item_dust:7>,
+null,null,null,null,null,
+<jaopca:item_clusterquartzblack>,<jaopca:item_crystalshardquartzblack>,<jaopca:item_crystalabyssquartzblack>,<jaopca:item_rockychunkquartzblack>,
+<jaopca:item_chunkquartzblack>,<jaopca:item_dustalchquartzblack>,<jaopca:item_dirtygemquartzblack>,
+<actuallyadditions:block_misc:3>,null,null,
+null,null,
+<mysticalagriculture:black_quartz_seeds>,<mysticalagriculture:black_quartz_essence>,
+<aspect:vitreus>, <aspect:tenebrae>);
+
+#Certus quartz
+addMetallurgicAspects
+(1.0,1.0,2,
+<appliedenergistics2:material>,<jaopca:item_nuggetcertusquartz>,null,<appliedenergistics2:material:2>,
+null,null,null,null,null,
+<jaopca:item_clustercertusquartz>,<jaopca:item_crystalshardcertusquartz>,<jaopca:item_crystalabysscertusquartz>,<jaopca:item_rockychunkcertusquartz>,
+<jaopca:item_chunkcertusquartz>,<jaopca:item_dustalchcertusquartz>,<jaopca:item_dirtygemcertusquartz>,
+<appliedenergistics2:quartz_ore>,<netherendingores:ore_nether_modded_1:9>,<netherendingores:ore_end_modded_1:9>,
+null,null,
+<mysticalagriculture:certus_quartz_seeds>,<mysticalagriculture:certus_quartz_essence>,
+<aspect:vitreus>, <aspect:potentia>);
+
+#Charged certus quartz
+addMetallurgicAspects
+(1.0,4.0,0,
+<appliedenergistics2:material:1>,<jaopca:item_nuggetchargedcertusquartz>,null,null,
+null,null,null,null,null,
+<jaopca:item_clusterchargedcertusquartz>,<jaopca:item_crystalshardchargedcertusquartz>,<jaopca:item_crystalabysschargedcertusquartz>,<jaopca:item_rockychunkchargedcertusquartz>,
+<jaopca:item_chunkchargedcertusquartz>,<jaopca:item_dustalchchargedcertusquartz>,<jaopca:item_dirtygemchargedcertusquartz>,
+<appliedenergistics2:charged_quartz_ore>,<netherendingores:ore_nether_modded_1:10>,null,
+null,null,
+null,null,
+<aspect:vitreus>, <aspect:potentia>);
+
+#Aquamarine
+addMetallurgicAspects
+(1.0,1.0,3,
+<astralsorcery:itemcraftingcomponent>,<jaopca:block_blockaquamarine>,<jaopca:item_nuggetaquamarine>,<jaopca:item_dustaquamarine>,
+null,null,null,null,null,
+<jaopca:item_clusteraquamarine>,<jaopca:item_crystalshardaquamarine>,<jaopca:item_crystalabyssaquamarine>,<jaopca:item_rockychunkaquamarine>,
+<jaopca:item_chunkaquamarine>,<jaopca:item_dustalchaquamarine>,<jaopca:item_dirtygemaquamarine>,
+<astralsorcery:blockcustomsandore>,null,null,
+null,null,
+<mysticalagriculture:aquamarine_seeds>,<mysticalagriculture:aquamarine_essence>,
+<aspect:vitreus>, <aspect:aqua>);
+
+#Tungsten
+addMetallurgicAspects
+(1.0,1.0,0,
+<endreborn:item_ingot_wolframium>,<endreborn:wolframium_nugget>,<endreborn:block_wolframium>,<jaopca:item_dustdirtytungsten>,
+null,null,null,null,null,
+<jaopca:item_clustertungsten>,<jaopca:item_crystalshardtungsten>,<jaopca:item_crystalabysstungsten>,<jaopca:item_rockychunktungsten>,
+<jaopca:item_chunktungsten>,<jaopca:item_dustalchtungsten>,<jaopca:item_dirtygemtungsten>,
+<endreborn:block_wolframium_ore>,null,null,
+<jaopca:item_crushedtungsten>,<jaopca:item_crushedpurifiedtungsten>,
+null,null,
+<aspect:metallum>, <aspect:vacuos>);
+
+#Apatite
+addMetallurgicAspects
+(1.0,1.0,2,
+<forestry:apatite>,<jaopca:item_nuggetapatite>,<forestry:resource_storage>,<jaopca:item_dustapatite>,
+null,null,null,null,null,
+<jaopca:item_clusterapatite>,<jaopca:item_crystalshardapatite>,<jaopca:item_crystalabyssapatite>,<jaopca:item_rockychunkapatite>,
+<jaopca:item_chunkapatite>,<jaopca:item_dustalchapatite>,<jaopca:item_dirtygemapatite>,
+<forestry:resources>,null,null,
+null,null,
+<mysticalagriculture:apatite_seeds>,<mysticalagriculture:apatite_essence>,
+<aspect:vitreus>, <aspect:herba>);
+
+#Osmium
+addMetallurgicAspects
+(1.0,1.0,4,
+<mekanism:ingot:1>,<mekanism:nugget:1>,<mekanism:basicblock>,<mekanism:dust:2>,
+null,null,null,null,null,
+<jaopca:item_clusterosmium>,<jaopca:item_crystalshardosmium>,<jaopca:item_crystalabyssosmium>,<jaopca:item_rockychunkosmium>,
+<jaopca:item_chunkosmium>,<jaopca:item_dustalchosmium>,<jaopca:item_dirtygemosmium>,
+<mekanism:oreblock>,<netherendingores:ore_nether_modded_1:11>,<netherendingores:ore_end_modded_1:11>,
+<jaopca:item_crushedosmium>,<jaopca:item_crushedpurifiedosmium>,
+<mysticalagriculture:osmium_seeds>,<mysticalagriculture:osmium_essence>,
+<aspect:metallum>, <aspect:terra>);
+
+#Boron
+addMetallurgicAspects
+(1.0,1.0,4,
+<nuclearcraft:ingot:5>,<jaopca:item_nuggetboron>,<nuclearcraft:ingot_block:5>,<nuclearcraft:dust:5>,
+null,null,null,null,null,
+<jaopca:item_clusterboron>,<jaopca:item_crystalshardboron>,<jaopca:item_crystalabyssboron>,<jaopca:item_rockychunkboron>,
+<jaopca:item_chunkboron>,<jaopca:item_dustalchboron>,<jaopca:item_dirtygemboron>,
+<nuclearcraft:ore:5>,null,null,
+<jaopca:item_crushedboron>,<jaopca:item_crushedpurifiedboron>,
+<mysticalagriculture:boron_seeds>,<mysticalagriculture:boron_essence>,
+<aspect:metallum>, <aspect:humanus>);
+
+#Lithium
+addMetallurgicAspects
+(1.0,1.0,4,
+<nuclearcraft:ingot:6>,<jaopca:item_nuggetlithium>,<nuclearcraft:ingot_block:6>,<ic2:dust:11>,
+null,null,null,null,null,
+<jaopca:item_clusterlithium>,<jaopca:item_crystalshardlithium>,<jaopca:item_crystalabysslithium>,<jaopca:item_rockychunklithium>,
+<jaopca:item_chunklithium>,<jaopca:item_dustalchlithium>,<jaopca:item_dirtygemlithium>,
+<nuclearcraft:ore:6>,null,<netherendingores:ore_end_modded_1:14>,
+<jaopca:item_crushedlithium>,<jaopca:item_crushedpurifiedlithium>,
+<mysticalagriculture:lithium_seeds>,<mysticalagriculture:lithium_essence>,
+<aspect:metallum>, <aspect:ventus>);
+
+#Magnesium
+addMetallurgicAspects
+(1.0,1.0,4,
+<nuclearcraft:ingot:7>,<jaopca:item_nuggetmagnesium>,<nuclearcraft:ingot_block:7>,<nuclearcraft:dust:7>,
+null,null,null,null,null,
+<jaopca:item_clustermagnesium>,<jaopca:item_crystalshardmagnesium>,<jaopca:item_crystalabyssmagnesium>,<jaopca:item_rockychunkmagnesium>,
+<jaopca:item_chunkmagnesium>,<jaopca:item_dustalchmagnesium>,<jaopca:item_dirtygemmagnesium>,
+<nuclearcraft:ore:7>,null,null,
+<jaopca:item_crushedmagnesium>,<jaopca:item_crushedpurifiedmagnesium>,
+<mysticalagriculture:magnesium_seeds>,<mysticalagriculture:magnesium_essence>,
+<aspect:metallum>, <aspect:auram>);
+
+#Thorium
+addMetallurgicAspects
+(1.0,1.0,4,
+<nuclearcraft:ingot:3>,<jaopca:item_nuggetthorium>,<nuclearcraft:ingot_block:3>,<nuclearcraft:dust:3>,
+null,null,null,null,null,
+<jaopca:item_clusterthorium>,<jaopca:item_crystalshardthorium>,<jaopca:item_crystalabyssthorium>,<jaopca:item_rockychunkthorium>,
+<jaopca:item_chunkthorium>,<jaopca:item_dustalchthorium>,<jaopca:item_dirtygemthorium>,
+<nuclearcraft:ore:3>,null,null,
+<jaopca:item_crushedthorium>,<jaopca:item_crushedpurifiedthorium>,
+<mysticalagriculture:thorium_seeds>,<mysticalagriculture:thorium_essence>,
+<aspect:metallum>, <aspect:tenebrae>);
+
+#Draconium
+addMetallurgicAspects
+(2.0,2.0,5,
+<draconicevolution:draconium_ingot>,<draconicevolution:nugget>,<draconicevolution:draconium_block>,<draconicevolution:draconium_dust>,
+null,null,null,null,null,
+<jaopca:item_clusterdraconium>,<jaopca:item_crystalsharddraconium>,<jaopca:item_crystalabyssdraconium>,<jaopca:item_rockychunkdraconium>,
+<jaopca:item_chunkdraconium>,<jaopca:item_dustalchdraconium>,<jaopca:item_dirtygemdraconium>,
+<draconicevolution:draconium_ore>,<draconicevolution:draconium_ore:1>,<draconicevolution:draconium_ore:2>,
+<jaopca:item_crusheddraconium>,<jaopca:item_crushedpurifieddraconium>,
+<mysticalagriculture:draconium_seeds>,<mysticalagriculture:draconium_essence>,
+<aspect:metallum>, <aspect:draco>);
+
+#Amber
+addMetallurgicAspects
+(1.0,2.0,4,
+<thaumcraft:amber>,<jaopca:item_nuggetamber>,<thaumcraft:amber_brick>,<jaopca:item_dustamber>,
+null,null,null,null,null,
+<jaopca:item_clusteramber>,<jaopca:item_crystalshardamber>,<jaopca:item_crystalabyssamber>,<jaopca:item_rockychunkamber>,
+<jaopca:item_chunkamber>,<jaopca:item_dustalchamber>,<jaopca:item_dirtygemamber>,
+<thaumcraft:ore_amber>,null,null,
+null,null,
+<mysticalagriculture:amber_seeds>,<mysticalagriculture:amber_essence>,
+<aspect:vitreus>, <aspect:vinculum>);
+
+#Amethyst
+addMetallurgicAspects
+(2.0,4.0,4,
+<biomesoplenty:gem>,<jaopca:item_nuggetamethyst>,<biomesoplenty:gem_block>,<jaopca:item_dustamethyst>,
+null,null,null,null,null,
+<jaopca:item_clusteramethyst>,<jaopca:item_crystalshardamethyst>,<jaopca:item_crystalabyssamethyst>,<jaopca:item_rockychunkamethyst>,
+<jaopca:item_chunkamethyst>,<jaopca:item_dustalchamethyst>,<jaopca:item_dirtygemamethyst>,
+null,null,<biomesoplenty:gem_ore>,
+null,null,
+<mysticalagriculture:ender_amethyst_seeds>,<mysticalagriculture:ender_amethyst_essence>,
+<aspect:vitreus>, <aspect:alienis>, <aspect:desiderium>);
+
+#Dilithium
+addMetallurgicAspects
+(2.0,4.0,0,
+<libvulpes:productgem>,<jaopca:item_nuggetdilithium>,<jaopca:block_blockdilithium>,<libvulpes:productdust>,
+null,null,null,null,null,
+<jaopca:item_clusterdilithium>,<jaopca:item_crystalsharddilithium>,<jaopca:item_crystalabyssdilithium>,<jaopca:item_rockychunkdilithium>,
+<jaopca:item_chunkdilithium>,<jaopca:item_dustalchdilithium>,<jaopca:item_dirtygemdilithium>,
+<libvulpes:ore0>,null,<netherendingores:ore_end_modded_1:14>,
+null,null,
+null,null,
+<aspect:vitreus>, <aspect:fluctus>);
+
+#Dimensional shard
+addMetallurgicAspects
+(2.0,4.0,0,
+<rftools:dimensional_shard>,<jaopca:item_nuggetdimensionalshard>,<jaopca:block_blockdimensionalshard>,<jaopca:item_dustdimensionalshard>,
+null,null,null,null,null,
+<jaopca:item_clusterdimensionalshard>,<jaopca:item_crystalsharddimensionalshard>,<jaopca:item_crystalabyssdimensionalshard>,<jaopca:item_rockychunkdimensionalshard>,
+<jaopca:item_chunkdimensionalshard>,<jaopca:item_dustalchdimensionalshard>,<jaopca:item_dirtygemdimensionalshard>,
+<rftools:dimensional_shard_ore>,null,null,
+null,null,
+null,null,
+<aspect:vitreus>, <aspect:motus>);
+
+#Malachite
+addMetallurgicAspects
+(1.0,2.0,4,
+<biomesoplenty:gem:5>,<jaopca:item_nuggetmalachite>,<biomesoplenty:gem_block:5>,<jaopca:item_dustmalachite>,
+null,null,null,null,null,
+<jaopca:item_clustermalachite>,<jaopca:item_crystalshardmalachite>,<jaopca:item_crystalabyssmalachite>,<jaopca:item_rockychunkmalachite>,
+<jaopca:item_chunkmalachite>,<jaopca:item_dustalchmalachite>,<jaopca:item_dirtygemmalachite>,
+<biomesoplenty:gem_ore:5>,null,null,
+null,null,
+<mysticalagriculture:malachite_seeds>,<mysticalagriculture:malachite_essence>,
+<aspect:vitreus>, <aspect:fabrico>, <aspect:desiderium>);
+
+#Peridot
+addMetallurgicAspects
+(1.0,2.0,4,
+<biomesoplenty:gem:2>,<jaopca:item_nuggetperidot>,<biomesoplenty:gem_block:2>,<jaopca:item_dustperidot>,
+null,null,null,null,null,
+<jaopca:item_clusterperidot>,<jaopca:item_crystalshardperidot>,<jaopca:item_crystalabyssperidot>,<jaopca:item_rockychunkperidot>,
+<jaopca:item_chunkperidot>,<jaopca:item_dustalchperidot>,<jaopca:item_dirtygemperidot>,
+<biomesoplenty:gem_ore:2>,null,null,
+null,null,
+<mysticalagriculture:peridot_seeds>,<mysticalagriculture:peridot_essence>,
+<aspect:vitreus>, <aspect:terra>, <aspect:desiderium>);
+
+#Quartz
+addMetallurgicAspects
+(0.5,0.0,3,
+<minecraft:quartz>,null,null,<appliedenergistics2:material:3>,
+null,null,null,null,null,
+<thaumcraft:cluster:7>,<jaopca:item_crystalshardquartz>,<jaopca:item_crystalabyssquartz>,<jaopca:item_rockychunkquartz>,
+<jaopca:item_chunkquartz>,<jaopca:item_dustalchquartz>,<jaopca:item_dirtygemquartz>,
+<netherendingores:ore_other_1>,<minecraft:quartz_ore>,<netherendingores:ore_other_1:1>,
+null,null,
+<mysticalagriculture:nether_quartz_seeds>,<mysticalagriculture:nether_quartz_essence>,
+<aspect:vitreus>, <aspect:terra>);
+
+#Ruby
+addMetallurgicAspects
+(1.0,2.0,4,
+<biomesoplenty:gem:1>,<jaopca:item_nuggetruby>,<biomesoplenty:gem_block:1>,<jaopca:item_dustruby>,
+null,null,null,null,null,
+<jaopca:item_clusterruby>,<jaopca:item_crystalshardruby>,<jaopca:item_crystalabyssruby>,<jaopca:item_rockychunkruby>,
+<jaopca:item_chunkruby>,<jaopca:item_dustalchruby>,<jaopca:item_dirtygemruby>,
+<biomesoplenty:gem_ore:1>,null,null,
+null,null,
+<mysticalagriculture:ruby_seeds>,<mysticalagriculture:ruby_essence>,
+<aspect:vitreus>, <aspect:victus>, <aspect:desiderium>);
+
+#Sapphire
+addMetallurgicAspects
+(1.0,2.0,4,
+<biomesoplenty:gem:6>,<jaopca:item_nuggetsapphire>,<biomesoplenty:gem_block:6>,<jaopca:item_dustsapphire>,
+null,null,null,null,null,
+<jaopca:item_clustersapphire>,<jaopca:item_crystalshardsapphire>,<jaopca:item_crystalabysssapphire>,<jaopca:item_rockychunksapphire>,
+<jaopca:item_chunksapphire>,<jaopca:item_dustalchsapphire>,<jaopca:item_dirtygemsapphire>,
+<biomesoplenty:gem_ore:6>,null,<netherendingores:ore_end_modded_2:2>,
+null,null,
+<mysticalagriculture:sapphire_seeds>,<mysticalagriculture:sapphire_essence>,
+<aspect:vitreus>, <aspect:gelum>, <aspect:desiderium>);
+
+#Tanzanite
+addMetallurgicAspects
+(1.0,2.0,4,
+<biomesoplenty:gem:4>,<jaopca:item_nuggettanzanite>,<biomesoplenty:gem_block:4>,<jaopca:item_dusttanzanite>,
+null,null,null,null,null,
+<jaopca:item_clustertanzanite>,<jaopca:item_crystalshardtanzanite>,<jaopca:item_crystalabysstanzanite>,<jaopca:item_rockychunktanzanite>,
+<jaopca:item_chunktanzanite>,<jaopca:item_dustalchtanzanite>,<jaopca:item_dirtygemtanzanite>,
+<biomesoplenty:gem_ore:4>,null,null,
+null,null,
+<mysticalagriculture:tanzanite_seeds>,<mysticalagriculture:tanzanite_essence>,
+<aspect:vitreus>, <aspect:vitium>, <aspect:desiderium>);
+
+#Topaz
+addMetallurgicAspects
+(1.0,2.0,4,
+<biomesoplenty:gem:3>,<jaopca:item_nuggettopaz>,<biomesoplenty:gem_block:3>,<jaopca:item_dusttopaz>,
+null,null,null,null,null,
+<jaopca:item_clustertopaz>,<jaopca:item_crystalshardtopaz>,<jaopca:item_crystalabysstopaz>,<jaopca:item_rockychunktopaz>,
+<jaopca:item_chunktopaz>,<jaopca:item_dustalchtopaz>,<jaopca:item_dirtygemtopaz>,
+<biomesoplenty:gem_ore:3>,null,null,
+null,null,
+<mysticalagriculture:topaz_seeds>,<mysticalagriculture:topaz_essence>,
+<aspect:vitreus>, <aspect:imperium>, <aspect:desiderium>);
+
+#Trinitite
+addMetallurgicAspects
+(1.0,2.0,0,
+<trinity:trinitite_shard>,<jaopca:item_nuggettrinitite>,<trinity:solid_trinitite>,<jaopca:item_dusttrinitite>,
+null,null,null,null,null,
+<jaopca:item_clustertrinitite>,<jaopca:item_crystalshardtrinitite>,<jaopca:item_crystalabysstrinitite>,<jaopca:item_rockychunktrinitite>,
+<jaopca:item_chunktrinitite>,<jaopca:item_dustalchtrinitite>,<jaopca:item_dirtygemtrinitite>,
+<trinity:trinitite>,null,null,
+null,null,
+null,null,
+<aspect:vitreus>, <aspect:exitium>, <aspect:desiderium>);
 
 /*
 ██████╗ ███████╗███╗   ███╗ ██████╗ ██╗   ██╗███████╗     █████╗ ██╗     ██╗          █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗

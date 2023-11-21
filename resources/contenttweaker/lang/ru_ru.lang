@@ -1,6 +1,7 @@
 # Various fixes
 modifier.excompressum:smashingii.desc=Забивание сжатых блоков молотком
 tile.spectreCoil_number.info=Генерирует 32 RF/t и выдает их в блок, к которому прикреплен. Их можно найти в сундуках в подземельях.
+entity.twilightforest.harbinger_cube.name=Куб Предвестника
 
 itemGroup.other=ContentTweaker
 fluid.heavy_metal=Тяжёлый Метал
@@ -64,6 +65,131 @@ item.contenttweaker.vegetable_pill.name=Овощная таблетка
 item.contenttweaker.protein_pill.name=Белковая таблетка
 item.contenttweaker.grain_pill.name=Зерновая таблетка
 
+itemGroup.coins_tab=Новые монеты E2EE
+item.contenttweaker.coin_advancedalloy.name=Композитная монета
+item.contenttweaker.coin_alchemicalbrass.name=Монета из алхимической латуни
+item.contenttweaker.coin_aluminumbrass.name=Монета из алюминиевой латуни
+item.contenttweaker.coin_alumite.name=Алюмитовая монета
+item.contenttweaker.coin_baseessence.name=Монета из базовой эссенции
+item.contenttweaker.coin_beryllium.name=Бериллиевая монета
+item.contenttweaker.coin_conductiveiron.name=Монета из проводящего железа
+item.contenttweaker.coin_darksteel.name=Монета из темной стали
+item.contenttweaker.coin_demonmetal.name=Демоническая монета
+item.contenttweaker.coin_electricalsteel.name=Монета из наэлектризованной стали
+item.contenttweaker.coin_enchantedmetal.name=Зачарованная монета
+item.contenttweaker.coin_ender.name=Эндер-монета
+item.contenttweaker.coin_endorium.name=Эндориевая монета
+item.contenttweaker.coin_energizedalloy.name=Монета из энергетического сплава
+item.contenttweaker.coin_evilinfusedmetal.name=Злобная монета
+item.contenttweaker.coin_extremealloy.name=Монета из экстремального сплава
+item.contenttweaker.coin_fakeiron.name=Чугуниевая монета
+item.contenttweaker.coin_ferroboron.name=Монета из ферроборонного сплава
+item.contenttweaker.coin_fierymetal.name=Огненная монета
+item.contenttweaker.coin_glowstone.name=Монета из обогащенного светокамня
+item.contenttweaker.coin_graphite.name=Графитовая монета
+item.contenttweaker.coin_hardcarbon.name=Монета из твердого углерода
+item.contenttweaker.coin_heavymetal.name=Тяжелейшая монета
+item.contenttweaker.coin_hopgraphite.name=Пиролитическая графитовая монета
+item.contenttweaker.coin_ironwood.name=Монета из железного дерева
+item.contenttweaker.coin_knightmetal.name=Монета из рыцарского металла
+item.contenttweaker.coin_knightslime.name=Слизестальная монета
+item.contenttweaker.coin_manasteel.name=Монета из манастали
+item.contenttweaker.coin_manganese.name=Марганцевая монета
+item.contenttweaker.coin_manyullyn.name=Маньюлиновая монета
+item.contenttweaker.coin_osgloglas.name=Монета из осглогласа
+item.contenttweaker.coin_osmiridium.name=Осмиридиевая монета
+item.contenttweaker.coin_pigiron.name=Свиностальная монета
+item.contenttweaker.coin_pulsatingiron.name=Монета из пульсирующего железа
+item.contenttweaker.coin_redstonealloy.name=Монета из сплава красного камня
+item.contenttweaker.coin_refinedobsidian.name=Монета из обогащенного обсидиана
+item.contenttweaker.coin_soularium.name=Соулариевая монета
+item.contenttweaker.coin_spectre.name=Призрачная монета
+item.contenttweaker.coin_thaumium.name=Таумиевая монета
+item.contenttweaker.coin_toughalloy.name=Прочная монета
+item.contenttweaker.coin_unstable.name=Нестабильная монета
+item.contenttweaker.coin_zirconium.name=Циркониевая монета
+item.contenttweaker.coin_blackiron.name=Монета из черного железа
+item.contenttweaker.coin_cookedmeat.name=Монета из приготовленного мяса
+item.contenttweaker.coin_crystallinealloy.name=Монета из кристалльного сплава
+item.contenttweaker.coin_crystallinepinkslimealloy.name=Монета из кристалльно-розового сплава
+item.contenttweaker.coin_ebonypsimetal.name=Монета из эбенового псиметалла
+item.contenttweaker.coin_elementium.name=Монета из элементиума
+item.contenttweaker.coin_endsteel.name=Монета из стали Края
+item.contenttweaker.coin_energium.name=Энергиевая монета
+item.contenttweaker.coin_enhancedender.name=Усиленная Эндер-монета
+item.contenttweaker.coin_essenceinfused.name=Эссенциевая монета
+item.contenttweaker.coin_firedragonsteel.name=Монета из огненной драконостали
+item.contenttweaker.coin_fluixsteel.name=Монета из флюкс-стали
+item.contenttweaker.coin_fluxedelectrum.name=Флаксовая электрумовая монета
+item.contenttweaker.coin_hslasteel.name=Монета из высокопрочной стали
+item.contenttweaker.coin_icedragonsteel.name=Монета из ледяной драконостали
+item.contenttweaker.coin_inferium.name=Инфериумная монета
+item.contenttweaker.coin_insanium.name=Инсаниевая монета
+item.contenttweaker.coin_intermedium.name=Интермедиумная монета
+item.contenttweaker.coin_ivorypsimetal.name=Монета из слонового псиметалла
+item.contenttweaker.coin_lithiummanganesedioxide.name=Монета из сплава литий-марганцевого диоксида
+item.contenttweaker.coin_magnesiumdiboride.name=Монета из диборида магния
+item.contenttweaker.coin_manganesedioxide.name=Монета из диоксида марганца
+item.contenttweaker.coin_manganeseoxide.name=Монета из оксида марганца
+item.contenttweaker.coin_melodicalloy.name=Монета из мелодичного сплава
+item.contenttweaker.coin_mirion.name=Мирионовая монета
+item.contenttweaker.coin_pinkmetal.name=Розовая монета
+item.contenttweaker.coin_prudentium.name=Прудентиумная монета
+item.contenttweaker.coin_psimetal.name=Монета из псиметалла
+item.contenttweaker.coin_sentient.name=Разумная монета
+item.contenttweaker.coin_soulium.name=Монета из соулиума
+item.contenttweaker.coin_superium.name=Супериумная монета
+item.contenttweaker.coin_supremium.name=Супремиумная монета
+item.contenttweaker.coin_terrasteel.name=Монета из террастали
+item.contenttweaker.coin_thermoconductingalloy.name=Монета из термопроводящего сплава
+item.contenttweaker.coin_uumetal.name=Монета из UU-металла
+item.contenttweaker.coin_vibrantalloy.name=Монета из вибрирующего сплава
+item.contenttweaker.coin_zircaloy.name=Монета из циркалоя
+item.contenttweaker.coin_zirconiummolybdenum.name=Монета из циркониево-молибденового сплава
+item.contenttweaker.coin_adaminite.name=Адаминитовая монета
+item.contenttweaker.coin_awakeneddraconium.name=Пробужденная дракониевая монета
+item.contenttweaker.coin_bloodglitchinfused.name=Кроваво-глючная монета
+item.contenttweaker.coin_bound.name=Заточенная монета
+item.contenttweaker.coin_calcium.name=Кальциевая монета
+item.contenttweaker.coin_chaoticmetal.name=Монета хаоса
+item.contenttweaker.coin_chromium.name=Хромиевая монета
+item.contenttweaker.coin_crystalmatrix.name=Кристально-матричная монета
+item.contenttweaker.coin_crystaltine.name=Кристалтиновая монета
+item.contenttweaker.coin_doublesmore.name=Ну просто огромный и ценный грэм крекер
+item.contenttweaker.coin_draconicmetal.name=Монета драконов
+item.contenttweaker.coin_elektron60.name=Монета из электрон60-сплава
+item.contenttweaker.coin_gaiaspirit.name=Монета из духа Гайи
+item.contenttweaker.coin_gelidenderium.name=Монета из замороженного эндериума
+item.contenttweaker.coin_glitchinfused.name=Глючная монета
+item.contenttweaker.coin_hafnium.name=Хафниевая монета
+item.contenttweaker.coin_infinity.name=Монета бесконечности
+item.contenttweaker.coin_mithminite.name=Митминитовая монета
+item.contenttweaker.coin_mithrillium.name=Митриллиумная монета
+item.contenttweaker.coin_neodymium.name=Неодимовая монета
+item.contenttweaker.coin_neutronium.name=Нейтрониевая монета
+item.contenttweaker.coin_nichrome.name=Нихромовая монета
+item.contenttweaker.coin_niobium.name=Ниобиевая монета
+item.contenttweaker.coin_niobiumtin.name=Монета из сплава ниобий-олова
+item.contenttweaker.coin_niobiumtitanium.name=Монета из сплава ниобий-титана
+item.contenttweaker.coin_potassium.name=Калиевая монета
+item.contenttweaker.coin_primalmetal.name=Первобытная монета
+item.contenttweaker.coin_foursmore.name=Четырехугольный, четырехобъемный имперский грэм крекер
+item.contenttweaker.coin_smore.name=Большой денежный грэм крекер
+item.contenttweaker.coin_sodium.name=Натриевая монета
+item.contenttweaker.coin_stainlesssteel.name=Монета из нержавеющей стали
+item.contenttweaker.coin_stellaralloy.name=Монета из сверхзвездного сплава
+item.contenttweaker.coin_strontium.name=Стронциевая монета
+item.contenttweaker.coin_superalloy.name=Монета из супер-сплава
+item.contenttweaker.coin_titaniumaluminide.name=Монета из алюминида титана
+item.contenttweaker.coin_titaniumiridium.name=Монета из сплава титана и иридия
+item.contenttweaker.coin_tungstencarbide.name=Монета из карбида вольфрама
+item.contenttweaker.coin_ultimate.name=Максимальная монета
+item.contenttweaker.coin_voidmetal.name=Монета из пустотного металла
+item.contenttweaker.coin_vividalloy.name=Монета из ярчайшего сплава
+item.contenttweaker.coin_wyvernmetal.name=Монета виверн
+item.contenttweaker.coin_yttrium.name=Иттриевая монета
+item.contenttweaker.coin_zinc.name=Цинковая монета
+
 tile.contenttweaker.terrestrial_artifact_block.name=Блок Артефакта Земли
 tile.contenttweaker.benitoite.name=§bБенитоит
 tile.contenttweaker.anglesite.name=§6Англезит
@@ -76,6 +202,7 @@ item.contenttweaker.bee_diversity.name=Хранилище Пчелиного Р�
 
 e2ee.tconstruct.material.spectre.name=Призрачный
 e2ee.tconstruct.material.spectre.description=§bПризрачный\nКаждая деталь удлиняет руки
+e2ee.tconstruct.material.fireproof.name=Огнестойкий
 e2ee.tconstruct.material.mentor.name=Наставник
 e2ee.tconstruct.material.mentor.description=§oСила знания\n§rКаждый удар требует опыта, но наносит больше урона в зависимости от уровня опыта.
 e2ee.tconstruct.material.apprentice.name=Ученик
@@ -130,13 +257,27 @@ warp.sword.speak.random.8=§o§5Привратник всегда наблюда
 warp.sword.speak.kill.0=§o§5Я слышу их крики, их страдания текут по моим венам. Это как наркотик, и мне нужно больше... намного больше...§r
 warp.sword.speak.kill.1=§o§5Больше! Больше! Больше!
 
-item.singularity.silver.name=§bМеховая сингулярность
+##################################
+# Singularities
+##################################
 item.singularity.iron.name=§7Пустая сингулярность
+
+
+# Burn singularity
+item.singularity.silver.name=§bМеховая сингулярность
 item.singularity.nickel.name=§eНагретая сингулярность
 item.singularity.fluxed.name=§4Пламенная сингулярность
 tooltips.lang.singularity.heat=§7Промежуточный ингредиент.§r\nСовместите с любыми горючими материалами, что бы добавить заряд.\nПри использовании сгораемых материалов с разным временем горения, их эффективность §lувеличивается до %s%%§r.\nНужно §6%s§r заряда.
 tooltips.lang.singularity.burn=Совместите с любыми горючими материалами, что бы добавить заряд.\nПри использовании сгораемых материалов с разным временем горения, их эффективность §lувеличивается до %s%%§r.\nНужно §6%s§r заряда.
 item.contenttweaker.any_burnable.name=§6Любое горючее
+
+# Wood singularity
+item.singularity.quartz.name=§eБерезовая сингулярность
+item.singularity.gold.name=§cСингулярность древесины-плетения
+tooltips.lang.singularity.bark=§7Промежуточный ингредиент.§r\nСочетайте с §6любыми огнестойкими досками§r, чтобы увеличить мощность.\n§6Разнообразие§r типов досок увеличивает мощность экспоненциально. Мощность рассчитывается по формуле §aM*2^(N-1)§r, где §aM§r - медианное количество досок, §aN§r - количество типов досок.\n§2§nЩелкните правой кнопкой мыши§2 на чем-то, чтобы увидеть список досок.
+tooltips.lang.singularity.woodweave=Сочетайте с §6любыми огнестойкими досками§r, чтобы увеличить мощность.\n§6Разнообразие§r типов досок увеличивает мощность экспоненциально. Мощность рассчитывается по формуле §aM*2^(N-1)§r, где §aM§r - медианное количество досок, §aN§r - количество типов досок.
+item.contenttweaker.any_fireproof.name=§6Любая огнестойкая доска
+##################################
 
 # Custom renames
 item.excompressum:bait_unknown.name=Any Bait

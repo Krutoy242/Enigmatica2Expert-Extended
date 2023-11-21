@@ -497,7 +497,7 @@ craft.remake(<actuallyadditions:block_bio_reactor>, ["pretty",
   "S S S",
   "☼ I ☼",
   "S S S"], {
-  "S": <ore:treeSapling>,                # Oak Sapling
+  "S": <ic2:crafting:20>,
   "I": <actuallyadditions:block_misc:9>, # Iron Casing
   "☼": <ore:crystalEnori>                # Enori Crystal
 });

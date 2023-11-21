@@ -39,6 +39,7 @@ for item in [
   <botania:thorring>,
   <computercraft:printout>,
   <contenttweaker:conglomerate_of_life>,
+  <contenttweaker:conglomerate_of_sun>,
   <cyclicmagic:inventory_food>,
   <exnihilocreatio:hammer_diamond>,
   <farmingforblockheads:feeding_trough>,

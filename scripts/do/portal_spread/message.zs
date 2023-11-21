@@ -15,6 +15,8 @@ import crafttweaker.util.Position3f;
 import crafttweaker.world.IWorld;
 import mods.ctutils.utils.Math.abs;
 
+import scripts.do.portal_spread.config.config;
+
 // Stylazed icon of portal
 // static prefix as string = '§8[§5░§8] ';
 static prefix as string = '\u00A78[\u00A75\u2591\u00A78] ';
@@ -76,3 +78,14 @@ function playerMessage(player as IPlayer, messageType as string) as void {
   }
 }
 
+function log(s as string, world as IWorld = null) as void {
+  if(!config.debug) return;
+  val msg = prefix~(isNull(s)?'':s);
+  print(msg);
+
+  if(isNull(world)) return;
+  for pl in world.getAllPlayers() {
+    if(!pl.creative) continue;
+    pl.sendMessage(msg);
+  }
+}

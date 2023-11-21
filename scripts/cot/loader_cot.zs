@@ -10,6 +10,7 @@ import mods.contenttweaker.AxisAlignedBB;
 import mods.contenttweaker.BlockMaterial;
 import mods.contenttweaker.Color;
 import mods.contenttweaker.Item;
+import mods.contenttweaker.ItemFood;
 import mods.contenttweaker.MaterialSystem;
 import mods.contenttweaker.SoundType;
 import mods.contenttweaker.VanillaFactory;
@@ -202,12 +203,12 @@ function getPlayer(world as IWorld, p as IBlockPos) as IPlayer {
   return null;
 }
 
-function createParticles(world as IWorld, p as IBlockPos, amount as int = 10) as void {
+function createParticles(world as IWorld, p as IBlockPos, amount as int = 10, type as string = 'heart') as void {
   if(world.remote) return;
   val player = getPlayer(world, p);
   if(isNull(player)) return;
   server.commandManager.executeCommandSilent(<item:minecraft:dirt>.createEntityItem(world, p.x, p.y, p.z),
-    "/particle heart "~
+    "/particle "~type~" "~
     ((p.x+0.5))~" "~(p.y+0.5)~" "~((p.z+0.5))~
     " 0.25 0.25 0.25 0.02 "~amount
   );
@@ -221,7 +222,7 @@ b.toolLevel = 3;
 b.blockHardness = 3 * 1.6;
 b.blockResistance = 3 * 1.4;
 b.blockSoundType = <soundtype:ground>;
-b.lightValue = (3 as double / 15.0 + 0.00001) as int;
+b.lightValue = (3.0 / 15.0 + 0.00001) as int;
 b.onBlockPlace = function(world, p, blockState) { createParticles(world, p); };
 b.onBlockBreak = function(world, p, blockState) { createParticles(world, p); };
 
@@ -236,9 +237,9 @@ b.onRandomTick = function(world, p, blockState) {
     if(isNull(entity.definition)) continue;
     val output = lifeRecipes[entity.definition.id];
     if(isNull(output)) continue;
+    if(abs(entity.x - p.x) > 8 || abs(entity.y - p.y) > 8 || abs(entity.z - p.z) > 8) continue;
 
     for outItem, outChance in output {
-      if(abs(entity.x - p.x) > 8 || abs(entity.y - p.y) > 8 || abs(entity.z - p.z) > 8) continue;
       if(world.getRandom().nextInt(outChance) != 1) continue;
       val w as IWorld = world;
       val itemEntity = (outItem * 1).createEntityItem(w, entity.x as float, entity.y as float, entity.z as float);
@@ -250,7 +251,35 @@ b.onRandomTick = function(world, p, blockState) {
 };
 b.register();
 
-createBlockGround('conglomerate_of_sun',  5, <blockmaterial:clay>);
+b = VanillaFactory.createBlock('conglomerate_of_sun', <blockmaterial:clay>);
+b.toolClass = 'shovel';
+b.toolLevel = 5;
+b.blockHardness = 5 * 1.6;
+b.blockResistance = 5 * 1.4;
+b.blockSoundType = <soundtype:ground>;
+b.lightValue = (3.0 / 15.0 + 0.00001) as int;
+b.onBlockPlace = function(world, p, blockState) { createParticles(world, p, 10, "endRod"); };
+b.onBlockBreak = function(world, p, blockState) { createParticles(world, p, 10, "endRod"); };
+
+b.onRandomTick = function(world, p, blockState) {
+  if(world.remote) return;
+  var hadEffect = false;
+  for entity in world.getEntities() {
+    if(isNull(entity.definition)) continue;
+    if(!(entity instanceof crafttweaker.entity.IEntityAgeable)) continue;
+    val ageable as crafttweaker.entity.IEntityAgeable = entity;
+
+    // Already grown up
+    if(ageable.growingAge>=0) continue;
+
+    // Speed up growth of ageble mobs
+    ageable.addGrowth(300);
+    hadEffect = true;
+    createParticles(world, ageable.position, 10, "endRod");
+  }
+  if(hadEffect) createParticles(world, p, 10, "endRod");
+};
+b.register();
 
 // -------------------------------
 // Animal's items
@@ -381,3 +410,148 @@ mm.luminosity = 10;
 mm.stillLocation = 'astralsorcery:blocks/fluid/starlight_still';
 mm.flowingLocation = 'astralsorcery:blocks/fluid/starlight_flow';
 mm.register();
+
+// -------------------------------
+// New Coins
+// -------------------------------
+
+mods.contenttweaker.VanillaFactory.createCreativeTab('coins_tab', <item:thermalfoundation:coin:64>).register();
+
+function buildCoin(name as string, glowing as bool = false) {
+  val item = VanillaFactory.createItem(name) as Item;
+  item.setCreativeTab(<creativetab:coins_tab>);
+  item.glowing = glowing;
+  item.textureLocation = mods.contenttweaker.ResourceLocation.create("contenttweaker:items/coin/" ~ name);
+  item.register();
+}
+
+function buildFoodyCoin(name as string, foodValue as int, foodSaturation as float) {
+  val item = VanillaFactory.createItemFood(name, foodValue) as ItemFood;
+  item.setCreativeTab(<creativetab:coins_tab>);
+  item.textureLocation = mods.contenttweaker.ResourceLocation.create("contenttweaker:items/coin/" ~ name);
+  item.saturation = foodSaturation;
+  item.register();
+}
+
+buildCoin("coin_adaminite");
+buildCoin("coin_advancedalloy");
+buildCoin("coin_alchemicalbrass");
+buildCoin("coin_aluminumbrass");
+buildCoin("coin_alumite");
+buildCoin("coin_awakeneddraconium");
+buildCoin("coin_baseessence");
+buildCoin("coin_beryllium");
+buildCoin("coin_blackiron");
+buildCoin("coin_bloodglitchinfused");
+buildCoin("coin_bound");
+buildCoin("coin_calcium");
+buildCoin("coin_chaoticmetal");
+buildCoin("coin_chromium");
+buildCoin("coin_conductiveiron");
+buildCoin("coin_cookedmeat");
+buildCoin("coin_crystallinealloy");
+buildCoin("coin_crystallinepinkslimealloy");
+buildCoin("coin_crystalmatrix");
+buildCoin("coin_crystaltine");
+buildCoin("coin_darksteel");
+buildCoin("coin_demonmetal");
+buildFoodyCoin("coin_doublesmore", 6, 9.6);
+buildCoin("coin_draconicmetal");
+buildCoin("coin_ebonypsimetal");
+buildCoin("coin_electricalsteel");
+buildCoin("coin_elektron60");
+buildCoin("coin_elementium");
+buildCoin("coin_enchantedmetal");
+buildCoin("coin_ender");
+buildCoin("coin_endorium");
+buildCoin("coin_endsteel");
+buildCoin("coin_energium");
+buildCoin("coin_energizedalloy");
+buildCoin("coin_enhancedender", true);
+buildCoin("coin_essenceinfused");
+buildCoin("coin_evilinfusedmetal");
+buildCoin("coin_extremealloy");
+buildCoin("coin_fakeiron");
+buildCoin("coin_ferroboron");
+buildCoin("coin_fierymetal");
+buildCoin("coin_firedragonsteel");
+buildCoin("coin_fluixsteel");
+buildCoin("coin_fluxedelectrum");
+buildFoodyCoin("coin_foursmore", 12, 47.45);
+buildCoin("coin_gaiaspirit");
+buildCoin("coin_glitchinfused");
+buildCoin("coin_glowstone");
+buildCoin("coin_graphite");
+buildCoin("coin_hafnium");
+buildCoin("coin_hardcarbon");
+buildCoin("coin_heavymetal");
+buildCoin("coin_hopgraphite");
+buildCoin("coin_hslasteel");
+buildCoin("coin_icedragonsteel");
+buildCoin("coin_inferium");
+buildCoin("coin_infinity", true);
+buildCoin("coin_insanium");
+buildCoin("coin_intermedium");
+buildCoin("coin_ironwood");
+buildCoin("coin_ivorypsimetal");
+buildCoin("coin_knightmetal");
+buildCoin("coin_knightslime");
+buildCoin("coin_lithiummanganesedioxide");
+buildCoin("coin_magnesiumdiboride");
+buildCoin("coin_manasteel");
+buildCoin("coin_manganese");
+buildCoin("coin_manganesedioxide");
+buildCoin("coin_manganeseoxide");
+buildCoin("coin_manyullyn");
+buildCoin("coin_melodicalloy");
+buildCoin("coin_mirion");
+buildCoin("coin_mithminite");
+buildCoin("coin_mithrillium");
+buildCoin("coin_neodymium");
+buildCoin("coin_neutronium");
+buildCoin("coin_nichrome");
+buildCoin("coin_niobium");
+buildCoin("coin_niobiumtin");
+buildCoin("coin_niobiumtitanium");
+buildCoin("coin_osgloglas");
+buildCoin("coin_osmiridium");
+buildCoin("coin_pigiron");
+buildCoin("coin_pinkmetal");
+buildCoin("coin_potassium");
+buildCoin("coin_primalmetal");
+buildCoin("coin_prudentium");
+buildCoin("coin_psimetal");
+buildCoin("coin_pulsatingiron");
+buildCoin("coin_redstonealloy");
+buildCoin("coin_refinedobsidian");
+buildCoin("coin_sentient");
+buildFoodyCoin("coin_smore", 4, 3);
+buildCoin("coin_sodium");
+buildCoin("coin_soularium");
+buildCoin("coin_soulium");
+buildCoin("coin_spectre");
+buildCoin("coin_stainlesssteel");
+buildCoin("coin_stellaralloy");
+buildCoin("coin_strontium");
+buildCoin("coin_superalloy");
+buildCoin("coin_superium");
+buildCoin("coin_supremium");
+buildCoin("coin_terrasteel");
+buildCoin("coin_titaniumaluminide");
+buildCoin("coin_titaniumiridium");
+buildCoin("coin_thaumium");
+buildCoin("coin_thermoconductingalloy");
+buildCoin("coin_toughalloy");
+buildCoin("coin_tungstencarbide");
+buildCoin("coin_ultimate", true);
+buildCoin("coin_unstable");
+buildCoin("coin_uumetal");
+buildCoin("coin_vibrantalloy");
+buildCoin("coin_voidmetal");
+buildCoin("coin_vividalloy");
+buildCoin("coin_wyvernmetal");
+buildCoin("coin_yttrium");
+buildCoin("coin_zinc");
+buildCoin("coin_zircaloy");
+buildCoin("coin_zirconium");
+buildCoin("coin_zirconiummolybdenum");

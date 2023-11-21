@@ -18,15 +18,19 @@ scripts.jei.requious.addInsOuts(x, [[0,0]], [
 ]);
 x.setJEIDurationSlot(1,0,"duration", SlotVisual.arrowRight());
 
-function add(entity as IEntityDefinition, dropList as IItemStack[]) as void {
+function add(entity as IEntityDefinition, dropList as IItemStack[], percent as bool = true) as void {
   // utils.log(['Trying to add drop for:', entity]);
   // if (isNull(game.getEntity(entity))) return;
   var fixedList = [] as IItemStack[];
-  for item in dropList {
-    if(isNull(item)) continue;
-    fixedList += item.amount >= 100
-      ? item * (item.amount / 100)
-      : item.anyAmount().withLore(["§fChance: §b" ~ item.amount ~ "%"]);
+  if(percent) {
+    for item in dropList {
+      if(isNull(item)) continue;
+      fixedList += item.amount >= 100
+        ? item * (item.amount / 100)
+        : item.anyAmount().withLore(["§fChance: §b" ~ item.amount ~ "%"]);
+    }
+  } else {
+    fixedList = dropList;
   }
   scripts.jei.requious.add(<assembly:entity_drop>, {[Soul(entity.id)] as IIngredient[] : fixedList});
 }
@@ -161,7 +165,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:minecraft:donkey>                       , [<minecraft:leather> * 93]); // Donkey
   add(<entity:minecraft:elder_guardian>               , [<enderio:item_material:56> * 100, <minecraft:fish> * 48, <minecraft:prismarine_crystals> * 34, <minecraft:prismarine_shard> * 92, <minecraft:sponge:1> * 100]); // Elder Guardian
   add(<entity:minecraft:enderman>                     , [<enderio:block_enderman_skull> * 4, <endreborn:food_ender_flesh> * 100, <minecraft:ender_pearl> * 100]); // Enderman
-  add(<entity:minecraft:endermite>                    , [<appliedenergistics2:material:46> * 208, <endreborn:wolframium_nugget> * 364]); // Endermite
+  add(<entity:minecraft:endermite>                    , [<appliedenergistics2:material:46> * 208, <contenttweaker:item_ore_tungsten> * 25]); // Endermite
   add(<entity:minecraft:evocation_illager>            , [<minecraft:emerald> * 50, <minecraft:totem_of_undying> * 100]); // Evoker
   add(<entity:minecraft:ghast>                        , [<minecraft:ghast_tear> * 46, <minecraft:gunpowder> * 111, <thermalfoundation:material:771> * 16]); // Ghast
   add(<entity:minecraft:guardian>                     , [<harvestcraft:carprawitem> * 1, <harvestcraft:snapperrawitem> * 1, <harvestcraft:walleyerawitem> * 1, <minecraft:fish:1> * 1, <minecraft:fish> * 43, <minecraft:prismarine_crystals> * 39, <minecraft:prismarine_shard> * 100]); // Guardian
@@ -277,6 +281,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:twilightforest:giant_miner>             , [<twilightforest:giant_pickaxe> * 100]); // Giant Miner
 # add(<entity:twilightforest:goblin_knight_lower>     , []); // Lower Goblin Knight
   add(<entity:twilightforest:goblin_knight_upper>     , [<twilightforest:armor_shard> * 89]); // Upper Goblin Knight
+  add(<entity:twilightforest:harbinger_cube>          , [<appliedenergistics2:material:20> * 200]);
   add(<entity:twilightforest:hedge_spider>            , [<minecraft:arrow> * 2, <minecraft:bone> * 1, <minecraft:spider_eye> * 39, <minecraft:string> * 93]); // Hedge Spider
   add(<entity:twilightforest:helmet_crab>             , [<harvestcraft:crabrawitem> * 94, <twilightforest:armor_shard> * 97]); // Helmet Crab
   add(<entity:twilightforest:hostile_wolf>            , [utils.get('betteranimalsplus:wolf_pelt_snowy', 0, 94)]); // Hostile Wolf

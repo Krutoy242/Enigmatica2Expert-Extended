@@ -2,7 +2,6 @@
 	title: "{q.forestry.escritoire_the_mem.name}",
 	x: 0.5d,
 	y: -0.5d,
-	description: "{q.forestry.escritoire_the_mem.desc}",
 	text: [
 		"{q.forestry.escritoire_the_mem.desc}"
 	],

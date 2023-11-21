@@ -1,0 +1,20 @@
+{
+	title: "{q.getting_started.inventory_sorting_.name}",
+	x: -0.875d,
+	y: 6.0d,
+	text: [
+		"{q.getting_started.inventory_sorting_.desc}"
+	],
+	dependencies: [
+		"90536e42"
+	],
+	tasks: [{
+		uid: "7231df5b",
+		type: "checkmark"
+	}],
+	rewards: [{
+		uid: "eaf1008e",
+		type: "xp_levels",
+		xp_levels: 3
+	}]
+}

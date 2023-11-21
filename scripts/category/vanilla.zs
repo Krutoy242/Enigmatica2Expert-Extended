@@ -32,7 +32,7 @@ guardTbl.addPool("diode", 1, 1, 1, 1).addItemEntryHelper(<enderio:item_material:
 
 # Add drops to vanilla entities
 <entity:minecraft:endermite>.addDrop(<appliedenergistics2:material:46>, 1, 3);
-<entity:minecraft:endermite>.addPlayerOnlyDrop(<endreborn:wolframium_nugget>, 1, 6);
+<entity:minecraft:endermite>.addPlayerOnlyDrop(<contenttweaker:item_ore_tungsten> % 25, 1, 1);
 
 val endermanPool = loottweaker.LootTweaker.getTable("minecraft:entities/enderman").getPool("main"); //Enderman (make enderpearls drop 100% of the time)
 endermanPool.removeEntry("minecraft:ender_pearl"); //Remove main enderpearl entry

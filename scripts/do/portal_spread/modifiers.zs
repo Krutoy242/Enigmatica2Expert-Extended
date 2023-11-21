@@ -35,7 +35,7 @@ static modifKeyBlock as string[string] = {};
 for i, k in modifBlocksKey { modifKeyBlock[k] = i; }
 
 /////////////////////////////////////////////////////////////////////////////
-static spreadDelay as double = scripts.do.portal_spread.config.spreadDelay;
+static spreadDelay as double = scripts.do.portal_spread.config.config.spreadDelay;
 
 // List of old values of previous portal check
 static oldModifiers as int[][string] = {};

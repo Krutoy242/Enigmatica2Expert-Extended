@@ -1,12 +1,66 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+import crafttweaker.item.WeightedItemStack;
+import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.oredict.IOreDict;
 import crafttweaker.oredict.IOreDictEntry;
-import crafttweaker.liquid.ILiquidStack;
-import crafttweaker.item.WeightedItemStack;
+import loottweaker.vanilla.loot.Functions;
 
 scripts.lib.loot.tweak("twilightforest:entities/helmet_crab", "fish", "minecraft:fish", null, [<harvestcraft:crabrawitem>], [1,3]);
 scripts.lib.loot.tweak("twilightforest:entities/deer"       , "meat", "twilightforest:raw_venison", <twilightforest:raw_venison>, [<harvestcraft:venisonrawitem>], [1,3]);
+
+// Add Little Blueprints to Aurora caches
+loottweaker.LootTweaker
+  .getTable('twilightforest:structures/aurora_cache/common')
+  .getPool('main')
+  .addItemEntryHelper(<littletiles:recipeadvanced>, 1, 0, [Functions.setCount(2, 6)], []);
+loottweaker.LootTweaker
+  .getTable('twilightforest:structures/aurora_room/common')
+  .getPool('main')
+  .addItemEntryHelper(<littletiles:recipeadvanced>, 1, 0, [Functions.setCount(1, 3)], []);
+
+/////////////////////////////////////////
+// Better Questing Ram Drop
+/////////////////////////////////////////
+val garanteedPools = [
+  ['diamond', 'minecraft:diamond_block'],
+  ['iron', 'minecraft:iron_block'],
+  ['emerald', 'minecraft:emerald_block'],
+  ['gold', 'minecraft:gold_block'],
+  ['lapis', 'minecraft:lapis_block'],
+  // ['horn', 'twilightforest:crumble_horn'],
+  // ['trophy', 'twilightforest:trophy'],
+  // ['shader', 'minecraft:coal_block'],
+  // ['shader', 'minecraft:coal_block'],
+] as string[][];
+
+val newDrops = [
+  <thermalfoundation:storage:2>,
+  <plustic:osmiridiumblock>,
+  <actuallyadditions:block_misc:2>,
+  <thermalfoundation:storage_alloy>,
+  <extrautils2:simpledecorative>,
+  <twilightforest:crumble_horn>,
+  <twilightforest:trophy:8>,
+  <twilightforest:shader>.withTag({shader_type: "Questing Ram"}),
+  <twilightforest:shader_bag>.withTag({shader_rarity: "Twilight"}),
+] as IItemStack[];
+
+val ramTable = loottweaker.LootTweaker.getTable('twilightforest:entities/questing_ram_rewards');
+for i, poolTuple in garanteedPools {
+  val poolName = poolTuple[0];
+  val oldEntry = poolTuple[1];
+  val pool = ramTable.getPool(poolName);
+  pool.removeEntry(oldEntry);
+
+  if (newDrops.length <= i) {
+    logger.logWarning('Unable to change Questing Ram rewards - list smaller than removals');
+    continue;
+  }
+  pool.addItemEntry(newDrops[i], 1);
+}
+scripts.jei.entity_drop.add(<entity:twilightforest:quest_ram>, newDrops, false);
+/////////////////////////////////////////
 
 for tuple in [
   ['minecraft:sheep', 'twilightforest:bighorn_sheep'],
@@ -99,11 +153,8 @@ craft.remake(<twilightforest:ice_bomb> * 8, ["pretty",
 scripts.do.expire_in_block.set(<ore:gemPearl>, {"cyclicmagic:fire_frost" : <twilightforest:ice_bomb>});
 
 # [Sickly Twilight Oak Sapling]*8 from [Moonworm][+1]
-craft.remake(<twilightforest:twilight_sapling> * 8, ["pretty",
-  "S S S",
-  "S M S",
-  "S S S"], {
-  "S": <ore:treeSapling>,         # Oak Sapling
+craft.reshapeless(<twilightforest:twilight_sapling> * 8, "SM", {
+  "S": <ic2:crafting:20>,
   "M": <twilightforest:moonworm>, # Moonworm
 });
 
@@ -287,6 +338,13 @@ craft.make(<twilightforest:castle_brick>, ["pretty",
   "L": <twilightforest:lamp_of_cinders>.anyDamage().transformDamage(1), # Lamp of Cinders
 });
 
+# [Blue Castle Door] from [Yellow Rune][+5]
+craft.shapeless(<twilightforest:castle_door:3>, "LYC", {
+  "L": <twilightforest:lamp_of_cinders>.anyDamage().transformDamage(1), # Lamp of Cinders
+  "Y": <quark:rune:*>,                  # Yellow Rune
+  "C": <twilightforest:castle_brick:*>, # Castle Brick
+});
+
 val castleIngrs = {
   "C": <twilightforest:castle_brick:*>, # Castle Brick
   "▲": <ore:dustCalciumSulfate>,        # Calcium Sulfate
@@ -392,6 +450,7 @@ mods.tconstruct.Alloy.addRecipe(<liquid:lava> * 250,       [<liquid:fiery_essenc
 <entity:twilightforest:wraith>.addDrop(<enderio:block_holier_fog>, 10, 40);
 <entity:twilightforest:tower_broodling>.addPlayerOnlyDrop(<plustic:osgloglasnugget> % 50, 1, 3);
 <entity:twilightforest:tower_golem>.addPlayerOnlyDrop(<mekanism:enrichedalloy> % 50, 1, 2);
+<entity:twilightforest:harbinger_cube>.addDrop(<appliedenergistics2:material:20>, 1, 3);
 
 # [Aurora Block]*4 from [Plutonium-242][+4]
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
@@ -449,10 +508,3 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   "M": <minecraft:brown_mushroom_block>, # Mushroom
   "g": <ore:glowstone>, # Glowstone
 }).shaped());
-
-# [Blue Castle Door] from [Yellow Rune][+5]
-craft.shapeless(<twilightforest:castle_door:3>, "LYC", {
-  "L": <twilightforest:lamp_of_cinders>.anyDamage().transformDamage(1), # Lamp of Cinders
-  "Y": <quark:rune:*>,                  # Yellow Rune
-  "C": <twilightforest:castle_brick:*>, # Castle Brick
-});

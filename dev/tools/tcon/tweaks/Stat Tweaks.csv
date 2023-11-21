@@ -1,6 +1,7 @@
 _names,HeadDurability,MiningSpeed,AttackDamage,HarvestLevel,HandleModifier,HandleDurability,ExtraDurability,DrawSpeed,Range,BonusDamage
 _importancy,sqrt(abs(n*10))*sign(n)/3,(n+1)**2,(n+1)**2/5,n*5,(n+3)**2-9,log(abs(n)+1)*sign(n)+8,log(n+50)*2-4,sqrt(n*10),n*4,n*2
 _output,round(n),n,n,"max(0,round(n))",n,"max(1,round(n))","max(1,round(n))",n,n,n
+adaminite,,,,,,,,,,
 advanced_alloy,,,*1.5,,,,,,,
 aethium,*3,*3,*3,12,*3,*3,*3,*3,*3,*3
 alpha_fur,,,,,,,,,,
@@ -12,6 +13,7 @@ apatite,,,,,,,,,,
 aquamarine,*0.75,*(2/3),*0.75,0,,,,,,
 ardite,,,,7,,,,,,
 black_quartz,+200,,,4,,,,,,
+blood_infused_glitch,,,,,,,,,,
 bloodwood,,,,,,,,,,
 blueslime,,,,1,,,,,,
 bone,,,,0,1.2,,,,,
@@ -101,6 +103,8 @@ manyullyn,,,,8,,,,,,
 meat_metal,+800,,,6,2.9,,+400,,,
 mica,,,,6,,,+700,,,
 mirion,/2,*0.8,*0.8,11,*0.8,*0.8,*0.8,*0.8,*0.8,*0.8
+mithminite,,,,,,,,,,
+mithrillium,,,,,,,,,,
 nagascale,,,+4,,,,,*1.5,*1.5,+2
 netherrack,,,,3,,,,,,
 neutronium,,,,12,,,,,,

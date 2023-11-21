@@ -36,12 +36,12 @@ craft.remake(<appliedenergistics2:portable_cell>, ["pretty",
 # ---=== Storage Cell Helpers ===---
   function newCellRecipe(input as IIngredient, output as IItemStack) {
 	recipes.remove(output);
-	recipes.addShaped(output.displayName, output,
+	recipes.addShaped(output,
 		[[<appliedenergistics2:quartz_glass>, <ore:dustRedstone>, <appliedenergistics2:quartz_glass>],
 		[<ore:dustRedstone>, input, <ore:dustRedstone>], 
 		[<ore:plateIron>, <ironchest:iron_chest>, <ore:plateIron>]]);
     if(!isNull(input)) {
-      recipes.addShapeless("Shapeless - "~output.displayName, output, [<appliedenergistics2:material:39>, input]);
+      recipes.addShapeless(output, [<appliedenergistics2:material:39>, input]);
 		}
 	}
 
@@ -505,6 +505,8 @@ regrind(<trinity:ingot_au_198>                  , <trinity:dust_au_198>);
 /**/
 
 regrind(<minecraft:obsidian>, <thermalfoundation:material:770>);
+regrind(<tconstruct:ingots>, <exnihilocreatio:item_ore_cobalt:2>);
+regrind(<tconstruct:ore>, <exnihilocreatio:item_ore_cobalt:2>);
 
 # [Pattern Expansion Card] from [ME Interface][+2]
 craft.remake(<appliedenergistics2:material:58>, ["pretty",

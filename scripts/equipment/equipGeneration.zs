@@ -1,3 +1,6 @@
+#modloaded zentoolforge
+#reloadable
+
 import crafttweaker.data.IData;
 import crafttweaker.entity.IEntity;
 import crafttweaker.entity.IEntityEquipmentSlot;
@@ -13,8 +16,6 @@ import mods.ctutils.utils.Math.min;
 import mods.ctutils.utils.Math.abs;
 import mods.zentoolforge.Toolforge;
 import modtweaker.tconstruct.ITICMaterial;
-
-#modloaded zentoolforge
 
 
 /* Patchouli_js()
@@ -121,7 +122,13 @@ function getFourRandomTicMats(listTicmats as IData, difficulty as double, forWea
 # Create random equipment
 function buildTiCTool(matList as ITICMaterial[], def as IItemDefinition) as IItemStack{
   if (!isNull(matList[0]) && !isNull(matList[1]) && !isNull(matList[2]) && !isNull(matList[3])){
-    return Toolforge.buildTool(def, matList[0], matList[1], matList[2], matList[3] );
+    var len = scripts.equipment.equipData.getMatsRequired(def.id);
+    return len == 2
+      ? Toolforge.buildTool(def, matList[0], matList[1])
+      : len == 3
+      ? Toolforge.buildTool(def, matList[0], matList[1], matList[2])
+      : Toolforge.buildTool(def, matList[0], matList[1], matList[2], matList[3])
+    ;
   }
   return null;
 }

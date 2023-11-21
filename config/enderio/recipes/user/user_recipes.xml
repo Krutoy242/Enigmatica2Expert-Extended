@@ -175,9 +175,12 @@
     <disabled/>
   </recipe>
   <recipe name="Sagmill: Flux Core">
-    <sagmilling energy="1000000">
+    <sagmilling energy="1000000" bonus="multiply_output">
       <input name="thermalexpansion:frame:148"/>
-      <output name="fluxnetworks:fluxcore" amount="32"/>
+      <output name="fluxnetworks:fluxcore" amount="24"/>
+      <output name="fluxnetworks:fluxcore" amount="10" chance="0.5"/>
+      <output name="fluxnetworks:fluxcore" amount="10" chance="0.25"/>
+      <output name="fluxnetworks:fluxcore" amount="10" chance="0.1"/>
     </sagmilling>
   </recipe>
   <recipe name="Sagmill: Coal">

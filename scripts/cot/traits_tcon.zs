@@ -148,6 +148,26 @@ trait_armor.onHurt = function (trait, armor, victim, source, damage, newDamage, 
 trait_armor.register();
 
 //
+// Fireproof Wood
+//
+var m = ExtendedMaterialBuilder.create('fireproof');
+m.color = 0xa64d00;
+m.craftable = true;
+m.castable = false;
+m.representativeItem = <item:avaritia:singularity:1>;
+m.addItem(<item:avaritia:singularity:1>, 1, 144);
+m.localizedName = game.localize('e2ee.tconstruct.material.fireproof.name');
+m.addHeadMaterialStats(100, 4, 3, 3);
+m.addHandleMaterialStats(1.5, 100);
+m.addExtraMaterialStats(50);
+m.addBowMaterialStats(1.0 / 1.25, 1, 0);
+m.addProjectileMaterialStats();
+m.addCoreMaterialStats(3, 10);
+m.addPlatesMaterialStats(1.0, 20, 1);
+m.addTrimMaterialStats(4);
+m.register();
+
+//
 // spectre
 //
 val spectre = ExtendedMaterialBuilder.create('spectre');
@@ -499,7 +519,7 @@ ____ ____ ____ ___  _ ___  ___  ____ _  _
 // Spin effect on player
 function spin(player as IPlayer) as void {
   player.addPotionEffect(<potion:potioncore:spin>.makePotionEffect(7, 1));
-  player.sendStatusMessage(game.localize('warp.sword.warning'));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation('warp.sword.warning'));
 }
 
 // Striping weared armor
@@ -611,7 +631,7 @@ function checkIfWeapon(tool as IItemStack) as bool {
 function speakRandom(player as IPlayer, world as IWorld) as void {
   val k = 'warp.sword.speak.random.';
   val r = world.random.nextInt(9);
-  player.sendStatusMessage(game.localize(k + r));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k+r));
   player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
 }
 
@@ -631,7 +651,7 @@ possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
 function speakKill(player as IPlayer, world as IWorld) as void {
   val k = 'warp.sword.speak.kill.';
   val r = world.random.nextInt(8);
-  player.sendStatusMessage(game.localize(k + r));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k+r));
   if (player.isPlayerMP()) player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
 }
 

@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "CountObject": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "integer"
+        },
+        "max": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "min",
+        "max"
+      ]
+    },
+    "Count": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "$ref": "#/definitions/CountObject"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "#/definitions/CountObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "ItemID": {
+      "type": "string",
+      "pattern": "^\\w+:\\w+$"
+    },
+    "ItemObject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ItemID"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ItemID"
+              }
+            }
+          ]
+        },
+        "Count": {
+          "$ref": "#/definitions/Count"
+        },
+        "tag": {
+          "anyOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          ]
+        },
+        "Damage": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "Item": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ItemObject"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/ItemObject"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "properties": {
+    "Profession": {
+      "type": "string",
+      "pattern": "^\\w+:\\w+$"
+    },
+    "Career": {
+      "type": "string",
+      "pattern": "^\\w+$"
+    },
+    "Offers": {
+      "type": "object",
+      "properties": {
+        "Recipes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "enum": [
+                  "add",
+                  "remove"
+                ]
+              },
+              "buy": {
+                "$ref": "#/definitions/Item"
+              },
+              "buyB": {
+                "$ref": "#/definitions/Item"
+              },
+              "sell": {
+                "$ref": "#/definitions/Item"
+              },
+              "CareerLevel": {
+                "type": "integer"
+              },
+              "chance": {
+                "type": "number",
+                "minimum": 0.00000001,
+                "maximum": 1
+              },
+              "rewardExp": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "action",
+              "buy",
+              "sell",
+              "CareerLevel"
+            ]
+          }
+        }
+      },
+      "required": [
+        "Recipes"
+      ]
+    }
+  },
+  "required": [
+    "Profession",
+    "Career",
+    "Offers"
+  ]
+}

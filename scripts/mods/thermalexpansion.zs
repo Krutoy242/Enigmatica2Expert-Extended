@@ -224,7 +224,7 @@ remakeDynamo(<thermalexpansion:dynamo:1>, "Invar");
 remakeDynamo(<thermalexpansion:dynamo:2>, "Tin");
 remakeDynamo(<thermalexpansion:dynamo:3>, "Lead");
 remakeDynamo(<thermalexpansion:dynamo:4>, "Electrum");
-remakeDynamo(<thermalexpansion:dynamo:5>, "Constantan");
+remakeDynamo(<thermalexpansion:dynamo:5>, "Signalum");
 
 # Remove old non-working reservior clearings
 recipes.removeByRecipeName("thermalexpansion:reservoir_10");
@@ -533,8 +533,8 @@ val dustAlts = {
 } as IIngredient[][IItemStack];
 for out,list in dustAlts {
 	recipes.remove(out);
-	recipes.addShapeless(out.displayName~" x1", out,     [list[0], list[0],          <ore:dustRedstone>, list[1]]);
-	recipes.addShapeless(out.displayName~" x4", out * 4, [list[0], list[0], list[2], <ore:dustRedstone>, list[1]]);
+	recipes.addShapeless('te_dust_'~out.damage~" x1", out,     [list[0], list[0],          <ore:dustRedstone>, list[1]]);
+	recipes.addShapeless('te_dust_'~out.damage~" x4", out * 4, [list[0], list[0], list[2], <ore:dustRedstone>, list[1]]);
 }
 
 # Clear content of reserviors

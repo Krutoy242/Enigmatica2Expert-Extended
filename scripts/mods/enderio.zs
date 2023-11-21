@@ -148,6 +148,17 @@ recipes.addShapedMirrored("Machine Chassis",
 [<ore:dyeMachine>, <enderio:item_material>, <ore:dyeMachine>], 
 [<enderio:block_reinforced_obsidian>, <ore:dyeMachine>, <enderio:block_reinforced_obsidian>]]);
 
+# [Simple Machine Chassis] from [Hardened Cell Frame][+3]
+craft.remake(<enderio:item_material>, ["pretty",
+  "□ ¤ □",
+  "D ◘ D",
+  "□ ¤ □"], {
+  "□": <ore:plateTitaniumAluminide>,         # Titanium Aluminide Plate
+  "¤": <ore:gearIronInfinity>,               # Infinity Bimetal Gear
+  "D": <endreborn:block_decorative_lormyte>, # Decorative Lormyte Stone
+  "◘": <thermalexpansion:frame:129>,         # Hardened Cell Frame
+});
+
 # [End Steel Chassis] from [Quartzburnt][+2]
 craft.remake(<enderio:item_material:66>, ["pretty",
   "E ◊ E",
@@ -275,7 +286,7 @@ mods.immersiveengineering.ArcFurnace.addRecipe(<enderio:item_material:72>, <ore:
 recipes.remove(<enderio:item_material:22> * 8);
 makeEx(<enderio:item_material:22> * 24, [
 	[<ore:dust>, <ore:dustEndstone>, <ore:dust>],
-	[<ore:dustClay>, <liquid:sand> * 1000, <ore:dustClay>],
+	[<ore:dustClay>, LiquidIngr('sand'), <ore:dustClay>],
 	[<ore:dust>, <ore:dustEndstone>, <ore:dust>]]);
 
 # And remake binder as compost
@@ -336,6 +347,11 @@ solution([<ore:dustBedrock>, <ore:dustRedstone>                     ], [<liquid:
 
 # Fake iron -> Steel
 mods.mekanism.infuser.addRecipe("CARBON", 10, <enderio:item_alloy_ingot:9>, <mekanism:enrichediron>);
+
+// Fake Iron remove melting conversions
+mods.tconstruct.Melting.removeRecipe(<fluid:iron>, <immersiveengineering:conveyor>.withTag({conveyorType: "immersiveengineering:conveyor"}));
+mods.tconstruct.Melting.removeRecipe(<fluid:iron>, <iceandfire:chain_link>);
+mods.tconstruct.Melting.removeRecipe(<fluid:iron>, <immersiveengineering:drillhead:1>);
 
 # Oxidiser
 val ox as IIngredient = <ore:itemInfinityGoop>; # Infinity reagent
@@ -610,7 +626,7 @@ craft.reshapeless(<enderio:item_material:38>, "▲▲▲©S©▲▲▲", {
 scripts.process.compress(<ore:itemPowderPhotovoltaic> * 4, <enderio:item_material:3>, "Except: Compressor");
 mods.mekanism.compressor.addRecipe(<ore:itemPowderPhotovoltaic> * 4, <enderio:item_material:3>);
 mods.immersiveengineering.MetalPress.addRecipe(<enderio:item_material:3>, <ore:itemPowderPhotovoltaic> * 4, <immersiveengineering:mold:0>, 2000);
-mods.qmd.target_chamber.addRecipe(<ore:itemPowderPhotovoltaic>, (<particle:boron_ion>*100000)^2000, <enderio:item_material:3>, null, null, null, 10000, 1.0, 0, 0);
+mods.qmd.target_chamber.addRecipe(<ore:itemPowderPhotovoltaic>, null, (<particle:boron_ion>*100000)^2000, <enderio:item_material:3>, null, null, null, null, 10000, 1.0, 0);
 
 # Cheaper to match other solar panels
 # [Simple Photovoltaic Cell] from [Infinity Bimetal Gear][+3]

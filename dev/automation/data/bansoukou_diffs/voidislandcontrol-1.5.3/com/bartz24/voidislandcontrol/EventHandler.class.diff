@@ -1,0 +1,186 @@
+@@ -8,14 +8,10 @@
+  *  com.bartz24.voidislandcontrol.api.IslandPos
+  *  com.bartz24.voidislandcontrol.config.ConfigOptions
+  *  com.bartz24.voidislandcontrol.config.ConfigOptions$CommandSettings$CommandBlockType
+- *  com.bartz24.voidislandcontrol.world.WorldTypeVoid
+  *  javax.annotation.Nullable
+  *  net.minecraft.block.Block
+  *  net.minecraft.block.BlockCommandBlock
+  *  net.minecraft.block.properties.IProperty
+- *  net.minecraft.client.Minecraft
+- *  net.minecraft.client.gui.GuiCreateWorld
+- *  net.minecraft.client.gui.GuiWorldSelection
+  *  net.minecraft.command.CommandException
+  *  net.minecraft.command.ICommandSender
+  *  net.minecraft.entity.player.EntityPlayer
+@@ -29,9 +25,7 @@
+  *  net.minecraft.util.text.TextFormatting
+  *  net.minecraft.world.GameType
+  *  net.minecraft.world.World
+- *  net.minecraft.world.WorldType
+  *  net.minecraft.world.border.WorldBorder
+- *  net.minecraftforge.client.event.GuiOpenEvent
+  *  net.minecraftforge.event.entity.living.LivingEvent$LivingUpdateEvent
+  *  net.minecraftforge.event.entity.player.PlayerInteractEvent
+  *  net.minecraftforge.event.world.WorldEvent$Save
+@@ -39,9 +33,6 @@
+  *  net.minecraftforge.fml.common.eventhandler.SubscribeEvent
+  *  net.minecraftforge.fml.common.gameevent.PlayerEvent$PlayerLoggedInEvent
+  *  net.minecraftforge.fml.common.gameevent.PlayerEvent$PlayerRespawnEvent
+- *  net.minecraftforge.fml.relauncher.ReflectionHelper
+- *  net.minecraftforge.fml.relauncher.Side
+- *  net.minecraftforge.fml.relauncher.SideOnly
+  *  org.apache.commons.lang3.StringUtils
+  */
+ package com.bartz24.voidislandcontrol;
+@@ -52,7 +43,6 @@ import com.bartz24.voidislandcontrol.api.IslandGen;
+ import com.bartz24.voidislandcontrol.api.IslandManager;
+ import com.bartz24.voidislandcontrol.api.IslandPos;
+ import com.bartz24.voidislandcontrol.config.ConfigOptions;
+-import com.bartz24.voidislandcontrol.world.WorldTypeVoid;
+ import java.util.ArrayList;
+ import java.util.Random;
+ import java.util.UUID;
+@@ -60,9 +50,6 @@ import javax.annotation.Nullable;
+ import net.minecraft.block.Block;
+ import net.minecraft.block.BlockCommandBlock;
+ import net.minecraft.block.properties.IProperty;
+-import net.minecraft.client.Minecraft;
+-import net.minecraft.client.gui.GuiCreateWorld;
+-import net.minecraft.client.gui.GuiWorldSelection;
+ import net.minecraft.command.CommandException;
+ import net.minecraft.command.ICommandSender;
+ import net.minecraft.entity.player.EntityPlayer;
+@@ -76,73 +63,53 @@ import net.minecraft.util.text.TextComponentString;
+ import net.minecraft.util.text.TextFormatting;
+ import net.minecraft.world.GameType;
+ import net.minecraft.world.World;
+-import net.minecraft.world.WorldType;
+ import net.minecraft.world.border.WorldBorder;
+-import net.minecraftforge.client.event.GuiOpenEvent;
+ import net.minecraftforge.event.entity.living.LivingEvent;
+ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+ import net.minecraftforge.event.world.WorldEvent;
+ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+-import net.minecraftforge.fml.relauncher.Side;
+-import net.minecraftforge.fml.relauncher.SideOnly;
+ import org.apache.commons.lang3.StringUtils;
+ 
+ public class EventHandler {
+-    @SubscribeEvent
+-    @SideOnly(value=Side.CLIENT)
+-    public void onOpenGui(GuiOpenEvent e) {
+-        if (e.getGui() instanceof GuiCreateWorld && Minecraft.func_71410_x().field_71462_r instanceof GuiWorldSelection) {
+-            GuiCreateWorld cw = (GuiCreateWorld)e.getGui();
+-            ReflectionHelper.setPrivateValue(GuiCreateWorld.class, (Object)cw, (Object)this.getType(), (String[])new String[]{"field_146331_K", "selectedIndex"});
+-        }
+-    }
+-
+-    private int getType() {
+-        for (int i = 0; i < WorldType.field_77139_a.length; ++i) {
+-            if (!(WorldType.field_77139_a[i] instanceof WorldTypeVoid)) continue;
+-            return i;
+-        }
+-        return 0;
+-    }
+-
+     @SubscribeEvent
+     public void playerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+-        EntityPlayer player;
+-        if (!(event.player.func_130014_f_().field_72995_K || !((player = event.player).func_130014_f_().func_72912_H().func_76067_t() instanceof WorldTypeVoid) || player.field_71093_bK != ConfigOptions.worldGenSettings.baseDimension || IslandManager.spawnedPlayers.size() != 0 && IslandManager.hasPlayerSpawned((UUID)player.func_146103_bH().getId()))) {
+-            boolean autoCreate;
+-            World world = player.func_130014_f_();
+-            BlockPos spawn = new BlockPos(0, ConfigOptions.islandSettings.islandYLevel, 0);
+-            if (IslandManager.CurrentIslandsList.size() == 0) {
+-                IslandManager.CurrentIslandsList.add(new IslandPos(0, 0, new UUID[0]));
+-                BlockPos pos = spawn.func_177971_a((Vec3i)IslandManager.getSpawnOffset((IslandPos)((IslandPos)IslandManager.CurrentIslandsList.get(0))));
+-                world.func_175652_B(pos);
+-                EventHandler.createSpawn(player, player.func_130014_f_(), spawn);
+-            }
+-            IslandManager.tpPlayerToPos((EntityPlayer)player, (BlockPos)new BlockPos(0, ConfigOptions.islandSettings.islandYLevel, 0), (IslandPos)((IslandPos)IslandManager.CurrentIslandsList.get(0)));
+-            boolean bl = autoCreate = ConfigOptions.islandSettings.autoCreate || player.func_184102_h().func_71262_S() && ConfigOptions.islandSettings.autoCreateServersOnly;
+-            if (autoCreate && !IslandManager.worldOneChunk) {
+-                if (player instanceof EntityPlayerMP) {
+-                    try {
+-                        PlatformCommand.newPlatform((EntityPlayerMP)player, new String[]{"create", "bypass"});
++        if (!event.player.func_130014_f_().field_72995_K) {
++            EntityPlayer player = event.player;
++            if (!(player.field_71093_bK != ConfigOptions.worldGenSettings.baseDimension || IslandManager.spawnedPlayers.size() != 0 && IslandManager.hasPlayerSpawned((UUID)player.func_146103_bH().getId()))) {
++                boolean autoCreate;
++                World world = player.func_130014_f_();
++                BlockPos spawn = new BlockPos(0, ConfigOptions.islandSettings.islandYLevel, 0);
++                if (IslandManager.CurrentIslandsList.size() == 0) {
++                    IslandManager.CurrentIslandsList.add(new IslandPos(0, 0, new UUID[0]));
++                    BlockPos pos = spawn.func_177971_a((Vec3i)IslandManager.getSpawnOffset((IslandPos)((IslandPos)IslandManager.CurrentIslandsList.get(0))));
++                    world.func_175652_B(pos);
++                    EventHandler.createSpawn(player, player.func_130014_f_(), spawn);
++                }
++                IslandManager.tpPlayerToPos((EntityPlayer)player, (BlockPos)new BlockPos(0, ConfigOptions.islandSettings.islandYLevel, 0), (IslandPos)((IslandPos)IslandManager.CurrentIslandsList.get(0)));
++                boolean bl = autoCreate = ConfigOptions.islandSettings.autoCreate || player.func_184102_h().func_71262_S() && ConfigOptions.islandSettings.autoCreateServersOnly;
++                if (autoCreate && !IslandManager.worldOneChunk) {
++                    if (player instanceof EntityPlayerMP) {
++                        try {
++                            PlatformCommand.newPlatform((EntityPlayerMP)player, new String[]{"create", "bypass"});
++                        }
++                        catch (CommandException e) {
++                            player.func_145747_a((ITextComponent)new TextComponentString(e.getMessage()));
++                        }
+                     }
+-                    catch (CommandException e) {
+-                        player.func_145747_a((ITextComponent)new TextComponentString(e.getMessage()));
++                } else {
++                    if (ConfigOptions.islandSettings.oneChunk) {
++                        WorldBorder border = player.func_130014_f_().func_73046_m().field_71305_c[0].func_175723_af();
++                        border.func_177739_c(0.0, 0.0);
++                        border.func_177750_a(16.0);
++                        border.func_177747_c(1);
++                        IslandManager.worldOneChunk = true;
+                     }
++                    EventHandler.spawnPlayer(player, spawn, false);
++                    player.func_70066_B();
+                 }
+-            } else {
+-                if (ConfigOptions.islandSettings.oneChunk) {
+-                    WorldBorder border = player.func_130014_f_().func_73046_m().field_71305_c[0].func_175723_af();
+-                    border.func_177739_c(0.0, 0.0);
+-                    border.func_177750_a(16.0);
+-                    border.func_177747_c(1);
+-                    IslandManager.worldOneChunk = true;
+-                }
+-                EventHandler.spawnPlayer(player, spawn, false);
+-                player.func_70066_B();
++                IslandManager.spawnedPlayers.add(player.func_146103_bH().getId().toString());
+             }
+-            IslandManager.spawnedPlayers.add(player.func_146103_bH().getId().toString());
+         }
+     }
+ 
+@@ -151,7 +118,7 @@ public class EventHandler {
+         if (event.getEntityLiving() instanceof EntityPlayer && !event.getEntity().func_130014_f_().field_72995_K) {
+             int time;
+             EntityPlayer player = (EntityPlayer)event.getEntityLiving();
+-            if (player.func_130014_f_().func_72912_H().func_76067_t() instanceof WorldTypeVoid && IslandManager.hasVisitLoc((EntityPlayer)player) && player.field_71093_bK == ConfigOptions.worldGenSettings.baseDimension && !player.func_184812_l_()) {
++            if (IslandManager.hasVisitLoc((EntityPlayer)player) && player.field_71093_bK == ConfigOptions.worldGenSettings.baseDimension && !player.func_184812_l_()) {
+                 if (player instanceof EntityPlayerMP && ((EntityPlayerMP)player).field_71134_c.func_73081_b() != GameType.SPECTATOR) {
+                     player.func_71033_a(GameType.SPECTATOR);
+                 }
+@@ -166,7 +133,7 @@ public class EventHandler {
+                     IslandManager.tpPlayerToPos((EntityPlayer)player, (BlockPos)new BlockPos(posX, ConfigOptions.islandSettings.islandYLevel, posY), (IslandPos)IslandManager.getVisitLoc((EntityPlayer)player));
+                 }
+             }
+-            if (player.func_130014_f_().func_72912_H().func_76067_t() instanceof WorldTypeVoid && player.field_71093_bK == ConfigOptions.worldGenSettings.baseDimension && !player.func_184812_l_() && !IslandManager.hasVisitLoc((EntityPlayer)player) && player.func_184102_h().func_71262_S() && ConfigOptions.islandSettings.islandProtection && (Math.abs(player.field_70165_t) > (double)ConfigOptions.islandSettings.protectionBuildRange || Math.abs(player.field_70161_v) > (double)ConfigOptions.islandSettings.protectionBuildRange)) {
++            if (player.field_71093_bK == ConfigOptions.worldGenSettings.baseDimension && !player.func_184812_l_() && !IslandManager.hasVisitLoc((EntityPlayer)player) && player.func_184102_h().func_71262_S() && ConfigOptions.islandSettings.islandProtection && (Math.abs(player.field_70165_t) > (double)ConfigOptions.islandSettings.protectionBuildRange || Math.abs(player.field_70161_v) > (double)ConfigOptions.islandSettings.protectionBuildRange)) {
+                 int posY;
+                 IslandPos pos = IslandManager.getPlayerIsland((UUID)player.func_146103_bH().getId());
+                 int posX = pos == null ? 0 : pos.getX() * ConfigOptions.islandSettings.islandDistance;
+@@ -282,7 +249,7 @@ public class EventHandler {
+             EntityPlayer player;
+             block5: {
+                 player = event.player;
+-                if (!(player.func_130014_f_().func_72912_H().func_76067_t() instanceof WorldTypeVoid)) break block4;
++                if (player.field_71093_bK != ConfigOptions.worldGenSettings.baseDimension) break block4;
+                 if (player.func_180470_cg() == null) break block5;
+                 if (EntityPlayer.func_180467_a((World)player.func_130014_f_(), (BlockPos)player.func_180470_cg(), (boolean)true) != null) break block4;
+             }

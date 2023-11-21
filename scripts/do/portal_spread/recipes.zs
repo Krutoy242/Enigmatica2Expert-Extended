@@ -35,6 +35,15 @@ static transformableBlockNumIds as bool[int][int][int]
 static wildcardedNumIds as bool[int][int][int]
                    = {} as bool[int][int][int];
 
+// Dimensions that copy its recipes from other dimensions
+static dimFallbacks as int[int] = {} as int[int];
+
+// Same as above but flipped - list of all dimensions that depends on this one
+static dimDependents as int[][int] = {} as int[][int];
+
+// Set of dimensions that have recipes
+static dimHasRecipes as bool[int] = {} as bool[int];
+
 static _air as int = <blockstate:minecraft:air>.block.definition.numericalId;
 static _obs as int = <blockstate:minecraft:obsidian>.block.definition.numericalId;
 static _prt as int = <blockstate:minecraft:portal>.block.definition.numericalId;
@@ -94,6 +103,14 @@ function setState(dimFrom as int, dimTo as int, blockFrom as IBlockState, blocks
   transformableBlockNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
 
   stateRecipes[dimFrom][dimTo][blockFrom] = blocksTo;
+  
+  // Update this dim and all dependent dims
+  dimHasRecipes[dimFrom] = true;
+  if(!isNull(dimDependents[dimFrom])) {
+    for i, dep in dimDependents[dimFrom] {
+      dimHasRecipes[dep] = true;
+    }
+  }
 
   // Update untransformable blocks
   for blockTo in blocksTo {
@@ -133,6 +150,21 @@ function setOreBlocks(dimFrom as int, dimTo as int, oredict as IOreDictEntry, bl
   for item in oredict.items {
     setBlocks(dimFrom, dimTo, [item.asBlock().definition.defaultState], blocksTo);
   }
+}
+
+/**
+ * Copy recipes from one dim to another
+ * For example:
+ * ```
+ * // All recipes in dim 0 would be available in dim 3
+ * setDimensionFallback(3, 0);
+ * ```
+ */
+function setDimensionFallback(copyDim as int, baseDim as int) as void {
+  dimFallbacks[copyDim] = baseDim;
+  dimHasRecipes[copyDim] = dimHasRecipes[baseDim];
+  if(isNull(dimDependents[baseDim])) dimDependents[baseDim] = [] as int[];
+  dimDependents[baseDim] = dimDependents[baseDim] + copyDim;
 }
 
 ////////////////////////////////////////////////////////////

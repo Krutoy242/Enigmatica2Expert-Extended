@@ -39,9 +39,9 @@ recipes.addShaped("elektron2blockshape", <contenttweaker:elektron60_block>,
 		[<nuclearcraft:turbine_rotor_blade_elektron231>, <contenttweaker:elektron60_ingot>,<nuclearcraft:turbine_rotor_blade_elektron231>]]);
 	
 		
-		mods.qmd.target_chamber.addRecipe(<contenttweaker:steel_mould>,((<particle:proton>*100000)^10000)~10.0, <nuclearcraft:turbine_rotor_blade_edelstahl>, <particle:proton>,  <particle:neutron> ,  null, 11000, 0.5, -6000 );
-		mods.qmd.target_chamber.addRecipe(<contenttweaker:alloy_mould>,((<particle:proton>*100000)^10000)~10.0, <nuclearcraft:turbine_rotor_blade_legierung>, <particle:proton>,  <particle:neutron> ,  null, 11000, 0.5, -6000 );
-		mods.qmd.target_chamber.addRecipe(<contenttweaker:sic_mould>,((<particle:proton>*100000)^10000)~10.0, <nuclearcraft:turbine_rotor_blade_matrix>, <particle:proton>,  <particle:neutron> ,  null, 11000, 0.5, -6000 );
+		mods.qmd.target_chamber.addRecipe(<contenttweaker:steel_mould>, null, ((<particle:proton>*100000)^10000)~10.0, <nuclearcraft:turbine_rotor_blade_edelstahl>, null, <particle:proton>, <particle:neutron>, null, 11000, 0.5, -6000 );
+		mods.qmd.target_chamber.addRecipe(<contenttweaker:alloy_mould>, null, ((<particle:proton>*100000)^10000)~10.0, <nuclearcraft:turbine_rotor_blade_legierung>, null, <particle:proton>, <particle:neutron>, null, 11000, 0.5, -6000 );
+		mods.qmd.target_chamber.addRecipe(<contenttweaker:sic_mould>, null, ((<particle:proton>*100000)^10000)~10.0, <nuclearcraft:turbine_rotor_blade_matrix>, null, <particle:proton>, <particle:neutron>, null, 11000, 0.5, -6000 );
 
 val ttblades = [<contenttweaker:steel_mould>, <contenttweaker:alloy_mould>, <contenttweaker:sic_mould>, <contenttweaker:blade_core>] as IIngredient[];
 for blade in ttblades {
