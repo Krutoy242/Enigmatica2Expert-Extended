@@ -1,0 +1,40 @@
+{
+	title: "{q.thaumcraft.mithminite_scythe.name}",
+	icon: "thaumadditions:mithminite_scythe",
+	x: 19.0d,
+	y: 3.0d,
+	shape: "gear",
+	text: [
+		"{q.thaumcraft.mithminite_scythe.desc}"
+	],
+	dependencies: [
+		"64c42db9"
+	],
+	size: 1.5d,
+	tasks: [{
+		uid: "2120c4e6",
+		type: "item",
+		items: [{
+			item: "thaumadditions:mithminite_scythe"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	},
+	{
+		uid: "61bcac4a",
+		type: "item",
+		title: "Seal Symbol",
+		items: [{
+			id: "thaumadditions:seal_symbol",
+			tag: {
+				Aspect: ""
+			}
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "57767f96",
+		type: "loot",
+		table: 2
+	}]
+}
