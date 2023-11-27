@@ -160,18 +160,3 @@ scripts.jei.requious.add(<assembly:crafting_hints>, {[
   <exnihilocreatio:block_barrel0> | <exnihilocreatio:block_barrel1>, null, null, null, null,
   Bucket("milk"), <minecraft:brown_mushroom> | <minecraft:red_mushroom>
 ] : [Soul('minecraft:slime'), <minecraft:slime>]});
-
-# Mithminite scythe hints
-add1to1(<ore:listAllmeatraw>  , <contenttweaker:protein_pill>,    <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]) );
-add1to1(<ore:listAllfruit>    , <contenttweaker:fruit_pill>,      <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
-add1to1(<ore:listAllgrain>    , <contenttweaker:grain_pill>,      <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
-add1to1(<ore:listAllveggie>   , <contenttweaker:vegetable_pill>,  <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
-add1to1(<ore:foodCheese>      , <contenttweaker:dairy_pill>,      <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
-
-add1to1(Soul('thaumcraft:golem'), null, <thaumadditions:mithminite_scythe>.withLore(["§7machina§r"]));
-
-add1to1(Soul('minecraft:zombie_villager'), Soul("minecraft:villager"), <thaumadditions:mithminite_scythe>.withLore(["§fhumanus§r"]));
-
-addInsOutCatl([<minecraft:arrow>, <minecraft:fire_charge>], null, <thaumadditions:mithminite_scythe>.withLore(["§2permutatio§r"]));
-
-add1to1(Soul('minecraft:cow')|Soul('minecraft:chicken')|Soul('minecraft:sheep')|Soul('minecraft:pig'), null, <thaumadditions:mithminite_scythe>.withLore(["§cvictus§r"]));
