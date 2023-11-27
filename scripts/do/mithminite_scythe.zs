@@ -25,67 +25,6 @@ import crafttweaker.entity.AttributeModifier;
 import mods.randomtweaker.botania.IManaItemHandler;
 import crafttweaker.liquid.ILiquidDefinition;
 
-static loreUnColor as string[string] = {
-  "§eaer§r"         : "aer",
-  "§5alienis§r"     : "alienis",
-  "§3alkimia§r"     : "alkimia",
-  "§famogus§r"      : "amogus",      
-  "§baqua§r"        : "aqua",
-  "§dauram§r"       : "auram",
-  "§caversio§r"     : "aversio",
-  "§6bestia§r"      : "bestia",
-  "§bcaeles§r"      : "caeles",
-  "§6cognitio§r"    : "cognitio",
-  "§edesiderium§r"  : "desiderium",
-  "§bdraco§r"       : "draco",
-  "§2exanimis§r"    : "exanimis",
-  "§7exitium§r"     : "exitium",
-  "§2fabrico§r"     : "fabrico",
-  "§7fluctus§r"     : "fluctus",
-  "§fgelum§r"       : "gelum",
-  "§aherba§r"       : "herba",
-  "§fhumanus§r"     : "humanus",
-  "§cignis§r"       : "ignis",
-  "§6imperium§r"    : "imperium",
-  "§4infernum§r"    : "infernum",
-  "§9instrumentum§r": "instrumentum",
-  "§elux§r"         : "lux",
-  "§7machina§r"     : "machina",
-  "§bmana§r"        : "mana",
-  "§7metallum§r"    : "metallum",
-  "§4mortuus§r"     : "mortuus",
-  "§fmotus§r"       : "motus",
-  "§emythus§r"      : "mythus",
-  "§fordo§r"        : "ordo",
-  "§8perditio§r"    : "perditio",
-  "§2permutatio§r"  : "permutatio",
-  "§fpotentia§r"    : "potentia",
-  "§dpraecantatio§r": "praecantatio",
-  "§3praemunio§r"   : "praemunio",
-  "§0rattus§r"      : "rattus",
-  "§4sanguis§r"     : "sanguis",
-  "§asensus§r"      : "sensus",
-  "§6sonus§r"       : "sonus",
-  "§7spiritus§r"    : "spiritus",
-  "§0tenebrae§r"    : "tenebrae",
-  "§2terra§r"       : "terra",
-  "§8vacuos§r"      : "vacuos",
-  "§fventus§r"      : "ventus",
-  "§6vinculum§r"    : "vinculum",
-  "§avisum§r"       : "visum",
-  "§cvictus§r"      : "victus",
-  "§fvolatus§r"     : "volatus",
-  "§5vitium§r"      : "vitium",
-  "§bvitreus§r"     : "vitreus",
-} as string[string];
-
-function pow(a as double, b as int) as double {
-    var result = a;
-    for i in 0 to b{
-        result*=a;
-    }
-    return result;
-}
 
 function entityEyeHeight(entity as IEntity) as double{
     return entity.y+entity.eyeHeight;
@@ -106,7 +45,7 @@ function aerTornado(scythe as IEntity) as void{
 
     for entity in list {
         if(isNull(entity)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || scythe.getDistanceSqToEntity(entity)>25
@@ -157,8 +96,7 @@ function aquaSplash(target as IEntityLivingBase) as void{
             for c in 0 to 3{
                 val pos = crafttweaker.util.Position3f.create(x - 1 + a, y + b, z - 1 + c) as IBlockPos;
                 val block as IBlock = target.world.getBlock(pos);
-                if (!isNull(block) 
-                && !isNull(block.definition) 
+                if (!isNull(block)
                 && block.definition.id=="minecraft:air") {target.world.setBlockState(water, pos);
                 server.commandManager.executeCommandSilent(server, "/particle droplet "~target.x~" "~target.y~" "~target.z~" 1 1 1 .5 100");
                 }
@@ -184,7 +122,6 @@ function bestiaHunt(scythe as IEntity, target as IEntityLivingBase) as void{
     val pos = crafttweaker.util.Position3f.create(x, y + 1, z) as IBlockPos;
     val block as IBlock = target.world.getBlock(pos);
     if (!isNull(block) 
-    && !isNull(block.definition) 
     && block.definition.id=="minecraft:air") target.world.setBlockState(web.definition.defaultState, pos);
 
     server.commandManager.executeCommandSilent(server, "/particle cloud "~scythe.x~" "~y~" "~scythe.z~" 1 1 1 0 10");
@@ -278,7 +215,7 @@ function dracoBreath(target as IEntityLivingBase) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || !(entity instanceof IEntityLivingBase)
         || entity instanceof IPlayer
         || !entity.isAlive()
@@ -310,7 +247,6 @@ function fabricoPill(scythe as IEntity) as void{
     for entityItem in listAllEntities {
         
         if(!isNull(entityItem) 
-        && !isNull(entityItem.definition)
         && scythe.getDistanceSqToEntity(entityItem)<4.0
         ){
             val item = entityItem.item;
@@ -335,7 +271,7 @@ function fluctusWave(target as IEntityLivingBase) as void{
 
     for entity in list {
         if(isNull(entity)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || target.getDistanceSqToEntity(entity)>20
@@ -453,7 +389,6 @@ function metallumPrison(target as IEntityLivingBase) as void{
                     val pos = crafttweaker.util.Position3f.create(x - 2 + a, y - 1 + b, z - 2 + c) as IBlockPos;
                     val block as IBlock = target.world.getBlock(pos);
                     if (!isNull(block) 
-                    && !isNull(block.definition) 
                     && block.definition.id=="minecraft:air") target.world.setBlockState(ancientBar.definition.defaultState, pos);
                 }
             }
@@ -540,7 +475,7 @@ function rattusInsanity(target as IEntityLivingBase) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || target.id==entity.id
@@ -572,15 +507,13 @@ function sanguisBonusDamage(target as IEntityLivingBase, player as IPlayer, dmg 
 
 function sensusTarget(scythe as IEntity, target as IEntityLivingBase) as void{
     playSound("botania:manablaster",target);
-    //if(isNull(scythe.nbt.ForgeData) || isNull(projectile.nbt.ForgeData.index)){}// making trajectory list
-        //val idList as int[] = []; 
         val entitiesList = target.world.getEntities();
         val length = entitiesList.length - 1;
         for i in 0 to (entitiesList.length){
             val entity = entitiesList[length-i];
             if(isNull(entity)
             || !(entity instanceof IEntityLivingBase)
-            || isNull(entity.definition)
+            || entity instanceof IPlayer
             || !entity.isAlive()
             || entity.id==target.id
             || target.getDistanceSqToEntity(entity)>50) continue;
@@ -601,7 +534,7 @@ function sonusSplit(scythe as IEntity, target as IEntityLivingBase) as void{
     for entity in entitiesList{
         if(isNull(entity)
         || !(entity instanceof IEntityLivingBase)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || target.getDistanceSqToEntity(entity)>30) continue;
 
         val scytheCopy = scythe.definition.spawnEntity(target.world, crafttweaker.util.Position3f.create(target.x, entityEyeHeight(target), target.z).asBlockPos());
@@ -648,7 +581,7 @@ function terraQuickSand(target as IEntityLivingBase) as void{
             val pos = crafttweaker.util.Position3f.create(x - 4 + a, y - 1, z - 4 + c) as IBlockPos;
             val block as IBlock = target.world.getBlock(pos);
             if (!isNull(block) 
-            && !isNull(block.definition) && terraBlocksList has block.definition.id) {
+            && terraBlocksList has block.definition.id) {
                 target.world.setBlockState(quickSand, pos);
                 server.commandManager.executeCommandSilent(server, "/particle droplet "~(x - 4 + a)~" "~(y)~" "~(z - 4 + c)~" .2 .2 .2 .1 5");
             }
@@ -662,7 +595,7 @@ function vacuosHole(scythe as IEntity, target as IEntity){
 
     for entity in list {
             if(isNull(entity)
-            || isNull(entity.definition)
+            || entity instanceof IPlayer
             || !entity instanceof IEntityLiving
             || !entity.isAlive()
             || target.getDistanceSqToEntity(entity)>20
@@ -701,7 +634,7 @@ function visumGlow(target as IEntityLivingBase, player as IPlayer) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || target.getDistanceSqToEntity(entity)>120
@@ -727,7 +660,7 @@ function victusBreeder(scythe as IEntity, target as IEntityLivingBase) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || isNull(entity.definition)
+        || entity instanceof IPlayer
         || !entity instanceof IEntityAnimal
         || !entity.isAlive()
         || target.getDistanceSqToEntity(entity)>50
@@ -812,7 +745,8 @@ function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, p
     if(augments has "sensus")       sensusTarget(scythe, target);
 }
 
-/*function scytheCreateChaos(scythe as IEntity, target as IEntityLivingBase) as void {
+/* Creates scythe in all direction, not used yet
+function scytheCreateChaos(scythe as IEntity, target as IEntityLivingBase) as void {
     scythe.world.updateCustomWorldData({trace: "RANDOM"  , speed: "SLOW"});
     val r = 10.0;
     val pi = 3.14/3;
@@ -847,7 +781,7 @@ function getAugments(player as IPlayer) as string[]{
     if(lore.length == 0) return result;
 
     for i in 0 to lore.length {
-        result += loreUnColor[lore[i]];
+        result += scripts.mods.thaumadditions.loreUnColor[lore[i]];
     }
 
     return result;
@@ -859,25 +793,13 @@ events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent)
     if (isNull(scythe)
      || isNull(e.world)
      || e.world.remote
-     || isNull(scythe.definition)
+     || scythe instanceof IPlayer
      || scythe.definition.id!="thaumadditions:mithminite_scythe"
      || isNull(scythe.nbt) 
      || scythe.nbt.ownerName=="" //That's a clone of scythe
     ) return;
     #Primal scythe
     if(getAugments(e.world.getPlayerByName(scythe.nbt.ownerName)) has "fabrico") fabricoPill(scythe);
-
-    #DEBUG
-    /*val listAllEntities = scythe.world.getEntities();
-    for entity in listAllEntities {
-        if(isNull(entity)
-        || isNull(entity.definition)
-        || entity instanceof IPlayer
-        || !entity.isAlive()
-        //|| entity.definition.id!="astralsorcery:entitynocturnalspark"
-        ) continue;
-        entity.setDead();
-    }*/
 
     scythe.motionX = scythe.motionX*10;
     scythe.motionY = scythe.motionY*10;
@@ -890,7 +812,6 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     if (isNull(scythe)
     || isNull(scythe.world)
     || scythe.world.remote
-    || isNull(scythe.definition)
     || isNull(rayTrace)
     || !rayTrace.isEntity
     || isNull(rayTrace.entity)
@@ -909,8 +830,7 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
         }
     }
 
-    if(isNull(rayTrace.entity.definition)
-    || isNull(rayTrace.entity.definition.id)
+    if(rayTrace.entity instanceof IPlayer
     || scythe.definition.id!="thaumadditions:mithminite_scythe") return;
 
     val target as IEntityLivingBase = rayTrace.entity;
@@ -971,7 +891,6 @@ events.onProjectileImpactFireball(function (e as crafttweaker.event.ProjectileIm
     isNull(projectile)
     || isNull(projectile.world)
     || projectile.world.remote
-    || isNull(projectile.definition)
     || isNull(e.rayTrace)
     || !rayTrace.isEntity
     || isNull(rayTrace.entity)) return;
@@ -1003,7 +922,6 @@ events.onProjectileImpactArrow(function (e as crafttweaker.event.ProjectileImpac
     isNull(projectile)
     || isNull(projectile.world)
     || projectile.world.remote
-    || isNull(projectile.definition)
     || isNull(e.rayTrace)
     || !rayTrace.isEntity
     || isNull(rayTrace.entity)) return;
