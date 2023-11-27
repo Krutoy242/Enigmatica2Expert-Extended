@@ -3,6 +3,11 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.data.IData;
+import mods.zenutils.DataUpdateOperation.OVERWRITE;
+import mods.zenutils.DataUpdateOperation.APPEND;
+import mods.zenutils.DataUpdateOperation.MERGE;
+import mods.zenutils.DataUpdateOperation.REMOVE;
+import mods.zenutils.DataUpdateOperation.BUMP;
 
 mods.thaumcraft.Infusion.removeRecipe(<minecraft:golden_apple:1>);
 
@@ -1510,8 +1515,8 @@ mods.tconstruct.Casting.addTableRecipe(<thaumadditions:mithminite_plate>, <tcons
 mods.tconstruct.Casting.addBasinRecipe(<thaumadditions:mithminite_block>, null,                      <liquid:mithminite>, 1296,false,  800);
 
 #Mithminite scythe augmentation
-<thaumadditions:mithminite_scythe>.removeTooltipLine(1);
-<thaumadditions:mithminite_scythe>.removeTooltipLine(2);
+<thaumadditions:mithminite_scythe>.removeTooltip("12 Melee Damage");
+<thaumadditions:mithminite_scythe>.removeTooltip("14 Ranged Damage");
 
 static loreColor as string[string] = {
   "aer"           :   "§eaer§r",
@@ -1624,35 +1629,14 @@ static loreUnColor as string[string] = {
 recipes.addShapeless("augmentMithminiteScythe",<thaumadditions:mithminite_scythe>,
 [<thaumadditions:mithminite_scythe>.marked("scythe"),<thaumadditions:seal_symbol>.marked("seal")],
 function(out, ins, cInfo){
-  var lorem as string[] = [];
   val scythe = ins.scythe;
-  var index = 0;
-
-  if(!isNull(scythe.tag) && !isNull(scythe.tag.display) && !isNull(scythe.tag.display.Lore)){
-    val list = scythe.tag.display.Lore;
-    index = list.length;
-    if(index>7) return null;
-    if(index>0){
-      for i in 0 to index {
-        lorem += list[i];
-      } 
-    }
-  }
+  var lorem as IData = (isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)) ? [] : scythe.tag.display.Lore;
 
   if(lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
-  var result = <thaumadditions:mithminite_scythe>.withTag(scythe.tag - {display : "just delete"});
+  lorem = lorem.deepUpdate([loreColor[ins.seal.tag.Aspect]], APPEND);
 
-  lorem += loreColor[ins.seal.tag.Aspect];
-
-  var controll = 0;
-  if(lorem has loreColor["aqua"]) controll+=1;
-  if(lorem has loreColor["bestia"]) controll+=1;
-  if(lorem has loreColor["metallum"]) controll+=1;
-  if(lorem has loreColor["terra"]) controll+=1;
-  if(controll>1) return null;
-
-  return (isNull(scythe.tag)||isNull(scythe.tag.display)||isNull(scythe.tag.display.Name)) ? result.withLore(lorem) : result.withTag({display : {Name: scythe.tag.display.Name}}).withLore(lorem);
+  return ins.scythe.updateTag({display:{Lore : lorem}});
 }, 
 null);
 
@@ -1662,14 +1646,11 @@ recipes.addShapeless("REMOVEaugmentMithminiteScythe",<thaumadditions:seal_symbol
 [ <thaumadditions:mithminite_scythe>
   .transformNew( //Tylko transformer do naprawy!
     function(item){
-    val lore = item.tag.display.Lore;
-    val index = lore.length;
-    var lorem as string[] = [];
-    var result = <thaumadditions:mithminite_scythe>.withTag(item.tag - {display : "just delete"});
-    if(lore.length > 1){for i in 0 to (lore.length - 1) {lorem += lore[i];}}
+    var lore = item.tag.display.Lore;
 
-    return isNull(item.tag.display.Name) ? result.withLore(lorem) : result.withTag({display : {Name: item.tag.display.Name}}).withLore(lorem); 
+    lore = lore.deepUpdate([lore[lore.length - 1]],REMOVE);
 
+    return item.updateTag({display:{Lore : lore}});
     })
   .marked("scythe")
 ]
