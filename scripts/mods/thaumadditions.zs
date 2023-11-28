@@ -1632,7 +1632,7 @@ function(out, ins, cInfo){
   val scythe = ins.scythe;
   var lorem as IData = (isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)) ? [] : scythe.tag.display.Lore;
 
-  if(lorem has loreColor[ins.seal.tag.Aspect]) return null;
+  if(lorem.length>7||lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
   return scythe.withTag(scythe.tag.deepUpdate({display:{Lore: [loreColor[ins.seal.tag.Aspect]]}},APPEND));
 }, 
