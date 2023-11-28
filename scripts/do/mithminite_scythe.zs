@@ -24,6 +24,7 @@ import crafttweaker.world.IRayTraceResult;
 import crafttweaker.entity.AttributeModifier;
 import mods.randomtweaker.botania.IManaItemHandler;
 import crafttweaker.liquid.ILiquidDefinition;
+import crafttweaker.entity.IEntityThrowable;
 
 
 function entityEyeHeight(entity as IEntity) as double{
@@ -783,7 +784,8 @@ events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent)
     if (isNull(scythe)
      || isNull(e.world)
      || e.world.remote
-     || scythe instanceof IPlayer
+     || scythe instanceof IEntityThrowable
+     || isNull(scythe.definition)
      || scythe.definition.id!="thaumadditions:mithminite_scythe"
      || isNull(scythe.nbt) 
      || scythe.nbt.ownerName=="" //That's a clone of scythe
