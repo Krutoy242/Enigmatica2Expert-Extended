@@ -784,8 +784,7 @@ events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent)
     if (isNull(scythe)
      || isNull(e.world)
      || e.world.remote
-     || scythe instanceof IEntityThrowable
-     || isNull(scythe.definition)
+     || !scythe instanceof IEntityThrowable
      || scythe.definition.id!="thaumadditions:mithminite_scythe"
      || isNull(scythe.nbt) 
      || scythe.nbt.ownerName=="" //That's a clone of scythe
