@@ -45,7 +45,6 @@ function aerTornado(scythe as IEntity) as void{
 
     for entity in list {
         if(isNull(entity)
-        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || scythe.getDistanceSqToEntity(entity)>25
@@ -215,9 +214,7 @@ function dracoBreath(target as IEntityLivingBase) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || entity instanceof IPlayer
-        || !(entity instanceof IEntityLivingBase)
-        || entity instanceof IPlayer
+        || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || cloud.getDistanceSqToEntity(entity)>10
         ) continue;
@@ -271,7 +268,6 @@ function fluctusWave(target as IEntityLivingBase) as void{
 
     for entity in list {
         if(isNull(entity)
-        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || target.getDistanceSqToEntity(entity)>20
@@ -475,7 +471,6 @@ function rattusInsanity(target as IEntityLivingBase) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || target.id==entity.id
@@ -512,8 +507,7 @@ function sensusTarget(scythe as IEntity, target as IEntityLivingBase) as void{
         for i in 0 to (entitiesList.length){
             val entity = entitiesList[length-i];
             if(isNull(entity)
-            || !(entity instanceof IEntityLivingBase)
-            || entity instanceof IPlayer
+            || !entity instanceof IEntityLiving
             || !entity.isAlive()
             || entity.id==target.id
             || target.getDistanceSqToEntity(entity)>50) continue;
@@ -533,8 +527,7 @@ function sonusSplit(scythe as IEntity, target as IEntityLivingBase) as void{
 
     for entity in entitiesList{
         if(isNull(entity)
-        || !(entity instanceof IEntityLivingBase)
-        || entity instanceof IPlayer
+        || !entity instanceof IEntityLiving
         || target.getDistanceSqToEntity(entity)>30) continue;
 
         val scytheCopy = scythe.definition.spawnEntity(target.world, crafttweaker.util.Position3f.create(target.x, entityEyeHeight(target), target.z).asBlockPos());
@@ -595,7 +588,6 @@ function vacuosHole(scythe as IEntity, target as IEntity){
 
     for entity in list {
             if(isNull(entity)
-            || entity instanceof IPlayer
             || !entity instanceof IEntityLiving
             || !entity.isAlive()
             || target.getDistanceSqToEntity(entity)>20
@@ -634,7 +626,6 @@ function visumGlow(target as IEntityLivingBase, player as IPlayer) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || entity instanceof IPlayer
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
         || target.getDistanceSqToEntity(entity)>120
@@ -660,7 +651,6 @@ function victusBreeder(scythe as IEntity, target as IEntityLivingBase) as void{
 
     for entity in listAllEntities {
         if(isNull(entity)
-        || entity instanceof IPlayer
         || !entity instanceof IEntityAnimal
         || !entity.isAlive()
         || target.getDistanceSqToEntity(entity)>50
