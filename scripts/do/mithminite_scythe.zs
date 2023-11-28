@@ -76,7 +76,7 @@ function alienisTeleport(target as IEntityLivingBase) as void{
 }
 
 function alkimiaPotion(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:potioncore:curse>.makePotionEffect(100, 0));
+    target.addPotionEffect(<potion:potioncore:curse>.makePotionEffect(1, 0));
 }
 
 function amogusVent(scythe as IEntity, target as IEntityLivingBase) as void{
