@@ -1634,9 +1634,7 @@ function(out, ins, cInfo){
 
   if(lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
-  lorem = lorem.deepUpdate([loreColor[ins.seal.tag.Aspect]], APPEND);
-
-  return ins.scythe.updateTag({display:{Lore : lorem}});
+  return scythe.withTag(scythe.tag.deepUpdate({display:{Lore: [loreColor[ins.seal.tag.Aspect]]}},APPEND));
 }, 
 null);
 
@@ -1648,9 +1646,7 @@ recipes.addShapeless("REMOVEaugmentMithminiteScythe",<thaumadditions:seal_symbol
     function(item){
     var lore = item.tag.display.Lore;
 
-    lore = lore.deepUpdate([lore[lore.length - 1]],REMOVE);
-
-    return item.updateTag({display:{Lore : lore}});
+    return item.withTag(item.tag.deepUpdate({display:{Lore: [lore[lore.length - 1]]}},{display: {Lore: REMOVE}}));
     })
   .marked("scythe")
 ]
