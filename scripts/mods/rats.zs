@@ -340,14 +340,6 @@ mods.nuclearcraft.Infuser.addRecipe(<ore:gemDiamondRat>, <fluid:redstone> * 500,
 mods.rats.recipes.removeGemcutterRatRecipe(<rats:little_black_squash_balls>);
 mods.rats.recipes.addGemcutterRatRecipe(<advancedrocketry:misc:1>, <rats:little_black_squash_balls> * 3);
 
-# Red Coal alternative
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-<rustic:fluid_bottle>.withTag({Fluid: {FluidName: "wildberryjuice", Amount: 1000}}), 
-<actuallyadditions:item_misc:22>, 
-<deepmoblearning:soot_covered_redstone>, 
-<rats:little_black_squash_balls>, 
-<extrautils2:ingredients:4> * 3);
-
 # Black Death Mask Recycle
 scripts.process.crush(<rats:black_death_mask>, <botania:petalblock:15>, "only: Grindstone SagMill eu2Crusher AACrusher IECrusher", 
 	[<botania:petalblock>, <botania:petalblock:14>, <botania:petalblock:7>], [0.9, 0.8, 0.7]);

@@ -184,6 +184,7 @@ craft.remake(<mekanism:basicblock:8> * 2, ["pretty",
 	[<ore:plateElectrum>, <ore:circuitBasic>, <ore:plateElectrum>]]);
 
 # [Solar Panel] from [Osmium Ingot][+2]
+recipes.remove(<mekanismgenerators:solarpanel>);
 mods.mekanism.compressor.addRecipe(<ore:itemPlatePhotovoltaic>, <mekanismgenerators:solarpanel>);
 
 # [Solar Generator] from [Osmium Dust][+2]

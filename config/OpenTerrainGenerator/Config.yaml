@@ -91,7 +91,7 @@ Overworld:
 Dimensions:
 - PresetName: "Void"
   DimensionId: 3
-  ShowInWorldCreationGUI: true
+  ShowInWorldCreationGUI: false
   LowestSupportedModPackConfigVersion: 999
   RemoveOnUpdate: true
   Seed: ""

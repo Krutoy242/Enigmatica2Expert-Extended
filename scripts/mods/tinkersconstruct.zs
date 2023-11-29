@@ -143,8 +143,6 @@ for out,inp in pressPlates {
 
 scripts.process.compress(<ore:blockQuartzBlack>, <tconstruct:large_plate>.withTag({Material: "black_quartz"}), "only: Compactor");
 
-	mods.immersiveengineering.MetalPress.addRecipe(<tconstruct:tool_rod>.withTag({Material: "ardite"}), <tconstruct:ingots:1>, <immersiveengineering:mold:2>, 4000, 1);
-
 # EFLN
 	recipes.remove(<tconstruct:throwball:1>);
 	recipes.addShapedMirrored("EFLN", 
@@ -348,7 +346,7 @@ for item in loadedMods["tconstruct"].items {
 recipes.removeByRecipeName("tconstruct:tools/table/chest/pattern");
 craft.make(<tconstruct:tooltables:4>.withTag({
 		inventory: {Items: dataList_allPatterns}
-	} as IData + utils.shinigTag(10057489)), ["pretty",
+	} as IData + utils.shiningTag(10057489)), ["pretty",
   "# a #",
   "p c p",
   "# M #"], {
@@ -416,12 +414,12 @@ craft.remake(<conarm:armor_trim>.withTag({Material: "aethium"}), ["pretty",
 # Lock until endgame to lock mob dropped artifacts
 # [Plate of Unsealing] from [Silky Block of Jewel][+2]
 craft.remake(<tconevo:material:2>, ["pretty",
-  "▄ ■ ▄",
+  "- ■ -",
   "■ ▀ ■",
-  "▄ ■ ▄"], {
+  "- ■ -"], {
   "■": <ore:blockCobalt>,    # Block of Cobalt
   "▀": <tconstruct:metal:6>, # Silky Block of Jewel
-  "▄": <ore:blockUUMatter>,  # UU-Metal Block
+  "-": <ore:ingotUUMatter>,  # UU-Metal Ingot
 });
 
 #-------------------------------------------------------------------------------

@@ -86,7 +86,7 @@ function fluidDict(ins as string[]) {
 	recipes.removeByRecipeName("industrialforegoing:black_hole_tank");
 	recipes.addShapedMirrored("Black Hole Tank", <industrialforegoing:black_hole_tank>, 
 	[[<ore:sheetSteel>, <mekanism:plasticblock:8>, <ore:sheetSteel>],
-	[<extrautils2:drum:3>, <botania:blackholetalisman>.reuse(), <extrautils2:drum:3>], 
+	[<extrautils2:drum:3>, utils.reuse(<botania:blackholetalisman>), <extrautils2:drum:3>], 
 	[<ore:sheetSteel>, <mekanism:plasticblock:8>, <ore:sheetSteel>]]);
 
 # [Black Hole Unit] from [Machine Case][+4]

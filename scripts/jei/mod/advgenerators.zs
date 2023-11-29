@@ -1,5 +1,5 @@
 #priority 950
-#modloaded advgenerators
+#modloaded advgenerators zenutils
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -52,7 +52,7 @@ return `${pairs
   ethene          : 313,
   liquidethene    : 313,
   syngas          : 250,
-  rocketfuel      : 122,
+  rocketfuel      : 1,
   perfect_fuel    : 1,
 };
 val rfProduced = 1000000;

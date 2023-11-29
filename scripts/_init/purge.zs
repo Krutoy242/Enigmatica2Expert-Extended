@@ -55,11 +55,9 @@ utils.rh(<bloodmagic:component:23>);
 
 # TC nuggets
 for i in 0 .. 5 {
-	utils.rh(<thaumcraft:nugget>.definition.makeStack(i));
+	utils.rh(<thaumcraft:nugget>, true, i);
 }
 
-
-					
 # *======= Metal Nuggets =======*
 
 utils.rh(<immersiveengineering:metal:29>);
@@ -89,10 +87,27 @@ if(isNull(loadedMods["refinedstorage"])) {
 )*/
 furnace.remove(<*>, <actuallyadditions:item_dust:5>);
 furnace.remove(<*>, <biomesoplenty:gem_ore:7>);
+furnace.remove(<*>, <contenttweaker:item_ore_tungsten:1>);
+furnace.remove(<*>, <contenttweaker:item_ore_tungsten:2>);
 furnace.remove(<*>, <enderio:item_material:33>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_aluminium:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_ardite:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_cobalt:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_copper:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_gold:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_iron:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_lead:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_nickel:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_silver:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_tin:1>);
 furnace.remove(<*>, <forestry:resources:1>);
 furnace.remove(<*>, <forestry:resources:2>);
+furnace.remove(<*>, <ic2:dust:4>);
+furnace.remove(<*>, <ic2:dust:7>);
 furnace.remove(<*>, <ic2:dust:8>);
+furnace.remove(<*>, <ic2:dust:10>);
+furnace.remove(<*>, <ic2:dust:14>);
+furnace.remove(<*>, <ic2:dust:17>);
 furnace.remove(<*>, <ic2:dust>);
 furnace.remove(<*>, <ic2:resource:1>);
 furnace.remove(<*>, <ic2:resource:2>);
@@ -110,10 +125,25 @@ furnace.remove(<*>, <immersiveengineering:metal:16>);
 furnace.remove(<*>, <immersiveengineering:metal:17>);
 furnace.remove(<*>, <immersiveengineering:metal:18>);
 furnace.remove(<*>, <immersiveengineering:metal:19>);
+furnace.remove(<*>, <immersiveengineering:ore:1>);
 furnace.remove(<*>, <immersiveengineering:ore:2>);
 furnace.remove(<*>, <immersiveengineering:ore:3>);
 furnace.remove(<*>, <immersiveengineering:ore:4>);
 furnace.remove(<*>, <immersiveengineering:ore>);
+furnace.remove(<*>, <jaopca:item_hunkboron>);
+furnace.remove(<*>, <jaopca:item_hunklithium>);
+furnace.remove(<*>, <jaopca:item_hunkmagnesium>);
+furnace.remove(<*>, <jaopca:item_hunkthorium>);
+furnace.remove(<*>, <jaopca:item_hunkuranium>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:1>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:2>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:3>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:4>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:5>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:6>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:7>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:8>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster>);
 furnace.remove(<*>, <twilightforest:raw_venison:*>);
 /**/
 

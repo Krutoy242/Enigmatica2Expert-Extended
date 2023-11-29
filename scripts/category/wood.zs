@@ -4,6 +4,9 @@ import crafttweaker.item.IIngredient;
 #priority 100
 #reloadable
 
+// Used for $orderly
+#modloaded zenutils
+
 # Logs to planks recipes
 static logPlank as IItemStack[IItemStack]$orderly = {
 # Vanilla

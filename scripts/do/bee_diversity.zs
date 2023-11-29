@@ -85,7 +85,7 @@ val diversityStoreOutput = <contenttweaker:bee_diversity>.withTag({
   total  : 13,
   penalty: 0,
   hashes : {},
-} as IData + utils.shinigTag(storeColor(0, 13)));
+} as IData + utils.shiningTag(storeColor(0, 13)));
 
 val storeFunction as IRecipeFunction = function (out, ins, cInfo) {
   val dbee = D(ins.bee.tag);
@@ -115,7 +115,7 @@ val storeFunction as IRecipeFunction = function (out, ins, cInfo) {
     total  : total,
     hashes : hashes,
     penalty: penalty,
-  } as IData + utils.shinigTag(storeColor(penalty, reward));
+  } as IData + utils.shiningTag(storeColor(penalty, reward));
 
   if (isNull(ins.store.tag)) return ins.store.withTag(newTag);
   return ins.store.updateTag(newTag);

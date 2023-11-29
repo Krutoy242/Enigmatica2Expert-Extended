@@ -1,3 +1,4 @@
+#modloaded nuclearcraft
 #loader nc_preinit
 
 

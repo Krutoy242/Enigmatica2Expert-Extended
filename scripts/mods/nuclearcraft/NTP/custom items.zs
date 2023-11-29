@@ -1,3 +1,4 @@
+#modloaded nuclearcraft
 #loader contenttweaker
 
 import mods.contenttweaker.VanillaFactory;

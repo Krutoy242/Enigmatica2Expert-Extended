@@ -1,13 +1,14 @@
 #priority 1
 #ignoreBracketErrors
 
+import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
 val desc = scripts.lib.tooltip.desc;
 
-for lang, items in {
+static list as IItemStack[][string] = {
 
-  "tag.generator" : [
+  generator : [
     <actuallyadditions:block_coal_generator>,
     <actuallyadditions:block_leaf_generator>,
     <actuallyadditions:block_oil_generator>,
@@ -79,7 +80,7 @@ for lang, items in {
     <thermalexpansion:dynamo:5>,
   ],
 
-  "tag.solar" : [
+  solar : [
     <actuallyadditions:block_furnace_solar>,
     <advancedrocketry:solargenerator>,
     <compactsolars:compact_solar_block:1>,
@@ -108,7 +109,7 @@ for lang, items in {
     <nuclearcraft:solar_panel_elite>,
   ],
 
-  "tag.chunkloader" : [
+  chunkloader : [
     <extrautils2:chunkloader>,
     <ic2:te:82>,
     <mekanism:anchorupgrade>,
@@ -117,7 +118,7 @@ for lang, items in {
     <fluxnetworks:fluxpoint>,
   ],
 
-  "tag.repairer" : [
+  repairer : [
     <actuallyadditions:block_item_repairer>,
     <cyclicmagic:block_anvil_magma>,
     <cyclicmagic:block_anvil>,
@@ -125,7 +126,7 @@ for lang, items in {
     <thermalexpansion:augment:401>,
   ],
 
-  "tag.charger" : [
+  charger : [
     <actuallyadditions:block_battery_box>,
     <actuallyadditions:block_energizer>,
     <appliedenergistics2:charger>,
@@ -158,7 +159,7 @@ for lang, items in {
     <thermalexpansion:machine:9>.withTag({RSControl: 0 as byte, Facing: 3 as byte, Energy: 0, SideCache: [1, 1, 2, 2, 2, 2] as byte[] as byte[], Level: 0 as byte}),
   ],
 
-  "tag.user" : [
+  user : [
     <computercraft:turtle_advanced>,
     <computercraft:turtle_expanded>,
     <cyclicmagic:block_user>,
@@ -169,7 +170,7 @@ for lang, items in {
     <thaumictinkerer:animation_tablet>, // Dynamism Tablet
   ],
 
-  "tag.crafter" : [
+  crafter : [
     <immersivepetroleum:schematic>.withTag({multiblock: "IE:Assembler"}),
     <enderio:block_simple_crafter>,
     <enderio:block_crafter>,
@@ -198,7 +199,7 @@ for lang, items in {
     <rats:rat_upgrade_crafting>,
   ],
 
-  "tag.flight" : [
+  flight : [
     <actuallyadditions:item_wings_of_the_bats>,
     <botania:flighttiara>.withTag({}),
     <conarm:armor_trim>.withTag({Material: "aethium"}),
@@ -219,7 +220,7 @@ for lang, items in {
     <rftools:flight_module>,
   ],
 
-  "tag.miner" : [
+  miner : [
     <bedrockores:bedrock_miner>,
     <cyclicmagic:block_miner_smart>,
     <ic2:te:57>,
@@ -239,7 +240,7 @@ for lang, items in {
     <actuallyadditions:block_miner>,
   ],
 
-  "tag.voidminer" : [
+  voidminer : [
     <actuallyadditions:item_mining_lens>,
     <advancedrocketry:spacelaser>,
     <astralsorcery:itemtunedcelestialcrystal>.withTag({astralsorcery: {constellationName: "astralsorcery.constellation.mineralis", crystalProperties: {collectiveCapability: 100, size: 900, fract: 0, purity: 100, sizeOverride: -1}}}),
@@ -268,7 +269,7 @@ for lang, items in {
     <industrialforegoing:laser_drill>,
   ],
 
-  "tag.hopper" : [
+  hopper : [
     <actuallyadditions:block_ranged_collector>,
     <botania:floatingspecialflower>.withTag({type: "hopperhock"}),
     <botania:floatingspecialflower>.withTag({type: "hopperhockChibi"}),
@@ -291,7 +292,7 @@ for lang, items in {
     <thermalexpansion:device:12>,
   ],
 
-  "tag.tank" : [
+  tank : [
     <advancedrocketry:liquidtank>,
     <bloodmagic:blood_tank>,
     <cyclicmagic:block_storeempty>,
@@ -325,9 +326,22 @@ for lang, items in {
     <thermalexpansion:tank>,
   ],
 
-} as IItemStack[][string] {
+} as IItemStack[][string];
+
+for lang, items in list {
   for item in items {
     if(isNull(item)) continue;
-    desc.tooltip(item, lang);
+    desc.tooltip(item, 'tag.'~lang);
   }
+}
+
+function getAsIngredient(tagName as string) as IIngredient {
+  val items = list[tagName];
+  if(isNull(items) || items.length == 0) return null;
+  var ingr = items[0];
+  for i, item in items {
+    if(i==0) continue;
+    ingr |= item;
+  }
+  return ingr;
 }

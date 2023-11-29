@@ -1,0 +1,42 @@
+{
+	icon: {
+		id: "ftbquests:lootcrate",
+		tag: {
+			type: "common"
+		}
+	},
+	disable_toast: true,
+	x: 9.9d,
+	y: 0.3d,
+	shape: "square",
+	text: [
+		"{q.twilight_forest.maze_wafer.desc}"
+	],
+	can_repeat: true,
+	dependencies: [
+		"ea1707c5"
+	],
+	size: 0.5d,
+	optional: true,
+	tasks: [{
+		uid: "4164d3ee",
+		type: "item",
+		items: [{
+			item: "twilightforest:maze_wafer"
+		}],
+		count: 8L,
+		consume_items: true
+	}],
+	rewards: [{
+		uid: "8f2a8b14",
+		type: "item",
+		auto: "no_toast",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "common"
+			}
+		},
+		random_bonus: 1
+	}]
+}

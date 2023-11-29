@@ -57,22 +57,28 @@ export function isJEIBlacklisted(def, meta) {
   )
 }
 
-/** @type {Set<string>} */
-let purgedSet
 /** @param {string} ctCapture */
 export function isPurged(ctCapture) {
-  purgedSet ??= new Set(
+  return getPurged().has(ctCapture) || getPurged().has(ctCapture.replace(':0>', '>'))
+}
+
+/** @type {Set<string>} */
+let purgedSet
+/**
+ * @returns {Set<string>}
+ */
+export function getPurged() {
+  // @ts-expect-error undef filter
+  return purgedSet ??= new Set(
     [
       ...loadText('crafttweaker.log').matchAll(
         /^\[INITIALIZATION\]\[CLIENT\]\[INFO\] purged: (.*)$/gm
       ),
     ]
       .map(m => m[1])
-      .map(s => s.match(/(<[^>]+?>(.withTag\(.*\))?)/)[1])
-      .filter(s => s)
+      .map(s => s.match(/(<[^>]+?>(.withTag\(.*\))?)/)?.[1])
+      .filter(Boolean)
   )
-
-  return purgedSet.has(ctCapture) || purgedSet.has(ctCapture.replace(':0>', '>'))
 }
 
 let itemsTree
@@ -185,7 +191,7 @@ function getByOreRgx(rgx) {
 /** @type {Map<string, TMStack[]> | undefined} */
 let oresMap
 
-/** @type {Object<string, TMStack[]> | undefined} */
+/** @type {Object<string, TMStack[]>} */
 const getOresByRegexHash = {}
 
 /**
@@ -204,11 +210,17 @@ function getOresByRegex(rgx) {
       })
   }
 
-  const result = new Set()
-  for (const [key, list] of oresMap)
-    if (rgx.test(key)) list.forEach(it => result.add(it))
+  const old = getOresByRegexHash[rgx.source]
+  if (old) return old
 
-  return [...result]
+  /** @type {Set<TMStack>} */
+  const list = new Set()
+  for (const [key, ores] of oresMap)
+    if (rgx.test(key)) ores.forEach(it => list.add(it))
+
+  const result = [...list]
+  getOresByRegexHash[rgx.source] = result
+  return result
 }
 
 /**
@@ -328,14 +340,13 @@ export function getCrtLogBlock(from, to) {
 }
 
 /**
- * @type {FurnaceRecipe[]}
+ * @type {FurnaceRecipe[] | undefined}
  */
 let furnaceRecipesHashed
 export function getFurnaceRecipes() {
-  if (furnaceRecipesHashed) return furnaceRecipesHashed
-  return (furnaceRecipesHashed = matchFurnaceRecipes(
-    getCrtLogBlock('\nFurnace Recipes:\n', '\nRecipes:\n')
-  ))
+  return furnaceRecipesHashed ??= matchFurnaceRecipes(
+    getCrtLogBlock('\nFurnace Recipes:', '\nRecipes:')
+  )
 }
 
 /**
@@ -484,7 +495,7 @@ function matchTableRecipes(text) {
 let tableRecipesCache
 export function getTableRecipes() {
   return (tableRecipesCache ??= matchTableRecipes(
-    getCrtLogBlock('\nRecipes:\n', '\n[SERVER_STARTED]')
+    getCrtLogBlock('\nRecipes:', '\n[SERVER_STARTED]')
   ))
 }
 

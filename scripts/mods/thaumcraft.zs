@@ -20,6 +20,10 @@ import loottweaker.vanilla.loot.Functions;
 furnace.addRecipe(<thaumcraft:quicksilver> * 2, <thaumcraft:cluster:6>);
 furnace.addRecipe(<thermalfoundation:material:131> * 2, <thaumcraft:cluster:5>);
 
+// Fix Infernal Furnace unchangeable nuggets output
+val NG = <thaumcraft:nugget:4>;
+recipes.addShapeless(<thermalfoundation:material:131>, [NG, NG, NG, NG, NG, NG, NG, NG, NG]);
+
 # Primordial Pearl alt (for some people who dont want to close rifts)
 mods.astralsorcery.Altar.addConstellationAltarRecipe(
   'Primordial Pearl alt', <thaumcraft:primordial_pearl>, 1500, 250, Grid([
@@ -59,7 +63,7 @@ for aspect, ingr in {
 
 function getAnyVisCrystal(key as string = '8', col as int = 0x333333, matchNBTCheck as bool = false) as IItemStack {
   return <thaumcraft:crystal_essence>.withTag(
-    utils.shinigTag(col) + {
+    utils.shiningTag(col) + {
       Aspects: [{key: 'ordo', amount: 1}],
       display: {Name: "§"~key~"§lAny Different Vis Crystal"}
     } as IData,
@@ -68,7 +72,7 @@ function getAnyVisCrystal(key as string = '8', col as int = 0x333333, matchNBTCh
 
 function getAnyVisSalt(key as string = '8', col as int = 0x333333) as IItemStack {
   return <thaumadditions:salt_essence>.withTag(
-    utils.shinigTag(col) + {
+    utils.shiningTag(col) + {
       Aspects: [{key: 'ordo', amount: 1}],
       display: {Name: "§"~key~"§lAny Vis Salt"}
     } as IData,
@@ -164,8 +168,8 @@ recipes.addShaped(<thaumcraft:baubles:6>,
 
 # Salis Mundus visible recipe (actually not working)
 craft.shapeless(<thaumcraft:salis_mundus>, "DEFCAB", {
-  A: <ore:itemFlint>.reuse(),
-  B: <minecraft:bowl>.reuse(),
+  A: utils.reuse(<minecraft:flint>),
+  B: utils.reuse(<minecraft:bowl>),
   C: <ore:dustRedstone>,
   D: getAnyVisCrystal('4', 0xff0000, true),
   E: getAnyVisCrystal('2', 0x00ff00, true),

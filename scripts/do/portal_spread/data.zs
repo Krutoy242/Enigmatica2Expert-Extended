@@ -5,7 +5,8 @@
  * @link https://github.com/Krutoy242
  */
 
-#priority 2000
+#priority 2200
+#modloaded zenutils
 
 #reloadable
 import crafttweaker.data.IData;
@@ -13,7 +14,6 @@ import crafttweaker.util.Position3f;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 
-import scripts.do.portal_spread.modifiers.getModifiers;
 import scripts.do.portal_spread.message.log;
 
 // Convert block position to string
@@ -80,30 +80,4 @@ function getPortalCount(world as IWorld) as int {
     }
   }
   return portalCount;
-}
-
-function serializePortals(world as IWorld) as string {
-  var s = '';
-  for dimId, dimData in getDimsMap(world).asMap() {
-    s += '§7To dim §3'~dimId~'§8:\n';
-    for portalId, portalCorners in getPortalDataMap(dimData).asMap() {
-      val portalPos = portalIdToPos(portalId);
-      val loaded = world.isBlockLoaded(portalPos);
-      if(loaded) {
-        val portalFullId = world.dimension~':'~portalId;
-        val modifiers = getModifiers(world, portalFullId, portalCorners);
-        var modStr = '';
-        for i in 0 .. modifiers.length {
-          if (modifiers[i] > 0) for i in 0 .. modifiers[i] {
-            modStr += '§8█';
-          }
-        }
-        s += '§8[§f' ~ portalId.replace(':', '§8:§f') ~ '§8] ' ~ modStr;
-      } else {
-        s += '§8['~portalId~'] (unloaded)';
-      }
-      s += '\n';
-    }
-  }
-  return s;
 }

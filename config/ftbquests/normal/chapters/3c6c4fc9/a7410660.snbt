@@ -15,15 +15,14 @@
 		}]
 	}],
 	rewards: [{
-		uid: "d048a380",
-		type: "item",
-		item: "nuclearcraft:radaway",
-		count: 3
-	},
-	{
 		uid: "dc34d6c6",
 		type: "command",
 		auto: "invisible",
 		command: "/say @p has begun the NuclearCraft questline!"
+	},
+	{
+		uid: "7b8b1c5c",
+		type: "item",
+		item: "nuclearcraft:portable_ender_chest"
 	}]
 }

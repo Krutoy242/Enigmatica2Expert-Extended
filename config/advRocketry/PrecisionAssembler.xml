@@ -223,42 +223,6 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Calculation Processor] -->
-	<Recipe timeRequired="10" power="40000">
-		<input>
-			<oreDict>dustRedstone 1</oreDict>
-			<oreDict>itemSilicon 1</oreDict>
-			<itemStack>appliedenergistics2:material 1 16</itemStack>
-		</input>
-		<output>
-			<itemStack>appliedenergistics2:material 1 23</itemStack>
-		</output>
-	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Engineering Processor] -->
-	<Recipe timeRequired="10" power="40000">
-		<input>
-			<oreDict>dustRedstone 1</oreDict>
-			<oreDict>itemSilicon 1</oreDict>
-			<itemStack>appliedenergistics2:material 1 17</itemStack>
-		</input>
-		<output>
-			<itemStack>appliedenergistics2:material 1 24</itemStack>
-		</output>
-	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Logic Processor] -->
-	<Recipe timeRequired="10" power="40000">
-		<input>
-			<oreDict>dustRedstone 1</oreDict>
-			<oreDict>itemSilicon 1</oreDict>
-			<itemStack>appliedenergistics2:material 1 18</itemStack>
-		</input>
-		<output>
-			<itemStack>appliedenergistics2:material 1 22</itemStack>
-		</output>
-	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Dimlet Control Circuit Rarity 7] -->
 	<Recipe timeRequired="100" power="100000">
 		<input>

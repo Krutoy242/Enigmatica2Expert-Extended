@@ -13,8 +13,11 @@
 
 import crafttweaker.world.IWorld;
 
-import scripts.do.portal_spread.data.serializePortals;
-import scripts.do.portal_spread.config.config;
+import scripts.do.portal_spread.config.Config;
+import scripts.do.portal_spread.data.getDimsMap;
+import scripts.do.portal_spread.data.getPortalDataMap;
+import scripts.do.portal_spread.data.portalIdToPos;
+import scripts.do.portal_spread.modifiers.getModifiers;
 
 val cmd = mods.zenutils.command.ZenCommand.create("portal_spread");
 cmd.requiredPermissionLevel = 1;
@@ -26,11 +29,13 @@ cmd.getCommandUsage = function(sender) { return
   prefix ~ '§7/portal_spread §8<§7status§8§8|§7debug§8>'
   ~ '\n§7status§8: show all registered portals'
   ~ '\n§7debug§8: enable debug mode'
+  ~ '\n§7faster§8: spread speed * 2'
+  ~ '\n§7slower§8: spread speed / 2'
 ; };
 
 val tabCompletion as mods.zenutils.command.IGetTabCompletion = function(server, sender, pos) {
   return mods.zenutils.StringList.create([
-    "status", "debug"
+    "status", "debug", "faster", "slower"
   ]);
 };
 cmd.tabCompletionGetters = [tabCompletion];
@@ -45,6 +50,16 @@ cmd.execute = function(command, server, sender, args) {
     } else if (args[0] == 'debug') {
       player.sendMessage(enableDebug());
       return;
+    } else if (args[0] == 'faster') {
+      Config.spreadDelay = Config.spreadDelay / 10;
+      Config.lookup = Config.lookup * 2;
+      player.sendMessage(getConfigMsg());
+      return;
+    } else if (args[0] == 'slower') {
+      Config.spreadDelay = Config.spreadDelay * 10;
+      Config.lookup = Config.lookup / 2;
+      player.sendMessage(getConfigMsg());
+      return;
     }
   }
 
@@ -56,18 +71,11 @@ cmd.register();
  *  Generate status string message
  */
 function getStatus(world as IWorld) as string {
-
-  var totalCachedPoints = 0;
-  for _, groups in scripts.do.portal_spread.utils.table_sum_of_two_squares_variants {
-    for _, points in groups {
-      totalCachedPoints += 1;
-    }
-  }
-
   var portalsStr = serializePortals(world);
+  val maxRadius as int = Config.maxRadius;
 
   return prefix ~ '§7Maximum radius§8: §f' ~
-    scripts.do.portal_spread.utils.MAX_R ~ '\n'
+    maxRadius ~ '\n'
 
   ~ prefix ~ '§7#Portals in this dim§8: §f' ~
     scripts.do.portal_spread.data.getPortalCount(world) ~ '\n'
@@ -77,13 +85,52 @@ function getStatus(world as IWorld) as string {
   ;
 }
 
+/**
+ *  Convert portals to string
+ */
+function serializePortals(world as IWorld) as string {
+  var s = '';
+  for dimId, dimData in getDimsMap(world).asMap() {
+    s += '§7To dim §3'~dimId~'§8:\n';
+    for portalId, portalData in getPortalDataMap(dimData).asMap() {
+      val portalPos = portalIdToPos(portalId);
+      val loaded = world.isBlockLoaded(portalPos);
+      if(loaded) {
+        val portalFullId = world.dimension~':'~portalId;
+        val modifiers = getModifiers(world, portalFullId, portalData);
+        var modStr = '';
+        for i in 0 .. modifiers.length {
+          if (modifiers[i] > 0)
+            modStr += (modStr != '' ? ', ' : '') ~ '§7' ~ Config.modifiersList[i] ~ '§8x' ~ modifiers[i];
+        }
+        s += '§8[' ~ portalId.replaceAll(
+          '(\\-?\\d+):(\\-?\\d+):(\\-?\\d+)',
+          '§4$1§8:§3$2§8:§2$3'
+        ) ~ '§8] ' ~ modStr;
+      } else {
+        s += '§8['~portalId~'] (unloaded)';
+      }
+      s += '\n';
+    }
+  }
+  return s;
+}
+
 function enableDebug() as string {
-  if(!config.debug) {
-    config.debug = true;
+  if(!Config.debug) {
+    Config.debug = true;
     return prefix ~ '§7Debug mode §2enabled§7.'
+      ~'\n§8Portals now spread §7without resetting§8 their lookup radius.'
       ~'\n§8You must be in §7Creative Mode§8 to see debug messages in chat.'
       ~'\n§8Messages also repeated in file §7crafttweaker.log';
   }
-  config.debug = false;
+  Config.debug = false;
   return prefix ~ '§7Debug mode §3disabled§7.';
+}
+
+function getConfigMsg() as string {
+  return prefix ~ '§7New global configuration:'
+    ~ '\n§7Ticks between spread attempts§8: §f' ~ Config.spreadDelay
+    ~ '\n§7Blocks scanned each attempt§8: §f' ~ Config.lookup
+  ;
 }

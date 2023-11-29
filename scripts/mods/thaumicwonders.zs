@@ -168,7 +168,7 @@ events.onPlayerPickupItem(function(e as crafttweaker.event.PlayerPickupItemEvent
 
 
 # [Alchemist's Stone] from [Alchemist's Stone][+7]
-craft.make(<thaumicwonders:alchemist_stone>.withTag({Unbreakable: 1 as byte} as crafttweaker.data.IData + utils.shinigTag(14602026)), ["pretty",
+craft.make(<thaumicwonders:alchemist_stone>.withTag({Unbreakable: 1 as byte} as crafttweaker.data.IData + utils.shiningTag(14602026)), ["pretty",
   "▬ e ▬",
   "□ o □",
   "▬ ▲ ▬"], {
@@ -180,7 +180,7 @@ craft.make(<thaumicwonders:alchemist_stone>.withTag({Unbreakable: 1 as byte} as 
 });
 
 # [Transmuter's Stone] from [Transmuter's Stone][+7]
-craft.make(<thaumicwonders:transmuter_stone>.withTag({Unbreakable: 1 as byte} as crafttweaker.data.IData + utils.shinigTag(14602026)), ["pretty",
+craft.make(<thaumicwonders:transmuter_stone>.withTag({Unbreakable: 1 as byte} as crafttweaker.data.IData + utils.shiningTag(14602026)), ["pretty",
   "▬ e ▬",
   "□ o □",
   "▬ ▲ ▬"], {
@@ -192,7 +192,7 @@ craft.make(<thaumicwonders:transmuter_stone>.withTag({Unbreakable: 1 as byte} as
 });
 
 # [Alienist's Stone] from [Alienist's Stone][+7]
-craft.make(<thaumicwonders:alienist_stone>.withTag({Unbreakable: 1 as byte} as crafttweaker.data.IData + utils.shinigTag(14602026)), ["pretty",
+craft.make(<thaumicwonders:alienist_stone>.withTag({Unbreakable: 1 as byte} as crafttweaker.data.IData + utils.shiningTag(14602026)), ["pretty",
   "▬ e ▬",
   "□ o □",
   "▬ ▲ ▬"], {

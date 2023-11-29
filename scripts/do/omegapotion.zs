@@ -500,7 +500,7 @@ val potCombined = <minecraft:potion>.withTag(
         Id:2,Amplifier:0,Duration:600
       }
     ]
-  } as IData + utils.shinigTag(327880)
+  } as IData + utils.shiningTag(327880)
 );
 var anyCombined = potCombined | <minecraft:potion:*>;
 
@@ -510,7 +510,7 @@ advancedBrew(Grid(["pretty",
     "M ⱋ M",
     "C r C"], {
     "B": <thaumcraft:bottle_taint>,           # Bottle of Taint
-    "r": <thaumcraft:crucible>.reuse(),       # Crucible
+    "r": utils.reuse(<thaumcraft:crucible>),  # Crucible
     "C": <cyclicmagic:crystallized_obsidian>, # Crystallized Obsidian
     "M": <randomthings:beans:2>,              # Magic Bean
     "◊": anyCombined.marked("m1"),
@@ -536,7 +536,7 @@ val potLong = <rustic:elixir>.withTag(
         Effect: "minecraft:speed", Duration: (20*60*60*24), Amplifier: 0
       }
     ]
-  } as IData + utils.shinigTag(2720000)
+  } as IData + utils.shiningTag(2720000)
 );
 var anyLong = <rustic:elixir:*> | potLong;
 
@@ -552,7 +552,7 @@ advancedBrew(Grid(["pretty",
     "B o B",
     "‚ E ‚",
     "M C M"], {
-    "C": <thaumcraft:crucible>.reuse(),  # Crucible
+    "C": utils.reuse(<thaumcraft:crucible>), # Crucible
     "‚": <ore:nuggetTerrasteel>,         # Terrasteel Nugget
     "M": <twilightforest:moonworm>,      # Moonworm
     "o": <cookingforblockheads:cow_jar>, # Cow in a Jar
@@ -578,7 +578,7 @@ val potStrong = <bloodmagic:potion_flask>.withTag(
     CustomPotionEffects: [
       { Id: 1 as byte, Duration: 2400, Amplifier: 5 as byte }
     ]
-  } as IData + utils.shinigTag(831714)
+  } as IData + utils.shiningTag(831714)
 );
 
 var anyStrong = potStrong | <bloodmagic:potion_flask>.withTag({CustomPotionEffects:[]}, false);
@@ -602,7 +602,7 @@ advancedBrew(Grid(["pretty",
     "P o P",
     "E C E"], {
     "P": <avaritia:resource:2>,             # Pile of Neutrons
-    "C": <thaumcraft:crucible>.reuse(),     # Crucible
+    "C": utils.reuse(<thaumcraft:crucible>),# Crucible
     "E": <thaumictinkerer:energetic_nitor>, # Energetic Nitor
     "*": <ore:crystalAethium>,              # Aethium Crystal
     "o": anyStrong.marked("m1"),            # Potion Flask
@@ -627,14 +627,14 @@ val potOMEGA = <bloodmagic:potion_flask>.withTag(
     CustomPotionEffects: [
       { Id: 1 as byte, Duration: 2400, Amplifier: 5 as byte }
     ]
-  } as IData + utils.shinigTag(15326208)
+  } as IData + utils.shiningTag(15326208)
 );
 
 advancedBrew(Grid(["pretty",
     "§ n §",
     "ⱋ ◊ ◘",
     "U C U"], {
-    "C": <thaumcraft:crucible>.reuse(),  # Crucible
+    "C": utils.reuse(<thaumcraft:crucible>), # Crucible
     "U": <avaritia:ultimate_stew>,       # Ultimate Stew
     "§": <deepmoblearning:glitch_heart>, # Corrupted Glitch Heart
     "n": <avaritia:endest_pearl>,        # Endest Pearl

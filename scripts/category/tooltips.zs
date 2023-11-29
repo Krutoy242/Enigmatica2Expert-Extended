@@ -19,7 +19,6 @@ for item in [
 .sort(naturalSort)
 )*/
   <actuallyadditions:block_farmer>,
-  <advgenerators:gas_input>,
   <ae2stuff:visualiser>,
   <bibliocraft:fancysign>,
   <bloodmagic:blood_rune:1>,
@@ -71,6 +70,7 @@ for item in [
   <twilightforest:transformation_powder>,
 /**/
 ] as IItemStack[] {
+	if(isNull(item)) continue;
 	desc.both(item);
 }
 
@@ -143,7 +143,6 @@ desc.jei(<ic2:wrench>, "ic2wrench");
 # Thermal Expansion Resonant Machine Frame (Full)
 desc.jei(<thermalexpansion:frame:148>, "requires.rf", "100.000.000");
 desc.jei(<computercraft:printout>.withTag({pages: 1}), "§fPrint with §eComputer Craft§r's §bPrinter");
-desc.jei(<advgenerators:gas_input>, "ethylene_convert");
 
 # Tool Forge
 desc.tooltipRaw(<tconstruct:toolforge>.anyDamage(), desc.local("forge_from_metal"));

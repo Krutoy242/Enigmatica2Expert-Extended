@@ -1,3 +1,5 @@
+#PARSE_ESCAPES
+
 # Various fixes 表述修复
 modifier.excompressum:smashingii.desc=锤击压缩方块
 tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
@@ -14,6 +16,9 @@ fluid.terrestrial=熔融天地宝晶
 fluid.mithrillium=熔融秘银
 fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
+
+description.crt.reuse=§a§o(不会被消耗！)§r
+description.crt.consume=§6§o(会被消耗！)§r
 
 item.contenttweaker.compressed_glowstone.name=压缩荧石
 item.contenttweaker.compressed_ender.name=压缩末影
@@ -304,13 +309,16 @@ e2ee.written_book.Creeper=苦力怕
 e2ee.written_book.Zombie=僵尸
 
 # Misc 杂项
+e2ee.do.charge=§f充电: §6%s§r
+e2ee.do.diverse.power=§f功率: §6%s§r
+e2ee.do.diverse.info=§2类型总数: §a%s§r\n§2中位数: §a%s§r\n§2奇点消耗的物品:\n%s
 e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
 e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
 e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r
 e2ee.chapter_complete=§l%s§r 已经完成了 §n%s§r 章节，用时 §l%s§r ！§r ```祝贺!```
 e2ee.player_achieved=§l%s§r 达成了 §n%s§r 成就，用时 §l%s§r ！§r
 e2ee.eu2_drum_error=§7你需要留有至少一个空的背包槽位
-e2ee.danknull_dock.must_have=§7你需要在副手持有一个 §f%s§7 才能把 %s§7 插入 %s§7。§f%s§7 会被永久消耗。
+e2ee.danknull_dock.must_have=§7你需要在副手持有一个 %s 才能把 %s 插入 %s。
 e2ee.restrict.vis_seeds=§7§e魔力种子§7只能被种在§nthe Void§7维度或是§n其他星球§7。种植这些种子需要氧气。
 e2ee.creature_resisted_morb=§8这个生物在反抗 §n§8%s 的捕捉。
 e2ee.creature_uncapturable=§7该生物不能被捕捉。 
@@ -373,7 +381,6 @@ tooltips.lang.reinforced_cell_frame=制作强化能量单元框架（满）需�
 tooltips.lang.obtained.fabricator_or_excavator=可以通过电弧高炉或者斗轮式挖掘机获得。
 tooltips.lang.obtained.mithril=可以通过§9元始魔力§r的世界内交互获得，也会生成在§1其他维度§r。
 tooltips.lang.removed.use_market=已禁用，请改用 Farming For Blockheads 的市场。
-tooltips.lang.ethylene_convert=怎么让高级发电机接受乙烯作为燃料呢？用回旋式气液转换机把乙烯转化为液体即可。
 tooltips.lang.redstone.need=§4需要通过红石信号启用
 tooltips.lang.removed.crash=§4已被禁用，因为其会导致服务端崩溃
 

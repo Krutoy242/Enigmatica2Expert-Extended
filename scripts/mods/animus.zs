@@ -33,4 +33,4 @@ remake("animus_kama_diamond", <animus:kama_diamond>, [
 # Fix bucket of dirt
 recipes.removeByRecipeName("animus:dirtbucket");
 recipes.addShapeless("animus_dirtbucket", Bucket("blockfluiddirt"), [
-	<minecraft:redstone_torch>, <animus:sigil_consumption>.reuse(), <minecraft:bucket>]);
+	<minecraft:redstone_torch>, utils.reuse(<animus:sigil_consumption>), <minecraft:bucket>]);

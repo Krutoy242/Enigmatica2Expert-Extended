@@ -486,15 +486,15 @@ remove(<ore:listAllicecream>, <harvestcraft:silkentofuitem>);
 
 # Clear "ore" entry from hunks
 # And remove hunks from JEI
-function removeHunkOre(item as IItemStack) {
-	var isRh = false;
+function removeHunkOre(item as IItemStack) as void {
+	var needRemoveAndHide = false;
   for ore in item.ores {
     if (ore.name.startsWith("ore") || ore.name.startsWith("hunk") ) {
       ore.remove(item);
-			isRh = true;
+			needRemoveAndHide = true;
     }
   }
-	if(isRh) {
+	if(needRemoveAndHide) {
 		utils.rh(item);
 		mods.appliedenergistics2.Grinder.removeRecipe(item);
 	}

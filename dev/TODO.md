@@ -2,21 +2,24 @@
 
 🚧✅❌ List of priorities:
 
-- [ ] ✏️ Stackable Fluid Containers duped when crafting with fluid
-- [ ] ✏️ Infinity Furnace should perform one recipe function for each recip instead of adding ~600 recipes
-- [ ] ✏️ Apiarist Villagest should sell Combs cor Cacoa
+- [x] 📖 Add langs to "Fireproof" singularity
+- [ ] ✏️ Check Voiding Armor From Hydra
+- [ ] 🔴 Remove TwilightTweaks until fixed rename bug
 - [ ] 🟢 move To Server Starter
-- [ ] ⛑️ Add amount of blocks in Portal Spread message
 - [ ] ✏️ Make recipe function for Rats Nuggets recipes
-- [ ] 🌍 Generate Quicksand with Cofh instead of BoP to add lakes in OTG worlds
-- [ ] ✏️ Configure `Redstone Repository`
-- [ ] 📖 Add langs to "Fireproof" trait
-- [ ] 📖 sort TC book By Material Power
-- [ ] ✏️ nanomachines Dissaper On Rejoin Server
-- [ ] ✏️ Make Elite Component craftable without tech
 - [ ] 📖 `/levelupTool` use in quest reward
-- [ ] 🔴 Remove `Culinari Construct`
 - [ ] 📖 ExCr tables should be available from Conflux levels
+- [x] ✏️ removeManaFromDragonLootRings
+- [x] ✏️ fixAssemblerWoodDustConflicts
+- [ ] 🕸 Create issues about IC2 Reactor in compact machine and cables disconnection
+- [ ] ✏️ Burn singularity should be exponential
+- [ ] ✏️ Star Of Psi should be obtainable in no-power run
+- [ ] 📖 Explain BoP gems sources in empowered quests
+- [ ] 🐛 fix Ie Bug If Removing Entities When Crash On Mount
+- [ ] 📜 Fix Readme on github have broken image links
+- [x] ✏️ fix AA Crushing Coal
+- [x] ✏️ nerfMekSolarPanels
+
 
 ```sh
 /bcore_ticktime
@@ -70,6 +73,11 @@ minecraft:sponge
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] ✏️ `Critical Matter Cluster` add usages and mechanics (obtained with shift+right click of World Breaker)
+- [ ] ✏️ Add bar for diverse/charge singularity by making custon CoT item with durability.
+- [ ] 📖 sort TC book By Material Power, need fix: https://github.com/Project-RT/RandomTweaker/issues/67
+- [ ] ✏️ Stackable Fluid Containers duped when crafting with fluid. Waiting for fix: https://github.com/CraftTweaker/CraftTweaker/issues/1692
+- [ ] ✏️ Apiarist Villagert should sell Combs cor Cacoa. Seems like its impossible to remove Apiarist trades with `vtt` mod
 - [ ] 🟢 add `Fairy Lights` when released https://github.com/ACGaming/UniversalTweaks/pull/291
 - [ ] 📖 Improve messages "Player Obtained [...]" with `tellraw` command. Cant untill fix `/tellraw` for Discord
 - [ ] ✏️ `Harbinger Cube` must spawn with strong Iron/Diamond skin effects and as Blight
@@ -297,16 +305,13 @@ Items that should have more uses:
 ![](https://git.io/JLhhf "Energized Clathrate")
 ![](https://git.io/JLhph "Destabilized Clathrate")
 ![](https://git.io/JRLSU "Huge Stalk")
-![](https://github.com/Krutoy242/mc-icons/raw/master/i/minecraft/shulker_shell__0.png "Shulker Shell")
 
 ### Tier 4
 
-![](https://git.io/JcBSs "Tiny Chaos Fragment")
 ![](https://git.io/JLhhe "Oxidized Ferric Sand")
 ![](https://git.io/JLhhs "Vitrified Sand")
 ![](https://git.io/JCqV9 "Particle Generator")
 ![](https://git.io/JuMlF "Material Absorber")
-![](https://github.com/Krutoy242/mc-icons/raw/master/i/extrautils2/snowglobe__0.png "Magical Snow Globe")
 
 ## 🔧 Crafting Methods
 

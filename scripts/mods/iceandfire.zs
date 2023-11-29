@@ -19,7 +19,7 @@ import crafttweaker.item.IItemStack;
 
 // Disk Platter / Iron Chain Link
 craft.remake(<iceandfire:chain_link> * 2, ['AAA', 'A A', 'AAA'], {
-  A: <ore:nuggetFakeIron>,
+  A: <ore:nuggetIron>,
 });
 
 # Cockatrice Scepter
@@ -564,3 +564,10 @@ craft.shapeless(<iceandfire:ice_dragon_blood> * 8, "BBBBIBBBB", {
 
 recipes.addShapeless('Heart Fire', <iceandfire:fire_dragon_heart>, [<cyclicmagic:heart_toxic>, <iceandfire:fire_dragon_blood>]);
 recipes.addShapeless('Heart Ice', <iceandfire:ice_dragon_heart>, [<cyclicmagic:heart_toxic>, <iceandfire:ice_dragon_blood>]);
+
+# Recycle Fangs
+scripts.process.squeeze(
+	[<iceandfire:hydra_fang>],
+	<fluid:potion>.withTag({Potion: "cofhcore:poison4"}) * 150,
+	"only: Squeezer IndustrialSqueezer"
+);

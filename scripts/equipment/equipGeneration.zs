@@ -45,7 +45,17 @@ Patchouli_js('Mobs/Equip Generation', [
       Different mobs have different armor types and different TCon materials.
       $(l)Zombies/$ have static chance to spawn with any avaliable material.
 
-      Roll used $(l)qubic/$ function, so $(l)Paper/$ would spawn $(l)~20%/$ times and $(l)Infinity Metal/$ $(l)~0.2%/$ times.`
+      Roll used $(l)qubic/$ function, so $(l)Paper/$ would spawn $(l)~20%/$ times and $(l)Gelid Metal/$ $(l)~0.3%/$ times.`
+  },{
+    item: `draconicevolution:mob_soul{EntityName:"minecraft:zombie_pigman"}`,
+    title: "Equip Generation",
+    _text: `
+      Mobs will never spawn with this TCon materials:
+      ${
+        from_crafttweaker_log(/Blacklisted TCon material for mob equipment generation: (.*)/gm)
+        .map(([,name])=>'$(li)'+name+'\n')
+        .join('')
+      }`
   },{
     item: `draconicevolution:mob_soul{EntityName:"minecraft:wither_skeleton"}`,
     title: "Equip Generation",
@@ -63,6 +73,43 @@ static SCALLINGHEALTH_MAX_DIFFICULTY as double =
 /*Inject_js(config('config/scalinghealth/main.cfg').main.difficulty['Max Value']+'.0d;')*/
 1000.0d;
 /**/
+
+// Prepare materials for usage
+static normDefs as IData[string] = {
+  armor: [],
+  tool: [],
+} as IData[string];
+
+static blacklistedMaterials as string[] = [
+  'paper',
+  'chocolate',
+  'ma.superium',
+  'ma.supremium',
+  'spectre',
+  'draconic_metal',
+  'neutronium',
+  'aethium',
+  'chaotic_metal',
+  'infinity_metal',
+];
+
+for matName in blacklistedMaterials {
+  val ticMat = Toolforge.getMaterialFromID(matName);
+  if(isNull(ticMat)) continue;
+  utils.log("Blacklisted TCon material for mob equipment generation: " ~ ticMat.definition.displayName);
+}
+
+function normalizeDefaultList(list as int[string], field as string) as void {
+  for matName, _ in list {
+    if(blacklistedMaterials has matName) continue;
+    if(isNull(Toolforge.getMaterialFromID(matName))) continue;
+    normDefs[field] = normDefs[field] + [matName] as IData;
+  }
+  utils.log("Valid default " ~ field ~ " materials: " ~ normDefs[field].asString());
+}
+
+normalizeDefaultList(scripts.equipment.equipData.defaultArmorMats, 'armor');
+normalizeDefaultList(scripts.equipment.equipData.defaultWeaponMats, 'tool');
 
 # -------------------------------
 # SLOTS
@@ -91,8 +138,8 @@ function pick_qubic_adv(list as IData, d as double, w as IWorld) as string {
 
 function rndToolPart(_mats as IData, d as double, forWeapon as bool, w as IWorld) as ITICMaterial{
   val defaults = forWeapon
-    ? scripts.equipment.equipData.normDefs.tool
-    : scripts.equipment.equipData.normDefs.armor;
+    ? normDefs.tool
+    : normDefs.armor;
   var i = 0;
   var mats = dataOrData(_mats, defaults);
   var matName = pick_qubic_adv(mats, d, w);

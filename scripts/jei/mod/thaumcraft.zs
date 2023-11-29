@@ -32,7 +32,7 @@ function addInfFur(input as IIngredient, outs as WeightedItemStack[]) {
 /*Inject_js(
 Object.entries(
   _.groupBy(
-    getCrtLogBlock('Thaumcraft dump:\n-Smelting Bonus:\n', '\n-Warp')
+    getCrtLogBlock('\n-Smelting Bonus:', '\n-Warp')
       .split('\n')
 
       // Filter unwanted ores

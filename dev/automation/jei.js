@@ -9,20 +9,23 @@
 
 // @ts-check
 
-import { getSubMetas } from '../lib/tellme.js'
+import { getPurged, getSubMetas } from '../lib/tellme.js'
 import {
   config,
   defaultHelper,
   getCSV,
   injectInFile,
-  loadText,
   naturalSort,
 } from '../lib/utils.js'
 
 export async function init(h = defaultHelper) {
   await h.begin('Get files')
   const jeiConfigPath = 'config/jei/itemBlacklist.cfg'
-  const purged = getPurged()
+  const purged = new Set([...getPurged()].map((s) => {
+    let [, source, meta] = s?.match(/<([^:]+:[^:]+)(:(\d+|\*))?>/) ?? []
+    if (meta === ':*') meta = ''
+    return source + (meta ?? ':0')
+  }))
 
   /** @type {string[]} */
   const pure = []
@@ -75,30 +78,7 @@ export async function init(h = defaultHelper) {
     `\n${pure.map(s => `        ${s}`).join('\n')}\n`
   )
 
-  console.log('injected :>> ', injected[0].numMatches)
-
-  /**
-   * @returns {string[]}
-   */
-  function getPurged() {
-    const totalPurged = [
-      ...loadText('crafttweaker.log').matchAll(
-        /^\[INITIALIZATION\]\[CLIENT\]\[INFO\] purged: (.*)$/gm
-      ),
-    ]
-
-    const purgedItems = totalPurged
-      .map(m => m[1])
-      .map(s => s.match(/<([^>]+)>(.withTag\(.*\))?/)?.[1])
-      .filter(s => s)
-      .map((s) => {
-        let [, source, meta] = s.match(/([^:]+:[^:]+)(:(\d+|\*))?/)
-        if (meta === ':*') meta = ''
-        return source + (meta ?? ':0')
-      })
-
-    return purgedItems
-  }
+  await h.begin(`injected :>> ${injected[0].numMatches}`)
 
   h.result(
     `Purged / Manually Blacklisted: ${purged.length} / ${
@@ -108,6 +88,6 @@ export async function init(h = defaultHelper) {
 }
 
 if (
-  import.meta.url === (await import('url')).pathToFileURL(process.argv[1]).href
+  import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href
 )
   init()

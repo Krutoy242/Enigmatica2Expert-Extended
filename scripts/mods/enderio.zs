@@ -181,9 +181,9 @@ craft.remake(<enderio:item_basic_capacitor>, ["pretty",
 });
 mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
 	.outputs(<enderio:item_basic_capacitor> * 64)
-	.input(<ore:stickTitaniumIridium> * 64)
-	.input(<ore:dustBedrock> * 64)
-	.input(<thermalfoundation:material:515> * 64)
+	.input(<ore:stickTitaniumIridium> * 32)
+	.input(<ore:dustBedrock> * 32)
+	.input(<thermalfoundation:material:515> * 32)
 	.input(<threng:material> * 32)
 	.power(320000).timeRequired(20).build();
 
@@ -871,6 +871,22 @@ mods.thaumcraft.Infusion.registerRecipe(
   "n": <ore:itemEnhancedMachineChassi>, # Enhanced Machine Chassis
 }).spiral(1));
 
+# [Enhanced Wireless Charger] from [Wireless Charger][+5]
+mods.thaumcraft.Infusion.registerRecipe(
+  "block_enhanced_wireless_charger", # Name
+  "INFUSION", # Research
+  <enderio:block_enhanced_wireless_charger>, # Output
+  7, # Instability
+  [<aspect:amogus> * 50, <aspect:caeles> * 50],
+  <enderio:block_normal_wireless_charger>, # Central Item
+  Grid(["pretty",
+  "  E  ",
+  "E   E",
+  "  n  "], {
+  "E": <ore:itemEnhancedChassiParts>,   # Enhanced Machine Parts
+  "n": <ore:itemEnhancedMachineChassi>, # Enhanced Machine Chassis
+}).spiral(1));
+
 # [Grains of Prescience] from [Prescient Crystal]
 scripts.process.crush(<ore:itemPrecientCrystal>, <enderio:item_material:34>, 'only: eu2Crusher AACrusher');
 
@@ -884,10 +900,10 @@ scripts.process.crush(<ore:itemPulsatingCrystal>, <enderio:item_material:36>, 'o
 scripts.process.crush(<ore:itemEnderCrystal>, <enderio:item_material:37>, 'only: eu2Crusher AACrusher');
 
 # The Vat early alternatives
-function addBrewAlt(fluid as ILiquidStack, ingrs as IIngredient[], output as string) as void {
+function addBrewAlt(fluid as ILiquidStack, ingrs as IIngredient[], output as string, extraIngr as IIngredient = null) as void {
   mods.rustic.Condenser.addRecipe(
     <rustic:fluid_bottle>.withTag({Fluid: {FluidName: output, Amount: 1000}}),
-    ingrs, null, <minecraft:glass_bottle>, fluid, 40
+    ingrs, extraIngr, <minecraft:glass_bottle>, fluid, 40
   );
 }
 
@@ -897,3 +913,10 @@ addBrewAlt(<fluid:mead>       * 2000, [<minecraft:skull:2>, <minecraft:sugar>], 
 addBrewAlt(<fluid:short.mead> * 2000, [<minecraft:skull:2>, <minecraft:sugar>], 'nutrient_distillation');
 addBrewAlt(<fluid:milk>       * 8000, [<rats:assorted_vegetables>, <additionalcompression:dustsugar_compressed:1>], 'hootch');
 addBrewAlt(<fluid:hootch>     * 2000, [<minecraft:blaze_powder>, <minecraft:redstone>], 'fire_water');
+addBrewAlt(<fluid:fire_water> * 2000, [<iceandfire:dread_shard>, <iceandfire:hydra_fang>, <iceandfire:shiny_scales>], 'syngas', <contenttweaker:blasted_coal>);
+
+// Simple machines recycle
+recipes.addShapeless(<enderio:item_material>, [<enderio:block_simple_furnace>.anyDamage()]);
+recipes.addShapeless(<enderio:item_material>, [<enderio:block_simple_alloy_smelter>.anyDamage()]);
+recipes.addShapeless(<enderio:item_material>, [<enderio:block_simple_stirling_generator>.anyDamage()]);
+recipes.addShapeless(<enderio:item_material>, [<enderio:block_simple_sag_mill>.anyDamage()]);

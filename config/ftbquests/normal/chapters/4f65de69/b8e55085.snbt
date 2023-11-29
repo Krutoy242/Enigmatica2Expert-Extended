@@ -14,6 +14,8 @@
 		type: "item",
 		items: [{
 			item: "tconstruct:rack 1 1"
-		}]
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
 	}]
 }
