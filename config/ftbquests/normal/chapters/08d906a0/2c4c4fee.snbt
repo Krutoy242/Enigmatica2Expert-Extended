@@ -11,5 +11,15 @@
 		items: [{
 			item: "minecraft:emerald"
 		}]
+	}],
+	rewards: [{
+		uid: "fe7357ff",
+		type: "item",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "common"
+			}
+		}
 	}]
 }
