@@ -1,3 +1,5 @@
+#PARSE_ESCAPES
+
 # Various fixes
 modifier.excompressum:smashingii.desc=Hammering compressed blocks
 tile.spectreCoil_number.info=Generates 32 RF/t and outputs it into the block it's attached to. They can be found in dungeon chests.
@@ -14,6 +16,9 @@ fluid.terrestrial=Molten Terrestrial Artifact
 fluid.mithrillium=Molten Mithrillium
 fluid.adaminite=Molten Adaminite
 fluid.mithminite=Molten Mithminite
+
+description.crt.reuse=§a§o(Will not be consumed!)§r
+description.crt.consume=§6§o(Will be consumed!)§r
 
 item.contenttweaker.compressed_glowstone.name=Compressed Glowstone
 item.contenttweaker.compressed_ender.name=Compressed Ender
@@ -304,13 +309,16 @@ e2ee.written_book.Creeper=Creeper
 e2ee.written_book.Zombie=Zombie
 
 # Misc
+e2ee.do.charge=§fCharge: §6%s§r
+e2ee.do.diverse.power=§fPower: §6%s§r
+e2ee.do.diverse.info=§2Total types: §a%s§r\n§2Median amount: §a%s§r\n§2Items consumed by singularity:\n%s
 e2ee.otg.not_otg_biome=§2Cant TP to non-OTG biome with ID:§r §a§n%s§r§2. §8Try other Biome Essence.§r
 e2ee.otg.tp_to=§2Attempt teleport to:§r §a§n%s§r §8Wait until teleported or aborted.§r
 e2ee.otg.tp_finished=§2Teleporting finished.§r §8Try again if not teleported.§r
 e2ee.chapter_complete=§l%s§r has fully completed the §n%s§r chapter after §l%s§r of play!§r ```Congrats!```
 e2ee.player_achieved=§l%s§r achieved §n%s§r after §l%s§r of play!§r
 e2ee.eu2_drum_error=§7You must have at least 1 empty inventory slot to do this
-e2ee.danknull_dock.must_have=§7You need a §f%s§7 in the offhand to insert %s§7 into %s§7. §f%s§7 will be irreversibly consumed.
+e2ee.danknull_dock.must_have=§7You need a %s in the inventory to insert %s into %s.
 e2ee.restrict.vis_seeds=§7§eVis Seeds§7 can only be planted in §nthe Void§7 dimension or on §nplanets§7. They also need Oxygen.
 e2ee.creature_resisted_morb=§8This creature resist capture by the §n§8%s.
 e2ee.creature_uncapturable=§7This creature can't be captured.
@@ -373,7 +381,6 @@ tooltips.lang.reinforced_cell_frame=The Reinforced Cell Frame (Full) can only be
 tooltips.lang.obtained.fabricator_or_excavator=Obtainable through the Electric Arc Furnace OR from IE Excavator.
 tooltips.lang.obtained.mithril=Only obtainable through §9Primal Mana§r world interaction or in §1other dimensions§r
 tooltips.lang.removed.use_market=Disabled. Use the Market from Farming For Blockheads.
-tooltips.lang.ethylene_convert=How can I use Ethylene with Advanced Generators? Use the Rotary Condensentrator to convert the Ethylene to a liquid.
 tooltips.lang.redstone.need=§4Need redstone to function
 tooltips.lang.removed.crash=§4Removed because it crashes the server
 
@@ -479,6 +486,7 @@ tooltips.dim_stages.remind_skyblock=§eYou have entered a §bSkyblock §eworld a
 requious.jei.recipe.adv_bee_analyzer=Advanced Analyzer
 requious.jei.recipe.alchemists_stone=Alchemists Stone
 requious.jei.recipe.alienists_stone=Alienists Stone
+requious.jei.recipe.arboreal_extractor=Arboreal Extractor
 requious.jei.recipe.asteroids=Asteroids
 requious.jei.recipe.barrel_milking=Barrel Milking
 requious.jei.recipe.beacon_effects=Beacon Effects

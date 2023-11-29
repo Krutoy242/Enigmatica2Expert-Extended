@@ -608,6 +608,13 @@ craft.make(<cyclicmagic:ender_eye_orb:100>, ["pretty",
   "E": <ore:pearlEnderEye>,  # Eye of Ender
 });
 
+// Add hint about [Solid Ender Eye] repairing
+scripts.jei.crafting_hints.addInsOutCatl(
+  [<cyclicmagic:ender_eye_orb:100>],
+  <cyclicmagic:ender_eye_orb>,
+  scripts.jei.tags.getAsIngredient('repairer')
+);
+
 # [Chaos Reaper] from [Solid Ender Eye][+2]
 craft.remake(<cyclicmagic:wand_hypno>, ["pretty",
   "  G S",

@@ -2,6 +2,12 @@
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+import crafttweaker.data.IData;
+import mods.zenutils.DataUpdateOperation.OVERWRITE;
+import mods.zenutils.DataUpdateOperation.APPEND;
+import mods.zenutils.DataUpdateOperation.MERGE;
+import mods.zenutils.DataUpdateOperation.REMOVE;
+import mods.zenutils.DataUpdateOperation.BUMP;
 
 mods.thaumcraft.Infusion.removeRecipe(<minecraft:golden_apple:1>);
 
@@ -1507,3 +1513,171 @@ mods.tconstruct.Casting.addTableRecipe(<thaumadditions:mithminite_nugget>,<tcons
 mods.tconstruct.Casting.addTableRecipe(<thaumadditions:mithminite_ingot>, <tconstruct:cast_custom>,  <liquid:mithminite>, 144, false,  200);
 mods.tconstruct.Casting.addTableRecipe(<thaumadditions:mithminite_plate>, <tconstruct:cast_custom:3>,<liquid:mithminite>, 144, false,  200);
 mods.tconstruct.Casting.addBasinRecipe(<thaumadditions:mithminite_block>, null,                      <liquid:mithminite>, 1296,false,  800);
+
+#Mithminite scythe augmentation
+<thaumadditions:mithminite_scythe>.removeTooltip("12 Melee Damage");
+<thaumadditions:mithminite_scythe>.removeTooltip("14 Ranged Damage");
+
+static loreColor as string[string] = {
+  "aer"           :   "§eaer§r",
+  "alienis"       :   "§5alienis§r",
+  "alkimia"       :   "§3alkimia§r",
+  "amogus"        :   "§famogus§r",
+  "aqua"          :   "§baqua§r",
+  "auram"         :   "§dauram§r",
+  "aversio"       :   "§caversio§r",
+  "bestia"        :   "§6bestia§r",
+  "caeles"        :   "§bcaeles§r",
+  "cognitio"      :   "§6cognitio§r",
+  "desiderium"    :   "§edesiderium§r",
+  "draco"         :   "§bdraco§r",
+  "exanimis"      :   "§2exanimis§r",
+  "exitium"       :   "§7exitium§r",
+  "fabrico"       :   "§2fabrico§r",
+  "fluctus"       :   "§7fluctus§r",
+  "gelum"         :   "§fgelum§r",
+  "herba"         :   "§aherba§r",
+  "humanus"       :   "§fhumanus§r",
+  "ignis"         :   "§cignis§r",
+  "imperium"      :   "§6imperium§r",
+  "infernum"      :   "§4infernum§r",
+  "instrumentum"  :   "§9instrumentum§r",
+  "lux"           :   "§elux§r",
+  "machina"       :   "§7machina§r",
+  "mana"          :   "§bmana§r",
+  "metallum"      :   "§7metallum§r",
+  "mortuus"       :   "§4mortuus§r",
+  "motus"         :   "§fmotus§r",
+  "mythus"        :   "§emythus§r",
+  "ordo"          :   "§fordo§r",
+  "perditio"      :   "§8perditio§r",
+  "permutatio"    :   "§2permutatio§r",
+  "potentia"      :   "§fpotentia§r",
+  "praecantatio"  :   "§dpraecantatio§r",
+  "praemunio"     :   "§3praemunio§r",
+  "rattus"        :   "§0rattus§r",
+  "sanguis"       :   "§4sanguis§r",
+  "sensus"        :   "§asensus§r",
+  "sonus"         :   "§6sonus§r",
+  "spiritus"      :   "§7spiritus§r",
+  "tenebrae"      :   "§0tenebrae§r",
+  "terra"         :   "§2terra§r",
+  "vacuos"        :   "§8vacuos§r",
+  "ventus"        :   "§fventus§r",
+  "vinculum"      :   "§6vinculum§r",
+  "visum"         :   "§avisum§r",
+  "victus"        :   "§cvictus§r",
+  "volatus"       :   "§fvolatus§r",
+  "vitium"        :   "§5vitium§r",
+  "vitreus"       :   "§bvitreus§r",
+} as string[string];
+
+static loreUnColor as string[string] = {
+  "§eaer§r"         : "aer",
+  "§5alienis§r"     : "alienis",
+  "§3alkimia§r"     : "alkimia",
+  "§famogus§r"      : "amogus",      
+  "§baqua§r"        : "aqua",
+  "§dauram§r"       : "auram",
+  "§caversio§r"     : "aversio",
+  "§6bestia§r"      : "bestia",
+  "§bcaeles§r"      : "caeles",
+  "§6cognitio§r"    : "cognitio",
+  "§edesiderium§r"  : "desiderium",
+  "§bdraco§r"       : "draco",
+  "§2exanimis§r"    : "exanimis",
+  "§7exitium§r"     : "exitium",
+  "§2fabrico§r"     : "fabrico",
+  "§7fluctus§r"     : "fluctus",
+  "§fgelum§r"       : "gelum",
+  "§aherba§r"       : "herba",
+  "§fhumanus§r"     : "humanus",
+  "§cignis§r"       : "ignis",
+  "§6imperium§r"    : "imperium",
+  "§4infernum§r"    : "infernum",
+  "§9instrumentum§r": "instrumentum",
+  "§elux§r"         : "lux",
+  "§7machina§r"     : "machina",
+  "§bmana§r"        : "mana",
+  "§7metallum§r"    : "metallum",
+  "§4mortuus§r"     : "mortuus",
+  "§fmotus§r"       : "motus",
+  "§emythus§r"      : "mythus",
+  "§fordo§r"        : "ordo",
+  "§8perditio§r"    : "perditio",
+  "§2permutatio§r"  : "permutatio",
+  "§fpotentia§r"    : "potentia",
+  "§dpraecantatio§r": "praecantatio",
+  "§3praemunio§r"   : "praemunio",
+  "§0rattus§r"      : "rattus",
+  "§4sanguis§r"     : "sanguis",
+  "§asensus§r"      : "sensus",
+  "§6sonus§r"       : "sonus",
+  "§7spiritus§r"    : "spiritus",
+  "§0tenebrae§r"    : "tenebrae",
+  "§2terra§r"       : "terra",
+  "§8vacuos§r"      : "vacuos",
+  "§fventus§r"      : "ventus",
+  "§6vinculum§r"    : "vinculum",
+  "§avisum§r"       : "visum",
+  "§cvictus§r"      : "victus",
+  "§fvolatus§r"     : "volatus",
+  "§5vitium§r"      : "vitium",
+  "§bvitreus§r"     : "vitreus",
+} as string[string];
+
+recipes.addShapeless("augmentMithminiteScythe",<thaumadditions:mithminite_scythe>,
+[<thaumadditions:mithminite_scythe>.marked("scythe"),<thaumadditions:seal_symbol>.marked("seal")],
+function(out, ins, cInfo){
+  val scythe = ins.scythe;
+  var lorem as IData = (isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)) ? [] : scythe.tag.display.Lore;
+
+  if(lorem.length>7||lorem has loreColor[ins.seal.tag.Aspect]) return null;
+
+  return scythe.withTag(scythe.tag.deepUpdate({display:{Lore: [loreColor[ins.seal.tag.Aspect]]}},APPEND));
+}, 
+null);
+
+##################################################################################
+
+recipes.addShapeless("REMOVEaugmentMithminiteScythe",<thaumadditions:seal_symbol>,
+[ <thaumadditions:mithminite_scythe>
+  .transformNew( //Tylko transformer do naprawy!
+    function(item){
+    var lore = item.tag.display.Lore;
+
+    return item.withTag(item.tag.deepUpdate({display:{Lore: [lore[lore.length - 1]]}},{display: {Lore: REMOVE}}));
+    })
+  .marked("scythe")
+]
+,function(out, ins, cInfo){
+  val scythe = ins.scythe;
+  if(isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)){
+    return null;
+  }
+  val lore = scythe.tag.display.Lore;
+  var index = lore.length;
+  if(index==0) return null;
+
+  val aspectWithColor = lore[ index - 1 ];
+  val aspect  = loreUnColor[aspectWithColor];
+
+  return out.withTag({Aspect: aspect });
+  }
+,null);
+
+# Mithminite scythe hints
+scripts.jei.crafting_hints.add1to1(<ore:listAllmeatraw>  , <contenttweaker:protein_pill>,    <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]) );
+scripts.jei.crafting_hints.add1to1(<ore:listAllfruit>    , <contenttweaker:fruit_pill>,      <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
+scripts.jei.crafting_hints.add1to1(<ore:listAllgrain>    , <contenttweaker:grain_pill>,      <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
+scripts.jei.crafting_hints.add1to1(<ore:listAllveggie>   , <contenttweaker:vegetable_pill>,  <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
+scripts.jei.crafting_hints.add1to1(<ore:foodCheese>      , <contenttweaker:dairy_pill>,      <thaumadditions:mithminite_scythe>.withLore(["§2fabrico§r"]));
+
+scripts.jei.crafting_hints.add1to1(Soul('thaumcraft:golem'), null, <thaumadditions:mithminite_scythe>.withLore(["§7machina§r"]));
+
+scripts.jei.crafting_hints.add1to1(Soul('minecraft:zombie_villager'), Soul("minecraft:villager"), <thaumadditions:mithminite_scythe>.withLore(["§fhumanus§r"]));
+
+scripts.jei.crafting_hints.addInsOutCatl([<minecraft:arrow>, <minecraft:fire_charge>], null, <thaumadditions:mithminite_scythe>.withLore(["§2permutatio§r"]));
+
+scripts.jei.crafting_hints.add1to1(Soul('minecraft:cow')|Soul('minecraft:chicken')|Soul('minecraft:sheep')|Soul('minecraft:pig'), null, <thaumadditions:mithminite_scythe>.withLore(["§cvictus§r"]));
+

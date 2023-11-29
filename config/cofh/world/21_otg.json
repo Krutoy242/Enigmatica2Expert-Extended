@@ -1,0 +1,24 @@
+{
+	"populate": {
+		
+		"otg_quicksand_lakes": {
+			"distribution": "surface",
+			"generator": {
+				"type": "lake",
+				"block": "biomesoplenty:sand",
+				"follow-terrain": true,
+				"material": "sand"
+			},
+			"cluster-count": 1,
+			"chunk-chance": 60,
+			"biome": {
+				"restriction": "whitelist",
+				"value": [
+					{"type": "dictionary","entry": ["SANDY"]},
+					{"type": "dictionary","entry": ["HOT"]},
+					{"type": "dictionary","entry": ["DRY"]}
+				]
+			}
+		}
+	}
+}

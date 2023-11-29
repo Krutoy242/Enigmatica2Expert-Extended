@@ -148,10 +148,10 @@ utils.rh(<forestry:charcoal>);
 
 # Remove pulp recipe
 mods.forestry.Carpenter.removeRecipe(<forestry:wood_pulp>);
-scripts.mods.forestry.Carpenter.addRecipe(<thermalfoundation:material:800>, [[<ore:logWood>]], 40, <liquid:water> * 250);
+mods.forestry.Carpenter.addRecipe(<thermalfoundation:material:800>, [[<ore:logWood>]], 40, <liquid:water> * 250);
 
 mods.forestry.Carpenter.removeRecipe(<forestry:letters>);
-scripts.mods.forestry.Carpenter.addRecipe(<forestry:letters>, Grid(["AAA","AAA"], {A: <thermalfoundation:material:800>}).shaped(), 40, <liquid:water> * 250);
+mods.forestry.Carpenter.addRecipe(<forestry:letters>, Grid(["AAA","AAA"], {A: <thermalfoundation:material:800>}).shaped(), 40, <liquid:water> * 250);
 
 # Fertilizer ask less sand but more Apatite
 # [Fertilizer*8] from [Sand][+1]

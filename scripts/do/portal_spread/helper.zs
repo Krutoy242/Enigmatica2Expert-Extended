@@ -14,6 +14,7 @@
  */
 
 #reloadable
+#modloaded zenutils
 
 import crafttweaker.block.IBlockState;
 import crafttweaker.player.IPlayer;

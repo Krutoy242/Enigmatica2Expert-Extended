@@ -12,6 +12,9 @@
 		type: "item",
 		items: [{
 			item: "actuallyadditions:item_crystal_empowered 1 5"
+		},
+		{
+			item: "actuallyadditions:block_crystal_empowered 1 5"
 		}]
 	}],
 	rewards: [{

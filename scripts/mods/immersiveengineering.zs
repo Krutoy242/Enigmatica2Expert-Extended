@@ -567,6 +567,13 @@ scripts.mods.forestry.ThermionicFabricator.addCast(<immersiveengineering:stone_d
   "d": <ore:dyeGreen>, # Cactus Green
 }).shaped(), <liquid:glass> * 1000, <forestry:wax_cast:*>);
 
+# [Insulating Glass] from [Cactus Green][+1]
+mods.forestry.ThermionicFabricator.addCast(<immersiveengineering:stone_decoration:8> * 2, Grid([
+  "▲d▲"], {
+  "▲": <ore:dustIron>, # Pulverized Iron
+  "d": <ore:dyeGreen>, # Cactus Green
+}).shaped(), <liquid:glass> * 1000);
+
 # ---------------------------------------------------------
 
 # [Concrete Trapdoor] from [Concrete]

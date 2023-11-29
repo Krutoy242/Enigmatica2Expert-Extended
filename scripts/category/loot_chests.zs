@@ -36,7 +36,7 @@ val caveloot = [
 	<actuallyadditions:item_crystal_empowered:3>,
 	<actuallyadditions:item_crystal_empowered:4>,
 	<actuallyadditions:item_crystal_empowered:5>,
-	<botania:manaring>.withTag({mana: 500000}),
+	<botania:manaring>.withTag({mana: 5000}),
 	<botania:auraring>,
 	<botania:magnetring>,
 	<mysticalagriculture:prudentium_apple>,
@@ -179,7 +179,6 @@ addLootList(
 	<ic2:dust:23> : 10,
 	<ic2:dust:26> : 8,
 	<ic2:dust:31> : 2,
-	<ic2:dust:36> : 2,
 }, 1, 10);
 
 addLootList(

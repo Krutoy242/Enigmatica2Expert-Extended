@@ -11,13 +11,12 @@
  * @link https://github.com/Krutoy242
  */
 
-#modloaded requious
+#modloaded requious zenutils
 #priority -4000
 
 import crafttweaker.block.IBlockState;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import scripts.jei.requious.add as addRecipe;
 
 game.setLocalization('en_us', 'requious.jei.recipe.portal_spread', 'Portal Spread');
 game.setLocalization('ru_ru', 'requious.jei.recipe.portal_spread', 'Распространение портала');

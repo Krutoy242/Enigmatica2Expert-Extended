@@ -101,7 +101,7 @@ registerGasReservoir("Aluminium Slurry Reservoir (Terra Nova)", <gas:slurryAlumi
 */
 registerReservoir("Steam Reservoir (Venus)"         , <liquid:steam>    , 2000000000, maxInt, 0 , 800, 30,  I, [], [102], [], []);
 registerReservoir("Pyrotheum Reservoir (Venus)"     , <liquid:pyrotheum>, 1228800000, maxInt, 0 , 200, 30,  I, [], [102], [], []);
-registerReservoir("Hot NaK Reservoir (Venus)"       , <liquid:nak_hot>  , 250000    , 650000, 20, 200, 30,  I, [], [102], [], []);
+registerReservoir("NaK Reservoir (Venus)"           , <liquid:nak>      , 250000    , 650000, 20, 200, 30,  I, [], [102], [], []);
 registerGasReservoir("Gold Slurry Reservoir (Venus)", <gas:gold>        , 1228800000, maxInt, 0 , 50 , 30, II, [], [102], [], []);
 
 # Mars ID=103
@@ -149,8 +149,8 @@ registerReservoir("High Pressure Aquifer Reservoir (Europa)", <liquid:water>, 12
 	/*
 		Radioactive
 */
-registerReservoir("Molten FLiBe Salt Solution of Depleted TBU Fluoride Fuel Reservoir (Titan)"    , <liquid:depleted_fuel_tbu_fluoride_flibe>    , 324000    , 453600, 2, 20, 5 , II, [], [108], [], []);
-registerReservoir("Molten FLiBe Salt Solution of Depleted LEU-235 Fluoride Fuel Reservoir (Titan)", <liquid:depleted_fuel_leu_235_fluoride_flibe>, 324000    , 453600, 2, 20, 5 , II, [], [108], [], []);
+registerReservoir("Molten FLiBe Salt Solution of Depleted TBU Fluoride Fuel Reservoir (Titan)"    , <liquid:depleted_tbu_fluoride_flibe>         , 324000    , 453600, 2, 20, 5 , II, [], [108], [], []);
+registerReservoir("Molten FLiBe Salt Solution of Depleted LEU-235 Fluoride Fuel Reservoir (Titan)", <liquid:depleted_leu_235_fluoride_flibe>     , 324000    , 453600, 2, 20, 5 , II, [], [108], [], []);
 registerGasReservoir("Magnesium Reservoir (Titan)"                                                , <gas:slurryMagnesium>                        , 1228800000, maxInt, 0, 50, 30, II, [], [108], [], []);
 registerGasReservoir("Thorium Reservoir (Titan)"                                                  , <gas:slurryThorium>                          , 1228800000, maxInt, 0, 50, 30, II, [], [108], [], []);
 registerGasReservoir("Boron Reservoir (Titan)"                                                    , <gas:slurryBoron>                            , 1228800000, maxInt, 0, 50, 30, II, [], [108], [], []);

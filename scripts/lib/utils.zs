@@ -1,6 +1,6 @@
 /**
  * @file Bunch of handy utilities for zenscript
- * 
+ *
  * @author Krutoy242
  * @link https://github.com/Krutoy242
  */
@@ -16,13 +16,14 @@ import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.player.IPlayer;
 import crafttweaker.recipes.IRecipeFunction;
 import crafttweaker.world.IWorld;
+import mods.zenutils.StaticString.reverse;
 
 zenClass Utils {
   var DEBUG as bool = false;
 
 	zenConstructor() { }
 
-  val getSomething as function(string,string[],int)IItemStack = 
+  val getSomething as function(string,string[],int)IItemStack =
   function (oreName as string, entryNames as string[], amount as int) as IItemStack {
     return null;
   };
@@ -79,13 +80,47 @@ zenClass Utils {
     return null;
   }
 
+  /**
+   * Name that only display over ingredient but not actually require it on craft
+   * Idea from:
+   * https://github.com/DoremySwee/Art-of-Enigma/blob/2465b90209ced64f5a1ca65ffdd17b6d60e2206c/scripts/recipes/libs/Misc.zs#L47-L67
+   */
+  function tempName(ins as IIngredient, local as string) as IIngredient{
+    var result as IIngredient = null;
+    for i in ins.items {
+      var tag = {
+        display: { LocName: local },
+        "Quark:RuneColor": 6,
+        "Quark:RuneAttached": 1 as byte,
+      } as IData + shimmerTag;
+      if(i.hasTag) tag = i.tag.deepUpdate(tag);
+      if(isNull(result)) result = i.updateTag(tag, false);
+      else result |= i.updateTag(tag, false);
+    }
+
+    // Guard for uninitialized oredicts
+    if(isNull(result)) return ins;
+
+    return result.only(function(item){
+      return ins.matches(item);
+    });
+  }
+  function reuse(ins as IIngredient)as IIngredient{
+    return tempName(ins, "description.crt.reuse").reuse();
+  }
+  function consume(ins as IIngredient)as IIngredient{
+    return tempName(ins, "description.crt.consume").noReturn();
+  }
+
   # ########################
   # Removing item everywhere
   # ########################
-  function rh(ingr as IIngredient, removeOredict as bool = true) as void {
+  function rh(ingr as IIngredient, removeOredict as bool = true, meta as int = -1) as void {
     if (isNull(ingr)) return;
 
-    for item in ingr.items {
+    for _item in ingr.items {
+      val item = meta <= -1 ? _item : _item.withDamage(meta);
+
       if(removeOredict) {
         for ore in item.ores {
           ore.remove(item);
@@ -310,7 +345,7 @@ zenClass Utils {
     clearFluid(input, "Fluid Clearing " ~ input.definition.id.replaceAll(":", "_") ~ "_" ~ input.damage);
   }
   function clearFluid(input as IItemStack, recipeName as string) as void  {
-    recipes.addShapeless(recipeName, 
+    recipes.addShapeless(recipeName,
       input, [input.marked("marked")],
       function(out, ins, cInfo) {
         if(ins has "marked" && !isNull(ins.marked) && ins.marked.hasTag) {
@@ -378,7 +413,7 @@ zenClass Utils {
   val executeCommandSilent as function(ICommandSender,string)void =
   function(sender as ICommandSender, command as string) as void {};
 
-  val geyser as function(IWorld,IItemStack,float,float,float,int,double,double,double,int)void = 
+  val geyser as function(IWorld,IItemStack,float,float,float,int,double,double,double,int)void =
   function(
     world as IWorld,                    # World where everything happen
     output as IItemStack,               # Item that would be spawned
@@ -410,8 +445,8 @@ zenClass Utils {
   };
 
   # Get Shimmer enchant + Random Things colored shining
-  val shimmerTag as IData = <enchantment:enderio:shimmer>.makeEnchantment(1).makeTag();
-  function shinigTag(color as int) as IData {
+  var shimmerTag as IData = <enchantment:minecraft:protection>.makeEnchantment(1).makeTag();
+  function shiningTag(color as int) as IData {
     return { enchantmentColor: color } as IData + shimmerTag;
   }
 
@@ -424,41 +459,9 @@ zenClass Utils {
     );
   }
 
-
-  /*
-  ████████╗███████╗██╗     ██╗     ██████╗  █████╗ ██╗    ██╗
-  ╚══██╔══╝██╔════╝██║     ██║     ██╔══██╗██╔══██╗██║    ██║
-     ██║   █████╗  ██║     ██║     ██████╔╝███████║██║ █╗ ██║
-     ██║   ██╔══╝  ██║     ██║     ██╔══██╗██╔══██║██║███╗██║
-     ██║   ███████╗███████╗███████╗██║  ██║██║  ██║╚███╔███╔╝
-     ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ 
-  */
-  function tellrawItem(item as IItemStack, color as string = null, showName as bool = true) as string {
-    val colorTag = isNull(color)
-      ? ''
-      : ',"color":"'~color~'"';
-    val displayName = item.hasDisplayName
-      ? '"'~item.tag.display.Name.asString()~'"'
-      : '{"translate":"'~item.name~'.name"}';
-
-    val amount = item.amount > 1
-      ? '{"translate":"%s ","with":["'~item.amount~'"]'~colorTag~'},'
-      : '';
-    val name = showName 
-      ? ',{"translate":"[%s]","with":['~displayName~']'~colorTag~'}'
-      : '';
-    // The major part of `iconQuark` is actually 3 spaces, which are reserved for Quark item rendering
-    // So you needs Quark to get the icon
-    val iconQuark = 
-      '{"text":"\u00A7f   ","hoverEvent":{"action":"show_item","value":"'
-        ~item.asData().toNBTString().replaceAll('"', '\\\\"')
-      ~'"}}';
-    // Combine these pieces together, and return it
-    return '{"text":"","extra":['~amount~iconQuark~name~']}';
-  }
-
-  function tellrawSend(player as IPlayer, message as string) as void {
-    mods.contenttweaker.Commands.call('/tellraw '~player.name~' ['~message~']', player, player.world, false, true);
+  function formatNum(n as int, sep as string = ',') as string {
+    val spl = reverse(n).split('(?<=\\G...)');
+    return reverse(serialize.join(spl, reverse(sep)));
   }
 }
 global utils as Utils = Utils();

@@ -144,11 +144,11 @@ mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:distwater>   , <liqu
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:water>       , <liquid:superheatedmoltensodium>);
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:distwater>   , <liquid:superheatedmoltensodium>);
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:exhauststeam>, <liquid:water>);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2250, null                            , <liquid:fluegas>                 * 1000, <liquid:water>        * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2500, null                            , <liquid:fluegas>                 * 1000, <liquid:distwater>    * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2250, <liquid:moltensodium>     *   80, <liquid:superheatedmoltensodium> *   80, <liquid:water>        * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2500, <liquid:moltensodium>     *   80, <liquid:superheatedmoltensodium> *   80, <liquid:distwater>    * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:distwater> * 1250, <liquid:hot_spring_water> * 4500, <liquid:water>                   * 4500, <liquid:exhauststeam> * 2500, 32, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>               * 2250, null                            , <liquid:fluegas>                 * 1000, <liquid:water>        * 1250, 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>               * 2500, null                            , <liquid:fluegas>                 * 1000, <liquid:distwater>    * 1250, 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:high_pressure_steam> * 1600, <liquid:moltensodium>     * 80  , <liquid:superheatedmoltensodium> * 80  , <liquid:water>        * 400 , 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:high_pressure_steam> * 1600, <liquid:moltensodium>     * 20  , <liquid:superheatedmoltensodium> * 20  , <liquid:distwater>    * 400 , 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:distwater>           * 1250, <liquid:hot_spring_water> * 4500, <liquid:water>                   * 4500, <liquid:exhauststeam> * 2500, 32, 4);
 
 # --------------
 # Gas Turbine x5

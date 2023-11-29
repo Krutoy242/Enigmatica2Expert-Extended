@@ -7,6 +7,7 @@
 
 #priority 2000
 #reloadable
+#modloaded zenutils
 
 import crafttweaker.block.IBlock;
 import crafttweaker.block.IBlockState;
@@ -59,13 +60,28 @@ static initialized as bool = false;
 
 // Get recipes and initialize if needed
 function getRecipes(dimFrom as int, dimTo as int) as IBlockState[][IBlockState] {
-  if(!initialized) {
-    initialized = true;
-    init();
-  }
+  if(!initialized) init();
 
   if (isNull(stateRecipes[dimFrom])) return null;
   return stateRecipes[dimFrom][dimTo];
+}
+
+// Get one of cached lists for faster lookup
+function getNumIds(listName as string, dimFrom as int, dimTo as int) as bool[int] {
+  if(!initialized) init();
+
+  val list = listName == 'transformable'
+    ? transformableBlockNumIds
+    : listName == 'blacklisted'
+    ? blacklistedBlockNumIds
+    : listName == 'wildcarded'
+    ? wildcardedNumIds
+    : null;
+  
+  if(isNull(list)) logger.logWarning('[portal_spread] trying to get unexisting block list: '~listName);
+
+  if (isNull(list[dimFrom])) return null;
+  return list[dimFrom][dimTo];
 }
 
 /*
@@ -184,6 +200,7 @@ function init() as void {
       );
     }
   }
+  initialized = true;
 }
 
 // Remove keys of B from A

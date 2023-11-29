@@ -970,7 +970,7 @@ static values as int[int][string] = {
   "extendedcrafting:ender_crafter": { 0: 3241 },
   "forestry:carpenter": { 0: 3298 },
   "advgenerators:iron_tubing": { 0: 3313 },
-  "ic2:nuclear": { 0: 3644, 2: 3441, 7: 4762, 10: 36065 },
+  "ic2:nuclear": { 0: 3644, 2: 3441, 3: 47620, 7: 4762, 10: 36065 },
   "ic2:lapotron_crystal": { 0: 3522 },
   "minecraft:glowstone": { 0: 3600 },
   "mekanism:basicblock": { 0: 3600, 2: 20490, 4: 9277, 8: 9934 },

@@ -2,6 +2,7 @@
 #reloadable
 
 import crafttweaker.entity.IEntityLivingBase;
+import crafttweaker.entity.IEntityAnimal;
 import crafttweaker.player.IPlayer;
 
 function clearPlayerInventory(player as IPlayer) as void {
@@ -19,8 +20,8 @@ events.onEntityLivingUpdate(function(e as crafttweaker.event.EntityLivingUpdateE
   val world = e.entity.world;
   if(
     world.remote
-    || isNull(e.entity.definition)
-    || !(e.entity instanceof IEntityLivingBase)
+    || !(e.entity instanceof IEntityAnimal)
+    || (e.entity instanceof IPlayer)
     || e.entity.definition.id != 'betteranimalsplus:goose'
     || world.time % 10 != 0
   ) return;

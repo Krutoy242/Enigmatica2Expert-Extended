@@ -1,0 +1,23 @@
+{
+  "name": "avaritia:singularity",
+  "target-item": "avaritia:singularity",
+  "target-count": 1,
+  "duration": 20,
+  "symmetrical": true,
+  "catalyst": "ic2:block_cutting_blade",
+  "catalyst-meta": 2,
+  "input-types": {
+    "a": {"id": "mechanics:heavy_block"},
+    "b": {"id": "enderio:block_infinity"},
+    "c": {"id": "extendedcrafting:storage"}
+  },
+  "shape": [
+    [
+      ["_","a","_","_","_"],
+      ["_","b","b","b","a"],
+      ["_","b","c","b","_"],
+      ["a","b","b","b","_"],
+      ["_","_","_","a","_"]
+    ]
+  ]
+}

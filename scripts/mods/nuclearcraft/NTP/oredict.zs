@@ -1,3 +1,4 @@
+#modloaded nuclearcraft
 #priority 2147483647
 
 

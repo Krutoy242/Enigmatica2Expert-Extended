@@ -19,6 +19,6 @@
 		uid: "f9efe854",
 		type: "item",
 		item: "hole_filler_mod:throwable_hole_filler",
-		count: 10
+		count: 64
 	}]
 }

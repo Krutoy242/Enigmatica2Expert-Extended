@@ -1,0 +1,63 @@
+@@ -1,62 +0,0 @@
+-/*
+- * Decompiled with CFR 0.152.
+- * 
+- * Could not load the following classes:
+- *  mezz.jei.api.ingredients.IIngredients
+- *  mezz.jei.api.ingredients.VanillaTypes
+- *  mezz.jei.api.recipe.IRecipeWrapper
+- *  net.minecraft.item.ItemStack
+- *  net.minecraft.item.crafting.IRecipe
+- *  net.minecraftforge.common.crafting.IShapedRecipe
+- */
+-package io.github.jodlodi.twilighttweaks.jei;
+-
+-import java.util.ArrayList;
+-import java.util.Arrays;
+-import java.util.List;
+-import java.util.stream.Collectors;
+-import mezz.jei.api.ingredients.IIngredients;
+-import mezz.jei.api.ingredients.VanillaTypes;
+-import mezz.jei.api.recipe.IRecipeWrapper;
+-import net.minecraft.item.ItemStack;
+-import net.minecraft.item.crafting.IRecipe;
+-import net.minecraftforge.common.crafting.IShapedRecipe;
+-
+-public class UncraftingWrapper
+-implements IRecipeWrapper {
+-    private final ItemStack input;
+-    private final List<List<ItemStack>> output;
+-    private final int recipeWidth;
+-    private final int recipeHeight;
+-
+-    public UncraftingWrapper(IRecipe recipe) {
+-        this.input = recipe.func_77571_b();
+-        ArrayList<List<ItemStack>> outputBuilder = new ArrayList<List<ItemStack>>();
+-        recipe.func_192400_c().forEach(i -> outputBuilder.add(Arrays.asList(i.func_193365_a())));
+-        for (int i2 = 0; i2 < outputBuilder.size(); ++i2) {
+-            List newList = (List)outputBuilder.get(i2);
+-            outputBuilder.set(i2, newList.stream().filter(j -> !j.func_77973_b().hasContainerItem(j)).collect(Collectors.toList()));
+-        }
+-        this.output = outputBuilder;
+-        if (recipe instanceof IShapedRecipe) {
+-            this.recipeWidth = ((IShapedRecipe)recipe).getRecipeWidth();
+-            this.recipeHeight = ((IShapedRecipe)recipe).getRecipeHeight();
+-        } else {
+-            this.recipeWidth = 3;
+-            this.recipeHeight = 3;
+-        }
+-    }
+-
+-    public void getIngredients(IIngredients ingredients) {
+-        ingredients.setInput(VanillaTypes.ITEM, (Object)this.input);
+-        ingredients.setOutputLists(VanillaTypes.ITEM, this.output);
+-    }
+-
+-    public int getWidth() {
+-        return this.recipeWidth;
+-    }
+-
+-    public int getHeight() {
+-        return this.recipeHeight;
+-    }
+-}

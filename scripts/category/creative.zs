@@ -250,7 +250,7 @@ var list = {
 		<ore:blockDragonsteel>,
 		<ore:blockSilver>,
 		<ore:blockAluminium>,
-		<endreborn:block_wolframium>,
+		<ore:blockTungsten>,
 		<ore:blockDarkSteel>,
 		<ore:blockVoid>,
 		<ore:blockDraconium>,
@@ -465,7 +465,7 @@ craft.make(<tconstruct:materials:50>, ["pretty",
   "▀": <ore:blockAlubrass>,     # Block of Aluminum Brass
   "▄": <ore:blockKnightslime>,  # Block of Knightslime
   "G": <ore:compressedGold3x>,  # Triple Compressed Gold
-  "i": <tconstruct:metal:6>,    # Silky Block of Jewel
+  "i": <ore:blockMithril>,      # Block Of mana Infused metal
   "A": <ore:blockAlumite>,      # Alumite Block
   "O": <ore:blockOsgloglas>,    # Osgloglas Block
   "□": <tconevo:material:2>,    # Plate of Unsealing
@@ -566,7 +566,7 @@ craft.make(<ae2wtlib:wut_creative>, ["pretty",
   "  W  "], {
   "e": <wct:wct:*>.withTag({}), # Wireless Crafting Terminal
   "r": <wpt:wpt:*>.withTag({}), # Wireless Pattern Terminal
-  "Ϟ": creativeCube.reuse(), # Creative Energy Cube
+  "Ϟ": utils.reuse(creativeCube), # Creative Energy Cube
   "i": <wft:wft:*>.withTag({}), # Wireless Fluid Terminal
   "W": <wit:wit:*>.withTag({}), # Wireless Interface Terminal
 });

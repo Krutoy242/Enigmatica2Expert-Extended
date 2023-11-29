@@ -3,9 +3,14 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.recipes.IFurnaceRecipe;
+import crafttweaker.world.IVector3d.create as V;
 import mods.requious.AssemblyRecipe;
+import mods.requious.Color;
 import mods.requious.ComponentFace;
 import mods.requious.GaugeDirection;
+import mods.requious.MachineContainer;
+import mods.requious.RecipeContainer;
+import mods.requious.MachineVisual;
 import mods.requious.SlotVisual;
 
 #priority -150
@@ -33,13 +38,18 @@ craft.remake(<requious:infinity_furnace>, ["pretty",
 // -----------------------------------------------------------------------
 
 var o = <assembly:infinity_furnace>;
-o.setItemSlot(3,2,ComponentFace.all(),64).setAccess(true,false).setGroup("input");
-o.setItemSlot(5,2,ComponentFace.all(),64).setAccess(false,true).setHandAccess(false,true).setGroup("output");
+static inpX as int = 3; static inpY as int = 2;
+o.setItemSlot(inpX,inpY,ComponentFace.all(),64).setAccess(true,false).setGroup("input");
+
+static outX as int = 5; static outY as int = 2;
+o.setItemSlot(outX,outY,ComponentFace.all(),64).setAccess(false,true).setHandAccess(false,true).setGroup("output");
 o.setDurationSlot(4,2).setVisual(SlotVisual.createGauge("requious:textures/gui/assembly_gauges.png",2,1,3,1,GaugeDirection.up(),false)).setGroup("duration");
 
-o.setJEIItemSlot(3,2, 'input');
-o.setJEIItemSlot(5,2, 'output');
+o.setJEIItemSlot(inpX,inpY, 'input');
+o.setJEIItemSlot(outX,outY, 'output');
 o.setJEIDurationSlot(4,2,"duration", SlotVisual.create(1,1).addPart("requious:textures/gui/assembly_gauges.png",3,1));
+
+o.addVisual(MachineVisual.flame('active'.asVariable(), V(-0.1, -0.1, -0.1), V(1.1, 1.1, 1.1), V(0, 0, 0), 30, 1, 3, Color.normal([96, 56, 134])));
 
 // -------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------
@@ -51,10 +61,8 @@ function infinFurnace(inp as IIngredient, out as IItemStack) as void {
     c.addItemOutput('output', out * min(64, out.amount * 4));
   })
   .requireItem("input", inp)
-  .setActive(10)
-  .requireDuration("duration", 10);
+  .requireDuration("duration", 1);
 
-  <assembly:infinity_furnace>.addRecipe(assRecipe);
   <assembly:infinity_furnace>.addJEIRecipe(assRecipe);
 }
 
@@ -69,123 +77,170 @@ function blacklist(id as string, damage as int = 0, amount as int = 1, tag as ID
   if(damage == W) {
     blacklistedWildcard[id] = true;
   } else {
-    val item = utils.get(id, damage, amount, tag);
-    if(isNull(item)) return;
+    val item = utils.get(id, damage/* , amount, tag */);
+    if(isNull(item)) {
+      utils.log('Cant find item for blacklisting in Infinity Furnace: '~id~':'~damage);
+      return;
+    }
     blacklistedInput[item] = true;
   }
 }
 
 static cachedOutput as IItemStack[IItemStack] = {} as IItemStack[IItemStack];
 
-/* 
+function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
+  val outStack = c.machine.getItem(outX, outY);
+
+  // Slot is empty
+  if(isNull(outStack)) {
+    c.machine.setItem(outX, outY, output);
+    return true;
+  }
+
+  // Stacks cant be merged
+  if(
+    outStack.definition.id != output.definition.id
+    || outStack.damage != output.damage
+    || outStack.tag != output.tag
+    || outStack.capNBT != output.capNBT
+  ) return false;
+
+  // Not anough space
+  if(outStack.maxStackSize - outStack.amount < output.amount) return false;
+
+  // Merge stacks
+  c.machine.setItem(outX, outY, outStack.withAmount(outStack.amount + output.amount));
+  return true;
+}
+
 <assembly:infinity_furnace>.addRecipe(
   AssemblyRecipe.create(function(c) {
-    val input = c.getItem('input');
-    if(isNull(input)) return;
+    val inputStack = c.machine.getItem(inpX, inpY);
+    if(isNull(inputStack)) return;
+    val input = inputStack.anyAmount();
 
-    // Skip if blacklisted
-    if(!isNull(blacklistedWildcard[input.definition.id]) || !isNull(blacklistedInput[input])) return;
+    if(!isNull(blacklistedWildcard[input.definition.id]) ||
+       !isNull(blacklistedInput[input]))
+      return;
 
     var smelted = cachedOutput[input];
+
+    // Add cache
     if(isNull(smelted)) {
-      // Add cache
       smelted = utils.smelt(input);
-      if(isNull(smelted)) return;
+
+      // Item is unsmeltable, mark it
+      if(isNull(smelted)) {
+        cachedOutput[input] = input;
+        return;
+      }
+
       cachedOutput[input] = smelted;
-    }
-    c.addItemOutput('output', smelted * min(64, smelted.amount * 4));
+    } else if (
+      input.definition.id == smelted.definition.id
+      && input.damage == smelted.damage
+    ) return; // Item is unsmeltable
+
+    if(pushToOutput(smelted * min(64, smelted.amount * 4), c))
+      c.machine.setItem(inpX, inpY, inputStack.amount > 1 ? inputStack.withAmount(inputStack.amount - 1) : null);
   })
-  .requireItem("input", <*>.only(function(item) { return !isNull(item); }))
-  .setActive(10)
-  .requireDuration("duration", 10)
+  .requireWorldCondition("has_input", function(m) {
+    val inputStack = m.getItem(inpX, inpY);
+    if(isNull(inputStack)) return false;
+    val input = inputStack.anyAmount();
+
+    // Skip if blacklisted
+    if(!isNull(blacklistedWildcard[input.definition.id]) ||
+       !isNull(blacklistedInput[input]))
+      return false;
+    return true;
+  }, 1)
+  .setActive(5)
+  .requireDuration("duration", 1)
 );
-*/
 
 # Special case for logWood -> Charcoal
-infinFurnace(<ore:logWood>, <minecraft:coal:1> * 4);
-
-/*
-  Commented line means that recipe exist in vanilla furnace 
-  but ingredient or output hidden in JEI
-*/
+infinFurnace(<ore:logWood>, <minecraft:coal:1>);
 
 /*Inject_js{
 
+// Manual antidupe list
 const manualBlacklist = new Set(`
 biomesoplenty:mud
 biomesoplenty:mudball
 ic2:dust:3
 iceandfire:dread_stone_bricks
-minecraft:stonebrick
 minecraft:sponge:1
+minecraft:stonebrick
 mysticalagriculture:soulstone:1
+nuclearcraft:ingot:15
 rats:marbled_cheese_brick
+rustic:dust_tiny_iron
 tcomplement:scorched_block:3
 tcomplement:scorched_slab:3
 tcomplement:scorched_stairs_brick
 tconstruct:brownstone:3
 tconstruct:seared:3
 thermalfoundation:material:864
-nuclearcraft:ingot:15
-rustic:dust_tiny_iron
 `.trim().split('\n'))
 
-const filters = [
-  [ '#', 0, (items) => items.some(([id,meta])=>isJEIBlacklisted(id,meta))],
-  ['//', 0, ([[id,meta]]) => manualBlacklist.has(id + ((meta && meta!=='*') ? ':'+meta : ''))],
-  ['##', 0, ([[id,meta],[out_id,out_meta]]) => {
-    const  in_ore = [...getItemOredictSet(id,meta).keys()]
-    const out_ore = [...getItemOredictSet(out_id,out_meta).keys()]
-    return in_ore.includes('logWood')
-      || in_ore.some(o=>{
-        const mat = o.match(/^dust([A-Z].+)/)?.[1]
-        return mat && out_ore.some(o=>o.replace(/^(ingot|gem)/, '') === mat)
-      })
-      // Blacklist input
-      || [
-        'Oxide',
-        'Nitride',
-        'ZA',
-      ].some(key => in_ore.some(o=>o.match(new RegExp('.+'+key))))
-  }],
-]
-
-const isBlacklisted = (...items) => filters.find(([,,condition],i)=>
-  condition(items) && ++filters[i][1]
-)?.[0]
-
-const overload = (id,meta,nbt,amount)=>{
-  let s=`"${id}"`
-  ;(meta || amount || nbt) && (s+=`, ${meta==='*'?'W':(meta||0)}`)
-  ;((amount && parseInt(amount) > 1) || nbt) && (s+=`, ${amount||1}`)
-  ;(nbt) && (s+=`, ${nbt}`)
+const commandString = (id, meta, nbt, amount) => {
+  let s = `"${id}"`
+  ;(meta || amount || nbt) && (s += `, ${meta === '*' ? 'W' : (meta || 0)}`)
+  ;((amount && parseInt(amount) > 1) || nbt) && (s += `, ${amount || 1}`)
+  ;(nbt) && (s += `, ${nbt}`)
   return s
 }
 
-const furnaceRecipes = getFurnaceRecipes()
-if(!furnaceRecipes) return undefined
-const filtered = furnaceRecipes
-  .map(({out_id, out_meta, out_tag, out_amount, in_id, in_meta, in_tag, in_amount})=>
-    isBlacklisted([in_id, in_meta], [out_id, out_meta])
-      ? `blacklist(${overload(in_id, in_meta, in_tag, in_amount)});`
-      : 'infinFurnace(utils.get('+
-        overload( in_id,  in_meta,  in_tag,  in_amount) + '), utils.get('+
-        overload(out_id, out_meta, out_tag, out_amount) +'));'
+let blacklisted = 0
+let oredictFiltered = 0
+
+function composeRecipe({ out_id, out_meta, out_tag, out_amount, in_id, in_meta, in_tag, in_amount }) {
+  const involved = [[in_id, in_meta], [out_id, out_meta]]
+
+  // Blacklist
+  const inpCommandStr = commandString(in_id, in_meta, in_tag, in_amount)
+  if (
+    involved.some(([id, meta]) => isJEIBlacklisted(id, meta))
+    || manualBlacklist.has(in_id + ((in_meta && in_meta !== '*') ? `:${in_meta}` : ''))
   )
+    return blacklisted++, `blacklist(${inpCommandStr});`
+
+  const in_ore = [...getItemOredictSet(in_id, in_meta).keys()]
+
+  // Just skip
+  if (in_ore.includes('logWood')) return `// SKIP: ${inpCommandStr}`
+
+  const out_ore = [...getItemOredictSet(out_id, out_meta).keys()]
+  if (in_ore.some((o) => {
+    const mat = o.match(/^dust([A-Z].+)/)?.[1]
+    return mat && out_ore.some(o => o.replace(/^(ingot|gem)/, '') === mat)
+  })
+    // Blacklist input
+    || ['Oxide', 'Nitride', 'ZA']
+      .some(key => in_ore.some(o => o.match(new RegExp(`.+${key}`))))
+  ) return oredictFiltered++, `blacklist(${inpCommandStr});`
+
+  return `infinFurnace(utils.get(${
+    inpCommandStr}), utils.get(${
+    commandString(out_id, out_meta, out_tag, out_amount)}));`
+}
+
+const furnaceRecipes = getFurnaceRecipes()
+if (!furnaceRecipes) return undefined
+const filtered = furnaceRecipes.map(composeRecipe)
 
 return `
 # Total Furnace recipes registered: ${furnaceRecipes.length}
-# Filtered by JEI blacklist: ${filters[0][1]}
-# Filtered manuallly (antidupe): ${filters[1][1]}
-# Filtered by oredict: ${filters[2][1]}
+# Blacklisted by JEI or manually: ${blacklisted}
+# Filtered by oredict: ${oredictFiltered}
 ${filtered.join('\n')}`
 
 }*/
 
 # Total Furnace recipes registered: 959
-# Filtered by JEI blacklist: 110
-# Filtered manuallly (antidupe): 16
-# Filtered by oredict: 188
+# Blacklisted by JEI or manually: 126
+# Filtered by oredict: 151
 infinFurnace(utils.get("actuallyadditions:block_misc", 3), utils.get("actuallyadditions:item_misc", 5));
 blacklist("actuallyadditions:item_dust", 1);
 blacklist("actuallyadditions:item_dust", 2);
@@ -223,23 +278,23 @@ infinFurnace(utils.get("biomesoplenty:gem_ore", 4), utils.get("biomesoplenty:gem
 infinFurnace(utils.get("biomesoplenty:gem_ore", 5), utils.get("biomesoplenty:gem", 5));
 infinFurnace(utils.get("biomesoplenty:gem_ore", 6), utils.get("biomesoplenty:gem", 6));
 infinFurnace(utils.get("biomesoplenty:gem_ore"), utils.get("biomesoplenty:gem"));
-blacklist("biomesoplenty:log_0", 4);
-blacklist("biomesoplenty:log_0", 5);
-blacklist("biomesoplenty:log_0", 6);
-blacklist("biomesoplenty:log_0", 7);
-blacklist("biomesoplenty:log_1", 4);
-blacklist("biomesoplenty:log_1", 5);
-blacklist("biomesoplenty:log_1", 6);
-blacklist("biomesoplenty:log_1", 7);
-blacklist("biomesoplenty:log_2", 4);
-blacklist("biomesoplenty:log_2", 5);
-blacklist("biomesoplenty:log_2", 6);
-blacklist("biomesoplenty:log_2", 7);
-blacklist("biomesoplenty:log_3", 4);
-blacklist("biomesoplenty:log_3", 5);
-blacklist("biomesoplenty:log_3", 6);
-blacklist("biomesoplenty:log_3", 7);
-blacklist("biomesoplenty:log_4", 5);
+// SKIP: "biomesoplenty:log_0", 4
+// SKIP: "biomesoplenty:log_0", 5
+// SKIP: "biomesoplenty:log_0", 6
+// SKIP: "biomesoplenty:log_0", 7
+// SKIP: "biomesoplenty:log_1", 4
+// SKIP: "biomesoplenty:log_1", 5
+// SKIP: "biomesoplenty:log_1", 6
+// SKIP: "biomesoplenty:log_1", 7
+// SKIP: "biomesoplenty:log_2", 4
+// SKIP: "biomesoplenty:log_2", 5
+// SKIP: "biomesoplenty:log_2", 6
+// SKIP: "biomesoplenty:log_2", 7
+// SKIP: "biomesoplenty:log_3", 4
+// SKIP: "biomesoplenty:log_3", 5
+// SKIP: "biomesoplenty:log_3", 6
+// SKIP: "biomesoplenty:log_3", 7
+// SKIP: "biomesoplenty:log_4", 5
 blacklist("biomesoplenty:mud");
 blacklist("biomesoplenty:mudball");
 infinFurnace(utils.get("biomesoplenty:plant_1", 6), utils.get("minecraft:dye", 2));
@@ -291,16 +346,16 @@ blacklist("exnihilocreatio:item_ore_silver", 2);
 blacklist("exnihilocreatio:item_ore_tin", 1);
 blacklist("exnihilocreatio:item_ore_tin", 2);
 infinFurnace(utils.get("extrautils2:decorativesolid", 4), utils.get("extrautils2:decorativeglass"));
-blacklist("extrautils2:ironwood_log", W);
+// SKIP: "extrautils2:ironwood_log", W
 infinFurnace(utils.get("forestry:ash"), utils.get("tconstruct:materials"));
-blacklist("forestry:logs.0", W);
-blacklist("forestry:logs.1", W);
-blacklist("forestry:logs.2", W);
-blacklist("forestry:logs.3", W);
-blacklist("forestry:logs.4", W);
-blacklist("forestry:logs.5", W);
-blacklist("forestry:logs.6", W);
-blacklist("forestry:logs.7", W);
+// SKIP: "forestry:logs.0", W
+// SKIP: "forestry:logs.1", W
+// SKIP: "forestry:logs.2", W
+// SKIP: "forestry:logs.3", W
+// SKIP: "forestry:logs.4", W
+// SKIP: "forestry:logs.5", W
+// SKIP: "forestry:logs.6", W
+// SKIP: "forestry:logs.7", W
 infinFurnace(utils.get("forestry:peat"), utils.get("forestry:ash"));
 infinFurnace(utils.get("forestry:resources"), utils.get("forestry:apatite"));
 blacklist("gendustry:gene_sample", W);
@@ -373,7 +428,7 @@ infinFurnace(utils.get("ic2:purified", 4), utils.get("thermalfoundation:material
 infinFurnace(utils.get("ic2:purified", 5), utils.get("thermalfoundation:material", 129));
 infinFurnace(utils.get("ic2:purified", 6), utils.get("immersiveengineering:metal", 5));
 infinFurnace(utils.get("ic2:purified"), utils.get("thermalfoundation:material", 128));
-blacklist("ic2:rubber_wood", W);
+// SKIP: "ic2:rubber_wood", W
 blacklist("iceandfire:dread_stone_bricks", W);
 infinFurnace(utils.get("iceandfire:frozen_cobblestone", W), utils.get("minecraft:cobblestone"));
 infinFurnace(utils.get("iceandfire:frozen_dirt", W), utils.get("minecraft:dirt"));
@@ -391,8 +446,8 @@ blacklist("immersiveengineering:metal", 14);
 blacklist("immersiveengineering:ore", 1);
 infinFurnace(utils.get("immersiveengineering:ore", 5), utils.get("immersiveengineering:metal", 5));
 infinFurnace(utils.get("industrialforegoing:dryrubber", W), utils.get("industrialforegoing:plastic"));
-blacklist("integrateddynamics:menril_log_filled");
-blacklist("integrateddynamics:menril_log");
+// SKIP: "integrateddynamics:menril_log_filled"
+// SKIP: "integrateddynamics:menril_log"
 infinFurnace(utils.get("jaopca:item_chunkaluminium"), utils.get("jaopca:item_dirtygemaluminium", 0, 10));
 infinFurnace(utils.get("jaopca:item_chunkamethyst"), utils.get("jaopca:item_dirtygemamethyst", 0, 10));
 infinFurnace(utils.get("jaopca:item_chunkapatite"), utils.get("jaopca:item_dirtygemapatite", 0, 10));
@@ -761,8 +816,8 @@ infinFurnace(utils.get("minecraft:iron_pickaxe", W), utils.get("minecraft:iron_n
 infinFurnace(utils.get("minecraft:iron_shovel", W), utils.get("minecraft:iron_nugget"));
 infinFurnace(utils.get("minecraft:iron_sword", W), utils.get("minecraft:iron_nugget"));
 infinFurnace(utils.get("minecraft:lapis_ore", W), utils.get("minecraft:dye", 4));
-blacklist("minecraft:log", W);
-blacklist("minecraft:log2", W);
+// SKIP: "minecraft:log", W
+// SKIP: "minecraft:log2", W
 infinFurnace(utils.get("minecraft:mutton", W), utils.get("minecraft:cooked_mutton"));
 infinFurnace(utils.get("minecraft:netherrack", W), utils.get("minecraft:netherbrick"));
 infinFurnace(utils.get("minecraft:porkchop", W), utils.get("minecraft:cooked_porkchop"));
@@ -1054,8 +1109,8 @@ infinFurnace(utils.get("rats:rat_nugget_ore", 0, 1, {OreItem: {id: "thermalfound
 infinFurnace(utils.get("rats:raw_rat", W), utils.get("rats:cooked_rat"));
 blacklist("rustic:dust_tiny_iron");
 infinFurnace(utils.get("rustic:honeycomb"), utils.get("rustic:beeswax"));
-blacklist("rustic:log", 1);
-blacklist("rustic:log");
+// SKIP: "rustic:log", 1
+// SKIP: "rustic:log"
 infinFurnace(utils.get("tcomplement:scorched_block", 1), utils.get("tcomplement:scorched_block"));
 blacklist("tcomplement:scorched_block", 3);
 blacklist("tcomplement:scorched_slab", 3);
@@ -1096,8 +1151,8 @@ infinFurnace(utils.get("thaumcraft:cluster", 5), utils.get("thermalfoundation:ma
 infinFurnace(utils.get("thaumcraft:cluster", 6), utils.get("thaumcraft:quicksilver", 0, 2));
 infinFurnace(utils.get("thaumcraft:cluster", 7), utils.get("minecraft:quartz", 0, 5));
 infinFurnace(utils.get("thaumcraft:cluster"), utils.get("thermalfoundation:material", 0, 2));
-blacklist("thaumcraft:log_greatwood", W);
-blacklist("thaumcraft:log_silverwood", W);
+// SKIP: "thaumcraft:log_greatwood", W
+// SKIP: "thaumcraft:log_silverwood", W
 infinFurnace(utils.get("thaumcraft:ore_amber", W), utils.get("thaumcraft:amber"));
 infinFurnace(utils.get("thaumcraft:ore_cinnabar", W), utils.get("thaumcraft:quicksilver"));
 blacklist("thaumcraft:ore_quartz", W);
@@ -1142,7 +1197,7 @@ blacklist("trinity:dust_au_198", W);
 infinFurnace(utils.get("twilightforest:armor_shard_cluster", W), utils.get("twilightforest:knightmetal_ingot"));
 infinFurnace(utils.get("twilightforest:ironwood_raw", W), utils.get("twilightforest:ironwood_ingot", 0, 2));
 infinFurnace(utils.get("twilightforest:magic_beans"), utils.get("randomthings:beans", 2));
-blacklist("twilightforest:magic_log", W);
+// SKIP: "twilightforest:magic_log", W
 infinFurnace(utils.get("twilightforest:raw_meef", W), utils.get("twilightforest:cooked_meef"));
-blacklist("twilightforest:twilight_log", W);
+// SKIP: "twilightforest:twilight_log", W
 /**/

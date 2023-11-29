@@ -1,3 +1,4 @@
+#modloaded nuclearcraft
 #loader nc_preinit
 
 import scripts.mods.nuclearcraft.NTP.coilclasses.StabilizerInfo;

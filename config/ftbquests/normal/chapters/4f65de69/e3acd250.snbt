@@ -53,5 +53,11 @@
 		uid: "e8a43e26",
 		type: "item",
 		item: "jecalculation:item_calculator"
+	},
+	{
+		uid: "4611cbb8",
+		type: "item",
+		item: "hole_filler_mod:throwable_hole_filler_water",
+		count: 64
 	}]
 }

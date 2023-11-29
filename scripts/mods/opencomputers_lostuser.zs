@@ -284,7 +284,7 @@ return list.length ? list : cmd.block
 "oc:userdata": [
   56, 99, 101, 97, 57, 99, 57, 54, 45, 100, 97, 97, 49, 45, 52, 99, 53, 98, 45, 97, 52, 100, 57, 45, 101, 55, 49, 52, 102, 49, 102, 48, 56, 55, 49, 53
 ] as byte[]},
-} + utils.shinigTag(15326208));
+} + utils.shiningTag(15326208));
 
 recipes.addShapeless('User recipe', userEEPROM, [<opencomputers:storage>, <appliedenergistics2:crank>]);
 

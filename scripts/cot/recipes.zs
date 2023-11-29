@@ -13,9 +13,6 @@ scripts.process.compress(<ore:tallow> * 64, <contenttweaker:compressed_tallow>, 
 scripts.process.melt(<ore:tallow>, <liquid:biomass> * 20);
 scripts.process.melt(<contenttweaker:compressed_tallow>, <liquid:biomass> * 1280);
 
-// Add missed furnace recipe
-furnace.addRecipe(<endreborn:item_ingot_wolframium>, <qmd:dust>, 4.0d);
-
 // Remake usage of new dusts
 utils.compact(<contenttweaker:dust_tiny_gold>, <thermalfoundation:material:1>);
 utils.compact(<contenttweaker:dust_tiny_silver>, <thermalfoundation:material:66>);

@@ -58,19 +58,17 @@ events.onPlayerInteractEntity(function(e as crafttweaker.event.PlayerInteractEnt
   target.give(item);
   player.setItemToSlot(MAIN_HAND, null);
 
-  // Sender message
-  utils.tellrawSend(player,
-    '{"translate":"chat.hand_over_your_items.send","color":"blue","with":['
-      ~utils.tellrawItem(item, 'white')
-      ~',{"text":"'~target.name~'","color":"dark_blue"}'
-    ~']}'
-  );
-
-  // Receiver message
-  utils.tellrawSend(target,
-    '{"translate":"chat.hand_over_your_items.receive","color":"dark_green","with":['
-      ~utils.tellrawItem(item, 'white')
-      ~',{"text":"'~player.name~'","color":"green"}'
-    ~']}'
-  );
+  broadcastMsg('send', player, target, item, 'blue', 'dark_blue');
+  broadcastMsg('receive', target, player, item, 'dark_green', 'green');
 });
+
+function broadcastMsg(langCode as string, sender as IPlayer, receiver as IPlayer, item as IItemStack, col1 as string, col2 as string) as void {
+  sender.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([{
+    translate: 'chat.hand_over_your_items.' ~ langCode,
+    color: col1,
+    with: [scripts.lib.tellraw.itemObj(item, 'white'), {
+      text: receiver.name,
+      color: col2
+    }]
+  }]));
+}

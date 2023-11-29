@@ -4,6 +4,9 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
 
+// Add missed furnace recipe
+furnace.addRecipe(<endreborn:item_ingot_wolframium>, <qmd:dust>, 4.0d);
+
 # Chronologist
 <entity:endreborn:chronologist>.addPlayerOnlyDrop(<deepmoblearning:living_matter_extraterrestrial>, 1, 2);
 

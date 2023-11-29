@@ -26,7 +26,7 @@ for l_in, l_out in {
     container.addFluidOutput('liquid_output', game.getLiquid(l_out));
   })
   .requireFluid('liquid_input', game.getLiquid(l_in))
-  .requireItem("item_in", <ic2:crafting:7>)
+  .requireItem("item_in", <ic2:crafting:7> * 10)
   );
 }
 

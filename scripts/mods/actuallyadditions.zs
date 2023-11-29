@@ -129,10 +129,13 @@ craft.remake(<actuallyadditions:item_mining_lens>, ["pretty",
 	[<ore:plankTreatedWood>, <forestry:oak_stick>, <ore:plankTreatedWood>]]);
 
 # Emerald Dust
-	recipes.remove(<actuallyadditions:item_dust:3>);
-	
+recipes.remove(<actuallyadditions:item_dust:3>);
+
 # Black Quartz Dust
-	recipes.remove(<actuallyadditions:item_dust:7>);
+recipes.remove(<actuallyadditions:item_dust:7>);
+
+// Crushed coal wrong recipe
+mods.actuallyadditions.Crusher.removeRecipe(<actuallyadditions:item_dust:6>);
 	
 # Iron Casing
 	recipes.remove(<actuallyadditions:block_misc:9>);
@@ -187,7 +190,7 @@ craft.remake(<actuallyadditions:item_mining_lens>, ["pretty",
 # Restonia
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered>);
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:block_crystal_empowered>);
-	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered>, <actuallyadditions:block_crystal>, <nuclearcraft:gem>, <thermalfoundation:material:513>, <tconstruct:tool_rod>.withTag({Material: "ardite"}), <quark:biome_cobblestone>, 250000, 200, [1.0, 0.0, 0.0]);
+	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered>, <actuallyadditions:block_crystal>, <nuclearcraft:gem>, <thermalfoundation:material:513>, <tconstruct:ingots:1>, <quark:biome_cobblestone>, 250000, 200, [1.0, 0.0, 0.0]);
 
 # Palis
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered:1>);
@@ -202,12 +205,12 @@ craft.remake(<actuallyadditions:item_mining_lens>, ["pretty",
 # Void
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered:3>);
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:block_crystal_empowered:3>);
-	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered:3>, <actuallyadditions:block_crystal:3>, <randomthings:ingredient:13>, <extendedcrafting:storage>, <chisel:basalt2:*>, <appliedenergistics2:sky_stone_block>, 2500000, 200, [0.1, 0.0, 0.0]);
+	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered:3>, <actuallyadditions:block_crystal:3>, <randomthings:ingredient:13>, <extendedcrafting:storage>, <contenttweaker:compressed_basalt>, <appliedenergistics2:sky_stone_block>, 2500000, 200, [0.1, 0.0, 0.0]);
 
 # Emeradic
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered:4>);
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:block_crystal_empowered:4>);
-	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered:4>, <actuallyadditions:block_crystal:4>, <minecraft:dye:2>, <minecraft:emerald>, <nuclearcraft:dust:9>, <actuallyadditions:block_testifi_bucks_green_wall>, 500000, 400, [0.0, 1.0, 0.498039]);
+	mods.actuallyadditions.Empowerer.addRecipe(<actuallyadditions:block_crystal_empowered:4>, <actuallyadditions:block_crystal:4>, <minecraft:experience_bottle>, <actuallyadditions:item_dust:3>, <nuclearcraft:dust:9>, <immersiveengineering:stone_decoration:8>, 500000, 400, [0.0, 1.0, 0.498039]);
 
 # Enori
 	mods.actuallyadditions.Empowerer.removeRecipe(<actuallyadditions:item_crystal_empowered:5>);

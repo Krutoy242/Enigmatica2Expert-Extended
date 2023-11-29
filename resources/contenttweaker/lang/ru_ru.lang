@@ -1,3 +1,5 @@
+#PARSE_ESCAPES
+
 # Various fixes
 modifier.excompressum:smashingii.desc=Забивание сжатых блоков молотком
 tile.spectreCoil_number.info=Генерирует 32 RF/t и выдает их в блок, к которому прикреплен. Их можно найти в сундуках в подземельях.
@@ -14,6 +16,9 @@ fluid.terrestrial=Расплавленный Земленный Артефакт
 fluid.mithrillium=Растворимый Митриллиум
 fluid.adaminite=Расплавленный Адаминит
 fluid.mithminite=Растворенный Митминит
+
+description.crt.reuse=§a§o(Не будет потрачено!)§r
+description.crt.consume=§6§o(Будет потрачено!)§r
 
 item.contenttweaker.compressed_glowstone.name=Сжатая Светопыль
 item.contenttweaker.compressed_ender.name=Сжатый Эндер Жемчуг
@@ -159,7 +164,6 @@ item.contenttweaker.coin_doublesmore.name=Ну просто огромный и 
 item.contenttweaker.coin_draconicmetal.name=Монета драконов
 item.contenttweaker.coin_elektron60.name=Монета из электрон60-сплава
 item.contenttweaker.coin_gaiaspirit.name=Монета из духа Гайи
-item.contenttweaker.coin_gelidenderium.name=Монета из замороженного эндериума
 item.contenttweaker.coin_glitchinfused.name=Глючная монета
 item.contenttweaker.coin_hafnium.name=Хафниевая монета
 item.contenttweaker.coin_infinity.name=Монета бесконечности
@@ -300,13 +304,16 @@ e2ee.written_book.Creeper=Крипером
 e2ee.written_book.Zombie=Зомби
 
 # Misc
+e2ee.do.charge=§fЗаряд: §6%s§r
+e2ee.do.diverse.power=§fСила: §6%s§r
+e2ee.do.diverse.info=§2Типы: §a%s§r\n§2Медиана: §a%s§r\n§2Предметы в сингулярности:\n%s
 e2ee.otg.not_otg_biome=§2Невозможно телепортироваться в не-OTG биом с ID:§r §a§n%s§r§2. §8Попробуйте другую Эссенцию биома.§r
 e2ee.otg.tp_to=§2Попытка телепорта в:§r §a§n%s§r §8Дождитесь телепортации или прерывания.§r
 e2ee.otg.tp_finished=§2Телепортация завершена.§r §8Попробуйте снова, если не были телепортированы.§r
 e2ee.chapter_complete=§l%s§r полностью закончил главу §n%s§r за §l%s§r игры!§r ```Поздравляем!```
 e2ee.player_achieved=§l%s§r достиг §n%s§r за §l%s§r игры!§r
 e2ee.eu2_drum_error=§7Для этого у вас должен быть как минимум 1 пустой слот в инвентаре
-e2ee.danknull_dock.must_have=§7Вам понадобится §f%s§r в свободной руке, для того, чтобы вставить %s в %s. §f%s§r будет необратимо израсходован.
+e2ee.danknull_dock.must_have=§7Вам понадобится %s в инвентаре, для того, чтобы вставить %s в %s.
 e2ee.restrict.vis_seeds=§7Вы можете сажать §6Семена Вис§7 только в §nМире пустоты§r§7 или на §nпланетах§r§7. Им также необходим кислород.
 e2ee.creature_resisted_morb=§8Существо сопротивлялось захвату §n§8%s.
 e2ee.creature_uncapturable=§7Это существо нельзя поймать.
@@ -369,7 +376,6 @@ tooltips.lang.reinforced_cell_frame=Усиленный каркас ячеек (
 tooltips.lang.obtained.fabricator_or_excavator=Можно получить на Дуговой Печи ИЛИ в IE кскаваторе.
 tooltips.lang.obtained.mithril=Только доступно только §9Первичная Мана§r wмировое взаимодействие или в §1Другие размеры§r
 tooltips.lang.removed.use_market=Отключено. Используйте Market from Farming для болванов.
-tooltips.lang.ethylene_convert=Как я могу использовать этилен с усовершенствованными генераторами? Используйте роторный конденсатор, чтобы превратить этилен в жидкость.
 tooltips.lang.redstone.need=§4Нужен сигнал красного камня
 tooltips.lang.removed.crash=§4Удалено по причине того что крашит сервер
 
@@ -482,6 +488,7 @@ tooltips.dim_stages.remind_skyblock=§eВы снова запустили мир
 requious.jei.recipe.adv_bee_analyzer=Расширенный Анализатор
 requious.jei.recipe.alchemists_stone=Камень Алхимиов
 requious.jei.recipe.alienists_stone=Камень Чужеродностей
+requious.jei.recipe.arboreal_extractor=Древесный выжиматель
 requious.jei.recipe.asteroids=Астероиды
 requious.jei.recipe.barrel_milking=Доение Бочкой
 requious.jei.recipe.beacon_effects=Эффекты Маяка

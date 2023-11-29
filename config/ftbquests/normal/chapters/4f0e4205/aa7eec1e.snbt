@@ -1,0 +1,49 @@
+{
+	icon: {
+		id: "ftbquests:lootcrate",
+		Count: 2,
+		tag: {
+			type: "common"
+		}
+	},
+	disable_toast: true,
+	x: 10.350000000000001d,
+	y: 0.3d,
+	shape: "square",
+	text: [
+		"{q.twilight_forest.experiment_115.desc}"
+	],
+	can_repeat: true,
+	dependencies: [
+		"ea1707c5"
+	],
+	size: 0.5d,
+	optional: true,
+	tasks: [{
+		uid: "a08d8ad9",
+		type: "item",
+		disable_toast: true,
+		items: [{
+			item: "twilightforest:experiment_115"
+		},
+		{
+			item: "twilightforest:moon_dial"
+		},
+		{
+			item: "twilightforest:tower_device 1 10"
+		}]
+	}],
+	rewards: [{
+		uid: "7ff77888",
+		type: "item",
+		auto: "no_toast",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "common"
+			}
+		},
+		count: 2,
+		random_bonus: 1
+	}]
+}

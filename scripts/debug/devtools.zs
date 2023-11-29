@@ -1,6 +1,4 @@
 #modloaded ctintegration
-
-#priority 3999
 #reloadable
 
 import crafttweaker.data.IData;

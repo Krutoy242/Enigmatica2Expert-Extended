@@ -6,6 +6,7 @@
  */
 
 #reloadable
+#modloaded zenutils
 
 import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
@@ -17,7 +18,7 @@ import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IFacing;
 import crafttweaker.world.IWorld;
 
-import scripts.do.portal_spread.config.config;
+import scripts.do.portal_spread.config.Config;
 import scripts.do.portal_spread.data.getDimsMap;
 import scripts.do.portal_spread.data.portalIdToPos;
 import scripts.do.portal_spread.data.removePortal;
@@ -25,13 +26,10 @@ import scripts.do.portal_spread.data.updatePortal;
 import scripts.do.portal_spread.message.log;
 import scripts.do.portal_spread.message.notifyPlayers;
 import scripts.do.portal_spread.modifiers.getCorners;
+import scripts.do.portal_spread.modifiers.getModifiers;
+import scripts.do.portal_spread.recipes.getNumIds;
 import scripts.do.portal_spread.utils.getNextPoint;
 
-// Map of modifiers
-static MODIF as int[string] = scripts.do.portal_spread.modifiers.MODIF;
-
-static spreadDelay as double = config.spreadDelay;
-static blockChecks as int = config.blockChecks;
 static dimHasRecipes as bool[int] = scripts.do.portal_spread.recipes.dimHasRecipes;
 
 ////////////////////////////////////////////////////
@@ -55,106 +53,99 @@ events.onWorldTick(function(e as crafttweaker.event.WorldTickEvent){
   if(e.world.remote || e.phase != "END") return;
   if(isNull(dimHasRecipes[e.world.dimension])) return;
   val fallback = scripts.do.portal_spread.recipes.dimFallbacks[e.world.dimension];
-  val currDimNumId = !isNull(fallback) ? (fallback as int) : e.world.dimension;
+  val recipeDimId = !isNull(fallback) ? (fallback as int) : e.world.dimension;
 
-  // Skip ticks
-  val spreadDelayInt = spreadDelay as int;
+  // Skip ticks for every portal
+  val spreadDelayInt = Config.spreadDelay as int;
   if(spreadDelayInt > 1 && e.world.time % spreadDelayInt != 0) return;
 
-  for dimId, dimData in getDimsMap(e.world).asMap() {
+  for targetDimIdStr, dimData in getDimsMap(e.world).asMap() {
     if(isNull(dimData) || isNull(dimData.asMap())) continue;
-
-    // -------------------------------
-    // Get userful maps from recipes
-    val idInt = dimId as int;
-    val spreadStateRecipes = scripts.do.portal_spread.recipes.getRecipes(currDimNumId, idInt);
-    val _spreadWhitelist = scripts.do.portal_spread.recipes.transformableBlockNumIds[currDimNumId];
-    val _spreadBlacklist = scripts.do.portal_spread.recipes.blacklistedBlockNumIds[currDimNumId];
-    val _spreadWildcards = scripts.do.portal_spread.recipes.wildcardedNumIds[currDimNumId];
-
-    if (
-      isNull(spreadStateRecipes)
-      || isNull(_spreadWhitelist[idInt])
-      || isNull(_spreadBlacklist[idInt])
-      || isNull(_spreadWildcards[idInt])
-    ) continue;
-
-    val spreadWhitelist = _spreadWhitelist[idInt];
-    val spreadBlacklist = _spreadBlacklist[idInt];
-    val spreadWildcards = _spreadWildcards[idInt];
-    // -------------------------------
-
-    for portalId, portalData in dimData.asMap() {
-      val fullPortalId = e.world.dimension~':'~portalId;
-      val portalPos = portalIdToPos(portalId);
-      var blockPos = portalPos as IBlockPos;
-
-      // Portal not loaded
-      if (!e.world.isBlockLoaded(blockPos)) continue;
-
-      val blockState = e.world.getBlockState(blockPos);
-
-      // Portal is destroyed
-      if (isNull(blockState) || blockState.block.definition.id != "minecraft:portal") {
-        destroyPortal(e.world, dimId, portalId, fullPortalId);
-        notifyPlayers(e.world, portalPos, 'broken');
-        continue;
-      }
-
-      // Get modifiers
-      var portalCorners = portalData;
-      if (isNull(portalCorners.asList()) || portalCorners.asList().length < 12) {
-        val axisX = blockState.getPropertyValue('axis') == 'x';
-        portalCorners = getCorners(e.world, blockPos, axisX);
-        updatePortal(e.world, dimId, blockPos, portalCorners);
-
-        // Portal just created and asserted
-        notifyPlayers(e.world, portalPos, 'created');
-      }
-      val modifiers = scripts.do.portal_spread.modifiers.getModifiers(e.world, fullPortalId, portalCorners, portalPos);
-
-      // Skip generation on slow modifier
-      val trueDelay = scripts.do.portal_spread.modifiers.getSlow(e.world, modifiers);
-      if(trueDelay <= 0) continue;
-
-      // Determine how many blocks could be transformed in one run
-      val repeats = (1.0 / trueDelay) as int;
-
-      // Show particles only if player nerbly
-      var showParticles = isShowParticles(e.world, portalPos);
-
-      // Repeat
-      var somethingReplaced = false;
-      for i in 0 .. repeats {
-        for j in 0 .. blockChecks {
-          if (spread(
-            e.world,
-            fullPortalId,
-            portalPos,
-            modifiers,
-            showParticles,
-            spreadStateRecipes,
-            spreadWhitelist,
-            spreadBlacklist,
-            spreadWildcards
-          )) {
-            somethingReplaced = true;
-            break;
-          }
-        }
-      }
-      if(somethingReplaced) portalIndexes[fullPortalId] = 1;
-    }
+    tickPortalsToWorld(e.world, targetDimIdStr, dimData, recipeDimId);
   }
 });
+
+function tickPortalsToWorld(world as IWorld, targetDimIdStr as string, dimData as IData, recipeDimId as int) as void {
+  // Get userful maps from recipes
+  val REC = scripts.do.portal_spread.recipes.getRecipes(recipeDimId, targetDimIdStr); if(isNull(REC)) return;
+  val WL = getNumIds('transformable', recipeDimId, targetDimIdStr); if(isNull(WL)) return;
+  val BL = getNumIds('blacklisted', recipeDimId, targetDimIdStr); if(isNull(BL)) return;
+  val WC = getNumIds('wildcarded', recipeDimId, targetDimIdStr); if(isNull(WC)) return;
+  /*
+      ████
+    ██▒▒▒▒██
+    ██▒▒▒▒██
+    ██▒▒▒▒██
+  ░░░░████░░░░
+  */
+  for portalId, portalData in dimData.asMap() {
+    val portalPos = portalIdToPos(portalId);
+    var blockPos = portalPos as IBlockPos;
+
+    // Portal not loaded
+    if (!world.isBlockLoaded(blockPos)) continue;
+
+    val blockState = world.getBlockState(blockPos);
+
+    // Portal is destroyed
+    val fullPortalId = world.dimension~':'~portalId;
+    if (isNull(blockState) || blockState.block.definition.id != "minecraft:portal") {
+      destroyPortal(world, targetDimIdStr, portalId, fullPortalId);
+      notifyPlayers(world, portalPos, 'broken');
+      continue;
+    }
+
+    // Get modifiers
+    val modifiers = getModifiers(world, fullPortalId, portalData, targetDimIdStr, blockPos, blockState, portalPos);
+
+    // Skip if portal shrinked to zero size
+    val maxSpreadIndex = scripts.do.portal_spread.modifiers.getMaxSpreadIndex(modifiers);
+    if(maxSpreadIndex <= 0) continue;
+
+    // Skip generation on slow modifier
+    val trueDelay = scripts.do.portal_spread.modifiers.getTrueDelay(modifiers);
+    if(trueDelay <= 0) continue;
+
+    // Skip generation on slow modifier
+    if (trueDelay >= 1.0 && (world.time % (trueDelay as int)) != 0) continue;
+
+    // Determine how many blocks could be transformed in one run
+    val repeats = (1.0 / trueDelay) as int;
+
+    // Show particles only if player nerbly
+    var showParticles = isShowParticles(world, portalPos);
+
+    val trueLookup = scripts.do.portal_spread.modifiers.getTrueLookup(modifiers);
+    if(trueLookup <= 0) continue;
+
+    // Repeat
+    var somethingReplaced = false;
+    for i in 0 .. repeats {
+      for j in 0 .. trueLookup {
+        val spreadPos = getNexPortalPos(fullPortalId, portalPos, maxSpreadIndex);
+        if (spread(
+          world,
+          spreadPos,
+          showParticles,
+          REC, WL, BL, WC
+        )) {
+          somethingReplaced = true;
+          break;
+        }
+      }
+    }
+    if(somethingReplaced && !Config.debug) portalIndexes[fullPortalId] = 1;
+  }
+}
 
 // Current iteration index for a portal
 // Requre fullPortalID "dim:x:y:z"
 static portalIndexes as int[string] = {} as int[string];
 
-function getNexPortalPos(fullPortalId as string, offset as Position3f) as Position3f {
-  var i = portalIndexes[fullPortalId];
-  val tuple = getNextPoint(isNull(i) ? 1 : i as int);
+function getNexPortalPos(fullPortalId as string, offset as Position3f, maxSpreadIndex as int) as Position3f {
+  var _i = portalIndexes[fullPortalId];
+  val i = (isNull(_i) || _i >= maxSpreadIndex) ? 1 : _i as int;
+  val tuple = getNextPoint(i);
   portalIndexes[fullPortalId] = tuple[0];
   return Position3f.create(tuple[1] + offset.x, tuple[2] + offset.y, tuple[3] + offset.z);
 }
@@ -168,17 +159,13 @@ function destroyPortal(world as IWorld, dimId as string, portalId as string, ful
 // Return true if block converted, false if skipped / not found
 function spread(
   world as IWorld,
-  fullPortalId as string,
-  portalPos as Position3f,
-  modifiers as int[],
+  spreadPos as Position3f,
   showParticles as bool,
   spreadStateRecipes as IBlockState[][IBlockState],
   spreadWhitelist as bool[int],
   spreadBlacklist as bool[int],
   spreadWildcards as bool[int]
 ) as bool {
-  val spreadPos = getNexPortalPos(fullPortalId, portalPos);
-
   var inworldState = world.getBlockState(spreadPos);
   val inworldDefinition = inworldState.block.definition;
   val numId = inworldDefinition.numericalId;

@@ -212,14 +212,14 @@ function melt(input as IIngredient, output as ILiquidStack, exceptions as string
 // 📦 ⤵
 //     📦
 // 💧  ⤴
-function fill(itemInput as IIngredient, fluidInput as ILiquidStack, output as IItemStack, exceptions as string = null) {
+function fill(itemInput as IIngredient, fluidInput as ILiquidStack, output as IItemStack, exceptions as string = null, skip as bool = false) {
   val newAmount1 = min(1000, lF(fluidInput, 1.6d).amount);
   val newAmount2 = min(1000, lF(fluidInput, 1.4d).amount);
-  work(['Casting'],                exceptions, [itemInput], [lF(fluidInput, 1.8d)], [output], null, null, null);
-  work(['DryingBasin'],            exceptions, [itemInput], [fluidInput * newAmount1], [output], null, null, null);
-  work(['MechanicalDryingBasin'],  exceptions, [itemInput], [fluidInput * newAmount2], [output], null, null, null);
-  work(['NCInfuser'],              exceptions, [itemInput], [lF(fluidInput, 1.2d)], [output], null, null, null);
-  work(['Transposer'],             exceptions, [itemInput], [fluidInput], [output], null, null, null);
+  work(['Casting'],                exceptions, [itemInput], [skip ? fluidInput : lF(fluidInput, 1.8d)], [output], null, null, null);
+  work(['DryingBasin'],            exceptions, [itemInput], [skip ? fluidInput : fluidInput * newAmount1], [output], null, null, null);
+  work(['MechanicalDryingBasin'],  exceptions, [itemInput], [skip ? fluidInput : fluidInput * newAmount2], [output], null, null, null);
+  work(['NCInfuser'],              exceptions, [itemInput], [skip ? fluidInput : lF(fluidInput, 1.2d)], [output], null, null, null);
+  work(['Transposer'],             exceptions, [itemInput], [skip ? fluidInput : fluidInput], [output], null, null, null);
 }
 
 // Perfor some magic over item(s) to create new item(s)

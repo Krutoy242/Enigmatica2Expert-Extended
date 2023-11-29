@@ -1,0 +1,75 @@
+@@ -1,74 +0,0 @@
+-/*
+- * Decompiled with CFR 0.152.
+- * 
+- * Could not load the following classes:
+- *  io.github.jodlodi.twilighttweaks.data.recipes.ModRecipeTypes
+- *  io.github.jodlodi.twilighttweaks.data.recipes.UncraftingRecipe
+- *  io.github.jodlodi.twilighttweaks.jei.UncraftingWrapper
+- *  mezz.jei.api.IModPlugin
+- *  mezz.jei.api.IModRegistry
+- *  mezz.jei.api.JEIPlugin
+- *  mezz.jei.api.recipe.IRecipeCategory
+- *  mezz.jei.api.recipe.IRecipeCategoryRegistration
+- *  net.minecraft.item.ItemStack
+- *  net.minecraft.item.crafting.CraftingManager
+- *  net.minecraft.item.crafting.IRecipe
+- *  net.minecraft.item.crafting.ShapedRecipes
+- *  net.minecraft.item.crafting.ShapelessRecipes
+- *  net.minecraftforge.oredict.ShapedOreRecipe
+- *  net.minecraftforge.oredict.ShapelessOreRecipe
+- *  twilightforest.block.TFBlocks
+- *  twilightforest.client.GuiTFGoblinCrafting
+- */
+-package io.github.jodlodi.twilighttweaks.jei;
+-
+-import io.github.jodlodi.twilighttweaks.data.recipes.ModRecipeTypes;
+-import io.github.jodlodi.twilighttweaks.data.recipes.UncraftingRecipe;
+-import io.github.jodlodi.twilighttweaks.jei.UncraftingCategory;
+-import io.github.jodlodi.twilighttweaks.jei.UncraftingWrapper;
+-import java.util.ArrayList;
+-import java.util.List;
+-import mezz.jei.api.IModPlugin;
+-import mezz.jei.api.IModRegistry;
+-import mezz.jei.api.JEIPlugin;
+-import mezz.jei.api.recipe.IRecipeCategory;
+-import mezz.jei.api.recipe.IRecipeCategoryRegistration;
+-import net.minecraft.item.ItemStack;
+-import net.minecraft.item.crafting.CraftingManager;
+-import net.minecraft.item.crafting.IRecipe;
+-import net.minecraft.item.crafting.ShapedRecipes;
+-import net.minecraft.item.crafting.ShapelessRecipes;
+-import net.minecraftforge.oredict.ShapedOreRecipe;
+-import net.minecraftforge.oredict.ShapelessOreRecipe;
+-import twilightforest.block.TFBlocks;
+-import twilightforest.client.GuiTFGoblinCrafting;
+-
+-@JEIPlugin
+-public class UncraftingPlugin
+-implements IModPlugin {
+-    public void registerCategories(IRecipeCategoryRegistration registry) {
+-        registry.addRecipeCategories(new IRecipeCategory[]{new UncraftingCategory(registry.getJeiHelpers().getGuiHelper())});
+-    }
+-
+-    public void register(IModRegistry registry) {
+-        registry.handleRecipes(UncraftingRecipe.class, UncraftingWrapper::new, "jei_uncrafting");
+-        registry.handleRecipes(ShapedOreRecipe.class, UncraftingWrapper::new, "jei_uncrafting");
+-        registry.handleRecipes(ShapedRecipes.class, UncraftingWrapper::new, "jei_uncrafting");
+-        registry.handleRecipes(ShapelessOreRecipe.class, UncraftingWrapper::new, "jei_uncrafting");
+-        registry.handleRecipes(ShapelessRecipes.class, UncraftingWrapper::new, "jei_uncrafting");
+-        ArrayList<IRecipe> craftingRecipes = new ArrayList<IRecipe>();
+-        List uncraftingRecipes = ModRecipeTypes.uncraftingRecipes;
+-        ArrayList replacements = new ArrayList();
+-        uncraftingRecipes.stream().filter(UncraftingRecipe::getReplace).forEach(u -> replacements.add(u.func_77571_b().func_77973_b()));
+-        for (IRecipe r2 : CraftingManager.field_193380_a) {
+-            craftingRecipes.add(r2);
+-        }
+-        craftingRecipes.removeIf(r -> replacements.stream().anyMatch(s -> s.equals(r.func_77571_b().func_77973_b()) || ModRecipeTypes.bannedUncraft.contains(r.func_77571_b().func_77973_b())));
+-        craftingRecipes.addAll(uncraftingRecipes);
+-        craftingRecipes.removeIf(r -> !r.func_194133_a(3, 3) || r.func_192400_c().isEmpty());
+-        registry.addRecipes(craftingRecipes, "jei_uncrafting");
+-        registry.addRecipeCatalyst((Object)new ItemStack(TFBlocks.uncrafting_table), new String[]{"jei_uncrafting"});
+-        registry.addRecipeClickArea(GuiTFGoblinCrafting.class, 34, 33, 27, 20, new String[]{"jei_uncrafting"});
+-        registry.addRecipeClickArea(GuiTFGoblinCrafting.class, 115, 33, 27, 20, new String[]{"minecraft.crafting"});
+-    }
+-}

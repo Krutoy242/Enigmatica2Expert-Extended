@@ -15,15 +15,30 @@
 	dependencies: [
 		"14611430"
 	],
+	or_tasks: true,
 	tasks: [{
 		uid: "e95d989e",
 		type: "item",
+		disable_toast: true,
 		items: [{
 			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "chaotic_metal"
 			}
-		}]
+		}],
+		ignore_nbt: 2b
+	},
+	{
+		uid: "8b18a0d5",
+		type: "item",
+		disable_toast: true,
+		items: [{
+			id: "tconstruct:sharpening_kit",
+			tag: {
+				Material: "red_matter"
+			}
+		}],
+		ignore_nbt: 2b
 	}],
 	rewards: [{
 		uid: "2be8b4de",
