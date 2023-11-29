@@ -13,5 +13,11 @@
 		items: [{
 			item: "minecraft:sand 1 1"
 		}]
+	}],
+	rewards: [{
+		uid: "d372e674",
+		type: "item",
+		item: "exnihilocreatio:block_waterwheel",
+		count: 4
 	}]
 }

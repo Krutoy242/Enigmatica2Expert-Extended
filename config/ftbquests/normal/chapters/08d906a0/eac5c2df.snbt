@@ -6,10 +6,16 @@
 	],
 	optional: true,
 	tasks: [{
-		uid: "67b5e9d2",
+		uid: "739fa258",
 		type: "item",
 		items: [{
-			item: "forestry:resources"
+			item: "forestry:apatite"
 		}]
+	}],
+	rewards: [{
+		uid: "69bc241f",
+		type: "item",
+		item: "forestry:resources",
+		count: 8
 	}]
 }

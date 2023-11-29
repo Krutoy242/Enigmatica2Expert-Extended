@@ -11,6 +11,13 @@
 		type: "item",
 		items: [{
 			item: "exnihilocreatio:block_dust"
-		}]
+		}],
+		count: 8L
+	}],
+	rewards: [{
+		uid: "f3f233c9",
+		type: "item",
+		item: "rustic:lantern_wood",
+		count: 32
 	}]
 }

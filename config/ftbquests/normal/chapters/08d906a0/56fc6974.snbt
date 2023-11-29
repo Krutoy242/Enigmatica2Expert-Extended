@@ -11,5 +11,10 @@
 		items: [{
 			item: "minecraft:slime"
 		}]
+	}],
+	rewards: [{
+		uid: "6f0a4ea4",
+		type: "xp_levels",
+		xp_levels: 2
 	}]
 }

@@ -11,5 +11,10 @@
 		items: [{
 			item: "flopper:flopper"
 		}]
+	}],
+	rewards: [{
+		uid: "1fc5989c",
+		type: "xp_levels",
+		xp_levels: 1
 	}]
 }

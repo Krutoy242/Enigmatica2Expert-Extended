@@ -11,5 +11,15 @@
 		items: [{
 			item: "exnihilocreatio:item_mesh 1 1"
 		}]
+	}],
+	rewards: [{
+		uid: "5eb284a4",
+		type: "item",
+		item: {
+			id: "minecraft:potion",
+			tag: {
+				Potion: "quark:long_haste"
+			}
+		}
 	}]
 }

@@ -11,6 +11,12 @@
 		type: "item",
 		items: [{
 			item: "minecraft:clay"
-		}]
+		}],
+		count: 2L
+	}],
+	rewards: [{
+		uid: "1b7d74c6",
+		type: "xp_levels",
+		xp_levels: 1
 	}]
 }

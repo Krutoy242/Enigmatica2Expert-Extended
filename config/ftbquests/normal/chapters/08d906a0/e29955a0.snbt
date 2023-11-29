@@ -27,5 +27,10 @@
 		}],
 		ignore_damage: true,
 		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "507578b7",
+		type: "item",
+		item: "tconstruct:materials 1 14"
 	}]
 }

@@ -11,5 +11,11 @@
 		items: [{
 			item: "biomesoplenty:white_sand"
 		}]
+	}],
+	rewards: [{
+		uid: "6a43f1a7",
+		type: "item",
+		item: "actuallyadditions:item_canola_seed",
+		count: 2
 	}]
 }

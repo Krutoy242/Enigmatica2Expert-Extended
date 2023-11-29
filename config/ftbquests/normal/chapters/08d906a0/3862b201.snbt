@@ -13,8 +13,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "f7cfec79",
+		uid: "6cfd1ad4",
 		type: "item",
-		item: "farmingforblockheads:market"
+		item: "harvestcraft:queenbeeitem"
 	}]
 }

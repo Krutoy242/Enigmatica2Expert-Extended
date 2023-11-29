@@ -10,5 +10,11 @@
 		items: [{
 			item: "rustic:sapling 1 1"
 		}]
+	}],
+	rewards: [{
+		uid: "d82f5c56",
+		type: "item",
+		item: "ic2:scaffold",
+		count: 64
 	}]
 }

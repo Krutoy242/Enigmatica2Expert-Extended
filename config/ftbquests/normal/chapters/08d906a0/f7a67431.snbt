@@ -11,5 +11,11 @@
 		items: [{
 			item: "minecraft:quartz_ore"
 		}]
+	}],
+	rewards: [{
+		uid: "22b5b331",
+		type: "item",
+		item: "minecraft:quartz_ore",
+		count: 8
 	}]
 }

@@ -8,7 +8,17 @@
 	],
 	optional: true,
 	tasks: [{
-		uid: "89010ab8",
-		type: "checkmark"
+		uid: "ae3755ba",
+		type: "item",
+		items: [{
+			item: "forestry:wood_pile"
+		}],
+		count: 8L
+	}],
+	rewards: [{
+		uid: "3887a9c4",
+		type: "item",
+		item: "forestry:loam",
+		count: 64
 	}]
 }

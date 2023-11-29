@@ -6,10 +6,16 @@
 	],
 	optional: true,
 	tasks: [{
-		uid: "12e32f0c",
+		uid: "b9770d3b",
 		type: "item",
 		items: [{
-			item: "minecraft:lapis_ore"
+			item: "minecraft:dye 1 4"
 		}]
+	}],
+	rewards: [{
+		uid: "bef87977",
+		type: "item",
+		item: "minecraft:lapis_ore",
+		count: 8
 	}]
 }

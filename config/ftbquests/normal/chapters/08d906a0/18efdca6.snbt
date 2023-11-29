@@ -1,0 +1,21 @@
+{
+	x: 16.5d,
+	y: 3.0d,
+	dependencies: [
+		"59950f02"
+	],
+	optional: true,
+	tasks: [{
+		uid: "0ea5932c",
+		type: "item",
+		items: [{
+			item: "biomesoplenty:sapling_1 1 4"
+		}]
+	}],
+	rewards: [{
+		uid: "c7321cc0",
+		type: "item",
+		item: "biomesoplenty:sapling_1 1 4",
+		count: 3
+	}]
+}

@@ -35,5 +35,16 @@
 			item: "ic2:refractory_bricks"
 		}],
 		count: 24L
+	}],
+	rewards: [{
+		uid: "a5e75efd",
+		type: "item",
+		item: {
+			id: "mekanism:machineblock2",
+			Damage: 11s,
+			tag: {
+				tier: 0
+			}
+		}
 	}]
 }

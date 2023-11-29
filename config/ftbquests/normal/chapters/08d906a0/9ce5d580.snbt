@@ -11,5 +11,11 @@
 		items: [{
 			item: "tconstruct:dried_clay"
 		}]
+	}],
+	rewards: [{
+		uid: "30d9265c",
+		type: "item",
+		item: "tconstruct:dried_clay",
+		count: 8
 	}]
 }

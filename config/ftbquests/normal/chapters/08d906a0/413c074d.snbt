@@ -11,5 +11,11 @@
 		items: [{
 			item: "immersiveengineering:ore 1 5"
 		}]
+	}],
+	rewards: [{
+		uid: "82aec009",
+		type: "item",
+		item: "immersiveengineering:ore 1 5",
+		count: 8
 	}]
 }

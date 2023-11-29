@@ -11,5 +11,16 @@
 		items: [{
 			item: "exnihilocreatio:item_material 1 2"
 		}]
+	}],
+	rewards: [{
+		uid: "7969a2e1",
+		type: "item",
+		item: {
+			id: "storagedrawers:basicdrawers",
+			tag: {
+				material: "oak"
+			}
+		},
+		count: 2
 	}]
 }

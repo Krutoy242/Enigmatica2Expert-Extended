@@ -10,6 +10,13 @@
 		type: "item",
 		items: [{
 			item: "minecraft:leaves"
-		}]
+		}],
+		count: 32L
+	}],
+	rewards: [{
+		uid: "b3077c1b",
+		type: "item",
+		item: "tconstruct:wooden_hopper",
+		count: 2
 	}]
 }

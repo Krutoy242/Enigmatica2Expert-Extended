@@ -11,5 +11,11 @@
 		items: [{
 			item: "exnihilocreatio:block_endstone_crushed"
 		}]
+	}],
+	rewards: [{
+		uid: "d7bccf06",
+		type: "item",
+		item: "minecraft:glowstone",
+		count: 4
 	}]
 }

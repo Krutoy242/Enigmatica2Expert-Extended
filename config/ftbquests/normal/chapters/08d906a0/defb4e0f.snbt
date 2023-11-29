@@ -11,5 +11,11 @@
 		items: [{
 			item: "exnihilocreatio:block_barrel0"
 		}]
+	}],
+	rewards: [{
+		uid: "5db1a99f",
+		type: "item",
+		item: "exnihilocreatio:block_barrel0",
+		count: 2
 	}]
 }

@@ -11,5 +11,10 @@
 		items: [{
 			item: "integrateddynamics:squeezer"
 		}]
+	}],
+	rewards: [{
+		uid: "05df0fa9",
+		type: "item",
+		item: "tconstruct:seared_tank"
 	}]
 }

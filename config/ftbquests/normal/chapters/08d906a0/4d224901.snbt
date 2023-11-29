@@ -11,5 +11,11 @@
 		items: [{
 			item: "netherendingores:ore_nether_modded_1 1 8"
 		}]
+	}],
+	rewards: [{
+		uid: "2fee4ffe",
+		type: "item",
+		item: "netherendingores:ore_nether_modded_1 1 8",
+		count: 8
 	}]
 }

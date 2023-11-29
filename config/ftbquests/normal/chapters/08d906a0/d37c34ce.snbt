@@ -11,5 +11,10 @@
 		items: [{
 			item: "minecraft:obsidian"
 		}]
+	}],
+	rewards: [{
+		uid: "36698b2c",
+		type: "item",
+		item: "minecraft:flint_and_steel"
 	}]
 }

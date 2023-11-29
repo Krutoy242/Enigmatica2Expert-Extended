@@ -9,5 +9,11 @@
 		uid: "0ee02352",
 		type: "fluid",
 		fluid: "witchwater"
+	}],
+	rewards: [{
+		uid: "09a4958d",
+		type: "item",
+		item: "randomthings:pitcherplant",
+		count: 2
 	}]
 }

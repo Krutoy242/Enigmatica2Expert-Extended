@@ -12,5 +12,10 @@
 		items: [{
 			item: "minecraft:gold_ingot"
 		}]
+	}],
+	rewards: [{
+		uid: "ea3e6819",
+		type: "xp_levels",
+		xp_levels: 8
 	}]
 }

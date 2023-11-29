@@ -9,5 +9,17 @@
 		uid: "1e32076d",
 		type: "fluid",
 		fluid: "stone"
+	}],
+	rewards: [{
+		uid: "57f22c63",
+		type: "item",
+		item: {
+			id: "tconstruct:seared_tank",
+			Damage: 1s,
+			tag: {
+				FluidName: "stone",
+				Amount: 4000
+			}
+		}
 	}]
 }

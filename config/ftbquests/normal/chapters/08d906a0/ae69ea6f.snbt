@@ -12,5 +12,10 @@
 		items: [{
 			item: "enderio:block_infinity"
 		}]
+	}],
+	rewards: [{
+		uid: "52255dff",
+		type: "item",
+		item: "enderio:block_infinity 1 1"
 	}]
 }

@@ -20,5 +20,11 @@
 		items: [{
 			item: "biomesoplenty:ash"
 		}]
+	}],
+	rewards: [{
+		uid: "90842170",
+		type: "item",
+		item: "minecraft:coal",
+		count: 32
 	}]
 }

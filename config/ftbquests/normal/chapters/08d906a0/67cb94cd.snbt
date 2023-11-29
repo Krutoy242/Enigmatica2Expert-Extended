@@ -12,5 +12,11 @@
 		items: [{
 			item: "minecraft:iron_ore"
 		}]
+	}],
+	rewards: [{
+		uid: "412d7a1b",
+		type: "item",
+		item: "minecraft:iron_ore",
+		count: 8
 	}]
 }

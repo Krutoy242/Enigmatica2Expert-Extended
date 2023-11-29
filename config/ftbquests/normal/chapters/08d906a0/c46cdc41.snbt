@@ -11,5 +11,11 @@
 		items: [{
 			item: "mekanism:oreblock"
 		}]
+	}],
+	rewards: [{
+		uid: "64da8840",
+		type: "item",
+		item: "mekanism:oreblock",
+		count: 8
 	}]
 }

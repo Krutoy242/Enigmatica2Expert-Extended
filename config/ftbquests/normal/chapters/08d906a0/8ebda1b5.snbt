@@ -11,5 +11,11 @@
 		items: [{
 			item: "thermalfoundation:ore 1 1"
 		}]
+	}],
+	rewards: [{
+		uid: "c0925a58",
+		type: "item",
+		item: "thermalfoundation:ore 1 1",
+		count: 8
 	}]
 }

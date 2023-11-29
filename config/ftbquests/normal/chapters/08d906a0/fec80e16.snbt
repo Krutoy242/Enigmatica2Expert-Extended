@@ -10,6 +10,13 @@
 		type: "item",
 		items: [{
 			item: "rustic:ironberries"
-		}]
+		}],
+		count: 8L
+	}],
+	rewards: [{
+		uid: "d2287433",
+		type: "item",
+		item: "minecraft:fire_charge",
+		count: 2
 	}]
 }

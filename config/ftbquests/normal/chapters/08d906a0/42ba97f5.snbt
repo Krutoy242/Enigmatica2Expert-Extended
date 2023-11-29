@@ -10,6 +10,12 @@
 		type: "item",
 		items: [{
 			item: "endreborn:item_lormyte_crystal"
-		}]
+		}],
+		count: 9L
+	}],
+	rewards: [{
+		uid: "ca2ee428",
+		type: "item",
+		item: "mctsmelteryio:upgrade 1 5"
 	}]
 }

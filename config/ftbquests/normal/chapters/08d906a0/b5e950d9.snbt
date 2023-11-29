@@ -1,5 +1,4 @@
 {
-	title: "{q.skyblock.wood.name}",
 	icon: "minecraft:log",
 	x: 3.0d,
 	y: 0.0d,
@@ -8,7 +7,17 @@
 	],
 	optional: true,
 	tasks: [{
-		uid: "2e4d8e45",
-		type: "checkmark"
+		uid: "1d818605",
+		type: "item",
+		items: [{
+			item: "minecraft:planks"
+		}],
+		count: 32L
+	}],
+	rewards: [{
+		uid: "8ca49ad7",
+		type: "item",
+		item: "minecraft:apple",
+		count: 16
 	}]
 }

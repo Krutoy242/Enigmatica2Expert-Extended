@@ -10,6 +10,12 @@
 		type: "item",
 		items: [{
 			item: "exnihilocreatio:item_ore_iron"
-		}]
+		}],
+		count: 3L
+	}],
+	rewards: [{
+		uid: "04214422",
+		type: "item",
+		item: "tinkersaddons:modifier_item 1 1"
 	}]
 }

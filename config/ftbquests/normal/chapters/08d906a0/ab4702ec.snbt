@@ -12,5 +12,11 @@
 		items: [{
 			item: "astralsorcery:blockcustomore"
 		}]
+	}],
+	rewards: [{
+		uid: "7055591c",
+		type: "item",
+		item: "mysticalagriculture:rock_crystal_essence",
+		count: 16
 	}]
 }

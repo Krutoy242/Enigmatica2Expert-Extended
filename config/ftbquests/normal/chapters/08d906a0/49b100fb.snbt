@@ -19,5 +19,11 @@
 				}
 			}
 		}]
+	}],
+	rewards: [{
+		uid: "89504a1c",
+		type: "item",
+		item: "tconstruct:edible 1 11",
+		count: 8
 	}]
 }

@@ -11,5 +11,11 @@
 		items: [{
 			item: "astralsorcery:itemcraftingcomponent 1 1"
 		}]
+	}],
+	rewards: [{
+		uid: "3b7f3d66",
+		type: "item",
+		item: "mysticalagriculture:starmetal_essence",
+		count: 8
 	}]
 }

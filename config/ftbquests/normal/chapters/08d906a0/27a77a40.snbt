@@ -11,27 +11,21 @@
 		type: "item",
 		items: [{
 			item: "minecraft:dirt 1 1"
-		}]
-	},
-	{
-		uid: "c0ae6cc9",
-		type: "item",
-		items: [{
+		},
+		{
 			item: "biomesoplenty:dirt 1 8"
-		}]
-	},
-	{
-		uid: "c75f83f7",
-		type: "item",
-		items: [{
+		},
+		{
+			item: "biomesoplenty:dirt 1 10"
+		},
+		{
 			item: "biomesoplenty:dirt 1 9"
 		}]
-	},
-	{
-		uid: "34be6205",
+	}],
+	rewards: [{
+		uid: "f28b1d34",
 		type: "item",
-		items: [{
-			item: "biomesoplenty:dirt 1 10"
-		}]
+		item: "advancedrocketry:thermitetorch",
+		count: 32
 	}]
 }

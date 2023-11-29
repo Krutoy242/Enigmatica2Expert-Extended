@@ -7,7 +7,16 @@
 	],
 	optional: true,
 	tasks: [{
-		uid: "05377a4e",
-		type: "checkmark"
+		uid: "08938d98",
+		type: "item",
+		items: [{
+			item: "tconstruct:casting 1 1"
+		}]
+	}],
+	rewards: [{
+		uid: "f8e15c24",
+		type: "item",
+		item: "tconstruct:seared_glass",
+		count: 16
 	}]
 }

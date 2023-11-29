@@ -9,5 +9,11 @@
 		uid: "2d37ddeb",
 		type: "fluid",
 		fluid: "ic2creosote"
+	}],
+	rewards: [{
+		uid: "9e6f2ebb",
+		type: "item",
+		item: "minecraft:dye 1 15",
+		count: 64
 	}]
 }

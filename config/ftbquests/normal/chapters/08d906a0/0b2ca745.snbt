@@ -9,7 +9,13 @@
 		uid: "19c8bf03",
 		type: "item",
 		items: [{
-			item: "minecraft:redstone_ore"
+			item: "minecraft:redstone"
 		}]
+	}],
+	rewards: [{
+		uid: "fe42a331",
+		type: "item",
+		item: "minecraft:redstone_ore",
+		count: 8
 	}]
 }

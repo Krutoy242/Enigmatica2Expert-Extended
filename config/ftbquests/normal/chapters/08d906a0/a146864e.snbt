@@ -12,5 +12,11 @@
 		items: [{
 			item: "randomthings:igniter"
 		}]
+	}],
+	rewards: [{
+		uid: "07a5e4ed",
+		type: "item",
+		item: "randomthings:igniter",
+		count: 2
 	}]
 }

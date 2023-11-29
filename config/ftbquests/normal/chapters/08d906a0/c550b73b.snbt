@@ -11,5 +11,18 @@
 		items: [{
 			item: "exnihilocreatio:item_mesh 1 2"
 		}]
+	}],
+	rewards: [{
+		uid: "a37e10c9",
+		type: "item",
+		item: {
+			id: "minecraft:enchanted_book",
+			tag: {
+				StoredEnchantments: [{
+					id: 39,
+					lvl: 5s
+				}]
+			}
+		}
 	}]
 }

@@ -11,6 +11,14 @@
 		type: "item",
 		items: [{
 			item: "minecraft:dirt"
-		}]
+		}],
+		count: 8L,
+		consume_items: false
+	}],
+	rewards: [{
+		uid: "27da3d49",
+		type: "item",
+		item: "minecraft:dirt",
+		count: 32
 	}]
 }

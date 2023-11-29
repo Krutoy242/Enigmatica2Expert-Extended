@@ -11,6 +11,13 @@
 		type: "item",
 		items: [{
 			item: "exnihilocreatio:item_pebble"
-		}]
+		}],
+		count: 4L
+	}],
+	rewards: [{
+		uid: "e2d6fa17",
+		type: "item",
+		item: "minecraft:cobblestone",
+		count: 8
 	}]
 }

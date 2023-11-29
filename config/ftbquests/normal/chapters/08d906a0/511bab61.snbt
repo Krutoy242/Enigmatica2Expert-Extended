@@ -15,6 +15,7 @@
 	rewards: [{
 		uid: "52136591",
 		type: "item",
-		item: "endreborn:item_end_essence"
+		item: "endreborn:item_end_essence",
+		count: 2
 	}]
 }
