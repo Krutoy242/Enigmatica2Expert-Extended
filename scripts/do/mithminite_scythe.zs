@@ -12,6 +12,8 @@ import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.block.IBlock;
+import crafttweaker.block.IBlockState;
+import crafttweaker.world.IBlockAccess;
 import crafttweaker.util.Math;
 import crafttweaker.world.IFacing;
 import crafttweaker.entity.IEntityEquipmentSlot;
@@ -25,6 +27,67 @@ import crafttweaker.entity.AttributeModifier;
 import mods.randomtweaker.botania.IManaItemHandler;
 import crafttweaker.liquid.ILiquidDefinition;
 import crafttweaker.entity.IEntityThrowable;
+
+/*
+"aer"           : C Tornado, pulls nearby enemies (motion)
+"alienis"       : E Random teleport
+"alkimia"       : E Random potion
+"amogus"        : P Scythe walking trace
+"aqua"          : S Floowing water
+"auram"         : E Gives vis to aura
+"aversio"       : E Doubles scythe dmg
+"bestia"        : S Spawns webs and mind spider
+"caeles"        : O Gives 1000 astral exp
+"cognitio"      : O Gives random amount of exp
+"desiderium"    : E Disarm entity
+"draco"         : E Ender dragon FIRE Ball
+"exanimis"      : E Poison effect
+"exitium"       : O Boom
+"fabrico"       : O Pills recipe
+"fluctus"       : C Wave knockback
+"gelum"         : E Frost
+"herba"         : E Potato drip (Yeah, it's useless i'll add something to it later)
+"humanus"       : E Instant zombie villager cure
+"ignis"         : E Sets on fire
+"imperium"      : E Stuns entity (only works on endermans - prevent teleportation)
+"infernum"      : E Vulnerable to fire and fire trace
+"instrumentum"  : O Repair player armor and offhand
+"lux"           : O Place spectrall illuminator
+"machina"       : O Buff golem
+"mana"          : P Star projectile
+"metallum"      : S Iron cage
+"mortuus"       : E Wither effect
+"motus"         : O Swap positions
+"mythus"        : E Petrifies entity
+"ordo"          : O Removes player warp (exept PERM)
+"perditio"      : O Gives player warp (exept PERM)
+"permutatio"    : O Deflects enemy projectiles
+"potentia"      : E Lighting bolt
+"praecantatio"  : E Add bonus damage based on player knowledge
+"praemunio"     : E Scythe damage ignores armor
+"rattus"        : E Nearby entity fight each other
+"sanguis"       : E Life steal
+"sensus"        : P Scythe seek for other target after hit
+"sonus"         : P Scythe split and attack other targets
+"spiritus"      : E Haunted potion effect, entity gets random motion effects
+"tenebrae"      : E Blinds target
+"terra"         : S Creates quicksand under target if it is dirt/grass/sand
+"vacuos"        : C Void hole, Pulls nearby enemies (tp)
+"ventus"        : C Launches target
+"vinculum"      : E Traps entity in place
+"visum"         : E Gives glowing to nearby entities
+"victus"        : O Breed animals
+"volatus"       : E Levitation effect
+"vitium"        : E Bonus damage (x5 mult) if there is flux in chunk
+"vitreus"       : O Crystallize entity if have bellow hp below scythe damage
+
+Additional types legend:
+C - controll type
+E - effect type
+O - other
+P - projectile type
+S - spawn type(creates blocks/entities)
+*/
 
 
 function entityEyeHeight(entity as IEntity) as double{
@@ -375,7 +438,7 @@ function manaCreateStar(scythe as IEntity, target as IEntityLivingBase) as void 
 }
 
 function metallumPrison(target as IEntityLivingBase) as void{
-    val ancientBar = <item:thaumicaugmentation:bars>.asBlock();
+    val ancientBar = <item:thaumicaugmentation:bars>.asBlock().definition.defaultState;
     val x = target.getX()>0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
     val y = target.getY() as float;
     val z = target.getZ()>0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
@@ -386,7 +449,7 @@ function metallumPrison(target as IEntityLivingBase) as void{
                     val pos = crafttweaker.util.Position3f.create(x - 2 + a, y - 1 + b, z - 2 + c) as IBlockPos;
                     val block as IBlock = target.world.getBlock(pos);
                     if (!isNull(block) 
-                    && block.definition.id=="minecraft:air") target.world.setBlockState(ancientBar.definition.defaultState, pos);
+                    && target.world.getBlockState(pos).isReplaceable(target.world, pos)) target.world.setBlockState(ancientBar, pos);
                 }
             }
         }
@@ -459,6 +522,7 @@ function praecantatioBonusDamage(target as IEntityLivingBase, player as IPlayer)
     || isNull(player.nbt.ForgeCaps.memberGet("thaumcraft:knowledge").knowledge)) return bonus;
 
     val playerData = player.nbt.ForgeCaps.memberGet("thaumcraft:knowledge").knowledge;
+    if (playerData.length==0) return 0.0;
     for i in 0 to playerData.length{
         bonus+=playerData[i].amount;
     }
@@ -511,7 +575,7 @@ function sensusTarget(scythe as IEntity, target as IEntityLivingBase) as void{
             || !entity instanceof IEntityLiving
             || !entity.isAlive()
             || entity.id==target.id
-            || target.getDistanceSqToEntity(entity)>50) continue;
+            || target.getDistanceSqToEntity(entity)>20) continue;
 
             val v = [entity.x-scythe.x, entityEyeHeight(entity)-scythe.y, entity.z-scythe.z] as double[];
             val norm = Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2])/3.0;
@@ -806,7 +870,8 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     || isNull(rayTrace)
     || !rayTrace.isEntity
     || isNull(rayTrace.entity)
-    || !(rayTrace.entity instanceof IEntityLivingBase)
+    || !(rayTrace.entity instanceof IEntityLiving)
+    || isNull(rayTrace.entity.definition)
     ) return;
 
     #PERMUTATIO EFFECT
