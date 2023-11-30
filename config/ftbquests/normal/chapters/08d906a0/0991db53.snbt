@@ -12,7 +12,7 @@
 		items: [{
 			item: "minecraft:dirt"
 		}],
-		count: 8L,
+		count: 16L,
 		consume_items: false
 	}],
 	rewards: [{

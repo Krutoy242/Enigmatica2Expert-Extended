@@ -13,13 +13,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "fe7357ff",
-		type: "item",
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "common"
-			}
-		}
+		uid: "aebe71ed",
+		type: "xp_levels",
+		xp_levels: 10
 	}]
 }
