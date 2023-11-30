@@ -540,3 +540,26 @@ item.contenttweaker.steel_mould.name=超轻不锈钢粗模
 item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模
 item.contenttweaker.sic_mould.name=超轻矩阵合金粗模
 # --------------------------------------
+# Enchantment Descriptions
+# --------------------------------------
+enchantment.endercore.xpboost.desc=增加经验掉落
+enchantment.enderio.repellent.desc=将攻击中的怪物传送到远处
+enchantment.enderio.shimmer.desc=使工具发光
+enchantment.enderio.soulbound.desc=防止物品在死亡时丢失
+enchantment.enderio.witherarrow.desc=击中时施加凋零效果
+enchantment.enderio.witherweapon.desc=击中时施加凋零效果
+enchantment.endreborn.ender_core.desc=消耗末影珍珠在受到伤害时传送玩家
+enchantment.endreborn.ender_killer.desc=对末影人造成额外伤害
+enchantment.endreborn.shulker_core.desc=命中时施加飘浮效果
+enchantment.exnihilocreatio.sieve_efficiency.desc=提高筛子速度
+enchantment.exnihilocreatio.sieve_fortune.desc=筛子制造更多物品
+enchantment.exnihilocreatio.sieve_luck_of_the_sea.desc=筛子产生鱼
+enchantment.extrautils2.xu.bladerang.desc=增加回旋镖的伤害
+enchantment.extrautils2.xu.boomereaperang.desc=摧毁花朵
+enchantment.extrautils2.xu.burnerang.desc=点燃敌怪
+enchantment.extrautils2.xu.kaboomerang.desc=摧毁积木
+enchantment.extrautils2.xu.zoomerang.desc=提高回旋镖速度
+enchantment.draconicevolution.enchant_reaper.desc=生物有机会掉落生物之魂
+enchantment.openblocks.explosive.desc=遭受攻击时会产生爆炸
+enchantment.openblocks.flim_flam.desc=在附近随机引发负面效果
+enchantment.openblocks.last_stand.desc=使用经验防止死亡

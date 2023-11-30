@@ -540,3 +540,26 @@ item.contenttweaker.steel_mould.name=Ultra Light Edelstahl Mould
 item.contenttweaker.alloy_mould.name=Ultra Light Edle Elektronlegierung Mould
 item.contenttweaker.sic_mould.name=Ultra Light Matrix-Legierung Mould
 # --------------------------------------
+# Enchantment Descriptions
+# --------------------------------------
+enchantment.endercore.xpboost.desc=Increases XP drops
+enchantment.enderio.repellent.desc=Teleports attacking mobs away
+enchantment.enderio.shimmer.desc=Makes the tool glow
+enchantment.enderio.soulbound.desc=Prevents item from being lost on death
+enchantment.enderio.witherarrow.desc=Inflicts Wither on hit
+enchantment.enderio.witherweapon.desc=Inflicts Wither on hit
+enchantment.endreborn.ender_core.desc=Consumes Ender Pearls to teleport Player when damaged
+enchantment.endreborn.ender_killer.desc=Deals increased damage to Endermen
+enchantment.endreborn.shulker_core.desc=Inflicts Levitation on hit
+enchantment.exnihilocreatio.sieve_efficiency.desc=Increases speed of the sieve
+enchantment.exnihilocreatio.sieve_fortune.desc=Sieves drop more items
+enchantment.exnihilocreatio.sieve_luck_of_the_sea.desc=Sieves create fish
+enchantment.extrautils2.xu.bladerang.desc=Increases the damage of the boomerang
+enchantment.extrautils2.xu.boomereaperang.desc=Destroys flowers
+enchantment.extrautils2.xu.burnerang.desc=Sets mobs on fire
+enchantment.extrautils2.xu.kaboomerang.desc=Destroys blocks
+enchantment.extrautils2.xu.zoomerang.desc=Speeds up the boomerang
+enchantment.draconicevolution.enchant_reaper.desc=Weapon randomly drops mob souls when killing mobs
+enchantment.openblocks.explosive.desc=Creates explosions when attacked
+enchantment.openblocks.flim_flam.desc=Randomly causes negative effects nearby
+enchantment.openblocks.last_stand.desc=Uses XP to prevent death

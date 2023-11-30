@@ -2740,3 +2740,27 @@ tile.xnet.antenna_dish.name=Антенная тарелка
 tile.xnet.redstone_proxy_upd.name=Redstone Proxy (обновление)
 tile.xnet.wireless_router.name=Беспроводной маршрутизатор
 item.zerocore:debugtool.name=Инструмент отладки
+# --------------------------------------
+# Enchantment Descriptions
+# --------------------------------------
+enchantment.endercore.xpboost.desc=Увеличивает выпадение опыта
+enchantment.enderio.repellent.desc=Телепортирует атакующих монстров в сторону
+enchantment.enderio.shimmer.desc=Заставляет инструмент светиться
+enchantment.enderio.soulbound.desc=Предотвращает потерю предмета при смерти
+enchantment.enderio.witherarrow.desc=Наносит эффект истощения при ударе
+enchantment.enderio.witherweapon.desc=Наносит эффект истощения при ударе
+enchantment.endreborn.ender_core.desc=Поглощает Жемчуги Края для перемещения игрока при получении урона
+enchantment.endreborn.ender_killer.desc=Наносит увеличенный урон Эндерменам
+enchantment.endreborn.shulker_core.desc=Налагает Левитацию при ударе
+enchantment.exnihilocreatio.sieve_efficiency.desc=Увеличивает скорость сита
+enchantment.exnihilocreatio.sieve_fortune.desc=Сита создают больше предметов
+enchantment.exnihilocreatio.sieve_luck_of_the_sea.desc=Сито создает рыбу
+enchantment.extrautils2.xu.bladerang.desc=Увеличивает урон бумеранга
+enchantment.extrautils2.xu.boomereaperang.desc=Уничтожает цветы
+enchantment.extrautils2.xu.burnerang.desc=Поджигает мобов
+enchantment.extrautils2.xu.kaboomerang.desc=Разрушает блоки
+enchantment.extrautils2.xu.zoomerang.desc=Увеличивает скорость бумеранга
+enchantment.draconicevolution.enchant_reaper.desc=У мобов есть шанс выпадения Душ Мобов
+enchantment.openblocks.explosive.desc=Создаёт взрывы при атаке
+enchantment.openblocks.flim_flam.desc=Случайным образом вызывает отрицательные эффекты поблизости
+enchantment.openblocks.last_stand.desc=Использует опыт для предотвращения смерти
