@@ -1518,7 +1518,7 @@ mods.tconstruct.Casting.addBasinRecipe(<thaumadditions:mithminite_block>, null, 
 <thaumadditions:mithminite_scythe>.removeTooltip("12 Melee Damage");
 <thaumadditions:mithminite_scythe>.removeTooltip("14 Ranged Damage");
 <thaumadditions:mithminite_scythe>.removeTooltip(".*-.*");
-<thaumadditions:mithminite_scythe>.removeTooltip(".Shimmer.*");
+//<thaumadditions:mithminite_scythe>.removeTooltip(".Shimmer.*"); //In case if someone would want to disable Shimmer enchant tooltip, uncommend line on the left
 
 static loreColor as string[string] = {
   "aer"           :   "§eaer§r",
@@ -1690,7 +1690,7 @@ recipes.addShapeless("REMOVEaugmentMithminiteScythe",<thaumadditions:seal_symbol
 ]
 ,function(out, ins, cInfo){
   val scythe = ins.scythe;
-  if(isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)){
+  if(isNull(scythe) || isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)){
     return null;
   }
   val lore = scythe.tag.display.Lore;
