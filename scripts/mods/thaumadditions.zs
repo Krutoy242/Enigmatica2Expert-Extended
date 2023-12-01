@@ -1517,6 +1517,8 @@ mods.tconstruct.Casting.addBasinRecipe(<thaumadditions:mithminite_block>, null, 
 #Mithminite scythe augmentation
 <thaumadditions:mithminite_scythe>.removeTooltip("12 Melee Damage");
 <thaumadditions:mithminite_scythe>.removeTooltip("14 Ranged Damage");
+<thaumadditions:mithminite_scythe>.removeTooltip(".*-.*");
+<thaumadditions:mithminite_scythe>.removeTooltip(".Shimmer.*");
 
 static loreColor as string[string] = {
   "aer"           :   "§eaer§r",
@@ -1626,6 +1628,39 @@ static loreUnColor as string[string] = {
   "§bvitreus§r"     : "vitreus",
 } as string[string];
 
+static rgbAspect as int[][string] = {
+  "0"   : [0,     0,    0   ],// BLACK
+  "1"   : [0,     0,    170 ],// DARKBLUE
+  "2"   : [0,     170,  0   ],// DARKGREEN
+  "3"   : [0,     170,  170 ],// DARKAQUA 
+  "4"   : [170,   0,    0   ],// DARKRED
+  "5"   : [170,   0,    170 ],// DARKPURPLE
+  "6"   : [255,   170,  0   ],// GOLD
+  "7"   : [170,   170,  170 ],// GRAY
+  "8"   : [85,    85,   85  ],// DARKGRAY
+  "9"   : [85,    85,   255 ],// BLUE
+  "a"   : [85,    255,  85  ],// GREEN
+  "b"   : [85,    255,  255 ],// AQUA
+  "c"   : [255,   85,   85  ],// RED
+  "d"   : [255,   85,   255 ],// LIGHTPURPLE
+  "e"   : [255,   255,  85  ],// YELLOW
+  "f"   : [255,   255,  255 ],// WHITE
+} as int[][string];
+
+function calcColor(lore as IData) as int{
+  val l = lore.length;
+  var r = 0;
+  var g = 0;
+  var b = 0;
+  for i in 0 to l - 1 {
+    val rgb = rgbAspect[lore[i][1]];
+    r += rgb[0];
+    g += rgb[1];
+    b += rgb[2];
+  }
+  return r/l *65536 + g/l * 256 + b/l;
+}
+
 recipes.addShapeless("augmentMithminiteScythe",<thaumadditions:mithminite_scythe>,
 [<thaumadditions:mithminite_scythe>.marked("scythe"),<thaumadditions:seal_symbol>.marked("seal")],
 function(out, ins, cInfo){
@@ -1634,7 +1669,7 @@ function(out, ins, cInfo){
 
   if(lorem.length>7||lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
-  return scythe.withTag(scythe.tag.deepUpdate({display:{Lore: [loreColor[ins.seal.tag.Aspect]]}},APPEND));
+  return scythe.withTag(scythe.tag.deepUpdate({display:{Lore: [loreColor[ins.seal.tag.Aspect]]}},APPEND).deepUpdate({ench: [{lvl: 1 as short, id: 30 as short}]},{ench: MERGE}) + {enchantmentColor : calcColor(lorem + [loreColor[ins.seal.tag.Aspect]])});
 }, 
 null);
 
@@ -1642,11 +1677,14 @@ null);
 
 recipes.addShapeless("REMOVEaugmentMithminiteScythe",<thaumadditions:seal_symbol>,
 [ <thaumadditions:mithminite_scythe>
-  .transformNew( //Tylko transformer do naprawy!
+  .transformNew(
     function(item){
     var lore = item.tag.display.Lore;
 
-    return item.withTag(item.tag.deepUpdate({display:{Lore: [lore[lore.length - 1]]}},{display: {Lore: REMOVE}}));
+    return lore.length != 1 ? 
+    item.withTag(item.tag.deepUpdate({display:{Lore: [lore[lore.length - 1]]}},{display: {Lore: REMOVE}} + {enchantmentColor: calcColor(lore.deepUpdate([lore[lore.length - 1]],REMOVE))}))
+    :
+    item.withTag(item.tag.deepUpdate({display:{Lore: [lore[lore.length - 1]]}},{display: {Lore: REMOVE}}).deepUpdate({enchantmentColor: 0},REMOVE).deepUpdate({ench: [{lvl: 1 as short, id: 30 as short}]}, {ench: REMOVE}));
     })
   .marked("scythe")
 ]
