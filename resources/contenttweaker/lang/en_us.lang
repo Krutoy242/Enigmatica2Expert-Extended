@@ -563,3 +563,15 @@ enchantment.draconicevolution.enchant_reaper.desc=Weapon randomly drops mob soul
 enchantment.openblocks.explosive.desc=Creates explosions when attacked
 enchantment.openblocks.flim_flam.desc=Randomly causes negative effects nearby
 enchantment.openblocks.last_stand.desc=Uses XP to prevent death
+# --------------------------------------
+# Improved Enchantment Descriptions
+# --------------------------------------
+enchantment.advancedrocketry.spacebreathing.desc=Adds an oxygen tank to the armor piece
+enchantment.cyclicmagic.enchantment.beheading.desc=Gives a chance for mobs to drop their head
+enchantment.cyclicmagic.enchantment.launch.desc=Gives additional jumps, one per level
+enchantment.cyclicmagic.enchantment.lifeleech.desc=Leeches health from the target
+enchantment.cyclicmagic.enchantment.magnet.desc=Attracts nearby items and XP when held
+enchantment.cyclicmagic.enchantment.quickdraw.desc=Triples the charge speed of the bow
+enchantment.cyclicmagic.enchantment.venom.desc=Inflicts poison on hit
+enchantment.cyclicmagic.enchantment.waterwalking.desc=Allows walking on water, shift to swim
+enchantment.minecraft.vanishing_curse.desc=Destroys the enchanted item if you die with it in your inventory.
