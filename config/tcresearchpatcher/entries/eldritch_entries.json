@@ -300,6 +300,12 @@
                     "text": "research_stage.thaumadditions:mithminite_scythe.2",
                     "recipes": ["thaumcraft:mithminite_blade","thaumcraft:mithminite_handle","thaumcraft:mithminite_scythe"]
                 }
+            ],
+            "addenda": [
+                {
+                    "text": "research.mithminite_scythe.addenda",
+                    "required_research": ["SEALGLOBE"]
+                }
             ]
         },
         {
