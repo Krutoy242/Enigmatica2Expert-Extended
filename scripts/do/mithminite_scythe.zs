@@ -104,14 +104,14 @@ function playSound(str as string, target as IEntity) as void{
     }
 }
 
-function aerTornado(scythe as IEntity) as void{
+function aerTornado(scythe as IEntity, lvl as int) as void{
     val list = scythe.world.getEntities();
 
     for entity in list {
         if(isNull(entity)
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
-        || scythe.getDistanceSqToEntity(entity)>25
+        || scythe.getDistanceSqToEntity(entity)>20+3*lvl
         || entity.y<1) continue;
 
         val v = [scythe.x-entity.x, scythe.y-entity.y, scythe.z-entity.z] as double[];
@@ -122,7 +122,7 @@ function aerTornado(scythe as IEntity) as void{
         entity.motionZ=v[2]/norm;
     }
 
-    for i in 0 to 200{
+    for i in 0 to 200 + lvl*50{
         val xp = scythe.x+(Math.cos(3.14*i/8)*0.03*i);
         val yp = scythe.y+1.0f*i/12;
         val zp = scythe.z+(Math.sin(3.14*i/8)*0.03*i); //smoke
@@ -139,8 +139,8 @@ function alienisTeleport(target as IEntityLivingBase) as void{
     server.commandManager.executeCommandSilent(server, "/particle witchMagic "~target.x~" "~target.y~" "~target.z~" .2 1 .2 0 25");
 }
 
-function alkimiaPotion(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:potioncore:curse>.makePotionEffect(1, 0));
+function alkimiaPotion(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:potioncore:curse>.makePotionEffect(1 + (lvl/2), 0));
 }
 
 function amogusVent(scythe as IEntity, target as IEntityLivingBase) as void{
@@ -149,15 +149,15 @@ function amogusVent(scythe as IEntity, target as IEntityLivingBase) as void{
     scythe.setDead();
 }
 
-function aquaSplash(target as IEntityLivingBase) as void{
+function aquaSplash(target as IEntityLivingBase, lvl as int) as void{
     val water = <liquid:water>.definition.block.definition.getStateFromMeta(1);
     val x = target.getX()>0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
     val y = target.getY() as float;
     val z = target.getZ()>0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
-    for a in 0 to 3{
+    for a in 0 to 2*lvl + 1 {
         for b in 0 to 2{
-            for c in 0 to 3{
-                val pos = crafttweaker.util.Position3f.create(x - 1 + a, y + b, z - 1 + c) as IBlockPos;
+            for c in 0 to 2*lvl + 1{
+                val pos = crafttweaker.util.Position3f.create(x - lvl + a, y + b, z - lvl + c) as IBlockPos;
                 val block as IBlock = target.world.getBlock(pos);
                 if (!isNull(block)
                 && block.definition.id=="minecraft:air") {target.world.setBlockState(water, pos);
@@ -169,8 +169,8 @@ function aquaSplash(target as IEntityLivingBase) as void{
     playSound("thaumcraft:bubble", target);
 }
 
-function auramVisAdd(scythe as IEntity) as void{
-    scythe.world.addVis(scythe.position, 10.0f);
+function auramVisAdd(scythe as IEntity, lvl as int) as void{
+    scythe.world.addVis(scythe.position, 10.0f * lvl);
     val y = scythe.y + 3.0;
     server.commandManager.executeCommandSilent(server, "/particle endRod "~scythe.x~" "~y~" "~scythe.z~" 5 1 5 0 50");
     playSound("botania:blacklotus", scythe);
@@ -196,17 +196,17 @@ function bestiaHunt(scythe as IEntity, target as IEntityLivingBase) as void{
     }
 }
 
-function caelesAstralExp(scythe as IEntity) as void{
+function caelesAstralExp(scythe as IEntity, lvl as int) as void{
     if(scythe.nbt.ownerName!=""){
         val player = scythe.world.getPlayerByName(scythe.nbt.ownerName);
         if(isNull(player)) return;
-        mods.randomtweaker.astralsorcery.IPlayer.modifyPerkExp(player, 1000);
+        mods.randomtweaker.astralsorcery.IPlayer.modifyPerkExp(player, 500*lvl);
     }
 }
 
-function cognitioExperienceBlessing(scythe as IEntity, target as IEntityLivingBase) as void{
+function cognitioExperienceBlessing(scythe as IEntity, target as IEntityLivingBase, lvl as int) as void{
     val exp as IEntityXp = <entity:clumps:xp_orb_big>.spawnEntity(target.world, target.position);
-    Experience.setXpValue(exp, target.world.getRandom().nextInt(100,1000));
+    Experience.setXpValue(exp, target.world.getRandom().nextInt(100,1000*lvl));
 
     playSound("entity.player.levelup", target);
     server.commandManager.executeCommandSilent(server, "/particle totem "~target.x~" "~entityEyeHeight(target)~" "~target.z~" .5 .5 .5 .2 5");
@@ -254,10 +254,10 @@ function desideriumDisarm(target as IEntityLivingBase) as void{
     if(!isNull(player)) player.sendPlaySoundPacket('thaumcraft:zap', 'ambient', target.position, 1.0f, 1.0f);
 }
 
-function dracoBreath(target as IEntityLivingBase) as void{
+function dracoBreath(target as IEntityLivingBase, lvl as int) as void{
     val cloud as IEntity = <entity:minecraft:area_effect_cloud>.spawnEntity(target.world, crafttweaker.util.Position3f.create(target.x, target.y, target.z));
     cloud.updateNBT({
-   "Radius":10.0 as float,
+   "Radius":2.5*lvl as float,
    "DurationOnUse":0,
    "Invulnerable":0 as byte,
    "Particle":"flame",
@@ -280,19 +280,19 @@ function dracoBreath(target as IEntityLivingBase) as void{
         if(isNull(entity)
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
-        || cloud.getDistanceSqToEntity(entity)>10
+        || cloud.getDistanceSqToEntity(entity)>2.5*lvl
         ) continue;
         val entityLiving as IEntityLivingBase = entity;
-        entityLiving.addPotionEffect(<potion:contenttweaker:dragonfire>.makePotionEffect(160, 1));
+        entityLiving.addPotionEffect(<potion:contenttweaker:dragonfire>.makePotionEffect(160, Math.min(lvl - 1,3)));
     }
 }
 
-function exanimisPoison(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:minecraft:poison>.makePotionEffect(300, 3));
+function exanimisPoison(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:minecraft:poison>.makePotionEffect(300*lvl, 3));
 }
 
-function exitiumExplosion(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 0));
+function exitiumExplosion(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, Math.min(lvl - 1,3)));
 }
 
 static Pills as IItemStack[string] = {
@@ -327,24 +327,24 @@ function fabricoPill(scythe as IEntity) as void{
     playSound("botania:agricarnation",scythe);
 }
 
-function fluctusWave(target as IEntityLivingBase) as void{
+function fluctusWave(target as IEntityLivingBase, lvl as int) as void{
     val list = target.world.getEntities();
 
     for entity in list {
         if(isNull(entity)
         || !entity instanceof IEntityLiving
         || !entity.isAlive()
-        || target.getDistanceSqToEntity(entity)>20
+        || target.getDistanceSqToEntity(entity)>20 + lvl*3
         || target.id==entity.id
         || entity.y<1) continue;
         val v as double [] = [entity.x - target.x, 0.5, entity.z - target.z];
-        val div = Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2])/2.0;
+        val div = Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2])/(2.0+0.1*lvl);
         entity.motionX = v[0]/div;
         entity.motionY = v[1]/div;
         entity.motionZ = v[2]/div;
     }
     for i in 0 to 4{
-            val mult = pow(1.8,i);
+            val mult = pow(1.8,i)*Math.sqrt(lvl);
             for j in 0 to 20*i{
                 val xp = target.x+mult*(Math.cos(3.14*j/10));
                 val yp = target.y+1;
@@ -356,8 +356,8 @@ function fluctusWave(target as IEntityLivingBase) as void{
         playSound("botania:airrod",target);
 }
 
-function gelumFrezze(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:twilightforest:frosted>.makePotionEffect(300, 3));
+function gelumFrezze(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:twilightforest:frosted>.makePotionEffect(300*lvl, 3));
     server.commandManager.executeCommandSilent(server, "/particle magicCrit "~target.x~" "~entityEyeHeight(target)~" "~target.z~" .5 .5 .5 .2 10");
     playSound("thaumcraft:ice",target);
 }
@@ -373,9 +373,9 @@ function humanusCure(target as IEntityLivingBase, player as IPlayer) as void{
     target.updateNBT({"ConversionTime":5});
 }
 
-function ignisFire(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:immersiveengineering:flammable>.makePotionEffect(300, 3));
-    target.setFire(10);
+function ignisFire(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:immersiveengineering:flammable>.makePotionEffect(300*lvl, 3));
+    target.setFire(10*lvl);
 }
 
 function imperiumStunnedEnderman(target as IEntityLivingBase) as void{
@@ -384,25 +384,25 @@ function imperiumStunnedEnderman(target as IEntityLivingBase) as void{
     playSound("entity.elder_guardian.curse",target);
 }
 
-function infernumFire(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:immersiveengineering:flammable>.makePotionEffect(600, 3));
-    target.addPotionEffect(<potion:rustic:blazing_trail>.makePotionEffect(300, 0));
+function infernumFire(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:immersiveengineering:flammable>.makePotionEffect(600*lvl, 3));
+    target.addPotionEffect(<potion:rustic:blazing_trail>.makePotionEffect(300*lvl, 0));
 }
 
-function calcRepair(player as IPlayer, item as IItemStack) as void{
+function calcRepair(player as IPlayer, item as IItemStack, lvl as int) as void{
     if(item.isDamageable && item.isDamaged){
-        item.mutable().withDamage(Math.max(0, (0.95*item.damage - 5) as int));
+        item.mutable().withDamage(Math.max(0, ((0.95 - 0.01*lvl)*item.damage - 5 - lvl*2) as int));
         playSound("block.anvil.use",player);
     }
     return;
 }
 
-function instrumentumRepair(player as IPlayer) as void{
-    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head()));
-    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest()));
-    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs()));
-    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet()));
-    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand()));
+function instrumentumRepair(player as IPlayer, lvl as int) as void{
+    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head()),lvl);
+    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest()),lvl);
+    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs()),lvl);
+    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet()),lvl);
+    if(!isNull(player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand()))) calcRepair(player,player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand()),lvl);
 }
 
 function luxLight(target as IEntityLivingBase, player as IPlayer) as void{
@@ -457,8 +457,8 @@ function metallumPrison(target as IEntityLivingBase) as void{
     playSound("block.anvil.place",target);
 }
 
-function mortuusWither(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(300, 3));
+function mortuusWither(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(300*lvl, 3));
     playSound("rats:black_death_die",target);
 }
 
@@ -486,30 +486,30 @@ function mythusPetrification(target as IEntityLivingBase) as void{
    playSound("botania:divacharm", target);
 }
 
-function ordoWarp(player as IPlayer) as void{
-    if(player.world.random.nextInt(10)==0 && player.warpTemporary!=0){
+function ordoWarp(player as IPlayer, lvl as int) as void{
+    if(player.world.random.nextInt(10)<lvl && player.warpTemporary!=0){
         player.warpTemporary = player.warpTemporary - 1;
         player.sendPlaySoundPacket('thaumcraft:craftstart', 'voice', player.position, 1.0f, 1.0f);
     } 
-    if(player.world.random.nextInt(100)==0 && player.warpNormal!=0){
+    if(player.world.random.nextInt(100)<lvl && player.warpNormal!=0){
         player.warpNormal = player.warpNormal - 1;
         player.sendPlaySoundPacket('thaumcraft:craftstart', 'voice', player.position, 1.0f, 1.0f);
     } 
 }
 
-function perditioWarp(player as IPlayer) as void{
-    if(player.world.random.nextInt(10)==0) {
+function perditioWarp(player as IPlayer, lvl as int) as void{
+    if(player.world.random.nextInt(10)<lvl) {
         player.warpTemporary = Math.min(500,player.warpTemporary + 1);
         player.sendPlaySoundPacket('thaumcraft:wispers', 'voice', player.position, 1.0f, 1.0f);
     }
-    if(player.world.random.nextInt(100)==0) {
+    if(player.world.random.nextInt(100)<lvl) {
         player.warpNormal = Math.min(500,player.warpNormal + 1);
         player.sendPlaySoundPacket('thaumcraft:whispers', 'voice', player.position, 1.0f, 1.0f);
     }
 }
 
-function potentiaLightning(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(1, 0));
+function potentiaLightning(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(lvl, 0));
 }
 
 function praecantatioBonusDamage(target as IEntityLivingBase, player as IPlayer) as double{
@@ -587,13 +587,13 @@ function sensusTarget(scythe as IEntity, target as IEntityLivingBase) as void{
 
 }
 
-function sonusSplit(scythe as IEntity, target as IEntityLivingBase) as void{
+function sonusSplit(scythe as IEntity, target as IEntityLivingBase, lvl as int) as void{
     val entitiesList = target.world.getEntities();
 
     for entity in entitiesList{
         if(isNull(entity)
         || !entity instanceof IEntityLiving
-        || target.getDistanceSqToEntity(entity)>30) continue;
+        || target.getDistanceSqToEntity(entity)>20+lvl*5) continue;
 
         val scytheCopy = scythe.definition.spawnEntity(target.world, crafttweaker.util.Position3f.create(target.x, entityEyeHeight(target), target.z).asBlockPos());
         val v = [entity.x-target.x, entityEyeHeight(entity)-entityEyeHeight(target), entity.z-target.z] as double[];
@@ -606,16 +606,14 @@ function sonusSplit(scythe as IEntity, target as IEntityLivingBase) as void{
     scythe.setDead();
 }
 
-function spiritusHaunted(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:contenttweaker:exorcism>.makePotionEffect(100, 1));
+function spiritusHaunted(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:contenttweaker:exorcism>.makePotionEffect(100*lvl, Math.min(lvl - 1, 3)));
     playSound("entity.ghast.hurt",target);
 }
 
-function tenebraeBlind(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:minecraft:blindness>.makePotionEffect(300, 3));
+function tenebraeBlind(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:minecraft:blindness>.makePotionEffect(300*lvl, 3));
     server.commandManager.executeCommandSilent(server, "/particle fallingdust "~target.x~" "~entityEyeHeight(target)~" "~target.z~" .5 .5 .5 .1 20");
-    //val nocturnal = <entity:astralsorcery:entitynocturnalspark>.spawnEntity(target.world, target.position);
-    //nocturnal.updateNBT({"UpdateBlocked" : 1 as byte});
 }
 
 static terraBlocksList as string[] = [
@@ -628,15 +626,15 @@ static terraBlocksList as string[] = [
     "biomesoplenty:white_sand"
 ];
 
-function terraQuickSand(target as IEntityLivingBase) as void{
+function terraQuickSand(target as IEntityLivingBase, lvl as int) as void{
     val quickSand = <liquid:sand>.definition.block.definition.defaultState.withProperty("level", 0);
     val x = target.getX()>0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
     val y = target.getY() as float;
     val z = target.getZ()>0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
     if(target.y<2) return;
-    for a in 0 to 9{
-        for c in 0 to 9{
-            val pos = crafttweaker.util.Position3f.create(x - 4 + a, y - 1, z - 4 + c) as IBlockPos;
+    for a in 0 to 2*lvl + 9{
+        for c in 0 to 2*lvl + 9{
+            val pos = crafttweaker.util.Position3f.create(x - lvl - 4 + a, y - 1, z - lvl - 4 + c) as IBlockPos;
             val block as IBlock = target.world.getBlock(pos);
             if (!isNull(block) 
             && terraBlocksList has block.definition.id) {
@@ -648,14 +646,14 @@ function terraQuickSand(target as IEntityLivingBase) as void{
     playSound("thaumcraft:bubble", target);
 }
 
-function vacuosHole(scythe as IEntity, target as IEntity){
+function vacuosHole(scythe as IEntity, target as IEntity, lvl as int){
     val list = target.world.getEntities();
 
     for entity in list {
             if(isNull(entity)
             || !entity instanceof IEntityLiving
             || !entity.isAlive()
-            || target.getDistanceSqToEntity(entity)>20
+            || target.getDistanceSqToEntity(entity)>20+3*lvl
             || entity.y<1) continue;
 
             entity.posX = target.x;
@@ -665,9 +663,9 @@ function vacuosHole(scythe as IEntity, target as IEntity){
 
     for i in 0 to 20{
         for j in 0 to 10{
-            val xp = target.x+2.0*Math.cos(3.14*i/10)*Math.cos(3.14*j/10);
-            val yp = target.y+2.0*Math.cos(3.14*i/10)*Math.sin(3.14*j/10);
-            val zp = target.z+2.0*Math.sin(3.14*i/10);
+            val xp = target.x+2.0*Math.cos(3.14*i/10)*Math.cos(3.14*j/10)*(1+0.5*lvl);
+            val yp = target.y+2.0*Math.cos(3.14*i/10)*Math.sin(3.14*j/10)*(1+0.5*lvl);
+            val zp = target.z+2.0*Math.sin(3.14*i/10)*(1+0.5*lvl);
             server.commandManager.executeCommandSilent(server, "/particle smoke "~xp~" "~yp~" "~zp~" 0 0 0 0 1");
         }
     }
@@ -681,8 +679,8 @@ function ventusLaunch(target as IEntityLivingBase) as void{
     playSound("botania:dash",target);
 }
 
-function vinculumTrap(target as IEntityLivingBase) as void{
-    target.addPotionEffect(<potion:immersiveengineering:sticky>.makePotionEffect(100, 3));
+function vinculumTrap(target as IEntityLivingBase, lvl as int) as void{
+    target.addPotionEffect(<potion:immersiveengineering:sticky>.makePotionEffect(100*lvl, 3));
     playSound("botania:gaiatrap",target);
 }
 
@@ -752,50 +750,50 @@ function vitreusCrystalize(scythe as IEntity, target as IEntityLivingBase, dmg a
     target.setDead();
 }
 
-function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, player as IPlayer, augments as string[], dmg as double) as void{
+function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, player as IPlayer, augments as string[], dmg as double, colorCount as int[] ) as void{
     #CREATION ASPECTS
-    if(augments has "aqua")         aquaSplash(target);
+    if(augments has "aqua")         aquaSplash(target, colorCount[2]);
     if(augments has "bestia")       bestiaHunt(scythe, target);
     if(augments has "metallum")     metallumPrison(target);
-    if(augments has "terra")        terraQuickSand(target);
+    if(augments has "terra")        terraQuickSand(target, colorCount[5]);
     #CONTROL ASPECTS
-    if(augments has "fluctus")      fluctusWave(target);
-    if(augments has "aer")          aerTornado(scythe);
-    if(augments has "vacuos")       vacuosHole(scythe, target);    
+    if(augments has "fluctus")      fluctusWave(target, colorCount[1]);
+    if(augments has "aer")          aerTornado(scythe, colorCount[4]);
+    if(augments has "vacuos")       vacuosHole(scythe, target, colorCount[0]);    
     #EFFECT ASPECTS
     if(augments has "alienis")      alienisTeleport(target);
-    if(augments has "alkimia")      alkimiaPotion(target);
+    if(augments has "alkimia")      alkimiaPotion(target, colorCount[2]);
     if(augments has "amogus")       amogusVent(scythe, target);
-    if(augments has "auram")        auramVisAdd(scythe);
-    if(augments has "caeles")       caelesAstralExp(scythe);
-    if(augments has "cognitio")     cognitioExperienceBlessing(scythe, target);
+    if(augments has "auram")        auramVisAdd(scythe, colorCount[6]);
+    if(augments has "caeles")       caelesAstralExp(scythe, colorCount[2]);
+    if(augments has "cognitio")     cognitioExperienceBlessing(scythe, target, colorCount[4]);
     if(augments has "desiderium")   desideriumDisarm(target);
-    if(augments has "draco")        dracoBreath(target);
-    if(augments has "exanimis")     exanimisPoison(target);
-    if(augments has "exitium")      exitiumExplosion(target);
-    if(augments has "gelum")        gelumFrezze(target);
+    if(augments has "draco")        dracoBreath(target, colorCount[2]);
+    if(augments has "exanimis")     exanimisPoison(target, colorCount[5]);
+    if(augments has "exitium")      exitiumExplosion(target, colorCount[1]);
+    if(augments has "gelum")        gelumFrezze(target,colorCount[0]);
     if(augments has "herba")        herbaTomatos(target);
-    if(augments has "ignis")        ignisFire(target);
+    if(augments has "ignis")        ignisFire(target, colorCount[3]);
     if(augments has "imperium")     imperiumStunnedEnderman(target);
-    if(augments has "infernum")     infernumFire(target);
-    if(augments has "instrumentum") instrumentumRepair(player);
+    if(augments has "infernum")     infernumFire(target, colorCount[3]);
+    if(augments has "instrumentum") instrumentumRepair(player, colorCount[2]);
     if(augments has "lux")          luxLight(target, player);
-    if(augments has "mortuus")      mortuusWither(target);
+    if(augments has "mortuus")      mortuusWither(target, colorCount[3]);
     if(augments has "motus")        motusSwap(scythe, target, player);
     if(augments has "mythus")       mythusPetrification(target);
-    if(augments has "ordo")         ordoWarp(player);
-    if(augments has "perditio")     perditioWarp(player);
-    if(augments has "potentia")     potentiaLightning(target);
+    if(augments has "ordo")         ordoWarp(player, colorCount[1]);
+    if(augments has "perditio")     perditioWarp(player, colorCount[0]);
+    if(augments has "potentia")     potentiaLightning(target, colorCount[1]);
     if(augments has "rattus")       rattusInsanity(target);
-    if(augments has "spiritus")     spiritusHaunted(target);
-    if(augments has "tenebrae")     tenebraeBlind(target);
+    if(augments has "spiritus")     spiritusHaunted(target, colorCount[1]);
+    if(augments has "tenebrae")     tenebraeBlind(target, colorCount[0]);
     if(augments has "ventus")       ventusLaunch(target);
-    if(augments has "vinculum")     vinculumTrap(target);
+    if(augments has "vinculum")     vinculumTrap(target, colorCount[4]);
     if(augments has "visum")        visumGlow(target,player);
     if(augments has "volatus")      volatusLevitation(target);
     if(augments has "vitreus")      vitreusCrystalize(scythe, target, dmg);
     #PROJECTILES
-    if(augments has "sonus")        sonusSplit(scythe, target);
+    if(augments has "sonus")        sonusSplit(scythe, target, colorCount[4]);
     if(augments has "mana")         manaCreateStar(scythe, target);
     if(augments has "sensus")       sensusTarget(scythe, target);
 }
@@ -840,6 +838,43 @@ function getAugments(player as IPlayer) as string[]{
     }
 
     return result;
+}
+
+function getSetBonus(player as IPlayer) as int[]{
+    if(isNull(player)
+    || isNull(player.mainHandHeldItem)
+    || isNull(player.mainHandHeldItem.definition)
+    || player.mainHandHeldItem.definition.id!="thaumadditions:mithminite_scythe") return [0,0,0,0,0,0,0] as int[];
+    val scythe = player.mainHandHeldItem;
+
+    if(isNull(scythe.tag)
+    || isNull(scythe.tag.display)
+    || isNull(scythe.tag.display.Lore)) return [0,0,0,0,0,0,0] as int[];
+
+    val lore = scythe.tag.display.Lore;
+    // Black, White, Blue, Red, Yellow, Green, Pink
+    if(lore.length==0) return [0,0,0,0,0,0,0] as int[];
+
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    var d = 0;
+    var e = 0;
+    var f = 0;
+    var g = 0;
+
+    for i in 0 to lore.length {
+        val k = lore[i][1];
+        if(k == "0" || k == "8") {a+=1; continue;}
+        if(k == "7" || k == "f") {b+=1; continue;}
+        if(k == "1" || k == "3" || k == "9" || k == "b") {c+=1; continue;}
+        if(k == "4" || k == "c") {d+=1; continue;}
+        if(k == "6" || k == "e") {e+=1; continue;}
+        if(k == "2" || k == "a") {f+=1; continue;}
+        if(k == "5" || k == "d") {g+=1; continue;}
+    }
+
+    return [a,b,c,d,e,f,g] as int[];
 }
 
 events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent) {
@@ -892,11 +927,12 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     val target as IEntityLivingBase = rayTrace.entity;
     val player = scythe.world.getPlayerByName(scythe.nbt.ownerName);
     val augments = getAugments(player);
+    val colorCount = getSetBonus(player);
 
     #MACHINA EFFECT
     if(target.definition.id=="thaumcraft:golem" && augments has "machina"){
         target.setNBT({"ScalingHealth.IsBlight": 1});
-        target.getAttribute("generic.attackDamage").setBaseValue(500.0);
+        target.getAttribute("generic.attackDamage").setBaseValue(500.0 + 100.0 * colorCount[1]);
         target.getAttribute("generic.armor").setBaseValue(4.0);
         target.getAttribute("generic.armorToughness").setBaseValue(4.0);
         server.commandManager.executeCommandSilent(server, "/particle totem "~target.x~" "~target.y~" "~target.z~" .1 .1 .1 .2 10");
@@ -914,6 +950,7 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
         return;
     }
 
+    #HUMANUS EFFECT
     if(target.definition.id=="minecraft:zombie_villager"
     && augments has "humanus"){
         humanusCure(target, player);
@@ -924,10 +961,10 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
 
     # AVERSIO | PRAECANTIATIO | PRAEMUNIO | VITIUM
     var dmg = 100.0;
-    if(augments has "praecantatio") dmg += praecantatioBonusDamage(target,player);
-    if(augments has "sanguis") dmg += sanguisBonusDamage(target,player,dmg);
-    if(augments has "vitium")  dmg *= vitiumStrike(scythe, target);
-    if(augments has "aversio") dmg *= 2.0;
+    if(augments has "praecantatio") dmg += praecantatioBonusDamage(target,player)*(1.0+0.2 * colorCount[6]);
+    if(augments has "sanguis") dmg += sanguisBonusDamage(target,player,dmg*colorCount[3]);
+    if(augments has "vitium")  dmg *= vitiumStrike(scythe, target) * colorCount[6];
+    if(augments has "aversio") dmg *= 2.0 + 0.2 * colorCount[3];
 
     target.attackEntityFrom(augments has "praemunio" ? 
     crafttweaker.damage.IDamageSource.createIndirectDamage("MITHMINITE_SCYTHE", player, scythe).setDamageBypassesArmor() :
@@ -935,7 +972,7 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     , dmg);
 
     if(isNull(player)) return;
-    scytheEffectElemental(scythe, target, player, augments, dmg);
+    scytheEffectElemental(scythe, target, player, augments, dmg, colorCount);
 
 });
 

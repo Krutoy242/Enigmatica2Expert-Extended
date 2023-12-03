@@ -65,7 +65,7 @@ potionDragonFire.isReady = function(duration, amplifier) {
 potionDragonFire.performEffect = function(living, amplifier) {
     if(!living.world.remote && living instanceof IEntityLivingBase) {
         living.fire=1;
-        living.attackEntityFrom(crafttweaker.damage.IDamageSource.ON_FIRE().setDamageBypassesArmor(), 10.0);
+        living.attackEntityFrom(crafttweaker.damage.IDamageSource.ON_FIRE().setDamageBypassesArmor(), 10.0 + 5.0*amplifier);
     }
 };
 
