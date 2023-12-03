@@ -1,5 +1,4 @@
 #priority -1
-#reloadable
 import crafttweaker.entity.IEntity;
 import crafttweaker.entity.IEntityLiving;
 import crafttweaker.entity.IEntityLivingBase;
