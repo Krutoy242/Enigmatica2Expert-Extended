@@ -794,28 +794,30 @@ function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, p
     if(augments has "vitreus")      vitreusCrystalize(scythe, target, dmg);
     #PROJECTILES
     if(augments has "sonus")        sonusSplit(scythe, target, colorCount[4]);
-    if(augments has "mana")         manaCreateStar(scythe, target);
+    if(augments has "mana")         {if(augments has "rattus") {scytheCreateChaos(scythe, target);} else {manaCreateStar(scythe, target);}}
     if(augments has "sensus")       sensusTarget(scythe, target);
 }
 
-/* Creates scythe in all direction, not used yet
 function scytheCreateChaos(scythe as IEntity, target as IEntityLivingBase) as void {
-    scythe.world.updateCustomWorldData({trace: "RANDOM"  , speed: "SLOW"});
     val r = 10.0;
     val pi = 3.14/3;
-    for k in 0 to 3{
-        for i in 0 to 10 {
-            for j in 0 to 5{
+    for k in 0 to 2{
+        for i in 0 to 6 {
+            for j in 0 to 6{
                 val x = (target.x + r*Math.cos(pi*i)*Math.cos(pi*j)*(k+1));         //sphere
                 val y = (target.y + 2.0 + r*Math.cos(pi*i)*Math.sin(pi*j)*(k+1)/2);
                 val z = (target.z + r*Math.sin(pi*i)*(k+1));
 
                 val newPosition = crafttweaker.util.Position3f.create(x, y, z).asBlockPos();
-                scythe.definition.spawnEntity(scythe.world, newPosition);
+                var scytheCopy = <entity:thaumadditions:mithminite_scythe>.spawnEntity(scythe.world, newPosition);
+                scytheCopy.motionX = (target.x - x) / 12;
+                scytheCopy.motionY = (entityEyeHeight(target) - y) / 12;
+                scytheCopy.motionZ = (target.z - z) / 12;
             }
         }
     }
-}*/
+    scythe.setDead();
+}
 
 function getAugments(player as IPlayer) as string[]{
     var result as string[] = [];
