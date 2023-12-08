@@ -2743,6 +2743,30 @@ item.zerocore:debugtool.name=Инструмент отладки
 # --------------------------------------
 # Enchantment Descriptions
 # --------------------------------------
+
+#enchantment.advancedrocketry.spacebreathing.desc=Позволяет сделать компоненты брони герметичными
+#enchantment.astralsorcery.enchantment.as.nightvision.desc=Дарует владельцу ночное зрение.
+#enchantment.astralsorcery.enchantment.as.smelting.desc=Добытые блоки будут переплавлены, как в печи.
+#enchantment.cofhcore.holding.desc=Увеличивает емкость хранения некоторых предметов.
+#enchantment.cofhcore.insight.desc=Увеличивает получение опыта при использовании предмета.
+#enchantment.cofhcore.leech.desc=Восстанавливает здоровье при убийстве моба.
+#enchantment.cofhcore.multishot.desc=Лук будет стрелять дополнительными стрелами при каждом выстреле. Потратится только одна стрела.
+#enchantment.cofhcore.smashing.desc=Добытые руды будут дробиться на кусочки, что повысит добычу.
+#enchantment.cofhcore.smelting.desc=Собранные блоки будут автоматически плавиться, как будто с помощью печи.
+#enchantment.cofhcore.soulbound.desc=Предмет, имеющий это зачарование, сохранится у владельца даже после смерти.
+#enchantment.cofhcore.vorpal.desc=Меч, имеющий это зачарование, будет наносить мощные атаки и обезглавливать врагов.
+#enchantment.cyclicmagic.enchantment.autosmelt.desc=Переплавит всё, что вы добудете этим инструментом.
+#enchantment.cyclicmagic.enchantment.beheading.desc=Даст вам шанс получить голову существа или игрока.  При необходимости, существа из других модов могут быть добавлены в файл конфигурации.
+enchantment.cyclicmagic.enchantment.expboost.desc=Увеличивает количество выпавшего опыта c убитых существ и добытой руды.
+enchantment.cyclicmagic.enchantment.excavation.desc=Добывает всю жилу из последовательно соединённых блоков, не включая диагонали.
+#enchantment.cyclicmagic.enchantment.launch.desc=Даёт вам способность увеличить количество прыжков за раз (двойной прыжок), если зачаровано на ботинках.  Каждый уровень зачарования увеличивает кол-во прыжков за раз, но имеет задержку между использованием этой способности; Присядьте, чтобы временно отменить способность.
+#enchantment.cyclicmagic.enchantment.lifeleech.desc=Позволяет при каждом ударе, поглощать определенное количество здоровья от целей, которых вы атакуете.
+enchantment.cyclicmagic.enchantment.magnet.desc=Дайте вашему инструменту способность притягивать предметы и опыт с земли.
+enchantment.cyclicmagic.enchantment.multishot.desc=При стрельбе ваш лук выпускает дополнительные стрелы.
+#enchantment.cyclicmagic.enchantment.quickdraw.desc=Увеличивает скорость натяжения тетивы вашего лука.
+enchantment.cyclicmagic.enchantment.reach.desc=Увеличивает дальность до захвата блоков.
+enchantment.cyclicmagic.enchantment.venom.desc=Наносит эффект отравления на цель.
+#enchantment.cyclicmagic.enchantment.waterwalking.desc=Позволяет передвигаться по воде, как будто она твёрдая.  Присядьте, чтобы погрузиться под воду.
 enchantment.endercore.xpboost.desc=Увеличивает выпадение опыта
 enchantment.enderio.repellent.desc=Телепортирует атакующих монстров в сторону
 enchantment.enderio.shimmer.desc=Заставляет инструмент светиться
