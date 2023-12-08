@@ -546,6 +546,7 @@ item.contenttweaker.sic_mould.name=超轻矩阵合金粗模
 enchantment.advancedrocketry.spacebreathing.desc=为护甲添加氧气罐。
 #enchantment.astralsorcery.enchantment.as.nightvision.desc=赋予佩戴者夜视效果。
 #enchantment.astralsorcery.enchantment.as.smelting.desc=用此附魔开采的方块将获得熔炼后的掉落物，就像熔炉那样。
+enchantment.bibliocraft.bibliocraft.readingench.desc=显示 Bibliocraft 方块的信息。
 enchantment.cofhcore.holding.desc=增加特定物品的存储容量。
 enchantment.cofhcore.insight.desc=在使用物品时增加经验获取。
 enchantment.cofhcore.leech.desc=在杀死生物时恢复生命值。

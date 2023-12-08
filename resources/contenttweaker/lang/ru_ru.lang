@@ -2747,6 +2747,7 @@ item.zerocore:debugtool.name=Инструмент отладки
 #enchantment.advancedrocketry.spacebreathing.desc=Позволяет сделать компоненты брони герметичными
 #enchantment.astralsorcery.enchantment.as.nightvision.desc=Дарует владельцу ночное зрение.
 #enchantment.astralsorcery.enchantment.as.smelting.desc=Добытые блоки будут переплавлены, как в печи.
+enchantment.bibliocraft.bibliocraft.readingench.desc=Отображает информацию о блоках из мода Bibliocraft.
 #enchantment.cofhcore.holding.desc=Увеличивает емкость хранения некоторых предметов.
 #enchantment.cofhcore.insight.desc=Увеличивает получение опыта при использовании предмета.
 #enchantment.cofhcore.leech.desc=Восстанавливает здоровье при убийстве моба.

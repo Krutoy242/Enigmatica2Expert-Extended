@@ -546,6 +546,7 @@ item.contenttweaker.sic_mould.name=Ultra Light Matrix-Legierung Mould
 enchantment.advancedrocketry.spacebreathing.desc=Adds an oxygen tank to the armor piece.
 #enchantment.astralsorcery.enchantment.as.nightvision.desc=Grants the wearer night vision.
 #enchantment.astralsorcery.enchantment.as.smelting.desc=Blocks mined with this enchantment will have their drops smelted, as though in a furnace.
+enchantment.bibliocraft.bibliocraft.readingench.desc=Shows information for Bibliocraft blocks
 #enchantment.cofhcore.holding.desc=Increases the storage capacity of certain items.
 #enchantment.cofhcore.insight.desc=Increases experience gain when using the item.
 #enchantment.cofhcore.leech.desc=Restores health when a mob is killed.
