@@ -16,7 +16,7 @@
 				"SpawnY": 89
 			},
 			"jed": {
-				"GenerateFallbackSpawnBlock": true
+				"GenerateFallbackSpawnBlock": false
 			}
 		}
 	]
