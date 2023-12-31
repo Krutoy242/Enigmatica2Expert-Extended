@@ -1481,8 +1481,8 @@ craft.make(bookWithAllKnowledge, ['pretty',
 
 mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<thaumcraft:condenser_lattice>, <thaumcraft:condenser_lattice_dirty>);
 mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<thaumadditions:dawn_totem>, <thaumadditions:twilight_totem>);
-mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<minecraft:stone:*>, <thaumcraft:taint_rock>);
-mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<minecraft:dirt:*>, <thaumcraft:taint_soil>);
+mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<ore:stone>, <thaumcraft:taint_rock>);
+mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<ore:dirt>, <thaumcraft:taint_soil>);
 
 # Mithrillium, Adamanite, Mithminite melting and casting
 scripts.process.melt(<thaumadditions:mithrillium_nugget>	,<liquid:mithrillium> * 16);
