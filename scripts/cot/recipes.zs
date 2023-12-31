@@ -1,3 +1,5 @@
+#modloaded tconstruct mechanics inworldcrafting tconstruct extendedcrafting thaumcraft
+
 import crafttweaker.item.IIngredient;
 
 furnace.setFuel(<contenttweaker:conglomerate_of_coal>, 60000);
@@ -6,15 +8,12 @@ furnace.setFuel(<contenttweaker:empowered_phosphor>, 180000);
 furnace.setFuel(<contenttweaker:saturated_phosphor>, 450000);
 
 // Since Heavy have negative durability, surikens becomes infinite
-mods.tconstruct.Casting.removeTableRecipe(<tconstruct:knife_blade>.withTag({Material: "heavy"}));
+mods.tconstruct.Casting.removeTableRecipe(<tconstruct:knife_blade>.withTag({ Material: 'heavy' }));
 
 // Tallow into biomass
 scripts.process.compress(<ore:tallow> * 64, <contenttweaker:compressed_tallow>, 'except: compressor');
 scripts.process.melt(<ore:tallow>, <liquid:biomass> * 20);
 scripts.process.melt(<contenttweaker:compressed_tallow>, <liquid:biomass> * 1280);
-
-// Add missed furnace recipe
-furnace.addRecipe(<endreborn:item_ingot_wolframium>, <qmd:dust>, 4.0d);
 
 // Remake usage of new dusts
 utils.compact(<contenttweaker:dust_tiny_gold>, <thermalfoundation:material:1>);
@@ -33,12 +32,12 @@ craft.remake(<exnihilocreatio:item_mesh:1>, ['pretty',
   '  s  ',
   's s s',
   '  s  '], {
-  's': <ore:string>, // String
+  s: <ore:string>, // String
 });
 
 // Compressed Basalt
 val B = <ore:stoneBasalt>;
-recipes.addShapeless(<contenttweaker:compressed_basalt>, [B,B,B,B,B,B,B,B,B]);
+recipes.addShapeless(<contenttweaker:compressed_basalt>, [B, B, B, B, B, B, B, B, B]);
 recipes.addShapeless(<chisel:basalt2:7> * 9, [<contenttweaker:compressed_basalt>]);
 utils.compact(<contenttweaker:compressed_basalt>, <contenttweaker:compressed_basalt_double>);
 
@@ -56,17 +55,17 @@ mods.mechanics.addTubeRecipe([<contenttweaker:conglomerate_of_life>], <liquid:li
 // Silicon Block
 <ore:blockSilicon>.add(<contenttweaker:silicon_block>);
 craft.shapeless(<contenttweaker:silicon_block>, 'AAAAAAAAA', { A: <ore:ingotSilicon> });
-craft.shapeless(<libvulpes:productingot:3> * 9,   'A', { A: <ore:blockSilicon> });
+craft.shapeless(<libvulpes:productingot:3> * 9, 'A', { A: <ore:blockSilicon> });
 
 // [Conglomerate Of Life] from [Heart Dust][+3]
-craft.remake(<contenttweaker:conglomerate_of_life>, ["pretty",
-  "w D w",
-  "C ▲ C",
-  "w D w"], {
-  "w": <ore:woolRed>, # Red Wool
-  "D": <iceandfire:dragon_meal>,  # Dragon Meal
-  "C": <ore:foodCheese>,          # Cheese
-  "▲": <scalinghealth:heartdust>, # Heart Dust
+craft.remake(<contenttweaker:conglomerate_of_life>, ['pretty',
+  'w D w',
+  'C ▲ C',
+  'w D w'], {
+  'w': <ore:woolRed>, // Red Wool
+  'D': <iceandfire:dragon_meal>, // Dragon Meal
+  'C': <ore:foodCheese>, // Cheese
+  '▲': <scalinghealth:heartdust>, // Heart Dust
 });
 
 // [Conglomerate_Of_Sun*8] from [Totem_of_Undying][+3]
@@ -74,10 +73,10 @@ craft.make(<contenttweaker:conglomerate_of_sun> * 12, ['pretty',
   'R o R',
   'C T C',
   'R o R'], {
-  R: <ore:myrmexResin>,                // Desert Myrmex Resin Chunk
+  R: <ore:myrmexResin>, // Desert Myrmex Resin Chunk
   C: <exnihilocreatio:hive:1>,
-  T: <minecraft:totem_of_undying>,     // Totem of Undying
-  o: <ore:dropRoyalJelly>,              // Royal Jelly
+  T: <minecraft:totem_of_undying>, // Totem of Undying
+  o: <ore:dropRoyalJelly>, // Royal Jelly
 });
 
 // Saturate Phosphor
@@ -92,9 +91,9 @@ craft.make(<contenttweaker:conglomerate_of_coal>, ['pretty',
   'L B L',
   '▲ i ▲',
   'L B L'], {
-  '▲': <mechanics:fuel_dust_tiny>,      // Tiny Pile of Heavy Fuel Dust
-  'B': <randomthings:ingredient:13>,    // Blackout Powder
-  'i': <forestry:bituminous_peat>,      // Bituminous Peat
+  '▲': <mechanics:fuel_dust_tiny>, // Tiny Pile of Heavy Fuel Dust
+  'B': <randomthings:ingredient:13>, // Blackout Powder
+  'i': <forestry:bituminous_peat>, // Bituminous Peat
   'L': <rats:little_black_squash_balls>, // Little Black Squash Balls
 });
 

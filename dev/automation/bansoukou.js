@@ -7,11 +7,12 @@
 
 // @ts-check
 
+import { spawn } from 'node:child_process'
 import { existsSync, mkdirSync, renameSync, statSync, unlinkSync } from 'node:fs'
 import { dirname, join, parse } from 'node:path'
-import { URL, fileURLToPath } from 'node:url'
+import process from 'node:process'
+import { fileURLToPath, URL } from 'node:url'
 
-import { spawn } from 'node:child_process'
 import AdmZip from 'adm-zip'
 import fast_glob from 'fast-glob'
 import levenshtein from 'fast-levenshtein'
@@ -53,7 +54,7 @@ function injectJsonAdvancementFixes() {
 /**
  * @param {string} jarPath
  * @param {string} archievePath
- * @param {Object} advJson
+ * @param {object} advJson
  */
 function saveFile(jarPath, archievePath, advJson) {
   const savePath = join('bansoukou/', getJarName(jarPath), archievePath)
@@ -171,9 +172,9 @@ async function showDiffs(/** @type {typeof defaultHelper} */ h) {
       try {
         execSyncInherit(
           'git diff --no-index'
-            + ` "${oldF}"`
-            + ` "${newF}"`
-            + ` > "${diffOut}"`
+          + ` "${oldF}"`
+          + ` "${newF}"`
+          + ` > "${diffOut}"`
         )
       }
       catch (error) {
@@ -184,7 +185,8 @@ async function showDiffs(/** @type {typeof defaultHelper} */ h) {
           'code --diff'
           + ` "${oldF}"`
           + ` "${newF}"`
-          , { stdio: 'inherit' })
+          , { stdio: 'inherit' }
+        )
       }
       catch (error) {}
 
@@ -228,10 +230,10 @@ function decompile(unpatchedFilePath, patchedFilePath) {
       const actualFile = replaceExt(fPath, '.java')
       execSyncInherit(
         '"C:/Program Files/Java/jdk-13.0.2/bin/java.exe"'
-          + ' -jar'
-          + ' cfr-0.152.jar'
-          + ` "${fPath}"`
-          + ` > "${actualFile}"`
+        + ' -jar'
+        + ' cfr-0.152.jar'
+        + ` "${fPath}"`
+        + ` > "${actualFile}"`
       )
       return [key, actualFile]
     })

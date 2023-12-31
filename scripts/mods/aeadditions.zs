@@ -1,7 +1,7 @@
 #modloaded aeadditions
 
-import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
+import crafttweaker.item.IItemStack;
 
 utils.rh(<aeadditions:terminal.fluid.wireless>);
 utils.rh(<aeadditions:hardmedrive>);
@@ -19,7 +19,7 @@ craft.remake(<aeadditions:gas_interface>, ['pretty',
 
 // [Certus Quartz Tank] from [Tank][+1]
 craft.reshapeless(<aeadditions:certustank>, 'ABB', {
-  A: <enderio:block_omni_reservoir>,     // Tank
+  A: <enderio:block_omni_reservoir>, // Tank
   B: <appliedenergistics2:quartz_glass>, // Quartz Glass
 });
 
@@ -61,24 +61,24 @@ for i in 0 .. 7 {
   newGasCellRecipe(<aeadditions:storage.component>.definition.makeStack(i + 7), <aeadditions:storage.gas>.definition.makeStack(i));
 }
 
-# [ME Portable Fluid Storage] from [Charged Certus Quartz Crystal][+3]
-craft.remake(<aeadditions:storage.fluid.portable>, ["pretty",
-  "  *  ",
-  "∩ ⌃ ∩",
-  "◊   ◊"], {
-  "*": <ic2:energy_crystal>.withTag({charge: 1000000.0}), # Energy Crystal
-  "∩": <rats:charged_creeper_chunk>, # Charged Creeper Chunk
-  "⌃": <appliedenergistics2:material:1>, # Charged Certus Quartz Crystal
-  "◊": <ore:gemLapis>, # Lapis Lazuli
+// [ME Portable Fluid Storage] from [Charged Certus Quartz Crystal][+3]
+craft.remake(<aeadditions:storage.fluid.portable>, ['pretty',
+  '  *  ',
+  '∩ ⌃ ∩',
+  '◊   ◊'], {
+  '*': <ic2:energy_crystal>.withTag({ charge: 1000000.0 }), // Energy Crystal
+  '∩': <rats:charged_creeper_chunk>, // Charged Creeper Chunk
+  '⌃': <appliedenergistics2:material:1>, // Charged Certus Quartz Crystal
+  '◊': <ore:gemLapis>, // Lapis Lazuli
 });
 
-# [ME Portable Gas Storage] from [Charged Certus Quartz Crystal][+3]
-craft.remake(<aeadditions:storage.gas.portable>, ["pretty",
-  "  *  ",
-  "∩ ⌃ ∩",
-  "d   d"], {
-  "*": <ic2:energy_crystal>.withTag({charge: 1000000.0}), # Energy Crystal
-  "∩": <rats:charged_creeper_chunk>,     # Charged Creeper Chunk
-  "⌃": <appliedenergistics2:material:1>, # Charged Certus Quartz Crystal
-  "d": <ore:dyeYellow>, # Dandelion Yellow
+// [ME Portable Gas Storage] from [Charged Certus Quartz Crystal][+3]
+craft.remake(<aeadditions:storage.gas.portable>, ['pretty',
+  '  *  ',
+  '∩ ⌃ ∩',
+  'd   d'], {
+  '*': <ic2:energy_crystal>.withTag({ charge: 1000000.0 }), // Energy Crystal
+  '∩': <rats:charged_creeper_chunk>, // Charged Creeper Chunk
+  '⌃': <appliedenergistics2:material:1>, // Charged Certus Quartz Crystal
+  'd': <ore:dyeYellow>, // Dandelion Yellow
 });

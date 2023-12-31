@@ -1,11 +1,11 @@
 {
-	x: 5.208333333333333d,
-	y: 3.5d,
+	x: 6.5d,
+	y: -0.6d,
 	text: [
 		"{q.bragging_rights.creative_storage_u.desc}"
 	],
 	dependencies: [
-		"a1377b51"
+		"fbbabf40"
 	],
 	tasks: [{
 		uid: "bf80a009",

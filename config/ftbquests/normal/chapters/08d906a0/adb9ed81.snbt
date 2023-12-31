@@ -1,0 +1,23 @@
+{
+	x: 9.0d,
+	y: 0.0d,
+	dependencies: [
+		"71cb1e0b",
+		"8570c85a"
+	],
+	optional: true,
+	tasks: [{
+		uid: "417f9c72",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:block_dust"
+		}],
+		count: 8L
+	}],
+	rewards: [{
+		uid: "f3f233c9",
+		type: "item",
+		item: "rustic:lantern_wood",
+		count: 32
+	}]
+}

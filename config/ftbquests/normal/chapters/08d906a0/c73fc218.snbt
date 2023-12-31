@@ -1,0 +1,21 @@
+{
+	x: 25.5d,
+	y: 4.5d,
+	dependencies: [
+		"c550b73b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "b9770d3b",
+		type: "item",
+		items: [{
+			item: "minecraft:dye 1 4"
+		}]
+	}],
+	rewards: [{
+		uid: "bef87977",
+		type: "item",
+		item: "minecraft:lapis_ore",
+		count: 8
+	}]
+}

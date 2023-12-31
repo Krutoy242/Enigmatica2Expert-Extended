@@ -1,4 +1,3 @@
-tooltips.lang.advgenerators:gas_input=Отключено из-за не потребления топлива
 tooltips.lang.betteranimalsplus:handoffate=§aПКМ этим:§r §n%s§r, §n%s§r, §n%s§r, §n%s§r
 tooltips.lang.bloodmagic:blood_rune:1=§f + 20% к скорости создания / заполнения сфер
 tooltips.lang.bloodmagic:blood_rune:3=§f + 10% LP от убийства моба кинжалом, дополнительно
@@ -50,3 +49,4 @@ tooltips.lang.exnihilocreatio:hammer_diamond=§4Не работает. Испо�
 tooltips.lang.bibliocraft:fancysign=§eВызывает заметный лаг ФПС
 tooltips.lang.contenttweaker:conglomerate_of_life=§2Помогает кошкам кашлять меховые шары
 tooltips.lang.contenttweaker:conglomerate_of_sun=§2Ускоряет рост животных
+tooltips.lang.advancedrocketry:liquidtank=§cТеряет почти всю жидкость при снятии!

@@ -1,3 +1,4 @@
+/* eslint-disable node/prefer-global/process */
 /**
  * @file Make necessary preparations to turn dev version of pack
  * into distributable one.
@@ -11,24 +12,25 @@
  */
 
 // @ts-check
+
 import { join, parse, relative, resolve } from 'node:path'
 
+import boxen from 'boxen'
 import chalk from 'chalk'
 import * as del from 'del'
 import fast_glob from 'fast-glob'
 import fs_extra from 'fs-extra'
 import git_describe from 'git-describe'
+import ignore from 'ignore'
+import logUpdate from 'log-update'
+import numeral from 'numeral'
+import open from 'open'
+import replace_in_file from 'replace-in-file'
 import simpleGit from 'simple-git'
+import Client from 'ssh2-sftp-client'
 import terminal_kit from 'terminal-kit'
 import yargs from 'yargs'
-import ignore from 'ignore'
-import open from 'open'
-import logUpdate from 'log-update'
-import Client from 'ssh2-sftp-client'
-import numeral from 'numeral'
-import boxen from 'boxen'
 
-import replace_in_file from 'replace-in-file'
 import {
   end,
   execSyncInherit,
@@ -172,8 +174,7 @@ const style = {
     )
   ) {
     doTask('🪓 Doing automation ...\n\n', () =>
-      execSyncInherit('esno mc-tools/packages/run/src/cli.ts dev/tools/mct-run.json')
-    )
+      execSyncInherit('esno mc-tools/packages/run/src/cli.ts dev/tools/mct-run.json'))
   }
 
   /*
@@ -195,7 +196,7 @@ const style = {
   const nextVersion = inputVersion || oldVersion || 'v???'
 
   if (await pressEnterOrEsc(`[${STEP++}] Generate Changelog? ENTER / ESC.`)) {
-    const latestPath = 'changelogs/LATEST.md'
+    const latestPath = 'CHANGELOG-latest.md'
 
     // Update version in files
     execSyncInherit(`npx json -I -f config/CustomMainMenu/mainmenu.json -e "this.labels.version_num.text='${nextVersion}'"`)
@@ -261,9 +262,7 @@ const style = {
 
     doTask(`👬 Cloning latest tag to ${tmpOverrides} ... \n`, () => {
       execSyncInherit(`git clone --recurse-submodules -j8 --depth 1 "file://${mcClientPath}" .`)
-    },
-    tmpOverrides
-    )
+    }, tmpOverrides)
 
     doTask(
       '⬅️ Move manifest.json ... ',
@@ -278,7 +277,8 @@ const style = {
 
     doTask(
       '🧹 Removing non-release files and folders ... ',
-      () => removeFiles(getIgnoredFiles(devonlyIgnore)), tmpOverrides
+      () => removeFiles(getIgnoredFiles(devonlyIgnore)),
+      tmpOverrides
     )
   }
 
@@ -350,7 +350,7 @@ const style = {
 
   /**
    * Patterns of files that should be removed from server
-  */
+   */
   const serveronlyIgnore = ignore().add(loadText('dev/.serveronly.ignore'))
 
   /** List of all server-side mod JARs, except bansoukou and devonly */
@@ -397,9 +397,7 @@ const style = {
     process.chdir(mcClientPath)
     zip(disabledList)
     zip(renameList, 'rn')
-  },
-  tmpOverrides
-  )
+  }, tmpOverrides)
 
   /*
 ███████╗███████╗████████╗██████╗
@@ -552,14 +550,13 @@ const style = {
     doTask('🌍 Releasing on Github ... \n', () =>
       execSyncInherit(
         'gh release create'
-          + ` ${nextVersion}`
-          + ` --title="${(`${nextVersion} ${inputTitle}`).trim()}"`
-          + ' --repo=Krutoy242/Enigmatica2Expert-Extended'
-          + ' --notes-file=changelogs/LATEST.md'
-          + ` "${zipPath_EN}"`
-          + ` "${zipPath_server}"`
-      )
-    )
+        + ` ${nextVersion}`
+        + ` --title="${(`${nextVersion} ${inputTitle}`).trim()}"`
+        + ' --repo=Krutoy242/Enigmatica2Expert-Extended'
+        + ' --notes-file=CHANGELOG-latest.md'
+        + ` "${zipPath_EN}"`
+        + ` "${zipPath_server}"`
+      ))
   }
 
   process.exit(0)

@@ -69,13 +69,23 @@
       "extendedcrafting-",
       "visualores-",
       "AdvancedTweakery-",
-      "zenrecipereload-"
+      "zenrecipereload-",
+      "fairylights-",
+      "!Red-Core-",
+      "NE-1.12.2-Forge-",
+      "Finite Gas-",
+      "Alfheim-"
     ]
   },
   {
     "name": "Develop",
     "description": "Mods that can be removed in Develop environment",
     "list": [
+      "betteranimalsplusplus-",
+      "PrecisionMining-",
+      "ProbeZS-",
+      "twilighttweaks-",
+      "RandomTweaker-",
       "Seared-Ladder-",
       "EntityCulling-",
       "particleculling-",

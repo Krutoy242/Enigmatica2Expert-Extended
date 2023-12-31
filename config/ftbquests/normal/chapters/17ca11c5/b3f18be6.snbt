@@ -1,7 +1,7 @@
 {
 	title: "{q.bragging_rights.creative_rf_eu.name}",
-	x: 5.249999999999999d,
-	y: 7.541666666666668d,
+	x: 5.6000000000000005d,
+	y: 7.583333333333334d,
 	text: [
 		"{q.bragging_rights.creative_rf_eu.desc}"
 	],
@@ -10,7 +10,7 @@
 		"5bed1422",
 		"c38d4bfa"
 	],
-	size: 1.1666666666666667d,
+	size: 1.25d,
 	tasks: [{
 		uid: "62c96351",
 		type: "item",

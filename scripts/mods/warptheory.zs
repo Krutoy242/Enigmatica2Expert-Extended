@@ -1,5 +1,3 @@
-import crafttweaker.world.IWorld;
-
 #modloaded warptheory
 
 // [Hunk of something] gives random amount of curioses (exept alchemy and auromancy progress) and 1/100 chance for pech wand

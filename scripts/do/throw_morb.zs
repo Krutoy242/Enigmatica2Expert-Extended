@@ -10,25 +10,26 @@ https://github.com/Krutoy242
 
 */
 
+#modloaded jei ctintegration
+#reloadable
+
+import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
-import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.text.ITextComponent.fromTranslation;
-
-#reloadable
 
 static hpPortionTreshold as double = 0.8;
 static ignoredHealth as double = 20.0;
 
 // morb-like items limitation hint
-scripts.lib.tooltip.desc.both(<thermalexpansion:morb:*>, "morb_resist", (hpPortionTreshold * 100) as int, (ignoredHealth / 2) as int);
-scripts.lib.tooltip.desc.both(<cyclicmagic:magic_net>  , "morb_resist", (hpPortionTreshold * 100) as int, (ignoredHealth / 2) as int);
+scripts.lib.tooltip.desc.both(<thermalexpansion:morb:*>, 'morb_resist', (hpPortionTreshold * 100) as int, (ignoredHealth / 2) as int);
+scripts.lib.tooltip.desc.both(<cyclicmagic:magic_net>, 'morb_resist', (hpPortionTreshold * 100) as int, (ignoredHealth / 2) as int);
 
 static uncapturables as IEntityDefinition[] = [
-/*Inject_js(
+/* Inject_js(
   config('config/cofh/thermalexpansion/morbs.cfg')
   .Blacklist.Blacklist.map(s=>`  <entity:${s}>,`)
-)*/
+) */
   <entity:iceandfire:cyclops>,
   <entity:iceandfire:deathwormegg>,
   <entity:iceandfire:dragonegg>,
@@ -69,11 +70,11 @@ static uncapturables as IEntityDefinition[] = [
 
 events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileImpactThrowableEvent) {
   if (isNull(e.thrower)
-      || !(e.thrower instanceof IPlayer)
-      || e.thrower.world.remote
-      || isNull(e.rayTrace.entity)
-      || !(e.rayTrace.entity instanceof IEntityLivingBase)
-      || e.rayTrace.entity instanceof crafttweaker.entity.IEntityAnimal
+    || !(e.thrower instanceof IPlayer)
+    || e.thrower.world.remote
+    || isNull(e.rayTrace.entity)
+    || !(e.rayTrace.entity instanceof IEntityLivingBase)
+    || e.rayTrace.entity instanceof crafttweaker.entity.IEntityAnimal
   ) return;
 
   val player as IPlayer = e.thrower;

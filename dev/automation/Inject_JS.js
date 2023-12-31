@@ -13,20 +13,22 @@
 
 /* eslint-disable unused-imports/no-unused-imports */
 
+import process from 'node:process'
+
 import glob from 'glob'
 import humanizeString from 'humanize-string'
 import _ from 'lodash'
 import { getBorderCharacters, table } from 'table'
 import { js2xml, xml2js } from 'xml-js'
 import yargs from 'yargs'
-import { getExtra } from '../lib/jaopca.js'
 
+import { getExtra } from '../lib/jaopca.js'
 import {
   countBaseOutput,
   getByOreBase,
-  getByOreKind,
   getByOredict,
   getByOredict_first,
+  getByOreKind,
   getCrtLogBlock,
   getFurnaceRecipes,
   getItemOredictSet,
@@ -123,7 +125,7 @@ export async function init(h = defaultHelper) {
   glob.sync('scripts/**/*.zs').forEach((filePath) => {
     const zsfileContent = loadText(filePath)
     for (const match of zsfileContent.matchAll(
-      /\/\*\s*Inject_js((\(|\{)[\s\S\n\r]*?(\)|\}))\*\//gm
+      /\/\*\s*Inject_js((\(|\{)[\s\S\n\r]*?(\)|\}))\s*\*\//gm
     )) {
       const lineNumber = zsfileContent
         .substring(0, match.index)

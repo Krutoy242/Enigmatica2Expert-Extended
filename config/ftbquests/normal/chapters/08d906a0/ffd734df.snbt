@@ -1,0 +1,23 @@
+{
+	x: 18.0d,
+	y: 3.0d,
+	dependencies: [
+		"18efdca6",
+		"6e20475e"
+	],
+	optional: true,
+	tasks: [{
+		uid: "0e9ced94",
+		type: "item",
+		items: [{
+			item: "claybucket:claybucket 1 2"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "66af60ba",
+		type: "item",
+		item: "harvestcraft:friedfeastitem",
+		count: 8
+	}]
+}

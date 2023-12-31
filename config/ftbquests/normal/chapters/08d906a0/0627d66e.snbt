@@ -1,0 +1,22 @@
+{
+	x: 10.5d,
+	y: 0.0d,
+	dependencies: [
+		"adb9ed81",
+		"0d4c8f65"
+	],
+	optional: true,
+	tasks: [{
+		uid: "789b865e",
+		type: "item",
+		items: [{
+			item: "minecraft:clay"
+		}],
+		count: 2L
+	}],
+	rewards: [{
+		uid: "1b7d74c6",
+		type: "xp_levels",
+		xp_levels: 1
+	}]
+}

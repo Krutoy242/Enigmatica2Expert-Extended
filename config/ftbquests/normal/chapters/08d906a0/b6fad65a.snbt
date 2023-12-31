@@ -1,0 +1,22 @@
+{
+	x: 16.5d,
+	y: -1.5d,
+	hide_dependency_lines: true,
+	dependencies: [
+		"aada5fc0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "deef3d3f",
+		type: "item",
+		items: [{
+			item: "minecraft:rotten_flesh"
+		}]
+	}],
+	rewards: [{
+		uid: "6bd9565d",
+		type: "item",
+		item: "thaumcraft:flesh_block",
+		count: 32
+	}]
+}

@@ -1,0 +1,21 @@
+{
+	x: 21.0d,
+	y: -3.0d,
+	dependencies: [
+		"c562ffc1"
+	],
+	optional: true,
+	tasks: [{
+		uid: "739fa258",
+		type: "item",
+		items: [{
+			item: "forestry:apatite"
+		}]
+	}],
+	rewards: [{
+		uid: "69bc241f",
+		type: "item",
+		item: "forestry:resources",
+		count: 8
+	}]
+}

@@ -1,0 +1,23 @@
+{
+	icon: "minecraft:log",
+	x: 3.0d,
+	y: 0.0d,
+	dependencies: [
+		"aada5fc0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "1d818605",
+		type: "item",
+		items: [{
+			item: "minecraft:planks"
+		}],
+		count: 32L
+	}],
+	rewards: [{
+		uid: "8ca49ad7",
+		type: "item",
+		item: "minecraft:apple",
+		count: 16
+	}]
+}

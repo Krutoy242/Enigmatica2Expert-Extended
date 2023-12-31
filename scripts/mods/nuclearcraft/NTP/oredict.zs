@@ -1,25 +1,25 @@
+#modloaded nuclearcraft
 #priority 2147483647
 
-
-var eleingot = <contenttweaker:elektron60_ingot>;
-var eleingoted = <ore:ingotElektron60>;
+val eleingot = <contenttweaker:elektron60_ingot>;
+val eleingoted = <ore:ingotElektron60>;
 eleingoted.add(eleingot);
-var eleblock = <contenttweaker:elektron60_block>;
-var eleblocked = <ore:blockElektron60>;
+val eleblock = <contenttweaker:elektron60_block>;
+val eleblocked = <ore:blockElektron60>;
 eleblocked.add(eleblock);
 
-var steelblade = <nuclearcraft:turbine_rotor_blade_steel>;
-var steelbladed = <ore:tbladeSteel>;
+val steelblade = <nuclearcraft:turbine_rotor_blade_steel>;
+val steelbladed = <ore:tbladeSteel>;
 steelbladed.add(steelblade);
 
-var extremeblade = <nuclearcraft:turbine_rotor_blade_extreme>;
-var extremebladed = <ore:tbladeExtreme>;
+val extremeblade = <nuclearcraft:turbine_rotor_blade_extreme>;
+val extremebladed = <ore:tbladeExtreme>;
 extremebladed.add(extremeblade);
 
-var sicsiccmcblade = <nuclearcraft:turbine_rotor_blade_sic_sic_cmc>;
-var sicsiccmcbladed = <ore:tbladeSiCSiCCmC>;
+val sicsiccmcblade = <nuclearcraft:turbine_rotor_blade_sic_sic_cmc>;
+val sicsiccmcbladed = <ore:tbladeSiCSiCCmC>;
 sicsiccmcbladed.add(sicsiccmcblade);
 
-var superalloyblade = <qmd:turbine_blade_super_alloy>;
-var superalloybladed = <ore:tbladeSuperAlloy>;
+val superalloyblade = <qmd:turbine_blade_super_alloy>;
+val superalloybladed = <ore:tbladeSuperAlloy>;
 superalloybladed.add(superalloyblade);

@@ -1,0 +1,24 @@
+{
+	icon: "forestry:wood_pile",
+	x: 12.0d,
+	y: -3.0d,
+	hide_dependency_lines: true,
+	dependencies: [
+		"aada5fc0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "ae3755ba",
+		type: "item",
+		items: [{
+			item: "forestry:wood_pile"
+		}],
+		count: 8L
+	}],
+	rewards: [{
+		uid: "3887a9c4",
+		type: "item",
+		item: "forestry:loam",
+		count: 64
+	}]
+}

@@ -1,0 +1,50 @@
+{
+	icon: "ic2:te 1 100",
+	x: 12.0d,
+	y: 0.0d,
+	dependencies: [
+		"0627d66e",
+		"cbc64098"
+	],
+	optional: true,
+	tasks: [{
+		uid: "abdf9030",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 100"
+		}]
+	},
+	{
+		uid: "d85f7d71",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 101"
+		}]
+	},
+	{
+		uid: "336c61f3",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 102"
+		}]
+	},
+	{
+		uid: "f73fd304",
+		type: "item",
+		items: [{
+			item: "ic2:refractory_bricks"
+		}],
+		count: 24L
+	}],
+	rewards: [{
+		uid: "a5e75efd",
+		type: "item",
+		item: {
+			id: "mekanism:machineblock2",
+			Damage: 11s,
+			tag: {
+				tier: 0
+			}
+		}
+	}]
+}

@@ -89,6 +89,8 @@ key_enderio.keybind.tnt:24
 key_enderio.keybind.top:0
 key_enderio.keybind.yetawrenchmode:0
 key_Extra information:211:CONTROL
+key_enderutilities.key.activate_unselected:34
+key_enderutilities.key.togglemode:34
 key_FpsReducer.key.forceIdle:197
 key_FpsReducer.key.guiOpen:0
 key_gui.xaero_alternative_list_players:0
@@ -109,7 +111,7 @@ key_gui.xaero_toggle_grid:0
 key_gui.xaero_toggle_light_overlay:0
 key_gui.xaero_toggle_manual_cave_mode:0
 key_gui.xaero_toggle_map_waypoints:0
-key_gui.xaero_toggle_map:0
+key_gui.xaero_toggle_map:50:ALT
 key_gui.xaero_toggle_slime:0
 key_gui.xaero_toggle_tracked_players:0
 key_gui.xaero_toggle_waypoints:0
@@ -309,7 +311,7 @@ key_key.sprint:29
 key_key.swapHands:33
 key_key.toastcontrol.clear:0
 key_key.toggle_focus.desc:15
-key_key.toggle_shaders:0
+key_key.toggle_shaders:40
 key_key.toggleFoVChanges:51:SHIFT
 key_key.togglehud.desc:0
 key_key.togglePerspective:63

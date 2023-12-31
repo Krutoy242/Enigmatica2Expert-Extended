@@ -1,12 +1,12 @@
+#modloaded loottweaker
+#priority -1
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+
 import loottweaker.vanilla.loot.Conditions;
 import loottweaker.vanilla.loot.Functions;
-import loottweaker.vanilla.loot.LootPool;
-import loottweaker.vanilla.loot.LootTable;
-
-#priority -1
 
 // -------------------------------------------------------------------------------
 // Tools
@@ -25,39 +25,38 @@ import loottweaker.vanilla.loot.LootTable;
 // Loot
 // -------------------------------------------------------------------------------
 
-# Add 100% Guardian Diode to Guardian
-val guardTbl = loottweaker.LootTweaker.getTable("minecraft:entities/elder_guardian");
-guardTbl.getPool("pool3").removeEntry("minecraft:gameplay/fishing/fish");
-guardTbl.addPool("diode", 1, 1, 1, 1).addItemEntryHelper(<enderio:item_material:56>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
+// Add 100% Guardian Diode to Guardian
+val guardTbl = loottweaker.LootTweaker.getTable('minecraft:entities/elder_guardian');
+guardTbl.getPool('pool3').removeEntry('minecraft:gameplay/fishing/fish');
+guardTbl.addPool('diode', 1, 1, 1, 1).addItemEntryHelper(<enderio:item_material:56>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
 
-# Add drops to vanilla entities
+// Add drops to vanilla entities
 <entity:minecraft:endermite>.addDrop(<appliedenergistics2:material:46>, 1, 3);
 <entity:minecraft:endermite>.addPlayerOnlyDrop(<contenttweaker:item_ore_tungsten> % 25, 1, 1);
 
-val endermanPool = loottweaker.LootTweaker.getTable("minecraft:entities/enderman").getPool("main"); //Enderman (make enderpearls drop 100% of the time)
-endermanPool.removeEntry("minecraft:ender_pearl"); //Remove main enderpearl entry
+val endermanPool = loottweaker.LootTweaker.getTable('minecraft:entities/enderman').getPool('main'); // Enderman (make enderpearls drop 100% of the time)
+endermanPool.removeEntry('minecraft:ender_pearl'); // Remove main enderpearl entry
 endermanPool.addItemEntryHelper(<minecraft:ender_pearl>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
 
-# More Zombie Pigman gold drop
-loottweaker.LootTweaker.getTable("minecraft:entities/zombie_pigman").getPool("main")
-.addItemEntryHelper(<minecraft:gold_ingot>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
+// More Zombie Pigman gold drop
+loottweaker.LootTweaker.getTable('minecraft:entities/zombie_pigman').getPool('main')
+  .addItemEntryHelper(<minecraft:gold_ingot>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
 
-# Vex
-loottweaker.LootTweaker.getTable("minecraft:entities/vex").getPool("main")
-.addItemEntryHelper(<deepmoblearning:living_matter_overworldian>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0), Functions.setCount(0, 1)], [Conditions.killedByPlayer()]);
+// Vex
+loottweaker.LootTweaker.getTable('minecraft:entities/vex').getPool('main')
+  .addItemEntryHelper(<deepmoblearning:living_matter_overworldian>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0), Functions.setCount(0, 1)], [Conditions.killedByPlayer()]);
 
 // -------------------------------------------------------------------------------
 
-# *======= Adding Burnables =======*
+// *======= Adding Burnables =======*
 
-furnace.setFuel(<minecraft:fire_charge>, 1200);# Fire Charges
-furnace.setFuel(<ore:dustSulfur>, 300);# Sulfur
-furnace.setFuel(<thermalfoundation:material:832>, 800);# Rosin
-furnace.setFuel(<forestry:resource_storage>, 1000); # Apatite
+furnace.setFuel(<minecraft:fire_charge>, 1200);// Fire Charges
+furnace.setFuel(<ore:dustSulfur>, 300);// Sulfur
+furnace.setFuel(<thermalfoundation:material:832>, 800);// Rosin
+furnace.setFuel(<forestry:resource_storage>, 1000); // Apatite
 furnace.setFuel(<forestry:apatite>, 100);
-furnace.setFuel(<randomthings:ingredient:13>, 1200); # Blackout Powder
+furnace.setFuel(<randomthings:ingredient:13>, 1200); // Blackout Powder
 furnace.setFuel(<rats:little_black_squash_balls>, 8000);
-
 
 // -------------------------------------------------------------------------------
 // Recipes
@@ -75,7 +74,7 @@ recipes.addShaped('End Crystal',
     [<ore:blockGlassHardened>, <ore:itemGhastTear>, <ore:blockGlassHardened>]]);
 
 // String recipes
-var wool = <minecraft:wool:*>;
+val wool = <minecraft:wool:*>;
 recipes.removeShapeless(<minecraft:string> * 4, [wool]);
 recipes.removeShaped(<minecraft:string> * 4,
   [[wool, null, null],
@@ -100,8 +99,8 @@ craft.make(<minecraft:elytra>, ['pretty',
   '  C  ',
   'X   X'], {
   A: <endreborn:item_angel_feather>, // Angel Feather
-  C: <minecraft:web>,                // Cobweb
-  X: <endreborn:death_essence>,      // Xorcite Shard
+  C: <minecraft:web>, // Cobweb
+  X: <endreborn:death_essence>, // Xorcite Shard
 });
 
 // Dragon Egg
@@ -137,7 +136,7 @@ craft.remake(<minecraft:furnace>, ['pretty',
   'S ☺ S',
   '░ ░ ░'], {
   '░': <ore:cobblestone>, // Cobblestone
-  'S': <ore:gearStone>,   // Stone Gear
+  'S': <ore:gearStone>, // Stone Gear
   '☺': <minecraft:coal:*> | <actuallyadditions:item_misc:22>, // Coal
 });
 
@@ -214,7 +213,7 @@ recipes.addShaped('Crafting Station textured', <tconstruct:tooltables>, [
 
   // If every plank not same, return texturless
   for i in 2 .. 5 {
-    if (!ins.p1.matches(ins['p' ~i])) return out;
+    if (!ins.p1.matches(ins['p' ~ i])) return out;
   }
 
   return <tconstruct:tooltables>.withTag({ textureBlock: { id: ins.p1.definition.id, Count: 1 as byte, Damage: ins.p1.damage } });
@@ -260,10 +259,10 @@ val pistonWood = [
 
 recipes.remove(<minecraft:piston>);
 var k = 0;
-for tuple in pistonWood{
-  for wood, amount in tuple{
-    for i, plate in pistonPlates{
-      recipes.addShapedMirrored('piston' ~k,
+for tuple in pistonWood {
+  for wood, amount in tuple {
+    for i, plate in pistonPlates {
+      recipes.addShapedMirrored('piston' ~ k,
         amount != 1 ? <minecraft:piston> * amount : <minecraft:piston>, [
           [wood, wood, wood],
           [<ore:compressed1xCobblestone>, plate, <ore:compressed1xCobblestone>],
@@ -289,7 +288,7 @@ val excludeLogs as IItemStack[] = [
 
 // Ingredient of all possible logs except listed above
 var logsFiltered as IIngredient = <minecraft:log>;
-for log in <ore:logWood>.items{
+for log in <ore:logWood>.items {
   var isAdd = true;
   for i in 0 .. excludeLogs.length {
     if ((log in excludeLogs[i]) || (excludeLogs[i] in log)) {
@@ -349,7 +348,7 @@ scripts.process.crush(<minecraft:arrow>, <minecraft:flint>, 'no exceptions', [<o
 // Fire charge recycle
 scripts.process.crush(<minecraft:fire_charge>, <thermalfoundation:material:768>,
   'only: eu2Crusher AACrusher crushingBlock', [
-    <minecraft:gunpowder>, <minecraft:blaze_powder>
+    <minecraft:gunpowder>, <minecraft:blaze_powder>,
   ], [0.5f, 0.2f]
 );
 

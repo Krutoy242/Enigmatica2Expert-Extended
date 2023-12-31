@@ -1,0 +1,21 @@
+{
+	x: 28.5d,
+	y: 1.5d,
+	dependencies: [
+		"ae69ea6f"
+	],
+	optional: true,
+	tasks: [{
+		uid: "59a3087b",
+		type: "item",
+		items: [{
+			item: "mekanism:oreblock"
+		}]
+	}],
+	rewards: [{
+		uid: "64da8840",
+		type: "item",
+		item: "mekanism:oreblock",
+		count: 8
+	}]
+}

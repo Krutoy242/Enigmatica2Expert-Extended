@@ -14,8 +14,8 @@ val tinyPotatoes = [
   <botania_tweaks:compressed_tiny_potato_8>,
 ] as IItemStack[];
 
-# Add back-conversion recipe
+// Add back-conversion recipe
 for i, potato in tinyPotatoes {
-  if(i==0) continue;
+  if (i == 0) continue;
   recipes.addShapeless(tinyPotatoes[i - 1] * 9, [potato]);
 }

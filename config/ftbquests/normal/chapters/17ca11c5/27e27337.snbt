@@ -1,7 +1,7 @@
 {
 	title: "{q.bragging_rights.creative_rod_frame.name}",
-	x: 7.1d,
-	y: 5.1d,
+	x: 5.5d,
+	y: 4.7d,
 	text: [
 		"{q.bragging_rights.creative_rod_frame.desc}"
 	],

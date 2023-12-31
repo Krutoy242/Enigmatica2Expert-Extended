@@ -1,112 +1,110 @@
+#modloaded jaopca
 #priority -10
 
 import crafttweaker.data.IData;
-import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
-import scripts.process.beneficiate as beneficiate;
+
 import scripts.category.magicProcessing.magicProcessing;
+import scripts.process.beneficiate;
 
 static benOpts as IData = {
-  exceptions: "Pulverizer StarlightInfuser",
-  meltingExceptions: scripts.vars.meltingExceptions
+  exceptions       : 'Pulverizer StarlightInfuser',
+  meltingExceptions: scripts.vars.meltingExceptions,
 } as IData;
 
 function getOreName(name as string, part as string) as string {
-  if(name.matches(part ~ "[A-Z]\\w+")) return name.substring(part.length);
+  if (name.matches(part ~ '[A-Z]\\w+')) return name.substring(part.length);
   return null;
 }
 
-# Pairs of ore names and respective liquid
+// Pairs of ore names and respective liquid
 val ore_liquid_exceptions = {
-  Aluminium:       "aluminum",
-  AstralStarmetal: "starmetal",
+  Aluminium      : 'aluminum',
+  AstralStarmetal: 'starmetal',
 } as string[string];
 
 for ore_entry in oreDict {
-	val name = ore_entry.name;
+  val name = ore_entry.name;
 
-  # Ex Nihilo ore pieces conversion to ores
-  var
-  ore_name = getOreName(name, "piece");
-	if (!isNull(ore_name)) {
-    if(ore_name == 'Aluminum') continue;
-		val oreBlock = oreDict.get("ore" ~ ore_name);
-		if(isNull(oreBlock) || oreBlock.empty) continue;
+  // Ex Nihilo ore pieces conversion to ores
+  var ore_name = getOreName(name, 'piece');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
+    val oreBlock = oreDict.get('ore' ~ ore_name);
+    if (isNull(oreBlock) || oreBlock.empty) continue;
 
     for item in oreBlock.items {
       val asBlock = item.asBlock();
-      if(isNull(asBlock) || asBlock.definition.id == 'minecraft:air') continue;
+      if (isNull(asBlock) || asBlock.definition.id == 'minecraft:air') continue;
       val oreBlockState = asBlock.definition.getStateFromMeta(item.damage);
       scripts.do.burnt_in_fluid.add(ore_entry.itemArray[0].definition.id, oreBlockState, 'stone', 1.0 / 3.0);
       break;
     }
     continue;
-	}
+  }
 
-
-  # Native clusters processing
-  ore_name = getOreName(name, "cluster");
-	if (!isNull(ore_name)) {
-    if(ore_name == 'Aluminum') continue;
+  // Native clusters processing
+  ore_name = getOreName(name, 'cluster');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
     beneficiate(ore_entry, ore_name, 2, benOpts);
 
-    # Fix gems melting recipes
-    # 	Standart JAOPCA's furnace recipes for Ores that outputs
-    # gems instead of ingots have empty output, so add it forced
-    var smelted = utils.smelt(ore_entry);
+    // Fix gems melting recipes
+    //   Standart JAOPCA's furnace recipes for Ores that outputs
+    // gems instead of ingots have empty output, so add it forced
+    val smelted = utils.smelt(ore_entry);
     if (isNull(smelted)) {
       furnace.remove(<*>, ore_entry);
-      var gem = utils.getSomething(ore_name, ["gem", "dust", "any"], 2);
-      if(!isNull(gem)) furnace.addRecipe(gem, ore_entry);
+      val gem = utils.getSomething(ore_name, ['gem', 'dust', 'any'], 2);
+      if (!isNull(gem)) furnace.addRecipe(gem, ore_entry);
     }
 
-    # Add JEI entry for Thaumic Wonders
-    val oreBlock = utils.getSomething(ore_name, ["ore"], 1);
-    if(!isNull(oreBlock)) {
+    // Add JEI entry for Thaumic Wonders
+    val oreBlock = utils.getSomething(ore_name, ['ore'], 1);
+    if (!isNull(oreBlock)) {
       scripts.jei.mod.thaumicwonders.addAlchemists(oreBlock * 1, ore_entry.firstItem);
     }
-    val crsShard = utils.getSomething(ore_name, ["crystalShard"], 1);
-    if(!isNull(crsShard)) scripts.jei.mod.thaumicwonders.addAlienists(ore_entry, crsShard * 1);
+    val crsShard = utils.getSomething(ore_name, ['crystalShard'], 1);
+    if (!isNull(crsShard)) scripts.jei.mod.thaumicwonders.addAlienists(ore_entry, crsShard * 1);
 
     magicProcessing(ore_entry, ore_name);
     continue;
   }
 
-  # Crushed Ore Smeltery compat
-  ore_name = getOreName(name, "crushed");
-	if (!isNull(ore_name)) {
-    if(ore_name == 'Aluminum') continue;
+  // Crushed Ore Smeltery compat
+  ore_name = getOreName(name, 'crushed');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
     val exception = ore_liquid_exceptions[ore_name];
     val liquid = game.getLiquid(isNull(exception) ? ore_name.toLowerCase() : exception);
-    if(isNull(liquid)) continue;
+    if (isNull(liquid)) continue;
 
     mods.tconstruct.Melting.addRecipe(liquid * 144, ore_entry);
     continue;
   }
 
-  # Dense plates in Thermal Expansion Compactor
-  ore_name = getOreName(name, "plateDense");
-	if (!isNull(ore_name)) {
-    if(ore_name == 'Aluminum') continue;
-		val inpOre = (ore_name == "Obsidian")
-			? (<minecraft:obsidian> * 3) as IIngredient
-			: oreDict["block"~ore_name];
-		if(inpOre.items.length <= 0) continue;
-		scripts.process.compress(inpOre, ore_entry.firstItem, "only: Compactor");
-    mods.immersiveengineering.MetalPress.addRecipe(ore_entry.firstItem, oreDict["plate"~ore_name], <immersiveengineering:mold:6>, 16000, 9);
+  // Dense plates in Thermal Expansion Compactor
+  ore_name = getOreName(name, 'plateDense');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
+    val inpOre = (ore_name == 'Obsidian')
+      ? (<minecraft:obsidian> * 3) as IIngredient
+      : oreDict['block' ~ ore_name];
+    if (inpOre.items.length <= 0) continue;
+    scripts.process.compress(inpOre, ore_entry.firstItem, 'only: Compactor');
+    mods.immersiveengineering.MetalPress.addRecipe(ore_entry.firstItem, oreDict['plate' ~ ore_name], <immersiveengineering:mold:6>, 16000, 9);
     continue;
-	}
+  }
 }
-
 
 // for ore_name, outputs in {
 // /*Inject_js!!!!!!!{
-// const clusters = Object.entries(getByOreKind('cluster')).filter(([base])=>!['Yellorium','Aluminum'].includes(base))
-// const furnInputs = new Set(getUnchangedFurnaceRecipes().map(r=>r.input))
-// const noFurn = new Set(clusters.map(([,tm])=>tm.commandString).filter(cs=>!furnInputs.has(cs)))
+// val clusters = Object.entries(getByOreKind('cluster')).filter(([base])=>!['Yellorium','Aluminum'].includes(base))
+// val furnInputs = new Set(getUnchangedFurnaceRecipes().map(r=>r.input))
+// val noFurn = new Set(clusters.map(([,tm])=>tm.commandString).filter(cs=>!furnInputs.has(cs)))
 
 // return clusters.map(([base,tm])=>{
-//   const result = noFurn.has(tm.commandString) ? getSomething(base, ["ingot", "gem", "dust", "any"], ["cluster", "ore"]) : undefined
+//   val result = noFurn.has(tm.commandString) ? getSomething(base, ["ingot", "gem", "dust", "any"], ["cluster", "ore"]) : undefined
 //   return [
 //   `${base}`,
 //   `: [${tm.commandString}`,
@@ -165,7 +163,7 @@ for ore_entry in oreDict {
 //   magicProcessing(ore_entry, ore_name);
 
 //   # Fix gems melting recipes
-//   # 	Standart JAOPCA's furnace recipes for Ores that outputs
+//   #   Standart JAOPCA's furnace recipes for Ores that outputs
 //   # gems instead of ingots have empty output, so add it forced
 //   var smelted = utils.smelt(ore_entry);
 //   if (isNull(smelted)) {

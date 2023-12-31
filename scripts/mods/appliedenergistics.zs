@@ -1,12 +1,13 @@
-import crafttweaker.item.IItemStack;
-import crafttweaker.item.IIngredient;
 #modloaded appliedenergistics2
-	
-var pearlFluix = <ore:pearlFluix>;
-var crystalCertus = <ore:crystalCertus>;
+
+import crafttweaker.item.IIngredient;
+import crafttweaker.item.IItemStack;
+
+val pearlFluix = <ore:pearlFluix>;
+val crystalCertus = <ore:crystalCertus>;
 
 // ------ Silicon unification ------
-var trueSilicon = <appliedenergistics2:material:5>;
+val trueSilicon = <appliedenergistics2:material:5>;
 <ore:itemSilicon>.remove([<libvulpes:productingot:3>, <enderio:item_material:5>]);
 <ore:ingotSilicon>.add(trueSilicon);
 
@@ -17,184 +18,181 @@ mods.mekanism.crusher.removeRecipe(<nuclearcraft:gem:6>); // Sand -> silicon
 mods.thermalexpansion.Compactor.addMintRecipe(trueSilicon * 2, <minecraft:sand>, 4000);
 // ---------------------------------
 
-# Smart Cable -> Dense
-	recipes.addShapeless("4 Smart Cables to Dense", 
-	<appliedenergistics2:part:76>, 
-	[<appliedenergistics2:part:56>,<appliedenergistics2:part:56>,<appliedenergistics2:part:56>,<appliedenergistics2:part:56>,<ore:dustRedstone>,<ore:dustGlowstone>]);
+// Smart Cable -> Dense
+recipes.addShapeless('4 Smart Cables to Dense',
+  <appliedenergistics2:part:76>,
+  [<appliedenergistics2:part:56>, <appliedenergistics2:part:56>, <appliedenergistics2:part:56>, <appliedenergistics2:part:56>, <ore:dustRedstone>, <ore:dustGlowstone>]);
 
-# [Portable Cell] from [Energy Cell][+3]
-craft.remake(<appliedenergistics2:portable_cell>, ["pretty",
-  "  *  ",
-  "∩ Ϟ ∩",
-  "⌃   ⌃"], {
-  "*": <ic2:energy_crystal>.withTag({charge: 1000000.0}), # Energy Crystal
-  "∩": <rats:charged_creeper_chunk>,     # Charged Creeper Chunk
-  "Ϟ": <appliedenergistics2:energy_cell:*>, # Energy Cell
-  "⌃": <appliedenergistics2:material:1>, # Charged Certus Quartz Crystal
+// [Portable Cell] from [Energy Cell][+3]
+craft.remake(<appliedenergistics2:portable_cell>, ['pretty',
+  '  *  ',
+  '∩ Ϟ ∩',
+  '⌃   ⌃'], {
+  '*': <ic2:energy_crystal>.withTag({ charge: 1000000.0 }), // Energy Crystal
+  '∩': <rats:charged_creeper_chunk>, // Charged Creeper Chunk
+  'Ϟ': <appliedenergistics2:energy_cell:*>, // Energy Cell
+  '⌃': <appliedenergistics2:material:1>, // Charged Certus Quartz Crystal
 });
 
-# ---=== Storage Cell Helpers ===---
-  function newCellRecipe(input as IIngredient, output as IItemStack) {
-	recipes.remove(output);
-	recipes.addShaped(output,
-		[[<appliedenergistics2:quartz_glass>, <ore:dustRedstone>, <appliedenergistics2:quartz_glass>],
-		[<ore:dustRedstone>, input, <ore:dustRedstone>], 
-		[<ore:plateIron>, <ironchest:iron_chest>, <ore:plateIron>]]);
-    if(!isNull(input)) {
-      recipes.addShapeless(output, [<appliedenergistics2:material:39>, input]);
-		}
-	}
+// ---=== Storage Cell Helpers ===---
+function newCellRecipe(input as IIngredient, output as IItemStack) {
+  recipes.remove(output);
+  recipes.addShaped(output,
+    [[<appliedenergistics2:quartz_glass>, <ore:dustRedstone>, <appliedenergistics2:quartz_glass>],
+      [<ore:dustRedstone>, input, <ore:dustRedstone>],
+      [<ore:plateIron>, <ironchest:iron_chest>, <ore:plateIron>]]);
+  if (!isNull(input)) {
+    recipes.addShapeless(output, [<appliedenergistics2:material:39>, input]);
+  }
+}
 
+newCellRecipe(null, <appliedenergistics2:material:39>);
 
-  newCellRecipe(null, <appliedenergistics2:material:39>);
+// ---=== Basic Cells ===---
+val cellRecipes = {
+  // Standard Cells
+  <appliedenergistics2:material:35>: <appliedenergistics2:storage_cell_1k>,
+  <appliedenergistics2:material:36>: <appliedenergistics2:storage_cell_4k>,
+  <appliedenergistics2:material:37>: <appliedenergistics2:storage_cell_16k>,
+  <appliedenergistics2:material:38>: <appliedenergistics2:storage_cell_64k>,
+  // Fluid Cells
+  <appliedenergistics2:material:54>: <appliedenergistics2:fluid_storage_cell_1k>,
+  <appliedenergistics2:material:55>: <appliedenergistics2:fluid_storage_cell_4k>,
+  <appliedenergistics2:material:56>: <appliedenergistics2:fluid_storage_cell_16k>,
+  <appliedenergistics2:material:57>: <appliedenergistics2:fluid_storage_cell_64k>,
+  // Spatial Cells
+  <appliedenergistics2:material:32>: <appliedenergistics2:spatial_storage_cell_2_cubed>,
+  <appliedenergistics2:material:33>: <appliedenergistics2:spatial_storage_cell_16_cubed>,
+  <appliedenergistics2:material:34>: <appliedenergistics2:spatial_storage_cell_128_cubed>,
+  // View Cell
+  <ore:crystalCertus>              : <appliedenergistics2:view_cell>,
 
-# ---=== Basic Cells ===---
-  val cellRecipes = {
-	# Standard Cells
-	<appliedenergistics2:material:35>: <appliedenergistics2:storage_cell_1k>,
-	<appliedenergistics2:material:36>: <appliedenergistics2:storage_cell_4k>,
-	<appliedenergistics2:material:37>: <appliedenergistics2:storage_cell_16k>,
-	<appliedenergistics2:material:38>: <appliedenergistics2:storage_cell_64k>,
-	# Fluid Cells
-	<appliedenergistics2:material:54>: <appliedenergistics2:fluid_storage_cell_1k>,
-	<appliedenergistics2:material:55>: <appliedenergistics2:fluid_storage_cell_4k>,
-	<appliedenergistics2:material:56>: <appliedenergistics2:fluid_storage_cell_16k>,
-	<appliedenergistics2:material:57>: <appliedenergistics2:fluid_storage_cell_64k>,
-	# Spatial Cells
-	<appliedenergistics2:material:32>: <appliedenergistics2:spatial_storage_cell_2_cubed>,
-	<appliedenergistics2:material:33>: <appliedenergistics2:spatial_storage_cell_16_cubed>,
-	<appliedenergistics2:material:34>: <appliedenergistics2:spatial_storage_cell_128_cubed>,
-	# View Cell
-	<ore:crystalCertus>: <appliedenergistics2:view_cell>
+} as IItemStack[IIngredient];
 
-	} as IItemStack[IIngredient];
+for input, output in cellRecipes {
+  newCellRecipe(input, output);
+}
 
-	for input, output in cellRecipes {
-		newCellRecipe(input,output);
-	}
+// Quantum Link Chamber
+recipes.remove(<appliedenergistics2:quantum_link>);
+recipes.addShapedMirrored('Quantum Link Chamber',
+  <appliedenergistics2:quantum_link>,
+  [[<appliedenergistics2:quartz_vibrant_glass>, <rftools:infused_enderpearl>, <appliedenergistics2:quartz_vibrant_glass>],
+    [pearlFluix, <mekanism:machineblock3>, pearlFluix],
+    [<appliedenergistics2:quartz_vibrant_glass>, <ore:manaPearl>, <appliedenergistics2:quartz_vibrant_glass>]]);
 
-# Quantum Link Chamber
-	recipes.remove(<appliedenergistics2:quantum_link>);
-	recipes.addShapedMirrored("Quantum Link Chamber", 
-	<appliedenergistics2:quantum_link>, 
-	[[<appliedenergistics2:quartz_vibrant_glass>, <rftools:infused_enderpearl>, <appliedenergistics2:quartz_vibrant_glass>],
-	[pearlFluix, <mekanism:machineblock3>, pearlFluix], 
-	[<appliedenergistics2:quartz_vibrant_glass>, <ore:manaPearl>, <appliedenergistics2:quartz_vibrant_glass>]]);
-
-# [ME Drive] from [Disk Drive][+3]
-craft.remake(<appliedenergistics2:drive>, ["pretty",
-  "A A A",
-  "A : A",
-  "E ◙ E"], {
-  "A": <ore:plateTitaniumAluminide>,
-  "E": <appliedenergistics2:material:24>, # Engineering Processor
-  "◙": <rftools:machine_frame>,           # Machine Frame
-  ":": <ore:oc:diskDrive>,                # Disk Drive
+// [ME Drive] from [Disk Drive][+3]
+craft.remake(<appliedenergistics2:drive>, ['pretty',
+  'A A A',
+  'A : A',
+  'E ◙ E'], {
+  'A': <ore:plateTitaniumAluminide>,
+  'E': <appliedenergistics2:material:24>, // Engineering Processor
+  '◙': <rftools:machine_frame>, // Machine Frame
+  ':': <ore:oc:diskDrive>, // Disk Drive
 });
 
-# Matter Condenser
-	recipes.remove(<appliedenergistics2:condenser>);	
-	mods.extendedcrafting.CompressionCrafting.addRecipe(<appliedenergistics2:condenser>, 
-	<minecraft:piston>, 10000, <excompressum:double_compressed_diamond_hammer>, 1000000000, 1000000);
-	
-# [Molecular Assembler] from [Augment_ Pattern Validation][+4]
-craft.remake(<appliedenergistics2:molecular_assembler>, ["pretty",
-  "D • D",
-  "F u A",
-  "D • D"], {
-  "A": <appliedenergistics2:material:44>,  # Annihilation Core
-  "•": <appliedenergistics2:quartz_glass>, # Quartz Glass
-  "D": <enderio:item_data_conduit>,        # Data Conduit
-  "u": <thermalexpansion:augment:432>,     # Augment: Pattern Validation
-  "F": <appliedenergistics2:material:43>,  # Formation Core
+// Matter Condenser
+recipes.remove(<appliedenergistics2:condenser>);
+mods.extendedcrafting.CompressionCrafting.addRecipe(<appliedenergistics2:condenser>,
+  <minecraft:piston>, 10000, <excompressum:double_compressed_diamond_hammer>, 1000000000, 1000000);
+
+// [Molecular Assembler] from [Augment_ Pattern Validation][+4]
+craft.remake(<appliedenergistics2:molecular_assembler>, ['pretty',
+  'D • D',
+  'F u A',
+  'D • D'], {
+  'A': <appliedenergistics2:material:44>, // Annihilation Core
+  '•': <appliedenergistics2:quartz_glass>, // Quartz Glass
+  'D': <enderio:item_data_conduit>, // Data Conduit
+  'u': <thermalexpansion:augment:432>, // Augment: Pattern Validation
+  'F': <appliedenergistics2:material:43>, // Formation Core
 });
 
-# Grindstone
-	recipes.remove(<appliedenergistics2:grindstone>);
-	recipes.addShapedMirrored("Grindstone", 
-	<appliedenergistics2:grindstone>, 
-	[[<appliedenergistics2:smooth_sky_stone_block>, <ore:gearWood>, <appliedenergistics2:smooth_sky_stone_block>],
-	[<ore:crystalCertusQuartz>, <appliedenergistics2:smooth_sky_stone_block>, <ore:crystalCertusQuartz>], 
-	[<appliedenergistics2:sky_stone_block>, <ore:crystalCertusQuartz>, <appliedenergistics2:sky_stone_block>]]);
+// Grindstone
+recipes.remove(<appliedenergistics2:grindstone>);
+recipes.addShapedMirrored('Grindstone',
+  <appliedenergistics2:grindstone>,
+  [[<appliedenergistics2:smooth_sky_stone_block>, <ore:gearWood>, <appliedenergistics2:smooth_sky_stone_block>],
+    [<ore:crystalCertusQuartz>, <appliedenergistics2:smooth_sky_stone_block>, <ore:crystalCertusQuartz>],
+    [<appliedenergistics2:sky_stone_block>, <ore:crystalCertusQuartz>, <appliedenergistics2:sky_stone_block>]]);
 
-# [Energy Acceptor] from [Redstone Engineering Block][+4]
-craft.remake(<appliedenergistics2:energy_acceptor>, ["pretty",
-  "⌃ ⌃ ⌃",
-  "■ ♥ ■",
-  "T E T"], {
-  "⌃": <appliedenergistics2:part:140>,             # Quartz Fiber
-  "■": <appliedenergistics2:fluix_block>,          # Fluix Block
-  "♥": <immersiveengineering:metal_decoration0:3>, # Redstone Engineering Block
-  "T": <ore:electronTube>,                         # Vacuum Tube
-  "E": <appliedenergistics2:material:24>,          # Engineering Processor
+// [Energy Acceptor] from [Redstone Engineering Block][+4]
+craft.remake(<appliedenergistics2:energy_acceptor>, ['pretty',
+  '⌃ ⌃ ⌃',
+  '■ ♥ ■',
+  'T E T'], {
+  '⌃': <appliedenergistics2:part:140>, // Quartz Fiber
+  '■': <appliedenergistics2:fluix_block>, // Fluix Block
+  '♥': <immersiveengineering:metal_decoration0:3>, // Redstone Engineering Block
+  'T': <ore:electronTube>, // Vacuum Tube
+  'E': <appliedenergistics2:material:24>, // Engineering Processor
 });
 
-# Inscriber
-	recipes.remove(<appliedenergistics2:inscriber>);
-	recipes.addShapedMirrored("Inscriber", 
-	<appliedenergistics2:inscriber>, 
-	[[<ic2:resource:11>, <minecraft:sticky_piston>, <ic2:resource:11>],
-	[<appliedenergistics2:fluix_block>, null, <teslacorelib:machine_case>], 
-	[<ic2:resource:11>, <minecraft:sticky_piston>, <ic2:resource:11>]]);
+// Inscriber
+recipes.remove(<appliedenergistics2:inscriber>);
+recipes.addShapedMirrored('Inscriber',
+  <appliedenergistics2:inscriber>,
+  [[<ic2:resource:11>, <minecraft:sticky_piston>, <ic2:resource:11>],
+    [<appliedenergistics2:fluix_block>, null, <teslacorelib:machine_case>],
+    [<ic2:resource:11>, <minecraft:sticky_piston>, <ic2:resource:11>]]);
 
-# Presses with TE Compactor, press mode
-	mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:13>, <appliedenergistics2:quartz_block>, 50000);
-	mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:14>, <minecraft:diamond_block>, 50000);
-	mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:15>, <ic2:plate:11>, 50000);
-	mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:19>, <extrautils2:compressedsand:1>, 50000);
+// Presses with TE Compactor, press mode
+mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:13>, <appliedenergistics2:quartz_block>, 50000);
+mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:14>, <minecraft:diamond_block>, 50000);
+mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:15>, <ic2:plate:11>, 50000);
+mods.thermalexpansion.Compactor.addPressRecipe(<appliedenergistics2:material:19>, <extrautils2:compressedsand:1>, 50000);
 
-# Charged Certus Quartz -> Certus Dust
-	mods.thermalexpansion.Pulverizer.addRecipe(<appliedenergistics2:material:2>, <appliedenergistics2:material:1>, 2000, <appliedenergistics2:material:2>, 20);
-		
-# Lapis -> Dust
-	mods.appliedenergistics2.Grinder.addRecipe(<ic2:dust:9>, <minecraft:dye:4>, 4);
+// Charged Certus Quartz -> Certus Dust
+mods.thermalexpansion.Pulverizer.addRecipe(<appliedenergistics2:material:2>, <appliedenergistics2:material:1>, 2000, <appliedenergistics2:material:2>, 20);
 
+// Lapis -> Dust
+mods.appliedenergistics2.Grinder.addRecipe(<ic2:dust:9>, <minecraft:dye:4>, 4);
 
+// If Channels are turned off in the config, these recipes will be changed
+recipes.remove(<appliedenergistics2:quantum_ring>);
 
-# If Channels are turned off in the config, these recipes will be changed
-	recipes.remove(<appliedenergistics2:quantum_ring>);
+val controller = itemUtils.getItem('appliedenergistics2:controller');
 
-	var controller = itemUtils.getItem("appliedenergistics2:controller");
-	
-	if (isNull(controller)) {
-		recipes.addShapedMirrored("Quantum Ring", 
-		<appliedenergistics2:quantum_ring>, 
-		[[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:24>],
-		[<appliedenergistics2:energy_cell:*>, <enderio:item_me_conduit:1>, <appliedenergistics2:energy_cell:*>], 
-		[<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:23>]]);
-	} else {
-		recipes.addShapedMirrored("Quantum Ring", 
-		<appliedenergistics2:quantum_ring>, 
-		[[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:24>],
-		[<appliedenergistics2:energy_cell:*>, <appliedenergistics2:part:76>, <appliedenergistics2:energy_cell:*>], 
-		[<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:23>]]);
+if (isNull(controller)) {
+  recipes.addShapedMirrored('Quantum Ring',
+    <appliedenergistics2:quantum_ring>,
+    [[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:24>],
+      [<appliedenergistics2:energy_cell:*>, <enderio:item_me_conduit:1>, <appliedenergistics2:energy_cell:*>],
+      [<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:23>]]);
+}
+else {
+  recipes.addShapedMirrored('Quantum Ring',
+    <appliedenergistics2:quantum_ring>,
+    [[<appliedenergistics2:material:9>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:24>],
+      [<appliedenergistics2:energy_cell:*>, <appliedenergistics2:part:76>, <appliedenergistics2:energy_cell:*>],
+      [<appliedenergistics2:material:22>, <appliedenergistics2:energy_cell:*>, <appliedenergistics2:material:23>]]);
 
-		# [ME Controller] from [Industrial Machine Chassis][+4]
-		craft.remake(controller, ["pretty",
-			"C I C",
-			"Ϟ M Ϟ",
-			"C A C"], {
-			"C": <contenttweaker:compressed_crushed_skystone>, # Compressed Crushed Skystone
-			"I": <enderio:block_inventory_panel>,       # Inventory Panel
-			"Ϟ": <appliedenergistics2:energy_acceptor>, # Energy Acceptor
-			"M": <ore:itemMachineChassi>,               # Industrial Machine Chassis
-			"A": <appliedenergistics2:material:28>,     # Advanced Card
-		});
-	}
+  // [ME Controller] from [Industrial Machine Chassis][+4]
+  craft.remake(controller, ['pretty',
+    'C I C',
+    'Ϟ M Ϟ',
+    'C A C'], {
+    'C': <contenttweaker:compressed_crushed_skystone>, // Compressed Crushed Skystone
+    'I': <enderio:block_inventory_panel>, // Inventory Panel
+    'Ϟ': <appliedenergistics2:energy_acceptor>, // Energy Acceptor
+    'M': <ore:itemMachineChassi>, // Industrial Machine Chassis
+    'A': <appliedenergistics2:material:28>, // Advanced Card
+  });
+}
 
-# [Advanced Card*2] from [Calculation Processor][+3]
-craft.remake(<appliedenergistics2:material:28> * 2, ["pretty",
-  "▲ ▬  ",
-  "♥ C ▬",
-  "▲ ▬  "], {
-  "▲": <ore:dustCryotheum>,               # Cryotheum Dust
-  "C": <appliedenergistics2:material:23>, # Calculation Processor
-  "♥": <ore:ingotRedstoneAlloy>,          # Redstone Alloy Ingot
-  "▬": <ore:ingotElectricalSteel>,        # Electrical Steel Ingot
+// [Advanced Card*2] from [Calculation Processor][+3]
+craft.remake(<appliedenergistics2:material:28> * 2, ['pretty',
+  '▲ ▬  ',
+  '♥ C ▬',
+  '▲ ▬  '], {
+  '▲': <ore:dustCryotheum>, // Cryotheum Dust
+  'C': <appliedenergistics2:material:23>, // Calculation Processor
+  '♥': <ore:ingotRedstoneAlloy>, // Redstone Alloy Ingot
+  '▬': <ore:ingotElectricalSteel>, // Electrical Steel Ingot
 });
 
-
-# Add ore for Better Questing
+// Add ore for Better Questing
 <ore:craftingStorageAny>.add([
   <appliedenergistics2:crafting_storage_64k>,
   <appliedenergistics2:crafting_storage_16k>,
@@ -202,13 +200,13 @@ craft.remake(<appliedenergistics2:material:28> * 2, ["pretty",
   <appliedenergistics2:crafting_storage_1k>,
 ]);
 
-# Sky stone Dust
-scripts.process.crush(<appliedenergistics2:sky_stone_block>, <appliedenergistics2:material:45>, "Except: AEGrinder Pulverizer", null, null);
+// Sky stone Dust
+scripts.process.crush(<appliedenergistics2:sky_stone_block>, <appliedenergistics2:material:45>, 'Except: AEGrinder Pulverizer', null, null);
 
-# Batch dust crushing
-scripts.process.crush(<appliedenergistics2:fluix_block>, <appliedenergistics2:material:8> * 4, "only: SagMill", null, null);
+// Batch dust crushing
+scripts.process.crush(<appliedenergistics2:fluix_block>, <appliedenergistics2:material:8> * 4, 'only: SagMill', null, null);
 
-/* 
+/*
 Patchouli_js('Items/Matter Cannon', [
   {
     icon: "appliedenergistics2:matter_cannon",
@@ -225,155 +223,148 @@ Patchouli_js('Items/Matter Cannon', [
 		.sort((a,b)=>b[2]-a[2])
     .map(match=>match[1] +'#'+ Math.round(match[2] / 10))
   )
-])*/
-# Matter cannon more matter
+]) */
+// Matter cannon more matter
 val itemMass as double[IItemStack] = {
-<tconevo:metal:42>                                   : 500.0d,
-<deepmoblearning:pristine_matter_zombie>             : 100.0d,
-<deepmoblearning:pristine_matter_skeleton>           : 100.0d,
-<deepmoblearning:pristine_matter_creeper>            : 100.0d,
-<deepmoblearning:pristine_matter_spider>             : 100.0d,
-<deepmoblearning:pristine_matter_slime>              : 100.0d,
-<deepmoblearning:pristine_matter_witch>              : 100.0d,
-<deepmoblearning:pristine_matter_blaze>              : 150.0d,
-<deepmoblearning:pristine_matter_ghast>              : 150.0d,
-<deepmoblearning:pristine_matter_wither_skeleton>    : 200.0d,
-<deepmoblearning:pristine_matter_enderman>           : 200.0d,
-<deepmoblearning:pristine_matter_wither>             : 250.0d,
-<deepmoblearning:pristine_matter_dragon>             : 400.0d,
-<deepmoblearning:pristine_matter_shulker>            : 150.0d,
-<deepmoblearning:pristine_matter_guardian>           : 150.0d,
-<deepmoblearning:pristine_matter_thermal_elemental>  : 150.0d,
-<deepmoblearning:pristine_matter_tinker_slime>       : 100.0d,
-<deepmoblearning:pristine_matter_twilight_forest>    : 200.0d,
-<deepmoblearning:pristine_matter_twilight_swamp>     : 200.0d,
-<deepmoblearning:pristine_matter_twilight_darkwood>  : 200.0d,
-<deepmoblearning:pristine_matter_twilight_glacier>   : 200.0d,
+  <tconevo:metal:42>                                 : 500.0,
+  <deepmoblearning:pristine_matter_zombie>           : 100.0,
+  <deepmoblearning:pristine_matter_skeleton>         : 100.0,
+  <deepmoblearning:pristine_matter_creeper>          : 100.0,
+  <deepmoblearning:pristine_matter_spider>           : 100.0,
+  <deepmoblearning:pristine_matter_slime>            : 100.0,
+  <deepmoblearning:pristine_matter_witch>            : 100.0,
+  <deepmoblearning:pristine_matter_blaze>            : 150.0,
+  <deepmoblearning:pristine_matter_ghast>            : 150.0,
+  <deepmoblearning:pristine_matter_wither_skeleton>  : 200.0,
+  <deepmoblearning:pristine_matter_enderman>         : 200.0,
+  <deepmoblearning:pristine_matter_wither>           : 250.0,
+  <deepmoblearning:pristine_matter_dragon>           : 400.0,
+  <deepmoblearning:pristine_matter_shulker>          : 150.0,
+  <deepmoblearning:pristine_matter_guardian>         : 150.0,
+  <deepmoblearning:pristine_matter_thermal_elemental>: 150.0,
+  <deepmoblearning:pristine_matter_tinker_slime>     : 100.0,
+  <deepmoblearning:pristine_matter_twilight_forest>  : 200.0,
+  <deepmoblearning:pristine_matter_twilight_swamp>   : 200.0,
+  <deepmoblearning:pristine_matter_twilight_darkwood>: 200.0,
+  <deepmoblearning:pristine_matter_twilight_glacier> : 200.0,
 } as double[IItemStack];
 
 for item, mass in itemMass {
-	if (!isNull(item)) {
-		mods.appliedenergistics2.Cannon.registerAmmo(item, mass);
-	}
+  if (!isNull(item)) {
+    mods.appliedenergistics2.Cannon.registerAmmo(item, mass);
+  }
 }
 
-# [Printed (Every) Circuit] shortcut in [Cutting Machine]
-scripts.process.saw(<ore:blockGold>, <appliedenergistics2:material:18> *  9, "only: AdvRockCutter");
-scripts.process.saw(<ore:blockDiamond>, <appliedenergistics2:material:17> *  9, "only: AdvRockCutter");
-scripts.process.saw(<ore:crystalPureCertusQuartz> * 9, <appliedenergistics2:material:16> *  9, "only: AdvRockCutter");
+// [Printed (Every) Circuit] shortcut in [Cutting Machine]
+scripts.process.saw(<ore:blockGold>, <appliedenergistics2:material:18> * 9, 'only: AdvRockCutter');
+scripts.process.saw(<ore:blockDiamond>, <appliedenergistics2:material:17> * 9, 'only: AdvRockCutter');
+scripts.process.saw(<ore:crystalPureCertusQuartz> * 9, <appliedenergistics2:material:16> * 9, 'only: AdvRockCutter');
 
-val circIngrs = [<ore:dustRedstone>, <ore:itemSilicon>] as IIngredient[];
-val aeMat = <appliedenergistics2:material>.definition;
-scripts.processUtils.avdRockXmlRecipe("PrecisionAssembler", circIngrs + aeMat.makeStack(18), null, [aeMat.makeStack(22)], null);
-scripts.processUtils.avdRockXmlRecipe("PrecisionAssembler", circIngrs + aeMat.makeStack(17), null, [aeMat.makeStack(24)], null);
-scripts.processUtils.avdRockXmlRecipe("PrecisionAssembler", circIngrs + aeMat.makeStack(16), null, [aeMat.makeStack(23)], null);
-
-# ---------------------------------------------------------
-# Make Quartz glass harder and then Show through fabricator
+// ---------------------------------------------------------
+// Make Quartz glass harder and then Show through fabricator
 
 recipes.remove(<appliedenergistics2:quartz_glass>);
 
-# [Quartz Glass*2] from [Glass][+1]
-craft.make(<appliedenergistics2:quartz_glass> * 2, ["pretty",
-  "• □ •",
-  "□ • □",
-  "• □ •"], {
-  "□": <ore:blockGlass>, # Glass
-  "•": <ore:dustQuartz> | <ore:dustCertusQuartz>,
+// [Quartz Glass*2] from [Glass][+1]
+craft.make(<appliedenergistics2:quartz_glass> * 2, ['pretty',
+  '• □ •',
+  '□ • □',
+  '• □ •'], {
+  '□': <ore:blockGlass>, // Glass
+  '•': <ore:dustQuartz> | <ore:dustCertusQuartz>,
 });
 
-# [Quartz Glass*8] from [Nether Quartz Dust]
-val qglass_grid = ["pretty",
-  "• • •",
-  "•   •",
-  "• • •"] as string[];
+// [Quartz Glass*8] from [Nether Quartz Dust]
+val qglass_grid = ['pretty',
+  '• • •',
+  '•   •',
+  '• • •'] as string[];
 mods.forestry.ThermionicFabricator.addCast(<appliedenergistics2:quartz_glass> * 10, Grid(qglass_grid, {
-  "•": <ore:dustQuartz>,
+  '•': <ore:dustQuartz>,
 }).shaped(), <liquid:glass> * 1000, <forestry:wax_cast:*>);
 mods.forestry.ThermionicFabricator.addCast(<appliedenergistics2:quartz_glass> * 10, Grid(qglass_grid, {
-  "•": <ore:dustCertusQuartz>,
+  '•': <ore:dustCertusQuartz>,
 }).shaped(), <liquid:glass> * 1000, <forestry:wax_cast:*>);
 
-# ---------------------------------------------------------
+// ---------------------------------------------------------
 
-# [Crafting Unit] from [Logic Processor][+3]
-craft.remake(<appliedenergistics2:crafting_unit>, ["pretty",
-  "▬ C ▬",
-  "M L M",
-  "▬ C ▬"], {
-  "C": <appliedenergistics2:material:23>, # Calculation Processor
-  "▬": <ore:ingotFluixSteel>,             # Fluix Steel Ingot
-  "L": <appliedenergistics2:material:22>, # Logic Processor
-  "M": <appliedenergistics2:part:76>,     # ME Dense Smart Cable - Fluix
+// [Crafting Unit] from [Logic Processor][+3]
+craft.remake(<appliedenergistics2:crafting_unit>, ['pretty',
+  '▬ C ▬',
+  'M L M',
+  '▬ C ▬'], {
+  'C': <appliedenergistics2:material:23>, // Calculation Processor
+  '▬': <ore:ingotFluixSteel>, // Fluix Steel Ingot
+  'L': <appliedenergistics2:material:22>, // Logic Processor
+  'M': <appliedenergistics2:part:76>, // ME Dense Smart Cable - Fluix
 });
 
-# [ME Interface] from [Annihilation Core][+3]
-recipes.removeByRecipeName("appliedenergistics2:network/blocks/interfaces_interface");
-craft.make(<appliedenergistics2:interface>, ["pretty",
-  "▬ ■ ▬",
-  "A   F",
-  "▬ ■ ▬"], {
-  "A": <appliedenergistics2:material:44>, # Annihilation Core
-  "F": <appliedenergistics2:material:43>, # Formation Core
-  "■": <ore:blockGlass>, # Glass
-  "▬": <ore:ingotTungsten>, # Tungsten Ingot
+// [ME Interface] from [Annihilation Core][+3]
+recipes.removeByRecipeName('appliedenergistics2:network/blocks/interfaces_interface');
+craft.make(<appliedenergistics2:interface>, ['pretty',
+  '▬ ■ ▬',
+  'A   F',
+  '▬ ■ ▬'], {
+  'A': <appliedenergistics2:material:44>, // Annihilation Core
+  'F': <appliedenergistics2:material:43>, // Formation Core
+  '■': <ore:blockGlass>, // Glass
+  '▬': <ore:ingotTungsten>, // Tungsten Ingot
 });
 
-# [ME Storage Bus] from [Resonant Requester][+2]
+// [ME Storage Bus] from [Resonant Requester][+2]
 recipes.remove(<appliedenergistics2:part:220>);
-recipes.addShaped("ME Storage Bus", <appliedenergistics2:part:220>, [
-	[utils.tryCatch("thermallogistics:requester", 4, <thermaldynamics:retriever:4>)], # Resonant Requester
-	[<actuallyadditions:block_giant_chest>], # Small Storage Crate
-	[<appliedenergistics2:interface>],       # ME Interface
+recipes.addShaped('ME Storage Bus', <appliedenergistics2:part:220>, [
+  [utils.tryCatch('thermallogistics:requester', 4, <thermaldynamics:retriever:4>)], // Resonant Requester
+  [<actuallyadditions:block_giant_chest>], // Small Storage Crate
+  [<appliedenergistics2:interface>], // ME Interface
 ]);
 
-
-# ---------------------------------------------------------
-# Universal facade crafting recipe
-# Sadly, this cant be changed like this.
-# Option
-#   B:EnableFacadeCrafting=false
-# wont actually remove crafting recipes.
-# Also, recipes.remove dont work too.
+// ---------------------------------------------------------
+// Universal facade crafting recipe
+// Sadly, this cant be changed like this.
+// Option
+//   B:EnableFacadeCrafting=false
+// wont actually remove crafting recipes.
+// Also, recipes.remove dont work too.
 // val A = <appliedenergistics2:part:120>;
 // recipes.remove(<appliedenergistics2:facade:*>);
 // recipes.addHiddenShaped("Universal Facade", <appliedenergistics2:facade>, [
-// 	[null, A, null],       
+// 	[null, A, null],
 // 	[A, <*>.marked('block'), A],
-// 	[null, A, null],      
+// 	[null, A, null],
 // ],
 // function(out, ins, cInfo) {
 // 	if(isNull(ins) || isNull(ins.block)) return null;
 //   return <appliedenergistics2:facade>.withTag({damage: ins.block.damage, item: ins.block.definition.id});
 // });
 // recipes.addShaped("Universal Facade Example", <appliedenergistics2:facade>.withTag({damage: 0, item: "minecraft:cobblestone"}), [
-// 	[null, A, null],       
+// 	[null, A, null],
 // 	[A, <minecraft:cobblestone>, A],
-// 	[null, A, null],      
+// 	[null, A, null],
 // ]);
-# ---------------------------------------------------------
+// ---------------------------------------------------------
 
-# [Charged Quartz Fixture]*6 from [Tin Item Casing][+1]
-craft.reshapeless(<appliedenergistics2:quartz_fixture> * 6, "⌃⌂", {
-  "⌃": <ore:gemChargedCertusQuartz>, # Charged Certus Quartz Crystal
-  "⌂": <ic2:casing:6>, # Tin Item Casing
+// [Charged Quartz Fixture]*6 from [Tin Item Casing][+1]
+craft.reshapeless(<appliedenergistics2:quartz_fixture> * 6, '⌃⌂', {
+  '⌃': <ore:gemChargedCertusQuartz>, // Charged Certus Quartz Crystal
+  '⌂': <ic2:casing:6>, // Tin Item Casing
 });
 
-# [Vibrant Quartz Glass]*8 from [Glowstone Dust][+1]
-craft.remake(<appliedenergistics2:quartz_vibrant_glass> * 8, ["pretty",
-  "⌃ ⌃ ⌃",
-  "⌃ ▲ ⌃",
-  "⌃ ⌃ ⌃"], {
-  "⌃": <appliedenergistics2:quartz_glass>, # Quartz Glass
-  "▲": <ore:dustGlowstone>,                # Glowstone Dust
+// [Vibrant Quartz Glass]*8 from [Glowstone Dust][+1]
+craft.remake(<appliedenergistics2:quartz_vibrant_glass> * 8, ['pretty',
+  '⌃ ⌃ ⌃',
+  '⌃ ▲ ⌃',
+  '⌃ ⌃ ⌃'], {
+  '⌃': <appliedenergistics2:quartz_glass>, // Quartz Glass
+  '▲': <ore:dustGlowstone>, // Glowstone Dust
 });
 
 function regrind(input as IItemStack, output as IItemStack, isOre as bool = false, extra as IItemStack = null) as void {
-	val extras = (!isOre ? null : isNull(extra) ? [output] : [output, extra]) as IItemStack[];
-	scripts.process.crush(input, output, "strict: aegrinder", extras, [0.75f, 0.9f]);
+  val extras = (!isOre ? null : isNull(extra) ? [output] : [output, extra]) as IItemStack[];
+  scripts.process.crush(input, output, 'strict: aegrinder', extras, [0.75f, 0.9f]);
 }
 
-/*Inject_js(
+/* Inject_js(
 ['ore', 'ingot']
 .map((input, i) =>
 	_.uniqBy(
@@ -392,7 +383,7 @@ function regrind(input as IItemStack, output as IItemStack, isOre as bool = fals
 		, '0')
 		.sort(([a], [b]) => naturalSort(a, b))
 ).flat()
-)*/
+) */
 regrind(<actuallyadditions:block_misc:3>        , <actuallyadditions:item_dust:7>, true, <jaopca:item_dusttinycoal>);
 regrind(<appliedenergistics2:charged_quartz_ore>, <appliedenergistics2:material:2>, true, <jaopca:item_dusttinyquartz>);
 regrind(<astralsorcery:blockcustomore:1>        , <astralsorcery:itemcraftingcomponent:2>, true, <contenttweaker:dust_tiny_silver>);
@@ -508,72 +499,72 @@ regrind(<minecraft:obsidian>, <thermalfoundation:material:770>);
 regrind(<tconstruct:ingots>, <exnihilocreatio:item_ore_cobalt:2>);
 regrind(<tconstruct:ore>, <exnihilocreatio:item_ore_cobalt:2>);
 
-# [Pattern Expansion Card] from [ME Interface][+2]
-craft.remake(<appliedenergistics2:material:58>, ["pretty",
-  "  A  ",
-  "d M A",
-  "  A  "], {
-  "A": <ore:plateTitanium>,
-  "d": <appliedenergistics2:material:28>, # Advanced Card
-  "M": <appliedenergistics2:interface>,   # ME Interface
+// [Pattern Expansion Card] from [ME Interface][+2]
+craft.remake(<appliedenergistics2:material:58>, ['pretty',
+  '  A  ',
+  'd M A',
+  '  A  '], {
+  'A': <ore:plateTitanium>,
+  'd': <appliedenergistics2:material:28>, // Advanced Card
+  'M': <appliedenergistics2:interface>, // ME Interface
 });
 
-# [Pattern Expansion Card] from [ME Interface][+2]
-craft.make(<appliedenergistics2:material:58>, ["pretty",
-  "  A  ",
-  "d M A",
-  "  A  "], {
-  "A": <ore:plateTitanium>,
-  "d": <appliedenergistics2:material:28>, # Advanced Card
-  "M": <appliedenergistics2:part:440>,    # ME Interface
+// [Pattern Expansion Card] from [ME Interface][+2]
+craft.make(<appliedenergistics2:material:58>, ['pretty',
+  '  A  ',
+  'd M A',
+  '  A  '], {
+  'A': <ore:plateTitanium>,
+  'd': <appliedenergistics2:material:28>, // Advanced Card
+  'M': <appliedenergistics2:part:440>, // ME Interface
 });
 
-# ---------------------------------
-# Storage Component rework
-# ---------------------------------
+// ---------------------------------
+// Storage Component rework
+// ---------------------------------
 val storCompIngrs = [
-	[<appliedenergistics2:material:35>, /*     1k */ <ore:dustGlowstone>, <appliedenergistics2:material:22>, /*Logic Processor*/              <appliedenergistics2:material:1>], # Charged Certus Quartz Crystal
-	[<appliedenergistics2:material:36>, /*     4k */ <ore:dustGlowstone>, <appliedenergistics2:material:22>, /*Logic Processor*/              <ic2:re_battery>.withTag({charge: 10000.0})], # RE-Battery
-	[<appliedenergistics2:material:37>, /*    16k */ <ore:dustGlowstone>, <appliedenergistics2:material:23>, /*Calculation Processor*/        <ic2:advanced_re_battery>.withTag({charge: 100000.0})], # Advanced RE-Battery
-	[<appliedenergistics2:material:38>, /*    64k */ <ore:dustGlowstone>, <appliedenergistics2:material:23>, /*Calculation Processor*/        <ic2:energy_crystal>.withTag({charge: 1000000.0})], # Energy Crystal
-	[<aeadditions:storage.component>  , /*   256k */ <ore:dustGlowstone>, <appliedenergistics2:material:24>, /*Engineering Processor*/        <ic2:lapotron_crystal>.withTag({charge: 1.0E7})], # Lapotron Crystal
-	[<aeadditions:storage.component:1>, /*  1024k */ <ore:dustGlowstone>, <appliedenergistics2:material:24>, /*Engineering Processor*/        <requious:quantron>.withTag({energy: 200000000})], # Quantron
-	[<aeadditions:storage.component:2>, /*  4096k */ <ore:dustGlowstone>, <threng:material:6>,               /*Massively Parallel Processor*/ <requious:positron_unit>.withTag({energy: 2000000000})], # Positron Unit
-	[<aeadditions:storage.component:3>, /* 16384k */ <ore:dustGlowstone>, <threng:material:6>,               /*Massively Parallel Processor*/ <ore:blockDraconiumCharged>], # Charged Draconium Block
+  [<appliedenergistics2:material:35>, /*     1k */ <ore:dustGlowstone>, <appliedenergistics2:material:22>, /* Logic Processor */              <appliedenergistics2:material:1>], // Charged Certus Quartz Crystal
+  [<appliedenergistics2:material:36>, /*     4k */ <ore:dustGlowstone>, <appliedenergistics2:material:22>, /* Logic Processor */              <ic2:re_battery>.withTag({ charge: 10000.0 })], // RE-Battery
+  [<appliedenergistics2:material:37>, /*    16k */ <ore:dustGlowstone>, <appliedenergistics2:material:23>, /* Calculation Processor */        <ic2:advanced_re_battery>.withTag({ charge: 100000.0 })], // Advanced RE-Battery
+  [<appliedenergistics2:material:38>, /*    64k */ <ore:dustGlowstone>, <appliedenergistics2:material:23>, /* Calculation Processor */        <ic2:energy_crystal>.withTag({ charge: 1000000.0 })], // Energy Crystal
+  [<aeadditions:storage.component>  , /*   256k */ <ore:dustGlowstone>, <appliedenergistics2:material:24>, /* Engineering Processor */        <ic2:lapotron_crystal>.withTag({ charge: 1.0e7 })], // Lapotron Crystal
+  [<aeadditions:storage.component:1>, /*  1024k */ <ore:dustGlowstone>, <appliedenergistics2:material:24>, /* Engineering Processor */        <requious:quantron>.withTag({ energy: 200000000 })], // Quantron
+  [<aeadditions:storage.component:2>, /*  4096k */ <ore:dustGlowstone>, <threng:material:6>              , /* Massively Parallel Processor */ <requious:positron_unit>.withTag({ energy: 2000000000 })], // Positron Unit
+  [<aeadditions:storage.component:3>, /* 16384k */ <ore:dustGlowstone>, <threng:material:6>              , /* Massively Parallel Processor */ <ore:blockDraconiumCharged>], // Charged Draconium Block
 ] as IIngredient[][];
 
 for i, inputs in storCompIngrs {
-	craft.remake(inputs[0].items[0], ["pretty",
-		"♥ - ♥",
-		"⌃ C ⌃",
-		"♥ - ♥"], {
-		"♥": inputs[1], # Dust
-		"-": inputs[2], # Processor
-		"⌃": i==0 ? <appliedenergistics2:material:1> as IIngredient : storCompIngrs[i - 1][0], # Prev
-		"C": inputs[3], # Battery
-	});
+  craft.remake(inputs[0].items[0], ['pretty',
+    '♥ - ♥',
+    '⌃ C ⌃',
+    '♥ - ♥'], {
+    '♥': inputs[1], // Dust
+    '-': inputs[2], // Processor
+    '⌃': i == 0 ? <appliedenergistics2:material:1> as IIngredient : storCompIngrs[i - 1][0], // Prev
+    'C': inputs[3], // Battery
+  });
 }
-# ---------------------------------
+// ---------------------------------
 
 // Clear singularity tags
 recipes.addShapeless('Clear singularity tags', <appliedenergistics2:material:48> * 2, [<ore:singularityEntangled>, <ore:singularityEntangled>]);
 
-# [ME Crafting Terminal] from [ME Terminal][+3]
-craft.remake(<appliedenergistics2:part:360>, ["pretty",
-  "  N  ",
-  "¤ M ¤",
-  "  V  "], {
-  "N": <thermallogistics:manager>,     # Network Manager
-  "¤": <ore:gearVibrant>,              # Vibrant Bimetal Gear
-  "M": <appliedenergistics2:part:380>, # ME Terminal
-  "V": <vaultopic:vice>,               # V.I.C.E. (Vaultopic Item Crafting Entity)
+// [ME Crafting Terminal] from [ME Terminal][+3]
+craft.remake(<appliedenergistics2:part:360>, ['pretty',
+  '  N  ',
+  '¤ M ¤',
+  '  V  '], {
+  'N': <thermallogistics:manager>, // Network Manager
+  '¤': <ore:gearVibrant>, // Vibrant Bimetal Gear
+  'M': <appliedenergistics2:part:380>, // ME Terminal
+  'V': <vaultopic:vice>, // V.I.C.E. (Vaultopic Item Crafting Entity)
 });
 
-# Remake recipe that making hundred of its copies
+// Remake recipe that making hundred of its copies
 mods.appliedenergistics2.Inscriber.removeRecipe(<appliedenergistics2:material:60>);
 mods.appliedenergistics2.Inscriber.addRecipe(<appliedenergistics2:material:60>, <appliedenergistics2:material:25>, false, <minecraft:redstone_block>, <minecraft:lapis_block>);
 
-# Pure crystals instant growing in Witch Water
+// Pure crystals instant growing in Witch Water
 mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:10>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed>], true);
 mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:11>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed:600>], true);
 mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:12>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed:1200>], true);

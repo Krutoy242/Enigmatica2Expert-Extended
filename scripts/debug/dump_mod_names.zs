@@ -1,23 +1,23 @@
+#modloaded ctintegration
 #reloadable
 
-import mods.ctintegration.data.DataUtil;
-import mods.ctintegration.util.RawLogger.logRaw as logRaw;
+import mods.ctintegration.util.RawLogger.logRaw;
 
 function serialize(str as string) as string {
-  return str.replaceAll('"','\\\\"');
+  return str.replaceAll('"', '\\\\"');
 }
 
 function str(s as string) as string {
-  return '"'~serialize(s)~'"';
+  return '"' ~ serialize(s) ~ '"';
 }
 
 function key(s as string) as string {
-  return str(s)~': ';
+  return str(s) ~ ': ';
 }
 
 function logDebugData() {
   // server.commandManager.executeCommandSilent(server, '/say §8Logging item names into §2crafttweaker_raw.log');
-  logRaw("{");
+  logRaw('{');
 
   // Count mods
   var modCount = 0;
@@ -28,8 +28,8 @@ function logDebugData() {
   for i, mod in loadedMods {
     logRaw('    ' ~ key(mod.id) ~ str(mod.name) ~ (i == modCount - 1 ? '' : ','));
   }
-  logRaw("  }");
-  logRaw("}");
+  logRaw('  }');
+  logRaw('}');
   // server.commandManager.executeCommandSilent(server, '/say §aDone!');
 }
 

@@ -1,0 +1,5 @@
+#PARSE_ESCAPES
+# Language files for give items when player right-click other player
+
+chat.hand_over_your_items.send=Вы передали %s игроку %s
+chat.hand_over_your_items.receive=Вам передали %s от игрока %s

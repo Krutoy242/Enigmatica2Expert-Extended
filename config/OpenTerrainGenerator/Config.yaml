@@ -58,9 +58,9 @@ Overworld:
     ItemsToRemoveOnLeaveDimension: ""
     ItemsToAddOnRespawn: ""
     SpawnPointSet: false
-    SpawnPointX: 52
-    SpawnPointY: 65
-    SpawnPointZ: 2048
+    SpawnPointX: 0
+    SpawnPointY: 89
+    SpawnPointZ: 0
     PlayersCanBreakBlocks: true
     ExplosionsCanBreakBlocks: true
     PlayersCanPlaceBlocks: true
@@ -91,9 +91,9 @@ Overworld:
 Dimensions:
 - PresetName: "Void"
   DimensionId: 3
-  ShowInWorldCreationGUI: true
+  ShowInWorldCreationGUI: false
   LowestSupportedModPackConfigVersion: 999
-  RemoveOnUpdate: true
+  RemoveOnUpdate: false
   Seed: ""
   GameType: "Survival"
   BonusChest: false
@@ -140,10 +140,10 @@ Dimensions:
     ItemsToAddOnLeaveDimension: ""
     ItemsToRemoveOnLeaveDimension: ""
     ItemsToAddOnRespawn: ""
-    SpawnPointSet: false
-    SpawnPointX: 671
-    SpawnPointY: 1
-    SpawnPointZ: 2303
+    SpawnPointSet: true
+    SpawnPointX: 0
+    SpawnPointY: 89
+    SpawnPointZ: 0
     PlayersCanBreakBlocks: true
     ExplosionsCanBreakBlocks: true
     PlayersCanPlaceBlocks: true
@@ -183,6 +183,12 @@ Dimensions:
   WorldBorderRadiusInChunks: 0
   PregeneratorRadiusInChunks: 0
   Settings:
+    DimensionPortalMaterials:
+    - "advancedrocketry:basalt"
+    PortalColor: "black"
+    PortalParticleType: "portal"
+    PortalMobType: "thaumicaugmentation:primal_wisp"
+    PortalMobSpawnChance: 2000
     IsOTGPlus: true
     DimensionBelow: ""
     DimensionAbove: ""
@@ -217,9 +223,9 @@ Dimensions:
     ItemsToRemoveOnLeaveDimension: ""
     ItemsToAddOnRespawn: ""
     SpawnPointSet: false
-    SpawnPointX: 1812
-    SpawnPointY: 1
-    SpawnPointZ: 2028
+    SpawnPointX: 0
+    SpawnPointY: 250
+    SpawnPointZ: 0
     PlayersCanBreakBlocks: true
     ExplosionsCanBreakBlocks: true
     PlayersCanPlaceBlocks: true
@@ -247,4 +253,3 @@ Dimensions:
     ShowDeathMessages: true
     SpawnRadius: 1
     SpectatorsGenerateChunks: true
-    

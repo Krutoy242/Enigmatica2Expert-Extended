@@ -1,0 +1,23 @@
+{
+	x: 18.0d,
+	y: 0.0d,
+	dependencies: [
+		"7649653d",
+		"b6fad65a",
+		"7bb8836b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "99fefe82",
+		type: "item",
+		items: [{
+			item: "minecraft:sand 1 1"
+		}]
+	}],
+	rewards: [{
+		uid: "d372e674",
+		type: "item",
+		item: "exnihilocreatio:block_waterwheel",
+		count: 4
+	}]
+}

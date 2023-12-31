@@ -1,0 +1,36 @@
+{
+	x: 9.0d,
+	y: 1.5d,
+	dependencies: [
+		"147b1b5f"
+	],
+	optional: true,
+	tasks: [{
+		uid: "44020ba1",
+		type: "item",
+		items: [{
+			id: "tcomplement:sledge_hammer",
+			ForgeCaps: {
+				"plustic:fruitsalad_cap": {
+					Items: [],
+					Size: 5
+				},
+				"plustic:": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:musicofthespheres_cap": {
+					Items: [],
+					Size: 1
+				}
+			}
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "8de2d8b6",
+		type: "item",
+		item: "tconstruct:materials 1 14"
+	}]
+}

@@ -1,6 +1,6 @@
 {
-	x: 6.0d,
-	y: 0.0d,
+	x: 5.2d,
+	y: -0.6d,
 	text: [
 		"{q.bragging_rights.creative_modifier.desc}"
 	],

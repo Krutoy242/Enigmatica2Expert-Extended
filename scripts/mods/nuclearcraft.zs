@@ -20,287 +20,291 @@ utils.compact(<nuclearcraft:ingot:15>, <nuclearcraft:ingot_block:15>);
 // Recipes and integrations
 // ------------------------------------------------------------------
 
-# [Basic Plating]*4 from [Graphite Block][+2]
-craft.remake(<nuclearcraft:part> * 4, ["pretty",
-  "□ ⌂ □",
-  "⌂ ■ ⌂",
-  "□ ⌂ □"], {
-  "□": <ore:plateLead>,     # Lead Plate
-  "⌂": <ic2:casing:4>,      # Lead Item Casing
-  "■": <ore:blockGraphite>, # Graphite Block
+// [Basic Plating]*4 from [Graphite Block][+2]
+craft.remake(<nuclearcraft:part> * 4, ['pretty',
+  '□ ⌂ □',
+  '⌂ ■ ⌂',
+  '□ ⌂ □'], {
+  '□': <ore:plateLead>,     // Lead Plate
+  '⌂': <ic2:casing:4>,      // Lead Item Casing
+  '■': <ore:blockGraphite>, // Graphite Block
 });
 
-# [Copper Solenoid]*4 from [Advanced Alloy][+3]
-craft.remake(<nuclearcraft:part:4> * 4, ["pretty",
-  "□ ⌂ □",
-  "╱ п ╱",
-  "□ ⌂ □"], {
-  "□": <ore:plateCopper>,        # Copper Plate
-  "⌂": <ic2:casing:1>,           # Copper Item Casing
-  "╱": <ore:stickAluminum>,      # Aluminium Rod
-  "п": <ore:plateAdvancedAlloy>, # Advanced Alloy
+// [Copper Solenoid]*4 from [Advanced Alloy][+3]
+craft.remake(<nuclearcraft:part:4> * 4, ['pretty',
+  '□ ⌂ □',
+  '╱ п ╱',
+  '□ ⌂ □'], {
+  '□': <ore:plateCopper>,        // Copper Plate
+  '⌂': <ic2:casing:1>,           // Copper Item Casing
+  '╱': <ore:stickAluminum>,      // Aluminium Rod
+  'п': <ore:plateAdvancedAlloy>, // Advanced Alloy
 });
 
-# [Alloy Furnace] from [Electric Furnace][+4]
-craft.remake(<nuclearcraft:alloy_furnace>, ["pretty",
-  "B | B",
-  "b E b",
-  "B C B"], {
-  "B": <ore:plateBasic>,     # Basic Plating
-  "b": <ore:bioplastic>,     # Bioplastic
-  "C": <ore:solenoidCopper>, # Copper Solenoid
-  "E": <ic2:te:44>,          # Electric Furnace
-  "|": <ic2:crafting:42>,    # Shaft (Bronze)
+// [Alloy Furnace] from [Electric Furnace][+4]
+craft.remake(<nuclearcraft:alloy_furnace>, ['pretty',
+  'B | B',
+  'b E b',
+  'B C B'], {
+  'B': <ore:plateBasic>,     // Basic Plating
+  'b': <ore:bioplastic>,     // Bioplastic
+  'C': <ore:solenoidCopper>, // Copper Solenoid
+  'E': <ic2:te:44>,          // Electric Furnace
+  '|': <ic2:crafting:42>,    // Shaft (Bronze)
 });
 
-# [Speed Upgrade] from [Base Upgrade][+2]
-craft.remake(<nuclearcraft:upgrade>, ["pretty",
-  "T ⌂ T",
-  "⌂ B ⌂",
-  "T ⌂ T"], {
-  "T": <ic2:nuclear:5>,         # Tiny Pile of Uranium 235
-  "⌂": <ic2:casing>,            # Bronze Item Casing
-  "B": <mctsmelteryio:upgrade>, # Base Upgrade
+// [Speed Upgrade] from [Base Upgrade][+2]
+craft.remake(<nuclearcraft:upgrade>, ['pretty',
+  'T ⌂ T',
+  '⌂ B ⌂',
+  'T ⌂ T'], {
+  'T': <ic2:nuclear:5>,         // Tiny Pile of Uranium 235
+  '⌂': <ic2:casing>,            // Bronze Item Casing
+  'B': <mctsmelteryio:upgrade>, // Base Upgrade
 });
 
-# [Energy Upgrade] from [Base Upgrade][+2]
-craft.remake(<nuclearcraft:upgrade:1>, ["pretty",
-  "T ⌂ T",
-  "⌂ B ⌂",
-  "T ⌂ T"], {
-  "T": <ic2:nuclear:5>,         # Tiny Pile of Uranium 235
-  "⌂": <ic2:casing:5>,          # Steel Item Casing
-  "B": <mctsmelteryio:upgrade>, # Base Upgrade
+// [Energy Upgrade] from [Base Upgrade][+2]
+craft.remake(<nuclearcraft:upgrade:1>, ['pretty',
+  'T ⌂ T',
+  '⌂ B ⌂',
+  'T ⌂ T'], {
+  'T': <ic2:nuclear:5>,         // Tiny Pile of Uranium 235
+  '⌂': <ic2:casing:5>,          // Steel Item Casing
+  'B': <mctsmelteryio:upgrade>, // Base Upgrade
 });
 
-# Uranium RTG should require [Advanced Plating] instead of Basic
-# [Uranium RTG] from [Uranium-238 Block][+2]
-craft.remake(<nuclearcraft:rtg_uranium>, ["pretty",
-  "□ ▬ □",
-  "▬ ■ ▬",
-  "□ ▬ □"], {
-  "■": <ore:blockUranium238>, # Uranium-238 Block
-  "□": <ore:plateAdvanced>,   # Advanced Plating
-  "▬": <ore:ingotGraphite>,   # Graphite Ingot
+// Uranium RTG should require [Advanced Plating] instead of Basic
+// [Uranium RTG] from [Uranium-238 Block][+2]
+craft.remake(<nuclearcraft:rtg_uranium>, ['pretty',
+  '□ ▬ □',
+  '▬ ■ ▬',
+  '□ ▬ □'], {
+  '■': <ore:blockUranium238>, // Uranium-238 Block
+  '□': <ore:plateAdvanced>,   // Advanced Plating
+  '▬': <ore:ingotGraphite>,   // Graphite Ingot
 });
 
-# [Empty Frame] from [Tin Gear][+2]
-craft.remake(<nuclearcraft:part:11>, ["pretty",
-  "□ ¤ □",
-  "п   п",
-  "□ ¤ □"], {
-  "□": <ore:plateBasic>,          # Basic Plating
-  "¤": <ore:gearTin>,             # Tin Gear
-  "п": <enderio:block_reservoir>, # Endervoir
+// [Empty Frame] from [Tin Gear][+2]
+craft.remake(<nuclearcraft:part:11>, ['pretty',
+  '□ ¤ □',
+  'п   п',
+  '□ ¤ □'], {
+  '□': <ore:plateBasic>,          // Basic Plating
+  '¤': <ore:gearTin>,             // Tin Gear
+  'п': <enderio:block_reservoir>, // Endervoir
 });
 
-# [Ingot Former] from [Machine Chassis][+3]
-craft.remake(<nuclearcraft:ingot_former>, ["pretty",
-  "□ C □",
-  "S c S",
-  "□ C □"], {
-  "□": <ore:plateAdvanced>,       # Advanced Plating
-  "C": <mctsmelteryio:machine:1>, # Casting Machine
-  "S": <mctsmelteryio:upgrade:4>, # Slot Size Upgrade 4
-  "c": <ore:chassis>,             # Machine Chassis
+// [Ingot Former] from [Machine Chassis][+3]
+craft.remake(<nuclearcraft:ingot_former>, ['pretty',
+  '□ C □',
+  'S c S',
+  '□ C □'], {
+  '□': <ore:plateAdvanced>,       // Advanced Plating
+  'C': <mctsmelteryio:machine:1>, // Casting Machine
+  'S': <mctsmelteryio:upgrade:4>, // Slot Size Upgrade 4
+  'c': <ore:chassis>,             // Machine Chassis
 });
 
-# [Machine Interface]*8 from [Machine Chassis]
-craft.reshapeless(<nuclearcraft:machine_interface> * 8, "c", {
-  "c": <ore:chassis>, # Machine Chassis
+// [Machine Interface]*8 from [Machine Chassis]
+craft.reshapeless(<nuclearcraft:machine_interface> * 8, 'c', {
+  'c': <ore:chassis>, // Machine Chassis
 });
 
-# [Chemical Reactor] from [Machine Chassis][+4]
-craft.remake(<nuclearcraft:chemical_reactor>, ["pretty",
-  "□ T □",
-  "| c |",
-  "□ a □"], {
-  "□": <ore:plateAdvanced>,              # Advanced Plating
-  "T": <ic2:nuclear:7>,                  # Tiny Pile of Plutonium
-  "|": <ic2:crafting:42>,                # Shaft (Bronze)
-  "c": <ore:chassis>,                    # Machine Chassis
-  "a": <thermalfoundation:material:833>, # Tar
+// [Chemical Reactor] from [Machine Chassis][+4]
+craft.remake(<nuclearcraft:chemical_reactor>, ['pretty',
+  '□ T □',
+  '| c |',
+  '□ a □'], {
+  '□': <ore:plateAdvanced>,              // Advanced Plating
+  'T': <ic2:nuclear:7>,                  // Tiny Pile of Plutonium
+  '|': <ic2:crafting:42>,                // Shaft (Bronze)
+  'c': <ore:chassis>,                    // Machine Chassis
+  'a': <thermalfoundation:material:833>, // Tar
 });
 
-# [Supercooler] from [Machine Chassis][+4]
-craft.remake(<nuclearcraft:supercooler>, ["pretty",
-  "□ T □",
-  "| c |",
-  "□ ~ □"], {
-  "□": <ore:plateAdvanced>, # Advanced Plating
-  "T": <ic2:nuclear:7>,     # Tiny Pile of Plutonium
-  "|": <ic2:crafting:42>,   # Shaft (Bronze)
-  "c": <ore:chassis>,       # Machine Chassis
-  "~": LiquidIngr('ic2coolant'), # IC2 Coolant
+// [Supercooler] from [Machine Chassis][+4]
+craft.remake(<nuclearcraft:supercooler>, ['pretty',
+  '□ T □',
+  '| c |',
+  '□ ~ □'], {
+  '□': <ore:plateAdvanced>, // Advanced Plating
+  'T': <ic2:nuclear:7>,     // Tiny Pile of Plutonium
+  '|': <ic2:crafting:42>,   // Shaft (Bronze)
+  'c': <ore:chassis>,       // Machine Chassis
+  '~': LiquidIngr('ic2coolant'), // IC2 Coolant
 });
 
-# [Rock Crusher] from [Machine Chassis][+4]
-craft.remake(<nuclearcraft:rock_crusher>, ["pretty",
-  "□ T □",
-  "| c |",
-  "□ ■ □"], {
-  "□": <ore:plateAdvanced>,        # Advanced Plating
-  "T": <ic2:nuclear:7>,            # Tiny Pile of Plutonium
-  "|": <ic2:crafting:42>,          # Shaft (Bronze)
-  "c": <ore:chassis>,              # Machine Chassis
-  "■": <mechanics:crushing_block>, # Crushing Block
+// [Rock Crusher] from [Machine Chassis][+4]
+craft.remake(<nuclearcraft:rock_crusher>, ['pretty',
+  '□ T □',
+  '| c |',
+  '□ ■ □'], {
+  '□': <ore:plateAdvanced>,        // Advanced Plating
+  'T': <ic2:nuclear:7>,            // Tiny Pile of Plutonium
+  '|': <ic2:crafting:42>,          // Shaft (Bronze)
+  'c': <ore:chassis>,              // Machine Chassis
+  '■': <mechanics:crushing_block>, // Crushing Block
 });
 
-# [Empty Heat Sink]*64 from [Steel Ingot][+2]
-craft.remake(<nuclearcraft:part:14> * 64, ["pretty",
-  "□ - □",
-  "▬   ▬",
-  "□ - □"], {
-  "□": <ore:plateAdvanced>, # Advanced Plating
-  "-": <ore:ingotSteel>,    # Steel Ingot
-  "▬": <ore:ingotTough>,    # Tough Alloy Ingot
+// [Empty Heat Sink]*64 from [Steel Ingot][+2]
+craft.remake(<nuclearcraft:part:14> * 64, ['pretty',
+  '□ - □',
+  '▬   ▬',
+  '□ - □'], {
+  '□': <ore:plateAdvanced>, // Advanced Plating
+  '-': <ore:ingotSteel>,    // Steel Ingot
+  '▬': <ore:ingotTough>,    // Tough Alloy Ingot
 });
 
-# [Fission Reactor Casing]*64 from [Steel Chassis][+1]
-craft.remake(<nuclearcraft:fission_casing> * 64, ["pretty",
-  "  □  ",
-  "□ ◙ □",
-  "  □  "], {
-  "□": <ore:plateBasic>, # Basic Plating
-  "◙": <ore:steelFrame>, # Steel Chassis
+// [Fission Reactor Casing]*64 from [Steel Chassis][+1]
+craft.remake(<nuclearcraft:fission_casing> * 64, ['pretty',
+  '  □  ',
+  '□ ◙ □',
+  '  □  '], {
+  '□': <ore:plateBasic>, // Basic Plating
+  '◙': <ore:steelFrame>, // Steel Chassis
 });
 
-# [Turbine Casing]*64 from [Steel Chassis][+1]
-craft.remake(<nuclearcraft:turbine_casing> * 64, ["pretty",
-  "  ▬  ",
-  "▬ ◙ ▬",
-  "  ▬  "], {
-  "▬": <ore:ingotHSLASteel>, # HSLA Steel Ingot
-  "◙": <ore:steelFrame>,     # Steel Chassis
+// [Turbine Casing]*64 from [Steel Chassis][+1]
+craft.remake(<nuclearcraft:turbine_casing> * 64, ['pretty',
+  '  ▬  ',
+  '▬ ◙ ▬',
+  '  ▬  '], {
+  '▬': <ore:ingotHSLASteel>, // HSLA Steel Ingot
+  '◙': <ore:steelFrame>,     // Steel Chassis
 });
 
-# [Universal Bin]*3 from [Trash Can (Fluid)][+2]
-craft.reshapeless(<nuclearcraft:bin> * 3, "aTr", {
-  "a": <extrautils2:trashcan>,       # Trash Can
-  "T": <extrautils2:trashcanfluid>,  # Trash Can (Fluid)
-  "r": <extrautils2:trashcanenergy>, # Trash Can (Energy)
+// [Universal Bin]*3 from [Trash Can (Fluid)][+2]
+craft.reshapeless(<nuclearcraft:bin> * 3, 'aTr', {
+  'a': <extrautils2:trashcan>,       // Trash Can
+  'T': <extrautils2:trashcanfluid>,  // Trash Can (Fluid)
+  'r': <extrautils2:trashcanenergy>, // Trash Can (Energy)
 });
 
-# Missed Corium Recipe
+// Missed Corium Recipe
 mods.nuclearcraft.Melter.addRecipe(<nuclearcraft:solidified_corium>, <fluid:corium> * 1000);
 mods.nuclearcraft.IngotFormer.addRecipe(<fluid:corium> * 1000, <nuclearcraft:solidified_corium>);
 
-# Remove unused infinity metal recipe
+// Remove unused infinity metal recipe
 mods.nuclearcraft.IngotFormer.removeRecipeWithInput(<fluid:infinity> * 144);
 
-# [Energetic Blend] harder
-recipes.remove(<nuclearcraft:compound:2>);
-mods.mekanism.infuser.addRecipe("GLOWSTONE", 10, <minecraft:redstone>, <nuclearcraft:compound:2>);
+// Carbon recipe conflict
+mods.nuclearcraft.IngotFormer.removeRecipeWithOutput(<advancedrocketry:misc:1>);
 
-# [Energetic Blend] from [Redstone][+1]
-craft.make(<nuclearcraft:compound:2>, ["pretty",
-  "▲ ▲ ▲",
-  "▲ ♥ ▲",
-  "▲ ▲ ▲"], {
-  "▲": <ore:dustGlowstone>, # Glowstone Dust
-  "♥": <ore:dustRedstone>,  # Redstone
+// [Energetic Blend] harder
+recipes.remove(<nuclearcraft:compound:2>);
+mods.mekanism.infuser.addRecipe('GLOWSTONE', 10, <minecraft:redstone>, <nuclearcraft:compound:2>);
+
+// [Energetic Blend] from [Redstone][+1]
+craft.make(<nuclearcraft:compound:2>, ['pretty',
+  '▲ ▲ ▲',
+  '▲ ♥ ▲',
+  '▲ ▲ ▲'], {
+  '▲': <ore:dustGlowstone>, // Glowstone Dust
+  '♥': <ore:dustRedstone>,  // Redstone
 });
 
-# Graphite from coal
+// Graphite from coal
 furnace.addRecipe(<nuclearcraft:ingot:8>, <minecraft:coal:*>);
 
-# Coal casted into graphite block
+// Coal casted into graphite block
 mods.tconstruct.Casting.removeBasinRecipe(<nuclearcraft:ingot_block:8>);
 mods.tconstruct.Casting.addBasinRecipe(<nuclearcraft:ingot_block:8>, null, <liquid:coal>, 900);
 mods.thermalexpansion.Crucible.addRecipe(<liquid:coal> * 900, <nuclearcraft:ingot_block:8>, 2000);
 
-# Diamond from 64 graphite
-scripts.process.compress(<ore:dustGraphite> * 64, <minecraft:diamond>, "except: Compressor");
+// Diamond from 64 graphite
+scripts.process.compress(<ore:dustGraphite> * 64, <minecraft:diamond>, 'except: Compressor');
 
-# Removing an Obsidian dupe
+// Removing an Obsidian dupe
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<fluid:obsidian> * 288);
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<fluid:obsidian> * 72);
 mods.nuclearcraft.Melter.addRecipe(<ore:obsidian>, <liquid:obsidian> * 144);
 
-# Remove charcoal to coal conversion
+// Remove charcoal to coal conversion
 mods.nuclearcraft.Melter.removeRecipeWithInput(<nuclearcraft:dust:8>);
 
-# Only leave Fluid fill recipe for Infinite water source
+// Only leave Fluid fill recipe for Infinite water source
 recipes.remove(<nuclearcraft:water_source>);
-scripts.process.fill(<nuclearcraft:part:11>, <fluid:water> * 2000, <nuclearcraft:water_source>, "only: Transposer");
+scripts.process.fill(<nuclearcraft:part:11>, <fluid:water> * 2000, <nuclearcraft:water_source>, 'only: Transposer');
 
-# [Dimensional Blend] from [Biome Essence]
+// [Dimensional Blend] from [Biome Essence]
 recipes.remove(<nuclearcraft:compound:9>);
-scripts.process.crush(<biomesoplenty:biome_essence>, <nuclearcraft:compound:9>, "only: eu2Crusher AACrusher IECrusher", [<thermalfoundation:material:66>], [0.25]);
+scripts.process.crush(<biomesoplenty:biome_essence>, <nuclearcraft:compound:9>, 'only: eu2Crusher AACrusher IECrusher', [<thermalfoundation:material:66>], [0.25]);
 
-if(!isNull(loadedMods["immersivetech"])) {
+if (!isNull(loadedMods['immersivetech'])) {
   mods.immersivetechnology.SolarTower.addRecipe(<liquid:sic_vapor> * 1000, <liquid:carbon_dioxide> * 1000, 100);
-} else {
+}
+else {
   mods.nuclearcraft.Enricher.addRecipe(<minecraft:coal>, <liquid:carbon_dioxide> * 1000, <liquid:sic_vapor> * 1000);
 }
 
-# Sic-Sic ingots
-scripts.process.fill(<exnihilocreatio:item_mesh:2>, <fluid:sic_vapor> * 1000, <nuclearcraft:part:13> * 4, "only: NCInfuser Transposer");
-scripts.process.alloy([<ore:bouleSilicon>, <ore:fiberSiliconCarbide>], <nuclearcraft:alloy:14>, "only: advrockarc");
+// Sic-Sic ingots
+scripts.process.fill(<exnihilocreatio:item_mesh:2>, <fluid:sic_vapor> * 1000, <nuclearcraft:part:13> * 4, 'only: NCInfuser Transposer');
+scripts.process.alloy([<ore:bouleSilicon>, <ore:fiberSiliconCarbide>], <nuclearcraft:alloy:14>, 'only: advrockarc');
 
 // Unify Silicon
 <ore:itemSilicon>.remove(<nuclearcraft:gem:6>);
 furnace.remove(<appliedenergistics2:material:5>, <nuclearcraft:gem_dust:2>); // Furnance quartz dusts -> AE silicon
 mods.nuclearcraft.AlloyFurnace.removeRecipeWithInput(<appliedenergistics2:material:5>, <nuclearcraft:dust:8>);
 
-# Boron arsenid simplify recipe
-scripts.process.solution([<ore:dustArsenic>], [<liquid:boron>*144], [<liquid:bas> * 666], [1, 6000], "only: highoven");
+// Boron arsenid simplify recipe
+scripts.process.solution([<ore:dustArsenic>], [<liquid:boron> * 144], [<liquid:bas> * 666], [1, 6000], 'only: highoven');
 mods.tconstruct.Casting.addTableRecipe(<ore:gemBoronArsenide>.firstItem, <tconstruct:cast_custom:2>, <liquid:bas>, 666, false);
 
-# HSLA ingots
-scripts.process.alloy([<ore:ingotIron> * 15, <ore:dustCarbonManganese>], <ore:ingotHSLASteel>.firstItem * 16, "except: alloyFurnace alloySmelter");
+// HSLA ingots
+scripts.process.alloy([<ore:ingotIron> * 15, <ore:dustCarbonManganese>], <ore:ingotHSLASteel>.firstItem * 16, 'except: alloyFurnace alloySmelter');
 
-# Ground Cocoa
-recipes.addShapeless("Crush Cocoa", <nuclearcraft:ground_cocoa_nibs>, [<ore:pestleAndMortar>, <nuclearcraft:roasted_cocoa_beans>, <nuclearcraft:roasted_cocoa_beans>]);
-scripts.process.squeeze([<nuclearcraft:ground_cocoa_nibs>], <liquid:cocoa_butter> * 144, "except: FluidExtractor", <nuclearcraft:cocoa_solids>);
+// Ground Cocoa
+recipes.addShapeless('Crush Cocoa', <nuclearcraft:ground_cocoa_nibs>, [<ore:pestleAndMortar>, <nuclearcraft:roasted_cocoa_beans>, <nuclearcraft:roasted_cocoa_beans>]);
+scripts.process.squeeze([<nuclearcraft:ground_cocoa_nibs>], <liquid:cocoa_butter> * 144, 'except: FluidExtractor', <nuclearcraft:cocoa_solids>);
 scripts.process.compress(<harvestcraft:flouritem> * 2, <nuclearcraft:graham_cracker>);
 
-# IC2 Steam -> Water in turbine
-# mods.nuclearcraft.Turbine.addRecipe(ILiquidStack fluidInput, ILiquidStack fluidOutput, double turbine_power_per_mb, double turbine_expansion_level, double turbine_spin_up_multiplier, @Optional String particleEffect, @Optional double particleSpeedMultiplier);
-mods.nuclearcraft.Turbine.addRecipe(<liquid:ic2superheated_steam>, <liquid:ic2steam> * 2, 1000.0, 1.8, 1.0);
+// IC2 Steam -> Water in turbine
+// mods.nuclearcraft.Turbine.addRecipe(ILiquidStack fluidInput, ILiquidStack fluidOutput, double turbine_power_per_mb, double turbine_expansion_level, double turbine_spin_up_multiplier, @Optional String particleEffect, @Optional double particleSpeedMultiplier);
+mods.nuclearcraft.Turbine.addRecipe(<liquid:ic2superheated_steam>, <liquid:steam> * 2, 1000.0, 1.8, 1.0);
 mods.nuclearcraft.Turbine.addRecipe(<liquid:ic2steam>, <liquid:low_quality_steam> * 2, 400.0, 1.6, 1.0);
 
-# Harder compressed recipes
+// Harder compressed recipes
 val compressed = [
   <nuclearcraft:water_source>, <nuclearcraft:water_source_compact>, <nuclearcraft:water_source_dense>,
 ] as IItemStack[];
 
 for i, output in compressed {
-  if(i%3==0) continue;
-  craft.remake(output, ["pretty",
-    "x x x",
-    "x ▬ x",
-    "x x x"], {
-    "x": compressed[i - 1],
-    "▬": i%3==1 ? <ore:ingotHSLASteel> : <ore:gemBoronNitride>,
+  if (i % 3 == 0) continue;
+  craft.remake(output, ['pretty',
+    'x x x',
+    'x ▬ x',
+    'x x x'], {
+    'x': compressed[i - 1],
+    '▬': i % 3 == 1 ? <ore:ingotHSLASteel> : <ore:gemBoronNitride>,
   });
 }
 
-# Decay generator as crafting method
-# mods.nuclearcraft.DecayGenerator.addRecipe(IIngredient blockInput, IIngredient blockOutput, double meanLifetime, double power, double radiation);
+// Decay generator as crafting method
+// mods.nuclearcraft.DecayGenerator.addRecipe(IIngredient blockInput, IIngredient blockOutput, double meanLifetime, double power, double radiation);
 mods.nuclearcraft.DecayGenerator.addRecipe(<contenttweaker:terrestrial_artifact_block>, <environmentaltech:litherite>  , 100.0, 8000000.0, 0.1);
 mods.nuclearcraft.DecayGenerator.addRecipe(<environmentaltech:litherite>             , <actuallyadditions:block_misc:6>,  50.0,  400000.0, 0.1);
 
-# Supercooled Ice compat
-scripts.process.fill(<ore:ice>, <fluid:liquid_helium> * 50, <nuclearcraft:supercold_ice>, "only: Transposer");
+// Supercooled Ice compat
+scripts.process.fill(<ore:ice>, <fluid:liquid_helium> * 50, <nuclearcraft:supercold_ice>, 'only: Transposer');
 
-# Alloy furnace missed Alum Brass recipe
-mods.nuclearcraft.AlloyFurnace.addRecipe(<ore:ingotCopper>, <ore:ingotAluminum> * 3, <tconstruct:ingots:5> * 4);# [Aluminum Brass Ingot]
-mods.nuclearcraft.AlloyFurnace.addRecipe(<ore:blockCopper>, <ore:blockAluminum> * 3, <tconstruct:metal:5> * 4); # [Block of Aluminum Brass]
+// Alloy furnace missed Alum Brass recipe
+mods.nuclearcraft.AlloyFurnace.addRecipe(<ore:ingotCopper>, <ore:ingotAluminum> * 3, <tconstruct:ingots:5> * 4);// [Aluminum Brass Ingot]
+mods.nuclearcraft.AlloyFurnace.addRecipe(<ore:blockCopper>, <ore:blockAluminum> * 3, <tconstruct:metal:5> * 4); // [Block of Aluminum Brass]
 
-# [Zirconium-Molybdenum Alloy Ingot] from [Molybdenum Dust][+1]
-scripts.process.alloy([<ore:ingotZirconium>, <ore:dustMolybdenum> * 15], <nuclearcraft:alloy:16> * 16, "except: AlloyFurnace");
+// [Zirconium-Molybdenum Alloy Ingot] from [Molybdenum Dust][+1]
+scripts.process.alloy([<ore:ingotZirconium>, <ore:dustMolybdenum> * 15], <nuclearcraft:alloy:16> * 16, 'except: AlloyFurnace');
 
-# [Zircaloy Ingot] from [Tin Ingot][+1]
-scripts.process.alloy([<ore:ingotZirconium> * 7, <ore:ingotTin>], <nuclearcraft:alloy:12> * 8, "except: AlloyFurnace");
+// [Zircaloy Ingot] from [Tin Ingot][+1]
+scripts.process.alloy([<ore:ingotZirconium> * 7, <ore:ingotTin>], <nuclearcraft:alloy:12> * 8, 'except: AlloyFurnace');
 
-# Quartz -> [Quarts dust] (nuclearcraft) wrong output fix
+// Quartz -> [Quarts dust] (nuclearcraft) wrong output fix
 mods.appliedenergistics2.Grinder.removeRecipe(<minecraft:quartz>);
 mods.bloodmagic.AlchemyTable.removeRecipe([<minecraft:quartz_ore>, <bloodmagic:cutting_fluid>]);
 mods.mekanism.crusher.removeRecipe(<nuclearcraft:gem_dust:2>);
-scripts.process.crush(<ore:gemQuartz>, <appliedenergistics2:material:3>, "only: aegrinder mekcrusher", null, null);
+scripts.process.crush(<ore:gemQuartz>, <appliedenergistics2:material:3>, 'only: aegrinder mekcrusher', null, null);
 
-# Remove Lead-platinum alloy as redundant
+// Remove Lead-platinum alloy as redundant
 mods.tconstruct.Melting.removeRecipe(<fluid:lead_platinum>);
 mods.tconstruct.Alloy.removeRecipe(<fluid:lead_platinum>);
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<fluid:lead_platinum> * 144);
@@ -310,14 +314,14 @@ mods.nuclearcraft.IngotFormer.removeRecipeWithOutput(<nuclearcraft:alloy:9>);
 mods.nuclearcraft.SaltMixer.removeRecipeWithInput(<fluid:lead_platinum> * 144, <fluid:ender> * 250);
 utils.rh(<nuclearcraft:alloy:9>);
 
-# More melting compat
+// More melting compat
 for ingr, fluid in {
-  <ore:nuggetManyullyn>      : <fluid:manyullyn> * (144/9),
+  <ore:nuggetManyullyn>      : <fluid:manyullyn> * (144 / 9),
   <ore:ingotManyullyn>       : <fluid:manyullyn> * 144,
-  <ore:blockManyullyn>       : <fluid:manyullyn> * (144*9),
+  <ore:blockManyullyn>       : <fluid:manyullyn> * (144 * 9),
   <threng:material>          : <fluid:fluix_steel> * 144,
   <ore:ingotInfinity>        : <fluid:infinity_metal> * 144,
-  <ore:blockInfinity>        : <fluid:infinity_metal> * (144*9),
+  <ore:blockInfinity>        : <fluid:infinity_metal> * (144 * 9),
   <ore:nuggetAlumite>        : <liquid:alumite> * 16,
   <ore:ingotAlumite>         : <liquid:alumite> * 144,
   <ore:blockAlumite>         : <liquid:alumite> * 1296,
@@ -352,26 +356,26 @@ for ingr, fluid in {
 // Alt recipes
 // ------------------------------------------------------------------
 
-# Gems alts
+// Gems alts
 mods.actuallyadditions.AtomicReconstructor.addRecipe(<nuclearcraft:gem>, <biomesoplenty:gem:1>, 15000);
 mods.actuallyadditions.AtomicReconstructor.addRecipe(<nuclearcraft:gem:2>, <biomesoplenty:gem:2>, 15000);
 mods.actuallyadditions.AtomicReconstructor.addRecipe(<nuclearcraft:gem:3>, <biomesoplenty:gem:3>, 15000);
 
-# Boron Nitride shortcut with AdvRock machines
-scripts.processUtils.avdRockXmlRecipeEx("ChemicalReactor", null, [<fluid:nitrogen> * 800, <fluid:hydrogen> * 2400], null, [<fluid:ammonia> * 16000], {power: 120000, timeRequired: 80});
-scripts.processUtils.avdRockXmlRecipe("Crystallizer", [<ore:dustBoron> * 5], [<fluid:ammonia> * 5000], [<nuclearcraft:gem:1> * 10], null);
+// Boron Nitride shortcut with AdvRock machines
+scripts.processUtils.avdRockXmlRecipeEx('ChemicalReactor', null, [<fluid:nitrogen> * 800, <fluid:hydrogen> * 2400], null, [<fluid:ammonia> * 16000], { power: 120000, timeRequired: 80 });
+scripts.processUtils.avdRockXmlRecipe('Crystallizer', [<ore:dustBoron> * 5], [<fluid:ammonia> * 5000], [<nuclearcraft:gem:1> * 10], null);
 
-# Platings Laser Alternatives
-scripts.processUtils.avdRockXmlRecipeEx("PrecisionLaserEtcher", [<ore:plateLead> * 12, <ore:dustCrystalBinder> * 32, <ore:ingotUranium238> * 32, <ore:ingotTough> * 32], null, [<nuclearcraft:part:3> * 8], null, {power: 160000, timeRequired: 20});
-scripts.processUtils.avdRockXmlRecipeEx("PrecisionLaserEtcher", [<ore:plateLead> * 12, <ore:ingotUranium238> * 32, <ore:ingotTough> * 32], null, [<nuclearcraft:part:2> * 8], null, {power: 130000, timeRequired: 40});
-scripts.processUtils.avdRockXmlRecipeEx("PrecisionLaserEtcher", [<ore:plateLead> * 12, <ore:ingotTough> * 32], null, [<nuclearcraft:part:1> * 8], null, {power: 100000, timeRequired: 60});
-scripts.processUtils.avdRockXmlRecipeEx("PrecisionLaserEtcher", [<ore:plateLead> * 12, <ore:ingotGraphite> * 16], null, [<nuclearcraft:part> * 8], null, {power: 70000, timeRequired: 80});
+// Platings Laser Alternatives
+scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:dustCrystalBinder> * 32, <ore:ingotUranium238> * 32, <ore:ingotTough> * 32], null, [<nuclearcraft:part:3> * 8], null, { power: 160000, timeRequired: 20 });
+scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotUranium238> * 32, <ore:ingotTough> * 32], null, [<nuclearcraft:part:2> * 8], null, { power: 130000, timeRequired: 40 });
+scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotTough> * 32], null, [<nuclearcraft:part:1> * 8], null, { power: 100000, timeRequired: 60 });
+scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotGraphite> * 16], null, [<nuclearcraft:part> * 8], null, { power: 70000, timeRequired: 80 });
 
 // ----------------------------------------
 // Ingot Former missing ingot recipes
 // ----------------------------------------
 for fluid, ingot in {
-/*Inject_js{
+/* Inject_js{
 if(cmd.block) return cmd.block
 const existIngotRecipes = loadJson('exports/recipes/nuclearcraft_ingot_former.json')
   .recipes.map(r => r.output.items[0].stacks[0].name)
@@ -386,7 +390,7 @@ return loadJson('exports/recipes/tconstruct__casting_table.json')
   })
   .filter(Boolean)
   .sort((a, b) => naturalSort(a[1], b[1]))
-}*/
+} */
   stone                       : <tconstruct:materials> * 2,
   clay                        : <minecraft:brick>,
   fluix_steel                 : <threng:material>,
@@ -432,13 +436,13 @@ return loadJson('exports/recipes/tconstruct__casting_table.json')
 // Manufactory replacements
 // ------------------------------------------------------------
 
-# End stone dust compat
+// End stone dust compat
 scripts.process.crush(<minecraft:end_stone>, <nuclearcraft:gem_dust:11>);
 
-# Ground Cocoa
-scripts.process.crush(<nuclearcraft:roasted_cocoa_beans>, <nuclearcraft:ground_cocoa_nibs>, null, null, null, {bonusType: "MULTIPLY_OUTPUT"});
+// Ground Cocoa
+scripts.process.crush(<nuclearcraft:roasted_cocoa_beans>, <nuclearcraft:ground_cocoa_nibs>, null, null, null, { bonusType: 'MULTIPLY_OUTPUT' });
 
-# Bioplastic process
+// Bioplastic process
 scripts.process.extract(<ore:sugarcane> * 2, <ore:bioplastic>.firstItem);
 
 scripts.process.extract(<ore:dustVilliaumite>, <ore:dustSodiumFluoride>.firstItem);
@@ -449,26 +453,26 @@ scripts.process.extract(<ore:listAllfishraw>, <nuclearcraft:gelatin> * 4);
 // ------------------------------------------------------------
 // Pressurizer replacements
 // ------------------------------------------------------------
-scripts.process.compress(<ore:dustRhodochrosite>, <nuclearcraft:gem>); # [Rhodochrosite]
-scripts.process.compress(<ore:dustBoronNitride> , <nuclearcraft:gem:1>); # [Cubic Boron Nitride]
-scripts.process.compress(<ore:dustFluorite>     , <nuclearcraft:gem:2>); # [Fluorite]
-scripts.process.compress(<ore:dustVilliaumite>  , <nuclearcraft:gem:3>); # [Villiaumite]
-scripts.process.compress(<ore:dustCarobbiite>   , <nuclearcraft:gem:4>); # [Carobbiite]
-scripts.process.compress(<ore:dustStrontium90>*9, <qmd:strontium_90_block>); # [Strontium-90 Block]
-scripts.process.compress(<ore:dustWitherite>    , <trinity:gem_witherite>); # [Witherite]
+scripts.process.compress(<ore:dustRhodochrosite>, <nuclearcraft:gem>); // [Rhodochrosite]
+scripts.process.compress(<ore:dustBoronNitride> , <nuclearcraft:gem:1>); // [Cubic Boron Nitride]
+scripts.process.compress(<ore:dustFluorite>     , <nuclearcraft:gem:2>); // [Fluorite]
+scripts.process.compress(<ore:dustVilliaumite>  , <nuclearcraft:gem:3>); // [Villiaumite]
+scripts.process.compress(<ore:dustCarobbiite>   , <nuclearcraft:gem:4>); // [Carobbiite]
+scripts.process.compress(<ore:dustStrontium90> * 9, <qmd:strontium_90_block>); // [Strontium-90 Block]
+scripts.process.compress(<ore:dustWitherite>    , <trinity:gem_witherite>); // [Witherite]
 
 // ------------------------------------------------------------
 // Fluid Extractor replacement
 // ------------------------------------------------------------
-# [Helium-3 Bucket] from [Gravel][+1]
-scripts.process.squeeze([<ore:turfMoon>], <fluid:helium_3> * 250, "only: TECentrifuge");
+// [Helium-3 Bucket] from [Gravel][+1]
+scripts.process.squeeze([<ore:turfMoon>], <fluid:helium_3> * 250, 'only: TECentrifuge');
 mods.industrialforegoing.Extractor.add(<advancedrocketry:moonturf_dark>, <fluid:helium_3> * 5);
 mods.industrialforegoing.Extractor.add(<advancedrocketry:moonturf>, <fluid:helium_3> * 5);
 
 // ------------------------------------------------------------
 // Electrolyzer replacement
 // ------------------------------------------------------------
-val elOpts = {energy: 20000, time: 2} as crafttweaker.data.IData;
+val elOpts = { energy: 20000, time: 2 } as crafttweaker.data.IData;
 scripts.process.electrolyze(<fluid:heavy_water> * 500, [<fluid:deuterium> * 500, <fluid:oxygen> * 250], null, elOpts);
 scripts.process.electrolyze(<fluid:ic2heavy_water> * 500, [<fluid:deuterium> * 500, <fluid:oxygen> * 250], null, elOpts);
 scripts.process.electrolyze(<fluid:hydrofluoric_acid> * 250, [<fluid:hydrogen> * 250, <fluid:fluorine> * 250], null, elOpts);
@@ -555,47 +559,47 @@ utils.rh(<nuclearcraft:alloy:13>);
 // [mod][data_type][name][count]
 val nuclearData = {
   nuclearcraft: {
-    americium: 3,
-    berkelium: 2,
+    americium  : 3,
+    berkelium  : 2,
     californium: 4,
-    curium: 6,
-    mixed: 2,
-    neptunium: 2,
-    plutonium: 4,
-    thorium: 1,
-    uranium: 4,
+    curium     : 6,
+    mixed      : 2,
+    neptunium  : 2,
+    plutonium  : 4,
+    thorium    : 1,
+    uranium    : 4,
   },
   qmd: {
     copernicium: 1,
-  }
+  },
 } as int[string][string];
 
 for mod, types in nuclearData {
   for key, value in types {
     for i in 0 .. value {
-      val isotope         = itemUtils.getItem(mod+':'+key, i*5);
-      val isotope_carbide = itemUtils.getItem(mod+':'+key, i*5+1);
-      val isotope_oxide   = itemUtils.getItem(mod+':'+key, i*5+2);
-      val isotope_nitride = itemUtils.getItem(mod+':'+key, i*5+3);
-      val isotope_zirc    = itemUtils.getItem(mod+':'+key, i*5+4);
-      val  pellet         = itemUtils.getItem(mod+':pellet_'+key, i*2);
-      val  pellet_carbide = itemUtils.getItem(mod+':pellet_'+key, i*2+1);
-      val    fuel         = itemUtils.getItem(mod+':fuel_'+key, i*4);
-      val    fuel_carbide = itemUtils.getItem(mod+':fuel_'+key, i*4+1);
-      val    fuel_oxide   = itemUtils.getItem(mod+':fuel_'+key, i*4+2);
-      val    fuel_nitride = itemUtils.getItem(mod+':fuel_'+key, i*4+3);
-      val   depleted_fuel = itemUtils.getItem(mod+':depleted_fuel_'+key, i*4);
+      val isotope         = itemUtils.getItem(mod + ':' + key, i * 5);
+      val isotope_carbide = itemUtils.getItem(mod + ':' + key, i * 5 + 1);
+      val isotope_oxide   = itemUtils.getItem(mod + ':' + key, i * 5 + 2);
+      val isotope_nitride = itemUtils.getItem(mod + ':' + key, i * 5 + 3);
+      val isotope_zirc    = itemUtils.getItem(mod + ':' + key, i * 5 + 4);
+      val  pellet         = itemUtils.getItem(mod + ':pellet_' + key, i * 2);
+      val  pellet_carbide = itemUtils.getItem(mod + ':pellet_' + key, i * 2 + 1);
+      val    fuel         = itemUtils.getItem(mod + ':fuel_' + key, i * 4);
+      val    fuel_carbide = itemUtils.getItem(mod + ':fuel_' + key, i * 4 + 1);
+      val    fuel_oxide   = itemUtils.getItem(mod + ':fuel_' + key, i * 4 + 2);
+      val    fuel_nitride = itemUtils.getItem(mod + ':fuel_' + key, i * 4 + 3);
+      val   depleted_fuel = itemUtils.getItem(mod + ':depleted_fuel_' + key, i * 4);
 
       // Remove unoxidation and unnitridation recipes
       // if(!isNull(isotope)) furnace.remove(isotope);
-      if(!isNull(pellet)) furnace.remove(pellet);
-      if(!isNull(fuel)) furnace.remove(fuel);
-      
+      if (!isNull(pellet)) furnace.remove(pellet);
+      if (!isNull(fuel)) furnace.remove(fuel);
+
       // Add un-zirconium recipes
-      if(
-        !isNull(isotope_zirc) &&
-        !(key == 'curium' && (i == 4 || i == 5)) &&
-        !(key == 'uranium' && i == 3)
+      if (
+        !isNull(isotope_zirc)
+        && !(key == 'curium' && (i == 4 || i == 5))
+        && !(key == 'uranium' && i == 3)
       )
         furnace.addRecipe(isotope, isotope_zirc);
 
@@ -603,7 +607,7 @@ for mod, types in nuclearData {
       utils.rh(fuel);
 
       // Pebbles in fuel reprocessor
-      if(key!='americium' || i!=2) {
+      if (key != 'americium' || i != 2) {
         mods.nuclearcraft.FuelReprocessor.removeRecipeWithInput(depleted_fuel * 9);
         utils.rh(depleted_fuel);
 
@@ -617,25 +621,25 @@ for mod, types in nuclearData {
         for j in 1 .. 4 {
           scripts.category.oredict.add(
             <ore:depletedFuelReactor>,
-            itemUtils.getItem(mod+':depleted_fuel_'+key, i*4+j)
+            itemUtils.getItem(mod + ':depleted_fuel_' + key, i * 4 + j)
           );
         }
       }
-      if(!(key=='americium' && i==2)) {
+      if (!(key == 'americium' && i == 2)) {
         mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(pellet_carbide);
         utils.rh(pellet_carbide);
       }
 
-      if(key!='mixed' && key!='thorium'
-        && !(key=='curium' && i >= 4)
-        && !(key=='uranium' && i >= 3)
+      if (key != 'mixed' && key != 'thorium'
+        && !(key == 'curium' && i >= 4)
+        && !(key == 'uranium' && i >= 3)
       ) {
         mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(isotope_carbide);
-        if ((key=='americium' && i == 2)
-          ||(key=='curium'    && (i == 1 || i == 2 || i == 3))
-          ||(key=='neptunium' && (i == 1))
-          ||(key=='plutonium' && (i == 1 || i == 2 || i == 3))
-          ||(key=='uranium'   && (i == 0 || i == 1 || i == 2))
+        if ((key == 'americium' && i == 2)
+          || (key == 'curium'    && (i == 1 || i == 2 || i == 3))
+          || (key == 'neptunium' && (i == 1))
+          || (key == 'plutonium' && (i == 1 || i == 2 || i == 3))
+          || (key == 'uranium'   && (i == 0 || i == 1 || i == 2))
         ) {
           mods.nuclearcraft.DecayHastener.removeRecipeWithOutput(isotope_carbide);
         }
@@ -686,9 +690,9 @@ val coolants = {
 } as int[string];
 
 for coolant, cooling in coolants {
-  mods.nuclearcraft.Centrifuge.removeRecipeWithInput(game.getLiquid(coolant+'_nak') * 144);
-  val f = game.getLiquid(coolant+'_nak_fluoride_flibe');
-  if(!isNull(f)) mods.nuclearcraft.Centrifuge.removeRecipeWithInput(f * 72);
+  mods.nuclearcraft.Centrifuge.removeRecipeWithInput(game.getLiquid(coolant + '_nak') * 144);
+  val f = game.getLiquid(coolant + '_nak_fluoride_flibe');
+  if (!isNull(f)) mods.nuclearcraft.Centrifuge.removeRecipeWithInput(f * 72);
 }
 
 for fluid in [
@@ -700,14 +704,14 @@ for fluid in [
   'lep_239' , 'lep_241' , 'leu_233' , 'leu_235',
   'mix_239' , 'mix_241' , 'tbu',
 ] as string[] {
-  if(fluid != 'tbu')
+  if (fluid != 'tbu')
     mods.nuclearcraft.Centrifuge.removeRecipeWithInput(game.getLiquid(fluid) * 144);
-  
+
   // Add Electolyze recipes
   scripts.process.electrolyze(
-    game.getLiquid('depleted_'+fluid+'_fluoride') * 72, [
-      game.getLiquid('depleted_'+fluid) * 72,
-      <fluid:fluorine> * 500
+    game.getLiquid('depleted_' + fluid + '_fluoride') * 72, [
+      game.getLiquid('depleted_' + fluid) * 72,
+      <fluid:fluorine> * 500,
     ], null, elOpts);
 }
 
@@ -717,23 +721,23 @@ for fluid in [
 mods.nuclearcraft.HeatExchanger.removeAllRecipes();
 
 val waterRequired = {
-  water             : { high_pressure_steam : 100 },
-  condensate_water  : { preheated_water : 10 },
-  preheated_water   : { high_pressure_steam : 50 },
-  ic2hot_water      : { high_pressure_steam : 30 },
-  hot_spring_water  : { high_pressure_steam : 20 },
-  ic2distilled_water: { high_pressure_steam : 25 },
-  distwater         : { high_pressure_steam : 25 },
+  water             : { high_pressure_steam: 100 },
+  condensate_water  : { preheated_water: 10 },
+  preheated_water   : { high_pressure_steam: 50 },
+  ic2hot_water      : { high_pressure_steam: 30 },
+  hot_spring_water  : { high_pressure_steam: 20 },
+  ic2distilled_water: { high_pressure_steam: 25 },
+  distwater         : { high_pressure_steam: 25 },
 } as int[string][string];
 
 for coolant, cooling in coolants {
-  val cold= game.getLiquid(coolant+'_nak');
-  val hot = game.getLiquid(coolant+'_nak_hot');
+  val cold = game.getLiquid(coolant + '_nak');
+  val hot = game.getLiquid(coolant + '_nak_hot');
   for fluid, tuple in waterRequired {
     for output, amount in tuple {
       mods.immersivetechnology.HeatExchanger.addRecipe(
         cold * amount, game.getLiquid(output) * (400 * cooling),
-         hot * amount, game.getLiquid(fluid) * (100 * cooling),
+        hot * amount, game.getLiquid(fluid) * (100 * cooling),
         32000, 2
       );
     }
@@ -752,62 +756,62 @@ mods.immersivetechnology.Radiator.addRecipe(<liquid:condensate_water> * 100, <li
 // ------------------------------------------------------------
 
 val pileIngrs = {
-  "▬": <ore:ingotMagnesium>,            # Magnesium Ingot
+  '▬': <ore:ingotMagnesium>,            // Magnesium Ingot
 
-  "0": <ic2:casing:1>,                  # Copper Item Casing
-  "1": <ore:plateBasic>,                # Basic Plating
-  "2": <ore:plateAdvanced>,             # Advanced Plating
-  "3": <ore:plateDU>,                   # DU Plating
-  "4": <ore:plateElite>,                # Elite Plating
+  '0': <ic2:casing:1>,                  // Copper Item Casing
+  '1': <ore:plateBasic>,                // Basic Plating
+  '2': <ore:plateAdvanced>,             // Advanced Plating
+  '3': <ore:plateDU>,                   // DU Plating
+  '4': <ore:plateElite>,                // Elite Plating
 
-  "I": <nuclearcraft:lithium_ion_cell>.withTag({}, false), # Lithium Ion Cell
-  "S": <ore:solenoidMagnesiumDiboride>, # Magnesium Diboride Solenoid
+  'I': <nuclearcraft:lithium_ion_cell>.withTag({}, false), // Lithium Ion Cell
+  'S': <ore:solenoidMagnesiumDiboride>, // Magnesium Diboride Solenoid
 } as IIngredient[string];
 
-/*Inject_js{
+/* Inject_js{
   const list = config('config/nuclearcraft.Cfg').energy_storage.battery_block_capacity
   let i = 0
   return cmd.block.replace(/\s*capacity\s*:\s*\d+/g, (m,p) =>
     `capacity:${(''+list[i++]).padStart(10)}`
   )
-}*/
+} */
 val piles = [
-  <nuclearcraft:voltaic_pile_basic>   .withTag({energyStorage: {capacity:   1600000 as long, energy: 0 as long}}),
-  <nuclearcraft:voltaic_pile_advanced>.withTag({energyStorage: {capacity:   6400000 as long, energy: 0 as long}}),
-  <nuclearcraft:voltaic_pile_du>      .withTag({energyStorage: {capacity:  25600000 as long, energy: 0 as long}}),
-  <nuclearcraft:voltaic_pile_elite>   .withTag({energyStorage: {capacity: 102400000 as long, energy: 0 as long}}),
+  <nuclearcraft:voltaic_pile_basic>.withTag({ energyStorage: { capacity: 1600000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_advanced>.withTag({ energyStorage: { capacity: 6400000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_du>.withTag({ energyStorage: { capacity: 25600000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_elite>.withTag({ energyStorage: { capacity: 102400000 as long, energy: 0 as long } }),
 ] as IItemStack[];
 
 val batteries = [
-  <nuclearcraft:lithium_ion_battery_basic>   .withTag({energyStorage: {capacity:  32000000 as long, energy: 0 as long}}),
-  <nuclearcraft:lithium_ion_battery_advanced>.withTag({energyStorage: {capacity: 128000000 as long, energy: 0 as long}}),
-  <nuclearcraft:lithium_ion_battery_du>      .withTag({energyStorage: {capacity: 512000000 as long, energy: 0 as long}}),
-  <nuclearcraft:lithium_ion_battery_elite>   .withTag({energyStorage: {capacity:2048000000 as long, energy: 0 as long}}),
+  <nuclearcraft:lithium_ion_battery_basic>.withTag({ energyStorage: { capacity: 32000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_advanced>.withTag({ energyStorage: { capacity: 128000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_du>.withTag({ energyStorage: { capacity: 512000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_elite>.withTag({ energyStorage: { capacity: 2048000000 as long, energy: 0 as long } }),
 ] as IItemStack[];
 /**/
 
 for i, item in piles {
   recipes.remove(item.withTag(null));
   craft.make(item, ['^','p','0'], {
-    "^": i==0 ? pileIngrs['▬'] : piles[i - 1].withTag({}, false),
-    "p": pileIngrs[''~(i+1)],
-    "0": pileIngrs['0'],
+    '^': i == 0 ? pileIngrs['▬'] : piles[i - 1].withTag({}, false),
+    'p': pileIngrs['' ~ (i + 1)],
+    '0': pileIngrs['0'],
   });
 }
 
 for i, item in batteries {
   recipes.remove(item.withTag(null));
-  if(i==0)
+  if (i == 0)
     craft.make(item, ['I','1','S'], pileIngrs);
   else
     craft.make(item, [' p ','^^^',' S '], {
-      "^": batteries[i - 1].withTag({}, false),
-      "p": pileIngrs[''~(i+1)],
-      "S": pileIngrs['S'],
+      '^': batteries[i - 1].withTag({}, false),
+      'p': pileIngrs['' ~ (i + 1)],
+      'S': pileIngrs['S'],
     });
 }
 
-# --------------------------------------------------------------
+// --------------------------------------------------------------
 // Remove Hazmat since radiation is disabled
 utils.rh(<nuclearcraft:helm_hazmat>);
 utils.rh(<nuclearcraft:chest_hazmat>);

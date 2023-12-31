@@ -20,5 +20,11 @@
 		type: "item",
 		item: "endreborn:item_end_essence",
 		count: 8
+	},
+	{
+		uid: "3f55a3ec",
+		type: "item",
+		item: "hole_filler_mod:throwable_hole_filler_lava",
+		count: 3
 	}]
 }

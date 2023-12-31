@@ -1,11 +1,11 @@
 {
-	x: 2.5d,
-	y: 2.5d,
+	x: 6.8d,
+	y: -0.5d,
 	text: [
 		"{q.applied_energetics.matter_condenser.desc}"
 	],
 	dependencies: [
-		"882dc2b8"
+		"67bf0331"
 	],
 	tasks: [{
 		uid: "c96354d8",

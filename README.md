@@ -29,85 +29,85 @@ Despite this, the modpack **only takes 30% longer** to load than the original E2
 
 <tr>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/289/63/30/30/637313892155541419.png"></td><td>
+<td><img src="https://i.imgur.com/MPg6uAO.png"></td><td>
 
 [**Thaumic Augmentation**](https://www.curseforge.com/minecraft/mc-mods/thaumic-augmentation)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/337/5/30/30/637473842688195004.png"></td><td>
+<td><img src="https://i.imgur.com/7vVSbG0.png"></td><td>
 
 [**Lootr**](https://www.curseforge.com/minecraft/mc-mods/lootr)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/301/90/30/30/637360994847173146.png"></td><td>
+<td><img src="https://i.imgur.com/XPG0E4o.png"></td><td>
 
 [**Particle Culling**](https://www.curseforge.com/minecraft/mc-mods/particle-culling)
 </td>
 
 </tr><tr>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/153/560/30/30/636619290357325647.png"></td><td>
+<td><img src="https://i.imgur.com/IHk0cvb.png"></td><td>
 
 [**Construct's Armory**](https://www.curseforge.com/minecraft/mc-mods/constructs-armory)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/623/755/30/30/638018179275684974_animated.gif"></td><td>
+<td><img src="https://i.imgur.com/FEqINsA.gif"></td><td>
 
 [**Traveler's Backpack**](https://www.curseforge.com/minecraft/mc-mods/travelers-backpack)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/199/165/30/30/636904875003878157.png"></td><td>
+<td><img src="https://i.imgur.com/4Ntvotu.png"></td><td>
 
 [**Sledgehammer**](https://www.curseforge.com/minecraft/mc-mods/sledgehammer)
 </td>
 
 </tr><tr>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/86/235/30/30/636207507685344289.png"></td><td>
+<td><img src="https://i.imgur.com/xZioDD3.png"></td><td>
 
 [**LittleTiles**](https://www.curseforge.com/minecraft/mc-mods/littletiles)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/146/647/30/30/636571273052752895.png"></td><td>
+<td><img src="https://i.imgur.com/T28UV8d.png"></td><td>
 
 [**Flopper**](https://www.curseforge.com/minecraft/mc-mods/flopper)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/302/258/30/30/637366701251451367.png"></td><td>
+<td><img src="https://i.imgur.com/K49ZGIO.png"></td><td>
 
 [**Thaumic Speedup**](https://www.curseforge.com/minecraft/mc-mods/thaumic-speedup)
 </td>
 
 </tr><tr>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/206/15/30/30/636953619080869513.png"></td><td>
+<td><img src="https://i.imgur.com/h7NQxho.png"></td><td>
 
 [**Rats**](https://www.curseforge.com/minecraft/mc-mods/rats)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/343/943/30/30/637489719432340625.png"></td><td>
+<td><img src="https://i.imgur.com/jUpfai4.png"></td><td>
 
 [**Hole Filler Mod**](https://www.curseforge.com/minecraft/mc-mods/hole-filler-mod)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/358/827/30/30/637520208754289091.png"></td><td>
+<td><img src="https://i.imgur.com/0N4SG5A.png"></td><td>
 
 [**CensoredASM**](https://www.curseforge.com/minecraft/mc-mods/lolasm)
 </td>
 
 </tr><tr>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/273/618/30/30/637255642042590715.png"></td><td>
+<td><img src="https://i.imgur.com/ctMeddf.png"></td><td>
 
 [**Tinkers' Evolution**](https://www.curseforge.com/minecraft/mc-mods/tinkers-evolution)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/205/10/30/30/636944961449232806.png"></td><td>
+<td><img src="https://i.imgur.com/2ZEqnh8.png"></td><td>
 
 [**Vaultopic**](https://www.curseforge.com/minecraft/mc-mods/vaultopic-early-inventory-management)
 </td>
 
-<td><img src="https://media.forgecdn.net/avatars/thumbnails/468/506/30/30/637752171904887013.jpeg"></td><td>
+<td><img src="https://i.imgur.com/R3BzmyZ.jpeg"></td><td>
 
 [**Had Enough Items**](https://www.curseforge.com/minecraft/mc-mods/had-enough-items)
 </td>

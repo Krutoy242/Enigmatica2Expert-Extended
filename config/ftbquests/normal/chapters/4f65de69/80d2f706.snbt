@@ -1,26 +1,54 @@
 {
-	x: 14.1d,
+	icon: {
+		id: "danknull:danknull_dock",
+		tag: {
+			BlockEntityTag: {
+				id: "danknull:danknull_dock",
+				DankNullStack: {
+					id: "danknull:dank_null_0",
+					Count: 1,
+					Damage: 0s
+				}
+			}
+		}
+	},
+	x: 6.7d,
 	y: 6.1d,
 	text: [
 		"{q.getting_started._dank_null_docking.desc}"
 	],
 	dependencies: [
-		"224cb929"
+		"4fc58528"
 	],
 	tasks: [{
 		uid: "a51ba647",
 		type: "item",
 		items: [{
+			id: "danknull:danknull_dock",
+			tag: {
+				BlockEntityTag: {
+					id: "danknull:danknull_dock",
+					DankNullStack: {
+						id: "danknull:dank_null_0",
+						Count: 1,
+						Damage: 0s
+					}
+				}
+			}
+		},
+		{
 			item: "danknull:danknull_dock"
-		}]
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "cf85687b",
+		uid: "27793e35",
 		type: "item",
 		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
-				type: "legendary"
+				type: "uncommon"
 			}
 		}
 	}]

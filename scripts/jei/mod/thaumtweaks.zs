@@ -1,34 +1,33 @@
-#priority 950
-#modloaded thaumtweaks
 #ignoreBracketErrors
+#modloaded thaumtweaks
+#priority 950
 
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import mods.requious.AssemblyRecipe;
 import mods.ctintegration.data.DataUtil.parse as sNBT;
+import mods.requious.AssemblyRecipe;
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
-var x = <assembly:pech_trades>;
+val x = <assembly:pech_trades>;
 x.addJEICatalyst(Soul('thaumcraft:pech'));
 x.setJEIItemSlot(3, 0, 'input0');
 
 // Diamonds
 for _y in 0 .. 5 {
-  x.setJEIItemSlot(0, _y+1, 'input1'~_y, scripts.jei.requious.getVisSlots(0,1));
+  x.setJEIItemSlot(0, _y + 1, 'input1' ~ _y, scripts.jei.requious.getVisSlots(0, 1));
 }
 
 // Main outputs
 var k = 0;
 for _y in 0 .. 5 {
   for _x in 0 .. 6 {
-    x.setJEIItemSlot(_x+1, _y+1, 'output'~_x~_y);
+    x.setJEIItemSlot(_x + 1, _y + 1, 'output' ~ _x ~ _y);
     k += 1;
   }
 }
 
 val pechTrades = {
-/*Inject_js(
+/* Inject_js(
 loadText('config/thaumtweaks_pech_trades.txt')
   .replace(/#[\s\S\n]+/gm, '') // Remove custom comment
   .replace(/\s*\/\/.*$/gm, '') // Remove inline comment
@@ -41,8 +40,8 @@ loadText('config/thaumtweaks_pech_trades.txt')
   .replace(/^(\w+:)\n\s+\], /gm, '  ]],\n$1 [') // Excess brackets
   .replace(/\s+\]\],\n/, '') + // Excess at start
 '\n]]'
-)*/
-MINER: [[
+) */
+  MINER: [[
     <extrautils2:compressedcobblestone:2>,
     <jaopca:item_clustertungsten>,
     <thaumcraft:cluster:4>,
@@ -78,7 +77,7 @@ MINER: [[
     <astralsorcery:blockgemcrystals:3>,
     <astralsorcery:blockgemcrystals:4>,
   ]],
-MAGE: [[
+  MAGE: [[
     <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "aer"}]}')),
     <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "terra"}]}')),
     <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "ignis"}]}')),
@@ -114,7 +113,7 @@ MAGE: [[
     <randomthings:beans:2>,
     <mysticalagriculture:growth_accelerator>,
   ]],
-ARCHER: [[
+  ARCHER: [[
     <forestry:hunter_bag>,
     <cyclicmagic:water_candle>,
     <rats:rat_arrow>,
@@ -150,7 +149,7 @@ ARCHER: [[
     <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 4s, id: 49}]}')),
     <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 6s, id: 65}]}')),
   ]],
-COMMON: [[
+  COMMON: [[
     <mysticalagriculture:inferium_apple> * 2,
     <extrautils2:magicapple> * 4,
     <thaumcraft:curio:1> * 4,
@@ -185,20 +184,20 @@ COMMON: [[
     <thaumadditions:zeith_fur> * 3,
     <minecraft:totem_of_undying> * 3,
     <thaumadditions:jar_eldritch>,
-]]
+  ]],
 /**/
 } as IItemStack[][][string];
 
 val pechOrder = [
-  "MINER",
-  "MAGE",
-  "ARCHER",
-  "COMMON",
+  'MINER',
+  'MAGE',
+  'ARCHER',
+  'COMMON',
 ] as string[];
 
 val pechRepresentation = {
-  MINER: <minecraft:stone_pickaxe>,
-  MAGE: <betterbuilderswands:wandstone>,
+  MINER : <minecraft:stone_pickaxe>,
+  MAGE  : <betterbuilderswands:wandstone>,
   ARCHER: <minecraft:bow>,
   COMMON: <thaumcraft:stone_arcane>,
 } as IItemStack[string];
@@ -212,15 +211,15 @@ val pechDiamonds = [
 ] as IItemStack[];
 
 for i, kind in pechOrder {
-  val assRec = AssemblyRecipe.create(function(container) {
+  val assRec = AssemblyRecipe.create(function (container) {
     for y, arr1d in pechTrades[kind] {
       for x, output in arr1d {
-        if(isNull(output)) continue;
-        container.addItemOutput("output" ~ x ~ y, output);
+        if (isNull(output)) continue;
+        container.addItemOutput('output' ~ x ~ y, output);
       }
     }
   });
-  assRec.requireItem("input0", pechRepresentation[kind]);
-  for j in 0 .. 5 { assRec.requireItem("input1"~j, pechDiamonds[j]); }
+  assRec.requireItem('input0', pechRepresentation[kind]);
+  for j in 0 .. 5 { assRec.requireItem('input1' ~ j, pechDiamonds[j]); }
   x.addJEIRecipe(assRec);
 }

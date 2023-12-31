@@ -1,29 +1,30 @@
+#modloaded ctintegration crafttweakerutils
+#reloadable
+
 import crafttweaker.world.IFacing;
 import mods.ctutils.utils.Math.abs;
 
-#reloadable
-
 static itemsConsumed as int = 4;
 
-# Remove recipes defined by other methods
-recipes.removeByRecipeName("mysticalagriculture:itemcraftingcomponent");
+// Remove recipes defined by other methods
+recipes.removeByRecipeName('mysticalagriculture:itemcraftingcomponent');
 scripts.lib.tooltip.desc.both(
   <mysticalagriculture:aquamarine_essence>,
-  "tooltips.lang.drop_at_night",
+  'tooltips.lang.drop_at_night',
   <mysticalagriculture:aquamarine_essence>.displayName,
   <minecraft:sand>.displayName
 );
 scripts.jei.crafting_hints.addInsOutCatl([
-  <mysticalagriculture:aquamarine_essence> * itemsConsumed, null, null, null, <minecraft:sand>
+  <mysticalagriculture:aquamarine_essence> * itemsConsumed, null, null, null, <minecraft:sand>,
 ], <astralsorcery:blockcustomsandore>,
-  <minecraft:daylight_detector>.withDisplayName(game.localize("tooltips.lang.must_see_night"))
+<minecraft:daylight_detector>.withDisplayName(game.localize('tooltips.lang.must_see_night'))
 );
 
 // ---------------------------------------------------------------------
-events.onWorldTick(function(e as crafttweaker.event.WorldTickEvent){
+events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
   val world = e.world;
-  if(world.remote) return;
-  if(
+  if (world.remote) return;
+  if (
     world.dayTime
     || world.raining
     || world.time % 20 != 0
@@ -38,19 +39,19 @@ events.onWorldTick(function(e as crafttweaker.event.WorldTickEvent){
 
     // Must have appropriate amount
     val p = entityItem.position;
-    if(entityItem.item.amount < itemsConsumed) {
-      utils.spawnParticles(entityItem, 'fireworksSpark', p.x, p.y+1.5, p.z, 0.05, 0.3, 0.05, -0.01, entityItem.item.amount);
+    if (entityItem.item.amount < itemsConsumed) {
+      utils.spawnParticles(entityItem, 'fireworksSpark', p.x, p.y + 1.5, p.z, 0.05, 0.3, 0.05, -0.01, entityItem.item.amount);
       continue;
     }
 
     // Should see sky
     val seeSky = mods.ctutils.world.World.canSeeSky(world, entityItem.position);
-    if(!seeSky) continue;
+    if (!seeSky) continue;
 
     // Must lay on sand
     val blockPos = entityItem.position.getOffset(IFacing.down(), 1);
     val block = world.getBlock(blockPos);
-    if(block.definition.id != 'minecraft:sand') continue;
+    if (block.definition.id != 'minecraft:sand') continue;
 
     // Consume
     entityItem.item.mutable().shrink(itemsConsumed);
@@ -60,11 +61,11 @@ events.onWorldTick(function(e as crafttweaker.event.WorldTickEvent){
     world.setBlockState(<blockstate:astralsorcery:blockcustomsandore>, blockPos);
 
     // Spawn particles
-    utils.spawnParticles(entityItem, 'fireworksSpark', p.x, p.y+1.5, p.z, 0, 1, 0, -0.01, 20);
+    utils.spawnParticles(entityItem, 'fireworksSpark', p.x, p.y + 1.5, p.z, 0, 1, 0, -0.01, 20);
 
     for pl in world.getAllPlayers() {
-      if(abs(pl.x - p.x) > 20 || abs(pl.y - p.y) > 20 || abs(pl.z - p.z) > 20) continue;
-      pl.sendPlaySoundPacket("astralsorcery:attunement", "ambient", entityItem.position, 0.5f, 3.0f);
+      if (abs(pl.x - p.x) > 20 || abs(pl.y - p.y) > 20 || abs(pl.z - p.z) > 20) continue;
+      pl.sendPlaySoundPacket('astralsorcery:attunement', 'ambient', entityItem.position, 0.5f, 3.0f);
     }
   }
 });

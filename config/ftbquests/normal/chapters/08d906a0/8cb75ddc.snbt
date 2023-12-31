@@ -1,0 +1,21 @@
+{
+	icon: "minecraft:diamond",
+	x: 24.0d,
+	y: 1.5d,
+	dependencies: [
+		"ef26b9ec"
+	],
+	optional: true,
+	tasks: [{
+		uid: "134803a1",
+		type: "item",
+		items: [{
+			item: "ic2:crafting 1 18"
+		}]
+	}],
+	rewards: [{
+		uid: "3d808575",
+		type: "item",
+		item: "minecraft:diamond"
+	}]
+}

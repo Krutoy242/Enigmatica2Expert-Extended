@@ -1,7 +1,7 @@
 /**
  * @file Remove all items and their OreDicts BEFORE other scripts loads
  * to prevent iterating over purged items
- * 
+ *
  * @author Krutoy242
  * @link https://github.com/Krutoy242
  */
@@ -10,15 +10,15 @@
 #ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
-	
-# MFE -> MFSU Upgrade Kit removal
+
+// MFE -> MFSU Upgrade Kit removal
 utils.rh(<ic2:upgrade_kit>);
 
-# Industrial Diamond (Replaced with regular diamond)
+// Industrial Diamond (Replaced with regular diamond)
 utils.rh(<ic2:crafting:19>);
 utils.rh(<ic2:ingot:8>);
 
-# Unused dusts
+// Unused dusts
 utils.rh(<ic2:ingot:3>);
 utils.rh(<ic2:dust:4>);
 utils.rh(<ic2:dust:7>);
@@ -30,14 +30,14 @@ utils.rh(<ic2:dust:25>);
 utils.rh(<ic2:nuclear:6>);
 utils.rh(<ic2:nuclear:8>);
 utils.rh(<ic2:nuclear:9>);
-utils.rh(<ic2:resource:8>); # Steel blocks
-utils.rh(<ic2:resource:6>); # Copper blocks
-utils.rh(<ic2:resource:9>); # Tin blocks
-utils.rh(<ic2:resource:15>); # Silver blocks
-utils.rh(<ic2:resource:7>); # Lead blocks
-utils.rh(<ic2:misc_resource>); # Ashes
-utils.rh(<ic2:misc_resource:5>); # Slag
-utils.rh(<openblocks:generic:1>); # Crane ingredient
+utils.rh(<ic2:resource:8>); // Steel blocks
+utils.rh(<ic2:resource:6>); // Copper blocks
+utils.rh(<ic2:resource:9>); // Tin blocks
+utils.rh(<ic2:resource:15>); // Silver blocks
+utils.rh(<ic2:resource:7>); // Lead blocks
+utils.rh(<ic2:misc_resource>); // Ashes
+utils.rh(<ic2:misc_resource:5>); // Slag
+utils.rh(<openblocks:generic:1>); // Crane ingredient
 utils.rh(<openblocks:generic:2>);
 utils.rh(<openblocks:generic:3>);
 utils.rh(<openblocks:generic:4>);
@@ -47,20 +47,18 @@ utils.rh(<actuallyadditions:item_misc:17>);
 utils.rh(<actuallyadditions:item_food:9>);
 utils.rh(<avaritia:compressed_crafting_table>);
 utils.rh(<avaritia:double_compressed_crafting_table>);
-utils.rh(<avaritia:resource>); # Diamond Lattice
+utils.rh(<avaritia:resource>); // Diamond Lattice
 
-# Purge saltpeter and sulfur
+// Purge saltpeter and sulfur
 utils.rh(<bloodmagic:component:24>);
 utils.rh(<bloodmagic:component:23>);
 
-# TC nuggets
+// TC nuggets
 for i in 0 .. 5 {
-	utils.rh(<thaumcraft:nugget>.definition.makeStack(i));
+  utils.rh(<thaumcraft:nugget>, true, i);
 }
 
-
-					
-# *======= Metal Nuggets =======*
+// *======= Metal Nuggets =======*
 
 utils.rh(<immersiveengineering:metal:29>);
 utils.rh(<immersiveengineering:metal:20>);
@@ -76,23 +74,40 @@ utils.rh(<extendedcrafting:material:129>);
 utils.rh(<opencomputers:material:29>); // Diamond nugget
 utils.rh(<opencomputers:material>);
 
-# Remove Refined storage cables
-if(isNull(loadedMods["refinedstorage"])) {
-	utils.rh(<immersivecables:coil_block:3>);
-	utils.rh(<immersivecables:wire_coil:3>);
+// Remove Refined storage cables
+if (isNull(loadedMods['refinedstorage'])) {
+  utils.rh(<immersivecables:coil_block:3>);
+  utils.rh(<immersivecables:wire_coil:3>);
 }
 
-/*Inject_js(
+/* Inject_js(
 (getUnchangedFurnaceRecipes()??[])
 .filter((r) => isJEIBlacklisted(r.in_id, r.in_meta) && !isPurged(r.input))
 .map(({input})=>[`furnace.remove(<*>, ${input});`])
-)*/
+) */
 furnace.remove(<*>, <actuallyadditions:item_dust:5>);
 furnace.remove(<*>, <biomesoplenty:gem_ore:7>);
+furnace.remove(<*>, <contenttweaker:item_ore_tungsten:1>);
+furnace.remove(<*>, <contenttweaker:item_ore_tungsten:2>);
 furnace.remove(<*>, <enderio:item_material:33>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_aluminium:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_ardite:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_cobalt:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_copper:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_gold:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_iron:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_lead:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_nickel:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_silver:1>);
+furnace.remove(<*>, <exnihilocreatio:item_ore_tin:1>);
 furnace.remove(<*>, <forestry:resources:1>);
 furnace.remove(<*>, <forestry:resources:2>);
+furnace.remove(<*>, <ic2:dust:4>);
+furnace.remove(<*>, <ic2:dust:7>);
 furnace.remove(<*>, <ic2:dust:8>);
+furnace.remove(<*>, <ic2:dust:10>);
+furnace.remove(<*>, <ic2:dust:14>);
+furnace.remove(<*>, <ic2:dust:17>);
 furnace.remove(<*>, <ic2:dust>);
 furnace.remove(<*>, <ic2:resource:1>);
 furnace.remove(<*>, <ic2:resource:2>);
@@ -110,14 +125,29 @@ furnace.remove(<*>, <immersiveengineering:metal:16>);
 furnace.remove(<*>, <immersiveengineering:metal:17>);
 furnace.remove(<*>, <immersiveengineering:metal:18>);
 furnace.remove(<*>, <immersiveengineering:metal:19>);
+furnace.remove(<*>, <immersiveengineering:ore:1>);
 furnace.remove(<*>, <immersiveengineering:ore:2>);
 furnace.remove(<*>, <immersiveengineering:ore:3>);
 furnace.remove(<*>, <immersiveengineering:ore:4>);
 furnace.remove(<*>, <immersiveengineering:ore>);
+furnace.remove(<*>, <jaopca:item_hunkboron>);
+furnace.remove(<*>, <jaopca:item_hunklithium>);
+furnace.remove(<*>, <jaopca:item_hunkmagnesium>);
+furnace.remove(<*>, <jaopca:item_hunkthorium>);
+furnace.remove(<*>, <jaopca:item_hunkuranium>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:1>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:2>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:3>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:4>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:5>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:6>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:7>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster:8>);
+furnace.remove(<*>, <thaumicwonders:eldritch_cluster>);
 furnace.remove(<*>, <twilightforest:raw_venison:*>);
 /**/
 
-# *======= Metal Blocks =======*
+// *======= Metal Blocks =======*
 recipes.remove(<mekanism:basicblock:12>);
 recipes.remove(<mekanism:basicblock:1>);
 recipes.remove(<mekanism:basicblock:3>);
@@ -143,9 +173,9 @@ recipes.remove(<ic2:ingot:4>);
 recipes.remove(<ic2:ingot:5>);
 recipes.remove(<ic2:ingot:6>);
 recipes.remove(<ic2:resource:5>);
-utils.rh(<ic2:resource:5>); # Bronze
+utils.rh(<ic2:resource:5>); // Bronze
 utils.rh(<ic2:ingot:1>);
-# *============================*
+// *============================*
 
 utils.rh(<contenttweaker:item_ore_tungsten:1>);
 utils.rh(<contenttweaker:item_ore_tungsten:2>);
@@ -174,7 +204,7 @@ utils.rh(<immersiveengineering:ore:1>);
 utils.rh(<qmd:ingot:3>); // Titanium Ingot
 utils.rh(<betteranimalsplus:cheese>);
 
-# Pams replacements
+// Pams replacements
 utils.rh(<harvestcraft:chilipepperitem>);
 utils.rh(<harvestcraft:chilipepperseeditem>);
 utils.rh(<harvestcraft:coffeebeanitem>);
@@ -203,41 +233,41 @@ utils.rh(<thaumicwonders:eldritch_cluster:6>);
 utils.rh(<thaumicwonders:eldritch_cluster:7>);
 utils.rh(<thaumicwonders:eldritch_cluster:8>);
 
-# Purge removed items from furnace
-for item in itemUtils.getItemsByRegexRegistryName("thermalfoundation:((tool|armor)\\.|horse_armor_).*") {
-	furnace.remove(<*>, item);
+// Purge removed items from furnace
+for item in itemUtils.getItemsByRegexRegistryName('thermalfoundation:((tool|armor)\\.|horse_armor_).*') {
+  furnace.remove(<*>, item);
 }
 
 // Gears
 val gearsToRemove = [
-	<appliedenergistics2:material:40>,
-	<thermalfoundation:material:22>,
-	<thermalfoundation:material:23>,
-	<thermalfoundation:material:24>,
-	<thermalfoundation:material:25>,
-	<thermalfoundation:material:26>,
-	<thermalfoundation:material:27>,
-	<thermalfoundation:material:256>,
-	<thermalfoundation:material:257>,
-	<thermalfoundation:material:258>,
-	<thermalfoundation:material:259>,
-	<thermalfoundation:material:260>,
-	<thermalfoundation:material:261>,
-	<thermalfoundation:material:262>,
-	<thermalfoundation:material:263>,
-	<thermalfoundation:material:264>,
-	<thermalfoundation:material:288>,
-	<thermalfoundation:material:289>,
-	<thermalfoundation:material:290>,
-	<thermalfoundation:material:291>,
-	<thermalfoundation:material:292>,
-	<thermalfoundation:material:293>,
-	<thermalfoundation:material:294>,
-	<thermalfoundation:material:295>,
-	<redstonearsenal:material:96>,
-	<jaopca:item_geardraconium>,
+  <appliedenergistics2:material:40>,
+  <thermalfoundation:material:22>,
+  <thermalfoundation:material:23>,
+  <thermalfoundation:material:24>,
+  <thermalfoundation:material:25>,
+  <thermalfoundation:material:26>,
+  <thermalfoundation:material:27>,
+  <thermalfoundation:material:256>,
+  <thermalfoundation:material:257>,
+  <thermalfoundation:material:258>,
+  <thermalfoundation:material:259>,
+  <thermalfoundation:material:260>,
+  <thermalfoundation:material:261>,
+  <thermalfoundation:material:262>,
+  <thermalfoundation:material:263>,
+  <thermalfoundation:material:264>,
+  <thermalfoundation:material:288>,
+  <thermalfoundation:material:289>,
+  <thermalfoundation:material:290>,
+  <thermalfoundation:material:291>,
+  <thermalfoundation:material:292>,
+  <thermalfoundation:material:293>,
+  <thermalfoundation:material:294>,
+  <thermalfoundation:material:295>,
+  <redstonearsenal:material:96>,
+  <jaopca:item_geardraconium>,
 ] as IItemStack[];
 
 for items in gearsToRemove {
-	recipes.remove(items);
+  recipes.remove(items);
 }

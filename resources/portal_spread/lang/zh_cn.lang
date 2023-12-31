@@ -1,0 +1,21 @@
+#PARSE_ESCAPES
+# Language files for Portal Spread custom CraftTweaker script
+
+# JEI tab
+requious.jei.recipe.portal_spread=门户传播
+
+# Main mechanics
+portal_spread.created=§7来自下界传送门的腐化能量会缓慢扩散到传送门附近 §6%s§7 格的范围内，除非把 %s §7放置在传送门的四个角落。\n§8(触摸传送门，感受它的力量。)
+portal_spread.broken=§7下界传送门已被破坏，腐化能量不再扩散。
+portal_spread.info=§7这个传送门发射能量的§3波浪§7，将其周围的方块转化。§7■ 每§6%s§7秒发射§6%s§7次波动。§7■ 每个波浪搜索最多§6%s§7个方块，直到至少一个被转化。§7■ 该传送门的影响范围可达§6%s§7个方块的半径。
+portal_spread.idle=§7这个传送门停止了，无法传播能量。
+
+# Modifier 0
+portal_spread.0_add=§7你感到下界传送门扩散的速度正在减缓。
+portal_spread.0_red=§7你感到下界传送门扩散的速度正在加快。
+portal_spread.0_max=§7传送门完全停止了扩散。
+
+# Modifier 1
+portal_spread.1_add=§7你感到下界传送门扩散的速度正在加快。
+portal_spread.1_red=§7你感到下界传送门扩散的速度正在减缓。
+portal_spread.1_max=§7传送门达到了最大扩散速度。

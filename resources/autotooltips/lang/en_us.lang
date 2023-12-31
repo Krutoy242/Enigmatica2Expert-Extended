@@ -1,4 +1,3 @@
-tooltips.lang.advgenerators:gas_input=Disabled due to not consuming fuel
 tooltips.lang.betteranimalsplus:handoffate=§aRight-click with:§r §n%s§r, §n%s§r, §n%s§r, §n%s§r
 tooltips.lang.bloodmagic:blood_rune:1=§f+20% Crafting / filling Orb speed
 tooltips.lang.bloodmagic:blood_rune:3=§f+10% LP from killing a mob with Dagger, additively
@@ -51,3 +50,4 @@ tooltips.lang.exnihilocreatio:hammer_diamond=§4Don't work. Use Tinkers' Constru
 tooltips.lang.bibliocraft:fancysign=§eCausing notable FPS lag
 tooltips.lang.contenttweaker:conglomerate_of_life=§2Help Cats to cough Balls of Fur
 tooltips.lang.contenttweaker:conglomerate_of_sun=§2Speed up animal growth
+tooltips.lang.advancedrocketry:liquidtank=§cLosing almost all fluid on breaking!

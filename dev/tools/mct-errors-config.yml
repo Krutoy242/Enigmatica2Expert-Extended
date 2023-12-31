@@ -1,16 +1,16 @@
-###############################
+# ##############################
 # Configuration for mct-errors
-###############################
+# ##############################
 
 # If you want to make modpack-related config, copy and modify this one
 # and feed it to mct-errors with argument
 
 # All strings except replace.to is JS RegExes
 
-###############################
+# ##############################
 
 # We can cut only partial of log if we dont want to list all the errors
-boundries: 
+boundries:
   from:
   to: '[Server thread/' # Server thread started when player joining world
 
@@ -44,7 +44,7 @@ ignore:
   - '\[FML\]: The coremod .+ does not have a MCVersion annotation'
   - '\[FML\]: Found .+ should be in a separate jar from the coremod.'
   - '\[FML\]: Potentially Dangerous alternative prefix `.+`'
-  - "\\[FML\\]: Mod .+ is missing the required element 'version'"
+  - '\[FML\]: Mod .+ is missing the required element ''version'''
   - '\[LaunchWrapper\]: Tweak class name .+ has already been visited'
 
   # Warning about Forge Debug
@@ -98,7 +98,7 @@ ignore:
   - '\[Client thread/WARN\] \[mixin\]: Error loading class: '
 
   # PetroPetunia cant be tweaked with decay https://github.com/quat1024/BotaniaTweaks/issues/63
-  - 'Mod floralchemy is loaded. but flower petropetunia is not present??'
+  - Mod floralchemy is loaded. but flower petropetunia is not present??
 
   # Probably safe, reported https://github.com/iLexiconn/LLibrary/issues/156
   - '\[LLibrary Core\]: Failed to fetch hierarchy node for .*. This may cause patch issues'
@@ -195,9 +195,9 @@ ignore:
   - 'WARN. \[FML\]: Unable to find recipe for minecraft:baked_potato'
   - 'WARN. \[(HadEnoughItems|jei)\]: Recipe registry plugin is slow, took \d{1,3}(\.\d+)? ms\.'
 
-  ###################
+  # ##################
   # Reported issues #
-  ###################
+  # ##################
   - '\[net.minecraft.entity.passive.EntityVillager\]: PriceRange.* smaller than'
 
   # Mechanics error https://github.com/wolforcept/mechanics/issues/13
@@ -252,7 +252,7 @@ ignore:
   - 'WARN\] \[thaumicaugmentation\]: A file failed to match with the signing key.'
   - 'WARN\] \[thaumicaugmentation\]: If you .know. this is a homebrew/custom build then this is expected, carry on.'
   - 'WARN\] \[thaumicaugmentation\]: Otherwise, you might want to redownload this mod from the .official. CurseForge page.'
-  
+
   # Im not using ATLauncher!
   - 'ERROR\] \[craftpresence\]: Unable to get "atlauncher" pack data \(ignore if not using a "atlauncher" pack\)'
 
@@ -314,5 +314,7 @@ ignore:
   - WARN. .mixin.. Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod \w+, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
   - WARN. .probezs.. Do not know zenscript type for
   - WARN. .VintageFix Mixin Loader.. Not applying mixin '.+' as '.+' is disabled in config
-  - WARN. .VintageFix.. Can't preload sprite class 
+  - WARN. .VintageFix.. Can't preload sprite class
 
+  # ProbeZS but its only for Dev environment
+  - probezs

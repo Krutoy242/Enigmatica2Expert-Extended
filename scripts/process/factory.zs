@@ -1,11 +1,8 @@
 /*
 
-
-
 */
 
 /* TODO:
-
 
 ## ⚙️ Process.zs
 
@@ -17,49 +14,41 @@
 
 */
 
-import scripts.process.work.Work;
+#norun
+#priority 2000
+
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import crafttweaker.item.WeightedItemStack;
-import crafttweaker.oredict.IOreDict;
-import crafttweaker.oredict.IOreDictEntry;
-import crafttweaker.liquid.ILiquidStack;
-import crafttweaker.data.IData;
 
-#priority 2000
-#norun
-
+import scripts.process.work.Work;
 
 zenClass Process {
-	zenConstructor() {}
+  zenConstructor() {}
 
-  #------------------------------------------------------------------
-  # Public Methods
-  #------------------------------------------------------------------
+  // ------------------------------------------------------------------
+  // Public Methods
+  // ------------------------------------------------------------------
   function work(tags as string, input as IIngredient, output as IItemStack) as Work {
     return Work();
   }
 
-  #------------------------------------------------------------------
-  # Private Methods
-  #------------------------------------------------------------------
-
+  // ------------------------------------------------------------------
+  // Private Methods
+  // ------------------------------------------------------------------
 }
 global Process as Process = Process();
 
-
 zenClass Factory {
-	zenConstructor() {}
+  zenConstructor() {}
 
-  #------------------------------------------------------------------
-  # Public Methods
-  #------------------------------------------------------------------
+  // ------------------------------------------------------------------
+  // Public Methods
+  // ------------------------------------------------------------------
   function register() as void {
-    
+
   }
 
-  #------------------------------------------------------------------
-  # Private Methods
-  #------------------------------------------------------------------
-
+  // ------------------------------------------------------------------
+  // Private Methods
+  // ------------------------------------------------------------------
 }

@@ -1,0 +1,86 @@
+@@ -1,85 +0,0 @@
+-/*
+- * Decompiled with CFR 0.152.
+- * 
+- * Could not load the following classes:
+- *  io.github.jodlodi.twilighttweaks.TwilightTweaks
+- *  io.github.jodlodi.twilighttweaks.jei.UncraftingWrapper
+- *  javax.annotation.Nullable
+- *  mezz.jei.api.IGuiHelper
+- *  mezz.jei.api.gui.IDrawable
+- *  mezz.jei.api.gui.IRecipeLayout
+- *  mezz.jei.api.ingredients.IIngredients
+- *  mezz.jei.api.ingredients.VanillaTypes
+- *  mezz.jei.api.recipe.IRecipeCategory
+- *  net.minecraft.client.resources.I18n
+- *  net.minecraft.item.ItemStack
+- *  net.minecraft.util.ResourceLocation
+- *  twilightforest.block.TFBlocks
+- */
+-package io.github.jodlodi.twilighttweaks.jei;
+-
+-import io.github.jodlodi.twilighttweaks.TwilightTweaks;
+-import io.github.jodlodi.twilighttweaks.jei.UncraftingWrapper;
+-import java.util.List;
+-import javax.annotation.Nullable;
+-import mezz.jei.api.IGuiHelper;
+-import mezz.jei.api.gui.IDrawable;
+-import mezz.jei.api.gui.IRecipeLayout;
+-import mezz.jei.api.ingredients.IIngredients;
+-import mezz.jei.api.ingredients.VanillaTypes;
+-import mezz.jei.api.recipe.IRecipeCategory;
+-import net.minecraft.client.resources.I18n;
+-import net.minecraft.item.ItemStack;
+-import net.minecraft.util.ResourceLocation;
+-import twilightforest.block.TFBlocks;
+-
+-public class UncraftingCategory
+-implements IRecipeCategory<UncraftingWrapper> {
+-    public static final String id = "jei_uncrafting";
+-    public static final int width = 116;
+-    public static final int height = 54;
+-    private final IDrawable background;
+-    private final IDrawable icon;
+-    private final String localizedName;
+-
+-    public UncraftingCategory(IGuiHelper iGuiHelper) {
+-        ResourceLocation location = TwilightTweaks.twilightResource((String)"textures/gui/uncraft.png");
+-        this.background = iGuiHelper.createDrawable(location, 0, 0, 116, 54);
+-        this.icon = iGuiHelper.createDrawableIngredient((Object)new ItemStack(TFBlocks.uncrafting_table));
+-        this.localizedName = I18n.func_135052_a((String)"gui.twilighttweaks.category.uncraftingTable", (Object[])new Object[0]);
+-    }
+-
+-    public String getUid() {
+-        return id;
+-    }
+-
+-    public String getTitle() {
+-        return this.localizedName;
+-    }
+-
+-    public String getModName() {
+-        return "Twilight Tweaks";
+-    }
+-
+-    public IDrawable getBackground() {
+-        return this.background;
+-    }
+-
+-    @Nullable
+-    public IDrawable getIcon() {
+-        return this.icon;
+-    }
+-
+-    public void setRecipe(IRecipeLayout recipeLayout, UncraftingWrapper recipeWrapper, IIngredients ingredients) {
+-        int i = 0;
+-        List outputs = ingredients.getOutputs(VanillaTypes.ITEM);
+-        for (int y = 0; y < recipeWrapper.getHeight(); ++y) {
+-            for (int x = 0; x < recipeWrapper.getWidth() && i != outputs.size(); ++x) {
+-                recipeLayout.getItemStacks().init(++i, true, x * 18 + 62, y * 18);
+-                recipeLayout.getItemStacks().set(i, (List)outputs.get(i - 1));
+-            }
+-        }
+-        recipeLayout.getItemStacks().init(++i, false, 4, 18);
+-        recipeLayout.getItemStacks().set(i, (List)ingredients.getInputs(VanillaTypes.ITEM).get(0));
+-    }
+-}

@@ -1,0 +1,19 @@
+{
+	x: 10.5d,
+	y: 3.0d,
+	dependencies: [
+		"fec80e16"
+	],
+	tasks: [{
+		uid: "74227aa5",
+		type: "item",
+		items: [{
+			item: "rustic:crushing_tub"
+		}]
+	}],
+	rewards: [{
+		uid: "7a33f1c1",
+		type: "item",
+		item: "testdummy:dummy"
+	}]
+}

@@ -1,0 +1,23 @@
+{
+	x: 16.5d,
+	y: 4.5d,
+	hide_dependency_lines: true,
+	dependencies: [
+		"aada5fc0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "a0da400c",
+		type: "item",
+		items: [{
+			item: "ic2:crafting 1 20"
+		}],
+		count: 32L
+	}],
+	rewards: [{
+		uid: "6c964484",
+		type: "item",
+		item: "minecraft:fire_charge",
+		count: 8
+	}]
+}

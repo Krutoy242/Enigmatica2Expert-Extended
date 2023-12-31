@@ -1,20 +1,22 @@
+#modloaded botania_tweaks crafttweakerutils
+#priority -1
+
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import thaumcraft.aspect.CTAspectStack;
+
+import mods.botaniatweaks.Agglomeration;
 import mods.botaniatweaks.AgglomerationMultiblock;
 import mods.botaniatweaks.AgglomerationRecipe;
-import mods.botaniatweaks.Agglomeration;
 import mods.ctutils.utils.Math.abs;
-
-#priority -1
 
 function getPoop(ore_name as string) as IItemStack {
   for poop in scripts.mods.ratsprocessing.listRatPoop {
-    var oreBlockDef = D(poop.tag).getString('OreItem.id', '');
+    val oreBlockDef = D(poop.tag).getString('OreItem.id', '');
 
     if (oreBlockDef != '') {
-      var oreBlockDmg = D(poop.tag).getInt('OreItem.Damage', 0);
-      var oreBlockItem = itemUtils.getItem(oreBlockDef, oreBlockDmg);
+      val oreBlockDmg = D(poop.tag).getInt('OreItem.Damage', 0);
+      val oreBlockItem = itemUtils.getItem(oreBlockDef, oreBlockDmg);
 
       if (!isNull(oreBlockItem)) {
         for ore in oreBlockItem.ores {
@@ -28,9 +30,9 @@ function getPoop(ore_name as string) as IItemStack {
 }
 
 static aspects as CTAspectStack[][] = [
-  [<aspect:aer>,  <aspect:terra>,
-    <aspect:ignis>,  <aspect:aqua>,
-    <aspect:ordo>,  <aspect:perditio>],
+  [<aspect:aer>, <aspect:terra>,
+    <aspect:ignis>, <aspect:aqua>,
+    <aspect:ordo>, <aspect:perditio>],
 
   [<aspect:vacuos>, <aspect:lux>, <aspect:motus>, <aspect:gelum>,
     <aspect:vitreus>, <aspect:metallum>, <aspect:victus>,
@@ -54,19 +56,19 @@ static agglMultiblock as AgglomerationMultiblock = AgglomerationMultiblock
 mods.astralsorcery.LightTransmutation.addTransmutation(<tconstruct:metal>, <minecraft:diamond_block>, 50);
 
 function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as string) as void {
-  var hash = abs(ore_name.hashCode());
-  var dirtyGem = oreDict['dirtyGem' ~ore_name].firstItem;
+  val hash = abs(ore_name.hashCode());
+  val dirtyGem = oreDict['dirtyGem' ~ ore_name].firstItem;
   if (isNull(dirtyGem)) return; // 🛑
 
   var currItem as IItemStack = nativeClusterOreEntry.firstItem;
   var prevItem as IItemStack = null;
   var k = 0;
 
-  var processList = [
-    oreDict['crystalAbyss' ~ore_name].firstItem,
-    oreDict['rockyChunk' ~ore_name].firstItem,
-    oreDict['chunk' ~ore_name].firstItem,
-    oreDict['dustAlch' ~ore_name].firstItem,
+  val processList = [
+    oreDict['crystalAbyss' ~ ore_name].firstItem,
+    oreDict['rockyChunk' ~ ore_name].firstItem,
+    oreDict['chunk' ~ ore_name].firstItem,
+    oreDict['dustAlch' ~ ore_name].firstItem,
   ] as IItemStack[];
 
   //  ██████╗
@@ -78,7 +80,7 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   scripts.process.beneficiate(dirtyGem, ore_name, 12, { meltingExceptions: scripts.vars.meltingExceptions }, 4);
 
   // manual furnance
-  var ingotOrGem = utils.getSomething(ore_name, ['ingot', 'gem', 'dust', 'any'], 12);
+  val ingotOrGem = utils.getSomething(ore_name, ['ingot', 'gem', 'dust', 'any'], 12);
   if (!isNull(ingotOrGem)) furnace.addRecipe(ingotOrGem, dirtyGem);
 
   //  ██╗
@@ -90,13 +92,13 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   prevItem = currItem;
   currItem = processList[k]; k += 1;
   if (isNull(currItem)) return; // 🛑
-  var crystalShard = oreDict['crystalShard' ~ore_name].firstItem; if (isNull(crystalShard)) return; // 🛑
+  val crystalShard = oreDict['crystalShard' ~ ore_name].firstItem; if (isNull(crystalShard)) return; // 🛑
   furnace.addRecipe(dirtyGem * 1, currItem);
 
   // mods.astralsorcery.StarlightInfusion.addInfusion(IItemStack input, IItemStack output, boolean consumeMultiple, float consumptionChance, int craftingTickTime);
   mods.astralsorcery.StarlightInfusion.addInfusion(prevItem, crystalShard, false, 0.1, 10);
   mods.inworldcrafting.FluidToItem.transform(crystalShard, <fluid:astralsorcery.liquidstarlight>, [prevItem], true);
-  craft.shapeless(currItem,   'cccc',     { c: crystalShard });
+  craft.shapeless(currItem, 'cccc', { c: crystalShard });
   craft.shapeless(currItem * 2, 'cccccccc', { c: crystalShard });
   scripts.process.compress(crystalShard * 7, currItem * 2, 'only: Compactor');
 
@@ -112,7 +114,7 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   furnace.addRecipe(dirtyGem * 4, currItem);
 
   val biomeStone = itemUtils.getItem('botania:biomestonea', hash % 8) * 2;
-  var a_recipe = AgglomerationRecipe.create();
+  val a_recipe = AgglomerationRecipe.create();
   a_recipe.output(currItem);
   a_recipe.color1(0x1010FF).color2(0x0FFF3F).multiblock(agglMultiblock);
   a_recipe.inputs(Grid(['qO'], {
@@ -131,7 +133,7 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   prevItem = currItem;
   currItem = processList[k]; k += 1;
   if (isNull(currItem)) return; // 🛑
-  var poop = getPoop(ore_name); if (isNull(poop)) return; // 🛑
+  val poop = getPoop(ore_name); if (isNull(poop)) return; // 🛑
   furnace.addRecipe(dirtyGem * 10, currItem);
 
   // mods.bloodmagic.AlchemyTable.addRecipe(IItemStack output, IItemStack[] inputs, int syphon, int ticks, int minTier);
@@ -151,7 +153,7 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   furnace.addRecipe(dirtyGem * 48, currItem);
 
   mods.thaumcraft.Infusion.registerRecipe(
-    'Benefication_' ~prevItem.definition.id, // name
+    'Benefication_' ~ prevItem.definition.id, // name
     'INFUSION', // research
     currItem, // output
     3, // instability

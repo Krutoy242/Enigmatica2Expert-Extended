@@ -8,10 +8,11 @@
 // @ts-check
 
 import { join, parse } from 'node:path'
+import process from 'node:process'
 
 import * as del from 'del'
-import yargs from 'yargs'
 import fast_glob from 'fast-glob'
+import yargs from 'yargs'
 
 import {
   defaultHelper,
@@ -100,8 +101,7 @@ export async function init(h = defaultHelper, options = argv) {
         continue
 
       const replacedGrid = g.grid.replace(regex, (...args) =>
-        args[2].substring(0, 1).toUpperCase()
-      )
+        args[2].substring(0, 1).toUpperCase())
       const line = `remakeShape${g.postfix}(${g.name}, ${g.output}${
         g.count ?? ''
       }, ${replacedGrid});`
@@ -139,14 +139,23 @@ export async function init(h = defaultHelper, options = argv) {
 
   */
   await h.begin('Handling blockdrops.txt')
-  // Remove noisy urns
   setBlockDropsList([
+    // Remove noisy urns
     { block_stack: 'thaumcraft:loot_crate_common', dropList: undefined },
     { block_stack: 'thaumcraft:loot_urn_common', dropList: undefined },
     { block_stack: 'thaumcraft:loot_crate_uncommon', dropList: undefined },
     { block_stack: 'thaumcraft:loot_urn_uncommon', dropList: undefined },
     { block_stack: 'thaumcraft:loot_crate_rare', dropList: undefined },
     { block_stack: 'thaumcraft:loot_urn_rare', dropList: undefined },
+
+    // Remove Forestry bees since they not useful
+    { block_stack: 'forestry:beehives:0', dropList: undefined },
+    { block_stack: 'forestry:beehives:1', dropList: undefined },
+    { block_stack: 'forestry:beehives:2', dropList: undefined },
+    { block_stack: 'forestry:beehives:3', dropList: undefined },
+    { block_stack: 'forestry:beehives:4', dropList: undefined },
+    { block_stack: 'forestry:beehives:5', dropList: undefined },
+    { block_stack: 'forestry:beehives:6', dropList: undefined },
 
     {
       block_stack: 'minecraft:mob_spawner',
@@ -214,15 +223,13 @@ export async function init(h = defaultHelper, options = argv) {
       // Remove config lines
       'optionsof.txt': () => {
         saveText(fileContent
-          .replace(/\nofAnimatedTerrain:false/gm, '\nofAnimatedTerrain:true')
-        , dest)
+          .replace(/\nofAnimatedTerrain:false/gm, '\nofAnimatedTerrain:true'), dest)
       },
 
       // Remove current player ranks
       'ranks.txt': () => {
         saveText(fileContent
-          .replace(/\n\/\/ .*\n\[\w+\]\n([\w\.]+: .*\n)*/gm, '')
-        , dest)
+          .replace(/\n\/\/ .*\n\[\w+\]\n([\w\.]+: .*\n)*/gm, ''), dest)
       },
 
       // Sort keys
@@ -313,7 +320,8 @@ export async function init(h = defaultHelper, options = argv) {
   const menuJson = loadJson(menuFile)
   menuJson.other.background.slideshow.images = fast_glob.sync(
     'resources/enigmatica/textures/slideshow/*.jpg'
-    , { dot: true }).map(f => `enigmatica:textures/slideshow/${parse(f).base}`)
+    , { dot: true }
+  ).map(f => `enigmatica:textures/slideshow/${parse(f).base}`)
   saveText(`${JSON.stringify(menuJson, null, 2)}\n`, menuFile)
 
   // ###############################################################################

@@ -1,6 +1,6 @@
 {
-	x: 6.458333333333333d,
-	y: 1.541666666666667d,
+	x: 1.2d,
+	y: 3.3d,
 	text: [
 		"{q.bragging_rights.creative_mill.desc}"
 	],

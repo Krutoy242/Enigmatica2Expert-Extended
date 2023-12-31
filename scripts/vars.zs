@@ -1,10 +1,9 @@
-import crafttweaker.data.IData;
-import crafttweaker.item.IItemStack;
-import crafttweaker.item.IIngredient;
-
+#ignoreBracketErrors
 #priority 3000
 
-#ignoreBracketErrors
+import crafttweaker.data.IData;
+import crafttweaker.item.IIngredient;
+import crafttweaker.item.IItemStack;
 
 static meltingExceptions as IData = ['Amber', 'Redstone', 'Coal', 'Diamond'] as IData;
 

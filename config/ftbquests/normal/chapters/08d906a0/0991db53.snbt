@@ -1,0 +1,24 @@
+{
+	x: 6.0d,
+	y: -1.5d,
+	dependencies: [
+		"defb4e0f",
+		"67b99e5b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "b0292f0c",
+		type: "item",
+		items: [{
+			item: "minecraft:dirt"
+		}],
+		count: 16L,
+		consume_items: false
+	}],
+	rewards: [{
+		uid: "27da3d49",
+		type: "item",
+		item: "minecraft:dirt",
+		count: 32
+	}]
+}

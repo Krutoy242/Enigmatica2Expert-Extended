@@ -1,0 +1,19 @@
+{
+	x: 13.5d,
+	y: 0.0d,
+	dependencies: [
+		"e8818eb6"
+	],
+	optional: true,
+	tasks: [{
+		uid: "2d37ddeb",
+		type: "fluid",
+		fluid: "ic2creosote"
+	}],
+	rewards: [{
+		uid: "9e6f2ebb",
+		type: "item",
+		item: "minecraft:dye 1 15",
+		count: 64
+	}]
+}

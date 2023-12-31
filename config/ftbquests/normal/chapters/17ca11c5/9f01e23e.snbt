@@ -1,6 +1,6 @@
 {
-	x: 6.375d,
-	y: -2.2916666666666665d,
+	x: 6.3d,
+	y: -2.2d,
 	text: [
 		"{q.bragging_rights.infinity_drill.desc}"
 	],

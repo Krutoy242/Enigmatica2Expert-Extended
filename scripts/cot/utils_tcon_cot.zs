@@ -1,9 +1,9 @@
 #loader contenttweaker
 #priority 100
 
+import crafttweaker.entity.IEntityEquipmentSlot as entEqSlot;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
-import crafttweaker.entity.IEntityEquipmentSlot as entEqSlot;
 
 function getItemMatAmount(item as IItemStack, lookup as string, durabLeft as int = -1) as int {
   if (

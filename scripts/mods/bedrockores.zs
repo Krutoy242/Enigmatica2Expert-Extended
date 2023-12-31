@@ -5,7 +5,7 @@ craft.remake(<bedrockores:bedrock_miner>, ['pretty',
   '⌂ ⌃ ⌂',
   '⌃ ▲ ⌃',
   '⌂ ⌃ ⌂'], {
-  '⌂': <ic2:casing:4>,       // Lead Item Casing
+  '⌂': <ic2:casing:4>, // Lead Item Casing
   '⌃': <ore:gemQuartzBlack>, // Black Quartz
-  '▲': <ore:dustBedrock>,    // Grains of Infinity
+  '▲': <ore:dustBedrock>, // Grains of Infinity
 });

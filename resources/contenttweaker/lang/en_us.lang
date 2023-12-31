@@ -1,8 +1,18 @@
+#PARSE_ESCAPES
+
 # Various fixes
 modifier.excompressum:smashingii.desc=Hammering compressed blocks
 tile.spectreCoil_number.info=Generates 32 RF/t and outputs it into the block it's attached to. They can be found in dungeon chests.
 entity.twilightforest.harbinger_cube.name=Harbinger Cube
+# --------------------------------------
+# Custom mechanics
+# --------------------------------------
+description.crt.reuse=§a§o(Will not be consumed!)§r
+description.crt.consume=§6§o(Will be consumed!)§r
 
+# --------------------------------------
+# CoT new content
+# --------------------------------------
 itemGroup.other=ContentTweaker
 fluid.heavy_metal=Heavy Metal
 fluid.cheese=Cheese
@@ -199,6 +209,9 @@ contenttweaker.part.fluid=%s
 
 item.contenttweaker.bee_diversity.name=Bee Diversity Store
 
+# --------------------------------------
+# TConstruct new materials and traits
+# --------------------------------------
 e2ee.tconstruct.material.spectre.name=Spectre
 e2ee.tconstruct.material.spectre.description=§bSpectral\nEach part gives additional Reach potion effect
 e2ee.tconstruct.material.fireproof.name=Fireproof
@@ -304,13 +317,16 @@ e2ee.written_book.Creeper=Creeper
 e2ee.written_book.Zombie=Zombie
 
 # Misc
+e2ee.do.charge=§fCharge: §6%s§r
+e2ee.do.diverse.power=§fPower: §6%s§r
+e2ee.do.diverse.info=§2Total types: §a%s§r\n§2Median amount: §a%s§r\n§2Items consumed by singularity:\n%s
 e2ee.otg.not_otg_biome=§2Cant TP to non-OTG biome with ID:§r §a§n%s§r§2. §8Try other Biome Essence.§r
 e2ee.otg.tp_to=§2Attempt teleport to:§r §a§n%s§r §8Wait until teleported or aborted.§r
 e2ee.otg.tp_finished=§2Teleporting finished.§r §8Try again if not teleported.§r
 e2ee.chapter_complete=§l%s§r has fully completed the §n%s§r chapter after §l%s§r of play!§r ```Congrats!```
 e2ee.player_achieved=§l%s§r achieved §n%s§r after §l%s§r of play!§r
 e2ee.eu2_drum_error=§7You must have at least 1 empty inventory slot to do this
-e2ee.danknull_dock.must_have=§7You need a §f%s§7 in the offhand to insert %s§7 into %s§7. §f%s§7 will be irreversibly consumed.
+e2ee.danknull_dock.must_have=§7You need a %s in the inventory to insert %s into %s.
 e2ee.restrict.vis_seeds=§7§eVis Seeds§7 can only be planted in §nthe Void§7 dimension or on §nplanets§7. They also need Oxygen.
 e2ee.creature_resisted_morb=§8This creature resist capture by the §n§8%s.
 e2ee.creature_uncapturable=§7This creature can't be captured.
@@ -340,6 +356,9 @@ item.positron_unit.name=Positron Unit
 item.quantron.name=Quantron
 tile.industrialwires.hv_multiblock.marx.name=Marx Generator
 
+# --------------------------------------
+# Tags tooltips (see tags.zs)
+# --------------------------------------
 tooltips.lang.tag.generator=§6#Generator
 tooltips.lang.tag.solar=§f#Solar
 tooltips.lang.tag.chunkloader=§9#ChunkLoader
@@ -373,7 +392,6 @@ tooltips.lang.reinforced_cell_frame=The Reinforced Cell Frame (Full) can only be
 tooltips.lang.obtained.fabricator_or_excavator=Obtainable through the Electric Arc Furnace OR from IE Excavator.
 tooltips.lang.obtained.mithril=Only obtainable through §9Primal Mana§r world interaction or in §1other dimensions§r
 tooltips.lang.removed.use_market=Disabled. Use the Market from Farming For Blockheads.
-tooltips.lang.ethylene_convert=How can I use Ethylene with Advanced Generators? Use the Rotary Condensentrator to convert the Ethylene to a liquid.
 tooltips.lang.redstone.need=§4Need redstone to function
 tooltips.lang.removed.crash=§4Removed because it crashes the server
 
@@ -396,7 +414,6 @@ tooltips.lang.et_miner_cont_any=Required Blocks:\n%s Null, Speed or Accuracy Mod
 tooltips.lang.nano_cont_personal=Required Blocks:\n%s Null or Potion Effect Modifier in any combination\n%s Structure Frame tier %s\n%s Structure Panel
 tooltips.lang.lightning_cont=Required Blocks:\n%s Structure Frame tier %s\n%s Lightning Rod\n%s Insulated Lightning Rod
 tooltips.lang.et.or_above=or above
-tooltips.lang.fuel.shift_for_list===Hold shift to see fuel list==
 tooltips.lang.strike_with_lightning=To obtain strike Life Essense with lightning
 tooltips.lang.thaum.progress=Progress
 tooltips.lang.thaum.auromancy=Auromancy
@@ -476,6 +493,9 @@ tooltips.dim_stages.restricted=§cIn §bSkyblock §cworlds, you cannot visit any
 tooltips.dim_stages.enter_skyblock=§eYou started a §bSkyblock §eworld. You cannot visit any other dimension §8(except Space, RFTools and personal ones). Also you get Haste IV for 3 hours.§r
 tooltips.dim_stages.remind_skyblock=§eYou have entered a §bSkyblock §eworld again. Remember: you cannot visit any other dimension §8(except Space, RFTools and personal ones)§r.
 
+# --------------------------------------
+# Requious Fracto custom JEI categories
+# --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=Advanced Analyzer
 requious.jei.recipe.alchemists_stone=Alchemists Stone
 requious.jei.recipe.alienists_stone=Alienists Stone
@@ -512,6 +532,7 @@ requious.jei.recipe.turbine=Turbine
 requious.jei.recipe.typewriter=Typewriter
 requious.jei.recipe.witch_water=Witch Water
 
+# Actually Requious Fracto blocks
 tile.adv_bee_analyzer.name=Advanced Analyzer
 tile.infinity_furnace.name=Infinity Furnace
 tile.replicator.name=§5Replicator
@@ -532,4 +553,83 @@ item.contenttweaker.blade_core.name=Turbine Rotor Actinide Blade Core
 item.contenttweaker.steel_mould.name=Ultra Light Edelstahl Mould
 item.contenttweaker.alloy_mould.name=Ultra Light Edle Elektronlegierung Mould
 item.contenttweaker.sic_mould.name=Ultra Light Matrix-Legierung Mould
+
 # --------------------------------------
+# Enchantment Descriptions
+# --------------------------------------
+enchantment.advancedrocketry.spacebreathing.desc=Adds an oxygen tank to the armor piece.
+#enchantment.astralsorcery.enchantment.as.nightvision.desc=Grants the wearer night vision.
+#enchantment.astralsorcery.enchantment.as.smelting.desc=Blocks mined with this enchantment will have their drops smelted, as though in a furnace.
+enchantment.bibliocraft.bibliocraft.readingench.desc=Shows information for Bibliocraft blocks
+#enchantment.cofhcore.holding.desc=Increases the storage capacity of certain items.
+#enchantment.cofhcore.insight.desc=Increases experience gain when using the item.
+#enchantment.cofhcore.leech.desc=Restores health when a mob is killed.
+#enchantment.cofhcore.multishot.desc=The bow will fire additional arrows with each shot. Only one arrow is consumed.
+#enchantment.cofhcore.smashing.desc=Harvested ores will be smashed to pieces, improving yield.
+#enchantment.cofhcore.smelting.desc=Harvested blocks will automatically be smelted, as if by a Furnace.
+#enchantment.cofhcore.soulbound.desc=The item will remain with the owner after an untimely demise.
+#enchantment.cofhcore.vorpal.desc=Randomly performs powerful attacks and decapitations.
+#enchantment.cyclicmagic.enchantment.autosmelt.desc=Smelts whatever you harvest with this tool.
+enchantment.cyclicmagic.enchantment.beheading.desc=Gives a chance for mobs to drop their head.
+enchantment.cyclicmagic.enchantment.excavation.desc=Harvests the whole vein of connected matching blocks, not including diagonals.
+enchantment.cyclicmagic.enchantment.expboost.desc=Increases experience drops from killing and mining
+enchantment.cyclicmagic.enchantment.launch.desc=Gives additional jumps, one per level.
+enchantment.cyclicmagic.enchantment.lifeleech.desc=Leeches health from the target.
+enchantment.cyclicmagic.enchantment.magnet.desc=Attracts nearby items and XP when held.
+enchantment.cyclicmagic.enchantment.multishot.desc=Fires extra arrows from your bow.
+enchantment.cyclicmagic.enchantment.quickdraw.desc=Triples the charge speed of the bow.
+enchantment.cyclicmagic.enchantment.reach.desc=Increases your building and mining reach.
+enchantment.cyclicmagic.enchantment.venom.desc=Inflicts poison on hit.
+enchantment.cyclicmagic.enchantment.waterwalking.desc=Allows walking on water, shift to swim.
+enchantment.draconicevolution.enchant_reaper.desc=Weapon randomly drops mob souls when killing mobs.
+enchantment.endercore.xpboost.desc=Increases XP drops.
+enchantment.enderio.repellent.desc=Teleports attacking mobs away.
+enchantment.enderio.shimmer.desc=Makes the tool glow.
+enchantment.enderio.soulbound.desc=Prevents item from being lost on death.
+enchantment.enderio.witherarrow.desc=Inflicts Wither on hit.
+enchantment.enderio.witherweapon.desc=Inflicts Wither on hit.
+enchantment.endreborn.ender_core.desc=Consumes Ender Pearls to teleport Player when damaged.
+enchantment.endreborn.ender_killer.desc=Deals increased damage to Endermen.
+enchantment.endreborn.shulker_core.desc=Inflicts Levitation on hit.
+enchantment.exnihilocreatio.sieve_efficiency.desc=Increases speed of the sieve.
+enchantment.exnihilocreatio.sieve_fortune.desc=Sieves drop more items.
+enchantment.exnihilocreatio.sieve_luck_of_the_sea.desc=Sieves create fish.
+enchantment.extrautils2.xu.bladerang.desc=Increases the damage of the boomerang.
+enchantment.extrautils2.xu.boomereaperang.desc=Destroys flowers.
+enchantment.extrautils2.xu.burnerang.desc=Sets mobs on fire.
+enchantment.extrautils2.xu.kaboomerang.desc=Destroys blocks.
+enchantment.extrautils2.xu.zoomerang.desc=Speeds up the boomerang.
+#enchantment.minecraft.aqua_affinity.desc=Increases mining speed while underwater.
+#enchantment.minecraft.bane_of_arthropods.desc=Increases damage against arthropods such as Spiders and Silverfish.
+#enchantment.minecraft.binding_curse.desc=Prevents the enchanted item from being removed from an armor slot.
+#enchantment.minecraft.blast_protection.desc=Reduces damage from explosions and explosion knockback.
+#enchantment.minecraft.depth_strider.desc=Increases movement speed while under water.
+#enchantment.minecraft.efficiency.desc=Increases mining speed of the tool.
+#enchantment.minecraft.feather_falling.desc=Reduces fall damage and ender pearl teleportation damage.
+#enchantment.minecraft.fire_aspect.desc=Causes additional fire damage when used to attack a mob.
+#enchantment.minecraft.fire_protection.desc=Reduces the effects of fire damage. Also reduces the burn time when set on fire.
+#enchantment.minecraft.flame.desc=Arrows fired from the bow will deal additional fire damage.
+#enchantment.minecraft.fortune.desc=Some blocks like coal and diamond ore may drop additional items.
+#enchantment.minecraft.frost_walker.desc=Freezes water under the player into cracked ice.
+#enchantment.minecraft.infinity.desc=Allows the bow to fire normal arrows for free. You must have at least one arrow for this to work.
+#enchantment.minecraft.knockback.desc=Increases the knockback strength of the weapon.
+#enchantment.minecraft.looting.desc=Mobs will drop more loot when killed.
+#enchantment.minecraft.luck_of_the_sea.desc=Increases the chance of getting good loot while fishing.
+#enchantment.minecraft.lure.desc=Decreases the amount of time it takes for a fish to bite the hook.
+#enchantment.minecraft.mending.desc=Repairs the durability of armor and tools with EXP.
+#enchantment.minecraft.power.desc=Increases the damage of arrows fired from the bow.
+#enchantment.minecraft.projectile_protection.desc=Reduces damage from projectiles such as arrows and fire balls.
+#enchantment.minecraft.protection.desc=Reduces damage from most sources.
+#enchantment.minecraft.punch.desc=Increases the knockback strength of arrows fired by the bow.
+#enchantment.minecraft.respiration.desc=Extends the amount of time the player can spend under water. Also improves vision while under water.
+#enchantment.minecraft.sharpness.desc=Increases the damage of the item.
+#enchantment.minecraft.silk_touch.desc=Allows fragile blocks such as glass to be collected.
+#enchantment.minecraft.smite.desc=Increases damage against undead mobs such as zombies and skeletons.
+#enchantment.minecraft.sweeping.desc=Increases the damage of sweeping attacks.
+#enchantment.minecraft.thorns.desc=Causes damage to enemies when they attack you.
+#enchantment.minecraft.unbreaking.desc=Causes the tool to lose durability at a slower rate.
+#enchantment.minecraft.vanishing_curse.desc=Destroyes the enchanted item if you die with it in your inventory.
+enchantment.openblocks.explosive.desc=Creates explosions when attacked.
+enchantment.openblocks.flim_flam.desc=Randomly causes negative effects nearby.
+enchantment.openblocks.last_stand.desc=Uses XP to prevent death.
+#enchantment.randomthings.magnetic.desc=The drops from blocks you mine with a tool that has the magnetic enchantment go directly into your inventory instead of dropping on the ground.

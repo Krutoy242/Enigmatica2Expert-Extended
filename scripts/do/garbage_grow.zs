@@ -15,13 +15,13 @@ Ideas:
 #reloadable
 #norun
 
-events.onEntityItemFall(function(e as mods.zenutils.event.EntityItemFallEvent) {
+events.onEntityItemFall(function (e as mods.zenutils.event.EntityItemFallEvent) {
   val entity = e.item;
-  if(entity.world.remote) return;
+  if (entity.world.remote) return;
   val pos = entity.position;
   server.commandManager.executeCommandSilent(
     server,
-    '/say §8onEntityItemFall §6' ~ 
-    e.blockState.block.commandString()
+    '/say §8onEntityItemFall §6'
+    ~ e.blockState.block.commandString()
   );
 });

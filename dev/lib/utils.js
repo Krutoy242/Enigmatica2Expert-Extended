@@ -11,10 +11,12 @@
 /* =============================================
 =                Variables                    =
 ============================================= */
+
 import { execSync } from 'node:child_process'
 import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { basename, dirname } from 'node:path'
-import { URL, fileURLToPath } from 'node:url'
+import process from 'node:process'
+import { fileURLToPath, URL } from 'node:url'
 
 import chalk from 'chalk'
 import { parse as csvParseSync } from 'csv-parse/sync'
@@ -137,7 +139,7 @@ export const config = createHashedFunction((filename) => {
     ) // Replace lists
 
   /**
-   * @type {Object}
+   * @type {object}
    */
   let result
   try {
@@ -167,7 +169,7 @@ export function saveText(txt, filename) {
 
 /**
  * Save object in file
- * @param {Object} obj
+ * @param {object} obj
  * @param {string} filename
  */
 export function saveObjAsJson(obj, filename) {
@@ -195,6 +197,12 @@ export function transpose(a) {
   })
 }
 
+/**
+ * @param {string | string[]} filename
+ * @param {string} keyStart
+ * @param {string} keyFinish
+ * @param {string} text
+ */
 export function injectInFile(filename, keyStart, keyFinish, text) {
   /** @type {import('replace-in-file').ReplaceResult[]} */
   let replaceResult
@@ -212,7 +220,7 @@ export function injectInFile(filename, keyStart, keyFinish, text) {
   }
   catch (error) {
     console.error('Inject Error occurred:', error)
-    return 0
+    return []
   }
 
   if (!replaceResult?.[0]?.numMatches) throw new Error(`Cant replace in file ${filename}`)
@@ -238,14 +246,14 @@ export const done = end
 // # ######################################################################
 
 /**
- * @typedef {Object} BlockDrop
+ * @typedef {object} BlockDrop
  * @property {string} name
  * @property {number} meta
  * @property {number} length
  */
 
 /**
- * @typedef {Object} DropEntry
+ * @typedef {object} DropEntry
  * @property {string} stack
  * @property {number} [chance]
  * @property {[left:number, right:number][] | [left:number, right:number]} [luck]
@@ -260,7 +268,7 @@ export const done = end
  */
 export function setBlockDrops(block_stack, dropList, isSkipSaving = false) {
   const [source, id, _block_meta] = block_stack.split(':')
-  const block_meta = parseInt(_block_meta || '0')
+  const block_meta = Number.parseInt(_block_meta || '0')
   const block_id = `${source}:${id}`
 
   let newObj
@@ -275,7 +283,7 @@ export function setBlockDrops(block_stack, dropList, isSkipSaving = false) {
     dropList.forEach((o, i) => {
       const [drop_source, drop_id, drop_meta] = o.stack.split(':')
       newObj[`name${i}`] = `${drop_source}:${drop_id}`
-      newObj[`meta${i}`] = parseInt(drop_meta || '0')
+      newObj[`meta${i}`] = Number.parseInt(drop_meta || '0')
       for (let j = 0; j < 4; j++) newObj[`${j}chance${i}`] = o.chance || 100.0
       for (let j = 0; j < 4; j++) {
         newObj[`${j}pair${i}`] = `{
@@ -454,7 +462,7 @@ export function isPathHasChanged(pPath) {
 }
 
 /**
- * @typedef {Object} Helper
+ * @typedef {object} Helper
  * @property {(startItem: string, steps?: number)=>void} begin
  * @property {(itemDone?: any)=>void} done
  * @property {(s?: any)=>void} step

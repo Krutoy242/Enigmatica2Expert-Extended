@@ -9,11 +9,12 @@
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, parse } from 'node:path'
+import process from 'node:process'
 
 import * as cheerio from 'cheerio'
 import MarkdownIt from 'markdown-it'
 
-const sourcePath = String(process.argv[2] || 'latest.md')
+const sourcePath = String(process.argv[2] || 'latest_release.md')
 if (!existsSync(sourcePath)) throw new Error(`Provide correct file path: ${sourcePath}`)
 
 const md = new MarkdownIt({ html: true })
@@ -40,6 +41,7 @@ $('h2').before('<br/><hr/>').after('<br/>')
 $('h3')
   .wrap('<span style="text-decoration: underline;">').contents().unwrap()
   .wrapInner('<strong>')
+$('li p').contents().unwrap()
 // $('sub').contents().unwrap()
 $('sup').remove()
 $('th')
@@ -59,6 +61,14 @@ for (const o of ['d', 'h']) {
     }
   }
 }
+
+// Find all <code> elements and replace new lines with <br>
+// Curse Forge cant in newlines inside code blocks
+$('code').each(function () {
+  const codeContent = $(this).html()
+  if (!codeContent) return
+  $(this).html(codeContent.replace(/\n/g, '<br/>\n').replace(/ /g, ' '))
+})
 
 // 𝑷𝒓𝒆𝒇𝒊𝒙𝒆𝒔
 $('body').prepend(
@@ -90,4 +100,9 @@ $('head').replaceWith($('head').contents())
 $('nobr').contents().unwrap()
 
 const source = parse(sourcePath)
-writeFileSync(join(source.dir, `${source.name}.html`), $.html())
+
+const wholeText = $.html()
+  // Remove newlines after <li>. Dont know why cheerio add them
+  .replace(/<li>\s*<br.?>/g, '<li>')
+
+writeFileSync(join(source.dir, `${source.name}.html`), wholeText)

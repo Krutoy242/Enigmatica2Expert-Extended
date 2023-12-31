@@ -2,21 +2,46 @@
 
 🚧✅❌ List of priorities:
 
-- [ ] ✏️ Stackable Fluid Containers duped when crafting with fluid
-- [ ] ✏️ Infinity Furnace should perform one recipe function for each recip instead of adding ~600 recipes
-- [ ] ✏️ Apiarist Villagest should sell Combs cor Cacoa
-- [ ] 🟢 move To Server Starter
-- [ ] ⛑️ Add amount of blocks in Portal Spread message
-- [ ] ✏️ Make recipe function for Rats Nuggets recipes
-- [ ] 🌍 Generate Quicksand with Cofh instead of BoP to add lakes in OTG worlds
-- [ ] ✏️ Configure `Redstone Repository`
-- [ ] 📖 Add langs to "Fireproof" trait
-- [ ] 📖 sort TC book By Material Power
-- [ ] ✏️ nanomachines Dissaper On Rejoin Server
-- [ ] ✏️ Make Elite Component craftable without tech
-- [ ] 📖 `/levelupTool` use in quest reward
-- [ ] 🔴 Remove `Culinari Construct`
-- [ ] 📖 ExCr tables should be available from Conflux levels
+- [ ] ✏️ Burn singularity should be exponential `1.25`
+- [ ] ✏️ Star Of Psi should be obtainable in no-power run
+- [ ] 📖 Explain BoP gems sources in empowered quests
+- [ ] 🐛 fix Ie Bug If Removing Entities When Crash On Mount
+- [ ] ✏️ Remove Mysical Flesh
+- [ ] 🐛 Fix AdvRock planet jump causing death https://discord.com/channels/911676461050642432/959878900278784030/1179686673525776474
+- [ ] ✏️ Remove usage of different fires from Cyclic
+- [ ] ✏️ Remove fast processing with Crushing block since its too fast
+- [ ] ✏️ fix 59% on Bees Output
+- [ ] ✏️ adv Rock Crystals Beneficate In QMD
+- [ ] default Nanomachines Configs
+- [ ] fix Trophy Crafting Not Working
+- [ ] distructive Stabilisation Ring Not Working
+- [ ] induction Smelter Add Energetic Alloy Recipe
+- [ ] add Drawer Key To Morphing Tool
+- [ ] fix I C2 Chainsaw Cant Cut T Ctrees
+- [ ] fix Filament N B T
+- [ ] fix Ic2 Fertilizer Recipe
+- [ ] remove Grid Hotkey
+- [ ] rolling Machine Remove False Quest Description
+- [ ] install Threadwatcher
+- [ ] remove Enchantments From Quests Rewards
+- [ ] check If Compressed Cobble In E I O Smeltery Smeltable
+- [ ] sulfuric acid recipe recipe in Chemical Reactor should also accept Mek's liquid
+- [ ] Disable Quark's buttons for Modular Storage
+- [ ] Remove cheap fluiduct recipe
+- [ ] Install https://www.curseforge.com/minecraft/mc-mods/omniwand
+- [ ] Replace BetterP2P to https://www.curseforge.com/minecraft/mc-mods/enhancedp2p
+- [ ] Replace Villager Market to https://www.curseforge.com/minecraft/mc-mods/villager-market-nbt-fix
+- [ ] find Option That Fix E U Ring On Change Dimension
+- [ ] fix Dispenser Quest Typo C
+- [ ] fix Tropical Gardens Spawn In Frozen Ocean
+- [ ] check Shark Bite Glitching
+- [ ] add3 D Prints More Usage
+- [ ] remove Melodic Alloy Reservoir From I O
+- [ ] remove All Modded Books From Rewards
+- [ ] Remove useless ores from T6 ore miner
+- [ ] disable Bogo Shuffle
+- [ ] `betteranimalsplus_goose` replace for world tick instead of entity tick
+- [ ] Remove Armor Curve
 
 ```sh
 /bcore_ticktime
@@ -70,6 +95,14 @@ minecraft:sponge
 
 Planned non-urgent changes, or just good ideas:
 
+- [ ] 🕸 Create issues about IC2 Reactor in compact machine and cables disconnection
+- [ ] 🐛 If Conarm armor have huge durability (>65,000), when it get damage over 50% its repairing to 100% and become unbreakable. On some cases it void armor from inventory instead
+- [ ] 🟢 Return `TwilightTweaks` when fixed https://github.com/LoliKingdom/Bansoukou/issues/5
+- [ ] ✏️ `Critical Matter Cluster` add usages and mechanics (obtained with shift+right click of World Breaker)
+- [ ] ✏️ Add bar for diverse/charge singularity by making custon CoT item with durability.
+- [ ] 📖 sort TC book By Material Power, need fix: https://github.com/Project-RT/RandomTweaker/issues/67
+- [ ] ✏️ Stackable Fluid Containers duped when crafting with fluid. Waiting for fix: https://github.com/CraftTweaker/CraftTweaker/issues/1692
+- [ ] ✏️ Apiarist Villagert should sell Combs cor Cacoa. Seems like its impossible to remove Apiarist trades with `vtt` mod
 - [ ] 🟢 add `Fairy Lights` when released https://github.com/ACGaming/UniversalTweaks/pull/291
 - [ ] 📖 Improve messages "Player Obtained [...]" with `tellraw` command. Cant untill fix `/tellraw` for Discord
 - [ ] ✏️ `Harbinger Cube` must spawn with strong Iron/Diamond skin effects and as Blight
@@ -205,7 +238,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📀 Adv. Rock tank left 64 buckets when broken
 - [ ] 🟠 Do not update Recurrent Complex to `1.4.8.3` (cause crashes on server)
 - [ ] 🔴 Do not update `JAOPCA` - uncompatible with JAOPCACustom
-- [ ] 🔴 Do not update `Redstone Repository Revolved` (incompatible with TConEvo)
 - [ ] 🔴 Do not update `spark` (not working propertly)
 - [ ] 🔴 Do not update `Specrtal Edge` to 1.5
 - [ ] 🔄 After getting 30 hearts, player need to relog to enter nether
@@ -238,7 +270,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🌍 Add new AdvRocke atmospheres
 - [ ] 🌍 Add water animals at dim 118
 - [ ] 🌿 Patchouli: Change **texture** of book
-- [ ] 🔄 ![](https://git.io/J3p8B "Infinity Furnace") front texture empty on client
 - [ ] 🏪 ![](https://git.io/J3p8B "Infinity Furnace") add speed upgrades
 - [ ] 🔄 **Perfect Fuel** Fix texture. Now it uses default one.
 - [ ] 🔄 Fix Custom Animals drops non-cooked meat
@@ -297,16 +328,13 @@ Items that should have more uses:
 ![](https://git.io/JLhhf "Energized Clathrate")
 ![](https://git.io/JLhph "Destabilized Clathrate")
 ![](https://git.io/JRLSU "Huge Stalk")
-![](https://github.com/Krutoy242/mc-icons/raw/master/i/minecraft/shulker_shell__0.png "Shulker Shell")
 
 ### Tier 4
 
-![](https://git.io/JcBSs "Tiny Chaos Fragment")
 ![](https://git.io/JLhhe "Oxidized Ferric Sand")
 ![](https://git.io/JLhhs "Vitrified Sand")
 ![](https://git.io/JCqV9 "Particle Generator")
 ![](https://git.io/JuMlF "Material Absorber")
-![](https://github.com/Krutoy242/mc-icons/raw/master/i/extrautils2/snowglobe__0.png "Magical Snow Globe")
 
 ## 🔧 Crafting Methods
 

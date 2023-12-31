@@ -1,0 +1,8 @@
+setTranslatedTitle("advancements.iceandfire.root.title")
+setTranslatedDescription("advancements.iceandfire.root.description")
+setIcon(<iceandfire:dragon_skull>)
+setFrameType("task")
+setShowToast(false)
+setAnnounceToChat(false)
+setBackground("iceandfire:textures/blocks/dragonscale_red.png")
+addCriteria("location", "minecraft:location")

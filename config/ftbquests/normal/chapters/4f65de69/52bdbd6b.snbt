@@ -1,4 +1,12 @@
 {
+	icon: {
+		id: "buildinggadgets:buildingtool",
+		tag: {
+			blockstate: {
+				Name: "minecraft:air"
+			}
+		}
+	},
 	x: 11.125d,
 	y: 5.041666666666667d,
 	text: [
@@ -16,6 +24,27 @@
 				blockstate: {
 					Name: "minecraft:air"
 				}
+			}
+		},
+		{
+			id: "buildinggadgets:exchangertool",
+			tag: {
+				blockstate: {
+					Name: "minecraft:air"
+				}
+			}
+		},
+		{
+			id: "buildinggadgets:copypastetool",
+			tag: {
+				mode: "Copy"
+			}
+		},
+		{
+			id: "buildinggadgets:destructiontool",
+			tag: {
+				overlay: 1b,
+				fuzzy: 1b
 			}
 		}],
 		ignore_nbt: 1b

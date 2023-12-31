@@ -6,33 +6,32 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
 import mods.requious.SlotVisual;
 
-
-var x = <assembly:infernal_furnace>;
+val x = <assembly:infernal_furnace>;
 x.addJEICatalyst(<thaumcraft:infernal_furnace>);
-x.setJEIDurationSlot(1,0,"duration", SlotVisual.arrowRight());
-x.setJEIDurationSlot(2,0,"duration", scripts.jei.requious.getVisGauge(1,13));
-scripts.jei.requious.addInsOuts(x, [[0,0]], [[3,0],[4,0],[5,0],[6,0]]);
+x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(1, 13));
+scripts.jei.requious.addInsOuts(x, [[0, 0]], [[3, 0], [4, 0], [5, 0], [6, 0]]);
 
 val RE = <thaumcraft:nugget:10>;
 
 function infFurLore(outs as WeightedItemStack[], i as int) as IItemStack {
-  if(i >= outs.length) return null;
-  return outs[i].stack.withLore(["§d§l" ~ outs[i].percent as int ~ "%"]);
+  if (i >= outs.length) return null;
+  return outs[i].stack.withLore(['§d§l' ~ outs[i].percent as int ~ '%']);
 }
 
 function addInfFur(input as IIngredient, outs as WeightedItemStack[]) {
-  scripts.jei.requious.add(<assembly:infernal_furnace>, {[input] as IIngredient[]: [
+  scripts.jei.requious.add(<assembly:infernal_furnace>, { [input] as IIngredient[]: [
     infFurLore(outs, 0),
     infFurLore(outs, 1),
     infFurLore(outs, 2),
     infFurLore(outs, 3),
-  ]});
+  ] });
 }
 
-/*Inject_js(
+/* Inject_js(
 Object.entries(
   _.groupBy(
-    getCrtLogBlock('Thaumcraft dump:\n-Smelting Bonus:\n', '\n-Warp')
+    getCrtLogBlock('\n-Smelting Bonus:', '\n-Warp')
       .split('\n')
 
       // Filter unwanted ores
@@ -86,7 +85,7 @@ Object.entries(
         .join(', ')}]);`
   )
   .sort(naturalSort)
-)*/
+) */
 addInfFur(<contenttweaker:ore_phosphor>            , [<contenttweaker:nugget_phosphor> * 2 % 50]);
 addInfFur(<jaopca:item_clusteraluminium>           , [RE % 2, <thermalfoundation:material:196> % 33, <jaopca:item_nuggetaquamarine> * 13 % 32]);
 addInfFur(<jaopca:item_clusteramber>               , [RE % 2, <jaopca:item_nuggetamber> % 33, <thermalfoundation:material:16> * 6 % 32]);

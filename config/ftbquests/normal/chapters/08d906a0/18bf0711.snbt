@@ -1,0 +1,20 @@
+{
+	x: 13.5d,
+	y: 3.0d,
+	dependencies: [
+		"07e0ed8d",
+		"e4301d47"
+	],
+	tasks: [{
+		uid: "b3c70ac3",
+		type: "item",
+		items: [{
+			item: "rustic:evaporating_basin"
+		}]
+	}],
+	rewards: [{
+		uid: "06aee255",
+		type: "item",
+		item: "cookingforblockheads:milk_jar"
+	}]
+}

@@ -1,0 +1,21 @@
+{
+	x: 22.5d,
+	y: 4.5d,
+	dependencies: [
+		"d37c34ce"
+	],
+	optional: true,
+	tasks: [{
+		uid: "aa849168",
+		type: "item",
+		items: [{
+			item: "netherendingores:ore_nether_modded_1 1 8"
+		}]
+	}],
+	rewards: [{
+		uid: "2fee4ffe",
+		type: "item",
+		item: "netherendingores:ore_nether_modded_1 1 8",
+		count: 8
+	}]
+}

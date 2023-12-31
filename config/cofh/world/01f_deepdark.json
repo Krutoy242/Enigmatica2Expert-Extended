@@ -36,6 +36,21 @@
       "ceiling": true,
 			"ground-level": 20,
 			"dimension": {"restriction": "whitelist","value": [-11325]}
+		},
+
+		"deepdark_syngas": {
+      "enabled": false,
+			"distribution": "uniform",
+			"generator": {
+        "block": "advgenerators:syngas",
+        "material": "minecraft:lava",
+				"cluster-size": 1
+			},
+			"cluster-count": 10,
+			"chunk-chance": 1,
+      "min-height": 2,
+      "max-height": 10,
+			"dimension": {"restriction": "whitelist","value": [-11325]}
 		}
   }
 }

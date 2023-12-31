@@ -1,7 +1,7 @@
 {
 	title: "{q.bragging_rights.flux_reconstruction.name}",
-	x: 5.208333333333333d,
-	y: 2.125d,
+	x: 1.2d,
+	y: 2.3d,
 	text: [
 		"{q.bragging_rights.flux_reconstruction.desc}"
 	],

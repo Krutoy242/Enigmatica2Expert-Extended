@@ -1,0 +1,111 @@
+{
+	x: 7.5d,
+	y: 1.5d,
+	dependencies: [
+		"e29955a0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "019319dd",
+		type: "item",
+		items: [{
+			id: "exnihilocreatio:crook_tconstruct",
+			ForgeCaps: {
+				"plustic:fruitsalad_cap": {
+					Items: [],
+					Size: 5
+				},
+				"plustic:": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:musicofthespheres_cap": {
+					Items: [],
+					Size: 1
+				}
+			}
+		}],
+		consume_items: true,
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "c74fa08a",
+		type: "item",
+		item: {
+			id: "exnihilocreatio:crook_tconstruct",
+			tag: {
+				TinkerData: {
+					Materials: [
+						"wood",
+						"wood",
+						"wood",
+						"wood"
+					],
+					Modifiers: [
+						"toolleveling",
+						"luck",
+						"creative"
+					],
+					UsedModifiers: 1
+				},
+				Stats: {
+					Durability: 56,
+					HarvestLevel: 0,
+					Attack: 1.5f,
+					MiningSpeed: 1.5f,
+					AttackSpeedMultiplier: 1.0f,
+					FreeModifiers: 2
+				},
+				StatsOriginal: {
+					Durability: 56,
+					HarvestLevel: 0,
+					Attack: 1.5f,
+					MiningSpeed: 1.5f,
+					AttackSpeedMultiplier: 1.0f,
+					FreeModifiers: 3
+				},
+				Special: {
+					Categories: [
+						"aoe",
+						"harvest",
+						"tool"
+					]
+				},
+				Modifiers: [{
+					identifier: "ecological",
+					color: -7444965,
+					level: 1
+				},
+				{
+					identifier: "toolleveling",
+					color: 16777215,
+					level: 1
+				},
+				{
+					identifier: "luck",
+					color: 2970082,
+					modifierUsed: 1b,
+					level: 3,
+					current: 360,
+					max: 360,
+					extraInfo: "359 / 360"
+				},
+				{
+					identifier: "creative",
+					color: 0,
+					level: 1
+				}],
+				Traits: [
+					"ecological",
+					"toolleveling",
+					"luck"
+				],
+				ench: [{
+					id: 35s,
+					lvl: 3s
+				}]
+			}
+		}
+	}]
+}

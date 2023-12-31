@@ -1,8 +1,8 @@
 {
 	title: "{q.bragging_rights.the_fusion_reactor.name}",
 	icon: "mekanismgenerators:reactor",
-	x: 2.375d,
-	y: -1.7916666666666665d,
+	x: 6.5d,
+	y: 0.5d,
 	text: [
 		"{q.bragging_rights.the_fusion_reactor.desc}"
 	],

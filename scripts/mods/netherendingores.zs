@@ -1,5 +1,5 @@
-
-import crafttweaker.item.IItemStack;
+#modloaded netherendingores
+#ignoreBracketErrors
 
 <entity:netherendingores:netherfish>.addPlayerOnlyDrop(<forestry:ash>, 3, 12);
 

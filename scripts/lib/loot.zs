@@ -1,3 +1,5 @@
+#modloaded loottweaker
+
 import crafttweaker.item.IItemStack;
 import loottweaker.vanilla.loot.Functions;
 import loottweaker.vanilla.loot.Conditions;

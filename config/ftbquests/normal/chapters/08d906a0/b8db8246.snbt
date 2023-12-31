@@ -1,0 +1,21 @@
+{
+	x: 19.5d,
+	y: -4.5d,
+	dependencies: [
+		"6f3cff40",
+		"385643c4"
+	],
+	optional: true,
+	tasks: [{
+		uid: "bdc1cefe",
+		type: "item",
+		items: [{
+			item: "minecraft:gold_ingot"
+		}]
+	}],
+	rewards: [{
+		uid: "ea3e6819",
+		type: "xp_levels",
+		xp_levels: 8
+	}]
+}

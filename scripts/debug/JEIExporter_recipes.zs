@@ -324,28 +324,28 @@ for id in livingBaseEntities {
   recipes.addShapeless(soul, [soul]);
 }
 
-/* 
+/*
 for entityDef in game.entities {
   val soul = Soul(entityDef.id);
   recipes.addShapeless(soul, [soul]);
 }
 */
 
-events.onPlayerLeftClickBlock(function(e as crafttweaker.event.PlayerLeftClickBlockEvent){
-  if(e.player.world.isRemote()) return;
-  if(
-    isNull(e.player.currentItem) 
+events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickBlockEvent) {
+  if (e.player.world.isRemote()) return;
+  if (
+    isNull(e.player.currentItem)
     || !(<minecraft:stick> has e.player.currentItem)
-    || e.block.definition.id != "minecraft:glowstone"
+    || e.block.definition.id != 'minecraft:glowstone'
   ) return;
 
   print('============ Dumping Entity Living ============');
   for entityDef in game.entities {
     val entity = entityDef.createEntity(e.player.world);
-    if(!entity instanceof crafttweaker.entity.IEntityLivingBase) continue;
-    
+    if (!entity instanceof crafttweaker.entity.IEntityLivingBase) continue;
+
     print(entityDef.id);
   }
   print('===============================================');
-  e.player.sendMessage("§eDumped entities");
+  e.player.sendMessage('§eDumped entities');
 });

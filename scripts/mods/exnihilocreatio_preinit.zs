@@ -1,8 +1,6 @@
 #loader contenttweaker
 #modloaded exnihilocreatio
 
-import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
 /*
 
 // This code can add lot of items https://i.imgur.com/TINWhLn.png
@@ -22,12 +20,12 @@ mods.exnihilocreatio.Ore.addRecipe(
 */
 
 mods.exnihilocreatio.Ore.addRecipe(
-  "tungsten",
-  "2B2C2A",
+  'tungsten',
+  '2B2C2A',
   <ore:oreTungsten>.firstItem,
   {
-    "en_us": "Tungsten",
-    "ru_ru": "Вольфрам",
+    'en_us': 'Tungsten',
+    'ru_ru': 'Вольфрам',
   },
-  "Tungsten"
+  'Tungsten'
 );

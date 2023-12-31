@@ -13,8 +13,6 @@ schematics/*.*
 !server/
 !README.md
 !MODS.md
-!CHANGELOG.md
-!changelogs/
 !.gitattributes
 !minecraftinstance.json
 !patchouli_books/
@@ -25,6 +23,12 @@ structures/inactive
 !.gitignore
 !.github/
 !.imgbotconfig
+!CHANGELOG-latest.md
+
+# Developing-only configs
+!.eslint.config.js
+!.tsconfig.json
+!.vscode/settings.json
 
 # OTG configs
 !mods

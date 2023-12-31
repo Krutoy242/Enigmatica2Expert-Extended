@@ -1,0 +1,20 @@
+{
+	x: 7.5d,
+	y: 3.0d,
+	dependencies: [
+		"147b1b5f"
+	],
+	tasks: [{
+		uid: "d18e7f62",
+		type: "item",
+		items: [{
+			item: "rustic:sapling 1 1"
+		}]
+	}],
+	rewards: [{
+		uid: "d82f5c56",
+		type: "item",
+		item: "ic2:scaffold",
+		count: 64
+	}]
+}

@@ -1,12 +1,12 @@
 {
 	title: "{q.bragging_rights.gate_extended_cra.name}",
-	x: 3.791666666666667d,
-	y: -2.1666666666666665d,
+	x: 3.8d,
+	y: -2.2d,
 	text: [
 		"{q.bragging_rights.gate_extended_cra.desc}"
 	],
 	dependencies: [
-		"0bf36970"
+		"38cc695f"
 	],
 	tasks: [{
 		uid: "bace1686",

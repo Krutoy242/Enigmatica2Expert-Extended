@@ -1,0 +1,430 @@
+{
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  // "eslint.rules.customizations": [
+  //   { "rule": "style/*", "severity": "off" },
+  //   { "rule": "format/*", "severity": "off" },
+  //   { "rule": "*-indent", "severity": "off" },
+  //   { "rule": "*-spacing", "severity": "off" },
+  //   { "rule": "*-spaces", "severity": "off" },
+  //   { "rule": "*-order", "severity": "off" },
+  //   { "rule": "*-dangle", "severity": "off" },
+  //   { "rule": "*-newline", "severity": "off" },
+  //   { "rule": "*quotes", "severity": "off" },
+  //   { "rule": "*semi", "severity": "off" }
+  // ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ],
+
+  // "[javascript]": {
+  //   "editor.codeActionsOnSave": {
+  //     "source.fixAll": true
+  //   },
+  //   "editor.formatOnSave": true
+  // },
+  // "[typescript]": {
+  //   "editor.codeActionsOnSave": {
+  //     "source.fixAll": true
+  //   },
+  //   "editor.formatOnSave": true
+  // },
+
+  // Files hidden in VSCode for simplified modpack developing
+  "files.exclude": {
+    ".mixin.out/": true,
+    "*.jar": true,
+    "asm/": true,
+    "assets/": true,
+    "astralsorcery/": true,
+    "backups/": true,
+    "BotaniaVars.dat": true,
+    "coremods/": true,
+    "crafttweaker_dump/": true,
+    "CustomSkinLoader/": true,
+    "discordsuite/": true,
+    "downloads/": true,
+    "dropt.log": true,
+    "EIILog.txt": true,
+    "eula.txt": true,
+    "home/": true,
+    "hs_err_*.log": true,
+    "installer.log": true,
+    "knownkeys.txt": true,
+    "launcher_profiles.json": true,
+    "libraries/": true,
+    "llibrary/": true,
+    "mineraltracker/": true,
+    "OpenComputersMod-*.dll": true,
+    "patchouli_data.json": true,
+    "server-resource-packs/": true,
+    "sl_password.txt": true,
+    "tlauncher_profiles.json": true,
+    "TombManyGraves/": true,
+    "versions/": true,
+    "WailaErrorOutput.txt": true
+  },
+
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#003a52",
+    "activityBar.activeBorder": "#bf0087",
+    "activityBar.background": "#003a52",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#bf0087",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "sash.hoverBorder": "#003a52",
+    "statusBar.background": "#00161f",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#003a52",
+    "statusBarItem.remoteBackground": "#00161f",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#00161f",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#00161f99",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "commandCenter.border": "#e7e7e799"
+  },
+  "peacock.color": "00161f",
+
+  // Automatically sort JSON files of mc-tools
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "packages\\\\.+\\\\package\\.json$",
+        "cmd": "node mc-tools/merge_jsons.js \"${file}\" && prettier-package-json --write \"${file}\""
+      },
+      {
+        "match": "((?!packages).)\\\\.+\\\\package\\.json$",
+        "cmd": "prettier-package-json --write \"${file}\""
+      }
+    ]
+  },
+
+  // Exclude automatically fetching tasks
+  "npm.exclude": [
+    "**/packages",
+    "**/packages/*",
+    "mc-tools"
+  ],
+
+  // Schema for Village Trade Table mod (helping to not make mistakes)
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "config/vtt/trade_tables/*.json"
+      ],
+      "url": "./dev/tools/vtt.trade_tables.schema.json"
+    }
+  ],
+
+  "highlight.regexes": {
+    "(§0)(.+?)(§[^lmno0]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#000000" }, {}]
+    },
+    "(§1)(.+?)(§[^lmno1]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#0000AA" }, {}]
+    },
+    "(§2)(.+?)(§[^lmno2]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#00AA00" }, {}]
+    },
+    "(§3)(.+?)(§[^lmno3]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#00AAAA" }, {}]
+    },
+    "(§4)(.+?)(§[^lmno4]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#AA0000" }, {}]
+    },
+    "(§5)(.+?)(§[^lmno5]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#AA00AA" }, {}]
+    },
+    "(§6)(.+?)(§[^lmno6]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#FFAA00" }, {}]
+    },
+    "(§7)(.+?)(§[^lmno7]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#AAAAAA" }, {}]
+    },
+    "(§8)(.+?)(§[^lmno8]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#555555" }, {}]
+    },
+    "(§9)(.+?)(§[^lmno9]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#5555FF" }, {}]
+    },
+    "(§a)(.+?)(§[^lmnoa]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#55FF55" }, {}]
+    },
+    "(§b)(.+?)(§[^lmnob]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#55FFFF" }, {}]
+    },
+    "(§c)(.+?)(§[^lmnoc]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#FF5555" }, {}]
+    },
+    "(§d)(.+?)(§[^lmnod]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#FF55FF" }, {}]
+    },
+    "(§e)(.+?)(§[^lmnoe]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#FFFF55" }, {}]
+    },
+    "(§f)(.+?)(§[^lmnof]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#FFFFFF" }, {}]
+    },
+    "(§g)(.+?)(§[^lmnog]|\r?\n|$)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "color": "#DDD605" }, {}]
+    },
+    "(§l)([^§\n]+)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "fontWeight": "bold" }]
+    },
+    "(§m)([^§\n]+)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "textDecoration": "line-through" }]
+    },
+    "(§n)([^§\n]+)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "textDecoration": "underline" }]
+    },
+    "(§o)([^§\n]+)": {
+      "filterFileRegex": ".*\\.lang",
+      "decorations": [{}, { "fontStyle": "italic" }]
+    },
+
+    "(§0)(.+?)(§[^lmno0]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#000000" }, {}]
+    },
+    "(§1)(.+?)(§[^lmno1]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#0000AA" }, {}]
+    },
+    "(§2)(.+?)(§[^lmno2]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#00AA00" }, {}]
+    },
+    "(§3)(.+?)(§[^lmno3]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#00AAAA" }, {}]
+    },
+    "(§4)(.+?)(§[^lmno4]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#AA0000" }, {}]
+    },
+    "(§5)(.+?)(§[^lmno5]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#AA00AA" }, {}]
+    },
+    "(§6)(.+?)(§[^lmno6]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#FFAA00" }, {}]
+    },
+    "(§7)(.+?)(§[^lmno7]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#AAAAAA" }, {}]
+    },
+    "(§8)(.+?)(§[^lmno8]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#555555" }, {}]
+    },
+    "(§9)(.+?)(§[^lmno9]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#5555FF" }, {}]
+    },
+    "(§a)(.+?)(§[^lmnoa]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#55FF55" }, {}]
+    },
+    "(§b)(.+?)(§[^lmnob]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#55FFFF" }, {}]
+    },
+    "(§c)(.+?)(§[^lmnoc]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#FF5555" }, {}]
+    },
+    "(§d)(.+?)(§[^lmnod]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#FF55FF" }, {}]
+    },
+    "(§e)(.+?)(§[^lmnoe]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#FFFF55" }, {}]
+    },
+    "(§f)(.+?)(§[^lmnof]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#FFFFFF" }, {}]
+    },
+    "(§g)(.+?)(§[^lmnog]|\r?\n|$|\"|')": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "color": "#DDD605" }, {}]
+    },
+    "(§l)([^§\n\"']+)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "fontWeight": "bold" }]
+    },
+    "(§m)([^§\n\"']+)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "textDecoration": "line-through" }]
+    },
+    "(§n)([^§\n\"']+)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "textDecoration": "underline" }]
+    },
+    "(§o)([^§\n\"']+)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{}, { "fontStyle": "italic" }]
+    }
+  },
+
+  "surround.custom": {
+    "mc_Bold": {
+      "label": "𝐁 Bold",
+      "description": "Change style to Bold",
+      "snippet": "§l$TM_SELECTED_TEXT§r"
+    },
+    "mc_Strikethrough": {
+      "label": "s Strikethrough",
+      "description": "Change style to Strikethrough",
+      "snippet": "§m$TM_SELECTED_TEXT§r"
+    },
+    "mc_Underline": {
+      "label": "u Underline",
+      "description": "Change style to Underline",
+      "snippet": "§n$TM_SELECTED_TEXT§r"
+    },
+    "mc_Italic": {
+      "label": "i Italic",
+      "description": "Change color to Italic",
+      "snippet": "§o$TM_SELECTED_TEXT§r"
+    },
+    "mc_white": {
+      "label": "⚪ White",
+      "description": "Change color to white",
+      "snippet": "§f$TM_SELECTED_TEXT§r"
+    },
+    "mc_black": {
+      "label": "⚫ Black",
+      "description": "Change color to black",
+      "snippet": "§0$TM_SELECTED_TEXT§r"
+    },
+    "mc_dark_gray": {
+      "label": "🌚 Dark_gray",
+      "description": "Change color to dark_gray",
+      "snippet": "§8$TM_SELECTED_TEXT§r"
+    },
+    "mc_gray": {
+      "label": "🗑️ Gray",
+      "description": "Change color to gray",
+      "snippet": "§7$TM_SELECTED_TEXT§r"
+    },
+    "mc_dark_blue": {
+      "label": "🧿 Dark_blue",
+      "description": "Change color to dark_blue",
+      "snippet": "§1$TM_SELECTED_TEXT§r"
+    },
+    "mc_blue": {
+      "label": "🔵 Blue",
+      "description": "Change color to blue",
+      "snippet": "§9$TM_SELECTED_TEXT§r"
+    },
+    "mc_dark_green": {
+      "label": "🥝 Dark_green",
+      "description": "Change color to dark_green",
+      "snippet": "§2$TM_SELECTED_TEXT§r"
+    },
+    "mc_green": {
+      "label": "🟢 Green",
+      "description": "Change color to green",
+      "snippet": "§a$TM_SELECTED_TEXT§r"
+    },
+    "mc_dark_aqua": {
+      "label": "🩲 Dark_aqua",
+      "description": "Change color to dark_aqua",
+      "snippet": "§3$TM_SELECTED_TEXT§r"
+    },
+    "mc_aqua": {
+      "label": "Ⓜ️ Aqua",
+      "description": "Change color to aqua",
+      "snippet": "§b$TM_SELECTED_TEXT§r"
+    },
+    "mc_dark_red": {
+      "label": "🔴 Dark_red",
+      "description": "Change color to dark_red",
+      "snippet": "§4$TM_SELECTED_TEXT§r"
+    },
+    "mc_red": {
+      "label": "👛 Red",
+      "description": "Change color to red",
+      "snippet": "§c$TM_SELECTED_TEXT§r"
+    },
+    "mc_dark_purple": {
+      "label": "🪀 Dark_purple",
+      "description": "Change color to dark_purple",
+      "snippet": "§5$TM_SELECTED_TEXT§r"
+    },
+    "mc_light_purple": {
+      "label": "🟣 Light_purple",
+      "description": "Change color to light_purple",
+      "snippet": "§d$TM_SELECTED_TEXT§r"
+    },
+    "mc_gold": {
+      "label": "🟠 Gold",
+      "description": "Change color to gold",
+      "snippet": "§6$TM_SELECTED_TEXT§r"
+    },
+    "mc_yellow": {
+      "label": "🟡 Yellow",
+      "description": "Change color to yellow",
+      "snippet": "§e$TM_SELECTED_TEXT§r"
+    },
+    "mc_Obfuscated": {
+      "label": "🈹 Obfuscated",
+      "description": "Change style to Obfuscated",
+      "snippet": "§k$TM_SELECTED_TEXT§r"
+    },
+
+    "utils.tryCatch": {
+      "label": "utils.tryCatch()",
+      "description": "Surround this item with safe version",
+      "snippet": "utils.tryCatch('$TM_SELECTED_TEXT', $0)",
+      "languageIds": ["zenscript"]
+    }
+  }
+}

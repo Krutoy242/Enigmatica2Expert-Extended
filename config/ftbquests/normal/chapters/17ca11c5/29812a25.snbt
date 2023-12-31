@@ -1,7 +1,7 @@
 {
 	icon: "extendedcrafting:crafting_core",
-	x: 6.458333333333333d,
-	y: 2.833333333333334d,
+	x: 5.1d,
+	y: 2.8d,
 	text: [
 		"{q.bragging_rights.crafting_core.desc}"
 	],

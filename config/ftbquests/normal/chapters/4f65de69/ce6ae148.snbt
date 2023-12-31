@@ -107,13 +107,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "6c558fdd",
-		type: "item",
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "legendary"
-			}
-		}
+		uid: "ce7d9ac8",
+		type: "choice",
+		table: 147
 	}]
 }

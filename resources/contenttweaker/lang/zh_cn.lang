@@ -1,8 +1,18 @@
+#PARSE_ESCAPES
+
 # Various fixes 表述修复
 modifier.excompressum:smashingii.desc=锤击压缩方块
 tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
 entity.twilightforest.harbinger_cube.name=先驱者立方体
+# --------------------------------------
+# Custom mechanics
+# --------------------------------------
+description.crt.reuse=§a§o(不会被消耗！)§r
+description.crt.consume=§6§o(会被消耗！)§r
 
+# --------------------------------------
+# CoT new content
+# --------------------------------------
 # itemGroup.other=ContentTweaker
 fluid.heavy_metal=熔融沉重金属
 fluid.cheese=奶酪
@@ -199,6 +209,9 @@ tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
 
 item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 
+# --------------------------------------
+# TConstruct new materials and traits
+# --------------------------------------
 e2ee.tconstruct.material.spectre.name=通灵
 e2ee.tconstruct.material.spectre.description=§b灵光到处现\n§r每个部件都可以给予玩家额外的"延伸"药水效果
 e2ee.tconstruct.material.fireproof.name=防火
@@ -304,13 +317,16 @@ e2ee.written_book.Creeper=苦力怕
 e2ee.written_book.Zombie=僵尸
 
 # Misc 杂项
+e2ee.do.charge=§f充电: §6%s§r
+e2ee.do.diverse.power=§f功率: §6%s§r
+e2ee.do.diverse.info=§2类型总数: §a%s§r\n§2中位数: §a%s§r\n§2奇点消耗的物品:\n%s
 e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
 e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
 e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r
 e2ee.chapter_complete=§l%s§r 已经完成了 §n%s§r 章节，用时 §l%s§r ！§r ```祝贺!```
 e2ee.player_achieved=§l%s§r 达成了 §n%s§r 成就，用时 §l%s§r ！§r
 e2ee.eu2_drum_error=§7你需要留有至少一个空的背包槽位
-e2ee.danknull_dock.must_have=§7你需要在副手持有一个 §f%s§7 才能把 %s§7 插入 %s§7。§f%s§7 会被永久消耗。
+e2ee.danknull_dock.must_have=§7你需要在副手持有一个 %s 才能把 %s 插入 %s。
 e2ee.restrict.vis_seeds=§7§e魔力种子§7只能被种在§nthe Void§7维度或是§n其他星球§7。种植这些种子需要氧气。
 e2ee.creature_resisted_morb=§8这个生物在反抗 §n§8%s 的捕捉。
 e2ee.creature_uncapturable=§7该生物不能被捕捉。 
@@ -340,6 +356,9 @@ item.positron_unit.name=正电子能量单元
 item.quantron.name=量子能量单元
 tile.industrialwires.hv_multiblock.marx.name=马克斯发生器
 
+# --------------------------------------
+# Tags tooltips (see tags.zs)
+# --------------------------------------
 tooltips.lang.tag.generator=§6#发电机
 tooltips.lang.tag.solar=§f#太阳能发电机
 tooltips.lang.tag.chunkloader=§9#区块加载器
@@ -373,7 +392,6 @@ tooltips.lang.reinforced_cell_frame=制作强化能量单元框架（满）需�
 tooltips.lang.obtained.fabricator_or_excavator=可以通过电弧高炉或者斗轮式挖掘机获得。
 tooltips.lang.obtained.mithril=可以通过§9元始魔力§r的世界内交互获得，也会生成在§1其他维度§r。
 tooltips.lang.removed.use_market=已禁用，请改用 Farming For Blockheads 的市场。
-tooltips.lang.ethylene_convert=怎么让高级发电机接受乙烯作为燃料呢？用回旋式气液转换机把乙烯转化为液体即可。
 tooltips.lang.redstone.need=§4需要通过红石信号启用
 tooltips.lang.removed.crash=§4已被禁用，因为其会导致服务端崩溃
 
@@ -396,7 +414,6 @@ tooltips.lang.et_miner_cont_any=需要方块：\n%s 无效果/速度/精度强�
 tooltips.lang.nano_cont_personal=需要方块：\n%s 无效果/任意对应有药水效果的强化部件\n%s 结构方块等级 %s\n%s 结构镶板
 tooltips.lang.lightning_cont=需要方块：\n%s 结构方块等级 %s\n%s 避雷针\n%s 绝缘避雷针
 tooltips.lang.et.or_above=或更高
-tooltips.lang.fuel.shift_for_list===按住 Shift 展开燃料列表==
 tooltips.lang.strike_with_lightning=通过雷击生命源质获得
 tooltips.lang.thaum.progress=研究进度
 tooltips.lang.thaum.auromancy=神秘学
@@ -476,6 +493,9 @@ tooltips.dim_stages.restricted=§c在§b空岛§c世界中，你无法前往任�
 tooltips.dim_stages.enter_skyblock=§e你进入了一个§b空岛§e世界。你将无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)。另外你现在会获得持续 3 小时的急迫 IV 效果。§r
 tooltips.dim_stages.remind_skyblock=§e你再次进入了一个§b空岛§e世界。谨记：你无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)§r。
 
+# --------------------------------------
+# Requious Fracto custom JEI categories
+# --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=高级蜜蜂分析仪
 requious.jei.recipe.alchemists_stone=炼金术士之石
 requious.jei.recipe.alienists_stone=异形之石
@@ -512,6 +532,7 @@ requious.jei.recipe.turbine=涡轮机
 requious.jei.recipe.typewriter=打字机
 requious.jei.recipe.witch_water=巫水转化
 
+# Actually Requious Fracto blocks
 tile.adv_bee_analyzer.name=高级蜜蜂分析仪
 tile.infinity_furnace.name=无尽熔炉
 tile.replicator.name=§5复制机
@@ -532,4 +553,83 @@ item.contenttweaker.blade_core.name=稀土涡轮机转子叶片芯
 item.contenttweaker.steel_mould.name=超轻不锈钢粗模
 item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模
 item.contenttweaker.sic_mould.name=超轻矩阵合金粗模
+
 # --------------------------------------
+# Enchantment Descriptions
+# --------------------------------------
+enchantment.advancedrocketry.spacebreathing.desc=为护甲添加氧气罐。
+#enchantment.astralsorcery.enchantment.as.nightvision.desc=赋予佩戴者夜视效果。
+#enchantment.astralsorcery.enchantment.as.smelting.desc=用此附魔开采的方块将获得熔炼后的掉落物，就像熔炉那样。
+enchantment.bibliocraft.bibliocraft.readingench.desc=显示 Bibliocraft 方块的信息。
+enchantment.cofhcore.holding.desc=增加特定物品的存储容量。
+enchantment.cofhcore.insight.desc=在使用物品时增加经验获取。
+enchantment.cofhcore.leech.desc=在杀死生物时恢复生命值。
+enchantment.cofhcore.multishot.desc=弓每次射击将额外发射箭矢，只消耗一支箭矢。
+enchantment.cofhcore.smashing.desc=采集的矿石将被粉碎成碎片，提高产量。
+enchantment.cofhcore.smelting.desc=采集的方块将自动熔炼，就像是一台熔炉。
+enchantment.cofhcore.soulbound.desc=物品在意外死亡后将保留在所有者身边。
+enchantment.cofhcore.vorpal.desc=随机执行强力攻击和斩首。
+#enchantment.cyclicmagic.enchantment.autosmelt.desc=这个工具会自动熔炼你挖掘的东西。
+#enchantment.cyclicmagic.enchantment.beheading.desc=这个魔咒让你有机会得到一个怪物或一个玩家的头。如果需要，来自其他Mod的生物可以被添加到配置文件中，并且需要一个玩家皮肤来作为头的皮肤。
+enchantment.cyclicmagic.enchantment.expboost.desc=增加你采矿或杀死生物所获得的经验。
+enchantment.cyclicmagic.enchantment.excavation.desc=挖掘所有连接着的相同方块（类似于连锁挖矿），对角线上的矿物无法连锁（请不要使用有这个附魔的工具挖掘石头等连接非常多的方块）。
+#enchantment.cyclicmagic.enchantment.launch.desc=附魔给靴子后，可以增加多段跳（二段跳等）的能力。每一级增加一段跳，但有冷却时间。潜行跳跃可以临时取消该能力。
+#enchantment.cyclicmagic.enchantment.lifeleech.desc=从你攻击或直接杀死的目标中汲取生命值。
+enchantment.cyclicmagic.enchantment.magnet.desc=使你拥有吸引地面掉落物和经验的能力。
+enchantment.cyclicmagic.enchantment.multishot.desc=可以一次从弓中射出更多的箭。
+#enchantment.cyclicmagic.enchantment.quickdraw.desc=使你拉满弓的速度提高三倍。
+enchantment.cyclicmagic.enchantment.reach.desc=增加你挖掘或放置方块的距离。
+enchantment.cyclicmagic.enchantment.venom.desc=使攻击到的目标中毒。
+#enchantment.cyclicmagic.enchantment.waterwalking.desc=当附魔在靴子上时会给予你水上行走的能力，潜行可以下沉。
+enchantment.draconicevolution.enchant_reaper.desc=怪物有机会掉落怪物灵魂。
+enchantment.endercore.xpboost.desc=增加经验掉落。
+enchantment.enderio.repellent.desc=将攻击中的怪物传送到远处。
+enchantment.enderio.shimmer.desc=使工具发光。
+enchantment.enderio.soulbound.desc=防止物品在死亡时丢失。
+enchantment.enderio.witherarrow.desc=击中时施加凋零效果。
+enchantment.enderio.witherweapon.desc=击中时施加凋零效果。
+enchantment.endreborn.ender_core.desc=在受到伤害时消耗末影珍珠传送玩家。
+enchantment.endreborn.ender_killer.desc=对末影人造成额外伤害。
+enchantment.endreborn.shulker_core.desc=命中时施加飘浮效果。
+enchantment.exnihilocreatio.sieve_efficiency.desc=提高筛子速度。
+enchantment.exnihilocreatio.sieve_fortune.desc=筛子制造更多物品。
+enchantment.exnihilocreatio.sieve_luck_of_the_sea.desc=筛子产生鱼。
+enchantment.extrautils2.xu.bladerang.desc=增加回旋镖的伤害。
+enchantment.extrautils2.xu.boomereaperang.desc=摧毁花朵。
+enchantment.extrautils2.xu.burnerang.desc=点燃敌怪。
+enchantment.extrautils2.xu.kaboomerang.desc=摧毁方块。
+enchantment.extrautils2.xu.zoomerang.desc=提高回旋镖速度。
+enchantment.minecraft.aqua_affinity.desc=加快水下挖掘速度。
+enchantment.minecraft.bane_of_arthropods.desc=对节肢生物造成额外伤害（蜘蛛、洞穴蜘蛛、蠹虫和末影螨）。
+enchantment.minecraft.binding_curse.desc=防止附魔物品从盔甲槽中移除。
+#enchantment.minecraft.blast_protection.desc=减少爆炸伤害，也会降低爆炸产生的(等级*15)%的击退效果。
+enchantment.minecraft.depth_strider.desc=增加在水下行走的速度。
+enchantment.minecraft.efficiency.desc=增加工具的挖掘速度。
+#enchantment.minecraft.feather_falling.desc=减少摔落伤害和来源于末影珍珠的传送伤害。
+enchantment.minecraft.fire_aspect.desc=使攻击目标着火。
+enchantment.minecraft.fire_protection.desc=减少火焰伤害，也会减少着火时(等级×15)%的燃烧时间。。
+enchantment.minecraft.flame.desc=点燃被弓箭攻击的目标。
+enchantment.minecraft.fortune.desc=增加方块的掉落（比如钻石和煤炭）。
+enchantment.minecraft.frost_walker.desc=在水上行走时会产生霜冰。
+enchantment.minecraft.infinity.desc=射箭不会消耗箭矢（但是要保证物品栏内至少有一根箭）。
+enchantment.minecraft.knockback.desc=增加击退的距离。
+enchantment.minecraft.looting.desc=生物能掉落更多物品。
+enchantment.minecraft.luck_of_the_sea.desc=降低掉到垃圾的几率。
+enchantment.minecraft.lure.desc=减少钓鱼时的等待时间。
+enchantment.minecraft.mending.desc=用经验来修补工具和护甲的耐久值。
+enchantment.minecraft.power.desc=增加弓箭造成的伤害。
+enchantment.minecraft.projectile_protection.desc=减少来源于弹射物的伤害（包括来源于箭、恶魂/烈焰人火球等的伤害）。
+enchantment.minecraft.protection.desc=减少大多数伤害。
+enchantment.minecraft.punch.desc=增加弓箭击退的距离。
+enchantment.minecraft.respiration.desc=延长水下呼吸时间，增强水下视觉效果。
+enchantment.minecraft.sharpness.desc=增加物品的伤害值。
+enchantment.minecraft.silk_touch.desc=被挖掘的方块会掉落它们的本体而不是应该掉落的物品。
+enchantment.minecraft.smite.desc=对亡灵生物造成额外伤害（僵尸、僵尸猪人、骷髅、凋灵骷髅和凋灵）。
+enchantment.minecraft.sweeping.desc=增加横扫攻击的伤害。
+enchantment.minecraft.thorns.desc=给予攻击者伤害。
+enchantment.minecraft.unbreaking.desc=减缓工具的耐久消耗速率。
+enchantment.minecraft.vanishing_curse.desc=如果你死亡时物品在你的库存中，附魔物品将会消失。
+enchantment.openblocks.explosive.desc=遭受攻击时会产生爆炸。
+enchantment.openblocks.flim_flam.desc=在附近随机引发负面效果。
+enchantment.openblocks.last_stand.desc=使用经验防止死亡。
+enchantment.randomthings.magnetic.desc=具有磁性附魔的工具，会吸收周围的掉落物进行物品栏中。

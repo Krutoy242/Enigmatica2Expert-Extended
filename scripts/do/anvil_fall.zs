@@ -1,3 +1,4 @@
+#modloaded requious
 #reloadable
 
 static entityMap as int[string] = {
@@ -47,16 +48,14 @@ static entityMap as int[string] = {
   vindication_illager: 43,
 } as int[string];
 
-
-
 // This function should be called once
 // warding `/ct reload`
 function postInit() as void {
   for entity_id, num in entityMap {
-    val id = "minecraft:"~entity_id;
+    val id = 'minecraft:' ~ entity_id;
     scripts.jei.crafting_hints.addInsOutCatl(
       [Soul(id), null, null, <minecraft:anvil>, <advancedrocketry:basalt>],
-      <openblocks:trophy:2>.withTag({entity_id: id})
+      <openblocks:trophy:2>.withTag({ entity_id: id })
     );
   }
 }

@@ -1,6 +1,6 @@
 {
-	x: 8.2d,
-	y: 2.2d,
+	x: 6.2d,
+	y: 2.8d,
 	text: [
 		"{q.bragging_rights.rainbow_generator_.desc}"
 	],

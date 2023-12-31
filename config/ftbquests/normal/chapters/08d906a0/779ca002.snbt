@@ -1,0 +1,26 @@
+{
+	x: 7.5d,
+	y: 0.0d,
+	dependencies: [
+		"147b1b5f"
+	],
+	optional: true,
+	tasks: [{
+		uid: "4c405a81",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:item_material 1 2"
+		}]
+	}],
+	rewards: [{
+		uid: "7969a2e1",
+		type: "item",
+		item: {
+			id: "storagedrawers:basicdrawers",
+			tag: {
+				material: "oak"
+			}
+		},
+		count: 2
+	}]
+}

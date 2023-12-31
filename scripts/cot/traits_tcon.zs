@@ -1,27 +1,24 @@
 #loader contenttweaker
+#modloaded ctintegration thaumcraft crafttweakerutils
 
+import crafttweaker.block.IBlock;
+import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
 import crafttweaker.player.IPlayer;
-import crafttweaker.entity.IEntityLivingBase;
+import crafttweaker.world.IBlockPos;
+import crafttweaker.world.IWorld;
 import mods.contenttweaker.conarm.ArmorTraitBuilder;
 import mods.contenttweaker.conarm.ExtendedMaterialBuilder;
-import mods.contenttweaker.tconstruct.TraitBuilder;
 import mods.contenttweaker.tconstruct.MaterialBuilder;
+import mods.contenttweaker.tconstruct.TraitBuilder;
+import mods.ctutils.utils.Math.ceil;
 import mods.ctutils.utils.Math.max;
 import mods.ctutils.utils.Math.min;
 import mods.ctutils.utils.Math.sqrt;
-import mods.ctutils.utils.Math.ceil;
-import crafttweaker.world.IWorld;
-import crafttweaker.world.IBlockPos;
-import crafttweaker.block.IBlock;
-import crafttweaker.data.IData;
-import crafttweaker.oredict.IOreDict;
-import crafttweaker.oredict.IOreDictEntry;
-import crafttweaker.entity.IEntityItem;
 
-import scripts.cot.utils_tcon_cot.getItemMatAmount;
 import scripts.cot.utils_tcon_cot.getArmorMatsAmount;
+import scripts.cot.utils_tcon_cot.getItemMatAmount;
 
 /*
 Some taken from: wilderness-minecraft
@@ -53,7 +50,7 @@ dark.color = 0x332C3B;
 dark.localizedName = 'Eternal Darkness';
 dark.localizedDescription = '§oJoin the dark side...\n§rYour tool loves the dark so much; it does more damage in the dark.';
 dark.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-  var light = attacker.world.getBrightness(attacker.getX(), attacker.getY(), attacker.getZ());
+  val light = attacker.world.getBrightness(attacker.getX(), attacker.getY(), attacker.getZ());
   return newDamage * (2.0f - light as float / 15.0f);
 };
 dark.register();
@@ -131,8 +128,7 @@ mentor.calcDamage = function (trait, tool, attacker, target, originalDamage, new
 };
 mentor.register();
 
-var
-  trait_armor = ArmorTraitBuilder.create('apprentice');
+var trait_armor = ArmorTraitBuilder.create('apprentice');
 trait_armor.color = 0x216E2A;
 trait_armor.localizedName = game.localize('e2ee.tconstruct.material.apprentice.name');
 trait_armor.localizedDescription = game.localize('e2ee.tconstruct.material.apprentice.description');
@@ -141,17 +137,17 @@ trait_armor.onHurt = function (trait, armor, victim, source, damage, newDamage, 
   if (victim instanceof IPlayer) {
     val player as IPlayer = victim;
     level = getArmorMatsAmount(player, 'essence_metal');
-    player.addExperience((ceil(newDamage as double / 10.0d) * level as double) as int);
+    player.addExperience((ceil(newDamage as double / 10.0) * level as double) as int);
   }
-  return newDamage + (newDamage as double * (0.1d * level as double)) as int;
+  return newDamage + (newDamage as double * (0.1 * level as double)) as int;
 };
 trait_armor.register();
 
 //
 // Fireproof Wood
 //
-var m = ExtendedMaterialBuilder.create('fireproof');
-m.color = 0xa64d00;
+val m = ExtendedMaterialBuilder.create('fireproof');
+m.color = 0xA64D00;
 m.craftable = true;
 m.castable = false;
 m.representativeItem = <item:avaritia:singularity:1>;
@@ -229,8 +225,7 @@ spectre_armor.register();
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
-var
-  mat = MaterialBuilder.create('spectre_string');
+var mat = MaterialBuilder.create('spectre_string');
 mat.color = 0x90A4AE;
 mat.craftable = true;
 mat.castable = false;
@@ -262,15 +257,14 @@ trait_armor.localizedName = game.localize('e2ee.tconstruct.material.alpha_fur.na
 trait_armor.localizedDescription = game.localize('e2ee.tconstruct.material.alpha_fur.description');
 trait_armor.onHurt = function (trait, armor, player, source, damage, newDamage, evt) {
   if (!isNull(source.getTrueSource()) && source.getTrueSource() instanceof IEntityLivingBase) {
-    var attacker as IEntityLivingBase = source.getTrueSource();
+    val attacker as IEntityLivingBase = source.getTrueSource();
     attacker.addPotionEffect(<potion:twilightforest:frosted>.makePotionEffect(60, 5));
   }
   return newDamage;
 };
 trait_armor.register();
 
-var
-  trait = TraitBuilder.create('alpha_fur');
+val trait = TraitBuilder.create('alpha_fur');
 trait.color = 0x2196F3;
 trait.localizedName = game.localize('e2ee.tconstruct.material.alpha_fur.name');
 trait.localizedDescription = game.localize('e2ee.tconstruct.material.alpha_fur.description');
@@ -372,9 +366,9 @@ visSiphon_Trait.localizedName = game.localize('e2ee.tconstruct.material.vis_siph
 visSiphon_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_siphon.description');
 visSiphon_Trait.maxLevel = 1;
 visSiphon_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
-  if (world.isRemote()) return;                    // world is remote
-  if (!owner instanceof IPlayer) return;           // no player
-  if (tool.damage == 0) return;                    // tool max durability
+  if (world.isRemote()) return; // world is remote
+  if (!owner instanceof IPlayer) return; // no player
+  if (tool.damage == 0) return; // tool max durability
   if (world.getVis(owner.position) < 1.0f) return; // no vis in aura
 
   tool.mutable().damageItem(-1, owner);
@@ -395,9 +389,9 @@ visSiphonArmor_Trait.localizedName = game.localize('e2ee.tconstruct.material.vis
 visSiphonArmor_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_siphon.description');
 visSiphonArmor_Trait.maxLevel = 1;
 visSiphonArmor_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
-  if (world.isRemote()) return;                    // world is remote
-  if (!owner instanceof IPlayer) return;           // no player
-  if (tool.damage == 0) return;                    // tool max durability
+  if (world.isRemote()) return; // world is remote
+  if (!owner instanceof IPlayer) return; // no player
+  if (tool.damage == 0) return; // tool max durability
   if (world.getVis(owner.position) < 1.0f) return; // no vis in aura
 
   tool.mutable().damageItem(-1, owner);
@@ -425,16 +419,16 @@ equilibrium_Trait.getMiningSpeed = function (trait, tool, event) {
 };
 // Bonus dmg multiplier depending on vis in aura
 equilibrium_Trait.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-  if (attacker.world.isRemote()) return newDamage;     // world is not remote
-  if (!attacker instanceof IPlayer) return newDamage;  // not player
+  if (attacker.world.isRemote()) return newDamage; // world is not remote
+  if (!attacker instanceof IPlayer) return newDamage; // not player
   // val mult = 1+min(3.0f,attacker.world.getVis(attacker.position)*0.01f) as float;
   return newDamage * ((1 + min(3.0f, attacker.world.getVis(attacker.position) * 0.01f)) as float);
 };
 // Relese vis on kill
 equilibrium_Trait.onHit = function (trait, tool, attacker, target, damage, isCritical) {
-  if (attacker.world.isRemote()) return;     // world is remote
-  if (!attacker instanceof IPlayer) return;  // not player
-  var player as IPlayer = attacker;
+  if (attacker.world.isRemote()) return; // world is remote
+  if (!attacker instanceof IPlayer) return; // not player
+  val player as IPlayer = attacker;
 
   if (target.health - damage < 0) player.world.addVis(player.position, (target.maxHealth / 2.0f) as float); // release vis
 };
@@ -524,47 +518,46 @@ function spin(player as IPlayer) as void {
 
 // Striping weared armor
 function stripArmor(target as IEntityLivingBase, warp as int, player as IPlayer) as void {
-  if(target.world.random.nextInt(2000)>warp) return;
+  if (target.world.random.nextInt(2000) > warp) return;
   var slots = [] as int[];
 
-  if(target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet())) slots +=0;
-  if(target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs())) slots +=1;
-  if(target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest())) slots +=2;
-  if(target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head())) slots +=3;
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet())) slots += 0;
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs())) slots += 1;
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest())) slots += 2;
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head())) slots += 3;
 
-  if(slots.length==0) return;
+  if (slots.length == 0) return;
   val slotIndex = slots[target.world.random.nextInt(slots.length)];
 
-  if(slotIndex==0){
+  if (slotIndex == 0) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet());
-    if(isNull(item)) return;
-    if(item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
+    if (isNull(item)) return;
+    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
     target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.feet(),null);
+    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.feet(), null);
   }
-  if(slotIndex==1){
+  if (slotIndex == 1) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs());
-    if(isNull(item)) return;
-    if(item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
+    if (isNull(item)) return;
+    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
     target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.legs(),null);
+    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.legs(), null);
   }
-  if(slotIndex==2){
+  if (slotIndex == 2) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest());
-    if(isNull(item)) return;
-    if(item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
+    if (isNull(item)) return;
+    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
     target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.chest(),null);
+    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.chest(), null);
   }
-  if(slotIndex==3){
+  if (slotIndex == 3) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head());
-    if(isNull(item)) return;
-    if(item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
+    if (isNull(item)) return;
+    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
     target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.head(),null);
+    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.head(), null);
   }
   player.sendPlaySoundPacket('thaumcraft:zap', 'ambient', target.position, 1.0f, 1.0f);
-
 }
 
 // Debuff function
@@ -631,7 +624,7 @@ function checkIfWeapon(tool as IItemStack) as bool {
 function speakRandom(player as IPlayer, world as IWorld) as void {
   val k = 'warp.sword.speak.random.';
   val r = world.random.nextInt(9);
-  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k+r));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k + r));
   player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
 }
 
@@ -651,7 +644,7 @@ possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
 function speakKill(player as IPlayer, world as IWorld) as void {
   val k = 'warp.sword.speak.kill.';
   val r = world.random.nextInt(8);
-  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k+r));
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k + r));
   if (player.isPlayerMP()) player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
 }
 
@@ -682,10 +675,10 @@ porous_Trait.localizedName = game.localize('e2ee.tconstruct.material.porous.name
 porous_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.porous.description');
 
 function porous(player as IPlayer) as void {
-  var world as IWorld = player.world;
-  val x = player.getX()>0 ? ((player.getX() as int) - 0.5f) : ((player.getX() as int) - 1.5f);
+  val world as IWorld = player.world;
+  val x = player.getX() > 0 ? ((player.getX() as int) - 0.5f) : ((player.getX() as int) - 1.5f);
   val y = player.getY() as float;
-  val z = player.getZ()>0 ? ((player.getZ() as int) - 0.5f) : ((player.getZ() as int) - 1.5f);
+  val z = player.getZ() > 0 ? ((player.getZ() as int) - 0.5f) : ((player.getZ() as int) - 1.5f);
   val porousStone = <item:thaumcraft:taint_rock>.asBlock();
   if ((y - 2) > 255 || (y - 2) < 3) return;
   val pos = crafttweaker.util.Position3f.create(x, y - 1, z) as IBlockPos;
@@ -748,25 +741,25 @@ eldritchRetribution_trait.onHurt = function (trait, armor, player, source, damag
       return newDamage;
     }
     if (i == 2) {
-      if(mobTrue.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand())){
+      if (mobTrue.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand())) {
         var item = mobTrue.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand());
-        if(!isNull(item)){
-        if(item.isDamageable) item = item.withDamage(mobTrue.world.random.nextInt(item.maxDamage));
+        if (!isNull(item)) {
+          if (item.isDamageable) item = item.withDamage(mobTrue.world.random.nextInt(item.maxDamage));
           mobTrue.world.spawnEntity(item.createEntityItem(mobTrue.world, mobTrue.position));
-          mobTrue.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(),null);
+          mobTrue.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), null);
         }
       }
-      if(mobTrue.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand())){
+      if (mobTrue.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand())) {
         var item = mobTrue.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand());
-        if(!isNull(item)){
-        if(item.isDamageable) item = item.withDamage(mobTrue.world.random.nextInt(item.maxDamage));
+        if (!isNull(item)) {
+          if (item.isDamageable) item = item.withDamage(mobTrue.world.random.nextInt(item.maxDamage));
           mobTrue.world.spawnEntity(item.createEntityItem(mobTrue.world, mobTrue.position));
-          mobTrue.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand(),null);
+          mobTrue.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand(), null);
         }
       }
       return newDamage;
     }
-    if (i == 3){
+    if (i == 3) {
       mobTrue.knockBack(player, 5.0f, player.x - mobTrue.x, player.z - mobTrue.z);
       return newDamage;
     }
@@ -918,7 +911,7 @@ researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   if (world.isRemote()) return;
   if (!owner instanceof IPlayer) return;
 
-  if (isNull(tool.tag)) return;         # all tinkers tools should have tags
+  if (isNull(tool.tag)) return; // all tinkers tools should have tags
   if (isNull(tool.tag.flux)) {
     tool.mutable().updateTag({ flux: 0 });
     return;
@@ -928,7 +921,6 @@ researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   if (world.getFlux(owner.position) <= 1.0f) return;
   world.drainFlux(owner.position, 1.0f);
   tool.mutable().updateTag({ flux: tool.tag.flux + 1 });
-  return;
 };
 
 /*
@@ -939,15 +931,15 @@ ____ ____ ____    ___  _  _ ____ _ ____ _ ____ ____
 */
 
 function checkTool(tool as IItemStack) as bool {
-    if(
+  if (
     !isNull(tool.tag)
     && !isNull(tool.tag.TinkerData)
     && !isNull(tool.tag.Traits)
     && !isNull(tool.tag.Traits.asList())
   ) {
     for trait in tool.tag.Traits.asList() {
-        if(trait != "researcher") continue;
-        return true;
+      if (trait != 'researcher') continue;
+      return true;
     }
   }
   return false;
@@ -972,61 +964,62 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
 
   if (!event.isPlayer) return; // no player
   // if(event.silkTouch) return; // silk touch
-  if(!event.player.thaumcraftKnowledge.isResearchComplete('ORE_PURIFIER')) return; //player don't have finished research
+  if (!event.player.thaumcraftKnowledge.isResearchComplete('ORE_PURIFIER')) return; // player don't have finished research
 
-  if(!checkTool(tool)) return;
+  if (!checkTool(tool)) return;
   val lvl = checkRefineEnchant(tool);
 
   var newDrops = [] as WeightedItemStack[];
   var dropChanged = false;
   for weightedItem in event.drops {
-    if(isNull(weightedItem)) continue;
+    if (isNull(weightedItem)) continue;
 
-    var oreName = "";
+    var oreName = '';
     var found = false;
 
     for ore in weightedItem.stack.ores { // checking if it's wanted ore
-      if (lvl == 0 && ore.name.startsWith("ore")) {
+      if (lvl == 0 && ore.name.startsWith('ore')) {
         oreName = ore.name.substring(3);
       }
-      
-      if (ore.name.startsWith("cluster")) {
+
+      if (ore.name.startsWith('cluster')) {
         oreName = ore.name.substring(7);
       }
-      if (! (oreDict has ("cluster" ~ oreName))) continue;
-      if (! (oreDict has ("shard" ~ oreName))) continue;
+      if (!(oreDict has ('cluster' ~ oreName))) continue;
+      if (!(oreDict has ('shard' ~ oreName))) continue;
       found = true;
       break;
     }
 
-    if (!found){ // not found ore, adding item as it is
-      if (!isNull(weightedItem)) newDrops += weightedItem; 
+    if (!found) { // not found ore, adding item as it is
+      if (!isNull(weightedItem)) newDrops += weightedItem;
       continue;
-    } 
-    
+    }
+
     dropChanged = true;
 
     if (lvl == 0) { // it's ore! add matching cluster/shard
-      val item = oreDict['cluster' ~oreName].firstItem;
-      newDrops += (!isNull(item) && event.player.world.getRandom().nextInt(2)==1) ? item % weightedItem.percent : weightedItem;
-    } 
-    else if (lvl ==1){
-      val item =  oreDict[(event.player.world.getRandom().nextInt(2)==0 ? 'cluster' : 'crystalShard') ~oreName].firstItem;
+      val item = oreDict['cluster' ~ oreName].firstItem;
+      newDrops += (!isNull(item) && event.player.world.getRandom().nextInt(2) == 1) ? item % weightedItem.percent : weightedItem;
+    }
+    else if (lvl == 1) {
+      val item = oreDict[(event.player.world.getRandom().nextInt(2) == 0 ? 'cluster' : 'crystalShard') ~ oreName].firstItem;
       newDrops += !isNull(item) ? item % weightedItem.percent : weightedItem;
     }
     else {
-      val item = oreDict['crystalShard' ~oreName].firstItem;
-      if (isNull(item)){
+      val item = oreDict['crystalShard' ~ oreName].firstItem;
+      if (isNull(item)) {
         newDrops += weightedItem;
-      } else{
+      }
+      else {
         newDrops += item % weightedItem.percent;
-        if (lvl >2) newDrops +=  item % ((lvl - 1) * 25);
+        if (lvl > 2) newDrops += item % ((lvl - 1) * 25);
       }
     }
   }
 
-  if(!dropChanged) return;
-event.drops = newDrops;
+  if (!dropChanged) return;
+  event.drops = newDrops;
 };
 researcherTrait.register();
 
@@ -1065,7 +1058,7 @@ function calcExpTotalForLevel(level as int) as int {
 }
 
 function calculateExpDrain(player as IPlayer, damage as float) as bool {
-  var exp as int = player.getTotalXP();
+  val exp as int = player.getTotalXP();
   val expRemove as int = (damage * 2.0f) as int;
   if (exp < expRemove) return false; // if player have enought exp
 

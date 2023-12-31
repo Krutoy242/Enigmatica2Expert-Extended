@@ -1,21 +1,20 @@
 #priority 950
 #modloaded forestry
 
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import mods.requious.AssemblyRecipe;
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
-var x = <assembly:forestry_farm>;
+val x = <assembly:forestry_farm>;
 x.setJEIItemSlot(0, 0, 'item_in');
-x.setJEIDurationSlot(1,0,"duration", scripts.jei.requious.getVisSlots(11,1));
+x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisSlots(11, 1));
 for i in 0 .. 11 {
-  x.addJEICatalyst(<forestry:ffarm:3>.withTag({FarmBlock: i}));
+  x.addJEICatalyst(<forestry:ffarm:3>.withTag({ FarmBlock: i }));
 }
 
 static fertilizers as IItemStack[] = [
-/*Inject_js(
+/* Inject_js(
 (()=>{
 let t = config('config/forestry/farm.cfg').fertilizers.items
   .map(l=>l.split(';'))
@@ -28,7 +27,7 @@ return t
   },`)
   .join('\n')
 })()
-)*/
+) */
   <thermalfoundation:fertilizer:2> * 7,
   <mysticalagriculture:mystical_fertilizer> * 8,
   <mysticalagriculture:fertilized_essence> * 13,
@@ -43,7 +42,7 @@ return t
 ];
 
 for input in fertilizers {
-  x.addJEIRecipe(AssemblyRecipe.create(function(container) {})
-    .requireItem("item_in", input)
+  x.addJEIRecipe(AssemblyRecipe.create(function (container) {})
+    .requireItem('item_in', input)
   );
 }

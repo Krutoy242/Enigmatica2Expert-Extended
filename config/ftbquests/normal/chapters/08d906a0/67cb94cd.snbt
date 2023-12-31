@@ -1,0 +1,22 @@
+{
+	x: 16.5d,
+	y: 1.5d,
+	dependencies: [
+		"057bd93c",
+		"59b8f417"
+	],
+	optional: true,
+	tasks: [{
+		uid: "93329eb9",
+		type: "item",
+		items: [{
+			item: "minecraft:iron_ore"
+		}]
+	}],
+	rewards: [{
+		uid: "412d7a1b",
+		type: "item",
+		item: "minecraft:iron_ore",
+		count: 8
+	}]
+}

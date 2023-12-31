@@ -1,0 +1,20 @@
+{
+	x: 21.0d,
+	y: -4.5d,
+	dependencies: [
+		"b8db8246"
+	],
+	optional: true,
+	tasks: [{
+		uid: "17c2f0ea",
+		type: "item",
+		items: [{
+			item: "harvestcraft:shippingbin"
+		}]
+	}],
+	rewards: [{
+		uid: "6cfd1ad4",
+		type: "item",
+		item: "harvestcraft:queenbeeitem"
+	}]
+}

@@ -1,0 +1,8 @@
+setTranslatedTitle("advancements.rats.root.title")
+setTranslatedDescription("advancements.rats.root.description")
+setIcon(<rats:ratglove_petals>)
+setFrameType("task")
+setShowToast(false)
+setAnnounceToChat(false)
+setBackground("rats:textures/blocks/cheese.png")
+addCriteria("location", "minecraft:location")

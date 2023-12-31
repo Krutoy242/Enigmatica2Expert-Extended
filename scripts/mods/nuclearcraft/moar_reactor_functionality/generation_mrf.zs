@@ -10,8 +10,9 @@ this code. Also, you may not sell this code.)
 */
 
 #loader contenttweaker
-import mods.contenttweaker.VanillaFactory;
+
 import mods.contenttweaker.Color;
+import mods.contenttweaker.VanillaFactory;
 
 /* -=-=-=-=-=-=-=-=- SC CO2 Declarations -=-=-=-=-=-=-=-=- */
 var f = VanillaFactory.createFluid('hot_carbon_dioxide', Color.fromHex('736F6F'));

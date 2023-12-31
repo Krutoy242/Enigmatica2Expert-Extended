@@ -1,0 +1,21 @@
+{
+	x: 22.5d,
+	y: 6.0d,
+	dependencies: [
+		"d37c34ce"
+	],
+	optional: true,
+	tasks: [{
+		uid: "2e1abcdf",
+		type: "item",
+		items: [{
+			item: "minecraft:quartz"
+		}]
+	}],
+	rewards: [{
+		uid: "22b5b331",
+		type: "item",
+		item: "minecraft:quartz_ore",
+		count: 8
+	}]
+}

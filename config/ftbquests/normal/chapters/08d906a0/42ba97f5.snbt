@@ -1,0 +1,21 @@
+{
+	x: 28.5d,
+	y: 6.0d,
+	dependencies: [
+		"fd187ed3"
+	],
+	optional: true,
+	tasks: [{
+		uid: "02200eb1",
+		type: "item",
+		items: [{
+			item: "endreborn:item_lormyte_crystal"
+		}],
+		count: 9L
+	}],
+	rewards: [{
+		uid: "ca2ee428",
+		type: "item",
+		item: "mctsmelteryio:upgrade 1 5"
+	}]
+}

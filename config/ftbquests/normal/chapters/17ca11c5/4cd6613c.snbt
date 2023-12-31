@@ -1,6 +1,6 @@
 {
-	x: 2.375d,
-	y: 2.125d,
+	x: 2.2d,
+	y: 2.3d,
 	text: [
 		"{q.bragging_rights.creative_sacrifici.desc}"
 	],

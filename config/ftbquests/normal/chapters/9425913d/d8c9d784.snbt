@@ -10,8 +10,13 @@
 		"{q.gates.gate_exploration.desc}"
 	],
 	dependencies: [
-		"4fc58528"
+		"857a6a1a",
+		"b1868c44",
+		"e90285ae",
+		"4fc58528",
+		"558597eb"
 	],
+	dependency_requirement: "one_completed",
 	tasks: [{
 		uid: "da8932af",
 		type: "item",

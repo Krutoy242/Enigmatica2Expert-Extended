@@ -1,0 +1,20 @@
+{
+	x: 21.0d,
+	y: 3.0d,
+	dependencies: [
+		"ffd734df"
+	],
+	optional: true,
+	tasks: [{
+		uid: "6fb1a54c",
+		type: "item",
+		items: [{
+			item: "minecraft:obsidian"
+		}]
+	}],
+	rewards: [{
+		uid: "36698b2c",
+		type: "item",
+		item: "minecraft:flint_and_steel"
+	}]
+}

@@ -1,29 +1,28 @@
-#priority 950
 #modloaded astralsorcery
+#priority 950
 
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
 import mods.requious.AssemblyRecipe;
-import scripts.jei.requious.add as addRecipe;
 
+import scripts.jei.requious.add as addRecipe;
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
 var x = <assembly:everflow_chalice>;
 x.addJEICatalyst(<astralsorcery:blockchalice>);
-x.setJEIDurationSlot(1,0,"duration", scripts.jei.requious.getVisGauge(0,6));
+x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisGauge(0, 6));
 x.setJEIFluidSlot(0, 0, 'input');
 x.setJEIFluidSlot(2, 0, 'input');
-scripts.jei.requious.addInsOuts(x, [], [[1,1], [0,2], [2,2]]);
+scripts.jei.requious.addInsOuts(x, [], [[1, 1], [0, 2], [2, 2]]);
 
 function add_everflow_chalice(input0 as ILiquidStack, input1 as ILiquidStack, out as IItemStack[]) {
-  <assembly:everflow_chalice>.addJEIRecipe(AssemblyRecipe.create(function(c) {
-    for i in 0 .. 3 { c.addItemOutput('output'~i, out[i]); }
+  <assembly:everflow_chalice>.addJEIRecipe(AssemblyRecipe.create(function (c) {
+    for i in 0 .. 3 { c.addItemOutput('output' ~ i, out[i]); }
   })
-  .requireFluid('input', input0)
-  .requireFluid('input', input1)
-  .requireDuration("duration", 10)
+    .requireFluid('input', input0)
+    .requireFluid('input', input1)
+    .requireDuration('duration', 10)
   );
 }
 
@@ -36,7 +35,7 @@ x.addJEICatalyst(<astralsorcery:blockchalice>);
 x.setJEIFluidSlot(0, 0, 'fluid_out');
 
 static neromantic_prime_fluids as ILiquidStack[] = [
-/*Inject_js(
+/* Inject_js(
 config('config/astralsorcery/fluid_rarities.cfg').data.data
 .slice(0, 9*5)
 .map(l=>l.split(';'))
@@ -46,7 +45,7 @@ config('config/astralsorcery/fluid_rarities.cfg').data.data
 ])
 .sort(([a], [b]) => b - a)
 .map(([,l])=>l)
-)*/
+) */
   <fluid:mana>              * 1500,
   <fluid:amber>             * 800,
   <fluid:xpjuice>           * 500,
@@ -60,8 +59,8 @@ config('config/astralsorcery/fluid_rarities.cfg').data.data
 ];
 
 for i, output in neromantic_prime_fluids {
-  x.addJEIRecipe(AssemblyRecipe.create(function(container) {
-    container.addFluidOutput("fluid_out", output);
+  x.addJEIRecipe(AssemblyRecipe.create(function (container) {
+    container.addFluidOutput('fluid_out', output);
   }));
 }
 
@@ -69,11 +68,11 @@ for i, output in neromantic_prime_fluids {
 // -----------------------------------------------------------------------
 x = <assembly:mineralis>;
 x.addJEICatalyst(<astralsorcery:blockritualpedestal>);
-x.addJEICatalyst(<astralsorcery:itemtunedcelestialcrystal>.withTag({astralsorcery: {constellationName: "astralsorcery.constellation.mineralis", crystalProperties: {collectiveCapability: 100, size: 900, fract: 0, purity: 100, sizeOverride: -1}}}));
-x.addJEICatalyst(<astralsorcery:itemtunedrockcrystal>.withTag({astralsorcery: {constellationName: "astralsorcery.constellation.mineralis", crystalProperties: {collectiveCapability: 100, size: 400, fract: 0, purity: 100, sizeOverride: -1}}}));
+x.addJEICatalyst(<astralsorcery:itemtunedcelestialcrystal>.withTag({ astralsorcery: { constellationName: 'astralsorcery.constellation.mineralis', crystalProperties: { collectiveCapability: 100, size: 900, fract: 0, purity: 100, sizeOverride: -1 } } }));
+x.addJEICatalyst(<astralsorcery:itemtunedrockcrystal>.withTag({ astralsorcery: { constellationName: 'astralsorcery.constellation.mineralis', crystalProperties: { collectiveCapability: 100, size: 400, fract: 0, purity: 100, sizeOverride: -1 } } }));
 
 val mineralisList = [
-/*Inject_js{
+/* Inject_js{
   const list = config('config/astralsorcery/mineralis_ritual.cfg').data.data
   .map(o=>((a,b)=>[a, parseInt(b)])(...o.split(';')))
   .filter(([od])=>isODExist(od))
@@ -82,7 +81,7 @@ val mineralisList = [
   return list.map(([od,w])=>`  ${
     $('ore', od.replace('oreCertusQuartz', 'oreChargedCertusQuartz'), 0, Math.max(1,(w/max*64)|0), null, '.firstItem')
   },`)
-}*/
+} */
   <ore:oreCoal>.firstItem * 64,
   <ore:oreTin>.firstItem * 18,
   <ore:oreLead>.firstItem * 12,
@@ -108,15 +107,14 @@ val mineralisList = [
 ] as IItemStack[];
 
 var k = 0;
-for _y in 0 .. (mineralisList.length / 9 + 1) as int {
+for _y in 0 .. mineralisList.length / 9 + 1 {
   for _x in 0 .. 9 {
-    x.setJEIItemSlot(_x, _y, 'output'~k);
+    x.setJEIItemSlot(_x, _y, 'output' ~ k);
     k += 1;
   }
 }
 
-addRecipe(x, {[] : mineralisList});
-
+addRecipe(x, { []: mineralisList });
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
@@ -132,7 +130,6 @@ addRecipe(x, {[] : mineralisList});
 // refraction_table.setJEIDurationSlot(1, 0, "duration", getVisSlots(1,7));
 // refraction_table.setJEIItemSlot(2, 0, "enchantment");
 // refraction_table.setJEIItemSlot(3, 0, "potion");
-
 
 // // Doesn't work because CT can't cast IData[] to IData
 // // function enchantedBook(enchantments as int[][]) as IItemStack {
@@ -156,16 +153,16 @@ addRecipe(x, {[] : mineralisList});
 //     return <minecraft:enchanted_book>.withTag({StoredEnchantments: enchantments[0].makeTag().ench});
 //   }
 //   else if (enchant_count == 2) {
-//     return <minecraft:enchanted_book>.withTag({StoredEnchantments: [enchantments[0].makeTag().ench[0], 
+//     return <minecraft:enchanted_book>.withTag({StoredEnchantments: [enchantments[0].makeTag().ench[0],
 //     enchantments[1].makeTag().ench[0]]});
 //   }
 //   else if (enchant_count == 3) {
-//     return <minecraft:enchanted_book>.withTag({StoredEnchantments: [enchantments[0].makeTag().ench[0], 
+//     return <minecraft:enchanted_book>.withTag({StoredEnchantments: [enchantments[0].makeTag().ench[0],
 //     enchantments[1].makeTag().ench[0], enchantments[2].makeTag().ench[0]]});
 //   }
 //   else if (enchant_count == 4) {
-//     return <minecraft:enchanted_book>.withTag({StoredEnchantments: [enchantments[0].makeTag().ench[0], 
-//     enchantments[1].makeTag().ench[0], enchantments[2].makeTag().ench[0], enchantments[3].makeTag().ench[0]]});    
+//     return <minecraft:enchanted_book>.withTag({StoredEnchantments: [enchantments[0].makeTag().ench[0],
+//     enchantments[1].makeTag().ench[0], enchantments[2].makeTag().ench[0], enchantments[3].makeTag().ench[0]]});
 //   }
 // }
 
@@ -189,21 +186,21 @@ addRecipe(x, {[] : mineralisList});
 // addRefractionRecipe("evorsio", [<enchantment:minecraft:efficiency> * 5], [<potion:minecraft:haste>.makePotionEffect(7200, 3)]);
 // addRefractionRecipe("lucerna", [<enchantment:astralsorcery:enchantment.as.nightvision> * 1], [<potion:minecraft:night_vision>.makePotionEffect(7200, 2)]);
 // addRefractionRecipe("mineralis", [<enchantment:minecraft:fortune> * 3], [<potion:minecraft:haste>.makePotionEffect(7200, 3)]);
-// addRefractionRecipe("horologium", [<enchantment:minecraft:fortune> * 6, <enchantment:minecraft:looting> * 6], 
+// addRefractionRecipe("horologium", [<enchantment:minecraft:fortune> * 6, <enchantment:minecraft:looting> * 6],
 // [<potion:minecraft:speed>.makePotionEffect(7200, 4), <potion:minecraft:haste>.makePotionEffect(7200, 8)]);
 // addRefractionRecipe("octans", [<enchantment:minecraft:respiration> * 4], [<potion:minecraft:water_breathing>.makePotionEffect(7200, 4)]);
 // addRefractionRecipe("bootes", [<enchantment:minecraft:silk_touch> * 1], [<potion:minecraft:saturation>.makePotionEffect(7200, 5)]);
-// addRefractionRecipe("fornax", [<enchantment:minecraft:fire_aspect> * 3, <enchantment:minecraft:flame> * 2, 
+// addRefractionRecipe("fornax", [<enchantment:minecraft:fire_aspect> * 3, <enchantment:minecraft:flame> * 2,
 // <enchantment:astralsorcery:enchantment.as.smelting> * 1], [<potion:minecraft:fire_resistance>.makePotionEffect(7200, 0)]);
-// addRefractionRecipe("pelotrio", [<enchantment:minecraft:infinity> * 1, <enchantment:minecraft:lure> * 6], 
+// addRefractionRecipe("pelotrio", [<enchantment:minecraft:infinity> * 1, <enchantment:minecraft:lure> * 6],
 // [<potion:minecraft:regeneration>.makePotionEffect(7200, 4), <potion:minecraft:absorption>.makePotionEffect(7200, 4)]);
-// addRefractionRecipe("gelu", [<enchantment:minecraft:frost_walker> * 2, <enchantment:minecraft:feather_falling> * 4, <enchantment:minecraft:unbreaking> * 4], 
+// addRefractionRecipe("gelu", [<enchantment:minecraft:frost_walker> * 2, <enchantment:minecraft:feather_falling> * 4, <enchantment:minecraft:unbreaking> * 4],
 // [<potion:minecraft:resistance>.makePotionEffect(7200, 2), <potion:minecraft:fire_resistance>.makePotionEffect(7200, 0), <potion:minecraft:slowness>.makePotionEffect(7200, 1)]);
-// addRefractionRecipe("ulteria", [<enchantment:minecraft:unbreaking> * 3, <enchantment:minecraft:fire_protection> * 6, 
-// <enchantment:minecraft:blast_protection> * 6, <enchantment:minecraft:projectile_protection> * 6], 
+// addRefractionRecipe("ulteria", [<enchantment:minecraft:unbreaking> * 3, <enchantment:minecraft:fire_protection> * 6,
+// <enchantment:minecraft:blast_protection> * 6, <enchantment:minecraft:projectile_protection> * 6],
 // [<potion:minecraft:absorption>.makePotionEffect(7200, 2), <potion:minecraft:regeneration>.makePotionEffect(7200, 1), <potion:minecraft:weakness>.makePotionEffect(7200, 2)]);
-// addRefractionRecipe("alcara", [<enchantment:minecraft:sweeping> * 7, <enchantment:minecraft:lure> * 5, <enchantment:minecraft:luck_of_the_sea> * 6], 
+// addRefractionRecipe("alcara", [<enchantment:minecraft:sweeping> * 7, <enchantment:minecraft:lure> * 5, <enchantment:minecraft:luck_of_the_sea> * 6],
 // [<potion:minecraft:luck>.makePotionEffect(7200, 4), <potion:minecraft:invisibility>.makePotionEffect(7200, 1),<potion:minecraft:hunger>.makePotionEffect(7200, 2)]);
-// addRefractionRecipe("vorux", [<enchantment:minecraft:smite> * 7, <enchantment:minecraft:bane_of_arthropods> * 7, 
-// <enchantment:minecraft:sharpness> * 4, <enchantment:minecraft:power> * 4], 
+// addRefractionRecipe("vorux", [<enchantment:minecraft:smite> * 7, <enchantment:minecraft:bane_of_arthropods> * 7,
+// <enchantment:minecraft:sharpness> * 4, <enchantment:minecraft:power> * 4],
 // [<potion:minecraft:strength>.makePotionEffect(7200, 3), <potion:minecraft:resistance>.makePotionEffect(7200, 1),<potion:minecraft:mining_fatigue>.makePotionEffect(7200, 3)]);

@@ -89,7 +89,8 @@
 			tag: {
 				Material: "endrod"
 			}
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "1d35651c",

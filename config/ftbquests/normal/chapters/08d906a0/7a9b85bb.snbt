@@ -1,0 +1,32 @@
+{
+	x: 13.5d,
+	y: -3.0d,
+	dependencies: [
+		"46d77fa0"
+	],
+	optional: true,
+	tasks: [{
+		uid: "799cba71",
+		type: "item",
+		items: [{
+			item: "forestry:ash"
+		}]
+	}],
+	rewards: [{
+		uid: "b0d4253e",
+		type: "item",
+		item: {
+			id: "storagedrawers:basicdrawers",
+			Damage: 1s,
+			tag: {
+				material: "oak"
+			}
+		}
+	},
+	{
+		uid: "11711f41",
+		type: "item",
+		item: "storagedrawers:upgrade_storage",
+		count: 2
+	}]
+}

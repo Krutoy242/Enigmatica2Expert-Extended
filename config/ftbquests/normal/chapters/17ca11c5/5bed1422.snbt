@@ -1,7 +1,7 @@
 {
 	title: "{q.bragging_rights.creative_fluids.name}",
-	x: 3.791666666666667d,
-	y: 7.541666666666668d,
+	x: 3.85d,
+	y: 7.583333333333334d,
 	text: [
 		"{q.bragging_rights.creative_fluids.desc}"
 	],
@@ -10,7 +10,7 @@
 		"b3f8d4d0",
 		"c38d4bfa"
 	],
-	size: 1.1666666666666667d,
+	size: 1.25d,
 	tasks: [{
 		uid: "4f624d71",
 		type: "item",

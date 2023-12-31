@@ -1,28 +1,27 @@
 #modloaded requious
-
 #priority 950
+
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
 import mods.requious.AssemblyRecipe;
-import scripts.jei.requious.add as addRecipe;
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
-var x = <assembly:liquid_interaction>;
+val x = <assembly:liquid_interaction>;
 x.addJEICatalyst(<minecraft:lava_bucket>);
-x.setJEIDurationSlot(1,0,"duration", scripts.jei.requious.getVisGauge(0,6));
-scripts.jei.requious.addInsOuts(x, [[3,0]], [[1,1]]);
+x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisGauge(0, 6));
+scripts.jei.requious.addInsOuts(x, [[3, 0]], [[1, 1]]);
 x.setJEIFluidSlot(0, 0, 'input');
 x.setJEIFluidSlot(2, 0, 'input');
 
 function interact(liquid0 as ILiquidStack, liquid1 as ILiquidStack, input0 as IIngredient, out as IItemStack) as void {
-  if(isNull(out)) return;
-  val rec = AssemblyRecipe.create(function(c) {
+  if (isNull(out)) return;
+  val rec = AssemblyRecipe.create(function (c) {
     c.addItemOutput('output0', out);
   }).requireFluid('input', liquid0 * 1000);
-  if(!isNull(liquid1)) rec.requireFluid('input', liquid1 * 1000);
-  if(!isNull(input0)) rec.requireItem('input0', input0);
+  if (!isNull(liquid1)) rec.requireFluid('input', liquid1 * 1000);
+  if (!isNull(input0)) rec.requireItem('input0', input0);
   <assembly:liquid_interaction>.addJEIRecipe(rec);
 }
 
@@ -64,8 +63,7 @@ interact(<fluid:petrotheum>, null, <minecraft:cobblestone:*>, <minecraft:gravel>
 interact(<fluid:petrotheum>, null, <minecraft:stonebrick:*>, <minecraft:gravel>);
 interact(<fluid:petrotheum>, null, <minecraft:mossy_cobblestone:*>, <minecraft:gravel>);
 
-
-/*Inject_js(
+/* Inject_js(
 _(loadJson("config/exnihilocreatio/WitchWaterWorldRegistry.json"))
 .map((t,liquid)=>Object.entries(t).map(([block,weight])=>
   `interact(<fluid:witchwater>, `+
@@ -74,7 +72,7 @@ _(loadJson("config/exnihilocreatio/WitchWaterWorldRegistry.json"))
 ))
 .flatten()
 .value()
-)*/
+) */
 interact(<fluid:witchwater>, <fluid:lava>, null, <minecraft:cobblestone>);
 interact(<fluid:witchwater>, <fluid:lava>, null, <minecraft:stone:5>);
 interact(<fluid:witchwater>, <fluid:lava>, null, <minecraft:stone:1>);

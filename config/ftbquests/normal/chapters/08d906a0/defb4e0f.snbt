@@ -1,0 +1,21 @@
+{
+	x: 4.5d,
+	y: -1.5d,
+	dependencies: [
+		"b5e950d9"
+	],
+	optional: true,
+	tasks: [{
+		uid: "7206d3f4",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:block_barrel0"
+		}]
+	}],
+	rewards: [{
+		uid: "5db1a99f",
+		type: "item",
+		item: "exnihilocreatio:block_barrel0",
+		count: 2
+	}]
+}

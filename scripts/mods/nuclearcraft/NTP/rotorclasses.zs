@@ -1,3 +1,4 @@
+#modloaded nuclearcraft
 #priority 2147483647
  
 #loader preinit nc_preinit crafttweaker
@@ -48,7 +49,7 @@
 	
 	
 	
-	zenConstructor(name as string,item1 as string,item2 as string,blade as string, efficiency as double expansion as double){
+	zenConstructor(name as string,item1 as string,item2 as string,blade as string, efficiency as double, expansion as double){
 					this.name = name;	
 					this.item1 = item1;
 					this.item2 = item2;

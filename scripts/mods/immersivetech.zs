@@ -2,29 +2,29 @@
 
 import mods.industrialforegoing.FluidDictionary;
 
-# [Cloud Seed] harder (also BoP Hotspring water as extra)
+// [Cloud Seed] harder (also BoP Hotspring water as extra)
 mods.enderio.Vat.removeRecipe(<liquid:cloud_seed>);
 mods.immersivetechnology.CoolingTower.addRecipe(<liquid:cloud_seed> * 500, <liquid:hot_spring_water> * 10, <liquid:ice> * 200, <liquid:ice> * 200, <liquid:ic2hot_water> * 1000, 20);
 
-# Rplace wrong salt
+// Rplace wrong salt
 utils.rh(<immersivetech:material>);
 mods.immersivetechnology.Distiller.removeRecipe(<liquid:water>);
 mods.immersivetechnology.Distiller.addRecipe(<liquid:distwater> * 500, <liquid:water> * 1000, <mekanism:salt>, 2000, 20, 1.0f);
 
-# Cheaper because only for decoration
-# [Reinforced Coke Brick]*8 from [Steel Item Casing][+1]
-recipes.removeByRecipeName("immersivetech:stone_decoration/reinforced_cokebrick");
-craft.shapeless(<immersivetech:stone_decoration> * 8, "CCCC⌂CCCC", {
-  "C": <immersiveengineering:stone_decoration>, # Coke Brick
-  "⌂": <ic2:casing:5>,                          # Steel Item Casing
+// Cheaper because only for decoration
+// [Reinforced Coke Brick]*8 from [Steel Item Casing][+1]
+recipes.removeByRecipeName('immersivetech:stone_decoration/reinforced_cokebrick');
+craft.shapeless(<immersivetech:stone_decoration> * 8, 'CCCC⌂CCCC', {
+  'C': <immersiveengineering:stone_decoration>, // Coke Brick
+  '⌂': <ic2:casing:5>,                          // Steel Item Casing
 });
 
 // Oredict molten salt
 mods.immersivetechnology.MeltingCrucible.removeRecipe(<qmd:chemical_dust:3>);
 mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:moltensalt> * 400, <mekanism:saltblock>, 460, 2);
 
-#------------------------------------------------------------------------
-# Harder Electolyze
+// ------------------------------------------------------------------------
+// Harder Electolyze
 mods.mekanism.separator.removeRecipe(<liquid:water>);
 mods.mekanism.separator.addRecipe(<liquid:water> * 10, 800, <gas:hydrogen> * 2, <gas:oxygen>);
 mods.immersivetechnology.ElectrolyticCrucibleBattery.addRecipe(
@@ -32,31 +32,31 @@ mods.immersivetechnology.ElectrolyticCrucibleBattery.addRecipe(
   null, <fluid:water> * 500, 50000, 2
 );
 
-#------------------------------------------------------------------------
-# Harder Chlorine and Sodium
+// ------------------------------------------------------------------------
+// Harder Chlorine and Sodium
 mods.mekanism.separator.removeRecipe(<liquid:brine>);
 mods.immersivetechnology.ElectrolyticCrucibleBattery.addRecipe(
   <liquid:liquidchlorine> * 375, <liquid:liquidsodium> * 375, null,
   null, <liquid:brine> * 3750, 6000, 1
 );
 
-#------------------------------------------------------------------------
-# Restore Chlorine craft (since default recipes disabled)
+// ------------------------------------------------------------------------
+// Restore Chlorine craft (since default recipes disabled)
 mods.immersivetechnology.ElectrolyticCrucibleBattery.addRecipe(
   <liquid:chlorine> * 1000, <liquid:moltensodium> * 1000, null,
   null, <liquid:moltensalt> * 1000, 6000, 5
 );
 
-FluidDictionary.add("brine", "moltensalt", 6.6);
-FluidDictionary.add("moltensalt", "brine", 0.15);
+FluidDictionary.add('brine', 'moltensalt', 6.6);
+FluidDictionary.add('moltensalt', 'brine', 0.15);
 
-FluidDictionary.add("liquidchlorine", "chlorine", 6.6);
-FluidDictionary.add("chlorine", "liquidchlorine", 0.15);
-FluidDictionary.add("liquidsodium", "moltensodium", 6.6);
-FluidDictionary.add("moltensodium", "liquidsodium", 0.15);
+FluidDictionary.add('liquidchlorine', 'chlorine', 6.6);
+FluidDictionary.add('chlorine', 'liquidchlorine', 0.15);
+FluidDictionary.add('liquidsodium', 'moltensodium', 6.6);
+FluidDictionary.add('moltensodium', 'liquidsodium', 0.15);
 
-#------------------------------------------------------------------------
-# Harder Diamond Melting
+// ------------------------------------------------------------------------
+// Harder Diamond Melting
 mods.tconstruct.Melting.removeRecipe(<liquid:diamond>);
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<liquid:diamond> *   74);
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<liquid:diamond> *  666);
@@ -68,26 +68,26 @@ mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:diamond> *  666, <ore
 mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:diamond> *  666, <ore:dustDiamond>, 9600, 40);
 mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:diamond> * 5994, <ore:blockDiamond>, 96000, 400);
 
-#------------------------------------------------------------------------
-# Steam compat
-# Immersive Tech has about x10-x20 times less steam usage.
+// ------------------------------------------------------------------------
+// Steam compat
+// Immersive Tech has about x10-x20 times less steam usage.
 
-# --------------
-# Buff boiler output x50
-# --------------
+// --------------
+// Buff boiler output x50
+// --------------
 
-//mods.immersivetechnology.Boiler.removeFuel(ILiquidStack input);
-mods.immersivetechnology.Boiler.removeFuel(<liquid:biodiesel>); # 10
-mods.immersivetechnology.Boiler.removeFuel(<liquid:diesel>);    # 50
-mods.immersivetechnology.Boiler.removeFuel(<liquid:gasoline>);  # 7
+// mods.immersivetechnology.Boiler.removeFuel(ILiquidStack input);
+mods.immersivetechnology.Boiler.removeFuel(<liquid:biodiesel>); // 10
+mods.immersivetechnology.Boiler.removeFuel(<liquid:diesel>);    // 50
+mods.immersivetechnology.Boiler.removeFuel(<liquid:gasoline>);  // 7
 
 // mods.immersivetechnology.Boiler.addFuel(ILiquidStack input, int time, double heat);
-# Default heat is 0.25
+// Default heat is 0.25
 mods.immersivetechnology.Boiler.addFuel(<liquid:biodiesel> * 10, 1, 100);
 mods.immersivetechnology.Boiler.addFuel(<liquid:diesel>    * 50, 1, 100);
 mods.immersivetechnology.Boiler.addFuel(<liquid:gasoline>  *  7, 1, 100);
 
-//mods.immersivetechnology.Boiler.removeRecipe(ILiquidStack input);
+// mods.immersivetechnology.Boiler.removeRecipe(ILiquidStack input);
 mods.immersivetechnology.Boiler.removeRecipe(<liquid:water>);
 mods.immersivetechnology.Boiler.removeRecipe(<liquid:distwater>);
 
@@ -95,10 +95,10 @@ mods.immersivetechnology.Boiler.removeRecipe(<liquid:distwater>);
 mods.immersivetechnology.Boiler.addRecipe(<liquid:steam> * 2500, <liquid:water>     * 1000, 10);
 mods.immersivetechnology.Boiler.addRecipe(<liquid:steam> * 4000, <liquid:distwater> * 1000, 10);
 
-# --------------
-# Buff solar x5
-# --------------
-//mods.immersivetechnology.SolarTower.removeRecipe(ILiquidStack inputFluid);
+// --------------
+// Buff solar x5
+// --------------
+// mods.immersivetechnology.SolarTower.removeRecipe(ILiquidStack inputFluid);
 mods.immersivetechnology.SolarTower.removeRecipe(<liquid:water>);
 mods.immersivetechnology.SolarTower.removeRecipe(<liquid:distwater>);
 
@@ -106,53 +106,53 @@ mods.immersivetechnology.SolarTower.removeRecipe(<liquid:distwater>);
 mods.immersivetechnology.SolarTower.addRecipe(<liquid:steam> * 2500, <liquid:water>     * 1000, 20);
 mods.immersivetechnology.SolarTower.addRecipe(<liquid:steam> * 4000, <liquid:distwater> * 1000, 20);
 
-# --------------
-# Steam turbine use more steam x5
-# --------------
-//mods.immersivetechnology.SteamTurbine.removeFuel(ILiquidStack input);
+// --------------
+// Steam turbine use more steam x5
+// --------------
+// mods.immersivetechnology.SteamTurbine.removeFuel(ILiquidStack input);
 mods.immersivetechnology.SteamTurbine.removeFuel(<liquid:steam>);
 
 // mods.immersivetechnology.SteamTurbine.addFuel(ILiquidStack output, ILiquidStack input, int time);
 mods.immersivetechnology.SteamTurbine.addFuel(<liquid:exhauststeam> * 500, <liquid:steam> * 500, 1);
 
-# --------------
-# High pressure steam use NC HPS extremely efficient
-# --------------
+// --------------
+// High pressure steam use NC HPS extremely efficient
+// --------------
 mods.immersivetechnology.HighPressureSteamTurbine.removeFuel(<liquid:highpressuresteam>);
 mods.immersivetechnology.HighPressureSteamTurbine.addFuel(<liquid:exhaust_steam> * 40, <liquid:high_pressure_steam> * 40, 1);
 
-# --------------
-# Cooling Tower x6
-# --------------
+// --------------
+// Cooling Tower x6
+// --------------
 // mods.immersivetechnology.CoolingTower.removeRecipe(ILiquidStack inputFluid1, ILiquidStack inputFluid2);
 mods.immersivetechnology.CoolingTower.removeRecipe(<liquid:hot_spring_water>, <liquid:water>);
 
 // mods.immersivetechnology.CoolingTower.addRecipe(ILiquidStack outputFluid1, ILiquidStack outputFluid2, ILiquidStack outputFluid3, ILiquidStack inputFluid1, ILiquidStack inputFluid2, int time);
 mods.immersivetechnology.CoolingTower.addRecipe(<liquid:water> * 5850, <liquid:water> * 5850, <liquid:water> * 5850, <liquid:hot_spring_water> * 8100, <liquid:water> * 9900, 1);
 
-# --------------
-# Radiator buff x6
-# --------------
+// --------------
+// Radiator buff x6
+// --------------
 mods.immersivetechnology.Radiator.removeRecipe(<liquid:exhauststeam>);
 mods.immersivetechnology.Radiator.addRecipe(<liquid:exhauststeam> * 500, <liquid:steam> * 250, 13);
 
-# --------------
-# Heat Exchanger x5
-# --------------
+// --------------
+// Heat Exchanger x5
+// --------------
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:water>       , <liquid:fluegas>);
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:distwater>   , <liquid:fluegas>);
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:water>       , <liquid:superheatedmoltensodium>);
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:distwater>   , <liquid:superheatedmoltensodium>);
 mods.immersivetechnology.HeatExchanger.removeRecipe(<liquid:exhauststeam>, <liquid:water>);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2250, null                            , <liquid:fluegas>                 * 1000, <liquid:water>        * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2500, null                            , <liquid:fluegas>                 * 1000, <liquid:distwater>    * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2250, <liquid:moltensodium>     *   80, <liquid:superheatedmoltensodium> *   80, <liquid:water>        * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>     * 2500, <liquid:moltensodium>     *   80, <liquid:superheatedmoltensodium> *   80, <liquid:distwater>    * 1250, 64, 4);
-mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:distwater> * 1250, <liquid:hot_spring_water> * 4500, <liquid:water>                   * 4500, <liquid:exhauststeam> * 2500, 32, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>               * 2250, null                            , <liquid:fluegas>                 * 1000, <liquid:water>        * 1250, 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:steam>               * 2500, null                            , <liquid:fluegas>                 * 1000, <liquid:distwater>    * 1250, 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:high_pressure_steam> * 1600, <liquid:moltensodium>     * 80  , <liquid:superheatedmoltensodium> * 80  , <liquid:water>        * 400 , 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:high_pressure_steam> * 1600, <liquid:moltensodium>     * 20  , <liquid:superheatedmoltensodium> * 20  , <liquid:distwater>    * 400 , 64, 4);
+mods.immersivetechnology.HeatExchanger.addRecipe(<liquid:distwater>           * 1250, <liquid:hot_spring_water> * 4500, <liquid:water>                   * 4500, <liquid:exhauststeam> * 2500, 32, 4);
 
-# --------------
-# Gas Turbine x5
-# --------------
+// --------------
+// Gas Turbine x5
+// --------------
 mods.immersivetechnology.GasTurbine.removeFuel(<liquid:biodiesel>);
 mods.immersivetechnology.GasTurbine.removeFuel(<liquid:gasoline>);
 mods.immersivetechnology.GasTurbine.removeFuel(<liquid:diesel>);
@@ -160,7 +160,7 @@ mods.immersivetechnology.GasTurbine.addFuel(<liquid:fluegas> * 5000, <liquid:bio
 mods.immersivetechnology.GasTurbine.addFuel(<liquid:fluegas> * 5000, <liquid:gasoline>  * 800, 10);
 mods.immersivetechnology.GasTurbine.addFuel(<liquid:fluegas> * 5000, <liquid:diesel>    * 114, 10);
 
-#------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
-# Alt recipe for Pahoehoe
+// Alt recipe for Pahoehoe
 mods.immersivetechnology.Radiator.addRecipe(<liquid:ic2pahoehoe_lava> * 1, <liquid:lava> * 1000, 5);

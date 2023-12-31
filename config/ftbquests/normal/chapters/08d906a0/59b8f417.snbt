@@ -1,0 +1,21 @@
+{
+	x: 15.0d,
+	y: 3.0d,
+	dependencies: [
+		"18bf0711"
+	],
+	optional: true,
+	tasks: [{
+		uid: "e8f8d124",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:item_ore_iron"
+		}],
+		count: 3L
+	}],
+	rewards: [{
+		uid: "04214422",
+		type: "item",
+		item: "tinkersaddons:modifier_item 1 1"
+	}]
+}

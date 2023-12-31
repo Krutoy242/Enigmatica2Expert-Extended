@@ -1,9 +1,5 @@
 #modloaded kirosblocks
 
-import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
-
-
 val hasRecipes = [
   'colored_blinking_light_block',
   'colored_blinking_light_fast_block',
@@ -40,8 +36,8 @@ val unique = scripts.lib.unique.Unique([
   <rustic:clay_wall>,
 ]);
 
-for i, item in loadedMods["kirosblocks"].items {
+for i, item in loadedMods['kirosblocks'].items {
   if (hasRecipes has item.definition.id.substring(12)) continue;
 
-  recipes.addShaped("kirosblocks #"~i, item * 4, unique.next());
+  recipes.addShaped('kirosblocks #' ~ i, item * 4, unique.next());
 }

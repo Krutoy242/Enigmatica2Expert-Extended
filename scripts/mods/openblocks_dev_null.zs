@@ -4,14 +4,14 @@ Add recipes and mechanic of dev/null/ that never ends
 
 */
 
-import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
-import crafttweaker.data.IData;
-
 #modloaded openblocks
 
-events.onPlayerInteractBlock(function(e as crafttweaker.event.PlayerInteractBlockEvent) {
-  if(
+import crafttweaker.data.IData;
+import crafttweaker.item.IIngredient;
+import crafttweaker.item.IItemStack;
+
+events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlockEvent) {
+  if (
     isNull(e.world)
     || isNull(e.player)
     || isNull(e.item)
@@ -30,33 +30,33 @@ events.onPlayerInteractBlock(function(e as crafttweaker.event.PlayerInteractBloc
   // Check if this dev/null/ provide infinite exact this block to prevent replacing
   val infinite = IItemStack.fromData(e.item.tag.infinite);
   val current = IItemStack.fromData(e.item.tag.inventory.Items[0]);
-  if(isNull(infinite) || isNull(current) || !(infinite has current || current has infinite)) return;
+  if (isNull(infinite) || isNull(current) || !(infinite has current || current has infinite)) return;
 
   e.item.mutable().updateTag({
     inventory: e.item.tag.inventory + {
-      Items: [e.item.tag.inventory.Items[0] + {Count: e.item.tag.inventory.Items[0].Count.asInt() + 1}]
-    }
+      Items: [e.item.tag.inventory.Items[0] + { Count: e.item.tag.inventory.Items[0].Count.asInt() + 1 }],
+    },
   });
 });
 
 function addInfinityDevNull(item as IItemStack, ingredient as IIngredient) as void {
   recipes.addShapeless(
-    'dev_null '~item.definition.id.replaceAll(":", "_")~'_'~item.damage,
+    'dev_null ' ~ item.definition.id.replaceAll(':', '_') ~ '_' ~ item.damage,
     <openblocks:dev_null>.withTag({
-      infinite: item as IData,
-      ench: [{}],
+      infinite        : item as IData,
+      ench            : [{}],
       enchantmentColor: 4408131,
-      Unbreakable: 1 as byte,
-      inventory: {size: 1, Items: [{
-        Slot: 0 as byte, id: item.definition.id, Count: 64, Damage: item.damage as short
-      }
-    ]}}),
+      Unbreakable     : 1 as byte,
+      inventory       : { size : 1, Items: [{
+        Slot: 0 as byte, id: item.definition.id, Count: 64, Damage: item.damage as short,
+      },
+      ] } }),
     [
       <openblocks:dev_null>.withTag({
-        inventory: {size: 1, Items: [{
-          Slot: 0 as byte, id: item.definition.id, Count: 64, Damage: item.damage as short
-        }
-      ]}}),
+        inventory: { size : 1, Items: [{
+          Slot: 0 as byte, id: item.definition.id, Count: 64, Damage: item.damage as short,
+        },
+        ] } }),
       ingredient,
     ]
   );

@@ -1,0 +1,24 @@
+{
+	icon: "minecraft:sapling",
+	x: 0.0d,
+	y: 0.0d,
+	dependencies: [
+		"61020c3a"
+	],
+	hide: true,
+	size: 2.0d,
+	optional: true,
+	tasks: [{
+		uid: "e7420b70",
+		type: "item",
+		items: [{
+			item: "minecraft:log"
+		}]
+	}],
+	rewards: [{
+		uid: "0ae28b3f",
+		type: "item",
+		item: "minecraft:sapling",
+		count: 9
+	}]
+}

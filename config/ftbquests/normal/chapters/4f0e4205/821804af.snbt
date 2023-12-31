@@ -1,0 +1,48 @@
+{
+	icon: {
+		id: "ftbquests:lootcrate",
+		tag: {
+			type: "uncommon"
+		}
+	},
+	disable_toast: true,
+	x: 9.9d,
+	y: 0.75d,
+	shape: "square",
+	text: [
+		"{q.twilight_forest.moonworm_queen.desc}"
+	],
+	can_repeat: true,
+	dependencies: [
+		"ea1707c5"
+	],
+	size: 0.5d,
+	optional: true,
+	tasks: [{
+		uid: "9e5927c0",
+		type: "item",
+		disable_toast: true,
+		items: [{
+			item: "twilightforest:moonworm_queen"
+		},
+		{
+			item: "twilightforest:trophy_pedestal"
+		},
+		{
+			item: "twilightforest:ice_sword"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "70fb0978",
+		type: "item",
+		auto: "no_toast",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "uncommon"
+			}
+		},
+		random_bonus: 2
+	}]
+}

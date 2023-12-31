@@ -1,9 +1,5 @@
 #modloaded lootr
 
-import mods.dropt.Dropt;
-import crafttweaker.item.IItemStack;
-
-
 // events.onBlockHarvestDrops(function(e as crafttweaker.event.onBlockHarvestDrops){
 //   if(e.world.remote) return;
 //   if(e.block.definition.id != 'lootr:lootr_chest') return;

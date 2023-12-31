@@ -13,7 +13,13 @@
     {
       "item": "draconicevolution:mob_soul{EntityName:\"minecraft:skeleton\"}",
       "title": "Equip Generation",
-      "text": "Different mobs have different armor types and different TCon materials.$(br)$(l)Zombies/$ have static chance to spawn with any avaliable material.$(br2)Roll used $(l)qubic/$ function, so $(l)Paper/$ would spawn $(l)~20%/$ times and $(l)Infinity Metal/$ $(l)~0.2%/$ times.",
+      "text": "Different mobs have different armor types and different TCon materials.$(br)$(l)Zombies/$ have static chance to spawn with any avaliable material.$(br2)Roll used $(l)qubic/$ function, so $(l)Paper/$ would spawn $(l)~20%/$ times and $(l)Gelid Metal/$ $(l)~0.3%/$ times.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie_pigman\"}",
+      "title": "Equip Generation",
+      "text": "Mobs will never spawn with this TCon materials:$(br)$(li)Paper$(br)$(li)Chocolate$(br)$(li)Superium$(br)$(li)Supremium$(br)$(li)Spectre$(br)$(li)Draconic$(br)$(li)Neutronium$(br)$(li)Aethium$(br)$(li)Chaotic$(br)$(li)Infinity",
       "type": "spotlight"
     },
     {

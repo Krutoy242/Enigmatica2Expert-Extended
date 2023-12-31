@@ -1,0 +1,22 @@
+{
+	x: 27.0d,
+	y: 3.0d,
+	hide_dependency_lines: true,
+	dependencies: [
+		"67cb94cd"
+	],
+	optional: true,
+	tasks: [{
+		uid: "de28cd3d",
+		type: "item",
+		items: [{
+			item: "randomthings:igniter"
+		}]
+	}],
+	rewards: [{
+		uid: "07a5e4ed",
+		type: "item",
+		item: "randomthings:igniter",
+		count: 2
+	}]
+}

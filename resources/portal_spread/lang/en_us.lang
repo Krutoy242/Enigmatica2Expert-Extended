@@ -1,0 +1,21 @@
+#PARSE_ESCAPES
+# Language files for Portal Spread custom CraftTweaker script
+
+# JEI tab
+requious.jei.recipe.portal_spread=Portal Spread
+
+# Main mechanics
+portal_spread.created=§7The corrupted energy from the portal will slowly spread to §6%s§7 blocks around, unless %s §7are placed in the corners.\n§8(Touch the portal to feel its power.)
+portal_spread.broken=§7With the nether portal broken, no more corrupted energy is spreading.
+portal_spread.info=§7The portal emits §3energy waves§7, converting nearby blocks.\n§7■ Waves are emitted §6%s§7 time(s) per §6%s§7 second(s).\n§7■ Each wave searches up to §6%s§7 blocks until conversion.\n§7■ The portal has a reach of up to §6%s§7 blocks in radius.
+portal_spread.idle=§7This portal halted and can\'t spread its energy.
+
+# Modifier 0
+portal_spread.0_add=§7You feel the portal energy becoming §3weaker§7.
+portal_spread.0_red=§7You feel the portal energy becoming §6stronger§7.
+portal_spread.0_max=§7Portal completely stopped spreading.
+
+# Modifier 1
+portal_spread.1_add=§7You feel the portal energy becoming §6stronger§7.
+portal_spread.1_red=§7You feel the portal energy becoming §3weaker§7.
+portal_spread.1_max=§7Portal reached maximum spreading speed.

@@ -1,18 +1,19 @@
 /**
  * @file Create and store recipes for do.zs/portal_spread
- * 
+ *
  * @author Krutoy242
  * @link https://github.com/Krutoy242
  */
 
+#ignoreBracketErrors
+#modloaded zenutils
 #priority 2000
 #reloadable
 
-import crafttweaker.block.IBlock;
 import crafttweaker.block.IBlockState;
-import crafttweaker.block.IBlockStateMatcher;
-import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
+
+import scripts.do.portal_spread.message.log;
 
 /*
 ██╗   ██╗ █████╗ ██████╗ ██╗ █████╗ ██████╗ ██╗     ███████╗███████╗
@@ -23,194 +24,260 @@ import crafttweaker.oredict.IOreDictEntry;
   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
 */
 
-// Recipes for exact inputState => outputState
-static stateRecipes as IBlockState[][IBlockState][int][int]
-               = {} as IBlockState[][IBlockState][int][int];
+zenClass Spread {
+	zenConstructor() {}
 
-// Block numerical IDs that can be converted (completely or only some of their states)
-static transformableBlockNumIds as bool[int][int][int]
-                           = {} as bool[int][int][int];
+  // Recipes for exact inputState => outputState
+  val stateRecipes as IBlockState[][IBlockState][int][int] = {};
 
-// Block numerical IDs that would be converted no matter of state
-static wildcardedNumIds as bool[int][int][int]
-                   = {} as bool[int][int][int];
+  // Block numerical IDs that can be converted (completely or only some of their states)
+  val transformableBlockNumIds as bool[int][int][int] = {};
 
-// Dimensions that copy its recipes from other dimensions
-static dimFallbacks as int[int] = {} as int[int];
+  // Block numerical IDs that would be converted no matter of state
+  val wildcardedNumIds as bool[int][int][int] = {};
 
-// Same as above but flipped - list of all dimensions that depends on this one
-static dimDependents as int[][int] = {} as int[][int];
+  // Dimensions that copy its recipes from other dimensions
+  val dimFallbacks as int[int] = {};
 
-// Set of dimensions that have recipes
-static dimHasRecipes as bool[int] = {} as bool[int];
+  // Same as above but flipped - list of all dimensions that depends on this one
+  val dimDependents as int[][int] = {};
 
-static _air as int = <blockstate:minecraft:air>.block.definition.numericalId;
-static _obs as int = <blockstate:minecraft:obsidian>.block.definition.numericalId;
-static _prt as int = <blockstate:minecraft:portal>.block.definition.numericalId;
+  // Set of dimensions that have recipes
+  val dimHasRecipes as bool[int] = {};
 
-// Blocks that can't be converted
-static blacklistedBlockNumIds as bool[int][int][int] = {
-  0: {
-    -1: { [_air]: true, [_obs]: true, [_prt]: true },
-  },
-} as bool[int][int][int];
+  val _air as int = <blockstate:minecraft:air>.block.definition.numericalId;
+  val _obs as int = <blockstate:minecraft:obsidian>.block.definition.numericalId;
+  val _prt as int = <blockstate:minecraft:portal>.block.definition.numericalId;
 
-static initialized as bool = false;
+  // Blocks that can't be converted
+  val blacklistedBlockNumIds as bool[int][int][int] = {
+    0: {
+      -1: { [_air]: true, [_obs]: true, [_prt]: true },
+    },
+  };
 
-// Get recipes and initialize if needed
-function getRecipes(dimFrom as int, dimTo as int) as IBlockState[][IBlockState] {
-  if(!initialized) {
+  var initialized as bool = false;
+
+  // Get recipes and initialize if needed
+  function getRecipes(dimFrom as int, dimTo as int) as IBlockState[][IBlockState] {
+    if (!initialized) init();
+
+    if (isNull(stateRecipes[dimFrom])) return null;
+    return stateRecipes[dimFrom][dimTo];
+  }
+
+  // Get one of cached lists for faster lookup
+  function getNumIds(listName as string, dimFrom as int, dimTo as int) as bool[int] {
+    if (!initialized) init();
+
+    val list = listName == 'transformable'
+      ? transformableBlockNumIds
+      : listName == 'blacklisted'
+        ? blacklistedBlockNumIds
+        : listName == 'wildcarded'
+          ? wildcardedNumIds
+          : null;
+
+    if (isNull(list)) logger.logWarning('§5[portal_spread]§8 trying to get unexisting block list: ' ~ listName);
+
+    if (isNull(list[dimFrom])) return null;
+    return list[dimFrom][dimTo];
+  }
+
+  function haveBlocks(blocksTo as IBlockState[]) as bool {
+    if (isNull(blocksTo)) return false;
+    for blockTo in blocksTo {
+      if (!isNull(blockTo)) return true;
+    }
+    return false;
+  }
+
+  /*
+  ██████╗ ██╗   ██╗██████╗ ██╗     ██╗ ██████╗
+  ██╔══██╗██║   ██║██╔══██╗██║     ██║██╔════╝
+  ██████╔╝██║   ██║██████╔╝██║     ██║██║
+  ██╔═══╝ ██║   ██║██╔══██╗██║     ██║██║
+  ██║     ╚██████╔╝██████╔╝███████╗██║╚██████╗
+  ╚═╝      ╚═════╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝
+
+  ███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
+  ██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+  █████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
+  ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
+  ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
+  ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+  */
+
+  /**
+  * Copy recipes from one dim to another
+  * For example:
+  * ```
+  * // All recipes in dim 0 would be available in dim 3
+  * setDimensionFallback(3, 0);
+  * ```
+  */
+  function setDimensionFallback(copyDim as int, baseDim as int) as void {
+    dimFallbacks[copyDim] = baseDim;
+    dimHasRecipes[copyDim] = dimHasRecipes[baseDim];
+    if (isNull(dimDependents[baseDim])) dimDependents[baseDim] = [] as int[];
+    dimDependents[baseDim] = dimDependents[baseDim] + copyDim;
+  }
+
+  ////////////////////////////////////////////////////////////
+  // Helper functions
+  ////////////////////////////////////////////////////////////
+
+  // Remove all transformable blocks from blacklist
+  function init() as void {
     initialized = true;
-    init();
-  }
+    for dimFromId, dimFrom in transformableBlockNumIds {
+      if (isNull(blacklistedBlockNumIds[dimFromId])) continue;
 
-  if (isNull(stateRecipes[dimFrom])) return null;
-  return stateRecipes[dimFrom][dimTo];
-}
+      for dimToId, dimTo in dimFrom {
+        if (isNull(blacklistedBlockNumIds[dimFromId][dimToId])) continue;
 
-/*
-██████╗ ██╗   ██╗██████╗ ██╗     ██╗ ██████╗
-██╔══██╗██║   ██║██╔══██╗██║     ██║██╔════╝
-██████╔╝██║   ██║██████╔╝██║     ██║██║     
-██╔═══╝ ██║   ██║██╔══██╗██║     ██║██║     
-██║     ╚██████╔╝██████╔╝███████╗██║╚██████╗
-╚═╝      ╚═════╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝
-
-███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
-██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
-█████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
-██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
-██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
-╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
-*/
-
-/**
- * Set conversion of one specific state to another ones
- * 
- * Use <blockstate:minecraft:air> in blocksTo to remove block
- * 
- */
-function setState(dimFrom as int, dimTo as int, blockFrom as IBlockState, blocksTo as IBlockState[]) as void {
-  if(isNull(blockFrom)) return;
-
-  // Update stateRecipes maps
-  if(isNull(stateRecipes[dimFrom])) stateRecipes[dimFrom] = {} as IBlockState[][IBlockState][int];
-  if(isNull(stateRecipes[dimFrom][dimTo])) stateRecipes[dimFrom][dimTo] = {} as IBlockState[][IBlockState];
-
-  // Update fast lookup maps
-  if(isNull(transformableBlockNumIds[dimFrom])) transformableBlockNumIds[dimFrom] = {} as bool[int][int];
-  if(isNull(transformableBlockNumIds[dimFrom][dimTo])) transformableBlockNumIds[dimFrom][dimTo] = {} as bool[int];
-  transformableBlockNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
-
-  stateRecipes[dimFrom][dimTo][blockFrom] = blocksTo;
-  
-  // Update this dim and all dependent dims
-  dimHasRecipes[dimFrom] = true;
-  if(!isNull(dimDependents[dimFrom])) {
-    for i, dep in dimDependents[dimFrom] {
-      dimHasRecipes[dep] = true;
-    }
-  }
-
-  // Update untransformable blocks
-  for blockTo in blocksTo {
-    if(isNull(blockTo)) continue;
-    if(isNull(blacklistedBlockNumIds[dimFrom])) blacklistedBlockNumIds[dimFrom] = {} as bool[int][int];
-    if(isNull(blacklistedBlockNumIds[dimFrom][dimTo])) blacklistedBlockNumIds[dimFrom][dimTo] = {} as bool[int];
-    blacklistedBlockNumIds[dimFrom][dimTo][blockTo.block.definition.numericalId] = true;
-  }
-}
-
-/**
- * Set conversion of one specific states to another ones
- */
-function setStates(dimFrom as int, dimTo as int, blocksFrom as IBlockState[], blocksTo as IBlockState[]) as void {
-  for blockFrom in blocksFrom {
-    setState(dimFrom, dimTo, blockFrom, blocksTo);
-  }
-}
-
-/**
- * Set conversion of one any states of blocks to another ones
- */
-function setBlocks(dimFrom as int, dimTo as int, blocksFrom as IBlockState[], blocksTo as IBlockState[]) as void {
-  for blockFrom in blocksFrom {
-    if(isNull(wildcardedNumIds[dimFrom])) wildcardedNumIds[dimFrom] = {} as bool[int][int];
-    if(isNull(wildcardedNumIds[dimFrom][dimTo])) wildcardedNumIds[dimFrom][dimTo] = {} as bool[int];
-    wildcardedNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
-
-    setState(dimFrom, dimTo, blockFrom.block.definition.defaultState, blocksTo);
-  }
-}
-
-/**
- * Set conversion of one any states of oredict to another ones
- */
-function setOreBlocks(dimFrom as int, dimTo as int, oredict as IOreDictEntry, blocksTo as IBlockState[]) as void {
-  for item in oredict.items {
-    setBlocks(dimFrom, dimTo, [item.asBlock().definition.defaultState], blocksTo);
-  }
-}
-
-/**
- * Copy recipes from one dim to another
- * For example:
- * ```
- * // All recipes in dim 0 would be available in dim 3
- * setDimensionFallback(3, 0);
- * ```
- */
-function setDimensionFallback(copyDim as int, baseDim as int) as void {
-  dimFallbacks[copyDim] = baseDim;
-  dimHasRecipes[copyDim] = dimHasRecipes[baseDim];
-  if(isNull(dimDependents[baseDim])) dimDependents[baseDim] = [] as int[];
-  dimDependents[baseDim] = dimDependents[baseDim] + copyDim;
-}
-
-////////////////////////////////////////////////////////////
-// Helper functions
-////////////////////////////////////////////////////////////
-
-// Remove all transformable blocks from blacklist
-function init() as void {
-  for dimFromId, dimFrom in transformableBlockNumIds {
-    if(isNull(blacklistedBlockNumIds[dimFromId])) continue;
-
-    for dimToId, dimTo in dimFrom {
-      if(isNull(blacklistedBlockNumIds[dimFromId][dimToId])) continue;
-
-      blacklistedBlockNumIds[dimFromId][dimToId] = mapAExceptB(
-        blacklistedBlockNumIds[dimFromId][dimToId], dimTo
-      );
-    }
-  }
-}
-
-// Remove keys of B from A
-function mapAExceptB(a as bool[int], b as bool[int]) as bool[int] {
-  val newOne = {} as bool[int];
-
-  for idA, _ in a {
-    var isOutputInInput = false;
-    for idB, _ in b {
-      if (idB == idA) {
-        isOutputInInput = true;
-        break;
+        blacklistedBlockNumIds[dimFromId][dimToId] = mapAExceptB(
+          blacklistedBlockNumIds[dimFromId][dimToId], dimTo
+        );
       }
     }
-    if (!isOutputInInput) newOne[idA] = true;
   }
-  
-  return newOne;
+
+  // Remove keys of B from A
+  function mapAExceptB(a as bool[int], b as bool[int]) as bool[int] {
+    val newOne = {} as bool[int];
+
+    for idA, _ in a {
+      var isOutputInInput = false;
+      for idB, _ in b {
+        if (idB == idA) {
+          isOutputInInput = true;
+          break;
+        }
+      }
+      if (!isOutputInInput) newOne[idA] = true;
+    }
+
+    return newOne;
+  }
+
+  /*
+  ██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗██████╗
+  ██╔══██╗██║   ██║██║██║     ██╔══██╗██╔════╝██╔══██╗
+  ██████╔╝██║   ██║██║██║     ██║  ██║█████╗  ██████╔╝
+  ██╔══██╗██║   ██║██║██║     ██║  ██║██╔══╝  ██╔══██╗
+  ██████╔╝╚██████╔╝██║███████╗██████╔╝███████╗██║  ██║
+  ╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+  */
+
+  /**
+   * Set conversion of one any states of blocks to another ones
+   */
+  function setAllNether(                        blocksFrom as IBlockState[], blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread { return setAll(0, -1, blocksFrom, blocksTo, fallback); }
+  function setAll(dimFrom as int, dimTo as int, blocksFrom as IBlockState[], blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread {
+    log('Creating new WILDCARDED recipe for ' ~ blocksFrom.length ~ ' new block states inputs and ' ~ blocksTo.length ~ ' outputs.');
+    for blockFrom in blocksFrom {
+      if (isNull(blockFrom)) continue;
+      if (isNull(wildcardedNumIds[dimFrom])) wildcardedNumIds[dimFrom] = {} as bool[int][int];
+      if (isNull(wildcardedNumIds[dimFrom][dimTo])) wildcardedNumIds[dimFrom][dimTo] = {} as bool[int];
+      wildcardedNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
+
+      set(dimFrom, dimTo, blockFrom.block.definition.defaultState, blocksTo, fallback);
+    }
+    return this;
+  }
+
+  /**
+   * Set conversion of one specific states to another ones
+   */
+  function setNether(                        blocksFrom as IBlockState[], blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread { return set(0, -1, blocksFrom, blocksTo, fallback); }
+  function set(dimFrom as int, dimTo as int, blocksFrom as IBlockState[], blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread {
+    log('Creating new recipe for ' ~ blocksFrom.length ~ ' new block states inputs, and ' ~ blocksTo.length ~ ' outputs.');
+    for blockFrom in blocksFrom {
+      set(dimFrom, dimTo, blockFrom, blocksTo, fallback);
+    }
+    return this;
+  }
+
+  /**
+   * Set conversion of one any states of oredict to another ones
+   */
+  function setAllNether(                        oredict as IOreDictEntry, blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread { return setAll(0, -1, oredict, blocksTo, fallback); }
+  function setAll(dimFrom as int, dimTo as int, oredict as IOreDictEntry, blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread {
+    log('Creating new OREDICT recipe for ' ~ oredict.commandString ~ ' inputs and ' ~ blocksTo.length ~ ' outputs.');
+    for item in oredict.items {
+      setAll(dimFrom, dimTo, [item.asBlock().definition.defaultState], blocksTo, fallback);
+    }
+    return this;
+  }
+
+  /**
+   * Set conversion of one specific state to another ones
+   *
+   * Use <blockstate:minecraft:air> in blocksTo to remove block
+   *
+   */
+  function setNether(                        blockFrom as IBlockState, blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread { return set(0, -1, blockFrom, blocksTo, fallback); }
+  function set(dimFrom as int, dimTo as int, blockFrom as IBlockState, blocksTo as IBlockState[], fallback as IBlockState[] = null) as Spread {
+    // Input block state doesn't exist
+    if (isNull(blockFrom)) return this;
+
+    log('  Creating new recipe for ' ~ blockFrom.commandString ~ ' input and ' ~ blocksTo.length ~ ' outputs.');
+
+    // Determine if we need to use fallback
+    var blocksToActual = blocksTo;
+    if (!haveBlocks(blocksTo)) {
+      if (isNull(fallback) || fallback.length == 0) {
+        logger.logWarning(
+          '§5[portal_spread]§8 recipe from dim §3' ~ dimFrom
+          ~ ' §8to dim §3' ~ dimTo ~ ' §8have input §2' ~ blockFrom.commandString
+          ~ ' §8but doesn\'t have any output.'
+          ~ ' §8This is probably recipe registering problem, try to add proper fallback outputs.'
+        );
+        return this;
+      }
+      blocksToActual = fallback;
+    }
+
+    // Update stateRecipes maps
+    if (isNull(stateRecipes[dimFrom])) stateRecipes[dimFrom] = {} as IBlockState[][IBlockState][int];
+    if (isNull(stateRecipes[dimFrom][dimTo])) stateRecipes[dimFrom][dimTo] = {} as IBlockState[][IBlockState];
+
+    // Update fast lookup maps
+    if (isNull(transformableBlockNumIds[dimFrom])) transformableBlockNumIds[dimFrom] = {} as bool[int][int];
+    if (isNull(transformableBlockNumIds[dimFrom][dimTo])) transformableBlockNumIds[dimFrom][dimTo] = {} as bool[int];
+    transformableBlockNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
+
+    stateRecipes[dimFrom][dimTo][blockFrom] = blocksToActual;
+
+    // Update this dim and all dependent dims
+    dimHasRecipes[dimFrom] = true;
+    if (!isNull(dimDependents[dimFrom])) {
+      for i, dep in dimDependents[dimFrom] {
+        dimHasRecipes[dep] = true;
+      }
+    }
+
+    // Update untransformable blocks
+    for blockTo in blocksToActual {
+      if (isNull(blockTo)) continue;
+      if (isNull(blacklistedBlockNumIds[dimFrom])) blacklistedBlockNumIds[dimFrom] = {} as bool[int][int];
+      if (isNull(blacklistedBlockNumIds[dimFrom][dimTo])) blacklistedBlockNumIds[dimFrom][dimTo] = {} as bool[int];
+      blacklistedBlockNumIds[dimFrom][dimTo][blockTo.block.definition.numericalId] = true;
+    }
+    return this;
+  }
 }
+
+static spread as Spread = Spread();
 
 /*
 ██████╗ ███████╗███████╗ █████╗ ██╗   ██╗██╗  ████████╗
 ██╔══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██║  ╚══██╔══╝
-██║  ██║█████╗  █████╗  ███████║██║   ██║██║     ██║   
-██║  ██║██╔══╝  ██╔══╝  ██╔══██║██║   ██║██║     ██║   
-██████╔╝███████╗██║     ██║  ██║╚██████╔╝███████╗██║   
-╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝   
+██║  ██║█████╗  █████╗  ███████║██║   ██║██║     ██║
+██║  ██║██╔══╝  ██╔══╝  ██╔══██║██║   ██║██║     ██║
+██████╔╝███████╗██║     ██║  ██║╚██████╔╝███████╗██║
+╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝
 
 ██████╗ ███████╗ ██████╗██╗██████╗ ███████╗███████╗
 ██╔══██╗██╔════╝██╔════╝██║██╔══██╗██╔════╝██╔════╝
@@ -220,7 +287,7 @@ function mapAExceptB(a as bool[int], b as bool[int]) as bool[int] {
 ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝     ╚══════╝╚══════╝
 */
 
-val terrainBlocks = [
+val TERRAIN = [
   <blockstate:minecraft:netherrack>,
   <blockstate:minecraft:netherrack>,
   <blockstate:minecraft:netherrack>,
@@ -228,19 +295,18 @@ val terrainBlocks = [
   <blockstate:netherendingores:block_nether_netherfish>,
 ] as IBlockState[];
 
-setBlocks(0, -1, [
+spread
+.setAllNether([
   <blockstate:minecraft:grass>,
   <blockstate:minecraft:dirt>,
   <blockstate:minecraft:farmland>,
   <blockstate:biomesoplenty:grass>,
   <blockstate:biomesoplenty:dirt>,
-], terrainBlocks);
-
-setStates(0, -1, [
+], TERRAIN)
+.setNether([
   <blockstate:minecraft:stone:variant=stone>,
-], terrainBlocks);
-
-setStates(0, -1, [
+], TERRAIN)
+.setNether([
   <blockstate:minecraft:stone:variant=granite>,
   <blockstate:minecraft:stone:variant=smooth_granite>,
   <blockstate:minecraft:stone:variant=diorite>,
@@ -255,16 +321,16 @@ setStates(0, -1, [
   <blockstate:minecraft:quartz_ore>,
   <blockstate:minecraft:quartz_ore>,
   <blockstate:minecraft:lava>,
-]);
-
-setBlocks(0, -1, [
+])
+.setAllNether([
   <blockstate:minecraft:tallgrass>,
   <blockstate:biomesoplenty:plant_0>,
+  <blockstate:minecraft:vine>,
+  <blockstate:minecraft:wooden_door>,
 ], [
   <blockstate:minecraft:air>,
-]);
-
-setBlocks(0, -1, [
+])
+.setAllNether([
   <blockstate:minecraft:yellow_flower>,
   <blockstate:minecraft:red_flower>,
   <blockstate:biomesoplenty:flower_0>,
@@ -272,9 +338,8 @@ setBlocks(0, -1, [
   <blockstate:botania:flower>,
 ], [
   <blockstate:minecraft:fire>,
-]);
-
-setStates(0, -1, [
+])
+.setNether([
   <blockstate:minecraft:coal_ore>,
   <blockstate:thermalfoundation:ore:type=copper>,
   <blockstate:thermalfoundation:ore:type=tin>,
@@ -282,9 +347,12 @@ setStates(0, -1, [
   <blockstate:thermalfoundation:ore:type=aluminum>,
 ], [
   <blockstate:minecraft:quartz_ore>,
-]);
-
-setBlocks(0, -1, [
+])
+.setAllNether([
+  <blockstate:minecraft:mossy_cobblestone>,
+  <blockstate:biomesoplenty:hard_ice>,
+], [<blockstate:minecraft:magma>])
+.setAllNether([
   <blockstate:minecraft:stone_brick_stairs>,
   <blockstate:minecraft:oak_stairs>,
   <blockstate:minecraft:spruce_stairs>,
@@ -292,243 +360,110 @@ setBlocks(0, -1, [
   <blockstate:minecraft:jungle_stairs>,
   <blockstate:minecraft:acacia_stairs>,
   <blockstate:minecraft:dark_oak_stairs>,
-], [<blockstate:minecraft:nether_brick_stairs>]);
-setOreBlocks(0, -1, <ore:sand>, [<blockstate:minecraft:soul_sand>]);
-setStates(0, -1, [<blockstate:minecraft:sea_lantern>], [<blockstate:minecraft:glowstone>]);
-setStates(0, -1, [<blockstate:minecraft:mossy_cobblestone>], [<blockstate:minecraft:magma>]);
-setBlocks(0, -1, [<blockstate:minecraft:vine>], [<blockstate:minecraft:air>]);
-setBlocks(0, -1, [<blockstate:minecraft:wooden_door>], [<blockstate:minecraft:air>]);
-setBlocks(0, -1, [<blockstate:minecraft:ice>], [<blockstate:minecraft:obsidian>]);
-setBlocks(0, -1, [
+], [<blockstate:minecraft:nether_brick_stairs>])
+.setAllNether(<ore:sand>, [<blockstate:minecraft:soul_sand>])
+.setNether([<blockstate:minecraft:sea_lantern>], [<blockstate:minecraft:glowstone>])
+.setAllNether([<blockstate:minecraft:ice>], [<blockstate:minecraft:obsidian>])
+.setAllNether([
   <blockstate:minecraft:brick_block>,
   <blockstate:minecraft:double_wooden_slab>,
-], [<blockstate:minecraft:nether_brick>]);
-setStates(0, -1, [<blockstate:minecraft:diamond_block>], [<blockstate:minecraft:gold_block>]);
-setStates(0, -1, [<blockstate:minecraft:melon_block>], [<blockstate:minecraft:nether_wart_block>]);
-setStates(0, -1, [
+], [<blockstate:minecraft:nether_brick>])
+.setNether([<blockstate:minecraft:diamond_block>], [<blockstate:minecraft:gold_block>])
+.setNether([<blockstate:minecraft:melon_block>], [<blockstate:minecraft:nether_wart_block>])
+.setNether([
   <blockstate:minecraft:slime>,
 ], [
   <blockstate:minecraft:bone_block:axis=x>,
   <blockstate:minecraft:bone_block:axis=x>,
   <blockstate:minecraft:bone_block:axis=z>,
   <blockstate:minecraft:bone_block:axis=y>,
-]);
-
-setBlocks(0, -1, [<blockstate:floralchemy:hedge>], [<blockstate:twilightforest:thorns>]);
-setBlocks(0, -1, [<blockstate:minecraft:wooden_slab>], [<blockstate:minecraft:stone_slab:variant=nether_brick>]);
-setStates(0, -1, [
+])
+.setAllNether([<blockstate:minecraft:wooden_slab>], [<blockstate:minecraft:stone_slab:variant=nether_brick>])
+.setNether([
   <blockstate:minecraft:stone_slab:half=bottom,variant=stone_brick>,
   <blockstate:minecraft:stone_slab:half=bottom,variant=stone>,
-], [<blockstate:minecraft:stone_slab:half=bottom,variant=nether_brick>]);
-setStates(0, -1, [
+], [<blockstate:minecraft:stone_slab:half=bottom,variant=nether_brick>])
+.setNether([
   <blockstate:minecraft:stone_slab:half=top,variant=stone_brick>,
-  <blockstate:minecraft:stone_slab:half=top,variant=stone>
-], [<blockstate:minecraft:stone_slab:half=top,variant=nether_brick>]);
-setStates(0, -1, [], [<blockstate:minecraft:stone_slab:half=bottom,variant=nether_brick>]);
+  <blockstate:minecraft:stone_slab:half=top,variant=stone>,
+], [
+  <blockstate:minecraft:stone_slab:half=top,variant=nether_brick>
+])
+.setAllNether([<blockstate:minecraft:pumpkin>], [<blockstate:minecraft:lit_pumpkin>])
+;
 
 ////////////////////////////////////////////////////////////
 // Modded Recipes
 ////////////////////////////////////////////////////////////
-if(!isNull(loadedMods['biomesoplenty'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:water>], [<blockstate:biomesoplenty:blood>]);
+val AIR       = [<blockstate:minecraft:air>] as IBlockState[];
+val GLOWSTONE = [<blockstate:minecraft:glowstone>] as IBlockState[];
+val QUARTZ    = [<blockstate:minecraft:quartz_ore>] as IBlockState[];
+val CONCRETE  = [<blockstate:minecraft:concrete_powder:color=black>] as IBlockState[];
+val BRICK     = [<blockstate:minecraft:nether_brick>] as IBlockState[];
+val SOULSAND  = [<blockstate:minecraft:soul_sand>] as IBlockState[];
+val STAIRS    = [<blockstate:minecraft:nether_brick_stairs>] as IBlockState[];
 
-  for item in <ore:treeLeaves>.items {
-    setBlocks(0, -1, [item.asBlock().definition.defaultState], [<blockstate:biomesoplenty:ash_block>]);
-  }
-  setBlocks(0, -1, [
-    <blockstate:appliedenergistics2:sky_stone_block>,
-    <blockstate:minecraft:prismarine>,
-    <blockstate:minecraft:piston>,
-  ], [
-    <blockstate:biomesoplenty:hive:variant=hive>,
-    <blockstate:biomesoplenty:hive:variant=honeycomb>,
-    <blockstate:biomesoplenty:hive:variant=filled_honeycomb>,
-  ]);
-  setBlocks(0, -1, [<blockstate:minecraft:snow_layer>], [<blockstate:biomesoplenty:blue_fire>]);
-} else {
+// --------------------------
+// Vanilla input
+// --------------------------
+spread
+.setAllNether([<blockstate:minecraft:cobblestone_wall>], [<blockstate:quark:fire_stone_wall>], [<blockstate:minecraft:nether_brick_fence>])
+.setAllNether([<blockstate:minecraft:diamond_ore>, <blockstate:minecraft:emerald_ore>, <blockstate:appliedenergistics2:quartz_ore>, <blockstate:appliedenergistics2:charged_quartz_ore>], [<blockstate:tconstruct:ore:type=cobalt>], QUARTZ)
+.setAllNether([<blockstate:minecraft:double_stone_slab>], [<blockstate:chisel:netherbrick:variation=7>], BRICK)
+.setAllNether([<blockstate:minecraft:glass_pane>], [<blockstate:chisel:glasspane1:variation=0>], [<blockstate:minecraft:stained_glass_pane:color=black>])
+.setAllNether([<blockstate:minecraft:hardened_clay>], [<blockstate:chisel:basalt2:variation=7>], CONCRETE)
+.setAllNether([<blockstate:minecraft:hay_block>], [<blockstate:iceandfire:chared_gravel>], SOULSAND)
+.setAllNether([<blockstate:minecraft:mycelium>], [<blockstate:extrautils2:cursedearth:decay=0>], SOULSAND)
+.setAllNether([<blockstate:minecraft:planks>], [<blockstate:rustic:painted_wood_black>], CONCRETE)
+.setAllNether([<blockstate:minecraft:prismarine>, <blockstate:minecraft:piston>, <blockstate:appliedenergistics2:sky_stone_block>], [<blockstate:biomesoplenty:hive:variant=hive>, <blockstate:biomesoplenty:hive:variant=honeycomb>, <blockstate:biomesoplenty:hive:variant=filled_honeycomb>], GLOWSTONE)
+.setAllNether([<blockstate:minecraft:red_sandstone>], [<blockstate:iceandfire:chared_stone:revert=false>], [<blockstate:minecraft:red_nether_brick>])
+.setAllNether([<blockstate:minecraft:sandstone_stairs>], [<blockstate:mysticalagriculture:soulstone_brick_stairs>], STAIRS)
+.setAllNether([<blockstate:minecraft:snow_layer>, <blockstate:minecraft:snow>], [<blockstate:biomesoplenty:blue_fire>], AIR)
+.setAllNether([<blockstate:minecraft:stained_hardened_clay>], [<blockstate:quark:sandstone_new:variant=soul_sandstone_smooth>], TERRAIN)
+.setAllNether([<blockstate:minecraft:stone_stairs>], [<blockstate:quark:fire_stone_stairs>], STAIRS)
+.setAllNether([<blockstate:minecraft:torch>], [<blockstate:tconstruct:stone_torch>], [null])
+.setAllNether([<blockstate:minecraft:wool>], [<blockstate:darkutils:slime_dyed>], [<blockstate:minecraft:fire>])
+.setNether([<blockstate:minecraft:cobblestone>, <blockstate:minecraft:monster_egg:variant=cobblestone>], [<blockstate:quark:biome_cobblestone:variant=fire_stone>], TERRAIN)
+.setNether([<blockstate:minecraft:glass>], [<blockstate:quark:framed_glass>], [<blockstate:minecraft:stained_glass:color=black>])
+.setNether([<blockstate:minecraft:gold_ore>, <blockstate:thermalfoundation:ore:type=nickel>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=iron_ore>], QUARTZ)
+.setNether([<blockstate:minecraft:grass_path>], [<blockstate:chisel:netherrack:variation=12>], TERRAIN)
+.setNether([<blockstate:minecraft:gravel>], [<blockstate:exnihilocreatio:block_netherrack_crushed>], TERRAIN)
+.setNether([<blockstate:minecraft:iron_ore>, <blockstate:minecraft:redstone_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=coal_ore>], QUARTZ)
+.setNether([<blockstate:minecraft:iron_ore>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=aluminum_ore>], QUARTZ)
+.setNether([<blockstate:minecraft:lapis_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=redstone_ore>], QUARTZ)
+.setNether([<blockstate:minecraft:sandstone:type=chiseled_sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=smooth>], TERRAIN)
+.setNether([<blockstate:minecraft:sandstone:type=sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=cobbled>], TERRAIN)
+.setNether([<blockstate:minecraft:sandstone:type=smooth_sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=polished>], TERRAIN)
+.setNether([<blockstate:minecraft:stone_slab:half=bottom,variant=cobblestone>], [<blockstate:quark:fire_stone_slab:half=bottom,prop=blarg>              ], [<blockstate:minecraft:stone_slab:half=bottom,variant=nether_brick>])
+.setNether([<blockstate:minecraft:stone_slab:half=bottom,variant=sandstone>  ], [<blockstate:mysticalagriculture:soulstone_slab:half=bottom,lul=in_2017>], [<blockstate:minecraft:stone_slab:half=bottom,variant=nether_brick>])
+.setNether([<blockstate:minecraft:stone_slab:half=top,variant=cobblestone>   ], [<blockstate:quark:fire_stone_slab:half=top,prop=blarg>                 ], [<blockstate:minecraft:stone_slab:half=top,variant=nether_brick>])
+.setNether([<blockstate:minecraft:stone_slab:half=top,variant=sandstone>     ], [<blockstate:mysticalagriculture:soulstone_slab:half=top,lul=in_2017>   ], [<blockstate:minecraft:stone_slab:half=top,variant=nether_brick>])
+.setNether([<blockstate:minecraft:stonebrick:variant=mossy_stonebrick>, <blockstate:minecraft:stonebrick:variant=chiseled_stonebrick>, <blockstate:minecraft:stonebrick:variant=cracked_stonebrick>, <blockstate:minecraft:stonebrick:variant=stonebrick>], [<blockstate:chisel:netherbrick:variation=7>], BRICK)
+.setNether([<blockstate:minecraft:water>], [<blockstate:biomesoplenty:blood>], [null, null, <blockstate:minecraft:air>, <blockstate:minecraft:netherrack>])
+.setAllNether(<ore:fenceWood>, [<blockstate:sonarcore:reinforcedstonefence>], [<blockstate:minecraft:nether_brick_fence>])
+.setAllNether(<ore:logWood>, [<blockstate:advancedrocketry:charcoallog>], BRICK)
+.setAllNether(<ore:treeLeaves>, [<blockstate:biomesoplenty:ash_block>], AIR)
 
-}
-
-if(!isNull(loadedMods['netherendingores'])) {
-  setStates(0, -1, [
-    <blockstate:minecraft:iron_ore>,
-    <blockstate:minecraft:redstone_ore>,
-  ], [
-    <blockstate:netherendingores:ore_nether_vanilla:blocks=coal_ore>,
-  ]);
-  setStates(0, -1, [<blockstate:minecraft:lapis_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=redstone_ore>]);
-
-  setStates(0, -1, [
-    <blockstate:minecraft:gold_ore>,
-    <blockstate:thermalfoundation:ore:type=nickel>,
-  ], [
-    <blockstate:netherendingores:ore_nether_vanilla:blocks=iron_ore>,
-  ]);
-  setStates(0, -1, [<blockstate:minecraft:iron_ore>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=aluminum_ore>]);
-
-  setStates(0, -1, [<blockstate:forestry:resources:resource=apatite>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=tin_ore>]);
-  setStates(0, -1, [<blockstate:immersiveengineering:ore:type=uranium>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=copper_ore>]);
-  setStates(0, -1, [<blockstate:thaumcraft:ore_amber>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=certus_quartz_ore>]);
-  setStates(0, -1, [<blockstate:thaumcraft:ore_cinnabar>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=charged_certus_quartz_ore>]);
-  setStates(0, -1, [<blockstate:thermalfoundation:ore:type=platinum>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=lead_ore>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['rustic'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:planks>], [<blockstate:rustic:painted_wood_black>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['chisel'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:hardened_clay>], [<blockstate:chisel:basalt2:variation=7>]);
-
-  setStates(0, -1, [
-    <blockstate:minecraft:stonebrick:variant=mossy_stonebrick>,
-    <blockstate:minecraft:stonebrick:variant=chiseled_stonebrick>,
-    <blockstate:minecraft:stonebrick:variant=cracked_stonebrick>,
-    <blockstate:minecraft:stonebrick:variant=stonebrick>,
-  ], [
-    <blockstate:chisel:netherbrick:variation=7>,
-  ]);
-  setBlocks(0, -1, [<blockstate:minecraft:glass_pane>], [<blockstate:chisel:glasspane1:variation=0>]);
-  setBlocks(0, -1, [<blockstate:minecraft:double_stone_slab>], [<blockstate:chisel:netherbrick:variation=7>]);
-  setStates(0, -1, [<blockstate:minecraft:grass_path>], [<blockstate:chisel:netherrack:variation=12>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['exnihilocreatio'])) {
-  setStates(0, -1, [<blockstate:minecraft:gravel>], [<blockstate:exnihilocreatio:block_netherrack_crushed>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['exnihilocreatio'])) {
-  setStates(0, -1, [<blockstate:minecraft:sandstone:type=sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=cobbled>]);
-  setStates(0, -1, [<blockstate:minecraft:sandstone:type=chiseled_sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=smooth>]);
-  setStates(0, -1, [<blockstate:minecraft:sandstone:type=smooth_sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=polished>]);
-  setStates(0, -1, [<blockstate:minecraft:stone_slab:half=bottom,variant=sandstone>], [<blockstate:mysticalagriculture:soulstone_slab:half=bottom,lul=in_2017>]);
-  setStates(0, -1, [<blockstate:minecraft:stone_slab:half=top,variant=sandstone>], [<blockstate:mysticalagriculture:soulstone_slab:half=top,lul=in_2017>]);
-  setBlocks(0, -1, [<blockstate:minecraft:sandstone_stairs>], [<blockstate:mysticalagriculture:soulstone_brick_stairs>]);
-  setStates(0, -1, [
-    <blockstate:quark:sandstone_new:variant=sandstone_bricks>,
-    <blockstate:quark:sandstone_new:variant=sandstone_smooth>,
-  ], [
-    <blockstate:mysticalagriculture:soulstone:variant=polished>,
-  ]);
-} else {
-
-}
-
-if(!isNull(loadedMods['advancedrocketry'])) {
-  setOreBlocks(0, -1, <ore:logWood>, [
-    <blockstate:advancedrocketry:charcoallog>,
-  ]);
-  setBlocks(0, -1, [<blockstate:quark:bark>], [<blockstate:advancedrocketry:charcoallog>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['quark'])) {
-  setStates(0, -1, [<blockstate:minecraft:glass>], [<blockstate:quark:framed_glass>]);
-  setStates(0, -1, [<blockstate:minecraft:stone_slab:half=bottom,variant=cobblestone>], [<blockstate:quark:fire_stone_slab:half=bottom,prop=blarg>]);
-  setStates(0, -1, [<blockstate:minecraft:stone_slab:half=top,variant=cobblestone>], [<blockstate:quark:fire_stone_slab:half=top,prop=blarg>]);
-  setBlocks(0, -1, [<blockstate:minecraft:stone_stairs>], [<blockstate:quark:fire_stone_stairs>]);
-  setBlocks(0, -1, [<blockstate:minecraft:cobblestone_wall>], [<blockstate:quark:fire_stone_wall>]);
-  setStates(0, -1, [
-    <blockstate:minecraft:cobblestone>,
-    <blockstate:minecraft:monster_egg:variant=cobblestone>,
-  ], [
-    <blockstate:quark:biome_cobblestone:variant=fire_stone>,
-  ]);
-  setStates(0, -1, [<blockstate:biomesoplenty:white_sand>], [<blockstate:quark:jasper:variant=stone_jasper>]);
-  setStates(0, -1, [<blockstate:biomesoplenty:white_sandstone:variant=default>], [<blockstate:quark:jasper:variant=stone_jasper_smooth>]);
-  setStates(0, -1, [<blockstate:biomesoplenty:white_sandstone:variant=chiseled>], [<blockstate:quark:world_stone_bricks:variant=stone_jasper_bricks>]);
-  setStates(0, -1, [<blockstate:biomesoplenty:white_sandstone:variant=smooth>], [<blockstate:quark:world_stone_carved:variant=stone_jasper_carved>]);
-  setBlocks(0, -1, [<blockstate:biomesoplenty:white_sandstone_stairs>], [<blockstate:quark:stone_jasper_stairs>]);
-  setBlocks(0, -1, [<blockstate:minecraft:stained_hardened_clay>], [<blockstate:quark:sandstone_new:variant=soul_sandstone_smooth>]);
-  setBlocks(0, -1, [<blockstate:quark:sandstone_wall>], [<blockstate:mysticalagriculture:soulstone_brick_wall>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['darkutils'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:wool>], [<blockstate:darkutils:slime_dyed>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['tconstruct'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:torch>], [<blockstate:tconstruct:stone_torch>]);
-  setStates(0, -1, [
-    <blockstate:actuallyadditions:block_misc:type=ore_black_quartz>,
-    <blockstate:nuclearcraft:ore:type=thorium>,
-    <blockstate:nuclearcraft:ore:type=boron>,
-    <blockstate:nuclearcraft:ore:type=lithium>,
-    <blockstate:nuclearcraft:ore:type=magnesium>,
-  ], [
-    <blockstate:tconstruct:ore:type=ardite>,
-  ]);
-  setBlocks(0, -1, [
-    <blockstate:minecraft:diamond_ore>,
-    <blockstate:minecraft:emerald_ore>,
-    <blockstate:appliedenergistics2:quartz_ore>,
-    <blockstate:appliedenergistics2:charged_quartz_ore>,
-  ], [
-    <blockstate:tconstruct:ore:type=cobalt>,
-  ]);
-} else {
-
-}
-
-if(!isNull(loadedMods['sonarcore'])) {
-  setOreBlocks(0, -1, <ore:fenceWood>, [<blockstate:sonarcore:reinforcedstonefence>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['excompressum'])) {
-  setStates(0, -1, [<blockstate:astralsorcery:blockcustomsandore:oretype=aquamarine>], [<blockstate:excompressum:compressed_block:variant=soul_sand>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['actuallyadditions'])) {
-  setBlocks(0, -1, [<blockstate:astralsorcery:blockmarble>], [<blockstate:astralsorcery:blockblackmarble>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['iceandfire'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:hay_block>], [<blockstate:iceandfire:chared_gravel>]);
-  setBlocks(0, -1, [<blockstate:minecraft:red_sandstone>], [<blockstate:iceandfire:chared_stone:revert=false>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['extrautils2'])) {
-  setBlocks(0, -1, [<blockstate:minecraft:mycelium>], [<blockstate:extrautils2:cursedearth:decay=0>]);
-} else {
-
-}
-
-if(!isNull(loadedMods['thaumcraft'])) {
-  setStates(0, -1, [
-    <blockstate:thaumcraft:stone_porous>,
-  ], [
-    <blockstate:forestry:ash_block_1>,
-    <blockstate:forestry:ash_block_2>,
-    <blockstate:forestry:ash_block_3>,
-    <blockstate:additionalcompression:dustgunpowder_compressed:level=0>,
-  ]);
-} else {
-
-}
-
-if(!isNull(loadedMods['rats'])) {
-  setStates(0, -1, [<blockstate:rats:garbage_pile>], [<blockstate:tconstruct:soil:type=grout>]);
-} else {
-
-}
+// --------------------------
+// Modded Input
+// --------------------------
+.setAllNether([<blockstate:astralsorcery:blockmarble>], [<blockstate:astralsorcery:blockblackmarble>])
+.setAllNether([<blockstate:biomesoplenty:white_sandstone_stairs>], [<blockstate:quark:stone_jasper_stairs>], STAIRS)
+.setAllNether([<blockstate:floralchemy:hedge>], [<blockstate:twilightforest:thorns>], AIR)
+.setAllNether([<blockstate:quark:bark>], [<blockstate:advancedrocketry:charcoallog>], SOULSAND)
+.setAllNether([<blockstate:quark:sandstone_wall>], [<blockstate:mysticalagriculture:soulstone_brick_wall>], TERRAIN)
+.setNether([<blockstate:actuallyadditions:block_misc:type=ore_black_quartz>, <blockstate:nuclearcraft:ore:type=thorium>, <blockstate:nuclearcraft:ore:type=boron>, <blockstate:nuclearcraft:ore:type=lithium>, <blockstate:nuclearcraft:ore:type=magnesium>], [<blockstate:tconstruct:ore:type=ardite>], QUARTZ)
+.setNether([<blockstate:astralsorcery:blockcustomsandore:oretype=aquamarine>], [<blockstate:excompressum:compressed_block:variant=soul_sand>], QUARTZ)
+.setNether([<blockstate:biomesoplenty:white_sand>], [<blockstate:quark:jasper:variant=stone_jasper>], SOULSAND)
+.setNether([<blockstate:biomesoplenty:white_sandstone:variant=chiseled>], [<blockstate:quark:world_stone_bricks:variant=stone_jasper_bricks>], BRICK)
+.setNether([<blockstate:biomesoplenty:white_sandstone:variant=default>], [<blockstate:quark:jasper:variant=stone_jasper_smooth>], BRICK)
+.setNether([<blockstate:biomesoplenty:white_sandstone:variant=smooth>], [<blockstate:quark:world_stone_carved:variant=stone_jasper_carved>], BRICK)
+.setNether([<blockstate:forestry:resources:resource=apatite>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=tin_ore>], QUARTZ)
+.setNether([<blockstate:immersiveengineering:ore:type=uranium>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=copper_ore>], QUARTZ)
+.setNether([<blockstate:quark:sandstone_new:variant=sandstone_bricks>, <blockstate:quark:sandstone_new:variant=sandstone_smooth>], [<blockstate:mysticalagriculture:soulstone:variant=polished>], BRICK)
+.setNether([<blockstate:rats:garbage_pile>], [<blockstate:tconstruct:soil:type=grout>], SOULSAND)
+.setNether([<blockstate:thaumcraft:ore_amber>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=certus_quartz_ore>], QUARTZ)
+.setNether([<blockstate:thaumcraft:ore_cinnabar>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=charged_certus_quartz_ore>], QUARTZ)
+.setNether([<blockstate:thaumcraft:stone_porous>], [<blockstate:forestry:ash_block_1>, <blockstate:forestry:ash_block_2>, <blockstate:forestry:ash_block_3>, <blockstate:additionalcompression:dustgunpowder_compressed:level=0>], [<blockstate:minecraft:coal_block>])
+.setNether([<blockstate:thermalfoundation:ore:type=platinum>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=lead_ore>], QUARTZ)
+;

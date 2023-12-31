@@ -1,13 +1,14 @@
 #modloaded betteranimalsplus
 #reloadable
 
+import crafttweaker.entity.IEntityAnimal;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
 
 function clearPlayerInventory(player as IPlayer) as void {
   for i in 0 .. player.inventorySize {
     val item = player.getInventoryStack(i);
-    if(isNull(item)) continue;
+    if (isNull(item)) continue;
     player.replaceItemInInventory(i, null);
   }
 }
@@ -15,12 +16,12 @@ function clearPlayerInventory(player as IPlayer) as void {
 // --------------------------------
 // Geese use items
 // --------------------------------
-events.onEntityLivingUpdate(function(e as crafttweaker.event.EntityLivingUpdateEvent) {
+events.onEntityLivingUpdate(function (e as crafttweaker.event.EntityLivingUpdateEvent) {
   val world = e.entity.world;
-  if(
+  if (
     world.remote
-    || isNull(e.entity.definition)
-    || !(e.entity instanceof IEntityLivingBase)
+    || !(e.entity instanceof IEntityAnimal)
+    || (e.entity instanceof IPlayer)
     || e.entity.definition.id != 'betteranimalsplus:goose'
     || world.time % 10 != 0
   ) return;
@@ -30,10 +31,10 @@ events.onEntityLivingUpdate(function(e as crafttweaker.event.EntityLivingUpdateE
   val item = entity.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand());
 
   // No item in Goose beak
-  if(isNull(item)) return;
+  if (isNull(item)) return;
 
   // Test random
-  if(world.random.nextInt(5) != 0) return;
+  if (world.random.nextInt(5) != 0) return;
 
   val player = world.getFakePlayer();
   player.setToLocationFrom(entity);
@@ -50,7 +51,7 @@ events.onEntityLivingUpdate(function(e as crafttweaker.event.EntityLivingUpdateE
   // Drop all items in fake player inventory
   for i in 0 .. player.inventorySize {
     val item = player.getInventoryStack(i);
-    if(isNull(item)) continue;
+    if (isNull(item)) continue;
     player.replaceItemInInventory(i, null);
     player.dropItem(item);
   }

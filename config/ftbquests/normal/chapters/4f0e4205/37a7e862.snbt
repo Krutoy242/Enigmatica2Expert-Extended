@@ -1,0 +1,49 @@
+{
+	icon: {
+		id: "ftbquests:lootcrate",
+		Count: 2,
+		tag: {
+			type: "uncommon"
+		}
+	},
+	disable_toast: true,
+	x: 10.350000000000001d,
+	y: 0.75d,
+	shape: "square",
+	text: [
+		"{q.twilight_forest.tower_key.desc}"
+	],
+	can_repeat: true,
+	dependencies: [
+		"ea1707c5"
+	],
+	size: 0.5d,
+	optional: true,
+	tasks: [{
+		uid: "c6e3586e",
+		type: "item",
+		items: [{
+			item: "twilightforest:tower_key"
+		},
+		{
+			item: "twilightforest:glass_sword"
+		},
+		{
+			item: "twilightforest:mazebreaker_pickaxe"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "fc9a1d69",
+		type: "item",
+		auto: "no_toast",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "uncommon"
+			}
+		},
+		count: 2,
+		random_bonus: 2
+	}]
+}

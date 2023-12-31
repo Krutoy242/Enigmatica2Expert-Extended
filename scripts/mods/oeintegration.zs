@@ -2,29 +2,28 @@
 
 import crafttweaker.item.IIngredient;
 
-# [Excavate Modifier] from [Triple Compressed Cobblestone][+1]
-craft.remake(<oeintegration:excavatemodifier>, ["pretty",
-  "  □  ",
-  "□ ░ □",
-  "  □  "], {
-  "□": <ore:plateBronze>,             # Bronze Plate
-  "░": <ore:compressed3xCobblestone>, # Triple Compressed Cobblestone
+// [Excavate Modifier] from [Triple Compressed Cobblestone][+1]
+craft.remake(<oeintegration:excavatemodifier>, ['pretty',
+  '  □  ',
+  '□ ░ □',
+  '  □  '], {
+  '□': <ore:plateBronze>,             // Bronze Plate
+  '░': <ore:compressed3xCobblestone>, // Triple Compressed Cobblestone
 });
 
-
-# [Enchanted Book] from [Excavate Modifier]
+// [Enchanted Book] from [Excavate Modifier]
 recipes.addShapeless('Excavator to book', Book(<enchantment:oeintegration:oreexcavation>),
-	[<oeintegration:excavatemodifier>] as IIngredient[]
-, function(out, ins, cInfo) {
+  [<oeintegration:excavatemodifier>] as IIngredient[]
+  , function (out, ins, cInfo) {
     return Book(<enchantment:oeintegration:oreexcavation>);
-}, null);
+  }, null);
 
 // --------------------------------------------------------------
 // Add tooltips about excavation special items
 // --------------------------------------------------------------
 val desc = scripts.lib.tooltip.desc;
 
-/*Inject_js{
+/* Inject_js{
 const c = config('config/oreexcavation.cfg').general
 const def = {
   speed     : c.Speed,
@@ -47,15 +46,15 @@ return overridn
       .join(` +' '+ `) || "''"
       });`,
   ])
-}*/
-desc.tooltip(<oeintegration:excavatemodifier>    , 'excavate.overrides', '§7'+desc.local('speed')+': §61' +' '+ '§7'+desc.local('limit')+': §616' +' '+ '§7'+desc.local('range')+': §610');
-desc.tooltip(<tconstruct:moms_spaghetti>         , 'excavate.overrides', '§7'+desc.local('speed')+': §610' +' '+ '§7'+desc.local('range')+': §65' +' '+ '§7'+desc.local('exaustion')+': §61');
-desc.tooltip(<forestry:bronze_pickaxe>           , 'excavate.overrides', '§7'+desc.local('speed')+': §65' +' '+ '§7'+desc.local('limit')+': §664' +' '+ '§7'+desc.local('exaustion')+': §60' +' '+ '§7'+desc.local('experience')+': §61');
-desc.tooltip(<forestry:bronze_shovel>            , 'excavate.overrides', '§7'+desc.local('speed')+': §65' +' '+ '§7'+desc.local('limit')+': §664' +' '+ '§7'+desc.local('exaustion')+': §60' +' '+ '§7'+desc.local('experience')+': §61');
-desc.tooltip(<immersiveengineering:drill>        , 'excavate.overrides', '§7'+desc.local('speed')+': §632' +' '+ '§7'+desc.local('limit')+': §6128' +' '+ '§7'+desc.local('exaustion')+': §60');
-desc.tooltip(<ic2:drill>                         , 'excavate.overrides', '§7'+desc.local('speed')+': §632' +' '+ '§7'+desc.local('limit')+': §632');
-desc.tooltip(<ic2:diamond_drill>                 , 'excavate.overrides', '§7'+desc.local('limit')+': §664');
-desc.tooltip(<ic2:iridium_drill>                 , 'excavate.overrides', '§7'+desc.local('speed')+': §6128' +' '+ '§7'+desc.local('limit')+': §6128');
+} */
+desc.tooltip(<oeintegration:excavatemodifier>    , 'excavate.overrides', '§7' + desc.local('speed') + ': §61' + ' ' + '§7' + desc.local('limit') + ': §616' + ' ' + '§7' + desc.local('range') + ': §610');
+desc.tooltip(<tconstruct:moms_spaghetti>         , 'excavate.overrides', '§7' + desc.local('speed') + ': §610' + ' ' + '§7' + desc.local('range') + ': §65' + ' ' + '§7' + desc.local('exaustion') + ': §61');
+desc.tooltip(<forestry:bronze_pickaxe>           , 'excavate.overrides', '§7' + desc.local('speed') + ': §65' + ' ' + '§7' + desc.local('limit') + ': §664' + ' ' + '§7' + desc.local('exaustion') + ': §60' + ' ' + '§7' + desc.local('experience') + ': §61');
+desc.tooltip(<forestry:bronze_shovel>            , 'excavate.overrides', '§7' + desc.local('speed') + ': §65' + ' ' + '§7' + desc.local('limit') + ': §664' + ' ' + '§7' + desc.local('exaustion') + ': §60' + ' ' + '§7' + desc.local('experience') + ': §61');
+desc.tooltip(<immersiveengineering:drill>        , 'excavate.overrides', '§7' + desc.local('speed') + ': §632' + ' ' + '§7' + desc.local('limit') + ': §6128' + ' ' + '§7' + desc.local('exaustion') + ': §60');
+desc.tooltip(<ic2:drill>                         , 'excavate.overrides', '§7' + desc.local('speed') + ': §632' + ' ' + '§7' + desc.local('limit') + ': §632');
+desc.tooltip(<ic2:diamond_drill>                 , 'excavate.overrides', '§7' + desc.local('limit') + ': §664');
+desc.tooltip(<ic2:iridium_drill>                 , 'excavate.overrides', '§7' + desc.local('speed') + ': §6128' + ' ' + '§7' + desc.local('limit') + ': §6128');
 desc.tooltip(<forestry:grafter>                  , 'excavate.overrides', '');
 desc.tooltip(<forestry:grafter_proven>           , 'excavate.overrides', '');
 desc.tooltip(<gendustry:industrial_grafter>      , 'excavate.overrides', '');

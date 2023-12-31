@@ -1,0 +1,21 @@
+{
+	x: 27.0d,
+	y: -1.5d,
+	dependencies: [
+		"c550b73b"
+	],
+	optional: true,
+	tasks: [{
+		uid: "2ab9c39f",
+		type: "item",
+		items: [{
+			item: "exnihilocreatio:block_skystone_crushed"
+		}]
+	}],
+	rewards: [{
+		uid: "7fd1aabc",
+		type: "item",
+		item: "appliedenergistics2:material 1 45",
+		count: 16
+	}]
+}

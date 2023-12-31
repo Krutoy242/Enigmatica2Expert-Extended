@@ -1,7 +1,7 @@
 {
 	title: "{q.bragging_rights.scroll_of_massive_.name}",
-	x: 2.375d,
-	y: 3.541666666666667d,
+	x: 2.2d,
+	y: 3.3d,
 	text: [
 		"{q.bragging_rights.scroll_of_massive_.desc}"
 	],

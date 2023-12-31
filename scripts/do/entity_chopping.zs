@@ -1,22 +1,18 @@
-
+#modloaded ctintegration
 #reloadable
+#ignoreBracketErrors
 
-import crafttweaker.item.IItemStack;
-import mods.ctintegration.data.DataUtil;
-import mods.ctintegration.util.RawLogger.logRaw as logRaw;
-import crafttweaker.data.IData;
 import crafttweaker.player.IPlayer;
 
-
-events.onEntityLivingDamage(function(e as crafttweaker.event.EntityLivingDamageEvent){
+events.onEntityLivingDamage(function (e as crafttweaker.event.EntityLivingDamageEvent) {
   val mob = e.entity;
-  if(
+  if (
     isNull(mob)
     || isNull(mob.world)
     || mob.world.remote
     || e.amount <= 0
     || isNull(mob.definition)
-    || mob.definition.id != "emberroot:rootsonespriteboss"
+    || mob.definition.id != 'emberroot:rootsonespriteboss'
     || isNull(e.damageSource)
     || isNull(e.damageSource.trueSource)
   ) return;
@@ -25,7 +21,7 @@ events.onEntityLivingDamage(function(e as crafttweaker.event.EntityLivingDamageE
   val _player = e.damageSource.trueSource;
   if (!(_player instanceof IPlayer)) return;
   val player as IPlayer = _player;
-  
+
   val amount = e.amount / 5.0f;
   if (amount < 1.0f && mob.world.getRandom().nextDouble() > amount) return;
   utils.geyser(
@@ -35,5 +31,5 @@ events.onEntityLivingDamage(function(e as crafttweaker.event.EntityLivingDamageE
     mob.motionX, mob.motionY, mob.motionZ, 2
   );
 
-  player.sendPlaySoundPacket("minecraft:entity.sheep.shear", "ambient", mob.position, 1.0f, 1.0f);
+  player.sendPlaySoundPacket('minecraft:entity.sheep.shear', 'ambient', mob.position, 1.0f, 1.0f);
 });

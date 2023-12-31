@@ -1,4 +1,3 @@
-tooltips.lang.advgenerators:gas_input=已被禁用，因为燃料消耗异常
 tooltips.lang.betteranimalsplus:handoffate=§a使用以下物品右击：§r §n%s§r, §n%s§r, §n%s§r, §n%s§r
 tooltips.lang.bloodmagic:blood_rune:1=§f合成/宝珠填充速度 +20%
 tooltips.lang.bloodmagic:blood_rune:3=§f使用献祭刀击杀生物时所获得 LP +10%，符文效果以加法叠加
@@ -50,3 +49,4 @@ tooltips.lang.actuallyadditions:block_farmer=§e注意：§r只能在§n原版�
 tooltips.lang.exnihilocreatio:hammer_diamond=§4并不能使用。请改用匠魂的碎矿锤。
 tooltips.lang.bibliocraft:fancysign=§e可能会造成明显的 FPS 下降。
 tooltips.lang.contenttweaker:conglomerate_of_life=§2帮助你的猫猫吐出（不知哪来的）毛球
+tooltips.lang.advancedrocketry:liquidtank=§c断裂时几乎失去所有液体！
