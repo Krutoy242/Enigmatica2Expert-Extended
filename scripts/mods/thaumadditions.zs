@@ -867,6 +867,7 @@ mods.thaumcraft.Infusion.registerRecipe(
 );
 
 // [Chester]
+<thaumadditions:chester>.addTooltip("§6Can be retrieved by Bone-eye§r");
 mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:chester>);
 mods.thaumcraft.Infusion.registerRecipe(
   'chester', // Name
