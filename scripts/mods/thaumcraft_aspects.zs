@@ -1460,7 +1460,7 @@ Just a list of aspect - metal
 function calculateAspects(main as float, secondary as float, a1 as CTAspectStack, a2 as CTAspectStack, a3 as CTAspectStack) as CTAspectStack[] {
   var list = [] as CTAspectStack[];
   list+=a1.setAmount(main as int);
-  list+=a2.setAmount(secondary as int);
+  if (secondary>=1) list+=a2.setAmount(secondary as int);
   if (!isNull(a3)) list+=a3.setAmount(main as int); 
   return list;
 }
