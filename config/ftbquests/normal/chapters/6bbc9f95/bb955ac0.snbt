@@ -17,40 +17,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "0562d4d3",
-		type: "item",
-		item: {
-			id: "thaumcraft:focus_3",
-			tag: {
-				display: {
-					Name: "Fountain of Artemis"
-				},
-				package: {
-					index: 0,
-					power: 1.0f,
-					complexity: 41,
-					nodes: [{
-						type: "MEDIUM",
-						key: "ROOT"
-					},
-					{
-						type: "MEDIUM",
-						key: "thaumcraft.BOLT"
-					},
-					{
-						type: "MEDIUM",
-						key: "thaumcraft.CLOUD",
-						setting.duration: 30,
-						setting.radius: 3
-					},
-					{
-						type: "EFFECT",
-						key: "thaumcraft.HEAL",
-						setting.power: 5
-					}]
-				},
-				color: -2228219
-			}
-		}
+		uid: "bc4292a0",
+		type: "choice",
+		table: 151
 	}]
 }

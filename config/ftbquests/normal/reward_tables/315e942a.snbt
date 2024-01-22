@@ -1,0 +1,50 @@
+{
+	title: "Focus tier 3",
+	loot_size: 1,
+	rewards: [{
+		item: {
+			id: "thaumcraft:focus_3",
+			tag: {
+				display: {
+					Name: "Fountain of Artemis"
+				},
+				package: {
+					index: 0,
+					power: 1.0f,
+					complexity: 41,
+					nodes: [{
+						type: "MEDIUM",
+						key: "ROOT"
+					},
+					{
+						type: "MEDIUM",
+						key: "thaumcraft.BOLT"
+					},
+					{
+						type: "MEDIUM",
+						key: "thaumcraft.CLOUD",
+						setting.duration: 30,
+						setting.radius: 3
+					},
+					{
+						type: "EFFECT",
+						key: "thaumcraft.HEAL",
+						setting.power: 5
+					}]
+				},
+				color: -2228219
+			}
+		}
+	},
+	{
+		item: "thaumcraft:focus_3"
+	},
+	{
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "uncommon"
+			}
+		}
+	}]
+}

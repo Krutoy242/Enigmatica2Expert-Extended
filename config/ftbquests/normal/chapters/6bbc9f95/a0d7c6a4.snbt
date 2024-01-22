@@ -18,42 +18,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "6b72fe30",
-		type: "item",
-		item: {
-			id: "thaumicaugmentation:focus_ancient",
-			tag: {
-				display: {
-					Name: "Cursed Bats"
-				},
-				package: {
-					index: 0,
-					power: 1.0f,
-					complexity: 34,
-					nodes: [{
-						type: "MEDIUM",
-						key: "ROOT"
-					},
-					{
-						type: "MOD",
-						key: "thaumcraft.SCATTER",
-						setting.forks: 10,
-						setting.cone: 360
-					},
-					{
-						type: "MEDIUM",
-						key: "thaumcraft.SPELLBAT",
-						setting.target: 0
-					},
-					{
-						type: "EFFECT",
-						key: "thaumcraft.CURSE",
-						setting.duration: 10,
-						setting.power: 4
-					}]
-				},
-				color: -9830395
-			}
-		}
+		uid: "6cdce789",
+		type: "choice",
+		table: 150
 	}]
 }

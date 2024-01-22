@@ -1,0 +1,52 @@
+{
+	title: "Focus tier 2.5",
+	loot_size: 1,
+	rewards: [{
+		item: {
+			id: "thaumicaugmentation:focus_ancient",
+			tag: {
+				display: {
+					Name: "Cursed Bats"
+				},
+				package: {
+					index: 0,
+					power: 1.0f,
+					complexity: 34,
+					nodes: [{
+						type: "MEDIUM",
+						key: "ROOT"
+					},
+					{
+						type: "MOD",
+						key: "thaumcraft.SCATTER",
+						setting.forks: 10,
+						setting.cone: 360
+					},
+					{
+						type: "MEDIUM",
+						key: "thaumcraft.SPELLBAT",
+						setting.target: 0
+					},
+					{
+						type: "EFFECT",
+						key: "thaumcraft.CURSE",
+						setting.duration: 10,
+						setting.power: 4
+					}]
+				},
+				color: -9830395
+			}
+		}
+	},
+	{
+		item: "thaumicaugmentation:focus_ancient"
+	},
+	{
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "uncommon"
+			}
+		}
+	}]
+}

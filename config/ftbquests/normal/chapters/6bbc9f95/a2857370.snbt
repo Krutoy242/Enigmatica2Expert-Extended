@@ -16,36 +16,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "ced81c89",
-		type: "item",
-		item: {
-			id: "thaumcraft:focus_1",
-			tag: {
-				display: {
-					Name: "Block Exchange"
-				},
-				package: {
-					index: 0,
-					power: 1.0f,
-					complexity: 7,
-					nodes: [{
-						type: "MEDIUM",
-						key: "ROOT"
-					},
-					{
-						type: "MEDIUM",
-						key: "thaumcraft.PLAN",
-						setting.method: 1
-					},
-					{
-						type: "EFFECT",
-						key: "thaumcraft.EXCHANGE",
-						setting.silk: 1,
-						setting.fortune: 0
-					}]
-				},
-				color: -11041961
-			}
-		}
+		uid: "4d2cee0d",
+		type: "choice",
+		table: 148
 	}]
 }

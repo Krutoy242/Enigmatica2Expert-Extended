@@ -273,6 +273,12 @@
 					bullets: 6
 				},
 				bullets: []
+			},
+			ForgeCaps: {
+				Parent: {
+					Items: [],
+					Size: 21
+				}
 			}
 		}
 	},

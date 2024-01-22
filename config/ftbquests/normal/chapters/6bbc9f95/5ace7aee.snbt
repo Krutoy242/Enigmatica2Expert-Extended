@@ -17,35 +17,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "8a5473f9",
-		type: "item",
-		item: {
-			id: "thaumcraft:focus_2",
-			tag: {
-				display: {
-					Name: "Riftmaker"
-				},
-				package: {
-					index: 0,
-					power: 1.0f,
-					complexity: 18,
-					nodes: [{
-						type: "MEDIUM",
-						key: "ROOT"
-					},
-					{
-						type: "MEDIUM",
-						key: "thaumcraft.TOUCH"
-					},
-					{
-						type: "EFFECT",
-						key: "thaumcraft.RIFT",
-						setting.duration: 10,
-						setting.depth: 32
-					}]
-				},
-				color: -13692571
-			}
-		}
+		uid: "72b5d6d4",
+		type: "choice",
+		table: 149
 	}]
 }
