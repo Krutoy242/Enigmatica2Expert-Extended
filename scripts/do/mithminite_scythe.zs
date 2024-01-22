@@ -542,6 +542,7 @@ function rattusInsanity(target as IEntityLivingBase) as void{
         || !entity.isAlive()
         || target.id==entity.id
         || target.getDistanceSqToEntity(entity)>20
+        || target.isBoss
         || entity.y<1) continue;
         
         val entityAdd as IEntityLivingBase = entity;
@@ -763,8 +764,6 @@ function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, p
     if(augments has "aer")          aerTornado(scythe, colorCount[4]);
     if(augments has "vacuos")       vacuosHole(scythe, target, colorCount[0]);    
     #EFFECT ASPECTS
-    if(augments has "alienis")      alienisTeleport(target);
-    if(augments has "alkimia")      alkimiaPotion(target, colorCount[2]);
     if(augments has "amogus")       amogusVent(scythe, target);
     if(augments has "auram")        auramVisAdd(scythe, colorCount[6]);
     if(augments has "caeles")       caelesAstralExp(scythe, colorCount[2]);
@@ -781,19 +780,24 @@ function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, p
     if(augments has "instrumentum") instrumentumRepair(player, colorCount[2]);
     if(augments has "lux")          luxLight(target, player);
     if(augments has "mortuus")      mortuusWither(target, colorCount[3]);
-    if(augments has "motus")        motusSwap(scythe, target, player);
-    if(augments has "mythus")       mythusPetrification(target);
     if(augments has "ordo")         ordoWarp(player, colorCount[1]);
     if(augments has "perditio")     perditioWarp(player, colorCount[0]);
     if(augments has "potentia")     potentiaLightning(target, colorCount[1]);
     if(augments has "rattus")       rattusInsanity(target);
-    if(augments has "spiritus")     spiritusHaunted(target, colorCount[1]);
     if(augments has "tenebrae")     tenebraeBlind(target, colorCount[0]);
     if(augments has "ventus")       ventusLaunch(target);
     if(augments has "vinculum")     vinculumTrap(target, colorCount[4]);
     if(augments has "visum")        visumGlow(target,player);
     if(augments has "volatus")      volatusLevitation(target);
+    if(!target.isBoss){
+    if(augments has "alienis")      alienisTeleport(target);
+    if(augments has "alkimia")      alkimiaPotion(target, colorCount[2]);
+    if(augments has "motus")        motusSwap(scythe, target, player);
+    if(augments has "mythus")       mythusPetrification(target);
+    if(augments has "spiritus")     spiritusHaunted(target, colorCount[1]);
     if(augments has "vitreus")      vitreusCrystalize(scythe, target, dmg);
+    }
+
     #PROJECTILES
     if(augments has "sonus")        sonusSplit(scythe, target, colorCount[4]);
     if(augments has "mana")         {if(augments has "rattus") {scytheCreateChaos(scythe, target);} else {manaCreateStar(scythe, target);}}
