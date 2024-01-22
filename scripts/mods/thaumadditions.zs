@@ -5,6 +5,7 @@ import crafttweaker.item.IItemStack;
 import mods.zenutils.DataUpdateOperation.APPEND;
 import mods.zenutils.DataUpdateOperation.MERGE;
 import mods.zenutils.DataUpdateOperation.REMOVE;
+import mods.zenutils.DataUpdateOperation.OVERWRITE;
 
 mods.thaumcraft.Infusion.removeRecipe(<minecraft:golden_apple:1>);
 
@@ -1547,29 +1548,70 @@ function calcColor(lore as IData) as int {
   return r / l * 65536 + g / l * 256 + b / l;
 }
 
+function haveLoremError(lorem as IData) as bool{
+  if(lorem.length==0) return false;
+  
+  for i in 0 .. lorem.length{
+    if(!(loreUnColor has lorem[i])) return true;
+  }
+
+  return false;
+}
+
 recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scythe>,
   [<thaumadditions:mithminite_scythe>.marked('scythe'), <thaumadditions:seal_symbol>.marked('seal')],
   function (out, ins, cInfo) {
   val scythe = ins.scythe;
     val lorem as IData = (isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)) ? [] : scythe.tag.display.Lore;
-
+    if(haveLoremError(lorem)) return <thaumadditions:mithminite_scythe>;
     if (lorem.length > 7 || lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
-    return scythe.withTag(scythe.tag.deepUpdate({ display: { Lore: [loreColor[ins.seal.tag.Aspect]] } }, APPEND).deepUpdate({ ench: [{ lvl: 1 as short, id: 30 as short }] }, { ench: MERGE }) + { enchantmentColor: calcColor(lorem + [loreColor[ins.seal.tag.Aspect]]) });
+    var newTag = scythe.tag;
+
+    newTag = newTag.deepUpdate({ display: { Lore: [loreColor[ins.seal.tag.Aspect]] } }, APPEND)                             //Add aspect lore
+    .deepUpdate({ enchantmentColor: calcColor(lorem + [loreColor[ins.seal.tag.Aspect]]) }, {enchantmentColor: OVERWRITE});  //Update enchantment color
+    
+    if(lorem.length == 0) newTag += { ench: [{ lvl: 1 as short, id: 30 as short }] };                                       //Add Shimmer
+
+    return scythe.withTag(newTag);
+
   },
   null);
 
 //#################################################################################
+
+function removeOnlyShimmer(data as IData) as IData{
+  var result as IData = [];
+    for i in 0 .. data.length{
+    if(data[i].id!=30){
+      result = result + [data[i]] as IData;
+    }
+  }
+  return result;
+}
 
 recipes.addShapeless('REMOVEaugmentMithminiteScythe', <thaumadditions:seal_symbol>,
   [<thaumadditions:mithminite_scythe>
     .transformNew(
       function (item) {
         val lore = item.tag.display.Lore;
+        if(haveLoremError(lore)) return <thaumadditions:mithminite_scythe>;
+        var newTag = item.tag;
 
-        return lore.length != 1
-          ? item.withTag(item.tag.deepUpdate({ display: { Lore: [lore[lore.length - 1]] } }, { display: { Lore: REMOVE } } + { enchantmentColor: calcColor(lore.deepUpdate([lore[lore.length - 1]], REMOVE)) }))
-          : item.withTag(item.tag.deepUpdate({ display: { Lore: [lore[lore.length - 1]] } }, { display: { Lore: REMOVE } }).deepUpdate({ enchantmentColor: 0 }, REMOVE).deepUpdate({ ench: [{ lvl: 1 as short, id: 30 as short }] }, { ench: REMOVE }));
+        if(lore.length == 1){
+          newTag = newTag.deepUpdate({ display: { Lore: [lore[lore.length - 1]] } }, { display: { Lore: REMOVE } })
+          .deepUpdate({ enchantmentColor: 0 }, REMOVE);
+          if(newTag.ench.length==1)
+          {newTag -= {ench: []};}
+          else
+          {newTag = newTag.deepUpdate({ench: removeOnlyShimmer(newTag.ench)},{ench: OVERWRITE});}
+        } else {
+          newTag = newTag.deepUpdate({ display: { Lore: lore.deepUpdate([lore[lore.length - 1]], REMOVE) } }, { display: { Lore: OVERWRITE } })
+          .deepUpdate({ enchantmentColor: calcColor(lore.deepUpdate([lore[lore.length - 1]], REMOVE)) },{enchantmentColor: OVERWRITE});
+        }
+
+        return item.withTag(newTag);
+
       })
     .marked('scythe'),
   ]

@@ -28,6 +28,7 @@ import crafttweaker.entity.AttributeModifier;
 import mods.randomtweaker.botania.IManaItemHandler;
 import crafttweaker.liquid.ILiquidDefinition;
 import crafttweaker.entity.IEntityThrowable;
+import crafttweaker.text.ITextComponent;
 
 /*
 "aer"           : C Tornado, pulls nearby enemies (motion)
@@ -835,6 +836,11 @@ function getAugments(player as IPlayer) as string[]{
     val lore = scythe.tag.display.Lore;
 
     if(lore.length == 0) return result;
+
+    if(scripts.mods.thaumadditions.haveLoremError(lore)) {
+        player.sendRichTextStatusMessage(ITextComponent.fromString("§cYour scythe is too sus! Please check your augments!§r"));
+        return result;
+    }
 
     for i in 0 to lore.length {
         result += scripts.mods.thaumadditions.loreUnColor[lore[i]];
