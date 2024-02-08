@@ -188,3 +188,111 @@ for coin, coinData in coinMap {
 
 // now only usable as gem
 NumisticDynamo.removeFuel(<minecraft:emerald>);
+
+// will be rehandled by new gem fuel
+NumisticDynamo.removeGemFuel(<tconstruct:metal:6>);
+NumisticDynamo.removeGemFuel(<biomesoplenty:gem:7>);
+
+val gemMap = {
+	<biomesoplenty:gem:3>: { override: true, energyData: 500000, blockItem: { id: 'biomesoplenty:gem', Damage: 3 }}, //Topaz
+	<biomesoplenty:gem:5>: { override: true, energyData: 500000, blockItem: { id: 'biomesoplenty:gem', Damage: 5 }}, //Malachite
+	<biomesoplenty:gem:4>: { override: true, energyData: 650000, blockItem: { id: 'biomesoplenty:gem', Damage: 4 }}, //Tanzanite
+	<biomesoplenty:gem:6>: { override: true, energyData: 500000, blockItem: { id: 'biomesoplenty:gem', Damage: 6 }}, //Sapphire
+	<biomesoplenty:gem:2>: { override: true, energyData: 500000, blockItem: { id: 'biomesoplenty:gem', Damage: 2 }}, //Peridot
+	<biomesoplenty:gem:1>: { override: true, energyData: 500000, blockItem: { id: 'biomesoplenty:gem', Damage: 1 }}, //Ruby
+	<biomesoplenty:gem:0>: { override: true, energyData: 900000, blockItem: { id: 'biomesoplenty:gem', Damage: 0 }}, //Amethyst
+	
+	<appliedenergistics2:material:1>: { override: true, energyData: 100000}, //Charged Certus Quartz
+	<minecraft:emerald>: { override: true, energyData: 85000, blockItem: { id: 'minecraft:emerald_block', Damage: 0 }}, //Emerald
+	<actuallyadditions:item_misc:5>: { override: true, energyData: 90000, blockItem: { id: 'actuallyadditions:block_misc', Damage: 2 }}, //Black Quartz
+	<minecraft:quartz>: { override: true, energyData: 55000, blockItem: { id: 'minecraft:quartz_block', Damage: 0 }, blockModifier: 5}, //Nether Quartz
+	<minecraft:diamond>: { override: true, energyData: 500000, blockItem: { id: 'minecraft:diamond_block', Damage: 0 }}, //Diamond
+	<appliedenergistics2:material:10>: { override: true, energyData: 50625}, //Pure Certus Quartz
+	<tconstruct:materials:16>: { override: true, energyData: 900000, blockItem: { id: 'tconstruct:metal', Damage: 6 }}, //Silky Jewel
+	<appliedenergistics2:material:0>: { override: true, energyData: 75000, blockItem: { id: 'appliedenergistics2:quartz_block', Damage: 0 }, blockModifier: 5}, //Certus Quartz
+	<forestry:apatite>: { override: true, energyData: 25000, blockItem: { id: 'forestry:resource_storage', Damage: 0 }}, //Apatite
+	<redstonearsenal:material:0>: { override: true, energyData: 306670, blockItem: { id: 'redstonearsenal:storage', Damage: 0 }}, //Flux Crystal
+	<thaumcraft:amber>: { override: true, energyData: 55000, blockItem: { id: 'thaumcraft:amber_block', Damage: 0 }}, //Amber
+	<astralsorcery:itemcraftingcomponent:0>: { override: true, energyData: 45000, blockItem: { id: 'jaopca:block_aquamarine', Damage: 0 }}, //Aquamarine
+	<minecraft:prismarine_shard>: { override: true, energyData: 90000, blockItem: { id: 'minecraft:prismarine', Damage: 0 }, blockModifier: 5}, //Prismarine Shard
+	<darkutils:shulker_pearl>: { override: true, energyData: 50000 }, //Shulker Pearl
+	<minecraft:dye:4>: { override: true, energyData: 60000, blockItem: { id: 'minecraft:lapis_block', Damage: 0 }}, //Lapis Lazuli
+	
+	<appliedenergistics2:material:7>: { energyData: 87500, blockItem: { id: 'appliedenergistics2:fluix_block', Damage: 0 }}, //Fluix
+	<appliedenergistics2:material:12>: { energyData: 59065 }, //Pure Fluix
+	<appliedenergistics2:material:11>: { energyData: 37125 }, //Pure Quartz
+	<rats:rat_diamond>: { energyData: 166670 }, //Rat Diamond
+	<mysticalagriculture:crafting:5>: { energyData: 40000, blockItem: { id: 'mysticalagriculture:storage', Damage: 5 }}, //Prosperity Shard
+	<nuclearcraft:gem:5>: { energyData: 320000}, //Boron Arsenide
+	
+	<enderio:item_material:14>: { energyData: 546000}, //Pulsating Crystal
+	<enderio:item_material:15>: { energyData: 759815}, //Vibrant Crystal
+	<enderio:item_material:16>: { energyData: 1329675}, //Ender Crystal
+	<enderio:item_material:17>: { energyData: 200000}, //Enticing Crystal
+	<enderio:item_material:18>: { energyData: 4926630}, //Weather Crystal
+	<enderio:item_material:19>: { energyData: 1709585}, //Prescient Crystal
+	
+	<libvulpes:productgem:0>: { energyData: 750000, blockItem: { id: 'jaopca:block_dilithium', Damage: 0 }}, //Dilithium
+	
+	<botania:manaresource:2>: { energyData: 333335, blockItem: { id: 'botania:storage', Damage: 3 }}, //Mana Diamond
+	<botania:manaresource:9>: { energyData: 500000, blockItem: { id: 'botania:storage', Damage: 4 }}, //Dragonstone
+	
+	<environmentaltech:litherite_crystal>: { energyData: 500000, blockItem: { id: 'environmentaltech:litherite', Damage: 0 }}, //Litherite
+	<environmentaltech:erodium_crystal>: { energyData: 550000, blockItem: { id: 'environmentaltech:erodium', Damage: 0 }}, //Erodium
+	<environmentaltech:kyronite_crystal>: { energyData: 600000, blockItem: { id: 'environmentaltech:kyronite', Damage: 0 }}, //Kyronite
+	<environmentaltech:litherite_crystal>: { energyData: 675000, blockItem: { id: 'environmentaltech:pladium', Damage: 0 }}, //Pladium
+	<environmentaltech:ionite_crystal>: { energyData: 800000, blockItem: { id: 'environmentaltech:ionite', Damage: 0 }}, //Ionite
+	<environmentaltech:aethium_crystal>: { energyData: 1000000, blockItem: { id: 'environmentaltech:aethium', Damage: 0 }}, //Aethium
+	<environmentaltech:lonsdaleite_crystal>: { energyData: 353335, blockItem: { id: 'environmentaltech:lonsdaleite', Damage: 0 }}, //Lonsdaleite
+	
+	<extrautils2:suncrystal>: { energyData: 735940}, //Sun Crystal
+	<astralsorcery:itemcraftingcomponent:4>: { energyData: 112500}, //Resonant Gem
+	<redstonerepository:material:5>: { energyData: 112500, blockItem: { id: 'redstonerepository:storage', Damage: 1 }}, //Gelid Crystal
+	<rats:gem_of_ratlantis>: { energyData: 114750}, //Gem of Ratlantis
+	<psi:material:2>: { energyData: 675000, blockItem: { id: 'psi:decorative', Damage: 2 }}, //Psigem
+	<biomesoplenty:crystal_shard>: { energyData: 105080, blockItem: { id: 'biomesoplenty:crystal', Damage: 0 }, blockModifier: 5}, //Celestial Crystal
+	<endreborn:item_lormyte_crystal>: { energyData: 45000, blockItem: { id: 'endreborn:block_decorative_lormyte', Damage: 0 }}, //Lormyte
+	
+	<nuclearcraft:gem:0>: { energyData: 250000}, //Rhodochrosite
+	<nuclearcraft:gem:1>: { energyData: 300000}, //Boron Nitride
+	<nuclearcraft:gem:2>: { energyData: 225000}, //Fluorite
+	<nuclearcraft:gem:3>: { energyData: 250000}, //Villiaumite
+	<nuclearcraft:gem:4>: { energyData: 250000}, //Carobbiite
+	
+	<actuallyadditions:item_crystal:0>: { energyData: 25000, blockItem: { id: 'actuallyadditions:block_crystal', Damage: 0 }}, //Restonia Crystal
+	<actuallyadditions:item_crystal:1>: { energyData: 75000, blockItem: { id: 'actuallyadditions:block_crystal', Damage: 1 }}, //Palis Crystal
+	<actuallyadditions:item_crystal:2>: { energyData: 625000, blockItem: { id: 'actuallyadditions:block_crystal', Damage: 2 }}, //Diamatine Crystal
+	<actuallyadditions:item_crystal:3>: { energyData: 112500, blockItem: { id: 'actuallyadditions:block_crystal', Damage: 3 }}, //Void Crystal
+	<actuallyadditions:item_crystal:4>: { energyData: 106250, blockItem: { id: 'actuallyadditions:block_crystal', Damage: 4 }}, //Emeradic Crystal
+	<actuallyadditions:item_crystal:5>: { energyData: 93750, blockItem: { id: 'actuallyadditions:block_crystal', Damage: 5 }}, //Enori Crystal
+	<actuallyadditions:item_crystal_empowered:0>: { energyData: 203890, blockItem: { id: 'actuallyadditions:block_crystal_empowered', Damage: 0 }, blockModifier: 9}, //Restonia Crystal Empowered
+	<actuallyadditions:item_crystal_empowered:1>: { energyData: 333335, blockItem: { id: 'actuallyadditions:block_crystal_empowered', Damage: 1 }, blockModifier: 9}, //Palis Crystal Empowered
+	<actuallyadditions:item_crystal_empowered:2>: { energyData: 1030815, blockItem: { id: 'actuallyadditions:block_crystal_empowered', Damage: 2 }, blockModifier: 9}, //Diamatine Crystal Empowered
+	<actuallyadditions:item_crystal_empowered:3>: { energyData: 1715500, blockItem: { id: 'actuallyadditions:block_crystal_empowered', Damage: 3 }, blockModifier: 9}, //Void Crystal Empowered
+	<actuallyadditions:item_crystal_empowered:4>: { energyData: 367920, blockItem: { id: 'actuallyadditions:block_crystal_empowered', Damage: 4 }, blockModifier: 9}, //Emeradic Crystal Empowered
+	<actuallyadditions:item_crystal_empowered:5>: { energyData: 282640, blockItem: { id: 'actuallyadditions:block_crystal_empowered', Damage: 5 }, blockModifier: 9}, //Enori Crystal Empowered
+	
+	<scalinghealth:crystalshard>: { energyData: 175000}, //Heart Crystal Shard
+	<minecraft:prismarine_crystals>: { energyData: 95000}, //Prismarine Crystals
+	<biomesoplenty:terrestrial_artifact>: { energyData: 1321365, blockItem: { id: 'contenttweaker:terrestrial_artifact_block', Damage: 0 }, blockModifier: 9}, //Terrestrial Artifact
+	<threng:material:5>: { energyData: 2432955} //Resonating Crystal
+	
+} as IData[IItemStack]$orderly;
+
+for gem, gemData in gemMap {
+  if (gemData has 'override') {
+    NumisticDynamo.removeGemFuel(gem);
+  }
+  NumisticDynamo.addGemFuel(gem, gemData.energyData.asInt());
+  if (gemData has 'blockItem') {
+    val gemBlock = itemUtils.getItem(gemData.blockItem.id.asString(), gemData.blockItem.Damage.asInt());
+    if (!isNull(gemBlock)) {
+      if (gemData has 'blockModifier') {
+        NumisticDynamo.addGemFuel(gemBlock, gemData.energyData.asInt()*gemData.blockModifier.asInt());
+      }
+      else {
+        NumisticDynamo.addGemFuel(gemBlock, gemData.energyData.asInt()*10);
+      }
+    }
+  }
+}
