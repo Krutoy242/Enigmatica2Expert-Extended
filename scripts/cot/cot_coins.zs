@@ -185,3 +185,6 @@ for coin, coinData in coinMap {
     }
   }
 }
+
+// now only usable as gem
+NumisticDynamo.removeFuel(<minecraft:emerald>);
