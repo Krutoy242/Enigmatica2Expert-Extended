@@ -109,7 +109,7 @@ val coinMap = {
   <contenttweaker:coin_manganesedioxide>         : { energyData: 150000, inputItem: { id: 'nuclearcraft:ingot', Damage: 15 } },
   <contenttweaker:coin_manganeseoxide>           : { energyData: 75000, inputItem: { id: 'nuclearcraft:ingot', Damage: 14 } },
   <contenttweaker:coin_melodicalloy>             : { energyData: 4879000, inputItem: { id: 'enderio:item_alloy_endergy_ingot', Damage: 2 } },
-  <contenttweaker:coin_mirion>                   : { energyData: 1852560, inputItem: { id: 'plustic:mirioningot', Damage: 0 } },
+  <contenttweaker:coin_mirion>                   : { energyData: 1852560, inputItem: { id: 'plustic:mirioningot', Damage: 0 }, coins: 1 },
   <contenttweaker:coin_pinkmetal>                : { energyData: 281250, inputItem: { id: 'industrialforegoing:pink_slime_ingot', Damage: 0 } },
   <contenttweaker:coin_prudentium>               : { energyData: 138035, inputItem: { id: 'mysticalagriculture:crafting', Damage: 34 } },
   <contenttweaker:coin_psimetal>                 : { energyData: 81000, inputItem: { id: 'psi:material', Damage: 1 } },
