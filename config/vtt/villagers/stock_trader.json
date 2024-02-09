@@ -1,0 +1,10 @@
+{
+    "profession": {
+        "name": "vtt:stock_trader",
+        "texture": "vtt:textures/entity/villager/stock_trader.png",
+        "zombieTexture": "vtt:textures/entity/zombie_villager/zombie_stock_trader.png"
+    },
+    "careers": [
+        "stock_trader"
+    ]
+}
