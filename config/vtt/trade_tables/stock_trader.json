@@ -5,7 +5,7 @@
     "Recipes": [
       {
         "action": "add",
-		    "buy": { "id": "minecraft:emerald", "Count": 1 },
+        "buy": { "id": "minecraft:emerald", "Count": 1 },
         "sell": [
           { "id": "thermalfoundation:coin", "Damage": 0, "Count": { "min": 4, "max": 6 } },
           { "id": "thermalfoundation:coin", "Damage": 1, "Count": { "min": 2, "max": 3 } },
@@ -19,7 +19,7 @@
       },
       {
         "action": "add",
-		    "buy": { "id": "minecraft:emerald", "Count": 1 },
+        "buy": { "id": "minecraft:emerald", "Count": 1 },
         "sell": [
           { "id": "thermalfoundation:coin", "Damage": 96, "Count": { "min": 2, "max": 3 } },
           { "id": "thermalfoundation:coin", "Damage": 98, "Count": { "min": 2, "max": 4 } },
@@ -33,84 +33,84 @@
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 0, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_advancedalloy", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "contenttweaker:coin_elementium", "Damage": 0, "Count": {"min": 8, "max": 11} },
         "CareerLevel": 3
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 1, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 1, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_magnesiumdiboride", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "contenttweaker:coin_vibrantalloy", "Damage": 0, "Count": {"min": 8, "max": 11} },
         "CareerLevel": 3
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 64, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 64, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_soularium", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "thermalfoundation:coin", "Damage": 102, "Count": {"min": 8, "max": 11} },
         "CareerLevel": 3
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 67, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 67, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_fluxedelectrum", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "thermalfoundation:coin", "Damage": 101, "Count": {"min": 8, "max": 11} },
         "CareerLevel": 3
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 97, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 97, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_blackiron", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "contenttweaker:coin_niobiumtitanium", "Damage": 0, "Count": {"min": 6, "max": 8} },
         "CareerLevel": 4
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 100, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 100, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_extremealloy", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "contenttweaker:coin_enhancedender", "Damage": 0, "Count": {"min": 6, "max": 8} },
         "CareerLevel": 4
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 99, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 99, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_osgloglas", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "contenttweaker:coin_glitchinfused", "Damage": 0, "Count": {"min": 6, "max": 8} },
         "CareerLevel": 4
       },
       {
         "action": "add", "chance": 0.5,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 96, "Count": {"min": 5, "max": 7} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 96, "Count": {"min": 5, "max": 7} },
         "buyB": { "id": "contenttweaker:coin_endsteel", "Damage": 0, "Count": {"min": 5, "max": 7} },
         "sell": { "id": "contenttweaker:coin_ivorypsimetal", "Damage": 0, "Count": {"min": 6, "max": 8} },
         "CareerLevel": 4
       },
       {
         "action": "add", "chance": 0.75,
-		    "buy": { "id": "jaopca:item_coinardite", "Damage": 0, "Count": {"min": 8, "max": 12} },
+        "buy": { "id": "jaopca:item_coinardite", "Damage": 0, "Count": {"min": 8, "max": 12} },
         "buyB": { "id": "contenttweaker:coin_alumite", "Damage": 0, "Count": {"min": 8, "max": 12} },
         "sell": { "id": "contenttweaker:coin_primalmetal", "Damage": 0, "Count": {"min": 1, "max": 3} },
         "CareerLevel": 5
       },
       {
         "action": "add", "chance": 0.75,
-		    "buy": { "id": "contenttweaker:coin_manyullyn", "Damage": 0, "Count": {"min": 8, "max": 12} },
+        "buy": { "id": "contenttweaker:coin_manyullyn", "Damage": 0, "Count": {"min": 8, "max": 12} },
         "buyB": { "id": "contenttweaker:coin_tungstencarbide", "Damage": 0, "Count": {"min": 8, "max": 12} },
         "sell": { "id": "contenttweaker:coin_crystallinepinkslimealloy", "Damage": 0, "Count": {"min": 1, "max": 3} },
         "CareerLevel": 5
       },
       {
         "action": "add", "chance": 0.75,
-		    "buy": { "id": "thermalfoundation:coin", "Damage": 1, "Count": {"min": 27, "max": 32} },
+        "buy": { "id": "thermalfoundation:coin", "Damage": 1, "Count": {"min": 27, "max": 32} },
         "buyB": { "id": "jaopca:item_coinlithium", "Damage": 0, "Count": {"min": 27, "max": 32} },
         "sell": { "id": "contenttweaker:coin_wyvernmetal", "Damage": 0, "Count": 1 },
         "CareerLevel": 6
       },
       {
         "action": "add", "chance": 0.75,
-		    "buy": { "id": "jaopca:item_coinuranium", "Damage": 0, "Count": {"min": 27, "max": 32} },
+        "buy": { "id": "jaopca:item_coinuranium", "Damage": 0, "Count": {"min": 27, "max": 32} },
         "buyB": { "id": "contenttweaker:coin_heavymetal", "Damage": 0, "Count": {"min": 27, "max": 32} },
         "sell": { "id": "contenttweaker:coin_mithrillium", "Damage": 0, "Count": 2 },
         "CareerLevel": 6
