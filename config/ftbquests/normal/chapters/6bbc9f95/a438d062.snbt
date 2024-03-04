@@ -1,0 +1,48 @@
+{
+	title: "{q.thaumcraft.advanced_alchemical_construct.name}",
+	icon: "thaumcraft:metal_alchemical_advanced",
+	x: 15.0d,
+	y: 1.1d,
+	text: [
+		"{q.thaumcraft.advanced_alchemical_construct.desc}"
+	],
+	dependencies: [
+		"6f49eb69"
+	],
+	tasks: [{
+		uid: "e9ca2f69",
+		type: "item",
+		items: [{
+			item: "thaumcraft:metal_alchemical_advanced"
+		}],
+		count: 4L
+	},
+	{
+		uid: "6f9fcb9d",
+		type: "item",
+		items: [{
+			item: "thaumcraft:metal_alchemical"
+		}],
+		count: 4L
+	},
+	{
+		uid: "ddd52671",
+		type: "item",
+		items: [{
+			item: "thaumcraft:alembic"
+		}],
+		count: 4L
+	},
+	{
+		uid: "8edcc3ab",
+		type: "item",
+		items: [{
+			item: "thaumcraft:smelter_basic"
+		}]
+	}],
+	rewards: [{
+		uid: "55e1d8d5",
+		type: "choice",
+		table: 1
+	}]
+}
