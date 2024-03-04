@@ -1631,7 +1631,7 @@ null,null,
 #Invar
 addMetallurgicAspects
 (1,1,0,
-<thermalfoundation:material:162>,<thermalfoundation:storage_alloy:2>,<thermalfoundation:material:226>,<thermalfoundation:material:98>,
+<thermalfoundation:material:162>,<thermalfoundation:material:226>,<thermalfoundation:storage_alloy:2>,<thermalfoundation:material:98>,
 <thermalfoundation:material:354>,null,null,null,<thermalfoundation:material:290>,
 null,null,null,null,
 null,null,null,
