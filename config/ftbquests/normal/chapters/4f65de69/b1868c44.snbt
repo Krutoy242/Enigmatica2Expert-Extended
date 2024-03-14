@@ -47,7 +47,7 @@
 		title: "Grand access to the Nether",
 		team_reward: true,
 		auto: "no_toast",
-		command: "/gamestages add @p healthy"
+		command: "/gamestage add @p healthy"
 	},
 	{
 		uid: "cbe428c2",
