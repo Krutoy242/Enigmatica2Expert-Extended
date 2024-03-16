@@ -870,6 +870,8 @@ val susEggs = [
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "mekanism:babyskeleton"}}),
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "thaumcraft:giantbrainyzombie"}}),
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "plustic:supremeleader"}}),
+<minecraft:spawn_egg>.withTag({EntityTag: {id: "thaumcraft:spellbat"}}),
+<minecraft:spawn_egg>.withTag({EntityTag: {id: "plustic:blindbandit"}}),
  ] as IItemStack[];
 for egg in susEggs{
   egg.setAspects(<aspect:amogus>);
