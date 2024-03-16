@@ -370,11 +370,11 @@ _  _ _  _ ____ _    ____ ____ ____ ____ ____ ____ ____ ___
 | \| |__| |___ |___ |___ |  | |  \ |___ |  \ |  | |     |  
                                                            
 */
-
+/*
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "nuclearcraft:feral_ghoul"}})
                                                 .setAspects(<aspect:exanimis>*10      ,<aspect:mortuus>*10    ,<aspect:humanus>*20,     <aspect:potentia>*50); 
 <entity:nuclearcraft:feral_ghoul>               .setAspects(<aspect:exanimis>*10      ,<aspect:mortuus>*10    ,<aspect:humanus>*20,     <aspect:potentia>*50); 
-
+*/
 /*
 ____ ____ _  _ ___  ____ _  _ ___ _  _ _ _  _ ____ ____ 
 |__/ |__| |\ | |  \ |  | |\/|  |  |__| | |\ | | __ [__  
@@ -865,7 +865,7 @@ for egg in bossesEggs{
 }
 
 val susEggs = [
-//<minecraft:spawn_egg>.withTag({EntityTag: {id: "nuclearcraft:feral_ghoul"}}),
+<minecraft:spawn_egg>.withTag({EntityTag: {id: "nuclearcraft:feral_ghoul"}}),
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "cyclicmagic:robot"}}),
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "mekanism:babyskeleton"}}),
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "thaumcraft:giantbrainyzombie"}}),
