@@ -4,7 +4,7 @@
   "package": "io.github.lxgaming.sledgehammer.mixin.actuallyadditions",
   "refmap": "mixins.sledgehammer.refmap.json",
   "plugin": "io.github.lxgaming.sledgehammer.mixin.plugin.CorePlugin",
-  "target": "@env(MODE)",
+  "target": "@env(MOD)",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "mod.tile.TileEntityAtomicReconstructorMixin"
