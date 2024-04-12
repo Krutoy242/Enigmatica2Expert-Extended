@@ -1,0 +1,16 @@
+{
+  "required": false,
+  "minVersion": "0.7.10",
+  "package": "io.github.lxgaming.sledgehammer.mixin.vaultopic",
+  "refmap": "mixins.sledgehammer.refmap.json",
+  "plugin": "io.github.lxgaming.sledgehammer.mixin.plugin.CorePlugin",
+  "target": "@env(MOD)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "client.ProjectorMixin",
+    "VaultopicMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
