@@ -1,0 +1,28 @@
+{
+  "required": false,
+  "minVersion": "0.7.10",
+  "package": "io.github.lxgaming.sledgehammer.mixin.forge",
+  "refmap": "mixins.sledgehammer.refmap.json",
+  "plugin": "io.github.lxgaming.sledgehammer.mixin.plugin.ForgePlugin",
+  "target": "@env(MOD)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "common.ForgeHooksMixin_Advancement",
+    "entity.passive.EntityVillagerMixin",
+    "entity.EntityMixin_Teleport",
+    "fml.common.network.simpleimpl.SimpleChannelHandlerWrapperMixin",
+    "fml.common.network.simpleimpl.SimpleNetworkWrapperMixin",
+    "fml.common.network.FMLEmbeddedChannelMixin",
+    "fml.common.network.FMLEventChannelMixin",
+    "world.WorldMixin_IgnoreForcedChunkTicking",
+    "world.storage.WorldInfoMixin"
+  ],
+  "client": [
+    "fml.client.FMLClientHandlerMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
