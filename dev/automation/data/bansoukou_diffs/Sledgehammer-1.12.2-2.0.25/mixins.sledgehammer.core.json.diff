@@ -1,0 +1,9 @@
+@@ -4,7 +4,7 @@
+   "package": "io.github.lxgaming.sledgehammer.mixin.core",
+   "refmap": "mixins.sledgehammer.refmap.json",
+   "plugin": "io.github.lxgaming.sledgehammer.mixin.plugin.CorePlugin",
+-  "target": "@env(DEFAULT)",
++  "target": "@env(MOD)",
+   "compatibilityLevel": "JAVA_8",
+   "mixins": [
+     "advancements.AdvancementManagerMixin_Reload",
