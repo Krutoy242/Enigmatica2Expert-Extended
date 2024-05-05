@@ -129,6 +129,7 @@ mods.immersivetechnology.CoolingTower.removeRecipe(<liquid:hot_spring_water>, <l
 
 // mods.immersivetechnology.CoolingTower.addRecipe(ILiquidStack outputFluid1, ILiquidStack outputFluid2, ILiquidStack outputFluid3, ILiquidStack inputFluid1, ILiquidStack inputFluid2, int time);
 mods.immersivetechnology.CoolingTower.addRecipe(<liquid:water> * 5850, <liquid:water> * 5850, <liquid:water> * 5850, <liquid:hot_spring_water> * 8100, <liquid:water> * 9900, 1);
+mods.immersivetechnology.CoolingTower.addRecipe(<liquid:water> * 600, <liquid:water> * 600, <liquid:water> * 600, <liquid:exhaust_steam> * 800, <liquid:water> * 1000, 1);
 
 // --------------
 // Radiator buff x6
