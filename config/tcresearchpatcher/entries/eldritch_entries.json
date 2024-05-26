@@ -311,7 +311,7 @@
       "stages": [
         {
           "text": "research_stage.thaumadditions:mithminite_scythe.1",
-          "required_knowledge": ["OBSERVATION;ELDRITCH;2", "OBSERVATION;ELDRITCH;2"]
+          "required_knowledge": ["OBSERVATION;ELDRITCH;2", "THEORY;ELDRITCH;2"]
         },
         {
           "text": "research_stage.thaumadditions:mithminite_scythe.2",
