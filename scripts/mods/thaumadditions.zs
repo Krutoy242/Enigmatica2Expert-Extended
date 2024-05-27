@@ -12,6 +12,64 @@ mods.thaumcraft.Infusion.removeRecipe(<minecraft:golden_apple:1>);
 
 scripts.process.sawWood(<thaumcraft:taint_log>, <thaumadditions:taintwood_planks>, 'only: TESawmill'); 
 
+val toHide = [
+  'aer',
+  'alienis',
+  'alkimia',
+  'amogus',
+  'aqua',
+  'auram',
+  'aversio',
+  'bestia',
+  'caeles',
+  'cognitio',
+  'desiderium',
+  'draco',
+  'exanimis',
+  'exitium',
+  'fabrico',
+  'fluctus',
+  'gelum',
+  'herba',
+  'humanus',
+  'ignis',
+  'imperium',
+  'infernum',
+  'instrumentum',
+  'lux',
+  'machina',
+  'mana',
+  'metallum',
+  'mortuus',
+  'motus',
+  'mythus',
+  'ordo',
+  'perditio',
+  'permutatio',
+  'potentia',
+  'praecantatio',
+  'praemunio',
+  'rattus',
+  'sanguis',
+  'sensus',
+  'sonus',
+  'spiritus',
+  'tenebrae',
+  'terra',
+  'vacuos',
+  'ventus',
+  'vinculum',
+  'visum',
+  'victus',
+  'volatus',
+  'vitium',
+  'vitreus',
+] as string[];
+
+for item in toHide {
+  mods.thaumcraft.Crucible.removeRecipe('thaumadditions:'~item~'_vis_seed');
+}
+
 /*
 ___ _  _ ____ _  _ _  _ ____ ___  ___  _ ___ _ ____ _  _ ____ 
  |  |__| |__| |  | |\/| |__| |  \ |  \ |  |  | |  | |\ | [__  

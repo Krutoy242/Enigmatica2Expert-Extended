@@ -36,3 +36,5 @@ mods.thaumcraft.Infusion.registerRecipe(
   utils.tryCatch('thaumadditions:fragnant_pendant', <deepmoblearning:pristine_matter_enderman>), // CentralItem
   [<thaumcraft:bath_salts>, <warptheory:item_cleanser>, <thaumcraft:bath_salts>, <thaumcraft:sanity_soap>, <thaumcraft:bath_salts>, <thaumicwonders:cleansing_charm>, <thaumcraft:bath_salts>, <thaumcraft:sanity_soap>]
 );
+
+mods.thaumcraft.Infusion.removeRecipe('warptheory:item_cleanser_minor');
