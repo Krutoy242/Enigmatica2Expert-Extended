@@ -340,44 +340,59 @@ function checkIfWeapon(tool as IItemStack) as bool {
   return false;
 }
 
+function checkIfOtherSwordAlreadySpeaks(player as IEntity) as bool{
+  if(isNull(player.nbt)
+  || isNull(player.nbt.ForgeData) 
+  || isNull(player.nbt.ForgeData.warpSpeakCooldown) 
+  ) return false;
+
+  return player.world.time == player.nbt.ForgeData.warpSpeakCooldown;
+}
+
+static dialogLocation as string = 'warp.sword.speak.';
+static oneDialog as int = 28;
+static twoDialog as int = 12;
+
 // Speak randomly
 function speakRandom(player as IPlayer, world as IWorld) as void {
-  val k = 'warp.sword.speak.random.';
-  val r = world.random.nextInt(9);
-  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k + r));
+  val r = world.random.nextInt(oneDialog + twoDialog);
+  if(r<oneDialog){
+  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "random." ~ r));
   player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+  } else{
+    val key = r - oneDialog;
+    world.catenation().run(function(world, context) {
+    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 0));
+    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+  }).sleep(80).run(function(world, context){
+    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 1));
+    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+  }).sleep(80).run(function(world, context){
+    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 2));
+    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+  }).sleep(80).run(function(world, context){
+    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 3));
+    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+  }).start();
+  }
 }
 
 possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
-  if (world.isRemote()) return;
-  if (!checkIfWeapon(tool)) return;
+  if (world.isRemote()
+  || world.time % 500 != 0
+  || !checkIfWeapon(tool)
+  || !owner instanceof IPlayer
+  || checkIfOtherSwordAlreadySpeaks(owner)) return;
 
-  if (!owner instanceof IPlayer) return;
   val player as IPlayer = owner;
-
-  if (player.warpNormal + player.warpTemporary + player.warpPermanent >= 100) {
-    if (world.random.nextInt(12000) < 1) speakRandom(player, world);
+  val warp = player.warpNormal + player.warpTemporary + player.warpPermanent;
+  if (warp >= 100) {
+    if (world.random.nextInt(2) > 0) {
+      player.warpTemporary = min(10000,player.warpTemporary + 5);
+      player.setNBT({warpSpeakCooldown: world.time});
+      speakRandom(player, world);
+    }
   }
-};
-
-// Speak on kill
-function speakKill(player as IPlayer, world as IWorld) as void {
-  val k = 'warp.sword.speak.kill.';
-  val r = world.random.nextInt(8);
-  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(k + r));
-  if (player.isPlayerMP()) player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
-}
-
-possessed_Trait.onHit = function (trait, tool, attacker, target, damage, isCritical) {
-  if (attacker.world.isRemote()) return;
-  if (!checkIfWeapon(tool)) return;
-
-  if (!attacker instanceof IPlayer) return;
-  val player as IPlayer = attacker;
-  val warp as int = player.warpNormal + player.warpTemporary + player.warpPermanent;
-
-  if (warp < 50) return;
-  if (target.health - damage < 0) speakKill(player, player.world);
 };
 
 possessed_Trait.register();
