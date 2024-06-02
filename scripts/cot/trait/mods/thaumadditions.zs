@@ -246,47 +246,42 @@ function spin(player as IPlayer) as void {
 }
 
 // Striping weared armor
-function stripArmor(target as IEntityLivingBase, warp as int, player as IPlayer) as void {
-  if (target.world.random.nextInt(2000) > warp) return;
-  var slots = [] as int[];
+function breakArmor(target as IEntityLivingBase, warp as int, player as IPlayer) as void {
+  var broken = false;
 
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet())) slots += 0;
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs())) slots += 1;
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest())) slots += 2;
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head())) slots += 3;
-
-  if (slots.length == 0) return;
-  val slotIndex = slots[target.world.random.nextInt(slots.length)];
-
-  if (slotIndex == 0) {
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet())
+  && target.world.random.nextInt(1000) > warp) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet());
-    if (isNull(item)) return;
-    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
-    target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.feet(), null);
+    if (!isNull(item) && item.isDamageable) {
+      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.feet(), null);
+      broken = true;
+    }
   }
-  if (slotIndex == 1) {
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs())
+  && target.world.random.nextInt(1000) > warp) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs());
-    if (isNull(item)) return;
-    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
-    target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.legs(), null);
+    if (!isNull(item) && item.isDamageable) {
+      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.legs(), null);
+      broken = true;
+    }
   }
-  if (slotIndex == 2) {
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest())
+  && target.world.random.nextInt(1000) > warp) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest());
-    if (isNull(item)) return;
-    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
-    target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.chest(), null);
+    if (!isNull(item) && item.isDamageable) {
+      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.chest(), null);
+      broken = true;
+    }
   }
-  if (slotIndex == 3) {
+  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head())
+  && target.world.random.nextInt(1000) > warp) {
     var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head());
-    if (isNull(item)) return;
-    if (item.isDamageable) item = item.withDamage(target.world.random.nextInt(item.maxDamage));
-    target.world.spawnEntity(item.createEntityItem(target.world, target.position));
-    target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.head(), null);
+    if (!isNull(item) && item.isDamageable) {
+      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.head(), null);
+      broken = true;
+    }
   }
-  player.sendPlaySoundPacket('thaumcraft:zap', 'ambient', target.position, 1.0f, 1.0f);
+  if(broken) player.sendPlaySoundPacket('minecraft:entity.item.break', 'ambient', target.position, 1.0f, 1.0f);
 }
 
 // Debuff function
