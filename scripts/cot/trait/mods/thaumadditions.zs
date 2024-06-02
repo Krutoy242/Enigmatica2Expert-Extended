@@ -725,6 +725,13 @@ researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
     tool.mutable().updateTag({ flux: 0 });
     return;
   }
+  if(world.time % 1000 == 0){
+    if (player.thaumcraftKnowledge.isResearchComplete('ORE_PURIFIER') && isNull(tool.tag.orePurifier)) tool.mutable().updateTag({ orePurifier: 1 });
+    if (player.thaumcraftKnowledge.isResearchComplete('LOOT_STEALER') && isNull(tool.tag.lootStealer)) tool.mutable().updateTag({ lootStealer: 1 });
+    if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isNull(tool.tag.fluxStrikeResearch)) tool.mutable().updateTag({ fluxStrikeResearch: 1 });
+    if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && isNull(tool.tag.godWraith)) tool.mutable().updateTag({ godWraith: 1 });
+    if (player.thaumcraftKnowledge.isResearchComplete('PURE_SMITE') && isNull(tool.tag.pureSmite)) tool.mutable().updateTag({ pureSmite: 1 });
+  }
   if (world.time % 10 !=0 || tool.tag.flux >= 50) return;
   if (world.getFlux(player.position) <= 1.0f) return;
   world.drainFlux(player.position, 1.0f);
@@ -829,6 +836,37 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
   if (!dropChanged) return;
   event.drops = newDrops;
 };
+
+researcherTrait.extraInfo = function (thisTrait, item, tag) {
+  var result = [] as string[];
+
+  if(!isNull(item.tag.godWraith) && item.tag.godWraith==1){
+    result += "God Wraith: YES";
+  } else {result += "God Wraith: NO";}
+
+  if(!isNull(item.tag.fluxStrikeResearch) && item.tag.fluxStrikeResearch==1){
+    result += "Flux Strike: YES";
+  } else {result += "Flux Strike: NO";}
+
+  if(!isNull(item.tag.flux)){
+    result += "Flux: "~item.tag.flux;
+  } else {result += "Flux: 0";} 
+
+  if(!isNull(item.tag.pureSmite) && item.tag.pureSmite==1){
+    result += "Pure Smite: YES";
+  } else {result += "Pure Smite: NO";}
+
+  if(!isNull(item.tag.lootStealer) && item.tag.lootStealer==1){
+    result += "Loot Stealer: YES";
+  } else {result += "Loot Stealer: NO";}
+
+  if(!isNull(item.tag.orePurifier) && item.tag.orePurifier==1){
+    result += "Ore Purifier: YES";
+  } else {result += "Ore Purifier: NO";}
+
+  return result;
+};
+
 researcherTrait.register();
 
 /*
