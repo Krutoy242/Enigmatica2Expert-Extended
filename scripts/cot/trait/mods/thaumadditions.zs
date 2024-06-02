@@ -85,23 +85,22 @@ equilibrium_Trait.localizedDescription = game.localize('e2ee.tconstruct.material
 // Bonus mining speed depending on vis in aura
 equilibrium_Trait.getMiningSpeed = function (trait, tool, event) {
   if (event.player.world.isRemote()) return; // world is remote
-  // val bonus = min(3.0f,event.player.world.getVis(event.position)*0.01f) as float;
-  event.newSpeed = event.originalSpeed + (min(3.0f, event.player.world.getVis(event.position) * 0.01f) as float);
+  event.newSpeed = event.newSpeed + (event.originalSpeed * min(2.0f, event.player.world.getVis(event.position) * 0.005f) as float);
 };
 // Bonus dmg multiplier depending on vis in aura
 equilibrium_Trait.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
   if (attacker.world.isRemote()) return newDamage; // world is not remote
   if (!attacker instanceof IPlayer) return newDamage; // not player
-  // val mult = 1+min(3.0f,attacker.world.getVis(attacker.position)*0.01f) as float;
   return newDamage * ((1 + min(3.0f, attacker.world.getVis(attacker.position) * 0.01f)) as float);
 };
 // Relese vis on kill
-equilibrium_Trait.onHit = function (trait, tool, attacker, target, damage, isCritical) {
+equilibrium_Trait.afterHit = function(trait, tool, attacker, target, damageDealt, wasCritical, wasHit) {
   if (attacker.world.isRemote()) return; // world is remote
-  if (!attacker instanceof IPlayer) return; // not player
-  val player as IPlayer = attacker;
-
-  if (target.health - damage < 0) player.world.addVis(player.position, (target.maxHealth / 2.0f) as float); // release vis
+  if (target.health <= 0 && wasHit){
+    attacker.world.addVis(attacker.position, (target.maxHealth / 2.0f) as float); // release vis
+    server.commandManager.executeCommandSilent(server, "/particle endRod "~target.x~" "~entityEyeHeight(target)~" "~target.z~" 5 1 5 0 50");
+    playSound("botania:blacklotus", target);
+  } 
 };
 equilibrium_Trait.register();
 
