@@ -290,7 +290,7 @@ function debuffenemy(target as IEntityLivingBase, warp as int, player as IPlayer
   target.addPotionEffect(<potion:minecraft:glowing>.makePotionEffect(warp, 0));
   target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(warp, min(3, (warp - 50) / 200)));
   breakArmor(target, warp, player);
-  mods.ctintegration.scalinghealth.DifficultyManager.addDifficulty(player, 0.0001 * sqrt(damage * warp));
+  //mods.ctintegration.scalinghealth.DifficultyManager.addDifficulty(player, 0.0001 * sqrt(damage * warp));
   if (warp >= 100){target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(warp, min(1, (warp - 100) / 500)));
   if (warp >= 300) target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(warp, min(3, (warp - 300) / 300)));}
 }
