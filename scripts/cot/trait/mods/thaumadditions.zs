@@ -751,6 +751,7 @@ function checkTool(tool as IItemStack) as bool {
     && !isNull(tool.tag.TinkerData)
     && !isNull(tool.tag.Traits)
     && !isNull(tool.tag.Traits.asList())
+    && !isNull(tool.tag.orePurifier)
   ) {
     for trait in tool.tag.Traits.asList() {
       if (trait != 'researcher') continue;
@@ -776,10 +777,6 @@ function checkRefineEnchant(tool as IItemStack) as int {
 researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
   // DROP BONUS crystalized chunks
   if (event.player.world.isRemote()) return; // world is remote
-
-  if (!event.isPlayer) return; // no player
-  // if(event.silkTouch) return; // silk touch
-  if (!event.player.thaumcraftKnowledge.isResearchComplete('ORE_PURIFIER')) return; // player don't have finished research
 
   if (!checkTool(tool)) return;
   val lvl = checkRefineEnchant(tool);
