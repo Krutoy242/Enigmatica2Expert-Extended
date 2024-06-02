@@ -624,15 +624,32 @@ researcherTrait.onHit = function (trait, tool, attacker, target, damage, isCriti
   || !attacker instanceof IPlayer) return;
   val player as IPlayer = attacker;
 
-  if (!player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH')) return;
+  if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && checkIfArrow(tool)){
+    target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(1, 0));
+    if(player.getDistanceSqToEntity(target)>30.0) target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 2));
+  } 
 
-  target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(10, 0));
   if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isCritical && tool.tag.fluxStrike==1){
     tool.mutable().updateTag({fluxStrike: 0});
     fluxStikeMechanic(target, damage);
   }
   return;
 };
+
+
+function checkIfArrow(tool as IItemStack) as bool {
+  if (
+    !isNull(tool.tag)
+    && !isNull(tool.tag.Special)
+    && !isNull(tool.tag.Special.Categories)
+    && !isNull(tool.tag.Special.Categories.asList())
+  ) {
+    for tag in tool.tag.Special.Categories.asList() {
+      if (tag == 'projectile') return true;
+    }
+  }
+  return false;
+}
 
 function makeWitchPatricles(data as IData, entity as IEntity, i as int) as void {
   server.commandManager.executeCommandSilent(server, "/particle witchMagic "
