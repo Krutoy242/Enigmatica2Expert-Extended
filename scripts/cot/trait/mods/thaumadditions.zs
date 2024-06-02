@@ -604,36 +604,92 @@ researcherTrait.color = 16744631;
 researcherTrait.localizedName = game.localize('e2ee.tconstruct.material.researcher.name');
 researcherTrait.localizedDescription = game.localize('e2ee.tconstruct.material.researcher.description');
 researcherTrait.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
-  if (target.world.isRemote()) return newDamage;
-
-  if (!attacker instanceof IPlayer) return newDamage;
+  if (target.world.isRemote()
+  || !attacker instanceof IPlayer) return newDamage;
   val player as IPlayer = attacker;
-  var dmg as float = originalDamage;
+  var dmg = newDamage;
 
-  if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE')) {
-    if (tool.tag.flux > 0) {
-      tool.mutable().updateTag({ flux: tool.tag.flux - 1 });
-      dmg = dmg * 2.0f;
-    }
+  if (player.thaumcraftKnowledge.isResearchComplete('PURE_SMITE') && target.isUndead) dmg += 20.0f;
+  if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && tool.tag.flux >= 30) {
+    tool.mutable().updateTag({ flux: (tool.tag.flux - 30), fluxStrike: 1 });
+    player.world.addFlux(player.position, 10.0f);
+    dmg = dmg * 5;
   }
-  if (player.thaumcraftKnowledge.isResearchComplete('PURE_SMITE')) {
-    if (target.isUndead) {
-      dmg += 20.0f;
-    }
-  }
-  return dmg as float;
+
+  return dmg;
 };
 
 researcherTrait.onHit = function (trait, tool, attacker, target, damage, isCritical) {
-  if (target.world.isRemote()) return;
-
-  if (!attacker instanceof IPlayer) return;
+  if (target.world.isRemote()
+  || !attacker instanceof IPlayer) return;
   val player as IPlayer = attacker;
 
   if (!player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH')) return;
 
   target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(10, 0));
+  if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isCritical && tool.tag.fluxStrike==1){
+    tool.mutable().updateTag({fluxStrike: 0});
+    fluxStikeMechanic(target, damage);
+  }
+  return;
 };
+
+function makeWitchPatricles(data as IData, entity as IEntity, i as int) as void {
+  server.commandManager.executeCommandSilent(server, "/particle witchMagic "
+  ~((data.x*(20 - i)+entity.x*i) / 20)~" "
+  ~((data.y*(20 - i)+(entity.y+entity.eyeHeight)*i) / 20 + 3.0*sin(3.14*i / 20))~" "
+  ~((data.z*(20 - i)+entity.z*i) / 20)~
+  " 0 0 0 0 1");
+}
+
+function fluxStikeMechanic(target as IEntityLivingBase, damage as float) as void {
+  server.commandManager.executeCommandSilent(server, "/particle witchMagic "~target.x~" "~(target.y+target.eyeHeight)~" "~target.z~" .6 .6 .6 2 100");
+  playSound("thaumcraft:wandfail", target);
+  val world = target.world;
+  val entitiesList = world.getEntities();
+  val particleCount = 20;
+  var count = 0;
+  val length = entitiesList.length - 1;
+  for i in 0 to (entitiesList.length){
+    val entity = entitiesList[length-i];
+    if(isNull(entity)
+    || !entity instanceof IEntityLiving
+    || !entity.isAlive()
+    || entity.id==target.id
+    || target.getDistanceSqToEntity(entity)>20
+    //|| isNull(target.definition)
+    ) continue;
+
+    world.catenation().run(function(world, context){
+      context.data = {x:target.x ,y:(target.y+target.eyeHeight) ,z:target.z};
+      val k=particleCount/5;
+      for i in k to k{makeWitchPatricles(context.data, entity, i);}
+    }).sleep(5).run(function(world, context){
+      if(!isNull(entity)){val k=2*particleCount/5;
+      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
+      }
+    }).sleep(5).run(function(world, context){
+      if(!isNull(entity)){val k=3*particleCount/5;
+      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
+    }
+    }).sleep(5).run(function(world, context){
+      if(!isNull(entity)){val k=4*particleCount/5;
+      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
+    }
+    }).sleep(5).run(function(world, context){
+      if(!isNull(entity)){val k=5*particleCount/5;
+      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
+    }
+    }).sleep(5).run(function(world, context){
+      if(!isNull(entity))server.commandManager.executeCommandSilent(server, "/particle witchMagic "~entity.x~" "~(entity.y+entity.eyeHeight)~" "~entity.z~" 0 0 0 3 20");
+    }).sleep(1).run(function(world, context){
+      if(!isNull(entity))entity.attackEntityFrom(crafttweaker.damage.IDamageSource.MAGIC(), damage);
+    })
+    .start();
+    count +=1;
+    if(count==4) return;
+  }
+}
 
 /*
 ____ _    _  _ _  _    ____ ___ ____ _ _  _ ____    ___ ____ ____    _  _ ___  ___  ____ ___ ____
@@ -645,16 +701,16 @@ ____ _    _  _ _  _    ____ ___ ____ _ _  _ ____    ___ ____ ____    _  _ ___  _
 researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
   if (world.isRemote()) return;
   if (!owner instanceof IPlayer) return;
+  val player as IPlayer = owner;
 
   if (isNull(tool.tag)) return; // all tinkers tools should have tags
   if (isNull(tool.tag.flux)) {
     tool.mutable().updateTag({ flux: 0 });
     return;
   }
-
-  if (tool.tag.flux >= 100) return;
-  if (world.getFlux(owner.position) <= 1.0f) return;
-  world.drainFlux(owner.position, 1.0f);
+  if (world.time % 10 !=0 || tool.tag.flux >= 50) return;
+  if (world.getFlux(player.position) <= 1.0f) return;
+  world.drainFlux(player.position, 1.0f);
   tool.mutable().updateTag({ flux: tool.tag.flux + 1 });
 };
 
