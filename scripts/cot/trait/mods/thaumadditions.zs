@@ -518,8 +518,8 @@ gaze_trait.localizedDescription = game.localize('e2ee.tconstruct.material.gaze.d
 static gazeUpdateTime as int = 80;
 
 function gazeMechanic(world as IWorld, player as IPlayer) as void {
-  if (world.isRemote()) return;
-  if (isNull(player)) return;
+  if (world.isRemote()
+  || isNull(player)) return;
   val newEffect = <potion:thaumcraft:deathgaze>;
   if (!player.isPotionActive(newEffect)) {
     player.addPotionEffect(newEffect.makePotionEffect(gazeUpdateTime, 3));
