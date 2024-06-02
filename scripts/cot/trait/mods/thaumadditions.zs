@@ -2,6 +2,8 @@
 #modloaded ctintegration thaumadditions
 
 import crafttweaker.block.IBlock;
+import crafttweaker.entity.IEntity;
+import crafttweaker.entity.IEntityLiving;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
@@ -11,9 +13,35 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.conarm.ArmorTraitBuilder;
 import mods.contenttweaker.conarm.ExtendedMaterialBuilder;
 import mods.contenttweaker.tconstruct.TraitBuilder;
+import mods.contenttweaker.tconstruct.Trait;
+import mods.contenttweaker.tconstruct.TraitDataRepresentation;
+import mods.tconstruct.traits.CanApplyTogetherTrait;
 import mods.ctutils.utils.Math.max;
 import mods.ctutils.utils.Math.min;
 import mods.ctutils.utils.Math.sqrt;
+import mods.ctutils.utils.Math.sin;
+import mods.zenutils.Catenation;
+import crafttweaker.data.IData;
+import mods.zenutils.DataUpdateOperation.OVERWRITE;
+import mods.zenutils.DataUpdateOperation.APPEND;
+import mods.zenutils.DataUpdateOperation.MERGE;
+import mods.zenutils.DataUpdateOperation.REMOVE;
+import mods.zenutils.DataUpdateOperation.BUMP;
+import crafttweaker.entity.AttributeModifier;
+
+function entityEyeHeight(entity as IEntity) as double{
+    return entity.y+entity.eyeHeight;
+}
+
+function playSound(str as string, target as IEntity) as void{
+    val list = target.world.getAllPlayers();
+    for player in list {
+        if(isNull(player)
+        || player.world.dimension!=target.world.dimension
+        || player.getDistanceSqToEntity(target)>50) continue;
+        player.sendPlaySoundPacket(str, "ambient", target.position, 1.0f, 1.0f);
+    }
+}
 
 /*
 ███╗   ███╗██╗████████╗██╗  ██╗██████╗ ██╗██╗     ██╗     ██╗██╗   ██╗███╗   ███╗
