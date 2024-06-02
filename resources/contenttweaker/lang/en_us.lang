@@ -254,6 +254,8 @@ e2ee.tconstruct.material.researcher.name=Researcher
 e2ee.tconstruct.material.researcher.description=Based on your research in thaumonomicon, there are various effects!
 e2ee.tconstruct.material.first_stand.name=First Stand
 e2ee.tconstruct.material.first_stand.description=Consume experience before taking damage.
+e2ee.tconstruct.material.robust.name=Robust
+e2ee.tconstruct.material.robust.description=Increase health
 
 warp.sword.warning=§o§5 You are too sane to use that power!§r
 

@@ -926,6 +926,29 @@ firstStand_trait.onHurt = function (trait, armor, player, source, damage, newDam
 };
 firstStand_trait.register();
 
+val robust_trait = ArmorTraitBuilder.create('robust');
+robust_trait.color = 11141165;
+robust_trait.localizedName = game.localize('e2ee.tconstruct.material.robust.name');
+robust_trait.localizedDescription = game.localize('e2ee.tconstruct.material.robust.description');
+
+robust_trait.onArmorEquip = function(trait, armor, player, index) {
+    if(isNull(player)
+    || player.world.isRemote()) return;
+
+    player.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("CoA_Mithminite"~index, 10.0, 0));
+};
+
+robust_trait.onArmorRemove = function(trait, armor, player, index) {
+    if(isNull(player)
+    || player.world.isRemote()) return;
+
+    for modifier in player.getAttribute("generic.maxHealth").getModifiersByOperation(0){
+      if(modifier.getName()=="CoA_Mithminite"~index) player.getAttribute("generic.maxHealth").removeModifier(modifier.getUUID());
+    }
+};
+
+robust_trait.register();
+
 /*
 _  _ _ ___ _  _ _  _ _ _  _ _ ___ ____    ___  _  _ _ _    ___
 |\/| |  |  |__| |\/| | |\ | |  |  |___    |__] |  | | |    |  \
@@ -958,5 +981,7 @@ mithminite.localizedName = game.localize('e2ee.tconstruct.material.mithminite.na
 mithminite.addMaterialTrait('researcher', 'head');
 
 mithminite.addMaterialTrait('first_stand_armor', 'core');
+mithminite.addMaterialTrait('robust_armor', 'trim');
+mithminite.addMaterialTrait('robust_armor', 'plates');
 
 mithminite.register();
