@@ -241,7 +241,8 @@ ____ ____ ____ ___  _ ___  ___  ____ _  _
 
 // Spin effect on player
 function spin(player as IPlayer) as void {
-  player.addPotionEffect(<potion:potioncore:spin>.makePotionEffect(7, 1));
+  player.addPotionEffect(<potion:potioncore:spin>.makePotionEffect(5, 2));
+  player.sendPlaySoundPacket("minecraft:entity.ghast.hurt", "ambient", player.position, 1.0f, 1.0f);
   player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation('warp.sword.warning'));
 }
 
@@ -285,17 +286,13 @@ function breakArmor(target as IEntityLivingBase, warp as int, player as IPlayer)
 }
 
 // Debuff function
-function debuffenemy(target as IEntityLivingBase, warp as int, player as IPlayer) as void {
-  if (target.world.isRemote()) return;
-  target.addPotionEffect(<potion:minecraft:glowing>.makePotionEffect(600, 0));
-  target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(600, min(3, (warp - 50) / 200)));
-  if (warp >= 100) {
-    target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(600, min(1, (warp - 100) / 500)));
-    if (warp >= 300) {
-      target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(600, min(3, (warp - 300) / 300)));
-    }
-    stripArmor(target, warp, player);
-  }
+function debuffenemy(target as IEntityLivingBase, warp as int, player as IPlayer, damage as double) as void {
+  target.addPotionEffect(<potion:minecraft:glowing>.makePotionEffect(warp, 0));
+  target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(warp, min(3, (warp - 50) / 200)));
+  breakArmor(target, warp, player);
+  mods.ctintegration.scalinghealth.DifficultyManager.addDifficulty(player, 0.0001 * sqrt(damage * warp));
+  if (warp >= 100){target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(warp, min(1, (warp - 100) / 500)));
+  if (warp >= 300) target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(warp, min(3, (warp - 300) / 300)));}
 }
 
 // Trait
@@ -313,7 +310,7 @@ forbidden_Trait.onHit = function (trait, tool, attacker, target, damage, isCriti
     spin(player);
   }
   else {
-    debuffenemy(target, warp, player);
+    debuffenemy(target, warp, player, damage);
   }
 };
 forbidden_Trait.register();
@@ -331,8 +328,7 @@ possessed_Trait.localizedName = game.localize('e2ee.tconstruct.material.possesse
 possessed_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.possessed.description');
 
 function checkIfWeapon(tool as IItemStack) as bool {
-  if (
-    !isNull(tool.tag)
+  if ( !isNull(tool.tag)
     && !isNull(tool.tag.Special)
     && !isNull(tool.tag.Special.Categories)
     && !isNull(tool.tag.Special.Categories.asList())
