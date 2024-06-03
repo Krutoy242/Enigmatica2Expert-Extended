@@ -935,6 +935,10 @@ robust_trait.onArmorEquip = function(trait, armor, player, index) {
     if(isNull(player)
     || player.world.isRemote()) return;
 
+    for modifier in player.getAttribute("generic.maxHealth").getModifiersByOperation(0){
+      if(modifier.getName()=="CoA_Mithminite"~index) return;
+    }
+
     player.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("CoA_Mithminite"~index, 10.0, 0));
 };
 
