@@ -838,28 +838,28 @@ researcherTrait.extraInfo = function (thisTrait, item, tag) {
   var result = [] as string[];
 
   if(!isNull(item.tag.godWraith) && item.tag.godWraith==1){
-    result += "God Wraith: YES";
-  } else {result += "God Wraith: NO";}
+    result += "God Wraith: ✓";
+  } else {result += "God Wraith: X";}
 
   if(!isNull(item.tag.fluxStrikeResearch) && item.tag.fluxStrikeResearch==1){
-    result += "Flux Strike: YES";
-  } else {result += "Flux Strike: NO";}
+    result += "Flux Strike: ✓";
+  } else {result += "Flux Strike: X";}
 
   if(!isNull(item.tag.flux)){
     result += "Flux: "~item.tag.flux;
   } else {result += "Flux: 0";} 
 
   if(!isNull(item.tag.pureSmite) && item.tag.pureSmite==1){
-    result += "Pure Smite: YES";
-  } else {result += "Pure Smite: NO";}
+    result += "Pure Smite: ✓";
+  } else {result += "Pure Smite: X";}
 
   if(!isNull(item.tag.lootStealer) && item.tag.lootStealer==1){
-    result += "Loot Stealer: YES";
-  } else {result += "Loot Stealer: NO";}
+    result += "Loot Stealer: ✓";
+  } else {result += "Loot Stealer: X";}
 
   if(!isNull(item.tag.orePurifier) && item.tag.orePurifier==1){
-    result += "Ore Purifier: YES";
-  } else {result += "Ore Purifier: NO";}
+    result += "Ore Purifier: ✓";
+  } else {result += "Ore Purifier: X";}
 
   return result;
 };
