@@ -373,7 +373,7 @@ function speakRandom(player as IPlayer, world as IWorld) as void {
 
 possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
   if (world.isRemote()
-  || world.time % 500 != 0
+  || world.time % 6000 != 0
   || !checkIfWeapon(tool)
   || !owner instanceof IPlayer
   || checkIfOtherSwordAlreadySpeaks(owner)) return;
@@ -382,7 +382,7 @@ possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   val warp = player.warpNormal + player.warpTemporary + player.warpPermanent;
   if (warp >= 100) {
     if (world.random.nextInt(2) > 0) {
-      player.warpTemporary = min(10000,player.warpTemporary + 5);
+      player.warpTemporary = min(500,player.warpTemporary + 5);
       player.setNBT({warpSpeakCooldown: world.time});
       speakRandom(player, world);
     }
