@@ -75,36 +75,30 @@ visSiphon_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
 };
 visSiphon_Trait.register();
 
-val visSiphon2_Trait = TraitBuilder.create('vis_siphon2');
-visSiphon2_Trait.color = 2852604;
-visSiphon2_Trait.localizedName = game.localize('e2ee.tconstruct.material.vis_siphon2.name');
-visSiphon2_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_siphon.description');
-visSiphon2_Trait.maxLevel = 4;
-visSiphon2_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
+val visVaccum_Trait = TraitBuilder.create('vis_vaccum');
+visVaccum_Trait.color = 2852604;
+visVaccum_Trait.localizedName = game.localize('e2ee.tconstruct.material.vis_vaccum.name');
+visVaccum_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_vaccum.description');
+visVaccum_Trait.maxLevel = 4;
+visVaccum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
   if (world.isRemote()) return; // world is remote
   if (!owner instanceof IPlayer) return; // no player
   if (tool.damage == 0) return; // tool max durability
-  tool.mutable();
-  val k = trait.getData(tool).level;
-  for i in (-1-k) to (2+k){
-    for j in (-1-k) to (2+k){
+  for i in -1 to 2{
+    for j in -1 to 2{
       if (tool.damage == 0) return; // tool max durability
       val pos = owner.position3f;
       pos.x+=16*i;
       pos.z+=16*j; 
       if (world.getVis(pos.asBlockPos()) < 1.0f) continue; // no vis in aura
-      tool.damageItem(-1, owner);
+      tool.mutable().damageItem(-1, owner);
       world.drainVis(pos.asBlockPos(), 0.3f); // that value is actually x3
     }
   }
 };
+visVaccum_Trait.register();
 
-visSiphon2_Trait.canApplyTogetherTrait = function(thisTrait, otherTrait){
-  if (otherTrait=="vis_siphon") return false;
-  return true;
-};
 
-visSiphon2_Trait.register();
 
 /*
 _  _ _ ____    ____ _ ___  _  _ ____ _  _    ____ ____ _  _ ____ ____
@@ -212,7 +206,7 @@ mithrillium.itemLocalizer = function (thisMaterial, itemName) {
 mithrillium.localizedName = game.localize('e2ee.tconstruct.material.mithrillium.name');
 
 mithrillium.addMaterialTrait('vis_siphon');
-mithrillium.addMaterialTrait('vis_siphon', 'head');
+mithrillium.addMaterialTrait('vis_vaccum', 'head');
 mithrillium.addMaterialTrait('vis_equilibrium', 'head');
 
 mithrillium.addMaterialTrait('vis_siphon_armor', 'core');
