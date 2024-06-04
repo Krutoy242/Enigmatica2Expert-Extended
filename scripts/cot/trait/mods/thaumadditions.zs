@@ -617,8 +617,9 @@ researcherTrait.onHit = function (trait, tool, attacker, target, damage, isCriti
   if (target.world.isRemote()
   || !attacker instanceof IPlayer) return;
   val player as IPlayer = attacker;
+  val dist = player.getDistanceSqToEntity(target);
 
-  if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && checkIfArrow(tool)){
+  if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && dist>15.0){
     target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(1, 0));
     if(player.getDistanceSqToEntity(target)>30.0) target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 2));
   } 
@@ -629,21 +630,6 @@ researcherTrait.onHit = function (trait, tool, attacker, target, damage, isCriti
   }
   return;
 };
-
-
-function checkIfArrow(tool as IItemStack) as bool {
-  if (
-    !isNull(tool.tag)
-    && !isNull(tool.tag.Special)
-    && !isNull(tool.tag.Special.Categories)
-    && !isNull(tool.tag.Special.Categories.asList())
-  ) {
-    for tag in tool.tag.Special.Categories.asList() {
-      if (tag == 'projectile') return true;
-    }
-  }
-  return false;
-}
 
 function makeWitchPatricles(data as IData, entity as IEntity, i as int) as void {
   server.commandManager.executeCommandSilent(server, "/particle witchMagic "
