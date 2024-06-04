@@ -75,12 +75,12 @@ visSiphon_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
 };
 visSiphon_Trait.register();
 
-val visVaccum_Trait = TraitBuilder.create('vis_vaccum');
-visVaccum_Trait.color = 2852604;
-visVaccum_Trait.localizedName = game.localize('e2ee.tconstruct.material.vis_vaccum.name');
-visVaccum_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_vaccum.description');
-visVaccum_Trait.maxLevel = 4;
-visVaccum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
+val visVacuum_Trait = TraitBuilder.create('vis_vacuum');
+visVacuum_Trait.color = 2852604;
+visVacuum_Trait.localizedName = game.localize('e2ee.tconstruct.material.vis_vacuum.name');
+visVacuum_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_vacuum.description');
+visVacuum_Trait.maxLevel = 4;
+visVacuum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
   if (world.isRemote()) return; // world is remote
   if (!owner instanceof IPlayer) return; // no player
   if (tool.damage == 0) return; // tool max durability
@@ -96,7 +96,7 @@ visVaccum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
     }
   }
 };
-visVaccum_Trait.register();
+visVacuum_Trait.register();
 
 
 
@@ -206,7 +206,7 @@ mithrillium.itemLocalizer = function (thisMaterial, itemName) {
 mithrillium.localizedName = game.localize('e2ee.tconstruct.material.mithrillium.name');
 
 mithrillium.addMaterialTrait('vis_siphon');
-mithrillium.addMaterialTrait('vis_vaccum', 'head');
+mithrillium.addMaterialTrait('vis_vacuum', 'head');
 mithrillium.addMaterialTrait('vis_equilibrium', 'head');
 
 mithrillium.addMaterialTrait('vis_siphon_armor', 'core');
