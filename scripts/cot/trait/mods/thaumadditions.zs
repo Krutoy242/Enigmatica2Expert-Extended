@@ -621,7 +621,7 @@ researcherTrait.onHit = function (trait, tool, attacker, target, damage, isCriti
 
   if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && dist>15.0){
     target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(1, 0));
-    if(player.getDistanceSqToEntity(target)>30.0) target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 2));
+    if(player.getDistanceSqToEntity(target)>30.0 && player.isSneaking) target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 2));
   } 
 
   if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isCritical && tool.tag.fluxStrike==1){
