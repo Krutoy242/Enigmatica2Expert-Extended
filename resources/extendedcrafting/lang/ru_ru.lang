@@ -1,0 +1,239 @@
+# CREATIVE TAB
+itemGroup.extendedcrafting=Extended Crafting
+
+# BLOCKS
+tile.ec.storage_black_iron.name=Блок чёрного железа
+tile.ec.storage_luminessence.name=Блок люминесценции
+tile.ec.storage_nether_star.name=Блок звезд из Незера
+tile.ec.storage_crystaltine.name=Блок кристалтина
+tile.ec.storage_ultimate.name=Блок максимальных слитков
+tile.ec.storage_ender.name=Блок эндер-слитков
+tile.ec.storage_ender_star.name=Блок Эндер-звёзд
+tile.ec.storage_enhanced_ender.name=Блок усиленных эндер-слитков
+
+tile.ec.frame.name=Корпус из чёрного железа
+tile.ec.lamp_glowstone.name=Фонарь из чёрного железа
+tile.ec.lamp_luminessence.name=Фонарь из чёрного железа
+
+tile.ec.trimmed_iron.name=Блок чёрного железа
+tile.ec.trimmed_gold.name=Блок чёрного железа
+tile.ec.trimmed_diamond.name=Блок чёрного железа
+tile.ec.trimmed_emerald.name=Блок чёрного железа
+tile.ec.trimmed_crystaltine.name=Блок чёрного железа
+tile.ec.trimmed_ultimate.name=Блок чёрного железа
+
+tile.ec.crafting_table.name=Верстак
+
+tile.ec.pedestal.name=Пьедестал
+tile.ec.crafting_core.name=Ядро создания
+
+tile.ec.interface.name=Автоматический интерфейс
+
+tile.ec.table_basic.name=Инженерный верстак
+tile.ec.table_advanced.name=Продвинутый верстак
+tile.ec.table_elite.name=Элитный верстак
+tile.ec.table_ultimate.name=Максимальный верстак
+
+tile.ec.compressor.name=Квантовый компрессор
+
+tile.ec.ender_alternator.name=Эндер-альтернатор
+tile.ec.ender_crafter.name=Эндер-верстак
+
+# ITEMS
+item.guide.extendedcrafting.name=Руководство по Extended Crafting
+
+item.ec.material_black_iron.name=Слиток чёрного железа
+item.ec.material_black_iron_nugget.name=Кусочек чёрного железа
+item.ec.material_black_iron_slate.name=Плита из чёрного железа
+item.ec.material_black_iron_rod.name=Стержень из чёрного железа
+
+item.ec.material_luminessence.name=Люминесценция
+
+item.ec.material_basic_catalyst.name=Базовый катализатор
+item.ec.material_advanced_catalyst.name=Провинутый катализатор
+item.ec.material_elite_catalyst.name=Элитный катализатор
+item.ec.material_ultimate_catalyst.name=Максимальный катализатор
+item.ec.material_crystaltine_catalyst.name=Кристалтиновый катализатор
+item.ec.material_ultimater_catalyst.name=Максимальный катализатор
+
+item.ec.material_basic_component.name=Базовый компонент
+item.ec.material_advanced_component.name=Продвинутый компонент
+item.ec.material_elite_component.name=Элитный компонент
+item.ec.material_ultimate_component.name=Максимальный компонент
+item.ec.material_crystaltine_component.name=Кристалтиновый компонент
+item.ec.material_ultimater_component.name=Максимальный компонент
+
+item.ec.material_crystaltine_ingot.name=Кристалтиновый слиток
+item.ec.material_crystaltine_nugget.name=Кусочек кристалтина
+
+item.ec.material_ultimate_ingot.name=Максимальный слиток
+item.ec.material_ultimate_nugget.name=Кусочек максимального слитка
+
+item.ec.material_ender_ingot.name=Эндер-слиток
+item.ec.material_ender_nugget.name=Кусочек эндера
+
+item.ec.material_ender_star.name=Эндер-звезда
+item.ec.material_ender_star_nugget.name=Кусочек эндер-звезды
+
+item.ec.material_enhanced_ender_ingot.name=Усиленный эндер-слиток
+item.ec.material_enhanced_ender_nugget.name=Кусочек усиленного эндер-слитка
+
+item.ec.material_diamond_nugget.name=Кусочек алмаза
+item.ec.material_emerald_nugget.name=Кусочек изумруда
+item.ec.material_nether_star_nugget.name=Кусочек звезды из Незера
+
+item.ec.handheld_table.name=Ручной верстак
+
+item.ec.recipe_maker.name=Создатель рецептов
+
+# CONTAINERS
+container.ec.crafting_core=Ядро создания
+container.ec.interface=Автоматический интерфейс
+container.ec.table_basic=Инженерный верстак
+container.ec.table_advanced=Продвинутый верстак
+container.ec.table_elite=Элитный верстак
+container.ec.table_ultimate=Максимальный верстак
+container.ec.compressor=Квантовый компрессор
+container.ec.ender_crafter=Эндер-верстак
+
+ec.ccore.pedestals=Пьедесталы: %s
+ec.ccore.rf_cost=Затраты RF: %s
+ec.ccore.rf_rate=Накоплено RF: %s
+ec.ccore.no_recipe=Рецепт не найден.
+ec.ccore.no_power=Не хватает энергии.
+
+ec.interface.save=Сохранить рецепт
+ec.interface.clear=Очистить рецепт
+ec.interface.view=Посмотреть рецепт
+ec.interface.auto_insert=Авто-ввод
+ec.interface.auto_extract=Авто-извлечение
+ec.interface.auto_eject=Авто-выталкивание
+ec.interface.smart_insert=Умный ввод
+ec.interface.table=Table
+ec.interface.recipe=Рецепт
+ec.interface.config=Настроить
+ec.interface.back=Назад
+ec.interface.none=Откл.
+ec.interface.on=Вкл
+ec.interface.off=Выкл
+ec.interface.insert_desc=Интерфейс автоматически поместит предметы из инвентаря в указанном направлении.
+ec.interface.extract_desc=Интерфейс автоматически извлечет предметы в инвентарь в указанном направлении.
+ec.interface.eject_desc=Интерфейс автоматически выталкнет предметы из входного слота в выходной, если предмет не может быть вставлен в таблицу.
+ec.interface.smart_desc=Интерфейс не позволяет "Авто-вводу" помещать во входной слот те предметы, которые невозможно поместить в таблицу.
+
+# JEI
+jei.ec.table_crafting_3x3=Создание на инженерном верстаке
+jei.ec.table_crafting_5x5=Создание на продвинутом верстаке
+jei.ec.table_crafting_7x7=Создание на элитном верстаке
+jei.ec.table_crafting_9x9=Создание на максимальном верстаке
+jei.ec.combination_crafting=Комбинированное создание
+jei.ec.compressor=Квантовый компрессор
+jei.ec.ender_crafting=Создание на Эндер-верстаке
+
+desc.item.ec.recipe_maker=Used to copy the contents of an Extended Crafting Table or Ender Crafter as a script for CraftTweaker. This is done by right clicking the block. Sneak + right click to change mode.
+
+# MESSAGE
+message.ec.copied_recipe=Рецепт скопирован в буфер обмена.
+message.ec.changed_mode=Изменен режим на %s.
+
+# TOOLTIPS
+tooltip.ec.crafting_table=Декоративный
+tooltip.ec.lamp_glowstone=Светокамень
+tooltip.ec.lamp_luminessence=Люминесценция
+tooltip.ec.trimmed_iron=Железная отделка
+tooltip.ec.trimmed_gold=Золотая отделка
+tooltip.ec.trimmed_diamond=Алмазная отделка
+tooltip.ec.trimmed_emerald=Изумрудная отделка
+tooltip.ec.trimmed_crystaltine=Кристалтиновая отделка
+tooltip.ec.trimmed_ultimate=Максимальная отделка
+
+tooltip.ec.ultimate_block=Я такой один, хоть вешу и немного...
+tooltip.ec.ultimate_catalyst=Я самый настоящий максимальный катализатор...
+tooltip.ec.ultimate_component=Нет никого лучше меня...
+tooltip.ec.ultimate_ingot=С великой силой приходит великая...
+tooltip.ec.ultimate_nugget=Маленькими шажками....
+tooltip.ec.singularity_ultimate=Совместными усилиями...
+
+tooltip.ec.empty=Пусто
+tooltip.ec.eject=Извлекать
+tooltip.ec.ejecting=Извлечение...
+
+tooltip.ec.tier=Уровень: %s
+tooltip.ec.output=Выход: %sx %s
+tooltip.ec.crafting=Создание: %sx %s
+tooltip.ec.mode=Режим: %s
+tooltip.ec.num_items=%s предметов
+tooltip.ec.requires_table=Требуется верстак %s уровня 
+tooltip.ec.items_required=Необходимые предметы:
+
+# GUIDE
+guide.extendedcrafting.name=Руководство по Extended Crafting
+
+guide.entry.introduction=Введение
+guide.entry.introduction.page.1=<b>Extended Crafting<r> adds new ways to craft items, as well as extra crafting items and utilities. This guide book is only for explaining basic functionality, as how the different crafting methods are implemented is decided by the modpack creator. <n><n><i>The goal of this mod is to provide players with a sense of pride and accomplishment for crafting items.<r>
+
+guide.entry.combination_crafting=Combination Crafting
+guide.entry.combination_crafting.page.1=<b>Combination Crafting<r> is an in-world multi-block crafting setup where items are combined together to make something else. <n><n>This setup consists of a <red>Crafting Core<r> in the center and <red>Pedestals<r> placed around it. <red>Pedestals<r> can be placed anywhere around the crafting core in a <red>3 block radius<r>, and must be on the same Y level. <red>Power<r> must be given to the <red>Crafting Core<r> for this structure to function. <n><n>Recipes have a center item which goes on the <red>Crafting Core<r>, and pedestal items which go on <red>Pedestals<r> around it.
+guide.entry.combination_crafting.page.2=Right clicking on the side of the <red>Crafting Core<r> will show you information about the current recipe, such as the progress or <red>power<r> cost, as well as how much <red>power<r> is stored in it.
+
+guide.entry.table_crafting=Table Crafting
+guide.entry.table_crafting.page.1=<b>Table Crafting<r> is a set of tiered crafting tables that work like crafting tables. These tables come in <red>3x3<r>, <red>5x5<r>, <red>7x7<r>, and <red>9x9<r> sizes. These tables hold their inventory when closed. <n><n>These tables can be automated using an <red>Automation Interface<r>, allowing for both auto insertion and extraction of items. <n><n>The <red>Engineering Table<r> can also be used for crafting <red>vanilla crafting recipes<r>. 
+
+guide.entry.quantum_compression=Quantum Compression
+guide.entry.quantum_compression.page.1=<b>Quantum Compression<r> is the act of compressing items a little too much. This is done with a <red>Quantum Compressor<r>. <n><n>The <red>Quantum Compressor<r> is a <red>powered<r> machine that can hold and compress extremely large amounts of materials. Items placed inside the <red>Quantum Compressor<r> go into an internal buffer for use in compression. The buffer is represented as a <red>red<r> bar.<n><n>Each recipe <i>usually<r> requires a <red>Catalyst<r>. The <red>Catalyst<r> is placed in the left-most slot and does not get used up.
+guide.entry.quantum_compression.page.2=Once there are enough items in the buffer, the machine will begin to craft the item. The <red>Quantum Compressor<r> will only use <red>power<r> while crafting. <n><n>If you happen to put items into the compressor that you would rather not lose forever, you can press the <red>Eject<r> button above the input slot to get them back. Items in the buffer are stored in the endless void and can only be re-obtained by ejecting. Breaking the block will cause those items to get lost forever, so be careful!
+
+guide.entry.ender_crafting=Ender Crafting
+guide.entry.ender_crafting.page.1=<b>Ender Crafting<r> is crafting using the power of waiting. An Ender Crafting setup consists of an <red>Ender Crafter<r> and <red>Ender Alternators<r>. The crafter will take energy from the void via the alternators. The more alternators you have, the faster it will craft. <n><n><red>Ender Alternators<r> can be placed anywhere around the <red>Ender Crafter<r> in a <red>3 block radius<r>. Even above or below! <n><n>The <red>Ender Crafter<r> can be automated using an <red>Automation Interface<r>, allowing for both auto insertion and extraction of items.
+
+guide.entry.interface=Automation Interface
+guide.entry.interface.page.1=The <b>Automation Interface<r> is a powerful one-block solution that acts as an interface for <b>Extended Crafting<r> tables and the <red>Ender Crafter<r>. The interface goes <red>on top<r> of the block, and uses <red>power<r> to function. <n><n>The interface has an <red>input<r> and <red>output<r> slot. Items placed in the <red>input<r> slot will be inserted into the best possible slot in the grid. If the item can't be put into the grid, it will stay in the <red>input<r> slot unless <red>Auto Eject<r> mode is enabled. The <red>output<r> slot is where the crafting result will be outputted. 
+guide.entry.interface.page.2=The <red>Automation Interface<r> is most useful for it's ability to <red>auto craft<r>. Whenever possible, the interface will automatically craft and place the crafting result in the <red>output<r> slot. <n><n>It's also important to note that the <red>Automation Interface<r> will use <red>power<r> for every item transfer action it performs. <n><n>To save a recipe, press the <red>Save Recipe<r> button. To view the recipe, press the <red>View Recipe<r> button. To clear the recipe, press the <red>Clear Recipe<r> button.
+guide.entry.interface.page.3=The <red>Automation Interface<r> also has some automatic item movement functionality. These can be configured by pressing the <red>Config<r> button. <n><n><b>Auto Insert:<r> the interface will automatically insert items from the inventory to the direction specified. <n><b>Auto Extract:<r> the interface will automatically extract items into the inventory to the direction specified. <n><b>Auto Eject:<r> the interface will automatically eject items from the <red>input<r> slot into the <red>output<r> slot if the item can't be inserted into the table.
+guide.entry.interface.page.4=<b>Smart Insert:<r> the interface will not allow <red>Auto Insert<r> to insert items into the <red>input<r> slot that can't be inserted into the table.
+
+guide.entry.singularity=Singularities
+guide.entry.singularity.page.1=<b>Singularities<r> are highly compressed materials. These are <i>usually<r> created using a <red>Quantum Compressor<r>. <n><n>Crafting all of the available singularities together in an <red>Ultimate Crafting Table<r> will reward you with <red>The Ultimate Singularity<r>.
+
+# Singularity Localizations
+item.ec.singularity.name=%s сингулярность
+item.ec.singularity_ultimate.name=Максимальная сингулярность
+
+item.ec.singularity.aluminum=Алюминиевая
+item.ec.singularity.brass=Латунная
+item.ec.singularity.bronze=Бронзовая
+item.ec.singularity.chrome=Хромовая
+item.ec.singularity.coal=Угольная
+item.ec.singularity.constantan=Константановая
+item.ec.singularity.copper=Медная
+item.ec.singularity.diamond=Алмазная
+item.ec.singularity.electrum=Электрумовая
+item.ec.singularity.emerald=Изумрудная
+item.ec.singularity.glowstone=Светокаменная
+item.ec.singularity.gold=Золотая
+item.ec.singularity.invar=Инваровая
+item.ec.singularity.iridium=Иридиевая
+item.ec.singularity.iron=Железная
+item.ec.singularity.lapis_lazuli=Лазуритовая
+item.ec.singularity.lead=Свинцовая
+item.ec.singularity.mithril=Мифриловая
+item.ec.singularity.nickel=Никелевая
+item.ec.singularity.platinum=Платиновая
+item.ec.singularity.redstone=Краснокаменная
+item.ec.singularity.silver=Серебряная
+item.ec.singularity.steel=Стальная
+item.ec.singularity.tin=Оловянная
+item.ec.singularity.titanium=Титановая
+item.ec.singularity.tungsten=Вольфрамовая
+item.ec.singularity.uranium=Урановая
+item.ec.singularity.zinc=Цинковая
+
+# Default Singularities - Thermal Expansion Alloys
+item.ec.singularity.enderium=Эндериевая
+item.ec.singularity.lumium=Люмиевая
+item.ec.singularity.signalum=Сигналовая
+
+# Default Singularities - Tinkers' Construct Materials
+item.ec.singularity.ardite=Ардитовая
+item.ec.singularity.cobalt=Кобальтовая
+item.ec.singularity.manyullyn=Манулиновая
