@@ -62,3 +62,43 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_misc:9
   'G': <forestry:thermionic_tubes:4>, // Golden Electron Tube
   '⌂': <forestry:hardened_machine>,   // Hardened Casing
 }).shaped());
+
+// [Basic Plating]*4 from [HOP Graphite Ingot][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part> * 4, Grid(['pretty',
+  '⌂ ⌂ ⌂',
+  '□ ▬ □',
+  '⌂ ⌂ ⌂'], {
+  '⌂': <ic2:casing:4>,         // Lead Item Casing
+  '□': <ore:plateLead>,        // Lead Plate
+  '▬': <ore:ingotHOPGraphite>, // HOP Graphite Ingot
+}).shaped());
+
+// [Advanced Plating]*2 from [Basic Plating][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:1> * 2, Grid(['pretty',
+  '  ▲  ',
+  '▬ □ ▬',
+  '  ▲  '], {
+  '▲': <ore:dustEnergetic>, // Energetic Blend
+  '▬': <ore:ingotTough>,    // Tough Alloy Ingot
+  '□': <ore:plateBasic>,    // Basic Plating
+}).shaped());
+
+// [DU Plating]*2 from [Advanced Plating][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:2> * 2, Grid(['pretty',
+  '▲ ▬ ▲',
+  '▬ □ ▬',
+  '▲ ▬ ▲'], {
+  '▲': <ore:dustSulfur> | <ore:dustSulphur>, // Sulfur
+  '▬': <ore:ingotDepletedLEU235>, // Depleted LEU-235 Fuel Pellet
+  '□': <ore:plateAdvanced>,                  // Advanced Plating
+}).shaped());
+
+// [Elite Plating]*2 from [DU Plating][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:3> * 2, Grid(['pretty',
+  '* ▬ *',
+  '▬ □ ▬',
+  '* ▬ *'], {
+  '*': <ore:dustCrystalBinder>, // Crystal Binder
+  '▬': <ore:ingotBoron10>,      // Boron-10
+  '□': <ore:plateDU>,           // DU Plating
+}).shaped());
