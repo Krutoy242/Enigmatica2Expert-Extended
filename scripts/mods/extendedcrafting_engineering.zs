@@ -102,3 +102,34 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:3> * 2, Grid
   '▬': <ore:ingotBoron10>,      // Boron-10
   '□': <ore:plateDU>,           // DU Plating
 }).shaped());
+
+// [Electronic Circuit]*2 from [Printed Circuit Board (PCB)][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:crafting:1> * 2, Grid(['pretty',
+  'C C C',
+  '♥ : ♥',
+  'C C C'], {
+  'C': <ore:itemInsulatedCopperCable>,       // Insulated Copper Cable
+  '♥': <ore:dustRedstone>,                   // Redstone
+  ':': <ore:oc:materialCircuitBoardPrinted>, // Printed Circuit Board (PCB)
+}).shaped());
+
+// [Advanced Circuit]*2 from [Electronic Circuit][+3]
+mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:crafting:2> * 2, Grid(['pretty',
+  '♥ G ♥',
+  '◊ B ◊',
+  '♥ G ♥'], {
+  '♥': <ore:dustRedstone>,                         // Redstone
+  'G': <enderio:block_holier_fog>,                 // Glowstone Nano-Particles
+  '◊': <ore:gemLapis>,                             // Lapis Lazuli
+  'B': <ore:circuitBasic>,                         // Electronic Circuit
+}).shaped());
+
+// [Mixed Metal Ingot]*3 from [Constantan Plate][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:ingot> * 3, Grid(['pretty',
+  '□ □ □',
+  'п п п',
+  'A A A'], {
+  '□': <ore:plateSteel>,      // Steel Plate
+  'п': <ore:plateConstantan>, // Constantan Plate
+  'A': <ore:plateAluminum>,   // Aluminum Plate
+}).shaped());
