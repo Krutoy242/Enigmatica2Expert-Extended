@@ -89,7 +89,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:2> * 2, Grid
   '▬ □ ▬',
   '▲ ▬ ▲'], {
   '▲': <ore:dustSulfur> | <ore:dustSulphur>, // Sulfur
-  '▬': <ore:ingotDepletedLEU235>, // Depleted LEU-235 Fuel Pellet
+  '▬': <ore:ingotDepletedLEU235ZA> | <ore:ingotDepletedLEU235Oxide> | <ore:ingotDepletedLEU235Nitride>, // Depleted LEU-235 Fuel Pellet
   '□': <ore:plateAdvanced>,                  // Advanced Plating
 }).shaped());
 
