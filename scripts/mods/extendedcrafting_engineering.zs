@@ -133,3 +133,24 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:ingot> * 3, Grid(['pretty'
   'п': <ore:plateConstantan>, // Constantan Plate
   'A': <ore:plateAluminum>,   // Aluminum Plate
 }).shaped());
+
+// [Energy Laser Relay]*10 from [Advanced Coil][+3]
+mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_laser_relay> * 10, Grid(['pretty',
+  '▬ * ▬',
+  '╳ A ╳',
+  '▬ * ▬'], {
+  '▬': <ore:ingotRefinedObsidian>,        // Refined Obsidian Ingot
+  '*': <actuallyadditions:block_crystal>, // Restonia Crystal Block
+  '╳': <ore:crystalRestonia>,             // Restonia Crystal
+  'A': <actuallyadditions:item_misc:8>,   // Advanced Coil
+}).shaped());
+
+// [Wood Casing]*4 from [Wood Pile][+2]
+mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_misc:4> * 4, Grid(['pretty',
+  '# ╱ #',
+  '╱ ≢ ╱',
+  '# ╱ #'], {
+  '#': <ore:plankTreatedWood>, // Treated Wood Planks
+  '╱': <forestry:oak_stick>,   // Impregnated Stick
+  '≢': <forestry:wood_pile>,   // Wood Pile
+}).shaped());
