@@ -2,6 +2,3 @@ tile.ec.table_basic.name=工程桌
 container.ec.table_basic=工程
 
 jei.ec.table_crafting_3x3=工程创建
-
-guide.entry.table_crafting=Table Crafting
-guide.entry.table_crafting.page.1=<b>Table Crafting<r> is a set of tiered crafting tables that work like crafting tables. These tables come in <red>3x3<r>, <red>5x5<r>, <red>7x7<r>, and <red>9x9<r> sizes. These tables hold their inventory when closed. <n><n>These tables can be automated using an <red>Automation Interface<r>, allowing for both auto insertion and extraction of items. <n><n>The <red>Engineering Table<r> can also be used for crafting <red>vanilla crafting recipes<r>. 
