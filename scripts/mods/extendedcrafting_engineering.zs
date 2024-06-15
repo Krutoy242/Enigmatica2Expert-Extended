@@ -16,8 +16,8 @@ addShaped(0, <immersiveengineering:metal_decoration0:4> * 6, Grid(['pretty',
   '□ A □',
   'A l A',
   '□ A □'], {
-  '□': <ore:plateConstantan>, // Constantan Plate
-  'A': <ore:alloyAdvanced>, // Enriched Alloy
+  '□': <ore:plateConstantan>,     // Constantan Plate
+  'A': <ore:alloyAdvanced>,       // Enriched Alloy
   'l': <ore:scaffoldingAluminum>, // Aluminium Scaffolding
 }).shaped());
 
