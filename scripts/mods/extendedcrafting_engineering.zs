@@ -84,14 +84,14 @@ addShaped(0, <nuclearcraft:part:1> * 2, Grid(['pretty',
   '□': <ore:plateBasic>,    // Basic Plating
 }).shaped());
 
-// [DU Plating]*2 from [Advanced Plating][+2]
-addShaped(0, <nuclearcraft:part:2> * 2, Grid(['pretty',
+// [DU Plating]*4 from [Advanced Plating][+2]
+addShaped(0, <nuclearcraft:part:2> * 4, Grid(['pretty',
   '▲ ▬ ▲',
   '▬ □ ▬',
   '▲ ▬ ▲'], {
-  '▲': <ore:dustSulfur>, // Sulfur
-  '▬': <ore:ingotDepletedLEU235ZA> | <ore:ingotDepletedLEU235Oxide> | <ore:ingotDepletedLEU235Nitride>, // Depleted LEU-235 Fuel Pellet
-  '□': <ore:plateAdvanced>,                  // Advanced Plating
+  '▲': <ore:dustSulfur>,           // Sulfur
+  '▬': <ore:ingotPlutonium242All>, // Plutonium-242
+  '□': <ore:plateAdvanced>,        // Advanced Plating
 }).shaped());
 
 // [Elite Plating]*2 from [DU Plating][+2]
