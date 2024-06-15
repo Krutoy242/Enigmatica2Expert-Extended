@@ -37,10 +37,10 @@ addShaped(0, <extrautils2:machine> * 5, Grid(['pretty',
   'P I P',
   'T B T',
   'P I P'], {
-  'P': <extrautils2:decorativesolid:2>, // Polished Stone
-  'I': <forestry:thermionic_tubes:3>,   // Iron Electron Tube
-  'T': <ore:electronTube>,              // Vacuum Tube
-  'B': <extendedcrafting:material:8>,   // Basic Catalyst
+  'P': <extrautils2:decorativesolid:2>,    // Polished Stone
+  'I': <forestry:thermionic_tubes:3>,      // Iron Electron Tube
+  'T': <immersiveengineering:material:26>, // Vacuum Tube
+  'B': <extendedcrafting:material:8>,      // Basic Catalyst
 }).shaped());
 
 // [Steel Casing]*3 from [Blast Brick][+3]
