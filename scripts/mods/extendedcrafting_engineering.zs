@@ -17,8 +17,8 @@ addShaped(0, <immersiveengineering:metal_decoration0:4> * 6, Grid(['pretty',
   'A l A',
   '□ A □'], {
   '□': <ore:plateConstantan>, // Constantan Plate
-  'A': <ore:alloyAdvanced> | <ore:itemEnrichedAlloy>, // Enriched Alloy
-  'l': <ore:scaffoldingAluminum> | <ore:scaffoldingAluminium>, // Aluminium Scaffolding
+  'A': <ore:alloyAdvanced>, // Enriched Alloy
+  'l': <ore:scaffoldingAluminum>, // Aluminium Scaffolding
 }).shaped());
 
 // [Heavy Engineering Block]*8 from [Steel Scaffolding][+3]
@@ -89,7 +89,7 @@ addShaped(0, <nuclearcraft:part:2> * 2, Grid(['pretty',
   '▲ ▬ ▲',
   '▬ □ ▬',
   '▲ ▬ ▲'], {
-  '▲': <ore:dustSulfur> | <ore:dustSulphur>, // Sulfur
+  '▲': <ore:dustSulfur>, // Sulfur
   '▬': <ore:ingotDepletedLEU235ZA> | <ore:ingotDepletedLEU235Oxide> | <ore:ingotDepletedLEU235Nitride>, // Depleted LEU-235 Fuel Pellet
   '□': <ore:plateAdvanced>,                  // Advanced Plating
 }).shaped());
