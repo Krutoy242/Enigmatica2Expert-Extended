@@ -1,7 +1,8 @@
 #modloaded extendedcrafting
+import mods.extendedcrafting.TableCrafting.addShaped;
 
 // [Redstone Engineering Block] from [Eye of Redstone][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <immersiveengineering:metal_decoration0:3> * 4, Grid(['pretty',
+addShaped(0, <immersiveengineering:metal_decoration0:3> * 4, Grid(['pretty',
   '□ ▬ □',
   '▬ e ▬',
   '□ ▬ □'], {
@@ -11,7 +12,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <immersiveengineering:metal_dec
 }).shaped());
 
 // [Light Engineering Block]*6 from [Aluminium Scaffolding][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <immersiveengineering:metal_decoration0:4> * 6, Grid(['pretty',
+addShaped(0, <immersiveengineering:metal_decoration0:4> * 6, Grid(['pretty',
   '□ A □',
   'A l A',
   '□ A □'], {
@@ -21,7 +22,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <immersiveengineering:metal_dec
 }).shaped());
 
 // [Heavy Engineering Block]*8 from [Steel Scaffolding][+3]
-mods.extendedcrafting.TableCrafting.addShaped(0, <immersiveengineering:metal_decoration0:5> * 8, Grid(['pretty',
+addShaped(0, <immersiveengineering:metal_decoration0:5> * 8, Grid(['pretty',
   '□ E □',
   'S t S',
   '□ E □'], {
@@ -32,7 +33,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <immersiveengineering:metal_dec
 }).shaped());
 
 // [Machine Block]*5 from [Basic Catalyst][+3]
-mods.extendedcrafting.TableCrafting.addShaped(0, <extrautils2:machine> * 5, Grid(['pretty',
+addShaped(0, <extrautils2:machine> * 5, Grid(['pretty',
   'P I P',
   'T B T',
   'P I P'], {
@@ -43,7 +44,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <extrautils2:machine> * 5, Grid
 }).shaped());
 
 // [Steel Casing]*3 from [Blast Brick][+3]
-mods.extendedcrafting.TableCrafting.addShaped(0, <mekanism:basicblock:8> * 3, Grid(['pretty',
+addShaped(0, <mekanism:basicblock:8> * 3, Grid(['pretty',
   '▬ B ▬',
   'S l S',
   '▬ B ▬'], {
@@ -54,7 +55,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <mekanism:basicblock:8> * 3, Gr
 }).shaped());
 
 // [Iron Casing]*4 from [Hardened Casing][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_misc:9> * 4, Grid(['pretty',
+addShaped(0, <actuallyadditions:block_misc:9> * 4, Grid(['pretty',
   '□ G □',
   'G ⌂ G',
   '□ G □'], {
@@ -64,7 +65,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_misc:9
 }).shaped());
 
 // [Basic Plating]*4 from [HOP Graphite Ingot][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part> * 4, Grid(['pretty',
+addShaped(0, <nuclearcraft:part> * 4, Grid(['pretty',
   '⌂ ⌂ ⌂',
   '□ ▬ □',
   '⌂ ⌂ ⌂'], {
@@ -74,7 +75,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part> * 4, Grid([
 }).shaped());
 
 // [Advanced Plating]*2 from [Basic Plating][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:1> * 2, Grid(['pretty',
+addShaped(0, <nuclearcraft:part:1> * 2, Grid(['pretty',
   '  ▲  ',
   '▬ □ ▬',
   '  ▲  '], {
@@ -84,7 +85,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:1> * 2, Grid
 }).shaped());
 
 // [DU Plating]*2 from [Advanced Plating][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:2> * 2, Grid(['pretty',
+addShaped(0, <nuclearcraft:part:2> * 2, Grid(['pretty',
   '▲ ▬ ▲',
   '▬ □ ▬',
   '▲ ▬ ▲'], {
@@ -94,7 +95,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:2> * 2, Grid
 }).shaped());
 
 // [Elite Plating]*2 from [DU Plating][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:3> * 2, Grid(['pretty',
+addShaped(0, <nuclearcraft:part:3> * 2, Grid(['pretty',
   '* ▬ *',
   '▬ □ ▬',
   '* ▬ *'], {
@@ -104,7 +105,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <nuclearcraft:part:3> * 2, Grid
 }).shaped());
 
 // [Electronic Circuit]*2 from [Printed Circuit Board (PCB)][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:crafting:1> * 2, Grid(['pretty',
+addShaped(0, <ic2:crafting:1> * 2, Grid(['pretty',
   'C C C',
   '♥ : ♥',
   'C C C'], {
@@ -114,7 +115,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:crafting:1> * 2, Grid(['pr
 }).shaped());
 
 // [Advanced Circuit]*2 from [Electronic Circuit][+3]
-mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:crafting:2> * 2, Grid(['pretty',
+addShaped(0, <ic2:crafting:2> * 2, Grid(['pretty',
   '♥ G ♥',
   '◊ B ◊',
   '♥ G ♥'], {
@@ -125,7 +126,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:crafting:2> * 2, Grid(['pr
 }).shaped());
 
 // [Mixed Metal Ingot]*3 from [Constantan Plate][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:ingot> * 3, Grid(['pretty',
+addShaped(0, <ic2:ingot> * 3, Grid(['pretty',
   '□ □ □',
   'п п п',
   'A A A'], {
@@ -135,7 +136,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <ic2:ingot> * 3, Grid(['pretty'
 }).shaped());
 
 // [Energy Laser Relay]*10 from [Advanced Coil][+3]
-mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_laser_relay> * 10, Grid(['pretty',
+addShaped(0, <actuallyadditions:block_laser_relay> * 10, Grid(['pretty',
   '▬ * ▬',
   '╳ A ╳',
   '▬ * ▬'], {
@@ -146,7 +147,7 @@ mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_laser_
 }).shaped());
 
 // [Wood Casing]*4 from [Wood Pile][+2]
-mods.extendedcrafting.TableCrafting.addShaped(0, <actuallyadditions:block_misc:4> * 4, Grid(['pretty',
+addShaped(0, <actuallyadditions:block_misc:4> * 4, Grid(['pretty',
   '# ╱ #',
   '╱ ≢ ╱',
   '# ╱ #'], {
