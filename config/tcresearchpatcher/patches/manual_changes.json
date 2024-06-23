@@ -692,4 +692,68 @@
   }
 ]}
 
+,{"key":"TT_ICHOR_POUCH","ops":[
+  {"op":"remove",
+  "path":"stages/0/required_item"
+  },
+  {"op":"add",
+  "path":"stages/0/required_craft",
+  "value": ["thaumcraft:focus_pouch"]
+  }
+]}
+
+,{"key":"TT_GAS","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:gas_light_item", "thaumcraft:gas_shadow_item"]}
+]}
+
+,{"key":"TT_ICHOR","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:ichor"]}
+  ,{"op":"replace",
+  "path":"stages/2/recipes",
+  "value":["thaumcraft:ichor"]}
+]}
+
+,{"key":"TT_ICHORARMOR","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:ichor_cloth","thaumictinkerer:ichor_helm","thaumictinkerer:ichor_chest","thaumictinkerer:ichor_legs","thaumictinkerer:ichor_boots"]}
+]}
+
+,{"key":"TT_CAT_AMULET","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:cat_amulet"]}
+]}
+
+,{"key":"TT_CLEANING_TALISMAN","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:cleanser"]}
+]}
+
+,{"key":"TT_EXPERIENCE_CHARM","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:experience_charm"]}
+]}
+
+,{"key":"TT_WARP_SERIES","ops":[
+  {"op":"replace",
+  "path":"stages/0/recipes",
+  "value":["thaumcraft:sky_pearl"]}
+  ,{"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:sky_pearl", "thaumcraft:warp_gate"]}
+]}
+
+,{"key":"TT_SUMMONING","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:blood_sword", "thaumcraft:summoner"]}
+]}
+
 ]
