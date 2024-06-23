@@ -200,3 +200,5 @@ mods.thaumcraft.Infusion.registerRecipe(
   [<extrautils2:goldenlasso:1>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, 
   <extrautils2:goldenlasso:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>]
 );
+
+
