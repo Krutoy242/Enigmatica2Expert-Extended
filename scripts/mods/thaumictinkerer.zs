@@ -34,9 +34,11 @@ recipes.addShapeless(<thaumictinkerer:black_quartz_block>, [<botania:quartztyped
 
 // [Nether shard]
 mods.tconstruct.Casting.addTableRecipe(<thaumictinkerer:kamiresource:1>, <thaumcraft:nugget:9>, <fluid:xu_demonic_metal>, 48, true);
+<thaumictinkerer:kamiresource:1>.addTooltip("§4Drops from zombie pigmens in the nether");
 
 // [Ender shard]
 mods.botania.ManaInfusion.addConjuration(<thaumictinkerer:kamiresource>, <enderio:item_material:62>, 1000);
+<thaumictinkerer:kamiresource>.addTooltip("§3Drops from endermans in the end");
 
 // [Ichor]
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor',
