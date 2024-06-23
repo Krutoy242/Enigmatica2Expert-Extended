@@ -31,3 +31,170 @@ mods.thaumcraft.Infusion.registerRecipe(
 // Conversion recipe between Thaumic Tinkerer Black Quartz Block & Botania Block of Smokey Quartz
 recipes.addShapeless(<botania:quartztypedark>, [<thaumictinkerer:black_quartz_block>]);
 recipes.addShapeless(<thaumictinkerer:black_quartz_block>, [<botania:quartztypedark>]);
+
+// [Nether shard]
+mods.tconstruct.Casting.addTableRecipe(<thaumictinkerer:kamiresource:1>, <thaumcraft:nugget:9>, <fluid:xu_demonic_metal>, 48, true);
+
+// [Ender shard]
+mods.botania.ManaInfusion.addConjuration(<thaumictinkerer:kamiresource>, <enderio:item_material:62>, 1000);
+
+// [Ichor]
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor',
+  'TT_ICHOR@0',
+  100,
+  [<aspect:ordo> * 3, <aspect:ignis> * 3, <aspect:aer> * 3, <aspect:aqua> * 3, <aspect:perditio> * 3, <aspect:terra> * 3],
+  <thaumictinkerer:kamiresource:2>*5,
+  Grid(['pretty',
+  'A E A',
+  'B A I',
+  'A N A'], {
+  'E': <thaumictinkerer:kamiresource>, // Ender shard
+  'N': <thaumictinkerer:kamiresource:1>, // Nether shard
+  'B': <psi:material:3>, // Ebony psi metal
+  'I': <psi:material:4>, // Ivony psi metal
+  'A': <ore:gemAmber>, // Amber
+}).shaped());
+
+mods.astralsorcery.Lightwell.addLiquefaction(<thaumictinkerer:kamiresource:2>, <liquid:molten_ichorium>, 0.1, 15.0, 15630848);
+
+recipes.remove(<thaumictinkerer:kamiresource:2>);
+recipes.remove(<thaumictinkerer:ichor_block>);
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:ichor_block>);
+recipes.addShapeless("ichorium_block",<thaumictinkerer:ichor_block>,
+[ <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
+  <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
+  <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>
+]);
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:kamiresource:3>);
+recipes.addShapeless("ichorium_block_to_ingot", <thaumictinkerer:kamiresource:3> * 9, [<thaumictinkerer:ichor_block>]);
+
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:kamiresource:4>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor_cloth',
+  'TT_ICHORARMOR',
+  50,
+  [<aspect:terra> * 4, <aspect:ignis> * 4, <aspect:aqua> * 4],
+  <thaumictinkerer:kamiresource:4>*4,
+  Grid(['pretty',
+  '  E  ',
+  'E I E',
+  '  E  '], {
+  'I': <thaumictinkerer:kamiresource:3>, // Ichorium ingot
+  'E': <thaumcraft:fabric>, // Enchanted fabric
+}).shaped());
+
+
+
+// [Light gas phial]
+mods.thaumcraft.Crucible.removeRecipe(<thaumictinkerer:gas_light_item>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('gas_light_item',
+  'TT_GAS',
+  10,
+  [],
+  <thaumictinkerer:gas_light_item>*8,
+  Grid(['pretty',
+  'P P P',
+  'P I P',
+  'P P P'], {
+  'P': <thaumcraft:phial>, // Phial
+  'I': <astralsorcery:itemusabledust>, // Illumination powder
+}).shaped());
+
+// [Shadow gas phial]
+mods.thaumcraft.Crucible.removeRecipe(<thaumictinkerer:gas_shadow_item>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('gas_shadow_item',
+  'TT_GAS',
+  10,
+  [],
+  <thaumictinkerer:gas_shadow_item>*8,
+  Grid(['pretty',
+  'P P P',
+  'P I P',
+  'P P P'], {
+  'P': <thaumcraft:phial>, // Phial
+  'I': <astralsorcery:itemusabledust:1>, // Illumination powder
+}).shaped());
+
+// [Feline Amulet]
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:cat_amulet>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'cat_amulet', // Name
+  'TT_CAT_AMULET', // Research
+  <thaumictinkerer:cat_amulet>, // Output
+  1, // Instability
+  [<aspect:bestia> * 50, <aspect:sonus> * 25, <aspect:imperium> * 50],
+  <thaumcraft:baubles>, // CentralItem
+  [<thaumictinkerer:kamiresource:2>, <actuallyadditions:item_hairy_ball>, <ore:listAllfishraw>, <actuallyadditions:item_hairy_ball>]
+);
+
+// [Cleansing charm]
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:cleaning_talisman>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'cleanser', // Name
+  'TT_CLEANING_TALISMAN', // Research
+  <thaumictinkerer:cleaning_talisman>, // Output
+  3, // Instability
+  [<aspect:victus> * 100, <aspect:ordo> * 50, <aspect:mana> * 50],
+  <thaumcraft:verdant_charm:*>, // CentralItem
+  [<botania:quartz:5>, <rustic:elixir>.withTag({ElixirEffects: [{Effect: "minecraft:instant_health", Duration: 1, Amplifier: 1}]}), <ore:quartzDark>, <thaumicwonders:panacea>]
+);
+
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:experience_charm>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'experience_charm', // Name
+  'TT_EXPERIENCE_CHARM', // Research
+  <thaumictinkerer:experience_charm>, // Output
+  2, // Instability
+  [<aspect:vacuos> * 50, <aspect:desiderium> * 50, <aspect:cognitio> * 100],
+  <thaumictinkerer:kamiresource:1>, // CentralItem
+  [<ore:quartzDark>, <ore:quartzDark>, <minecraft:glass_bottle>, <ore:quartzDark>, <ore:quartzDark>, <minecraft:glass_bottle>]
+);
+
+// [Celestial gateway + Celestial pearl]
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:warp_gate>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'warp_gate', // Name
+  'TT_WARP_SERIES', // Research
+  <thaumictinkerer:warp_gate>, // Output
+  5, // Instability
+  [<aspect:motus> * 100, <aspect:alienis> * 200, <aspect:fluctus> * 100, <aspect:caeles> * 100],
+  <thaumicwonders:portal_anchor:*>, // CentralItem
+  [<botania:biomestonea>, <botania:biomestonea:1>, <botania:biomestonea:2>, <botania:biomestonea:3>, <botania:biomestonea:4>, <botania:biomestonea:5>, <botania:biomestonea:6>, <botania:biomestonea:7>]
+);
+
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:sky_pearl>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('sky_pearl',
+  'TT_WARP_SERIES@0',
+  50,
+  [<aspect:ordo> * 4, <aspect:aer> * 2],
+  <thaumictinkerer:sky_pearl>,
+  Grid(['pretty',
+  'I E I',
+  'E M E',
+  'I E I'], {
+  'I': <thaumictinkerer:kamiresource:5>, // Ichorium nugget
+  'M': <botania:manaresource:1>, // Mana pearl
+  'E': <thaumictinkerer:kamiresource>, // Ender shard
+}).shaped());
+
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:summoner>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'summoner', // Name
+  'TT_SUMMONING', // Research
+  <thaumictinkerer:summoner>, // Output
+  8, // Instability
+  [<aspect:exanimis> * 100, <aspect:spiritus> * 100, <aspect:mythus> * 200, <aspect:alienis> * 100],
+  <botania:terraplate>, // CentralItem
+  [<thaumcraft:plate:3>, <thaumcraft:inlay>, <thaumcraft:plate:3>, <thaumcraft:inlay>, <thaumcraft:plate:3>, <thaumcraft:inlay>, <thaumcraft:plate:3>, <thaumcraft:inlay>]
+);
+
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:blood_sword>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'blood_sword', // Name
+  'TT_SUMMONING', // Research
+  <thaumictinkerer:blood_sword>, // Output
+  5, // Instability
+  [<aspect:sanguis> * 100, <aspect:rattus> * 50, <aspect:mortuus> * 200],
+  <thaumcraft:thaumium_sword>, // CentralItem
+  [<extrautils2:goldenlasso:1>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, 
+  <extrautils2:goldenlasso:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>]
+);
