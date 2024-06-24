@@ -34,57 +34,55 @@ recipes.addShapeless(<thaumictinkerer:black_quartz_block>, [<botania:quartztyped
 
 // [Nether shard]
 mods.tconstruct.Casting.addTableRecipe(<thaumictinkerer:kamiresource:1>, <thaumcraft:nugget:9>, <fluid:xu_demonic_metal>, 48, true);
-<thaumictinkerer:kamiresource:1>.addTooltip("§4Drops from zombie pigmens in the nether");
+<thaumictinkerer:kamiresource:1>.addTooltip('§4Drops from zombie pigmens in the nether');
 
 // [Ender shard]
 mods.botania.ManaInfusion.addConjuration(<thaumictinkerer:kamiresource>, <enderio:item_material:62>, 1000);
-<thaumictinkerer:kamiresource>.addTooltip("§3Drops from endermans in the end");
+<thaumictinkerer:kamiresource>.addTooltip('§3Drops from endermans in the end');
 
 // [Ichor]
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor',
   'TT_ICHOR@0',
   100,
   [<aspect:ordo> * 3, <aspect:ignis> * 3, <aspect:aer> * 3, <aspect:aqua> * 3, <aspect:perditio> * 3, <aspect:terra> * 3],
-  <thaumictinkerer:kamiresource:2>*5,
+  <thaumictinkerer:kamiresource:2> * 5,
   Grid(['pretty',
-  'A E A',
-  'B A I',
-  'A N A'], {
-  'E': <thaumictinkerer:kamiresource>, // Ender shard
-  'N': <thaumictinkerer:kamiresource:1>, // Nether shard
-  'B': <psi:material:3>, // Ebony psi metal
-  'I': <psi:material:4>, // Ivony psi metal
-  'A': <ore:gemAmber>, // Amber
-}).shaped());
+    'A E A',
+    'B A I',
+    'A N A'], {
+    'E': <thaumictinkerer:kamiresource>, // Ender shard
+    'N': <thaumictinkerer:kamiresource:1>, // Nether shard
+    'B': <psi:material:3>, // Ebony psi metal
+    'I': <psi:material:4>, // Ivony psi metal
+    'A': <ore:gemAmber>, // Amber
+  }).shaped());
 
 mods.astralsorcery.Lightwell.addLiquefaction(<thaumictinkerer:kamiresource:2>, <liquid:molten_ichorium>, 0.1, 15.0, 15630848);
 
 recipes.remove(<thaumictinkerer:kamiresource:2>);
 recipes.remove(<thaumictinkerer:ichor_block>);
 mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:ichor_block>);
-recipes.addShapeless("ichorium_block",<thaumictinkerer:ichor_block>,
-[ <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
-  <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
-  <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>
-]);
+recipes.addShapeless('ichorium_block',<thaumictinkerer:ichor_block>,
+  [<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
+    <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
+    <thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,<thaumictinkerer:kamiresource:3>,
+  ]);
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:kamiresource:3>);
-recipes.addShapeless("ichorium_block_to_ingot", <thaumictinkerer:kamiresource:3> * 9, [<thaumictinkerer:ichor_block>]);
+recipes.addShapeless('ichorium_block_to_ingot', <thaumictinkerer:kamiresource:3> * 9, [<thaumictinkerer:ichor_block>]);
 
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:kamiresource:4>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor_cloth',
   'TT_ICHORARMOR',
   50,
   [<aspect:terra> * 4, <aspect:ignis> * 4, <aspect:aqua> * 4],
-  <thaumictinkerer:kamiresource:4>*4,
+  <thaumictinkerer:kamiresource:4> * 4,
   Grid(['pretty',
-  '  E  ',
-  'E I E',
-  '  E  '], {
-  'I': <thaumictinkerer:kamiresource:3>, // Ichorium ingot
-  'E': <thaumcraft:fabric>, // Enchanted fabric
-}).shaped());
-
-
+    '  E  ',
+    'E I E',
+    '  E  '], {
+    'I': <thaumictinkerer:kamiresource:3>, // Ichorium ingot
+    'E': <thaumcraft:fabric>, // Enchanted fabric
+  }).shaped());
 
 // [Light gas phial]
 mods.thaumcraft.Crucible.removeRecipe(<thaumictinkerer:gas_light_item>);
@@ -92,14 +90,14 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('gas_light_item',
   'TT_GAS',
   10,
   [],
-  <thaumictinkerer:gas_light_item>*8,
+  <thaumictinkerer:gas_light_item> * 8,
   Grid(['pretty',
-  'P P P',
-  'P I P',
-  'P P P'], {
-  'P': <thaumcraft:phial>, // Phial
-  'I': <astralsorcery:itemusabledust>, // Illumination powder
-}).shaped());
+    'P P P',
+    'P I P',
+    'P P P'], {
+    'P': <thaumcraft:phial>, // Phial
+    'I': <astralsorcery:itemusabledust>, // Illumination powder
+  }).shaped());
 
 // [Shadow gas phial]
 mods.thaumcraft.Crucible.removeRecipe(<thaumictinkerer:gas_shadow_item>);
@@ -107,14 +105,14 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('gas_shadow_item',
   'TT_GAS',
   10,
   [],
-  <thaumictinkerer:gas_shadow_item>*8,
+  <thaumictinkerer:gas_shadow_item> * 8,
   Grid(['pretty',
-  'P P P',
-  'P I P',
-  'P P P'], {
-  'P': <thaumcraft:phial>, // Phial
-  'I': <astralsorcery:itemusabledust:1>, // Illumination powder
-}).shaped());
+    'P P P',
+    'P I P',
+    'P P P'], {
+    'P': <thaumcraft:phial>, // Phial
+    'I': <astralsorcery:itemusabledust:1>, // Illumination powder
+  }).shaped());
 
 // [Feline Amulet]
 mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:cat_amulet>);
@@ -137,7 +135,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   3, // Instability
   [<aspect:victus> * 100, <aspect:ordo> * 50, <aspect:mana> * 50],
   <thaumcraft:verdant_charm:*>, // CentralItem
-  [<botania:quartz:5>, <rustic:elixir>.withTag({ElixirEffects: [{Effect: "minecraft:instant_health", Duration: 1, Amplifier: 1}]}), <ore:quartzDark>, <thaumicwonders:panacea>]
+  [<botania:quartz:5>, <rustic:elixir>.withTag({ ElixirEffects: [{ Effect: 'minecraft:instant_health', Duration: 1, Amplifier: 1 }] }), <ore:quartzDark>, <thaumicwonders:panacea>]
 );
 
 mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:experience_charm>);
@@ -170,13 +168,13 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('sky_pearl',
   [<aspect:ordo> * 4, <aspect:aer> * 2],
   <thaumictinkerer:sky_pearl>,
   Grid(['pretty',
-  'I E I',
-  'E M E',
-  'I E I'], {
-  'I': <thaumictinkerer:kamiresource:5>, // Ichorium nugget
-  'M': <botania:manaresource:1>, // Mana pearl
-  'E': <thaumictinkerer:kamiresource>, // Ender shard
-}).shaped());
+    'I E I',
+    'E M E',
+    'I E I'], {
+    'I': <thaumictinkerer:kamiresource:5>, // Ichorium nugget
+    'M': <botania:manaresource:1>, // Mana pearl
+    'E': <thaumictinkerer:kamiresource>, // Ender shard
+  }).shaped());
 
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:summoner>);
 mods.thaumcraft.Infusion.registerRecipe(
@@ -197,8 +195,6 @@ mods.thaumcraft.Infusion.registerRecipe(
   5, // Instability
   [<aspect:sanguis> * 100, <aspect:rattus> * 50, <aspect:mortuus> * 200],
   <thaumcraft:thaumium_sword>, // CentralItem
-  [<extrautils2:goldenlasso:1>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, 
-  <extrautils2:goldenlasso:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>]
+  [<extrautils2:goldenlasso:1>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, <iceandfire:dread_shard>,
+    <extrautils2:goldenlasso:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>]
 );
-
-
