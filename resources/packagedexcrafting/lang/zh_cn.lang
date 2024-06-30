@@ -1,0 +1,4 @@
+tile.packagedexcrafting.basic_crafter.name=工程封包合成器
+
+recipe.packagedexcrafting.basic=工程创建
+recipe.packagedexcrafting.basic.short=工程

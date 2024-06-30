@@ -284,6 +284,19 @@ craft.remake(<extendedcrafting:frame> * 8, ['pretty',
   '⌃': <appliedenergistics2:quartz_glass>, // Quartz Glass
 });
 
+// [Engineering Package Crafter] from [Engineering Table][+4]
+recipes.removeByRecipeName("packagedexcrafting:basic_crafter");
+craft.make(<packagedexcrafting:basic_crafter>, ['pretty',
+  'A M A',
+  'B n B',
+  'A E A'], {
+  'A': <extendedcrafting:material:15>,             // Advanced Component
+  'M': <appliedenergistics2:molecular_assembler>,  // Molecular Assembler
+  'B': <extendedcrafting:material:2>,              // Black Iron Slate
+  'n': <extendedcrafting:table_basic>            , // Engineering Table
+  'E': <packagedauto:me_package_component>,        // ME Packaging Component
+});
+
 // [ENGINEERING TABLE RECIPES]
 
 // [Redstone Engineering Block] from [Eye of Redstone][+2]
@@ -349,14 +362,14 @@ addShaped(0, <actuallyadditions:block_misc:9> * 4, Grid(['pretty',
   '⌂': <forestry:hardened_machine>,   // Hardened Casing
 }).shaped());
 
-// [Basic Plating]*4 from [HOP Graphite Ingot][+2]
-addShaped(0, <nuclearcraft:part> * 4, Grid(['pretty',
-  '⌂ ⌂ ⌂',
-  '□ ▬ □',
-  '⌂ ⌂ ⌂'], {
-  '⌂': <ic2:casing:4>,         // Lead Item Casing
-  '□': <ore:plateLead>,        // Lead Plate
-  '▬': <ore:ingotHOPGraphite>, // HOP Graphite Ingot
+// [Basic Plating]*6 from [Graphite Block][+2]
+addShaped(0, <nuclearcraft:part> * 6, Grid(['pretty',
+  '□ ⌂ □',
+  '⌂ ■ ⌂',
+  '□ ⌂ □'], {
+  '□': <ore:plateLead>,     // Lead Plate
+  '⌂': <ic2:casing:5>,      // Steel Item Casing
+  '■': <ore:blockGraphite>, // Graphite Block
 }).shaped());
 
 // [Advanced Plating]*2 from [Basic Plating][+2]
@@ -439,4 +452,89 @@ addShaped(0, <actuallyadditions:block_misc:4> * 4, Grid(['pretty',
   '#': <ore:plankTreatedWood>, // Treated Wood Planks
   '╱': <forestry:oak_stick>,   // Impregnated Stick
   '≢': <forestry:wood_pile>,   // Wood Pile
+}).shaped());
+
+// [Machine Frame]*4 from [Machine Case][+5]
+addShaped(0, <rftools:machine_frame> * 4, Grid(['pretty',
+  'H ¤ H',
+  'D M D',
+  '▬ A ▬'], {
+  'H': <ic2:heat_vent>.anyDamage(),               // Heat Vent
+  '¤': <ore:gearLumium>,                          // Lumium Gear
+  'D': <industrialforegoing:dryrubber>,           // Dry Rubber
+  'M': <teslacorelib:machine_case>,               // Machine Case
+  '▬': <ore:ingotPinkMetal>,                      // Pink Slime Ingot
+  'A': <ore:ingotMeat>,                           // Cooked Meat Ingot
+}).shaped());
+
+// [Advanced Control Circuit]*4 from [Electronic Circuit][+2]
+addShaped(0, <mekanism:controlcircuit:1> * 4, Grid(['pretty',
+  '* A *',
+  'A B A',
+  '* A *'], {
+  '*': <actuallyadditions:item_crystal_empowered>, // Empowered Restonia Crystal
+  'A': <ore:alloyAdvanced> | <ore:itemEnrichedAlloy>, // Enriched Alloy
+  'B': <ore:circuitBasic>,                         // Electronic Circuit
+}).shaped());
+
+// [Elite Control Circuit]*4 from [Advanced Control Circuit][+2]
+addShaped(0, <mekanism:controlcircuit:2> * 4, Grid(['pretty',
+  '* E *',
+  'E A E',
+  '* E *'], {
+  '*': <actuallyadditions:item_crystal_empowered:1>, // Empowered Palis Crystal
+  'E': <ore:alloyElite>,      // Reinforced Alloy
+  'A': <ore:circuitAdvanced>, // Advanced Control Circuit
+}).shaped());
+
+// [Sturdy Casing]*4 from [Constantan Gear][+2]
+addShaped(0, <forestry:sturdy_machine> * 4, Grid(['pretty',
+  '☼ ▬ ☼',
+  '▬   ▬',
+  '¤ ▬ ¤'], {
+  '☼': <ore:gearConstantan>, // Constantan Gear
+  '▬': <ore:ingotBrass>,     // Alchemical Brass Ingot
+  '¤': <ore:gearBronze>,     // Bronze Gear
+}).shaped());
+
+// [Advanced Machine Casing]*2 from [Basic Machine Casing][+3]
+addShaped(0, <ic2:resource:13> * 2, Grid(['pretty',
+  '▬ - ▬',
+  '□ ■ □',
+  '▬ - ▬'], {
+  '▬': <ore:ingotTough>,         // Tough Alloy Ingot
+  '-': <ore:ingotHardCarbon>,    // Hard Carbon Alloy Ingot
+  '□': <ore:plateAdvancedAlloy>, // Advanced Alloy
+  '■': <ore:machineBlock> | <ore:machineBlockCasing>, // Basic Machine Casing
+}).shaped());
+
+// [Machine Chassis]*2 from [Black Iron Ingot][+2]
+addShaped(0, <nuclearcraft:part:10> * 2, Grid(['pretty',
+  '▬ - ▬',
+  '- _ -',
+  '▬ - ▬'], {
+  '▬': <ore:ingotSteel>,     // Steel Ingot
+  '-': <ore:ingotLead>,      // Lead Ingot
+  '_': <ore:ingotBlackIron>, // Black Iron Ingot
+}).shaped());
+
+// [Servomechanism]*2 from [Copper Ingot][+3]
+addShaped(0, <nuclearcraft:part:7> * 2, Grid(['pretty',
+  '-   -',
+  '* ▬ *',
+  '▬ _ ▬'], {
+  '-': <ore:ingotFerroboron>, // Ferroboron Alloy Ingot
+  '*': <ore:crystalRestonia>, // Restonia Crystal
+  '▬': <ore:ingotDarkSteel>,  // Dark Steel Ingot
+  '_': <ore:ingotCopper>,     // Copper Ingot
+}).shaped());
+
+// [Electric Motor]*2 from [Electrum Nugget][+2]
+addShaped(0, <nuclearcraft:part:8> * 2, Grid(['pretty',
+  '▬ ▬  ',
+  'C C ‚',
+  '▬ ▬  '], {
+  '▬': <ore:ingotElectricalSteel>, // Electrical Steel Ingot
+  'C': <ore:solenoidCopper>,       // Copper Solenoid
+  '‚': <ore:nuggetElectrum>,       // Electrum Nugget
 }).shaped());

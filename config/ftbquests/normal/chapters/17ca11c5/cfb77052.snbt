@@ -1,0 +1,16 @@
+{
+	title: "{q.bragging_rights.engineering_recipes.name}",
+	icon: "packagedexcrafting:basic_crafter",
+	x: 3.8d,
+	y: -3.2d,
+	text: [
+		"{q.bragging_rights.engineering_recipes.desc}"
+	],
+	dependencies: [
+		"b4b83088"
+	],
+	tasks: [{
+		uid: "2630fadd",
+		type: "checkmark"
+	}]
+}
