@@ -366,3 +366,638 @@ mods.qmd.target_chamber.addRecipe(
   null, null, null, null,
   2000, 1.0, 0
 );
+
+////////////////////////////////////////
+
+//first recipe is fluid-less 2x-2x, second is with fluid, to boost secondary output by 6x, and primary reduced to 1x
+// dirty ore compat Mass spectrometer
+//Aluminum
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemaluminium>, null,
+   <thermalfoundation:material:68>*32, <thermalfoundation:material>*2, <jaopca:item_dustaquamarine>*8, <jaopca:item_dustsapphire>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemaluminium>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:68>*16, <thermalfoundation:material>*6, <jaopca:item_dustaquamarine>*24, <jaopca:item_dustsapphire>*12,
+    null, null, null, null, 2.0
+    );
+
+//Ardite
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemardite>, null,
+   <exnihilocreatio:item_ore_ardite:2>*32, <mekanism:dust:2>*2, <thermalfoundation:material:1>*2, <jaopca:item_dusttopaz>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemardite>, <fluid:terrestrial>*16,
+   <exnihilocreatio:item_ore_ardite:2>*16, <mekanism:dust:2>*6, <thermalfoundation:material:1>*6, <jaopca:item_dusttopaz>*12,
+    null, null, null, null, 2.0
+    );
+
+//AstralStarMetal
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemastralstarmetal>, null,
+   <astralsorcery:itemcraftingcomponent:2>*32, <thermalfoundation:material:66>*2, <qmd:dust>*2, <jaopca:item_dustsapphire>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemastralstarmetal>, <fluid:terrestrial>*16,
+   <astralsorcery:itemcraftingcomponent:2>*16, <thermalfoundation:material:66>*6, <qmd:dust>*6, <jaopca:item_dustsapphire>*12,
+    null, null, null, null, 2.0
+    );
+
+//Boron
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemboron>, null,
+   <nuclearcraft:dust:5>*32, <nuclearcraft:dust:7>*2, <ic2:dust:11>*2, <actuallyadditions:item_dust:7>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemboron>, <fluid:terrestrial>*16,
+   <nuclearcraft:dust:5>*16, <nuclearcraft:dust:7>*6, <ic2:dust:11>*6, <actuallyadditions:item_dust:7>*12,
+    null, null, null, null, 2.0
+    );
+
+    //Cobalt
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcobalt>, null,
+   <exnihilocreatio:item_ore_cobalt:2>*32, <thermalfoundation:material>*2, <thermalfoundation:material:69>*2, <nuclearcraft:dust:5>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcobalt>, <fluid:terrestrial>*16,
+   <exnihilocreatio:item_ore_cobalt:2>*16, <thermalfoundation:material>*6, <thermalfoundation:material:69>*6, <nuclearcraft:dust:5>*6,
+    null, null, null, null, 2.0
+    );
+
+    //Copper
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcopper>, null,
+   <thermalfoundation:material:64>*32, <thermalfoundation:material:65>*2, <thermalfoundation:material:1>*2, <thermalfoundation:material>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcopper>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:64>*16, <thermalfoundation:material:65>*6, <thermalfoundation:material:1>*6, <thermalfoundation:material>*6,
+    null, null, null, null, 2.0
+    );
+    
+    //Draconium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdraconium>, null,
+   <draconicevolution:draconium_dust>*32, <exnihilocreatio:item_ore_ardite:2>*2, <astralsorcery:itemcraftingcomponent:2>*2, <jaopca:item_dustamethyst>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdraconium>, <fluid:terrestrial>*16,
+   <draconicevolution:draconium_dust>*16, <exnihilocreatio:item_ore_ardite:2>*6, <astralsorcery:itemcraftingcomponent:2>*6, <jaopca:item_dustamethyst>*12,
+    null, null, null, null, 2.0
+    );
+    
+    //Gold
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemgold>, null,
+   <thermalfoundation:material:1>*32, <thermalfoundation:material:66>*2, <thermalfoundation:material:68>*2, <thermalfoundation:material:72>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemgold>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:1>*16, <thermalfoundation:material:66>*6, <thermalfoundation:material:68>*6, <thermalfoundation:material:72>*6,
+    null, null, null, null, 2.0
+    );
+    
+    //Iridium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemiridium>, null,
+   <thermalfoundation:material:71>*32, <thermalfoundation:material:70>*2, <mekanism:dust:2>*2, <jaopca:item_dustdimensionalshard>*6,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemiridium>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:71>*16, <thermalfoundation:material:70>*6, <mekanism:dust:2>*6, <jaopca:item_dustdimensionalshard>*18,
+    null, null, null, null, 2.0
+    );
+    
+    //Iron
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemiron>, null,
+   <thermalfoundation:material>*32, <thermalfoundation:material:69>*2, <thermalfoundation:material:1>*2, <thermalfoundation:material:65>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemiron>, <fluid:terrestrial>*16,
+   <thermalfoundation:material>*16, <thermalfoundation:material:69>*6, <thermalfoundation:material:1>*6, <thermalfoundation:material:65>*6,
+    null, null, null, null, 2.0
+    );
+    
+    //Lead
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemlead>, null,
+   <thermalfoundation:material:67>*32, <thermalfoundation:material:64>*2, <thermalfoundation:material:66>*2, <immersiveengineering:metal:14>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemlead>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:67>*16, <thermalfoundation:material:64>*6, <thermalfoundation:material:66>*6, <immersiveengineering:metal:14>*6,
+    null, null, null, null, 2.0
+    );
+    
+    //Lithium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemlithium>, null,
+   <ic2:dust:11>*32, <thermalfoundation:material:68>*2, <jaopca:item_dusttopaz>*4, <jaopca:item_dustapatite>*20,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemlithium>, <fluid:terrestrial>*16,
+   <ic2:dust:11>*16, <thermalfoundation:material:68>*6, <jaopca:item_dusttopaz>*12, <jaopca:item_dustapatite>*60,
+    null, null, null, null, 2.0
+    );
+    
+    //Magnesium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemmagnesium>, null,
+   <nuclearcraft:dust:7>*32, <thermalfoundation:material>*2, <thermalfoundation:material:64>*2, <thermalfoundation:material:69>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemmagnesium>, <fluid:terrestrial>*16,
+   <nuclearcraft:dust:7>*16, <thermalfoundation:material>*6, <thermalfoundation:material:64>*6, <thermalfoundation:material:69>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Mithril
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemmithril>, null,
+   <thermalfoundation:material:72>*32, <thermalfoundation:material:1>*2, <astralsorcery:itemcraftingcomponent:2>*2, <thermalfoundation:material:72>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemmithril>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:72>*16, <thermalfoundation:material:1>*6, <astralsorcery:itemcraftingcomponent:2>*6, <thermalfoundation:material:72>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Nickel
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemnickel>, null,
+   <thermalfoundation:material:69>*32, <thermalfoundation:material:70>*2, <mekanism:dust:2>*2, <exnihilocreatio:item_ore_cobalt:2>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemnickel>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:69>*16, <thermalfoundation:material:70>*6, <mekanism:dust:2>*6, <exnihilocreatio:item_ore_cobalt:2>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Osmium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemosmium>, null,
+  <mekanism:dust:2>*32, <thermalfoundation:material:69>*2, <thermalfoundation:material:70>*2, <thermalfoundation:material:71>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemosmium>, <fluid:terrestrial>*16,
+   <mekanism:dust:2>*16, <thermalfoundation:material:69>*6, <thermalfoundation:material:70>*6, <thermalfoundation:material:71>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Platinum
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemplatinum>, null,
+   <thermalfoundation:material:70>*32, <thermalfoundation:material:69>*2, <thermalfoundation:material:71>*2, <draconicevolution:draconium_dust>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemplatinum>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:70>*16, <thermalfoundation:material:69>*6, <thermalfoundation:material:71>*6, <draconicevolution:draconium_dust>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Silver
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemsilver>, null,
+   <thermalfoundation:material:66>*32, <thermalfoundation:material:67>*2, <thermalfoundation:material:1>*2, <thermalfoundation:material:71>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemsilver>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:66>*16, <thermalfoundation:material:67>*6, <thermalfoundation:material:1>*6, <thermalfoundation:material:71>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Thorium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemthorium>, null,
+   <nuclearcraft:dust:3>*32, <immersiveengineering:metal:14>*2, <nuclearcraft:dust:5>*2, <libvulpes:productdust:7>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemthorium>, <fluid:terrestrial>*16,
+   <nuclearcraft:dust:3>*16, <immersiveengineering:metal:14>*6, <nuclearcraft:dust:5>*6, <libvulpes:productdust:7>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Tin
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtin>, null,
+   <thermalfoundation:material:65>*32, <thermalfoundation:material>*2, <thermalfoundation:material:67>*2, <thermalfoundation:material:64>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtin>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:65>*16, <thermalfoundation:material>*6, <thermalfoundation:material:67>*6, <thermalfoundation:material:64>*6,
+    null, null, null, null, 2.0
+    );
+        
+    //Titanium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtitanium>, null,
+   <libvulpes:productdust:7>*32, <qmd:dust>*2, <nuclearcraft:dust:7>*2, <exnihilocreatio:item_ore_ardite:2>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtitanium>, <fluid:terrestrial>*16,
+   <libvulpes:productdust:7>*16, <qmd:dust>*6, <nuclearcraft:dust:7>*6, <exnihilocreatio:item_ore_ardite:2>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Tungsten
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtungsten>, null,
+   <qmd:dust>*32, <nuclearcraft:dust:7>*2, <thermalfoundation:material:71>*2, <libvulpes:productdust:7>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtungsten>, <fluid:terrestrial>*16,
+   <qmd:dust>*16, <nuclearcraft:dust:7>*6, <thermalfoundation:material:71>*6, <libvulpes:productdust:7>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Uranium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemuranium>, null,
+   <immersiveengineering:metal:14>*32, <thermalfoundation:material:67>*2, <ic2:dust:11>*2, <nuclearcraft:dust:3>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemuranium>, <fluid:terrestrial>*16,
+   <immersiveengineering:metal:14>*16, <thermalfoundation:material:67>*6, <ic2:dust:11>*6, <nuclearcraft:dust:3>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Amber
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemamber>, null,
+   <jaopca:item_dustamber>*64, <thermalfoundation:material>*2, <ic2:dust:5>*4, <appliedenergistics2:material:2>*6,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemamber>, <fluid:terrestrial>*16,
+   <jaopca:item_dustamber>*32, <thermalfoundation:material>*6, <ic2:dust:5>*12, <appliedenergistics2:material:2>*18,
+    null, null, null, null, 2.0
+    );
+                
+    //Amethyst
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemamethyst>, null,
+   <jaopca:item_dustamethyst>*32, <exnihilocreatio:item_ore_cobalt:2>*2, <jaopca:item_dustchargedcertusquartz>*4, <astralsorcery:itemcraftingcomponent:2>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemamethyst>, <fluid:terrestrial>*16,
+   <jaopca:item_dustamethyst>*16, <exnihilocreatio:item_ore_cobalt:2>*6, <jaopca:item_dustchargedcertusquartz>*12, <astralsorcery:itemcraftingcomponent:2>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Apatite
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemapatite>, null,
+   <jaopca:item_dustapatite>*128, <thermalfoundation:material:68>*2, <nuclearcraft:dust:7>*2, <nuclearcraft:dust:3>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemapatite>, <fluid:terrestrial>*16,
+   <jaopca:item_dustapatite>*64, <thermalfoundation:material:68>*6, <nuclearcraft:dust:7>*6, <nuclearcraft:dust:3>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Aquamarine
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemaquamarine>, null,
+   <jaopca:item_dustaquamarine>*128, <thermalfoundation:material:68>*2, <actuallyadditions:item_dust:3>*4, <libvulpes:productdust:7>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemaquamarine>, <fluid:terrestrial>*16,
+   <jaopca:item_dustaquamarine>*64, <thermalfoundation:material:68>*6, <actuallyadditions:item_dust:3>*12, <libvulpes:productdust:7>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Certus
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcertusquartz>, null,
+   <appliedenergistics2:material:2>*68, <appliedenergistics2:material:3>*6, <ic2:dust:5>*4, <ic2:dust:9>*20,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcertusquartz>, <fluid:terrestrial>*16,
+   <appliedenergistics2:material:2>*36, <appliedenergistics2:material:3>*18, <ic2:dust:5>*12, <ic2:dust:9>*60,
+    null, null, null, null, 2.0
+    );
+            
+    //Charged Certus
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemchargedcertusquartz>, null,
+   <jaopca:item_dustchargedcertusquartz>*48, <ic2:dust:5>*4, <jaopca:item_dusttopaz>*4, <jaopca:item_dustdimensionalshard>*6,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemchargedcertusquartz>, <fluid:terrestrial>*16,
+   <jaopca:item_dustchargedcertusquartz>*24, <ic2:dust:5>*12, <jaopca:item_dusttopaz>*12, <jaopca:item_dustdimensionalshard>*18,
+    null, null, null, null, 2.0
+    );
+            
+    //Coal
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcoal>, null,
+   <thermalfoundation:material:768>*128, <actuallyadditions:item_dust:7>*4, <appliedenergistics2:material:3>*6, <appliedenergistics2:material:2>*6,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemcoal>, <fluid:terrestrial>*16,
+   <thermalfoundation:material:768>*64, <actuallyadditions:item_dust:7>*12, <appliedenergistics2:material:3>*18, <appliedenergistics2:material:2>*18,
+    null, null, null, null, 2.0
+    );
+            
+    //Diamond
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdiamond>, null,
+   <ic2:dust:5>*48, <appliedenergistics2:material:2>*6, <jaopca:item_dustmalachite>*4, <jaopca:item_dustsapphire>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdiamond>, <fluid:terrestrial>*16,
+   <ic2:dust:5>*24, <appliedenergistics2:material:2>*18, <jaopca:item_dustmalachite>*12, <jaopca:item_dustsapphire>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Dilithium
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdilithium>, null,
+   <libvulpes:productdust>*32, <ic2:dust:11>*2, <jaopca:item_dustdimensionalshard>*6, <astralsorcery:itemcraftingcomponent:2>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdilithium>, <fluid:terrestrial>*16,
+   <libvulpes:productdust>*16, <ic2:dust:11>*6, <jaopca:item_dustdimensionalshard>*18, <astralsorcery:itemcraftingcomponent:2>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Dimensional Shard
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdimensionalshard>, null,
+   <jaopca:item_dustdimensionalshard>*64, <astralsorcery:itemcraftingcomponent:2>*2, <jaopca:item_dustperidot>*4, <jaopca:item_dusttanzanite>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemdimensionalshard>, <fluid:terrestrial>*16,
+   <jaopca:item_dustdimensionalshard>*32, <astralsorcery:itemcraftingcomponent:2>*6, <jaopca:item_dustperidot>*12, <jaopca:item_dusttanzanite>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Emerald
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygememerald>, null,
+   <actuallyadditions:item_dust:3>*48, <jaopca:item_dustperidot>*4, <jaopca:item_dusttanzanite>*4, <jaopca:item_dustmalachite>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygememerald>, <fluid:terrestrial>*16,
+   <actuallyadditions:item_dust:3>*24, <jaopca:item_dustperidot>*12, <jaopca:item_dusttanzanite>*12, <jaopca:item_dustmalachite>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Lapis Lazuli
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemlapis>, null,
+   <ic2:dust:9>*128, <jaopca:item_dustapatite>*20, <jaopca:item_dustsapphire>*4, <ic2:dust:5>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemlapis>, <fluid:terrestrial>*16,
+   <ic2:dust:9>*64, <jaopca:item_dustapatite>*60, <jaopca:item_dustsapphire>*12, <ic2:dust:5>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Malachite
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemmalachite>, null,
+   <jaopca:item_dustmalachite>*48, <ic2:dust:9>*20, <thermalfoundation:material:64>*2, <qmd:dust>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemmalachite>, <fluid:terrestrial>*16,
+   <jaopca:item_dustmalachite>*24, <ic2:dust:9>*60, <thermalfoundation:material:64>*6, <qmd:dust>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Peridot
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemperidot>, null,
+   <jaopca:item_dustperidot>*48, <actuallyadditions:item_dust:3>*4, <ic2:dust:5>*4, <nuclearcraft:dust:7>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemperidot>, <fluid:terrestrial>*16,
+   <jaopca:item_dustperidot>*24, <actuallyadditions:item_dust:3>*12, <ic2:dust:5>*12, <nuclearcraft:dust:7>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Quartz
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemquartz>, null,
+   <appliedenergistics2:material:3>*64, <thermalfoundation:material>*2, <ic2:dust:5>*4, <jaopca:item_dustamethyst>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemquartz>, <fluid:terrestrial>*16,
+   <appliedenergistics2:material:3>*32, <thermalfoundation:material>*6, <ic2:dust:5>*12, <jaopca:item_dustamethyst>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Black Quartz
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemquartzblack>, null,
+   <actuallyadditions:item_dust:7>*48, <thermalfoundation:material:768>*10, <jaopca:item_dustaquamarine>*8, <jaopca:item_dusttopaz>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemquartzblack>, <fluid:terrestrial>*16,
+   <actuallyadditions:item_dust:7>*24, <thermalfoundation:material:768>*30, <jaopca:item_dustaquamarine>*24, <jaopca:item_dusttopaz>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Ruby
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemruby>, null,
+   <jaopca:item_dustruby>*48, <thermalfoundation:material:68>*2, <nuclearcraft:dust:7>*2, <jaopca:item_dustsapphire>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemruby>, <fluid:terrestrial>*16,
+   <jaopca:item_dustruby>*24, <thermalfoundation:material:68>*6, <nuclearcraft:dust:7>*6, <jaopca:item_dustsapphire>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Sapphire
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemsapphire>, null,
+   <jaopca:item_dustsapphire>*48, <thermalfoundation:material:68>*2, <draconicevolution:draconium_dust>*2, <libvulpes:productdust:7>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemsapphire>, <fluid:terrestrial>*16,
+   <jaopca:item_dustsapphire>*24, <thermalfoundation:material:68>*6, <draconicevolution:draconium_dust>*6, <libvulpes:productdust:7>*6,
+    null, null, null, null, 2.0
+    );
+            
+    //Tanzanite
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtanzanite>, null,
+   <jaopca:item_dusttanzanite>*48, <appliedenergistics2:material:3>*6, <ic2:dust:5>*4, <jaopca:item_dustamethyst>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtanzanite>, <fluid:terrestrial>*16,
+   <jaopca:item_dusttanzanite>*24, <appliedenergistics2:material:3>*18, <ic2:dust:5>*12, <jaopca:item_dustamethyst>*12,
+    null, null, null, null, 2.0
+    );
+            
+    //Topaz
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtopaz>, null,
+   <jaopca:item_dusttopaz>*48, <actuallyadditions:item_dust:7>*2, <appliedenergistics2:material:3>*3, <ic2:dust:5>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtopaz>, <fluid:terrestrial>*16,
+   <jaopca:item_dusttopaz>*24, <actuallyadditions:item_dust:7>*8, <appliedenergistics2:material:3>*16, <ic2:dust:5>*8,
+    null, null, null, null, 2.0
+    );
+            
+    //Trinitite
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtrinitite>, null,
+   <jaopca:item_dusttrinitite>*32, <jaopca:item_dusttrinitite>*2, <jaopca:item_dusttrinitite>*2, <jaopca:item_dusttrinitite>*2,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemtrinitite>, <fluid:terrestrial>*16,
+   <jaopca:item_dusttrinitite>*16, <jaopca:item_dusttrinitite>*6, <jaopca:item_dusttrinitite>*6, <jaopca:item_dusttrinitite>*6,
+    null, null, null, null, 2.0
+    );
+                
+    //Redstone
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemredstone>, null,
+   <minecraft:redstone>*128, <thermalfoundation:material:768>*10, <actuallyadditions:item_dust:7>*4, <actuallyadditions:item_dust:7>*4,
+    null, null, null, null, 2.0
+    );
+
+mods.qmd.mass_spectrometer.addRecipe(
+  <jaopca:item_dirtygemredstone>, <fluid:terrestrial>*16,
+   <minecraft:redstone>*64, <thermalfoundation:material:768>*30, <actuallyadditions:item_dust:7>*12, <actuallyadditions:item_dust:7>*12,
+    null, null, null, null, 2.0
+    );
+
+
