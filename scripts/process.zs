@@ -103,7 +103,7 @@ function sawWood(input as IIngredient, output as IItemStack, exceptions as strin
 function crush(input as IIngredient, output as IItemStack, exceptions as string = null, extra as IItemStack[] = null, extraChance as float[] = null, opts as IData = null) {
   for machine in [
     'Macerator', 'eu2Crusher',
-    'AACrusher', 'IECrusher', 'SagMill',
+    'AACrusher', 'IECrusher', 'SagMill', 'massspectrometer',
     'Grindstone', 'AEGrinder', 'ThermalCentrifuge',
     'Pulverizer', 'mekCrusher', 'crushingBlock',
     'MekEnrichment',
