@@ -279,7 +279,7 @@ function beneficiate(
   // Mass Spectrometer Dirty Gem processing
   val gem = utils.getSomething(oreName, ['gem', 'any'], amount + step);
   if (!isNull(gem)) {
-    workEx("MassSpectrometer", exceptions, [input], null, [output], null, extra, null, opts);
+    workEx("massspectrometer", exceptions, [input], null, [output], null, null, null, null);
   }
 
   // Crush IC2
