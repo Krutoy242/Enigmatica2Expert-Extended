@@ -103,7 +103,7 @@ function sawWood(input as IIngredient, output as IItemStack, exceptions as strin
 function crush(input as IIngredient, output as IItemStack, exceptions as string = null, extra as IItemStack[] = null, extraChance as float[] = null, opts as IData = null) {
   for machine in [
     'Macerator', 'eu2Crusher',
-    'AACrusher', 'IECrusher', 'SagMill', 'massspectrometer',
+    'AACrusher', 'IECrusher', 'SagMill',
     'Grindstone', 'AEGrinder', 'ThermalCentrifuge',
     'Pulverizer', 'mekCrusher', 'crushingBlock',
     'MekEnrichment',
@@ -274,6 +274,12 @@ function beneficiate(
       cx = utils.getSomething(JA.thirdExtraName,  ['dust', 'gem'], 1); if (!isNull(cx)) extraList += cx;
     }
     crush(input, dustOrGem, exceptions ~ 'macerator thermalCentrifuge crushingBlock', extraList, extraChances, { bonusType: 'MULTIPLY_OUTPUT' });
+  }
+
+  // Mass Spectrometer Dirty Gem processing
+  val gem = utils.getSomething(oreName, ['gem', 'any'], amount + step);
+  if (!isNull(gem)) {
+    workEx("MassSpectrometer", exceptions, [input], null, [output], null, extra, null, opts);
   }
 
   // Crush IC2
