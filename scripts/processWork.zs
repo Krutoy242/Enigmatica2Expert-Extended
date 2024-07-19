@@ -328,7 +328,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       mods.ic2.ThermalCentrifuge.addRecipe(outputItems, inputIngr0);
       return machineName;
     } //Mass Spectrometer dirty gem no liquid
-    if (machineName == 'MassSpectrometer') {
+    if (machineName == 'massspectrometer') {
       if (combinedOutput.length == 4) {
         mods.qmd.mass_spectrometer.addRecipe(
           inputIngr0, null,
