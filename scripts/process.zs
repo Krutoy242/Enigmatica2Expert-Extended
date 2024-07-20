@@ -274,14 +274,7 @@ function beneficiate(
       cx = utils.getSomething(JA.thirdExtraName,  ['dust', 'gem'], 1); if (!isNull(cx)) extraList += cx;
     }
     crush(input, dustOrGem, exceptions ~ 'macerator thermalCentrifuge crushingBlock', extraList, extraChances, { bonusType: 'MULTIPLY_OUTPUT' });
-  }
-
-  // Mass Spectrometer Dirty Gem processing
-  val gem = utils.getSomething(oreName, ['gem', 'any'], amount + step);
-  if (!isNull(gem)) {
-    print("TODO MASS SPECTRO");
-    print([input]);
-    workEx("massspectrometer", exceptions, [input], null, [output], null, null, null, null);
+    workEx('massspectrometer', null, [input], null, [dustOrGem], null, extraList, null, opts);// Mass Spectrometer Dirty Gem processing w/o liquid
   }
 
   // Crush IC2
