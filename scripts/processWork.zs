@@ -327,23 +327,25 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       // mods.ic2.ThermalCentrifuge.addRecipe([IItemStack[] outputs, IIngredient input, @Optional int minHeat);
       mods.ic2.ThermalCentrifuge.addRecipe(outputItems, inputIngr0);
       return machineName;
-    } //Mass Spectrometer dirty gem no liquid
+    }
+    
     if (machineName == 'massspectrometer') {
+      //Mass Spectrometer dirty gem no liquid
       if (combinedOutput.length == 4) {
         mods.qmd.mass_spectrometer.addRecipe(
           inputIngr0, null,
-          combinedOutput[0].withAmount(combinedOutput[0].amount*2),
-          combinedOutput[1].withAmount(combinedOutput[1].amount*2),
-          combinedOutput[2].withAmount(combinedOutput[2].amount*2),
-          combinedOutput[3].withAmount(combinedOutput[3].amount*2),
+          combinedOutput[0] * (combinedOutput[0].amount * 2),
+          combinedOutput[1] * (combinedOutput[1].amount * 2),
+          combinedOutput[2] * (combinedOutput[2].amount * 2),
+          combinedOutput[3] * (combinedOutput[3].amount * 2),
           null, null, null, null, 2.0
         );
         mods.qmd.mass_spectrometer.addRecipe(
           inputIngr0, <fluid:terrestrial>*16,
-          combinedOutput[0].withAmount(combinedOutput[0].amount*1),
-          combinedOutput[1].withAmount(combinedOutput[1].amount*6),
-          combinedOutput[2].withAmount(combinedOutput[2].amount*6),
-          combinedOutput[3].withAmount(combinedOutput[3].amount*6),
+          combinedOutput[0] * (combinedOutput[0].amount * 1),
+          combinedOutput[1] * (combinedOutput[1].amount * 6),
+          combinedOutput[2] * (combinedOutput[2].amount * 6),
+          combinedOutput[3] * (combinedOutput[3].amount * 6),
           null, null, null, null, 2.0
         );
       }
