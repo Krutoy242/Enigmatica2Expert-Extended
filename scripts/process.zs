@@ -279,6 +279,8 @@ function beneficiate(
   // Mass Spectrometer Dirty Gem processing
   val gem = utils.getSomething(oreName, ['gem', 'any'], amount + step);
   if (!isNull(gem)) {
+    print("TODO MASS SPECTRO");
+    print([input]);
     workEx("massspectrometer", exceptions, [input], null, [output], null, null, null, null);
   }
 
