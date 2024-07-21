@@ -274,7 +274,7 @@ function beneficiate(
       cx = utils.getSomething(JA.thirdExtraName,  ['dust', 'gem'], 1); if (!isNull(cx)) extraList += cx;
     }
     crush(input, dustOrGem, exceptions ~ 'macerator thermalCentrifuge crushingBlock', extraList, extraChances, { bonusType: 'MULTIPLY_OUTPUT' });
-    workEx('massspectrometer', null, [input], null, [dustOrGem], null, extraList, null, opts);// Mass Spectrometer Dirty Gem processing w/o liquid
+    workEx('massspectrometer', null, [input], <fluid:terrestrial>*16, [dustOrGem], null, extraList, null, opts);// Mass Spectrometer Dirty Gem processing
   }
 
   // Crush IC2
