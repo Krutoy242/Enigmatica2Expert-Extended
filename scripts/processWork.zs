@@ -328,26 +328,29 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       mods.ic2.ThermalCentrifuge.addRecipe(outputItems, inputIngr0);
       return machineName;
     }
-    
+
     if (machineName == 'massspectrometer') {
-      //Mass Spectrometer dirty gem no liquid
+      // Mass Spectrometer dirty gem no liquid
       if (combinedOutput.length == 4) {
-        mods.qmd.mass_spectrometer.addRecipe(
-          inputIngr0, null,
-          combinedOutput[0] * (combinedOutput[0].amount * 2),
-          combinedOutput[1] * (combinedOutput[1].amount * 2),
-          combinedOutput[2] * (combinedOutput[2].amount * 2),
-          combinedOutput[3] * (combinedOutput[3].amount * 2),
-          null, null, null, null, 2.0
-        );
-        mods.qmd.mass_spectrometer.addRecipe(
-          inputIngr0, <fluid:terrestrial>*16,
-          combinedOutput[0] * (combinedOutput[0].amount * 1),
-          combinedOutput[1] * (combinedOutput[1].amount * 6),
-          combinedOutput[2] * (combinedOutput[2].amount * 6),
-          combinedOutput[3] * (combinedOutput[3].amount * 6),
-          null, null, null, null, 2.0
-        );
+        if (inputLiquidIsSingle) {
+          mods.qmd.mass_spectrometer.addRecipe(
+            inputIngr0, inputLiquids[0],
+            combinedOutput[0] * (combinedOutput[0].amount * 1),
+            combinedOutput[1] * (combinedOutput[1].amount * 6),
+            combinedOutput[2] * (combinedOutput[2].amount * 6),
+            combinedOutput[3] * (combinedOutput[3].amount * 6),
+            null, null, null, null, 2.0
+          )
+        } else {
+          mods.qmd.mass_spectrometer.addRecipe(
+            inputIngr0, null,
+            combinedOutput[0] * (combinedOutput[0].amount * 2),
+            combinedOutput[1] * (combinedOutput[1].amount * 2),
+            combinedOutput[2] * (combinedOutput[2].amount * 2),
+            combinedOutput[3] * (combinedOutput[3].amount * 2),
+            null, null, null, null, 2.0
+          );
+        }
       }
       return machineName;
     }
