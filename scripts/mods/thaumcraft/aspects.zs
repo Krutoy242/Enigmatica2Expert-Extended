@@ -1001,6 +1001,10 @@ ___ _  _ ____ _  _ _  _ ____ ____ ____ ____ ___
 <mysticalagriculture:void_metal_seeds>          .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:herba>*20);
 <mysticalagriculture:void_metal_essence>        .setAspects(<aspect:metallum>*10        , <aspect:vitium>*5,  <aspect:praecantatio>*20);
 
+<thaumicwonders:alienist_stone>                 .setAspects(<aspect:tenebrae>*10        , <aspect:praecantatio>*15,   <aspect:alkimia>*15);
+<thaumicwonders:transmuter_stone>               .setAspects(<aspect:motus>*10           , <aspect:permutatio>*15,     <aspect:alkimia>*15);
+<thaumicwonders:alchemist_stone>                .setAspects(<aspect:metallum>*10        , <aspect:ordo>*15,           <aspect:alkimia>*15);
+
 val nitor = [
 <thaumcraft:nitor_white>,
 <thaumcraft:nitor_orange>,
