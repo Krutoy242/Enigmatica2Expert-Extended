@@ -207,7 +207,7 @@ function caelesAstralExp(scythe as IEntity, lvl as int) as void{
 }
 
 function cognitioExperienceBlessing(scythe as IEntity, target as IEntityLivingBase, lvl as int) as void{
-    val exp as IEntityXp = <entity:clumps:xp_orb_big>.spawnEntity(target.world, target.position);
+    val exp as IEntityXp = <entity:minecraft:xp_orb>.spawnEntity(target.world, target.position);
     Experience.setXpValue(exp, target.world.getRandom().nextInt(100,1000*lvl));
 
     playSound("entity.player.levelup", target);
