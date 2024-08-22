@@ -72,7 +72,7 @@ craft.make(<thaumicenergistics:essentia_cell_64k>, ['pretty',
 mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:infusion_provider>);
 mods.thaumcraft.Infusion.registerRecipe(
   'infusion_provider', // Name
-  'INFUSION', // Research
+  'INFUSIONPROVIDER', // Research
   <thaumicenergistics:infusion_provider>, // Output
   7, // Instability
   [<aspect:fabrico> * 100, Aspect.imperium * 100, <aspect:praecantatio> * 100],

@@ -937,7 +937,7 @@ mods.thaumcraft.Infusion.registerRecipe(
 mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:the_beheader>);
 mods.thaumcraft.Infusion.registerRecipe(
   'the_beheader', // Name
-  'SHADOWENCHANTER', // Research
+  'BEHEADER', // Research
   <thaumadditions:the_beheader>, // Output
   3, // Instability
   [<aspect:mortuus> * 100, <aspect:spiritus> * 50, <aspect:exanimis> * 100],
