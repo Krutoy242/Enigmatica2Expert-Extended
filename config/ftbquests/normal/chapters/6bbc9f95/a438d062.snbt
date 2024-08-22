@@ -15,7 +15,7 @@
 		items: [{
 			item: "thaumcraft:metal_alchemical_advanced"
 		}],
-		count: 4L
+		count: 8L
 	},
 	{
 		uid: "6f9fcb9d",
