@@ -216,7 +216,7 @@ item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 # --------------------------------------
 e2ee.tconstruct.material.spectre.name=通灵
 e2ee.tconstruct.material.spectre.description=§b灵光到处现\n§r每个部件都可以给予玩家额外的"延伸"药水效果
-e2ee.tconstruct.material.fireproof.name=防火
+e2ee.tconstruct.material.fireproof.name=抗燃
 e2ee.tconstruct.material.mentor.name=导师
 e2ee.tconstruct.material.mentor.description=§o知识的力量\n§r攻击时，每个部件会各消耗 1 级经验，然后额外造成总共 √(经验等级 * 导师部件数量) 的伤害
 e2ee.tconstruct.material.apprentice.name=学徒
