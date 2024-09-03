@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<!-- 
+
+These are the built-in recipes. You cannot change this file, it is a
+reference for you only and will be generated every time the game starts.
+
+To make changes to the recipes, copy the recipes you want to change to
+a file in the 'user' folder. To disable a recipe, add an attribute "disabled"
+and set it to true, e.g.: <recipe name="Gear" disabled="true" />
+
+You can also disable all built-in recipes with the setting "loadCoreRecipes"
+in the Ender IO config file, so that only your files in the 'user' folder will
+be loaded. Please be advised that a number of recipes are absolutely needed,
+so you will have to copy those over into a 'user' file for the game to load.
+
+Item specifications can reference an alias, an ore dictionary name, a
+block or an item. You can force the type by prefixing the value with
+"oredict:", "block:" or "item:". Recipes that have items that cannot be
+found in-game are either skipped or an error, depending on their "required"
+attribute.
+
+More information on the syntax can be found in the recipes.xsd file. An
+XML editor will display that as tooltips when editing this file.
+
+ -->
+
+<!-- These recipes previously were generated in code -->
+
+  <recipe name="Auto: electrical_steel 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+       <item name="oredict:ingotElectricalSteel"/>
+     </shapeless>
+      <output name="enderio:block_alloy:0" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: electrical_steel 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockElectricalSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:0" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: electrical_steel 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+       <item name="oredict:nuggetElectricalSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:0" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: electrical_steel 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:0" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:0" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+       <item name="oredict:ingotEnergeticAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy:1" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockEnergeticAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:1" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+       <item name="oredict:nuggetEnergeticAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:1" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:1" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:1" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vibrant_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+       <item name="oredict:ingotVibrantAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy:2" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vibrant_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockVibrantAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:2" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vibrant_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+       <item name="oredict:nuggetVibrantAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:2" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vibrant_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:2" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:2" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: redstone_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+       <item name="oredict:ingotRedstoneAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy:3" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: redstone_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockRedstoneAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:3" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: redstone_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+       <item name="oredict:nuggetRedstoneAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:3" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: redstone_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:3" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:3" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: conductive_iron 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+       <item name="oredict:ingotConductiveIron"/>
+     </shapeless>
+      <output name="enderio:block_alloy:4" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: conductive_iron 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockConductiveIron"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:4" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: conductive_iron 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+       <item name="oredict:nuggetConductiveIron"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:4" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: conductive_iron 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:4" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:4" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: pulsating_iron 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+       <item name="oredict:ingotPulsatingIron"/>
+     </shapeless>
+      <output name="enderio:block_alloy:5" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: pulsating_iron 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockPulsatingIron"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:5" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: pulsating_iron 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+       <item name="oredict:nuggetPulsatingIron"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:5" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: pulsating_iron 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:5" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:5" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: dark_steel 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+       <item name="oredict:ingotDarkSteel"/>
+     </shapeless>
+      <output name="enderio:block_alloy:6" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: dark_steel 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockDarkSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:6" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: dark_steel 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+       <item name="oredict:nuggetDarkSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:6" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: dark_steel 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:6" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:6" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: soularium 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+       <item name="oredict:ingotSoularium"/>
+     </shapeless>
+      <output name="enderio:block_alloy:7" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: soularium 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockSoularium"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:7" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: soularium 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+       <item name="oredict:nuggetSoularium"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:7" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: soularium 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:7" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:7" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: end_steel 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+       <item name="oredict:ingotEndSteel"/>
+     </shapeless>
+      <output name="enderio:block_alloy:8" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: end_steel 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockEndSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:8" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: end_steel 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+       <item name="oredict:nuggetEndSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:8" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: end_steel 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:8" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:8" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: construction_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+       <item name="oredict:ingotConstructionAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy:9" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: construction_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockConstructionAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:9" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: construction_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+       <item name="oredict:nuggetConstructionAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_ingot:9" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: construction_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_ingot:9" />
+     </shapeless>
+      <output name="enderio:item_alloy_nugget:9" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crude_steel 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+       <item name="oredict:ingotCrudeSteel"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:0" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crude_steel 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockCrudeSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:0" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crude_steel 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+       <item name="oredict:nuggetCrudeSteel"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:0" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crude_steel 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:0" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:0" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+       <item name="oredict:ingotCrystallineAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:1" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockCrystallineAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:1" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+       <item name="oredict:nuggetCrystallineAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:1" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:1" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:1" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: melodic_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+       <item name="oredict:ingotMelodicAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:2" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: melodic_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockMelodicAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:2" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: melodic_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+       <item name="oredict:nuggetMelodicAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:2" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: melodic_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:2" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:2" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: stellar_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+       <item name="oredict:ingotStellarAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:3" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: stellar_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockStellarAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:3" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: stellar_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+       <item name="oredict:nuggetStellarAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:3" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: stellar_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:3" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:3" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_pink_slime 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+       <item name="oredict:ingotCrystallinePinkSlime"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:4" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_pink_slime 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockCrystallinePinkSlime"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:4" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_pink_slime 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+       <item name="oredict:nuggetCrystallinePinkSlime"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:4" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: crystalline_pink_slime 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:4" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:4" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_silver 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+       <item name="oredict:ingotEnergeticSilver"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:5" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_silver 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockEnergeticSilver"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:5" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_silver 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+       <item name="oredict:nuggetEnergeticSilver"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:5" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: energetic_silver 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:5" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:5" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vivid_alloy 9 ingots to 1 block" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+       <item name="oredict:ingotVividAlloy"/>
+     </shapeless>
+      <output name="enderio:block_alloy_endergy:6" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vivid_alloy 1 block to 9 ingots" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:blockVividAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:6" amount="9" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vivid_alloy 9 nuggets to 1 ingot" required="true">
+   <crafting>
+     <shapeless>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+       <item name="oredict:nuggetVividAlloy"/>
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_ingot:6" amount="1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Auto: vivid_alloy 1 ingot to 9 nuggets" required="true">
+   <crafting>
+     <shapeless>
+       <item name="enderio:item_alloy_endergy_ingot:6" />
+     </shapeless>
+      <output name="enderio:item_alloy_endergy_nugget:6" amount="9" />
+    </crafting>
+  </recipe>
+
+</enderio:recipes>
