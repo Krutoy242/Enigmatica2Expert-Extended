@@ -358,8 +358,8 @@ item.contenttweaker.any_burnable.name=§6任何可燃物
 # Wood singularity
 item.singularity.quartz.name=§e树皮奇点
 item.singularity.gold.name=§c木纹奇点
-tooltips.lang.singularity.bark=§7中间材料。§r\n与§6任何抗燃木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为§aM*2^(N-1)§r，其中§aM§r是木板的中位数，§aN§r是木板类型的数量。\n§2§n右键§2某物品以查看木板列表。\n需要 §6%s§r 点充能。
-tooltips.lang.singularity.woodweave=与§6任何抗燃木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为§aM*2^(N-1)§r，其中§aM§r是木板的中位数，§aN§r是木板类型的数量。\n需要 §6%s§r 点充能。
+tooltips.lang.singularity.bark=§7中间材料。§r\n将此奇点与§6任何抗燃木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为§aM*2^(N-1)§r，其中§aM§r是木板的中位数，§aN§r是木板类型的数量。\n§2§n右键§2某物品以查看木板列表。\n需要 §6%s§r 点能量。
+tooltips.lang.singularity.woodweave=与§6任何抗燃木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为§aM*2^(N-1)§r，其中§aM§r是木板的中位数，§aN§r是木板类型的数量。\n需要 §6%s§r 点能量。
 item.contenttweaker.any_fireproof.name=§6任何抗燃木板
 ##################################
 
