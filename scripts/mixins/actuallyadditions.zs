@@ -100,10 +100,10 @@ zenClass MixinTileEntityDisplayStand {
     #mixin ModifyConstant
     #{
     #    method: "<init>",
-    #    constant: {longValue: 80000}
+    #    constant: {intValue: 80000}
     #}
-    function buffBattery0(value as long) as long {
-        return 320000L;
+    function buffBattery0(value as int) as int {
+        return 320000;
     }
 
     #mixin ModifyConstant
