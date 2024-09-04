@@ -80,3 +80,38 @@ zenClass MixinLensMining {
         // NO-OP
     }
 }
+
+#mixin Mixin
+#{targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityBioReactor"}
+zenClass MixinTileEntityBioReactor {
+    #mixin ModifyConstant
+    #{
+    #    method: "updateEntity",
+    #    constant: {intValue: 2}
+    #}
+    function buffFuel(value as int) as int {
+        return 4;
+    }
+}
+
+#mixin Mixin
+#{targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityDisplayStand"}
+zenClass MixinTileEntityDisplayStand {
+    #mixin ModifyConstant
+    #{
+    #    method: "<init>",
+    #    constant: {intValue: 80000}
+    #}
+    function buffBattery0(value as int) as int {
+        return 320000;
+    }
+
+    #mixin ModifyConstant
+    #{
+    #    method: "<init>",
+    #    constant: {intValue: 1000}
+    #}
+    function buffBattery1(value as int) as int {
+        return 2000;
+    }
+}
