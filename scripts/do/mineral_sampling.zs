@@ -1,4 +1,4 @@
-#modloaded zenutils immersiveengineering
+#modloaded zenutils immersiveengineering immersivepetroleum
 #reloadable
 
 /**
@@ -28,8 +28,11 @@
 import crafttweaker.data.IData;
 import crafttweaker.entity.IEntityEquipmentSlot;
 import crafttweaker.event.PlayerInteractBlockEvent;
+import crafttweaker.item.IItemStack;
+
 import native.blusunrize.immersiveengineering.api.tool.ExcavatorHandler;
 import native.blusunrize.immersiveengineering.common.blocks.metal.TileEntitySampleDrill;
+import native.flaxbeard.immersivepetroleum.api.crafting.PumpjackHandler;
 
 val ENERGY_COST = 8000 * 10; // base cost is 8000RF, we make it 10 times bigger as the cost of saving time
 
@@ -74,14 +77,26 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
     nativePlayer.chunkCoordX,
     nativePlayer.chunkCoordZ
   );
-    val sample = drill.createCoreSample(
+  var sample = drill.createCoreSample(
     nativeWorld,
     nativePlayer.chunkCoordX,
     nativePlayer.chunkCoordZ,
     worldInfo
+  ) as IItemStack;
+  //attach oil info
+  val oilInfo = PumpjackHandler.getOilWorldInfo(
+    nativeWorld,
+    nativePlayer.chunkCoordX,
+    nativePlayer.chunkCoordZ
   );
+  if (!isNull(oilInfo)) {
+    sample = sample.withTag(sample.tag + {
+      "resType": oilInfo.getType().name,
+      "oil": oilInfo.current
+    });
+  }
 
   // give item, and prevent players from clicking multiple times, because one sample is enough for one chunk
-  player.give(sample.wrapper);
+  player.give(sample);
   player.setCooldown(item, 20);
 });
