@@ -23,9 +23,10 @@ zenClass MixinAlloyRecipeManager {
 #mixin Mixin
 #{targets: "crazypants.enderio.machines.integration.jei.TankRecipeCategory"}
 zenClass MixinTankRecipeCategory {
+    #mixin Static
     #mixin Redirect
     #{
-    #    method: "addRecipe",
+    #    method: "register",
     #    at: {
     #        value: "INVOKE",
     #        target: "Ljava/lang/Boolean;booleanValue()Z",
