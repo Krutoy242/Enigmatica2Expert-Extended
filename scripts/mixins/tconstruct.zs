@@ -35,7 +35,7 @@ zenClass MixinTinkerSmeltery {
     #    at: {
     #        value: "INVOKE",
     #        target: "Lslimeknights/tconstruct/library/TinkerRegistry;registerTableCasting(Lslimeknights/tconstruct/library/smeltery/ICastingRecipe;)V",
-    #        ordinal: 1
+    #        ordinal: 0
     #    }
     #}
     function disableCastRecipes(recipe as ICastingRecipe) as void {

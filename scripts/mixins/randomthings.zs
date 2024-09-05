@@ -6,10 +6,19 @@ zenClass MixinEntityGoldenChicken {
     #mixin ModifyConstant
     #{
     #    method: "func_70636_d",
-    #    constant: {expandZeroConditions: GREATER_THAN_ZERO}
+    #    constant: {expandZeroConditions: GREATER_THAN_ZERO, ordinal: 1}
     #}
     function modifyIngotDropTimerCheck(value as int) as int {
         return 7;
+    }
+
+    #mixin ModifyConstant
+    #{
+    #    method: "func_70636_d",
+    #    constant: {intValue: 3}
+    #}
+    function modifyItemDropCount(value as int) as int {
+        return 1;
     }
 
     #mixin ModifyConstant

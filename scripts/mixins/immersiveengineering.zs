@@ -33,7 +33,7 @@ zenClass MixinIEVillagerHandler {
     #    at: {value: "HEAD"},
     #    cancellable: true
     #}
-    function showManaNumericalValue(merchant as IMerchant, recipeList as MerchantRecipeList, random as Random, ci as CallbackInfo) as void {
+    function skipCoreSampleTrades(merchant as IMerchant, recipeList as MerchantRecipeList, random as Random, ci as CallbackInfo) as void {
         ci.cancel();
     }
 }

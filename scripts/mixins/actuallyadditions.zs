@@ -118,13 +118,21 @@ zenClass MixinLensMining {
     #    at: {
     #       value: "JUMP",
     #       opcode: 198,
-    #       ordinal: 0
+    #       ordinal: 0,
+    #       shift: "BEFORE"
     #    },
     #    name: "ores"
     #}
     function setTransformationOresIfBlockIsEndstone(ores as [WeightedOre], hitState as IBlockState, hitPos as BlockPos, tile as IAtomicReconstructor) as [WeightedOre] {
         if (hitState.block == Blocks.END_STONE) {
-            return ActuallyAdditionsAPI.STONE_ORES;
+            return [
+                WeightedOre("oreEndQuartz", 64),
+                WeightedOre("oreEndAluminum", 40),
+                WeightedOre("oreEndIron", 30),
+                WeightedOre("oreEndCobalt", 20),
+                WeightedOre("oreEndArdite", 20),
+                WeightedOre("oreEndDiamond", 10)
+            ] as [WeightedOre];
         }
         return ores;
     }

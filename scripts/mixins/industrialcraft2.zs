@@ -353,64 +353,90 @@ zenClass MixinItemToolMiningLaser {
         return 10000000;
     }
     
-    #mixin Static
     #mixin ModifyConstant
     #{
-    #    method: "<init>",
+    #    method: "func_77659_a",
     #    constant: {"intValue": 1250}
     #}
     function increaseEnergyConsumption0(value as int) as int {
         return 20000;
     }
 
-    #mixin Static
     #mixin ModifyConstant
     #{
-    #    method: "<init>",
+    #    method: "func_77659_a",
     #    constant: {"intValue": 100}
     #}
     function increaseEnergyConsumption1(value as int) as int {
         return 5000;
     }
 
-    #mixin Static
     #mixin ModifyConstant
     #{
-    #    method: "<init>",
+    #    method: "func_77659_a",
     #    constant: {"intValue": 5000}
     #}
     function increaseEnergyConsumption2(value as int) as int {
         return 30000;
     }
 
-    #mixin Static
     #mixin ModifyConstant
     #{
-    #    method: "<init>",
+    #    method: "func_77659_a",
     #    constant: {"intValue": 2500}
     #}
     function increaseEnergyConsumption3(value as int) as int {
         return 30000;
     }
 
-    #mixin Static
     #mixin ModifyConstant
     #{
-    #    method: "<init>",
+    #    method: "func_77659_a",
     #    constant: {"intValue": 10000}
     #}
     function increaseEnergyConsumption4(value as int) as int {
         return 500000;
     }
 
-    #mixin Static
     #mixin ModifyConstant
     #{
-    #    method: "<init>",
+    #    method: "func_77659_a",
     #    constant: {"intValue": 7500}
     #}
     function increaseEnergyConsumption5(value as int) as int {
         return 0;
+    }
+}
+
+#mixin Mixin
+#{targets: "ic2.core.item.ItemBatteryChargeHotbar"}
+zenClass MixinItemBatteryChargeHotbar {
+    #mixin Static
+    #mixin ModifyArg
+    #{
+    #   method: "<init>",
+    #   at: {
+    #       value: "INVOKE",
+    #       target: "Lic2/core/item/ItemBattery;<init>(Lic2/core/ref/ItemName;DDI)V"
+    #   },
+    #   index: 1
+    #}
+    function buffMaxCharge(value as double) as double {
+        return value * 2.0;
+    }
+
+    #mixin Static
+    #mixin ModifyArg
+    #{
+    #   method: "<init>",
+    #   at: {
+    #       value: "INVOKE",
+    #       target: "Lic2/core/item/ItemBattery;<init>(Lic2/core/ref/ItemName;DDI)V"
+    #   },
+    #   index: 2
+    #}
+    function buffTransferLimit(value as double) as double {
+        return value * 10.0;
     }
 }
 
