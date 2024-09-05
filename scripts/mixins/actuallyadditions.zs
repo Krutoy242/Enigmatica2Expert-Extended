@@ -1,6 +1,5 @@
 #loader mixin
 
-import native.java.lang.Object;
 import native.net.minecraft.block.state.IBlockState;
 import native.net.minecraft.util.math.BlockPos;
 import native.net.minecraft.init.Blocks;
