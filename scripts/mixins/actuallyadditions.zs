@@ -1,5 +1,13 @@
 #loader mixin
 
+import native.java.lang.Object;
+import native.net.minecraft.block.state.IBlockState;
+import native.net.minecraft.util.math.BlockPos;
+import native.net.minecraft.init.Blocks;
+import native.de.ellpeck.actuallyadditions.api.internal.IAtomicReconstructor;
+import native.de.ellpeck.actuallyadditions.api.ActuallyAdditionsAPI;
+import native.de.ellpeck.actuallyadditions.api.recipe.WeightedOre;
+
 #mixin Mixin
 #{targets: "de.ellpeck.actuallyadditions.mod.items.InitItems"}
 zenClass MixinInitItems {
@@ -61,6 +69,12 @@ zenClass MixinLensMining {
     #    at: {
     #        value: "INVOKE",
     #        target: "Lde/ellpeck/actuallyadditions/api/ActuallyAdditionsAPI;addMiningLensStoneOre(Ljava/lang/String;I)V"
+    #    },
+    #    slice: {
+    #       to: {
+    #           value: "INVOKE",
+    #           target: "Lde/ellpeck/actuallyadditions/mod/config/values/ConfigStringListValues;getValue()[Ljava/lang/String;"
+    #       }
     #    }
     #}
     function removeRegisteredOres(name as string, weight as int) as void {
@@ -74,10 +88,63 @@ zenClass MixinLensMining {
     #    at: {
     #        value: "INVOKE",
     #        target: "Lde/ellpeck/actuallyadditions/api/ActuallyAdditionsAPI;addMiningLensNetherOre(Ljava/lang/String;I)V"
+    #    },
+    #    slice: {
+    #       to: {
+    #           value: "INVOKE",
+    #           target: "Lde/ellpeck/actuallyadditions/mod/config/values/ConfigStringListValues;getValue()[Ljava/lang/String;"
+    #       }
     #    }
     #}
     function removeRegisteredNetherOres(name as string, weight as int) as void {
         // NO-OP
+    }
+
+    #mixin Redirect
+    #{
+    #    method: "invoke",
+    #    at: {
+    #        value: "FIELD",
+    #        target: "Lde/ellpeck/actuallyadditions/api/ActuallyAdditionsAPI;STONE_ORES:Ljava/util/List;",
+    #        opcode: 178
+    #    }
+    #}
+    function removeStoneTransformation() as [string] {
+        return null;
+    }
+
+    #mixin ModifyVariable
+    #{
+    #    method: "invoke",
+    #    at: {
+    #       value: "JUMP",
+    #       opcode: 198,
+    #       ordinal: 0
+    #    },
+    #    name: "ores"
+    #}
+    function setTransformationOresIfBlockIsEndstone(ores as [WeightedOre], hitState as IBlockState, hitPos as BlockPos, tile as IAtomicReconstructor) as [WeightedOre] {
+        if (hitState.block == Blocks.END_STONE) {
+            return ActuallyAdditionsAPI.STONE_ORES;
+        }
+        return ores;
+    }
+
+    #mixin ModifyVariable
+    #{
+    #    method: "invoke",
+    #    at: {
+    #       value: "JUMP",
+    #       opcode: 198,
+    #       ordinal: 0
+    #    },
+    #    name: "adaptedUse"
+    #}
+    function setAdaptedUseIfBlockIsEndstone(value as int, hitState as IBlockState, hitPos as BlockPos, tile as IAtomicReconstructor) as int {
+        if (hitState.block == Blocks.END_STONE) {
+            return value + 10000;
+        }
+        return value;
     }
 }
 
