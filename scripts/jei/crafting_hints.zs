@@ -168,11 +168,11 @@ scripts.jei.requious.add(<assembly:crafting_hints>, { [
   Bucket('milk'), <minecraft:brown_mushroom> | <minecraft:red_mushroom>,
 ]: [<entity:minecraft:slime>.asStack(), <minecraft:slime>] });
 
-// General Mineral Sampling
-add1to1(
-  <immersiveengineering:metal_device1:7>,
-  <immersiveengineering:coresample>
-);
+// general mineral sampling
+add1to1(<immersiveengineering:metal_device1:7>, <immersiveengineering:coresample>);
+
+// mineral sampling via Portable Drill
+add1to1(<portabledrill:portable_drill>, <immersiveengineering:coresample>);
 
 // Fast Mineral Sampling, see scripts/do/mineral_sampling.zs
 addInsOutsCatl(
