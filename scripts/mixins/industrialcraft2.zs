@@ -3,6 +3,7 @@
 import native.ic2.api.crops.CropCard;
 import native.ic2.api.crops.ICropTile;
 import native.ic2.core.item.tool.EntityMiningLaser;
+import native.ic2.core.crop.cropcard.GenericCropCard;
 
 #mixin Mixin
 #{targets: "ic2.core.block.wiring.TileEntityChargepadBatBox"}
@@ -246,6 +247,151 @@ zenClass MixinCropVenomilia {
     #}
     function growFaster(value as int) as int {
         return value / 4;
+    }
+}
+
+#mixin Mixin
+#{targets: "ic2.core.crop.crop.IC2Crop"}
+zenClass MixinIC2Crops {
+    #mixin Static
+    #mixin Redirect
+    #{
+    #    method: "registerCrops",
+    #    at: {
+    #        value: "INVOKE",
+    #        target: "Lic2/core/crop/cropcard/GenericCropCard;register()Lic2/core/crop/cropcard/GenericCropCard;"
+    #    },
+    #    slice: {
+    #        from: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 3
+    #        },
+    #        to: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 4
+    #        }
+    #    }
+    #}
+    function modifyCorpsePlant(crop as GenericCropCard) as GenericCropCard {
+        return crop.setGrowthSpeed(150).register();
+    }
+
+    #mixin Static
+    #mixin Redirect
+    #{
+    #    method: "registerCrops",
+    #    at: {
+    #        value: "INVOKE",
+    #        target: "Lic2/core/crop/cropcard/GenericCropCard;register()Lic2/core/crop/cropcard/GenericCropCard;"
+    #    },
+    #    slice: {
+    #        from: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 4
+    #        },
+    #        to: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 5
+    #        }
+    #    }
+    #}
+    function modifyCreeperWeed(crop as GenericCropCard) as GenericCropCard {
+        return crop.setGrowthSpeed(200).register();
+    }
+
+    #mixin Static
+    #mixin ModifyConstant
+    #{
+    #    method: "registerCrops",
+    #    constant: {intValue: 900},
+    #    slice: {
+    #        from: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 6
+    #        },
+    #        to: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 7
+    #        }
+    #    }
+    #}
+    function modifyEggPlant(value as int) as int {
+        return 100;
+    }
+
+    #mixin Static
+    #mixin ModifyConstant
+    #{
+    #    method: "registerCrops",
+    #    constant: {intValue: 1500},
+    #    slice: {
+    #        from: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 8
+    #        },
+    #        to: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 9
+    #        }
+    #    }
+    #}
+    function modifyMeatRose(value as int) as int {
+        return 50;
+    }
+
+    #mixin Static
+    #mixin ModifyConstant
+    #{
+    #    method: "registerCrops",
+    #    constant: {intValue: 900},
+    #    slice: {
+    #        from: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 9
+    #        },
+    #        to: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 10
+    #        }
+    #    }
+    #}
+    function modifyMilkWart(value as int) as int {
+        return 300;
+    }
+
+    #mixin Static
+    #mixin Redirect
+    #{
+    #    method: "registerCrops",
+    #    at: {
+    #        value: "INVOKE",
+    #        target: "Lic2/core/crop/cropcard/GenericCropCard;register()Lic2/core/crop/cropcard/GenericCropCard;"
+    #    },
+    #    slice: {
+    #        from: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 11
+    #        },
+    #        to: {
+    #            value: "INVOKE",
+    #            target: "Lic2/core/crop/cropcard/GenericCropCard;create(Ljava/lang/String;)Lic2/core/crop/cropcard/GenericCropCard;",
+    #            ordinal: 13
+    #        }
+    #    }
+    #}
+    function modifySlimePlantAndSpidernip(crop as GenericCropCard) as GenericCropCard {
+        return crop.setGrowthSpeed(300).register();
     }
 }
 
