@@ -34,7 +34,36 @@ import native.blusunrize.immersiveengineering.api.tool.ExcavatorHandler;
 import native.blusunrize.immersiveengineering.common.blocks.metal.TileEntitySampleDrill;
 import native.flaxbeard.immersivepetroleum.api.crafting.PumpjackHandler;
 
+import scripts.jei.crafting_hints;
+
 val ENERGY_COST = 8000 * 10; // base cost is 8000RF, we make it 10 times bigger as the cost of saving time
+
+// Recipe hint
+val ENERGY_FULL_EXAMPLE = 100000; //must be no smaller than `ENERGY_COST` to prevent display error
+crafting_hints.addInsOutsCatl(
+  [
+    <tconstruct:hammer>.withTag({
+      FluxedEnergyMax: ENERGY_FULL_EXAMPLE, 
+      Traits: ["tconevo.fluxed"], 
+      Modifiers: [
+        {identifier: "tconevo.fluxed", color: 11091771, level: 1, modifierUsed: 1 as byte}
+      ], 
+      FluxedEnergy: ENERGY_FULL_EXAMPLE
+    })
+  ],
+  [
+    <tconstruct:hammer>.withTag({
+      FluxedEnergyMax: ENERGY_FULL_EXAMPLE, 
+      Traits: ["tconevo.fluxed"], 
+      Modifiers: [
+        {identifier: "tconevo.fluxed", color: 11091771, level: 1, modifierUsed: 1 as byte}
+      ], 
+      FluxedEnergy: ENERGY_FULL_EXAMPLE - ENERGY_COST
+    }),
+    <immersiveengineering:coresample>
+  ],
+  <immersiveengineering:metal_device1:7>
+);
 
 events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
   val player = event.player;

@@ -167,32 +167,3 @@ scripts.jei.requious.add(<assembly:crafting_hints>, { [
   <exnihilocreatio:block_barrel0> | <exnihilocreatio:block_barrel1>, null, null, null, null,
   Bucket('milk'), <minecraft:brown_mushroom> | <minecraft:red_mushroom>,
 ]: [<entity:minecraft:slime>.asStack(), <minecraft:slime>] });
-
-// general mineral sampling
-add1to1(<immersiveengineering:metal_device1:7>, <immersiveengineering:coresample>);
-
-// Fast Mineral Sampling, see scripts/do/mineral_sampling.zs
-addInsOutsCatl(
-  [
-    <tconstruct:hammer>.withTag({
-      FluxedEnergyMax: 100000, 
-      Traits: ["tconevo.fluxed"], 
-      Modifiers: [
-        {identifier: "tconevo.fluxed", color: 11091771, level: 1, modifierUsed: 1 as byte}
-      ], 
-      FluxedEnergy: 100000
-    })
-  ],
-  [
-    <tconstruct:hammer>.withTag({
-      FluxedEnergyMax: 100000, 
-      Traits: ["tconevo.fluxed"], 
-      Modifiers: [
-        {identifier: "tconevo.fluxed", color: 11091771, level: 1, modifierUsed: 1 as byte}
-      ], 
-      FluxedEnergy: 100000 - 8000 * 10
-    }),
-    <immersiveengineering:coresample>
-  ],
-  <immersiveengineering:metal_device1:7>
-);
