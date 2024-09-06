@@ -54,7 +54,7 @@ zenClass MixinBlockFluidDeath {
     #    }
     #}
     function modifyDamageValue(value as float) as float {
-        return 40.0f - (4.0f - (value - 1.0f)) * 5.0f;
+        return value * 5.0f + 15.0f;
     }
 }
 
