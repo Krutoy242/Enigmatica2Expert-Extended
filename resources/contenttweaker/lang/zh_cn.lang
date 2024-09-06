@@ -257,8 +257,8 @@ e2ee.tconstruct.material.researcher.name=研究员
 e2ee.tconstruct.material.researcher.description=基于魔导手册中完成的研究，获得不同的状态效果
 e2ee.tconstruct.material.first_stand.name=首当其冲
 e2ee.tconstruct.material.first_stand.description=消耗经验来完全抵挡受到的伤害
-e2ee.tconstruct.material.robust.name=稳健
-e2ee.tconstruct.material.robust.description=提高健康水平
+e2ee.tconstruct.material.robust.name=健壮
+e2ee.tconstruct.material.robust.description=增加生命
 e2ee.tconstruct.material.challenger.name=挑战者
 e2ee.tconstruct.material.challenger.description=§o挑战者\n§r难度越高，挖掘速度、伤害和防御/韧性越高。
 
