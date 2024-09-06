@@ -14,7 +14,7 @@ zenClass MixinThaumcraftCraftingManager {
     #    at: {value: "HEAD"},
     #    cancellable: true
     #}
-    function disableOredictMeltingCasting(stack as ItemStack, history as ArrayList, cir as CallbackInfoReturnable) as void {
+    function skipGenerateAspectsFromRecipes(stack as ItemStack, history as ArrayList, cir as CallbackInfoReturnable) as void {
         cir.cancel();
     }
 }

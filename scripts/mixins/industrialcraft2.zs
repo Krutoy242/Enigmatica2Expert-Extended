@@ -251,7 +251,7 @@ zenClass MixinCropVenomilia {
 }
 
 #mixin Mixin
-#{targets: "ic2.core.crop.crop.IC2Crop"}
+#{targets: "ic2.core.crop.IC2Crops"}
 zenClass MixinIC2Crops {
     #mixin Static
     #mixin Redirect
