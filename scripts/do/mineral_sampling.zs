@@ -1,4 +1,4 @@
-#modloaded zenutils immersiveengineering immersivepetroleum
+#modloaded zenutils immersiveengineering immersivepetroleum tconevo
 #reloadable
 
 /**
@@ -18,6 +18,13 @@
  *     -the position that the sample represents is the position of Sample Drill
  * -player will be given this sample
  * -the hammer will recive a cooldown of 20 ticks
+ *
+ * mod requirement:
+ * - zenutils: for native java access
+ * - immersiveengineering: provides `Mineral Sample`
+ * - immersivepetroleum: for oil support
+ * - tconevo: allows attaching energy to TCon tools, change this if energy consuming method
+ * is altered/removed in the future
  *
  * @author ZZZank
  *
