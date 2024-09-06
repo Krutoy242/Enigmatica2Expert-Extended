@@ -171,9 +171,6 @@ scripts.jei.requious.add(<assembly:crafting_hints>, { [
 // general mineral sampling
 add1to1(<immersiveengineering:metal_device1:7>, <immersiveengineering:coresample>);
 
-// mineral sampling via Portable Drill
-add1to1(<portabledrill:portable_drill>, <immersiveengineering:coresample>);
-
 // Fast Mineral Sampling, see scripts/do/mineral_sampling.zs
 addInsOutsCatl(
   [

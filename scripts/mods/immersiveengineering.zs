@@ -488,16 +488,6 @@ craft.remake(<immersivepetroleum:stone_decoration> * 8, [
   D: LiquidIngr('water'),
 });
 
-// [Portable_Drill] from [Bedrock_Miner][+2]
-craft.remake(<portabledrill:portable_drill>, ['pretty',
-  '╱ B ╱',
-  '  |  ',
-  '  |  '], {
-  '╱': <ore:stickSteel>,                 // Steel Rod
-  'B': <bedrockores:bedrock_miner>,      // Bedrock Miner
-  '|': <immersiveengineering:coresample>, // Core Sample
-});
-
 // Forge hammer from IC2 harder to craft, so everyone used IE hammer
 // This change will force players to use Forge Hammer for making plates
 // [Engineer's_Hammer] from [Iron_Hammer_Head][+1]
