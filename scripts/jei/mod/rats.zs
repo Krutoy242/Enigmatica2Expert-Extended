@@ -22,7 +22,7 @@ x.addJEICatalyst(<rats:rat_upgrade_jury_rigged>.withTag({
     {Slot: 0 as byte, id: "rats:rat_upgrade_speed", Count: 1, Damage: 0 as short},
     {Slot: 1 as byte, id: "rats:rat_upgrade_ore_doubling", Count: 1, Damage: 0 as short}
   ]
-}));
+})); //used for informing players that there's a faster variant
 
 x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
 requious.addInsOuts(x, [[0, 0], [1, 0]], [[3, 0]]);
@@ -42,8 +42,9 @@ function addRatsConsumingJEIRecipe(
   <assembly:rats_consuming>.addJEIRecipe(recipe);
 }
 
+//recipe hint: cheese -> poop
 addRatsConsumingJEIRecipe(<ore:foodCheese> as IOreDictEntry, <rats:rat_nugget>);
-
+//recipe hint: ore -> ore poop
 for poop in ratsprocessing.listRatPoop as IItemStack[] {
   val oreItem = IItemStack.fromData(poop.tag.OreItem);
   if (isNull(oreItem)) {
