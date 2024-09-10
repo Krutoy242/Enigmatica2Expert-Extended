@@ -151,11 +151,8 @@ zenClass MixinLensMining {
     #    },
     #    name: "adaptedUse"
     #}
-    function setAdaptedUseIfBlockIsEndstone(value as int, hitState as IBlockState, hitPos as BlockPos, tile as IAtomicReconstructor) as int {
-        if (hitState.block == Blocks.END_STONE) {
-            return value + 10000;
-        }
-        return value;
+    function setAdaptedUseIfBlockIsEndstone(value as int) as int {
+        return 150000;
     }
 }
 
