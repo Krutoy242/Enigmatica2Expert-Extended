@@ -151,7 +151,7 @@ zenClass MixinLensMining {
     #    },
     #    name: "adaptedUse"
     #}
-    function setAdaptedUseIfBlockIsEndstone(value as int) as int {
+    function setEnergyCost(value as int) as int {
         return 150000;
     }
 }
