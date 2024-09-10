@@ -27,7 +27,7 @@ zenClass MixinInitItems {
     #       {intValue: 100000}
     #    ]
     #}
-    function buffBattery(value as int) as int {
+    function buffBatteriesCapacity(value as int) as int {
         return value * 10;
     }
 }
@@ -58,6 +58,10 @@ zenClass MixinItemPotionRing {
     }
 }
 
+/*
+Convert only End Stone => End ores.
+Convert cost set to `150,000` RF.
+*/
 #mixin Mixin
 #{targets: "de.ellpeck.actuallyadditions.mod.items.lens.LensMining"}
 zenClass MixinLensMining {
@@ -163,8 +167,8 @@ zenClass MixinTileEntityBioReactor {
     #    method: "updateEntity",
     #    constant: {intValue: 2}
     #}
-    function buffFuel(value as int) as int {
-        return 4;
+    function buffPowerGeneration(value as int) as int {
+        return 4; // producePerTick = (amount * 4)²
     }
 }
 
@@ -176,7 +180,7 @@ zenClass MixinTileEntityDisplayStand {
     #    method: "<init>",
     #    constant: {intValue: 80000}
     #}
-    function buffBattery0(value as int) as int {
+    function buffCapacity(value as int) as int {
         return 320000;
     }
 
@@ -185,7 +189,7 @@ zenClass MixinTileEntityDisplayStand {
     #    method: "<init>",
     #    constant: {intValue: 1000}
     #}
-    function buffBattery1(value as int) as int {
+    function buffTransferRate(value as int) as int {
         return 2000;
     }
 }

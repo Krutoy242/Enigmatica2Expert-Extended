@@ -4,6 +4,12 @@
 import native.net.minecraft.client.renderer.BufferBuilder;
 import native.net.minecraft.util.math.Vec3d;
 
+/*
+Wires always be bright.
+This will cut 75% of their render time.
+Its about +10% of FPS if your base have many wires.
+https://i.imgur.com/rYELZzW.png
+*/
 #mixin Mixin
 #{targets: "de.sanandrew.mods.immersivecables.client.render.RenderTileIWConnectable"}
 zenClass MixinRenderTileIWConnectable {

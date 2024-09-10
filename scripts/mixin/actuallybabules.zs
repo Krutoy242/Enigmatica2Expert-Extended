@@ -20,7 +20,7 @@ zenClass MixinActuallyBaubles {
     #       {intValue: 100000}
     #    ]
     #}
-    function buffBattery(value as int) as int {
+    function buffBatteriesCapacity(value as int) as int {
         return value * 10;
     }
 }

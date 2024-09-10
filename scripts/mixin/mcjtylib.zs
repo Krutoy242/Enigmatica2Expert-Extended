@@ -1,5 +1,8 @@
 #loader mixin
 
+/*
+Fix xnet not displaying rf/t for energy channels
+*/
 #mixin Mixin
 #{targets: "mcjty.lib.thirteen.ConfigSpec$IntValue"}
 zenClass MixinConfigSpecIntValue {

@@ -13,7 +13,7 @@ zenClass MixinEntitySharkBase {
     #       target: "Lnet/minecraft/entity/Entity;func_70107_b(DDD)V"
     #   }
     #}
-    function fixPositionSet(entity as Entity, x as double, y as double, z as double) as void {
+    function fixTeleportingOnGrab(entity as Entity, x as double, y as double, z as double) as void {
         entity.setPosition(this0.posX + this0.motionX, this0.posY + (this0.height / 2.0) + this0.motionY, this0.posZ + this0.motionZ);
     }
 }

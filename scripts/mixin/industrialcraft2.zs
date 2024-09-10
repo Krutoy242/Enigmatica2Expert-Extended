@@ -134,6 +134,22 @@ zenClass MixinTileEntityCrop {
 }
 
 #mixin Mixin
+#{targets: "ic2.core.item.tool.ItemCropnalyzer"}
+zenClass MixinItemCropnalyzer {
+    #mixin Redirect
+    #{
+    #    method: "onItemUseFirst",
+    #    at: {
+    #       value: "INVOKE",
+    #       target: "Lic2/api/crops/CropCard;getGrowthDuration(Lic2/api/crops/ICropTile;)I"
+    #    }
+    #}
+    function showGrowFasterInfo(cropCard as CropCard, tile as ICropTile) as int {
+        return cropCard.getGrowthDuration(tile) / 10;
+    }
+}
+
+#mixin Mixin
 #{targets: "ic2.core.crop.cropcard.CropBaseMetalCommon"}
 zenClass MixinCropBaseMetalCommon {
     #mixin ModifyConstant
@@ -461,22 +477,6 @@ zenClass MixinEntityMiningLaser {
 }
 
 #mixin Mixin
-#{targets: "ic2.core.item.tool.ItemCropnalyzer"}
-zenClass MixinItemCropnalyzer {
-    #mixin Redirect
-    #{
-    #    method: "onItemUseFirst",
-    #    at: {
-    #       value: "INVOKE",
-    #       target: "Lic2/api/crops/CropCard;getGrowthDuration(Lic2/api/crops/ICropTile;)I"
-    #    }
-    #}
-    function showGrowFasterInfo(cropCard as CropCard, tile as ICropTile) as int {
-        return cropCard.getGrowthDuration(tile) / 10;
-    }
-}
-
-#mixin Mixin
 #{targets: "ic2.core.item.tool.ItemToolMiningLaser"}
 zenClass MixinItemToolMiningLaser {
     #mixin Static
@@ -586,6 +586,11 @@ zenClass MixinItemBatteryChargeHotbar {
     }
 }
 
+/*
+Remove UU-values calculating on game load
+Fix strange bug, when predefined values was rewritten with wrong ones.
+Also, this would remove some small UU recipes, like wooden slabs or buttons.
+*/
 #mixin Mixin
 #{targets: "ic2.core.uu.UuIndex"}
 zenClass MixinUuIndex {

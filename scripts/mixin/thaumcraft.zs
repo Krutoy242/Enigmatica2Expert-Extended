@@ -13,13 +13,21 @@ zenClass MixinGolemMaterial {
     #    method: "register",
     #    at: {value: "HEAD"}
     #}
-    function modifyNumericValues(material as GolemMaterial, ci as CallbackInfo) as void {
+    function buffStats(material as GolemMaterial, ci as CallbackInfo) as void {
         material.healthMod = material.healthMod * 2;
         material.armor = material.armor * material.armor / 10 + material.armor;
         material.damage = material.damage * material.damage / 2 + material.damage;
     }
 }
 
+/*
+Buff [Porous Stone] output
+Before this change, [Porous Stone] dropped something not [Gravel] with 7% chance. Each `Fortune` level increased this chance for about 1%.
+Now, base chance is 20% and each `Fortune` level increasing it for about 20%.
+
+Default beneficial drop formula:
+nextInt(15) + fortune > 13
+*/
 #mixin Mixin
 #{targets: "thaumcraft.common.blocks.basic.BlockStonePorous"}
 zenClass MixinBlockStonePorous {
@@ -53,7 +61,7 @@ zenClass MixinBlockFluidDeath {
     #        target: "Lnet/minecraft/entity/Entity;func_70097_a(Lnet/minecraft/util/DamageSource;F)Z"
     #    }
     #}
-    function modifyDamageValue(value as float) as float {
+    function increaseDamage(value as float) as float {
         return value * 5.0f + 15.0f;
     }
 }
@@ -66,7 +74,7 @@ zenClass MixinEntityPech {
     #    method: "getValue",
     #    constant: {intValue: 32}
     #}
-    function modifyValue0(value as int) as int {
+    function buffMaxDesireBuyValue0(value as int) as int {
         return 256;
     }
 
@@ -75,7 +83,7 @@ zenClass MixinEntityPech {
     #    method: "getValue",
     #    constant: {intValue: 2}
     #}
-    function modifyValue1(value as int) as int {
+    function buffMaxDesireBuyValue1(value as int) as int {
         return 4;
     }
 }
@@ -104,7 +112,7 @@ zenClass MixinTileLampFertility {
     #    method: "updateAnimals",
     #    constant: {intValue: 5}
     #}
-    function modifyChargeLoss(value as int) as int {
+    function speedUpFluxSelfCleansing(value as int) as int {
         return 1;
     }
 }
@@ -117,7 +125,7 @@ zenClass MixinTileMirror {
     #    method: "checkInstability",
     #    constant: {intValue: 100}
     #}
-    function modifyCountModulo(value as int) as int {
+    function speedUpFluxSelfCleansing(value as int) as int {
         return 5;
     }
 }
@@ -130,7 +138,7 @@ zenClass MixinTileMirrorEssentia {
     #    method: "checkInstability",
     #    constant: {intValue: 100}
     #}
-    function modifyCountModulo(value as int) as int {
+    function speedUpFluxSelfCleansing(value as int) as int {
         return 5;
     }
 }

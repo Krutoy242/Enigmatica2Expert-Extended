@@ -54,6 +54,16 @@ zenClass MixinTinkerSmeltery {
     }
 }
 
+/*
+Nether Quartz modifier add percentaged damage (instead of fixed number)
+
+Now each level adding
+1. +`1` bare damage
+2. +`10%` of base damage
+3. +`x^4/(20^4/8)` as high-level bonus, where `x` is base damage
+
+So, if your weapon deals 10 damage, on lvl 1 it would be 12 dmg. On level 10 it would be 35 dmd. On level 20 - 120 dmg.
+*/
 #mixin Mixin
 #{targets: "slimeknights.tconstruct.tools.modifiers.ModSharpness"}
 zenClass MixinModSharpness {

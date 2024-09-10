@@ -1,5 +1,8 @@
 #loader mixin
 
+/*
+Make Golden Chicken eat [Native Gold Cluster] to lay x8 [Gold Ingot]
+*/
 #mixin Mixin
 #{targets: "lumien.randomthings.entitys.EntityGoldenChicken"}
 zenClass MixinEntityGoldenChicken {
@@ -48,7 +51,7 @@ zenClass MixinDiviningRodHandler {
     #    method: "tick",
     #    constant: {intValue: 60}
     #}
-    function modifyDiviningRodBlocksPerTick(value as int) as int {
+    function buffScanSpeed(value as int) as int {
         return 400;
     }
 
@@ -57,7 +60,7 @@ zenClass MixinDiviningRodHandler {
     #    method: "tick",
     #    constant: {intValue: 6}
     #}
-    function modifyDiviningRodRadius(value as int) as int {
+    function buffRadius(value as int) as int {
         return 20;
     }
 }

@@ -8,7 +8,7 @@ zenClass MixinTileAutoSieve {
     #    method: "<init>",
     #    constant: {intValue: 32000}
     #}
-    function buffBattery(value as int) as int {
-        return 10000000;
+    function increaseCapacityAndConsumption(value as int) as int {
+        return 10000000; // Consumption automatically calculated as `x/100`
     }
 }

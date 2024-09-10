@@ -5,6 +5,10 @@ import native.forestry.api.recipes.IFermenterRecipe;
 import native.net.minecraft.item.ItemStack;
 import mixin.CallbackInfoReturnable;
 
+/*
+Remove ~1500 [Squeezer] (forestry) capsule recipes,
+when forestry cans and capsules filled/squeezed with every liquid in game.
+*/
 #mixin Mixin
 #{targets: "forestry.core.ModuleFluids"}
 zenClass MixinModuleFluids {
@@ -21,6 +25,10 @@ zenClass MixinModuleFluids {
     }
 }
 
+/*
+Remove default no-fermentated recipe flood
+for better performance and less HEI junk.
+*/
 #mixin Mixin
 #{targets: "forestry.factory.recipes.FermenterRecipeManager"}
 zenClass MixinFermenterRecipeManager {

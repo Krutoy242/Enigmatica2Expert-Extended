@@ -21,6 +21,9 @@ zenClass MixinTileEntitySilo {
     }
 }
 
+/*
+Adding core sample trades consume 1-3 seconds load time.
+*/
 #mixin Mixin
 #{targets: [
 #   "blusunrize.immersiveengineering.common.util.IEVillagerHandler$OreveinMapForEmeralds",
@@ -38,6 +41,16 @@ zenClass MixinIEVillagerHandler {
     }
 }
 
+/*
+Remove crafting recipes in [Engineer's Manual]
+
+This should save 2-6 seconds of game load.
+Usually, it wont take so long for IE to make those 3x3 grid recipe pages.
+But in E2EE there is a lot of recipes. IE script made the way it need to iterate all 16000 crafting table recipes for each manual book recipe.
+Those recipes makes sense if modpack doesnt have  HEI.
+But since most of the recipes are changed and was already not actual, I removed them.
+Text on pagest still there, just without 3x3 grid.
+*/
 #mixin Mixin
 #{targets: "blusunrize.lib.manual.ManualInstance"}
 zenClass MixinManualInstance {

@@ -8,7 +8,7 @@ zenClass MixinMachineRecipe {
     #    method: "drawInfo",
     #    constant: {stringValue: "Time: %d s"}
     #}
-    function showTimeInTicks0(value as string) as string {
+    function showTimeInTicksTooltip(value as string) as string {
         return "Time: %d t";
     }
 
@@ -17,7 +17,7 @@ zenClass MixinMachineRecipe {
     #    method: "drawInfo",
     #    constant: {intValue: 20}
     #}
-    function showTimeInTicks1(value as int) as int {
+    function showTimeInTicksFraction(value as int) as int {
         return 1;
     }
 }

@@ -3,6 +3,9 @@
 import native.net.minecraft.nbt.NBTTagCompound;
 import native.atm.bloodworkxgaming.oeintegration.MainConfig;
 
+/*
+Make each modifier level require empty slot (was only first)
+*/
 #mixin Mixin
 #{targets: "atm.bloodworkxgaming.oeintegration.Handler.IntegrationHandler"}
 zenClass MixinIntegrationHandler {

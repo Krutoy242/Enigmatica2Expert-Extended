@@ -4,6 +4,9 @@ import native.mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import native.mezz.jei.api.IModRegistry;
 import native.mezz.jei.api.IJeiRuntime;
 
+/*
+Disable all smelteryio JEI categories
+*/
 #mixin Mixin
 #{targets: "mctmods.smelteryio.library.util.jei.JEI"}
 zenClass MixinSmelteryIOJEI {

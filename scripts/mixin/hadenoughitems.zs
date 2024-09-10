@@ -4,6 +4,10 @@ import native.mezz.jei.collect.ListMultiMap;
 import native.net.minecraftforge.fml.common.ProgressManager.ProgressBar;
 import mixin.CallbackInfo;
 
+/*
+Increase HEI recipe iteration by 1-3 seconds.
+Since there istens of thouthands HEI recipes, rapid calling of progress bar steps caused excess second of waiting.
+*/
 #mixin Mixin
 #{targets: "mezz.jei.recipes.RecipeRegistry"}
 zenClass MixinRecipeRegistry {

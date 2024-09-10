@@ -2,6 +2,10 @@
 
 import native.net.minecraftforge.event.RegistryEvent;
 
+/*
+Remove default Log=>PLank recipes
+for performance and unification reasons
+*/
 #mixin Mixin
 #{targets: "mekanism.common.integration.OreDictManager"}
 zenClass MixinOreDictManager {

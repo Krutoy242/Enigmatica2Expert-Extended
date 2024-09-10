@@ -54,6 +54,8 @@ zenClass MixinSubTileOrechidIgnem {
     }
 }
 
+// Fix crash on fighting Gaia II on server
+// https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/344
 #mixin Mixin
 #{targets: "vazkii.botania.common.entity.EntityDoppleganger"}
 zenClass MixinEntityDoppleganger {
