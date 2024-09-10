@@ -1,9 +1,0 @@
-@@ -103,7 +103,7 @@ extends IC2CropCard {
- 
-     @Override
-     public int getGrowthDuration(ICropTile crop) {
--        return crop.getCurrentSize() == 3 ? 2000 : 800;
-+        return crop.getCurrentSize() == 3 ? 400 : 160;
-     }
- 
-     @Override

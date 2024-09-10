@@ -1,9 +1,0 @@
-@@ -62,7 +62,7 @@ extends TileEntityMultiblockPart<TileEntitySilo>
- implements IEBlockInterfaces.IComparatorOverride {
-     public ItemStack identStack = ItemStack.field_190927_a;
-     public int storageAmount = 0;
--    static int maxStorage = 41472;
-+    static int maxStorage = 0xFFFF00;
-     boolean lockItem = false;
-     private int[] oldComps = new int[6];
-     private int masterCompOld;

@@ -1,9 +1,0 @@
-@@ -18,7 +18,7 @@ import net.minecraft.item.ItemStack;
- public class TileEntityChargepadBatBox
- extends TileEntityChargepadBlock {
-     public TileEntityChargepadBatBox() {
--        super(1, 32, 40000);
-+        super(1, 32, 160000);
-     }
- 
-     protected void getItems(EntityPlayer player) {

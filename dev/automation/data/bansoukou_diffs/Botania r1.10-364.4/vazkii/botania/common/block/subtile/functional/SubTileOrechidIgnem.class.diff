@@ -1,9 +1,0 @@
-@@ -26,7 +26,7 @@ extends SubTileOrechid {
-     private static final int COST = 20000;
- 
-     public boolean canOperate() {
--        return this.supertile.func_145831_w().field_73011_w.func_177495_o();
-+        return true;
-     }
- 
-     public Map<String, Integer> getOreMap() {

@@ -1,9 +1,0 @@
-@@ -106,7 +106,7 @@ implements IHandHeldInventory {
-                 IC2.platform.messagePlayer(player, "Nutrient storage: " + crop.getStorageNutrients() + "/100", new Object[0]);
-                 IC2.platform.messagePlayer(player, "Water storage: " + crop.getStorageWater() + "/200", new Object[0]);
-                 IC2.platform.messagePlayer(player, "Weed-Ex storage: " + crop.getStorageWeedEX() + "/100", new Object[0]);
--                IC2.platform.messagePlayer(player, "Growth points: " + crop.getGrowthPoints() + '/' + plant.getGrowthDuration((ICropTile)crop), new Object[0]);
-+                IC2.platform.messagePlayer(player, "Growth points: " + crop.getGrowthPoints() + '/' + plant.getGrowthDuration((ICropTile)crop) / 10, new Object[0]);
-                 return EnumActionResult.SUCCESS;
-             }
-         }

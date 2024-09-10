@@ -1,9 +1,0 @@
-@@ -88,7 +88,7 @@ extends TileBase
- implements ISidedInventory,
- ILiquidTankTile {
-     private static final FluidStack STACK_WATER = new FluidStack(FluidRegistry.WATER, 1000);
--    private static final FluidStack WATER_PER_UPDATE = new FluidStack(FluidRegistry.WATER, 10);
-+    private static final FluidStack WATER_PER_UPDATE = new FluidStack(FluidRegistry.WATER, 30000);
-     private final FilteredTank resourceTank;
-     private final TankManager tankManager;
-     private final ContainerFiller containerFiller;

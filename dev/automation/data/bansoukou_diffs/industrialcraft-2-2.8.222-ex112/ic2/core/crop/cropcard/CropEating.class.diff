@@ -1,9 +1,0 @@
-@@ -160,7 +160,7 @@ extends IC2CropCard {
- 
-     @Override
-     public int getGrowthDuration(ICropTile crop) {
--        float multiplier = 1.0f;
-+        float multiplier = 0.2f;
-         BlockPos coords = crop.getPosition();
-         Biome biome = BiomeUtil.getBiome((World)crop.getWorldObj(), (BlockPos)coords);
-         if (BiomeDictionary.hasType((Biome)biome, (BiomeDictionary.Type)BiomeDictionary.Type.SWAMP) || BiomeDictionary.hasType((Biome)biome, (BiomeDictionary.Type)BiomeDictionary.Type.MOUNTAIN)) {

@@ -1,9 +1,0 @@
-@@ -18,7 +18,7 @@ import net.minecraft.item.ItemStack;
- public class TileEntityChargepadCESU
- extends TileEntityChargepadBlock {
-     public TileEntityChargepadCESU() {
--        super(2, 128, 300000);
-+        super(2, 128, 600000);
-     }
- 
-     protected void getItems(EntityPlayer player) {

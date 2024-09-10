@@ -1,8 +1,0 @@
-@@ -57,6 +57,6 @@ extends IC2CropCard {
- 
-     @Override
-     public int getGrowthDuration(ICropTile crop) {
--        return 200;
-+        return 100;
-     }
- }

@@ -1,9 +1,0 @@
-@@ -33,4 +33,8 @@ public class Numbers {
-     public static int NUMBERED_SPECTRECOIL_ENERGY = 128;
-     @ConfigOption(category="Numbers", name="TimeInABottlePerSecond", comment="How many ticks have to pass for a Time in a Bottle to gain 1 second (20 = 1 Second)")
-     public static int TIME_IN_A_BOTTLE_SECOND = 20;
-+    @ConfigOption(category="Numbers", name="DiviningRodBlocksPerTick", comment="How many blocks would be scanned each tick when holding Divining Rod")
-+    public static int DIVINING_ROD_BLOCKS_PER_TICK = 60;
-+    @ConfigOption(category="Numbers", name="DiviningRodRadius", comment="Maximum radius of searching for blocks with Divining Rod")
-+    public static int DIVINING_ROD_RADIUS = 6;
- }

@@ -1,8 +1,0 @@
-@@ -22,6 +22,6 @@ extends TileEntityElectricBlock {
-     }
- 
-     public TileEntityElectricMFSU() {
--        super(4, 2048, 40000000);
-+        super(4, 2048, 80000000);
-     }
- }

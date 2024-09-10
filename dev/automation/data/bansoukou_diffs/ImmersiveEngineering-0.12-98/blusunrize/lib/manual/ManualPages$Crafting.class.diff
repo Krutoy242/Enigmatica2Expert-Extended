@@ -1,8 +1,0 @@
-@@ -57,7 +57,6 @@ extends ManualPages {
-         this.stacks = stacks;
-         this.recipePage = new int[stacks.length];
-         this.yOff = new int[stacks.length];
--        this.recalculateCraftingRecipes();
-     }
- 
-     @Override

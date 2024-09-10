@@ -1,8 +1,0 @@
-@@ -120,6 +120,6 @@ implements DeviceInfo {
-     }
- 
-     public UpgradeTractorBeam.Common() {
--        this.pickupRadius = 3;
-+        this.pickupRadius = 16;
-     }
- }

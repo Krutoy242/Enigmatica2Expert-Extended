@@ -1,9 +1,0 @@
-@@ -305,7 +305,7 @@ implements ICropTile {
-             if (this.crop == null) {
-                 return;
-             }
--            if (this.growthPoints >= this.crop.getGrowthDuration((ICropTile)this)) {
-+            if (this.growthPoints >= this.crop.getGrowthDuration((ICropTile)this) / 10) {
-                 this.growthPoints = 0;
-                 this.setCurrentSize(this.getCurrentSize() + 1);
-                 this.dirty = true;

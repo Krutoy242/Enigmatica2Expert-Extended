@@ -1,9 +1,0 @@
-@@ -311,7 +311,7 @@ ITickable {
-             this.instability -= 128;
-             this.func_70296_d();
-         }
--        if (this.instability > 0 && this.count % 100 == 0) {
-+        if (this.instability > 0 && this.count % 5 == 0) {
-             --this.instability;
-         }
-     }

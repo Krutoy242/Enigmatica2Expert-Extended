@@ -1,8 +1,0 @@
-@@ -58,7 +58,6 @@ extends ManualPages {
-     public ManualPages.CraftingMulti(ManualInstance manual, String text, Object ... stacks) {
-         super(manual, text);
-         this.stacks = stacks;
--        this.recalculateCraftingRecipes();
-     }
- 
-     @Override

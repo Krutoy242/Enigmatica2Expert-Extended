@@ -1,8 +1,0 @@
-@@ -11,6 +11,6 @@ import ic2.core.block.wiring.TileEntityElectricBlock;
- public class TileEntityElectricBatBox
- extends TileEntityElectricBlock {
-     public TileEntityElectricBatBox() {
--        super(1, 32, 40000);
-+        super(1, 32, 160000);
-     }
- }

@@ -1,9 +1,0 @@
-@@ -18,7 +18,7 @@ import net.minecraft.item.ItemStack;
- public class TileEntityChargepadMFSU
- extends TileEntityChargepadBlock {
-     public TileEntityChargepadMFSU() {
--        super(4, 2048, 40000000);
-+        super(4, 2048, 80000000);
-     }
- 
-     protected void getItems(EntityPlayer player) {
