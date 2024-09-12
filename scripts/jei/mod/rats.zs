@@ -1,6 +1,7 @@
 #modloaded rats
 #priority -1
 //priority should be lower than scripts/mods/ratsprocessing.zs
+#sideonly client
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
@@ -27,7 +28,7 @@ val SLOT_SIZE = 18;
 val ARROW_WIDTH = SLOT_SIZE + 4;
 val ID = 'rats_consuming';
 
-JEI.createJei(ID, 'Rats Consuming')
+JEI.createJei(ID, game.localize(`e2ee.jei.${ID}.title`))
   //basic information
   .setBackground(IJeiUtils.createBackground(2 * SLOT_SIZE + ARROW_WIDTH, SLOT_SIZE))
   .setIcon(<rats:rat_upgrade_ore_doubling>)

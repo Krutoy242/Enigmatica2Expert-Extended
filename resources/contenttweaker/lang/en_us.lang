@@ -589,6 +589,12 @@ tooltips.dim_stages.enter_skyblock=§eYou started a §bSkyblock §eworld. You ca
 tooltips.dim_stages.remind_skyblock=§eYou have entered a §bSkyblock §eworld again. Remember: you cannot visit any other dimension §8(except Space, RFTools and personal ones)§r.
 
 # --------------------------------------
+# Custom JEI categories
+# - "e2ee.jei.{id}.{entry}" format recommended
+# --------------------------------------
+e2ee.jei.rats_consuming.title=Rats Consuming
+
+# --------------------------------------
 # Requious Fracto custom JEI categories
 # --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=Advanced Analyzer

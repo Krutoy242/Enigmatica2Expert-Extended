@@ -590,6 +590,12 @@ tooltips.dim_stages.enter_skyblock=§e你进入了一个§b空岛§e世界。你
 tooltips.dim_stages.remind_skyblock=§e你再次进入了一个§b空岛§e世界。谨记：你无法前往任何其他维度§8(不包括太空、RF工具的维度和个人维度)§r。
 
 # --------------------------------------
+# Custom JEI categories
+# - "e2ee.jei.{id}.{entry}" format recommended
+# --------------------------------------
+e2ee.jei.rats_consuming.title=老鼠食用
+
+# --------------------------------------
 # Requious Fracto custom JEI categories
 # --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=高级蜜蜂分析仪
