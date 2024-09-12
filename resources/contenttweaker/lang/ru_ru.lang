@@ -591,6 +591,12 @@ tooltips.dim_stages.enter_skyblock=§eВы запустили мир-§bСкай
 tooltips.dim_stages.remind_skyblock=§eВы снова запустили мир-§bСкайблок §e. Помните: вы не можете посетить другие измерения §8(кроме личных, RFTools и Космоса)§r.
 
 # --------------------------------------
+# Custom JEI categories
+# - "e2ee.jei.{id}.{entry}" format recommended
+# --------------------------------------
+e2ee.jei.rats_consuming.title=Крысы едят
+
+# --------------------------------------
 # Requious Fracto custom JEI categories
 # --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=Расширенный Анализатор
