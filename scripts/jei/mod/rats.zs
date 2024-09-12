@@ -13,7 +13,11 @@ import scripts.mods.ratsprocessing;
 import scripts.jei.crafting_hints;
 
 //recipe hint: cheese -> poop
-crafting_hints.add1to1(<ore:foodCheese> as IOreDictEntry, <rats:rat_nugget>);
+crafting_hints.add1to1(
+  <ore:foodCheese>,
+  <rats:rat_nugget>,
+  <entity:rats:rat>.asIngr()
+);
 
 //------
 //below: recipe hints with custom JEI Category
