@@ -6,8 +6,11 @@ import crafttweaker.text.ITextComponent;
 import mods.zenutils.StaticString;
 import mods.zenutils.StringList;
 
-// a list of string of length 100, with each element holding an emoji
-static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓♩♪♫♬♭♮⚀⚁⚂⚃⚄⚅⚐⚑☀☁☂☃☄★☆☈☐☑☒☔⚓⚔⚗⚠⚡⚥✂✉✎✔✘❄❣❤⭐⌘⌚⌛⏏☮☯☜☞☠☹☺".split('');
+// a list of string of length 60, with each element holding an emoji
+static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓⚠⚡⚥✂✉✎✔✘❄❣❤⭐".split('');
+
+//original picked 100 emojis
+// static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓♩♪♫♬♭♮⚀⚁⚂⚃⚄⚅⚐⚑☀☁☂☃☄★☆☈☐☑☒☔⚓⚔⚗⚠⚡⚥✂✉✎✔✘❄❣❤⭐⌘⌚⌛⏏☮☯☜☞☠☹☺".split('');
 
 // a list of string of length 10, with each element holding an color formatting code
 //disabled colors are commented out for informing devs about unused colors
@@ -30,6 +33,9 @@ static COLORS as string[] = [
   // ,"§f"  // white
 ];
 
+static cutDownLen = EMOJIS.length * COLORS.length;
+static splitLen = COLORS.length;
+
 function emojifiedFrequency(frequency as long) as string {
     var freq = frequency;
     if (freq == 0) {
@@ -42,10 +48,10 @@ function emojifiedFrequency(frequency as long) as string {
     }
     var hasNext = true;
     while (hasNext) {
-        val cut = freq % 1000;
-        freq = freq / 1000;
-        parts.add(COLORS[cut % 10]);
-        parts.add(EMOJIS[cut / 10]);
+        val cut = freq % cutDownLen;
+        freq = freq / cutDownLen;
+        parts.add(COLORS[cut % splitLen]);
+        parts.add(EMOJIS[cut / splitLen]);
         hasNext = (freq != 0);
     }
     return StaticString.join(parts.toArray(), '');
