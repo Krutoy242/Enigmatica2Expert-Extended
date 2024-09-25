@@ -626,9 +626,6 @@ for i, inputs in storCompIngrs {
 }
 // ---------------------------------
 
-// Clear singularity tags
-recipes.addShapeless('Clear singularity tags', <appliedenergistics2:material:48> * 2, [<ore:singularityEntangled>, <ore:singularityEntangled>]);
-
 // [ME Crafting Terminal] from [ME Terminal][+3]
 craft.remake(<appliedenergistics2:part:360>, ['pretty',
   '  N  ',

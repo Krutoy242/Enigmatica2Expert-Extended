@@ -6,6 +6,26 @@ import crafttweaker.text.ITextComponent;
 import mods.zenutils.StaticString;
 import mods.zenutils.StringList;
 
+import scripts.jei.crafting_hints;
+
+// Clear singularity tags
+recipes.addHiddenShapeless('singularity_tag_clearing', <appliedenergistics2:material:48> * 2, [<ore:singularityEntangled>, <ore:singularityEntangled>]);
+// JEI recipe hint for it
+recipes.addShapeless(
+  'dummy_singularity_tag_clearing',
+  <appliedenergistics2:material:48> * 2,
+  [
+    <appliedenergistics2:material:48>.withTag({freq: 1234567890 as long}),
+    <appliedenergistics2:material:48>.withTag({freq: 9876543210 as long})
+  ]
+);
+
+crafting_hints.addInsOutCatl(
+  [<appliedenergistics2:material:47>, <ore:dustEnder> | <ore:dustEnderPearl>],
+  <appliedenergistics2:material:48>.withTag({freq: 1234567890 as long}) * 2,
+  <minecraft:tnt> | <appliedenergistics2:tiny_tnt>
+);
+
 // a list of string of length 60, with each element holding an emoji
 static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓⚠⚡⚥✂✉✎✔✘❄❣❤⭐".split('');
 
