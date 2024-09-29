@@ -1,5 +1,4 @@
 #modloaded zenutils appliedenergistics2
-#sideonly client
 
 import crafttweaker.text.ITextComponent;
 
