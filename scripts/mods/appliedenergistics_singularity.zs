@@ -9,7 +9,12 @@ import mods.zenutils.StringList;
 import scripts.jei.crafting_hints;
 
 // Clear singularity tags
-recipes.addHiddenShapeless('singularity_tag_clearing', <appliedenergistics2:material:48> * 2, [<ore:singularityEntangled>, <ore:singularityEntangled>]);
+recipes.addHiddenShapeless(
+  'singularity_tag_clearing',
+  <appliedenergistics2:material:48> * 2,
+  [<ore:singularityEntangled>, <ore:singularityEntangled>]
+);
+
 // JEI recipe hint for it
 recipes.addShapeless(
   'dummy_singularity_tag_clearing',
@@ -19,22 +24,25 @@ recipes.addShapeless(
     <appliedenergistics2:material:48>.withTag({freq: 9876543210 as long})
   ]
 );
-
 crafting_hints.addInsOutCatl(
   [<appliedenergistics2:material:47>, <ore:dustEnder> | <ore:dustEnderPearl>],
   <appliedenergistics2:material:48>.withTag({freq: 1234567890 as long}) * 2,
   <minecraft:tnt> | <appliedenergistics2:tiny_tnt>
 );
 
-// a list of string of length 60, with each element holding an emoji
+// a list of string of length 60, with each element holding one emoji
 static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓⚠⚡⚥✂✉✎✔✘❄❣❤⭐".split('');
 
-//original picked 100 emojis
+/**
+originally 100 emojis, they are gauranteed to be able to be displayed in MC chat, kept here for potential future usage
+ */
 // static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓♩♪♫♬♭♮⚀⚁⚂⚃⚄⚅⚐⚑☀☁☂☃☄★☆☈☐☑☒☔⚓⚔⚗⚠⚡⚥✂✉✎✔✘❄❣❤⭐⌘⌚⌛⏏☮☯☜☞☠☹☺".split('');
 
-// a list of string of length 10, with each element holding an color formatting code
-//disabled colors are commented out for informing devs about unused colors
-//here red/yellow/black and their variants are disabled, because they are either too dark, or not matching AE2 design
+/**
+a list of string of length 10, with each element holding an color formatting code
+disabled colors are commented out for informing devs about unused colors
+here red/yellow/black and their variants are disabled, because they are either too dark, or not matching AE2 design
+ */
 static COLORS as string[] = [
   // "§0",  // black
   "§1",  // dark_blue
