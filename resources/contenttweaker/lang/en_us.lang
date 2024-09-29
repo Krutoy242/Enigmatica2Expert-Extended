@@ -582,7 +582,7 @@ tooltips.lang.limit=Limit
 tooltips.lang.range=Range
 tooltips.lang.exaustion=Exaustion
 tooltips.lang.experience=Experience
-tooltips.lang.quantum_entangled_singularity.freq=§2Freq§r: %s§r (§b%s§r)
+tooltips.lang.quantum_entangled_singularity.freq=§2Freq§r: %s
 
 tooltips.dim_stages.healthy=§4You need to have at least §6%s HP§4 (%s hearts§4) to visit the §cNether
 tooltips.dim_stages.healthy_grant=You reached §6%s HP§r (%s hearts)!

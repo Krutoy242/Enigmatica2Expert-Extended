@@ -87,7 +87,7 @@ function emojifiedFrequency(frequency as long) as string {
     return ITextComponent
       .fromTranslation(
         "tooltips.lang.quantum_entangled_singularity.freq",
-        [emojifiedFrequency(freq), freq]
+        [emojifiedFrequency(freq)]
       )
       .unformattedText;
   });
