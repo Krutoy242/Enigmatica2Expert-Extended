@@ -583,6 +583,7 @@ tooltips.lang.limit=连锁数量限制
 tooltips.lang.range=范围
 tooltips.lang.exaustion=损耗
 tooltips.lang.experience=经验值
+tooltips.lang.quantum_entangled_singularity.freq=§2频率§r: %s
 
 tooltips.dim_stages.healthy=§4你需要至少拥有 §6%s 点生命值§4 (%s 颗心§4) 才能前往§c下界
 tooltips.dim_stages.healthy_grant=你已经拥有了 §6%s 点生命值§r (%s 颗心)！

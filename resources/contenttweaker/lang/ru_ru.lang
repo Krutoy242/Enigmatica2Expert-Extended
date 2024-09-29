@@ -584,6 +584,7 @@ tooltips.lang.limit=Предел
 tooltips.lang.range=Дальность
 tooltips.lang.exaustion=Усталость
 tooltips.lang.experience=Опыт
+tooltips.lang.quantum_entangled_singularity.freq=§2Частота§r: %s
 
 tooltips.dim_stages.healthy=§4Вам нужно иметь хотя бы §6%s HP§4 (%s сердец§4) что бы посетить §cНезер
 tooltips.dim_stages.healthy_grant=Вы набрали §6%s HP§r (%s сердец)!
