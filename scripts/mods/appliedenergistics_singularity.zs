@@ -34,23 +34,24 @@ static EMOJIS as string[] = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕
 
 // a list of string of length 10, with each element holding an color formatting code
 //disabled colors are commented out for informing devs about unused colors
+//here red/yellow/black and their variants are disabled, because they are either too dark, or not matching AE2 design
 static COLORS as string[] = [
-  // ,"§0"  // black
-  // ,"§1"  // dark_blue
-  // ,"§2"  // dark_green
-  "§3"  // dark_aqua
-  // ,"§4"  // dark_red
-  ,"§5"  // dark_purple
-  ,"§6"  // gold
-  ,"§7"  // gray
-  // ,"§8"  // dark_gray
-  ,"§9"  // blue
-  ,"§a"  // green
-  ,"§b"  // aqua
-  ,"§c"  // red
-  ,"§d"  // light_purple
-  ,"§e"  // yellow
-  // ,"§f"  // white
+  // "§0",  // black
+  "§1",  // dark_blue
+  "§2",  // dark_green
+  "§3",  // dark_aqua
+  // "§4",  // dark_red
+  "§5",  // dark_purple
+  // "§6",  // gold
+  "§7",  // gray
+  // "§8",  // dark_gray
+  "§9",  // blue
+  "§a",  // green
+  "§b",  // aqua
+  // "§c",  // red
+  "§d",  // light_purple
+  // "§e",  // yellow
+  "§f"  // white
 ];
 
 static cutDownLen = EMOJIS.length * COLORS.length;
