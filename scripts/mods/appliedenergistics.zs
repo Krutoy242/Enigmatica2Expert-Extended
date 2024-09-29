@@ -626,6 +626,22 @@ for i, inputs in storCompIngrs {
 }
 // ---------------------------------
 
+// Clear singularity tags
+recipes.addHiddenShapeless(
+  'singularity_tag_clearing',
+  <appliedenergistics2:material:48> * 2,
+  [<ore:singularityEntangled>, <ore:singularityEntangled>]
+);
+// and JEI recipe hint for it, it's added at both server and client to prevent strange data syncing issue
+recipes.addShapeless(
+  'dummy_singularity_tag_clearing',
+  <appliedenergistics2:material:48> * 2,
+  [
+    <appliedenergistics2:material:48>.withTag({freq: 1234567890 as long}),
+    <appliedenergistics2:material:48>.withTag({freq: 9876543210 as long})
+  ]
+);
+
 // [ME Crafting Terminal] from [ME Terminal][+3]
 craft.remake(<appliedenergistics2:part:360>, ['pretty',
   '  N  ',
