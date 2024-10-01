@@ -1,13 +1,14 @@
 {
-	x: 7.833333333333333d,
-	y: 3.8333333333333335d,
+	x: -2.392601600959507d,
+	y: 3.811698170253172d,
 	text: [
 		"{q.botania.benevolent_goddess.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"1c7263f8"
+		"b4e2c4b1"
 	],
+	dependency_requirement: "all_started",
 	tasks: [{
 		uid: "62bc111e",
 		type: "item",
@@ -18,17 +19,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "3a8b3e04",
-		type: "custom",
-		title: "{e2ee.quest.common}",
-		icon: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "common"
-			}
-		},
-		tags: [
-			"loot"
-		]
+		uid: "dbdb8d80",
+		type: "loot",
+		table: 1
 	}]
 }

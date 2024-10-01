@@ -1,0 +1,52 @@
+// Генерация цветов
+
+tile.botania:flower.campanimia.name=Кампанимия
+tile.botania:flower.campanimia.reference=Настоящий ценитель!
+botania.entry.campanimia=Кампанимия
+botania.tagline.botania.entry.campanimia=Мана из эссенции
+botania.page.campanimia0=§1Кампанимия§r — это цветок, который любит пить оставшуюся эссенцию из тиглей Тауматургов. Чем больше типов эссенции осталось, тем больше §4маны§r он генерирует. <br>Обратите внимание, что тигель должен быть функциональным — его нужно снабжать как теплом, так и водой.
+botania.page.campanimia1=&oНе напивайся слишком сильно&r
+
+tile.botania:flower.nuclianthus.name=Нуциантус
+tile.botania:flower.nuclianthus.reference=Ест ядерные бомбы, цветет ярко.
+botania.entry.nuclianthus=Нуциантус
+botania.tagline.botania.entry.nuclianthus=Мана из ядерного топлива
+botania.page.nuclianthus0=Конструкции реакторов часто очень сложны, но почему бы не пойти по ботаническому пути? §1Нуциантус§r — идеальное решение. Он потребляет ядерные топлива поблизости, и в зависимости от их мощности генерирует §4ману§r. Однако, если его буфер переполнится, цветок взорвется.
+botania.page.nuclianthus1=&oГде радиация?&r
+
+// Функциональные цветы
+
+tile.botania:flower.antirrhift.name=Антирриф
+tile.botania:flower.antirrhift.reference=Все ненавидят налоги
+botania.entry.antirrhift=Антирриф
+botania.tagline.botania.entry.antirrhift=Ускоряет распространитель маны
+botania.page.antirrhift0=Распространители маны медлительны, но §1Антирриф§r ускоряет процесс, телепортируя §cману§r напрямую в бассейн. Однако он берет небольшую плату, поглощая около пятой части §cманы§r для себя в процессе.
+botania.page.antirrhift1=&oЯ победил... но какой ценой?&r
+
+tile.botania:flower.rokku_eryngium.name=Рокку Эрингиум
+tile.botania:flower.rokku_eryngium.reference=Затачивающий цветок звезд
+botania.entry.rokku_eryngium=Рокку Эрингиум
+botania.tagline.botania.entry.rokku_eryngium=Затачивает кристаллы камня
+botania.page.rokku_eryngium0=§1Рокку Эрингиум§r — это цветок, который, в отличие от точильного камня, позволяет автоматизировать максимизацию характеристики остроты §fкристаллов камня§r. <br>Он подбирает кристаллы камня поблизости и, за приличную цену в §4ману§r, затачивает их. Однако будьте осторожны, поскольку он все еще может сломать кристалл, как и точильный камень, и неохотно возвращает его обратно.
+botania.page.rokku_eryngium1=&oНазад в каменный век&r
+
+tile.botania:flower.jikanacea.name=Джиканасея
+tile.botania:flower.jikanacea.reference=Способ сэкономить время
+botania.entry.jikanacea=Джиканасея
+botania.tagline.botania.entry.jikanacea=Продлевает эффект бутылки времени
+botania.page.jikanacea0=§1Джиканасея§r — это уникальный цветок, который продлевает эффекты §cБутылки времени§r поблизости. <br>Чем выше уровень ускорения, тем больше маны он потребляет для поддержания потока времени.
+botania.page.jikanacea1=&oВремя течет там, где растет мана&r
+
+tile.botania:flower.echinacenko.name=Эхинаценко
+tile.botania:flower.echinacenko.reference=Органические пищевые добавки
+botania.entry.echinacenko=Эхинаценко
+botania.tagline.botania.entry.echinacenko=Восполняет питание игроков поблизости
+botania.page.echinacenko0=Хотя запрещенные предметы могут наполнять ваш желудок с помощью магической ауры, они лишены питательных веществ, необходимых вашему телу. §1Эхинаценко§r решает эту проблему, восстанавливая все виды питания для игроков поблизости, используя §4ману§r для поддержания своей жизненной магии.
+botania.page.echinacenko1=&oВкус не имеет значения&r
+
+tile.botania:flower.amuileria_kaerunea.name=Амуилерия Каерунея
+tile.botania:flower.amuileria_kaerunea.reference=30 000 градусов — это ложь
+botania.entry.amuileria_kaerunea=Амуилерия Каерунея
+botania.tagline.botania.entry.amuileria_kaerunea=Заряжает предметы молниями
+botania.page.amuileria_kaerunea0=Активная во время гроз, §1Амуилерия Каерунея§r направляет удары молний для зарядки предметов поблизости. Она призовет молнию, когда это необходимо, используя §cману§r для наполнения предметов энергией шторма.
+botania.page.amuileria_kaerunea1=&oТор в цветке&r

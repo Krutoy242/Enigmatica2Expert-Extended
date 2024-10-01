@@ -4,8 +4,8 @@
 		id: "botania:lexicon",
 		tag: {}
 	},
-	x: 5.5d,
-	y: 1.8333333333333335d,
+	x: 5.0d,
+	y: 12.0d,
 	text: [
 		"{q.botania.botania.desc}"
 	],

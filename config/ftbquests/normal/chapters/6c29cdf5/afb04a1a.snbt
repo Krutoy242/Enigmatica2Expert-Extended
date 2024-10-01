@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.rosa_arcana.name}",
+	x: -1.9498558d,
+	y: 9.554958d,
+	text: [
+		"{q.botania.rosa_arcana.desc}"
+	],
+	dependencies: [
+		"95ce8a09"
+	],
+	tasks: [{
+		uid: "7669db62",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "arcanerose"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "c17cf20d",
+		type: "loot",
+		table: 0
+	}]
+}

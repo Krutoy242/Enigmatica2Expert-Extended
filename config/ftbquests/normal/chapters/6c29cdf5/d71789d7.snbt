@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.band_of_aura.name}",
+	x: -0.7d,
+	y: 5.6d,
+	text: [
+		"{q.botania.band_of_aura.desc}"
+	],
+	dependencies: [
+		"abc4adae",
+		"b4e2c4b1"
+	],
+	tasks: [{
+		uid: "e7346835",
+		type: "item",
+		items: [{
+			item: "botania:auraring"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "266fc059",
+		type: "loot",
+		table: 0
+	}]
+}

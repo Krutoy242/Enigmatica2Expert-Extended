@@ -1,6 +1,6 @@
 {
-	x: 7.833333333333333d,
-	y: 7.833333333333333d,
+	x: 7.0d,
+	y: 0.0d,
 	text: [
 		"{q.botania.gaia_pylon.desc}"
 	],
@@ -16,17 +16,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "4c6f57ca",
-		type: "custom",
-		title: "{e2ee.quest.common}",
-		icon: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "common"
-			}
-		},
-		tags: [
-			"loot"
-		]
+		uid: "f6d0f855",
+		type: "loot",
+		table: 1
 	}]
 }

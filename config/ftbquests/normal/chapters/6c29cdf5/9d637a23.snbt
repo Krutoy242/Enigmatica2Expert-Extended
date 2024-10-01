@@ -1,0 +1,31 @@
+{
+	title: "{q.botania.cloaks.name}",
+	x: -0.927050983124842d,
+	y: 1.146830451114539d,
+	text: [
+		"{q.botania.cloaks.desc}"
+	],
+	dependencies: [
+		"b4e2c4b1"
+	],
+	tasks: [{
+		uid: "f8ffcae9",
+		type: "item",
+		items: [{
+			item: "botania:balancecloak"
+		},
+		{
+			item: "botania:holycloak"
+		},
+		{
+			item: "botania:unholycloak"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "80e3aab9",
+		type: "loot",
+		table: 1
+	}]
+}

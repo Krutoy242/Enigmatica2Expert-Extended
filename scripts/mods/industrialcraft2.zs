@@ -332,6 +332,16 @@ craft.reshapeless(<ic2:containment_plating>, 'п□□□', {
   'п': <ore:plateLead>, // Lead Plate
 });
 
+// Ore disctionary for nuclear fuels
+
+<ore:fuelReactor>.add(<ic2:nuclear>);
+<ore:ingotIC2U>.add(<ic2:nuclear>);
+<ore:fuelReactor>.add(<ic2:nuclear:4>);
+<ore:ingotIC2MOX>.add(<ic2:nuclear:4>);
+
+<ore:ingotDepletedIC2U>.add(<nuclearcraft:depleted_fuel_ic2>);
+<ore:ingotDepletedIC2MOX>.add(<nuclearcraft:depleted_fuel_ic2:1>);
+
 // Reprocess plutonium
 mods.nuclearcraft.DecayHastener.addRecipe(<ic2:nuclear:3>, <nuclearcraft:uranium:5>, 2.0, 2.0);
 

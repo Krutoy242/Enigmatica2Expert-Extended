@@ -1,0 +1,52 @@
+// 生成花朵
+
+tile.botania:flower.campanimia.name=坎帕尼米亚
+tile.botania:flower.campanimia.reference=真正的鉴赏家！
+botania.entry.campanimia=坎帕尼米亚
+botania.tagline.botania.entry.campanimia=来自精华的魔力
+botania.page.campanimia0=§1坎帕尼米亚§r 是一种喜欢吸收 thaumaturge 提炼器中剩余精华的花。留下的精华种类越多，它生成的 §4魔力§r 就越多。<br>请注意，提炼器必须正常工作——需要同时提供热量和水。
+botania.page.campanimia1=&o别喝得太醉哦&r
+
+tile.botania:flower.nuclianthus.name=纽克莲花
+tile.botania:flower.nuclianthus.reference=吞噬核弹，灿烂绽放。
+botania.entry.nuclianthus=纽克莲花
+botania.tagline.botania.entry.nuclianthus=来自核燃料的魔力
+botania.page.nuclianthus0=反应堆的设计通常非常复杂，为什么不走植物学路线呢？§1纽克莲花§r 是完美的解决方案。它会消耗附近的核燃料，根据其能量生成 §4魔力§r。然而，如果它的缓冲区充满，花朵会爆炸。
+botania.page.nuclianthus1=&o辐射在哪儿？&r
+
+// 功能花朵
+
+tile.botania:flower.antirrhift.name=安蒂尔里夫特
+tile.botania:flower.antirrhift.reference=我们都讨厌税收
+botania.entry.antirrhift=安蒂尔里夫特
+botania.tagline.botania.entry.antirrhift=加速魔力传播器
+botania.page.antirrhift0=魔力传播器很慢，但 §1安蒂尔里夫特§r 通过将 §c魔力§r 直接传送到池中来加速过程。然而，它会收取一小部分费用，大约吸收五分之一的 §c魔力§r。
+botania.page.antirrhift1=&o我赢了……但代价是什么？&r
+
+tile.botania:flower.rokku_eryngium.name=洛克艾林根
+tile.botania:flower.rokku_eryngium.reference=星辰的锋利之花
+botania.entry.rokku_eryngium=洛克艾林根
+botania.tagline.botania.entry.rokku_eryngium=切割岩石晶体
+botania.page.rokku_eryngium0=§1洛克艾林根§r 是一种与磨刀石不同的花，它允许自动最大化 §f岩石晶体§r 的切割属性。<br>它会捡起附近的 §f岩石晶体§r，并以适当的 §4魔力§r 成本为其进行打磨。然而要小心，它仍然可以像磨刀石一样打破晶体，而且不情愿归还。
+botania.page.rokku_eryngium1=&o回到石器时代&r
+
+tile.botania:flower.jikanacea.name=时光花
+tile.botania:flower.jikanacea.reference=节省时间的方法
+botania.entry.jikanacea=时光花
+botania.tagline.botania.entry.jikanacea=延长时间瓶效果
+botania.page.jikanacea0=§1时光花§r 是一种独特的花，可以延长附近 §c时间瓶§r 的效果。<br>加速等级越高，维持时间流动所需的魔力就越多。
+botania.page.jikanacea1=&o时间流淌，魔力生长&r
+
+tile.botania:flower.echinacenko.name=依奇纳辛可
+tile.botania:flower.echinacenko.reference=有机膳食补充剂
+botania.entry.echinacenko=依奇纳辛可
+botania.tagline.botania.entry.echinacenko=补充附近玩家的营养
+botania.page.echinacenko0=虽然禁忌物品可以通过魔法光环填饱你的肚子，但它们缺乏身体所需的营养。§1依奇纳辛可§r 通过恢复附近玩家的各种营养来解决这个问题，使用 §4魔力§r 来维持其生命魔法。
+botania.page.echinacenko1=&o味道不重要&r
+
+tile.botania:flower.amuileria_kaerunea.name=阿穆勒里亚·卡尔鲁尼亚
+tile.botania:flower.amuileria_kaerunea.reference=30,000度是个谎言
+botania.entry.amuileria_kaerunea=阿穆勒里亚·卡尔鲁尼亚
+botania.tagline.botania.entry.amuileria_kaerunea=通过闪电为物品充电
+botania.page.amuileria_kaerunea0=在雷暴期间活跃，§1阿穆勒里亚·卡尔鲁尼亚§r 会引导雷电为附近的物品充电。它会在需要时召唤一道闪电，消耗 §c魔力§r 来为物品注入风暴的能量。
+botania.page.amuileria_kaerunea1=&o雷神之花&r

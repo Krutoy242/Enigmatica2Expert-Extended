@@ -1,12 +1,12 @@
 {
-	x: -0.9166666666666667d,
-	y: 2.5d,
+	x: 5.0d,
+	y: 7.0d,
 	text: [
 		"{q.botania.horn_of_the_wild.desc}"
 	],
 	dependencies: [
-		"8b51b830",
-		"5672d99b"
+		"5672d99b",
+		"2a14b52e"
 	],
 	tasks: [{
 		uid: "ee6f4534",

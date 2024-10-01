@@ -1,12 +1,12 @@
 {
-	x: 6.166666666666667d,
-	y: 3.8333333333333335d,
+	x: -2.316616962889756d,
+	y: 2.819624700677178d,
 	text: [
 		"{q.botania.soujourner_s_sash.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"e8b306b0"
+		"b4e2c4b1"
 	],
 	tasks: [{
 		uid: "7361821b",

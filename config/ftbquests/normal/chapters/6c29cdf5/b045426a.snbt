@@ -1,6 +1,6 @@
 {
-	x: 1.75d,
-	y: 1.1666666666666665d,
+	x: 8.0d,
+	y: 5.0d,
 	text: [
 		"{q.botania.mana_spreader.desc}"
 	],

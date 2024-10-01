@@ -1,13 +1,13 @@
 {
 	title: "{q.botania.pure_daisy.name}",
-	x: 3.5d,
-	y: 2.5d,
+	x: 5.0d,
+	y: 8.5d,
 	text: [
 		"{q.botania.pure_daisy.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"c8d050c2"
+		"cc984e46"
 	],
 	tasks: [{
 		uid: "9182c99f",

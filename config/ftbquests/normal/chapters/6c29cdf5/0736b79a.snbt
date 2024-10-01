@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.jaded_amaranthus.name}",
-	x: 18.166666666666668d,
-	y: 2.8333333333333335d,
+	x: 9.132233d,
+	y: 8.198062d,
 	text: [
 		"{q.botania.jaded_amaranthus.desc}"
 	],
@@ -20,17 +20,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "cb100aee",
-		type: "custom",
-		title: "{e2ee.quest.uncommon}",
-		icon: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "uncommon"
-			}
-		},
-		tags: [
-			"loot"
-		]
+		uid: "a6462425",
+		type: "loot",
+		table: 0
 	}]
 }

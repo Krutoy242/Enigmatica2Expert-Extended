@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.petro_petunia.name}",
-	x: 12.541666666666666d,
-	y: 8.625d,
+	x: -1.563663d,
+	y: 11.24698d,
 	text: [
 		"{q.botania.petro_petunia.desc}"
 	],
@@ -21,17 +21,8 @@
 		ignore_nbt: 2b
 	}],
 	rewards: [{
-		uid: "2b0fdf37",
-		type: "custom",
-		title: "{e2ee.quest.common}",
-		icon: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "common"
-			}
-		},
-		tags: [
-			"loot"
-		]
+		uid: "0910fa14",
+		type: "loot",
+		table: 1
 	}]
 }

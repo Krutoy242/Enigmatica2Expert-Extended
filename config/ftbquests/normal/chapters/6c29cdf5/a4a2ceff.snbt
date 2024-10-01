@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.heisei_dream.name}",
+	x: 8.635101d,
+	y: 10.311529d,
+	text: [
+		"{q.botania.heisei_dream.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "9b24109c",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "heiseiDream"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "a472ac27",
+		type: "loot",
+		table: 1
+	}]
+}

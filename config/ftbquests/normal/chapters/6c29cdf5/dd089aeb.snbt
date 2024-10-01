@@ -19,14 +19,13 @@
 			TrophyName: "§bBotania Master Trophy§r"
 		}
 	},
-	x: 16.5d,
-	y: 8.25d,
+	x: 10.0d,
+	y: 6.4d,
 	text: [
 		"{q.botania.the_chapter_is_com.desc}"
 	],
 	hide_dependency_lines: true,
 	dependencies: [
-		"39907113",
 		"811e301d",
 		"88d4b657",
 		"e8b306b0",
@@ -39,7 +38,6 @@
 		"e56c2366",
 		"f94ec042",
 		"ff3c4730",
-		"8f6bf6fa",
 		"47bdb52f",
 		"c8d050c2",
 		"de7a5468",
@@ -91,7 +89,7 @@
 		"8fd96e22",
 		"feb987c2"
 	],
-	size: 1.5d,
+	size: 2.0d,
 	rewards: [{
 		uid: "f5839ef4",
 		type: "item",

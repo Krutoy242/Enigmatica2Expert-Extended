@@ -1,7 +1,7 @@
 {
 	icon: "botania:pylon 1 1",
-	x: 6.166666666666667d,
-	y: 5.166666666666667d,
+	x: 3.0d,
+	y: 1.0d,
 	text: [
 		"{q.botania.natura_pylon.desc}"
 	],

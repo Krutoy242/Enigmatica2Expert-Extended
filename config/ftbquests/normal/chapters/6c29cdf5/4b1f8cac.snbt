@@ -1,12 +1,12 @@
 {
-	x: 0.4166666666666667d,
-	y: 3.8333333333333335d,
+	x: 4.0d,
+	y: 6.0d,
 	text: [
 		"{q.botania.horn_of_the_covering.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"f13b2be6"
+		"c9296d9f"
 	],
 	tasks: [{
 		uid: "1f8054b0",

@@ -1,7 +1,7 @@
 {
 	icon: "botania:terraplate",
-	x: 4.833333333333333d,
-	y: 5.166666666666667d,
+	x: 5.0d,
+	y: 4.0d,
 	text: [
 		"{q.botania.terrestrial_agglom.desc}"
 	],

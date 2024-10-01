@@ -1,12 +1,12 @@
 {
-	x: 7.833333333333333d,
-	y: 9.166666666666666d,
+	x: -1.8184545353245138d,
+	y: 1.8708632963199134d,
 	text: [
 		"{q.botania.ring_of_far_reach.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"4aa39f8e"
+		"b4e2c4b1"
 	],
 	tasks: [{
 		uid: "c06108ad",

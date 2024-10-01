@@ -1,0 +1,27 @@
+{
+	title: "{q.botania.rokku_eryngium.name}",
+	x: 9.392563d,
+	y: 11.261356d,
+	shape: "gear",
+	text: [
+		"{q.botania.rokku_eryngium.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "e2438b60",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "rokku_eryngium"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "ee07f454",
+		type: "loot",
+		table: 1
+	}]
+}

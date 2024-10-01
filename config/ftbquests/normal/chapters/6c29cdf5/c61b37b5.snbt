@@ -1,12 +1,12 @@
 {
-	x: 0.5d,
-	y: 6.5d,
+	x: 1.25d,
+	y: 5.75d,
 	text: [
 		"{q.botania.alchemy_catalyst.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"e93a1011"
+		"2bc0a8f1"
 	],
 	tasks: [{
 		uid: "96d42605",

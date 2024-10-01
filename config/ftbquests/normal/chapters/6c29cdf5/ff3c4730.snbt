@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.solegnolia.name}",
-	x: 17.833333333333332d,
-	y: 3.8333333333333335d,
+	x: 10.0d,
+	y: 8.6d,
 	text: [
 		"{q.botania.solegnolia.desc}"
 	],
@@ -20,17 +20,8 @@
 		}]
 	}],
 	rewards: [{
-		uid: "313c9339",
-		type: "custom",
-		title: "{e2ee.quest.uncommon}",
-		icon: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "uncommon"
-			}
-		},
-		tags: [
-			"loot"
-		]
+		uid: "5f9d5faa",
+		type: "loot",
+		table: 0
 	}]
 }

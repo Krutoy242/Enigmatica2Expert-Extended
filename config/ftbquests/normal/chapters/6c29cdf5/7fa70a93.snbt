@@ -1,12 +1,13 @@
 {
 	icon: "botania:manasteelchest",
-	x: 3.5d,
-	y: 9.166666666666666d,
+	x: 2.0d,
+	y: 0.0d,
 	text: [
 		"{q.botania.manasteel_helmet.desc}"
 	],
 	dependencies: [
-		"aca34b29"
+		"aca34b29",
+		"f74662f8"
 	],
 	tasks: [{
 		uid: "79cfca69",

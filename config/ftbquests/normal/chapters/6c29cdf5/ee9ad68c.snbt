@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.hydroangeas.name}",
+	x: 0.0d,
+	y: 8.6d,
+	text: [
+		"{q.botania.hydroangeas.desc}"
+	],
+	dependencies: [
+		"95ce8a09"
+	],
+	tasks: [{
+		uid: "bec86782",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "hydroangeas"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "7f821acd",
+		type: "loot",
+		table: 0
+	}]
+}
