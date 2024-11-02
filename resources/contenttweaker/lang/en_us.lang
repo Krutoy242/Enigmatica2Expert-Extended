@@ -15,8 +15,6 @@ description.crt.consume=§6§o(Will be consumed!)§r
 # CoT new content
 # --------------------------------------
 itemGroup.other=ContentTweaker
-# fluid.heavy_metal=Heavy Metal
-# fluid.cheese=Cheese
 fluid.seed=Seed
 fluid.spectre=Spectre
 fluid.perfect_fuel=Perfect Fuel

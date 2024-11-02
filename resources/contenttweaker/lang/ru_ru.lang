@@ -15,8 +15,6 @@ description.crt.consume=§6§o(Будет потрачено!)§r
 # CoT new content
 # --------------------------------------
 itemGroup.other=ContentTweaker
-# fluid.heavy_metal=Тяжёлый Метал
-# fluid.cheese=Сыр
 fluid.seed=Семя
 fluid.spectre=Спектр
 fluid.perfect_fuel=Идеальное Топливо

@@ -15,8 +15,6 @@ description.crt.consume=§6§o(会被消耗！)§r
 # CoT new content
 # --------------------------------------
 # itemGroup.other=ContentTweaker
-# fluid.heavy_metal=熔融沉重金属
-# fluid.cheese=液态奶酪
 # fluid.seed=Seed
 fluid.spectre=液态通灵
 fluid.perfect_fuel=完美燃料
