@@ -15,8 +15,8 @@ description.crt.consume=§6§o(Будет потрачено!)§r
 # CoT new content
 # --------------------------------------
 itemGroup.other=ContentTweaker
-fluid.heavy_metal=Тяжёлый Метал
-fluid.cheese=Сыр
+# fluid.heavy_metal=Тяжёлый Метал
+# fluid.cheese=Сыр
 fluid.seed=Семя
 fluid.spectre=Спектр
 fluid.perfect_fuel=Идеальное Топливо
@@ -25,6 +25,9 @@ fluid.terrestrial=Расплавленный Земленный Артефакт
 fluid.mithrillium=Растворимый Митриллиум
 fluid.adaminite=Расплавленный Адаминит
 fluid.mithminite=Растворенный Митминит
+
+base.material.heavy_metal=Тяжёлый Метал
+base.material.cheese=Сыр
 
 item.contenttweaker.compressed_glowstone.name=Сжатая Светопыль
 item.contenttweaker.compressed_ender.name=Сжатый Эндер Жемчуг

@@ -15,8 +15,8 @@ description.crt.consume=§6§o(Will be consumed!)§r
 # CoT new content
 # --------------------------------------
 itemGroup.other=ContentTweaker
-fluid.heavy_metal=Heavy Metal
-fluid.cheese=Cheese
+# fluid.heavy_metal=Heavy Metal
+# fluid.cheese=Cheese
 fluid.seed=Seed
 fluid.spectre=Spectre
 fluid.perfect_fuel=Perfect Fuel
@@ -25,6 +25,9 @@ fluid.terrestrial=Molten Terrestrial Artifact
 fluid.mithrillium=Molten Mithrillium
 fluid.adaminite=Molten Adaminite
 fluid.mithminite=Molten Mithminite
+
+base.material.heavy_metal=Heavy Metal
+base.material.cheese=Cheese
 
 item.contenttweaker.compressed_glowstone.name=Compressed Glowstone
 item.contenttweaker.compressed_ender.name=Compressed Ender

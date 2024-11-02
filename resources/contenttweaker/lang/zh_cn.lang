@@ -15,8 +15,8 @@ description.crt.consume=§6§o(会被消耗！)§r
 # CoT new content
 # --------------------------------------
 # itemGroup.other=ContentTweaker
-fluid.heavy_metal=熔融沉重金属
-fluid.cheese=液态奶酪
+# fluid.heavy_metal=熔融沉重金属
+# fluid.cheese=液态奶酪
 # fluid.seed=Seed
 fluid.spectre=液态通灵
 fluid.perfect_fuel=完美燃料
@@ -25,6 +25,9 @@ fluid.terrestrial=熔融天地宝晶
 fluid.mithrillium=熔融秘银
 fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
+
+base.material.heavy_metal=沉重金属
+base.material.cheese=奶酪
 
 item.contenttweaker.compressed_glowstone.name=压缩荧石
 item.contenttweaker.compressed_ender.name=压缩末影
