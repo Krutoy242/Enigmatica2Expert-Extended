@@ -1,5 +1,8 @@
 #modloaded trinity
 
+import crafttweaker.item.IItemStack;
+
+
 scripts.process.fill(<trinity:empty_fusion_bomb>, <fluid:liquidfusionfuel> * 1000, <trinity:fusion_bomb>, 'only: NCInfuser Transposer');
 scripts.process.fill(<trinity:empty_fusion_bomb>, <fluid:deuterium-tritium_mixture> * 1000, <trinity:fusion_bomb>, 'only: Transposer');
 
@@ -49,3 +52,49 @@ craft.shapeless(<trinity:trinitite>, "VO", {
 // Replace Trinitite drop with Luck one
 // DOESNT WORK - trinitite still drop nothing.
 // scripts.lib.dropt.addDrop(<trinity:trinitite>, <trinity:trinitite_shard>);
+
+val pickaxeHarvestLevelItems = [
+  <trinity:trinitite>,
+  <trinity:thermonuclear_core_pu239>,
+  <trinity:bomb_u233>,
+  <trinity:bomb_u235>,
+  <trinity:bomb_np237>,
+  <trinity:bomb_pu239>,
+  <trinity:bomb_am242>,
+  <trinity:bomb_cm247>,
+  <trinity:bomb_bk248>,
+  <trinity:bomb_cf249>,
+  <trinity:bomb_cf251>,
+  <trinity:bomb_antimatter>,
+  <trinity:salted_bomb_u233>,
+  <trinity:salted_bomb_u235>,
+  <trinity:salted_bomb_np237>,
+  <trinity:salted_bomb_pu239>,
+  <trinity:salted_bomb_am242>,
+  <trinity:salted_bomb_cm247>,
+  <trinity:salted_bomb_bk248>,
+  <trinity:salted_bomb_cf249>,
+  <trinity:salted_bomb_cf251>,
+  <trinity:salted_core_u233>,
+  <trinity:salted_core_u235>,
+  <trinity:salted_core_np237>,
+  <trinity:salted_core_pu239>,
+  <trinity:salted_core_am242>,
+  <trinity:salted_core_cm247>,
+  <trinity:salted_core_bk248>,
+  <trinity:salted_core_cf249>,
+  <trinity:salted_core_cf251>,
+  <trinity:core_u233>,
+  <trinity:core_u235>,
+  <trinity:core_np237>,
+  <trinity:core_pu239>,
+  <trinity:core_am242>,
+  <trinity:core_cm247>,
+  <trinity:core_bk248>,
+  <trinity:core_cf249>,
+  <trinity:core_cf251>,
+] as IItemStack[];
+
+for item in pickaxeHarvestLevelItems {
+  item.asBlock().definition.setHarvestLevel("pickaxe", 1);
+}
