@@ -49,7 +49,6 @@ craft.shapeless(<trinity:trinitite>, "VO", {
 });
 
 // Replace Trinitite drop with Luck one
-// DOESNT WORK - trinitite still drop nothing.
 scripts.lib.dropt.addDrop(<trinity:trinitite>, <trinity:trinitite_shard>);
 
 val pickaxeHarvestLevelItems = [
