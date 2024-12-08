@@ -9,6 +9,7 @@ import crafttweaker.liquid.ILiquidStack;
 import mods.mekanism.MekanismHelper.getGas;
 
 import scripts.processUtils.I;
+import scripts.processUtils.avdRockXmlRecipe;
 import scripts.processUtils.arrN_float;
 import scripts.processUtils.arrN_ingr;
 import scripts.processUtils.arrN_item;
@@ -698,6 +699,11 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       for ii in inputIngr0.itemArray {
         mods.thermalexpansion.Transposer.addFillRecipe(outputItem0, ii, inputLiquid0, 6000);
       }
+      return machineName;
+    }
+
+    if (machineName == 'orecrystallizer') {
+      avdRockXmlRecipe('Crystallizer', [inputIngr0], [inputLiquid0], [outputItem0], null);
       return machineName;
     }
   }

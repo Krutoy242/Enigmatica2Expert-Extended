@@ -88,6 +88,105 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Aluminum Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_aluminium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 4</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Aluminum Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:aluminum_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 4</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Amber Bearing Stone] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:amber_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thaumcraft:ore_amber 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Apatite Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:apatite_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>forestry:resources 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Ardite Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_ardite 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>tconstruct:ore 1 1</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Ardite Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:ardite_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>tconstruct:ore 1 1</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Black Quartz Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:black_quartz_essence 7</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>actuallyadditions:block_misc 1 3</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Boron Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_pieceboron 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 5</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Boron Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:boron_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 5</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Calcium Sulfate] -->
 	<Recipe timeRequired="10" power="40000">
 		<input>
@@ -96,6 +195,72 @@
 		</input>
 		<output>
 			<itemStack>nuclearcraft:compound 6 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Certus Quartz Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:certus_quartz_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>appliedenergistics2:quartz_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Coal Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:coal_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:coal_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Cobalt Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_cobalt 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>tconstruct:ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Cobalt Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:cobalt_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>tconstruct:ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Copper Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_copper 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Copper Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:copper_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 0</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -110,6 +275,50 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Diamond Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:diamond_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:diamond_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Draconium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_piecedraconium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>draconicevolution:draconium_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Draconium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:draconium_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>draconicevolution:draconium_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Ender Amethyst Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:ender_amethyst_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Endorium Nugget] -->
 	<Recipe timeRequired="10" power="40000">
 		<input>
@@ -118,6 +327,28 @@
 		</input>
 		<output>
 			<itemStack>endreborn:item_raw_endorium 10 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Gold Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_gold 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:gold_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Gold Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:gold_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:gold_ore 1 0</itemStack>
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
@@ -132,6 +363,61 @@
 		</output>
 	</Recipe>
 	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Iridium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_pieceiridium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 7</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Iridium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:iridium_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 7</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Iron Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_iron 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:iron_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Iron Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:iron_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:iron_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Lapis Lazuli Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:lapis_lazuli_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:lapis_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
 	<!-- [Lapotron Crystal] -->
 	<Recipe timeRequired="10" power="40000">
 		<input>
@@ -140,6 +426,336 @@
 		</input>
 		<output>
 			<itemStack>ic2:lapotron_crystal 4 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Lead Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_lead 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 3</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Lead Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:lead_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 3</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Lithium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_piecelithium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 6</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Lithium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:lithium_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 6</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Magnesium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_piecemagnesium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 7</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Magnesium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:magnesium_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 7</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Malachite Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:malachite_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 5</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Mana Infused Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_piecemithril 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 8</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Nether Quartz Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:nether_quartz_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:quartz_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Nickel Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_nickel 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 5</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Nickel Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:nickel_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 5</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Osmium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_pieceosmium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>mekanism:oreblock 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Peridot Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:peridot_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 2</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Platinum Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_pieceplatinum 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 6</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Redstone Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:redstone_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>minecraft:redstone_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Ruby Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:ruby_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 1</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Rutile Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_piecetitanium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>libvulpes:ore0 1 8</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Sapphire Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:sapphire_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 6</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Silver Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_silver 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 2</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Silver Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:silver_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 2</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Starmetal Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_pieceastralstarmetal 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>astralsorcery:blockcustomore 1 1</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Tanzanite Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:tanzanite_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 4</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Thorium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_piecethorium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 3</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Thorium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:thorium_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>nuclearcraft:ore 1 3</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Tin Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>exnihilocreatio:item_ore_tin 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 1</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Tin Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:tin_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>thermalfoundation:ore 1 1</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Topaz Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:topaz_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>biomesoplenty:gem_ore 1 3</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Tungsten Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>contenttweaker:item_ore_tungsten 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>endreborn:block_wolframium_ore 1 0</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Uranium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>jaopca:item_pieceuranium 3</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>immersiveengineering:ore 1 5</itemStack>
+		</output>
+	</Recipe>
+	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
+	<!-- [Uranium Ore] -->
+	<Recipe timeRequired="10" power="40000">
+		<input>
+			<itemStack>mysticalagriculture:uranium_essence 1</itemStack>
+			<fluidStack>ic2construction_foam 4000</fluidStack>
+		</input>
+		<output>
+			<itemStack>immersiveengineering:ore 1 5</itemStack>
 		</output>
 	</Recipe>
 </Recipes>
