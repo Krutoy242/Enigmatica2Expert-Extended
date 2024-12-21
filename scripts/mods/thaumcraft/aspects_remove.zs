@@ -140,6 +140,9 @@ val removeItemAspectList = [
 <aeadditions:storage.component:1>,
 <aeadditions:storage.component:2>,
 <aeadditions:storage.component:3>,
+<ic2:dust>,
+<forestry:ingot_bronze>,
+<mekanism:ingot:2>,
 ] as IItemStack[];
 for item in removeItemAspectList {
   item.removeAspects(all);

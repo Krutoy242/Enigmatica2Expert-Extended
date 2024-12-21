@@ -1614,7 +1614,7 @@ null,null,
 #Aquamarine
 addMetallurgicAspects
 (1.0,1.0,3,
-<astralsorcery:itemcraftingcomponent>,<jaopca:block_blockaquamarine>,<jaopca:item_nuggetaquamarine>,<jaopca:item_dustaquamarine>,
+<astralsorcery:itemcraftingcomponent>,<jaopca:item_nuggetaquamarine>,<jaopca:block_blockaquamarine>,<jaopca:item_dustaquamarine>,
 null,null,null,null,null,
 <jaopca:item_clusteraquamarine>,<jaopca:item_crystalshardaquamarine>,<jaopca:item_crystalabyssaquamarine>,<jaopca:item_rockychunkaquamarine>,
 <jaopca:item_chunkaquamarine>,<jaopca:item_dustalchaquamarine>,<jaopca:item_dirtygemaquamarine>,

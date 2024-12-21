@@ -452,12 +452,25 @@
       ]
     },
     {
+      "key": "MITHMINITE_TINKERER",
+      "name": "research_name.thaumadditions:mithminite_tinkerer",
+      "icons": ["thaumadditions:textures/enchantments/smite.png"],
+      "category": "ELDRITCH",
+      "location": [3, 9],
+      "parents": ["MITHMINITE"],
+      "stages": [
+        {
+          "text": "research_stage.thaumadditions:mithminite_tinkerer.1"
+        }
+      ]
+    },
+    {
       "key": "GOD_WRAITH",
       "name": "research_name.god_wraith",
       "icons": ["thaumcraft:textures/god_wraith.png"],
       "category": "ELDRITCH",
-      "location": [1, 10],
-      "parents": ["MITHMINITE"],
+      "location": [4, 7],
+      "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
           "text": "research_stage.god_wraith.1",
@@ -490,8 +503,8 @@
       "name": "research_name.flux_strike",
       "icons": ["thaumcraft:textures/flux_strike.png"],
       "category": "ELDRITCH",
-      "location": [2, 10],
-      "parents": ["MITHMINITE"],
+      "location": [5, 7],
+      "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
           "text": "research_stage.flux_strike.1",
@@ -521,8 +534,8 @@
       "name": "research_name.pure_smite",
       "icons": ["thaumcraft:textures/pure_smite.png"],
       "category": "ELDRITCH",
-      "location": [3, 10],
-      "parents": ["MITHMINITE"],
+      "location": [6, 8],
+      "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
           "text": "research_stage.pure_smite.1",
@@ -547,8 +560,8 @@
       "name": "research_name.loot_stealer",
       "icons": ["thaumcraft:textures/loot_stealer.png"],
       "category": "ELDRITCH",
-      "location": [4, 10],
-      "parents": ["MITHMINITE"],
+      "location": [6, 10],
+      "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
           "text": "research_stage.loot_stealer.1",
@@ -573,8 +586,8 @@
       "name": "research_name.ore_purifier",
       "icons": ["thaumcraft:textures/ore_purifier.png"],
       "category": "ELDRITCH",
-      "location": [5, 10],
-      "parents": ["MITHMINITE"],
+      "location": [5, 11],
+      "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
           "text": "research_stage.ore_purifier.1",
@@ -599,8 +612,8 @@
       "name": "research_name.first_stand",
       "icons": ["thaumcraft:textures/first_stand.png"],
       "category": "ELDRITCH",
-      "location": [6, 10],
-      "parents": ["MITHMINITE"],
+      "location": [4, 11],
+      "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
           "text": "research_stage.first_stand.1",

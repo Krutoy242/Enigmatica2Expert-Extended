@@ -762,4 +762,33 @@
   "value":["thaumcraft:arcane_terminal"]}
 ]}
 
+,{"key":"GOLEMCLIMBER","ops":[
+  {"op":"remove",
+  "path":"stages/0/required_research"}
+]}
+
+,{"key":"TT_KAMIHELM","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:TT_kami_helm"]}
+]}
+
+,{"key":"TT_KAMICHEST","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:TT_kami_chest"]}
+]}
+
+,{"key":"TT_KAMILEGS","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:TT_kami_legs"]}
+]}
+
+,{"key":"TT_KAMIBOOTS","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:TT_kami_boots"]}
+]}
+
 ]
