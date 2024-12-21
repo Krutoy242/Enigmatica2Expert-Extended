@@ -127,7 +127,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_CAT_AMULET', // Research
   <thaumictinkerer:cat_amulet>, // Output
   1, // Instability
-  [<aspect:bestia> * 50, <aspect:sonus> * 25, <aspect:imperium> * 50],
+  [<aspect:bestia> * 50, Aspect.sonus * 25, <aspect:imperium> * 50],
   <thaumcraft:baubles>, // CentralItem
   [<thaumictinkerer:kamiresource:2>, <actuallyadditions:item_hairy_ball>, <ore:listAllfishraw>, <actuallyadditions:item_hairy_ball>]
 );
