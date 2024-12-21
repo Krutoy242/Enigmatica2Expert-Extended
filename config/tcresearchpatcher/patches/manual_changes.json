@@ -762,6 +762,11 @@
   "value":["thaumcraft:arcane_terminal"]}
 ]}
 
+,{"key":"GOLEMCLIMBER","ops":[
+  {"op":"remove",
+  "path":"stages/0/required_research"}
+]}
+
 ,{"key":"TT_KAMIHELM","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",
