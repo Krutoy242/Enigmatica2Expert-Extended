@@ -31,23 +31,20 @@ recipes.addShaped('ntp antitritium coil', itemUtils.getItem('nuclearcraft:turbin
     [<ore:ingotHSLASteel>, <nuclearcraft:turbine_dynamo_coil_baseconverter>, <ore:ingotHSLASteel>],
     [attankre, attankre, attankre]]);
 
-function addConverterRecipe(info as ConverterInfo) {
-  val oring as string[] = ['ingot', 'dust', 'gem', 'stone'];
-  var material as IIngredient;
+function addConverterRecipe(info as ConverterInfo) as void {
+  var material = null as IIngredient;
 
-  if (oreDict has ('ingot' ~ info.name)) {
-    material = oreDict.get('ingot' ~ info.name);
+  for prefix in ['ingot', 'dust', 'gem', 'stone'] as string[] {
+    val ore = oreDict[prefix ~ info.name];
+    if (!isNull(ore.firstItem)) {
+      material = ore;
+      break;
+    }
   }
-  else {
-    if (oreDict has ('dust' ~ info.name)) {
-      material = oreDict.get('dust' ~ info.name);
-    }
-    else {
-      if (oreDict has ('gem' ~ info.name)) {
-        material = oreDict.get('gem' ~ info.name);
-      }
-      else { material = oreDict.get('stone' ~ info.name); }
-    }
+
+  if (isNull(material)) {
+    logger.logWarning('[NTP][Converter Recipes]: cannot find ingredient for "' ~ info.name ~ '".');
+    return;
   }
 
   recipes.addShaped('ntp ' ~ info.name ~ ' coil', itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_' ~ (info.name).toLowerCase() ~ 'converter') * 2,

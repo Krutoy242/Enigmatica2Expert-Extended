@@ -23,10 +23,10 @@
 		uid: "3ad02639",
 		type: "item",
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "fusewood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 16
 	}]

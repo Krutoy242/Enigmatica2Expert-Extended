@@ -1,4 +1,4 @@
-#modloaded advancedrocketry
+#modloaded mekanism immersiveengineering advancedrocketry
 #priority 52
 
 import crafttweaker.data.IData;

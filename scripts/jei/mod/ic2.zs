@@ -1,4 +1,4 @@
-#modloaded ic2
+#modloaded ic2 requious
 #priority 950
 
 import crafttweaker.item.IItemStack;

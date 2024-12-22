@@ -1,79 +1,85 @@
-#modloaded thaumicwonders
+#modloaded thaumicwonders randomtweaker
 #priority 950
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import mods.randomtweaker.jei.IJeiUtils;
-import mods.requious.SlotVisual;
 
-// -----------------------------------------------------------------------
-// -----------------------------------------------------------------------
-// <assembly:transmuters_stone>
+function registerStoneCategory(ID as string, catalysts as IItemStack[]) as void {
+  val SLOT_SIZE = 18;
+  val ARROW_WIDTH = SLOT_SIZE + 4;
+  val p =mods.jei.JEI.createJei(ID, game.localize(`e2ee.jei.${ID}.title`))
+    .setBackground(IJeiUtils.createBackground(2 * SLOT_SIZE + ARROW_WIDTH, SLOT_SIZE))
+    .setIcon(catalysts[0])
+    .setModid('thaumicwonders')
+    .addSlot(IJeiUtils.createItemSlot('input', 0, 0, true, false))
+    .addElement(IJeiUtils.createArrowElement(SLOT_SIZE, 1, 0))
+    .addSlot(IJeiUtils.createItemSlot('output', SLOT_SIZE + ARROW_WIDTH, 0, false, false));
 
-var
-// -----------------------------------------------------------------------
-  x = <assembly:alchemists_stone>;
-x.addJEICatalyst(<thaumicwonders:alchemist_stone>);
-x.addJEICatalyst(<thaumicwonders:catalyzation_chamber>);
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[2, 0]]);
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
+  for cat in catalysts {
+    p.addRecipeCatalyst(cat);
+  }
 
-function addAlchemists(input as IIngredient, output as IItemStack) as void {
-  scripts.jei.requious.add(<assembly:alchemists_stone>, { [input] as IIngredient[]: [output] });
-}
-// -----------------------------------------------------------------------
-x = <assembly:alienists_stone>;
-x.addJEICatalyst(<thaumicwonders:alienist_stone>);
-x.addJEICatalyst(<thaumicwonders:catalyzation_chamber>);
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[2, 0]]);
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-
-function addAlienists(input as IIngredient, output as IItemStack) as void {
-  scripts.jei.requious.add(<assembly:alienists_stone>, { [input] as IIngredient[]: [output] });
-}
-// -----------------------------------------------------------------------
-x = <assembly:transmuters_stone>;
-x.addJEICatalyst(<thaumicwonders:transmuter_stone>);
-x.addJEICatalyst(<thaumicwonders:catalyzation_chamber>);
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[2, 0]]);
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-
-function addTransmuters(input as IIngredient, output as IItemStack) as void {
-  scripts.jei.requious.add(<assembly:transmuters_stone>, { [input] as IIngredient[]: [output] });
+  p.register();
 }
 
-// Available prefixes
-// "ore", "nugget", "block", "ingot", "gem", "dust"
-
-for i, pair in [
-  ['oreIron'           , 'oreGold'],
-  ['oreTin'            , 'oreCopper'],
-  ['oreLead'           , 'oreSilver'],
-  ['oreCobalt'         , 'oreArdite'],
-  ['oreAstralStarmetal', 'oreDraconium'],
-  ['orePlatinum'       , 'oreIridium'],
-  ['oreAluminum'       , 'oreTitanium'],
-  ['oreUranium'        , 'oreThorium'],
-  ['oreXorcyte'        , 'oreAquamarine'],
-  ['oreDiamond'        , 'oreSapphire'],
-  ['oreEmerald'        , 'orePeridot'],
-  ['oreRedstone'       , 'oreRuby'],
-  ['oreCertusQuartz'   , 'oreChargedCertusQuartz'],
-  ['oreDilithium'      , 'oreDimensionalShard'],
-  ['gemCoal'           , 'bitumen'],
-  ['oreCoal'           , 'oreClathrateOilShale'],
-] as string[][] {
-  val one = oreDict[pair[0]].firstItem;
-  val two = oreDict[pair[1]].firstItem;
-
-  if (isNull(one) || isNull(two)) continue;
-  addTransmuters(one, two);
-  addTransmuters(two, one);
+// -----------------------------------------------------------------------
+registerStoneCategory('alchemists_stone', [<thaumicwonders:alchemist_stone>, <thaumicwonders:catalyzation_chamber>]);
+function addAlchemists(input as IIngredient, output as IIngredient) as void {
+  mods.jei.JEI.createJeiRecipe('alchemists_stone')
+    .addInput(input)
+    .addOutput(output)
+    .build();
 }
+// -----------------------------------------------------------------------
+registerStoneCategory('alienist_stone', [<thaumicwonders:alienist_stone>, <thaumicwonders:catalyzation_chamber>]);
+function addAlienists(input as IIngredient, output as IIngredient) as void {
+  mods.jei.JEI.createJeiRecipe('alienist_stone')
+    .addInput(input)
+    .addOutput(output)
+    .build();
+}
+// -----------------------------------------------------------------------
+registerStoneCategory('transmuter_stone', [<thaumicwonders:transmuter_stone>, <thaumicwonders:catalyzation_chamber>]);
+function addTransmuters(input as IIngredient, output as IIngredient) as void {
+  mods.jei.JEI.createJeiRecipe('transmuter_stone')
+    .addInput(input)
+    .addOutput(output)
+    .build();
+}
+
+val refiningResults = scripts.mods.thaumicwonders.transmuterStone.refiningResults;
+for i in 0 .. refiningResults.length / 2 {
+  val aOreID = refiningResults[i * 2];
+  val bOreID = refiningResults[i * 2 + 1];
+
+  var a as IIngredient = null;
+  var b as IIngredient = null;
+
+  // Plain ore
+  if (!isNull(oreDict[aOreID].firstItem) && !isNull(oreDict[bOreID].firstItem)) {
+    a = oreDict[aOreID].firstItem;
+    b = oreDict[bOreID].firstItem;
+  }
+
+  // All other variants
+  for orePrefix in scripts.mods.thaumicwonders.transmuterStone.orePrefixes {
+    val aOreEntry = oreDict[orePrefix + aOreID];
+    val bOreEntry = oreDict[orePrefix + bOreID];
+    if (isNull(aOreEntry.firstItem) || isNull(bOreEntry.firstItem)) continue;
+    a = isNull(a) ? aOreEntry.firstItem as IIngredient : a | aOreEntry.firstItem;
+    b = isNull(b) ? bOreEntry.firstItem as IIngredient : b | bOreEntry.firstItem;
+  }
+
+  if (isNull(a) || isNull(b)) continue;
+  addTransmuters(a, b);
+  addTransmuters(b, a);
+}
+
 // -----------------------------------------------------------------------
 
 // Usage example: https://github.com/Project-AT/ThirdRebirth/blob/3332053abc6df98938b5b92630bcef87a14e1091/.minecraft/scripts/CraftTweaker/Mods/JEI/magneticAttractionJei.zs
-val p = mods.jei.JEI.createJei('void_beacon', "Void Beacon")
+val p = mods.jei.JEI.createJei('void_beacon', 'Void Beacon')
 .setBackground(IJeiUtils.createBackground(9*18, 5*18))
 .addRecipeCatalyst(<thaumicwonders:void_beacon>)
 .setIcon(<thaumicwonders:void_beacon>)
@@ -88,7 +94,7 @@ for y in 0 .. 5 {
 p.register();
 
 function addVoidBeaconRecipe(outputs as IIngredient[]) as void {
-  mods.jei.JEI.createJeiRecipe("void_beacon").setOutputs(outputs).build();
+  mods.jei.JEI.createJeiRecipe('void_beacon').setOutputs(outputs).build();
 }
 
 // Recipes from: https://github.com/daedalus4096/ThaumicWonders/blob/251829dee76d72368d0ed0af1f2104121b781e63/src/main/java/com/verdantartifice/thaumicwonders/common/init/InitVoidBeacon.java

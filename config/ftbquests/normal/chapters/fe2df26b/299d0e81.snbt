@@ -11,10 +11,10 @@
 		uid: "55db32bc",
 		type: "item",
 		items: [{
-			id: "appliedenergistics2:wireless_crafting_terminal",
-			tag: {}
+			tag: {},
+			id: "appliedenergistics2:wireless_crafting_terminal"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -22,10 +22,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -31,7 +31,7 @@ recipes.addShapedMirrored('enigmatica_modifier_resistance',
   <environmentaltech:modifier_resistance>,
   [[<ore:blockPladium>, <thaumcraft:charm_undying>, <ore:blockPladium>],
     [<environmentaltech:mica>, <environmentaltech:modifier_null>, <environmentaltech:mica>],
-    [<minecraft:potion>.withTag({ Potion: 'cofhcore:resistance' }), <ore:crystalLonsdaleite>, <minecraft:potion>.withTag({ Potion: 'cofhcore:resistance' })]]);
+    [<ore:blockPladium>, <ore:crystalLonsdaleite>, <ore:blockPladium>]]);
 
 val cell4 = <environmentaltech:solar_cell_pladium>;
 val cell5 = <environmentaltech:solar_cell_ionite>;
@@ -194,9 +194,14 @@ static evt as IIngredient[][string] = {
 
 // Fixing weird but where [Tungsten Ore Chunk] mined by Ore Miner on servers only
 recipes.addShapeless(
-  'ore chunk fix',
+  'ore chunk fix 1',
   <endreborn:block_wolframium_ore>, [
     <contenttweaker:item_ore_tungsten:1>
+]);
+recipes.addShapeless(
+  'ore chunk fix 2',
+  <endreborn:block_wolframium_ore>, [
+    <jaopca:item_hunktungsten>
 ]);
 
 // "Core" material

@@ -12,17 +12,17 @@
 	},
 	{
 		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 6,
 			tag: {
 				type: "common"
-			}
+			},
+			Count: 6,
+			id: "ftbquests:lootcrate"
 		},
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		count: 6
 	}]

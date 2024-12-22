@@ -13,7 +13,6 @@
 		uid: "063a231a",
 		type: "item",
 		items: [{
-			id: "thaumcraft:elemental_pick",
 			tag: {
 				infench: [{
 					id: 4s,
@@ -23,9 +22,10 @@
 					id: 3s,
 					lvl: 2s
 				}]
-			}
+			},
+			id: "thaumcraft:elemental_pick"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

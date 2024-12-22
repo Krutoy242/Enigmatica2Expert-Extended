@@ -8,15 +8,20 @@
 #priority 4000
 #reloadable
 
+import crafttweaker.block.IBlockState;
 import crafttweaker.command.ICommandSender;
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.recipes.IRecipeFunction;
-import crafttweaker.world.IWorld;
-import mods.zenutils.StaticString;
 import crafttweaker.util.Math;
+import crafttweaker.world.IWorld;
+import crafttweaker.world.IBlockPos;
+import mods.zenutils.StaticString;
+import native.net.minecraft.util.SoundCategory;
+import native.net.minecraft.util.SoundEvent;
+import native.net.minecraft.util.EnumParticleTypes;
 
 zenClass Utils {
   var DEBUG as bool = false;
@@ -367,62 +372,40 @@ zenClass Utils {
     return sorted;
   }
 
-  // Spawn particles
-  // Overloaded with world instead of CommandSender
-  function spawnParticles(
-    world as IWorld,
-    type as string,
-    x as float, y as float, z as float,
-    dx as float, dy as float, dz as float,
-    vel as float, amount as int
-  ) as void {
-    val sender as ICommandSender = <minecraft:dirt>.createEntityItem(world, x, y, z);
-    return spawnParticles(sender, type, x, y, z, dx, dy, dz, vel, amount);
-  }
-
-  function spawnParticles(
-    sender as ICommandSender,
-    type as string,
-    x as float, y as float, z as float,
-    dx as float, dy as float, dz as float,
-    vel as float, amount as int
-  ) as void {
-    executeCommandSilent(sender, '/particle ' ~ type ~ ' ' ~ x ~ ' ' ~ y ~ ' ' ~ z ~ ' ' ~ dx ~ ' ' ~ dy ~ ' ' ~ dz ~ ' ' ~ vel ~ ' ' ~ amount);
-  }
-
   val executeCommandSilent as function(ICommandSender,string)void
     = function (sender as ICommandSender, command as string) as void {};
 
   val geyser as function(IWorld,IItemStack,float,float,float,int,double,double,double,int)void
-    = function (
-      world as IWorld, // World where everything happen
-      output as IItemStack, // Item that would be spawned
-      x as float, y as float, z as float, // Position where new items spawned
-      desiredAmount as int, // Number of new items spawned
-      mx as double, my as double, mz as double, // Motion of spawned items
-      delay as int // Delay between spawning
-    ) as void {
-    val rnd = world.getRandom();
-      val f = desiredAmount as float / 8.0f;
-      var total = 0;
-      var i = 0;
-      val pos = crafttweaker.util.Position3f.create(x, y, z);
-      while (total < desiredAmount) {
-      val count = max(1, (f * (i + 1) + 0.5f) as int - total);
-        total += count;
+  = function (
+    world as IWorld, // World where everything happen
+    output as IItemStack, // Item that would be spawned
+    x as float, y as float, z as float, // Position where new items spawned
+    desiredAmount as int, // Number of new items spawned
+    mx as double, my as double, mz as double, // Motion of spawned items
+    delay as int // Delay between spawning
+  ) as void {
+  val rnd = world.getRandom();
+    val f = desiredAmount as float / 8.0f;
+    var total = 0;
+    var i = 0;
+    val pos = crafttweaker.util.Position3f.create(x, y, z);
+    while (total < desiredAmount) {
+    val count = max(1, (f * (i + 1) + 0.5f) as int - total);
+      total += count;
 
-        val itemEntity = (output * count).createEntityItem(world, x, y, z);
-        itemEntity.motionY = my + 0.4;
-        itemEntity.motionX = mx + rnd.nextDouble(-0.1, 0.1);
-        itemEntity.motionZ = mz + rnd.nextDouble(-0.1, 0.1);
-        world.spawnEntity(itemEntity);
+      val itemEntity = (output * count).createEntityItem(world, x, y, z);
+      itemEntity.motionY = my + 0.4;
+      itemEntity.motionX = mx + rnd.nextDouble(-0.1, 0.1);
+      itemEntity.motionZ = mz + rnd.nextDouble(-0.1, 0.1);
+      world.spawnEntity(itemEntity);
 
-        // world.playSound("thaumcraft:poof", "ambient", pos, 0.5f, 1.5f);
-        executeCommandSilent(itemEntity, '/particle fireworksSpark ' ~ x as float ~ ' ' ~ y as float ~ ' ' ~ z as float ~ ' 0 0.1 0 0.1 5');
+      (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+        EnumParticleTypes.FIREWORKS_SPARK,
+        x as double, y as double, z as double, 5, 0.0, 0.1, 0.0, 0.1, 0);
 
-        i += 1;
-      }
-    };
+      i += 1;
+    }
+  };
 
   // Get Shimmer enchant + Random Things colored shining
   var shimmerTag as IData = <enchantment:minecraft:protection>.makeEnchantment(1).makeTag();
@@ -451,10 +434,32 @@ zenClass Utils {
     entityliving.rotationYawHead = yaw;
     entityliving.renderYawOffset = yaw;
     entityliving.onInitialSpawn(worldIn.native.getDifficultyForLocation(
-      crafttweaker.world.IBlockPos.create(entityliving.x, entityliving.y, entityliving.z).native
+      crafttweaker.world.IBlockPos.create(x, y, z).native
     ), null);
     worldIn.native.spawnEntity(entity);
     entityliving.playLivingSound();
+  }
+
+  // Convert item to block.
+  // Handle special cases when `asBlock` not propertly working
+  function getStateFromItem(item as IItemStack) as IBlockState {
+    if (isNull(item)) return null;
+    val block = item.asBlock();
+    if (isNull(block)) return null;
+    val def = block.definition;
+    val state = def.getStateFromMeta(block.meta);
+    return state;
+  }
+
+  function abs(n as double) as double { return n < 0 ? -n : n; }
+
+  // Server-side sound playing
+  function playSound(world as IWorld, sound as string, pos as IBlockPos, volume as float = 1.0f, pitch as float = 1.0f) as void {
+    val split = sound.split(':');
+    val soundRes = SoundEvent.REGISTRY.getObject(
+      native.net.minecraft.util.ResourceLocation(split[0], sound.substring(split[0].length + 1))
+    ) as SoundEvent;
+    world.native.playSound(null, pos, soundRes, SoundCategory.AMBIENT, volume, pitch);
   }
 }
 global utils as Utils = Utils();

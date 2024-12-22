@@ -5,10 +5,10 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	}]
 }

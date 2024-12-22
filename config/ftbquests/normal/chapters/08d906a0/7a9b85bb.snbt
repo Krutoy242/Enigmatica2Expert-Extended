@@ -4,7 +4,7 @@
 	dependencies: [
 		"46d77fa0"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "799cba71",
 		type: "item",
@@ -16,11 +16,11 @@
 		uid: "b0d4253e",
 		type: "item",
 		item: {
-			id: "storagedrawers:basicdrawers",
-			Damage: 1s,
 			tag: {
 				material: "oak"
-			}
+			},
+			Damage: 1s,
+			id: "storagedrawers:basicdrawers"
 		}
 	},
 	{

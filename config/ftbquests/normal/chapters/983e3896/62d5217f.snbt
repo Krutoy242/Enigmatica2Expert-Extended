@@ -13,16 +13,16 @@
 		uid: "b650d8ba",
 		type: "item",
 		items: [{
-			id: "astralsorcery:itemcelestialcrystal",
 			tag: {
 				astralsorcery: {
 					crystalProperties: {
-						collectiveCapability: 100,
 						size: 900,
-						purity: 100
+						purity: 100,
+						collectiveCapability: 100
 					}
 				}
-			}
+			},
+			id: "astralsorcery:itemcelestialcrystal"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -31,10 +31,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

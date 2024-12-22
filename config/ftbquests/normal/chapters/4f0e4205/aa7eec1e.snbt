@@ -1,27 +1,27 @@
 {
 	icon: {
-		id: "ftbquests:lootcrate",
 		tag: {
 			type: "common"
-		}
+		},
+		id: "ftbquests:lootcrate"
 	},
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 10.350000000000001d,
 	y: 0.3d,
 	shape: "square",
 	text: [
 		"{q.twilight_forest.experiment_115.desc}"
 	],
-	can_repeat: true,
+	can_repeat: 1b,
 	dependencies: [
 		"ea1707c5"
 	],
 	size: 0.5d,
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "a08d8ad9",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "twilightforest:moon_dial"
 		},
@@ -34,10 +34,10 @@
 		type: "item",
 		auto: "no_toast",
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		count: 2,
 		random_bonus: 1

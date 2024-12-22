@@ -1,43 +1,43 @@
 {
 	title: "{q.immersive_engineer.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 130,
+			TrophyColorBlue: 35,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 48,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
+				Count: 1b,
+				id: "immersiveengineering:railgun",
 				ForgeCaps: {
 					Parent: {
 						Size: 3,
 						Items: []
 					}
 				},
-				Count: 1b,
-				id: "immersiveengineering:railgun",
 				tag: {
 					"IE:Shader": {
+						Damage: 0s,
 						Count: 1b,
 						id: "immersiveengineering:shader",
 						tag: {
 							shader_name: "The Kindled"
-						},
-						Damage: 0s
+						}
 					}
-				},
-				Damage: 0s
+				}
 			},
-			TrophyColorBlue: 35,
-			TrophyColorRed: 130,
 			TrophyName: "§cImmersive Engineering Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
-	x: 6.3d,
-	y: 3.15d,
+	x: 5.1d,
+	y: 0.0d,
 	text: [
 		"{q.immersive_engineer.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"f39d66de",
 		"4866ce25",
@@ -86,39 +86,39 @@
 	rewards: [{
 		uid: "8eed96d7",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 130,
+				TrophyColorBlue: 35,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 48,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
+					Count: 1b,
+					id: "immersiveengineering:railgun",
 					ForgeCaps: {
 						Parent: {
 							Size: 3,
 							Items: []
 						}
 					},
-					Count: 1b,
-					id: "immersiveengineering:railgun",
 					tag: {
 						"IE:Shader": {
+							Damage: 0s,
 							Count: 1b,
 							id: "immersiveengineering:shader",
 							tag: {
 								shader_name: "The Kindled"
-							},
-							Damage: 0s
+							}
 						}
-					},
-					Damage: 0s
+					}
 				},
-				TrophyColorBlue: 35,
-				TrophyColorRed: 130,
 				TrophyName: "§cImmersive Engineering Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

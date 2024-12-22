@@ -409,6 +409,18 @@ craft.remake(<botania:hourglass>, ['pretty',
   '♥': <ore:torchRedstoneActive>, // Redstone Torch
 });
 
+// [Black Hole Talisman] from [/dev/null][+3]
+recipes.removeByRecipeName("botania:blackholetalisman_0");
+craft.make(<botania:blackholetalisman>, ['pretty',
+  'M L M',
+  '  /  ',
+  'M E M'], {
+  'M': <ore:petalMagenta>,                // Mystical Magenta Petal
+  'L': <randomthings:ingredient:5>,       // Luminous Powder
+  '/': <openblocks:dev_null>, // /dev/null
+  'E': <ore:bEnderAirBottle>,             // Ender Air Bottle
+});
+
 // Alt recipe for magic-only space exploration
 // [Dilithium Crystal] from [Dilithium Dust]
 mods.botania.ManaInfusion.addInfusion(<libvulpes:productgem>, <ore:dustDilithium>, 10000);

@@ -4,39 +4,39 @@
 	dependencies: [
 		"7649653d"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "91c80761",
 		type: "item",
 		items: [{
-			id: "forge:bucketfilled",
 			tag: {
-				FluidName: "stone",
-				Amount: 1000
-			}
+				Amount: 1000,
+				FluidName: "stone"
+			},
+			id: "forge:bucketfilled"
 		},
 		{
-			id: "ic2:fluid_cell",
 			tag: {
 				Fluid: {
-					FluidName: "stone",
-					Amount: 1000
+					Amount: 1000,
+					FluidName: "stone"
 				}
-			}
+			},
+			id: "ic2:fluid_cell"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 2b
 	}],
 	rewards: [{
 		uid: "57f22c63",
 		type: "item",
 		item: {
-			id: "tconstruct:seared_tank",
-			Damage: 1s,
 			tag: {
-				FluidName: "stone",
-				Amount: 4000
-			}
+				Amount: 4000,
+				FluidName: "stone"
+			},
+			Damage: 1s,
+			id: "tconstruct:seared_tank"
 		},
 		count: 3
 	}]

@@ -1,12 +1,12 @@
 {
 	icon: {
-		id: "thermalexpansion:dynamo",
 		tag: {
-			RSControl: 0b,
-			Facing: 1b,
 			Energy: 0,
+			Facing: 1b,
+			RSControl: 0b,
 			Level: 0b
-		}
+		},
+		id: "thermalexpansion:dynamo"
 	},
 	x: 4.8d,
 	y: 7.1d,
@@ -20,13 +20,13 @@
 		uid: "e37c0ac1",
 		type: "item",
 		items: [{
-			id: "thermalexpansion:dynamo",
 			tag: {
+				Energy: 0,
 				Facing: 1b,
 				RSControl: 0b,
-				Energy: 0,
 				Level: 0b
-			}
+			},
+			id: "thermalexpansion:dynamo"
 		}],
 		ignore_nbt: 1b
 	}],

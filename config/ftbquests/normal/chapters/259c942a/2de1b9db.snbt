@@ -20,11 +20,11 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 4,
 			tag: {
 				type: "uncommon"
-			}
+			},
+			Count: 4,
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

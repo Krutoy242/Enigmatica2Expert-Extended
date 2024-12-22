@@ -1,8 +1,8 @@
 {
 	icon: {
-		id: "mekanism:machineblock",
+		tag: {},
 		Damage: 11s,
-		tag: {}
+		id: "mekanism:machineblock"
 	},
 	x: 2.8d,
 	y: 10.5d,
@@ -16,14 +16,14 @@
 		uid: "90c773cd",
 		type: "item",
 		items: [{
-			id: "mekanism:machineblock",
-			Damage: 11s,
 			tag: {
 				mekData: {}
-			}
+			},
+			Damage: 11s,
+			id: "mekanism:machineblock"
 		}],
 		count: 2L,
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
@@ -39,10 +39,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

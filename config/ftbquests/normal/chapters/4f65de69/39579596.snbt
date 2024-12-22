@@ -1,60 +1,60 @@
 {
 	title: "{q.getting_started.technical_quest_.name}",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 7.68d,
 	y: 3.5d,
 	text: [
 		"{q.getting_started.technical_quest_.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"ca359f03"
 	],
 	size: 0.1d,
-	optional: true,
-	or_tasks: true,
+	optional: 1b,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "c9da9bf7",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any oreCobalt"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "oreCobalt"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any oreCobalt"
+				}
+			},
+			id: "itemfilters:filter"
 		}]
 	},
 	{
 		uid: "3c2adf16",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any oreArdite"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "oreArdite"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any oreArdite"
+				}
+			},
+			id: "itemfilters:filter"
 		}]
 	},
 	{
 		uid: "e7e7a9b0",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "tconstruct:ingots"
 		}]
@@ -62,7 +62,7 @@
 	{
 		uid: "efebc235",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "tconstruct:ingots 1 1"
 		}]

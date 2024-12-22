@@ -12,16 +12,25 @@
 		uid: "f060b378",
 		type: "item",
 		items: [{
-			id: "botania:dice",
 			tag: {
 				soulbindUUID: "e5356349-070f-4c91-935a-2c8bf2374a08"
-			}
+			},
+			id: "botania:dice"
 		}],
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "b063b091",
-		type: "loot",
-		table: 2
+		uid: "581b6c49",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
 	}]
 }

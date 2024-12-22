@@ -2,26 +2,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:excavator_head",
 			tag: {
 				Material: "ghostwood"
-			}
+			},
+			id: "tconstruct:excavator_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:broad_axe_head",
 			tag: {
 				Material: "ghostwood"
-			}
+			},
+			id: "tconstruct:broad_axe_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:large_plate",
 			tag: {
 				Material: "ghostwood"
-			}
+			},
+			id: "tconstruct:large_plate"
 		}
 	}]
 }

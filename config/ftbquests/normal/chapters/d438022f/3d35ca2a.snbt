@@ -11,10 +11,10 @@
 		uid: "6458c4d9",
 		type: "item",
 		items: [{
-			id: "randomthings:timeinabottle",
 			tag: {
 				timeData: {}
-			}
+			},
+			id: "randomthings:timeinabottle"
 		}],
 		ignore_nbt: 1b
 	}],

@@ -2,7 +2,7 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 
 #ignoreBracketErrors
-#priority 100
+#priority 2000
 #reloadable
 
 // Used for $orderly
@@ -17,7 +17,10 @@ static logPlank as IItemStack[IItemStack] = {
   <minecraft:log:3>  : <minecraft:planks:3>,
   <minecraft:log2>   : <minecraft:planks:4>,
   <minecraft:log2:1> : <minecraft:planks:5>,
+} as IItemStack[IItemStack]$orderly;
 
+// Modded
+static logPlankModded as IItemStack[IItemStack] = {
 // Twilight Forest
   <twilightforest:twilight_log>   : <twilightforest:twilight_oak_planks>,
   <twilightforest:twilight_log:1> : <twilightforest:canopy_planks>,
@@ -45,7 +48,33 @@ static logPlank as IItemStack[IItemStack] = {
   <biomesoplenty:log_3:7> : <biomesoplenty:planks_0:15>,
   <biomesoplenty:log_1:7> : <biomesoplenty:planks_0:7>,
 
-// Forestry, made by Trilexcom
+// pam
+  <harvestcraft:pamcinnamon>  : <minecraft:planks:3>,
+  <harvestcraft:pammaple>     : <minecraft:planks:1>,
+  <harvestcraft:pampaperbark> : <minecraft:planks:3>,
+
+// Other Mods
+  <rustic:log>                   : <rustic:planks>,
+  <rustic:log:1>                 : <rustic:planks:1>,
+  <thaumcraft:log_greatwood>     : <thaumcraft:plank_greatwood>,
+  <thaumcraft:log_silverwood>    : <thaumcraft:plank_silverwood>,
+  <integrateddynamics:menril_log>: <integrateddynamics:menril_planks>,
+  <advancedrocketry:alienwood>   : <advancedrocketry:planks>,
+  <extrautils2:ironwood_log>     : <extrautils2:ironwood_planks>,
+  <extrautils2:ironwood_log:1>   : <extrautils2:ironwood_planks:1>,
+  <iceandfire:dreadwood_log>     : <iceandfire:dreadwood_planks>,
+  <randomthings:spectrelog>      : <randomthings:spectreplank>,
+
+// Magical wood special
+  <extrautils2:decorativesolidwood:1>: <extrautils2:decorativesolidwood>,
+  <thaumcraft:taint_log>             : <thaumadditions:taintwood_planks>,
+  <botania:livingwood>               : <botania:livingwood:1>,
+  <botania:dreamwood>                : <botania:dreamwood:1>,
+  <astralsorcery:blockinfusedwood>   : <astralsorcery:blockinfusedwood:1>,
+} as IItemStack[IItemStack]$orderly;
+
+// Forestry flamable
+static logPlankForestry as IItemStack[IItemStack] = {
   <forestry:logs.0>   : <forestry:planks.0>,
   <forestry:logs.0:1> : <forestry:planks.0:1>,
   <forestry:logs.0:2> : <forestry:planks.0:2>,
@@ -75,30 +104,6 @@ static logPlank as IItemStack[IItemStack] = {
   <forestry:logs.7>   : <forestry:planks.1:12>,
   <forestry:logs.2:2> : <forestry:planks.0:10>,
   <forestry:logs.6:3> : <forestry:planks.1:11>,
-
-// pam
-  <harvestcraft:pamcinnamon>  : <minecraft:planks:3>,
-  <harvestcraft:pammaple>     : <minecraft:planks:1>,
-  <harvestcraft:pampaperbark> : <minecraft:planks:3>,
-
-// Other Mods
-  <rustic:log>                   : <rustic:planks>,
-  <rustic:log:1>                 : <rustic:planks:1>,
-  <thaumcraft:log_greatwood>     : <thaumcraft:plank_greatwood>,
-  <thaumcraft:log_silverwood>    : <thaumcraft:plank_silverwood>,
-  <integrateddynamics:menril_log>: <integrateddynamics:menril_planks>,
-  <advancedrocketry:alienwood>   : <advancedrocketry:planks>,
-  <extrautils2:ironwood_log>     : <extrautils2:ironwood_planks>,
-  <extrautils2:ironwood_log:1>   : <extrautils2:ironwood_planks:1>,
-  <iceandfire:dreadwood_log>     : <iceandfire:dreadwood_planks>,
-  <randomthings:spectrelog>      : <randomthings:spectreplank>,
-
-// Magical wood special
-  <extrautils2:decorativesolidwood:1>: <extrautils2:decorativesolidwood>,
-  <thaumcraft:taint_log>             : <thaumadditions:taintwood_planks>,
-  <botania:livingwood>               : <botania:livingwood:1>,
-  <botania:dreamwood>                : <botania:dreamwood:1>,
-  <astralsorcery:blockinfusedwood>   : <astralsorcery:blockinfusedwood:1>,
 } as IItemStack[IItemStack]$orderly;
 
 // Forestry fireproof
@@ -140,10 +145,33 @@ static logPlankFireproof as IItemStack[IItemStack] = {
   <forestry:logs.vanilla.fireproof.1>  : <forestry:planks.vanilla.fireproof.0:4>,
 } as IItemStack[IItemStack]$orderly;
 
-// Copy values to main list
+// Create nonfireproof oredict
+function addToNonfireproof(list as IItemStack[IItemStack]) as void {
+  for log, plank in list {
+    if(isNull(log) || isNull(plank)) continue;
+    <ore:logNonfireproof>.add(log);
+    <ore:plankNonfireproof>.add(plank);
+  }
+}
+
+addToNonfireproof(logPlank); // Vanilla only here
+addToNonfireproof(logPlankForestry);
+
+// Create fireproof oredict
 for log, plank in logPlankFireproof {
   if(isNull(log) || isNull(plank)) continue;
-  logPlank[log] = plank;
   <ore:logFireproof>.add(log);
   <ore:plankFireproof>.add(plank);
 }
+
+// Merge lists to main one
+function merge(list as IItemStack[IItemStack]) as void {
+  for log, plank in list {
+    if(isNull(log) || isNull(plank)) continue;
+    logPlank[log] = plank;
+  }
+}
+
+merge(logPlankModded);
+merge(logPlankForestry);
+merge(logPlankFireproof);

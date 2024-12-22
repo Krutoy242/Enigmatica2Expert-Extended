@@ -8,6 +8,7 @@
 #reloadable
 #modloaded zenutils
 
+import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.data.IData;
 import crafttweaker.util.Position3f;
@@ -24,6 +25,7 @@ import scripts.do.portal_spread.message.notifyPlayers;
 import scripts.do.portal_spread.modifiers.getModifiers;
 import scripts.do.portal_spread.recipes.spread;
 import scripts.do.portal_spread.utils.getNextPoint;
+import native.net.minecraft.util.EnumParticleTypes;
 
 ////////////////////////////////////////////////////
 
@@ -126,6 +128,8 @@ function tickPortalsToWorld(world as IWorld, targetDimIdStr as string, dimData a
         }
       }
     }
+
+    // Reset lookup radius to allow automation closest block near portal
     if (somethingReplaced && !Config.debug) portalIndexes[fullPortalId] = 1;
   }
 }
@@ -154,24 +158,27 @@ function spreadBlock(
   spreadPos as Position3f,
   showParticles as bool,
   spreadStateRecipes as IBlockState[][IBlockState],
-  spreadWhitelist as bool[int],
-  spreadBlacklist as bool[int],
-  spreadWildcards as bool[int]
+  spreadWhitelist as bool[IBlockDefinition],
+  spreadBlacklist as bool[IBlockDefinition],
+  spreadWildcards as bool[IBlockDefinition]
 ) as bool {
   val inworldState = world.getBlockState(spreadPos);
   val inworldDefinition = inworldState.block.definition;
   val numId = inworldDefinition.numericalId;
 
-  if (showParticles) particles(spreadPos.x, spreadPos.y, spreadPos.z);
+  if (showParticles) {
+    (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+      EnumParticleTypes.SPELL_WITCH,
+      spreadPos.x as double, spreadPos.y as double, spreadPos.z as double, 1, 0.0, 0.0, 0.0, 0.0, 0);
+  }
 
-  if (
-    numId == 0 // Air
-    || isNull(spreadWhitelist[numId])
-    || !isNull(spreadBlacklist[numId])
-  ) return false;
+  if (numId == 0) return false; // Air
+
+  if(isNull(spreadWhitelist[inworldDefinition]) || !isNull(spreadBlacklist[inworldDefinition]))
+    return false;
 
   // If block is wildcarded, lookup for its default state
-  val isWildcarded = !isNull(spreadWildcards[numId]);
+  val isWildcarded = !isNull(spreadWildcards[inworldDefinition]);
   val lookupState = isWildcarded ? inworldDefinition.defaultState : inworldState;
 
   // Determine result
@@ -219,11 +226,6 @@ function spreadBlock(
   return blockToNumId != 0;
 }
 
-// Spawn particles
-function particles(x as float, y as float, z as float) as void {
-  server.commandManager.executeCommandSilent(server, '/particle witchMagic ' ~ x ~ ' ' ~ y ~ ' ' ~ z ~ ' 0 0 0 0 1');
-}
-
 // Replace block on position
 function setBlock(world as IWorld, bpos as IBlockPos, state as IBlockState, fancy as bool) as void {
   if (fancy) world.destroyBlock(bpos, false);
@@ -234,9 +236,7 @@ function setBlock(world as IWorld, bpos as IBlockPos, state as IBlockState, fanc
 function isShowParticles(world as IWorld, portalPos as Position3f) as bool {
   val player = world.getClosestPlayer(portalPos.x, portalPos.y, portalPos.z, 60, false);
   if (!isNull(player)) {
-    val item = player.getItemInSlot(
-      crafttweaker.entity.IEntityEquipmentSlot.mainHand()
-    );
+    val item = player.getItemInSlot(mainHand);
     if (
       !isNull(item)
       && item.definition.id == 'minecraft:flint_and_steel'

@@ -7,7 +7,7 @@
 	text: [
 		"{q.gates.conflux_iv.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"4af44027",
 		"23f35414",

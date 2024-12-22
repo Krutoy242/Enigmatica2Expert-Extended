@@ -1,4 +1,4 @@
-#modloaded mekanism
+#modloaded mekanism nuclearcraft
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -727,5 +727,5 @@ craft.remake(<mekanism:machineblock3:6>, ['pretty',
 });
 
 // Fast enriching alt for late game
-mods.bloodmagic.AlchemyTable.addRecipe(<mekanism:enrichedalloy> * 32, [<twilightforest:carminite>, <enderio:item_alloy_ingot:9> * 32], 1000, 10, 1);
-mods.bloodmagic.AlchemyTable.addRecipe(<mekanism:enrichedalloy> * 32, [<twilightforest:carminite>, <minecraft:iron_ingot> * 32], 1000, 10, 1);
+mods.bloodmagic.AlchemyTable.addRecipe(<mekanism:enrichedalloy> * 45, [<twilightforest:carminite>, <enderio:block_alloy:9>, <enderio:block_alloy:9>, <enderio:block_alloy:9>, <enderio:block_alloy:9>, <enderio:block_alloy:9>], 1000, 10, 1);
+mods.bloodmagic.AlchemyTable.addRecipe(<mekanism:enrichedalloy> * 45, [<twilightforest:carminite>, <minecraft:iron_block>, <minecraft:iron_block>, <minecraft:iron_block>, <minecraft:iron_block>, <minecraft:iron_block>], 1000, 10, 1);

@@ -1,7 +1,9 @@
 #loader contenttweaker
-#modloaded ctintegration thaumadditions
+#modloaded ctintegration thaumadditions zenutils
 
 import crafttweaker.block.IBlock;
+import crafttweaker.data.IData;
+import crafttweaker.entity.AttributeModifier;
 import crafttweaker.entity.IEntity;
 import crafttweaker.entity.IEntityLiving;
 import crafttweaker.entity.IEntityLivingBase;
@@ -13,34 +15,27 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.conarm.ArmorTraitBuilder;
 import mods.contenttweaker.conarm.ExtendedMaterialBuilder;
 import mods.contenttweaker.tconstruct.TraitBuilder;
-import mods.contenttweaker.tconstruct.Trait;
-import mods.contenttweaker.tconstruct.TraitDataRepresentation;
-import mods.tconstruct.traits.CanApplyTogetherTrait;
 import mods.ctutils.utils.Math.max;
 import mods.ctutils.utils.Math.min;
-import mods.ctutils.utils.Math.sqrt;
 import mods.ctutils.utils.Math.sin;
-import mods.zenutils.Catenation;
-import crafttweaker.data.IData;
-import mods.zenutils.DataUpdateOperation.OVERWRITE;
-import mods.zenutils.DataUpdateOperation.APPEND;
-import mods.zenutils.DataUpdateOperation.MERGE;
-import mods.zenutils.DataUpdateOperation.REMOVE;
-import mods.zenutils.DataUpdateOperation.BUMP;
-import crafttweaker.entity.AttributeModifier;
+import mods.ctutils.utils.Math.sqrt;
+import native.net.minecraft.util.EnumParticleTypes;
+import native.net.minecraft.world.WorldServer;
 
-function entityEyeHeight(entity as IEntity) as double{
-    return entity.y+entity.eyeHeight;
+function entityEyeHeight(entity as IEntity) as double {
+  return entity.y + entity.eyeHeight;
 }
 
-function playSound(str as string, target as IEntity) as void{
-    val list = target.world.getAllPlayers();
-    for player in list {
-        if(isNull(player)
-        || player.world.dimension!=target.world.dimension
-        || player.getDistanceSqToEntity(target)>50) continue;
-        player.sendPlaySoundPacket(str, "ambient", target.position, 1.0f, 1.0f);
+function playSound(str as string, target as IEntity) as void {
+  val list = target.world.getAllPlayers();
+  for player in list {
+    if (isNull(player)
+      || player.world.dimension != target.world.dimension
+      || player.getDistanceSqToEntity(target) > 50) {
+      continue;
     }
+    player.sendPlaySoundPacket(str, 'ambient', target.position, 1.0f, 1.0f);
+  }
 }
 
 /*
@@ -84,12 +79,12 @@ visVacuum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   if (world.isRemote()) return; // world is remote
   if (!owner instanceof IPlayer) return; // no player
   if (tool.damage == 0) return; // tool max durability
-  for i in -1 to 2{
-    for j in -1 to 2{
+  for i in -1 .. 2 {
+    for j in -1 .. 2 {
       if (tool.damage == 0) return; // tool max durability
       val pos = owner.position3f;
-      pos.x+=16*i;
-      pos.z+=16*j; 
+      pos.x += 16 * i;
+      pos.z += 16 * j;
       if (world.getVis(pos.asBlockPos()) < 1.0f) continue; // no vis in aura
       tool.mutable().damageItem(-1, owner);
       world.drainVis(pos.asBlockPos(), 0.3f); // that value is actually x3
@@ -97,8 +92,6 @@ visVacuum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   }
 };
 visVacuum_Trait.register();
-
-
 
 /*
 _  _ _ ____    ____ _ ___  _  _ ____ _  _    ____ ____ _  _ ____ ____
@@ -147,13 +140,13 @@ equilibrium_Trait.calcDamage = function (trait, tool, attacker, target, original
   return newDamage * ((1 + min(3.0f, attacker.world.getVis(attacker.position) * 0.01f)) as float);
 };
 // Relese vis on kill
-equilibrium_Trait.afterHit = function(trait, tool, attacker, target, damageDealt, wasCritical, wasHit) {
+equilibrium_Trait.afterHit = function (trait, tool, attacker, target, damageDealt, wasCritical, wasHit) {
   if (attacker.world.isRemote()) return; // world is remote
-  if (target.health <= 0 && wasHit){
+  if (target.health <= 0 && wasHit) {
     attacker.world.addVis(attacker.position, (target.maxHealth / 2.0f) as float); // release vis
-    server.commandManager.executeCommandSilent(server, "/particle endRod "~target.x~" "~entityEyeHeight(target)~" "~target.z~" 5 1 5 0 50");
-    playSound("botania:blacklotus", target);
-  } 
+    (attacker.world.native as WorldServer).spawnParticle(EnumParticleTypes.END_ROD, target.x, entityEyeHeight(target), target.z, 50, 5, 1, 5, 0, 0);
+    playSound('botania:blacklotus', target);
+  }
 };
 equilibrium_Trait.register();
 
@@ -201,7 +194,7 @@ mithrillium.addPlatesMaterialStats(12.3, 12.5, 3.0);
 mithrillium.addTrimMaterialStats(5);
 
 mithrillium.itemLocalizer = function (thisMaterial, itemName) {
-  return game.localize('e2ee.tconstruct.material.mithrillium.name') + ' ' + itemName;
+  return `${game.localize('e2ee.tconstruct.material.mithrillium.name')} ${itemName}`;
 };
 mithrillium.localizedName = game.localize('e2ee.tconstruct.material.mithrillium.name');
 
@@ -236,7 +229,7 @@ ____ ____ ____ ___  _ ___  ___  ____ _  _
 // Spin effect on player
 function spin(player as IPlayer) as void {
   player.addPotionEffect(<potion:potioncore:spin>.makePotionEffect(5, 2));
-  player.sendPlaySoundPacket("minecraft:entity.ghast.hurt", "ambient", player.position, 1.0f, 1.0f);
+  player.sendPlaySoundPacket('minecraft:entity.ghast.hurt', 'ambient', player.position, 1.0f, 1.0f);
   player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation('warp.sword.warning'));
 }
 
@@ -244,39 +237,39 @@ function spin(player as IPlayer) as void {
 function breakArmor(target as IEntityLivingBase, warp as int, player as IPlayer) as void {
   var broken = false;
 
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet())
-  && target.world.random.nextInt(1000) > warp) {
-    var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.feet());
+  if (target.hasItemInSlot(feet)
+    && target.world.random.nextInt(1000) > warp) {
+    val item = target.getItemInSlot(feet);
     if (!isNull(item) && item.isDamageable) {
-      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.feet(), null);
+      target.setItemToSlot(feet, null);
       broken = true;
     }
   }
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs())
-  && target.world.random.nextInt(1000) > warp) {
-    var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.legs());
+  if (target.hasItemInSlot(legs)
+    && target.world.random.nextInt(1000) > warp) {
+    val item = target.getItemInSlot(legs);
     if (!isNull(item) && item.isDamageable) {
-      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.legs(), null);
+      target.setItemToSlot(legs, null);
       broken = true;
     }
   }
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest())
-  && target.world.random.nextInt(1000) > warp) {
-    var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.chest());
+  if (target.hasItemInSlot(chest)
+    && target.world.random.nextInt(1000) > warp) {
+    val item = target.getItemInSlot(chest);
     if (!isNull(item) && item.isDamageable) {
-      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.chest(), null);
+      target.setItemToSlot(chest, null);
       broken = true;
     }
   }
-  if (target.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head())
-  && target.world.random.nextInt(1000) > warp) {
-    var item = target.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head());
+  if (target.hasItemInSlot(head)
+    && target.world.random.nextInt(1000) > warp) {
+    val item = target.getItemInSlot(head);
     if (!isNull(item) && item.isDamageable) {
-      target.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.head(), null);
+      target.setItemToSlot(head, null);
       broken = true;
     }
   }
-  if(broken) player.sendPlaySoundPacket('minecraft:entity.item.break', 'ambient', target.position, 1.0f, 1.0f);
+  if (broken) player.sendPlaySoundPacket('minecraft:entity.item.break', 'ambient', target.position, 1.0f, 1.0f);
 }
 
 // Debuff function
@@ -284,9 +277,11 @@ function debuffenemy(target as IEntityLivingBase, warp as int, player as IPlayer
   target.addPotionEffect(<potion:minecraft:glowing>.makePotionEffect(warp, 0));
   target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(warp, min(3, (warp - 50) / 200)));
   breakArmor(target, warp, player);
-  //mods.ctintegration.scalinghealth.DifficultyManager.addDifficulty(player, 0.0001 * sqrt(damage * warp));
-  if (warp >= 100){target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(warp, min(1, (warp - 100) / 500)));
-  if (warp >= 300) target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(warp, min(3, (warp - 300) / 300)));}
+  // mods.ctintegration.scalinghealth.DifficultyManager.addDifficulty(player, 0.0001 * sqrt(damage * warp));
+  if (warp >= 100) {
+    target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(warp, min(1, (warp - 100) / 500)));
+    if (warp >= 300) target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(warp, min(3, (warp - 300) / 300)));
+  }
 }
 
 // Trait
@@ -322,7 +317,7 @@ possessed_Trait.localizedName = game.localize('e2ee.tconstruct.material.possesse
 possessed_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.possessed.description');
 
 function checkIfWeapon(tool as IItemStack) as bool {
-  if ( !isNull(tool.tag)
+  if (!isNull(tool.tag)
     && !isNull(tool.tag.Special)
     && !isNull(tool.tag.Special.Categories)
     && !isNull(tool.tag.Special.Categories.asList())
@@ -334,11 +329,13 @@ function checkIfWeapon(tool as IItemStack) as bool {
   return false;
 }
 
-function checkIfOtherSwordAlreadySpeaks(player as IEntity) as bool{
-  if(isNull(player.nbt)
-  || isNull(player.nbt.ForgeData) 
-  || isNull(player.nbt.ForgeData.warpSpeakCooldown) 
-  ) return false;
+function checkIfOtherSwordAlreadySpeaks(player as IEntity) as bool {
+  if (isNull(player.nbt)
+    || isNull(player.nbt.ForgeData)
+    || isNull(player.nbt.ForgeData.warpSpeakCooldown)
+  ) {
+    return false;
+  }
 
   return player.world.time == player.nbt.ForgeData.warpSpeakCooldown;
 }
@@ -350,40 +347,43 @@ static twoDialog as int = 12;
 // Speak randomly
 function speakRandom(player as IPlayer, world as IWorld) as void {
   val r = world.random.nextInt(oneDialog + twoDialog);
-  if(r<oneDialog){
-  player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "random." ~ r));
-  player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
-  } else{
+  if (r < oneDialog) {
+    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(`${dialogLocation}random.${r}`));
+    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+  }
+  else {
     val key = r - oneDialog;
-    world.catenation().run(function(world, context) {
-    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 0));
-    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
-  }).sleep(80).run(function(world, context){
-    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 1));
-    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
-  }).sleep(80).run(function(world, context){
-    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 2));
-    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
-  }).sleep(80).run(function(world, context){
-    player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(dialogLocation ~ "story." ~ key ~ "." ~ 3));
-    player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
-  }).start();
+    world.catenation().run(function (world, context) {
+      player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(`${dialogLocation}story.${key}.${0}`));
+      player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+    }).sleep(80).run(function (world, context) {
+      player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(`${dialogLocation}story.${key}.${1}`));
+      player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+    }).sleep(80).run(function (world, context) {
+      player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(`${dialogLocation}story.${key}.${2}`));
+      player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+    }).sleep(80).run(function (world, context) {
+      player.sendRichTextStatusMessage(crafttweaker.text.ITextComponent.fromTranslation(`${dialogLocation}story.${key}.${3}`));
+      player.sendPlaySoundPacket('thaumcraft:brain', 'voice', player.position, 1.0f, 0.5f);
+    }).start();
   }
 }
 
 possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSelected) {
   if (world.isRemote()
-  || world.time % 6000 != 0
-  || !checkIfWeapon(tool)
-  || !owner instanceof IPlayer
-  || checkIfOtherSwordAlreadySpeaks(owner)) return;
+    || world.time % 6000 != 0
+    || !checkIfWeapon(tool)
+    || !owner instanceof IPlayer
+    || checkIfOtherSwordAlreadySpeaks(owner)) {
+    return;
+  }
 
   val player as IPlayer = owner;
   val warp = player.warpNormal + player.warpTemporary + player.warpPermanent;
   if (warp >= 100) {
     if (world.random.nextInt(2) > 0) {
       player.warpTemporary = min(500,player.warpTemporary + 5);
-      player.setNBT({warpSpeakCooldown: world.time});
+      player.setNBT({ warpSpeakCooldown: world.time });
       speakRandom(player, world);
     }
   }
@@ -415,7 +415,8 @@ function porous(player as IPlayer) as void {
   if (isNull(block)) return;
   if (block.definition.id != 'minecraft:stone') return;
   world.setBlockState(porousStone.definition.defaultState, pos);
-  // utils.spawnParticles(world, 'fireworksSpark', x+i, y+j, z+k, 0.1, 0.1, 0.1, 0.1, 2);
+  (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+    EnumParticleTypes.FIREWORKS_SPARK, 0.5 + pos.x, 0.5 + pos.y, 0.5 + pos.z, 10, 0.5, 0.5, 0.5, 0.0, 0);
   player.sendPlaySoundPacket('thaumcraft:roots', 'ambient', pos.asPosition3f(), 0.5f, 0.8f);
 }
 
@@ -470,20 +471,20 @@ eldritchRetribution_trait.onHurt = function (trait, armor, player, source, damag
       return newDamage;
     }
     if (i == 2) {
-      if (mobTrue.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand())) {
-        var item = mobTrue.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand());
+      if (mobTrue.hasItemInSlot(mainHand)) {
+        var item = mobTrue.getItemInSlot(mainHand);
         if (!isNull(item)) {
           if (item.isDamageable) item = item.withDamage(mobTrue.world.random.nextInt(item.maxDamage));
           mobTrue.world.spawnEntity(item.createEntityItem(mobTrue.world, mobTrue.position));
-          mobTrue.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), null);
+          mobTrue.setItemToSlot(mainHand, null);
         }
       }
-      if (mobTrue.hasItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand())) {
-        var item = mobTrue.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand());
+      if (mobTrue.hasItemInSlot(offhand)) {
+        var item = mobTrue.getItemInSlot(offhand);
         if (!isNull(item)) {
           if (item.isDamageable) item = item.withDamage(mobTrue.world.random.nextInt(item.maxDamage));
           mobTrue.world.spawnEntity(item.createEntityItem(mobTrue.world, mobTrue.position));
-          mobTrue.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.offhand(), null);
+          mobTrue.setItemToSlot(offhand, null);
         }
       }
       return newDamage;
@@ -513,7 +514,9 @@ static gazeUpdateTime as int = 80;
 
 function gazeMechanic(world as IWorld, player as IPlayer) as void {
   if (world.isRemote()
-  || isNull(player)) return;
+    || isNull(player)) {
+    return;
+  }
   val newEffect = <potion:thaumcraft:deathgaze>;
   if (!player.isPotionActive(newEffect)) {
     player.addPotionEffect(newEffect.makePotionEffect(gazeUpdateTime, 3));
@@ -557,7 +560,7 @@ adaminite.addPlatesMaterialStats(16.6, 6.6, 6.6);
 adaminite.addTrimMaterialStats(6);
 
 adaminite.itemLocalizer = function (thisMaterial, itemName) {
-  return game.localize('e2ee.tconstruct.material.adaminite.name') + ' ' + itemName;
+  return `${game.localize('e2ee.tconstruct.material.adaminite.name')} ${itemName}`;
 };
 adaminite.localizedName = game.localize('e2ee.tconstruct.material.adaminite.name');
 
@@ -599,7 +602,9 @@ researcherTrait.localizedName = game.localize('e2ee.tconstruct.material.research
 researcherTrait.localizedDescription = game.localize('e2ee.tconstruct.material.researcher.description');
 researcherTrait.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
   if (target.world.isRemote()
-  || !attacker instanceof IPlayer) return newDamage;
+    || !attacker instanceof IPlayer) {
+    return newDamage;
+  }
   val player as IPlayer = attacker;
   var dmg = newDamage;
 
@@ -615,76 +620,85 @@ researcherTrait.calcDamage = function (trait, tool, attacker, target, originalDa
 
 researcherTrait.onHit = function (trait, tool, attacker, target, damage, isCritical) {
   if (target.world.isRemote()
-  || !attacker instanceof IPlayer) return;
+    || !attacker instanceof IPlayer) {
+    return;
+  }
   val player as IPlayer = attacker;
   val dist = player.getDistanceSqToEntity(target);
 
-  if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && dist>15.0){
+  if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && dist > 15.0) {
     target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(1, 0));
-    if(player.getDistanceSqToEntity(target)>30.0 && player.isSneaking) target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 2));
-  } 
+    if (player.getDistanceSqToEntity(target) > 30.0 && player.isSneaking) target.addPotionEffect(<potion:potioncore:explode>.makePotionEffect(1, 2));
+  }
 
-  if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isCritical && tool.tag.fluxStrike==1){
-    tool.mutable().updateTag({fluxStrike: 0});
+  if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isCritical && tool.tag.fluxStrike == 1) {
+    tool.mutable().updateTag({ fluxStrike: 0 });
     fluxStikeMechanic(target, damage);
   }
-  return;
 };
 
 function makeWitchPatricles(data as IData, entity as IEntity, i as int) as void {
-  server.commandManager.executeCommandSilent(server, "/particle witchMagic "
-  ~((data.x*(20 - i)+entity.x*i) / 20)~" "
-  ~((data.y*(20 - i)+(entity.y+entity.eyeHeight)*i) / 20 + 3.0*sin(3.14*i / 20))~" "
-  ~((data.z*(20 - i)+entity.z*i) / 20)~
-  " 0 0 0 0 1");
+  (entity.world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH,
+    (data.x * (20 - i) + entity.x * i) / 20,
+    (data.y * (20 - i) + (entity.y + entity.eyeHeight) * i) / 20 + 3.0 * sin(3.14 * i / 20),
+    (data.z * (20 - i) + entity.z * i) / 20,
+    1, 0, 0, 0, 0, 0);
 }
 
 function fluxStikeMechanic(target as IEntityLivingBase, damage as float) as void {
-  server.commandManager.executeCommandSilent(server, "/particle witchMagic "~target.x~" "~(target.y+target.eyeHeight)~" "~target.z~" .6 .6 .6 2 100");
-  playSound("thaumcraft:wandfail", target);
+  (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH, target.x, (target.y + target.eyeHeight), target.z, 100, 0.6, 0.6, 0.6, 2.0, 0);
+  playSound('thaumcraft:wandfail', target);
   val world = target.world;
   val entitiesList = world.getEntities();
   val particleCount = 20;
   var count = 0;
   val length = entitiesList.length - 1;
-  for i in 0 to (entitiesList.length){
-    val entity = entitiesList[length-i];
-    if(isNull(entity)
-    || !entity instanceof IEntityLiving
-    || !entity.isAlive()
-    || entity.id==target.id
-    || target.getDistanceSqToEntity(entity)>20
-    //|| isNull(target.definition)
-    ) continue;
+  for i in 0 .. (entitiesList.length) {
+    val entity = entitiesList[length - i];
+    if (isNull(entity)
+      || !entity instanceof IEntityLiving
+      || !entity.isAlive()
+      || entity.id == target.id
+      || target.getDistanceSqToEntity(entity) > 20
+    // || isNull(target.definition)
+    ) {
+      continue;
+    }
 
-    world.catenation().run(function(world, context){
-      context.data = {x:target.x ,y:(target.y+target.eyeHeight) ,z:target.z};
-      val k=particleCount/5;
-      for i in k to k{makeWitchPatricles(context.data, entity, i);}
-    }).sleep(5).run(function(world, context){
-      if(!isNull(entity)){val k=2*particleCount/5;
-      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
+    world.catenation().run(function (world, context) {
+      context.data = { x: target.x ,y: (target.y + target.eyeHeight) ,z: target.z };
+      val k = particleCount / 5;
+      for i in k .. k { makeWitchPatricles(context.data, entity, i); }
+    }).sleep(5).run(function (world, context) {
+      if (!isNull(entity)) {
+        val k = 2 * particleCount / 5;
+        for i in k .. k + 4 { makeWitchPatricles(context.data, entity, i); }
       }
-    }).sleep(5).run(function(world, context){
-      if(!isNull(entity)){val k=3*particleCount/5;
-      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
-    }
-    }).sleep(5).run(function(world, context){
-      if(!isNull(entity)){val k=4*particleCount/5;
-      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
-    }
-    }).sleep(5).run(function(world, context){
-      if(!isNull(entity)){val k=5*particleCount/5;
-      for i in k to k+4{makeWitchPatricles(context.data, entity, i);}
-    }
-    }).sleep(5).run(function(world, context){
-      if(!isNull(entity))server.commandManager.executeCommandSilent(server, "/particle witchMagic "~entity.x~" "~(entity.y+entity.eyeHeight)~" "~entity.z~" 0 0 0 3 20");
-    }).sleep(1).run(function(world, context){
-      if(!isNull(entity))entity.attackEntityFrom(crafttweaker.damage.IDamageSource.MAGIC(), damage);
+    }).sleep(5).run(function (world, context) {
+      if (!isNull(entity)) {
+        val k = 3 * particleCount / 5;
+        for i in k .. k + 4 { makeWitchPatricles(context.data, entity, i); }
+      }
+    }).sleep(5).run(function (world, context) {
+      if (!isNull(entity)) {
+        val k = 4 * particleCount / 5;
+        for i in k .. k + 4 { makeWitchPatricles(context.data, entity, i); }
+      }
+    }).sleep(5).run(function (world, context) {
+      if (!isNull(entity)) {
+        val k = 5 * particleCount / 5;
+        for i in k .. k + 4 { makeWitchPatricles(context.data, entity, i); }
+      }
+    }).sleep(5).run(function (world, context) {
+      if (!isNull(entity)) {
+        (world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH, entity.x, (entity.y + entity.eyeHeight), entity.z, 20, 0, 0, 0, 3, 0);
+      }
+    }).sleep(1).run(function (world, context) {
+      if (!isNull(entity))entity.attackEntityFrom(MAGIC, damage);
     })
-    .start();
-    count +=1;
-    if(count==4) return;
+      .start();
+    count += 1;
+    if (count == 4) return;
   }
 }
 
@@ -705,14 +719,14 @@ researcherTrait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
     tool.mutable().updateTag({ flux: 0 });
     return;
   }
-  if(world.time % 1000 == 0){
+  if (world.time % 1000 == 0) {
     if (player.thaumcraftKnowledge.isResearchComplete('ORE_PURIFIER') && isNull(tool.tag.orePurifier)) tool.mutable().updateTag({ orePurifier: 1 });
     if (player.thaumcraftKnowledge.isResearchComplete('LOOT_STEALER') && isNull(tool.tag.lootStealer)) tool.mutable().updateTag({ lootStealer: 1 });
     if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && isNull(tool.tag.fluxStrikeResearch)) tool.mutable().updateTag({ fluxStrikeResearch: 1 });
     if (player.thaumcraftKnowledge.isResearchComplete('GOD_WRAITH') && isNull(tool.tag.godWraith)) tool.mutable().updateTag({ godWraith: 1 });
     if (player.thaumcraftKnowledge.isResearchComplete('PURE_SMITE') && isNull(tool.tag.pureSmite)) tool.mutable().updateTag({ pureSmite: 1 });
   }
-  if (world.time % 10 !=0 || tool.tag.flux >= 50) return;
+  if (world.time % 10 != 0 || tool.tag.flux >= 50) return;
   if (world.getFlux(player.position) <= 1.0f) return;
   world.drainFlux(player.position, 1.0f);
   tool.mutable().updateTag({ flux: tool.tag.flux + 1 });
@@ -777,8 +791,8 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
       if (ore.name.startsWith('cluster')) {
         oreName = ore.name.substring(7);
       }
-      if (!(oreDict has ('cluster' ~ oreName))) continue;
-      if (!(oreDict has ('shard' ~ oreName))) continue;
+      if (!(oreDict has (`cluster${oreName}`))) continue;
+      if (!(oreDict has (`shard${oreName}`))) continue;
       found = true;
       break;
     }
@@ -791,7 +805,7 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
     dropChanged = true;
 
     if (lvl == 0) { // it's ore! add matching cluster/shard
-      val item = oreDict['cluster' ~ oreName].firstItem;
+      val item = oreDict[`cluster${oreName}`].firstItem;
       newDrops += (!isNull(item) && event.player.world.getRandom().nextInt(2) == 1) ? item % weightedItem.percent : weightedItem;
     }
     else if (lvl == 1) {
@@ -799,7 +813,7 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
       newDrops += !isNull(item) ? item % weightedItem.percent : weightedItem;
     }
     else {
-      val item = oreDict['crystalShard' ~ oreName].firstItem;
+      val item = oreDict[`crystalShard${oreName}`].firstItem;
       if (isNull(item)) {
         newDrops += weightedItem;
       }
@@ -817,29 +831,35 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
 researcherTrait.extraInfo = function (thisTrait, item, tag) {
   var result = [] as string[];
 
-  if(!isNull(item.tag.godWraith) && item.tag.godWraith==1){
-    result += "God Wraith: ✓";
-  } else {result += "God Wraith: X";}
+  if (!isNull(item.tag.godWraith) && item.tag.godWraith == 1) {
+    result += 'God Wraith: ✓';
+  }
+  else { result += 'God Wraith: X'; }
 
-  if(!isNull(item.tag.fluxStrikeResearch) && item.tag.fluxStrikeResearch==1){
-    result += "Flux Strike: ✓";
-  } else {result += "Flux Strike: X";}
+  if (!isNull(item.tag.fluxStrikeResearch) && item.tag.fluxStrikeResearch == 1) {
+    result += 'Flux Strike: ✓';
+  }
+  else { result += 'Flux Strike: X'; }
 
-  if(!isNull(item.tag.flux)){
-    result += "Flux: "~item.tag.flux;
-  } else {result += "Flux: 0";} 
+  if (!isNull(item.tag.flux)) {
+    result += `Flux: ${item.tag.flux}`;
+  }
+  else { result += 'Flux: 0'; }
 
-  if(!isNull(item.tag.pureSmite) && item.tag.pureSmite==1){
-    result += "Pure Smite: ✓";
-  } else {result += "Pure Smite: X";}
+  if (!isNull(item.tag.pureSmite) && item.tag.pureSmite == 1) {
+    result += 'Pure Smite: ✓';
+  }
+  else { result += 'Pure Smite: X'; }
 
-  if(!isNull(item.tag.lootStealer) && item.tag.lootStealer==1){
-    result += "Loot Stealer: ✓";
-  } else {result += "Loot Stealer: X";}
+  if (!isNull(item.tag.lootStealer) && item.tag.lootStealer == 1) {
+    result += 'Loot Stealer: ✓';
+  }
+  else { result += 'Loot Stealer: X'; }
 
-  if(!isNull(item.tag.orePurifier) && item.tag.orePurifier==1){
-    result += "Ore Purifier: ✓";
-  } else {result += "Ore Purifier: X";}
+  if (!isNull(item.tag.orePurifier) && item.tag.orePurifier == 1) {
+    result += 'Ore Purifier: ✓';
+  }
+  else { result += 'Ore Purifier: X'; }
 
   return result;
 };
@@ -911,24 +931,28 @@ robust_trait.color = 11141165;
 robust_trait.localizedName = game.localize('e2ee.tconstruct.material.robust.name');
 robust_trait.localizedDescription = game.localize('e2ee.tconstruct.material.robust.description');
 
-robust_trait.onArmorEquip = function(trait, armor, player, index) {
-    if(isNull(player)
-    || player.world.isRemote()) return;
+robust_trait.onArmorEquip = function (trait, armor, player, index) {
+  if (isNull(player)
+    || player.world.isRemote()) {
+    return;
+  }
 
-    for modifier in player.getAttribute("generic.maxHealth").getModifiersByOperation(0){
-      if(modifier.getName()=="CoA_Mithminite"~index) return;
-    }
+  for modifier in player.getAttribute('generic.maxHealth').getModifiersByOperation(0) {
+    if (modifier.getName() == `CoA_Mithminite${index}`) return;
+  }
 
-    player.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("CoA_Mithminite"~index, 10.0, 0));
+  player.getAttribute('generic.maxHealth').applyModifier(AttributeModifier.createModifier(`CoA_Mithminite${index}`, 10.0, 0));
 };
 
-robust_trait.onArmorRemove = function(trait, armor, player, index) {
-    if(isNull(player)
-    || player.world.isRemote()) return;
+robust_trait.onArmorRemove = function (trait, armor, player, index) {
+  if (isNull(player)
+    || player.world.isRemote()) {
+    return;
+  }
 
-    for modifier in player.getAttribute("generic.maxHealth").getModifiersByOperation(0){
-      if(modifier.getName()=="CoA_Mithminite"~index) player.getAttribute("generic.maxHealth").removeModifier(modifier.getUUID());
-    }
+  for modifier in player.getAttribute('generic.maxHealth').getModifiersByOperation(0) {
+    if (modifier.getName() == `CoA_Mithminite${index}`) player.getAttribute('generic.maxHealth').removeModifier(modifier.getUUID());
+  }
 };
 
 robust_trait.register();
@@ -958,7 +982,7 @@ mithminite.addPlatesMaterialStats(24.0, 42.0, 0.0);
 mithminite.addTrimMaterialStats(42);
 
 mithminite.itemLocalizer = function (thisMaterial, itemName) {
-  return game.localize('e2ee.tconstruct.material.mithminite.name') + ' ' + itemName;
+  return `${game.localize('e2ee.tconstruct.material.mithminite.name')} ${itemName}`;
 };
 mithminite.localizedName = game.localize('e2ee.tconstruct.material.mithminite.name');
 

@@ -1,12 +1,12 @@
 {
 	icon: {
-		id: "opencomputers:print",
 		tag: {
-			label: "Companion Cube",
+			noclipOff: 0b,
 			isButtonMode: 0b,
+			noclipOn: 0b,
 			redstoneLevel: 0,
-			pressurePlate: 0b,
 			stateOff: [{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					13b,
 					13b,
@@ -14,10 +14,10 @@
 					15b,
 					15b,
 					10b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					13b,
 					6b,
@@ -25,10 +25,10 @@
 					15b,
 					10b,
 					15b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					13b,
 					6b,
@@ -36,10 +36,10 @@
 					15b,
 					10b,
 					3b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					13b,
 					1b,
@@ -47,10 +47,10 @@
 					15b,
 					3b,
 					10b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					11b,
 					11b,
@@ -58,10 +58,10 @@
 					16b,
 					16b,
 					16b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					11b,
 					11b,
@@ -69,10 +69,10 @@
 					16b,
 					16b,
 					5b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					11b,
 					0b,
@@ -80,10 +80,10 @@
 					16b,
 					5b,
 					16b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					11b,
 					0b,
@@ -91,10 +91,10 @@
 					16b,
 					5b,
 					5b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					6b,
 					13b,
@@ -102,10 +102,10 @@
 					10b,
 					15b,
 					15b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					6b,
 					13b,
@@ -113,10 +113,10 @@
 					10b,
 					15b,
 					3b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_magenta",
 				bounds: [B;
 					6b,
 					6b,
@@ -124,10 +124,10 @@
 					10b,
 					10b,
 					15b
-				],
-				texture: "wool_colored_magenta"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					6b,
 					1b,
@@ -135,10 +135,10 @@
 					10b,
 					3b,
 					15b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_magenta",
 				bounds: [B;
 					6b,
 					1b,
@@ -146,10 +146,10 @@
 					10b,
 					15b,
 					10b
-				],
-				texture: "wool_colored_magenta"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					6b,
 					1b,
@@ -157,10 +157,10 @@
 					10b,
 					3b,
 					3b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_gray",
 				bounds: [B;
 					2b,
 					2b,
@@ -168,10 +168,10 @@
 					14b,
 					14b,
 					14b
-				],
-				texture: "wool_colored_gray"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					1b,
 					13b,
@@ -179,10 +179,10 @@
 					3b,
 					15b,
 					10b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					1b,
 					6b,
@@ -190,10 +190,10 @@
 					3b,
 					10b,
 					15b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_magenta",
 				bounds: [B;
 					1b,
 					6b,
@@ -201,10 +201,10 @@
 					15b,
 					10b,
 					10b
-				],
-				texture: "wool_colored_magenta"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					1b,
 					6b,
@@ -212,10 +212,10 @@
 					3b,
 					10b,
 					3b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					1b,
 					1b,
@@ -223,10 +223,10 @@
 					3b,
 					3b,
 					10b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					0b,
 					11b,
@@ -234,10 +234,10 @@
 					5b,
 					16b,
 					16b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					0b,
 					11b,
@@ -245,10 +245,10 @@
 					5b,
 					16b,
 					5b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					0b,
 					0b,
@@ -256,10 +256,10 @@
 					5b,
 					5b,
 					16b
-				],
-				texture: "wool_colored_silver"
+				]
 			},
 			{
+				texture: "wool_colored_silver",
 				bounds: [B;
 					0b,
 					0b,
@@ -267,15 +267,15 @@
 					5b,
 					5b,
 					5b
-				],
-				texture: "wool_colored_silver"
+				]
 			}],
-			stateOn: [],
-			isBeaconBase: 0b,
 			lightLevel: 0b,
-			noclipOff: 0b,
-			noclipOn: 0b
-		}
+			label: "Companion Cube",
+			isBeaconBase: 0b,
+			pressurePlate: 0b,
+			stateOn: []
+		},
+		id: "opencomputers:print"
 	},
 	x: 5.6d,
 	y: 6.5d,
@@ -296,18 +296,18 @@
 		uid: "00179815",
 		type: "item",
 		items: [{
-			id: "opencomputers:storage",
-			Damage: 1s,
 			tag: {
+				"oc:color": 6,
 				"oc:data": {
 					"oc:fs.label": "oppm"
 				},
 				"oc:lootFactory": "opencomputers:oppm",
-				"oc:color": 6,
 				display: {
 					Name: "OPPM (Package Manager)"
 				}
-			}
+			},
+			Damage: 1s,
+			id: "opencomputers:storage"
 		}]
 	},
 	{
@@ -322,18 +322,18 @@
 		uid: "73c517f6",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any dye"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "dye"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any dye"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 4L
 	},
@@ -341,13 +341,13 @@
 		uid: "4a0a0bf1",
 		type: "item",
 		items: [{
-			id: "opencomputers:print",
 			tag: {
-				label: "Companion Cube",
+				noclipOff: 0b,
 				isButtonMode: 0b,
+				noclipOn: 0b,
 				redstoneLevel: 0,
-				pressurePlate: 0b,
 				stateOff: [{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						13b,
 						13b,
@@ -355,10 +355,10 @@
 						15b,
 						15b,
 						10b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						13b,
 						6b,
@@ -366,10 +366,10 @@
 						15b,
 						10b,
 						15b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						13b,
 						6b,
@@ -377,10 +377,10 @@
 						15b,
 						10b,
 						3b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						13b,
 						1b,
@@ -388,10 +388,10 @@
 						15b,
 						3b,
 						10b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						11b,
 						11b,
@@ -399,10 +399,10 @@
 						16b,
 						16b,
 						16b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						11b,
 						11b,
@@ -410,10 +410,10 @@
 						16b,
 						16b,
 						5b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						11b,
 						0b,
@@ -421,10 +421,10 @@
 						16b,
 						5b,
 						16b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						11b,
 						0b,
@@ -432,10 +432,10 @@
 						16b,
 						5b,
 						5b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						6b,
 						13b,
@@ -443,10 +443,10 @@
 						10b,
 						15b,
 						15b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						6b,
 						13b,
@@ -454,10 +454,10 @@
 						10b,
 						15b,
 						3b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_magenta",
 					bounds: [B;
 						6b,
 						6b,
@@ -465,10 +465,10 @@
 						10b,
 						10b,
 						15b
-					],
-					texture: "wool_colored_magenta"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						6b,
 						1b,
@@ -476,10 +476,10 @@
 						10b,
 						3b,
 						15b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_magenta",
 					bounds: [B;
 						6b,
 						1b,
@@ -487,10 +487,10 @@
 						10b,
 						15b,
 						10b
-					],
-					texture: "wool_colored_magenta"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						6b,
 						1b,
@@ -498,10 +498,10 @@
 						10b,
 						3b,
 						3b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_gray",
 					bounds: [B;
 						2b,
 						2b,
@@ -509,10 +509,10 @@
 						14b,
 						14b,
 						14b
-					],
-					texture: "wool_colored_gray"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						1b,
 						13b,
@@ -520,10 +520,10 @@
 						3b,
 						15b,
 						10b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						1b,
 						6b,
@@ -531,10 +531,10 @@
 						3b,
 						10b,
 						15b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_magenta",
 					bounds: [B;
 						1b,
 						6b,
@@ -542,10 +542,10 @@
 						15b,
 						10b,
 						10b
-					],
-					texture: "wool_colored_magenta"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						1b,
 						6b,
@@ -553,10 +553,10 @@
 						3b,
 						10b,
 						3b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						1b,
 						1b,
@@ -564,10 +564,10 @@
 						3b,
 						3b,
 						10b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						0b,
 						11b,
@@ -575,10 +575,10 @@
 						5b,
 						16b,
 						16b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						0b,
 						11b,
@@ -586,10 +586,10 @@
 						5b,
 						16b,
 						5b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						0b,
 						0b,
@@ -597,10 +597,10 @@
 						5b,
 						5b,
 						16b
-					],
-					texture: "wool_colored_silver"
+					]
 				},
 				{
+					texture: "wool_colored_silver",
 					bounds: [B;
 						0b,
 						0b,
@@ -608,15 +608,15 @@
 						5b,
 						5b,
 						5b
-					],
-					texture: "wool_colored_silver"
+					]
 				}],
-				stateOn: [],
-				isBeaconBase: 0b,
 				lightLevel: 0b,
-				noclipOff: 0b,
-				noclipOn: 0b
-			}
+				label: "Companion Cube",
+				isBeaconBase: 0b,
+				pressurePlate: 0b,
+				stateOn: []
+			},
+			id: "opencomputers:print"
 		}]
 	}],
 	rewards: [{

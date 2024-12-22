@@ -36,13 +36,13 @@
 		uid: "56d281b6",
 		type: "item",
 		items: [{
-			id: "forge:bucketfilled",
 			tag: {
-				FluidName: "fluid_quicksilver",
-				Amount: 1000
-			}
+				Amount: 1000,
+				FluidName: "fluid_quicksilver"
+			},
+			id: "forge:bucketfilled"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 2b
 	}],
 	rewards: [{
@@ -50,10 +50,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

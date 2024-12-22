@@ -12,23 +12,23 @@
 		uid: "6ed135a9",
 		type: "item",
 		items: [{
-			id: "tconstruct:lumberaxe",
 			ForgeCaps: {
-				"plustic:fruitsalad_cap": {
+				"plustic:musicofthespheres_cap": {
 					Items: [],
-					Size: 5
+					Size: 1
 				},
 				"plustic:": {
 					Items: [],
 					Size: 1
 				},
-				"plustic:musicofthespheres_cap": {
+				"plustic:fruitsalad_cap": {
 					Items: [],
-					Size: 1
+					Size: 5
 				}
-			}
+			},
+			id: "tconstruct:lumberaxe"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -40,7 +40,6 @@
 		uid: "9c8a4099",
 		type: "item",
 		item: {
-			id: "forestry:sapling",
 			tag: {
 				IsAnalyzed: 0b,
 				Genome: {
@@ -95,7 +94,8 @@
 						UID1: "forestry.fireproofFalse"
 					}]
 				}
-			}
+			},
+			id: "forestry:sapling"
 		}
 	}]
 }

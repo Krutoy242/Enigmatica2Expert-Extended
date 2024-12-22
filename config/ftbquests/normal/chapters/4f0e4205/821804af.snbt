@@ -1,27 +1,27 @@
 {
 	icon: {
-		id: "ftbquests:lootcrate",
 		tag: {
 			type: "uncommon"
-		}
+		},
+		id: "ftbquests:lootcrate"
 	},
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 9.9d,
 	y: 0.75d,
 	shape: "square",
 	text: [
 		"{q.twilight_forest.moonworm_queen.desc}"
 	],
-	can_repeat: true,
+	can_repeat: 1b,
 	dependencies: [
 		"ea1707c5"
 	],
 	size: 0.5d,
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "9e5927c0",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "twilightforest:moonworm_queen"
 		},
@@ -38,10 +38,10 @@
 		type: "item",
 		auto: "no_toast",
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		random_bonus: 2
 	}]

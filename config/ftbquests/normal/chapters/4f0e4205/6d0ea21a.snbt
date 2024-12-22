@@ -14,14 +14,14 @@
 		uid: "b6a5c668",
 		type: "checkmark",
 		icon: {
-			id: "minecraft:spawn_egg",
 			tag: {
 				EntityTag: {
 					id: "twilightforest:quest_ram"
 				}
-			}
+			},
+			id: "minecraft:spawn_egg"
 		},
-		disable_toast: true
+		disable_toast: 1b
 	}],
 	rewards: [{
 		uid: "0fcab2df",

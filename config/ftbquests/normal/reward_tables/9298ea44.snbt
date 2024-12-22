@@ -5,28 +5,28 @@
 	},
 	{
 		item: {
-			id: "ic2:crop_seed_bag",
 			tag: {
+				growth: 1b,
 				owner: "ic2",
 				scan: 4b,
-				growth: 1b,
 				id: "meat_rose",
-				resistance: 1b,
-				gain: 15b
-			}
+				gain: 15b,
+				resistance: 1b
+			},
+			id: "ic2:crop_seed_bag"
 		}
 	},
 	{
 		item: {
-			id: "ic2:crop_seed_bag",
 			tag: {
-				owner: "ic2",
-				id: "spidernip",
 				growth: 1b,
+				owner: "ic2",
+				scan: 4b,
+				id: "spidernip",
 				gain: 1b,
-				resistance: 1b,
-				scan: 4b
-			}
+				resistance: 1b
+			},
+			id: "ic2:crop_seed_bag"
 		}
 	}]
 }

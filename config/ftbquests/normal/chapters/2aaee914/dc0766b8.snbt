@@ -21,11 +21,11 @@
 		type: "custom",
 		title: "{e2ee.quest.rare}",
 		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 4,
 			tag: {
 				type: "rare"
-			}
+			},
+			Count: 4,
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

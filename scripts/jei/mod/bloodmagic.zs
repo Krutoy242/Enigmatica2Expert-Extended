@@ -1,5 +1,5 @@
 #priority 950
-#modloaded bloodmagic
+#modloaded bloodmagic requious
 
 import mods.requious.AssemblyRecipe;
 import crafttweaker.item.IIngredient;

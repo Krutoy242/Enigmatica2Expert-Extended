@@ -12,8 +12,8 @@
 		uid: "23a2d0d1",
 		type: "item",
 		items: [{
-			id: "avaritia:infinity_axe",
-			tag: {}
+			tag: {},
+			id: "avaritia:infinity_axe"
 		}],
 		ignore_nbt: 1b
 	}],

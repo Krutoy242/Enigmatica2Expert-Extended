@@ -1,0 +1,83 @@
+{
+	icon: "immersiveengineering:metal_device1 1 13",
+	x: 5.6d,
+	y: 3.5d,
+	text: [
+		"{q.immersive_engineer.garden_cloche.desc}"
+	],
+	dependencies: [
+		"fc438fa8"
+	],
+	tasks: [{
+		uid: "c6a781bf",
+		type: "item",
+		items: [{
+			item: "immersiveengineering:metal_device1 1 13"
+		}]
+	},
+	{
+		uid: "aae3bcfb",
+		type: "item",
+		items: [{
+			tag: {
+				Amount: 1000,
+				FluidName: "meat"
+			},
+			id: "forge:bucketfilled"
+		},
+		{
+			tag: {
+				Amount: 1000,
+				FluidName: "sewage"
+			},
+			id: "forge:bucketfilled"
+		},
+		{
+			tag: {
+				Amount: 1000,
+				FluidName: "for.honey"
+			},
+			id: "forge:bucketfilled"
+		},
+		{
+			tag: {
+				Amount: 1000,
+				FluidName: "short.mead"
+			},
+			id: "forge:bucketfilled"
+		},
+		{
+			tag: {
+				Amount: 1000,
+				FluidName: "lifeessence"
+			},
+			id: "forge:bucketfilled"
+		},
+		{
+			tag: {
+				Amount: 1000,
+				FluidName: "nutrient_distillation"
+			},
+			id: "forge:bucketfilled"
+		},
+		{
+			tag: {
+				Amount: 1000,
+				FluidName: "vapor_of_levity"
+			},
+			id: "forge:bucketfilled"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "82d68655",
+		type: "item",
+		item: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		}
+	}]
+}

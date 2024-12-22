@@ -16,9 +16,9 @@
 		items: [{
 			item: "thaumcraft:salis_mundus"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b,
-		only_from_crafting: true
+		only_from_crafting: 1b
 	}],
 	rewards: [{
 		uid: "a4c2efd1",

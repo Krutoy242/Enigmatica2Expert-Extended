@@ -24,17 +24,12 @@ function set(input as IIngredient, blockID_output as IItemStack[string]) as void
 }
 
 events.onItemExpire(function (e as crafttweaker.event.ItemExpireEvent) {
-  // print("~~~ onItemExpire");
   if (e.entity.world.isRemote()) return; // Remote world
-  // print(" ~~ not remote");
   if (isNull(e.item) || isNull(e.item.item)) return; // No item
-  // print(" ~~ has item");
 
   val item = e.item.item.anyAmount();
   for ingr, tuple in list {
-    // print("  ~ test .");
     if (ingr has item) {
-      // print("    item on pos: ["~e.entity.x as int~" "~e.entity.y as int~" "~e.entity.z as int~"] as double:["~e.entity.x~" "~e.entity.y~" "~e.entity.z~"]");
       val block = e.entity.world.getBlock(e.entity.position);
       if (isNull(block)
         || isNull(block.definition)
@@ -42,9 +37,7 @@ events.onItemExpire(function (e as crafttweaker.event.ItemExpireEvent) {
         || block.definition.id == 'minecraft:air'
       ) return;
       val blockID = block.definition.id;
-      // print("    blockID:"~blockID);
       val output = tuple[blockID];
-      // print("    check output");
       if (!isNull(output)) {
         return explodeItem(e.item, output);
       }

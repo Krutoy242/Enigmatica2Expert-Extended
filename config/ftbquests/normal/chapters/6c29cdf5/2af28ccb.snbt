@@ -12,14 +12,14 @@
 		uid: "a0a62db4",
 		type: "item",
 		items: [{
-			id: "botania:twigwand",
 			tag: {
-				color1: 0,
 				color2: 0,
+				color1: 0,
 				boundTileZ: 0,
 				boundTileX: 0,
 				boundTileY: -1
-			}
+			},
+			id: "botania:twigwand"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -28,10 +28,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

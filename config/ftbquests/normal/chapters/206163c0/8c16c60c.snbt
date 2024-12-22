@@ -1,7 +1,6 @@
 {
 	title: "{q.forestry.the_pollen_path_.name}",
 	icon: {
-		id: "forestry:pollen_fertile",
 		tag: {
 			IsAnalyzed: 0b,
 			Genome: {
@@ -56,7 +55,8 @@
 					UID1: "forestry.fireproofFalse"
 				}]
 			}
-		}
+		},
+		id: "forestry:pollen_fertile"
 	},
 	x: 3.2d,
 	y: -1.7d,
@@ -87,7 +87,6 @@
 			"pollen_fertile"
 		],
 		items: [{
-			id: "forestry:pollen_fertile",
 			tag: {
 				IsAnalyzed: 0b,
 				Genome: {
@@ -142,14 +141,15 @@
 						UID1: "forestry.fireproofFalse"
 					}]
 				}
-			}
+			},
+			id: "forestry:pollen_fertile"
 		}],
 		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "1e7c32e1",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		item: "harvestcraft:honeycombchocolatebaritem"
 	}]
 }

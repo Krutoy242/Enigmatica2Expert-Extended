@@ -29,10 +29,10 @@
 		uid: "a8cd1fd8",
 		type: "item",
 		item: {
-			id: "mekanism:robit",
 			tag: {
 				mekData: {}
-			}
+			},
+			id: "mekanism:robit"
 		}
 	},
 	{

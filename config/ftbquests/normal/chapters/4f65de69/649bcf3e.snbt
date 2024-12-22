@@ -1,10 +1,10 @@
 {
 	title: "{q.getting_started.mob_spawning_changes.name}",
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "minecraft:enderman"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 0.625d,
 	y: 5.0d,
@@ -18,7 +18,7 @@
 		uid: "1f9b5d52",
 		type: "xp",
 		value: 10L,
-		points: false
+		points: 0b
 	}],
 	rewards: [{
 		uid: "b5c7af3f",

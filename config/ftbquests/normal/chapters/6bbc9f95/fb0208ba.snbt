@@ -1,31 +1,31 @@
 {
 	title: "{q.thaumcraft.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 123,
+			TrophyColorBlue: 190,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 47,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
 				id: "thaumicaugmentation:rift_jar",
 				tag: {
-					seed: 0,
-					size: 100
-				},
-				Damage: 0s
+					size: 100,
+					seed: 0
+				}
 			},
-			TrophyColorBlue: 190,
-			TrophyColorRed: 123,
 			TrophyName: "§5Thaumcraft Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 15.0d,
 	y: 8.0d,
 	text: [
 		"{q.thaumcraft.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"ed607e63",
 		"537d4079",
@@ -151,27 +151,27 @@
 	rewards: [{
 		uid: "c2ad1156",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 123,
+				TrophyColorBlue: 190,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 47,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
 					id: "thaumicaugmentation:rift_jar",
 					tag: {
-						seed: 0,
-						size: 100
-					},
-					Damage: 0s
+						size: 100,
+						seed: 0
+					}
 				},
-				TrophyColorBlue: 190,
-				TrophyColorRed: 123,
 				TrophyName: "§5Thaumcraft Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

@@ -13,7 +13,7 @@
 		items: [{
 			item: "thaumcraft:primordial_pearl"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

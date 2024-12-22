@@ -7,7 +7,7 @@
 	text: [
 		"{q.gates.conflux_i.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"00f29513",
 		"e07d1afe",
@@ -29,10 +29,10 @@
 		uid: "f9ec55d7",
 		type: "item",
 		item: {
-			id: "thermalexpansion:florb",
 			tag: {
 				Fluid: "petrotheum"
-			}
+			},
+			id: "thermalexpansion:florb"
 		}
 	}]
 }

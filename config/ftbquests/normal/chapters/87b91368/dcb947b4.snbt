@@ -1,10 +1,10 @@
 {
 	title: "{q.animals.animals_entry.name}",
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "minecraft:cow"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 2.85d,
 	y: -3.15d,

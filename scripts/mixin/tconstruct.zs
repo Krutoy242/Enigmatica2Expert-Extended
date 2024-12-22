@@ -1,3 +1,4 @@
+#modloaded tconstruct
 #loader mixin
 
 import native.net.minecraft.item.ItemStack;
@@ -6,13 +7,13 @@ import native.net.minecraft.nbt.NBTTagCompound;
 import native.slimeknights.tconstruct.library.smeltery.ICastingRecipe;
 import native.slimeknights.tconstruct.library.modifiers.ModifierAspect;
 import native.slimeknights.tconstruct.library.modifiers.ModifierNBT;
+import native.slimeknights.tconstruct.library.modifiers.ModifierNBT.IntegerNBT;
 import native.slimeknights.tconstruct.library.tools.ToolNBT;
 import native.slimeknights.tconstruct.library.utils.TagUtil;
 import native.slimeknights.tconstruct.tools.modifiers.ToolModifier;
 import mixin.CallbackInfo;
 
-#mixin Mixin
-#{targets: "slimeknights.tconstruct.smeltery.TinkerSmeltery"}
+#mixin {targets: "slimeknights.tconstruct.smeltery.TinkerSmeltery"}
 zenClass MixinTinkerSmeltery {
     #mixin Static
     #mixin Redirect
@@ -43,12 +44,7 @@ zenClass MixinTinkerSmeltery {
     }
 
     #mixin Static
-    #mixin Inject
-    #{
-    #    method: "registerRecipeOredictMelting",
-    #    at: {value: "HEAD"},
-    #    cancellable: true
-    #}
+    #mixin Inject {method: "registerRecipeOredictMelting", at: {value: "HEAD"}, cancellable: true}
     function disableRecipeOredictMelting(ci as CallbackInfo) as void {
         ci.cancel();
     }
@@ -64,8 +60,7 @@ Now each level adding
 
 So, if your weapon deals 10 damage, on lvl 1 it would be 12 dmg. On level 10 it would be 35 dmd. On level 20 - 120 dmg.
 */
-#mixin Mixin
-#{targets: "slimeknights.tconstruct.tools.modifiers.ModSharpness"}
+#mixin {targets: "slimeknights.tconstruct.tools.modifiers.ModSharpness"}
 zenClass MixinModSharpness {
     #mixin Shadow
     #mixin Final
@@ -73,7 +68,7 @@ zenClass MixinModSharpness {
 
     #mixin Overwrite
     function applyEffect(rootCompound as NBTTagCompound, modifierTag as NBTTagCompound) as void {
-        val data as ModifierNBT.IntegerNBT = ModifierNBT.readInteger(modifierTag);
+        val data as IntegerNBT = ModifierNBT.readInteger(modifierTag);
         val toolData as ToolNBT = TagUtil.getOriginalToolStats(rootCompound);
         var attack as float = toolData.attack;
         val level as float = (1.0f * data.current) / max;

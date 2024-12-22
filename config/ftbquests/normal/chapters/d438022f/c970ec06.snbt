@@ -11,7 +11,6 @@
 		uid: "53b4e573",
 		type: "item",
 		items: [{
-			id: "quark:backpack",
 			tag: {
 				Inventory: [{},
 				{},
@@ -40,7 +39,8 @@
 				{},
 				{},
 				{}]
-			}
+			},
+			id: "quark:backpack"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -49,10 +49,10 @@
 		type: "custom",
 		title: "{e2ee.quest.decor}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "decor"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

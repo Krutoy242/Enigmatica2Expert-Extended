@@ -37,7 +37,7 @@ events.onBlockPlace(function (e as crafttweaker.event.BlockPlaceEvent) {
 
 events.onBlockNeighborNotify(function (e as crafttweaker.event.BlockNeighborNotifyEvent) {
   if (!e.block.definition.id.startsWith('thaumadditions:vis_crop')) return;
-  if (!(farmland has e.world.getBlock(e.position.getOffset(IFacing.down(), 1)).definition.id)) return;
+  if (!(farmland has e.world.getBlock(e.position.getOffset(down, 1)).definition.id)) return;
 
   val dimType = e.world.getDimensionType();
   if (dimType == 'planet' || dimType == 'emptiness') return;

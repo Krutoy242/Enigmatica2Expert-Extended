@@ -1,6 +1,8 @@
 #modloaded cyclicmagic ctintegration
 #reloadable
 
+import native.net.minecraft.util.EnumParticleTypes;
+
 static offsetOrder as int[] = [
 /* Inject_js{
 const arr = []
@@ -36,7 +38,9 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   val z = e.z;
 
   if (e.player.xp < xp_consumption) {
-    utils.spawnParticles(world, 'fireworksSpark', x, y + 0.5, z, 0.1, 0.1, 0.1, 0.1, 2);
+    (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+      EnumParticleTypes.FIREWORKS_SPARK,
+      x, y + 0.5, z, 2, 0.1, 0.1, 0.1, 0.1, 0);
     world.playSound('thaumcraft:poof', 'ambient', e.position, 0.2f, 3.0f);
     return;
   }
@@ -64,7 +68,9 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
         || isNull(e.player) || e.player.xp < xp_consumption
       ) return;
       world.setBlockState(<blockstate:cyclicmagic:block_fragile_weak>, blockPos);
-      utils.spawnParticles(world, 'fireworksSpark', blockPos.x, blockPos.y, blockPos.z, 0.3, 0.3, 0.3, 0.01, 1);
+      (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+        EnumParticleTypes.FIREWORKS_SPARK,
+        blockPos.x, blockPos.y, blockPos.z, 1, 0.3, 0.3, 0.3, 0.01, 0);
       ctx.data = ctx.data.asInt() + 1;
       e.player.sendPlaySoundPacket('minecraft:block.ladder.place', 'ambient', blockPos, 0.2f, 1.0f);
       // e.player.xp = max(0, e.player.xp - xp_consumption);

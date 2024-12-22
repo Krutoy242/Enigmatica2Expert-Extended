@@ -3,6 +3,7 @@
 
 import crafttweaker.world.IFacing;
 import mods.ctutils.utils.Math.abs;
+import native.net.minecraft.util.EnumParticleTypes;
 
 static itemsConsumed as int = 4;
 
@@ -40,7 +41,9 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
     // Must have appropriate amount
     val p = entityItem.position;
     if (entityItem.item.amount < itemsConsumed) {
-      utils.spawnParticles(entityItem, 'fireworksSpark', p.x, p.y + 1.5, p.z, 0.05, 0.3, 0.05, -0.01, entityItem.item.amount);
+      (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+        EnumParticleTypes.FIREWORKS_SPARK,
+        p.x, p.y + 1.5, p.z, entityItem.item.amount, 0.05, 0.3, 0.05, -0.01, 0);
       continue;
     }
 
@@ -49,7 +52,7 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
     if (!seeSky) continue;
 
     // Must lay on sand
-    val blockPos = entityItem.position.getOffset(IFacing.down(), 1);
+    val blockPos = entityItem.position.getOffset(down, 1);
     val block = world.getBlock(blockPos);
     if (block.definition.id != 'minecraft:sand') continue;
 
@@ -61,7 +64,9 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
     world.setBlockState(<blockstate:astralsorcery:blockcustomsandore>, blockPos);
 
     // Spawn particles
-    utils.spawnParticles(entityItem, 'fireworksSpark', p.x, p.y + 1.5, p.z, 0, 1, 0, -0.01, 20);
+    (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+      EnumParticleTypes.FIREWORKS_SPARK,
+      p.x, p.y + 1.5, p.z, 20, 0, 1, 0, -0.01, 0);
 
     for pl in world.getAllPlayers() {
       if (abs(pl.x - p.x) > 20 || abs(pl.y - p.y) > 20 || abs(pl.z - p.z) > 20) continue;

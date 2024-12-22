@@ -94,7 +94,7 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   if (isNull(currItem)) return; // 🛑
   furnace.addRecipe(dirtyGem * 4, currItem);
 
-  val biomeStone = itemUtils.getItem('botania:biomestonea', hash % 8) * 2;
+  val biomeStone = itemUtils.getItem('botania:biomestonea', hash % 8);
   val a_recipe = AgglomerationRecipe.create();
   a_recipe.output(currItem);
   a_recipe.color1(0x1010FF).color2(0x0FFF3F).multiblock(agglMultiblock);
@@ -119,7 +119,7 @@ function magicProcessing(nativeClusterOreEntry as IOreDictEntry, ore_name as str
   // mods.bloodmagic.AlchemyTable.addRecipe(IItemStack output, IItemStack[] inputs, int syphon, int ticks, int minTier);
   mods.bloodmagic.AlchemyTable.addRecipe(currItem * 2, [
     prevItem, prevItem, <bloodmagic:component:8>, prevItem, prevItem, <bloodmagic:cutting_fluid:1>,
-  ], 20000, 400, 4);
+  ], 10000, 40, 4);
 
   // ██╗  ██╗
   // ██║  ██║

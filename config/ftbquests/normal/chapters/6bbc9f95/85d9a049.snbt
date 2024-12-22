@@ -1,9 +1,9 @@
 {
 	icon: {
-		id: "thaumcraft:golem",
 		tag: {
 			props: 0L
-		}
+		},
+		id: "thaumcraft:golem"
 	},
 	x: 7.5d,
 	y: -2.5d,
@@ -19,10 +19,10 @@
 		uid: "4e34e6e6",
 		type: "item",
 		items: [{
-			id: "thaumcraft:golem",
 			tag: {
 				props: 0L
-			}
+			},
+			id: "thaumcraft:golem"
 		}],
 		ignore_nbt: 1b
 	},

@@ -16,21 +16,21 @@
 		type: "item",
 		title: "Tanks",
 		items: [{
-			id: "thermalexpansion:reservoir",
-			tag: {}
+			tag: {},
+			id: "thermalexpansion:reservoir"
 		},
 		{
-			id: "thermalexpansion:tank",
 			tag: {
 				Level: 0b
-			}
+			},
+			id: "thermalexpansion:tank"
 		},
 		{
-			id: "mekanism:machineblock2",
-			Damage: 11s,
 			tag: {
 				tier: 0
-			}
+			},
+			Damage: 11s,
+			id: "mekanism:machineblock2"
 		},
 		{
 			item: "tconstruct:seared_tank 1 1"
@@ -66,10 +66,10 @@
 			item: "fluiddrawers:tank"
 		},
 		{
-			id: "immersivepetroleum:schematic",
 			tag: {
 				multiblock: "IE:SheetmetalTank"
-			}
+			},
+			id: "immersivepetroleum:schematic"
 		},
 		{
 			item: "extrautils2:drum"
@@ -84,9 +84,9 @@
 			item: "extrautils2:drum 1 3"
 		},
 		{
-			id: "ic2:te",
+			tag: {},
 			Damage: 131s,
-			tag: {}
+			id: "ic2:te"
 		},
 		{
 			item: "enderstorage:ender_storage 1 1"
@@ -122,10 +122,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

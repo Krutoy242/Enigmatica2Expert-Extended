@@ -1,133 +1,123 @@
 {
 	title: "{q.blood_magic.ritual_of_magnetism.name}",
 	icon: {
-		id: "littletiles:multitiles",
 		tag: {
-			grid: 1,
 			size: [I;
 				5,
 				3,
 				5
 			],
-			min: [I;
-				0,
-				0,
-				0
-			],
 			tiles: [{
+				boxes: [
+					[I;
+						0,
+						1,
+						0,
+						1,
+						2,
+						1
+					],
+					[I;
+						0,
+						1,
+						4,
+						1,
+						2,
+						5
+					],
+					[I;
+						4,
+						1,
+						0,
+						5,
+						2,
+						1
+					],
+					[I;
+						4,
+						1,
+						4,
+						5,
+						2,
+						5
+					]
+				],
 				tile: {
 					block: "bloodmagic:ritual_stone:4"
-				},
+				}
+			},
+			{
 				boxes: [
 					[I;
 						0,
 						1,
+						2,
+						1,
+						2,
+						3
+					],
+					[I;
+						1,
 						0,
 						1,
+						2,
+						1,
+						2
+					],
+					[I;
+						1,
+						0,
+						3,
+						2,
+						1,
+						4
+					],
+					[I;
+						2,
+						1,
+						0,
+						3,
 						2,
 						1
 					],
 					[I;
-						0,
+						2,
 						1,
 						4,
-						1,
+						3,
 						2,
 						5
 					],
 					[I;
+						3,
+						0,
+						1,
 						4,
 						1,
+						2
+					],
+					[I;
+						3,
 						0,
-						5,
-						2,
-						1
+						3,
+						4,
+						1,
+						4
 					],
 					[I;
 						4,
 						1,
-						4,
+						2,
 						5,
 						2,
-						5
+						3
 					]
-				]
-			},
-			{
+				],
 				tile: {
 					block: "bloodmagic:ritual_stone:3"
-				},
-				boxes: [
-					[I;
-						0,
-						1,
-						2,
-						1,
-						2,
-						3
-					],
-					[I;
-						1,
-						0,
-						1,
-						2,
-						1,
-						2
-					],
-					[I;
-						1,
-						0,
-						3,
-						2,
-						1,
-						4
-					],
-					[I;
-						2,
-						1,
-						0,
-						3,
-						2,
-						1
-					],
-					[I;
-						2,
-						1,
-						4,
-						3,
-						2,
-						5
-					],
-					[I;
-						3,
-						0,
-						1,
-						4,
-						1,
-						2
-					],
-					[I;
-						3,
-						0,
-						3,
-						4,
-						1,
-						4
-					],
-					[I;
-						4,
-						1,
-						2,
-						5,
-						2,
-						3
-					]
-				]
+				}
 			},
 			{
-				tile: {
-					block: "bloodmagic:ritual_stone:2"
-				},
 				boxes: [
 					[I;
 						0,
@@ -161,7 +151,10 @@
 						3,
 						3
 					]
-				]
+				],
+				tile: {
+					block: "bloodmagic:ritual_stone:2"
+				}
 			},
 			{
 				bBox: [I;
@@ -176,8 +169,15 @@
 					block: "bloodmagic:ritual_stone"
 				}
 			}],
-			count: 17
-		}
+			count: 17,
+			grid: 1,
+			min: [I;
+				0,
+				0,
+				0
+			]
+		},
+		id: "littletiles:multitiles"
 	},
 	x: 8.0d,
 	y: -1.4d,

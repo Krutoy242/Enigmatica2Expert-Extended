@@ -9,7 +9,7 @@
 	dependencies: [
 		"dabc815c"
 	],
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "25b95556",
 		type: "item",

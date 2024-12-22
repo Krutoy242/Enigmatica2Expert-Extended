@@ -2,26 +2,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:broad_axe_head",
 			tag: {
 				Material: "firewood"
-			}
+			},
+			id: "tconstruct:broad_axe_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:broad_axe_head",
 			tag: {
 				Material: "fusewood"
-			}
+			},
+			id: "tconstruct:broad_axe_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:broad_axe_head",
 			tag: {
 				Material: "xu_evil_metal"
-			}
+			},
+			id: "tconstruct:broad_axe_head"
 		}
 	}]
 }

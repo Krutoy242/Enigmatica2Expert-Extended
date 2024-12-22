@@ -1,0 +1,30 @@
+{
+	title: "{q.nuclearcraft_overh.schematica.name}",
+	icon: "botania:cosmetic 1 31",
+	x: 13.3d,
+	y: 9.3d,
+	text: [
+		"{q.nuclearcraft_overh.schematica.desc}"
+	],
+	dependencies: [
+		"dc5e8800"
+	],
+	tasks: [{
+		uid: "412252dd",
+		type: "custom",
+		title: "Open the menu \"Select Schematic File\"",
+		tags: [
+			"schematica"
+		]
+	}],
+	rewards: [{
+		uid: "5189b5f6",
+		type: "item",
+		item: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		}
+	}]
+}

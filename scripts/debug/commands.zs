@@ -1,3 +1,5 @@
+#reloadable
+
 import mods.zenutils.I18n;
 import mods.zenutils.StringList;
 import mods.zenutils.command.CommandUtils;
@@ -31,13 +33,13 @@ lang.execute = function (command, server, sender, args) {
     for i in 0 .. invLength {
       val it = pl.getInventoryStack(i);
       if (!isNull(it)) {
-        s += '\n' ~ it.name ~ '=' ~ it.displayName;
+        s += `\n${it.name}=${it.displayName}`;
         s_len += 1;
       }
     }
     if (s_len > 0) {
       print(s);
-      pl.sendChat(I18n.format(game.localize('commands.lang.output'), s_len ~ ''));
+      pl.sendChat(I18n.format(game.localize('commands.lang.output'), `${s_len}`));
     }
     else {
       pl.sendChat(game.localize('commands.lang.empty'));
@@ -46,11 +48,9 @@ lang.execute = function (command, server, sender, args) {
   else if (args[0] == 'hand') {
     val it = pl.currentItem;
     if (!isNull(it)) {
-      print(
-        'Lang key and translation:' ~ '\n'
-        ~ it.name ~ '=' ~ it.displayName
-      );
-      pl.sendChat(game.localize('commands.lang.hand'));
+      val line = `Lang key and translation:\n${it.name}=${it.displayName}`;
+      print(line);
+      pl.sendChat(I18n.format(game.localize('commands.lang.hand'), line));
     }
   }
   else {

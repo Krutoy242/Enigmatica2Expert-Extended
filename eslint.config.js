@@ -4,13 +4,16 @@ export default antfu({
   // typescript: { tsconfigPath: 'tsconfig.json' },
   gitignore: false,
   rules    : {
+    'no-console'                : 'off',
+    'node/prefer-global/process': 'off',
 
     // Override @antfu rules to my personal prefferences
-    'style/key-spacing'    : ['error', { align: 'colon' }],
-    'style/no-multi-spaces': 'off',
-    // 'style/type-annotation-spacing': 'off',
-    'antfu/if-newline'     : 'off',
-    'style/comma-dangle'   : [
+    'style/key-spacing'            : ['error', { align: 'colon' }],
+    'style/no-multi-spaces'        : 'off',
+    'style/type-annotation-spacing': 'off',
+    'antfu/if-newline'             : 'off',
+    'style/object-curly-spacing'   : 'off',
+    'style/comma-dangle'           : [
       'error',
       {
         functions: 'never',

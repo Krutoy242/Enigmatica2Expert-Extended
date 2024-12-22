@@ -8,10 +8,10 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "legendary"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	}]
 }

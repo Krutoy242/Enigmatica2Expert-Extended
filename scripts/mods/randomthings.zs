@@ -1,4 +1,4 @@
-#modloaded randomthings
+#modloaded randomthings nuclearcraft
 
 import crafttweaker.item.IIngredient;
 
@@ -238,10 +238,7 @@ craft.remake(<randomthings:weatheregg:2> * 4, ['pretty',
 
 // Spectre String harder
 recipes.remove(<randomthings:ingredient:12>);
-mods.inworldcrafting.FluidToItem.transform(<randomthings:ingredient:12> * 4, <fluid:liquid_sunshine>, [
-  <randomthings:ingredient:2>,
-  <mysticalagriculture:crafting:23>,
-]);
+recipes.addShapeless('cheaper spectre string', <randomthings:ingredient:12>, [<mysticalagriculture:crafting:23>, <randomthings:ingredient:2>]);
 
 val spectreIngrs = {
   '♥': <randomthings:spectrecoil_redstone>,   // Redstone Spectre Coil
@@ -253,7 +250,7 @@ val spectreIngrs = {
   '▬': <randomthings:ingredient:3>,           // Spectre Ingot
   'o': <cyclicmagic:soulstone>,               // Soulstone
   'P': <forestry:crafting_material:1>,        // Pulsating Mesh
-  'S': <randomthings:ingredient:12>,          // Spectre String
+  'S': <mysticalagriculture:crafting:23>,
   'i': <contenttweaker:conglomerate_of_coal>,
   'l': <contenttweaker:conglomerate_of_life>,
   't': <contenttweaker:conglomerate_of_sun>,

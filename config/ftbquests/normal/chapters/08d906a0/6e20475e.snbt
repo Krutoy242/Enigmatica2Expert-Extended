@@ -4,7 +4,7 @@
 	dependencies: [
 		"67cb94cd"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "bba16e7e",
 		type: "item",
@@ -16,11 +16,11 @@
 		uid: "f9c0185d",
 		type: "item",
 		item: {
-			id: "tconstruct:seared_tank",
 			tag: {
-				FluidName: "lava",
-				Amount: 4000
-			}
+				Amount: 4000,
+				FluidName: "lava"
+			},
+			id: "tconstruct:seared_tank"
 		}
 	}]
 }

@@ -5,23 +5,23 @@
 	dependencies: [
 		"aada5fc0"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "1d818605",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any plankWood"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "plankWood"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any plankWood"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 32L
 	}],

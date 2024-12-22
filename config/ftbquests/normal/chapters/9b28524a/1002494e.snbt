@@ -12,10 +12,10 @@
 		uid: "afad14da",
 		type: "item",
 		items: [{
-			id: "bloodmagic:blood_orb",
 			tag: {
 				orb: "bloodmagic:master"
-			}
+			},
+			id: "bloodmagic:blood_orb"
 		}]
 	}],
 	rewards: [{
@@ -23,10 +23,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

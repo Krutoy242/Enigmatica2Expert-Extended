@@ -20,8 +20,8 @@
 		uid: "5ae2ecd9",
 		type: "item",
 		items: [{
-			id: "appliedenergistics2:memory_card",
-			tag: {}
+			tag: {},
+			id: "appliedenergistics2:memory_card"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -30,10 +30,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

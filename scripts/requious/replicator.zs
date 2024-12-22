@@ -35,8 +35,16 @@ craft.make(<requious:replicator>, ['pretty',
 
 // Replication statistics
 static statReplications as mods.zenutils.PlayerStat = mods.zenutils.PlayerStat.getBasicStat('stat.replications');
-scripts.lib.offline.op.getRegistry.set('stat_replications', function(player as IPlayer, value as string) as string {return player.readStat(statReplications) as string;});
-scripts.lib.offline.op.setRegistry.set('stat_replications', function(player as IPlayer, value as string) as string {player.addStat(statReplications, value as int); return null;});
+scripts.lib.offline.op.getRegistry.set('stat_replications', function(player as IPlayer, value as string) as string {
+  val result = player.readStat(statReplications);
+  return result as string;
+});
+scripts.lib.offline.op.setRegistry.set('stat_replications', function(player as IPlayer, value as string) as string {
+  val oldValue = player.readStat(statReplications);
+  if (oldValue != value as int)
+    player.addStat(statReplications, oldValue - value as int);
+  return null;
+});
 
 // Define offline difficulty get/set
 // Required for scripts.lib.offline.get() and set() calls
@@ -234,7 +242,7 @@ function getReplicateItem(m as MachineContainer, disk as IItemStack) as IItemSta
     || isNull(disk.tag.Pattern.Damage)
   ) return null;
 
-  return <item:${disk.tag.Pattern.id}:${disk.tag.Pattern.Damage}>;
+  return itemUtils.getItem(disk.tag.Pattern.id, disk.tag.Pattern.Damage);
 }
 
 function consumeEnergy(m as MachineContainer, amount as int) as void {
@@ -259,7 +267,9 @@ function consumeMatter(m as MachineContainer, consumeAmount as int) as bool {
     ? fluid * (fluid.amount - consumeAmount)
     : null
   );
-  scripts.lib.offline.op.set(m.getString('ownerUUID'), 'stat_replications', consumeAmount);
+  val uuid = m.getString('ownerUUID');
+  val oldValue = scripts.lib.offline.op.get(uuid, 'stat_replications', 0) as int;
+  scripts.lib.offline.op.set(uuid, 'stat_replications', oldValue + consumeAmount);
   return true;
 }
 

@@ -13,8 +13,8 @@
 		uid: "d9fba7f7",
 		type: "item",
 		items: [{
-			id: "thermalinnovation:injector",
-			tag: {}
+			tag: {},
+			id: "thermalinnovation:injector"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -23,10 +23,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

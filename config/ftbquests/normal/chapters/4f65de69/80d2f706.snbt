@@ -1,16 +1,16 @@
 {
 	icon: {
-		id: "danknull:danknull_dock",
 		tag: {
 			BlockEntityTag: {
-				id: "danknull:danknull_dock",
 				DankNullStack: {
+					Damage: 0s,
 					id: "danknull:dank_null_0",
-					Count: 1,
-					Damage: 0s
-				}
+					Count: 1
+				},
+				id: "danknull:danknull_dock"
 			}
-		}
+		},
+		id: "danknull:danknull_dock"
 	},
 	x: 6.7d,
 	y: 6.04d,
@@ -24,22 +24,22 @@
 		uid: "a51ba647",
 		type: "item",
 		items: [{
-			id: "danknull:danknull_dock",
 			tag: {
 				BlockEntityTag: {
-					id: "danknull:danknull_dock",
 					DankNullStack: {
+						Damage: 0s,
 						id: "danknull:dank_null_0",
-						Count: 1,
-						Damage: 0s
-					}
+						Count: 1
+					},
+					id: "danknull:danknull_dock"
 				}
-			}
+			},
+			id: "danknull:danknull_dock"
 		},
 		{
 			item: "danknull:danknull_dock"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -47,10 +47,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

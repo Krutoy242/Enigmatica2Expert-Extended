@@ -14,18 +14,18 @@
 		title: "Fuel Waste",
 		icon: "nuclearcraft:depleted_fuel_uranium 1 9",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any depletedFuelReactor"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "depletedFuelReactor"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any depletedFuelReactor"
+				}
+			},
+			id: "itemfilters:filter"
 		}]
 	}],
 	rewards: [{
@@ -33,10 +33,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

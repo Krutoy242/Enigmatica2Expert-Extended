@@ -3,6 +3,9 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
+Purge(<actuallyadditions:block_grinder>);
+Purge(<actuallyadditions:block_grinder_double>);
+
 // Black Quartz Block recipe remakes
 // Black Quartz Pillar
 recipes.remove(<actuallyadditions:block_misc>);
@@ -65,7 +68,7 @@ craft.remake(<actuallyadditions:item_drill_upgrade_five_by_five>, ['pretty',
   '╳ A ╳',
   '* ╳ *'], {
   '*': <ore:crystalDiamantine>, // Diamatine Crystal
-  '╳': <ore:crystalRestonia>, // Restonia Crystal
+  '╳': <actuallyadditions:item_crystal_empowered>,
   'A': <actuallyadditions:item_misc:8>, // Advanced Coil
 });
 
@@ -336,7 +339,7 @@ craft.remake(<actuallyadditions:block_phantomface>, ['pretty',
 recipes.remove(<actuallyadditions:block_greenhouse_glass>);
 
 // Black quartz
-val crushExceptions = 'except: IECrusher SagMill Pulverizer AACrusher MekCrusher';
+val crushExceptions = 'except: IECrusher SagMill Pulverizer MekCrusher';
 scripts.process.crush(<ore:gemQuartzBlack>, <actuallyadditions:item_dust:7>, crushExceptions, null, null);
 scripts.process.crush(<ore:blockQuartzBlack>, <actuallyadditions:item_dust:7> * 9, crushExceptions, null, null);
 
@@ -344,8 +347,7 @@ scripts.process.crush(<ore:blockQuartzBlack>, <actuallyadditions:item_dust:7> * 
 scripts.process.crush(<ore:gemEmerald>, <actuallyadditions:item_dust:3>, 'Only: Grindstone AEGrinder', null, null);
 
 // Manually add silver secondary output
-scripts.process.crush(<ore:oreGold>, <thermalfoundation:material:1> * 2, 'strict: AACrusher', [<contenttweaker:dust_tiny_silver>], [1.0f]);
-scripts.process.crush(<ore:oreLead>, <thermalfoundation:material:67> * 2, 'strict: AACrusher', [<contenttweaker:dust_tiny_silver>], [0.5f]);
+scripts.process.crush(<ore:oreGold>, <thermalfoundation:material:1> * 2, 'strict: eu2crusher', [<contenttweaker:dust_tiny_silver>], [1.0f]);
 
 // Recycle Quark crystals
 function recycleCrystal(input as IItemStack, output as IItemStack) {

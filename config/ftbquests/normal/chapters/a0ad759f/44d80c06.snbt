@@ -1,27 +1,27 @@
 {
 	title: "{q.computers.3d_print_swap.name}",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 5.625d,
 	y: 7.199999999999999d,
 	shape: "pentagon",
 	text: [
 		"{q.computers.3d_print_swap.desc}"
 	],
-	can_repeat: true,
+	can_repeat: 1b,
 	dependencies: [
 		"c89961f3"
 	],
-	hide: true,
+	hide: 1b,
 	size: 0.75d,
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "f65e6bae",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "opencomputers:storage"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

@@ -1,4 +1,4 @@
-#modloaded thaumcraft
+#modloaded thaumcraft bloodmagic
 #ignoreBracketErrors
 
 import crafttweaker.data.IData;

@@ -12,6 +12,42 @@
     "dim": "Spectre (-343800852)"
   },
   {
+    "block": "thaumcraft:crystal_aer:0",
+    "distrib": "0,0.0;1,0.1;4,0.1;5,0.0;",
+    "silktouch": false,
+    "dim": "Spectre (-343800852)"
+  },
+  {
+    "block": "thaumcraft:crystal_aqua:0",
+    "distrib": "0,0.0;1,0.1;4,0.1;5,0.0;",
+    "silktouch": false,
+    "dim": "Spectre (-343800852)"
+  },
+  {
+    "block": "thaumcraft:crystal_ignis:0",
+    "distrib": "0,0.0;1,0.1;4,0.1;5,0.0;",
+    "silktouch": false,
+    "dim": "Spectre (-343800852)"
+  },
+  {
+    "block": "thaumcraft:crystal_ordo:0",
+    "distrib": "0,0.0;1,0.1;4,0.1;5,0.0;",
+    "silktouch": false,
+    "dim": "Spectre (-343800852)"
+  },
+  {
+    "block": "thaumcraft:crystal_perditio:0",
+    "distrib": "0,0.0;1,0.1;4,0.1;5,0.0;",
+    "silktouch": false,
+    "dim": "Spectre (-343800852)"
+  },
+  {
+    "block": "thaumcraft:crystal_terra:0",
+    "distrib": "0,0.0;1,0.1;4,0.1;5,0.0;",
+    "silktouch": false,
+    "dim": "Spectre (-343800852)"
+  },
+  {
     "block": "rftoolsdim:block_blockdimensionalshard:0",
     "distrib": "0,0.0;1,0.001;250,0.001;251,0.0;",
     "silktouch": false,
@@ -32412,6 +32448,23 @@
     "dropsList": [
       {
         "itemStack": "endreborn:item_lormyte_crystal",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 5,
+          "3": 10
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "trinity:trinitite:0",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "trinity:trinitite_shard",
         "fortunes": {
           "0": 1,
           "1": 2,

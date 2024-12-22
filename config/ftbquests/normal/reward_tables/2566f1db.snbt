@@ -3,287 +3,287 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "advanced_alloy"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 28
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "aethium"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 4
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "amethyst"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 18
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "black_quartz"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 64
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "bloodwood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 42
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "boron_nitride"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 16
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "carbon_fiber"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 36
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "darkwood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 14
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "desert_myrmex"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 38
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "diamantine_crystal"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "emeraldic_crystal"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "endorium"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 26
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "enori_crystal"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "fusewood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 16
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "gelid_gem"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 10
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "ghostwood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 22
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "ionite"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 6
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "jungle_myrmex"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 38
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "kyronite"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 10
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "litherite"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 12
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "lonsdaleite"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 32
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "nagascale"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 30
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "palis_crystal"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "pladium"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 8
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "restonia_crystal"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "sapphire"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 40
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "steeleaf"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 24
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "topaz"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 34
 	},
 	{
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "void_crystal"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	},
 	{
 		item: {
-			id: "tconevo:part_arcane_focus",
 			tag: {
 				Material: "enderium"
-			}
+			},
+			id: "tconevo:part_arcane_focus"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:broad_axe_head",
 			tag: {
 				Material: "gelid_enderium"
-			}
+			},
+			id: "tconstruct:broad_axe_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:large_plate",
 			tag: {
 				Material: "osgloglas"
-			}
+			},
+			id: "tconstruct:large_plate"
 		}
 	},
 	{
@@ -311,19 +311,19 @@
 	},
 	{
 		item: {
-			id: "plustic:battery_cell",
 			tag: {
 				Material: "manyullyn"
-			}
+			},
+			id: "plustic:battery_cell"
 		}
 	}],
 	loot_crate: {
 		string_id: "materials",
 		color: 2686988,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

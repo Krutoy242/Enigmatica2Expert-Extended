@@ -1,18 +1,11 @@
 {
 	title: "{q.blood_magic.misc_ritual_notes.name}",
 	icon: {
-		id: "littletiles:multitiles",
 		tag: {
-			grid: 1,
 			size: [I;
 				1,
 				1,
 				1
-			],
-			min: [I;
-				0,
-				0,
-				0
 			],
 			tiles: [{
 				bBox: [I;
@@ -27,8 +20,15 @@
 					block: "bloodmagic:ritual_stone:4"
 				}
 			}],
-			count: 1
-		}
+			count: 1,
+			grid: 1,
+			min: [I;
+				0,
+				0,
+				0
+			]
+		},
+		id: "littletiles:multitiles"
 	},
 	x: 6.8d,
 	y: 0.4d,

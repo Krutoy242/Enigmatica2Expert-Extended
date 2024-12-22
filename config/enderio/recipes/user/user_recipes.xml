@@ -597,7 +597,7 @@
         <item name="enderio:block_inventory_chest_enormous"/>
         <item name="REMOTE_AWARENESS_UPGRADE"/>
         <item name="ENHANCED_CHASSIPARTS"/>
-        <item name="thaumadditions:chester:0"/>
+        <item name="thaumicwonders:everburning_urn:0"/>
         <item name="ENHANCED_CHASSIPARTS"/>
       </grid>
       <output name="enderio:block_inventory_chest_warehouse"/>

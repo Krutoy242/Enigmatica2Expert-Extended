@@ -2,10 +2,10 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:large_sword_blade",
 			tag: {
 				Material: "elementium"
-			}
+			},
+			id: "tconstruct:large_sword_blade"
 		}
 	},
 	{
@@ -13,10 +13,10 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	}]
 }

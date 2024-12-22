@@ -20,13 +20,13 @@
 		uid: "b93cab1f",
 		type: "item",
 		item: {
-			id: "thaumadditions:jar_eldritch",
 			tag: {
 				Aspects: [{
-					key: "vitium",
-					amount: 500
+					amount: 500,
+					key: "vitium"
 				}]
-			}
+			},
+			id: "thaumadditions:jar_eldritch"
 		}
 	}]
 }

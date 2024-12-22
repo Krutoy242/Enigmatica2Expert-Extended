@@ -1,8 +1,8 @@
 {
 	title: "{item.item_stellar_alloy_chestplate.name}",
 	icon: {
-		id: "enderio:item_stellar_alloy_chestplate",
-		tag: {}
+		tag: {},
+		id: "enderio:item_stellar_alloy_chestplate"
 	},
 	x: -0.5d,
 	y: 4.3d,
@@ -16,40 +16,40 @@
 		uid: "4f435d42",
 		type: "item",
 		items: [{
-			id: "enderio:item_stellar_alloy_helmet",
-			tag: {}
+			tag: {},
+			id: "enderio:item_stellar_alloy_helmet"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "82910685",
 		type: "item",
 		items: [{
-			id: "enderio:item_stellar_alloy_chestplate",
-			tag: {}
+			tag: {},
+			id: "enderio:item_stellar_alloy_chestplate"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "4176bf1a",
 		type: "item",
 		items: [{
-			id: "enderio:item_stellar_alloy_leggings",
-			tag: {}
+			tag: {},
+			id: "enderio:item_stellar_alloy_leggings"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "be842c3b",
 		type: "item",
 		items: [{
-			id: "enderio:item_stellar_alloy_boots",
-			tag: {}
+			tag: {},
+			id: "enderio:item_stellar_alloy_boots"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

@@ -93,7 +93,7 @@ craft.make(<betteranimalsplus:turkey_raw>, ['pretty',
 scripts.process.melt(<betteranimalsplus:trillium>, <fluid:coal> * 100);
 
 // Bone source
-scripts.process.crush(<betteranimalsplus:antler>, <minecraft:bone> * 20, 'only: eu2Crusher AACrusher');
+scripts.process.crush(<betteranimalsplus:antler>, <minecraft:bone> * 20, 'only: eu2Crusher');
 
 <ore:foodCheese>.remove(<betteranimalsplus:cheese>);
 <ore:listAllmeatraw>.add(<betteranimalsplus:turkey_leg_raw>);

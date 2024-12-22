@@ -666,6 +666,13 @@ craft.make(<quark:slime_bucket>, ['pretty',
   '~': <minecraft:bucket>,                  // Bucket
 });
 
+// [Mystical String] from [Industrial Hemp Fiber][+1]
+craft.remake(<mysticalagriculture:crafting:23>, [
+  'PHP'], {
+  'P': <ore:shardProsperity>, // Prosperity Shard
+  'H': <ore:fiberHemp>,       // Industrial Hemp Fiber
+});
+
 // "Purification" or [Prosperity Shard Shard] into pure shards
 scripts.do.expire_in_block.set(<tconstruct:shard>.withTag({ Material: 'ma.prosperity' }),  { 'cyclicmagic:fire_dark': <mysticalagriculture:crafting:5> });
 
@@ -738,11 +745,16 @@ for i, item in furnaceByTier {
 function remakeBlock(recName as string, output as IBlockState, ingrs as IIngredient[], fluid as string = 'stone') as void {
   if (!isNull(recName)) recipes.removeByRecipeName(recName);
   scripts.do.burnt_in_fluid.add(ingrs[0].items[0].definition.id, output, fluid);
-  // scripts.processUtils.avdRockXmlRecipe("Crystallizer", [ingrs[0]], [game.getLiquid(fluid) * 1000], [output.block.item], null);
+  if (!(ingrs[0] has <mysticalagriculture:rock_crystal_essence>)) {
+    scripts.processWork.work(['ARCrystallizer'], null,
+      [ingrs[0].items[0] * 8], [<liquid:ic2construction_foam> * 8000],
+      [scripts.do.portal_spread.utils.stateToItem(output) * 8], null, null, null);
+  }
 }
 
 function makeSmelt(recName as string, output as ILiquidStack, ingrs as IIngredient[]) as void {
   mods.tconstruct.Melting.addRecipe(output, ingrs[0]);
+  mods.thermalexpansion.Crucible.addRecipe(output, ingrs[0].items[0], 1000);
 }
 
 function remakeSimple(recName as string, output as IIngredient, ingrs as IIngredient[]) as void {
@@ -752,6 +764,9 @@ function remakeSimple(recName as string, output as IIngredient, ingrs as IIngred
 function remakeFluid(recName as string, output as ILiquidStack, ingrs as IIngredient[]) as void {
   recipes.removeByRecipeName(recName);
   mods.inworldcrafting.FluidToFluid.transform(output, <liquid:fluid_quicksilver>, ingrs);
+  scripts.processWork.work(['Mixer'], null,
+    [ingrs[0]], [<liquid:fluid_quicksilver> * 1000],
+    null, [output * 1000], null, null);
 }
 
 function remakeAltair(recName as string, output as IIngredient, ingrs as IIngredient[]) as void {

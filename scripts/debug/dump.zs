@@ -162,7 +162,7 @@ events.onPlayerLoggedIn(function (e as crafttweaker.event.PlayerLoggedInEvent) {
   e.player.world.catenation().sleep(100).then(function (world, ctx) {
     e.player.sendMessage('§cDebug environment activated!');
     e.player.sendMessage('§8If you want to disable DEBUG mode, remove §7scripts/debug§8 directory');
-    e.player.sendMessage('§8Write §7/skip_automation§8 to skip automatic executions, write §7/run_automation§8 to run manually');
+    e.player.sendMessage('§8Write §7/skip§8 to skip automatic executions, write §7/run_automation§8 to run manually');
   })
 
     .sleep(300).then(function (world, ctx) {
@@ -187,7 +187,7 @@ for r in furnace.all {
 print('##################################################');
 
 // Command to cancel automation
-var cmd = mods.zenutils.command.ZenCommand.create('skip_automation');
+var cmd = mods.zenutils.command.ZenCommand.create('skip');
 cmd.requiredPermissionLevel = 0;
 cmd.execute = function (command, server, sender, args) { skipped[0] = true; };
 cmd.register();

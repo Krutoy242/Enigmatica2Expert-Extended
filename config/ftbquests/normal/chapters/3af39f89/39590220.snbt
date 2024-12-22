@@ -12,12 +12,10 @@
 		uid: "790c0518",
 		type: "item",
 		items: [{
-			id: "thermalexpansion:machine",
-			Damage: 7s,
 			tag: {
-				RSControl: 0b,
-				Facing: 3b,
 				Energy: 0,
+				Facing: 3b,
+				RSControl: 0b,
 				Level: 0b,
 				SideCache: [B;
 					1b,
@@ -27,7 +25,9 @@
 					3b,
 					3b
 				]
-			}
+			},
+			Damage: 7s,
+			id: "thermalexpansion:machine"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -36,10 +36,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

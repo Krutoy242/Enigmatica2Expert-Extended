@@ -1,4 +1,4 @@
-#modloaded botania
+#modloaded botania requious
 #priority 950
 
 import mods.requious.AssemblyRecipe;

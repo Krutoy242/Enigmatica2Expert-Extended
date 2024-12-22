@@ -16,20 +16,20 @@
 		title: "Reactor Fuels",
 		icon: "nuclearcraft:fuel_uranium 1 9",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any fuelReactor"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "fuelReactor"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any fuelReactor"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -37,10 +37,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

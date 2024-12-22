@@ -1,8 +1,8 @@
 {
 	title: "{q.botania.botania.name}",
 	icon: {
-		id: "botania:lexicon",
-		tag: {}
+		tag: {},
+		id: "botania:lexicon"
 	},
 	x: 5.0d,
 	y: 12.0d,

@@ -1,17 +1,17 @@
 {
 	version: 9,
-	default_reward_team: false,
-	default_consume_items: false,
+	default_reward_team: 0b,
+	default_consume_items: 0b,
 	default_autoclaim_rewards: "disabled",
 	default_quest_shape: "circle",
-	default_quest_disable_jei: false,
+	default_quest_disable_jei: 0b,
 	emergency_items_cooldown: "5m",
-	drop_loot_crates: false,
+	drop_loot_crates: 0b,
 	loot_crate_no_drop: {
 		passive: 4000,
 		monster: 600,
 		boss: 0
 	},
-	disable_gui: false,
+	disable_gui: 0b,
 	grid_scale: 0.1d
 }

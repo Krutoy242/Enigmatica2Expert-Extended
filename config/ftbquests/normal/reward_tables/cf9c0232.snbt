@@ -2,26 +2,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:excavator_head",
 			tag: {
 				Material: "ma.soulium"
-			}
+			},
+			id: "tconstruct:excavator_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:excavator_head",
 			tag: {
 				Material: "nagascale"
-			}
+			},
+			id: "tconstruct:excavator_head"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:excavator_head",
 			tag: {
 				Material: "boron_nitride"
-			}
+			},
+			id: "tconstruct:excavator_head"
 		}
 	}]
 }

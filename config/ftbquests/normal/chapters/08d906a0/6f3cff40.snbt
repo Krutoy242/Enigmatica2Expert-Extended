@@ -4,27 +4,27 @@
 	dependencies: [
 		"e5dfeafc"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "5d9067bd",
 		type: "item",
 		items: [{
-			id: "forge:bucketfilled",
 			tag: {
-				FluidName: "witchwater",
-				Amount: 1000
-			}
+				Amount: 1000,
+				FluidName: "witchwater"
+			},
+			id: "forge:bucketfilled"
 		},
 		{
-			id: "ic2:fluid_cell",
 			tag: {
 				Fluid: {
-					FluidName: "witchwater",
-					Amount: 1000
+					Amount: 1000,
+					FluidName: "witchwater"
 				}
-			}
+			},
+			id: "ic2:fluid_cell"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 2b
 	}],
 	rewards: [{

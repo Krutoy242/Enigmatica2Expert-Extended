@@ -12,7 +12,20 @@
 		uid: "82cff715",
 		type: "item",
 		items: [{
-			id: "tconstruct:pickaxe",
+			ForgeCaps: {
+				"plustic:musicofthespheres_cap": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:fruitsalad_cap": {
+					Items: [],
+					Size: 5
+				}
+			},
 			tag: {
 				TinkerData: {
 					Materials: [
@@ -23,20 +36,12 @@
 					Modifiers: []
 				},
 				Stats: {
-					Durability: 56,
-					HarvestLevel: 0,
-					Attack: 1.5f,
+					FreeModifiers: 3,
 					MiningSpeed: 1.5f,
 					AttackSpeedMultiplier: 1.0f,
-					FreeModifiers: 3
-				},
-				StatsOriginal: {
-					Durability: 56,
 					HarvestLevel: 0,
 					Attack: 1.5f,
-					MiningSpeed: 1.5f,
-					AttackSpeedMultiplier: 1.0f,
-					FreeModifiers: 3
+					Durability: 56
 				},
 				Special: {
 					Categories: [
@@ -44,27 +49,22 @@
 						"tool",
 						"harvest"
 					]
+				},
+				StatsOriginal: {
+					FreeModifiers: 3,
+					MiningSpeed: 1.5f,
+					AttackSpeedMultiplier: 1.0f,
+					HarvestLevel: 0,
+					Attack: 1.5f,
+					Durability: 56
 				}
 			},
-			ForgeCaps: {
-				"plustic:fruitsalad_cap": {
-					Items: [],
-					Size: 5
-				},
-				"plustic:": {
-					Items: [],
-					Size: 1
-				},
-				"plustic:musicofthespheres_cap": {
-					Items: [],
-					Size: 1
-				}
-			}
+			id: "tconstruct:pickaxe"
 		},
 		{
 			item: "minecraft:wooden_pickaxe"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

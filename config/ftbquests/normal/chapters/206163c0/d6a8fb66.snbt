@@ -20,20 +20,20 @@
 		uid: "60366eb8",
 		type: "item",
 		item: {
-			id: "forestry:research_note",
 			tag: {
-				res: {
-					Name: "Gkiritol",
-					Id: "9fed2c30-d8ec-4c92-a209-ad93f94f8f79"
-				},
-				TYP: 1b,
 				INN: {
 					ROT: "rootBees",
 					AL0: "forestry.speciesMeadows",
-					AL1: "forestry.speciesModest",
-					RST: "forestry.speciesCommon"
+					RST: "forestry.speciesCommon",
+					AL1: "forestry.speciesModest"
+				},
+				TYP: 1b,
+				res: {
+					Name: "Gkiritol",
+					Id: "9fed2c30-d8ec-4c92-a209-ad93f94f8f79"
 				}
-			}
+			},
+			id: "forestry:research_note"
 		}
 	},
 	{

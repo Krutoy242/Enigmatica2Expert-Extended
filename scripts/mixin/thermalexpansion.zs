@@ -1,34 +1,25 @@
+#modloaded thermalexpansion
 #loader mixin
 
 import native.net.minecraft.item.ItemStack;
 import native.cofh.thermalexpansion.util.managers.machine.PulverizerManager;
 import native.cofh.thermalexpansion.util.managers.machine.SmelterManager;
 
-#mixin Mixin
-#{targets: "cofh.thermalexpansion.block.dynamo.TileDynamoNumismatic"}
+#mixin {targets: "cofh.thermalexpansion.block.dynamo.TileDynamoNumismatic"}
 zenClass MixinTileDynamoNumismatic {
     #mixin Static
-    #mixin ModifyConstant
-    #{
-    #    method: "config",
-    #    constant: {intValue: 1000}
-    #}
+    #mixin ModifyConstant {method: "config", constant: {intValue: 1000}}
     function modifyBaseEnergy0(value as int) as int {
         return 2000;
     }
 
-    #mixin ModifyConstant
-    #{
-    #    method: "installAugmentToSlot",
-    #    constant: {intValue: 4}
-    #}
+    #mixin ModifyConstant {method: "installAugmentToSlot", constant: {intValue: 4}}
     function modifyBaseEnergy1(value as int) as int {
         return 2;
     }
 }
 
-#mixin Mixin
-#{targets: "cofh.thermalexpansion.plugins.jei.machine.transposer.TransposerRecipeWrapperContainer"}
+#mixin {targets: "cofh.thermalexpansion.plugins.jei.machine.transposer.TransposerRecipeWrapperContainer"}
 zenClass MixinTransposerRecipeWrapperContainer {
     #mixin Redirect
     #{
@@ -43,8 +34,7 @@ zenClass MixinTransposerRecipeWrapperContainer {
     }
 }
 
-#mixin Mixin
-#{targets: "cofh.thermalexpansion.util.managers.machine.PulverizerManager"}
+#mixin {targets: "cofh.thermalexpansion.util.managers.machine.PulverizerManager"}
 zenClass MixinPulverizerManager {
     #mixin Static
     #mixin Redirect
@@ -62,8 +52,7 @@ zenClass MixinPulverizerManager {
     }
 }
 
-#mixin Mixin
-#{targets: "cofh.thermalexpansion.util.managers.machine.SmelterManager"}
+#mixin {targets: "cofh.thermalexpansion.util.managers.machine.SmelterManager"}
 zenClass MixinSmelterManager {
     #mixin Static
     #mixin Redirect

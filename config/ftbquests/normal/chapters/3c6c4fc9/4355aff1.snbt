@@ -12,16 +12,16 @@
 		uid: "9969e5c3",
 		type: "item",
 		items: [{
-			id: "nuclearcraft:voltaic_pile_basic",
 			tag: {
-				maxTransfer: 80000,
 				capacity: 1600000,
 				energy: 0,
+				maxTransfer: 80000,
 				energyStorage: {
-					energy: 0L,
-					capacity: 1600000L
+					capacity: 1600000L,
+					energy: 0L
 				}
-			}
+			},
+			id: "nuclearcraft:voltaic_pile_basic"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -30,10 +30,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

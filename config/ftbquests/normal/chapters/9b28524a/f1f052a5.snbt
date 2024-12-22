@@ -13,18 +13,18 @@
 		uid: "b54ff04b",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any runeBlood"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "runeBlood"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any runeBlood"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 8L,
 		ignore_nbt: 1b
@@ -34,10 +34,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -40,141 +40,141 @@
 			item: "enderio:block_wireless_charger"
 		},
 		{
-			id: "actuallyadditions:battery_bauble",
 			tag: {
 				Energy: 0
-			}
+			},
+			id: "actuallyadditions:battery_bauble"
 		},
 		{
-			id: "actuallyadditions:battery_double_bauble",
 			tag: {
 				Energy: 0
-			}
+			},
+			id: "actuallyadditions:battery_double_bauble"
 		},
 		{
-			id: "actuallyadditions:battery_triple_bauble",
 			tag: {
 				Energy: 0
-			}
+			},
+			id: "actuallyadditions:battery_triple_bauble"
 		},
 		{
-			id: "actuallyadditions:battery_quadruple_bauble",
 			tag: {
 				Energy: 0
-			}
+			},
+			id: "actuallyadditions:battery_quadruple_bauble"
 		},
 		{
-			id: "actuallyadditions:battery_quintuple_bauble",
 			tag: {
 				Energy: 0
-			}
+			},
+			id: "actuallyadditions:battery_quintuple_bauble"
 		},
 		{
-			id: "integrateddynamics:energy_battery",
 			tag: {
 				energy: 0
-			}
+			},
+			id: "integrateddynamics:energy_battery"
 		},
 		{
-			id: "ic2:te",
+			tag: {},
 			Damage: 68s,
-			tag: {}
+			id: "ic2:te"
 		},
 		{
-			id: "ic2:te",
+			tag: {},
 			Damage: 69s,
-			tag: {}
+			id: "ic2:te"
 		},
 		{
-			id: "ic2:te",
+			tag: {},
 			Damage: 70s,
-			tag: {}
+			id: "ic2:te"
 		},
 		{
-			id: "ic2:te",
+			tag: {},
 			Damage: 71s,
-			tag: {}
+			id: "ic2:te"
 		},
 		{
-			id: "mekanism:machineblock",
-			Damage: 14s,
 			tag: {
 				mekData: {}
-			}
+			},
+			Damage: 14s,
+			id: "mekanism:machineblock"
 		},
 		{
-			id: "ic2:charging_re_battery",
+			tag: {},
 			Damage: 26s,
-			tag: {}
+			id: "ic2:charging_re_battery"
 		},
 		{
-			id: "ic2:advanced_charging_re_battery",
+			tag: {},
 			Damage: 26s,
-			tag: {}
+			id: "ic2:advanced_charging_re_battery"
 		},
 		{
-			id: "ic2:charging_energy_crystal",
+			tag: {},
 			Damage: 26s,
-			tag: {}
+			id: "ic2:charging_energy_crystal"
 		},
 		{
-			id: "ic2:charging_lapotron_crystal",
+			tag: {},
 			Damage: 26s,
-			tag: {}
+			id: "ic2:charging_lapotron_crystal"
 		},
 		{
-			id: "thermalexpansion:capacitor",
 			tag: {
 				Energy: 500000
-			}
+			},
+			id: "thermalexpansion:capacitor"
 		},
 		{
-			id: "thermalexpansion:capacitor",
-			Damage: 1s,
 			tag: {
 				Energy: 2000000
-			}
+			},
+			Damage: 1s,
+			id: "thermalexpansion:capacitor"
 		},
 		{
-			id: "thermalexpansion:capacitor",
-			Damage: 2s,
 			tag: {
 				Energy: 4500000
-			}
+			},
+			Damage: 2s,
+			id: "thermalexpansion:capacitor"
 		},
 		{
-			id: "thermalexpansion:capacitor",
-			Damage: 3s,
 			tag: {
 				Energy: 8000000
-			}
+			},
+			Damage: 3s,
+			id: "thermalexpansion:capacitor"
 		},
 		{
-			id: "thermalexpansion:capacitor",
-			Damage: 4s,
 			tag: {
 				Energy: 12500000
-			}
+			},
+			Damage: 4s,
+			id: "thermalexpansion:capacitor"
 		},
 		{
-			id: "randomthings:spectrecharger",
 			tag: {
 				options: {}
-			}
+			},
+			id: "randomthings:spectrecharger"
 		},
 		{
-			id: "randomthings:spectrecharger",
+			tag: {
+				options: {}
+			},
 			Damage: 1s,
-			tag: {
-				options: {}
-			}
+			id: "randomthings:spectrecharger"
 		},
 		{
-			id: "randomthings:spectrecharger",
-			Damage: 2s,
 			tag: {
 				options: {}
-			}
+			},
+			Damage: 2s,
+			id: "randomthings:spectrecharger"
 		},
 		{
 			item: "appliedenergistics2:charger"
@@ -189,10 +189,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

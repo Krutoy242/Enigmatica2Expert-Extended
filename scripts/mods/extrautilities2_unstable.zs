@@ -17,7 +17,7 @@ import crafttweaker.world.IWorld;
 static tagName = 'unstableIngotContainerCounter';
 
 function setPlayerContainerCounter(n as int, player as IPlayer) {
-  val data as IData = IData.createEmptyMutableDataMap();
+  val data as IData = createEmptyMutableDataMap;
   data.memberSet(tagName, n);
   player.update(data);
 }

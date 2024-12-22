@@ -1,27 +1,27 @@
 {
 	title: "{q.blood_magic.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 179,
+			TrophyColorBlue: 44,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 49,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "bloodmagic:altar",
-				Damage: 0s
+				id: "bloodmagic:altar"
 			},
-			TrophyColorBlue: 44,
-			TrophyColorRed: 179,
 			TrophyName: "§4Blood Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 19.5d,
 	y: 3.3d,
 	text: [
 		"{q.blood_magic.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"3e852406",
 		"6a6dc36e",
@@ -81,23 +81,23 @@
 	rewards: [{
 		uid: "9bb0e4ef",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 179,
+				TrophyColorBlue: 44,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 49,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "bloodmagic:altar",
-					Damage: 0s
+					id: "bloodmagic:altar"
 				},
-				TrophyColorBlue: 44,
-				TrophyColorRed: 179,
 				TrophyName: "§4Blood Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

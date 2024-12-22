@@ -676,7 +676,7 @@ craft.make(<thermalexpansion:machine:1>, ['pretty',
   '¤ ♥ ¤'], {
   '□': <tconstruct:large_plate>.withTag({ Material: 'flint' }), // Flint Large Plate
   's': <ore:gearEmerald>,
-  'C': <actuallyadditions:block_grinder> | <actuallyadditions:block_grinder_double>, // Crusher
+  'C': <actuallyadditions:item_misc:8>,
   '¤': <ore:gearElectrum>, // Electrum Gear
   '♥': <thermalfoundation:material:513>, // Redstone Reception Coil
   '◙': <thermalexpansion:frame>, // Machine Frame

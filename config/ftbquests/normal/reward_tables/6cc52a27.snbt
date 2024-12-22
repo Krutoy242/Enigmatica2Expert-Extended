@@ -3,7 +3,6 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "opencomputers:storage",
 			tag: {
 				"oc:data": {
 					node: {
@@ -11,6 +10,44 @@
 						visibility: 1,
 						buffer: 0.0d
 					},
+					"oc:userdata": [B;
+						48b,
+						56b,
+						56b,
+						52b,
+						97b,
+						51b,
+						54b,
+						49b,
+						45b,
+						97b,
+						101b,
+						53b,
+						57b,
+						45b,
+						52b,
+						50b,
+						49b,
+						53b,
+						45b,
+						97b,
+						102b,
+						51b,
+						57b,
+						45b,
+						101b,
+						56b,
+						50b,
+						102b,
+						98b,
+						56b,
+						56b,
+						49b,
+						51b,
+						55b,
+						101b,
+						52b
+					],
 					"oc:eeprom": [B;
 						123b,
 						10b,
@@ -565,8 +602,22 @@
 						125b,
 						10b
 					],
-					"oc:label": "Device Frame",
 					"oc:readonly": 0b,
+					"oc:label": "Device Frame"
+				}
+			},
+			id: "opencomputers:storage"
+		}
+	},
+	{
+		item: {
+			tag: {
+				"oc:data": {
+					node: {
+						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
+						visibility: 1,
+						buffer: 0.0d
+					},
 					"oc:userdata": [B;
 						48b,
 						56b,
@@ -604,21 +655,7 @@
 						55b,
 						101b,
 						52b
-					]
-				}
-			}
-		}
-	},
-	{
-		item: {
-			id: "opencomputers:storage",
-			tag: {
-				"oc:data": {
-					node: {
-						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
-						visibility: 1,
-						buffer: 0.0d
-					},
+					],
 					"oc:eeprom": [B;
 						123b,
 						10b,
@@ -773,8 +810,22 @@
 						125b,
 						10b
 					],
-					"oc:label": "Pixie House",
 					"oc:readonly": 0b,
+					"oc:label": "Pixie House"
+				}
+			},
+			id: "opencomputers:storage"
+		}
+	},
+	{
+		item: {
+			tag: {
+				"oc:data": {
+					node: {
+						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
+						visibility: 1,
+						buffer: 0.0d
+					},
 					"oc:userdata": [B;
 						48b,
 						56b,
@@ -812,21 +863,7 @@
 						55b,
 						101b,
 						52b
-					]
-				}
-			}
-		}
-	},
-	{
-		item: {
-			id: "opencomputers:storage",
-			tag: {
-				"oc:data": {
-					node: {
-						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
-						visibility: 1,
-						buffer: 0.0d
-					},
+					],
 					"oc:eeprom": [B;
 						123b,
 						10b,
@@ -1257,8 +1294,22 @@
 						125b,
 						10b
 					],
-					"oc:label": "Glass Fiber Wire Relay",
 					"oc:readonly": 0b,
+					"oc:label": "Glass Fiber Wire Relay"
+				}
+			},
+			id: "opencomputers:storage"
+		}
+	},
+	{
+		item: {
+			tag: {
+				"oc:data": {
+					node: {
+						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
+						visibility: 1,
+						buffer: 0.0d
+					},
 					"oc:userdata": [B;
 						48b,
 						56b,
@@ -1296,21 +1347,7 @@
 						55b,
 						101b,
 						52b
-					]
-				}
-			}
-		}
-	},
-	{
-		item: {
-			id: "opencomputers:storage",
-			tag: {
-				"oc:data": {
-					node: {
-						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
-						visibility: 1,
-						buffer: 0.0d
-					},
+					],
 					"oc:eeprom": [B;
 						123b,
 						10b,
@@ -1444,8 +1481,22 @@
 						10b,
 						125b
 					],
-					"oc:label": "Tier 3 Storage Module",
 					"oc:readonly": 0b,
+					"oc:label": "Tier 3 Storage Module"
+				}
+			},
+			id: "opencomputers:storage"
+		}
+	},
+	{
+		item: {
+			tag: {
+				"oc:data": {
+					node: {
+						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
+						visibility: 1,
+						buffer: 0.0d
+					},
 					"oc:userdata": [B;
 						48b,
 						56b,
@@ -1483,21 +1534,7 @@
 						55b,
 						101b,
 						52b
-					]
-				}
-			}
-		}
-	},
-	{
-		item: {
-			id: "opencomputers:storage",
-			tag: {
-				"oc:data": {
-					node: {
-						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
-						visibility: 1,
-						buffer: 0.0d
-					},
+					],
 					"oc:eeprom": [B;
 						123b,
 						115b,
@@ -1613,8 +1650,22 @@
 						125b,
 						10b
 					],
-					"oc:label": "Dislocator Receptacle",
 					"oc:readonly": 0b,
+					"oc:label": "Dislocator Receptacle"
+				}
+			},
+			id: "opencomputers:storage"
+		}
+	},
+	{
+		item: {
+			tag: {
+				"oc:data": {
+					node: {
+						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
+						visibility: 1,
+						buffer: 0.0d
+					},
 					"oc:userdata": [B;
 						48b,
 						56b,
@@ -1652,21 +1703,7 @@
 						55b,
 						101b,
 						52b
-					]
-				}
-			}
-		}
-	},
-	{
-		item: {
-			id: "opencomputers:storage",
-			tag: {
-				"oc:data": {
-					node: {
-						address: "e4350b2f-2e21-47fb-928c-eb26d89f77aa",
-						visibility: 1,
-						buffer: 0.0d
-					},
+					],
 					"oc:eeprom": [B;
 						123b,
 						10b,
@@ -2169,48 +2206,11 @@
 						125b,
 						10b
 					],
-					"oc:label": "Double-Layer Capacitor",
 					"oc:readonly": 0b,
-					"oc:userdata": [B;
-						48b,
-						56b,
-						56b,
-						52b,
-						97b,
-						51b,
-						54b,
-						49b,
-						45b,
-						97b,
-						101b,
-						53b,
-						57b,
-						45b,
-						52b,
-						50b,
-						49b,
-						53b,
-						45b,
-						97b,
-						102b,
-						51b,
-						57b,
-						45b,
-						101b,
-						56b,
-						50b,
-						102b,
-						98b,
-						56b,
-						56b,
-						49b,
-						51b,
-						55b,
-						101b,
-						52b
-					]
+					"oc:label": "Double-Layer Capacitor"
 				}
-			}
+			},
+			id: "opencomputers:storage"
 		}
 	}]
 }

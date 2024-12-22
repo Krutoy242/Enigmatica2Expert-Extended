@@ -1,10 +1,10 @@
 {
 	title: "{q.thaumcraft.scribing_tools.name}",
 	icon: {
-		id: "thaumadditions:vis_scribing_tools",
 		tag: {
 			tc.charge: 50
-		}
+		},
+		id: "thaumadditions:vis_scribing_tools"
 	},
 	x: 1.0d,
 	y: 4.3d,
@@ -16,29 +16,29 @@
 		"adef62af"
 	],
 	size: 0.75d,
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "8b5fb3c7",
 		type: "item",
 		items: [{
-			id: "thaumadditions:vis_scribing_tools",
-			Damage: 150s,
 			tag: {
 				tc.charge: 0
-			}
+			},
+			Damage: 150s,
+			id: "thaumadditions:vis_scribing_tools"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "29b0628c",
 		type: "item",
 		items: [{
-			id: "botania:manainkwell",
+			tag: {},
 			Damage: 150s,
-			tag: {}
+			id: "botania:manainkwell"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

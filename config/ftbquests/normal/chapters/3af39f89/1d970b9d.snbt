@@ -12,12 +12,10 @@
 		uid: "3843a0c1",
 		type: "item",
 		items: [{
-			id: "thermalexpansion:device",
-			Damage: 1s,
 			tag: {
-				RSControl: 0b,
-				Facing: 3b,
 				Energy: 0,
+				Facing: 3b,
+				RSControl: 0b,
 				SideCache: [B;
 					0b,
 					1b,
@@ -26,7 +24,9 @@
 					1b,
 					1b
 				]
-			}
+			},
+			Damage: 1s,
+			id: "thermalexpansion:device"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -35,10 +35,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

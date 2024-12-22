@@ -165,3 +165,11 @@ mods.thaumcraft.Crucible.registerRecipe(
   <harvestcraft:ediblerootitem>, // Input
   [<aspect:potentia> * 5]
 );
+
+// Peaceful Skyblock alt
+// [Archaeologist Hat] from [Zebrawood Wood Planks (Fireproof)]
+craft.make(<quark:archaeologist_hat>, ['pretty',
+  '# # #',
+  '#   #'], {
+  '#': <ore:plankFireproof>,
+});

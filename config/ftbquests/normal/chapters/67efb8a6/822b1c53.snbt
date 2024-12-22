@@ -1,10 +1,10 @@
 {
 	title: "{q.draconic_evolution.draconic_chestplate.name}",
 	icon: {
-		id: "draconicevolution:draconic_chest",
 		tag: {
 			Energy: 16000000
-		}
+		},
+		id: "draconicevolution:draconic_chest"
 	},
 	x: 8.7d,
 	y: -7.1000000000000005d,
@@ -19,10 +19,10 @@
 		uid: "67446d22",
 		type: "item",
 		items: [{
-			id: "draconicevolution:draconic_helm",
 			tag: {
 				Energy: 16000000
-			}
+			},
+			id: "draconicevolution:draconic_helm"
 		}],
 		ignore_nbt: 1b
 	},
@@ -30,10 +30,10 @@
 		uid: "3351bb7d",
 		type: "item",
 		items: [{
-			id: "draconicevolution:draconic_chest",
 			tag: {
 				Energy: 16000000
-			}
+			},
+			id: "draconicevolution:draconic_chest"
 		}],
 		ignore_nbt: 1b
 	},
@@ -41,10 +41,10 @@
 		uid: "53817c7e",
 		type: "item",
 		items: [{
-			id: "draconicevolution:draconic_legs",
 			tag: {
 				Energy: 16000000
-			}
+			},
+			id: "draconicevolution:draconic_legs"
 		}],
 		ignore_nbt: 1b
 	},
@@ -52,10 +52,10 @@
 		uid: "a118c677",
 		type: "item",
 		items: [{
-			id: "draconicevolution:draconic_boots",
 			tag: {
 				Energy: 16000000
-			}
+			},
+			id: "draconicevolution:draconic_boots"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -64,10 +64,10 @@
 		type: "custom",
 		title: "{e2ee.quest.legendary}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "legendary"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

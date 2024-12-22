@@ -13,11 +13,11 @@
 		uid: "c6a9334d",
 		type: "item",
 		items: [{
-			id: "forge:bucketfilled",
 			tag: {
-				FluidName: "high_pressure_steam",
-				Amount: 1000
-			}
+				Amount: 1000,
+				FluidName: "high_pressure_steam"
+			},
+			id: "forge:bucketfilled"
 		}]
 	}],
 	rewards: [{

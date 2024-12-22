@@ -345,21 +345,22 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('seal_globe',
   }).shaped());
 
 // [Bone eye] - wand for chester
+Purge(<thaumadditions:bone_eye>);
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:bone_eye>);
-mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('bone_eye',
-  'CHESTER',
-  100,
-  [<aspect:aer>, <aspect:ordo>],
-  <thaumadditions:bone_eye>,
-  Grid(['pretty',
-    '  Q S',
-    '  T Q',
-    'B    '], {
-    'Q': <ore:gemQuartz>, // Quartz
-    'T': <ore:ingotThaumium>, // Thaumium ingot
-    'S': <minecraft:spider_eye>, // Spider eye
-    'B': <ore:bone>, // Bone
-  }).shaped());
+// mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('bone_eye',
+//   'CHESTER',
+//   100,
+//   [<aspect:aer>, <aspect:ordo>],
+//   <thaumadditions:bone_eye>,
+//   Grid(['pretty',
+//     '  Q S',
+//     '  T Q',
+//     'B    '], {
+//     'Q': <ore:gemQuartz>, // Quartz
+//     'T': <ore:ingotThaumium>, // Thaumium ingot
+//     'S': <minecraft:spider_eye>, // Spider eye
+//     'B': <ore:bone>, // Bone
+//   }).shaped());
 
 // [Essentia sink]
 recipes.removeByRecipeName('hammercore:thaumadditions_recipestar.20');
@@ -849,17 +850,18 @@ mods.thaumcraft.Infusion.registerRecipe(
 );
 
 // [Chester]
-<thaumadditions:chester>.addTooltip("§6Can be retrieved by Bone-eye§r");
+Purge(<thaumadditions:chester>);
+// <thaumadditions:chester>.addTooltip("§6Can be retrieved by Bone-eye§r");
 mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:chester>);
-mods.thaumcraft.Infusion.registerRecipe(
-  'chester', // Name
-  'CHESTER', // Research
-  <thaumadditions:chester>, // Output
-  2, // Instability
-  [<aspect:imperium> * 80, <aspect:victus> * 50, <aspect:motus> * 40, <aspect:vacuos> * 20, <aspect:machina> * 10],
-  <thaumcraft:hungry_chest>, // CentralItem
-  [<thaumcraft:brain>, <thaumcraft:log_greatwood>, <thaumcraft:ingot>, <thaumcraft:log_greatwood>, <thaumcraft:morphic_resonator>, <thaumcraft:log_greatwood>, <thaumcraft:ingot>, <thaumcraft:log_greatwood>]
-);
+// mods.thaumcraft.Infusion.registerRecipe(
+//   'chester', // Name
+//   'CHESTER', // Research
+//   <thaumadditions:chester>, // Output
+//   2, // Instability
+//   [<aspect:imperium> * 80, <aspect:victus> * 50, <aspect:motus> * 40, <aspect:vacuos> * 20, <aspect:machina> * 10],
+//   <thaumcraft:hungry_chest>, // CentralItem
+//   [<thaumcraft:brain>, <thaumcraft:log_greatwood>, <thaumcraft:ingot>, <thaumcraft:log_greatwood>, <thaumcraft:morphic_resonator>, <thaumcraft:log_greatwood>, <thaumcraft:ingot>, <thaumcraft:log_greatwood>]
+// );
 
 // [Flux concentrator]
 mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:flux_concentrator>);
@@ -1117,7 +1119,6 @@ val bookWithAllKnowledge = <thaumadditions:knowledge_tome>.withTag({
     { C: 1 as byte, K: 'TCONEVO_PRIMALMETAL' },
     { C: 1 as byte, K: 'PRIMPEARL' },
     { C: 1 as byte, K: 'TWOND_STRUCTURE_DIVINER' },
-    { C: 1 as byte, K: 'CHESTER' },
     { C: 1 as byte, K: 'BOOTS' },
     { C: 1 as byte, K: 'MINDBIOTHAUMIC' },
     { C: 1 as byte, K: 'BEHEADER' },

@@ -1,10 +1,10 @@
 {
 	title: "{q.animals.iron_golem.name}",
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "minecraft:villager_golem"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 4.2d,
 	y: -4.1d,

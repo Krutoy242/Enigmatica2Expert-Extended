@@ -233,13 +233,22 @@ function getCustomRecipes() {
         'Magic centrifuge',
         '<fluidStack>enrichedlava 100</fluidStack>',
         [
-          `flux_goo ${180}`,
           `thaumium ${60}`,
           `livingrock ${50}`,
-          `manasteel ${45}`,
           `bound_metal ${15}`,
-          `terrasteel ${2}`,
+          `mirion ${4}`,
+        ].map(s => `<fluidStack>${s}</fluidStack>`),
+        20,
+        100000
+      ),
+      makeXMLRecipe(
+        'Magic centrifuge II',
+        '<fluidStack>mirion 100</fluidStack>',
+        [
+          `manasteel ${1}`,
+          `terrasteel ${1}`,
           `elementium ${1}`,
+          `glass ${6}`,
         ].map(s => `<fluidStack>${s}</fluidStack>`),
         20,
         100000

@@ -1,11 +1,11 @@
 {
 	title: "{q.getting_started.harvest_level_10.name}",
 	icon: {
-		id: "tconstruct:sharpening_kit",
-		Count: 10,
 		tag: {
 			Material: "enderium"
-		}
+		},
+		Count: 10,
+		id: "tconstruct:sharpening_kit"
 	},
 	x: 12.625d,
 	y: 3.5d,
@@ -19,10 +19,10 @@
 		uid: "6f9dfb7c",
 		type: "item",
 		items: [{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "enderium"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}]
 	}],
 	rewards: [{

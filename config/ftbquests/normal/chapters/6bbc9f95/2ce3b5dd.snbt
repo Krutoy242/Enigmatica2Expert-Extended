@@ -1,8 +1,8 @@
 {
 	title: "{q.thaumcraft.mithminite_armor_set.name}",
 	icon: {
-		id: "thaumadditions:mithminite_robe",
-		tag: {}
+		tag: {},
+		id: "thaumadditions:mithminite_robe"
 	},
 	x: 17.0d,
 	y: 6.0d,
@@ -17,40 +17,40 @@
 		uid: "43635366",
 		type: "item",
 		items: [{
-			id: "thaumadditions:mithminite_hood",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:mithminite_hood"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "dc7dbf1d",
 		type: "item",
 		items: [{
-			id: "thaumadditions:mithminite_robe",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:mithminite_robe"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "bbd8734e",
 		type: "item",
 		items: [{
-			id: "thaumadditions:mithminite_belt",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:mithminite_belt"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "9454652a",
 		type: "item",
 		items: [{
-			id: "thaumadditions:mithminite_boots",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:mithminite_boots"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -58,10 +58,10 @@
 		type: "custom",
 		title: "{e2ee.quest.legendary}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "legendary"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

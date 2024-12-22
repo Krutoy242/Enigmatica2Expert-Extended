@@ -19,7 +19,7 @@ addtooltip.execute = function (command, server, sender, args) {
   val item = player.currentItem;
   val meta = item.isDamageable ? 0 : item.damage;
   val str = serialize.join(args, ' ');
-  print('tooltips.lang.' ~ item.definition.id ~ ':' ~ meta ~ '=' ~ str);
+  print(`tooltips.lang.${item.definition.id}:${meta}=${str}`);
 
   if (item.hasTag) player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation('commands.addtooltip.notag'));
 

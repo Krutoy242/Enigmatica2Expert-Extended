@@ -6,13 +6,12 @@
  */
 
 #modloaded zenutils ctintegration
+#priority 3000
 #reloadable
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
-
-val MAIN_HAND = crafttweaker.entity.IEntityEquipmentSlot.mainHand();
 
 events.onPlayerInteractEntity(function (e as crafttweaker.event.PlayerInteractEntityEvent) {
   val player = e.player;
@@ -24,7 +23,7 @@ events.onPlayerInteractEntity(function (e as crafttweaker.event.PlayerInteractEn
     // Player must be sneaking
     || !player.isSneaking
     // Player must be holding something
-    || !player.hasItemInSlot(MAIN_HAND)
+    || !player.hasItemInSlot(mainHand)
     // Player must be targeting another player
     || !(e.target instanceof IPlayer)
   ) {
@@ -41,7 +40,7 @@ events.onPlayerInteractEntity(function (e as crafttweaker.event.PlayerInteractEn
   val target as IPlayer = e.target;
   val item = player.mainHandHeldItem;
   target.give(item);
-  player.setItemToSlot(MAIN_HAND, null);
+  player.setItemToSlot(mainHand, null);
 
   broadcastMsg('send', player, target, item, 'blue', 'dark_blue');
   broadcastMsg('receive', target, player, item, 'dark_green', 'green');
@@ -58,6 +57,11 @@ function broadcastMsg(langCode as string, sender as IPlayer, receiver as IPlayer
   }]));
 }
 
+function getTranslationKey(item as IItemStack) as string {
+  if (item.definition.owner == 'ic2') return item.native.translationKey as string;
+  return item.name ~'.name';
+}
+
 function tellrawItem(item as IItemStack, color as string = null, showName as bool = true) as IData {
   val data = [
     {
@@ -72,7 +76,7 @@ function tellrawItem(item as IItemStack, color as string = null, showName as boo
           // So you needs Quark to get the icon
           text: '§f   '
         } + (!showName ? {} :
-          {extra: [(item.hasDisplayName ? item.tag.display.Name : {translate: item.name ~'.name'})]}
+          {extra: [(item.hasDisplayName ? item.tag.display.Name : {translate: getTranslationKey(item)})]}
         )
       ]
     }

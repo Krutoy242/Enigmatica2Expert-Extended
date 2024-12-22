@@ -1,4 +1,4 @@
-#modloaded thaumcraft
+#modloaded thaumcraft loottweaker randomtweaker
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;

@@ -111,3 +111,7 @@ config/cherishedworlds/favorites.dat
 config/mcp_stable-39-1.12.zip
 config/precisionmining
 config/craftpresence.json
+config/JustEnoughCalculation/record.json
+config/opencomputers/default.recipes
+config/opencomputers/gregtech.recipes
+config/opencomputers/hardmode.recipes

@@ -1,5 +1,6 @@
 #reloadable
 #priority -1100
+#modloaded zenutils ctintegration
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;

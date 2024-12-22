@@ -9,14 +9,13 @@
 
 #priority 3000
 #reloadable
+#modloaded randomtweaker contenttweaker zenutils
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
 import crafttweaker.player.IPlayer;
-import mods.randomtweaker.botania.DynamicSpawnTable;
 import mods.contenttweaker.IItemRightClick;
-import mods.randomtweaker.botania.ICocoonTileEntity;
 import mods.contenttweaker.MutableItemStack;
 import mods.contenttweaker.Player;
 import mods.contenttweaker.World;

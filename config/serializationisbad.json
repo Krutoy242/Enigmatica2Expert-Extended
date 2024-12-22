@@ -1,5 +1,5 @@
 {
-  "useRemoteConfig": true,
+  "useRemoteConfig": false,
   "remoteConfigUrl": "https://raw.githubusercontent.com/dogboy21/serializationisbad/master/serializationisbad.json",
   "executeBlocking": true,
   "patchModules": [
@@ -287,6 +287,16 @@
           "classAllowlist": [],
           "packageAllowlist": [
               "radixcore"
+          ]
+      },
+      {
+          "classesToPatch": [
+              "radixcore.network.ByteBufIO"
+          ],
+          "classAllowlist": [],
+          "packageAllowlist": [
+              "radixcore",
+              "mca"
           ]
       },
       {

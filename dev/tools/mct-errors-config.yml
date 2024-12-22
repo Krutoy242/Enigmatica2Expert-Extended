@@ -183,6 +183,9 @@ ignore:
   - WARN. .mixin.. Error loading class. net.optifine.CustomColors \(java\.lang\.ClassNotFoundException. The specified class 'net\.optifine\.CustomColors' was not found\)
   - WARN. .mixin.. @Mixin target net\.optifine\.CustomColors was not found mixins\.betterbiomeblend\.json:MixinCustomColors from mod unknown-owner
 
+  # Developers usually lazy to add refmaps
+  - WARN. .mixin.. Reference map '.*' for .+ could not be read. If this is a development environment you can ignore this message
+
   # Safe WARNings, just for information
   - '\[LLibrary Core\]: Unable to call Core API! It has not been initialized yet!'
   - '\[brandonscore\]: No features were detected for mod: brandonscore.'
@@ -204,15 +207,18 @@ ignore:
   - 'WARN. \[smoothfont\]: renderChar method might be replaced\. Fix the space width to 4 \(MC default\)\.'
   - '\[solcarrot\]: Invalid Fingerprint!'
   - 'WARN. \[thermalexpansion\]: Thermal Expansion received an invalid IMC from chisel! Key was addcompactorpressrecipe'
+  - WARN. .Chisel.. Mod cathedral is using deprecated IMC variation:add! This IMC type may be removed soon, please notify the author of this mod.
   - 'WARN. \[toolprogression\]: Failed to set tool class of item'
-  - 'WARN. \[mixin\]: Reference map .+ for mixins\.mixincompat\.json could not be read\. If this is a development environment you can ignore this message'
-  - 'WARN. \[FML\]: Mod advancedrocketrycore has been disabled through configuration'
+  - 'WARN. \[FML\]: Mod \w+ has been disabled through configuration'
   - 'WARN. \[net\.minecraft\.client\.audio\.SoundManager\]: Missing sound for event: thaumcraft:runicshieldcharge'
   - 'WARN. \[ocsensors\]: Could not find field .+ in class '
   - 'ERROR. \[base\]: java\.io\.FileNotFoundException: biomesoplenty:textures.items.gem\.png'
   - 'WARN. \[FML\]: Unable to find recipe for minecraft:rabbit_stew'
   - 'WARN. \[FML\]: Unable to find recipe for minecraft:baked_potato'
   - 'WARN. \[(HadEnoughItems|jei)\]: Recipe registry plugin is slow, took \d{1,3}(\.\d+)? ms\.'
+  - WARN. .LoliASM.. Profiler has started
+  - WARN. .LoliASM.. Stage .+ profiler has stopped
+  - WARN. .LoliASM.. Profiler results for Stage
 
   # ##################
   # Reported issues #
@@ -221,6 +227,9 @@ ignore:
 
   # Mechanics error https://github.com/wolforcept/mechanics/issues/13
   - '\[Mechanics\]: Failed to copy .+ property from block '
+
+  # https://github.com/Invadermonky/MagicultureIntegrations/issues/6
+  - WARN. .mixin.. Mixin mixins.magicultureintegrations.tconstruct.json:TileHeatingStructureMixin from mod .+ has multiple constructors
 
   # ##################'
   # E2E-E errors'
@@ -237,7 +246,7 @@ ignore:
   # Known, "It's just logging, you can ignore it." https://github.com/LoliKingdom/LoliASM/issues/51'
   - WARN. .LoliASM.. Clearing (LoliVertexDataPool|LoliStringPool 1)
 
-  # LoliASM dev say i need to ignore that
+  # LoliASM dev say I need to ignore that
   - .main.WARN. .LoliASM.. Replacing CA Certs with an updated one...
 
   # Wooden Crucible error (they disabled anyway)'
@@ -343,8 +352,14 @@ ignore:
   - WARN. .mixin.. @Mixin target pl.asie.ucw.util.ModelLoaderEarlyView was not found mixins.vintagefix.late.json:dynamic_resources.MixinModelLoaderEarlyView from mod unknown-owner
   - WARN. .mixin.. @Mixin target thebetweenlands.client.render.model.loader.CustomModelLoader was not found mixins.vintagefix.late.json:dynamic_resources.MixinCustomBetweenlandsModels from mod unknown-owner
 
+  # Some DynamicResources cant be features in some mods, including OpenComputers, since mod name content non-default character like "space" or "+". Happens on Cleanroom.
+  - ERROR. .VintageFix.. Error accessing resource pack on classpath \(with URI jar:file:.+\)
+
   # Other VintageFix warns
   - WARN. .mixin.. @Final field field_73244_f:Lit/unimi/dsi/fastutil/longs/Long2ObjectMap; in mixins.vintagefix.+ from mod unknown-owner should be final
+
+  # Error caused Vintagefix `mixin.dynamic_resources=true` option. Can be ignored since player cant do nothing about it.
+  - WARN. .VintageFix.. Mod '.+' is attempting to iterate the model registry, but is not whitelisted in VintageFix. This may cause glitches if it wraps its own models.
 
   # Hide all texture errors since they mostly have no effect on game (textures for unused items)
   - ERROR. .FML.TEXTURE_ERRORS..
@@ -395,9 +410,6 @@ ignore:
   # RandomTweaker warning caused by not installed mod, reported https://github.com/Project-RT/RandomTweaker/issues/78
   - WARN. .mixin.. @Mixin target .+FTBUltimineClient was not found mixins.randomtweaker.mods.json:ftbultimine.MixinFTBUltimineClient from mod unknown-owner
 
-  # Developers usually lazy to add refmaps
-  - WARN. .mixin.. Reference map 'mixins.randomtweaker.refmap.json' for mixins.randomtweaker.mods.json could not be read. If this is a development environment you can ignore this message
-
   # MIA ERRORS when its modules partially disabled
   - ERROR. .Had Enough Items.. A Recipe Handler has already been registered for 'jeresources.+'. jeresources.entry.+
 
@@ -421,13 +433,20 @@ ignore:
   - .CraftPresence.ERROR. .craftpresence.. Failed to check for updates, enable verbose mode to see errors...
   - ERROR. .Foundation.. Thread.#\d+,Thread-\d+,\d+,main.[\s\S\n]+lumien.custommainmenu.handler.LoadStringURL.run
 
+  # Started to log after updating ThaumicAdditions to version 12.7.9. Have no ingame effect
+  - Could not add invalid research entry !?TAR
+
   # ##################
-  # Java 21 errors
+  # Cleanroom Loader errors
   # ##################
 
-  # geeky_kappa explanation:
+  # geeky_kappa (cleanroom maintainer) explanation:
   # "Many mods bundle a copy of Mixin and add MixinTweaker to its manifest. Launchwrapper/Bouncepad don't like to call same tweaker twice. If you have lots of mod doing this that's what you got."
   - WARN. .(Bouncepad|Foundation).. Tweak( class)? name org.spongepowered.asm.launch.MixinTweaker has already been visited -- skipping
+
+  # geeky_kappa says this is harmless
+  - has a security seal for path LZMA, but that path is defined and not secure
+  - WARN. .oshi.util.FileUtil.. Configuration conflict. there is more than one oshi.properties file on the classpath
 
   # "It's trying to inject itself into coremod, but launchwrapper was broken on codesource"
   - at snownee.minieffects.core.CoreMod..init..CoreMod.java:26. ~.CoreMod.class:?.
@@ -441,7 +460,6 @@ ignore:
   - WARN. .FML.. A mod is using javax classes. .+, please find it out using recaf or similar and report to its mod author.
   - ERROR. .FML.. UUID .+ is being processed with the approach from Java 8 for compatibility's sake. This UUID is malformed!
   - ERROR. .Aqua Acrobatics.. Please consider installing MixinBooter to ensure compatibility with more mods
-  - WARN. .mixin.. Reference map 'fugue.mixin.refmap.json' for .+ could not be read. If this is a development environment you can ignore this message
   - WARN. .Foundation.. Exception encountered attempting classloading of .+ java.lang.ClassNotFoundException
   - WARN. .Foundation.. Successfully replaced CA certificates with updated ones!
 

@@ -10,6 +10,7 @@ import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 import crafttweaker.entity.IEntity;
 import crafttweaker.world.IBlockPos;
+import native.net.minecraft.item.ItemStack;
 
 function giveChest(player as IPlayer, items as IItemStack[]) as void {
   var tag = {
@@ -21,14 +22,6 @@ function giveChest(player as IPlayer, items as IItemStack[]) as void {
     tag = tag + { BCTileData: { Items: [item as IData + { Slot: i as short } as IData] } } as IData;
   }
   player.give(<draconicevolution:draconium_chest>.withTag(tag));
-}
-
-function getStateFromItem(item as IItemStack) as IBlockState {
-  val block = item.asBlock();
-  if (isNull(block)) return null;
-  val def = block.definition;
-  val state = def.getStateFromMeta(block.meta);
-  return state;
 }
 
 function forEachBlockState(callback as function(IItemStack,IBlockState)void) as void {
@@ -43,7 +36,7 @@ function forEachBlockState(callback as function(IItemStack,IBlockState)void) as 
     for sub in item.subItems {
       if (lastMeta == sub.damage) continue;
       lastMeta = sub.damage;
-      val state = getStateFromItem(sub);
+      val state = utils.getStateFromItem(sub);
       if (isNull(state)) continue;
       callback(sub, state);
     }
@@ -67,7 +60,7 @@ function dumpOreBlocks() {
       val material = ore.name.replaceAll('^(oreEnd|oreNether)', '');
       val origOre = oreDict['ore' + material];
       for origItem in origOre.items {
-        val state = getStateFromItem(origItem);
+        val state = utils.getStateFromItem(origItem);
         if (isNull(state)) continue;
         val origLvl = state.block.definition.getHarvestLevel(state);
         targetLvl = max(3, origLvl) + (isEnd ? 3 : 2);
@@ -164,6 +157,13 @@ events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickB
   //   display:{id:"minecraft:golden_hoe",Count:1,Damage:0 as short}
   // }}));
   // dumpOreBlocks();
+  // var i = 0;
+  // val map as ItemStack[ItemStack] = native.com.github.alexthe666.rats.server.items.RatsNuggetRegistry.ORE_TO_INGOTS as ItemStack[ItemStack];
+  // for k,v in map {
+  //   print(i);
+  //   i += 1;
+  // }
+
   e.player.sendMessage('§8Done!§r');
 });
 

@@ -11,12 +11,12 @@
 		uid: "71beb8c4",
 		type: "item",
 		items: [{
-			id: "actuallyadditions:item_filling_wand",
 			tag: {
 				Energy: 0
-			}
+			},
+			id: "actuallyadditions:item_filling_wand"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -24,10 +24,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

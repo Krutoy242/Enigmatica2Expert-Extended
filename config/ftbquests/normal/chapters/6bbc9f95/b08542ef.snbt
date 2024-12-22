@@ -1,10 +1,10 @@
 {
 	title: "{q.thaumcraft.adept_set.name}",
 	icon: {
-		id: "thaumicaugmentation:thaumium_robes_chestplate",
 		tag: {
 			color: 11360678
-		}
+		},
+		id: "thaumicaugmentation:thaumium_robes_chestplate"
 	},
 	x: 10.0d,
 	y: 7.0d,
@@ -18,36 +18,36 @@
 		uid: "fbf820cb",
 		type: "item",
 		items: [{
-			id: "thaumicaugmentation:thaumium_robes_hood",
 			tag: {
 				color: 11360678
-			}
+			},
+			id: "thaumicaugmentation:thaumium_robes_hood"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "08e46f5b",
 		type: "item",
 		items: [{
-			id: "thaumicaugmentation:thaumium_robes_chestplate",
 			tag: {
 				color: 11360678
-			}
+			},
+			id: "thaumicaugmentation:thaumium_robes_chestplate"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "ef421dce",
 		type: "item",
 		items: [{
-			id: "thaumicaugmentation:thaumium_robes_leggings",
 			tag: {
 				color: 11360678
-			}
+			},
+			id: "thaumicaugmentation:thaumium_robes_leggings"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -55,10 +55,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

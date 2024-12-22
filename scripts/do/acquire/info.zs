@@ -1,5 +1,6 @@
 #priority -1800
 #reloadable
+#modloaded ctintegration
 
 import crafttweaker.block.IBlock;
 import crafttweaker.data.IData;

@@ -11,10 +11,10 @@
 		uid: "f0d618bf",
 		type: "item",
 		items: [{
-			id: "thaumcraft:traveller_boots",
-			tag: {}
+			tag: {},
+			id: "thaumcraft:traveller_boots"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

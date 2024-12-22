@@ -4,24 +4,24 @@
 	dependencies: [
 		"e8818eb6"
 	],
-	optional: true,
-	or_tasks: true,
+	optional: 1b,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "1482b826",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any plankTreatedWood"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "plankTreatedWood"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any plankTreatedWood"
+				}
+			},
+			id: "itemfilters:filter"
 		}]
 	}],
 	rewards: [{

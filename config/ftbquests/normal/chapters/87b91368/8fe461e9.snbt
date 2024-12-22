@@ -13,10 +13,10 @@
 		type: "interaction",
 		title: "Interract with Goose",
 		icon: {
-			id: "draconicevolution:mob_soul",
 			tag: {
 				EntityName: "betteranimalsplus:goose"
-			}
+			},
+			id: "draconicevolution:mob_soul"
 		},
 		match_type: "entity_id",
 		match: "betteranimalsplus:goose"

@@ -1,10 +1,10 @@
 {
 	title: "{q.animals.black_death.name}",
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "rats:black_death"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 2.6999999999999997d,
 	y: 0.7999999999999998d,
@@ -20,7 +20,7 @@
 		items: [{
 			item: "rats:plague_scythe"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

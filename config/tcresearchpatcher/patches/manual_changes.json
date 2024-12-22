@@ -756,4 +756,10 @@
   "value":["thaumcraft:blood_sword", "thaumcraft:summoner"]}
 ]}
 
+,{"key":"ARCANETERMINAL","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:arcane_terminal"]}
+]}
+
 ]

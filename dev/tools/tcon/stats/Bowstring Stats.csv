@@ -1,12 +1,12 @@
-                 ,Total Power  ,Modifier      
-enchanted_fabric ,         9   ,         0.9  
-hemp             ,        10   ,         1    
-string           ,        10   ,         1    
-vine             ,        10.5 ,         1.05 
-slimevine_blue   ,        11   ,         1.1  
-slimevine_purple ,        11   ,         1.1  
-fluxed_string    ,        12.5 ,         1.25 
-mana_string      ,        13   ,         1.3  
-string_cheese    ,        14   ,         1.4  
-soularium        ,        20   ,         2    
-spectre_string   ,        22   ,         2.2  
+                 ,Total Power   ,Trats Value ,Modifier      
+string           ,        10    ,         0  ,         1    
+vine             ,        10.50 ,         0  ,         1.5  
+slimevine_blue   ,        11    ,         0  ,         1.10 
+slimevine_purple ,        11    ,         0  ,         1.10 
+string_cheese    ,        14    ,         0  ,         1.40 
+fluxed_string    ,        17.50 ,         5  ,         1.25 
+spectre_string   ,        22    ,         0  ,         2.20 
+soularium        ,        40    ,        20  ,         2    
+enchanted_fabric ,        59    ,        50  ,         0.90 
+hemp             ,        60    ,        50  ,         1    
+mana_string      ,       103    ,        90  ,         1.30 

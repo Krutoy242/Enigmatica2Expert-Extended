@@ -21,20 +21,20 @@
 		uid: "17706aae",
 		type: "item",
 		items: [{
-			id: "thaumadditions:seal_symbol",
 			tag: {
 				Aspect: "victus"
-			}
+			},
+			id: "thaumadditions:seal_symbol"
 		}]
 	},
 	{
 		uid: "b99a61b3",
 		type: "item",
 		items: [{
-			id: "thaumadditions:seal_symbol",
 			tag: {
 				Aspect: "herba"
-			}
+			},
+			id: "thaumadditions:seal_symbol"
 		}]
 	}],
 	rewards: [{

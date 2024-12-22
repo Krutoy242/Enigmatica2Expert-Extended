@@ -42,10 +42,10 @@
 		uid: "5b0a220e",
 		type: "item",
 		items: [{
-			id: "immersiveengineering:conveyor",
 			tag: {
 				conveyorType: "immersiveengineering:conveyor"
-			}
+			},
+			id: "immersiveengineering:conveyor"
 		}],
 		count: 2L,
 		ignore_nbt: 1b
@@ -55,10 +55,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

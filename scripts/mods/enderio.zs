@@ -299,7 +299,7 @@ recipes.addShaped(<enderio:block_niard>, [
   [<ore:ingotFakeIron>, <ore:barsIron>, <ore:ingotFakeIron>]]);
 
 // Compat of nano glowstone
-scripts.process.crush(<enderio:item_material:76>, <enderio:block_holier_fog> * 2, 'only: Macerator AACrusher AEGrinder crushingBlock',
+scripts.process.crush(<enderio:item_material:76>, <enderio:block_holier_fog> * 2, 'only: Macerator eu2crusher AEGrinder crushingBlock',
   [<enderio:block_holier_fog> * 2, <minecraft:clay_ball>, <minecraft:glowstone_dust>], [0.6f, 0.1f, 0.1f]);
 
 // Compunent for nano-glowstone compat
@@ -340,6 +340,7 @@ val fake_iron_variations =
 solution([<ore:dustBedrock>, fake_iron_variations], [<liquid:iron> * 72], [<liquid:construction_alloy> * 216], [0.5, 1, 2700], 'only: highoven');
 solution([<ore:dustBedrock>, <ore:dustEndstone>, <ore:nuggetTungsten>], [<liquid:dark_steel> * 144], [<liquid:end_steel> * 144], [0.5, 1, 1, 5500], 'only: highoven');
 solution([<ore:dustBedrock>, <ore:dustRedstone>], [<liquid:iron> * 144], [<liquid:conductive_iron> * 144], [0.5, 1, 4200], 'only: highoven');
+solution([<ore:dustBedrock>, <ore:dustEnderEye>], [<liquid:iron> * 144], [<liquid:pulsating_iron> * 144], [0.5, 1, 0.25, 8200], 'only: highoven');
 
 // Fake iron -> Steel
 mods.mekanism.infuser.addRecipe('CARBON', 10, <enderio:item_alloy_ingot:9>, <mekanism:enrichediron>);
@@ -358,7 +359,6 @@ solution([ox, <ore:itemSilicon>], [<liquid:steel> * 144], [<liquid:electrical_st
 solution([ox, <ore:dustEnergetic>], [<liquid:gold> * 144], [<liquid:energetic_alloy> * 144], [0.5, 1, 0.25, 5400], 'only: highoven');
 solution([ox, <extendedcrafting:material:49>], [<liquid:energetic_alloy> * 144], [<liquid:vibrant_alloy> * 144], [0.5, 1, 0.25, 8100], 'only: highoven');
 solution([ox, <ore:dustRedstone>], [<liquid:tin> * 144], [<liquid:redstone_alloy> * 144], [0.5, 1, 0.25, 5400], 'only: highoven');
-solution([ox, <ore:dustEnderEye>], [<liquid:iron> * 144], [<liquid:pulsating_iron> * 144], [0.5, 1, 0.25, 8200], 'only: highoven');
 
 // Induction Smelter Energetic alloy recipe
 scripts.process.alloy([<ore:ingotGold>, <ore:dustEnergetic>], <enderio:item_alloy_ingot:1>, 'only: Induction');
@@ -532,16 +532,26 @@ for ingr, amount in {
   <betteranimalsplus:pheasant_egg>: 1,
 } as int[IIngredient] {
   mods.bloodmagic.AlchemyTable.addRecipe(<enderio:item_material:48> * amount, [
-    <enderio:item_material:46> * 6,
+    <enderio:item_material:46>,
+    <enderio:item_material:46>,
     <ore:ingotUranium238>,
+    <enderio:item_material:46>,
+    <enderio:item_material:46>,
     ingr,
     ], 300, 40, 2);
   mods.bloodmagic.AlchemyTable.addRecipe(<enderio:item_material:50> * amount, [
-    <thermalfoundation:material:768> * 3, ingr], 300, 40, 2);
+    <thermalfoundation:material:768>,
+    <thermalfoundation:material:768>,
+    <thermalfoundation:material:768>,
+    ingr,
+    ], 300, 40, 2);
 }
 mods.bloodmagic.AlchemyTable.addRecipe(<enderio:item_material:49>, [
-  <enderio:item_material:47> * 4,
+  <enderio:item_material:47>,
+  <enderio:item_material:47>,
   <forestry:mulch>,
+  <enderio:item_material:47>,
+  <enderio:item_material:47>,
   <actuallyadditions:item_misc:21>,
 ], 300, 40, 2);
 
@@ -552,7 +562,7 @@ craft.remake(<enderio:item_material:14>, ['pretty',
   '‚ ‚ ‚',
   '‚ B ‚',
   '‚ ‚ ‚'], {
-  'B': <biomesoplenty:biome_essence>, // Biome Essence
+  'B': <nuclearcraft:compound:9>,
   '‚': <ore:nuggetPulsatingIron>, // Pulsating Iron Nugget
 });
 
@@ -935,16 +945,16 @@ mods.thaumcraft.Infusion.registerRecipe(
   }).spiral(1));
 
 // [Grains of Prescience] from [Prescient Crystal]
-scripts.process.crush(<ore:itemPrecientCrystal>, <enderio:item_material:34>, 'only: eu2Crusher AACrusher');
+scripts.process.crush(<ore:itemPrecientCrystal>, <enderio:item_material:34>, 'only: eu2Crusher');
 
 // [Grains of Vibrancy] from [Vibrant Crystal]
-scripts.process.crush(<ore:itemVibrantCrystal>, <enderio:item_material:35>, 'only: eu2Crusher AACrusher');
+scripts.process.crush(<ore:itemVibrantCrystal>, <enderio:item_material:35>, 'only: eu2Crusher');
 
 // [Grains of Piezallity] from [Pulsating Crystal]
-scripts.process.crush(<ore:itemPulsatingCrystal>, <enderio:item_material:36>, 'only: eu2Crusher AACrusher');
+scripts.process.crush(<ore:itemPulsatingCrystal>, <enderio:item_material:36>, 'only: eu2Crusher');
 
 // [Grains of the End] from [Ender Crystal]
-scripts.process.crush(<ore:itemEnderCrystal>, <enderio:item_material:37>, 'only: eu2Crusher AACrusher');
+scripts.process.crush(<ore:itemEnderCrystal>, <enderio:item_material:37>, 'only: eu2Crusher');
 
 // The Vat early alternatives
 function addBrewAlt(fluid as ILiquidStack, ingrs as IIngredient[], output as string, extraIngr as IIngredient = null) as void {

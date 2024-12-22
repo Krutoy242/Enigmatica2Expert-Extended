@@ -3,180 +3,216 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "thermalexpansion:satchel",
 			tag: {
+				Accessible: 1b,
+				Color1: 8349260,
 				display: {
 					Name: "Travel Kit"
 				},
-				Color1: 8349260,
 				Color0: 15905331,
 				Inventory: {
-					Slot5: {
-						id: "minecraft:saddle",
-						Count: 1b,
-						Damage: 0s,
-						tag: {
-							HorseTweaksUpgrades: {
-								FIRE_RESISTANCE: 1b,
-								LEAF_WALKER: 1b,
-								FEATHER_FALL: 1b,
-								EASY_JUMP: 1b,
-								THORNS: 1b,
-								FROST_WALKER: 1b,
-								SWIMMING: 1b
-							}
-						}
-					},
-					Slot0: {
-						id: "randomthings:superlubricentboots",
-						Count: 1b,
-						Damage: 0s
-					},
-					Slot4: {
-						id: "minecraft:apple",
-						Count: 32b,
-						Damage: 0s
-					},
-					Slot2: {
-						id: "cyclicmagic:charm_void",
-						Count: 1b,
-						Damage: 0s,
-						tag: {}
-					},
-					Slot1: {
-						id: "tconstruct:slimesling",
-						Count: 1b,
-						Damage: 2s
-					},
 					Slot3: {
+						Damage: 0s,
 						id: "cyclicmagic:charm_boat",
 						Count: 1b,
+						tag: {}
+					},
+					Slot2: {
 						Damage: 0s,
+						id: "cyclicmagic:charm_void",
+						Count: 1b,
 						tag: {}
 					},
 					Slot8: {
+						Damage: 0s,
 						id: "endreborn:item_advanced_ender_pearl",
-						Count: 1b,
-						Damage: 0s
+						Count: 1b
 					},
-					Slot6: {
-						id: "excompressum:bait",
-						Count: 1b,
-						Damage: 8s
+					Slot0: {
+						Damage: 0s,
+						id: "randomthings:superlubricentboots",
+						Count: 1b
+					},
+					Slot1: {
+						Damage: 2s,
+						id: "tconstruct:slimesling",
+						Count: 1b
 					},
 					Slot7: {
+						Damage: 0s,
 						id: "cyclicmagic:horse_upgrade_speed",
-						Count: 50b,
-						Damage: 0s
+						Count: 50b
+					},
+					Slot4: {
+						Damage: 0s,
+						id: "minecraft:apple",
+						Count: 32b
+					},
+					Slot5: {
+						Damage: 0s,
+						id: "minecraft:saddle",
+						Count: 1b,
+						tag: {
+							HorseTweaksUpgrades: {
+								LEAF_WALKER: 1b,
+								FROST_WALKER: 1b,
+								FIRE_RESISTANCE: 1b,
+								SWIMMING: 1b,
+								FEATHER_FALL: 1b,
+								EASY_JUMP: 1b,
+								THORNS: 1b
+							}
+						}
+					},
+					Slot6: {
+						Damage: 8s,
+						id: "excompressum:bait",
+						Count: 1b
 					}
-				},
-				Accessible: 1b
-			}
+				}
+			},
+			id: "thermalexpansion:satchel"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:satchel",
 			tag: {
+				Accessible: 1b,
+				Color1: 10072818,
 				display: {
 					Name: "Builder Kit"
 				},
-				Color1: 10072818,
 				Color0: 16777215,
 				Inventory: {
-					Slot1: {
-						id: "ic2:foam_sprayer",
-						Count: 1,
-						Damage: 0s
+					Slot3: {
+						Damage: 0s,
+						id: "mysticalagriculture:dye_essence",
+						Count: 64
 					},
 					Slot2: {
-						id: "mysticalagriculture:dye_essence",
-						Count: 64,
-						Damage: 0s
-					},
-					Slot3: {
-						id: "mysticalagriculture:dye_essence",
-						Count: 64,
-						Damage: 0s
-					},
-					Slot4: {
-						id: "chisel:chisel_iron",
-						Count: 1,
 						Damage: 0s,
-						ForgeCaps: {
-							"astralsorcery:cap_item_amulet_holder": {}
-						}
-					},
-					Slot5: {
-						id: "ic2:painter",
-						Count: 1,
-						Damage: 0s
-					},
-					Slot6: {
-						id: "ic2:scaffold",
-						Count: 64,
-						Damage: 0s
-					},
-					Slot7: {
-						id: "ic2:scaffold",
-						Count: 64,
-						Damage: 0s
+						id: "mysticalagriculture:dye_essence",
+						Count: 64
 					},
 					Slot8: {
+						Damage: 0s,
 						id: "actuallyadditions:item_filling_wand",
 						Count: 1,
-						Damage: 0s,
 						tag: {
 							Energy: 500000
 						}
 					},
 					Slot0: {
+						Damage: 0s,
 						id: "ic2:cf_pack",
 						Count: 1,
-						Damage: 0s,
 						tag: {
+							enchantmentColor: 6719955,
 							Fluid: {
-								FluidName: "ic2construction_foam",
-								Amount: 1000000000
+								Amount: 1000000000,
+								FluidName: "ic2construction_foam"
 							},
 							display: {
 								Name: "Infinite CF Backpack"
-							},
-							enchantmentColor: 6719955
+							}
 						}
+					},
+					Slot1: {
+						Damage: 0s,
+						id: "ic2:foam_sprayer",
+						Count: 1
+					},
+					Slot7: {
+						Damage: 0s,
+						id: "ic2:scaffold",
+						Count: 64
+					},
+					Slot4: {
+						Damage: 0s,
+						id: "chisel:chisel_iron",
+						ForgeCaps: {
+							"astralsorcery:cap_item_amulet_holder": {}
+						},
+						Count: 1
+					},
+					Slot5: {
+						Damage: 0s,
+						id: "ic2:painter",
+						Count: 1
+					},
+					Slot6: {
+						Damage: 0s,
+						id: "ic2:scaffold",
+						Count: 64
 					}
-				},
-				Accessible: 1b
-			}
+				}
+			},
+			id: "thermalexpansion:satchel"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:satchel",
 			tag: {
+				Accessible: 1b,
+				Color1: 1644825,
 				display: {
 					Name: "Battle Kit"
 				},
-				Color1: 1644825,
 				Color0: 13388876,
 				Inventory: {
-					Slot1: {
-						id: "immersiveengineering:shield",
-						Count: 1b,
+					Slot3: {
 						Damage: 0s,
+						id: "randomthings:floosign",
+						Count: 1b
+					},
+					Slot2: {
+						Damage: 0s,
+						id: "cyclicmagic:boomerang",
+						Count: 1b,
 						ForgeCaps: {
-							Parent: {
-								Items: [],
-								Size: 1
-							}
+							"astralsorcery:cap_item_amulet_holder": {}
+						},
+						tag: {}
+					},
+					Slot8: {
+						Damage: 4s,
+						id: "thermalinnovation:quiver",
+						Count: 1b,
+						tag: {
+							enchantmentColor: 3887386,
+							Arrows: 600,
+							Mode: 1,
+							Fluid: {
+								Amount: 30000,
+								FluidName: "potion",
+								Tag: {
+									Potion: "cofhcore:healing4"
+								}
+							},
+							ench: [{}]
 						}
 					},
 					Slot0: {
+						Damage: 0s,
 						id: "tconstruct:broadsword",
 						Count: 1b,
-						Damage: 0s,
+						ForgeCaps: {
+							"plustic:musicofthespheres_cap": {
+								Size: 1,
+								Items: []
+							},
+							"plustic:": {
+								Size: 1,
+								Items: []
+							},
+							"plustic:fruitsalad_cap": {
+								Size: 5,
+								Items: []
+							}
+						},
 						tag: {
 							TinkerData: {
+								UsedModifiers: 1,
 								Materials: [
 									"wood",
 									"wood",
@@ -186,24 +222,38 @@
 									"toolleveling",
 									"smite",
 									"creative"
-								],
-								UsedModifiers: 1
+								]
 							},
+							Modifiers: [{
+								color: -7444965,
+								identifier: "ecological",
+								level: 1
+							},
+							{
+								color: 16777215,
+								identifier: "toolleveling",
+								level: 1
+							},
+							{
+								color: 15258880,
+								identifier: "smite",
+								max: 24,
+								extraInfo: "23 / 24",
+								level: 1,
+								current: 24
+							},
+							{
+								color: 0,
+								identifier: "creative",
+								level: 3
+							}],
 							Stats: {
-								Durability: 61,
-								HarvestLevel: 0,
-								Attack: 2.5f,
+								FreeModifiers: 4,
 								MiningSpeed: 1.5f,
 								AttackSpeedMultiplier: 1.0f,
-								FreeModifiers: 4
-							},
-							StatsOriginal: {
-								Durability: 61,
 								HarvestLevel: 0,
 								Attack: 2.5f,
-								MiningSpeed: 1.5f,
-								AttackSpeedMultiplier: 1.0f,
-								FreeModifiers: 3
+								Durability: 61
 							},
 							Special: {
 								Categories: [
@@ -211,62 +261,40 @@
 									"weapon"
 								]
 							},
-							Modifiers: [{
-								identifier: "ecological",
-								color: -7444965,
-								level: 1
-							},
-							{
-								identifier: "toolleveling",
-								color: 16777215,
-								level: 1
-							},
-							{
-								identifier: "smite",
-								color: 15258880,
-								level: 1,
-								current: 24,
-								max: 24,
-								extraInfo: "23 / 24"
-							},
-							{
-								identifier: "creative",
-								color: 0,
-								level: 3
-							}],
 							Traits: [
 								"ecological",
 								"toolleveling",
 								"smite"
 							],
+							StatsOriginal: {
+								FreeModifiers: 3,
+								MiningSpeed: 1.5f,
+								AttackSpeedMultiplier: 1.0f,
+								HarvestLevel: 0,
+								Attack: 2.5f,
+								Durability: 61
+							},
 							display: {
 								Name: "Broadsword with +3 mods"
 							}
-						},
-						ForgeCaps: {
-							"plustic:fruitsalad_cap": {
-								Items: [],
-								Size: 5
-							},
-							"plustic:": {
-								Items: [],
-								Size: 1
-							},
-							"plustic:musicofthespheres_cap": {
-								Items: [],
-								Size: 1
-							}
 						}
 					},
+					Slot1: {
+						Damage: 0s,
+						id: "immersiveengineering:shield",
+						ForgeCaps: {
+							Parent: {
+								Size: 1,
+								Items: []
+							}
+						},
+						Count: 1b
+					},
 					Slot7: {
+						Damage: 0s,
 						id: "rustic:elixir",
 						Count: 6b,
-						Damage: 0s,
 						tag: {
-							ench: [{
-								lvl: 1s,
-								id: 36s
-							}],
 							enchantmentColor: 11743532,
 							display: {
 								Name: "Longest Elixir of Regeneration"
@@ -275,71 +303,40 @@
 								Duration: 1800000,
 								Effect: "minecraft:regeneration",
 								Amplifier: 1
+							}],
+							ench: [{
+								id: 36s,
+								lvl: 1s
 							}]
 						}
 					},
-					Slot3: {
-						id: "randomthings:floosign",
-						Count: 1b,
-						Damage: 0s
-					},
-					Slot6: {
-						id: "randomthings:imbue",
-						Count: 64b,
-						Damage: 2s
-					},
 					Slot4: {
-						id: "randomthings:flootoken",
-						Count: 64b,
-						Damage: 0s
-					},
-					Slot2: {
-						id: "cyclicmagic:boomerang",
-						Count: 1b,
 						Damage: 0s,
-						tag: {},
-						ForgeCaps: {
-							"astralsorcery:cap_item_amulet_holder": {}
-						}
-					},
-					Slot8: {
-						id: "thermalinnovation:quiver",
-						Count: 1b,
-						Damage: 4s,
-						tag: {
-							Fluid: {
-								FluidName: "potion",
-								Amount: 90000,
-								Tag: {
-									Potion: "cofhcore:healing4"
-								}
-							},
-							Arrows: 1800,
-							Mode: 1,
-							ench: [{
-								id: 55,
-								lvl: 4s
-							}],
-							enchantmentColor: 3887386
-						}
+						id: "randomthings:flootoken",
+						Count: 64b
 					},
 					Slot5: {
+						Damage: 0s,
 						id: "rustic:fluid_bottle",
 						Count: 64b,
-						Damage: 0s,
 						tag: {
 							Fluid: {
-								FluidName: "wine",
 								Amount: 1000,
+								FluidName: "wine",
 								Tag: {
 									Quality: 1.0f
 								}
 							}
 						}
+					},
+					Slot6: {
+						Damage: 2s,
+						id: "randomthings:imbue",
+						Count: 64b
 					}
-				},
-				Accessible: 1b
-			}
+				}
+			},
+			id: "thermalexpansion:satchel"
 		}
 	}]
 }

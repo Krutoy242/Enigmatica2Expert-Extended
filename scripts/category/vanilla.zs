@@ -345,11 +345,8 @@ utils.compact(<ore:chest>, <extrautils2:largishchest>);
 scripts.process.crush(<minecraft:arrow>, <minecraft:flint>, 'no exceptions', [<ore:dustWood>.firstItem], [0.2f]);
 
 // Fire charge recycle
-scripts.process.crush(<minecraft:fire_charge>, <thermalfoundation:material:768>,
-  'only: eu2Crusher AACrusher crushingBlock', [
-    <minecraft:gunpowder>, <minecraft:blaze_powder>,
-  ], [0.5f, 0.2f]
-);
+scripts.process.crush(<minecraft:fire_charge> * 3, <minecraft:gunpowder>,
+  'only: eu2Crusher', [<minecraft:blaze_powder>], [0.2f]);
 
 // ------------------------------------
 

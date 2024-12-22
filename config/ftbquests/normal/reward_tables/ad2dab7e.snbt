@@ -5,10 +5,10 @@
 	},
 	{
 		item: {
-			id: "extrautils2:machine",
 			tag: {
 				Type: "extrautils2:generator"
-			}
+			},
+			id: "extrautils2:machine"
 		}
 	},
 	{

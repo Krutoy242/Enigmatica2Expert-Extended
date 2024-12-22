@@ -1,8 +1,8 @@
 {
 	title: "{q.thaumcraft.adaminite_armor_set.name}",
 	icon: {
-		id: "thaumadditions:adaminite_robe",
-		tag: {}
+		tag: {},
+		id: "thaumadditions:adaminite_robe"
 	},
 	x: 15.0d,
 	y: 6.0d,
@@ -18,40 +18,40 @@
 		uid: "f0b2fb1f",
 		type: "item",
 		items: [{
-			id: "thaumadditions:adaminite_hood",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:adaminite_hood"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "20099e88",
 		type: "item",
 		items: [{
-			id: "thaumadditions:adaminite_robe",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:adaminite_robe"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "48aff60f",
 		type: "item",
 		items: [{
-			id: "thaumadditions:adaminite_belt",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:adaminite_belt"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
 		uid: "3d5182d6",
 		type: "item",
 		items: [{
-			id: "thaumadditions:adaminite_boots",
-			tag: {}
+			tag: {},
+			id: "thaumadditions:adaminite_boots"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -59,10 +59,10 @@
 		type: "custom",
 		title: "{e2ee.quest.rare}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "rare"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

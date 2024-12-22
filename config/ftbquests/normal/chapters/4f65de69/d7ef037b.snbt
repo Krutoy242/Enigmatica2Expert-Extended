@@ -58,7 +58,6 @@
 			item: "conarm:travel_sack"
 		},
 		{
-			id: "quark:backpack",
 			tag: {
 				Inventory: [{},
 				{},
@@ -87,7 +86,8 @@
 				{},
 				{},
 				{}]
-			}
+			},
+			id: "quark:backpack"
 		},
 		{
 			item: "littletiles:container"
@@ -105,19 +105,19 @@
 			item: "forestry:builder_bag_t2"
 		},
 		{
-			id: "appliedenergistics2:portable_cell",
-			tag: {}
+			tag: {},
+			id: "appliedenergistics2:portable_cell"
 		},
 		{
 			item: "cyclicmagic:inventory_food"
 		},
 		{
-			id: "enderio:item_dark_steel_upgrade",
-			Damage: 1s,
 			tag: {
 				"enderio:dsu": "enderio:inv",
 				"enderio:enabled": 1b
-			}
+			},
+			Damage: 1s,
+			id: "enderio:item_dark_steel_upgrade"
 		},
 		{
 			item: "enderstorage:ender_pouch"
@@ -141,12 +141,12 @@
 			item: "danknull:dank_null_5"
 		},
 		{
-			id: "botania:blackholetalisman",
-			tag: {}
+			tag: {},
+			id: "botania:blackholetalisman"
 		},
 		{
-			id: "openblocks:dev_null",
-			tag: {}
+			tag: {},
+			id: "openblocks:dev_null"
 		},
 		{
 			item: "rftools:storage_module_tablet"
@@ -158,10 +158,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

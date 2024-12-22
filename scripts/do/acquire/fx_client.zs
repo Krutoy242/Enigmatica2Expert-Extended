@@ -1,6 +1,7 @@
 #sideonly client
 #reloadable
 #priority -1500
+#modloaded randomtweaker botania
 
 import mods.randomtweaker.botania.IBotaniaFXHelper;
 import mods.zenutils.NetworkHandler;

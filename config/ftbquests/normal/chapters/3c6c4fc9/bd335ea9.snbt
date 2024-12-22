@@ -12,7 +12,7 @@
 	tasks: [{
 		uid: "477abeeb",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "nuclearcraft:dust 1 14"
 		}]
@@ -20,7 +20,7 @@
 	{
 		uid: "e269cfad",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "nuclearcraft:ingot 1 14"
 		}]
@@ -28,7 +28,7 @@
 	{
 		uid: "ff8b1f02",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "nuclearcraft:ingot 1 11"
 		}]
@@ -36,7 +36,7 @@
 	{
 		uid: "e23163e8",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
 			item: "nuclearcraft:dust 1 11"
 		}]
@@ -46,10 +46,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

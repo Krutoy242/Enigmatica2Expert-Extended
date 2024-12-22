@@ -6,7 +6,7 @@
 	text: [
 		"{q.utils.mod_open_blocks.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"37406152"
 	],
@@ -15,8 +15,8 @@
 		uid: "849a351d",
 		type: "item",
 		items: [{
-			id: "openblocks:dev_null",
-			tag: {}
+			tag: {},
+			id: "openblocks:dev_null"
 		}],
 		ignore_nbt: 1b
 	}],

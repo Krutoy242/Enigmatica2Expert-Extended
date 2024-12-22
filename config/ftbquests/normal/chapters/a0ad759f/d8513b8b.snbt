@@ -19,15 +19,15 @@
 		uid: "a4ae444c",
 		type: "item",
 		item: {
-			id: "opencomputers:upgrade",
-			Damage: 3s,
 			tag: {
 				"oc:data": {
 					node: {
 						buffer: 2000000.0d
 					}
 				}
-			}
+			},
+			Damage: 3s,
+			id: "opencomputers:upgrade"
 		}
 	}]
 }

@@ -317,10 +317,16 @@ Some screenshots of new worldgen:
 
 -----------------
 
-## Recommended mods
+## Recommendations
+
+<img alt="Dark mode screenshot" src="https://i.imgur.com/208PcOt.png" align=right>
+
+- [**A Dark Mode**](https://www.curseforge.com/minecraft/texture-packs/minecraft-dark-mode-mod-support) - Almost 100% dark mode.
 
 - [**Entity Culling**](https://www.curseforge.com/minecraft/mc-mods/entity-culling)+[**RenderLib**](https://www.curseforge.com/minecraft/mc-mods/renderlib) - increase performance, but can cause crashes on some machines
+
 - [**Dynamic Surroundings**](https://www.curseforge.com/minecraft/mc-mods/dynamic-surroundings) - better sounds and environmental, but increaing load time and lower FPS a bit
+
 - [**Fluidlogged API**](https://modrinth.com/mod/fluidlogged-api) - adds basic fluidlogging, widely configured for `E2E-E`. Its not included by default since causing slight TPS consumption [[1]](https://github.com/jbredwards/Fluidlogged-API/issues/184)[[2]](https://github.com/jbredwards/Fluidlogged-API/issues/182).
 
 -----------------
@@ -417,6 +423,10 @@ Some of the changes from the `Extended` version [[1]](https://github.com/Enigmat
 ### Reddit
 
 - [The whole modpack beaten in only peaceful mode!](https://www.reddit.com/r/feedthebeast/comments/10p6uva/the_whole_modpack_beaten_in_only_peaceful_mode/?utm_source=share&utm_medium=web2x&context=3)
+
+### Migrate to Java 22 (Recommended)
+
+[![Migrate to Java 22](https://img.youtube.com/vi/bXXuKDeFGsQ/0.jpg)](https://www.youtube.com/embed/bXXuKDeFGsQ)
 
 ### Modpack Review (English)
 

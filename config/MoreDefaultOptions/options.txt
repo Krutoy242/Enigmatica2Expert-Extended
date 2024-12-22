@@ -13,7 +13,7 @@ fboEnable:true
 fancyGraphics:true
 ao:2
 renderClouds:true
-resourcePacks:["Better Gendustry v1.0.zip","Dark Mode.zip","A Dark Mode Addon-1.8.0.zip"]
+resourcePacks:["Better Gendustry v1.0.zip","Dark Mode-2.2.1.zip","Sonomagy TC6 v1.6.zip"]
 incompatibleResourcePacks:[]
 lastServer:51.210.223.149:25566
 lang:en_us
@@ -107,6 +107,7 @@ key_gui.xaero_toggle_map:50:ALT
 key_gui.xaero_toggle_map_waypoints:0
 key_gui.xaero_toggle_slime:0
 key_gui.xaero_toggle_tracked_players:0
+key_gui.xaero_toggle_tracked_players_in_world:0
 key_gui.xaero_toggle_waypoints:0
 key_gui.xaero_waypoints_key:0
 key_gui.xaero_zoom_in:0
@@ -266,6 +267,7 @@ key_key.rotateup:200
 key_key.saveToolbarActivator:0
 key_key.screenshot:60
 key_key.settings_menu:34
+key_key.show_backpack_contents:44
 key_key.showhide:0
 key_key.smoothCamera:0
 key_key.sneak:42
@@ -409,3 +411,6 @@ modelPart_right_sleeve:true
 modelPart_left_pants_leg:true
 modelPart_right_pants_leg:true
 modelPart_hat:true
+key_gui.xaero_toggle_tracked_players_on_map:0
+
+key_of.key.zoom:-97

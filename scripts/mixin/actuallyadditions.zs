@@ -1,3 +1,4 @@
+#modloaded actuallyadditions
 #loader mixin
 
 import native.net.minecraft.block.state.IBlockState;
@@ -7,8 +8,7 @@ import native.de.ellpeck.actuallyadditions.api.internal.IAtomicReconstructor;
 import native.de.ellpeck.actuallyadditions.api.ActuallyAdditionsAPI;
 import native.de.ellpeck.actuallyadditions.api.recipe.WeightedOre;
 
-#mixin Mixin
-#{targets: "de.ellpeck.actuallyadditions.mod.items.InitItems"}
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.items.InitItems"}
 zenClass MixinInitItems {
     #mixin Static
     #mixin ModifyConstant
@@ -32,27 +32,17 @@ zenClass MixinInitItems {
     }
 }
 
-#mixin Mixin
-#{targets: "de.ellpeck.actuallyadditions.mod.items.ItemFillingWand"}
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.items.ItemFillingWand"}
 zenClass MixinItemFillWand {
-    #mixin ModifyConstant
-    #{
-    #    method: "func_77663_a",
-    #    constant: {intValue: 1500}
-    #}
+    #mixin ModifyConstant {method: "func_77663_a", constant: {intValue: 1500}}
     function lessEnergyConsumption(value as int) as int {
         return 100;
     }
 }
 
-#mixin Mixin
-#{targets: "de.ellpeck.actuallyadditions.mod.items.ItemPotionRing"}
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.items.ItemPotionRing"}
 zenClass MixinItemPotionRing {
-    #mixin ModifyConstant
-    #{
-    #    method: "func_77663_a",
-    #    constant: {longValue: 10}
-    #}
+    #mixin ModifyConstant {method: "func_77663_a", constant: {longValue: 10}}
     function lessFrequency(value as long) as long {
         return 1000L;
     }
@@ -62,8 +52,7 @@ zenClass MixinItemPotionRing {
 Convert only End Stone => End ores.
 Convert cost set to `150,000` RF.
 */
-#mixin Mixin
-#{targets: "de.ellpeck.actuallyadditions.mod.items.lens.LensMining"}
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.items.lens.LensMining"}
 zenClass MixinLensMining {
     #mixin Static
     #mixin Redirect
@@ -156,37 +145,44 @@ zenClass MixinLensMining {
     }
 }
 
-#mixin Mixin
-#{targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityBioReactor"}
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityBioReactor"}
 zenClass MixinTileEntityBioReactor {
-    #mixin ModifyConstant
-    #{
-    #    method: "updateEntity",
-    #    constant: {intValue: 2}
-    #}
+    #mixin ModifyConstant {method: "updateEntity", constant: {intValue: 2}}
     function buffPowerGeneration(value as int) as int {
         return 4; // producePerTick = (amount * 4)²
     }
 }
 
-#mixin Mixin
-#{targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityDisplayStand"}
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityDisplayStand"}
 zenClass MixinTileEntityDisplayStand {
-    #mixin ModifyConstant
-    #{
-    #    method: "<init>",
-    #    constant: {intValue: 80000}
-    #}
+    #mixin ModifyConstant {method: "<init>", constant: {intValue: 80000}}
     function buffCapacity(value as int) as int {
         return 320000;
     }
 
-    #mixin ModifyConstant
-    #{
-    #    method: "<init>",
-    #    constant: {intValue: 1000}
-    #}
+    #mixin ModifyConstant {method: "<init>", constant: {intValue: 1000}}
     function buffTransferRate(value as int) as int {
         return 2000;
+    }
+}
+
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.items.ItemDrill"}
+zenClass MixinAAItemDrill {
+    #mixin ModifyConstant {method: "*", constant: { intValue: 4 }}
+    function increaseMiningLevel(value as int) as int {
+        return 7;
+    }
+}
+
+/*
+Remove Crusher since its whole functionality copied with EU2 crusher
+that actually better since can be upgraded
+*/
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.crafting.CrusherCrafting"}
+zenClass MixinCrusherCrafting {
+    #mixin Static
+    #mixin Overwrite
+    function init() as void {
+        // NO-OP
     }
 }

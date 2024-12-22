@@ -205,6 +205,11 @@ The newly created recipe will be output to the `crafttweaker.log` file. You can 
 
 This project is released under the MIT License, granting you the freedom to use, modify, and distribute the mod as you see fit, provided that credit is given to the original author [Krutoy242](https://github.com/Krutoy242).
 
+## 🎥 Media
+
+### All mechanics explained (YouTube)
+https://www.youtube.com/watch?v=1w6nEzWz4bc
+
 <!-- Publish script:
 
 & "C:/Program Files/WinRAR/Rar.exe" a -r dev/~dist/portal_spread-v1.0.0.zip scripts/do/portal_spread/*.zs resources/portal_spread

@@ -103,7 +103,7 @@ function sawWood(input as IIngredient, output as IItemStack, exceptions as strin
 function crush(input as IIngredient, output as IItemStack, exceptions as string = null, extra as IItemStack[] = null, extraChance as float[] = null, opts as IData = null) {
   for machine in [
     'Macerator', 'eu2Crusher',
-    'AACrusher', 'IECrusher', 'SagMill',
+    'IECrusher', 'SagMill',
     'Grindstone', 'AEGrinder', 'ThermalCentrifuge',
     'Pulverizer', 'mekCrusher', 'crushingBlock',
     'MekEnrichment',
@@ -273,7 +273,15 @@ function beneficiate(
       cx = utils.getSomething(JA.secondExtraName, ['dust', 'gem'], 1); if (!isNull(cx)) extraList += cx;
       cx = utils.getSomething(JA.thirdExtraName,  ['dust', 'gem'], 1); if (!isNull(cx)) extraList += cx;
     }
-    crush(input, dustOrGem, exceptions ~ 'macerator thermalCentrifuge crushingBlock', extraList, extraChances, { bonusType: 'MULTIPLY_OUTPUT' });
+
+    // All crushing methods except sag mill
+    crush(input, dustOrGem, `${exceptions} macerator thermalCentrifuge crushingBlock SAGMill`, extraList, extraChances, { bonusType: 'MULTIPLY_OUTPUT' });
+
+    // Sag mill separately since work too fast and too much output
+    val sagmillChances = floatArrayOf(extraChances.length, 1.0f);
+    for i, chance in extraChances { sagmillChances[i] = chance / 2.0f; }
+    crush(input, dustOrGem * (3.0 / 4 * dustOrGem.amount) as int, `${exceptions} only: SAGMill`, extraList, sagmillChances, { bonusType: 'MULTIPLY_OUTPUT' });
+
     if (extraList.length >= 3) {
       workEx('massspectrometer', null, [input], null, [
         dustOrGem * min(64, dustOrGem.amount * 2),

@@ -13,18 +13,18 @@
 		uid: "4071cfeb",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any foodCheese"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "foodCheese"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any foodCheese"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		ignore_nbt: 1b
 	}],

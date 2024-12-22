@@ -38,6 +38,7 @@ jobs:
               url: ${{ steps.release.outputs.html_url }}
           attachment: |
             file: latest.png
+        continue-on-error: true
 
       - run: npm i --omit=dev
 

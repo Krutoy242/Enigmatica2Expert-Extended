@@ -11,10 +11,10 @@
 		uid: "45f978f4",
 		type: "item",
 		items: [{
-			id: "thaumicwonders:night_vision_goggles",
-			tag: {}
+			tag: {},
+			id: "thaumicwonders:night_vision_goggles"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

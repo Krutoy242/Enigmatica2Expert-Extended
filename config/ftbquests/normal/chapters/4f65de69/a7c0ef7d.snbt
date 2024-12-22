@@ -1,32 +1,32 @@
 {
 	title: "{q.getting_started.technical_quest__4.name}",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 6.239999999999999d,
 	y: 3.5d,
 	text: [
 		"{q.getting_started.technical_quest__4.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"ca359f03"
 	],
 	size: 0.1d,
-	optional: true,
-	or_tasks: true,
+	optional: 1b,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "323cdf4f",
 		type: "item",
 		items: [{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "obsidian"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		},
 		{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "sky_stone"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}],
 		ignore_nbt: 2b
 	}]

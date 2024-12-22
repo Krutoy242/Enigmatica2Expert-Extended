@@ -1,23 +1,23 @@
 {
 	icon: {
-		id: "ftbquests:lootcrate",
 		tag: {
 			type: "common"
-		}
+		},
+		id: "ftbquests:lootcrate"
 	},
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 9.9d,
 	y: 0.3d,
 	shape: "square",
 	text: [
 		"{q.twilight_forest.maze_wafer.desc}"
 	],
-	can_repeat: true,
+	can_repeat: 1b,
 	dependencies: [
 		"ea1707c5"
 	],
 	size: 0.5d,
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "4164d3ee",
 		type: "item",
@@ -28,17 +28,17 @@
 			item: "twilightforest:experiment_115"
 		}],
 		count: 8L,
-		consume_items: true
+		consume_items: 1b
 	}],
 	rewards: [{
 		uid: "8f2a8b14",
 		type: "item",
 		auto: "no_toast",
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		count: 2,
 		random_bonus: 1

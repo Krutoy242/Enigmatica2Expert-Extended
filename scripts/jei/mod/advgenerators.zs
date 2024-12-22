@@ -1,5 +1,5 @@
 #priority 950
-#modloaded advgenerators zenutils
+#modloaded advgenerators zenutils requious
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;

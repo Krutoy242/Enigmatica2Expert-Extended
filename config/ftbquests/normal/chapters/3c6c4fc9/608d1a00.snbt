@@ -7,7 +7,7 @@
 		"{q.nuclearcraft_overh.solid_fission_reac.desc}"
 	],
 	dependencies: [
-		"dc5e8800"
+		"80c6eedd"
 	],
 	tasks: [{
 		uid: "6c74a77d",
@@ -50,18 +50,18 @@
 		uid: "2cd5177b",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any wallReactor"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "wallReactor"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any wallReactor"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 92L
 	}],
@@ -70,10 +70,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

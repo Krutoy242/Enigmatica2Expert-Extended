@@ -2,26 +2,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconevo:part_arcane_focus",
 			tag: {
 				Material: "litherite"
-			}
+			},
+			id: "tconevo:part_arcane_focus"
 		}
 	},
 	{
 		item: {
-			id: "tconevo:part_arcane_focus",
 			tag: {
 				Material: "enori_crystal"
-			}
+			},
+			id: "tconevo:part_arcane_focus"
 		}
 	},
 	{
 		item: {
-			id: "tconevo:part_arcane_focus",
 			tag: {
 				Material: "aquamarine"
-			}
+			},
+			id: "tconevo:part_arcane_focus"
 		}
 	}]
 }

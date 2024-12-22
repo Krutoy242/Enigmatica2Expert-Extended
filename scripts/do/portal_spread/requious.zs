@@ -14,20 +14,9 @@
 #modloaded requious zenutils
 #priority -4000
 
-import crafttweaker.block.IBlockState;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-
-// Replaces for blocks that cant be converted into items
-static blockRepresentation as IItemStack[string] = {
-  'minecraft:double_stone_slab' : <minecraft:stone_slab>,
-  'minecraft:double_wooden_slab': <minecraft:wooden_slab>,
-  'minecraft:fire'              : <minecraft:flint_and_steel>,
-  'minecraft:lava'              : <minecraft:lava_bucket>,
-  'minecraft:water'             : <minecraft:water_bucket>,
-  'minecraft:air'               : <mechanics:empty>,
-  'biomesoplenty:blood'         : <forge:bucketfilled>.withTag({ FluidName: 'blood', Amount: 1000 }),
-};
+import scripts.do.portal_spread.utils.stateToItem;
 
 val x = <assembly:portal_spread>;
 x.addJEICatalyst(<minecraft:obsidian>);
@@ -39,23 +28,25 @@ for i in 2 .. 6 {
 
 val wildcardedNumIds = scripts.do.portal_spread.recipes.spread.wildcardedNumIds;
 
-function stateToItem(state as IBlockState) as IItemStack {
-  if (
-    isNull(state)
-    || isNull(state.block)
-    || isNull(state.block.definition)
-  ) return null;
-
-  val defId = state.block.definition.id;
-  var item = state.block.getItem(null, null, state);
-  if (isNull(item)) item = blockRepresentation[defId];
-  if (isNull(item))
-    logger.logWarning('Cannot find item representation for block: ' ~ defId);
-  return item;
+/**
+ * Compare two lists of items to be the same items and same amounts
+ */
+function isItemListSame(A as IItemStack[], B as IItemStack[]) as bool {
+  for a in A {
+    var match = false;
+    for b in B {
+      if (a has b || b has a) {
+        match = true;
+        break;
+      }
+    }
+    if (!match) return false;
+  }
+  return true;
 }
 
 // Group recipes by inputs and outputs
-val recipeMap as IItemStack[][IIngredient] = {};
+val recipeMap as IItemStack[][IIngredient] = {} as IItemStack[][IIngredient]$orderly;
 
 for dimFrom, dimFromData in scripts.do.portal_spread.recipes.spread.stateRecipes {
   for dimTo, dimToData in dimFromData {
@@ -73,19 +64,14 @@ for dimFrom, dimFromData in scripts.do.portal_spread.recipes.spread.stateRecipes
       if (isNull(input)) continue;
       if (!isNull(wildcardedNumIds[dimFrom])
         && !isNull(wildcardedNumIds[dimFrom][dimTo])
-        && !isNull(wildcardedNumIds[dimFrom][dimTo][stateFrom.block.definition.numericalId])
+        && !isNull(wildcardedNumIds[dimFrom][dimTo][stateFrom.block.definition])
       ) input = input.anyDamage();
 
       var merged = false;
       for inp, outs in recipeMap {
         if (isNull(outs)) continue;
 
-        // Find if outputs are the same
-        var outsMatch = true;
-        for out in outs { if (!(outputs has out)) { outsMatch = false; break; } }
-        if (outsMatch) for out in outputs { if (!(outs has out)) { outsMatch = false; break; } }
-
-        if (!outsMatch || inp has input) continue;
+        if (!isItemListSame(outs, outputs) || inp has input) continue;
 
         // Replace inputs
         recipeMap[inp] = null;

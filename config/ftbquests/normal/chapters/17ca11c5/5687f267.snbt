@@ -12,12 +12,12 @@
 		uid: "b7e2da32",
 		type: "item",
 		items: [{
-			id: "astralsorcery:itemknowledgeshare",
 			tag: {
 				astralsorcery: {
 					creativeKnowledge: 1b
 				}
-			}
+			},
+			id: "astralsorcery:itemknowledgeshare"
 		}]
 	}],
 	rewards: [{
@@ -31,10 +31,10 @@
 		type: "custom",
 		title: "{e2ee.quest.legendary}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "legendary"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -16,10 +16,10 @@ function clearPlayerInventory(player as IPlayer) as void {
 }
 
 static armorSlots as IEntityEquipmentSlot[] = [
-  IEntityEquipmentSlot.head(),
-  IEntityEquipmentSlot.chest(),
-  IEntityEquipmentSlot.feet(),
-  IEntityEquipmentSlot.legs(),
+  head,
+  chest,
+  feet,
+  legs,
 ] as IEntityEquipmentSlot[];
 
 // --------------------------------

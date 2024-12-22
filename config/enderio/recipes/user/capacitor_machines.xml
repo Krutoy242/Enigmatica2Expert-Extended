@@ -123,9 +123,9 @@
   <capacitor key="enderio:block_simple_sag_mill/use"                base="200"      scaler="FIXED" />
   <capacitor key="enderio:block_simple_sag_mill/loss"               base="20"       scaler="FIXED" />
 
-  <capacitor key="enderio:block_enhanced_sag_mill/intake"           base="3000"     scaler="POWER" />
-  <capacitor key="enderio:block_enhanced_sag_mill/buffer"           base="1000000"  scaler="POWER" />
-  <capacitor key="enderio:block_enhanced_sag_mill/use"              base="300"      scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_sag_mill/intake"           base="2000000"  scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_sag_mill/buffer"           base="20000000" scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_sag_mill/use"              base="50000"    scaler="POWER" />
   <capacitor key="enderio:block_enhanced_sag_mill/efficiency"       base="150"      scaler="CENT" />
   <capacitor key="enderio:block_enhanced_sag_mill/double_op_chance" base="1"        scaler="QUADRATIC" />
 
@@ -159,9 +159,9 @@
   <capacitor key="enderio:block_vat/buffer"                    base="2000000"  scaler="POWER" />
   <capacitor key="enderio:block_vat/use"                       base="5000"     scaler="CHEMICAL" />
 
-  <capacitor key="enderio:block_enhanced_vat/intake"           base="180"      scaler="POWER" />
-  <capacitor key="enderio:block_enhanced_vat/buffer"           base="500000"   scaler="POWER" />
-  <capacitor key="enderio:block_enhanced_vat/use"              base="45"       scaler="CHEMICAL" />
+  <capacitor key="enderio:block_enhanced_vat/intake"           base="200000"   scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_vat/buffer"           base="20000000" scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_vat/use"              base="50000"    scaler="CHEMICAL" />
   <capacitor key="enderio:block_enhanced_vat/efficiency"       base="150"      scaler="CENT" />
   <capacitor key="enderio:block_enhanced_vat/double_op_chance" base="1"        scaler="QUADRATIC" />
 

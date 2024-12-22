@@ -1,5 +1,6 @@
-#modloaded astralsorcery
+#modloaded astralsorcery requious
 #priority 950
+#reloadable
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;

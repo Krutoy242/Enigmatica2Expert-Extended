@@ -22,18 +22,18 @@
 		uid: "146a2b72",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any blockSlime"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "blockSlime"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any blockSlime"
+				}
+			},
+			id: "itemfilters:filter"
 		}]
 	}],
 	rewards: [{

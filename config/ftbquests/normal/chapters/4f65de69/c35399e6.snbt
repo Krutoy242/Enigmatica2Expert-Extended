@@ -1,15 +1,15 @@
 {
 	title: "{q.getting_started.tinker_s_construct.name}",
 	icon: {
-		id: "tconstruct:tooltables",
-		Damage: 2s,
 		tag: {
 			textureBlock: {
+				Damage: 0s,
 				Count: 1b,
-				id: "minecraft:log",
-				Damage: 0s
+				id: "minecraft:log"
 			}
-		}
+		},
+		Damage: 2s,
+		id: "tconstruct:tooltables"
 	},
 	x: -4.0d,
 	y: 3.5d,
@@ -23,15 +23,15 @@
 		uid: "3ef2f3f2",
 		type: "item",
 		items: [{
-			id: "tconstruct:tooltables",
-			Damage: 1s,
 			tag: {
 				textureBlock: {
+					Damage: 0s,
 					Count: 1b,
-					id: "minecraft:planks",
-					Damage: 0s
+					id: "minecraft:planks"
 				}
-			}
+			},
+			Damage: 1s,
+			id: "tconstruct:tooltables"
 		}],
 		ignore_nbt: 1b
 	},
@@ -39,15 +39,15 @@
 		uid: "8a466e3e",
 		type: "item",
 		items: [{
-			id: "tconstruct:tooltables",
-			Damage: 2s,
 			tag: {
 				textureBlock: {
+					Damage: 0s,
 					Count: 1b,
-					id: "minecraft:log",
-					Damage: 0s
+					id: "minecraft:log"
 				}
-			}
+			},
+			Damage: 2s,
+			id: "tconstruct:tooltables"
 		}],
 		ignore_nbt: 1b
 	},

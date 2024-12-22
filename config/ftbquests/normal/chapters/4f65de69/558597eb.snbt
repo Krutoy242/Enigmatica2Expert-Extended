@@ -1,11 +1,11 @@
 {
 	title: "{q.getting_started.harvest_level_8.name}",
 	icon: {
-		id: "tconstruct:sharpening_kit",
-		Count: 8,
 		tag: {
 			Material: "manyullyn"
-		}
+		},
+		Count: 8,
+		id: "tconstruct:sharpening_kit"
 	},
 	x: 9.625d,
 	y: 3.5d,
@@ -22,10 +22,10 @@
 		uid: "24f98b9c",
 		type: "item",
 		items: [{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "manyullyn"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}]
 	}],
 	rewards: [{

@@ -402,5 +402,27 @@
       "snippet": "utils.tryCatch('$TM_SELECTED_TEXT', $0)",
       "languageIds": ["zenscript"]
     }
+  },
+  // world-gen.json, coverage-*, .gitignore, ./dev/automation/betterquesting/*, ./dev/lang/tmp*, ./config/BiomeTweaker/output/biome/*, ./node_modules/*, ./dev/default_configs/*, ./config/tellme/*, ./scripts/wrap/*, ./crash-reports/*, ./.git/*, ./CHANGELOG*, ./minecraftinstance.json*, ./assets/*, ./dumps/*, ./saves/* , ./*.zsrc, *.log, *aspects.json, blocks.cfg
+  "search.exclude": {
+    "config/jeresources/world-gen.json": true,
+    ".gitignore": true,
+    "dev/automation/betterquesting/*": true,
+    "dev/lang/tmp*": true,
+    "config/BiomeTweaker/output/biome/*": true,
+    "node_modules/*": true,
+    "dev/default_configs/*": true,
+    "config/tellme/*": true,
+    "scripts/wrap/*": true,
+    "crash-reports/*": true,
+    ".git/*": true,
+    "CHANGELOG*": true,
+    "minecraftinstance.json*": true,
+    "assets/*": true,
+    "dumps/*": true,
+    "saves/* ": true,
+    "*.zsrc": true,
+    "*.log": true,
+    "config/*aspects.json": true
   }
 }

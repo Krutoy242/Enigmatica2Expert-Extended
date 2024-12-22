@@ -7,10 +7,10 @@
 	},
 	{
 		item: {
-			id: "tconstruct:sword_blade",
 			tag: {
 				Material: "chaotic_metal"
-			}
+			},
+			id: "tconstruct:sword_blade"
 		}
 	}]
 }

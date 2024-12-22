@@ -1,11 +1,11 @@
 {
 	title: "{q.extra_utilities.generators_bottom_.name}",
 	icon: {
+		Damage: 0s,
 		id: "minecraft:air",
-		Count: 0,
-		Damage: 0s
+		Count: 0
 	},
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 10.416666666666666d,
 	y: 3.0833333333333335d,
 	text: [

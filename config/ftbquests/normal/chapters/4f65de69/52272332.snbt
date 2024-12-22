@@ -1,11 +1,11 @@
 {
 	title: "{q.getting_started.big_chests.name}",
 	icon: {
-		id: "thermalexpansion:strongbox",
 		tag: {
 			Facing: 3b,
 			Level: 0b
-		}
+		},
+		id: "thermalexpansion:strongbox"
 	},
 	x: -0.25d,
 	y: 4.1d,
@@ -34,10 +34,10 @@
 			item: "immersiveengineering:wooden_device0 1 5"
 		},
 		{
-			id: "thermalexpansion:strongbox",
 			tag: {
 				Level: 0b
-			}
+			},
+			id: "thermalexpansion:strongbox"
 		},
 		{
 			item: "ironchest:iron_chest"

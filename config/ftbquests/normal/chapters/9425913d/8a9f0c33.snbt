@@ -12,12 +12,12 @@
 		uid: "da19395e",
 		type: "item",
 		items: [{
-			id: "astralsorcery:itemwand",
 			tag: {
 				astralsorcery: {}
-			}
+			},
+			id: "astralsorcery:itemwand"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

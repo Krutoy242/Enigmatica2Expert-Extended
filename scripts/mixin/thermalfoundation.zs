@@ -1,7 +1,7 @@
+#modloaded thermalfoundation
 #loader mixin
 
-#mixin Mixin
-#{targets: "cofh.thermalfoundation.init.TFEquipment"}
+#mixin {targets: "cofh.thermalfoundation.init.TFEquipment"}
 zenClass MixinTFEquipment {
     #mixin Static
     #mixin Overwrite

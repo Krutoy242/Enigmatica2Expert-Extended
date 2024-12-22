@@ -96,7 +96,7 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
     return;
   }
   player.setItemToSlot(
-    IEntityEquipmentSlot.mainHand(),
+    mainHand,
     item.updateTag({ 'FluxedEnergy': (energy - ENERGY_COST) } as IData)
   );
 

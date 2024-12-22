@@ -14,7 +14,7 @@
 			item: "immersiveengineering:graphite_electrode"
 		}],
 		count: 3L,
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 2b
 	}],
 	rewards: [{
@@ -22,10 +22,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

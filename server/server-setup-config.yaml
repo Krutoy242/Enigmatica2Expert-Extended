@@ -46,7 +46,7 @@ install:
 
   # Link to where the file where the modpack can be distributed
   # This supports loading from local files as well for most pack types if there is file://{PathToFile} in the beginning
-  modpackUrl: https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases/download/v1.44.3/E2E-Extended-v1.44.3.zip
+  modpackUrl: https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases/download/v1.52.0/E2E-Extended-v1.52.0.zip
 
   # This is used to specify in which format the modpack is distributed, the server launcher has to handle each individually if their format differs
   # current supported formats:
@@ -117,6 +117,9 @@ install:
       - 1073925 # Rather Enough Immersive Multiblocks
       - 1081085 # MiniEffects-Legacy Extended Life
       - 1085598 # JEI Area Fixer
+      - 1121489 # AE2 Crafting Tree - Legacy
+      - 1132293 # Backpack Display
+      - 1147522 # Backpack Opener
 
     # The base path where the server should be installed to, ~ for current path
   baseInstallPath: ~

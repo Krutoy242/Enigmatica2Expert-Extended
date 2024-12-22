@@ -1,10 +1,10 @@
 {
 	title: "{q.forestry.farms.name}",
 	icon: {
-		id: "forestry:ffarm",
 		tag: {
 			FarmBlock: 0
-		}
+		},
+		id: "forestry:ffarm"
 	},
 	x: -0.8333333333333333d,
 	y: 3.5d,
@@ -18,10 +18,10 @@
 		uid: "ee885f21",
 		type: "item",
 		items: [{
-			id: "forestry:ffarm",
 			tag: {
 				FarmBlock: 0
-			}
+			},
+			id: "forestry:ffarm"
 		}],
 		ignore_nbt: 1b
 	},
@@ -29,11 +29,11 @@
 		uid: "7407a7f0",
 		type: "item",
 		items: [{
-			id: "forestry:ffarm",
-			Damage: 3s,
 			tag: {
 				FarmBlock: 0
-			}
+			},
+			Damage: 3s,
+			id: "forestry:ffarm"
 		}],
 		ignore_nbt: 1b
 	},
@@ -41,11 +41,11 @@
 		uid: "d236388d",
 		type: "item",
 		items: [{
-			id: "forestry:ffarm",
-			Damage: 4s,
 			tag: {
 				FarmBlock: 0
-			}
+			},
+			Damage: 4s,
+			id: "forestry:ffarm"
 		}],
 		ignore_nbt: 1b
 	},
@@ -53,11 +53,11 @@
 		uid: "f5b09944",
 		type: "item",
 		items: [{
-			id: "forestry:ffarm",
-			Damage: 5s,
 			tag: {
 				FarmBlock: 0
-			}
+			},
+			Damage: 5s,
+			id: "forestry:ffarm"
 		}],
 		ignore_nbt: 1b
 	},
@@ -65,11 +65,11 @@
 		uid: "58ebe38c",
 		type: "item",
 		items: [{
-			id: "forestry:ffarm",
-			Damage: 2s,
 			tag: {
 				FarmBlock: 0
-			}
+			},
+			Damage: 2s,
+			id: "forestry:ffarm"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -78,10 +78,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

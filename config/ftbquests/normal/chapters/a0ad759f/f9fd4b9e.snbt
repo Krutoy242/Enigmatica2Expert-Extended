@@ -54,13 +54,13 @@
 		uid: "f542435a",
 		type: "item",
 		items: [{
-			id: "opencomputers:storage",
 			tag: {
 				"oc:data": {
-					"oc:label": "EEPROM (Lua BIOS)",
-					"oc:readonly": 0b
+					"oc:readonly": 0b,
+					"oc:label": "EEPROM (Lua BIOS)"
 				}
-			}
+			},
+			id: "opencomputers:storage"
 		}],
 		ignore_nbt: 1b
 	},
@@ -142,18 +142,18 @@
 		uid: "0be0755c",
 		type: "item",
 		item: {
-			id: "opencomputers:storage",
-			Damage: 1s,
 			tag: {
+				"oc:color": 2,
 				"oc:data": {
 					"oc:fs.label": "openos"
 				},
 				"oc:lootFactory": "opencomputers:openos",
-				"oc:color": 2,
 				display: {
 					Name: "OpenOS (Operating System)"
 				}
-			}
+			},
+			Damage: 1s,
+			id: "opencomputers:storage"
 		}
 	}]
 }

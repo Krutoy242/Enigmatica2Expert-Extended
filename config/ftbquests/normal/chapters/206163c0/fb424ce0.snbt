@@ -1,7 +1,6 @@
 {
 	title: "{q.forestry.the_forestry_path_.name}",
 	icon: {
-		id: "forestry:sapling",
 		tag: {
 			IsAnalyzed: 0b,
 			Genome: {
@@ -56,7 +55,8 @@
 					UID1: "forestry.fireproofTrue"
 				}]
 			}
-		}
+		},
+		id: "forestry:sapling"
 	},
 	x: 4.5d,
 	y: -0.5d,
@@ -77,10 +77,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -9,6 +9,12 @@ import crafttweaker.liquid.ILiquidStack;
 
 mods.tconstruct.Melting.addEntityMelting(<entity:iceandfire:hippocampus>, <fluid:liquid_helium> * 20);
 
+// Melt vanilla items since autimatic calculation is disabled
+scripts.process.melt(<minecraft:cauldron>, <fluid:iron> * (144 * 7));
+scripts.process.melt(<minecraft:anvil>, <fluid:iron> * (144 * 31));
+scripts.process.melt(<minecraft:anvil:1>, <fluid:iron> * (144 * 23));
+scripts.process.melt(<minecraft:anvil:2>, <fluid:iron> * (144 * 15));
+
 // Remove and re-add dragon steel meltable items since they was removed with Gauntlet mod
 mods.tconstruct.Melting.removeRecipe(<fluid:dragonsteel_fire>);
 mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_fire> * 144, <iceandfire:dragonsteel_fire_ingot>);
@@ -135,6 +141,7 @@ recipes.addShaped('TiC Complement',
 
 // Large Plates in Immersive Engineering Metal Press
 val pressPlates = {
+  advanced_alloy  : <ore:plateAdvancedAlloy> * 9,
   xu_demonic_metal: <extrautils2:simpledecorative:1>,
   lead            : <thermalfoundation:storage:3>,
   iron            : <minecraft:iron_block>,
@@ -151,7 +158,9 @@ val pressPlates = {
   neutronium      : <ore:blockCosmicNeutronium>,
 } as IIngredient[string];
 for out, inp in pressPlates {
-  mods.immersiveengineering.MetalPress.addRecipe(<tconstruct:large_plate>.withTag({ Material: out }), inp, <immersiveengineering:mold>, 16000, inp.amount);
+  mods.immersiveengineering.MetalPress.addRecipe(
+    <tconstruct:large_plate>.withTag({ Material: out }),
+    inp, <immersiveengineering:mold>, 16000);
 }
 
 scripts.process.compress(<ore:blockQuartzBlack>, <tconstruct:large_plate>.withTag({ Material: 'black_quartz' }), 'only: Compactor');
@@ -504,7 +513,7 @@ mods.tconstruct.Casting.addTableRecipe(
 scripts.mods.forestry.ThermionicFabricator.addCast(<tconstruct:clear_glass> * 16, Grid([
   'ggg', 'g g', 'ggg'], {
   'g': <ore:blockGlass>,
-}).shaped(), <liquid:glass> * 8000, <forestry:wax_cast:*>);
+}).shaped(), <liquid:glass> * 6000, <forestry:wax_cast:*>);
 
 // Pigiron high-tech recipe
 scripts.process.alloy([

@@ -1,5 +1,5 @@
 #reloadable
-#modloaded openterraingenerator
+#modloaded openterraingenerator contenttweaker
 
 static biomeIdToName as string[][int] = {
 /* Inject_js{

@@ -1,27 +1,27 @@
 {
 	title: "{q.rftools.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 40,
+			TrophyColorBlue: 151,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 118,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "rftools:infused_diamond",
-				Damage: 0s
+				id: "rftools:infused_diamond"
 			},
-			TrophyColorBlue: 151,
-			TrophyColorRed: 40,
 			TrophyName: "§8RFTools Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 6.75d,
 	y: 4.5d,
 	text: [
 		"{q.rftools.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"e65af61a",
 		"c7f76475",
@@ -54,23 +54,23 @@
 	rewards: [{
 		uid: "10c4788a",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 40,
+				TrophyColorBlue: 151,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 118,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "rftools:infused_diamond",
-					Damage: 0s
+					id: "rftools:infused_diamond"
 				},
-				TrophyColorBlue: 151,
-				TrophyColorRed: 40,
 				TrophyName: "§8RFTools Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

@@ -1,3 +1,4 @@
+#modloaded oeintegration
 #loader mixin
 
 import native.net.minecraft.nbt.NBTTagCompound;
@@ -6,8 +7,7 @@ import native.atm.bloodworkxgaming.oeintegration.MainConfig;
 /*
 Make each modifier level require empty slot (was only first)
 */
-#mixin Mixin
-#{targets: "atm.bloodworkxgaming.oeintegration.Handler.IntegrationHandler"}
+#mixin {targets: "atm.bloodworkxgaming.oeintegration.Handler.IntegrationHandler"}
 zenClass MixinIntegrationHandler {
     #mixin Static
     #mixin Redirect
@@ -23,14 +23,9 @@ zenClass MixinIntegrationHandler {
     }
 }
 
-#mixin Mixin
-#{targets: "atm.bloodworkxgaming.oeintegration.Integrations.ExcavateModifier"}
+#mixin {targets: "atm.bloodworkxgaming.oeintegration.Integrations.ExcavateModifier"}
 zenClass MixinExcavateModifier {
-    #mixin ModifyConstant
-    #{
-    #    method: "<init>",
-    #    constant: {intValue: 1, ordinal: 1}
-    #}
+    #mixin ModifyConstant {method: "<init>", constant: {intValue: 1, ordinal: 1}}
     function fixArgOrder0(value as int) as int {
         return MainConfig.maxTinkersModifersCount;
     }

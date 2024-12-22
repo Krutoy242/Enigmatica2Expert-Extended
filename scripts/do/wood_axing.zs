@@ -55,7 +55,7 @@ events.onBlockHarvestDrops(function (e as BlockHarvestDropsEvent) {
   if (e.silkTouch || e.dropChance <= 0 || isNull(e.drops) || e.drops.length <= 0) return;
 
   for axe, value in axes {
-    if (axe has e.player.currentItem) {
+    if (!isNull(axe) && axe has e.player.currentItem) {
       return setDrops(e, value);
     }
   }

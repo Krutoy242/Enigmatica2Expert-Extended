@@ -9,7 +9,7 @@
 
 import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, mkdirSync, renameSync, statSync, unlinkSync } from 'node:fs'
-import { dirname, join, parse } from 'node:path'
+import { dirname, join, parse, relative as relativeTo, resolve } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath, URL } from 'node:url'
 
@@ -32,7 +32,10 @@ function relative(relPath = './') {
 
 export async function init(h = defaultHelper) {
   const argv = process.argv.slice(2)
-  if (argv[0]) await extractFromJar(h, argv[0])
+  if (argv[0] === 'extract' && argv[1])
+    return await extractFromJar(h, argv[1])
+  else if (argv[0] === 'diff' && argv[1])
+    return await showDiff(argv[1])
 
   await h.begin('Fixing Bansoukou files')
   renameFoldersToActualMods()
@@ -87,6 +90,13 @@ async function extractFromJar(h = defaultHelper, classFullPath) {
     return h.error(`Cannot extract file from: ${extractPath} to: ${insertPath}.\n${error}`)
   }
   await h.done()
+}
+
+async function showDiff(diffPath) {
+  const modClass = relativeTo('dev/automation/data/bansoukou_diffs', diffPath).replace(/.class.diff$/, '')
+  decompileFile(resolve('~bansoukou_unpatched', `${modClass}.class`), `~A.java`)
+  decompileFile(resolve('bansoukou', `${modClass}.class`), `~B.java`)
+  execSyncInherit('code --diff ~A.java ~B.java')
 }
 
 function renameFoldersToActualMods() {
@@ -247,15 +257,19 @@ function decompile(unpatchedFilePath, patchedFilePath) {
       ['newF', patchedFilePath],
     ].map(([key, fPath]) => {
       const actualFile = replaceExt(fPath, '.java')
-      execSyncInherit(
-        '"C:/Program Files/Java/jdk-13.0.2/bin/java.exe"'
-        + ' -jar'
-        + ' cfr-0.152.jar'
-        + ` "${fPath}"`
-        + ` > "${actualFile}"`
-      )
+      decompileFile(fPath, actualFile)
       return [key, actualFile]
     })
+  )
+}
+
+function decompileFile(source, target) {
+  execSyncInherit(
+    '"C:/Program Files/Java/jdk-13.0.2/bin/java.exe"'
+    + ' -jar'
+    + ' cfr-0.152.jar'
+    + ` "${source}"`
+    + ` > "${target}"`
   )
 }
 

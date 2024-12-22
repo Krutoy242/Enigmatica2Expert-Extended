@@ -1,4 +1,4 @@
-#modloaded thermalexpansion
+#modloaded thermalexpansion requious
 #priority 950
 
 import crafttweaker.item.IIngredient;

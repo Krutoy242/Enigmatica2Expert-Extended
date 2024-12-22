@@ -3,14 +3,8 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "thaumcraft:focus_1",
 			tag: {
-				display: {
-					Name: "Block Exchange"
-				},
 				package: {
-					index: 0,
-					power: 1.0f,
 					complexity: 7,
 					nodes: [{
 						type: "MEDIUM",
@@ -18,18 +12,24 @@
 					},
 					{
 						type: "MEDIUM",
-						key: "thaumcraft.PLAN",
-						setting.method: 1
+						setting.method: 1,
+						key: "thaumcraft.PLAN"
 					},
 					{
-						type: "EFFECT",
-						key: "thaumcraft.EXCHANGE",
 						setting.silk: 1,
-						setting.fortune: 0
-					}]
+						setting.fortune: 0,
+						key: "thaumcraft.EXCHANGE",
+						type: "EFFECT"
+					}],
+					index: 0,
+					power: 1.0f
+				},
+				display: {
+					Name: "Block Exchange"
 				},
 				color: -11041961
-			}
+			},
+			id: "thaumcraft:focus_1"
 		}
 	},
 	{
@@ -37,10 +37,10 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	}]
 }

@@ -3,6 +3,7 @@
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
+import native.net.minecraft.util.EnumParticleTypes;
 
 recipes.removeByRecipeName('mysticalagriculture:ingotosmium');
 
@@ -49,7 +50,7 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   )) return;
 
   if (world.remote) {
-    world.playSound('thaumcraft:poof', 'ambient', e.position.getOffset(crafttweaker.world.IFacing.up(), 1), 0.5f, 0.2f);
+    world.playSound('thaumcraft:poof', 'ambient', e.position.getOffset(up, 1), 0.5f, 0.2f);
     return;
   }
 
@@ -66,5 +67,8 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   } as IData;
   world.setBlockState(<blockstate:bedrockores:bedrock_ore>, isNull(oldData) ? newData : oldData + newData, e.position);
   item.mutable().shrink(item.amount);
-  mods.contenttweaker.Commands.call('/particle fireworksSpark ' ~ e.x ~ ' ' ~ (e.y + 1.0) ~ ' ' ~ e.z ~ ' 0.1 0 0.1 0.01 10', e.player, world, false, true);
+  
+  (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+    EnumParticleTypes.FIREWORKS_SPARK,
+    0.5 + e.x, 1.05 + e.y, 0.5 + e.z, 10, 0.2, 0, 0.2, 0.01, 0);
 });

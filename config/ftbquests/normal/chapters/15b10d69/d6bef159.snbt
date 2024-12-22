@@ -1,27 +1,27 @@
 {
 	title: "{q.industrial_foregoing.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 216,
+			TrophyColorBlue: 152,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 129,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "industrialforegoing:infinity_drill",
-				Damage: 0s
+				id: "industrialforegoing:infinity_drill"
 			},
-			TrophyColorBlue: 152,
-			TrophyColorRed: 216,
 			TrophyName: "§7Industrial Foregoing Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 9.0d,
 	y: 6.0d,
 	text: [
 		"{q.industrial_foregoing.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"69cbbacb",
 		"902a5fab",
@@ -59,23 +59,23 @@
 	rewards: [{
 		uid: "e5d9edca",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 216,
+				TrophyColorBlue: 152,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 129,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "industrialforegoing:infinity_drill",
-					Damage: 0s
+					id: "industrialforegoing:infinity_drill"
 				},
-				TrophyColorBlue: 152,
-				TrophyColorRed: 216,
 				TrophyName: "§7Industrial Foregoing Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

@@ -13,8 +13,8 @@
 		type: "custom",
 		title: "Hit anything with written Crystal Memory",
 		icon: {
-			id: "ic2:crystal_memory",
-			tag: {}
+			tag: {},
+			id: "ic2:crystal_memory"
 		},
 		tags: [
 			"crystal_memory_hit"
@@ -25,10 +25,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

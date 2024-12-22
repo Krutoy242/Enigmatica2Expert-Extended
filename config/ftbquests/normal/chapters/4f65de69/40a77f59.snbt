@@ -1,11 +1,11 @@
 {
 	title: "{q.getting_started.harvest_level_14.name}",
 	icon: {
-		id: "tconstruct:sharpening_kit",
-		Count: 14,
 		tag: {
 			Material: "chaotic_metal"
-		}
+		},
+		Count: 14,
+		id: "tconstruct:sharpening_kit"
 	},
 	x: 18.625d,
 	y: 3.5d,
@@ -15,28 +15,28 @@
 	dependencies: [
 		"14611430"
 	],
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "e95d989e",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "chaotic_metal"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}],
 		ignore_nbt: 2b
 	},
 	{
 		uid: "8b18a0d5",
 		type: "item",
-		disable_toast: true,
+		disable_toast: 1b,
 		items: [{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "red_matter"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}],
 		ignore_nbt: 2b
 	}],
@@ -50,10 +50,10 @@
 		type: "custom",
 		title: "{e2ee.quest.mythic}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "mythic"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

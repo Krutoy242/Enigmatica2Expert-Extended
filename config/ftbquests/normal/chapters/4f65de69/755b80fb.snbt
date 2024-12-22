@@ -1,18 +1,18 @@
 {
 	title: "{q.getting_started.technical_quest__2.name}",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 4.68d,
 	y: 3.5d,
 	text: [
 		"{q.getting_started.technical_quest__2.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"ca359f03"
 	],
 	size: 0.1d,
-	optional: true,
-	or_tasks: true,
+	optional: 1b,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "9b3339c8",
 		type: "item",
@@ -25,10 +25,10 @@
 		uid: "2dbe173e",
 		type: "item",
 		items: [{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "pigiron"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}]
 	}]
 }

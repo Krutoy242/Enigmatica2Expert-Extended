@@ -412,9 +412,9 @@
 		string_id: "food",
 		color: 4668969,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

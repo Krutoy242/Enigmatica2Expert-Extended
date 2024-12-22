@@ -13,10 +13,10 @@
 		uid: "7ee01b9a",
 		type: "item",
 		items: [{
-			id: "botania:specialflower",
 			tag: {
 				type: "hopperhock"
-			}
+			},
+			id: "botania:specialflower"
 		}]
 	}],
 	rewards: [{

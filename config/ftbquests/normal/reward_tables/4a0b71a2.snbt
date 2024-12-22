@@ -2,42 +2,21 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tcomplement:sledge_hammer",
+			ForgeCaps: {
+				"plustic:musicofthespheres_cap": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:": {
+					Items: [],
+					Size: 1
+				},
+				"plustic:fruitsalad_cap": {
+					Items: [],
+					Size: 5
+				}
+			},
 			tag: {
-				StatsOriginal: {
-					AttackSpeedMultiplier: 1.0f,
-					MiningSpeed: 6.8f,
-					FreeModifiers: 3,
-					Durability: 631,
-					HarvestLevel: 3,
-					Attack: 3.5f
-				},
-				Special: {
-					Categories: [
-						"tool",
-						"weapon",
-						"harvest",
-						"aoe"
-					]
-				},
-				Stats: {
-					AttackSpeedMultiplier: 1.0f,
-					MiningSpeed: 6.8f,
-					FreeModifiers: 2,
-					Durability: 631,
-					HarvestLevel: 3,
-					Attack: 3.5f
-				},
-				Modifiers: [{
-					identifier: "dense",
-					color: -1852056,
-					level: 1
-				},
-				{
-					identifier: "toolleveling",
-					color: 16777215,
-					level: 1
-				}],
 				TinkerData: {
 					Materials: [
 						"bronze",
@@ -48,25 +27,46 @@
 						"toolleveling"
 					]
 				},
+				Stats: {
+					FreeModifiers: 2,
+					MiningSpeed: 6.8f,
+					AttackSpeedMultiplier: 1.0f,
+					HarvestLevel: 3,
+					Attack: 3.5f,
+					Durability: 631
+				},
+				Special: {
+					Categories: [
+						"tool",
+						"weapon",
+						"harvest",
+						"aoe"
+					]
+				},
+				Modifiers: [{
+					color: -1852056,
+					identifier: "dense",
+					level: 1
+				},
+				{
+					color: 16777215,
+					identifier: "toolleveling",
+					level: 1
+				}],
+				StatsOriginal: {
+					FreeModifiers: 3,
+					MiningSpeed: 6.8f,
+					AttackSpeedMultiplier: 1.0f,
+					HarvestLevel: 3,
+					Attack: 3.5f,
+					Durability: 631
+				},
 				Traits: [
 					"dense",
 					"toolleveling"
 				]
 			},
-			ForgeCaps: {
-				"plustic:fruitsalad_cap": {
-					Items: [],
-					Size: 5
-				},
-				"plustic:": {
-					Items: [],
-					Size: 1
-				},
-				"plustic:musicofthespheres_cap": {
-					Items: [],
-					Size: 1
-				}
-			}
+			id: "tcomplement:sledge_hammer"
 		}
 	},
 	{
@@ -76,17 +76,17 @@
 	},
 	{
 		icon: {
-			id: "tconstruct:shard",
-			Count: 16,
 			tag: {
 				Material: "xu_magical_wood"
-			}
+			},
+			Count: 16,
+			id: "tconstruct:shard"
 		},
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "xu_magical_wood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 16
 	}]

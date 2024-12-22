@@ -28,9 +28,8 @@ recipes.addShapeless('Plutonium conversion', <nuclearcraft:plutonium:5> * 2, [<i
 utils.compact(<nuclearcraft:ingot:14>, <nuclearcraft:ingot_block:14>);
 utils.compact(<nuclearcraft:ingot:15>, <nuclearcraft:ingot_block:15>);
 
-// Remove Manganese ingot (and oxide) tooltip about smelting 3 times since its misleading
-<nuclearcraft:ingot:11>.removeTooltipLine(1);
-<nuclearcraft:ingot:14>.removeTooltipLine(1);
+// This recipe was only available in Arc Furnace
+furnace.addRecipe(<nuclearcraft:ingot:14>, <nuclearcraft:dust:14>, 0.5);
 
 // ------------------------------------------------------------------
 // Recipes and integrations
@@ -244,6 +243,7 @@ craft.make(<nuclearcraft:compound:2>, ['pretty',
 furnace.addRecipe(<nuclearcraft:ingot:8>, <minecraft:coal:*>);
 
 // Coal casted into graphite block
+mods.tconstruct.Casting.removeBasinRecipe(<minecraft:coal_block>);
 mods.tconstruct.Casting.removeBasinRecipe(<nuclearcraft:ingot_block:8>);
 mods.tconstruct.Casting.addBasinRecipe(<nuclearcraft:ingot_block:8>, null, <liquid:coal>, 900);
 mods.thermalexpansion.Crucible.addRecipe(<liquid:coal> * 900, <nuclearcraft:ingot_block:8>, 2000);
@@ -265,7 +265,17 @@ scripts.process.fill(<nuclearcraft:part:11>, <fluid:water> * 2000, <nuclearcraft
 
 // [Dimensional Blend] from [Biome Essence]
 recipes.remove(<nuclearcraft:compound:9>);
-scripts.process.crush(<biomesoplenty:biome_essence>, <nuclearcraft:compound:9>, 'only: eu2Crusher AACrusher IECrusher', [<thermalfoundation:material:66>], [0.25]);
+scripts.process.crush(
+  <biomesoplenty:biome_essence>,
+  <nuclearcraft:compound:9>,
+  'only: eu2Crusher IECrusher SAGMill',
+  [
+    <thermalfoundation:material:66>,
+    <nuclearcraft:compound:9>,
+    <nuclearcraft:compound:9>,
+  ],
+  [0.25, 0.25, 0.25],
+  { bonusType: 'MULTIPLY_OUTPUT' });
 
 if (!isNull(loadedMods['immersivetech'])) {
   mods.immersivetechnology.SolarTower.addRecipe(<liquid:sic_vapor> * 1000, <liquid:carbon_dioxide> * 1000, 100);
@@ -524,27 +534,6 @@ scripts.process.electrolyze(<fluid:nitric_oxide> * 100, [<fluid:nitrogen> * 500,
 // ------------------------------------------------------------
 // Remove worthless recipes
 // ------------------------------------------------------------
-
-// Common resources
-Purge(<nuclearcraft:alloy>).ores([<ore:ingotBronze>]);
-Purge(<nuclearcraft:alloy:5>).ores([<ore:ingotSteel>]);
-Purge(<nuclearcraft:dust>).ores([<ore:dustCopper>]);
-Purge(<nuclearcraft:dust:1>).ores([<ore:dustTin>]);
-Purge(<nuclearcraft:dust:2>).ores([<ore:dustLead>]);
-Purge(<nuclearcraft:dust:4>).ores([<ore:dustUranium>]);
-Purge(<nuclearcraft:gem_dust>).ores([<ore:dustDiamond>]);
-Purge(<nuclearcraft:gem_dust:2>);
-Purge(<nuclearcraft:gem_dust:3>).ores([<ore:dustObsidian>]);
-Purge(<nuclearcraft:gem_dust:6>).ores([<ore:dustSulfur>, <ore:dustSulphur>]);
-Purge(<nuclearcraft:gem:6>);
-Purge(<nuclearcraft:ingot>).ores([<ore:ingotCopper>]);
-Purge(<nuclearcraft:ingot:1>).ores([<ore:ingotTin>]);
-Purge(<nuclearcraft:ingot:2>).ores([<ore:ingotLead>]);
-Purge(<nuclearcraft:ingot:4>).ores([<ore:ingotUranium>]);
-Purge(<nuclearcraft:ore>);
-Purge(<nuclearcraft:ore:1>);
-Purge(<nuclearcraft:ore:2>);
-Purge(<nuclearcraft:ore:4>);
 
 // Unimplemented multiblocks
 Purge(<nuclearcraft:heat_exchanger_controller>);

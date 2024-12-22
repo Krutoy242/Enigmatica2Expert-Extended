@@ -3,18 +3,18 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:tough_tool_rod",
 			tag: {
 				Material: "xu_magical_wood"
-			}
+			},
+			id: "tconstruct:tough_tool_rod"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:tough_binding",
 			tag: {
 				Material: "livingwood"
-			}
+			},
+			id: "tconstruct:tough_binding"
 		}
 	}]
 }

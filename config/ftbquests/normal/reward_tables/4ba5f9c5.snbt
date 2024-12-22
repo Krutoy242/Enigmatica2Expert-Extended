@@ -2,10 +2,10 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "ic2:nano_saber",
 			tag: {
 				charge: 160000.0d
-			}
+			},
+			id: "ic2:nano_saber"
 		}
 	},
 	{
@@ -15,10 +15,10 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	}]
 }

@@ -12,18 +12,18 @@
 		type: "checkmark",
 		title: "Brews effects",
 		icon: {
-			id: "rustic:fluid_bottle",
 			tag: {
 				Fluid: {
-					FluidName: "cider",
 					Amount: 1000,
+					FluidName: "cider",
 					Tag: {
 						Quality: 0.75f
 					}
 				}
-			}
+			},
+			id: "rustic:fluid_bottle"
 		},
-		disable_toast: true
+		disable_toast: 1b
 	}],
 	rewards: [{
 		uid: "5281bb33",

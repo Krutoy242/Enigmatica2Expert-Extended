@@ -13,36 +13,36 @@
 		uid: "175cd1cd",
 		type: "item",
 		items: [{
-			id: "astralsorcery:blockcollectorcrystal",
 			tag: {
 				astralsorcery: {
 					constellationName: "astralsorcery.constellation.discidia",
 					crystalProperties: {
-						collectiveCapability: 100,
 						size: 400,
-						purity: 100
+						purity: 100,
+						collectiveCapability: 100
 					},
 					collectorType: 0
 				}
-			}
+			},
+			id: "astralsorcery:blockcollectorcrystal"
 		},
 		{
-			id: "astralsorcery:blockcelestialcollectorcrystal",
 			tag: {
 				astralsorcery: {
 					constellationName: "astralsorcery.constellation.discidia",
-					collectorType: 1,
 					crystalProperties: {
 						size: 900,
+						sizeOverride: -1,
 						purity: 100,
 						collectiveCapability: 100,
-						fract: 0,
-						sizeOverride: -1
-					}
+						fract: 0
+					},
+					collectorType: 1
 				}
-			}
+			},
+			id: "astralsorcery:blockcelestialcollectorcrystal"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -50,10 +50,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -3,6 +3,7 @@
 import crafttweaker.data.IData;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.potions.IPotion;
+import native.net.minecraft.util.EnumParticleTypes;
 
 static experience_potions as int[][IPotion][] = [
 //{<potion:minecraft:strength>      : [ 4, 1]},
@@ -49,7 +50,9 @@ events.onEntityLivingDeath(function (e as crafttweaker.event.EntityLivingDeathEv
   for tuple in experience_potions {
     for potion, value in tuple {
       if (increaseLevel(source, potion, value[0], value[1])) {
-        utils.spawnParticles(source, 'happyVillager', source.x, source.y + 1.5, source.z, 0.4, 0.4, 0.4, 0, 20);
+        (source.world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+          EnumParticleTypes.VILLAGER_HAPPY,
+          source.x, source.y + 1.5, source.z, 20, 0.4, 0.4, 0.4, 0.0, 0);
         return;
       }
     }

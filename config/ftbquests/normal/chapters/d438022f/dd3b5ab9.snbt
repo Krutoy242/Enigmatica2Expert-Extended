@@ -11,8 +11,8 @@
 		uid: "7a860ff6",
 		type: "item",
 		items: [{
-			id: "cyclicmagic:cyclic_wand_build",
-			tag: {}
+			tag: {},
+			id: "cyclicmagic:cyclic_wand_build"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -21,10 +21,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -19,10 +19,10 @@
 		uid: "ec263bdf",
 		type: "item",
 		item: {
-			id: "enderio:block_inventory_chest_medium",
 			tag: {
 				"enderio:energy": 1000000000
-			}
+			},
+			id: "enderio:block_inventory_chest_medium"
 		}
 	}]
 }

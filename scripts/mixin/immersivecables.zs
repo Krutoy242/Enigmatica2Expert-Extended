@@ -1,3 +1,4 @@
+#modloaded immersivecables
 #loader mixin
 #sideonly client
 
@@ -10,8 +11,7 @@ This will cut 75% of their render time.
 Its about +10% of FPS if your base have many wires.
 https://i.imgur.com/rYELZzW.png
 */
-#mixin Mixin
-#{targets: "de.sanandrew.mods.immersivecables.client.render.RenderTileIWConnectable"}
+#mixin {targets: "de.sanandrew.mods.immersivecables.client.render.RenderTileIWConnectable"}
 zenClass MixinRenderTileIWConnectable {
     #mixin Static
     #mixin Redirect

@@ -3,28 +3,28 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "minecraft:flint_and_steel",
 			tag: {
+				enchantmentColor: 3887386,
 				ench: [{
 					id: 34,
 					lvl: 3s
-				}],
-				enchantmentColor: 3887386
-			}
+				}]
+			},
+			id: "minecraft:flint_and_steel"
 		}
 	},
 	{
 		item: {
-			id: "thermalinnovation:quiver",
 			tag: {
 				Fluid: {
-					FluidName: "potion",
 					Amount: 2000,
+					FluidName: "potion",
 					Tag: {
 						Potion: "minecraft:long_fire_resistance"
 					}
 				}
-			}
+			},
+			id: "thermalinnovation:quiver"
 		}
 	},
 	{
@@ -32,10 +32,10 @@
 	},
 	{
 		item: {
-			id: "minecraft:splash_potion",
 			tag: {
 				Potion: "minecraft:long_fire_resistance"
-			}
+			},
+			id: "minecraft:splash_potion"
 		}
 	}]
 }

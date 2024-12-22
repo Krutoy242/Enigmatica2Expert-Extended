@@ -144,12 +144,11 @@ function milk(e as crafttweaker.event.PlayerInteractEntityEvent) as bool {
 
   // Replace item in hand if there is only 1
   // Reduce and give another if more
-  val handSlot = crafttweaker.entity.IEntityEquipmentSlot.mainHand();
   if (itemInHand.amount == 1) {
-    e.player.setItemToSlot(handSlot, mutatedContainer);
+    e.player.setItemToSlot(mainHand, mutatedContainer);
   }
   else {
-    e.player.setItemToSlot(handSlot, itemInHand * (itemInHand.amount - 1));
+    e.player.setItemToSlot(mainHand, itemInHand * (itemInHand.amount - 1));
     e.player.give(mutatedContainer);
   }
 

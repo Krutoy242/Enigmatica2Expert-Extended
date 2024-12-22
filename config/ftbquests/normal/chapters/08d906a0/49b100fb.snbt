@@ -4,20 +4,20 @@
 	dependencies: [
 		"0627d66e"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "6112533d",
 		type: "item",
 		items: [{
-			id: "tconstruct:rack",
-			Damage: 1s,
 			tag: {
 				textureBlock: {
+					Damage: 0s,
 					id: "minecraft:wooden_slab",
-					Count: 1,
-					Damage: 0s
+					Count: 1
 				}
-			}
+			},
+			Damage: 1s,
+			id: "tconstruct:rack"
 		}]
 	}],
 	rewards: [{

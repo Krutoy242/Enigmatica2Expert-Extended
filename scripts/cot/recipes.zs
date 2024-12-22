@@ -44,6 +44,7 @@ utils.compact(<contenttweaker:compressed_basalt>, <contenttweaker:compressed_bas
 val C = <biomesoplenty:coral:*>;
 recipes.addShapeless(<contenttweaker:compressed_coral>, [C, C, C, C, C, C, C, C, C]);
 recipes.addShapeless(<biomesoplenty:coral> * 9, [<contenttweaker:compressed_coral>]);
+scripts.jei.crafting_hints.add1to1(<contenttweaker:compressed_coral>, <randomthings:biomestone>);
 
 // Molten Cheese
 scripts.process.melt(<rats:block_of_cheese>, <liquid:cheese> * 1000);
@@ -181,6 +182,17 @@ mods.thaumcraft.Infusion.registerRecipe(
 // Benefication of Anglesite and Benitoite
 scripts.process.beneficiate(<contenttweaker:ore_anglesite>, 'Anglesite', 1, { exceptions: 'only: Grindstone' });
 scripts.process.beneficiate(<contenttweaker:ore_benitoite>, 'Benitoite', 1, { exceptions: 'only: Grindstone' });
+
+// Perfect Fuel is best fluid fuel in game
+mods.tconstruct.Alloy.addRecipe(<liquid:perfect_fuel>, [
+  <liquid:rocketfuel> * 40,
+  <liquid:enrichedlava> * 40,
+  <liquid:sunnarium> * 10,
+]);
+
+// Usage for Perfect Fuel
+mods.enderio.CombustionGen.addFuel(<fluid:perfect_fuel>, 20000, 1500000);
+mods.thermalexpansion.MagmaticDynamo.addFuel(<fluid:perfect_fuel>, 2000000000);
 
 /*
 # Knowledge absorber craft

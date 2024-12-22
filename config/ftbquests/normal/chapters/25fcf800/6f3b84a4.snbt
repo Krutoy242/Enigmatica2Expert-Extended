@@ -1,27 +1,27 @@
 {
 	title: "{q.environmental_tech.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 71,
+			TrophyColorBlue: 181,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 127,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "environmentaltech:void_res_miner_cont_5",
-				Damage: 0s
+				id: "environmentaltech:void_res_miner_cont_5"
 			},
-			TrophyColorBlue: 181,
-			TrophyColorRed: 71,
 			TrophyName: "EnvirTech Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 6.75d,
 	y: 11.25d,
 	text: [
 		"{q.environmental_tech.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"3dbf3039",
 		"a8dc599a",
@@ -57,23 +57,23 @@
 	rewards: [{
 		uid: "bfee80d1",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 71,
+				TrophyColorBlue: 181,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 127,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "environmentaltech:void_res_miner_cont_5",
-					Damage: 0s
+					id: "environmentaltech:void_res_miner_cont_5"
 				},
-				TrophyColorBlue: 181,
-				TrophyColorRed: 71,
 				TrophyName: "EnvirTech Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

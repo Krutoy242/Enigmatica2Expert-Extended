@@ -26,12 +26,6 @@ for tuple in [
     <nuclearcraft:cocoa_solids>,
   ] },
 
-  { <emberroot:owl_egg>: [
-    <ore:feather>,
-    <minecraft:spider_eye>, // Spider Eye
-    <nuclearcraft:cocoa_solids>,
-  ] },
-
   { <quark:parrot_egg>: [
     <ore:feather>,
     <ore:dyeGray>, // Gray Dye

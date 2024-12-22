@@ -1,6 +1,6 @@
 {
 	title: "{q.getting_started.obelisks.name}",
-	x: 11.1d,
+	x: 11.125d,
 	y: 7.1d,
 	text: [
 		"{q.getting_started.obelisks.desc}"
@@ -30,7 +30,7 @@
 		{
 			item: "enderio:block_relocator_obelisk"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

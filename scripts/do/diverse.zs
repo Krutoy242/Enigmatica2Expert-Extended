@@ -115,6 +115,11 @@ function getFireproofPower(item as IItemStack) as double {
   return getPower(median, length);
 }
 
+function getItemFromString(itemStr as string) as IItemStack {
+  val split = itemStr.split(':');
+  return itemUtils.getItem(split[0] ~ ':' ~ split[1], split[2] as int);
+}
+
 // -------------------------------------------------------------------
 
 events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlockEvent) {
@@ -133,8 +138,7 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   var itemData = [] as IData;
   var values = [] as int[];
   for itemStr, value in e.item.tag.singularity.asMap() {
-    val split = itemStr.split(':');
-    val item = itemUtils.getItem(split[0] ~ ':' ~ split[1], split[2] as int);
+    val item = getItemFromString(itemStr);
     if (isNull(item)) continue;
     values += value;
     itemData += [{

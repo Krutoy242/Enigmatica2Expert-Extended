@@ -69,7 +69,7 @@ function addRecipe(
     val value = isNull(item.tag.charge) ? 0.0 : item.tag.charge.asDouble();
     return mods.zenutils.I18n.format(
       game.localize('e2ee.do.charge'),
-      mods.zenutils.StaticString.format('%,f', value).replaceAll('\\.0+$', '').replaceAll(',', '§8,§6')
+      mods.zenutils.StaticString.format('%,f', [value]).replaceAll('\\.0+$', '').replaceAll(',', '§8,§6')
     );
   });
 

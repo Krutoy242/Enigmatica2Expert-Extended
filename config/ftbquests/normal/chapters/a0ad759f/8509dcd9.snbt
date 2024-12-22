@@ -1,7 +1,7 @@
 {
 	title: "{q.computers.lostuser_github_link.name}",
 	icon: "biomesoplenty:earth",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 12.8d,
 	y: 2.8d,
 	text: [
@@ -12,5 +12,5 @@
 		"3b3fc5d4"
 	],
 	size: 0.5d,
-	optional: true
+	optional: 1b
 }

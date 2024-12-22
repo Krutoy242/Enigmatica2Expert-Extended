@@ -1,4 +1,4 @@
-#modloaded twilightforest
+#modloaded twilightforest loottweaker
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;

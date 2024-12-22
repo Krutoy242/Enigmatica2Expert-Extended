@@ -1,11 +1,11 @@
 {
 	title: "{q.thaumcraft.rifts.name}",
 	icon: {
-		id: "thaumicaugmentation:rift_seed",
 		tag: {
-			riftSize: 100,
-			grown: 1b
-		}
+			grown: 1b,
+			riftSize: 100
+		},
+		id: "thaumicaugmentation:rift_seed"
 	},
 	x: 9.5d,
 	y: 0.0d,

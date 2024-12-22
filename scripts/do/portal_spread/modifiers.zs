@@ -127,17 +127,14 @@ function getTrueLookup(modifiers as int[]) as double {
 
 // "Index" is term used in portal_spread.utils functions
 function getMaxSpreadIndex(modifiers as int[]) as int {
-  val value = extractModif(modifiers, 'large') - extractModif(modifiers, 'small');
-  if (value <= -4) return 0;
-  if (value >= 4) return 2147483647;
+  val value = Config.defaultRadius
+    + (Config.maxRadius - Config.defaultRadius) * pow(extractModif(modifiers, 'large'), 2) / 16
+    - Config.defaultRadius * extractModif(modifiers, 'small') / 4;
 
-  val currMaxRadius = value > 0
-    ? (Config.maxRadius - Config.defaultRadius) * value / 4 + Config.defaultRadius
-    : value < 0
-      ? Config.defaultRadius / (1.0 - value)
-      : Config.defaultRadius;
+  if (value < Config.defaultRadius / 4) return 0;
+  if (value >= Config.maxRadius) return 2147483647;
 
-  return MAX_DISTANCE_INDEXES * currMaxRadius * currMaxRadius;
+  return MAX_DISTANCE_INDEXES * value * value;
 }
 
 function spreadIndexToRadius(index as int) as int {
@@ -154,18 +151,18 @@ function getCorners(world as IWorld, pos as IBlockPos, axisX as bool) as IData {
   var y1 = 0;
   var y2 = 0;
   for i in 1 .. 21 {
-    if (!isPortalBlock(world, pos.getOffset(IFacing.down(), i))) { y1 = -i; break; }
+    if (!isPortalBlock(world, pos.getOffset(down, i))) { y1 = -i; break; }
   }
   for i in 1 .. 21 {
-    if (!isPortalBlock(world, pos.getOffset(IFacing.up(), i))) { y2 = i; break; }
+    if (!isPortalBlock(world, pos.getOffset(up, i))) { y2 = i; break; }
   }
   var u1 = 0;
   var u2 = 0;
   for i in 1 .. 21 {
-    if (!isPortalBlock(world, pos.getOffset(axisX ? IFacing.west() : IFacing.north(), i))) { u1 = -i; break; }
+    if (!isPortalBlock(world, pos.getOffset(axisX ? west : north, i))) { u1 = -i; break; }
   }
   for i in 1 .. 21 {
-    if (!isPortalBlock(world, pos.getOffset(axisX ? IFacing.east() : IFacing.south(), i))) { u2 = i; break; }
+    if (!isPortalBlock(world, pos.getOffset(axisX ? east : south, i))) { u2 = i; break; }
   }
   return [
     pos.x + (axisX ? u1 : 0), pos.y + y1, pos.z + (!axisX ? u1 : 0),

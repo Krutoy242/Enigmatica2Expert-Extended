@@ -2,10 +2,10 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	},
 	{
@@ -15,12 +15,12 @@
 	},
 	{
 		item: {
-			id: "minecraft:spawn_egg",
 			tag: {
 				EntityTag: {
 					id: "minecraft:cow"
 				}
-			}
+			},
+			id: "minecraft:spawn_egg"
 		}
 	}]
 }

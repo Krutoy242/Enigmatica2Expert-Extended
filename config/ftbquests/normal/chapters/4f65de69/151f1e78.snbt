@@ -22,10 +22,10 @@
 		uid: "d60a789c",
 		type: "item",
 		item: {
-			id: "patchouli:guide_book",
 			tag: {
 				"patchouli:book": "patchouli:e2e_e"
-			}
+			},
+			id: "patchouli:guide_book"
 		}
 	}]
 }

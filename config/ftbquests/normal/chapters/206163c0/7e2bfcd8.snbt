@@ -17,7 +17,6 @@
 		uid: "ed9def05",
 		type: "item",
 		item: {
-			id: "forestry:pollen_fertile",
 			tag: {
 				IsAnalyzed: 0b,
 				Genome: {
@@ -72,7 +71,8 @@
 						UID1: "forestry.fireproofFalse"
 					}]
 				}
-			}
+			},
+			id: "forestry:pollen_fertile"
 		},
 		count: 2
 	}]

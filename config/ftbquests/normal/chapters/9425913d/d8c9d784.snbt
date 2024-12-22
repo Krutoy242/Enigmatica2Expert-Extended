@@ -1,8 +1,8 @@
 {
 	title: "{q.gates.gate_exploration.name}",
 	icon: {
-		id: "naturescompass:naturescompass",
-		tag: {}
+		tag: {},
+		id: "naturescompass:naturescompass"
 	},
 	x: 11.5d,
 	y: 2.2d,
@@ -21,13 +21,13 @@
 		uid: "da8932af",
 		type: "item",
 		items: [{
-			id: "naturescompass:naturescompass",
-			tag: {}
+			tag: {},
+			id: "naturescompass:naturescompass"
 		},
 		{
 			item: "biomesoplenty:biome_finder"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -35,11 +35,11 @@
 		type: "custom",
 		title: "{e2ee.quest.storage}",
 		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 4,
 			tag: {
 				type: "storage"
-			}
+			},
+			Count: 4,
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

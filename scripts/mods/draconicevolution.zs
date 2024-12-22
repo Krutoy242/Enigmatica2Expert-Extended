@@ -109,7 +109,7 @@ mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .input(<ore:gemTopaz> * 2)
   .input(<ore:gearVibrant>)
   .input(<fluid:glowstone> * 8000)
-  .power(1200000).timeRequired(10).build();
+  .power(120000).timeRequired(10).build();
 
 // [Chaotic Core] from [Chaos Shard][+4]
 craft.remake(<draconicevolution:chaotic_core>, ['pretty',
@@ -130,7 +130,7 @@ mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .input(<ore:blockEvilMetal>)
   .input(<contenttweaker:terrestrial_artifact_block>)
   .input(<fluid:silicon> * 16000)
-  .power(5000000).timeRequired(20).build();
+  .power(500000).timeRequired(20).build();
 
 // [Wyvern Energy Core] from [Wyvern Core][+3]
 recipes.remove(<draconicevolution:wyvern_energy_core>);

@@ -5,7 +5,7 @@
 		"18efdca6",
 		"6e20475e"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "0e9ced94",
 		type: "item",

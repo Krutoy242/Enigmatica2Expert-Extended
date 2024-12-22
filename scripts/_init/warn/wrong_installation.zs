@@ -6,8 +6,8 @@ import crafttweaker.player.IPlayer;
 zenClass Op {
   zenConstructor(){}
   
-  val messageSended as bool[string] = {};
-  val registered = false;
+  var messageSended as bool[string] = {};
+  var registered as bool = false;
 
   function register() as void {
     if (registered) return;

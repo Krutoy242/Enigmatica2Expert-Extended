@@ -12,10 +12,10 @@
 		uid: "5b1d1093",
 		type: "item",
 		items: [{
-			id: "thermalexpansion:cell",
 			tag: {
 				Level: 0b
-			}
+			},
+			id: "thermalexpansion:cell"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -24,10 +24,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -1,5 +1,5 @@
 #ignoreBracketErrors
-#modloaded quark
+#modloaded quark requious
 #priority 950
 
 import crafttweaker.item.IIngredient;

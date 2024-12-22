@@ -11,7 +11,7 @@
 		"38a388cd"
 	],
 	size: 0.75d,
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "33a6b741",
 		type: "item",
@@ -91,40 +91,40 @@
 		uid: "2418ab9e",
 		type: "item",
 		items: [{
-			id: "thaumadditions:crystal_block",
 			tag: {
 				Aspect: "ignis"
-			}
+			},
+			id: "thaumadditions:crystal_block"
 		},
 		{
-			id: "thaumadditions:crystal_block",
 			tag: {
 				Aspect: "aer"
-			}
+			},
+			id: "thaumadditions:crystal_block"
 		},
 		{
-			id: "thaumadditions:crystal_block",
 			tag: {
 				Aspect: "ordo"
-			}
+			},
+			id: "thaumadditions:crystal_block"
 		},
 		{
-			id: "thaumadditions:crystal_block",
 			tag: {
 				Aspect: "perditio"
-			}
+			},
+			id: "thaumadditions:crystal_block"
 		},
 		{
-			id: "thaumadditions:crystal_block",
 			tag: {
 				Aspect: "aqua"
-			}
+			},
+			id: "thaumadditions:crystal_block"
 		},
 		{
-			id: "thaumadditions:crystal_block",
 			tag: {
 				Aspect: "terra"
-			}
+			},
+			id: "thaumadditions:crystal_block"
 		}]
 	},
 	{

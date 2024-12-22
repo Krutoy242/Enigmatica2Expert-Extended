@@ -1,10 +1,10 @@
 {
 	title: "{q.animals.ember_root.name}",
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "emberroot:rootsonespriteboss"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 2.4d,
 	y: -4.8d,
@@ -20,7 +20,7 @@
 		items: [{
 			item: "minecraft:totem_of_undying"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

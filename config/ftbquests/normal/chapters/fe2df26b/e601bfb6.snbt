@@ -11,15 +11,12 @@
 		uid: "a2b5edae",
 		type: "item",
 		items: [{
-			id: "aenetvistool:net_visualizer",
 			tag: {
-				uuid: "41010b68-445c-4dae-9686-364e093b56f1",
-				bound_pos: 274810798080L,
-				bound_dim: 0,
-				cable_node_colour_8: 255,
-				cable_node_colour_32: 65535,
+				rand_p2p_colours: 0b,
 				machine_node_colour_8: 16776960,
-				machine_node_colour_32: 8388352,
+				render_p2p_no_depth: 1b,
+				bound_dim: 0,
+				uuid: "41010b68-445c-4dae-9686-364e093b56f1",
 				p2p_colours: [I;
 					12500735,
 					4210752,
@@ -29,20 +26,23 @@
 					22527,
 					16777100
 				],
-				rand_p2p_colours: 0b,
-				rand_p2p_colour_offset: 0b,
-				render_no_depth: 1b,
-				render_p2p_no_depth: 1b,
-				enable_p2p: 1b,
-				enable_chanel_labels: 1b,
+				cable_node_colour_32: 65535,
+				machine_node_colour_32: 8388352,
+				cable_node_colour_8: 255,
 				enable_cable_connections: 1b,
+				rand_p2p_colour_offset: 0b,
+				bound_pos: 274810798080L,
+				small_channel_labels: 0b,
 				enable_cable_nodes: 1b,
-				enable_machine_nodes: 1b,
+				enable_chanel_labels: 1b,
 				highlight_inactive_buses: 1b,
-				small_channel_labels: 0b
-			}
+				enable_p2p: 1b,
+				enable_machine_nodes: 1b,
+				render_no_depth: 1b
+			},
+			id: "aenetvistool:net_visualizer"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}]
 }

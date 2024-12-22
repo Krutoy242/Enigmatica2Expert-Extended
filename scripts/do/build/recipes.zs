@@ -1,4 +1,6 @@
 #reloadable
+#ignoreBracketErrors
+#modloaded ctintegration
 
 function abs(n as double) as double { return n < 0 ? -n : n; }
 scripts.do.build.entity.add(<entity:twilightforest:quest_ram>, [

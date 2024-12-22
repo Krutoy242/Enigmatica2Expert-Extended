@@ -1,17 +1,17 @@
 {
 	icon: {
-		id: "bloodmagic:bound_sword",
 		tag: {
-			Unbreakable: 1b,
-			activated: 1b,
 			binding: {
+				name: "Krutoy242",
 				id: {
-					M: -2145320399625435168L,
-					L: -7015483457058418587L
-				},
-				name: "Krutoy242"
-			}
-		}
+					L: -7015483457058418587L,
+					M: -2145320399625435168L
+				}
+			},
+			Unbreakable: 1b,
+			activated: 1b
+		},
+		id: "bloodmagic:bound_sword"
 	},
 	x: 10.9d,
 	y: 1.9d,
@@ -25,13 +25,13 @@
 		uid: "6206a641",
 		type: "item",
 		items: [{
-			id: "bloodmagic:bound_sword",
 			tag: {
 				Unbreakable: 1b,
-				ENABLED: 1b,
+				activated: 0b,
 				RARITY: 1,
-				activated: 0b
-			}
+				ENABLED: 1b
+			},
+			id: "bloodmagic:bound_sword"
 		}],
 		ignore_nbt: 1b
 	},
@@ -56,10 +56,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

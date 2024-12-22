@@ -18,6 +18,7 @@ import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
 import crafttweaker.text.ITextComponent.fromTranslation;
+import native.net.minecraft.util.EnumParticleTypes;
 
 static hpPortionTreshold as double = 0.8;
 static ignoredHealth as double = 20.0;
@@ -109,7 +110,9 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
   val y = projectile.position3f.y;
   val z = projectile.position3f.z;
 
-  server.commandManager.executeCommandSilent(pokemon, '/particle angryVillager ' ~ x ~ ' ' ~ y ~ ' ' ~ z ~ ' 0.2 0.1 0.2 0.1 3 ');
+  (projectile.world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+    EnumParticleTypes.VILLAGER_ANGRY,
+    x, y, z, 3, 0.2, 0.1, 0.2, 0.1, 0);
   player.sendPlaySoundPacket('mekanism:etc.error', 'ambient', pokemon.position, 2.0f, 1.5f);
 
   val itemEntity = item.createEntityItem(projectile.world, x, y, z);

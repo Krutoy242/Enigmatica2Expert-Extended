@@ -11,8 +11,8 @@
 		uid: "3a38d912",
 		type: "item",
 		items: [{
-			id: "cyclicmagic:charm_speed",
-			tag: {}
+			tag: {},
+			id: "cyclicmagic:charm_speed"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -21,10 +21,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

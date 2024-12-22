@@ -48,18 +48,18 @@
 		uid: "950a8ac9",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any wallTargetChamber"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "wallTargetChamber"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any wallTargetChamber"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 95L
 	}],
@@ -68,10 +68,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

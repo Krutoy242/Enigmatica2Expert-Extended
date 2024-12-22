@@ -1,5 +1,8 @@
 #modloaded tconevo
 
+import crafttweaker.item.IItemStack;
+import crafttweaker.liquid.ILiquidStack;
+
 for item in loadedMods['tconevo'].items {
   for ore in item.ores {
     if (ore.name.startsWith('gear')) recipes.remove(item);
@@ -31,3 +34,14 @@ mods.tconstruct.Casting.addTableRecipe(
   <tconevo:material>, // Coalescence Matrix
   <liquid:raw_will>, // Demonic Will
   1000, true);
+
+function recast(block as IItemStack, fluid as ILiquidStack) as void {
+  mods.tconstruct.Melting.addRecipe(fluid * 1296, block);
+mods.tconstruct.Casting.addBasinRecipe(block, null, fluid, 1296);
+}
+
+// Add missed block <=> Molten recipes
+recast(<psi:psi_decorative:1>, <liquid:psimetal>);
+recast(<botania:storage:0>, <liquid:manasteel>);
+recast(<botania:storage:1>, <liquid:terrasteel>);
+recast(<botania:storage:2>, <liquid:elementium>);

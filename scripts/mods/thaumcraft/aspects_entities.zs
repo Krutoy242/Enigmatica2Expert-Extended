@@ -4,7 +4,7 @@ import crafttweaker.data.IData;
 import thaumcraft.aspect.CTAspectStack;
 import crafttweaker.entity.IEntityDefinition;
 
-#modloaded thaumcraft
+#modloaded thaumcraft randomtweaker
 
 /* 
 ___  ____ ___ ___ ____ ____    ____ _  _ _ _  _ ____ _    ____ 
@@ -194,9 +194,6 @@ ____ _  _ ___  ____ ____ ____ ____ ____ ___ ___  ____ ____
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "emberroot:hero"}})
                                                 .setAspects(<aspect:humanus>*40       ,<aspect:exanimis>*10   ,<aspect:instrumentum>*10); 
 <entity:emberroot:hero>                         .setAspects(<aspect:humanus>*40       ,<aspect:exanimis>*10   ,<aspect:instrumentum>*10); 
-<minecraft:spawn_egg>.withTag({EntityTag: {id: "emberroot:owl"}})
-                                                .setAspects(<aspect:bestia>*10        ,<aspect:sensus>*10     ,<aspect:volatus>*5); 
-<entity:emberroot:owl>                          .setAspects(<aspect:bestia>*10        ,<aspect:sensus>*10     ,<aspect:volatus>*5);
 <minecraft:spawn_egg>.withTag({EntityTag: {id: "emberroot:rainbow_golem"}})
                                                 .setAspects(<aspect:vitreus>*20       ,<aspect:machina>*10    ,<aspect:motus>*10); 
 <entity:emberroot:rainbow_golem>                .setAspects(<aspect:vitreus>*20       ,<aspect:machina>*10    ,<aspect:motus>*10); 

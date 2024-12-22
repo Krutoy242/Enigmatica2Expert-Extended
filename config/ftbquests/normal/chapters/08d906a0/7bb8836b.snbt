@@ -6,7 +6,7 @@
 		"27a77a40"
 	],
 	dependency_requirement: "one_completed",
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "37115573",
 		type: "item",
@@ -29,11 +29,11 @@
 		uid: "b7e76b4e",
 		type: "item",
 		item: {
-			id: "storagedrawers:basicdrawers",
-			Damage: 2s,
 			tag: {
 				material: "oak"
-			}
+			},
+			Damage: 2s,
+			id: "storagedrawers:basicdrawers"
 		}
 	}]
 }

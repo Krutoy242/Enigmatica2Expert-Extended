@@ -1,4 +1,4 @@
-#modloaded cyclicmagic
+#modloaded cyclicmagic guideapi
 
 import crafttweaker.item.IItemStack;
 import mods.cyclicmagic.Hydrator;

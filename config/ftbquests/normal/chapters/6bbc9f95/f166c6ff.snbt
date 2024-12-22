@@ -1,10 +1,10 @@
 {
 	title: "{q.thaumcraft.void_thaumaturge_set.name}",
 	icon: {
-		id: "thaumcraft:void_robe_chest",
 		tag: {
 			hasIC2Jetpack: 1b
-		}
+		},
+		id: "thaumcraft:void_robe_chest"
 	},
 	x: 12.0d,
 	y: 7.5d,
@@ -43,10 +43,10 @@
 		uid: "5f89c684",
 		type: "item",
 		items: [{
-			id: "thaumicaugmentation:void_boots",
 			tag: {
 				color: 6961280
-			}
+			},
+			id: "thaumicaugmentation:void_boots"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -61,10 +61,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

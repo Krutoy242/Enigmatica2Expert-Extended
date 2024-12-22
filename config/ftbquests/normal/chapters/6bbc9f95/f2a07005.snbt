@@ -1,10 +1,10 @@
 {
 	title: "{q.thaumcraft.focus_modifiers.name}",
 	icon: {
-		id: "thaumicaugmentation:augment_builder_power",
 		tag: {
 			id: "thaumicaugmentation:strength_elemental"
-		}
+		},
+		id: "thaumicaugmentation:augment_builder_power"
 	},
 	x: 6.0d,
 	y: -2.0d,
@@ -20,22 +20,22 @@
 		type: "item",
 		title: "Modifier Effect",
 		items: [{
-			id: "thaumicaugmentation:augment_builder_effect",
 			tag: {
 				id: "thaumicaugmentation:effect_power"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_effect"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_effect",
 			tag: {
 				id: "thaumicaugmentation:effect_cast_speed"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_effect"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_effect",
 			tag: {
 				id: "thaumicaugmentation:effect_cost"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_effect"
 		}],
 		ignore_nbt: 1b
 	},
@@ -44,54 +44,54 @@
 		type: "item",
 		title: "Modifier Base",
 		items: [{
-			id: "thaumicaugmentation:augment_builder_power",
 			tag: {
 				id: "thaumicaugmentation:strength_experience"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_power"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_power",
 			tag: {
 				id: "thaumicaugmentation:strength_overworld"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_power"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_power",
 			tag: {
 				id: "thaumicaugmentation:strength_nether"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_power"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_power",
 			tag: {
 				id: "thaumicaugmentation:strength_end"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_power"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_power",
 			tag: {
 				id: "thaumicaugmentation:strength_emptiness"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_power"
 		},
 		{
-			id: "thaumicaugmentation:augment_caster_rift_energy_storage",
 			ForgeCaps: {
 				Parent: {
-					augment: {},
 					energy: {
 						energy: 0L
-					}
+					},
+					augment: {}
 				}
-			}
+			},
+			id: "thaumicaugmentation:augment_caster_rift_energy_storage"
 		},
 		{
-			id: "thaumicaugmentation:augment_builder_power",
 			tag: {
 				id: "thaumicaugmentation:strength_elemental",
 				aspect: "ignis"
-			}
+			},
+			id: "thaumicaugmentation:augment_builder_power"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

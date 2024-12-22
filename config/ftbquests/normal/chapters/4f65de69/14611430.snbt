@@ -1,11 +1,11 @@
 {
 	title: "{q.getting_started.harvest_level_13.name}",
 	icon: {
-		id: "tconstruct:sharpening_kit",
-		Count: 13,
 		tag: {
 			Material: "draconic_metal"
-		}
+		},
+		Count: 13,
+		id: "tconstruct:sharpening_kit"
 	},
 	x: 17.125d,
 	y: 3.5d,
@@ -39,11 +39,11 @@
 		type: "custom",
 		title: "{e2ee.quest.legendary}",
 		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 4,
 			tag: {
 				type: "legendary"
-			}
+			},
+			Count: 4,
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -1,5 +1,5 @@
 {
-	x: -3.0000000000000004d,
+	x: -3.0d,
 	y: -3.1d,
 	text: [
 		"{q.animals.garbage_pile.desc}"

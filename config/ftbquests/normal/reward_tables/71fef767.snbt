@@ -2,19 +2,19 @@
 	loot_size: 1,
 	rewards: [{
 		icon: {
-			id: "immersiveengineering:bullet",
-			Count: 64,
-			Damage: 2s,
 			tag: {
 				bullet: "silver"
-			}
+			},
+			Damage: 2s,
+			Count: 64,
+			id: "immersiveengineering:bullet"
 		},
 		item: {
-			id: "immersiveengineering:bullet",
-			Damage: 2s,
 			tag: {
 				bullet: "silver"
-			}
+			},
+			Damage: 2s,
+			id: "immersiveengineering:bullet"
 		},
 		count: 64
 	},

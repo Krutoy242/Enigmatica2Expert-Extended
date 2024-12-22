@@ -3,19 +3,19 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "storage"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		weight: 25
 	},
 	{
 		item: {
-			id: "randomthings:floopouch",
 			tag: {
 				flooCount: 128
-			}
+			},
+			id: "randomthings:floopouch"
 		}
 	},
 	{
@@ -62,7 +62,6 @@
 	},
 	{
 		item: {
-			id: "littletiles:chisel",
 			tag: {
 				preview: {
 					bBox: [I;
@@ -77,7 +76,8 @@
 						block: "minecraft:stone"
 					}
 				}
-			}
+			},
+			id: "littletiles:chisel"
 		}
 	},
 	{
@@ -100,8 +100,8 @@
 	},
 	{
 		item: {
-			id: "botania:exchangerod",
-			tag: {}
+			tag: {},
+			id: "botania:exchangerod"
 		}
 	},
 	{
@@ -112,14 +112,6 @@
 	},
 	{
 		item: "testdummy:dummy"
-	},
-	{
-		item: {
-			id: "scannable:scanner",
-			tag: {
-				energy: 500000
-			}
-		}
 	},
 	{
 		icon: "scannable:module_blank 8",
@@ -136,11 +128,11 @@
 	},
 	{
 		item: {
-			id: "botania:autocraftinghalo",
 			tag: {
-				equipped: 0b,
-				rotationBase: 637.62756f
-			}
+				rotationBase: 637.62756f,
+				equipped: 0b
+			},
+			id: "botania:autocraftinghalo"
 		}
 	},
 	{
@@ -148,10 +140,10 @@
 	},
 	{
 		item: {
-			id: "rftools:charged_porter",
 			tag: {
 				Energy: 200000
-			}
+			},
+			id: "rftools:charged_porter"
 		}
 	},
 	{
@@ -161,33 +153,33 @@
 	},
 	{
 		item: {
-			id: "chisel:chisel_hitech",
 			tag: {
 				chiseldata: {}
-			}
+			},
+			id: "chisel:chisel_hitech"
 		}
 	},
 	{
 		item: {
-			id: "randomthings:reinforcedenderbucket",
 			tag: {
 				Fluid: {
-					FluidName: "lava",
-					Amount: 10000
+					Amount: 10000,
+					FluidName: "lava"
 				}
-			}
+			},
+			id: "randomthings:reinforcedenderbucket"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:robit",
 			tag: {
 				mekData: {
 					name: "Robit",
 					energyStored: 100000.0d,
 					Items: []
 				}
-			}
+			},
+			id: "mekanism:robit"
 		}
 	},
 	{
@@ -198,13 +190,13 @@
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
 			tag: {
 				StoredEnchantments: [{
-					lvl: 10s,
-					id: 16s
+					id: 16s,
+					lvl: 10s
 				}]
-			}
+			},
+			id: "minecraft:enchanted_book"
 		}
 	},
 	{
@@ -212,92 +204,104 @@
 	},
 	{
 		item: {
-			id: "immersiveengineering:railgun",
+			ForgeCaps: {
+				Parent: {
+					Items: [],
+					Size: 1
+				}
+			},
 			tag: {
 				"IE:Shader": {
+					Damage: 0s,
 					id: "immersiveengineering:shader",
 					Count: 1b,
 					tag: {
 						shader_name: "Hollow"
-					},
-					Damage: 0s
+					}
 				},
+				energy: 1600,
 				upgrades: {
 					scope: 1b,
 					speed: 1.0f
-				},
-				energy: 1600
-			}
+				}
+			},
+			id: "immersiveengineering:railgun"
 		}
 	},
 	{
 		item: {
-			id: "immersiveengineering:chemthrower",
+			ForgeCaps: {
+				Parent: {
+					Items: [],
+					Size: 1
+				}
+			},
 			tag: {
 				"IE:Shader": {
+					Damage: 0s,
 					id: "immersiveengineering:shader",
 					Count: 1b,
 					tag: {
 						shader_name: "Dominator"
-					},
-					Damage: 0s
-				},
-				Fluid: {
-					FluidName: "moltensalt",
-					Amount: 4000
+					}
 				},
 				upgrades: {
-					focus: 1b,
-					capacity: 2000
+					capacity: 2000,
+					focus: 1b
+				},
+				Fluid: {
+					Amount: 4000,
+					FluidName: "moltensalt"
 				}
-			}
+			},
+			id: "immersiveengineering:chemthrower"
 		}
 	},
 	{
 		item: {
-			id: "immersiveengineering:revolver",
-			tag: {
-				"IE:Shader": {
-					id: "immersiveengineering:shader",
-					Count: 1b,
-					tag: {
-						shader_name: "Microshark"
-					},
-					Damage: 0s
-				},
-				upgrades: {
-					melee: 6.0f,
-					bullets: 6
-				},
-				bullets: []
-			},
 			ForgeCaps: {
 				Parent: {
 					Items: [],
 					Size: 21
 				}
-			}
+			},
+			tag: {
+				"IE:Shader": {
+					Damage: 0s,
+					id: "immersiveengineering:shader",
+					Count: 1b,
+					tag: {
+						shader_name: "Microshark"
+					}
+				},
+				upgrades: {
+					bullets: 6,
+					melee: 6.0f
+				},
+				bullets: []
+			},
+			id: "immersiveengineering:revolver"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:flamethrower",
 			tag: {
 				mekData: {
 					stored: {
-						amount: 24000,
-						gasName: "hydrogen"
+						gasName: "hydrogen",
+						amount: 24000
 					}
 				}
-			}
+			},
+			id: "mekanism:flamethrower"
 		}
 	},
 	{
 		item: {
-			id: "thaumcraft:grapple_gun",
 			tag: {
 				tc.charge: 100
-			}
+			},
+			id: "thaumcraft:grapple_gun"
 		}
 	},
 	{
@@ -311,33 +315,33 @@
 	},
 	{
 		item: {
-			id: "mekanism:freerunners",
 			tag: {
 				mekData: {
 					energyStored: 64000.0d
 				}
-			}
+			},
+			id: "mekanism:freerunners"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:scubatank",
 			tag: {
 				mekData: {
 					stored: {
-						amount: 24000,
-						gasName: "oxygen"
+						gasName: "oxygen",
+						amount: 24000
 					}
 				}
-			}
+			},
+			id: "mekanism:scubatank"
 		}
 	},
 	{
 		item: {
-			id: "opencomputers:hoverboots",
 			tag: {
 				"oc:charge": 15000.0d
-			}
+			},
+			id: "opencomputers:hoverboots"
 		}
 	},
 	{
@@ -358,9 +362,9 @@
 		item_name: "Uncommon",
 		color: 8103344,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

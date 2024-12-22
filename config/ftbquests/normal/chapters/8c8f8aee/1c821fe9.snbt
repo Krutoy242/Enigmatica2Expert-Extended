@@ -11,10 +11,10 @@
 		uid: "2bbe6b98",
 		type: "item",
 		items: [{
-			id: "actuallyadditions:item_battery_quintuple",
 			tag: {
 				Energy: 2000000
-			}
+			},
+			id: "actuallyadditions:item_battery_quintuple"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -23,11 +23,11 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 4,
 			tag: {
 				type: "uncommon"
-			}
+			},
+			Count: 4,
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

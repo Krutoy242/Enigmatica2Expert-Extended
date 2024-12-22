@@ -7,6 +7,7 @@
 import crafttweaker.command.ICommandSender;
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
+import native.net.minecraft.util.EnumParticleTypes;
 
 // ---------------------------------------------------
 // ---------------------------------------------------
@@ -45,7 +46,9 @@ val geyser as function(IWorld,IItemStack,float,float,float,int,double,double,dou
       world.spawnEntity(itemEntity);
 
       // world.playSound("thaumcraft:poof", "ambient", pos, 0.5f, 1.5f);
-      executeCommandSilent(itemEntity, '/particle fireworksSpark ' ~ x as float ~ ' ' ~ y as float ~ ' ' ~ z as float ~ ' 0 0.1 0 0.1 5');
+      (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+        EnumParticleTypes.FIREWORKS_SPARK,
+        x as double, y as double, z as double, 5, 0.0, 0.1, 0.0, 0.1, 0);
     }).start();
 
     i += 1;

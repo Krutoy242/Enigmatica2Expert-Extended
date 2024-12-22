@@ -19,12 +19,12 @@
 	},
 	{
 		item: {
-			id: "thermalexpansion:cache",
 			tag: {
-				RSControl: 0b,
 				Creative: 0b,
+				RSControl: 0b,
 				Level: 4b
-			}
+			},
+			id: "thermalexpansion:cache"
 		}
 	},
 	{
@@ -32,14 +32,14 @@
 	},
 	{
 		item: {
-			id: "ironchest:iron_shulker_box_purple",
-			Damage: 5s,
 			tag: {
 				BlockEntityTag: {
 					facing: 4b,
 					ShulkerBoxSize: 108
 				}
-			}
+			},
+			Damage: 5s,
+			id: "ironchest:iron_shulker_box_purple"
 		}
 	},
 	{
@@ -50,24 +50,22 @@
 	},
 	{
 		item: {
-			id: "openblocks:luggage",
 			tag: {
-				enchantmentColor: 11743532,
 				size: 54,
+				enchantmentColor: 11743532,
 				Items: []
-			}
+			},
+			id: "openblocks:luggage"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:strongbox",
 			tag: {
-				ench: [{
-					lvl: 4s,
-					id: 55
-				}],
-				Level: 2b
-			}
+				enchantmentColor: 10590976,
+				Level: 3b,
+				ench: [{}]
+			},
+			id: "thermalexpansion:strongbox"
 		}
 	},
 	{
@@ -75,389 +73,389 @@
 	},
 	{
 		item: {
-			id: "appliedenergistics2:storage_cell_1k",
 			tag: {
-				"@0": 2304,
-				"@1": 2304,
-				"@2": 2304,
-				ic: 6912,
 				it: 3s,
-				"#0": {
-					Craft: 0b,
-					Cnt: 2304L,
-					id: "minecraft:gravel",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"#1": {
-					Craft: 0b,
-					Cnt: 2304L,
-					id: "minecraft:netherrack",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
+				ic: 6912,
+				"@2": 2304,
+				"@0": 2304,
 				"#2": {
-					Craft: 0b,
-					Cnt: 2304L,
+					Req: 0L,
+					Damage: 0s,
 					id: "minecraft:soul_sand",
 					Count: 1b,
+					Cnt: 2304L,
+					Craft: 0b
+				},
+				"@1": 2304,
+				"#1": {
+					Req: 0L,
 					Damage: 0s,
-					Req: 0L
+					id: "minecraft:netherrack",
+					Count: 1b,
+					Cnt: 2304L,
+					Craft: 0b
+				},
+				"#0": {
+					Req: 0L,
+					Damage: 0s,
+					id: "minecraft:gravel",
+					Count: 1b,
+					Cnt: 2304L,
+					Craft: 0b
 				}
-			}
+			},
+			id: "appliedenergistics2:storage_cell_1k"
 		}
 	},
 	{
 		item: {
-			id: "appliedenergistics2:storage_cell_4k",
 			tag: {
-				it: 6s,
-				"#0": {
-					Craft: 0b,
-					Cnt: 192L,
+				"#3": {
+					Req: 0L,
+					Damage: 3s,
 					id: "minecraft:log",
 					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"#1": {
-					Craft: 0b,
-					Cnt: 512L,
-					id: "minecraft:log",
-					Count: 1b,
-					Damage: 1s,
-					Req: 0L
-				},
-				"#2": {
-					Craft: 0b,
 					Cnt: 256L,
-					id: "minecraft:log",
+					Craft: 0b
+				},
+				ic: 1728,
+				"#5": {
+					Req: 0L,
+					Damage: 1s,
+					id: "minecraft:log2",
 					Count: 1b,
-					Damage: 2s,
-					Req: 0L
+					Cnt: 256L,
+					Craft: 0b
+				},
+				it: 6s,
+				"#4": {
+					Req: 0L,
+					Damage: 0s,
+					id: "minecraft:log2",
+					Count: 1b,
+					Cnt: 256L,
+					Craft: 0b
 				},
 				"@0": 192,
-				"#3": {
-					Craft: 0b,
-					Cnt: 256L,
+				"@2": 256,
+				"@3": 256,
+				"@5": 256,
+				"#2": {
+					Req: 0L,
+					Damage: 2s,
 					id: "minecraft:log",
 					Count: 1b,
-					Damage: 3s,
-					Req: 0L
+					Cnt: 256L,
+					Craft: 0b
 				},
 				"@1": 512,
-				"#4": {
-					Craft: 0b,
-					Cnt: 256L,
-					id: "minecraft:log2",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"@2": 256,
-				"#5": {
-					Craft: 0b,
-					Cnt: 256L,
-					id: "minecraft:log2",
-					Count: 1b,
+				"#1": {
+					Req: 0L,
 					Damage: 1s,
-					Req: 0L
+					id: "minecraft:log",
+					Count: 1b,
+					Cnt: 512L,
+					Craft: 0b
 				},
-				"@3": 256,
-				"@4": 256,
-				"@5": 256,
-				ic: 1728
-			}
+				"#0": {
+					Req: 0L,
+					Damage: 0s,
+					id: "minecraft:log",
+					Count: 1b,
+					Cnt: 192L,
+					Craft: 0b
+				},
+				"@4": 256
+			},
+			id: "appliedenergistics2:storage_cell_4k"
 		}
 	},
 	{
 		item: {
-			id: "appliedenergistics2:storage_cell_16k",
 			tag: {
+				"#9": {
+					Req: 0L,
+					Damage: 7s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
 				"#10": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
+					Req: 0L,
 					Damage: 8s,
-					Req: 0L
-				},
-				"#11": {
-					Craft: 0b,
-					Cnt: 64L,
 					id: "minecraft:concrete_powder",
 					Count: 1b,
-					Damage: 9s,
-					Req: 0L
-				},
-				"#12": {
-					Craft: 0b,
 					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 10s,
-					Req: 0L
-				},
-				"#13": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 11s,
-					Req: 0L
+					Craft: 0b
 				},
 				"#14": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
+					Req: 0L,
 					Damage: 12s,
-					Req: 0L
-				},
-				"#15": {
-					Craft: 0b,
-					Cnt: 64L,
 					id: "minecraft:concrete_powder",
 					Count: 1b,
-					Damage: 13s,
-					Req: 0L
-				},
-				"#16": {
-					Craft: 0b,
 					Cnt: 64L,
+					Craft: 0b
+				},
+				"#5": {
+					Req: 0L,
+					Damage: 3s,
 					id: "minecraft:concrete_powder",
 					Count: 1b,
-					Damage: 14s,
-					Req: 0L
-				},
-				"#17": {
-					Craft: 0b,
 					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 15s,
-					Req: 0L
+					Craft: 0b
 				},
-				ic: 1600,
-				"@10": 64,
-				"@11": 64,
+				"@9": 64,
+				"@8": 64,
+				"@7": 64,
+				"@6": 64,
+				"@5": 64,
+				"@3": 64,
+				"@2": 64,
+				"@17": 64,
 				"@12": 64,
+				"#15": {
+					Req: 0L,
+					Damage: 13s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#11": {
+					Req: 0L,
+					Damage: 9s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				it: 18s,
+				"#13": {
+					Req: 0L,
+					Damage: 11s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"@10": 64,
 				"@13": 64,
-				"@14": 64,
 				"@15": 64,
 				"@16": 64,
-				"@17": 64,
-				it: 18s,
-				"#0": {
-					Craft: 0b,
-					Cnt: 256L,
-					id: "minecraft:stained_hardened_clay",
+				"@0": 256,
+				"@11": 64,
+				"@1": 320,
+				"@4": 64,
+				"@14": 64,
+				"#7": {
+					Req: 0L,
+					Damage: 5s,
+					id: "minecraft:concrete_powder",
 					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#3": {
+					Req: 0L,
 					Damage: 1s,
-					Req: 0L
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#12": {
+					Req: 0L,
+					Damage: 10s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				ic: 1600,
+				"#17": {
+					Req: 0L,
+					Damage: 15s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#16": {
+					Req: 0L,
+					Damage: 14s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#8": {
+					Req: 0L,
+					Damage: 6s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#4": {
+					Req: 0L,
+					Damage: 2s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#6": {
+					Req: 0L,
+					Damage: 4s,
+					id: "minecraft:concrete_powder",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
 				},
 				"#1": {
-					Craft: 0b,
-					Cnt: 320L,
+					Req: 0L,
+					Damage: 0s,
 					id: "minecraft:prismarine",
 					Count: 1b,
-					Damage: 0s,
-					Req: 0L
+					Cnt: 320L,
+					Craft: 0b
 				},
 				"#2": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
+					Req: 0L,
 					Damage: 0s,
-					Req: 0L
-				},
-				"@0": 256,
-				"#3": {
-					Craft: 0b,
-					Cnt: 64L,
 					id: "minecraft:concrete_powder",
 					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#0": {
+					Req: 0L,
 					Damage: 1s,
-					Req: 0L
-				},
-				"@1": 320,
-				"#4": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
+					id: "minecraft:stained_hardened_clay",
 					Count: 1b,
-					Damage: 2s,
-					Req: 0L
-				},
-				"@2": 64,
-				"#5": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 3s,
-					Req: 0L
-				},
-				"@3": 64,
-				"#6": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 4s,
-					Req: 0L
-				},
-				"@4": 64,
-				"#7": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 5s,
-					Req: 0L
-				},
-				"@5": 64,
-				"#8": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 6s,
-					Req: 0L
-				},
-				"@6": 64,
-				"#9": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:concrete_powder",
-					Count: 1b,
-					Damage: 7s,
-					Req: 0L
-				},
-				"@7": 64,
-				"@8": 64,
-				"@9": 64
-			}
+					Cnt: 256L,
+					Craft: 0b
+				}
+			},
+			id: "appliedenergistics2:storage_cell_16k"
 		}
 	},
 	{
 		item: {
-			id: "appliedenergistics2:storage_cell_64k",
 			tag: {
-				"#10": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:mud",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"#11": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:flesh",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				ic: 768,
-				"@10": 64,
-				"@11": 64,
-				it: 12s,
-				"#0": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:stone",
-					Count: 1b,
-					Damage: 1s,
-					Req: 0L
-				},
-				"#1": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:stone",
-					Count: 1b,
-					Damage: 3s,
-					Req: 0L
-				},
-				"#2": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "minecraft:stone",
-					Count: 1b,
-					Damage: 5s,
-					Req: 0L
-				},
-				"@0": 64,
-				"#3": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:dirt",
-					Count: 1b,
-					Damage: 8s,
-					Req: 0L
-				},
-				"@1": 64,
-				"#4": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:dirt",
-					Count: 1b,
-					Damage: 9s,
-					Req: 0L
-				},
-				"@2": 64,
-				"#5": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:dirt",
-					Count: 1b,
-					Damage: 10s,
-					Req: 0L
-				},
-				"@3": 64,
-				"#6": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:white_sand",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"@4": 64,
-				"#7": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:dried_sand",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"@5": 64,
-				"#8": {
-					Craft: 0b,
-					Cnt: 64L,
-					id: "biomesoplenty:hard_ice",
-					Count: 1b,
-					Damage: 0s,
-					Req: 0L
-				},
-				"@6": 64,
 				"#9": {
-					Craft: 0b,
-					Cnt: 64L,
+					Req: 0L,
+					Damage: 0s,
 					id: "biomesoplenty:ash_block",
 					Count: 1b,
-					Damage: 0s,
-					Req: 0L
+					Cnt: 64L,
+					Craft: 0b
 				},
-				"@7": 64,
+				"#10": {
+					Req: 0L,
+					Damage: 0s,
+					id: "biomesoplenty:mud",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#5": {
+					Req: 0L,
+					Damage: 10s,
+					id: "biomesoplenty:dirt",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"@9": 64,
+				"@11": 64,
+				"@0": 64,
+				"#11": {
+					Req: 0L,
+					Damage: 0s,
+					id: "biomesoplenty:flesh",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				it: 12s,
+				"@2": 64,
+				"@10": 64,
 				"@8": 64,
-				"@9": 64
-			}
+				"@3": 64,
+				"@5": 64,
+				"@6": 64,
+				"@7": 64,
+				"@1": 64,
+				"@4": 64,
+				"#7": {
+					Req: 0L,
+					Damage: 0s,
+					id: "biomesoplenty:dried_sand",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#3": {
+					Req: 0L,
+					Damage: 8s,
+					id: "biomesoplenty:dirt",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				ic: 768,
+				"#8": {
+					Req: 0L,
+					Damage: 0s,
+					id: "biomesoplenty:hard_ice",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#4": {
+					Req: 0L,
+					Damage: 9s,
+					id: "biomesoplenty:dirt",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#6": {
+					Req: 0L,
+					Damage: 0s,
+					id: "biomesoplenty:white_sand",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#2": {
+					Req: 0L,
+					Damage: 5s,
+					id: "minecraft:stone",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#1": {
+					Req: 0L,
+					Damage: 3s,
+					id: "minecraft:stone",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				},
+				"#0": {
+					Req: 0L,
+					Damage: 1s,
+					id: "minecraft:stone",
+					Count: 1b,
+					Cnt: 64L,
+					Craft: 0b
+				}
+			},
+			id: "appliedenergistics2:storage_cell_64k"
 		}
 	},
 	{
@@ -510,40 +508,37 @@
 	},
 	{
 		item: {
-			id: "thermalexpansion:tank",
 			tag: {
-				ench: [{
-					lvl: 1s,
-					id: 55
-				}],
 				enchantmentColor: 10590976,
-				Level: 0b
-			}
+				Level: 1b,
+				ench: [{}]
+			},
+			id: "thermalexpansion:tank"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:gastank",
 			tag: {
 				tier: 1
-			}
+			},
+			id: "mekanism:gastank"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:gastank",
 			tag: {
 				tier: 2
-			}
+			},
+			id: "mekanism:gastank"
 		}
 	},
 	{
 		item: {
-			id: "aeadditions:storage.fluid.portable",
 			tag: {
 				power: 20000.0d,
 				fuzzyMode: "IGNORE_ALL"
-			}
+			},
+			id: "aeadditions:storage.fluid.portable"
 		}
 	},
 	{
@@ -551,20 +546,20 @@
 	},
 	{
 		item: {
-			id: "mekanism:machineblock2",
-			Damage: 11s,
 			tag: {
 				tier: 0
-			}
+			},
+			Damage: 11s,
+			id: "mekanism:machineblock2"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:machineblock2",
-			Damage: 11s,
 			tag: {
 				tier: 1
-			}
+			},
+			Damage: 11s,
+			id: "mekanism:machineblock2"
 		}
 	},
 	{
@@ -578,16 +573,16 @@
 	},
 	{
 		item: {
-			id: "ic2:te",
+			tag: {},
 			Damage: 134s,
-			tag: {}
+			id: "ic2:te"
 		}
 	},
 	{
 		item: {
-			id: "ic2:te",
+			tag: {},
 			Damage: 133s,
-			tag: {}
+			id: "ic2:te"
 		}
 	},
 	{
@@ -627,9 +622,6 @@
 		count: 32
 	},
 	{
-		item: "thaumadditions:chester"
-	},
-	{
 		item: "mekanism:machineblock 1 13"
 	},
 	{
@@ -639,19 +631,19 @@
 	},
 	{
 		item: {
-			id: "draconicevolution:draconium_chest",
 			tag: {
 				ChestColour: 6553750
-			}
+			},
+			id: "draconicevolution:draconium_chest"
 		}
 	}],
 	loot_crate: {
 		string_id: "storage",
 		color: 1776415,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

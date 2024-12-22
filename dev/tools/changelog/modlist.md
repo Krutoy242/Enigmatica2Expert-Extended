@@ -7,8 +7,8 @@
 {{else}}{{/if}}{{/if}}{{/if}}
 
 {{~#*inline "list"}}
-Icon | Summary
-----:|:-------
+Icon | Summary | Reason
+----:|:--------|:-------
 {{#each this}}
 <img src="
   {{~{padEnd (replace cf2Addon.logo.thumbnailUrl "256/256" "30/30") 95 post='"'}~}}
@@ -18,7 +18,7 @@ Icon | Summary
 <sup><sub>
   {{~padEnd latestFile.fileName 49~}}
 </sub></sup><br>
-  {{~cf2Addon.summary}}
+  {{~cf2Addon.summary}} | 
 {{/each}}
 -----------
 

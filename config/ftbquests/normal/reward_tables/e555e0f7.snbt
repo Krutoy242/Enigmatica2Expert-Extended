@@ -2,32 +2,32 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "enderio:item_rod_of_return",
 			tag: {
 				"enderio:energy": 2000000,
 				"enderio:famount": 200
-			}
+			},
+			id: "enderio:item_rod_of_return"
 		}
 	},
 	{
 		item: {
-			id: "enderio:item_staff_of_levity",
 			tag: {
+				"enderio:famount": 8000,
 				enderio.darksteel.upgrade.energyUpgrade: {
-					level: 3,
-					energy: 1000000
-				},
-				"enderio:famount": 8000
-			}
+					energy: 1000000,
+					level: 3
+				}
+			},
+			id: "enderio:item_staff_of_levity"
 		}
 	},
 	{
 		item: {
-			id: "appliedenergistics2:charged_staff",
 			tag: {
-				internalMaxPower: 8000.0d,
-				internalCurrentPower: 8000.0d
-			}
+				internalCurrentPower: 8000.0d,
+				internalMaxPower: 8000.0d
+			},
+			id: "appliedenergistics2:charged_staff"
 		}
 	}]
 }

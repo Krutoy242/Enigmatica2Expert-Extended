@@ -1,4 +1,4 @@
-#modloaded thaumicwonders
+#modloaded thaumicwonders tconstruct
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.IRecipeFunction;

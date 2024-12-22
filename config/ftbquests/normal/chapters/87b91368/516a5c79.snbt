@@ -1,30 +1,30 @@
 {
 	title: "{q.animals.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 168,
+			TrophyColorBlue: 140,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 151,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
 				id: "draconicevolution:mob_soul",
 				tag: {
 					EntityName: "minecraft:cow"
-				},
-				Damage: 0s
+				}
 			},
-			TrophyColorBlue: 140,
-			TrophyColorRed: 168,
 			TrophyName: "§cAnimals Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 5.1d,
 	y: 3.75d,
 	text: [
 		"{q.animals.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"3e7b8b7a",
 		"a65a3f5b",
@@ -69,26 +69,26 @@
 	rewards: [{
 		uid: "217003b1",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 168,
+				TrophyColorBlue: 140,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 151,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
 					id: "draconicevolution:mob_soul",
 					tag: {
 						EntityName: "minecraft:cow"
-					},
-					Damage: 0s
+					}
 				},
-				TrophyColorBlue: 140,
-				TrophyColorRed: 168,
 				TrophyName: "§cAnimals Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

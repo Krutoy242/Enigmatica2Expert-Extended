@@ -21,10 +21,10 @@
 		uid: "b44f0389",
 		type: "item",
 		item: {
-			id: "enderio:block_inventory_chest_big",
 			tag: {
 				"enderio:energy": 1000000000
-			}
+			},
+			id: "enderio:block_inventory_chest_big"
 		}
 	}]
 }

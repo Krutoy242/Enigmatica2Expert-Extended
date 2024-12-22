@@ -1,11 +1,11 @@
 {
 	title: "{q.getting_started.harvest_level_12.name}",
 	icon: {
-		id: "tconstruct:sharpening_kit",
-		Count: 12,
 		tag: {
 			Material: "ma.supremium"
-		}
+		},
+		Count: 12,
+		id: "tconstruct:sharpening_kit"
 	},
 	x: 15.6d,
 	y: 3.5d,
@@ -15,7 +15,7 @@
 	dependencies: [
 		"224cb929"
 	],
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "23598306",
 		type: "item",
@@ -32,10 +32,10 @@
 		type: "custom",
 		title: "{e2ee.quest.legendary}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "legendary"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

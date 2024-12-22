@@ -19,10 +19,10 @@
 		uid: "2fc171fb",
 		type: "item",
 		item: {
-			id: "tconstruct:shard",
 			tag: {
 				Material: "bloodwood"
-			}
+			},
+			id: "tconstruct:shard"
 		},
 		count: 20
 	}]

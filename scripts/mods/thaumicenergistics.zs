@@ -102,3 +102,21 @@ craft.remake(<thaumicenergistics:essentia_cell_creative>, ['pretty',
   'S': <threng:material:14>, // Speculative Processor
   'M': <appliedenergistics2:material:39>, // ME Storage Housing
 });
+
+// [Arcane Crafting Terminal] from [ME Terminal][+3]
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumicenergistics:arcane_terminal>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
+  "arcane_terminal", # Name
+  "ARCANETERMINAL", # Research
+  50, # Vis cost
+  [],
+  <thaumicenergistics:arcane_terminal>, # Output
+  Grid(['pretty',
+  '  N  ',
+  '¤ M ¤',
+  '  A  '], {
+  'N': <thermallogistics:manager>,     // Network Manager
+  '¤': <ore:gearVibrant>,              // Vibrant Bimetal Gear
+  'M': <appliedenergistics2:part:380>, // ME Terminal
+  'A': <thaumcraft:arcane_workbench>,  // Arcane Workbench
+}).shaped());

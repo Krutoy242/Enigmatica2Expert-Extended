@@ -102,7 +102,6 @@
 
   "exnihilocreatio:block_endstone_crushed": [
     { "meshLevel": 1, "drop": {"name": "minecraft:chorus_fruit"        , "meta": 0}  , "chance": 0.4},
-    { "meshLevel": 1, "drop": {"name": "nuclearcraft:compound"         , "meta": 9}  , "chance": 0.20},
     { "meshLevel": 1, "drop": {"name": "endreborn:item_lormyte_crystal", "meta": 0}  , "chance": 0.3 },
     { "meshLevel": 1, "drop": {"name": "jaopca:item_pieceuranium"      , "meta": 0}  , "chance": 0.3 },
 

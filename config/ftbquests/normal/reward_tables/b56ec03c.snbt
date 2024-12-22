@@ -5,19 +5,19 @@
 	},
 	{
 		icon: {
-			id: "thermalexpansion:florb",
-			Count: 5,
-			Damage: 1s,
 			tag: {
 				Fluid: "lava"
-			}
+			},
+			Damage: 1s,
+			Count: 5,
+			id: "thermalexpansion:florb"
 		},
 		item: {
-			id: "thermalexpansion:florb",
-			Damage: 1s,
 			tag: {
 				Fluid: "lava"
-			}
+			},
+			Damage: 1s,
+			id: "thermalexpansion:florb"
 		},
 		count: 5
 	},

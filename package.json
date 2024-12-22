@@ -29,7 +29,8 @@
     "dev:xml": "tsx dev/automation/XML.js",
     "java-8-to-21": "powershell -Command \"dev/automation/jar_disable.ps1 !configanytime-* !mixinbooter-* OptiFine_1.12.2_HD_U_G5.jar; dev/automation/jar_disable.ps1 revert scalar-* vintagium-* *Fugue-*; del config/sledgehammer.conf\"",
     "java-21-to-8": "powershell -Command \"dev/automation/jar_disable.ps1 revert !configanytime-* !mixinbooter-* OptiFine_1.12.2_HD_U_G5.jar; dev/automation/jar_disable.ps1 scalar-* vintagium-* *Fugue-*\"",
-    "mc-tools:reducer": "tsx mc-tools/packages/reducer/src/cli.ts levels dev/tools/reduce_mods.json"
+    "reducer-levels": "tsx mc-tools/packages/reducer/src/cli.ts levels dev/tools/reduce_mods.json",
+    "reducer-interactive": "tsx mc-tools/packages/reducer/src/cli.ts interactive"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",

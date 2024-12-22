@@ -14,7 +14,7 @@
 		items: [{
 			item: "forestry:soldering_iron"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	},
 	{
@@ -22,31 +22,31 @@
 		type: "item",
 		title: "Any Circuit Board",
 		items: [{
-			id: "forestry:chipsets",
 			tag: {
 				T: 0s
-			}
+			},
+			id: "forestry:chipsets"
 		},
 		{
-			id: "forestry:chipsets",
-			Damage: 1s,
 			tag: {
 				T: 1s
-			}
+			},
+			Damage: 1s,
+			id: "forestry:chipsets"
 		},
 		{
-			id: "forestry:chipsets",
-			Damage: 2s,
 			tag: {
 				T: 2s
-			}
+			},
+			Damage: 2s,
+			id: "forestry:chipsets"
 		},
 		{
-			id: "forestry:chipsets",
-			Damage: 3s,
 			tag: {
 				T: 3s
-			}
+			},
+			Damage: 3s,
+			id: "forestry:chipsets"
 		}]
 	},
 	{

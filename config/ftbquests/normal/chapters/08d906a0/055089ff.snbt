@@ -4,7 +4,7 @@
 	dependencies: [
 		"779ca002"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "a0021fce",
 		type: "item",
@@ -16,14 +16,14 @@
 		uid: "5eb284a4",
 		type: "item",
 		item: {
-			id: "rustic:elixir",
 			tag: {
 				ElixirEffects: [{
-					Effect: "minecraft:haste",
 					Duration: 9600,
+					Effect: "minecraft:haste",
 					Amplifier: 3
 				}]
-			}
+			},
+			id: "rustic:elixir"
 		}
 	}]
 }

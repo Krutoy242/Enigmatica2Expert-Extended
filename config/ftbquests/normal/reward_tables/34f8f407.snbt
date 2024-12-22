@@ -2,26 +2,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "conarm:chest_core",
 			tag: {
 				Material: "darkwood"
-			}
+			},
+			id: "conarm:chest_core"
 		}
 	},
 	{
 		item: {
-			id: "conarm:leggings_core",
 			tag: {
 				Material: "darkwood"
-			}
+			},
+			id: "conarm:leggings_core"
 		}
 	},
 	{
 		item: {
-			id: "conarm:helmet_core",
 			tag: {
 				Material: "darkwood"
-			}
+			},
+			id: "conarm:helmet_core"
 		}
 	}]
 }

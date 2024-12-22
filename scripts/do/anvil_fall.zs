@@ -74,7 +74,7 @@ events.onEntityLivingDamage(function (e as crafttweaker.event.EntityLivingDamage
     || !mob.definition.id.startsWith('minecraft:')
   ) return;
 
-  val blockUnderPos = mob.position.getOffset(crafttweaker.world.IFacing.down(), 1);
+  val blockUnderPos = mob.position.getOffset(down, 1);
   val blockState = mob.world.getBlockState(blockUnderPos);
   if (isNull(blockState) || blockState != <blockstate:advancedrocketry:basalt>) return;
 

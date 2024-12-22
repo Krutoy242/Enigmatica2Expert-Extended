@@ -1,12 +1,15 @@
 {
 	title: "{q.getting_started.harvest_level_7.name}",
 	icon: {
-		id: "tconstruct:sharpening_kit",
-		Count: 7,
 		tag: {
 			Material: "cobalt"
-		}
+		},
+		Count: 7,
+		id: "tconstruct:sharpening_kit"
 	},
+	tags: [
+		"cobalt"
+	],
 	x: 8.125d,
 	y: 3.5d,
 	text: [
@@ -19,7 +22,7 @@
 		"4bc2899f",
 		"a1fb3576"
 	],
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "da33fe3f",
 		type: "item",
@@ -42,18 +45,9 @@
 		table: 25
 	},
 	{
-		uid: "e91e93cf",
-		type: "command",
+		uid: "c2887fbc",
+		type: "custom",
 		title: "Grant access to the Nether",
-		team_reward: true,
-		auto: "no_toast",
-		command: "/gamestage add @p healthy"
-	},
-	{
-		uid: "cbe428c2",
-		type: "command",
-		team_reward: true,
-		auto: "invisible",
-		command: "/tellraw @p [{\"translate\":\"tooltips.dim_stages.healthy_can\"}]"
+		auto: "no_toast"
 	}]
 }

@@ -5,18 +5,18 @@
 	},
 	{
 		item: {
-			id: "ic2:te",
+			tag: {},
 			Damage: 75s,
-			tag: {}
+			id: "ic2:te"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:energycube",
 			tag: {
-				tier: 1,
-				mekData: {}
-			}
+				mekData: {},
+				tier: 1
+			},
+			id: "mekanism:energycube"
 		}
 	}]
 }

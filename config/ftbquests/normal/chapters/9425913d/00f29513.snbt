@@ -19,11 +19,11 @@
 		uid: "e5ec1c33",
 		type: "item",
 		item: {
-			id: "mekanism:machineblock2",
-			Damage: 11s,
 			tag: {
 				tier: 0
-			}
+			},
+			Damage: 11s,
+			id: "mekanism:machineblock2"
 		}
 	},
 	{

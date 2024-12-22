@@ -12,14 +12,14 @@
 		uid: "fdcd84f0",
 		type: "item",
 		items: [{
-			id: "thermalexpansion:dynamo",
-			Damage: 4s,
 			tag: {
-				RSControl: 0b,
-				Facing: 1b,
 				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
 				Level: 0b
-			}
+			},
+			Damage: 4s,
+			id: "thermalexpansion:dynamo"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -28,10 +28,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

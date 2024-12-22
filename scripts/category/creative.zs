@@ -1,4 +1,4 @@
-#modloaded extendedcrafting
+#modloaded extendedcrafting plustic
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;

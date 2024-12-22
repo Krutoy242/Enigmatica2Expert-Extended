@@ -1,4 +1,4 @@
-#modloaded bibliocraft
+#modloaded bibliocraft requious
 #priority 950
 
 import mods.requious.SlotVisual;

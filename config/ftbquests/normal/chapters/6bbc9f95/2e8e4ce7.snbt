@@ -19,33 +19,33 @@
 		uid: "a491735d",
 		type: "item",
 		item: {
-			id: "thaumadditions:crystal_bag",
 			tag: {
 				Aspects: [{
-					key: "ordo",
-					amount: 3
+					amount: 3,
+					key: "ordo"
 				},
 				{
-					key: "ignis",
-					amount: 3
+					amount: 3,
+					key: "ignis"
 				},
 				{
-					key: "aer",
-					amount: 3
+					amount: 3,
+					key: "aer"
 				},
 				{
-					key: "perditio",
-					amount: 3
+					amount: 3,
+					key: "perditio"
 				},
 				{
-					key: "aqua",
-					amount: 3
+					amount: 3,
+					key: "aqua"
 				},
 				{
-					key: "terra",
-					amount: 3
+					amount: 3,
+					key: "terra"
 				}]
-			}
+			},
+			id: "thaumadditions:crystal_bag"
 		}
 	}]
 }

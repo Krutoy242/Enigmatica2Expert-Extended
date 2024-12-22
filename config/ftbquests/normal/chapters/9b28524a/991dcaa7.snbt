@@ -12,18 +12,18 @@
 		uid: "51daee8e",
 		type: "item",
 		items: [{
-			id: "bloodmagic:sigil_lava",
 			tag: {
 				binding: {
+					name: "Krutoy242",
 					id: {
-						M: -2145320399625435168L,
-						L: -7015483457058418587L
-					},
-					name: "Krutoy242"
+						L: -7015483457058418587L,
+						M: -2145320399625435168L
+					}
 				}
-			}
+			},
+			id: "bloodmagic:sigil_lava"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -31,10 +31,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

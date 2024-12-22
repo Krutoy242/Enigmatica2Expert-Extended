@@ -34,11 +34,11 @@
 			item: "rats:rat_crafting_table"
 		},
 		{
-			id: "mekanism:machineblock3",
-			Damage: 5s,
 			tag: {
 				mekData: {}
-			}
+			},
+			Damage: 5s,
+			id: "mekanism:machineblock3"
 		},
 		{
 			item: "botania:opencrate 1 1"
@@ -50,10 +50,10 @@
 			item: "extrautils2:crafter"
 		},
 		{
-			id: "computercraft:turtle_expanded",
 			tag: {
 				rightUpgrade: "minecraft:crafting_table"
-			}
+			},
+			id: "computercraft:turtle_expanded"
 		},
 		{
 			item: "opencomputers:upgrade 1 11"
@@ -74,10 +74,11 @@
 			item: "industrialforegoing:fluid_crafter"
 		},
 		{
-			id: "thermalexpansion:machine",
-			Damage: 11s,
 			tag: {
+				Energy: 0,
 				Facing: 3b,
+				RSControl: 0b,
+				Level: 0b,
 				SideCache: [B;
 					1b,
 					1b,
@@ -85,17 +86,16 @@
 					2b,
 					2b,
 					2b
-				],
-				RSControl: 0b,
-				Energy: 0,
-				Level: 0b
-			}
+				]
+			},
+			Damage: 11s,
+			id: "thermalexpansion:machine"
 		},
 		{
-			id: "immersivepetroleum:schematic",
 			tag: {
 				multiblock: "IE:Assembler"
-			}
+			},
+			id: "immersivepetroleum:schematic"
 		},
 		{
 			item: "thermallogistics:crafter"
@@ -119,10 +119,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

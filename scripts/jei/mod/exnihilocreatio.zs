@@ -1,4 +1,4 @@
-#modloaded exnihilocreatio
+#modloaded exnihilocreatio requious
 #priority 950
 
 import crafttweaker.item.IIngredient;

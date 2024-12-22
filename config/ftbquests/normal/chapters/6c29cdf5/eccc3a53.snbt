@@ -13,14 +13,23 @@
 		uid: "62bc111e",
 		type: "item",
 		items: [{
-			id: "botania:goddesscharm",
-			tag: {}
+			tag: {},
+			id: "botania:goddesscharm"
 		}],
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "dbdb8d80",
-		type: "loot",
-		table: 1
+		uid: "3a8b3e04",
+		type: "custom",
+		title: "{e2ee.quest.common}",
+		icon: {
+			tag: {
+				type: "common"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
 	}]
 }

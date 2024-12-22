@@ -1,10 +1,10 @@
+#modloaded avaritia
 #loader mixin
 
 import native.net.minecraftforge.event.RegistryEvent;
 import mixin.CallbackInfo;
 
-#mixin Mixin
-#{targets: "morph.avaritia.Avaritia"}
+#mixin {targets: "morph.avaritia.Avaritia"}
 zenClass MixinAvaritia {
     #mixin Inject
     #{

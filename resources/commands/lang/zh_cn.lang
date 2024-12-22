@@ -1,7 +1,7 @@
 commands.lang.usage="/lang" 或 "/lang hand" 命令可以把物品栏或手中物品的信息导出到 crafttweaker.log 文件里
 commands.lang.output=已将 %s 个物品的信息导出到 crafttweaker.log
 commands.lang.empty=你的物品栏是空的。请把未本地化的物品放到物品栏里
-commands.lang.hand=已将手持物品的信息输出到 crafttweaker.log
+commands.lang.hand=%s\n已将手持物品的信息输出到 crafttweaker.log
 
 commands.addtooltip.usage="§e/addtooltip §6[Item Description]§r" 命令可以将为手持物品添加工具提示的语言条目导出到 crafttweaker.log
 commands.addtooltip.needtext=§e/addtooltip§r 命令需要提供工具提示的内容。比如 §e/addtooltip §6Hello world!

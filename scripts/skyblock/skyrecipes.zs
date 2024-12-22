@@ -27,5 +27,5 @@ static canSeeAbyssFnc as IRecipeFunction = function (out, ins, cInfo) {
 function add(output as IItemStack, gridStr as string[], options as IIngredient[string]) as void {
   val grid = Grid(gridStr, options);
   recipes.addHiddenShaped(craft.uniqueRecipeName(output, grid), output, grid.shaped(), canSeeAbyssFnc, null);
-  scripts.jei.crafting_hints.special(output, grid.shaped(), 'Crafter must see the void');
+  scripts.jei.crafting_hints.special(output, grid.shaped(), game.localize('e2ee.recipe.over_void'));
 }

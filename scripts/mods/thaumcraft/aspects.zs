@@ -4,7 +4,7 @@ import thaumcraft.aspect.CTAspectStack;
 
 #ignoreBracketErrors
 
-#modloaded thaumcraft
+#modloaded thaumcraft randomtweaker
 
 /*
  █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗
@@ -401,7 +401,7 @@ ___  ____ ___ ____ _  _ _ ____
 <botania:terraformrod>                          .setAspects(<aspect:mana>*40      ,<aspect:instrumentum>*40   ,<aspect:terra>*120       ,<aspect:permutatio>*40);   
 <botania:dirtrod>                               .setAspects(<aspect:mana>*5       ,<aspect:instrumentum>*10   ,<aspect:terra>*20);   
 <botania:gravityrod>                            .setAspects(<aspect:mana>*10      ,<aspect:instrumentum>*20   ,<aspect:alienis>*20      ,<aspect:vinculum>*20);   
-<botania:missilerod>                            .setAspects(<aspect:mana>*25      ,<aspect:aversio>*30        ,Aspect.caeles*30       ,<aspect:alienis>*100);   
+<botania:missilerod>                            .setAspects(<aspect:mana>*25      ,<aspect:aversio>*30        ,<aspect:alienis>*40);   
 <botania:cobblerod>                             .setAspects(<aspect:mana>*10      ,<aspect:instrumentum>*10   ,<aspect:terra>*30        ,<aspect:perditio>*5);   
 <botania:exchangerod>                           .setAspects(<aspect:mana>*10      ,<aspect:instrumentum>*20   ,<aspect:permutatio>*30   ,Aspect.imperium*30);   
 

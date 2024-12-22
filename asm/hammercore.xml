@@ -2,6 +2,6 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>What ASM parts should be active in Hammer Core?</comment>
-<entry key="World.ITickable.Override">true</entry>
+<entry key="World.ITickable.Override">false</entry>
 <entry key="World.ITickable.Override_comment">Should HammerCore transform world update method: Enhance ITickable.update method call with TickSlip technology? This is probably incompatible with Sponge.</entry>
 </properties>

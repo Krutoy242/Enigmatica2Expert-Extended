@@ -2,26 +2,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "thermalexpansion:satchel",
-			Damage: 2s,
 			tag: {
 				Accessible: 1b
-			}
+			},
+			Damage: 2s,
+			id: "thermalexpansion:satchel"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:reservoir",
+			tag: {},
 			Damage: 3s,
-			tag: {}
+			id: "thermalexpansion:reservoir"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:cache",
 			tag: {
 				Level: 4b
-			}
+			},
+			id: "thermalexpansion:cache"
 		}
 	}]
 }

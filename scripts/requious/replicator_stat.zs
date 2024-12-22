@@ -1,4 +1,5 @@
 #loader preinit
+#modloaded zenutils
 
 // Initialize stat parameter for replicator machine
 mods.zenutils.PlayerStat.create(

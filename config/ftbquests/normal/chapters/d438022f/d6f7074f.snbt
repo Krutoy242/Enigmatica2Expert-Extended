@@ -1,27 +1,27 @@
 {
 	title: "{q.utils.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 104,
+			TrophyColorBlue: 35,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 38,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "openblocks:hang_glider",
-				Damage: 0s
+				id: "openblocks:hang_glider"
 			},
-			TrophyColorBlue: 35,
-			TrophyColorRed: 104,
 			TrophyName: "§4Utils Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 4.95d,
 	y: 21.15d,
 	text: [
 		"{q.utils.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"a6d357d3",
 		"da492a48",
@@ -115,23 +115,23 @@
 	rewards: [{
 		uid: "a0249986",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 104,
+				TrophyColorBlue: 35,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 38,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "openblocks:hang_glider",
-					Damage: 0s
+					id: "openblocks:hang_glider"
 				},
-				TrophyColorBlue: 35,
-				TrophyColorRed: 104,
 				TrophyName: "§4Utils Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

@@ -15,8 +15,6 @@ description.crt.consume=§6§o(Will be consumed!)§r
 # CoT new content
 # --------------------------------------
 itemGroup.other=ContentTweaker
-fluid.heavy_metal=Heavy Metal
-fluid.cheese=Cheese
 fluid.seed=Seed
 fluid.spectre=Spectre
 fluid.perfect_fuel=Perfect Fuel
@@ -25,6 +23,9 @@ fluid.terrestrial=Molten Terrestrial Artifact
 fluid.mithrillium=Molten Mithrillium
 fluid.adaminite=Molten Adaminite
 fluid.mithminite=Molten Mithminite
+
+base.material.heavy_metal=Heavy Metal
+base.material.cheese=Cheese
 
 item.contenttweaker.compressed_glowstone.name=Compressed Glowstone
 item.contenttweaker.compressed_ender.name=Compressed Ender
@@ -347,7 +348,7 @@ warp.sword.speak.story.11.3=§o§5and bend reality to our will.
 ##################################
 item.singularity.iron.name=§7Empty Singularity
 
-# Burn singularity
+# Custom singularities
 item.singularity.silver.name=§bFur Singularity
 item.singularity.nickel.name=§eHeat Singularity
 item.singularity.fluxed.name=§4Burn Singularity
@@ -385,6 +386,7 @@ e2ee.written_book.Zombie=Zombie
 
 # Misc
 stat.replications=Spent UU Matter buckets
+e2ee.recipe.over_void=The player must be positioned over the void
 e2ee.quest.common=§fCommon§r Loot Crate §e✪
 e2ee.quest.uncommon=§bUncommon§r Loot Crate §e✪
 e2ee.quest.rare=§6Rare§r Loot Crate §e✪
@@ -582,6 +584,7 @@ tooltips.lang.limit=Limit
 tooltips.lang.range=Range
 tooltips.lang.exaustion=Exaustion
 tooltips.lang.experience=Experience
+tooltips.lang.quantum_entangled_singularity.freq=§2Freq§r: %s
 
 tooltips.dim_stages.healthy=§4You need to have at least §6%s HP§4 (%s hearts§4) to visit the §cNether
 tooltips.dim_stages.healthy_grant=You reached §6%s HP§r (%s hearts)!
@@ -595,13 +598,14 @@ tooltips.dim_stages.remind_skyblock=§eYou have entered a §bSkyblock §eworld a
 # - "e2ee.jei.{id}.{entry}" format recommended
 # --------------------------------------
 e2ee.jei.rats_consuming.title=Rats Consuming
+e2ee.jei.alchemists_stone.title=Alchemists Stone
+e2ee.jei.alienist_stone.title=Alienists Stone
+e2ee.jei.transmuter_stone.title=Transmuters Stone
 
 # --------------------------------------
 # Requious Fracto custom JEI categories
 # --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=Advanced Analyzer
-requious.jei.recipe.alchemists_stone=Alchemists Stone
-requious.jei.recipe.alienists_stone=Alienists Stone
 requious.jei.recipe.arboreal_extractor=Arboreal Extractor
 requious.jei.recipe.asteroids=Asteroids
 requious.jei.recipe.barrel_milking=Barrel Milking
@@ -630,7 +634,6 @@ requious.jei.recipe.pech_trades=Pech Trades
 requious.jei.recipe.petro_petunia=Petro Petunia
 requious.jei.recipe.scented_hive=Scented Hive
 requious.jei.recipe.syngas_producer=Syngas Producer
-requious.jei.recipe.transmuters_stone=Transmuters Stone
 requious.jei.recipe.turbine=Turbine
 requious.jei.recipe.typewriter=Typewriter
 requious.jei.recipe.witch_water=Witch Water

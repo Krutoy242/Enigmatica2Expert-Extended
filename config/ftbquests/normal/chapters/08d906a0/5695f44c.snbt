@@ -4,14 +4,14 @@
 	dependencies: [
 		"41927ad7"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "34655574",
 		type: "item",
 		items: [{
 			item: "cyclicmagic:tool_harvest_leaves"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

@@ -18,13 +18,13 @@
 		uid: "55b83bcb",
 		type: "item",
 		item: {
-			id: "opencomputers:upgrade",
-			Damage: 15s,
 			tag: {
 				"oc:data": {
 					"oc:xp": 25650
 				}
-			}
+			},
+			Damage: 15s,
+			id: "opencomputers:upgrade"
 		}
 	}]
 }

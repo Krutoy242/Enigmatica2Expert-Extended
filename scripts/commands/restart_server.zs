@@ -2,7 +2,6 @@
 
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
-
 import mods.zenutils.StringList;
 import mods.zenutils.command.CommandUtils;
 import mods.zenutils.command.ZenCommand;
@@ -16,7 +15,7 @@ val cmd as ZenCommand = ZenCommand.create('restart_server');
 cmd.getCommandUsage = function (sender) { return 'commands.restart_server.usage'; };
 
 function sendSingle(player as IPlayer, key as string, substr as string = null) as void {
-  val langKey = game.localize('commands.restart_server.' ~ key);
+  val langKey = game.localize(`commands.restart_server.${key}`);
   if (isNull(substr)) return player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation(langKey));
   player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation(langKey, substr));
 }
@@ -44,7 +43,7 @@ function getPlayersList(isVoted as bool = false) as string {
   var list = '';
   for p in server.players {
     if (playerPending.contains(p.uuid) == isVoted)
-      list ~= (list != '' ? ', ' : '') ~ '§5' ~ p.name ~ '§r';
+      list ~= `${list != '' ? ', ' : ''}§5${p.name}§r`;
   }
   return list;
 }

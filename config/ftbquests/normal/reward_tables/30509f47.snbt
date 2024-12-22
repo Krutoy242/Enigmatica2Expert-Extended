@@ -3,19 +3,19 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "food"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		weight: 48
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "decor"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		weight: 48
 	},
@@ -219,19 +219,19 @@
 	},
 	{
 		item: {
-			id: "openblocks:dev_null",
 			tag: {
-				openedInGui: 1675739793,
 				inventory: {
 					size: 1,
 					Items: [{
 						Slot: 0b,
+						Damage: 0s,
 						id: "minecraft:cobblestone",
-						Count: 64b,
-						Damage: 0s
+						Count: 64b
 					}]
-				}
-			}
+				},
+				openedInGui: 1675739793
+			},
+			id: "openblocks:dev_null"
 		}
 	},
 	{
@@ -241,10 +241,10 @@
 	},
 	{
 		item: {
-			id: "thermalexpansion:florb",
 			tag: {
 				Fluid: "blockfluiddirt"
-			}
+			},
+			id: "thermalexpansion:florb"
 		}
 	}],
 	loot_crate: {
@@ -252,9 +252,9 @@
 		item_name: "Common",
 		color: 11119524,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

@@ -96,31 +96,11 @@
       ]
     },
     {
-      "key": "CHESTER",
-      "name": "research_name.thaumadditions:chester",
-      "icons": ["thaumadditions:chester"],
-      "category": "ARTIFICE",
-      "location": [6, 2],
-      "parents": ["HUNGRYCHEST"],
-      "stages": [
-        {
-          "text": "research_stage.thaumadditions:chester.1",
-          "required_knowledge": ["THEORY;ARTIFICE;1"],
-          "required_craft": ["thaumcraft:golem_bell"],
-          "required_item": ["thaumcraft:log_greatwood;8"]
-        },
-        {
-          "text": "research_stage.thaumadditions:chester.2",
-          "recipes": ["thaumcraft:chester", "thaumcraft:bone_eye"]
-        }
-      ]
-    },
-    {
       "key": "CRYSTALBORE",
       "name": "research_name.thaumadditions:crystal_bore",
       "icons": ["thaumadditions:crystal_bore"],
       "category": "ARTIFICE",
-      "location": [0, 4],
+      "location": [2, 2],
       "parents": ["BASEARTIFICE", "CRYSTALFARMER"],
       "stages": [
         {

@@ -1,4 +1,4 @@
-#modloaded immersiveengineering
+#modloaded immersiveengineering jei requious
 #priority 950
 
 import crafttweaker.item.IIngredient;

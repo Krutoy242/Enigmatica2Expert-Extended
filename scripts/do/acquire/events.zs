@@ -1,5 +1,6 @@
 #reloadable
 #priority -1300
+#modloaded zenutils ctintegration
 
 import crafttweaker.block.IBlockDefinition;
 import crafttweaker.item.IItemStack;
@@ -63,7 +64,7 @@ events.register(function (e as crafttweaker.event.PlayerOpenContainerEvent) {
   val serialized = e.container as string;
   val class = serialized.split('@')[0];
 
-  utils.log('~~opened container: ' ~ serialized);
+  // utils.log('~~opened container: ' ~ serialized);
 
   val stack = stringRegistry[class];
   if(isNull(stack)) return;

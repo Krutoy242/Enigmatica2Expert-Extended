@@ -538,3 +538,8 @@ scripts.do.burnt_in_fluid.add('extrautils2:redorchid', <blockstate:minecraft:red
 
 // Allow Ferrous-Juniper saplings to drop from Ferrous-Juniper Leaves when breaking with Crook
 mods.exnihilocreatio.Crook.addRecipe(<extrautils2:ironwood_leaves>, <extrautils2:ironwood_sapling>, 0.2, 0.28);
+
+// Remake removed AA crusher benefits
+scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'strict: eu2crusher', [<minecraft:flint>], [0.5f]);
+scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: eu2crusher');
+scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: eu2crusher');

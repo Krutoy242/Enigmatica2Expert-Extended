@@ -3,26 +3,26 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "tconstruct:cast",
 			tag: {
 				PartType: "tconstruct:pick_head"
-			}
+			},
+			id: "tconstruct:cast"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:cast",
 			tag: {
 				PartType: "tconstruct:sharpening_kit"
-			}
+			},
+			id: "tconstruct:cast"
 		}
 	},
 	{
 		item: {
-			id: "tconstruct:cast",
 			tag: {
 				PartType: "tcomplement:sledge_head"
-			}
+			},
+			id: "tconstruct:cast"
 		}
 	}]
 }

@@ -1,140 +1,130 @@
 {
 	title: "{q.blood_magic.ritual_of_the_shep.name}",
 	icon: {
-		id: "littletiles:multitiles",
 		tag: {
-			grid: 1,
 			size: [I;
 				5,
 				1,
 				5
 			],
-			min: [I;
-				0,
-				0,
-				0
-			],
 			tiles: [{
+				boxes: [
+					[I;
+						0,
+						0,
+						1,
+						1,
+						1,
+						2
+					],
+					[I;
+						0,
+						0,
+						3,
+						1,
+						1,
+						4
+					],
+					[I;
+						4,
+						0,
+						1,
+						5,
+						1,
+						2
+					],
+					[I;
+						4,
+						0,
+						3,
+						5,
+						1,
+						4
+					]
+				],
 				tile: {
 					block: "bloodmagic:ritual_stone:4"
-				},
+				}
+			},
+			{
 				boxes: [
 					[I;
 						0,
 						0,
+						2,
 						1,
 						1,
-						1,
-						2
+						3
 					],
 					[I;
+						2,
 						0,
 						0,
 						3,
 						1,
-						1,
-						4
+						1
 					],
 					[I;
-						4,
+						2,
 						0,
-						1,
-						5,
-						1,
-						2
-					],
-					[I;
 						4,
-						0,
 						3,
+						1,
+						5
+					],
+					[I;
+						4,
+						0,
+						2,
 						5,
 						1,
-						4
+						3
 					]
-				]
-			},
-			{
+				],
 				tile: {
 					block: "bloodmagic:ritual_stone:5"
-				},
+				}
+			},
+			{
 				boxes: [
 					[I;
+						1,
 						0,
 						0,
 						2,
-						1,
-						1,
-						3
-					],
-					[I;
-						2,
-						0,
-						0,
-						3,
 						1,
 						1
 					],
 					[I;
-						2,
+						1,
 						0,
 						4,
-						3,
+						2,
 						1,
 						5
 					],
 					[I;
-						4,
+						3,
 						0,
-						2,
-						5,
+						0,
+						4,
 						1,
-						3
+						1
+					],
+					[I;
+						3,
+						0,
+						4,
+						4,
+						1,
+						5
 					]
-				]
-			},
-			{
+				],
 				tile: {
 					block: "bloodmagic:ritual_stone:3"
-				},
-				boxes: [
-					[I;
-						1,
-						0,
-						0,
-						2,
-						1,
-						1
-					],
-					[I;
-						1,
-						0,
-						4,
-						2,
-						1,
-						5
-					],
-					[I;
-						3,
-						0,
-						0,
-						4,
-						1,
-						1
-					],
-					[I;
-						3,
-						0,
-						4,
-						4,
-						1,
-						5
-					]
-				]
+				}
 			},
 			{
-				tile: {
-					block: "bloodmagic:ritual_stone:1"
-				},
 				boxes: [
 					[I;
 						1,
@@ -168,7 +158,10 @@
 						1,
 						3
 					]
-				]
+				],
+				tile: {
+					block: "bloodmagic:ritual_stone:1"
+				}
 			},
 			{
 				bBox: [I;
@@ -183,8 +176,15 @@
 					block: "bloodmagic:ritual_stone"
 				}
 			}],
-			count: 17
-		}
+			count: 17,
+			grid: 1,
+			min: [I;
+				0,
+				0,
+				0
+			]
+		},
+		id: "littletiles:multitiles"
 	},
 	x: 11.4d,
 	y: 0.4d,
@@ -207,10 +207,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

@@ -35,7 +35,6 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
 
   val chunkProvider = e.world.native.getChunkProvider() as ChunkProviderServer;
   val loadedChunks as [Chunk] = chunkProvider.getLoadedChunks();
-  var spawnedCount = 0;
   val rnd = e.world.random;
   for chunk in loadedChunks {
     if(rnd.nextDouble() > METEOR_CHANCE) continue;

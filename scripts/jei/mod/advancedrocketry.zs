@@ -1,4 +1,4 @@
-#modloaded advancedrocketry
+#modloaded advancedrocketry requious
 #priority 950
 #reloadable
 #ignoreBracketErrors

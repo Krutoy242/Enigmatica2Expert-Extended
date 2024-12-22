@@ -182,13 +182,6 @@ mods.qmd.nucleosynthesis_chamber.addRecipe(<liquid:sky_stone> * 52, <liquid:enri
 ////////////////////////////////////////
 //               Unify                //
 ////////////////////////////////////////
-Purge(<qmd:dust:4>).ores([<ore:dustCobalt>]); // Cobalt
-Purge(<qmd:ingot:4>).ores([<ore:ingotCobalt>]); // Cobalt
-Purge(<qmd:ingot>).furn().ores([<ore:ingotTungsten>]); // Tungsten
-Purge(<qmd:ingot:10>).ores([<ore:ingotPlatinum>]); // Platinum
-Purge(<qmd:ingot_alloy:4>).ores([<ore:ingotOsmiridium>]); // Osmiridium
-Purge(<qmd:ingot:9>).ores([<ore:ingotIridium>]); // Iridium
-
 mods.immersiveengineering.ArcFurnace.removeRecipe(<qmd:ingot>); // Tungsten from Ore and Dust
 
 function remakeTarget(

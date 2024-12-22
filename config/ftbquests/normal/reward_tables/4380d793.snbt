@@ -34,10 +34,10 @@
 	},
 	{
 		item: {
-			id: "extrautils2:machine",
 			tag: {
 				Type: "extrautils2:generator_netherstar"
-			}
+			},
+			id: "extrautils2:machine"
 		}
 	},
 	{
@@ -55,17 +55,17 @@
 	},
 	{
 		item: {
-			id: "draconicevolution:generator",
 			tag: {
 				BCTileData: {
 					BCManagedData: {
-						powered: 0b,
 						burnTime: 16000,
 						burnTimeRemaining: -2,
+						powered: 0b,
 						active: 0b
 					}
 				}
-			}
+			},
+			id: "draconicevolution:generator"
 		}
 	},
 	{
@@ -88,73 +88,73 @@
 	},
 	{
 		item: {
-			id: "thermalexpansion:dynamo",
+			tag: {
+				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
+				Level: 0b
+			},
 			Damage: 2s,
-			tag: {
-				RSControl: 0b,
-				Facing: 1b,
-				Energy: 0,
-				Level: 0b
-			}
+			id: "thermalexpansion:dynamo"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:dynamo",
+			tag: {
+				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
+				Level: 0b
+			},
 			Damage: 4s,
-			tag: {
-				RSControl: 0b,
-				Facing: 1b,
-				Energy: 0,
-				Level: 0b
-			}
+			id: "thermalexpansion:dynamo"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:dynamo",
+			tag: {
+				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
+				Level: 0b
+			},
 			Damage: 1s,
-			tag: {
-				RSControl: 0b,
-				Facing: 1b,
-				Energy: 0,
-				Level: 0b
-			}
+			id: "thermalexpansion:dynamo"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:dynamo",
+			tag: {
+				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
+				Level: 0b
+			},
 			Damage: 5s,
-			tag: {
-				RSControl: 0b,
-				Facing: 1b,
-				Energy: 0,
-				Level: 0b
-			}
+			id: "thermalexpansion:dynamo"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:dynamo",
+			tag: {
+				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
+				Level: 0b
+			},
 			Damage: 3s,
-			tag: {
-				RSControl: 0b,
-				Facing: 1b,
-				Energy: 0,
-				Level: 0b
-			}
+			id: "thermalexpansion:dynamo"
 		}
 	},
 	{
 		item: {
-			id: "thermalexpansion:dynamo",
 			tag: {
-				RSControl: 0b,
-				Facing: 1b,
 				Energy: 0,
+				Facing: 1b,
+				RSControl: 0b,
 				Level: 0b
-			}
+			},
+			id: "thermalexpansion:dynamo"
 		}
 	},
 	{
@@ -264,186 +264,186 @@
 	},
 	{
 		item: {
-			id: "forestry:bee_queen_ge",
 			tag: {
 				MaxH: 60,
-				Mate: {
-					Chromosomes: [{
-						UID1: "forestry.speciesDemonic",
-						UID0: "forestry.speciesDemonic",
-						Slot: 0b
-					},
-					{
-						UID1: "forestry.speedSlower",
-						UID0: "forestry.speedSlower",
-						Slot: 1b
-					},
-					{
-						UID1: "forestry.lifespanLonger",
-						UID0: "forestry.lifespanLonger",
-						Slot: 2b
-					},
-					{
-						UID1: "forestry.fertilityNormal",
-						UID0: "forestry.fertilityNormal",
-						Slot: 3b
-					},
-					{
-						UID1: "forestry.toleranceDown2",
-						UID0: "forestry.toleranceDown2",
-						Slot: 4b
-					},
-					{
-						UID1: "forestry.boolTrue",
-						UID0: "forestry.boolTrue",
-						Slot: 5b
-					},
-					{
-						UID1: "forestry.toleranceNone",
-						UID0: "forestry.toleranceNone",
-						Slot: 6b
-					},
-					{
-						UID1: "forestry.boolFalse",
-						UID0: "forestry.boolFalse",
-						Slot: 7b
-					},
-					{
-						UID1: "forestry.boolFalse",
-						UID0: "forestry.boolFalse",
-						Slot: 8b
-					},
-					{
-						UID1: "forestry.flowersNether",
-						UID0: "forestry.flowersNether",
-						Slot: 9b
-					},
-					{
-						UID1: "forestry.floweringAverage",
-						UID0: "forestry.floweringAverage",
-						Slot: 10b
-					},
-					{
-						UID1: "forestry.territoryAverage",
-						UID0: "forestry.territoryAverage",
-						Slot: 11b
-					},
-					{
-						UID1: "forestry.effectIgnition",
-						UID0: "forestry.effectIgnition",
-						Slot: 12b
-					}]
-				},
 				Health: 60,
 				IsAnalyzed: 1b,
 				Genome: {
 					Chromosomes: [{
-						UID1: "forestry.speciesDemonic",
+						Slot: 0b,
 						UID0: "forestry.speciesDemonic",
-						Slot: 0b
+						UID1: "forestry.speciesDemonic"
 					},
 					{
-						UID1: "forestry.speedSlower",
+						Slot: 1b,
 						UID0: "forestry.speedSlower",
-						Slot: 1b
+						UID1: "forestry.speedSlower"
 					},
 					{
-						UID1: "forestry.lifespanLonger",
+						Slot: 2b,
 						UID0: "forestry.lifespanLonger",
-						Slot: 2b
+						UID1: "forestry.lifespanLonger"
 					},
 					{
-						UID1: "forestry.fertilityNormal",
+						Slot: 3b,
 						UID0: "forestry.fertilityNormal",
-						Slot: 3b
+						UID1: "forestry.fertilityNormal"
 					},
 					{
-						UID1: "forestry.toleranceDown2",
+						Slot: 4b,
 						UID0: "forestry.toleranceDown2",
-						Slot: 4b
+						UID1: "forestry.toleranceDown2"
 					},
 					{
-						UID1: "forestry.boolTrue",
+						Slot: 5b,
 						UID0: "forestry.boolTrue",
-						Slot: 5b
+						UID1: "forestry.boolTrue"
 					},
 					{
-						UID1: "forestry.toleranceNone",
+						Slot: 6b,
 						UID0: "forestry.toleranceNone",
-						Slot: 6b
+						UID1: "forestry.toleranceNone"
 					},
 					{
-						UID1: "forestry.boolFalse",
+						Slot: 7b,
 						UID0: "forestry.boolFalse",
-						Slot: 7b
+						UID1: "forestry.boolFalse"
 					},
 					{
-						UID1: "forestry.boolFalse",
+						Slot: 8b,
 						UID0: "forestry.boolFalse",
-						Slot: 8b
+						UID1: "forestry.boolFalse"
 					},
 					{
-						UID1: "forestry.flowersNether",
+						Slot: 9b,
 						UID0: "forestry.flowersNether",
-						Slot: 9b
+						UID1: "forestry.flowersNether"
 					},
 					{
-						UID1: "forestry.floweringAverage",
+						Slot: 10b,
 						UID0: "forestry.floweringAverage",
-						Slot: 10b
+						UID1: "forestry.floweringAverage"
 					},
 					{
-						UID1: "forestry.territoryAverage",
+						Slot: 11b,
 						UID0: "forestry.territoryAverage",
-						Slot: 11b
+						UID1: "forestry.territoryAverage"
 					},
 					{
-						UID1: "forestry.effectIgnition",
+						Slot: 12b,
 						UID0: "forestry.effectIgnition",
-						Slot: 12b
+						UID1: "forestry.effectIgnition"
+					}]
+				},
+				Mate: {
+					Chromosomes: [{
+						Slot: 0b,
+						UID0: "forestry.speciesDemonic",
+						UID1: "forestry.speciesDemonic"
+					},
+					{
+						Slot: 1b,
+						UID0: "forestry.speedSlower",
+						UID1: "forestry.speedSlower"
+					},
+					{
+						Slot: 2b,
+						UID0: "forestry.lifespanLonger",
+						UID1: "forestry.lifespanLonger"
+					},
+					{
+						Slot: 3b,
+						UID0: "forestry.fertilityNormal",
+						UID1: "forestry.fertilityNormal"
+					},
+					{
+						Slot: 4b,
+						UID0: "forestry.toleranceDown2",
+						UID1: "forestry.toleranceDown2"
+					},
+					{
+						Slot: 5b,
+						UID0: "forestry.boolTrue",
+						UID1: "forestry.boolTrue"
+					},
+					{
+						Slot: 6b,
+						UID0: "forestry.toleranceNone",
+						UID1: "forestry.toleranceNone"
+					},
+					{
+						Slot: 7b,
+						UID0: "forestry.boolFalse",
+						UID1: "forestry.boolFalse"
+					},
+					{
+						Slot: 8b,
+						UID0: "forestry.boolFalse",
+						UID1: "forestry.boolFalse"
+					},
+					{
+						Slot: 9b,
+						UID0: "forestry.flowersNether",
+						UID1: "forestry.flowersNether"
+					},
+					{
+						Slot: 10b,
+						UID0: "forestry.floweringAverage",
+						UID1: "forestry.floweringAverage"
+					},
+					{
+						Slot: 11b,
+						UID0: "forestry.territoryAverage",
+						UID1: "forestry.territoryAverage"
+					},
+					{
+						Slot: 12b,
+						UID0: "forestry.effectIgnition",
+						UID1: "forestry.effectIgnition"
 					}]
 				}
-			}
+			},
+			id: "forestry:bee_queen_ge"
 		}
 	},
 	{
 		item: {
-			id: "ic2:containment_box",
 			tag: {
 				Items: [{
 					Slot: 4b,
+					Damage: 10s,
 					id: "ic2:nuclear",
-					Count: 1b,
-					Damage: 10s
+					Count: 1b
 				},
 				{
 					Slot: 5b,
+					Damage: 10s,
 					id: "ic2:nuclear",
-					Count: 1b,
-					Damage: 10s
+					Count: 1b
 				},
 				{
 					Slot: 6b,
+					Damage: 10s,
 					id: "ic2:nuclear",
-					Count: 1b,
-					Damage: 10s
+					Count: 1b
 				},
 				{
 					Slot: 7b,
+					Damage: 10s,
 					id: "ic2:nuclear",
-					Count: 1b,
-					Damage: 10s
+					Count: 1b
 				}]
-			}
+			},
+			id: "ic2:containment_box"
 		}
 	}],
 	loot_crate: {
 		string_id: "generators",
 		color: 11602,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

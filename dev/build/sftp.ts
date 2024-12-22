@@ -15,19 +15,7 @@ import { getBoxForLabel, globs, pressEnterOrEsc, style } from './build_utils'
 const { readFileSync, writeFileSync } = fse
 
 const { gitDescribeSync } = git_describe
-export async function manageSFTP(
-  serverRemoveDirs: string[] = [
-    'bansoukou',
-    'config',
-    'mods',
-    'patchouli_books',
-    'resources',
-    'schematics',
-    'scripts',
-    'structures',
-  ],
-  serverSetupConfig: string = 'server/server-setup-config.yaml'
-) {
+export async function manageSFTP(serverSetupConfig: string = 'server/server-setup-config.yaml') {
   const sftpConfigs = globs('secrets/sftp_servers/*/sftp.json').map((filename) => {
     const dir = parse(filename).dir
     return {
@@ -42,13 +30,13 @@ export async function manageSFTP(
   const serverConfigTmp = '~tmp-server-setup-config.yaml'
   const confText = readFileSync(serverSetupConfig, 'utf8')
     .replace(
-      /(additionalFiles:\s*)\n {4}\S.*$\n {4}\S.*$/m,
+      /(additionalFiles:\s*)\n {4}\S.*\n {4}\S.*$/m,
 `$1
     - url: https://mediafilez.forgecdn.net/files/5370/660/mc2discord-forge-1.12.2-3.3.2.jar
       destination: mods/mc2discord-forge-1.12.2-3.3.2.jar`
     )
     .replace(
-      /(localFiles:\s*)\n +\S.*$\n +\S.*$/m,
+      /(localFiles:\s*)\n +\S.*\n +\S.*$/m,
 `$1
     - from: overrides/
       to: .`
@@ -58,8 +46,9 @@ export async function manageSFTP(
   for (const conf of sftpConfigs) {
     if (!(await pressEnterOrEsc(
         `To upload SFTP ${style.string(conf.label)} press ENTER. Press ESC to skip.`
-    )))
+    ))) {
       continue
+    }
 
     const sftp = new Client()
     const updateBox = getBoxForLabel(conf.label)
@@ -69,23 +58,9 @@ export async function manageSFTP(
       await sftp.connect(conf.config)
     }
     catch (error) {
-      end('Cant connect to SFTP')
+      end(`Cant connect to SFTP: ${error}`)
       continue
     }
-
-    // updateBox('Removing folders')
-    // const stillToRemove = serverRemoveDirs.slice(0)
-    // await Promise.all(
-    //   serverRemoveDirs.map(async (dir) => {
-    //     try {
-    //       if (!(await sftp.stat(dir)).isDirectory) return
-    //       await sftp.rmdir(dir, true)
-    //       stillToRemove.splice(stillToRemove.indexOf(dir), 1)
-    //       updateBox('Removing folders:', stillToRemove.join(', '))
-    //     }
-    //     catch (error) {}
-    //   })
-    // )
 
     updateBox(`Copy ${serverConfigTmp}`)
     await sftp.fastPut(serverConfigTmp, 'server-setup-config.yaml')

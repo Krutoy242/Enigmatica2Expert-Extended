@@ -1,12 +1,12 @@
 {
 	title: "{q.industrialcraft.high_voltage.name}",
 	icon: {
-		id: "ic2:cable",
-		Damage: 3s,
 		tag: {
 			type: 3b,
 			insulation: 3b
-		}
+		},
+		Damage: 3s,
+		id: "ic2:cable"
 	},
 	x: 0.8333333333333333d,
 	y: 6.166666666666667d,
@@ -20,9 +20,9 @@
 		uid: "a17ade0b",
 		type: "item",
 		items: [{
-			id: "ic2:te",
+			tag: {},
 			Damage: 75s,
-			tag: {}
+			id: "ic2:te"
 		}],
 		ignore_nbt: 1b
 	},
@@ -30,12 +30,12 @@
 		uid: "e9766018",
 		type: "item",
 		items: [{
-			id: "ic2:cable",
-			Damage: 3s,
 			tag: {
 				type: 3b,
 				insulation: 3b
-			}
+			},
+			Damage: 3s,
+			id: "ic2:cable"
 		}],
 		ignore_nbt: 2b
 	}],
@@ -44,10 +44,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

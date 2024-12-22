@@ -5,25 +5,25 @@
 	dependencies: [
 		"61020c3a"
 	],
-	hide: true,
+	hide: 1b,
 	size: 2.0d,
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "e7420b70",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any logWood"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "logWood"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any logWood"
+				}
+			},
+			id: "itemfilters:filter"
 		}]
 	}],
 	rewards: [{

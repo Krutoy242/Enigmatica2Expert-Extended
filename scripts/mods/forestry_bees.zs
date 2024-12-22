@@ -129,6 +129,16 @@ for i in 0 .. 17 {
   );
 }
 
+// Make Rustic Honeycomb produce forestry honey
+mods.thermalexpansion.Centrifuge.removeRecipe(<rustic:honeycomb>);
+mods.thermalexpansion.Centrifuge.addRecipe([<rustic:beeswax> % 100], <rustic:honeycomb>, <liquid:for.honey> * 250, 2000);
+
+mods.forestry.Squeezer.removeRecipe(<liquid:honey>, [<rustic:honeycomb>]);
+mods.forestry.Squeezer.addRecipe(<liquid:for.honey> * 250, [<rustic:honeycomb>], 8);
+
+mods.rustic.CrushingTub.removeRecipe(<liquid:honey>, <rustic:honeycomb>);
+mods.rustic.CrushingTub.addRecipe(<liquid:for.honey> * 250, null, <rustic:honeycomb>);
+
 // ---------------------------
 // Remake old combs
 function crushComb(comb as IItemStack, outputs as WeightedItemStack[]) as void {
@@ -350,7 +360,7 @@ zenClass BeeHelper {
     next('Elysian'); scripts.process.compress(c['💧'], c['🍯'], 'No exceptions');
     next('Gallant'); furnace.addRecipe(c['🍯'] * 2, c['💧']);
     next('Dull'); scripts.process.saw(c['⚙️'], c['🍯'] * 7, 'except: shapeless');
-    next('Scrappy'); scripts.process.crush(c['💧'], c['🍯'], 'only: eu2Crusher AACrusher SagMill', [c['🍯'], c['🍯'], c['🍯']], [0.50, 0.25, 0.10], { bonusType: 'MULTIPLY_OUTPUT' });
+    next('Scrappy'); scripts.process.crush(c['💧'], c['🍯'], 'only: eu2Crusher SagMill', [c['🍯'], c['🍯'], c['🍯']], [0.50, 0.25, 0.10], { bonusType: 'MULTIPLY_OUTPUT' });
     next('Potter'); addTinkersCentrifuges();
     next('Tinsmith'); addTinkersCentrifuges();
     next('Рaughty'); mods.botania.ManaInfusion.addInfusion(currOutList()[2], c['💧'], 100); mods.botania.ManaInfusion.addAlchemy(currOutList()[3], c['💧'], 200); mods.botania.ManaInfusion.addConjuration(currOutList()[4], c['💧'], 500);

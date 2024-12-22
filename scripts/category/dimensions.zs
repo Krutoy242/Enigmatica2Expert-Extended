@@ -8,21 +8,28 @@ static health_require as float = 30.0f;
 
 // Check health and add game stage allowing to enter nether
 function checkAndGrant(player as IPlayer) as void {
-  if (
-    !player.hasGameStage('skyblock')
-    && !player.hasGameStage('healthy')
-    && (player.maxHealth >= health_require || player.health >= health_require)
-  ) {
-    player.addGameStage('healthy');
-
-    player.sendRichTextMessage(fromTranslation(
-      'tooltips.dim_stages.healthy_grant',
-      health_require as int,
-      (health_require / 2.0f + 0.5f) as int
-    ));
-    player.sendRichTextMessage(fromTranslation('tooltips.dim_stages.healthy_can'));
-  }
+  if (player.maxHealth >= health_require || player.health >= health_require)
+    grant(player, true);
 }
+
+function grant(player as IPlayer, byHealth as bool = false) as void {
+  if (player.hasGameStage('skyblock') || player.hasGameStage('healthy')) return;
+
+  player.addGameStage('healthy');
+  if (byHealth) player.sendRichTextMessage(fromTranslation(
+    'tooltips.dim_stages.healthy_grant',
+    health_require as int,
+    (health_require / 2.0f + 0.5f) as int
+  ));
+  player.sendRichTextMessage(fromTranslation('tooltips.dim_stages.healthy_can'));
+}
+
+events.register(function (e as mods.zenutils.ftbq.QuestCompletedEvent) {
+  if (isNull(e.quest) || isNull(e.quest.tags) || e.quest.tags.length < 1 || !(e.quest.tags has 'cobalt')) return;
+  for player in e.notifyPlayers {
+    grant(player);
+  }
+});
 
 events.onPlayerTick(function (e as crafttweaker.event.PlayerTickEvent) {
   if (e.player.world.isRemote()) return;
@@ -114,6 +121,7 @@ getCSV('config/tellme/dimensions-csv.csv')
   121,
   124,
   125,
+  4,
   200,
 /**/
 ] as int[];

@@ -7,11 +7,11 @@
 	},
 	{
 		item: {
-			id: "industrialwires:ic2_wire_coil",
-			Damage: 5s,
 			tag: {
 				wireLength: 128
-			}
+			},
+			Damage: 5s,
+			id: "industrialwires:ic2_wire_coil"
 		}
 	},
 	{

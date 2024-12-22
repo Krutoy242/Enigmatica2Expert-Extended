@@ -1,4 +1,4 @@
-#modloaded ic2
+#modloaded ic2 randomtweaker
 #priority 1
 #reloadable
 
@@ -16,27 +16,27 @@ static MIN_COST as double = 0.01;
 
 // Fraction of UU-Matter cost (in mb) that will be added to difficulty
 function diffIncrease(uuMbConsumed as double) as double {
-  return pow(uuMbConsumed, 0.6) / 10000;
+  return pow(uuMbConsumed, 0.6) / 1000;
 }
 
 /*
 Map of difficulty increase with current formula.
 Left is amount of mb consumed, right is amount of difficulty added.
 
-new Array(13).fill(0).map((_,i)=>10**(i+1)*0.001).map(v=>`${String(v).replace(/(\...).+/,'$1').padStart(11)} => ${Math.pow(v, 0.6) / 10000}`).join('\n')
-       0.01 => 0.000006309573444801933
-        0.1 => 0.0000251188643150958
-          1 => 0.0001
-         10 => 0.00039810717055349724
-        100 => 0.0015848931924611132
-       1000 => 0.006309573444801931
-      10000 => 0.025118864315095798
-     100000 => 0.09999999999999998
-    1000000 => 0.39810717055349715
-   10000000 => 1.584893192461113
-  100000000 => 6.30957344480193
- 1000000000 => 25.118864315095788
-10000000000 => 99.99999999999996
+new Array(13).fill(0).map((_,i)=>10**(i+1)*0.001).map(v=>`${String(v).replace(/(\...).+/,'$1').padStart(11)} => ${Math.pow(v, 0.6) / 1000}`).join('\n')
+       0.01 => 0.00006309573444801933
+        0.1 => 0.000251188643150958
+          1 => 0.001
+         10 => 0.0039810717055349725
+        100 => 0.01584893192461113
+       1000 => 0.06309573444801932
+      10000 => 0.25118864315095796
+     100000 => 0.9999999999999998
+    1000000 => 3.9810717055349714
+   10000000 => 15.84893192461113
+  100000000 => 63.0957344480193
+ 1000000000 => 251.1886431509579
+10000000000 => 999.9999999999995
 
 */
 
@@ -1094,7 +1094,6 @@ static values as int[int][string] = {
   'mekanism:energytablet'                    : { 0: 8321 },
   'cyclicmagic:melter'                       : { 0: 8858 },
   'botania:blazeblock'                       : { 0: 9000 },
-  'actuallyadditions:block_grinder'          : { 0: 9040 },
   'computercraft:computer'                   : { 16384: 9392 },
   'bloodmagic:slate'                         : { 0: 10587, 1: 13333, 2: 13377, 3: 13448, 4: 48312 },
   'rftools:endergenic'                       : { 0: 11137 },

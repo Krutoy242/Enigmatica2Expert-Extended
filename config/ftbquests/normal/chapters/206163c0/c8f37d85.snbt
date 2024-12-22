@@ -1,10 +1,10 @@
 {
 	title: "{q.forestry.circuit_boards.name}",
 	icon: {
-		id: "forestry:chipsets",
 		tag: {
 			T: 0s
-		}
+		},
+		id: "forestry:chipsets"
 	},
 	x: -3.5d,
 	y: 2.166666666666667d,
@@ -18,31 +18,31 @@
 		uid: "0a75b9c8",
 		type: "item",
 		items: [{
-			id: "forestry:chipsets",
-			tag: {}
+			tag: {},
+			id: "forestry:chipsets"
 		},
 		{
-			id: "forestry:chipsets",
-			Damage: 1s,
 			tag: {
 				T: 1s
-			}
+			},
+			Damage: 1s,
+			id: "forestry:chipsets"
 		},
 		{
-			id: "forestry:chipsets",
-			Damage: 2s,
 			tag: {
 				T: 2s
-			}
+			},
+			Damage: 2s,
+			id: "forestry:chipsets"
 		},
 		{
-			id: "forestry:chipsets",
-			Damage: 3s,
 			tag: {
 				T: 3s
-			}
+			},
+			Damage: 3s,
+			id: "forestry:chipsets"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
@@ -50,10 +50,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

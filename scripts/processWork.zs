@@ -1,3 +1,4 @@
+#modloaded mekanism immersiveengineering advancedrocketry
 #priority 51
 
 import crafttweaker.data.IData;
@@ -29,6 +30,7 @@ import scripts.processUtils.warning;
 // ######################################################################
 
 static staticOpts as IData = {} as IData;
+static cantNbtError as string = 'received work, but this machine can not work with input contain NBT tags';
 
 function getOption(options as IData, field as string) as IData {
   return (!isNull(options) && !isNull(options.memberGet(field)))
@@ -196,26 +198,26 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
     }
 
     if (machineName == 'mekenrichment') {
-      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can not work with input contain NBT tags');
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       // # mods.mekanism.enrichment.addRecipe(IIngredient inputStack, IItemStack outputStack);
       mods.mekanism.enrichment.addRecipe(inputIngr0, outputItem0);
       return machineName;
     }
 
     if (machineName == 'mekpurification') {
-      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can not work with input contain NBT tags');
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       mods.mekanism.purification.addRecipe(inputIngr0, outputItem0);
       return machineName;
     }
 
     if (machineName == 'mekinjection') {
-      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can not work with input contain NBT tags');
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       mods.mekanism.chemical.injection.addRecipe(inputIngr0, <gas:hydrogenchloride>, outputItem0);
       return machineName;
     }
 
     if (machineName == 'meksawmill') {
-      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can not work with input contain NBT tags');
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       if (strict) { mods.mekanism.sawmill.removeRecipe(inputIngr0); }
       // mods.mekanism.sawmill.addRecipe(IIngredient inputStack, IItemStack outputStack, @Optional IItemStack bonusOutput, @Optional double bonusChance);
       if (haveExtra) {
@@ -228,7 +230,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
     }
 
     if (machineName == 'mekcrusher') {
-      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can not work with input contain NBT tags');
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       // mods.mekanism.crusher.addRecipe(IIngredient inputStack, IItemStack outputStack);
       // mods.mekanism.crusher.removeRecipe(IIngredient outputStack, @Optional IIngredient inputStack);
       if (strict) { mods.mekanism.crusher.removeRecipe(outputItem0); }
@@ -250,7 +252,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
     }
 
     if (machineName == 'eu2crusher') {
-      // mods.extrautils2.Crusher.add(IItemStack output, IItemStack input, @Optional IItemStack secondaryOutput, @Optional float secondaryChance);
+      if (strict) { mods.extrautils2.Crusher.remove(outputItem0); }
 
       for ii in inputIngr0.itemArray {
         if (haveExtra) {
@@ -258,26 +260,6 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
         }
         else {
           mods.extrautils2.Crusher.add(outputItem0, ii);
-        }
-      }
-      return machineName;
-    }
-
-    if (machineName == 'aacrusher') {
-      if (strict) { mods.actuallyadditions.Crusher.removeRecipe(outputItem0); }
-      // mods.actuallyadditions.Crusher.addRecipe(IItemStack output, IItemStack input, @Optional IItemStack outputSecondary, @Optional int outputSecondaryChance);
-
-      if (inputIngr0.amount != 1) {
-        return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]),
-          'received work, but this machine can only work with 1 item as input');
-      }
-
-      for ii in inputIngr0.itemArray {
-        if (haveExtra) {
-          mods.actuallyadditions.Crusher.addRecipe(outputItem0, ii, extra[0], defaultChance0_int(extraChance, 100));
-        }
-        else {
-          mods.actuallyadditions.Crusher.addRecipe(outputItem0, ii);
         }
       }
       return machineName;
@@ -455,7 +437,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
     }
 
     if (machineName == 'iecrusher') {
-      // mods.immersiveengineering.Crusher.removeRecipe(IItemstack output);
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       if (strict) { mods.immersiveengineering.Crusher.removeRecipe(outputItem0); }
       // mods.immersiveengineering.Crusher.addRecipe(IItemStack output, IIngredient input, int energy, @Optional IItemStack secondaryOutput, @Optional double secondaryChance);
       if (haveExtra) {
@@ -882,14 +864,28 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       return machineName;
     }
 
-    if (machineName == 'forestrysqueezer') {
-      // mods.forestry.Squeezer.addRecipe(ILiquidStack fluidOutput, IItemStack[] ingredients, int timePerItem, @Optional WeightedItemStack itemOutput);
-      var inputItemStacks = [] as IItemStack[];
-      for inIngr in inputItems {
-        inputItemStacks = inputItemStacks + inIngr.itemArray[0];
+    if (haveLiquidOutput) {
+      if (machineName == 'forestrysqueezer') {
+        // mods.forestry.Squeezer.addRecipe(ILiquidStack fluidOutput, IItemStack[] ingredients, int timePerItem, @Optional WeightedItemStack itemOutput);
+        var inputItemStacks = [] as IItemStack[];
+        for inIngr in inputItems {
+          inputItemStacks = inputItemStacks + inIngr.itemArray[0];
+        }
+        val wOut as WeightedItemStack = !isNull(outputItem0) ? outputItem0 % defaultChance0_int(extraChance, 20) : null;
+        mods.forestry.Squeezer.addRecipe(outputLiquid0, inputItemStacks, 20, wOut);
+        return machineName;
       }
-      val wOut as WeightedItemStack = !isNull(outputItem0) ? outputItem0 % defaultChance0_int(extraChance, 20) : null;
-      mods.forestry.Squeezer.addRecipe(outputLiquid0, inputItemStacks, 20, wOut);
+    }
+
+    if (machineName == 'arcrystallizer') {
+      val b = mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder();
+      if (!isNull(inputItems)) for o in inputItems { b.input(o); }
+      if (!isNull(inputLiquids)) for o in inputLiquids { b.input(o); }
+      if (!isNull(outputItems)) for o in outputItems { b.outputs(o); }
+      if (!isNull(outputLiquids)) for o in outputLiquids { b.outputs(o); }
+      b.power(getOptionEnergy(options, 40000));
+      b.timeRequired(getOptionTime(options, 10));
+      b.build();
       return machineName;
     }
   }
@@ -898,7 +894,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   // 📦 → 🟡
   if (inputIsSingle && haveGasOutput) {
     if (machineName == 'mekdissolution') {
-      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can not work with input contain NBT tags');
+      if (inputHasTag) return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), cantNbtError);
       mods.mekanism.chemical.dissolution.addRecipe(inputIngr0, outputGas);
       return machineName;
     }

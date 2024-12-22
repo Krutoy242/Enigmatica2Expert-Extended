@@ -7,12 +7,12 @@
 	text: [
 		"{q.utils.mod_bibliocraft.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"37406152"
 	],
 	size: 1.3333333333333333d,
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "a45d31a1",
 		type: "item",

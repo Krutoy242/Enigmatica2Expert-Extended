@@ -26,12 +26,16 @@
 		uid: "c57347a3",
 		type: "item",
 		item: {
-			id: "nuclearcraft:voltaic_pile_basic",
 			tag: {
 				capacity: 1600000,
+				energy: 0,
 				maxTransfer: 80000,
-				energy: 0
-			}
+				energyStorage: {
+					capacity: 1600000L,
+					energy: 0L
+				}
+			},
+			id: "nuclearcraft:voltaic_pile_basic"
 		}
 	}]
 }

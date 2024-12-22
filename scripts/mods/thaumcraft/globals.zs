@@ -1,4 +1,4 @@
-#modloaded thaumcraft
+#modloaded thaumcraft randomtweaker
 #priority 2000
 #reloadable
 

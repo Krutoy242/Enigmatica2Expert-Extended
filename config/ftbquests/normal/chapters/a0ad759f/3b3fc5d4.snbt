@@ -1,21 +1,21 @@
 {
 	icon: {
-		id: "opencomputers:storage",
 		tag: {
-			enchantmentColor: 15326208,
-			ench: [{
-				lvl: 1s,
-				id: 31s
-			}],
 			"oc:data": {
-				"oc:readonly": 0b,
 				node: {
 					visibility: 1,
 					buffer: 0.0d
 				},
+				"oc:readonly": 0b,
 				"oc:label": "§6LostUser v3.4.0"
-			}
-		}
+			},
+			enchantmentColor: 15326208,
+			ench: [{
+				id: 31s,
+				lvl: 1s
+			}]
+		},
+		id: "opencomputers:storage"
 	},
 	x: 13.4d,
 	y: 3.4d,
@@ -38,17 +38,17 @@
 		uid: "6e1c8bcd",
 		type: "item",
 		items: [{
-			id: "opencomputers:storage",
 			tag: {
-				enchantmentColor: 15326208,
-				ench: [{
-					lvl: 1s,
-					id: 30s
-				}],
 				"oc:data": {
 					"oc:label": "§6LostUser"
-				}
-			}
+				},
+				enchantmentColor: 15326208,
+				ench: [{
+					id: 30s,
+					lvl: 1s
+				}]
+			},
+			id: "opencomputers:storage"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -61,56 +61,8 @@
 		uid: "1b97a59b",
 		type: "item",
 		item: {
-			id: "bibliocraft:bigbook",
 			tag: {
-				pagesCurrent: 0,
 				pages: {
-					pageScale0: [I;
-						2,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0
-					],
 					page0: [
 						"§8Copy-pastable programs for §6LostUser",
 						"",
@@ -156,25 +108,64 @@
 						"",
 						"",
 						""
+					],
+					pageScale0: [I;
+						2,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0
 					]
 				},
+				pagesTotal: 1,
+				display: {
+					Name: "LostUser programs"
+				},
+				pagesCurrent: 0,
 				chapters: {
-					chapline0: "",
-					chapline1: "",
-					chapline2: "",
-					chapline3: "",
-					chapline4: "",
-					chapline5: "",
-					chapline6: "",
-					chapline7: "",
 					chapline8: "",
-					chapline9: "",
-					chapline10: "",
-					chapline11: "",
-					chapline12: "",
-					chapline13: "",
-					chapline14: "",
-					chapline15: "",
+					chapline4: "",
+					chapline2: "",
+					chapline0: "",
 					chapBools: [I;
 						0,
 						0,
@@ -185,6 +176,16 @@
 						0,
 						0
 					],
+					chapline15: "",
+					chapline11: "",
+					chapline12: "",
+					chapline13: "",
+					chapline14: "",
+					chapline9: "",
+					chapline5: "",
+					chapline10: "",
+					chapline1: "",
+					chapline3: "",
 					chapPages: [I;
 						0,
 						0,
@@ -194,13 +195,12 @@
 						0,
 						0,
 						0
-					]
-				},
-				display: {
-					Name: "LostUser programs"
-				},
-				pagesTotal: 1
-			}
+					],
+					chapline6: "",
+					chapline7: ""
+				}
+			},
+			id: "bibliocraft:bigbook"
 		}
 	}]
 }

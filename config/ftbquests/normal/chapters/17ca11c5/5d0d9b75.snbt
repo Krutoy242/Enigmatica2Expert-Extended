@@ -12,13 +12,13 @@
 		uid: "0e5497d6",
 		type: "item",
 		items: [{
-			id: "avaritia:infinity_pickaxe",
 			tag: {
 				ench: [{
-					lvl: 10s,
-					id: 35s
+					id: 35s,
+					lvl: 10s
 				}]
-			}
+			},
+			id: "avaritia:infinity_pickaxe"
 		}],
 		ignore_nbt: 1b
 	}],

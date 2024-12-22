@@ -1,10 +1,10 @@
 {
 	title: "{q.animals.hippogryphs.name}",
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "iceandfire:hippogryph"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 7.9d,
 	y: -4.8d,
@@ -18,10 +18,10 @@
 		uid: "7dab109c",
 		type: "interaction",
 		icon: {
-			id: "draconicevolution:mob_soul",
 			tag: {
 				EntityName: "iceandfire:hippogryph"
-			}
+			},
+			id: "draconicevolution:mob_soul"
 		},
 		match_type: "entity_id",
 		match: "iceandfire:hippogryph"

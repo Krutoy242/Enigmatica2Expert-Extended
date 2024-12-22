@@ -13,15 +13,24 @@
 		uid: "31c3c42e",
 		type: "item",
 		items: [{
-			id: "botania:specialflower",
 			tag: {
 				type: "solegnolia"
-			}
+			},
+			id: "botania:specialflower"
 		}]
 	}],
 	rewards: [{
-		uid: "5f9d5faa",
-		type: "loot",
-		table: 0
+		uid: "313c9339",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
 	}]
 }

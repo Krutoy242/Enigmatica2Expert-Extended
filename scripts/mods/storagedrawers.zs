@@ -134,46 +134,6 @@ function sealed(name as string, amount as int = 0) as string {
     ? '§2Sealed: §a' ~ name ~ ' §2(§ax' ~ amount ~ '§2)'
     : '§2Sealed: §a' ~ name;
 }
-function sealedItem(item as IItemStack) as string {
-  if (isNull(item)) return null;
-  return sealed(item.displayName, item.amount);
-}
-
-function firstItemInList(data as IData, amount as int = 0) as IItemStack {
-  if (isNull(data) || isNull(data.asList())) return null;
-
-  for itemStorage in data.asList() {
-    val itemData = itemStorage.Item;
-    if (isNull(itemData)) continue;
-    val item = IItemStack.fromData(itemData);
-    if (isNull(item) || item.isEmpty) continue;
-    return item * max(1,
-      amount != 0
-        ? amount / D(itemStorage).getInt('Conv', 1)
-        : D(itemStorage).getInt('Count', 1)
-    );
-  }
-  return null;
-}
-
-// Basic Drawers
-val basicDrawerTooltip as ITooltipFunction = function (item) {
-  return sealedItem(firstItemInList(D(item.tag).get('tile.Drawers')));
-};
-<storagedrawers:basicdrawers:*>.addAdvancedTooltip(basicDrawerTooltip);
-<storagedrawers:customdrawers:*>.addAdvancedTooltip(basicDrawerTooltip);
-
-// Compact Drawers
-val compactDrawerTooltip as ITooltipFunction = function (item) {
-  val d = D(item.tag);
-  return sealedItem(firstItemInList(d.get('tile.Drawers.Items'), d.getInt('tile.Drawers.Count')));
-};
-<storagedrawers:compdrawers>.addAdvancedTooltip(compactDrawerTooltip);
-
-// Framed Drawers
-if (!isNull(loadedMods['framedcompactdrawers'])) {
-  itemUtils.getItem('framedcompactdrawers:framed_compact_drawer').addAdvancedTooltip(compactDrawerTooltip);
-}
 
 // Fluid Drawers
 if (!isNull(loadedMods['fluiddrawers'])) {

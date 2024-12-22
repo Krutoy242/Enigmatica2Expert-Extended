@@ -1,11 +1,11 @@
 {
 	title: "{q.advanced_rocketry.rocket_fuel.name}",
 	icon: {
-		id: "forge:bucketfilled",
 		tag: {
-			FluidName: "rocketfuel",
-			Amount: 1000
-		}
+			Amount: 1000,
+			FluidName: "rocketfuel"
+		},
+		id: "forge:bucketfilled"
 	},
 	x: 12.166666666666666d,
 	y: 2.8333333333333335d,

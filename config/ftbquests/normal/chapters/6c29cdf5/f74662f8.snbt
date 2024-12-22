@@ -28,8 +28,8 @@
 		uid: "508b5fa9",
 		type: "item",
 		items: [{
-			id: "botania:manaweavelegs",
-			tag: {}
+			tag: {},
+			id: "botania:manaweavelegs"
 		}],
 		ignore_nbt: 1b
 	},
@@ -37,8 +37,8 @@
 		uid: "f7654683",
 		type: "item",
 		items: [{
-			id: "botania:manaweaveboots",
-			tag: {}
+			tag: {},
+			id: "botania:manaweaveboots"
 		}],
 		ignore_nbt: 1b
 	}],

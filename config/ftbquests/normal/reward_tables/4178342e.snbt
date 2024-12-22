@@ -1,13 +1,13 @@
 {
 	title: "Rare",
 	loot_size: 1,
-	use_title: true,
+	use_title: 1b,
 	rewards: [{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "generators"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		weight: 25
 	},
@@ -16,16 +16,16 @@
 	},
 	{
 		item: {
-			id: "botania:lens",
-			Damage: 2s,
 			tag: {
 				compositeLens: {
+					Damage: 4s,
 					id: "botania:lens",
 					Count: 1b,
-					tag: {},
-					Damage: 4s
+					tag: {}
 				}
-			}
+			},
+			Damage: 2s,
+			id: "botania:lens"
 		}
 	},
 	{
@@ -53,27 +53,27 @@
 	},
 	{
 		icon: {
-			id: "forestry:chipsets",
-			Count: 3,
-			Damage: 2s,
 			tag: {
 				T: 2s,
-				CA.I1: "forestry.machine.speed.boost.2",
-				CA.I2: "forestry.machine.speed.boost.2",
 				CA.I0: "forestry.machine.speed.boost.2",
+				CA.I2: "forestry.machine.speed.boost.2",
+				CA.I1: "forestry.machine.speed.boost.2",
 				LY: "forestry.machine.upgrade"
-			}
+			},
+			Damage: 2s,
+			Count: 3,
+			id: "forestry:chipsets"
 		},
 		item: {
-			id: "forestry:chipsets",
-			Damage: 2s,
 			tag: {
 				T: 2s,
-				CA.I1: "forestry.machine.speed.boost.2",
-				CA.I2: "forestry.machine.speed.boost.2",
 				CA.I0: "forestry.machine.speed.boost.2",
+				CA.I2: "forestry.machine.speed.boost.2",
+				CA.I1: "forestry.machine.speed.boost.2",
 				LY: "forestry.machine.upgrade"
-			}
+			},
+			Damage: 2s,
+			id: "forestry:chipsets"
 		},
 		count: 3
 	},
@@ -153,57 +153,57 @@
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
 			tag: {
 				StoredEnchantments: [{
-					lvl: 6s,
-					id: 34s
+					id: 34s,
+					lvl: 6s
 				}]
-			}
+			},
+			id: "minecraft:enchanted_book"
 		}
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
 			tag: {
 				StoredEnchantments: [{
-					lvl: 10s,
-					id: 32s
+					id: 32s,
+					lvl: 10s
 				}]
-			}
+			},
+			id: "minecraft:enchanted_book"
 		}
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
 			tag: {
 				StoredEnchantments: [{
-					lvl: 6s,
-					id: 21s
+					id: 21s,
+					lvl: 6s
 				}]
-			}
+			},
+			id: "minecraft:enchanted_book"
 		}
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
 			tag: {
 				StoredEnchantments: [{
-					lvl: 6s,
-					id: 35s
+					id: 35s,
+					lvl: 6s
 				}]
-			}
+			},
+			id: "minecraft:enchanted_book"
 		}
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
 			tag: {
 				StoredEnchantments: [{
-					lvl: 10s,
-					id: 48s
+					id: 48s,
+					lvl: 10s
 				}]
-			}
+			},
+			id: "minecraft:enchanted_book"
 		}
 	},
 	{
@@ -227,8 +227,8 @@
 	},
 	{
 		item: {
-			id: "rats:rat_upgrade_jury_rigged",
-			tag: {}
+			tag: {},
+			id: "rats:rat_upgrade_jury_rigged"
 		}
 	},
 	{
@@ -291,35 +291,35 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "materials"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		weight: 25
 	},
 	{
 		item: {
-			id: "deepmoblearning:data_model_blaze",
 			tag: {
 				tier: 4
-			}
+			},
+			id: "deepmoblearning:data_model_blaze"
 		}
 	},
 	{
 		item: {
-			id: "deepmoblearning:data_model_wither_skeleton",
 			tag: {
 				tier: 4
-			}
+			},
+			id: "deepmoblearning:data_model_wither_skeleton"
 		}
 	},
 	{
 		item: {
-			id: "deepmoblearning:data_model_thermal_elemental",
 			tag: {
 				tier: 4
-			}
+			},
+			id: "deepmoblearning:data_model_thermal_elemental"
 		}
 	}],
 	loot_crate: {
@@ -327,9 +327,9 @@
 		item_name: "Rare",
 		color: 15444771,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

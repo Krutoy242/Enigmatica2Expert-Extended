@@ -11,10 +11,10 @@
 		uid: "ec41b360",
 		type: "item",
 		items: [{
-			id: "astralsorcery:itemenchantmentamulet",
 			tag: {
 				astralsorcery: {}
-			}
+			},
+			id: "astralsorcery:itemenchantmentamulet"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -23,10 +23,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

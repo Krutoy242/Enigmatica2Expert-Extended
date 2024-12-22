@@ -13,18 +13,18 @@
 		uid: "bf70fb6a",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any logWood"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "logWood"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any logWood"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 8L
 	}],

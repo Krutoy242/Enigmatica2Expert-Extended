@@ -1,3 +1,4 @@
+#modloaded forestry
 #loader mixin
 
 import native.forestry.api.recipes.ISqueezerManager;
@@ -9,8 +10,7 @@ import mixin.CallbackInfoReturnable;
 Remove ~1500 [Squeezer] (forestry) capsule recipes,
 when forestry cans and capsules filled/squeezed with every liquid in game.
 */
-#mixin Mixin
-#{targets: "forestry.core.ModuleFluids"}
+#mixin {targets: "forestry.core.ModuleFluids"}
 zenClass MixinModuleFluids {
     #mixin Redirect
     #{
@@ -29,8 +29,7 @@ zenClass MixinModuleFluids {
 Remove default no-fermentated recipe flood
 for better performance and less HEI junk.
 */
-#mixin Mixin
-#{targets: "forestry.factory.recipes.FermenterRecipeManager"}
+#mixin {targets: "forestry.factory.recipes.FermenterRecipeManager"}
 zenClass MixinFermenterRecipeManager {
     #mixin Inject
     #{
@@ -45,15 +44,10 @@ zenClass MixinFermenterRecipeManager {
     }
 }
 
-#mixin Mixin
-#{targets: "forestry.factory.tiles.TileRaintank"}
+#mixin {targets: "forestry.factory.tiles.TileRaintank"}
 zenClass MixinTileRainTank {
     #mixin Static
-    #mixin ModifyConstant
-    #{
-    #    method: "<clinit>",
-    #    constant: {intValue: 10}
-    #}
+    #mixin ModifyConstant {method: "<clinit>", constant: {intValue: 10}}
     function increaseCapacity(value as int) as int {
         return 30000;
     }

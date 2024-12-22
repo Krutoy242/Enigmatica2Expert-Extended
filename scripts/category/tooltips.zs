@@ -23,7 +23,6 @@ for item in [
 .sort(naturalSort)
 ) */
   <actuallyadditions:block_farmer>,
-  <advancedrocketry:liquidtank>,
   <ae2stuff:visualiser>,
   <bibliocraft:fancysign>,
   <bloodmagic:blood_rune:1>,

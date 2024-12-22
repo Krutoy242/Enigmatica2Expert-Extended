@@ -1,4 +1,4 @@
-#modloaded immersiveengineering
+#modloaded immersiveengineering ic2
 #ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;

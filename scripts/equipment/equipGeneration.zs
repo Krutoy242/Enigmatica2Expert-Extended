@@ -112,12 +112,12 @@ normalizeDefaultList(scripts.equipment.equipData.defaultWeaponMats, 'tool');
 // SLOTS
 // -------------------------------
 static slots as IEntityEquipmentSlot[] = [
-  IEntityEquipmentSlot.head(),
-  IEntityEquipmentSlot.chest(),
-  IEntityEquipmentSlot.legs(),
-  IEntityEquipmentSlot.feet(),
-  IEntityEquipmentSlot.mainHand(),
-  IEntityEquipmentSlot.offhand(),
+  head,
+  chest,
+  legs,
+  feet,
+  mainHand,
+  offhand,
 ] as IEntityEquipmentSlot[];
 
 function rnd_qubic(w as IWorld) as double { val a as double = w.random.nextDouble(); return a * a * a; }

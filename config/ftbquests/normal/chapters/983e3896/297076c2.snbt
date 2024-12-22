@@ -1,0 +1,39 @@
+{
+	x: -2.2d,
+	y: 6.166666666666667d,
+	text: [
+		"{q.astral_sorcery.ichosic_resonator.desc}"
+	],
+	dependencies: [
+		"a3632f34"
+	],
+	tasks: [{
+		uid: "533a8854",
+		type: "item",
+		items: [{
+			tag: {
+				astralsorcery: {
+					selected_upgrade: 1,
+					upgrades: [
+						0,
+						1
+					],
+					enhanced: 1b
+				}
+			},
+			id: "astralsorcery:itemskyresonator"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "1909cf89",
+		type: "item",
+		item: {
+			tag: {
+				type: "common"
+			},
+			id: "ftbquests:lootcrate"
+		}
+	}]
+}

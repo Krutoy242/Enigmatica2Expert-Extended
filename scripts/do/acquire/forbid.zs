@@ -1,5 +1,6 @@
 #reloadable
 #priority -1400
+#modloaded zenutils ctintegration
 
 import crafttweaker.block.IBlockDefinition;
 import crafttweaker.item.IItemStack;
@@ -24,32 +25,48 @@ import scripts.do.acquire.events.stringRegistry;
 zenClass Forbidder {
 
   var stacks as IItemStack[];
+  var futile as bool = false;
 
   zenConstructor() {}
 
   function stack(stackRepresent as IItemStack) as Forbidder {
-    stacks = [stackRepresent];
+    if (isNull(stackRepresent))
+      futile = true;
+    else
+      stacks = [stackRepresent];
     return this;
   }
 
   function stacks(groupName as string, stacksRepresent as IItemStack[]) as Forbidder {
     stacks = stacksRepresent;
-    for stack in stacks {
+    var some = false;
+    for stack in stacksRepresent {
+      if (isNull(stack)) continue;
       scripts.do.acquire.data.groups[stack] = groupName;
+      some = true;
+    }
+    if(!some) {
+      logger.logWarning('Acquire error: trying to add completely empty list of stacks "' ~ groupName ~ '". Size: ' ~ stacksRepresent.length);
+      futile = true;
     }
     return this;
   }
 
   function value(amount as double) as Forbidder {
-    for stack in stacks {
-      scripts.do.acquire.data.values[stack] = amount;
-      stack.addTooltip(`§6+${amount}§e✪`);
-      utils.log(`Acquire +${amount}: ${stack.commandString}`);
-    }
+    if (!futile)
+      for stack in stacks {
+        scripts.do.acquire.data.values[stack] = amount;
+        val isResidual = amount - amount as int > 0.0;
+        val amountStr = isResidual ? amount as string : amount as int;
+        stack.addTooltip(`§6+${amountStr}§e✪`);
+        utils.log(`Acquire +${amount}: ${stack.commandString}`);
+      }
     return this;
   }
 
   function events(onEvents as string) as Forbidder {
+    if (futile) return this;
+
     val evts = onEvents.split('\\s+');
 
     // Check for existing events
@@ -82,9 +99,10 @@ zenClass Forbidder {
   }
 
   function onOpen(classPath as string) as Forbidder {
-    for stack in stacks {
-      stringRegistry[classPath] = stack;
-    }
+    if (!futile)
+      for stack in stacks {
+        stringRegistry[classPath] = stack;
+      }
     return this;
   }
 }

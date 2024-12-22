@@ -1,27 +1,27 @@
 {
 	title: "{q.draconic_evolution.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 200,
+			TrophyColorBlue: 43,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 128,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "draconicevolution:reactor_core",
-				Damage: 0s
+				id: "draconicevolution:reactor_core"
 			},
-			TrophyColorBlue: 43,
-			TrophyColorRed: 200,
 			TrophyName: "Draconic Evolution Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 13.049999999999999d,
 	y: -4.95d,
 	text: [
 		"{q.draconic_evolution.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"d62d89ef",
 		"0ae32b60",
@@ -62,23 +62,23 @@
 	rewards: [{
 		uid: "1411306e",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 200,
+				TrophyColorBlue: 43,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 128,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "draconicevolution:reactor_core",
-					Damage: 0s
+					id: "draconicevolution:reactor_core"
 				},
-				TrophyColorBlue: 43,
-				TrophyColorRed: 200,
 				TrophyName: "Draconic Evolution Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

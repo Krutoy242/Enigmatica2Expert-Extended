@@ -1,27 +1,27 @@
 {
 	title: "{q.nuclearcraft.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 222,
+			TrophyColorBlue: 42,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 207,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "nuclearcraft:rtg_plutonium",
-				Damage: 0s
+				id: "nuclearcraft:rtg_plutonium"
 			},
-			TrophyColorBlue: 42,
-			TrophyColorRed: 222,
 			TrophyName: "§eNuclear Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 14.85d,
 	y: 3.3d,
 	text: [
 		"{q.nuclearcraft.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"55a50ca1",
 		"c2394730",
@@ -62,23 +62,23 @@
 	rewards: [{
 		uid: "df22a8a6",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 222,
+				TrophyColorBlue: 42,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 207,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "nuclearcraft:rtg_plutonium",
-					Damage: 0s
+					id: "nuclearcraft:rtg_plutonium"
 				},
-				TrophyColorBlue: 42,
-				TrophyColorRed: 222,
 				TrophyName: "§eNuclear Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

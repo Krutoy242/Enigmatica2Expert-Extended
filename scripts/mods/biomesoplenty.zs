@@ -1,4 +1,4 @@
-#modloaded biomesoplenty
+#modloaded biomesoplenty tconstruct
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;

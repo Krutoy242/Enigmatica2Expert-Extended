@@ -1,7 +1,7 @@
 {
 	title: "{q.applied_energetics.ae2.name}",
 	icon: "appliedenergistics2:inscriber",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 1.0d,
 	y: 1.0d,
 	text: [
@@ -15,11 +15,11 @@
 		uid: "96486a31",
 		type: "item",
 		item: {
-			id: "appliedenergistics2:entropy_manipulator",
 			tag: {
 				internalCurrentPower: 200000.0d,
 				internalMaxPower: 200000.0d
-			}
+			},
+			id: "appliedenergistics2:entropy_manipulator"
 		}
 	}]
 }

@@ -5,23 +5,23 @@
 	dependencies: [
 		"d37c34ce"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "0e31c667",
 		type: "item",
 		items: [{
-			id: "itemfilters:filter",
-			tag: {
-				display: {
-					Name: "Any treeLeaves"
-				}
-			},
 			ForgeCaps: {
 				Parent: {
 					id: "ore",
 					data: "treeLeaves"
 				}
-			}
+			},
+			tag: {
+				display: {
+					Name: "Any treeLeaves"
+				}
+			},
+			id: "itemfilters:filter"
 		}],
 		count: 36L
 	},

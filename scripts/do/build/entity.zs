@@ -19,6 +19,7 @@ import crafttweaker.util.Position3f;
 import crafttweaker.block.IBlock;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
+import native.net.minecraft.util.EnumParticleTypes;
 
 zenClass MobBuild {
   // Static data
@@ -131,7 +132,8 @@ zenClass MobBuild {
       // Break blocks and spawn entity
       iterVolume(pos, face, function (need as IItemStack, p as IBlockPos) as bool {
         world.destroyBlock(p, false);
-        utils.spawnParticles(world, 'snowballpoof', 0.5 + p.x, 0.5 + p.y, 0.5 + p.z, 0.5, 0.5, 0.5, 0, 10);
+        (world.native as native.net.minecraft.world.WorldServer)
+          .spawnParticle(EnumParticleTypes.SNOWBALL, 0.5 + p.x, 0.5 + p.y, 0.5 + p.z, 10, 0.5, 0.5, 0.5, 0.0, 0);
         return true;
       });
 

@@ -4,7 +4,7 @@
 	dependencies: [
 		"fec80e16"
 	],
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "74227aa5",
 		type: "item",

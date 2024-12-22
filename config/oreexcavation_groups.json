@@ -14,6 +14,9 @@
       "immersiveengineering:stone_device:3",
       "immersiveengineering:stone_device:4",
       "immersiveengineering:stone_device:5"
+    ],
+    [
+      "stoneMetamorphic"
     ]
   ],
   "strictSubtypes": [

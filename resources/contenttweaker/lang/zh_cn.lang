@@ -15,8 +15,6 @@ description.crt.consume=§6§o(会被消耗！)§r
 # CoT new content
 # --------------------------------------
 # itemGroup.other=ContentTweaker
-fluid.heavy_metal=熔融沉重金属
-fluid.cheese=液态奶酪
 # fluid.seed=Seed
 fluid.spectre=液态通灵
 fluid.perfect_fuel=完美燃料
@@ -25,6 +23,9 @@ fluid.terrestrial=熔融天地宝晶
 fluid.mithrillium=熔融秘银
 fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
+
+base.material.heavy_metal=沉重金属
+base.material.cheese=奶酪
 
 item.contenttweaker.compressed_glowstone.name=压缩荧石
 item.contenttweaker.compressed_ender.name=压缩末影
@@ -347,7 +348,7 @@ warp.sword.speak.story.11.3=§o§5让现实按照我们的意志弯曲。
 ##################################
 item.singularity.iron.name=§7空奇点
 
-# Burn singularity
+# Custom singularities
 item.singularity.silver.name=§b皮毛奇点
 item.singularity.nickel.name=§e火热奇点
 item.singularity.fluxed.name=§4燃烧奇点
@@ -385,6 +386,7 @@ e2ee.written_book.Zombie=僵尸
 
 # Misc 杂项
 stat.replications=消耗的UU物质桶
+e2ee.recipe.over_void=玩家必须位于虚空之上
 e2ee.quest.common=§f普通§r 战利品箱 §e✪
 e2ee.quest.uncommon=§b不常见§r 战利品箱 §e✪
 e2ee.quest.rare=§6稀有§r 战利品箱 §e✪
@@ -583,6 +585,7 @@ tooltips.lang.limit=连锁数量限制
 tooltips.lang.range=范围
 tooltips.lang.exaustion=损耗
 tooltips.lang.experience=经验值
+tooltips.lang.quantum_entangled_singularity.freq=§2频率§r: %s
 
 tooltips.dim_stages.healthy=§4你需要至少拥有 §6%s 点生命值§4 (%s 颗心§4) 才能前往§c下界
 tooltips.dim_stages.healthy_grant=你已经拥有了 §6%s 点生命值§r (%s 颗心)！
@@ -596,13 +599,14 @@ tooltips.dim_stages.remind_skyblock=§e你再次进入了一个§b空岛§e世�
 # - "e2ee.jei.{id}.{entry}" format recommended
 # --------------------------------------
 e2ee.jei.rats_consuming.title=老鼠食用
+e2ee.jei.alchemists_stone.title=Alchemists Stone
+e2ee.jei.alienist_stone.title=Alienists Stone
+e2ee.jei.transmuter_stone.title=Transmuters Stone
 
 # --------------------------------------
 # Requious Fracto custom JEI categories
 # --------------------------------------
 requious.jei.recipe.adv_bee_analyzer=高级蜜蜂分析仪
-requious.jei.recipe.alchemists_stone=炼金术士之石
-requious.jei.recipe.alienists_stone=异形之石
 requious.jei.recipe.arboreal_extractor=树汁提取器
 requious.jei.recipe.asteroids=小行星
 requious.jei.recipe.barrel_milking=桶交互
@@ -631,7 +635,6 @@ requious.jei.recipe.pech_trades=岩精交易
 requious.jei.recipe.petro_petunia=石油矮牵牛花
 requious.jei.recipe.scented_hive=清香的人工蜂巢
 requious.jei.recipe.syngas_producer=合成气制造器
-requious.jei.recipe.transmuters_stone=转化之石
 requious.jei.recipe.turbine=涡轮机
 requious.jei.recipe.typewriter=打字机
 requious.jei.recipe.witch_water=巫水转化

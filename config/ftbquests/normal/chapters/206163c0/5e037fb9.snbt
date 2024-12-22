@@ -1,27 +1,27 @@
 {
 	title: "{q.forestry.the_chapter_is_com.name}",
 	icon: {
-		id: "simple_trophies:trophy",
 		tag: {
+			TrophyColorRed: 62,
+			TrophyColorBlue: 39,
+			TrophyVariant: "gold",
 			TrophyColorGreen: 143,
 			TrophyShowsTooltip: 1b,
-			TrophyVariant: "gold",
 			TrophyItem: {
+				Damage: 0s,
 				Count: 1b,
-				id: "forestry:bee_queen_ge",
-				Damage: 0s
+				id: "forestry:bee_queen_ge"
 			},
-			TrophyColorBlue: 39,
-			TrophyColorRed: 62,
 			TrophyName: "Forestry Master Trophy§r"
-		}
+		},
+		id: "simple_trophies:trophy"
 	},
 	x: 3.9d,
 	y: 2.85d,
 	text: [
 		"{q.forestry.the_chapter_is_com.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"d1b19bf0",
 		"e053dd50",
@@ -61,23 +61,23 @@
 	rewards: [{
 		uid: "bdb044d3",
 		type: "item",
-		team_reward: true,
+		team_reward: 1b,
 		auto: "enabled",
 		item: {
-			id: "simple_trophies:trophy",
 			tag: {
+				TrophyColorRed: 62,
+				TrophyColorBlue: 39,
+				TrophyVariant: "gold",
 				TrophyColorGreen: 143,
 				TrophyShowsTooltip: 1b,
-				TrophyVariant: "gold",
 				TrophyItem: {
+					Damage: 0s,
 					Count: 1b,
-					id: "forestry:bee_queen_ge",
-					Damage: 0s
+					id: "forestry:bee_queen_ge"
 				},
-				TrophyColorBlue: 39,
-				TrophyColorRed: 62,
 				TrophyName: "Forestry Master Trophy§r"
-			}
+			},
+			id: "simple_trophies:trophy"
 		}
 	},
 	{

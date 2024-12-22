@@ -1,5 +1,5 @@
 #priority 950
-#modloaded forestry
+#modloaded forestry requious
 
 import crafttweaker.item.IItemStack;
 import mods.requious.AssemblyRecipe;
@@ -9,6 +9,11 @@ scripts.jei.crafting_hints.addInsOutCatl([<forestry:butterfly_ge:*>], <forestry:
 scripts.jei.crafting_hints.addInsOutCatl([<forestry:butterfly_ge:*>], <forestry:serum_ge>, <forestry:escritoire>);
 scripts.jei.crafting_hints.addInsOutCatl([<forestry:caterpillar_ge:*>], <forestry:serum_ge>, <forestry:escritoire>);
 scripts.jei.crafting_hints.addInsOutCatl([<forestry:cocoon_ge:*>], <forestry:serum_ge>, <forestry:escritoire>);
+
+scripts.jei.crafting_hints.addInsOutCatl([
+  <gendustry:gene_sample>.withTag({species: "rootTrees", allele: "forestry.fireproofTrue", chromosome: 9}),
+  <ore:logNonfireproof>,
+  ], <ore:logFireproof>.firstItem);
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------

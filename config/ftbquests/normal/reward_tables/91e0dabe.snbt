@@ -2,13 +2,13 @@
 	loot_size: 1,
 	rewards: [{
 		item: {
-			id: "twilightforest:ironwood_sword",
 			tag: {
 				ench: [{
-					lvl: 1s,
-					id: 19s
+					id: 19s,
+					lvl: 1s
 				}]
-			}
+			},
+			id: "twilightforest:ironwood_sword"
 		}
 	},
 	{
@@ -16,10 +16,10 @@
 	},
 	{
 		item: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}
 	}]
 }

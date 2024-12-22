@@ -10,6 +10,7 @@
 #priority 2000
 #reloadable
 
+import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.oredict.IOreDictEntry;
 
@@ -28,13 +29,13 @@ zenClass Spread {
 	zenConstructor() {}
 
   // Recipes for exact inputState => outputState
-  val stateRecipes as IBlockState[][IBlockState][int][int] = {};
+  val stateRecipes as IBlockState[][IBlockState][int][int] = {} as IBlockState[][IBlockState][int][int]$orderly;
 
   // Block numerical IDs that can be converted (completely or only some of their states)
-  val transformableBlockNumIds as bool[int][int][int] = {};
+  val transformableBlockNumIds as bool[IBlockDefinition][int][int] = {};
 
   // Block numerical IDs that would be converted no matter of state
-  val wildcardedNumIds as bool[int][int][int] = {};
+  val wildcardedNumIds as bool[IBlockDefinition][int][int] = {};
 
   // Dimensions that copy its recipes from other dimensions
   val dimFallbacks as int[int] = {};
@@ -45,14 +46,14 @@ zenClass Spread {
   // Set of dimensions that have recipes
   val dimHasRecipes as bool[int] = {};
 
-  val _air as int = <blockstate:minecraft:air>.block.definition.numericalId;
-  val _obs as int = <blockstate:minecraft:obsidian>.block.definition.numericalId;
-  val _prt as int = <blockstate:minecraft:portal>.block.definition.numericalId;
-
   // Blocks that can't be converted
-  val blacklistedBlockNumIds as bool[int][int][int] = {
+  val blacklistedBlockNumIds as bool[IBlockDefinition][int][int] = {
     0: {
-      -1: { [_air]: true, [_obs]: true, [_prt]: true },
+      -1: {
+        <blockstate:minecraft:air>.block.definition: true,
+        <blockstate:minecraft:obsidian>.block.definition: true,
+        <blockstate:minecraft:portal>.block.definition: true 
+      },
     },
   };
 
@@ -67,7 +68,7 @@ zenClass Spread {
   }
 
   // Get one of cached lists for faster lookup
-  function getNumIds(listName as string, dimFrom as int, dimTo as int) as bool[int] {
+  function getNumIds(listName as string, dimFrom as int, dimTo as int) as bool[IBlockDefinition] {
     if (!initialized) init();
 
     val list = listName == 'transformable'
@@ -144,13 +145,13 @@ zenClass Spread {
   }
 
   // Remove keys of B from A
-  function mapAExceptB(a as bool[int], b as bool[int]) as bool[int] {
-    val newOne = {} as bool[int];
+  function mapAExceptB(a as bool[IBlockDefinition], b as bool[IBlockDefinition]) as bool[IBlockDefinition] {
+    val newOne = {} as bool[IBlockDefinition];
 
     for idA, _ in a {
       var isOutputInInput = false;
       for idB, _ in b {
-        if (idB == idA) {
+        if (idB.id == idA.id) {
           isOutputInInput = true;
           break;
         }
@@ -180,7 +181,7 @@ zenClass Spread {
       if (isNull(blockFrom)) continue;
       if (isNull(wildcardedNumIds[dimFrom])) wildcardedNumIds[dimFrom] = {};
       if (isNull(wildcardedNumIds[dimFrom][dimTo])) wildcardedNumIds[dimFrom][dimTo] = {};
-      wildcardedNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
+      wildcardedNumIds[dimFrom][dimTo][blockFrom.block.definition] = true;
 
       set(dimFrom, dimTo, blockFrom.block.definition.defaultState, blocksTo, fallback);
     }
@@ -246,7 +247,7 @@ zenClass Spread {
     // Update fast lookup maps
     if (isNull(transformableBlockNumIds[dimFrom])) transformableBlockNumIds[dimFrom] = {};
     if (isNull(transformableBlockNumIds[dimFrom][dimTo])) transformableBlockNumIds[dimFrom][dimTo] = {};
-    transformableBlockNumIds[dimFrom][dimTo][blockFrom.block.definition.numericalId] = true;
+    transformableBlockNumIds[dimFrom][dimTo][blockFrom.block.definition] = true;
 
     stateRecipes[dimFrom][dimTo][blockFrom] = blocksToActual;
 
@@ -263,7 +264,7 @@ zenClass Spread {
       if (isNull(blockTo)) continue;
       if (isNull(blacklistedBlockNumIds[dimFrom])) blacklistedBlockNumIds[dimFrom] = {};
       if (isNull(blacklistedBlockNumIds[dimFrom][dimTo])) blacklistedBlockNumIds[dimFrom][dimTo] = {};
-      blacklistedBlockNumIds[dimFrom][dimTo][blockTo.block.definition.numericalId] = true;
+      blacklistedBlockNumIds[dimFrom][dimTo][blockTo.block.definition] = true;
     }
     return this;
   }

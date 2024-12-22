@@ -1,11 +1,6 @@
 {
 	title: "{q.thaumcraft.impetus.name}",
-	icon: {
-		id: "thaumicaugmentation:impetus_linker",
-		ForgeCaps: {
-			Parent: {}
-		}
-	},
+	icon: "thaumicaugmentation:impetus_linker",
 	x: 15.0d,
 	y: -0.5d,
 	text: [
@@ -19,10 +14,7 @@
 		uid: "b6389674",
 		type: "item",
 		items: [{
-			id: "thaumicaugmentation:impetus_linker",
-			ForgeCaps: {
-				Parent: {}
-			}
+			item: "thaumicaugmentation:impetus_linker"
 		}]
 	},
 	{
@@ -44,10 +36,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

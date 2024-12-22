@@ -11,9 +11,9 @@
 		uid: "baf93e09",
 		type: "item",
 		items: [{
-			id: "bloodmagic:soul_gem",
+			tag: {},
 			Damage: 3s,
-			tag: {}
+			id: "bloodmagic:soul_gem"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -22,10 +22,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

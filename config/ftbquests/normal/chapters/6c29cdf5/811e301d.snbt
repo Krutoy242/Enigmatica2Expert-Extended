@@ -13,10 +13,10 @@
 		uid: "72505b7c",
 		type: "item",
 		items: [{
-			id: "botania:specialflower",
 			tag: {
 				type: "munchdew"
-			}
+			},
+			id: "botania:specialflower"
 		}]
 	}],
 	rewards: [{
@@ -24,10 +24,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

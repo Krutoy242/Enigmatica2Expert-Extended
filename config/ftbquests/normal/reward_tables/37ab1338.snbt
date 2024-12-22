@@ -2,149 +2,116 @@
 	title: "Mythic",
 	loot_size: 1,
 	rewards: [{
-		item: {
-			id: "twilightforest:minotaur_axe",
-			tag: {
-				"Quark:RuneColor": 16,
-				ench: [{
-					lvl: 9s,
-					id: 64
-				},
-				{
-					lvl: 9s,
-					id: 35
-				},
-				{
-					lvl: 9s,
-					id: 34
-				},
-				{
-					lvl: 15s,
-					id: 32
-				},
-				{
-					lvl: 15s,
-					id: 54
-				},
-				{
-					lvl: 12s,
-					id: 57
-				}],
-				"Quark:RuneAttached": 1b
-			}
-		}
-	},
-	{
 		icon: "rats:confit_byaldi 64",
 		item: "rats:confit_byaldi",
 		count: 64
 	},
 	{
 		item: {
-			id: "forestry:bee_drone_ge",
 			tag: {
 				MaxH: 20,
-				"Quark:RuneColor": 16,
-				Health: 20,
-				display: {
-					Name: "§kUltimate Bee"
-				},
 				"Quark:RuneAttached": 1b,
-				IsAnalyzed: 1b,
 				Genome: {
 					Chromosomes: [{
-						UID1: "gendustry.bee.selfish",
+						Slot: 0b,
 						UID0: "gendustry.bee.narcissistic",
-						Slot: 0b
+						UID1: "gendustry.bee.selfish"
 					},
 					{
-						UID1: "forestry.speedFastest",
+						Slot: 1b,
 						UID0: "forestry.speedFastest",
-						Slot: 1b
+						UID1: "forestry.speedFastest"
 					},
 					{
-						UID1: "forestry.lifespanShortest",
+						Slot: 2b,
 						UID0: "forestry.lifespanShortest",
-						Slot: 2b
+						UID1: "forestry.lifespanShortest"
 					},
 					{
-						UID1: "forestry.fertilityMaximum",
+						Slot: 3b,
 						UID0: "forestry.fertilityMaximum",
-						Slot: 3b
+						UID1: "forestry.fertilityMaximum"
 					},
 					{
-						UID1: "forestry.toleranceBoth5",
+						Slot: 4b,
 						UID0: "forestry.toleranceBoth5",
-						Slot: 4b
+						UID1: "forestry.toleranceBoth5"
 					},
 					{
-						UID1: "forestry.boolTrue",
+						Slot: 5b,
 						UID0: "forestry.boolTrue",
-						Slot: 5b
+						UID1: "forestry.boolTrue"
 					},
 					{
-						UID1: "forestry.toleranceBoth5",
+						Slot: 6b,
 						UID0: "forestry.toleranceBoth5",
-						Slot: 6b
+						UID1: "forestry.toleranceBoth5"
 					},
 					{
-						UID1: "forestry.boolTrue",
+						Slot: 7b,
 						UID0: "forestry.boolTrue",
-						Slot: 7b
+						UID1: "forestry.boolTrue"
 					},
 					{
-						UID1: "forestry.boolTrue",
+						Slot: 8b,
 						UID0: "forestry.boolTrue",
-						Slot: 8b
+						UID1: "forestry.boolTrue"
 					},
 					{
-						UID1: "forestry.flowersCacti",
+						Slot: 9b,
 						UID0: "forestry.flowersWheat",
-						Slot: 9b
+						UID1: "forestry.flowersCacti"
 					},
 					{
-						UID1: "forestry.floweringFastest",
+						Slot: 10b,
 						UID0: "forestry.floweringMaximum",
-						Slot: 10b
+						UID1: "forestry.floweringFastest"
 					},
 					{
-						UID1: "forestry.territoryLarger",
+						Slot: 11b,
 						UID0: "forestry.territoryLargest",
-						Slot: 11b
+						UID1: "forestry.territoryLarger"
 					},
 					{
-						UID1: "forestry.effectFertile",
+						Slot: 12b,
 						UID0: "forestry.effectExploration",
-						Slot: 12b
+						UID1: "forestry.effectFertile"
 					}]
+				},
+				Health: 20,
+				IsAnalyzed: 1b,
+				"Quark:RuneColor": 16,
+				display: {
+					Name: "§kUltimate Bee"
 				}
-			}
+			},
+			id: "forestry:bee_drone_ge"
 		},
 		count: 64
 	},
 	{
 		item: {
-			id: "industrialforegoing:infinity_drill",
 			tag: {
 				Energy: 15625000000L,
-				Fluid: {
-					FluidName: "biofuel",
-					Amount: 0
-				},
 				Special: 0b,
+				Fluid: {
+					Amount: 0,
+					FluidName: "biofuel"
+				},
 				Selected: "UNCOMMON"
-			}
+			},
+			id: "industrialforegoing:infinity_drill"
 		}
 	},
 	{
 		item: {
-			id: "mekanism:atomicdisassembler",
 			tag: {
 				mekData: {
 					mode: 4,
 					energyStored: 2.0E7d
 				}
-			}
+			},
+			id: "mekanism:atomicdisassembler"
 		}
 	},
 	{
@@ -155,37 +122,37 @@
 	},
 	{
 		item: {
-			id: "rats:rat_upgrade_combined",
 			tag: {
-				enchantmentColor: 2651799,
-				display: {
-					Name: "Holy Upgrade"
-				},
 				Items: [{
 					Slot: 0b,
+					Damage: 0s,
 					id: "rats:rat_upgrade_nonbeliever",
-					Count: 1b,
-					Damage: 0s
+					Count: 1b
 				},
 				{
 					Slot: 1b,
+					Damage: 0s,
 					id: "rats:rat_upgrade_aristocrat",
-					Count: 1b,
-					Damage: 0s
+					Count: 1b
 				},
 				{
 					Slot: 2b,
+					Damage: 0s,
 					id: "rats:rat_upgrade_speed",
-					Count: 1b,
-					Damage: 0s
+					Count: 1b
 				},
 				{
 					Slot: 3b,
+					Damage: 0s,
 					id: "rats:rat_upgrade_archeologist",
-					Count: 1b,
-					Damage: 0s
-				}]
-			}
+					Count: 1b
+				}],
+				enchantmentColor: 2651799,
+				display: {
+					Name: "Holy Upgrade"
+				}
+			},
+			id: "rats:rat_upgrade_combined"
 		}
 	},
 	{
@@ -198,16 +165,16 @@
 	},
 	{
 		item: {
-			id: "draconicevolution:wyvern_bow",
 			tag: {
+				Energy: 16000000,
 				DEUpgrades: {
 					arrowDmg: 2b,
 					arrowSpeed: 2b,
-					drawSpeed: 2b,
-					rfCap: 2b
-				},
-				Energy: 16000000
-			}
+					rfCap: 2b,
+					drawSpeed: 2b
+				}
+			},
+			id: "draconicevolution:wyvern_bow"
 		}
 	},
 	{
@@ -225,24 +192,24 @@
 	},
 	{
 		item: {
-			id: "openblocks:tank",
 			tag: {
 				tank: {
-					FluidName: "perfect_fuel",
-					Amount: 24000
+					Amount: 24000,
+					FluidName: "perfect_fuel"
 				}
-			}
+			},
+			id: "openblocks:tank"
 		}
 	},
 	{
 		item: {
-			id: "openblocks:tank",
 			tag: {
 				tank: {
-					FluidName: "ic2uu_matter",
-					Amount: 24000
+					Amount: 24000,
+					FluidName: "ic2uu_matter"
 				}
-			}
+			},
+			id: "openblocks:tank"
 		}
 	},
 	{
@@ -260,30 +227,19 @@
 	},
 	{
 		item: {
-			id: "conarm:armor_trim",
 			tag: {
 				Material: "aethium"
-			}
+			},
+			id: "conarm:armor_trim"
 		}
 	},
 	{
 		item: {
-			id: "enderio:item_stellar_alloy_pickaxe",
 			tag: {
-				enderio.darksteel.upgrade.travel: {
-					level: 0
-				},
 				enderio.darksteel.upgrade.direct: {
 					level: 0
 				},
-				enderio.darksteel.upgrade.energyUpgrade: {
-					level: 4,
-					energy: 2500000
-				},
 				enderio.darksteel.upgrade.spoon: {
-					level: 0
-				},
-				enderio.darksteel.upgrade.depth: {
 					level: 0
 				},
 				enderio.darksteel.upgrade.carpet: {
@@ -291,8 +247,19 @@
 				},
 				enderio.darksteel.upgrade.tnt: {
 					level: 4
+				},
+				enderio.darksteel.upgrade.depth: {
+					level: 0
+				},
+				enderio.darksteel.upgrade.travel: {
+					level: 0
+				},
+				enderio.darksteel.upgrade.energyUpgrade: {
+					energy: 2500000,
+					level: 4
 				}
-			}
+			},
+			id: "enderio:item_stellar_alloy_pickaxe"
 		}
 	},
 	{
@@ -331,26 +298,26 @@
 	},
 	{
 		item: {
-			id: "ic2:crystal_memory",
 			tag: {
 				Pattern: {
+					Damage: 13s,
 					id: "extendedcrafting:material",
-					Count: 1b,
-					Damage: 13s
+					Count: 1b
 				}
-			}
+			},
+			id: "ic2:crystal_memory"
 		}
 	},
 	{
 		item: {
-			id: "ic2:crystal_memory",
 			tag: {
 				Pattern: {
+					Damage: 1s,
 					id: "draconicevolution:draconium_capacitor",
-					Count: 1b,
-					Damage: 1s
+					Count: 1b
 				}
-			}
+			},
+			id: "ic2:crystal_memory"
 		}
 	},
 	{
@@ -363,15 +330,21 @@
 	},
 	{
 		item: {
-			id: "draconicevolution:draconic_shovel",
+			ForgeCaps: {
+				Parent: {
+					Items: [],
+					Size: 18
+				}
+			},
 			tag: {
+				Energy: 256000000,
 				DEUpgrades: {
+					rfCap: 3b,
 					digSpeed: 3b,
-					digAOE: 3b,
-					rfCap: 3b
-				},
-				Energy: 256000000
-			}
+					digAOE: 3b
+				}
+			},
+			id: "draconicevolution:draconic_shovel"
 		}
 	},
 	{
@@ -382,11 +355,11 @@
 	},
 	{
 		item: {
-			id: "psicosts:psi_cell",
-			Damage: 3s,
 			tag: {
 				PsioCharge: 2560000
-			}
+			},
+			Damage: 3s,
+			id: "psicosts:psi_cell"
 		}
 	},
 	{
@@ -396,25 +369,25 @@
 	},
 	{
 		icon: {
-			id: "mekanism:basicblock2",
-			Count: 4,
-			Damage: 3s,
 			tag: {
-				tier: 3,
 				mekData: {
 					energyStored: 5.12E11d
-				}
-			}
+				},
+				tier: 3
+			},
+			Damage: 3s,
+			Count: 4,
+			id: "mekanism:basicblock2"
 		},
 		item: {
-			id: "mekanism:basicblock2",
-			Damage: 3s,
 			tag: {
-				tier: 3,
 				mekData: {
 					energyStored: 5.12E11d
-				}
-			}
+				},
+				tier: 3
+			},
+			Damage: 3s,
+			id: "mekanism:basicblock2"
 		},
 		count: 4
 	},
@@ -426,10 +399,10 @@
 	},
 	{
 		item: {
-			id: "cyclicmagic:book_ender",
 			tag: {
 				location_back: ""
-			}
+			},
+			id: "cyclicmagic:book_ender"
 		}
 	},
 	{
@@ -444,11 +417,11 @@
 		string_id: "mythic",
 		item_name: "Mythic",
 		color: 10693183,
-		glow: true,
+		glow: 1b,
 		drops: {
-			passive: 0,
+			boss: 0,
 			monster: 0,
-			boss: 0
+			passive: 0
 		}
 	}
 }

@@ -13,11 +13,11 @@
 		uid: "3cbb3562",
 		type: "item",
 		items: [{
-			id: "opencomputers:component",
 			tag: {
-				"oc:archClass": "li.cil.oc.server.machine.luac.NativeLua53Architecture",
-				"oc:archName": "Lua 5.3"
-			}
+				"oc:archName": "Lua 5.3",
+				"oc:archClass": "li.cil.oc.server.machine.luac.NativeLua53Architecture"
+			},
+			id: "opencomputers:component"
 		}],
 		ignore_nbt: 1b
 	},

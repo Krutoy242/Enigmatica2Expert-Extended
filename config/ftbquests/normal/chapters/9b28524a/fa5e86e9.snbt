@@ -1,14 +1,14 @@
 {
 	title: "{q.blood_magic.blood_magic.name}",
 	icon: {
-		id: "guideapi:bloodmagic-guide",
 		tag: {
-			G-API_Category_Page: 0,
-			G-API_Category: 1,
-			G-API_Entry_Page: 0,
 			G-API_Page: 3,
-			G-API_Entry: "minecraft:guide.bloodmagic.entry.architect.bloodrune"
-		}
+			G-API_Category_Page: 0,
+			G-API_Entry: "minecraft:guide.bloodmagic.entry.architect.bloodrune",
+			G-API_Category: 1,
+			G-API_Entry_Page: 0
+		},
+		id: "guideapi:bloodmagic-guide"
 	},
 	x: 1.1666666666666667d,
 	y: 1.5d,
@@ -28,10 +28,10 @@
 		uid: "0cf0f5b9",
 		type: "item",
 		item: {
-			id: "minecraft:potion",
 			tag: {
 				Potion: "minecraft:regeneration"
-			}
+			},
+			id: "minecraft:potion"
 		}
 	}]
 }

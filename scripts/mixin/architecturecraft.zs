@@ -1,9 +1,9 @@
+#modloaded architecturecraft
 #loader mixin
 #sideonly client
 
 // Fix crash on Java 21+ client
-#mixin Mixin
-#{targets: "com.elytradev.architecture.client.render.RenderingManager$CustomItemRenderOverrideList"}
+#mixin {targets: "com.elytradev.architecture.client.render.RenderingManager$CustomItemRenderOverrideList"}
 zenClass MixinRenderingManagerCustomItemRenderOverrideList {
     #mixin Redirect
     #{

@@ -1,0 +1,27 @@
+{
+	x: 6.375d,
+	y: 2.775d,
+	shape: "gear",
+	text: [
+		"{q.twilight_forest.touch_timewood_clock.desc}"
+	],
+	dependencies: [
+		"d0bdab2e"
+	],
+	size: 0.75d,
+	min_width: 350,
+	tasks: [{
+		uid: "f83bf9e6",
+		type: "interaction",
+		title: "Touch Timewood Clock",
+		icon: "twilightforest:magic_log_core",
+		match_type: "block_id",
+		match: "twilightforest:magic_log_core"
+	}],
+	rewards: [{
+		uid: "94eb7611",
+		type: "item",
+		item: "twilightforest:fiery_blood",
+		count: 2
+	}]
+}

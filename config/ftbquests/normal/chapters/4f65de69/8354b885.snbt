@@ -12,8 +12,8 @@
 		uid: "2e9f1e1d",
 		type: "item",
 		items: [{
-			id: "cyclicmagic:book_ender",
-			tag: {}
+			tag: {},
+			id: "cyclicmagic:book_ender"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -22,10 +22,10 @@
 		type: "custom",
 		title: "{e2ee.quest.rare}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "rare"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

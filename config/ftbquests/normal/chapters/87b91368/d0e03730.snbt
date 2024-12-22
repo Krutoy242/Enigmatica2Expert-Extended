@@ -1,9 +1,9 @@
 {
 	icon: {
-		id: "draconicevolution:mob_soul",
 		tag: {
 			EntityName: "quark:foxhound"
-		}
+		},
+		id: "draconicevolution:mob_soul"
 	},
 	x: 3.4d,
 	y: -4.8d,
@@ -13,16 +13,16 @@
 	dependencies: [
 		"dcb947b4"
 	],
-	or_tasks: true,
+	or_tasks: 1b,
 	tasks: [{
 		uid: "002a7d1c",
 		type: "interaction",
 		title: "Interact with Foxhound",
 		icon: {
-			id: "draconicevolution:mob_soul",
 			tag: {
 				EntityName: "quark:foxhound"
-			}
+			},
+			id: "draconicevolution:mob_soul"
 		},
 		match_type: "entity_id",
 		match: "quark:foxhound"
@@ -34,16 +34,88 @@
 			item: "minecraft:coal"
 		}],
 		count: 64L
+	},
+	{
+		uid: "b55a9047",
+		type: "item",
+		disable_toast: 1b,
+		items: [{
+			item: "minecraft:furnace"
+		},
+		{
+			item: "thaumcraft:smelter_basic"
+		},
+		{
+			item: "thaumcraft:smelter_thaumium"
+		},
+		{
+			item: "thaumcraft:smelter_void"
+		},
+		{
+			item: "thaumadditions:mithrillium_smelter"
+		},
+		{
+			item: "thaumadditions:adaminite_smelter"
+		},
+		{
+			item: "thaumadditions:mithminite_smelter"
+		},
+		{
+			item: "tconstruct:seared_furnace_controller"
+		},
+		{
+			item: "tconstruct:smeltery_controller"
+		},
+		{
+			item: "tcomplement:melter"
+		},
+		{
+			item: "immersiveengineering:stone_device 1 7"
+		},
+		{
+			item: "immersiveengineering:stone_device 1 1"
+		},
+		{
+			item: "immersiveengineering:metal_multiblock 1 13"
+		},
+		{
+			item: "ic2:te 1 12"
+		},
+		{
+			item: "ic2:te 1 50"
+		},
+		{
+			item: "ic2:te 1 100"
+		},
+		{
+			item: "engineersdecor:small_lab_furnace"
+		},
+		{
+			item: "mysticalagriculture:inferium_furnace"
+		},
+		{
+			item: "mysticalagriculture:prudentium_furnace"
+		},
+		{
+			item: "mysticalagriculture:intermedium_furnace"
+		},
+		{
+			item: "mysticalagriculture:superium_furnace"
+		},
+		{
+			item: "mysticalagriculture:supremium_furnace"
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "a9408e53",
 		type: "custom",
 		title: "{e2ee.quest.food}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "food"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

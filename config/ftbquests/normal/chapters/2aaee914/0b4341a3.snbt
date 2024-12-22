@@ -13,12 +13,12 @@
 		uid: "1d2a33c5",
 		type: "item",
 		item: {
-			id: "mekanism:configurator",
 			tag: {
 				mekData: {
 					energyStored: 60000.0d
 				}
-			}
+			},
+			id: "mekanism:configurator"
 		}
 	}]
 }

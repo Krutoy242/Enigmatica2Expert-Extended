@@ -1,17 +1,17 @@
 {
 	title: "{q.getting_started.technical_quest__6.name}",
-	disable_toast: true,
+	disable_toast: 1b,
 	x: 0.24d,
 	y: 3.5d,
 	text: [
 		"{q.getting_started.technical_quest__6.desc}"
 	],
-	hide_dependency_lines: true,
+	hide_dependency_lines: 1b,
 	dependencies: [
 		"ca359f03"
 	],
 	size: 0.1d,
-	optional: true,
+	optional: 1b,
 	tasks: [{
 		uid: "9d4e3656",
 		type: "item",
@@ -19,10 +19,10 @@
 			item: "appliedenergistics2:material"
 		},
 		{
-			id: "tconstruct:sharpening_kit",
 			tag: {
 				Material: "treatedwood"
-			}
+			},
+			id: "tconstruct:sharpening_kit"
 		}]
 	}]
 }

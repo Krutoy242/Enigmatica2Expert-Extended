@@ -13,12 +13,12 @@
 		uid: "831f9d7a",
 		type: "item",
 		items: [{
-			id: "openblocks:trophy",
 			tag: {
 				entity_id: "minecraft:sheep"
-			}
+			},
+			id: "openblocks:trophy"
 		}],
-		ignore_damage: true,
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{
