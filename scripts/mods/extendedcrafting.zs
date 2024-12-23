@@ -1,4 +1,5 @@
 #modloaded extendedcrafting thermalfoundation
+#priority -1
 import mods.extendedcrafting.TableCrafting.addShaped;
 
 val piston = <minecraft:piston>;
@@ -306,7 +307,7 @@ addShaped(0, <immersiveengineering:metal_decoration0:3> * 4, Grid(['pretty',
   '□ ▬ □'], {
   '□': <ore:plateCopper>,     // Copper Plate
   '▬': <ore:ingotConstantan>, // Constantan Ingot
-  'e': <ore:eyeofredstone>,   // Eye of Redstone
+  'e': <ore:ingotSignalum>,   // Signalum Ingot
 }).shaped());
 
 // [Light Engineering Block]*6 from [Aluminium Scaffolding][+2]
@@ -315,16 +316,16 @@ addShaped(0, <immersiveengineering:metal_decoration0:4> * 6, Grid(['pretty',
   'A l A',
   '□ A □'], {
   '□': <ore:plateConstantan>,     // Constantan Plate
-  'A': <ore:alloyAdvanced>,       // Enriched Alloy
+  'A': <ore:ingotRedstoneAlloy>,  // Redstone Alloy Ingot
   'l': <ore:scaffoldingAluminum>, // Aluminium Scaffolding
 }).shaped());
 
 // [Heavy Engineering Block]*8 from [Steel Scaffolding][+3]
-addShaped(0, <immersiveengineering:metal_decoration0:5> * 8, Grid(['pretty',
+addShaped(0, <immersiveengineering:metal_decoration0:5> * 10, Grid(['pretty',
   '□ E □',
   'S t S',
   '□ E □'], {
-  '□': <ore:plateUranium>,                // Uranium Plate
+  '□': <ore:plateDU>,                     // DU Plating
   'E': <ore:alloyElite>,                  // Reinforced Alloy
   'S': <immersiveengineering:material:9>, // Steel Mechanical Component
   't': <ore:scaffoldingSteel>,            // Steel Scaffolding
@@ -360,6 +361,16 @@ addShaped(0, <actuallyadditions:block_misc:9> * 4, Grid(['pretty',
   '□': <ore:plateInvar>,              // Invar Plate
   'G': <forestry:thermionic_tubes:4>, // Golden Electron Tube
   '⌂': <forestry:hardened_machine>,   // Hardened Casing
+}).shaped());
+
+// [Machine Case]*3 from [Advanced Machine Casing][+2]
+addShaped(0, <teslacorelib:machine_case> * 3, Grid(['pretty',
+  'Q ■ Q',
+  '■ ▄ ■',
+  'Q ■ Q'], {
+  'Q': <extrautils2:decorativesolid:7>, // Quartzburnt
+  '■': <mekanism:plasticblock:15>,      // White Plastic Block
+  '▄': <ore:machineBlockAdvanced>,      // Advanced Machine Casing
 }).shaped());
 
 // [Basic Plating]*6 from [Graphite Block][+2]
@@ -444,6 +455,24 @@ addShaped(0, <actuallyadditions:block_laser_relay> * 10, Grid(['pretty',
   'A': <actuallyadditions:item_misc:8>,   // Advanced Coil
 }).shaped());
 
+// [ME Dense Smart Cable - Fluix]*8 from [Fluix Steel Ingot][+1]
+addShaped(0, <appliedenergistics2:part:76> * 8, Grid(['pretty',
+  '■ ■ ■',
+  '▬ ▬ ▬',
+  '■ ■ ■'], {
+  '■': <ore:blockGlass>,      // Glass
+  '▬': <ore:ingotFluixSteel>, // Fluix Steel Ingot
+}).shaped());
+
+// [ME Smart Cable - Fluix]*8 from [Fluix Steel Shard][+1]
+addShaped(0, <appliedenergistics2:part:56> * 8, Grid(['pretty',
+  'G G G',
+  'F F F',
+  'G G G'], {
+  'G': <ore:paneGlass>,                                       // Glass Pane
+  'F': <tconstruct:shard>.withTag({Material: "fluix_steel"}), // Fluix Steel Shard
+}).shaped());
+
 // [Wood Casing]*4 from [Wood Pile][+2]
 addShaped(0, <actuallyadditions:block_misc:4> * 4, Grid(['pretty',
   '# ╱ #',
@@ -457,14 +486,14 @@ addShaped(0, <actuallyadditions:block_misc:4> * 4, Grid(['pretty',
 // [Machine Frame]*4 from [Machine Case][+5]
 addShaped(0, <rftools:machine_frame> * 4, Grid(['pretty',
   'H ¤ H',
-  'D M D',
-  '▬ A ▬'], {
-  'H': <ic2:heat_vent>.anyDamage(),               // Heat Vent
-  '¤': <ore:gearLumium>,                          // Lumium Gear
-  'D': <industrialforegoing:dryrubber>,           // Dry Rubber
-  'M': <teslacorelib:machine_case>,               // Machine Case
-  '▬': <ore:ingotPinkMetal>,                      // Pink Slime Ingot
-  'A': <ore:ingotMeat>,                           // Cooked Meat Ingot
+  '■ M ■',
+  's A s'], {
+  'H': <ic2:heat_vent>,                  // Heat Vent
+  '¤': <thermalfoundation:material:294>, // Lumium Gear 
+  '■': <mekanism:plasticblock:15>,       // White Plastic Block
+  'M': <teslacorelib:machine_case>,      // Machine Case
+  's': <industrialforegoing:pink_slime>, // Pink Slime
+  'A': <tconevo:edible:1>                // Cooked Meat Ingot
 }).shaped());
 
 // [Advanced Control Circuit]*6 from [Electronic Circuit][+2]
@@ -497,15 +526,24 @@ addShaped(0, <forestry:sturdy_machine> * 4, Grid(['pretty',
   '¤': <ore:gearBronze>,     // Bronze Gear
 }).shaped());
 
+// [Basic Machine Casing]*8 from [Titanium Plate][+1]
+addShaped(0, <ic2:resource:12> * 6, Grid(['pretty',
+  '□ ■ □',
+  '■   ■',
+  '□ ■ □'], {
+  '□': <ore:plateTitanium>,          // Titanium Plate
+  '■': <ore:blockConstructionAlloy>, // Iron Alloy Block
+}).shaped());
+
 // [Advanced Machine Casing]*2 from [Basic Machine Casing][+3]
 addShaped(0, <ic2:resource:13> * 2, Grid(['pretty',
   '▬ - ▬',
   '□ ■ □',
   '▬ - ▬'], {
-  '▬': <ore:ingotTough>,         // Tough Alloy Ingot
-  '-': <ore:ingotHardCarbon>,    // Hard Carbon Alloy Ingot
-  '□': <ore:plateAdvancedAlloy>, // Advanced Alloy
-  '■': <ore:machineBlock>,       // Basic Machine Casing
+  '▬': <ore:ingotElectricalSteel>,         // Electrical Steel Ingot
+  '-': <ore:ingotHardCarbon>,              // Hard Carbon Alloy Ingot
+  '□': <ore:plateAdvancedAlloy>,           // Advanced Alloy
+  '■': <ore:machineBlock>,                 // Basic Machine Casing
 }).shaped());
 
 // [Machine Chassis]*2 from [Black Iron Ingot][+2]
@@ -537,4 +575,113 @@ addShaped(0, <nuclearcraft:part:8> * 2, Grid(['pretty',
   '▬': <ore:ingotElectricalSteel>, // Electrical Steel Ingot
   'C': <ore:solenoidCopper>,       // Copper Solenoid
   '‚': <ore:nuggetElectrum>,       // Electrum Nugget
+}).shaped());
+
+// [Simple Machine Chassis]*3 from [Hardened Cell Frame][+3]
+addShaped(0, <enderio:item_material> * 3, Grid(['pretty',
+  '□ ¤ □',
+  'L ◘ L',
+  '□ ¤ □'], {
+  '□': <ore:plateTitaniumIridium>,        // Titanium Iridium Alloy Plate
+  '¤': <ore:gearSteel>,                   // Steel Gear
+  'L': <endreborn:block_lormyte_crystal>, // Lormyte Stone
+  '◘': <thermalexpansion:frame:129>,      // Hardened Cell Frame
+}).shaped());
+
+// [Steel Chassis]*20 from [Steel Gear][+8]
+addShaped(0, <nuclearcraft:part:12> * 20, Grid(['pretty',
+  '_ Ξ ≡',
+  '- ¤ F',
+  '‗ = ▬'], {
+  '_': <ore:ingotTerrasteel>,      // Terrasteel Ingot
+  'Ξ': <ore:ingotEndSteel>,        // End Steel Ingot
+  '≡': <ore:ingotElectricalSteel>, // Electrical Steel Ingot
+  '-': <ore:dragonsteelIngot>,     // any Dragonsteel Ingot
+  '¤': <ore:gearSteel>,            // Steel Gear
+  'F': <ore:ingotFluixSteel>,      // Fluix Steel Ingot
+  '‗': <ore:ingotHSLASteel>,       // HSLA Steel Ingot
+  '=': <ore:ingotDarkSteel>,       // Dark Steel Ingot
+  '▬': <ore:ingotStainlessSteel>,  // Stainless Steel Ingot
+}).shaped());
+
+// [Empty Frame]*6 from [Silver Gear][+2]
+addShaped(0, <nuclearcraft:part:11> * 6, Grid(['pretty',
+  '□ ¤ □',
+  'I   I',
+  '□ ¤ □'], {
+  '□': <ore:plateAdvanced>,         // Advanced Plating
+  '¤': <ore:gearSilver>,            // Silver Gear
+  'I': <nuclearcraft:water_source>, // Infinite Water Source
+}).shaped());
+
+// [Copper Solenoid]*8 from [Advanced Alloy][+2]
+addShaped(0, <nuclearcraft:part:4> * 8, Grid(['pretty',
+  '‚ ‚ ‚',
+  '■ □ ■',
+  '‚ ‚ ‚'], {
+  '‚': <ore:nuggetAluminum>,                      // Aluminum Nugget
+  '■': <immersiveengineering:metal_decoration0>,  // Copper Coil Block
+  '□': <ore:plateAdvancedAlloy>,                  // Advanced Alloy
+}).shaped());
+
+// [Basic Coil]*3 from [Electrical Steel Ingot][+2]
+addShaped(0, <actuallyadditions:item_misc:7> * 3, Grid(['pretty',
+  '- ▬ ╱',
+  '▬ ╱ ▬',
+  '╱ ▬ -'], {
+  '-': <ore:ingotElectricalSteel>, // Electrical Steel Ingot
+  '▬': <ore:ingotAluminum>,        // Aluminum Ingot
+  '╱': <forestry:oak_stick>,       // Impregnated Stick
+}).shaped());
+
+// [Advanced Coil]*8 from [Basic Coil][+1]
+addShaped(0, <actuallyadditions:item_misc:8> * 8, Grid(['pretty',
+  '  ▬ B',
+  '▬ B ▬',
+  'B ▬  '], {
+  '▬': <ore:ingotLumium>,               // Lumium Ingot
+  'B': <actuallyadditions:item_misc:7>, // Basic Coil
+}).shaped());
+
+// [Electric Motor]*3 from [Copper Wire Coil][+2]
+addShaped(0, <ic2:crafting:6> * 3, Grid(['pretty',
+  '  ▬  ',
+  '□ C □',
+  '  ▬  '], {
+  '▬': <ore:ingotFerroboron>,       // Ferroboron Alloy Ingot
+  '□': <ore:plateBasic>,            // Basic Plating
+  'C': scripts.mods.industrialcraft2.copperCoil, // Copper Wire Coil
+}).shaped());
+
+// [Machine Structure]*48 from [Resonant Cell Frame (Full)][+2]
+addShaped(0, <libvulpes:structuremachine> * 48, Grid(['pretty',
+  '■ A ■',
+  'A ◘ A',
+  '■ A ■'], {
+  '■': <ore:blockDilithium>,         // Block of Dilithium
+  'A': <ore:processorAdvanced>,      // Advanced Processor
+  '◘': <thermalexpansion:frame:148>, // Resonant Cell Frame (Full)
+}).shaped());
+
+// [Connector]*4 from [Vibrant Alloy Ingot][+2]
+addShaped(0, <environmentaltech:connector> * 4, Grid(['pretty',
+  '♥ ■ ♥',
+  '■ ▬ ■',
+  '♥ ■ ♥'], {
+  '♥': <ore:crystalRedstone>,   // Destabilized Clathrate
+  '■': <ore:blockMithril>,      // Block of Mana Infused Metal
+  '▬': <ore:ingotVibrantAlloy>, // Vibrant Alloy Ingot
+}).shaped());
+
+// [Basic Fusion Crafting Injector]*8 from [Genetics Processor][+5]
+addShaped(0, <draconicevolution:crafting_injector> * 8, Grid(['pretty',
+  'Ϟ ▬ Ϟ',
+  '* G *',
+  'A √ A'], {
+  'Ϟ': <draconicevolution:wyvern_energy_core>, // Wyvern Energy Core
+  '▬': <ore:ingotYttrium>,                     // Yttrium Ingot
+  '*': <ore:crystalPladium>,                   // Pladium Crystal
+  'G': <gendustry:genetics_processor>,         // Genetics Processor
+  'A': <ore:processorAdvanced>,                // Advanced Processor
+  '√': <draconicevolution:energy_crystal:6>,   // Basic Wireless Energy Crystal
 }).shaped());
