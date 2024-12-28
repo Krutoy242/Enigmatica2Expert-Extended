@@ -1,5 +1,11 @@
 {
 	title: "{q.botania.kekimurus.name}",
+	icon: {
+		tag: {
+			type: "kekimurus"
+		},
+		id: "botania:specialflower"
+	},
 	x: 1.563663d,
 	y: 11.24698d,
 	text: [
