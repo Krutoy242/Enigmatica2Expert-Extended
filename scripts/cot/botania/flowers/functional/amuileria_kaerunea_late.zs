@@ -12,6 +12,8 @@ import mods.randomtweaker.cote.BlockAdded;
 import mods.randomtweaker.cote.ISubTileEntity;
 import mods.randomtweaker.cote.ISubTileEntityFunctional;
 import mods.randomtweaker.cote.SubTileEntityInGame;
+import native.net.minecraft.util.EnumParticleTypes;
+import native.net.minecraft.world.WorldServer;
 
 static recipesLigthningFlower as IItemStack[string] = {
 } as IItemStack[string];
@@ -70,7 +72,7 @@ function charge(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGam
         server.commandManager.executeCommandSilent(server, '/summon minecraft:lightning_bolt '~pos.x~' '~pos.y~' '~pos.z );
         subtile.setCustomData({charge: 0});
     } else{
-        server.commandManager.executeCommandSilent(server, "/particle magicCrit "~pos.x~" "~(1.2f + pos.y)~" "~pos.z~" .4 .4 .4 0 5");
+        (world.native as WorldServer).spawnParticle(EnumParticleTypes.CRIT_MAGIC, 0.5f + pos.x, 1.2 + pos.y, 0.5f + pos.z, 5, 0.4, 0.4, 0.4, 0, 0);
     }
     return;
 }

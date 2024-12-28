@@ -14,6 +14,8 @@ import mods.randomtweaker.cote.ISubTileEntity;
 import mods.randomtweaker.cote.BlockAdded;
 import mods.randomtweaker.cote.ISubTileEntityFunctional;
 import mods.contenttweaker.Color;
+import native.net.minecraft.util.EnumParticleTypes;
+import native.net.minecraft.world.WorldServer;
 
 static manaCost as int = 100;
 static nutritionGain as float = 1.0f;
@@ -59,5 +61,5 @@ function addNutritientToPlayer(data as IData, player as IPlayer, subtile as SubT
       }
     }});
     player.sendPlaySoundPacket("botania:goldenlaurel", "ambient", player.position, 0.05f, 1.0f);
-    server.commandManager.executeCommandSilent(server, "/particle happyVillager "~player.x~" "~(1.2f + player.y)~" "~player.z~" "~".5 .5 .5 0 5");
+    (player.world.native as WorldServer).spawnParticle(EnumParticleTypes.VILLAGER_HAPPY , player.x, 1.2f + player.y, 0.5f + player.z, 5, 0.5, 0.5, 0.5, 0, 0);
 }

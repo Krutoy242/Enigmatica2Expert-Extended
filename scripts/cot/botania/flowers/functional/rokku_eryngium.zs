@@ -16,6 +16,8 @@ import mods.randomtweaker.cote.ISubTileEntityFunctional;
 import mods.randomtweaker.cote.SubTileEntityInGame;
 import mods.randomtweaker.cote.Update;
 import mods.zenutils.DataUpdateOperation.OVERWRITE;
+import native.net.minecraft.util.EnumParticleTypes;
+import native.net.minecraft.world.WorldServer;
 
 static validCrystalNames as IItemStack[string] = {
     'item.itemcelestialcrystal'         : <item:astralsorcery:itemcelestialcrystal>,
@@ -109,7 +111,7 @@ function breakCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntit
 
 function cutCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame, sizeChange as int, cuttingChange as int) as void{
     subtile.setCustomData(cutData(subtile.data, sizeChange, cuttingChange));
-    server.commandManager.executeCommandSilent(server, "/particle blockcrack "~pos.x~" "~pos.y~" "~pos.z~" 0 0 0 1 0 force @a 35");
+    (world.native as WorldServer).spawnParticle(EnumParticleTypes.BLOCK_CRACK , 0.5f + pos.x, 0.7f + pos.y, 0.5f + pos.z, 1, 0.0, 0.0, 0.0, 0, 35);
     scripts.lib.sound.play("minecraft:entity.wither.break_block", pos, world);
     return;
 }
