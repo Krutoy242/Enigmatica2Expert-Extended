@@ -17,6 +17,10 @@ import mods.randomtweaker.cote.ISubTileEntity;
 import mods.randomtweaker.cote.ISubTileEntityFunctional;
 import mods.randomtweaker.cote.SubTileEntityInGame;
 import mods.zenutils.DataUpdateOperation.OVERWRITE;
+import native.net.minecraft.world.World;
+import native.net.minecraft.tileentity.TileEntity;
+import native.vazkii.botania.common.block.tile.mana.TilePool;
+import native.vazkii.botania.common.block.tile.mana.TileSpreader;
 
 static manaTransportEfficiency as float = 0.8f;
 
@@ -28,26 +32,23 @@ antirrhift.onUpdate = function(subtile, world, pos) {
     if(world.isRemote()) return;
     if(!subtile.isValidBinding()) return;
     //get mana buffer
-    val manaBufferPos = subtile.getBindingForCrT();
-    val manaBuffer = world.getBlock(manaBufferPos);
-    if(manaBuffer.data.forceClientBindingY == -1) return;
+    val nWorld = world as World;
+    val manaBuffer = nWorld.getTileEntity(subtile.getBindingForCrT());
+    if(!(manaBuffer instanceof TileSpreader)) return;
+    val tileBuffer = manaBuffer as TileSpreader;
+    if(isNull(tileBuffer.getBinding())) return;
     //get manapool
-    val manaPoolPos = toBlockPos(manaBuffer.data.forceClientBindingX, manaBuffer.data.forceClientBindingY, manaBuffer.data.forceClientBindingZ);
-    val manaPool = world.getBlock(manaPoolPos);
-    if(isNull(manaPool.data.manaCap)) return;
-    if(manaPool.data.manaCap == manaPool.data.mana) return;
+    val manaPool = nWorld.getTileEntity(tileBuffer.getBinding());
+    if(!(manaPool instanceof TilePool)) return;
+    val tilePool = manaPool as TilePool;
+    if(tilePool.isFull()) return;
     //mana calculations
-    val manaToAdd = manaTransportEfficiency * manaBuffer.data.mana;
-    val newManaInPool = Math.min((manaPool.data.manaCap)  as int , (manaToAdd + manaPool.data.mana)  as int );
-    val manaToReturn = (((manaToAdd + manaPool.data.mana - newManaInPool) as float) / manaTransportEfficiency) as int;
-    //Update manapool
-    world.setBlockState(world.getBlockState(manaPoolPos), manaPool.data.deepUpdate({mana : newManaInPool},{mana : OVERWRITE}), manaPoolPos);
-    //Update mana buffer
-    world.setBlockState(world.getBlockState(manaBufferPos), manaBuffer.data.deepUpdate({mana : manaToReturn},{mana : OVERWRITE}), manaBufferPos);
+    val manaToAdd = manaTransportEfficiency * tileBuffer.getCurrentMana();
+    val spaceInPool = tilePool.getAvailableSpaceForMana();
+    if(manaToAdd > spaceInPool) return;
+    //transport mana
+    tilePool.recieveMana(manaToAdd);
+    tileBuffer.recieveMana(-1*tileBuffer.getCurrentMana());
     return;
 };
 antirrhift.register();
-
-function toBlockPos(x as int, y  as int, z  as int) as IBlockPos{
-    return crafttweaker.util.Position3f.create(x, y, z) as IBlockPos;
-}
