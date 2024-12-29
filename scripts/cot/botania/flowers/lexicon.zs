@@ -3,6 +3,15 @@ import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 
+/*
+This file add/removes pages, entries and recipes diplayed in lexica botania.
+
+It does 3 things
+- adds new entries (mostly cutom made flowers)
+- replaces recipes related to botania craftings that are displayed in lexica botania
+- removes entries with crafting table recipes (since it's not working correctly)
+*/
+
 //////////////////////
 //Generating flowers//
 //////////////////////
@@ -110,6 +119,19 @@ mods.botania.Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: "am
 /////////////////
 //Lexicon fixes//
 /////////////////
+
+/*
+Due to how lexicon works, it's impossible to fix page with crafting table recipe. 
+Futhermore the way botania lexicon works removing pages can be confusing here's example:
+
+We got entry with 5 pages.
+[1][2][3][4][5]
+And we want to remove 3rd and 4th page. If we remove 3rd page, we remove page with index 2. This is how it will look then.
+[1][2][4][5]    //after removing index "2"
+Now we want remove page with number "4", we once again want to remove page with index 2.
+[1][2][5]       //after removing index "2" second time
+*/
+
 mods.botania.Lexicon.removePage("botania.entry.runeAltar", 7);
 mods.botania.Lexicon.removePage("botania.entry.runeAltar", 7);
 mods.botania.Lexicon.removePage("botania.entry.runeAltar", 7);
