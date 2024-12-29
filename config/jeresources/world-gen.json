@@ -32442,6 +32442,278 @@
     "dim": "Block Drops"
   },
   {
+    "block": "botania:mushroom:0",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:0",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:1",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:1",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:2",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:2",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:3",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:3",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:4",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:4",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:5",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:5",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:6",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:6",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:7",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:7",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:8",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:8",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:9",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:9",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:10",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:10",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:11",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:11",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:12",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:12",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:13",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:13",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:14",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:14",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
+    "block": "botania:mushroom:15",
+    "distrib": "0,1.0;255,1.0;",
+    "silktouch": false,
+    "dropsList": [
+      {
+        "itemStack": "botania:petal:15",
+        "fortunes": {
+          "0": 1,
+          "1": 2,
+          "2": 4,
+          "3": 7
+        }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
     "block": "endreborn:block_lormyte_crystal",
     "distrib": "0,1.0;255,1.0;",
     "silktouch": false,

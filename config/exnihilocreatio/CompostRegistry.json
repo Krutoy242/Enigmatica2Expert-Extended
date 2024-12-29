@@ -35,6 +35,6 @@
   "biomesoplenty:fleshchunk"              : {"value": 0.1   , "color": {"r": 0.58,"g": 0.24,"b": 0.26,"a": 1.0},"compostBlock": {"name": "minecraft:dirt","meta": 0}},
 
   "ore:egg"                               : {"value": 0.3334, "color": {"r": 0.84,"g": 0.92,"b": 0.89,"a": 1.0},"compostBlock": {"name": "minecraft:dirt","meta": 0}},
-  "ore:listAllfishraw"                    : {"value": 0.4   , "color": {"r": 0.84,"g": 0.92,"b": 0.89,"a": 1.0},"compostBlock": {"name": "minecraft:dirt","meta": 0}},
+  "ore:listAllfishraw"                    : {"value": 0.6668, "color": {"r": 0.84,"g": 0.92,"b": 0.89,"a": 1.0},"compostBlock": {"name": "minecraft:dirt","meta": 0}},
   "ore:string"                            : {"value": 0.2   , "color": {"r": 0.84,"g": 0.92,"b": 0.89,"a": 1.0},"compostBlock": {"name": "minecraft:dirt","meta": 0}}
 }

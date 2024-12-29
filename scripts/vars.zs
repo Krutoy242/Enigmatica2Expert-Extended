@@ -1,5 +1,6 @@
 #ignoreBracketErrors
 #priority 3000
+#reloadable
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;

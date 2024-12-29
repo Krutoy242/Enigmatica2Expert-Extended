@@ -123,6 +123,15 @@ craft.remake(<actuallyadditions:block_xp_solidifier>, ['pretty',
   '~': LiquidIngr('xpjuice') | LiquidIngr('experience') | LiquidIngr('essence'),
 });
 
+craft.remake(<actuallyadditions:block_fishing_net>, ['pretty',
+  '  §  ',
+  'C * C',
+  '  C  '], {
+  '§': <contenttweaker:fish_singularity>,
+  'C': <minecraft:web>,
+  '*': <actuallyadditions:item_crystal_empowered:4>,
+});
+
 // Wood Casing
 recipes.remove(<actuallyadditions:block_misc:4>);
 recipes.addShapedMirrored('Wood Casing',

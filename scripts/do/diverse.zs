@@ -16,21 +16,12 @@ import crafttweaker.item.IItemStack;
 function addRecipe(
   recipeName as string,
   E as IItemStack, // Empty, zero-charged base ingredient
-  F as IItemStack, // Filling, intermediate item, partially charged
   R as IItemStack, // Result item, fully charged
-  A as IIngredient, // All items that may be used as fuel
-  needPower as double
+  A as IIngredient // All items that may be used as fuel
 ) as void {
-  F.addAdvancedTooltip(function (item) {
-    return mods.zenutils.I18n.format(
-      game.localize('e2ee.do.diverse.power'),
-      mods.zenutils.StaticString.format('%,f', getFireproofPower(item)).replaceAll('\\.0+$', '')
-    );
-  });
-
   // Actual recipe
   recipes.addShaped(recipeName, R, [
-    [(E | F).marked('0'), A.marked('1'), A.marked('2')],
+    [(E | R.anyDamage()).marked('0'), A.marked('1'), A.marked('2')],
     [A.marked('3'), A.marked('4'), A.marked('5')],
     [A.marked('6'), A.marked('7'), A.marked('8')],
   ],
@@ -58,27 +49,35 @@ function addRecipe(
       }
     }
 
-    // Calculate median value
+    // Calculate power
     val values = intArrayOf(length, 0);
     var i = 0;
     for _, v in newMap { values[i] = v as int; i += 1; }
-    val median = getMedian(values);
+    val power = getPower(values);
 
-    // Calculate power
-    val power = getPower(median, length);
+    val ratio = power / R.maxDamage;
 
-    if (power >= needPower) return out;
+    if (ratio >= 1.0) return out;
 
     // Create new singularity data
     var singularity = !isNull(ins['0'].tag.singularity) ? ins['0'].tag.singularity : {};
     for i, v in newMap { singularity += { [i]: v as int } as IData; }
 
-    return F.updateTag({ singularity: singularity });
+    return R
+      .updateTag({ singularity: singularity })
+      .withDamage((1.0 - ratio) * R.maxDamage);
   }, null);
 }
 
-function getPower(median as double, length as double) as double {
-  return (median * pow(2.0, length - 1));
+
+function getPower(amountArr as int[]) as double {
+  var power = 0.0;
+  for v in amountArr { power += v; print('    '~v);}
+  var diversePower = 0.0;
+  for v in amountArr { diversePower += mods.ctutils.utils.Math.log10(v) / 2; }
+  val diverseMult = pow(2.0, diversePower);
+  power *= diverseMult;
+  return power;
 }
 
 function getMapLength(map as IData) as int {
@@ -96,23 +95,18 @@ function getMedian(values as int[]) as int {
   else return values[mid];
 }
 
-function getIntMapMedian(map as IData, length as int) as int {
-  if (length <= 0) return 0;
-  var i = 0;
-  val values = intArrayOf(length, 0);
-  for _, value in map.asMap() {
-    values[i] = value;
-    i += 1;
-  }
-  return getMedian(values);
-}
-
-function getFireproofPower(item as IItemStack) as double {
+function getItemPower(item as IItemStack) as double {
   if (isNull(item.tag.singularity) || isNull(item.tag.singularity.asMap())) return 0.0;
   val length = getMapLength(item.tag.singularity);
-  val median = getIntMapMedian(item.tag.singularity, length);
+  
+  var i = 0;
+  val amountArr = intArrayOf(length, 0);
+  for _, v in item.tag.singularity.asMap() {
+    amountArr[i] = v;
+    i += 1;
+  }
 
-  return getPower(median, length);
+  return getPower(amountArr);
 }
 
 function getItemFromString(itemStr as string) as IItemStack {

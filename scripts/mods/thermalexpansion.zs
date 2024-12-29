@@ -73,6 +73,16 @@ recipes.addShaped('Nullifier',
     [<ore:ingotTin>, <extrautils2:trashcan>, <ore:ingotTin>],
     [<ore:ingotTin>, <ore:ingotTin>, <ore:ingotTin>]]);
 
+craft.remake(<thermalexpansion:device:4>, ['pretty',
+  '  §  ',
+  '¤ ◙ ¤',
+  '  ♥  '], {
+  '§': <contenttweaker:fish_singularity>,
+  '¤': <ore:gearIron>,
+  '◙': <thermalexpansion:frame:64>,
+  '♥': <thermalfoundation:material:512>,
+});
+
 // Igneous Extruder
 recipes.removeByRecipeName("thermalexpansion:machine_15");
 recipes.addShaped('Igneous Extruder',

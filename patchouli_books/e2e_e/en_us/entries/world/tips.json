@@ -135,6 +135,12 @@
       "type": "text",
       "text": "$(li)Press \"§lShift+C§r\" to crawl$(li)The OP command §n/bcore_util regenchunk§r regenerates the entire chunk.$(li)Use the command §n/tmg_deathlist [TAB] [TAB]§r to assist in locating your grave.$(li)§bSplash Water Bottle§r can extinguish entities on fire.",
       "title": "Tips"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "text": "$(li)Press \"§lR§r\" or \"§lU§r\" while hovering over an item in the §2Patchouli§r book to view its recipes.",
+      "title": "Tips"
     }
   ]
 }

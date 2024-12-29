@@ -170,11 +170,6 @@ scripts.process.saw(<ore:bouleSilicon>, <advancedrocketry:wafer>, 'except: shape
 
 // Unify P-Type Doped Silicon
 <ore:siliconWafer>.add(<advancedrocketry:wafer>);
-mods.qmd.target_chamber.removeRecipeWithInput(<qmd:semiconductor:3>, ((<particle:boron_ion> * 1000000) ^ 600) ~ 2.0);
-mods.qmd.target_chamber.addRecipe(
-  <ore:waferSilicon>, null, ((<particle:boron_ion> * 1000000) ^ 600) ~ 2.0, <qmd:semiconductor>, null,
-  null, null, null, 1000, 1.0, 0
-);
 
 // mods.qmd.nucleosynthesis_chamber.addRecipe(IIngredient inputFluid1, IIngredient inputFluid2, IIngredient inputParticle, IIngredient outputFluid1, IIngredient outputFluid2, {long maxEnergy}, {long heatRelased})
 mods.qmd.nucleosynthesis_chamber.addRecipe(<liquid:sky_stone> * 52, <liquid:enrichedlava> * 20, <particle:neutron> * 1000000, <liquid:neutronium> * 72, null, 1000000, 874000);

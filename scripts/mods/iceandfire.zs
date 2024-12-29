@@ -317,6 +317,13 @@ craft.remake(<iceandfire:fishing_spear>, ['pretty',
   'S': <tconstruct:arrow_head>.withTag({ Material: 'steel' }), // Steel Arrow Head
   'M': <extrautils2:decorativesolidwood>, // Magical Planks
 });
+craft.make(<iceandfire:fishing_spear>, ['pretty',
+  'S    ',
+  '  M  ',
+  '    M'], {
+  'S': <tconstruct:knife_blade>.withTag({ Material: 'steel' }), // Steel Arrow Head
+  'M': <extrautils2:decorativesolidwood>, // Magical Planks
+});
 
 // Add obtaining
 // [Dreadwood Log]*8 from [Dread Shard][+1]

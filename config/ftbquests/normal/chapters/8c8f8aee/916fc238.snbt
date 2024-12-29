@@ -1,8 +1,11 @@
 {
-	x: -6.833333333333333d,
-	y: 6.666666666666667d,
+	x: -6.7d,
+	y: 5.3d,
 	text: [
 		"{q.actually_additions.powered_furnace.desc}"
+	],
+	dependencies: [
+		"03d4419e"
 	],
 	tasks: [{
 		uid: "c74ba114",

@@ -57,6 +57,21 @@ for craftMat in [
   buildItem(craftMat);
 }
 
+// Custom singularities
+var x = VanillaFactory.createExpandItem('woodweave_singularity');
+x.creativeTab = <creativetab:other>;
+x.maxDamage = 30000;
+x.noRepair = true;
+// x.attackSpeed = 0; // Changing this values not working for unknown reason
+// x.attackDamage = 0;
+x.register();
+
+x = VanillaFactory.createExpandItem('fish_singularity');
+x.creativeTab = <creativetab:other>;
+x.maxDamage = 30000;
+x.noRepair = true;
+x.register();
+
 createBlockStone('compressed_skystone', 6, <blockmaterial:rock>);
 createBlockStone('compressed_andesite', 4, <blockmaterial:rock>);
 createBlockStone('compressed_diorite', 4, <blockmaterial:rock>);
@@ -236,7 +251,7 @@ buildItem('dust_tiny_gold');
 buildItem('dust_tiny_silver');
 buildItem('compressed_tallow');
 
-var x = VanillaFactory.createItem('bee_diversity');
+x = VanillaFactory.createExpandItem('bee_diversity');
 x.setCreativeTab(<creativetab:other>);
 x.rarity = 'rare';
 x.register();

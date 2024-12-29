@@ -280,6 +280,7 @@ key_key.toggle_focus.desc:15
 key_key.toggle_shaders:40
 key_key.toggleFoVChanges:51:SHIFT
 key_key.togglehud.desc:0
+key_key.toggleLiquids:38
 key_key.togglePerspective:63
 key_key.togglePotionParticles:66:CONTROL
 key_key.toggleTimeOfDayOverlay:0
@@ -413,4 +414,5 @@ modelPart_right_pants_leg:true
 modelPart_hat:true
 key_gui.xaero_toggle_tracked_players_on_map:0
 
+key_key.toggleVisible:0
 key_of.key.zoom:-97

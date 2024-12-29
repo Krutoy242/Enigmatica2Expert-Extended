@@ -423,14 +423,14 @@ craft.remake(<cyclicmagic:block_forester>, ['pretty',
   'L': <tconstruct:firewood>, // Lavawood
 });
 
-// [Automatic Fishing Net] from [Pebble]*2[+2]
 craft.remake(<cyclicmagic:block_fishing>, ['pretty',
-  'M C M',
+  'M § M',
   'C r C',
   'M C M'], {
-  'M': <extrautils2:decorativesolidwood>, // Magical Planks
-  'C': <minecraft:web>, // Cobweb
-  'r': <cyclicmagic:stone_pebble>, // Pebble
+  'M': <extrautils2:decorativesolidwood>,
+  '§': <contenttweaker:fish_singularity>,
+  'C': <minecraft:web>,
+  'r': <cyclicmagic:stone_pebble>,
 });
 
 // [Antimatter Evaporator] from [Sponge][+2]

@@ -184,6 +184,8 @@ tile.contenttweaker.conglomerate_of_sun.name=耀阳团块
 tile.contenttweaker.silicon_block.name=硅块
 item.contenttweaker.knowledge_absorber.name=知识吸收器
 
+item.contenttweaker.woodweave_singularity.name=§c木纹奇点
+item.contenttweaker.fish_singularity.name=§3鱼类奇点
 item.contenttweaker.supremium_boots_base.name=终极精华靴子核心基底
 item.contenttweaker.supremium_chest_base.name=终极精华胸甲核心基底
 item.contenttweaker.supremium_helmet_base.name=终极精华头盔核心基底
@@ -356,12 +358,9 @@ tooltips.lang.singularity.heat=§7中间产物。§r\n将此奇点与§l任何�
 tooltips.lang.singularity.burn=将此奇点与§l任何可燃物§r结合以添加充能。\n必须使用燃烧时间§l不同§r的可燃物。\n较长的燃烧时间将提供§l指数级§r的充能奖励。\n需要 §6%s§r 点充能。
 item.contenttweaker.any_burnable.name=§6任何可燃物
 
-# Wood singularity
-item.singularity.quartz.name=§e树皮奇点
-item.singularity.gold.name=§c木纹奇点
-tooltips.lang.singularity.bark=§7中间材料。§r\n将此奇点与§6任何抗燃木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为 §aM*2^(N-1)§r，其中 §aM§r 是木板的中位数，§aN§r 是木板类型的数量。\n§2§n右键§2某物品以查看木板列表。\n需要 §6%s§r 点能量。
-tooltips.lang.singularity.woodweave=将此奇点与§6任何抗燃木板§r组合以增加能量。\n§6木板类型的多样性§r呈指数增长。能量的计算公式为 §aM*2^(N-1)§r，其中 §aM§r 是木板的中位数，§aN§r 是木板类型的数量。\n需要 §6%s§r 点能量。
-item.contenttweaker.any_fireproof.name=§6任何抗燃木板
+# Singularities
+tooltips.lang.singularity.woodweave=与§6任何防火木材§r结合以增加充能。\n木材种类的§6多样性§r会以指数方式增加充能。\n需要§6%s§r充能。
+tooltips.lang.singularity.fish=与任何§6生鱼§r结合以增加充能。\n鱼类种类的§6多样性§r会以指数方式增加充能。\n需要§6%s§r充能。
 ##################################
 
 # Custom renames 重命名
@@ -428,7 +427,6 @@ e2ee.warn.wrong_installation=§6✖ §4您的模组包安装不正确！§6 ✖\
 e2ee.warn.wrong_world_type=§6✖ §4看起来您错误地生成了世界！§6 ✖\n§c若要玩Skyblock，在主菜单中导航至\n§6Mods§c ▶ §6Just Enough Dimensions§c 配置 ▶ §6Generic§c ▶ 并将 §6initialSpawnDimensionId§c 设置为 §63§c。之后，创建一个新世界。
 e2ee.do.charge=§f充能: §6%s§r
 e2ee.do.charge.bonus=§f加成: §7x§b%s§r
-e2ee.do.diverse.power=§f能量: §6%s§r
 e2ee.do.diverse.info=§2类型总数: §a%s§r\n§2中位数: §a%s§r\n§2奇点消耗的物品:\n%s
 e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
 e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r

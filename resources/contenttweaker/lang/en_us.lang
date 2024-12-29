@@ -184,6 +184,8 @@ tile.contenttweaker.conglomerate_of_sun.name=Conglomerate Of Sun
 tile.contenttweaker.silicon_block.name=Silicon Block
 item.contenttweaker.knowledge_absorber.name=Knowledge Absorber
 
+item.contenttweaker.woodweave_singularity.name=§cWoodweave Singularity
+item.contenttweaker.fish_singularity.name=§3Fish Singularity
 item.contenttweaker.supremium_boots_base.name=Supremium Boots Core Base
 item.contenttweaker.supremium_chest_base.name=Supremium Chestplate Core Base
 item.contenttweaker.supremium_helmet_base.name=Supremium Helmet Core Base
@@ -356,12 +358,9 @@ tooltips.lang.singularity.heat=§7Intermediate ingredient.§r\nCombine with §la
 tooltips.lang.singularity.burn=Combine with §lany burnable§r material to add a charge.\nMaterials must have §ldifferent§r burning times.\nMaterials with higher burning times provide an §lexponential§r charge bonus.\nRequires §6%s§r charge.
 item.contenttweaker.any_burnable.name=§6Any burnable
 
-# Wood singularity
-item.singularity.quartz.name=§eBark Singilarity
-item.singularity.gold.name=§cWoodweave Singularity
-tooltips.lang.singularity.bark=§7Intermediate ingredient.§r\nCombine with §6any fireproof planks§r to increase power.\nThe §6variety§r of plank types increases the power exponentially. Power is calculated by the formula §2M×2ⁿ⁻¹§r, where §2M§r is the median number of planks, §2ⁿ§r is the number of plank types.\n§2§nRight-Click§2 on something to see list of planks.\nRequires §6%s§r power.
-tooltips.lang.singularity.woodweave=Combine with §6any fireproof planks§r to increase power.\nThe §6variety§r of plank types increases the power exponentially. Power is calculated by the formula §2M×2ⁿ⁻¹§r, where §2M§r is the median number of planks, §2ⁿ§r is the number of plank types.\nRequires §6%s§r power.
-item.contenttweaker.any_fireproof.name=§6Any Fireproof Plank
+# Singularities
+tooltips.lang.singularity.woodweave=Combine with §6any fireproof planks§r to increase charge.\nThe §6variety§r of plank types increases the charge exponentially.\nRequires §6%s§r charge.
+tooltips.lang.singularity.fish=Combine with any §6raw fish§r to increase charge.\nThe §6variety§r of fish types increases the charge exponentially.\nRequires §6%s§r charge.
 ##################################
 
 # Custom renames
@@ -428,7 +427,6 @@ e2ee.warn.wrong_installation=§6✖ §4The modpack has been installed incorrectl
 e2ee.warn.wrong_world_type=§6✖ §4It seems you've generated the world incorrectly!§6 ✖\n§cTo play Skyblock, from the main menu navigate to\n§6Mods§c ▶ §6Just Enough Dimensions§c Config ▶ §6Generic§c ▶ and set §6initialSpawnDimensionId§c to §63§c. Afterwards, create a new world.
 e2ee.do.charge=§fCharge: §6%s§r
 e2ee.do.charge.bonus=§fLatest bonus: §7x§b%s§r
-e2ee.do.diverse.power=§fPower: §6%s§r
 e2ee.do.diverse.info=§2Total types: §a%s§r\n§2Median amount: §a%s§r\n§2Items consumed by singularity:\n%s
 e2ee.otg.not_otg_biome=§2Cant TP to non-OTG biome with ID:§r §a§n%s§r§2. §8Try other Biome Essence.§r
 e2ee.otg.tp_to=§2Attempt teleport to:§r §a§n%s§r §8Wait until teleported or aborted.§r

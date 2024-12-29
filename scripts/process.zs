@@ -28,6 +28,7 @@
 
 #modloaded crafttweakerutils jaopca mekanism
 #priority 50
+#reloadable
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;

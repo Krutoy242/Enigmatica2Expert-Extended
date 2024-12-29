@@ -9,8 +9,8 @@
 
 // @ts-check
 
-import { writeFileSync } from 'fs'
-import { parse } from 'path'
+import { writeFileSync } from 'node:fs'
+import { parse } from 'node:path'
 
 import FastGlob from 'fast-glob'
 import { getLangNameFromCode } from 'language-name-map'
@@ -36,7 +36,7 @@ const filePathes = FastGlob.sync('resources/tips/lang/*_*.lang')
 function getTips(lang) {
   return [
     ...lang.matchAll(/^(?<match>e2ee\.tips\.(?<id>\d+)=(?<text>.*))$/gm),
-  ].map((m) => /** @type {LangGroups} */ (m.groups))
+  ].map(m => /** @type {LangGroups} */ (m.groups))
 }
 
 memoize(() => {})
@@ -45,7 +45,7 @@ export async function init(h = defaultHelper) {
   await h.begin('Loading files')
   const rawFiles = filePathes.map(loadText)
   const rawTips = rawFiles.map(getTips)
-  const rawLandCodes = filePathes.map((f) => parse(f).name)
+  const rawLandCodes = filePathes.map(f => parse(f).name)
   const en_us_index = rawLandCodes.indexOf('en_us')
   const en_us_Tips = rawTips[en_us_index]
 
@@ -65,8 +65,8 @@ export async function init(h = defaultHelper) {
   rawTips.forEach((tips, i) => {
     if (i === en_us_index) return
     const filtered_other = []
-    en_us_Tips.forEach((en) =>
-      filtered_other.push(tips.find((other) => en.id === other.id) ?? en)
+    en_us_Tips.forEach(en =>
+      filtered_other.push(tips.find(other => en.id === other.id) ?? en)
     )
     replaceTips(i, filtered_other)
   })
@@ -78,23 +78,23 @@ export async function init(h = defaultHelper) {
   function replaceTips(fileIndex, newGroups) {
     writeFileSync(
       filePathes[fileIndex],
-      newGroups.map(({ text }, i) => `e2ee.tips.${i}=${text}`).join('\n') + '\n'
+      `${newGroups.map(({ text }, i) => `e2ee.tips.${i}=${text}`).join('\n')}\n`
     )
   }
 
   // Minecraft To GH Markdown
   rawFiles.forEach((langFileText, i) => {
     const lines = [...langFileText.matchAll(/^e2ee.tips.[^=]+=(.*)$/gm)].map(
-      (s) => `- ${mcToMd(s[1])}`
+      s => `- ${mcToMd(s[1])}`
     )
 
     const langCode = parse(filePathes[i]).name
-    const langName =
-      getLangNameFromCode(langCode.replace(/_.*/, ''))?.name ?? ''
+    const langName
+      = getLangNameFromCode(langCode.replace(/_.*/, ''))?.name ?? ''
     saveText(
       `${lines.join('\n')}
 `,
-      `Enigmatica2Expert-Extended.wiki/${langName}-Tips.md`
+      `Enigmatica2Expert-Extended.wiki/Tips/${langName}.md`
     )
   })
 
@@ -120,6 +120,6 @@ function mcToMd(text) {
 
 // @ts-ignore
 if (
-  import.meta.url === (await import('url')).pathToFileURL(process.argv[1]).href
+  import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href
 )
   init()

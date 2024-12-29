@@ -48,9 +48,6 @@ val merchData = {
         [<harvestcraft:crayfishcookeditem>, E],
         [<harvestcraft:clamcookeditem>, E],
       ],
-      5: [
-        [E * 40, <actuallyadditions:block_fishing_net>],
-      ],
     },
     fletcher: {
       3: [

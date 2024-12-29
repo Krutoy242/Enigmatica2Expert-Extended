@@ -6,6 +6,7 @@ import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.data.IData;
 
 #priority 5000
+#reloadable
 
 // ######################################################################
 //

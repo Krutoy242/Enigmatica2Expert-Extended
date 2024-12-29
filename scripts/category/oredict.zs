@@ -181,6 +181,17 @@ add(<ore:blockAmber>, <biomesoplenty:gem_block:7>);
 add(<ore:blockAmber>, <thaumcraft:amber_block>);
 add(<ore:blockAmber>, <thaumcraft:amber_brick>);
 
+// Make nuggets more useful
+addItems(<ore:listAllmeatcooked>, [
+  <thaumcraft:chunk:0>,
+  <thaumcraft:chunk:1>,
+  <thaumcraft:chunk:2>,
+  // <thaumcraft:chunk:3>,
+  <thaumcraft:chunk:4>,
+  <thaumcraft:chunk:5>,
+]);
+add(<ore:listAllfishcooked>, <thaumcraft:chunk:3>);
+
 // Blood Magic Runes
 add(<ore:runeBlood>, <bloodmagic:blood_rune:*>);
 

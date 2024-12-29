@@ -540,13 +540,22 @@ mods.appliedenergistics2.Grinder.removeRecipe(<minecraft:coal_ore>);
 mods.mekanism.crusher.removeRecipe(<ic2:dust:2>);
 mods.mekanism.enrichment.removeRecipe(<ic2:dust:2>);
 mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(<thermalfoundation:material:160>);
-mods.nuclearcraft.Melter.removeRecipeWithInput(<ic2:dust:2>);
 mods.mekanism.reaction.removeRecipe(<ore:dustSulfur>, <gas:hydrogen>, <ic2:dust:2>);
+
+/*
+Ugly hack to remove [Blackened Fruit] from [Melter] recipes
+This is required, since NC "memoring" recipes as ItemStacks instead of OreDicts, as they was added.
+So, when OreDict is removed from the item, this item is still will be listed as valid ingredient.
+To fix this we need to remake whole recipe.
+The problem is that we must remove recipe by OreDict ingredient instead of actual item.
+*/
+mods.nuclearcraft.Melter.removeRecipeWithInput(<ore:dustCoal>); // Removing melter recipe: { 1 x ore:coal, 1 x ore:dustCoal } -> { 100 x coal }
+mods.nuclearcraft.Melter.addRecipe(<ore:coal> | <ore:dustCoal>, <liquid:coal> * 100); // Adding melter recipe: { 1 x ore:coal, 1 x ore:dustCoal } -> 100 x coal
+
 // Sulfur
 furnace.setFuel(<ic2:dust:16>, 0);
 mods.mekanism.chemical.oxidizer.removeRecipe(<gas:sulfurdioxide>, <ic2:dust:16>);
 mods.mekanism.enrichment.removeRecipe(<ic2:dust:16>);
-mods.nuclearcraft.Melter.removeRecipeWithInput(<ic2:dust:16>);
 mods.nuclearcraft.Melter.addRecipe(<ore:dustSulfur>, <liquid:sulfur> * 100);
 
 // -----------------------------------------

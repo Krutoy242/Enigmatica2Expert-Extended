@@ -333,6 +333,12 @@ mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:cutting_fluid>, [
   <mechanics:fuel_dust_tiny>,
   ], 1000, 80, 1);
 
+// Neuro Toxin to require less Pufferfish
+mods.bloodmagic.AlchemyTable.removeRecipe([<minecraft:fish:3>]);
+mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:component:25> * 32, [
+  <minecraft:fish:3>,
+  ], 1000, 100, 2);
+
 // ///////////////////////////////////////////////////////////////////
 // Add cutting of any compressed block
 // ///////////////////////////////////////////////////////////////////

@@ -27,7 +27,8 @@ function addSingularity(item as IItemStack) as void {
 }
 
 // See in `scripts/mods/avaritia.zs`
-addSingularity(<avaritia:singularity:4>);
+addSingularity(<contenttweaker:woodweave_singularity>);
+addSingularity(<contenttweaker:fish_singularity>);
 
 // -----------------------------------------------------------------------------------
 

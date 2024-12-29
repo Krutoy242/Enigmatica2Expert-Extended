@@ -2,19 +2,18 @@
 
 🚧✅❌⚠️ List of priorities:
 
-- [ ] Add https://www.curseforge.com/minecraft/mc-mods/patchouli-books
-- [ ] fix `format.zs` mutating lists `[T]` => `T[]`
-- [ ] Fix `/perf chunks` not correct with position of blocks https://i.imgur.com/ktLcvSn.png
-- [ ] Speed up Dragon Forge
-- [ ] `Benitoite`, `Anglesite` fix benefication
+- [ ] ✏️ `Benitoite`, `Anglesite` fix benefication
 - [ ] `Flux Anodizers` should output more ore when working with Netherending Ores
-- [ ] Iron Ore => Transmute to Gold => Portal to Nether Iron => Two ore
-- [ ] Botania Mushrooms drop as petals unless shears
-- [ ] 🎣 Fish rework
-  * [ ] 🟢 Add and Integrate https://www.curseforge.com/minecraft/mc-mods/customfishing
-  * [x] Add `Fish Singularity`.
-  * [ ] All fish usages lower.
-  * [ ] All automated fishing options way harder to make sense of manual fishing.
+- [ ] 𝓩𝒮 fix `format.zs` mutating lists `[T]` => `T[]`
+- [ ] 𝓩𝒮 Fix `/perf chunks` not correct with position of blocks https://i.imgur.com/ktLcvSn.png
+- [ ] 𝓩𝒮 Remove `item names` on Craft.zs recipe creation (since Intellisense)
+- [ ] 📀 Buff Forestry circuits speed bonus 25% => 100%
+- [ ] Add 5% of max durab on combining ThW stones
+- [ ] cinnabar clusters can only be made in the crucible/thaumatorium and not via an alchemist's stone in a crystalization chamber
+- [ ] Downgrade DML to avoid Dragon model cant work
+- [ ] end/nether `draconium ore` make smelt into default ore variant to line up with other end/nether ores
+- [ ] increase will output of blood magic Flux cleanse ritual
+- [ ] Make Singularities sucking in items in inventory
 
 ---
 
@@ -144,6 +143,8 @@ Planned non-urgent changes, or just good ideas:
 
 ### Other
 
+- [ ] 📀 [(Filled) Tin Can] fix not restoring nutrients
+- [ ] 📀 Speed up Dragon Forge
 - [ ] ✏️ `High Oven` does not provide x2 of fluid for Osmium Ore
 - [ ] 🖼️ Add via mixins: https://legacy.curseforge.com/minecraft/texture-packs/ic2-seedbag-display
 - [ ] Rebalance TCon `Refining`: Remove x1.75 multiplication but add Fortune accounting
@@ -335,6 +336,7 @@ Items that should have more uses:
 ![](https://git.io/JtDnO "Chemical Thrower")
 ![](http://tinyurl.com/Blue-Fire-Jar "Blue Fire Jar")
 ![](http://tinyurl.com/Radiator-Block "Radiator Block")
+Sound based ingredient
 
 ---
 

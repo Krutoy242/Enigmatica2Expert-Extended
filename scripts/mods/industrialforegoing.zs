@@ -351,6 +351,17 @@ craft.remake(<industrialforegoing:block_placer>, ['pretty',
   '□': <ore:plateAluminium>, // Aluminum Plate
 });
 
+craft.remake(<industrialforegoing:water_resources_collector>, ['pretty',
+  'R § R',
+  '¤ M ¤',
+  'R ◘ R'], {
+  'R': <industrialforegoing:plastic>,
+  '§': <contenttweaker:fish_singularity>,
+  '¤': <ore:gearTitanium>,
+  'M': <teslacorelib:machine_case>,
+  '◘': <thermalexpansion:frame:147>,
+});
+
 // Remove barely all Ore benification to leave only meat washing
 function cleanupBenification(item as IItemStack, ingot as IItemStack, dust as IItemStack, fluid as ILiquidStack) as void {
   recipes.removeShapeless(<*>, [item, <immersiveengineering:tool>]);

@@ -1,6 +1,6 @@
 {
-	x: 3.6666666666666665d,
-	y: 3.5d,
+	x: 4.1d,
+	y: 5.5d,
 	text: [
 		"{q.actually_additions.greenhouse_glass.desc}"
 	],

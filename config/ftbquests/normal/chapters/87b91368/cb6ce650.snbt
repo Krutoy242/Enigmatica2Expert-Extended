@@ -1,0 +1,81 @@
+{
+	title: "{q.animals.troll_s_weapons.name}",
+	icon: "iceandfire:troll_weapon.hammer",
+	x: 9.7d,
+	y: -2.0d,
+	text: [
+		"{q.animals.troll_s_weapons.desc}"
+	],
+	dependencies: [
+		"e875aec9"
+	],
+	tasks: [{
+		uid: "cceb8845",
+		type: "item",
+		items: [{
+			item: "iceandfire:troll_weapon.axe"
+		},
+		{
+			item: "iceandfire:troll_weapon.column"
+		},
+		{
+			item: "iceandfire:troll_weapon.column_forest"
+		},
+		{
+			item: "iceandfire:troll_weapon.column_frost"
+		},
+		{
+			item: "iceandfire:troll_weapon.hammer"
+		},
+		{
+			item: "iceandfire:troll_weapon.trunk"
+		},
+		{
+			item: "iceandfire:troll_weapon.trunk_frost"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	},
+	{
+		uid: "5aaad0eb",
+		type: "item",
+		items: [{
+			item: "harvestcraft:groundbeefitem"
+		},
+		{
+			item: "harvestcraft:groundchickenitem"
+		},
+		{
+			item: "harvestcraft:groundduckitem"
+		},
+		{
+			item: "harvestcraft:groundfishitem"
+		},
+		{
+			item: "harvestcraft:groundmuttonitem"
+		},
+		{
+			item: "harvestcraft:groundporkitem"
+		},
+		{
+			item: "harvestcraft:groundrabbititem"
+		},
+		{
+			item: "harvestcraft:groundturkeyitem"
+		},
+		{
+			item: "harvestcraft:groundvenisonitem"
+		}]
+	}],
+	rewards: [{
+		uid: "e80d5a87",
+		type: "item",
+		item: {
+			tag: {
+				type: "common"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		count: 2
+	}]
+}

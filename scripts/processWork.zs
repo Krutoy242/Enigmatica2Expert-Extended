@@ -1,5 +1,6 @@
 #modloaded mekanism immersiveengineering advancedrocketry
 #priority 51
+#reloadable
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;

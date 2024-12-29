@@ -187,7 +187,7 @@ addBrewWithUpgradesFromBase(
 // additional recipe for flight potions (reverse order of ingredients)
 // addBrew("minecraft:swiftness", <minecraft:feather>, "potioncore:flight");
 addBrewWithUpgrades(
-  awkward, <minecraft:chorus_fruit>, 'potioncore:teleport',
+  awkward, <randomthings:ingredient:7>, 'potioncore:teleport',
   'potioncore:strong_teleport', null
 );
 addBrewWithConversions(

@@ -85,6 +85,10 @@ Purge(<qmd:ingot:4>).ores([<ore:ingotCobalt>]); // Cobalt
 Purge(<qmd:ingot:9>).ores([<ore:ingotIridium>]); // Iridium
 Purge(<qmd:ingot:10>).ores([<ore:ingotPlatinum>]); // Platinum
 Purge(<qmd:ingot>).furn().ores([<ore:ingotTungsten>]); // Tungsten
+Purge(<theoneprobe:diamond_helmet_probe>);
+Purge(<theoneprobe:gold_helmet_probe>);
+Purge(<theoneprobe:iron_helmet_probe>);
+Purge(<theoneprobe:probe_goggles>);
 
 // Purge saltpeter and sulfur
 Purge(<bloodmagic:component:24>);

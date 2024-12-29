@@ -405,25 +405,3 @@ addExampleRecipe([
   [<mysticalagriculture:coal_block:3>, <mysticalagriculture:coal_block:2>, <mysticalagradditions:insanium:5>],
   [<mysticalagriculture:coal_block:1>, <mysticalagriculture:coal:4>      , <chisel:block_coal_coke>],
 ]);
-
-// -------------------------------------------------------------------
-// Woodweave
-// -------------------------------------------------------------------
-val barkSingularity = <avaritia:singularity:4>;
-val woodweaveSingularity = <avaritia:singularity:1>;
-
-val needPower = pow(10.0, 9.0);
-val needPowerStr = mods.zenutils.StaticString.format('%,d', needPower as int).replaceAll(',', '§8,§6');
-scripts.lib.tooltip.desc.jei(barkSingularity, 'singularity.bark', needPowerStr);
-scripts.lib.tooltip.desc.jei(woodweaveSingularity, 'singularity.woodweave', needPowerStr);
-
-scripts.do.diverse.addRecipe(
-  'Woodweave Singularity',
-  <avaritia:singularity>, // Empty Singularity
-  barkSingularity,
-  woodweaveSingularity,
-  <ore:plankFireproof>,
-  needPower // Need power
-);
-
-// -------------------------------------------------------------------

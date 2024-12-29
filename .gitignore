@@ -77,6 +77,7 @@ config/tellme/*.csv
 resources/mechanics/blockstates
 resources/mechanics/models
 resources/contenttweaker/models/item
+resources/contenttweaker/blockstates
 !resources/mechanics/lang
 
 dev/lang/tmp

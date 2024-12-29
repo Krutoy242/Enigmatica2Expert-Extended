@@ -34,8 +34,6 @@ addEntry(<openblocks:dev_null>, true);
 addEntry(<rftools:storage_module_tablet:1>, false);
 addEntry(<thermalexpansion:satchel>, false);
 addEntry(<travelersbackpack:travelers_backpack>, false);
-addEntry(<spiceoflife:lunchbox>, true);
-addEntry(<spiceoflife:lunchbag>, true);
 addEntry(<botania:flowerbag>, false);
 addEntry(<aeadditions:terminal.universal.wireless>, false);
 addEntry(<aeadditions:terminal.gas.wireless>, false);

@@ -299,7 +299,7 @@ function remakeRune(rune as IItemStack, ingrList as IIngredient[], mana as int) 
   mods.botania.RuneAltar.addRecipe(rune, ingrList, mana);
 }
 
-/* Water */   remakeRune(<botania:rune:0> * 2, [<ore:dustBlizz>, <ore:fish>, <ore:gemAquamarine>, <ore:ingotManasteel>, <ore:powderMana>], 5000);
+/* Water */   remakeRune(<botania:rune:0> * 2, [<ore:dustBlizz>, <ore:listAllfishraw>, <ore:gemAquamarine>, <ore:ingotManasteel>, <ore:powderMana>], 5000);
 /* Fire */    remakeRune(<botania:rune:1> * 2, [<ore:dustBlaze>, <ore:slimeballMagma>, <ore:gemAmber>, <ore:ingotManasteel>, <ore:powderMana>], 5000);
 /* Earth */   remakeRune(<botania:rune:2> * 2, [<ore:dustBasalz>, <biomesoplenty:ash>, <ore:podzol>, <ore:ingotManasteel>, <ore:powderMana>], 5000);
 /* Air */     remakeRune(<botania:rune:3> * 2, [<ore:dustBlitz>, <ore:boneDragon>, <twilightforest:raven_feather>, <ore:ingotManasteel>, <ore:powderMana>], 5000);
@@ -450,8 +450,17 @@ recipes.removeByRecipeName('botania:terraformrod'); recipes.addShaped(<botania:t
 recipes.removeByRecipeName('botania:tornadorod');   recipes.addShaped(<botania:tornadorod>, [[null, <ore:feather>], [<ore:livingwoodTwig>, null]]);
 recipes.removeByRecipeName('botania:waterrod');     recipes.addShaped(<botania:waterrod>, [[null, <minecraft:potion>.withTag({Potion: 'minecraft:water'})], [<ore:livingwoodTwig>, null]]);
 recipes.removeByRecipeName('botania:skydirtrod');   recipes.addShapeless(<botania:skydirtrod>, [<botania:dirtrod>, <ore:elvenPixieDust>]);
-// ////////////////////////////////////////////////////////////////
 
+// To avoid flooding inventory with tens of variants,
+// we make them drom common items
+for i in 0 .. 16 {
+  scripts.lib.dropt.addDrop(
+    <botania:mushroom>.definition.makeStack(i),
+    <botania:petal>.definition.makeStack(i),
+    1.25, 'shears;-1;-1');
+}
+
+// New flowers crafting recipes
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "campanimia"}), [
 <botania:rune:1>,
 <botania:rune:2>,
