@@ -38,11 +38,9 @@ events.onEntityItemDeath(function (e as mods.zenutils.event.EntityItemDeathEvent
     if(damageSource.damageType != 'lightningBolt') return;
     val item = e.item;
     if(isNull(item)) return;
-    //if(isNull(item.nbt.amuileria)) return;
     if(!(recipesLigthningFlower has item.item.name)) return;
     val newEntity = recipesLigthningFlower[item.item.name].withAmount(item.item.amount).createEntityItem(world, item.x as float, item.y as float, item.z as float);
     world.spawnEntity(newEntity);
-    //newEntity.updateNBT({amuileria: 1});
     return;
 });
 
@@ -89,7 +87,6 @@ for item, result in lightningRecipes {
 
 function registerThunderRecipe(item as IItemStack, result as IItemStack) as void{
     if(recipesLigthningFlower has item.definition.id){
-        //print("[ERROR] "~item.definition.id~" is already registered!");
         return;
     }
     recipesLigthningFlower[item.definition.id] = result;
