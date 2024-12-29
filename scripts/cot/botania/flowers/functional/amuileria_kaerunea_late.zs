@@ -84,7 +84,7 @@ val lightningRecipes = {
 
 for item, result in lightningRecipes {
   registerThunderRecipe(item, result);
-  scripts.jei.crafting_hints.add1to1(item, result);
+  scripts.jei.crafting_hints.addInsOutCatl([item], result, <botania:specialflower>.withTag({type: "amuileria_kaerunea"}));
 } 
 
 function registerThunderRecipe(item as IItemStack, result as IItemStack) as void{
