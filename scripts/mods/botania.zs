@@ -450,7 +450,7 @@ recipes.removeByRecipeName('botania:terraformrod'); recipes.addShaped(<botania:t
 recipes.removeByRecipeName('botania:tornadorod');   recipes.addShaped(<botania:tornadorod>, [[null, <ore:feather>], [<ore:livingwoodTwig>, null]]);
 recipes.removeByRecipeName('botania:waterrod');     recipes.addShaped(<botania:waterrod>, [[null, <minecraft:potion>.withTag({Potion: 'minecraft:water'})], [<ore:livingwoodTwig>, null]]);
 recipes.removeByRecipeName('botania:skydirtrod');   recipes.addShapeless(<botania:skydirtrod>, [<botania:dirtrod>, <ore:elvenPixieDust>]);
-
+// ////////////////////////////////////////////////////////////////
 // To avoid flooding inventory with tens of variants,
 // we make them drom common items
 for i in 0 .. 16 {
@@ -459,6 +459,7 @@ for i in 0 .. 16 {
     <botania:petal>.definition.makeStack(i),
     1.25, 'shears;-1;-1');
 }
+// ////////////////////////////////////////////////////////////////
 
 // New flowers crafting recipes
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "campanimia"}), [
