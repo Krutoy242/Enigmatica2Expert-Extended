@@ -36,44 +36,130 @@ furnace.addRecipe(<nuclearcraft:ingot:14>, <nuclearcraft:dust:14>, 0.5);
 // ------------------------------------------------------------------
 
 // [Machine Chassis] from [Tough Alloy Ingot][+2]
-craft.remake(<nuclearcraft:part:10>, ['pretty',
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:10>, ['pretty',
   'C ⌂ C',
   '⌂ ▬ ⌂',
   'C ⌂ C'], {
-  'C': <ore:plateConcrete>, // Concrete Sheet
-  '⌂': <ic2:casing:5>, // Steel Item Casing
-  '▬': <ore:ingotTough>, // Tough Alloy Ingot
+  'C': <ore:plateConcrete>,
+  '⌂': <ic2:casing:5>,
+  '▬': <ore:ingotTough>,
+}, 2, {
+  '▬': <ore:ingotBlackIron>,
 });
 
 // [Steel Chassis] from [Bronze Item Casing][+2]
-craft.remake(<nuclearcraft:part:12>, ['pretty',
-  '⌂ ▬ ⌂',
-  '▬ B ▬',
-  '⌂ ▬ ⌂'], {
-  '⌂': <ic2:casing:5>,   // Steel Item Casing
-  '▬': <ore:ingotTough>, // Tough Alloy Ingot
-  'B': <ic2:casing>,     // Bronze Item Casing
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:12>, ['pretty',
+  '▬ - ▬',
+  '- ■ -',
+  '▬ - ▬'], {
+  '▬': <ic2:casing:5>,
+  '-': <ore:ingotTough>,
+  '■': <ic2:casing>,
+}, 12, {
+  '▬': <ore:ingotStainlessSteel>,
+  '-': <ore:ingotEndSteel>,
+  '■': <ore:blockDarkSteel>,
 });
 
 // [Basic Plating]*4 from [Graphite Block][+2]
-craft.remake(<nuclearcraft:part> * 4, ['pretty',
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part> * 4, ['pretty',
   '□ ⌂ □',
   '⌂ ■ ⌂',
   '□ ⌂ □'], {
-  '□': <ore:plateLead>,     // Lead Plate
-  '⌂': <ic2:casing:4>,      // Lead Item Casing
-  '■': <ore:blockGraphite>, // Graphite Block
+  '□': <ore:plateLead>,
+  '⌂': <ic2:casing:4>,
+  '■': <ore:blockGraphite>,
+}, 6, {
+  '⌂': <ic2:casing:5>,
+});
+
+// [Advanced Plating] from [Basic Plating][+2]
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:1>, ['pretty',
+  '  ▲  ',
+  '▬ □ ▬',
+  '  ▲  '], {
+  '▲': <ore:dustRedstone>,
+  '▬': <ore:ingotTough>,
+  '□': <ore:plateBasic>,
+}, 2, {
+  '▲': <ore:dustEnergetic>,
+});
+
+// [DU Plating] from [Advanced Plating][+2]
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:2>, ['pretty',
+  '▲ ▬ ▲',
+  '▬ □ ▬',
+  '▲ ▬ ▲'], {
+  '▲': <ore:dustSulfur>,
+  '▬': <nuclearcraft:uranium:10>,
+  '□': <ore:plateAdvanced>,
+}, 4, {
+  '▬': <ore:ingotPlutonium242All>,
+});
+
+// [Elite Plating] from [DU Plating][+2]
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:3>, ['pretty',
+  '* ▬ *',
+  '▬ □ ▬',
+  '* ▬ *'], {
+  '*': <ore:dustCrystalBinder>,
+  '▬': <ore:ingotBoron>,
+  '□': <ore:plateDU>,
+}, 2, {
+  '▬': <ore:ingotBoron10>,
 });
 
 // [Copper Solenoid]*4 from [Advanced Alloy][+3]
-craft.remake(<nuclearcraft:part:4> * 4, ['pretty',
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:4> * 4, ['pretty',
   '□ ⌂ □',
   '╱ п ╱',
   '□ ⌂ □'], {
-  '□': <ore:plateCopper>,        // Copper Plate
-  '⌂': <ic2:casing:1>,           // Copper Item Casing
-  '╱': <ore:stickAluminum>,      // Aluminium Rod
-  'п': <ore:plateAdvancedAlloy>, // Advanced Alloy
+  '□': <ore:plateCopper>,
+  '⌂': <ic2:casing:1>,
+  '╱': <ore:stickAluminum>,
+  'п': <ore:plateAdvancedAlloy>,
+}, 8, {
+  '□': <ore:nuggetAluminum>,
+  '⌂': <ore:nuggetAluminum>,
+  '╱': <immersiveengineering:metal_decoration0>,
+  'п': <ore:plateAdvancedAlloy>,
+});
+
+// [Servomechanism]*2 from [Copper Ingot][+3]
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:7>, ['pretty',
+  '-   -',
+  '* ▬ *',
+  '▬ _ ▬'], {
+  '-': <ore:ingotFerroboron>,
+  '*': <ore:dustRedstone>,
+  '▬': <ore:ingotSteel>,
+  '_': <ore:ingotCopper>,
+}, 2, {
+  '*': <ore:crystalRestonia>,
+  '▬': <ore:ingotDarkSteel>,
+});
+
+// [Electric Motor]*2 from [Electrum Nugget][+2]
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:8>, ['pretty',
+  '▬ ▬ G',
+  'C C ‚',
+  '▬ ▬ G'], {
+  '▬': <ore:ingotSteel>,
+  'C': <ore:solenoidCopper>,
+  '‚': <ore:ingotIron>,
+}, 2, {
+  '▬': <ore:ingotElectricalSteel>,
+  'G': null,
+  '‚': <ore:nuggetElectrum>,
 });
 
 // [Alloy Furnace] from [Electric Furnace][+4]
@@ -120,13 +206,18 @@ craft.remake(<nuclearcraft:rtg_uranium>, ['pretty',
 });
 
 // [Empty Frame] from [Tin Gear][+2]
-craft.remake(<nuclearcraft:part:11>, ['pretty',
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <nuclearcraft:part:11>, ['pretty',
   '□ ¤ □',
-  'п   п',
+  'I   I',
   '□ ¤ □'], {
-  '□': <ore:plateBasic>,          // Basic Plating
-  '¤': <ore:gearTin>,             // Tin Gear
-  'п': <enderio:block_reservoir>, // Endervoir
+  '□': <ore:plateBasic>,
+  '¤': <ore:gearTin>,
+  'I': <enderio:block_reservoir>,
+}, 12, {
+  '□': <ore:plateAdvanced>,
+  '¤': <ore:gearSilver>,
+  'I': <nuclearcraft:water_source>,
 });
 
 // [Ingot Former] from [Machine Chassis][+3]

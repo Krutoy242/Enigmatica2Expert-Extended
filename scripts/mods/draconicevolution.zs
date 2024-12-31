@@ -155,16 +155,20 @@ scripts.mods.forestry.Carpenter.addRecipe(<draconicevolution:draconic_energy_cor
 }).shaped(), 40, <fluid:ic2hot_coolant> * 8000, null, 2);
 
 // [Basic Fusion Crafting Injector] from [Genetics Processor][+5]
-craft.remake(<draconicevolution:crafting_injector>, ['pretty',
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <draconicevolution:crafting_injector>, ['pretty',
   'D ▬ D',
   '* G *',
   '□ Ϟ □'], {
-  'D': <draconicevolution:draconic_core>, // Draconic Core
-  '▬': <ore:ingotCobalt60>, // Cobalt-60
-  '*': <ore:crystalLitherite>, // Litherite Crystal
-  'G': <gendustry:genetics_processor>, // Genetics Processor
-  '□': <ore:plateElite>, // Elite Plating
-  'Ϟ': <draconicevolution:energy_crystal>, // Basic Energy Relay Crystal
+  'D': <draconicevolution:draconic_core>,
+  '▬': <ore:ingotCobalt60>,
+  '*': <ore:crystalLitherite>,
+  'G': <gendustry:genetics_processor>,
+  '□': <ore:plateElite>,
+  'Ϟ': <draconicevolution:energy_crystal>,
+}, 3, {
+  '▬': <ore:ingotYttrium>,
+  '□': <ore:processorAdvanced>,
 });
 
 // Potentiometer

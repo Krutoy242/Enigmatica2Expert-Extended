@@ -23,6 +23,24 @@ recipes.addShapeless('4 Smart Cables to Dense',
   <appliedenergistics2:part:76>,
   [<appliedenergistics2:part:56>, <appliedenergistics2:part:56>, <appliedenergistics2:part:56>, <appliedenergistics2:part:56>, <ore:dustRedstone>, <ore:dustGlowstone>]);
 
+scripts.mods.extendedcrafting_engineering.add(
+  <appliedenergistics2:part:76> * 8, ['pretty',
+  '■ ■ ■',
+  '▬ ▬ ▬',
+  '■ ■ ■'], {
+  '■': <ore:blockGlassHardened>,
+  '▬': <ore:ingotFluixSteel>,
+});
+
+scripts.mods.extendedcrafting_engineering.add(
+  <appliedenergistics2:part:56> * 16, ['pretty',
+  '■ ▬ ■',
+  '■ ▬ ■',
+  '■ ▬ ■'], {
+  '■': <ore:blockGlassHardened>,
+  '▬': <ore:ingotFluixSteel>,
+});
+
 // [Portable Cell] from [Energy Cell][+3]
 craft.remake(<appliedenergistics2:portable_cell>, ['pretty',
   '  *  ',

@@ -49,12 +49,18 @@ scripts.mods.forestry.Carpenter.addRecipe(<forestry:chipsets:3>.withTag({ T: 3 a
   }).shaped(), 40, <liquid:water> * 1000);
 
 // Sturdy Casing
-recipes.remove(<forestry:sturdy_machine>);
-recipes.addShapedMirrored('Sturdy Casing',
-  <forestry:sturdy_machine> * 2,
-  [[<ore:gearCopper>, <ore:ingotBronze>, <ore:gearCopper>],
-    [<ore:ingotBronze>, null, <ore:ingotBronze>],
-    [<ore:gearBronze>, <ore:ingotBronze>, <ore:gearBronze>]]);
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <forestry:sturdy_machine> * 2, ['pretty',
+  '☼ ▬ ☼',
+  '▬   ▬',
+  '¤ ▬ ¤'], {
+  '☼': <ore:gearCopper>,
+  '▬': <ore:ingotBronze>,
+  '¤': <ore:gearBronze>,
+}, 4, {
+  '☼': <ore:gearConstantan>,
+  '▬': <ore:ingotBrass>,
+});
 
 // [Hardened Casing] from [Sturdy Casing][+1]
 mods.forestry.Carpenter.removeRecipe(<forestry:hardened_machine>);

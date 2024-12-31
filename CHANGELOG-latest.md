@@ -1,4 +1,4 @@
-# v1.53.0 (2024-12-29)
+# v1.53.0 (2024-12-30)
 
 ## ✨ New Features
 
@@ -93,7 +93,7 @@
 
 Icon | Summary | Reason
 ----:|:--------|:-------
-<img src="https://media.forgecdn.net/avatars/thumbnails/951/894/30/30/638441639917328756.png"            > |                          [**TheOneSmeagle**](https://www.curseforge.com/minecraft/mc-mods/theonesmeagle)                <sup><sub>theonesmeagle-1.12-1.0.4.jar                     </sub></sup><br>A fork of The One Probe, meant to be a more immersive version of WAILA/HWYLA | Better replacement of WAILA
+<img src="https://media.forgecdn.net/avatars/thumbnails/951/894/30/30/638441639917328756.png"            > |                          [**TheOneSmeagle**](https://www.curseforge.com/minecraft/mc-mods/theonesmeagle)                <sup><sub>theonesmeagle-1.12-1.0.5.jar                     </sub></sup><br>A fork of The One Probe, meant to be a more immersive version of WAILA/HWYLA | Better replacement of WAILA
 <img src="https://media.forgecdn.net/avatars/thumbnails/44/562/30/30/636033342690526889.jpeg"            > |                             [**TOP Addons**](https://www.curseforge.com/minecraft/mc-mods/top-addons)                   <sup><sub>topaddons-1.12.2-1.13.0.jar                      </sub></sup><br>Adds mod support to The One Probe by McJty | (TOP addon)
 <img src="https://media.forgecdn.net/avatars/thumbnails/428/742/30/30/637662550518620713.png"            > |                      [**Thaumic One Probe**](https://www.curseforge.com/minecraft/mc-mods/thaumic-one-probe)            <sup><sub>thaumic-one-probe-1.12.2-1.0.0.jar               </sub></sup><br>adds TOP displays for various thaumcraft apparatus | (TOP addon)
 <img src="https://media.forgecdn.net/avatars/thumbnails/1111/53/30/30/638662497025737758.png"            > |                        [**Patchouli Books**](https://www.curseforge.com/minecraft/mc-mods/patchouli-books)              <sup><sub>patchoulibooks-0.2.2.jar                         </sub></sup><br>An add-on to Patchouli for 1.12.2 | Added guides for mods like `Thermal Logistics`
@@ -119,7 +119,7 @@ Icon | Summary | Old / New
 <img src="https://media.forgecdn.net/avatars/thumbnails/92/854/30/30/636258666554688823.png"             > |                        [**Xaero's Minimap**](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)              | <nobr>Xaeros_Minimap_24.6.1_Forge_1.12</nobr><br><nobr>Xaeros_Minimap_24.7.1_Forge_1.12</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/180/855/30/30/636796143936766724.png"            > |                           [**PackagedAuto**](https://www.curseforge.com/minecraft/mc-mods/packagedauto)                | <nobr>PackagedAuto-1.12.2-1.0.15.57</nobr><br><nobr>PackagedAuto-1.12.2-1.0.15.58</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/196/654/30/30/636886857118683130.png"            > |                      [**Xaero's World Map**](https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map)            | <nobr>XaerosWorldMap_1.39.2_Forge_1.12</nobr><br><nobr>XaerosWorldMap_1.39.2_Forge_1.12</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/292/428/30/30/637325593905195388.png"            > |                              [**Zen Utils**](https://www.curseforge.com/minecraft/mc-mods/zenutil)                     | <nobr>zenutils-1.21.4</nobr><br><nobr>zenutils-1.21.5</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/292/428/30/30/637325593905195388.png"            > |                              [**Zen Utils**](https://www.curseforge.com/minecraft/mc-mods/zenutil)                     | <nobr>zenutils-1.21.4</nobr><br><nobr>zenutils-1.21.6</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/648/528/30/30/638050129235150630.png"            > |                               [**RLMixins**](https://www.curseforge.com/minecraft/mc-mods/rlmixins)                    | <nobr>RLMixins-1.3.14</nobr><br><nobr>RLMixins-1.3.15</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/874/755/30/30/638296262646953159.png"            > |                [**Alfheim Lighting Engine**](https://www.curseforge.com/minecraft/mc-mods/alfheim-lighting-engine)     | <nobr>Alfheim-1.5-Dev-1</nobr><br><nobr>Alfheim-1.5-Dev-4</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/937/632/30/30/638416090890641368.png"            > |            [**Thaumic Tinkerer Unofficial**](https://www.curseforge.com/minecraft/mc-mods/thaumic-tinkerer-unofficial) | <nobr>thaumictinkerer-1.12.2-5.7.2-Unofficial</nobr><br><nobr>thaumictinkerer-1.12.2-5.8.0-Unofficial</nobr>

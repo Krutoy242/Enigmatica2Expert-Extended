@@ -192,28 +192,46 @@ craft.remake(<immersiveengineering:stone_decoration> * 3, ['pretty',
 });
 
 // Redstone Engineering Block
-recipes.remove(<immersiveengineering:metal_decoration0:3>);
-recipes.addShaped('Redstone Engineering Block',
-  <immersiveengineering:metal_decoration0:3> * 2,
-  [[<ore:plateCopper>, <ore:ingotConstantan>, <ore:plateCopper>],
-    [<ore:ingotConstantan>, <ore:gemRedstone>, <ore:ingotConstantan>],
-    [<ore:plateCopper>, <ore:ingotConstantan>, <ore:plateCopper>]]);
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <immersiveengineering:metal_decoration0:3> * 2, ['pretty',
+  '□ ▬ □',
+  '▬ e ▬',
+  '□ ▬ □'], {
+  '□': <ore:plateCopper>,
+  '▬': <ore:ingotConstantan>,
+  'e': <ore:gemRedstone>
+}, 4, {
+  'e': <ore:ingotSignalum>
+});
 
 // Light Engineering Block
-recipes.remove(<immersiveengineering:metal_decoration0:4>);
-recipes.addShaped('Light Engineering Block',
-  <immersiveengineering:metal_decoration0:4> * 4,
-  [[<ore:plateBronze>, <ore:alloyAdvanced>, <ore:plateBronze>],
-    [<ore:alloyAdvanced>, <immersiveengineering:metal_decoration1:5>, <ore:alloyAdvanced>],
-    [<ore:plateBronze>, <ore:alloyAdvanced>, <ore:plateBronze>]]);
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <immersiveengineering:metal_decoration0:4> * 4, ['pretty',
+  '□ A □',
+  'A l A',
+  '□ A □'], {
+  '□': <ore:plateBronze>,
+  'A': <ore:alloyAdvanced>,
+  'l': <ore:scaffoldingAluminum>,
+}, 6, {
+  '□': <ore:plateConstantan>,
+  'A': <ore:ingotRedstoneAlloy>,
+});
 
 // Heavy Engineering Block
-recipes.remove(<immersiveengineering:metal_decoration0:5>);
-recipes.addShaped('Heavy Engineering Block',
-  <immersiveengineering:metal_decoration0:5> * 4,
-  [[<ore:plateUranium>, <ore:alloyElite>, <ore:plateUranium>],
-    [<immersiveengineering:material:8>, <immersiveengineering:metal_decoration1:1>, <immersiveengineering:material:8>],
-    [<ore:plateUranium>, <ore:alloyElite>, <ore:plateUranium>]]);
+scripts.mods.extendedcrafting_engineering.remakeAlted(
+  <immersiveengineering:metal_decoration0:5> * 10, ['pretty',
+  '□ E □',
+  'S t S',
+  '□ E □'], {
+  '□': <ore:plateUranium>,
+  'E': <ore:alloyElite>,
+  'S': <immersiveengineering:material:8>,
+  't': <ore:scaffoldingSteel>,
+}, 10, {
+  '□': <ore:plateDU>,
+  'S': <immersiveengineering:material:9>,
+});
 
 // Garden Cloche
 recipes.remove(<immersiveengineering:metal_device1:13>);

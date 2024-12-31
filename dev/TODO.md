@@ -14,6 +14,11 @@
 - [ ] end/nether `draconium ore` make smelt into default ore variant to line up with other end/nether ores
 - [ ] increase will output of blood magic Flux cleanse ritual
 - [ ] Make Singularities sucking in items in inventory
+- [ ] TOP remove "(Level: )" text
+- [ ] TOP localize mining levels
+- [ ] 📖 "Ratlantis World Generation" remove AnyDamage
+- [ ] 🟢 Add https://legacy.curseforge.com/minecraft/mc-mods/better-quest-pop-up
+- [ ] 🟢 Add https://legacy.curseforge.com/minecraft/mc-mods/sound-physics-remixin
 
 ---
 
