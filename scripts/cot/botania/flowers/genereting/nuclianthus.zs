@@ -35,7 +35,7 @@ fuel:name [duration, heat/t, effciency]
 
 } as int[][string];
 
-static fuelDurationMultiplier as double = 1.0;
+static fuelDurationMultiplier as double = 0.5; //It's not nerfed, this getter always returns doubled amount, that's why it's 0.5
 static fuelManaGenerationMultiplier as double = 1.0;
 static overHeatLimit as int = 10000;
 
@@ -61,12 +61,18 @@ function generate(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInG
     val heatGenerated = Math.max(manaGenerated + subtile.getMana() - subtile.getMaxMana(), 0);
     subtile.setCustomData(subtile.data.deepUpdate({Overheat: (Math.max((subtile.data.Overheat + heatGenerated - 10) as int , 0)), FuelData: {duration: subtile.data.FuelData.duration - 2}},{FuelData: {duration: OVERWRITE}, Overheat: OVERWRITE}));
     subtile.addMana(manaGenerated);
-    if (world.random.nextInt(5) > 2) scripts.lib.sound.play('minecraft:block.lava.pop', pos, world); // I would like to use this: "nuclearcraft:player.geiger_tick"
-    (world.native as WorldServer).spawnParticle(EnumParticleTypes.REDSTONE, 0.5f + pos.x, 1.2 + pos.y, 0.5f + pos.z, 0, ((subtile.data.Overheat as float) / 10000) - 1, (((10000 - subtile.data.Overheat) as float) / 10000), 0, 1, 0);
-    if (subtile.data.Overheat > overHeatLimit) world.performExplosion(null, pos.x, pos.y, pos.z, 20.0f, true, true); // TODO make falling blocks
+    if (world.random.nextInt(5) > 2) scripts.lib.sound.play('minecraft:block.lava.pop', pos, world);
+    makeParticleRing(world ,0.5f + pos.x, 1.2 + pos.y, 0.5f + pos.z, pow((subtile.data.FuelData.duration as double), 0.5) / 10.0, pow((subtile.data.FuelData.maxDuration as double), 0.5) / 10.0, ((subtile.data.Overheat as float) / 10000) - 1, (((10000 - subtile.data.Overheat) as float) / 10000));
+    if (subtile.data.Overheat > overHeatLimit) world.performExplosion(null, pos.x, pos.y, pos.z, 20.0f, true, true);
   }
   else {
     dropFuelWaste(world, pos, subtile);
+  }
+}
+
+function makeParticleRing(world as IWorld, x as double, y as double, z as double, circleLength as double, max as double, r as float, g as float) as void{
+  for i in 0 .. circleLength {
+    (world.native as WorldServer).spawnParticle(EnumParticleTypes.REDSTONE, x + 0.5*Math.cos(6.28 * (i as double / max)), y, z + 0.5*Math.sin(6.28 * (i as double / max)), 0, r, g, 0, 1, 0);
   }
 }
 
@@ -77,7 +83,7 @@ function pickUpFuel(world as IWorld, pos as IBlockPos, subtile as SubTileEntityI
   if (isNull(fuelData)) return;
   val newData = {
     Status   : 'work',
-    FuelData : {duration: (fuelDurationMultiplier * fuelData[0]) as int , production: (fuelManaGenerationMultiplier * fuelData[1] * fuelData[2] / 100) as int},
+    FuelData : {duration: (fuelDurationMultiplier * fuelData[0]) as int , production: (fuelManaGenerationMultiplier * fuelData[1] * fuelData[2] / 100) as int, maxDuration: (fuelDurationMultiplier * fuelData[0]) as int},
     Overheat : getSubtileHeat(subtile),
     WasteName: getFuelWasteOreDictName(fuel.item),
   } as IData;
