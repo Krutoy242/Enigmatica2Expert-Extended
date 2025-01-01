@@ -10,10 +10,10 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.VanillaFactory;
 import mods.randomtweaker.cote.SubTileEntityInGame;
 
-static manaCostMultipier as int = 300;
+static manaCostMultipier as int = 2000;
 
 val jikanacea = VanillaFactory.createSubTileFunctional('jikanacea', 0x640064);
-jikanacea.maxMana = 9600;
+jikanacea.maxMana = manaCostMultipier * 64;
 jikanacea.range = 8;
 jikanacea.onUpdate = function (subtile, world, pos) {
   if (world.isRemote()

@@ -34,7 +34,7 @@ tile.botania:flower.jikanacea.name=Jikanacea
 tile.botania:flower.jikanacea.reference=A way to save some time
 botania.entry.jikanacea=Jikanacea
 botania.tagline.botania.entry.jikanacea=Prolongs time in a bottle effect
-botania.page.jikanacea0=§1Jikanacea§r is a unique flower that extends nearby effects of §cTime in a Bottle§r. <br>The higher level of acceleration, the more mana it consumes to sustain the flow of time. 
+botania.page.jikanacea0=§1Jikanacea§r is a unique flower that extends nearby effects of §cTime in a Bottle§r. <br>The higher level of acceleration, the more mana it consumes to sustain the flow of time. <br>At the highest level of acceleration, it requires an amount of mana equivalent to a constantly working Gaia Spreader with a Potency Mana Lens.
 botania.page.jikanacea1=&oTime flows where mana grows&r
 
 tile.botania:flower.echinacenko.name=Echinacenko
