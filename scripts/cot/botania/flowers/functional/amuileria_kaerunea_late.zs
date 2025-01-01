@@ -79,9 +79,9 @@ for item, result in lightningRecipes {
 }
 
 function registerThunderRecipe(item as IItemStack, result as IItemStack) as void {
-  if (recipesLigthningFlower has item.definition.id) {
+  if (recipesLigthningFlower has item.name) {
     return;
   }
-  recipesLigthningFlower[item.definition.id] = result;
-  if (!(recipesLigthningFlower has result.definition.id)) recipesLigthningFlower[result.definition.id] = result;
+  recipesLigthningFlower[item.name] = result;
+  if (!(recipesLigthningFlower has result.name)) recipesLigthningFlower[result.name] = result;
 }
