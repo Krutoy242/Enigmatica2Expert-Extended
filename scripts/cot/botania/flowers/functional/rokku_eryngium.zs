@@ -15,6 +15,7 @@ import mods.randomtweaker.cote.SubTileEntityInGame;
 import mods.zenutils.DataUpdateOperation.OVERWRITE;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
+import native.net.minecraft.world.World;
 
 static validCrystalNames as IItemStack[string] = {
   'item.itemcelestialcrystal' : <item:astralsorcery:itemcelestialcrystal>,
@@ -29,7 +30,7 @@ rokku_eryngium.maxMana = 1000;
 rokku_eryngium.range = 1;
 rokku_eryngium.onUpdate = function (subtile, world, pos) {
   if (world.isRemote()
-    || world.time % 20 != 5) {
+    || (world as World).totalWorldTime % 20 != 5) {
     return;
   }
   if (isNull(subtile.data)

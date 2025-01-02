@@ -22,6 +22,7 @@ import native.nc.enumm.IFissionFuelEnum;
 import native.nc.item.ItemFissionFuel;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
+import native.net.minecraft.world.World;
 
 static fuelsList as int[][string] = {
 /*
@@ -77,6 +78,7 @@ function makeParticleRing(world as IWorld, x as double, y as double, z as double
 }
 
 function pickUpFuel(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
+  if((world as World).totalWorldTime % 20 != 3) return;
   val fuel = findFuel(world, pos);
   if (isNull(fuel)) return;
   val fuelData = getFuelData(fuel.item);
