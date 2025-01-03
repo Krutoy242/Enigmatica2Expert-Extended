@@ -8,7 +8,6 @@ import crafttweaker.world.IWorld;
 import mods.randomtweaker.cote.SubTileEntityInGame;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
-import native.net.minecraft.world.World;
 
 static recipesLigthningFlower as IItemStack[string] = {
 } as IItemStack[string];
@@ -20,7 +19,7 @@ val amuileria_kaerunea = <cotSubTile:amuileria_kaerunea>;
 amuileria_kaerunea.onUpdate = function (subtile, world, pos) {
   if (!world.worldInfo.isThundering()) return;
   if (world.isRemote()) return;
-  if ((world as World).totalWorldTime % 100 == 17) charge(world, pos, subtile);
+  if (world.worldInfo.worldTotalTime % 100 == 17) charge(world, pos, subtile);
 };
 
 events.onEntityItemDeath(function (e as mods.zenutils.event.EntityItemDeathEvent) {

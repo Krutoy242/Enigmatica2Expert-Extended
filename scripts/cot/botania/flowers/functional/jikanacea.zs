@@ -9,7 +9,6 @@ import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 import mods.contenttweaker.VanillaFactory;
 import mods.randomtweaker.cote.SubTileEntityInGame;
-import native.net.minecraft.world.World;
 
 static manaCostMultipier as int = 2000;
 
@@ -18,7 +17,7 @@ jikanacea.maxMana = manaCostMultipier * 64;
 jikanacea.range = 8;
 jikanacea.onUpdate = function (subtile, world, pos) {
   if (world.isRemote()
-    || (world as World).totalWorldTime  % 300 != 0) {
+    || world.worldInfo.worldTotalTime  % 300 != 0) {
     return;
   }
 

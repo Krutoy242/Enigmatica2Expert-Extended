@@ -12,7 +12,6 @@ import mods.contenttweaker.VanillaFactory;
 import mods.randomtweaker.cote.SubTileEntityInGame;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
-import native.net.minecraft.world.World;
 
 static manaCost as int = 100;
 static nutritionGain as float = 1.0f;
@@ -22,7 +21,7 @@ echinacenko.maxMana = 1000;
 echinacenko.range = 4;
 echinacenko.onUpdate = function (subtile, world, pos) {
   if (world.isRemote()
-    || (world as World).totalWorldTime % 100 != 13) {
+    || world.worldInfo.worldTotalTime % 100 != 13) {
     return;
   }
 

@@ -67,7 +67,6 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.VanillaFactory;
 import mods.zenutils.DataUpdateOperation.MERGE;
 import mods.zenutils.DataUpdateOperation.OVERWRITE;
-import native.net.minecraft.world.World;
 
 val campanimia = VanillaFactory.createSubTileGenerating('campanimia', 0xFFFF);
 campanimia.maxMana = 300000;
@@ -75,7 +74,7 @@ campanimia.passiveFlower = false;
 campanimia.range = 1;
 campanimia.onUpdate = function (subtile, world, pos) {
   if (world.isRemote()) return;
-  if ((world as World).totalWorldTime % 20 != 7) return;
+  if (world.worldInfo.worldTotalTime % 20 != 7) return;
   val cruciblesPos = getCruciblesPos(world, pos);
   if (cruciblesPos.length == 0) return;
   val crucibles = getCrucibles(world, cruciblesPos);
