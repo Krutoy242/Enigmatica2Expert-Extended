@@ -34,7 +34,7 @@ tile.botania:flower.jikanacea.name=时光菊
 tile.botania:flower.jikanacea.reference=节省时间的方法
 botania.entry.jikanacea=时光菊
 botania.tagline.botania.entry.jikanacea=延长时间瓶效果
-botania.page.jikanacea0=§1时光菊§r是一种相当独特的花，可以延长附近§c时间瓶§r的加速时长。<br>加速等级越高，维持加速所需的魔力就越多。<br>在最高加速级别时，它需要的法力量相当于一个持续运作的盖亚传播器配备强化法力透镜。
+botania.page.jikanacea0=§1时光菊§r是一种相当独特的花，可以延长附近§c时间瓶§r的加速时长。<br>加速等级越高，维持加速所需的魔力就越多。<br>在最高加速级别时，它需要的魔力量相当于一个持续运作的盖亚发射器配备强化魔力透镜。
 botania.page.jikanacea1=&o时光在魔力增长处流淌&r
 
 tile.botania:flower.echinacenko.name=康健菊
