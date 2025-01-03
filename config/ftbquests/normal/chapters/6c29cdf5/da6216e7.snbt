@@ -1,6 +1,6 @@
 {
-	x: 7.0d,
-	y: 2.7d,
+	x: 6.0d,
+	y: 11.0d,
 	text: [
 		"{q.botania.hovering_hourglass.desc}"
 	],

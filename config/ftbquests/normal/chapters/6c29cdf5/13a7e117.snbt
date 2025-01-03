@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.entropinnyum.name}",
-	x: 13.166666666666666d,
-	y: 2.6666666666666665d,
+	x: -1.0945641d,
+	y: 9.127114d,
 	text: [
 		"{q.botania.entropinnyum.desc}"
 	],

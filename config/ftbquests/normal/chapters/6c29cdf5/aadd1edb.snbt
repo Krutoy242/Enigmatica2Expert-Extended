@@ -1,13 +1,13 @@
 {
 	title: "{q.botania.orechid_ignem.name}",
-	x: 4.833333333333333d,
-	y: 11.666666666666666d,
+	x: 11.949856d,
+	y: 9.554958d,
 	text: [
 		"{q.botania.orechid_ignem.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"33f630e1"
+		"5fe4c911"
 	],
 	tasks: [{
 		uid: "bd5de07c",

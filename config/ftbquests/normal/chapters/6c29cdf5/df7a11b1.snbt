@@ -1,12 +1,12 @@
 {
-	x: 10.5d,
-	y: 3.8333333333333335d,
+	x: 12.092324335849337d,
+	y: 4.679837387624884d,
 	text: [
 		"{q.botania.rod_of_the_plentif.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"ebb7b7b1"
+		"2af28ccb"
 	],
 	tasks: [{
 		uid: "1f23c389",

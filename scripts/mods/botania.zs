@@ -460,3 +460,73 @@ for i in 0 .. 16 {
     1.25, 'shears;-1;-1');
 }
 // ////////////////////////////////////////////////////////////////
+
+// New flowers crafting recipes
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "campanimia"}), [
+<botania:rune:1>,
+<botania:rune:2>,
+<botania:rune:3>,
+<botania:rune>,
+<quark:rune:14>,
+<quark:rune:2>,
+<quark:rune:4>,
+]);
+
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "nuclianthus"}), [
+<quark:rune:5>,
+<quark:rune:4>,
+<quark:rune:4>,
+<quark:rune:1>,
+<botania:manaresource:1>,
+<botania:rune:6>,
+<botania:rune:6>,
+]);
+
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "rokku_eryngium"}), [
+<botania:manaresource:5>,
+<botania:manaresource:9>,
+<botania:rune:11>,
+<botania:rune:12>,
+<quark:rune:11>,
+<quark:rune>,
+<quark:rune>,
+]);
+
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "jikanacea"}), [
+<astralsorcery:itemcraftingcomponent:4>,
+<botania:rune:14>,
+<botania:rune:9>,
+<quark:rune:2>,
+<quark:rune:4>,
+<quark:rune:4>,
+<thaumicaugmentation:material:5>,
+]);
+
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "echinacenko"}), [
+<quark:rune:2>,
+<quark:rune:2>,
+<quark:rune:5>,
+<botania:rune:10>,
+<botania:rune:12>,
+<botania:manaresource:1>,
+]);
+
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "antirrhift"}), [
+<botania:manaresource:8>,
+<botania:rune:15>,
+<quark:rune:2>,
+<quark:rune>,
+<quark:rune>,
+<thaumicaugmentation:material:5>,
+<thaumicaugmentation:material:5>,
+]);
+
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "amuileria_kaerunea"}), [
+<botania:manaresource:9>,
+<botania:rune:8>,
+<minecraft:end_rod>,
+<quark:rune:3>,
+<quark:rune:3>,
+<quark:rune:4>,
+<quark:rune>,
+]);

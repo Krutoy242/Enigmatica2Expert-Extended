@@ -1,12 +1,13 @@
 {
-	x: 7.833333333333333d,
-	y: 6.5d,
+	x: 8.0d,
+	y: 2.5d,
 	text: [
 		"{q.botania.elven_mana_spreader.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"4aa39f8e"
+		"4aa39f8e",
+		"b045426a"
 	],
 	tasks: [{
 		uid: "1376d955",

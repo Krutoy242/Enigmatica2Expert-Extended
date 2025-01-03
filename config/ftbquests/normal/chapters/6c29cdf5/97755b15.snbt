@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.dandelifeon.name}",
+	x: 0.0d,
+	y: 12.0d,
+	text: [
+		"{q.botania.dandelifeon.desc}"
+	],
+	dependencies: [
+		"95ce8a09"
+	],
+	tasks: [{
+		uid: "55a492f7",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "dandelifeon"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "95210b37",
+		type: "loot",
+		table: 1
+	}]
+}

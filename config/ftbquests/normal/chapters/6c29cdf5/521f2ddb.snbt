@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.narslimmus.name}",
-	x: 13.166666666666666d,
-	y: 6.666666666666667d,
+	x: 1.9498558d,
+	y: 9.554958d,
 	text: [
 		"{q.botania.narslimmus.desc}"
 	],

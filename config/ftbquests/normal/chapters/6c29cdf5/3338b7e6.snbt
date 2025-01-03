@@ -1,6 +1,6 @@
 {
-	x: 10.5d,
-	y: 6.5d,
+	x: 7.0d,
+	y: -2.0d,
 	text: [
 		"{q.botania.shard_of_laputa.desc}"
 	],

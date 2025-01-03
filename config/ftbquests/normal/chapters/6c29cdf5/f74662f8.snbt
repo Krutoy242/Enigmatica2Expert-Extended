@@ -1,7 +1,7 @@
 {
 	icon: "botania:manaweavechest",
-	x: 1.8333333333333333d,
-	y: 6.5d,
+	x: 1.0d,
+	y: 1.0d,
 	text: [
 		"{q.botania.manaweave_cowl.desc}"
 	],

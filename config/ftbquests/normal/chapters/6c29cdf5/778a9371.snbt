@@ -1,6 +1,7 @@
 {
-	x: 0.33333333333333337d,
-	y: 1.1666666666666665d,
+	x: 7.5d,
+	y: 4.5d,
+	shape: "diamond",
 	text: [
 		"{q.botania.pulse_mana_spreader.desc}"
 	],
@@ -8,6 +9,7 @@
 		"5672d99b",
 		"b045426a"
 	],
+	size: 0.75d,
 	tasks: [{
 		uid: "8e63cbee",
 		type: "item",

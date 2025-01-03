@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.hopperhock.name}",
-	x: 14.833333333333334d,
-	y: 1.8333333333333333d,
+	x: 10.0d,
+	y: 10.0d,
 	text: [
 		"{q.botania.hopperhock.desc}"
 	],

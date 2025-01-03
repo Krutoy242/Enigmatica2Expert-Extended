@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.marimorphosis.name}",
+	x: 10.867767d,
+	y: 8.198062d,
+	text: [
+		"{q.botania.marimorphosis.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "fae34b87",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "marimorphosis"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "823db45c",
+		type: "loot",
+		table: 0
+	}]
+}

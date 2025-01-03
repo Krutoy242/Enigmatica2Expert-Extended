@@ -1,0 +1,27 @@
+{
+	title: "{q.botania.campanimia.name}",
+	x: 1.364899d,
+	y: 10.311529d,
+	shape: "gear",
+	text: [
+		"{q.botania.campanimia.desc}"
+	],
+	dependencies: [
+		"95ce8a09"
+	],
+	tasks: [{
+		uid: "c210b709",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "campanimia"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "b48f3f07",
+		type: "loot",
+		table: 0
+	}]
+}

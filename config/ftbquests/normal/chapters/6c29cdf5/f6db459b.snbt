@@ -1,0 +1,27 @@
+{
+	title: "{q.botania.antirrhift.name}",
+	x: 8.436337d,
+	y: 11.24698d,
+	shape: "gear",
+	text: [
+		"{q.botania.antirrhift.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "88491f50",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "antirrhift"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "0746b9f7",
+		type: "loot",
+		table: 1
+	}]
+}

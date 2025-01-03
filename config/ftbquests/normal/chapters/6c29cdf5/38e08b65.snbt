@@ -1,12 +1,13 @@
 {
-	x: 9.166666666666666d,
-	y: 9.166666666666666d,
+	x: 8.0d,
+	y: 0.0d,
 	text: [
 		"{q.botania.gaia_mana_spreader.desc}"
 	],
 	dependencies: [
+		"f94ec042",
 		"5672d99b",
-		"8fd96e22"
+		"88d4b657"
 	],
 	tasks: [{
 		uid: "8af85118",

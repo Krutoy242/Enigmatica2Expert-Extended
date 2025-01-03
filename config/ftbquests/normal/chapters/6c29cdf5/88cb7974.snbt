@@ -6,8 +6,8 @@
 		},
 		id: "botania:specialflower"
 	},
-	x: 13.5d,
-	y: 4.666666666666667d,
+	x: 1.563663d,
+	y: 11.24698d,
 	text: [
 		"{q.botania.kekimurus.desc}"
 	],

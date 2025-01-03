@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.shulk_me_not.name}",
+	x: 0.60743725d,
+	y: 11.261356d,
+	text: [
+		"{q.botania.shulk_me_not.desc}"
+	],
+	dependencies: [
+		"95ce8a09"
+	],
+	tasks: [{
+		uid: "d761b244",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "shulk_me_not"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "2be554fd",
+		type: "loot",
+		table: 1
+	}]
+}

@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.spark_augments.name}",
-	x: 0.5d,
-	y: 9.166666666666666d,
+	x: 2.75d,
+	y: 5.75d,
 	text: [
 		"{q.botania.spark_augments.desc}"
 	],
@@ -9,6 +9,7 @@
 		"5672d99b",
 		"dc0ff5c4"
 	],
+	dependency_requirement: "one_completed",
 	tasks: [{
 		uid: "456ae640",
 		type: "item",

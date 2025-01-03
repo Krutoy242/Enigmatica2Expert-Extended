@@ -1,13 +1,14 @@
 {
-	x: 1.8333333333333333d,
-	y: 7.833333333333333d,
+	x: 2.5d,
+	y: 3.0d,
 	text: [
 		"{q.botania.manufactory_halo.desc}"
 	],
 	dependencies: [
-		"2bc0a8f1",
-		"5672d99b"
+		"5672d99b",
+		"aca34b29"
 	],
+	size: 0.75d,
 	tasks: [{
 		uid: "a2946035",
 		type: "item",

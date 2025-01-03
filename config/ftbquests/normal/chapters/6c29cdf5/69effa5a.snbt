@@ -1,11 +1,12 @@
 {
 	icon: "botania:terrasteelchest",
-	x: 4.833333333333333d,
-	y: 9.166666666666666d,
+	x: 4.0d,
+	y: -1.0d,
 	text: [
 		"{q.botania.terrasteel_helmet.desc}"
 	],
 	dependencies: [
+		"0db73424",
 		"33f630e1"
 	],
 	tasks: [{

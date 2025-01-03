@@ -1,0 +1,27 @@
+{
+	title: "{q.botania.jikanacea.name}",
+	x: 10.0d,
+	y: 12.0d,
+	shape: "gear",
+	text: [
+		"{q.botania.jikanacea.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "874e30da",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "jikanacea"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "07f3d2d3",
+		type: "loot",
+		table: 2
+	}]
+}

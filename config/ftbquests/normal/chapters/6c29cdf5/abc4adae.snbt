@@ -1,12 +1,13 @@
 {
-	x: 0.5d,
-	y: 5.166666666666667d,
+	x: 0.2d,
+	y: 5.6d,
 	text: [
 		"{q.botania.band_of_mana.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"e93a1011"
+		"e93a1011",
+		"b4e2c4b1"
 	],
 	tasks: [{
 		uid: "7413374e",

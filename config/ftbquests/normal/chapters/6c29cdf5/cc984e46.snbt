@@ -1,6 +1,6 @@
 {
-	x: 11.833333333333334d,
-	y: 1.8333333333333333d,
+	x: 5.0d,
+	y: 10.0d,
 	text: [
 		"{q.botania.petal_apothecary.desc}"
 	],
@@ -8,6 +8,7 @@
 		"5672d99b",
 		"c8d050c2"
 	],
+	size: 1.33d,
 	tasks: [{
 		uid: "2f2a7f68",
 		type: "item",

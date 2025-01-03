@@ -1,6 +1,6 @@
 {
-	x: 7.833333333333333d,
-	y: 5.166666666666667d,
+	x: 5.0d,
+	y: 1.0d,
 	text: [
 		"{q.botania.elven_gateway_core.desc}"
 	],

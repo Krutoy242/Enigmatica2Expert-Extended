@@ -1,0 +1,52 @@
+#Generating flowers
+
+tile.botania:flower.campanimia.name=Campanimia
+tile.botania:flower.campanimia.reference=A true connoisseur!
+botania.entry.campanimia=Campanimia
+botania.tagline.botania.entry.campanimia=Mana from essentia
+botania.page.campanimia0=The §1Campanimia§r is a flower that loves to drink leftover essentia from the crucibles of Thaumaturges. The more types of essentia left, the more §4mana§r it generates. <br>Note that the crucible must be functional — must be supplied with both heat and water.
+botania.page.campanimia1=&oDon't get too drunk&r
+
+tile.botania:flower.nuclianthus.name=Nuclianthus
+tile.botania:flower.nuclianthus.reference=Eats nukes, blooms bright.
+botania.entry.nuclianthus=Nuclianthus
+botania.tagline.botania.entry.nuclianthus=Mana from nuclear fuel
+botania.page.nuclianthus0=Reactor designs are often highly complex, but why not go botanical? The §1Nuclianthus§r is the perfect solution. It consumes nearby nuclear fuels, and depending on their potency, it generates §4mana§r. However, if its buffer fills up, the flower will explode.
+botania.page.nuclianthus1=&oWhere's radiation?&r
+
+#Functional flowers
+
+tile.botania:flower.antirrhift.name=Antirrhift
+tile.botania:flower.antirrhift.reference=We all hate taxes
+botania.entry.antirrhift=Antirrhift
+botania.tagline.botania.entry.antirrhift=Speed up spreader
+botania.page.antirrhift0=Mana spreaders are slow, but §1Antirrhift§r speeds things up by teleporting §cmana§r directly to the pool. However, it takes a small toll, absorbing about a fifth of the §cmana§r for itself in the process.
+botania.page.antirrhift1=&oI've won... but at what cost?&r
+
+tile.botania:flower.rokku_eryngium.name=Rokku Eryngium
+tile.botania:flower.rokku_eryngium.reference=Sharpening Flower of the Stars
+botania.entry.rokku_eryngium=Rokku Eryngium
+botania.tagline.botania.entry.rokku_eryngium=Cuts rock crystals
+botania.page.rokku_eryngium0=The §1Rokku Eryngium§r is a flower that, unlike the grindstone, allows for the automation of maximizing §frock crystal§r cut stat. <br>It will pick up nearby §frock crystals§r and, at a decent §4mana§r cost, sharpen them. However, be careful, as it can still break the crystal like a grindstone and is not keen to return it back.
+botania.page.rokku_eryngium1=&oBack to the stone age&r
+
+tile.botania:flower.jikanacea.name=Jikanacea
+tile.botania:flower.jikanacea.reference=A way to save some time
+botania.entry.jikanacea=Jikanacea
+botania.tagline.botania.entry.jikanacea=Prolongs time in a bottle effect
+botania.page.jikanacea0=§1Jikanacea§r is a unique flower that extends nearby effects of §cTime in a Bottle§r. <br>The higher level of acceleration, the more mana it consumes to sustain the flow of time. <br>At the highest level of acceleration, it requires an amount of mana equivalent to a constantly working Gaia Spreader with a Potency Mana Lens.
+botania.page.jikanacea1=&oTime flows where mana grows&r
+
+tile.botania:flower.echinacenko.name=Echinacenko
+tile.botania:flower.echinacenko.reference=Organic dietary supplements
+botania.entry.echinacenko=Echinacenko
+botania.tagline.botania.entry.echinacenko=Refills nearby players nutritions
+botania.page.echinacenko0=While forbidden items may fill your stomach through magical aura, they lack the nourishment your body needs. §1Echinacenko§r solves this by restoring all types of nutrition to nearby players, using §4mana§r to fuel its life-sustaining magic.
+botania.page.echinacenko1=&oTaste doesn't matter&r
+
+tile.botania:flower.amuileria_kaerunea.name=Amuileria kaerunea
+tile.botania:flower.amuileria_kaerunea.reference=30.000 degrees is a lie
+botania.entry.amuileria_kaerunea=Amuileria kaerunea
+botania.tagline.botania.entry.amuileria_kaerunea=Charges items with lightning
+botania.page.amuileria_kaerunea0=Active during thunderstorms, §1Amuileria Kaerunea§r channels lightning strikes to charge nearby items. It will call down a bolt when needed, consuming §cmana§r to infuse the items with storm-born energy.
+botania.page.amuileria_kaerunea1=&oThor in a flower&r

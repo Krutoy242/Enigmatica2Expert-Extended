@@ -1,6 +1,6 @@
 {
-	x: 1.8333333333333333d,
-	y: 5.166666666666667d,
+	x: 2.0d,
+	y: 7.0d,
 	text: [
 		"{q.botania.mana_tablet.desc}"
 	],

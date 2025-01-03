@@ -1,6 +1,6 @@
 {
-	x: 10.5d,
-	y: 7.833333333333333d,
+	x: 8.0d,
+	y: -2.0d,
 	text: [
 		"{q.botania.dice_of_fate.desc}"
 	],

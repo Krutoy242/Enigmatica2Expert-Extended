@@ -1,0 +1,20 @@
+{
+	title: "{q.botania.rod_of_the_bifrost.name}",
+	x: 10.927050983124841d,
+	y: 1.1468304511145395d,
+	text: [
+		"{q.botania.rod_of_the_bifrost.desc}"
+	],
+	dependencies: [
+		"2af28ccb"
+	],
+	tasks: [{
+		uid: "39237ca0",
+		type: "item",
+		items: [{
+			item: "botania:rainbowrod"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}]
+}

@@ -1,0 +1,27 @@
+{
+	title: "{q.botania.nuclianthus.name}",
+	x: -1.364899d,
+	y: 10.311529d,
+	shape: "gear",
+	text: [
+		"{q.botania.nuclianthus.desc}"
+	],
+	dependencies: [
+		"95ce8a09"
+	],
+	tasks: [{
+		uid: "b3da5ed0",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "nuclianthus"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "1cbe1d49",
+		type: "loot",
+		table: 0
+	}]
+}

@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.jaded_amaranthus.name}",
-	x: 18.166666666666668d,
-	y: 2.8333333333333335d,
+	x: 9.132233d,
+	y: 8.198062d,
 	text: [
 		"{q.botania.jaded_amaranthus.desc}"
 	],

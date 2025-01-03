@@ -1,13 +1,13 @@
 {
 	title: "{q.botania.wand_of_equal_trade.name}",
-	x: 10.5d,
-	y: 5.166666666666667d,
+	x: 12.392601600959507d,
+	y: 3.811698170253172d,
 	text: [
 		"{q.botania.wand_of_equal_trade.desc}"
 	],
 	dependencies: [
 		"5672d99b",
-		"df7a11b1"
+		"2af28ccb"
 	],
 	tasks: [{
 		uid: "e012f8d4",

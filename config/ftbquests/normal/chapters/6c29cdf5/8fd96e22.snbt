@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.gaia_guardian_ii.name}",
-	x: 9.166666666666666d,
-	y: 7.833333333333333d,
+	x: 8.0d,
+	y: -1.0d,
 	text: [
 		"{q.botania.gaia_guardian_ii.desc}"
 	],

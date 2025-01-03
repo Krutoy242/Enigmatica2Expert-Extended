@@ -1,0 +1,25 @@
+{
+	title: "{q.botania.ring_of_the_mantle.name}",
+	x: -2.092324335849338d,
+	y: 4.679837387624884d,
+	text: [
+		"{q.botania.ring_of_the_mantle.desc}"
+	],
+	dependencies: [
+		"b4e2c4b1"
+	],
+	tasks: [{
+		uid: "08ea0488",
+		type: "item",
+		items: [{
+			item: "botania:miningring"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "6668b25a",
+		type: "loot",
+		table: 0
+	}]
+}

@@ -1,11 +1,12 @@
 {
 	icon: "botania:elementiumchest",
-	x: 6.166666666666667d,
-	y: 9.166666666666666d,
+	x: 6.0d,
+	y: 0.0d,
 	text: [
 		"{q.botania.elementium_helmet.desc}"
 	],
 	dependencies: [
+		"7fa70a93",
 		"4aa39f8e"
 	],
 	tasks: [{

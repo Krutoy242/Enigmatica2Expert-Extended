@@ -1,0 +1,26 @@
+{
+	title: "{q.botania.agricarnation.name}",
+	x: 8.905436d,
+	y: 9.127114d,
+	text: [
+		"{q.botania.agricarnation.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "6f419052",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "agricarnation"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "bae8f01b",
+		type: "loot",
+		table: 0
+	}]
+}

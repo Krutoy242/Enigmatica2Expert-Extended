@@ -1,6 +1,6 @@
 {
-	x: 3.5d,
-	y: 3.8333333333333335d,
+	x: 4.0d,
+	y: 7.5d,
 	text: [
 		"{q.botania.livingrock.desc}"
 	],

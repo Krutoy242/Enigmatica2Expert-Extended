@@ -1,0 +1,20 @@
+{
+	title: "{q.botania.rod_of_the_shaded_mesa.name}",
+	x: 11.818454535324515d,
+	y: 1.8708632963199134d,
+	text: [
+		"{q.botania.rod_of_the_shaded_mesa.desc}"
+	],
+	dependencies: [
+		"2af28ccb"
+	],
+	tasks: [{
+		uid: "da6fda62",
+		type: "item",
+		items: [{
+			item: "botania:gravityrod"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}]
+}

@@ -1,0 +1,27 @@
+{
+	title: "{q.botania.echinacenko.name}",
+	x: 8.050144d,
+	y: 9.554958d,
+	shape: "gear",
+	text: [
+		"{q.botania.echinacenko.desc}"
+	],
+	dependencies: [
+		"5fe4c911"
+	],
+	tasks: [{
+		uid: "2518bfbe",
+		type: "item",
+		items: [{
+			id: "botania:specialflower",
+			tag: {
+				type: "echinacenko"
+			}
+		}]
+	}],
+	rewards: [{
+		uid: "517edea1",
+		type: "loot",
+		table: 1
+	}]
+}

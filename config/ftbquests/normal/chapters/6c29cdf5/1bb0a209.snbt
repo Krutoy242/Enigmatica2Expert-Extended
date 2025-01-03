@@ -1,0 +1,25 @@
+{
+	title: "{q.botania.the_spectator.name}",
+	x: -1.520811931200062d,
+	y: 5.298896096660367d,
+	text: [
+		"{q.botania.the_spectator.desc}"
+	],
+	dependencies: [
+		"b4e2c4b1"
+	],
+	tasks: [{
+		uid: "6933a475",
+		type: "item",
+		items: [{
+			item: "botania:itemfinder"
+		}],
+		ignore_damage: true,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "bf6d452f",
+		type: "loot",
+		table: 0
+	}]
+}

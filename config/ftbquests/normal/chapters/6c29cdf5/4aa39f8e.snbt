@@ -1,6 +1,6 @@
 {
-	x: 6.166666666666667d,
-	y: 7.166666666666667d,
+	x: 6.0d,
+	y: 2.5d,
 	text: [
 		"{q.botania.elementium_ingot.desc}"
 	],

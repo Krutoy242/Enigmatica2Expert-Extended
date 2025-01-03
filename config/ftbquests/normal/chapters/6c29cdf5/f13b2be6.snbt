@@ -1,6 +1,6 @@
 {
-	x: -0.9166666666666667d,
-	y: 3.8333333333333335d,
+	x: 6.0d,
+	y: 6.0d,
 	text: [
 		"{q.botania.horn_of_the_canopy.desc}"
 	],

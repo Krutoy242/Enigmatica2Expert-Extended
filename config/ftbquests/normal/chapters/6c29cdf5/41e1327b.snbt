@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.petro_petunia.name}",
-	x: 12.541666666666666d,
-	y: 8.625d,
+	x: -1.563663d,
+	y: 11.24698d,
 	text: [
 		"{q.botania.petro_petunia.desc}"
 	],

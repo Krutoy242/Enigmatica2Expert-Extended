@@ -1,6 +1,6 @@
 {
-	x: 0.5d,
-	y: 7.833333333333333d,
+	x: 1.25d,
+	y: 4.25d,
 	text: [
 		"{q.botania.conjuration_catalyst.desc}"
 	],

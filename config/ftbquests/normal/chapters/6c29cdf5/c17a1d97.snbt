@@ -1,7 +1,7 @@
 {
 	title: "{q.botania.thermalily.name}",
-	x: 12.833333333333334d,
-	y: 7.666666666666667d,
+	x: -0.86776745d,
+	y: 8.198062d,
 	text: [
 		"{q.botania.thermalily.desc}"
 	],

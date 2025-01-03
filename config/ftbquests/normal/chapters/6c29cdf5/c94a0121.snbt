@@ -1,7 +1,8 @@
 {
 	title: "{q.botania.shimmerwood.name}",
-	x: 7.833333333333333d,
-	y: 10.541666666666666d,
+	x: 6.5d,
+	y: 3.0d,
+	shape: "hexagon",
 	text: [
 		"{q.botania.shimmerwood.desc}"
 	],
@@ -9,6 +10,7 @@
 		"5672d99b",
 		"4aa39f8e"
 	],
+	size: 0.75d,
 	tasks: [{
 		uid: "94c40f8f",
 		type: "item",
