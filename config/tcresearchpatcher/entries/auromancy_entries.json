@@ -15,8 +15,7 @@
         },
         {
           "text": "research.ancient_focus.2",
-          "recipes": ["thaumcraft:focus_ancient"],
-          "warp": 1
+          "recipes": ["thaumcraft:focus_ancient"]
         }
       ]
     },

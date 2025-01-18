@@ -10,8 +10,7 @@
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_pickaxe.1",
-          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
-          "warp": 2
+          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"]
         },
         {
           "text": "research_stage.thaumadditions:void_elemental_pickaxe.2",
@@ -29,8 +28,7 @@
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_axe.1",
-          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
-          "warp": 2
+          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"]
         },
         {
           "text": "research_stage.thaumadditions:void_elemental_axe.2",
@@ -48,8 +46,7 @@
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_shovel.1",
-          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
-          "warp": 2
+          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"]
         },
         {
           "text": "research_stage.thaumadditions:void_elemental_shovel.2",
@@ -67,8 +64,7 @@
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_hoe.1",
-          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
-          "warp": 2
+          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"]
         },
         {
           "text": "research_stage.thaumadditions:void_elemental_hoe.2",
@@ -86,8 +82,7 @@
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_thaumometer.1",
-          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
-          "warp": 1
+          "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"]
         },
         {
           "text": "research_stage.thaumadditions:void_thaumometer.2",
@@ -107,7 +102,7 @@
           "text": "research_stage.thaumadditions:void_crop.1",
           "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
           "required_item": ["thaumcraft:void_seed;13"],
-          "warp": 4
+          "warp": 2
         },
         {
           "text": "research_stage.thaumadditions:void_crop.2",
@@ -127,7 +122,7 @@
           "text": "research_stage.thaumadditions:void_anvil.1",
           "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
           "required_craft": ["cyclicmagic:block_anvil_magma"],
-          "warp": 3
+          "warp": 1
         },
         {
           "text": "research_stage.thaumadditions:void_anvil.2",
@@ -147,7 +142,7 @@
           "text": "research_stage.thaumadditions:wormhole_mirror.1",
           "required_knowledge": ["OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
           "required_craft": ["thaumcraft:mirrored_glass"],
-          "warp": 2
+          "warp": 1
         },
         {
           "text": "research_stage.thaumadditions:wormhole_mirror.2",
@@ -184,7 +179,7 @@
         {
           "text": "research_stage.thaumadditions:adaminite.1",
           "required_knowledge": ["OBSERVATION;ELDRITCH;3", "THEORY;ELDRITCH;3"],
-          "warp": 5
+          "warp": 10
         },
         {
           "text": "research_stage.thaumadditions:adaminite.2",
@@ -203,7 +198,7 @@
         {
           "text": "research_stage.thaumadditions:mithminite.1",
           "required_knowledge": ["OBSERVATION;ELDRITCH;4", "THEORY;ELDRITCH;4"],
-          "warp": 10
+          "warp": 0
         },
         {
           "text": "research_stage.thaumadditions:mithminite.2",
@@ -525,7 +520,7 @@
         },
         {
           "text": "research_stage.flux_strike.5",
-          "warp": 5
+          "warp": 2
         }
       ]
     },

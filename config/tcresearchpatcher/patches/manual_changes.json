@@ -553,12 +553,18 @@
 ,{"key":"FOCUSCURSE","ops":[
   {"op":"replace",
   "path":"meta",
-  "value": ["REVERSE"]}
+  "value": ["REVERSE"]},
+  {"op":"replace",
+  "path":"stages/1/warp",
+  "value": 1}
 ]}
 
 ,{"key":"FOCUSRIFT","ops":[
   {"op":"remove",
-  "path":"meta"}
+  "path":"meta"},
+  {"op":"replace",
+  "path":"stages/0/warp",
+  "value": 1}
 ]}
 
 ,{"key":"FOCUSSCATTER","ops":[
@@ -570,6 +576,12 @@
 ,{"key":"FOCUSCLOUD","ops":[
   {"op":"remove",
   "path":"meta"}
+]}
+
+,{"key":"FOCUSSPELLBAT","ops":[
+  {"op":"replace",
+  "path":"stages/1/warp",
+  "value": 1}
 ]}
 
 ,{"key":"MATSTUDWOOD","ops":[
@@ -789,6 +801,78 @@
   {"op":"replace",
   "path":"stages/1/recipes",
   "value": ["thaumcraft:TT_kami_boots"]}
+]}
+
+,{"key":"LIQUIDDEATH","ops":[
+  {"op":"replace",
+  "path":"stages/0/warp",
+  "value": 1}
+]}
+
+,{"key":"BOTTLETAINT","ops":[
+  {"op":"remove",
+  "path":"stages/0/warp"}
+]}
+
+,{"key":"FORTRESSMASK","ops":[
+  {"op":"remove",
+  "path":"stages/1/warp"}
+]}
+
+,{"key":"JARBRAIN","ops":[
+  {"op":"replace",
+  "path":"stages/1/warp",
+  "value": 2}
+]}
+
+,{"key":"MINDBIOTHAUMIC","ops":[
+  {"op":"replace",
+  "path":"stages/1/warp",
+  "value": 1}
+]}
+
+,{"key":"SEALGUARD","ops":[
+  {"op":"remove",
+  "path":"stages/1/warp"}
+]}
+
+,{"key":"SEALBUTCHER","ops":[
+  {"op":"remove",
+  "path":"stages/1/warp"}
+]}
+
+,{"key":"INFUSIONPROVIDER","ops":[
+  {"op":"remove",
+  "path":"stages/1/warp"}
+]}
+
+,{"key":"KNOWLEDGECORE","ops":[
+  {"op":"remove",
+  "path":"stages/0/warp"}
+]}
+
+,{"key":"TAINT_MEAT","ops":[
+  {"op":"replace",
+  "path":"stages/0/warp",
+  "value": 2}
+]}
+
+,{"key":"TT_ICHORIUMTOOLS","ops":[
+  {"op":"remove",
+  "path":"stages/0/warp"}
+]}
+
+,{"key":"VOID_STONE_USAGE","ops":[
+  {"op":"remove",
+  "path":"stages/0/warp"}
+]}
+
+,{"key":"TT_ICHOR","ops":[
+  {"op":"remove",
+  "path":"stages/0/warp"},
+  {"op":"replace",
+  "path":"stages/1/warp",
+  "value": 3}
 ]}
 
 ]

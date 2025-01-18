@@ -47,7 +47,7 @@
         {
           "text": "research_stage.thaumadditions:meteor_belt.1",
           "required_knowledge": ["OBSERVATION;INFUSION;1", "THEORY;INFUSION;1", "OBSERVATION;ELDRITCH;1", "THEORY;ELDRITCH;1"],
-          "warp": 2
+          "warp": 1
         },
         {
           "text": "research_stage.thaumadditions:meteor_belt.2",
