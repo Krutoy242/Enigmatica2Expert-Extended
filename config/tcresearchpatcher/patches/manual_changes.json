@@ -875,4 +875,74 @@
   "value": 3}
 ]}
 
+,{"key":"WARP_PAPER","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "BASICS"},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["WARP"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [2,-4]}
+]}
+
+,{"key":"PURE_TEAR","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "BASICS"},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["WARP_PAPER", "INFUSION"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [3,-5]}
+]}
+
+,{"key":"CLEANSING_AMULET","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "INFUSION"},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["PURE_TEAR", "CURIOSITYBAND"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [6,1]}
+]}
+
+,{"key":"TAINT_MEAT","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ALCHEMY"},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["WARP_PAPER","LIQUIDDEATH"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [-4,4]}
+]}
+
+,{"key":"TCONEVO_PRIMALMETAL","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "BASICS"},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["PRIMPEARL", "INFUSION"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [-2,7]}
+]}
+
+,{"key":"TCONEVO_BASE","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TCONEVO_TCONINFUSIONENCH","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
 ]
