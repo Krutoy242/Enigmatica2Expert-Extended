@@ -103,6 +103,7 @@ function getCruciblesPos(world as IWorld, posFlower as IBlockPos) as IBlockPos[]
       || isNull(block.data)
       || isNull(block.data.id)
       || block.data.id != 'thaumcraft:tilecrucible'
+      || isNull(block.data.Amount)
       || block.data.Amount < 100
       || block.data.Heat != 200
       || block.data.Aspects.length == 0) {
