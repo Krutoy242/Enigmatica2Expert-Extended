@@ -471,6 +471,7 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "campan
 <quark:rune:2>,
 <quark:rune:4>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "campanimia"}), [<botania:specialflower>.withTag({type: "campanimia"}), <botania:floatingspecialflower:*>]);
 
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "nuclianthus"}), [
 <quark:rune:5>,
@@ -481,6 +482,7 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "nuclia
 <botania:rune:6>,
 <botania:rune:6>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "nuclianthus"}), [<botania:specialflower>.withTag({type: "nuclianthus"}), <botania:floatingspecialflower:*>]);
 
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "rokku_eryngium"}), [
 <botania:manaresource:5>,
@@ -491,6 +493,7 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "rokku_
 <quark:rune>,
 <quark:rune>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "rokku_eryngium"}), [<botania:specialflower>.withTag({type: "rokku_eryngium"}), <botania:floatingspecialflower:*>]);
 
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "jikanacea"}), [
 <astralsorcery:itemcraftingcomponent:4>,
@@ -501,6 +504,7 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "jikana
 <quark:rune:4>,
 <thaumicaugmentation:material:5>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "jikanacea"}), [<botania:specialflower>.withTag({type: "jikanacea"}), <botania:floatingspecialflower:*>]);
 
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "echinacenko"}), [
 <quark:rune:2>,
@@ -510,6 +514,7 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "echina
 <botania:rune:12>,
 <botania:manaresource:1>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "echinacenko"}), [<botania:specialflower>.withTag({type: "echinacenko"}), <botania:floatingspecialflower:*>]);
 
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "antirrhift"}), [
 <botania:manaresource:8>,
@@ -520,6 +525,7 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "antirr
 <thaumicaugmentation:material:5>,
 <thaumicaugmentation:material:5>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "antirrhift"}), [<botania:specialflower>.withTag({type: "antirrhift"}), <botania:floatingspecialflower:*>]);
 
 mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "amuileria_kaerunea"}), [
 <botania:manaresource:9>,
@@ -530,3 +536,4 @@ mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "amuile
 <quark:rune:4>,
 <quark:rune>,
 ]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "amuileria_kaerunea"}), [<botania:specialflower>.withTag({type: "amuileria_kaerunea"}), <botania:floatingspecialflower:*>]);
