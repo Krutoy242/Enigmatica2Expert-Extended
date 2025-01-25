@@ -5,8 +5,8 @@
 		},
 		id: "botania:specialflower"
 	},
-	x: 16.1d,
-	y: 6.5d,
+	x: 10.0d,
+	y: 8.6d,
 	text: [
 		"{q.botania.exoflame.desc}"
 	],
