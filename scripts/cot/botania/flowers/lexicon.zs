@@ -87,7 +87,6 @@ Lexicon.addPetalPage('botania.page.jikanacea1', 'botania.entry.jikanacea', 1, [<
 Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'jikanacea'}), 'botania.entry.jikanacea', 0);
 
 Lexicon.addEntry('botania.entry.echinacenko', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({type: 'echinacenko'}));
-Lexicon.setEntryKnowledgeType('botania.entry.echinacenko', 'alfheim');
 Lexicon.addTextPage('botania.page.echinacenko0', 'botania.entry.echinacenko', 0);
 Lexicon.addPetalPage('botania.page.echinacenko1', 'botania.entry.echinacenko', 1, [<botania:specialflower>.withTag({type: 'echinacenko'})], [[
   <quark:rune:2>,
