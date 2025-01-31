@@ -8,7 +8,7 @@
   "catalyst-nbt": "{EntityTag:{id:\"iceandfire:seaserpent\"}}",
   
   "input-types": {
-    "a": { "id": "openblocks:beartrap", "ignore-meta": true },
+    "a": { "id": "rats:rattrap", "ignore-meta": true },
     "b": { "id": "iceandfire:dragonscale_red", "ignore-meta": true },
     "c": { "id": "bloodmagic:decorative_brick", "meta": 1 },
     "d": { "id": "quark:elder_prismarine", "ignore-meta": true },

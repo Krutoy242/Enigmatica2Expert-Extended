@@ -324,7 +324,7 @@ scripts.do.build.entity.add(<entity:iceandfire:seaserpent>, [
     'a'
   ]
 ], {
-  a: <openblocks:beartrap>,
+  a: <rats:rattrap>,
   b: <iceandfire:dragonscale_red>,
   c: <bloodmagic:decorative_brick:1>,
   d: <quark:elder_prismarine>,
