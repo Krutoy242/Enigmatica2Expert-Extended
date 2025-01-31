@@ -110,3 +110,223 @@ scripts.do.build.entity.add(<entity:thaumcraft:cultistportalgreater>, [
   a: <thaumicaugmentation:starfield_glass>,
   x: <contenttweaker:conglomerate_of_life>,
 }).shift(0, 0, -0.5).mirrored();
+
+scripts.do.build.entity.add(<entity:quark:pirate>, [
+  [
+    '  a  '
+  ],
+  [
+    'bcccb'
+  ],
+  [
+    'bcxcb'
+  ],
+  [
+    ' ccc '
+  ],
+  [
+    ' d d '
+  ]
+], {
+  a: <iceandfire:dread_stone_face>,
+  b: <iceandfire:dragon_bone_wall>,
+  c: <additionalcompression:bone_compressed>,
+  d: <engineersdecor:treated_wood_pole>,
+  x: <contenttweaker:conglomerate_of_life>
+});
+
+scripts.do.build.entity.add(<entity:emberroot:withercat>, [
+  [
+    'abx'
+  ]
+], {
+  a: <mekanism:cardboardbox>,
+  b: <bloodmagic:demon_light:3>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
+
+scripts.do.build.entity.add(<entity:emberroot:enderminy>, [
+  [
+    'x'
+  ],
+  [
+    'a'
+  ]
+], {
+  a: <additionalcompression:pearlender_compressed>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
+
+scripts.do.build.entity.add(<entity:quark:crab>, [
+  [
+    'c   c',
+    ' ccc ',
+    'ccccc',
+    ' ccc ',
+    'b a b',
+    '  x  '
+  ]
+], {
+  a: <additionalcompression:spidereye_compressed>,
+  b: <minecraft:red_sandstone>,
+  c: <minecraft:stone_slab2>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
+
+scripts.do.build.entity.add(<entity:emberroot:rainbow_golem>, [
+  [
+    ' b '
+  ],
+  [
+    'axa'
+  ],
+  [
+    ' a '
+  ]
+], {
+  a: <enderio:block_alloy:9>,
+  b: <thaumadditions:amber_lamp>,
+  x: <contenttweaker:conglomerate_of_life>
+});
+
+scripts.do.build.entity.add(<entity:rats:illager_piper>, [
+  [
+    'x'
+  ],
+  [
+    'c'
+  ],
+  [
+    'b'
+  ],
+  [
+    'a'
+  ]
+], {
+  a: <cathedral:extras_block_endstone:1>,
+  b: <minecraft:noteblock>,
+  c: <rats:jack_o_ratern>,
+  x: <contenttweaker:conglomerate_of_life>
+});
+
+scripts.do.build.entity.add(<entity:emberroot:hero>, [
+  [
+    'x'
+  ],
+  [
+    'c'
+  ],
+  [
+    'b'
+  ],
+  [
+    'a'
+  ]
+], {
+  a: <thermalfoundation:rockwool:4>,
+  b: <thermalfoundation:rockwool:6>,
+  c: <rats:brain_block>,
+  x: <contenttweaker:conglomerate_of_life>
+});
+
+scripts.do.build.entity.add(<entity:emberroot:knight_fallen>, [
+  [
+    'x'
+  ],
+  [
+    'b'
+  ],
+  [
+    'a'
+  ],
+  [
+    'a'
+  ]
+], {
+  a: <darkutils:wither_block>,
+  b: <rats:brain_block>,
+  x: <contenttweaker:conglomerate_of_life>
+});
+
+scripts.do.build.entity.add(<entity:iceandfire:dread_lich>, [
+  [
+    '  a  '
+  ],
+  [
+    'bcccb'
+  ],
+  [
+    'bcxcb'
+  ],
+  [
+    ' ccc '
+  ],
+  [
+    ' b b '
+  ]
+], {
+  a: <iceandfire:dread_stone_face>,
+  b: <iceandfire:dragon_bone_wall>,
+  c: <iceandfire:dread_stone>,
+  x: <contenttweaker:conglomerate_of_life>
+});
+
+/** This mobs spawns weird. His position on spawn is a bit above ground but then he teleports a few blocks below, setting spawn way higher does not change his final position. Same thing happens when normal spawn egg is used. */
+scripts.do.build.entity.add(<entity:iceandfire:stymphalianbird>, [
+  [
+    ' a ',
+    'axa',
+    ' b '
+  ]
+], {
+  a: <additionalcompression:feather_compressed>,
+  b: <thermalfoundation:storage_alloy:3>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 20, 0);
+
+scripts.do.build.entity.add(<entity:iceandfire:amphithere>, [
+  [
+    '  a  ',
+    '  a  ',
+    '  a  ',
+    'aaxaa',
+    '  b  '
+  ]
+], {
+  a: <additionalcompression:feather_compressed>,
+  b: <actuallyadditions:block_crystal:4>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
+
+scripts.do.build.entity.add(<entity:iceandfire:hippocampus>, [
+  [
+    ' c ',
+    ' c ',
+    ' x ',
+    'aba'
+  ]
+], {
+  a: <quark:prismarine_rough_wall>,
+  b: <additionalcompression:meatfish_compressed>,
+  c: <minecraft:prismarine>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
+
+scripts.do.build.entity.add(<entity:iceandfire:seaserpent>, [
+  [
+    'd',
+    'd',
+    'c',
+    'c',
+    'b',
+    'b',
+    'x',
+    'a'
+  ]
+], {
+  a: <openblocks:beartrap>,
+  b: <iceandfire:dragonscale_red>,
+  c: <bloodmagic:decorative_brick:1>,
+  d: <quark:elder_prismarine>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
