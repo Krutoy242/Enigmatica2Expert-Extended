@@ -9,7 +9,7 @@
   
   "input-types": {
     "a": { "id": "mekanism:cardboardbox", "ignore-meta": true },
-    "b": { "id": "bloodmagic:demon_light", "meta": 3 },
+    "b": { "id": "darkutils:wither_block", "ignore-meta": true },
     "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
   },
   "shape": [

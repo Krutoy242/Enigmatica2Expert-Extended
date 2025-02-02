@@ -1,0 +1,25 @@
+{
+  "name": "compactmachines3:iceandfire_seaserpent1",
+
+  "target-item": "minecraft:spawn_egg",
+  "target-nbt": "{EntityTag:{id:\"iceandfire:seaserpent\"}}",
+
+  "catalyst": "minecraft:spawn_egg",
+  "catalyst-nbt": "{EntityTag:{id:\"iceandfire:seaserpent\"}}",
+  
+  "input-types": {
+    "a": { "id": "rats:rattrap", "ignore-meta": true },
+    "b": { "id": "iceandfire:dragonforge_fire_brick", "ignore-meta": true },
+    "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
+  },
+  "shape": [
+    [
+      ["b"],
+      ["b"],
+      ["b"],
+      ["b"],
+      ["x"],
+      ["a"]
+    ]
+  ]
+}

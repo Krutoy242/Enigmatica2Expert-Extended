@@ -9,8 +9,7 @@
   
   "input-types": {
     "a": { "id": "thermalfoundation:rockwool", "meta": 4 },
-    "b": { "id": "thermalfoundation:rockwool", "meta": 6 },
-    "c": { "id": "rats:brain_block", "ignore-meta": true },
+    "b": { "id": "rats:brain_block", "ignore-meta": true },
     "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
   },
   "shape": [
@@ -18,10 +17,10 @@
       ["x"]
     ],
     [
-      ["c"]
+      ["b"]
     ],
     [
-      ["b"]
+      ["a"]
     ],
     [
       ["a"]

@@ -1,5 +1,5 @@
 {
-  "name": "compactmachines3:iceandfire_seaserpent",
+  "name": "compactmachines3:iceandfire_seaserpent2",
 
   "target-item": "minecraft:spawn_egg",
   "target-nbt": "{EntityTag:{id:\"iceandfire:seaserpent\"}}",
@@ -9,17 +9,13 @@
   
   "input-types": {
     "a": { "id": "rats:rattrap", "ignore-meta": true },
-    "b": { "id": "iceandfire:dragonscale_red", "ignore-meta": true },
-    "c": { "id": "bloodmagic:decorative_brick", "meta": 1 },
-    "d": { "id": "quark:elder_prismarine", "ignore-meta": true },
+    "b": { "id": "iceandfire:dragonforge_ice_brick", "ignore-meta": true },
     "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
   },
   "shape": [
     [
-      ["d"],
-      ["d"],
-      ["c"],
-      ["c"],
+      ["b"],
+      ["b"],
       ["b"],
       ["b"],
       ["x"],

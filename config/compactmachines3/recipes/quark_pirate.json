@@ -9,11 +9,11 @@
 
     "input-types": {
         "a": {
-            "id": "iceandfire:dread_stone_face",
+            "id": "minecraft:skull",
             "ignore-meta": true
         },
         "b": {
-            "id": "iceandfire:dragon_bone_wall",
+            "id": "minecraft:cobblestone_wall",
             "ignore-meta": true
         },
         "c": {
@@ -21,7 +21,7 @@
             "ignore-meta": true
         },
         "d": {
-            "id": "engineersdecor:treated_wood_pole",
+            "id": "minecraft:fence",
             "ignore-meta": true
         },
         "x": {
