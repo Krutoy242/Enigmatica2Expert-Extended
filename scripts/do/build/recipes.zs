@@ -2,6 +2,8 @@
 #ignoreBracketErrors
 #modloaded ctintegration
 
+import crafttweaker.item.IItemStack;
+
 function abs(n as double) as double { return n < 0 ? -n : n; }
 scripts.do.build.entity.add(<entity:twilightforest:quest_ram>, [
   ['cw  '],
@@ -128,10 +130,10 @@ scripts.do.build.entity.add(<entity:quark:pirate>, [
     ' d d '
   ]
 ], {
-  a: <iceandfire:dread_stone_face>,
-  b: <iceandfire:dragon_bone_wall>,
+  a: <minecraft:skull>,
+  b: <minecraft:cobblestone_wall>,
   c: <additionalcompression:bone_compressed>,
-  d: <engineersdecor:treated_wood_pole>,
+  d: <minecraft:fence>,
   x: <contenttweaker:conglomerate_of_life>
 });
 
@@ -141,7 +143,7 @@ scripts.do.build.entity.add(<entity:emberroot:withercat>, [
   ]
 ], {
   a: <mekanism:cardboardbox>,
-  b: <bloodmagic:demon_light:3>,
+  b: <darkutils:wither_block>,
   x: <contenttweaker:conglomerate_of_life>
 }).shift(0, 1, 0);
 
@@ -173,39 +175,40 @@ scripts.do.build.entity.add(<entity:quark:crab>, [
   x: <contenttweaker:conglomerate_of_life>
 }).shift(0, 1, 0);
 
-scripts.do.build.entity.add(<entity:emberroot:rainbow_golem>, [
-  [
-    ' b '
-  ],
-  [
-    'axa'
-  ],
-  [
-    ' a '
-  ]
-], {
-  a: <enderio:block_alloy:9>,
-  b: <thaumadditions:amber_lamp>,
-  x: <contenttweaker:conglomerate_of_life>
-});
+for fakeIronBlock in <ore:blockFakeIron>.items {
+  scripts.do.build.entity.add(<entity:emberroot:rainbow_golem>, [
+    [
+      ' b '
+    ],
+    [
+      'axa'
+    ],
+    [
+      ' a '
+    ]
+  ], {
+    a: fakeIronBlock,
+    b: <thaumadditions:amber_lamp>,
+    x: <contenttweaker:conglomerate_of_life>
+  });
+}
 
 scripts.do.build.entity.add(<entity:rats:illager_piper>, [
   [
     'x'
   ],
   [
-    'c'
+    'b'
   ],
   [
-    'b'
+    'a'
   ],
   [
     'a'
   ]
 ], {
-  a: <cathedral:extras_block_endstone:1>,
-  b: <minecraft:noteblock>,
-  c: <rats:jack_o_ratern>,
+  a: <minecraft:noteblock>,
+  b: <rats:jack_o_ratern>,
   x: <contenttweaker:conglomerate_of_life>
 });
 
@@ -214,18 +217,17 @@ scripts.do.build.entity.add(<entity:emberroot:hero>, [
     'x'
   ],
   [
-    'c'
+    'b'
   ],
   [
-    'b'
+    'a'
   ],
   [
     'a'
   ]
 ], {
   a: <thermalfoundation:rockwool:4>,
-  b: <thermalfoundation:rockwool:6>,
-  c: <rats:brain_block>,
+  b: <rats:brain_block>,
   x: <contenttweaker:conglomerate_of_life>
 });
 
@@ -312,21 +314,19 @@ scripts.do.build.entity.add(<entity:iceandfire:hippocampus>, [
   x: <contenttweaker:conglomerate_of_life>
 }).shift(0, 1, 0);
 
-scripts.do.build.entity.add(<entity:iceandfire:seaserpent>, [
-  [
-    'd',
-    'd',
-    'c',
-    'c',
-    'b',
-    'b',
-    'x',
-    'a'
-  ]
-], {
-  a: <rats:rattrap>,
-  b: <iceandfire:dragonscale_red>,
-  c: <bloodmagic:decorative_brick:1>,
-  d: <quark:elder_prismarine>,
-  x: <contenttweaker:conglomerate_of_life>
-}).shift(0, 1, 0);
+for dragonforgeBrick in [<iceandfire:dragonforge_fire_brick>, <iceandfire:dragonforge_ice_brick>] as IItemStack[] {
+  scripts.do.build.entity.add(<entity:iceandfire:seaserpent>, [
+    [
+      'b',
+      'b',
+      'b',
+      'b',
+      'x',
+      'a'
+    ]
+  ], {
+    a: <rats:rattrap>,
+    b: dragonforgeBrick,
+    x: <contenttweaker:conglomerate_of_life>
+  }).shift(0, 1, 0);
+}

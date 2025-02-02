@@ -166,7 +166,7 @@ zenClass MobBuild {
   }
 }
 
-static builds as MobBuild[IEntityDefinition] = {} as MobBuild[IEntityDefinition];
+static builds as MobBuild[] = [] as MobBuild[];
 
 function add(entity as IEntityDefinition, volume as string[][], map as IItemStack[string], spawnFnc as function(IWorld,Position3f)void = null) as MobBuild {
   val m =  MobBuild();
@@ -174,7 +174,7 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
   m.volume = volume;
   m.map = map;
   m.spawnFnc = spawnFnc;
-  builds[entity] = m;
+  builds += m;
 
   if (utils.DEBUG) {
     var s = '';
@@ -215,7 +215,7 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
 }
 
 function build(world as IWorld, pos as IBlockPos, state as IBlockState) as void {
-  for entity, build in builds {
+  for index, build in builds {
     if (!(state.block has build.getCore())) continue;
 
     if (build.make(world, pos)) return;
