@@ -121,25 +121,6 @@ for tuple in [
   { <iceandfire:dragonegg_white>: [<iceandfire:ice_dragon_heart>, <ore:seaSerpentScaleBlock>, <iceandfire:dragonscale_white>] },
   { <iceandfire:dragonegg_sapphire>: [<iceandfire:ice_dragon_heart>, <ore:seaSerpentScaleBlock>, <iceandfire:dragonscale_sapphire>] },
   { <iceandfire:dragonegg_silver>: [<iceandfire:ice_dragon_heart>, <ore:seaSerpentScaleBlock>, <iceandfire:dragonscale_silver>] },
-
-  { <thermalexpansion:morb>.withTag({ Generic: 1 as byte, id: 'iceandfire:hippocampus' }): [
-    <iceandfire:ambrosia>, // Ambrosia
-    <ore:dustPrismarine>, // Prismarine Crystals
-    <tconstruct:edible:20>, // Fish Jerky
-  ] },
-
-  { <thermalexpansion:morb>.withTag({ Generic: 1 as byte, id: 'iceandfire:amphithere' }): [
-    <iceandfire:rotten_egg>, // Rotten Egg
-    <iceandfire:shiny_scales>, // Shiny Scales
-    <iceandfire:hippogryph_talon>, // Hippogryph Talon
-  ] },
-
-  { <thermalexpansion:morb>.withTag({ Generic: 1 as byte, id: 'iceandfire:seaserpent' }): [
-    <iceandfire:amphithere_skull>, // Amphithere Skull
-    <ore:dragonscaleBlock>, // Block of Dragon Scales
-    <iceandfire:hippocampus_fin>, // Hippocampus Fin
-  ] },
-
 ] as IIngredient[][IItemStack][] {
   for output, ingrs in tuple {
     if (isNull(output)) continue;
