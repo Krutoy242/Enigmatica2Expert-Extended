@@ -9,7 +9,7 @@
 #modloaded zenutils
 
 // Need to be set between Utils and build_mob.add() users
-#priority 2000
+#priority 950
 #reloadable
 
 import crafttweaker.block.IBlockState;
@@ -19,7 +19,10 @@ import crafttweaker.util.Position3f;
 import crafttweaker.block.IBlock;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
+import crafttweaker.world.IWorldInfo;
 import native.net.minecraft.util.EnumParticleTypes;
+
+import scripts.jei.entity_drop.getEntityDropTable;
 
 zenClass MobBuild {
   // Static data
@@ -139,7 +142,20 @@ zenClass MobBuild {
 
       val r = rotate(face, offset.x, offset.z);
       val truePos = Position3f.create(r[0] + pos.x + shiftX, offset.y + pos.y + shiftY, r[1] + pos.z + shiftZ);
-      utils.spawnGenericCreature(world, entity.id, truePos.x, truePos.y, truePos.z - 0.1, face);
+      /** TODO: Find a way to check if mob can spawn in peaceful to spawn mob instead of items */
+      if (world.getWorldInfo().difficulty == "PEACEFUL") {
+        for item in getEntityDropTable(entity) {
+          val remainder = item.amount % 100;
+          var spawnAmount = item.amount;
+          if (remainder != 0) { spawnAmount -= remainder >= world.random.nextInt(100) ? remainder - 100 : remainder; }
+          spawnAmount /= 100;
+          if spawnAmount == 0 continue;
+          val entItem = (item * spawnAmount).createEntityItem(world, truePos.x, truePos.y, truePos.z);
+          world.spawnEntity(entItem);
+        }
+      } else {
+        utils.spawnGenericCreature(world, entity.id, truePos.x, truePos.y, truePos.z - 0.1, face);
+      }
 
       spawnFnc(world, truePos);
 
