@@ -141,9 +141,8 @@ zenClass MobBuild {
 
       val r = rotate(face, offset.x, offset.z);
       val truePos = Position3f.create(r[0] + pos.x + shiftX, offset.y + pos.y + shiftY, r[1] + pos.z + shiftZ);
-
-      if ((world.getWorldInfo().difficulty == "PEACEFUL") && (utils.isHostile(world, entity.id))) {
-        // Peaceful handling of hostile mobs
+      /** TODO: Find a way to check if mob can spawn in peaceful to spawn mob instead of items */
+      if (world.getWorldInfo().difficulty == "PEACEFUL") {
         for item in getEntityDropTable(entity) {
           val remainder = item.amount % 100;
           var spawnAmount = item.amount;
@@ -154,7 +153,6 @@ zenClass MobBuild {
           world.spawnEntity(entItem);
         }
       } else {
-        // Peaceful non-hostile and non-peaceful handling
         utils.spawnGenericCreature(world, entity.id, truePos.x, truePos.y, truePos.z - 0.1, face);
       }
 
