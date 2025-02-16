@@ -116,17 +116,13 @@ scripts.do.build.entity.add(<entity:thaumcraft:cultistportalgreater>, [
 scripts.do.build.entity.add(<entity:quark:pirate>, [
   [
     '  a  '
-  ],
-  [
+  ], [
     'bcccb'
-  ],
-  [
+  ], [
     'bcxcb'
-  ],
-  [
+  ], [
     ' ccc '
-  ],
-  [
+  ], [
     ' d d '
   ]
 ], {
@@ -150,8 +146,7 @@ scripts.do.build.entity.add(<entity:emberroot:withercat>, [
 scripts.do.build.entity.add(<entity:emberroot:enderminy>, [
   [
     'x'
-  ],
-  [
+  ], [
     'a'
   ]
 ], {
@@ -179,11 +174,9 @@ for fakeIronBlock in <ore:blockFakeIron>.items {
   scripts.do.build.entity.add(<entity:emberroot:rainbow_golem>, [
     [
       ' b '
-    ],
-    [
+    ], [
       'axa'
-    ],
-    [
+    ], [
       ' a '
     ]
   ], {
@@ -196,14 +189,11 @@ for fakeIronBlock in <ore:blockFakeIron>.items {
 scripts.do.build.entity.add(<entity:rats:illager_piper>, [
   [
     'x'
-  ],
-  [
+  ], [
     'b'
-  ],
-  [
+  ], [
     'a'
-  ],
-  [
+  ], [
     'a'
   ]
 ], {
@@ -215,14 +205,11 @@ scripts.do.build.entity.add(<entity:rats:illager_piper>, [
 scripts.do.build.entity.add(<entity:emberroot:hero>, [
   [
     'x'
-  ],
-  [
+  ], [
     'b'
-  ],
-  [
+  ], [
     'a'
-  ],
-  [
+  ], [
     'a'
   ]
 ], {
@@ -234,14 +221,11 @@ scripts.do.build.entity.add(<entity:emberroot:hero>, [
 scripts.do.build.entity.add(<entity:emberroot:knight_fallen>, [
   [
     'x'
-  ],
-  [
+  ], [
     'b'
-  ],
-  [
+  ], [
     'a'
-  ],
-  [
+  ], [
     'a'
   ]
 ], {
@@ -253,17 +237,13 @@ scripts.do.build.entity.add(<entity:emberroot:knight_fallen>, [
 scripts.do.build.entity.add(<entity:iceandfire:dread_lich>, [
   [
     '  a  '
-  ],
-  [
+  ], [
     'bcccb'
-  ],
-  [
+  ], [
     'bcxcb'
-  ],
-  [
+  ], [
     ' ccc '
-  ],
-  [
+  ], [
     ' b b '
   ]
 ], {

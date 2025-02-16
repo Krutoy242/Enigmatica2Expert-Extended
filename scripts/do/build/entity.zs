@@ -19,7 +19,6 @@ import crafttweaker.util.Position3f;
 import crafttweaker.block.IBlock;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
-import crafttweaker.world.IWorldInfo;
 import native.net.minecraft.util.EnumParticleTypes;
 
 import scripts.jei.entity_drop.getEntityDropTable;

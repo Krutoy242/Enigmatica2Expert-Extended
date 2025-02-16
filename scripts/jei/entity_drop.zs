@@ -37,7 +37,7 @@ function add(entity as IEntityDefinition, dropList as IItemStack[], percent as b
   } else {
     fixedList = dropList;
   }
-  entityDropTableMap[entity] = dropList as IItemStack[];
+  entityDropTableMap[entity] = dropList;
   scripts.jei.requious.add(<assembly:entity_drop>, {[entity.asIngr()] as IIngredient[] : fixedList});
 }
 
