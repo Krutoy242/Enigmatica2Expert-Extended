@@ -9,7 +9,7 @@
 #modloaded zenutils
 
 // Need to be set between Utils and build_mob.add() users
-#priority 2000
+#priority 950
 #reloadable
 
 import crafttweaker.block.IBlockState;
@@ -20,6 +20,8 @@ import crafttweaker.block.IBlock;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 import native.net.minecraft.util.EnumParticleTypes;
+
+import scripts.jei.entity_drop.getEntityDropTable;
 
 zenClass MobBuild {
   // Static data
@@ -139,7 +141,22 @@ zenClass MobBuild {
 
       val r = rotate(face, offset.x, offset.z);
       val truePos = Position3f.create(r[0] + pos.x + shiftX, offset.y + pos.y + shiftY, r[1] + pos.z + shiftZ);
-      utils.spawnGenericCreature(world, entity.id, truePos.x, truePos.y, truePos.z - 0.1, face);
+
+      if ((world.getWorldInfo().difficulty == "PEACEFUL") && (utils.isHostile(world, entity.id))) {
+        // Peaceful handling of hostile mobs
+        for item in getEntityDropTable(entity) {
+          val remainder = item.amount % 100;
+          var spawnAmount = item.amount;
+          if (remainder != 0) { spawnAmount -= remainder >= world.random.nextInt(100) ? remainder - 100 : remainder; }
+          spawnAmount /= 100;
+          if spawnAmount == 0 continue;
+          val entItem = (item * spawnAmount).createEntityItem(world, truePos.x, truePos.y, truePos.z);
+          world.spawnEntity(entItem);
+        }
+      } else {
+        // Peaceful non-hostile and non-peaceful handling
+        utils.spawnGenericCreature(world, entity.id, truePos.x, truePos.y, truePos.z - 0.1, face);
+      }
 
       spawnFnc(world, truePos);
 
@@ -166,7 +183,7 @@ zenClass MobBuild {
   }
 }
 
-static builds as MobBuild[IEntityDefinition] = {} as MobBuild[IEntityDefinition];
+static builds as MobBuild[] = [] as MobBuild[];
 
 function add(entity as IEntityDefinition, volume as string[][], map as IItemStack[string], spawnFnc as function(IWorld,Position3f)void = null) as MobBuild {
   val m =  MobBuild();
@@ -174,7 +191,7 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
   m.volume = volume;
   m.map = map;
   m.spawnFnc = spawnFnc;
-  builds[entity] = m;
+  builds += m;
 
   if (utils.DEBUG) {
     var s = '';
@@ -215,7 +232,7 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
 }
 
 function build(world as IWorld, pos as IBlockPos, state as IBlockState) as void {
-  for entity, build in builds {
+  for index, build in builds {
     if (!(state.block has build.getCore())) continue;
 
     if (build.make(world, pos)) return;

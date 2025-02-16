@@ -1,0 +1,29 @@
+{
+  "name": "compactmachines3:emberroot_knight_fallen",
+
+  "target-item": "minecraft:spawn_egg",
+  "target-nbt": "{EntityTag:{id:\"emberroot:knight_fallen\"}}",
+
+  "catalyst": "minecraft:spawn_egg",
+  "catalyst-nbt": "{EntityTag:{id:\"emberroot:knight_fallen\"}}",
+  
+  "input-types": {
+    "a": { "id": "darkutils:wither_block", "ignore-meta": true },
+    "b": { "id": "rats:brain_block", "ignore-meta": true },
+    "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
+  },
+  "shape": [
+    [
+      ["x"]
+    ],
+    [
+      ["b"]
+    ],
+    [
+      ["a"]
+    ],
+    [
+      ["a"]
+    ]
+  ]
+}

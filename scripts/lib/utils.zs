@@ -22,6 +22,7 @@ import mods.zenutils.StaticString;
 import native.net.minecraft.util.SoundCategory;
 import native.net.minecraft.util.SoundEvent;
 import native.net.minecraft.util.EnumParticleTypes;
+import native.net.minecraft.entity.monster.EntityMob;
 
 zenClass Utils {
   var DEBUG as bool = false;
@@ -438,6 +439,22 @@ zenClass Utils {
     ), null);
     worldIn.native.spawnEntity(entity);
     entityliving.playLivingSound();
+  }
+
+  // Check if mob is Hostile (Can't spawn in peaceful)
+  function isHostile(worldIn as IWorld, entityID as string) as bool {
+    val entityResource = native.net.minecraft.util.ResourceLocation(entityID);
+    val worldNative = worldIn.native;
+    val entity = native.net.minecraft.entity.EntityList.createEntityByIDFromName(entityResource, worldNative);
+
+    if (entity instanceof EntityMob) return true;
+
+    // Excetptions
+    if (entityID == "iceandfire:seaserpent") {
+      return true;
+    }
+
+    return false;
   }
 
   // Convert item to block.

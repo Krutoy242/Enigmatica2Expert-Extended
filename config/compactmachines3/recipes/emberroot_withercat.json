@@ -1,0 +1,20 @@
+{
+  "name": "compactmachines3:emberroot_withercat",
+
+  "target-item": "minecraft:spawn_egg",
+  "target-nbt": "{EntityTag:{id:\"emberroot:withercat\"}}",
+
+  "catalyst": "minecraft:spawn_egg",
+  "catalyst-nbt": "{EntityTag:{id:\"emberroot:withercat\"}}",
+  
+  "input-types": {
+    "a": { "id": "mekanism:cardboardbox", "ignore-meta": true },
+    "b": { "id": "darkutils:wither_block", "ignore-meta": true },
+    "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
+  },
+  "shape": [
+    [
+      ["a", "b", "x"]
+    ]
+  ]
+}

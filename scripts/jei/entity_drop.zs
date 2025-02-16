@@ -1,12 +1,17 @@
 #modloaded requious
 
 #priority 975
+#reloadable
 #ignoreBracketErrors
 
 import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import mods.requious.SlotVisual;
+
+// -----------------------------------------------------------------------
+
+static entityDropTableMap as IItemStack[][IEntityDefinition] = {} as IItemStack[][IEntityDefinition];
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
@@ -32,7 +37,12 @@ function add(entity as IEntityDefinition, dropList as IItemStack[], percent as b
   } else {
     fixedList = dropList;
   }
+  entityDropTableMap[entity] = dropList;
   scripts.jei.requious.add(<assembly:entity_drop>, {[entity.asIngr()] as IIngredient[] : fixedList});
+}
+
+function getEntityDropTable(entity as IEntityDefinition) as IItemStack[] {
+  return entityDropTableMap[entity];
 }
 
 /*Inject_js{
