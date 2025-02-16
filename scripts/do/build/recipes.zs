@@ -69,11 +69,11 @@ scripts.do.build.entity.add(<entity:twilightforest:castle_guardian>, [
 scripts.do.build.entity.add(<entity:betteranimalsplus:horseshoecrab>, [['xt']], {
   x: <contenttweaker:conglomerate_of_life>,
   t: <extrautils2:spike_stone>,
-});
+}).shift(0, 0.5, 0);
 scripts.do.build.entity.add(<entity:betteranimalsplus:bobbit_worm>, [['xcc']], {
   x: <contenttweaker:conglomerate_of_life>,
   c: <minecraft:stone_slab:1>,
-});
+}).shift(0, 1, 0);
 
 // Greater Crimson Portal custom spawning
 scripts.do.build.entity.add(<entity:thaumcraft:cultistportalgreater>, [
