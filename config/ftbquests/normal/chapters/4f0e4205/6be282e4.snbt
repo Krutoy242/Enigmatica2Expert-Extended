@@ -26,6 +26,6 @@
 		uid: "ce7470f5",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_yeti"
+		command: "/advancement grant @p only twilightforest:progress_yeti yeti"
 	}]
 }

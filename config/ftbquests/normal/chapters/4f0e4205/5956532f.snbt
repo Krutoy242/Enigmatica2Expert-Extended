@@ -20,7 +20,7 @@
 		uid: "0bd2c9ec",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_glacier"
+		command: "/advancement grant @p only twilightforest:progress_glacier queen"
 	},
 	{
 		uid: "93f36f4f",

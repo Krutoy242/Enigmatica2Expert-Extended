@@ -25,6 +25,12 @@
 		uid: "de820d56",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_knights"
+		command: "/advancement grant @p only twilightforest:progress_knights structure"
+	},
+	{
+		uid: "555e5467",
+		type: "command",
+		auto: "invisible",
+		command: "/advancement grant @p only twilightforest:progress_knights previous_progression"
 	}]
 }

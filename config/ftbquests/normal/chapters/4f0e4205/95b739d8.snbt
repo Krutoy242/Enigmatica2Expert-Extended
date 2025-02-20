@@ -26,6 +26,6 @@
 		uid: "abcf2609",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_naga"
+		command: "/advancement grant @p only twilightforest:progress_naga naga"
 	}]
 }

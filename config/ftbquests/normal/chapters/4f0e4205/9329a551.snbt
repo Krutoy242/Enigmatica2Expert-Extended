@@ -26,6 +26,6 @@
 		uid: "d330b5b1",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_labyrinth"
+		command: "/advancement grant @p only twilightforest:progress_labyrinth meef"
 	}]
 }

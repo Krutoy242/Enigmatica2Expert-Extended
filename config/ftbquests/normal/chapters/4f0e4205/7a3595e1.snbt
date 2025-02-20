@@ -26,6 +26,6 @@
 		uid: "96b4007c",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_ur_ghast"
+		command: "/advancement grant @p only twilightforest:progress_ur_ghast ghast"
 	}]
 }

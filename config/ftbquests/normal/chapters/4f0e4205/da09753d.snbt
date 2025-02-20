@@ -26,6 +26,6 @@
 		uid: "74b893c7",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_lich"
+		command: "/advancement grant @p only twilightforest:progress_lich kill_lich"
 	}]
 }

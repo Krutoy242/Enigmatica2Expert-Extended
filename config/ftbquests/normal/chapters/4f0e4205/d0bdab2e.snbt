@@ -26,6 +26,6 @@
 		uid: "90b6e9d7",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_hydra"
+		command: "/advancement grant @p only twilightforest:progress_hydra hydra"
 	}]
 }

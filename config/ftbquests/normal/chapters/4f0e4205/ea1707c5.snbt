@@ -35,6 +35,12 @@
 		uid: "a9a41fa2",
 		type: "command",
 		auto: "invisible",
-		command: "/advancement grant @p only twilightforest:progress_castle"
+		command: "/advancement grant @p only twilightforest:progress_castle discover"
+	},
+	{
+		uid: "e6b33ad3",
+		type: "command",
+		auto: "invisible",
+		command: "/advancement grant @p only twilightforest:progress_thorns discover"
 	}]
 }
