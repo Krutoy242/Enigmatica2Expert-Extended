@@ -126,7 +126,7 @@ scripts.do.build.entity.add(<entity:quark:pirate>, [
     ' d d '
   ]
 ], {
-  a: <minecraft:skull>,
+  a: <minecraft:bone_block>,
   b: <minecraft:cobblestone_wall>,
   c: <additionalcompression:bone_compressed>,
   d: <minecraft:fence>,
@@ -247,9 +247,9 @@ scripts.do.build.entity.add(<entity:iceandfire:dread_lich>, [
     ' b b '
   ]
 ], {
-  a: <iceandfire:dread_stone_face>,
-  b: <iceandfire:dragon_bone_wall>,
-  c: <iceandfire:dread_stone>,
+  a: <minecraft:bone_block>,
+  b: <quark:quartz_wall>,
+  c: <appliedenergistics2:sky_stone_block>,
   x: <contenttweaker:conglomerate_of_life>
 });
 
