@@ -5,6 +5,7 @@ import mods.bpopener.BPOpener.addEntry;
 
 addEntry(<actuallyadditions:item_bag>, false);
 addEntry(<actuallyadditions:item_void_bag>, false);
+addEntry(<actuallyadditions:item_crafter_on_a_stick>, false);
 addEntry(<appliedenergistics2:portable_cell>, false);
 addEntry(<appliedenergistics2:wireless_terminal>, false);
 addEntry(<cyclicmagic:sack_ender>, false);
