@@ -30,8 +30,8 @@ https://github.com/badmonkey/wilderness-minecraft/blob/f32102d158566de9d346034b3
 //
 val rage = TraitBuilder.create('blindrage');
 rage.color = 0x080808;
-rage.localizedName = 'Blind Rage';
-rage.localizedDescription = '§oWho said you needed to see your enemies?\n§rDeal double damage when blinded';
+rage.localizedName = game.localize('e2ee.tconstruct.material.blindrage.name');
+rage.localizedDescription = game.localize('e2ee.tconstruct.material.blindrage.description');
 rage.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
   if (attacker.isPotionActive(<potion:minecraft:blindness>)) {
     return newDamage * 2.0;
@@ -47,8 +47,8 @@ rage.register();
 //
 val dark = TraitBuilder.create('darkness');
 dark.color = 0x332C3B;
-dark.localizedName = 'Eternal Darkness';
-dark.localizedDescription = '§oJoin the dark side...\n§rYour tool loves the dark so much; it does more damage in the dark.';
+dark.localizedName = game.localize('e2ee.tconstruct.material.darkness.name');
+dark.localizedDescription = game.localize('e2ee.tconstruct.material.darkness.description');
 dark.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
   val light = attacker.world.getBrightness(attacker.getX(), attacker.getY(), attacker.getZ());
   return newDamage * (2.0f - light as float / 15.0f);
@@ -60,8 +60,8 @@ dark.register();
 //
 val dire = TraitBuilder.create('dire');
 dire.color = 0x54514A;
-dire.localizedName = 'Dire-Hit';
-dire.localizedDescription = "§oIt's super effective!\n§rYour tool will always land critical hits so long as you are at full health!";
+dire.localizedName = game.localize('e2ee.tconstruct.material.dire.name');
+dire.localizedDescription = game.localize('e2ee.tconstruct.material.dire.description');
 dire.calcCrit = function (trait, tool, attacker, target) {
   return attacker.health >= attacker.maxHealth;
 };
@@ -72,8 +72,8 @@ dire.register();
 //
 val life = TraitBuilder.create('lifecycle');
 life.color = 0xFF2010;
-life.localizedName = 'Cycle of Life';
-life.localizedDescription = '§oFrom one to another.\n§rWhen your tool is damaged, you are healed for the damaged amount.';
+life.localizedName = game.localize('e2ee.tconstruct.material.lifecycle.name');
+life.localizedDescription = game.localize('e2ee.tconstruct.material.lifecycle.description');
 life.onToolDamage = function (trait, tool, unmodifiedAmount, newAmount, holder) {
   holder.heal(newAmount);
   return newAmount;
@@ -85,8 +85,8 @@ life.register();
 //
 val antimagic = ArmorTraitBuilder.create('antimagic');
 antimagic.color = 0x000000;
-antimagic.localizedName = 'Anti-Magic';
-antimagic.localizedDescription = "§oNihilistic!\n§rYour armor doesn't believe in potions, and refuses to be affected by any potion effects; good or bad.";
+antimagic.localizedName = game.localize('e2ee.tconstruct.material.antimagic.name');
+antimagic.localizedDescription = game.localize('e2ee.tconstruct.material.antimagic.description');
 antimagic.onHurt = function (trait, armor, player, source, damage, newDamage, evt) {
   if (armor.damage < armor.maxDamage && source.isMagicDamage()) {
     evt.cancel();
@@ -103,8 +103,8 @@ antimagic.register();
 //
 val darkdefense = ArmorTraitBuilder.create('darkside');
 darkdefense.color = 0x332C3B;
-darkdefense.localizedName = 'The Dark Side';
-darkdefense.localizedDescription = '§oUnder the cover of darkness!\n§rYour armor loves the dark so much; you take less damage when in darkness.';
+darkdefense.localizedName = game.localize('e2ee.tconstruct.material.darkside.name');
+darkdefense.localizedDescription = game.localize('e2ee.tconstruct.material.darkside.description');
 darkdefense.onHurt = function (trait, armor, player, source, damage, newDamage, event) {
   return newDamage * (0.75 + 0.25 * player.world.getBrightness(player.x, player.y, player.z) / 15.0);
 };

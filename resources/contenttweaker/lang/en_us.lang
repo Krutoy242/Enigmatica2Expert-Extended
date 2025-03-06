@@ -217,6 +217,18 @@ item.contenttweaker.bee_diversity.name=Bee Diversity Store
 # --------------------------------------
 # TConstruct new materials and traits
 # --------------------------------------
+e2ee.tconstruct.material.blindrage.name=Blind Rage
+e2ee.tconstruct.material.blindrage.description=§oWho said you needed to see your enemies?\n§rDeal double damage when blinded
+e2ee.tconstruct.material.darkness.name=Eternal Darkness
+e2ee.tconstruct.material.darkness.description=§oJoin the dark side...\n§rYour tool loves the dark so much; it does more damage in the dark.
+e2ee.tconstruct.material.dire.name=Dire-Hit
+e2ee.tconstruct.material.dire.description=§oIt's super effective!\n§rYour tool will always land critical hits so long as you are at full health!
+e2ee.tconstruct.material.lifecycle.name=Cycle of Life
+e2ee.tconstruct.material.lifecycle.description=§oFrom one to another.\n§rWhen your tool is damaged, you are healed for the damaged amount.
+e2ee.tconstruct.material.antimagic.name=Anti-Magic
+e2ee.tconstruct.material.antimagic.description=§oNihilistic!\n§rYour armor doesn't believe in potions, and refuses to be affected by any potion effects; good or bad.
+e2ee.tconstruct.material.darkside.name=The Dark Side
+e2ee.tconstruct.material.darkside.description=§oUnder the cover of darkness!\n§rYour armor loves the dark so much; you take less damage when in darkness.
 e2ee.tconstruct.material.spectre.name=Spectre
 e2ee.tconstruct.material.spectre.description=§bSpectral\nEach part gives additional Reach potion effect
 e2ee.tconstruct.material.fireproof.name=Fireproof

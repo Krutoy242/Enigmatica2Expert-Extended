@@ -217,6 +217,18 @@ item.contenttweaker.bee_diversity.name=蜜蜂回收集市
 # --------------------------------------
 # TConstruct new materials and traits
 # --------------------------------------
+e2ee.tconstruct.material.blindrage.name=蒙眼瞎拳
+e2ee.tconstruct.material.blindrage.description=§o谁说看不见对面是谁就不能出招了？\n§r失明状态下可造成双倍伤害
+e2ee.tconstruct.material.darkness.name=永无天日
+e2ee.tconstruct.material.darkness.description=§o加入黑暗面……\n§r你的工具钟情于黑暗，处于黑暗环境时能造成更多伤害
+e2ee.tconstruct.material.dire.name=强力绝击
+e2ee.tconstruct.material.dire.description=§o立竿见影！\n§r满生命值时，你的工具将无条件施展暴击
+e2ee.tconstruct.material.lifecycle.name=生命轮回
+e2ee.tconstruct.material.lifecycle.description=§o不止不息。\n§r工具受损时，恢复与损耗耐久度相等的生命值
+e2ee.tconstruct.material.antimagic.name=反魔法
+e2ee.tconstruct.material.antimagic.description=§o虚无主义！\n§r你的盔甲不承认药水的存在并拒绝受其影响，无论好坏
+e2ee.tconstruct.material.darkside.name=黑暗面
+e2ee.tconstruct.material.darkside.description=§o在阴影笼罩之下！\n§r你的盔甲钟情于黑暗，处于黑暗环境时能抵挡更多伤害
 e2ee.tconstruct.material.spectre.name=通灵
 e2ee.tconstruct.material.spectre.description=§b灵光到处现\n§r每个部件都可以给予玩家额外的"延伸"药水效果
 e2ee.tconstruct.material.fireproof.name=抗燃
