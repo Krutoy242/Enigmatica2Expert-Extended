@@ -1,3 +1,10 @@
+/*
+
+Set reworked IC2 dusts new names.
+For some reason, this cant be done with Resource Loader.
+
+*/
+
 #priority 4000
 
 val localizationMap as string[string][string] = {
