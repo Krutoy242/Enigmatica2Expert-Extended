@@ -107,6 +107,7 @@ install:
       - 502649 # Mini Effects
       - 513769 # Item Borders [Forge]
       - 521590 # Item Highlighter
+      - 532127 # Legendary Tooltips
       - 616190 # JEI Utilities
       - 624967 # RenderLib
       - 782070 # Startup Timer
@@ -120,6 +121,7 @@ install:
       - 1121489 # AE2 Crafting Tree - Legacy
       - 1132293 # Backpack Display
       - 1147522 # Backpack Opener
+      - 1234162 # Lumenized
 
     # The base path where the server should be installed to, ~ for current path
   baseInstallPath: ~
