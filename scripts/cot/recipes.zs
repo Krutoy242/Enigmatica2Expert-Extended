@@ -190,7 +190,6 @@ scripts.process.beneficiate(<contenttweaker:ore_benitoite>, 'Benitoite', 1);
 function cleanupExnihilo(base as IItemStack) as void {
   // Remove Ingot
   val ingot = base.definition.makeStack(3);
-  Purge(ingot);
   mods.immersiveengineering.ArcFurnace.removeRecipe(ingot);
 
   // Remove Dust
