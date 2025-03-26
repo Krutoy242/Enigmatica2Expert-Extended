@@ -660,7 +660,7 @@ craft.remake(<thermalfoundation:material:27>, ['pretty',
   'B # B',
   '  B  '], {
   'B': <ic2:crop_res:8>, // Bobs-Yer-Uncle-Ranks Berry
-  '#': <ore:gearWood>,   // Wooden Gear
+  '#': <ore:gearStone>,   // Wooden Gear
 });
 
 // [Quartzburnt] from [Black Quartz Block][+1]

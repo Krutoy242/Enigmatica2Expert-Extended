@@ -30,3 +30,8 @@ craft.remake(<nae2:reconstruction_chamber>, ["pretty",
   "⌃": <appliedenergistics2:quartz_glass>, # Quartz Glass
   "*": <actuallyadditions:item_crystal_empowered:4>, # Empowered Emeradic Crystal
 });
+
+craft.reshapeless(<nae2:upgrade:1>, 'AB', {
+  A: <appliedenergistics2:material:53>,
+  B: <thermalfoundation:material:23>,
+});

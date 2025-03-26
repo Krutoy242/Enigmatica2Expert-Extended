@@ -251,6 +251,8 @@ Purge(<contenttweaker:item_ore_tungsten:3>).furn().ores([<ore:ingotTungsten>]);
 Purge(<jaopca:block_blocktungsten>).ores([<ore:blockTungsten>]);
 Purge(<jaopca:item_nuggettungsten>).ores([<ore:nuggetTungsten>]);
 Purge(<enderio:item_owl_egg>);
+Purge(<enderio:item_material:9>);
+Purge(<thermalfoundation:material:22>).ores([<ore:gearWood>]);
 Purge(<thermalfoundation:material:656>);
 Purge(<ae2stuff:visualiser>);
 Purge(<itemfilters:filter>);
@@ -304,7 +306,6 @@ Purge(<thaumicwonders:eldritch_cluster:8>);
 
 // Gears
 val gearsToRemove = [
-  <thermalfoundation:material:22>,
   <thermalfoundation:material:23>,
   <thermalfoundation:material:24>,
   <thermalfoundation:material:25>,

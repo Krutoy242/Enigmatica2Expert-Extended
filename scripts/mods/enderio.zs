@@ -518,6 +518,30 @@ craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({ 'enderio:dsu': '
     '*': <ore:itemPulsatingCrystal>, // Pulsating Crystal
   });
 
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:inv"}), 'ABC', {
+  A: <enderio:item_dark_steel_upgrade>,
+  B: <quark:custom_chest:4>,
+  C: <ore:gearStone>,
+});
+
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:jumpboost1"}), 'ABC', {
+  A: <enderio:item_dark_steel_upgrade>,
+  B: <minecraft:piston>,
+  C: <ore:gearStone>,
+});
+
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:speedboost1"}), 'ABC', {
+  A: <enderio:item_dark_steel_upgrade>,
+  B: <minecraft:sugar>,
+  C: <ore:gearStone>,
+});
+
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:tnt"}), 'ABC', {
+  A: <enderio:item_dark_steel_upgrade>,
+  B: <ic2:dynamite>,
+  C: <ore:gearStone>,
+});
+
 // Add recipe to use in some AA crafts
 // [Organic Brown Dye] from [Crushed Black Quartz][+3]
 mods.rt.RandomThingsTweaker.addImbuingRecipe(

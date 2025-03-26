@@ -131,7 +131,7 @@ craft.remake(<appliedenergistics2:molecular_assembler>, ['pretty',
 recipes.remove(<appliedenergistics2:grindstone>);
 recipes.addShapedMirrored('Grindstone',
   <appliedenergistics2:grindstone>,
-  [[<appliedenergistics2:smooth_sky_stone_block>, <ore:gearWood>, <appliedenergistics2:smooth_sky_stone_block>],
+  [[<appliedenergistics2:smooth_sky_stone_block>, <ore:gearStone>, <appliedenergistics2:smooth_sky_stone_block>],
     [<ore:crystalCertusQuartz>, <appliedenergistics2:smooth_sky_stone_block>, <ore:crystalCertusQuartz>],
     [<appliedenergistics2:sky_stone_block>, <ore:crystalCertusQuartz>, <appliedenergistics2:sky_stone_block>]]);
 
