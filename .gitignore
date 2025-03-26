@@ -116,3 +116,4 @@ config/JustEnoughCalculation/record.json
 config/opencomputers/default.recipes
 config/opencomputers/gregtech.recipes
 config/opencomputers/hardmode.recipes
+config/advRocketry/weights.json

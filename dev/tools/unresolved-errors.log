@@ -1,6 +1,5 @@
 [main/WARN] [FML]: The mod with loading plugin com.cleanroommc.configanytime.ConfigAnytimePlugin is in blacklist and won't be loaded. Check forge_early.cfg for more info.
 [main/WARN] [FML]: The mod with loading plugin zone.rong.mixinbooter.MixinBooterPlugin is in blacklist and won't be loaded. Check forge_early.cfg for more info.
-[main/WARN] [Foundation]: Ignoring unknown json file %s
 [main/ERROR] [mixin]: Failed reading REFMAP JSON from : java.lang.NullPointerException Cannot invoke "org.spongepowered.asm.mixin.refmap.ReferenceMapper.setResourceName(String)" because "mapper" is null
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
 [Client thread/WARN] [mixin]: Method overwrite conflict for hashCode in mixins.vintagefix.json:blockstates.FastMapStateHolderMixin from mod unknown-owner, previously written by github.kasuminova.stellarcore.mixin.minecraft.blockstateimpl.MixinStateImplementation. Skipping method.
@@ -12,10 +11,29 @@ org.spongepowered.asm.launch.MixinInitialisationError: Error initialising mixin 
 	at org.spongepowered.asm.mixin.Mixins.createConfiguration(Mixins.java:121) ~[Mixins.class:0.20.10+mixin.0.8.7]
 	at org.spongepowered.asm.mixin.Mixins.addConfiguration(Mixins.java:108) ~[Mixins.class:0.20.10+mixin.0.8.7]
   [...]
+[Client thread/ERROR] [FML]: Error adding mixin configuration for mixins.mi.mysticalagriculture.condenser.heatable.json
+org.spongepowered.asm.launch.MixinInitialisationError: Error initialising mixin config mixins.mi.mysticalagriculture.condenser.heatable.json
+	at org.spongepowered.asm.mixin.transformer.Config.create(Config.java:169) ~[Config.class:0.20.10+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.Mixins.createConfiguration(Mixins.java:121) ~[Mixins.class:0.20.10+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.Mixins.addConfiguration(Mixins.java:108) ~[Mixins.class:0.20.10+mixin.0.8.7]
+  [...]
 [Client thread/WARN] [mixin]: @Mixin target mcp.mobius.waila.api.impl.MetaDataProvider was not found mixins.tweakedlib.top.json:MetaDataProviderMixin from mod tweakedlib-2.0.1.jar
+[Client thread/WARN] [mixin]: @Mixin target boni.dummy.EntityDummy was not found mixins.mods.testdummy.copyarmor.json:UTEntityDummyMixin from mod UniversalTweaks-1.12.2-1.15.0.jar
 [Client thread/WARN] [mixin]: @Mixin target mrtjp.projectred.relocation.MovingBlockRenderDispatcher was not found mixins.vintagefix.late.json:chunk_rendering.MixinMovingBlockRenderDispatcher from mod unknown-owner
 [Client thread/WARN] [mixin]: Static binding violation: PRIVATE @Overwrite method func_76615_h in mixins.alfheim.json:ChunkMixin from mod unknown-owner cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[Client thread/WARN] [mixin]: Mixin apply for mod magicultureintegrations-1.12.2-2.1.2.jar failed mixins.mi.immersiveengineering.hemp.harvestable.json:BlockIEPlantHarvestableMixin from mod magicultureintegrations-1.12.2-2.1.2.jar -> blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow method getStateFromMeta in mixins.mi.immersiveengineering.hemp.harvestable.json:BlockIEPlantHarvestableMixin from mod magicultureintegrations-1.12.2-2.1.2.jar was not located in the target class blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop. Using refmap magicultureintegrations.refmap.json
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow method getStateFromMeta in mixins.mi.immersiveengineering.hemp.harvestable.json:BlockIEPlantHarvestableMixin from mod magicultureintegrations-1.12.2-2.1.2.jar was not located in the target class blusunrize.immersiveengineering.common.blocks.plant.BlockIECrop. Using refmap magicultureintegrations.refmap.json
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachSpecialMethod(MixinPreProcessorStandard.java:436) ~[sponge-mixin-0.20.10+mixin.0.8.7.jar:0.20.10+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412) ~[sponge-mixin-0.20.10+mixin.0.8.7.jar:0.20.10+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340) ~[sponge-mixin-0.20.10+mixin.0.8.7.jar:0.20.10+mixin.0.8.7]
+  [...]
 [Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class net.minecraft.entity.item.EntityMinecartFurnace from class com.lothrazar.cyclicmagic.item.minecart.EntityGoldFurnaceMinecart
+[Client thread/WARN] [mixin]: Mixin apply for mod UniversalTweaks-1.12.2-1.15.0.jar failed mixins.mods.cookingforblockheads.json:UTTileOvenMixin from mod UniversalTweaks-1.12.2-1.15.0.jar -> net.blay09.mods.cookingforblockheads.tile.TileOven: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow method update in mixins.mods.cookingforblockheads.json:UTTileOvenMixin from mod UniversalTweaks-1.12.2-1.15.0.jar was not located in the target class net.blay09.mods.cookingforblockheads.tile.TileOven. Using refmap universaltweaks.refmap.json
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow method update in mixins.mods.cookingforblockheads.json:UTTileOvenMixin from mod UniversalTweaks-1.12.2-1.15.0.jar was not located in the target class net.blay09.mods.cookingforblockheads.tile.TileOven. Using refmap universaltweaks.refmap.json
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachSpecialMethod(MixinPreProcessorStandard.java:436) ~[sponge-mixin-0.20.10+mixin.0.8.7.jar:0.20.10+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412) ~[sponge-mixin-0.20.10+mixin.0.8.7.jar:0.20.10+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340) ~[sponge-mixin-0.20.10+mixin.0.8.7.jar:0.20.10+mixin.0.8.7]
+  [...]
 [Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class net.minecraft.entity.monster.EntitySlime from class teamroots.emberroot.entity.slime.EntityRainbowSlime
 [Client thread/WARN] [net.minecraft.network.datasync.EntityDataManager]: defineId called for: class malte0811.industrialwires.entities.EntityBrokenPart from class malte0811.industrialwires.IndustrialWires
 [Client thread/ERROR] [Patchouli Books]: Unable to find item at ic2:blockrubsapling
@@ -38,4 +56,4 @@ Outputs:
 net.minecraft.item.ItemStack: [[1xitem.thaumadditions:salt_essence@0 thaumadditions:salt_essence]]
 Inputs:
 net.minecraft.item.ItemStack: [[1xitem.thaumadditions:salt_essence@0 thaumadditions:salt_essence]]
-  [...]
+  [...]

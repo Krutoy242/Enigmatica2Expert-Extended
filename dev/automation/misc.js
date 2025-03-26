@@ -86,7 +86,7 @@ export async function init(h = defaultHelper, options = argv) {
 
     // Add new
     for (const match of recipes.matchAll(
-      /^(?<function>recipes\.addShape(?<postfix>d|less))\((?<name>".*?") *, *(?<output>[^, ]*?)(?<count> \* \d+)?, (?<grid>.*)\);$/gm
+      /^(?<function>recipes\.addShape(?<postfix>d|less))\((?<name>".*?") *, *(?<output>[^, ]*)(?<count> \* \d+)?, (?<grid>.*)\);$/gm
     )) {
       const g = match.groups
 
@@ -95,8 +95,9 @@ export async function init(h = defaultHelper, options = argv) {
         !g
         || !whitelist.includes(g.output)
         || !g.grid.match(new RegExp(`.*${regex.source}.*`))
-      )
+      ) {
         continue
+      }
 
       const replacedGrid = g.grid.replace(regex, (...args) =>
         args[2].substring(0, 1).toUpperCase())
@@ -159,32 +160,32 @@ export async function init(h = defaultHelper, options = argv) {
       // Remove config lines
       'optionsof.txt': () => {
         saveText(fileContent
-          .replace(/\nofAnimatedTerrain:false/gm, '\nofAnimatedTerrain:true'), dest)
+          .replace(/\nofAnimatedTerrain:false/g, '\nofAnimatedTerrain:true'), dest)
       },
 
       // Remove current player ranks
       'ranks.txt': () => {
         saveText(fileContent
-          .replace(/\n\/\/ .*\n\[\w+\]\n([\w\.]+: .*\n)*/gm, ''), dest)
+          .replace(/\n\/\/ .*\n\[\w+\]\n([\w.]+: .*\n)*/g, ''), dest)
       },
 
       'options.txt': () => {
         // Merge keys
         let entries = Object.entries({
-          ...Object.fromEntries(loadText(dest).split('\n').map(l=>l.split(/:(.*)/s))),
-          ...Object.fromEntries(fileContent.split('\n').map(l=>l.split(/:(.*)/s))),
+          ...Object.fromEntries(loadText(dest).split('\n').map(l => l.split(/:(.*)/s))),
+          ...Object.fromEntries(fileContent.split('\n').map(l => l.split(/:(.*)/s))),
         })
 
-        entries = entries.filter(([k])=>![
-          'renderDistance',
+        entries = entries.filter(([k]) => ![
           'difficulty',
+          'renderDistance',
         ].includes(k))
 
         // Sort keys
-          entries
+        entries
           .sort(([a], [b]) => [a, b].every(l => l.startsWith('key_')) ? naturalSort(a, b) : 0)
-        
-        saveText(entries.map(([k,v])=>k?`${k}:${v}`:'').join('\n'), dest)
+
+        saveText(entries.map(([k, v]) => k ? `${k}:${v}` : '').join('\n'), dest)
       },
     }
     ;(optionsTransformers[o.sourceFilePath] ?? optionsTransformers.default)()
@@ -265,10 +266,13 @@ export async function init(h = defaultHelper, options = argv) {
 
   const menuFile = 'config/CustomMainMenu/mainmenu.json'
   const menuJson = loadJson(menuFile)
-  menuJson.other.background.slideshow.images = fast_glob.sync(
-    'resources/enigmatica/textures/slideshow/*.jpg'
-    , { dot: true }
-  ).map(f => `enigmatica:textures/slideshow/${parse(f).base}`)
+  menuJson.other.background.slideshow.images = [
+    ...fast_glob.sync(
+      'resources/enigmatica/textures/slideshow/*.jpg'
+      , { dot: true }
+    ).map(f => `enigmatica:textures/slideshow/${parse(f).base}`),
+    ...menuJson.other.background.slideshow.images.filter(img => img.startsWith('web:')),
+  ]
   saveText(`${JSON.stringify(menuJson, null, 2)}\n`, menuFile)
 
   // ###############################################################################

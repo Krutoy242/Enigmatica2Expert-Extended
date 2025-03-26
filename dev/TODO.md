@@ -2,25 +2,12 @@
 
 🚧✅❌⚠️ List of priorities:
 
-- [ ] 🟢 Find how to work with Modrinth and install https://modrinth.com/mod/hit-indication
-- [ ] ✏️ Fix `Magma Crucible` cant melt Rotten Flesh
-- [ ] ✨ Download slideashow screenshots from external sources to descrease size of client zip
 - [ ] 🦆 Geese still dupe armor
-- [ ] `Creative Draconic Capacitor` make it from QMD materials to suggest advancing in QMD
-- [ ] 🟢 integrate **Legendary Tooltips**
 - [ ] 🏹 Fix projectiles accumulated on chunk borders, such as Scythe or Beam Laser
-- [ ] 🎁 Hide Liquids from Tanks/Florbs for new NC update fluids
-- [ ] 🧶 Feat: make some ores / materials only harvestable with Gluon Gun
-- [ ] 🪒 Add amounts to "Materials" reward chest
-- [ ] 🦐 Add Walrus mob build
 - [ ] 𝓩𝒮 `/perf` improvments:
-    > - Show chunks loaded by player
-    > - Use colors to determine how chunks are loaded (player / loader / etc)
-    > - Show chunks loaded by FTB chunks
-    > - Group chunks by dimension
-    > - Split big reports to pages
-    > - Fix not correct with position of blocks https://i.imgur.com/ktLcvSn.png
-    > - Add command mention in quest book
+  > - [ ] Group chunks by dimension
+  > - [ ] Split big reports to pages
+  > - [ ] Add command mention in quest book
 
 ---
 
@@ -61,6 +48,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ `Compressed` mobs should be bigger
 
 ### "Flora & Fauna" expansion
+- [ ] 💡 Feature idea: animal totem that work when you place mobs on each other in right sequence (cow-sheep-chicken for example)
 - [ ] 🌱 Add NC and QMD radioactive items mutating IC2 crops to increase / descrease their stats
 - [ ] 🍐 Fix Papaya manual tree harvesting with custom interract event https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/426
 - [ ] ✏️ Make necessary to tame and breed animals: `Amphitere, Cocatrice, Hippocampus, Hyppogryph, Boars, `
@@ -106,6 +94,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Add `Garbage Singularity`
 - [ ] 🌍 Teleport player to Alien Forest with Blood Magic TP ritual
 - [ ] ✏️ Add `Machine Frame Singularity`
+- [ ] ✏️ Craft `Ultimate Singularity` as diversity from other singularities
 - [ ] ✏️ Tweak Botania Extended Crafting Tables recipes to non-tech
 - [ ] ✏️ Integrate `Orbital Laser Drill` better. It can mine ores on planet orbits for skyblock
 - [ ] ✏️ `Critical Matter Cluster` add usages and mechanics (obtained with shift+right click of World Breaker)
@@ -117,8 +106,12 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Nerf IO spike metals (carapace with `Bedrock cobblestone` + `Bedrock Ore` inside instead of pure blocks)
 - [ ] ✏️ Creative Impetus add recipe
 - [ ] ✏️ Draconic Evolution infusion can use trillions RF
-- [ ] ✏️ Add [](https://is.gd/OcNNZN "Uncrafting Grinder") as Endgame item, right before creative upgrade
+- [ ] ✏️ Add ![](https://is.gd/OcNNZN "Uncrafting Grinder") as Endgame item, right before creative upgrade
 - [ ] ✏️ Add new crafting mechanic - melting blocks in world that cant be harvested, such as `Rock Crystal Ore, Swolen/Fibrous Taint, Vis Crystal, Grass Path, Porous stone, Antimatter, TF Tree Cores, TF Thorns, Trollstein, Foam, Block Mushrooms, Rat Hole`
+- [ ] ✏️ Move all Extended Crafting methods to endgame - its late gamemod and shouldnt be used in early/mid
+- [ ] 🧶 Feat: make some ores / materials only harvestable with Gluon Gun
+- [ ] Add `Ball singularity` https://www.reddit.com/r/feedthememes/comments/1er3fwn/putting_together_a_ball_tierlist_need_more_pls/
+- [ ] `Creative Draconic Capacitor` make it from QMD materials to suggest advancing in QMD
 
 ### "Multiplayer" expansion
 - [ ] Think if i could make a script to keep 100% modpack completion after new quests are added
@@ -132,6 +125,7 @@ Planned non-urgent changes, or just good ideas:
   * Table with more ideas: https://www.reddit.com/r/feedthememes/comments/jk9rag/the_political_compass_but_its_types_of_ftb_players/
 
 ### Mods
+- [ ] 🟢 Find how to work with Modrinth and install https://modrinth.com/mod/hit-indication
 - [ ] 🔴 Remove **Random Patches** since UT and Valkyrie now do most of its features
 - [ ] 🔴 Remove **XTones** and **Environmental Materials** since they are depricated by LittleTiles and Cathedral
 - [ ] 🟠 Do not update **AdvancedRocketry-1.12.2-2.1.4-9** to `2.1.5` since causing Skyblock generate overworld and unable to sleep on servers
@@ -151,6 +145,10 @@ Planned non-urgent changes, or just good ideas:
 
 ### Other
 
+- [ ] 🔵 integrate **Legendary Tooltips** (probably some kind of special item category tooltips)
+- [ ] 🔨 Little Tiles remove limits (but how? Its already have big limits)
+- [ ] 🔵 Integrate more textures with `Lumenized` (contributor's help welcomed here)
+- [ ] ✏️ Fix `Magma Crucible` cant melt Rotten Flesh
 - [ ] ✏️ `Cinnabar Cluster` can only be made in the crucible/thaumatorium and not via an alchemist's stone in a crystalization chamber
 - [ ] 📀 `Flux Anodizers` should output more ore when working with Netherending Ores
 - [ ] ✨ Idea: for endgame run difficulty is always 0 for some dimensions.
@@ -177,7 +175,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ⭐ Difficulty: descrease over time?
 - [ ] 📖 Skyblock chapter disable chapter comletion message on each quest (how if everything optional?)
 - [ ] ✏️ Idea: Time in a Bottle add levels to Tinker's tools
-- [ ] Add `Ball singularity` https://www.reddit.com/r/feedthememes/comments/1er3fwn/putting_together_a_ball_tierlist_need_more_pls/
 - [ ] 📀 Add animated GIF for java warning https://github.com/Darkhax-Minecraft/OldJavaWarning/blob/1.12.2/src/main/java/net/darkhax/oldjava/OldJavaWarning.java
 - [ ] ✏️ Add Archeologyst trades to HEI
 - [ ] ✏️ `Red Mechanic` move trades to other villager `config/vtt/trade_tables/red_mechanic.json`
@@ -266,7 +263,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Add craft mechanic - Mud Ball hit something (called "humilate")
 - [ ] ✏️ Add mobs in Mek's gear
 - [ ] ✏️ Remove Cyclic's machines completely because they are laggy
-- [ ] 📖 List of items that may be add into loot boxes in future: https://i.imgur.com/G0A2KF1.png https://i.imgur.com/99itSSA.png
+- [ ] 📖 List of items that may be add into loot boxes in future: Fireproof Shards, Copernicium-291, IC2 seeds, https://i.imgur.com/G0A2KF1.png https://i.imgur.com/99itSSA.png
 - [ ] 🔄 Add custom progression for Twilight Forest based on Quest Book, since achievments can be disabled
 - [ ] 📀 Fix NPE https://is.gd/wZprY2
 - [ ] ✏️ Add multiblock structure that speed up blocks like Time In Bottle, but based on numbers of mobs around https://is.gd/tPPqt2
@@ -367,7 +364,9 @@ Sound based ingredient
   > Turn E2EE into opposite of GregTech, where 50% of your game you staring into GUI screens
   > Possible reward - whenever picking up item for the first time - get second copy of this item
 
-## Player data reset
+## Miscellaneous
+
+### Player data reset
 
 **Remove files:**
 - advancements/[UUID].json

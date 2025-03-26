@@ -125,6 +125,13 @@ const writerOpts = {
       && commit.authorEmail !== config.defaultAuthor
     ) {
       /** @type {any} */ (commit).isContribution = true
+
+      const sanitized = commit.authorName
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9-]/g, '')
+
+      commit.authorUrl = `https://github.com/${sanitized}`
     }
 
     return commit
