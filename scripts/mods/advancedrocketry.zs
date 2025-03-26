@@ -45,7 +45,7 @@ craft.reshapeless(<advancedrocketry:landingpad>, 'LT', {
 scripts.jei.crafting_hints.addInsOutCatl(
   [<minecraft:cobblestone> | <minecraft:gravel>],
   <advancedrocketry:basalt>,
-  <advancedrocketry:launchpad>.withLore(['§6§lRocket burn blocks'])
+  <advancedrocketry:rocketmotor>.withLore(['§6§lRocket burn blocks'])
 );
 
 // Airtight Seal Enchant
