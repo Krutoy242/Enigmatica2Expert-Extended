@@ -149,7 +149,7 @@ craft.remake(<harvestcraft:grinder>, ['pretty',
   'R R R'], {
   'D': <tconstruct:materials:2>,        // Dried Brick
   '¤': <ore:gearStone>,                 // Stone Gear
-  'R': <sonarcore:reinforceddirtbrick>, // Reinforced Dirt Brick
+  'R': <ore:blockBricks>,
 });
 
 // [Presser] from [Compressed Cobblestone][+2]
@@ -159,7 +159,7 @@ craft.remake(<harvestcraft:presser>, ['pretty',
   'R ░ R'], {
   'D': <tconstruct:materials:2>,        // Dried Brick
   '░': <ore:compressed1xCobblestone>,   // Compressed Cobblestone
-  'R': <sonarcore:reinforceddirtbrick>, // Reinforced Dirt Brick
+  'R': <ore:blockBricks>,
 });
 
 // [Water Filter] from [Reinforced Dirt Brick][+1]
@@ -168,7 +168,7 @@ craft.remake(<harvestcraft:waterfilter>, ['pretty',
   'S R S',
   '  S  '], {
   'S': <exnihilocreatio:item_mesh:1>,   // String Mesh
-  'R': <sonarcore:reinforceddirtbrick>, // Reinforced Dirt Brick
+  'R': <ore:blockBricks>,
 });
 
 // [Cheese]*2 from [Milk][+3]
