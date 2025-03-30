@@ -248,3 +248,5 @@ mods.thaumcraft.Infusion.registerRecipe(
   <thaumictinkerer:ichor_boots>, // CentralItem
   [<botania:quartz:5>, <thaumadditions:traveller_belt>, <rats:plague_essence>, <thaumcraft:lamp_growth>]
 );
+
+mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:infused_seeds>);

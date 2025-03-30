@@ -298,6 +298,10 @@ thaumadditions:vis_seeds/visum
 thaumadditions:vis_seeds/vitium
 thaumadditions:vis_seeds/vitreus
 thaumadditions:vis_seeds/volatus
+thaumictinkerer:infused_aer_fruit
+thaumictinkerer:infused_aqua_fruit
+thaumictinkerer:infused_ignis_fruit
+thaumictinkerer:infused_terra_fruit
 thaumictinkerer:share_book
 twilightforest:fiery_boots
 twilightforest:fiery_chestplate
