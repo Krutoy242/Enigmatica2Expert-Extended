@@ -75,6 +75,11 @@ scripts.do.build.entity.add(<entity:betteranimalsplus:bobbit_worm>, [['xcc']], {
   c: <minecraft:stone_slab:1>,
 }).shift(0, 1, 0);
 
+scripts.do.build.entity.add(<entity:betteranimalsplus:walrus>, [['aax']], {
+  a: <additionalcompression:meatfish_compressed>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 1, 0);
+
 // Greater Crimson Portal custom spawning
 scripts.do.build.entity.add(<entity:thaumcraft:cultistportalgreater>, [
   [

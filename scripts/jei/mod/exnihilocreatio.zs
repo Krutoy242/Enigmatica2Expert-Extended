@@ -88,7 +88,6 @@ add_barrel_milking(<entity:emberroot:timberwolf>.asIngr()         , WB, <liquid:
 add_barrel_milking(<entity:emberroot:rainbow_golem>.asIngr()      , SB, <liquid:construction_alloy> * 10 , 20);
 add_barrel_milking(<entity:excompressum:angry_chicken>.asIngr()   , SB, <liquid:fiery_essence>      * 10 , 20);
 add_barrel_milking(<entity:emberroot:skeleton_frozen>.asIngr()    , WB, <liquid:ice>                * 10 , 20);
-add_barrel_milking(<entity:betteranimalsplus:walrus>.asIngr()     , WB, <liquid:lubricant>          * 10 , 20);
 add_barrel_milking(<entity:mekanism:robit>.asIngr()               , SB, <liquid:electronics>        * 10 , 20);
 add_barrel_milking(<entity:endreborn:watcher>.asIngr()            , SB, <liquid:obsidian>           * 40 , 20);
 add_barrel_milking(<entity:betteranimalsplus:hirschgeist>.asIngr(), SB, <liquid:platinum>           * 10 , 20);

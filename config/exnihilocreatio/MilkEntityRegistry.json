@@ -4,7 +4,6 @@
   ,{"entityOnTop": "emberroot:rainbow_golem"        ,"result": "construction_alloy" ,"amount":   10, "coolDown": 20}
   ,{"entityOnTop": "excompressum:angry_chicken"     ,"result": "fiery_essence"      ,"amount":   10, "coolDown": 20}
   ,{"entityOnTop": "emberroot:skeleton_frozen"      ,"result": "ice"                ,"amount":   10, "coolDown": 20}
-  ,{"entityOnTop": "betteranimalsplus:walrus"       ,"result": "lubricant"          ,"amount":   10, "coolDown": 20}
   ,{"entityOnTop": "mekanism:robit"                 ,"result": "electronics"        ,"amount":   10, "coolDown": 20}
   ,{"entityOnTop": "endreborn:watcher"              ,"result": "obsidian"           ,"amount":   40, "coolDown": 20}
   ,{"entityOnTop": "betteranimalsplus:hirschgeist"  ,"result": "platinum"           ,"amount":   10, "coolDown": 20}
