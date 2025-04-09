@@ -1,4 +1,5 @@
 {
+	icon: "advancedrocketry:blackholegenerator",
 	x: 4.5d,
 	y: 9.8d,
 	text: [
@@ -12,6 +13,25 @@
 		type: "item",
 		items: [{
 			item: "advancedrocketry:blackholegenerator"
+		}]
+	},
+	{
+		uid: "99a88dbc",
+		type: "item",
+		items: [{
+			item: "minecraft:iron_block"
+		},
+		{
+			item: "thermalfoundation:storage_alloy"
+		},
+		{
+			item: "enderio:block_alloy 1 6"
+		},
+		{
+			item: "enderio:block_alloy 1 8"
+		},
+		{
+			item: "twilightforest:block_storage 1 1"
 		}]
 	}],
 	rewards: [{
