@@ -448,7 +448,7 @@ craft.remake(<tconevo:material:2>, ['pretty',
 
 // New liquids
 mods.tconstruct.Alloy.addRecipe(<liquid:sunnarium> * 144, [<liquid:liquid_sunshine> * 500, <liquid:flux_goo> * 100, <liquid:mirion> * 72]);
-mods.tconstruct.Alloy.addRecipe(<liquid:dark_matter> * 144, [<liquid:neutronium> * 144, <liquid:primal_metal> * 144, <liquid:mana> * 250]);
+mods.tconstruct.Alloy.addRecipe(<liquid:dark_matter> * 144, [<liquid:neutronium> * 48, <liquid:primal_metal> * 48, <liquid:mana> * 250]);
 mods.tconstruct.Alloy.addRecipe(<liquid:red_matter> * 144, [<liquid:supremium> * 432, <liquid:blockfluidantimatter> * 1000, <liquid:dark_matter> * 144]);
 
 // Melt Block of flesh
