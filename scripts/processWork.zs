@@ -594,6 +594,16 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       return machineName;
     }
 
+    if (machineName == 'advrocklathe') {
+      val b = mods.advancedrocketry.RecipeTweaker.forMachine('Lathe').builder();
+      for o in inputItems { b.input(o); }
+      for o in outputItems { b.outputs(o); }
+      b.power(getOptionEnergy(options, 100000));
+      b.timeRequired(getOptionTime(options, 5));
+      b.build();
+      return machineName;
+    }
+
     if (machineName == 'starlightinfuser') {
       // mods.astralsorcery.StarlightInfusion.addInfusion(IItemStack input, IItemStack output, boolean consumeMultiple, float consumptionChance, int craftingTickTime);
 

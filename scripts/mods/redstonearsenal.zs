@@ -14,3 +14,8 @@ recipes.addShapeless('Fluxed Box',
     <thaumcraft:turret:*>,
     <twilightforest:triple_bow:*> | <twilightforest:seeker_bow:*> | <twilightforest:ice_bow:*>,
   ]);
+
+recipes.remove(<redstonearsenal:material:192>);
+mods.rats.recipes.addGemcutterRatRecipe(<enderio:block_reinforced_obsidian>, <redstonearsenal:material:192>);
+scripts.processWork.workEx('MetalPress', null, [<enderio:block_reinforced_obsidian>], null, [<redstonearsenal:material:192>], null, null, null, { mold: 'rod' });
+scripts.processWork.workEx('AdvRockLathe', null, [<enderio:block_reinforced_obsidian>], null, [<redstonearsenal:material:192> * 4], null, null, null);
