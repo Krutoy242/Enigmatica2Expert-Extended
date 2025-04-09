@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lit_redstone_ore"
+    }
+  }
+}

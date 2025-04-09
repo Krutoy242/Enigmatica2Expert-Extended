@@ -1,0 +1,10 @@
+{
+  "animation": {},
+  "ctm": {
+    "ctm_version": 1,
+    "layer": "BLOOM",
+    "extra": {
+      "light": 4
+    }
+  }
+}

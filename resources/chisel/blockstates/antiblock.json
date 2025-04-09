@@ -1,0 +1,28 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model"   : "chisel:cube_2_layer",
+    "textures": {
+      "bot_all"     : "chisel:blocks/antiblock/antiblock",
+      "particle": "#bot_all"
+    }
+  },
+  "variants": {
+    "magenta"   : [{ "textures": { "top_all": "chisel:blocks/antiblock/magenta_bloom"    } }],
+    "pink"      : [{ "textures": { "top_all": "chisel:blocks/antiblock/pink_bloom"       } }],
+    "green"     : [{ "textures": { "top_all": "chisel:blocks/antiblock/green_bloom"      } }],
+    "lime"      : [{ "textures": { "top_all": "chisel:blocks/antiblock/lime_bloom"       } }],
+    "black"     : [{ "textures": { "top_all": "chisel:blocks/antiblock/black_bloom"      } }],
+    "yellow"    : [{ "textures": { "top_all": "chisel:blocks/antiblock/yellow_bloom"     } }],
+    "light_blue": [{ "textures": { "top_all": "chisel:blocks/antiblock/light_blue_bloom" } }],
+    "brown"     : [{ "textures": { "top_all": "chisel:blocks/antiblock/brown_bloom"      } }],
+    "cyan"      : [{ "textures": { "top_all": "chisel:blocks/antiblock/cyan_bloom"       } }],
+    "orange"    : [{ "textures": { "top_all": "chisel:blocks/antiblock/orange_bloom"     } }],
+    "red"       : [{ "textures": { "top_all": "chisel:blocks/antiblock/red_bloom"        } }],
+    "gray"      : [{ "textures": { "top_all": "chisel:blocks/antiblock/gray_bloom"       } }],
+    "blue"      : [{ "textures": { "top_all": "chisel:blocks/antiblock/blue_bloom"       } }],
+    "white"     : [{ "textures": { "top_all": "chisel:blocks/antiblock/white_bloom"      } }],
+    "purple"    : [{ "textures": { "top_all": "chisel:blocks/antiblock/purple_bloom"     } }],
+    "silver"    : [{ "textures": { "top_all": "chisel:blocks/antiblock/silver_bloom"     } }]
+  }
+}

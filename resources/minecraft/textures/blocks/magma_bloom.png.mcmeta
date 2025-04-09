@@ -1,0 +1,18 @@
+{
+  "animation": {
+    "frametime": 8,
+    "interpolate": true,
+    "frames": [
+      0,
+      1,
+      2
+    ]
+  },
+  "ctm": {
+    "ctm_version": 1,
+    "layer": "BLOOM",
+    "extra": {
+      "light": 8
+    }
+  }
+}
