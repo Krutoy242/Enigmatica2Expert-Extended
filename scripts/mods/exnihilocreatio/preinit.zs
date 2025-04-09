@@ -35,8 +35,8 @@ mods.exnihilocreatio.Ore.addRecipe(
   'FACB20',
   <ore:oreAnglesite>.firstItem,
   {
-    'en_us': 'Anglesite',
-    'ru_ru': 'Англезит',
+    'en_us': '§6Anglesite',
+    'ru_ru': '§6Англезит',
   },
   'Anglesite'
 );
@@ -46,8 +46,8 @@ mods.exnihilocreatio.Ore.addRecipe(
   '0D7DFC',
   <ore:oreBenitoite>.firstItem,
   {
-    'en_us': 'Benitoite',
-    'ru_ru': 'Бенитоит',
+    'en_us': '§bBenitoite',
+    'ru_ru': '§bБенитоит',
   },
   'Benitoite'
 );
