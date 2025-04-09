@@ -7,7 +7,14 @@
 			},
 			id: "botania:floatingspecialflower"
 		},
-		count: 10
+		count: 10,
+		icon: {
+			tag: {
+				type: "manastar"
+			},
+			id: "botania:floatingspecialflower",
+			Count: 10
+		}
 	},
 	{
 		item: "botania:storage"

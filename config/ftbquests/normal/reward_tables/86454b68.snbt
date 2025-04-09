@@ -11,7 +11,14 @@
 			},
 			id: "thermalexpansion:florb"
 		},
-		count: 64
+		count: 64,
+		icon: {
+			tag: {
+				Fluid: "blockfluidantimatter"
+			},
+			id: "thermalexpansion:florb",
+			Count: 64
+		}
 	},
 	{
 		icon: "thermalfoundation:glass 64 7",
@@ -64,7 +71,17 @@
 			},
 			id: "openblocks:tank"
 		},
-		count: 8
+		count: 8,
+		icon: {
+			tag: {
+				tank: {
+					Amount: 24000,
+					FluidName: "redstone"
+				}
+			},
+			id: "openblocks:tank",
+			Count: 8
+		}
 	},
 	{
 		item: {
@@ -76,7 +93,17 @@
 			},
 			id: "openblocks:tank"
 		},
-		count: 8
+		count: 8,
+		icon: {
+			tag: {
+				tank: {
+					Amount: 24000,
+					FluidName: "glowstone"
+				}
+			},
+			id: "openblocks:tank",
+			Count: 8
+		}
 	},
 	{
 		item: {
@@ -234,7 +261,17 @@
 			},
 			id: "ic2:fluid_cell"
 		},
-		count: 32
+		count: 32,
+		icon: {
+			tag: {
+				Fluid: {
+					Amount: 1000,
+					FluidName: "plutonium_242"
+				}
+			},
+			id: "ic2:fluid_cell",
+			Count: 32
+		}
 	},
 	{
 		item: "thaumicwonders:alchemist_stone"

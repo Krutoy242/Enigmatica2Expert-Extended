@@ -8,7 +8,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 28
+		count: 28,
+		icon: {
+			tag: {
+				Material: "advanced_alloy"
+			},
+			id: "tconstruct:shard",
+			Count: 28
+		}
 	},
 	{
 		item: {
@@ -17,7 +24,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 4
+		count: 4,
+		icon: {
+			tag: {
+				Material: "aethium"
+			},
+			id: "tconstruct:shard",
+			Count: 4
+		}
 	},
 	{
 		item: {
@@ -26,7 +40,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 18
+		count: 18,
+		icon: {
+			tag: {
+				Material: "amethyst"
+			},
+			id: "tconstruct:shard",
+			Count: 18
+		}
 	},
 	{
 		item: {
@@ -35,7 +56,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 64
+		count: 64,
+		icon: {
+			tag: {
+				Material: "black_quartz"
+			},
+			id: "tconstruct:shard",
+			Count: 64
+		}
 	},
 	{
 		item: {
@@ -44,7 +72,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 42
+		count: 42,
+		icon: {
+			tag: {
+				Material: "bloodwood"
+			},
+			id: "tconstruct:shard",
+			Count: 42
+		}
 	},
 	{
 		item: {
@@ -53,7 +88,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 16
+		count: 16,
+		icon: {
+			tag: {
+				Material: "boron_nitride"
+			},
+			id: "tconstruct:shard",
+			Count: 16
+		}
 	},
 	{
 		item: {
@@ -62,7 +104,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 36
+		count: 36,
+		icon: {
+			tag: {
+				Material: "carbon_fiber"
+			},
+			id: "tconstruct:shard",
+			Count: 36
+		}
 	},
 	{
 		item: {
@@ -71,7 +120,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 14
+		count: 14,
+		icon: {
+			tag: {
+				Material: "darkwood"
+			},
+			id: "tconstruct:shard",
+			Count: 14
+		}
 	},
 	{
 		item: {
@@ -80,7 +136,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 38
+		count: 38,
+		icon: {
+			tag: {
+				Material: "desert_myrmex"
+			},
+			id: "tconstruct:shard",
+			Count: 38
+		}
 	},
 	{
 		item: {
@@ -89,7 +152,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 20
+		count: 20,
+		icon: {
+			tag: {
+				Material: "diamantine_crystal"
+			},
+			id: "tconstruct:shard",
+			Count: 20
+		}
 	},
 	{
 		item: {
@@ -98,7 +168,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 20
+		count: 20,
+		icon: {
+			tag: {
+				Material: "emeraldic_crystal"
+			},
+			id: "tconstruct:shard",
+			Count: 20
+		}
 	},
 	{
 		item: {
@@ -107,7 +184,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 26
+		count: 26,
+		icon: {
+			tag: {
+				Material: "endorium"
+			},
+			id: "tconstruct:shard",
+			Count: 26
+		}
 	},
 	{
 		item: {
@@ -116,7 +200,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 20
+		count: 20,
+		icon: {
+			tag: {
+				Material: "enori_crystal"
+			},
+			id: "tconstruct:shard",
+			Count: 20
+		}
 	},
 	{
 		item: {
@@ -125,7 +216,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 16
+		count: 16,
+		icon: {
+			tag: {
+				Material: "fusewood"
+			},
+			id: "tconstruct:shard",
+			Count: 16
+		}
 	},
 	{
 		item: {
@@ -134,7 +232,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 10
+		count: 10,
+		icon: {
+			tag: {
+				Material: "gelid_gem"
+			},
+			id: "tconstruct:shard",
+			Count: 10
+		}
 	},
 	{
 		item: {
@@ -143,7 +248,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 22
+		count: 22,
+		icon: {
+			tag: {
+				Material: "ghostwood"
+			},
+			id: "tconstruct:shard",
+			Count: 22
+		}
 	},
 	{
 		item: {
@@ -152,7 +264,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 6
+		count: 6,
+		icon: {
+			tag: {
+				Material: "ionite"
+			},
+			id: "tconstruct:shard",
+			Count: 6
+		}
 	},
 	{
 		item: {
@@ -161,7 +280,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 38
+		count: 38,
+		icon: {
+			tag: {
+				Material: "jungle_myrmex"
+			},
+			id: "tconstruct:shard",
+			Count: 38
+		}
 	},
 	{
 		item: {
@@ -170,7 +296,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 10
+		count: 10,
+		icon: {
+			tag: {
+				Material: "kyronite"
+			},
+			id: "tconstruct:shard",
+			Count: 10
+		}
 	},
 	{
 		item: {
@@ -179,7 +312,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 12
+		count: 12,
+		icon: {
+			tag: {
+				Material: "litherite"
+			},
+			id: "tconstruct:shard",
+			Count: 12
+		}
 	},
 	{
 		item: {
@@ -188,7 +328,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 32
+		count: 32,
+		icon: {
+			tag: {
+				Material: "lonsdaleite"
+			},
+			id: "tconstruct:shard",
+			Count: 32
+		}
 	},
 	{
 		item: {
@@ -197,7 +344,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 30
+		count: 30,
+		icon: {
+			tag: {
+				Material: "nagascale"
+			},
+			id: "tconstruct:shard",
+			Count: 30
+		}
 	},
 	{
 		item: {
@@ -206,7 +360,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 20
+		count: 20,
+		icon: {
+			tag: {
+				Material: "palis_crystal"
+			},
+			id: "tconstruct:shard",
+			Count: 20
+		}
 	},
 	{
 		item: {
@@ -215,7 +376,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 8
+		count: 8,
+		icon: {
+			tag: {
+				Material: "pladium"
+			},
+			id: "tconstruct:shard",
+			Count: 8
+		}
 	},
 	{
 		item: {
@@ -224,7 +392,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 20
+		count: 20,
+		icon: {
+			tag: {
+				Material: "restonia_crystal"
+			},
+			id: "tconstruct:shard",
+			Count: 20
+		}
 	},
 	{
 		item: {
@@ -233,7 +408,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 40
+		count: 40,
+		icon: {
+			tag: {
+				Material: "sapphire"
+			},
+			id: "tconstruct:shard",
+			Count: 40
+		}
 	},
 	{
 		item: {
@@ -242,7 +424,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 24
+		count: 24,
+		icon: {
+			tag: {
+				Material: "steeleaf"
+			},
+			id: "tconstruct:shard",
+			Count: 24
+		}
 	},
 	{
 		item: {
@@ -251,7 +440,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 34
+		count: 34,
+		icon: {
+			tag: {
+				Material: "topaz"
+			},
+			id: "tconstruct:shard",
+			Count: 34
+		}
 	},
 	{
 		item: {
@@ -260,7 +456,14 @@
 			},
 			id: "tconstruct:shard"
 		},
-		count: 20
+		count: 20,
+		icon: {
+			tag: {
+				Material: "void_crystal"
+			},
+			id: "tconstruct:shard",
+			Count: 20
+		}
 	},
 	{
 		item: {

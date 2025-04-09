@@ -87,7 +87,88 @@
 			},
 			id: "forestry:bee_drone_ge"
 		},
-		count: 64
+		count: 64,
+		icon: {
+			tag: {
+				MaxH: 20,
+				"Quark:RuneAttached": 1b,
+				Genome: {
+					Chromosomes: [{
+						Slot: 0b,
+						UID0: "gendustry.bee.narcissistic",
+						UID1: "gendustry.bee.selfish"
+					},
+					{
+						Slot: 1b,
+						UID0: "forestry.speedFastest",
+						UID1: "forestry.speedFastest"
+					},
+					{
+						Slot: 2b,
+						UID0: "forestry.lifespanShortest",
+						UID1: "forestry.lifespanShortest"
+					},
+					{
+						Slot: 3b,
+						UID0: "forestry.fertilityMaximum",
+						UID1: "forestry.fertilityMaximum"
+					},
+					{
+						Slot: 4b,
+						UID0: "forestry.toleranceBoth5",
+						UID1: "forestry.toleranceBoth5"
+					},
+					{
+						Slot: 5b,
+						UID0: "forestry.boolTrue",
+						UID1: "forestry.boolTrue"
+					},
+					{
+						Slot: 6b,
+						UID0: "forestry.toleranceBoth5",
+						UID1: "forestry.toleranceBoth5"
+					},
+					{
+						Slot: 7b,
+						UID0: "forestry.boolTrue",
+						UID1: "forestry.boolTrue"
+					},
+					{
+						Slot: 8b,
+						UID0: "forestry.boolTrue",
+						UID1: "forestry.boolTrue"
+					},
+					{
+						Slot: 9b,
+						UID0: "forestry.flowersWheat",
+						UID1: "forestry.flowersCacti"
+					},
+					{
+						Slot: 10b,
+						UID0: "forestry.floweringMaximum",
+						UID1: "forestry.floweringFastest"
+					},
+					{
+						Slot: 11b,
+						UID0: "forestry.territoryLargest",
+						UID1: "forestry.territoryLarger"
+					},
+					{
+						Slot: 12b,
+						UID0: "forestry.effectExploration",
+						UID1: "forestry.effectFertile"
+					}]
+				},
+				Health: 20,
+				IsAnalyzed: 1b,
+				"Quark:RuneColor": 16,
+				display: {
+					Name: "§kUltimate Bee"
+				}
+			},
+			id: "forestry:bee_drone_ge",
+			Count: 64
+		}
 	},
 	{
 		icon: {

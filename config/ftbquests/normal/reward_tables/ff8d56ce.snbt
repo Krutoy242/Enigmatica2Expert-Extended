@@ -13,7 +13,20 @@
 			},
 			id: "nuclearcraft:lithium_ion_battery_elite"
 		},
-		count: 2
+		count: 2,
+		icon: {
+			tag: {
+				capacity: 2048000000,
+				energy: 0,
+				maxTransfer: 102400000,
+				energyStorage: {
+					capacity: 2048000000L,
+					energy: 0L
+				}
+			},
+			id: "nuclearcraft:lithium_ion_battery_elite",
+			Count: 2
+		}
 	},
 	{
 		icon: "nuclearcraft:turbine_rotor_blade_extreme 4",
