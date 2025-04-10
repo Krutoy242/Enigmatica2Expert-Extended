@@ -12,9 +12,9 @@ import scripts.do.hand_over_your_items.tellrawItemObj;
 
 zenClass Op {
   zenConstructor() {}
-  var reportPlayer as IPlayer = null;
+  var reportPlayer     as IPlayer = null;
   var firstDimReported as IWorld = null;
-  var total as int = 0;
+  var total            as int = 0;
 }
 static op as Op = Op();
 
@@ -24,7 +24,7 @@ events.register(function (e as crafttweaker.event.WorldTickEvent) {
 
   // Iterate first and all other worlds
   if (isNull(op.firstDimReported) || op.firstDimReported.dimension != e.world.dimension) {
-    var total = forEachChunkLoader(e.world, function(te as TileEntity) as void {
+    val total = forEachChunkLoader(e.world, function (te as TileEntity) as void {
       report(op.reportPlayer, e.world, te.getPos());
     });
     op.total += total;
@@ -34,7 +34,8 @@ events.register(function (e as crafttweaker.event.WorldTickEvent) {
   // This was a first dim in the list, mark it
   if (isNull(op.firstDimReported)) {
     op.firstDimReported = e.world;
-  } else if (op.firstDimReported.dimension == e.world.dimension) {
+  }
+  else if (op.firstDimReported.dimension == e.world.dimension) {
     // We made a loop and can output the results
     message(op.reportPlayer, [
       `§7(Click §6⚑§7 to teleport)`,
@@ -117,19 +118,19 @@ function tpMessage(
   extra as IData = null, extraTooltip as IData = null
 ) as IData {
   val posText = tpText(dim, x, y, z);
-  val tpToText = 'TP to ' ~ posText;
+  val tpToText = `TP to ${posText}`;
   var result = {
     text      : isNull(text) ? posText : text,
     hoverEvent: {
       action: 'show_text',
       value : isNull(extraTooltip)
         ? tpToText as IData
-        : [tpToText~'\n', extraTooltip],
+        : [`${tpToText}\n`, extraTooltip],
     },
     clickEvent: {
       action: 'run_command',
       value : `/tpx @p ${x} ${y} ${z} ${dim}`,
-    }
+    },
   } as IData;
   if (!isNull(extra)) result += {extra: extra};
 

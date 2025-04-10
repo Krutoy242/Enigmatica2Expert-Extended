@@ -4,7 +4,6 @@
 
 import crafttweaker.data.IData;
 import crafttweaker.server.IServer;
-import mods.zenutils.StringList;
 import mods.zenutils.command.ZenCommand;
 import mods.zenutils.command.ZenUtilsCommandSender;
 
