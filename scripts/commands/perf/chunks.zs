@@ -41,22 +41,28 @@ function show(player as IPlayer) as IData {
 
     val dim = world.wrapper.dimension as int;
 
-    // Claimed chunk teams
-    val claims = intArrayOf(chunks.length / 2, -1);
+    /*
+      Claimed chunk teams
+
+      Rules:
+      `0` - no claim
+      `index * 2 + 1` when claimed
+      `index * 2 + 2` when forced
+
+    */
+    val claims = intArrayOf(chunks.length / 2, 0);
     for i in 0 .. chunks.length / 2 {
       val chunkDimPos = ChunkDimPos(chunks[i * 2], chunks[i * 2 + 1], dim);
       val claimedChunk = ClaimedChunks.instance.getChunk(chunkDimPos);
-      if (!isNull(claimedChunk)) {
-        val title = claimedChunk.team.commandTitle.unformattedText;
-        val index = titlesList.indexOf(title);
-        if (index >= 0) {
-          claims[i] = index;
-        }
-        else {
-          claims[i] = titlesList.size;
-          titlesList.add(title);
-        }
+      if (isNull(claimedChunk)) continue;
+
+      val title = claimedChunk.team.commandTitle.unformattedText;
+      var index = titlesList.indexOf(title);
+      if (0 > index) {
+        index = titlesList.size;
+        titlesList.add(title);
       }
+      claims[i] = index * 2 + 1 + (claimedChunk.forced ? 1 : 0);
     }
 
     data[i] = {

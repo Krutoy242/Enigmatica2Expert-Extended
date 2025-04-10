@@ -74,7 +74,7 @@ function getGroups(chunks as int[]) as int[][] {
       val z2 = chunks[j * 2 + 1];
       if (isClose(x1, z1, x2, z2, 28 / 2)) {
         val dist = pow((pow(x2 - x1, 2) + pow(z2 - z1, 2)) as double, 0.5) as int;
-        neighbours[i] = neighbours[i] + pow(2, 28 - dist);
+        neighbours[i] = neighbours[i] + pow(1.9, 28 - dist);
       }
     }
   }
@@ -178,12 +178,15 @@ zenClass Messenger {
 
   function chunkCell(index as int, x as int, z as int) as IData {
     val claimedIndex = worldData.claims[index] as int;
-    val isClaimed = claimedIndex >= 0;
+    val isClaimed = claimedIndex > 0;
     val isLoadedByPlayer = isInclude(worldData.players, x, z, viewDistance);
     val isAnchored = isInclude(worldData.anchors, x, z);
+    val isForced = isClaimed && claimedIndex % 2 == 0;
 
-    val color = 
-      isClaimed && isLoadedByPlayer ? '§b'
+    val color =
+      isForced && isLoadedByPlayer ? '§e'
+      : isForced ? '§6'
+      : isClaimed && isLoadedByPlayer ? '§b'
       : isClaimed ? '§3'
       : isLoadedByPlayer ? '§f'
       : '§7';
@@ -191,11 +194,13 @@ zenClass Messenger {
     val symbol = isAnchored ? '▓' : '█';
 
     var tooltip = [] as IData;
-    if (isClaimed) tooltip += [`§7Claimed: §3${titles[claimedIndex]}`];
-    if (isLoadedByPlayer)
-      tooltip += [`${tooltip.length > 0 ? '\n' : ''}§fLoaded by player`];
+    if (isClaimed) tooltip += [`§8⚀ §7Claimed: §3${titles[(claimedIndex - 1) / 2]}`];
+    if (isForced)
+      tooltip += [`${tooltip.length > 0 ? '\n' : ''}§8⚄ §6FTBU force loaded`];
     if (isAnchored)
-      tooltip += [`${tooltip.length > 0 ? '\n' : ''}§6With chunk loader`];
+      tooltip += [`${tooltip.length > 0 ? '\n' : ''}§8⚓ §2With chunk loader`];
+    if (isLoadedByPlayer)
+      tooltip += [`${tooltip.length > 0 ? '\n' : ''}§8☺ §fLoaded by player`];
 
     return tpMessage(
       worldData.dim,
