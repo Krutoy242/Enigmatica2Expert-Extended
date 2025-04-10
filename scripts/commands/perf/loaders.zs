@@ -118,12 +118,12 @@ function tpMessage(
   extra as IData = null, extraTooltip as IData = null
 ) as IData {
   val posText = tpText(dim, x, y, z);
-  val tpToText = `TP to ${posText}`;
+  val tpToText = `§8TP to ${posText}`;
   var result = {
     text      : isNull(text) ? posText : text,
     hoverEvent: {
       action: 'show_text',
-      value : isNull(extraTooltip)
+      value : (isNull(extraTooltip) || extraTooltip.length <= 0)
         ? tpToText as IData
         : [`${tpToText}\n`, extraTooltip],
     },
