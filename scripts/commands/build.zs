@@ -64,3 +64,13 @@ zenClass Command {
     cmd.register();
   }
 }
+
+// ---------------------------------------------
+// Functions for cross-script reference
+// ---------------------------------------------
+function isClose(x1 as int, z1 as int, x2 as int, z2 as int, dist as int) as bool {
+  return abs(x2 - x1) <= dist
+    && abs(z2 - z1) <= dist;
+}
+
+function abs(n as int) as int { return n < 0 ? -n : n; } // >

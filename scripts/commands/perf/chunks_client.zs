@@ -11,6 +11,7 @@ import mods.zenutils.StringList;
 
 import scripts.commands.perf.loaders.message;
 import scripts.commands.perf.loaders.tpMessage;
+import scripts.commands.build.isClose;
 
 NetworkHandler.registerServer2ClientMessage('perf_chunks', function (player, byteBuf) {
   show(byteBuf.readData());
@@ -174,11 +175,6 @@ function minMaxing(minMax as int[], x as int, z as int) as void {
   if (z > minMax[3]) minMax[3] = z;
 }
 
-function isClose(x1 as int, z1 as int, x2 as int, z2 as int, dist as int) as bool {
-  return abs(x2 - x1) <= dist
-    && abs(z2 - z1) <= dist;
-}
-
 function sortableInt(n as int) as string {
   return StaticString.repeat(0, 10 - (`${n}`).length) ~ n;
 }
@@ -325,5 +321,3 @@ zenClass Messenger {
     grid = [];
   }
 }
-
-function abs(n as int) as int { return n < 0 ? -n : n; } // >
