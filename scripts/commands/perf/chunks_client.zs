@@ -13,9 +13,13 @@ import scripts.commands.perf.loaders.message;
 import scripts.commands.perf.loaders.tpMessage;
 import scripts.commands.build.isClose;
 
+// ⓪➀➁➂➃➄➅➆➇➈➉
+
 NetworkHandler.registerServer2ClientMessage('perf_chunks', function (player, byteBuf) {
   show(byteBuf.readData());
 });
+
+static CHUNK_GROUP_DIST as int = 28;
 
 function show(data as IData) as void {
   utils.log(`🌍 received data from server:\n${data}`);
@@ -72,9 +76,9 @@ function getGroups(chunks as int[]) as int[][] {
       if (i == j) continue;
       val x2 = chunks[j * 2];
       val z2 = chunks[j * 2 + 1];
-      if (isClose(x1, z1, x2, z2, 28 / 2)) {
+      if (isClose(x1, z1, x2, z2, CHUNK_GROUP_DIST / 2)) {
         val dist = pow((pow(x2 - x1, 2) + pow(z2 - z1, 2)) as double, 0.5) as int;
-        neighbours[i] = neighbours[i] + pow(1.9, 28 - dist);
+        neighbours[i] = neighbours[i] + pow(1.9, CHUNK_GROUP_DIST - dist);
       }
     }
   }
@@ -106,7 +110,7 @@ function getGroups(chunks as int[]) as int[][] {
         if (alreadyAdded[j]) continue;
         val x2 = chunks[indexJ * 2];
         val z2 = chunks[indexJ * 2 + 1];
-        if (isClose(x1, z1, x2, z2, 28 / 2)) {
+        if (isClose(x1, z1, x2, z2, CHUNK_GROUP_DIST / 2)) {
           newGroup += indexJ;
           alreadyAdded[j] = true;
         }
@@ -136,8 +140,8 @@ function getGroupSize(
     val x = chunkArr[nextIndex * 2];
     val z = chunkArr[nextIndex * 2 + 1];
     if (
-      !isClose(minMax[0], minMax[1], x, z, 28 / 2)
-      || !isClose(minMax[2], minMax[3], x, z, 28 / 2)
+      !isClose(minMax[0], minMax[1], x, z, CHUNK_GROUP_DIST / 2)
+      || !isClose(minMax[2], minMax[3], x, z, CHUNK_GROUP_DIST / 2)
     ) {
       return j;
     }
@@ -160,8 +164,8 @@ function sortableInt(n as int) as string {
 }
 
 zenClass Messenger {
-  val maxWidth as int = 34;
-  var grid             as IData[][] = [];
+  val maxChatWidth as int = 34;
+  var grid as IData[][] = [];
 
   var worldData as IData = null;
   var titles as [IData] = null;
@@ -276,7 +280,7 @@ zenClass Messenger {
 
   function fit(width as int, height as int) as int {
     for y, line in grid {
-      if (line.length + width > maxWidth) continue;
+      if (line.length + width > maxChatWidth) continue;
       if (grid.length != 0 && y + height > grid.length) return -1;
 
       var found = true;
