@@ -6,6 +6,7 @@ import crafttweaker.data.IData;
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 import native.net.minecraft.tileentity.TileEntity;
+import native.net.minecraft.util.ITickable;
 import native.net.minecraft.util.math.BlockPos;
 
 import scripts.do.hand_over_your_items.tellrawItemObj;
@@ -56,7 +57,7 @@ function forEachChunkLoader(world as IWorld, callback as function(TileEntity)voi
   for te in world.native.loadedTileEntityList {
     if (te.isInvalid()) continue;
     if (isChunkLoader(te)) callback(te);
-    total += 1;
+    if (te instanceof ITickable) total += 1;
   }
   return total;
 }
