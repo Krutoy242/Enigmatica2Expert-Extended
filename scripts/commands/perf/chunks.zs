@@ -4,6 +4,7 @@
 
 import crafttweaker.data.IData;
 import crafttweaker.player.IPlayer;
+import crafttweaker.util.Math.floor;
 import crafttweaker.world.IWorld;
 import mods.zenutils.NetworkHandler;
 import mods.zenutils.StringList;
@@ -95,8 +96,8 @@ function getAnchoredChunks(world as IWorld) as int[] {
   anchorCounter.anchors = [];
   val total = forEachChunkLoader(world, function (te as TileEntity) as void {
     val pos = te.pos;
-    anchorCounter.anchors += pos.x / 16;
-    anchorCounter.anchors += pos.z / 16;
+    anchorCounter.anchors += floor(pos.x as float / 16);
+    anchorCounter.anchors += floor(pos.z as float / 16);
   });
   return anchorCounter.anchors;
 }
@@ -118,8 +119,8 @@ function getWorldPlayers(world as IWorld) as int[] {
   // Get indexes of chunks loaded by players
   val players = intArrayOf(world.getPlayers().length * 2);
   for i, p in world.getPlayers() {
-    players[i * 2] = (p.x / 16) as int;
-    players[i * 2 + 1] = (p.z / 16) as int;
+    players[i * 2] = floor(p.x / 16);
+    players[i * 2 + 1] = floor(p.z / 16);
   }
   return players;
 }
