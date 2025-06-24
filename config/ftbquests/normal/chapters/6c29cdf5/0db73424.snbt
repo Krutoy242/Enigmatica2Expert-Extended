@@ -1,4 +1,5 @@
 {
+	title: "{q.botania.elementium_helmet.name}",
 	icon: "botania:elementiumchest",
 	x: 6.0d,
 	y: 0.0d,
@@ -21,8 +22,8 @@
 		uid: "2a87f7ff",
 		type: "item",
 		items: [{
-			id: "botania:elementiumchest",
-			tag: {}
+			tag: {},
+			id: "botania:elementiumchest"
 		}],
 		ignore_nbt: 1b
 	},

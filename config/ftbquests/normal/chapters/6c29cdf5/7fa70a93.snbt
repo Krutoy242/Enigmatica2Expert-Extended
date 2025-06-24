@@ -1,4 +1,5 @@
 {
+	title: "{q.botania.manasteel_helmet.name}",
 	icon: "botania:manasteelchest",
 	x: 2.0d,
 	y: 0.0d,
@@ -21,8 +22,8 @@
 		uid: "fff7e935",
 		type: "item",
 		items: [{
-			id: "botania:manasteelchest",
-			tag: {}
+			tag: {},
+			id: "botania:manasteelchest"
 		}],
 		ignore_nbt: 1b
 	},

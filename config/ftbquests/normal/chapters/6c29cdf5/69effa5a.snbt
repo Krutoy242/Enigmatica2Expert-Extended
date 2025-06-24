@@ -1,4 +1,5 @@
 {
+	title: "{q.botania.terrasteel_helmet.name}",
 	icon: "botania:terrasteelchest",
 	x: 4.0d,
 	y: -1.0d,
