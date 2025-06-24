@@ -210,7 +210,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_kami_helm', // Name
   'TT_KAMIHELM', // Research
   <thaumictinkerer:kami_helm>, // Output
-  2, // Instability
+  10, // Instability
   [<aspect:lux> * 250, <aspect:aqua> * 150, <aspect:auram> * 125, <aspect:praemunio> * 125, <aspect:cognitio> * 60, <aspect:victus> * 60],
   <thaumictinkerer:ichor_helm>, // CentralItem
   [<minecraft:ender_eye>, <tinkersaddons:modifier_item>, <thaumicwonders:night_vision_goggles>, <botania:quartz:1>]
@@ -221,7 +221,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_kami_chest', // Name
   'TT_KAMICHEST', // Research
   <thaumictinkerer:kami_chest>, // Output
-  3, // Instability
+  10, // Instability
   [<aspect:lux> * 250, <aspect:aer> * 150, <aspect:praemunio> * 125, <aspect:volatus> * 125, <aspect:ordo> * 125, <aspect:alienis> * 60],
   <thaumictinkerer:ichor_chest>, // CentralItem
   [<botania:quartz:6>, <thaumicaugmentation:thaumostatic_harness>, <mysticalagradditions:stuff:3>, <minecraft:shield>]
@@ -232,7 +232,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_kami_legs', // Name
   'TT_KAMILEGS', // Research
   <thaumictinkerer:kami_legs>, // Output
-  3, // Instability
+  10, // Instability
   [<aspect:lux> * 250, <aspect:ignis> * 150, Aspect.infernum * 125, Aspect.sonus * 125, <aspect:sensus> * 60, <aspect:exanimis> * 60],
   <thaumictinkerer:ichor_legs>, // CentralItem
   [<thaumictinkerer:energetic_nitor>, <iceandfire:manuscript>, <thaumcraft:verdant_charm:*>, <botania:quartz:4>]
@@ -243,7 +243,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_kami_boots', // Name
   'TT_KAMIBOOTS', // Research
   <thaumictinkerer:kami_boots>, // Output
-  2, // Instability
+  10, // Instability
   [<aspect:lux> * 250, <aspect:terra> * 150, <aspect:instrumentum> * 125, <aspect:praemunio> * 125, <aspect:herba> * 60, <aspect:motus> * 60],
   <thaumictinkerer:ichor_boots>, // CentralItem
   [<botania:quartz:5>, <thaumadditions:traveller_belt>, <rats:plague_essence>, <thaumcraft:lamp_growth>]
