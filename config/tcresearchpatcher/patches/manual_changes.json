@@ -950,4 +950,28 @@
   "path":"key"}
 ]}
 
+,{"key":"ESSENTIASTORAGE1k","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:essentia_component_1k"]}
+]},
+
+{"key":"ESSENTIASTORAGE4k","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:essentia_component_4k"]}
+]},
+
+{"key":"ESSENTIASTORAGE16k","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:essentia_component_16k"]}
+]},
+
+{"key":"ESSENTIASTORAGE64k","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:essentia_component_64k"]}
+]}
+
 ]
