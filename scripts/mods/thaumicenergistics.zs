@@ -106,7 +106,7 @@ val cellIngrs = {
 } as IIngredient[string];
 
 // [1k ME Essentia Storage Cell] from [1k ME Essentia Storage Component][+4]
-recipes.removeByRecipeName('thaumicenergistics:cells/essentia_cell_1k');
+recipes.remove(<thaumicenergistics:essentia_cell_1k>);
 craft.make(<thaumicenergistics:essentia_cell_1k>, ['pretty',
   '⌃ ♥ ⌃',
   '♥ 1 ♥',
@@ -114,7 +114,7 @@ craft.make(<thaumicenergistics:essentia_cell_1k>, ['pretty',
 );
 
 // [4k ME Essentia Storage Cell] from [4k ME Essentia Storage Component][+4]
-recipes.removeByRecipeName('thaumicenergistics:cells/essentia_cell_4k');
+recipes.remove(<thaumicenergistics:essentia_cell_4k>);
 craft.make(<thaumicenergistics:essentia_cell_4k>, ['pretty',
   '⌃ ♥ ⌃',
   '♥ 4 ♥',
@@ -122,7 +122,7 @@ craft.make(<thaumicenergistics:essentia_cell_4k>, ['pretty',
 );
 
 // [16k ME Essentia Storage Cell] from [16k ME Essentia Storage Component][+4]
-recipes.removeByRecipeName('thaumicenergistics:cells/essentia_cell_16k');
+recipes.remove(<thaumicenergistics:essentia_cell_16k>);
 craft.make(<thaumicenergistics:essentia_cell_16k>, ['pretty',
   '⌃ ♥ ⌃',
   '♥ 6 ♥',
@@ -130,7 +130,7 @@ craft.make(<thaumicenergistics:essentia_cell_16k>, ['pretty',
 );
 
 // [64k ME Essentia Storage Cell] from [64k ME Essentia Storage Component][+4]
-recipes.removeByRecipeName('thaumicenergistics:cells/essentia_cell_64k');
+recipes.remove(<thaumicenergistics:essentia_cell_64k>);
 craft.make(<thaumicenergistics:essentia_cell_64k>, ['pretty',
   '⌃ ♥ ⌃',
   '♥ k ♥',
