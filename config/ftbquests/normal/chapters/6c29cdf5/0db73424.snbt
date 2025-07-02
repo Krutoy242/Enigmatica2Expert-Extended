@@ -22,8 +22,8 @@
 		uid: "2a87f7ff",
 		type: "item",
 		items: [{
-			tag: {},
-			id: "botania:elementiumchest"
+			id: "botania:elementiumchest",
+			tag: {}
 		}],
 		ignore_nbt: 1b
 	},

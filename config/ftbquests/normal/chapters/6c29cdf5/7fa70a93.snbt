@@ -22,8 +22,8 @@
 		uid: "fff7e935",
 		type: "item",
 		items: [{
-			tag: {},
-			id: "botania:manasteelchest"
+			id: "botania:manasteelchest",
+			tag: {}
 		}],
 		ignore_nbt: 1b
 	},
