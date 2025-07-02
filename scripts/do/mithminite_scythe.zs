@@ -1083,4 +1083,4 @@ events.onProjectileImpactArrow(function (e as crafttweaker.event.ProjectileImpac
 <entity:thaumadditions:mithminite_scythe>.onTick(function(entity) {
   if(entity.world.remote) return;
   entity.setDead();
-}, 200);
+}, 600);
