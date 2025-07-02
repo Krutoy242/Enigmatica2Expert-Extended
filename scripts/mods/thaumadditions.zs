@@ -1661,6 +1661,8 @@ recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scyth
     if (lorem.length > 7 || lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
     val player = cInfo.player;
+    if(isNull(player)) return null;
+
     if(!player.thaumcraftKnowledge.isResearchComplete('!' ~ (ins.seal.tag.Aspect as string) ~ '_seal')){
       player.thaumcraftKnowledge.addResearch('!' ~ (ins.seal.tag.Aspect as string) ~ '_seal');
       player.sendPlaySoundPacket("thaumcraft:whispers", 'ambient', player.position, 1.0f, player.world.random.nextFloat(0.8f, 1.0f));
