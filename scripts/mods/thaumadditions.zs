@@ -1660,14 +1660,6 @@ recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scyth
     if(haveLoremError(lorem)) return <thaumadditions:mithminite_scythe>;
     if (lorem.length > 7 || lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
-    val player = cInfo.player;
-    if(isNull(player)) return null;
-
-    if(!player.thaumcraftKnowledge.isResearchComplete('!' ~ (ins.seal.tag.Aspect as string) ~ '_seal')){
-      player.thaumcraftKnowledge.addResearch('!' ~ (ins.seal.tag.Aspect as string) ~ '_seal');
-      player.sendPlaySoundPacket("thaumcraft:whispers", 'ambient', player.position, 1.0f, player.world.random.nextFloat(0.8f, 1.0f));
-    }
-
     var newTag = scythe.tag;
 
     newTag = newTag.deepUpdate({ display: { Lore: [loreColor[ins.seal.tag.Aspect]] } }, APPEND)                             //Add aspect lore
@@ -1678,7 +1670,16 @@ recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scyth
     return scythe.withTag(newTag);
 
   },
-  null);
+  function(out, cInfo, player){
+    if(isNull(player)) return;
+
+    val researchName = loreUnColor[out.tag.display.Lore[out.tag.display.Lore.length - 1]];
+
+    if(!player.thaumcraftKnowledge.isResearchComplete('!' ~ researchName ~ '_seal')){
+      player.thaumcraftKnowledge.addResearch('!' ~ researchName ~ '_seal');
+      player.sendPlaySoundPacket("thaumcraft:whispers", 'ambient', player.position, 1.0f, player.world.random.nextFloat(0.8f, 1.0f));
+    }
+  });
 
 //#################################################################################
 
