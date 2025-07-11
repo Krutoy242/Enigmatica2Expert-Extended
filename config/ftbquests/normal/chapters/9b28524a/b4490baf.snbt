@@ -1,4 +1,5 @@
 {
+	title: "{q.blood_magic.living_helmet.name}",
 	icon: {
 		id: "bloodmagic:living_armour_chest",
 		tag: {}

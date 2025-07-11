@@ -143,9 +143,9 @@ function amogusVent(scythe as IEntity, target as IEntityLivingBase) as void {
 
 function aquaSplash(target as IEntityLivingBase, lvl as int) as void {
   val water = <liquid:water>.definition.block.definition.getStateFromMeta(1);
-  val x = target.getX() > 0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
+  val x = target.getX() > 0 ? target.getX() as int : target.getX() as int - 1;
   val y = target.getY() as float;
-  val z = target.getZ() > 0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
+  val z = target.getZ() > 0 ? target.getZ() as int : target.getZ() as int - 1;
   for a in 0 .. 2 * lvl + 1 {
     for b in 0 .. 2 {
       for c in 0 .. 2 * lvl + 1 {
@@ -172,9 +172,9 @@ function auramVisAdd(scythe as IEntity, lvl as int) as void {
 function bestiaHunt(scythe as IEntity, target as IEntityLivingBase) as void {
   if (target.definition.id == 'thaumcraft:mindspider') { target.setDead(); return; }
   val web = <item:minecraft:web>.asBlock();
-  val x = target.getX() > 0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
+  val x = target.getX() > 0 ? target.getX() as int : target.getX() as int - 1;
   val y = target.getY() as float;
-  val z = target.getZ() > 0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
+  val z = target.getZ() > 0 ? target.getZ() as int : target.getZ() as int - 1;
   val pos = crafttweaker.util.Position3f.create(x, y + 1, z) as IBlockPos;
   val block as IBlock = target.world.getBlock(pos);
   if (!isNull(block)
@@ -438,9 +438,9 @@ function manaCreateStar(scythe as IEntity, target as IEntityLivingBase) as void 
 
 function metallumPrison(target as IEntityLivingBase) as void {
   val ancientBar = <item:thaumicaugmentation:bars>.asBlock().definition.defaultState;
-  val x = target.getX() > 0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
+  val x = target.getX() > 0 ? target.getX() as int : target.getX() as int - 1;
   val y = target.getY() as float;
-  val z = target.getZ() > 0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
+  val z = target.getZ() > 0 ? target.getZ() as int : target.getZ() as int - 1;
   for a in 0 .. 6 {
     for b in 0 .. 6 {
       for c in 0 .. 6 {
@@ -637,9 +637,9 @@ static terraBlocksList as string[] = [
 
 function terraQuickSand(target as IEntityLivingBase, lvl as int) as void {
   val quickSand = <liquid:sand>.definition.block.definition.defaultState.withProperty('level', 0);
-  val x = target.getX() > 0 ? ((target.getX() as int) - 0.5f) : ((target.getX() as int) - 1.5f);
+  val x = target.getX() > 0 ? target.getX() as int : target.getX() as int - 1;
   val y = target.getY() as float;
-  val z = target.getZ() > 0 ? ((target.getZ() as int) - 0.5f) : ((target.getZ() as int) - 1.5f);
+  val z = target.getZ() > 0 ? target.getZ() as int : target.getZ() as int - 1;
   if (target.y < 2) return;
   for a in 0 .. 2 * lvl + 9 {
     for c in 0 .. 2 * lvl + 9 {
@@ -1079,3 +1079,8 @@ events.onProjectileImpactArrow(function (e as crafttweaker.event.ProjectileImpac
     }
   }
 });
+
+<entity:thaumadditions:mithminite_scythe>.onTick(function(entity) {
+  if(entity.world.remote) return;
+  entity.setDead();
+}, 200);

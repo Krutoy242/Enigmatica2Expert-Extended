@@ -1,0 +1,28 @@
+{
+	x: 6.5d,
+	y: 10.0d,
+	shape: "pentagon",
+	text: [
+		"{q.thaumcraft.verdant_heart_charm.desc}"
+	],
+	dependencies: [
+		"587dc05a"
+	],
+	tasks: [{
+		uid: "6d8a0a22",
+		type: "item",
+		items: [{
+			tag: {
+				type: 2b
+			},
+			id: "thaumcraft:verdant_charm"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "9b513396",
+		type: "random",
+		table: 142
+	}]
+}

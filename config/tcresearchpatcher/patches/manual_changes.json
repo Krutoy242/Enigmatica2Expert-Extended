@@ -950,6 +950,12 @@
   "path":"key"}
 ]}
 
+,{"key":"TWOND_DIMENSIONAL_RIPPER","ops":[
+  {"op":"replace",
+  "path":"parents",
+  "value": ["TWOND_BASE", "~FLUX", "~ARCANEBORE", "~BASEELDRITCH"]}
+]}
+
 ,{"key":"ESSENTIASTORAGE1k","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",

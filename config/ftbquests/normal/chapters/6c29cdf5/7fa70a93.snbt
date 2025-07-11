@@ -1,4 +1,5 @@
 {
+	title: "{q.botania.manasteel_helmet.name}",
 	icon: "botania:manasteelchest",
 	x: 2.0d,
 	y: 0.0d,

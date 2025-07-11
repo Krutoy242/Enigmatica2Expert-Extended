@@ -1670,7 +1670,16 @@ recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scyth
     return scythe.withTag(newTag);
 
   },
-  null);
+  function(out, cInfo, player){
+    if(isNull(player)) return;
+
+    val researchName = loreUnColor[out.tag.display.Lore[out.tag.display.Lore.length - 1]];
+
+    if(!player.thaumcraftKnowledge.isResearchComplete('!' ~ researchName ~ '_seal')){
+      player.thaumcraftKnowledge.addResearch('!' ~ researchName ~ '_seal');
+      player.sendPlaySoundPacket("thaumcraft:whispers", 'ambient', player.position, 1.0f, player.world.random.nextFloat(0.8f, 1.0f));
+    }
+  });
 
 //#################################################################################
 

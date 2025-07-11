@@ -1,0 +1,410 @@
+[
+    {
+        "key": "!aer_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: aer}"
+        }
+    },
+    {
+        "key": "!alienis_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: alienis}"
+        }
+    },
+    {
+        "key": "!alkimia_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: alkimia}"
+        }
+    },
+    {
+        "key": "!amogus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: amogus}"
+        }
+    },
+    {
+        "key": "!aqua_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: aqua}"
+        }
+    },
+    {
+        "key": "!auram_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: auram}"
+        }
+    },
+    {
+        "key": "!aversio_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: aversio}"
+        }
+    },
+    {
+        "key": "!bestia_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: bestia}"
+        }
+    },
+    {
+        "key": "!caeles_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: caeles}"
+        }
+    },
+    {
+        "key": "!cognitio_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: cognitio}"
+        }
+    },
+    {
+        "key": "!desiderium_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: desiderium}"
+        }
+    },
+    {
+        "key": "!draco_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: draco}"
+        }
+    },
+    {
+        "key": "!exanimis_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: exanimis}"
+        }
+    },
+    {
+        "key": "!exitium_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: exitium}"
+        }
+    },
+    {
+        "key": "!fabrico_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: fabrico}"
+        }
+    },
+    {
+        "key": "!fluctus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: fluctus}"
+        }
+    },
+    {
+        "key": "!gelum_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: gelum}"
+        }
+    },
+    {
+        "key": "!herba_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: herba}"
+        }
+    },
+    {
+        "key": "!humanus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: humanus}"
+        }
+    },
+    {
+        "key": "!ignis_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: ignis}"
+        }
+    },
+    {
+        "key": "!imperium_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: imperium}"
+        }
+    },
+    {
+        "key": "!infernum_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: infernum}"
+        }
+    },
+    {
+        "key": "!instrumentum_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: instrumentum}"
+        }
+    },
+    {
+        "key": "!lux_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: lux}"
+        }
+    },
+    {
+        "key": "!machina_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: machina}"
+        }
+    },
+    {
+        "key": "!mana_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: mana}"
+        }
+    },
+    {
+        "key": "!metallum_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: metallum}"
+        }
+    },
+    {
+        "key": "!mortuus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: mortuus}"
+        }
+    },
+    {
+        "key": "!motus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: motus}"
+        }
+    },
+    {
+        "key": "!mythus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: mythus}"
+        }
+    },
+    {
+        "key": "!ordo_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: ordo}"
+        }
+    },
+    {
+        "key": "!perditio_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: perditio}"
+        }
+    },
+    {
+        "key": "!permutatio_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: permutatio}"
+        }
+    },
+    {
+        "key": "!potentia_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: potentia}"
+        }
+    },
+    {
+        "key": "!praecantatio_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: praecantatio}"
+        }
+    },
+    {
+        "key": "!praemunio_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: praemunio}"
+        }
+    },
+    {
+        "key": "!rattus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: rattus}"
+        }
+    },
+    {
+        "key": "!sanguis_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: sanguis}"
+        }
+    },
+    {
+        "key": "!sensus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: sensus}"
+        }
+    },
+    {
+        "key": "!sonus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: sonus}"
+        }
+    },
+    {
+        "key": "!spiritus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: spiritus}"
+        }
+    },
+    {
+        "key": "!tenebrae_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: tenebrae}"
+        }
+    },
+    {
+        "key": "!terra_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: terra}"
+        }
+    },
+    {
+        "key": "!vacuos_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: vacuos}"
+        }
+    },
+    {
+        "key": "!ventus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: ventus}"
+        }
+    },
+    {
+        "key": "!victus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: victus}"
+        }
+    },
+    {
+        "key": "!vinculum_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: vinculum}"
+        }
+    },
+    {
+        "key": "!visum_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: visum}"
+        }
+    },
+    {
+        "key": "!vitium_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: vitium}"
+        }
+    },
+    {
+        "key": "!vitreus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: vitreus}"
+        }
+    },
+    {
+        "key": "!volatus_seal",
+        "type": "tcresearchpatcher:item_extended",
+        "object": {
+            "name": "thaumadditions:seal_symbol",
+            "nbt": "{Aspect: volatus}"
+        }
+    }
+]
