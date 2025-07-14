@@ -12,6 +12,8 @@ events.register(function (e as PlayerTickEvent) {
 
   val player = e.player;
 
+  if (!op.isPlayerOmnipotent(player)) return;
+
   // Inertia cancellation
   if (player.moveForward == 0 && player.moveStrafing == 0 && player.native.capabilities.isFlying) {
     player.motionX *= 0.5;
