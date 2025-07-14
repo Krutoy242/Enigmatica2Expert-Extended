@@ -24,7 +24,9 @@ events.register(function (e as PlayerTickEvent) {
   if (!player.onGround && player.native.capabilities.isFlying && player.motionY != 0) {
     val isJump = gameSettings.keyBindJump.isKeyDown();
     val isSneak = gameSettings.keyBindSneak.isKeyDown();
-    if (isJump && !isSneak) player.motionY = 0.225f * 1.5f;
-    if (isSneak && !isJump) player.motionY = -0.225f * 1.5f;
+    val verticalSpeedModifier = (player.native.capabilities.getFlySpeed() / 0.05F) * 1.5f;
+    val verticalMotion = 0.225f * verticalSpeedModifier;
+    if (isJump && !isSneak) player.motionY = verticalMotion;
+    if (isSneak && !isJump) player.motionY = -verticalMotion;
   }
 });
