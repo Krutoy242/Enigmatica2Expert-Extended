@@ -40,10 +40,10 @@ lang.execute = function (command, server, sender, args) {
     }
     if (s_len > 0) {
       print(s);
-      pl.sendChat(I18n.format(game.localize('commands.lang.output'), `${s_len}`));
+      pl.sendChat(I18n.format('commands.lang.output', `${s_len}`));
     }
     else {
-      pl.sendChat(game.localize('commands.lang.empty'));
+      pl.sendChat('commands.lang.empty');
     }
   }
   else if (args[0] == 'hand') {
@@ -51,7 +51,7 @@ lang.execute = function (command, server, sender, args) {
     if (!isNull(it)) {
       val line = `Lang key and translation:\n${it.name}=${it.displayName}`;
       print(line);
-      pl.sendChat(I18n.format(game.localize('commands.lang.hand'), line));
+      pl.sendChat(I18n.format('commands.lang.hand', line));
     }
   }
   else {

@@ -216,8 +216,8 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
     }
     s ~= '\n  ]\n]';
 
-    val fileName = entity.id.replaceAll(':', '_');
-    utils.log('Add Build Mob recipe for file config/compactmachines3/recipes/' ~ fileName ~ '.json'
+    var fileName = getFreeFileName(entity.id.replaceAll(':', '_'));
+    utils.log('Save this into file "config/compactmachines3/recipes/' ~ fileName ~ '.json"'
     ~ '\n{'
     ~ '\n  "name": "compactmachines3:' ~ fileName ~ '",'
     ~ '\n'
@@ -233,6 +233,20 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
   }
 
   return m;
+}
+
+static existingFileNames as bool[string] = {} as bool[string];
+function getFreeFileName(fileName as string) as string {
+  var i = 0;
+  var newName = fileName;
+  while true {
+    if (!(existingFileNames has newName)) {
+      existingFileNames[newName] = true;
+      return newName;
+    }
+    newName = fileName ~ '_' ~ i;
+    i += 1;
+  }
 }
 
 function build(world as IWorld, pos as IBlockPos, state as IBlockState) as void {

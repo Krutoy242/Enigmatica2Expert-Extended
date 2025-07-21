@@ -21,7 +21,7 @@ function addWrittenBook(
   bookWriters[name] = id;
   bookWrittenBy[name] = <minecraft:written_book>.withTag(
     {
-      display: { Name: I18n.format(game.localize('e2ee.written_book.by'), game.localize('e2ee.written_book.' ~ name)) },
+      display: { Name: I18n.format('e2ee.written_book.by', game.localize('e2ee.written_book.' ~ name)) },
       author : name,
       pages  : [lookupText[0] ~ '?', lookupText[1] ~ '?'],
     }

@@ -1,8 +1,7 @@
 {
-  "__comment": "This file generated automatically with Patchouli.js. All changes will be rewritten",
   "name": "Magic Bean",
   "icon": "cyclicmagic:sprout_seed",
-  "category": "Items",
+  "category": "World",
   "pages": [
     {
       "title": "Magic Bean Drops",

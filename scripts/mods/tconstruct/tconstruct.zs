@@ -159,6 +159,7 @@ val pressPlates = {
   xu_evil_metal   : <ore:blockEvilMetal>,
   void_metal      : <ore:blockVoid>,
   neutronium      : <ore:blockCosmicNeutronium>,
+  enderium        : <ore:blockEnderium>,
 } as IIngredient[string];
 for out, inp in pressPlates {
   mods.immersiveengineering.MetalPress.addRecipe(

@@ -26,7 +26,8 @@ import {
 
 const argv = yargs(process.argv.slice(2))
   .alias('k', 'keep-cache')
-  .describe('k', 'Not delete cached files').argv
+  .describe('k', 'Not delete cached files')
+  .argv
 
 export async function init(h = defaultHelper, options = argv) {
   // ###############################################################################
@@ -229,7 +230,7 @@ export async function init(h = defaultHelper, options = argv) {
     const found = entries[index]
 
     const entry = {
-      ...(found ?? {}),
+      ...found ?? {},
       ...{
         name    : shortand,
         metadata: meta,
@@ -260,6 +261,24 @@ export async function init(h = defaultHelper, options = argv) {
 
   /*
 
+    Save files from crafttweaker.log
+
+  */
+
+  const saveMap = {}
+  for (const match of loadText('crafttweaker.log').matchAll(/Save this into file "(?<file>[^"]+)"\r?\n(?<content>[\s\S]+?)(?=\r?\n(?:\[\w+\]){3} )/g)) {
+    // @ts-ignore
+    const {file, content} = match.groups
+    saveMap[file] = content
+  }
+  Object.keys(saveMap).forEach(f => saveText(saveMap[f], f))
+
+  // ###############################################################################
+  // ###############################################################################
+  // ###############################################################################
+
+  /*
+
     Add all screenshots in folder to config
 
   */
@@ -268,8 +287,8 @@ export async function init(h = defaultHelper, options = argv) {
   const menuJson = loadJson(menuFile)
   menuJson.other.background.slideshow.images = [
     ...fast_glob.sync(
-      'resources/enigmatica/textures/slideshow/*.jpg'
-      , { dot: true }
+      'resources/enigmatica/textures/slideshow/*.jpg',
+      { dot: true }
     ).map(f => `enigmatica:textures/slideshow/${parse(f).base}`),
     ...menuJson.other.background.slideshow.images.filter(img => img.startsWith('web:')),
   ]

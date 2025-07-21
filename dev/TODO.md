@@ -5,20 +5,34 @@
 - [ ] 🟠 Downgrade Flare to Spark https://github.com/CleanroomMC/Flare/issues/18
 - [ ] 📀 Fix names of TCon mining levels
 - [ ] 📀 Fix `OpenComputers` JEI plugin is still loaded
+- [ ] 📀 Dont let IC2 miner dig any mining level
 - [ ] 🔨 `Double Compressed Hammer` cant break double compressed charcoal
 - [ ] 🔨 Add HV wire invincibility TCon trait
 - [ ] 🐦 enable Enchanting speed up for rats
+- [ ] 📖 Add emojis 🍎 to chapter finishing messages
+- [ ] 📖 Add quest explaining that Battery and Solar can be replaced in TCon tools
+- [ ] Blacklist TW multiblocks for `carryon`
+- [ ] Diamond shouldn't be meltable in smeltery
+- [ ] Omnipotence silk touch cant break tile entities
+- [ ] Omnipotence fix BiomesOPlenty grass breaks without haste
+- [ ] ♻️ Use `.sort()` from ZenUtils instead of ctintegration
+- [ ] Skyblock: oredict leaves task
+- [ ] Completely get rid of `Patchouli_js()` code in .zs files
 
 <!-- 
 Command to generate single file from all files in directory:
-find ./dir/ -type f -exec sh -c 'for f; do ext="${f##*.}"; [[ "$ext" == "$f" ]] && ext=""; printf "\`%s\`:\n\`\`\`%s\n" "${f#./}" "$ext"; cat "$f"; echo -e "\`\`\`\n"; done' _ {} + > merged_output.md
+› find ./dir/ -type f -exec sh -c 'for f; do ext="${f##*.}"; [[ "$ext" == "$f" ]] && ext=""; printf "\`%s\`:\n\`\`\`%s\n" "${f#./}" "$ext"; cat "$f"; echo -e "\`\`\`\n"; done' _ {} + > merged_output.md
 
 Command to show all commits that changing same files:
-git log --oneline abc123..HEAD -- $(git diff-tree --no-commit-id --name-only -r abc123)
+› git log --oneline abc123..HEAD -- $(git diff-tree --no-commit-id --name-only -r abc123)
+
+Recursively find all `.bo3` files and remove empty lines and lines starting with '#' from them.
+› find . -type f -name "*.bo3" -exec sed -i '/^$/d;/^#/d' {} +
 -->
 
 ### "Endgame" expansion
 
+- [ ] ✏️ Add `Creative Computer Case` recipe from Osgloglas and RTG (?)
 - [ ] 🐛 Fix Harvest Levels not working for non-"stone" material
 - [ ] 🌈 Add `Rainbow Generator` shine when player get omnipotence
 - [ ] 🖼️ Use `Legendary Tooltips` to mark harvest levels
@@ -157,6 +171,7 @@ Planned non-urgent changes, or just good ideas:
 
 ### Other
 
+- [ ] 🔚 Make EIO capacitors actually usabe: right now, tweaked machine power usage make machine speed always 1 tick, neglibe capacitor usefulness
 - [ ] ♻️ Refactor: replace all `itemUtils.getItem` to `<${}:${}>`
 - [ ] Enable and integrate EIO capacitors for IF machines `config/ometweaks/ometweaks.cfg:261`
 - [ ] 🔨 `Spectre` trait - remove annoying flashing

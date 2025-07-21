@@ -1,8 +1,7 @@
 {
-  "__comment": "This file generated automatically with Patchouli.js. All changes will be rewritten",
   "name": "Matter Cannon",
   "icon": "appliedenergistics2:matter_cannon",
-  "category": "Items",
+  "category": "World",
   "pages": [
     {
       "title": "Matter Cannon Ammo",

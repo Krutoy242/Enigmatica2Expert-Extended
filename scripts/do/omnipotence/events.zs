@@ -30,7 +30,7 @@ events.register(function (e as PlayerBreakSpeedEvent) {
   val player = e.player;
   if (isNull(player) || isNull(player.world) || isNull(e.block) || isNull(e.block.definition)) return;
   if (!op.isPlayerOmnipotent(player)) return;
-  e.newSpeed = 12.0f * e.block.definition.hardness + 1.0;
+  e.newSpeed = crafttweaker.util.Math.max(e.originalSpeed, 12.0f * e.block.definition.hardness + 1.0);
 }, mods.zenutils.EventPriority.low());
 
 // Silk touch on bare hand

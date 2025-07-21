@@ -1,8 +1,7 @@
 {
-  "__comment": "This file generated automatically with Patchouli.js. All changes will be rewritten",
   "name": "Chemical Thrower",
   "icon": "immersiveengineering:chemthrower",
-  "category": "Liquids",
+  "category": "World",
   "pages": [
     {
       "title": "New Chemicals",

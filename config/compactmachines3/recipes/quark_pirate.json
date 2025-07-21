@@ -1,49 +1,34 @@
 {
-    "name": "compactmachines3:quark_pirate",
+  "name": "compactmachines3:quark_pirate",
 
-    "target-item": "minecraft:spawn_egg",
-    "target-nbt": "{EntityTag:{id:\"quark:pirate\"}}",
+  "target-item": "minecraft:spawn_egg",
+  "target-nbt": "{EntityTag:{id:\"quark:pirate\"}}",
 
-    "catalyst": "engineersdecor:sign_caution",
-    "catalyst-nbt": "{display:{LocName:\"tooltips.lang.not_compact_recipe\"}}",
+  "catalyst": "engineersdecor:sign_caution",
+  "catalyst-nbt": "{display:{LocName:\"tooltips.lang.not_compact_recipe\"}}",
 
-    "input-types": {
-        "a": {
-            "id": "minecraft:bone_block",
-            "ignore-meta": true
-        },
-        "b": {
-            "id": "minecraft:cobblestone_wall",
-            "ignore-meta": true
-        },
-        "c": {
-            "id": "additionalcompression:bone_compressed",
-            "ignore-meta": true
-        },
-        "d": {
-            "id": "minecraft:fence",
-            "ignore-meta": true
-        },
-        "x": {
-            "id": "contenttweaker:conglomerate_of_life",
-            "ignore-meta": true
-        }
-    },
-    "shape": [
-        [
-            [ "_", "_", "a", "_", "_" ]
-        ],
-        [
-            [ "b", "c", "c", "c", "b" ]
-        ],
-        [
-            [ "b", "c", "x", "c", "b" ]
-        ],
-        [
-            [ "_", "c", "c", "c", "_" ]
-        ],
-        [
-            [ "_", "d", "_", "d", "_" ]
-        ]
+  "input-types": {
+    "a": { "id": "minecraft:bone_block", "ignore-meta": true },
+    "b": { "id": "minecraft:cobblestone_wall", "ignore-meta": true },
+    "c": { "id": "additionalcompression:bone_compressed", "ignore-meta": true },
+    "d": { "id": "minecraft:fence", "ignore-meta": true },
+    "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
+  },
+  "shape": [
+    [
+      ["_", "_", "a", "_", "_"]
+    ],
+    [
+      ["b", "c", "c", "c", "b"]
+    ],
+    [
+      ["b", "c", "x", "c", "b"]
+    ],
+    [
+      ["_", "c", "c", "c", "_"]
+    ],
+    [
+      ["_", "d", "_", "d", "_"]
     ]
+  ]
 }

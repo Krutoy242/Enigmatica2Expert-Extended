@@ -35,11 +35,11 @@ export default antfu({
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars'   : 'error',
 
-    'perfectionist/sort-array-includes'  : 'error',
-    // 'perfectionist/sort-classes'         : 'error',
-    'perfectionist/sort-enums'           : 'error',
-    'perfectionist/sort-exports'         : 'error',
-    'perfectionist/sort-imports'         : ['error', {
+    // 'perfectionist/sort-classes': 'error',
+    'perfectionist/sort-array-includes': 'error',
+    'perfectionist/sort-enums'         : 'error',
+    'perfectionist/sort-exports'       : 'error',
+    'perfectionist/sort-imports'       : ['error', {
       type  : 'natural',
       groups: [
         'side-effect',
@@ -55,14 +55,14 @@ export default antfu({
         'unknown',
       ],
     }],
-    'perfectionist/sort-interfaces'       : 'error',
-    'perfectionist/sort-jsx-props'        : 'error',
-    'perfectionist/sort-maps'             : 'error',
-    'perfectionist/sort-named-exports'    : 'error',
-    'perfectionist/sort-named-imports'    : 'error',
-    'perfectionist/sort-object-types'     : 'error',
+    'perfectionist/sort-interfaces'   : 'error',
+    'perfectionist/sort-jsx-props'    : 'error',
+    'perfectionist/sort-maps'         : 'error',
+    'perfectionist/sort-named-exports': 'error',
+    'perfectionist/sort-named-imports': 'error',
+    'perfectionist/sort-object-types' : 'error',
+    'perfectionist/sort-union-types'  : 'error',
     // 'perfectionist/sort-objects': 'error',
-    'perfectionist/sort-union-types'      : 'error',
   },
 }, {
   files: ['**/*.md'],
