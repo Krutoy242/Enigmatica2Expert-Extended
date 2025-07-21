@@ -1,0 +1,16 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "thaumicaugmentation:ancient_light",
+        "transform": "forge:default-block",
+        "textures":{
+            "particle": "thaumicaugmentation:blocks/ancient_light",
+            "illuminant_block_on":"thaumicaugmentation:blocks/ancient_light",
+            "illuminant_block_on_bloom":"thaumicaugmentation:blocks/ancient_light_glow"
+        }
+     },
+    "variants": {
+        "normal": [{}], 
+        "inventory": [{}]
+    }
+}
