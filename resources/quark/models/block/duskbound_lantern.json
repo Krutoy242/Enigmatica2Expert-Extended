@@ -1,0 +1,35 @@
+{
+	"parent": "block/block",
+	"ambientocclusion":false,
+	"textures":{
+		"particle": "quark:blocks/duskbound_lantern",
+		"illuminant_block_on":"quark:blocks/duskbound_lantern",
+		"illuminant_block_on_bloom":"quark:blocks/duskbound_lantern_glow"
+	},
+	"elements":[
+		{
+			"shade": false,
+			"from": [ 0,0,0], "to": [16,16,16],
+			"faces":{
+				"down": { "texture": "#illuminant_block_on", "cullface": "down" },
+				"up": { "texture": "#illuminant_block_on", "culface":"up" },
+				"north": { "texture": "#illuminant_block_on", "cullface": "north" },
+				"south": { "texture": "#illuminant_block_on", "cullface": "south" },
+				"west": { "texture": "#illuminant_block_on", "cullface": "west" },
+				"east": { "texture": "#illuminant_block_on", "cullface": "east" }
+			}
+		},
+		{
+			"shade": false,
+			"from": [ 0,0,0], "to": [16,16,16],
+			"faces":{
+				"down": { "texture": "#illuminant_block_on_bloom", "cullface": "down" },
+				"up": { "texture": "#illuminant_block_on_bloom", "culface":"up" },
+				"north": { "texture": "#illuminant_block_on_bloom", "cullface": "north" },
+				"south": { "texture": "#illuminant_block_on_bloom", "cullface": "south" },
+				"west": { "texture": "#illuminant_block_on_bloom", "cullface": "west" },
+				"east": { "texture": "#illuminant_block_on_bloom", "cullface": "east" }
+			}
+		}
+		]
+}
