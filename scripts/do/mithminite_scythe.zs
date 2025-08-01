@@ -2,6 +2,7 @@
 #priority -1
 
 import crafttweaker.block.IBlock;
+import crafttweaker.data.IData;
 import crafttweaker.entity.IEntity;
 import crafttweaker.entity.IEntityAnimal;
 import crafttweaker.entity.IEntityLiving;
@@ -13,6 +14,7 @@ import crafttweaker.player.IPlayer;
 import crafttweaker.text.ITextComponent;
 import crafttweaker.util.Math;
 import crafttweaker.world.IBlockPos;
+import crafttweaker.world.IWorld;
 import mods.ctutils.entity.Experience;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
@@ -95,34 +97,62 @@ function playSound(str as string, target as IEntity) as void {
   }
 }
 
-function aerTornado(scythe as IEntity, lvl as int) as void {
-  val list = scythe.world.getEntities();
+function getDistanceToPosition(entity as IEntity, x as double, y as double, z as double) as double {
+  return Math.sqrt(pow(entity.x - x, 2) + pow(entity.y - y, 2) + pow(entity.z - z, 2));
+}
 
-  for entity in list {
-    if (isNull(entity)
-      || !entity instanceof IEntityLiving
-      || !entity.isAlive()
-      || scythe.getDistanceSqToEntity(entity) > 20 + 3 * lvl
-      || entity.y < 1) {
+function playSoundInWorld(str as string, x as double, y as double, z as double, world as IWorld) as void{
+  val list = world.getAllPlayers();
+  for player in list {
+    if (isNull(player)
+      || player.world.dimension != world.dimension
+      || getDistanceToPosition(player, x, y, z) > 50) {
       continue;
     }
-
-    val v = [scythe.x - entity.x, scythe.y - entity.y, scythe.z - entity.z] as double[];
-    val norm = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
-
-    entity.motionX = v[0] / norm;
-    entity.motionY = v[1] / norm + 1;
-    entity.motionZ = v[2] / norm;
+    player.sendPlaySoundPacket(str, 'ambient', crafttweaker.util.Position3f.create(x, y, z).asBlockPos(), 1.0f, 1.0f);
   }
+} 
 
-  for i in 0 .. 200 + lvl * 50 {
-    val xp = scythe.x + (Math.cos(3.14 * i / 8) * 0.03 * i);
-    val yp = scythe.y + 1.0f * i / 12;
-    val zp = scythe.z + (Math.sin(3.14 * i / 8) * 0.03 * i); // smoke
-    (scythe.world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL, xp, yp, zp, 1, 0, 0, 0, 0, 0);
-  }
+function aerTornado(scythe as IEntity, lvl as int) as void {
+  scythe.world.catenation()
+  .run(function(world, context) {
+            context.data = {duration: 15 + 6 * lvl, position: [scythe.x, scythe.y, scythe.z], movement: [world.random.nextDouble(-2.0, 2.0), 0, world.random.nextDouble(-2.0, 2.0)]};// TODO make tornado move
+  })
+  .alwaysUntil(function(world, context) {
+    if(world.provider.worldTime % 6 != 0) return false;
 
-  playSound('botania:airrod', scythe);
+    val list = world.getEntities();
+    for entity in list {
+      if (isNull(entity)
+        || !entity instanceof IEntityLiving
+        || !entity.isAlive()
+        || getDistanceToPosition(entity, context.data.position[0], context.data.position[1], context.data.position[2]) > 20 + 3 * lvl
+        || entity.y < 1) {
+        continue;
+      }
+
+      val v = [context.data.position[0] - entity.x, context.data.position[1] - entity.y, context.data.position[2] - entity.z] as double[];
+      val norm = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
+
+      entity.motionX = v[0] / norm;
+      entity.motionY = v[1] / norm + 1;
+      entity.motionZ = v[2] / norm;
+    }
+
+    for i in 0 .. 200 + lvl * 50 {
+      (world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL,
+      context.data.position[0] + (Math.cos(3 * i / 8) * 0.03 * i + world.random.nextDouble(-0.3,0.3)), context.data.position[1] + 1.0f * i / 12 + world.random.nextDouble(-0.1,0.1), context.data.position[2] + (Math.sin(2 * i / 8) * 0.03 * i + world.random.nextDouble(-0.3,0.3)),
+      1, 0, 0, 0, 0, 0);
+    }
+
+    playSoundInWorld('botania:airrod', context.data.position[0], context.data.position[1], context.data.position[2], world);
+    context.setData({duration: context.data.duration - 1, position: [context.data.position[0] + context.data.movement[0], context.data.position[1],context.data.position[2] + context.data.movement[2]], movement: context.data.movement});
+    return context.data.duration < 0;
+  })
+  .then(function(world, context) {
+    (world.native as WorldServer).spawnParticle(EnumParticleTypes.CLOUD,
+      context.data.position[0] - context.data.movement[0] , context.data.position[1] + 1, context.data.position[2] - context.data.movement[2], 50, 0.5, 0, 0.5, 0.3, 0);
+  }).start();
 
   scythe.setDead();
 }
