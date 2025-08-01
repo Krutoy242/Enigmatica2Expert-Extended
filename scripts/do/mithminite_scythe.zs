@@ -802,9 +802,23 @@ function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, p
   if (augments has 'metallum')     metallumPrison(target);
   if (augments has 'terra')        terraQuickSand(target, colorCount[5]);
   // CONTROL ASPECTS
-  if (augments has 'fluctus')      fluctusWave(target, colorCount[1]);
-  if (augments has 'aer')          aerTornado(scythe, colorCount[4]);
-  if (augments has 'vacuos')       vacuosHole(scythe, target, colorCount[0]);
+  var cooldown = 0;
+  if(!player.native.cooldownTracker.hasCooldown(<thaumadditions:mithminite_scythe>.native.getItem())){
+    if (augments has 'fluctus'){
+      fluctusWave(target, colorCount[1]);
+      cooldown += 200;
+    }      
+    if (augments has 'aer'){
+      aerTornado(scythe, colorCount[4]);
+      cooldown += 200;
+    }
+    if (augments has 'vacuos'){
+      vacuosHole(scythe, target, colorCount[0]);
+      cooldown += 200;
+    } 
+    if(cooldown != 0) player.native.cooldownTracker.setCooldown(<thaumadditions:mithminite_scythe>.native.getItem(), cooldown);
+  }
+  
   // EFFECT ASPECTS
   if (augments has 'amogus')       amogusVent(scythe, target);
   if (augments has 'auram')        auramVisAdd(scythe, colorCount[6]);
