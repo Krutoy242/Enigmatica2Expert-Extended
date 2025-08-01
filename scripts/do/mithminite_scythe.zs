@@ -292,12 +292,10 @@ function dracoBreath(target as IEntityLivingBase, lvl as int) as void {
     'Age'          : 0,
     'Duration'     : 140,
   });
-  val ball as IEntity = <entity:iceandfire:dragonfirecharge>.spawnEntity(target.world, crafttweaker.util.Position3f.create(target.x, target.y + 4, target.z));
-  ball.hasNoGravity = true;
-  ball.updateNBT({
-    'Fire' : 20 as short,
-    'power': [0.0,-0.01,0.0],
-  });
+
+  (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.FLAME,
+      target.x, entityEyeHeight(target), target.z, 100, 0.5, 0, 0.5, 0.1, 0);
+
 
   val listAllEntities = target.world.getEntities();
 
