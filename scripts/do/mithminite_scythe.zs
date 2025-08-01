@@ -172,8 +172,8 @@ function amogusVent(scythe as IEntity, target as IEntityLivingBase) as void {
   scythe.setDead();
 }
 
-function aquaSplash(target as IEntityLivingBase, lvl as int) as void {
-  val water = <liquid:water>.definition.block.definition.getStateFromMeta(1);
+function aquaSplash(target as IEntityLivingBase, lvl as int, isMortuus as bool) as void {
+  val water = isMortuus ? <liquid:fluid_quicksilver>.definition.block.definition.getStateFromMeta(1) : <liquid:water>.definition.block.definition.getStateFromMeta(1);
   val x = target.getX() > 0 ? target.getX() as int : target.getX() as int - 1;
   val y = target.getY() as float;
   val z = target.getZ() > 0 ? target.getZ() as int : target.getZ() as int - 1;
@@ -798,7 +798,7 @@ function vitreusCrystalize(scythe as IEntity, target as IEntityLivingBase, dmg a
 
 function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, player as IPlayer, augments as string[], dmg as double, colorCount as int[]) as void {
   // CREATION ASPECTS
-  if (augments has 'aqua')         aquaSplash(target, colorCount[2]);
+  if (augments has 'aqua')         aquaSplash(target, colorCount[2], augments has 'mortuus');
   if (augments has 'bestia')       bestiaHunt(scythe, target);
   if (augments has 'metallum')     metallumPrison(target);
   if (augments has 'terra')        terraQuickSand(target, colorCount[5]);
