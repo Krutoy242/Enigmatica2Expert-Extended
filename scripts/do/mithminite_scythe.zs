@@ -1008,7 +1008,7 @@ events.register(function (e as crafttweaker.event.ProjectileImpactThrowableEvent
   if (!scythe.native instanceof EntityMithminiteScythe) return;
 
   var dmg = 100.0;
-  val damageSource = crafttweaker.damage.IDamageSource.createIndirectDamage('mithminiteScythe', scythe, player);
+  var damageSource = crafttweaker.damage.IDamageSource.createEntityDamage('mithminiteScythe', player);
   if(augments has 'praemunio') damageSource.setDamageBypassesArmor();
 
   // AVERSIO | PRAECANTIATIO | PRAEMUNIO | VITIUM
