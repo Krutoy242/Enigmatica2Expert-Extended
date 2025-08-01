@@ -19,6 +19,7 @@ import mods.ctutils.entity.Experience;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
 import native.org.zeith.thaumicadditions.entity.EntityMithminiteScythe;
+import mods.zenutils.EventPriority;
 
 /*
 "aer"           : C Tornado, pulls nearby enemies (motion)
@@ -811,7 +812,10 @@ function scytheEffectElemental(scythe as IEntity, target as IEntityLivingBase, p
   if (augments has 'auram')        auramVisAdd(scythe, colorCount[6]);
   if (augments has 'caeles')       caelesAstralExp(scythe, colorCount[2]);
   if (augments has 'cognitio')     cognitioExperienceBlessing(scythe, target, colorCount[4]);
-  if (augments has 'desiderium')   desideriumDisarm(target);
+  if (augments has 'desiderium'){
+    target.	setNBT({scytheExtraLooting: colorCount[4]});
+    if (augments has 'praemunio')  desideriumDisarm(target);
+  }
   if (augments has 'draco')        dracoBreath(target, colorCount[2]);
   if (augments has 'exanimis')     exanimisPoison(target, colorCount[5]);
   if (augments has 'exitium')      exitiumExplosion(target, colorCount[1]);
@@ -963,7 +967,7 @@ events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent)
   scythe.motionZ = scythe.motionZ * 10;
 });
 
-events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileImpactThrowableEvent) {
+events.register(function (e as crafttweaker.event.ProjectileImpactThrowableEvent) {
   val scythe = e.entity;
   val rayTrace = e.rayTrace;
   if (isNull(scythe)
@@ -1039,7 +1043,7 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
 
   rayTrace.entity.attackEntityFrom(damageSource, dmg);
    
-});
+}, EventPriority.high());
 
 events.onProjectileImpactFireball(function (e as crafttweaker.event.ProjectileImpactFireballEvent) {
   val projectile = e.entity;
@@ -1108,3 +1112,9 @@ events.onProjectileImpactArrow(function (e as crafttweaker.event.ProjectileImpac
   if(entity.world.remote) return;
   entity.setDead();
 }, 200);
+
+events.register(function (e as crafttweaker.event.LootingLevelEvent) {
+  print(e.entityLivingBase.nbt);
+  if(!isNull(e.entityLivingBase.nbt.ForgeData.scytheExtraLooting)) e.lootingLevel = e.lootingLevel * 2 + e.entityLivingBase.nbt.ForgeData.scytheExtraLooting;
+  print(e.lootingLevel);
+}, EventPriority.low());
