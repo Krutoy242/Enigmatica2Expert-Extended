@@ -1126,7 +1126,5 @@ events.onProjectileImpactArrow(function (e as crafttweaker.event.ProjectileImpac
 }, 200);
 
 events.register(function (e as crafttweaker.event.LootingLevelEvent) {
-  print(e.entityLivingBase.nbt);
   if(!isNull(e.entityLivingBase.nbt.ForgeData.scytheExtraLooting)) e.lootingLevel = e.lootingLevel * 2 + e.entityLivingBase.nbt.ForgeData.scytheExtraLooting;
-  print(e.lootingLevel);
 }, EventPriority.low());
