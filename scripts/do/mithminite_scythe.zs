@@ -16,6 +16,7 @@ import crafttweaker.world.IBlockPos;
 import mods.ctutils.entity.Experience;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
+import native.org.zeith.thaumicadditions.entity.EntityMithminiteScythe;
 
 /*
 "aer"           : C Tornado, pulls nearby enemies (motion)
@@ -152,7 +153,7 @@ function aquaSplash(target as IEntityLivingBase, lvl as int) as void {
         val pos = crafttweaker.util.Position3f.create(x - lvl + a, y + b, z - lvl + c) as IBlockPos;
         val block as IBlock = target.world.getBlock(pos);
         if (!isNull(block)
-          && block.definition.id == 'minecraft:air') {
+          && block.native instanceof native.net.minecraft.block.BlockAir) {
           target.world.setBlockState(water, pos);
           (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.WATER_DROP, target.x, target.y, target.z, 100, 1, 1, 1, 0.5, 0);
         }
@@ -170,7 +171,7 @@ function auramVisAdd(scythe as IEntity, lvl as int) as void {
 }
 
 function bestiaHunt(scythe as IEntity, target as IEntityLivingBase) as void {
-  if (target.definition.id == 'thaumcraft:mindspider') { target.setDead(); return; }
+  if (target.native instanceof native.thaumcraft.common.entities.monster.EntityMindSpider) { target.setDead(); return; }
   val web = <item:minecraft:web>.asBlock();
   val x = target.getX() > 0 ? target.getX() as int : target.getX() as int - 1;
   val y = target.getY() as float;
@@ -178,7 +179,7 @@ function bestiaHunt(scythe as IEntity, target as IEntityLivingBase) as void {
   val pos = crafttweaker.util.Position3f.create(x, y + 1, z) as IBlockPos;
   val block as IBlock = target.world.getBlock(pos);
   if (!isNull(block)
-    && block.definition.id == 'minecraft:air') {
+    && block.native instanceof native.net.minecraft.block.BlockAir) {
     target.world.setBlockState(web.definition.defaultState, pos);
   }
 
@@ -514,7 +515,7 @@ function potentiaLightning(target as IEntityLivingBase, lvl as int) as void {
   target.addPotionEffect(<potion:potioncore:lightning>.makePotionEffect(lvl, 0));
 }
 
-function praecantatioBonusDamage(target as IEntityLivingBase, player as IPlayer) as double {
+function praecantatioBonusDamage(target as IEntity, player as IPlayer) as double {
   var bonus = 0.0;
 
   if (isNull(player)
@@ -564,7 +565,7 @@ function rattusInsanity(target as IEntityLivingBase) as void {
   playSound('rats:ratlantean_spirit_die',target);
 }
 
-function sanguisBonusDamage(target as IEntityLivingBase, player as IPlayer, dmg as double) as double {
+function sanguisBonusDamage(target as IEntity, player as IPlayer, dmg as double) as double {
   player.health = Math.max(player.health + (dmg + 50.0) / 10.0, player.maxHealth);
   playSound('rats:potion_effect_end',player);
   (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.DAMAGE_INDICATOR, target.x, entityEyeHeight(target), target.z, 5, 0.2, 0.2, 0.2, 0.1, 0);
@@ -719,7 +720,7 @@ function volatusLevitation(target as IEntityLivingBase) as void {
   playSound('thaumcraft:wind',target);
 }
 
-function victusBreeder(scythe as IEntity, target as IEntityLivingBase) as void {
+function victusBreeder(scythe as IEntity, target as IEntity) as void {
   val player = scythe.world.getPlayerByName(scythe.nbt.ownerName);
   if (!target instanceof IEntityAnimal || isNull(player)) return;
 
@@ -740,7 +741,7 @@ function victusBreeder(scythe as IEntity, target as IEntityLivingBase) as void {
   }
 }
 
-function vitiumStrike(scythe as IEntity, target as IEntityLivingBase) as double {
+function vitiumStrike(scythe as IEntity, target as IEntity) as double {
   val world = target.world;
   if (world.getFlux(target.position) > 1.0f) {
     world.drainFlux(target.position, 1.0f);
@@ -919,13 +920,11 @@ events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent)
   if (isNull(scythe)
     || isNull(e.world)
     || e.world.remote
-    || !scythe instanceof IEntityThrowable
-    || scythe.definition.id != 'thaumadditions:mithminite_scythe'
+    || !scythe.native instanceof EntityMithminiteScythe
     || isNull(scythe.nbt)
     || scythe.nbt.ownerName == '' // That's a clone of scythe
-  ) {
-    return;
-  }
+  ) return;
+
   // Primal scythe
   if (getAugments(e.world.getPlayerByName(scythe.nbt.ownerName)) has 'fabrico') fabricoPill(scythe);
 
@@ -943,17 +942,16 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     || isNull(rayTrace)
     || !rayTrace.isEntity
     || isNull(rayTrace.entity)
-    || !(rayTrace.entity instanceof IEntityLiving)
-    || isNull(rayTrace.entity.definition)
-  ) {
-    return;
-  }
+  ) return;
+
+  val player = scythe.world.getPlayerByName(scythe.nbt.ownerName); 
+  val augments = getAugments(player);
+  val colorCount = getSetBonus(player);
 
   // PERMUTATIO EFFECT
-  if (e.rayTrace.entity instanceof IPlayer && scythe.definition.id != 'thaumadditions:mithminite_scythe'
-  ) {
+  if (e.rayTrace.entity instanceof IPlayer && !scythe.native instanceof EntityMithminiteScythe) {
     val player as IPlayer = e.rayTrace.entity;
-    if (getAugments(player) has 'permutatio') {
+    if (augments has 'permutatio') {
       scythe.motionX = -scythe.motionX;
       scythe.motionY = -scythe.motionY;
       scythe.motionZ = -scythe.motionZ;
@@ -961,60 +959,56 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     }
   }
 
-  if (rayTrace.entity instanceof IPlayer
-    || scythe.definition.id != 'thaumadditions:mithminite_scythe') {
-    return;
-  }
+  if (!scythe.native instanceof EntityMithminiteScythe) return;
 
-  val target as IEntityLivingBase = rayTrace.entity;
-  val player = scythe.world.getPlayerByName(scythe.nbt.ownerName);
-  val augments = getAugments(player);
-  val colorCount = getSetBonus(player);
-
-  // MACHINA EFFECT
-  if (target.definition.id == 'thaumcraft:golem' && augments has 'machina') {
-    target.setNBT({ 'ScalingHealth.IsBlight': 1 });
-    target.getAttribute('generic.attackDamage').setBaseValue(500.0 + 100.0 * colorCount[1]);
-    target.getAttribute('generic.armor').setBaseValue(4.0);
-    target.getAttribute('generic.armorToughness').setBaseValue(4.0);
-    (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.TOTEM, target.x, target.y, target.z, 10, 0.1, 0.1, 0.1, 0.2, 0);
-    playSound('thaumcraft:upgrade',target);
-    scythe.setDead();
-    e.cancel();
-    return;
-  }
-
-  // VICTUS EFFECT
-  if (target instanceof IEntityAnimal && augments has 'victus') {
-    victusBreeder(scythe, target);
-    scythe.setDead();
-    e.cancel();
-    return;
-  }
-
-  // HUMANUS EFFECT
-  if (target.definition.id == 'minecraft:zombie_villager'
-    && augments has 'humanus') {
-    humanusCure(target, player);
-    scythe.setDead();
-    e.cancel();
-    return;
-  }
+  var dmg = 100.0;
+  val damageSource = crafttweaker.damage.IDamageSource.createIndirectDamage('mithminiteScythe', scythe, player);
+  if(augments has 'praemunio') damageSource.setDamageBypassesArmor();
 
   // AVERSIO | PRAECANTIATIO | PRAEMUNIO | VITIUM
-  var dmg = 100.0;
-  if (augments has 'praecantatio') dmg += praecantatioBonusDamage(target,player) * (1.0 + 0.2 * colorCount[6]);
-  if (augments has 'sanguis') dmg += sanguisBonusDamage(target,player,dmg * colorCount[3]);
-  if (augments has 'vitium')  dmg *= vitiumStrike(scythe, target) * colorCount[6];
+  if (augments has 'praecantatio') dmg += praecantatioBonusDamage(rayTrace.entity,player) * (1.0 + 0.2 * colorCount[6]);
+  if (augments has 'sanguis') dmg += sanguisBonusDamage(rayTrace.entity,player,dmg * colorCount[3]);
+  if (augments has 'vitium')  dmg *= vitiumStrike(scythe, rayTrace.entity) * colorCount[6];
   if (augments has 'aversio') dmg *= 2.0 + 0.2 * colorCount[3];
 
-  target.attackEntityFrom(augments has 'praemunio'
-    ? crafttweaker.damage.IDamageSource.createIndirectDamage('MITHMINITE_SCYTHE', player, scythe).setDamageBypassesArmor()
-    : crafttweaker.damage.IDamageSource.createIndirectDamage('MITHMINITE_SCYTHE', player, scythe)
-  , dmg);
+    if(rayTrace.entity instanceof IEntityLivingBase && !isNull(player)){
+      val target as IEntityLivingBase = rayTrace.entity; 
 
-  if (isNull(player)) return;
-  scytheEffectElemental(scythe, target, player, augments, dmg, colorCount);
+      // MACHINA EFFECT
+      if (target.native instanceof native.thaumcraft.common.golems.EntityThaumcraftGolem && augments has 'machina') {
+        target.setNBT({ 'ScalingHealth.IsBlight': 1 });
+        target.getAttribute('generic.attackDamage').setBaseValue(500.0 + 100.0 * colorCount[1]);
+        target.getAttribute('generic.armor').setBaseValue(4.0);
+        target.getAttribute('generic.armorToughness').setBaseValue(4.0);
+        (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.TOTEM, target.x, target.y, target.z, 10, 0.1, 0.1, 0.1, 0.2, 0);
+        playSound('thaumcraft:upgrade',target);
+        scythe.setDead();
+        e.cancel();
+        return;
+      }
+
+      // VICTUS EFFECT
+      if (target instanceof IEntityAnimal && augments has 'victus') {
+        victusBreeder(scythe, target);
+        scythe.setDead();
+        e.cancel();
+        return;
+      }
+
+      // HUMANUS EFFECT
+      if (target.native instanceof native.net.minecraft.entity.monster.EntityZombieVillager
+        && augments has 'humanus') {
+        humanusCure(target, player);
+        scythe.setDead();
+        e.cancel();
+        return;
+      }
+
+      scytheEffectElemental(scythe, target, player, augments, dmg, colorCount);
+    }
+
+  rayTrace.entity.attackEntityFrom(damageSource, dmg);
+   
 });
 
 events.onProjectileImpactFireball(function (e as crafttweaker.event.ProjectileImpactFireballEvent) {
