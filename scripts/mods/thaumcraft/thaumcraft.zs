@@ -676,6 +676,23 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('automatedcrossbow',
     'B': <minecraft:bow:*>, // Bow
   }).shaped());
 
+// [Void siphon]
+mods.thaumcraft.Infusion.removeRecipe(<thaumcraft:void_siphon>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('VoidSiphon',
+  'VOIDSIPHON',
+  400,
+  [<aspect:ordo> * 2, <aspect:terra> * 2, <aspect:perditio> * 2],
+  <thaumcraft:void_siphon>,
+  Grid(['pretty',
+    '  T  ',
+    'B M B',
+    'S S S'], {
+    'S': <thaumcraft:stone_arcane>, // Arcane stone
+    'B': <thaumcraft:plate>, // Brass plate
+    'M': <thaumcraft:mechanism_complex>, // Complex arcane mechanism
+    'T': <astralsorcery:itemcraftingcomponent:1>, // Starmetal ingot
+  }).shaped());
+
 /*
 ██╗███╗   ██╗███████╗███████╗██████╗ ███╗   ██╗ █████╗ ██╗
 ██║████╗  ██║██╔════╝██╔════╝██╔══██╗████╗  ██║██╔══██╗██║
