@@ -997,4 +997,10 @@
   "value": ["thaumcraft:primordial_siphon", "thaumicwonders:primordial_pearl_reconstitution"]}
 ]}
 
+,{"key": "TWOND_VIS_CAPACITOR","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:vis_capacitor"]}
+]}
+
 ]

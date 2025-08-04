@@ -258,3 +258,21 @@ mods.thaumcraft.Infusion.registerRecipe(
     'r': <thaumcraft:nugget:10>, // Rare earth
     'M': <botania:manaresource:2>, // Mana diamond
   }).spiral(1));
+
+// [Vis capacitor]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:alienist_stone>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
+  'vis_capacitor', // Name
+  'TWOND_VIS_CAPACITOR', // Research
+  75, // Vis cost
+  [<aspect:aer> * 3, <aspect:aqua> * 3, <aspect:ordo> * 3],
+  <thaumicwonders:vis_capacitor>, // Output
+  Grid(['pretty',
+    '  G  ',
+    'T B T',
+    '  R  '], {
+    'B': <thaumcraft:vis_battery>, // Vis battery
+    'G': <thaumicwonders:primordial_grain>, // Primordial grain
+    'R': <thaumcraft:vis_resonator>, // Vis resonator
+    'T': <thaumcraft:plate:2>, // Thaumium plate
+  }).shaped());
