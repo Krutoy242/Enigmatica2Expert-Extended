@@ -799,7 +799,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:shimmerleaf_seed>);
 mods.thaumcraft.Crucible.registerRecipe(
   'shimmerleaf_seed', // Name
   'TWOND_MYSTIC_GARDENING@1', // Research
-  <thaumicwonders:shimmerleaf_seed> * 8, // Output
+  <thaumicwonders:shimmerleaf_seed>, // Output
   <rustic:tomato_seeds>, // Input
   [<aspect:auram> * 60]
 );
@@ -808,7 +808,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:cinderpearl_seed>);
 mods.thaumcraft.Crucible.registerRecipe(
   'cinderpearl_seed', // Name
   'TWOND_MYSTIC_GARDENING@1', // Research
-  <thaumicwonders:cinderpearl_seed> * 8, // Output
+  <thaumicwonders:cinderpearl_seed>, // Output
   <rustic:chili_pepper_seeds>, // Input
   [<aspect:ignis> * 60]
 );
@@ -817,7 +817,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:vishroom_spore>);
 mods.thaumcraft.Crucible.registerRecipe(
   'vishroom_spore', // Name
   'TWOND_MYSTIC_GARDENING@1', // Research
-  <thaumicwonders:vishroom_spore> * 8, // Output
+  <thaumicwonders:vishroom_spore>, // Output
   <rustic:apple_seeds>, // Input
   [<aspect:praecantatio> * 60]
 );
