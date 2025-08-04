@@ -257,7 +257,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   Grid(['rM'], {
     'r': <thaumcraft:nugget:10>, // Rare earth
     'M': <botania:manaresource:2>, // Mana diamond
-  }).spiral(1));
+}).spiral(1));
 
 // [Vis capacitor]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:alienist_stone>);
@@ -275,7 +275,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
     'G': <thaumicwonders:primordial_grain>, // Primordial grain
     'R': <thaumcraft:vis_resonator>, // Vis resonator
     'T': <thaumcraft:plate:2>, // Thaumium plate
-  }).shaped());
+}).shaped());
 
 // [Primal destroyer]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:primal_destroyer>);
@@ -293,4 +293,4 @@ mods.thaumcraft.Infusion.registerRecipe(
     'E': <thaumictinkerer:kamiresource>, // Ender shard
     'R': <rats:ratlantean_flame>, // Ratlantean Spirit Flame
     'V': <thaumcraft:plate:3>, // Void metal plate
-  }).spiral(1));
+}).spiral(1));

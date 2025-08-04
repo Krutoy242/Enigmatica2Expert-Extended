@@ -691,7 +691,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('VoidSiphon',
     'B': <thaumcraft:plate>, // Brass plate
     'M': <thaumcraft:mechanism_complex>, // Complex arcane mechanism
     'T': <astralsorcery:itemcraftingcomponent:1>, // Starmetal ingot
-  }).shaped());
+}).shaped());
 
 /*
 ██╗███╗   ██╗███████╗███████╗██████╗ ███╗   ██╗ █████╗ ██╗
