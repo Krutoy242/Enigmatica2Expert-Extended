@@ -76,9 +76,6 @@ static stoneCombiningRecipeFunc as IRecipeFunction = function (out, ins, cInfo) 
 } as IRecipeFunction;
 
 for i, stone in transStones {
-  // Buff Trans-Stones to add advanced recipes
-  stone.maxDamage = transStoneMaxDamage;
-
   // JEI recipe
   val maxDmg = stone.maxDamage;
   val quartStone = stone.withDamage(maxDmg as double * 0.75);
