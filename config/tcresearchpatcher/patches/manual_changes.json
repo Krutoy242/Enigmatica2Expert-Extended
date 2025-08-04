@@ -1003,4 +1003,13 @@
   "value": ["thaumcraft:vis_capacitor"]}
 ]}
 
+,{"key": "TWOND_PRIMAL_DESTROYER","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:primal_destroyer"]}
+  ,{"op": "replace",
+  "path": "stages/2/recipes",
+  "value": ["thaumcraft:primal_destroyer", "thaumicwonders:voidflame_infusion_fake"]}
+]}
+
 ]

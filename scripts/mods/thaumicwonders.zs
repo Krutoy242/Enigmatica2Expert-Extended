@@ -276,3 +276,21 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
     'R': <thaumcraft:vis_resonator>, // Vis resonator
     'T': <thaumcraft:plate:2>, // Thaumium plate
   }).shaped());
+
+// [Primal destroyer]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:primal_destroyer>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'primal_destroyer', // Name
+  'TWOND_PRIMAL_DESTROYER@1', // Research
+  <thaumicwonders:primal_destroyer>.withTag({infench: [{lvl: 3 as short, id: 6 as short}, {lvl: 2 as short, id: 14 as short}]}), // Output
+  5, // Instability
+  [<aspect:perditio> * 75, <aspect:aer> * 75, <aspect:ordo> * 75, <aspect:terra> * 75, <aspect:aqua> * 75, <aspect:ignis> * 75, <aspect:mana> * 50],
+  <iceandfire:dragonbone>, // Central Item
+  Grid(['RFNVGVEF'], {
+    'F': <thaumadditions:zeith_fur>, // Blue wolf fur
+    'N': <thaumictinkerer:kamiresource:1>, // Nether shard
+    'G': <thaumicwonders:primordial_grain>, // Primordial grain
+    'E': <thaumictinkerer:kamiresource>, // Ender shard
+    'R': <rats:ratlantean_flame>, // Ratlantean Spirit Flame
+    'V': <thaumcraft:plate:3>, // Void metal plate
+  }).spiral(1));
