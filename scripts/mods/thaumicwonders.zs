@@ -2,6 +2,7 @@
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.IRecipeFunction;
+import mods.thaumicwonders.MeatyOrb;
 
 <entity:thaumicwonders:corruption_avatar>.addDrop(<thaumictinkerer:kamiresource:2>, 13, 25);
 
@@ -198,14 +199,6 @@ craft.make(<thaumicwonders:alienist_stone>.withTag({ Unbreakable: 1 as byte } as
   '▲': <ore:dustMana>, // Mana Dust
 });
 
-// ---------------------------------------------------------
-
-scripts.jei.crafting_hints.addInsOutCatl([
-  <thaumcraft:jar_normal>.withTag({ Aspects: [{ amount: 250, key: 'aqua' }] }),
-  <thaumcraft:jar_normal>.withTag({ Aspects: [{ amount: 250, key: 'victus' }] }),
-  <thaumcraft:jar_normal>.withTag({ Aspects: [{ amount: 250, key: 'alienis' }] }),
-], <ore:listAllmeatraw>.firstItem * 500, <thaumicwonders:meaty_orb>);
-
 // [Alkahest vat]
 mods.thaumcraft.Crucible.removeRecipe(<thaumicwonders:alkahest_vat>);
 mods.thaumcraft.Infusion.registerRecipe(
@@ -294,3 +287,8 @@ mods.thaumcraft.Infusion.registerRecipe(
     'R': <rats:ratlantean_flame>, // Ratlantean Spirit Flame
     'V': <thaumcraft:plate:3>, // Void metal plate
 }).spiral(1));
+
+mods.thaumicwonders.MeatyOrb.removeAll();
+for item in <ore:listAllmeatraw>.items {
+  if(!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);
+}
