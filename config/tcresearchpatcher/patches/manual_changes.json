@@ -988,4 +988,13 @@
   "path":"stages/0/required_item"}
 ]}
 
+,{"key": "TWOND_PRIMORDIAL_SIPHON","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:primordial_siphon"]}
+  ,{"op": "replace",
+  "path": "stages/2/recipes",
+  "value": ["thaumcraft:primordial_siphon", "thaumicwonders:primordial_pearl_reconstitution"]}
+]}
+
 ]

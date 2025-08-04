@@ -244,3 +244,17 @@ craft.remake(<thaumicwonders:creative_essentia_jar>, ['pretty',
   'A': <thaumicwonders:alkahest_vat>, // Alkahest Vat
   'T': <contenttweaker:meat_singularity>,
 });
+
+// [Primordial siphon]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:primordial_siphon>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'primordial_siphon', // Name
+  'TWOND_PRIMORDIAL_SIPHON@1', // Research
+  <thaumicwonders:primordial_siphon>, // Output
+  3, // Instability
+  [<aspect:perditio> * 75, <aspect:aer> * 75, <aspect:ordo> * 75, <aspect:terra> * 75, <aspect:aqua> * 75, <aspect:ignis> * 75, <aspect:mana> * 50],
+  <thaumcraft:void_siphon>, // Central Item
+  Grid(['rM'], {
+    'r': <thaumcraft:nugget:10>, // Rare earth
+    'M': <botania:manaresource:2>, // Mana diamond
+  }).spiral(1));
