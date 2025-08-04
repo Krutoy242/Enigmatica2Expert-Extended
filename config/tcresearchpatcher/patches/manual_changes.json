@@ -1012,4 +1012,29 @@
   "value": ["thaumcraft:primal_destroyer", "thaumicwonders:voidflame_infusion_fake"]}
 ]}
 
+,{"key":"TWOND_PRIMORDIAL_SIPHON","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_VOID_FORTRESS_ARMOR","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_PRIMORDIAL_PEARL_GROWTH","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_VOID_PORTAL","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_WARP_RING","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
 ]
