@@ -7,12 +7,16 @@ import native.java.util.ArrayList;
 import native.net.minecraft.init.SoundEvents;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.util.SoundCategory;
+import native.net.minecraft.util.NonNullList;
 import native.net.minecraft.world.DimensionType;
 import native.net.minecraft.world.WorldProvider;
 import native.net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import native.thaumcraft.api.golems.parts.GolemMaterial;
 import native.thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
+import native.thaumcraft.common.lib.events.ToolEvents;
 import native.thaumcraft.common.lib.utils.Utils;
+import native.net.minecraftforge.oredict.OreDictionary;
+import native.net.minecraft.util.text.TextComponentString;
 
 #mixin {targets: "thaumcraft.common.lib.crafting.ThaumcraftCraftingManager"}
 zenClass MixinThaumcraftCraftingManager {
@@ -155,30 +159,96 @@ zenClass MixinScanSky {
     }
 }
 
-/*
-#mixin {targets: "thaumcraft.common.lib.events.ToolEvents"}
+#mixin {targets: "thaumcraft.common.lib.events.ToolEvents", priority: 1100}
 zenClass MixinToolEvents {
     #mixin Static
-    #mixin Overwrite
-    function doRefining(event as HarvestDropsEvent, heldItem as ItemStack) as void {
-        val level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldItem, EnumInfusionEnchantment.REFINING);
-        val chance = 0.5f * level;
-        var b = false;
+    #mixin Inject {method: "doRefining", at: {value: "HEAD"}, cancellable: true}
+    function doBuffedRefining(event as HarvestDropsEvent, heldItem as ItemStack, ci as CallbackInfo) as void {
+        event.getHarvester().sendMessage(TextComponentString("doBuffedRefining on " + ItemStack(event.getState().getBlock()).getDisplayName()));
+        ci.cancel();
 
-        for i, is in event.drops {        
-            val cluster = Utils.findSpecialMiningResult(is, chance, event.world.rand);
-            if (!is.isItemEqual(cluster)) {
-                if (level >= 3 && event.world.rand.nextFloat() > 1.0f / (level - 1)) {
-                    cluster.count = cluster.count * 2;
-                }
-                (event.drops as ItemStack[])[i] = cluster;
-                b = true;
+        val level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldItem, EnumInfusionEnchantment.REFINING);
+        val chance_percent = 40 + 20 * (level - 1) + 10 * event.fortuneLevel;
+
+        val lucky_number = event.world.rand.nextInt(100);
+        if (lucky_number >= chance_percent) { // if chance < 1, refining may not trigger at all
+            return;
+        }
+
+        var dropAmount = chance_percent / 100;
+        if (lucky_number < chance_percent % 100) {
+            dropAmount += 1;
+        }
+
+        var outputMultiplier = 1;
+        for oreID in OreDictionary.getOreIDs(ItemStack(event.getState().getBlock())) {
+            val newName = OreDictionary.getOreName(oreID);
+            if (isNull(newName)) continue;
+            
+            if (newName.startsWith("oreNether") || newName.startsWith("oreEnd")) {
+                outputMultiplier = 2;
+                break;
             }
         }
 
-        if (b) {
-            event.world.playSound(null, event.getPos(), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 0.2F, 0.7F + event.world.rand.nextFloat() * 0.2F);
+        var newDrops = [] as ItemStack[];
+        var replacementItem = heldItem; // idfk why but setting it to null was breaking the call to replacementItem.setCount
+        var foundReplacement = false;
+
+        for is in event.drops {
+            if (isNull(is) || is.isEmpty()) continue;
+
+            var found = false;
+            
+            for oreID in OreDictionary.getOreIDs(is) {
+                val newName = OreDictionary.getOreName(oreID);
+                if (isNull(newName)) continue;
+                
+                var subLen = 0;
+                if (newName.startsWith("oreNether")) {
+                    subLen = 9;
+                } else if (newName.startsWith("oreEnd")) {
+                    subLen = 6;
+                } else if (newName.startsWith("ore") || newName.startsWith("gem")) {
+                    subLen = 3;
+                } else if (newName.startsWith("dust")) {
+                    subLen = 4;
+                } else {
+                    continue;
+                }
+
+                val oreName = "cluster" + newName.substring(subLen);
+                val list as NonNullList = OreDictionary.getOres(oreName);
+                for item in OreDictionary.getOres(oreName) {
+                    if (isNull(item)) continue;
+
+                    if (!foundReplacement) {
+                        replacementItem = item as ItemStack;
+                        foundReplacement = true;
+                    }
+
+                    found = true;
+                    break;
+                }
+
+                if (found) break;
+            }
+
+            if (!found) { // not found ore, adding item as it is
+                newDrops += is;
+            }
         }
+
+        if (!foundReplacement) return;
+
+        replacementItem.setCount(dropAmount * outputMultiplier);
+        newDrops += replacementItem;
+
+        event.drops.clear();
+        for is in newDrops {
+            event.drops.add(is);
+        }
+
+        event.world.playSound(null, event.getPos(), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 0.2F, 0.7F + event.world.rand.nextFloat() * 0.2F);
     }
 }
-*/

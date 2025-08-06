@@ -755,25 +755,11 @@ function checkTool(tool as IItemStack) as bool {
   return false;
 }
 
-function checkRefineEnchant(tool as IItemStack) as int {
-  if (
-    !isNull(tool.tag)
-    && !isNull(tool.tag.infench)
-    && !isNull(tool.tag.infench.asList())
-  ) {
-    for tag in tool.tag.infench.asList() {
-      if ((tag.id as int) == 4) return (tag.lvl as int);
-    }
-  }
-  return 0;
-}
-
 researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
   // DROP BONUS crystalized chunks
   if (event.player.world.remote) return; // world is remote
 
   if (!checkTool(tool)) return;
-  val lvl = checkRefineEnchant(tool);
 
   var newDrops = [] as WeightedItemStack[];
   var dropChanged = false;
@@ -784,44 +770,23 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
     var found = false;
 
     for ore in weightedItem.stack.ores { // checking if it's wanted ore
-      if (lvl == 0 && ore.name.startsWith('ore')) {
-        oreName = ore.name.substring(3);
-      }
-
       if (ore.name.startsWith('cluster')) {
         oreName = ore.name.substring(7);
       }
-      if (!(oreDict has (`cluster${oreName}`))) continue;
+
       if (!(oreDict has (`shard${oreName}`))) continue;
       found = true;
       break;
     }
 
     if (!found) { // not found ore, adding item as it is
-      if (!isNull(weightedItem)) newDrops += weightedItem;
+      newDrops += weightedItem;
       continue;
     }
 
     dropChanged = true;
 
-    if (lvl == 0) { // it's ore! add matching cluster/shard
-      val item = oreDict[`cluster${oreName}`].firstItem;
-      newDrops += (!isNull(item) && event.player.world.getRandom().nextInt(2) == 1) ? item % weightedItem.percent : weightedItem;
-    }
-    else if (lvl == 1) {
-      val item = oreDict[(event.player.world.getRandom().nextInt(2) == 0 ? 'cluster' : 'crystalShard') ~ oreName].firstItem;
-      newDrops += !isNull(item) ? item % weightedItem.percent : weightedItem;
-    }
-    else {
-      val item = oreDict[`crystalShard${oreName}`].firstItem;
-      if (isNull(item)) {
-        newDrops += weightedItem;
-      }
-      else {
-        newDrops += item % weightedItem.percent;
-        if (lvl > 2) newDrops += item % ((lvl - 1) * 25);
-      }
-    }
+    newDrops += oreDict[`crystalShard${oreName}`].firstItem * weightedItem.stack.amount % weightedItem.percent;
   }
 
   if (!dropChanged) return;
