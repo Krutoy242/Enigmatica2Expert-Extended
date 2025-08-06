@@ -164,7 +164,6 @@ zenClass MixinToolEvents {
     #mixin Static
     #mixin Inject {method: "doRefining", at: {value: "HEAD"}, cancellable: true}
     function doBuffedRefining(event as HarvestDropsEvent, heldItem as ItemStack, ci as CallbackInfo) as void {
-        event.getHarvester().sendMessage(TextComponentString("doBuffedRefining on " + ItemStack(event.getState().getBlock()).getDisplayName()));
         ci.cancel();
 
         val level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldItem, EnumInfusionEnchantment.REFINING);
