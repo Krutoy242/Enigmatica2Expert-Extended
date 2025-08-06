@@ -303,6 +303,32 @@ mods.thaumcraft.Infusion.registerRecipe(
     'P': <tconevo:metal:20>, // Primordial grain
 }).spiral(1));
 
+// Remove unnecessary recipes
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropyblazepowder');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropybonemeal');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropysunflower');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropylilac');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropyrose');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropypeony');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropysugar');
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderwool');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderglowstone');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:ordermagma');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderquartz');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:ordersandstone');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderprismarine');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderchorus');
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avariccoal');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricdiamond');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricemerald');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricquartz');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricamber');
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:hedge_dragons_breath');
+
 mods.thaumicwonders.MeatyOrb.removeAll();
 for item in <ore:listAllmeatraw>.items {
   if(!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);

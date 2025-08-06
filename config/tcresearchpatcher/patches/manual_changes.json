@@ -177,8 +177,8 @@
    "path": "stages/1/recipes/0",
    "value": ["thaumcraft:alkahest_vat"]}
    ,{"op": "add",
-   "path": "parents/-",
-   "value": "AURACHARGER"}
+   "path": "parents",
+   "value": ["AURACHARGER", "TWOND_CATALYZATION_CHAMBER"]}
  ]}
  
  ,{"key": "IMPURE_TEAR","ops": [
@@ -1041,6 +1041,26 @@
   {"op": "replace",
   "path": "stages/1/recipes",
   "value": ["thaumcraft:void_beacon"]}
+]}
+
+,{"key":"TWOND_ERYTHURGY","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TWOND_ORDERED_DECONSTRUCTION","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TWOND_ENTROPIC_PROCESSING","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TWOND_AVARIC_DECONSTRUCTION","ops":[
+  {"op":"remove",
+  "path":"key"}
 ]}
 
 ]
