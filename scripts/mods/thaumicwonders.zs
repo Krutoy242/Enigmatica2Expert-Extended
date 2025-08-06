@@ -3,6 +3,7 @@
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.IRecipeFunction;
 import mods.thaumicwonders.MeatyOrb;
+import mods.thaumicwonders.CatalyzationChamber;
 
 <entity:thaumicwonders:corruption_avatar>.addDrop(<thaumictinkerer:kamiresource:2>, 13, 25);
 
@@ -292,3 +293,79 @@ mods.thaumicwonders.MeatyOrb.removeAll();
 for item in <ore:listAllmeatraw>.items {
   if(!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);
 }
+
+mods.thaumicwonders.CatalyzationChamber.removeAll();
+
+val clusterList = [
+  <jaopca:item_clusteraluminium>,
+  <jaopca:item_clusteramber>,
+  <jaopca:item_clusteramethyst>,
+  <jaopca:item_clusteranglesite>,
+  <jaopca:item_clusterapatite>,
+  <jaopca:item_clusteraquamarine>,
+  <jaopca:item_clusterardite>,
+  <jaopca:item_clusterastralstarmetal>,
+  <jaopca:item_clusterbenitoite>,
+  <jaopca:item_clusterboron>,
+  <jaopca:item_clustercertusquartz>,
+  <jaopca:item_clusterchargedcertusquartz>,
+  <jaopca:item_clustercoal>,
+  <jaopca:item_clustercobalt>,
+  <jaopca:item_clusterdiamond>,
+  <jaopca:item_clusterdilithium>,
+  <jaopca:item_clusterdimensionalshard>,
+  <jaopca:item_clusterdraconium>,
+  <jaopca:item_clusteremerald>,
+  <jaopca:item_clusteriridium>,
+  <jaopca:item_clusterlapis>,
+  <jaopca:item_clusterlithium>,
+  <jaopca:item_clustermagnesium>,
+  <jaopca:item_clustermalachite>,
+  <jaopca:item_clustermithril>,
+  <jaopca:item_clusternickel>,
+  <jaopca:item_clusterosmium>,
+  <jaopca:item_clusterperidot>,
+  <jaopca:item_clusterplatinum>,
+  <jaopca:item_clusterquartzblack>,
+  <jaopca:item_clusterredstone>,
+  <jaopca:item_clusterruby>,
+  <jaopca:item_clustersapphire>,
+  <jaopca:item_clustertanzanite>,
+  <jaopca:item_clusterthorium>,
+  <jaopca:item_clustertitanium>,
+  <jaopca:item_clustertopaz>,
+  <jaopca:item_clustertrinitite>,
+  <jaopca:item_clustertungsten>,
+  <jaopca:item_clusteruranium>,
+  <thaumcraft:cluster:1>,
+  <thaumcraft:cluster:2>,
+  <thaumcraft:cluster:3>,
+  <thaumcraft:cluster:4>,
+  <thaumcraft:cluster:5>,
+  <thaumcraft:cluster:6>,
+  <thaumcraft:cluster:7>,
+  <thaumcraft:cluster>
+] as IItemStack[];
+
+for itemCluster in clusterList {
+  for oreEntry in itemCluster.ores {
+    if (oreEntry.name.matches("^cluster.*")) {
+      print("Debug: ore name: " ~ oreEntry.name);
+
+      val oreOre = oreDict.get(oreEntry.name.replaceFirst("cluster", "ore"));
+      if (!oreOre.empty) {
+        mods.thaumicwonders.CatalyzationChamber.addAlchemistRecipe(oreOre.firstItem, itemCluster);
+        print("Adding recipe alchemist: " ~ oreOre.firstItem.name ~ " ---> " ~ oreEntry.firstItem.name);
+      }
+
+      val oreShard = oreDict.get(oreEntry.name.replaceFirst("cluster", "crystalShard"));
+      if (!oreShard.empty) {
+        mods.thaumicwonders.CatalyzationChamber.addAlienistRecipe(itemCluster, oreShard.firstItem);
+        print("Adding recipe alchemist: " ~ oreShard.firstItem.name ~ " ---> " ~ oreEntry.firstItem.name);
+      }
+
+      break;
+    }
+  }
+}
+
