@@ -289,6 +289,20 @@ mods.thaumcraft.Infusion.registerRecipe(
     'V': <thaumcraft:plate:3>, // Void metal plate
 }).spiral(1));
 
+// [Void beacon]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:void_beacon>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'void_beacon', // Name
+  'TWOND_VOID_BEACON', // Research
+  <thaumicwonders:void_beacon>, // Output
+  4, // Instability
+  [<aspect:perditio> * 75, <aspect:aer> * 75, <aspect:ordo> * 75, <aspect:terra> * 75, <aspect:aqua> * 75, <aspect:ignis> * 75, <aspect:mana> * 50],
+  <minecraft:beacon>, // Central Item
+  Grid(['IPIPIPIP'], {
+    'I': <thaumicaugmentation:material:5>, // Impetus jewel
+    'P': <tconevo:metal:20>, // Primordial grain
+}).spiral(1));
+
 mods.thaumicwonders.MeatyOrb.removeAll();
 for item in <ore:listAllmeatraw>.items {
   if(!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);

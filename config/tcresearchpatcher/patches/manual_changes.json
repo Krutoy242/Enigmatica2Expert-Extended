@@ -1037,4 +1037,10 @@
   "path":"meta"}
 ]}
 
+,{"key": "TWOND_VOID_BEACON","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:void_beacon"]}
+]}
+
 ]
