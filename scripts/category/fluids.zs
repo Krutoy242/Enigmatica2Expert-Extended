@@ -64,32 +64,7 @@ for lList, itList in chaliceGrid {
 
 // *======= Fuels =======*
 
-/* Patchouli_js("Liquids/Smeltery Fuels", {
-  item: "tconstruct:smeltery_controller",
-  _text: `
-    $(l)Smeltery/$ melting temperatures was tweaked. Some metals $(l)require/$ better fuels than $(#d31)lava/$.
-    All fuels consume $(l)50/$mb.
-    $(l)Temperature/$ of fuel affect melting speed.
-    $(l)Time/$ is number of ticks fuel will burn.`});
-
-Patchouli_js("Liquids/Smeltery Fuels",
-  paged({
-    item: "tconstruct:smeltery_controller",
-    type: "item_list"
-  }, 7,
-  Object.entries(Object.fromEntries(
-    from_crafttweaker_log(/Register Smeltery fuel. Temp: (?<temp>\d+), Burn time: (?<time>\d+), Name: (?<name>.*)/gm)
-    .map(o=>[o.groups.name, o.groups])
-  )).map(([,g])=>g)
-
-  // Default fuels
-  .concat([{temp:1300, time:80, name:"lava"}])
-
-  .sort((a,b)=>b.temp*b.time - a.temp*a.time)
-  .map(o=>[wrap_bucket(o.name), `${o.temp}°К, ${o.time} ticks`])
-)) */
-
-for pos, names in utils.graph([
+static smelteryFuels as string[][double[string]] = utils.graph([
 // ↑ Duration
   '                                                          l           o        p',
   '       a              f  g                      k                               ',
@@ -134,7 +109,9 @@ for pos, names in utils.graph([
   '4': ['xu_demonic_metal', 'mirion', 'signalum', 'lumium', 'crystalline_alloy', 'melodic_alloy', 'crystalline_pink_slime'],
   '5': ['xu_enchanted_metal', 'xu_evil_metal', 'fierymetal', 'crystal_matrix'],
   '6': ['stellar_alloy', 'osgloglas', 'enderium', 'gelid_enderium', 'supremium', 'refinedglowstone', 'refinedobsidian'],
-}) {
+});
+
+for pos, names in smelteryFuels {
   for name in names {
     val temp = pos.x as int;
     val time = pos.y as int;
@@ -144,7 +121,6 @@ for pos, names in utils.graph([
     liquid.definition.temperature = temp;
 
     if (time != 0) {
-      utils.log('Register Smeltery fuel. Temp: ' ~ temp ~ ', Burn time: ' ~ time ~ ', Name: ' ~ name);
       mods.tconstruct.Fuel.registerFuel(liquid * 50, time);
     }
   }

@@ -6,7 +6,7 @@
 
   "catalyst": "engineersdecor:sign_caution",
   "catalyst-nbt": "{display:{LocName:\"tooltips.lang.not_compact_recipe\"}}",
-  
+
   "input-types": {
     "a": { "id": "quark:prismarine_rough_wall", "ignore-meta": true },
     "b": { "id": "additionalcompression:meatfish_compressed", "ignore-meta": true },

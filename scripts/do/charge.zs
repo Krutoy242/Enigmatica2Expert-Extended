@@ -59,7 +59,7 @@ function chargeTooltip(item as IItemStack) as string {
   if (isNull(item.tag.charge)) return null;
   val value = item.tag.charge.asDouble();
   return mods.zenutils.I18n.format(
-    game.localize('e2ee.do.charge'),
+    'e2ee.do.charge',
     mods.zenutils.StaticString.format('%,f', [value]).replaceAll('\\.0+$', '').replaceAll(',', '§8,§6')
   );
 }
@@ -81,7 +81,7 @@ function addRecipe(
     val value = isNull(item.tag.bonus) ? 0.0 : item.tag.bonus.asDouble();
     val s = (value as string).split('\\.');
     return mods.zenutils.I18n.format(
-      game.localize('e2ee.do.charge.bonus'),
+      'e2ee.do.charge.bonus',
       s[0] ~ '§8.' ~ (s.length <= 1 ? '' : s[1].length > 2 ? s[1].substring(0, 2) : s[1])
     );
   });

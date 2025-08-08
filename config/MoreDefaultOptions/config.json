@@ -20,6 +20,10 @@
       "inverted": true
     },
     {
+      "name": "ore_prefix",
+      "inverted": false
+    },
+    {
       "name": "mod",
       "inverted": false
     },

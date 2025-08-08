@@ -31,22 +31,22 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
   const confText = readFileSync(serverSetupConfig, 'utf8')
     .replace(
       /(additionalFiles:\s*)\n {4}\S.*\n {4}\S.*$/m,
-`$1
+      `$1
     - url: https://mediafilez.forgecdn.net/files/5370/660/mc2discord-forge-1.12.2-3.3.2.jar
       destination: mods/mc2discord-forge-1.12.2-3.3.2.jar`
     )
     .replace(
       /(localFiles:\s*)\n +\S.*\n +\S.*$/m,
-`$1
+      `$1
     - from: overrides/
       to: .`
     )
   writeFileSync(serverConfigTmp, confText)
 
   for (const conf of sftpConfigs) {
-    if (!(await pressEnterOrEsc(
-        `To upload SFTP ${style.string(conf.label)} press ENTER. Press ESC to skip.`
-    ))) {
+    if (!await pressEnterOrEsc(
+      `To upload SFTP ${style.string(conf.label)} press ENTER. Press ESC to skip.`
+    )) {
       continue
     }
 
@@ -67,7 +67,7 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
 
     updateBox('Change and copy server overrides')
     const title = `+ Server Started! +`
-    const spaces = (' ').repeat(Math.max(1, (title.length - currentVersion.length) / 2) | 0)
+    const spaces = ' '.repeat(Math.max(1, (title.length - currentVersion.length) / 2) | 0)
     const replaceResult = replaceInFileSync({
       files       : join(conf.dir, 'overrides/config/mc2discord.toml'),
       from        : /(start\s*=\s*")[^"]+"/,

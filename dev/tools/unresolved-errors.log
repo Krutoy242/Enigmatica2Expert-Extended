@@ -1,16 +1,8 @@
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
-[Client thread/WARN] [mixin]: Redundant @Unique on injector method ftbeditNBT(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V in mixins.random_complement.ftbu.json:MixinMessageEditNBTRequest from mod random_complement-1.5.1.jar. Injectors are implicitly unique
-[Client thread/WARN] [mixin]: Redundant @Unique on injector method ftbeditNBT(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V in mixins.random_complement.ftbu.json:MixinMessageEditNBTRequest from mod random_complement-1.5.1.jar. Injectors are implicitly unique
-[Client thread/WARN] [mixin]: Mixin apply for mod UniversalTweaks-1.12.2-1.15.2.jar failed mixins.mods.cookingforblockheads.json:UTTileOvenMixin from mod UniversalTweaks-1.12.2-1.15.2.jar -> net.blay09.mods.cookingforblockheads.tile.TileOven: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow method update in mixins.mods.cookingforblockheads.json:UTTileOvenMixin from mod UniversalTweaks-1.12.2-1.15.2.jar was not located in the target class net.blay09.mods.cookingforblockheads.tile.TileOven. Using refmap universaltweaks.refmap.json
-org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow method update in mixins.mods.cookingforblockheads.json:UTTileOvenMixin from mod UniversalTweaks-1.12.2-1.15.2.jar was not located in the target class net.blay09.mods.cookingforblockheads.tile.TileOven. Using refmap universaltweaks.refmap.json
-	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachSpecialMethod(MixinPreProcessorStandard.java:436) ~[MixinPreProcessorStandard.class:0.20.10+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412) ~[MixinPreProcessorStandard.class:0.20.10+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340) ~[MixinPreProcessorStandard.class:0.20.10+mixin.0.8.7]
-  [...]
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58) ~[EventListenerFactory.class:?]
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21) ~[EventListenerFactory.class:?]
 	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52) ~[ASMEventHandler.class:?]
   [...]
-[Client thread/WARN] [forestry]: Failed to find item for (floralchemy:crystalthorn_diamond) in the Forge registry.
+[Client thread/WARN] [forestry]: Failed to find item for (floralchemy:crystalthorn_diamond) in the Forge registry.

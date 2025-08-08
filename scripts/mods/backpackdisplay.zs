@@ -13,7 +13,7 @@ import crafttweaker.data.IData;
 function addSingularity(item as IItemStack) as void {
   if (isNull(item)) return;
   addBackDisplay(item, function(item) {
-    if (isNull(item.tag) || isNull(item.tag.singularity)) return null;
+    if (isNull(item.tag) || isNull(item.tag.singularity)) return [] as IItemStack[];
     val length = scripts.do.diverse.getMapLength(item.tag.singularity);
     val result = arrayOf(length, null as IItemStack);
     var i = 0;

@@ -6,7 +6,7 @@
 
   "catalyst": "engineersdecor:sign_caution",
   "catalyst-nbt": "{display:{LocName:\"tooltips.lang.not_compact_recipe\"}}",
-  
+
   "input-types": {
     "a": { "id": "additionalcompression:pearlender_compressed", "ignore-meta": true },
     "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }

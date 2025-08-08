@@ -47,11 +47,13 @@ function show(player as IPlayer, item as IItemStack, block as IBlock) as bool {
   // collect all items that cost more than required one
   val requiredCost = scripts.category.uu.getCost(encodedItem, dfclty);
   var strList = StringList.empty();
-  for itemID, metaData in scripts.category.uu.values {
-    for meta, cost in metaData {
-      if (cost <= requiredCost) continue;
-      strList.add(`${repeat('0', 24 - toString(cost).length())}${cost};${itemID};${meta}`);
-    }
+  val it = native.ic2.core.uu.UuGraph.iterator();
+  while (it.hasNext()) {
+    val entry = it.next() as native.java.util.Map.Entry;
+    val itemNative = entry.key as native.net.minecraft.item.ItemStack;
+    val cost = toString(entry.value) as double as int;
+    if (cost > requiredCost)
+      strList.add(`${repeat('0', 24 - toString(cost).length())}${cost};${itemNative.wrapper.definition.id};${itemNative.wrapper.damage}`);
   }
   val strArr = strList.toArray();
   mods.ctintegration.util.ArrayUtil.sort(strArr);

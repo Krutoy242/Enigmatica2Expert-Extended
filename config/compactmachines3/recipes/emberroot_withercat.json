@@ -6,7 +6,7 @@
 
   "catalyst": "engineersdecor:sign_caution",
   "catalyst-nbt": "{display:{LocName:\"tooltips.lang.not_compact_recipe\"}}",
-  
+
   "input-types": {
     "a": { "id": "mekanism:cardboardbox", "ignore-meta": true },
     "b": { "id": "darkutils:wither_block", "ignore-meta": true },

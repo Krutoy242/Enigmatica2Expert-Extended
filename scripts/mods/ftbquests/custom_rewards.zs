@@ -23,7 +23,7 @@ function formatPlayTime(player as IPlayer) as string {
 //   server.commandManager.executeCommandSilent(server,
 //     // '/tellraw @a [{"translate":"'~langCode~'","with":["'~player.name~'",{"translate":"'~titleCode~'"},"'~formatPlayTime(player)~'"]}]')
 //     '/say ' ~ mods.zenutils.I18n.format(
-//       game.localize(langCode),
+//       langCode,
 //       player.name,
 //       titleCode,
 //       formatPlayTime(player)

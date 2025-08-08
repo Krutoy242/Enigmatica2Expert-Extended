@@ -1,8 +1,9 @@
 // @ts-check
 
+const { execSync } = require('node:child_process')
 const { readFileSync, existsSync } = require('node:fs')
 const { resolve } = require('node:path')
-const { execSync } = require('node:child_process')
+
 const { parse } = require('yaml')
 
 /**
@@ -58,7 +59,7 @@ const writerOpts = {
 
     if (typeof commit.scope === 'string') {
       commit.scope = config.scopes[commit.scope.toLocaleLowerCase()]
-      ?? capitalize(commit.scope)
+        ?? capitalize(commit.scope)
     }
 
     if (typeof commit.hash === 'string')
@@ -75,13 +76,13 @@ const writerOpts = {
           return ''
         }
       )
-      if (images.length) /** @type {any} */ (commit).images = images.reverse()
+      if (images.length) /** @type {any} */ commit.images = images.reverse()
     }
 
     // Add new "description" field that actually both bod + footer with indentation
     if (typeof commit.body === 'string' || typeof commit.footer === 'string') {
-      /** @type {any} */ (commit.description)
-        = (`${commit.body ?? ''}${commit.footer ? `\n\n${commit.footer}` : ''}`).trim().split('\n')
+      /** @type {any} */ commit.description
+        = `${commit.body ?? ''}${commit.footer ? `\n\n${commit.footer}` : ''}`.trim().split('\n')
     }
 
     // Create issue urls
@@ -124,7 +125,7 @@ const writerOpts = {
       && commit.authorEmail
       && commit.authorEmail !== config.defaultAuthor
     ) {
-      /** @type {any} */ (commit).isContribution = true
+      /** @type {any} */ commit.isContribution = true
 
       const sanitized = commit.authorName
         .trim()
@@ -153,7 +154,7 @@ const writerOpts = {
       // @ts-expect-error nonoptional
       delete g.commits
 
-      ; /** @type {any} */ (g).scopes = Object.entries(groupedBy)
+      /** @type {any} */ g.scopes = Object.entries(groupedBy)
         .map(([scope, commits]) => ({ scope, commits }))
     })
 

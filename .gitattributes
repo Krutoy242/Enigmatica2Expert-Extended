@@ -1,4 +1,4 @@
-# > git config filter.ic2_config_date_update.clean "sed '/; created /d'"
+# > git config filter.ic2_config_date_update.clean "sed '/^; created /d'"
 config/IC2.ini filter=ic2_config_date_update
 
 # > git config filter.as_config_cleanup.clean "sed '/default: /d'"

@@ -15,61 +15,9 @@ import mods.ctutils.utils.Math.min;
 import mods.zentoolforge.Toolforge;
 import modtweaker.tconstruct.ITICMaterial;
 
-/* Patchouli_js()
-var statics = {}
-match_regex_below(
-  /^static\s+(DEFAULT_EQUIP_CHANCE|OVERWORLD_EQUIP_CHANCE|NEXT_EQUIP_CHANCE).*= ([\d.]+)d?/gm
-).map(m=>[m[1], Math.round(parseFloat(m[2])*100)])
-.forEach(m=>statics[m[0]] = m[1])
-
-Patchouli_js('Mobs/Equip Generation', [
-  {
-    item: `draconicevolution:mob_soul{EntityName:"minecraft:zombie"}`,
-    title: "Equip Generation",
-    _text: `
-      All mobs are generated with:
-      $(li)Random TCon armor + weapon
-      $(li)Random classic armor set + weapon
-
-      Chance that mob will have at least 1 equipment is
-      $(li)${statics.DEFAULT_EQUIP_CHANCE}% base chance
-      $(li)${100 - statics.OVERWORLD_EQUIP_CHANCE}% less in $(l)Overworld/$
-      $(li)${statics.NEXT_EQUIP_CHANCE}% added to reroll for each next slot`
-  },{
-    item: `draconicevolution:mob_soul{EntityName:"minecraft:skeleton"}`,
-    title: "Equip Generation",
-    _text: `
-      Different mobs have different armor types and different TCon materials.
-      $(l)Zombies/$ have static chance to spawn with any avaliable material.
-
-      Roll used $(l)qubic/$ function, so $(l)Paper/$ would spawn $(l)~20%/$ times and $(l)Gelid Metal/$ $(l)~0.3%/$ times.`
-  },{
-    item: `draconicevolution:mob_soul{EntityName:"minecraft:zombie_pigman"}`,
-    title: "Equip Generation",
-    _text: `
-      Mobs will never spawn with this TCon materials:
-      ${
-        from_crafttweaker_log(/Blacklisted TCon material for mob equipment generation: (.*)/gm)
-        .map(([,name])=>'$(li)'+name+'\n')
-        .join('')
-      }`
-  },{
-    item: `draconicevolution:mob_soul{EntityName:"minecraft:wither_skeleton"}`,
-    title: "Equip Generation",
-    _text: `
-      Tinker's armor and tools have chance to get random modifier. If this happen, item 100% would have additional $(l)Creative/$ modifier.
-      All equipment generated already damaged, so no exploits with $(l)mob-stripping farm/$!`
-  },
-]) */
-
 static DEFAULT_EQUIP_CHANCE as double = 0.8; // Chance that mob will have at least 1 item
 static OVERWORLD_EQUIP_CHANCE as double = 0.8; // Chance modifier for Overworld
 static NEXT_EQUIP_CHANCE as double = 0.35; // Reroll addition for next equipment slot
-
-static SCALLINGHEALTH_MAX_DIFFICULTY as double
-/* Inject_js('= '+config('config/scalinghealth/main.cfg').main.difficulty['Max Value']+'.0;') */
-= 1000.0;
-/**/
 
 // Prepare materials for usage
 static normDefs as IData[string] = {
@@ -93,7 +41,6 @@ static blacklistedMaterials as string[] = [
 for matName in blacklistedMaterials {
   val ticMat = Toolforge.getMaterialFromID(matName);
   if (isNull(ticMat)) continue;
-  utils.log('Blacklisted TCon material for mob equipment generation: ' ~ ticMat.definition.displayName);
 }
 
 function normalizeDefaultList(list as int[string], field as string) as void {
@@ -102,7 +49,6 @@ function normalizeDefaultList(list as int[string], field as string) as void {
     if (isNull(Toolforge.getMaterialFromID(matName))) continue;
     normDefs[field] = normDefs[field] + [matName] as IData;
   }
-  utils.log('Valid default ' ~ field ~ ' materials: ' ~ normDefs[field].asString());
 }
 
 normalizeDefaultList(scripts.equipment.equipData.defaultArmorMats, 'armor');
@@ -139,13 +85,15 @@ function rndToolPart(_mats as IData, d as double, forWeapon as bool, w as IWorld
   var i = 0;
   val mats = dataOrData(_mats, defaults);
   var matName = pick_qubic_adv(mats, d, w);
-  if (!isNull(_mats)) while (i < 20 && !(defaults has matName)) {
-    matName = pick_qubic_adv(mats, d, w);
-    i += 1;
+  if (!isNull(_mats)) {
+    while i < 20 && !(defaults has matName) {
+      matName = pick_qubic_adv(mats, d, w);
+      i += 1;
+    }
   }
 
   var mat = Toolforge.getMaterialFromID(matName);
-  while (i < 100 && isNull(mat)) {
+  while i < 100 && isNull(mat) {
     matName = pick_qubic_adv(mats, d, w);
     mat = Toolforge.getMaterialFromID(matName);
     i += 1;
@@ -209,11 +157,11 @@ function addRandomModifiers(item as IItemStack, isArmor as bool, w as IWorld) as
   for i in 0 .. ((rnd_qubic(w) * 5.0 + 1.0) as int) {
     var mod as string = null;
     var antiloop = 0;
-    while (picked has mod && antiloop < 100) {
+    while picked has mod && antiloop < 100 {
       mod = pick_qubic(isArmor
         ? scripts.equipment.utils_tcon.allArmorModifiers
-        : scripts.equipment.utils_tcon.allToolModifiers
-      , w);
+        : scripts.equipment.utils_tcon.allToolModifiers,
+      w);
       antiloop += 1;
     }
     picked += mod;
@@ -224,7 +172,7 @@ function addRandomModifiers(item as IItemStack, isArmor as bool, w as IWorld) as
 
 function getDifficulty(entity as IEntity) as double {
   val area = DifficultyManager.getAreaDifficulty(entity.world, entity.position3f.asBlockPos());
-  return area / SCALLINGHEALTH_MAX_DIFFICULTY;
+  return area / native.net.silentchaos512.scalinghealth.config.Config.Difficulty.maxValue;
 }
 
 // Generate equipmnts
@@ -237,7 +185,7 @@ function equipEntity(iGroup as IData, entity as IEntityLivingBase, world as IWor
   // Pick tier
   val currGroup = getWeightedGroup(iGroup, world);
   val randTicMatsWeapn = getFourRandomTicMats(currGroup.ticMats, difficulty, true, world);
-  val randTicMatsArmor = (maxEquips > 1) ? getFourRandomTicMats(currGroup.ticMats, difficulty, false, world) : null;
+  val randTicMatsArmor = maxEquips > 1 ? getFourRandomTicMats(currGroup.ticMats, difficulty, false, world) : null;
 
   val equipSequence = [4, 1, 2, 3, 0, 5] as int[];
   for j in 0 .. maxEquips {

@@ -1,4 +1,5 @@
 #modloaded environmentaltech
+#reloadable
 
 import crafttweaker.item.IIngredient;
 
@@ -181,8 +182,8 @@ for i in 0 .. 6 {
     : 'tile.environmentaltech.structure_frame_' ~ i ~ '.name';
   val localCharged = 'description.crt.charged.evt_frame_' ~ i;
   val localEncrusted = 'description.crt.encrusted.evt_frame_' ~ i;
-  game.setLocalization(localCharged, mods.zenutils.I18n.format(game.localize('description.crt.charged'), game.localize(localPure)));
-  game.setLocalization(localEncrusted, mods.zenutils.I18n.format(game.localize('description.crt.encrusted'), game.localize(localPure)));
+  game.setLocalization(localCharged, mods.zenutils.I18n.format('description.crt.charged', game.localize(localPure)));
+  game.setLocalization(localEncrusted, mods.zenutils.I18n.format('description.crt.encrusted', game.localize(localPure)));
 
   val pureFrame = i == 0
     ? <environmentaltech:interconnect>
@@ -209,17 +210,6 @@ for i in 0 .. 6 {
 //
 // ######################################################################
 
-/* Patchouli_js('Energy/Environmental Tech',
-  evtTechSolarCalc.getRfT()
-  .map((r,k)=>({
-		icon:	"environmentaltech:solar_cont_1",
-    type:	"item_list",
-    title: "Solar Array Tier "+(k+1),
-    ...item$i(r, m=>`environmentaltech:solar_cell_${m[0]}#${m[2]}`),
-    ...text$i(r, m=>numeral(m[1]).format('0,0').padStart(11) + " RF/t")
-  }))
-) */
-
 // Blocks of main EvT materials
 static evt as IIngredient[][string] = {
   crystal: [
@@ -238,7 +228,7 @@ static evt as IIngredient[][string] = {
     <environmentaltech:solar_cell_ionite>,
     <environmentaltech:solar_cell_aethium>,
   ],
-} as IIngredient[][string];
+};
 
 // ######################################################################
 //

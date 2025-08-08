@@ -156,18 +156,18 @@ addChemthrowerEffect(<liquid:perfect_fuel> ,false, true, 'chemicals', 350);
       type:  "item_list",
     }))
 ) */
-addChemthrowerEffect(<liquid:cloud_seed_concentrated>, false, false, 'chemicals' , 2, [<potion:minecraft:levitation>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:vapor_of_levity>        , false, false, 'chemicals' , 9, [<potion:minecraft:levitation>.makePotionEffect(200, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:hydrofluoric_acid>      , false, false, 'chemicals',17, [<potion:minecraft:poison>.makePotionEffect(20, 3, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:blockfluiddirt>         , false, false, 'chemicals', 2, [<potion:immersiveengineering:sticky>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:mutagen>                , false, false, 'chemicals', 8, [<potion:biomesoplenty:curse>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:if.pink_slime>          , false, false, 'chemicals' , 2, [<potion:immersiveengineering:sticky>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:menrilresin>            , false, false, 'chemicals', 4, [<potion:immersiveengineering:sticky>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:liquidchorus>           , false, false, 'chemicals', 6, [<potion:cyclicmagic:potion.bounce>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:xpjuice>                , false, false, 'chemicals' , 1, [<potion:quark:white>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:lifeessence>            , false, false, 'chemicals' ,11, [<potion:potioncore:love>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:fire_water>             , false, false, 'chemicals',14, [<potion:potioncore:fire>.makePotionEffect(20, 3, false, true)] as IPotionEffect[]);
-addChemthrowerEffect(<liquid:ic2hot_water>           , false, false, 'chemicals' , 0, [<potion:minecraft:regeneration>.makePotionEffect(20, 5, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:cloud_seed_concentrated>, false, false, 'chemicals',  2, [<potion:minecraft:levitation>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:vapor_of_levity>        , false, false, 'chemicals',  9, [<potion:minecraft:levitation>.makePotionEffect(200, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:hydrofluoric_acid>      , false, false, 'chemicals', 17, [<potion:minecraft:poison>.makePotionEffect(20, 3, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:blockfluiddirt>         , false, false, 'chemicals',  2, [<potion:immersiveengineering:sticky>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:mutagen>                , false, false, 'chemicals',  8, [<potion:biomesoplenty:curse>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:if.pink_slime>          , false, false, 'chemicals',  2, [<potion:immersiveengineering:sticky>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:menrilresin>            , false, false, 'chemicals',  4, [<potion:immersiveengineering:sticky>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:liquidchorus>           , false, false, 'chemicals',  6, [<potion:cyclicmagic:potion.bounce>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:xpjuice>                , false, false, 'chemicals',  1, [<potion:quark:white>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:lifeessence>            , false, false, 'chemicals', 11, [<potion:potioncore:love>.makePotionEffect(20, 1, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:fire_water>             , false, false, 'chemicals', 14, [<potion:potioncore:fire>.makePotionEffect(20, 3, false, true)] as IPotionEffect[]);
+addChemthrowerEffect(<liquid:ic2hot_water>           , false, false, 'chemicals',  0, [<potion:minecraft:regeneration>.makePotionEffect(20, 5, false, true)] as IPotionEffect[]);
 
 // ----------------------------------------
 // 🍫 Chocolates
