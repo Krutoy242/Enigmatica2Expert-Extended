@@ -300,7 +300,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   <minecraft:beacon>, // Central Item
   Grid(['IPIPIPIP'], {
     'I': <thaumicaugmentation:material:5>, // Impetus jewel
-    'P': <tconevo:metal:20>, // Primordial grain
+    'P': <tconevo:metal:20>, // Primal metal
 }).spiral(1));
 
 // Remove unnecessary recipes
@@ -390,19 +390,12 @@ val clusterList = [
 for itemCluster in clusterList {
   for oreEntry in itemCluster.ores {
     if (oreEntry.name.matches("^cluster.*")) {
-      print("Debug: ore name: " ~ oreEntry.name);
 
       val oreOre = oreDict.get(oreEntry.name.replaceFirst("cluster", "ore"));
-      if (!oreOre.empty) {
-        mods.thaumicwonders.CatalyzationChamber.addAlchemistRecipe(oreOre.firstItem, itemCluster);
-        print("Adding recipe alchemist: " ~ oreOre.firstItem.name ~ " ---> " ~ oreEntry.firstItem.name);
-      }
+      if (!oreOre.empty) mods.thaumicwonders.CatalyzationChamber.addAlchemistRecipe(oreOre.firstItem, itemCluster);
 
       val oreShard = oreDict.get(oreEntry.name.replaceFirst("cluster", "crystalShard"));
-      if (!oreShard.empty) {
-        mods.thaumicwonders.CatalyzationChamber.addAlienistRecipe(itemCluster, oreShard.firstItem);
-        print("Adding recipe alchemist: " ~ oreShard.firstItem.name ~ " ---> " ~ oreEntry.firstItem.name);
-      }
+      if (!oreShard.empty) mods.thaumicwonders.CatalyzationChamber.addAlienistRecipe(itemCluster, oreShard.firstItem);
 
       break;
     }
