@@ -1,0 +1,54 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform": "forge:default-block",
+    "model": "torch_wall",
+    "textures": {
+      "torch": "mia:blocks/mia/torch_gold_0"
+    }
+  },
+  "variants": {
+    "normal": [{}],
+    "variant": {
+      "0": {
+        "textures": {
+          "bot_torch": "mia:blocks/mia/torch_gold_0",
+          "top_torch": "mia:blocks/mia/torch_gold_0",
+          "torch": "mia:blocks/mia/torch_gold_0"
+        }
+      },
+      "1": {
+        "textures": {
+          "bot_torch": "mia:blocks/mia/torch_gold_1",
+          "top_torch": "mia:blocks/mia/torch_gold_1",
+          "torch": "mia:blocks/mia/torch_gold_1"
+        }
+      }
+    },
+    "facing": {
+      "up": {
+        "model": "torch_2",
+        "variant": {
+          "0":{
+            "textures": {
+              "bot_torch": "mia:blocks/mia/torch_gold_0",
+              "top_torch": "mia:blocks/mia/torch_gold_0",
+              "torch": "mia:blocks/mia/torch_gold_0"
+            }
+          },
+          "1":{
+            "textures": {
+              "bot_torch": "mia:blocks/mia/torch_gold_1",
+              "top_torch": "mia:blocks/mia/torch_gold_1",
+              "torch": "mia:blocks/mia/torch_gold_1"
+            }
+          }
+        }
+      },
+      "east": {},
+      "south": { "y": 90},
+      "west": { "y": 180},
+      "north": { "y": 270}
+    }
+  }
+}
