@@ -190,8 +190,8 @@ zenClass MixinToolEvents {
             }
         }
 
-        var newDrops = [] as ItemStack[];
-        var replacementItem = heldItem; // idfk why but setting it to null was breaking the call to replacementItem.setCount
+        var newDrops as [ItemStack] = [] as [ItemStack];
+        var replacementItem as ItemStack = null;
         var foundReplacement = false;
 
         for is in event.drops {
