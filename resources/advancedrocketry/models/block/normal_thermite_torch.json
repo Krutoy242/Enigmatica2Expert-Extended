@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/torch_2",
+    "textures": {
+        "bot_torch": "advancedrocketry:blocks/thermitetorch",
+        "top_torch": "advancedrocketry:blocks/thermitetorch_glow"
+    }
+}
