@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "transform": "forge:default-item",
+        "model": "minecraft:torch_2",
+        "textures": {
+            "torch": "tconstruct:blocks/stone_torch",
+            "particle": "#torch",
+            "bot_torch": "tconstruct:blocks/stone_torch",
+            "top_torch": "tconstruct:blocks/stone_torch_glow"
+        }
+    },
+	"variants": {
+        "facing": {
+            "up": { "model": "minecraft:torch_2" },
+            "east": { "model": "minecraft:torch_wall_2" },
+            "south": { "model": "minecraft:torch_wall_2", "y": 90 },
+            "west": { "model": "minecraft:torch_wall_2", "y": 180 },
+            "north": { "model": "minecraft:torch_wall_2", "y": 270 }
+        }
+    }
+}
