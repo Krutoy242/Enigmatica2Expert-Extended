@@ -29,8 +29,8 @@
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "2ec31e25",
-		type: "random",
-		table: 142
+		uid: "c4ff0a33",
+		type: "item",
+		item: "thaumicwonders:ore_diviner"
 	}]
 }

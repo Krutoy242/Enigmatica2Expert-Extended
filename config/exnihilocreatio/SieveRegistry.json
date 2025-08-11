@@ -173,12 +173,12 @@
 
   "minecraft:sand:0": [
     {"meshLevel": 1, "drop": {"name":"mysticalagriculture:aquamarine_essence", "meta": 0}    , "chance": 0.3} ,
-    {"meshLevel": 1, "drop": {"name": "thaumicwonders:cinderpearl_seed"      , "meta": 0}    , "chance": 0.3} ,
+    {"meshLevel": 1, "drop": {"name": "thaumicwonders:cinderpearl_seed"      , "meta": 0}    , "chance": 0.1} ,
     {"meshLevel": 1, "drop": {"name": "exnihilocreatio:item_seed_cactus"     , "meta": 0}    , "chance": 0.1} ,
     {"meshLevel": 1, "drop": {"name": "biomesoplenty:plant_1"                , "meta": 6}    , "chance": 0.1} ,
 
     {"meshLevel": 2, "drop": {"name":"mysticalagriculture:aquamarine_essence", "meta": 0}    , "chance": 0.4} ,
-    {"meshLevel": 2, "drop": {"name": "thaumicwonders:cinderpearl_seed"      , "meta": 0}    , "chance": 0.4} ,
+    {"meshLevel": 2, "drop": {"name": "thaumicwonders:cinderpearl_seed"      , "meta": 0}    , "chance": 0.2} ,
     {"meshLevel": 2, "drop": {"name": "minecraft:dye"                        , "meta": 3}    , "chance": 0.1} ,
     {"meshLevel": 2, "drop": {"name": "minecraft:prismarine_shard"           , "meta": 0}    , "chance": 0.05} ,
     {"meshLevel": 2, "drop": {"name": "ic2:dust"                             , "meta": 1}    , "chance": 0.2} ,
@@ -259,15 +259,14 @@
     {"meshLevel": 1, "drop": {"name": "mysticalagriculture:apatite_essence"  , "meta": 0}    , "chance": 0.15} ,
     {"meshLevel": 1, "drop": {"name": "appliedenergistics2:crystal_seed"     , "meta": 0}    , "chance": 0.15 } ,
     {"meshLevel": 1, "drop": {"name": "appliedenergistics2:crystal_seed"     , "meta": 600 } , "chance": 0.5 } ,
-    {"meshLevel": 1, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 0.8} ,
+    {"meshLevel": 1, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 0.1} ,
     {"meshLevel": 1, "drop": {"name": "exnihilocreatio:item_ore_tin"         , "meta": 0}    , "chance": 0.05} ,
     
     {"meshLevel": 2, "drop": {"name": "mysticalagriculture:lapis_lazuli_essence","meta":0}   , "chance": 0.5} ,
     {"meshLevel": 2, "drop": {"name": "mysticalagriculture:apatite_essence"  , "meta": 0}    , "chance": 0.2} ,
     {"meshLevel": 2, "drop": {"name": "appliedenergistics2:crystal_seed"     , "meta": 0}    , "chance": 0.3 } ,
     {"meshLevel": 2, "drop": {"name": "appliedenergistics2:crystal_seed"     , "meta": 600 } , "chance": 0.8 } ,
-    {"meshLevel": 2, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 1.0} ,
-    {"meshLevel": 2, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 0.5} ,
+    {"meshLevel": 2, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 0.15} ,
     {"meshLevel": 2, "drop": {"name": "exnihilocreatio:item_ore_tin"         , "meta": 0}    , "chance": 0.15} ,
     {"meshLevel": 2, "drop": {"name": "exnihilocreatio:item_ore_aluminium"   , "meta": 0}    , "chance": 0.1} ,
 
@@ -275,9 +274,6 @@
     {"meshLevel": 3, "drop": {"name": "mysticalagriculture:apatite_essence"  , "meta": 0}    , "chance": 0.3} ,
     {"meshLevel": 3, "drop": {"name": "appliedenergistics2:crystal_seed"     , "meta": 0}    , "chance": 0.5 } ,
     {"meshLevel": 3, "drop": {"name": "appliedenergistics2:crystal_seed"     , "meta": 600 } , "chance": 1.0 } ,
-    {"meshLevel": 3, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 1.0} ,
-    {"meshLevel": 3, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 1.0} ,
-    {"meshLevel": 3, "drop": {"name": "thaumicwonders:shimmerleaf_seed"      , "meta": 0}    , "chance": 0.5} ,
     {"meshLevel": 3, "drop": {"name": "exnihilocreatio:item_ore_tin"         , "meta": 0}    , "chance": 0.2} ,
     {"meshLevel": 3, "drop": {"name": "exnihilocreatio:item_ore_aluminium"   , "meta": 0}    , "chance": 0.2} ,
     {"meshLevel": 3, "drop": {"name": "thermalfoundation:material"           , "meta": 772}  , "chance": 0.2} ,
@@ -454,7 +450,6 @@
   ],
 
   "thaumcraft:taint_soil": [
-    {"meshLevel": 2, "drop": {"name": "thaumicwonders:vishroom_spore", "meta": 0} , "chance": 1.0},
-    {"meshLevel": 2, "drop": {"name": "thaumicwonders:vishroom_spore", "meta": 0} , "chance": 0.5}
+    {"meshLevel": 2, "drop": {"name": "thaumicwonders:vishroom_spore", "meta": 0} , "chance": 0.25}
   ]
 }
