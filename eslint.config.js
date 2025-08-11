@@ -1,11 +1,14 @@
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
-  // typescript: { tsconfigPath: 'tsconfig.json' },
+  typescript: { tsconfigPath: 'tsconfig.json' },
   gitignore: false,
   rules    : {
     'no-console'                : 'off',
     'node/prefer-global/process': 'off',
+    'ts/no-floating-promises'   : 'error',
+    'ts/strict-boolean-expressions': 'off',
+    'ts/no-unsafe-assignment': 'off',
 
     // Override @antfu rules to my personal prefferences
     'style/key-spacing'            : ['error', { align: 'colon' }],

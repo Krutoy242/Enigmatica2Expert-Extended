@@ -16,3 +16,21 @@ top.level.12=§c终极精华 (12)§e
 top.level.13=§4觉醒龙 (13)§e
 top.level.14=§0混沌 (14)§e
 top.level.15=§0无尽 (15)§e
+
+// Duplicate for Tinker's Construct
+ui.mininglevel.stone=§8燧石
+ui.mininglevel.iron=§6铜
+ui.mininglevel.diamond=§f赛特斯石英
+ui.mininglevel.obsidian=§7铁
+ui.mininglevel.cobalt=§9铅
+ui.mininglevel.5=§3锇
+ui.mininglevel.6=§8黑曜石
+ui.mininglevel.7=§1钴
+ui.mininglevel.8=§5玛玉灵
+ui.mininglevel.9=§a锇荧黑耀合金
+ui.mininglevel.10=§b末影
+ui.mininglevel.11=§2泰拉钢
+ui.mininglevel.12=§c终极精华
+ui.mininglevel.13=§4觉醒龙
+ui.mininglevel.14=§0混沌
+ui.mininglevel.15=§0无尽

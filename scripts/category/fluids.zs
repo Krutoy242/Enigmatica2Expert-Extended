@@ -16,17 +16,17 @@ val chaliceGrid = {
   [<liquid:lifeessence>, <liquid:lava>]                                     : [<tconstruct:slime:3>, <thaumcraft:flesh_block>, <minecraft:nether_wart_block>],
   [<liquid:lifeessence>, <liquid:astralsorcery.liquidstarlight>]            : [<harvestcraft:honey>, <harvestcraft:honeycomb>, <biomesoplenty:honey_block>],
   [<liquid:lifeessence>, <liquid:cloud_seed_concentrated>]                  : [<thermalfoundation:rockwool:7>, <minecraft:wool>, <minecraft:wool:2>],
-  [<liquid:hot_mercury>, <liquid:water>]                                    : [<mekanism:saltblock>, <additionalcompression:dustsugar_compressed:1>, <additionalcompression:dustgunpowder_compressed>],
-  [<liquid:hot_mercury>, <liquid:lava>]                                     : [<minecraft:magma>, <additionalcompression:flint_compressed:1>, <additionalcompression:coal_compressed:2>],
-//[<liquid:hot_mercury>, <liquid:astralsorcery.liquidstarlight>]            : [<quark:sugar_block>, <biomesoplenty:white_sand>, <astralsorcery:blockmarble>], // For some reason, Starlight+Water=Sand triggered faster than custom interaction
-  [<liquid:hot_mercury>, <liquid:cloud_seed_concentrated>]                  : [<enderio:block_fused_quartz>, <mysticalagriculture:storage:5>, <biomesoplenty:crystal>],
-  [<liquid:hot_mercury>, <liquid:lifeessence>]                              : [<excompressum:compressed_block:6>, <minecraft:bone_block>, <iceandfire:dragon_bone_block>],
+  [<liquid:plasma>, <liquid:water>]                                         : [<mekanism:saltblock>, <additionalcompression:dustsugar_compressed:1>, <additionalcompression:dustgunpowder_compressed>],
+  [<liquid:plasma>, <liquid:lava>]                                          : [<minecraft:magma>, <additionalcompression:flint_compressed:1>, <additionalcompression:coal_compressed:2>],
+//[<liquid:plasma>, <liquid:astralsorcery.liquidstarlight>]                 : [<quark:sugar_block>, <biomesoplenty:white_sand>, <astralsorcery:blockmarble>], // For some reason, Starlight+Water=Sand triggered faster than custom interaction
+  [<liquid:plasma>, <liquid:cloud_seed_concentrated>]                       : [<enderio:block_fused_quartz>, <mysticalagriculture:storage:5>, <biomesoplenty:crystal>],
+  [<liquid:plasma>, <liquid:lifeessence>]                                   : [<excompressum:compressed_block:6>, <minecraft:bone_block>, <iceandfire:dragon_bone_block>],
   [<liquid:ic2uu_matter>, <liquid:water>]                                   : [<quark:crystal:0>, <quark:crystal:6>, <actuallyadditions:block_crystal:2>],
   [<liquid:ic2uu_matter>, <liquid:lava>]                                    : [<advancedrocketry:basalt>, <draconicevolution:infused_obsidian>, <draconicevolution:draconium_block>],
   [<liquid:ic2uu_matter>, <liquid:astralsorcery.liquidstarlight>]           : [<quark:marble>, <minecraft:quartz_block>, <thermalfoundation:storage:7>],
   [<liquid:ic2uu_matter>, <liquid:cloud_seed_concentrated>]                 : [<randomthings:superlubricentice>, <nuclearcraft:supercold_ice>, <enderio:block_alloy:6>],
   [<liquid:ic2uu_matter>, <liquid:lifeessence>]                             : [<additionalcompression:meatbeef_compressed>, <minecraft:nether_wart_block>, <tconevo:metal_block:5>],
-  [<liquid:ic2uu_matter>, <liquid:hot_mercury>]                             : [<enderio:block_infinity>, <minecraft:obsidian>, <tconevo:metal_block:7>],
+  [<liquid:ic2uu_matter>, <liquid:plasma>]                                  : [<enderio:block_infinity>, <minecraft:obsidian>, <tconevo:metal_block:7>],
 } as IItemStack[][ILiquidStack[]]$orderly;
 
 // ### Honorable mentions: ####
@@ -99,7 +99,7 @@ static smelteryFuels as string[][double[string]] = utils.graph([
   'k': ['ic2uu_matter', 'enrichedlava'],
   'l': [],
   'n': ['empoweredoil'],
-  'o': ['plasma', 'hot_mercury', 'perfect_fuel'],
+  'o': ['plasma', 'high_pressure_mercury', 'perfect_fuel'],
   'p': ['infinity_metal'],
 
   // Non-fuel Metals

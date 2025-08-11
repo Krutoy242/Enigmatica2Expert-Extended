@@ -4,6 +4,9 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import mods.nuclearcraft.ChanceItemIngredient;
 
+// Air available in skyblock
+mods.qmd.atmosphere_collector.addRecipe('', '3', <fluid:compressed_air> * 1000);
+
 // Recipes moved from Assembler (removed machine)
 mods.immersiveengineering.Blueprint.addRecipe('components', <qmd:potassium_iodine_tablet> * 4, [
   <ore:dustPotassium>, <ore:dustIodine>, <ore:listAllsugar> * 4, <ore:bioplastic>]);
@@ -209,7 +212,7 @@ scripts.process.saw(<ore:bouleSilicon>, <advancedrocketry:wafer>, 'except: shape
 <ore:siliconWafer>.add(<advancedrocketry:wafer>);
 
 // mods.qmd.nucleosynthesis_chamber.addRecipe(IIngredient inputFluid1, IIngredient inputFluid2, IIngredient inputParticle, IIngredient outputFluid1, IIngredient outputFluid2, {long maxEnergy}, {long heatRelased})
-mods.qmd.nucleosynthesis_chamber.addRecipe(<liquid:sky_stone> * 52, <liquid:enrichedlava> * 20, <particle:neutron> * 1000000, <liquid:neutronium> * 72, null, 1000000, 874000);
+mods.qmd.nucleosynthesis_chamber.addRecipe(<liquid:sky_stone> * 52, <liquid:enrichedlava> * 20, <particle:neutron> * 1000000, <liquid:neutronium> * 72, null, 1000000, 874000000);
 
 ////////////////////////////////////////
 //               Unify                //
@@ -268,6 +271,14 @@ mods.nuclearcraft.Crystallizer.addRecipe(<fluid:sodium_nitrate_solution> * 666, 
 
 mods.industrialforegoing.FluidDictionary.add("fluid_quicksilver", "mercury", 1);
 mods.industrialforegoing.FluidDictionary.add("mercury", "fluid_quicksilver", 1);
+
+// Mercury should be very heat-resistant
+mods.nuclearcraft.FissionHeating.removeRecipeWithOutput(<fluid:high_pressure_mercury> * 2);
+mods.nuclearcraft.Turbine.removeRecipeWithOutput(<liquid:exhaust_mercury> * 3);
+mods.nuclearcraft.Turbine.addRecipe(<fluid:high_pressure_mercury> * 2, <liquid:mercury>, 13925000, 3.0, 1.0);
+mods.qmd.nucleosynthesis_chamber_heater.removeRecipeWithInput(<fluid:mercury>);
+mods.qmd.nucleosynthesis_chamber_heater.removeRecipeWithInput(<fluid:hot_mercury>);
+mods.qmd.nucleosynthesis_chamber_heater.addRecipe(<fluid:mercury>, <fluid:high_pressure_mercury> * 2, 512000);
 
 // Below, taken from Multiblock-Madness
 // https://github.com/Filostorm/Multiblock-Madness/blob/19659008c64234f96d5607df3f9ca6df7adee778/scripts/Non%20Mod%20Scripts/unification.zs#L150-L301

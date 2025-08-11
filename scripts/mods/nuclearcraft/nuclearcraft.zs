@@ -518,13 +518,25 @@ mods.actuallyadditions.AtomicReconstructor.addRecipe(<nuclearcraft:gem:3>, <biom
 
 // Boron Nitride shortcut with AdvRock machines
 scripts.process.solution(null, [<fluid:nitrogen> * 800, <fluid:hydrogen> * 2400], [<fluid:ammonia> * 16000], null, 'only: ChemicalReactor', { energy: 120000, time: 80 });
-scripts.processUtils.avdRockXmlRecipe('Crystallizer', [<ore:dustBoron> * 5], [<fluid:ammonia> * 5000], [<nuclearcraft:gem:1> * 10], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .inputOre(<ore:dustBoron>, 5)
+  .inputLiquid(<fluid:ammonia> * 5000)
+  .outputItem(<nuclearcraft:gem:1> * 10)
+  .build();
 
 // Platings Laser Alternatives
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:dustCrystalBinder> * 32, <ore:ingotUranium238> * 32, <ore:ingotTough> * 16], null, [<nuclearcraft:part:3> * 8], null, { power: 160000, timeRequired: 20 });
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotUranium238> * 32, <ore:ingotTough> * 16], null, [<nuclearcraft:part:2> * 8], null, { power: 130000, timeRequired: 40 });
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotTough> * 16], null, [<nuclearcraft:part:1> * 8], null, { power: 100000, timeRequired: 60 });
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotGraphite> * 16], null, [<nuclearcraft:part> * 8], null, { power: 70000, timeRequired: 80 });
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:dustCrystalBinder>, 32).inputOre(<ore:ingotUranium238>, 32).inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:3> * 8).power(160000).timeRequired(20).build();
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotUranium238>, 32).inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:2> * 8).power(130000).timeRequired(40).build();
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:1> * 8).power(100000).timeRequired(60).build();
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotGraphite>, 16)
+  .outputItem(<nuclearcraft:part> * 8).power(70000).timeRequired(80).build();
 
 // ----------------------------------------
 // Ingot Former missing ingot recipes
@@ -1076,13 +1088,6 @@ for i, item in batteries {
       'S': pileIngrs['S'],
     });
 }
-
-// --------------------------------------------------------------
-// Remove Hazmat since radiation is disabled
-Purge(<nuclearcraft:helm_hazmat>);
-Purge(<nuclearcraft:chest_hazmat>);
-Purge(<nuclearcraft:legs_hazmat>);
-Purge(<nuclearcraft:boots_hazmat>);
 
 // Additional alloying recipes
 for inputs, output in {

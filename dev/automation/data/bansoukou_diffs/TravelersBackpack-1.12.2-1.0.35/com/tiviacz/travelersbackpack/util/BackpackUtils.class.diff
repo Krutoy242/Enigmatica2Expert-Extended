@@ -1,4 +1,20 @@
-@@ -81,14 +81,70 @@ public class BackpackUtils {
+@@ -7,7 +7,6 @@
+  *  com.tiviacz.travelersbackpack.handlers.ConfigHandler
+  *  com.tiviacz.travelersbackpack.init.ModBlocks
+  *  com.tiviacz.travelersbackpack.tileentity.TileEntityTravelersBackpack
+- *  com.tiviacz.travelersbackpack.util.BackpackUtils$1
+  *  com.tiviacz.travelersbackpack.util.Reference
+  *  net.minecraft.block.Block
+  *  net.minecraft.entity.Entity
+@@ -31,7 +30,6 @@ import com.tiviacz.travelersbackpack.capability.ITravelersBackpack;
+ import com.tiviacz.travelersbackpack.handlers.ConfigHandler;
+ import com.tiviacz.travelersbackpack.init.ModBlocks;
+ import com.tiviacz.travelersbackpack.tileentity.TileEntityTravelersBackpack;
+-import com.tiviacz.travelersbackpack.util.BackpackUtils;
+ import com.tiviacz.travelersbackpack.util.Reference;
+ import net.minecraft.block.Block;
+ import net.minecraft.entity.Entity;
+@@ -83,14 +81,70 @@ public class BackpackUtils {
          }
      }
  
@@ -77,3 +93,39 @@
          }
          return false;
      }
+@@ -103,28 +157,28 @@ public class BackpackUtils {
+         if ((block = ModBlocks.TRAVELERS_BACKPACK).func_176198_a(world, new BlockPos(x, y, z), facing)) {
+             BlockPos targetPos;
+             if (world.func_180495_p(new BlockPos(x, y, z)).func_185904_a().func_76220_a()) {
+-                switch (1.$SwitchMap$net$minecraft$util$EnumFacing[facing.ordinal()]) {
+-                    case 1: {
++                switch (facing) {
++                    case DOWN: {
+                         --y;
+                         break;
+                     }
+-                    case 2: {
++                    case UP: {
+                         ++y;
+                         break;
+                     }
+-                    case 3: {
++                    case NORTH: {
+                         --z;
+                         break;
+                     }
+-                    case 4: {
++                    case SOUTH: {
+                         ++z;
+                         break;
+                     }
+-                    case 5: {
++                    case WEST: {
+                         --x;
+                         break;
+                     }
+-                    case 6: {
++                    case EAST: {
+                         ++x;
+                     }
+                 }

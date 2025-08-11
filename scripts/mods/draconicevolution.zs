@@ -117,8 +117,8 @@ craft.remake(<draconicevolution:awakened_core>, ['pretty',
 mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .outputs(<draconicevolution:awakened_core>)
   .input(<draconicevolution:wyvern_core> * 2)
-  .input(<ore:gemTopaz> * 2)
-  .input(<ore:gearVibrant>)
+  .inputOre(<ore:gemTopaz>, 2)
+  .inputOre(<ore:gearVibrant>)
   .input(<fluid:glowstone> * 8000)
   .power(120000).timeRequired(10).build();
 
@@ -137,7 +137,7 @@ mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .outputs(<draconicevolution:chaotic_core>)
   .input(<draconicevolution:awakened_core> * 2)
   .input(<draconicevolution:chaos_shard>)
-  .input(<ore:blockEvilMetal> * 2)
+  .inputOre(<ore:blockEvilMetal>, 2)
   .input(<contenttweaker:terrestrial_artifact_block>)
   .input(<fluid:silicon> * 16000)
   .power(500000).timeRequired(20).build();
@@ -193,9 +193,15 @@ recipes.removeShaped(<draconicevolution:energy_crystal>);
 mods.bloodmagic.AlchemyTable.addRecipe(<draconicevolution:energy_crystal> * 4, [
   <astralsorcery:blocklens>, <thermalfoundation:material:136>, <ore:ingotPlutonium242All>, <threng:material> ?? <nuclearcraft:alloy:15>,
 ], 2000, 200, 2);
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [
-  <advancedrocketry:vacuumlaser>, <ore:ingotMithril>, <ore:ingotPlutonium242All>, <ore:ingotFluixSteel>,
-], null, [<draconicevolution:energy_crystal> * 4], null, { power: 8000000, timeRequired: 20 });
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .input(<advancedrocketry:vacuumlaser>)
+  .inputOre(<ore:ingotMithril>)
+  .inputOre(<ore:ingotPlutonium242All>)
+  .inputOre(<ore:ingotFluixSteel>)
+  .outputItem(<draconicevolution:energy_crystal> * 4)
+  .power(8000000)
+  .timeRequired(20)
+  .build();
 
 // [Dislocator] from [Chorus Glass][+2]
 craft.remake(<draconicevolution:dislocator>, ['pretty',

@@ -116,6 +116,33 @@ for ore_entry in oreDict {
 
     continue;
   }
+
+  // Small Plate Press
+  ore_name = getOreName(name, 'plate');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum' || ore_name == 'Concrete') continue;
+
+    val second = oreDict.get('block' ~ ore_name);
+    if (isNull(second) || second.empty) continue;
+
+    mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
+      .inputOre(second).outputItem(ore_entry.firstItem * 6).build();
+
+    continue;
+  }
+  
+  ore_name = getOreName(name, 'blockSheetmetal');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
+
+    val output = oreDict.get('stick' ~ ore_name);
+    if (isNull(output) || output.empty) continue;
+
+    mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
+      .inputOre(ore_entry).outputItem(output.firstItem * 3).build();
+
+    continue;
+  }
 }
 
 

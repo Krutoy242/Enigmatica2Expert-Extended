@@ -633,16 +633,14 @@ craft.remake(<actuallyadditions:block_misc:8>, ['pretty',
 });
 
 // [Basic Coil] from [Aluminum Ingot*2][+2]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',
-  [<ore:stickWood> * 36, <ore:ingotAluminium> * 24, <ore:ingotFakeIron> * 24], null,
-  [<actuallyadditions:item_misc:7> * 12], null, { power: 70000, timeRequired: 20 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .inputOre(<ore:stickWood>, 36).inputOre(<ore:ingotAluminium>, 24).inputOre(<ore:ingotFakeIron>, 24)
+  .outputItem(<actuallyadditions:item_misc:7> * 12).power(70000).timeRequired(20).build();
 
 // [Advanced Coil] from [Aluminum Ingot*2][+3]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',
-  [<forestry:oak_stick> * 60, <ore:ingotGold> * 12, <ore:ingotAluminium> * 24, <ore:ingotFakeIron> * 24], null,
-  [<actuallyadditions:item_misc:8> * 12], null, { power: 140000, timeRequired: 40 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .input(<forestry:oak_stick> * 60).inputOre(<ore:ingotGold>, 12).inputOre(<ore:ingotAluminium>, 24).inputOre(<ore:ingotFakeIron>, 24)
+  .outputItem(<actuallyadditions:item_misc:8> * 12).power(140000).timeRequired(40).build();
 
 // New dough mechanic
 recipes.remove(<actuallyadditions:item_misc:4>);

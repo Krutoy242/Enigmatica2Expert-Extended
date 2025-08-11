@@ -25,22 +25,22 @@ recipes.addShaped('ntp antideuterium coil', itemUtils.getItem('nuclearcraft:turb
 
 function addStabilizerRecipe(info as StabilizerInfo) {
   var material as IIngredient;
-  if (oreDict has ('ingot' ~ info.name)) {
-    material = oreDict.get('ingot' ~ info.name);
+  if (oreDict has `ingot${info.name}`) {
+    material = oreDict.get(`ingot${info.name}`);
   }
   else {
-    if (oreDict has ('dust' ~ info.name)) {
-      material = oreDict.get('dust' ~ info.name);
+    if (oreDict has `dust${info.name}`) {
+      material = oreDict.get(`dust${info.name}`);
     }
     else {
-      material = oreDict.get('gem' ~ info.name);
+      material = oreDict.get(`gem${info.name}`);
     }
   }
   if (info.name == 'Slimeball') {
     material = oreDict.get('slimeball');
   }
 
-  recipes.addShaped('ntp ' ~ info.name ~ ' coil', itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_' ~ (info.name).toLowerCase() ~ 'stabilizer') * 2,
+  recipes.addShaped(`ntp ${info.name} coil`, itemUtils.getItem(`nuclearcraft:turbine_dynamo_coil_${info.name.toLowerCase()}stabilizer`) * 2,
     [[material, material, material],
       [<ore:ingotHSLASteel>, <nuclearcraft:turbine_dynamo_coil_basestabilizer>, <ore:ingotHSLASteel>],
       [material, material, material]]);
@@ -51,8 +51,8 @@ for info in StabilizerInfoList {
 }
 
 function addLiquidRecipe(core as LiquidStabilizerInfo) {
-  val stab = itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_' ~ (core.name).toLowerCase() ~ 'stabilizer');
-  Infuser.addRecipe(<nuclearcraft:turbine_dynamo_coil_basestabilizer>, (core.inliquid) * 1296, stab * 2);
+  val stab = itemUtils.getItem(`nuclearcraft:turbine_dynamo_coil_${core.name.toLowerCase()}stabilizer`);
+  Infuser.addRecipe(<nuclearcraft:turbine_dynamo_coil_basestabilizer>, core.inliquid * 1296, stab * 2);
 }
 
 for core in LiquidStabilizerInfoList {

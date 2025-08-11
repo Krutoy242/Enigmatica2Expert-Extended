@@ -38,11 +38,6 @@ static blacklistedMaterials as string[] = [
   'infinity_metal',
 ];
 
-for matName in blacklistedMaterials {
-  val ticMat = Toolforge.getMaterialFromID(matName);
-  if (isNull(ticMat)) continue;
-}
-
 function normalizeDefaultList(list as int[string], field as string) as void {
   for matName, _ in list {
     if (blacklistedMaterials has matName) continue;

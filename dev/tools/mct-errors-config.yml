@@ -237,6 +237,9 @@ ignore:
   - WARN. .net.minecraft.network.datasync.EntityDataManager.. defineId called for. class .+ from class .+
   - WARN. .net.minecraft.client.multiplayer.ClientAdvancementManager.. Server informed client about progress for unknown advancement
   - WARN. .sonarcore.. 'WAILA' - unavailable or disabled in config
+  - WARN. .enderio.. Ender IO core recipe loading has been disabled in the configuration.
+  - WARN. .enderio.. This is valid, but do NOT report recipe errors to the Ender IO team!
+  - WARN. .CrashAssistantJarInJarHelper.. Failed to parse version from mcmod.info of .+
 
   # ##################
   # Reported issues #
@@ -249,33 +252,33 @@ ignore:
   # https://github.com/Invadermonky/MagicultureIntegrations/issues/6
   - WARN. .mixin.. Mixin mixins.magicultureintegrations.tconstruct.json:TileHeatingStructureMixin from mod .+ has multiple constructors
 
-  # ##################'
-  # E2E-E errors'
-  # ##################'
-  # Reported https://github.com/MKuckert/eye-of-dragons/issues/4'
+  # ##################
+  # E2E-E errors
+  # ##################
+  # Reported https://github.com/MKuckert/eye-of-dragons/issues/4
   - 'Coremod EyeOfDragonsPlugin: Unable to class load the plugin de.curlybracket.eyeofdragons.EyeOfDragonsPlugin'
 
-  # Some absent slabs. Dont know why they absent.'
+  # Some absent slabs. Dont know why they absent.
   - '\[net.blay09.mods.kleeslabs.KleeSlabs\]: Slab .* could not be found.'
 
-  # Reported: https://github.com/Janrupf/mod-director/issues/22'
+  # Reported: https://github.com/Janrupf/mod-director/issues/22
   - '\[main.WARN\] \[(ModDirector/ForgeLateLoader\[Launchwrapper\]|Foundation)\]: Failed to find deobf tweaker'
 
-  # Known, "It's just logging, you can ignore it." https://github.com/LoliKingdom/LoliASM/issues/51'
+  # Known, "It's just logging, you can ignore it." https://github.com/LoliKingdom/LoliASM/issues/51
   - WARN. .LoliASM.. Clearing (LoliVertexDataPool|LoliStringPool 1)
 
   # LoliASM dev say I need to ignore that
   - .main.WARN. .LoliASM.. Replacing CA Certs with an updated one...
 
-  # Wooden Crucible error (they disabled anyway)'
+  # Wooden Crucible error (they disabled anyway)
   - '\[excompressum\]: Duplicate entry for .* in WoodenCrucible. overwriting...'
 
-  # Unknown errors but probably no harm'
+  # Unknown errors but probably no harm
   - '\[main.WARN\] \[FML\]: Patcher expecting empty class data file for .+, but received non-empty'
   - '\[excompressum\]: Could not load remote skins for auto sieve:'
   - 'ERROR. \[Mekanism\]: Invalid BasicBlock. type: 1, meta: \d+'
 
-  # This error happen for every slot'
+  # This error happen for every slot
   - '\[MineMenu\]: Menu item in slot .* is '
 
   # OreDict can have wildcarded items in it => ThaumicWonders want to iterate them =>
@@ -283,7 +286,7 @@ ignore:
   # This may cause issue only if blockstates could represent totally different items
   - Wildcard meta detected for \S+ in void beacon registration; this can result in invalid result blocks
 
-  # Bansoukou normal work'
+  # Bansoukou normal work
   - '\[main.WARN\] \[Bansoukou\]: Marking .+'
   - '\[main.WARN\] \[Bansoukou\]: .+ was found in the mods folder. Copying to modify the copied cache.'
   - '\[main.WARN\] \[Bansoukou\]: Patching .+'

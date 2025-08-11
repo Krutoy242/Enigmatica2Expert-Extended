@@ -8,7 +8,7 @@ ZenUtils allow to use CT functions inside mixin classes by using this "bridge".
 
 */
 
-#loader mixin crafttweaker
+#loader mixin
 #priority 3000
 #reloadable
 

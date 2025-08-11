@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+  - cpu-features
+  - es5-ext
+  - node-pty
+  - ssh2

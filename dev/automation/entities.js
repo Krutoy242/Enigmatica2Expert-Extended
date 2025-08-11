@@ -7,10 +7,9 @@
 
 // @ts-check
 
-import { URL, fileURLToPath } from 'url' // @ts-expect-error
+import { URL, fileURLToPath } from 'url'
 
 import _ from 'lodash'
-import numeral from 'numeral'
 
 import { isBlock } from '../lib/tellme.js'
 import { defaultHelper, getCSV, loadText, saveText } from '../lib/utils.js'
@@ -19,11 +18,17 @@ function relative(relPath = './') {
   return fileURLToPath(new URL(relPath, import.meta.url))
 }
 
+const numberFormatter = new Intl.NumberFormat('en-US', {
+  minimumFractionDigits: 1,
+  maximumFractionDigits: 1,
+  useGrouping: false,
+})
+
 /**
  * @param {string|number} v
  */
 const nice = (v) => {
-  return numeral(Number(v)).format('0.0')
+  return numberFormatter.format(Number(v))
 }
 
 export async function init(h = defaultHelper) {

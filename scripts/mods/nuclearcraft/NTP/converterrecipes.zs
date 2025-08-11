@@ -43,11 +43,11 @@ function addConverterRecipe(info as ConverterInfo) as void {
   }
 
   if (isNull(material)) {
-    logger.logWarning('[NTP][Converter Recipes]: cannot find ingredient for "' ~ info.name ~ '".');
+    logger.logWarning(`[NTP][Converter Recipes]: cannot find ingredient for "${info.name}".`);
     return;
   }
 
-  recipes.addShaped('ntp ' ~ info.name ~ ' coil', itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_' ~ (info.name).toLowerCase() ~ 'converter') * 2,
+  recipes.addShaped(`ntp ${info.name} coil`, itemUtils.getItem(`nuclearcraft:turbine_dynamo_coil_${info.name.toLowerCase()}converter`) * 2,
     [[material, material, material],
       [<ore:ingotHSLASteel>, <nuclearcraft:turbine_dynamo_coil_baseconverter>, <ore:ingotHSLASteel>],
       [material, material, material]]);

@@ -7,6 +7,7 @@ import process from 'node:process'
 
 import boxen from 'boxen'
 import chalk from 'chalk'
+import { consola } from 'consola'
 import fast_glob from 'fast-glob'
 import fse from 'fs-extra'
 import logUpdate from 'log-update'
@@ -21,6 +22,10 @@ const { rmSync } = fse
 
 const { terminal: term } = terminal_kit
 
+export async function confirm(msg: string) {
+  return consola.prompt(msg, { type: 'confirm' })
+}
+
 /**
  * Globs with default options `dot: true, onlyFiles: false`
  */
@@ -28,10 +33,10 @@ export function globs(source: string | string[], options?: Options) {
   return fast_glob.sync(source, { dot: true, onlyFiles: false, ...options })
 }
 
-export function getIgnoredFiles(ignored: ignore.Ignore) {
+export function getIgnoredFiles(ignored: ignore.Ignore, options?: Options) {
   return globs(
     getIgnorePositives(ignored as PrivateIgnored),
-    { ignore: getIgnoreNegative(ignored as PrivateIgnored) }
+    { ignore: getIgnoreNegative(ignored as PrivateIgnored), ...options }
   )
 }
 
@@ -63,7 +68,6 @@ function getIgnoreNegative(ignored: PrivateIgnored) {
  */
 export function removeFiles(fileArg: readonly string[] | string) {
   const files = [fileArg].flat(2)
-  /** @type {string[]} */
   const removed: string[] = []
   files.forEach((file) => {
     try {
@@ -71,7 +75,7 @@ export function removeFiles(fileArg: readonly string[] | string) {
       removed.push(file)
     }
     catch (error) {
-      process.stdout.write(`\n${chalk.red(`Cannot remove: ${chalk.blue(file)}`)}\n`)
+      process.stdout.write(`\n${chalk.red(`Cannot remove: ${chalk.blue(file)}`)}\n\n${error}\n`)
     }
   })
   return `removed: ${removed.length}\n${removed.map(s => chalk.gray(relative(process.cwd(), s))).join('\n')

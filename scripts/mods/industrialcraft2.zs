@@ -351,13 +351,15 @@ craft.remake(<ic2:te:8>, ['pretty',
 });
 
 // [Solar Panel] batch crafting
-scripts.processUtils.avdRockXmlRecipeEx(
-  'PrecisionAssembler', [
-    <ore:plateIron> * 64,
-    <ore:gemLapis> * 48,
-    <ore:circuitBasic> * 16,
-    <ore:dustCoal> * 16,
-  ], null, [<ic2:te:8> * 16], null, { power: 120000, timeRequired: 100 });
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .inputOre(<ore:plateIron>, 64)
+  .inputOre(<ore:gemLapis>, 48)
+  .inputOre(<ore:circuitBasic>, 16)
+  .inputOre(<ore:dustCoal>, 16)
+  .outputItem(<ic2:te:8> * 16)
+  .power(120000)
+  .timeRequired(100)
+  .build();
 
 // Remove Recycler (replaced by other machines)
 recipes.remove(<ic2:te:48>);
@@ -457,14 +459,15 @@ mods.nuclearcraft.FuelReprocessor.addRecipe(<ore:depletedFuelIC2U>,
 );
 
 // Batch crafting recipe for reflector, skipping microcraftings
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler', [
-  <ore:plateCopper> * 64, // Copper Plate
-  <ore:dustTin> * 64,     // Pulverized Tin
-  <ore:dustCoal> * 64,    // Pulverized Coal
-  <ic2:crafting:4>,       // Iridium Reinforced Plate
-], null,
-[<ic2:iridium_reflector>], null, { power: 160000, timeRequired: 80 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .inputOre(<ore:plateCopper>, 64) // Copper Plate
+  .input(<ore:dustTin> * 64)     // Pulverized Tin
+  .input(<ore:dustCoal> * 64)    // Pulverized Coal
+  .input(<ic2:crafting:4>)       // Iridium Reinforced Plate
+  .outputItem(<ic2:iridium_reflector>)
+  .power(160000)
+  .timeRequired(80)
+  .build();
 
 // Milk Powder
 scripts.process.evaporate(<fluid:milk> * 250, <ic2:dust:33>, 'No exceptions');
@@ -673,7 +676,11 @@ recipes.addShapeless('firebox_ashes', <forestry:ash>, [<ic2:misc_resource>]);
 
 // Shortcut for AR
 // [Lapotron Crystal] from [Advanced Circuit][+1]
-scripts.processUtils.avdRockXmlRecipe('Crystallizer', [<ore:circuitAdvanced> * 4], [<fluid:lapis> * 10000], [<ic2:lapotron_crystal> * 4], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .inputOre(<ore:circuitAdvanced>, 4)
+  .inputLiquid(<fluid:lapis> * 10000)
+  .outputItem(<ic2:lapotron_crystal> * 4)
+  .build();
 
 // [Scaffold]*20 from [Stick][+1]
 craft.remake(<ic2:scaffold> * 20, ['pretty',

@@ -171,7 +171,6 @@ mods.qmd.target_chamber.addRecipe(
 
 // Crystals creation - just photoning Dilithium with different power
 for i in 0 .. 6 {
-  val energy = 5000000 * (i + 1);
   mods.qmd.target_chamber.addRecipe(
     <ore:gemDilithium>,
     null,
@@ -197,14 +196,15 @@ craft.remake(<libvulpes:coalgenerator>, [
 
 // [Advanced Machine Structure*4] from [Silicon Boule][+2]
 recipes.remove(<libvulpes:advstructuremachine>);
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',	[
-  <libvulpes:structuremachine> * 4, // Machine Structure
-  <ore:sheetTitanium> * 4,
-  <ore:gemDilithium> * 2,
-  <ore:bouleSilicon>,
-], null,
-[<libvulpes:advstructuremachine> * 4], null, { power: 60000, timeRequired: 80 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .input(<libvulpes:structuremachine> * 4)
+  .inputOre(<ore:sheetTitanium>, 4)
+  .inputOre(<ore:gemDilithium>, 2)
+  .inputOre(<ore:bouleSilicon>)
+  .outputItem(<libvulpes:advstructuremachine> * 4)
+  .power(60000)
+  .timeRequired(80)
+  .build();
 
 // Press recipe instead crafting table
 recipes.remove(<advancedrocketry:misc>);
@@ -217,6 +217,32 @@ scripts.process.alloy([<ore:ingotIridium>, <ore:ingotOsmium>], <ore:ingotOsmirid
 scripts.process.alloy([<ore:blockDiamond>, <ore:blockRedstone> * 5], <ore:blockCrystalFlux>.firstItem, 'only: AdvRockArc');
 scripts.process.alloy([<ore:ingotMagnesium> * 3, <ore:ingotBoron> * 6], <ore:ingotMagnesiumDiboride>.firstItem * 9, 'only: AdvRockArc');
 scripts.process.alloy([<ore:dustBorax>, <ore:itemSalt> * 4, <ore:plateCarbon>], <ore:ingotTitanium>.firstItem, 'only: AdvRockArc');
+
+val centrifugeBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('Centrifuge')
+  .builder().power(100000).timeRequired(20);
+
+centrifugeBuilder.copy()
+  .inputLiquid(<fluid:enrichedlava> * 100)
+  .outputs(<fluid:thaumium> * 60, <fluid:livingrock> * 50, <fluid:bound_metal> * 15, <fluid:mirion> * 4)
+  .build();
+centrifugeBuilder.copy()
+  .inputLiquid(<fluid:mirion> * 100)
+  .outputs(<fluid:manasteel>, <fluid:terrasteel>, <fluid:elementium>, <fluid:glass> * 6)
+  .build();
+centrifugeBuilder.copy()
+  .inputLiquid(<fluid:flux_goo> * 100)
+  .outputs(<thaumcraft:curio> * 4, <thaumcraft:curio:2> * 4, <thaumcraft:curio:4> * 4, <thaumcraft:curio:5> * 2)
+  .build();
+
+val latheBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('Lathe')
+  .builder().power(100000).timeRequired(10);
+
+latheBuilder.copy().inputOre(<ore:ingotCopper>).outputItem(<immersiveengineering:material:20> * 5).build();
+latheBuilder.copy().inputOre(<ore:ingotElectrum>).outputItem(<immersiveengineering:material:21> * 5).build();
+latheBuilder.copy().inputOre(<ore:ingotAluminium>).outputItem(<immersiveengineering:material:22> * 5).build();
+latheBuilder.copy().inputOre(<ore:ingotSteel>).outputItem(<immersiveengineering:material:23> * 5).build();
+latheBuilder.copy().input(<integrateddynamics:crystalized_menril_chunk>).outputItem(<integrateddynamics:cable> * 2).build();
+latheBuilder.copy().inputOre(<ore:crystalPureFluix>).outputItem(<appliedenergistics2:part:16> * 4).build();
 
 craft.remake(<libvulpes:motor>, ['pretty',
   '  ■',
@@ -548,25 +574,41 @@ craft.remake(<advancedrocketry:nuclearcore>, ['pretty',
 // Some Alts with advanced machines
 scripts.process.solution([<thermalfoundation:material:771> * 30], [<fluid:oxygen>       * 1500], [<fluid:sulfuric_acid> * 3000], null, 'only: ChemicalReactor', { energy: 140000, time: 15 });
 scripts.process.solution([<thermalfoundation:material:771> * 30], [<fluid:liquidoxygen> * 1500], [<fluid:sulfuric_acid> * 3000], null, 'only: ChemicalReactor', { energy: 140000, time: 15 });
-scripts.processUtils.avdRockXmlRecipe('Crystallizer', [<ore:dustFluorite> * 6], [<fluid:sulfuric_acid> * 6000], [<nuclearcraft:compound> * 6], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .inputOre(<ore:dustFluorite>, 6)
+  .inputLiquid(<fluid:sulfuric_acid> * 6000)
+  .outputItem(<nuclearcraft:compound> * 6)
+  .build();
 
 // Remove carbon (defined in ExNihilio configs)
 recipes.remove(<advancedrocketry:misc:1>);
 
 // Endorum
-scripts.processUtils.avdRockXmlRecipeEx('Crystallizer', [<extrautils2:enderlilly>], [<fluid:ice> * 1000], [<endreborn:item_raw_endorium> * 10]);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .input(<extrautils2:enderlilly>)
+  .inputLiquid(<fluid:ice> * 1000)
+  .outputItem(<endreborn:item_raw_endorium> * 10)
+  .build();
 
 // [Basic Circuit Plate] from [Graphite Ingot][+2]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [
-  <ore:plateGold>, <ore:ingotGraphite>, <ore:waferSilicon>,
-], null, [<advancedrocketry:itemcircuitplate>], null, { power: 100000, timeRequired: 20 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateGold>)
+  .inputOre(<ore:ingotGraphite>)
+  .inputOre(<ore:waferSilicon>)
+  .outputItem(<advancedrocketry:itemcircuitplate>)
+  .power(100000)
+  .timeRequired(20)
+  .build();
 
 // [Advanced Circuit Plate] from [Energetic Alloy Ingot][+2]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [
-  <ore:circuitUltimate>, <ore:ingotEnergeticAlloy>, <ore:waferSilicon>,
-], null, [<advancedrocketry:itemcircuitplate:1>], null, { power: 140000, timeRequired: 20 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:circuitUltimate>)
+  .inputOre(<ore:ingotEnergeticAlloy>)
+  .inputOre(<ore:waferSilicon>)
+  .outputItem(<advancedrocketry:itemcircuitplate:1>)
+  .power(140000)
+  .timeRequired(20)
+  .build();
 
 // [Station Light]*12 from [Glowstone][+1]
 craft.remake(<advancedrocketry:circlelight> * 12, ['pretty',

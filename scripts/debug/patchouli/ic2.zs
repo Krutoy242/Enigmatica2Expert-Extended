@@ -9,7 +9,7 @@ var lines = [
   '{',
   '  "name": "UU",',
   '  "icon": "ic2:misc_resource:3",',
-  '  "category": "Items",',
+  '  "category": "World",',
   '  "pages": [',
   '    {',
 ] as [string];

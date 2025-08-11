@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<recipe name="Item Hiding, InvPanel" required="true">
+    <!-- These items are shown when Ender IO Inventory Panel is installed. -->
+    <hiding>
+      <item name="enderio:item_material:64" show="true" /><!-- itemRemoteAwarenessUpgrade -->
+    </hiding>
+  </recipe>
+
+</enderio:recipes>

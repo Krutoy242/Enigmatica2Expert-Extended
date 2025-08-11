@@ -184,8 +184,8 @@ craft.remake(<enderio:item_basic_capacitor>, ['pretty',
 });
 mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .outputs(<enderio:item_basic_capacitor> * 64)
-  .input(<ore:stickTitaniumIridium> * 32)
-  .input(<ore:dustBedrock> * 32)
+  .inputOre(<ore:stickTitaniumIridium>, 32)
+  .inputOre(<ore:dustBedrock>, 32)
   .input(<thermalfoundation:material:515> * 32)
   .input(<threng:material> * 32)
   .power(320000).timeRequired(20).build();
@@ -821,16 +821,14 @@ recipes.remove(<enderio:item_material:67>);
 scripts.do.expire_in_block.set(<ore:itemPulsatingPowder>, { 'cyclicmagic:fire_dark': <enderio:item_material:67> });
 
 // [Conduit Binder]*24 from [Crushed End Stone]*2[+3]
-scripts.processUtils.avdRockXmlRecipe('Crystallizer', [
-  <ore:dust> * 20, // Dust
-  <ic2:dust:1> * 5, // Clay Dust
-  <nuclearcraft:gem_dust:11> * 5, // Crushed End Stone
-], [
-  <fluid:sand> * 5000,
-], [
-  <enderio:item_material:4> * 64,
-  <enderio:item_material:4> * 56,
-], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .inputOre(<ore:dust>, 20)
+  .input(<ic2:dust:1> * 5)
+  .input(<nuclearcraft:gem_dust:11> * 5)
+  .inputLiquid(<fluid:sand> * 5000)
+  .outputItem(<enderio:item_material:4> * 64)
+  .outputItem(<enderio:item_material:4> * 56)
+  .build();
 
 // Cheaper to let players use it earlier
 // [Totemic Capacitor] from [MV Capacitor][+2]

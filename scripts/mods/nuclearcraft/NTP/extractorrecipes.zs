@@ -38,27 +38,27 @@ function addExtractorRecipe(info as ExtractorInfo) {
   val oring as string[] = ['ingot', 'dust', 'gem', 'stone'];
   var material as IIngredient;
 
-  if (oreDict has ('ingot' ~ info.name)) {
-    material = oreDict.get('ingot' ~ info.name);
+  if (oreDict has `ingot${info.name}`) {
+    material = oreDict.get(`ingot${info.name}`);
   }
   else {
-    if (oreDict has ('dust' ~ info.name)) {
-      material = oreDict.get('dust' ~ info.name);
+    if (oreDict has `dust${info.name}`) {
+      material = oreDict.get(`dust${info.name}`);
     }
     else {
-      if (oreDict has ('gem' ~ info.name)) {
-        material = oreDict.get('gem' ~ info.name);
+      if (oreDict has `gem${info.name}`) {
+        material = oreDict.get(`gem${info.name}`);
       }
       else {
-        if (oreDict has ('stone' ~ info.name)) {
-          material = oreDict.get('stone' ~ info.name);
+        if (oreDict has `stone${info.name}`) {
+          material = oreDict.get(`stone${info.name}`);
         }
-        else { material = oreDict.get('block' ~ info.name); }
+        else { material = oreDict.get(`block${info.name}`); }
       }
     }
   }
 
-  recipes.addShaped('ntp ' ~ info.name ~ ' coil', itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_' ~ (info.name).toLowerCase() ~ 'extractor') * 2,
+  recipes.addShaped(`ntp ${info.name} coil`, itemUtils.getItem(`nuclearcraft:turbine_dynamo_coil_${info.name.toLowerCase()}extractor`) * 2,
     [[material, material, material],
       [<ore:ingotHSLASteel>, <nuclearcraft:turbine_dynamo_coil_baseextractor>, <ore:ingotHSLASteel>],
       [material, material, material]]);

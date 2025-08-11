@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<!-- These are used during development for new machines and by those few that don't have their
+       own keys yet. -->
+  <capacitor key="enderio:block_machine_base/legacy_intake" base="80" scaler="POWER" />
+  <capacitor key="enderio:block_machine_base/legacy_buffer" base="100000" scaler="POWER" />
+  <capacitor key="enderio:block_machine_base/legacy_use" base="20" scaler="POWER" />
+
+  <!-- Defines the base efficiency of all machines that don't have their own efficiency value -->
+  <capacitor key="enderio:block_machine_base/legacy_efficiency" base="1" scaler="FIXED" />
+
+  <!-- 
+  
+  Dark Steel Items - This includes all items that take energy upgrades in the anvil.
+  
+  Capacitor level is the level of the energy upgrade (from 1 for "Empowered" to 4 for "Empowered IV").
+  
+  "buffer" is the size of the energy buffer.
+  
+  "intake" is the maximum charge the item takes per tick.
+  
+  "use" limits the amount of energy that is used per operation. Please note that an operation that takes more
+  energy than this attribute permits will still succeed-if there is enough energy in the item for the whole
+  operation.
+  
+  "absorption" is the probability that incoming damage will use energy instead of damaging the item. 
+  
+   -->
+
+  <capacitor key="enderio:item_dark_steel_sword/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_sword/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_sword/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_sword/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_chestplate/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_chestplate/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_chestplate/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_chestplate/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_shield/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_shield/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_shield/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_shield/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_axe/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_axe/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_axe/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_axe/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_crook/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_crook/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_crook/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_crook/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_bow/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_bow/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_bow/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_bow/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_pickaxe/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_pickaxe/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_pickaxe/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_pickaxe/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_shears/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_shears/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_shears/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_shears/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_treetap/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_treetap/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_treetap/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_treetap/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_dark_steel_hand/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_hand/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_hand/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_dark_steel_hand/absorption" base="1" scaler="idx(1)0:0.5:0.6:0.7:0.85:0.95" />
+
+  <capacitor key="enderio:item_staff_of_levity/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_staff_of_levity/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_staff_of_levity/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+
+  <capacitor key="enderio:item_travel_staff/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_travel_staff/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+  <capacitor key="enderio:item_travel_staff/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:10:25" />
+
+  <!-- 
+  
+  Inventory Chargers
+  
+  For them the "use" is the amount it can charge other items with (per operation).
+  
+   -->
+
+  <capacitor key="enderio:item_inventory_charger_simple/energy_buffer" base="100000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger_simple/energy_intake" base="200" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger_simple/energy_use" base="50" scaler="idx(1)0:1:1.5:2.5:5" />
+
+  <capacitor key="enderio:item_inventory_charger_basic/energy_buffer" base="1000000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger_basic/energy_intake" base="1000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger_basic/energy_use" base="200" scaler="idx(1)0:1:1.5:2.5:5" />
+
+  <capacitor key="enderio:item_inventory_charger/energy_buffer" base="5000000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger/energy_intake" base="5000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger/energy_use" base="1000" scaler="idx(1)0:1:1.5:2.5:5" />
+
+  <capacitor key="enderio:item_inventory_charger_vibrant/energy_buffer" base="25000000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger_vibrant/energy_intake" base="25000" scaler="idx(1)0:1:1.5:2.5:5" />
+  <capacitor key="enderio:item_inventory_charger_vibrant/energy_use" base="5000" scaler="idx(1)0:1:1.5:2.5:5" />
+
+  <!-- 
+  
+  Head Drops
+  
+  These are chances for mobs to drop their head when killed. Please note that we only handle vanilla heads, our
+  own Enderman skull, and modded zombies that are coded using the vanilla head-drop system.
+  
+  All values in in "per thousand" (that's tenth of percents).
+  
+  "Dark Steel" here refers to all our "The Ender"s, regardless of the material they are of.
+  
+  Chances from Looting and Empowered are added together and then multiplied with the "fake player" value. We try
+  to not drop duplicate heads (unless you configure the chance to be above 100%, like has been done for the
+  beheading chance to mimic Tinkers), but heads are often spawned directly in the world instead of being added
+  to the loot list. We don't search for those heads. 
+  
+  So the cases are:
+  
+   * One value from (1) plus one from (5), multiplied with one from (6)
+   * One value from (2) plus one from (3), multiplied with one from (4), multiplied with one from (6)
+  
+   -->
+
+  <!--  1. Any sword that is not a dark steel sword. (Maps Looting level to drop chance.) -->
+  <!--  1.1 All other heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_vanilla_chance" base="50" scaler="idx(1)1:2:3:4:5:6" />
+  <!--  1.2 Wither Skeleton heads. (vanilla already drops those) -->
+  <capacitor key="enderio:item_dark_steel_sword/head_vanilla_chance_wither" base="0" scaler="idx(1)1:2:3:4:5:6" />
+  <!--  1.3 Enderman heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_vanilla_chance_enderman" base="50" scaler="idx(1)1:2:3:4:5:6" />
+
+  <!--  2. Any dark steel sword. (Maps Looting level to drop chance.) -->
+  <!--  2.1 All other heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_chance" base="50" scaler="idx(1)1:2:3:4:5:6" />
+  <!--  2.2 Wither Skeleton heads. (vanilla already drops those!) -->
+  <capacitor key="enderio:item_dark_steel_sword/head_chance_wither" base="10" scaler="idx(1)1:2:3:4:5:6" />
+  <!--  2.3 Enderman heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_chance_enderman" base="50" scaler="idx(1)1:2:3:4:5:6" />
+
+  <!--  3. Any dark steel sword. (Maps Empowered level to drop chance.) -->
+  <!--  3.1 All other heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_empowered_chance" base="20" scaler="idx(1)1:2:3:4:5:6" />
+  <!--  3.2 Wither Skeleton heads. (vanilla already drops those!) -->
+  <capacitor key="enderio:item_dark_steel_sword/head_empowered_chance_wither" base="5" scaler="idx(1)1:2:3:4:5:6" />
+  <!--  3.3 Enderman heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_empowered_chance_enderman" base="30" scaler="idx(1)1:2:3:4:5:6" />
+
+  <!--  4. Any dark steel sword. (Maps Dark Steel Tier level to drop chance.) -->
+  <!-- Tiers: Dark Steel = 1, End Steel = 2, Stellar = 4 -->
+  <!--  4.1 All heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_tier_chance" base="1" scaler="idx(1)0:1:1.1:1.2:1.3:1.4" />
+
+  <!--  5. Tinkers Cleaver on Endermen. -->
+  <!--  5.1 Maps Tinkers Beheading level to drop chance. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_beheading_chance_enderman" base="750" scaler="idx(1)0:1:2:3:4:5" />
+
+  <!--  6. Any fake player using the weapon. This is multiplied with the chance. (0 = player, 1 = fake player) -->
+  <!--  6.1 All other heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_fakeplayer_chance" base="1" scaler="idx(1)1:0.5" />
+  <!--  6.2 Wither Skeleton heads. (vanilla already drops those!) -->
+  <capacitor key="enderio:item_dark_steel_sword/head_fakeplayer_chance_wither" base="1" scaler="idx(1)1:0.5" />
+  <!--  6.3 Enderman heads. -->
+  <capacitor key="enderio:item_dark_steel_sword/head_fakeplayer_chance_enderman" base="1" scaler="idx(1)1:0.5" />
+
+
+
+
+
+
+</enderio:recipes>

@@ -4,7 +4,7 @@ Tools to communicate between any #loader and #reloadable state
 
 */
 
-#loader contenttweaker crafttweaker
+#loader contenttweaker
 #modloaded crafttweakerutils zenutils
 #priority 10000
 #reloadable

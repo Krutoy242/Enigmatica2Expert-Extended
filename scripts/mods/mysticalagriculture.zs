@@ -567,12 +567,13 @@ scripts.process.solution(
 );
 
 // [Base Essence Ingot] from [Stardust][+3]
-scripts.processUtils.avdRockXmlRecipe('ElectricArcFurnace', [
-  <ore:ingotBrass> * 4,  // Alchemical Brass Ingot
-  <ore:shardProsperity> * 2,
-  <ore:nuggetManasteel> * 2,
-  <ore:dustAstralStarmetal> * 2,  // Stardust
-], null, [<mysticalagriculture:crafting:32> * 40], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('ElectricArcFurnace').builder()
+  .inputOre(<ore:ingotBrass>, 4)
+  .inputOre(<ore:shardProsperity>, 2)
+  .inputOre(<ore:nuggetManasteel>, 2)
+  .inputOre(<ore:dustAstralStarmetal>, 2)
+  .outputItem(<mysticalagriculture:crafting:32> * 40)
+  .build();
 
 // [Base Crafting Seed] Harder to encourage Villager Trades
 craft.remake(<mysticalagriculture:crafting:16>, ['pretty',

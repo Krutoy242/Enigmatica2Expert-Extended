@@ -76,3 +76,9 @@ MetalPress.addRecipe(<ic2:casing:3> * 2, <ore:plateIron>, <immersiveengineering:
 MetalPress.addRecipe(<ic2:casing:4> * 2, <ore:plateLead>, <immersiveengineering:mold>, 125, 1);
 MetalPress.addRecipe(<ic2:casing:5> * 2, <ore:plateSteel>, <immersiveengineering:mold>, 125, 1);
 MetalPress.addRecipe(<ic2:casing:6> * 2, <ore:plateTin>, <immersiveengineering:mold>, 125, 1);
+
+// Sticks and Plates from Small Plate Press
+val smallPlatePressBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder();
+smallPlatePressBuilder.copy().inputOre(<ore:cobblestone>).outputItem(<ore:stickStone>.firstItem * 6).build();
+smallPlatePressBuilder.copy().input(<mekanism:plasticblock:15>).outputItem(<mekanism:polyethene:3> * 6).build();
+smallPlatePressBuilder.copy().input(<quark:obsidian_pressure_plate>).outputItem(<ic2:plate:6> * 2).build();

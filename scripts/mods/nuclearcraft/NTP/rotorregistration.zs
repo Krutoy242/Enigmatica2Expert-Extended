@@ -2,11 +2,11 @@
 #modloaded nuclearcraft
 
 import scripts.mods.nuclearcraft.NTP.rotorclasses.BladeInfo;
-import scripts.mods.nuclearcraft.NTP.rotorclasses.StatorInfo;
 import scripts.mods.nuclearcraft.NTP.rotorclasses.qmdBladeInfo;
+import scripts.mods.nuclearcraft.NTP.rotorclasses.StatorInfo;
 import scripts.mods.nuclearcraft.NTP.rotorlist.BladeInfoList;
-import scripts.mods.nuclearcraft.NTP.rotorlist.StatorInfoList;
 import scripts.mods.nuclearcraft.NTP.rotorlist.qmdBladeInfoList;
+import scripts.mods.nuclearcraft.NTP.rotorlist.StatorInfoList;
 
 function registerStator(info as StatorInfo) {
 val naming = info.name;

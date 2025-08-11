@@ -16,3 +16,21 @@ top.level.12=§cСупремиум (12)§e
 top.level.13=§4Пробужденный Драконий (13)§e
 top.level.14=§0Хаотик (14)§e
 top.level.15=§0Инфинити (15)§e
+
+// Duplicate for Tinker's Construct
+ui.mininglevel.stone=§8Кремень
+ui.mininglevel.iron=§6Медь
+ui.mininglevel.diamond=§fЦертус
+ui.mininglevel.obsidian=§7Железо
+ui.mininglevel.cobalt=§9Свинец
+ui.mininglevel.5=§3Осмий
+ui.mininglevel.6=§8Обсидиан
+ui.mininglevel.7=§1Кобальт
+ui.mininglevel.8=§5Манюллин
+ui.mininglevel.9=§aОслоглас
+ui.mininglevel.10=§bЭндерий
+ui.mininglevel.11=§2Террасталь
+ui.mininglevel.12=§cСупремиум
+ui.mininglevel.13=§4Пробужденный Драконий
+ui.mininglevel.14=§0Хаотик
+ui.mininglevel.15=§0Инфинити

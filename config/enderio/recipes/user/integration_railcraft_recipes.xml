@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<!-- Railcraft ores are to "poor" to have bonus outputs" -->
+
+  <recipe name="Sagmill: Poor Iron Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorIron" />
+      <output name="dustTinyIron" amount="5" />
+      <output name="dustTinyIron" amount="1" chance="0.25" />
+      <output name="dustTinyIron" amount="2" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Poor Gold Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorGold" />
+      <output name="dustTinyGold" amount="5" />
+      <output name="dustTinyGold" amount="1" chance="0.25" />
+      <output name="dustTinyGold" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+
+  <recipe name="Sagmill: Poor Copper Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorCopper" />
+      <output name="dustTinyCopper" amount="5" />
+      <output name="dustTinyCopper" amount="1" chance="0.25" />
+      <output name="dustTinyCopper" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Poor Tin Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorTin" />
+      <output name="dustTinyTin" amount="5" />
+      <output name="dustTinyTin" amount="1" chance="0.25" />
+      <output name="dustTinyTin" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Poor Lead Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorLead" />
+      <output name="dustTinyLead" amount="5" />
+      <output name="dustTinyLead" amount="1" chance="0.25" />
+      <output name="dustTinyLead" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Poor Silver Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorSilver" />
+      <output name="dustTinySilver" amount="5" />
+      <output name="dustTinySilver" amount="1" chance="0.25" />
+      <output name="dustTinySilver" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Poor Nickel Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorNickel" />
+      <output name="dustTinyNickel" amount="5" />
+      <output name="dustTinyNickel" amount="1" chance="0.25" />
+      <output name="dustTinyNickel" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Poor Zinc Ore" required="false">
+    <sagmilling energy="1750">
+      <input name="orePoorZinc" />
+      <output name="dustTinyZinc" amount="5" />
+      <output name="dustTinyZinc" amount="1" chance="0.25" />
+      <output name="dustTinyZinc" amount="1" chance="0.15" />
+      <output name="oredict:cobblestone" chance="0.75" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Railcraft Saltpeter" required="false">
+    <sagmilling energy="1750">
+      <input name="railcraft:ore:1" />
+      <output name="dustSaltpeter" amount="4" />
+      <output name="sand" chance="0.15" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Dark Diamond Ore" required="false">
+    <sagmilling energy="5000">
+      <input name="railcraft:ore:2" />
+      <output name="gemDiamond" amount="2" />
+      <output name="gemDiamond" chance="0.25" />
+      <output name="dustCoal" chance="0.05" />
+      <output name="railcraft:brick_abyssal:5" chance="0.15" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Dark Emerald Ore" required="false">
+    <sagmilling energy="5000">
+      <input name="railcraft:ore:3" />
+      <output name="gemEmerald" amount="2" />
+      <output name="gemEmerald" chance="0.25" />
+      <output name="railcraft:brick_abyssal:5" chance="0.15" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Dark Lapis Ore" required="false">
+    <sagmilling energy="5000">
+      <input name="railcraft:ore:4" />
+      <output name="minecraft:dye:4" amount="8" />
+      <output name="minecraft:dye:4" chance="0.2" />
+      <output name="railcraft:brick_abyssal:5" chance="0.15" />
+    </sagmilling>
+  </recipe>
+  
+  <recipe name="Sagmill: Railcraft Magic Ore" required="false">
+    <sagmilling energy="5000" bonus="none">
+      <input name="railcraft:ore_magic" />
+      <output name="railcraft:firestone_raw" amount="1" />
+      <output name="netherrack" amount="1" chance="0.15" />
+    </sagmilling>
+  </recipe>
+  
+</enderio:recipes>

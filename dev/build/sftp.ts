@@ -1,31 +1,31 @@
-import { join, parse } from 'node:path'
+/* eslint-disable antfu/no-top-level-await */
 import process from 'node:process'
 
-import fse from 'fs-extra'
-import git_describe from 'git-describe'
+import { consola } from 'consola'
+import logUpdate from 'log-update'
+import { join, parse } from 'pathe'
 import { replaceInFileSync } from 'replace-in-file'
 import Client from 'ssh2-sftp-client'
+import { $, fs, glob } from 'zx'
 
-import {
-  end,
-  loadJson,
-} from '../lib/utils.js'
-import { getBoxForLabel, globs, pressEnterOrEsc, style } from './build_utils'
+import { confirm, getBoxForLabel, style } from './build_utils'
 
-const { readFileSync, writeFileSync } = fse
+const { readFileSync, writeFileSync, unlinkSync, existsSync} = fs
 
-const { gitDescribeSync } = git_describe
 export async function manageSFTP(serverSetupConfig: string = 'server/server-setup-config.yaml') {
-  const sftpConfigs = globs('secrets/sftp_servers/*/sftp.json').map((filename) => {
+  const sftpList = await glob('~secrets/sftp_servers/*/sftp.json')
+  if (!sftpList.length) consola.warn('No SFTP servers found')
+
+  const sftpConfigs = sftpList.map((filename) => {
     const dir = parse(filename).dir
     return {
       dir,
       label : dir.split('/').pop(),
-      config: loadJson(filename) as { [key: string]: string },
+      config: JSON.parse(readFileSync(filename, 'utf8')) as { [key: string]: string },
     }
   })
 
-  const currentVersion = gitDescribeSync().tag
+  const currentVersion = await $`git describe --tags --abbrev=0`.text()
 
   const serverConfigTmp = '~tmp-server-setup-config.yaml'
   const confText = readFileSync(serverSetupConfig, 'utf8')
@@ -44,26 +44,47 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
   writeFileSync(serverConfigTmp, confText)
 
   for (const conf of sftpConfigs) {
-    if (!await pressEnterOrEsc(
-      `To upload SFTP ${style.string(conf.label)} press ENTER. Press ESC to skip.`
-    )) {
-      continue
-    }
+    if (!await confirm(`Upload SFTP ${style.string(conf.label)}?`)) continue
 
     const sftp = new Client()
-    const updateBox = getBoxForLabel(conf.label)
+    const updateBox = getBoxForLabel(conf.label || '')
 
     updateBox('Establishing connection')
     try {
       await sftp.connect(conf.config)
     }
     catch (error) {
-      end(`Cant connect to SFTP: ${error}`)
+      logUpdate.done()
+      consola.error(`Cant connect to SFTP: ${error}`)
       continue
     }
 
-    updateBox(`Copy ${serverConfigTmp}`)
-    await sftp.fastPut(serverConfigTmp, 'server-setup-config.yaml')
+    if (conf.config.offline) {
+      const offlineConfigTmp = `~${serverConfigTmp}`
+      const zipRgx = `https:\/\/github.com\/Krutoy242\/Enigmatica2Expert-Extended\/releases\/download\/[^/]+\/`
+      const zipName = confText.match(new RegExp(`${zipRgx}(.+)`))?.[1]
+      const zipPath = join('dist', zipName || '')
+      if (!zipName || !existsSync(zipPath)) {
+        logUpdate.done()
+        consola.warn('Cannot find modpack zip path:', zipPath)
+      }
+      else {
+        writeFileSync(offlineConfigTmp, confText.replace(
+          new RegExp(zipRgx),
+          'file://'
+        ))
+        updateBox(`[Upload Offline mode]`, `\n${offlineConfigTmp}\n${zipPath}`)
+        await Promise.all([
+          sftp.fastPut(offlineConfigTmp, 'server-setup-config.yaml'),
+          sftp.fastPut(zipPath, zipName),
+        ])
+        unlinkSync(offlineConfigTmp)
+      }
+    }
+    else {
+      updateBox(`Copy ${serverConfigTmp}`)
+      await sftp.fastPut(serverConfigTmp, 'server-setup-config.yaml')
+    }
 
     updateBox('Change and copy server overrides')
     const title = `+ Server Started! +`
@@ -88,6 +109,8 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
 
     await sftp.end()
   }
+
+  unlinkSync(serverConfigTmp)
 }
 
 // Launch file

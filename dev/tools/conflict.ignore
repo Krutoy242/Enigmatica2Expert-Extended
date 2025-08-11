@@ -1,0 +1,14 @@
+.* <minecraft:slime:0> \* 1 conflicts with .*
+\[cathedral:roof_block_.*\].* conflicts with .*\[cathedral:roof_block_.*\]
+\[crafttweaker:fish_singularity\].* conflicts with .*\[crafttweaker:meat_singularity\]
+\[quark:stone_marble_bricks_wall\].* conflicts with
+\[storagedrawers:basicdrawers_.*\].* conflicts with .*\[crafttweaker:.*drawer.*\]
+\[storagedrawers:trim_.*\].* conflicts with .*\[crafttweaker:trim.*\]
+\[tconstruct:common/metals/alumite/alumite_block\].* conflicts with .*\[plustic:metals/alumite_block\]
+\[tconstruct:common/metals/alumite/alumite_ingot_nugget\].* conflicts with .*\[plustic:metals/alumite_ingot_nugget\]
+\[tconstruct:common/metals/alumite/alumite_ingot\].* conflicts with .*\[plustic:metals/alumite_ingot\]
+\[tconstruct:common/metals/alumite/alumite_nugget\].* conflicts with .*\[plustic:metals/alumite_nugget\]
+conflicts with .*\[crafttweaker:boat\]
+conflicts with .*\[crafttweaker:oredicted_slab\]
+conflicts with .*\[enderio:compatibility_glass_pane\]
+conflicts with .*\[quark:trapdoor\]

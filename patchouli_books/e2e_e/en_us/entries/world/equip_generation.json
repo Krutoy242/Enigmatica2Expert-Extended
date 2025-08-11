@@ -18,7 +18,7 @@
     {
       "item": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie_pigman\"}",
       "title": "Equip Generation",
-      "text": "Mobs will never spawn with this TCon materials:$(br)$(li)Paper$(br)$(li)Chocolate$(br)$(li)Superium$(br)$(li)Supremium$(br)$(li)Spectre$(br)$(li)Draconic$(br)$(li)Neutronium$(br)$(li)Aethium$(br)$(li)Chaotic$(br)$(li)Infinity",
+      "text": "Mobs will never spawn with this TCon materials:$(br)$(li)paper$(br)$(li)chocolate$(br)$(li)ma.superium$(br)$(li)ma.supremium$(br)$(li)spectre$(br)$(li)draconic_metal$(br)$(li)neutronium$(br)$(li)aethium$(br)$(li)chaotic_metal$(br)$(li)infinity_metal",
       "type": "spotlight"
     },
     {

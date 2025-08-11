@@ -28,19 +28,19 @@ Infuser.addRecipe(<nuclearcraft:turbine_dynamo_coil_basemagnet>, <liquid:nak> * 
 
 function addMagnetRecipe(info as MagnetInfo) {
   var material as IIngredient;
-  if (oreDict has ('ingot' ~ info.name)) {
-    material = oreDict.get('ingot' ~ info.name);
+  if (oreDict has `ingot${info.name}`) {
+    material = oreDict.get(`ingot${info.name}`);
   }
   else {
-    if (oreDict has ('dust' ~ info.name)) {
-      material = oreDict.get('dust' ~ info.name);
+    if (oreDict has `dust${info.name}`) {
+      material = oreDict.get(`dust${info.name}`);
     }
     else {
-      material = oreDict.get('gem' ~ info.name);
+      material = oreDict.get(`gem${info.name}`);
     }
   }
 
-  recipes.addShaped('ntp ' ~ info.name ~ ' coil', itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_' ~ (info.name).toLowerCase() ~ 'magnet') * 2,
+  recipes.addShaped(`ntp ${info.name} coil`, itemUtils.getItem(`nuclearcraft:turbine_dynamo_coil_${info.name.toLowerCase()}magnet`) * 2,
     [[material, material, material],
       [<ore:ingotHSLASteel>, <nuclearcraft:turbine_dynamo_coil_basemagnet>, <ore:ingotHSLASteel>],
       [material, material, material]]);

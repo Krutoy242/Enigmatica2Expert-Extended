@@ -240,6 +240,6 @@ registerReservoirWithDrainChance('High Pressure Steam Reservoir (Kepler 0118)', 
 /*
 		oxedised feric sand
 */
-registerReservoir('Destabilized Redstone Reservoir (Kepler 0119)', <liquid:redstone>   , 2000000   , 4500000, 50 , 2000 , 30, I , [], [123], [], []);
-registerReservoir('Hot Mercury Reservoir (Kepler 0119)'          , <liquid:hot_mercury>, 2000000   , 4500000, 50 , 2000 , 30, II, [], [123], [], []);
-registerGasReservoir('Oxygen Reservoir (Kepler 0119)'            , <gas:oxygen>        , 1228800000, maxInt , 256, 41024, 30, II, [], [123], [], []);
+registerReservoir('Destabilized Redstone Reservoir (Kepler 0119)', <liquid:redstone>             , 2000000   , 4500000, 50 , 2000 , 30, I , [], [123], [], []);
+registerReservoir('Hot Mercury Reservoir (Kepler 0119)'          , <liquid:high_pressure_mercury>, 2000000   , 4500000, 50 , 2000 , 30, II, [], [123], [], []);
+registerGasReservoir('Oxygen Reservoir (Kepler 0119)'            , <gas:oxygen>                  , 1228800000, maxInt , 256, 41024, 30, II, [], [123], [], []);

@@ -1,8 +1,9 @@
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
+[main/WARN] [mixin]: Error loading class: de/keksuccino/fancymenu/mainwindow/MainWindowHandler (java.lang.NullPointerException: Cannot read the array length because "classFile" is null)
+[main/WARN] [mixin]: @Mixin target de.keksuccino.fancymenu.mainwindow.MainWindowHandler was not found mixins/mixins.emt.fancymenu.json:MainWindowHandlerMixin from mod unknown-owner
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
-	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58) ~[EventListenerFactory.class:?]
-	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21) ~[EventListenerFactory.class:?]
-	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52) ~[ASMEventHandler.class:?]
-  [...]
-[Client thread/WARN] [forestry]: Failed to find item for (floralchemy:crystalthorn_diamond) in the Forge registry.
+	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)
+	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52)
+  [...]

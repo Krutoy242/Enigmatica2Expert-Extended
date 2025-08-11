@@ -51,12 +51,12 @@ globSync('config/bloodmagic/meteors/*.json')
   ]
 }).sort((a, b) => b[2] - a[2])
 ) */
-addMeteor(<jaopca:block_blockdilithium:0> , 1000000, [<ore:sandOxidisedFerric> * 182, <ore:oreEndDilithium> * 91, <ore:oreClathrateEnder> * 36]);
-addMeteor(<tconstruct:metal:1>            , 850000 , [<ore:oreCobalt> * 62, <ore:oreArdite> * 62, <ore:oreQuartz> * 55, <ore:oreNetherCoal> * 48, <ore:oreNetherRedstone> * 40, <ore:oreNetherLapis> * 37, <ore:oreNetherIron> * 33, <ore:oreNetherGold> * 29, <ore:oreNetherTin> * 25, <ore:oreNetherAluminum> * 22, <ore:oreNetherCopper> * 22, <ore:oreNetherLead> * 22, <ore:oreNetherDiamond> * 22, <ore:oreNetherNickel> * 18, <ore:oreNetherSilver> * 18, <ore:oreNetherCertusQuartz> * 18, <ore:oreNetherChargedCertusQuartz> * 14, <ore:oreNetherPlatinum> * 11, <ore:oreNetherOsmium> * 11, <ore:oreNetherUranium> * 11]);
-addMeteor(<minecraft:emerald_block:0>     , 700000 , [<ore:oreAmber> * 27, <ore:oreDiamond> * 22, <ore:oreLapis> * 20, <ore:oreCertusQuartz> * 20, <ore:oreCinnabar> * 15, <ore:oreCoal> * 3, <ore:oreRuby> * 3, <ore:orePeridot> * 3, <ore:oreTopaz> * 3, <ore:oreTanzanite> * 3, <ore:oreMalachite> * 3, <ore:oreSapphire> * 3, <ore:oreApatite> * 3, <ore:oreQuartzBlack> * 3]);
-addMeteor(<immersiveengineering:storage:5>, 550000 , [<ore:oreBoron> * 108, <ore:oreThorium> * 93, <ore:oreLithium> * 62, <ore:oreMagnesium> * 46]);
-addMeteor(<thermalfoundation:storage:7>   , 500000 , [<ore:mica> * 196, <ore:oreIridium> * 130, <ore:orePlatinum> * 91, <ore:oreMithril> * 65, <ore:oreRutile> * 45, <ore:oreAstralStarmetal> * 32, <ore:oreDraconium> * 26]);
 addMeteor(<minecraft:iron_block:0>        , 300000 , [<ore:oreIron> * 529, <ore:oreCopper> * 264, <ore:oreTin> * 185, <ore:oreRedstone> * 132, <ore:oreAluminum> * 132, <ore:oreLead> * 105, <ore:oreSilver> * 92, <ore:oreLapis> * 79, <ore:oreGold> * 39]);
+addMeteor(<thermalfoundation:storage:7>   , 500000 , [<ore:mica> * 196, <ore:oreIridium> * 130, <ore:orePlatinum> * 91, <ore:oreMithril> * 65, <ore:oreRutile> * 45, <ore:oreAstralStarmetal> * 32, <ore:oreDraconium> * 26]);
+addMeteor(<immersiveengineering:storage:5>, 550000 , [<ore:oreBoron> * 108, <ore:oreThorium> * 93, <ore:oreLithium> * 62, <ore:oreMagnesium> * 46]);
+addMeteor(<minecraft:emerald_block:0>     , 700000 , [<ore:oreAmber> * 27, <ore:oreDiamond> * 22, <ore:oreLapis> * 20, <ore:oreCertusQuartz> * 20, <ore:oreCinnabar> * 15, <ore:oreCoal> * 3, <ore:oreRuby> * 3, <ore:orePeridot> * 3, <ore:oreTopaz> * 3, <ore:oreTanzanite> * 3, <ore:oreMalachite> * 3, <ore:oreSapphire> * 3, <ore:oreApatite> * 3, <ore:oreQuartzBlack> * 3]);
+addMeteor(<tconstruct:metal:1>            , 850000 , [<ore:oreCobalt> * 62, <ore:oreArdite> * 62, <ore:oreQuartz> * 55, <ore:oreNetherCoal> * 48, <ore:oreNetherRedstone> * 40, <ore:oreNetherLapis> * 37, <ore:oreNetherIron> * 33, <ore:oreNetherGold> * 29, <ore:oreNetherTin> * 25, <ore:oreNetherAluminum> * 22, <ore:oreNetherCopper> * 22, <ore:oreNetherLead> * 22, <ore:oreNetherDiamond> * 22, <ore:oreNetherNickel> * 18, <ore:oreNetherSilver> * 18, <ore:oreNetherCertusQuartz> * 18, <ore:oreNetherChargedCertusQuartz> * 14, <ore:oreNetherPlatinum> * 11, <ore:oreNetherOsmium> * 11, <ore:oreNetherUranium> * 11]);
+addMeteor(<jaopca:block_blockdilithium:0> , 1000000, [<ore:sandOxidisedFerric> * 182, <ore:oreEndDilithium> * 91, <ore:oreClathrateEnder> * 36]);
 /**/
 
 function addMeteor(catalyst as IItemStack, cost as int, oreList as IIngredient[]) as void {

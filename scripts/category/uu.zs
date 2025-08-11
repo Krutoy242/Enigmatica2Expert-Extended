@@ -1,6 +1,6 @@
 #modloaded ic2 randomtweaker
 #priority 1
-#loader ic2_postinit reloadable crafttweaker
+#reloadable
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.ITooltipFunction;
