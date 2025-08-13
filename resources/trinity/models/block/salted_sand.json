@@ -2,9 +2,9 @@
 	"parent": "block/block",
 	"ambientocclusion":false,
 	"textures":{
-		"particle": "nuclearcraft:blocks/wasteland_earth",
-		"illuminant_block_on":"nuclearcraft:blocks/wasteland_earth",
-		"illuminant_block_on_bloom":"trinity:blocks/wasteland_earth_glow"
+		"particle": "minecraft:blocks/sand",
+		"illuminant_block_on":"minecraft:blocks/sand",
+		"illuminant_block_on_bloom":"trinity:blocks/sand_glow"
 	},
 	"elements":[
 		{

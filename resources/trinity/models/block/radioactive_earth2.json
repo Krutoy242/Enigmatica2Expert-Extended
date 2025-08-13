@@ -4,7 +4,7 @@
 	"textures":{
 		"particle": "nuclearcraft:blocks/wasteland_earth",
 		"illuminant_block_on":"nuclearcraft:blocks/wasteland_earth",
-		"illuminant_block_on_bloom":"trinity:blocks/wasteland_earth_glow"
+		"illuminant_block_on_bloom":"trinity:blocks/wasteland_earth_glow2"
 	},
 	"elements":[
 		{
