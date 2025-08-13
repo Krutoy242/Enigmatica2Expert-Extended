@@ -1,8 +1,0 @@
-{
-    "parent": "rustic:block/lantern_down",
-    "textures": {
-        "top": "rustic:blocks/lantern_top_silver",
-				"side": "rustic:blocks/lantern_side_silver",
-				"particle": "rustic:blocks/lantern_side_silver"
-    }
-}
