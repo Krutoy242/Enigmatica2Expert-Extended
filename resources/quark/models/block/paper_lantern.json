@@ -6,7 +6,6 @@
 		"side": "quark:blocks/paper_lantern_side",
 		"side_glow": "quark:blocks/paper_lantern_side_glow",
 		"bottom": "quark:blocks/paper_lantern_top_bottom",
-		"bottom_glow": "quark:blocks/paper_lantern_top_bottom_glow",
 		"inside": "quark:blocks/paper_lantern_inside"
 	},
 	"elements": [ 	 
