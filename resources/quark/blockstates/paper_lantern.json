@@ -5,8 +5,7 @@
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"variant=paper_lantern": [{ "textures": { "side": "quark:blocks/paper_lantern_side" } }],
-		"variant=paper_lantern_sakura": [{ "textures": { "side": "quark:blocks/paper_lantern_side_sakura" } }],
-		"inventory": [{"textures": { "side": "quark:blocks/paper_lantern_side_noglow" }}]
+		"variant=paper_lantern": [{ "textures": { "side": "quark:blocks/paper_lantern_side", "side_glow": "quark:blocks/paper_lantern_side_glow" } }],
+		"variant=paper_lantern_sakura": [{ "textures": { "side": "quark:blocks/paper_lantern_side_sakura", "side_glow": "quark:blocks/paper_lantern_side_sakura_glow" } }]
 	}
 }
