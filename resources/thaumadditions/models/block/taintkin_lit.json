@@ -1,0 +1,38 @@
+{
+	"parent": "block/block",
+	"ambientocclusion":false,
+	"textures":{
+		"particle": "thaumadditions:blocks/taintkin/side",
+        "top": "thaumadditions:blocks/taintkin/vertical",
+        "front": "thaumadditions:blocks/taintkin/front_on",
+        "front_glow": "thaumadditions:blocks/taintkin/front_shine",
+        "side": "thaumadditions:blocks/taintkin/side",
+		"down": "thaumadditions:blocks/taintkin/vertical"
+	},
+	"elements":[
+		{
+			"shade": false,
+			"from": [ 0,0,0], "to": [16,16,16],
+			"faces":{
+				"down": { "texture": "#down", "cullface": "down" },
+				"up": { "texture": "#top", "culface":"up" },
+				"north": { "texture": "#front", "cullface": "north" },
+				"south": { "texture": "#side", "cullface": "south" },
+				"west": { "texture": "#side", "cullface": "west" },
+				"east": { "texture": "#side", "cullface": "east" }
+			}
+		},
+		{
+			"shade": false,
+			"from": [ 0,0,0], "to": [16,16,16],
+			"faces":{
+				"down": { "texture": "#down", "cullface": "down" },
+				"up": { "texture": "#top", "culface":"up" },
+				"north": { "texture": "#front_glow", "cullface": "north" },
+				"south": { "texture": "#side", "cullface": "south" },
+				"west": { "texture": "#side", "cullface": "west" },
+				"east": { "texture": "#side", "cullface": "east" }
+			}
+		}
+		]
+}

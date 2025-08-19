@@ -1,0 +1,29 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:layered_cube_all_2",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "type": {
+      "white": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_white", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_white_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_white" } },
+      "orange": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_orange", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_orange_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_orange" } },
+      "magenta": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_magenta", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_magenta_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_magenta" } },
+      "light_blue": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_light_blue", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_light_blue_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_light_blue" } },
+      "yellow": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_yellow", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_yellow_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_yellow" } },
+      "lime": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_lime", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_lime_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_lime" } },
+      "pink": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_pink", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_pink_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_pink" } },
+      "gray": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_gray", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_gray_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_gray" } },
+      "light_gray": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_light_gray", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_light_gray_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_light_gray" } },
+      "cyan": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_cyan", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_cyan_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_cyan" } },
+      "purple": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_purple", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_purple_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_purple" } },
+      "blue": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_blue", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_blue_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_blue" } },
+      "brown": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_brown", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_brown_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_brown" } },
+      "green": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_green", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_green_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_green" } },
+      "red": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_red", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_red_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_red" } },
+      "black": { "textures" : { "particle" : "actuallyadditions:blocks/block_colored_lamp_on_black", "top_all" : "actuallyadditions:blocks/block_colored_lamp_on_black_glow", "bot_all" : "actuallyadditions:blocks/block_colored_lamp_on_black" } }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+	"parent": "minecraft:block/block",
+	"ambientocclusion":false,
+  "textures": {
+    "particle": "mia:blocks/mia/lantern/lantern_default",
+    "down": "mia:blocks/mia/lantern/lantern_default",
+    "up": "mia:blocks/mia/lantern/lantern_default",
+    "north": "mia:blocks/mia/lantern/lantern_on_front",
+    "north_glow": "mia:blocks/mia/lantern/lantern_on_front_glow",
+    "east": "mia:blocks/mia/lantern/lantern_default",
+    "south": "mia:blocks/mia/lantern/lantern_on_back",
+    "south_glow": "mia:blocks/mia/lantern/lantern_on_back_glow",
+    "west": "mia:blocks/mia/lantern/lantern_on_side",
+    "west_glow": "mia:blocks/mia/lantern/lantern_on_side_glow"
+  },
+	"elements":[
+		{
+			"shade": false,
+			"from": [ 0,0,0], "to": [16,16,16],
+			"faces":{
+				"down": { "texture": "#down", "cullface": "down" },
+				"up": { "texture": "#up", "culface":"up" },
+				"north": { "texture": "#north", "cullface": "north" },
+				"south": { "texture": "#south", "cullface": "south" },
+				"west": { "texture": "#west", "cullface": "west" },
+				"east": { "texture": "#east", "cullface": "east" }
+			}
+		},
+		{
+			"shade": false,
+			"from": [ 0,0,0], "to": [16,16,16],
+			"faces":{
+				"down": { "texture": "#down", "cullface": "down" },
+				"up": { "texture": "#up", "culface":"up" },
+				"north": { "texture": "#north_glow", "cullface": "north" },
+				"south": { "texture": "#south_glow", "cullface": "south" },
+				"west": { "texture": "#west_glow", "cullface": "west" },
+				"east": { "texture": "#east", "cullface": "east" }
+			}
+		}
+		]
+}
