@@ -20,50 +20,6 @@ import native.net.minecraft.world.World;
 import native.net.minecraftforge.oredict.OreDictionary;
 import mixin.CallbackInfo;
 
-#mixin {targets: "com.verdantartifice.thaumicwonders.common.blocks.devices.BlockMeatyOrb"}
-zenClass MixinBlockMeatyOrb extends BlockDeviceTW {
-
-  // Add redstone control (func_189540_a => neighborChanged)
-  function func_189540_a(state as IBlockState, world as World, pos as BlockPos, blockIn as Block, fromPos as BlockPos) as void {
-    // super.neighborChanged(state, world, pos, blockIn, fromPos);
-    if (world.isRemote) return;
-
-    val tile = world.getTileEntity(pos);
-    if (isNull(tile) || !(tile instanceof TileMeatyOrb)) return;
-
-    if (world.getRedstonePowerFromNeighbors(pos) > 0) {
-      PacketHandler.INSTANCE.sendToServer(PacketMeatyOrbAction(pos));
-    }
-  }
-
-  // Make redstone stick to the block
-  function canConnectRedstone(state as IBlockState, world as IBlockAccess, connectFrom as BlockPos, side as EnumFacing) as bool{
-    return side != EnumFacing.UP && side != EnumFacing.DOWN;
-  }
-}
-
-#mixin {targets: "com.verdantartifice.thaumicwonders.common.tiles.devices.TileMeatyOrb"}
-zenClass MixinTileMeatyOrb {
-
-  #mixin Redirect
-  #{
-  #  method: "func_73660_a",
-  #  at: {
-  #    value: "INVOKE",
-  #    target: "Lnet/minecraft/item/ItemStack;func_77946_l()Lnet/minecraft/item/ItemStack;"
-  #  }
-  #}
-  function replaceMeatDrop(item as ItemStack) as ItemStack {
-    val list as NonNullList = OreDictionary.getOres('listAllmeatraw', false);
-    val size = list.size();
-    if (size <= 0) return item.copy();
-    val entry = size != 1
-      ? list.get(this0.world.rand.nextInt(size)) as ItemStack
-      : list.get(0);
-    return entry.copy();
-  }
-}
-
 #mixin {targets: "com.verdantartifice.thaumicwonders.common.items.catalysts.ItemAlchemistStone"}
 zenClass MixinItemAlchemistStone {
   #mixin Inject {method: "<init>", at: {value: "TAIL"}}
