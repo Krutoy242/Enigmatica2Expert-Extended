@@ -1,5 +1,6 @@
-#priority 5
 #loader contenttweaker
+#modloaded ctintegration zenutils
+#priority 5
 
 import crafttweaker.util.Math;
 import crafttweaker.world.IBlockPos;

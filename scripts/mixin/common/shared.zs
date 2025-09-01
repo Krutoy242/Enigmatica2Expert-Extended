@@ -10,7 +10,6 @@ ZenUtils allow to use CT functions inside mixin classes by using this "bridge".
 
 #loader mixin
 #priority 3000
-#reloadable
 
 import native.com.mojang.authlib.GameProfile;
 import native.net.minecraft.item.ItemStack;

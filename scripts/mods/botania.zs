@@ -471,7 +471,7 @@ recipes.removeByRecipeName('botania:skydirtrod');   recipes.addShapeless(<botani
 for i in 0 .. 16 {
   scripts.lib.dropt.addDrop(
     <botania:mushroom>.definition.makeStack(i),
-    <botania:petal>.definition.makeStack(i),
+    [<botania:petal>.definition.makeStack(i)],
     1.25, 'shears;-1;-1');
 }
 // ////////////////////////////////////////////////////////////////

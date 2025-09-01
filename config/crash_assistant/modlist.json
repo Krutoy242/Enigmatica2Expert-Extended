@@ -83,8 +83,8 @@
     "modId": "ae2ctl",
     "version": "0.1.0"
   },
-  "ae2exttable-v1.0.7.jar": {
-    "jarName": "ae2exttable-v1.0.7.jar",
+  "ae2exttable-v1.0.8.jar": {
+    "jarName": "ae2exttable-v1.0.8.jar",
     "modId": "ae2exttable",
     "version": "1.0.2"
   },
@@ -179,10 +179,10 @@
     "modId": "athenaeum",
     "version": "1.12.2-1.19.6"
   },
-  "Atlas-Lib-1.12.2-1.1.8.jar": {
-    "jarName": "Atlas-Lib-1.12.2-1.1.8.jar",
+  "Atlas-Lib-1.12.2-1.1.8a.jar": {
+    "jarName": "Atlas-Lib-1.12.2-1.1.8a.jar",
     "modId": "atlaslib",
-    "version": "1.1.8"
+    "version": "1.1.8a"
   },
   "AutoRegLib-1.3-32.jar": {
     "jarName": "AutoRegLib-1.3-32.jar",
@@ -500,10 +500,10 @@
     "modId": "craftpresence",
     "version": "2.6.2"
   },
-  "CraftTweaker2-1.12-4.1.20.705.jar": {
-    "jarName": "CraftTweaker2-1.12-4.1.20.705.jar",
+  "CraftTweaker2-1.12-4.1.20.707.jar": {
+    "jarName": "CraftTweaker2-1.12-4.1.20.707.jar",
     "modId": "crafttweaker",
-    "version": "1.12-4.1.20.705"
+    "version": "1.12-4.1.20.707"
   },
   "crafttweakerutils-0.7.jar": {
     "jarName": "crafttweakerutils-0.7.jar",
@@ -530,15 +530,20 @@
     "modId": "cucumber",
     "version": "1.1.3"
   },
-  "curvy_pipes-1.12.2-1.12.1.jar": {
-    "jarName": "curvy_pipes-1.12.2-1.12.1.jar",
+  "curvy_pipes-1.12.2-1.12.4.jar": {
+    "jarName": "curvy_pipes-1.12.2-1.12.4.jar",
     "modId": "curvy_pipes",
-    "version": "1.12.1"
+    "version": "1.12.4"
   },
   "CustomBackgrounds-MC1.12-1.1.1.jar": {
     "jarName": "CustomBackgrounds-MC1.12-1.1.1.jar",
     "modId": "custombackgrounds",
     "version": "1.1.1"
+  },
+  "CustomLoadingScreen-1.12.2-1.5.9.jar": {
+    "jarName": "CustomLoadingScreen-1.12.2-1.5.9.jar",
+    "modId": "customloadingscreen",
+    "version": "1.12.2-1.5.9"
   },
   "CustomMainMenu-MC1.12.2-2.0.9.1.jar": {
     "jarName": "CustomMainMenu-MC1.12.2-2.0.9.1.jar",
@@ -715,8 +720,8 @@
     "modId": "finitegas",
     "version": "${version}"
   },
-  "Fixeroo-2.3.6b.jar": {
-    "jarName": "Fixeroo-2.3.6b.jar",
+  "Fixeroo-2.3.6b-patched.jar": {
+    "jarName": "Fixeroo-2.3.6b-patched.jar",
     "modId": "xporbclump",
     "version": "2.3.6b"
   },
@@ -1146,8 +1151,8 @@
     "modId": "lunatriuscore",
     "version": "1.2.0.42"
   },
-  "magicultureintegrations-1.12.2-2.2.4.jar": {
-    "jarName": "magicultureintegrations-1.12.2-2.2.4.jar",
+  "magicultureintegrations-1.12.2-2.2.5.jar": {
+    "jarName": "magicultureintegrations-1.12.2-2.2.5.jar",
     "modId": "magicultureintegrations",
     "version": "1.12.2-2.2.3"
   },
@@ -1311,10 +1316,10 @@
     "modId": "nimble",
     "version": "0.0.2"
   },
-  "NoiseThreader-1.1.1.jar": {
-    "jarName": "NoiseThreader-1.1.1.jar",
+  "NoiseThreader-1.0.0.jar": {
+    "jarName": "NoiseThreader-1.0.0.jar",
     "modId": "noisethreader",
-    "version": "1.1.1"
+    "version": "1.0.0"
   },
   "nuclearcraft-1.12.2-2o.9.2.jar": {
     "jarName": "nuclearcraft-1.12.2-2o.9.2.jar",
@@ -1391,25 +1396,25 @@
     "modId": "p455w0rdslib",
     "version": "1.12.2-2.3.161"
   },
-  "PackagedAstral-1.12.2-1.0.3.21.jar": {
-    "jarName": "PackagedAstral-1.12.2-1.0.3.21.jar",
+  "PackagedAstral-1.12.2-1.0.4.22.jar": {
+    "jarName": "PackagedAstral-1.12.2-1.0.4.22.jar",
     "modId": "packagedastral",
-    "version": "1.0.3.21"
+    "version": "1.0.4.22"
   },
-  "PackagedAuto-1.12.2-1.0.19.66.jar": {
-    "jarName": "PackagedAuto-1.12.2-1.0.19.66.jar",
+  "PackagedAuto-1.12.2-1.0.21.68.jar": {
+    "jarName": "PackagedAuto-1.12.2-1.0.21.68.jar",
     "modId": "packagedauto",
-    "version": "1.0.19.66"
+    "version": "1.0.21.68"
   },
-  "PackagedDraconic-1.12.2-1.0.3.23.jar": {
-    "jarName": "PackagedDraconic-1.12.2-1.0.3.23.jar",
+  "PackagedDraconic-1.12.2-1.0.4.24.jar": {
+    "jarName": "PackagedDraconic-1.12.2-1.0.4.24.jar",
     "modId": "packageddraconic",
-    "version": "1.0.3.23"
+    "version": "1.0.4.24"
   },
-  "PackagedExCrafting-1.12.2-1.0.2.31.jar": {
-    "jarName": "PackagedExCrafting-1.12.2-1.0.2.31.jar",
+  "PackagedExCrafting-1.12.2-1.0.3.32.jar": {
+    "jarName": "PackagedExCrafting-1.12.2-1.0.3.32.jar",
     "modId": "packagedexcrafting",
-    "version": "1.0.2.31"
+    "version": "1.0.3.32"
   },
   "Pam\u0027s HarvestCraft 1.12.2zg.jar": {
     "jarName": "Pam\u0027s HarvestCraft 1.12.2zg.jar",
@@ -1426,10 +1431,10 @@
     "modId": "patchouli",
     "version": "1.0-28"
   },
-  "patchoulibooks-0.2.5.jar": {
-    "jarName": "patchoulibooks-0.2.5.jar",
+  "patchoulibooks-0.2.6.jar": {
+    "jarName": "patchoulibooks-0.2.6.jar",
     "modId": "patchoulibooks",
-    "version": "0.2.4"
+    "version": "0.2.5"
   },
   "persistency-1.2.0.jar": {
     "jarName": "persistency-1.2.0.jar"
@@ -1489,10 +1494,10 @@
     "modId": "prettybeaches",
     "version": "1.1.0"
   },
-  "ProbeZS-1.18.7.jar": {
-    "jarName": "ProbeZS-1.18.7.jar",
+  "ProbeZS-1.18.8.jar": {
+    "jarName": "ProbeZS-1.18.8.jar",
     "modId": "probezs",
-    "version": "1.18.7"
+    "version": "1.18.8"
   },
   "ProjectIntelligence-1.12.2-1.0.9.28-universal.jar": {
     "jarName": "ProjectIntelligence-1.12.2-1.0.9.28-universal.jar",
@@ -1532,10 +1537,10 @@
     "modId": "quark",
     "version": "r1.6-189"
   },
-  "random_complement-1.5.5.jar": {
-    "jarName": "random_complement-1.5.5.jar",
+  "random_complement-1.5.7.jar": {
+    "jarName": "random_complement-1.5.7.jar",
     "modId": "random_complement",
-    "version": "1.5.5"
+    "version": "1.5.7"
   },
   "RandomThings-MC1.12.2-4.2.7.4.jar": {
     "jarName": "RandomThings-MC1.12.2-4.2.7.4.jar",
@@ -1830,10 +1835,10 @@
     "modId": "thaumicjei",
     "version": "1.12.2-1.7.0"
   },
-  "thaumictinkerer-1.12.2-5.9.8-Unofficial.jar": {
-    "jarName": "thaumictinkerer-1.12.2-5.9.8-Unofficial.jar",
+  "thaumictinkerer-1.12.2-5.9.10-Unofficial.jar": {
+    "jarName": "thaumictinkerer-1.12.2-5.9.10-Unofficial.jar",
     "modId": "thaumictinkerer",
-    "version": "1.12.2-5.9.8-Unofficial"
+    "version": "1.12.2-5.9.10-Unofficial"
   },
   "thaumicwonders-1.8.4.jar": {
     "jarName": "thaumicwonders-1.8.4.jar",
@@ -2121,9 +2126,9 @@
     "modId": "zentoolforge",
     "version": "1.1"
   },
-  "zenutils-1.25.4.jar": {
-    "jarName": "zenutils-1.25.4.jar",
+  "zenutils-1.25.5.jar": {
+    "jarName": "zenutils-1.25.5.jar",
     "modId": "zenutils",
-    "version": "1.25.4"
+    "version": "1.25.5"
   }
 }

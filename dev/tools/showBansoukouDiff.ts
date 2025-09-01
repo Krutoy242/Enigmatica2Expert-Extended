@@ -1,8 +1,7 @@
 import type { Stats } from 'node:fs'
 
-import { join, parse, relative as relativeTo, resolve } from 'node:path/posix'
-
-import { execSyncInherit } from '../lib/utils'
+import { join, parse, relative as relativeTo, resolve } from 'pathe'
+import {$} from 'zx'
 
 export function decompile(unpatchedFilePath: string, patchedFilePath: string): { newF: string, oldF: string } {
   if (parse(patchedFilePath).ext !== '.class')
@@ -26,13 +25,7 @@ function replaceExt(fileName: string, newExt: string): string {
 }
 
 function decompileFile(source: string, target: string): void {
-  execSyncInherit(
-    '"D:/Program Files/Java/zulu-24/bin/java.exe"'
-    + ' -jar'
-    + ' cfr-0.152.jar'
-    + ` "${source}"`
-    + ` > "${target}"`
-  )
+  $.sync({stdio: 'inherit'})`java -jar cfr-0.152.jar ${source} > ${target}`
 }
 
 export function statToString(stat: Stats): string {
@@ -43,7 +36,7 @@ async function showDiff(diffPath: string): Promise<void> {
   const modClass = relativeTo('dev/automation/data/bansoukou_diffs', diffPath).replace(/.class.diff$/, '')
   decompileFile(resolve('~bansoukou_unpatched', `${modClass}.class`), `~A.java`)
   decompileFile(resolve('bansoukou', `${modClass}.class`), `~B.java`)
-  execSyncInherit('code --diff ~A.java ~B.java')
+  $.sync({stdio: 'inherit'})`code --diff ~A.java ~B.java`
 }
 
 // eslint-disable-next-line antfu/no-top-level-await

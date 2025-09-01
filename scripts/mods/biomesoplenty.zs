@@ -228,7 +228,7 @@ for input, output in {
   <biomesoplenty:plant_1:4>     : <biomesoplenty:brown_dye:0>,
   <biomesoplenty:plant_1:10>    : <minecraft:dye:1>,
 } as IItemStack[IItemStack]$orderly {
-  scripts.lib.dropt.addDrop(input, output, 1.25, 'shears;-1;-1');
+  scripts.lib.dropt.addDrop(input, [output], 1.25, 'shears;-1;-1');
 }
 
 ///////////////////////////////////////////////////////////////

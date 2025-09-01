@@ -84,6 +84,8 @@ config/cherishedworlds/favorites.dat
 config/codechicken/supporters.json
 config/craftpresence.json
 config/creativecore.json
+config/customloadingscreen_timings.nbt
+config/customloadingscreen_tips.txt
 config/enderio/recipes/*.pdf
 config/enderio/recipes/**/*.xsd
 config/enderio/recipes/examples

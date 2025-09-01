@@ -2,6 +2,7 @@
 #reloadable
 
 import crafttweaker.item.IIngredient;
+import crafttweaker.item.IItemDefinition;
 import crafttweaker.item.IItemStack;
 
 val pearlFluix = <ore:pearlFluix>;
@@ -669,3 +670,36 @@ mods.appliedenergistics2.Inscriber.addRecipe(<appliedenergistics2:material:60>, 
 mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:10>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed>], true);
 mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:11>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed:600>], true);
 mods.inworldcrafting.FluidToItem.transform(<appliedenergistics2:material:12>, <fluid:witchwater>, [<appliedenergistics2:crystal_seed:1200>], true);
+
+val morphiteBlacklist = [
+  <appliedenergistics2:charged_quartz_ore>.definition,
+  <appliedenergistics2:chiseled_quartz_block>.definition,
+  <appliedenergistics2:chiseled_quartz_slab>.definition,
+  <appliedenergistics2:chiseled_quartz_stairs>.definition,
+  <appliedenergistics2:material>.definition,
+  <appliedenergistics2:quartz_block>.definition,
+  <appliedenergistics2:quartz_ore>.definition,
+  <appliedenergistics2:quartz_pillar_slab>.definition,
+  <appliedenergistics2:quartz_pillar_stairs>.definition,
+  <appliedenergistics2:quartz_pillar>.definition,
+  <appliedenergistics2:quartz_slab>.definition,
+  <appliedenergistics2:quartz_stairs>.definition,
+] as IItemDefinition[];
+
+for item in loadedMods['appliedenergistics2'].items {
+  val id = item.definition.id;
+  if (
+    morphiteBlacklist has item.definition
+    || item.hasTag
+    || id.contains('creative')
+  ) continue;
+  val count = id.contains(':paint_ball') ? 64
+    : id.contains(':part') ? (
+      item.damage < 20 ? 32 // Cable
+      : (item.damage >= 20 && item.damage < 60) ? 16 // Cables
+      : (item.damage >= 60 && item.damage < 160) ? 8 // Smart dense & fibers
+      : (item.damage >= 500 && item.damage < 520) ? 8 // Dense
+      : 1
+    ) : 1;
+  scripts.do.morphite.recipe.result.add(count > 1 ? item * count : item);
+}

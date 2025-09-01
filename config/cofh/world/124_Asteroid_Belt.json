@@ -40,6 +40,7 @@
       "dimension": { "restriction": "whitelist", "value": [124] },
       "generator": {
         "block": [
+          { "name": "bedrock", "weight": 10000 },
           { "name": "advancedrocketry:vitrifiedsand", "weight": 50000 },
           { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"netherendingores:ore_end_modded_1\", amount: 2000000000, prop: \"blocks=aluminum_ore\" } }" },
           { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"netherendingores:ore_end_modded_1\", amount: 2000000000, prop: \"blocks=certus_quartz_ore\" } }" },

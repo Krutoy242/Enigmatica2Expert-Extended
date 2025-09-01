@@ -1,6 +1,7 @@
 #modloaded mekanism
 #loader mixin
 
+import native.net.minecraft.nbt.NBTTagCompound;
 import native.net.minecraftforge.event.RegistryEvent;
 
 /*
@@ -20,5 +21,23 @@ zenClass MixinOreDictManager {
     #}
     function removeLogRecipes(event as RegistryEvent.Register) as void {
         // NO-OP
+    }
+}
+
+/*
+Fix crash when NBT is corrupted
+*/
+#mixin {targets: "mekanism.common.item.ItemBlockMachine"}
+zenClass MixinItemBlockMachine {
+    #mixin Redirect
+    #{
+    #    method: "getBaseTier",
+    #    at: {
+    #        value: "INVOKE",
+    #        target: "Lnet/minecraft/nbt/NBTTagCompound;func_74762_e(Ljava/lang/String;)I"
+    #    }
+    #}
+    function fixTierLevel(nbt as NBTTagCompound,key as string) as int {
+        return max(0, min(4, nbt.getInteger(key)));
     }
 }

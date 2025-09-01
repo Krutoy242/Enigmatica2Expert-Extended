@@ -1,4 +1,4 @@
-#modloaded nuclearcraft
+#modloaded nuclearcraft qmd
 
 import crafttweaker.item.IIngredient;
 

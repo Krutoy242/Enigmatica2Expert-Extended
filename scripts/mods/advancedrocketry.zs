@@ -3,8 +3,12 @@
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 
-scripts.lib.dropt.addDrop(<advancedrocketry:geode>, <thermalfoundation:geode>);
-scripts.lib.dropt.addDrop(<advancedrocketry:vitrifiedsand>, <qmd:isotope:5>);
+scripts.lib.dropt.addDrop(<advancedrocketry:geode>, [<thermalfoundation:geode>]);
+scripts.lib.dropt.addDrop(<advancedrocketry:vitrifiedsand>, [
+  <qmd:isotope:5>,
+  <qmd:isotope:1>,
+  <qmd:isotope>,
+]);
 <advancedrocketry:geode>.asBlock().definition.resistance = 160;
 <advancedrocketry:vitrifiedsand>.asBlock().definition.resistance = 160;
 <advancedrocketry:crystal>.asBlock().definition.resistance = 20;

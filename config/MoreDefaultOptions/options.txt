@@ -153,7 +153,7 @@ key_key.craftingtweaks.rotate:0
 key_key.craftingtweaks.rotate_counter_clockwise:0
 key_key.craftingtweaks.spread:0
 key_key.craftingtweaks.toggleButtons:0
-key_key.craftpresence.config_keycode.name:0
+key_key.craftpresence.config_keycode.name:41
 key_key.debugDumpNBTBlock:0
 key_key.debugDumpNBTItem:0
 key_key.draconicevolution.armorProfileChange:43:ALT
@@ -431,4 +431,5 @@ key_key.retrieve_item.desc:-98:CONTROL
 key_key.start_craft.desc:-98:ALT
 key_key.toggleVisible:0
 key_keybind.endermodpacktweaks.toggle:0
-key_of.key.zoom:-97
+key_of.key.zoom:-97
+key_Open Key Wizard:65

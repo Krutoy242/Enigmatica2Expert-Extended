@@ -189,7 +189,6 @@ add(<ore:blockVoid>, <thaumcraft:metal_void>);
 add(<ore:circuitBoard>, <immersiveengineering:material:27>);
 
 // Amber Oredict
-add(<ore:blockAmber>, <biomesoplenty:gem_block:7>);
 add(<ore:blockAmber>, <thaumcraft:amber_block>);
 add(<ore:blockAmber>, <thaumcraft:amber_brick>);
 

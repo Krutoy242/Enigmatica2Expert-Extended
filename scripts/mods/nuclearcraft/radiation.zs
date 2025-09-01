@@ -1,5 +1,6 @@
 #modloaded nuclearcraft
 #reloadable
+#ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
 
@@ -23,25 +24,27 @@ if (!native.nc.config.NCConfig.radiation_enabled_public) {
   # --------------------------------------------------------------
   # Radiation Shielding recipes
   # --------------------------------------------------------------
-  val armorPieces = [
-    <conarm:helmet:*>,
-    <conarm:chestplate:*>,
-    <conarm:leggings:*>,
-    <conarm:boots:*>,
-  ] as IItemStack[];
-  val radPlates = [
-    <nuclearcraft:rad_shielding>,
-    <nuclearcraft:rad_shielding:1>,
-    <nuclearcraft:rad_shielding:2>,
-  ] as IItemStack[];
-  for i, plate in radPlates {
-    val resistance = 0.03 * pow(10.0, i as double);
-    val updFn = getUpdateFn(resistance);
-    for armor in armorPieces {
-      recipes.addShapeless('RadResist '~i~' '~armor.name,
-        armor.withDamage(0).updateTag({ncRadiationResistance: resistance}),
-        [armor.marked(''), plate], updFn, null
-      );
+  if (!isNull(loadedMods['conarm'])) {
+    val armorPieces = [
+      <conarm:helmet:*>,
+      <conarm:chestplate:*>,
+      <conarm:leggings:*>,
+      <conarm:boots:*>,
+    ] as IItemStack[];
+    val radPlates = [
+      <nuclearcraft:rad_shielding>,
+      <nuclearcraft:rad_shielding:1>,
+      <nuclearcraft:rad_shielding:2>,
+    ] as IItemStack[];
+    for i, plate in radPlates {
+      val resistance = 0.03 * pow(10.0, i as double);
+      val updFn = getUpdateFn(resistance);
+      for armor in armorPieces {
+        recipes.addShapeless('RadResist '~i~' '~armor.name,
+          armor.withDamage(0).updateTag({ncRadiationResistance: resistance}),
+          [armor.marked(''), plate], updFn, null
+        );
+      }
     }
   }
   # --------------------------------------------------------------

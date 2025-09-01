@@ -16,17 +16,15 @@
 
 import { consola } from 'consola'
 import ignore from 'ignore'
-import { join, resolve } from 'pathe'
+import { resolve } from 'pathe'
 import { replaceInFile } from 'replace-in-file'
 import { $, fs } from 'zx'
-
-import type { ModpackManifest, ModpackManifestFile } from '../mc-tools/packages/manifest/src/manifest.js'
 
 import { confirm, getIgnoredFiles, removeFiles } from './build/build_utils.js'
 import { manageSFTP } from './build/sftp.js'
 import { generateChangelog } from './tools/changelog/changelog'
 
-const { existsSync, readFileSync } = fs
+const { existsSync, readFile } = fs
 const $$ = $({ stdio: 'inherit' })
 
 const tmpDir = 'D:/mc_tmp/'
@@ -109,7 +107,7 @@ if (await confirm(`Add tag?`))
 ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 
-const zipPath_base = join('dist', zipBaseName)
+const zipPath_base = resolve('dist', zipBaseName)
 const zipPath = `${zipPath_base}.zip`
 const zipPath_server = `${zipPath_base}-server.zip`
 
@@ -151,22 +149,29 @@ if (makeZips) {
 
   consola.start('⬅️ Cleanse and move manifest.json...')
   const tmpManifestPath = resolve(tmpOverrides, 'manifest.json')
-  const manifest: ModpackManifest = JSON.parse(readFileSync(tmpManifestPath, 'utf8'))
-    ; (manifest.files as (ModpackManifestFile & { ___name?: string })[]).forEach(o => delete o.___name)
-  await fs.writeFile(resolve(tmpOverrides, '../manifest.json'), JSON.stringify(manifest, null, 2))
-  await fs.unlink(tmpManifestPath)
+  const [removedFiles] = await Promise.all([
+    readFile('dev/.devonly.ignore', 'utf8').then((data) => {
+      const devonlyIgnore = ignore().add(data.toString())
+      const removeList = getIgnoredFiles(devonlyIgnore, { cwd: tmpOverrides })
+        .map(f => resolve(tmpOverrides, f))
+      return removeFiles(removeList)
+    }),
+    replaceInFile({
+      files: tmpManifestPath,
+      from : /"___name"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,?/g,
+      to   : '',
+    })
+      .then(async () => fs.rename(tmpManifestPath, resolve(tmpOverrides, '../manifest.json'))),
+    $$({ cwd: tmpOverrides })`find mods/OpenTerrainGenerator/worlds -type f -name "*.bo3" -exec sed -i '/^$/d;/^#/d' {} +`,
+  ])
 
-  const devonlyIgnore = ignore().add(readFileSync('dev/.devonly.ignore', 'utf8'))
-  consola.start('🧹 Removing non-release files and folders...')
-  const removeList = getIgnoredFiles(devonlyIgnore, { cwd: tmpOverrides })
-    .map(f => resolve(tmpOverrides, f))
-  consola.success('\n', removeFiles(removeList))
+  consola.success('🧹 Removed non-release files and folders:\n', removedFiles)
 
   consola.start('🏴 Create EN .zip')
-  await $$({ cwd: tmpDir })`7z a -bso0 ${zipPath} . `
+  await $$({ cwd: tmpDir })`7z a -bso0 ${zipPath} .`
 
   consola.start('📥 Create server zip')
-  await $$({ cwd: 'server' })`7z a -bso0 ${zipPath_server} . `
+  await $$({ cwd: 'server' })`7z a -bso0 ${zipPath_server} .`
 }
 
 await manageSFTP(serverSetupConfig)

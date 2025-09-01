@@ -25,12 +25,13 @@ events.register(function (e as PlayerCloneEvent) {
   op.applyAttributes(player);
 });
 
-// Mine any block
+// ⚡⏱ Speedup block mining
 events.register(function (e as PlayerBreakSpeedEvent) {
   val player = e.player;
   if (isNull(player) || isNull(player.world) || isNull(e.block) || isNull(e.block.definition)) return;
   if (!op.isPlayerOmnipotent(player)) return;
-  e.newSpeed = crafttweaker.util.Math.max(e.originalSpeed, 12.0f * e.block.definition.hardness + 1.0);
+  val hardness = e.blockState.getBlockHardness(player.world, e.position);
+  e.newSpeed = crafttweaker.util.Math.max(e.originalSpeed, 12.0f * hardness + 1.0);
 }, mods.zenutils.EventPriority.low());
 
 // Silk touch on bare hand
@@ -45,6 +46,9 @@ events.register(function (e as BlockHarvestDropsEvent) {
   ) return;
 
   if (isNull(player.currentItem)) {
+    // Don't silk touch tile entities with bare hands, it can cause issues.
+    if (e.block.native.hasTileEntity()) return;
+
     // Silk touch
     val silkDrop = e.block.native.getSilkTouchDrop(e.blockState);
     if (!isNull(silkDrop)) {

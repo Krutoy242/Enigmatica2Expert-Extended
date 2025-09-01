@@ -424,11 +424,8 @@ scripts.process.squeeze([<actuallyadditions:item_misc:13>], <liquid:canolaoil> *
 // Storage crate remake
 
 // [Storage_Crate_Keeper] from [Black_Quartz][+1]
-craft.remake(<actuallyadditions:item_crate_keeper>, ['pretty',
-  '  #  ',
-  '# • #',
-  '  #  '], {
-  '•': <ore:gemQuartzBlack>, // Black Quartz
+craft.reshapeless(<actuallyadditions:item_crate_keeper>, '•#', {
+  '•': <ore:nuggetQuartzBlack>,
   '#': <ore:plankWood>, // Oak Wood Planks
 });
 

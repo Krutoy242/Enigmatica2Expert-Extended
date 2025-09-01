@@ -1,4 +1,5 @@
 #modloaded nuclearcraft
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 
@@ -19,7 +20,7 @@ craft.remake(<nuclearcraft:turbine_dynamo_coil_baseextractor>, ['pretty',
   '▬ * ▬',
   '⌂ ⌂ ⌂'], {
   '□': <ore:plateLapis>, // Lapis Lazuli Plate
-  '⌂': <ic2:casing:2>, // Gold Item Casing
+  '⌂': <ic2:casing:2> ?? <minecraft:gold_ingot>, // Gold Item Casing
   '▬': <ore:ingotHSLASteel>, // HSLA Steel Ingot
   '*': <ore:crystalEmeraldic>, // Emeradic Crystal
 });

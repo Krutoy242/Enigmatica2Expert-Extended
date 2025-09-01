@@ -111,8 +111,6 @@ function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, mas
   say('master stone have tags. PortalID: '~portalBlock.definition.id);
   if (isNull(portalBlock) || portalBlock.definition.id != 'bloodmagic:dimensional_portal') return;
 
-  print('~~~ portal tag:\n' ~ portalBlock.data.toNBTString());
-
   // Get point on other planet
   val stella = IWorld.getFromID(114);
   if (isNull(stella)) return;

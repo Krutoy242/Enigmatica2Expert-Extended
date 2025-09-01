@@ -1,5 +1,5 @@
 # ℹ️ Remove creation date.
-# › git config filter.ic2_config_date_update.clean "sed '/^; created /d'"
+# › git config filter.ic2_config_date_update.clean "grep -v '^; created'"
 config/IC2.ini filter=ic2_config_date_update
 
 # › git config filter.remove_date.clean "sed 's/#... ... .*$//'"

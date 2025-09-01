@@ -2,22 +2,30 @@
 
 🚧✅❌⚠️♻️ List of priorities:
 
-- [ ] 📀 Fix `OpenComputers` JEI plugin is still loaded
+- [ ] Mythic give 2 mythics
+- [ ] 🐛 Remove debug mods from release version https://gnomebot.dev/paste/mclogs/aZFKXcf
+- [ ] 🦨 Nerf `Modifiable II` materials more
+- [ ] ✨ `Reinforcement` buff first levels of modifiers
+- [ ] ⚡ Fix `OpenComputers` JEI plugin is still loaded
 - [ ] 📀 Dont let IC2 miner dig any mining level
+- [ ] 🔨 Remove `Heavy Metal`
 - [ ] 🔨 `Double Compressed Hammer` cant break double compressed charcoal
 - [ ] 🔨 Add HV wire invincibility TCon trait
 - [ ] 🐦 enable Enchanting speed up for rats
+- [ ] 📖 `Garden Cloche` add to chapter completion requirment
 - [ ] 📖 Add emojis 🍎 to chapter finishing messages
 - [ ] 📖 Add quest explaining that Battery and Solar can be replaced in TCon tools
 - [ ] 💎 Diamond shouldn't be meltable in smeltery
-- [ ] Omnipotence silk touch cant break tile entities
-- [ ] Omnipotence fix BiomesOPlenty grass breaks without haste
+- [ ] 🐛 Omnipotence silk touch cant break tile entities
 - [ ] ♻️ Use `.sort()` from ZenUtils instead of ctintegration
-- [ ] Completely get rid of `Patchouli_js()` code in .zs files
-- [ ] Golden Torches shown as vanilla torches on default placement (caused by Lumenized chages)
+- [ ] ♻️ Completely get rid of `Patchouli_js()` code in .zs files
+- [ ] 🐛 Golden Torches shown as vanilla torches on default placement (caused by Lumenized chages)
 - [ ] ♻️ remove `crossscript` since data accessible between loaders
 - [ ] 👑 Upgrading Draconic tools give Omnopotence
-- [ ] `64k me storage cell` cant be autocrafted in ME
+- [ ] 🐛 `64k me storage cell` cant be autocrafted in ME
+- [ ] 🐛 Custom beacons not working on server
+- [ ] 🎁 Disable upcraft for loot chests
+- [ ] 🐛 RMB to `rubber sapling` with `rubber seed` in main hand cause crash (zenmixin for `exnihilocreatio.items.seeds.ItemRubberSeed` for onItemUse (func_180614_a) with Inject on INVOKE and Ljava/util/List;get(I)Ljava/lang/Object; to check the size of the list and return EnumActionResult.PASS if the list is empty. or just overwrite the method)
 
 ### "Endgame" expansion
 
@@ -27,6 +35,7 @@
 - [ ] ✏️ `Draconic Evolution` add recipes that use trillions RF
 - [ ] 🌍 Gen Highly Radioactive stuff on `Asteroid Belt`, unbearable radiation
 - [ ] ☢️ Space planets have constant radiation
+- [ ] ✨ Make Draconic Armor adopt upgrades of prev tier
 
 ### "Dimension building" rework
 - [ ] ✏️ RFTools `Dimension building` rework - make cheaper by balancing possible dimlets
@@ -34,13 +43,14 @@
 
 <!-- 
 Command to generate single file from all files in directory:
-› find ./dir/ -type f -exec sh -c 'for f; do ext="${f##*.}"; [[ "$ext" == "$f" ]] && ext=""; printf "\`%s\`:\n\`\`\`%s\n" "${f#./}" "$ext"; cat "$f"; echo -e "\`\`\`\n"; done' _ {} + > merged_output.md
+› find scripts/do -name '*.zs' -print0 | xargs -0 -I {} sh -c 'echo "--- {} ---"; cat "{}"' > merged_output.md
 
 Command to show all commits that changing same files:
 › git log --oneline abc123..HEAD -- $(git diff-tree --no-commit-id --name-only -r abc123)
 
-Recursively find all `.bo3` files and remove empty lines and lines starting with '#' from them.
-› find . -type f -name "*.bo3" -exec sed -i '/^$/d;/^#/d' {} +
+Command to optimize all the .png files:
+› ./pngquant.exe 128 resources/**/*.png --skip-if-larger --ext .png --strip --verbose --force
+› ./oxipng.exe resources/**/*.png --alpha --strip all
 -->
 
 ---
@@ -135,8 +145,8 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Add usage of `Perfect Fuel` in NCO (with `flux goo` as sub-product)
 
 ### "Multiplayer" expansion
-- [ ] Reward with 1 DankNull panel in several quests to promote sharing
-- [ ] Think if i could make a script to keep 100% modpack completion after new quests are added
+- [ ] 🎁 Reward with 1 DankNull panel in several quests to promote sharing
+- [ ] 💻 Think if i could make a script to keep 100% modpack completion after new quests are added
 - [ ] 💬 Chat names should have special unicode symbols to show Conflux level and "accomplishments" (including Discord support)
 - [ ] 💬 `Accomplishments` ⚜✳✴❇ mechanic:
   * Add messages "Player killex xxx mobs! WOW" based on spectacular stats.
@@ -148,7 +158,7 @@ Planned non-urgent changes, or just good ideas:
 
 ### Skyblock expansion
 
-- [ ] Skyblock: Make `Porouse Stone` and `AA Ore Laser` mandatory in skyblock
+- [ ] 🧱 Skyblock: Make `Porouse Stone` and `AA Ore Laser` mandatory in skyblock
 
 ### Mods
 - [ ] 🔴 Remove **XTones** and **Environmental Materials** since they are depricated by LittleTiles and Cathedral
@@ -174,7 +184,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📀 Add `Uncrafting Table` automation block - probably GUI-less tile entities working like hopper
 - [ ] 🔚 Make EIO capacitors actually usabe: right now, tweaked machine power usage make machine speed always 1 tick, neglibe capacitor usefulness
 - [ ] ♻️ Refactor: replace all `itemUtils.getItem` to `<${}:${}>`
-- [ ] Enable and integrate EIO capacitors for IF machines `config/ometweaks/ometweaks.cfg:261`
+- [ ] ⚙️ Enable and integrate EIO capacitors for IF machines `config/ometweaks/ometweaks.cfg:261`
 - [ ] 🔨 `Spectre` trait - remove annoying flashing
 - [ ] ✏️ `Thermal Logistics` cheaper, use widely
 - [ ] 💜 add `0 difficulty` dimension (replicator cant work here). Maybe Spectre. ☝ Problem: Allowing getting +1🎁 whole game.
@@ -184,19 +194,18 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🌌 Add `Helmet/Chest/Leggins/Boots Singularity`
 - [ ] 🌌 Add `Pickaxe/Shovel/Hoe/Axe/Sword Singularity`
 - [ ] ✏️ `Creative Impetus` add recipe. Doubdt - its block kinda ugly, no effects, more like technical.
-- [ ] Integrate new TCon Fluids: `Blazin' Blood + Bone, Venom + Bone`
+- [ ] 🧪 Integrate new TCon Fluids: `Blazin' Blood + Bone, Venom + Bone`
 - [ ] 🌍 Bio planet bog should have Peat under the ground
 - [ ] ✨ Idea: Difficulty cant grow if you didnt died
 - [ ] 🌍 Teleport player to AlienJungle with Blood Magic TP ritual
 - [ ] 🌍 AlienJungle add JER data
 - [ ] 𝓩𝒮 `/perf` improvments: Group chunks by dimension, Split big reports to pages, Add command mention in quest book
 - [ ] 📀 change of `Trick: Ebony and Ivory` spell from "The End dimension" to "The End biome"
-- [ ] Add `Sulfur Dioxide/Trioxide` in fluid dictionary
+- [ ] 🧪 Add `Sulfur Dioxide/Trioxide` in fluid dictionary
 - [ ] 🌍 Idea: fountains from Chemical Spreader projectiles that spread functionable fluid, transforming landscape around. Its also can be acid rain.
 - [ ] 🟡 Integrate `My Precious`: add to Dungeon loot, add in Loot Boxes
 - [ ] 💡 Idea: items doesnt have borders if already acquired
 - [ ] 💡 Idea: Chain commands with `& /`
-- [ ] 🔵 integrate **Legendary Tooltips** (probably some kind of special item category tooltips)
 - [ ] 🔨 Little Tiles remove limits (but how? Its already have big limits)
 - [ ] 🔵 Integrate more textures with `Lumenized` (contributor's help welcomed here)
 - [ ] ✏️ Fix `Magma Crucible` cant melt Rotten Flesh
@@ -208,7 +217,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🖼️ Add via mixins: https://legacy.curseforge.com/minecraft/texture-packs/ic2-seedbag-display
 - [ ] ⚒️ Rebalance TCon `Refining`: Remove x1.75 multiplication but add Fortune accounting
 - [ ] 🐀 Rat Ore Doubling can dupe IC2 "Iridium Ore". Removing oreIridium from it wont help.
-- [ ] 📖 Register item subtypes by NBT to JEI for `Gendustry` (there was CT handler for that but i cant find it)
 - [ ] 𝓩𝒮 Fix `Refining` not working on BoP ores
 - [ ] ✏️ Add feature to clear drawer `Item: 0` when unlocking it https://github.com/jaquadro/StorageDrawers/commit/da9875158ad0fadc190aae437ea2d9e89d616cca
 - [ ] 📖 Unmerge Furnace inputs in HEI (reported to HEI dev)
@@ -228,7 +236,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ `Red Mechanic` move trades to other villager `config/vtt/trade_tables/red_mechanic.json`
 - [ ] ❓ Fixeroo doesnt combine XP Shower clumps https://github.com/CaliforniaDemise/Fixeroo/issues/3
 - [ ] ✏️ Fix Generic Entity spawn spawning with wrong looking direction
-- [ ] Install https://www.curseforge.com/minecraft/mc-mods/rather-enough-immersive-multiblocks
 - [ ] ✏️ Use `mods.jei.JEI.addItemNBTSubtype` to subtime `Genetic Templates` and `syringe` (when updated RandomTweaker after fix crash https://github.com/Project-RT/RandomTweaker/issues/82)
 - [ ] ⚡ (ARR) Remove XU2 jei removed categories https://spark.lucko.me/MRBZYLxzrN?hl=325666
 - [ ] 📀 Fix crops drop 1000 of berries on high stats
@@ -335,7 +342,7 @@ List of features and changes for `E2EE v2.0`, that breaking worlds and require f
 
 - 🌍 Remove OTG `Origin` biome since unnatural
 - 🌍 Remove OTG completely?
-- Remove `Libnine` and `Fluid Drawers` because lag https://github.com/phantamanta44/fluid-drawers/issues/19
+- ⚡ Remove `Libnine` and `Fluid Drawers` because lag https://github.com/phantamanta44/fluid-drawers/issues/19
 
 ---
 

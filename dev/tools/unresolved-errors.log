@@ -1,6 +1,16 @@
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
 [main/WARN] [mixin]: Error loading class: de/keksuccino/fancymenu/mainwindow/MainWindowHandler (java.lang.NullPointerException: Cannot read the array length because "classFile" is null)
 [main/WARN] [mixin]: @Mixin target de.keksuccino.fancymenu.mainwindow.MainWindowHandler was not found mixins/mixins.emt.fancymenu.json:MainWindowHandlerMixin from mod unknown-owner
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)

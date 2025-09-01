@@ -1,4 +1,5 @@
 #modloaded nuclearcraft
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 import mods.nuclearcraft.Infuser;
@@ -15,9 +16,9 @@ craft.remake(<nuclearcraft:turbine_dynamo_coil_basemagnet>, ['pretty',
   '⌂ ▬ ⌂',
   '▬ I ▬',
   '⌂ ▬ ⌂'], {
-  '⌂': <ic2:casing:1>, // Copper Item Casing
+  '⌂': <ic2:casing:1> ?? <minecraft:gold_ingot>, // Copper Item Casing
   '▬': <ore:ingotHSLASteel>, // HSLA Steel Ingot
-  'I': <ic2:casing:3>, // Iron Item Casing
+  'I': <ic2:casing:3> ?? <minecraft:iron_ingot>, // Iron Item Casing
 });
 
 recipes.addShaped('ntp antihydrogen coil', itemUtils.getItem('nuclearcraft:turbine_dynamo_coil_antihydrogenmagnet') * 2,

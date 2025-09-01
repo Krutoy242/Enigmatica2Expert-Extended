@@ -1,4 +1,5 @@
 #modloaded nuclearcraft
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 import mods.nuclearcraft.Infuser;
@@ -14,7 +15,7 @@ craft.remake(<nuclearcraft:turbine_dynamo_coil_basestabilizer>, ['pretty',
   '⌂ ▬ ⌂',
   '♥ ⌂ ♥'], {
   '♥': <ore:nuggetRedstoneAlloy>, // Redstone Alloy Nugget
-  '⌂': <ic2:casing:2>, // Gold Item Casing
+  '⌂': <ic2:casing:2> ?? <minecraft:gold_ingot>, // Gold Item Casing
   '▬': <ore:ingotHSLASteel>, // HSLA Steel Ingot
 });
 

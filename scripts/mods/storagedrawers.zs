@@ -1,4 +1,5 @@
 #modloaded storagedrawers
+#ignoreBracketErrors
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
