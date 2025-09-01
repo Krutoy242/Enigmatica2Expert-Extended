@@ -1,0 +1,10 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type":"CTMH",
+        "layer": "BLOOM",
+        "extra": {
+        "light": 16
+            }
+    }
+}
