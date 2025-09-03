@@ -2,6 +2,6 @@
     "parent": "block/layered_cube_all_2",
     "textures": {
         "top_all": "extendedcrafting:blocks/trimmed_emerald_glow",
-        "bot_all": "endreborn:blocks/trimmed_emerald"
+        "bot_all": "extendedcrafting:blocks/trimmed_emerald"
     }
 }

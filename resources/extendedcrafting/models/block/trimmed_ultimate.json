@@ -2,6 +2,6 @@
     "parent": "block/layered_cube_all_2",
     "textures": {
         "top_all": "extendedcrafting:blocks/trimmed_ultimate_glow",
-        "bot_all": "endreborn:blocks/trimmed_ultimate"
+        "bot_all": "extendedcrafting:blocks/trimmed_ultimate"
     }
 }
