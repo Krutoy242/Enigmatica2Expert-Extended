@@ -1,7 +1,6 @@
 {
     "parent": "block/layered_cube_all_2",
     "textures": {
-        "particle":"blocks/glowstone",
         "top_all": "blocks/glowstone_glow",
         "bot_all": "blocks/glowstone"
     }
