@@ -1,32 +1,7 @@
 {
-    "parent": "block/cube_column",
+    "parent": "block/layered_cube_all_2",
     "textures": {
-        "end": "blocks/purpur_pillar_top",
-        "side": "endreborn:blocks/block_purpur_lamp",
-		"side_anim": "endreborn:blocks/block_purpur_lamp_anim"
-    },
-    "elements": [
-        {   "from": [ 0, 0, 0 ],
-            "to": [ 16, 16, 16 ],
-            "faces": {
-                "down":  { "texture": "#end", "cullface": "down" },
-                "up":    { "texture": "#end", "cullface": "up"   },
-                "north": { "texture": "#side", "cullface": "north" },
-                "south": { "texture": "#side", "cullface": "south" },
-                "west":  { "texture": "#side", "cullface": "west"  },
-                "east":  { "texture": "#side", "cullface": "east"  }
-            }
-        },
-		{   "from": [ 0, 0, 0 ],
-            "to": [ 16, 16, 16 ],
-            "faces": {
-                "down":  { "texture": "#end", "cullface": "down" },
-                "up":    { "texture": "#end", "cullface": "up"   },
-                "north": { "texture": "#side_anim", "cullface": "north" },
-                "south": { "texture": "#side_anim", "cullface": "south" },
-                "west":  { "texture": "#side_anim", "cullface": "west"  },
-                "east":  { "texture": "#side_anim", "cullface": "east"  }
-            }
-        }
-    ]
+        "top_all": "endreborn:blocks/block_purpur_lamp_glow",
+        "bot_all": "endreborn:blocks/block_purpur_lamp"
+    }
 }
