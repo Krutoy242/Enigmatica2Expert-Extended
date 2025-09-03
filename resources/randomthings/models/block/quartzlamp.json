@@ -1,7 +1,6 @@
 {
-    "parent": "minecraft:block/layered_cube_all_2",
+    "parent": "block/layered_cube_all_2",
     "textures": {
-        "particle": "randomthings:blocks/quartzlamp",
         "top_all": "randomthings:blocks/quartzlamp_glow",
         "bot_all": "randomthings:blocks/quartzlamp"
     }
