@@ -5,8 +5,7 @@
     "model": "minecraft:torch_wall_2",
     "textures": {
       "bot_torch": "mia:blocks/mia/torch_gold_0",
-      "top_torch": "mia:blocks/mia/torch_gold_0_glow",
-      "torch": "mia:blocks/mia/torch_gold_0"
+      "top_torch": "mia:blocks/mia/torch_gold_0_glow"
     }
   },
   "variants": {
@@ -15,15 +14,13 @@
       "0": {
         "textures": {
           "bot_torch": "mia:blocks/mia/torch_gold_0",
-          "top_torch": "mia:blocks/mia/torch_gold_0_glow",
-          "torch": "mia:blocks/mia/torch_gold_0"
+          "top_torch": "mia:blocks/mia/torch_gold_0_glow"
         }
       },
       "1": {
         "textures": {
           "bot_torch": "mia:blocks/mia/torch_gold_1",
-          "top_torch": "mia:blocks/mia/torch_gold_1_glow",
-          "torch": "mia:blocks/mia/torch_gold_1"
+          "top_torch": "mia:blocks/mia/torch_gold_1_glow"
         }
       }
     },
@@ -34,15 +31,13 @@
           "0":{
             "textures": {
               "bot_torch": "mia:blocks/mia/torch_gold_0",
-              "top_torch": "mia:blocks/mia/torch_gold_0_glow",
-              "torch": "mia:blocks/mia/torch_gold_0"
+              "top_torch": "mia:blocks/mia/torch_gold_0_glow"
             }
           },
           "1":{
             "textures": {
               "bot_torch": "mia:blocks/mia/torch_gold_1",
-              "top_torch": "mia:blocks/mia/torch_gold_1_glow",
-              "torch": "mia:blocks/mia/torch_gold_1"
+              "top_torch": "mia:blocks/mia/torch_gold_1_glow"
             }
           }
         }
