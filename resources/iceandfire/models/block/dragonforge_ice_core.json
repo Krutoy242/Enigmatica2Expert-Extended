@@ -1,7 +1,7 @@
 {
     "parent": "block/layered_cube_all_2",
     "textures": {
-        "top_all": "iceandfire:blocks/dragonforge_ice_core_glow",
+        "top_all": "iceandfire:blocks/dragonforge_ice_core_bloom",
         "bot_all": "iceandfire:blocks/dragonforge_ice_core"
     }
 }
