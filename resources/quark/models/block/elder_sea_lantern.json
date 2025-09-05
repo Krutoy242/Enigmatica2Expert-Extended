@@ -1,0 +1,7 @@
+{
+    "parent": "block/layered_cube_all_2",
+    "textures": {
+        "top_all": "quark:blocks/elder_sea_lantern_glow",
+        "bot_all": "quark:blocks/elder_sea_lantern"
+    }
+}

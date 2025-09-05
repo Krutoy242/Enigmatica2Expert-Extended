@@ -1,0 +1,26 @@
+{
+  "animation": {
+	"frametime": 2,
+	"frames": [
+      2,
+	  1,
+	  0,
+      1,
+      2,
+      3,
+	  2,
+	  3,
+	  2,
+	  1,
+	  0,
+	  1
+    ]
+  },
+  "ctm": {
+		"ctm_version": 1,
+		"layer": "BLOOM",
+		"extra": {
+		  "light": 1
+		}
+	}
+}
