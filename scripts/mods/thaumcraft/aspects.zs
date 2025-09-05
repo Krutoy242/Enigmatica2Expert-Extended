@@ -1,8 +1,12 @@
 #modloaded thaumcraft randomtweaker
 #ignoreBracketErrors
+#reloadable
 
 import crafttweaker.item.IItemStack;
 import thaumcraft.aspect.CTAspectStack;
+
+import scripts.mods.thaumcraft.aspect.set;
+import scripts.mods.thaumcraft.aspect.toAspects;
 
 /*
  █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗
@@ -31,19 +35,19 @@ ____ _  _ _ _  _ _  _ ____
 #######################################################
 */
 
-<animus:component>.setAspects(<aspect:praecantatio> * 5, <aspect:fabrico> * 10); // reagent builder T1
-<animus:component:1>.setAspects(<aspect:praecantatio> * 15, Aspect.imperium * 20); // reagent chains T3
-<animus:component:2>.setAspects(<aspect:praecantatio> * 15, <aspect:rattus> * 40); // reagent consumption T3
-<animus:component:3>.setAspects(<aspect:praecantatio> * 10, <aspect:desiderium> * 30); // reagent leech T2
-<animus:component:4>.setAspects(<aspect:praecantatio> * 10, <aspect:potentia> * 50); // reagent storm T2
-<animus:component:5>.setAspects(<aspect:praecantatio> * 20, <aspect:motus> * 20); // reagent acquisition T4
+set('5🔮 10🔨', <animus:component>); // reagent builder T1
+set('15🔮 20🙌', <animus:component:1>); // reagent chains T3
+set('15🔮 40🐀', <animus:component:2>); // reagent consumption T3
+set('10🔮 30✊', <animus:component:3>); // reagent leech T2
+set('10🔮 50💪', <animus:component:4>); // reagent storm T2
+set('20🔮 20🏃', <animus:component:5>); // reagent acquisition T4
 
-<animus:sigil_builder>.setAspects(<aspect:praecantatio> * 5, <aspect:sanguis> * 5, <aspect:fabrico> * 10); // sigil builder T1
-<animus:sigil_chains>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, Aspect.imperium * 30); // sigil chains T3
-<animus:sigil_consumption>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, <aspect:rattus> * 30); // sigil consumption T3
-<animus:sigil_leech>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:desiderium> * 20); // sigil leech T2
-<animus:sigil_storm>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:potentia> * 50); // sigil storm T2
-<animus:sigil_transposition>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:motus> * 40); // sigil acquisition T4
+set('5🔮 5🩸 10🔨', <animus:sigil_builder>); // sigil builder T1
+set('15🔮 30🩸 30🙌', <animus:sigil_chains>); // sigil chains T3
+set('15🔮 30🩸 30🐀', <animus:sigil_consumption>); // sigil consumption T3
+set('10🔮 15🩸 20✊', <animus:sigil_leech>); // sigil leech T2
+set('10🔮 15🩸 50💪', <animus:sigil_storm>); // sigil storm T2
+set('20🔮 60🩸 40🏃', <animus:sigil_transposition>); // sigil acquisition T4
 
 /*
 #######################################################
@@ -54,8 +58,8 @@ ____ ___  ___  _    _ ____ ___     ____ _  _ ____ ____ ____ ____ ___ _ ____ ____
 #######################################################
 */
 
-<appliedenergistics2:quartz_block>.setAspects(<aspect:vitreus> * 30, <aspect:potentia> * 15); // Certus quartz block
-<appliedenergistics2:material:10>.setAspects(<aspect:vitreus> * 10, <aspect:potentia> * 10, <aspect:ordo> * 10); // Pure certus quartz
+set('30💎 15💪', <appliedenergistics2:quartz_block>); // Certus quartz block
+set('10💎 10💪 10⟁', <appliedenergistics2:material:10>); // Pure certus quartz
 
 /*
 #######################################################
@@ -66,77 +70,77 @@ ____ ____ ___ ____ ____ _       ____ ____ ____ ____ ____ ____ _   _
 #######################################################
 */
 
-<astralsorcery:blockmarble>.setAspects(<aspect:terra> * 4, <aspect:ordo> * 2); // marble
-<astralsorcery:blockblackmarble>.setAspects(<aspect:terra> * 4, <aspect:potentia> * 1); // sooty marble
+set('4⛰️ 2⟁', <astralsorcery:blockmarble>); // marble
+set('4⛰️ 💪', <astralsorcery:blockblackmarble>); // sooty marble
 
-<astralsorcery:itemusabledust>.setAspects(<aspect:lux> * 2, <aspect:sensus> * 1); // illumination powder
-<astralsorcery:itemusabledust:1>.setAspects(<aspect:tenebrae> * 10, <aspect:potentia> * 20); // nocturnal powder
-<astralsorcery:itemcraftingcomponent:4>.setAspects(<aspect:praecantatio> * 5, <aspect:ordo> * 10); // resonating gem
-<astralsorcery:blockinfusedwood>.setAspects(<aspect:herba> * 20, <aspect:praecantatio> * 1); // infused wood
-<astralsorcery:blockinfusedwood:6>.setAspects(<aspect:herba> * 20, <aspect:praecantatio> * 1); // vibrant infused wood
+set('2🕯️ 🦉', <astralsorcery:itemusabledust>); // illumination powder
+set('10🌑 20💪', <astralsorcery:itemusabledust:1>); // nocturnal powder
+set('5🔮 10⟁', <astralsorcery:itemcraftingcomponent:4>); // resonating gem
+set('20🌱 🔮', <astralsorcery:blockinfusedwood>); // infused wood
+set('20🌱 🔮', <astralsorcery:blockinfusedwood:6>); // vibrant infused wood
 
-<astralsorcery:itemcraftingcomponent:3>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10); // glass lens and bellow collores lenses
-<astralsorcery:itemcoloredlens>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:ignis> * 20); // ignition
-<astralsorcery:itemcoloredlens:1>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:exanimis> * 20); // break
-<astralsorcery:itemcoloredlens:2>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:herba> * 20); // growth
-<astralsorcery:itemcoloredlens:3>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:aversio> * 20); // damage (emotional)
-<astralsorcery:itemcoloredlens:4>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:victus> * 20); // regeneration
-<astralsorcery:itemcoloredlens:5>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:motus> * 20); // push
-<astralsorcery:itemcoloredlens:6>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:vitreus> * 10, <aspect:spiritus> * 20); // spectral
+set('10🔮 5✨ 10💎', <astralsorcery:itemcraftingcomponent:3>); // glass lens and bellow collores lenses
+set('10🔮 5✨ 10💎 20🔥', <astralsorcery:itemcoloredlens>); // ignition
+set('10🔮 5✨ 10💎 20💀', <astralsorcery:itemcoloredlens:1>); // break
+set('10🔮 5✨ 10💎 20🌱', <astralsorcery:itemcoloredlens:2>); // growth
+set('10🔮 5✨ 10💎 20🗡️', <astralsorcery:itemcoloredlens:3>); // damage (emotional)
+set('10🔮 5✨ 10💎 20❤️', <astralsorcery:itemcoloredlens:4>); // regeneration
+set('10🔮 5✨ 10💎 20🏃', <astralsorcery:itemcoloredlens:5>); // push
+set('10🔮 5✨ 10💎 20👻', <astralsorcery:itemcoloredlens:6>); // spectral
 
-<astralsorcery:itemshiftingstar:*>.setAspects(<aspect:praecantatio> * 20); // shifting star
+set('20🔮', <astralsorcery:itemshiftingstar:*>); // shifting star
 
-<astralsorcery:itemrockcrystalsimple>.setAspects(<aspect:praecantatio> * 5, <aspect:ordo> * 10, <aspect:vitreus> * 20); // rock crystal
-<astralsorcery:blockcustomore>.setAspects(<aspect:praecantatio> * 5, <aspect:ordo> * 50, <aspect:vitreus> * 50, <aspect:terra> * 5); // rock crystal ore
-<astralsorcery:itemcelestialcrystal>.setAspects(<aspect:praecantatio> * 20, <aspect:ordo> * 10, <aspect:vitreus> * 20, <aspect:tenebrae> * 10); // celestial crystal
-<astralsorcery:blockcelestialcrystals:4>.setAspects(<aspect:praecantatio> * 50, <aspect:ordo> * 50, <aspect:vitreus> * 100, <aspect:tenebrae> * 50); // celestial crystal cluster
-<astralsorcery:itemperkgem>.setAspects(<aspect:praecantatio> * 20, <aspect:ordo> * 10, <aspect:vitreus> * 20, <aspect:sensus> * 10); // orium gem (blue)
-<astralsorcery:blockgemcrystals:2>.setAspects(<aspect:praecantatio> * 50, <aspect:ordo> * 50, <aspect:vitreus> * 100, <aspect:sensus> * 50); // ^that ore
-<astralsorcery:itemperkgem:1>.setAspects(<aspect:praecantatio> * 20, <aspect:ordo> * 10, <aspect:vitreus> * 20, <aspect:lux> * 10); // ilium gem (orange)
-<astralsorcery:blockgemcrystals:3>.setAspects(<aspect:praecantatio> * 50, <aspect:ordo> * 50, <aspect:vitreus> * 100, <aspect:lux> * 50); // ^that ore
-<astralsorcery:itemperkgem:2>.setAspects(<aspect:praecantatio> * 20, <aspect:ordo> * 10, <aspect:vitreus> * 20, <aspect:potentia> * 10); // fengarum gem (white)
-<astralsorcery:blockgemcrystals:4>.setAspects(<aspect:praecantatio> * 50, <aspect:ordo> * 50, <aspect:vitreus> * 100, <aspect:potentia> * 50); // ^that ore
-<astralsorcery:blockcollectorcrystal>.setAspects(<aspect:praecantatio> * 30, <aspect:ordo> * 50, <aspect:vitreus> * 40); // collector crystal
-<astralsorcery:blockcelestialcollectorcrystal>.setAspects(<aspect:praecantatio> * 100, <aspect:ordo> * 100, <aspect:vitreus> * 200, <aspect:tenebrae> * 100); // celestial collector crystal
+set('5🔮 10⟁ 20💎', <astralsorcery:itemrockcrystalsimple>); // rock crystal
+set('5🔮 50⟁ 50💎 5⛰️', <astralsorcery:blockcustomore>); // rock crystal ore
+set('20🔮 10⟁ 20💎 10🌑', <astralsorcery:itemcelestialcrystal>); // celestial crystal
+set('50🔮 50⟁ 100💎 50🌑', <astralsorcery:blockcelestialcrystals:4>); // celestial crystal cluster
+set('20🔮 10⟁ 20💎 10🦉', <astralsorcery:itemperkgem>); // orium gem (blue)
+set('50🔮 50⟁ 100💎 50🦉', <astralsorcery:blockgemcrystals:2>); // ^that ore
+set('20🔮 10⟁ 20💎 10🕯️', <astralsorcery:itemperkgem:1>); // ilium gem (orange)
+set('50🔮 50⟁ 100💎 50🕯️', <astralsorcery:blockgemcrystals:3>); // ^that ore
+set('20🔮 10⟁ 20💎 10💪', <astralsorcery:itemperkgem:2>); // fengarum gem (white)
+set('50🔮 50⟁ 100💎 50💪', <astralsorcery:blockgemcrystals:4>); // ^that ore
+set('30🔮 50⟁ 40💎', <astralsorcery:blockcollectorcrystal>); // collector crystal
+set('100🔮 100⟁ 200💎 100🌑', <astralsorcery:blockcelestialcollectorcrystal>); // celestial collector crystal
 
-<astralsorcery:blockaltar>.setAspects(<aspect:praecantatio> * 5, <aspect:fabrico> * 10, <aspect:ordo> * 5); // Altar T1
-<astralsorcery:blockaltar:1>.setAspects(<aspect:praecantatio> * 10, <aspect:fabrico> * 20, <aspect:ordo> * 20); // T2
-<astralsorcery:blockaltar:2>.setAspects(<aspect:praecantatio> * 50, <aspect:fabrico> * 30, <aspect:ordo> * 50); // T3
-<astralsorcery:blockaltar:3>.setAspects(<aspect:praecantatio> * 100, <aspect:fabrico> * 40, <aspect:ordo> * 100, <aspect:sanguis> * 50); // T4
+set('5🔮 10🔨 5⟁', <astralsorcery:blockaltar>); // Altar T1
+set('10🔮 20🔨 20⟁', <astralsorcery:blockaltar:1>); // T2
+set('50🔮 30🔨 50⟁', <astralsorcery:blockaltar:2>); // T3
+set('100🔮 40🔨 100⟁ 50🩸', <astralsorcery:blockaltar:3>); // T4
 
-<astralsorcery:blockworldilluminator>.setAspects(<aspect:lux> * 5, <aspect:ordo> * 5, <aspect:vitreus> * 10); // Cave illuminator
-<astralsorcery:blockattunementrelay>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 5, <aspect:permutatio> * 5); // spectral realy
-<astralsorcery:blocklens>.setAspects(<aspect:praecantatio> * 10, <aspect:auram> * 10, <aspect:ordo> * 5, <aspect:vitreus> * 20); // Lens
-<astralsorcery:blockmachine:1>.setAspects(<aspect:terra> * 5, <aspect:fabrico> * 5, <aspect:machina> * 5); // grindstone
-<astralsorcery:itemconstellationpaper>.setAspects(<aspect:praecantatio> * 5, <aspect:cognitio> * 20, <aspect:ordo> * 10); // constelation paper
-<astralsorcery:itemknowledgeshare>.setAspects(<aspect:praecantatio> * 5, <aspect:cognitio> * 20, <aspect:ordo> * 10); // scroll of written knowledge
-<astralsorcery:blockprism>.setAspects(<aspect:praecantatio> * 20, <aspect:vitreus> * 30, <aspect:ordo> * 30); // primslens
-<astralsorcery:blockwell>.setAspects(<aspect:praecantatio> * 5, <aspect:aqua> * 10, <aspect:ordo> * 5); // lightwell
-<astralsorcery:blockbore>.setAspects(<aspect:praecantatio> * 20, <aspect:desiderium> * 20, <aspect:ordo> * 20); // evershifting fountain
-<astralsorcery:blockborehead>.setAspects(<aspect:praecantatio> * 10, <aspect:desiderium> * 20, <aspect:ordo> * 15); // neromantic prime
-<astralsorcery:blockborehead:1>.setAspects(<aspect:praecantatio> * 10, <aspect:desiderium> * 20, <aspect:tenebrae> * 15); // fysallidic prime
-<astralsorcery:blockrituallink>.setAspects(<aspect:praecantatio> * 5, <aspect:vitreus> * 10, <aspect:ordo> * 5); // ritual anchor
+set('5🕯️ 5⟁ 10💎', <astralsorcery:blockworldilluminator>); // Cave illuminator
+set('10🔮 5✨ 5🔄', <astralsorcery:blockattunementrelay>); // spectral realy
+set('10🔮 10✨ 5⟁ 20💎', <astralsorcery:blocklens>); // Lens
+set('5⛰️ 5🔨 5⚙️', <astralsorcery:blockmachine:1>); // grindstone
+set('5🔮 20🧠 10⟁', <astralsorcery:itemconstellationpaper>); // constelation paper
+set('5🔮 20🧠 10⟁', <astralsorcery:itemknowledgeshare>); // scroll of written knowledge
+set('20🔮 30💎 30⟁', <astralsorcery:blockprism>); // primslens
+set('5🔮 10💧 5⟁', <astralsorcery:blockwell>); // lightwell
+set('20🔮 20✊ 20⟁', <astralsorcery:blockbore>); // evershifting fountain
+set('10🔮 20✊ 15⟁', <astralsorcery:blockborehead>); // neromantic prime
+set('10🔮 20✊ 15🌑', <astralsorcery:blockborehead:1>); // fysallidic prime
+set('5🔮 10💎 5⟁', <astralsorcery:blockrituallink>); // ritual anchor
 
-<astralsorcery:itemsextant>.setAspects(<aspect:praecantatio> * 5, <aspect:sensus> * 10, <aspect:desiderium> * 5); // sextant
-<astralsorcery:itemhandtelescope>.setAspects(<aspect:praecantatio> * 10, <aspect:sensus> * 20, <aspect:desiderium> * 10); // looking glass
-<astralsorcery:blockmachine>.setAspects(<aspect:praecantatio> * 5, <aspect:sensus> * 10, <aspect:desiderium> * 20); // telescope
-<astralsorcery:blockobservatory>.setAspects(<aspect:praecantatio> * 50, <aspect:sensus> * 50, Aspect.visum * 30, <aspect:tenebrae> * 20); // observatory
+set('5🔮 10🦉 5✊', <astralsorcery:itemsextant>); // sextant
+set('10🔮 20🦉 10✊', <astralsorcery:itemhandtelescope>); // looking glass
+set('5🔮 10🦉 20✊', <astralsorcery:blockmachine>); // telescope
+set('50🔮 50🦉 30👁️ 20🌑', <astralsorcery:blockobservatory>); // observatory
 
-<astralsorcery:blockcelestialgateway>.setAspects(<aspect:praecantatio> * 10, <aspect:alienis> * 20, <aspect:motus> * 50); // celestial gateway
-<astralsorcery:blockstarlightinfuser>.setAspects(<aspect:praecantatio> * 10, <aspect:permutatio> * 20, <aspect:ordo> * 20); // starlight infuser
-<astralsorcery:blockattunementaltar>.setAspects(<aspect:praecantatio> * 10, <aspect:ordo> * 10, <aspect:desiderium> * 20); // attument altar
-<astralsorcery:blockmapdrawingtable>.setAspects(<aspect:praecantatio> * 20, <aspect:sensus> * 10, <aspect:desiderium> * 20, Aspect.imperium * 10); // stellar refraction table
-<astralsorcery:blockchalice>.setAspects(<aspect:praecantatio> * 10, <aspect:tenebrae> * 10, <aspect:desiderium> * 20); // containment chalice
-<astralsorcery:blockritualpedestal>.setAspects(<aspect:praecantatio> * 10, <aspect:ordo> * 10, <aspect:desiderium> * 20); // ritual pedestal
+set('10🔮 20👽 50🏃', <astralsorcery:blockcelestialgateway>); // celestial gateway
+set('10🔮 20🔄 20⟁', <astralsorcery:blockstarlightinfuser>); // starlight infuser
+set('10🔮 10⟁ 20✊', <astralsorcery:blockattunementaltar>); // attument altar
+set('20🔮 10🦉 20✊ 10🙌', <astralsorcery:blockmapdrawingtable>); // stellar refraction table
+set('10🔮 10🌑 20✊', <astralsorcery:blockchalice>); // containment chalice
+set('10🔮 10⟁ 20✊', <astralsorcery:blockritualpedestal>); // ritual pedestal
 
-<astralsorcery:itemlinkingtool>.setAspects(<aspect:praecantatio> * 5, <aspect:instrumentum> * 10, <aspect:vitreus> * 10); // linking tool
-<astralsorcery:itemwand>.setAspects(<aspect:praecantatio> * 5, <aspect:instrumentum> * 10, <aspect:vitreus> * 10); // resonating wand
-<astralsorcery:itemilluminationwand>.setAspects(<aspect:praecantatio> * 10, <aspect:lux> * 20, <aspect:vitreus> * 20); // illumination wand
-<astralsorcery:iteminfusedglass>.setAspects(<aspect:praecantatio> * 20, <aspect:auram> * 10, <aspect:vitreus> * 20, <aspect:ordo> * 20); // infused glass
-<astralsorcery:itemskyresonator>.setAspects(<aspect:sensus> * 10, <aspect:ordo> * 5, <aspect:desiderium> * 10); // fosic resonator
-<astralsorcery:itemperkseal>.setAspects(<aspect:praecantatio> * 10, <aspect:tenebrae> * 10, <aspect:potentia> * 20); // sealing sigil
+set('5🔮 10🛠️ 10💎', <astralsorcery:itemlinkingtool>); // linking tool
+set('5🔮 10🛠️ 10💎', <astralsorcery:itemwand>); // resonating wand
+set('10🔮 20🕯️ 20💎', <astralsorcery:itemilluminationwand>); // illumination wand
+set('20🔮 10✨ 20💎 20⟁', <astralsorcery:iteminfusedglass>); // infused glass
+set('10🦉 5⟁ 10✊', <astralsorcery:itemskyresonator>); // fosic resonator
+set('10🔮 10🌑 20💪', <astralsorcery:itemperkseal>); // sealing sigil
 
-<astralsorcery:itemenchantmentamulet>.setAspects(<aspect:praecantatio> * 30, <aspect:tenebrae> * 10, <aspect:vitreus> * 10); // resplendent prism
+set('30🔮 10🌑 10💎', <astralsorcery:itemenchantmentamulet>); // resplendent prism
 
 /*
 #######################################################
@@ -147,121 +151,121 @@ ___  _    ____ ____ ___  _  _ ____ ____ _ ____
 #######################################################
 */
 
-<bloodmagic:slate>.setAspects(<aspect:terra> * 5, <aspect:sanguis> * 5); // slate blank
-<bloodmagic:slate:1>.setAspects(<aspect:terra> * 5, <aspect:sanguis> * 15); // slate reinforced
-<bloodmagic:slate:2>.setAspects(<aspect:terra> * 5, <aspect:sanguis> * 30); // slate imbued
-<bloodmagic:slate:3>.setAspects(<aspect:terra> * 5, <aspect:sanguis> * 66); // slate demonic
-<bloodmagic:slate:4>.setAspects(<aspect:terra> * 5, <aspect:sanguis> * 100); // slate ethernal
+set('5⛰️ 5🩸', <bloodmagic:slate>); // slate blank
+set('5⛰️ 15🩸', <bloodmagic:slate:1>); // slate reinforced
+set('5⛰️ 30🩸', <bloodmagic:slate:2>); // slate imbued
+set('5⛰️ 66🩸', <bloodmagic:slate:3>); // slate demonic
+set('5⛰️ 100🩸', <bloodmagic:slate:4>); // slate ethernal
 
-<bloodmagic:blood_shard>.setAspects(<aspect:mortuus> * 10, <aspect:exanimis> * 10, <aspect:sanguis> * 10); // weak blood shard
-<bloodmagic:blood_shard:1>.setAspects(Aspect.caeles * 30, Aspect.infernum * 50, <aspect:sanguis> * 20); // demon blood shard
+set('10⚰️ 10💀 10🩸', <bloodmagic:blood_shard>); // weak blood shard
+set('30☀️ 50🧨 20🩸', <bloodmagic:blood_shard:1>); // demon blood shard
 
-<bloodmagic:activation_crystal>.setAspects(<aspect:praecantatio> * 10, <aspect:desiderium> * 20, <aspect:sanguis> * 20); // weak activation crystal
-<bloodmagic:activation_crystal:1>.setAspects(<aspect:praecantatio> * 40, <aspect:desiderium> * 30, <aspect:sanguis> * 50); // awekaned activation crystal
+set('10🔮 20✊ 20🩸', <bloodmagic:activation_crystal>); // weak activation crystal
+set('40🔮 30✊ 50🩸', <bloodmagic:activation_crystal:1>); // awekaned activation crystal
 
-<bloodmagic:blood_orb:*>.setAspects(<aspect:spiritus> * 40); // soulbinded orbs
-<bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:weak'}).setAspects(<aspect:praecantatio> * 10, <aspect:desiderium> * 10, <aspect:sanguis> * 10); // orb tier 1
-<bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:apprentice'}).setAspects(<aspect:praecantatio> * 20, <aspect:victus> * 10, <aspect:sanguis> * 25); // orb tier 2
-<bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:magician'}).setAspects(<aspect:praecantatio> * 30, <aspect:metallum> * 50, <aspect:sanguis> * 50); // orb tier 3
-<bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:master'}).setAspects(<aspect:praecantatio> * 40, <aspect:mortuus> * 20, <aspect:sanguis> * 80); // orb tier 4
-<bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:archmage'}).setAspects(<aspect:praecantatio> * 50, <aspect:ordo> * 100, <aspect:sanguis> * 100); // orb tier 5
-<bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:transcendent'}).setAspects(<aspect:praecantatio> * 100, Aspect.caeles * 100, <aspect:sanguis> * 300); // orb tier 6
+set('40👻', <bloodmagic:blood_orb:*>); // soulbinded orbs
+set('10🔮 10✊ 10🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:weak'})); // orb tier 1
+set('20🔮 10❤️ 25🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:apprentice'})); // orb tier 2
+set('30🔮 50🔩 50🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:magician'})); // orb tier 3
+set('40🔮 20⚰️ 80🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:master'})); // orb tier 4
+set('50🔮 100⟁ 100🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:archmage'})); // orb tier 5
+set('100🔮 100☀️ 300🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:transcendent'})); // orb tier 6
 
-<bloodmagic:soul_snare>.setAspects(<aspect:vinculum> * 3, Aspect.imperium * 3, Aspect.ventus * 1); // rudimentary snare
-<bloodmagic:arcane_ashes:*>.setAspects(<aspect:potentia> * 10, <aspect:ignis> * 10, Aspect.exitium * 5); // arcane ashes
+set('3🔗 3🙌 🍃', <bloodmagic:soul_snare>); // rudimentary snare
+set('10💪 10🔥 5💣', <bloodmagic:arcane_ashes:*>); // arcane ashes
 
-<bloodmagic:soul_forge>.setAspects(<aspect:instrumentum> * 20, <aspect:spiritus> * 30, <aspect:praecantatio> * 15); // rudimentary snare
-<bloodmagic:demon_pylon>.setAspects(Aspect.infernum * 30, <aspect:spiritus> * 20, <aspect:desiderium> * 20); // rudimentary snare
-<bloodmagic:demon_crucible>.setAspects(Aspect.infernum * 30, <aspect:spiritus> * 20, Aspect.fluctus * 15); // rudimentary snare
-<bloodmagic:demon_crystallizer>.setAspects(Aspect.infernum * 30, <aspect:spiritus> * 20, Aspect.fluctus * 15); // rudimentary snare
-<bloodmagic:alchemy_table>.setAspects(<aspect:alkimia> * 25, <aspect:ordo> * 20, <aspect:praecantatio> * 20); // rudimentary snare
-<bloodmagic:altar>.setAspects(<aspect:terra> * 15, <aspect:praecantatio> * 10, <aspect:aversio> * 30); // rudimentary snare
+set('20🛠️ 30👻 15🔮', <bloodmagic:soul_forge>); // rudimentary snare
+set('30🧨 20👻 20✊', <bloodmagic:demon_pylon>); // rudimentary snare
+set('30🧨 20👻 15♒', <bloodmagic:demon_crucible>); // rudimentary snare
+set('30🧨 20👻 15♒', <bloodmagic:demon_crystallizer>); // rudimentary snare
+set('25⚗️ 20⟁ 20🔮', <bloodmagic:alchemy_table>); // rudimentary snare
+set('15⛰️ 10🔮 30🗡️', <bloodmagic:altar>); // rudimentary snare
 
-<bloodmagic:monster_soul>.setAspects(<aspect:spiritus> * 2, Aspect.infernum * 2); // demonic will
-<bloodmagic:monster_soul:1>.setAspects(<aspect:spiritus> * 2, Aspect.infernum * 2, <aspect:alkimia> * 1); // corrosive
-<bloodmagic:monster_soul:2>.setAspects(<aspect:spiritus> * 2, Aspect.infernum * 2, Aspect.exitium * 1); // destructive
-<bloodmagic:monster_soul:3>.setAspects(<aspect:spiritus> * 2, Aspect.infernum * 2, <aspect:mortuus> * 1); // vengeful
-<bloodmagic:monster_soul:4>.setAspects(<aspect:spiritus> * 2, Aspect.infernum * 2, <aspect:alienis> * 1); // steadfast
+set('2👻 2🧨', <bloodmagic:monster_soul>); // demonic will
+set('2👻 2🧨 ⚗️', <bloodmagic:monster_soul:1>); // corrosive
+set('2👻 2🧨 💣', <bloodmagic:monster_soul:2>); // destructive
+set('2👻 2🧨 ⚰️', <bloodmagic:monster_soul:3>); // vengeful
+set('2👻 2🧨 👽', <bloodmagic:monster_soul:4>); // steadfast
 
-<bloodmagic:item_demon_crystal>.setAspects(<aspect:spiritus> * 30, Aspect.infernum * 25); // demonic will crystal
-<bloodmagic:item_demon_crystal:1>.setAspects(<aspect:spiritus> * 30, Aspect.infernum * 25, <aspect:alkimia> * 20); // corrosive
-<bloodmagic:item_demon_crystal:2>.setAspects(<aspect:spiritus> * 30, Aspect.infernum * 25, Aspect.exitium * 20); // destructive
-<bloodmagic:item_demon_crystal:3>.setAspects(<aspect:spiritus> * 30, Aspect.infernum * 25, <aspect:mortuus> * 20); // vengeful
-<bloodmagic:item_demon_crystal:4>.setAspects(<aspect:spiritus> * 30, Aspect.infernum * 25, <aspect:alienis> * 20); // steadfast
+set('30👻 25🧨', <bloodmagic:item_demon_crystal>); // demonic will crystal
+set('30👻 25🧨 20⚗️', <bloodmagic:item_demon_crystal:1>); // corrosive
+set('30👻 25🧨 20💣', <bloodmagic:item_demon_crystal:2>); // destructive
+set('30👻 25🧨 20⚰️', <bloodmagic:item_demon_crystal:3>); // vengeful
+set('30👻 25🧨 20👽', <bloodmagic:item_demon_crystal:4>); // steadfast
 
-<bloodmagic:sentient_sword>.setAspects(<aspect:spiritus> * 20, <aspect:aversio> * 30);
-<bloodmagic:sentient_bow>.setAspects(<aspect:spiritus> * 20, <aspect:aversio> * 15, Aspect.ventus * 15);
-<bloodmagic:sentient_axe>.setAspects(<aspect:spiritus> * 20, <aspect:instrumentum> * 20);
-<bloodmagic:sentient_pickaxe>.setAspects(<aspect:spiritus> * 20, <aspect:instrumentum> * 20);
-<bloodmagic:sentient_shovel>.setAspects(<aspect:spiritus> * 20, <aspect:instrumentum> * 20);
+set('20👻 30🗡️', <bloodmagic:sentient_sword>);
+set('20👻 15🗡️ 15🍃', <bloodmagic:sentient_bow>);
+set('20👻 20🛠️', <bloodmagic:sentient_axe>);
+set('20👻 20🛠️', <bloodmagic:sentient_pickaxe>);
+set('20👻 20🛠️', <bloodmagic:sentient_shovel>);
 
-<bloodmagic:sacrificial_dagger>.setAspects(<aspect:alienis> * 5, <aspect:aversio> * 5, <aspect:mortuus> * 10);
-<bloodmagic:dagger_of_sacrifice>.setAspects(<aspect:sanguis> * 15, <aspect:instrumentum> * 10, <aspect:aversio> * 10);
+set('5👽 5🗡️ 10⚰️', <bloodmagic:sacrificial_dagger>);
+set('15🩸 10🛠️ 10🗡️', <bloodmagic:dagger_of_sacrifice>);
 
-<bloodmagic:component:8>.setAspects(<aspect:praecantatio> * 5, <aspect:aqua> * 10); // reagent binding
-<bloodmagic:sigil_whirlwind>.setAspects(<aspect:praecantatio> * 5, <aspect:sanguis> * 5, <aspect:aer> * 20); // sigil wirldwind
-<bloodmagic:component:29>.setAspects(<aspect:praecantatio> * 5, <aspect:alkimia> * 5, <aspect:potentia> * 10); // simple power catalyst
-<bloodmagic:component:28>.setAspects(<aspect:praecantatio> * 5, <aspect:alkimia> * 5, <aspect:sensus> * 10); // simple lengthening catalyst
+set('5🔮 10💧', <bloodmagic:component:8>); // reagent binding
+set('5🔮 5🩸 20💨', <bloodmagic:sigil_whirlwind>); // sigil wirldwind
+set('5🔮 5⚗️ 10💪', <bloodmagic:component:29>); // simple power catalyst
+set('5🔮 5⚗️ 10🦉', <bloodmagic:component:28>); // simple lengthening catalyst
 
 // TIERED REAGENTS AND SIGILS
 // Tier 1
 
-<bloodmagic:component>.setAspects(<aspect:praecantatio> * 5, <aspect:aqua> * 10); // reagent water
-<bloodmagic:component:1>.setAspects(<aspect:praecantatio> * 5, <aspect:ignis> * 10); // reagent lava
+set('5🔮 10💧', <bloodmagic:component>); // reagent water
+set('5🔮 10🔥', <bloodmagic:component:1>); // reagent lava
 
-<bloodmagic:sigil_water>.setAspects(<aspect:praecantatio> * 5, <aspect:sanguis> * 5, <aspect:aqua> * 10); // sigil water
-<bloodmagic:sigil_lava>.setAspects(<aspect:praecantatio> * 5, <aspect:sanguis> * 5, <aspect:ignis> * 10); // sigil lava
-<bloodmagic:sigil_divination>.setAspects(<aspect:praecantatio> * 5, <aspect:sanguis> * 5, <aspect:cognitio> * 10); // sigil divination
+set('5🔮 5🩸 10💧', <bloodmagic:sigil_water>); // sigil water
+set('5🔮 5🩸 10🔥', <bloodmagic:sigil_lava>); // sigil lava
+set('5🔮 5🩸 10🧠', <bloodmagic:sigil_divination>); // sigil divination
 
 // Tier 2
 
-<bloodmagic:component:5>.setAspects(<aspect:praecantatio> * 10, <aspect:herba> * 20); // reagent growth
-<bloodmagic:component:31>.setAspects(<aspect:praecantatio> * 10, <aspect:praecantatio> * 20); // reagent elasticy
-<bloodmagic:component:2>.setAspects(<aspect:praecantatio> * 10, <aspect:volatus> * 20); // reagent air
-<bloodmagic:component:7>.setAspects(<aspect:praecantatio> * 10, <aspect:sensus> * 20); // reagent sight
-<bloodmagic:component:3>.setAspects(<aspect:praecantatio> * 10, Aspect.exitium * 20); // reagent mining
-<bloodmagic:component:32>.setAspects(<aspect:praecantatio> * 10, <aspect:gelum> * 20); // reagent frost
-<bloodmagic:component:4>.setAspects(<aspect:praecantatio> * 10, <aspect:vacuos> * 20); // reagent void
+set('10🔮 20🌱', <bloodmagic:component:5>); // reagent growth
+set('10🔮 20🔮', <bloodmagic:component:31>); // reagent elasticy
+set('10🔮 20🕊️', <bloodmagic:component:2>); // reagent air
+set('10🔮 20🦉', <bloodmagic:component:7>); // reagent sight
+set('10🔮 20💣', <bloodmagic:component:3>); // reagent mining
+set('10🔮 20🧊', <bloodmagic:component:32>); // reagent frost
+set('10🔮 20〇', <bloodmagic:component:4>); // reagent void
 
-<bloodmagic:sigil_green_grove>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:herba> * 20); // sigil growth
-<bloodmagic:sigil_bounce>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:praemunio> * 20); // sigil elasticy
-<bloodmagic:sigil_air>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:volatus> * 20); // sigil air
-<bloodmagic:sigil_seer>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:sensus> * 20); // sigil sight
-<bloodmagic:sigil_fast_miner>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, Aspect.exitium * 20); // sigil mining
-<bloodmagic:sigil_frost>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:gelum> * 20); // sigil frost
-<bloodmagic:sigil_void>.setAspects(<aspect:praecantatio> * 10, <aspect:sanguis> * 15, <aspect:vacuos> * 20); // sigil void
+set('10🔮 15🩸 20🌱', <bloodmagic:sigil_green_grove>); // sigil growth
+set('10🔮 15🩸 20🛡️', <bloodmagic:sigil_bounce>); // sigil elasticy
+set('10🔮 15🩸 20🕊️', <bloodmagic:sigil_air>); // sigil air
+set('10🔮 15🩸 20🦉', <bloodmagic:sigil_seer>); // sigil sight
+set('10🔮 15🩸 20💣', <bloodmagic:sigil_fast_miner>); // sigil mining
+set('10🔮 15🩸 20🧊', <bloodmagic:sigil_frost>); // sigil frost
+set('10🔮 15🩸 20〇', <bloodmagic:sigil_void>); // sigil void
 
 // Tier 3
 
-<bloodmagic:component:12>.setAspects(<aspect:praecantatio> * 15, <aspect:metallum> * 30); // reagent magnetism
-<bloodmagic:component:27>.setAspects(<aspect:praecantatio> * 15, <aspect:vinculum> * 30); // reagent holding
-<bloodmagic:component:11>.setAspects(<aspect:praecantatio> * 15, <aspect:lux> * 30); // reagent blood lamp
-<bloodmagic:component:30>.setAspects(<aspect:praecantatio> * 15, <aspect:bestia> * 30); // reagent claw
-<bloodmagic:component:6>.setAspects(<aspect:praecantatio> * 15, <aspect:aer> * 10, <aspect:ignis> * 10, <aspect:terra> * 10, <aspect:aqua> * 10); // reagent elemental affinity
+set('15🔮 30🔩', <bloodmagic:component:12>); // reagent magnetism
+set('15🔮 30🔗', <bloodmagic:component:27>); // reagent holding
+set('15🔮 30🕯️', <bloodmagic:component:11>); // reagent blood lamp
+set('15🔮 30🐺', <bloodmagic:component:30>); // reagent claw
+set('15🔮 10💨 10🔥 10⛰️ 10💧', <bloodmagic:component:6>); // reagent elemental affinity
 
-<bloodmagic:sigil_magnetism>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, <aspect:metallum> * 30); // sigil magnetism
-<bloodmagic:sigil_holding>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, <aspect:vinculum> * 30); // sigil holding
-<bloodmagic:sigil_blood_light>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, <aspect:vacuos> * 30); // sigil blood lamp
-<bloodmagic:sigil_claw>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, <aspect:bestia> * 30); // sigil claw
-<bloodmagic:sigil_elemental_affinity>.setAspects(<aspect:praecantatio> * 15, <aspect:sanguis> * 30, <aspect:aer> * 10, <aspect:ignis> * 10, <aspect:terra> * 10, <aspect:aqua> * 10); // sigil elemental affinity
+set('15🔮 30🩸 30🔩', <bloodmagic:sigil_magnetism>); // sigil magnetism
+set('15🔮 30🩸 30🔗', <bloodmagic:sigil_holding>); // sigil holding
+set('15🔮 30🩸 30〇', <bloodmagic:sigil_blood_light>); // sigil blood lamp
+set('15🔮 30🩸 30🐺', <bloodmagic:sigil_claw>); // sigil claw
+set('15🔮 30🩸 10💨 10🔥 10⛰️ 10💧', <bloodmagic:sigil_elemental_affinity>); // sigil elemental affinity
 
 // Tier 4
 
-<bloodmagic:component:18>.setAspects(<aspect:praecantatio> * 20, <aspect:permutatio> * 40); // reagent transposition
-<bloodmagic:component:17>.setAspects(<aspect:praecantatio> * 20, <aspect:alienis> * 40); // reagent teleposition
-<bloodmagic:component:9>.setAspects(<aspect:praecantatio> * 20, <aspect:perditio> * 40); // reagent supression
-<bloodmagic:component:15>.setAspects(<aspect:praecantatio> * 20, <aspect:spiritus> * 40); // reagent phantom bridge
-<bloodmagic:component:13>.setAspects(<aspect:praecantatio> * 20, Aspect.ventus * 40); // reagent haste
-<bloodmagic:component:16>.setAspects(<aspect:praecantatio> * 20, <aspect:tenebrae> * 40); // reagent severance
-<bloodmagic:component:14>.setAspects(<aspect:praecantatio> * 20, <aspect:ordo> * 40); // reagent compression
+set('20🔮 40🔄', <bloodmagic:component:18>); // reagent transposition
+set('20🔮 40👽', <bloodmagic:component:17>); // reagent teleposition
+set('20🔮 40⚡', <bloodmagic:component:9>); // reagent supression
+set('20🔮 40👻', <bloodmagic:component:15>); // reagent phantom bridge
+set('20🔮 40🍃', <bloodmagic:component:13>); // reagent haste
+set('20🔮 40🌑', <bloodmagic:component:16>); // reagent severance
+set('20🔮 40⟁', <bloodmagic:component:14>); // reagent compression
 
-<bloodmagic:sigil_transposition>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:permutatio> * 40); // sigil transposition
-<bloodmagic:sigil_teleposition>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:alienis> * 40); // sigil teleposiotion
-<bloodmagic:sigil_suppression>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:perditio> * 40); // sigil supression
-<bloodmagic:sigil_phantom_bridge>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:spiritus> * 40); // sigil phantom bridge
-<bloodmagic:sigil_haste>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, Aspect.ventus * 40); // sigil haste
-<bloodmagic:sigil_ender_severance>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:tenebrae> * 40); // sigil severance
-<bloodmagic:sigil_compression>.setAspects(<aspect:praecantatio> * 20, <aspect:sanguis> * 60, <aspect:ordo> * 40); // sigil compression
+set('20🔮 60🩸 40🔄', <bloodmagic:sigil_transposition>); // sigil transposition
+set('20🔮 60🩸 40👽', <bloodmagic:sigil_teleposition>); // sigil teleposiotion
+set('20🔮 60🩸 40⚡', <bloodmagic:sigil_suppression>); // sigil supression
+set('20🔮 60🩸 40👻', <bloodmagic:sigil_phantom_bridge>); // sigil phantom bridge
+set('20🔮 60🩸 40🍃', <bloodmagic:sigil_haste>); // sigil haste
+set('20🔮 60🩸 40🌑', <bloodmagic:sigil_ender_severance>); // sigil severance
+set('20🔮 60🩸 40⟁', <bloodmagic:sigil_compression>); // sigil compression
 
 /*
 #######################################################
@@ -273,182 +277,182 @@ ___  ____ ___ ____ _  _ _ ____
 */
 
 // Random
-<botania:manaresource>.setAspects(<aspect:metallum> * 10, <aspect:mana> * 5); // manasteel
-<botania:manaresource:1>.setAspects(<aspect:alienis> * 10, <aspect:motus> * 5, <aspect:mana> * 10); // manapearl
-<botania:manaresource:2>.setAspects(<aspect:vitreus> * 15, <aspect:desiderium> * 15, <aspect:mana> * 10); // manadiamond
-<botania:manaresource:4>.setAspects(<aspect:terra> * 20, <aspect:praecantatio> * 20, <aspect:mana> * 10, <aspect:metallum> * 10); // terrasteel
-<botania:manaresource:7>.setAspects(<aspect:alienis> * 5, <aspect:metallum> * 10, <aspect:mana> * 5); // elementium
-<botania:manaresource:8>.setAspects(<aspect:alienis> * 20, <aspect:mythus> * 5, <aspect:mana> * 10); // pixie dust
-<botania:manaresource:9>.setAspects(<aspect:alienis> * 10, <aspect:vitreus> * 15, <aspect:mana> * 10, <aspect:desiderium> * 15); // dragon gem
-<botania:manaresource:16>.setAspects(<aspect:bestia> * 5, <aspect:fabrico> * 2, <aspect:mana> * 2); // mana string
-<botania:manaresource:23>.setAspects(<aspect:potentia> * 5, <aspect:mana> * 5); // mana powder
-<botania:manaresource:22>.setAspects(<aspect:praemunio> * 10, <aspect:mana> * 5); // manaweave cloth
-<botania:manabottle:*>.setAspects(<aspect:mana> * 10); // mana bottle
-<botania:managlass>.setAspects(<aspect:vitreus> * 5, <aspect:mana> * 2); // mana glass
-<botania:monocle>.setAspects(<aspect:sensus> * 10, Aspect.visum * 20, <aspect:mana> * 6); // monocle
-<botania:blacklotus>.setAspects(<aspect:alienis> * 10, <aspect:ordo> * 10, <aspect:mana> * 15); // monocle
-<botania:blacklotus:1>.setAspects(<aspect:alienis> * 20, <aspect:ordo> * 20, <aspect:mana> * 50); // monocle
-<botania:manaresource:5>.setAspects(Aspect.caeles * 25, <aspect:ordo> * 50, <aspect:alienis> * 50); // gaia spirit
-<botania:manaresource:14>.setAspects(Aspect.caeles * 75, <aspect:ordo> * 150, <aspect:mana> * 20, <aspect:metallum> * 10); // gaia ingot
-<botania:manaresource:12>.setAspects(<aspect:potentia> * 20, <aspect:permutatio> * 20, <aspect:alienis> * 15, <aspect:machina> * 15, <aspect:mana> * 10); // red string
-<botania:storage>.setAspects(<aspect:metallum> * 67, <aspect:mana> * 33); // manasteel block
-<botania:manacookie>.setAspects(<aspect:victus> * 20, <aspect:mana> * 25); // mana cookie
-<botania:openbucket>.setAspects(<aspect:metallum> * 20, <aspect:mana> * 10, <aspect:alienis> * 10, <aspect:vacuos> * 15);
-<botania:runealtar>.setAspects(<aspect:mana> * 10, <aspect:fabrico> * 20); // runic altar
-<botania:manatablet>.setAspects(<aspect:mana> * 10, <aspect:instrumentum> * 20, Aspect.imperium * 20); // mana tablet
-<botania:distributor>.setAspects(<aspect:mana> * 10, <aspect:machina> * 5, <aspect:terra> * 30);
-<botania:foresteye>.setAspects(<aspect:mana> * 15, <aspect:sensus> * 15, <aspect:terra> * 30);
-<botania:platform:0>.setAspects(<aspect:mana> * 2, <aspect:herba> * 20, <aspect:alienis> * 2);
-<botania:platform:1>.setAspects(<aspect:mana> * 3, <aspect:herba> * 20, <aspect:alienis> * 5);
-<botania:spawnerclaw>.setAspects(<aspect:aqua> * 90, <aspect:mana> * 30, <aspect:victus> * 30, <aspect:metallum> * 50); // life infuser
-<botania:starfield>.setAspects(<aspect:mana> * 7, <aspect:metallum> * 30, <aspect:alienis> * 22, <aspect:tenebrae> * 23, <aspect:lux> * 20);
-<botania:rfgenerator>.setAspects(<aspect:mana> * 3, <aspect:potentia> * 201, <aspect:machina> * 20, <aspect:terra> * 15, <aspect:victus> * 9);
-<botania:terraplate>.setAspects(<aspect:mana> * 50, <aspect:metallum> * 50, <aspect:fabrico> * 20, <aspect:permutatio> * 20, <aspect:auram> * 20);
-<botania:pump>.setAspects(<aspect:mana> * 7, <aspect:terra> * 20, <aspect:metallum> * 50, <aspect:machina> * 10, <aspect:permutatio> * 10);
-<botania:sparkchanger>.setAspects(<aspect:mana> * 7, <aspect:alienis> * 7, <aspect:metallum> * 15, <aspect:machina> * 10, <aspect:terra> * 11);
-<botania:teruterubozu>.setAspects(<aspect:mana> * 9, <aspect:permutatio> * 9, <aspect:aqua> * 20, <aspect:potentia> * 20, <aspect:aer> * 20);
-<botania:sextant>.setAspects(<aspect:mana> * 15, <aspect:metallum> * 30, <aspect:herba> * 18, <aspect:instrumentum> * 8, <aspect:victus> * 9);
-<botania:enchantedsoil>.setAspects(<aspect:mana> * 15, <aspect:victus> * 20, <aspect:terra> * 10);
-<botania:manamirror:*>.setAspects(<aspect:mana> * 20, <aspect:permutatio> * 10, <aspect:terra> * 20);
+set('10🔩 5🔷', <botania:manaresource>); // manasteel
+set('10👽 5🏃 10🔷', <botania:manaresource:1>); // manapearl
+set('15💎 15✊ 10🔷', <botania:manaresource:2>); // manadiamond
+set('20⛰️ 20🔮 10🔷 10🔩', <botania:manaresource:4>); // terrasteel
+set('5👽 10🔩 5🔷', <botania:manaresource:7>); // elementium
+set('20👽 5🦄 10🔷', <botania:manaresource:8>); // pixie dust
+set('10👽 15💎 10🔷 15✊', <botania:manaresource:9>); // dragon gem
+set('5🐺 2🔨 2🔷', <botania:manaresource:16>); // mana string
+set('5💪 5🔷', <botania:manaresource:23>); // mana powder
+set('10🛡️ 5🔷', <botania:manaresource:22>); // manaweave cloth
+set('10🔷', <botania:manabottle:*>); // mana bottle
+set('5💎 2🔷', <botania:managlass>); // mana glass
+set('10🦉 20👁️ 6🔷', <botania:monocle>); // monocle
+set('10👽 10⟁ 15🔷', <botania:blacklotus>); // monocle
+set('20👽 20⟁ 50🔷', <botania:blacklotus:1>); // monocle
+set('25☀️ 50⟁ 50👽', <botania:manaresource:5>); // gaia spirit
+set('75☀️ 150⟁ 20🔷 10🔩', <botania:manaresource:14>); // gaia ingot
+set('20💪 20🔄 15👽 15⚙️ 10🔷', <botania:manaresource:12>); // red string
+set('67🔩 33🔷', <botania:storage>); // manasteel block
+set('20❤️ 25🔷', <botania:manacookie>); // mana cookie
+set('20🔩 10🔷 10👽 15〇', <botania:openbucket>);
+set('10🔷 20🔨', <botania:runealtar>); // runic altar
+set('10🔷 20🛠️ 20🙌', <botania:manatablet>); // mana tablet
+set('10🔷 5⚙️ 30⛰️', <botania:distributor>);
+set('15🔷 15🦉 30⛰️', <botania:foresteye>);
+set('2🔷 20🌱 2👽', <botania:platform:0>);
+set('3🔷 20🌱 5👽', <botania:platform:1>);
+set('90💧 30🔷 30❤️ 50🔩', <botania:spawnerclaw>); // life infuser
+set('7🔷 30🔩 22👽 23🌑 20🕯️', <botania:starfield>);
+set('3🔷 201💪 20⚙️ 15⛰️ 9❤️', <botania:rfgenerator>);
+set('50🔷 50🔩 20🔨 20🔄 20✨', <botania:terraplate>);
+set('7🔷 20⛰️ 50🔩 10⚙️ 10🔄', <botania:pump>);
+set('7🔷 7👽 15🔩 10⚙️ 11⛰️', <botania:sparkchanger>);
+set('9🔷 9🔄 20💧 20💪 20💨', <botania:teruterubozu>);
+set('15🔷 30🔩 18🌱 8🛠️ 9❤️', <botania:sextant>);
+set('15🔷 20❤️ 10⛰️', <botania:enchantedsoil>);
+set('20🔷 10🔄 20⛰️', <botania:manamirror:*>);
 
 // Mana Lenses
-<botania:lens>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15); // default
-<botania:lens:1>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:motus> * 10); // velocity
-<botania:lens:2>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:potentia> * 10); // potency
-<botania:lens:3>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:vitreus> * 10); // resistance
-<botania:lens:4>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:instrumentum> * 10); // efficiency
-<botania:lens:5>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:praemunio> * 10); // bounce
-<botania:lens:6>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:terra> * 10); // gravity
-<botania:lens:7>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, Aspect.exitium * 10); // bore
-<botania:lens:8>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:aversio> * 10); // damaging
-<botania:lens:9>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:spiritus> * 10); // phantom
-<botania:lens:10>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:desiderium> * 10); // magnetizing
-<botania:lens:11>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:perditio> * 10); // entropic
-<botania:lens:12>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, Aspect.ventus * 10); // influence
-<botania:lens:13>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:praecantatio> * 10); // weight
-<botania:lens:14>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:fabrico> * 10); // paintslinger
-<botania:lens:15>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:ignis> * 10); // kindle
-<botania:lens:16>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:machina> * 10); // force
-<botania:lens:17>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:lux> * 10); // flash
-<botania:lens:18>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 15); // warp
-<botania:lens:19>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, Aspect.imperium * 10); // redirective
-<botania:lens:20>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:alkimia> * 10); // celebratory
-<botania:lens:21>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:permutatio> * 10); // flare
-<botania:lens:22>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:cognitio> * 10); // messenger
-<botania:lens:23>.setAspects(<aspect:metallum> * 30, <aspect:mana> * 15, <aspect:alienis> * 5, <aspect:sensus> * 10); // tripwire
+set('30🔩 15🔷', <botania:lens>); // default
+set('30🔩 15🔷 5👽 10🏃', <botania:lens:1>); // velocity
+set('30🔩 15🔷 5👽 10💪', <botania:lens:2>); // potency
+set('30🔩 15🔷 5👽 10💎', <botania:lens:3>); // resistance
+set('30🔩 15🔷 5👽 10🛠️', <botania:lens:4>); // efficiency
+set('30🔩 15🔷 5👽 10🛡️', <botania:lens:5>); // bounce
+set('30🔩 15🔷 5👽 10⛰️', <botania:lens:6>); // gravity
+set('30🔩 15🔷 5👽 10💣', <botania:lens:7>); // bore
+set('30🔩 15🔷 5👽 10🗡️', <botania:lens:8>); // damaging
+set('30🔩 15🔷 5👽 10👻', <botania:lens:9>); // phantom
+set('30🔩 15🔷 5👽 10✊', <botania:lens:10>); // magnetizing
+set('30🔩 15🔷 5👽 10⚡', <botania:lens:11>); // entropic
+set('30🔩 15🔷 5👽 10🍃', <botania:lens:12>); // influence
+set('30🔩 15🔷 5👽 10🔮', <botania:lens:13>); // weight
+set('30🔩 15🔷 5👽 10🔨', <botania:lens:14>); // paintslinger
+set('30🔩 15🔷 5👽 10🔥', <botania:lens:15>); // kindle
+set('30🔩 15🔷 5👽 10⚙️', <botania:lens:16>); // force
+set('30🔩 15🔷 5👽 10🕯️', <botania:lens:17>); // flash
+set('30🔩 15🔷 15👽', <botania:lens:18>); // warp
+set('30🔩 15🔷 5👽 10🙌', <botania:lens:19>); // redirective
+set('30🔩 15🔷 5👽 10⚗️', <botania:lens:20>); // celebratory
+set('30🔩 15🔷 5👽 10🔄', <botania:lens:21>); // flare
+set('30🔩 15🔷 5👽 10🧠', <botania:lens:22>); // messenger
+set('30🔩 15🔷 5👽 10🦉', <botania:lens:23>); // tripwire
 
 // Runes
-<botania:rune:3>.setAspects(<aspect:terra> * 5, <aspect:aer> * 25, <aspect:mana> * 5); // rune air
-<botania:rune:2>.setAspects(<aspect:terra> * 30, <aspect:mana> * 5); // rune earth
-<botania:rune:1>.setAspects(<aspect:terra> * 5, <aspect:ignis> * 25, <aspect:mana> * 5); // rune fire
-<botania:rune>.setAspects(<aspect:terra> * 5, <aspect:aqua> * 25, <aspect:mana> * 5); // rune water
-<botania:rune:7>.setAspects(<aspect:terra> * 5, <aspect:gelum> * 25, <aspect:mana> * 10); // rune winter
-<botania:rune:6>.setAspects(<aspect:terra> * 5, <aspect:mortuus> * 25, <aspect:mana> * 10); // rune autumn
-<botania:rune:5>.setAspects(<aspect:terra> * 5, <aspect:victus> * 25, <aspect:mana> * 10); // rune summer
-<botania:rune:4>.setAspects(<aspect:terra> * 5, <aspect:herba> * 25, <aspect:mana> * 10); // rune spring
-<botania:rune:8>.setAspects(<aspect:terra> * 5, <aspect:auram> * 25, <aspect:mana> * 15); // rune of mana
-<botania:rune:15>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, <aspect:mythus> * 30, <aspect:mana> * 15); // rune pride
-<botania:rune:14>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, <aspect:spiritus> * 30, <aspect:mana> * 15); // rune envy
-<botania:rune:13>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, <aspect:aversio> * 30, <aspect:mana> * 15); // rune wrath
-<botania:rune:12>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, Aspect.imperium * 30, <aspect:mana> * 15); // rune sloth
-<botania:rune:11>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, <aspect:humanus> * 30, <aspect:mana> * 15); // rune greed
-<botania:rune:10>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, <aspect:vacuos> * 30, <aspect:mana> * 15); // rune gluttony
-<botania:rune:9>.setAspects(<aspect:terra> * 5, <aspect:desiderium> * 20, Aspect.fluctus * 30, <aspect:mana> * 15); // rune lust
+set('5⛰️ 25💨 5🔷', <botania:rune:3>); // rune air
+set('30⛰️ 5🔷', <botania:rune:2>); // rune earth
+set('5⛰️ 25🔥 5🔷', <botania:rune:1>); // rune fire
+set('5⛰️ 25💧 5🔷', <botania:rune>); // rune water
+set('5⛰️ 25🧊 10🔷', <botania:rune:7>); // rune winter
+set('5⛰️ 25⚰️ 10🔷', <botania:rune:6>); // rune autumn
+set('5⛰️ 25❤️ 10🔷', <botania:rune:5>); // rune summer
+set('5⛰️ 25🌱 10🔷', <botania:rune:4>); // rune spring
+set('5⛰️ 25✨ 15🔷', <botania:rune:8>); // rune of mana
+set('5⛰️ 20✊ 30🦄 15🔷', <botania:rune:15>); // rune pride
+set('5⛰️ 20✊ 30👻 15🔷', <botania:rune:14>); // rune envy
+set('5⛰️ 20✊ 30🗡️ 15🔷', <botania:rune:13>); // rune wrath
+set('5⛰️ 20✊ 30🙌 15🔷', <botania:rune:12>); // rune sloth
+set('5⛰️ 20✊ 30👨 15🔷', <botania:rune:11>); // rune greed
+set('5⛰️ 20✊ 30〇 15🔷', <botania:rune:10>); // rune gluttony
+set('5⛰️ 20✊ 30♒ 15🔷', <botania:rune:9>); // rune lust
 
 // Items/baubles
-<botania:terrasword>.setAspects(<aspect:mana> * 30, <aspect:praecantatio> * 30, <aspect:aversio> * 16, <aspect:metallum> * 12); // terra sword
-<botania:tinyplanet>.setAspects(<aspect:mana> * 5, <aspect:praecantatio> * 3, <aspect:motus> * 3, <aspect:terra> * 30, <aspect:victus> * 9); // tiny planet
-<botania:laputashard:*>.setAspects(<aspect:mana> * 15, <aspect:instrumentum> * 40, <aspect:alienis> * 100, Aspect.caeles * 50); // shard of laputa
-<botania:knockbackbelt>.setAspects(<aspect:terra> * 30, <aspect:potentia> * 30, <aspect:praemunio> * 10); // tectonic gridle
-<botania:travelbelt>.setAspects(<aspect:terra> * 30, <aspect:motus> * 30, <aspect:praemunio> * 10); // soujourner's sash
-<botania:supertravelbelt>.setAspects(Aspect.caeles * 75, <aspect:motus> * 100, <aspect:praemunio> * 50);
-<botania:miningring>.setAspects(Aspect.exitium * 10, <aspect:desiderium> * 50, <aspect:instrumentum> * 10, <aspect:metallum> * 50); // ring of the mantle
-<botania:waterring>.setAspects(<aspect:aqua> * 30, <aspect:desiderium> * 50, <aspect:instrumentum> * 10, <aspect:metallum> * 50); // ring of chordata
-<botania:magnetring>.setAspects(<aspect:mana> * 30, <aspect:desiderium> * 150, <aspect:instrumentum> * 10, <aspect:metallum> * 50); // ring of magnetization
-<botania:pixiering>.setAspects(<aspect:mana> * 10, <aspect:desiderium> * 50, <aspect:instrumentum> * 10, <aspect:metallum> * 50); // fairy ring
-<botania:holycloak>.setAspects(Aspect.caeles * 30, <aspect:praemunio> * 30, <aspect:vacuos> * 20, <aspect:lux> * 20); // cloak of virtue
-<botania:balancecloak>.setAspects(Aspect.caeles * 30, <aspect:praemunio> * 30, <aspect:permutatio> * 20, Aspect.visum * 20); // cloak of balance
-<botania:unholycloak>.setAspects(Aspect.caeles * 30, <aspect:praemunio> * 30, <aspect:aversio> * 20, Aspect.infernum * 20); // cloak of sin
-<botania:manainkwell:*>.setAspects(<aspect:mana> * 15, <aspect:sensus> * 5); // botania inkwell
-<botania:temperancestone>.setAspects(<aspect:mana> * 5, <aspect:terra> * 30, <aspect:vinculum> * 5);
-<botania:blackholetalisman>.setAspects(<aspect:mana> * 10, <aspect:vacuos> * 30, <aspect:alienis> * 50, <aspect:tenebrae> * 25);
+set('30🔷 30🔮 16🗡️ 12🔩', <botania:terrasword>); // terra sword
+set('5🔷 3🔮 3🏃 30⛰️ 9❤️', <botania:tinyplanet>); // tiny planet
+set('15🔷 40🛠️ 100👽 50☀️', <botania:laputashard:*>); // shard of laputa
+set('30⛰️ 30💪 10🛡️', <botania:knockbackbelt>); // tectonic gridle
+set('30⛰️ 30🏃 10🛡️', <botania:travelbelt>); // soujourner's sash
+set('75☀️ 100🏃 50🛡️', <botania:supertravelbelt>);
+set('10💣 50✊ 10🛠️ 50🔩', <botania:miningring>); // ring of the mantle
+set('30💧 50✊ 10🛠️ 50🔩', <botania:waterring>); // ring of chordata
+set('30🔷 150✊ 10🛠️ 50🔩', <botania:magnetring>); // ring of magnetization
+set('10🔷 50✊ 10🛠️ 50🔩', <botania:pixiering>); // fairy ring
+set('30☀️ 30🛡️ 20〇 20🕯️', <botania:holycloak>); // cloak of virtue
+set('30☀️ 30🛡️ 20🔄 20👁️', <botania:balancecloak>); // cloak of balance
+set('30☀️ 30🛡️ 20🗡️ 20🧨', <botania:unholycloak>); // cloak of sin
+set('15🔷 5🦉', <botania:manainkwell:*>); // botania inkwell
+set('5🔷 30⛰️ 5🔗', <botania:temperancestone>);
+set('10🔷 30〇 50👽 25🌑', <botania:blackholetalisman>);
 
-<botania:flighttiara>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, Aspect.ventus * 50); // Flugel Tiara
-<botania:flighttiara:1>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:ordo> * 50); // Flugel Tiara (flugel)
-<botania:flighttiara:2>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:perditio> * 50); // Flugel Tiara (one winged angel)
-<botania:flighttiara:3>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:gelum> * 50); // Flugel Tiara (ice fairy)
-<botania:flighttiara:4>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:ignis> * 50); // Flugel Tiara (phoenix)
-<botania:flighttiara:5>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, Aspect.fluctus * 50); // Flugel Tiara (black snow princess)
-<botania:flighttiara:6>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:tenebrae> * 50); // Flugel Tiara (lord of the pit)
-<botania:flighttiara:7>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:lux> * 50); // Flugel Tiara (sylph)
-<botania:flighttiara:8>.setAspects(Aspect.caeles * 75, <aspect:volatus> * 100, <aspect:alienis> * 150, <aspect:bestia> * 50); // Flugel Tiara (chicken)
+set('75☀️ 100🕊️ 150👽 50🍃', <botania:flighttiara>); // Flugel Tiara
+set('75☀️ 100🕊️ 150👽 50⟁', <botania:flighttiara:1>); // Flugel Tiara (flugel)
+set('75☀️ 100🕊️ 150👽 50⚡', <botania:flighttiara:2>); // Flugel Tiara (one winged angel)
+set('75☀️ 100🕊️ 150👽 50🧊', <botania:flighttiara:3>); // Flugel Tiara (ice fairy)
+set('75☀️ 100🕊️ 150👽 50🔥', <botania:flighttiara:4>); // Flugel Tiara (phoenix)
+set('75☀️ 100🕊️ 150👽 50♒', <botania:flighttiara:5>); // Flugel Tiara (black snow princess)
+set('75☀️ 100🕊️ 150👽 50🌑', <botania:flighttiara:6>); // Flugel Tiara (lord of the pit)
+set('75☀️ 100🕊️ 150👽 50🕯️', <botania:flighttiara:7>); // Flugel Tiara (sylph)
+set('75☀️ 100🕊️ 150👽 50🐺', <botania:flighttiara:8>); // Flugel Tiara (chicken)
 
-<botania:dice:*>.setAspects(<aspect:mana> * 30, <aspect:alienis> * 30, <aspect:desiderium> * 25);
-<botania:infinitefruit:*>.setAspects(<aspect:victus> * 50, <aspect:herba> * 30, <aspect:alienis> * 15, <aspect:mana> * 30, <aspect:desiderium> * 25);
-<botania:kingkey:*>.setAspects(<aspect:aversio> * 50, <aspect:vinculum> * 30, <aspect:alienis> * 15, <aspect:mana> * 30, <aspect:desiderium> * 25);
-<botania:flugeleye:*>.setAspects(<aspect:motus> * 50, <aspect:volatus> * 30, <aspect:alienis> * 15, <aspect:mana> * 30, <aspect:desiderium> * 25);
-<botania:odinring:*>.setAspects(<aspect:praemunio> * 50, <aspect:victus> * 30, <aspect:alienis> * 15, <aspect:mana> * 30, <aspect:desiderium> * 25);
-<botania:thorring:*>.setAspects(<aspect:instrumentum> * 50, <aspect:perditio> * 30, <aspect:alienis> * 15, <aspect:mana> * 30, <aspect:desiderium> * 25);
-<botania:lokiring:*>.setAspects(<aspect:auram> * 50, <aspect:humanus> * 30, <aspect:alienis> * 15, <aspect:mana> * 30, <aspect:desiderium> * 25);
+set('30🔷 30👽 25✊', <botania:dice:*>);
+set('50❤️ 30🌱 15👽 30🔷 25✊', <botania:infinitefruit:*>);
+set('50🗡️ 30🔗 15👽 30🔷 25✊', <botania:kingkey:*>);
+set('50🏃 30🕊️ 15👽 30🔷 25✊', <botania:flugeleye:*>);
+set('50🛡️ 30❤️ 15👽 30🔷 25✊', <botania:odinring:*>);
+set('50🛠️ 30⚡ 15👽 30🔷 25✊', <botania:thorring:*>);
+set('50✨ 30👨 15👽 30🔷 25✊', <botania:lokiring:*>);
 
-<botania:rainbowrod>.setAspects(<aspect:mana> * 30, <aspect:instrumentum> * 20, <aspect:alienis> * 50, <aspect:permutatio> * 30); // rod of bifrost
-<botania:diviningrod>.setAspects(<aspect:mana> * 10, <aspect:desiderium> * 20, <aspect:sensus> * 20, <aspect:instrumentum> * 10);
-<botania:tornadorod>.setAspects(<aspect:mana> * 5, <aspect:aer> * 20, Aspect.fluctus * 10);
-<botania:terraformrod>.setAspects(<aspect:mana> * 40, <aspect:instrumentum> * 40, <aspect:terra> * 120, <aspect:permutatio> * 40);
-<botania:dirtrod>.setAspects(<aspect:mana> * 5, <aspect:instrumentum> * 10, <aspect:terra> * 20);
-<botania:gravityrod>.setAspects(<aspect:mana> * 10, <aspect:instrumentum> * 20, <aspect:alienis> * 20, <aspect:vinculum> * 20);
-<botania:missilerod>.setAspects(<aspect:mana> * 25, <aspect:aversio> * 30, <aspect:alienis> * 40);
-<botania:cobblerod>.setAspects(<aspect:mana> * 10, <aspect:instrumentum> * 10, <aspect:terra> * 30, <aspect:perditio> * 5);
-<botania:exchangerod>.setAspects(<aspect:mana> * 10, <aspect:instrumentum> * 20, <aspect:permutatio> * 30, Aspect.imperium * 30);
+set('30🔷 20🛠️ 50👽 30🔄', <botania:rainbowrod>); // rod of bifrost
+set('10🔷 20✊ 20🦉 10🛠️', <botania:diviningrod>);
+set('5🔷 20💨 10♒', <botania:tornadorod>);
+set('40🔷 40🛠️ 120⛰️ 40🔄', <botania:terraformrod>);
+set('5🔷 10🛠️ 20⛰️', <botania:dirtrod>);
+set('10🔷 20🛠️ 20👽 20🔗', <botania:gravityrod>);
+set('25🔷 30🗡️ 40👽', <botania:missilerod>);
+set('10🔷 10🛠️ 30⛰️ 5⚡', <botania:cobblerod>);
+set('10🔷 20🛠️ 30🔄 30🙌', <botania:exchangerod>);
 
 // Generating flora
-<botania:specialflower>.withTag({type: 'endoflame'}).setAspects(<aspect:herba> * 20, <aspect:ignis> * 10, <aspect:aer> * 10);
-<botania:specialflower>.withTag({type: 'kekimurus'}).setAspects(<aspect:herba> * 20, <aspect:vacuos> * 10, <aspect:fabrico> * 10);
-<botania:specialflower>.withTag({type: 'narslimmus'}).setAspects(<aspect:herba> * 20, <aspect:victus> * 10, <aspect:aqua> * 10);
-<botania:specialflower>.withTag({type: 'entropinnyum'}).setAspects(<aspect:herba> * 20, <aspect:alkimia> * 10, Aspect.exitium * 10);
-<botania:specialflower>.withTag({type: 'spectrolus'}).setAspects(<aspect:herba> * 20, <aspect:fabrico> * 10, <aspect:ordo> * 10);
-<botania:specialflower>.withTag({type: 'dandelifeon'}).setAspects(<aspect:herba> * 100, <aspect:cognitio> * 100, Aspect.caeles * 25);
-<botania:specialflower>.withTag({type: 'rafflowsia'}).setAspects(<aspect:herba> * 20, <aspect:exanimis> * 10, <aspect:perditio> * 10);
-<botania:specialflower>.withTag({type: 'arcanerose'}).setAspects(<aspect:herba> * 20, <aspect:cognitio> * 10, <aspect:humanus> * 10);
-<botania:specialflower>.withTag({type: 'munchdew'}).setAspects(<aspect:herba> * 20, <aspect:vacuos> * 10, <aspect:terra> * 10);
-<botania:specialflower>.withTag({type: 'hydroangeas'}).setAspects(<aspect:herba> * 20, <aspect:aqua> * 10, <aspect:sensus> * 10);
-<botania:specialflower>.withTag({type: 'gourmaryllis'}).setAspects(<aspect:herba> * 20, <aspect:vacuos> * 10, <aspect:bestia> * 10);
-<botania:specialflower>.withTag({type: 'shulk_me_not'}).setAspects(<aspect:herba> * 20, <aspect:alienis> * 10, <aspect:mortuus> * 10);
-<botania:specialflower>.withTag({type: 'thermalily'}).setAspects(<aspect:herba> * 20, <aspect:ignis> * 10, <aspect:terra> * 10);
+set('20🌱 10🔥 10💨', <botania:specialflower>.withTag({type: 'endoflame'}));
+set('20🌱 10〇 10🔨', <botania:specialflower>.withTag({type: 'kekimurus'}));
+set('20🌱 10❤️ 10💧', <botania:specialflower>.withTag({type: 'narslimmus'}));
+set('20🌱 10⚗️ 10💣', <botania:specialflower>.withTag({type: 'entropinnyum'}));
+set('20🌱 10🔨 10⟁', <botania:specialflower>.withTag({type: 'spectrolus'}));
+set('100🌱 100🧠 25☀️', <botania:specialflower>.withTag({type: 'dandelifeon'}));
+set('20🌱 10💀 10⚡', <botania:specialflower>.withTag({type: 'rafflowsia'}));
+set('20🌱 10🧠 10👨', <botania:specialflower>.withTag({type: 'arcanerose'}));
+set('20🌱 10〇 10⛰️', <botania:specialflower>.withTag({type: 'munchdew'}));
+set('20🌱 10💧 10🦉', <botania:specialflower>.withTag({type: 'hydroangeas'}));
+set('20🌱 10〇 10🐺', <botania:specialflower>.withTag({type: 'gourmaryllis'}));
+set('20🌱 10👽 10⚰️', <botania:specialflower>.withTag({type: 'shulk_me_not'}));
+set('20🌱 10🔥 10⛰️', <botania:specialflower>.withTag({type: 'thermalily'}));
 
 // Functional flora
-<botania:specialflower>.withTag({type: 'orechid'}).setAspects(<aspect:herba> * 50, <aspect:desiderium> * 50, <aspect:terra> * 30);
-<botania:specialflower>.withTag({type: 'orechidIgnem'}).setAspects(<aspect:herba> * 50, <aspect:desiderium> * 50, Aspect.infernum * 30);
-<botania:specialflower>.withTag({type: 'orechidVacuam'}).setAspects(<aspect:herba> * 50, <aspect:desiderium> * 50, <aspect:alienis> * 30);
-<botania:specialflower>.withTag({type: 'excompressum.orechidEvolved'}).setAspects(<aspect:herba> * 50, <aspect:desiderium> * 50, <aspect:terra> * 30);
-<botania:specialflower>.withTag({type: 'puredaisy'}).setAspects(<aspect:herba> * 20, <aspect:ordo> * 10, <aspect:permutatio> * 10);
-<botania:specialflower>.withTag({type: 'manastar'}).setAspects(<aspect:herba> * 20, <aspect:sensus> * 10, <aspect:praecantatio> * 10);
-<botania:specialflower>.withTag({type: 'petro_petunia'}).setAspects(<aspect:herba> * 20, <aspect:alkimia> * 10, <aspect:aqua> * 10);
+set('50🌱 50✊ 30⛰️', <botania:specialflower>.withTag({type: 'orechid'}));
+set('50🌱 50✊ 30🧨', <botania:specialflower>.withTag({type: 'orechidIgnem'}));
+set('50🌱 50✊ 30👽', <botania:specialflower>.withTag({type: 'orechidVacuam'}));
+set('50🌱 50✊ 30⛰️', <botania:specialflower>.withTag({type: 'excompressum.orechidEvolved'}));
+set('20🌱 10⟁ 10🔄', <botania:specialflower>.withTag({type: 'puredaisy'}));
+set('20🌱 10🦉 10🔮', <botania:specialflower>.withTag({type: 'manastar'}));
+set('20🌱 10⚗️ 10💧', <botania:specialflower>.withTag({type: 'petro_petunia'}));
 
-<botania:specialflower>.withTag({type: 'exoflame'}).setAspects(<aspect:herba> * 20, <aspect:ignis> * 10, <aspect:fabrico> * 10);
-<botania:specialflower>.withTag({type: 'dreadthorn'}).setAspects(<aspect:herba> * 20, <aspect:mortuus> * 10, Aspect.visum * 10);
-<botania:specialflower>.withTag({type: 'hopperhock'}).setAspects(<aspect:herba> * 20, <aspect:vacuos> * 10, <aspect:desiderium> * 10);
-<botania:specialflower>.withTag({type: 'jadedAmaranthus'}).setAspects(<aspect:herba> * 20, <aspect:victus> * 10, <aspect:praecantatio> * 10);
-<botania:specialflower>.withTag({type: 'jiyuulia'}).setAspects(<aspect:herba> * 20, <aspect:praemunio> * 10, <aspect:potentia> * 10);
-<botania:specialflower>.withTag({type: 'bellethorn'}).setAspects(<aspect:herba> * 20, <aspect:aversio> * 10, <aspect:mortuus> * 10);
-<botania:specialflower>.withTag({type: 'agricarnation'}).setAspects(<aspect:herba> * 20, <aspect:ordo> * 10, <aspect:victus> * 10);
-<botania:specialflower>.withTag({type: 'clayconia'}).setAspects(<aspect:herba> * 20, <aspect:permutatio> * 10, <aspect:aqua> * 10);
-<botania:specialflower>.withTag({type: 'daffomill'}).setAspects(<aspect:herba> * 20, <aspect:motus> * 10, Aspect.ventus * 10);
-<botania:specialflower>.withTag({type: 'hyacidus'}).setAspects(<aspect:herba> * 20, <aspect:mortuus> * 10, <aspect:aqua> * 10);
-<botania:specialflower>.withTag({type: 'medumone'}).setAspects(<aspect:herba> * 20, <aspect:gelum> * 10, Aspect.fluctus * 10);
-<botania:specialflower>.withTag({type: 'pollidisiac'}).setAspects(<aspect:herba> * 20, <aspect:bestia> * 10, <aspect:victus> * 10);
-<botania:specialflower>.withTag({type: 'vinculotus'}).setAspects(<aspect:herba> * 20, <aspect:alienis> * 10, <aspect:vinculum> * 10);
-<botania:specialflower>.withTag({type: 'fallenKanade'}).setAspects(<aspect:herba> * 20, <aspect:auram> * 10, <aspect:victus> * 10);
-<botania:specialflower>.withTag({type: 'bergamute'}).setAspects(<aspect:herba> * 20, <aspect:vacuos> * 10, Aspect.sonus * 10);
-<botania:specialflower>.withTag({type: 'bubbell'}).setAspects(<aspect:herba> * 20, <aspect:auram> * 10, <aspect:aqua> * 10);
-<botania:specialflower>.withTag({type: 'heiseiDream'}).setAspects(<aspect:herba> * 20, <aspect:aversio> * 10, Aspect.imperium * 10);
-<botania:specialflower>.withTag({type: 'marimorphosis'}).setAspects(<aspect:herba> * 20, <aspect:permutatio> * 10, <aspect:vitreus> * 10);
-<botania:specialflower>.withTag({type: 'rannuncarpus'}).setAspects(<aspect:herba> * 20, <aspect:desiderium> * 10, <aspect:ordo> * 10);
-<botania:specialflower>.withTag({type: 'spectranthemum'}).setAspects(<aspect:herba> * 20, <aspect:alienis> * 10, <aspect:motus> * 10);
-<botania:specialflower>.withTag({type: 'tangleberrie'}).setAspects(<aspect:herba> * 20, <aspect:desiderium> * 10, <aspect:vinculum> * 10);
-<botania:specialflower>.withTag({type: 'tigerseye'}).setAspects(<aspect:herba> * 20, Aspect.exitium * 10, <aspect:bestia> * 10);
-<botania:specialflower>.withTag({type: 'solegnolia'}).setAspects(<aspect:herba> * 20, <aspect:desiderium> * 10, <aspect:perditio> * 10);
-<botania:specialflower>.withTag({type: 'loonium'}).setAspects(<aspect:herba> * 20, <aspect:desiderium> * 10, <aspect:mythus> * 10);
+set('20🌱 10🔥 10🔨', <botania:specialflower>.withTag({type: 'exoflame'}));
+set('20🌱 10⚰️ 10👁️', <botania:specialflower>.withTag({type: 'dreadthorn'}));
+set('20🌱 10〇 10✊', <botania:specialflower>.withTag({type: 'hopperhock'}));
+set('20🌱 10❤️ 10🔮', <botania:specialflower>.withTag({type: 'jadedAmaranthus'}));
+set('20🌱 10🛡️ 10💪', <botania:specialflower>.withTag({type: 'jiyuulia'}));
+set('20🌱 10🗡️ 10⚰️', <botania:specialflower>.withTag({type: 'bellethorn'}));
+set('20🌱 10⟁ 10❤️', <botania:specialflower>.withTag({type: 'agricarnation'}));
+set('20🌱 10🔄 10💧', <botania:specialflower>.withTag({type: 'clayconia'}));
+set('20🌱 10🏃 10🍃', <botania:specialflower>.withTag({type: 'daffomill'}));
+set('20🌱 10⚰️ 10💧', <botania:specialflower>.withTag({type: 'hyacidus'}));
+set('20🌱 10🧊 10♒', <botania:specialflower>.withTag({type: 'medumone'}));
+set('20🌱 10🐺 10❤️', <botania:specialflower>.withTag({type: 'pollidisiac'}));
+set('20🌱 10👽 10🔗', <botania:specialflower>.withTag({type: 'vinculotus'}));
+set('20🌱 10✨ 10❤️', <botania:specialflower>.withTag({type: 'fallenKanade'}));
+set('20🌱 10〇 10🛎️', <botania:specialflower>.withTag({type: 'bergamute'}));
+set('20🌱 10✨ 10💧', <botania:specialflower>.withTag({type: 'bubbell'}));
+set('20🌱 10🗡️ 10🙌', <botania:specialflower>.withTag({type: 'heiseiDream'}));
+set('20🌱 10🔄 10💎', <botania:specialflower>.withTag({type: 'marimorphosis'}));
+set('20🌱 10✊ 10⟁', <botania:specialflower>.withTag({type: 'rannuncarpus'}));
+set('20🌱 10👽 10🏃', <botania:specialflower>.withTag({type: 'spectranthemum'}));
+set('20🌱 10✊ 10🔗', <botania:specialflower>.withTag({type: 'tangleberrie'}));
+set('20🌱 10💣 10🐺', <botania:specialflower>.withTag({type: 'tigerseye'}));
+set('20🌱 10✊ 10⚡', <botania:specialflower>.withTag({type: 'solegnolia'}));
+set('20🌱 10✊ 10🦄', <botania:specialflower>.withTag({type: 'loonium'}));
 
 /*
 #######################################################
@@ -459,16 +463,16 @@ ____ _  _ _ ____ ____ _    _      / ____ _  _ ____ ____ _  _          ____ ____ 
 #######################################################
 */
 
-<chisel:basalt2:7>.setAspects(<aspect:terra> * 4, <aspect:tenebrae> * 2); // basalt
-<chisel:marble2:7>.setAspects(<aspect:terra> * 4, <aspect:ordo> * 2); // marble
-<quark:jasper>.setAspects(<aspect:terra> * 4, <aspect:ignis> * 2); // jasper
+set('4⛰️ 2🌑', <chisel:basalt2:7>); // basalt
+set('4⛰️ 2⟁', <chisel:marble2:7>); // marble
+set('4⛰️ 2🔥', <quark:jasper>); // jasper
 
-<quark:black_ash>.setAspects(<aspect:perditio> * 4, <aspect:tenebrae> * 2); // wither ash
+set('4⚡ 2🌑', <quark:black_ash>); // wither ash
 
-<quark:root>.setAspects(<aspect:herba> * 5);
-<quark:root_flower>.setAspects(<aspect:herba> * 3, <aspect:instrumentum> * 2);
-<quark:root_flower:1>.setAspects(<aspect:herba> * 3, <aspect:tenebrae> * 2);
-<quark:root_flower:2>.setAspects(<aspect:herba> * 3, <aspect:potentia> * 2);
+set('5🌱', <quark:root>);
+set('3🌱 2🛠️', <quark:root_flower>);
+set('3🌱 2🌑', <quark:root_flower:1>);
+set('3🌱 2💪', <quark:root_flower:2>);
 
 /*
 #######################################################
@@ -479,40 +483,40 @@ ___  ____ ____ ___     _  _ ____ ___     _    ____ ____ ____ _  _ _ _  _ ____
 #######################################################
 */
 
-<deepmoblearning:glitch_fragment>.setAspects(Aspect.exitium * 10, <aspect:machina> * 20, Aspect.caeles * 10, Aspect.imperium * 20);
-<deepmoblearning:glitch_infused_ingot>.setAspects(<aspect:metallum> * 10, <aspect:machina> * 20, Aspect.caeles * 10, Aspect.imperium * 20);
-<deepmoblearning:glitch_heart>.setAspects(<aspect:victus> * 30, <aspect:machina> * 20, Aspect.caeles * 10, Aspect.imperium * 20);
+set('10💣 20⚙️ 10☀️ 20🙌', <deepmoblearning:glitch_fragment>);
+set('10🔩 20⚙️ 10☀️ 20🙌', <deepmoblearning:glitch_infused_ingot>);
+set('30❤️ 20⚙️ 10☀️ 20🙌', <deepmoblearning:glitch_heart>);
 
-<deepmoblearningbm:blood_infused_glitch_ingot>.setAspects(<aspect:metallum> * 10, <aspect:machina> * 20, Aspect.caeles * 10, Aspect.imperium * 20, <aspect:sanguis> * 15);
+set('10🔩 20⚙️ 10☀️ 20🙌 15🩸', <deepmoblearningbm:blood_infused_glitch_ingot>);
 
-<deepmoblearning:living_matter_overworldian>.setAspects(<aspect:machina> * 20, <aspect:terra> * 30, <aspect:victus> * 30, <aspect:bestia> * 30);
-<deepmoblearning:living_matter_hellish>.setAspects(<aspect:machina> * 20, Aspect.infernum * 30, <aspect:mortuus> * 30, <aspect:ignis> * 30);
-<deepmoblearning:living_matter_extraterrestrial>.setAspects(<aspect:machina> * 20, <aspect:alienis> * 30, <aspect:vacuos> * 30, <aspect:tenebrae> * 30);
-<deepmoblearning:living_matter_twilight>.setAspects(<aspect:machina> * 20, <aspect:mythus> * 30, <aspect:herba> * 30, <aspect:auram> * 10);
+set('20⚙️ 30⛰️ 30❤️ 30🐺', <deepmoblearning:living_matter_overworldian>);
+set('20⚙️ 30🧨 30⚰️ 30🔥', <deepmoblearning:living_matter_hellish>);
+set('20⚙️ 30👽 30〇 30🌑', <deepmoblearning:living_matter_extraterrestrial>);
+set('20⚙️ 30🦄 30🌱 10✨', <deepmoblearning:living_matter_twilight>);
 
-<deepmoblearning:pristine_matter_zombie>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:exanimis> * 30, <aspect:mortuus> * 30, <aspect:humanus> * 60);
-<deepmoblearning:pristine_matter_spider>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:bestia> * 30, <aspect:vinculum> * 30, <aspect:sensus> * 30);
-<deepmoblearning:pristine_matter_skeleton>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:mortuus> * 30, <aspect:perditio> * 30, <aspect:aversio> * 60);
-<deepmoblearning:pristine_matter_creeper>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, Aspect.exitium * 30, <aspect:ignis> * 30, <aspect:alkimia> * 15, <aspect:perditio> * 30);
-<deepmoblearning:pristine_matter_slime>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:aqua> * 30, <aspect:victus> * 30);
-<deepmoblearning:pristine_matter_witch>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:humanus> * 60, <aspect:praecantatio> * 30, <aspect:alkimia> * 30);
-<deepmoblearning:pristine_matter_guardian>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:aqua> * 60, <aspect:praemunio> * 30, <aspect:sensus> * 30);
-<deepmoblearning:pristine_matter_tinker_slime>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:aqua> * 60, <aspect:victus> * 30, <aspect:fabrico> * 15);
+set('10⚙️ 10🔗 30💀 30⚰️ 60👨', <deepmoblearning:pristine_matter_zombie>);
+set('10⚙️ 10🔗 30🐺 30🔗 30🦉', <deepmoblearning:pristine_matter_spider>);
+set('10⚙️ 10🔗 30⚰️ 30⚡ 60🗡️', <deepmoblearning:pristine_matter_skeleton>);
+set('10⚙️ 10🔗 30💣 30🔥 15⚗️ 30⚡', <deepmoblearning:pristine_matter_creeper>);
+set('10⚙️ 10🔗 30💧 30❤️', <deepmoblearning:pristine_matter_slime>);
+set('10⚙️ 10🔗 60👨 30🔮 30⚗️', <deepmoblearning:pristine_matter_witch>);
+set('10⚙️ 10🔗 60💧 30🛡️ 30🦉', <deepmoblearning:pristine_matter_guardian>);
+set('10⚙️ 10🔗 60💧 30❤️ 15🔨', <deepmoblearning:pristine_matter_tinker_slime>);
 
-<deepmoblearning:pristine_matter_blaze>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:ignis> * 60, Aspect.infernum * 60);
-<deepmoblearning:pristine_matter_wither_skeleton>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:mortuus> * 60, <aspect:perditio> * 60, <aspect:aversio> * 60, <aspect:spiritus> * 60);
-<deepmoblearning:pristine_matter_ghast>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:spiritus> * 60, <aspect:volatus> * 30, Aspect.fluctus * 60);
-<deepmoblearning:pristine_matter_wither>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, Aspect.caeles * 50, <aspect:alienis> * 50, <aspect:ordo> * 50);
+set('10⚙️ 10🔗 60🔥 60🧨', <deepmoblearning:pristine_matter_blaze>);
+set('10⚙️ 10🔗 60⚰️ 60⚡ 60🗡️ 60👻', <deepmoblearning:pristine_matter_wither_skeleton>);
+set('10⚙️ 10🔗 60👻 30🕊️ 60♒', <deepmoblearning:pristine_matter_ghast>);
+set('10⚙️ 10🔗 50☀️ 50👽 50⟁', <deepmoblearning:pristine_matter_wither>);
 
-<deepmoblearning:pristine_matter_enderman>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:alienis> * 80, <aspect:tenebrae> * 60);
-<deepmoblearning:pristine_matter_shulker>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:alienis> * 50, <aspect:volatus> * 30, Aspect.sonus * 30);
-<deepmoblearning:pristine_matter_dragon>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:draco> * 50, <aspect:alienis> * 50, <aspect:alkimia> * 20);
+set('10⚙️ 10🔗 80👽 60🌑', <deepmoblearning:pristine_matter_enderman>);
+set('10⚙️ 10🔗 50👽 30🕊️ 30🛎️', <deepmoblearning:pristine_matter_shulker>);
+set('10⚙️ 10🔗 50🐲 50👽 20⚗️', <deepmoblearning:pristine_matter_dragon>);
 
-<deepmoblearning:pristine_matter_twilight_forest>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:mythus> * 10, <aspect:terra> * 50, <aspect:spiritus> * 30);
-<deepmoblearning:pristine_matter_twilight_swamp>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:mythus> * 10, <aspect:herba> * 50, <aspect:vitium> * 30);
-<deepmoblearning:pristine_matter_twilight_glacier>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:mythus> * 10, <aspect:gelum> * 50, <aspect:vitreus> * 30);
+set('10⚙️ 10🔗 10🦄 50⛰️ 30👻', <deepmoblearning:pristine_matter_twilight_forest>);
+set('10⚙️ 10🔗 10🦄 50🌱 30🍇', <deepmoblearning:pristine_matter_twilight_swamp>);
+set('10⚙️ 10🔗 10🦄 50🧊 30💎', <deepmoblearning:pristine_matter_twilight_glacier>);
 
-<deepmoblearning:pristine_matter_thermal_elemental>.setAspects(<aspect:machina> * 10, <aspect:vinculum> * 10, <aspect:aqua> * 20, <aspect:ignis> * 20, <aspect:terra> * 20, <aspect:aer> * 20);
+set('10⚙️ 10🔗 20💧 20🔥 20⛰️ 20💨', <deepmoblearning:pristine_matter_thermal_elemental>);
 
 /*
 #######################################################
@@ -523,7 +527,7 @@ ___  ____ ____ ____ ____ _  _ _ ____    ____ _  _ ____ _    _  _ ___ _ ____ _  _
 #######################################################
 */
 
-<draconicevolution:dragon_heart>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 50, <aspect:spiritus> * 30, <aspect:victus> * 100); // dragon heart
+set('100🐲 50🔮 30👻 100❤️', <draconicevolution:dragon_heart>); // dragon heart
 
 /*
 #######################################################
@@ -552,9 +556,9 @@ ____ _  _ ___ ____ ____    _  _ ___ _ _    _ ___ _ ____ ____
 #######################################################
 */
 
-<extrautils2:ingredients:11>.setAspects(<aspect:metallum> * 10, Aspect.infernum * 5); // Demonic ingot
-<extrautils2:ingredients:12>.setAspects(<aspect:metallum> * 10, <aspect:cognitio> * 5); // Enchanted ingot
-<extrautils2:fakecopy:*>.setAspects(<aspect:amogus> * 25); // Fake Item
+set('10🔩 5🧨', <extrautils2:ingredients:11>); // Demonic ingot
+set('10🔩 5🧠', <extrautils2:ingredients:12>); // Enchanted ingot
+set('25ඞ', <extrautils2:fakecopy:*>); // Fake Item
 
 /*
 #######################################################
@@ -565,9 +569,9 @@ ____ ____ ____ ____ ____ ___ ____ _   _
 #######################################################
 */
 
-<forestry:candle>.setAspects(<aspect:lux> * 20, <aspect:herba> * 5, <aspect:aer> * 5);
-<forestry:stump>.setAspects(<aspect:lux> * 20, <aspect:herba> * 5, <aspect:aer> * 5);
-<forestry:beeswax>.setAspects(<aspect:lux> * 5, <aspect:aer> * 2);
+set('20🕯️ 5🌱 5💨', <forestry:candle>);
+set('20🕯️ 5🌱 5💨', <forestry:stump>);
+set('5🕯️ 2💨', <forestry:beeswax>);
 
 /*
 #######################################################
@@ -589,129 +593,129 @@ _ ____ ____    ____ _  _ ___     ____ _ ____ ____
 
 // General
 
-<iceandfire:manuscript>.setAspects(<aspect:cognitio> * 20); // manuscript
-<iceandfire:witherbone>.setAspects(<aspect:mortuus> * 10, Aspect.infernum * 10, <aspect:tenebrae> * 5, <aspect:perditio> * 5); // wither bone
-<iceandfire:myrmex_stinger>.setAspects(<aspect:mythus> * 5, <aspect:aversio> * 6, <aspect:alkimia> * 5);
+set('20🧠', <iceandfire:manuscript>); // manuscript
+set('10⚰️ 10🧨 5🌑 5⚡', <iceandfire:witherbone>); // wither bone
+set('5🦄 6🗡️ 5⚗️', <iceandfire:myrmex_stinger>);
 
 // Dragons general
 
-<iceandfire:dragonbone>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 2, <aspect:mortuus> * 5); // dragon bone
-<iceandfire:dragon_meal>.setAspects(<aspect:victus> * 20, <aspect:bestia> * 10, <aspect:mortuus> * 20); // dragon meal
+set('5🐲 2🔮 5⚰️', <iceandfire:dragonbone>); // dragon bone
+set('20❤️ 10🐺 20⚰️', <iceandfire:dragon_meal>); // dragon meal
 
 // Fire
-<iceandfire:fire_dragon_heart>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 50, <aspect:spiritus> * 30, <aspect:victus> * 100, <aspect:ignis> * 50); // heart
-<iceandfire:fire_dragon_flesh>.setAspects(<aspect:draco> * 10, <aspect:victus> * 10, <aspect:mortuus> * 20, <aspect:ignis> * 20); // flesh
-<iceandfire:fire_dragon_blood>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 10, <aspect:alkimia> * 10, <aspect:ignis> * 10); // blood
-<iceandfire:dragon_skull>.setAspects(<aspect:draco> * 25, <aspect:spiritus> * 10, <aspect:mortuus> * 10, <aspect:ignis> * 30); // skull
-<iceandfire:dragonscales_red>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 7, Aspect.infernum * 10, <aspect:ignis> * 10); // scales red
-<iceandfire:dragonscales_bronze>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 7, <aspect:desiderium> * 10, <aspect:ignis> * 10); // scales bronze
-<iceandfire:dragonscales_green>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 7, Aspect.visum * 10, <aspect:ignis> * 10); // scales green
-<iceandfire:dragonscales_gray>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 7, Aspect.exitium * 10, <aspect:ignis> * 10); // scales gray
-<iceandfire:dragonegg_red>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, Aspect.infernum * 10, <aspect:ignis> * 10); // egg red
-<iceandfire:dragonegg_bronze>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, <aspect:desiderium> * 10, <aspect:ignis> * 10); // egg bronze
-<iceandfire:dragonegg_green>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, Aspect.visum * 10, <aspect:ignis> * 10); // egg green
-<iceandfire:dragonegg_gray>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, Aspect.exitium * 10, <aspect:ignis> * 10); // egg gray
-<iceandfire:dragonsteel_fire_ingot>.setAspects(<aspect:draco> * 25, <aspect:metallum> * 20, <aspect:desiderium> * 40, <aspect:ignis> * 50); // dragonsteel ingot
-<iceandfire:fire_lily>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 2, <aspect:herba> * 5, <aspect:ignis> * 5); // lily
-<iceandfire:fire_stew>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 5, <aspect:ignis> * 20); // lily mixture
+set('100🐲 50🔮 30👻 100❤️ 50🔥', <iceandfire:fire_dragon_heart>); // heart
+set('10🐲 10❤️ 20⚰️ 20🔥', <iceandfire:fire_dragon_flesh>); // flesh
+set('5🐲 10🔮 10⚗️ 10🔥', <iceandfire:fire_dragon_blood>); // blood
+set('25🐲 10👻 10⚰️ 30🔥', <iceandfire:dragon_skull>); // skull
+set('5🐲 7🛡️ 10🧨 10🔥', <iceandfire:dragonscales_red>); // scales red
+set('5🐲 7🛡️ 10✊ 10🔥', <iceandfire:dragonscales_bronze>); // scales bronze
+set('5🐲 7🛡️ 10👁️ 10🔥', <iceandfire:dragonscales_green>); // scales green
+set('5🐲 7🛡️ 10💣 10🔥', <iceandfire:dragonscales_gray>); // scales gray
+set('100🐲 10🔮 10🧨 10🔥', <iceandfire:dragonegg_red>); // egg red
+set('100🐲 10🔮 10✊ 10🔥', <iceandfire:dragonegg_bronze>); // egg bronze
+set('100🐲 10🔮 10👁️ 10🔥', <iceandfire:dragonegg_green>); // egg green
+set('100🐲 10🔮 10💣 10🔥', <iceandfire:dragonegg_gray>); // egg gray
+set('25🐲 20🔩 40✊ 50🔥', <iceandfire:dragonsteel_fire_ingot>); // dragonsteel ingot
+set('5🐲 2🔮 5🌱 5🔥', <iceandfire:fire_lily>); // lily
+set('5🐲 5🔮 20🔥', <iceandfire:fire_stew>); // lily mixture
 
 // Ice
-<iceandfire:ice_dragon_heart>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 50, <aspect:spiritus> * 30, <aspect:victus> * 100, <aspect:gelum> * 50); // heart
-<iceandfire:ice_dragon_flesh>.setAspects(<aspect:draco> * 10, <aspect:victus> * 10, <aspect:mortuus> * 20, <aspect:gelum> * 20); // flesh
-<iceandfire:ice_dragon_blood>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 10, <aspect:alkimia> * 10, <aspect:gelum> * 10); // blood
-<iceandfire:dragon_skull:1>.setAspects(<aspect:draco> * 25, <aspect:spiritus> * 10, <aspect:mortuus> * 10, <aspect:gelum> * 30); // skull
-<iceandfire:dragonscales_sapphire>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 15, <aspect:instrumentum> * 10, <aspect:gelum> * 10); // scales sapphire
-<iceandfire:dragonscales_blue>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 15, <aspect:vitreus> * 10, <aspect:gelum> * 10); // scales blue
-<iceandfire:dragonscales_white>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 15, <aspect:volatus> * 10, <aspect:gelum> * 10); // scales white
-<iceandfire:dragonscales_silver>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 15, Aspect.fluctus * 10, <aspect:gelum> * 10); // scales silver
-<iceandfire:dragonegg_sapphire>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, <aspect:instrumentum> * 10, <aspect:gelum> * 10); // egg sapphire
-<iceandfire:dragonegg_blue>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, <aspect:vitreus> * 10, <aspect:gelum> * 10); // egg blue
-<iceandfire:dragonegg_white>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, <aspect:volatus> * 10, <aspect:gelum> * 10); // egg white
-<iceandfire:dragonegg_silver>.setAspects(<aspect:draco> * 100, <aspect:praecantatio> * 10, Aspect.fluctus * 10, <aspect:gelum> * 10); // egg silver
-<iceandfire:dragonsteel_ice_ingot>.setAspects(<aspect:draco> * 25, <aspect:metallum> * 20, <aspect:desiderium> * 40, <aspect:gelum> * 50); // dragonsteel ingot
-<iceandfire:frost_lily>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 2, <aspect:herba> * 5, <aspect:gelum> * 5); // lily
-<iceandfire:frost_stew>.setAspects(<aspect:draco> * 5, <aspect:praecantatio> * 5, <aspect:gelum> * 20); // lily mixture
+set('100🐲 50🔮 30👻 100❤️ 50🧊', <iceandfire:ice_dragon_heart>); // heart
+set('10🐲 10❤️ 20⚰️ 20🧊', <iceandfire:ice_dragon_flesh>); // flesh
+set('5🐲 10🔮 10⚗️ 10🧊', <iceandfire:ice_dragon_blood>); // blood
+set('25🐲 10👻 10⚰️ 30🧊', <iceandfire:dragon_skull:1>); // skull
+set('5🐲 15🛡️ 10🛠️ 10🧊', <iceandfire:dragonscales_sapphire>); // scales sapphire
+set('5🐲 15🛡️ 10💎 10🧊', <iceandfire:dragonscales_blue>); // scales blue
+set('5🐲 15🛡️ 10🕊️ 10🧊', <iceandfire:dragonscales_white>); // scales white
+set('5🐲 15🛡️ 10♒ 10🧊', <iceandfire:dragonscales_silver>); // scales silver
+set('100🐲 10🔮 10🛠️ 10🧊', <iceandfire:dragonegg_sapphire>); // egg sapphire
+set('100🐲 10🔮 10💎 10🧊', <iceandfire:dragonegg_blue>); // egg blue
+set('100🐲 10🔮 10🕊️ 10🧊', <iceandfire:dragonegg_white>); // egg white
+set('100🐲 10🔮 10♒ 10🧊', <iceandfire:dragonegg_silver>); // egg silver
+set('25🐲 20🔩 40✊ 50🧊', <iceandfire:dragonsteel_ice_ingot>); // dragonsteel ingot
+set('5🐲 2🔮 5🌱 5🧊', <iceandfire:frost_lily>); // lily
+set('5🐲 5🔮 20🧊', <iceandfire:frost_stew>); // lily mixture
 
 // Ocean creatures
-<iceandfire:sea_serpent_fang>.setAspects(<aspect:draco> * 5, <aspect:aversio> * 10, <aspect:aqua> * 10, <aspect:mythus> * 5); // fang
-<iceandfire:sea_serpent_scales_teal>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, <aspect:alkimia> * 5, <aspect:mythus> * 10); // scale teal
-<iceandfire:sea_serpent_scales_deepblue>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, <aspect:instrumentum> * 5, <aspect:mythus> * 10); // scale deepblue
-<iceandfire:sea_serpent_scales_bronze>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, Aspect.sonus * 5, <aspect:mythus> * 10); // scale bronze
-<iceandfire:sea_serpent_scales_blue>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, <aspect:vitreus> * 5, <aspect:mythus> * 10); // scale blue
-<iceandfire:sea_serpent_scales_green>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, Aspect.visum * 5, <aspect:mythus> * 10); // scale green
-<iceandfire:sea_serpent_scales_purple>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, <aspect:praecantatio> * 5, <aspect:mythus> * 10); // scale purple
-<iceandfire:sea_serpent_scales_red>.setAspects(<aspect:draco> * 5, <aspect:praemunio> * 10, <aspect:aqua> * 10, <aspect:victus> * 5, <aspect:mythus> * 10); // scale red
-<iceandfire:seaserpent_skull>.setAspects(<aspect:draco> * 10, <aspect:spiritus> * 20, <aspect:aqua> * 20, <aspect:mythus> * 50); // skull
+set('5🐲 10🗡️ 10💧 5🦄', <iceandfire:sea_serpent_fang>); // fang
+set('5🐲 10🛡️ 10💧 5⚗️ 10🦄', <iceandfire:sea_serpent_scales_teal>); // scale teal
+set('5🐲 10🛡️ 10💧 5🛠️ 10🦄', <iceandfire:sea_serpent_scales_deepblue>); // scale deepblue
+set('5🐲 10🛡️ 10💧 5🛎️ 10🦄', <iceandfire:sea_serpent_scales_bronze>); // scale bronze
+set('5🐲 10🛡️ 10💧 5💎 10🦄', <iceandfire:sea_serpent_scales_blue>); // scale blue
+set('5🐲 10🛡️ 10💧 5👁️ 10🦄', <iceandfire:sea_serpent_scales_green>); // scale green
+set('5🐲 10🛡️ 10💧 5🔮 10🦄', <iceandfire:sea_serpent_scales_purple>); // scale purple
+set('5🐲 10🛡️ 10💧 5❤️ 10🦄', <iceandfire:sea_serpent_scales_red>); // scale red
+set('10🐲 20👻 20💧 50🦄', <iceandfire:seaserpent_skull>); // skull
 
-<iceandfire:shiny_scales>.setAspects(<aspect:desiderium> * 20, <aspect:praemunio> * 5, <aspect:aqua> * 10, <aspect:mythus> * 2); // shiny scales
-<iceandfire:siren_tear>.setAspects(Aspect.sonus * 100, Aspect.imperium * 50, <aspect:aqua> * 50, <aspect:mythus> * 50); // siren
-<iceandfire:hippocampus_fin>.setAspects(<aspect:motus> * 100, <aspect:mythus> * 50, <aspect:aqua> * 50); // hippocampus
+set('20✊ 5🛡️ 10💧 2🦄', <iceandfire:shiny_scales>); // shiny scales
+set('100🛎️ 50🙌 50💧 50🦄', <iceandfire:siren_tear>); // siren
+set('100🏃 50🦄 50💧', <iceandfire:hippocampus_fin>); // hippocampus
 
 // Beach creatures
 
-<iceandfire:gorgon_head>.setAspects(<aspect:mythus> * 50, <aspect:mortuus> * 50, <aspect:exanimis> * 40, <aspect:humanus> * 50); // gorgon
+set('50🦄 50⚰️ 40💀 50👨', <iceandfire:gorgon_head>); // gorgon
 
-<iceandfire:cyclops_eye>.setAspects(<aspect:mythus> * 20, Aspect.visum * 30, <aspect:mortuus> * 20, <aspect:bestia> * 50); // cyclop
-<iceandfire:cyclops_skull>.setAspects(<aspect:mythus> * 30, <aspect:spiritus> * 20, <aspect:potentia> * 20, <aspect:terra> * 50);
+set('20🦄 30👁️ 20⚰️ 50🐺', <iceandfire:cyclops_eye>); // cyclop
+set('30🦄 20👻 20💪 50⛰️', <iceandfire:cyclops_skull>);
 
 // Underground
 
-<iceandfire:troll_skull>.setAspects(<aspect:mythus> * 20, <aspect:spiritus> * 20, <aspect:tenebrae> * 20, <aspect:terra> * 30); // troll skull
-<iceandfire:troll_leather_frost>.setAspects(<aspect:mythus> * 10, <aspect:praemunio> * 10, <aspect:tenebrae> * 10, <aspect:gelum> * 15); // leather frost
-<iceandfire:troll_leather_mountain>.setAspects(<aspect:mythus> * 10, <aspect:praemunio> * 10, <aspect:tenebrae> * 10, <aspect:terra> * 15); // leather mountain
-<iceandfire:troll_leather_forest>.setAspects(<aspect:mythus> * 10, <aspect:praemunio> * 10, <aspect:tenebrae> * 10, <aspect:herba> * 15); // leather forest
-<iceandfire:troll_weapon.trunk_frost>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10); // troll weapons
-<iceandfire:troll_weapon.hammer>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10);
-<iceandfire:troll_weapon.column_forest>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10);
-<iceandfire:troll_weapon.column_frost>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10);
-<iceandfire:troll_weapon.trunk>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10);
-<iceandfire:troll_weapon.axe>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10);
-<iceandfire:troll_weapon.column>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 20, <aspect:tenebrae> * 10, <aspect:praecantatio> * 10);
+set('20🦄 20👻 20🌑 30⛰️', <iceandfire:troll_skull>); // troll skull
+set('10🦄 10🛡️ 10🌑 15🧊', <iceandfire:troll_leather_frost>); // leather frost
+set('10🦄 10🛡️ 10🌑 15⛰️', <iceandfire:troll_leather_mountain>); // leather mountain
+set('10🦄 10🛡️ 10🌑 15🌱', <iceandfire:troll_leather_forest>); // leather forest
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.trunk_frost>); // troll weapons
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.hammer>);
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.column_forest>);
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.column_frost>);
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.trunk>);
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.axe>);
+set('10🦄 20🗡️ 10🌑 10🔮', <iceandfire:troll_weapon.column>);
 
 // Swamp
 
-<iceandfire:hydra_skull>.setAspects(<aspect:mythus> * 50, <aspect:spiritus> * 20, <aspect:alkimia> * 50, <aspect:victus> * 50); // hydra
-<iceandfire:hydra_fang>.setAspects(<aspect:mythus> * 10, <aspect:aversio> * 10, <aspect:alkimia> * 10);
-<iceandfire:hydra_heart>.setAspects(<aspect:mythus> * 50, <aspect:praecantatio> * 30, <aspect:alkimia> * 50, <aspect:victus> * 200);
+set('50🦄 20👻 50⚗️ 50❤️', <iceandfire:hydra_skull>); // hydra
+set('10🦄 10🗡️ 10⚗️', <iceandfire:hydra_fang>);
+set('50🦄 30🔮 50⚗️ 200❤️', <iceandfire:hydra_heart>);
 
-<iceandfire:stymphalian_skull>.setAspects(<aspect:mythus> * 15, <aspect:spiritus> * 20, <aspect:volatus> * 40, Aspect.ventus * 40); // ironbird
-<iceandfire:stymphalian_bird_feather>.setAspects(<aspect:mythus> * 5, <aspect:aer> * 5, <aspect:volatus> * 5, Aspect.ventus * 5);
+set('15🦄 20👻 40🕊️ 40🍃', <iceandfire:stymphalian_skull>); // ironbird
+set('5🦄 5💨 5🕊️ 5🍃', <iceandfire:stymphalian_bird_feather>);
 
 // Jungle
 
-<iceandfire:amphithere_feather>.setAspects(<aspect:mythus> * 5, <aspect:aer> * 5, <aspect:volatus> * 5, <aspect:desiderium> * 20); // amphithere
-<iceandfire:amphithere_skull>.setAspects(<aspect:mythus> * 30, <aspect:spiritus> * 20, <aspect:aer> * 20, <aspect:volatus> * 20);
+set('5🦄 5💨 5🕊️ 20✊', <iceandfire:amphithere_feather>); // amphithere
+set('30🦄 20👻 20💨 20🕊️', <iceandfire:amphithere_skull>);
 
-<iceandfire:myrmex_jungle_chitin>.setAspects(<aspect:mythus> * 5, <aspect:praemunio> * 5, <aspect:herba> * 5); // jungle myrmex
-<iceandfire:myrmex_jungle_resin>.setAspects(<aspect:mythus> * 5, <aspect:permutatio> * 5, <aspect:herba> * 5);
-<iceandfire:myrmex_jungle_egg:*>.setAspects(<aspect:mythus> * 20, <aspect:victus> * 10, <aspect:herba> * 5);
+set('5🦄 5🛡️ 5🌱', <iceandfire:myrmex_jungle_chitin>); // jungle myrmex
+set('5🦄 5🔄 5🌱', <iceandfire:myrmex_jungle_resin>);
+set('20🦄 10❤️ 5🌱', <iceandfire:myrmex_jungle_egg:*>);
 
 // Desert
-<iceandfire:deathworm_chitin:*>.setAspects(<aspect:mythus> * 5, <aspect:praemunio> * 5, <aspect:bestia> * 5); // deathworm
-<iceandfire:iceandfire.deathworm_egg:*>.setAspects(<aspect:mythus> * 10, <aspect:victus> * 20, <aspect:bestia> * 20);
-<iceandfire:deathworm_tounge>.setAspects(<aspect:mythus> * 20, <aspect:vinculum> * 50, <aspect:bestia> * 50);
+set('5🦄 5🛡️ 5🐺', <iceandfire:deathworm_chitin:*>); // deathworm
+set('10🦄 20❤️ 20🐺', <iceandfire:iceandfire.deathworm_egg:*>);
+set('20🦄 50🔗 50🐺', <iceandfire:deathworm_tounge>);
 
-<iceandfire:myrmex_desert_chitin>.setAspects(<aspect:mythus> * 5, <aspect:praemunio> * 5, <aspect:ignis> * 5); // desert myrmex
-<iceandfire:myrmex_desert_resin>.setAspects(<aspect:mythus> * 5, <aspect:permutatio> * 5, <aspect:ignis> * 5);
-<iceandfire:myrmex_desert_egg:*>.setAspects(<aspect:mythus> * 20, <aspect:victus> * 10, <aspect:ignis> * 5);
+set('5🦄 5🛡️ 5🔥', <iceandfire:myrmex_desert_chitin>); // desert myrmex
+set('5🦄 5🔄 5🔥', <iceandfire:myrmex_desert_resin>);
+set('20🦄 10❤️ 5🔥', <iceandfire:myrmex_desert_egg:*>);
 
-<iceandfire:cockatrice_skull>.setAspects(<aspect:mythus> * 10, <aspect:spiritus> * 20, <aspect:motus> * 10, <aspect:perditio> * 20); // cockatrice
-<iceandfire:cockatrice_eye>.setAspects(<aspect:mythus> * 20, <aspect:mortuus> * 20, <aspect:motus> * 10, <aspect:perditio> * 50);
+set('10🦄 20👻 10🏃 20⚡', <iceandfire:cockatrice_skull>); // cockatrice
+set('20🦄 20⚰️ 10🏃 50⚡', <iceandfire:cockatrice_eye>);
 
 // Forest/plains
 
-<iceandfire:hippogryph_skull>.setAspects(<aspect:mythus> * 20, <aspect:spiritus> * 20, Aspect.ventus * 20, <aspect:victus> * 40);
-<iceandfire:hippogryph_egg:*>.setAspects(<aspect:mythus> * 20, <aspect:victus> * 40, Aspect.ventus * 40);
+set('20🦄 20👻 20🍃 40❤️', <iceandfire:hippogryph_skull>);
+set('20🦄 40❤️ 40🍃', <iceandfire:hippogryph_egg:*>);
 
-<iceandfire:pixie_dust>.setAspects(<aspect:mythus> * 2, <aspect:praecantatio> * 30, <aspect:humanus> * 20, <aspect:desiderium> * 5);
-<iceandfire:ambrosia>.setAspects(<aspect:mythus> * 2, <aspect:praecantatio> * 40, <aspect:victus> * 20, <aspect:desiderium> * 20);
-<iceandfire:jar_pixie:*>.setAspects(<aspect:mythus> * 20, <aspect:praecantatio> * 50, <aspect:humanus> * 20, <aspect:desiderium> * 50);
-<iceandfire:pixie_wings>.setAspects(<aspect:mythus> * 20, <aspect:praecantatio> * 50, Aspect.imperium * 20, <aspect:desiderium> * 50);
-<iceandfire:pixie_house:*>.setAspects(<aspect:herba> * 20, <aspect:auram> * 5);
+set('2🦄 30🔮 20👨 5✊', <iceandfire:pixie_dust>);
+set('2🦄 40🔮 20❤️ 20✊', <iceandfire:ambrosia>);
+set('20🦄 50🔮 20👨 50✊', <iceandfire:jar_pixie:*>);
+set('20🦄 50🔮 20🙌 50✊', <iceandfire:pixie_wings>);
+set('20🌱 5✨', <iceandfire:pixie_house:*>);
 
 // Ice
 
-<iceandfire:dread_shard>.setAspects(<aspect:exanimis> * 10, <aspect:perditio> * 10, <aspect:spiritus> * 20);
+set('10💀 10⚡ 20👻', <iceandfire:dread_shard>);
 
 /*
 #######################################################
@@ -740,7 +744,7 @@ _  _ ____ ____ _  _ ____ _  _ _ ____ ____
 #######################################################
 */
 
-<mechanics:heavy_ingot>.setAspects(<aspect:metallum> * 10, <aspect:perditio> * 5); // heavy ingot
+set('10🔩 5⚡', <mechanics:heavy_ingot>); // heavy ingot
 
 /*
 #######################################################
@@ -751,14 +755,14 @@ _  _ ____ _  _ ____ _  _ _ ____ _  _
 #######################################################
 */
 
-<mekanism:ingot>.setAspects(<aspect:metallum> * 10, <aspect:tenebrae> * 5, <aspect:terra> * 10); // Refined obsidian ingot
-<mekanism:nugget>.setAspects(<aspect:metallum> * 1, <aspect:terra> * 1); // Refined obsidian nugget
-<mekanism:basicblock:2>.setAspects(<aspect:metallum> * 67, <aspect:tenebrae> * 33, <aspect:terra> * 67); // Refined obsidian block
-<mekanism:otherdust:5>.setAspects(<aspect:metallum> * 10, <aspect:tenebrae> * 5, <aspect:terra> * 10, <aspect:perditio> * 5); // Refined obsidian dust
+set('10🔩 5🌑 10⛰️', <mekanism:ingot>); // Refined obsidian ingot
+set('🔩 ⛰️', <mekanism:nugget>); // Refined obsidian nugget
+set('67🔩 33🌑 67⛰️', <mekanism:basicblock:2>); // Refined obsidian block
+set('10🔩 5🌑 10⛰️ 5⚡', <mekanism:otherdust:5>); // Refined obsidian dust
 
-<mekanism:ingot:3>.setAspects(<aspect:metallum> * 10, <aspect:lux> * 10, <aspect:sensus> * 5); // Refined glowstone ingot
-<mekanism:nugget:3>.setAspects(<aspect:metallum> * 1, <aspect:sensus> * 1); // Refined glowstone nugget
-<mekanism:basicblock:4>.setAspects(<aspect:metallum> * 67, <aspect:lux> * 67, <aspect:sensus> * 33); // Refined glowstone block
+set('10🔩 10🕯️ 5🦉', <mekanism:ingot:3>); // Refined glowstone ingot
+set('🔩 🦉', <mekanism:nugget:3>); // Refined glowstone nugget
+set('67🔩 67🕯️ 33🦉', <mekanism:basicblock:4>); // Refined glowstone block
 
 /*
 #######################################################
@@ -769,18 +773,18 @@ ___  _    _  _ ____ ___ _ ____
 #######################################################
 */
 
-<plustic:mirioningot>.setAspects(<aspect:metallum> * 10, <aspect:mana> * 10, <aspect:auram> * 10);
-<plustic:mirionnugget>.setAspects(<aspect:metallum> * 1, <aspect:mana> * 1, <aspect:auram> * 1);
-<plustic:mirionblock>.setAspects(<aspect:metallum> * 67, <aspect:mana> * 67, <aspect:auram> * 67);
-<plustic:osgloglasingot>.setAspects(<aspect:metallum> * 10, Aspect.visum * 10);
-<plustic:osgloglasnugget>.setAspects(<aspect:metallum> * 1, Aspect.visum * 1);
-<plustic:osgloglasblock>.setAspects(<aspect:metallum> * 67, Aspect.visum * 67);
-<plustic:alumiteingot>.setAspects(<aspect:metallum> * 10, Aspect.sonus * 5);
-<plustic:alumitenugget>.setAspects(<aspect:metallum> * 1, Aspect.sonus * 1);
-<plustic:alumiteblock>.setAspects(<aspect:metallum> * 67, Aspect.sonus * 67);
-<plustic:osmiridiumingot>.setAspects(<aspect:metallum> * 10, <aspect:volatus> * 5);
-<plustic:osmiridiumnugget>.setAspects(<aspect:metallum> * 1, <aspect:volatus> * 1);
-<plustic:osmiridiumblock>.setAspects(<aspect:metallum> * 67, <aspect:volatus> * 67);
+set('10🔩 10🔷 10✨', <plustic:mirioningot>);
+set('🔩 🔷 ✨', <plustic:mirionnugget>);
+set('67🔩 67🔷 67✨', <plustic:mirionblock>);
+set('10🔩 10👁️', <plustic:osgloglasingot>);
+set('🔩 👁️', <plustic:osgloglasnugget>);
+set('67🔩 67👁️', <plustic:osgloglasblock>);
+set('10🔩 5🛎️', <plustic:alumiteingot>);
+set('🔩 🛎️', <plustic:alumitenugget>);
+set('67🔩 67🛎️', <plustic:alumiteblock>);
+set('10🔩 5🕊️', <plustic:osmiridiumingot>);
+set('🔩 🕊️', <plustic:osmiridiumnugget>);
+set('67🔩 67🕊️', <plustic:osmiridiumblock>);
 
 /*
 #######################################################
@@ -791,9 +795,9 @@ ___  ____ _
 #######################################################
 */
 
-<psi:material>.setAspects(<aspect:potentia> * 10, <aspect:alienis> * 5, <aspect:potentia> * 5); // Psi dust
-<psi:material:1>.setAspects(<aspect:metallum> * 10, <aspect:alienis> * 5, <aspect:potentia> * 5); // Psi ingot
-<psi:material:2>.setAspects(<aspect:vitreus> * 10, <aspect:alienis> * 5, <aspect:potentia> * 5); // Psi gem
+set('10💪 5👽 5💪', <psi:material>); // Psi dust
+set('10🔩 5👽 5💪', <psi:material:1>); // Psi ingot
+set('10💎 5👽 5💪', <psi:material:2>); // Psi gem
 
 /*
 #######################################################
@@ -804,7 +808,7 @@ ____ ____ _  _ ___  ____ _  _    ___ _  _ _ _  _ ____ ____
 #######################################################
 */
 
-<randomthings:ingredient:2>.setAspects(<aspect:spiritus> * 10); // Ectoplasm
+set('10👻', <randomthings:ingredient:2>); // Ectoplasm
 
 /*
 #######################################################
@@ -815,31 +819,31 @@ ____ ____ ___ ____
 #######################################################
 */
 
-<rats:rat_sack>.setAspects(<aspect:rattus> * 10, <aspect:ordo> * 5);
-<rats:piper_hat>.setAspects(<aspect:rattus> * 10, <aspect:praemunio> * 4, <aspect:praecantatio> * 2);
-<rats:rat_flute>.setAspects(<aspect:rattus> * 10, <aspect:praecantatio> * 10, <aspect:fabrico> * 10);
-<rats:plague_essence>.setAspects(<aspect:rattus> * 10, <aspect:mortuus> * 5);
-<rats:rat_pelt>.setAspects(<aspect:rattus> * 5, <aspect:praemunio> * 5);
-<rats:raw_rat>.setAspects(<aspect:rattus> * 5, <aspect:victus> * 5);
-<rats:cheese_stick>.setAspects(<aspect:rattus> * 10, <aspect:fabrico> * 10);
-<rats:radius_stick>.setAspects(<aspect:rattus> * 10, <aspect:perditio> * 10, <aspect:mortuus> * 10);
-<rats:string_cheese>.setAspects(<aspect:rattus> * 5, <aspect:fabrico> * 5, <aspect:victus> * 5);
-<rats:jack_o_ratern>.setAspects(<aspect:rattus> * 5, <aspect:herba> * 5, <aspect:lux> * 5);
-<rats:rat_lantern>.setAspects(<aspect:herba> * 1);
-<rats:marbled_cheese_raw>.setAspects(<aspect:rattus> * 5, <aspect:terra> * 5);
-// <rats:feral_bagh_nakhs>                         .setAspects(<aspect:rattus>*10);
-<rats:feral_rat_claw>.setAspects(<aspect:rattus> * 25, <aspect:mortuus> * 5);
-<rats:gem_of_ratlantis>.setAspects(<aspect:rattus> * 10, <aspect:vitreus> * 15, <aspect:desiderium> * 10);
-<rats:arcane_technology>.setAspects(<aspect:rattus> * 50, <aspect:machina> * 15, <aspect:alienis> * 10);
-// <rats:ancient_sawblade>                         .setAspects(<aspect:rattus>*10   ,<aspect:>*5         ,<aspect:>*5);
-<rats:ratlantean_flame>.setAspects(<aspect:rattus> * 5, <aspect:spiritus> * 10, <aspect:alienis> * 5);
-<rats:psionic_rat_brain>.setAspects(<aspect:rattus> * 100, <aspect:cognitio> * 100, <aspect:desiderium> * 100, <aspect:alienis> * 25, <aspect:alkimia> * 50);
-// <rats:idol_of_ratlantis>                        .setAspects(<aspect:rattus>*10   ,<aspect:>*5         ,<aspect:>*5);
-<rats:rattrap>.setAspects(<aspect:rattus> * 5, <aspect:vinculum> * 40, <aspect:metallum> * 5, <aspect:fabrico> * 5);
-<rats:rat_cage>.setAspects(<aspect:rattus> * 5, <aspect:vinculum> * 50, <aspect:metallum> * 20, <aspect:fabrico> * 15);
-<rats:charged_creeper_chunk>.setAspects(Aspect.exitium * 10, <aspect:alkimia> * 5, <aspect:ignis> * 10, <aspect:perditio> * 10);
-<rats:plague_scythe>.setAspects(<aspect:aversio> * 52, <aspect:rattus> * 15);
-// <rats:rat_capture_net>                          .setAspects(<aspect:rattus>*10   ,<aspect:>*5         ,<aspect:>*5);
+set('10🐀 5⟁', <rats:rat_sack>);
+set('10🐀 4🛡️ 2🔮', <rats:piper_hat>);
+set('10🐀 10🔮 10🔨', <rats:rat_flute>);
+set('10🐀 5⚰️', <rats:plague_essence>);
+set('5🐀 5🛡️', <rats:rat_pelt>);
+set('5🐀 5❤️', <rats:raw_rat>);
+set('10🐀 10🔨', <rats:cheese_stick>);
+set('10🐀 10⚡ 10⚰️', <rats:radius_stick>);
+set('5🐀 5🔨 5❤️', <rats:string_cheese>);
+set('5🐀 5🌱 5🕯️', <rats:jack_o_ratern>);
+set('🌱', <rats:rat_lantern>);
+set('5🐀 5⛰️', <rats:marbled_cheese_raw>);
+// set('10🐀', <rats:feral_bagh_nakhs>);
+set('25🐀 5⚰️', <rats:feral_rat_claw>);
+set('10🐀 15💎 10✊', <rats:gem_of_ratlantis>);
+set('50🐀 15⚙️ 10👽', <rats:arcane_technology>);
+// set('10🐀', <rats:ancient_sawblade>);
+set('5🐀 10👻 5👽', <rats:ratlantean_flame>);
+set('100🐀 100🧠 100✊ 25👽 50⚗️', <rats:psionic_rat_brain>);
+// set('10🐀', <rats:idol_of_ratlantis>);
+set('5🐀 40🔗 5🔩 5🔨', <rats:rattrap>);
+set('5🐀 50🔗 20🔩 15🔨', <rats:rat_cage>);
+set('10💣 5⚗️ 10🔥 10⚡', <rats:charged_creeper_chunk>);
+set('52🗡️ 15🐀', <rats:plague_scythe>);
+// set('10🐀', <rats:rat_capture_net>);
 
 val tubes = [
   <rats:rat_tube_white>,
@@ -859,7 +863,7 @@ val tubes = [
   <rats:rat_tube_red>,
 ] as IItemStack[];
 for tube in tubes {
-  tube.setAspects(<aspect:rattus> * 1, <aspect:motus> * 5);
+  set('🐀 5🏃', tube);
 }
 
 val igloos = [
@@ -881,7 +885,7 @@ val igloos = [
   <rats:rat_igloo_silver>,
 ] as IItemStack[];
 for igloo in igloos {
-  igloo.setAspects(<aspect:fabrico> * 30, <aspect:humanus> * 30, <aspect:ordo> * 15);
+  set('30🔨 30👨 15⟁', igloo);
 }
 
 /*
@@ -902,9 +906,9 @@ ___ _  _ ____ ____ _  _ ____ _       ____ ____ _  _ _  _ ___  ____ ___ _ ____ _ 
 #######################################################
 */
 
-<thermalfoundation:material:2048>.setAspects(<aspect:gelum> * 15, <aspect:vitreus> * 5); // Blizz rod
-<thermalfoundation:material:2052>.setAspects(<aspect:terra> * 15, Aspect.exitium * 5); // Basalz rod
-<thermalfoundation:material:2050>.setAspects(<aspect:aer> * 15, Aspect.sonus * 5); // Blitz rod
+set('15🧊 5💎', <thermalfoundation:material:2048>); // Blizz rod
+set('15⛰️ 5💣', <thermalfoundation:material:2052>); // Basalz rod
+set('15💨 5🛎️', <thermalfoundation:material:2050>); // Blitz rod
 
 /*
 #######################################################
@@ -915,17 +919,17 @@ ___ _ _  _ _  _ ____ ____ . ____    ____ ____ _  _ ____ ___ ____ _  _ ____ ___
 #######################################################
 */
 
-<tconstruct:materials:17>.setAspects(<aspect:mortuus> * 10, Aspect.infernum * 10, <aspect:tenebrae> * 5, <aspect:perditio> * 5); // wither bone
+set('10⚰️ 10🧨 5🌑 5⚡', <tconstruct:materials:17>); // wither bone
 
-<tconstruct:ingots:2>.setAspects(<aspect:metallum> * 10, <aspect:aversio> * 5); // Manyullyn ingot
-<tconstruct:nuggets:2>.setAspects(<aspect:metallum> * 1); // Manyullyn nugget
-<tconstruct:metal:2>.setAspects(<aspect:metallum> * 67, <aspect:aversio> * 33);// Manyullyn block
-<tconstruct:ingots:5>.setAspects(<aspect:metallum> * 10, <aspect:alkimia> * 5); // Alchemical brass ingot
-<tconstruct:nuggets:5>.setAspects(<aspect:metallum> * 1); // Alchemical brass nugget
-<tconstruct:metal:5>.setAspects(<aspect:metallum> * 67, <aspect:alkimia> * 33);// Alchemical brass block
-<tconstruct:ingots:4>.setAspects(<aspect:metallum> * 10, <aspect:bestia> * 5); // Pigiron ingot
-<tconstruct:nuggets:4>.setAspects(<aspect:metallum> * 1); // Pigiron ingot
-<tconstruct:metal:4>.setAspects(<aspect:metallum> * 67, <aspect:bestia> * 33);// Pigiron block
+set('10🔩 5🗡️', <tconstruct:ingots:2>); // Manyullyn ingot
+set('🔩', <tconstruct:nuggets:2>); // Manyullyn nugget
+set('67🔩 33🗡️', <tconstruct:metal:2>);// Manyullyn block
+set('10🔩 5⚗️', <tconstruct:ingots:5>); // Alchemical brass ingot
+set('🔩', <tconstruct:nuggets:5>); // Alchemical brass nugget
+set('67🔩 33⚗️', <tconstruct:metal:5>);// Alchemical brass block
+set('10🔩 5🐺', <tconstruct:ingots:4>); // Pigiron ingot
+set('🔩', <tconstruct:nuggets:4>); // Pigiron ingot
+set('67🔩 33🐺', <tconstruct:metal:4>);// Pigiron block
 
 /*
 #######################################################
@@ -936,35 +940,35 @@ ___ _ _  _ _  _ ____ ____ . ____    ____ _  _ ____ _    _  _ ___ _ ____ _  _
 #######################################################
 */
 
-<tconevo:metal:25>.setAspects(<aspect:metallum> * 20, <aspect:sanguis> * 10); // Bound ingot
-<tconevo:metal:27>.setAspects(<aspect:metallum> * 2, <aspect:sanguis> * 1); // Bound nugget
-<tconevo:metal_block:5>.setAspects(<aspect:metallum> * 133, <aspect:sanguis> * 67); // Bound block
-<tconevo:metal:30>.setAspects(<aspect:metallum> * 20, <aspect:spiritus> * 10); // Sentient ingot
-<tconevo:metal:32>.setAspects(<aspect:metallum> * 2, <aspect:spiritus> * 1); // Sentient nugget
-<tconevo:metal_block:6>.setAspects(<aspect:metallum> * 133, <aspect:spiritus> * 67); // Sentient block
-<tconevo:metal:35>.setAspects(<aspect:metallum> * 20, <aspect:potentia> * 10); // Energium ingot
-<tconevo:metal:37>.setAspects(<aspect:metallum> * 2, <aspect:potentia> * 1); // Energium nugget
-<tconevo:metal_block:7>.setAspects(<aspect:metallum> * 133, <aspect:potentia> * 67); // Energium block
-<tconevo:metal:40>.setAspects(<aspect:metallum> * 20, <aspect:humanus> * 10); // UU-metal ingot
-<tconevo:metal:42>.setAspects(<aspect:metallum> * 2, <aspect:humanus> * 1); // UU-metal nugget
-<tconevo:metal_block:8>.setAspects(<aspect:metallum> * 133, <aspect:humanus> * 67); // UU-metal block
-<tconevo:edible>.setAspects(<aspect:metallum> * 10, <aspect:victus> * 5); // Raw meat ingot
-<tconevo:edible:1>.setAspects(<aspect:metallum> * 10, <aspect:bestia> * 5); // Cooked meat ingot
-<tconevo:metal:15>.setAspects(<aspect:metallum> * 20, <aspect:exanimis> * 25); // Essence-Infused ingot
-<tconevo:metal:17>.setAspects(<aspect:metallum> * 2, <aspect:exanimis> * 2); // Essence-Infused nugget
-<tconevo:metal_block:3>.setAspects(<aspect:metallum> * 133, <aspect:exanimis> * 167);// Essence-Infused block
-<tconevo:metal>.setAspects(<aspect:metallum> * 100, Aspect.caeles * 50); // Wyvern ingot
-<tconevo:metal:2>.setAspects(<aspect:metallum> * 10, Aspect.caeles * 5); // Wyvern nugget
-<tconevo:metal_block>.setAspects(<aspect:metallum> * 500, Aspect.caeles * 333);// Wyvern block
-<tconevo:metal:5>.setAspects(<aspect:metallum> * 100, <aspect:draco> * 50); // Draconic ingot
-<tconevo:metal:7>.setAspects(<aspect:metallum> * 10, <aspect:draco> * 5); // Draconic nugget
-<tconevo:metal_block:1>.setAspects(<aspect:metallum> * 500, <aspect:draco> * 333);// Draconic block
-<tconevo:metal:10>.setAspects(<aspect:metallum> * 100, <aspect:rattus> * 50); // Chaotic ingot
-<tconevo:metal:12>.setAspects(<aspect:metallum> * 10, <aspect:rattus> * 5); // Chaotic nugget
-<tconevo:metal_block:2>.setAspects(<aspect:metallum> * 500, <aspect:rattus> * 333);// Chaotic block
-<tconevo:metal:20>.setAspects(<aspect:metallum> * 20, <aspect:aqua> * 10, <aspect:ignis> * 10, <aspect:terra> * 10, <aspect:perditio> * 10, <aspect:ordo> * 10, <aspect:aer> * 10); // Primordial ingot
-<tconevo:metal:22>.setAspects(<aspect:metallum> * 2, <aspect:aqua> * 1, <aspect:ignis> * 1, <aspect:terra> * 1, <aspect:perditio> * 1, <aspect:ordo> * 1, <aspect:aer> * 1); // Primordial nugget
-<tconevo:metal_block:4>.setAspects(<aspect:metallum> * 133, <aspect:aqua> * 67, <aspect:ignis> * 67, <aspect:terra> * 67, <aspect:perditio> * 67, <aspect:ordo> * 67, <aspect:aer> * 167); // Primordial block
+set('20🔩 10🩸', <tconevo:metal:25>); // Bound ingot
+set('2🔩 🩸', <tconevo:metal:27>); // Bound nugget
+set('133🔩 67🩸', <tconevo:metal_block:5>); // Bound block
+set('20🔩 10👻', <tconevo:metal:30>); // Sentient ingot
+set('2🔩 👻', <tconevo:metal:32>); // Sentient nugget
+set('133🔩 67👻', <tconevo:metal_block:6>); // Sentient block
+set('20🔩 10💪', <tconevo:metal:35>); // Energium ingot
+set('2🔩 💪', <tconevo:metal:37>); // Energium nugget
+set('133🔩 67💪', <tconevo:metal_block:7>); // Energium block
+set('20🔩 10👨', <tconevo:metal:40>); // UU-metal ingot
+set('2🔩 👨', <tconevo:metal:42>); // UU-metal nugget
+set('133🔩 67👨', <tconevo:metal_block:8>); // UU-metal block
+set('10🔩 5❤️', <tconevo:edible>); // Raw meat ingot
+set('10🔩 5🐺', <tconevo:edible:1>); // Cooked meat ingot
+set('20🔩 25💀', <tconevo:metal:15>); // Essence-Infused ingot
+set('2🔩 2💀', <tconevo:metal:17>); // Essence-Infused nugget
+set('133🔩 167💀', <tconevo:metal_block:3>);// Essence-Infused block
+set('100🔩 50☀️', <tconevo:metal>); // Wyvern ingot
+set('10🔩 5☀️', <tconevo:metal:2>); // Wyvern nugget
+set('500🔩 333☀️', <tconevo:metal_block>);// Wyvern block
+set('100🔩 50🐲', <tconevo:metal:5>); // Draconic ingot
+set('10🔩 5🐲', <tconevo:metal:7>); // Draconic nugget
+set('500🔩 333🐲', <tconevo:metal_block:1>);// Draconic block
+set('100🔩 50🐀', <tconevo:metal:10>); // Chaotic ingot
+set('10🔩 5🐀', <tconevo:metal:12>); // Chaotic nugget
+set('500🔩 333🐀', <tconevo:metal_block:2>);// Chaotic block
+set('20🔩 10💧 10🔥 10⛰️ 10⚡ 10⟁ 10💨', <tconevo:metal:20>); // Primordial ingot
+set('2🔩 💧 🔥 ⛰️ ⚡ ⟁ 💨', <tconevo:metal:22>); // Primordial nugget
+set('133🔩 67💧 67🔥 67⛰️ 67⚡ 67⟁ 167💨', <tconevo:metal_block:4>); // Primordial block
 
 /*
 #######################################################
@@ -975,31 +979,31 @@ ___ _  _ ____ _  _ _  _ ____ ____ ____ ____ ___
 #######################################################
 */
 
-<thaumcraft:alumentum>.setAspects(<aspect:ignis> * 2, <aspect:potentia> * 2);
-<thaumcraft:condenser_lattice_dirty>.setAspects(<aspect:vitium> * 10);
-<thaumcraft:ingot:2>.setAspects(<aspect:metallum> * 5, <aspect:instrumentum> * 2);
+set('2🔥 2💪', <thaumcraft:alumentum>);
+set('10🍇', <thaumcraft:condenser_lattice_dirty>);
+set('5🔩 2🛠️', <thaumcraft:ingot:2>);
 
-<thaumcraft:bath_salts>.setAspects(<aspect:ordo> * 1, <aspect:victus> * 1);
-<thaumcraft:sanity_soap>.setAspects(<aspect:ordo> * 2, <aspect:victus> * 2, <aspect:mana> * 2);
-<thaumicaugmentation:bars>.setAspects(<aspect:metallum>);
+set('⟁ ❤️', <thaumcraft:bath_salts>);
+set('2⟁ 2❤️ 2🔷', <thaumcraft:sanity_soap>);
+set('🔩', <thaumicaugmentation:bars>);
 
-<thaumcraft:ingot>.setAspects(<aspect:metallum> * 10, <aspect:praecantatio> * 5);
-<thaumcraft:nugget:6>.setAspects(<aspect:metallum> * 1);
-<thaumcraft:metal_thaumium>.setAspects(<aspect:metallum> * 67, <aspect:praecantatio> * 33);
-<thaumcraft:plate:2>.setAspects(<aspect:metallum> * 10, <aspect:praecantatio> * 5, <aspect:instrumentum> * 2);
-<mysticalagriculture:thaumium_seeds>.setAspects(<aspect:metallum> * 10, <aspect:praecantatio> * 5, <aspect:herba> * 20);
-<mysticalagriculture:thaumium_essence>.setAspects(<aspect:metallum> * 10, <aspect:praecantatio> * 25);
+set('10🔩 5🔮', <thaumcraft:ingot>);
+set('🔩', <thaumcraft:nugget:6>);
+set('67🔩 33🔮', <thaumcraft:metal_thaumium>);
+set('10🔩 5🔮 2🛠️', <thaumcraft:plate:2>);
+set('10🔩 5🔮 20🌱', <mysticalagriculture:thaumium_seeds>);
+set('10🔩 25🔮', <mysticalagriculture:thaumium_essence>);
 
-<thaumcraft:ingot:1>.setAspects(<aspect:metallum> * 10, <aspect:vitium> * 5);
-<thaumcraft:nugget:7>.setAspects(<aspect:metallum> * 1);
-<thaumcraft:metal_void>.setAspects(<aspect:metallum> * 67, <aspect:vitium> * 33);
-<thaumcraft:plate:3>.setAspects(<aspect:metallum> * 10, <aspect:vitium> * 5, <aspect:instrumentum> * 2);
-<mysticalagriculture:void_metal_seeds>.setAspects(<aspect:metallum> * 10, <aspect:vitium> * 5, <aspect:herba> * 20);
-<mysticalagriculture:void_metal_essence>.setAspects(<aspect:metallum> * 10, <aspect:vitium> * 5, <aspect:praecantatio> * 20);
+set('10🔩 5🍇', <thaumcraft:ingot:1>);
+set('🔩', <thaumcraft:nugget:7>);
+set('67🔩 33🍇', <thaumcraft:metal_void>);
+set('10🔩 5🍇 2🛠️', <thaumcraft:plate:3>);
+set('10🔩 5🍇 20🌱', <mysticalagriculture:void_metal_seeds>);
+set('10🔩 5🍇 20🔮', <mysticalagriculture:void_metal_essence>);
 
-<thaumicwonders:alienist_stone>.setAspects(<aspect:tenebrae> * 10, <aspect:praecantatio> * 15, <aspect:alkimia> * 15);
-<thaumicwonders:transmuter_stone>.setAspects(<aspect:motus> * 10, <aspect:permutatio> * 15, <aspect:alkimia> * 15);
-<thaumicwonders:alchemist_stone>.setAspects(<aspect:metallum> * 10, <aspect:ordo> * 15, <aspect:alkimia> * 15);
+set('10🌑 15🔮 15⚗️', <thaumicwonders:alienist_stone>);
+set('10🏃 15🔄 15⚗️', <thaumicwonders:transmuter_stone>);
+set('10🔩 15⟁ 15⚗️', <thaumicwonders:alchemist_stone>);
 
 val nitor = [
   <thaumcraft:nitor_white>,
@@ -1020,7 +1024,7 @@ val nitor = [
   <thaumcraft:nitor_black>,
 ] as IItemStack[];
 for nitor in nitor {
-  nitor.setAspects(<aspect:lux> * 2, <aspect:sensus>);
+  set('2🕯️ 🦉', nitor);
 }
 
 /*
@@ -1032,17 +1036,17 @@ ___ _ _ _ _ _    _ ____ _  _ ___    ____ ____ ____ ____ ____ ___
 #######################################################
 */
 
-<mysticalagriculture:fiery_ingot_seeds>.setAspects(<aspect:metallum> * 15, <aspect:ignis> * 40, <aspect:auram> * 12, <aspect:herba> * 20);
-<mysticalagriculture:fiery_ingot_essence>.setAspects(<aspect:metallum> * 15, <aspect:ignis> * 40, <aspect:auram> * 12, <aspect:praecantatio> * 20);
+set('15🔩 40🔥 12✨ 20🌱', <mysticalagriculture:fiery_ingot_seeds>);
+set('15🔩 40🔥 12✨ 20🔮', <mysticalagriculture:fiery_ingot_essence>);
 
-<twilightforest:ironwood_ingot>.setAspects(<aspect:metallum> * 10, <aspect:herba> * 5);
-<mysticalagriculture:ironwood_seeds>.setAspects(<aspect:metallum> * 10, <aspect:herba> * 20);
-<mysticalagriculture:ironwood_essence>.setAspects(<aspect:metallum> * 10, <aspect:herba> * 5, <aspect:praecantatio> * 15);
-<twilightforest:knightmetal_ingot>.setAspects(<aspect:metallum> * 10, <aspect:praemunio> * 5);
-<twilightforest:armor_shard_cluster>.setAspects(<aspect:metallum> * 5, <aspect:praemunio> * 10);
-<mysticalagriculture:knightmetal_seeds>.setAspects(<aspect:metallum> * 10, <aspect:praemunio> * 5, <aspect:herba> * 20);
-<mysticalagriculture:knightmetal_essence>.setAspects(<aspect:metallum> * 10, <aspect:praemunio> * 5, <aspect:praecantatio> * 20);
-<twilightforest:auroralized_glass>.setAspects(<aspect:vitreus> * 5, <aspect:alienis> * 10);
+set('10🔩 5🌱', <twilightforest:ironwood_ingot>);
+set('10🔩 20🌱', <mysticalagriculture:ironwood_seeds>);
+set('10🔩 5🌱 15🔮', <mysticalagriculture:ironwood_essence>);
+set('10🔩 5🛡️', <twilightforest:knightmetal_ingot>);
+set('5🔩 10🛡️', <twilightforest:armor_shard_cluster>);
+set('10🔩 5🛡️ 20🌱', <mysticalagriculture:knightmetal_seeds>);
+set('10🔩 5🛡️ 20🔮', <mysticalagriculture:knightmetal_essence>);
+set('5💎 10👽', <twilightforest:auroralized_glass>);
 
 /*
 #######################################################
@@ -1053,14 +1057,14 @@ _  _ ____ _  _ _ _    _    ____   / _  _ _ _  _ ____ ____ ____ ____ ____ ___
 #######################################################
 */
 
-<minecraft:stone:3>.setAspects(<aspect:terra> * 5, <aspect:ordo>); // diorite
-<minecraft:stone:5>.setAspects(<aspect:terra> * 5, <aspect:perditio>); // andesite
-<minecraft:stone:1>.setAspects(<aspect:terra> * 5, <aspect:ignis>); // granite
-<minecraft:web>.setAspects(<aspect:bestia> * 5, <aspect:vinculum> * 2);
-<minecraft:iron_block>.setAspects(<aspect:metallum> * 101);
-<minecraft:gold_block>.setAspects(<aspect:metallum> * 67, <aspect:desiderium> * 33);
+set('5⛰️ ⟁', <minecraft:stone:3>); // diorite
+set('5⛰️ ⚡', <minecraft:stone:5>); // andesite
+set('5⛰️ 🔥', <minecraft:stone:1>); // granite
+set('5🐺 2🔗', <minecraft:web>);
+set('101🔩', <minecraft:iron_block>);
+set('67🔩 33✊', <minecraft:gold_block>);
 
-<minecraft:skull:1>.setAspects(<aspect:spiritus> * 10, Aspect.infernum * 10, <aspect:tenebrae> * 5, <aspect:perditio> * 5); // wither skull
+set('10👻 10🧨 5🌑 5⚡', <minecraft:skull:1>); // wither skull
 
 /*
 #######################################################
@@ -1071,34 +1075,34 @@ _  _ _  _ _    ___  ____ ____    _    _ ___  ____ ____ ____ _   _
 #######################################################
 */
 
-<libvulpes:productsheet:1>.setAspects(<aspect:metallum> * 21);
-<libvulpes:productsheet:4>.setAspects(<aspect:metallum> * 14, <aspect:permutatio> * 7);
-<libvulpes:productsheet:6>.setAspects(<aspect:metallum> * 21, <aspect:ordo> * 7);
-<libvulpes:productsheet:7>.setAspects(<aspect:metallum> * 14, <aspect:gelum> * 7);
-<libvulpes:productsheet:9>.setAspects(<aspect:metallum> * 14, <aspect:aer> * 7);
+set('21🔩', <libvulpes:productsheet:1>);
+set('14🔩 7🔄', <libvulpes:productsheet:4>);
+set('21🔩 7⟁', <libvulpes:productsheet:6>);
+set('14🔩 7🧊', <libvulpes:productsheet:7>);
+set('14🔩 7💨', <libvulpes:productsheet:9>);
 
 // Removing wrong aspects from stuff
-<conarm:armor_trim:*>.setAspects(<aspect:terra>);
+set('⛰️', <conarm:armor_trim:*>);
 <harvestcraft:freshwateritem>.removeAspects(<aspect:metallum>);
 
 // Override aspects
-<rats:rat_diamond>.setAspects(<aspect:desiderium> * 4, <aspect:vitreus> * 4, <aspect:rattus> * 4);
-<enderio:block_enderman_skull>.setAspects(<aspect:mortuus> * 40, <aspect:alienis> * 50, <aspect:tenebrae> * 60);
-<ic2:dust:5>.setAspects(<aspect:desiderium> * 20, <aspect:vitreus> * 15);
-<additionalcompression:gemdiamond_compressed:1>.setAspects(<aspect:desiderium> * 500, <aspect:vitreus> * 500);
-<additionalcompression:gemdiamond_compressed:2>.setAspects(<aspect:desiderium> * 500, <aspect:vitreus> * 500, Aspect.caeles * 100);
-<mekanism:compresseddiamond>.setAspects(<aspect:desiderium> * 20, <aspect:vitreus> * 20);
-<thermalfoundation:material:26>.setAspects(<aspect:desiderium> * 50, <aspect:machina> * 40);
-<actuallyadditions:item_crystal:2>.setAspects(<aspect:desiderium> * 20, <aspect:vitreus> * 20, <aspect:potentia> * 80);
-<actuallyadditions:block_crystal:2>.setAspects(<aspect:desiderium> * 140, <aspect:vitreus> * 140, <aspect:potentia> * 80);
-<actuallyadditions:item_crystal_empowered:2>.setAspects(<aspect:desiderium> * 60, <aspect:vitreus> * 60, <aspect:potentia> * 150);
-<actuallyadditions:block_crystal_empowered:2>.setAspects(<aspect:desiderium> * 400, <aspect:vitreus> * 400, <aspect:potentia> * 400);
-<extrautils2:compressedcobblestone:0>.setAspects(<aspect:terra> * 45, <aspect:perditio> * 9);
-<extrautils2:compressedcobblestone:1>.setAspects(<aspect:terra> * 405, <aspect:perditio> * 81);
-<extrautils2:compressedcobblestone:2>.setAspects(<aspect:terra> * 500, <aspect:perditio> * 500);
-<biomesoplenty:hard_ice>.setAspects(<aspect:gelum> * 21);
-<appliedenergistics2:sky_stone_block>.setAspects(<aspect:alienis> * 2, <aspect:tenebrae> * 7);
-<minecraft:sugar>.setAspects(<aspect:desiderium>, <aspect:aqua>);
+set('4✊ 4💎 4🐀', <rats:rat_diamond>);
+set('40⚰️ 50👽 60🌑', <enderio:block_enderman_skull>);
+set('20✊ 15💎', <ic2:dust:5>);
+set('500✊ 500💎', <additionalcompression:gemdiamond_compressed:1>);
+set('500✊ 500💎 100☀️', <additionalcompression:gemdiamond_compressed:2>);
+set('20✊ 20💎', <mekanism:compresseddiamond>);
+set('50✊ 40⚙️', <thermalfoundation:material:26>);
+set('20✊ 20💎 80💪', <actuallyadditions:item_crystal:2>);
+set('140✊ 140💎 80💪', <actuallyadditions:block_crystal:2>);
+set('60✊ 60💎 150💪', <actuallyadditions:item_crystal_empowered:2>);
+set('400✊ 400💎 400💪', <actuallyadditions:block_crystal_empowered:2>);
+set('45⛰️ 9⚡', <extrautils2:compressedcobblestone:0>);
+set('405⛰️ 81⚡', <extrautils2:compressedcobblestone:1>);
+set('500⛰️ 500⚡', <extrautils2:compressedcobblestone:2>);
+set('21🧊', <biomesoplenty:hard_ice>);
+set('2👽 7🌑', <appliedenergistics2:sky_stone_block>);
+set('✊ 💧', <minecraft:sugar>);
 
 /*
 ███╗░░░███╗███████╗████████╗░█████╗░██╗░░░░░██╗░░░░░██╗░░░██╗██████╗░░██████╗░██╗░░░██╗
