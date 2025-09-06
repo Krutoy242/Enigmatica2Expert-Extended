@@ -17,7 +17,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'flux_capacitor', // Name
   'TWOND_FLUX_CAPACITOR', // Research
   200, // Vis cost
-  [<aspect:terra>, <aspect:ignis>],
+  Aspects('⛰️ 🔥'),
   <thaumicwonders:flux_capacitor>, // Output
   Grid(['pretty',
     '  *  ',
@@ -34,7 +34,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'flux_distiller', // Name
   'TWOND_FLUX_DISTILLER', // Research
   750, // Vis cost
-  [<aspect:aer> * 8, <aspect:aqua> * 8, <aspect:ordo> * 8],
+  Aspects('8💨 8💧 8⟁'),
   <thaumicwonders:flux_distiller>, // Output
   Grid(['pretty',
     '□ F □',
@@ -102,7 +102,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'alienist_stone', // Name
   'TWOND_ALIENIST_STONE@1', // Research
   10, // Vis cost
-  [<aspect:aer> * 5, <aspect:aqua> * 5],
+  Aspects('5💨 5💧'),
   <thaumicwonders:alienist_stone>.withDamage(transStoneMaxDamage - 128), // Output
   Grid(['pretty',
     '  ˛  ',
@@ -122,7 +122,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_CATALYZATION_CHAMBER@2', // Research
   <thaumicwonders:alchemist_stone>.withDamage(transStoneMaxDamage - 128), // Output
   <ore:ingotSilver>, // Input
-  [<aspect:ordo> * 20, <aspect:alkimia> * 10]
+  Aspects('20⟁ 10⚗️')
 );
 
 // [Transmuter's Stone] from [Phial of Permutatio Essentia]*5[+2]
@@ -132,7 +132,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_TRANSMUTER_STONE@1', // Research
   <thaumicwonders:transmuter_stone>.withDamage(transStoneMaxDamage - 128), // Output
   <ore:ingotElectrum>, // Input
-  [<aspect:permutatio> * 20, <aspect:alkimia> * 20]
+  Aspects('20🔄 20⚗️')
 );
 
 events.onPlayerPickupItem(function (e as crafttweaker.event.PlayerPickupItemEvent) {
@@ -216,7 +216,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_ALKAHEST', // Research
   <thaumicwonders:alkahest_vat>, // Output
   5, // Instability
-  [<aspect:alkimia> * 100, Aspect.caeles * 25, Aspect.infernum * 100, Aspect.fluctus * 50, <aspect:auram> * 200],
+  Aspects('100⚗️ 25☀️ 100🧨 50♒ 200✨'),
   <thaumcraft:crucible>, // CentralItem
   [
     <thaumicaugmentation:material:5>,

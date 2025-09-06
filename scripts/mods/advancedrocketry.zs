@@ -711,7 +711,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <advancedrocketry:alienleaves> * 8, // Output
   3, // Instability
-  [<aspect:amogus> * 100],
+  Aspects('100ඞ'),
   <advancedrocketry:moonturf>, // Central Item
   Grid(['pretty',
     'L L L',

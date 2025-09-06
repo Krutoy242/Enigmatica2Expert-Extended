@@ -17,7 +17,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <thaumictinkerer:osmotic_enchanter>, // Output
   8, // Instability
-  [<aspect:praecantatio> * 100, <aspect:cognitio> * 100, <aspect:alienis> * 100],
+  Aspects('100🔮 100🧠 100👽'),
   <thaumadditions:shadow_enchanter> ?? <draconicevolution:diss_enchanter>, // Central Item
   Grid(['pretty',
     '▬ S ▬',
@@ -50,7 +50,7 @@ mods.nuclearcraft.IngotFormer.addRecipe(<liquid:molten_ichorium> * 144, <thaumic
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor',
   'TT_ICHOR@0',
   100,
-  [<aspect:ordo> * 3, <aspect:ignis> * 3, <aspect:aer> * 3, <aspect:aqua> * 3, <aspect:perditio> * 3, <aspect:terra> * 3],
+  Aspects('3⟁ 3🔥 3💨 3💧 3⚡ 3⛰️'),
   <thaumictinkerer:kamiresource:2> * 5,
   Grid(['pretty',
     'A E A',
@@ -80,7 +80,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumictinkerer:kamiresource:4>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('ichor_cloth',
   'TT_ICHORARMOR',
   50,
-  [<aspect:terra> * 4, <aspect:ignis> * 4, <aspect:aqua> * 4],
+  Aspects('4⛰️ 4🔥 4💧'),
   <thaumictinkerer:kamiresource:4> * 4,
   Grid(['pretty',
     '  E  ',
@@ -127,7 +127,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_CAT_AMULET', // Research
   <thaumictinkerer:cat_amulet>, // Output
   1, // Instability
-  [<aspect:bestia> * 50, Aspect.sonus * 25, <aspect:imperium> * 50],
+  Aspects('50🐺 25🛎️ 50🙌'),
   <thaumcraft:baubles>, // CentralItem
   [<thaumictinkerer:kamiresource:2>, <actuallyadditions:item_hairy_ball>, <ore:listAllfishraw>, <actuallyadditions:item_hairy_ball>]
 );
@@ -139,7 +139,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_CLEANING_TALISMAN', // Research
   <thaumictinkerer:cleaning_talisman>, // Output
   3, // Instability
-  [<aspect:victus> * 100, <aspect:ordo> * 50, <aspect:mana> * 50],
+  Aspects('100❤️ 50⟁ 50🔷'),
   <thaumcraft:verdant_charm:*>, // CentralItem
   [<botania:quartz:5>, <rustic:elixir>.withTag({ ElixirEffects: [{ Effect: 'minecraft:instant_health', Duration: 1, Amplifier: 1 }] }), <ore:quartzDark>, <thaumicwonders:panacea>]
 );
@@ -150,7 +150,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_EXPERIENCE_CHARM', // Research
   <thaumictinkerer:experience_charm>, // Output
   2, // Instability
-  [<aspect:vacuos> * 50, <aspect:desiderium> * 50, <aspect:cognitio> * 100],
+  Aspects('50〇 50✊ 100🧠'),
   <thaumictinkerer:kamiresource:1>, // CentralItem
   [<ore:quartzDark>, <ore:quartzDark>, <minecraft:glass_bottle>, <ore:quartzDark>, <ore:quartzDark>, <minecraft:glass_bottle>]
 );
@@ -162,7 +162,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_WARP_SERIES', // Research
   <thaumictinkerer:warp_gate>, // Output
   5, // Instability
-  [<aspect:motus> * 100, <aspect:alienis> * 200, <aspect:fluctus> * 100, <aspect:caeles> * 100],
+  Aspects('100🏃 200👽 100♒ 100☀️'),
   <thaumicwonders:portal_anchor:*>, // CentralItem
   [<botania:biomestonea>, <botania:biomestonea:1>, <botania:biomestonea:2>, <botania:biomestonea:3>, <botania:biomestonea:4>, <botania:biomestonea:5>, <botania:biomestonea:6>, <botania:biomestonea:7>]
 );
@@ -171,7 +171,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:sky_pearl>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('sky_pearl',
   'TT_WARP_SERIES@0',
   50,
-  [<aspect:ordo> * 4, <aspect:aer> * 2],
+  Aspects('4⟁ 2💨'),
   <thaumictinkerer:sky_pearl>,
   Grid(['pretty',
     'I E I',
@@ -188,7 +188,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_SUMMONING', // Research
   <thaumictinkerer:summoner>, // Output
   8, // Instability
-  [<aspect:exanimis> * 100, <aspect:spiritus> * 100, <aspect:mythus> * 200, <aspect:alienis> * 100],
+  Aspects('100💀 100👻 200🦄 100👽'),
   <botania:terraplate>, // CentralItem
   [<thaumcraft:plate:3>, <thaumcraft:inlay>, <thaumcraft:plate:3>, <thaumcraft:inlay>, <thaumcraft:plate:3>, <thaumcraft:inlay>, <thaumcraft:plate:3>, <thaumcraft:inlay>]
 );
@@ -199,7 +199,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_SUMMONING', // Research
   <thaumictinkerer:blood_sword>, // Output
   5, // Instability
-  [<aspect:sanguis> * 100, <aspect:rattus> * 50, <aspect:mortuus> * 200],
+  Aspects('100🩸 50🐀 200⚰️'),
   <thaumcraft:thaumium_sword>, // CentralItem
   [<extrautils2:goldenlasso:1>, <iceandfire:dread_shard>, <iceandfire:dread_shard>, <iceandfire:dread_shard>,
     <extrautils2:goldenlasso:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>, <thaumictinkerer:kamiresource:1>]
@@ -211,7 +211,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_KAMIHELM', // Research
   <thaumictinkerer:kami_helm>, // Output
   10, // Instability
-  [<aspect:lux> * 250, <aspect:aqua> * 150, <aspect:auram> * 125, <aspect:praemunio> * 125, <aspect:cognitio> * 60, <aspect:victus> * 60],
+  Aspects('250🕯️ 150💧 125✨ 125🛡️ 60🧠 60❤️'),
   <thaumictinkerer:ichor_helm>, // CentralItem
   [<minecraft:ender_eye>, <tinkersaddons:modifier_item>, <thaumicwonders:night_vision_goggles>, <botania:quartz:1>]
 );
@@ -222,7 +222,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_KAMICHEST', // Research
   <thaumictinkerer:kami_chest>, // Output
   10, // Instability
-  [<aspect:lux> * 250, <aspect:aer> * 150, <aspect:praemunio> * 125, <aspect:volatus> * 125, <aspect:ordo> * 125, <aspect:alienis> * 60],
+  Aspects('250🕯️ 150💨 125🛡️ 125🕊️ 125⟁ 60👽'),
   <thaumictinkerer:ichor_chest>, // CentralItem
   [<botania:quartz:6>, <thaumicaugmentation:thaumostatic_harness>, <mysticalagradditions:stuff:3>, <minecraft:shield>]
 );
@@ -233,7 +233,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_KAMILEGS', // Research
   <thaumictinkerer:kami_legs>, // Output
   10, // Instability
-  [<aspect:lux> * 250, <aspect:ignis> * 150, Aspect.infernum * 125, Aspect.sonus * 125, <aspect:sensus> * 60, <aspect:exanimis> * 60],
+  Aspects('250🕯️ 150🔥 125🧨 125🛎️ 60🦉 60💀'),
   <thaumictinkerer:ichor_legs>, // CentralItem
   [<thaumictinkerer:energetic_nitor>, <iceandfire:manuscript>, <thaumcraft:verdant_charm:*>, <botania:quartz:4>]
 );
@@ -244,7 +244,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TT_KAMIBOOTS', // Research
   <thaumictinkerer:kami_boots>, // Output
   10, // Instability
-  [<aspect:lux> * 250, <aspect:terra> * 150, <aspect:instrumentum> * 125, <aspect:praemunio> * 125, <aspect:herba> * 60, <aspect:motus> * 60],
+  Aspects('250🕯️ 150⛰️ 125🛠️ 125🛡️ 60🌱 60🏃'),
   <thaumictinkerer:ichor_boots>, // CentralItem
   [<botania:quartz:5>, <thaumadditions:traveller_belt>, <rats:plague_essence>, <thaumcraft:lamp_growth>]
 );

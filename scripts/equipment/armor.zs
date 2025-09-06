@@ -531,7 +531,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDROBEARMOR', // Research
   <thaumcraft:void_robe_helm>, // Output
   3, // Instability
-  [<aspect:metallum> * 25, <aspect:praecantatio> * 25, <aspect:vacuos> * 25, <aspect:potentia> * 25, <aspect:alienis> * 25, <aspect:sensus> * 25, Aspect.visum * 25],
+  Aspects('25🔩 25🔮 25〇 25💪 25👽 25🦉 25👁️'),
   <thaumicaugmentation:thaumium_robes_hood:*>, // CentralItem
   [<thaumcraft:salis_mundus>, <thaumcraft:fabric>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -541,7 +541,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDROBEARMOR', // Research
   <thaumcraft:void_robe_chest>, // Output
   3, // Instability
-  [<aspect:metallum> * 35, <aspect:praecantatio> * 35, <aspect:vacuos> * 35, <aspect:potentia> * 25, <aspect:alienis> * 25],
+  Aspects('35🔩 35🔮 35〇 25💪 25👽'),
   <thaumicaugmentation:thaumium_robes_chestplate:*>, // CentralItem
   [<thaumcraft:salis_mundus>, <thaumcraft:fabric>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -551,7 +551,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDROBEARMOR', // Research
   <thaumcraft:void_robe_legs>, // Output
   3, // Instability
-  [<aspect:metallum> * 25, <aspect:praecantatio> * 25, <aspect:vacuos> * 25, <aspect:potentia> * 25, <aspect:alienis> * 25],
+  Aspects('25🔩 25🔮 25〇 25💪 25👽'),
   <thaumicaugmentation:thaumium_robes_leggings:*>, // CentralItem
   [<thaumcraft:salis_mundus>, <thaumcraft:fabric>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -563,7 +563,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_VOID_FORTRESS_ARMOR', // Research
   <thaumicwonders:void_fortress_helm>, // Output
   3, // Instability
-  [Aspect.infernum * 50, <aspect:victus> * 30, <aspect:vacuos> * 50],
+  Aspects('50🧨 30❤️ 50〇'),
   <thaumcraft:fortress_helm:*>, // CentralItem
   [<thaumcraft:void_helm:*>, <minecraft:ghast_tear>, <thaumcraft:salis_mundus>, <harvestcraft:hardenedleatheritem>]
 );
@@ -573,7 +573,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_VOID_FORTRESS_ARMOR', // Research
   <thaumicwonders:void_fortress_chest>, // Output
   3, // Instability
-  [Aspect.infernum * 50, <aspect:victus> * 30, <aspect:vacuos> * 50],
+  Aspects('50🧨 30❤️ 50〇'),
   <thaumcraft:fortress_chest:*>, // CentralItem
   [<thaumcraft:void_chest:*>, <thaumcraft:salis_mundus>, <harvestcraft:hardenedleatheritem>, <harvestcraft:hardenedleatheritem>]
 );
@@ -583,7 +583,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_VOID_FORTRESS_ARMOR', // Research
   <thaumicwonders:void_fortress_legs>, // Output
   3, // Instability
-  [Aspect.infernum * 50, <aspect:victus> * 30, <aspect:vacuos> * 50],
+  Aspects('50🧨 30❤️ 50〇'),
   <thaumcraft:fortress_legs:*>, // CentralItem
   [<thaumcraft:void_legs:*>, <thaumcraft:salis_mundus>, <harvestcraft:hardenedleatheritem>, <harvestcraft:hardenedleatheritem>]
 );

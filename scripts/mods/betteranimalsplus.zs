@@ -61,7 +61,7 @@ scripts.jei.crafting_hints.addInsOutCatl(
 scripts.process.squeeze([<betteranimalsplus:blubber>], <liquid:lubricant> * 50, 'except: CrushingTub Squeezer', null);
 
 // Blubber
-mods.thaumcraft.Crucible.registerRecipe('Tallow from blubber', 'HEDGEALCHEMY@1', <thaumcraft:tallow> * 8, <betteranimalsplus:blubber>, [<aspect:ignis> * 4]);
+mods.thaumcraft.Crucible.registerRecipe('Tallow from blubber', 'HEDGEALCHEMY@1', <thaumcraft:tallow> * 8, <betteranimalsplus:blubber>, Aspects('4🔥'));
 
 // [Music Disc] from [Music Disc][+1]
 craft.reshapeless(<betteranimalsplus:record_crab_rave>, 'Cr', {

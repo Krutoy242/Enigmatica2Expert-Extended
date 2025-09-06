@@ -139,7 +139,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <botania:manaresource:5>, // Output
   10, // Instability
-  [Aspect.caeles * 100, <aspect:draco> * 100, <aspect:rattus> * 100],
+  Aspects('100☀️ 100🐲 100🐀'),
   <rats:idol_of_ratlantis>, // Central Item
   Grid(['pretty',
     'S ◊ ╳',
@@ -160,7 +160,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <botania:dice>, // Output
   10, // Instability
-  [Aspect.caeles * 160, <aspect:mana> * 160],
+  Aspects('160☀️ 160🔷'),
   <draconicevolution:chaos_shard>, // Central Item
   Grid(['pretty',
     '  D  ',
