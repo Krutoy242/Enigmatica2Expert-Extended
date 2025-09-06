@@ -263,7 +263,7 @@ function remakeWorkbench(
 }
 
 // [Grappler Spool] from [Copper Plate][+2]
-remakeWorkbench('GrappleGunSpool', 'GRAPPLEGUN', 25, [<aspect:aqua>],
+remakeWorkbench('GrappleGunSpool', 'GRAPPLEGUN', 25, Aspects('💧'),
   <thaumcraft:grapple_gun_spool>, ['pretty',
     's T s',
     's □ s',
@@ -274,7 +274,7 @@ remakeWorkbench('GrappleGunSpool', 'GRAPPLEGUN', 25, [<aspect:aqua>],
   });
 
 // [Grappler Head] from [Rare Earths][+2]
-remakeWorkbench('GrappleGunTip', 'GRAPPLEGUN', 25, [<aspect:terra>],
+remakeWorkbench('GrappleGunTip', 'GRAPPLEGUN', 25, Aspects('⛰️'),
   <thaumcraft:grapple_gun_tip>, ['pretty',
     '‚ T ‚',
     '‚ R ‚',
@@ -285,7 +285,7 @@ remakeWorkbench('GrappleGunTip', 'GRAPPLEGUN', 25, [<aspect:terra>],
   });
 
 // [Arcane Grappler] from [Grappler Head][+3]
-remakeWorkbench('GrappleGun', 'GRAPPLEGUN', 25, [<aspect:ignis>],
+remakeWorkbench('GrappleGun', 'GRAPPLEGUN', 25, Aspects('🔥'),
   <thaumcraft:grapple_gun>, ['pretty',
     '    r',
     'G ‚ ‚',
@@ -299,7 +299,7 @@ remakeWorkbench('GrappleGun', 'GRAPPLEGUN', 25, [<aspect:ignis>],
 // Cheaper to help use more
 // [Paving Stone of Travel] from [Arcane Stone Brick]
 remakeWorkbench('PaveTravel', 'PAVINGSTONES', 10,
-  [<aspect:terra>],
+  Aspects('⛰️'),
   <thaumcraft:paving_stone_travel> * 4, ['pretty',
     'A A',
     'A A'], {
@@ -312,7 +312,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'mechanism_simple', // Name
   'BASEARTIFICE', // Research
   10, // Vis cost
-  [<aspect:ignis>, <aspect:aqua>],
+  Aspects('🔥 💧'),
   <thaumcraft:mechanism_simple>, // Output
   Grid(['pretty',
     '‚ ‚ ‚',
@@ -328,7 +328,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'mechanism_complex', // Name
   'BASEARTIFICE', // Research
   30, // Vis cost
-  [<aspect:ignis>, <aspect:aqua>],
+  Aspects('🔥 💧'),
   <thaumcraft:mechanism_complex>, // Output
   Grid(['pretty',
     '  S  ',
@@ -345,7 +345,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'patterncrafter', // Name
   'ARCANEPATTERNCRAFTER', // Research
   50, // Vis cost
-  [<aspect:terra>, <aspect:aqua>],
+  Aspects('⛰️ 💧'),
   <thaumcraft:pattern_crafter>, // Output
   Grid(['pretty',
     '  ■  ',
@@ -361,7 +361,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'VisBattery', // Name
   'VISBATTERY@1', // Research
   150, // Vis cost
-  [<aspect:aer>, <aspect:aqua>, <aspect:ordo>, <aspect:perditio>, <aspect:terra>, <aspect:ignis>],
+  Aspects('💨 💧 ⟁ ⚡ ⛰️ 🔥'),
   <thaumcraft:vis_battery> * 8, // Output
   Grid(['pretty',
     'A A A',
@@ -377,7 +377,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'impetus_generator', // Name
   'IMPETUS_GENERATOR', // Research
   700, // Vis cost
-  [<aspect:ignis> * 2, <aspect:ordo> * 2, <aspect:perditio> * 2, <aspect:aer> * 2],
+  Aspects('2🔥 2⟁ 2⚡ 2💨'),
   <thaumicaugmentation:impetus_generator>, // Output
   Grid(['pretty',
     'E P E',
@@ -395,7 +395,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:thaumometer');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('thaumometer',
   'FIRSTSTEPS@2',
   20,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumcraft:thaumometer>,
   Grid(['pretty',
     '  C  ',
@@ -410,7 +410,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:thaumometer');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('thaumometer',
   'FIRSTSTEPS@2',
   20,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumcraft:thaumometer>,
   Grid(['pretty',
     '  C  ',
@@ -425,7 +425,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:vis_resonator');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('vis_resonator',
   'UNLOCKAUROMANCY@1',
   20,
-  [<aspect:aer>, <aspect:terra>],
+  Aspects('💨 ⛰️'),
   <thaumcraft:vis_resonator>,
   Grid(['pretty',
     'A A A',
@@ -473,7 +473,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:filter');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('filter',
   'BASEALCHEMY',
   15,
-  [<aspect:aqua>],
+  Aspects('💧'),
   <thaumcraft:filter> * 2,
   Grid(['pretty',
     'C S C'], {
@@ -486,7 +486,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:alchemicalconstruct');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('alchemicalconstruct',
   'TUBES',
   50,
-  [<aspect:aer> * 2, <aspect:ignis> * 2, <aspect:aqua> * 2, <aspect:terra> * 2, <aspect:ordo> * 2, <aspect:perditio> * 2],
+  Aspects('2💨 2🔥 2💧 2⛰️ 2⟁ 2⚡'),
   <thaumcraft:metal_alchemical> * 2,
   Grid(['pretty',
     'G T G',
@@ -502,7 +502,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:essentiasmeltervoid');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentiasmeltervoid',
   'ESSENTIASMELTERVOID',
   750,
-  [<aspect:ignis> * 3],
+  Aspects('3🔥'),
   <thaumcraft:smelter_void>,
   Grid(['pretty',
     'B S B',
@@ -519,7 +519,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:redstoneinlay');
 mods.thaumcraft.ArcaneWorkbench.registerShapelessRecipe('redstoneinlay',
   'INFUSIONSTABLE',
   25,
-  [<aspect:aqua>],
+  Aspects('💧'),
   <thaumcraft:inlay> * 8,
   Grid(['CR'], {
     'C': <ore:ingotCopper>, // Copper ingot
@@ -531,7 +531,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:condenser');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('condenser',
   'FLUXCLEANUP',
   100,
-  [<aspect:ignis> * 3],
+  Aspects('3🔥'),
   <thaumcraft:condenser>,
   Grid(['pretty',
     'G F G',
@@ -549,7 +549,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:condenserlattice');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('condenserlattice',
   'FLUXCLEANUP',
   25,
-  [<aspect:aer>, <aspect:terra>],
+  Aspects('💨 ⛰️'),
   <thaumcraft:condenser_lattice> * 8,
   Grid(['pretty',
     'S Q S',
@@ -565,7 +565,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:bellows');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('bellows',
   'BELLOWS',
   25,
-  [<aspect:aer>, <aspect:terra>],
+  Aspects('💨 ⛰️'),
   <thaumcraft:bellows>,
   Grid(['pretty',
     'W W  ',
@@ -581,7 +581,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:smeltervent');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('smeltervent',
   'IMPROVEDSMELTING2',
   150,
-  [<aspect:aer>],
+  Aspects('💨'),
   <thaumcraft:smelter_vent>,
   Grid(['pretty',
     'B F B',
@@ -599,7 +599,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:smelteraux');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('smelteraux',
   'IMPROVEDSMELTING',
   100,
-  [<aspect:aer>, <aspect:terra>],
+  Aspects('💨 ⛰️'),
   <thaumcraft:smelter_aux>,
   Grid(['pretty',
     'B T B',
@@ -617,7 +617,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:essentiatransportout');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentiatransportout',
   'ESSENTIATRANSPORT',
   100,
-  [<aspect:aer>, <aspect:aqua>],
+  Aspects('💨 💧'),
   <thaumcraft:essentia_output>,
   Grid(['pretty',
     'B H B',
@@ -633,7 +633,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumcraft:essentiatransportin');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentiatransportin',
   'ESSENTIATRANSPORT',
   100,
-  [<aspect:aer>, <aspect:aqua>],
+  Aspects('💨 💧'),
   <thaumcraft:essentia_input>,
   Grid(['pretty',
     'B D B',
@@ -715,7 +715,7 @@ recipes.addShapeless('Totem conversion', <thaumcraft:charm_undying>, [<minecraft
 // Crimson Rites
 mods.thaumcraft.Infusion.registerRecipe('crimson_rites', 'INFUSION',
   <thaumcraft:curio:6>, 15,
-  [<aspect:vitium> * 30, <aspect:mortuus> * 15, <aspect:praecantatio> * 30, <aspect:auram> * 10],
+  Aspects('30🍇 15⚰️ 30🔮 10✨'),
   <thaumcraft:thaumonomicon>,
   [<thaumcraft:ingot>, <thaumictinkerer:energetic_nitor>, <thaumcraft:salis_mundus>, <thaumictinkerer:energetic_nitor>, <thaumcraft:salis_mundus>, <thaumictinkerer:energetic_nitor>, <thaumcraft:ingot>, <thaumictinkerer:energetic_nitor>]);
 
@@ -740,7 +740,7 @@ craft.remake(<thaumcraft:crimson_blade>, ['pretty',
 // [Spawn Lesser Crimson Portal] from [Golden Egg][+3]
 mods.thaumcraft.Infusion.registerRecipe('spawn_lesser_crimson_portal', 'INFUSION',
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'thaumcraft:cultistportallesser' } }), 15,
-  [<aspect:vitium> * 90, <aspect:mortuus> * 45, <aspect:praecantatio> * 90, <aspect:auram> * 30],
+  Aspects('90🍇 45⚰️ 90🔮 30✨'),
   <randomthings:ingredient:11>, // Golden Egg
   Grid(['-K-T-K-T'], {
     '-': <thaumictinkerer:energetic_nitor>, // Energetic Nitor
@@ -755,7 +755,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'SEALBREAK', // Research
   <thaumcraft:seal:12>, // Output
   1, // Instability
-  [<aspect:perditio> * 10],
+  Aspects('10⚡'),
   <thaumcraft:seal>, // Central Item
   Grid(['oG'], {
     'o': <minecraft:golden_pickaxe>.anyDamage(), // Golden Pickaxe
@@ -769,7 +769,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MINDBIOTHAUMIC', // Research
   <thaumcraft:mind:1>, // Output
   1, // Instability
-  [<aspect:cognitio> * 10],
+  Aspects('10🧠'),
   <thaumcraft:mind>, // Central Item
   Grid(['ZZ'], {
     'Z': <thaumcraft:brain>, // Zombie Brain
@@ -782,7 +782,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'RIFTCLOSER', // Research
   <thaumcraft:causality_collapser>, // Output
   2, // Instability
-  [<aspect:alienis> * 20, <aspect:vitium> * 20],
+  Aspects('20👽 20🍇'),
   <thaumictinkerer:energetic_nitor>, // Central Item
   Grid(['pretty',
     '  ▲  ',
@@ -801,7 +801,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_MYSTIC_GARDENING@1', // Research
   <thaumicwonders:shimmerleaf_seed> * 8, // Output
   <rustic:tomato_seeds>, // Input
-  [<aspect:auram> * 60]
+  Aspects('60✨')
 );
 
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:cinderpearl_seed>);
@@ -810,7 +810,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_MYSTIC_GARDENING@1', // Research
   <thaumicwonders:cinderpearl_seed> * 8, // Output
   <rustic:chili_pepper_seeds>, // Input
-  [<aspect:ignis> * 60]
+  Aspects('60🔥')
 );
 
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:vishroom_spore>);
@@ -819,7 +819,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_MYSTIC_GARDENING@1', // Research
   <thaumicwonders:vishroom_spore> * 8, // Output
   <rustic:apple_seeds>, // Input
-  [<aspect:praecantatio> * 60]
+  Aspects('60🔮')
 );
 
 // [Focus tier 2]
@@ -829,7 +829,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'FOCUSADVANCED@1', // Research
   <thaumcraft:focus_2>, // Output
   2, // Instability
-  [<aspect:ordo> * 50, <aspect:praecantatio> * 25],
+  Aspects('50⟁ 25🔮'),
   <thaumcraft:focus_1>, // CentralItem
   [<thaumcraft:quicksilver>, <astralsorcery:itemcraftingcomponent>, <thaumcraft:quicksilver>, <botania:spark>]
 );
@@ -841,7 +841,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'FOCUSGREATER@1', // Research
   <thaumcraft:focus_3>, // Output
   4, // Instability
-  [<aspect:vacuos> * 50, <aspect:mana> * 100, <aspect:ordo> * 50, <aspect:praecantatio> * 25],
+  Aspects('50〇 100🔷 50⟁ 25🔮'),
   <thaumcraft:focus_2>, // CentralItem
   [<ore:manaPearl>, <thaumcraft:quicksilver>, <iceandfire:pixie_dust>, <thaumcraft:quicksilver>, <ore:manaDiamond>, <thaumcraft:quicksilver>, <iceandfire:pixie_dust>, <thaumcraft:quicksilver>]
 );
@@ -852,7 +852,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'FOCUSANCIENT', // Research
   <thaumicaugmentation:focus_ancient>, // Output
   3, // Instability
-  [<aspect:vacuos> * 100, <aspect:alienis> * 25],
+  Aspects('100〇 25👽'),
   <thaumcraft:focus_2>, // CentralItem
   [<thaumcraft:quicksilver>, <ore:nuggetVoid>, <thaumcraft:quicksilver>, <ore:nuggetVoid>]
 );
@@ -864,7 +864,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TCONEVO_PRIMALMETAL', // Research
   <tconevo:metal:20>, // Output
   2, // Instability
-  [<aspect:aer> * 10, <aspect:ignis> * 10, <aspect:ordo> * 10, <aspect:aqua> * 10, <aspect:terra> * 10, <aspect:perditio> * 10, <aspect:metallum> * 30],
+  Aspects('10💨 10🔥 10⟁ 10💧 10⛰️ 10⚡ 30🔩'),
   <tconevo:material>, // CentralItem
   [<thaumicwonders:primordial_grain>, <thaumcraft:salis_mundus>]
 );
@@ -876,7 +876,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ARCANEBORE', // Research
   <thaumcraft:turret:2>, // Output
   1, // Instability
-  [Aspect.exitium * 25, <aspect:machina> * 50],
+  Aspects('25💣 50⚙️'),
   <thaumcraft:turret>, // CentralItem
   [<thaumcraft:plank_greatwood>, <thaumcraft:plate>, <thaumcraft:plank_greatwood>, <minecraft:iron_pickaxe:*>]
 );
@@ -899,31 +899,31 @@ function remakeCrucible(name as string, research as string, output as IItemStack
   mods.thaumcraft.Crucible.registerRecipe(name, research, output, input, aspects);
 }
 
-mods.thaumcraft.Crucible.registerRecipe('Quartz ore fix', 'METALPURIFICATION', <thaumcraft:cluster:7>, <ore:oreQuartz>, [<aspect:metallum> * 5, <aspect:ordo> * 5]);
+mods.thaumcraft.Crucible.registerRecipe('Quartz ore fix', 'METALPURIFICATION', <thaumcraft:cluster:7>, <ore:oreQuartz>, Aspects('5🔩 5⟁'));
 
 // Tallow harder
 mods.thaumcraft.Crucible.removeRecipe(<thaumcraft:tallow>);
-mods.thaumcraft.Crucible.registerRecipe('hedge_tallow', 'HEDGEALCHEMY@1', <thaumcraft:tallow>, <minecraft:rotten_flesh>, [<aspect:ignis>]);
-mods.thaumcraft.Crucible.registerRecipe('Tallow from tallow', 'HEDGEALCHEMY@1', <thaumcraft:tallow> * 2, <quark:tallow>, [<aspect:ignis> * 2]);
+mods.thaumcraft.Crucible.registerRecipe('hedge_tallow', 'HEDGEALCHEMY@1', <thaumcraft:tallow>, <minecraft:rotten_flesh>, Aspects('🔥'));
+mods.thaumcraft.Crucible.registerRecipe('Tallow from tallow', 'HEDGEALCHEMY@1', <thaumcraft:tallow> * 2, <quark:tallow>, Aspects('2🔥'));
 
 // Cheaper stuff
-remakeCrucible('nitor', 'BASEALCHEMY', <thaumcraft:nitor_yellow> * 10, <minecraft:glowstone_dust>, [<aspect:potentia> * 10, <aspect:ignis> * 10, <aspect:lux> * 10]);
-// remakeCrucible("hedge_dye"      , "HEDGEALCHEMY@2", <minecraft:dye> * 2, <minecraft:dye>, [<aspect:sensus>]);
-// remakeCrucible("hedge_slime"    , "HEDGEALCHEMY@2", <minecraft:slime_ball> * 2, <minecraft:slime_ball>, [<aspect:victus>]);
-// remakeCrucible("hedge_glowstone", "HEDGEALCHEMY@2", <minecraft:glowstone_dust> * 2, <minecraft:glowstone_dust>, [<aspect:lux>*2, <aspect:sensus>]);
-// remakeCrucible("hedge_gunpowder", "HEDGEALCHEMY@2", <minecraft:gunpowder> * 2, <minecraft:gunpowder>, [Aspect.exitium*5]);
-remakeCrucible('hedge_leather', 'HEDGEALCHEMY@2', <minecraft:leather>, <minecraft:rotten_flesh>, [<aspect:bestia> * 2]);
+remakeCrucible('nitor', 'BASEALCHEMY', <thaumcraft:nitor_yellow> * 10, <minecraft:glowstone_dust>, Aspects('10💪 10🔥 10🕯️'));
+// remakeCrucible("hedge_dye"      , "HEDGEALCHEMY@2", <minecraft:dye> * 2, <minecraft:dye>, Aspects('🦉'));
+// remakeCrucible("hedge_slime"    , "HEDGEALCHEMY@2", <minecraft:slime_ball> * 2, <minecraft:slime_ball>, Aspects('❤️'));
+// remakeCrucible("hedge_glowstone", "HEDGEALCHEMY@2", <minecraft:glowstone_dust> * 2, <minecraft:glowstone_dust>, Aspects('2🕯️ 🦉'));
+// remakeCrucible("hedge_gunpowder", "HEDGEALCHEMY@2", <minecraft:gunpowder> * 2, <minecraft:gunpowder>, Aspects('5💣'));
+remakeCrucible('hedge_leather', 'HEDGEALCHEMY@2', <minecraft:leather>, <minecraft:rotten_flesh>, Aspects('2🐺'));
 
 // TODO: Remove this temporary recipe when resolved: https://github.com/LoliKingdom/Thaumic-Speedup/issues/3
-remakeCrucible('hedge_web', 'HEDGEALCHEMY@3', <minecraft:web>, <minecraft:string>, [<aspect:vinculum> * 2]);
-remakeCrucible('hedge_string', 'HEDGEALCHEMY@3', <minecraft:string>, <minecraft:wheat>, [<aspect:bestia> * 2]);
+remakeCrucible('hedge_web', 'HEDGEALCHEMY@3', <minecraft:web>, <minecraft:string>, Aspects('2🔗'));
+remakeCrucible('hedge_string', 'HEDGEALCHEMY@3', <minecraft:string>, <minecraft:wheat>, Aspects('2🐺'));
 
 // Cheaper metals
-remakeCrucible('brassingot', 'METALLURGY@1', <thaumcraft:ingot:2> * 2, <ore:ingotAlubrass>, [<aspect:instrumentum> * 5]);
-remakeCrucible('thaumiumingot', 'METALLURGY@2', <thaumcraft:ingot>, <ore:ingotLead>, [<aspect:praecantatio> * 5, <aspect:terra> * 5]);
+remakeCrucible('brassingot', 'METALLURGY@1', <thaumcraft:ingot:2> * 2, <ore:ingotAlubrass>, Aspects('5🛠️'));
+remakeCrucible('thaumiumingot', 'METALLURGY@2', <thaumcraft:ingot>, <ore:ingotLead>, Aspects('5🔮 5⛰️'));
 
 // [Ash Block] from [Compressed Dust][+1]
-remakeCrucible('ash_block', 'HEDGEALCHEMY@3', <biomesoplenty:ash_block> * 9, <ore:compressed1xDust>, [Aspect.infernum]);
+remakeCrucible('ash_block', 'HEDGEALCHEMY@3', <biomesoplenty:ash_block> * 9, <ore:compressed1xDust>, Aspects('🧨'));
 
 // Cheaper to less microcraftings
 // [Sanitizing Soap] from [Phial of Cognitio Essentia]*6[+2]
@@ -933,7 +933,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'SANESOAP', // Research
   <thaumcraft:sanity_soap>, // Output
   <ore:blockFlesh>, // Input
-  [<aspect:cognitio> * 60, <aspect:victus> * 60]
+  Aspects('60🧠 60❤️')
 );
 
 // [Sanity soap]
@@ -943,7 +943,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'SANESOAP', // Research
   <thaumcraft:sanity_soap>, // Output
   <thaumcraft:bath_salts>, // Input
-  [<aspect:mana> * 5]
+  Aspects('5🔷')
 );
 // [Sanity soap] alternative
 mods.botania.ManaInfusion.addAlchemy(<thaumcraft:sanity_soap>, <thaumcraft:bath_salts>, 2500);
@@ -955,7 +955,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'BASEAUROMANCY@1', // Research
   <thaumcraft:focus_1>, // Output
   <thaumcraft:quicksilver>, // Input
-  [<aspect:auram> * 5, <aspect:praecantatio> * 10, <aspect:vitreus> * 20]
+  Aspects('5✨ 10🔮 20💎')
 );
 
 // [Alumentum]
@@ -965,7 +965,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'ALUMENTUM', // Research
   <thaumcraft:alumentum> * 10, // Output
   <minecraft:coal>, // Input
-  [<aspect:potentia> * 10, <aspect:ignis> * 10, <aspect:perditio> * 5]
+  Aspects('10💪 10🔥 5⚡')
 );
 
 // [Energetic nitor]
@@ -975,7 +975,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TT_ENERGETIC_NITOR', // Research
   <thaumictinkerer:energetic_nitor>, // Output
   <thaumcraft:nitor_yellow>, // Input
-  [<aspect:lux> * 25, <aspect:potentia> * 25, <aspect:ignis> * 10, <aspect:aer> * 10]
+  Aspects('25🕯️ 25💪 10🔥 10💨')
 );
 
 // Native cluster fix
@@ -986,7 +986,7 @@ function NativeClusterRecipe(name as string, native as IItemStack, ore as IItemS
     'METALPURIFICATION', // Research
     native, // Output
     ore, // Input
-    [<aspect:ordo> * 5, <aspect:metallum> * 5]
+    Aspects('5⟁ 5🔩')
   );
 }
 
@@ -1109,69 +1109,69 @@ function eggRecipe(entityId as string, research as string, aspects as CTAspectSt
 }
 
 // Passive Vanilla
-eggRecipe('minecraft:cow'          , 'pvanilla', [<aspect:bestia> * 30 , <aspect:terra>   * 30, <aspect:praemunio>  * 15]);
-eggRecipe('minecraft:sheep'        , 'pvanilla', [<aspect:bestia> * 30 , <aspect:terra>   * 30, <aspect:fabrico>    * 15]);
-eggRecipe('minecraft:pig'          , 'pvanilla', [<aspect:bestia> * 30 , <aspect:terra>   * 30, <aspect:victus>     * 15]);
-eggRecipe('minecraft:chicken'      , 'pvanilla', [<aspect:bestia> * 30 , <aspect:volatus> * 30, Aspect.ventus     * 15]);
-eggRecipe('minecraft:rabbit'       , 'pvanilla', [<aspect:bestia> * 30 , <aspect:terra>   * 30, Aspect.visum      * 15]);
-eggRecipe('minecraft:wolf'         , 'pvanilla', [<aspect:bestia> * 60 , <aspect:terra>   * 30, <aspect:aversio>    * 15]);
-eggRecipe('minecraft:ocelot'       , 'pvanilla', [<aspect:bestia> * 60 , <aspect:terra>   * 30, <aspect:desiderium> * 15]);
-eggRecipe('minecraft:parrot'       , 'pvanilla', [<aspect:bestia> * 60 , <aspect:volatus> * 30, Aspect.sonus      * 15]);
-eggRecipe('minecraft:horse'        , 'pvanilla', [<aspect:bestia> * 120, <aspect:terra>   * 30, <aspect:motus>      * 15]);
-eggRecipe('minecraft:donkey'       , 'pvanilla', [<aspect:bestia> * 90 , <aspect:terra>   * 30, <aspect:vinculum>   * 15]);
-eggRecipe('minecraft:mule'         , 'pvanilla', [<aspect:bestia> * 90 , <aspect:terra>   * 30, Aspect.imperium   * 15]);
-eggRecipe('minecraft:llama'        , 'pvanilla', [<aspect:bestia> * 90 , <aspect:terra>   * 30, <aspect:permutatio> * 15]);
-eggRecipe('minecraft:squid'        , 'pvanilla', [<aspect:bestia> * 30 , <aspect:aqua>    * 30, <aspect:tenebrae>   * 15]);
-eggRecipe('minecraft:bat'          , 'pvanilla', [<aspect:bestia> * 30 , <aspect:volatus> * 30, <aspect:tenebrae>   * 15]);
-// eggRecipe("minecraft:mooshroom" ,"pvanilla" , [<aspect:bestia> *30  ,<aspect:terra>    *30 ,<aspect:vitium>      *15]);
-eggRecipe('minecraft:polar_bear'   , 'pvanilla', [<aspect:bestia> * 150, <aspect:terra>   * 30, <aspect:gelum>      * 60]);
+eggRecipe('minecraft:cow'          , 'pvanilla', Aspects('30🐺 30⛰️ 15🛡️'));
+eggRecipe('minecraft:sheep'        , 'pvanilla', Aspects('30🐺 30⛰️ 15🔨'));
+eggRecipe('minecraft:pig'          , 'pvanilla', Aspects('30🐺 30⛰️ 15❤️'));
+eggRecipe('minecraft:chicken'      , 'pvanilla', Aspects('30🐺 30🕊️ 15🍃'));
+eggRecipe('minecraft:rabbit'       , 'pvanilla', Aspects('30🐺 30⛰️ 15👁️'));
+eggRecipe('minecraft:wolf'         , 'pvanilla', Aspects('60🐺 30⛰️ 15🗡️'));
+eggRecipe('minecraft:ocelot'       , 'pvanilla', Aspects('60🐺 30⛰️ 15✊'));
+eggRecipe('minecraft:parrot'       , 'pvanilla', Aspects('60🐺 30🕊️ 15🛎️'));
+eggRecipe('minecraft:horse'        , 'pvanilla', Aspects('120🐺 30⛰️ 15🏃'));
+eggRecipe('minecraft:donkey'       , 'pvanilla', Aspects('90🐺 30⛰️ 15🔗'));
+eggRecipe('minecraft:mule'         , 'pvanilla', Aspects('90🐺 30⛰️ 15🙌'));
+eggRecipe('minecraft:llama'        , 'pvanilla', Aspects('90🐺 30⛰️ 15🔄'));
+eggRecipe('minecraft:squid'        , 'pvanilla', Aspects('30🐺 30💧 15🌑'));
+eggRecipe('minecraft:bat'          , 'pvanilla', Aspects('30🐺 30🕊️ 15🌑'));
+// eggRecipe("minecraft:mooshroom" ,"pvanilla" , Aspects('30🐺 30⛰️ 15🍇'));
+eggRecipe('minecraft:polar_bear'   , 'pvanilla', Aspects('150🐺 30⛰️ 60🧊'));
 
 // Hostile Vanilla Overworld
-soulRecipe('minecraft:zombie'        , 'hvanilla', [<aspect:exanimis> * 50 , <aspect:mortuus>      * 50   , <aspect:humanus>  * 100]);
-soulRecipe('minecraft:husk'          , 'hvanilla', [<aspect:exanimis> * 50 , <aspect:mortuus>      * 50   , <aspect:humanus>  * 100                                , <aspect:perditio> * 50]);
-soulRecipe('minecraft:skeleton'      , 'hvanilla', [<aspect:mortuus>  * 50 , <aspect:perditio>     * 50   , <aspect:aversio>  * 100]);
-soulRecipe('minecraft:stray'         , 'hvanilla', [<aspect:mortuus>  * 50 , <aspect:perditio>     * 50   , <aspect:aversio>  * 100                                , <aspect:gelum>    * 50]);
-soulRecipe('minecraft:creeper'       , 'hvanilla', [Aspect.exitium  * 100, <aspect:ignis>        * 50   , <aspect:alkimia>  * 25                                 , <aspect:perditio> * 50]);
-soulRecipe('minecraft:spider'        , 'hvanilla', [<aspect:bestia>   * 100, <aspect:vinculum>     * 50   , <aspect:sensus>   * 50]);
-soulRecipe('minecraft:cave_spider'   , 'hvanilla', [<aspect:bestia>   * 75 , <aspect:vinculum>     * 50   , <aspect:sensus>   * 50                                 , <aspect:alkimia>  * 25]);
-soulRecipe('minecraft:witch'         , 'hvanilla', [<aspect:humanus>  * 100, <aspect:praecantatio> * 50   , <aspect:alkimia>  * 50]);
-soulRecipe('minecraft:slime'         , 'hvanilla', [<aspect:aqua>     * 50 , <aspect:victus>       * 50]);
-soulRecipe('minecraft:guardian'      , 'hvanilla', [<aspect:aqua>     * 100, <aspect:praemunio>    * 50   , <aspect:sensus>   * 50]);
-soulRecipe('minecraft:silverfish'    , 'hvanilla', [<aspect:perditio> * 100, <aspect:vacuos>       * 50   , <aspect:vinculum> * 50]);
-soulRecipe('minecraft:zombie_horse'  , 'hvanilla', [<aspect:bestia>   * 100, <aspect:exanimis>     * 50   , <aspect:motus>    * 50]);
-soulRecipe('minecraft:skeleton_horse', 'hvanilla', [<aspect:bestia>   * 100, <aspect:mortuus>      * 50   , <aspect:motus>    * 50]);
-soulRecipe('minecraft:giant'         , 'hvanilla', [<aspect:exanimis> * 500, <aspect:praemunio>    * 500  , <aspect:mythus>   * 500]); // Probably recipe to delete
+soulRecipe('minecraft:zombie'        , 'hvanilla', Aspects('50💀 50⚰️ 100👨'));
+soulRecipe('minecraft:husk'          , 'hvanilla', Aspects('50💀 50⚰️ 100👨 50⚡'));
+soulRecipe('minecraft:skeleton'      , 'hvanilla', Aspects('50⚰️ 50⚡ 100🗡️'));
+soulRecipe('minecraft:stray'         , 'hvanilla', Aspects('50⚰️ 50⚡ 100🗡️ 50🧊'));
+soulRecipe('minecraft:creeper'       , 'hvanilla', Aspects('100💣 50🔥 25⚗️ 50⚡'));
+soulRecipe('minecraft:spider'        , 'hvanilla', Aspects('100🐺 50🔗 50🦉'));
+soulRecipe('minecraft:cave_spider'   , 'hvanilla', Aspects('75🐺 50🔗 50🦉 25⚗️'));
+soulRecipe('minecraft:witch'         , 'hvanilla', Aspects('100👨 50🔮 50⚗️'));
+soulRecipe('minecraft:slime'         , 'hvanilla', Aspects('50💧 50❤️'));
+soulRecipe('minecraft:guardian'      , 'hvanilla', Aspects('100💧 50🛡️ 50🦉'));
+soulRecipe('minecraft:silverfish'    , 'hvanilla', Aspects('100⚡ 50〇 50🔗'));
+soulRecipe('minecraft:zombie_horse'  , 'hvanilla', Aspects('100🐺 50💀 50🏃'));
+soulRecipe('minecraft:skeleton_horse', 'hvanilla', Aspects('100🐺 50⚰️ 50🏃'));
+soulRecipe('minecraft:giant'         , 'hvanilla', Aspects('500💀 500🛡️ 500🦄')); // Probably recipe to delete
 
 // Hostile Vanilla Nether
-soulRecipe('minecraft:zombie_pigman'  , 'vanilla_nether', [<aspect:exanimis> * 50 , <aspect:mortuus>  * 50 , <aspect:bestia>   * 100]);
-soulRecipe('minecraft:magma_cube'     , 'vanilla_nether', [<aspect:aqua>     * 50 , <aspect:victus>   * 50 , Aspect.infernum * 25]);
-soulRecipe('minecraft:wither_skeleton', 'vanilla_nether', [<aspect:mortuus>  * 50 , <aspect:perditio> * 100, <aspect:aversio>  * 100   , <aspect:spiritus> * 100]);
-soulRecipe('minecraft:ghast'          , 'vanilla_nether', [<aspect:spiritus> * 250, <aspect:volatus>  * 50 , Aspect.fluctus  * 100]);
+soulRecipe('minecraft:zombie_pigman'  , 'vanilla_nether', Aspects('50💀 50⚰️ 100🐺'));
+soulRecipe('minecraft:magma_cube'     , 'vanilla_nether', Aspects('50💧 50❤️ 25🧨'));
+soulRecipe('minecraft:wither_skeleton', 'vanilla_nether', Aspects('50⚰️ 100⚡ 100🗡️ 100👻'));
+soulRecipe('minecraft:ghast'          , 'vanilla_nether', Aspects('250👻 50🕊️ 100♒'));
 
 // Hostile Vanilla End
-soulRecipe('minecraft:enderman' , 'vanilla_end', [<aspect:alienis> * 200, <aspect:tenebrae> * 100]);
-soulRecipe('minecraft:endermite', 'vanilla_end', [<aspect:alienis> * 100, <aspect:vacuos>   * 50    , <aspect:vinculum> * 50]);
-soulRecipe('minecraft:shulker'  , 'vanilla_end', [<aspect:alienis> * 200, <aspect:volatus>  * 100   , Aspect.sonus    * 50]);
+soulRecipe('minecraft:enderman' , 'vanilla_end', Aspects('200👽 100🌑'));
+soulRecipe('minecraft:endermite', 'vanilla_end', Aspects('100👽 50〇 50🔗'));
+soulRecipe('minecraft:shulker'  , 'vanilla_end', Aspects('200👽 100🕊️ 50🛎️'));
 
 // Elementals
-soulRecipe('minecraft:blaze'              , 'elementals', [<aspect:ignis>   * 60 , Aspect.infernum  * 60]);
-soulRecipe('thermalfoundation:blizz'      , 'elementals', [<aspect:aqua>    * 60 , <aspect:gelum>     * 60]);
-soulRecipe('thermalfoundation:basalz'     , 'elementals', [<aspect:terra>   * 60 , <aspect:metallum>  * 60]);
-soulRecipe('thermalfoundation:blitz'      , 'elementals', [<aspect:aer>     * 60 , Aspect.ventus    * 60]);
+soulRecipe('minecraft:blaze'              , 'elementals', Aspects('60🔥 60🧨'));
+soulRecipe('thermalfoundation:blizz'      , 'elementals', Aspects('60💧 60🧊'));
+soulRecipe('thermalfoundation:basalz'     , 'elementals', Aspects('60⛰️ 60🔩'));
+soulRecipe('thermalfoundation:blitz'      , 'elementals', Aspects('60💨 60🍃'));
 
-soulRecipe('tconstruct:blueslime'         , 'hvanilla'  , [Aspect.caeles  * 100, <aspect:alkimia>   * 100]);
-soulRecipe('twilightforest:kobold'        , 'hvanilla'  , [Aspect.caeles  * 100, <aspect:praemunio> * 100]);
-soulRecipe('twilightforest:swarm_spider'  , 'hvanilla'  , [Aspect.caeles  * 100, <aspect:tenebrae>  * 100]);
-soulRecipe('twilightforest:penguin'       , 'hvanilla'  , [Aspect.caeles  * 100, <aspect:sensus>    * 100]);
-soulRecipe('twilightforest:minotaur'      , 'hvanilla'  , [Aspect.caeles  * 100, <aspect:mythus>    * 100]);
+soulRecipe('tconstruct:blueslime'         , 'hvanilla'  , Aspects('100☀️ 100⚗️'));
+soulRecipe('twilightforest:kobold'        , 'hvanilla'  , Aspects('100☀️ 100🛡️'));
+soulRecipe('twilightforest:swarm_spider'  , 'hvanilla'  , Aspects('100☀️ 100🌑'));
+soulRecipe('twilightforest:penguin'       , 'hvanilla'  , Aspects('100☀️ 100🦉'));
+soulRecipe('twilightforest:minotaur'      , 'hvanilla'  , Aspects('100☀️ 100🦄'));
 
-soulRecipe('minecraft:villager'           , 'hvanilla'  , [<aspect:humanus> * 500, <aspect:rattus>    * 500   , Aspect.imperium * 500]);
-soulRecipe('minecraft:villager_golem'     , 'hvanilla'  , [<aspect:humanus> * 500, <aspect:rattus>    * 500   , Aspect.caeles   * 500]);
-soulRecipe('minecraft:evocation_illager'  , 'hvanilla'  , [<aspect:humanus> * 500, <aspect:rattus>    * 500   , <aspect:exanimis> * 500]);
-soulRecipe('minecraft:vindication_illager', 'hvanilla'  , [<aspect:humanus> * 500, <aspect:rattus>    * 500   , Aspect.visum    * 500]);
-soulRecipe('minecraft:illusion_illager'   , 'hvanilla'  , [<aspect:humanus> * 500, <aspect:rattus>    * 500   , <aspect:victus>   * 500]);
+soulRecipe('minecraft:villager'           , 'hvanilla'  , Aspects('500👨 500🐀 500🙌'));
+soulRecipe('minecraft:villager_golem'     , 'hvanilla'  , Aspects('500👨 500🐀 500☀️'));
+soulRecipe('minecraft:evocation_illager'  , 'hvanilla'  , Aspects('500👨 500🐀 500💀'));
+soulRecipe('minecraft:vindication_illager', 'hvanilla'  , Aspects('500👨 500🐀 500👁️'));
+soulRecipe('minecraft:illusion_illager'   , 'hvanilla'  , Aspects('500👨 500🐀 500❤️'));
 
-soulRecipe('minecraft:vex'                , 'hvanilla'  , [<aspect:alienis> * 500, <aspect:draco>     * 500   , Aspect.visum    * 500]);
+soulRecipe('minecraft:vex'                , 'hvanilla'  , Aspects('500👽 500🐲 500👁️'));
 
 /*
  ██████╗ ████████╗██╗  ██╗███████╗██████╗

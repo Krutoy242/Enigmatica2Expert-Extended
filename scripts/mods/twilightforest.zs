@@ -462,7 +462,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'aurora_block', // Name
   'FIRSTSTEPS', // Research
   80, // Vis cost
-  [<aspect:aer> * 4, <aspect:aqua> * 4],
+  Aspects('4💨 4💧'),
   <twilightforest:aurora_block> * 4, // Output
   Grid(['pretty',
     '  M  ',
@@ -484,7 +484,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'BASEALCHEMY', // Research
   <twilightforest:underbrick>, // Output
   <ore:dustSoularium>, // Input
-  [<aspect:exanimis> * 20]
+  Aspects('20💀')
 );
 
 // [Hedge] from [Phial of Aversio Essentia][+1]
@@ -493,7 +493,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'BASEALCHEMY', // Research
   <twilightforest:hedge>, // Output
   <ore:treeLeaves>, // Input
-  [<aspect:aversio> * 10]
+  Aspects('10🗡️')
 );
 
 // [Nagastone] from [Reinforced Stone]
@@ -504,7 +504,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'huge_mushgloom', // Name
   'FIRSTSTEPS', // Research
   10, // Vis cost
-  [<aspect:ignis>],
+  Aspects('🔥'),
   <twilightforest:huge_mushgloom> * 4, // Output
   Grid(['pretty',
     '  M  ',

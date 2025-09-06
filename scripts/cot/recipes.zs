@@ -173,7 +173,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <contenttweaker:item_ore_benitoite>, // Output
   15, // Instability
-  [<aspect:sanguis> * 1000, <aspect:mana> * 1000, <aspect:draco> * 1000],
+  Aspects('1000🩸 1000🔷 1000🐲'),
   <additionalcompression:gravelnether_compressed:1>, // CentralItem
   benitoiteIngrs
 );

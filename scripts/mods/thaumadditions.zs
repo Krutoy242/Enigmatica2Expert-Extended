@@ -116,7 +116,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:crystal_crusher>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('crystal_crusher',
   'CRYSTALCRUSHER',
   50,
-  [<aspect:perditio> * 6, <aspect:terra> * 3],
+  Aspects('6⚡ 3⛰️'),
   <thaumadditions:crystal_crusher>,
   Grid(['pretty',
     'S S S',
@@ -132,7 +132,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:essentia_pistol>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_pistol',
   'ESSENTIAPISTOL',
   100,
-  [<aspect:aer>],
+  Aspects('💨'),
   <thaumadditions:essentia_pistol>,
   Grid(['pretty',
     'D S S',
@@ -150,7 +150,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:void_thaumometer>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('void_thaumometer',
   'VOIDTHAUMOMETER',
   100,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumadditions:void_thaumometer>,
   Grid(['pretty',
     '  V  ',
@@ -165,7 +165,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:vis_scribing_tools>
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('vis_scribing_tools',
   'VISSCRIBINGTOOLS',
   100,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumadditions:vis_scribing_tools>,
   Grid(['pretty',
     '  P  ',
@@ -197,7 +197,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:crystal_bag>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('crystal_bag',
   'CRYSTALBAG',
   100,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumadditions:crystal_bag>,
   Grid(['pretty',
     'F Q F',
@@ -213,7 +213,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumadditions:fragnant_pendant');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('fragnant_pendant',
   'FRAGNANTPENDANT',
   50,
-  [<aspect:aer>, <aspect:ordo>, <aspect:aqua>],
+  Aspects('💨 ⟁ 💧'),
   <thaumadditions:fragnant_pendant>,
   Grid(['pretty',
     '  F  ',
@@ -231,7 +231,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:dawn_totem>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('dawn_totem',
   'TOTEMANCY',
   100,
-  [<aspect:aer>, <aspect:ordo>],
+  Aspects('💨 ⟁'),
   <thaumadditions:dawn_totem> * 4,
   Grid(['pretty',
     'W V W',
@@ -249,7 +249,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:twilight_totem>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('twilight_totem',
   'TOTEMANCY',
   100,
-  [<aspect:terra>, <aspect:perditio>],
+  Aspects('⛰️ ⚡'),
   <thaumadditions:twilight_totem> * 4,
   Grid(['pretty',
     'W V W',
@@ -267,7 +267,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:crystal_bore>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('crystal_bore',
   'CRYSTALBORE',
   20,
-  [<aspect:terra>, <aspect:perditio>, <aspect:ordo>],
+  Aspects('⛰️ ⚡ ⟁'),
   <thaumadditions:crystal_bore>,
   Grid(['pretty',
     'B V B',
@@ -300,7 +300,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:growth_chamber>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('growth_chamber',
   'GROWTHCHAMBER',
   50,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumadditions:growth_chamber>,
   Grid(['pretty',
     'B V B',
@@ -332,7 +332,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe('thaumadditions:seal_globe');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('seal_globe',
   'SEALGLOBE',
   100,
-  [<aspect:aer>, <aspect:ignis>, <aspect:aqua>, <aspect:terra>, <aspect:ordo>, <aspect:perditio>],
+  Aspects('💨 🔥 💧 ⛰️ ⟁ ⚡'),
   <thaumadditions:seal_globe>,
   Grid(['pretty',
     'G G G',
@@ -350,7 +350,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:bone_eye>);
 // mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('bone_eye',
 //   'CHESTER',
 //   100,
-//   [<aspect:aer>, <aspect:ordo>],
+//   Aspects('💨 ⟁'),
 //   <thaumadditions:bone_eye>,
 //   Grid(['pretty',
 //     '  Q S',
@@ -367,7 +367,7 @@ recipes.removeByRecipeName('hammercore:thaumadditions_recipestar.20');
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_sink',
   'SHADOWBEAM',
   100,
-  [<aspect:ignis>, <aspect:aqua> * 3],
+  Aspects('🔥 3💧'),
   <thaumadditions:essentia_sink>,
   Grid(['pretty',
     'J V J',
@@ -385,7 +385,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:mithrillium_smelter
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('mithrillium_smelter',
   'SMELTERMITHRILLIUM',
   500,
-  [<aspect:ignis> * 6, <aspect:aqua> * 3],
+  Aspects('6🔥 3💧'),
   <thaumadditions:mithrillium_smelter>,
   Grid(['pretty',
     'B S B',
@@ -402,7 +402,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_smelter>)
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('adaminite_smelter',
   'SMELTERADAMINITE',
   666,
-  [<aspect:ignis> * 12, <aspect:aqua> * 6],
+  Aspects('12🔥 6💧'),
   <thaumadditions:adaminite_smelter>,
   Grid(['pretty',
     'B S B',
@@ -419,7 +419,7 @@ mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:mithminite_smelter>
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('mithminite_smelter',
   'SMELTERMITHMINITE',
   1500,
-  [<aspect:ignis> * 24, <aspect:aqua> * 12],
+  Aspects('24🔥 12💧'),
   <thaumadditions:mithminite_smelter>,
   Grid(['pretty',
     'B S B',
@@ -655,7 +655,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'FRAGNANTPENDANT', // Research
   <thaumadditions:odour_powder> * 4, // Output
   <thaumcraft:bath_salts>, // Input
-  [<aspect:exitium> * 5, <aspect:ordo> * 5, <aspect:fluctus> * 10]
+  Aspects('5💣 5⟁ 10♒')
 );
 
 // [Blue bone]
@@ -665,7 +665,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'BASEALCHEMY', // Research
   <thaumadditions:blue_bone>, // Output
   <minecraft:bone>, // Input
-  [<aspect:mana> * 10]
+  Aspects('10🔷')
 );
 
 // [Blood shard] alt recipe
@@ -674,7 +674,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'ADAMINITE', // Research
   <bloodmagic:blood_shard>, // Output
   <twilightforest:carminite>, // Input
-  [<aspect:sanguis> * 20]
+  Aspects('20🩸')
 );
 
 // [Crystal water] recipe
@@ -684,7 +684,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'CRYSTALWATER', // Research
   <forge:bucketfilled>.withTag({ FluidName: 'crystal_water', Amount: 1000 }), // Output
   <minecraft:bucket>, // Input
-  [<aspect:vitreus> * 10, <aspect:desiderium> * 4, <aspect:permutatio> * 6]
+  Aspects('10💎 4✊ 6🔄')
 );
 
 /*
@@ -703,7 +703,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ACANECAKE', // Research
   <thaumadditions:cake>, // Output
   1, // Instability
-  [<aspect:victus> * 20, <aspect:praecantatio> * 15, <aspect:desiderium> * 30, <aspect:ventus> * 15, <aspect:imperium> * 30],
+  Aspects('20❤️ 15🔮 30✊ 15🍃 30🙌'),
   <minecraft:cake>, // CentralItem
   [<thaumcraft:primordial_pearl>.anyDamage(), <thaumcraft:quicksilver>, <thaumcraft:salis_mundus>, <thaumcraft:quicksilver>]
 );
@@ -715,7 +715,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'AURADISPENSER', // Research
   <thaumadditions:aura_disperser>, // Output
   1, // Instability
-  [<aspect:ventus> * 30, <aspect:imperium> * 50, <aspect:machina> * 25, <aspect:fluctus> * 15],
+  Aspects('30🍃 50🙌 25⚙️ 15♒'),
   <minecraft:dispenser>, // CentralItem
   [<thaumcraft:vishroom>, <thaumcraft:shimmerleaf>, <thaumadditions:salt_essence>.withTag({ Aspects: [{ amount: 9, key: 'auram' }] }), <thaumcraft:mechanism_simple>]
 );
@@ -727,7 +727,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDPICKAXE', // Research
   <thaumadditions:void_elemental_pickaxe>.withTag({ infench: [{ lvl: 1 as short, id: 4 as short }, { lvl: 2 as short, id: 3 as short }] }), // Output
   5, // Instability
-  [<aspect:exitium> * 100, <aspect:ignis> * 80, <aspect:sensus> * 60, <aspect:alienis> * 40],
+  Aspects('100💣 80🔥 60🦉 40👽'),
   <thaumcraft:elemental_pick>.anyDamage(), // CentralItem
   [<thaumcraft:primordial_pearl>.anyDamage(), <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -739,7 +739,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDAXE', // Research
   <thaumadditions:void_elemental_axe>.withTag({ infench: [{ lvl: 1 as short, id: 2 as short }, { lvl: 1 as short, id: 0 as short }] }), // Output
   5, // Instability
-  [<aspect:herba> * 200, <aspect:aqua> * 100, <aspect:alienis> * 40],
+  Aspects('200🌱 100💧 40👽'),
   <thaumcraft:elemental_axe>.anyDamage(), // CentralItem
   [<thaumcraft:primordial_pearl>.anyDamage(), <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -751,7 +751,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDSHOVEL', // Research
   <thaumadditions:void_elemental_shovel>.withTag({ infench: [{ lvl: 1 as short, id: 1 as short }] }), // Output
   5, // Instability
-  [<aspect:exitium> * 100, <aspect:terra> * 100, <aspect:fabrico> * 80, <aspect:alienis> * 40],
+  Aspects('100💣 100⛰️ 80🔨 40👽'),
   <thaumcraft:elemental_shovel>.anyDamage(), // CentralItem
   [<thaumcraft:primordial_pearl>.anyDamage(), <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -763,7 +763,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDHOE', // Research
   <thaumadditions:void_elemental_hoe>, // Output
   5, // Instability
-  [<aspect:herba> * 200, <aspect:victus> * 100, <aspect:alienis> * 40],
+  Aspects('200🌱 100❤️ 40👽'),
   <thaumcraft:elemental_hoe>.anyDamage(), // CentralItem
   [<thaumcraft:primordial_pearl>.anyDamage(), <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -775,7 +775,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDCROP', // Research
   <thaumadditions:void_seed>, // Output
   8, // Instability
-  [<aspect:aer> * 20, <aspect:ignis> * 20, <aspect:aqua> * 20, <aspect:terra> * 20, <aspect:ordo> * 20, <aspect:perditio> * 20, <aspect:caeles> * 50, <aspect:tenebrae> * 100],
+  Aspects('20💨 20🔥 20💧 20⛰️ 20⟁ 20⚡ 50☀️ 100🌑'),
   <thaumcraft:elemental_hoe>.anyDamage(), // CentralItem
   [<thaumcraft:primordial_pearl>.anyDamage(), <botania:specialflower>.withTag({ type: 'excompressum.orechidEvolved' }), <thaumcraft:metal_void>, <botania:specialflower>.withTag({ type: 'orechidIgnem' }), <thaumcraft:salis_mundus>, <botania:specialflower>.withTag({ type: 'orechidVacuam' })]
 );
@@ -787,7 +787,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDANVIL', // Research
   <thaumadditions:void_anvil>, // Output
   5, // Instability
-  [<aspect:caeles> * 20, <aspect:metallum> * 100, <aspect:alienis> * 150],
+  Aspects('20☀️ 100🔩 150👽'),
   <cyclicmagic:block_anvil_magma>, // CentralItem
   [<thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -799,7 +799,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VOIDMIRROR', // Research
   <thaumadditions:wormhole_mirror>, // Output
   5, // Instability
-  [<aspect:imperium> * 100, <aspect:visum> * 80, <aspect:alienis> * 40],
+  Aspects('100🙌 80👁️ 40👽'),
   <thaumcraft:hand_mirror>, // CentralItem
   [<thaumadditions:void_thaumometer>, <thaumcraft:plate:3>, <thaumcraft:plate:3>]
 );
@@ -811,7 +811,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TRAVELLERBELT', // Research
   <thaumadditions:traveller_belt>, // Output
   2, // Instability
-  [<aspect:motus> * 100, <aspect:volatus> * 100],
+  Aspects('100🏃 100🕊️'),
   <thaumcraft:baubles:2>, // CentralItem
   [<thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'aer' }] }), <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'aer' }] }), <ore:fish>, <ore:feather>, <thaumcraft:fabric>, <thaumcraft:fabric>]
 );
@@ -823,7 +823,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'STRIDINGBELT', // Research
   <thaumadditions:striding_belt>, // Output
   3, // Instability
-  [<aspect:mana> * 50, <aspect:fluctus> * 100, <aspect:sonus> * 50, <aspect:volatus> * 50, <aspect:ventus> * 50],
+  Aspects('50🔷 100♒ 50🛎️ 50🕊️ 50🍃'),
   <thaumadditions:traveller_belt>, // CentralItem
   [
     <ore:feather>,
@@ -844,7 +844,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'METEORBELT', // Research
   <thaumadditions:meteor_belt>, // Output
   5, // Instability
-  [<aspect:infernum> * 200, <aspect:fluctus> * 50, <aspect:motus> * 200, <aspect:caeles> * 25, <aspect:sanguis> * 100],
+  Aspects('200🧨 50♒ 200🏃 25☀️ 100🩸'),
   <thaumadditions:striding_belt>, // CentralItem
   [<twilightforest:carminite>, <thaumadditions:zeith_fur>, <twilightforest:carminite>, <bloodmagic:slate:1>, <twilightforest:carminite>, <thaumadditions:zeith_fur>, <twilightforest:carminite>, <bloodmagic:slate:1>]
 );
@@ -858,7 +858,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:chester>);
 //   'CHESTER', // Research
 //   <thaumadditions:chester>, // Output
 //   2, // Instability
-//   [<aspect:imperium> * 80, <aspect:victus> * 50, <aspect:motus> * 40, <aspect:vacuos> * 20, <aspect:machina> * 10],
+//   Aspects('80🙌 50❤️ 40🏃 20〇 10⚙️'),
 //   <thaumcraft:hungry_chest>, // CentralItem
 //   [<thaumcraft:brain>, <thaumcraft:log_greatwood>, <thaumcraft:ingot>, <thaumcraft:log_greatwood>, <thaumcraft:morphic_resonator>, <thaumcraft:log_greatwood>, <thaumcraft:ingot>, <thaumcraft:log_greatwood>]
 // );
@@ -870,7 +870,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'FLUXCONCENTRATOR', // Research
   <thaumadditions:flux_concentrator>, // Output
   2, // Instability
-  [<aspect:permutatio> * 50, <aspect:machina> * 30, <aspect:vitium> * 100],
+  Aspects('50🔄 30⚙️ 100🍇'),
   <thaumcraft:mechanism_complex>, // CentralItem
   [<thaumcraft:vishroom>, <thaumcraft:morphic_resonator>, <thaumcraft:vishroom>, <thaumcraft:bellows>]
 );
@@ -882,7 +882,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MITHRILLIUM', // Research
   <thaumadditions:mithrillium_block>, // Output
   3, // Instability
-  [<aspect:mana> * 200, <aspect:alienis> * 100, <aspect:praecantatio> * 150],
+  Aspects('200🔷 100👽 150🔮'),
   <thaumcraft:metal_void>, // CentralItem
   [<botania:quartztypemana>, <botania:quartztypemana>, <thaumicaugmentation:material:5>, <botania:quartztypemana>, <botania:quartztypemana>, <thaumicaugmentation:material:5>]
 );
@@ -894,7 +894,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ADAMINITE', // Research
   <thaumadditions:adaminite_block>, // Output
   5, // Instability
-  [<aspect:sanguis> * 100, <aspect:infernum> * 666, <aspect:spiritus> * 50],
+  Aspects('100🩸 666🧨 50👻'),
   <thaumadditions:mithrillium_block>, // CentralItem
   [<bloodmagic:blood_shard>, <bloodmagic:slate>, <tconstruct:materials:11>, <bloodmagic:blood_shard>, <bloodmagic:slate>, <tconstruct:materials:11>]
 );
@@ -906,7 +906,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MITHMINITE', // Research
   <thaumadditions:mithminite_block>, // Output
   8, // Instability
-  [<aspect:draco> * 200, <aspect:caeles> * 200, <aspect:mythus> * 200, <aspect:praecantatio> * 300],
+  Aspects('200🐲 200☀️ 200🦄 300🔮'),
   <thaumadditions:adaminite_block>, // CentralItem
   [<ore:dragonscaleBlock>, <thaumcraft:quicksilver>, <iceandfire:pixie_dust>, <ore:dragonscaleBlock>, <thaumcraft:quicksilver>, <iceandfire:pixie_dust>]
 );
@@ -918,7 +918,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MITHRILLIUM', // Research
   <thaumadditions:mithrillium_resonator>, // Output
   4, // Instability
-  [<aspect:imperium> * 20, <aspect:mana> * 30],
+  Aspects('20🙌 30🔷'),
   <thaumcraft:morphic_resonator>, // CentralItem
   [<thaumadditions:mithrillium_plate>, <thaumadditions:mithrillium_plate>, <thaumicaugmentation:material:5>]
 );
@@ -930,7 +930,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'SHADOWENCHANTER', // Research
   <thaumadditions:shadow_enchanter>, // Output
   6, // Instability
-  [<aspect:caeles> * 50, <aspect:praecantatio> * 100, <aspect:instrumentum> * 100, <aspect:cognitio> * 500],
+  Aspects('50☀️ 100🔮 100🛠️ 500🧠'),
   <cyclicmagic:block_enchanter>, // CentralItem
   [<thaumadditions:mithrillium_resonator>, <extrautils2:ingredients:12>, <thaumcraft:mechanism_complex>, <thaumadditions:mithrillium_resonator>, <extrautils2:ingredients:12>, <thaumcraft:mechanism_complex>, <thaumicwonders:disjunction_cloth>]
 );
@@ -942,7 +942,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'BEHEADER', // Research
   <thaumadditions:the_beheader>, // Output
   3, // Instability
-  [<aspect:mortuus> * 100, <aspect:spiritus> * 50, <aspect:exanimis> * 100],
+  Aspects('100⚰️ 50👻 100💀'),
   <thaumcraft:void_axe>, // CentralItem
   [<ore:itemSkull>, <ore:itemSkull>, <thaumadditions:mithrillium_plate>, <ore:itemSkull>, <ore:itemSkull>, <thaumadditions:mithrillium_plate>]
 );
@@ -954,7 +954,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'SHADOWBEAM', // Research
   <thaumadditions:shadow_beam_staff>, // Output
   4, // Instability
-  [<aspect:alienis> * 300, <aspect:potentia> * 150, <aspect:praecantatio> * 100, <aspect:draco> * 20],
+  Aspects('300👽 150💪 100🔮 20🐲'),
   <iceandfire:dragonbone>, // CentralItem
   [<thaumadditions:mithrillium_plate>, <biomesoplenty:gem:4>, <biomesoplenty:gem:4>, <thaumadditions:mithrillium_plate>, <thaumadditions:mithrillium_resonator>]
 );
@@ -966,7 +966,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ADAMINITESWORD', // Research
   <thaumadditions:adaminite_sword>, // Output
   6, // Instability
-  [<aspect:infernum> * 666, <aspect:aversio> * 100, <aspect:potentia> * 200, <aspect:caeles> * 50, <aspect:draco> * 50, <aspect:sanguis> * 150],
+  Aspects('666🧨 100🗡️ 200💪 50☀️ 50🐲 150🩸'),
   <thaumcraft:void_sword>, // CentralItem
   [<thaumadditions:adaminite_plate>, <thaumadditions:adaminite_plate>, <thaumadditions:adaminite_plate>, <bloodmagic:slate:3>]
 );
@@ -978,7 +978,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'COMBINER', // Research
   <thaumadditions:aspect_combiner>, // Output
   2, // Instability
-  [<aspect:praecantatio> * 50, <aspect:alkimia> * 200, <aspect:machina> * 100, <aspect:visum> * 50, <aspect:imperium> * 100],
+  Aspects('50🔮 200⚗️ 100⚙️ 50👁️ 100🙌'),
   <thaumcraft:centrifuge>, // CentralItem
   [<thaumadditions:mithrillium_resonator>, <thaumcraft:mechanism_complex>, <thaumcraft:filter>, <thaumcraft:alumentum>, <thaumictinkerer:energetic_nitor>, <thaumcraft:filter>]
 );
@@ -990,7 +990,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'AURACHARGER', // Research
   <thaumadditions:aura_charger>, // Output
   5, // Instability
-  [<aspect:auram> * 200, <aspect:machina> * 50, <aspect:alienis> * 100, <aspect:fluctus> * 100],
+  Aspects('200✨ 50⚙️ 100👽 100♒'),
   <thaumadditions:aura_disperser>, // CentralItem
   [<thaumadditions:adaminite_plate>, <thaumcraft:mechanism_complex>, <thaumadditions:adaminite_plate>, <thaumadditions:mithrillium_resonator>]
 );
@@ -1002,7 +1002,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MITHMINITESCYTHE', // Research
   <thaumadditions:mithminite_blade>, // Output
   6, // Instability
-  [<aspect:aversio> * 200, <aspect:exanimis> * 100, <aspect:mortuus> * 100, <aspect:infernum> * 666, <aspect:sanguis> * 200],
+  Aspects('200🗡️ 100💀 100⚰️ 666🧨 200🩸'),
   <thaumadditions:mithminite_ingot>, // CentralItem
   [<thaumadditions:mithminite_plate>, <thaumicaugmentation:material:5>, <thaumadditions:mithminite_plate>, <thaumicaugmentation:material:5>]
 );
@@ -1014,7 +1014,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MITHMINITESCYTHE', // Research
   <thaumadditions:mithminite_handle>, // Output
   6, // Instability
-  [<aspect:mana> * 200, <aspect:motus> * 100, <aspect:potentia> * 200, <aspect:spiritus> * 100, <aspect:mythus> * 100],
+  Aspects('200🔷 100🏃 200💪 100👻 100🦄'),
   <iceandfire:dragonbone>, // CentralItem
   [<thaumadditions:mithminite_plate>, <bloodmagic:item_demon_crystal>, <thaumadditions:mithminite_plate>, <bloodmagic:item_demon_crystal>]
 );
@@ -1026,7 +1026,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'MITHMINITESCYTHE', // Research
   <thaumadditions:mithminite_scythe>, // Output
   13, // Instability
-  [<aspect:draco> * 200, <aspect:caeles> * 200, <aspect:amogus> * 100],
+  Aspects('200🐲 200☀️ 100ඞ'),
   <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'amogus' }] }), // CentralItem
   [<thaumadditions:mithminite_handle>, <thaumadditions:mithminite_plate>, <thaumadditions:mithminite_blade>, <thaumadditions:mithminite_plate>]
 );
@@ -1038,7 +1038,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'SPAWNER', // Research
   <thaumadditions:entity_summoner>, // Output
   3, // Instability
-  [<aspect:victus> * 100, <aspect:spiritus> * 100, <aspect:alienis> * 100, <aspect:imperium> * 100],
+  Aspects('100❤️ 100👻 100👽 100🙌'),
   <enderio:item_broken_spawner>, // CentralItem
   [<thaumcraft:mechanism_complex>, <thaumicaugmentation:material:5>, <thaumadditions:twilight_totem>, <thaumcraft:mechanism_complex>, <thaumicaugmentation:material:5>, <thaumadditions:dawn_totem>]
 );
@@ -1049,7 +1049,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'VISCHARM', // Research
   <thaumadditions:recharge_charm>, // Output
   2, // Instability
-  [<aspect:auram> * 80, <aspect:vacuos> * 60],
+  Aspects('80✨ 60〇'),
   <thaumcraft:verdant_charm:*>, // CentralItem
   [<thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'vacuos' }] }), <thaumcraft:vis_resonator>, <minecraft:potion>.withTag({ Potion: 'potioncore:strong_bless' }), <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'auram' }] })]
 );
@@ -1063,7 +1063,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'BOOTSTRAVELLER', // Research
   <thaumcraft:traveller_boots>, // Output
   1, // Instability
-  [<aspect:volatus> * 100, <aspect:motus> * 100],
+  Aspects('100🕊️ 100🏃'),
   <thaumcraft:cloth_boots:*>, // CentralItem
   [<thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'aer' }] }), <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'aer' }] }), <thaumcraft:fabric>, <thaumcraft:fabric>, <ore:feather>, <ore:fish>]
 );
@@ -1755,7 +1755,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ADAMINITEFABRIC', // Research
   <thaumadditions:adaminite_hood>, // Output
   6, // Instability
-  [<aspect:infernum> * 100, <aspect:sanguis> * 100, <aspect:spiritus> * 50],
+  Aspects('100🧨 100🩸 50👻'),
   <thaumcraft:void_robe_helm:*>, // CentralItem
   [<thaumicwonders:void_fortress_helm:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
 );
@@ -1765,7 +1765,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ADAMINITEFABRIC', // Research
   <thaumadditions:adaminite_robe>, // Output
   6, // Instability
-  [<aspect:infernum> * 100, <aspect:sanguis> * 100, <aspect:mortuus> * 50],
+  Aspects('100🧨 100🩸 50⚰️'),
   <thaumcraft:void_robe_chest:*>, // CentralItem
   [<thaumicwonders:void_fortress_chest:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
 );
@@ -1775,7 +1775,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ADAMINITEFABRIC', // Research
   <thaumadditions:adaminite_belt>, // Output
   6, // Instability
-  [<aspect:infernum> * 100, <aspect:sanguis> * 100, <aspect:ordo> * 50],
+  Aspects('100🧨 100🩸 50⟁'),
   <thaumcraft:void_robe_legs:*>, // CentralItem
   [<thaumicwonders:void_fortress_legs:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
 );
@@ -1785,7 +1785,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'ADAMINITEFABRIC', // Research
   <thaumadditions:adaminite_boots>, // Output
   6, // Instability
-  [<aspect:infernum> * 100, <aspect:sanguis> * 100, <aspect:motus> * 50],
+  Aspects('100🧨 100🩸 50🏃'),
   <thaumicaugmentation:void_boots:*>, // CentralItem
   [<thaumcraft:void_boots:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
 );

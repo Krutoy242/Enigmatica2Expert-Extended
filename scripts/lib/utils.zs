@@ -30,6 +30,41 @@ zenClass Utils {
 
   zenConstructor() { }
 
+  val modPreference as string[] = [
+    'minecraft',
+    'thermalfoundation',
+    'immersiveengineering',
+    'ic2',
+    'mekanism',
+    'appliedenergistics2',
+    'actuallyadditions',
+    'tconstruct',
+    'chisel',
+  ];
+
+  function oreToItem(ore as string) as IItemStack { return oreToItem(oreDict[ore]); }
+  function oreToItem(ore as IOreDictEntry) as IItemStack {
+    val oreItems = ore.items;
+    if (oreItems.length <= 0) return null;
+    if (oreItems.length == 1 && !isNull(oreItems[0])) return oreItems[0];
+
+    var firstItem = null as IItemStack;
+    for preffer in modPreference {
+      for item in oreItems {
+        if (isNull(item)) {
+          logger.logWarning('oredict entry "' ~ ore.name ~ '" content empty items.');
+          continue;
+        }
+
+        if (item.definition.id.startsWith(preffer ~ ':'))
+          return item;
+        firstItem = firstItem ?? item;
+      }
+    }
+
+    return firstItem;
+  }
+
   val getSomething as function(string,string[],int)IItemStack
     = function (oreName as string, entryNames as string[], amount as int) as IItemStack {
       return null;

@@ -234,7 +234,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "INFUSION", # Research
   <forestry:frame_proven>.withTag({ench: [{}], enchantmentColor: 16579587, Unbreakable: 1 as byte}), # Output
   3, # Instability
-  [<aspect:aer> * 40, <aspect:desiderium> * 40, <aspect:sonus> * 40],
+  Aspects('40💨 40✊ 40🛎️'),
   <forestry:frame_proven>, # Central Item
   Grid(['pretty',
   '  ▲  ',

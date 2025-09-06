@@ -895,7 +895,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_alloy_smelter>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_alloy_smelter>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -911,7 +911,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_combustion_generator>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_combustion_generator>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -927,7 +927,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_sag_mill>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_sag_mill>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -943,7 +943,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_vat>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_vat>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -959,7 +959,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_wireless_charger>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_normal_wireless_charger>, // Central Item
   Grid(['pretty',
     '  E  ',

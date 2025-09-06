@@ -5,18 +5,6 @@
 
 import crafttweaker.item.IItemStack;
 
-static modPreference as string[] = [
-  'minecraft',
-  'thermalfoundation',
-  'immersiveengineering',
-  'ic2',
-  'mekanism',
-  'appliedenergistics2',
-  'actuallyadditions',
-  'tconstruct',
-  'chisel',
-] as string[];
-
 val getSomething as function(string,string[],int)IItemStack
 = function (oreName as string, entryNames as string[], amount as int) as IItemStack {
   if (isNull(oreName)) return null;
@@ -35,16 +23,10 @@ val getSomething as function(string,string[],int)IItemStack
   // Find with Oredict
   if (isNull(something)) {
     for str in entryNames {
-      val oreItems = oreDict[str ~ oreName].items;
-      if (oreItems.length > 0) {
-        for preffer in modPreference {
-          for item in oreItems {
-            if (item.definition.id.startsWith(preffer))
-              return utils.countOutput(item * amount, oreName);
-          }
-        }
-        return utils.countOutput(oreDict[str ~ oreName].firstItem * amount, oreName);
-      }
+      val item = utils.oreToItem(str ~ oreName);
+      if (isNull(item)) continue;
+      something = item;
+      break;
     }
   }
 

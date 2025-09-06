@@ -30,7 +30,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   "essentia_resonator", # Name
   "FIRSTSTEPS", # Research
   100, # Vis cost
-  [<aspect:ignis>, <aspect:ordo>],
+  Aspects('🔥 ⟁'),
   <psicosts:essentia_resonator>, # Output
   Grid(['pretty',
   'i ▲ i',

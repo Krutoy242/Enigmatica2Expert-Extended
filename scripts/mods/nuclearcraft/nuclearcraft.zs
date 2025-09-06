@@ -1106,7 +1106,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "INFUSION", # Research
   <nuclearcraft:wasteland_portal>, # Output
   1, # Instability
-  [<aspect:perditio> * 40, Aspect.exitium * 40],
+  Aspects('40⚡ 40💣'),
   <trinity:solid_trinitite>, # Central Item
   Grid(["pretty",
   "s Q s",

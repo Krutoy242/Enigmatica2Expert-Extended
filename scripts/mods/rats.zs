@@ -313,7 +313,7 @@ mods.thermalexpansion.Infuser.addRecipe(<rats:charged_creeper_chunk>, <harvestcr
 
 // Psionic rat brain
 mods.thaumcraft.Infusion.registerRecipe('psionic_rat_brain', 'INFUSION', <rats:psionic_rat_brain>, 40,
-  [<aspect:cognitio> * 150, <aspect:alienis> * 40, <aspect:rattus> * 80], <thaumcraft:brain>,
+  Aspects('150🧠 40👽 80🐀'), <thaumcraft:brain>,
   [<rats:charged_creeper_chunk>, <rats:chunky_cheese_token>, <rats:charged_creeper_chunk>, <ore:dustDimensional>,
 	 <rats:charged_creeper_chunk>, <ore:dustDimensional>, <draconicevolution:draconium_block:1>, <rats:charged_creeper_chunk>]
 );

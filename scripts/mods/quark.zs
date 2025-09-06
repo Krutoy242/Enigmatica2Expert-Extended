@@ -156,7 +156,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'HEDGEALCHEMY@1', // Research
   <quark:root>, // Output
   <harvestcraft:ediblerootitem>, // Input
-  [<aspect:herba> * 5]
+  Aspects('5🌱')
 );
 
 // [Blue sprout]
@@ -165,7 +165,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'HEDGEALCHEMY@1', // Research
   <quark:root_flower>, // Output
   <harvestcraft:ediblerootitem>, // Input
-  [<aspect:instrumentum> * 5]
+  Aspects('5🛠️')
 );
 
 // [Black sprout]
@@ -174,7 +174,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'HEDGEALCHEMY@1', // Research
   <quark:root_flower:1>, // Output
   <harvestcraft:ediblerootitem>, // Input
-  [<aspect:tenebrae> * 5]
+  Aspects('5🌑')
 );
 
 // [White sprout]
@@ -183,7 +183,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'HEDGEALCHEMY@1', // Research
   <quark:root_flower:2>, // Output
   <harvestcraft:ediblerootitem>, // Input
-  [<aspect:potentia> * 5]
+  Aspects('5💪')
 );
 
 // Peaceful Skyblock alt
