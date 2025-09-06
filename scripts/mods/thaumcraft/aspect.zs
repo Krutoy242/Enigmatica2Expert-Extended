@@ -1,6 +1,6 @@
 #modloaded thaumcraft randomtweaker
 #reloadable
-#priority 1000
+#priority 3000
 
 import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.item.IItemStack;

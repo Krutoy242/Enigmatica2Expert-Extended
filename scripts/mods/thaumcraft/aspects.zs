@@ -6,7 +6,6 @@ import crafttweaker.item.IItemStack;
 import thaumcraft.aspect.CTAspectStack;
 
 import scripts.mods.thaumcraft.aspect.set;
-import scripts.mods.thaumcraft.aspect.toAspects;
 
 /*
  █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗
@@ -1173,10 +1172,10 @@ function setOreAspect(kind as string, main as double, secondary as double, base 
   if (isNull(item)) {
     return 0;
   }
-  val aspectsArr = toAspects(aspects);
+  val aspectsArr = Aspects(aspects);
   val list = isNull(additional)
     ? aspectsArr
-    : aspectsArr.addAll(toAspects(additional));
+    : aspectsArr.addAll(Aspects(additional));
   list[0] = list[0] * main;
   if (secondary >= 1) list[1] = list[1] * secondary;
   if (aspectsArr.length >= 3) list[2] = list[2] * main;
