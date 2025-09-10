@@ -185,20 +185,6 @@ moltenCheese.addDataValue('density', '1004');
 moltenCheese.addDataValue('viscosity', '2000');
 
 // -------------------------------
-// Molten heavy
-// -------------------------------
-val heavyMatBuilder = MaterialSystem
-  .getMaterialBuilder()
-  .setName('Heavy Metal')
-  .setColor(Color.fromHex('444450'))
-  .build();
-
-val molten = heavyMatBuilder.registerPart('molten').getData();
-molten.addDataValue('temperature', '320');
-molten.addDataValue('density', '500000');
-molten.addDataValue('viscosity', '30000');
-
-// -------------------------------
 // Seed
 // -------------------------------
 val seed_fluid = VanillaFactory.createFluid('seed', 0xFFE3D7C8);

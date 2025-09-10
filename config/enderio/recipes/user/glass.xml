@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<!-- HOLY -->
+
+  <recipe name="Tank: Player Token" required="true">
+    <soulbinding energy="25000" levels="1" logic="NONE" souls="ALL">
+      <input name="ballDarkSteel" />
+      <output name="itemTokenPlayer" />
+    </soulbinding>
+  </recipe>
+
+  <recipe name="Tank: Player Token Alternative" required="true" disabled="true">
+    <tanking type="FILL" logic="LEVELS">
+      <input name="ballDarkSteel"/>
+      <fluid name="xpjuice" amount="10"/>
+      <output name="itemTokenPlayer"/>
+    </tanking>
+  </recipe>
+
+  <recipe name="Holy 1" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/>
+        <item name="enderio:block_fused_glass"/><item name="itemTokenPlayer"/><item name="enderio:block_fused_glass"/>
+        <item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/>
+      </grid>
+      <output name="enderio:block_holy_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Holy 2" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/>
+        <item name="enderio:block_fused_quartz"/><item name="itemTokenPlayer"/><item name="enderio:block_fused_quartz"/>
+        <item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_holy_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Holy 3" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="itemTokenPlayer"/><item name="enderio:block_enlightened_fused_glass"/>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/>
+      </grid>
+      <output name="enderio:block_holy_enlightened_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Holy 4" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="itemTokenPlayer"/><item name="enderio:block_enlightened_fused_quartz"/>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_holy_enlightened_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Holy 5" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/>
+        <item name="enderio:block_dark_fused_glass"/><item name="itemTokenPlayer"/><item name="enderio:block_dark_fused_glass"/>
+        <item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/>
+      </grid>
+      <output name="enderio:block_holy_dark_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Holy 6" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/>
+        <item name="enderio:block_dark_fused_quartz"/><item name="itemTokenPlayer"/><item name="enderio:block_dark_fused_quartz"/>
+        <item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_holy_dark_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <!-- UNHOLY -->
+
+  <recipe name="Soul Binder: Monster Token" required="true">
+    <soulbinding energy="25000" levels="1" logic="NONE" souls="MONSTERS">
+      <input name="ballSoularium" />
+      <output name="itemTokenMonster" />
+    </soulbinding>
+  </recipe>
+
+  <recipe name="Unholy 1" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/>
+        <item name="enderio:block_fused_glass"/><item name="itemTokenMonster"/><item name="enderio:block_fused_glass"/>
+        <item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/>
+      </grid>
+      <output name="enderio:block_unholy_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Unholy 2" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/>
+        <item name="enderio:block_fused_quartz"/><item name="itemTokenMonster"/><item name="enderio:block_fused_quartz"/>
+        <item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_unholy_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Unholy 3" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="itemTokenMonster"/><item name="enderio:block_enlightened_fused_glass"/>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/>
+      </grid>
+      <output name="enderio:block_unholy_enlightened_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Unholy 4" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="itemTokenMonster"/><item name="enderio:block_enlightened_fused_quartz"/>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_unholy_enlightened_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Unholy 5" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/>
+        <item name="enderio:block_dark_fused_glass"/><item name="itemTokenMonster"/><item name="enderio:block_dark_fused_glass"/>
+        <item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/>
+      </grid>
+      <output name="enderio:block_unholy_dark_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Unholy 6" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/>
+        <item name="enderio:block_dark_fused_quartz"/><item name="itemTokenMonster"/><item name="enderio:block_dark_fused_quartz"/>
+        <item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_unholy_dark_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <!-- PASTURE -->
+
+  <recipe name="Soul Binder: Animal Token" required="true">
+    <soulbinding energy="25000" levels="1" logic="NONE" souls="ANIMALS">
+      <input name="ballSoularium" />
+      <output name="itemTokenAnimal" />
+    </soulbinding>
+  </recipe>
+
+  <recipe name="Pasture 1" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/>
+        <item name="enderio:block_fused_glass"/><item name="itemTokenAnimal"/><item name="enderio:block_fused_glass"/>
+        <item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/><item name="enderio:block_fused_glass"/>
+      </grid>
+      <output name="enderio:block_pasture_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Pasture 2" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/>
+        <item name="enderio:block_fused_quartz"/><item name="itemTokenAnimal"/><item name="enderio:block_fused_quartz"/>
+        <item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/><item name="enderio:block_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_pasture_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Pasture 3" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="itemTokenAnimal"/><item name="enderio:block_enlightened_fused_glass"/>
+        <item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/><item name="enderio:block_enlightened_fused_glass"/>
+      </grid>
+      <output name="enderio:block_pasture_enlightened_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Pasture 4" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="itemTokenAnimal"/><item name="enderio:block_enlightened_fused_quartz"/>
+        <item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/><item name="enderio:block_enlightened_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_pasture_enlightened_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Pasture 5" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/>
+        <item name="enderio:block_dark_fused_glass"/><item name="itemTokenAnimal"/><item name="enderio:block_dark_fused_glass"/>
+        <item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/><item name="enderio:block_dark_fused_glass"/>
+      </grid>
+      <output name="enderio:block_pasture_dark_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Pasture 6" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/>
+        <item name="enderio:block_dark_fused_quartz"/><item name="itemTokenAnimal"/><item name="enderio:block_dark_fused_quartz"/>
+        <item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/><item name="enderio:block_dark_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_pasture_dark_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <!-- NOT HOLY -->
+
+  <recipe name="Not Holy 1" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_holy_fused_glass"/><item name="enderio:block_holy_fused_glass"/><item name="enderio:block_holy_fused_glass"/>
+        <item name="enderio:block_holy_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_holy_fused_glass"/>
+        <item name="enderio:block_holy_fused_glass"/><item name="enderio:block_holy_fused_glass"/><item name="enderio:block_holy_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_holy_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Holy 2" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_holy_fused_quartz"/><item name="enderio:block_holy_fused_quartz"/><item name="enderio:block_holy_fused_quartz"/>
+        <item name="enderio:block_holy_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_holy_fused_quartz"/>
+        <item name="enderio:block_holy_fused_quartz"/><item name="enderio:block_holy_fused_quartz"/><item name="enderio:block_holy_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_holy_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Holy 3" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_holy_enlightened_fused_glass"/><item name="enderio:block_holy_enlightened_fused_glass"/><item name="enderio:block_holy_enlightened_fused_glass"/>
+        <item name="enderio:block_holy_enlightened_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_holy_enlightened_fused_glass"/>
+        <item name="enderio:block_holy_enlightened_fused_glass"/><item name="enderio:block_holy_enlightened_fused_glass"/><item name="enderio:block_holy_enlightened_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_holy_enlightened_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Holy 4" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_holy_enlightened_fused_quartz"/><item name="enderio:block_holy_enlightened_fused_quartz"/><item name="enderio:block_holy_enlightened_fused_quartz"/>
+        <item name="enderio:block_holy_enlightened_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_holy_enlightened_fused_quartz"/>
+        <item name="enderio:block_holy_enlightened_fused_quartz"/><item name="enderio:block_holy_enlightened_fused_quartz"/><item name="enderio:block_holy_enlightened_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_holy_enlightened_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Holy 5" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_holy_dark_fused_glass"/><item name="enderio:block_holy_dark_fused_glass"/><item name="enderio:block_holy_dark_fused_glass"/>
+        <item name="enderio:block_holy_dark_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_holy_dark_fused_glass"/>
+        <item name="enderio:block_holy_dark_fused_glass"/><item name="enderio:block_holy_dark_fused_glass"/><item name="enderio:block_holy_dark_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_holy_dark_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Holy 6" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_holy_dark_fused_quartz"/><item name="enderio:block_holy_dark_fused_quartz"/><item name="enderio:block_holy_dark_fused_quartz"/>
+        <item name="enderio:block_holy_dark_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_holy_dark_fused_quartz"/>
+        <item name="enderio:block_holy_dark_fused_quartz"/><item name="enderio:block_holy_dark_fused_quartz"/><item name="enderio:block_holy_dark_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_holy_dark_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <!-- NOT UNHOLY -->
+
+  <recipe name="Not Unholy 1" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_unholy_fused_glass"/><item name="enderio:block_unholy_fused_glass"/><item name="enderio:block_unholy_fused_glass"/>
+        <item name="enderio:block_unholy_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_unholy_fused_glass"/>
+        <item name="enderio:block_unholy_fused_glass"/><item name="enderio:block_unholy_fused_glass"/><item name="enderio:block_unholy_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_unholy_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Unholy 2" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_unholy_fused_quartz"/><item name="enderio:block_unholy_fused_quartz"/><item name="enderio:block_unholy_fused_quartz"/>
+        <item name="enderio:block_unholy_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_unholy_fused_quartz"/>
+        <item name="enderio:block_unholy_fused_quartz"/><item name="enderio:block_unholy_fused_quartz"/><item name="enderio:block_unholy_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_unholy_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Unholy 3" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_unholy_enlightened_fused_glass"/><item name="enderio:block_unholy_enlightened_fused_glass"/><item name="enderio:block_unholy_enlightened_fused_glass"/>
+        <item name="enderio:block_unholy_enlightened_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_unholy_enlightened_fused_glass"/>
+        <item name="enderio:block_unholy_enlightened_fused_glass"/><item name="enderio:block_unholy_enlightened_fused_glass"/><item name="enderio:block_unholy_enlightened_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_unholy_enlightened_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Unholy 4" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_unholy_enlightened_fused_quartz"/><item name="enderio:block_unholy_enlightened_fused_quartz"/><item name="enderio:block_unholy_enlightened_fused_quartz"/>
+        <item name="enderio:block_unholy_enlightened_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_unholy_enlightened_fused_quartz"/>
+        <item name="enderio:block_unholy_enlightened_fused_quartz"/><item name="enderio:block_unholy_enlightened_fused_quartz"/><item name="enderio:block_unholy_enlightened_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_unholy_enlightened_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Unholy 5" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_unholy_dark_fused_glass"/><item name="enderio:block_unholy_dark_fused_glass"/><item name="enderio:block_unholy_dark_fused_glass"/>
+        <item name="enderio:block_unholy_dark_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_unholy_dark_fused_glass"/>
+        <item name="enderio:block_unholy_dark_fused_glass"/><item name="enderio:block_unholy_dark_fused_glass"/><item name="enderio:block_unholy_dark_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_unholy_dark_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Unholy 6" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_unholy_dark_fused_quartz"/><item name="enderio:block_unholy_dark_fused_quartz"/><item name="enderio:block_unholy_dark_fused_quartz"/>
+        <item name="enderio:block_unholy_dark_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_unholy_dark_fused_quartz"/>
+        <item name="enderio:block_unholy_dark_fused_quartz"/><item name="enderio:block_unholy_dark_fused_quartz"/><item name="enderio:block_unholy_dark_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_unholy_dark_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <!-- NOT PASTURE -->
+
+  <recipe name="Not Pasture 1" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_pasture_fused_glass"/><item name="enderio:block_pasture_fused_glass"/><item name="enderio:block_pasture_fused_glass"/>
+        <item name="enderio:block_pasture_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_pasture_fused_glass"/>
+        <item name="enderio:block_pasture_fused_glass"/><item name="enderio:block_pasture_fused_glass"/><item name="enderio:block_pasture_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_pasture_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Pasture 2" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_pasture_fused_quartz"/><item name="enderio:block_pasture_fused_quartz"/><item name="enderio:block_pasture_fused_quartz"/>
+        <item name="enderio:block_pasture_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_pasture_fused_quartz"/>
+        <item name="enderio:block_pasture_fused_quartz"/><item name="enderio:block_pasture_fused_quartz"/><item name="enderio:block_pasture_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_pasture_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Pasture 3" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_pasture_enlightened_fused_glass"/><item name="enderio:block_pasture_enlightened_fused_glass"/><item name="enderio:block_pasture_enlightened_fused_glass"/>
+        <item name="enderio:block_pasture_enlightened_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_pasture_enlightened_fused_glass"/>
+        <item name="enderio:block_pasture_enlightened_fused_glass"/><item name="enderio:block_pasture_enlightened_fused_glass"/><item name="enderio:block_pasture_enlightened_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_pasture_enlightened_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Pasture 4" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_pasture_enlightened_fused_quartz"/><item name="enderio:block_pasture_enlightened_fused_quartz"/><item name="enderio:block_pasture_enlightened_fused_quartz"/>
+        <item name="enderio:block_pasture_enlightened_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_pasture_enlightened_fused_quartz"/>
+        <item name="enderio:block_pasture_enlightened_fused_quartz"/><item name="enderio:block_pasture_enlightened_fused_quartz"/><item name="enderio:block_pasture_enlightened_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_pasture_enlightened_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Pasture 5" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_pasture_dark_fused_glass"/><item name="enderio:block_pasture_dark_fused_glass"/><item name="enderio:block_pasture_dark_fused_glass"/>
+        <item name="enderio:block_pasture_dark_fused_glass"/><item name="minecraft:redstone_torch"/><item name="enderio:block_pasture_dark_fused_glass"/>
+        <item name="enderio:block_pasture_dark_fused_glass"/><item name="enderio:block_pasture_dark_fused_glass"/><item name="enderio:block_pasture_dark_fused_glass"/>
+      </grid>
+      <output name="enderio:block_not_pasture_dark_fused_glass" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Not Pasture 6" required="true">
+    <crafting>
+      <grid>
+        <item name="enderio:block_pasture_dark_fused_quartz"/><item name="enderio:block_pasture_dark_fused_quartz"/><item name="enderio:block_pasture_dark_fused_quartz"/>
+        <item name="enderio:block_pasture_dark_fused_quartz"/><item name="minecraft:redstone_torch"/><item name="enderio:block_pasture_dark_fused_quartz"/>
+        <item name="enderio:block_pasture_dark_fused_quartz"/><item name="enderio:block_pasture_dark_fused_quartz"/><item name="enderio:block_pasture_dark_fused_quartz"/>
+      </grid>
+      <output name="enderio:block_not_pasture_dark_fused_quartz" amount="8" />
+    </crafting>
+  </recipe>
+
+</enderio:recipes>

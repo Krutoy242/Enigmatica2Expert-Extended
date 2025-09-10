@@ -1,4 +1,5 @@
 #modloaded omniwand
+#reloadable
 
 import crafttweaker.item.IItemStack;
 
@@ -9,7 +10,7 @@ recipes.addShaped('Morphing Tool', <omniwand:wand>, [
   [null, <ore:ingotFakeIron>, <ore:dyeOrange>],
   [<ore:ingotFakeIron>, null, null]]);
 
-val predefined = <omniwand:wand>.withTag({
+static superwand as IItemStack = <omniwand:wand>.withTag({
   "omniwand:data": {
     actuallyadditions   : {id: "actuallyadditions:item_laser_wrench"            , Count: 1, tag: { "omniwand:definedMod": "actuallyadditions"    }},
     actuallyadditions0  : {id: "actuallyadditions:item_crafter_on_a_stick"      , Count: 1, tag: { "omniwand:definedMod": "actuallyadditions0"   }},
@@ -66,7 +67,7 @@ val predefined = <omniwand:wand>.withTag({
   "omniwand:is_transforming": 1 as byte,
 });
 
-recipes.addShaped('Superwrench', predefined, [
+recipes.addShaped('Superwrench', superwand, [
   [null, <ore:gearCopper>, null],
   [<ore:gearAluminium>, <omniwand:wand>, <ore:gearTin>],
   [null, <ore:gearLead>, null],

@@ -11,17 +11,9 @@ import mods.botaniatweaks.AgglomerationRecipe;
 import mods.ctutils.utils.Math.abs;
 
 static aspects as CTAspectStack[][] = [
-  [<aspect:aer>, <aspect:terra>,
-    <aspect:ignis>, <aspect:aqua>,
-    <aspect:ordo>, <aspect:perditio>],
-
-  [<aspect:vacuos>, <aspect:lux>, <aspect:motus>, <aspect:gelum>,
-    <aspect:vitreus>, <aspect:metallum>, <aspect:victus>,
-    <aspect:mortuus>, <aspect:potentia>, <aspect:permutatio>],
-
-  [<aspect:bestia>, <aspect:exanimis>, <aspect:herba>,
-    <aspect:instrumentum>, <aspect:praecantatio>, <aspect:spiritus>,
-    <aspect:tenebrae>, <aspect:vinculum>, <aspect:volatus>],
+  Aspects('💨 ⛰️ 🔥 💧 ⟁ ⚡'),
+  Aspects('〇 🕯️ 🏃 🧊 💎 🔩 ❤️ ⚰️ 💪 🔄'),
+  Aspects('🐺 💀 🌱 🛠️ 🔮 👻 🌑 🔗 🕊️'),
 ] as CTAspectStack[][];
 
 function hashedAspect(tier as int, hash as int) as CTAspectStack {

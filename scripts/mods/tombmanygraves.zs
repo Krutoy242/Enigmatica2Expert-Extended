@@ -6,9 +6,6 @@ Idea taken from DJ2 modpack
 
 */
 
-// Remove the TMG Death List from the inventory and drop it on the ground. This prevents a nested NBT issue.
-scripts.lib.tooltip.desc.both(<tombmanygraves:death_list>, 'dropper_into_world');
-
 // Doesnt get called if keepInventory is true, so we dont have to factor that possibility in.
 events.onPlayerDeathDrops(function (e as crafttweaker.event.PlayerDeathDropsEvent) {
   var drops = [] as crafttweaker.entity.IEntityItem[];

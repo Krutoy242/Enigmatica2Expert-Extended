@@ -5,9 +5,9 @@
 import crafttweaker.liquid.ILiquidStack;
 
 zenClass MagnetInfo {
-  var name as string;
+  var name       as string;
   var efficiency as double;
-  var rule as string;
+  var rule       as string;
 
   zenConstructor(name as string, efficiency as double, rule as string) {
     this.name = name;
@@ -17,9 +17,9 @@ zenClass MagnetInfo {
 }
 
 zenClass StabilizerInfo {
-  var name as string;
+  var name       as string;
   var efficiency as double;
-  var rule as string;
+  var rule       as string;
 
   zenConstructor(name as string, efficiency as double, rule as string) {
     this.name = name;
@@ -29,10 +29,10 @@ zenClass StabilizerInfo {
 }
 
 zenClass LiquidStabilizerInfo {
-  var name as string;
-  var inliquid as ILiquidStack;
+  var name       as string;
+  var inliquid   as ILiquidStack;
   var efficiency as double;
-  var rule as string;
+  var rule       as string;
 
   zenConstructor(name as string, inliquid as ILiquidStack, efficiency as double, rule as string) {
     this.name = name;
@@ -43,9 +43,9 @@ zenClass LiquidStabilizerInfo {
 }
 
 zenClass ConverterInfo {
-  var name as string;
+  var name       as string;
   var efficiency as double;
-  var rule as string;
+  var rule       as string;
 
   zenConstructor(name as string, efficiency as double, rule as string) {
     this.name = name;
@@ -55,9 +55,9 @@ zenClass ConverterInfo {
 }
 
 zenClass ExtractorInfo {
-  var name as string;
+  var name       as string;
   var efficiency as double;
-  var rule as string;
+  var rule       as string;
 
   zenConstructor(name as string, efficiency as double, rule as string) {
     this.name = name;

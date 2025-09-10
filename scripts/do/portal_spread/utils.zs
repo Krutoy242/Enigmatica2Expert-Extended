@@ -12,8 +12,8 @@
 
 import crafttweaker.block.IBlockState;
 import crafttweaker.item.IItemStack;
-import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
+import crafttweaker.world.IWorld;
 
 static maxRadius as int = scripts.do.portal_spread.config.Config.maxRadius;
 
@@ -57,9 +57,12 @@ function init() as void {
   }
 }
 
-/*
-  Returns [i, x, y, z] where i is next index
-*/
+/**
+ * Returns [i, x, y, z] where i is next index
+ *
+ * @author dobrokot
+ * @link https://github.com/dobrokot
+ */
 function getNextPoint(index as int) as int[] {
   if (!initialized) init();
 
@@ -102,12 +105,20 @@ function getNextPoint(index as int) as int[] {
   while ((next_mirror_index & unwatend_reflections_mask) != 0)
     next_mirror_index += 1;
 
-  if ((mirror_index) % 2 == 1) x = -x;
+  if (mirror_index % 2 == 1) x = -x;
   if ((mirror_index / 2) % 2 == 1) y = -y;
   if ((mirror_index / 4) % 2 == 1) z = -z;
   if ((mirror_index / 8) % 2 == 1) { val _x as int = x; x = y; y = _x; }
 
   return [index + next_mirror_index - mirror_index, x, y, z];
+}
+
+function radiusToIndex(radius as int) as int {
+  return MAX_DISTANCE_INDEXES * radius * radius;
+}
+
+function indexToRadius(index as int) as int {
+  return min(maxRadius, pow(index / MAX_DISTANCE_INDEXES, 0.5));
 }
 
 function abs(n as double) as double { return n < 0 ? -n : n; }
@@ -135,7 +146,10 @@ function stateToItem(state as IBlockState, pos as IBlockPos = null, world as IWo
     isNull(state)
     || isNull(state.block)
     || isNull(state.block.definition)
-  ) return null;
+    || state == <blockstate:minecraft:air>
+  ) {
+    return null;
+  }
 
   val defId = state.block.definition.id;
   var isWeird = false;
@@ -145,12 +159,12 @@ function stateToItem(state as IBlockState, pos as IBlockPos = null, world as IWo
       break;
     }
   }
-  var item = isWeird && (isNull(world) || isNull(pos))
-      ? <item:${defId}:${state.block.meta}>
-      : state.block.getItem(world, pos, state);
+  var item = isWeird || isNull(world) || isNull(pos)
+    ? itemUtils.getItem(defId, state.block.meta)
+    : state.block.getItem(world, pos, state);
   if (isNull(item)) item = blockRepresentation[defId];
   if (isNull(item))
-    logger.logWarning('Cannot find item representation for block: ' ~ defId);
+    logger.logWarning(`Cannot find item representation for block: ${defId}`);
   return item;
 }
 

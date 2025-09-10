@@ -9,7 +9,7 @@ var lines = [
   '{',
   '  "name": "UU",',
   '  "icon": "ic2:misc_resource:3",',
-  '  "category": "Items",',
+  '  "category": "World",',
   '  "pages": [',
   '    {',
 ] as [string];
@@ -20,8 +20,7 @@ while (it.hasNext()) {
   val entry = it.next() as native.java.util.Map.Entry;
   val item = (entry.key as native.net.minecraft.item.ItemStack).wrapper;
   val cost = toString(entry.value) as double as int;
-  list += format('%010d', cost)
-    ~ ' ' ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage);
+  list.add(format('%010d', cost) ~ ' ' ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage));
 }
 
 for i, uuTuple in list.sort() {

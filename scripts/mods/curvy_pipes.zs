@@ -12,7 +12,7 @@ craft.make(<curvy_pipes:pipe:7> * 64, ['pretty',
   '  ▲  ',
   '▲ * ▲',
   '  ▲  '], {
-  '▲': <ore:dustPromethium147>,
+  '▲': <ore:ingotBeryllium7>,
   '*': <ore:clathrateEnder>,
 });
 
@@ -20,6 +20,6 @@ craft.make(<curvy_pipes:pipe:12> * 64, ['pretty',
   '  ▬  ',
   '▬ ♥ ▬',
   '  ▬  '], {
-  '▬': <ore:ingotGold198>,
+  '▬': <ore:ingotSodium22>,
   '♥': <ore:clathrateRedstone>,
 });

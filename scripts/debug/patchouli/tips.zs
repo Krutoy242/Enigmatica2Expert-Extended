@@ -54,7 +54,6 @@ zenClass Op {
   function getSingleTip() as string {
     val key = 'e2ee.tips.' ~ i;
     val tipText = mods.zenutils.I18n.format(key);
-    print('~~~ '~tipText);
     if (tipText == key) return null;
     return tipText
       .replaceAll('§e', '§6') // Yellow too bright to read with default Patchouli background texture

@@ -3,7 +3,7 @@
 # If true, unknown pipes in save data will be deleted instead of crashing.
 ignore_unknown_pipes: false
 
-# Standard pipe types are defined here. You can remove this section entirely if you only want pipes added by cross-mod integrations.
+# Pipe types are defined here. You can remove this section entirely if you only want pipes added by cross-mod integrations.
 pipe_types:
   - # Unique key of this pipe type, also served as the translation key
     key: curvy.item.tiny
@@ -12,30 +12,30 @@ pipe_types:
     # Default (fallback) translation of `key.name`
     name: Tiny Item Pipe
     # Texture must be in the `blocks` directory.
-    texture: curvy_pipes:blocks/item_pipe
+    texture: curvy_pipes:blocks/tiny_item_pipe
     # Smaller diameter allows more pipes to fit in tight (e.g. single block) space.
     # There is no upper limit on diameter: pipes can be multiple blocks wide.
     diameter: 0.1
     # Items per tick (can be smaller than 1)
     variant: { Item: { rate: 0.1 } }
-  - { key: curvy.item.small, meta: 1, name: Small Item Pipe, texture: curvy_pipes:blocks/item_pipe, diameter: 0.2, variant: { Item: { rate: 1. } } }
+  - { key: curvy.item.small, meta: 1, name: Small Item Pipe, texture: curvy_pipes:blocks/small_item_pipe, diameter: 0.2, variant: { Item: { rate: 1. } } }
   - { key: curvy.item.medium, meta: 2, name: Medium Item Pipe, texture: curvy_pipes:blocks/item_pipe, diameter: 0.4, variant: { Item: { rate: 10. } } }
   - { key: curvy.item.large, meta: 3, name: Large Item Pipe, texture: curvy_pipes:blocks/item_pipe, diameter: 0.8, variant: { Item: { rate: 100. } } }
-  - { key: curvy.item.huge, meta: 4, name: Huge Item Pipe, texture: curvy_pipes:blocks/item_pipe, diameter: 1.6, variant: { Item: { rate: 1E3 } } }
+  - { key: curvy.item.huge, meta: 4, name: Huge Item Pipe, texture: curvy_pipes:blocks/huge_item_pipe, diameter: 1.6, variant: { Item: { rate: 1E3 } } }
 
   # Fluid transfer rate is mB per tick.
-  - { key: curvy.fluid.tiny, meta: 5, name: Tiny Fluid Pipe, texture: curvy_pipes:blocks/fluid_pipe, diameter: 0.1, variant: { Fluid: { rate: 10. } } }
-  - { key: curvy.fluid.small, meta: 6, name: Small Fluid Pipe, texture: curvy_pipes:blocks/fluid_pipe, diameter: 0.2, variant: { Fluid: { rate: 100. } } }
+  - { key: curvy.fluid.tiny, meta: 5, name: Tiny Fluid Pipe, texture: curvy_pipes:blocks/tiny_fluid_pipe, diameter: 0.1, variant: { Fluid: { rate: 10. } } }
+  - { key: curvy.fluid.small, meta: 6, name: Small Fluid Pipe, texture: curvy_pipes:blocks/small_fluid_pipe, diameter: 0.2, variant: { Fluid: { rate: 100. } } }
   - { key: curvy.fluid.medium, meta: 7, name: Medium Fluid Pipe, texture: curvy_pipes:blocks/fluid_pipe, diameter: 0.4, variant: { Fluid: { rate: 1E3 } } }
   - { key: curvy.fluid.large, meta: 8, name: Large Fluid Pipe, texture: curvy_pipes:blocks/fluid_pipe, diameter: 0.8, variant: { Fluid: { rate: 10E3 } } }
-  - { key: curvy.fluid.huge, meta: 9, name: Huge Fluid Pipe, texture: curvy_pipes:blocks/fluid_pipe, diameter: 1.6, variant: { Fluid: { rate: 100E3 } } }
+  - { key: curvy.fluid.huge, meta: 9, name: Huge Fluid Pipe, texture: curvy_pipes:blocks/huge_fluid_pipe, diameter: 1.6, variant: { Fluid: { rate: 100E3 } } }
 
   # Energy transfer rate is FE per tick.
-  - { key: curvy.energy.tiny, meta: 10, name: Tiny Energy Pipe, texture: curvy_pipes:blocks/energy_pipe, diameter: 0.1, variant: { Energy: { rate: 1E3 } } }
-  - { key: curvy.energy.small, meta: 11, name: Small Energy Pipe, texture: curvy_pipes:blocks/energy_pipe, diameter: 0.2, variant: { Energy: { rate: 10E3 } } }
+  - { key: curvy.energy.tiny, meta: 10, name: Tiny Energy Pipe, texture: curvy_pipes:blocks/tiny_energy_pipe, diameter: 0.1, variant: { Energy: { rate: 1E3 } } }
+  - { key: curvy.energy.small, meta: 11, name: Small Energy Pipe, texture: curvy_pipes:blocks/small_energy_pipe, diameter: 0.2, variant: { Energy: { rate: 10E3 } } }
   - { key: curvy.energy.medium, meta: 12, name: Medium Energy Pipe, texture: curvy_pipes:blocks/energy_pipe, diameter: 0.4, variant: { Energy: { rate: 100E3 } } }
   - { key: curvy.energy.large, meta: 13, name: Large Energy Pipe, texture: curvy_pipes:blocks/energy_pipe, diameter: 0.8, variant: { Energy: { rate: 1E6 } } }
-  - { key: curvy.energy.huge, meta: 14, name: Huge Energy Pipe, texture: curvy_pipes:blocks/energy_pipe, diameter: 1.6, variant: { Energy: { rate: 10E6 } } }
+  - { key: curvy.energy.huge, meta: 14, name: Huge Energy Pipe, texture: curvy_pipes:blocks/huge_energy_pipe, diameter: 1.6, variant: { Energy: { rate: 10E6 } } }
 
 # Applied Energistics 2 integration (ignored if AE2 is not installed)
 ae2:
@@ -60,8 +60,8 @@ gtceu:
   item_pipes: OffHand
   fluid_pipes: OffHand
 
-# You can customize recipes here.
-# You can also remove them entirely if you want to use other mods to manage recipes.
+# You can customize recipes here. The format is similar to that of vanilla recipe data JSONs.
+# You can also remove this section entirely if you want to use other mods to manage recipes.
 recipes:
   item_base:
     result: { count: 1, item: pipe, data: 1 }
@@ -78,27 +78,13 @@ recipes:
     type: forge:ore_shaped
     key: { A: { type: forge:ore_dict, ore: dustRedstone }, B: { type: forge:ore_dict, ore: stone } }
     pattern: [ ' A ', 'ABA', ' A ' ]
-  item_t2s: { result: { count: 1, item: pipe, data: 1 }, type: minecraft:crafting_shapeless, ingredients: [ &ti { item: pipe, data: 0 }, *ti, *ti, *ti ] }
-  item_s2m: { result: { count: 1, item: pipe, data: 2 }, type: minecraft:crafting_shapeless, ingredients: [ &si { item: pipe, data: 1 }, *si, *si, *si ] }
-  item_m2l: { result: { count: 1, item: pipe, data: 3 }, type: minecraft:crafting_shapeless, ingredients: [ &mi { item: pipe, data: 2 }, *mi, *mi, *mi ] }
-  item_l2h: { result: { count: 1, item: pipe, data: 4 }, type: minecraft:crafting_shapeless, ingredients: [ &li { item: pipe, data: 3 }, *li, *li, *li ] }
-  item_h2l: { result: { count: 4, item: pipe, data: 3 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 4 } ] }
-  item_l2m: { result: { count: 4, item: pipe, data: 2 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 3 } ] }
-  item_m2s: { result: { count: 4, item: pipe, data: 1 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 2 } ] }
-  item_s2t: { result: { count: 4, item: pipe, data: 0 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 1 } ] }
-  fluid_t2s: { result: { count: 1, item: pipe, data: 6 }, type: minecraft:crafting_shapeless, ingredients: [ &tf { item: pipe, data: 5 }, *tf, *tf, *tf ] }
-  fluid_s2m: { result: { count: 1, item: pipe, data: 7 }, type: minecraft:crafting_shapeless, ingredients: [ &sf { item: pipe, data: 6 }, *sf, *sf, *sf ] }
-  fluid_m2l: { result: { count: 1, item: pipe, data: 8 }, type: minecraft:crafting_shapeless, ingredients: [ &mf { item: pipe, data: 7 }, *mf, *mf, *mf ] }
-  fluid_l2h: { result: { count: 1, item: pipe, data: 9 }, type: minecraft:crafting_shapeless, ingredients: [ &lf { item: pipe, data: 8 }, *lf, *lf, *lf ] }
-  fluid_h2l: { result: { count: 4, item: pipe, data: 8 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 9 } ] }
-  fluid_l2m: { result: { count: 4, item: pipe, data: 7 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 8 } ] }
-  fluid_m2s: { result: { count: 4, item: pipe, data: 6 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 7 } ] }
-  fluid_s2t: { result: { count: 4, item: pipe, data: 5 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 6 } ] }
-  energy_t2s: { result: { count: 1, item: pipe, data: 11 }, type: minecraft:crafting_shapeless, ingredients: [ &te { item: pipe, data: 10 }, *te, *te, *te ] }
-  energy_s2m: { result: { count: 1, item: pipe, data: 12 }, type: minecraft:crafting_shapeless, ingredients: [ &se { item: pipe, data: 11 }, *se, *se, *se ] }
-  energy_m2l: { result: { count: 1, item: pipe, data: 13 }, type: minecraft:crafting_shapeless, ingredients: [ &me { item: pipe, data: 12 }, *me, *me, *me ] }
-  energy_l2h: { result: { count: 1, item: pipe, data: 14 }, type: minecraft:crafting_shapeless, ingredients: [ &le { item: pipe, data: 13 }, *le, *le, *le ] }
-  energy_h2l: { result: { count: 4, item: pipe, data: 13 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 14 } ] }
-  energy_l2m: { result: { count: 4, item: pipe, data: 12 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 13 } ] }
-  energy_m2s: { result: { count: 4, item: pipe, data: 11 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 12 } ] }
-  energy_s2t: { result: { count: 4, item: pipe, data: 10 }, type: minecraft:crafting_shapeless, ingredients: [ { item: pipe, data: 11 } ] }
+
+# Automatically generate shapeless recipes for up conversion (e.g. 4 small to 1 medium) and down conversion (e.g. 1 medium to 4 small) chains.
+# You can remove this section entirely if you don't need them.
+conversion_chains:
+  - factor: 4
+    items: [{item: pipe, data: 0}, {item: pipe, data: 1}, {item: pipe, data: 2}, {item: pipe, data: 3}, {item: pipe, data: 4}]
+  - factor: 4
+    items: [{item: pipe, data: 5}, {item: pipe, data: 6}, {item: pipe, data: 7}, {item: pipe, data: 8}, {item: pipe, data: 9}]
+  - factor: 4
+    items: [{item: pipe, data: 10}, {item: pipe, data: 11}, {item: pipe, data: 12}, {item: pipe, data: 13}, {item: pipe, data: 14}]

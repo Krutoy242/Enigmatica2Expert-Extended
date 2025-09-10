@@ -19,3 +19,7 @@ zenClass CAspect {
 }
 
 global Aspect as CAspect = CAspect();
+
+global Aspects as function(string)CTAspectStack[] = function(aspects as string) as CTAspectStack[] {
+  return scripts.mods.thaumcraft.aspect.toAspects(aspects);
+};

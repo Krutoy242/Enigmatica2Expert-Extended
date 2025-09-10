@@ -7,7 +7,7 @@ var lines = [
   '{',
   '  "name": "Magic Bean",',
   '  "icon": "cyclicmagic:sprout_seed",',
-  '  "category": "Items",',
+  '  "category": "World",',
   '  "pages": [',
   '    {',
   '      "title": "Magic Bean Drops",',

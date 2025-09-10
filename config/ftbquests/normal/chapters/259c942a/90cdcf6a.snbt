@@ -39,6 +39,7 @@
 	],
 	hide_dependency_lines: 1b,
 	dependencies: [
+		"75901790",
 		"f39d66de",
 		"4866ce25",
 		"afa99b2d",
@@ -76,6 +77,7 @@
 		"33d1d4a3",
 		"4baae0d8",
 		"959882ea",
+		"90248713",
 		"876a8652",
 		"8c8d1535",
 		"2a9878a2",

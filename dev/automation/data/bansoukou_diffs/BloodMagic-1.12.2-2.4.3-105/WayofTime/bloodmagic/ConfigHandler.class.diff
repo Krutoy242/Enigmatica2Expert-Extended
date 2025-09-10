@@ -1,7 +1,33 @@
-@@ -64,5 +64,49 @@ public class ConfigHandler {
-         public boolean shouldResyncMeteors = true;
-         @Config.Comment(value={"Should mobs that die through the Well of Suffering Ritual drop items?"})
-         public boolean wellOfSufferingDrops = true;
+@@ -7,10 +7,10 @@
+  *  WayofTime.bloodmagic.ConfigHandler$ConfigClient
+  *  WayofTime.bloodmagic.ConfigHandler$ConfigCompat
+  *  WayofTime.bloodmagic.ConfigHandler$ConfigGeneral
+- *  WayofTime.bloodmagic.ConfigHandler$ConfigValues
+  *  WayofTime.bloodmagic.meteor.MeteorConfigHandler
+  *  net.minecraftforge.common.config.Config
+  *  net.minecraftforge.common.config.Config$Comment
++ *  net.minecraftforge.common.config.Config$RangeInt
+  *  net.minecraftforge.common.config.Config$Type
+  *  net.minecraftforge.common.config.ConfigManager
+  *  net.minecraftforge.fml.client.event.ConfigChangedEvent$OnConfigChangedEvent
+@@ -50,4 +50,63 @@ public class ConfigHandler {
+             MeteorConfigHandler.handleMeteors((boolean)false);
+         }
+     }
++
++    public static class ConfigValues {
++        @Config.Comment(value={"Declares the amount of LP gained per HP sacrificed for the given entity.", "Setting the value to 0 will blacklist it.", "Use the registry name of the entity followed by a ';' and then the value you want.", "Vanilla entities do not require the modid."})
++        public String[] sacrificialValues = new String[]{"villager;100", "slime;15", "enderman;10", "cow;100", "chicken;100", "horse;100", "sheep;100", "wolf;100", "ocelot;100", "pig;100", "rabbit;100"};
++        @Config.Comment(value={"Amount of LP the Coat of Arms should provide for each damage dealt."})
++        @Config.RangeInt(min=0, max=100)
++        public int coatOfArmsConversion = 20;
++        @Config.Comment(value={"Amount of LP the Sacrificial Dagger should provide for each damage dealt."})
++        @Config.RangeInt(min=0, max=10000)
++        public int sacrificialDaggerConversion = 100;
++        @Config.Comment(value={"Will rewrite any default meteor types with new versions.", "Disable this if you want any of your changes to stay, or do not want default meteor types regenerated."})
++        public boolean shouldResyncMeteors = true;
++        @Config.Comment(value={"Should mobs that die through the Well of Suffering Ritual drop items?"})
++        public boolean wellOfSufferingDrops = true;
 +        @Config.Comment(value={"Is Zombie spawn with Imperfect Zombie Ritual should be Blight? (ScallingHealth compat)."})
 +        public boolean imperfectZombieBlight = false;
 +        @Config.Comment(value={"Horizontal max dimension of ritual."})
@@ -46,5 +72,5 @@
 +        public int ritualZephyrRadius = 10;
 +        @Config.Comment(value={"Ticks between operation."})
 +        public int ritualZephyrDelay = 1;
-     }
++    }
  }

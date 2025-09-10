@@ -203,7 +203,9 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
     for c, item in map {
       if (isNull(item)) continue;
       val block = item.asBlock();
-      s ~= (k == 0 ? '' : ',\n') ~ '  "' ~ c ~ '": { "id": "' ~ block.definition.id ~ '", "ignore-meta": true }';
+      s ~= (k == 0 ? '' : ',\n') ~ '  "' ~ c
+        ~ '": { "id": "' ~ block.definition.id ~ '", '
+        ~ (block.meta == 0 ? '"ignore-meta": true' : '"meta": ' ~ block.meta) ~ ' }';
       k += 1;
     }
     s ~= '\n},\n"shape": [';

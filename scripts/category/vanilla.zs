@@ -15,9 +15,6 @@ import loottweaker.vanilla.loot.Functions;
 // Buff Elythra durability (was 432)
 <minecraft:elytra>.maxDamage = 1200;
 
-// Nerf torches from Light level 14
-<minecraft:torch>.asBlock().definition.lightLevel = 0.75f;
-
 <minecraft:cake>.maxStackSize = 64;
 
 // -------------------------------------------------------------------------------
@@ -346,7 +343,7 @@ scripts.process.crush(<minecraft:arrow>, <minecraft:flint>, 'no exceptions', [<o
 
 // Fire charge recycle
 scripts.process.crush(<minecraft:fire_charge> * 3, <minecraft:gunpowder>,
-  'only: eu2Crusher', [<minecraft:blaze_powder>], [0.2f]);
+  'only: IECrusher', [<minecraft:blaze_powder>], [0.2f]);
 
 // ------------------------------------
 

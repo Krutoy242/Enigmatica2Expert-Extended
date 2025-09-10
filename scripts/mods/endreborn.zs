@@ -50,7 +50,7 @@ recipes.remove(<endreborn:block_decorative_lormyte>);
 val LS = <endreborn:item_lormyte_crystal>;
 recipes.addShapeless(LS * 9, [<endreborn:block_decorative_lormyte>]);
 recipes.addShapeless(<endreborn:block_decorative_lormyte>, [LS, LS, LS, LS, LS, LS, LS, LS, LS]);
-scripts.lib.dropt.addDrop(<endreborn:block_lormyte_crystal>, <endreborn:item_lormyte_crystal>);
+scripts.lib.dropt.addDrop(<endreborn:block_lormyte_crystal>, [<endreborn:item_lormyte_crystal>]);
 
 // Fix automatic recipe
 mods.actuallyadditions.Crusher.removeRecipe(<endreborn:death_essence>);

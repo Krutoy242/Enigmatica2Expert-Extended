@@ -1,7 +1,7 @@
 {
 	title: "{q.extra_utilities.enchanter.name}",
 	x: 3.8333333333333335d,
-	y: 5.0d,
+	y: 3.6d,
 	text: [
 		"{q.extra_utilities.enchanter.desc}"
 	],

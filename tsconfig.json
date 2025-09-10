@@ -4,8 +4,10 @@
     "experimentalDecorators": true,
     "module": "ESNext",
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
   },
-  "include": ["**/*.js", "**/*.ts"],
+  "include": ["**/*.js", "**/*.mjs", "**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

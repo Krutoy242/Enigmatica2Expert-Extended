@@ -1,4 +1,11 @@
-@@ -8,14 +8,10 @@
+@@ -2,21 +2,16 @@
+  * Decompiled with CFR 0.152.
+  * 
+  * Could not load the following classes:
+- *  com.bartz24.voidislandcontrol.PlatformCommand
+  *  com.bartz24.voidislandcontrol.VoidIslandControlSaveData
+  *  com.bartz24.voidislandcontrol.api.IslandGen
+  *  com.bartz24.voidislandcontrol.api.IslandManager
   *  com.bartz24.voidislandcontrol.api.IslandPos
   *  com.bartz24.voidislandcontrol.config.ConfigOptions
   *  com.bartz24.voidislandcontrol.config.ConfigOptions$CommandSettings$CommandBlockType
@@ -13,7 +20,7 @@
   *  net.minecraft.command.CommandException
   *  net.minecraft.command.ICommandSender
   *  net.minecraft.entity.player.EntityPlayer
-@@ -29,9 +25,7 @@
+@@ -30,9 +25,7 @@
   *  net.minecraft.util.text.TextFormatting
   *  net.minecraft.world.GameType
   *  net.minecraft.world.World
@@ -23,7 +30,7 @@
   *  net.minecraftforge.event.entity.living.LivingEvent$LivingUpdateEvent
   *  net.minecraftforge.event.entity.player.PlayerInteractEvent
   *  net.minecraftforge.event.world.WorldEvent$Save
-@@ -39,9 +33,6 @@
+@@ -40,9 +33,6 @@
   *  net.minecraftforge.fml.common.eventhandler.SubscribeEvent
   *  net.minecraftforge.fml.common.gameevent.PlayerEvent$PlayerLoggedInEvent
   *  net.minecraftforge.fml.common.gameevent.PlayerEvent$PlayerRespawnEvent
@@ -33,7 +40,7 @@
   *  org.apache.commons.lang3.StringUtils
   */
  package com.bartz24.voidislandcontrol;
-@@ -52,7 +43,6 @@ import com.bartz24.voidislandcontrol.api.IslandGen;
+@@ -53,7 +43,6 @@ import com.bartz24.voidislandcontrol.api.IslandGen;
  import com.bartz24.voidislandcontrol.api.IslandManager;
  import com.bartz24.voidislandcontrol.api.IslandPos;
  import com.bartz24.voidislandcontrol.config.ConfigOptions;
@@ -41,7 +48,7 @@
  import java.util.ArrayList;
  import java.util.Random;
  import java.util.UUID;
-@@ -60,9 +50,6 @@ import javax.annotation.Nullable;
+@@ -61,9 +50,6 @@ import javax.annotation.Nullable;
  import net.minecraft.block.Block;
  import net.minecraft.block.BlockCommandBlock;
  import net.minecraft.block.properties.IProperty;
@@ -51,7 +58,7 @@
  import net.minecraft.command.CommandException;
  import net.minecraft.command.ICommandSender;
  import net.minecraft.entity.player.EntityPlayer;
-@@ -76,73 +63,53 @@ import net.minecraft.util.text.TextComponentString;
+@@ -77,73 +63,53 @@ import net.minecraft.util.text.TextComponentString;
  import net.minecraft.util.text.TextFormatting;
  import net.minecraft.world.GameType;
  import net.minecraft.world.World;
@@ -104,7 +111,7 @@
 -            if (autoCreate && !IslandManager.worldOneChunk) {
 -                if (player instanceof EntityPlayerMP) {
 -                    try {
--                        PlatformCommand.newPlatform((EntityPlayerMP)player, new String[]{"create", "bypass"});
+-                        PlatformCommand.newPlatform((EntityPlayerMP)((EntityPlayerMP)player), (String[])new String[]{"create", "bypass"});
 +        if (!event.player.func_130014_f_().field_72995_K) {
 +            EntityPlayer player = event.player;
 +            if (!(player.field_71093_bK != ConfigOptions.worldGenSettings.baseDimension || IslandManager.spawnedPlayers.size() != 0 && IslandManager.hasPlayerSpawned((UUID)player.func_146103_bH().getId()))) {
@@ -157,7 +164,7 @@
          }
      }
  
-@@ -151,7 +118,7 @@ public class EventHandler {
+@@ -152,7 +118,7 @@ public class EventHandler {
          if (event.getEntityLiving() instanceof EntityPlayer && !event.getEntity().func_130014_f_().field_72995_K) {
              int time;
              EntityPlayer player = (EntityPlayer)event.getEntityLiving();
@@ -166,7 +173,7 @@
                  if (player instanceof EntityPlayerMP && ((EntityPlayerMP)player).field_71134_c.func_73081_b() != GameType.SPECTATOR) {
                      player.func_71033_a(GameType.SPECTATOR);
                  }
-@@ -166,7 +133,7 @@ public class EventHandler {
+@@ -167,7 +133,7 @@ public class EventHandler {
                      IslandManager.tpPlayerToPos((EntityPlayer)player, (BlockPos)new BlockPos(posX, ConfigOptions.islandSettings.islandYLevel, posY), (IslandPos)IslandManager.getVisitLoc((EntityPlayer)player));
                  }
              }
@@ -175,7 +182,7 @@
                  int posY;
                  IslandPos pos = IslandManager.getPlayerIsland((UUID)player.func_146103_bH().getId());
                  int posX = pos == null ? 0 : pos.getX() * ConfigOptions.islandSettings.islandDistance;
-@@ -282,7 +249,7 @@ public class EventHandler {
+@@ -283,7 +249,7 @@ public class EventHandler {
              EntityPlayer player;
              block5: {
                  player = event.player;

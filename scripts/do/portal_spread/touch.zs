@@ -19,7 +19,7 @@ import scripts.do.portal_spread.data.getPortalDataMap;
 import scripts.do.portal_spread.data.portalIdToPos;
 import scripts.do.portal_spread.message.sendPortalMessage;
 import scripts.do.portal_spread.modifiers.getModifiers;
-import scripts.do.portal_spread.modifiers.spreadIndexToRadius;
+import scripts.do.portal_spread.utils.indexToRadius;
 import scripts.do.portal_spread.utils.abs;
 
 // Dump information about portal
@@ -58,7 +58,7 @@ events.onPlayerRightClickBlock(function (e as crafttweaker.event.PlayerInteractB
             trueDelay <= 20.0 ? (20.0 / trueDelay) as int : 1,
             trueDelay > 20.0 ? (trueDelay / 20) as int : 1,
             trueLookup as int,
-            spreadIndexToRadius(maxSpreadIndex),
+            indexToRadius(maxSpreadIndex),
           ],
         });
 

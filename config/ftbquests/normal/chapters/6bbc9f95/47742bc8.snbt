@@ -12,10 +12,10 @@
 		uid: "6d8a0a22",
 		type: "item",
 		items: [{
+			id: "thaumcraft:verdant_charm",
 			tag: {
 				type: 2b
-			},
-			id: "thaumcraft:verdant_charm"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b

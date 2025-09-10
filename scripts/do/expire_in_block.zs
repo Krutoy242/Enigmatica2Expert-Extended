@@ -1,11 +1,10 @@
 #modloaded jei requious
 #priority 10
+#reloadable
 
 import crafttweaker.entity.IEntityItem;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-
-// #loader crafttweaker reloadableevents
 
 static list as IItemStack[string][IIngredient] = {} as IItemStack[string][IIngredient];
 

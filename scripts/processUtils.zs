@@ -2,7 +2,6 @@
 #priority 52
 #reloadable
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
@@ -221,94 +220,6 @@ function enderioXmlRecipe(
 // ////####################################################################
 // Advanced Rocketry
 // ////####################################################################
-function AR_inputItems(inputItems as IIngredient[]) as string {
-  if (isNull(inputItems)) return '';
-  var s = '';
-  for ii in inputItems {
-    var display as string = null;
-    var id as string = null;
-    var meta as int = 0;
-    var type as string = null;
-    val oreRegex = '<ore:(.*)>( \\* \\d+)?';
-    if (ii.commandString.matches(oreRegex)) {
-      type = 'oreDict';
-      id = ii.commandString.replaceAll(oreRegex, '$1');
-      display = id;
-    }
-    else {
-      for in_it in ii.items {
-        type = 'itemStack';
-        display = in_it.displayName;
-        id = in_it.definition.id;
-        meta = in_it.damage;
-        break;
-      }
-    }
-    s = s ~ '    <' ~ type ~ '>' ~ id ~ ' ' ~ ii.amount ~ ((meta != 0) ? ' ' ~ meta : '') ~ '</' ~ type ~ '>\n';
-  }
-  return s;
-}
-
-function AR_inputLiquids(inputLiquids as ILiquidStack[]) as string {
-  if (isNull(inputLiquids)) return '';
-  var s = '';
-  for ii in inputLiquids {
-    s = s ~ '    <fluidStack>' ~ ii.name ~ ' ' ~ ii.amount ~ '</fluidStack>\n';
-  }
-  return s;
-}
-
-function avdRockXmlRecipeEx(
-  filename as string,
-  inputItems as IIngredient[],
-  inputLiquids as ILiquidStack[],
-  outputItems as IItemStack[],
-  outputLiquids as ILiquidStack[] = null,
-  options as IData = null
-) as void {
-  if (!utils.DEBUG) return;
-  val dOpt = D(options);
-
-  // Dumpt all names for inputs and outputs
-  var out_name as string = null;
-
-  var s
-      = AR_inputItems(inputItems) ~ AR_inputLiquids(inputLiquids) ~ '    </input><output>\n';
-
-  // Outputs
-  if (!isNull(outputItems)) {
-    for ii in outputItems {
-      if (ii.items.length > 0) {
-        val out_it = ii.items[0];
-        out_name = (isNull(out_name) ? out_it.displayName : (out_name ~ '+'));
-        s = s ~ '    <itemStack>' ~ out_it.definition.id ~ ' ' ~ ii.amount ~ ' ' ~ out_it.damage ~ '</itemStack>\n';
-      }
-    }
-  }
-  if (!isNull(outputLiquids)) {
-    for ii in outputLiquids {
-      out_name = (isNull(out_name) ? ii.displayName : (out_name ~ '+'));
-      s = s ~ '    <fluidStack>' ~ ii.name ~ ' ' ~ ii.amount ~ '</fluidStack>\n';
-    }
-  }
-  s = s ~ '    </output></Recipe>';
-
-  // Add prefix
-  s = '  <!-- [' ~ out_name ~ '] -->\n' ~ '  <Recipe timeRequired="' ~ dOpt.getInt('timeRequired', 10) ~ '" power="' ~ dOpt.getInt('power', 40000) ~ '"><input>\n' ~ s;
-
-  xmlRecipe('./config/advRocketry/' ~ filename ~ '.xml', s);
-}
-
-function avdRockXmlRecipe(
-  filename as string,
-  inputItems as IIngredient[],
-  inputLiquids as ILiquidStack[],
-  outputItems as IItemStack[],
-  outputLiquids as ILiquidStack[]
-) as void {
-  avdRockXmlRecipeEx(filename, inputItems, inputLiquids, outputItems, outputLiquids, null);
-}
-
 static fluidMaxInput as int[string] = {
   PrecisionAssembler: 32000,
 } as int[string];

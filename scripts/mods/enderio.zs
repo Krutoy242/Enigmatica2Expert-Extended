@@ -184,8 +184,8 @@ craft.remake(<enderio:item_basic_capacitor>, ['pretty',
 });
 mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .outputs(<enderio:item_basic_capacitor> * 64)
-  .input(<ore:stickTitaniumIridium> * 32)
-  .input(<ore:dustBedrock> * 32)
+  .inputOre(<ore:stickTitaniumIridium>, 32)
+  .inputOre(<ore:dustBedrock>, 32)
   .input(<thermalfoundation:material:515> * 32)
   .input(<threng:material> * 32)
   .power(320000).timeRequired(20).build();
@@ -302,7 +302,7 @@ recipes.addShaped(<enderio:block_niard>, [
   [<ore:ingotFakeIron>, <ore:barsIron>, <ore:ingotFakeIron>]]);
 
 // Compat of nano glowstone
-scripts.process.crush(<enderio:item_material:76>, <enderio:block_holier_fog> * 2, 'only: Macerator eu2crusher AEGrinder crushingBlock',
+scripts.process.crush(<enderio:item_material:76>, <enderio:block_holier_fog> * 2, 'only: Macerator IECrusher AEGrinder crushingBlock',
   [<enderio:block_holier_fog> * 2, <minecraft:clay_ball>, <minecraft:glowstone_dust>], [0.6f, 0.1f, 0.1f]);
 
 // Compunent for nano-glowstone compat
@@ -821,16 +821,14 @@ recipes.remove(<enderio:item_material:67>);
 scripts.do.expire_in_block.set(<ore:itemPulsatingPowder>, { 'cyclicmagic:fire_dark': <enderio:item_material:67> });
 
 // [Conduit Binder]*24 from [Crushed End Stone]*2[+3]
-scripts.processUtils.avdRockXmlRecipe('Crystallizer', [
-  <ore:dust> * 20, // Dust
-  <ic2:dust:1> * 5, // Clay Dust
-  <nuclearcraft:gem_dust:11> * 5, // Crushed End Stone
-], [
-  <fluid:sand> * 5000,
-], [
-  <enderio:item_material:4> * 64,
-  <enderio:item_material:4> * 56,
-], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .inputOre(<ore:dust>, 20)
+  .input(<ic2:dust:1> * 5)
+  .input(<nuclearcraft:gem_dust:11> * 5)
+  .inputLiquid(<fluid:sand> * 5000)
+  .outputItem(<enderio:item_material:4> * 64)
+  .outputItem(<enderio:item_material:4> * 56)
+  .build();
 
 // Cheaper to let players use it earlier
 // [Totemic Capacitor] from [MV Capacitor][+2]
@@ -897,7 +895,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_alloy_smelter>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_alloy_smelter>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -913,7 +911,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_combustion_generator>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_combustion_generator>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -929,7 +927,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_sag_mill>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_sag_mill>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -945,7 +943,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_vat>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_vat>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -961,7 +959,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_wireless_charger>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_normal_wireless_charger>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -972,16 +970,16 @@ mods.thaumcraft.Infusion.registerRecipe(
   }).spiral(1));
 
 // [Grains of Prescience] from [Prescient Crystal]
-scripts.process.crush(<ore:itemPrecientCrystal>, <enderio:item_material:34>, 'only: eu2Crusher');
+scripts.process.crush(<ore:itemPrecientCrystal>, <enderio:item_material:34>, 'only: IECrusher');
 
 // [Grains of Vibrancy] from [Vibrant Crystal]
-scripts.process.crush(<ore:itemVibrantCrystal>, <enderio:item_material:35>, 'only: eu2Crusher');
+scripts.process.crush(<ore:itemVibrantCrystal>, <enderio:item_material:35>, 'only: IECrusher');
 
 // [Grains of Piezallity] from [Pulsating Crystal]
-scripts.process.crush(<ore:itemPulsatingCrystal>, <enderio:item_material:36>, 'only: eu2Crusher');
+scripts.process.crush(<ore:itemPulsatingCrystal>, <enderio:item_material:36>, 'only: IECrusher');
 
 // [Grains of the End] from [Ender Crystal]
-scripts.process.crush(<ore:itemEnderCrystal>, <enderio:item_material:37>, 'only: eu2Crusher');
+scripts.process.crush(<ore:itemEnderCrystal>, <enderio:item_material:37>, 'only: IECrusher');
 
 // The Vat early alternatives
 function addBrewAlt(fluid as ILiquidStack, ingrs as IIngredient[], output as string, extraIngr as IIngredient = null) as void {

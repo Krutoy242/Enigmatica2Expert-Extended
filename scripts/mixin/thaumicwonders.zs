@@ -139,53 +139,28 @@ zenClass MixinItemTransmuterStone {
   #mixin Overwrite
   function getRefiningResult(input as ItemStack) as ItemStack {
     if (isNull(input) || input.isEmpty()) return null;
-    // print('~~ enter getRefiningResult');
 
     val ids = OreDictionary.getOreIDs(input);
     for oreID in ids {
-      // print('     oreID: '~oreID);
       val inputOre = OreDictionary.getOreName(oreID);
       if (isNull(inputOre)) continue;
-      // print('     inputOre: '~inputOre);
 
-      for orePrefix in ['ore', 'nugget', 'block', 'ingot', 'gem', 'dust', ''] as string[] {
-        // print('       orePrefix: '~orePrefix);
+      for orePrefix in scripts.mods.thaumicwonders.transmuterStone.orePrefixes {
         if (!inputOre.startsWith(orePrefix)) continue;
 
         val inputBase = inputOre.substring(orePrefix.length);
-        val refiningResults = [
-          'Aluminum',        /*🢥*/ 'Titanium',
-          'AstralStarmetal', /*🢥*/ 'Draconium',
-          'CertusQuartz',    /*🢥*/ 'ChargedCertusQuartz',
-          'Cobalt',          /*🢥*/ 'Ardite',
-          'Diamond',         /*🢥*/ 'Sapphire',
-          'Dilithium',       /*🢥*/ 'DimensionalShard',
-          'Emerald',         /*🢥*/ 'Peridot',
-          'gemCoal',         /*🢥*/ 'bitumen',
-          'Iron',            /*🢥*/ 'Gold',
-          'Lead',            /*🢥*/ 'Silver',
-          'oreCoal',         /*🢥*/ 'oreClathrateOilShale',
-          'Platinum',        /*🢥*/ 'Iridium',
-          'Redstone',        /*🢥*/ 'Ruby',
-          'Tin',             /*🢥*/ 'Copper',
-          'Uranium',         /*🢥*/ 'Thorium',
-          'Xorcite',         /*🢥*/ 'Aquamarine',
-        ] as string[];
-        // print('       inputBase: "'~inputBase~'"');
+        val refiningResults = scripts.mods.thaumicwonders.transmuterStone.refiningResults;
         for i in 0 .. refiningResults.length / 2 {
           val k = i * 2;
           val norm = refiningResults[k];
           val invr = refiningResults[k + 1];
-          // print('         k:'~k~' norm: '~norm~' invr: '~invr);
           if (norm != inputBase && invr != inputBase) continue;
 
           val resultOreBase = invr == inputBase ? norm : invr;
           val list as NonNullList = OreDictionary.getOres(orePrefix + resultOreBase);
-          // print('         resultOreBase: '~resultOreBase~' list.size(): '~list.size());
           if (list.size() <= 0) continue;
 
           val item = list.get(0) as ItemStack;
-          // print('         item: '~toString(item));
           if (!isNull(item)) return item;
         }
       }

@@ -16,3 +16,21 @@ top.level.12=§cSupremium (12)§e
 top.level.13=§4Awakened Draconium (13)§e
 top.level.14=§0Chaotic (14)§e
 top.level.15=§0Infinity (15)§e
+
+// Duplicate for Tinker's Construct
+ui.mininglevel.0=§8Flint
+ui.mininglevel.1=§6Copper
+ui.mininglevel.2=§fCertus
+ui.mininglevel.3=§7Iron
+ui.mininglevel.4=§9Lead
+ui.mininglevel.5=§3Osmium
+ui.mininglevel.6=§8Obsidian
+ui.mininglevel.7=§1Cobalt
+ui.mininglevel.8=§5Manyullyn
+ui.mininglevel.9=§aOsgloglas
+ui.mininglevel.10=§bEnderium
+ui.mininglevel.11=§2Terrasteel
+ui.mininglevel.12=§cSupremium
+ui.mininglevel.13=§4Awakened Draconium
+ui.mininglevel.14=§0Chaotic
+ui.mininglevel.15=§0Infinity

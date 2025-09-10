@@ -25,7 +25,7 @@ var lines = [
   '{',
   '  "name": "Solar Panel",',
   '  "icon": "environmentaltech:solar_cont_1",',
-  '  "category": "Energy",',
+  '  "category": "World",',
   '  "pages": [',
   '    {',
   '      "type": "item_list",',

@@ -1,4 +1,4 @@
-#modloaded extrautils2
+#modloaded extrautils2 ic2
 #priority 1
 
 import crafttweaker.item.IIngredient;
@@ -560,7 +560,7 @@ scripts.do.burnt_in_fluid.add(<extrautils2:redorchid>, <blockstate:minecraft:red
 mods.exnihilocreatio.Crook.addRecipe(<extrautils2:ironwood_leaves>, <extrautils2:ironwood_sapling>, 0.2, 0.28);
 
 // Remake removed AA crusher benefits
-scripts.process.crush(<minecraft:gold_ore>, <thermalfoundation:material:1> * 2, 'strict: eu2crusher', [<contenttweaker:dust_tiny_silver>], [1.0f]);
-scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'strict: eu2crusher', [<minecraft:flint>], [0.5f]);
-scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: eu2crusher');
-scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: eu2crusher');
+scripts.process.crush(<minecraft:gold_ore>, <thermalfoundation:material:1> * 2, 'only: IECrusher', [<contenttweaker:dust_tiny_silver>], [1.0f]);
+scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'only: IECrusher', [<minecraft:flint>], [0.5f]);
+scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: IECrusher');
+scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: IECrusher');

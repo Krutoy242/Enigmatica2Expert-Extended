@@ -8,7 +8,7 @@ jobs:
   cf-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - id: release
         uses: gregziegan/fetch-latest-release@v2.0.0
@@ -20,9 +20,14 @@ jobs:
           contents: ${{ steps.release.outputs.body }}
           write-mode: overwrite
 
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --prod
 
       - name: 🖼️ Generate image from md
         run: npx mdimg -i latest_release.md -o latest.png -w 800 --css githubDark
@@ -40,14 +45,13 @@ jobs:
             file: latest.png
         continue-on-error: true
 
-      - run: npm i --omit=dev
-
       - name: 📋 Generate html instead of markdown
         run: node dev/lib/curseforge-md-to-html.js latest_release.md
 
       - name: ⤵️ Prepend Header to HTML
         run: |
-          echo -e '<p><a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases">Changelog</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Abug">Known Bugs</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended#considerations-before-updating">Update Caution</a></p>' | cat - latest_release.html > temp && mv temp latest_release.html
+          HEADER='<p><a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases">Changelog</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Abug">Known Bugs</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended#considerations-before-updating">Update Caution</a></p>'
+          sed -i "1s;^;$HEADER\n;" latest_release.html
 
       - name: 📋 Get content of changelog html
         id: latest_html
@@ -56,7 +60,7 @@ jobs:
           path: latest_release.html
 
       - name: 💽 Download .zip files from latest release
-        uses: robinraju/release-downloader@v1.4
+        uses: robinraju/release-downloader@v1.12
         with:
           latest: true
           fileName: '*.zip'

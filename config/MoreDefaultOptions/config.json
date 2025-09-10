@@ -4,7 +4,8 @@
     "refillDmgThreshold": 0,
     "enableHotbarSwap": true,
     "sortSound": "minecraft:ui.button.click",
-    "buttonColor": "#ffffffff"
+    "buttonColor": "#ffffffff",
+    "buttonEnabled": true
   },
   "ItemSortRules": [
     {

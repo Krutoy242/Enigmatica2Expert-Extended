@@ -1,0 +1,74 @@
+{
+	title: "{q.getting_started.fluxed_modifier.name}",
+	icon: "mekanism:energytablet",
+	x: 7.35d,
+	y: 2.8d,
+	shape: "circle",
+	text: [
+		"{q.getting_started.fluxed_modifier.desc}"
+	],
+	dependencies: [
+		"4fc58528"
+	],
+	size: 0.5d,
+	tasks: [{
+		uid: "a3ab8e79",
+		type: "item",
+		items: [{
+			item: "mekanism:energytablet"
+		},
+		{
+			item: "enderio:item_inventory_charger_simple"
+		},
+		{
+			item: "enderio:item_inventory_charger_basic"
+		},
+		{
+			item: "enderio:item_inventory_charger"
+		},
+		{
+			item: "enderio:item_inventory_charger_vibrant"
+		},
+		{
+			tag: {
+				Energy: 0
+			},
+			id: "thermalexpansion:capacitor"
+		},
+		{
+			Damage: 1s,
+			tag: {},
+			id: "thermalexpansion:capacitor"
+		},
+		{
+			Damage: 2s,
+			tag: {},
+			id: "thermalexpansion:capacitor"
+		},
+		{
+			Damage: 3s,
+			tag: {},
+			id: "thermalexpansion:capacitor"
+		},
+		{
+			Damage: 4s,
+			tag: {
+				Energy: 0
+			},
+			id: "thermalexpansion:capacitor"
+		},
+		{
+			item: "draconicevolution:draconium_capacitor"
+		},
+		{
+			item: "draconicevolution:draconium_capacitor 1 1"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "84f01fec",
+		type: "choice",
+		table: 1
+	}]
+}

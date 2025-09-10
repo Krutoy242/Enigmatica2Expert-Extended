@@ -4,7 +4,7 @@ Tools to communicate between any #loader and #reloadable state
 
 */
 
-#loader contenttweaker crafttweaker
+#loader contenttweaker
 #modloaded crafttweakerutils zenutils
 #priority 10000
 #reloadable
@@ -17,10 +17,8 @@ function set(key as string, value as string) as void {
 
 function setList(key as string, values as string[]) as void {
   var s = values[0];
-  if (values.length > 1) {
-    for i in 1 .. values.length {
-      s ~= ' ' ~ values[i];
-    }
+  for i in 1 .. values.length {
+    s ~= ' ' ~ values[i];
   }
   return set(key, s);
 }

@@ -108,14 +108,14 @@ addChemthrowerEffect(<liquid:curium_246>     , false, false, 'chemicals' , 2, [<
       [`text${i}`]: m[2],
     }),{}),
 }) */
-addChemthrowerEffect(<liquid:ic2superheated_steam>,true , false, 'chemicals', 14);
-addChemthrowerEffect(<liquid:ic2uu_matter>        ,false, false, 'ic2uu_matter', 50);
-addChemthrowerEffect(<liquid:ic2hot_coolant>      ,false, false, 'chemicals', 11);
-addChemthrowerEffect(<liquid:crystal>             ,false, false, 'chemicals', 20);
-addChemthrowerEffect(<liquid:plasma>              ,true , false, 'chemicals', 28);
-addChemthrowerEffect(<liquid:liquid_death>        ,false, false, 'chemicals', 30);
-addChemthrowerEffect(<liquid:hot_mercury>         ,true , false, 'chemicals', 68);
-addChemthrowerEffect(<liquid:neutronium>          ,false, false, 'chemicals', 360);
+addChemthrowerEffect(<liquid:ic2superheated_steam> ,true , false, 'chemicals', 14);
+addChemthrowerEffect(<liquid:ic2uu_matter>         ,false, false, 'ic2uu_matter', 50);
+addChemthrowerEffect(<liquid:ic2hot_coolant>       ,false, false, 'chemicals', 11);
+addChemthrowerEffect(<liquid:crystal>              ,false, false, 'chemicals', 20);
+addChemthrowerEffect(<liquid:plasma>               ,true , false, 'chemicals', 28);
+addChemthrowerEffect(<liquid:liquid_death>         ,false, false, 'chemicals', 30);
+addChemthrowerEffect(<liquid:high_pressure_mercury>,true , false, 'chemicals', 68);
+addChemthrowerEffect(<liquid:neutronium>           ,false, false, 'chemicals', 360);
 
 // ----------------------------------------
 // 🔥 Flammable fuels that only do damage

@@ -5,31 +5,14 @@
 {{~#each images}} <img src="{{this}}" align=right>{{/each}}
 {{~/if}}
 
-{{~!-- commit link --}} {{#if @root.linkReferences~}}
-  [🖇](
-  {{~#if @root.repository}}
-    {{~#if @root.host}}
-      {{~@root.host}}/
-    {{~/if}}
-    {{~#if @root.owner}}
-      {{~@root.owner}}/
-    {{~/if}}
-    {{~@root.repository}}
-  {{~else}}
-    {{~@root.repoUrl}}
-  {{~/if}}/
-  {{~@root.commit}}/{{hash}})
-{{~else}}
-  {{~shortHash}}
-{{~/if}}
-
+{{~!-- commit link --}}
+ [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/{{hash}})
 
 {{~#if subject}}
   {{~subject}}
 {{~else}}
   {{~header}}
 {{~/if}}
-
 
 {{~!-- commit references --}}
 {{~#if references~}}

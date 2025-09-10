@@ -1,4 +1,8 @@
-@@ -5,7 +5,6 @@
+@@ -2,11 +2,9 @@
+  * Decompiled with CFR 0.152.
+  * 
+  * Could not load the following classes:
+- *  com.bartz24.voidislandcontrol.EventHandler
   *  com.bartz24.voidislandcontrol.api.IslandManager
   *  com.bartz24.voidislandcontrol.api.IslandPos
   *  com.bartz24.voidislandcontrol.config.ConfigOptions
@@ -6,7 +10,7 @@
   *  javax.annotation.Nullable
   *  net.minecraft.command.CommandBase
   *  net.minecraft.command.CommandException
-@@ -30,7 +29,6 @@ import com.bartz24.voidislandcontrol.EventHandler;
+@@ -31,7 +29,6 @@ import com.bartz24.voidislandcontrol.EventHandler;
  import com.bartz24.voidislandcontrol.api.IslandManager;
  import com.bartz24.voidislandcontrol.api.IslandPos;
  import com.bartz24.voidislandcontrol.config.ConfigOptions;
@@ -14,7 +18,7 @@
  import java.util.ArrayList;
  import java.util.Collections;
  import java.util.List;
-@@ -85,8 +83,8 @@ implements ICommand {
+@@ -86,8 +83,8 @@ implements ICommand {
      public void func_184881_a(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
          World world = sender.func_130014_f_();
          EntityPlayerMP player = (EntityPlayerMP)world.func_72924_a(sender.func_174793_f().func_70005_c_());
@@ -25,3 +29,11 @@
              return;
          }
          if (args.length == 0) {
+@@ -140,7 +137,7 @@ implements ICommand {
+             item.field_70161_v = player.field_70161_v;
+             player.field_70170_p.func_72838_d((Entity)item);
+         }
+-        EventHandler.spawnPlayer((EntityPlayer)player2, (BlockPos)new BlockPos(0, ConfigOptions.islandSettings.islandYLevel, 0), (boolean)false);
++        EventHandler.spawnPlayer((EntityPlayer)player2, new BlockPos(0, ConfigOptions.islandSettings.islandYLevel, 0), false);
+         player2.func_145747_a((ITextComponent)new TextComponentString("You have been kicked..."));
+     }

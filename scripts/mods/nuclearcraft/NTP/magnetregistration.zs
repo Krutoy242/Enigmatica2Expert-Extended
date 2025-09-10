@@ -7,7 +7,7 @@ import scripts.mods.nuclearcraft.NTP.coilmagnetlist.MagnetInfoList;
 function registerMagnet(info as MagnetInfo) {
   val naming = info.name;
   val lowercase = naming.toLowerCase();
-  mods.nuclearcraft.Registration.registerTurbineCoil(lowercase ~ 'magnet', info.efficiency, info.rule);
+  mods.nuclearcraft.Registration.registerTurbineCoil(`${lowercase}magnet`, info.efficiency, info.rule);
 }
 
 for info in MagnetInfoList {

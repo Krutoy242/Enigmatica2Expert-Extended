@@ -65,7 +65,6 @@ for item in [
   <ic2:upgrade:4>,
   <ic2:upgrade:6>,
   <immersivetech:stone_decoration>,
-  <minecraft:torch>,
   <oeintegration:excavatemodifier>,
   <openblocks:tank>,
   <openblocks:trophy>.withTag({entity_id:'minecraft:blaze'}),
@@ -187,6 +186,9 @@ desc.both(<mekanism:machineblock:6>, 'mekanism_factories');
 desc.both(<mekanism:machineblock:7>, 'mekanism_factories');
 desc.both(<libvulpes:productingot:7>, 'obtained.fabricator_or_excavator'); // Titanium Ingot
 desc.both(<mekanism:tierinstaller:3>, 'mekanism_t_ultimate');
+
+// Remove the TMG Death List from the inventory and drop it on the ground. This prevents a nested NBT issue.
+scripts.lib.tooltip.desc.both(<tombmanygraves:death_list>, 'dropper_into_world');
 
 desc.tooltip(<industrialforegoing:mob_relocator>, 'industrialforegoing:mob_relocator',
 /* Inject_js(config('config/industrialforegoing.cfg').machines.mob_relocator.damage) */

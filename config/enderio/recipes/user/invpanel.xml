@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<recipe name="Conduit, Data" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" />
+        <item name="ELECTRICAL_STEEL" /><item name="REMOTE_AWARENESS_UPGRADE" /><item name="ELECTRICAL_STEEL" />
+        <item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" />
+      </grid>
+      <output name="enderio:item_data_conduit" amount="8" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="DARK_STEEL" /><item name="REMOTE_AWARENESS_UPGRADE" /><item name="DARK_STEEL" />
+        <item name="PULSATING_CRYSTAL" /><item name="SENTIENT_ENDER" /><item name="PULSATING_CRYSTAL" />
+        <item name="DARK_STEEL" /><item name="enderio:block_tank:0" /><item name="DARK_STEEL" />
+      </grid>
+      <output name="enderio:block_inventory_panel" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring white" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeWhite" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:0}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring orange" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeOrange" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:1}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring magenta" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeMagenta" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:2}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring light_blue" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeLightBlue" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:3}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring yellow" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeYellow" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:4}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring lime" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeLime" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:5}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring pink" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyePink" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:6}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring gray" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeGray" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:7}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring silver" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeLightGray" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:8}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring cyan" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeCyan" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:9}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring purple" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyePurple" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:10}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring blue" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeBlue" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:11}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring brown" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeBrown" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:12}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring green" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeGreen" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:13}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring red" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeRed" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:14}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Coloring black" required="true">
+    <crafting>
+      <shapeless>
+        <item name="enderio:block_inventory_panel" /><item name="dyeBlack" />
+      </shapeless>
+      <output name="enderio:block_inventory_panel" nbt='{"enderio:data":{color:15}}' />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Sensor" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="ELECTRICAL_STEEL" /><item name="REMOTE_AWARENESS_UPGRADE" /><item name="ELECTRICAL_STEEL" />
+        <item name="REDSTONE_ALLOY" /><item name="CHASSIS" /><item name="REDSTONE_ALLOY" />
+        <item name="ELECTRICAL_STEEL" /><item name="item:minecraft:comparator"/><item name="ELECTRICAL_STEEL" />
+      </grid>
+      <output name="enderio:block_inventory_panel_sensor" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Tiny" required="true">
+    <crafting>
+      <grid size="2x3">
+        <item name="chestWood" /><item name="REMOTE_AWARENESS_UPGRADE" />
+        <item name="chestWood" /><item name="SIMPLE_CHASSIS" />
+        <item name="chestWood" /><item name="CAPACITOR1"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_tiny" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Small" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item /><item name="SIMPLE_CHASSIPARTS" /><item />
+        <item name="SIMPLE_CHASSIPARTS" /><item name="chestWood" /><item name="SIMPLE_CHASSIPARTS" />
+        <item /><item name="enderio:block_inventory_chest_tiny"/><item />
+      </grid>
+      <output name="enderio:block_inventory_chest_small" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Medium" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item /><item name="SIMPLE_CHASSIPARTS" /><item />
+        <item name="SIMPLE_CHASSIPARTS" /><item name="chestWood" /><item name="SIMPLE_CHASSIPARTS" />
+        <item /><item name="enderio:block_inventory_chest_small"/><item />
+      </grid>
+      <output name="enderio:block_inventory_chest_medium" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Big" required="true">
+    <crafting upgrade="true">
+      <grid size="2x3">
+        <item /><item name="REMOTE_AWARENESS_UPGRADE" />
+        <item name="chestWood" /><item name="CHASSIS" />
+        <item /><item name="enderio:block_inventory_chest_medium"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_big" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Large" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="CHASSIPARTS" /><item name="CHASSIPARTS" /><item name="CHASSIPARTS" />
+        <item name="chestWood" /><item name="enderio:block_inventory_chest_big"/><item name="chestWood" />
+      </grid>
+      <output name="enderio:block_inventory_chest_large" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Huge" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="CHASSIPARTS" /><item name="CHASSIPARTS" /><item name="CHASSIPARTS" />
+        <item name="chestWood" /><item name="enderio:block_inventory_chest_large"/><item name="chestWood" />
+      </grid>
+      <output name="enderio:block_inventory_chest_huge" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Enormous" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item /><item name="REMOTE_AWARENESS_UPGRADE" /><item />
+        <item name="chestWood" /><item name="ENHANCED_CHASSIS" /><item name="chestWood" />
+        <item /><item name="enderio:block_inventory_chest_huge"/><item />
+      </grid>
+      <output name="enderio:block_inventory_chest_enormous" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Warehouse" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item /><item name="ENHANCED_CHASSIPARTS" /><item />
+        <item name="ENHANCED_CHASSIPARTS" /><item name="chestWood" /><item name="ENHANCED_CHASSIPARTS" />
+        <item name="chestWood" /><item name="enderio:block_inventory_chest_enormous"/><item name="chestWood" />
+      </grid>
+      <output name="enderio:block_inventory_chest_warehouse" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Warehouse 13" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item /><item name="ENHANCED_CHASSIPARTS" /><item />
+        <item name="ENHANCED_CHASSIPARTS" /><item name="chestWood" /><item name="ENHANCED_CHASSIPARTS" />
+        <item name="chestWood" /><item name="enderio:block_inventory_chest_warehouse"/><item name="chestWood" />
+      </grid>
+      <output name="enderio:block_inventory_chest_warehouse13" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Panel Remote" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item/><item/><item name="minecraft:heavy_weighted_pressure_plate, PPP_IRON" />
+        <item name="minecraft:heavy_weighted_pressure_plate, PPP_IRON" /><item name="enderio:block_inventory_panel" /><item name="minecraft:heavy_weighted_pressure_plate, PPP_IRON" />
+        <item name="minecraft:heavy_weighted_pressure_plate, PPP_IRON" /><item name="enderio:block_travel_anchor" /><item name="minecraft:heavy_weighted_pressure_plate, PPP_IRON" />
+      </grid>
+      <output name="enderio:item_inventory_remote:0" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Advanced Inventory Panel Remote" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item/><item/><item name="PPP_DARK_STEEL" />
+        <item name="PPP_DARK_STEEL" /><item name="enderio:item_inventory_remote:0" /><item name="PPP_DARK_STEEL" />
+        <item name="PPP_DARK_STEEL" /><item name="enderio:item_travel_staff" /><item name="PPP_DARK_STEEL" />
+      </grid>
+      <output name="enderio:item_inventory_remote:1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Ender Inventory Panel Remote" required="true">
+    <crafting upgrade="true">
+      <grid size="3x3">
+        <item/><item/><item name="PPP_SOULARIUM" />
+        <item name="PPP_SOULARIUM" /><item name="enderio:item_inventory_remote:1" /><item name="PPP_SOULARIUM" />
+        <item name="PPP_SOULARIUM" /><item name="enderio:block_transceiver" /><item name="PPP_SOULARIUM" />
+      </grid>
+      <output name="enderio:item_inventory_remote:2" />
+    </crafting>
+  </recipe>
+
+</enderio:recipes>

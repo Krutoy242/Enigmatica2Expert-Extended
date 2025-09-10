@@ -1,15 +1,19 @@
-# > git config filter.ic2_config_date_update.clean "sed '/^; created /d'"
+# ℹ️ Remove creation date.
+# › git config filter.ic2_config_date_update.clean "grep -v '^; created'"
 config/IC2.ini filter=ic2_config_date_update
 
-# > git config filter.as_config_cleanup.clean "sed '/default: /d'"
-config/astralsorcery/amulet_enchantments.cfg filter=as_config_cleanup
-
-# > git config filter.remove_date.clean "sed 's/#... ... .*$//'"
+# › git config filter.remove_date.clean "sed 's/#... ... .*$//'"
 config/splash.properties filter=remove_date
 config/craftpresence.properties filter=remove_date
 
-# > git config filter.ice_and_fire.clean "sed 's/2.1474836E9/2.14748365E9/'"
+# ℹ️ Remove the enchantment list, as it changes when mods are added or removed.
+# › git config filter.as_config_cleanup.clean "sed '/default: /d'"
+config/astralsorcery/amulet_enchantments.cfg filter=as_config_cleanup
+
+# ℹ️ Unify number format between Forge and Cleanroom.
+# › git config filter.ice_and_fire.clean "sed 's/2.1474836E9/2.14748365E9/'"
 config/ice_and_fire.cfg filter=ice_and_fire
 
-# > git config filter.randomtweaks.clean "if ! grep -q 'pickUpSkeletonArrows' ./config/randomtweaks/randomtweaks.cfg; then sed -i -e '/armorStandSwapping=/a \\n    # Whether burning arrows can set blocks on fire.\n    # Default: true\n    B:burningArrowsSetBlocksOnFire=true' -e '/entityNaNHealthFix=/a \\n    # The farmland trample behavior.\n    # Valid values:\n    # VANILLA\n    # DONT_TRAMPLE_IF_FEATHER_FALLING\n    # DONT_TRAMPLE_IF_FEATHER_FALLING_OR_WET\n    # DONT_TRAMPLE_IF_WET\n    # DONT_TRAMPLE\n    # Default: DONT_TRAMPLE_IF_FEATHER_FALLING\n    S:farmlandTrampleBehavior=DONT_TRAMPLE_IF_FEATHER_FALLING' -e '/moreRomanNumerals=/a \\n    # Allows skeleton arrows to be picked up.\n    # Default: false\n    B:pickUpSkeletonArrows=true' ./config/randomtweaks/randomtweaks.cfg; fi"
-# config/randomtweaks/randomtweaks.cfg filter=randomtweaks
+# ℹ️ Sort the item list, as JEI shuffles it.
+# › git config filter.itemBlacklist.clean 'content=$(cat); (echo "$content" | head -n 12 && echo "$content" | tail -n +13 | head -n -3 | sort -V && echo "$content" | tail -n -3)'
+config/jei/itemBlacklist.cfg filter=itemBlacklist

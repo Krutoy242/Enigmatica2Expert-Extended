@@ -24,7 +24,6 @@
 	hide_dependency_lines: 1b,
 	dependencies: [
 		"fc937313",
-		"d754f8d5",
 		"4b5cf25e",
 		"c4908819",
 		"45d1b85a",

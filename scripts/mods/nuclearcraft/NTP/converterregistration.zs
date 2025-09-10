@@ -7,7 +7,7 @@ import scripts.mods.nuclearcraft.NTP.coilconverterlist.ConverterInfoList;
 function registerConverter(info as ConverterInfo) {
   val naming = info.name;
   val lowercase = naming.toLowerCase();
-  mods.nuclearcraft.Registration.registerTurbineCoil(lowercase ~ 'converter', info.efficiency, info.rule);
+  mods.nuclearcraft.Registration.registerTurbineCoil(`${lowercase}converter`, info.efficiency, info.rule);
 }
 
 for info in ConverterInfoList {

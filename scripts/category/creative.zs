@@ -405,7 +405,7 @@ function advTank(fluid as string) as IIngredient {
 recipes.addShapeless('creative Fluid Tank Frame', creativeFluidTankFrame, [
   advTank('cloud_seed_concentrated'), Bucket('corium'), advTank('essence'),
   Bucket('red_matter'), Bucket('perfect_fuel'), Bucket('ic2uu_matter'),
-  advTank('witchwater'), Bucket('crystal'), advTank('hot_mercury'),
+  advTank('witchwater'), Bucket('crystal'), advTank('high_pressure_mercury'),
 ]);
 
 // *======= Mekanism Creative Tank =======*

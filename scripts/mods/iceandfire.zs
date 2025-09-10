@@ -256,7 +256,13 @@ mods.iceandfire.recipes.addIceDragonForgeRecipe(
   <scalinghealth:heartcontainer>);
 
 // Alt for non-dragon players
-scripts.processUtils.avdRockXmlRecipeEx('Crystallizer', [<cyclicmagic:heart_toxic>], [<fluid:lifeessence> * 1000], [<scalinghealth:heartcontainer>], null, { power: 100000, timeRequired: 20 });
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .input(<cyclicmagic:heart_toxic>)
+  .inputLiquid(<fluid:lifeessence> * 1000)
+  .outputItem(<scalinghealth:heartcontainer>)
+  .power(100000)
+  .timeRequired(20)
+  .build();
 
 // [Fire Dragonsteel Ingot] from [Fire Dragon Blood][+1]
 scripts.process.alloy([

@@ -18,11 +18,7 @@ zenClass MixinTileEntitySilo {
 /*
 Adding core sample trades consume 1-3 seconds load time.
 */
-#mixin
-# {targets: [
-#    "blusunrize.immersiveengineering.common.util.IEVillagerHandler$OreveinMapForEmeralds",
-#    "blusunrize.immersiveengineering.common.util.IEVillagerHandler"
-# ]}
+#mixin {targets: "blusunrize.immersiveengineering.common.util.IEVillagerHandler$OreveinMapForEmeralds"}
 zenClass MixinIEVillagerHandler {
     #mixin Inject {method: "func_190888_a", at: {value: "HEAD"}, cancellable: true}
     function skipCoreSampleTrades(merchant as IMerchant, recipeList as MerchantRecipeList, random as Random, ci as CallbackInfo) as void {

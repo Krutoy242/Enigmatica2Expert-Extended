@@ -1,5 +1,5 @@
 #modloaded thaumicwonders
-#loader mixin crafttweaker
+#loader mixin
 #priority 2000
 
 static orePrefixes as string[] = ['ore', 'nugget', 'block', 'ingot', 'gem', 'dust', ''] as string[];

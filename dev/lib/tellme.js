@@ -1,6 +1,7 @@
 // @ts-check
 
 import _ from 'lodash'
+import { globSync } from 'tinyglobby'
 
 import { config, getCSV, loadText, naturalSort } from './utils.js'
 
@@ -11,7 +12,7 @@ let isBlocks
  */
 export function isBlock(itemID) {
   return (isBlocks ??= new Set(
-    getCSV('config/tellme/blocks-csv.csv').map(o => o['Registry name'])
+    getCSV(globSync('config/tellme/blocks-csv*.csv')[0]).map(o => o['Registry name'])
   )).has(itemID)
 }
 
@@ -22,7 +23,7 @@ let existOreDicts
  */
 export function isODExist(oreName) {
   return (existOreDicts ??= new Set(
-    getCSV('config/tellme/items-csv.csv')
+    getCSV(globSync('config/tellme/items-csv*.csv')[0])
       .map(o => o['Ore Dict keys'].split(','))
       .flat()
   )).has(oreName)
@@ -32,7 +33,7 @@ export function isODExist(oreName) {
 let existItems
 export function isItemExist(id) {
   return (existItems ??= new Set(
-    getCSV('config/tellme/items-csv.csv').map(o => o['Registry name'])
+    getCSV(globSync('config/tellme/items-csv*.csv')[0]).map(o => o['Registry name'])
   )).has(id.split(':').slice(0, 2).join(':'))
 }
 
@@ -43,7 +44,7 @@ let existFluids
  */
 export function isFluidExist(id) {
   return (existFluids ??= new Set(
-    getCSV('config/tellme/fluids-csv.csv').map(o => o.Name)
+    getCSV(globSync('config/tellme/fluids-csv*.csv')[0]).map(o => o.Name)
   )).has(id)
 }
 
@@ -77,7 +78,7 @@ export function getPurged() {
       ),
     ]
       .map(m => m[1])
-      .map(s => s.match(/(<[^>]+?>(.withTag\(.*\))?)/)?.[1])
+      .map(s => s.match(/(<[^>]+>(.withTag\(.*\))?)/)?.[1])
       .filter(Boolean)
   )
 }
@@ -85,12 +86,12 @@ export function getPurged() {
 let itemsTree
 
 export function getItemsTree() {
-  return itemsTree ??= getCSV('config/tellme/items-csv.csv').reduce(
+  return itemsTree ??= getCSV(globSync('config/tellme/items-csv*.csv')[0]).reduce(
     (result, o) => (
       // @ts-expect-error types
-      ((result[o['Registry name']] ??= {})[o['Meta/dmg']] = new Set(
+      (result[o['Registry name']] ??= {})[o['Meta/dmg']] = new Set(
         o['Ore Dict keys'].split(',')
-      )),
+      ),
       result
     ),
     {}
@@ -99,7 +100,7 @@ export function getItemsTree() {
 
 /** @type {function(string,string=):Set<string>} */
 export function getItemOredictSet(id, meta = '0') {
-  return ((getItemsTree()[id] ??= {})[meta === '*' ? 0 : meta] ??= new Set())
+  return (getItemsTree()[id] ??= {})[meta === '*' ? 0 : meta] ??= new Set()
 }
 
 /**
@@ -108,7 +109,7 @@ export function getItemOredictSet(id, meta = '0') {
  * @returns {number[]}
  */
 export function getSubMetas(definition) {
-  return Object.keys((getItemsTree()[definition] ??= {})).map(s => Number(s))
+  return Object.keys(getItemsTree()[definition] ??= {}).map(s => Number(s))
 }
 
 /**
@@ -201,7 +202,7 @@ const getOresByRegexHash = {}
 function getOresByRegex(rgx) {
   if (!oresMap) {
     oresMap = new Map()
-    getCSV('config/tellme/items-csv.csv')
+    getCSV(globSync('config/tellme/items-csv*.csv')[0])
       .filter(o => o['Ore Dict keys'])
       .map(tellmeToObj)
       .forEach((o) => {
@@ -216,8 +217,9 @@ function getOresByRegex(rgx) {
 
   /** @type {Set<TMStack>} */
   const list = new Set()
-  for (const [key, ores] of oresMap)
+  for (const [key, ores] of oresMap) {
     if (rgx.test(key)) ores.forEach(it => list.add(it))
+  }
 
   const result = [...list]
   getOresByRegexHash[rgx.source] = result
@@ -239,8 +241,7 @@ function tellmeToObj(o) {
     hasSubtypes  : o.Subtypes === 'true',
     display      : o['Display name'],
     ores         : o['Ore Dict keys'].split(','),
-    commandString: `<${o['Registry name']}${
-      o['Meta/dmg'] === '0' ? '' : `:${o['Meta/dmg']}`
+    commandString: `<${o['Registry name']}${o['Meta/dmg'] === '0' ? '' : `:${o['Meta/dmg']}`
     }>`,
     withAmount(amount) {
       return this.commandString + (amount > 1 ? ` * ${amount}` : '')
@@ -284,7 +285,7 @@ const modWeights = `
   .split('\n')
   .map(l => l.trim())
   .reverse()
-  .reduce((map, v, i) => ((map[v] = i), map), {})
+  .reduce((map, v, i) => (map[v] = i, map), {})
 
 /**
  * @param {TMStack | string} a
@@ -363,7 +364,7 @@ export function getUnchangedFurnaceRecipes() {
   )
   if (!subSub) return undefined
 
-  return (furnaceRecipesUnchangedHashed = matchFurnaceRecipes(
+  return furnaceRecipesUnchangedHashed = matchFurnaceRecipes(
     subSub
       .split('\n')
       .map(
@@ -374,7 +375,7 @@ export function getUnchangedFurnaceRecipes() {
       )
       .filter(s => s)
       .join('\n')
-  ))
+  )
 }
 
 /**
@@ -388,7 +389,7 @@ export function smelt(tm) {
   if (!r) return undefined
 
   return tellmeToObj(
-    _(getCSV('config/tellme/items-csv.csv'))
+    _(getCSV(globSync('config/tellme/items-csv*.csv')[0]))
       .filter(o => o['Registry name'] == r.out_id)
       .filter(o => o['Meta/dmg'] == (r.out_meta ?? '0'))
       .first()
@@ -451,8 +452,9 @@ export function countBaseOutput(oreBase, multiplier) {
 export function getSomething(ore_base, kindKeys, blacklist = []) {
   const dict = getByOreBase(ore_base)
   blacklist.forEach(key => delete dict[key])
-  for (const kind of kindKeys)
+  for (const kind of kindKeys) {
     if (dict[kind]) return dict[kind]
+  }
 
   for (const kind of ['ore', 'ingot', 'dust']) {
     const smelted = smeltOre(kind + ore_base)
@@ -495,9 +497,9 @@ function matchTableRecipes(text) {
  */
 let tableRecipesCache
 export function getTableRecipes() {
-  return (tableRecipesCache ??= matchTableRecipes(
+  return tableRecipesCache ??= matchTableRecipes(
     getCrtLogBlock('\nRecipes:', '\n[SERVER_STARTED]')
-  ))
+  )
 }
 
 /**
@@ -517,13 +519,13 @@ export function getUnchangedTableRecipes() {
   if (!subSub) return undefined
 
   const subRgx = /\[INITIALIZATION\]\[CLIENT\]\[INFO\] (recipes\.addShape.+)/
-  return (tableUnchangedRecipes = matchTableRecipes(
+  return tableUnchangedRecipes = matchTableRecipes(
     subSub
       .split('\n')
       .map(s => s.match(subRgx)?.[1])
       .filter(s => s)
       .join('\n')
-  ))
+  )
 }
 
 /**
@@ -534,7 +536,7 @@ export function getRemovedRecipes() {
   if (cachedRemovedRecipes) return cachedRemovedRecipes
 
   const tblSet = new Set(getTableRecipes().map(r => r.name))
-  return (cachedRemovedRecipes = getUnchangedTableRecipes().filter(
+  return cachedRemovedRecipes = getUnchangedTableRecipes().filter(
     r => !tblSet.has(r.name)
-  ))
+  )
 }
