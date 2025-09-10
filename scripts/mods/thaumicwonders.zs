@@ -247,7 +247,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_PRIMORDIAL_SIPHON@1', // Research
   <thaumicwonders:primordial_siphon>, // Output
   3, // Instability
-  [<aspect:perditio> * 75, <aspect:aer> * 75, <aspect:ordo> * 75, <aspect:terra> * 75, <aspect:aqua> * 75, <aspect:ignis> * 75, <aspect:mana> * 50],
+  Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
   <thaumcraft:void_siphon>, // Central Item
   Grid(['rM'], {
     'r': <thaumcraft:nugget:10>, // Rare earth
@@ -260,7 +260,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'vis_capacitor', // Name
   'TWOND_VIS_CAPACITOR', // Research
   75, // Vis cost
-  [<aspect:aer> * 3, <aspect:aqua> * 3, <aspect:ordo> * 3],
+  Aspects('3💨 3💧 3⟁'),
   <thaumicwonders:vis_capacitor>, // Output
   Grid(['pretty',
     '  G  ',
@@ -279,7 +279,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_PRIMAL_DESTROYER@1', // Research
   <thaumicwonders:primal_destroyer>.withTag({infench: [{lvl: 3 as short, id: 6 as short}, {lvl: 2 as short, id: 14 as short}]}), // Output
   5, // Instability
-  [<aspect:perditio> * 75, <aspect:aer> * 75, <aspect:ordo> * 75, <aspect:terra> * 75, <aspect:aqua> * 75, <aspect:ignis> * 75, <aspect:mana> * 50],
+  Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
   <iceandfire:dragonbone>, // Central Item
   Grid(['RFNVGVEF'], {
     'F': <thaumadditions:zeith_fur>, // Blue wolf fur
@@ -297,7 +297,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_VOID_BEACON', // Research
   <thaumicwonders:void_beacon>, // Output
   4, // Instability
-  [<aspect:perditio> * 75, <aspect:aer> * 75, <aspect:ordo> * 75, <aspect:terra> * 75, <aspect:aqua> * 75, <aspect:ignis> * 75, <aspect:mana> * 50],
+  Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
   <minecraft:beacon>, // Central Item
   Grid(['IPIPIPIP'], {
     'I': <thaumicaugmentation:material:5>, // Impetus jewel

@@ -681,7 +681,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumcraft:void_siphon>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('VoidSiphon',
   'VOIDSIPHON',
   400,
-  [<aspect:ordo> * 2, <aspect:terra> * 2, <aspect:perditio> * 2],
+  Aspects('2⟁ 2⛰️ 2⚡'),
   <thaumcraft:void_siphon>,
   Grid(['pretty',
     '  T  ',
