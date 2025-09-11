@@ -1,0 +1,7 @@
+{
+    "parent": "block/torch_2",
+    "textures": {
+        "bot_torch": "integrateddynamics:blocks/menril_torch",
+        "top_torch": "integrateddynamics:blocks/menril_torch_glow"
+    }
+}

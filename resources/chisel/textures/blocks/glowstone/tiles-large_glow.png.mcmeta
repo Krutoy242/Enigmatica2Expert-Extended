@@ -1,0 +1,13 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "layer": "BLOOM",
+        "type": "ctm",
+        "textures": [
+            "chisel:blocks/glowstone/tiles-large-ctm_glow"
+        ],
+        "extra": {
+        "light": 16
+            }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/torch_wall_2",
+    "textures": {
+        "bot_torch": "iceandfire:blocks/dread_torch",
+        "top_torch": "iceandfire:blocks/dread_torch_glow"
+    }
+}
