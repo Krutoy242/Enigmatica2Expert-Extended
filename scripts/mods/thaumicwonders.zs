@@ -403,3 +403,44 @@ for itemCluster in clusterList {
   }
 }
 
+val orePrefixList = [
+  'block',
+  'ingot',
+  'dust',
+  'nugget',
+  'ore',
+  '',
+] as string[];
+
+val oreSufixList = {
+  'Draconium':'AstralStarmetal',
+  'Aluminium':'Titanium',
+  'coal':'bitumen',
+  'Ardite':'Cobalt',
+  'Dilithium':'DimensionalShard',
+  'Redstone':'Ruby',
+  'Iron':'Gold',
+  'Lead':'Silver',
+  'Peridot':'Emerald',
+  'Xorcite':'Aquamarine',
+  'Iridium':'Platinum',
+  'CertusQuartz':'ChargedCertusQuartz',
+  'Uranium':'Thorium',
+  'Copper':'Tin',
+  'Diamond':'Sapphire',
+} as string[string];
+
+for item1, item2 in oreSufixList {
+  for orePrefix in orePrefixList{
+    val ore1 = oreDict.get(orePrefix ~ item1);
+    val ore2 = oreDict.get(orePrefix ~ item2);
+    val item1 = utils.oreToItem(ore1);
+    val item2 = utils.oreToItem(ore2);
+    if(!ore1.empty && !isNull(item2)){
+      mods.thaumicwonders.CatalyzationChamber.addTransmuterRecipe(ore1, item2);
+    }
+    if(!ore2.empty && !isNull(item1)){
+      mods.thaumicwonders.CatalyzationChamber.addTransmuterRecipe(ore2, item1);
+    }
+  }
+} 
