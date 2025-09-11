@@ -676,6 +676,23 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('automatedcrossbow',
     'B': <minecraft:bow:*>, // Bow
   }).shaped());
 
+// [Void siphon]
+mods.thaumcraft.Infusion.removeRecipe(<thaumcraft:void_siphon>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('VoidSiphon',
+  'VOIDSIPHON',
+  400,
+  Aspects('2⟁ 2⛰️ 2⚡'),
+  <thaumcraft:void_siphon>,
+  Grid(['pretty',
+    '  T  ',
+    'B M B',
+    'S S S'], {
+    'S': <thaumcraft:stone_arcane>, // Arcane stone
+    'B': <thaumcraft:plate>, // Brass plate
+    'M': <thaumcraft:mechanism_complex>, // Complex arcane mechanism
+    'T': <astralsorcery:itemcraftingcomponent:1>, // Starmetal ingot
+}).shaped());
+
 /*
 ██╗███╗   ██╗███████╗███████╗██████╗ ███╗   ██╗ █████╗ ██╗
 ██║████╗  ██║██╔════╝██╔════╝██╔══██╗████╗  ██║██╔══██╗██║
@@ -799,7 +816,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:shimmerleaf_seed>);
 mods.thaumcraft.Crucible.registerRecipe(
   'shimmerleaf_seed', // Name
   'TWOND_MYSTIC_GARDENING@1', // Research
-  <thaumicwonders:shimmerleaf_seed> * 8, // Output
+  <thaumicwonders:shimmerleaf_seed>, // Output
   <rustic:tomato_seeds>, // Input
   Aspects('60✨')
 );
@@ -808,7 +825,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:cinderpearl_seed>);
 mods.thaumcraft.Crucible.registerRecipe(
   'cinderpearl_seed', // Name
   'TWOND_MYSTIC_GARDENING@1', // Research
-  <thaumicwonders:cinderpearl_seed> * 8, // Output
+  <thaumicwonders:cinderpearl_seed>, // Output
   <rustic:chili_pepper_seeds>, // Input
   Aspects('60🔥')
 );
@@ -817,7 +834,7 @@ mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:vishroom_spore>);
 mods.thaumcraft.Crucible.registerRecipe(
   'vishroom_spore', // Name
   'TWOND_MYSTIC_GARDENING@1', // Research
-  <thaumicwonders:vishroom_spore> * 8, // Output
+  <thaumicwonders:vishroom_spore>, // Output
   <rustic:apple_seeds>, // Input
   Aspects('60🔮')
 );
@@ -1202,7 +1219,6 @@ mods.thaumcraft.SalisMundus.addSingleConversion(<ore:plankWood>, <thaumcraft:pla
 mods.thaumcraft.SalisMundus.addSingleConversion(<ore:logWood>, <thaumcraft:log_greatwood>);
 scripts.jei.crafting_hints.addInsOutCatl([<ore:plankWood>, <thaumcraft:salis_mundus>], <thaumcraft:plank_silverwood>);
 scripts.jei.crafting_hints.addInsOutCatl([<ore:logWood>, <thaumcraft:salis_mundus>], <thaumcraft:log_greatwood>);
-scripts.jei.crafting_hints.addInsOutCatl([<thaumicwonders:primordial_grain>], <thaumcraft:primordial_pearl:5>, <thaumicwonders:primordial_accretion_chamber>);
 
 <entity:thaumcraft:firebat>.addDrop(<randomthings:flootoken>, 1, 3);
 <entity:thaumcraft:thaumslime>.addPlayerOnlyDrop(<thermalexpansion:florb>.withTag({ Fluid: 'liquiddna' }) % 30, 1, 1);
