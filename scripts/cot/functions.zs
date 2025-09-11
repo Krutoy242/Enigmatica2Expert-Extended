@@ -265,15 +265,15 @@ function consumeSingle(
   return recipeFunction({ '0': stack, '1': item }, false);
 }
 
-val singularIDs = scripts.lib.crossscript.getList('singularIDs');
-val singularOres = scripts.lib.crossscript.getList('singularOres');
-val singularCharges = scripts.lib.crossscript.getList('singularCharges');
+val singularIDs = scripts.cot.def.Op.singularIDs;
+val singularOres = scripts.cot.def.Op.singularOres;
+val singularCharges = scripts.cot.def.Op.singularCharges;
 
 for i, id in singularIDs {
   val fullId = `${id}_singularity`;
   val item = <item:contenttweaker:${fullId}>;
   val ore = oreDict[singularOres[i]];
-  val charge = singularCharges[i] as int;
+  val charge = singularCharges[i];
   val emptyIngr = <avaritia:singularity> ?? <minecraft:nether_star>;
 
   val recipeFunction as function(IItemStack[string],bool)IItemStack = scripts.do.diverse.addRecipe(

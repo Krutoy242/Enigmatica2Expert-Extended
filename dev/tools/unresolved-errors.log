@@ -14,4 +14,34 @@ java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mis
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21)
 	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
   [...]

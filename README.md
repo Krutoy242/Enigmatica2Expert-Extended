@@ -408,6 +408,7 @@ Some screenshots of new worldgen:
   - `hei_bookmarks.ini` for item bookmarks.
   - `XaeroWaypoints/` and `XaeroWorldMap/` for map and waypoints.
   - `config/xaero*` for Xaero maps configs.
+  - `schematics/` for custom schematics.
   - `saves/` folders for worlds.
 
 - **It's still reporting about duplicates.**

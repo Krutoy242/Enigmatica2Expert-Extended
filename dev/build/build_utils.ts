@@ -10,8 +10,10 @@ import chalk from 'chalk'
 import fast_glob from 'fast-glob'
 import fse from 'fs-extra'
 import logUpdate from 'log-update'
+import { $ } from 'zx'
 
 const { rmSync } = fse
+const $$ = $({ stdio: 'inherit' })
 
 export async function confirm(msg: string) {
   const result = await p.confirm({ message: msg })
@@ -105,5 +107,27 @@ export function getBoxForLabel(label: string) {
         }
       )
     )
+  }
+}
+
+export async function commitOrFixup(fileName: string, commitMsg: string) {
+  // Check for staged files
+  const hasStagedFilesProc = await $`git diff --cached --quiet`.nothrow()
+  if (hasStagedFilesProc.exitCode !== 0) {
+    return 'There are staged files. Please unstage them before proceeding.'
+  }
+
+  // Add file to staging
+  await $$`git add ${fileName}`
+
+  // Check if a commit with the same message already exists
+  const logProc = await $`git log --grep=${`^${commitMsg}$`} --format=%H -n 1`.nothrow()
+  const similarCommitSha = logProc.stdout.trim()
+
+  if (similarCommitSha) {
+    await $$`git commit --fixup=${similarCommitSha}`
+  }
+  else {
+    await $$`git commit -m ${commitMsg}`
   }
 }

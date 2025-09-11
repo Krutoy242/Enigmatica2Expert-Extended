@@ -1,4 +1,10 @@
 {
+	icon: {
+		tag: {
+			type: "uncommon"
+		},
+		id: "ftbquests:lootcrate"
+	},
 	x: 8.125d,
 	y: 6.04d,
 	text: [
@@ -11,10 +17,10 @@
 		uid: "4c82097f",
 		type: "item",
 		items: [{
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		}],
 		count: 9L
 	}],
@@ -23,10 +29,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

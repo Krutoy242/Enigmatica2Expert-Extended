@@ -110,7 +110,7 @@ q.getting_started.sharpness_modifier.name=锋利强化
 q.getting_started.sharpness_modifier.desc=每一级§f锋利§r增加：\n+ §a1§r 基础伤害\n+ 基础伤害的 §a10%%§r\n+ §a基础伤害 * 强化等级⁴ / 20000§r 作为高等级加成\n\n完整公式为：\n§7base+lvl+\n0.1*lvl*base+\nbase*lvl^4/20000§r\n\n例如，如果你的武器造成 10 点伤害，那么\n§2锋利等级§r：§a总伤害§r\n§21§r：§a12§r\n§25§r：§a20§r\n§210§r：§a35§r\n§220§r：§a130§r\n\n§6对于 20 点基础伤害§r\n§21§r：§a23§r\n§25§r：§a35§r\n§210§r：§a60§r\n§220§r：§a240§r\n\n§c对于基础伤害=40§r\n§21§r：§a45§r\n§25§r：§a66§r\n§210§r：§a110§r\n§220§r：§a460§r
 q.getting_started.harvest_level_7.name=挖掘等级 7
 q.getting_started.harvest_level_7.desc=钴罕见地生成在下界。阿迪特也可以完成任务，它们具有相同的挖掘等级。\n\n§2完成这个任务即可进入地狱，即使你生命值不够。
-q.getting_started.loot_crate.desc=你可以结合战利品箱来制作下一级别的产品。
+q.getting_started.loot_crate.desc=你可以将它们分解成9个更低等级的战利品箱。
 q.getting_started.pigiron_ingot.desc=带有“美味”特性的材料也会恢复营养值。
 q.getting_started.chunk_loaders.name=区块加载器
 q.getting_started.chunk_loaders.desc=可以帮助加载更多区块的方块和物品。

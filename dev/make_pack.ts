@@ -14,16 +14,16 @@
 /* eslint-disable regexp/no-misleading-capturing-group */
 /* eslint-disable regexp/no-super-linear-backtracking */
 
-import { resolve } from 'node:path'
 import process from 'node:process'
 
 import * as p from '@clack/prompts'
 import ignore from 'ignore'
+import { resolve } from 'pathe'
 import { replaceInFile } from 'replace-in-file'
 import { $, fs } from 'zx'
 
-import { getIgnoredFiles, removeFiles } from './build/build_utils.js'
-import { manageSFTP } from './build/sftp.js'
+import { commitOrFixup, getIgnoredFiles, removeFiles } from './build/build_utils'
+import { manageSFTP } from './build/sftp'
 import { generateChangelog } from './tools/changelog/changelog'
 
 const { existsSync, readFileSync } = fs
@@ -64,7 +64,9 @@ const serverSetupConfig = 'server/server-setup-config.yaml'
 
 const s = p.spinner()
 
-s.message('🧼 Clear your working tree and rebase')
+p.note(await commitOrFixup('dev/TODO.md', 'build: 📝update TODO'))
+
+await p.confirm({message: '🧼 Clear your working tree and rebase'})
 
 if (await p.confirm({message: `Generate Changelog?`})) {
   const changelogPath = 'CHANGELOG-latest.md'
@@ -98,16 +100,39 @@ if (await p.confirm({message: `Generate Changelog?`})) {
   ])
   s.stop('Updating version in files')
 
-  p.note('Manually fix changelog and close file', '✍')
+  // Some files need to be assumed unchanged
+  // to prevent them always clutter git
+  const skipWorktreeList = [
+    'minecraftinstance.json',
+    'config/crash_assistant/modlist.json',
+  ]
+
+  const filesToCommit = [
+    'config/CustomMainMenu/mainmenu.json',
+    'dev/version.txt',
+    'manifest.json',
+    'config/endermodpacktweaks/modpack.cfg',
+    serverSetupConfig,
+    changelogPath,
+  ].concat(skipWorktreeList)
 
   await Promise.all([
-    $$`bun E:/dev/mc-icons/src/cli.ts ${changelogPath} --silent --no-short --modpack=e2ee --treshold=2`
-      .then(async () => $$`git add -f config/CustomMainMenu/mainmenu.json dev/version.txt manifest.json config/endermodpacktweaks/modpack.cfg config/crash_assistant/modlist.json ${serverSetupConfig} ${changelogPath}`),
-    $$`code --wait ${changelogPath}`
-      .then(async () => $$`git add ${changelogPath}`),
+    $$`bun E:/dev/mc-icons/src/cli.ts ${changelogPath} --silent --no-short --modpack=e2ee --treshold=2`,
+    $$`git update-index --no-skip-worktree ${skipWorktreeList}`,
+  ])
+  p.note('Manually fix changelog and close file', '✍ ')
+
+  await Promise.all([
+    $$`git add -f ${filesToCommit}`,
+    $$`code --wait ${changelogPath}`,
   ])
 
-  await $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`
+  await $$`git add ${changelogPath}`
+
+  await Promise.all([
+    $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`,
+    $$`git update-index --skip-worktree ${skipWorktreeList}`,
+  ])
 }
 
 if (await p.confirm({message: `Add tag?`}))
@@ -154,16 +179,15 @@ if (makeZips) {
     await fs.rm(tmpDir, { recursive: true, force: true })
   }
   catch (err) {
-    p.cancel(`Cannot remove TMP folder ${tmpDir}`)
+    p.cancel(`Cannot remove TMP folder ${tmpDir} ${err}`)
   }
   s.stop(`🪓 Clearing tmp folder ${tmpDir} ... `)
 
   const tmpOverrides = resolve(tmpDir, 'overrides/')
   await fs.mkdir(tmpOverrides, { recursive: true })
 
-  s.start('👬 Cloning latest tag to tmpOverrides...')
+  p.note('Cloning latest tag to tmpOverrides...', '👬 ')
   await $$({ cwd: tmpOverrides })`git clone --recurse-submodules -j8 --depth 1 ${`file://${resolve(process.cwd())}`} .`
-  s.stop('👬 Cloning latest tag to tmpOverrides...')
 
   s.start('⬅️ Cleanse and move manifest.json...')
   const devonlyList = getIgnoredFiles(devonlyIgnore, { cwd: tmpOverrides })
@@ -183,13 +207,11 @@ if (makeZips) {
 
   p.note(removeFiles.length > 0 ? `🧹 Removed non-release files and folders:\n${removedFiles}` : 'Nothing to remove')
 
-  s.start('🏴 Create EN .zip')
+  p.note('Create EN .zip', '🏴 ')
   await $$({ cwd: tmpDir })`7z a -bso0 ${zipPath} .`
-  s.stop('🏴 Create EN .zip')
 
-  s.start('📥 Create server zip')
+  p.note('Create server zip', '📥 ')
   await $$({ cwd: 'server' })`7z a -bso0 ${zipPath_server} .`
-  s.stop('📥 Create server zip')
 }
 
 await manageSFTP(serverSetupConfig)
@@ -205,11 +227,17 @@ if (p.isCancel(inputTitle)) {
 }
 
 if (inputTitle) {
-  s.start('🌍 Releasing on Github ... ')
+  p.note('Releasing on Github ...', '🌍 ')
   const title = `${nextVersion} ${inputTitle.replace(/"/g, '\'')}`.trim()
   await $$`gh release create ${nextVersion} --title=${title} --repo=Krutoy242/Enigmatica2Expert-Extended --notes-file=CHANGELOG-latest.md ${zipPath} ${zipPath_server}`
-    .then(() => p.note('🌍 Releasing on Github ... '))
+
+  p.note('Manually mark additional file as server pack', '🚀 ')
+  await $$`start https://legacy.curseforge.com/minecraft/modpacks/enigmatica-2-expert-extended/files`
+
+  p.outro('Finished!')
 }
+
+process.exit(0)
 
 async function cleanupModlist() {
   const modlistPath = 'config/crash_assistant/modlist.json'

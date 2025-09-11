@@ -2,22 +2,16 @@
 
 🚧✅❌⚠️♻️ List of priorities:
 
-- [x] 💧 `Liquid Chorus` more effective recipe
-- [x] 📖 `Reinforcement` add info about unbreakable on level 10
-- [x] 📖 `Garden Cloche` add to chapter completion requirment
-- [x] 📖 Add quest explaining that Battery and Solar can be replaced in TCon tools
-- [x] 📖 On Chapter completion show `copleted / total` chapter count
-- [ ] 💎 Diamond shouldn't be meltable in smeltery
-- [x] ♻️ Use `.sort()` from ZenUtils instead of ctintegration
-- [ ] ♻️ Completely get rid of `Patchouli_js()` code in .zs files
-- [ ] ♻️ remove `crossscript` since data accessible between loaders
+- [ ] 🧱 Automatically interactive-rebase
+- [x] ♻️ Completely get rid of `Patchouli_js()` code in .zs files
+- [x] ♻️ remove `crossscript` since data accessible between loaders
 - [ ] 👑 Upgrading Draconic tools give Omnopotence
 - [ ] 👑 `Omnopotence` add excavate for any item
 - [ ] 🐛 `64k me storage cell` cant be autocrafted in ME
 - [ ] 🐛 Custom beacons not working on server
-- [ ] 🎁 Disable upcraft for loot chests
+- [x] 📖 Disable upcraft for loot chests
 - [ ] 🟢 Migrate from `UniDict` to `OnlyOneItem`
-- [ ] ✏️ Prevent using Repair Augment to fill Singularities
+- [x] ✏️ Prevent using `Flux Reconstruction` to fill Singularities
 - [ ] ⛏️ Fix Excavate modifier always working at max level
 
 ### "Endgame" expansion
@@ -177,6 +171,7 @@ Planned non-urgent changes, or just good ideas:
 
 ### Other
 
+- [ ] 💎 Diamond shouldn't be meltable in smeltery
 - [ ] 📖 Add emojis 🍎 to chapter finishing messages
 - [ ] 🐦 enable Enchanting speed up for rats
 - [ ] 📀 Add HV wire invincibility TCon trait

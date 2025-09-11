@@ -1,8 +1,9 @@
 #modloaded thaumcraft randomtweaker
-#priority 2000
+#priority 4000
 #reloadable
 
 import thaumcraft.aspect.CTAspectStack;
+import native.java.util.regex.Pattern;
 
 zenClass CAspect {
   zenConstructor() {}
@@ -20,6 +21,88 @@ zenClass CAspect {
 
 global Aspect as CAspect = CAspect();
 
+static emojiMap as CTAspectStack[string] = {
+  '💨': <aspect:aer>,
+  '👽': <aspect:alienis>,
+  '⚗️': <aspect:alkimia>,
+  'ඞ': <aspect:amogus>,
+  '💧': <aspect:aqua>,
+  '✨': <aspect:auram>,
+  '🗡️': <aspect:aversio>,
+  '🐺': <aspect:bestia>,
+  '☀️': Aspect.caeles,
+  '🧠': <aspect:cognitio>,
+  '✊': <aspect:desiderium>,
+  '🐲': <aspect:draco>,
+  '💀': <aspect:exanimis>,
+  '💣': Aspect.exitium,
+  '🔨': <aspect:fabrico>,
+  '♒': Aspect.fluctus,
+  '🧊': <aspect:gelum>,
+  '🌱': <aspect:herba>,
+  '👨': <aspect:humanus>,
+  '🔥': <aspect:ignis>,
+  '🙌': Aspect.imperium,
+  '🧨': Aspect.infernum,
+  '🛠️': <aspect:instrumentum>,
+  '🕯️': <aspect:lux>,
+  '⚙️': <aspect:machina>,
+  '🔷': <aspect:mana>,
+  '🔩': <aspect:metallum>,
+  '⚰️': <aspect:mortuus>,
+  '🏃': <aspect:motus>,
+  '🦄': <aspect:mythus>,
+  '⟁': <aspect:ordo>,
+  '⚡': <aspect:perditio>,
+  '🔄': <aspect:permutatio>,
+  '💪': <aspect:potentia>,
+  '🔮': <aspect:praecantatio>,
+  '🛡️': <aspect:praemunio>,
+  '🐀': <aspect:rattus>,
+  '🩸': <aspect:sanguis>,
+  '🦉': <aspect:sensus>,
+  '🛎️': Aspect.sonus,
+  '👻': <aspect:spiritus>,
+  '🌑': <aspect:tenebrae>,
+  '⛰️': <aspect:terra>,
+  '〇': <aspect:vacuos>,
+  '🍃': Aspect.ventus,
+  '❤️': <aspect:victus>,
+  '🔗': <aspect:vinculum>,
+  '👁️': Aspect.visum,
+  '🍇': <aspect:vitium>,
+  '💎': <aspect:vitreus>,
+  '🕊️': <aspect:volatus>,
+};
+
+static numberPattern as Pattern = Pattern.compile('^\\d+');
+
 global Aspects as function(string)CTAspectStack[] = function(aspects as string) as CTAspectStack[] {
-  return scripts.mods.thaumcraft.aspect.toAspects(aspects);
+  val aStacks as string[] = aspects.trim().split('\\s+');
+  if (aStacks.length <= 0) return [] as CTAspectStack[];
+  val result = arrayOf(aStacks.length, null as CTAspectStack) as CTAspectStack[];
+  for i, aStack in aStacks {
+    if (aStack.length() < 1) {
+      logger.logWarning(`Empty aspect string in: ${aspects}`);
+      continue;
+    }
+    var aspect as CTAspectStack = null;
+    val matcher = numberPattern.matcher(aStack);
+    if (matcher.find()) {
+      val numberStr = matcher.group(0) as string;
+      val aspectAmount = numberStr as int;
+      aspect = emojiMap[aStack.substring(numberStr.length())];
+      if (!isNull(aspect))
+        aspect = aspectAmount == 1 ? aspect : aspect * aspectAmount;
+    }
+    else {
+      aspect = emojiMap[aStack];
+    }
+    if (isNull(aspect)) {
+      logger.logWarning(`Aspect not found: ${aStack}`);
+      continue;
+    }
+    result[i] = aspect;
+  }
+  return result;
 };
