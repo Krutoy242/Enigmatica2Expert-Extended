@@ -986,6 +986,86 @@
   "value": ["thaumcraft:essentia_component_64k"]}
   ,{"op":"remove",
   "path":"stages/0/required_item"}
+]},
+
+{"key":"CONGREGA_MYSTICA_BASE","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_BLOOD_SCRIBING_TOOLS","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_ELDRITCH_BLOOD_ORB","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_TAINTTHISTLE","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_WHISPERWEED","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_GOLEM_MAT_IRONWOOD","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_GOLEM_MAT_STEEL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_GOLEM_MAT_TREATED_WOOD","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_DRILL_HEAD_THAUMIUM","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_DRILL_HEAD_VOID","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]},
+
+{"key":"CM_UPGRADE_REFINING","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]},
+
+{"key":"CM_CASTER_FLUX","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]},
+
+{"key":"CM_CASTER_BOUND","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]},
+
+{"key":"CM_CASTER_ELEMENTIUM","ops":[
+  {"op":"remove",
+  "path":"meta"}
 ]}
 
 ]
