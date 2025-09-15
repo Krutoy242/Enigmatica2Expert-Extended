@@ -19,6 +19,8 @@ val ore_liquid_exceptions = {
 } as string[string];
 
 for ore_entry in oreDict {
+  if (ore_entry.empty) continue;
+
   val name = ore_entry.name;
 
   // Ex Nihilo ore pieces conversion to ores
@@ -126,7 +128,7 @@ for ore_entry in oreDict {
     if (isNull(second) || second.empty) continue;
 
     mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
-      .inputOre(second).outputItem(ore_entry.firstItem * 6).build();
+      .inputOre(second).outputItem(utils.oreToItem(ore_entry) * 6).build();
 
     continue;
   }

@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.1",
+    "@clack/prompts": "^0.11.0",
     "@conventional-changelog/git-client": "^2.5.1",
     "@types/adm-zip": "^0.5.7",
     "@types/fast-levenshtein": "^0.0.4",

@@ -65,7 +65,6 @@ for item in [
   <ic2:upgrade:4>,
   <ic2:upgrade:6>,
   <immersivetech:stone_decoration>,
-  <minecraft:torch>,
   <oeintegration:excavatemodifier>,
   <openblocks:tank>,
   <openblocks:trophy>.withTag({entity_id:'minecraft:blaze'}),

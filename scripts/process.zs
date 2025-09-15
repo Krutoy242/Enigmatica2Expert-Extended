@@ -103,11 +103,10 @@ function sawWood(input as IIngredient, output as IItemStack, exceptions as strin
 // 📦 → 📦 + [📦]?
 function crush(input as IIngredient, output as IItemStack, exceptions as string = null, extra as IItemStack[] = null, extraChance as float[] = null, opts as IData = null) {
   for machine in [
-    'Macerator', 'eu2Crusher',
+    'Macerator',
     'IECrusher', 'SagMill',
-    'Grindstone', 'AEGrinder', 'ThermalCentrifuge',
+    'AEGrinder', 'ThermalCentrifuge',
     'Pulverizer', 'mekCrusher', 'crushingBlock',
-    'MekEnrichment',
   ] as string[] {
     workEx(machine, exceptions, [input], null, [output], null, extra, extraChance, opts);
   }
@@ -158,7 +157,6 @@ function crushRock(input as IIngredient, output as IItemStack[], chances as floa
 function squeeze(input as IIngredient[], fluidOutput as ILiquidStack, exceptions as string = null, itemOutput as IItemStack = null) {
   work(['CrushingTub']       , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.5)]     , null  , null);
   work(['Squeezer']          , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.666667)], null  , null);
-  work(['MechanicalSqueezer'], exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.75)]    , null  , null);
   work(['ForestrySqueezer']  , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.9)]     , null  , null);
   work(['TECentrifuge']      , exceptions, input, null, [iF(itemOutput, 0.75)]       , [fluidOutput]              , null  , null);
   work(['IndustrialSqueezer'], exceptions, input, null, [itemOutput]                 , [fluidOutput]              , null  , null);

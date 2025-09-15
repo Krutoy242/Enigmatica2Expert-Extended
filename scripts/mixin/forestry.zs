@@ -74,15 +74,15 @@ Increase speed and power usage
 */
 #mixin {targets: "forestry.factory.ModuleFactory"}
 zenClass MixinModuleFactory {
-    #mixin ModifyConstant {method: "doInit", constant: {floatValue: 0.125}}
-    function increaseSpeedAndPower0(value as float) as float { return 1.0f; }
+    #mixin ModifyConstant {method: "doInit", constant: {doubleValue: 0.125}}
+    function increaseSpeedAndPower0(value as double) as double { return 1.0; }
 
-    #mixin ModifyConstant {method: "doInit", constant: {floatValue: 0.250}}
-    function increaseSpeedAndPower1(value as float) as float { return 5.0f; }
+    #mixin ModifyConstant {method: "doInit", constant: {doubleValue: 0.25}}
+    function increaseSpeedAndPower1(value as double) as double { return 5.0; }
 
     #mixin ModifyConstant {method: "doInit", constant: {floatValue: 0.05}}
-    function increaseSpeedAndPower2(value as float) as float { return 0.5f; }
+    function increaseSpeedAndPower2(value as float) as float { return 0.05f; }
 
     #mixin ModifyConstant {method: "doInit", constant: {floatValue: 0.10}}
-    function increaseSpeedAndPower3(value as float) as float { return 2.0f; }
+    function increaseSpeedAndPower3(value as float) as float { return 0.15f; }
 }

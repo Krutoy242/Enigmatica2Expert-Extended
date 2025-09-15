@@ -234,7 +234,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "INFUSION", # Research
   <forestry:frame_proven>.withTag({ench: [{}], enchantmentColor: 16579587, Unbreakable: 1 as byte}), # Output
   3, # Instability
-  [<aspect:aer> * 40, <aspect:desiderium> * 40, <aspect:sonus> * 40],
+  Aspects('40💨 40✊ 40🛎️'),
   <forestry:frame_proven>, # Central Item
   Grid(['pretty',
   '  ▲  ',
@@ -296,13 +296,13 @@ val Po = <contenttweaker:ore_phosphor>;
 val Pn = <contenttweaker:nugget_phosphor>;
 recipes.addShapeless('ingot phosphor', PH, [Pn, Pn, Pn, Pn, Pn, Pn, Pn, Pn, Pn]);
 recipes.addShapeless('nuggets phosphor', Pn * 9, [PH]);
-scripts.process.crush(<ore:blockApatite>, Po, 'only: eu2crusher MekEnrichment', [Pn], [0.05]);
+scripts.process.crush(<ore:blockApatite>, Po, 'only: IECrusher', [Pn], [0.05]);
 mods.ic2.ThermalCentrifuge.addRecipe([Po * 9, Pn * 4], <forestry:resource_storage> * 9);
 
 // Phosphor Benefication
 furnace.addRecipe(Pn, Po);
 scripts.processWork.workEx('infernalfurnace', null, [Po], null, null, null, [Pn * 2], [0.5], null);
-scripts.process.crush(Po, Pn, 'only: eu2Crusher IECrusher Pulverizer', [Pn], [0.5]);
+scripts.process.crush(Po, Pn, 'only: IECrusher Pulverizer', [Pn], [0.5]);
 scripts.process.magic([Po], [Pn * 3]);
 
 // Remove automatic TE recipes

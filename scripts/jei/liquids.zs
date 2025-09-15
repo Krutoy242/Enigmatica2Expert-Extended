@@ -31,9 +31,6 @@ interact(<fluid:sand>, <fluid:water>, null, <biomesoplenty:mud>);
 interact(<fluid:hot_spring_water>, <fluid:water>, null, <biomesoplenty:mud>);
 interact(<fluid:honey>, <fluid:water>, null, <biomesoplenty:honey_block>);
 interact(<fluid:blood>, <fluid:water>, null, <biomesoplenty:flesh>);
-interact(<fluid:astralsorcery.liquidstarlight>, <fluid:water>, null, <minecraft:ice>);
-interact(<fluid:astralsorcery.liquidstarlight>, <fluid:lava>, null, <minecraft:sand>);
-interact(<fluid:astralsorcery.liquidstarlight>, <fluid:lava>, null, <astralsorcery:blockcustomsandore>);
 
 interact(<fluid:mana>, null, <thermalfoundation:storage:2>, <thermalfoundation:storage:8>);
 interact(<fluid:mana>, null, <thermalfoundation:storage:3>, <minecraft:gold_block>);

@@ -58,10 +58,10 @@ scripts.jei.crafting_hints.addInsOutCatl(
 ]);
 
 // Tallow
-scripts.process.squeeze([<betteranimalsplus:blubber>], <liquid:lubricant> * 50, 'except: CrushingTub Squeezer MechanicalSqueezer', null);
+scripts.process.squeeze([<betteranimalsplus:blubber>], <liquid:lubricant> * 50, 'except: CrushingTub Squeezer', null);
 
 // Blubber
-mods.thaumcraft.Crucible.registerRecipe('Tallow from blubber', 'HEDGEALCHEMY@1', <thaumcraft:tallow> * 8, <betteranimalsplus:blubber>, [<aspect:ignis> * 4]);
+mods.thaumcraft.Crucible.registerRecipe('Tallow from blubber', 'HEDGEALCHEMY@1', <thaumcraft:tallow> * 8, <betteranimalsplus:blubber>, Aspects('4🔥'));
 
 // [Music Disc] from [Music Disc][+1]
 craft.reshapeless(<betteranimalsplus:record_crab_rave>, 'Cr', {
@@ -92,7 +92,7 @@ craft.make(<betteranimalsplus:turkey_raw>, ['pretty',
 scripts.process.melt(<betteranimalsplus:trillium>, <fluid:coal> * 100);
 
 // Bone source
-scripts.process.crush(<betteranimalsplus:antler>, <minecraft:bone> * 20, 'only: eu2Crusher');
+scripts.process.crush(<betteranimalsplus:antler>, <minecraft:bone> * 20, 'only: IECrusher');
 
 <ore:foodCheese>.remove(<betteranimalsplus:cheese>);
 <ore:listAllmeatraw>.add(<betteranimalsplus:turkey_leg_raw>);

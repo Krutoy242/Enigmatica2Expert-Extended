@@ -61,7 +61,7 @@ async function getModChanges() {
   return generateModsList(
     fresh,
     old,
-    { key, template }
+    { key: String(key), template: String(template) }
   )
 }
 
@@ -180,7 +180,7 @@ const writer: WriterOptions = {
       group.scopes = Object.entries(groupedBy).map(([scope, commits]) => ({
         scope,
         commits,
-      }))
+      })).sort((a, b) => a.scope.localeCompare(b.scope))
     })
 
     return context

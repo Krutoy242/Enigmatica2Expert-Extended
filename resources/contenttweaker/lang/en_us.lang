@@ -247,9 +247,6 @@ e2ee.tconstruct.material.apprentice.description=§oPower of study\n§r1/10 of in
 e2ee.tconstruct.material.spectre_string.name=Spectre String
 e2ee.tconstruct.material.alpha_fur.name=Alpha Fur
 e2ee.tconstruct.material.alpha_fur.description=§bChilling\n§rChills targets or attackers
-e2ee.tconstruct.material.grinding.name=Grinding
-e2ee.tconstruct.material.grinding.description=§oJump!\n§rJump on Ore blocks to crush them into dust.
-e2ee.tconstruct.material.heavy.name=Heavy
 e2ee.tconstruct.material.axing.name=Axing
 e2ee.tconstruct.material.axing.description=§oAxing chad\n§rBreak wood logs to get x4 planks.
 e2ee.tconstruct.material.axing2.name=Axing II
@@ -461,6 +458,7 @@ e2ee.creature_uncapturable=§7This creature can't be captured.
 e2ee.skyblock.need_item=§bTo access the §3Skyblock§b dimension, hold %s§b in your hand and ascend to a height of §3%s§b blocks.
 e2ee.skyblock.stay_forever=§bTo exit the §3Skyblock§b world, leap into the void.\n§bTo make the §3Skyblock§b world your permanent home, use the command §n/island create§r§b.
 e2ee.skyblock.now_skyblocker=§bYou are now bound to the §3Skyblock§b world!\n§8If this was done accidentally, you can reverse the skyblock binding by executing the command §n/gamestage remove @p skyblock§r§8.
+e2ee.stc.granted=§6Standard Template Construct Core granted!
 tooltips.lang.morb_resist=§rEffective against monsters at §4\u003C%s%%§r hearts, or with fewer than §c%s§r hearts total.
 tooltips.lang.not_compact_recipe=§eNot a real recipe! Build anywhere, Conglomerate last
 
@@ -527,7 +525,7 @@ tooltips.lang.removed.crash=§4Removed because it crashes the server
 
 tooltips.lang.requires.rf=Requires %s RF to make.
 tooltips.lang.craftable=Craftable.
-tooltips.lang.mekanism_factories=Factories are made by upgrading Machines in-world with Basic/Advanced/Elite Tier Installers.
+tooltips.lang.mekanism_factories=Factories are made by upgrading Machines in-world with Tier Installers.
 tooltips.lang.mekanism_t_ultimate=§dOnly works on Bins, Energy Cubes, Tanks and Gas Tanks
 tooltips.lang.ic2wrench=You can safely break IC2 machines with a Pickaxe.
 

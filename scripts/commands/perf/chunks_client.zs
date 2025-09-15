@@ -205,15 +205,13 @@ zenClass Messenger {
   }
 
   function isInclude(chunkPosArr as int[], x as int, z as int, dist as int = 0) as bool {
-    if (chunkPosArr.length > 0) {
-      for k in 0 .. chunkPosArr.length / 2 {
-        if (isClose(
-          x, z,
-          chunkPosArr[k * 2],
-          chunkPosArr[k * 2 + 1],
-          dist
-        )) return true;
-      }
+    for k in 0 .. chunkPosArr.length / 2 {
+      if (isClose(
+        x, z,
+        chunkPosArr[k * 2],
+        chunkPosArr[k * 2 + 1],
+        dist
+      )) return true;
     }
     return false;
   }

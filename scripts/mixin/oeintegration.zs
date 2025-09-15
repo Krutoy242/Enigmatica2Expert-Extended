@@ -12,7 +12,7 @@ zenClass MixinIntegrationHandler {
     #mixin Static
     #mixin Redirect
     #{
-    #    method: "performTick",
+    #    method: "changeToolOverwriteTinkers",
     #    at: {
     #       value: "INVOKE",
     #       target: "Lnet/minecraft/nbt/NBTTagCompound;func_74762_e(Ljava/lang/String;)I"

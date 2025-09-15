@@ -69,13 +69,25 @@ for plate, ores in {
 
 recipes.addShapeless('steel_casing_with_tool', <ic2:casing:5> * 2, [<ore:plateSteel>, anyHammer]);
 
-MetalPress.addRecipe(<ic2:casing:0> * 2, <ore:plateBronze>, <immersiveengineering:mold>, 125, 1);
-MetalPress.addRecipe(<ic2:casing:1> * 2, <ore:plateCopper>, <immersiveengineering:mold>, 125, 1);
-MetalPress.addRecipe(<ic2:casing:2> * 2, <ore:plateGold>, <immersiveengineering:mold>, 125, 1);
-MetalPress.addRecipe(<ic2:casing:3> * 2, <ore:plateIron>, <immersiveengineering:mold>, 125, 1);
-MetalPress.addRecipe(<ic2:casing:4> * 2, <ore:plateLead>, <immersiveengineering:mold>, 125, 1);
-MetalPress.addRecipe(<ic2:casing:5> * 2, <ore:plateSteel>, <immersiveengineering:mold>, 125, 1);
-MetalPress.addRecipe(<ic2:casing:6> * 2, <ore:plateTin>, <immersiveengineering:mold>, 125, 1);
+// High-tech recipes for Casings
+for input, output in {
+  <ore:plateBronze>: <ic2:casing:0>,
+  <ore:plateCopper>: <ic2:casing:1>,
+  <ore:plateGold>: <ic2:casing:2>,
+  <ore:plateIron>: <ic2:casing:3>,
+  <ore:plateLead>: <ic2:casing:4>,
+  <ore:plateSteel>: <ic2:casing:5>,
+  <ore:plateTin>: <ic2:casing:6>,
+} as IItemStack[IOreDictEntry] {
+  MetalPress.addRecipe(output * 2, input, <immersiveengineering:mold>, 125, 1);
+
+  mods.advancedrocketry.RecipeTweaker.forMachine('RollingMachine').builder()
+    .inputOre(input, 16)
+    .outputItem(output * 64)
+    .power(10000)
+    .timeRequired(60)
+    .build();
+}
 
 // Sticks and Plates from Small Plate Press
 val smallPlatePressBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder();

@@ -2,18 +2,18 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu({
   typescript: { tsconfigPath: 'tsconfig.json' },
-  gitignore: false,
-  rules    : {
-    'no-console'                : 'off',
-    'node/prefer-global/process': 'off',
-    'ts/no-floating-promises'   : 'error',
+  gitignore : false,
+  rules     : {
+    'no-console'                   : 'off',
+    'node/prefer-global/process'   : 'off',
+    'ts/no-floating-promises'      : 'error',
     'ts/strict-boolean-expressions': 'off',
-    'ts/no-unsafe-assignment': 'off',
+    'ts/no-unsafe-assignment'      : 'off',
 
     // Override @antfu rules to my personal prefferences
     'style/key-spacing'            : ['error', { align: 'colon' }],
     'style/no-extra-parens'        : ['error', 'all', {nestedBinaryExpressions: false, nestedConditionalExpressions: false }],
-    'style/no-multi-spaces'        : 'off',
+    // 'style/no-multi-spaces'        : 'off',
     'style/type-annotation-spacing': 'off',
     'antfu/if-newline'             : 'off',
     'style/object-curly-spacing'   : 'off',
@@ -66,6 +66,11 @@ export default antfu({
     'perfectionist/sort-object-types' : 'error',
     'perfectionist/sort-union-types'  : 'error',
     // 'perfectionist/sort-objects': 'error',
+  },
+}, {
+  files: ['eslint.config.js'],
+  rules: {
+    'ts/no-floating-promises': 'off',
   },
 }, {
   files: ['**/*.md'],

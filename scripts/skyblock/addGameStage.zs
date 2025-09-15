@@ -1,5 +1,5 @@
 #modloaded gamestages
-#priority -1
+#priority -100
 #reloadable
 
 import crafttweaker.data.IData;
@@ -27,6 +27,7 @@ function onFirstLogin(e as crafttweaker.event.PlayerLoggedInEvent) as void {
   } else {
     if (e.player.world.dimensionType == 'planet') {
       scripts.do.omnipotence.op.op.grant(e.player);
+      scripts.do.omnipotence.standard_template_construct.grant(e.player);
     }
     e.player.addGameStage('overworld');
   }

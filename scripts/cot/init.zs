@@ -59,20 +59,17 @@ for craftMat in [
 // --------------------------------------------------------------------
 // Singularities
 // --------------------------------------------------------------------
-static singularIDs as string[] = [];
-static singularOres as string[] = [];
-static singularCharges as string[] = [];
 function buildSingularity(id as string, ore as string, charge as int = 30000, glowing as bool = false) as void {
   val x = VanillaFactory.createExpandItem(`${id}_singularity`);
   x.creativeTab = <creativetab:other>;
   x.maxDamage = 30000;
-  x.noRepair = true;
+  x.setNoRepair();
   x.glowing = glowing;
   x.register();
 
-  singularIDs += id;
-  singularOres += ore;
-  singularCharges += charge;
+  scripts.cot.def.Op.singularIDs.add(id);
+  scripts.cot.def.Op.singularOres.add(ore);
+  scripts.cot.def.Op.singularCharges.add(charge);
 }
 
 buildSingularity('woodweave', 'plankFireproof', 30000);
@@ -82,10 +79,6 @@ buildSingularity('meat', 'listAllmeatraw', 300000);
 buildSingularity('garbage', 'garbage', 10000);
 buildSingularity('machine_case', 'machineCase', 20000000);
 buildSingularity('ultimate', 'singularity', 400000, true);
-
-scripts.lib.crossscript.setList('singularIDs', singularIDs);
-scripts.lib.crossscript.setList('singularOres', singularOres);
-scripts.lib.crossscript.setList('singularCharges', singularCharges);
 // --------------------------------------------------------------------
 
 createBlockStone('compressed_skystone', 6, <blockmaterial:rock>);
@@ -183,20 +176,6 @@ val moltenCheese = MaterialSystem
 moltenCheese.addDataValue('temperature', '300');
 moltenCheese.addDataValue('density', '1004');
 moltenCheese.addDataValue('viscosity', '2000');
-
-// -------------------------------
-// Molten heavy
-// -------------------------------
-val heavyMatBuilder = MaterialSystem
-  .getMaterialBuilder()
-  .setName('Heavy Metal')
-  .setColor(Color.fromHex('444450'))
-  .build();
-
-val molten = heavyMatBuilder.registerPart('molten').getData();
-molten.addDataValue('temperature', '320');
-molten.addDataValue('density', '500000');
-molten.addDataValue('viscosity', '30000');
 
 // -------------------------------
 // Seed

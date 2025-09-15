@@ -131,7 +131,7 @@ mods.forestry.Centrifuge.addRecipe([
 scripts.process.squeeze(
   [<biomesoplenty:bramble_plant>],
   <fluid:potion>.withTag({ Potion: 'minecraft:harming' }) * 150,
-  'except: CrushingTub Squeezer MechanicalSqueezer TECentrifuge',
+  'except: CrushingTub Squeezer TECentrifuge',
   null
 );
 
@@ -140,9 +140,9 @@ scripts.process.squeeze(
 
 // Skyblock alts Hellbark Sapling and lava squeezing
 mods.inworldcrafting.FireCrafting.addRecipe(<biomesoplenty:leaves_3:8> * 2, <ic2:crafting:20>, 30);
-scripts.process.squeeze([<biomesoplenty:log_2:7>], <liquid:lava> * 1500, 'only: Squeezer MechanicalSqueezer', null);
-scripts.process.squeeze([<biomesoplenty:planks_0:11>], <liquid:lava> * 750, 'only: Squeezer MechanicalSqueezer', null);
-scripts.process.squeeze([<biomesoplenty:leaves_3:8>], <liquid:lava> * 240, 'only: Squeezer MechanicalSqueezer', null);
+scripts.process.squeeze([<biomesoplenty:log_2:7>], <liquid:lava> * 1500, 'only: Squeezer', null);
+scripts.process.squeeze([<biomesoplenty:planks_0:11>], <liquid:lava> * 750, 'only: Squeezer', null);
+scripts.process.squeeze([<biomesoplenty:leaves_3:8>], <liquid:lava> * 240, 'only: Squeezer', null);
 
 // [Celestial Crystal Shard] from [Obsidian Shard][+1]
 scripts.process.alloy([<ore:crystalPureFluix>, <tconstruct:shard>.withTag({ Material: 'obsidian' })], <biomesoplenty:crystal_shard>, 'only: Kiln AlloySmelter');

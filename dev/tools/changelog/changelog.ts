@@ -18,3 +18,6 @@ export async function generateChangelog(outputPath: string) {
     outputStream
   )
 }
+
+// eslint-disable-next-line antfu/no-top-level-await
+if (import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href) await generateChangelog('CHANGELOG-latest.md')

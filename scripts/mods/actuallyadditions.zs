@@ -395,11 +395,11 @@ scripts.process.crush(<ore:gemQuartzBlack>, <actuallyadditions:item_dust:7>, cru
 scripts.process.crush(<ore:blockQuartzBlack>, <actuallyadditions:item_dust:7> * 9, crushExceptions, null, null);
 
 // Missed Crushed Emerald recipe
-scripts.process.crush(<ore:gemEmerald>, <actuallyadditions:item_dust:3>, 'Only: Grindstone AEGrinder', null, null);
+scripts.process.crush(<ore:gemEmerald>, <actuallyadditions:item_dust:3>, 'Only: AEGrinder', null, null);
 
 // Recycle Quark crystals
 function recycleCrystal(input as IItemStack, output as IItemStack) {
-  scripts.process.crush(input, output, 'Macerator Grindstone AEGrinder ThermalCentrifuge mekCrusher MekEnrichment SagMill', null, null);
+  scripts.process.crush(input, output, 'Macerator AEGrinder ThermalCentrifuge mekCrusher SagMill', null, null);
   scripts.processWork.workEx('SagMill', null, [input], null, [output], null, null, null, { bonusType: 'MULTIPLY_OUTPUT' });
 }
 recycleCrystal(<quark:crystal:1>, <actuallyadditions:item_crystal_shard> * 3);

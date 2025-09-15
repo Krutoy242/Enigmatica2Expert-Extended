@@ -263,7 +263,7 @@ craft.remake(<rats:marbled_cheese_raw> * 9, ['pretty',
 
 // Raw Plastic from squeeser
 furnace.remove(<rats:raw_plastic>);
-scripts.process.squeeze([<rats:plastic_waste>], null, 'only: Squeezer MechanicalSqueezer TECentrifuge', <rats:raw_plastic>);
+scripts.process.squeeze([<rats:plastic_waste>], null, 'only: Squeezer TECentrifuge', <rats:raw_plastic>);
 
 // Polyethene from rat plastic
 mods.mekanism.enrichment.addRecipe(<rats:raw_plastic> * 16, <mekanism:polyethene>);
@@ -313,7 +313,7 @@ mods.thermalexpansion.Infuser.addRecipe(<rats:charged_creeper_chunk>, <harvestcr
 
 // Psionic rat brain
 mods.thaumcraft.Infusion.registerRecipe('psionic_rat_brain', 'INFUSION', <rats:psionic_rat_brain>, 40,
-  [<aspect:cognitio> * 150, <aspect:alienis> * 40, <aspect:rattus> * 80], <thaumcraft:brain>,
+  Aspects('150🧠 40👽 80🐀'), <thaumcraft:brain>,
   [<rats:charged_creeper_chunk>, <rats:chunky_cheese_token>, <rats:charged_creeper_chunk>, <ore:dustDimensional>,
 	 <rats:charged_creeper_chunk>, <ore:dustDimensional>, <draconicevolution:draconium_block:1>, <rats:charged_creeper_chunk>]
 );
@@ -346,7 +346,7 @@ mods.rats.recipes.removeGemcutterRatRecipe(<rats:little_black_squash_balls>);
 mods.rats.recipes.addGemcutterRatRecipe(<advancedrocketry:misc:1>, <rats:little_black_squash_balls> * 3);
 
 // Black Death Mask Recycle
-scripts.process.crush(<rats:black_death_mask>, <botania:petalblock:15>, 'only: Grindstone SagMill eu2Crusher IECrusher',
+scripts.process.crush(<rats:black_death_mask>, <botania:petalblock:15>, 'only: SagMill IECrusher',
   [<botania:petalblock>, <botania:petalblock:14>, <botania:petalblock:7>], [0.9, 0.8, 0.7]);
 
 // Conflict

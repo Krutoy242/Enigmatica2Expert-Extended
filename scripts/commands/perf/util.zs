@@ -3,7 +3,6 @@
 #reloadable
 
 import mods.zenutils.StringList;
-import mods.ctintegration.util.ArrayUtil;
 import mods.zenutils.StaticString;
 
 /**
@@ -20,8 +19,8 @@ function sortArrayBy(arr as int[], fnc as function(int,int)string) as int[] {
 
 function sortStrListBy(list as StringList, fnc as function(int,int)string) as int[] {
   val sortedData = list.toArray();
-  ArrayUtil.sort(sortedData);
-  ArrayUtil.reverse(sortedData);
+  sortedData.sort();
+  sortedData.reverse();
 
   val result = intArrayOf(sortedData.length, 0);
   for i, line in sortedData {

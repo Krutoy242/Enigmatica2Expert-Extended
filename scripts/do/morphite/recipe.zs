@@ -1,3 +1,4 @@
+#modloaded appliedenergistics2 qmd
 #reloadable
 #priority 2000
 
@@ -10,6 +11,7 @@ static reagents as [IIngredient] = [
   <ore:dustProtactinium231>,
   <ore:ingotBeryllium7>,
   <ore:ingotSodium22>,
+  <ore:ingotCalcium48>,
 ];
 
 static result as [IItemStack] = [];
@@ -64,7 +66,7 @@ for morphCount in 1 .. (gridVolume + 1) {
       }
     }
 
-    recipes.addShaped('morphite_' ~ recipeIndex ~ '_' ~
+    recipes.addHiddenShaped('morphite_' ~ recipeIndex ~ '_' ~
         ((isNull(grid[0]) ? '.' : 'o') ~ (isNull(grid[1]) ? '.' : 'o') ~ '/'
         ~ (isNull(grid[2]) ? '.' : 'o') ~ (isNull(grid[3]) ? '.' : 'o')),
       <minecraft:stone>.withDamage(recipeIndex),

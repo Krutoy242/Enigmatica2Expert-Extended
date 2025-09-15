@@ -361,7 +361,7 @@ recipes.remove(<nuclearcraft:compound:9>);
 scripts.process.crush(
   <biomesoplenty:biome_essence>,
   <nuclearcraft:compound:9>,
-  'only: eu2Crusher IECrusher SAGMill',
+  'only: IECrusher SAGMill',
   [
     <thermalfoundation:material:66>,
     <nuclearcraft:compound:9>,
@@ -578,7 +578,6 @@ return loadJson('exports/recipes/tconstruct__casting_table.json')
   crystal_matrix              : <avaritia:resource:1>,
   neutronium                  : <avaritia:resource:4>,
   tungsten                    : <endreborn:item_ingot_wolframium>,
-  heavy_metal                 : <mechanics:heavy_ingot>,
   electronics                 : <opencomputers:material:8>,
   spectre                     : <randomthings:ingredient:3>,
   fluxed_electrum             : <redstonearsenal:material:32>,
@@ -1107,7 +1106,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "INFUSION", # Research
   <nuclearcraft:wasteland_portal>, # Output
   1, # Instability
-  [<aspect:perditio> * 40, Aspect.exitium * 40],
+  Aspects('40⚡ 40💣'),
   <trinity:solid_trinitite>, # Central Item
   Grid(["pretty",
   "s Q s",

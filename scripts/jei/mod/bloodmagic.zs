@@ -5,7 +5,6 @@
 import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import mods.ctintegration.util.ArrayUtil;
 import mods.randomtweaker.jei.IJeiUtils;
 import mods.requious.AssemblyRecipe;
 import mods.zenutils.StringList;

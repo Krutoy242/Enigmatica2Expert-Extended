@@ -1,29 +1,27 @@
 import type { Options } from 'fast-glob'
 import type ignore from 'ignore'
-import type { InputFieldOptions } from 'terminal-kit/Terminal.js'
 
 import { relative } from 'node:path'
 import process from 'node:process'
 
+import * as p from '@clack/prompts'
 import boxen from 'boxen'
 import chalk from 'chalk'
-import { consola } from 'consola'
 import fast_glob from 'fast-glob'
 import fse from 'fs-extra'
 import logUpdate from 'log-update'
-import terminal_kit from 'terminal-kit'
-
-import {
-  end,
-  write,
-} from '../lib/utils.js'
+import { $ } from 'zx'
 
 const { rmSync } = fse
-
-const { terminal: term } = terminal_kit
+const $$ = $({ stdio: 'inherit' })
 
 export async function confirm(msg: string) {
-  return consola.prompt(msg, { type: 'confirm' })
+  const result = await p.confirm({ message: msg })
+  if (p.isCancel(result)) {
+    p.cancel('Operation cancelled.')
+    process.exit(0)
+  }
+  return result
 }
 
 /**
@@ -94,63 +92,6 @@ export const style = {
   end   : chalk.hex('#2e401c'),
 }
 
-/**
- * Write task in log and execute it
- * @param s Name of the tast would be printed in Log
- * @param fn Function of task
- * @param cwd Optional working path where task is executed
- */
-export function doTask(s: string, fn: () => void, cwd?: string) {
-  const oldCwd = process.cwd()
-  if (cwd) process.chdir(cwd)
-  write(style.label(s))
-  end(fn())
-  if (cwd) process.chdir(oldCwd)
-}
-
-/*
- █████╗ ██╗   ██╗████████╗ ██████╗ ███╗   ███╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗████╗ ████║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-███████║██║   ██║   ██║   ██║   ██║██╔████╔██║███████║   ██║   ██║██║   ██║██╔██╗ ██║
-██╔══██║██║   ██║   ██║   ██║   ██║██║╚██╔╝██║██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
-██║  ██║╚██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
-╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-*/
-
-let STEP = 1
-
-/**
- * Prompt user to write something and press ENTER or ESC
- * @param message message to show
- * @param options message to show
- * @returns inputted string or undefined
- */
-export async function enterString(message: string, options?: InputFieldOptions) {
-  const msg = `[${STEP++}] ${message}`
-  term(style.trace(msg.replace(/(ENTER|ESC)/g, style.info('$1'))))
-  const result = await term.inputField({
-    cancelable: true,
-    ...options ?? {},
-  }).promise
-  term('\n')
-  return result
-}
-
-/**
- * Prompt user to press ENTER or ESC
- * @param message message to show
- * @param condition repeat until true
- * @returns `true` if ENTER pressed, `false` otherwise
- */
-export async function pressEnterOrEsc(message: string, condition?: () => Promise<boolean>) {
-  let oneTime = 0
-  while (condition ? !await condition() : !oneTime++) {
-    if (await enterString(message) === undefined) return false
-  }
-
-  return true
-}
-
 export function getBoxForLabel(label: string) {
   logUpdate.done()
   return function updateBox(...args: any[]) {
@@ -166,5 +107,27 @@ export function getBoxForLabel(label: string) {
         }
       )
     )
+  }
+}
+
+export async function commitOrFixup(fileName: string, commitMsg: string) {
+  // Check for staged files
+  const hasStagedFilesProc = await $`git diff --cached --quiet`.nothrow()
+  if (hasStagedFilesProc.exitCode !== 0) {
+    return 'There are staged files. Please unstage them before proceeding.'
+  }
+
+  // Add file to staging
+  await $$`git add ${fileName}`
+
+  // Check if a commit with the same message already exists
+  const logProc = await $`git log --grep=${`^${commitMsg}$`} --format=%H -n 1`.nothrow()
+  const similarCommitSha = logProc.stdout.trim()
+
+  if (similarCommitSha) {
+    await $$`git commit --fixup=${similarCommitSha}`
+  }
+  else {
+    await $$`git commit -m ${commitMsg}`
   }
 }

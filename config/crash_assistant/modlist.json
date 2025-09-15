@@ -500,10 +500,10 @@
     "modId": "craftpresence",
     "version": "2.6.2"
   },
-  "CraftTweaker2-1.12-4.1.20.707.jar": {
-    "jarName": "CraftTweaker2-1.12-4.1.20.707.jar",
+  "CraftTweaker2-1.12-4.1.20.709.jar": {
+    "jarName": "CraftTweaker2-1.12-4.1.20.709.jar",
     "modId": "crafttweaker",
-    "version": "1.12-4.1.20.707"
+    "version": "1.12-4.1.20.709"
   },
   "crafttweakerutils-0.7.jar": {
     "jarName": "crafttweakerutils-0.7.jar",
@@ -530,10 +530,10 @@
     "modId": "cucumber",
     "version": "1.1.3"
   },
-  "curvy_pipes-1.12.2-1.12.4.jar": {
-    "jarName": "curvy_pipes-1.12.2-1.12.4.jar",
+  "curvy_pipes-1.12.2-1.12.6.jar": {
+    "jarName": "curvy_pipes-1.12.2-1.12.6.jar",
     "modId": "curvy_pipes",
-    "version": "1.12.4"
+    "version": "1.12.6"
   },
   "CustomBackgrounds-MC1.12-1.1.1.jar": {
     "jarName": "CustomBackgrounds-MC1.12-1.1.1.jar",
@@ -630,10 +630,10 @@
     "modId": "enderioendergy",
     "version": "5.3.72"
   },
-  "endermodpacktweaks-0.5.10.jar": {
-    "jarName": "endermodpacktweaks-0.5.10.jar",
+  "endermodpacktweaks-0.5.11.jar": {
+    "jarName": "endermodpacktweaks-0.5.11.jar",
     "modId": "endermodpacktweaks",
-    "version": "0.5.10"
+    "version": "0.5.11"
   },
   "EnderStorage-1.12.2-2.4.6.137-universal.jar": {
     "jarName": "EnderStorage-1.12.2-2.4.6.137-universal.jar",
@@ -659,11 +659,6 @@
     "jarName": "engineersdecor-1.12.2-1.1.5.jar",
     "modId": "engineersdecor",
     "version": "1.1.5"
-  },
-  "EntityCulling-1.12.2-6.5.0.jar": {
-    "jarName": "EntityCulling-1.12.2-6.5.0.jar",
-    "modId": "entityculling",
-    "version": "6.5.0"
   },
   "environmentalmaterials-1.12.2-1.0.20.1.jar": {
     "jarName": "environmentalmaterials-1.12.2-1.0.20.1.jar",
@@ -699,11 +694,6 @@
     "jarName": "eyeofdragons-0.0.2.jar",
     "modId": "eyeofdragons",
     "version": "0.0.2"
-  },
-  "FantasticLib-1.12.2.052.jar": {
-    "jarName": "FantasticLib-1.12.2.052.jar",
-    "modId": "fantasticlib",
-    "version": "1.12.2.052"
   },
   "FarmingForBlockheads_1.12.2-3.1.28.jar": {
     "jarName": "FarmingForBlockheads_1.12.2-3.1.28.jar",
@@ -843,10 +833,10 @@
     "modId": "gunpowderlib",
     "version": "1.12.2-1.1"
   },
-  "HadEnoughItems_1.12.2-4.28.1.jar": {
-    "jarName": "HadEnoughItems_1.12.2-4.28.1.jar",
+  "HadEnoughItems_1.12.2-4.29.7.jar": {
+    "jarName": "HadEnoughItems_1.12.2-4.29.7.jar",
     "modId": "jei",
-    "version": "4.28.1"
+    "version": "4.29.7"
   },
   "HammerLib-1.12.2-12.2.58.jar": {
     "jarName": "HammerLib-1.12.2-12.2.58.jar",
@@ -894,11 +884,6 @@
     "jarName": "iceandfire-1.9.1-1.12.2.jar",
     "modId": "iceandfire",
     "version": "1.9.1"
-  },
-  "IconExporter-1.12.2-1.2.0.jar": {
-    "jarName": "IconExporter-1.12.2-1.2.0.jar",
-    "modId": "iconexporter",
-    "version": "1.12.2-1.2.0"
   },
   "ImmersiveCables-1.12.2-1.3.2.jar": {
     "jarName": "ImmersiveCables-1.12.2-1.3.2.jar",
@@ -1001,10 +986,10 @@
   "JAOPCACustom-1.12-2.2.2.14.jar": {
     "jarName": "JAOPCACustom-1.12-2.2.2.14.jar"
   },
-  "JEI-Utilities-1.12.2-0.2.12.jar": {
-    "jarName": "JEI-Utilities-1.12.2-0.2.12.jar",
+  "JEI-Utilities-1.12.2-0.2.13.jar": {
+    "jarName": "JEI-Utilities-1.12.2-0.2.13.jar",
     "modId": "jeiutilities",
-    "version": "0.2.11"
+    "version": "0.2.13"
   },
   "jei_area_fixer-2.2.0.jar": {
     "jarName": "jei_area_fixer-2.2.0.jar",
@@ -1015,11 +1000,6 @@
     "jarName": "jeibees-0.9.0.5-mc1.12.2.jar",
     "modId": "jeibees",
     "version": "0.9.0.5"
-  },
-  "JEIExporter-1.12.2-0.3.0.jar": {
-    "jarName": "JEIExporter-1.12.2-0.3.0.jar",
-    "modId": "jeiexporter",
-    "version": "0.3.0"
   },
   "jepb-1.12-1.2.1.jar": {
     "jarName": "jepb-1.12-1.2.1.jar",
@@ -1226,6 +1206,11 @@
     "modId": "minieffects",
     "version": "2.3.2"
   },
+  "MmmMmmMmmMmm-1.12-2.0.5.jar": {
+    "jarName": "MmmMmmMmmMmm-1.12-2.0.5.jar",
+    "modId": "testdummy",
+    "version": "2.0.0"
+  },
   "modnametooltip_1.12.2-1.10.1.jar": {
     "jarName": "modnametooltip_1.12.2-1.10.1.jar",
     "modId": "modnametooltip",
@@ -1346,10 +1331,10 @@
     "modId": "oldjava",
     "version": "1.1.11"
   },
-  "ometweaks-1.5.4.jar": {
-    "jarName": "ometweaks-1.5.4.jar",
+  "ometweaks-1.5.5.jar": {
+    "jarName": "ometweaks-1.5.5.jar",
     "modId": "ometweaks",
-    "version": "1.5.4"
+    "version": "1.5.5"
   },
   "omniwand-1.12.2-1.0.1.jar": {
     "jarName": "omniwand-1.12.2-1.0.1.jar",
@@ -1401,23 +1386,23 @@
     "modId": "packagedastral",
     "version": "1.0.4.22"
   },
-  "PackagedAuto-1.12.2-1.0.21.68.jar": {
-    "jarName": "PackagedAuto-1.12.2-1.0.21.68.jar",
+  "PackagedAuto-1.12.2-1.0.23.71.jar": {
+    "jarName": "PackagedAuto-1.12.2-1.0.23.71.jar",
     "modId": "packagedauto",
-    "version": "1.0.21.68"
+    "version": "1.0.23.71"
   },
   "PackagedDraconic-1.12.2-1.0.4.24.jar": {
     "jarName": "PackagedDraconic-1.12.2-1.0.4.24.jar",
     "modId": "packageddraconic",
     "version": "1.0.4.24"
   },
-  "PackagedExCrafting-1.12.2-1.0.3.32.jar": {
-    "jarName": "PackagedExCrafting-1.12.2-1.0.3.32.jar",
+  "PackagedExCrafting-1.12.2-1.0.3.33.jar": {
+    "jarName": "PackagedExCrafting-1.12.2-1.0.3.33.jar",
     "modId": "packagedexcrafting",
-    "version": "1.0.3.32"
+    "version": "1.0.3.33"
   },
-  "Pam\u0027s HarvestCraft 1.12.2zg.jar": {
-    "jarName": "Pam\u0027s HarvestCraft 1.12.2zg.jar",
+  "Pam's HarvestCraft 1.12.2zg.jar": {
+    "jarName": "Pam's HarvestCraft 1.12.2zg.jar",
     "modId": "harvestcraft",
     "version": "1.12.2zg"
   },
@@ -1431,10 +1416,10 @@
     "modId": "patchouli",
     "version": "1.0-28"
   },
-  "patchoulibooks-0.2.6.jar": {
-    "jarName": "patchoulibooks-0.2.6.jar",
+  "patchoulibooks-0.2.7.jar": {
+    "jarName": "patchoulibooks-0.2.7.jar",
     "modId": "patchoulibooks",
-    "version": "0.2.5"
+    "version": "0.2.7-indev"
   },
   "persistency-1.2.0.jar": {
     "jarName": "persistency-1.2.0.jar"
@@ -1493,11 +1478,6 @@
     "jarName": "PrettyBeaches_1.12.2-1.1.0.jar",
     "modId": "prettybeaches",
     "version": "1.1.0"
-  },
-  "ProbeZS-1.18.8.jar": {
-    "jarName": "ProbeZS-1.18.8.jar",
-    "modId": "probezs",
-    "version": "1.18.8"
   },
   "ProjectIntelligence-1.12.2-1.0.9.28-universal.jar": {
     "jarName": "ProjectIntelligence-1.12.2-1.0.9.28-universal.jar",
@@ -1591,11 +1571,6 @@
     "jarName": "reim-0.2.jar",
     "modId": "examplemod",
     "version": "${version}"
-  },
-  "RenderLib-1.12.2-1.4.5.jar": {
-    "jarName": "RenderLib-1.12.2-1.4.5.jar",
-    "modId": "renderlib",
-    "version": "1.4.5"
   },
   "Requious Frakto-0.12.jar": {
     "jarName": "Requious Frakto-0.12.jar",
@@ -1765,11 +1740,6 @@
     "modId": "tconmodmod",
     "version": "1.0.5"
   },
-  "tellme-1.12.2-0.7.0-dev.20200919.184303.jar": {
-    "jarName": "tellme-1.12.2-0.7.0-dev.20200919.184303.jar",
-    "modId": "tellme",
-    "version": "0.7.0-dev.20200919.184303"
-  },
   "terracartreloaded-1.12.2-1.2.3.jar": {
     "jarName": "terracartreloaded-1.12.2-1.2.3.jar",
     "modId": "terracart",
@@ -1779,11 +1749,6 @@
     "jarName": "tesla-core-lib-1.12.2-1.0.18.jar",
     "modId": "teslacorelib",
     "version": "1.12.2-1.0.18"
-  },
-  "TestDummy2-2.0.4.jar": {
-    "jarName": "TestDummy2-2.0.4.jar",
-    "modId": "testdummy",
-    "version": "2.0.0"
   },
   "Thaumcraft-1.12.2-6.1.BETA26.jar": {
     "jarName": "Thaumcraft-1.12.2-6.1.BETA26.jar",
@@ -1835,10 +1800,10 @@
     "modId": "thaumicjei",
     "version": "1.12.2-1.7.0"
   },
-  "thaumictinkerer-1.12.2-5.9.10-Unofficial.jar": {
-    "jarName": "thaumictinkerer-1.12.2-5.9.10-Unofficial.jar",
+  "thaumictinkerer-1.12.2-5.9.13-Unofficial.jar": {
+    "jarName": "thaumictinkerer-1.12.2-5.9.13-Unofficial.jar",
     "modId": "thaumictinkerer",
-    "version": "1.12.2-5.9.10-Unofficial"
+    "version": "1.12.2-5.9.13-Unofficial"
   },
   "thaumicwonders-1.8.4.jar": {
     "jarName": "thaumicwonders-1.8.4.jar",
@@ -1883,8 +1848,8 @@
   "TickCentral-3.2.jar": {
     "jarName": "TickCentral-3.2.jar"
   },
-  "Tinkers\u0027 Addons-1.12.2-1.0.10.jar": {
-    "jarName": "Tinkers\u0027 Addons-1.12.2-1.0.10.jar",
+  "Tinkers' Addons-1.12.2-1.0.10.jar": {
+    "jarName": "Tinkers' Addons-1.12.2-1.0.10.jar",
     "modId": "TinkersAddons",
     "version": "1.0.10"
   },
@@ -1943,8 +1908,8 @@
     "modId": "toughnessbar",
     "version": "2.4"
   },
-  "TravelersBackpack-1.12.2-1.0.35-patched.jar": {
-    "jarName": "TravelersBackpack-1.12.2-1.0.35-patched.jar",
+  "TravelersBackpack-1.12.2-1.0.35.jar": {
+    "jarName": "TravelersBackpack-1.12.2-1.0.35.jar",
     "modId": "travelersbackpack",
     "version": "1.0.35"
   },
@@ -2018,10 +1983,10 @@
     "modId": "unilib",
     "version": "1.1.1"
   },
-  "UniversalTweaks-1.12.2-1.15.2.jar": {
-    "jarName": "UniversalTweaks-1.12.2-1.15.2.jar",
+  "UniversalTweaks-1.12.2-1.16.0.1.jar": {
+    "jarName": "UniversalTweaks-1.12.2-1.16.0.1.jar",
     "modId": "universaltweaks",
-    "version": "1.15.2"
+    "version": "1.16.0.1"
   },
   "useful_railroads-1.12.2-1.1.3.24.jar": {
     "jarName": "useful_railroads-1.12.2-1.1.3.24.jar",
@@ -2116,19 +2081,14 @@
     "modId": "ydt",
     "version": "1.1.0"
   },
-  "zenrecipereloading-1.4.5.jar": {
-    "jarName": "zenrecipereloading-1.4.5.jar",
-    "modId": "zenrecipereloading",
-    "version": "1.4.5"
-  },
   "zentoolforge-1.1.jar": {
     "jarName": "zentoolforge-1.1.jar",
     "modId": "zentoolforge",
     "version": "1.1"
   },
-  "zenutils-1.25.5.jar": {
-    "jarName": "zenutils-1.25.5.jar",
+  "zenutils-1.25.8.jar": {
+    "jarName": "zenutils-1.25.8.jar",
     "modId": "zenutils",
-    "version": "1.25.5"
+    "version": "1.25.8"
   }
 }

@@ -276,58 +276,6 @@ trait.register();
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 // -------------------------------
-// Grinding Tait
-// -------------------------------
-val grindingTrait = ArmorTraitBuilder.create('grinding');
-grindingTrait.color = 0x444450;
-grindingTrait.localizedName = game.localize('e2ee.tconstruct.material.grinding.name');
-grindingTrait.localizedDescription = game.localize('e2ee.tconstruct.material.grinding.description');
-grindingTrait.onFalling = function (trait, armor, player, event) {
-  if (event.entityLivingBase.world.remote) return;
-  scripts.cot.trait.grinding.onFalling(armor, player);
-};
-grindingTrait.onAbility = function (trait, level, world, player) {
-  if (world.remote) return;
-  scripts.cot.trait.grinding.onAbility(trait, level, world, player);
-};
-grindingTrait.register();
-
-// -------------------------------
-// Tic + Conarm Material
-// -------------------------------
-val heavy = ExtendedMaterialBuilder.create('heavy');
-
-heavy.liquid = <liquid:heavy_metal>;
-heavy.castable = true;
-heavy.craftable = false;
-
-heavy.color = 0x444450;
-heavy.addItem(<item:mechanics:heavy_ingot>);
-heavy.representativeItem = <item:mechanics:heavy_ingot>;
-heavy.localizedName = game.localize('e2ee.tconstruct.material.heavy.name');
-heavy.itemLocalizer = function (thisMaterial, itemName) {
-  return game.localize('e2ee.tconstruct.material.heavy.name') + ' ' + itemName;
-};
-heavy.addHeadMaterialStats(-200, 0.1, 15.0, 5);
-heavy.addExtraMaterialStats(-40);
-heavy.addHandleMaterialStats(0.5, -10);
-heavy.addBowMaterialStats(0.1, 0.1, 15);
-heavy.addArrowShaftMaterialStats(0.2, -10);
-
-heavy.addCoreMaterialStats(10, 2.5);
-heavy.addPlatesMaterialStats(0.3, 5, 0);
-heavy.addTrimMaterialStats(0.4);
-
-heavy.addMaterialTrait('heavy', 'head');
-heavy.addMaterialTrait('heavy', 'core');
-heavy.addMaterialTrait('heavy', 'plates');
-heavy.addMaterialTrait('grinding_armor');
-heavy.addProjectileMaterialStats();
-heavy.register();
-
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-// -------------------------------
 // Axe Tait
 // -------------------------------
 var t = TraitBuilder.create('axing');

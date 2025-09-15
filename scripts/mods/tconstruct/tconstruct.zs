@@ -385,9 +385,6 @@ craft.remake(<tconstruct:firewood:1>, ['pretty',
   '~': LiquidIngr('ic2pahoehoe_lava'), // Pahoehoe Lava Bucket
 });
 
-// Nerf stone torch light level
-<tconstruct:stone_torch>.asBlock().definition.lightLevel = 0.75f;
-
 // Remake to fix weird stone rod HEI scrolling
 // [Stone Torch]*4 from [Stone Rod][+1]
 craft.remake(<tconstruct:stone_torch> * 4, [

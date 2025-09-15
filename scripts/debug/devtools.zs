@@ -107,7 +107,7 @@ function dumpMiningLevelChart(world as IWorld, player as IPlayer, pos as IBlockP
   });
 
   val sorted = sorter.toArray();
-  mods.ctintegration.util.ArrayUtil.sort(sorted);
+  sorted.sort();
 
   player.sendMessage('§8Building §6'~sorted.length~' §8entries...');
   val stack = intArrayOf(100, 0);
@@ -145,7 +145,7 @@ function dumpLightSources(player as IPlayer) as void {
         ids += block.id;
       }
     }
-    mods.ctintegration.util.ArrayUtil.sort(ids);
+    ids.sort();
     for id in ids {
       val item = itemUtils.getItem(id);
       if (!isNull(item)) items += item;

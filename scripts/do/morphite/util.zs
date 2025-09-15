@@ -73,31 +73,25 @@ function array_with_1_to_index(arr as int[]) as int {
   var number = 0;
 
   // Segment before i: base (m-1), exclude 1 and m
-  if (i > 0) {
-    for k in 0 .. i {
-      var v = arr[k];
-      v = v > 1 ? v - 1 : v;
-      number = number * (m - 1) + v;
-    }
+  for k in 0 .. i {
+    var v = arr[k];
+    v = v > 1 ? v - 1 : v;
+    number = number * (m - 1) + v;
   }
 
   // Segment between i and j: base m, exclude m
   val intepret_as_1 = swap_addition == 0 ? 1 : m;
-  if (i + 1 < j) {
-    for k in (i + 1) .. j {
-      var v = arr[k];
-      if (v == intepret_as_1) {
-        v = 1;
-      }
-      number = number * m + v;
+  for k in (i + 1) .. j {
+    var v = arr[k];
+    if (v == intepret_as_1) {
+      v = 1;
     }
+    number = number * m + v;
   }
 
   // Segment after j: base (m+1)
-  if ((j + 1) < N) {
-    for k in (j + 1) .. N {
-      number = number * (m + 1) + arr[k];
-    }
+  for k in (j + 1) .. N {
+    number = number * (m + 1) + arr[k];
   }
 
   val final_result = result + number;

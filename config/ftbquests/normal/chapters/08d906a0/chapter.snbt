@@ -1,6 +1,7 @@
 {
 	title: "{q.skyblock.name}",
 	icon: "minecraft:sapling",
+	disable_toast: 1b,
 	always_invisible: 0b,
 	group: 0,
 	default_quest_shape: "diamond"

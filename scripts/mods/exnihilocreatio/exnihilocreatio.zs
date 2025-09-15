@@ -1,4 +1,4 @@
-#modloaded exnihilocreatio
+#modloaded exnihilocreatio excompressum
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -7,14 +7,6 @@ import crafttweaker.item.IItemStack;
 for i in 0 .. 13 {
   itemUtils.getItem('excompressum:bait', i).maxStackSize = 64;
 }
-
-// End Cake
-recipes.remove(<exnihilocreatio:block_end_cake>);
-recipes.addShaped('End Cake',
-  <exnihilocreatio:block_end_cake>,
-  [[<ore:foodCake>, <actuallyadditions:block_misc:8>, <ore:foodCake>],
-    [<actuallyadditions:block_misc:8>, <minecraft:end_crystal>, <actuallyadditions:block_misc:8>],
-    [<ore:foodCake>, <actuallyadditions:block_misc:8>, <ore:foodCake>]]);
 
 // Stone Barrel
 recipes.remove(<exnihilocreatio:block_barrel1>);

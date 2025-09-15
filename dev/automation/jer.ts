@@ -148,9 +148,8 @@ for (const garden of [
 }
 
 ;[...loadText('crafttweaker.log')
-  .matchAll(/Modify drop; Block: (?<block>.+) Drop: (?<stack>.+) (?<luck>\[.*\])/g),
-].forEach(({ groups: { block, stack, luck } }) =>
-  simple(block, stack, parse2DArray(luck).slice(0, 4).map(([o]) => o)))
+  .matchAll(/Modify drop; Block: (?<block>.+) Drop: \[(?<stack>.+)\] (?<luck>\[.*\])/g)].forEach(({ groups: { block, stack, luck } }) =>
+  simple(block, stack.split(', '), parse2DArray(luck).slice(0, 4).map(([o]) => o)))
 
 function parse2DArray(input: string): number[][] {
   // Normalize the input string
@@ -207,7 +206,8 @@ worldGen.forEach((wg) => {
     // .map(([l, v]) => [l, shortenValue(v)])
 
   wg.distrib = clenDistrib(clenDistrib(clenDistrib(simplifyDistrib(levels))))
-    .map(l => l.join(',')).join(';')
+    .map(l => l.join(','))
+    .join(';')
 
   wg.dropsList?.forEach((d) => {
     // Descrease precision of fortunes

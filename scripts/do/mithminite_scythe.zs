@@ -1007,6 +1007,10 @@ events.register(function (e as crafttweaker.event.ProjectileImpactThrowableEvent
 
   if (!scythe.native instanceof EntityMithminiteScythe) return;
 
+  val target as IEntityLivingBase = rayTrace.entity; 
+  
+  if (target instanceof IPlayer && (!server.native.isPVPEnabled() || isNull(player) || player.id == target.id)) return;
+
   var dmg = 100.0;
   var damageSource = crafttweaker.damage.IDamageSource.createEntityDamage('mithminiteScythe', player);
   if(augments has 'praemunio') damageSource.setDamageBypassesArmor();
@@ -1018,8 +1022,6 @@ events.register(function (e as crafttweaker.event.ProjectileImpactThrowableEvent
   if (augments has 'aversio') dmg *= 2.0 + 0.2 * colorCount[3];
 
     if(rayTrace.entity instanceof IEntityLivingBase && !isNull(player)){
-      val target as IEntityLivingBase = rayTrace.entity; 
-
       // MACHINA EFFECT
       if (target.native instanceof native.thaumcraft.common.golems.EntityThaumcraftGolem && augments has 'machina') {
         target.setNBT({ 'ScalingHealth.IsBlight': 1 });

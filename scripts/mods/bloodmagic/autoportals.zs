@@ -174,7 +174,7 @@ function getMedianHeight(w as IWorld, width as int, deph as int, pos as IBlockPo
       k += 1;
     }
   }
-  mods.ctintegration.util.ArrayUtil.sort(arr);
+  arr.sort();
   return arr.length % 2 == 0
     ? (arr[arr.length / 2] + arr[arr.length / 2 + 1]) / 2
     : arr[arr.length / 2];

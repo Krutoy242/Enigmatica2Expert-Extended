@@ -25,8 +25,10 @@ val it = native.ic2.core.uu.UuGraph.iterator();
 while (it.hasNext()) {
   val entry = it.next() as native.java.util.Map.Entry;
   val itemNative = entry.key as native.net.minecraft.item.ItemStack;
-  itemNative.wrapper.only(function (item) { return !item.hasTag; })
-    .addAdvancedTooltip(uuTooltip);
+  if (!isNull(itemNative)) {
+    itemNative.wrapper.only(function (item) { return !item.hasTag; })
+      .addAdvancedTooltip(uuTooltip);
+  }
 }
 
 /*

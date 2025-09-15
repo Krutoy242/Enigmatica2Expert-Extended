@@ -8,6 +8,7 @@ scripts.lib.dropt.addDrop(<advancedrocketry:vitrifiedsand>, [
   <qmd:isotope:5>,
   <qmd:isotope:1>,
   <qmd:isotope>,
+  <qmd:isotope:8>,
 ]);
 <advancedrocketry:geode>.asBlock().definition.resistance = 160;
 <advancedrocketry:vitrifiedsand>.asBlock().definition.resistance = 160;
@@ -710,7 +711,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <advancedrocketry:alienleaves> * 8, // Output
   3, // Instability
-  [<aspect:amogus> * 100],
+  Aspects('100ඞ'),
   <advancedrocketry:moonturf>, // Central Item
   Grid(['pretty',
     'L L L',

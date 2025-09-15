@@ -27,7 +27,7 @@ function addSingularity(item as IItemStack) as void {
   });
 }
 
-for id in scripts.lib.crossscript.getList('singularIDs') {
+for id in scripts.cot.def.Op.singularIDs {
   addSingularity(<item:contenttweaker:${id}_singularity:*>);
 }
 

@@ -42,6 +42,8 @@
         "block": [
           { "name": "bedrock", "weight": 10000 },
           { "name": "advancedrocketry:vitrifiedsand", "weight": 50000 },
+          { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"libvulpes:ore0\", amount: 2000000000, prop: \"varient=8\" } }" },
+          { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"actuallyadditions:block_misc\", amount: 2000000000, prop: \"type=ore_black_quartz\" } }" },
           { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"netherendingores:ore_end_modded_1\", amount: 2000000000, prop: \"blocks=aluminum_ore\" } }" },
           { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"netherendingores:ore_end_modded_1\", amount: 2000000000, prop: \"blocks=certus_quartz_ore\" } }" },
           { "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"netherendingores:ore_end_modded_1\", amount: 2000000000, prop: \"blocks=copper_ore\" } }" },
@@ -75,6 +77,55 @@
         "size-variance": 1,
         "material": "advancedrocketry:vitrifiedsand"
       }
+    },
+    "asteroid_belt_pyro_lake": {
+      "distribution": "uniform",
+      "generator": {
+        "type": "geode",
+        "block": "thermalfoundation:fluid_pyrotheum",
+        "crust": "advancedrocketry:vitrifiedsand",
+        "material": "advancedrocketry:vitrifiedsand"
+      },
+      "cluster-count": 10,
+      "chunk-chance": 1,
+      "min-height": 0,
+      "max-height": 255,
+      "dimension": { "restriction": "whitelist", "value": [124] }
+    },
+    "asteroid_belt_enriched_lake": {
+      "distribution": "uniform",
+      "generator": {
+        "type": "geode",
+        "block": "advancedrocketry:enrichedlavafluid",
+        "crust": { "name": "extrautils2:decorativesolid", "properties": { "decorstates": "sandy_glass" } },
+        "material": "advancedrocketry:vitrifiedsand"
+      },
+      "cluster-count": 10,
+      "chunk-chance": 1,
+      "min-height": 0,
+      "max-height": 255,
+      "dimension": { "restriction": "whitelist", "value": [124] }
+    },
+    "asteroid_belt_singularities": {
+			"distribution": "uniform",
+      "generator": {
+        "type": "stalagmite",
+        "block": [
+          {"name": "draconicevolution:placed_item", "data-tag": "{InventoryStacks:[{id:\"appliedenergistics2:material\",Count:1b,Damage:47s}],Facing:0b,IsBlock0:1b}"}
+          ,{"name":"draconicevolution:placed_item", "data-tag": "{InventoryStacks:[{id:\"appliedenergistics2:material\",Count:1b,Damage:47s},{id:\"appliedenergistics2:material\",Count:1b,Damage:47s},{id:\"appliedenergistics2:material\",Count:1b,Damage:47s}],Facing:0b,BCManagedData:{displayCount:3b},IsBlock0:1b,IsBlock1:1b,IsBlock2:1b}"}
+        ],
+				"min-height": 1,
+				"height-variance": 0,
+				"size-variance": 0,
+				"gen-size": 0,
+				"height-mod": 50,        
+        "material": "advancedrocketry:vitrifiedsand"
+      },
+      "cluster-count": 10,
+      "chunk-chance": 2,
+      "min-height": 1,
+      "max-height": 255,
+      "dimension": { "restriction": "whitelist", "value": [124] }
     }
   }
 }
