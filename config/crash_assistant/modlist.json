@@ -1517,20 +1517,20 @@
     "modId": "quark",
     "version": "r1.6-189"
   },
-  "random_complement-1.5.7.jar": {
-    "jarName": "random_complement-1.5.7.jar",
+  "random_complement-1.6.7.jar": {
+    "jarName": "random_complement-1.6.7.jar",
     "modId": "random_complement",
-    "version": "1.5.7"
+    "version": "1.6.7"
   },
   "RandomThings-MC1.12.2-4.2.7.4.jar": {
     "jarName": "RandomThings-MC1.12.2-4.2.7.4.jar",
     "modId": "randomthings",
     "version": "4.2.7.4"
   },
-  "RandomTweaker-1.4.8.jar": {
-    "jarName": "RandomTweaker-1.4.8.jar",
+  "RandomTweaker-1.4.9.jar": {
+    "jarName": "RandomTweaker-1.4.9.jar",
     "modId": "randomtweaker",
-    "version": "1.4.8"
+    "version": "1.4.9"
   },
   "randomtweaks-1.12.2-2.8.3.1.jar": {
     "jarName": "randomtweaks-1.12.2-2.8.3.1.jar",
@@ -1800,10 +1800,10 @@
     "modId": "thaumicjei",
     "version": "1.12.2-1.7.0"
   },
-  "thaumictinkerer-1.12.2-5.9.13-Unofficial.jar": {
-    "jarName": "thaumictinkerer-1.12.2-5.9.13-Unofficial.jar",
+  "thaumictinkerer-1.12.2-5.9.14-Unofficial.jar": {
+    "jarName": "thaumictinkerer-1.12.2-5.9.14-Unofficial.jar",
     "modId": "thaumictinkerer",
-    "version": "1.12.2-5.9.13-Unofficial"
+    "version": "1.12.2-5.9.14-Unofficial"
   },
   "thaumicwonders-1.8.4.jar": {
     "jarName": "thaumicwonders-1.8.4.jar",

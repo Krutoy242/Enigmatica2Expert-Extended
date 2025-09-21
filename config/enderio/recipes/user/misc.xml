@@ -1,36 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
 
-<recipe name="Tweak: Stick from Wood" required="false">
-    <crafting>
-      <grid size="1x2">
-        <item name="logWood"/>
-        <item name="logWood"/>
-      </grid>
-      <output name="minecraft:stick, stickWood" amount="16" />
-    </crafting>
-  </recipe>
-
-  <recipe name="Tweak: Chest from Wood" required="false">
-    <crafting>
-      <grid>
-        <item name="logWood"/><item name="logWood"/><item name="logWood"/>
-        <item name="logWood"/><item/><item name="logWood"/>
-        <item name="logWood"/><item name="logWood"/><item name="logWood"/>
-      </grid>
-      <output name="minecraft:chest, chestWood" amount="4" />
-    </crafting>
-  </recipe>
  
-  <recipe name="Tweak: Wood Hopper" required="false">
-    <crafting>
-      <grid>
-        <item name="IRON"/><item name="logWood"/><item name="IRON"/>
-        <item name="IRON"/><item name="logWood"/><item name="IRON"/>
-        <item/><item name="IRON"/><item/>
-      </grid>
-      <output name="minecraft:hopper, blockHopper" />
-    </crafting>
-  </recipe>
-
 </enderio:recipes>

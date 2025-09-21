@@ -179,6 +179,7 @@ export async function init(h = defaultHelper, options = argv) {
 
         entries = entries.filter(([k]) => ![
           'difficulty',
+          'lastServer',
           'renderDistance',
         ].includes(k))
 

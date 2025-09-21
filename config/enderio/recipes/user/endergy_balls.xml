@@ -50,31 +50,23 @@ XML editor will display that as tooltips when editing this file.
 
 <!-- Endergy Grinding Balls -->
 
-<grindingball name="Crude Steel Ball" grinding="1.2" chance="1.25" power="0.85" durability="24000" >
-  <item name="ballCrudeSteel"/>
-</grindingball>
-
-<grindingball name="Crystalline Alloy Ball" grinding="1.8" chance="1.4" power="1.45" durability="80000" >
+<grindingball name="Crystalline Alloy Ball" grinding="1.8" chance="1.4" power="1.45" durability="304000">
   <item name="ballCrystallineAlloy"/>
 </grindingball>
 
-<grindingball name="Melodic Alloy Ball" grinding="2.0" chance="1.45" power="1.55" durability="80000" >
+<grindingball name="Melodic Alloy Ball" grinding="2.0" chance="1.45" power="1.55" durability="840000">
   <item name="ballMelodicAlloy"/>
 </grindingball>
 
-<grindingball name="Stellar Alloy Ball" grinding="2.3" chance="2.25" power="2.2" durability="160000" >
+<grindingball name="Stellar Alloy Ball" grinding="2.3" chance="2.25" power="2.2" durability="1632000">
   <item name="ballStellarAlloy"/>
 </grindingball>
 
-<grindingball name="Crystalline Pink Slime Ball" grinding="1.75" chance="1.55" power="1.55" durability="80000" >
+<grindingball name="Crystalline Pink Slime Ball" grinding="1.75" chance="1.55" power="1.55" durability="620000">
   <item name="ballCrystallinePinkSlime"/>
 </grindingball>
 
-<grindingball name="Energetic Sliver Ball" grinding="1.6" chance="1.1" power="1.1" durability="80000" >
-  <item name="ballEnergeticSilver"/>
-</grindingball>
-
-<grindingball name="Vivid Alloy Ball" grinding="1.75" chance="1.35" power="1.35" durability="80000" >
+<grindingball name="Vivid Alloy Ball" grinding="1.75" chance="1.35" power="1.35" durability="598000">
   <item name="ballVividAlloy"/>
 </grindingball>
 

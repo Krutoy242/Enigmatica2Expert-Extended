@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.17.0",
   "files": [
     "./**/*js"
   ],
@@ -26,13 +26,13 @@
     "dev:tips": "bun dev/automation/tips.js",
     "dev:xml": "bun dev/automation/XML.js",
     "tellme-prune": "bash -c \"for prefix in \\$(ls -1 config/tellme/*.csv | xargs -n 1 basename | sed -E 's/(_[0-9].*)?\\\\.csv//' | sort -u); do ls -1 config/tellme/\\\"\\${prefix}\\\"*.csv | sort -r | tail -n +2 | xargs -r rm; done\"",
-    "reducer-levels": "bun mc-tools/packages/reducer/src/cli.ts levels dev/tools/reduce_mods.json",
-    "reducer-interactive": "bun mc-tools/packages/reducer/src/cli.ts interactive"
+    "reducer": "bun mc-tools/packages/reducer/src/cli.ts"
   },
   "dependencies": {
     "cheerio": "^1.1.0",
     "markdown-it": "^14.1.0",
-    "mdimg": "^1.5.0"
+    "mdimg": "^1.5.0",
+    "puppeteer": "^24.22.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.1",
@@ -47,8 +47,6 @@
     "adm-zip": "^0.5.16",
     "boxen": "^8.0.1",
     "chalk": "^5.4.1",
-    "cli-progress": "^3.12.0",
-    "compare-func": "^2.0.0",
     "concurrently": "^9.2.0",
     "consola": "^3.4.2",
     "conventional-changelog": "^7.1.1",
@@ -62,28 +60,20 @@
     "fast-glob": "^3.3.3",
     "fast-levenshtein": "^3.0.0",
     "fs-extra": "^11.3.0",
-    "glob": "^11.0.3",
     "humanize-string": "^3.0.0",
     "ignore": "^7.0.5",
     "language-name-map": "^0.3.0",
     "lodash": "^4.17.21",
     "log-update": "^6.1.0",
     "mc-benchmark": "^2.1.0",
-    "memoizee": "^0.4.17",
-    "nbt-ts": "^1.3.6",
     "node-fetch": "^3.3.2",
-    "node-pty": "^1.0.0",
-    "parse-gitignore": "2.0.0",
     "pathe": "^2.0.3",
     "pdf-parse": "^1.1.1",
     "prismarine-nbt": "^2.7.0",
     "replace-in-file": "^8.3.0",
-    "rimraf": "^6.0.1",
     "simplify-js": "^1.2.4",
-    "snake-case": "^4.0.0",
     "ssh2-sftp-client": "^12.0.1",
     "table": "^6.9.0",
-    "terminal-kit": "^3.1.2",
     "tinyglobby": "^0.2.14",
     "typescript": "^5.8.3",
     "xml-js": "^1.6.11",

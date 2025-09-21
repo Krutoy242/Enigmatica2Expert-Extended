@@ -128,6 +128,6 @@ export async function commitOrFixup(fileName: string, commitMsg: string) {
     await $$`git commit --fixup=${similarCommitSha}`
   }
   else {
-    await $$`git commit -m ${commitMsg}`
+    await $$`git commit -m ${commitMsg}`.nothrow()
   }
 }

@@ -51,9 +51,9 @@
   </recipe>
 
   <recipe name="Alloy: Signalum (Thermal Expansion)" required="false">
-    <alloying energy="32000" exp="0">
-      <input name="ingotCopper" amount="3"/>
-      <input name="ingotSilver"/>
+    <alloying energy="320000" exp="0">
+      <input name="ingotCopper"/>
+      <input name="ingotSilver" amount="3"/>
       <input name="dustRedstone" amount="10"/>
       <output name="ingotSignalum" amount="4"/>
     </alloying>
@@ -74,23 +74,6 @@
       <input name="ingotSilver"/>
       <input name="oredict:glowstone"/>
       <output name="ingotLumium" amount="4"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Enderium Base (Thermal Expansion)" required="false">
-    <alloying energy="4000" exp="0">
-      <input name="ingotLead" amount="3"/>
-      <input name="ingotPlatinum"/>
-      <input name="oredict:enderpearl" amount="4"/>
-      <output name="ingotEnderiumBase" amount="4"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Enderium (Thermal Expansion)" required="false">
-    <alloying energy="25000" exp="0">
-      <input name="ingotEnderiumBase" amount="2"/>
-      <input name="oredict:sand"/>
-      <output name="ingotEnderium" amount="2"/>
     </alloying>
   </recipe>
 

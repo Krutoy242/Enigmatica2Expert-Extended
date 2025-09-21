@@ -14,7 +14,6 @@ import { parse } from 'node:path'
 
 import FastGlob from 'fast-glob'
 import { getLangNameFromCode } from 'language-name-map'
-import memoize from 'memoizee'
 
 import {
   defaultHelper,
@@ -38,8 +37,6 @@ function getTips(lang) {
     ...lang.matchAll(/^(?<match>e2ee\.tips\.(?<id>\d+)=(?<text>.*))$/gm),
   ].map(m => /** @type {LangGroups} */ (m.groups))
 }
-
-memoize(() => {})
 
 export async function init(h = defaultHelper) {
   await h.begin('Loading files')

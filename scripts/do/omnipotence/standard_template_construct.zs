@@ -227,13 +227,13 @@ function handleBlockEvent(player as IPlayer, blockState as IBlockState) as void 
   if (isNull(player) || player.world.remote || isNull(blockState) || blockState == <blockstate:minecraft:air>) return;
   if (!scripts.do.omnipotence.op.op.isPlayerOmnipotent(player)) return;
 
-  val blockItem = stateToItem(blockState);
-  if (isNull(blockItem)) return;
-
   val invItem = player.mainHandHeldItem;
   if (isNull(invItem) || invItem.definition.id != 'danknull:dank_null_5' || isNull(invItem.tag.STC_Core)) {
     return;
   }
+
+  val blockItem = stateToItem(blockState);
+  if (isNull(blockItem)) return;
 
   // Found STC Core
   val dankNBT = invItem.tag;

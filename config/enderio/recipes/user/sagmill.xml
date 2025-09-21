@@ -25,37 +25,6 @@
     </crafting>
   </recipe>
 
-  <recipe name="SAG Mill, Upgrade" required="true">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="ingotDarkSteel" /><item name="enderio:block_simple_sag_mill" /><item name="ingotDarkSteel" />
-        <item name="GEAR_DARKSTEEL" /><item name="CHASSIS" /><item name="GEAR_DARKSTEEL" />
-      </grid>
-      <output name="enderio:block_sag_mill" />
-    </crafting>
-  </recipe>
-
-  <recipe name="Enhanced SAG Mill" required="true">
-    <crafting>
-      <grid size="3x3">
-        <item name="itemFlint" /><item name="itemFlint" /><item name="itemFlint" />
-        <item name="ingotEndSteel" /><item name="ENHANCED_CHASSIS" /><item name="ingotEndSteel" />
-        <item name="GEAR_VIBRANT" /><item name="minecraft:piston" /><item name="GEAR_VIBRANT" />
-      </grid>
-      <output name="enderio:block_enhanced_sag_mill" />
-    </crafting>
-  </recipe>
-
-  <recipe name="Enhanced SAG Mill, Upgrade" required="true">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="ingotEndSteel"/><item name="enderio:block_sag_mill" /><item name="ingotEndSteel" />
-        <item name="GEAR_VIBRANT" /><item name="ENHANCED_CHASSIS" /><item name="GEAR_VIBRANT" />
-      </grid>
-      <output name="enderio:block_enhanced_sag_mill" />
-    </crafting>
-  </recipe>
-
   <recipe name="Sagmill: Silicon" required="true">
     <sagmilling energy="720">
       <input name="oredict:sand"/>
@@ -67,8 +36,7 @@
     <sagmilling energy="2400">
       <input name="minecraft:coal:0"/>
       <output name="dustCoal" />
-      <output name="dustCoal" chance="0.1" />
-      <output name="dustSulfur" chance="0.1" required="false" />
+      <output name="dustSulfur" chance="0.1"/>
     </sagmilling>
   </recipe>
 
@@ -143,7 +111,6 @@
     <sagmilling bonus="chance_only" energy="2400">
       <input name="gemQuartz"/>
       <output name="POWDER_QUARTZ"/>
-      <output name="POWDER_QUARTZ" chance=".1"/>
     </sagmilling>
   </recipe>
 

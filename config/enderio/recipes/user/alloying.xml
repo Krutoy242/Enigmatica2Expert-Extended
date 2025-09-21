@@ -27,14 +27,6 @@
     </alloying>
   </recipe>
 
-  <recipe name="Alloy: Vibrant Alloy" required="true">
-    <alloying energy="10000" exp="1">
-      <input name="ingotEnergeticAlloy"/>
-      <input name="oredict:enderpearl"/>
-      <output name="ingotVibrantAlloy"/>
-    </alloying>
-  </recipe>
-
   <recipe name="Alloy: Redstone Alloy" required="true">
     <alloying energy="10000" exp="0.5">
       <input name="dustRedstone"/>
@@ -48,14 +40,6 @@
       <input name="dustRedstone"/>
       <input name="ingotIron"/>
       <output name="ingotConductiveIron"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Pulsating Iron" required="true">
-    <alloying energy="10000" exp="0.7">
-      <input name="ingotIron"/>
-      <input name="oredict:enderpearl"/>
-      <output name="ingotPulsatingIron"/>
     </alloying>
   </recipe>
 
@@ -80,7 +64,7 @@
     <alloying energy="20000" exp="0.5">
       <input name="oredict:endstone"/>
       <input name="ingotDarkSteel"/>
-      <input name="obsidian"/>
+      <input name="nuggetTungsten"/>
       <output name="ingotEndSteel"/>
     </alloying>
   </recipe>
@@ -252,86 +236,29 @@
   </recipe>
 
   <recipe name="Alloy: Green Dye" required="true">
-    <alloying energy="2000" exp="0.25">
-      <input name="itemPlantgreen" amount="12"/>
-      <input name="oredict:slimeball"/>
+    <alloying energy="2000" exp="0.5">
+      <input name="itemPlantgreen" amount="6"/>
+      <input name="ingotUranium238"/>
+      <input name="industrialforegoing:pink_slime"/>
       <output name="ORGANIC_GREEN_DYE" amount="2"/>
     </alloying>
   </recipe>
 
   <recipe name="Alloy: Green Dye, Variant" required="true">
-    <alloying energy="1500" exp="0.125">
+    <alloying energy="1500" exp="0.25">
       <input name="itemPlantgreen" amount="6"/>
-      <input name="oredict:egg"/>
-      <output name="ORGANIC_GREEN_DYE"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Green Dye, Oredict" required="true">
-    <alloying energy="2000" exp="0.25">
-      <input name="dyeGreen,-ORGANIC_GREEN_DYE" amount="2"/>
-      <input name="oredict:slimeball"/>
-      <input name="dustCoal,dustCharcoal" amount="2"/>
-      <output name="ORGANIC_GREEN_DYE" amount="2"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Green Dye, Oredict Variant" required="true">
-    <alloying energy="1500" exp="0.125">
-      <input name="dyeGreen,-ORGANIC_GREEN_DYE"/>
-      <input name="oredict:egg"/>
-      <input name="dustCoal,dustCharcoal"/>
+      <input name="ingotUranium238"/>
+      <input name="betteranimalsplus:goose_egg"/>
       <output name="ORGANIC_GREEN_DYE"/>
     </alloying>
   </recipe>
 
   <recipe name="Alloy: Brown Dye" required="true">
-    <alloying energy="2000" exp="0.25">
-      <input name="itemPlantbrown" amount="12"/>
-      <input name="oredict:slimeball"/>
-      <output name="ORGANIC_BROWN_DYE" amount="2"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Brown Dye, Variant" required="true">
-    <alloying energy="1500" exp="0.125">
+    <alloying energy="2000" exp="0.5">
       <input name="itemPlantbrown" amount="6"/>
-      <input name="oredict:egg"/>
+      <input name="forestry:mulch"/>
+      <input name="actuallyadditions:item_misc:21"/>
       <output name="ORGANIC_BROWN_DYE"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Brown Dye, Oredict" required="true">
-    <alloying energy="2000" exp="0.25">
-      <input name="dyeBrown,-ORGANIC_BROWN_DYE" amount="2"/>
-      <input name="oredict:slimeball"/>
-      <input name="dustCoal,dustCharcoal" amount="2"/>
-      <output name="ORGANIC_BROWN_DYE" amount="2"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Brown Dye, Oredict Variant" required="true">
-    <alloying energy="1500" exp="0.125">
-      <input name="dyeBrown,-ORGANIC_BROWN_DYE"/>
-      <input name="oredict:egg"/>
-      <input name="dustCoal,dustCharcoal"/>
-      <output name="ORGANIC_BROWN_DYE"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Black Dye" required="true">
-    <alloying energy="2000" exp="0.25">
-      <input name="dustCoal,dustCharcoal" amount="6"/>
-      <input name="oredict:slimeball"/>
-      <output name="ORGANIC_BLACK_DYE" amount="2"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Alloy: Black Dye, Variant" required="true">
-    <alloying energy="1500" exp="0.125">
-      <input name="dustCoal,dustCharcoal" amount="3"/>
-      <input name="oredict:egg"/>
-      <output name="ORGANIC_BLACK_DYE"/>
     </alloying>
   </recipe>
 
@@ -406,22 +333,6 @@
       <input name="cropNetherWart" amount="4" />
       <input name="oredict:itemClay" amount="6" />
       <output name="ingotBrickNetherGlazed"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Infinity Goop" required="true">
-    <alloying energy="5000">
-      <input name="POWDER_INFINITY"/>
-      <input name="dustCoal"/>
-      <output name="INFINITY_GOOP"/>
-    </alloying>
-  </recipe>
-
-  <recipe name="Infinity Goop, Charcoal" required="false">
-    <alloying energy="5000">
-      <input name="POWDER_INFINITY"/>
-      <input name="dustCharcoal"/>
-      <output name="INFINITY_GOOP"/>
     </alloying>
   </recipe>
 

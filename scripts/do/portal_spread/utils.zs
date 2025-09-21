@@ -163,7 +163,7 @@ function stateToItem(state as IBlockState, pos as IBlockPos = null, world as IWo
     ? itemUtils.getItem(defId, state.block.meta)
     : state.block.getItem(world, pos, state);
   if (isNull(item)) item = blockRepresentation[defId];
-  if (isNull(item))
+  if (isNull(item) && utils.DEBUG)
     logger.logWarning(`Cannot find item representation for block: ${defId}`);
   return item;
 }
