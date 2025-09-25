@@ -177,8 +177,8 @@
    "path": "stages/1/recipes/0",
    "value": ["thaumcraft:alkahest_vat"]}
    ,{"op": "add",
-   "path": "parents/-",
-   "value": "AURACHARGER"}
+   "path": "parents",
+   "value": ["AURACHARGER", "TWOND_CATALYZATION_CHAMBER"]}
  ]}
  
  ,{"key": "IMPURE_TEAR","ops": [
@@ -962,30 +962,105 @@
   "value": ["thaumcraft:essentia_component_1k"]}
   ,{"op":"remove",
   "path":"stages/0/required_item"}
-]},
+]}
 
-{"key":"ESSENTIASTORAGE4k","ops":[
+,{"key":"ESSENTIASTORAGE4k","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",
   "value": ["thaumcraft:essentia_component_4k"]}
   ,{"op":"remove",
   "path":"stages/0/required_item"}
-]},
+]}
 
-{"key":"ESSENTIASTORAGE16k","ops":[
+,{"key":"ESSENTIASTORAGE16k","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",
   "value": ["thaumcraft:essentia_component_16k"]}
   ,{"op":"remove",
   "path":"stages/0/required_item"}
-]},
+]}
 
-{"key":"ESSENTIASTORAGE64k","ops":[
+,{"key":"ESSENTIASTORAGE64k","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",
   "value": ["thaumcraft:essentia_component_64k"]}
   ,{"op":"remove",
   "path":"stages/0/required_item"}
+]}
+
+,{"key": "TWOND_PRIMORDIAL_SIPHON","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:primordial_siphon"]}
+  ,{"op": "replace",
+  "path": "stages/2/recipes",
+  "value": ["thaumcraft:primordial_siphon", "thaumicwonders:primordial_pearl_reconstitution"]}
+]}
+
+,{"key": "TWOND_VIS_CAPACITOR","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:vis_capacitor"]}
+]}
+
+,{"key": "TWOND_PRIMAL_DESTROYER","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:primal_destroyer"]}
+  ,{"op": "replace",
+  "path": "stages/2/recipes",
+  "value": ["thaumcraft:primal_destroyer", "thaumicwonders:voidflame_infusion_fake"]}
+]}
+
+,{"key":"TWOND_PRIMORDIAL_SIPHON","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_VOID_FORTRESS_ARMOR","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_PRIMORDIAL_PEARL_GROWTH","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_VOID_PORTAL","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_WARP_RING","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key": "TWOND_VOID_BEACON","ops": [
+  {"op": "replace",
+  "path": "stages/1/recipes",
+  "value": ["thaumcraft:void_beacon"]}
+]}
+
+,{"key":"TWOND_ERYTHURGY","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TWOND_ORDERED_DECONSTRUCTION","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TWOND_ENTROPIC_PROCESSING","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
+
+,{"key":"TWOND_AVARIC_DECONSTRUCTION","ops":[
+  {"op":"remove",
+  "path":"key"}
 ]}
 
 ]
