@@ -1,7 +1,7 @@
 {
     "parent": "block/layered_cube_all_2",
     "textures": {
-        "top_all": "randomthings:blocks/rainbowlamp/black_glow",
-        "bot_all": "randomthings:blocks/rainbowlamp/black"
+        "top_all": "randomthings:blocks/rainbowlamp/gray_glow",
+        "bot_all": "randomthings:blocks/rainbowlamp/gray"
     }
 }

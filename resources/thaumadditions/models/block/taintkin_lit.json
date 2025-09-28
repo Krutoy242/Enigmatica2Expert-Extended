@@ -10,16 +10,11 @@
 		"down": "thaumadditions:blocks/taintkin/vertical"
 	},
 	"elements":[
-		{
+				{
 			"shade": false,
 			"from": [ 0,0,0], "to": [16,16,16],
 			"faces":{
-				"down": { "texture": "#down", "cullface": "down" },
-				"up": { "texture": "#top", "culface":"up" },
-				"north": { "texture": "#front", "cullface": "north" },
-				"south": { "texture": "#side", "cullface": "south" },
-				"west": { "texture": "#side", "cullface": "west" },
-				"east": { "texture": "#side", "cullface": "east" }
+				"north": { "texture": "#front_glow", "cullface": "north" }
 			}
 		},
 		{
@@ -27,8 +22,8 @@
 			"from": [ 0,0,0], "to": [16,16,16],
 			"faces":{
 				"down": { "texture": "#down", "cullface": "down" },
-				"up": { "texture": "#top", "culface":"up" },
-				"north": { "texture": "#front_glow", "cullface": "north" },
+				"up": { "texture": "#top", "cullface":"up" },
+				"north": { "texture": "#front", "cullface": "north" },
 				"south": { "texture": "#side", "cullface": "south" },
 				"west": { "texture": "#side", "cullface": "west" },
 				"east": { "texture": "#side", "cullface": "east" }

@@ -14,15 +14,15 @@
     "west_glow": "mia:blocks/mia/lantern/lantern_on_side_glow"
   },
 	"elements":[
-		{
+				{
 			"shade": false,
 			"from": [ 0,0,0], "to": [16,16,16],
 			"faces":{
 				"down": { "texture": "#down", "cullface": "down" },
-				"up": { "texture": "#up", "culface":"up" },
-				"north": { "texture": "#north", "cullface": "north" },
-				"south": { "texture": "#south", "cullface": "south" },
-				"west": { "texture": "#west", "cullface": "west" },
+				"up": { "texture": "#up", "cullface":"up" },
+				"north": { "texture": "#north_glow", "cullface": "north" },
+				"south": { "texture": "#south_glow", "cullface": "south" },
+				"west": { "texture": "#west_glow", "cullface": "west" },
 				"east": { "texture": "#east", "cullface": "east" }
 			}
 		},
@@ -31,10 +31,10 @@
 			"from": [ 0,0,0], "to": [16,16,16],
 			"faces":{
 				"down": { "texture": "#down", "cullface": "down" },
-				"up": { "texture": "#up", "culface":"up" },
-				"north": { "texture": "#north_glow", "cullface": "north" },
-				"south": { "texture": "#south_glow", "cullface": "south" },
-				"west": { "texture": "#west_glow", "cullface": "west" },
+				"up": { "texture": "#up", "cullface":"up" },
+				"north": { "texture": "#north", "cullface": "north" },
+				"south": { "texture": "#south", "cullface": "south" },
+				"west": { "texture": "#west", "cullface": "west" },
 				"east": { "texture": "#east", "cullface": "east" }
 			}
 		}
