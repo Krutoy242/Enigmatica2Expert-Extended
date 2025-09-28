@@ -2,7 +2,6 @@
 	"parent": "block/layered_cube_all_2",
 	"textures": {
 		"top_all": "trinity:blocks/wasteland_earth_glow2",
-		"bot_all": "nuclearcraft:blocks/wasteland_earth",
-		"particle": "nuclearcraft:blocks/wasteland_earth"
+		"bot_all": "nuclearcraft:blocks/wasteland_earth"
 	}
 }
