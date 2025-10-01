@@ -5,7 +5,6 @@ import mixin.CallbackInfo;
 import mixin.CallbackInfoReturnable;
 import native.java.util.ArrayList;
 import native.net.minecraft.item.ItemStack;
-import native.net.minecraft.util.NonNullList;
 import native.net.minecraft.world.DimensionType;
 import native.net.minecraft.world.WorldProvider;
 import native.net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
