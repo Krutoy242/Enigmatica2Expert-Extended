@@ -1,5 +1,5 @@
 #loader contenttweaker
-#modloaded thaumadditions randomtweaker
+#modloaded thaumadditions
 #priority 1000
 
 import crafttweaker.entity.IEntityLivingBase;

@@ -9,9 +9,6 @@ furnace.setFuel(<contenttweaker:blasted_coal>, 120000);
 furnace.setFuel(<contenttweaker:empowered_phosphor>, 180000);
 furnace.setFuel(<contenttweaker:saturated_phosphor>, 450000);
 
-// Since Heavy have negative durability, surikens becomes infinite
-mods.tconstruct.Casting.removeTableRecipe(<tconstruct:knife_blade>.withTag({ Material: 'heavy' }));
-
 // Tallow into biomass
 scripts.process.compress(<ore:tallow> * 64, <contenttweaker:compressed_tallow>, 'except: compressor');
 scripts.process.melt(<ore:tallow>, <liquid:biomass> * 20);
@@ -176,7 +173,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <contenttweaker:item_ore_benitoite>, // Output
   15, // Instability
-  [<aspect:sanguis> * 1000, <aspect:mana> * 1000, <aspect:draco> * 1000],
+  Aspects('1000🩸 1000🔷 1000🐲'),
   <additionalcompression:gravelnether_compressed:1>, // CentralItem
   benitoiteIngrs
 );

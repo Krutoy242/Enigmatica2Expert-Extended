@@ -110,8 +110,8 @@ mods.tconstruct.Alloy.removeRecipe(<liquid:alumite>); // Magically, removing Alu
 mods.tconstruct.Alloy.addRecipe(<liquid:alumite> * 432, [<liquid:aluminum> * 720, <liquid:iron> * 288, <liquid:obsidian> * 288]);
 
 // Alumite alloying in other machines
-scripts.process.alloy([<ore:ingotFakeIron> * 2, <ore:ingotAluminium> * 5, <ore:obsidian> * 2], <plustic:alumiteingot> * 3, 'Only: AlloySmelter ArcFurnace');
-scripts.process.alloy([<ore:blockFakeIron> * 2, <ore:blockAluminium> * 5, <ore:obsidian> * 18], <plustic:alumiteblock> * 3, 'Only: AdvRockArc');
+scripts.process.alloy([<ore:ingotFakeIron> * 2, <ore:ingotAluminium> * 5, <ore:obsidian> * 2], <tconstruct:ingots:6> * 3, 'Only: AlloySmelter ArcFurnace');
+scripts.process.alloy([<ore:blockFakeIron> * 2, <ore:blockAluminium> * 5, <ore:obsidian> * 18], <tconstruct:metal:7> * 3, 'Only: AdvRockArc');
 
 // Faster Osmiridium Alloying
 // mods.tconstruct.Alloy.removeRecipe(<liquid:osmiridium>); // Removing Osmiridium PlusTic's alloy wouldn't have effect
@@ -152,7 +152,6 @@ val pressPlates = {
   osgloglas       : <ore:blockOsgloglas>,
   black_quartz    : <ore:blockQuartzBlack>,
   void_crystal    : <actuallyadditions:block_crystal:3>,
-  heavy           : <ore:blockHeavy>,
   constantan      : <ore:blockConstantan>,
   manyullyn       : <ore:blockManyullyn>,
   pigiron         : <ore:blockPigiron>,
@@ -275,14 +274,6 @@ mods.tconstruct.Casting.addTableRecipe(<tcomplement:cast>, bkt, <liquid:gold>, 2
 mods.tconstruct.Casting.addTableRecipe(<tcomplement:cast>, bkt, <liquid:alubrass>, 144, true);
 mods.tconstruct.Casting.addTableRecipe(<tcomplement:cast>, bkt, <liquid:brass>, 144, true);
 
-// Cast slimes from liquids (only blood have recipe now)
-mods.tconstruct.Casting.addTableRecipe(<tconstruct:edible:2>, null, <liquid:purpleslime>, 250);
-mods.tconstruct.Casting.addTableRecipe(<tconstruct:edible:1>, null, <liquid:blueslime>, 250);
-
-// Slime blocks
-mods.tconstruct.Casting.addBasinRecipe(<tconstruct:slime_congealed:2>, null, <liquid:purpleslime>, 1000);
-mods.tconstruct.Casting.addBasinRecipe(<tconstruct:slime_congealed:1>, null, <liquid:blueslime>, 1000);
-
 // Slime mud
 craft.reshapeless(<tconstruct:soil:2>, '■sd', {
   '■': <tconstruct:slime_congealed:1>,
@@ -384,9 +375,6 @@ craft.remake(<tconstruct:firewood:1>, ['pretty',
   'L': <tconstruct:firewood>, // Lavawood
   '~': LiquidIngr('ic2pahoehoe_lava'), // Pahoehoe Lava Bucket
 });
-
-// Nerf stone torch light level
-<tconstruct:stone_torch>.asBlock().definition.lightLevel = 0.75f;
 
 // Remake to fix weird stone rod HEI scrolling
 // [Stone Torch]*4 from [Stone Rod][+1]

@@ -10,7 +10,7 @@ import native.net.minecraft.util.math.BlockPos;
 zenClass MixinDifficultyHandler {
     #mixin Redirect
     #{
-    #   method: "indexRecipes",
+    #   method: "increaseEntityHealth",
     #   at: {
     #       value: "INVOKE",
     #       target: "Lnet/silentchaos512/scalinghealth/lib/EnumAreaDifficultyMode;getAreaDifficulty(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)D"

@@ -1,7 +1,7 @@
 {
 	icon: "extrautils2:terraformer 1 1",
 	x: 3.8333333333333335d,
-	y: 6.333333333333333d,
+	y: 4.9d,
 	text: [
 		"{q.extra_utilities.terraformer.desc}"
 	],

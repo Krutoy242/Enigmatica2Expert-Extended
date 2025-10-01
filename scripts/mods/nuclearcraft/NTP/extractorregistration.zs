@@ -7,7 +7,7 @@ import scripts.mods.nuclearcraft.NTP.coilextractorlist.ExtractorInfoList;
 function registerExtractor(info as ExtractorInfo) {
   val naming = info.name;
   val lowercase = naming.toLowerCase();
-  mods.nuclearcraft.Registration.registerTurbineCoil(lowercase ~ 'extractor', info.efficiency, info.rule);
+  mods.nuclearcraft.Registration.registerTurbineCoil(`${lowercase}extractor`, info.efficiency, info.rule);
 }
 
 for info in ExtractorInfoList {

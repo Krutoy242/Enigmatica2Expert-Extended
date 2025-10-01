@@ -1,5 +1,5 @@
 #reloadable
-#modloaded zenutils ctintegration scalinghealth
+#modloaded zenutils scalinghealth
 #priority -1800
 
 import crafttweaker.world.IWorld;

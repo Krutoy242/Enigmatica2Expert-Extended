@@ -46,7 +46,7 @@ install:
 
   # Link to where the file where the modpack can be distributed
   # This supports loading from local files as well for most pack types if there is file://{PathToFile} in the beginning
-  modpackUrl: https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases/download/v1.62.1/E2E-Extended-v1.62.1.zip
+  modpackUrl: https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases/download/v1.64.2/E2E-Extended-v1.64.2.zip
 
   # This is used to specify in which format the modpack is distributed, the server launcher has to handle each individually if their format differs
   # current supported formats:
@@ -110,6 +110,7 @@ install:
       - 532127 # Legendary Tooltips
       - 616190 # JEI Utilities
       - 624967 # RenderLib
+      - 650242 # File Director (only for optifine)
       - 782070 # Startup Timer
       - 848933 # Hit Indication
       - 874067 # Valkyrie
@@ -121,7 +122,9 @@ install:
       - 1121489 # AE2 Crafting Tree - Legacy
       - 1132293 # Backpack Display
       - 1147522 # Backpack Opener
+      - 1154099 # Crash Assistant
       - 1234162 # Lumenized
+      - 1331377 # Armored Arms
 
     # The base path where the server should be installed to, ~ for current path
   baseInstallPath: ~

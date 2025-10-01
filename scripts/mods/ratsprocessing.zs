@@ -104,8 +104,8 @@ function getOutput(poop as IItemStack) as IItemStack {
   if (isNull(poop.tag.OreItem) || isNull(poop.tag.IngotItem)) return null;
 
   // Get what resource we got after processing
-  val oreItem = IItemStack.fromData(poop.tag.OreItem);
-  val ingotItem = IItemStack.fromData(poop.tag.IngotItem);
+  val oreItem = poop.tag.OreItem.toItemStack();
+  val ingotItem = poop.tag.IngotItem.toItemStack();
   if (isNull(ingotItem) || isNull(oreItem)) return null;
 
   var resultOreBase = getOreBase(ingotItem);

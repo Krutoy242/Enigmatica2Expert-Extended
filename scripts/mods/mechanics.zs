@@ -15,16 +15,6 @@ craft.shapeless(<mechanics:heavy_mesh> * 6, 'AACBB', {
   C: <forestry:propolis:*>,
 });
 
-// Melting heavy metal
-scripts.process.melt(<mechanics:heavy_nugget>, <liquid:heavy_metal> * 16,   'No Exceptions');
-scripts.process.melt(<mechanics:heavy_ingot>,  <liquid:heavy_metal> * 144,  'No Exceptions');
-scripts.process.melt(<mechanics:heavy_block>,  <liquid:heavy_metal> * 1296, 'No Exceptions');
-
-// Casting
-mods.tconstruct.Casting.addBasinRecipe(<mechanics:heavy_block> , null, <liquid:heavy_metal>, 1296);
-mods.tconstruct.Casting.addTableRecipe(<mechanics:heavy_ingot> , <tconstruct:cast_custom:0>, <liquid:heavy_metal>, 144);
-mods.tconstruct.Casting.addTableRecipe(<mechanics:heavy_nugget>, <tconstruct:cast_custom:1>, <liquid:heavy_metal>, 16);
-
 // Heavy Crushing block
 val compressed1 = <mechanics:heavy_block>;
 val compressed2 = <additionalcompression:charcoal_compressed:1>;

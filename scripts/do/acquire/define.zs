@@ -1,7 +1,7 @@
 #reloadable
 #priority -1500
 #ignoreBracketErrors
-#modloaded zenutils ctintegration scalinghealth
+#modloaded zenutils scalinghealth
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;

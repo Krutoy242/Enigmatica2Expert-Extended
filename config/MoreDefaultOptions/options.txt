@@ -15,7 +15,6 @@ ao:2
 renderClouds:true
 resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.6.zip","Dark Mode-2.4.2.zip"]
 incompatibleResourcePacks:[]
-lastServer:51.210.223.149:25566
 lang:en_us
 chatVisibility:0
 chatColors:true
@@ -182,6 +181,8 @@ key_key.gridfixy:79
 key_key.gridhere:35
 key_key.gridspawns:0
 key_key.groovyscript.reload:19:CONTROL
+key_key.hei.crafting:46:SHIFT
+key_key.hei.toggleBookmarkOverlay:0
 key_key.hotbar.1:2
 key_key.hotbar.2:3
 key_key.hotbar.3:4
@@ -431,4 +432,5 @@ key_key.retrieve_item.desc:-98:CONTROL
 key_key.start_craft.desc:-98:ALT
 key_key.toggleVisible:0
 key_keybind.endermodpacktweaks.toggle:0
-key_of.key.zoom:-97
+key_of.key.zoom:-97
+key_Open Key Wizard:65

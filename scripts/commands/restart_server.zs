@@ -1,4 +1,4 @@
-#modloaded zenutils ctintegration
+#modloaded zenutils
 
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;

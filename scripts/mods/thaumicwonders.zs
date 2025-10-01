@@ -1,7 +1,10 @@
 #modloaded thaumicwonders tconstruct
+#priority -1 // For oredict iteration
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.IRecipeFunction;
+import mods.thaumicwonders.MeatyOrb;
+import mods.thaumicwonders.CatalyzationChamber;
 
 <entity:thaumicwonders:corruption_avatar>.addDrop(<thaumictinkerer:kamiresource:2>, 13, 25);
 
@@ -17,7 +20,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'flux_capacitor', // Name
   'TWOND_FLUX_CAPACITOR', // Research
   200, // Vis cost
-  [<aspect:terra>, <aspect:ignis>],
+  Aspects('⛰️ 🔥'),
   <thaumicwonders:flux_capacitor>, // Output
   Grid(['pretty',
     '  *  ',
@@ -34,7 +37,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'flux_distiller', // Name
   'TWOND_FLUX_DISTILLER', // Research
   750, // Vis cost
-  [<aspect:aer> * 8, <aspect:aqua> * 8, <aspect:ordo> * 8],
+  Aspects('8💨 8💧 8⟁'),
   <thaumicwonders:flux_distiller>, // Output
   Grid(['pretty',
     '□ F □',
@@ -76,9 +79,6 @@ static stoneCombiningRecipeFunc as IRecipeFunction = function (out, ins, cInfo) 
 } as IRecipeFunction;
 
 for i, stone in transStones {
-  // Buff Trans-Stones to add advanced recipes
-  stone.maxDamage = transStoneMaxDamage;
-
   // JEI recipe
   val maxDmg = stone.maxDamage;
   val quartStone = stone.withDamage(maxDmg as double * 0.75);
@@ -102,7 +102,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
   'alienist_stone', // Name
   'TWOND_ALIENIST_STONE@1', // Research
   10, // Vis cost
-  [<aspect:aer> * 5, <aspect:aqua> * 5],
+  Aspects('5💨 5💧'),
   <thaumicwonders:alienist_stone>.withDamage(transStoneMaxDamage - 128), // Output
   Grid(['pretty',
     '  ˛  ',
@@ -122,7 +122,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_CATALYZATION_CHAMBER@2', // Research
   <thaumicwonders:alchemist_stone>.withDamage(transStoneMaxDamage - 128), // Output
   <ore:ingotSilver>, // Input
-  [<aspect:ordo> * 20, <aspect:alkimia> * 10]
+  Aspects('20⟁ 10⚗️')
 );
 
 // [Transmuter's Stone] from [Phial of Permutatio Essentia]*5[+2]
@@ -132,7 +132,7 @@ mods.thaumcraft.Crucible.registerRecipe(
   'TWOND_TRANSMUTER_STONE@1', // Research
   <thaumicwonders:transmuter_stone>.withDamage(transStoneMaxDamage - 128), // Output
   <ore:ingotElectrum>, // Input
-  [<aspect:permutatio> * 20, <aspect:alkimia> * 20]
+  Aspects('20🔄 20⚗️')
 );
 
 events.onPlayerPickupItem(function (e as crafttweaker.event.PlayerPickupItemEvent) {
@@ -201,14 +201,6 @@ craft.make(<thaumicwonders:alienist_stone>.withTag({ Unbreakable: 1 as byte } as
   '▲': <ore:dustMana>, // Mana Dust
 });
 
-// ---------------------------------------------------------
-
-scripts.jei.crafting_hints.addInsOutCatl([
-  <thaumcraft:jar_normal>.withTag({ Aspects: [{ amount: 250, key: 'aqua' }] }),
-  <thaumcraft:jar_normal>.withTag({ Aspects: [{ amount: 250, key: 'victus' }] }),
-  <thaumcraft:jar_normal>.withTag({ Aspects: [{ amount: 250, key: 'alienis' }] }),
-], <ore:listAllmeatraw>.firstItem * 500, <thaumicwonders:meaty_orb>);
-
 // [Alkahest vat]
 mods.thaumcraft.Crucible.removeRecipe(<thaumicwonders:alkahest_vat>);
 mods.thaumcraft.Infusion.registerRecipe(
@@ -216,7 +208,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'TWOND_ALKAHEST', // Research
   <thaumicwonders:alkahest_vat>, // Output
   5, // Instability
-  [<aspect:alkimia> * 100, Aspect.caeles * 25, Aspect.infernum * 100, Aspect.fluctus * 50, <aspect:auram> * 200],
+  Aspects('100⚗️ 25☀️ 100🧨 50♒ 200✨'),
   <thaumcraft:crucible>, // CentralItem
   [
     <thaumicaugmentation:material:5>,
@@ -245,5 +237,210 @@ craft.remake(<thaumicwonders:creative_essentia_jar>, ['pretty',
   'M': <thaumadditions:jar_mithminite> ?? <extrautils2:snowglobe:1>, // Mithminite Fortified Jar
   'l': <botania:blackholetalisman>, // Black Hole Talisman
   'A': <thaumicwonders:alkahest_vat>, // Alkahest Vat
-  'T': <contenttweaker:meat_singularity>,
+  'T': <contenttweaker:meat_singularity>.withTag({ completed: 1 as byte }),
 });
+
+// [Primordial siphon]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:primordial_siphon>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'primordial_siphon', // Name
+  'TWOND_PRIMORDIAL_SIPHON@1', // Research
+  <thaumicwonders:primordial_siphon>, // Output
+  3, // Instability
+  Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
+  <thaumcraft:void_siphon>, // Central Item
+  Grid(['rM'], {
+    'r': <thaumcraft:nugget:10>, // Rare earth
+    'M': <botania:manaresource:2>, // Mana diamond
+}).spiral(1));
+
+// [Vis capacitor]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:alienist_stone>);
+mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
+  'vis_capacitor', // Name
+  'TWOND_VIS_CAPACITOR', // Research
+  75, // Vis cost
+  Aspects('3💨 3💧 3⟁'),
+  <thaumicwonders:vis_capacitor>, // Output
+  Grid(['pretty',
+    '  G  ',
+    'T B T',
+    '  R  '], {
+    'B': <thaumcraft:vis_battery>, // Vis battery
+    'G': <thaumicwonders:primordial_grain>, // Primordial grain
+    'R': <thaumcraft:vis_resonator>, // Vis resonator
+    'T': <thaumcraft:plate:2>, // Thaumium plate
+}).shaped());
+
+// [Primal destroyer]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:primal_destroyer>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'primal_destroyer', // Name
+  'TWOND_PRIMAL_DESTROYER@1', // Research
+  <thaumicwonders:primal_destroyer>.withTag({infench: [{lvl: 3 as short, id: 6 as short}, {lvl: 2 as short, id: 14 as short}]}), // Output
+  5, // Instability
+  Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
+  <iceandfire:dragonbone>, // Central Item
+  Grid(['RFNVGVEF'], {
+    'F': <thaumadditions:zeith_fur>, // Blue wolf fur
+    'N': <thaumictinkerer:kamiresource:1>, // Nether shard
+    'G': <thaumicwonders:primordial_grain>, // Primordial grain
+    'E': <thaumictinkerer:kamiresource>, // Ender shard
+    'R': <rats:ratlantean_flame>, // Ratlantean Spirit Flame
+    'V': <thaumcraft:plate:3>, // Void metal plate
+}).spiral(1));
+
+// [Void beacon]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:void_beacon>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'void_beacon', // Name
+  'TWOND_VOID_BEACON', // Research
+  <thaumicwonders:void_beacon>, // Output
+  4, // Instability
+  Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
+  <minecraft:beacon>, // Central Item
+  Grid(['IPIPIPIP'], {
+    'I': <thaumicaugmentation:material:5>, // Impetus jewel
+    'P': <tconevo:metal:20>, // Primal metal
+}).spiral(1));
+
+// Remove unnecessary recipes
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropyblazepowder');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropybonemeal');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropysunflower');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropylilac');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropyrose');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropypeony');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:entropysugar');
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderwool');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderglowstone');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:ordermagma');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderquartz');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:ordersandstone');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderprismarine');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:orderchorus');
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avariccoal');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricdiamond');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricemerald');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricquartz');
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:avaricamber');
+
+mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:hedge_dragons_breath');
+
+mods.thaumicwonders.MeatyOrb.removeAll();
+for item in <ore:listAllmeatraw>.items {
+  if(!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);
+}
+
+mods.thaumicwonders.CatalyzationChamber.removeAll();
+
+val clusterList = [
+  <jaopca:item_clusteraluminium>,
+  <jaopca:item_clusteramber>,
+  <jaopca:item_clusteramethyst>,
+  <jaopca:item_clusteranglesite>,
+  <jaopca:item_clusterapatite>,
+  <jaopca:item_clusteraquamarine>,
+  <jaopca:item_clusterardite>,
+  <jaopca:item_clusterastralstarmetal>,
+  <jaopca:item_clusterbenitoite>,
+  <jaopca:item_clusterboron>,
+  <jaopca:item_clustercertusquartz>,
+  <jaopca:item_clusterchargedcertusquartz>,
+  <jaopca:item_clustercoal>,
+  <jaopca:item_clustercobalt>,
+  <jaopca:item_clusterdiamond>,
+  <jaopca:item_clusterdilithium>,
+  <jaopca:item_clusterdimensionalshard>,
+  <jaopca:item_clusterdraconium>,
+  <jaopca:item_clusteremerald>,
+  <jaopca:item_clusteriridium>,
+  <jaopca:item_clusterlapis>,
+  <jaopca:item_clusterlithium>,
+  <jaopca:item_clustermagnesium>,
+  <jaopca:item_clustermalachite>,
+  <jaopca:item_clustermithril>,
+  <jaopca:item_clusternickel>,
+  <jaopca:item_clusterosmium>,
+  <jaopca:item_clusterperidot>,
+  <jaopca:item_clusterplatinum>,
+  <jaopca:item_clusterquartzblack>,
+  <jaopca:item_clusterredstone>,
+  <jaopca:item_clusterruby>,
+  <jaopca:item_clustersapphire>,
+  <jaopca:item_clustertanzanite>,
+  <jaopca:item_clusterthorium>,
+  <jaopca:item_clustertitanium>,
+  <jaopca:item_clustertopaz>,
+  <jaopca:item_clustertrinitite>,
+  <jaopca:item_clustertungsten>,
+  <jaopca:item_clusteruranium>,
+  <thaumcraft:cluster:1>,
+  <thaumcraft:cluster:2>,
+  <thaumcraft:cluster:3>,
+  <thaumcraft:cluster:4>,
+  <thaumcraft:cluster:5>,
+  <thaumcraft:cluster:6>,
+  <thaumcraft:cluster:7>,
+  <thaumcraft:cluster>
+] as IItemStack[];
+
+for itemCluster in clusterList {
+  for oreEntry in itemCluster.ores {
+    if (oreEntry.name.matches("^cluster.*")) {
+
+      val oreOre = oreDict.get(oreEntry.name.replaceFirst("cluster", "ore"));
+      if (!oreOre.empty) mods.thaumicwonders.CatalyzationChamber.addAlchemistRecipe(oreOre.firstItem, itemCluster);
+
+      val oreShard = oreDict.get(oreEntry.name.replaceFirst("cluster", "crystalShard"));
+      if (!oreShard.empty) mods.thaumicwonders.CatalyzationChamber.addAlienistRecipe(itemCluster, oreShard.firstItem);
+
+      break;
+    }
+  }
+}
+
+val orePrefixList = [
+  'block',
+  'ingot',
+  'dust',
+  'nugget',
+  'ore',
+  '',
+] as string[];
+
+val oreSufixList = {
+  'Draconium':'AstralStarmetal',
+  'Aluminium':'Titanium',
+  'coal':'bitumen',
+  'Ardite':'Cobalt',
+  'Dilithium':'DimensionalShard',
+  'Redstone':'Ruby',
+  'Iron':'Gold',
+  'Lead':'Silver',
+  'Peridot':'Emerald',
+  'Xorcite':'Aquamarine',
+  'Iridium':'Platinum',
+  'CertusQuartz':'ChargedCertusQuartz',
+  'Uranium':'Thorium',
+  'Copper':'Tin',
+  'Diamond':'Sapphire',
+} as string[string];
+
+for item1, item2 in oreSufixList {
+  for orePrefix in orePrefixList{
+    val ore1 = oreDict.get(orePrefix ~ item1);
+    val ore2 = oreDict.get(orePrefix ~ item2);
+    val item1 = utils.oreToItem(ore1);
+    val item2 = utils.oreToItem(ore2);
+    if(!ore1.empty && !isNull(item2)){
+      mods.thaumicwonders.CatalyzationChamber.addTransmuterRecipe(ore1, item2);
+    }
+    if(!ore2.empty && !isNull(item1)){
+      mods.thaumicwonders.CatalyzationChamber.addTransmuterRecipe(ore2, item1);
+    }
+  }
+} 

@@ -159,8 +159,8 @@
       "draconicevolution:draconic_ingot",
       "tconevo:metal,1,5",
       "tconevo:metal,1,5",
-      "contenttweaker:ball_singularity",
-      "contenttweaker:ball_singularity"
+      "contenttweaker:ball_singularity,1,0,{completed:1b}",
+      "contenttweaker:ball_singularity,1,0,{completed:1b}"
     ]
   }
 ]

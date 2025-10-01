@@ -4,6 +4,6 @@
 # Mixin functionality changes
 # --------------------------------------
 for.circuit.machine.speed.boost.1.description.1=Increases Speed by 100%
-for.circuit.machine.speed.boost.1.description.2=Increases Power Use by 50%
+for.circuit.machine.speed.boost.1.description.2=Increases Power Use by 5%
 for.circuit.machine.speed.boost.2.description.1=Increases Speed by 500%
-for.circuit.machine.speed.boost.2.description.2=Increases Power Use by 200%
+for.circuit.machine.speed.boost.2.description.2=Increases Power Use by 15%

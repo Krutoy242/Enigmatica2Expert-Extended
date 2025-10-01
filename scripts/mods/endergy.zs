@@ -134,10 +134,14 @@ mods.tconstruct.Alloy.addRecipe(<liquid:vivid_alloy> * 144, [
 ]);
 
 // Multiblock Machine recipe
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler', [
-  <ore:blockEnderium>, // Block of Enderium
-  <ore:blockAlumite>, // Alumite Block
-  <draconicevolution:infused_obsidian>, // Draconium Infused Obsidian
-  <ore:blockPlutonium242>, // Plutonium-242 Block
-], [<fluid:mutagen> * 1000], [<enderio:block_alloy_endergy:6>], null, { power: 160000, timeRequired: 20 });
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .inputOre(<ore:blockEnderium>) // Block of Enderium
+  .input(<ore:blockAlumite>) // Alumite Block
+  .input(<draconicevolution:infused_obsidian>) // Draconium Infused Obsidian
+  .input(<ore:blockPlutonium242>) // Plutonium-242 Block
+  .inputLiquid(<fluid:mutagen> * 1000)
+  .outputItem(<enderio:block_alloy_endergy:6>)
+  .power(160000)
+  .timeRequired(20)
+  .build();
 //////////////////////////////////////////////////

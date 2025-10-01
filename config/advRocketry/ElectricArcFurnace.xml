@@ -73,17 +73,4 @@
 			<itemStack>tcomplement:materials 1 1</itemStack>
 		</output>
 	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Base Essence Ingot] -->
-	<Recipe timeRequired="10" power="40000">
-		<input>
-			<oreDict>ingotBrass 4</oreDict>
-			<oreDict>shardProsperity 2</oreDict>
-			<oreDict>nuggetManasteel 2</oreDict>
-			<oreDict>dustAstralStarmetal 2</oreDict>
-		</input>
-		<output>
-			<itemStack>mysticalagriculture:crafting 40 32</itemStack>
-		</output>
-	</Recipe>
 </Recipes>

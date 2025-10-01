@@ -1,6 +1,6 @@
 #priority -1800
 #reloadable
-#modloaded ctintegration scalinghealth gamestages
+#modloaded scalinghealth gamestages
 
 import crafttweaker.block.IBlock;
 import crafttweaker.data.IData;
@@ -56,7 +56,7 @@ function show(player as IPlayer, item as IItemStack, block as IBlock) as bool {
       strList.add(`${repeat('0', 24 - toString(cost).length())}${cost};${itemNative.wrapper.definition.id};${itemNative.wrapper.damage}`);
   }
   val strArr = strList.toArray();
-  mods.ctintegration.util.ArrayUtil.sort(strArr);
+  strArr.sort();
 
   // Convert item text into actual items with their text
   var textData = [] as IData;

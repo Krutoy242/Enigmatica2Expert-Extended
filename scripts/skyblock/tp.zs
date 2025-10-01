@@ -1,5 +1,5 @@
-#modloaded zenutils ctintegration patchouli
-#priority -10
+#modloaded zenutils patchouli
+#priority -200
 #reloadable
 
 import crafttweaker.item.IItemStack;

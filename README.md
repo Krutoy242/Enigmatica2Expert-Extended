@@ -226,22 +226,46 @@ Generate mods screenshot with command:
 </td></tr>
 </table>
 
+This diagram compares the overall difficulty and completion time of E2EE with other popular expert modpacks:
+
+<!--
+```mermaid
+title: "                  🠜 𝑒𝑎𝑠𝑦 ───────── ℎ𝑎𝑟𝑑➔"
+config:
+  gitGraph:
+    mainBranchName: 'Expert packs'
+---
+gitGraph
+  commit id: "SkyFactory 4" tag: "~40h"
+  commit id: "Enigmatica 2: Expert"
+  commit id: "Enigmatica 2: Expert - Extended🌳" type: HIGHLIGHT
+  commit id: "Meatballcraft"
+  commit id: "E2EE Peaceful Skyblock 🕊️🌌" type: HIGHLIGHT
+  commit id: "Divine Journey 2"
+  commit id: "GTNH" tag: "~2000h"
+  %% PO3:Kappa
+  %% FTB interactions
+```
+-->
+![Mermaid diagram about modpack relative comparison](https://mermaid.ink/svg/pako:eNqNU81u00AQfpXRSFUvSZTYTuzssTRN-GmpRE7Il6m9sVexd63NGjVEQRw4oaqoqNyA5MQLcOHMo-QFyCOwdhuEoIhq95N2VvPNNzO7s8BIxRwZNpvNUBphMs4gxO_r_6_tav0Rtp-u3ltcWqwtvsDm-vW_NmzeXN76riyuNp-vQwxlpOREJCyUAIkwQ01FWhsAOQl5oElG6QnlNq_9wXnBtYGCoulsP5R1zjtORYlUngsDIq5qeDadH1FklJ6DFyIYSqrbV147rVT_cB5IkeRkRETgMLjRuacbNO3BcBnzeLu6-FpJzQub7ejhcPTEYvxXlGNO5oyyLNI0uVPFGQzglFPEJ2UGto6zTEVT2K4-vP3x7Z0VubiHyKF4ISSHR6rUks_BuUNnOD4Z_dYZp93e9WZvD06fuuwxFQXd2kfjAxDScG17KpScYQMTLWJkRpe8gTnX9rmsiYuKEKJJec5DrCLHpKdV3KXlFCSfK5XvaFqVSYpsQtnMWmURk-GHghJN-a9bXfVWP1ClNMg6bh0D2QLPkbmB2wp6ge97Xsdr95xuA-fInK7XCvodN_D7bt_ruh1n2cCXtWq75fuu53edoOf4Hdfv9hrIY2F_yfHNHNTjsPwJ4soinw)
+
 </center>
 
 -----------------
 
 ## ![Setup Guide](https://i.imgur.com/pXZ4zj5.png)
 
-> [!IMPORTANT]
-> **💥 Update your Java**
-> 
-> To play this pack you **must** update your Java from verson `1.8.0_51` to newer one.  
-> You can check out your current Java version in F3 menu or on 5th line of file `logs/latest.log`.
-
 ### 🪔 Install From Launcher
 
 Just use *New Instance* feature of your launcher and choose "from CurseForge".  
 [Prism Launcher example](https://i.imgur.com/u1TgH6r.png).
+
+> [!WARNING]
+> **💥 CurseForge Launcher & Java Version**
+>
+> The CurseForge launcher uses an outdated, bundled version of Java 8 (`1.8.0_51`) that causes crashes. To ensure stability, you **must** configure the launcher to use a modern Java 8 release (e.g., `1.8.0_400+`) in its Minecraft settings.
+>
+> You can verify the Java version in-game with F3 or in the `logs/latest.log` file.
 
 ### ✊ Manual installation
 
@@ -290,15 +314,10 @@ In order to create a new Skyblock world, you need:
 <details><summary>🏔️ Open Terrain Generator</summary>
 <p>
 
-#### ✅ Pros:
-- Better landscape
-- Huge mountains
-- Good alternative if bored from **BoP**
+| ✅ Pros                                                                              | 👎 Cons                                                                                                    |
+|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| • Better landscape<br> • Huge mountains<br> • Good alternative if bored from **BoP** | • `Nature Compass` not working<br> • Biomes too big or too small<br> • Rarely structures generating midair |
 
-#### 👎 Cons:
-- `Nature Compass` not working
-- Biomes too big or too small
-- Rarely structures generating midair
 
 To enable new world generation type, follow this buttons:
 
@@ -334,15 +353,13 @@ Some screenshots of new worldgen:
 
 ### Shaders
 
-1. Optifine must be installed.
-
-2. Add shader, for example, [Complementary Unbound](https://www.curseforge.com/minecraft/shaders/complementary-unbound).
-
-3. Configure your MC configs:
-    - `config/astralsorcery.cfg` add `0` line after line `S:weakSkyRenders <`.
-    - `config/advRocketry/advancedRocketry.cfg` set `PlanetSkyOverride` and `StationSkyOverride` to `false`.
-    - `config/brandon3055/DraconicEvolution.cfg` set `useShaders` and `useCrystalShaders` to `false`
-    - `config/botania.cfg` set `shaders.enabled` to `false`
+- Optifine must be installed.
+- List of tested, compatible shader options:
+  * **SEUS-Renewed-v1.0.1**
+  * [**Complementary Unbound**](https://www.curseforge.com/minecraft/shaders/complementary-unbound)
+  * [**BSL**](https://www.curseforge.com/minecraft/shaders/bsl-shaders)
+- Shaders require no manual setup. The modpack automatically disables conflicting shader options in `Astral Sorcery`, `Botania`, `Advanced Rocketry`, and `Twilight Forest`.
+- Most shaders (except SEUS) require manual configuration to work in modded dimensions. This typically involves unzipping the shaderpack, copying the `world0` (Overworld) settings folder, and renaming the copy to `world<ID>`, where `<ID>` is the numeric ID of the dimension.
 
 -----------------
 
@@ -376,10 +393,6 @@ Some screenshots of new worldgen:
 
   Crash logs are located in the folder `crash-reports/`. If there are no files, check the file `logs/latest.log`. If there is still no information about the crash, enable debug logging and the generation of the file `debug.log` in your launcher.
 
-- **The game crashes on load, and the logs show something about `Unexpected error` and `IllegalStateException: Already building!`**
-
-  In any strange situation, remove `VintageFix` first.
-
 - **What Java arguments should I use?**
 
   I recommend using *no arguments at all*.
@@ -392,10 +405,6 @@ Some screenshots of new worldgen:
 
   This happens when the OTG world rapidly generates new chunks. To fix this, pre-generate your world by pressing the "O" hotkey.
 
-- **I'm getting 2 FPS, and I can't play.**
-
-  Remove the `VintageFix` mod.
-
 - **There are too few hostile mobs at night.**
 
   This is a known bug, and we are still looking for a solution.
@@ -407,6 +416,7 @@ Some screenshots of new worldgen:
   - `hei_bookmarks.ini` for item bookmarks.
   - `XaeroWaypoints/` and `XaeroWorldMap/` for map and waypoints.
   - `config/xaero*` for Xaero maps configs.
+  - `schematics/` for custom schematics.
   - `saves/` folders for worlds.
 
 - **It's still reporting about duplicates.**

@@ -19,8 +19,7 @@ import crafttweaker.world.IWorld;
 import scripts.do.portal_spread.config.Config;
 import scripts.do.portal_spread.data.updatePortal;
 import scripts.do.portal_spread.message.notifyPlayers;
-
-static MAX_DISTANCE_INDEXES as int = scripts.do.portal_spread.utils.MAX_DISTANCE_INDEXES;
+import scripts.do.portal_spread.utils.radiusToIndex;
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -134,11 +133,7 @@ function getMaxSpreadIndex(modifiers as int[]) as int {
   if (value < Config.defaultRadius / 4) return 0;
   if (value >= Config.maxRadius) return 2147483647;
 
-  return MAX_DISTANCE_INDEXES * value * value;
-}
-
-function spreadIndexToRadius(index as int) as int {
-  return min(Config.maxRadius, pow(index / MAX_DISTANCE_INDEXES, 0.5));
+  return radiusToIndex(value);
 }
 
 /**

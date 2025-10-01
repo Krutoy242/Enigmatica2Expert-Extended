@@ -20,7 +20,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'PURE_TEAR', // Research
   <warptheory:item_cleanser>, // Output
   3, // Instability
-  [<aspect:mana> * 50, <aspect:auram> * 30, <aspect:cognitio> * 100],
+  Aspects('50🔷 30✨ 100🧠'),
   <minecraft:ghast_tear>, // CentralItem
   [<thaumcraft:sanity_soap>, <thaumcraft:sanity_soap>, <botania:manaresource:5>, <thaumcraft:sanity_soap>, <thaumcraft:sanity_soap>]
 );
@@ -32,7 +32,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'CLEANSING_AMULET', // Research
   <warptheory:item_cleansing_amulet>, // Output
   5, // Instability
-  [<aspect:mana> * 100, <aspect:cognitio> * 200, <aspect:permutatio> * 50, <aspect:amogus> * 69],
+  Aspects('100🔷 200🧠 50🔄 69ඞ'),
   <thaumadditions:fragnant_pendant> ?? <deepmoblearning:pristine_matter_enderman>, // CentralItem
   [<thaumcraft:bath_salts>, <warptheory:item_cleanser>, <thaumcraft:bath_salts>, <thaumcraft:sanity_soap>, <thaumcraft:bath_salts>, <thaumicwonders:cleansing_charm>, <thaumcraft:bath_salts>, <thaumcraft:sanity_soap>]
 );

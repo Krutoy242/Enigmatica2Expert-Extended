@@ -37,7 +37,7 @@ craft.make(<avaritia:resource:6>, ['pretty',
   '▬': <ore:ingotCosmicNeutronium>,
   '*': <ore:ingotCrystalMatrix>,
   'I': <avaritia:resource:5>,
-  's': <contenttweaker:ultimate_singularity>,
+  's': <contenttweaker:ultimate_singularity>.withTag({ completed: 1 as byte }),
 });
 
 // [Neutron Collector] from [Glitch Infused Ingot][+4]
@@ -133,7 +133,7 @@ craft.make(<avaritia:ultimate_stew> * 9, ['pretty',
 mods.extendedcrafting.TableCrafting.addShapeless(
   <avaritia:cosmic_meatballs> * 9, [
     /* Inject_js(
-  getCSV('config/tellme/items-csv.csv')
+  getCSV(globSync('config/tellme/items-csv*.csv')[0])
   .filter(o=>o['Ore Dict keys'].split(',').includes('listAllmeatraw'))
   .map(o=>itemize(o['Registry name'], o['Meta/dmg']))
 	.sort(naturalSort)
@@ -321,7 +321,7 @@ mods.advancedrocketry.RecipeTweaker
   .forMachine('PrecisionLaserEtcher')
   .builder()
   .input(<extendedcrafting:material:49>)
-  .input(<ore:gemDilithium>)
+  .inputOre(<ore:gemDilithium>)
   .outputs(<avaritia:resource:1>)
   .power(100000)
   .timeRequired(5)

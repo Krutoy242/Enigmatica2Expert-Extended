@@ -1,0 +1,17 @@
+{
+	title: "Reinforcement",
+	loot_size: 1,
+	rewards: [{
+		item: "tinkersaddons:modifier_item 1 1"
+	},
+	{
+		icon: "tconstruct:materials 4 14",
+		item: "tconstruct:materials 1 14",
+		count: 4
+	},
+	{
+		icon: "tconstruct:materials 5 19",
+		item: "tconstruct:materials 1 19",
+		count: 5
+	}]
+}

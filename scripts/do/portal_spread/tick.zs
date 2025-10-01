@@ -129,7 +129,7 @@ function tickPortalsToWorld(world as IWorld, targetDimIdStr as string, dimData a
 
     // Repeat
     var somethingReplaced = false;
-    for i in 0 .. repeats {
+    for i in 0 .. max(repeats, 1) {
       for j in 0 .. trueLookup {
         val spreadPos = getNexPortalPos(fullPortalId, portalPos, maxSpreadIndex);
         if (spreadBlock(

@@ -12,5 +12,5 @@ val rarities = [
 
 for i, rarity in rarities {
   if (i == 0) continue;
-  utils.compact(<ftbquests:lootcrate>.withTag({ type: rarities[i - 1] }), <ftbquests:lootcrate>.withTag({ type: rarity }));
+  recipes.addShapeless(<ftbquests:lootcrate>.withTag({ type: rarities[i - 1] }) * 9, [<ftbquests:lootcrate>.withTag({ type: rarity })]);
 }

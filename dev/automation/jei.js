@@ -11,14 +11,17 @@
 
 import process from 'node:process'
 
+import fse from 'fs-extra'
+import { globSync } from 'tinyglobby'
+
 import { getPurged, getSubMetas } from '../lib/tellme.js'
 import {
   config,
   defaultHelper,
   getCSV,
-  injectInFile,
-  naturalSort,
 } from '../lib/utils.js'
+
+const { readFileSync, writeFileSync} = fse
 
 export async function init(h = defaultHelper) {
   await h.begin('Get files')
@@ -32,9 +35,8 @@ export async function init(h = defaultHelper) {
   /** @type {string[]} */
   const pure = []
 
-  const modList = getCSV('config/tellme/mod-list-csv.csv')
-
-  const itemsCsv = getCSV('config/tellme/items-csv.csv')
+  const modList = getCSV(globSync('config/tellme/mod-list-csv*.csv')[0])
+  const itemsCsv = getCSV(globSync('config/tellme/items-csv*.csv')[0])
   const definitions = Object.fromEntries(itemsCsv.map(o => [o['Registry name'], true]))
 
   /** @type {string[]} */
@@ -76,16 +78,15 @@ export async function init(h = defaultHelper) {
     pure.push(s)
   })
 
-  pure.sort(naturalSort)
-
-  const injected = injectInFile(
-    jeiConfigPath,
-    '    S:itemBlacklist <',
-    '     >',
-    `\n${pure.map(s => `        ${s}`).join('\n')}\n`
-  )
-
-  await h.begin(`injected :>> ${injected[0].numMatches}`)
+  const table = pure.map(s => `        ${s}`)
+  const configLines = readFileSync(jeiConfigPath, 'utf-8').split('\n')
+  const headerHeight = 12
+  configLines.splice(headerHeight, configLines.length - headerHeight - 3, ...table)
+  try {
+    writeFileSync(jeiConfigPath, configLines.join('\n'))
+  } catch (error) {
+    h.error(error)
+  }
 
   h.result(
     `Purged / Manually Blacklisted: ${purged.size} / ${

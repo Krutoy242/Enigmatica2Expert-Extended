@@ -118,20 +118,18 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   // ------------
   // Combined
   // ------------
-  var combinedOutput as IItemStack[] = null;
-  var combinedChances as float[] = null;
+  var combinedOutput = [] as [IItemStack];
+  var combinedChances = [] as float[];
   if (haveItemOutput) {
     for i in 0 .. outputItems.length {
-      if (isNull(combinedOutput)) { combinedOutput = []; combinedChances = []; }
-      combinedOutput += outputItems[i];
-      combinedChances += 1.0f;
+      combinedOutput.add(outputItems[i]);
+      combinedChances = combinedChances.add(1.0f);
     }
   }
   if (haveExtra) {
     for i in 0 .. extra.length {
-      if (isNull(combinedOutput)) { combinedOutput = []; combinedChances = []; }
-      combinedOutput += extra[i];
-      combinedChances += ((!isNull(extraChance) && extraChance.length > i) ? extraChance[i] : 1.0f);
+      combinedOutput.add(extra[i]);
+      combinedChances = combinedChances.add((!isNull(extraChance) && extraChance.length > i) ? extraChance[i] : 1.0f);
     }
   }
   val havecombinedOutput = !isNull(combinedOutput) && combinedOutput.length > 0;
@@ -161,19 +159,6 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
 
     if (machineName == 'extractor') {
       mods.ic2.Extractor.addRecipe(outputItem0, inputIngr0);
-      return machineName;
-    }
-
-    if (machineName == 'grindstone') {
-      // mods.astralsorcery.Grindstone.addRecipe(IItemStack input, IItemStack output, float doubleChance);
-      if (inputIngr0.amount == 1) {
-        for ii in inputIngr0.itemArray {
-          mods.astralsorcery.Grindstone.addRecipe(ii, outputItem0, defaultChance0(extraChance, 0.0f) / outputItem0.amount);
-        }
-      }
-      else {
-        return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine can only work with 1 item as input');
-      }
       return machineName;
     }
 
@@ -247,20 +232,6 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
         }
         else {
           mods.thermalexpansion.Sawmill.addRecipe(outputItem0, ii, 1000);
-        }
-      }
-      return machineName;
-    }
-
-    if (machineName == 'eu2crusher') {
-      if (strict) { mods.extrautils2.Crusher.remove(inputIngr0.itemArray[0]); }
-
-      for ii in inputIngr0.itemArray {
-        if (haveExtra) {
-          mods.extrautils2.Crusher.add(outputItem0, ii, extra[0], extraChance[0]);
-        }
-        else {
-          mods.extrautils2.Crusher.add(outputItem0, ii);
         }
       }
       return machineName;
@@ -368,29 +339,13 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       return machineName;
     }
 
-    if (machineName == 'mechanicalsqueezer') {
-      // MechanicalSqueezer.addRecipe(IItemStack inputStack,
-      //   @Optional IItemStack outputStack1, @Optional float outputStackChance1,
-      //   @Optional IItemStack outputStack2, @Optional float outputStackChance2,
-      //   @Optional IItemStack outputStack3, @Optional float outputStackChance3,
-      //   @Optional ILiquidStack outputFluid, @Optional(10) int duration);
-      for ii in inputIngr0.itemArray {
-        mods.integrateddynamics.MechanicalSqueezer.addRecipe(ii,
-          arrN_item(outputItems, 0), arrN_float(combinedChances, 0),
-          arrN_item(outputItems, 1), arrN_float(combinedChances, 1),
-          arrN_item(outputItems, 2), arrN_float(combinedChances, 2),
-          outputLiquid0);
-      }
-      return machineName;
-    }
-
     if (machineName == 'tecentrifuge') {
       // mods.thermalexpansion.Centrifuge.addRecipe(WeightedItemStack[] outputs, IItemStack input, ILiquidStack fluid, int energy);
       if (!havecombinedOutput)
         return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine MUST have item output');
 
       // Calculate chanced output from combined
-      var chancedCombined = [] as WeightedItemStack[];
+      var chancedCombined = [] as [WeightedItemStack];
       for i, out in combinedOutput {
         chancedCombined += out % ((combinedChances[i] * 100) as int);
       }
@@ -407,7 +362,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
         return info(machineNameAnyCase, getItemName(inputIngr0.itemArray[0]), 'received work, but this machine MUST have item output');
 
       // Calculate chanced output from combined
-      var chancedCombined = [] as WeightedItemStack[];
+      var chancedCombined = [] as [WeightedItemStack];
       for i, out in combinedOutput {
         chancedCombined += out % ((combinedChances[i] * 100) as int);
       }
@@ -483,9 +438,9 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       if (strict) { mods.immersiveengineering.ArcFurnace.removeRecipe(outputItem0); }
       if (inputItems.length > 1) {
         // Reduce all ingredients to additives
-        var additives = [] as IIngredient[];
+        var additives = [] as [IIngredient];
         for i in 1 .. inputItems.length {
-          additives = additives + inputItems[i];
+          additives += inputItems[i];
         }
         mods.immersiveengineering.ArcFurnace.addRecipe(outputItem0, inputIngr0, defaultItem0(extra, I('immersiveengineering:material', 7)), 200, 512, additives, 'Alloying');
       }
@@ -878,9 +833,9 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
     if (haveLiquidOutput) {
       if (machineName == 'forestrysqueezer') {
         // mods.forestry.Squeezer.addRecipe(ILiquidStack fluidOutput, IItemStack[] ingredients, int timePerItem, @Optional WeightedItemStack itemOutput);
-        var inputItemStacks = [] as IItemStack[];
+        var inputItemStacks = [] as [IItemStack];
         for inIngr in inputItems {
-          inputItemStacks = inputItemStacks + inIngr.itemArray[0];
+          inputItemStacks += inIngr.itemArray[0];
         }
         val wOut as WeightedItemStack = !isNull(outputItem0) ? outputItem0 % defaultChance0_int(extraChance, 20) : null;
         mods.forestry.Squeezer.addRecipe(outputLiquid0, inputItemStacks, 20, wOut);

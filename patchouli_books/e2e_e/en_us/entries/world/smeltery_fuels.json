@@ -19,7 +19,7 @@
       "text1": "13300°К, 1200 ticks",
       "item2": "forge:bucketfilled{FluidName:\"perfect_fuel\",Amount:1000}",
       "text2": "13300°К, 1200 ticks",
-      "item3": "forge:bucketfilled{FluidName:\"hot_mercury\",Amount:1000}",
+      "item3": "forge:bucketfilled{FluidName:\"high_pressure_mercury\",Amount:1000}",
       "text3": "13300°К, 1200 ticks",
       "item4": "forge:bucketfilled{FluidName:\"rocketfuel\",Amount:1000}",
       "text4": "10500°К, 900 ticks",

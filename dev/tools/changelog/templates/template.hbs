@@ -1,22 +1,18 @@
-{{!-- {{> header}} --}}
 {{#each commitGroups}}
-
 {{#if title}}
 ## {{title}}
 
-{{/if}}
-{{#each scopes}}
-{{#if scope}}
+  {{/if}}
+  {{#each scopes}}
+  {{#if scope}}
 
-#### {{scope}}
+  #### {{scope}}
 
-{{/if}}
-{{#each commits}}
-{{> commit root=@root}}
-{{/each}}
-{{/each}}
+  {{/if}}
+  {{#each commits}}
+  {{> commit root=@root}}
+  {{/each}}
+  {{/each}}
+
 {{/each}}
 {{modschanges}}
-{{> footer}}
-
-

@@ -1,4 +1,4 @@
-#modloaded nuclearcraft
+#modloaded nuclearcraft mekanism
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -361,7 +361,7 @@ recipes.remove(<nuclearcraft:compound:9>);
 scripts.process.crush(
   <biomesoplenty:biome_essence>,
   <nuclearcraft:compound:9>,
-  'only: eu2Crusher IECrusher SAGMill',
+  'only: IECrusher SAGMill',
   [
     <thermalfoundation:material:66>,
     <nuclearcraft:compound:9>,
@@ -518,13 +518,25 @@ mods.actuallyadditions.AtomicReconstructor.addRecipe(<nuclearcraft:gem:3>, <biom
 
 // Boron Nitride shortcut with AdvRock machines
 scripts.process.solution(null, [<fluid:nitrogen> * 800, <fluid:hydrogen> * 2400], [<fluid:ammonia> * 16000], null, 'only: ChemicalReactor', { energy: 120000, time: 80 });
-scripts.processUtils.avdRockXmlRecipe('Crystallizer', [<ore:dustBoron> * 5], [<fluid:ammonia> * 5000], [<nuclearcraft:gem:1> * 10], null);
+mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .inputOre(<ore:dustBoron>, 5)
+  .inputLiquid(<fluid:ammonia> * 5000)
+  .outputItem(<nuclearcraft:gem:1> * 10)
+  .build();
 
 // Platings Laser Alternatives
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:dustCrystalBinder> * 32, <ore:ingotUranium238> * 32, <ore:ingotTough> * 16], null, [<nuclearcraft:part:3> * 8], null, { power: 160000, timeRequired: 20 });
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotUranium238> * 32, <ore:ingotTough> * 16], null, [<nuclearcraft:part:2> * 8], null, { power: 130000, timeRequired: 40 });
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotTough> * 16], null, [<nuclearcraft:part:1> * 8], null, { power: 100000, timeRequired: 60 });
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionLaserEtcher', [<ore:plateLead> * 12, <ore:ingotGraphite> * 16], null, [<nuclearcraft:part> * 8], null, { power: 70000, timeRequired: 80 });
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:dustCrystalBinder>, 32).inputOre(<ore:ingotUranium238>, 32).inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:3> * 8).power(160000).timeRequired(20).build();
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotUranium238>, 32).inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:2> * 8).power(130000).timeRequired(40).build();
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:1> * 8).power(100000).timeRequired(60).build();
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotGraphite>, 16)
+  .outputItem(<nuclearcraft:part> * 8).power(70000).timeRequired(80).build();
 
 // ----------------------------------------
 // Ingot Former missing ingot recipes
@@ -566,7 +578,6 @@ return loadJson('exports/recipes/tconstruct__casting_table.json')
   crystal_matrix              : <avaritia:resource:1>,
   neutronium                  : <avaritia:resource:4>,
   tungsten                    : <endreborn:item_ingot_wolframium>,
-  heavy_metal                 : <mechanics:heavy_ingot>,
   electronics                 : <opencomputers:material:8>,
   spectre                     : <randomthings:ingredient:3>,
   fluxed_electrum             : <redstonearsenal:material:32>,
@@ -1077,13 +1088,6 @@ for i, item in batteries {
     });
 }
 
-// --------------------------------------------------------------
-// Remove Hazmat since radiation is disabled
-Purge(<nuclearcraft:helm_hazmat>);
-Purge(<nuclearcraft:chest_hazmat>);
-Purge(<nuclearcraft:legs_hazmat>);
-Purge(<nuclearcraft:boots_hazmat>);
-
 // Additional alloying recipes
 for inputs, output in {
   [<ore:ingotBoron>, <ore:ingotSteel>]: <nuclearcraft:alloy:6> * 2,
@@ -1102,7 +1106,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "INFUSION", # Research
   <nuclearcraft:wasteland_portal>, # Output
   1, # Instability
-  [<aspect:perditio> * 40, Aspect.exitium * 40],
+  Aspects('40⚡ 40💣'),
   <trinity:solid_trinitite>, # Central Item
   Grid(["pretty",
   "s Q s",

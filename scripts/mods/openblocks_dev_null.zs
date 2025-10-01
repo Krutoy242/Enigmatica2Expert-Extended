@@ -28,8 +28,8 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   ) return;
 
   // Check if this dev/null/ provide infinite exact this block to prevent replacing
-  val infinite = IItemStack.fromData(e.item.tag.infinite);
-  val current = IItemStack.fromData(e.item.tag.inventory.Items[0]);
+  val infinite = e.item.tag.infinite.toItemStack();
+  val current = e.item.tag.inventory.Items[0].toItemStack();
   if (isNull(infinite) || isNull(current) || !(infinite has current || current has infinite)) return;
 
   e.item.mutable().updateTag({

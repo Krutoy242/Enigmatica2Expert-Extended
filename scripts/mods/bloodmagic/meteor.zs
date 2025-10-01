@@ -70,7 +70,7 @@ function trySpawnMeteor(world as IWorld, x as int, z as int) as void {
 function spawnMeteor(world as IWorld, pos as IBlockPos, stack as IItemStack) as void {
   val meteor = <entity:bloodmagic:meteor>.spawnEntity(world, pos);
   val size = world.random.nextDouble(0.1, 0.5);
-  val newData = stack.asData() + {
+  val newData = stack.toSNBT() + {
     noItem                 : null,
     radiusModifier         : size,
     explosionModifier      : size + 1.0,

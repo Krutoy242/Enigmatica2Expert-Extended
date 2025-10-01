@@ -9,7 +9,18 @@
 		uid: "cdfa06aa",
 		type: "item",
 		items: [{
-			item: "minecraft:leaves"
+			ForgeCaps: {
+				Parent: {
+					data: "treeLeaves",
+					id: "ore"
+				}
+			},
+			id: "itemfilters:filter",
+			tag: {
+				display: {
+					Name: "Any treeLeaves"
+				}
+			}
 		}],
 		count: 32L
 	}],

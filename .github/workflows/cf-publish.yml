@@ -6,9 +6,10 @@ on:
 
 jobs:
   cf-publish:
+    if: github.event_name == 'release'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - id: release
         uses: gregziegan/fetch-latest-release@v2.0.0
@@ -20,34 +21,22 @@ jobs:
           contents: ${{ steps.release.outputs.body }}
           write-mode: overwrite
 
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: 'pnpm'
 
-      - name: 🖼️ Generate image from md
-        run: npx mdimg -i latest_release.md -o latest.png -w 800 --css githubDark
-
-      - name: 🖼️ ➡️ Send discord message
-        uses: MineBartekSA/discord-webhook@v2
-        with:
-          webhook: ${{ secrets.WEBHOOK_URL }}
-          username: 🚀 New release
-          avatar_url: https://media.forgecdn.net/avatars/820/88/638200951256555174.png
-          embed: |
-            - title:  __**${{ steps.release.outputs.name }}**__
-              url: ${{ steps.release.outputs.html_url }}
-          attachment: |
-            file: latest.png
-        continue-on-error: true
-
-      - run: npm i --omit=dev
+      - run: pnpm install --prod
 
       - name: 📋 Generate html instead of markdown
         run: node dev/lib/curseforge-md-to-html.js latest_release.md
 
       - name: ⤵️ Prepend Header to HTML
         run: |
-          echo -e '<p><a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases">Changelog</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Abug">Known Bugs</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended#considerations-before-updating">Update Caution</a></p>' | cat - latest_release.html > temp && mv temp latest_release.html
+          HEADER='<p><a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases">Changelog</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Abug">Known Bugs</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended#considerations-before-updating">Update Caution</a></p>'
+          sed -i "1s;^;$HEADER\n;" latest_release.html
 
       - name: 📋 Get content of changelog html
         id: latest_html
@@ -56,7 +45,7 @@ jobs:
           path: latest_release.html
 
       - name: 💽 Download .zip files from latest release
-        uses: robinraju/release-downloader@v1.4
+        uses: robinraju/release-downloader@v1.12
         with:
           latest: true
           fileName: '*.zip'
@@ -96,3 +85,67 @@ jobs:
           project_id: '561105'
           parent_file_id: ${{ steps.client.outputs.id }}
           token: '${{ secrets.CURSEFORGE_API_TOKEN }}'
+
+  discord-notify:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: release
+        uses: gregziegan/fetch-latest-release@v2.0.0
+
+      - name: 📃 Save changelog content to file
+        uses: DamianReeves/write-file-action@master
+        with:
+          path: latest_release.md
+          contents: ${{ steps.release.outputs.body }}
+          write-mode: overwrite
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --prod
+
+      - name: 🖼️ Generate images from md sections
+        id: generate_images
+        run: |
+          # Split the markdown file by H2 headers.
+          # If csplit fails (e.g., no '##' headers found), it returns non-zero.
+          # In that case, we fall back to using the whole file as a single part.
+          csplit -s -z -f part- latest_release.md '/^## /' '{*}' || cp latest_release.md part-0
+
+          ATTACHMENT_STRING=""
+          I=0
+          # Loop through the generated parts
+          for f in part-*; do
+            # Check if the file exists and is not empty to avoid errors
+            if [ ! -f "$f" ] || [ ! -s "$f" ]; then continue; fi
+            npx mdimg -i "$f" -o "changelog_part_$I.png" -w 800 --css githubDark
+            ATTACHMENT_STRING="${ATTACHMENT_STRING}file: changelog_part_$I.png\n"
+            I=$((I+1))
+          done
+
+          {
+            echo "DISCORD_ATTACHMENTS<<EOF"
+            echo -e "$ATTACHMENT_STRING"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: 🖼️ ➡️ Send discord message
+        run: |
+          WEBHOOK_URL="${{ secrets.WEBHOOK_URL }}"
+          PAYLOAD=$(jq -cn \
+            --arg u "🚀 New release" \
+            --arg a "https://media.forgecdn.net/avatars/820/88/638200951256555174.png" \
+            --arg t "__**${{ steps.release.outputs.name }}**__" \
+            --arg l "${{ steps.release.outputs.html_url }}" \
+            '{username:$u,avatar_url:$a,embeds:[{title:$t,url:$l}]}')
+
+          curl -sS -X POST -H "Content-Type: multipart/form-data" \
+            -F "payload_json=$PAYLOAD" \
+            $(for i in changelog_part_*.png; do echo -F "files[$((n++))]=@$i"; done) \
+            "$WEBHOOK_URL"

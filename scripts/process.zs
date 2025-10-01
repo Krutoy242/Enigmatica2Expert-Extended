@@ -26,7 +26,7 @@
 //
 // ######################################################################
 
-#modloaded crafttweakerutils jaopca mekanism
+#modloaded jaopca mekanism
 #priority 50
 #reloadable
 
@@ -34,8 +34,8 @@ import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
+import crafttweaker.util.Math.max;
+import crafttweaker.util.Math.min;
 
 import scripts.processUtils.wholesCalc;
 import scripts.processWork.work;
@@ -63,7 +63,7 @@ function lF(output as ILiquidStack, mult as double) as ILiquidStack {
   val dmult = damount * mult;
   for step in fluidSteps {
     if (dresult == 0.0 && damount % step == 0) {
-      dresult = max(step as double, step * ((dmult / step) as int)) as double;
+      dresult = max(step, step * ((dmult / step) as int));
     }
   }
   if (dresult == 0) { dresult = dmult; }
@@ -103,11 +103,10 @@ function sawWood(input as IIngredient, output as IItemStack, exceptions as strin
 // 📦 → 📦 + [📦]?
 function crush(input as IIngredient, output as IItemStack, exceptions as string = null, extra as IItemStack[] = null, extraChance as float[] = null, opts as IData = null) {
   for machine in [
-    'Macerator', 'eu2Crusher',
+    'Macerator',
     'IECrusher', 'SagMill',
-    'Grindstone', 'AEGrinder', 'ThermalCentrifuge',
+    'AEGrinder', 'ThermalCentrifuge',
     'Pulverizer', 'mekCrusher', 'crushingBlock',
-    'MekEnrichment',
   ] as string[] {
     workEx(machine, exceptions, [input], null, [output], null, extra, extraChance, opts);
   }
@@ -158,7 +157,6 @@ function crushRock(input as IIngredient, output as IItemStack[], chances as floa
 function squeeze(input as IIngredient[], fluidOutput as ILiquidStack, exceptions as string = null, itemOutput as IItemStack = null) {
   work(['CrushingTub']       , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.5)]     , null  , null);
   work(['Squeezer']          , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.666667)], null  , null);
-  work(['MechanicalSqueezer'], exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.75)]    , null  , null);
   work(['ForestrySqueezer']  , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.9)]     , null  , null);
   work(['TECentrifuge']      , exceptions, input, null, [iF(itemOutput, 0.75)]       , [fluidOutput]              , null  , null);
   work(['IndustrialSqueezer'], exceptions, input, null, [itemOutput]                 , [fluidOutput]              , null  , null);

@@ -1,4 +1,3 @@
-#modloaded ctintegration
 #reloadable
 #priority -6000
 #ignoreBracketErrors
@@ -107,7 +106,7 @@ function dumpMiningLevelChart(world as IWorld, player as IPlayer, pos as IBlockP
   });
 
   val sorted = sorter.toArray();
-  mods.ctintegration.util.ArrayUtil.sort(sorted);
+  sorted.sort();
 
   player.sendMessage('§8Building §6'~sorted.length~' §8entries...');
   val stack = intArrayOf(100, 0);
@@ -145,7 +144,7 @@ function dumpLightSources(player as IPlayer) as void {
         ids += block.id;
       }
     }
-    mods.ctintegration.util.ArrayUtil.sort(ids);
+    ids.sort();
     for id in ids {
       val item = itemUtils.getItem(id);
       if (!isNull(item)) items += item;
@@ -227,37 +226,4 @@ events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickB
   // }
 
   e.player.sendMessage('§8Done!§r');
-});
-
-events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlockEvent) {
-  /*
-    Check requirments
-  */
-
-  val world as IWorld = e.world;
-  if (isNull(world) || world.remote) return;
-
-  val player as IPlayer = e.player;
-  if (isNull(player) || !player.creative) return;
-
-  val currentItem = e.item;
-  if (isNull(currentItem)) return;
-  if (currentItem.definition.id != 'minecraft:stick') return;
-
-  val block as IBlock = world.getBlock(e.x, e.y, e.z);
-  if (isNull(block)) return;
-
-  val data as IData = block.data;
-  if (isNull(data)) return;
-
-  var itemsList = data.Items;
-  if (isNull(itemsList) || isNull(itemsList.asList())) {
-    itemsList = data.Inventory;
-  }
-
-  if (isNull(itemsList) || isNull(itemsList.asList()) || itemsList.length <= 0) return;
-
-  mods.ctintegration.util.RawLogger.logRaw(mods.ctintegration.data.DataUtil.toNBTString(itemsList));
-  player.sendMessage('§8Printed ' ~ itemsList.length ~ ' items');
-  e.cancel();
 });

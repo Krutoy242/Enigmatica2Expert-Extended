@@ -13,7 +13,7 @@ Icon | Summary | Reason
 <img src="
   {{~{padEnd (replace cf2Addon.logo.thumbnailUrl "256/256" "30/30") 95 post='"'}~}}
 > | 
-  {{~{padStart cf2Addon.name 42 pre='[**'}~}}
+  {{~{padStart (sanitize cf2Addon.name) 42 pre='[**'}~}}
 **]({{{padEnd cf2Addon.links.websiteUrl 75 post=')'}~}}
 <sup><sub>
   {{~padEnd installedFile.fileName 49~}}
@@ -44,7 +44,7 @@ Icon | Summary | Old / New
 <img src="
   {{~{padEnd (replace now.cf2Addon.logo.thumbnailUrl "256/256" "30/30") 95 post='"'}~}}
 > | 
-  {{~{padStart now.cf2Addon.name 42 pre='[**'}~}}
+  {{~{padStart (sanitize now.cf2Addon.name) 42 pre='[**'}~}}
 **]({{padEnd now.cf2Addon.links.websiteUrl 74 post=')'~}}
  | <nobr>{{replace was.installedFile.fileName '.jar' ''}}</nobr><br><nobr>{{replace now.installedFile.fileName '.jar' ''}}</nobr>
 {{/each}}

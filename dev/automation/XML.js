@@ -17,16 +17,14 @@ import _ from 'lodash'
 import { js2xml, xml2js } from 'xml-js'
 import yargs from 'yargs'
 
-import {
-  getOreBases_byKinds,
-} from '../lib/tellme.js'
 import { defaultHelper, loadText, naturalSort } from '../lib/utils.js'
 
 /** @typedef {import("xml-js").Element} XMLElement */
 
 const argv = yargs(process.argv.slice(2))
-  .alias('d', 'dryrun')
-  .describe('d', 'Do not add/remove recipes, just format files').parseSync()
+  .alias('dryrun', 'd')
+  .describe('dryrun', 'Do not add/remove recipes, just format files')
+  .parseSync()
 
 export async function init(h = defaultHelper) {
   // List of curated files and folders
@@ -84,9 +82,8 @@ export async function init(h = defaultHelper) {
 
   h.result(`Total automatic XML recipes: ${totalNewRecipes}`)
 }
-
-// @ts-expect-error
 if (
+  // eslint-disable-next-line antfu/no-top-level-await
   import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href
 )
   init()
@@ -94,7 +91,7 @@ if (
 /** @param {string} xmlString */
 function xml_to_js(xmlString) {
   try {
-    return /** @type {XMLElement} */ (xml2js(xmlString, { compact: false }))
+    return /** @type {XMLElement} */ xml2js(xmlString, { compact: false })
   }
   catch (error) {
 
@@ -111,10 +108,6 @@ function getChanges(h = defaultHelper) {
   ))
     (changesText[groups.filename] ??= []).push(groups.recipe)
 
-  _(getCustomRecipes()).forEach((arr, filePath) =>
-    (changesText[filePath] ??= []).push(...arr)
-  )
-
   /** @param {XMLElement} a */
   function countInputs(a) {
     const recipe = a.elements.find(
@@ -122,11 +115,12 @@ function getChanges(h = defaultHelper) {
     ).elements
     const inputs
       = recipe.find(o => o.name?.toLowerCase() === 'input')?.elements
-      ?? recipe
-        .find(o => o.type === 'element')
-        ?.elements.filter(
-          e => e.type === 'element' && e.name.includes('input')
-        )
+        ?? recipe
+          .find(o => o.type === 'element')
+          ?.elements
+          .filter(
+            e => e.type === 'element' && e.name.includes('input')
+          )
 
     return inputs.length
   }
@@ -156,131 +150,4 @@ function mutateXml(filePath, xmlObjectMutationCB) {
   if (xmlObjectMutationCB) xmlObjectMutationCB(obj)
   const XML = js2xml(obj, { spaces: detectIndent(xml).indent || '	' })
   writeFileSync(filePath, XML)
-}
-
-/**
- * @param {string} input
- * @param {string|number} amount
- */
-function xmlIngr(input, amount = 1) {
-  const parts = input.split(':')
-  return parts.length > 1
-    ? `<itemStack>${parts.slice(0, 2).join(':')}${
-        amount != 1 || parts[2] ? ` ${amount}` : ''
-      }${parts[2] ? ` ${parts[2]}` : ''}</itemStack>`
-    : `<oreDict>${input}${amount != 1 ? ` ${amount}` : ''}</oreDict>`
-}
-
-/**
- * @param {string | string[]} input
- */
-function parseItems(input) {
-  return (
-    (Array.isArray(input) ? input : [input])
-      // @ts-expect-error
-      .map(s =>
-        s.startsWith('<')
-          ? s
-          : xmlIngr(...(s.includes(' ') ? s.split(' ') : [s]))
-      )
-      .join('\n')
-  )
-}
-
-/**
- * @param {string} name
- * @param {string | string[]} inputs
- * @param {string | string[]} outputs
- */
-function makeXMLRecipe(name, inputs, outputs, timeRequired = 0, power = 0) {
-  return (
-    `<!-- [${name}] -->
-  <Recipe timeRequired="${timeRequired}" power="${power}"><input>${
-    parseItems(inputs)
-    }</input><output>${
-    parseItems(outputs)
-    }</output></Recipe>`
-  )
-}
-
-function getCustomRecipes() {
-  return {
-    'config/advRocketry/SmallPlatePress.xml': [
-      ...[
-        ['3', 'blockSheetmetal', 'stick'],
-        ['6', 'block', 'plate'],
-      ]
-        .map(kinds =>
-          getOreBases_byKinds(kinds.slice(1))
-            .filter(b => b !== 'Aluminum' && b !== 'Concrete')
-            .map(oreBase => [oreBase, kinds[1], kinds[2], kinds[0]])
-        )
-        .flat()
-        .map(([oreBase, kind1, kind2, amount]) =>
-          makeXMLRecipe(
-            `${oreBase} Block`,
-            `${kind1}${oreBase}`,
-            `${kind2}${oreBase} ${amount}`
-          )
-        ),
-      makeXMLRecipe('Stone Sticks', 'cobblestone', 'stickStone 6'),
-      makeXMLRecipe('HDPE Sticks', 'mekanism:plasticblock:15', 'stickHDPE 6'),
-      makeXMLRecipe('Obsidian Plates', 'quark:obsidian_pressure_plate', 'plateObsidian 2'),
-    ],
-
-    'config/advRocketry/Centrifuge.xml': [
-      makeXMLRecipe(
-        'Magic centrifuge',
-        '<fluidStack>enrichedlava 100</fluidStack>',
-        [
-          `thaumium ${60}`,
-          `livingrock ${50}`,
-          `bound_metal ${15}`,
-          `mirion ${4}`,
-        ].map(s => `<fluidStack>${s}</fluidStack>`),
-        20,
-        100000
-      ),
-      makeXMLRecipe(
-        'Magic centrifuge II',
-        '<fluidStack>mirion 100</fluidStack>',
-        [
-          `manasteel ${1}`,
-          `terrasteel ${1}`,
-          `elementium ${1}`,
-          `glass ${6}`,
-        ].map(s => `<fluidStack>${s}</fluidStack>`),
-        20,
-        100000
-      ),
-      makeXMLRecipe(
-        'Curio centrifuge',
-        '<fluidStack>flux_goo 100</fluidStack>',
-        [
-          'thaumcraft:curio:0 4',
-          // 'thaumcraft:curio:1 4',
-          'thaumcraft:curio:2 4',
-          // 'thaumcraft:curio:3 4',
-          'thaumcraft:curio:4 4',
-          'thaumcraft:curio:5 2',
-        ],
-        20,
-        100000
-      ),
-    ],
-
-    'config/advRocketry/Lathe.xml': [
-      ...[
-        ['ingotCopper', 'immersiveengineering:material:20', 5],
-        ['ingotElectrum', 'immersiveengineering:material:21', 5],
-        ['ingotAluminium', 'immersiveengineering:material:22', 5],
-        ['ingotSteel', 'immersiveengineering:material:23', 5],
-        ['integrateddynamics:crystalized_menril_chunk', 'integrateddynamics:cable', 2],
-        ['crystalPureFluix', 'appliedenergistics2:part:16', 4],
-      ]
-        .map(([input, output, amount]) =>
-          makeXMLRecipe(`Wires ${input}`, input, `${output} ${amount}`, 10, 100000)
-        ),
-    ],
-  }
 }

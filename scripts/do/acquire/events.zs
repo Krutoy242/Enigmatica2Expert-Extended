@@ -1,6 +1,6 @@
 #reloadable
 #priority -1300
-#modloaded zenutils ctintegration scalinghealth
+#modloaded zenutils scalinghealth
 
 import crafttweaker.block.IBlock;
 import crafttweaker.block.IBlockDefinition;

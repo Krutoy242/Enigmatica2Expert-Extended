@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+
+<recipe name="Conduit, Refined Storage" required="false">
+    <crafting>
+      <grid>
+        <item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" />
+        <item name="refinedstorage:quartz_enriched_iron" /><item name="refinedstorage:processor:4" /><item name="refinedstorage:quartz_enriched_iron" />
+        <item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" /><item name="CONDUIT_BINDER" />
+      </grid>
+      <output name="enderio:item_refined_storage_conduit" amount="8">
+      </output>
+    </crafting>
+  </recipe>
+
+  <recipe name="Upgrade, Conduit, Refined Storage" required="false">
+    <crafting>
+      <grid>
+        <item name="CONDUIT_BINDER" /><item name="refinedstorage:cable" /><item name="CONDUIT_BINDER" />
+        <item name="refinedstorage:cable" /><item name="refinedstorage:processor:4" /><item name="refinedstorage:cable" />
+        <item name="CONDUIT_BINDER" /><item name="refinedstorage:cable" /><item name="CONDUIT_BINDER" />
+      </grid>
+      <output name="enderio:item_refined_storage_conduit" amount="8">
+      </output>
+    </crafting>
+  </recipe>
+  
+  <recipe name="Refined Storage Crafting Upgrade" required="false">
+    <crafting>
+      <grid>
+        <item name="itemSilicon" /><item name="itemSilicon" /><item name="itemSilicon" />
+        <item name="ELECTRICAL_STEEL" /><item name="refinedstorage:upgrade:3" /><item name="ELECTRICAL_STEEL" />
+        <item name="ELECTRICAL_STEEL" /><item name="ELECTRICAL_STEEL" /><item name="ELECTRICAL_STEEL" />
+      </grid>
+      <output name="enderio:item_rs_crafting_upgrade">
+      </output>
+    </crafting>
+  </recipe>
+
+  <recipe name="Refined Storage Crafting Speed Upgrade" required="false">
+    <crafting>
+      <shapeless>
+        <item name="enderio:item_rs_crafting_upgrade" /><item name="enderio:item_extract_speed_upgrade" />
+      </shapeless>
+      <output name="enderio:item_rs_crafting_speed_upgrade">
+      </output>
+    </crafting>
+  </recipe>
+
+  <recipe name="Refined Storage Crafting Speed Downgrade" required="false">
+    <crafting>
+      <shapeless>
+        <item name="enderio:item_rs_crafting_upgrade" /><item name="enderio:item_extract_speed_downgrade" />
+      </shapeless>
+      <output name="enderio:item_rs_crafting_speed_downgrade">
+      </output>
+    </crafting>
+  </recipe>
+</enderio:recipes>

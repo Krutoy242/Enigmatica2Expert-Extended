@@ -55,7 +55,7 @@
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)A 13x13x13 $(n)Compact Machine$() is large enough for all of your $(d)Thaumcraft$() needs, and will prevent flux from spreading to your base.$(li)Growing $(n)Sugar Cane$() on $(o)Fertile Soil$() or $(o)Fertilized Dirt$() does not require an adjacent water source.$(li)Under NO circumstances activate $(l)Veinminer$() while working around $(l)AE2 networks$()!"
+      "text": "$(li)A 13x13x13 $(n)Compact Machine$() is large enough for all of your $(d)Thaumcraft$() needs, and will prevent flux from spreading to your base.$(li)Growing $(n)Sugar Cane$() on $(o)Fertile Soil$() or $(o)Fertilized Dirt$() does not require an adjacent water source."
     },
     {
       "item": "thaumicaugmentation:research_notes",

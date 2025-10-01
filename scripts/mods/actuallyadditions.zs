@@ -1,4 +1,4 @@
-#modloaded actuallyadditions crafttweakerutils
+#modloaded actuallyadditions
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -147,7 +147,7 @@ craft.remake(<actuallyadditions:block_fishing_net>, ['pretty',
   '  §  ',
   'C * C',
   '  C  '], {
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   'C': <minecraft:web>,
   '*': <actuallyadditions:item_crystal_empowered:4>,
 });
@@ -284,7 +284,7 @@ val listCatFur as string[] = [
   'biomesoplenty:gem'            , '1'  , '30',
   'immersiveengineering:material', '9'  , '5',
   'immersiveengineering:material', '8'  , '60',
-  'plustic:alumiteingot'         , '0'  , '5',
+  'tconstruct:ingots'            , '6'  , '5',
   'rats:raw_rat'                 , '0'  , '90',
   'rats:rat_pelt'                , '0'  , '65',
   'rats:token_fragment'          , '0'  , '15',
@@ -364,7 +364,7 @@ for i in 0 .. listCatFur.length {
     val item = itemUtils.getItem(listCatFur[i], listCatFur[i + 1]);
     if (!isNull(item)) {
       mods.actuallyadditions.BallOfFur.addReturn(item, listCatFur[i + 2]);
-      val chance = (mods.ctutils.utils.Math.floor((listCatFur[i + 2] as float) / weight * 10000) as double) / 100;
+      val chance = (crafttweaker.util.Math.floor((listCatFur[i + 2] as float) / weight * 10000) as double) / 100;
       item.addTooltip(format.darkGray('Drops from ') ~ format.bold('Ball Of Fur')
       ~ format.darkGray(' with chance ') ~ format.gray(chance ~ '%'));
     }
@@ -395,11 +395,11 @@ scripts.process.crush(<ore:gemQuartzBlack>, <actuallyadditions:item_dust:7>, cru
 scripts.process.crush(<ore:blockQuartzBlack>, <actuallyadditions:item_dust:7> * 9, crushExceptions, null, null);
 
 // Missed Crushed Emerald recipe
-scripts.process.crush(<ore:gemEmerald>, <actuallyadditions:item_dust:3>, 'Only: Grindstone AEGrinder', null, null);
+scripts.process.crush(<ore:gemEmerald>, <actuallyadditions:item_dust:3>, 'Only: AEGrinder', null, null);
 
 // Recycle Quark crystals
 function recycleCrystal(input as IItemStack, output as IItemStack) {
-  scripts.process.crush(input, output, 'Macerator Grindstone AEGrinder ThermalCentrifuge mekCrusher MekEnrichment SagMill', null, null);
+  scripts.process.crush(input, output, 'Macerator AEGrinder ThermalCentrifuge mekCrusher SagMill', null, null);
   scripts.processWork.workEx('SagMill', null, [input], null, [output], null, null, null, { bonusType: 'MULTIPLY_OUTPUT' });
 }
 recycleCrystal(<quark:crystal:1>, <actuallyadditions:item_crystal_shard> * 3);
@@ -424,11 +424,8 @@ scripts.process.squeeze([<actuallyadditions:item_misc:13>], <liquid:canolaoil> *
 // Storage crate remake
 
 // [Storage_Crate_Keeper] from [Black_Quartz][+1]
-craft.remake(<actuallyadditions:item_crate_keeper>, ['pretty',
-  '  #  ',
-  '# • #',
-  '  #  '], {
-  '•': <ore:gemQuartzBlack>, // Black Quartz
+craft.reshapeless(<actuallyadditions:item_crate_keeper>, '•#', {
+  '•': <ore:nuggetQuartzBlack>,
   '#': <ore:plankWood>, // Oak Wood Planks
 });
 
@@ -633,16 +630,14 @@ craft.remake(<actuallyadditions:block_misc:8>, ['pretty',
 });
 
 // [Basic Coil] from [Aluminum Ingot*2][+2]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',
-  [<ore:stickWood> * 36, <ore:ingotAluminium> * 24, <ore:ingotFakeIron> * 24], null,
-  [<actuallyadditions:item_misc:7> * 12], null, { power: 70000, timeRequired: 20 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .inputOre(<ore:stickWood>, 36).inputOre(<ore:ingotAluminium>, 24).inputOre(<ore:ingotFakeIron>, 24)
+  .outputItem(<actuallyadditions:item_misc:7> * 12).power(70000).timeRequired(20).build();
 
 // [Advanced Coil] from [Aluminum Ingot*2][+3]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',
-  [<forestry:oak_stick> * 60, <ore:ingotGold> * 12, <ore:ingotAluminium> * 24, <ore:ingotFakeIron> * 24], null,
-  [<actuallyadditions:item_misc:8> * 12], null, { power: 140000, timeRequired: 40 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .input(<forestry:oak_stick> * 60).inputOre(<ore:ingotGold>, 12).inputOre(<ore:ingotAluminium>, 24).inputOre(<ore:ingotFakeIron>, 24)
+  .outputItem(<actuallyadditions:item_misc:8> * 12).power(140000).timeRequired(40).build();
 
 // New dough mechanic
 recipes.remove(<actuallyadditions:item_misc:4>);

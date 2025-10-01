@@ -22108,6 +22108,18 @@
       {
         "itemStack": "qmd:isotope:5",
         "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+      },
+      {
+        "itemStack": "qmd:isotope:1",
+        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+      },
+      {
+        "itemStack": "qmd:isotope:0",
+        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+      },
+      {
+        "itemStack": "qmd:isotope:8",
+        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
       }
     ],
     "dim": "Block Drops"

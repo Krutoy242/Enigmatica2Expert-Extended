@@ -56,22 +56,22 @@ for name, ingr in energyDimletIngrs {
 }
 
 // [Dimlet Control Circuit Rarity 7] from [Machine Circuitry][+1]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',
-  [
-    <advancedrocketry:ic:2>, // Advanced Circuit
-    <ore:processorBasic>,
-  ], null,
-  [<rftdimtweak:dimlet_control_circuit_seven>], null, { power: 100000, timeRequired: 100 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .input(<advancedrocketry:ic:2>)
+  .inputOre(<ore:processorBasic>)
+  .outputItem(<rftdimtweak:dimlet_control_circuit_seven>)
+  .power(100000)
+  .timeRequired(100)
+  .build();
 
 // [Dimlet Energy Type Controller] from [Particle Generator][+1]
-scripts.processUtils.avdRockXmlRecipeEx('PrecisionAssembler',
-  [
-    <advancedrocketry:ic:2>,          // Advanced Circuit
-    <draconicevolution:particle_generator>, // Particle Generator
-  ], null,
-  [<rftdimtweak:dimlet_type_controller_energy>], null, { power: 100000, timeRequired: 100 }
-);
+mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+  .input(<advancedrocketry:ic:2>)
+  .input(<draconicevolution:particle_generator>)
+  .outputItem(<rftdimtweak:dimlet_type_controller_energy>)
+  .power(100000)
+  .timeRequired(100)
+  .build();
 
 // [Dimension Monitor] from [Dimension Monitor]
 craft.shapeless(<rftdimtweak:dimension_monitor>, 'D', {

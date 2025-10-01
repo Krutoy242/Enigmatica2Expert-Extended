@@ -31,44 +31,4 @@
 	
 	The "useDefault" attribute will prevent loading of recipes if set to "false"
 <!-->
-<Recipes useDefault="false">
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Curio centrifuge] -->
-	<Recipe timeRequired="20" power="100000">
-		<input>
-			<fluidStack>flux_goo 100</fluidStack>
-		</input>
-		<output>
-			<itemStack>thaumcraft:curio 4 0</itemStack>
-			<itemStack>thaumcraft:curio 4 2</itemStack>
-			<itemStack>thaumcraft:curio 4 4</itemStack>
-			<itemStack>thaumcraft:curio 2 5</itemStack>
-		</output>
-	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Magic centrifuge II] -->
-	<Recipe timeRequired="20" power="100000">
-		<input>
-			<fluidStack>mirion 100</fluidStack>
-		</input>
-		<output>
-			<fluidStack>manasteel 1</fluidStack>
-			<fluidStack>terrasteel 1</fluidStack>
-			<fluidStack>elementium 1</fluidStack>
-			<fluidStack>glass 6</fluidStack>
-		</output>
-	</Recipe>
-	<!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-	<!-- [Magic centrifuge] -->
-	<Recipe timeRequired="20" power="100000">
-		<input>
-			<fluidStack>enrichedlava 100</fluidStack>
-		</input>
-		<output>
-			<fluidStack>thaumium 60</fluidStack>
-			<fluidStack>livingrock 50</fluidStack>
-			<fluidStack>bound_metal 15</fluidStack>
-			<fluidStack>mirion 4</fluidStack>
-		</output>
-	</Recipe>
-</Recipes>
+<Recipes useDefault="false"/>

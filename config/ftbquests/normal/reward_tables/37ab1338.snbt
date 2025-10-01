@@ -499,6 +499,22 @@
 				receiver: "Lucky pal"
 			}
 		}
+	},
+	{
+		icon: {
+			id: "ftbquests:lootcrate",
+			Count: 2,
+			tag: {
+				type: "mythic"
+			}
+		},
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "mythic"
+			}
+		},
+		count: 2
 	}],
 	loot_crate: {
 		string_id: "mythic",

@@ -19,6 +19,8 @@ val ore_liquid_exceptions = {
 } as string[string];
 
 for ore_entry in oreDict {
+  if (ore_entry.empty) continue;
+
   val name = ore_entry.name;
 
   // Ex Nihilo ore pieces conversion to ores
@@ -61,14 +63,6 @@ for ore_entry in oreDict {
       val gem = utils.getSomething(ore_name, ['ingot', 'gem', 'dust', 'any'], 2);
       if (!isNull(gem)) furnace.addRecipe(gem, ore_entry);
     }
-
-    // Add JEI entry for Thaumic Wonders
-    val oreBlock = utils.getSomething(ore_name, ['ore'], 1);
-    if (!isNull(oreBlock)) {
-      scripts.jei.mod.thaumicwonders.addAlchemists(oreBlock * 1, ore_entry.firstItem);
-    }
-    val crsShard = utils.getSomething(ore_name, ['crystalShard'], 1);
-    if (!isNull(crsShard)) scripts.jei.mod.thaumicwonders.addAlienists(ore_entry, crsShard * 1);
 
     magicProcessing(ore_entry, ore_name);
     continue;
@@ -113,6 +107,33 @@ for ore_entry in oreDict {
     if (isNull(output) || output.empty) continue;
 
     mods.ic2.OreWasher.addRecipe([output.firstItem], ore_entry);
+
+    continue;
+  }
+
+  // Small Plate Press
+  ore_name = getOreName(name, 'plate');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum' || ore_name == 'Concrete') continue;
+
+    val second = oreDict.get('block' ~ ore_name);
+    if (isNull(second) || second.empty) continue;
+
+    mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
+      .inputOre(second).outputItem(utils.oreToItem(ore_entry) * 6).build();
+
+    continue;
+  }
+  
+  ore_name = getOreName(name, 'blockSheetmetal');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
+
+    val output = oreDict.get('stick' ~ ore_name);
+    if (isNull(output) || output.empty) continue;
+
+    mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
+      .inputOre(ore_entry).outputItem(output.firstItem * 3).build();
 
     continue;
   }

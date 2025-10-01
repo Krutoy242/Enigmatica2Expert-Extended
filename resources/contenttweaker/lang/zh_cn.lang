@@ -16,6 +16,11 @@ description.crt.encrusted=%s §6§o（已镶嵌）§r
 # --------------------------------------
 # CoT new content
 # --------------------------------------
+entity.Villager.stock_trader=股票经纪人
+entity.Villager.necromancer=死灵法师
+infuse.ender=末影
+infuse.glowstone=荧石
+infuse.dimensional=维度的
 # itemGroup.other=ContentTweaker
 # fluid.seed=Seed
 fluid.spectre=液态通灵
@@ -247,9 +252,6 @@ e2ee.tconstruct.material.apprentice.description=§o学习的力量\n§r受到攻
 e2ee.tconstruct.material.spectre_string.name=通灵纤维
 e2ee.tconstruct.material.alpha_fur.name=首领毛皮
 e2ee.tconstruct.material.alpha_fur.description=§b霜冻\n§r冻住攻击目标或伤害来源
-e2ee.tconstruct.material.grinding.name=磨碎
-e2ee.tconstruct.material.grinding.description=§o跳！\n§r在矿石上跳跃可以将其粉碎
-e2ee.tconstruct.material.heavy.name=沉重
 e2ee.tconstruct.material.axing.name=木材劈砍
 e2ee.tconstruct.material.axing.description=§o木屑飞扬\n§r挖掘原木可以得到 4 个对应的木板
 e2ee.tconstruct.material.axing2.name=木材劈砍 II
@@ -447,7 +449,8 @@ e2ee.warn.wrong_installation=§6✖ §4您的模组包安装不正确！§6 ✖\
 e2ee.warn.wrong_world_type=§6✖ §4看起来您错误地生成了世界！§6 ✖\n§c若要玩Skyblock，在主菜单中导航至\n§6Mods§c ▶ §6Just Enough Dimensions§c 配置 ▶ §6Generic§c ▶ 并将 §6initialSpawnDimensionId§c 设置为 §63§c。之后，创建一个新世界。
 e2ee.do.charge=§f充能: §6%s§r
 e2ee.do.charge.bonus=§f加成: §7x§b%s§r
-e2ee.do.diverse.info=§2类型总数: §a%s§r\n§2中位数: §a%s§r\n§2奇点消耗的物品:\n%s
+e2ee.do.diverse.complete=§2已完成
+e2ee.do.diverse.incomplete=§e未完成
 e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
 e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
 e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r
@@ -461,6 +464,7 @@ e2ee.creature_uncapturable=§7该生物不能被捕捉。
 e2ee.skyblock.need_item=§b要进入 §3Skyblock§b 维度，您需要手持 %s§b 并达到 §3%s§b 方块的高度。
 e2ee.skyblock.stay_forever=§b要离开 §3Skyblock§b 世界，请跳入虚空。\n§b如果您想永久居住在 §3Skyblock§b 世界，使用命令 §n/island create§r§b。
 e2ee.skyblock.now_skyblocker=§b您现在已绑定至 §3Skyblock§b 世界！\n§8如果这是一次意外操作，您可以通过执行命令 §n/gamestage remove @p skyblock§r§8 来撤销绑定。
+e2ee.stc.granted=§6标准模板构造核心已授予！
 tooltips.lang.morb_resist=§r对血量低于总血量的 §4\u003C%s%%§r，或者少于 §c%s§r 颗心的怪物有效。
 tooltips.lang.not_compact_recipe=§e非真正合成！随处建造，最后放置聚合体
 

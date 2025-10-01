@@ -16,6 +16,11 @@ description.crt.encrusted=%s §6§o(Encrusted)§r
 # --------------------------------------
 # CoT new content
 # --------------------------------------
+entity.Villager.stock_trader=Stock Trader
+entity.Villager.necromancer=Necromancer
+infuse.ender=Ender
+infuse.glowstone=Glowstone
+infuse.dimensional=Dimensional
 itemGroup.other=ContentTweaker
 fluid.seed=Seed
 fluid.spectre=Spectre
@@ -247,9 +252,6 @@ e2ee.tconstruct.material.apprentice.description=§oPower of study\n§r1/10 of in
 e2ee.tconstruct.material.spectre_string.name=Spectre String
 e2ee.tconstruct.material.alpha_fur.name=Alpha Fur
 e2ee.tconstruct.material.alpha_fur.description=§bChilling\n§rChills targets or attackers
-e2ee.tconstruct.material.grinding.name=Grinding
-e2ee.tconstruct.material.grinding.description=§oJump!\n§rJump on Ore blocks to crush them into dust.
-e2ee.tconstruct.material.heavy.name=Heavy
 e2ee.tconstruct.material.axing.name=Axing
 e2ee.tconstruct.material.axing.description=§oAxing chad\n§rBreak wood logs to get x4 planks.
 e2ee.tconstruct.material.axing2.name=Axing II
@@ -447,7 +449,8 @@ e2ee.warn.wrong_installation=§6✖ §4The modpack has been installed incorrectl
 e2ee.warn.wrong_world_type=§6✖ §4It seems you've generated the world incorrectly!§6 ✖\n§cTo play Skyblock, from the main menu navigate to\n§6Mods§c ▶ §6Just Enough Dimensions§c Config ▶ §6Generic§c ▶ and set §6initialSpawnDimensionId§c to §63§c. Afterwards, create a new world.
 e2ee.do.charge=§fCharge: §6%s§r
 e2ee.do.charge.bonus=§fLatest bonus: §7x§b%s§r
-e2ee.do.diverse.info=§2Total types: §a%s§r\n§2Median amount: §a%s§r\n§2Items consumed by singularity:\n%s
+e2ee.do.diverse.complete=§2Complete
+e2ee.do.diverse.incomplete=§eIncomplete
 e2ee.otg.not_otg_biome=§2Cant TP to non-OTG biome with ID:§r §a§n%s§r§2. §8Try other Biome Essence.§r
 e2ee.otg.tp_to=§2Attempt teleport to:§r §a§n%s§r §8Wait until teleported or aborted.§r
 e2ee.otg.tp_finished=§2Teleporting finished.§r §8Try again if not teleported.§r
@@ -461,6 +464,7 @@ e2ee.creature_uncapturable=§7This creature can't be captured.
 e2ee.skyblock.need_item=§bTo access the §3Skyblock§b dimension, hold %s§b in your hand and ascend to a height of §3%s§b blocks.
 e2ee.skyblock.stay_forever=§bTo exit the §3Skyblock§b world, leap into the void.\n§bTo make the §3Skyblock§b world your permanent home, use the command §n/island create§r§b.
 e2ee.skyblock.now_skyblocker=§bYou are now bound to the §3Skyblock§b world!\n§8If this was done accidentally, you can reverse the skyblock binding by executing the command §n/gamestage remove @p skyblock§r§8.
+e2ee.stc.granted=§6Standard Template Construct Core granted!
 tooltips.lang.morb_resist=§rEffective against monsters at §4\u003C%s%%§r hearts, or with fewer than §c%s§r hearts total.
 tooltips.lang.not_compact_recipe=§eNot a real recipe! Build anywhere, Conglomerate last
 
@@ -527,7 +531,7 @@ tooltips.lang.removed.crash=§4Removed because it crashes the server
 
 tooltips.lang.requires.rf=Requires %s RF to make.
 tooltips.lang.craftable=Craftable.
-tooltips.lang.mekanism_factories=Factories are made by upgrading Machines in-world with Basic/Advanced/Elite Tier Installers.
+tooltips.lang.mekanism_factories=Factories are made by upgrading Machines in-world with Tier Installers.
 tooltips.lang.mekanism_t_ultimate=§dOnly works on Bins, Energy Cubes, Tanks and Gas Tanks
 tooltips.lang.ic2wrench=You can safely break IC2 machines with a Pickaxe.
 

@@ -1,4 +1,4 @@
-#modloaded randomtweaker botania
+#modloaded botania
 #priority 900
 #reloadable
 

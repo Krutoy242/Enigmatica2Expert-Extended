@@ -1,4 +1,4 @@
-#modloaded chisel
+#modloaded chisel modtweaker
 
 import crafttweaker.item.IItemStack;
 import mods.chisel.Carving.addVariation;

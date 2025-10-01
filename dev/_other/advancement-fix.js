@@ -7,11 +7,8 @@
 
 // @ts-check
 
-import { rename, unlink } from 'fs/promises'
-import { join } from 'path'
+import { join } from 'node:path'
 
-import fast_glob from 'fast-glob'
-import yargs from 'yargs'
 import zipLocal from 'zip-local'
 
 import { getRemovedRecipes } from '../lib/tellme.js'
@@ -22,14 +19,6 @@ import {
   saveObjAsJson,
 } from '../lib/utils.js'
 
-const { argv } = yargs(process.argv.slice(2)).option('remove', {
-  alias: 'r',
-  type: 'boolean',
-  describe: 'Remove patched .jar files created by Bansoukou',
-})
-
-const { sync: globs } = fast_glob
-
 /**
  * @typedef {import('./advancement-fix').Advancement} Advancement
  */
@@ -39,12 +28,6 @@ const { sync: globs } = fast_glob
  */
 
 export async function init(h = defaultHelper) {
-  if (argv['remove']) {
-    await removePatchedFiles()
-    h.result('Patched files removed')
-    return
-  }
-
   await h.begin('Loading & parsing debug.log')
   const erroring = getErroring()
 
@@ -59,7 +42,7 @@ export async function init(h = defaultHelper) {
     })
   )
 
-  const removedRecipeNames = new Set(getRemovedRecipes().map((r) => r.name))
+  const removedRecipeNames = new Set(getRemovedRecipes().map(r => r.name))
 
   const removedResources = fixAdvancements(store, removedRecipeNames)
   removedResources.forEach((rPath) => {
@@ -73,19 +56,6 @@ export async function init(h = defaultHelper) {
   })
 
   console.log('Still Unfixed :>> ', erroring.resources)
-}
-
-function removePatchedFiles() {
-  return Promise.all(
-    globs(['mods/*-patched.jar'], { dot: !0 }).map((fileName) => {
-      const base = fileName.replace(/-patched\.jar$/g, '')
-
-      return Promise.all([
-        rename(`${base}.disabled`, `${base}.jar`),
-        unlink(fileName),
-      ])
-    })
-  )
 }
 
 /**
@@ -127,7 +97,7 @@ function getErroring() {
   const erroringRecipeNames = new Set(
     [
       ...log.matchAll(
-        /Parsing error loading built-in advancement (?<resource>.+)[\n\s]+.+Unknown recipe '(?<recipeName>.+)'/gm
+        /Parsing error loading built-in advancement (?<resource>.+)\s+(?:\S.*|[\t\v\f \xA0\u1680\u2000-\u200A\u202F\u205F\u3000\uFEFF])Unknown recipe '(?<recipeName>.+)'/g
       ),
     ].map(({ groups: { resource, recipeName } }) => {
       erroringResources.add(resource)
@@ -136,7 +106,7 @@ function getErroring() {
   )
 
   return {
-    names: erroringRecipeNames,
+    names    : erroringRecipeNames,
     resources: erroringResources,
   }
 }
@@ -156,14 +126,14 @@ function getJarAdvancements(jarPath) {
       /** @type {string[]} */
       const fileList = unzippedfs
         .contents()
-        .filter((archPath) =>
+        .filter(archPath =>
           archPath.match(/^assets\/.+advancements\/.+\.json$/)
         )
 
       resolve({
         jarPath,
         list: Object.fromEntries(
-          fileList.map((archievePath) => [
+          fileList.map(archievePath => [
             archievePath,
             JSON.parse(unzippedfs.read(archievePath, 'text')),
           ])
@@ -222,14 +192,14 @@ const mutateList = [
     const filtered = advcnmt.rewards?.recipes?.filter(isFineRecName)
     if (!filtered) return false
 
-    const hasErroringRecipe =
-      filtered.length !== advcnmt.rewards?.recipes.length
+    const hasErroringRecipe
+      = filtered.length !== advcnmt.rewards?.recipes.length
 
     // This advancement has only recipes as rewards
     // Remove rewards completely
     if (
-      (hasErroringRecipe && Object.keys(advcnmt.rewards).length === 1) ||
-      filtered.length <= 0
+      (hasErroringRecipe && Object.keys(advcnmt.rewards).length === 1)
+      || filtered.length <= 0
     ) {
       delete advcnmt.rewards
       return true
@@ -242,10 +212,11 @@ const mutateList = [
     let deleted = false
     for (const [key, criteria] of Object.entries(advcnmt.criteria)) {
       if (
-        criteria.trigger !== 'minecraft:recipe_unlocked' ||
-        isFineRecName(criteria.conditions.recipe)
-      )
+        criteria.trigger !== 'minecraft:recipe_unlocked'
+        || isFineRecName(criteria.conditions.recipe)
+      ) {
         continue
+      }
 
       delete advcnmt.criteria[key]
       deleted = true
@@ -267,9 +238,9 @@ const mutateList = [
 function mutateAdvancement(erroringRecipeNames, advcnmt) {
   // Remove requirments field if its useless
   if (
-    advcnmt.requirements &&
-    Object.keys(advcnmt.criteria).every((key) =>
-      advcnmt.requirements.some((arr) => arr.some((s) => s === key))
+    advcnmt.requirements
+    && Object.keys(advcnmt.criteria).every(key =>
+      advcnmt.requirements.some(arr => arr.includes(key))
     )
   ) {
     delete advcnmt.requirements
@@ -277,7 +248,7 @@ function mutateAdvancement(erroringRecipeNames, advcnmt) {
 
   let wasChanged = false
   mutateList.forEach((mutateCb) => {
-    if (mutateCb(advcnmt, (s) => !erroringRecipeNames.has(s))) wasChanged = true
+    if (mutateCb(advcnmt, s => !erroringRecipeNames.has(s))) wasChanged = true
   })
 
   // This advancment is empty, remove it completely
@@ -288,6 +259,6 @@ function mutateAdvancement(erroringRecipeNames, advcnmt) {
 
 if (
   // @ts-ignore
-  import.meta.url === (await import('url')).pathToFileURL(process.argv[1]).href
+  import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href
 )
   init()

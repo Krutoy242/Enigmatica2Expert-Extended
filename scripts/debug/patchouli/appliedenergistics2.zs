@@ -7,7 +7,7 @@ var lines = [
   '{',
   '  "name": "Matter Cannon",',
   '  "icon": "appliedenergistics2:matter_cannon",',
-  '  "category": "Items",',
+  '  "category": "World",',
   '  "pages": [',
   '    {',
   '      "title": "Matter Cannon Ammo",',
@@ -28,7 +28,7 @@ var i = 0;
 for item, mass in itemMass {
   lines += '      "item' ~ i ~ '": "'
     ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage)
-    ~ '#' ~ mass ~ '"' ~ (i == length - 1 ? '' : ',');
+    ~ '#' ~ mass as int ~ '"' ~ (i == length - 1 ? '' : ',');
   i += 1;
 }
 lines += '    }\n  ]\n}\n';

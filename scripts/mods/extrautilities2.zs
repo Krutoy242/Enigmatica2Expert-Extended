@@ -1,4 +1,4 @@
-#modloaded extrautils2
+#modloaded extrautils2 ic2
 #priority 1
 
 import crafttweaker.item.IIngredient;
@@ -91,8 +91,8 @@ craft.remake(<extrautils2:rainbowgenerator>, ['pretty',
   'a': <extrautils2:rainbowgenerator:2>,
   '▬': <ore:ingotGold198>,
   'O': <extrautils2:opinium:5>,
-  's': <contenttweaker:ball_singularity>,
-  'i': <contenttweaker:machine_case_singularity>,
+  's': <contenttweaker:ball_singularity>.withTag({ completed: 1 as byte }),
+  'i': <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte }),
   'R': <extrautils2:rainbowgenerator:1>,
 });
 
@@ -420,21 +420,8 @@ scripts.process.melt(<extrautils2:ironwood_log:1>   , <liquid:iron> * 144, 'No E
 scripts.process.melt(<extrautils2:ironwood_planks:1>, <liquid:iron> *  80, 'No Exceptions');
 mods.tconstruct.Casting.addTableRecipe(<extrautils2:ironwood_sapling>, <ore:treeSapling>, <liquid:iron>, 576, true, 1);
 
-// Rat diamond alt
-// [Climograph Base Unit] from [Machine Block][+3]
+// [Climograph Base Unit] cheaper for easy biome manipulation
 craft.remake(<extrautils2:terraformer:9>, ['pretty',
-  '▬ ◊ ▬',
-  'S ■ S',
-  '▬ ◊ ▬'], {
-  '▬': <ore:ingotFakeIron>,  // Iron Ingot
-  '◊': <ore:gemDiamondRat>,  // Diamond
-  'S': <ic2:crafting:20>,
-  '■': machineBlock,
-});
-
-// Skyblock alt
-// [Climograph Base Unit] from [Iron Sheetmetal][+2]
-scripts.skyblock.skyrecipes.add(<extrautils2:terraformer:9>, ['pretty',
   '▬ S ▬',
   'S ■ S',
   '▬ S ▬'], {
@@ -560,7 +547,7 @@ scripts.do.burnt_in_fluid.add(<extrautils2:redorchid>, <blockstate:minecraft:red
 mods.exnihilocreatio.Crook.addRecipe(<extrautils2:ironwood_leaves>, <extrautils2:ironwood_sapling>, 0.2, 0.28);
 
 // Remake removed AA crusher benefits
-scripts.process.crush(<minecraft:gold_ore>, <thermalfoundation:material:1> * 2, 'strict: eu2crusher', [<contenttweaker:dust_tiny_silver>], [1.0f]);
-scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'strict: eu2crusher', [<minecraft:flint>], [0.5f]);
-scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: eu2crusher');
-scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: eu2crusher');
+scripts.process.crush(<minecraft:gold_ore>, <thermalfoundation:material:1> * 2, 'only: IECrusher', [<contenttweaker:dust_tiny_silver>], [1.0f]);
+scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'only: IECrusher', [<minecraft:flint>], [0.5f]);
+scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: IECrusher');
+scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: IECrusher');

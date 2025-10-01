@@ -3,7 +3,7 @@
 
 static biomeIdToName as string[][int] = {
 /* Inject_js{
-const list = Object.entries(_.groupBy(getCSV('config/tellme/biomes-csv.csv'), 'ID'))
+const list = Object.entries(_.groupBy(getCSV(globSync('config/tellme/biomes-csv*.csv')[0]), 'ID'))
     .map(([id, list]) => {
       return [id, list
         .map(v => [v['Registry name'], `'${v['Biome name']}'`])

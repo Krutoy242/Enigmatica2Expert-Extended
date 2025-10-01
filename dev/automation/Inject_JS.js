@@ -16,10 +16,10 @@
 
 import process from 'node:process'
 
-import { globSync } from 'glob'
 import humanizeString from 'humanize-string'
 import _ from 'lodash'
 import { getBorderCharacters, table } from 'table'
+import { globSync } from 'tinyglobby'
 import { js2xml, xml2js } from 'xml-js'
 import yargs from 'yargs'
 
@@ -72,7 +72,7 @@ function saveObjAsJson(obj, filename) {
 /** @typedef {import("xml-js").Element} XMLElement */
 /** @param {string} xmlString */
 function xml_to_js(xmlString) {
-  return /** @type {XMLElement} */ (xml2js(xmlString, { compact: false }))
+  return /** @type {XMLElement} */ xml2js(xmlString, { compact: false })
 }
 
 function reverseStr(s) {
@@ -87,10 +87,10 @@ function reverseNaturalSort(a, b) {
  * @param {string} meta
  */
 function itemize(id, meta) {
-  return id + ((meta && meta !== '0') ? `:${meta}` : '')
+  return id + (meta && meta !== '0' ? `:${meta}` : '')
 }
 function $(source, id, meta, count, nbt, modifiers) {
-  return `<${source}:${id}${(meta && meta !== '0') ? `:${meta}` : ''}>${
+  return `<${source}:${id}${meta && meta !== '0' ? `:${meta}` : ''}>${
     nbt ? `.withTag(${nbt})` : ''
   }${modifiers || ''}${Number(count) > 1 ? ` * ${count | 0}` : ''}`
 }
@@ -99,10 +99,10 @@ function flatTable(arr) {
   return arr.length <= 0
     ? undefined
     : table(arr, {
-      border            : getBorderCharacters('void'),
-      columnDefault     : { paddingLeft: 0, paddingRight: 0 },
-      drawHorizontalLine: () => false,
-    }).replace(/[ \t]+$|\n$/gm, '')
+        border            : getBorderCharacters('void'),
+        columnDefault     : { paddingLeft: 0, paddingRight: 0 },
+        drawHorizontalLine: () => false,
+      }).replace(/[ \t]+$|\n$/gm, '')
 }
 
 /**
@@ -129,14 +129,15 @@ export async function init(h = defaultHelper) {
     )) {
       const lineNumber = zsfileContent
         .substring(0, match.index)
-        .split('\n').length
+        .split('\n')
+        .length
       const [, whole, p1, p2] = match
       const below = zsfileContent.substring((match.index ?? 0) + match[0].length + 1)
       occurences.push({
         filePath,
         capture: whole,
         command:
-          (p1 === '{' && p2 === '}')
+          p1 === '{' && p2 === '}'
             ? `(()=>${whole.trim()})()`
             : whole.trim(),
         line : lineNumber,
@@ -185,8 +186,8 @@ export async function init(h = defaultHelper) {
         '/**/',
         `*/\n${injectString}\n`
       )
-      replaceResults?.forEach(o => (countBlocks += o.numMatches ?? 0))
-      replaceResults?.forEach(o => (countChanged += o.numReplacements ?? 0))
+      replaceResults?.forEach(o => countBlocks += o.numMatches ?? 0)
+      replaceResults?.forEach(o => countChanged += o.numReplacements ?? 0)
     }
 
     h.step()

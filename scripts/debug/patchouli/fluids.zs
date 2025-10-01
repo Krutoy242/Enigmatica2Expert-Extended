@@ -29,7 +29,7 @@ var lines = [
   '{',
   '  "name": "Smeltery Fuels",',
   '  "icon": "tconstruct:smeltery_controller",',
-  '  "category": "Liquids",',
+  '  "category": "World",',
   '  "pages": [',
   '    {',
   '      "item": "tconstruct:smeltery_controller",',

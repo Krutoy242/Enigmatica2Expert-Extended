@@ -1,10 +1,9 @@
-#modloaded thaumcraft randomtweaker
+#modloaded thaumcraft
 #ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 import thaumcraft.aspect.CTAspectStack;
-import mods.ctintegration.data.DataUtil.parse as fromNBTs;
 
 static all as CTAspectStack[] = [
 <aspect:aer>,

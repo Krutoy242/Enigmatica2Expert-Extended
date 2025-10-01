@@ -14,7 +14,7 @@ craft.reshapeless(HD, 'A***', {
   '*': HS, // Heart Crystal Shard
 });
 mods.rats.recipes.addGemcutterRatRecipe(HS, HD);
-scripts.process.crush(HS * 2, HD, 'only: eu2Crusher', [HD], [0.2f]);
+scripts.process.crush(HS * 2, HD, 'only: IECrusher', [HD], [0.2f]);
 scripts.process.crush(HS    , HD, 'only: SagMill Pulverizer', [HD, HD, HD], [0.8f, 0.4f, 0.2f]);
 
 // Peaceful alt
