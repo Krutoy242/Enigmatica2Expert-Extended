@@ -1,4 +1,3 @@
-#modloaded ctintegration
 #reloadable
 #ignoreBracketErrors
 

@@ -1,4 +1,4 @@
-#modloaded zenutils ctintegration patchouli
+#modloaded zenutils patchouli
 #priority -200
 #reloadable
 

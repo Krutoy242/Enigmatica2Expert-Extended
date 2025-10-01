@@ -2,6 +2,7 @@
 #reloadable
 
 import crafttweaker.entity.IEntityDefinition;
+import crafttweaker.event.EntityLivingDamageEvent;
 
 static entityMap as int[IEntityDefinition] = {
   <entity:minecraft:wolf>               : 0,
@@ -60,7 +61,7 @@ if(scriptStatus() == 0) {
   }
 }
 
-events.onEntityLivingDamage(function (e as crafttweaker.event.EntityLivingDamageEvent) {
+events.register(function (e as EntityLivingDamageEvent) {
   val mob = e.entity;
   if (
     isNull(mob)

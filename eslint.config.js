@@ -9,6 +9,7 @@ export default antfu({
     'ts/no-floating-promises'      : 'error',
     'ts/strict-boolean-expressions': 'off',
     'ts/no-unsafe-assignment'      : 'off',
+    'ts/no-unsafe-member-access'   : 'off',
 
     // Override @antfu rules to my personal prefferences
     'style/key-spacing'            : ['error', { align: 'colon' }],

@@ -2,20 +2,19 @@
 
 🚧✅❌⚠️♻️ List of priorities:
 
+- [ ] ✏️ Fix entity not dropping stuff by using `EntityLivingDeathDropsEvent` or just refactor using tables
+- [ ] 🤖 Nanomachines give next levels of potions
+- [ ] ✏️ Add `Veggie Singularity`
+- [ ] ✏️ Add `Upgrade Singularity`
+- [ ] ✏️ Return Tungsten Blocks for High-pressure turbines
 - [ ] 🧱 Automatically interactive-rebase
-- [x] ♻️ Completely get rid of `Patchouli_js()` code in .zs files
-- [x] ♻️ remove `crossscript` since data accessible between loaders
 - [ ] 👑 Upgrading Draconic tools give Omnopotence
-- [ ] 👑 `Omnopotence` add excavate for any item
-- [ ] 🐛 `64k me storage cell` cant be autocrafted in ME
 - [ ] 🐛 Custom beacons not working on server
-- [x] 📖 Disable upcraft for loot chests
 - [ ] 🟢 Migrate from `UniDict` to `OnlyOneItem`
-- [x] ✏️ Prevent using `Flux Reconstruction` to fill Singularities
-- [ ] ⛏️ Fix Excavate modifier always working at max level
 
 ### "Endgame" expansion
 
+- [ ] ✏️ `Anglesite` and `Benitoite` ore make in form of RFTools dimlets
 - [ ] 🐛 Fix Harvest Levels not working for non-"stone" material
 - [ ] 🖼️ Use `Legendary Tooltips` to mark harvest levels
 - [ ] 🧶 Feat: make some ores / materials only harvestable with `Gluon Gun`
@@ -49,6 +48,9 @@ Command to optimize all the .png files:
 Planned non-urgent changes, or just good ideas:
 
 ### "Performance ⚡"
+
+- [ ] ⚡ Remove `Fluid Conduit` recipe since lower FPS
+- [ ] ⚡ add Warning about things that lower FPS: `placed item, drawers, Auto Sieve (promote ugly plating)`
 - [ ] ⚡ Fix `OpenComputers` JEI plugin is still loaded (see benchmark)
 - [ ] ⚡ Cleanup JER data (and ores on other planets for clear JER tab)
 - [ ] ⚡ Fix projectiles accumulated on chunk borders, such as Scythe or Beam Laser. Use `ForceUpdateEntityClasses` StellarCore's config

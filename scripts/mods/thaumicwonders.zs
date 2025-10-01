@@ -237,7 +237,7 @@ craft.remake(<thaumicwonders:creative_essentia_jar>, ['pretty',
   'M': <thaumadditions:jar_mithminite> ?? <extrautils2:snowglobe:1>, // Mithminite Fortified Jar
   'l': <botania:blackholetalisman>, // Black Hole Talisman
   'A': <thaumicwonders:alkahest_vat>, // Alkahest Vat
-  'T': <contenttweaker:meat_singularity>,
+  'T': <contenttweaker:meat_singularity>.withTag({ completed: 1 as byte }),
 });
 
 // [Primordial siphon]

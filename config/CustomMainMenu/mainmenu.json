@@ -155,7 +155,7 @@
       "alignment": "bottom_right"
     },
     "version_num": {
-      "text": "v1.63.2",
+      "text": "v1.64.2",
       "posX": -65,
       "posY": -25,
       "color": 4956595,
@@ -213,12 +213,14 @@
           "enigmatica:textures/slideshow/slideshow_12.jpg",
           "enigmatica:textures/slideshow/slideshow_13.jpg",
           "enigmatica:textures/slideshow/slideshow_20.jpg",
+          "enigmatica:textures/slideshow/tabakasim-ryuga-2025-09-06_12.16.jpg",
           "enigmatica:textures/slideshow/thefool_-2023-12-21_11.44.10.jpg",
           "enigmatica:textures/slideshow/thefool_-2023-12-21_12.40.48.jpg",
           "enigmatica:textures/slideshow/thekaarlo-tomm2000-2024-03-05_21.52.jpg",
           "enigmatica:textures/slideshow/thekaarlo-tomm2000-2024-03-05_21.53.jpg",
           "enigmatica:textures/slideshow/trashboxbobylev-2022-08-06_17.43.13.jpg",
           "enigmatica:textures/slideshow/trashboxbobylev-2022-08-06_17.46.15.jpg",
+          "enigmatica:textures/slideshow/trashboxbobylev-2025-09-17_16.04.jpg",
           "enigmatica:textures/slideshow/_stea-2023-08-04_11.02.53.jpg",
           "enigmatica:textures/slideshow/_stea-2023-08-04_11.06.18.jpg"
         ],

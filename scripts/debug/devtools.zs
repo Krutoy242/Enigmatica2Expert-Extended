@@ -1,4 +1,3 @@
-#modloaded ctintegration
 #reloadable
 #priority -6000
 #ignoreBracketErrors
@@ -227,37 +226,4 @@ events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickB
   // }
 
   e.player.sendMessage('§8Done!§r');
-});
-
-events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlockEvent) {
-  /*
-    Check requirments
-  */
-
-  val world as IWorld = e.world;
-  if (isNull(world) || world.remote) return;
-
-  val player as IPlayer = e.player;
-  if (isNull(player) || !player.creative) return;
-
-  val currentItem = e.item;
-  if (isNull(currentItem)) return;
-  if (currentItem.definition.id != 'minecraft:stick') return;
-
-  val block as IBlock = world.getBlock(e.x, e.y, e.z);
-  if (isNull(block)) return;
-
-  val data as IData = block.data;
-  if (isNull(data)) return;
-
-  var itemsList = data.Items;
-  if (isNull(itemsList) || isNull(itemsList.asList())) {
-    itemsList = data.Inventory;
-  }
-
-  if (isNull(itemsList) || isNull(itemsList.asList()) || itemsList.length <= 0) return;
-
-  mods.ctintegration.util.RawLogger.logRaw(mods.ctintegration.data.DataUtil.toNBTString(itemsList));
-  player.sendMessage('§8Printed ' ~ itemsList.length ~ ' items');
-  e.cancel();
 });

@@ -1,4 +1,4 @@
-#modloaded jei ctintegration
+#modloaded jei
 #priority 2
 #reloadable
 
@@ -89,7 +89,7 @@ zenClass Descriptor {
 
 		val item = ingr.items[0];
 		val nbt = !item.hasTag ? ''
-			: ':'~item.tag.toNBTString().replaceAll('"', "'");
+			: ':'~item.tag.toSNBT().replaceAll('"', "'");
 		utils.log('autolocalizing: '~id~nbt);
 		return id ~ nbt;
 	}

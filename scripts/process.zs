@@ -26,7 +26,7 @@
 //
 // ######################################################################
 
-#modloaded crafttweakerutils jaopca mekanism
+#modloaded jaopca mekanism
 #priority 50
 #reloadable
 
@@ -34,8 +34,8 @@ import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
+import crafttweaker.util.Math.max;
+import crafttweaker.util.Math.min;
 
 import scripts.processUtils.wholesCalc;
 import scripts.processWork.work;
@@ -63,7 +63,7 @@ function lF(output as ILiquidStack, mult as double) as ILiquidStack {
   val dmult = damount * mult;
   for step in fluidSteps {
     if (dresult == 0.0 && damount % step == 0) {
-      dresult = max(step as double, step * ((dmult / step) as int)) as double;
+      dresult = max(step, step * ((dmult / step) as int));
     }
   }
   if (dresult == 0) { dresult = dmult; }

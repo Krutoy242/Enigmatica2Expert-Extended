@@ -1,11 +1,10 @@
 #reloadable
 #priority -1100
-#modloaded zenutils ctintegration scalinghealth
+#modloaded zenutils scalinghealth
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import crafttweaker.data.IData;
-import mods.ctintegration.scalinghealth.DifficultyManager;
 import mods.zenutils.NetworkHandler;
 
 import scripts.do.hand_over_your_items.tellrawItemObj;

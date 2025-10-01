@@ -2,8 +2,8 @@
 #modloaded thaumtweaks requious
 #priority 950
 
+import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
-import mods.ctintegration.data.DataUtil.parse as sNBT;
 import mods.requious.AssemblyRecipe;
 
 // -----------------------------------------------------------------------
@@ -34,7 +34,7 @@ loadText('config/thaumtweaks_pech_trades.txt')
   .trim()
   .replace(/\n\s*\d+:/gm, '\n  ], [')
   .replace(/^\s+(\w+:[^\s]+)/gm, '    <$1>') // Item
-  .replace(/\s+(\{.*\})/gm, ".withTag(sNBT('$1'))") // Tag
+  .replace(/\s+(\{.*\})/gm, ".withTag(utils.sNBT('$1'))") // Tag
   .replace(/\s+(\d+)$/gm, ' * $1') // Weight
   .replace(/^(\s{4}.*)/gm, '$1,') // Commas
   .replace(/^(\w+:)\n\s+\], /gm, '  ]],\n$1 [') // Excess brackets
@@ -67,7 +67,7 @@ MINER: [[
     <thaumicwonders:transmuter_stone>,
     <twilightforest:twilight_sapling:7>,
     <cyclicmagic:storage_bag>,
-    <thaumcraft:elemental_pick>.withTag(sNBT('{infench:[{lvl:1s,id:4s},{lvl:2s,id:3s}]}')),
+    <thaumcraft:elemental_pick>.withTag(utils.sNBT('{infench:[{lvl:1s,id:4s},{lvl:2s,id:3s}]}')),
     <actuallyadditions:quartz_paxel>,
   ], [
     <bloodmagic:demon_crystal>,
@@ -78,12 +78,12 @@ MINER: [[
     <astralsorcery:blockgemcrystals:4>,
   ]],
 MAGE: [[
-    <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "aer"}]}')),
-    <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "terra"}]}')),
-    <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "ignis"}]}')),
-    <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "aqua"}]}')),
-    <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "perditio"}]}')),
-    <thaumcraft:phial:1>.withTag(sNBT('{Aspects: [{amount: 10, key: "ordo"}]}')),
+    <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "aer"}]}')),
+    <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "terra"}]}')),
+    <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "ignis"}]}')),
+    <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "aqua"}]}')),
+    <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "perditio"}]}')),
+    <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "ordo"}]}')),
   ], [
     <thaumcraft:cloth_chest>,
     <thaumcraft:cloth_legs>,
@@ -125,37 +125,37 @@ ARCHER: [[
     <rustic:silver_lantern>,
     <cyclicmagic:glove_climb>,
     <cyclicmagic:wand_missile>,
-    <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 1s, id: 51}]}')),
-    <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 1s, id: 78}]}')),
+    <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 1s, id: 51}]}')),
+    <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 1s, id: 78}]}')),
   ], [
-    <tconstruct:bow_string>.withTag(sNBT('{Material: "soularium"}')),
-    <tconstruct:bow_limb>.withTag(sNBT('{Material: "ghostwood"}')),
-    <tconstruct:bow_limb>.withTag(sNBT('{Material: "ionite"}')),
+    <tconstruct:bow_string>.withTag(utils.sNBT('{Material: "soularium"}')),
+    <tconstruct:bow_limb>.withTag(utils.sNBT('{Material: "ghostwood"}')),
+    <tconstruct:bow_limb>.withTag(utils.sNBT('{Material: "ionite"}')),
     <cyclicmagic:ender_lightning>,
-    <tconstruct:bow_string>.withTag(sNBT('{Material: "fluxed_string"}')),
+    <tconstruct:bow_string>.withTag(utils.sNBT('{Material: "fluxed_string"}')),
     <endreborn:item_ender_string>,
   ], [
     <conarm:travel_sack>,
-    <tconstruct:bow_string>.withTag(sNBT('{Material: "spectre_string"}')),
-    <tconstruct:bow_limb>.withTag(sNBT('{Material: "aethium"}')),
-    <tconstruct:bow_limb>.withTag(sNBT('{Material: "gelid_gem"}')),
+    <tconstruct:bow_string>.withTag(utils.sNBT('{Material: "spectre_string"}')),
+    <tconstruct:bow_limb>.withTag(utils.sNBT('{Material: "aethium"}')),
+    <tconstruct:bow_limb>.withTag(utils.sNBT('{Material: "gelid_gem"}')),
     <cyclicmagic:wand_hypno>,
-    <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 1s, id: 70}]}')),
+    <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 1s, id: 70}]}')),
   ], [
     <minecraft:dragon_breath>,
     <cyclicmagic:storage_bag>,
     <thaumicwonders:bone_bow>,
-    <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 10s, id: 48}]}')),
-    <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 4s, id: 49}]}')),
-    <minecraft:enchanted_book>.withTag(sNBT('{StoredEnchantments: [{lvl: 6s, id: 65}]}')),
+    <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 10s, id: 48}]}')),
+    <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 4s, id: 49}]}')),
+    <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 6s, id: 65}]}')),
   ]],
 COMMON: [[
     <mysticalagriculture:inferium_apple> * 2,
     <extrautils2:magicapple> * 4,
     <thaumcraft:curio:1> * 4,
-    <rustic:fluid_bottle>.withTag(sNBT('{Fluid: {FluidName: "ironwine", Amount: 1000, Tag: {Quality: 1.0f}}}')),
-    <rustic:fluid_bottle>.withTag(sNBT('{Fluid: {FluidName: "wine", Amount: 1000, Tag: {Quality: 1.0f}}}')),
-    <rustic:fluid_bottle>.withTag(sNBT('{Fluid: {FluidName: "mead", Amount: 1000, Tag: {Quality: 1.0f}}}')),
+    <rustic:fluid_bottle>.withTag(utils.sNBT('{Fluid: {FluidName: "ironwine", Amount: 1000, Tag: {Quality: 1.0f}}}')),
+    <rustic:fluid_bottle>.withTag(utils.sNBT('{Fluid: {FluidName: "wine", Amount: 1000, Tag: {Quality: 1.0f}}}')),
+    <rustic:fluid_bottle>.withTag(utils.sNBT('{Fluid: {FluidName: "mead", Amount: 1000, Tag: {Quality: 1.0f}}}')),
   ], [
     <mysticalagriculture:prudentium_apple>,
     <thaumicenergistics:blank_knowledge_core> * 2,

@@ -230,7 +230,7 @@ craft.remake(<rats:rat_upgrade_fisherman>, ['pretty',
   '  §  ',
   'A R A',
   '  F  '], {
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   'A': <ore:listAllfishraw>,
   'R': <rats:rat_upgrade_basic>,
   'F': <rats:fisherman_hat>.anyDamage(),

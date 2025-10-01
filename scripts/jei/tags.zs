@@ -1,4 +1,4 @@
-#modloaded jei ctintegration
+#modloaded jei
 #priority 1
 #ignoreBracketErrors
 
@@ -213,7 +213,7 @@ static list as IItemStack[][string] = {
     <environmentaltech:modifier_creative_flight>,
     <extrautils2:angelring>,
     <extrautils2:chickenring:1>,
-    <ic2:jetpack_electric:26>,
+    <ic2:jetpack_electric>,
     <ic2:jetpack:27>,
     <ic2:quantum_chestplate:26>,
     <mekanism:armoredjetpack>,

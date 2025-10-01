@@ -1,5 +1,4 @@
 #loader contenttweaker
-#modloaded crafttweakerutils
 #priority 9000
 
 import mods.contenttweaker.AxisAlignedBB;
@@ -63,7 +62,7 @@ function buildSingularity(id as string, ore as string, charge as int = 30000, gl
   val x = VanillaFactory.createExpandItem(`${id}_singularity`);
   x.creativeTab = <creativetab:other>;
   x.maxDamage = 30000;
-  x.setNoRepair();
+  x.noRepair = true;
   x.glowing = glowing;
   x.register();
 

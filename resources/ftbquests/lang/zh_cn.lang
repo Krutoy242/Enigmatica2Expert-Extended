@@ -91,6 +91,8 @@ q.getting_started.crafters.desc=能自动化工作台配方的方块。
 q.getting_started.harder_branch_mining.name=更难的采矿法
 q.getting_started.harder_branch_mining.desc=§2更难的采矿§r会以多种的方式使挖矿更艰难，鼓励你找矿洞。\n\n从 Y=48 开始变难，Y=5 处难度达到最高。\n\n大多数§2矿石§r是例外，不会更难挖。
 q.getting_started.morphing_tool.desc=这个工具可以与几乎所有模组的扳手结合，它会在你使用时自动切换。用铜、锡、银、铅齿轮与它合成能够使它获取全部变形。
+q.getting_started.infusion_enchantme.name=注魔附魔
+q.getting_started.infusion_enchantme.desc="收集" 和 "借用" 注魔附魔可以通过将工具与Vis水晶一起合成来应用于TCon工具。
 q.getting_started.harvest_level_5.name=挖掘等级 5
 q.getting_started.harvest_level_5.desc=锇只生成在§4基岩层§r。\n每个区块保证有 1 个矿群。\n\n取§c生铁§r同样可以完成任务。\n\n使用§6基岩矿石采掘机§r来实现自动化。
 q.getting_started.terminals.name=终端
@@ -1840,7 +1842,7 @@ q.bragging_rights.creative_mill.desc=10000的GP。
 q.bragging_rights.creative_screen.desc=创造模式屏幕不需要耗电。
 q.bragging_rights.infinity_booster_c.desc=使无限终端能够无限距离甚至跨维度连接到AE网络。
 q.bragging_rights._omnipotence_.name=§e✪ 全能 ✪§r
-q.bragging_rights._omnipotence_.desc=§e全能§r 是达到最高§e难度✪§r的玩家所拥有的状态。\n\n将获得神一般的能力：\n§2●§r 增加交互距离\n§2●§r 抗击退\n§2●§r 更快的移动与游泳速度\n§2●§r 更高攻击伤害\n§2●§r 解锁 §b星辉魔法§r 与 §5神秘时代§r 所有知识\n§2●§r 永远保持饱食，且拥有 §675%%§r 营养度\n§2●§r 你的空手可以像使用精准采集一样挖掘任何方块\n§2●§r 手持的任何物品都是完美的工具\n§2●§r 能在太空中呼吸\n§2●§r 获得所有暮色森林进度\n§2●§r 飞得更快\n§2●§r +10生命条
+q.bragging_rights._omnipotence_.desc=§e全能§r 是达到最高§e难度✪§r的玩家所拥有的状态。\n\n将获得神一般的能力：\n§2●§r 增加交互距离\n§2●§r 抗击退\n§2●§r 更快的移动与游泳速度\n§2●§r 更高攻击伤害\n§2●§r 解锁 §b星辉魔法§r 与 §5神秘时代§r 所有知识\n§2●§r 永远保持饱食，且拥有 §675%%§r 营养度\n§2●§r 你的空手可以像使用精准采集一样挖掘任何方块\n§2●§r 手持的任何物品都是完美的工具，§6也可用于挖掘§r\n§2●§r 能在太空中呼吸\n§2●§r 获得所有暮色森林进度\n§2●§r 飞得更快\n§2●§r +10生命条
 q.bragging_rights.rainbow_generator_.desc=彩虹发电机能超大量的产能。要使其正常运转，需要更多实用设备2的全部发电机在附近运作。
 q.bragging_rights.rainbow_stone.desc=彩虹发电机不仅能提供25MRF/T，还能生产彩虹方块，是合成材料。
 q.bragging_rights.creative_rod_frame.name=创造版CAD机体

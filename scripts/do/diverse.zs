@@ -6,14 +6,13 @@ and if you provide more diversity in those items you need less of them
 */
 
 #reloadable
-#modloaded ctintegration crafttweakerutils
 #priority 2000
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.ICraftingInfo;
-import mods.ctutils.utils.Math;
+import crafttweaker.util.Math;
 
 function getRecipeFunction(result as IItemStack, charge as int) as function(IItemStack[string],bool)IItemStack {
   return function (ins as IItemStack[string], considerAmount as bool) as IItemStack {
@@ -21,7 +20,7 @@ function getRecipeFunction(result as IItemStack, charge as int) as function(IIte
     val ins0 = ins['0'];
 
     // Just skip craft if singularity already fully charged
-    if (isNull(ins0) || (ins0 has result && ins0.damage <= 0)) return null;
+    if (isNull(ins0) || (ins0.tag?.completed?.asShort() ?? 0 as short) == 1 as short) return null;
 
     val newMap = {} as int[string];
     var length = 0;
@@ -59,7 +58,7 @@ function getRecipeFunction(result as IItemStack, charge as int) as function(IIte
 
     val ratio = power / charge;
 
-    if (ratio >= 1.0) return result;
+    if (ratio >= 1.0) return result.updateTag({ completed: 1 as byte });
 
     // Create new singularity data
     var singularity = !isNull(ins0.tag.singularity) ? ins0.tag.singularity : {};
@@ -80,12 +79,18 @@ function addRecipe(
   charge as int // Charge required
 ) as function(IItemStack[string],bool)IItemStack {
 
+  result.anyDamage().addAdvancedTooltip(function (item) {
+    if (isNull(item)) return null;
+    return game.localize((item.tag?.completed?.asShort() ?? 0 as short) == 1 as short
+      ? 'e2ee.do.diverse.complete'
+      : 'e2ee.do.diverse.incomplete');
+  });
   result.anyDamage().addAdvancedTooltip(function (item) { return scripts.do.charge.chargeTooltip(item); });
 
   val recipeFunction = getRecipeFunction(result, charge);
 
   // Actual recipe
-  recipes.addShaped(recipeName, result, [
+  recipes.addShaped(recipeName, result.withTag({completed: 1 as byte}), [
     [(empty | result.anyDamage()).marked('0'), all.marked('1'), all.marked('2')],
     [all.marked('3'), all.marked('4'), all.marked('5')],
     [all.marked('6'), all.marked('7'), all.marked('8')],

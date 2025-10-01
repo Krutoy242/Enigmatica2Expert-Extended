@@ -1,4 +1,4 @@
-#modloaded immersiveengineering alfinivia randomtweaker jei
+#modloaded immersiveengineering alfinivia jei
 #priority 950
 
 import crafttweaker.item.IIngredient;

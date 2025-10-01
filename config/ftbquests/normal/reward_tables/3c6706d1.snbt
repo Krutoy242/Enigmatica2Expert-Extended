@@ -1,0 +1,12 @@
+{
+	title: "Batteries",
+	loot_size: 1,
+	rewards: [{
+		item: {
+			tag: {
+				charge: 10000.0d
+			},
+			id: "ic2:re_battery"
+		}
+	}]
+}

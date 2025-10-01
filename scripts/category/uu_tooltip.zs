@@ -1,4 +1,4 @@
-#modloaded ic2 ctintegration
+#modloaded ic2
 #loader ic2_postinit reloadable
 #priority -1
 #sideonly client

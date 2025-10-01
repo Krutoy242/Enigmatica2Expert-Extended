@@ -52,7 +52,7 @@ JEI.createJei(ID, game.localize(`e2ee.jei.${ID}.title`))
 
 //recipe hint: ore -> ore poop
 for poop in ratsprocessing.listRatPoop as IItemStack[] {
-  val oreItem = IItemStack.fromData(poop.tag.OreItem);
+  val oreItem = poop.tag.OreItem.toItemStack();
   if (isNull(oreItem)) {
     continue;
   }

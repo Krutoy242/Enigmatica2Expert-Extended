@@ -1,5 +1,5 @@
 #loader contenttweaker
-#modloaded ctintegration thaumcraft crafttweakerutils
+#modloaded thaumcraft
 
 import crafttweaker.block.IBlock;
 import crafttweaker.entity.IEntityLivingBase;
@@ -12,10 +12,8 @@ import mods.contenttweaker.conarm.ArmorTraitBuilder;
 import mods.contenttweaker.conarm.ExtendedMaterialBuilder;
 import mods.contenttweaker.tconstruct.MaterialBuilder;
 import mods.contenttweaker.tconstruct.TraitBuilder;
-import mods.ctutils.utils.Math.ceil;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
-import mods.ctutils.utils.Math.sqrt;
+import crafttweaker.util.Math.ceil;
+import crafttweaker.util.Math.sqrt;
 
 import scripts.cot.trait.utils.getArmorMatsAmount;
 import scripts.cot.trait.utils.getItemMatAmount;

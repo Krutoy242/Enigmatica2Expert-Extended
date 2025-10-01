@@ -406,13 +406,7 @@ for i in 0 .. 4 {
   mods.tconstruct.Melting.addRecipe(<liquid:supremium> * l, bases[i]);
 
   // Add recipe of making core from base
-  // mods.rt.RandomThingsTweaker.addAnvilRecipe(IItemStack input1, IItemStack input2, IItemStack result, int levelcost);
-  if (!isNull(loadedMods['rockytweaks'])) {
-    mods.rockytweaks.Anvil.addRecipe(<mysticalagriculture:master_infusion_crystal>, bases[i], cores[i], 350);
-  }
-  else {
-    recipes.addShapeless('core from crystal ' ~ i, cores[i], [<mysticalagriculture:master_infusion_crystal>, bases[i]]);
-  }
+  mods.rockytweaks.Anvil.addRecipe(<mysticalagriculture:master_infusion_crystal>, bases[i], cores[i], 350);
 }
 
 // Missed 4 types of dyes

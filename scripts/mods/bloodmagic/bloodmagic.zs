@@ -244,7 +244,7 @@ mods.jei.JEI.addItem(crDgr);
 
 val capRune = <bloodmagic:blood_rune:7>;
 val sprIng = <randomthings:ingredient:3>;
-val bldTnk = <contenttweaker:meat_singularity>;
+val bldTnk = <contenttweaker:meat_singularity>.withTag({ completed: 1 as byte });
 val antBck = Bucket('blockfluidantimatter');
 mods.extendedcrafting.TableCrafting.addShaped(0, crDgr, [
   [null, null, null, null, null, <ore:nuggetDraconicMetal>, sprIng],

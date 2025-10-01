@@ -1,5 +1,5 @@
 #loader contenttweaker
-#modloaded ctintegration zenutils
+#modloaded zenutils
 #priority 5
 
 import crafttweaker.util.Math;

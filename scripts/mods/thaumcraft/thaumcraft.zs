@@ -1,5 +1,5 @@
 #ignoreBracketErrors
-#modloaded thaumcraft loottweaker randomtweaker
+#modloaded thaumcraft loottweaker
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
