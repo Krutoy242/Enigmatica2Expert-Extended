@@ -11,86 +11,88 @@ import native.thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 scripts.mixin.thaumcraft.shared.Op.doRefining
 = function (event as HarvestDropsEvent, heldItem as ItemStack) as void {
+  val level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldItem, EnumInfusionEnchantment.REFINING);
   val chance_percent = 40 + 20 * (level - 1) + 10 * event.fortuneLevel;
 
   val lucky_number = event.world.rand.nextInt(100);
-  if (lucky_number >= chance_percent) { // if chance < 1, refining may not trigger at all
-      return;
+  if (lucky_number >= chance_percent) {
+    return;
   }
 
   var dropAmount = chance_percent / 100;
   if (lucky_number < chance_percent % 100) {
-      dropAmount += 1;
+    dropAmount += 1;
   }
 
   var outputMultiplier = 1;
-  for oreID in OreDictionary.getOreIDs(ItemStack(event.state.block)) {
-      val newName = OreDictionary.getOreName(oreID);
-      if (isNull(newName)) continue;
-      
-      if (newName.startsWith("oreNether") || newName.startsWith("oreEnd")) {
-          outputMultiplier = 2;
-          break;
+  val block = event.state.block;
+  val blockStack = ItemStack(block, 1, block.getMetaFromState(event.state));
+  if (!blockStack.isEmpty()) {
+    for oreID in OreDictionary.getOreIDs(blockStack) {
+      val oreName = OreDictionary.getOreName(oreID);
+      if (isNull(oreName)) continue;
+      if (oreName.startsWith('oreNether') || oreName.startsWith('oreEnd')) {
+        outputMultiplier = 2;
+        break;
       }
+    }
   }
 
-  var newDrops as [ItemStack] = [] as [ItemStack];
-  var replacementItem as ItemStack = null;
-  var foundReplacement = false;
+  var nonRefinableDrops = [] as [ItemStack];
+  var clustersFound = {} as ItemStack[string];
+  var hasRefinedSomething = false;
 
-  for is in event.drops {
-      if (isNull(is) || is.isEmpty()) continue;
+  for originalDrop in event.drops {
+    if (isNull(originalDrop) || originalDrop.isEmpty()) continue;
 
-      var found = false;
-      
-      for oreID in OreDictionary.getOreIDs(is) {
-          val newName = OreDictionary.getOreName(oreID);
-          if (isNull(newName)) continue;
-          
-          var subLen = 0;
-          if (newName.startsWith("oreNether")) {
-              subLen = 9;
-          } else if (newName.startsWith("oreEnd")) {
-              subLen = 6;
-          } else if (newName.startsWith("ore") || newName.startsWith("gem")) {
-              subLen = 3;
-          } else if (newName.startsWith("dust")) {
-              subLen = 4;
-          } else {
-              continue;
-          }
+    var cluster as ItemStack = null;
+    for oreID in OreDictionary.getOreIDs(originalDrop) {
+      val oreName = OreDictionary.getOreName(oreID);
+      if (isNull(oreName)) continue;
 
-          val oreName = "cluster" + newName.substring(subLen);
-          val list as NonNullList = OreDictionary.getOres(oreName);
-          for item in OreDictionary.getOres(oreName) {
-              if (isNull(item)) continue;
+      var subLen = 0;
+      if      (oreName.startsWith('oreNether')) subLen = 9;
+      else if (oreName.startsWith('oreEnd'))    subLen = 6;
+      else if (oreName.startsWith('dust'))      subLen = 4;
+      else if (oreName.startsWith('ore'))       subLen = 3;
+      else if (oreName.startsWith('gem'))       subLen = 3;
+      else continue;
 
-              if (!foundReplacement) {
-                  replacementItem = item as ItemStack;
-                  foundReplacement = true;
-              }
-
-              found = true;
-              break;
-          }
-
-          if (found) break;
+      val clusterOreName = 'cluster' ~ oreName.substring(subLen);
+      val ores = OreDictionary.getOres(clusterOreName);
+      if (!ores.isEmpty() && !isNull(ores[0])) {
+        cluster = ores[0];
+        break;
       }
+    }
 
-      if (!found) { // not found ore, adding item as it is
-          newDrops += is;
+    if (!isNull(cluster)) {
+      hasRefinedSomething = true;
+      val clusterKey = toString(cluster);
+      if (isNull(clustersFound[clusterKey])) {
+        clustersFound[clusterKey] = cluster;
       }
+    } else {
+      nonRefinableDrops += originalDrop;
+    }
   }
 
-  if (!foundReplacement) return;
+  if (!hasRefinedSomething) {
+    return;
+  }
 
-  replacementItem.setCount(dropAmount * outputMultiplier);
-  newDrops += replacementItem;
+  var newDrops = nonRefinableDrops;
+  val finalAmount = dropAmount * outputMultiplier;
+  for key, clusterItem in clustersFound {
+    val newClusterStack = clusterItem.copy();
+    newClusterStack.setCount(finalAmount);
+    newDrops += newClusterStack;
+  }
 
   event.drops.clear();
   for is in newDrops {
-      event.drops.add(is);
+    event.drops.add(is);
   }
 
-  event.world.playSound(null, event.getPos(), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 0.2F, 0.7F + event.world.rand.nextFloat() * 0.2F);
+  event.world.playSound(null, event.getPos(), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 0.2f, 0.7f + event.world.rand.nextFloat() * 0.2f);
 };
