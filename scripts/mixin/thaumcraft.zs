@@ -177,7 +177,7 @@ zenClass MixinToolEvents {
         }
 
         var outputMultiplier = 1;
-        for oreID in OreDictionary.getOreIDs(ItemStack(event.getState().getBlock())) {
+        for oreID in OreDictionary.getOreIDs(ItemStack(event.state.block)) {
             val newName = OreDictionary.getOreName(oreID);
             if (isNull(newName)) continue;
             
