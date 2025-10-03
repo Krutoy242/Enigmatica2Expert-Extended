@@ -140,8 +140,8 @@ FITweaker.addRecipe(utils.getStateFromItem(<extrautils2:decorativesolid:4>),
 // Taken from modpack IsolatedCrystal3
 // https://github.com/friendlyhj/IsolatedCrystal3/blob/e02e0901bb6df8f43a7b05ad22f2d761d69c7145/.minecraft/scripts/recipes/tier2/fluidinteractions.zs
 FITweaker.addRecipe(
-  <liquid:lava>,
   <liquid:astralsorcery.liquidstarlight>,
+  <liquid:lava>,
   FITweaker.outputBuilder()
     .addEvent(
       FITweaker.eventBuilder()
@@ -155,19 +155,19 @@ FITweaker.addRecipe(
 );
 
 FITweaker.addRecipe(
-  <liquid:water>,
   <liquid:astralsorcery.liquidstarlight>,
+  <liquid:water>,
   <blockstate:minecraft:ice>
 );
 
 FITweaker.addRecipe(
-  <liquid:petrotheum>,
   <liquid:astralsorcery.liquidstarlight>,
+  <liquid:petrotheum>,
   <blockstate:minecraft:gravel>
 );
 
 FITweaker.addRecipe(
-  <liquid:pyrotheum>,
   <liquid:astralsorcery.liquidstarlight>,
+  <liquid:pyrotheum>,
   <blockstate:minecraft:glass>
 );

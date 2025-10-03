@@ -20,19 +20,19 @@ import * as p from '@clack/prompts'
 import ignore from 'ignore'
 import { resolve } from 'pathe'
 import { replaceInFile } from 'replace-in-file'
-import { $, fs } from 'zx'
+import { $, fs, retry } from 'zx'
 
 import { commitOrFixup, getIgnoredFiles, removeFiles } from './build/build_utils'
 import { manageSFTP } from './build/sftp'
 import { generateChangelog } from './tools/changelog/changelog'
 
 const { existsSync, readFileSync } = fs
-const $$ = $({ stdio: 'inherit' })
+const $$ = $({ stdio: 'inherit', verbose: true })
 
 p.intro('Let\'s cook a new release! 🍳')
 
 const tmpDir = 'D:/mc_tmp/'
-if (await p.confirm({message: '🪓 Perform automation?'}))
+if (await p.confirm({ message: '🪓 Perform automation?' }))
   await $$`bun dev`
 
 const devonlyIgnore = ignore().add(readFileSync('dev/.devonly.ignore', 'utf8'))
@@ -66,12 +66,12 @@ const s = p.spinner()
 
 p.note(await commitOrFixup('dev/TODO.md', 'build: 📝update TODO'))
 
-await p.confirm({message: '🧼 Clear your working tree and rebase'})
+await p.confirm({ message: '🧼 Clear your working tree and rebase' })
 
-if (await p.confirm({message: `Generate Changelog?`})) {
+if (await p.confirm({ message: `Generate Changelog?` })) {
   const changelogPath = 'CHANGELOG-latest.md'
 
-  s.start('Updating version in files')
+  p.note('Updating version in files', '📝')
   // Update version in files
   await Promise.all([
     fs.writeFile('dev/version.txt', nextVersion),
@@ -87,7 +87,7 @@ if (await p.confirm({message: `Generate Changelog?`})) {
     }),
     replaceInFile({
       files: 'config/endermodpacktweaks/modpack.cfg',
-      from : /^(\s*S\s*:\s*"\[\\d+\] Modpack Version"\s*=\s*).*$/m,
+      from : /^(\s*S\s*:\s*"\[\d+\] Modpack Version"\s*=\s*).*$/m,
       to   : `$1${nextVersion}`,
     }),
     replaceInFile({
@@ -98,7 +98,6 @@ if (await p.confirm({message: `Generate Changelog?`})) {
     cleanupModlist(),
     generateChangelog(changelogPath),
   ])
-  s.stop('Updating version in files')
 
   // Some files need to be assumed unchanged
   // to prevent them always clutter git
@@ -116,26 +115,29 @@ if (await p.confirm({message: `Generate Changelog?`})) {
     changelogPath,
   ].concat(skipWorktreeList)
 
+  p.note('Iconify changelog and prepare files to git add', '📝')
+
   await Promise.all([
     $$`bun E:/dev/mc-icons/src/cli.ts ${changelogPath} --silent --no-short --modpack=e2ee --treshold=2`,
     $$`git update-index --no-skip-worktree ${skipWorktreeList}`,
   ])
-  p.note('Manually fix changelog and close file', '✍ ')
+
+  p.note('Now manually fix changelog and close file', '✍ ')
 
   await Promise.all([
-    $$`git add -f ${filesToCommit}`,
+    retry(2, '1s', async () => $$`git add -f ${filesToCommit}`),
     $$`code --wait ${changelogPath}`,
   ])
 
-  await $$`git add ${changelogPath}`
+  await retry(2, '1s', async () => $$`git add ${changelogPath}`)
 
-  await Promise.all([
-    $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`,
-    $$`git update-index --skip-worktree ${skipWorktreeList}`,
-  ])
+  if (await hasStaged())
+    await retry(2, '1s', async () => $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`)
+
+  await retry(2, '1s', async () => $$`git update-index --skip-worktree ${skipWorktreeList}`)
 }
 
-if (await p.confirm({message: `Add tag?`}))
+if (await p.confirm({ message: `Add tag?` }))
   await $$`git tag -a -f -m "Next automated release" ${nextVersion}`
 
 /*
@@ -154,7 +156,7 @@ const zipPath_server = `${zipPath_base}-server.zip`
 const isZipsExist = [zipPath, zipPath_server].some(f => existsSync(f))
 
 let rewriteOldZipFiles = false
-if (isZipsExist && await p.confirm({message: `Rewrite old .zip files?`})) {
+if (isZipsExist && await p.confirm({ message: `Rewrite old .zip files?` })) {
   rewriteOldZipFiles = true
   s.start(`🪓 Removing old zip files:\n${zipPath}\n${zipPath_server}`)
   await Promise.all([
@@ -174,20 +176,23 @@ if (isZipsExist && await p.confirm({message: `Rewrite old .zip files?`})) {
   */
 const makeZips = !isZipsExist || rewriteOldZipFiles
 if (makeZips) {
-  s.start(`🪓 Clearing tmp folder ${tmpDir} ... `)
+  p.note(`Clearing tmp folder ${tmpDir} ...`, '🪓 ')
   try {
     await fs.rm(tmpDir, { recursive: true, force: true })
   }
   catch (err) {
     p.cancel(`Cannot remove TMP folder ${tmpDir} ${err}`)
   }
-  s.stop(`🪓 Clearing tmp folder ${tmpDir} ... `)
 
   const tmpOverrides = resolve(tmpDir, 'overrides/')
   await fs.mkdir(tmpOverrides, { recursive: true })
 
   p.note('Cloning latest tag to tmpOverrides...', '👬 ')
-  await $$({ cwd: tmpOverrides })`git clone --recurse-submodules -j8 --depth 1 ${`file://${resolve(process.cwd())}`} .`
+  const $tmp = $$({ cwd: tmpOverrides, sync: true })
+  $tmp`git clone --depth 1 ${`file://${resolve(process.cwd())}`} .`
+  $tmp`git submodule init`
+  $tmp`git config submodule.mc-tools.update none`
+  $tmp`git submodule update -j8`
 
   s.start('⬅️ Cleanse and move manifest.json...')
   const devonlyList = getIgnoredFiles(devonlyIgnore, { cwd: tmpOverrides })
@@ -216,7 +221,7 @@ if (makeZips) {
 
 await manageSFTP(serverSetupConfig)
 
-if (await p.confirm({message: `Push tag?`}))
+if (await p.confirm({ message: `Push tag?` }))
   await $$`git push --follow-tags`
 
 const inputTitle = await p.text({ message: 'Enter release title' })
@@ -241,7 +246,7 @@ process.exit(0)
 
 async function cleanupModlist() {
   const modlistPath = 'config/crash_assistant/modlist.json'
-  const modlist: { [key: string]: unknown} = JSON.parse(readFileSync(modlistPath, 'utf8'))
+  const modlist: { [key: string]: unknown } = JSON.parse(readFileSync(modlistPath, 'utf8'))
 
   // Filter out ignored fields
   const filteredModlist = Object.fromEntries(
@@ -250,4 +255,9 @@ async function cleanupModlist() {
 
   // Save the modified modlist.json back
   await fs.writeFile(modlistPath, JSON.stringify(filteredModlist, null, 2))
+}
+
+async function hasStaged() {
+  const result = await $`git diff --staged --quiet`.nothrow()
+  return result.exitCode !== 0
 }

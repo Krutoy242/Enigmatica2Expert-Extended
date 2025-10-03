@@ -1,5 +1,5 @@
 #loader contenttweaker
-#modloaded ctintegration thaumadditions zenutils
+#modloaded thaumadditions zenutils
 
 import crafttweaker.block.IBlock;
 import crafttweaker.data.IData;
@@ -15,10 +15,10 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.conarm.ArmorTraitBuilder;
 import mods.contenttweaker.conarm.ExtendedMaterialBuilder;
 import mods.contenttweaker.tconstruct.TraitBuilder;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
-import mods.ctutils.utils.Math.sin;
-import mods.ctutils.utils.Math.sqrt;
+import crafttweaker.util.Math.max;
+import crafttweaker.util.Math.min;
+import crafttweaker.util.Math.sin;
+import crafttweaker.util.Math.sqrt;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
 
@@ -131,13 +131,13 @@ equilibrium_Trait.localizedDescription = game.localize('e2ee.tconstruct.material
 // Bonus mining speed depending on vis in aura
 equilibrium_Trait.getMiningSpeed = function (trait, tool, event) {
   if (event.player.world.remote) return; // world is remote
-  event.newSpeed = event.newSpeed + (event.originalSpeed * min(2.0f, event.player.world.getVis(event.position) * 0.005f) as float);
+  event.newSpeed = event.newSpeed + (event.originalSpeed * min(2.0f, 0.005f * event.player.world.getVis(event.position)));
 };
 // Bonus dmg multiplier depending on vis in aura
 equilibrium_Trait.calcDamage = function (trait, tool, attacker, target, originalDamage, newDamage, isCritical) {
   if (attacker.world.remote) return newDamage; // world is not remote
   if (!attacker instanceof IPlayer) return newDamage; // not player
-  return newDamage * ((1 + min(3.0f, attacker.world.getVis(attacker.position) * 0.01f)) as float);
+  return newDamage * ((1 + min(3.0f, 0.01f * attacker.world.getVis(attacker.position))));
 };
 // Relese vis on kill
 equilibrium_Trait.afterHit = function (trait, tool, attacker, target, damageDealt, wasCritical, wasHit) {
@@ -163,7 +163,7 @@ equilibriumArmor_Trait.localizedName = game.localize('e2ee.tconstruct.material.v
 equilibriumArmor_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.vis_equilibrium.description');
 equilibriumArmor_Trait.getModifications = function (trait, player, mods, armor, damageSource, damage, index) {
   if (!player.world.remote) {
-    mods.effectiveness += max(3.0f, player.world.getVis(player.position) * 0.01f);
+    mods.effectiveness += max(3.0f, 0.01f * player.world.getVis(player.position));
   }
   return mods;
 };
@@ -277,7 +277,6 @@ function debuffenemy(target as IEntityLivingBase, warp as int, player as IPlayer
   target.addPotionEffect(<potion:minecraft:glowing>.makePotionEffect(warp, 0));
   target.addPotionEffect(<potion:minecraft:wither>.makePotionEffect(warp, min(3, (warp - 50) / 200)));
   breakArmor(target, warp, player);
-  // mods.ctintegration.scalinghealth.DifficultyManager.addDifficulty(player, 0.0001 * sqrt(damage * warp));
   if (warp >= 100) {
     target.addPotionEffect(<potion:potioncore:broken_armor>.makePotionEffect(warp, min(1, (warp - 100) / 500)));
     if (warp >= 300) target.addPotionEffect(<potion:potioncore:vulnerable>.makePotionEffect(warp, min(3, (warp - 300) / 300)));
@@ -382,7 +381,7 @@ possessed_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   val warp = player.warpNormal + player.warpTemporary + player.warpPermanent;
   if (warp >= 100) {
     if (world.random.nextInt(2) > 0) {
-      player.warpTemporary = min(500,player.warpTemporary + 5);
+      player.warpTemporary = min(500, 5 + player.warpTemporary);
       player.setNBT({ warpSpeakCooldown: world.time });
       speakRandom(player, world);
     }
@@ -755,25 +754,11 @@ function checkTool(tool as IItemStack) as bool {
   return false;
 }
 
-function checkRefineEnchant(tool as IItemStack) as int {
-  if (
-    !isNull(tool.tag)
-    && !isNull(tool.tag.infench)
-    && !isNull(tool.tag.infench.asList())
-  ) {
-    for tag in tool.tag.infench.asList() {
-      if ((tag.id as int) == 4) return (tag.lvl as int);
-    }
-  }
-  return 0;
-}
-
 researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
   // DROP BONUS crystalized chunks
   if (event.player.world.remote) return; // world is remote
 
   if (!checkTool(tool)) return;
-  val lvl = checkRefineEnchant(tool);
 
   var newDrops = [] as WeightedItemStack[];
   var dropChanged = false;
@@ -784,44 +769,23 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
     var found = false;
 
     for ore in weightedItem.stack.ores { // checking if it's wanted ore
-      if (lvl == 0 && ore.name.startsWith('ore')) {
-        oreName = ore.name.substring(3);
-      }
-
       if (ore.name.startsWith('cluster')) {
         oreName = ore.name.substring(7);
       }
-      if (!(oreDict has (`cluster${oreName}`))) continue;
+
       if (!(oreDict has (`shard${oreName}`))) continue;
       found = true;
       break;
     }
 
     if (!found) { // not found ore, adding item as it is
-      if (!isNull(weightedItem)) newDrops += weightedItem;
+      newDrops += weightedItem;
       continue;
     }
 
     dropChanged = true;
 
-    if (lvl == 0) { // it's ore! add matching cluster/shard
-      val item = oreDict[`cluster${oreName}`].firstItem;
-      newDrops += (!isNull(item) && event.player.world.getRandom().nextInt(2) == 1) ? item % weightedItem.percent : weightedItem;
-    }
-    else if (lvl == 1) {
-      val item = oreDict[(event.player.world.getRandom().nextInt(2) == 0 ? 'cluster' : 'crystalShard') ~ oreName].firstItem;
-      newDrops += !isNull(item) ? item % weightedItem.percent : weightedItem;
-    }
-    else {
-      val item = oreDict[`crystalShard${oreName}`].firstItem;
-      if (isNull(item)) {
-        newDrops += weightedItem;
-      }
-      else {
-        newDrops += item % weightedItem.percent;
-        if (lvl > 2) newDrops += item % ((lvl - 1) * 25);
-      }
-    }
+    newDrops += oreDict[`crystalShard${oreName}`].firstItem * weightedItem.stack.amount % weightedItem.percent;
   }
 
   if (!dropChanged) return;

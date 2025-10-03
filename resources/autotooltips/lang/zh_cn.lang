@@ -60,6 +60,7 @@ tooltips.lang.cyclicmagic:inventory_food=§6多吃一个可以取消获得的额
 tooltips.lang.oeintegration:excavatemodifier=§6共有 6 级
 tooltips.lang.ae2stuff:visualiser=已被 §dAE Net Vis Tool§r 相关机器代替
 tooltips.lang.immersivetech:stone_decoration=§c高级焦炉已被禁用
+tooltips.lang.immersiveengineering:metal_device1:3=§e生成 15-42 rf/t
 tooltips.lang.actuallyadditions:block_farmer=§e注意：§r只能在§n原版耕地§r上种植潘马斯农场的作物。
 tooltips.lang.exnihilocreatio:hammer_diamond=§4并不能使用。请改用匠魂的碎矿锤。
 tooltips.lang.bibliocraft:fancysign=§e可能会造成明显的 FPS 下降。

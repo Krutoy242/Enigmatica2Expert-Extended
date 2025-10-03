@@ -409,7 +409,7 @@ for i in 0 .. 6 {
           evtIngrs['╳'] = <ore:blockDraconiumAwakened>;
           evtIngrs['◒'] = <extendedcrafting:singularity:22>;
           evtIngrs['◓'] = <extendedcrafting:singularity_custom:102>;
-          evtIngrs['∞'] = <contenttweaker:machine_case_singularity>;
+          evtIngrs['∞'] = <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte });
 
           craft.make(solController, ['𝓹',
             '▢ █ █ T T . . . .',

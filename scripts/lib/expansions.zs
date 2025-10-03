@@ -1,9 +1,11 @@
 #priority 5000
 #ignoreBracketErrors
 
+import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.entity.IEntityDefinition;
+import native.net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
 $expand IEntityDefinition$asSoul() as IItemStack {
   // Rendering Emberoot Fairies causing crashes on AMD cards
@@ -32,4 +34,29 @@ $expand IEntityDefinition$asIngr() as IIngredient {
   val egg = this.asEgg();
   if (isNull(soul)) return egg;
   return soul | egg;
+}
+
+$expand IItemStack$toData() as IData {
+  val nativeItem as ICapabilitySerializable = this.native;
+  return nativeItem.serializeNBT() as IData;
+}
+
+$expand IItemStack$toSNBT() as string {
+  return this.toData().native.toString();
+}
+
+$expand IData$toSNBT() as string {
+  return this.native.toString();
+}
+
+$expand IData$toItemStack() as IItemStack {
+  if (isNull(this.id)) {
+    logger.logError('Cannot convert NBT into item: ' ~ this);
+    return null;
+  }
+  var item = itemUtils.getItem(this.id, this.Damage ?? 0 as short);
+  if (!isNull(this.tag)) item = item.withTag(this.tag);
+  if (!isNull(this.ForgeCaps)) item = item.withCapNBT(this.ForgeCaps);
+  if (!isNull(this.Count)) item = item.withAmount(this.Count);
+  return item;
 }

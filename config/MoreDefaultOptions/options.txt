@@ -15,7 +15,6 @@ ao:2
 renderClouds:true
 resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.6.zip","Dark Mode-2.4.2.zip"]
 incompatibleResourcePacks:[]
-lastServer:51.210.223.149:25566
 lang:en_us
 chatVisibility:0
 chatColors:true

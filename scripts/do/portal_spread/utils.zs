@@ -141,6 +141,8 @@ static weirdBlockNames as string[] = [
   'draconicevolution:draconium_ore',
 ];
 
+static dummyPos as IBlockPos = IBlockPos.create(0, 0, 0);
+
 function stateToItem(state as IBlockState, pos as IBlockPos = null, world as IWorld = null) as IItemStack {
   if (
     isNull(state)
@@ -159,11 +161,14 @@ function stateToItem(state as IBlockState, pos as IBlockPos = null, world as IWo
       break;
     }
   }
-  var item = isWeird || isNull(world) || isNull(pos)
-    ? itemUtils.getItem(defId, state.block.meta)
-    : state.block.getItem(world, pos, state);
-  if (isNull(item)) item = blockRepresentation[defId];
-  if (isNull(item))
+  val item = (
+    isWeird && isNull(world)
+      ? itemUtils.getItem(defId, state.block.meta)
+      : (state.block.getItem(world, pos ?? dummyPos, state)
+        ?? itemUtils.getItem(defId, state.block.meta))
+    ) ?? blockRepresentation[defId];
+
+  if (isNull(item) && utils.DEBUG)
     logger.logWarning(`Cannot find item representation for block: ${defId}`);
   return item;
 }

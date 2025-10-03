@@ -45,3 +45,6 @@ if (!isNull(<ore:gemAmethyst>.firstItem)) {
   mods.threng.Aggregator.removeRecipe(<threng:material:5>);
   mods.threng.Aggregator.addRecipe(<threng:material:5>, <biomesoplenty:terrestrial_artifact>, <ore:gemAmethyst>, <appliedenergistics2:material:45>);
 }
+
+// No-water alt
+mods.threng.Aggregator.addRecipe(<deepmoblearning:glitch_infused_ingot>, <deepmoblearning:glitch_fragment>, <ore:gemLapis>, <ore:ingotGold>);

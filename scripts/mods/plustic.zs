@@ -76,7 +76,7 @@ craft.remake(<plustic:battery_cell>.withTag({ Material: 'blaze' }), ['pretty',
   '■ ▬ ■',
   '  ■  '], {
   '■': <ore:blockBlaze>, // Blaze Mesh
-  '▬': <ore:ingotFireDragonsteel> | <ore:dragonsteelIngot>, // Fire Dragonsteel Ingot
+  '▬': <ore:dragonsteelIngot>,
 });
 
 // [Manyullyn Battery Cell] from [Eldritch Stone][+1]

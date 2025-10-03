@@ -1,10 +1,10 @@
-#modloaded rats crafttweakerutils
+#modloaded rats
 #reloadable
 
 import crafttweaker.item.IItemStack;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
-import mods.ctutils.utils.Math.sqrt;
+import crafttweaker.util.Math.max;
+import crafttweaker.util.Math.min;
+import crafttweaker.util.Math.sqrt;
 
 // Garbage Pile recipe based on various item parameters
 val ph = <contenttweaker:any_different_item>.withLore([game.localize('e2ee.garbage.affect_output_amount')]);

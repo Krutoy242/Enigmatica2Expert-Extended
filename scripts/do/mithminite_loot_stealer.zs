@@ -2,7 +2,7 @@
  * Enhances boss loot drops when slain by a player with the 'LOOT_STEALER' research
  * and a tool bearing the 'researcher' trait.
  */
-#modloaded ctintegration thaumcraft
+#modloaded thaumcraft
 #priority -1
 #reloadable
 

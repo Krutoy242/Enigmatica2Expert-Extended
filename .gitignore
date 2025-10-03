@@ -111,3 +111,5 @@ config/triumph/script/triumph/example
 config/triumph/script/triumph/vanilla
 
 # Other
+resources/mekatweaker/blockstates/fluids.json
+resources/mekatweaker/lang/en_us.lang

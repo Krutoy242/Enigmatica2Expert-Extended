@@ -130,7 +130,7 @@ craft.remake(<industrialforegoing:mob_duplicator>, ['pretty',
   'B': <exnihilocreatio:item_doll:*>,
   'a': <teslacorelib:machine_case>,
   'M': <darkutils:monolith>,
-  'i': <contenttweaker:machine_case_singularity>,
+  'i': <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte }),
 });
 
 // [Laser Drill] from [Machine Frame][+4]
@@ -365,7 +365,7 @@ craft.remake(<industrialforegoing:water_resources_collector>, ['pretty',
   '¤ M ¤',
   'R ◘ R'], {
   'R': <industrialforegoing:plastic>,
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   '¤': <ore:gearTitanium>,
   'M': <teslacorelib:machine_case>,
   '◘': <thermalexpansion:frame:147>,

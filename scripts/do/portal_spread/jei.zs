@@ -1,30 +1,38 @@
 /**
- * @file JEI integration with help of mod Requious Fracto
- *
- * To make this file work you need:
- * 1. Install mod Requious Fracto
- * 2. Add `requious:portal_spread` to file `config/jei/itemBlacklist.cfg`
- * 3. Append this JSON object into file `config/requious/assembly.json`:
- *   {"resourceName": "portal_spread", "model": "requious:assembly_block","placeType": "Any","layerType": "Cutout","hasGUI": false,"extraVariants": [],"colors": [{"r": 255,"g": 255,"b": 255,"a": 255}],"hardness": 5.0,"blastResistance": 5.0,"aabb": {"x1": 0.0,"y1": 0.0,"z1": 0.0,"x2": 1.0,"y2": 1.0,"z2": 1.0}}
+ * @file JEI integration for Portal Spreading recipes.
  *
  * @author Krutoy242
  * @link https://github.com/Krutoy242
  */
 
-#modloaded requious zenutils
+#modloaded randomtweaker zenutils jei
 #priority -4000
+#reloadable
+#sideonly client
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+import mods.jei.JEI;
+import mods.randomtweaker.jei.IJeiUtils;
+
 import scripts.do.portal_spread.utils.stateToItem;
 
-val x = <assembly:portal_spread>;
-x.addJEICatalyst(<minecraft:obsidian>);
-x.setJEIDurationSlot(1, 0, 'duration', mods.requious.SlotVisual.arrowRight());
-x.setJEIItemSlot(0, 0, 'input');
-for i in 2 .. 6 {
-  x.setJEIItemSlot(i, 0, 'output');
+val SLOT_SIZE = 18;
+val ARROW_WIDTH = SLOT_SIZE + 4;
+
+val categoryId = 'portal_spread';
+val p = JEI.createJei(categoryId, game.localize('requious.jei.recipe.portal_spread'))
+  .setBackground(IJeiUtils.createBackground(5 * SLOT_SIZE + ARROW_WIDTH, SLOT_SIZE))
+  .setModid('zenutils')
+  .setIcon(<minecraft:obsidian>)
+  .addRecipeCatalyst(<minecraft:obsidian>);
+
+p.addSlot(IJeiUtils.createItemSlot('input', 0, 0, true, false));
+p.addElement(IJeiUtils.createArrowElement(SLOT_SIZE, 1, 0));
+for i in 0 .. 4 {
+  p.addSlot(IJeiUtils.createItemSlot(`output${i}`, SLOT_SIZE + ARROW_WIDTH + i * SLOT_SIZE, 0, false, false));
 }
+p.register();
 
 val wildcardedNumIds = scripts.do.portal_spread.recipes.spread.wildcardedNumIds;
 
@@ -32,6 +40,8 @@ val wildcardedNumIds = scripts.do.portal_spread.recipes.spread.wildcardedNumIds;
  * Compare two lists of items to be the same items and same amounts
  */
 function isItemListSame(A as IItemStack[], B as IItemStack[]) as bool {
+  if (A.length != B.length) return false;
+
   for a in A {
     var match = false;
     for b in B {
@@ -65,7 +75,9 @@ for dimFrom, dimFromData in scripts.do.portal_spread.recipes.spread.stateRecipes
       if (!isNull(wildcardedNumIds[dimFrom])
         && !isNull(wildcardedNumIds[dimFrom][dimTo])
         && !isNull(wildcardedNumIds[dimFrom][dimTo][stateFrom.block.definition])
-      ) input = input.withDamage(32767);
+      ) {
+        input = input.withDamage(32767);
+      }
 
       var merged = false;
       for inp, outs in recipeMap {
@@ -89,13 +101,11 @@ for dimFrom, dimFromData in scripts.do.portal_spread.recipes.spread.stateRecipes
 for input, outputs in recipeMap {
   if (isNull(outputs)) continue;
 
-  x.addJEIRecipe(mods.requious.AssemblyRecipe.create(function (c) {
-    for output in outputs { c.addItemOutput('output', output); }
-  }).requireItem('input', input));
+  val recipe = JEI.createJeiRecipe(categoryId).addInput(input);
 
-  // var s = 'add portal spread JEI recipe: '~input.commandString~' => [';
-  // for i, output in outputs {
-  //   s += (i==0?'':', ')~output.commandString;
-  // }
-  // print(s ~ ']');
+  for output in outputs {
+    recipe.addOutput(output);
+  }
+
+  recipe.build();
 }

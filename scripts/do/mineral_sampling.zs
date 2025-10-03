@@ -118,14 +118,14 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
     nativePlayer.chunkCoordX,
     nativePlayer.chunkCoordZ,
     worldInfo
-  ) as IItemStack;
+  ).wrapper;
   //attach oil info
   val oilInfo = PumpjackHandler.getOilWorldInfo(
     nativeWorld,
     nativePlayer.chunkCoordX,
     nativePlayer.chunkCoordZ
   );
-  if (!isNull(oilInfo)) {
+  if (!isNull(oilInfo) && !isNull(oilInfo.getType())) {
     sample = sample.withTag(sample.tag + {
       "resType": oilInfo.getType().name,
       "oil": oilInfo.current

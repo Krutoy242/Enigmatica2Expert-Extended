@@ -133,6 +133,9 @@ Purge(<actuallyadditions:item_dust:4>).ores([<ore:dustLapis>]).furn();
 Purge(<actuallyadditions:item_dust:6>).ores([<ore:dustCoal>]).furn();
 Purge(<actuallyadditions:block_misc:5>).ores([<ore:blockCharcoal>]).furn();
 Purge(<exnihilocreatio:block_end_cake>);
+Purge(<plustic:alumitenugget>).ores([<ore:nuggetAlumite>]);
+Purge(<plustic:alumiteingot>).ores([<ore:ingotAlumite>]);
+Purge(<plustic:alumiteblock>).ores([<ore:blockAlumite>]);
 
 // Purge saltpeter and sulfur
 Purge(<bloodmagic:component:24>);

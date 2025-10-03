@@ -542,14 +542,12 @@ craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "e
 });
 
 // Add recipe to use in some AA crafts
-// [Organic Brown Dye] from [Crushed Black Quartz][+3]
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <forestry:refractory_wax>, // Refractory Wax
-  <actuallyadditions:item_misc:21>, // Biomass
-  <actuallyadditions:item_dust:7>, // Crushed Black Quartz
-  <forestry:mulch>,
-  <enderio:item_material:49>
-);
+craft.reshapeless(<enderio:item_material:49>, 'RBM⌃', {
+  'R': <forestry:refractory_wax>,
+  'B': <actuallyadditions:item_misc:21>,
+  'M': <forestry:mulch>,
+  '⌃': <ore:dustQuartzBlack>,
+});
 
 // Magic-only alt recipes
 for ingr, amount in {

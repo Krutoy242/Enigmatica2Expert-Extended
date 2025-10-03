@@ -1,0 +1,49 @@
+{
+	title: "{q.getting_started.infusion_enchantme.name}",
+	icon: {
+		tag: {
+			Aspects: [{
+				amount: 1,
+				key: "terra"
+			}]
+		},
+		id: "thaumcraft:crystal_essence"
+	},
+	x: 2.125d,
+	y: 1.0d,
+	text: [
+		"{q.getting_started.infusion_enchantme.desc}"
+	],
+	dependencies: [
+		"a07afa9e"
+	],
+	or_tasks: 1b,
+	tasks: [{
+		uid: "5e9fabbb",
+		type: "item",
+		disable_toast: 1b,
+		items: [{
+			tag: {
+				Aspects: [{
+					amount: 1,
+					key: "terra"
+				}]
+			},
+			id: "thaumcraft:crystal_essence"
+		}]
+	},
+	{
+		uid: "551f534f",
+		type: "item",
+		disable_toast: 1b,
+		items: [{
+			tag: {
+				Aspects: [{
+					amount: 1,
+					key: "aer"
+				}]
+			},
+			id: "thaumcraft:crystal_essence"
+		}]
+	}]
+}

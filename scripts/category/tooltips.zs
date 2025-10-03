@@ -1,4 +1,4 @@
-#modloaded jei ctintegration
+#modloaded jei
 #ignoreBracketErrors
 #reloadable
 
@@ -64,6 +64,7 @@ for item in [
   <ic2:te:48>,
   <ic2:upgrade:4>,
   <ic2:upgrade:6>,
+  <immersiveengineering:metal_device1:3>,
   <immersivetech:stone_decoration>,
   <oeintegration:excavatemodifier>,
   <openblocks:tank>,

@@ -45,7 +45,7 @@ val coinMap = {
   <contenttweaker:coin_advancedalloy>   : { energyData: 156000, inputItem: { id: 'ic2:crafting', Damage: 3 } },
   <contenttweaker:coin_alchemicalbrass> : { energyData: 15000, inputItem: { id: 'thaumcraft:ingot', Damage: 2 } },
   <contenttweaker:coin_aluminumbrass>   : { energyData: 30000, inputItem: { id: 'tconstruct:ingots', Damage: 5 } },
-  <contenttweaker:coin_alumite>         : { energyData: 110000, inputItem: { id: 'plustic:alumiteingot', Damage: 0 } },
+  <contenttweaker:coin_alumite>         : { energyData: 110000, inputItem: { id: 'tconstruct:ingots', Damage: 6 } },
   <contenttweaker:coin_baseessence>     : { energyData: 62530, inputItem: { id: 'mysticalagriculture:crafting', Damage: 32 } },
   <contenttweaker:coin_beryllium>       : { energyData: 75000, inputItem: { id: 'nuclearcraft:ingot', Damage: 9 } },
   <contenttweaker:coin_conductiveiron>  : { energyData: 58500, inputItem: { id: 'enderio:item_alloy_ingot', Damage: 4 } },

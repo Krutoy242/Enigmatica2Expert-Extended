@@ -99,7 +99,7 @@ function tellrawItem(item as IItemStack, color as string = null, showName as boo
       text: item.amount > 1 ? item.amount ~'x' : '',
       hoverEvent: {
         action: 'show_item',
-        value: '{id:"' ~ item.definition.id ~ '",Count:1,Damage:' ~ item.damage ~ 's}', // item.asData().toNBTString(),
+        value: '{id:"' ~ item.definition.id ~ '",Count:1,Damage:' ~ item.damage ~ 's}', // item.toSNBT(),
       },
       extra: [
         {

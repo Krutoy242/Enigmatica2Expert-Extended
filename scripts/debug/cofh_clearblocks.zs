@@ -1,5 +1,5 @@
 #reloadable
-#modloaded zenutils ctintegration
+#modloaded zenutils
 
 import crafttweaker.player.IPlayer;
 import scripts.do.hand_over_your_items.tellrawItemObj;

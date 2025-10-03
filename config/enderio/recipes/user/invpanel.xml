@@ -191,87 +191,211 @@
 
   <recipe name="Inventory Chest, Small" required="true">
     <crafting upgrade="true">
-      <grid size="3x3">
-        <item /><item name="SIMPLE_CHASSIPARTS" /><item />
-        <item name="SIMPLE_CHASSIPARTS" /><item name="chestWood" /><item name="SIMPLE_CHASSIPARTS" />
-        <item /><item name="enderio:block_inventory_chest_tiny"/><item />
+      <grid size="3x2">
+        <item/>
+        <item name="enderio:block_inventory_chest_tiny"/>
+        <item/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="extrautils2:largishchest:0"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_small" />
+      <output name="enderio:block_inventory_chest_small"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Small Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item/>
+        <item name="enderio:block_inventory_chest_tiny"/>
+        <item/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="mekanism:machineblock:13"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_small"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Medium" required="true">
     <crafting upgrade="true">
-      <grid size="3x3">
-        <item /><item name="SIMPLE_CHASSIPARTS" /><item />
-        <item name="SIMPLE_CHASSIPARTS" /><item name="chestWood" /><item name="SIMPLE_CHASSIPARTS" />
-        <item /><item name="enderio:block_inventory_chest_small"/><item />
+      <grid size="3x2">
+        <item name="itemSilicon"/>
+        <item name="enderio:block_inventory_chest_small"/>
+        <item name="itemSilicon"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="ironchest:iron_chest:0"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_medium" />
+      <output name="enderio:block_inventory_chest_medium"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Medium Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="itemSilicon"/>
+        <item name="enderio:block_inventory_chest_small"/>
+        <item name="itemSilicon"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="ironchest:iron_shulker_box_purple:0"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_medium"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Big" required="true">
     <crafting upgrade="true">
-      <grid size="2x3">
-        <item /><item name="REMOTE_AWARENESS_UPGRADE" />
-        <item name="chestWood" /><item name="CHASSIS" />
-        <item /><item name="enderio:block_inventory_chest_medium"/>
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_medium"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="ironchest:iron_chest:1"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_big" />
+      <output name="enderio:block_inventory_chest_big"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Big Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_medium"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="ironchest:iron_shulker_box_purple:1"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_big"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Large" required="true">
     <crafting upgrade="true">
       <grid size="3x2">
-        <item name="CHASSIPARTS" /><item name="CHASSIPARTS" /><item name="CHASSIPARTS" />
-        <item name="chestWood" /><item name="enderio:block_inventory_chest_big"/><item name="chestWood" />
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_big"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="ironchest:iron_chest:2"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_large" />
+      <output name="enderio:block_inventory_chest_large"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Large Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_big"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="ironchest:iron_shulker_box_purple:2"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_large"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Huge" required="true">
     <crafting upgrade="true">
       <grid size="3x2">
-        <item name="CHASSIPARTS" /><item name="CHASSIPARTS" /><item name="CHASSIPARTS" />
-        <item name="chestWood" /><item name="enderio:block_inventory_chest_large"/><item name="chestWood" />
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_large"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="actuallyadditions:block_giant_chest:0"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_huge" />
+      <output name="enderio:block_inventory_chest_huge"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Huge Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_large"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+        <item name="thaumcraft:hungry_chest:0"/>
+        <item name="SIMPLE_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_huge"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Enormous" required="true">
     <crafting upgrade="true">
-      <grid size="3x3">
-        <item /><item name="REMOTE_AWARENESS_UPGRADE" /><item />
-        <item name="chestWood" /><item name="ENHANCED_CHASSIS" /><item name="chestWood" />
-        <item /><item name="enderio:block_inventory_chest_huge"/><item />
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_huge"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+        <item name="actuallyadditions:block_giant_chest_medium:0"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_enormous" />
+      <output name="enderio:block_inventory_chest_enormous"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Enormous Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_huge"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+        <item name="thaumicaugmentation:warded_chest:0"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_enormous"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Warehouse" required="true">
     <crafting upgrade="true">
-      <grid size="3x3">
-        <item /><item name="ENHANCED_CHASSIPARTS" /><item />
-        <item name="ENHANCED_CHASSIPARTS" /><item name="chestWood" /><item name="ENHANCED_CHASSIPARTS" />
-        <item name="chestWood" /><item name="enderio:block_inventory_chest_enormous"/><item name="chestWood" />
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_enormous"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+        <item name="actuallyadditions:block_giant_chest_large:0"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_warehouse" />
+      <output name="enderio:block_inventory_chest_warehouse"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Inventory Chest, Warehouse Alt" required="true">
+    <crafting upgrade="true">
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_enormous"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+        <item name="thaumicwonders:everburning_urn:0"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+      </grid>
+      <output name="enderio:block_inventory_chest_warehouse"/>
     </crafting>
   </recipe>
 
   <recipe name="Inventory Chest, Warehouse 13" required="true">
     <crafting upgrade="true">
-      <grid size="3x3">
-        <item /><item name="ENHANCED_CHASSIPARTS" /><item />
-        <item name="ENHANCED_CHASSIPARTS" /><item name="chestWood" /><item name="ENHANCED_CHASSIPARTS" />
-        <item name="chestWood" /><item name="enderio:block_inventory_chest_warehouse"/><item name="chestWood" />
+      <grid size="3x2">
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="enderio:block_inventory_chest_warehouse"/>
+        <item name="REMOTE_AWARENESS_UPGRADE"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
+        <item name="draconicevolution:draconium_chest:0"/>
+        <item name="ENHANCED_CHASSIPARTS"/>
       </grid>
-      <output name="enderio:block_inventory_chest_warehouse13" />
+      <output name="enderio:block_inventory_chest_warehouse13"/>
     </crafting>
   </recipe>
 
@@ -291,7 +415,7 @@
       <grid size="3x3">
         <item/><item/><item name="PPP_DARK_STEEL" />
         <item name="PPP_DARK_STEEL" /><item name="enderio:item_inventory_remote:0" /><item name="PPP_DARK_STEEL" />
-        <item name="PPP_DARK_STEEL" /><item name="enderio:item_travel_staff" /><item name="PPP_DARK_STEEL" />
+        <item name="PPP_DARK_STEEL" /><item name="ingotVibrantAlloy" /><item name="PPP_DARK_STEEL" />
       </grid>
       <output name="enderio:item_inventory_remote:1" />
     </crafting>
