@@ -1,13 +1,6 @@
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
-[main/ERROR] [LoliASM]: Optifine is installed. onDemandAnimatedTextures won't be activated as Optifine already has Smart Animations.
-[Client thread/WARN] [FML]: Patcher expecting empty class data file for net.minecraft.block.state.BlockStateContainer$Builder, but received non-empty
-[Client thread/WARN] [mixin]: @Final field field_73236_b:Lit/unimi/dsi/fastutil/longs/Long2ObjectMap; in mixins.vintagefix.json:chunk_access.ChunkProviderClientMixin from mod unknown-owner should be final
-[Client thread/WARN] [Config]: [OptiFine] Unknown macro value: SHADOW_QUALITY
-[Client thread/WARN] [Config]: [OptiFine] Unknown macro value: FXAA_DEFINE
-[Client thread/WARN] [Config]: [OptiFine] Unknown macro value: ENTITY_SHADOWS_DEFINE
-[Client thread/WARN] [Config]: [OptiFine] Unknown macro value: PLAYER_SHADOW
-[Client thread/WARN] [Config]: [OptiFine] Unknown macro value: PLAYER_SHADOW
-[Client thread/WARN] [Config]: [OptiFine] Unknown macro value: RAIN_PUDDLES
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: 
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: 
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
@@ -18,11 +11,11 @@
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
-[Client thread/WARN] [mixin]: Mixin apply for mod unknown-owner failed mixins.tweaks.misc.buttons.anaglyph.json:UT3DAnaglyphMixin from mod unknown-owner -> net.minecraft.client.gui.GuiVideoSettings: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow field field_146502_i was not located in the target class net.minecraft.client.gui.GuiVideoSettings. Using refmap universaltweaks.refmap.json
-org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow field field_146502_i was not located in the target class net.minecraft.client.gui.GuiVideoSettings. Using refmap universaltweaks.refmap.json
-	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachFields(MixinPreProcessorStandard.java:624)
-	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:302)
-	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.createContextFor(MixinPreProcessorStandard.java:277)
+[Client thread/WARN] [mixin]: Mixin apply for mod UniversalTweaks-1.12.2-1.16.0.1.jar failed mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.16.0.1.jar -> openblocks.enchantments.LastStandEnchantmentsHandler: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow method onHurt in mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.16.0.1.jar was not located in the target class openblocks.enchantments.LastStandEnchantmentsHandler. Using refmap universaltweaks.refmap.json
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow method onHurt in mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.16.0.1.jar was not located in the target class openblocks.enchantments.LastStandEnchantmentsHandler. Using refmap universaltweaks.refmap.json
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachSpecialMethod(MixinPreProcessorStandard.java:436)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340)
   [...]
 [VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#black. Aborting...
 java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/black.png
@@ -120,17 +113,17 @@ java.io.IOException: Error loading metadata for location chisel:textures/blocks/
 	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
 	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
   [...]
-[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/beacon' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
-java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/beacon
-	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
-	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
-	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
-  [...]
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21)
 	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52)
+  [...]
+[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/beacon' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/beacon
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
   [...]
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper

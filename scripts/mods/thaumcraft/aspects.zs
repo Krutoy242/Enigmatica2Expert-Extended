@@ -1,4 +1,4 @@
-#modloaded thaumcraft randomtweaker
+#modloaded thaumcraft
 #ignoreBracketErrors
 #reloadable
 
@@ -778,9 +778,9 @@ set('67🔩 67🔷 67✨', <plustic:mirionblock>);
 set('10🔩 10👁️', <plustic:osgloglasingot>);
 set('🔩 👁️', <plustic:osgloglasnugget>);
 set('67🔩 67👁️', <plustic:osgloglasblock>);
-set('10🔩 5🛎️', <plustic:alumiteingot>);
-set('🔩 🛎️', <plustic:alumitenugget>);
-set('67🔩 67🛎️', <plustic:alumiteblock>);
+set('10🔩 5🛎️', <tconstruct:ingots:6>);
+set('🔩 🛎️', <tconstruct:nuggets:6>);
+set('67🔩 67🛎️', <tconstruct:metal:7>);
 set('10🔩 5🕊️', <plustic:osmiridiumingot>);
 set('🔩 🕊️', <plustic:osmiridiumnugget>);
 set('67🔩 67🕊️', <plustic:osmiridiumblock>);
@@ -1167,8 +1167,16 @@ Aspect.infernum,        - demon metal
 <aspect:gelum>,         - titanium
 */
 
+// Do not change aspects for this ore entries
+static oreAspectBlacklist as string[] = [
+  'nuggetQuartz',
+];
+
 function setOreAspect(kind as string, main as double, secondary as double, base as string, aspects as string, additional as string = null) as int {
-  val item = utils.oreToItem(kind ~ base);
+  val ore = kind ~ base;
+  if (oreAspectBlacklist has ore) return 0;
+
+  val item = utils.oreToItem(ore);
   if (isNull(item)) {
     return 0;
   }

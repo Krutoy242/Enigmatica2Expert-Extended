@@ -1,6 +1,6 @@
 #priority -1800
 #reloadable
-#modloaded ctintegration scalinghealth gamestages
+#modloaded scalinghealth gamestages
 
 import crafttweaker.block.IBlock;
 import crafttweaker.data.IData;

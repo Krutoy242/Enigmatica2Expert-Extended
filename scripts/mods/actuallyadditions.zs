@@ -1,4 +1,4 @@
-#modloaded actuallyadditions crafttweakerutils
+#modloaded actuallyadditions
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -147,7 +147,7 @@ craft.remake(<actuallyadditions:block_fishing_net>, ['pretty',
   '  §  ',
   'C * C',
   '  C  '], {
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   'C': <minecraft:web>,
   '*': <actuallyadditions:item_crystal_empowered:4>,
 });
@@ -284,7 +284,7 @@ val listCatFur as string[] = [
   'biomesoplenty:gem'            , '1'  , '30',
   'immersiveengineering:material', '9'  , '5',
   'immersiveengineering:material', '8'  , '60',
-  'plustic:alumiteingot'         , '0'  , '5',
+  'tconstruct:ingots'            , '6'  , '5',
   'rats:raw_rat'                 , '0'  , '90',
   'rats:rat_pelt'                , '0'  , '65',
   'rats:token_fragment'          , '0'  , '15',
@@ -364,7 +364,7 @@ for i in 0 .. listCatFur.length {
     val item = itemUtils.getItem(listCatFur[i], listCatFur[i + 1]);
     if (!isNull(item)) {
       mods.actuallyadditions.BallOfFur.addReturn(item, listCatFur[i + 2]);
-      val chance = (mods.ctutils.utils.Math.floor((listCatFur[i + 2] as float) / weight * 10000) as double) / 100;
+      val chance = (crafttweaker.util.Math.floor((listCatFur[i + 2] as float) / weight * 10000) as double) / 100;
       item.addTooltip(format.darkGray('Drops from ') ~ format.bold('Ball Of Fur')
       ~ format.darkGray(' with chance ') ~ format.gray(chance ~ '%'));
     }

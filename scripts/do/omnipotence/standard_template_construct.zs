@@ -163,7 +163,7 @@ function getSatchel() as IItemStack {
 
   var inventoryTag = {} as IData;
   for i, item in thermalItems {
-    var itemData = item.asData();
+    var itemData = item.toData();
     itemData += {Count: item.maxStackSize};
     val key = "Slot"~i;
     inventoryTag += {[key]: itemData};
@@ -202,7 +202,7 @@ function grant(player as IPlayer) as void {
         val existingTag = isNull(itemWithLore.tag) ? {} as IData : itemWithLore.tag;
         val finalTag = existingTag + utils.shiningTag(6); // default color
 
-        var itemNbt = itemWithLore.asData();
+        var itemNbt = itemWithLore.toData();
         // Remove extra data to keep NBT clean
         itemNbt = {id: itemNbt.id, Damage: itemNbt.Damage, Count: INITIAL_STACK_SIZE, Slot: slot, tag: finalTag};
         inventoryData += [itemNbt];

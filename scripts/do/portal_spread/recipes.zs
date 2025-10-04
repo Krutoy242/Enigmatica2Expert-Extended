@@ -14,6 +14,7 @@ import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.oredict.IOreDictEntry;
 
+import scripts.do.portal_spread.config.Config;
 import scripts.do.portal_spread.message.log;
 
 /*
@@ -223,7 +224,12 @@ zenClass Spread {
     // Input block state doesn't exist
     if (isNull(blockFrom)) return this;
 
-    log('  Creating new recipe for ' ~ blockFrom.commandString ~ ' input and ' ~ blocksTo.length ~ ' outputs.');
+    if (Config.debug) {
+      val serialized = [] as [string];
+      for state in blocksTo { serialized.add(state.commandString); }
+      log('  Creating new recipe for ' ~ blockFrom.commandString
+        ~ ' input and outputs: ' ~ mods.zenutils.StaticString.join(serialized as string[], ', '));
+    }
 
     // Determine if we need to use fallback
     var blocksToActual = blocksTo;

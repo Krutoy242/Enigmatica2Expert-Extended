@@ -67,7 +67,7 @@ craft.remake(<thermalexpansion:device:4>, ['pretty',
   '  §  ',
   '¤ ◙ ¤',
   '  ♥  '], {
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   '¤': <ore:gearIron>,
   '◙': <thermalexpansion:frame:64>,
   '♥': <thermalfoundation:material:512>,
@@ -702,7 +702,7 @@ craft.make(<thermalexpansion:machine:3>, ['pretty',
   'R I R',
   '□ ◙ □',
   '¤ ♥ ¤'], {
-  '□': <tconstruct:large_plate>.withTag({ Material: 'heavy' }), // Heavy Large Plate
+  '□': <tconstruct:large_plate>.withTag({ Material: 'electrum' }),
   'R': <thermalfoundation:material:832>, // Rosin
   '¤': <ore:gearElectrum>, // Electrum Gear
   '♥': <thermalfoundation:material:513>, // Redstone Reception Coil

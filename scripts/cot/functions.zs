@@ -1,4 +1,4 @@
-#modloaded contenttweaker randomtweaker crafttweakerutils
+#modloaded contenttweaker
 #reloadable
 #ignoreBracketErrors
 #priority -100
@@ -321,7 +321,7 @@ for i, id in singularIDs {
 }
 
 // Special crafting case for Garbage Singularity
-mods.extendedcrafting.CompressionCrafting.addRecipe(<contenttweaker:garbage_singularity>,
+mods.extendedcrafting.CompressionCrafting.addRecipe(<contenttweaker:garbage_singularity>.withTag({ completed: 1 as byte }),
   <rats:garbage_pile>, 10000, <rats:idol_of_ratlantis>, 2000000, 100000);
 
 // ------------------------------------------

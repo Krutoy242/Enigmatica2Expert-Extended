@@ -219,7 +219,7 @@ set(5, 'pickaxe', <netherendingores:ore_nether_modded_2:1>);
 set(5, 'pickaxe', <netherendingores:ore_nether_modded_2:2>);
 set(5, 'pickaxe', <netherendingores:ore_nether_modded_2:3>);
 set(5, 'pickaxe', <netherendingores:ore_other_1>);
-set(5, 'pickaxe', <plustic:alumiteblock:*>, 12);
+set(5, 'pickaxe', <tconstruct:metal:7>);
 set(5, 'pickaxe', <redstonearsenal:storage:*>, 12);
 set(5, 'pickaxe', <rftools:crafter3:*>, 12);
 set(5, 'pickaxe', <rftools:matter_receiver:*>, 12);

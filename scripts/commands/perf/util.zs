@@ -1,4 +1,4 @@
-#modloaded zenutils ctintegration ftblib
+#modloaded zenutils ftblib
 #priority 3000
 #reloadable
 

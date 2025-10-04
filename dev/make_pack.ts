@@ -27,7 +27,7 @@ import { manageSFTP } from './build/sftp'
 import { generateChangelog } from './tools/changelog/changelog'
 
 const { existsSync, readFileSync } = fs
-const $$ = $({ stdio: 'inherit' })
+const $$ = $({ stdio: 'inherit', verbose: true })
 
 p.intro('Let\'s cook a new release! 🍳')
 
@@ -125,13 +125,16 @@ if (await p.confirm({ message: `Generate Changelog?` })) {
   p.note('Now manually fix changelog and close file', '✍ ')
 
   await Promise.all([
-    $$`git add -f ${filesToCommit}`,
+    retry(2, '1s', async () => $$`git add -f ${filesToCommit}`),
     $$`code --wait ${changelogPath}`,
   ])
 
-  await $$`git add ${changelogPath}`
-  await retry(3, '1s', async () => $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`)
-  await $$`git update-index --skip-worktree ${skipWorktreeList}`
+  await retry(2, '1s', async () => $$`git add ${changelogPath}`)
+
+  if (await hasStaged())
+    await retry(2, '1s', async () => $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`)
+
+  await retry(2, '1s', async () => $$`git update-index --skip-worktree ${skipWorktreeList}`)
 }
 
 if (await p.confirm({ message: `Add tag?` }))
@@ -185,7 +188,7 @@ if (makeZips) {
   await fs.mkdir(tmpOverrides, { recursive: true })
 
   p.note('Cloning latest tag to tmpOverrides...', '👬 ')
-  const $tmp = $({ cwd: tmpOverrides, sync: true })
+  const $tmp = $$({ cwd: tmpOverrides, sync: true })
   $tmp`git clone --depth 1 ${`file://${resolve(process.cwd())}`} .`
   $tmp`git submodule init`
   $tmp`git config submodule.mc-tools.update none`
@@ -252,4 +255,9 @@ async function cleanupModlist() {
 
   // Save the modified modlist.json back
   await fs.writeFile(modlistPath, JSON.stringify(filteredModlist, null, 2))
+}
+
+async function hasStaged() {
+  const result = await $`git diff --staged --quiet`.nothrow()
+  return result.exitCode !== 0
 }

@@ -16,6 +16,11 @@ description.crt.encrusted=%s §6§o(Encrusted)§r
 # --------------------------------------
 # CoT new content
 # --------------------------------------
+entity.Villager.stock_trader=Stock Trader
+entity.Villager.necromancer=Necromancer
+infuse.ender=Ender
+infuse.glowstone=Glowstone
+infuse.dimensional=Dimensional
 itemGroup.other=ContentTweaker
 fluid.seed=Seed
 fluid.spectre=Spectre
@@ -444,7 +449,8 @@ e2ee.warn.wrong_installation=§6✖ §4The modpack has been installed incorrectl
 e2ee.warn.wrong_world_type=§6✖ §4It seems you've generated the world incorrectly!§6 ✖\n§cTo play Skyblock, from the main menu navigate to\n§6Mods§c ▶ §6Just Enough Dimensions§c Config ▶ §6Generic§c ▶ and set §6initialSpawnDimensionId§c to §63§c. Afterwards, create a new world.
 e2ee.do.charge=§fCharge: §6%s§r
 e2ee.do.charge.bonus=§fLatest bonus: §7x§b%s§r
-e2ee.do.diverse.info=§2Total types: §a%s§r\n§2Median amount: §a%s§r\n§2Items consumed by singularity:\n%s
+e2ee.do.diverse.complete=§2Complete
+e2ee.do.diverse.incomplete=§eIncomplete
 e2ee.otg.not_otg_biome=§2Cant TP to non-OTG biome with ID:§r §a§n%s§r§2. §8Try other Biome Essence.§r
 e2ee.otg.tp_to=§2Attempt teleport to:§r §a§n%s§r §8Wait until teleported or aborted.§r
 e2ee.otg.tp_finished=§2Teleporting finished.§r §8Try again if not teleported.§r

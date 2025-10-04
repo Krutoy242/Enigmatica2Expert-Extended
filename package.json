@@ -32,7 +32,7 @@
     "cheerio": "^1.1.0",
     "markdown-it": "^14.1.0",
     "mdimg": "^1.5.0",
-    "puppeteer": "^24.22.0"
+    "puppeteer": "^24.22.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.1",

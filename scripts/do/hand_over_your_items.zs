@@ -5,7 +5,7 @@
  * @link https://github.com/Krutoy242
  */
 
-#modloaded zenutils ctintegration
+#modloaded zenutils
 #priority 3000
 #reloadable
 
@@ -68,7 +68,7 @@ function tellrawItem(item as IItemStack, color as string = null, showName as boo
       text: item.amount > 1 ? item.amount ~'x' : '',
       hoverEvent: {
         action: 'show_item',
-        value: item.asData().toNBTString(),
+        value: item.toSNBT(),
       },
       extra: [
         {
