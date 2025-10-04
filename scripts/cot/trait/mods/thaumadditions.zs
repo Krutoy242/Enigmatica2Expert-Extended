@@ -773,7 +773,7 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
         oreName = ore.name.substring(7);
       }
 
-      if (!(oreDict has (`shard${oreName}`))) continue;
+      if (!(oreDict has (`crystalShard${oreName}`))) continue;
       found = true;
       break;
     }
