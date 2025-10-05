@@ -1,4 +1,4 @@
-#modloaded trinity crafttweakerutils
+#modloaded trinity
 #ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;

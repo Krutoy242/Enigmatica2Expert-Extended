@@ -1,5 +1,5 @@
 #reloadable
-#modloaded zenutils thaumcraft ctintegration
+#modloaded zenutils thaumcraft
 
 import crafttweaker.player.IPlayer;
 

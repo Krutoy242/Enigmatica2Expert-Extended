@@ -6,7 +6,7 @@ I need to set is a generating flower, to ensure binding to funtional spreader.
 (funtional flower is binded to mana pool) In lexica botania it will be marked as functional flower!
 */
 
-#modloaded randomtweaker botania
+#modloaded botania
 #loader contenttweaker
 
 import mods.contenttweaker.VanillaFactory;

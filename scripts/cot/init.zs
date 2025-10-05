@@ -1,5 +1,4 @@
 #loader contenttweaker
-#modloaded crafttweakerutils
 #priority 9000
 
 import mods.contenttweaker.AxisAlignedBB;

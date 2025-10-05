@@ -27,10 +27,10 @@
     "modId": "redcore",
     "version": "0.6"
   },
-  "+Fugue-0.20.1.jar": {
-    "jarName": "+Fugue-0.20.1.jar",
+  "+Fugue-0.20.4.jar": {
+    "jarName": "+Fugue-0.20.4.jar",
     "modId": "fugue",
-    "version": "0.20.1"
+    "version": "0.20.4"
   },
   "_bansoukou-4.3.1.jar": {
     "jarName": "_bansoukou-4.3.1.jar"
@@ -155,6 +155,11 @@
     "jarName": "armoreablemobs-1.12.2-1.1.8.jar",
     "modId": "armoreablemobs",
     "version": "1.12.2-1.1.8"
+  },
+  "ArmoredArms-v1.3.0-release.jar": {
+    "jarName": "ArmoredArms-v1.3.0-release.jar",
+    "modId": "armoredarms",
+    "version": "v1.3.0-release"
   },
   "armoryexpansion-2.0.0-alpha.jar": {
     "jarName": "armoryexpansion-2.0.0-alpha.jar",
@@ -340,10 +345,10 @@
     "modId": "botania_tweaks",
     "version": "1.9.1"
   },
-  "bpopener-1.0.2.jar": {
-    "jarName": "bpopener-1.0.2.jar",
+  "bpopener-1.1.0.jar": {
+    "jarName": "bpopener-1.1.0.jar",
     "modId": "bpopener",
-    "version": "1.0.2"
+    "version": "1.1.0"
   },
   "BrandonsCore-1.12.2-2.4.20.162-universal.jar": {
     "jarName": "BrandonsCore-1.12.2-2.4.20.162-universal.jar",
@@ -504,11 +509,6 @@
     "jarName": "CraftTweaker2-1.12-4.1.20.709.jar",
     "modId": "crafttweaker",
     "version": "1.12-4.1.20.709"
-  },
-  "crafttweakerutils-0.7.jar": {
-    "jarName": "crafttweakerutils-0.7.jar",
-    "modId": "examplemod",
-    "version": "0.7"
   },
   "CreativeCore_v1.10.71_mc1.12.2.jar": {
     "jarName": "CreativeCore_v1.10.71_mc1.12.2.jar",
@@ -1131,8 +1131,8 @@
     "modId": "lunatriuscore",
     "version": "1.2.0.42"
   },
-  "magicultureintegrations-1.12.2-2.2.5.jar": {
-    "jarName": "magicultureintegrations-1.12.2-2.2.5.jar",
+  "magicultureintegrations-1.12.2-2.2.6.jar": {
+    "jarName": "magicultureintegrations-1.12.2-2.2.6.jar",
     "modId": "magicultureintegrations",
     "version": "1.12.2-2.2.3"
   },
@@ -1341,10 +1341,10 @@
     "modId": "omniwand",
     "version": "1.12.2-1.0.1"
   },
-  "OpenBlocks-1.12.2-1.8.1.jar": {
-    "jarName": "OpenBlocks-1.12.2-1.8.1.jar",
+  "OpenBlocksReopened-1.12.2-1.8.2.jar": {
+    "jarName": "OpenBlocksReopened-1.12.2-1.8.2.jar",
     "modId": "openblocks",
-    "version": "1.8.1"
+    "version": "1.8.2"
   },
   "OpenComputers-MC1.12.2-1.8.9a+8ca336f.jar": {
     "jarName": "OpenComputers-MC1.12.2-1.8.9a+8ca336f.jar",

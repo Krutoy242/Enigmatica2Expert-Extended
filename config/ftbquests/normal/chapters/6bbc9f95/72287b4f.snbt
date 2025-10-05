@@ -1,13 +1,14 @@
 {
-	icon: "thaumicwonders:primordial_grain",
-	x: 11.0d,
-	y: -3.0d,
+	icon: "thaumicwonders:primordial_siphon",
+	x: 11.5d,
+	y: 0.0d,
 	text: [
 		"{q.thaumcraft.primordial_grain.desc}"
 	],
 	dependencies: [
-		"948f2215"
+		"baa9431f"
 	],
+	size: 0.75d,
 	tasks: [{
 		uid: "2dbbb9e2",
 		type: "item",
@@ -16,24 +17,10 @@
 		}]
 	},
 	{
-		uid: "5897a50a",
+		uid: "328a3a9f",
 		type: "item",
 		items: [{
-			item: "thaumicwonders:primordial_accelerator"
-		}]
-	},
-	{
-		uid: "f6860861",
-		type: "item",
-		items: [{
-			item: "thaumicwonders:primordial_accelerator_tunnel"
-		}]
-	},
-	{
-		uid: "b5abd926",
-		type: "item",
-		items: [{
-			item: "thaumicwonders:primordial_accelerator_terminus"
+			item: "thaumicwonders:primordial_siphon"
 		}]
 	}],
 	rewards: [{

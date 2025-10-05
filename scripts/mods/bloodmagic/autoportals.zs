@@ -143,7 +143,7 @@ function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, mas
 
 function buildNewPortal(world as IWorld, pos as IBlockPos, masterState as IBlockState, originalWorld as IWorld, originalPos as IBlockPos) as void {
   val nbt = originalWorld.getBlock(originalPos).data;
-  say('buildNewPortal(). nbt: '~nbt.toNBTString());
+  say('buildNewPortal(). nbt: '~nbt.toSNBT());
   world.setBlockState(masterState, nbt, pos);
   
   say('all done!');

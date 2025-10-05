@@ -110,9 +110,6 @@ jobs:
 
       - run: pnpm install --prod
 
-      - name: 📥 Download browser for puppeteer
-        run: npx puppeteer browsers install chrome
-
       - name: 🖼️ Generate images from md sections
         id: generate_images
         run: |

@@ -1,4 +1,4 @@
-#modloaded zentoolforge crafttweakerutils
+#modloaded zentoolforge
 #reloadable
 
 import crafttweaker.data.IData;
@@ -8,12 +8,12 @@ import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.item.IItemDefinition;
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
-import mods.ctintegration.scalinghealth.DifficultyManager;
-import mods.ctutils.utils.Math.abs;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
+import crafttweaker.util.Math.abs;
+import crafttweaker.util.Math.max;
+import crafttweaker.util.Math.min;
 import mods.zentoolforge.Toolforge;
 import modtweaker.tconstruct.ITICMaterial;
+import native.net.silentchaos512.scalinghealth.config.Config.Difficulty;
 
 static DEFAULT_EQUIP_CHANCE as double = 0.8; // Chance that mob will have at least 1 item
 static OVERWORLD_EQUIP_CHANCE as double = 0.8; // Chance modifier for Overworld
@@ -166,8 +166,8 @@ function addRandomModifiers(item as IItemStack, isArmor as bool, w as IWorld) as
 }
 
 function getDifficulty(entity as IEntity) as double {
-  val area = DifficultyManager.getAreaDifficulty(entity.world, entity.position3f.asBlockPos());
-  return area / native.net.silentchaos512.scalinghealth.config.Config.Difficulty.maxValue;
+  val area = Difficulty.AREA_DIFFICULTY_MODE.getAreaDifficulty(entity.world, entity.position);
+  return area / Difficulty.maxValue;
 }
 
 // Generate equipmnts

@@ -1,7 +1,7 @@
 #sideonly client
 #reloadable
 #priority -1500
-#modloaded randomtweaker botania scalinghealth
+#modloaded botania scalinghealth
 
 import mods.randomtweaker.botania.IBotaniaFXHelper;
 import mods.zenutils.NetworkHandler;

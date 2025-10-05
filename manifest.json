@@ -12,7 +12,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "Enigmatica2Expert-Extended",
-  "version": "v1.64.0",
+  "version": "v1.64.2",
   "author": "krutoy242",
   "overrides": "overrides",
   "files": [
@@ -60,7 +60,6 @@
     {"projectID":228756,"fileID":2747935,"___name":"Iron Chests"                             ,"downloadUrl":"https://edge.forgecdn.net/files/2747/935/ironchest-1.12.2-7.0.72.847.jar","required":true},
     {"projectID":228759,"fileID":2633646,"___name":"Compact Solars"                          ,"downloadUrl":"https://edge.forgecdn.net/files/2633/646/CompactSolars-1.12.2-5.0.18.341-universal.jar","required":true},
     {"projectID":228815,"fileID":2699055,"___name":"OpenModsLib"                             ,"downloadUrl":"https://edge.forgecdn.net/files/2699/55/OpenModsLib-1.12.2-0.12.2.jar","required":true},
-    {"projectID":228816,"fileID":2699056,"___name":"OpenBlocks"                              ,"downloadUrl":"https://edge.forgecdn.net/files/2699/56/OpenBlocks-1.12.2-1.8.1.jar","required":true},
     {"projectID":228832,"fileID":2645992,"___name":"Guide-API"                               ,"downloadUrl":"https://edge.forgecdn.net/files/2645/992/Guide-API-1.12-2.1.8-63.jar","required":true},
     {"projectID":228895,"fileID":3112142,"___name":"BiomeTweaker"                            ,"downloadUrl":"https://edge.forgecdn.net/files/3112/142/BiomeTweaker-1.12.2-3.2.369.jar","required":true},
     {"projectID":229302,"fileID":6771073,"___name":"Custom Loading Screen"                   ,"downloadUrl":"https://edge.forgecdn.net/files/6771/73/CustomLoadingScreen-1.12.2-1.5.9.jar","required":true},
@@ -240,7 +239,6 @@
     {"projectID":301364,"fileID":2609434,"___name":"Gendustry JEI Addon"                     ,"downloadUrl":"https://edge.forgecdn.net/files/2609/434/gendustryjei-1.0.2.jar","required":true},
     {"projectID":302514,"fileID":2915940,"___name":"Cathedral"                               ,"downloadUrl":"https://edge.forgecdn.net/files/2915/940/Cathedral-1.12.2-1.9.9.jar","required":true},
     {"projectID":303122,"fileID":2919936,"___name":"Just Enough Throwing In Fluids (JETIF)"  ,"downloadUrl":"https://edge.forgecdn.net/files/2919/936/jetif-1.12.2-1.5.2.jar","required":true},
-    {"projectID":303213,"fileID":3084399,"___name":"CraftTweaker Utils"                      ,"downloadUrl":"https://edge.forgecdn.net/files/3084/399/crafttweakerutils-0.7.jar","required":true},
     {"projectID":303657,"fileID":2704824,"___name":"Kiwi 🥝 (Neo/Forge)"                     ,"downloadUrl":"https://edge.forgecdn.net/files/2704/824/Kiwi-1.12.2-0.5.3.32.jar","required":true},
     {"projectID":304346,"fileID":4674241,"___name":"Ender IO Endergy"                        ,"downloadUrl":"https://edge.forgecdn.net/files/4674/241/EnderIO-endergy-1.12.2-5.3.72.jar","required":true},
     {"projectID":305211,"fileID":2688529,"___name":"Anger Management"                        ,"downloadUrl":"https://edge.forgecdn.net/files/2688/529/angermanagement-1.12.2-1.0.2.jar","required":true},
@@ -411,7 +409,7 @@
     {"projectID":968474,"fileID":6386622,"___name":"FermiumBooter"                           ,"downloadUrl":"https://edge.forgecdn.net/files/6386/622/%60FermiumBooter-1.2.0.jar","required":true},
     {"projectID":977883,"fileID":6478903,"___name":"TheOneSmeagle"                           ,"downloadUrl":"https://edge.forgecdn.net/files/6478/903/TheOneSmeagle-1.12-1.1.2.jar","required":true},
     {"projectID":994251,"fileID":5481496,"___name":"Villager Contracts"                      ,"downloadUrl":"https://edge.forgecdn.net/files/5481/496/villagercontracts-1.12.2-1.2.1.jar","required":true},
-    {"projectID":1005815,"fileID":6839765,"___name":"Fugue"                                   ,"downloadUrl":"https://edge.forgecdn.net/files/6839/765/%2bFugue-0.20.1.jar","required":true},
+    {"projectID":1005815,"fileID":7014170,"___name":"Fugue"                                   ,"downloadUrl":"https://edge.forgecdn.net/files/7014/170/%2bFugue-0.20.4.jar","required":true},
     {"projectID":1016395,"fileID":6596160,"___name":"XU2-Patcher"                             ,"downloadUrl":"https://edge.forgecdn.net/files/6596/160/XU2-Patcher-1.0.2.jar","required":true},
     {"projectID":1024225,"fileID":6007708,"___name":"Advanced Rocketry - Reworked"            ,"downloadUrl":"https://edge.forgecdn.net/files/6007/708/AdvancedRocketry-1.12.2-2.1.4-9.jar","required":true},
     {"projectID":1032769,"fileID":5414463,"___name":"NCO Java Legacy Lib"                     ,"downloadUrl":"https://edge.forgecdn.net/files/5414/463/NCOLegacyLib-1.12.2-1.2.jar","required":true},
@@ -419,7 +417,7 @@
     {"projectID":1056812,"fileID":6860877,"___name":"UniLib"                                  ,"downloadUrl":"https://edge.forgecdn.net/files/6860/877/UniLib-1.1.1%2b1.12.2-forge.jar","required":true},
     {"projectID":1063334,"fileID":6808448,"___name":"The Twilight Forest - Deforestation Edition","downloadUrl":"https://edge.forgecdn.net/files/6808/448/twilightforest-1.12.2-3.14.jar","required":true},
     {"projectID":1064321,"fileID":6480479,"___name":"StellarCore"                             ,"downloadUrl":"https://edge.forgecdn.net/files/6480/479/StellarCore-1.5.22.jar","required":true},
-    {"projectID":1064613,"fileID":6905883,"___name":"Magiculture Integrations"                ,"downloadUrl":"https://edge.forgecdn.net/files/6905/883/magicultureintegrations-1.12.2-2.2.5.jar","required":true},
+    {"projectID":1064613,"fileID":7008202,"___name":"Magiculture Integrations"                ,"downloadUrl":"https://edge.forgecdn.net/files/7008/202/magicultureintegrations-1.12.2-2.2.6.jar","required":true},
     {"projectID":1067548,"fileID":5994116,"___name":"Integrated Derivative"                   ,"downloadUrl":"https://edge.forgecdn.net/files/5994/116/integratedderivative-1.1.2.jar","required":true},
     {"projectID":1073925,"fileID":6745649,"___name":"Rather Enough Immersive Multiblocks"     ,"downloadUrl":"https://edge.forgecdn.net/files/6745/649/reim-0.2.jar","required":true},
     {"projectID":1081085,"fileID":6143104,"___name":"MiniEffects-Legacy Extended Life"        ,"downloadUrl":"https://edge.forgecdn.net/files/6143/104/minieffects-2.3.2.jar","required":true},
@@ -428,7 +426,7 @@
     {"projectID":1121489,"fileID":5814089,"___name":"AE2 Crafting Tree - Legacy"              ,"downloadUrl":"https://edge.forgecdn.net/files/5814/89/AE2CT-Legacy-0.1.2.jar","required":true},
     {"projectID":1132293,"fileID":6476059,"___name":"Backpack Display"                        ,"downloadUrl":"https://edge.forgecdn.net/files/6476/59/backpackdisplay-1.6.4.jar","required":true},
     {"projectID":1133738,"fileID":6940634,"___name":"Patchouli Books"                         ,"downloadUrl":"https://edge.forgecdn.net/files/6940/634/patchoulibooks-0.2.7.jar","required":true},
-    {"projectID":1147522,"fileID":6424570,"___name":"Backpack Opener"                         ,"downloadUrl":"https://edge.forgecdn.net/files/6424/570/bpopener-1.0.2.jar","required":true},
+    {"projectID":1147522,"fileID":7017913,"___name":"Backpack Opener"                         ,"downloadUrl":"https://edge.forgecdn.net/files/7017/913/bpopener-1.1.0.jar","required":true},
     {"projectID":1151126,"fileID":6929199,"___name":"Curvy Pipes"                             ,"downloadUrl":"https://edge.forgecdn.net/files/6929/199/curvy_pipes-1.12.2-1.12.6.jar","required":true},
     {"projectID":1153744,"fileID":5964549,"___name":"NoiseThreader"                           ,"downloadUrl":"https://edge.forgecdn.net/files/5964/549/NoiseThreader-1.0.0.jar","required":true},
     {"projectID":1154099,"fileID":6801199,"___name":"Crash Assistant"                         ,"downloadUrl":"https://edge.forgecdn.net/files/6801/199/!!!CrashAssistant-forge-1.12.2-1.9.15.jar","required":true},
@@ -440,6 +438,8 @@
     {"projectID":1234162,"fileID":6734060,"___name":"Lumenized"                               ,"downloadUrl":"https://edge.forgecdn.net/files/6734/60/Lumenized-1.0.4.jar","required":true},
     {"projectID":1235372,"fileID":6842491,"___name":"Scalar Legacy"                           ,"downloadUrl":"https://edge.forgecdn.net/files/6842/491/Scalar%20Legacy-1.0.1.jar","required":true},
     {"projectID":1242239,"fileID":6752868,"___name":"Tinkers' Antique"                        ,"downloadUrl":"https://edge.forgecdn.net/files/6752/868/TinkersAntique-1.12.2-2.13.0.202.jar","required":true},
-    {"projectID":1252600,"fileID":6848570,"___name":"Actually Additions V2 Coffee Edition"    ,"downloadUrl":"https://edge.forgecdn.net/files/6848/570/ActuallyAdditions-1.12.2-r164-V2.jar","required":true}
+    {"projectID":1252600,"fileID":6848570,"___name":"Actually Additions V2 Coffee Edition"    ,"downloadUrl":"https://edge.forgecdn.net/files/6848/570/ActuallyAdditions-1.12.2-r164-V2.jar","required":true},
+    {"projectID":1331377,"fileID":7036454,"___name":"Armored Arms"                            ,"downloadUrl":"https://edge.forgecdn.net/files/7036/454/ArmoredArms-v1.3.0-release.jar","required":true},
+    {"projectID":1342654,"fileID":6971809,"___name":"OpenBlocks Reopened"                     ,"downloadUrl":"https://edge.forgecdn.net/files/6971/809/OpenBlocksReopened-1.12.2-1.8.2.jar","required":true}
   ]
 }

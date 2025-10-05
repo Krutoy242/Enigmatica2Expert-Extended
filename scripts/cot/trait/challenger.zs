@@ -1,5 +1,5 @@
 #loader contenttweaker
-#modloaded scalinghealth ctintegration zenutils
+#modloaded scalinghealth zenutils
 
 import crafttweaker.entity.IEntity;
 import crafttweaker.util.Math;

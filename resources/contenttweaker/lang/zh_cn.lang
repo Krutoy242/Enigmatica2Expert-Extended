@@ -16,6 +16,11 @@ description.crt.encrusted=%s §6§o（已镶嵌）§r
 # --------------------------------------
 # CoT new content
 # --------------------------------------
+entity.Villager.stock_trader=股票经纪人
+entity.Villager.necromancer=死灵法师
+infuse.ender=末影
+infuse.glowstone=荧石
+infuse.dimensional=维度的
 # itemGroup.other=ContentTweaker
 # fluid.seed=Seed
 fluid.spectre=液态通灵
@@ -444,7 +449,8 @@ e2ee.warn.wrong_installation=§6✖ §4您的模组包安装不正确！§6 ✖\
 e2ee.warn.wrong_world_type=§6✖ §4看起来您错误地生成了世界！§6 ✖\n§c若要玩Skyblock，在主菜单中导航至\n§6Mods§c ▶ §6Just Enough Dimensions§c 配置 ▶ §6Generic§c ▶ 并将 §6initialSpawnDimensionId§c 设置为 §63§c。之后，创建一个新世界。
 e2ee.do.charge=§f充能: §6%s§r
 e2ee.do.charge.bonus=§f加成: §7x§b%s§r
-e2ee.do.diverse.info=§2类型总数: §a%s§r\n§2中位数: §a%s§r\n§2奇点消耗的物品:\n%s
+e2ee.do.diverse.complete=§2已完成
+e2ee.do.diverse.incomplete=§e未完成
 e2ee.otg.not_otg_biome=§2无法传送到 ID 为：§r §a§n%s§r§2 的非 OTG 生物群系. §8请尝试使用其他的生物群系精华。§r
 e2ee.otg.tp_to=§2正尝试传送至：§r §a§n%s§r §8请等待直至传送完成或宣告中止。§r
 e2ee.otg.tp_finished=§2传送已完成。§r §8如果您没有被传送，请再试一遍。§r

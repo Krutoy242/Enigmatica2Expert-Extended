@@ -37,7 +37,7 @@ craft.make(<avaritia:resource:6>, ['pretty',
   '▬': <ore:ingotCosmicNeutronium>,
   '*': <ore:ingotCrystalMatrix>,
   'I': <avaritia:resource:5>,
-  's': <contenttweaker:ultimate_singularity>,
+  's': <contenttweaker:ultimate_singularity>.withTag({ completed: 1 as byte }),
 });
 
 // [Neutron Collector] from [Glitch Infused Ingot][+4]

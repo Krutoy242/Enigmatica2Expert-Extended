@@ -24,6 +24,8 @@ import native.net.minecraft.util.SoundCategory;
 import native.net.minecraft.util.SoundEvent;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.entity.monster.EntityMob;
+import native.crafttweaker.mc1120.data.NBTConverter;
+import native.net.minecraft.nbt.JsonToNBT.getTagFromJson;
 
 zenClass Utils {
   var DEBUG as bool = false;
@@ -531,6 +533,11 @@ zenClass Utils {
     } else if (arg[0].toUpperCase() != arg[0]) {
       return arg[0].toUpperCase() ~ arg.substring(1);
     } else return arg;
+  }
+
+  // Convert tags in form of sNBT such as {ench:[{id:26s,lvl:1s}]}
+  function sNBT(snbt as string) as IData {
+    return NBTConverter.from(getTagFromJson(snbt), false);
   }
 }
 global utils as Utils = Utils();

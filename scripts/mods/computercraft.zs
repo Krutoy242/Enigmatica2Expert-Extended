@@ -41,12 +41,13 @@ craft.make(<computercraft:turtle_advanced>, ['pretty',
 });
 
 // Pocket Computer
-recipes.remove(<computercraft:pocket_computer>);
+recipes.removeByRecipeName('computercraft:normal_pocket_computer');
 mods.immersiveengineering.MetalPress.addRecipe(<computercraft:pocket_computer>, <computercraft:computer>, <immersiveengineering:mold:0>, 2000);
 mods.mechanics.addCrushingBlockRecipe(<computercraft:computer>, [<computercraft:pocket_computer>], [1.0]);
 
 // Advanced Pocket Computer
-recipes.remove(<computercraft:pocket_computer:1>);
+recipes.removeByRecipeName('computercraft:advanced_pocket_computer');
+recipes.removeByRecipeName('computercraft:advanced_pocket_computer_upgrade');
 mods.immersiveengineering.MetalPress.addRecipe(<computercraft:pocket_computer:1>, <computercraft:computer:16384>, <immersiveengineering:mold:0>, 2000);
 mods.mechanics.addCrushingBlockRecipe(<computercraft:computer:16384>, [<computercraft:pocket_computer:1>], [1.0]);
 

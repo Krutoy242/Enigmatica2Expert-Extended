@@ -1,4 +1,4 @@
-#modloaded randomtweaker ctintegration crafttweakerutils thaumadditions
+#modloaded thaumadditions
 #priority -1
 
 import crafttweaker.block.IBlock;
@@ -15,7 +15,6 @@ import crafttweaker.text.ITextComponent;
 import crafttweaker.util.Math;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
-import mods.ctutils.entity.Experience;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
 import native.org.zeith.thaumicadditions.entity.EntityMithminiteScythe;
@@ -233,7 +232,7 @@ function caelesAstralExp(scythe as IEntity, lvl as int) as void {
 
 function cognitioExperienceBlessing(scythe as IEntity, target as IEntityLivingBase, lvl as int) as void {
   val exp as IEntityXp = <entity:minecraft:xp_orb>.spawnEntity(target.world, target.position);
-  Experience.setXpValue(exp, target.world.getRandom().nextInt(100,1000 * lvl));
+  exp.xp = target.world.getRandom().nextInt(100,1000 * lvl);
 
   playSound('entity.player.levelup', target);
   (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.TOTEM, target.x, entityEyeHeight(target), target.z, 5, 0.5, 0.5, 0.5, 0.2, 0);

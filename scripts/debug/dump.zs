@@ -5,7 +5,6 @@ It should not exist in release version.
 
 */
 
-#modloaded ctintegration
 #priority 3999
 #reloadable
 

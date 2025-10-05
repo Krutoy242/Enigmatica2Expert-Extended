@@ -5,7 +5,7 @@
  * @link https://github.com/Krutoy242
  */
 
-#modloaded zenutils randomtweaker draconicevolution
+#modloaded zenutils draconicevolution
 #priority -3
 #reloadable
 #sideonly client

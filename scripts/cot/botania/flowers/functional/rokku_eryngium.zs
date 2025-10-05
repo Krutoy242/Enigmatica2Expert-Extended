@@ -2,7 +2,7 @@
 Rokku Eryngium (Eryngium + Rokku) - flower that cuts astral rock crystals (actually automates grindstone)
 */
 
-#modloaded randomtweaker botania ctintegration zenutils
+#modloaded botania zenutils
 #loader contenttweaker
 
 import crafttweaker.data.IData;

@@ -398,7 +398,7 @@ craft.remake(<cyclicmagic:block_fishing>, ['pretty',
   'C r C',
   'M C M'], {
   'M': <extrautils2:decorativesolidwood>,
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   'C': <minecraft:web>,
   'r': <cyclicmagic:stone_pebble>,
 });

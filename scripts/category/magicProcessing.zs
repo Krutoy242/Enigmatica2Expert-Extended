@@ -1,4 +1,4 @@
-#modloaded botania_tweaks crafttweakerutils
+#modloaded botania_tweaks
 #priority -1
 
 import crafttweaker.item.IItemStack;
@@ -8,7 +8,7 @@ import thaumcraft.aspect.CTAspectStack;
 import mods.botaniatweaks.Agglomeration;
 import mods.botaniatweaks.AgglomerationMultiblock;
 import mods.botaniatweaks.AgglomerationRecipe;
-import mods.ctutils.utils.Math.abs;
+import crafttweaker.util.Math.abs;
 
 static aspects as CTAspectStack[][] = [
   Aspects('💨 ⛰️ 🔥 💧 ⟁ ⚡'),
