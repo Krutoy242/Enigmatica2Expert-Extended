@@ -2,27 +2,6 @@
 #modloaded xporbclump
 // yes, the modid of 'fixeroo' is not 'fixeroo'
 
-/**java:
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
-import surreal.fixeroo.core.FixerooHooks;
-
-@Mixin(value = FixerooHooks.class, remap = false)
-public class MixinFixerooHooks {
-    @Redirect(
-        method = "RenderXPOrb$getSize",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/util/math/MathHelper;sqrt(F)F"
-        )
-    )
-    private static float reduceXPOrbSize(float xpValue) {
-        return (float) Math.log(xpValue + 1);
-    }
-}
- */
-
 import native.java.lang.Math;
 
 #mixin {targets: "surreal.fixeroo.core.FixerooHooks"}
