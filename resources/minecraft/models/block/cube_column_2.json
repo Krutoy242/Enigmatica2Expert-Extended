@@ -7,6 +7,7 @@
     {
       "from": [  0,  0,  0 ],
       "to":   [ 16, 16, 16 ],
+      "shade": false,
       "faces": {
         "down":  { "texture": "#end_glow", "cullface": "down" },
         "up":    { "texture": "#end_glow", "cullface": "up" },
@@ -19,7 +20,6 @@
     {
       "from": [  0,  0,  0 ],
       "to":   [ 16, 16, 16 ],
-      "shade": false,
       "faces": {
         "down":  { "texture": "#end", "cullface": "down" },
         "up":    { "texture": "#end", "cullface": "up" },

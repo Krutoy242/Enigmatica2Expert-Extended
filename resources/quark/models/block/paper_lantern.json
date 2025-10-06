@@ -147,7 +147,7 @@
 				"down": { "uv": [ 2, 2, 2.001, 14 ], "texture": "#side_glow" },
 				"up": { "uv": [ 2, 2, 2.001, 14 ], "texture": "#side_glow" },
 				"north": { "uv": [ 13.999, 2, 14, 14 ], "texture": "#side_glow" },
-				"south": { "uv": [ 2, 2, 2.001, 14 ], "texture": "#sid_glowe" },
+				"south": { "uv": [ 2, 2, 2.001, 14 ], "texture": "#side_glow" },
 				"west": { "uv": [ 2, 2, 14, 14 ], "texture": "#side_glow" },
 				"east": { "uv": [ 2, 2, 14, 14 ], "texture": "#side_glow" }
 			}

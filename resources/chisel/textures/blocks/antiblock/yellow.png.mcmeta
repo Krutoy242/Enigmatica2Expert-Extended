@@ -1,6 +1,14 @@
 {
     "ctm": {
         "ctm_version": 1,
-        "layer": "BLOOM"
+        "layer": "BLOOM",
+        "type": "ctm",
+        "textures": [
+            "chisel:blocks/antiblock/yellow_ctm"
+        ],
+        "extra": {
+            "light": 16,
+            "ignore_states": true
+        }
     }
 }

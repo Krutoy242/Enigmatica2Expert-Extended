@@ -6,6 +6,6 @@
         "transform": "forge:default-block"
     },
     "variants": {
-        "normal": [{}], "inventory": [{"model": "minecraft:layered_cube_all_2", "textures": {"top_all" : "thaumadditions:blocks/amber_lamp", "bot_all" : "thaumadditions:blocks/amber_lamp" }}]
+        "normal": [{}], "inventory": [{}]
     }
 }
