@@ -4,7 +4,7 @@
         "type":"CTMH",
         "layer": "BLOOM",
         "extra": {
-        "light": 16
+        "light": 15
             }
     }
 }
