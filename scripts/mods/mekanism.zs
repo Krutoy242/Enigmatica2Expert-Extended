@@ -386,23 +386,23 @@ val upgrIngrs = {
 
 // [Energy Upgrade] from [Ardite Ore Dust][+3]
 craft.remake(<mekanism:energyupgrade>, ['pretty',
-  'A □ A',
-  '▲ ♣ ▲',
-  'A □ A'], upgrIngrs
+  'A ♣ A',
+  '▲ □ ▲',
+  'A ♣ A'], upgrIngrs
 );
 
 // [Speed Upgrade] from [Cobalt Ore Dust][+3]
 craft.remake(<mekanism:speedupgrade>, ['pretty',
-  'A □ A',
-  '▲ ♠ ▲',
-  'A □ A'], upgrIngrs
+  'A ♠ A',
+  '▲ □ ▲',
+  'A ♠ A'], upgrIngrs
 );
 
 // [Gas Upgrade] from [Pulverized Silver][+3]
 craft.remake(<mekanism:gasupgrade>, ['pretty',
-  'A □ A',
-  '▲ s ▲',
-  'A □ A'], upgrIngrs
+  'A s A',
+  '▲ □ ▲',
+  'A s A'], upgrIngrs
 );
 
 // Atomic disassembler
