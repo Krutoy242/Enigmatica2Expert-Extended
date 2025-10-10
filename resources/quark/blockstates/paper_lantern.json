@@ -1,0 +1,11 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "quark:paper_lantern",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"variant=paper_lantern": [{ "textures": { "side": "quark:blocks/paper_lantern_side", "side_glow": "quark:blocks/paper_lantern_side_glow" } }],
+		"variant=paper_lantern_sakura": [{ "textures": { "side": "quark:blocks/paper_lantern_side_sakura", "side_glow": "quark:blocks/paper_lantern_side_sakura_glow" } }]
+	}
+}

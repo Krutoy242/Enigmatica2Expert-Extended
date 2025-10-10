@@ -1,0 +1,7 @@
+{
+    "parent": "block/torch_2",
+    "textures": {
+        "bot_torch": "actuallyadditions:blocks/block_tiny_torch",
+        "top_torch": "actuallyadditions:blocks/block_tiny_torch_glow"
+    }
+}
