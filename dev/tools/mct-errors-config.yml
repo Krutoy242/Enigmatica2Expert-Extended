@@ -240,6 +240,7 @@ ignore:
   - WARN. .enderio.. Ender IO core recipe loading has been disabled in the configuration.
   - WARN. .enderio.. This is valid, but do NOT report recipe errors to the Ender IO team!
   - WARN. .CrashAssistantJarInJarHelper.. Failed to parse version from mcmod.info of .+
+  - WARN. .CrashAssistantJarInJarHelper.. Closed old CrashAssistantApp process to prevent confusing the player with window containing information from old crash.
 
   # ##################
   # Reported issues #
@@ -471,6 +472,9 @@ ignore:
 
   # https://github.com/Ender-Development/PatchouliBooks/issues/6
   - ERROR. .Patchouli Books.. Unable to find item at ic2:blockrubsapling
+
+  # Those are tweaks that will be removed from Universal Tweaks in the next update as they are a better fit in ThaumicTweaker.
+  - WARN. .mixin.. Method overwrite conflict for onCast in mixins.(thaumictweaker.json:focus.FocusEffect|mods.thaumcraft.foci.focuseffects.json:UT)
 
   # ##################
   # Cleanroom Loader errors

@@ -5,11 +5,8 @@ import crafttweaker.item.IItemStack;
 // Add missed furnace recipe
 furnace.addRecipe(<endreborn:item_ingot_wolframium>, <qmd:dust>, 4.0);
 
-// Chronologist
-<entity:endreborn:chronologist>.addPlayerOnlyDrop(<deepmoblearning:living_matter_extraterrestrial>, 1, 2);
-
 // Mage-Barclay
-<entity:endreborn:endlord>.addPlayerOnlyDrop(<storagedrawers:upgrade_storage:4>, 1, 2);
+scripts.lib.loot.tweak('endreborn:lord', 'main', null, null, [<storagedrawers:upgrade_storage:4>], [1, 2], true);
 
 // Remove hammer recipes
 for recipeName in [

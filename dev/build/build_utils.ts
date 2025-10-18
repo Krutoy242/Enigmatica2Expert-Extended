@@ -13,7 +13,7 @@ import logUpdate from 'log-update'
 import { $ } from 'zx'
 
 const { rmSync } = fse
-const $$ = $({ stdio: 'inherit' })
+const $$ = $({ stdio: 'inherit', verbose: true })
 
 export async function confirm(msg: string) {
   const result = await p.confirm({ message: msg })
@@ -129,5 +129,19 @@ export async function commitOrFixup(fileName: string, commitMsg: string) {
   }
   else {
     await $$`git commit -m ${commitMsg}`.nothrow()
+  }
+}
+
+export async function commitAmend(commitMsg: string) {
+  // Get the last commit message
+  const lastCommitMsg = (await $`git log -1 --pretty=%B`.text()).trim()
+
+  if (lastCommitMsg === commitMsg) {
+    // Amend the last commit
+    await $$`git commit --amend --no-edit`
+  }
+  else {
+    // Create a new commit
+    await $$`git commit -m ${commitMsg}`
   }
 }

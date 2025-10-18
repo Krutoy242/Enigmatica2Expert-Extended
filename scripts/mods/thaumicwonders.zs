@@ -6,8 +6,6 @@ import crafttweaker.recipes.IRecipeFunction;
 import mods.thaumicwonders.MeatyOrb;
 import mods.thaumicwonders.CatalyzationChamber;
 
-<entity:thaumicwonders:corruption_avatar>.addDrop(<thaumictinkerer:kamiresource:2>, 13, 25);
-
 // Cast quicksilver back to gem
 recipes.removeByRecipeName('thaumicwonders:quicksilver_bucket');
 recipes.removeByRecipeName('thaumicwonders:quicksilver_bucket_deconstruct');

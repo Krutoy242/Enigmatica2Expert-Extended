@@ -1,11 +1,13 @@
 #priority 5000
 #ignoreBracketErrors
+#reloadable
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.entity.IEntityDefinition;
 import native.net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import native.net.minecraft.nbt.NBTBase;
 
 $expand IEntityDefinition$asSoul() as IItemStack {
   // Rendering Emberoot Fairies causing crashes on AMD cards
@@ -38,7 +40,8 @@ $expand IEntityDefinition$asIngr() as IIngredient {
 
 $expand IItemStack$toData() as IData {
   val nativeItem as ICapabilitySerializable = this.native;
-  return nativeItem.serializeNBT() as IData;
+  val tag as NBTBase = nativeItem.serializeNBT();
+  return tag.wrapper;
 }
 
 $expand IItemStack$toSNBT() as string {

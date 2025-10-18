@@ -1,6 +1,7 @@
 #modloaded loottweaker
 
 import crafttweaker.item.IItemStack;
+import crafttweaker.item.WeightedItemStack;
 import loottweaker.vanilla.loot.Functions;
 import loottweaker.vanilla.loot.Conditions;
 
@@ -12,7 +13,7 @@ function tweak(
   poolStr as string,
   entryToRemove as string,
   itemToRemove as IItemStack,
-  itemsToAdd as IItemStack[],
+  itemsToAdd as WeightedItemStack[],
   minMax as int[],
   isByPlayer as bool = false,
   poolWeight as int = 1
@@ -27,10 +28,16 @@ function tweak(
   // Add new drops
   if (!isNull(itemsToAdd)) {
     for itemToAdd in itemsToAdd {
-      val smelted = utils.smelt(itemToAdd);
+      var conditions = isByPlayer ? [Conditions.killedByPlayer()] : [];
+
+      if (itemToAdd.chance < 1.0f) {
+        conditions += Conditions.randomChance(itemToAdd.chance);
+      }
+
+      val smelted = utils.smelt(itemToAdd.stack);
       if (!isNull(smelted)) {
         // Add with smelting function (if smelted item exist)
-        pool.addItemEntry(itemToAdd, poolWeight, 0, [
+        pool.addItemEntry(itemToAdd.stack, poolWeight, 0, [
           Functions.parse({
             'function': 'minecraft:furnace_smelt',
             conditions: [
@@ -43,14 +50,14 @@ function tweak(
           }),
           Functions.setCount(minMax[0], minMax[1]),
           Functions.lootingEnchantBonus(0, 1, 0),
-        ], isByPlayer ? [Conditions.killedByPlayer()] : []);
+        ], conditions);
       }
       else {
         // Add non-smelt function
-        pool.addItemEntryHelper(itemToAdd, poolWeight, 0, [
+        pool.addItemEntry(itemToAdd.stack, poolWeight, 0, [
           Functions.setCount(minMax[0], minMax[1]),
           Functions.lootingEnchantBonus(0, 1, 0),
-        ], isByPlayer ? [Conditions.killedByPlayer()] : []);
+        ], conditions);
       }
     }
   }

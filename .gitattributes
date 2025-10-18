@@ -21,7 +21,7 @@ config/jei/itemBlacklist.cfg filter=itemBlacklist
 # ℹ️ Sort the JSON file, as it can be shuffled.
 # › git config filter.json-sorter.clean "jq -S ."
 config/xaerominimap_entities.json filter=json-sorter
-config/crash_assistant/lang/*.json filter=json-sorter
+config/crash_assistant/**/*.json filter=json-sorter
 
 # ℹ️ Remove random values that change on every load.
 # › git config filter.enderio_cleanup.clean "sed 's/S:optifineConfirmed=.*/S:optifineConfirmed=0/; s/default: [I@[a-f0-9]*$/default: [I@00000000/"

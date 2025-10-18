@@ -251,7 +251,7 @@ furnaceRemove(<libvulpes:productingot:7>            , <qmd:dust:3>);
 furnaceRemove(<tconstruct:ingots>                   , <qmd:dust:4>);
 furnaceRemove(<minecraft:gold_ingot> * 3            , <thaumicwonders:eldritch_cluster:1>);
 furnaceRemove(<thaumcraft:quicksilver> * 3          , <thaumicwonders:eldritch_cluster:6>);
-furnaceRemove(<minecraft:quartz> * 3                , <thaumicwonders:eldritch_cluster:7>);
+furnaceRemove(<minecraft:quartz> * 4                , <thaumicwonders:eldritch_cluster:7>);
 furnaceRemove(<thaumcraft:ingot:1> * 2              , <thaumicwonders:eldritch_cluster:8>);
 furnaceRemove(<minecraft:iron_ingot> * 3            , <thaumicwonders:eldritch_cluster>);
 /**/

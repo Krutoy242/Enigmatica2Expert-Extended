@@ -440,22 +440,22 @@ for spawner, rewards in spawnerRecycle {
 mods.tconstruct.Alloy.addRecipe(<liquid:fierymetal> * 144, [<liquid:fiery_essence> * 250, <liquid:end_steel> * 144]);
 mods.tconstruct.Alloy.addRecipe(<liquid:lava> * 250, [<liquid:fiery_essence> * 50, <liquid:menrilresin> * 250]);
 
-<entity:twilightforest:ice_crystal>.addDrop(<iceandfire:dragon_ice>, 1, 3);
-<entity:twilightforest:pinch_beetle>.addDrop(<thermalfoundation:material:2051>, 1, 3);
-<entity:twilightforest:redcap_sapper>.addPlayerOnlyDrop(<tconevo:material> % 50, 1, 2);
-<entity:twilightforest:redcap>.addPlayerOnlyDrop(<tconevo:material> % 50, 1, 2);
-<entity:twilightforest:slime_beetle>.addDrop(<tconstruct:materials:9>, 1, 3);
-<entity:twilightforest:squirrel>.addDrop(<harvestcraft:chestnutitem> % 30, 1, 1);
-<entity:twilightforest:squirrel>.addDrop(<harvestcraft:hazelnutitem> % 30, 1, 1);
-<entity:twilightforest:squirrel>.addDrop(<harvestcraft:nutmegitem> % 30, 1, 1);
-<entity:twilightforest:squirrel>.addDrop(<harvestcraft:peanutitem> % 30, 1, 1);
-<entity:twilightforest:squirrel>.addDrop(<harvestcraft:waterchestnutitem> % 30, 1, 1);
-<entity:twilightforest:stable_ice_core>.addDrop(<mysticalagriculture:ice_essence>, 4, 12);
-<entity:twilightforest:unstable_ice_core>.addDrop(<forestry:crafting_material:5>, 3, 9);
-<entity:twilightforest:wraith>.addDrop(<enderio:block_holier_fog>, 10, 40);
-<entity:twilightforest:tower_broodling>.addPlayerOnlyDrop(<plustic:osgloglasnugget> % 50, 1, 3);
-<entity:twilightforest:tower_golem>.addPlayerOnlyDrop(<mekanism:enrichedalloy> % 50, 1, 2);
-<entity:twilightforest:harbinger_cube>.addDrop(<appliedenergistics2:material:20>, 1, 3);
+scripts.lib.loot.tweak('twilightforest:entities/ice_crystal', 'main', null, null, [<iceandfire:dragon_ice>], [1, 3]);
+scripts.lib.loot.tweak('twilightforest:entities/pinch_beetle', 'main', null, null, [<thermalfoundation:material:2051>], [1, 3]);
+scripts.lib.loot.tweak('twilightforest:entities/redcap_sapper', 'main', null, null, [<tconevo:material> % 50], [1, 2], true);
+scripts.lib.loot.tweak('twilightforest:entities/redcap', 'main', null, null, [<tconevo:material> % 50], [1, 2], true);
+scripts.lib.loot.tweak('twilightforest:entities/slime_beetle', 'main', null, null, [<tconstruct:materials:9>], [1, 3]);
+scripts.lib.loot.tweak('twilightforest:entities/wraith', 'main', null, null, [<enderio:block_holier_fog>], [10, 40]);
+scripts.lib.loot.tweak('twilightforest:entities/tower_broodling', 'main', null, null, [<plustic:osgloglasnugget> % 50], [1, 3], true);
+scripts.lib.loot.tweak('twilightforest:entities/tower_golem', 'main', null, null, [<mekanism:enrichedalloy> % 50], [1, 2], true);
+scripts.lib.loot.tweak('twilightforest:entities/harbinger_cube', 'main', null, null, [<appliedenergistics2:material:20>], [1, 3]);
+scripts.lib.loot.tweak('twilightforest:entities/squirrel', 'main', null, null, [
+  <harvestcraft:chestnutitem> % 30,
+  <harvestcraft:hazelnutitem> % 30,
+  <harvestcraft:nutmegitem> % 30,
+  <harvestcraft:peanutitem> % 30,
+  <harvestcraft:waterchestnutitem> % 30
+], [1, 1]);
 
 // [Aurora Block]*4 from [Plutonium-242][+4]
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(

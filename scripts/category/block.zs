@@ -236,6 +236,7 @@ set(5, 'pickaxe', <thermalfoundation:storage_alloy:2>);
 set(5, 'pickaxe', <thermalfoundation:storage_alloy:4>);
 set(5, 'pickaxe', <thermalfoundation:storage_alloy>);
 set(5, 'pickaxe', <xnet:connector:*>, 12);
+set(5, null, <additionalcompression:charcoal_compressed:1>);
 set(5, null, <twilightforest:underbrick:*>, 12);
 set(6, 'pickaxe', <appliedenergistics2:charged_quartz_ore:*>, 3);
 set(6, 'pickaxe', <biomesoplenty:gem_ore>);

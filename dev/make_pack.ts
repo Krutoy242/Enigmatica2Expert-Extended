@@ -22,7 +22,7 @@ import { resolve } from 'pathe'
 import { replaceInFile } from 'replace-in-file'
 import { $, fs, retry } from 'zx'
 
-import { commitOrFixup, getIgnoredFiles, removeFiles } from './build/build_utils'
+import { commitAmend, commitOrFixup, getIgnoredFiles, removeFiles } from './build/build_utils'
 import { manageSFTP } from './build/sftp'
 import { generateChangelog } from './tools/changelog/changelog'
 
@@ -32,8 +32,8 @@ const $$ = $({ stdio: 'inherit', verbose: true })
 p.intro('Let\'s cook a new release! 🍳')
 
 const tmpDir = 'D:/mc_tmp/'
-if (await p.confirm({ message: '🪓 Perform automation?' }))
-  await $$`bun dev`
+if (await p.confirm({ message: '🪓 Perform automation?' }) === true)
+  await $$`pnpm dev`
 
 const devonlyIgnore = ignore().add(readFileSync('dev/.devonly.ignore', 'utf8'))
 
@@ -68,7 +68,7 @@ p.note(await commitOrFixup('dev/TODO.md', 'build: 📝update TODO'))
 
 await p.confirm({ message: '🧼 Clear your working tree and rebase' })
 
-if (await p.confirm({ message: `Generate Changelog?` })) {
+if (await p.confirm({ message: `Generate Changelog?` }) === true) {
   const changelogPath = 'CHANGELOG-latest.md'
 
   p.note('Updating version in files', '📝')
@@ -118,7 +118,7 @@ if (await p.confirm({ message: `Generate Changelog?` })) {
   p.note('Iconify changelog and prepare files to git add', '📝')
 
   await Promise.all([
-    $$`bun E:/dev/mc-icons/src/cli.ts ${changelogPath} --silent --no-short --modpack=e2ee --treshold=2`,
+    $$`tsx E:/dev/mc-icons/src/cli.ts ${changelogPath} --silent --no-short --modpack=e2ee --treshold=2`,
     $$`git update-index --no-skip-worktree ${skipWorktreeList}`,
   ])
 
@@ -132,12 +132,12 @@ if (await p.confirm({ message: `Generate Changelog?` })) {
   await retry(2, '1s', async () => $$`git add ${changelogPath}`)
 
   if (await hasStaged())
-    await retry(2, '1s', async () => $$`git commit -m "chore: 🧱 CHANGELOG update, version bump"`)
+    await commitAmend('chore: 🧱 CHANGELOG update, version bump')
 
   await retry(2, '1s', async () => $$`git update-index --skip-worktree ${skipWorktreeList}`)
 }
 
-if (await p.confirm({ message: `Add tag?` }))
+if (await p.confirm({ message: `Add tag?` }) === true)
   await $$`git tag -a -f -m "Next automated release" ${nextVersion}`
 
 /*
@@ -156,7 +156,7 @@ const zipPath_server = `${zipPath_base}-server.zip`
 const isZipsExist = [zipPath, zipPath_server].some(f => existsSync(f))
 
 let rewriteOldZipFiles = false
-if (isZipsExist && await p.confirm({ message: `Rewrite old .zip files?` })) {
+if (isZipsExist && await p.confirm({ message: `Rewrite old .zip files?` }) === true) {
   rewriteOldZipFiles = true
   s.start(`🪓 Removing old zip files:\n${zipPath}\n${zipPath_server}`)
   await Promise.all([
@@ -221,7 +221,7 @@ if (makeZips) {
 
 await manageSFTP(serverSetupConfig)
 
-if (await p.confirm({ message: `Push tag?` }))
+if (await p.confirm({ message: `Push tag?` }) === true)
   await $$`git push --follow-tags`
 
 const inputTitle = await p.text({ message: 'Enter release title' })

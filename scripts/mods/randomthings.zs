@@ -345,37 +345,37 @@ craft.remake(<randomthings:eclipsedclock>, ['pretty',
 });
 
 // Remove all default imbue recipes
-mods.rt.RandomThingsTweaker.removeAllImbuingRecipes();
+mods.roidtweaker.randomthings.Imbuing.clearRecipes();
 
 // Remake imbues, make them way cheaper
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <actuallyadditions:item_misc:11>,
+mods.roidtweaker.randomthings.Imbuing.addRecipe(
+  <randomthings:imbue>,
+  <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
+  [<actuallyadditions:item_misc:11>,
   <tconstruct:edible:4>,
   <actuallyadditions:item_misc:10>,
+]);
+mods.roidtweaker.randomthings.Imbuing.addRecipe(
+  <randomthings:imbue:1>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
-  <randomthings:imbue>
-);
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <minecraft:red_mushroom>,
+  [<minecraft:red_mushroom>,
   <minecraft:potato>,
   <minecraft:brown_mushroom>,
+]);
+mods.roidtweaker.randomthings.Imbuing.addRecipe(
+  <randomthings:imbue:2>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
-  <randomthings:imbue:1>
-);
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <randomthings:beans>,
+  [<randomthings:beans>,
   <minecraft:dye:4>,
   <minecraft:glowstone_dust>,
+]);
+mods.roidtweaker.randomthings.Imbuing.addRecipe(
+  <randomthings:imbue:3>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
-  <randomthings:imbue:2>
-);
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <minecraft:netherbrick>,
+  [<minecraft:netherbrick>,
   <iceandfire:wither_shard>,
   <minecraft:soul_sand>,
-  <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
-  <randomthings:imbue:3>
-);
+]);
 
 // [Sound Box] from [Citrus Wood Planks]*6[+1]
 craft.remake(<randomthings:soundbox>, ['pretty',
