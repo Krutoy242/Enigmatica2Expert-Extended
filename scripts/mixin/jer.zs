@@ -18,11 +18,11 @@ zenClass MixinWorldGenRegistry {
     function sortInfo(cir as mixin.CallbackInfoReturnable) as void {
         LogHelper.info("E2EE: Sorting JER worldgen entries by absolute value of dim id", []);
 
-        val dimIdPattern as Pattern = Pattern.compile("\\((-?\\d+)\\)", Pattern.MULTILINE);
+        val dimIdPattern as Pattern = Pattern.compile("\\((-?\\d+)\\)");
 
         val extractDimId as function(WorldGenEntry)int = function(entry as WorldGenEntry) as int {
             val matcher as Matcher = dimIdPattern.matcher(entry.getRestriction().getDimensionRestriction());
-            if (matcher.matches()) {
+            if (matcher.find()) {
                 return Math.abs(matcher.group(1) as int);
             }
             return 10000;
