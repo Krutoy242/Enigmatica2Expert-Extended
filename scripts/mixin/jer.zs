@@ -4,7 +4,6 @@
 import native.jeresources.entry.WorldGenEntry;
 import native.jeresources.util.LogHelper;
 
-import native.java.util.Comparator;
 import native.java.util.List;
 import native.java.util.regex.Matcher;
 import native.java.util.regex.Pattern;
