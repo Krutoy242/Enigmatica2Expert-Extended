@@ -4,7 +4,6 @@
 import native.jeresources.entry.WorldGenEntry;
 import native.jeresources.util.LogHelper;
 
-import native.java.util.List;
 import native.java.util.regex.Matcher;
 import native.java.util.regex.Pattern;
 
@@ -27,7 +26,7 @@ zenClass MixinWorldGenRegistry {
             return 10000;
         };
 
-        val result as List = cir.getReturnValue();
+        val result as [WorldGenEntry] = cir.getReturnValue();
         result.sort(function(a as WorldGenEntry, b as WorldGenEntry) as int {
             val dimIdDiff as int = extractDimId(a) - extractDimId(b);
             if (dimIdDiff != 0) {
