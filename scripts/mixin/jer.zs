@@ -9,7 +9,6 @@ import native.java.util.List;
 import native.java.util.regex.Matcher;
 import native.java.util.regex.Pattern;
 
-import native.java.lang.Integer;
 import native.java.lang.Math;
 
 #mixin {targets: "jeresources.registry.WorldGenRegistry"}
@@ -24,7 +23,7 @@ zenClass MixinWorldGenRegistry {
         val extractDimId as function(WorldGenEntry)int = function(entry as WorldGenEntry) as int {
             val matcher as Matcher = dimIdPattern.matcher(entry.getRestriction().getDimensionRestriction());
             if (matcher.matches()) {
-                return Math.abs(Integer.parseInt(matcher.group(1)));
+                return Math.abs(matcher.group(1) as int);
             }
             return 10000;
         };
