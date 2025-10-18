@@ -14,7 +14,7 @@ import native.java.lang.Math;
 #mixin {targets: "jeresources.registry.WorldGenRegistry"}
 zenClass MixinWorldGenRegistry {
 
-    #mixin Inject {method: "getWorldGen", at = {value: "RETURN"}}
+    #mixin Inject {method: "getWorldGen", at: {value: "RETURN"}}
     function sortInfo(cir as mixin.CallbackInfoReturnable) as void {
         LogHelper.info("E2EE: Sorting JER worldgen entries by absolute value of dim id", []);
 
