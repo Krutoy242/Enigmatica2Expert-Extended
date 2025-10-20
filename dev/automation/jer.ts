@@ -1,3 +1,4 @@
+/* eslint-disable style/no-multi-spaces */
 // Template for automatic Just Enough Resources files automation
 
 // Regex for removing useless information about block drops
@@ -133,7 +134,7 @@ for (let i = -1; i < 16; i++) {
   )
 }
 
-const harvestcraft = config('config/harvestcraft.cfg').drops
+const harvestcraft = config('config/harvestcraft.cfg')!.drops as Record<string, string>
 
 for (const garden of [
   'aridGarden',
@@ -195,6 +196,12 @@ function shortenValue(v:number) {
 }
 
 worldGen.forEach((wg) => {
+  const dimMatch = wg.dim.match(/^Dim (-?\d+): (.+)$/)
+  if (dimMatch) {
+    const [, dimNum, dimName] = dimMatch
+    wg.dim = `${dimName.trim()} (${dimNum})`
+  }
+
   // Remove default silk touch value
   if (wg.silktouch === false) delete wg.silktouch
 
@@ -225,15 +232,20 @@ worldGen.forEach((wg) => {
 
   // Clean Remove Drop List
   if (wg.dropsList?.length) {
-    wg.dropsList = wg.dropsList.filter(d => !(
+    wg.dropsList = wg.dropsList.filter((d, _, arr) => !(
       // Remove air
       d.itemStack === 'minecraft:air:0'
 
       // Remove same block
       || (
-        d.itemStack === wg.block
-        && fortuneSame(d.fortunes)
-        && d.fortunes['0'] === 1
+        d.itemStack === wg.block && (
+          fortuneSame(d.fortunes)
+          || (
+            arr.length === 1
+            && d.fortunes
+            && Object.keys(d.fortunes).length === 1
+            && d.fortunes['0'] === 1)
+        )
       )
     ))
 
@@ -241,7 +253,7 @@ worldGen.forEach((wg) => {
     const groups:{ [id: string]: Drop[] } = {}
     wg.dropsList.forEach(d => (groups[getID(d.itemStack)] ??= []).push(d))
     Object.entries(groups).forEach(([id, d]) => {
-      if (d.length > 1 && wg.dropsList.length > 8) {
+      if (d.length > 1 && wg.dropsList!.length > 8) {
         groups[id] = [{...d.shift(), itemStack: id}]
       }
     })
@@ -254,7 +266,7 @@ worldGen.forEach((wg) => {
 })
 
 function getID(itemStack:string) {
-  const m = itemStack.match(/^[^:]+:[^:]+(:\d+)?/)
+  const m = itemStack.match(/^[^:]+:[^:]+(?::\d+)?/)
   if (!m) throw new Error(`No ID for item: ${itemStack}`)
   return m[0]
 }

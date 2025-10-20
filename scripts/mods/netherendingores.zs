@@ -1,6 +1,6 @@
 #modloaded netherendingores
 
-<entity:netherendingores:netherfish>.addPlayerOnlyDrop(<forestry:ash>, 3, 12);
+scripts.lib.loot.tweak('netherendingores:entities/netherfish', 'main', null, null, [<forestry:ash>], [3, 12], true);
 
 // Add missed gold ore crushing (probably missed by MIA)
 mods.actuallyadditions.Crusher.addRecipe(<thermalfoundation:material:1>, <ore:oreNetherGold>);

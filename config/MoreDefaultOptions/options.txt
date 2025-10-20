@@ -433,4 +433,4 @@ key_key.start_craft.desc:-98:ALT
 key_key.toggleVisible:0
 key_keybind.endermodpacktweaks.toggle:0
 key_of.key.zoom:-97
-key_Open Key Wizard:65
+key_Open Key Wizard:65

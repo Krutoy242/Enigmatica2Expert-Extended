@@ -1220,9 +1220,6 @@ mods.thaumcraft.SalisMundus.addSingleConversion(<ore:logWood>, <thaumcraft:log_g
 scripts.jei.crafting_hints.addInsOutCatl([<ore:plankWood>, <thaumcraft:salis_mundus>], <thaumcraft:plank_silverwood>);
 scripts.jei.crafting_hints.addInsOutCatl([<ore:logWood>, <thaumcraft:salis_mundus>], <thaumcraft:log_greatwood>);
 
-<entity:thaumcraft:firebat>.addDrop(<randomthings:flootoken>, 1, 3);
-<entity:thaumcraft:thaumslime>.addPlayerOnlyDrop(<thermalexpansion:florb>.withTag({ Fluid: 'liquiddna' }) % 30, 1, 1);
-
 // Tattered scrolls alt recipe
 mods.astralsorcery.Altar.addConstellationAltarRecipe(
   'Tattered Scrolls alt', <thaumicaugmentation:research_notes>, 1500, 250, Grid([

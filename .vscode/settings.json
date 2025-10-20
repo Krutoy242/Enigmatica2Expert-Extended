@@ -420,5 +420,8 @@
     "minecraftinstance.json*": true,
     "node_modules": true,
     "scripts/wrap/*": true
+  },
+  "files.associations": {
+    "*.png.mcmeta": "json"
   }
 }

@@ -1,6 +1,7 @@
+[main/WARN] [Foundation]: Tweak name org.spongepowered.asm.mixin.EnvironmentStateTweaker has already been visited -- skipping
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: 
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: 
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
@@ -17,114 +18,15 @@ org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shado
 	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412)
 	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340)
   [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#black. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/black.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#green. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/green.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#cyan. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/cyan.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#blue. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/blue.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#white. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/white.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#orange. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/orange.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#light_blue. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/light_blue.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#magenta. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/magenta.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#gray. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/gray.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#pink. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/pink.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#yellow. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/yellow.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#lime. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/lime.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#red. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/red.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#brown. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/brown.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#silver. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/silver.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
-[VintageFix item baking thread/ERROR] [VintageFix]: Could not wrap model chisel:antiblock#purple. Aborting...
-java.io.IOException: Error loading metadata for location chisel:textures/blocks/antiblock/purple.png
-	at team.chisel.ctm.client.util.ResourceUtil.getMetadata(ResourceUtil.java:64)
-	at team.chisel.ctm.client.model.ModelCTM.<init>(ModelCTM.java:116)
-	at team.chisel.ctm.client.util.TextureMetadataHandler.wrap(TextureMetadataHandler.java:189)
-  [...]
+[Client thread/WARN] [mixin]: @Inject(@At("INVOKE")) Shift.BY=2 on mixins.thaumictweaker.json:tiles.TileVoidSiphonMixin from mod unknown-owner::handler$xxx000$unknown_owner$wussModeSeedCreation exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21)
 	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52)
   [...]
-[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/beacon' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
-java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/beacon
-	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
-	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
-	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
-  [...]
+[Client thread/ERROR] [loottweaker.sanity_checks]: Unexpected duplicate pool name 'marbled_cheese_golem' in table 'rats:marbled_cheese_golem'. Duplicate added as 'marbled_cheese_golem0'.
+Report this to the loot adder.
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
@@ -155,4 +57,4 @@ Failed to get ingredients from recipe wrapper
 java.lang.NullPointerException
 	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
   [...]
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: 
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:

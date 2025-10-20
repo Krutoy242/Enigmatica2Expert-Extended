@@ -434,7 +434,7 @@ spread
 .setNether([<blockstate:thermalfoundation:ore:type=nickel>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=iron_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:grass_path>], [<blockstate:chisel:netherrack:variation=12>], TERRAIN)
 .setNether([<blockstate:minecraft:gravel>], [<blockstate:exnihilocreatio:block_netherrack_crushed>], TERRAIN)
-.setNether([<blockstate:minecraft:redstone_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=coal_ore>], QUARTZ)
+.setNether([<blockstate:minecraft:redstone_ore>, <blockstate:minecraft:lit_redstone_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=coal_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:iron_ore>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=aluminum_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:lapis_ore>, <blockstate:minecraft:diamond_ore>, <blockstate:minecraft:emerald_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=redstone_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:sandstone:type=chiseled_sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=smooth>], TERRAIN)

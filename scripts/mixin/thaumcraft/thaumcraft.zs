@@ -1,26 +1,9 @@
 #modloaded thaumcraft
 #loader mixin
 
-import mixin.CallbackInfo;
-import mixin.CallbackInfoReturnable;
-import native.java.util.ArrayList;
-import native.net.minecraft.item.ItemStack;
 import native.net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
-
-#mixin {targets: "thaumcraft.common.blocks.misc.BlockFluidDeath"}
-zenClass MixinBlockFluidDeath {
-    #mixin ModifyArg
-    #{
-    #    method: "func_180634_a",
-    #    at: {
-    #        value: "INVOKE",
-    #        target: "Lnet/minecraft/entity/Entity;func_70097_a(Lnet/minecraft/util/DamageSource;F)Z"
-    #    }
-    #}
-    function increaseDamage(value as float) as float {
-        return value * 5.0f + 15.0f;
-    }
-}
+import native.thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
+import native.java.lang.Object;
 
 #mixin {targets: "thaumcraft.common.tiles.devices.TileLampFertility"}
 zenClass MixinTileLampFertility {
@@ -30,12 +13,23 @@ zenClass MixinTileLampFertility {
     }
 }
 
-#mixin {targets: "thaumcraft.common.lib.events.ToolEvents", priority: 1100}
+#mixin {targets: "thaumcraft.common.lib.events.ToolEvents"}
 zenClass MixinToolEvents {
     #mixin Static
-    #mixin Inject {method: "doRefining", at: {value: "HEAD"}, cancellable: true}
-    function doBuffedRefining(event as HarvestDropsEvent, heldItem as ItemStack, ci as CallbackInfo) as void {
-        scripts.mixin.thaumcraft.shared.Op.doRefining(event, heldItem);
-        ci.cancel();
+    #mixin Redirect
+    #{
+    #    method: "harvestBlockEvent",
+    #    at: {
+    #        value: "INVOKE",
+    #        target: "Ljava/util/List;contains(Ljava/lang/Object;)Z",
+    #        ordinal: 0
+    #    }
+    #}
+    function buffRefining(list as [Object], obj as Object, event as HarvestDropsEvent) as bool {
+        if (obj == EnumInfusionEnchantment.REFINING && (list has obj)) {
+            val heldItem = event.harvester.getHeldItem(event.harvester.activeHand);
+            scripts.mixin.thaumcraft.shared.Op.doRefining(event, heldItem);
+        }
+        return false;
     }
 }
