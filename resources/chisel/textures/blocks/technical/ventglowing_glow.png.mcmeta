@@ -4,7 +4,7 @@
         "layer": "BLOOM",
         "type": "ctm",
         "textures": [
-            "chisel:blocks/technical/ventGlowing-ctm_glow"
+            "chisel:blocks/technical/ventglowing-ctm_glow"
         ],
         "extra": {
         "light": 15

@@ -7,7 +7,7 @@
             "chisel:blocks/glowstone/mosaic-ctm_glow"
         ],
         "extra": {
-            "light": 16
+            "light": 15
         }
     }
 }

@@ -4,7 +4,7 @@
         "layer": "BLOOM",
         "type": "pattern",
         "extra": {
-            "light": 16,
+            "light": 15,
             "size": 2
             }
     }

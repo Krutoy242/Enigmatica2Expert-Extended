@@ -7,7 +7,7 @@
             "chisel:blocks/antiblock/light_blue_ctm"
         ],
         "extra": {
-            "light": 16,
+            "light": 15,
             "ignore_states": true
         }
     }
