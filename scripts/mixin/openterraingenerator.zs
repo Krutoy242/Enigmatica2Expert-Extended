@@ -3,6 +3,9 @@
 
 import native.com.pg85.otg.configuration.dimensions.DimensionsConfig;
 
+import native.java.nio.file.LinkOption;
+import native.java.nio.file.Path;
+
 /*
 🌍 Fix: OTG worlds with the removed "Void" dimension preset can now be launched properly.
 
@@ -51,5 +54,39 @@ zenClass MixinDimensionsConfig {
       }
     }
     return presetsConfig;
+  }
+}
+
+/**
+ * @author ZZZank
+ */
+#mixin {targets: "com.pg85.otg.worldsave.DimensionData"}
+zenClass MixinDimensionData {
+
+  /// target source code looks like this:
+  /// ```java
+  /// // delete vanilla world data. We skip this by making `Files.exists(...)` always return `false`
+  /// Path dimensionSaveDir = ...;
+  /// if (Files.exists(dimensionSaveDir, ...) && ...) {
+  ///     ...
+  /// }
+  /// // delete OTG world data
+  /// dimensionSaveDir = ...;
+  /// if (Files.exists(dimensionSaveDir, ...) && ...) {
+  ///     ...
+  /// }
+  /// ```
+
+  #mixin Static
+  #mixin Redirect {
+  #  method: "deleteDimSavedData",
+  #  at: {
+  #    value: "INVOKE",
+  #    target: "Ljava/nio/file/Files;exists(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
+  #    ordinal: 0
+  #  }
+  #}
+  function skipVanillaWorldDataDeletion(path as Path, linkOptions as LinkOption[]) as boolean {
+    return false;
   }
 }
