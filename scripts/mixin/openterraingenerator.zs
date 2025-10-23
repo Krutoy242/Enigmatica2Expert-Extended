@@ -78,7 +78,8 @@ zenClass MixinDimensionData {
   /// ```
 
   #mixin Static
-  #mixin Redirect {
+  #mixin Redirect
+  #{
   #  method: "deleteDimSavedData",
   #  at: {
   #    value: "INVOKE",
