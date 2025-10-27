@@ -3,9 +3,6 @@
 
 import native.com.pg85.otg.configuration.dimensions.DimensionsConfig;
 
-import native.java.nio.file.LinkOption;
-import native.java.nio.file.Path;
-
 /*
 🌍 Fix: OTG worlds with the removed "Void" dimension preset can now be launched properly.
 
@@ -38,6 +35,27 @@ zenClass MixinDimensionData {
       .replaceAll('\\d+,Void,(false|true),\\d+,\\d+,', '')
       .split(separator);
   }
+
+  #mixin Static
+  #mixin Definition {id: "exists", method: "Ljava/nio/file/Files;exists(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z"}
+  #mixin Expression {value: "exists(?, ?)"}
+  #mixin ModifyExpressionValue {method: "deleteDimSavedData", at: {value: "MIXINEXTRAS:EXPRESSION", ordinal: 0}}
+  function skipVanillaWorldDataDeletion(original as bool) as bool {
+    /// target source code looks like this:
+    /// ```java
+    /// // delete vanilla world data. We skip this by making `Files.exists(...)` always return `false`
+    /// Path dimensionSaveDir = ...;
+    /// if (Files.exists(dimensionSaveDir, ...) && ...) {
+    ///     ...
+    /// }
+    /// // delete OTG world data
+    /// dimensionSaveDir = ...;
+    /// if (Files.exists(dimensionSaveDir, ...) && ...) {
+    ///     ...
+    /// }
+    /// ```
+    return false;
+  }
 }
 
 #mixin {targets: 'com.pg85.otg.configuration.dimensions.DimensionsConfig'}
@@ -54,40 +72,5 @@ zenClass MixinDimensionsConfig {
       }
     }
     return presetsConfig;
-  }
-}
-
-/**
- * @author ZZZank
- */
-#mixin {targets: "com.pg85.otg.worldsave.DimensionData"}
-zenClass MixinDimensionData {
-
-  /// target source code looks like this:
-  /// ```java
-  /// // delete vanilla world data. We skip this by making `Files.exists(...)` always return `false`
-  /// Path dimensionSaveDir = ...;
-  /// if (Files.exists(dimensionSaveDir, ...) && ...) {
-  ///     ...
-  /// }
-  /// // delete OTG world data
-  /// dimensionSaveDir = ...;
-  /// if (Files.exists(dimensionSaveDir, ...) && ...) {
-  ///     ...
-  /// }
-  /// ```
-
-  #mixin Static
-  #mixin Redirect
-  #{
-  #  method: "deleteDimSavedData",
-  #  at: {
-  #    value: "INVOKE",
-  #    target: "Ljava/nio/file/Files;exists(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
-  #    ordinal: 0
-  #  }
-  #}
-  function skipVanillaWorldDataDeletion(path as Path, linkOptions as LinkOption[]) as boolean {
-    return false;
   }
 }
