@@ -1,5 +1,6 @@
 #modloaded thermaldynamics
 #loader mixin
+#sideonly client
 
 import native.mezz.jei.api.IModRegistry;
 import native.mezz.jei.api.ISubtypeRegistry;
