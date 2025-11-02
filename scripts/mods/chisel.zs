@@ -53,8 +53,9 @@ addVariation('soulstone_slab', <mysticalagriculture:soulstone_slab>);
 addVariation('sonar_dirt', <sonarcore:reinforceddirtblock>);
 addVariation('sonar_dirt', <sonarcore:reinforceddirtbrick>);
 
-addVariation('sonar_normal', <sonarcore:reinforcedstoneblock>);
-addVariation('sonar_normal', <sonarcore:reinforcedstonebrick>);
+addVariation('sonar_stone', <sonarcore:reinforcedstoneblock>);
+addVariation('sonar_stone', <sonarcore:reinforcedstonebrick>);
+
 addVariation('sonar_normal', <sonarcore:stablestone_normal>);
 addVariation('sonar_normal', <sonarcore:stablestonerimmed_normal>);
 addVariation('sonar_normal', <sonarcore:stablestoneblackrimmed_normal>);
