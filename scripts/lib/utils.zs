@@ -24,11 +24,48 @@ import native.net.minecraft.util.SoundCategory;
 import native.net.minecraft.util.SoundEvent;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.entity.monster.EntityMob;
+import native.crafttweaker.mc1120.data.NBTConverter;
+import native.net.minecraft.nbt.JsonToNBT.getTagFromJson;
 
 zenClass Utils {
   var DEBUG as bool = false;
 
   zenConstructor() { }
+
+  val modPreference as string[] = [
+    'minecraft',
+    'thermalfoundation',
+    'immersiveengineering',
+    'ic2',
+    'mekanism',
+    'appliedenergistics2',
+    'actuallyadditions',
+    'tconstruct',
+    'chisel',
+  ];
+
+  function oreToItem(ore as string) as IItemStack { return oreToItem(oreDict[ore]); }
+  function oreToItem(ore as IOreDictEntry) as IItemStack {
+    val oreItems = ore.items;
+    if (oreItems.length <= 0) return null;
+    if (oreItems.length == 1 && !isNull(oreItems[0])) return oreItems[0];
+
+    var firstItem = null as IItemStack;
+    for preffer in modPreference {
+      for item in oreItems {
+        if (isNull(item)) {
+          logger.logWarning('oredict entry "' ~ ore.name ~ '" content empty items.');
+          continue;
+        }
+
+        if (item.definition.id.startsWith(preffer ~ ':'))
+          return item;
+        firstItem = firstItem ?? item;
+      }
+    }
+
+    return firstItem;
+  }
 
   val getSomething as function(string,string[],int)IItemStack
     = function (oreName as string, entryNames as string[], amount as int) as IItemStack {
@@ -496,6 +533,11 @@ zenClass Utils {
     } else if (arg[0].toUpperCase() != arg[0]) {
       return arg[0].toUpperCase() ~ arg.substring(1);
     } else return arg;
+  }
+
+  // Convert tags in form of sNBT such as {ench:[{id:26s,lvl:1s}]}
+  function sNBT(snbt as string) as IData {
+    return NBTConverter.from(getTagFromJson(snbt), false);
   }
 }
 global utils as Utils = Utils();

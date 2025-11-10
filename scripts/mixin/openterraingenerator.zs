@@ -35,6 +35,27 @@ zenClass MixinDimensionData {
       .replaceAll('\\d+,Void,(false|true),\\d+,\\d+,', '')
       .split(separator);
   }
+
+  #mixin Static
+  #mixin Definition {id: "exists", method: "Ljava/nio/file/Files;exists(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z"}
+  #mixin Expression {value: "exists(?, ?)"}
+  #mixin ModifyExpressionValue {method: "deleteDimSavedData", at: {value: "MIXINEXTRAS:EXPRESSION", ordinal: 0}}
+  function skipVanillaWorldDataDeletion(original as bool) as bool {
+    /// target source code looks like this:
+    /// ```java
+    /// // delete vanilla world data. We skip this by making `Files.exists(...)` always return `false`
+    /// Path dimensionSaveDir = ...;
+    /// if (Files.exists(dimensionSaveDir, ...) && ...) {
+    ///     ...
+    /// }
+    /// // delete OTG world data
+    /// dimensionSaveDir = ...;
+    /// if (Files.exists(dimensionSaveDir, ...) && ...) {
+    ///     ...
+    /// }
+    /// ```
+    return false;
+  }
 }
 
 #mixin {targets: 'com.pg85.otg.configuration.dimensions.DimensionsConfig'}

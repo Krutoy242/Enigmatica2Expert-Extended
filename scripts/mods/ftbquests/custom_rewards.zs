@@ -4,6 +4,32 @@
 
 import crafttweaker.player.IPlayer;
 import crafttweaker.data.IData;
+import native.com.feed_the_beast.ftbquests.quest.Chapter;
+import native.com.feed_the_beast.ftbquests.quest.ServerQuestFile;
+import native.com.feed_the_beast.ftbquests.util.ServerQuestData;
+
+/**
+ * Counts how many chapters a player has finished.
+ */
+function getChapterCount(player as IPlayer) as int[] {
+  val questFile as ServerQuestFile = ServerQuestFile.INSTANCE;
+  if (isNull(questFile)) return [0, 0];
+
+  val playerData = questFile.getData(player);
+  if (isNull(playerData)) return [0, 0];
+
+  var totalChapters = 0;
+  var completedChapters = 0;
+  for chapter in questFile.chapters {
+    totalChapters += 1;
+    if (chapter.isComplete(playerData)) {
+      completedChapters += 1;
+    }
+  }
+
+  // Reduce 1 chapter for Skyblock that always completed
+  return [completedChapters - 1, totalChapters - 1];
+}
 
 function formatPlayTime(player as IPlayer) as string {
   val t = player.readStat(mods.zenutils.PlayerStat.getBasicStat('stat.playOneMinute')) as double;
@@ -39,6 +65,7 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
     val chapterName = utils.toUpperCamelCase(
       e.reward.quest.chapter.titleText.formattedText.replaceAll('q\\.(.+)\\.name','$1')
     );
+    val chaps = getChapterCount(e.player);
     val data as IData = {
       text: "## `", color: "dark_gray", extra: [
         {text: e.player.name, color: "aqua"},
@@ -49,7 +76,11 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
         "**__ ",
         {text: "chapter after ", color: "gray"},
         {text: formatPlayTime(e.player), color: "gold"},
-        " of play! ```Congrats!```"
+        " of play! [",
+        { text: chaps[0], color: 'gray' },
+        "/",
+        { text: chaps[1], color: 'gray' },
+        "] ```Congrats!```",
     ]};
     server.commandManager.executeCommandSilent(server, '/tellraw @a ' ~ data.toJson());
   }

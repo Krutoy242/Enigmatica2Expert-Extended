@@ -1,6 +1,6 @@
-#modloaded ctintegration
 #reloadable
 #ignoreBracketErrors
+#modloaded roidtweaker
 
 import crafttweaker.player.IPlayer;
 import crafttweaker.item.IItemStack;

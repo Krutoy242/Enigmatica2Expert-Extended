@@ -1,4 +1,4 @@
-#modloaded zenutils ctintegration ftblib ftbutilities
+#modloaded zenutils ftblib ftbutilities
 #priority 1500
 #reloadable
 
@@ -110,7 +110,7 @@ function getAnchoredChunks(world as IWorld) as int[] {
 
 function getLoadedChunks(world as World) as int[] {
   val chunkProvider = world.getChunkProvider() as ChunkProviderServer;
-  val loadedChunks = chunkProvider.getLoadedChunks() as [Chunk];
+  val loadedChunks as [Chunk] = chunkProvider.loadedChunks;
   var chunkCount = 0;
   for chunk in loadedChunks { chunkCount += 1; }
   val result = intArrayOf(chunkCount * 2);

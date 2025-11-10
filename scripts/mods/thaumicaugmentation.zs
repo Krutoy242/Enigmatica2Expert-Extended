@@ -2,9 +2,9 @@
 
 // T:{id:"thaumicaugmentation:morphic_tool",Count:1,Damage:0s,ForgeCaps:{Parent:{functional:{id:"minecraft:diamond_sword",Count:1,Damage:0s},display:{id:"minecraft:golden_hoe",Count:1,Damage:0s}}}}
 
-<entity:thaumicaugmentation:primal_wisp>.addPlayerOnlyDrop(<thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'amogus' }] }), 10, 30);
-<entity:thaumicaugmentation:primal_wisp>.addPlayerOnlyDrop(<randomthings:ingredient:2>, 5, 30);
-<entity:thaumicaugmentation:primal_wisp>.addPlayerOnlyDrop(<rftools:infused_enderpearl>, 1, 3);
+scripts.lib.loot.tweak('thaumicaugmentation:entity/primal_wisp', 'main', null, null, [<thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'amogus' }] })], [10, 30], true);
+scripts.lib.loot.tweak('thaumicaugmentation:entity/primal_wisp', 'main', null, null, [<randomthings:ingredient:2>], [5, 30], true);
+scripts.lib.loot.tweak('thaumicaugmentation:entity/primal_wisp', 'main', null, null, [<rftools:infused_enderpearl>], [1, 3], true);
 
 // [Ancient Runes]*8 from [White Rune][+1]
 craft.make(<thaumicaugmentation:stone:3> * 8, ['pretty',

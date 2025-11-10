@@ -1,0 +1,50 @@
+{
+	title: "{q.gates.pick_legendary_rew.name}",
+	disable_toast: 1b,
+	x: 15.15d,
+	y: 5.5d,
+	shape: "square",
+	text: [
+		"{q.gates.pick_legendary_rew.desc}"
+	],
+	can_repeat: 1b,
+	dependencies: [
+		"7381300c"
+	],
+	size: 0.5d,
+	optional: 1b,
+	tasks: [{
+		uid: "e53dad9a",
+		type: "item",
+		items: [{
+			tag: {
+				type: "legendary"
+			},
+			id: "ftbquests:lootcrate"
+		}],
+		count: 12L
+	}],
+	rewards: [{
+		uid: "cfa8cccf",
+		type: "choice",
+		icon: {
+			tag: {
+				inventory: {
+					size: 1,
+					Items: [{
+						Slot: 0b,
+						Damage: 0s,
+						id: "ftbquests:lootcrate",
+						Count: 1,
+						tag: {
+							type: "legendary"
+						}
+					}]
+				},
+				openedInGui: 913142875
+			},
+			id: "openblocks:dev_null"
+		},
+		table: 3
+	}]
+}

@@ -30,7 +30,7 @@
   </recipe>
 
   <recipe name="Sagmill: Emerald Dust" required="false">
-    <sagmilling energy="2400">
+    <sagmilling energy="2400" bonus="none">
       <input name="gemEmerald"/>
       <output name="dustEmerald"/>
     </sagmilling>

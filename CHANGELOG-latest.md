@@ -1,120 +1,115 @@
-## ⚡ Performance Improvements
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/2c2e4a4)⚡Disable generation of removed ![](https://github.com/Krutoy242/mc-icons/raw/master/i/mekanism/machineblock2__5.png "Precision Sawmill") recipes
-    > This will speed up game load on 3-6 seconds.
-    > 
-    > This performance improvment was already implemented here 51a1ddb78e2d40e75b7c7afd403153daffc49998, but was breaken here efd5f64b4fa82f601dafe662290c5f3cb1032c25
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/70f6644)⚡Disable HammerLib web requests
-    > Originally, it protect mods from being downloaded from 3d party sources, but since E2EE is CurseForge mod, its not necessary.
-    > 
-    > This fix problem when in rare circumstances HammerLib caused 20 seconds game stall.
-    > 
-    > Related: https://github.com/dragon-forge/HammerLib/issues/66
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/e93e555)⚡Remove IE Orevein map villagers
-    > They caused 1-3 seconds load and sell Ore Vein places, which already easy and fast to obtain with a drill.
-    > 
-    > This performance improvment was already implemented here 1cf9765f75222634e439d6f66a5c7153704be647, but was broken here efd5f64b4fa82f601dafe662290c5f3cb1032c25
+> ### ⚠️Warning:  
+> This version includes the “Key Binding Patch” mod, which breaks almost all key bindings.  
+> Do not update, or be prepared to reconfigure half of the buttons. 🤷‍♂️
 
 ## ✨ New Features
 
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/89a14b8)🌎`Survivor` game mode (WIP)
-    > - Generate all required ore and resources on the `Asteroid Belt` to start play here  
-    > - At special fluid interactions with ![](https://github.com/Krutoy242/mc-icons/raw/master/i/advancedrocketry/vitrifiedsand__0.png "Vitrified Sand").  
-    > - Change ![](https://github.com/Krutoy242/mc-icons/raw/master/i/advancedrocketry/vitrifiedsand__0.png "Vitrified Sand") drop  
-    > - Add some low-level ingredients for high-level machines such as Advanced Rocketry Multiblocks.  
-    > - Change "Morphite" mechanics (still undocumented)  
-    > - Change Curvy Pipes recipes to QMD isotopes  
-    > - Add STC feature
-    > 
-    > This is WIP feature and not documented properly yet.
-  * <img src="https://i.imgur.com/0fnb5m0.png" align=right> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/839ffd0)💧Allow ![](https://github.com/Krutoy242/mc-icons/raw/master/i/fluid/astralsorcery.liquidstarlight.png "Liquid Starlight") work with ![](https://github.com/Krutoy242/mc-icons/raw/master/i/extrautils2/ingredients__8.png "Upgrade Mining")
-    > Implemented by migrate AS fluid interactions through `fluidintetweaker`
-    > 
-    > Idea from the modpack `IsolatedCrystal3`.
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/12c7fa6)🔨![](https://github.com/Krutoy242/mc-icons/raw/master/i/tconstruct/materials__14.png "Reinforcement") now doubles durability each level
-    > The `Reinforcement` modifier formula has been changed.  
-    > It still provides a chance to not use durability. Now, each level halves the chance of using durability, starting at 50 on level 1.
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/3b4c34a)🤵Enable Boss Bar EMT feature
-  * <img src="https://i.imgur.com/lQkQloX.png" align=right> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/1960f65)🥌Cleanup some crushers
-    > There is too much crushers in the modpack. Removing least popular ones will reduce JEI cluttering and slightly increase performance.
-    > 
-    > - `XU2 Crusher`, `ID Mechanical Squeezer` completely removed  
-    > - `AS Grindstone` will be stripped from all the excess recipes, leaving only mandatory AS ones  
-    > - `IE Crusher` work x2 faster and consume x10 less energy  
-    > - `Mek Enrichment` stripped from all recipes that `Mek Crusher` already have
-    > 
-    > This changes was voted by E2EE discord community
-
-## 🐛 Fixes
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/52f9df1)🐦Fix crash on wrong ![](https://github.com/Krutoy242/mc-icons/raw/master/i/exnihilocreatio/item_seed_rubber__0.png "Rubber Tree Seed") usage
-    > Thanks @WaitingIdly for help find correct mixin target
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/779918c)👑Discrease `omnipotent` vertical boost
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a7335e3)💗Scaling Health: Change Health increase to non-linear
-    > Fix a bug that doesnt apply non-linear health increase of mobs since `v1.44.0` for almost a year...
-    > 
-    > When player reach 100 difficulty, Zombies should be only ~25 HP, not 60 as it sadly was in 2025.
-    > 
-    > This mechanic was broken here: efd5f64b4fa82f601dafe662290c5f3cb1032c25
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/0c245b2)💡![](https://github.com/Krutoy242/mc-icons/raw/master/i/forestry/thermionic_tubes__9.png "Emerald Electron Tube")![](https://github.com/Krutoy242/mc-icons/raw/master/i/forestry/thermionic_tubes__7.png "Blazing Electron Tube") fix speed and power consumption
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/21e4bf2)📝Fix some tooltips have "format error"
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/af81f15)🔨Remove `grinding` trait and `Heavy Metal` TCon material
-    > Heavy Metal is an unfinished, inconvenient and incomprehensible material. It was created to realize my dream of jumping on blocks so that they would crack and break. But some nonsense came out.
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/2430861)🔨Remove `TCon disassembling` feature
-    > This feature allowed you to recycle damaged TCon tools with weird crafting table recipe.
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a2339f6)Rare script error on placing RFTools cells
-
-  #### Balance
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/6c67408)☢️Reduce all NC machines power usage by 50%
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a7df261)✏️Remove ![](https://github.com/Krutoy242/mc-icons/raw/master/i/exnihilocreatio/block_end_cake__0.png "End Cake") recipe
-    > RandomThings End Portal should be used instead
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/29a00ce)🔦Undo ![](https://github.com/Krutoy242/mc-icons/raw/master/i/minecraft/torch__0.png "Torch") nerf
-    > Over the many years I've worked on E2EE, my understanding of what makes a good modpack has constantly grown. I now believe that it is far more interesting for players when vanilla mechanics are expanded upon-that is, when more ways to use them are introduced and the mechanic is continued rather than replaced.
-    > 
-    > Therefore, I've come to realize that nerfing vanilla torches only restricted a mechanic, instead of expanding upon it.
-    > 
-    > Fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/522
-
-  #### Configs
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/445a882)🏋️Makealmost all `rftools` and `thaumcraft` blocks carryable
-
-  #### Docs
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/7db04ee)📝Make mek factory tooltip little shorter
-
-  #### Gear
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/60925c6)🔨Nerf ![](https://github.com/Krutoy242/mc-icons/raw/master/i/botania/livingwood__0.png "Livingwood") little more
-    > And add `Modifiable II` to Alpha Fur
-
-  #### JEI
-
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/e8e695d)📝Sort JEI categories
 
   #### Quest
 
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a6c63d9)📖Add x2 `Mythic` crates into `Mythic` crate
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/dee813d)📖Trade Loot Chests to pick reward
 
-  #### Worldgen
+## 🐛 Fixes
 
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/c600506)🌍Disable Lush Caves in space
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/13d9922)♻️Use UniversalTweaks to handle RandomThings spectre tp bug
+    > related: 162edc0f2e282b450c50ed5a16d20c4e51156ddc  
+    > https://github.com/ACGaming/UniversalTweaks/pull/722
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/b5d4a08)✏️![](https://github.com/Krutoy242/mc-icons/raw/master/i/minecraft/emerald__0.png "Emerald") fix dupe in ![](https://github.com/Krutoy242/mc-icons/raw/master/i/enderio/block_sag_mill__0.png "SAG Mill")
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/645bcf2)✏️[Gelid Enderium] require way less Hot cryotheum
+    > Also ![](https://github.com/Krutoy242/mc-icons/raw/master/i/redstonerepository/material__5.png "Gelid Crystal") now require ![](https://github.com/Krutoy242/mc-icons/raw/master/i/actuallyadditions/item_crystal_empowered__4.png "Empowered Emeradic Crystal") instead of emerald
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/623df0d)✏️Migrate from `rockytweaks` to `roidtweaker`
+    > Shoudl have no ingame changes
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/17b12f2)🌌Fix player fall into TP loop when jumping from void with a book
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/5442fc6)🎒Add new items to BackpackOpener
+    > > Contributed by [Crestfall17](https://github.com/crestfall17)
+    >
+    > ![](https://github.com/Krutoy242/mc-icons/raw/master/i/thermalexpansion/satchel__0.png "Satchel (Basic)")![](https://github.com/Krutoy242/mc-icons/raw/master/i/thaumcraft/focus_pouch__0.png "Focus Pouch")![](https://github.com/Krutoy242/mc-icons/raw/master/i/thaumadditions/crystal_bag__0.png "Crystal Bag")
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/97da484)🐦Fix SmelteryIO blocks harvest level and hardness
+    > > Contributed by [Crestfall17](https://github.com/crestfall17)
+    >
+    > - Fixed harvestLevel of all blocks in Smeltery IO from 2 -> -1  
+    > - Increased block resistance for consistency with base mod from 15 -> 20
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/535a46a)🐦Migrate JER `Bansoukou` => `ZS mixins`
+    > > Contributed by [ZZZank](https://github.com/zzzank)
+    >
+    > Move JustEnoughResources patch (worldgen tab sorting) to ZS mixins instead of Bansoukou.  
+    > Should have no ingame changes.
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/c126a16)🐦Migrate OTG DimensionData patch `Bansoukou` => `ZS mixins`
+    > > Contributed by [ZZZank](https://github.com/zzzank)
+    >
+    > It should not have any effect on gameplay.
+    > 
+    > P.S. To be honest, we don't remember why this patch was needed 🤷‍♂️
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/27509f1)🐦Migrate ThermalDynamics JEI `Bansoukou` => `ZS mixins`
+    > > Contributed by [ZZZank](https://github.com/zzzank)
+    >
+    > should have no ingame changes
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/9223f5f)💙![](https://github.com/Krutoy242/mc-icons/raw/master/i/enderstorage/ender_pouch__0__563bae3a.png "Ender Pouch") remove 'gui' trigger
+    > Now only Chest and ![](https://github.com/Krutoy242/mc-icons/raw/master/i/enderstorage/ender_storage__1.png "Ender Tank") will increase difficulty, and not the pouch.
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a9bfe38)📃Hide Rustic's alcohol added by `CongregaMystica`
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/5597e17)📖Add quest and more info about inworld smelting
+    > fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/553  
+    > Related a8b2540421626ea870d0123440076c4177da36d3
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/780a09b)🧩Enable underwater fog
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/6615476)🪄Disable item interaction with ![](https://github.com/Krutoy242/mc-icons/raw/master/i/thaumcraft/crucible__0.png "Crucible")
+    > No more "I accidentally melted my backpack"
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/30fb53b)🛢️Disable ImmTech pipes to fix visual bug of pipe connection
 
+  #### Configs
+
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/bf5da63)🧩Enable `Armor Swap` in `Universal Tweaks` configs
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/877815f)🧩Enable `Fast World Loading` in `Universal Tweaks` configs
+
+  #### Perf_command
+
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/dd5831f)✈️Fix error on `/perf chunks`
+
+  #### Quest
+
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/640b0c7)📖`Appliy` typo
+
+  #### Recipes
+
+  * <img src="https://i.imgur.com/pt0SFwD.png" align=right> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/99c5096)✏️Extended Chisel support for Sonar Core blocks
+    > > Contributed by [Crestfall17](https://github.com/crestfall17)
+    >
+    > - Reinforced Stone, Reinforced Stone Brick, Stable Stone (Rimmed, Black Rimmed), Stable Stone Plain (Rimmed, Black Rimmed) merged into one group  
+    > - Reinforced Dirt, Reinforced Dirt Brick  
+    > - Stable Glass, Clear Stable Glass added to generic 'glass' group, since their crafting recipe is just a conversion from generic glass
 
 ## Mods changes
+### 🟢 Added Mods
+
+Icon | Summary | Reason
+----:|:--------|:-------
+<img src="https://media.forgecdn.net/avatars/thumbnails/896/184/30/30/638341178690607437.png"            > |                      [**Key Binding Patch**](https://www.curseforge.com/minecraft/mc-mods/key-binding-patch)            <sup><sub>[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar</sub></sup><br>Patch and enhance vanilla key binding system. | Promising to bind same button for many actions at once
+<img src="https://media.forgecdn.net/avatars/thumbnails/1045/277/30/30/638572993870832594.png"           > |                         [**Thaumcraft Fix**](https://www.curseforge.com/minecraft/mc-mods/thaumcraftfix)                <sup><sub>ThaumcraftFix-1.12.2-1.1.8.jar                   </sub></sup><br>Many a fix for Thaumcraft 6 | 👍
+<img src="https://media.forgecdn.net/avatars/thumbnails/1393/258/30/30/638903329452120885.png"           > |                             [**Gadothaumy**](https://www.curseforge.com/minecraft/mc-mods/gadothaumy)                   <sup><sub>Infusion Claw Mod-1.0.0.jar                      </sub></sup><br>A mod allows you start thaumcraft infusion automatically | Should replace previously removed feature of Golems that could activate Infusion no more
+-----------
+
+
+### 🔴 Removed Mods
+
+Icon | Summary | Reason
+----:|:--------|:-------
+<img src="https://media.forgecdn.net/avatars/thumbnails/95/818/30/30/636279857174885928.png"             > |                           [**Rocky Tweaks**](https://www.curseforge.com/minecraft/mc-mods/rocky-tweaks)                 <sup><sub>rockytweaks-1.12.2-0.6.1.jar                     </sub></sup><br>Features for mod pack creators: Anvil Tweaker &amp; Merchant Tweaker. | Replaced by `roidtweaker`
+-----------
+
 ### 🟡 Updated Mods
 
 Icon | Summary | Old / New
 ----:|:--------|:---------
-<img src="https://media.forgecdn.net/avatars/thumbnails/727/100/30/30/638080208599452100.png"            > |            [**MmmMmmMmmMmm (Target Dummy)**](https://www.curseforge.com/minecraft/mc-mods/mmmmmmmmmmmm)                | <nobr>TestDummy2-2.0.4</nobr><br><nobr>MmmMmmMmmMmm-1.12-2.0.5</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/142/108/30/30/636546700830987709.png"            > |                           [**CraftTweaker**](https://www.curseforge.com/minecraft/mc-mods/crafttweaker)                | <nobr>CraftTweaker2-1.12-4.1.20.707</nobr><br><nobr>CraftTweaker2-1.12-4.1.20.709</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1362/814/30/30/638885115958149175.png"           > |                           [**PackagedAuto**](https://www.curseforge.com/minecraft/mc-mods/packagedauto)                | <nobr>PackagedAuto-1.12.2-1.0.21.68</nobr><br><nobr>PackagedAuto-1.12.2-1.0.23.71</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1362/816/30/30/638885116793099467.png"           > |                     [**PackagedExCrafting**](https://www.curseforge.com/minecraft/mc-mods/packagedexcrafting)          | <nobr>PackagedExCrafting-1.12.2-1.0.3.32</nobr><br><nobr>PackagedExCrafting-1.12.2-1.0.3.33</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1044/516/30/30/638572074817465930.webp"          > |         [**MakeUp - Ultra Fast \| Shaders**](https://www.curseforge.com/minecraft/shaders/makeup-ultra-fast-shader)    | <nobr>MakeUp-UltraFast-9.3c.zip</nobr><br><nobr>MakeUp-UltraFast-9.3d.zip</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/468/506/30/30/637752171904887013.jpeg"           > |                       [**Had Enough Items**](https://www.curseforge.com/minecraft/mc-mods/had-enough-items)            | <nobr>HadEnoughItems_1.12.2-4.28.1</nobr><br><nobr>HadEnoughItems_1.12.2-4.29.6</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/538/146/30/30/637862893538783773.png"            > |                          [**JEI Utilities**](https://www.curseforge.com/minecraft/mc-mods/jei-utilities)               | <nobr>JEI-Utilities-1.12.2-0.2.12</nobr><br><nobr>JEI-Utilities-1.12.2-0.2.13</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/641/454/30/30/638043757664856777.png"            > |                       [**Universal Tweaks**](https://www.curseforge.com/minecraft/mc-mods/universal-tweaks)            | <nobr>UniversalTweaks-1.12.2-1.15.2</nobr><br><nobr>UniversalTweaks-1.12.2-1.16.0</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1111/53/30/30/638662497025737758.png"            > |                        [**Patchouli Books**](https://www.curseforge.com/minecraft/mc-mods/patchouli-books)             | <nobr>patchoulibooks-0.2.6</nobr><br><nobr>patchoulibooks-0.2.7</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1128/28/30/30/638686145366913611.jpg"            > |                            [**Curvy Pipes**](https://www.curseforge.com/minecraft/mc-mods/curvy-pipes)                 | <nobr>curvy_pipes-1.12.2-1.12.4</nobr><br><nobr>curvy_pipes-1.12.2-1.12.6</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/159/374/30/30/636658415780463602.png"            > |                          [**CraftPresence**](https://www.curseforge.com/minecraft/mc-mods/craftpresence)               | <nobr>CraftPresence-2.6.2+1.12.2-forge</nobr><br><nobr>CraftPresence-2.7.0+1.12.2-forge</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/292/428/30/30/637325593905195388.png"            > |                              [**Zen Utils**](https://www.curseforge.com/minecraft/mc-mods/zenutil)                     | <nobr>zenutils-1.25.11</nobr><br><nobr>zenutils-1.26.2</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/468/506/30/30/637752171904887013.jpeg"           > |                       [**Had Enough Items**](https://www.curseforge.com/minecraft/mc-mods/had-enough-items)            | <nobr>HadEnoughItems_1.12.2-4.29.8</nobr><br><nobr>HadEnoughItems_1.12.2-4.29.9</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/551/59/30/30/637888242565991470.png"             > |                              [**ModularUI**](https://www.curseforge.com/minecraft/mc-mods/modularui)                   | <nobr>modularui-2.5.0-rc6</nobr><br><nobr>modularui-3.0.4</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/557/657/30/30/637904734114975779.png"            > |                  [**Inventory Bogo Sorter**](https://www.curseforge.com/minecraft/mc-mods/inventory-bogosorter)        | <nobr>bogosorter-1.4.11</nobr><br><nobr>bogosorter-1.5.0</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/641/454/30/30/638043757664856777.png"            > |                       [**Universal Tweaks**](https://www.curseforge.com/minecraft/mc-mods/universal-tweaks)            | <nobr>UniversalTweaks-1.12.2-1.16.0.1</nobr><br><nobr>UniversalTweaks-1.12.2-1.17.0</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/937/632/30/30/638416090890641368.png"            > |            [**Thaumic Tinkerer Unofficial**](https://www.curseforge.com/minecraft/mc-mods/thaumic-tinkerer-unofficial) | <nobr>thaumictinkerer-1.12.2-5.9.14-Unofficial</nobr><br><nobr>thaumictinkerer-1.12.2-5.9.15-Unofficial</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1047/367/30/30/638575733030598020.png"           > |                                 [**UniLib**](https://www.curseforge.com/minecraft/mc-mods/unilib)                      | <nobr>UniLib-1.1.1+1.12.2-forge</nobr><br><nobr>UniLib-1.2.0+1.12.2-forge</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1482/227/30/30/638963404721998907.png"           > |                        [**Crash Assistant**](https://www.curseforge.com/minecraft/mc-mods/crash-assistant)             | <nobr>!!!CrashAssistant-forge-1.12.2-1.10.11</nobr><br><nobr>!!!CrashAssistant-forge-1.12.2-1.10.19</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1358/482/30/30/638882387444615595.png"           > |             [**Thaumic Wonders Unofficial**](https://www.curseforge.com/minecraft/mc-mods/thaumic-wonders-unofficial)  | <nobr>thaumicwonders-2.1.4</nobr><br><nobr>thaumicwonders-2.2.0</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1409/140/30/30/638913115744696491.png"           > |                           [**Armored Arms**](https://www.curseforge.com/minecraft/mc-mods/armored-arms)                | <nobr>ArmoredArms-v1.3.2-release</nobr><br><nobr>ArmoredArms-v1.3.4-release</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1430/826/30/30/638927049348150845.png"           > |                       [**Congrega Mystica**](https://www.curseforge.com/minecraft/mc-mods/congrega-mystica)            | <nobr>CongregaMystica-1.12.2-1.0.5</nobr><br><nobr>CongregaMystica-1.12.2-1.0.6</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1430/837/30/30/638927053511180100.png"           > |                         [**ThaumicTweaker**](https://www.curseforge.com/minecraft/mc-mods/thaumictweaker)              | <nobr>thaumictweaker-1.1.1</nobr><br><nobr>thaumictweaker-1.2.1</nobr>
 -----------

@@ -387,7 +387,7 @@ craft.remake(<mekanism:gastank>.withTag({ tier: 4 }), ['pretty',
   'U': FluidCell('helium_3'),
   'v': FluidCell('tritium'),
   '◘': FluidCell('vapor_of_levity'),
-  '∞': <contenttweaker:machine_case_singularity>,
+  '∞': <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte }),
 });
 
 recipes.addShapeless('Creative Gas Tank Clearing',
@@ -415,7 +415,7 @@ list['♥'] = creativeFluidTankFrame;
 list['♀'] = <mctsmelteryio:upgrade:4> ?? <advancedrocketry:productsheet>;
 list['θ'] = <ic2:te:134>;
 list['◆'] = <enderio:item_capacitor_stellar>;
-list['∞'] = <contenttweaker:machine_case_singularity>;
+list['∞'] = <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte });
 
 craft.make(<mekanism:machineblock2:11>.withTag({ tier: 4 }), ['pretty',
   '◉ ◉ ♀ ♀ ◆ ♀ ♀ . .',
@@ -580,7 +580,7 @@ craft.remake(<extrautils2:passivegenerator:6>, ['pretty',
   'i': <extrautils2:passivegenerator:4>, // Wind Mill
   'L': <extrautils2:passivegenerator:2>, // Lava Mill
   'O': <extrautils2:opinium:6>, // Opinium Core (Amazing)
-  '∞': <contenttweaker:machine_case_singularity>,
+  '∞': <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte }),
 });
 
 // [Uncrafting Table] from [Creative Modifier][+11]

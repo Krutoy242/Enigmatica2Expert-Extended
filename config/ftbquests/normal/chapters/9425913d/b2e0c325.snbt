@@ -1,0 +1,50 @@
+{
+	title: "{q.gates.pick_uncommon_reward.name}",
+	disable_toast: 1b,
+	x: 15.15d,
+	y: 2.2d,
+	shape: "square",
+	text: [
+		"{q.gates.pick_uncommon_reward.desc}"
+	],
+	can_repeat: 1b,
+	dependencies: [
+		"efd27e84"
+	],
+	size: 0.5d,
+	optional: 1b,
+	tasks: [{
+		uid: "96386033",
+		type: "item",
+		items: [{
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		}],
+		count: 24L
+	}],
+	rewards: [{
+		uid: "6188d2e3",
+		type: "choice",
+		icon: {
+			tag: {
+				inventory: {
+					size: 1,
+					Items: [{
+						Slot: 0b,
+						Damage: 0s,
+						id: "ftbquests:lootcrate",
+						Count: 1,
+						tag: {
+							type: "uncommon"
+						}
+					}]
+				},
+				openedInGui: 1569555446
+			},
+			id: "openblocks:dev_null"
+		},
+		table: 1
+	}]
+}

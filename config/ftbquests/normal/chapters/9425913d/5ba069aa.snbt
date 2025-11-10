@@ -1,0 +1,50 @@
+{
+	title: "{q.gates.pick_common_reward.name}",
+	disable_toast: 1b,
+	x: 15.15d,
+	y: 0.5d,
+	shape: "square",
+	text: [
+		"{q.gates.pick_common_reward.desc}"
+	],
+	can_repeat: 1b,
+	dependencies: [
+		"38cc695f"
+	],
+	size: 0.5d,
+	optional: 1b,
+	tasks: [{
+		uid: "e4e63bcc",
+		type: "item",
+		items: [{
+			tag: {
+				type: "common"
+			},
+			id: "ftbquests:lootcrate"
+		}],
+		count: 32L
+	}],
+	rewards: [{
+		uid: "06b13a0c",
+		type: "choice",
+		icon: {
+			tag: {
+				inventory: {
+					size: 1,
+					Items: [{
+						Slot: 0b,
+						Damage: 0s,
+						id: "ftbquests:lootcrate",
+						Count: 1,
+						tag: {
+							type: "common"
+						}
+					}]
+				},
+				openedInGui: 1284313537
+			},
+			id: "openblocks:dev_null"
+		},
+		table: 0
+	}]
+}

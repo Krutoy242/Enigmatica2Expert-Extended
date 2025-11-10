@@ -1,4 +1,4 @@
-#modloaded requious ic2
+#modloaded requious ic2 roidtweaker
 #priority -1400
 #reloadable
 

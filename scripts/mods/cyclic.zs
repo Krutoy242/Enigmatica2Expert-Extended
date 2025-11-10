@@ -82,8 +82,8 @@ mods.tconstruct.Casting.addTableRecipe(<cyclicmagic:ender_pearl_mounted>, <endre
 
 // Soul stone as T3 crafting ingredient
 recipes.remove(<cyclicmagic:soulstone>);
-mods.rockytweaks.Anvil.addRecipe(<cyclicmagic:ender_pearl_reuse>, <cyclicmagic:crystallized_obsidian>, <cyclicmagic:soulstone>, 45);
-mods.rockytweaks.Anvil.addRecipe(<cyclicmagic:ender_pearl_mounted>, <cyclicmagic:crystallized_obsidian>, <cyclicmagic:soulstone>, 45);
+mods.roidtweaker.minecraft.Anvil.addRecipe(<cyclicmagic:ender_pearl_reuse>, <cyclicmagic:crystallized_obsidian>, <cyclicmagic:soulstone>, 45);
+mods.roidtweaker.minecraft.Anvil.addRecipe(<cyclicmagic:ender_pearl_mounted>, <cyclicmagic:crystallized_obsidian>, <cyclicmagic:soulstone>, 45);
 
 // [Crystallized Obsidian] from [Chorus Glass][+3]
 craft.remake(<cyclicmagic:crystallized_obsidian>, ['pretty',
@@ -398,7 +398,7 @@ craft.remake(<cyclicmagic:block_fishing>, ['pretty',
   'C r C',
   'M C M'], {
   'M': <extrautils2:decorativesolidwood>,
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   'C': <minecraft:web>,
   'r': <cyclicmagic:stone_pebble>,
 });

@@ -2,24 +2,22 @@
 
 🚧✅❌⚠️♻️ List of priorities:
 
-- [ ] ⚡ Fix `OpenComputers` JEI plugin is still loaded
-- [ ] 📀 Dont let IC2 miner dig any mining level
-- [ ] 🔨 `Double Compressed Hammer` cant break double compressed charcoal
-- [ ] 🔨 Add HV wire invincibility TCon trait
-- [ ] 🐦 enable Enchanting speed up for rats
-- [ ] 📖 `Garden Cloche` add to chapter completion requirment
-- [ ] 📖 Add emojis 🍎 to chapter finishing messages
-- [ ] 📖 Add quest explaining that Battery and Solar can be replaced in TCon tools
-- [ ] 💎 Diamond shouldn't be meltable in smeltery
-- [ ] ♻️ Use `.sort()` from ZenUtils instead of ctintegration
-- [ ] ♻️ Completely get rid of `Patchouli_js()` code in .zs files
-- [ ] 🐛 Golden Torches shown as vanilla torches on default placement (caused by Lumenized chages)
-- [ ] ♻️ remove `crossscript` since data accessible between loaders
+- [ ] ⚠️Mention in changelog about remapping keybinds
+- [ ] Remap `thermalexpansion.Enchanter` recipes since no one using them
+- [ ] ✏️ Buff `Neromantic Prime` extraction rate (UT) and make some infinite
+- [ ] ✏️ for `Invar` recipe to replace ingot to dust in ArcFurnace
+- [ ] ✏️ Both `Bitumen` should output Syngas
+- [ ] ✏️ Collector (on Tinkers at least) stops Axing trait from working (and possibly more traits that change the block you mine)
+- [ ] ✏️ No recipe in Chemical Dissolution Chamber: Dirty Copper, Silver, Tin, Iron, Gold, Lead, Osmium
+- [ ] ✏️ `Bone` fix crush -> melt -> cast dupe
+- [ ] 🟣 Migrate to Bansoukou 6
+- [ ] ✏️ `Redstone Cable` harder recipe
+- [ ] 🤖 Nanomachines give next levels of potions
+- [ ] ✏️ Add `Upgrade Singularity`
+- [ ] ✏️ Return Tungsten Blocks for High-pressure turbines
+- [ ] 🧱 Automatically interactive-rebase
 - [ ] 👑 Upgrading Draconic tools give Omnopotence
-- [ ] 👑 `Omnopotence` add excavate for any item
-- [ ] 🐛 `64k me storage cell` cant be autocrafted in ME
 - [ ] 🐛 Custom beacons not working on server
-- [ ] 🎁 Disable upcraft for loot chests
 - [ ] 🟢 Migrate from `UniDict` to `OnlyOneItem`
 
 ### "Endgame" expansion
@@ -28,11 +26,10 @@
 - [ ] 🖼️ Use `Legendary Tooltips` to mark harvest levels
 - [ ] 🧶 Feat: make some ores / materials only harvestable with `Gluon Gun`
 - [ ] ✏️ `Draconic Evolution` add recipes that use trillions RF
-- [ ] 🌍 Gen Highly Radioactive stuff on `Asteroid Belt`, unbearable radiation
-- [ ] ☢️ Space planets have constant radiation
 - [ ] ✨ Make Draconic Armor adopt upgrades of prev tier
 
 ### "Dimension building" rework
+- [ ] ✏️ `Anglesite` and `Benitoite` ore make in form of RFTools dimlets
 - [ ] ✏️ RFTools `Dimension building` rework - make cheaper by balancing possible dimlets
 - [ ] 💜 Make `[constant] difficulty` dimension for replicator discount. Probably RFTools ones
 
@@ -57,6 +54,13 @@ Command to optimize all the .png files:
 Planned non-urgent changes, or just good ideas:
 
 ### "Performance ⚡"
+
+- [ ] ⚡ Make Lumenized optional
+- [ ] ⚡🔴 Remove `Chunk Animator` https://i.imgur.com/oJwuxb8.png
+- [ ] ⚡ never use a fluid storage interface for IE's multiblock tanks
+- [ ] ⚡ Remove `Fluid Conduit` recipe since lower FPS
+- [ ] ⚡ add Warning about things that lower FPS: `placed item, drawers, Auto Sieve (promote ugly plating)`
+- [ ] ⚡ Fix `OpenComputers` JEI plugin is still loaded (see benchmark)
 - [ ] ⚡ Cleanup JER data (and ores on other planets for clear JER tab)
 - [ ] ⚡ Fix projectiles accumulated on chunk borders, such as Scythe or Beam Laser. Use `ForceUpdateEntityClasses` StellarCore's config
 - [ ] ⚡ Remove Openblock's `Vacuum Hoppers` since they cause lags
@@ -75,6 +79,7 @@ Planned non-urgent changes, or just good ideas:
 - Vanilla Chests
 
 ### Quests and Docs expansion
+- [ ] 📖 Add `Armor Gauntlets` to ⬜🟦 loot boxes
 - [ ] 📖 `Interdiction Pulsar` add to some quest reward and describe how to use
 - [ ] 📖 Add PSI spells into quest rewards or loot boxes
 - [ ] 📖 Add Skyblock quest about Terraformer
@@ -139,6 +144,8 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🪐 NC have its own "Wasteland" dim - make Use Of it
 - [ ] ✏️ QMD atmosphere collector for other dims
 - [ ] ✏️ Add usage of `Perfect Fuel` in NCO (with `flux goo` as sub-product)
+- [ ] 🌍 Gen Highly Radioactive stuff on `Asteroid Belt`, unbearable radiation
+- [ ] ☢️ Space planets have constant radiation
 
 ### "Multiplayer" expansion
 - [ ] 🎁 Reward with 1 DankNull panel in several quests to promote sharing
@@ -157,8 +164,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🧱 Skyblock: Make `Porouse Stone` and `AA Ore Laser` mandatory in skyblock
 
 ### Mods
-- [ ] 🔴 Remove **XTones** and **Environmental Materials** since they are depricated by LittleTiles and Cathedral
-- [ ] 🟠 Do not update **Had Enough Items** since its incompatible with `JeiUtilities`
+- [ ] 🔴 Remove **Simple Trophies** and replace them with LittleTiles or 3dPrint structures
 - [ ] 🟠 Do not update **Advanced Rocketry - Reworked** until fixed https://github.com/dercodeKoenig/AdvancedRocketry/issues/50
 - [ ] 🟠 Do not update **JAOPCA** - uncompatible with `JAOPCACustom`
 - [ ] 🟠 Do not update **籁/Sound Physics Remixin** `1.1.17` or above - uncompatible with `Java 8`
@@ -167,17 +173,20 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🟠 Do not update **RLTweaker** `0.6.1` or above - later versions only compatible with `I&F ROTN`
 - [ ] 🟠 Do not update **RLMixins** `1.4.0` or above - mod specially rewritten for `RLCraft`
 - [ ] 🟢 Add **everlastingabilities** when someone integrate it
-- [ ] 🟢 Add **Fancier Particles** (note gitignore) when fixed: https://github.com/Red-Studio-Ragnarok/Fancier-Block-Particles/issues/12
 - [ ] 🟢 Add **Heat And Climate** when someone integrate it
-- [ ] 🟢 Add **OpenGlasses2** - could help to find turnable blocks from coal
 - [ ] 🟢 Add **quality-tools** when someone integrate it
 - [ ] 🟢 Add **Steve Carts** when someone integrate it
+- [ ] 🟢 Add **OpenGlasses2** - could help to find turnable blocks from coal
 - [ ] 🟢 Add **Nothirium** when fixed https://github.com/Meldexun/Nothirium/issues/9
-- [ ] 🟢 Return **Custom Loading Screen** when fixed https://github.com/AlexIIL/CustomLoadingScreen/issues/74
 - [ ] 🟢 Return **Village Names** when fixed https://legacy.curseforge.com/minecraft/mc-mods/village-names/issues/18
 
 ### Other
 
+- [ ] 💎 Diamond shouldn't be meltable in smeltery
+- [ ] 📖 Add emojis 🍎 to chapter finishing messages
+- [ ] 🐦 enable Enchanting speed up for rats
+- [ ] 📀 Add HV wire invincibility TCon trait
+- [ ] 📀 Dont let IC2 miner dig any mining level
 - [ ] 📀 Add `Uncrafting Table` automation block - probably GUI-less tile entities working like hopper
 - [ ] 🔚 Make EIO capacitors actually usabe: right now, tweaked machine power usage make machine speed always 1 tick, neglibe capacitor usefulness
 - [ ] ♻️ Refactor: replace all `itemUtils.getItem` to `<${}:${}>`

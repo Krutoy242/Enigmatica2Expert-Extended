@@ -1,4 +1,4 @@
-#modloaded cyclicmagic ctintegration
+#modloaded cyclicmagic
 #reloadable
 
 import native.net.minecraft.util.EnumParticleTypes;

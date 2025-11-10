@@ -1,4 +1,4 @@
-#modloaded randomtweaker tconstruct
+#modloaded tconstruct
 
 import mods.randomtweaker.tconstruct.IBook.changeMaterialItem;
 import mods.randomtweaker.tconstruct.IBook.setMaterialPriority;

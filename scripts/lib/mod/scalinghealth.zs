@@ -1,4 +1,4 @@
-#modloaded randomtweaker zenutils scalinghealth
+#modloaded zenutils scalinghealth
 #priority 2000
 #reloadable
 

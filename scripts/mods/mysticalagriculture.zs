@@ -406,13 +406,7 @@ for i in 0 .. 4 {
   mods.tconstruct.Melting.addRecipe(<liquid:supremium> * l, bases[i]);
 
   // Add recipe of making core from base
-  // mods.rt.RandomThingsTweaker.addAnvilRecipe(IItemStack input1, IItemStack input2, IItemStack result, int levelcost);
-  if (!isNull(loadedMods['rockytweaks'])) {
-    mods.rockytweaks.Anvil.addRecipe(<mysticalagriculture:master_infusion_crystal>, bases[i], cores[i], 350);
-  }
-  else {
-    recipes.addShapeless('core from crystal ' ~ i, cores[i], [<mysticalagriculture:master_infusion_crystal>, bases[i]]);
-  }
+  mods.roidtweaker.minecraft.Anvil.addRecipe(<mysticalagriculture:master_infusion_crystal>, bases[i], cores[i], 350);
 }
 
 // Missed 4 types of dyes
@@ -904,7 +898,7 @@ remakeBlock   (null      															    , <blockstate:nuclearcraft:ore:type=
 remakeBlock   (null      															    , <blockstate:nuclearcraft:ore:type=magnesium>         , [<mysticalagriculture:magnesium_essence>]);
 remakeBlock   (null      															    , <blockstate:nuclearcraft:ore:type=thorium>           , [<mysticalagriculture:thorium_essence>]);
 remakeManapool('mysticalagriculture:ingotknightmetal', <twilightforest:armor_shard> * 3, [<mysticalagriculture:knightmetal_essence>]);
-remakeCrucible('mysticalagriculture:ingotironwood', <twilightforest:root:1> * 2, [<mysticalagriculture:ironwood_essence>], [<aspect:victus>]);
+remakeCrucible('mysticalagriculture:ingotironwood', <twilightforest:root:1> * 2, [<mysticalagriculture:ironwood_essence>], Aspects('❤️'));
 // remakeSimple("mysticalagriculture:apple"                , <minecraft:apple> * 8                     , [<mysticalagriculture:nature_essence> * 3                                            ]);
 // remakeSimple("mysticalagriculture:arrow"                , <minecraft:arrow> * 8                     , [<mysticalagriculture:skeleton_essence> * 3                                          ]);
 // remakeSimple("mysticalagriculture:basalt2"              , <chisel:basalt2:7> * 24                   , [<mysticalagriculture:basalt_essence> * 8                                            ]);
@@ -955,7 +949,7 @@ remakeAltair('mysticalagriculture:dustsulfur'           , <thermalfoundation:mat
 // remakeSimple("mysticalagriculture:flower_14"            , <botania:flower:14> * 6                   , [<mysticalagriculture:mystical_flower_essence> * 3                                   ]);
 // remakeSimple("mysticalagriculture:flower_15"            , <botania:flower:15> * 6                   , [<mysticalagriculture:mystical_flower_essence> * 3                                   ]);
 // remakeSimple("mysticalagriculture:flower"               , <botania:flower> * 6                      , [<mysticalagriculture:mystical_flower_essence> * 3                                   ]);
-remakeCrucible('mysticalagriculture:ghast_tear'         , <minecraft:ghast_tear>                    , [<mysticalagriculture:ghast_essence>], [<aspect:exanimis>]);
+remakeCrucible('mysticalagriculture:ghast_tear'         , <minecraft:ghast_tear>                    , [<mysticalagriculture:ghast_essence>], Aspects('💀'));
 // remakeSimple("mysticalagriculture:grass"                , <minecraft:grass> * 8                     , [<mysticalagriculture:dirt_essence> * 4, <mysticalagriculture:nature_essence>        ]);
 // remakeSimple("mysticalagriculture:gravel"               , <minecraft:gravel> * 16                   , [<mysticalagriculture:dirt_essence> * 2, <mysticalagriculture:stone_essence> * 2     ]);
 // remakeSimple("mysticalagriculture:gunpowder"            , <minecraft:gunpowder> * 6                 , [<mysticalagriculture:creeper_essence> * 3                                           ]);
@@ -1062,12 +1056,12 @@ val uniqChick = scripts.lib.unique.Unique([CE, CE, CE]);
 chickEss(uniqChick.next(), <minecraft:egg> * 8);
 chickEss(uniqChick.next(), <minecraft:feather> * 8);
 chickEss(uniqChick.next(), <minecraft:chicken> * 4);
-chickEss(uniqChick.next(), <betteranimalsplus:pheasant_egg> * 2, 40, [<aspect:aer>]);
-chickEss(uniqChick.next(), <betteranimalsplus:turkey_egg> * 2, 40, [<aspect:aer>]);
-chickEss(uniqChick.next(), <betteranimalsplus:goose_egg> * 2, 40, [<aspect:aer>]);
+chickEss(uniqChick.next(), <betteranimalsplus:pheasant_egg> * 2, 40, Aspects('💨'));
+chickEss(uniqChick.next(), <betteranimalsplus:turkey_egg> * 2, 40, Aspects('💨'));
+chickEss(uniqChick.next(), <betteranimalsplus:goose_egg> * 2, 40, Aspects('💨'));
 
 chickEss([[CE, <mysticalagriculture:gold_essence>, CE]], <betteranimalsplus:golden_goose_egg>, 20);
-chickEss([[CE, <mysticalagriculture:copper_essence>, CE]], <iceandfire:stymphalian_bird_feather>, 40, [<aspect:aer> * 5]);
-chickEss([[CE, <mysticalagriculture:water_essence>, CE]], <iceandfire:amphithere_feather>, 40, [<aspect:aer> * 5]);
-chickEss([[CE, <mysticalagriculture:coal_essence>, CE]], <twilightforest:raven_feather>, 40, [<aspect:aer> * 5]);
+chickEss([[CE, <mysticalagriculture:copper_essence>, CE]], <iceandfire:stymphalian_bird_feather>, 40, Aspects('5💨'));
+chickEss([[CE, <mysticalagriculture:water_essence>, CE]], <iceandfire:amphithere_feather>, 40, Aspects('5💨'));
+chickEss([[CE, <mysticalagriculture:coal_essence>, CE]], <twilightforest:raven_feather>, 40, Aspects('5💨'));
 // --------------------------------------------

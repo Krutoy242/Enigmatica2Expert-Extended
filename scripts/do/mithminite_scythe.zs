@@ -1,4 +1,4 @@
-#modloaded randomtweaker ctintegration crafttweakerutils thaumadditions
+#modloaded thaumadditions
 #priority -1
 
 import crafttweaker.block.IBlock;
@@ -15,7 +15,6 @@ import crafttweaker.text.ITextComponent;
 import crafttweaker.util.Math;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
-import mods.ctutils.entity.Experience;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.world.WorldServer;
 import native.org.zeith.thaumicadditions.entity.EntityMithminiteScythe;
@@ -233,7 +232,7 @@ function caelesAstralExp(scythe as IEntity, lvl as int) as void {
 
 function cognitioExperienceBlessing(scythe as IEntity, target as IEntityLivingBase, lvl as int) as void {
   val exp as IEntityXp = <entity:minecraft:xp_orb>.spawnEntity(target.world, target.position);
-  Experience.setXpValue(exp, target.world.getRandom().nextInt(100,1000 * lvl));
+  exp.xp = target.world.getRandom().nextInt(100,1000 * lvl);
 
   playSound('entity.player.levelup', target);
   (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.TOTEM, target.x, entityEyeHeight(target), target.z, 5, 0.5, 0.5, 0.5, 0.2, 0);
@@ -1007,6 +1006,10 @@ events.register(function (e as crafttweaker.event.ProjectileImpactThrowableEvent
 
   if (!scythe.native instanceof EntityMithminiteScythe) return;
 
+  val target as IEntityLivingBase = rayTrace.entity; 
+  
+  if (target instanceof IPlayer && (!server.native.isPVPEnabled() || isNull(player) || player.id == target.id)) return;
+
   var dmg = 100.0;
   var damageSource = crafttweaker.damage.IDamageSource.createEntityDamage('mithminiteScythe', player);
   if(augments has 'praemunio') damageSource.setDamageBypassesArmor();
@@ -1018,8 +1021,6 @@ events.register(function (e as crafttweaker.event.ProjectileImpactThrowableEvent
   if (augments has 'aversio') dmg *= 2.0 + 0.2 * colorCount[3];
 
     if(rayTrace.entity instanceof IEntityLivingBase && !isNull(player)){
-      val target as IEntityLivingBase = rayTrace.entity; 
-
       // MACHINA EFFECT
       if (target.native instanceof native.thaumcraft.common.golems.EntityThaumcraftGolem && augments has 'machina') {
         target.setNBT({ 'ScalingHealth.IsBlight': 1 });

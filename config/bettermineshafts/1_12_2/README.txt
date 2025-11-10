@@ -49,6 +49,8 @@ ALL of these properties are required for ALL Variants Settings objects, with the
       This is a very minor piece and doesn't matter much. If you aren't sure, use your mainBlock or one of the blocks in your brickSelector.
  - stoneSlabBlock: The block used to frame the top side of the doorway in the main shaft leading to the surface entrance, if present.
       This is a very minor piece and doesn't matter much. If you aren't sure, use your mainBlock or one of the blocks in your brickSelector.
+ - minY: The lowest this mineshaft variant can generate. If you set this too low the mineshafts will get burned by lava!
+ - maxY: The highest this mineshaft variant can generate.
  - vineChance: chance of vines spawning in the mineshaft
  - snowChance: chance of snow spawning on the floor of the mineshaft
  - cactusChance: chance of cactus spawning in the mineshaft. Can only spawn on top of valid floor blocks (e.g. sand)

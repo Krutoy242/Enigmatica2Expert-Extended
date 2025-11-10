@@ -1,7 +1,7 @@
 #reloadable
 #priority -1500
 #ignoreBracketErrors
-#modloaded zenutils ctintegration scalinghealth
+#modloaded zenutils scalinghealth
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
@@ -85,7 +85,6 @@ Forbidder()
   <enderstorage:ender_storage>,
   <enderstorage:ender_storage:1>,
 ])
-.onOpen('codechicken.enderstorage.container.ContainerEnderItemStorage')
 .value(20).events('pickup craft place interact')
 
 .stack(<gendustry:imprinter>).onOpen('net.bdew.gendustry.machines.imprinter.ContainerImprinter').value(40).events('pickup craft')

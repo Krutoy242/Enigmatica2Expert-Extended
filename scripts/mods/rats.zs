@@ -136,14 +136,14 @@ craft.remake(<rats:rat_upgrade_ore_doubling>, ['pretty',
 });
 
 // Gem of ratlantis
-recipes.remove(<rats:gem_of_ratlantis>);
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <randomthings:ingredient:2>,
-  <rats:string_cheese>,
-  <rats:ratglove_petals>,
-  <minecraft:emerald>,
-  <rats:gem_of_ratlantis>
-);
+mods.rats.recipes.removeArcheologistRatRecipe(<rats:gem_of_ratlantis>);
+mods.rats.recipes.addArcheologistRatRecipe(<actuallyadditions:item_crystal:4>, <rats:gem_of_ratlantis>);
+craft.reshapeless(<rats:gem_of_ratlantis>, '*ERS', {
+  '*': <ore:crystalEmeraldic>,
+  'E': <randomthings:ingredient:2>,
+  'R': <rats:ratglove_petals>,
+  'S': <rats:string_cheese>,
+});
 
 // Ratlanean upgrade
 remake('rat_upgrade_basic_ratlantean', <rats:rat_upgrade_basic_ratlantean>, [
@@ -230,7 +230,7 @@ craft.remake(<rats:rat_upgrade_fisherman>, ['pretty',
   '  §  ',
   'A R A',
   '  F  '], {
-  '§': <contenttweaker:fish_singularity>,
+  '§': <contenttweaker:fish_singularity>.withTag({ completed: 1 as byte }),
   'A': <ore:listAllfishraw>,
   'R': <rats:rat_upgrade_basic>,
   'F': <rats:fisherman_hat>.anyDamage(),
@@ -313,7 +313,7 @@ mods.thermalexpansion.Infuser.addRecipe(<rats:charged_creeper_chunk>, <harvestcr
 
 // Psionic rat brain
 mods.thaumcraft.Infusion.registerRecipe('psionic_rat_brain', 'INFUSION', <rats:psionic_rat_brain>, 40,
-  [<aspect:cognitio> * 150, <aspect:alienis> * 40, <aspect:rattus> * 80], <thaumcraft:brain>,
+  Aspects('150🧠 40👽 80🐀'), <thaumcraft:brain>,
   [<rats:charged_creeper_chunk>, <rats:chunky_cheese_token>, <rats:charged_creeper_chunk>, <ore:dustDimensional>,
 	 <rats:charged_creeper_chunk>, <ore:dustDimensional>, <draconicevolution:draconium_block:1>, <rats:charged_creeper_chunk>]
 );
@@ -465,10 +465,7 @@ craft.make(<rats:rat_toga>, ['pretty',
 
 // Make string cheese with wire press
 mods.immersiveengineering.MetalPress.addRecipe(<rats:string_cheese>, <ore:foodCheese>, <immersiveengineering:mold:4>, 100, 1);
-
-<entity:rats:pirat_boat>.addPlayerOnlyDrop(<actuallyadditions:block_misc:4>, 1, 3);
-<entity:rats:plague_cloud>.addDrop(<quark:soul_bead>, 1, 3);
-<entity:rats:marbled_cheese_golem>.addPlayerOnlyDrop(<ic2:crafting:3>, 12, 24);
+scripts.lib.loot.tweak('rats:marbled_cheese_golem', 'main', null, null, [<ic2:crafting:3>], [12, 24], true);
 
 // Containment food
 // [Contaminated Food] alter non-rat recipe

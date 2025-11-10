@@ -15,5 +15,14 @@ config/astralsorcery/amulet_enchantments.cfg filter=as_config_cleanup
 config/ice_and_fire.cfg filter=ice_and_fire
 
 # ℹ️ Sort the item list, as JEI shuffles it.
-# › git config filter.itemBlacklist.clean 'content=$(cat); (echo "$content" | head -n 12 && echo "$content" | tail -n +13 | head -n -3 | sort -V && echo "$content" | tail -n -3)'
+# › git config filter.itemBlacklist.clean 'content=$(cat); (echo "$content" | head -n 12 && echo "$content" | tail -n +13 | head -n -2 | tr -d "\\r" | sort -V && echo "$content" | tail -n -2)'
 config/jei/itemBlacklist.cfg filter=itemBlacklist
+
+# ℹ️ Sort the JSON file, as it can be shuffled.
+# › git config filter.json-sorter.clean "jq 'to_entries | sort_by(.key | ascii_downcase) | from_entries'"
+config/xaerominimap_entities.json filter=json-sorter
+config/crash_assistant/**/*.json filter=json-sorter
+
+# ℹ️ Remove random values that change on every load.
+# › git config filter.enderio_cleanup.clean "sed 's/S:optifineConfirmed=.*/S:optifineConfirmed=0/; s/default: [I@[a-f0-9]*$/default: [I@00000000/"
+config/enderio/enderio.cfg filter=enderio_cleanup

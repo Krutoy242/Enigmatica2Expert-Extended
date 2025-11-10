@@ -76,7 +76,7 @@ craft.remake(<plustic:battery_cell>.withTag({ Material: 'blaze' }), ['pretty',
   '■ ▬ ■',
   '  ■  '], {
   '■': <ore:blockBlaze>, // Blaze Mesh
-  '▬': <ore:ingotFireDragonsteel> | <ore:dragonsteelIngot>, // Fire Dragonsteel Ingot
+  '▬': <ore:dragonsteelIngot>,
 });
 
 // [Manyullyn Battery Cell] from [Eldritch Stone][+1]
@@ -99,6 +99,3 @@ craft.remake(<plustic:battery_cell>.withTag({ Material: 'endrod' }), ['pretty',
 
 // [Osmiridium Ingot] from [Iridium Ingot][+1]
 scripts.process.alloy([<ore:nuggetOsmium>, <ore:nuggetIridium>], <plustic:osmiridiumnugget> * 2, 'Only: Kiln');
-
-<entity:plustic:blindbandit>.addDrop(<randomthings:ingredient:13>, 10, 30);
-<entity:plustic:supremeleader>.addDrop(<mechanics:bursting_powder>, 10, 30);

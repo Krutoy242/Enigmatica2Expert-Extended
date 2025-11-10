@@ -6,7 +6,8 @@
 2) **Extract** the contents into an empty folder.
 
 3) To customize world generation:
-    > - ⛺ For **Biomes O' Plenty**: Set `level-type=BIOMESOP` in `server.properties`.
+    > `OTG Biome Bundle O' Plenty` is configured as default generator.
+    > - ⛺ For non-OTG **Biomes O' Plenty**: Set `level-type=BIOMESOP` in `server.properties`.
     > - 🌌 For **Skyblock**: Adjust `level-type` as above and modify `initialSpawnDimensionId` to `3` in [justenoughdimensions.cfg](config/justenoughdimensions/justenoughdimensions.cfg).
 
 4) Launch the server with "**start-server.bat**".

@@ -1,4 +1,4 @@
-#modloaded zenutils ctintegration patchouli
+#modloaded zenutils patchouli
 #priority -200
 #reloadable
 
@@ -56,7 +56,7 @@ function tpFromSky(player as IPlayer) as void {
   if (player.hasGameStage('skyblock')) return;
   player.addPotionEffect(<potion:cyclicmagic:potion.slowfall>.makePotionEffect(60, 0));
   server.commandManager.executeCommandSilent(server,
-    '/tpx ' ~ player.name ~ ' ' ~ player.posX ~ ' ' ~ (SKY_TP_HEIGHT + 60) ~ ' ' ~ player.posZ ~ ' 0'
+    '/tpx ' ~ player.name ~ ' ' ~ player.posX ~ ' ' ~ (-0.1 + SKY_TP_HEIGHT) ~ ' ' ~ player.posZ ~ ' 0'
   );
 }
 

@@ -1,104 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
-  <recipe name="Skeletal Contractor">
-    <slicing energy="20000">
-      <input name="ingotSoularium"/>
-      <input name="minecraft:skull:0"/>
-      <input name="ingotSoularium"/>
-      <input name="itemSilicon"/>
-      <input name="minecraft:rotten_flesh"/>
-      <input name="itemSilicon"/>
-      <output name="skullSkeletalContractor"/>
-    </slicing>
-  </recipe>
-  <recipe name="Guardian Diode">
-    <slicing energy="20000">
-      <input name="ingotEnergeticAlloy"/>
-      <input name="gemPrismarine"/>
-      <input name="ingotEnergeticAlloy"/>
-      <input name="itemSilicon"/>
-      <input name="dustPrismarine"/>
-      <input name="itemSilicon"/>
-      <output name="skullGuardianDiode"/>
-    </slicing>
-  </recipe>
-  <recipe name="Stirling Generator, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced Combustion Generator, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy Smelter, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Solar Panel 2, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Solar Panel 3, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Solar Panel 4, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Crafter, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="SAG Mill, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Gear, Wood">
-    <disabled/>
-  </recipe>
-  <recipe name="Gear, ae2 messes things up">
-    <disabled/>
-  </recipe>
-  <recipe name="Gear, just to be sure">
-    <disabled/>
-  </recipe>
-  <recipe name="Gear, better save than sorry">
-    <disabled/>
-  </recipe>
-  <recipe name="Gear, Stone">
-    <disabled/>
-  </recipe>
-  <recipe name="Gear, Stone, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced Combustion Generator">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced Wired Charger">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced Wired Charger, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Wireless Charger (Antenna, enhanced)">
-    <disabled/>
-  </recipe>
-  <recipe name="Wireless Charger (Antenna, enhanced), Upgrade 1">
-    <disabled/>
-  </recipe>
-  <recipe name="Wireless Charger (Antenna, enhanced), Upgrade 2">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced Alloy Smelter">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced Alloy Smelter, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Signalum (Thermal Expansion)">
-    <alloying energy="320000" exp="0">
-      <input name="ingotCopper"/>
-      <input name="ingotSilver" amount="3"/>
-      <input name="dustRedstone" amount="10"/>
-      <output name="ingotSignalum" amount="4"/>
-    </alloying>
-  </recipe>
-  <recipe name="Alloy: Vibrant Alloy">
-    <disabled/>
-  </recipe>
   <!-- Late game Graphite Block alternatives -->
   <recipe name="Graphite Shortcut">
     <alloying energy="320000" exp="0">
@@ -113,14 +14,6 @@
     </alloying>
   </recipe>
   <!-- End: Reborn integration -->
-  <recipe name="Alloy: End Steel">
-    <alloying energy="20000" exp="0.5">
-      <input name="oredict:endstone"/>
-      <input name="ingotDarkSteel"/>
-      <input name="nuggetTungsten"/>
-      <output name="ingotEndSteel"/>
-    </alloying>
-  </recipe>
   <!-- Compressed Stone recipes -->
   <recipe name="Alloy: Compressed  1">
     <alloying energy="4000" exp="1">
@@ -182,59 +75,6 @@
       <output name="additionalcompression:stone_compressed:9"/>
     </alloying>
   </recipe>
-  <!-- Disable recipes that EnderTweaker cant -->
-  <recipe name="Alloy: Enderium Base (Thermal Expansion)">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Enderium (Thermal Expansion)">
-    <disabled/>
-  </recipe>
-  <recipe name="Infinity Goop">
-    <disabled/>
-  </recipe>
-  <recipe name="Infinity Goop, Charcoal">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Pulsating Iron">
-    <disabled/>
-  </recipe>
-  <!-- Disable Endenergy alloys -->
-  <recipe name="Alloy: Endergy Crude Steel">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Endergy Crystalline Alloy">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Endergy Crystalline Pink Slime">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Endergy Melodic Alloy">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Endergy Stellar Alloy">
-    <disabled/>
-  </recipe>
-  <!-- Remove Too hard totemic capacitor -->
-  <recipe name="Totemic Capacitor">
-    <disabled/>
-  </recipe>
-  <!-- Remove Purged Capacitor -->
-  <recipe name="Capacitor Grainy">
-    <disabled/>
-  </recipe>
-  <!-- Disable Recipes that Ender Tweaker was disabled before -->
-  <recipe name="The Enhanced Vat">
-    <disabled/>
-  </recipe>
-  <recipe name="The Enhanced Vat, Upgrade">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced SAG Mill">
-    <disabled/>
-  </recipe>
-  <recipe name="Enhanced SAG Mill, Upgrade">
-    <disabled/>
-  </recipe>
   <recipe name="Sagmill: Flux Core">
     <sagmilling energy="1000000" bonus="multiply_output">
       <input name="thermalexpansion:frame:148"/>
@@ -242,19 +82,6 @@
       <output name="fluxnetworks:fluxcore" amount="10" chance="0.5"/>
       <output name="fluxnetworks:fluxcore" amount="10" chance="0.25"/>
       <output name="fluxnetworks:fluxcore" amount="10" chance="0.1"/>
-    </sagmilling>
-  </recipe>
-  <recipe name="Sagmill: Coal">
-    <sagmilling energy="2400">
-      <input name="minecraft:coal:0"/>
-      <output name="dustCoal"/>
-      <output name="dustSulfur" chance="0.1"/>
-    </sagmilling>
-  </recipe>
-  <recipe name="Quartz Dust">
-    <sagmilling bonus="chance_only" energy="2400">
-      <input name="gemQuartz"/>
-      <output name="POWDER_QUARTZ"/>
     </sagmilling>
   </recipe>
   <recipe name="Sagmill: Coke Dust">
@@ -301,18 +128,6 @@
       <output name="endreborn:item_end_essence"/>
       <output name="endreborn:item_end_essence" chance="0.1"/>
     </sagmilling>
-  </recipe>
-  <recipe name="Sagmill: Black Quartz Block">
-    <disabled/>
-  </recipe>
-  <recipe name="Tweak: Stick from Wood">
-    <disabled/>
-  </recipe>
-  <recipe name="Tweak: Chest from Wood">
-    <disabled/>
-  </recipe>
-  <recipe name="Tweak: Wood Hopper">
-    <disabled/>
   </recipe>
   <!-- Mud recipe -->
   <recipe name="Mud from Dirt">
@@ -405,318 +220,10 @@
       <outputfluid name="hootch"/>
     </fermenting>
   </recipe>
-  <recipe name="Advanced Inventory Panel Remote">
-    <crafting upgrade="true">
-      <grid size="3x3">
-        <item/>
-        <item/>
-        <item name="PPP_DARK_STEEL"/>
-        <item name="PPP_DARK_STEEL"/>
-        <item name="enderio:item_inventory_remote:0"/>
-        <item name="PPP_DARK_STEEL"/>
-        <item name="PPP_DARK_STEEL"/>
-        <item name="ingotVibrantAlloy"/>
-        <item name="PPP_DARK_STEEL"/>
-      </grid>
-      <output name="enderio:item_inventory_remote:1"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Small">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item/>
-        <item name="enderio:block_inventory_chest_tiny"/>
-        <item/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="extrautils2:largishchest:0"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_small"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Small Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item/>
-        <item name="enderio:block_inventory_chest_tiny"/>
-        <item/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="mekanism:machineblock:13"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_small"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Medium">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="itemSilicon"/>
-        <item name="enderio:block_inventory_chest_small"/>
-        <item name="itemSilicon"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="ironchest:iron_chest:0"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_medium"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Medium Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="itemSilicon"/>
-        <item name="enderio:block_inventory_chest_small"/>
-        <item name="itemSilicon"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="ironchest:iron_shulker_box_purple:0"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_medium"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Big">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_medium"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="ironchest:iron_chest:1"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_big"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Big Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_medium"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="ironchest:iron_shulker_box_purple:1"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_big"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Large">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_big"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="ironchest:iron_chest:2"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_large"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Large Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_big"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="ironchest:iron_shulker_box_purple:2"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_large"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Huge">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_large"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="actuallyadditions:block_giant_chest:0"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_huge"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Huge Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_large"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-        <item name="thaumcraft:hungry_chest:0"/>
-        <item name="SIMPLE_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_huge"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Enormous">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_huge"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-        <item name="actuallyadditions:block_giant_chest_medium:0"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_enormous"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Enormous Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_huge"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-        <item name="thaumicaugmentation:warded_chest:0"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_enormous"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Warehouse">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_enormous"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-        <item name="actuallyadditions:block_giant_chest_large:0"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_warehouse"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Warehouse Alt">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_enormous"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-        <item name="thaumicwonders:everburning_urn:0"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_warehouse"/>
-    </crafting>
-  </recipe>
-  <recipe name="Inventory Chest, Warehouse 13">
-    <crafting upgrade="true">
-      <grid size="3x2">
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="enderio:block_inventory_chest_warehouse"/>
-        <item name="REMOTE_AWARENESS_UPGRADE"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-        <item name="draconicevolution:draconium_chest:0"/>
-        <item name="ENHANCED_CHASSIPARTS"/>
-      </grid>
-      <output name="enderio:block_inventory_chest_warehouse13"/>
-    </crafting>
-  </recipe>
-  <recipe name="Alloy: Black Dye">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Black Dye, Variant">
-    <disabled/>
-  </recipe>
   <grindingball name="Fur Ball" grinding="1.0" chance="1.0" power="0.25" durability="64000">
     <item name="actuallyadditions:item_hairy_ball"/>
   </grindingball>
-  <!-- Endergy Grinding Balls -->
-  <grindingball name="Crude Steel Ball" grinding="1.2" chance="1.25" power="0.85" disabled="true" durability="24000">
-    <item name="ballCrudeSteel"/>
-  </grindingball>
-  <grindingball name="Energetic Sliver Ball" grinding="1.6" chance="1.1" power="1.1" disabled="true" durability="80000">
-    <item name="ballEnergeticSilver"/>
-  </grindingball>
-  <recipe name="Alloy: Energetic Silver Alloy">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Vivid Alloy">
-    <disabled/>
-  </recipe>
-  <!-- Grinding Ball buffs
-  - Increased durability of all balls by 2x to account for required power for most of grinding recipes being lower, than SAG Mill's actual consumption (3200 RF < 5000 RF/t)
-  - For balls with Power Use less than 1x, additionally increased durability by (1 / Power Use)x to make them last as long as in vanilla EnderIO
-  - For balls with Power Use more than 1x, additionally increased durability by ((Power Use - 1) * 2)x to allow them to be still viable alongside with (Power Use < 1) balls and still have "more expensive -> more durable" progression
-  -->
-  <grindingball name="Flint" grinding="1.2" chance="1.25" power="0.85" durability="56000">
-    <item name="itemFlint"/>
-  </grindingball>
-  <grindingball name="Dark Steel Ball" grinding="1.35" chance="2.00" power="0.7" durability="357000">
-    <item name="ballDarkSteel"/>
-  </grindingball>
-  <grindingball name="Electrical Steel Ball" grinding="1.2" chance="1.65" power="0.8" durability="100000">
-    <item name="ballElectricalSteel"/>
-  </grindingball>
-  <grindingball name="Energetic Alloy Ball" grinding="1.6" chance="1.1" power="1.1" durability="192000">
-    <item name="ballEnergeticAlloy"/>
-  </grindingball>
-  <grindingball name="Vibrant Alloy Ball" grinding="1.75" chance="1.35" power="1.35" durability="216000">
-    <item name="ballVibrantAlloy"/>
-  </grindingball>
-  <grindingball name="Redstone Alloy Ball" grinding="1.00" chance="1.00" power="0.35" durability="171000">
-    <item name="ballRedstoneAlloy"/>
-  </grindingball>
-  <grindingball name="Conductive Iron Ball" grinding="1.35" chance="1.00" power="1.0" durability="80000">
-    <item name="ballConductiveIron"/>
-  </grindingball>
-  <grindingball name="Pulsating Iron Ball" grinding="1.0" chance="1.85" power="1.0" durability="200000">
-    <item name="ballPulsatingIron"/>
-  </grindingball>
-  <grindingball name="Soularium Ball" grinding="1.2" chance="2.15" power="0.9" durability="177000">
-    <item name="ballSoularium"/>
-  </grindingball>
-  <grindingball name="End Steel Ball" grinding="1.4" chance="2.4" power="0.7" durability="375000">
-    <item name="ballEndSteel"/>
-  </grindingball>
-  <grindingball name="Construction Alloy Ball" grinding="1.0" chance="0.33" power="0.25" durability="96000">
-    <item name="CONSTRUCTION_ALLOY_BALL"/>
-  </grindingball>
-  <grindingball name="Signalum Ball" grinding="1.2" chance="1.65" power="0.35" durability="571000">
-    <item name="SIGNALUM_BALL"/>
-  </grindingball>
-  <grindingball name="Enderium Ball" grinding="1.65" chance="1.45" power="1.25" durability="400000">
-    <item name="ENDERIUM_BALL"/>
-  </grindingball>
-  <grindingball name="Lumium Ball" grinding="1.1" chance="2.15" power="0.9" durability="222000">
-    <item name="LUMIUM_BALL"/>
-  </grindingball>
-  <grindingball name="Crystalline Alloy Ball" grinding="1.8" chance="1.4" power="1.45" durability="304000">
-    <item name="ballCrystallineAlloy"/>
-  </grindingball>
-  <grindingball name="Melodic Alloy Ball" grinding="2.0" chance="1.45" power="1.55" durability="840000">
-    <item name="ballMelodicAlloy"/>
-  </grindingball>
-  <grindingball name="Stellar Alloy Ball" grinding="2.3" chance="2.25" power="2.2" durability="1632000">
-    <item name="ballStellarAlloy"/>
-  </grindingball>
-  <grindingball name="Crystalline Pink Slime Ball" grinding="1.75" chance="1.55" power="1.55" durability="620000">
-    <item name="ballCrystallinePinkSlime"/>
-  </grindingball>
-  <grindingball name="Vivid Alloy Ball" grinding="1.75" chance="1.35" power="1.35" durability="598000">
-    <item name="ballVividAlloy"/>
-  </grindingball>
   <!-- Dyes remake -->
-  <recipe name="Alloy: Green Dye">
-    <alloying energy="2000" exp="0.5">
-      <input name="itemPlantgreen" amount="6"/>
-      <input name="ingotUranium238"/>
-      <input name="industrialforegoing:pink_slime"/>
-      <output name="ORGANIC_GREEN_DYE" amount="2"/>
-    </alloying>
-  </recipe>
-  <recipe name="Alloy: Green Dye, Variant">
-    <alloying energy="1500" exp="0.25">
-      <input name="itemPlantgreen" amount="6"/>
-      <input name="ingotUranium238"/>
-      <input name="betteranimalsplus:goose_egg"/>
-      <output name="ORGANIC_GREEN_DYE"/>
-    </alloying>
-  </recipe>
   <recipe name="Alloy: Green Dye, Variant 1">
     <alloying energy="1500" exp="0.25">
       <input name="itemPlantgreen" amount="6"/>
@@ -733,36 +240,13 @@
       <output name="ORGANIC_GREEN_DYE"/>
     </alloying>
   </recipe>
-  <recipe name="Alloy: Green Dye, Oredict">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Green Dye, Oredict Variant">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Brown Dye">
-    <alloying energy="2000" exp="0.5">
-      <input name="itemPlantbrown" amount="6"/>
-      <input name="forestry:mulch"/>
-      <input name="actuallyadditions:item_misc:21"/>
-      <output name="ORGANIC_BROWN_DYE"/>
-    </alloying>
-  </recipe>
-  <recipe name="Alloy: Brown Dye, Variant">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Brown Dye, Oredict">
-    <disabled/>
-  </recipe>
-  <recipe name="Alloy: Brown Dye, Oredict Variant">
-    <disabled/>
-  </recipe>
   <!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
   <recipe name="Alumite Ingot">
     <alloying energy="10000">
       <input name="ingotFakeIron" amount="2"/>
       <input name="ingotAluminium" amount="5"/>
       <input name="obsidian" amount="2"/>
-      <output name="plustic:alumiteingot" amount="3"/>
+      <output name="tconstruct:ingots:6" amount="3"/>
     </alloying>
   </recipe>
   <!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->

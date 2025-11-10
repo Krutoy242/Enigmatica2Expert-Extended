@@ -12,10 +12,11 @@ zenClass MixinIntegrationHandler {
     #mixin Static
     #mixin Redirect
     #{
-    #    method: "performTick",
+    #    method: "changeToolOverwriteTinkers",
     #    at: {
     #       value: "INVOKE",
-    #       target: "Lnet/minecraft/nbt/NBTTagCompound;func_74762_e(Ljava/lang/String;)I"
+    #       target: "Lnet/minecraft/nbt/NBTTagCompound;func_74762_e(Ljava/lang/String;)I",
+    #       ordinal: 1
     #    }
     #}
     function changeToConfig(nbt as NBTTagCompound, key as string) as int {

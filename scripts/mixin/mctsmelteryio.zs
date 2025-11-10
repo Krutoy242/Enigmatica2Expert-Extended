@@ -25,3 +25,19 @@ zenClass MixinSmelteryIOJEI {
         // NO-OP
     }
 }
+
+/*
+Fixed Smeltery IO blocks' harvestLevel & resistance
+*/
+#mixin {targets: "mctmods.smelteryio.blocks.meta.EnumMachine"}
+zenClass MixinBlockHarvestLevelResistance {
+    #mixin Overwrite
+    function getHarvestLevel() as int {
+        return -1;
+    }
+
+    #mixin Overwrite
+    function getResistance() as float {
+        return 20.0f;
+    }
+}

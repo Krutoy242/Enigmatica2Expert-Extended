@@ -1,6 +1,6 @@
 #reloadable
 #ignoreBracketErrors
-#modloaded ctintegration zenutils requious
+#modloaded zenutils requious
 
 import crafttweaker.item.IItemStack;
 

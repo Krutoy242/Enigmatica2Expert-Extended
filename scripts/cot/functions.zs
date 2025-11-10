@@ -1,4 +1,4 @@
-#modloaded contenttweaker randomtweaker crafttweakerutils
+#modloaded contenttweaker
 #reloadable
 #ignoreBracketErrors
 #priority -100
@@ -265,15 +265,15 @@ function consumeSingle(
   return recipeFunction({ '0': stack, '1': item }, false);
 }
 
-val singularIDs = scripts.lib.crossscript.getList('singularIDs');
-val singularOres = scripts.lib.crossscript.getList('singularOres');
-val singularCharges = scripts.lib.crossscript.getList('singularCharges');
+val singularIDs = scripts.cot.def.Op.singularIDs;
+val singularOres = scripts.cot.def.Op.singularOres;
+val singularCharges = scripts.cot.def.Op.singularCharges;
 
 for i, id in singularIDs {
   val fullId = `${id}_singularity`;
   val item = <item:contenttweaker:${fullId}>;
   val ore = oreDict[singularOres[i]];
-  val charge = singularCharges[i] as int;
+  val charge = singularCharges[i];
   val emptyIngr = <avaritia:singularity> ?? <minecraft:nether_star>;
 
   val recipeFunction as function(IItemStack[string],bool)IItemStack = scripts.do.diverse.addRecipe(
@@ -321,7 +321,7 @@ for i, id in singularIDs {
 }
 
 // Special crafting case for Garbage Singularity
-mods.extendedcrafting.CompressionCrafting.addRecipe(<contenttweaker:garbage_singularity>,
+mods.extendedcrafting.CompressionCrafting.addRecipe(<contenttweaker:garbage_singularity>.withTag({ completed: 1 as byte }),
   <rats:garbage_pile>, 10000, <rats:idol_of_ratlantis>, 2000000, 100000);
 
 // ------------------------------------------

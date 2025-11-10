@@ -7,7 +7,7 @@ Stats:
 Mana per 1 sec: H/t*eff
 Time working: as on fuel
 */
-#modloaded randomtweaker botania ctintegration zenutils
+#modloaded botania zenutils
 #loader contenttweaker
 
 import crafttweaker.data.IData;

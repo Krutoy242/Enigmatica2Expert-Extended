@@ -1,4 +1,4 @@
-#modloaded armoreablemobs crafttweakerutils
+#modloaded armoreablemobs
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
@@ -7,8 +7,8 @@ import mods.armoreablemobs.ArmorGroup;
 import mods.armoreablemobs.ArmorHandler;
 import mods.armoreablemobs.ArmorHandler.createArmorEntity as armEnt;
 import mods.armoreablemobs.ArmorSlot;
-import mods.ctutils.utils.Math.max;
-import mods.ctutils.utils.Math.min;
+import crafttweaker.util.Math.max;
+import crafttweaker.util.Math.min;
 
 //#########################
 //       ENTITIES         #

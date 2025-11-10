@@ -1,4 +1,4 @@
-#loader mekatweaker
+#loader contenttweaker
 
 import mods.mekatweaker.InfuserType;
 

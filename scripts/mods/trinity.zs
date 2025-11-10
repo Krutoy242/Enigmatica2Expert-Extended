@@ -1,4 +1,4 @@
-#modloaded trinity crafttweakerutils
+#modloaded trinity
 #ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
@@ -31,7 +31,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   "INFUSION", # Research
   <advancedrocketry:vitrifiedsand>, # Output
   1, # Instability
-  [<aspect:perditio> * 40, Aspect.exitium * 40],
+  Aspects('40⚡ 40💣'),
   <advancedrocketry:hotturf>, # Central Item
   Grid(["pretty",
   "s Q s",

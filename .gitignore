@@ -23,6 +23,7 @@
 /Enigmatica2Expert-Extended.wiki
 /eula.txt
 /exports
+/generated
 /hei_bookmarks.ini
 /hei_favorites.ini
 /home
@@ -110,3 +111,5 @@ config/triumph/script/triumph/example
 config/triumph/script/triumph/vanilla
 
 # Other
+resources/mekatweaker/blockstates/fluids.json
+resources/mekatweaker/lang/en_us.lang

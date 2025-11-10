@@ -228,7 +228,7 @@
    <recipe name="Skeletal Contractor">
     <slicing energy="20000">
       <input name="ingotSoularium"/><input name="minecraft:skull:0"/><input name="ingotSoularium"/>
-      <input name="minecraft:rotten_flesh"/><input name="CAPACITOR1"/><input name="minecraft:rotten_flesh"/>
+      <input name="itemSilicon"/><input name="minecraft:rotten_flesh"/><input name="itemSilicon"/>
       <output name="skullSkeletalContractor"/>
     </slicing>
   </recipe>
@@ -236,8 +236,8 @@
   <recipe name="Guardian Diode">
     <slicing energy="20000">
       <input name="ingotEnergeticAlloy"/><input name="gemPrismarine"/><input name="ingotEnergeticAlloy"/>
-      <input name="dustPrismarine"/><input name="CAPACITOR1"/><input name="dustPrismarine"/>
-      <output name="skullGuardianDiode"/>
+      <input name="itemSilicon"/><input name="dustPrismarine"/><input name="itemSilicon"/>
+      <output name="skullGuardianDiode" />
     </slicing>
   </recipe>
 

@@ -23,61 +23,67 @@
 
    -->
 
-<grindingball name="Flint" grinding="1.2" chance="1.25" power="0.85" durability="24000" >
+<!-- Grinding Ball buffs
+- Increased durability of all balls by 2x to account for required power for most of grinding recipes being lower, than SAG Mill's actual consumption (3200 RF < 5000 RF/t)
+- For balls with Power Use less than 1x, additionally increased durability by (1 / Power Use)x to make them last as long as in vanilla EnderIO
+- For balls with Power Use more than 1x, additionally increased durability by ((Power Use - 1) * 2)x to allow them to be still viable alongside with (Power Use < 1) balls and still have "more expensive -> more durable" progression
+-->
+
+<grindingball name="Flint" grinding="1.2" chance="1.25" power="0.85" durability="56000">
   <item name="itemFlint"/>
 </grindingball>
 
-<grindingball name="Dark Steel Ball" grinding="1.35" chance="2.00" power="0.7" durability="125000" >
+<grindingball name="Dark Steel Ball" grinding="1.35" chance="2.00" power="0.7" durability="357000">
   <item name="ballDarkSteel"/>
 </grindingball>
 
-<grindingball name="Electrical Steel Ball" grinding="1.2" chance="1.65" power="0.8" durability="40000" >
+<grindingball name="Electrical Steel Ball" grinding="1.2" chance="1.65" power="0.8" durability="100000">
   <item name="ballElectricalSteel"/>
 </grindingball>
 
-<grindingball name="Energetic Alloy Ball" grinding="1.6" chance="1.1" power="1.1" durability="80000" >
+<grindingball name="Energetic Alloy Ball" grinding="1.6" chance="1.1" power="1.1" durability="192000">
   <item name="ballEnergeticAlloy"/>
 </grindingball>
 
-<grindingball name="Vibrant Alloy Ball" grinding="1.75" chance="1.35" power="1.35" durability="80000" >
+<grindingball name="Vibrant Alloy Ball" grinding="1.75" chance="1.35" power="1.35" durability="216000">
   <item name="ballVibrantAlloy"/>
 </grindingball>
 
-<grindingball name="Redstone Alloy Ball" grinding="1.00" chance="1.00" power="0.35" durability="30000" >
+<grindingball name="Redstone Alloy Ball" grinding="1.00" chance="1.00" power="0.35" durability="171000">
   <item name="ballRedstoneAlloy"/>
 </grindingball>
 
-<grindingball name="Conductive Iron Ball" grinding="1.35" chance="1.00" power="1.0" durability="40000" >
+<grindingball name="Conductive Iron Ball" grinding="1.35" chance="1.00" power="1.0" durability="80000">
   <item name="ballConductiveIron"/>
 </grindingball>
 
-<grindingball name="Pulsating Iron Ball" grinding="1.0" chance="1.85" power="1.0" durability="100000" >
+<grindingball name="Pulsating Iron Ball" grinding="1.0" chance="1.85" power="1.0" durability="200000">
   <item name="ballPulsatingIron"/>
 </grindingball>
 
-<grindingball name="Soularium Ball" grinding="1.2" chance="2.15" power="0.9" durability="80000" >
+<grindingball name="Soularium Ball" grinding="1.2" chance="2.15" power="0.9" durability="177000">
   <item name="ballSoularium"/>
 </grindingball>
 
-<grindingball name="End Steel Ball" grinding="1.4" chance="2.4" power="0.7" durability="75000" >
+<grindingball name="End Steel Ball" grinding="1.4" chance="2.4" power="0.7" durability="375000">
   <item name="ballEndSteel"/>
 </grindingball>
 
-<grindingball name="Construction Alloy Ball" grinding="1.0" chance="0.33" power="0.25" durability="12000" >
+<grindingball name="Construction Alloy Ball" grinding="1.0" chance="0.33" power="0.25" durability="96000">
   <item name="CONSTRUCTION_ALLOY_BALL"/>
 </grindingball>
 
 <!-- Thermal Grinding Balls -->
 
-<grindingball name="Signalum Ball" grinding="1.2" chance="1.65" power="0.35" durability="100000" >
+<grindingball name="Signalum Ball" grinding="1.2" chance="1.65" power="0.35" durability="571000">
   <item name="SIGNALUM_BALL"/>
 </grindingball>
 
-<grindingball name="Enderium Ball" grinding="1.65" chance="1.45" power="1.25" durability="120000" >
+<grindingball name="Enderium Ball" grinding="1.65" chance="1.45" power="1.25" durability="400000">
   <item name="ENDERIUM_BALL"/>
 </grindingball>
 
-<grindingball name="Lumium Ball" grinding="1.1" chance="2.15" power="0.9" durability="100000" >
+<grindingball name="Lumium Ball" grinding="1.1" chance="2.15" power="0.9" durability="222000">
   <item name="LUMIUM_BALL"/>
 </grindingball>
 

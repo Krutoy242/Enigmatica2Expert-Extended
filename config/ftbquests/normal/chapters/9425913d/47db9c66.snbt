@@ -1,0 +1,50 @@
+{
+	title: "{q.gates.pick_mythic_reward.name}",
+	disable_toast: 1b,
+	x: 15.15d,
+	y: 7.2d,
+	shape: "square",
+	text: [
+		"{q.gates.pick_mythic_reward.desc}"
+	],
+	can_repeat: 1b,
+	dependencies: [
+		"ecf992e2"
+	],
+	size: 0.5d,
+	optional: 1b,
+	tasks: [{
+		uid: "72530881",
+		type: "item",
+		items: [{
+			tag: {
+				type: "mythic"
+			},
+			id: "ftbquests:lootcrate"
+		}],
+		count: 8L
+	}],
+	rewards: [{
+		uid: "918c7245",
+		type: "choice",
+		icon: {
+			tag: {
+				inventory: {
+					size: 1,
+					Items: [{
+						Slot: 0b,
+						Damage: 0s,
+						id: "ftbquests:lootcrate",
+						Count: 1,
+						tag: {
+							type: "mythic"
+						}
+					}]
+				},
+				openedInGui: 1523724029
+			},
+			id: "openblocks:dev_null"
+		},
+		table: 4
+	}]
+}

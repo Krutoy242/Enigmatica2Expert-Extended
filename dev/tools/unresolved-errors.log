@@ -1,6 +1,11 @@
+[main/WARN] [Foundation]: Tweak name org.spongepowered.asm.mixin.EnvironmentStateTweaker has already been visited -- skipping
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
-[main/WARN] [mixin]: Error loading class: de/keksuccino/fancymenu/mainwindow/MainWindowHandler (java.lang.NullPointerException: Cannot read the array length because "classFile" is null)
-[main/WARN] [mixin]: @Mixin target de.keksuccino.fancymenu.mainwindow.MainWindowHandler was not found mixins/mixins.emt.fancymenu.json:MainWindowHandlerMixin from mod unknown-owner
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
@@ -11,9 +16,68 @@
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [mixin]: Mixin apply for mod UniversalTweaks-1.12.2-1.17.0.jar failed mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.17.0.jar -> openblocks.enchantments.LastStandEnchantmentsHandler: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow method onHurt in mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.17.0.jar was not located in the target class openblocks.enchantments.LastStandEnchantmentsHandler. Using refmap universaltweaks.refmap.json
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow method onHurt in mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.17.0.jar was not located in the target class openblocks.enchantments.LastStandEnchantmentsHandler. Using refmap universaltweaks.refmap.json
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachSpecialMethod(MixinPreProcessorStandard.java:436)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412)
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340)
+  [...]
+[Client thread/WARN] [mixin]: @Inject(@At("INVOKE")) Shift.BY=2 on mixins.thaumictweaker.json:tiles.TileVoidSiphonMixin from mod unknown-owner::handler$xxx000$unknown_owner$wussModeSeedCreation exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21)
 	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52)
-  [...]
+  [...]
+[Client thread/WARN] [THAUMCRAFT]: Research [INFUSION_CLAW] not added as it overlaps with existing research [SPAWNER] at 2,6
+[Client thread/ERROR] [loottweaker.sanity_checks]: Unexpected duplicate pool name 'marbled_cheese_golem' in table 'rats:marbled_cheese_golem'. Duplicate added as 'marbled_cheese_golem0'.
+Report this to the loot adder.
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
+Failed to get ingredients from recipe wrapper
+
+java.lang.NullPointerException
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+  [...]
+[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
+{amount:0L,uid:"fluid:sodium"}
+[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
+BO:{amount:0L,uid:"fluid:sodium"}
+[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
+{amount:0L,uid:"fluid:potassium"}
+[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
+BO:{amount:0L,uid:"fluid:potassium"}
+[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
+{amount:0L,uid:"fluid:nak"}
+[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
+BO:{amount:0L,uid:"fluid:nak"}
+[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
+{amount:0L,uid:"fluid:potassium_fluoride_solution"}
+[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
+BO:{amount:0L,uid:"fluid:potassium_fluoride_solution"}
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2

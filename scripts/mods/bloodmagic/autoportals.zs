@@ -143,7 +143,7 @@ function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, mas
 
 function buildNewPortal(world as IWorld, pos as IBlockPos, masterState as IBlockState, originalWorld as IWorld, originalPos as IBlockPos) as void {
   val nbt = originalWorld.getBlock(originalPos).data;
-  say('buildNewPortal(). nbt: '~nbt.toNBTString());
+  say('buildNewPortal(). nbt: '~nbt.toSNBT());
   world.setBlockState(masterState, nbt, pos);
   
   say('all done!');
@@ -174,7 +174,7 @@ function getMedianHeight(w as IWorld, width as int, deph as int, pos as IBlockPo
       k += 1;
     }
   }
-  mods.ctintegration.util.ArrayUtil.sort(arr);
+  arr.sort();
   return arr.length % 2 == 0
     ? (arr[arr.length / 2] + arr[arr.length / 2 + 1]) / 2
     : arr[arr.length / 2];

@@ -542,14 +542,12 @@ craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "e
 });
 
 // Add recipe to use in some AA crafts
-// [Organic Brown Dye] from [Crushed Black Quartz][+3]
-mods.rt.RandomThingsTweaker.addImbuingRecipe(
-  <forestry:refractory_wax>, // Refractory Wax
-  <actuallyadditions:item_misc:21>, // Biomass
-  <actuallyadditions:item_dust:7>, // Crushed Black Quartz
-  <forestry:mulch>,
-  <enderio:item_material:49>
-);
+craft.reshapeless(<enderio:item_material:49>, 'RBM⌃', {
+  'R': <forestry:refractory_wax>,
+  'B': <actuallyadditions:item_misc:21>,
+  'M': <forestry:mulch>,
+  '⌃': <ore:dustQuartzBlack>,
+});
 
 // Magic-only alt recipes
 for ingr, amount in {
@@ -895,7 +893,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_alloy_smelter>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_alloy_smelter>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -911,7 +909,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_combustion_generator>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_combustion_generator>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -927,7 +925,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_sag_mill>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_sag_mill>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -943,7 +941,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_vat>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_vat>, // Central Item
   Grid(['pretty',
     '  E  ',
@@ -959,7 +957,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <enderio:block_enhanced_wireless_charger>, // Output
   7, // Instability
-  [<aspect:amogus> * 50, Aspect.caeles * 50],
+  Aspects('50ඞ 50☀️'),
   <enderio:block_normal_wireless_charger>, // Central Item
   Grid(['pretty',
     '  E  ',

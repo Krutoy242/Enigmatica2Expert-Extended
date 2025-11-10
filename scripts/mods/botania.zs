@@ -139,7 +139,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <botania:manaresource:5>, // Output
   10, // Instability
-  [Aspect.caeles * 100, <aspect:draco> * 100, <aspect:rattus> * 100],
+  Aspects('100☀️ 100🐲 100🐀'),
   <rats:idol_of_ratlantis>, // Central Item
   Grid(['pretty',
     'S ◊ ╳',
@@ -160,7 +160,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'INFUSION', // Research
   <botania:dice>, // Output
   10, // Instability
-  [Aspect.caeles * 160, <aspect:mana> * 160],
+  Aspects('160☀️ 160🔷'),
   <draconicevolution:chaos_shard>, // Central Item
   Grid(['pretty',
     '  D  ',
@@ -392,10 +392,6 @@ mods.botania.ManaInfusion.addInfusion(<astralsorcery:blockcustomflower>, <biomes
 
 // Melt Gaia's Head to receive Dark Matter
 scripts.process.melt(<botania:gaiahead>, <liquid:dark_matter> * (144 * 3), 'except: Melter');
-
-<entity:botania:pink_wither>.addDrop(<enderio:item_alloy_endergy_ingot:4>, 2, 6);
-<entity:botania:pink_wither>.addDrop(<industrialforegoing:pink_slime_ingot>, 3, 9);
-<entity:botania:pixie>.addPlayerOnlyDrop(<jaopca:item_dusttinytitanium>, 1, 3);
 
 // Way cheaper because all mods ca spawn vanilla animals
 // [Cocoon of Caprice]*4 from [Pumpkin][+2]

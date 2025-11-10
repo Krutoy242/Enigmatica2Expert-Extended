@@ -950,7 +950,7 @@
             "metadata": 0,
             "count": 1,
             "luck": 0,
-            "chance": 0.8,
+            "chance": 0.1,
             "rolls": 1
           },
           {
@@ -1004,16 +1004,7 @@
             "metadata": 0,
             "count": 1,
             "luck": 0,
-            "chance": 1,
-            "rolls": 1
-          },
-          {
-            "meshLevel": 2,
-            "name": "thaumicwonders:shimmerleaf_seed",
-            "metadata": 0,
-            "count": 1,
-            "luck": 0,
-            "chance": 0.5,
+            "chance": 0.15,
             "rolls": 1
           },
           {
@@ -1068,33 +1059,6 @@
             "count": 1,
             "luck": 0,
             "chance": 1,
-            "rolls": 1
-          },
-          {
-            "meshLevel": 3,
-            "name": "thaumicwonders:shimmerleaf_seed",
-            "metadata": 0,
-            "count": 1,
-            "luck": 0,
-            "chance": 1,
-            "rolls": 1
-          },
-          {
-            "meshLevel": 3,
-            "name": "thaumicwonders:shimmerleaf_seed",
-            "metadata": 0,
-            "count": 1,
-            "luck": 0,
-            "chance": 1,
-            "rolls": 1
-          },
-          {
-            "meshLevel": 3,
-            "name": "thaumicwonders:shimmerleaf_seed",
-            "metadata": 0,
-            "count": 1,
-            "luck": 0,
-            "chance": 0.5,
             "rolls": 1
           },
           {

@@ -8,7 +8,7 @@ import { replaceInFileSync } from 'replace-in-file'
 import Client from 'ssh2-sftp-client'
 import { $, fs, glob } from 'zx'
 
-import { confirm, getBoxForLabel, style } from './build_utils'
+import { confirm, getBoxForLabel } from './build_utils'
 
 const { readFileSync, writeFileSync, unlinkSync, existsSync} = fs
 
@@ -44,7 +44,7 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
   writeFileSync(serverConfigTmp, confText)
 
   for (const conf of sftpConfigs) {
-    if (!await confirm(`Upload SFTP ${style.string(conf.label)}?`)) continue
+    if (!await confirm(`Upload SFTP ${conf.label}?`)) continue
 
     const sftp = new Client()
     const updateBox = getBoxForLabel(conf.label || '')

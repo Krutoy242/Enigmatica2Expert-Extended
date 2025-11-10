@@ -1,4 +1,4 @@
-#modloaded ic2 randomtweaker
+#modloaded ic2
 #priority 1
 #reloadable
 

@@ -1,0 +1,309 @@
+{
+  "Aspect aer": {
+    "scope": "zenscript",
+    "prefix": "aspect:aer",
+    "body": ["💨"],
+    "description": "Inserts aer aspect emoji"
+  },
+  "Aspect alienis": {
+    "scope": "zenscript",
+    "prefix": "aspect:alienis",
+    "body": ["👽"],
+    "description": "Inserts alienis aspect emoji"
+  },
+  "Aspect alkimia": {
+    "scope": "zenscript",
+    "prefix": "aspect:alkimia",
+    "body": ["⚗️"],
+    "description": "Inserts alkimia aspect emoji"
+  },
+  "Aspect amogus": {
+    "scope": "zenscript",
+    "prefix": "aspect:amogus",
+    "body": ["ඞ"],
+    "description": "Inserts amogus aspect emoji"
+  },
+  "Aspect aqua": {
+    "scope": "zenscript",
+    "prefix": "aspect:aqua",
+    "body": ["💧"],
+    "description": "Inserts aqua aspect emoji"
+  },
+  "Aspect auram": {
+    "scope": "zenscript",
+    "prefix": "aspect:auram",
+    "body": ["✨"],
+    "description": "Inserts auram aspect emoji"
+  },
+  "Aspect aversio": {
+    "scope": "zenscript",
+    "prefix": "aspect:aversio",
+    "body": ["🗡️"],
+    "description": "Inserts aversio aspect emoji"
+  },
+  "Aspect bestia": {
+    "scope": "zenscript",
+    "prefix": "aspect:bestia",
+    "body": ["🐺"],
+    "description": "Inserts bestia aspect emoji"
+  },
+  "Aspect caeles": {
+    "scope": "zenscript",
+    "prefix": "aspect:caeles",
+    "body": ["☀️"],
+    "description": "Inserts caeles aspect emoji"
+  },
+  "Aspect cognitio": {
+    "scope": "zenscript",
+    "prefix": "aspect:cognitio",
+    "body": ["🧠"],
+    "description": "Inserts cognitio aspect emoji"
+  },
+  "Aspect desiderium": {
+    "scope": "zenscript",
+    "prefix": "aspect:desiderium",
+    "body": ["✊"],
+    "description": "Inserts desiderium aspect emoji"
+  },
+  "Aspect draco": {
+    "scope": "zenscript",
+    "prefix": "aspect:draco",
+    "body": ["🐲"],
+    "description": "Inserts draco aspect emoji"
+  },
+  "Aspect exanimis": {
+    "scope": "zenscript",
+    "prefix": "aspect:exanimis",
+    "body": ["💀"],
+    "description": "Inserts exanimis aspect emoji"
+  },
+  "Aspect exitium": {
+    "scope": "zenscript",
+    "prefix": "aspect:exitium",
+    "body": ["💣"],
+    "description": "Inserts exitium aspect emoji"
+  },
+  "Aspect fabrico": {
+    "scope": "zenscript",
+    "prefix": "aspect:fabrico",
+    "body": ["🔨"],
+    "description": "Inserts fabrico aspect emoji"
+ },
+  "Aspect fluctus": {
+    "scope": "zenscript",
+    "prefix": "aspect:fluctus",
+    "body": ["♒"],
+    "description": "Inserts fluctus aspect emoji"
+  },
+  "Aspect gelum": {
+    "scope": "zenscript",
+    "prefix": "aspect:gelum",
+    "body": ["🧊"],
+    "description": "Inserts gelum aspect emoji"
+  },
+  "Aspect herba": {
+    "scope": "zenscript",
+    "prefix": "aspect:herba",
+    "body": ["🌱"],
+    "description": "Inserts herba aspect emoji"
+  },
+  "Aspect humanus": {
+    "scope": "zenscript",
+    "prefix": "aspect:humanus",
+    "body": ["👨"],
+    "description": "Inserts humanus aspect emoji"
+  },
+  "Aspect ignis": {
+    "scope": "zenscript",
+    "prefix": "aspect:ignis",
+    "body": ["🔥"],
+    "description": "Inserts ignis aspect emoji"
+  },
+  "Aspect imperium": {
+    "scope": "zenscript",
+    "prefix": "aspect:imperium",
+    "body": ["🙌"],
+    "description": "Inserts imperium aspect emoji"
+  },
+  "Aspect infernum": {
+    "scope": "zenscript",
+    "prefix": "aspect:infernum",
+    "body": ["🧨"],
+    "description": "Inserts infernum aspect emoji"
+  },
+  "Aspect instrumentum": {
+    "scope": "zenscript",
+    "prefix": "aspect:instrumentum",
+    "body": ["🛠️"],
+    "description": "Inserts instrumentum aspect emoji"
+  },
+  "Aspect lux": {
+    "scope": "zenscript",
+    "prefix": "aspect:lux",
+    "body": ["🕯️"],
+    "description": "Inserts lux aspect emoji"
+  },
+  "Aspect machina": {
+    "scope": "zenscript",
+    "prefix": "aspect:machina",
+    "body": ["⚙️"],
+    "description": "Inserts machina aspect emoji"
+  },
+  "Aspect mana": {
+    "scope": "zenscript",
+    "prefix": "aspect:mana",
+    "body": ["🔷"],
+    "description": "Inserts mana aspect emoji"
+  },
+  "Aspect metallum": {
+    "scope": "zenscript",
+    "prefix": "aspect:metallum",
+    "body": ["🔩"],
+    "description": "Inserts metallum aspect emoji"
+  },
+  "Aspect mortuus": {
+    "scope": "zenscript",
+    "prefix": "aspect:mortuus",
+    "body": ["⚰️"],
+    "description": "Inserts mortuus aspect emoji"
+  },
+  "Aspect motus": {
+    "scope": "zenscript",
+    "prefix": "aspect:motus",
+    "body": ["🏃"],
+    "description": "Inserts motus aspect emoji"
+  },
+  "Aspect mythus": {
+    "scope": "zenscript",
+    "prefix": "aspect:mythus",
+    "body": ["🦄"],
+    "description": "Inserts mythus aspect emoji"
+  },
+  "Aspect ordo": {
+    "scope": "zenscript",
+    "prefix": "aspect:ordo",
+    "body": ["△"],
+    "description": "Inserts ordo aspect emoji"
+  },
+  "Aspect perditio": {
+    "scope": "zenscript",
+    "prefix": "aspect:perditio",
+    "body": ["⚡"],
+    "description": "Inserts perditio aspect emoji"
+  },
+  "Aspect permutatio": {
+    "scope": "zenscript",
+    "prefix": "aspect:permutatio",
+    "body": ["🔄"],
+    "description": "Inserts permutatio aspect emoji"
+  },
+  "Aspect potentia": {
+    "scope": "zenscript",
+    "prefix": "aspect:potentia",
+    "body": ["💪"],
+    "description": "Inserts potentia aspect emoji"
+  },
+  "Aspect praecantatio": {
+    "scope": "zenscript",
+    "prefix": "aspect:praecantatio",
+    "body": ["🔮"],
+    "description": "Inserts praecantatio aspect emoji"
+  },
+  "Aspect praemunio": {
+    "scope": "zenscript",
+    "prefix": "aspect:praemunio",
+    "body": ["🛡️"],
+    "description": "Inserts praemunio aspect emoji"
+  },
+  "Aspect rattus": {
+    "scope": "zenscript",
+    "prefix": "aspect:rattus",
+    "body": ["🐀"],
+    "description": "Inserts rattus aspect emoji"
+  },
+  "Aspect sanguis": {
+    "scope": "zenscript",
+    "prefix": "aspect:sanguis",
+    "body": ["🩸"],
+    "description": "Inserts sanguis aspect emoji"
+  },
+  "Aspect sensus": {
+    "scope": "zenscript",
+    "prefix": "aspect:sensus",
+    "body": ["🦉"],
+    "description": "Inserts sensus aspect emoji"
+  },
+  "Aspect sonus": {
+    "scope": "zenscript",
+    "prefix": "aspect:sonus",
+    "body": ["🛎️"],
+    "description": "Inserts sonus aspect emoji"
+  },
+  "Aspect spiritus": {
+    "scope": "zenscript",
+    "prefix": "aspect:spiritus",
+    "body": ["👻"],
+    "description": "Inserts spiritus aspect emoji"
+  },
+  "Aspect tenebrae": {
+    "scope": "zenscript",
+    "prefix": "aspect:tenebrae",
+    "body": ["🌑"],
+    "description": "Inserts tenebrae aspect emoji"
+  },
+  "Aspect terra": {
+    "scope": "zenscript",
+    "prefix": "aspect:terra",
+    "body": ["⛰️"],
+    "description": "Inserts terra aspect emoji"
+  },
+  "Aspect vacuos": {
+    "scope": "zenscript",
+    "prefix": "aspect:vacuos",
+    "body": ["〇"],
+    "description": "Inserts vacuos aspect emoji"
+  },
+  "Aspect ventus": {
+    "scope": "zenscript",
+    "prefix": "aspect:ventus",
+    "body": ["🍃"],
+    "description": "Inserts ventus aspect emoji"
+  },
+  "Aspect victus": {
+    "scope": "zenscript",
+    "prefix": "aspect:victus",
+    "body": ["❤️"],
+    "description": "Inserts victus aspect emoji"
+  },
+  "Aspect vinculum": {
+    "scope": "zenscript",
+    "prefix": "aspect:vinculum",
+    "body": ["🔗"],
+    "description": "Inserts vinculum aspect emoji"
+  },
+  "Aspect visum": {
+    "scope": "zenscript",
+    "prefix": "aspect:visum",
+    "body": ["👁️"],
+    "description": "Inserts visum aspect emoji"
+  },
+  "Aspect vitium": {
+    "scope": "zenscript",
+    "prefix": "aspect:vitium",
+    "body": ["🍇"],
+    "description": "Inserts vitium aspect emoji"
+  },
+  "Aspect vitreus": {
+    "scope": "zenscript",
+    "prefix": "aspect:vitreus",
+    "body": ["💎"],
+    "description": "Inserts vitreus aspect emoji"
+  },
+  "Aspect volatus": {
+    "scope": "zenscript",
+    "prefix": "aspect:volatus",
+    "body": ["🕊️"],
+    "description": "Inserts volatus aspect emoji"
+  }
+}
+

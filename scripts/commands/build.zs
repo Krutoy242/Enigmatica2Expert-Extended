@@ -1,4 +1,4 @@
-#modloaded zenutils ctintegration
+#modloaded zenutils
 #priority 2000
 #reloadable
 

@@ -133,6 +133,9 @@ Purge(<actuallyadditions:item_dust:4>).ores([<ore:dustLapis>]).furn();
 Purge(<actuallyadditions:item_dust:6>).ores([<ore:dustCoal>]).furn();
 Purge(<actuallyadditions:block_misc:5>).ores([<ore:blockCharcoal>]).furn();
 Purge(<exnihilocreatio:block_end_cake>);
+Purge(<plustic:alumitenugget>).ores([<ore:nuggetAlumite>]);
+Purge(<plustic:alumiteingot>).ores([<ore:ingotAlumite>]);
+Purge(<plustic:alumiteblock>).ores([<ore:blockAlumite>]);
 
 // Purge saltpeter and sulfur
 Purge(<bloodmagic:component:24>);
@@ -248,7 +251,7 @@ furnaceRemove(<libvulpes:productingot:7>            , <qmd:dust:3>);
 furnaceRemove(<tconstruct:ingots>                   , <qmd:dust:4>);
 furnaceRemove(<minecraft:gold_ingot> * 3            , <thaumicwonders:eldritch_cluster:1>);
 furnaceRemove(<thaumcraft:quicksilver> * 3          , <thaumicwonders:eldritch_cluster:6>);
-furnaceRemove(<minecraft:quartz> * 3                , <thaumicwonders:eldritch_cluster:7>);
+furnaceRemove(<minecraft:quartz> * 4                , <thaumicwonders:eldritch_cluster:7>);
 furnaceRemove(<thaumcraft:ingot:1> * 2              , <thaumicwonders:eldritch_cluster:8>);
 furnaceRemove(<minecraft:iron_ingot> * 3            , <thaumicwonders:eldritch_cluster>);
 /**/

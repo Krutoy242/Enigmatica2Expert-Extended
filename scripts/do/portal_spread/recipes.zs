@@ -14,6 +14,7 @@ import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.oredict.IOreDictEntry;
 
+import scripts.do.portal_spread.config.Config;
 import scripts.do.portal_spread.message.log;
 
 /*
@@ -223,7 +224,12 @@ zenClass Spread {
     // Input block state doesn't exist
     if (isNull(blockFrom)) return this;
 
-    log('  Creating new recipe for ' ~ blockFrom.commandString ~ ' input and ' ~ blocksTo.length ~ ' outputs.');
+    if (Config.debug) {
+      val serialized = [] as [string];
+      for state in blocksTo { serialized.add(state.commandString); }
+      log('  Creating new recipe for ' ~ blockFrom.commandString
+        ~ ' input and outputs: ' ~ mods.zenutils.StaticString.join(serialized as string[], ', '));
+    }
 
     // Determine if we need to use fallback
     var blocksToActual = blocksTo;
@@ -428,7 +434,7 @@ spread
 .setNether([<blockstate:thermalfoundation:ore:type=nickel>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=iron_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:grass_path>], [<blockstate:chisel:netherrack:variation=12>], TERRAIN)
 .setNether([<blockstate:minecraft:gravel>], [<blockstate:exnihilocreatio:block_netherrack_crushed>], TERRAIN)
-.setNether([<blockstate:minecraft:redstone_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=coal_ore>], QUARTZ)
+.setNether([<blockstate:minecraft:redstone_ore>, <blockstate:minecraft:lit_redstone_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=coal_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:iron_ore>], [<blockstate:netherendingores:ore_nether_modded_1:blocks=aluminum_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:lapis_ore>, <blockstate:minecraft:diamond_ore>, <blockstate:minecraft:emerald_ore>], [<blockstate:netherendingores:ore_nether_vanilla:blocks=redstone_ore>], QUARTZ)
 .setNether([<blockstate:minecraft:sandstone:type=chiseled_sandstone>], [<blockstate:mysticalagriculture:soulstone:variant=smooth>], TERRAIN)

@@ -2,13 +2,14 @@
 #sideonly client
 #reloadable
 
-import mods.backpackdisplay.BackpackDisplay.addBackDisplay;
-import crafttweaker.item.IItemStack;
-import crafttweaker.item.IIngredient;
 import crafttweaker.block.IBlockDefinition;
-import crafttweaker.world.IWorld;
-import native.net.minecraft.util.math.BlockPos;
+import crafttweaker.block.IBlockState;
 import crafttweaker.data.IData;
+import crafttweaker.item.IIngredient;
+import crafttweaker.item.IItemStack;
+import crafttweaker.world.IWorld;
+import mods.backpackdisplay.BackpackDisplay.addBackDisplay;
+import native.net.minecraft.util.math.BlockPos;
 
 function addSingularity(item as IItemStack) as void {
   if (isNull(item)) return;
@@ -27,7 +28,7 @@ function addSingularity(item as IItemStack) as void {
   });
 }
 
-for id in scripts.lib.crossscript.getList('singularIDs') {
+for id in scripts.cot.def.Op.singularIDs {
   addSingularity(<item:contenttweaker:${id}_singularity:*>);
 }
 
@@ -135,7 +136,11 @@ static blockHolderTag as function(IData)IItemStack
     || isNull(itemTag.block)
     || isNull(itemTag.meta)
   ) return null;
-  return <item:${itemTag.block}:${itemTag.meta}>;
+
+  val defaultState = IBlockState.getBlockState(itemTag.block.asString(), []);
+  if (isNull(defaultState)) return null;
+  val state = defaultState.block.definition.getStateFromMeta(itemTag.meta);
+  return scripts.do.portal_spread.utils.stateToItem(state);
 };
 
 addBackDisplay(<scannable:module_block>, function(item) {
@@ -164,7 +169,7 @@ addBackDisplay(<scannable:scanner>, function(item) {
   var k = 0;
   val result = arrayOf(length, null as IItemStack) as IItemStack[];
   for it in item.tag.items.Items.asList() {
-    result[k] = IItemStack.fromData(it);
+    result[k] = it.toItemStack();
     k += 1;
     val additional = blockHolderTag(it.tag);
     if (!isNull(additional)) {
@@ -198,7 +203,7 @@ addBackDisplay(<randomthings:enderletter>, function(item) {
   for i in 0 .. 9 {
     val it = item.tag.EnderLetterContent.memberGet('slot'~i);
     if (isNull(it) || isNull(it.id)) continue;
-    result[k] = IItemStack.fromData(it);
+    result[k] = it.toItemStack();
     k += 1;
   }
 
@@ -210,5 +215,5 @@ Rubble
 */
 addBackDisplay(<my_precious:rubble>, function(item) {
   if (isNull(item.tag) || isNull(item.tag.StoredItem)) return null;
-  return [IItemStack.fromData(item.tag.StoredItem)] as IItemStack[];
+  return [item.tag.StoredItem.toItemStack()] as IItemStack[];
 });

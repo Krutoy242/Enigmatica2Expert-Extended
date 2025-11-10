@@ -1,0 +1,33 @@
+{
+	icon: "botania:bifrostperm",
+	x: 9.5d,
+	y: 0.4d,
+	text: [
+		"{q.botania.bifrost_block.desc}"
+	],
+	dependencies: [
+		"58e87f08"
+	],
+	tasks: [{
+		uid: "5b20f44a",
+		type: "item",
+		items: [{
+			item: "botania:bifrostperm"
+		}]
+	},
+	{
+		uid: "5eb5fc3b",
+		type: "item",
+		items: [{
+			item: "botania:smeltrod"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "5d43378b",
+		type: "item",
+		item: "botania:bifrostperm",
+		count: 32
+	}]
+}

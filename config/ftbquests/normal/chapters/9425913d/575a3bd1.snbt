@@ -1,0 +1,50 @@
+{
+	title: "{q.gates.pick_rare_reward.name}",
+	disable_toast: 1b,
+	x: 15.15d,
+	y: 3.85d,
+	shape: "square",
+	text: [
+		"{q.gates.pick_rare_reward.desc}"
+	],
+	can_repeat: 1b,
+	dependencies: [
+		"f464b603"
+	],
+	size: 0.5d,
+	optional: 1b,
+	tasks: [{
+		uid: "e8afd4d2",
+		type: "item",
+		items: [{
+			tag: {
+				type: "rare"
+			},
+			id: "ftbquests:lootcrate"
+		}],
+		count: 16L
+	}],
+	rewards: [{
+		uid: "74bf601b",
+		type: "choice",
+		icon: {
+			tag: {
+				inventory: {
+					size: 1,
+					Items: [{
+						Slot: 0b,
+						Damage: 0s,
+						id: "ftbquests:lootcrate",
+						Count: 1,
+						tag: {
+							type: "rare"
+						}
+					}]
+				},
+				openedInGui: 242946710
+			},
+			id: "openblocks:dev_null"
+		},
+		table: 2
+	}]
+}

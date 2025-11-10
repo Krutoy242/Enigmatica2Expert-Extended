@@ -9,7 +9,7 @@
 
 #priority 3000
 #reloadable
-#modloaded randomtweaker zenutils
+#modloaded zenutils roidtweaker
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;

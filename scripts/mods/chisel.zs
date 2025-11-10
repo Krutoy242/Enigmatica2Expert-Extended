@@ -50,16 +50,32 @@ addVariation('soulstone_slab', <mysticalagriculture:soulstone_brick_slab>);
 addVariation('soulstone_slab', <mysticalagriculture:soulstone_slab>);
 
 // Sonar Core
+addVariation('sonar_dirt', <sonarcore:reinforceddirtblock>);
+addVariation('sonar_dirt', <sonarcore:reinforceddirtbrick>);
+
+addVariation('sonar_stone', <sonarcore:reinforcedstoneblock>);
+addVariation('sonar_stone', <sonarcore:reinforcedstonebrick>);
+
+addVariation('sonar_normal', <sonarcore:stablestone_normal>);
+addVariation('sonar_normal', <sonarcore:stablestonerimmed_normal>);
+addVariation('sonar_normal', <sonarcore:stablestoneblackrimmed_normal>);
+addVariation('sonar_normal', <sonarcore:stablestone_plain>);
+addVariation('sonar_normal', <sonarcore:stablestonerimmed_plain>);
+addVariation('sonar_normal', <sonarcore:stablestoneblackrimmed_plain>);
+
+addVariation('glass', <sonarcore:stableglass>);
+addVariation('glass', <sonarcore:clearstableglass>);
+
 val sonarColors as string[] = [
-  'normal',	'lightgrey', 'plain', 'lime', 'blue',
+  'lightgrey', 'lime', 'blue',
   'cyan', 'magenta', 'pink', 'yellow', 'purple',
   'lightblue', 'green', 'orange', 'red', 'black', 'brown'];
 
-for i in 0 .. 16 {
+for i in 0 .. 14 {
   val col = sonarColors[i];
-  addVariation('sonar ' ~ col, itemUtils.getItem('sonarcore:stablestone_' ~ col));
-  addVariation('sonar ' ~ col, itemUtils.getItem('sonarcore:stablestonerimmed_' ~ col));
-  addVariation('sonar ' ~ col, itemUtils.getItem('sonarcore:stablestoneblackrimmed_' ~ col));
+  addVariation('sonar_' ~ col, itemUtils.getItem('sonarcore:stablestone_' ~ col));
+  addVariation('sonar_' ~ col, itemUtils.getItem('sonarcore:stablestonerimmed_' ~ col));
+  addVariation('sonar_' ~ col, itemUtils.getItem('sonarcore:stablestoneblackrimmed_' ~ col));
 }
 
 // Rats
@@ -96,7 +112,7 @@ for glass, col in {
   mods.chisel.Carving.removeVariation('glassdyed' ~ col, glass);
 }
 
-// Harder  Iron chisel
+// Harder Iron chisel
 recipes.remove(<chisel:chisel_iron>);
 recipes.addShaped(<chisel:chisel_iron>, [
   [null, <tcomplement:chisel_head>.withTag({ Material: 'iron' }).onlyWithTag({ Material: 'iron' })],

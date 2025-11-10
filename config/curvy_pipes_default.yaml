@@ -3,11 +3,12 @@
 # If true, unknown pipes in save data will be deleted instead of crashing.
 ignore_unknown_pipes: false
 
-# Pipe types are defined here. You can remove this section entirely if you only want pipes added by cross-mod integrations.
+# Customizable pipe types are defined here. You can remove this section entirely if you only want pipes added by cross-mod integrations, or the redstone cable.
 pipe_types:
   - # Unique key of this pipe type, also served as the translation key
     key: curvy.item.tiny
-    # Meta value of the `curvy_pipes:pipe` item
+    # Meta value of the `curvy_pipes:pipe` item.
+    # Do not use large values (near 32767): these are reserved for special pipes (currently only the redstone cable).
     meta: 0
     # Default (fallback) translation of `key.name`
     name: Tiny Item Pipe

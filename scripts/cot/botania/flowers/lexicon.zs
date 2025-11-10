@@ -7,7 +7,7 @@ It does 3 things
 - removes entries with crafting table recipes (since it's not working correctly)
 */
 
-#modloaded randomtweaker botania
+#modloaded botania
 import mods.botania.Lexicon;
 
 //////////////////////
