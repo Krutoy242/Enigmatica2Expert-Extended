@@ -988,4 +988,10 @@
   "path":"stages/0/required_item"}
 ]}
 
+,{"key":"INFUSION_CLAW","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [5,4]}
+]}
+
 ]
