@@ -1,8 +1,5 @@
 #modloaded astralsorcery
 
-// Add garanteed grapple wand in some shrines
-loottweaker.LootTweaker.getTable('astralsorcery:chest_shrine').getPool('astralsorcery:chest_shrine').addItemEntry(<astralsorcery:itemgrapplewand>, 1);
-
 // *======= Recipes =======*
 
 // Nocturnal Powder

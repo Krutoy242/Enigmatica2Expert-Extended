@@ -5,16 +5,6 @@ import crafttweaker.item.IItemStack;
 
 scripts.lib.tooltip.desc.jei(<littletiles:recipeadvanced>, 'dont_put_into_ae');
 
-// Add Little Blueprints to Aurora caches
-loottweaker.LootTweaker
-  .getTable('twilightforest:structures/aurora_cache/common')
-  .getPool('main')
-  .addItemEntryHelper(<littletiles:recipeadvanced>, 1, 0, [loottweaker.vanilla.loot.Functions.setCount(2, 6)], []);
-loottweaker.LootTweaker
-  .getTable('twilightforest:structures/aurora_room/common')
-  .getPool('main')
-  .addItemEntryHelper(<littletiles:recipeadvanced>, 1, 0, [loottweaker.vanilla.loot.Functions.setCount(1, 3)], []);
-
 // Storage tiles
 recipes.remove(<littletiles:ltstorageblocktile>);
 recipes.addShaped(<littletiles:ltstorageblocktile>, [
