@@ -10,7 +10,7 @@ val location = 'minecraft:chests/stronghold_library';
 
 scripts.lib.loot.removePools(location,
  ['forestry_apiculture_bees',
- 'floralchemy_inject_pool'] as string[]
+ 'floralchemy_inject_pool']
 );
 
 scripts.lib.loot.clearPool(location, 'main');

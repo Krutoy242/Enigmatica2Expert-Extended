@@ -12,7 +12,7 @@ scripts.lib.loot.removePools(location,
  ['endreborn_inject_pool',
  'Ender IO',
  'xuLootDropOfEvil',
- 'lavacharm'] as string[]
+ 'lavacharm']
 );
 
 scripts.lib.loot.clearPool(location, 'main');

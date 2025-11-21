@@ -10,7 +10,7 @@ val location = 'minecraft:chests/woodland_mansion';
 
 scripts.lib.loot.removePools(location,
  ['rats:contaminated_food',
- 'pool2'] as string[]
+ 'pool2']
 );
 
 scripts.lib.loot.clearPool(location, 'main');

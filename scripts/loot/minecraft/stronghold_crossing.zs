@@ -14,7 +14,7 @@ scripts.lib.loot.removePools(location,
  'manuscript',
  'rats:contaminated_food',
  'token_fragment',
- 'rat_upgrade_basic'] as string[]
+ 'rat_upgrade_basic']
 );
 
 scripts.lib.loot.clearPool(location, 'main');

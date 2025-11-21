@@ -21,7 +21,7 @@ scripts.lib.loot.removePools(location,
  'AE2 Crystals',
  'AE2 DUSTS',
  'botania_inject_pool',
- 'pool2'] as string[]
+ 'pool2']
 );
 
 scripts.lib.loot.removeEtriesFromPool(location, 'main', [

@@ -19,7 +19,7 @@ scripts.lib.loot.removePools(location,
  'token_fragment',
  'rat_upgrade_basic',
  'botania_inject_pool',
- 'moms_spaghetti'] as string[]
+ 'moms_spaghetti']
 );
 
 scripts.lib.loot.clearPool(location, 'main');
