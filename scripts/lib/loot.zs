@@ -169,7 +169,7 @@ function addBackpackForestryWithLoot(bagType as IItemStack, tableName as string,
         [Functions.zenscript(function(input as IItemStack, rng as IRandom, context as LootContext) as IItemStack{
             var dataTag = [] as IData;
             var slots = [] as IData;
-            if(bagType.name.endsWith('t2')){
+            if(bagType.definition.id.endsWith('t2')){
                 slots = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18',
                     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
                 ] as IData;
@@ -194,7 +194,7 @@ function addBackpackForestryWithLoot(bagType as IItemStack, tableName as string,
             return input.withTag({Slots: dataTag});
         })],
         [],
-        'lootBackpackForestry' ~ bagType.name
+        'lootBackpackForestry' ~ bagType.definition.id
     );
 }
 
