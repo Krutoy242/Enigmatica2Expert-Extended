@@ -1,4 +1,5 @@
-#modloaded loottweaker
+#modloaded loottweaker quark
+#ignoreBracketErrors
 
 import loottweaker.LootTweaker;
 import crafttweaker.item.IItemStack;

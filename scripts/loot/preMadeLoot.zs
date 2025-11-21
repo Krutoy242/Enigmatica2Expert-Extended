@@ -1,5 +1,6 @@
 #priority 1
 #modloaded loottweaker
+#ignoreBracketErrors
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;

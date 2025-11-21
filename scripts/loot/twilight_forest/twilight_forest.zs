@@ -1,4 +1,5 @@
-#modloaded loottweaker
+#modloaded loottweaker twilightforest
+#ignoreBracketErrors
 
 import loottweaker.LootTweaker;
 import crafttweaker.item.IItemStack;
