@@ -12,6 +12,8 @@ import loottweaker.LootTweaker;
 import loottweaker.vanilla.loot.Conditions;
 import mods.zenutils.DataUpdateOperation.APPEND;
 import mods.zenutils.DataUpdateOperation.REMOVE;
+import mods.zentoolforge.Toolforge;
+import modtweaker.tconstruct.ITICMaterial;
 
 #priority 10
 
@@ -108,9 +110,15 @@ function addLootToPool(tableName as string, poolName as string, lootTable as int
     }
 }
 
-function addSpecialTool(tableName as string, tool as IItemStack) as void {
+function addSpecialTool(tableName as string, tool as IItemStack, materials as string[], displayName as string) as void {
     val pool = loottweaker.LootTweaker.getTable(tableName).addPool('specialTool', 1.0f, 1.0f, 0.0f, 0.0f);
     pool.addConditions([Conditions.randomChance(0.05)]);
+    pool.addItemEntry(tool, 1, 0, 
+    [Functions.zenscript(function(input as IItemStack, rng as IRandom, context as LootContext) as IItemStack{
+      var materialList = [] as ITICMaterial[];
+      for material in materials {materialList += Toolforge.getMaterialFromID(material);}
+      return scripts.equipment.utils_tcon.addModifier(Toolforge.buildTool(tool.definition, materialList).withDisplayName(displayName), 'tconevo.artifact');
+    })], []);
 }
 
 /*

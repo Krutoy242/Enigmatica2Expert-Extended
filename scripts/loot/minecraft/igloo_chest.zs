@@ -48,4 +48,4 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.goodFood);
  
-scripts.lib.loot.addSpecialTool(location, <tconstruct:frypan>.withTag({StatsOriginal: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 4.5 as float, FreeModifiers: 3, Durability: 607, HarvestLevel: 2, Attack: 4.125 as float}, display: {Name: "Hot pan"}, Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 4.5 as float, FreeModifiers: 2, Durability: 607, HarvestLevel: 2, Attack: 4.125 as float}, Special: {Categories: ["tool", "weapon"]}, TinkerData: {Materials: ["treatedwood", "firewood"], Modifiers: ["toolleveling"]}, Modifiers: [{identifier: "ecological", color: -10144478, level: 1}, {identifier: "autosmelt", color: -3386624, level: 1}, {identifier: "toolleveling", color: 16777215, level: 1}], Traits: ["ecological", "autosmelt", "toolleveling", "tconevo.artifact"]}));
+scripts.lib.loot.addSpecialTool(location, <tconstruct:frypan>, ['treatedwood','firewood'], 'Hot pan');
