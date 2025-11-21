@@ -149,6 +149,7 @@ function addBackpackWithLoot(tableName as string, lootCommon as IData[], lootUnc
                 val x = slots[rng.nextInt(slots.length)];
                 slots = slots.deepUpdate([x],REMOVE);
                 val item = table[rng.nextInt(table.length)];
+                if(isNull(item)) continue;
                 var dataToAdd as IData = {Slot: x, Count: rng.nextInt(item.tab[0],item.tab[1]), id: item.item.id};
                 if(!isNull(item.item.tag)) dataToAdd = dataToAdd + {tag: item.item.tag};
                 if(!isNull(item.item.Damage)) dataToAdd = dataToAdd + {Damage: item.item.Damage};
@@ -186,10 +187,11 @@ function addBackpackForestryWithLoot(bagType as IItemStack, tableName as string,
                 val x = slots[rng.nextInt(slots.length)];
                 slots = slots.deepUpdate([x],REMOVE);
                 val item = table[rng.nextInt(table.length)];
+                if(isNull(item)) continue;
                 var dataToAdd as IData = {Count: rng.nextInt(item.tab[0],item.tab[1]), id: item.item.id};
                 if(!isNull(item.item.tag)) dataToAdd = dataToAdd + {tag: item.item.tag};
                 if(!isNull(item.item.Damage)) dataToAdd = dataToAdd + {Damage: item.item.Damage};
-                dataTag = dataTag.deepUpdate({`${x}`: dataToAdd},APPEND);
+                dataTag = dataTag.deepUpdate({[x]: dataToAdd},APPEND);
             }
             return input.withTag({Slots: dataTag});
         })],
@@ -218,6 +220,7 @@ function addBackpackCyclicWithLoot(tableName as string, lootCommon as IData[], l
                 val x = slots[rng.nextInt(slots.length)];
                 slots = slots.deepUpdate([x],REMOVE);
                 val item = table[rng.nextInt(table.length)];
+                if(isNull(item)) continue;
                 var dataToAdd as IData = {Slot: x, Count: rng.nextInt(item.tab[0],item.tab[1]), id: item.item.id};
                 if(!isNull(item.item.tag)) dataToAdd = dataToAdd + {tag: item.item.tag};
                 if(!isNull(item.item.Damage)) dataToAdd = dataToAdd + {Damage: item.item.Damage};
