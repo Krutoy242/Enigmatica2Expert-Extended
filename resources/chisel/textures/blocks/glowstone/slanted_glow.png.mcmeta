@@ -1,0 +1,11 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "layer": "BLOOM",
+        "type": "pattern",
+        "extra": {
+            "light": 15,
+            "size": 2
+        }
+    }
+}

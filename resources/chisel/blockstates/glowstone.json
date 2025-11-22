@@ -1,0 +1,71 @@
+{
+    "forge_marker": 1,
+    "defaults": { "model": "layered_cube_all_2" },
+    "variants": {
+        "array"               : [{ "textures": { "top_all": "chisel:blocks/glowstone/array_glow", "bot_all": "chisel:blocks/glowstone/array"} }],
+        "braid"               : [{ "textures": { "top_all": "chisel:blocks/glowstone/braid_glow", "bot_all": "chisel:blocks/glowstone/braid"                      } }],
+        "bricks-chaotic"      : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-chaotic_glow", "bot_all": "chisel:blocks/glowstone/bricks-chaotic"                      } }],
+        "bricks-cracked"      : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-cracked_glow", "bot_all": "chisel:blocks/glowstone/bricks-cracked" } }],
+        "bricks-encased"      : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-encased_glow", "bot_all": "chisel:blocks/glowstone/bricks-encased" } }],
+        "cracked"             : [{ "textures": { "top_all": "chisel:blocks/glowstone/cracked_glow", "bot_all": "chisel:blocks/glowstone/cracked" } }],
+        "cuts"                : [{ "textures": { "top_all": "chisel:blocks/glowstone/cuts_glow", "bot_all": "chisel:blocks/glowstone/cuts" } }],
+        "dent"                : [{ "textures": { "top_all": "chisel:blocks/glowstone/dent_glow", "bot_all": "chisel:blocks/glowstone/dent" } }],
+        "emboss"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/emboss_glow", "bot_all": "chisel:blocks/glowstone/emboss" } }],
+        "french-1"            : [{ "textures": { "top_all": "chisel:blocks/glowstone/french-1_glow", "bot_all": "chisel:blocks/glowstone/french-1" } }],
+        "french-2"            : [{ "textures": { "top_all": "chisel:blocks/glowstone/french-2_glow", "bot_all": "chisel:blocks/glowstone/french-2" } }],
+        "indent"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/indent_glow", "bot_all": "chisel:blocks/glowstone/indent" } }],
+        "jellybean"           : [{ "textures": { "top_all": "chisel:blocks/glowstone/jellybean_glow", "bot_all": "chisel:blocks/glowstone/jellybean" } }],
+        "largeornate"         : [{ "textures": { "top_all": "chisel:blocks/glowstone/largeornate_glow", "bot_all": "chisel:blocks/glowstone/largeornate" } }],
+        "layers"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/layers_glow", "bot_all": "chisel:blocks/glowstone/layers" } }],
+        "marker"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/marker_glow", "bot_all": "chisel:blocks/glowstone/marker" } }],
+        "mosaic"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/mosaic_glow", "bot_all": "chisel:blocks/glowstone/mosaic" } }],
+        "panel"               : [{ "textures": { "top_all": "chisel:blocks/glowstone/panel_glow", "bot_all": "chisel:blocks/glowstone/panel" } }],
+        "bricks-small"        : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-small_glow", "bot_all": "chisel:blocks/glowstone/bricks-small" } }],
+        "bricks-soft"         : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-soft_glow", "bot_all": "chisel:blocks/glowstone/bricks-soft" } }],
+        "bricks-solid"        : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-solid_glow", "bot_all": "chisel:blocks/glowstone/bricks-solid" } }],
+        "bricks-triple"       : [{ "textures": { "top_all": "chisel:blocks/glowstone/bricks-triple_glow", "bot_all": "chisel:blocks/glowstone/bricks-triple" } }],
+        "chaotic-medium"      : [{ "textures": { "top_all": "chisel:blocks/glowstone/chaotic-medium_glow", "bot_all": "chisel:blocks/glowstone/chaotic-medium" } }],
+        "chaotic-small"       : [{ "textures": { "top_all": "chisel:blocks/glowstone/chaotic-small_glow", "bot_all": "chisel:blocks/glowstone/chaotic-small" } }],
+        "circular"            : [{ "textures": { "top_all": "chisel:blocks/glowstone/circular_glow", "bot_all": "chisel:blocks/glowstone/circular" } }],
+        "prism"               : [{ "textures": { "top_all": "chisel:blocks/glowstone/prism_glow", "bot_all": "chisel:blocks/glowstone/prism" } }],
+        "ornate"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/ornate_glow", "bot_all": "chisel:blocks/glowstone/ornate" } }],
+        "road"                : [{ "textures": { "top_all": "chisel:blocks/glowstone/road_glow", "bot_all": "chisel:blocks/glowstone/road" } }],
+        "raw"                 : [{ "textures": { "top_all": "chisel:blocks/glowstone/extra/raw_glow", "bot_all": "chisel:blocks/glowstone/extra/raw" } }],
+        "tiles-large"         : [{ "textures": { "top_all": "chisel:blocks/glowstone/tiles-large_glow", "bot_all": "chisel:blocks/glowstone/tiles-large" } }],
+        "tiles-medium"        : [{ "textures": { "top_all": "chisel:blocks/glowstone/tiles-medium_glow", "bot_all": "chisel:blocks/glowstone/tiles-medium" } }],
+        "tiles-small"         : [{ "textures": { "top_all": "chisel:blocks/glowstone/tiles-small_glow", "bot_all": "chisel:blocks/glowstone/tiles-small" } }],
+        "slanted"             : [{ "textures": { "top_all": "chisel:blocks/glowstone/slanted_glow", "bot_all": "chisel:blocks/glowstone/slanted" } }],
+        "weaver"              : [{ "textures": { "top_all": "chisel:blocks/glowstone/weaver_glow", "bot_all": "chisel:blocks/glowstone/weaver" } }],
+        "zag"                 : [{ "textures": { "top_all": "chisel:blocks/glowstone/zag_glow", "bot_all": "chisel:blocks/glowstone/zag" } }],
+        "bismuth"             : [{ "textures": { "top_all": "chisel:blocks/glowstone/extra/bismuth_glow", "bot_all": "chisel:blocks/glowstone/extra/bismuth" } }],
+        "tiles-large-bismuth" : [{ "textures": { "top_all": "chisel:blocks/glowstone/extra/tiles-large-bismuth_glow", "bot_all": "chisel:blocks/glowstone/extra/tiles-large-bismuth" } }],
+        "tiles-medium-bismuth": [{ "textures": { "top_all": "chisel:blocks/glowstone/extra/tiles-medium-bismuth_glow", "bot_all": "chisel:blocks/glowstone/extra/tiles-medium-bismuth" } }],
+        "neon"                : [{ "textures": { "top_all": "chisel:blocks/glowstone/extra/neon_glow", "bot_all": "chisel:blocks/glowstone/extra/neon" } }],
+        "neon-panel"          : [{ "textures": { "top_all": "chisel:blocks/glowstone/extra/neon-panel_glow", "bot_all": "chisel:blocks/glowstone/extra/neon-panel" } }],
+        "circularct"          : [{
+            "model"   : "chisel:cube_ctm",
+            "textures": {
+                "all"          : "chisel:blocks/glowstone/circular",
+                "connected_tex": "chisel:blocks/glowstone/circular-ctm"
+            }
+        }],
+        "pillar"              : [{
+            "model"   : "cube_column_2",
+            "textures": {
+                "side": "chisel:blocks/glowstone/pillar-side",
+                "end" : "chisel:blocks/glowstone/pillar-top",
+                "side_glow": "chisel:blocks/glowstone/pillar-side_glow",
+                "end_glow" : "chisel:blocks/glowstone/pillar-top_glow"
+            }
+        }],
+        "twisted"             : [{
+            "model"   : "cube_column_2",
+            "textures": {
+                "side": "chisel:blocks/glowstone/twisted-side",
+                "end" : "chisel:blocks/glowstone/twisted-top",
+                "side_glow": "chisel:blocks/glowstone/twisted-side_glow",
+                "end_glow" : "chisel:blocks/glowstone/twisted-top_glow"
+            }
+        }]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "layer": "BLOOM",
+        "type": "ctm",
+        "textures": [
+            "chisel:blocks/voidstone/bevel-ctm_glow"
+        ],
+        "extra": {
+        "light": 15
+            }
+    }
+}

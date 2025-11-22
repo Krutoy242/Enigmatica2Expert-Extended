@@ -1,0 +1,23 @@
+{
+    "forge_marker": 1,
+    "defaults": {"model":"layered_cube_all_2"},
+    "variants": {
+        "magenta"   : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/magenta_glow", "bot_all": "chisel:blocks/voidstone/runes/magenta" } }],
+        "pink"      : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/pink_glow", "bot_all": "chisel:blocks/voidstone/runes/pink" } }],
+        "green"     : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/green_glow", "bot_all": "chisel:blocks/voidstone/runes/green" } }],
+        "lime"      : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/lime_glow", "bot_all": "chisel:blocks/voidstone/runes/lime" } }],
+        "black"     : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/black_glow", "bot_all": "chisel:blocks/voidstone/runes/black" } }],
+        "yellow"    : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/yellow_glow", "bot_all": "chisel:blocks/voidstone/runes/yellow" } }],
+        "brown"     : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/brown_glow", "bot_all": "chisel:blocks/voidstone/runes/brown" } }],
+        "cyan"      : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/cyan_glow", "bot_all": "chisel:blocks/voidstone/runes/cyan" } }],
+        "orange"    : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/orange_glow", "bot_all": "chisel:blocks/voidstone/runes/orange" } }],
+        "red"       : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/red_glow", "bot_all": "chisel:blocks/voidstone/runes/red" } }],
+        "gray"      : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/gray_glow", "bot_all": "chisel:blocks/voidstone/runes/gray" } }],
+        "blue"      : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/blue_glow", "bot_all": "chisel:blocks/voidstone/runes/blue" } }],
+        "lightblue" : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/lightblue_glow", "bot_all": "chisel:blocks/voidstone/runes/lightblue" } }],
+        "white"     : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/white_glow", "bot_all": "chisel:blocks/voidstone/runes/white" } }],
+        "purple"    : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/purple_glow", "bot_all": "chisel:blocks/voidstone/runes/purple" } }],
+        "lightgray" : [{ "textures": { "top_all": "chisel:blocks/voidstone/runes/lightgray_glow", "bot_all": "chisel:blocks/voidstone/runes/lightgray" } }]
+
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/layered_cube_all_2",
+    "textures": {
+        "top_all": "minecraft:blocks/redstone_lamp_on_bloom",
+        "bot_all": "minecraft:blocks/redstone_lamp_on"
+    }
+}

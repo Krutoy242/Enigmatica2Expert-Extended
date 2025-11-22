@@ -1,0 +1,74 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "rustic:blocks/lantern_wood",
+		"1": "rustic:blocks/lantern_wood_bits",
+		"2": "rustic:blocks/lantern_wood_glass",
+		"3": "rustic:blocks/lantern_bright",
+		"particle": "rustic:blocks/lantern_wood"
+	},
+	"elements": [
+		{
+			"name": "bottom",
+			"from": [4, 0, 4],
+			"to": [12, 4, 12],
+			"faces": {
+				"north": {"uv": [8, 8, 16, 12], "texture": "#0"},
+				"east": {"uv": [0, 12, 8, 16], "texture": "#0"},
+				"south": {"uv": [8, 12, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 8, 12], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#0"},
+				"down": {"uv": [8, 0, 16, 8], "texture": "#0"}
+			}
+		},
+		{
+			"name": "top",
+			"from": [4, 12, 4],
+			"to": [12, 16, 12],
+			"faces": {
+				"north": {"uv": [8, 8, 16, 12], "texture": "#0"},
+				"east": {"uv": [0, 12, 8, 16], "texture": "#0"},
+				"south": {"uv": [8, 12, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 8, 12], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#0"},
+				"down": {"uv": [8, 0, 16, 8], "texture": "#0"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [4, 4, 4],
+			"to": [12, 12, 12],
+			"faces": {
+				"north": {"uv": [8, 8, 16, 16], "texture": "#2"},
+				"east": {"uv": [0, 8, 8, 16], "texture": "#2"},
+				"south": {"uv": [8, 0, 16, 8], "texture": "#2"},
+				"west": {"uv": [0, 0, 8, 8], "texture": "#2"}
+			}
+		},
+		{
+			"name": "torch",
+			"from": [7, 4, 7],
+			"to": [9, 10, 9],
+			"faces": {
+				"north": {"uv": [2, 2, 4, 8], "texture": "#3"},
+				"east": {"uv": [4, 2, 6, 8], "texture": "#3"},
+				"south": {"uv": [6, 2, 8, 8], "texture": "#3"},
+				"west": {"uv": [0, 2, 2, 8], "texture": "#3"},
+				"up": {"uv": [2, 0, 4, 2], "texture": "#3"}
+			}
+		},
+		{
+			"name": "torch",
+			"from": [7, 4, 7],
+			"to": [9, 10, 9],
+			"faces": {
+				"north": {"uv": [2, 2, 4, 8], "texture": "#1"},
+				"east": {"uv": [4, 2, 6, 8], "texture": "#1"},
+				"south": {"uv": [6, 2, 8, 8], "texture": "#1"},
+				"west": {"uv": [0, 2, 2, 8], "texture": "#1"},
+				"up": {"uv": [2, 0, 4, 2], "texture": "#1"}
+			}
+		}
+	]
+}
