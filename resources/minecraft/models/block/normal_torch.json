@@ -1,8 +1,0 @@
-{
-    "parent": "block/torch_2",
-    "textures": {
-        "bot_torch": "blocks/torch_on",
-        "top_torch": "blocks/torch_on_bloom",
-        "torch": "blocks/torch_on"
-    }
-}
