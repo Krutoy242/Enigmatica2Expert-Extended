@@ -104,44 +104,42 @@ scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.goodF
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magicConsumables);
 
 val common as IData[] = [
- {tab: [2,15], item: <ic2:crushed:1>},
- {tab: [2,15], item: <ic2:crushed:2>},
- {tab: [2,15], item: <ic2:crushed:3>},
- {tab: [2,15], item: <ic2:crushed:5>},
- {tab: [2,15], item: <ic2:crushed:6>},
- {tab: [2,15], item: <ic2:crushed>},
- {tab: [2,15], item: <jaopca:item_crushedaluminium>},
- {tab: [2,15], item: <jaopca:item_crushednickel>},
- {tab: [2,15], item: <jaopca:item_crushedosmium>},
+ {tab: [2,10], item: <ic2:crushed>},
+ {tab: [2,10], item: <ic2:crushed:2>},
+ {tab: [2,10], item: <ic2:crushed:5>},
+ {tab: [2,10], item: <jaopca:item_crushedaluminium>},
+ {tab: [1,3], item: <jaopca:item_clusteraluminium>},
+ {tab: [1,3], item: <jaopca:item_clusterapatite>},
+ {tab: [1,3], item: <jaopca:item_clustercoal>},
+ {tab: [1,3], item: <jaopca:item_clusterlapis>},
+ {tab: [1,3], item: <jaopca:item_clusterredstone>},
+ {tab: [1,3], item: <thaumcraft:cluster>},
+ {tab: [1,3], item: <thaumcraft:cluster:2>},
+ {tab: [1,3], item: <thaumcraft:cluster:3>},
 ];
 
 val uncommon as IData[] = [
- {tab: [1,5], item: <jaopca:item_clusteraluminium>},
- {tab: [1,5], item: <jaopca:item_clusteramber>},
- {tab: [1,5], item: <jaopca:item_clusterapatite>},
- {tab: [1,5], item: <jaopca:item_clustercertusquartz>},
- {tab: [1,5], item: <jaopca:item_clustercoal>},
- {tab: [1,5], item: <jaopca:item_clusterdiamond>},
- {tab: [1,5], item: <jaopca:item_clusteremerald>},
- {tab: [1,5], item: <jaopca:item_clusterlapis>},
- {tab: [1,5], item: <jaopca:item_clusternickel>},
- {tab: [1,5], item: <jaopca:item_clusterosmium>},
- {tab: [1,5], item: <jaopca:item_clusterquartzblack>},
- {tab: [1,5], item: <jaopca:item_clusterredstone>},
- {tab: [1,5], item: <jaopca:item_clusteruranium>},
- {tab: [1,5], item: <thaumcraft:cluster:1>},
- {tab: [1,5], item: <thaumcraft:cluster:2>},
- {tab: [1,5], item: <thaumcraft:cluster:3>},
- {tab: [1,5], item: <thaumcraft:cluster:5>},
- {tab: [1,5], item: <thaumcraft:cluster:6>},
- {tab: [1,5], item: <thaumcraft:cluster>},
+ {tab: [2,8], item: <ic2:crushed:1>},
+ {tab: [2,8], item: <ic2:crushed:3>},
+ {tab: [1,3], item: <jaopca:item_clustercertusquartz>},
+ {tab: [1,3], item: <jaopca:item_clusteramber>},
+ {tab: [1,3], item: <jaopca:item_clusterosmium>},
+ {tab: [1,3], item: <jaopca:item_clusterquartzblack>},
+ {tab: [1,3], item: <jaopca:item_clusternickel>},
+ {tab: [2,8], item: <jaopca:item_crushednickel>},
+ {tab: [2,8], item: <jaopca:item_crushedosmium>},
+ {tab: [1,3], item: <thaumcraft:cluster:1>},
+ {tab: [1,3], item: <thaumcraft:cluster:5>},
+ {tab: [1,3], item: <thaumcraft:cluster:6>}
 ];
 
 val rare as IData[] = [
- {tab: [1,3], item: <jaopca:item_clusterplatinum>},
- {tab: [2,5], item: <jaopca:item_crushedplatinum>},
- {tab: [1,3], item: <thaumcraft:cluster:4>},
- {tab: [2,8], item: <ic2:crushed:4>},
+ {tab: [1,4], item: <ic2:crushed:4>},
+ {tab: [1,4], item: <ic2:crushed:6>},
+ {tab: [1,2], item: <jaopca:item_clusterdiamond>},
+ {tab: [1,2], item: <jaopca:item_clusteremerald>},
+ {tab: [1,2], item: <jaopca:item_clusteruranium>},
+ {tab: [1,2], item: <thaumcraft:cluster:4>}
 ];
 
 scripts.lib.loot.addBackpackPool(location);

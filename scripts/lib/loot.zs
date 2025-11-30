@@ -151,9 +151,9 @@ function addBackpackWithLoot(tableName as string, lootCommon as IData[], lootUnc
 
             for i in 0 .. rng.nextInt(48){
                 var table as IData[] = [];
-                val number = 4.0 - Math.log(rng.nextInt(1,65)) / Math.log(4);
-                if(number > 3){table = lootRare;}
-                else if(number >2){table = lootUncommon;}
+                val number = rng.nextInt(100);
+                if(number > 97){table = lootRare;}
+                else if(number > 80){table = lootUncommon;}
                 else { table = lootCommon;}
                 val x = slots[rng.nextInt(slots.length)];
                 slots = slots.deepUpdate([x],REMOVE);
