@@ -16,6 +16,7 @@ scripts.lib.loot.removePools(location,
  'rats:contaminated_food',
  'token_fragment',
  'rat_upgrade_basic',
+ 'Ender IO',
  'botania_inject_pool']
 );
 
@@ -73,6 +74,7 @@ loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 scripts.lib.loot.clearPool(location, 'pool1');
 scripts.lib.loot.addLootToPool(location, 'pool1', {
+ <advgenerators:turbine_kit_gold>      : [10, 0, 1, 3],
  <endreborn:item_end_essence>          : [50, 0, 2, 3],
  <extrautils2:suncrystal>              : [30, 0, 1, 1],
  <forestry:ash>                        : [50, 0, 2, 7],
@@ -84,7 +86,6 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
  <mia:torch_gold>                      : [100,0, 3, 16],
  <randomthings:ingredient:10>          : [20, 0, 1, 1],
  <randomthings:ingredient:11>          : [1,  0, 1, 1],
- <rats:rat_diamond>                    : [20, 0, 1, 3],
  <rats:token_fragment>                 : [5, 0, 1, 1],
  <rustic:candle_gold>                  : [20, 0, 2, 10],
  <tconstruct:spaghetti>                : [5, 0, 3, 7],

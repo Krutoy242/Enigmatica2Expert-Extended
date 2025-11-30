@@ -10,6 +10,7 @@ val location = 'minecraft:chests/woodland_mansion';
 
 scripts.lib.loot.removePools(location,
  ['rats:contaminated_food',
+ 'Ender IO',
  'pool2']
 );
 
@@ -22,9 +23,11 @@ scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.sigils
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.ancientTomes);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.thaumcraftSpells);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.baubles);
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 scripts.lib.loot.clearPool(location, 'pool1');
 scripts.lib.loot.addLootToPool(location, 'pool1', {
+ <advgenerators:turbine_kit_adv_alloy> : [5,0,1,3],
  <randomthings:ingredient:1>           : [5,0,1,3],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);

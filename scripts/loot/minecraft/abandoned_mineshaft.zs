@@ -14,6 +14,7 @@ scripts.lib.loot.removePools(location,
  'forestry_factory_items',
  'forestry_storage_items',
  'manuscript',
+ 'Ender IO',
  'spectrecoil_number',
  'rats:contaminated_food',
  'token_fragment',
@@ -55,6 +56,7 @@ scripts.lib.loot.addLootToPool(location, 'main', {
  <tconstruct:materials:16>                                   : [1,0,1,1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.tinkersModifiers);
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 scripts.lib.loot.clearPool(location, 'pool1');
 scripts.lib.loot.addLootToPool(location, 'pool1', {
@@ -92,6 +94,7 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
  <harvestcraft:tunafishsandwichitem>             : [10,0,3,7],
  <harvestcraft:watermelonjellysandwichitem>      : [10,0,3,7],
 
+ <advgenerators:turbine_kit_bronze>              : [2,0,1,3],
  <cookingforblockheads:cow_jar>                  : [10,0,1,1],
  <tconstruct:moms_spaghetti>                     : [5,0,1,2],
  <harvestcraft:minerstewitem>                    : [3,0,1,1],

@@ -11,6 +11,7 @@ val location = 'minecraft:chests/end_city_treasure';
 scripts.lib.loot.removePools(location,
  ['floralchemy_inject_pool',
  'spectrecoil_number',
+ 'Ender IO',
  'forestry_arboriculture_items']
 );
 
@@ -37,7 +38,6 @@ scripts.lib.loot.addLootToPool(location, 'main', {
  <botania:brewvial>.withTag({brewKey: "emptiness"})      : [5, 0, 1, 1],
  <botania:brewvial>.withTag({brewKey: "featherFeet"})    : [5, 0, 1, 1],
  <botania:brewvial>.withTag({brewKey: "overload"})       : [5, 0, 1, 1],
- <advgenerators:turbine_kit_enderium>                    : [20, 0, 1, 1],
 
  <enderio:item_soul_vial:1>.withTag({entityId: 'minecraft:shulker'}) : [16, 0, 1, 1],
  <enderio:item_soul_vial:1>.withTag({entityId: 'quark:stoneling'}) : [1, 0, 1, 1],
@@ -48,6 +48,7 @@ scripts.lib.loot.addLootToPool(location, 'main', {
  <mekanism:energycube>.withTag({tier: 0, mekData: {energyStored: 3.0E7}}) : [1, 0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.thaumcraftSpells);
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 loottweaker.LootTweaker.getTable(location).addPool('pool1', 1.0f, 2.0f, 0.0f, 0.0f);
 scripts.lib.loot.addLootToPool(location, 'pool1', {
@@ -63,6 +64,7 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
  <iceandfire:fire_dragon_blood>                          : [3, 0, 1, 1],
  <iceandfire:ice_dragon_blood>                           : [3, 0, 1, 1],
  <quark:diamond_heart>                                   : [3, 0, 1, 1],
+ <advgenerators:turbine_kit_enderium>                    : [10, 0, 1, 2],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.goodFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magicConsumables);

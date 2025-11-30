@@ -30,10 +30,11 @@ scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.ancien
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.baubles);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.psiSpells);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.thaumcraftSpells);
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 loottweaker.LootTweaker.getTable(location).addPool('pool1', 1.0f, 2.0f, 0.0f, 0.0f);
 scripts.lib.loot.addLootToPool(location, 'pool1', {
- <advgenerators:turbine_kit_enderium>      : [1,0,1,1],
+ <advgenerators:turbine_kit_enderium>      : [2,0,1,2],
  <astralsorcery:itemperkgem>               : [1,0,1,1],
  <astralsorcery:itemperkgem:1>             : [1,0,1,1],
  <astralsorcery:itemperkgem:2>             : [1,0,1,1],

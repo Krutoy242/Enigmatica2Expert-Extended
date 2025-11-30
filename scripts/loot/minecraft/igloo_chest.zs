@@ -29,6 +29,7 @@ scripts.lib.loot.addLootToPool(location, 'main', {
  <twilightforest:arctic_leggings>                              : [5,   0, 1, 1],
  <twilightforest:ice_bomb>                                     : [20,  0, 1, 3],    
 });
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 loottweaker.LootTweaker.getTable(location).addPool('pool1', 1.0f, 2.0f, 0.0f, 0.0f);
 scripts.lib.loot.addLootToPool(location, 'pool1', {

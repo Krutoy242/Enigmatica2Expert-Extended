@@ -11,6 +11,7 @@ val location = 'minecraft:chests/village_blacksmith';
 scripts.lib.loot.removePools(location,
  ['endreborn_inject_pool',
  'rats:contaminated_food',
+ 'Ender IO',
  'botania_inject_pool']
 );
 
@@ -45,9 +46,11 @@ scripts.lib.loot.addLootToPool(location, 'main', {
  <tconstruct:tool_rod>.withTag({Material: "bronze"})          : [5,0,1,1],
  <tconstruct:tool_rod>.withTag({Material: "certus_quartz"})   : [10,0,1,1],
 });
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 loottweaker.LootTweaker.getTable(location).addPool('pool1', 1.0f, 2.0f, 0.0f, 0.0f);
 scripts.lib.loot.addLootToPool(location, 'pool1', {
+ <advgenerators:turbine_kit_steel>           : [10,0,1,3],
  <actuallyadditions:item_food:11>            : [50,0,1,3],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.tinkersModifiers);

@@ -144,7 +144,6 @@ static ancientTomes as int[][IItemStack] = { // Total weight = 52
 static magicConsumables as int[][IItemStack] = { // Total weight = 90
  <botania:blacklotus:1>          : [2,0,1,1],
  <botania:blacklotus>            : [8,0,1,2],
- <botania:overgrowthseed>        : [10,0,1,2],
  <thaumcraft:curio:1>            : [10,  0, 1, 2],
  <thaumcraft:curio:2>            : [10,  0, 1, 2],
  <thaumcraft:curio:4>            : [10,  0, 1, 2],
@@ -175,7 +174,6 @@ static magicComponents as int[][IItemStack] = { // Total weight = 110
 static badFood as int[][IItemStack] = { // Total weight = 160
  <harvestcraft:zombiejerkyitem>  : [20,0,1,2],
  <rats:contaminated_food>        : [100,0,1,10],
- <rats:little_black_worm>        : [10,0,1,2],
  <tconstruct:edible:10>          : [15,0,1,2],
  <thaumcraft:brain>              : [10,0,1,2],
  <warptheory:item_something>     : [5,0,1,2],

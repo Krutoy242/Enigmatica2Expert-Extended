@@ -19,6 +19,7 @@ scripts.lib.loot.removePools(location,
  'rats:contaminated_food',
  'token_fragment',
  'rat_upgrade_basic',
+ 'Ender IO',
  'botania_inject_pool',
  'pool2']
 );
@@ -43,6 +44,7 @@ scripts.lib.loot.addLootToPool(location, 'main', {
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.sigils);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.ancientTomes);
+loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 
 scripts.lib.loot.clearPool(location, 'pool1');
 scripts.lib.loot.addLootToPool(location, 'pool1', {
