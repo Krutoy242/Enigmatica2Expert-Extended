@@ -150,3 +150,4 @@ scripts.lib.loot.addBackpackForestryWithLoot(<forestry:miner_bag_t2>, location, 
 scripts.lib.loot.addBackpackCyclicWithLoot(location, uncommon, uncommon, rare);
 
 scripts.lib.loot.addSpecialTool(location, <tconstruct:hammer>, ['dragonbone','refined_obsidian','treatedwood','osmium'],'§e§nWifewarder');
+scripts.lib.loot.addRandomCapacitor(location, 0.15f);

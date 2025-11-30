@@ -38,3 +38,4 @@ scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.upgra
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.tinkersModifiers);
 
 scripts.lib.loot.addSpecialTool(location, <tconstruct:shortbow>, ['bloodwood','ghostwood','enchanted_fabric'], 'Old Bow');
+scripts.lib.loot.addRandomCapacitor(location, 0.15f);

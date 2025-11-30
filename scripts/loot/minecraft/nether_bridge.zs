@@ -49,3 +49,4 @@ scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.thaum
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.upgrades);
 
 scripts.lib.loot.addSpecialTool(location, <tconstruct:scythe>, ['void_metal','xu_demonic_metal','plague_metal','fierymetal'], '§4Faiasaisu');
+scripts.lib.loot.addRandomCapacitor(location, 0.15f);

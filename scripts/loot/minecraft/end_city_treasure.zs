@@ -73,3 +73,4 @@ scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.thaum
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.upgrades);
 
 scripts.lib.loot.addSpecialTool(location, <tconstruct:shuriken>, ['enderium','gelid_enderium','endstone','end_steel'], '§5Whispershard');
+scripts.lib.loot.addRandomCapacitor(location, 0.15f);

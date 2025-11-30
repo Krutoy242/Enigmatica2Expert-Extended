@@ -121,6 +121,12 @@ function addSpecialTool(tableName as string, tool as IItemStack, materials as st
     })], []);
 }
 
+function addRandomCapacitor(tableName as string, chance as float) as void {
+  val pool = loottweaker.LootTweaker.getTable(tableName).addPool('enderIOCapacitor', 1.0f, 1.0f, 0.0f, 0.0f);
+  pool.addItemEntry(<enderio:item_basic_capacitor:4>, 1, 0, [{"function":"enderio:set_capacitor"}], []);
+  pool.addConditions([Conditions.randomChance(chance)]);
+}
+
 /*
 ██████╗  █████╗  ██████╗██╗  ██╗██████╗  █████╗  ██████╗██╗  ██╗    ██╗  ██╗ █████╗ ███╗   ██╗██╗     ██████╗ ███████╗██████╗ 
 ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔══██╗██╔════╝██║ ██╔╝    ██║  ██║██╔══██╗████╗  ██║██║     ██╔══██╗██╔════╝██╔══██╗

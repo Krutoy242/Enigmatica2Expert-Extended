@@ -58,3 +58,4 @@ scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.techC
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.goodFood);
 
 scripts.lib.loot.addSpecialTool(location, <tconstruct:pickaxe>, ['treatedwood','dark_steel','black_quartz'], 'Blacksmith Pickaxe');
+scripts.lib.loot.addRandomCapacitor(location, 0.15f);

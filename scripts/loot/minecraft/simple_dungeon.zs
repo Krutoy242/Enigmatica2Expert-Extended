@@ -80,3 +80,4 @@ scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magic
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.techComponents);
 
 scripts.lib.loot.addSpecialTool(location, <tconstruct:cleaver>, ['xu_magical_wood','terrasteel','silver','bloodbone'], 'Broken Hero sword');
+scripts.lib.loot.addRandomCapacitor(location, 0.15f);
