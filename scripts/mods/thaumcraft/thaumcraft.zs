@@ -1,12 +1,9 @@
 #ignoreBracketErrors
-#modloaded thaumcraft loottweaker
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
-import loottweaker.LootTweaker;
-import loottweaker.vanilla.loot.Functions;
 import thaumcraft.aspect.CTAspectStack;
 import mods.requious.AssemblyRecipe;
 
@@ -1244,13 +1241,6 @@ mods.astralsorcery.Altar.addConstellationAltarRecipe(
 
 mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:filter>);
 mods.tconstruct.Melting.removeRecipe(<liquid:gold>, <thaumcraft:inlay>);
-
-LootTweaker.getTable('thaumicaugmentation:block/loot_rare').getPool('loot_rare').addItemEntryHelper(<thaumcraft:banner_crimson_cult>, 10, 0, [Functions.setCount(1, 2)], []);
-
-// Add rare drop to loot crates
-// TODO: Seems like this tweak not working
-loottweaker.LootTweaker.getTable('thaumicaugmentation:block/loot_common').getPool('loot_common').addItemEntry(<qmd:semiconductor:1>, 1);
-loottweaker.LootTweaker.getTable('thaumicaugmentation:block/loot_uncommon').getPool('loot_uncommon').addItemEntry(<qmd:semiconductor>, 1);
 
 // Pech wand peaceful alt
 mods.bloodmagic.BloodAltar.addRecipe(<thaumcraft:pech_wand>, <redstonerepository:tool.wrench_gelid>, 4, 80000, 200, 200);
