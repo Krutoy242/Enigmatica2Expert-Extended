@@ -51,7 +51,7 @@ function broadcastMsg(langCode as string, sender as IPlayer, receiver as IPlayer
     translate: 'chat.hand_over_your_items.' ~ langCode,
     color    : col1,
     with     : [tellrawItemObj(item, 'white'), {
-      text : receiver.name,
+      text : receiver.nickname(),
       color: col2,
     }],
   }]));

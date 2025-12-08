@@ -19,16 +19,6 @@
       "When disabled: Llama trophy cannot be rendered"
     ]
   },
-  "activate_player_render_hook": {
-    "version": 0,
-    "value": "true",
-    "comment": [
-      "Purpose: add hook to player rendering code",
-      "Modified class: net.minecraft.client.renderer.entity.RenderPlayer",
-      "Known users: OpenBlocks hangglider",
-      "When disabled: code may fallback to less compatible mechanism (like replacing renderer)"
-    ]
-  },
   "horse_base_null_fix": {
     "version": 0,
     "value": "true",

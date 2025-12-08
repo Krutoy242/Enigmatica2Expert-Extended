@@ -21,17 +21,13 @@
 	}],
 	rewards: [{
 		uid: "1a12cf22",
-		type: "custom",
-		title: "{e2ee.quest.mythic}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			Count: 2,
 			tag: {
 				type: "mythic"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

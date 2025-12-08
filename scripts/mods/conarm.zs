@@ -9,14 +9,14 @@ function remakeResistance(item as IItemStack, primary as IIngredient) {
     'B R B',
     '▬ B ▬'], {
     'B': primary,
-    'R': <ore:blockMyrmexResin>,
-    '▬': <ore:ingotDarkSteel>, // Dark Steel Ingot
+    'R': <ore:myrmexResin>,
+    '▬': <ore:nuggetDarkSteel>, // Dark Steel Ingot
   });
 }
 
 remakeResistance(<conarm:resist_mat>, <ore:ingotHSLASteel>);
 remakeResistance(<conarm:resist_mat_fire>, <ore:itemBeeswax>);
-remakeResistance(<conarm:resist_mat_proj>, <ore:dragonscales>);
+remakeResistance(<conarm:resist_mat_proj>, <ore:plateSilicon>);
 remakeResistance(<conarm:resist_mat_blast>, <ore:dustAsh>);
 
 // [Traveller's Belt (Base)] from [Red Wolf Pelt][+1]

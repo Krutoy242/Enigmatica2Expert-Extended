@@ -257,11 +257,9 @@ craft.remake(<requious:adv_bee_analyzer>, ['pretty',
 });
 
 // Remake recipe, because original recipe cant actually accept any propolis (but shows any)
-// [Bituminous Peat]*6 from [Propolis]*3[+2]
-craft.reshapeless(<forestry:bituminous_peat> * 6, '▲r▲PPPPPP', {
-  '▲': <ore:dustAsh>,         // Ash
-  'r': <forestry:propolis:*>, // Propolis
-  'P': <ore:brickPeat>,       // Peat
+craft.reshapeless(<forestry:bituminous_peat> * 8, 'PPPPrPPPP', {
+  'r': <forestry:propolis:*>,
+  'P': <ore:brickPeat>,
 });
 
 // Bitumen from peat

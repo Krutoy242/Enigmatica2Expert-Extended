@@ -5,6 +5,6 @@ craft.remake(<villagercontracts:contract>, ['pretty',
   'S R',
   'M M'], {
   'M': <extrautils2:decorativesolidwood>,
-  'S': <cyclicmagic:soulstone>,
+  'S': <tconstruct:materials:19>,
   'R': <twilightforest:raven_feather>,
 });

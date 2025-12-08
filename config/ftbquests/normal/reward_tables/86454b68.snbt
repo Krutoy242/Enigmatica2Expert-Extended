@@ -3,6 +3,10 @@
 	loot_size: 1,
 	rewards: [{
 		item: "thermalexpansion:frame 1 148"
+	},{
+		item: "draconicevolution:infused_obsidian",
+		icon: "draconicevolution:infused_obsidian 64",
+		count: 64
 	},
 	{
 		icon: {
@@ -21,11 +25,6 @@
 		count: 64
 	},
 	{
-		icon: "thermalfoundation:glass 64 7",
-		item: "thermalfoundation:glass 1 7",
-		count: 64
-	},
-	{
 		item: {
 			id: "aeadditions:certustank",
 			tag: {
@@ -39,12 +38,12 @@
 	{
 		icon: "actuallyadditions:block_greenhouse_glass 10",
 		item: "actuallyadditions:block_greenhouse_glass",
-		count: 10
+		count: 64
 	},
 	{
 		icon: "scalinghealth:heartcontainer 10",
 		item: "scalinghealth:heartcontainer",
-		count: 10
+		count: 64
 	},
 	{
 		icon: "draconicevolution:wyvern_energy_core 3",
@@ -64,7 +63,7 @@
 	{
 		icon: {
 			id: "openblocks:tank",
-			Count: 8,
+			Count: 64,
 			tag: {
 				tank: {
 					FluidName: "redstone",
@@ -81,12 +80,12 @@
 				}
 			}
 		},
-		count: 8
+		count: 64
 	},
 	{
 		icon: {
 			id: "openblocks:tank",
-			Count: 8,
+			Count: 64,
 			tag: {
 				tank: {
 					FluidName: "glowstone",
@@ -103,7 +102,7 @@
 				}
 			}
 		},
-		count: 8
+		count: 64
 	},
 	{
 		item: {
@@ -183,16 +182,6 @@
 		count: 32
 	},
 	{
-		icon: "avaritia:cosmic_meatballs 8",
-		item: "avaritia:cosmic_meatballs",
-		count: 8
-	},
-	{
-		icon: "avaritia:ultimate_stew 8",
-		item: "avaritia:ultimate_stew",
-		count: 8
-	},
-	{
 		item: {
 			id: "mekanism:gastank",
 			tag: {
@@ -207,9 +196,9 @@
 		}
 	},
 	{
-		icon: "appliedenergistics2:material 16 47",
-		item: "appliedenergistics2:material 1 47",
-		count: 16
+		icon: "avaritia:singularity 64",
+		item: "avaritia:singularity",
+		count: 64
 	},
 	{
 		item: {
@@ -222,19 +211,14 @@
 		}
 	},
 	{
-		icon: "iceandfire:fire_dragon_heart 8",
+		icon: "iceandfire:fire_dragon_heart 16",
 		item: "iceandfire:fire_dragon_heart",
-		count: 8
+		count: 16
 	},
 	{
-		icon: "iceandfire:ice_dragon_heart 8",
+		icon: "iceandfire:ice_dragon_heart 16",
 		item: "iceandfire:ice_dragon_heart",
-		count: 8
-	},
-	{
-		icon: "deepmoblearning:pristine_matter_twilight_swamp 64",
-		item: "deepmoblearning:pristine_matter_twilight_swamp",
-		count: 64
+		count: 16
 	},
 	{
 		icon: "deepmoblearning:living_matter_extraterrestrial 64",
@@ -274,37 +258,14 @@
 		count: 32
 	},
 	{
-		item: "thaumicwonders:alchemist_stone"
-	},
-	{
-		icon: "thaumcraft:sanity_soap 64",
-		item: "thaumcraft:sanity_soap",
-		count: 64
-	},
-	{
 		icon: "thaumicwonders:primordial_grain 64",
 		item: "thaumicwonders:primordial_grain",
-		count: 64
-	},
-	{
-		icon: "contenttweaker:conglomerate_of_coal 64",
-		item: "contenttweaker:conglomerate_of_coal",
 		count: 64
 	},
 	{
 		icon: "contenttweaker:conglomerate_of_life 32",
 		item: "contenttweaker:conglomerate_of_life",
 		count: 32
-	},
-	{
-		icon: "contenttweaker:conglomerate_of_sun 64",
-		item: "contenttweaker:conglomerate_of_sun",
-		count: 64
-	},
-	{
-		icon: "minecraft:dragon_egg 2",
-		item: "minecraft:dragon_egg",
-		count: 2
 	},
 	{
 		item: {
@@ -674,9 +635,33 @@
 		item: "additionalcompression:dirt_compressed 1 9"
 	},
 	{
-		icon: "draconicevolution:ender_energy_manipulator 8",
-		item: "draconicevolution:ender_energy_manipulator",
-		count: 8
+		item: {
+			id: "storagedrawers:customdrawers",
+			tag: {
+				amount: 0L,
+				MatT: {id:"immersiveengineering:storage",Count:1,Damage:2s},
+				MatS: {id:"chisel:blockplatinum",Count:1,Damage:4s},
+				tile: {
+					Upgrades:[
+						{Slot:0b,Count:1,Damage:3s,id:"storagedrawers:upgrade_storage"},
+						{Slot:1b,Count:1,Damage:2s,id:"storagedrawers:upgrade_storage"},
+						{Slot:2b,Count:1,Damage:0s,id:"storagedrawers:upgrade_void"},
+						{Slot:3b,Count:1,Damage:1s,id:"storagedrawers:upgrade_status"}
+					],
+					Cap:80,
+					Lock:3b,
+					Qua:1b,
+					id:"storagedrawers:basicdrawers.1",
+					Dir:3b,
+					y:72,
+					MatS:{id:"chisel:blockplatinum",Count:1,Damage:4s},
+					Drawers:[
+						{Count:6400,Item:{id:"thermalfoundation:glass",Count:1,Damage:7s}}
+					],
+					MatT:{id:"immersiveengineering:storage",Count:1,Damage:2s}
+				}
+			}
+		}
 	}],
 	loot_crate: {
 		string_id: "legendary",

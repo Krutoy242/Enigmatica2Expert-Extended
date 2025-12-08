@@ -43,3 +43,11 @@ zenClass MixinDiviningRodHandler {
         return 20;
     }
 }
+
+#mixin {targets: "lumien.randomthings.block.spectretree.BlockSpectreLeaf"}
+zenClass MixinBlockSpectreLeaf {
+    #mixin ModifyConstant {method: "dropApple", constant: {intValue: 55}}
+    function increaseEctoplasmDrop(value as int) as int {
+        return 2;
+    }
+}

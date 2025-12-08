@@ -1,0 +1,19 @@
+{
+  "armormodifier": "emerald_armor",
+  "text": [
+    {
+      "text": "Wenn du deine Rüstung mit Smaragden bedeckst, erhöht sich ihre Widerstandsfähigkeit und der Neid unter den Dorfbewohnern steigt."
+    }
+  ],
+  "effects": [
+    "Erhöhung der Grundhaltbarkeit um 100%",
+    "Einmalige Verwendung",
+    "Empörend!"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

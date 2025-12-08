@@ -20,7 +20,7 @@ op.onGrant(function(player as IPlayer) as void {
   player.native.capabilities.isFlying = true;
   player.native.sendPlayerAbilities();
 
-  server.commandManager.executeCommandSilent(server, '/tellraw @a ["# `' ~ player.name
+  server.commandManager.executeCommandSilent(server, '/tellraw @a ["# `' ~ player.nickname()
     ~ '` just reached the §e**§lOmnipotence§e**§r ```Congrats!```'
     ~ '"]');
 });
@@ -32,7 +32,7 @@ op.onRevoke(function(player as IPlayer) as void {
   player.native.capabilities.isFlying = false;
   player.native.sendPlayerAbilities();
 
-  server.commandManager.executeCommandSilent(server, '/tellraw @a ["`' ~ player.name
+  server.commandManager.executeCommandSilent(server, '/tellraw @a ["`' ~ player.nickname()
     ~ '` just lost the §e*§lOmnipotence§e*§r'
     ~ '"]');
 });

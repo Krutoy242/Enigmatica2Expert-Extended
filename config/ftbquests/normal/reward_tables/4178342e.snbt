@@ -29,12 +29,9 @@
 		}
 	},
 	{
-		item: "enderio:item_dark_steel_upgrade"
-	},
-	{
-		icon: "enderio:item_extract_speed_upgrade 8",
+		icon: "enderio:item_extract_speed_upgrade 16",
 		item: "enderio:item_extract_speed_upgrade",
-		count: 8
+		count: 16
 	},
 	{
 		icon: "extrautils2:ingredients 4 6",
@@ -54,28 +51,30 @@
 	{
 		icon: {
 			id: "forestry:chipsets",
-			Count: 3,
+			Count: 16,
 			tag: {
-				T: 2s,
+				T: 3s,
 				CA.I1: "forestry.machine.speed.boost.2",
 				CA.I2: "forestry.machine.speed.boost.2",
+				CA.I3: "forestry.machine.speed.boost.2",
 				CA.I0: "forestry.machine.speed.boost.2",
 				LY: "forestry.machine.upgrade"
 			},
-			Damage: 2s
+			Damage: 3s
 		},
 		item: {
 			id: "forestry:chipsets",
 			tag: {
-				T: 2s,
+				T: 3s,
 				CA.I1: "forestry.machine.speed.boost.2",
 				CA.I2: "forestry.machine.speed.boost.2",
+				CA.I3: "forestry.machine.speed.boost.2",
 				CA.I0: "forestry.machine.speed.boost.2",
 				LY: "forestry.machine.upgrade"
 			},
-			Damage: 2s
+			Damage: 3s
 		},
-		count: 3
+		count: 16
 	},
 	{
 		icon: "thermaldynamics:duct_32 48 6",
@@ -93,37 +92,7 @@
 		count: 12
 	},
 	{
-		icon: "ic2:upgrade 12 1",
-		item: "ic2:upgrade 1 1",
-		count: 12
-	},
-	{
-		icon: "industrialforegoing:conveyor_upgrade 64",
-		item: "industrialforegoing:conveyor_upgrade",
-		count: 64
-	},
-	{
-		icon: "industrialforegoing:conveyor_upgrade 64 1",
-		item: "industrialforegoing:conveyor_upgrade 1 1",
-		count: 64
-	},
-	{
 		item: "industrialforegoing:range_addon 1 11"
-	},
-	{
-		icon: "mctsmelteryio:upgrade 8 4",
-		item: "mctsmelteryio:upgrade 1 4",
-		count: 8
-	},
-	{
-		icon: "mctsmelteryio:upgrade 4 6",
-		item: "mctsmelteryio:upgrade 1 6",
-		count: 4
-	},
-	{
-		icon: "mekanism:tierinstaller 4 1",
-		item: "mekanism:tierinstaller 1 1",
-		count: 4
 	},
 	{
 		icon: "mekanism:tierinstaller 8",
@@ -131,99 +100,43 @@
 		count: 8
 	},
 	{
+		icon: "mekanism:tierinstaller 4 1",
+		item: "mekanism:tierinstaller 1 1",
+		count: 4
+	},
+	{
 		icon: "mekanism:tierinstaller 2 2",
 		item: "mekanism:tierinstaller 1 2",
 		count: 2
 	},
 	{
-		icon: "mekanism:energyupgrade 8",
-		item: "mekanism:energyupgrade",
-		count: 8
-	},
-	{
-		icon: "mekanism:speedupgrade 8",
-		item: "mekanism:speedupgrade",
-		count: 8
-	},
-	{
 		item: "mekanism:tierinstaller 1 3"
 	},
 	{
-		item: "minecraft:skull 1 5"
+		item: "minecraft:skull 2 5"
 	},
 	{
-		item: {
-			id: "minecraft:enchanted_book",
-			tag: {
-				StoredEnchantments: [{
-					lvl: 6s,
-					id: 34s
-				}]
-			}
-		}
+		icon: "mekanism:energyupgrade 32",
+		item: "mekanism:energyupgrade",
+		count: 32
 	},
 	{
-		item: {
-			id: "minecraft:enchanted_book",
-			tag: {
-				StoredEnchantments: [{
-					lvl: 10s,
-					id: 32s
-				}]
-			}
-		}
+		icon: "mekanism:speedupgrade 32",
+		item: "mekanism:speedupgrade",
+		count: 32
 	},
 	{
-		item: {
-			id: "minecraft:enchanted_book",
-			tag: {
-				StoredEnchantments: [{
-					lvl: 6s,
-					id: 21s
-				}]
-			}
-		}
-	},
-	{
-		item: {
-			id: "minecraft:enchanted_book",
-			tag: {
-				StoredEnchantments: [{
-					lvl: 6s,
-					id: 35s
-				}]
-			}
-		}
-	},
-	{
-		item: {
-			id: "minecraft:enchanted_book",
-			tag: {
-				StoredEnchantments: [{
-					lvl: 10s,
-					id: 48s
-				}]
-			}
-		}
-	},
-	{
-		icon: "nuclearcraft:upgrade 8 1",
+		icon: "nuclearcraft:upgrade 32 1",
 		item: "nuclearcraft:upgrade 1 1",
-		count: 8
+		count: 32
 	},
 	{
-		icon: "nuclearcraft:upgrade 8",
+		icon: "nuclearcraft:upgrade 32",
 		item: "nuclearcraft:upgrade",
-		count: 8
+		count: 32
 	},
 	{
 		item: "rats:rat_upgrade_god"
-	},
-	{
-		item: "rats:rat_upgrade_buccaneer"
-	},
-	{
-		item: "rats:rat_upgrade_extreme_energy"
 	},
 	{
 		item: {
@@ -235,6 +148,11 @@
 		icon: "rats:rat_upgrade_speed 4",
 		item: "rats:rat_upgrade_speed",
 		count: 4
+	},
+	{
+		icon: "rats:rat_upgrade_combined 3",
+		item: "rats:rat_upgrade_combined",
+		count: 3
 	},
 	{
 		icon: "thermaldynamics:servo 8 4",
@@ -290,6 +208,17 @@
 		count: 2
 	},
 	{
+		item: "draconicevolution:reactor_component"
+	},
+	{
+		item: "environmentaltech:solar_cell_aethium"
+	},
+	{
+		icon: "draconicevolution:ender_energy_manipulator 2",
+		item: "draconicevolution:ender_energy_manipulator",
+		count: 2
+	},
+	{
 		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
@@ -321,6 +250,9 @@
 				tier: 4
 			}
 		}
+	},
+	{
+		item: "tconevo:material 1 2"
 	}],
 	loot_crate: {
 		string_id: "rare",

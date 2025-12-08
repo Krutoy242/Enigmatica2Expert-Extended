@@ -43,7 +43,7 @@ function getPlayersList(isVoted as bool = false) as string {
   var list = '';
   for p in server.players {
     if (playerPending.contains(p.uuid) == isVoted)
-      list ~= `${list != '' ? ', ' : ''}§5${p.name}§r`;
+      list ~= `${list != '' ? ', ' : ''}§5${p.nickname()}§r`;
   }
   return list;
 }
@@ -76,7 +76,7 @@ cmd.execute = function (command, server, sender, args) {
     // We are first player who activated
     playerPending.add(player.uuid);
     sendSingle(player, 'you_want', voteTime / 20);
-    send('query', 'unpending', player.name);
+    send('query', 'unpending', player.nickname());
 
     player.world.catenation().sleep(voteTime).then(function (world, ctx) { cancelVoting(); }).start();
   }

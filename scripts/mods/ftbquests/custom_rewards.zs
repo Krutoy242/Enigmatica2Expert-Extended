@@ -2,11 +2,12 @@
 #reloadable
 #priority -2000
 
-import crafttweaker.player.IPlayer;
 import crafttweaker.data.IData;
-import native.com.feed_the_beast.ftbquests.quest.Chapter;
+import crafttweaker.player.IPlayer;
+import native.com.feed_the_beast.ftblib.lib.data.ForgePlayer;
 import native.com.feed_the_beast.ftbquests.quest.ServerQuestFile;
-import native.com.feed_the_beast.ftbquests.util.ServerQuestData;
+import native.com.feed_the_beast.ftbutilities.data.FTBUtilitiesPlayerData;
+import native.net.minecraft.stats.StatList;
 
 /**
  * Counts how many chapters a player has finished.
@@ -31,9 +32,13 @@ function getChapterCount(player as IPlayer) as int[] {
   return [completedChapters - 1, totalChapters - 1];
 }
 
-function formatPlayTime(player as IPlayer) as string {
-  val t = player.readStat(mods.zenutils.PlayerStat.getBasicStat('stat.playOneMinute')) as double;
-  val days = t / (20.0 * 60.0 * 60.0 * 24.0);
+function getPlayOneMinute(player as ForgePlayer) as int {
+  if (isNull(player)) return 0;
+  return player.stats().readStat(StatList.PLAY_ONE_MINUTE);
+}
+
+function formatPlayTimeFromTicks(t as int) as string {
+  val days = (t as double) / (20.0 * 60.0 * 60.0 * 24.0);
   val hours = days * 24.0 - (days as int * 24);
   val mins = hours * 60.0 - (hours as int * 60);
   val secs = mins * 60.0 - (mins as int * 60);
@@ -43,6 +48,10 @@ function formatPlayTime(player as IPlayer) as string {
     ~ (mins >= 1 && days < 1 ? ' ' ~ mins as int ~ 'm' : '')
     ~ (secs >= 1 && hours < 1 ? ' ' ~ secs as int ~ 's' : '')
   ).trim();
+}
+
+function formatPlayTime(player as ForgePlayer) as string {
+  return formatPlayTimeFromTicks(getPlayOneMinute(player));
 }
 
 // function notifyEveryone(player as IPlayer, langCode as string, titleCode as string) as string {
@@ -57,32 +66,123 @@ function formatPlayTime(player as IPlayer) as string {
 //   );
 // }
 
+static chapterNames as string[string] = {
+  'actually additions': '🧰Actually Additions',
+  'advanced rocketry': '🚀Advanced Rocketry',
+  'applied energetics': '🗃️AE2',
+  'astral sorcery': '🌠Astral Sorcery',
+  'blood magic': '🩸Blood Magic',
+  'draconic evolution': '🐲Draconic Evolution',
+  'ender io': '🔮Ender Io',
+  'environmental tech': '⬛Environmental Tech',
+  'extra utilities': '👜Extra Utilities 2',
+  'immersive engineer': '🛢️Immersive Engineer',
+  'immersive engineering': '🛢️Immersive Engineer',
+  'industrial foregoing': '🏭Industrial Foregoing',
+  'nuclearcraft overh': '☢️NuclearCraft',
+  'nuclearcraft overhauled': '☢️NuclearCraft',
+  'thermal expansion': '🌡️Thermal Expansion',
+  'twilight forest': '🌳The Twilight Forest',
+  animals: '🐄Animals',
+  botania: '🌷Botania',
+  computers: '🖥️Computers',
+  forestry: '🌴Forestry',
+  industrialcraft: '🔌IC2',
+  mekanism: '⚙️Mekanism',
+  rftools: '🎛️Rftools',
+  thaumcraft: '🦯Thaumcraft',
+  utils: '🍎Utilities',
+};
+
+function getChapterName(e as mods.zenutils.ftbq.CustomRewardEvent) as string {
+  // This text has different values on client and server
+  // We need to uniform it on both sides
+  val text = e.reward.quest.chapter.titleText.formattedText;
+  val chapID = utils.toUpperCamelCase(text.replaceAll('q\\.(.+)\\.name', '$1').replaceAll('§.', ''));
+
+  print('Chapter name: ' ~ (chapterNames[chapID] ?? chapID));
+  return chapterNames[chapID.toLowerCase()] ?? chapID;
+}
+
 events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
+  val universe = ServerQuestFile.INSTANCE.universe;
+  val forgePlayer = !isNull(universe) ? universe.getPlayer(e.player.getUUID()) : null;
+
   /**
   * Endorse player with message to whole server as its finished chapter
   */
-  if (e.reward.tags has 'chapcomplete') {
-    val chapterName = utils.toUpperCamelCase(
-      e.reward.quest.chapter.titleText.formattedText.replaceAll('q\\.(.+)\\.name','$1')
-    );
+  if (e.reward.tags has 'chapstart' || e.reward.tags has 'chapcomplete') {
+    val chapterName = getChapterName(e);
     val chaps = getChapterCount(e.player);
-    val data as IData = {
-      text: "## `", color: "dark_gray", extra: [
-        {text: e.player.name, color: "aqua"},
-        "` ",
-        {text: "has fully completed the", color: "gray"},
-        " __**",
-        {text: chapterName, underlined: true, color: "yellow"},
-        "**__ ",
-        {text: "chapter after ", color: "gray"},
-        {text: formatPlayTime(e.player), color: "gold"},
-        " of play! [",
-        { text: chaps[0], color: 'gray' },
-        "/",
-        { text: chaps[1], color: 'gray' },
-        "] ```Congrats!```",
-    ]};
-    server.commandManager.executeCommandSilent(server, '/tellraw @a ' ~ data.toJson());
+
+    var style_name as string;
+    var style_time as string;
+    var style_post as string;
+    var style_paragraph as string;
+    var style_event as string;
+    var style_isShort = false;
+    var playerList as IData = null;
+
+    if (e.reward.tags has 'chapstart') {
+      style_paragraph = '-# `';
+      style_event = 'has begun the';
+      style_isShort= true;
+    } else {
+      style_paragraph = '## `';
+      style_event = 'has fully completed the';
+    }
+
+    if (isNull(forgePlayer) || isNull(forgePlayer.team) || forgePlayer.team.members.length <= 1) {
+      // Solo player or team of 1
+      style_name = e.player.nickname();
+      style_time = formatPlayTime(forgePlayer);
+      style_post = 'of play!';
+    }
+    else {
+      // Team with 2+ players
+      val team = forgePlayer.team;
+      val allMembers = team.members;
+
+      var totalPlayTimeTicks = 1;
+      for member in allMembers {
+        totalPlayTimeTicks += getPlayOneMinute(member);
+      }
+
+      playerList = [] as IData;
+      var first = true;
+      for member in allMembers {
+        val playerData = FTBUtilitiesPlayerData.get(member);
+        val name = playerData.nickname.isEmpty() ? member.name : playerData.nickname;
+        playerList += [{
+          text : '', color: 'dark_gray', extra: [
+            first ? '`' : ', `',
+            {text: name, color: member.isOnline() ? 'white' : 'gray'},
+            '` ', {text: formatPlayTime(member), color: 'gray'},
+          ],
+        }] as IData;
+        first = false;
+      }
+
+      style_name = team.title.unformattedText;
+      style_time = formatPlayTimeFromTicks(totalPlayTimeTicks);
+      style_post = 'of combined play!';
+    }
+
+    server.commandManager.executeCommandSilent(server, '/tellraw @a ' ~ ({
+      text : style_paragraph, color: 'dark_gray', extra: [
+        {text: style_name, color: 'aqua'}, '` ', {text: style_event, color: 'gray'},
+        ' __**', {text: chapterName, underlined: true, color: 'yellow'}, '**__ ',
+        {text: style_isShort ? 'questline!' : 'chapter after ', color: 'gray'}]
+        + (style_isShort ? [] : [
+        {text: style_time, color: 'gold'},
+        {text: ' ' ~ style_post ~' ', color: 'gray'}, '[',
+        { text: chaps[0], color: 'gray' }, '/', { text: chaps[1], color: 'gray' },
+        '] ```Congrats!```',
+      ])} as IData).toJson());
+
+    if (!style_isShort && !isNull(playerList))
+      server.commandManager.executeCommandSilent(server, '/tellraw @a ' ~ ({
+        text : '-# ', color: 'dark_gray', extra: playerList} as IData).toJson());
   }
 
   /**
@@ -97,49 +197,20 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
 
       // notifyEveryone(e.player, 'e2ee.player_achieved', e.reward.quest.titleText.formattedText);
       val data as IData = {
-        text: "### `", color: "dark_gray", extra: [
-          {text: e.player.name, color: "aqua"},
-          "` ",
-          {text: "achieved", color: "gray"},
-          " __",
-          {text: 'Conflux ' ~ k.toUpperCase(), underlined: true, color: "gray"},
-          "__ ",
-          {text: "after ", color: "gray"},
-          {text: formatPlayTime(e.player), color: "gold"},
-          " of play! ```Congrats!```"
-      ]};
+        text : '### `', color: 'dark_gray', extra: [
+          {text: e.player.nickname(), color: 'aqua'},
+          '` ',
+          {text: 'achieved', color: 'gray'},
+          ' __',
+          {text: 'Conflux ' ~ k.toUpperCase(), underlined: true, color: 'gray'},
+          '__ ',
+          {text: 'after ', color: 'gray'},
+          {text: formatPlayTime(forgePlayer), color: 'gold'},
+          ' of play! ```Congrats!```',
+        ]};
       server.commandManager.executeCommandSilent(server, '/tellraw @a ' ~ data.toJson());
     }
   }
-
-/*Inject_js{
-globSync('config/ftbquests/normal/chapters/*'+'/*.snbt')
-    .forEach((f) => {
-      const text = loadText(f)
-      const replaced = text.replace(
-        /rewards: \[\{\n\s+uid: "(\w+)",\s+type: "item",\s+item: \{\s+id: "ftbquests:lootcrate",\s+tag: \{\s+type: "(\w+)"(?:\s+(?:\},?|count: \d+)){3,4}\]/g,
-      `rewards: [{
-		uid: "$1",
-		type: "custom",
-		title: "{e2ee.quest.$2}",
-		icon: {
-			id: "ftbquests:lootcrate",
-			Count: 2,
-			tag: {
-				type: "$2"
-			}
-		},
-		tags: [
-			"loot"
-		]
-	}]`
-      )
-      if (text !== replaced) saveText(replaced, f)
-    })
-return "// Done!"
-}*/
-// Done!
-/**/
 
   /**
   * Give loot crates based on player's difficulty level
@@ -149,10 +220,10 @@ return "// Done!"
     val diff = scripts.lib.mod.scalinghealth.getPlayerDimDifficulty(e.player.getUUID(), e.player.world.dimension);
     e.player.give(e.reward.icon * (
       diff < 1.0 ? amount + 1 // Mostly zero difficulty +1 chest
-      : diff > 1000 ? max(1, amount - 1) // max difficulty -1 chest
-      : amount
+        : diff > 1000 ? max(1, amount - 1) // max difficulty -1 chest
+          : amount
     ));
-    if(diff < 1.0) {
+    if (diff < 1.0) {
       e.player.sendRichTextStatusMessage(
         crafttweaker.text.ITextComponent.fromTranslation('e2ee.quest.loot.additional')
       );
@@ -174,11 +245,11 @@ events.onCustomTask(function (e as mods.zenutils.ftbq.CustomTaskEvent) {
   if (e.task.hasTag('schematica')) {
     e.checkTimer = 10;
     e.checker = function (player, currentProgress) {
-      return (
-        isNull(player.data.enigmatica)
+      return isNull(player.data.enigmatica)
         || isNull(player.data.enigmatica.usedSchematica)
         || player.data.enigmatica.usedSchematica.asBool() != true
-      ) ? 0 : 1;
+        ? 0
+        : 1;
     };
   }
   if (e.task.hasTag('omnipotence')) {
@@ -194,17 +265,18 @@ events.onPlayerLoggedIn(function (e as crafttweaker.event.PlayerLoggedInEvent) {
 
   for k in 'i ii iii iv v'.split(' ') {
     val conflux = 'conflux_' ~ k;
-    if (e.player.hasGameStage(conflux))
+    if (e.player.hasGameStage(conflux)) {
       server.commandManager.executeCommandSilent(server,
         '/ranks add ' ~ e.player.name ~ ' ' ~ conflux
       );
+    }
   }
 });
 
 // Catch message from client that player opened schematica GUI
 mods.zenutils.NetworkHandler.registerClient2ServerMessage(
   'openGuiSchematicLoad',
-  function(server, byteBuf, player) {
+  function (server, byteBuf, player) {
     player.update({ enigmatica: { usedSchematica: true } });
   }
 );

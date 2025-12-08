@@ -119,7 +119,7 @@ if (await p.confirm({ message: `Generate Changelog?` }) === true) {
 
   await Promise.all([
     $$`tsx E:/dev/mc-icons/src/cli.ts ${changelogPath} --silent --no-short --modpack=e2ee --treshold=2`,
-    $$`git update-index --no-skip-worktree ${skipWorktreeList}`,
+    retry(2, '1s', async () => $$`git update-index --no-skip-worktree ${skipWorktreeList}`),
   ])
 
   p.note('Now manually fix changelog and close file', '✍ ')

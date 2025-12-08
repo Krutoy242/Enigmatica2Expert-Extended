@@ -69,17 +69,13 @@
 	}],
 	rewards: [{
 		uid: "e80d5a87",
-		type: "custom",
-		title: "{e2ee.quest.common}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			Count: 2,
 			tag: {
-				type: "common"
+				type: "food"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

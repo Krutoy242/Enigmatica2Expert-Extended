@@ -4,10 +4,10 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
-furnace.setFuel(<contenttweaker:conglomerate_of_coal>, 60000);
-furnace.setFuel(<contenttweaker:blasted_coal>, 120000);
-furnace.setFuel(<contenttweaker:empowered_phosphor>, 180000);
-furnace.setFuel(<contenttweaker:saturated_phosphor>, 450000);
+furnace.setFuel(<contenttweaker:conglomerate_of_coal>, 240000);
+furnace.setFuel(<contenttweaker:blasted_coal>, 240000);
+furnace.setFuel(<contenttweaker:empowered_phosphor>, 1000000);
+furnace.setFuel(<contenttweaker:saturated_phosphor>, 1500000);
 
 // Tallow into biomass
 scripts.process.compress(<ore:tallow> * 64, <contenttweaker:compressed_tallow>, 'except: compressor');
@@ -91,7 +91,7 @@ mods.inworldcrafting.FluidToItem.transform(<contenttweaker:saturated_phosphor> *
 scripts.process.alloy([<contenttweaker:blasted_coal>, <forestry:phosphor>], <contenttweaker:empowered_phosphor> * 2, 'Only: Kiln Induction');
 
 // Conglomerate Of Coal
-mods.inworldcrafting.ExplosionCrafting.explodeBlockRecipe(<contenttweaker:blasted_coal> * 2, <contenttweaker:conglomerate_of_coal>);
+mods.inworldcrafting.ExplosionCrafting.explodeBlockRecipe(<contenttweaker:blasted_coal> * 4, <contenttweaker:conglomerate_of_coal>);
 craft.make(<contenttweaker:conglomerate_of_coal>, ['pretty',
   'L B L',
   '▲ i ▲',

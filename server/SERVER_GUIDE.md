@@ -13,8 +13,11 @@
 4) Launch the server with "**start-server.bat**".
     > On Linux, use "start-server.sh" (you cannot run the script via sh directly).
 
-> ℹ Note:  
+> [!NOTE]  
 > The `serverstarter` script fetches the modpack directly from GitHub. If this isn't possible, you can manually modify the source by changing the `modpackUrl` value in the `server-setup-config.yaml` file.
+
+> [!TIP]  
+> You can run the server on Java 21+. See more info [here](https://cleanroommc.com/wiki/end-user-guide/installation/install-server) or [here](https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/500).
 
 ## Hosting
 

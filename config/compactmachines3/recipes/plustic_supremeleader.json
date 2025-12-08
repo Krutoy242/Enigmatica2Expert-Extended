@@ -1,0 +1,22 @@
+{
+  "name": "compactmachines3:plustic_supremeleader",
+
+  "target-item": "minecraft:spawn_egg",
+  "target-nbt": "{EntityTag:{id:\"plustic:supremeleader\"}}",
+
+  "catalyst": "engineersdecor:sign_caution",
+  "catalyst-nbt": "{display:{LocName:\"tooltips.lang.not_compact_recipe\"}}",
+
+  "input-types": {
+    "a": { "id": "additionalcompression:dustgunpowder_compressed", "ignore-meta": true },
+    "x": { "id": "contenttweaker:conglomerate_of_life", "ignore-meta": true }
+  },
+  "shape": [
+    [
+      ["_", "x", "_"]
+    ],
+    [
+      ["_", "a", "_"]
+    ]
+  ]
+}

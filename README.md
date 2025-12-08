@@ -8,7 +8,7 @@
 
 **Enigmatica 2: Expert - Extended** is unofficial continuation of [Enigmatica 2: Expert](https://www.curseforge.com/minecraft/modpacks/enigmatica2expert)
 
-The aim of the addon is to make `E2E` even **more interesting** and **challenging**. Balance it out as much as possible, but leave the most interesting stuff untouched.
+The aim of the modpack is to make `E2E` even **more interesting** and **challenging**. Balance it out as much as possible, but leave the most interesting stuff untouched.
 
 -----------------
 

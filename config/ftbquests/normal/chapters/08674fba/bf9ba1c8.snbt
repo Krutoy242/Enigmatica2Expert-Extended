@@ -49,16 +49,12 @@
 	}],
 	rewards: [{
 		uid: "044452a6",
-		type: "custom",
-		title: "{e2ee.quest.rare}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
 				type: "rare"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

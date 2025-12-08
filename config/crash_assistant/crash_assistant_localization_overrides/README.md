@@ -11,8 +11,8 @@ We welcome contributions for new languages or improvements to existing ones!
 To contribute, please create a **Pull Request** on our official GitHub repository with your new or modified language
 files.
 
-* **GitHub Repository:
-  ** [https://github.com/KostromDan/Crash-Assistant/](https://github.com/KostromDan/Crash-Assistant/)
+* **GitHub Repository:**
+  [https://github.com/KostromDan/Crash-Assistant/](https://github.com/KostromDan/Crash-Assistant/)
 * **Language File Location:** The source files are located at
   `common_config/src/main/resources/crash_assistant_localization` in the repository.
 
@@ -50,6 +50,7 @@ You can use the `general.priority_lang_for_overrides` config option to specify a
 
 ### ⚠️ Important Warning
 
-Standard Minecraft localization methods, such as **resource packs** or scripting mods like **KubeJS**, **will not work
-**. Crash Assistant uses its own internal system to load language files to ensure it can display messages correctly,
-even when the main game has crashed or hasn't fully loaded. Please use the override folder as described above.
+Standard Minecraft localization methods, such as **resource packs** or scripting mods like **KubeJS**,
+**will not work**. Crash Assistant uses its own internal system to load language files to ensure it can display
+messages correctly, even when the main game has crashed or hasn't fully loaded.
+Please use the override folder as described above.

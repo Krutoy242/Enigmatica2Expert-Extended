@@ -300,11 +300,6 @@
 		count: 3
 	},
 	{
-		icon: "tconevo:material 32 2",
-		item: "tconevo:material 1 2",
-		count: 32
-	},
-	{
 		item: {
 			id: "enderio:item_stellar_alloy_pickaxe",
 			tag: {

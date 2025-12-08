@@ -65,6 +65,14 @@ zenClass CPurge {
     return this;
   }
 
+  function aspects() as CPurge {
+    if (isNull(ingr)) return this;
+    for item in ingr.items {
+      native.thaumcraft.api.ThaumcraftApi.registerObjectTag(item, null);
+    }
+    return this;
+  }
+
   ///////////// Private field /////////////
   function actualItem(item as IItemStack) as IItemStack {
     return (item.damage == 0 && item.isDamageable)

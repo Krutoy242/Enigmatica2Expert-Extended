@@ -1,6 +1,7 @@
 onlyBuiltDependencies:
   - cpu-features
   - es5-ext
+  - esbuild
   - node-pty
   - puppeteer
   - ssh2

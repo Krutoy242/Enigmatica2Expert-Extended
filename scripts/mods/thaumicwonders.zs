@@ -1,5 +1,7 @@
 #modloaded thaumicwonders tconstruct
-#priority -1 // For oredict iteration
+
+// For oredict iteration
+#priority -1
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.IRecipeFunction;

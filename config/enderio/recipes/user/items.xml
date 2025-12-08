@@ -207,16 +207,6 @@
     </crafting>
   </recipe>
 
-  <recipe name="Dark Shears" required="true">
-    <crafting>
-      <grid size="2x2">
-        <item /><item name="DARK_STEEL" />
-        <item name="DARK_STEEL" /><item />
-      </grid>
-      <output name="enderio:item_dark_steel_shears" />
-    </crafting>
-  </recipe>
-
   <recipe name="Dark Treetap" required="false">
     <crafting>
       <grid>

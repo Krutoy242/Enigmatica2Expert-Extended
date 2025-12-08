@@ -346,14 +346,6 @@
     </alloying>
   </recipe>
   <!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
-  <recipe name="Hard Carbon Alloy Ingot">
-    <alloying energy="10000">
-      <input name="ingotGraphite" amount="2"/>
-      <input name="rats:rat_diamond"/>
-      <output name="nuclearcraft:alloy:2" amount="2"/>
-    </alloying>
-  </recipe>
-  <!-- Recipe below generated automatically. Do not make changes or they gonna be rewritten. -->
   <recipe name="Interweb">
     <alloying energy="10000">
       <input name="randomthings:ingredient:7" amount="5"/>

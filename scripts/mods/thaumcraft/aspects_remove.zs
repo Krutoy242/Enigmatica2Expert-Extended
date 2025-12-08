@@ -2,62 +2,6 @@
 #ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
-import crafttweaker.item.IIngredient;
-import thaumcraft.aspect.CTAspectStack;
-
-static all as CTAspectStack[] = [
-<aspect:aer>,
-<aspect:terra>,
-<aspect:ignis>,
-<aspect:aqua>,
-<aspect:perditio>,
-<aspect:ordo>,
-<aspect:metallum>,
-<aspect:sanguis>,
-Aspect.imperium,
-<aspect:sensus>,
-<aspect:alienis>,
-<aspect:amogus>,
-<aspect:victus>,
-<aspect:herba>,
-Aspect.ventus,
-<aspect:rattus>,
-<aspect:spiritus>,
-<aspect:exanimis>,
-<aspect:praemunio>,
-<aspect:mythus>,
-<aspect:praecantatio>,
-Aspect.fluctus,
-Aspect.visum,
-<aspect:tenebrae>,
-<aspect:vinculum>,
-<aspect:fabrico>,
-<aspect:alkimia>,
-<aspect:volatus>,
-<aspect:draco>,
-Aspect.sonus,
-<aspect:vitium>,
-<aspect:instrumentum>,
-<aspect:vacuos>,
-Aspect.caeles,
-<aspect:lux>,
-<aspect:permutatio>,
-<aspect:humanus>,
-<aspect:machina>,
-<aspect:desiderium>,
-<aspect:vitreus>,
-<aspect:motus>,
-Aspect.exitium,
-<aspect:cognitio>,
-<aspect:mana>,
-Aspect.infernum,
-<aspect:mortuus>,
-<aspect:aversio>,
-<aspect:potentia>,
-<aspect:auram>,
-<aspect:bestia>,
-<aspect:gelum>,
-] as CTAspectStack[];
 
 /*
 ██████╗ ███████╗███╗   ███╗ ██████╗ ██╗   ██╗███████╗     █████╗ ██╗     ██╗          █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗
@@ -142,9 +86,8 @@ val removeItemAspectList = [
 <ic2:dust>,
 <forestry:ingot_bronze>,
 <mekanism:ingot:2>,
-<thermalfoundation:material:22>,
 ] as IItemStack[];
 for item in removeItemAspectList {
   if (isNull(item)) continue;
-  item.removeAspects(all);
+  native.thaumcraft.api.ThaumcraftApi.registerObjectTag(item, null);
 }

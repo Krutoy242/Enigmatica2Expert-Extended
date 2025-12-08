@@ -1,0 +1,17 @@
+{
+  "armormodifier": "powerful_armor",
+  "text": [
+    {
+      "text": "Anexando esta manopla do poder deve dar um aumento geral na força de ataque."
+    }
+  ],
+  "effects": [
+    "Aumenta o dano de ataque §4+50%",
+    "Só pode ser aplicado no peitoral",
+    "Não pode ser aplicado junto com Telecinético ou Destreza",
+    "Uso único"
+  ],
+  "demoArmor": [
+    "conarm:chestplate"
+  ]
+}

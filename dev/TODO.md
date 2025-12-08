@@ -1,35 +1,34 @@
 # TODO
 
-🚧✅❌⚠️♻️ List of priorities:
+## Recent tasks 🚧✅❌⚠️♻️
 
-- [ ] ⚠️Mention in changelog about remapping keybinds
-- [ ] Remap `thermalexpansion.Enchanter` recipes since no one using them
-- [ ] ✏️ Buff `Neromantic Prime` extraction rate (UT) and make some infinite
-- [ ] ✏️ for `Invar` recipe to replace ingot to dust in ArcFurnace
-- [ ] ✏️ Both `Bitumen` should output Syngas
+### 🐛 Bugfixes
+
+- [ ] 🐛 Fix Harvest Levels not working for non-"stone" material
 - [ ] ✏️ Collector (on Tinkers at least) stops Axing trait from working (and possibly more traits that change the block you mine)
 - [ ] ✏️ No recipe in Chemical Dissolution Chamber: Dirty Copper, Silver, Tin, Iron, Gold, Lead, Osmium
 - [ ] ✏️ `Bone` fix crush -> melt -> cast dupe
+- [ ] 🐛 Custom beacons not working on server
+
+### ✨ New features
+
+- [ ] `Butterfly` => `Wasp` in witch water
+- [ ] Make `Quantum Armor` Tinker's alternative or add Airtight Seal book add to it
+- [ ] Remove any kind of shears from game so players use Kama
+- [ ] Remap `thermalexpansion.Enchanter` recipes since no one using them
+- [ ] ✏️ for `Invar` recipe to replace ingot to dust in ArcFurnace
 - [ ] 🟣 Migrate to Bansoukou 6
 - [ ] ✏️ `Redstone Cable` harder recipe
 - [ ] 🤖 Nanomachines give next levels of potions
-- [ ] ✏️ Add `Upgrade Singularity`
+- [ ] ✏️ Add `Upgrade, Chest, Backpack, Tank, Generator, Miner` Singularities
 - [ ] ✏️ Return Tungsten Blocks for High-pressure turbines
-- [ ] 🧱 Automatically interactive-rebase
-- [ ] 👑 Upgrading Draconic tools give Omnopotence
-- [ ] 🐛 Custom beacons not working on server
 - [ ] 🟢 Migrate from `UniDict` to `OnlyOneItem`
-
-### "Endgame" expansion
-
-- [ ] 🐛 Fix Harvest Levels not working for non-"stone" material
+- [ ] 🧱 Automatically interactive-rebase
 - [ ] 🖼️ Use `Legendary Tooltips` to mark harvest levels
-- [ ] 🧶 Feat: make some ores / materials only harvestable with `Gluon Gun`
+- [ ] 🧶 make some ores / materials only harvestable with `Gluon Gun`
 - [ ] ✏️ `Draconic Evolution` add recipes that use trillions RF
 - [ ] ✨ Make Draconic Armor adopt upgrades of prev tier
-
-### "Dimension building" rework
-- [ ] ✏️ `Anglesite` and `Benitoite` ore make in form of RFTools dimlets
+- [ ] ✏️ Add `Anglesite`-like ore that made in form of RFTools dimlets only to enforce RFTDims exploration
 - [ ] ✏️ RFTools `Dimension building` rework - make cheaper by balancing possible dimlets
 - [ ] 💜 Make `[constant] difficulty` dimension for replicator discount. Probably RFTools ones
 
@@ -56,8 +55,7 @@ Planned non-urgent changes, or just good ideas:
 ### "Performance ⚡"
 
 - [ ] ⚡ Make Lumenized optional
-- [ ] ⚡🔴 Remove `Chunk Animator` https://i.imgur.com/oJwuxb8.png
-- [ ] ⚡ never use a fluid storage interface for IE's multiblock tanks
+- [ ] ⚡ never use a fluid storage interface for IE's multiblock tanks (cause lag)
 - [ ] ⚡ Remove `Fluid Conduit` recipe since lower FPS
 - [ ] ⚡ add Warning about things that lower FPS: `placed item, drawers, Auto Sieve (promote ugly plating)`
 - [ ] ⚡ Fix `OpenComputers` JEI plugin is still loaded (see benchmark)
@@ -71,17 +69,13 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ⚡ Remove automatic IE armor recycling to speed up game load
 - [ ] ⚡ Remove `Chunk Loading Ward` since its make harder to find all chunk loaders on server
 - [ ] ⚡ Get rid of `Simple Trophies` since they strain FPS
-- [ ] ⚡ Remove `Cyclic`'s machines completely because they are laggy
-- [ ] ⚡ Disable Cyclic's machine animation since lag: https://i.imgur.com/cbCJJBq.png
+- [ ] ⚡ Remove `Cyclic`'s machines completely because they are laggy: https://i.imgur.com/cbCJJBq.png
 - [ ] ⚡ Add Tips note about IE multiblocks causing strong FPS strain. Also make them all work so fast only 1 machine needed
 
-### Difficulty increase
-- Vanilla Chests
-
 ### Quests and Docs expansion
-- [ ] 📖 Add `Armor Gauntlets` to ⬜🟦 loot boxes
+- [ ] 📖 Conflux should be announced as team too
+- [ ] 📖 Add tip about `/nick` command
 - [ ] 📖 `Interdiction Pulsar` add to some quest reward and describe how to use
-- [ ] 📖 Add PSI spells into quest rewards or loot boxes
 - [ ] 📖 Add Skyblock quest about Terraformer
 - [ ] 📖 Add Blast Furnace heat source
 - [ ] 📖 Add note about pregen spoiling Lootr chests https://github.com/LootrMinecraft/Lootr/issues/195
@@ -150,7 +144,7 @@ Planned non-urgent changes, or just good ideas:
 ### "Multiplayer" expansion
 - [ ] 🎁 Reward with 1 DankNull panel in several quests to promote sharing
 - [ ] 💻 Think if i could make a script to keep 100% modpack completion after new quests are added
-- [ ] 💬 Chat names should have special unicode symbols to show Conflux level and "accomplishments" (including Discord support)
+- [ ] 💬 Chat names should have special unicode symbols to show Conflux level and "accomplishments" (including Discord support) `/nick ..`
 - [ ] 💬 `Accomplishments` ⚜✳✴❇ mechanic:
   * Add messages "Player killex xxx mobs! WOW" based on spectacular stats.
   * Rewards for this "Accomplishments" should be not related to game progression.
@@ -178,10 +172,11 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🟢 Add **Steve Carts** when someone integrate it
 - [ ] 🟢 Add **OpenGlasses2** - could help to find turnable blocks from coal
 - [ ] 🟢 Add **Nothirium** when fixed https://github.com/Meldexun/Nothirium/issues/9
-- [ ] 🟢 Return **Village Names** when fixed https://legacy.curseforge.com/minecraft/mc-mods/village-names/issues/18
+- [ ] 🟢 Return **Village Names** when fixed https://legacy.curseforge.com/minecraft/mc-mods/village-names/issues/18 Possible manual fix: https://discord.com/channels/911676461050642432/959878900278784030/1439667407726579933
 
 ### Other
 
+- [ ] 👑 Upgrading Draconic tools give Omnopotence (cannot reproduce single player)
 - [ ] 💎 Diamond shouldn't be meltable in smeltery
 - [ ] 📖 Add emojis 🍎 to chapter finishing messages
 - [ ] 🐦 enable Enchanting speed up for rats
@@ -221,13 +216,10 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📀 Speed up Dragon Forge
 - [ ] ✏️ `High Oven` does not provide x2 of fluid for Osmium Ore
 - [ ] 🖼️ Add via mixins: https://legacy.curseforge.com/minecraft/texture-packs/ic2-seedbag-display
-- [ ] ⚒️ Rebalance TCon `Refining`: Remove x1.75 multiplication but add Fortune accounting
 - [ ] 🐀 Rat Ore Doubling can dupe IC2 "Iridium Ore". Removing oreIridium from it wont help.
-- [ ] 𝓩𝒮 Fix `Refining` not working on BoP ores
 - [ ] ✏️ Add feature to clear drawer `Item: 0` when unlocking it https://github.com/jaquadro/StorageDrawers/commit/da9875158ad0fadc190aae437ea2d9e89d616cca
 - [ ] 📖 Unmerge Furnace inputs in HEI (reported to HEI dev)
 - [ ] 💧 Add `Fluid Interactions` between gaseous (floating up) and normal fluids
-- [ ] 🌠 Tweak Shooting Star drop list
 - [ ] 📀 Concrete make hardening slower for servers. Source code of concrete https://github.com/BluSunrize/ImmersiveEngineering/blob/master/src/main/java/blusunrize/immersiveengineering/common/blocks/BlockIEFluidConcrete.java#L51-L191
 - [ ] 🦊 Transormation powder turn `Fox` into `Foxhound`
 - [ ] 🟢 Integrate `villager-contracts`
@@ -240,7 +232,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📀 Add animated GIF for java warning https://github.com/Darkhax-Minecraft/OldJavaWarning/blob/1.12.2/src/main/java/net/darkhax/oldjava/OldJavaWarning.java
 - [ ] 📖 Add Archeologyst trades to HEI
 - [ ] ✏️ `Red Mechanic` move trades to other villager `config/vtt/trade_tables/red_mechanic.json`
-- [ ] ❓ Fixeroo doesnt combine XP Shower clumps https://github.com/CaliforniaDemise/Fixeroo/issues/3
 - [ ] ✏️ Fix Generic Entity spawn spawning with wrong looking direction
 - [ ] ✏️ Use `mods.jei.JEI.addItemNBTSubtype` to subtime `Genetic Templates` and `syringe` (when updated RandomTweaker after fix crash https://github.com/Project-RT/RandomTweaker/issues/82)
 - [ ] ⚡ (ARR) Remove XU2 jei removed categories https://spark.lucko.me/MRBZYLxzrN?hl=325666
@@ -249,7 +240,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📀 Raw Inversion Pillar - fix duping itself. Culd be used as craft mechanics since can spread will-infused stone.
 - [ ] ⚒️ Add Trait trat replace ores with Stone when harvested
 - [ ] 🏡 Fix one of the Recurrent Complex houses have lava that fire up whole building
-- [ ] ✏️ Empty Rod cant be seen on table
 - [ ] ⚒️ Make TE cache drop itself with content on break
 - [ ] 🌍 Remove Poison Ivy from OTG generator. Its `biomesoplenty:plant_0:4` but i cant find where it defined
 - [ ] 🌍 `122 Kepler 0118` improve generation (right now its just plain graphite)
@@ -275,7 +265,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 💅 twlight forest advancement not showing up in advancement tab v1.2.1. Need conformation
 - [ ] ✏️ Make use of IC2 brewing
 - [ ] 🔄 Implement https://github.com/Divine-Journey-2/Divine-Journey-2/pull/829
-- [ ] ✏️ reduce Dungeon Loot Chest Item kinds to not overfill containers
 - [ ] 🚂 Buff mek steam a little
 - [ ] 📖 Better document Butterfly => Wasp transform in Nether Portal
 - [ ] 📖 Fix completion of quest chapters
@@ -287,7 +276,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ NC Motor replace by IC2 motor or change recipes
 - [ ] 🌍 AbandonedWoodTower less spawn
 - [ ] 🔄 Carryon change render for EIO warehouse
-- [ ] ✏️ Find a peaceful way for `scan crimson cultists` `get dimensional fracture` `get to emptiness dimension`. Could be skipped with Tome. https://discord.com/channels/911676461050642432/1064813931966779392/1078266283910496409
 - [ ] 🌍 Some OTG biomes have no Ore spawn because they use not Stone. (Biome serach: `StoneBlock: (?!STONE)\w+`)
 - [ ] 📀 Make ic2 crops scanned by default
 - [ ] ✏️ Remove Fiery fruit from Target Chamber recipe
@@ -337,6 +325,10 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🔨 ![](https://git.io/JnzzI "Glitch Infused Ingot") add material. Ability: drop matter from mobs
 - [ ] 🔨 Add armor trait that speed up gain for `Time In Bottle`
 
+### VAULTOPIC feature ideas
+
+- Bauble compat
+
 ---
 
 ---
@@ -379,7 +371,7 @@ Items that should have more uses:
 
 ### Tier 2
 
-![](https://git.io/JnN1t "Sun Crystal")
+![](https://git.io/JnN1t "Sun Crystal") - split into shards and use as ingredient for all void miners
 ![](https://git.io/JRLSJ "Ice Shard")
 ![](https://git.io/JRnDa "Tar")
 

@@ -1,0 +1,19 @@
+{
+  "armormodifier": "emerald_armor",
+  "text": [
+    {
+      "text": "에메랄드코팅을 갑옷에 바르면 탄력이 증가하고 마을주민들에게 부러움을 삽니다."
+    }
+  ],
+  "effects": [
+    "기본내구도의 100%증가",
+    "일회용",
+    "대단해!"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

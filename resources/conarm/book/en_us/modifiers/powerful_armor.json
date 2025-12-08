@@ -1,0 +1,17 @@
+{
+  "armormodifier": "powerful_armor",
+  "text": [
+    {
+      "text": "Attaching this gauntlet of power should give a general increase in attack power."
+    }
+  ],
+  "effects": [
+    "Increase attack damage §4+50%",
+    "Can only be applied to chestplates",
+    "Cannot be applied with Telekinetic or Dexterous",
+    "Single use"
+  ],
+  "demoArmor": [
+    "conarm:chestplate"
+  ]
+}

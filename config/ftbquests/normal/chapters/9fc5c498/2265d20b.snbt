@@ -16,8 +16,12 @@
 	},
 	{
 		uid: "b1fa45a0",
-		type: "command",
-		auto: "invisible",
-		command: "/tellraw @a [{\"text\":\"-# `\",\"color\":\"dark_gray\",\"extra\":[{\"text\":\"@p\",\"color\":\"white\"},\"` \",{\"text\":\"has begun the\",\"color\":\"gray\"},\" *\",{\"text\":\"🔮Ender Io\",\"color\":\"dark_aqua\"},\"* \",{\"text\":\"questline!\",\"color\":\"gray\"}]}]"
+		type: "custom",
+		team_reward: 1b,
+		title: "Notify everyone",
+		tags: [
+			"chapstart"
+		],
+		auto: "invisible"
 	}]
 }

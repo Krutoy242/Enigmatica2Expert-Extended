@@ -77,7 +77,7 @@ function isAllowedDim(dimId as int) as bool {
   if (allowedDims has dimId) return true;
   val providerType = native.net.minecraftforge.common.DimensionManager.getProviderType(dimId);
   if(isNull(providerType)) return false;
-  return toString(providerType.getId()) == 'rftools_dimension';
+  return toString(providerType.getName()) == 'rftools_dimension';
 }
 
 events.onEntityTravelToDimension(function (e as crafttweaker.event.EntityTravelToDimensionEvent) {

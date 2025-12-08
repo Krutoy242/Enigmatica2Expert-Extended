@@ -14,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "thaumadditions:jar_mithrillium"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "dba12e87",

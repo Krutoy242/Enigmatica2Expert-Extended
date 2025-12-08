@@ -6,6 +6,9 @@ import mods.cyclicmagic.Solidifier;
 
 // *======= Recipes =======*
 
+// Allow only buy from merchant
+recipes.remove(<cyclicmagic:block_shears>);
+
 // Cyclic Guide
 recipes.addShapeless('Cyclic Guide',
   <guideapi:cyclicmagic-guide>,
@@ -20,13 +23,6 @@ recipes.addShapeless('Cyclic Guide',
 <cyclicmagic:sword_weakness>.maxDamage = 600;
 <cyclicmagic:sword_slowness>.maxDamage = 600;
 <cyclicmagic:sword_ender>.maxDamage = 600;
-
-// Harder shears
-recipes.remove(<cyclicmagic:shears_obsidian>);
-recipes.addShaped('Cyclic Shears', <cyclicmagic:shears_obsidian>, [
-  [null, <ore:ingotRefinedObsidian>, null],
-  [<ore:ingotRefinedObsidian>, <minecraft:shears>, <ore:ingotRefinedObsidian>],
-  [null, <ore:ingotRefinedObsidian>, null]]);
 
 // Harder Sleeping mat
 recipes.remove(<cyclicmagic:sleeping_mat>);
@@ -164,7 +160,7 @@ val packagerList = [
     <forestry:ash>, // Ash
   ],
   [<cyclicmagic:battery>], [
-    <rats:charged_creeper_chunk> * 2, // Charged Creeper Chunk
+    <rats:charged_creeper_chunk>, // Charged Creeper Chunk
     <minecraft:redstone_block> * 4, // Block of Redstone
     <ore:dustAsh>.firstItem * 4, // Ash
   ],

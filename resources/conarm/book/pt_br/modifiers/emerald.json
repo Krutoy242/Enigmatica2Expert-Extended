@@ -1,0 +1,19 @@
+{
+  "armormodifier": "emerald_armor",
+  "text": [
+    {
+      "text": "Revestindo sua armadura com esmeralda aumenta sua resiliência e aumenta a inveja entre os \naldeões."
+    }
+  ],
+  "effects": [
+    "Aumento de 100% da durabilidade base",
+    "Uso único",
+    "Ultrajante!"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

@@ -22,16 +22,12 @@
 	}],
 	rewards: [{
 		uid: "3817a0a1",
-		type: "custom",
-		title: "{e2ee.quest.common}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

@@ -61,8 +61,6 @@ val merchData = {
         [<animania:wool:3>, E],
       ],
       4: [
-        [E * 64, <cyclicmagic:shears_obsidian>],
-        [E * 20, <cyclicmagic:ender_wool>],
         [E * 10, <cyclicmagic:block_shears>],
         [<excompressum:bait:5>, E],
       ],

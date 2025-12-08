@@ -46,7 +46,7 @@ install:
 
   # Link to where the file where the modpack can be distributed
   # This supports loading from local files as well for most pack types if there is file://{PathToFile} in the beginning
-  modpackUrl: https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases/download/v1.66.0/E2E-Extended-v1.66.0.zip
+  modpackUrl: https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases/download/v1.67.0-beta/E2E-Extended-v1.67.0-beta.zip
 
   # This is used to specify in which format the modpack is distributed, the server launcher has to handle each individually if their format differs
   # current supported formats:
@@ -114,6 +114,7 @@ install:
       - 782070 # Startup Timer
       - 848933 # Hit Indication
       - 874067 # Valkyrie
+      - 928895 # Key Binding Patch
       - 940521 # Just Enough Magiculture
       - 1056812 # UniLib
       - 1073925 # Rather Enough Immersive Multiblocks
@@ -123,7 +124,9 @@ install:
       - 1132293 # Backpack Display
       - 1147522 # Backpack Opener
       - 1154099 # Crash Assistant
+      - 1220460 # Gnetum
       - 1234162 # Lumenized
+      - 1329068 # MorphOverlay
       - 1331377 # Armored Arms
 
     # The base path where the server should be installed to, ~ for current path

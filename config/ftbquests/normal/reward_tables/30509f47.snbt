@@ -2,24 +2,6 @@
 	title: "Common",
 	loot_size: 1,
 	rewards: [{
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "food"
-			}
-		},
-		weight: 48
-	},
-	{
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "decor"
-			}
-		},
-		weight: 48
-	},
-	{
 		icon: "chisel:block_coal_coke1 16 12",
 		item: "chisel:block_coal_coke1 1 12",
 		count: 16
@@ -38,9 +20,14 @@
 		count: 8
 	},
 	{
-		icon: "bithop:screwhop 2",
+		icon: "bithop:screwhop 4",
 		item: "bithop:screwhop",
-		count: 2
+		count: 4
+	},
+	{
+		icon: "bithop:pullhop 4",
+		item: "bithop:pullhop",
+		count: 4
 	},
 	{
 		icon: "chisel:obsidian 32 13",
@@ -63,6 +50,11 @@
 	{
 		icon: "excompressum:bait 5 6",
 		item: "excompressum:bait 1 6",
+		count: 5
+	},
+	{
+		icon: "excompressum:bait 5 1",
+		item: "excompressum:bait 1 1",
 		count: 5
 	},
 	{
@@ -113,6 +105,11 @@
 	{
 		icon: "minecraft:observer 8",
 		item: "minecraft:observer",
+		count: 8
+	},
+	{
+		icon: "minecraft:dispenser 8",
+		item: "minecraft:dispenser",
 		count: 8
 	},
 	{
@@ -218,23 +215,6 @@
 		item: "oeintegration:excavatemodifier"
 	},
 	{
-		item: {
-			id: "openblocks:dev_null",
-			tag: {
-				openedInGui: 1675739793,
-				inventory: {
-					size: 1,
-					Items: [{
-						Slot: 0b,
-						id: "minecraft:cobblestone",
-						Count: 64b,
-						Damage: 0s
-					}]
-				}
-			}
-		}
-	},
-	{
 		icon: "rats:rat_pelt 32",
 		item: "rats:rat_pelt",
 		count: 32
@@ -246,6 +226,52 @@
 				Fluid: "blockfluiddirt"
 			}
 		}
+	},
+	{
+		item: {
+			id: "cyclicmagic:ender_water",
+			tag: {
+				ActionType: 2,
+				timeout: 0
+			}
+		}
+	},
+	{
+		icon: "tconstruct:dried_clay 16",
+		item: "tconstruct:dried_clay",
+		count: 16
+	},
+	{
+		icon: {
+			id: "tconstruct:large_plate",
+			tag: {
+				Material: "pigiron"
+			},
+			Count: 4
+		},
+		item: {
+			id: "tconstruct:large_plate",
+			tag: {
+				Material: "pigiron"
+			}
+		},
+		count: 4,
+	},
+	{
+		icon: {
+			id: "tconstruct:large_plate",
+			tag: {
+				Material: "xu_evil_metal"
+			},
+			Count: 3
+		},
+		item: {
+			id: "tconstruct:large_plate",
+			tag: {
+				Material: "xu_evil_metal"
+			}
+		},
+		count: 3,
 	}],
 	loot_crate: {
 		string_id: "common",

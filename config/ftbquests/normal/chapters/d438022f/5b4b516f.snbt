@@ -13,6 +13,7 @@
 		items: [{
 			item: "openblocks:elevator"
 		}],
+		ignore_damage: 1b,
 		ignore_nbt: 1b
 	}],
 	rewards: [{

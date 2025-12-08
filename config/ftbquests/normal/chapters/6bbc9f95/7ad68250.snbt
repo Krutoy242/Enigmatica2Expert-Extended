@@ -14,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "thaumadditions:jar_eldritch"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "23b12578",

@@ -17,10 +17,22 @@
 		uid: "e8afd4d2",
 		type: "item",
 		items: [{
+			id: "ftbquests:lootcrate",
 			tag: {
 				type: "rare"
-			},
-			id: "ftbquests:lootcrate"
+			}
+		},
+		{
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "generators"
+			}
+		},
+		{
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "materials"
+			}
 		}],
 		count: 16L
 	}],
@@ -28,22 +40,22 @@
 		uid: "74bf601b",
 		type: "choice",
 		icon: {
+			id: "openblocks:dev_null",
 			tag: {
+				openedInGui: 242946710,
 				inventory: {
 					size: 1,
 					Items: [{
 						Slot: 0b,
-						Damage: 0s,
 						id: "ftbquests:lootcrate",
 						Count: 1,
 						tag: {
 							type: "rare"
-						}
+						},
+						Damage: 0s
 					}]
-				},
-				openedInGui: 242946710
-			},
-			id: "openblocks:dev_null"
+				}
+			}
 		},
 		table: 2
 	}]

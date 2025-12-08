@@ -18,22 +18,8 @@
     "modifier": "speedy_armor",
     "mutations": [
       {
-        "type": "colour",
-        "value": "910000"
-      },
-      {
         "type": "per_level",
-        "value": 10
-      },
-      {
-        "type": "material",
-        "value": [
-          {
-            "type": "item",
-            "item": "scalinghealth:heartdust",
-            "meta": 0
-          }
-        ]
+        "value": 200
       }
     ]
   },

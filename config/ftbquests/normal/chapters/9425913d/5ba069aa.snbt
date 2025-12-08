@@ -17,10 +17,22 @@
 		uid: "e4e63bcc",
 		type: "item",
 		items: [{
+			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			},
-			id: "ftbquests:lootcrate"
+			}
+		},
+		{
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "food"
+			}
+		},
+		{
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "decor"
+			}
 		}],
 		count: 32L
 	}],
@@ -28,22 +40,22 @@
 		uid: "06b13a0c",
 		type: "choice",
 		icon: {
+			id: "openblocks:dev_null",
 			tag: {
+				openedInGui: 1284313537,
 				inventory: {
 					size: 1,
 					Items: [{
 						Slot: 0b,
-						Damage: 0s,
 						id: "ftbquests:lootcrate",
 						Count: 1,
 						tag: {
 							type: "common"
-						}
+						},
+						Damage: 0s
 					}]
-				},
-				openedInGui: 1284313537
-			},
-			id: "openblocks:dev_null"
+				}
+			}
 		},
 		table: 0
 	}]

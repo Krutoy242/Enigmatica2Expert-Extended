@@ -22,17 +22,13 @@
 	}],
 	rewards: [{
 		uid: "72620aa3",
-		type: "custom",
-		title: "{e2ee.quest.rare}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			Count: 8,
 			tag: {
 				type: "rare"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

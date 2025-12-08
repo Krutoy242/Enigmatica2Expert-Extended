@@ -1,12 +1,10 @@
 #modloaded extrautils2
 #loader mixin
 
-import native.java.lang.StringBuilder;
-import native.com.rwtema.extrautils2.network.XUPacketBuffer;
-import native.com.rwtema.extrautils2.utils.helpers.StringHelper;
 import native.com.rwtema.extrautils2.api.machine.Machine;
 import native.com.rwtema.extrautils2.api.machine.MachineRegistry;
 import native.com.rwtema.extrautils2.api.machine.XUMachineCrusher;
+import native.com.rwtema.extrautils2.network.XUPacketBuffer;
 
 #mixin {targets: "com.rwtema.extrautils2.tile.TileTerraformer$ContainerTerraformer$3"}
 zenClass MixinTileTerraformerContainerTextArea {

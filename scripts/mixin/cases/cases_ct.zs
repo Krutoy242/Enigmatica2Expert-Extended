@@ -14,10 +14,12 @@ import native.net.minecraft.item.ItemStack;
 
 scripts.mixin.common.shared.Op.casesGotItemMsg
 = function (player as GameProfile, item as ItemStack) as void {
+  val playerMP = server.getPlayerByUsername(player.name);
+  val name = isNull(playerMP) ? player.name : playerMP.nickname();
   val data as IData = [{
       text : '### `',
       extra: [
-        {text: player.name, color: 'aqua'},
+        {text: name, color: 'aqua'},
         '` has just opened a ',
         scripts.lib.tellraw.item(<ftbquests:lootcrate>.withTag({type: 'mythic'}).withDisplayName('Mythic'), 'light_purple'),
         ' 🟪 and got *［',

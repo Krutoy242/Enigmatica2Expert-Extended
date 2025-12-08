@@ -1,8 +1,9 @@
 import type Client from 'ssh2-sftp-client'
 
+import * as p from '@clack/prompts'
 import chalk from 'chalk'
 
-import { getBoxForLabel, pressEnterOrEsc } from '../../build/build_utils'
+import { getBoxForLabel } from '../../build/build_utils'
 
 export async function pruneWorld(
   sftp: Client,
@@ -30,12 +31,12 @@ export async function pruneWorld(
       chalk.gray`Filtering / Total:`,
       chalk.green(pruneData.list.length),
       chalk.gray`/`,
-    `${chalk.green(regions.length)}\n`,
-    chalk.gray`Total size: `,
-    `${chalk.green(fileSizeText(pruneData.size))}`
+      `${chalk.green(regions.length)}\n`,
+      chalk.gray`Total size: `,
+      `${chalk.green(fileSizeText(pruneData.size))}`
     )
 
-    if (await pressEnterOrEsc(`Press ENTER to remove filtered regions. Press ESC to skip.`)) {
+    if (await p.confirm({message: 'Press ENTER to remove filtered regions. Press ESC to skip.'})) {
       updateBox = getBoxForLabel(`Task: ${chalk.yellow`Remove Overworld regions`}`)
       await removeFilesOnServer(
         sftp,
@@ -74,7 +75,8 @@ export function filterForPrunning(list: Client.FileInfo[], predicate: (f:Client.
       if (toRemoval) pruneTotalSize += f.size
       return toRemoval
     })
-    .map(f => f.name).sort()
+    .map(f => f.name)
+    .sort()
   return {
     list: filtered,
     size: pruneTotalSize,
@@ -90,7 +92,7 @@ export async function removeFilesOnServer(
   log('Removing files: ', '0', '/', list.length)
 
   let fileCounter = 0
-  await Promise.all(list.map((f) => {
+  await Promise.all(list.map(async (f) => {
     const p = sftp.delete(f)
     p.then(() => onRemove(++fileCounter))
     return p

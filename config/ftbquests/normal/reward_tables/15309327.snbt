@@ -19,24 +19,24 @@
 		}
 	},
 	{
-		icon: "conarm:resist_mat 2",
+		icon: "conarm:resist_mat 6",
 		item: "conarm:resist_mat",
-		count: 2
+		count: 6
 	},
 	{
-		icon: "conarm:resist_mat_blast 8",
+		icon: "conarm:resist_mat_blast 16",
 		item: "conarm:resist_mat_blast",
-		count: 8
+		count: 16
 	},
 	{
-		icon: "conarm:resist_mat_fire 8",
+		icon: "conarm:resist_mat_fire 16",
 		item: "conarm:resist_mat_fire",
-		count: 8
+		count: 16
 	},
 	{
-		icon: "conarm:resist_mat_proj 8",
+		icon: "conarm:resist_mat_proj 16",
 		item: "conarm:resist_mat_proj",
-		count: 8
+		count: 16
 	},
 	{
 		icon: "tconstruct:materials 4 14",
@@ -44,9 +44,9 @@
 		count: 4
 	},
 	{
-		icon: "tconstruct:materials 2 19",
+		icon: "tconstruct:materials 3 19",
 		item: "tconstruct:materials 1 19",
-		count: 2
+		count: 3
 	},
 	{
 		item: "tconstruct:materials 1 16"
@@ -55,10 +55,10 @@
 		item: "conarm:gauntlet_mat_attack"
 	},
 	{
-		item: "conarm:gauntlet_mat_speed"
+		item: "conarm:gauntlet_mat_reach"
 	},
 	{
-		item: "openblocks:golden_egg"
+		item: "littletiles:recipeadvanced"
 	},
 	{
 		item: {
@@ -90,9 +90,6 @@
 		item: "conarm:travel_slowfall"
 	},
 	{
-		item: "openblocks:sponge_on_a_stick"
-	},
-	{
 		item: "minecraft:elytra"
 	},
 	{
@@ -106,6 +103,9 @@
 	},
 	{
 		item: "botania:terraformrod"
+	},
+	{
+		item: "botania:smeltrod"
 	},
 	{
 		item: "tconstruct:slimesling"
@@ -183,21 +183,37 @@
 		}
 	},
 	{
-		item: "betterbuilderswands:wanddiamond"
-	},
-	{
-		item: "extrautils2:itembuilderswand"
+		item: {
+			id: "mekanism:armoredjetpack",
+			tag: {
+				stored: {
+					gasName: "hydrogen",
+					amount: 24000
+				}
+			}
+		}
 	},
 	{
 		item: {
-			id: "minecraft:enchanted_book",
+			id: "computercraft:turtle_advanced",
 			tag: {
-				StoredEnchantments: [{
-					lvl: 10s,
-					id: 16s
-				}]
+				rightUpgrade: "minecraft:diamond_pickaxe"
 			}
 		}
+	},
+	{
+		item: {
+			id: "industrialwires:ic2_wire_coil",
+			tag: {
+				wireLength: 256
+			}
+		}
+	},
+	{
+		item: "extrautils2:chickenring"
+	},
+	{
+		item: "industrialforegoing:mob_imprisonment_tool"
 	},
 	{
 		item: "mysticalagriculture:watering_can 1 4"

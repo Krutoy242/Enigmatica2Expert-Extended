@@ -1,0 +1,17 @@
+{
+  "armormodifier": "powerful_armor",
+  "text": [
+    {
+      "text": "이 힘의 건틀렛을 붙이면 공격력이 전반적으로 상승할 것이다."
+    }
+  ],
+  "effects": [
+    "공격력 증가 §4+50%",
+    "갑옷에만 적용 가능",
+    "민첩 또는 운동신경과 함께 사용불가",
+    "일회용"
+  ],
+  "demoArmor": [
+    "conarm:chestplate"
+  ]
+}

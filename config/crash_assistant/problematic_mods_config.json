@@ -1,4 +1,8 @@
 {
+  "essential-container": {
+    "msg": "Essential is incompatible for reasons that are listed here. Consider using <a href=\"https://www.curseforge.com/minecraft/mc-mods/e4mc-retro\">E4MC Retro</a> instead.",
+    "should_crash_on_startup": true
+  },
   "example_modid": {
     "msg": "Custom msg on crash for this mod id. You can use $JAR_NAME$ placeholder, which will be replaced with jar name. You can use HTML here, it will work.",
     "should_crash_on_startup": true

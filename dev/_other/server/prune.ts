@@ -1,13 +1,15 @@
+/* eslint-disable antfu/no-top-level-await */
 /**
  * Find too far regions on server using SFTP and remove them
  *
  * Also show players positions
  */
 
+import * as p from '@clack/prompts'
 import chalk from 'chalk'
 import Client from 'ssh2-sftp-client'
 
-import { getBoxForLabel, pressEnterOrEsc } from '../../build/build_utils'
+import { getBoxForLabel } from '../../build/build_utils'
 import {
   loadJson,
 } from '../../lib/utils.js'
@@ -17,7 +19,7 @@ let updateBox = getBoxForLabel('sftp')
 
 const sftp = new Client()
 
-const sftpConfig = loadJson('secrets/sftp_servers/1. Guncolony/sftp.json') as { [key: string]: string }
+const sftpConfig = loadJson('~secrets/sftp_servers/2. Guncolony/sftp.json') as { [key: string]: string }
 
 /************************************************
 * Getting info
@@ -28,7 +30,7 @@ await sftp.connect(sftpConfig)
 await pruneWorld(sftp, {
   title               : 'Overworld',
   region              : 'region',
-  maxDistanceFromSpawn: 30000,
+  maxDistanceFromSpawn: 20000,
   obsoleteMonths      : 6,
 })
 
@@ -79,7 +81,7 @@ updateBox(
   advRocketryDims.list.map(f => chalk.green(f.substring(3))).join(chalk.gray(', '))
 )
 
-if (await pressEnterOrEsc(`Press ENTER to remove ALL AdvRock dimensions except Space Stations. Press ESC to skip.`)) {
+if (await p.confirm({message: 'Press ENTER to remove ALL AdvRock dimensions except Space Stations. Press ESC to skip.'})) {
   updateBox = getBoxForLabel(`Task: ${chalk.yellow`Remove Adv. Rocketry worlds`}`)
   await removeFilesOnServer(
     sftp,

@@ -398,6 +398,15 @@ scripts.process.squeeze(
   'only: Squeezer IndustrialSqueezer'
 );
 
+// Vegan challenge alt
+mods.roidtweaker.randomthings.Imbuing.addRecipe(
+  <iceandfire:hydra_fang>,
+  <iceandfire:dragonbone>,
+  [<biomesoplenty:plant_0:4>,
+  <minecraft:poisonous_potato>,
+  <biomesoplenty:bramble_plant>,
+]);
+
 // ######################################################################
 //
 // Dragon armor recycling

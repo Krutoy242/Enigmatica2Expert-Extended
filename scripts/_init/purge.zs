@@ -136,6 +136,7 @@ Purge(<exnihilocreatio:block_end_cake>);
 Purge(<plustic:alumitenugget>).ores([<ore:nuggetAlumite>]);
 Purge(<plustic:alumiteingot>).ores([<ore:ingotAlumite>]);
 Purge(<plustic:alumiteblock>).ores([<ore:blockAlumite>]);
+Purge(<mechanics:heavy_shears>).aspects();
 
 // Purge saltpeter and sulfur
 Purge(<bloodmagic:component:24>);
@@ -299,7 +300,7 @@ Purge(<jaopca:block_blocktungsten>).ores([<ore:blockTungsten>]);
 Purge(<jaopca:item_nuggettungsten>).ores([<ore:nuggetTungsten>]);
 Purge(<enderio:item_owl_egg>);
 Purge(<enderio:item_material:9>);
-Purge(<thermalfoundation:material:22>).ores([<ore:gearWood>]);
+Purge(<thermalfoundation:material:22>).ores([<ore:gearWood>]).aspects();
 Purge(<thermalfoundation:material:656>);
 Purge(<ae2stuff:visualiser>);
 Purge(<itemfilters:filter>);

@@ -293,7 +293,6 @@ desc.tooltipRaw(<thaumcraft:curio:5>, '§f+ §5' ~ desc.local('thaum.artifice') 
 
 desc.tooltip(Bucket('corium'), 'fluid.corium');
 desc.tooltip(<actuallyadditions:item_crystal_empowered:2>, 'tcon.diamond');
-desc.tooltip(<scalinghealth:heartdust>, 'tcon.speedy');
 desc.tooltip(<botania:specialflower>.withTag({ type: 'endoflame' }), 'botania.decay1hour');
 desc.tooltip(<conarm:resist_mat>, 'tcon.slot_each');
 desc.tooltip(<conarm:resist_mat_fire>, 'tcon.slot_first');

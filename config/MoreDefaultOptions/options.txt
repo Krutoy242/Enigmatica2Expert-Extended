@@ -8,12 +8,12 @@ guiScale:3
 particles:0
 bobView:false
 anaglyph3d:false
-maxFps:260
+maxFps:120
 fboEnable:true
 fancyGraphics:true
 ao:2
 renderClouds:true
-resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.6.zip","Dark Mode-2.4.2.zip"]
+resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.6.zip","Dark Mode-2.4.2.zip","BloomTech-1.0.0.zip"]
 incompatibleResourcePacks:[]
 lang:en_us
 chatVisibility:0
@@ -36,7 +36,7 @@ chatHeightFocused:1.0
 chatHeightUnfocused:0.44366196
 chatScale:1.0
 chatWidth:1.1
-mipmapLevels:0
+mipmapLevels:4
 forceUnicodeFont:false
 reducedDebugInfo:false
 useNativeTransport:true
@@ -54,14 +54,15 @@ key_bbw.key.fluidmode:0:NONE:
 key_bbw.key.mode:78:NONE:
 key_bloodmagic.keybind.cycle_holding_neg:0:NONE:
 key_bloodmagic.keybind.cycle_holding_pos:0:NONE:
-key_bloodmagic.keybind.open_holding:53:NONE:
+key_bloodmagic.keybind.open_holding:53:CONTROL:29
+key_bogosort.key.move_all:-100:NONE:57
 key_Boost Key:0:NONE:
 key_Change Caster Focus:34:NONE:
-key_ChatFlow:88
+key_ChatFlow:88:NONE:
 key_cos.key.opencosarmorinventory:0:NONE:
 key_Difficulty Meter - Show:49:NONE:
-key_Difficulty Meter - Show Always:49:NONE:
-key_enderio.keybind.dsu:19:NONE:
+key_Difficulty Meter - Show Always:49:SHIFT:42
+key_enderio.keybind.dsu:19:CONTROL:29
 key_enderio.keybind.fovminus:0:NONE:
 key_enderio.keybind.fovminusfast:0:NONE:
 key_enderio.keybind.fovplus:0:NONE:
@@ -72,7 +73,7 @@ key_enderio.keybind.fovstore:0:NONE:
 key_enderio.keybind.fovunreset:0:NONE:
 key_enderio.keybind.glidertoggle:37:NONE:
 key_enderio.keybind.gogglesofrevealing:0:NONE:
-key_enderio.keybind.inventory:23:NONE:
+key_enderio.keybind.inventory:23:CONTROL:29
 key_enderio.keybind.jump:0:NONE:
 key_enderio.keybind.magnet:0:NONE:
 key_enderio.keybind.nightvision:25:NONE:
@@ -88,13 +89,13 @@ key_FpsReducer.key.guiOpen:0:NONE:
 key_gui.xaero_alternative_list_players:0:NONE:
 key_gui.xaero_display_all_sets:0:NONE:
 key_gui.xaero_enlarge_map:56:NONE:
-key_gui.xaero_instant_waypoint:40:NONE:
+key_gui.xaero_instant_waypoint:40:CONTROL:29
 key_gui.xaero_map_zoom_in:0:NONE:
 key_gui.xaero_map_zoom_out:0:NONE:
-key_gui.xaero_minimap_settings:50:NONE:
+key_gui.xaero_minimap_settings:50:SHIFT:42
 key_gui.xaero_new_waypoint:0:NONE:
 key_gui.xaero_open_map:50:NONE:
-key_gui.xaero_open_settings:50:NONE:
+key_gui.xaero_open_settings:50:CONTROL:29
 key_gui.xaero_quick_confirm:54:NONE:
 key_gui.xaero_reverse_entity_radar:0:NONE:
 key_gui.xaero_switch_waypoint_set:0:NONE:
@@ -103,10 +104,10 @@ key_gui.xaero_toggle_entity_radar:0:NONE:
 key_gui.xaero_toggle_grid:0:NONE:
 key_gui.xaero_toggle_light_overlay:0:NONE:
 key_gui.xaero_toggle_manual_cave_mode:0:NONE:
-key_gui.xaero_toggle_map:50:NONE:
+key_gui.xaero_toggle_map:50:ALT:56
 key_gui.xaero_toggle_map_waypoints:0:NONE:
 key_gui.xaero_toggle_slime:0:NONE:
-key_gui.xaero_toggle_tracked_players:0
+key_gui.xaero_toggle_tracked_players:0:NONE:
 key_gui.xaero_toggle_tracked_players_in_world:0:NONE:
 key_gui.xaero_toggle_waypoints:0:NONE:
 key_gui.xaero_waypoints_key:0:NONE:
@@ -116,9 +117,9 @@ key_Hub Expand Key:0:NONE:
 key_jecalculation.key.gui_craft:0:NONE:
 key_jecalculation.key.gui_math:0:NONE:
 key_key.advancements:38:NONE:
-key_key.ae2fc.open_wireless_fluid_pattern_terminal.desc:34:NONE:
+key_key.ae2fc.open_wireless_fluid_pattern_terminal.desc:34:SHIFT:42
 key_key.anchor:35:NONE:
-key_key.aquaacrobatics.toggle_crawling:46:NONE:
+key_key.aquaacrobatics.toggle_crawling:46:SHIFT:42
 key_key.attack:-100:NONE:
 key_key.back:31:NONE:
 key_key.carpet_backward:31:NONE:
@@ -131,16 +132,16 @@ key_key.columnbardown:27:NONE:
 key_key.columnbarup:26:NONE:
 key_key.columnshiftdown:35:NONE:
 key_key.columnshiftup:0:NONE:
-key_key.colytra.toggle.desc:0
+key_key.colytra.toggle.desc:0:NONE:
 key_key.command:53:NONE:
-key_key.conarm.toggle_chest.desc:58:NONE:
+key_key.conarm.toggle_chest.desc:58:SHIFT:42
 key_key.conarm.toggle_helm.desc:39:NONE:
 key_key.conarm.toggle_leg.desc:36:NONE:
 key_key.connected_area:0:NONE:
 key_key.craftingtweaks.balance:0:NONE:
 key_key.craftingtweaks.clear:0:NONE:
-key_key.craftingtweaks.compressAll:37:NONE:
-key_key.craftingtweaks.compressOne:37:NONE:
+key_key.craftingtweaks.compressAll:37:SHIFT:42
+key_key.craftingtweaks.compressOne:37:CONTROL:29
 key_key.craftingtweaks.compressStack:37:NONE:
 key_key.craftingtweaks.decompressAll:0:NONE:
 key_key.craftingtweaks.decompressOne:0:NONE:
@@ -155,7 +156,7 @@ key_key.craftingtweaks.toggleButtons:0:NONE:
 key_key.craftpresence.config_keycode.name:0:NONE:
 key_key.debugDumpNBTBlock:0:NONE:
 key_key.debugDumpNBTItem:0:NONE:
-key_key.draconicevolution.armorProfileChange:43:NONE:
+key_key.draconicevolution.armorProfileChange:43:ALT:56
 key_key.draconicevolution.cycleAttackAOE:0:NONE:
 key_key.draconicevolution.cycleDigAOE:0:NONE:
 key_key.draconicevolution.placeItem:25:NONE:
@@ -169,7 +170,7 @@ key_key.dragon_down:44:NONE:
 key_key.dragon_fireAttack:34:NONE:
 key_key.dragon_strike:-96:NONE:
 key_key.drop:16:NONE:
-key_key.exportAll:43:NONE:
+key_key.exportAll:43:CONTROL:29
 key_key.findme.search:21:NONE:
 key_key.forward:17:NONE:
 key_key.ftbquests.quests:41:NONE:
@@ -180,8 +181,8 @@ key_key.fuzzy:0:NONE:
 key_key.gridfixy:79:NONE:
 key_key.gridhere:35:NONE:
 key_key.gridspawns:0:NONE:
-key_key.groovyscript.reload:19:CONTROL
-key_key.hei.crafting:46:NONE:
+key_key.groovyscript.reload:19:CONTROL:29
+key_key.hei.crafting:46:SHIFT:42
 key_key.hei.toggleBookmarkOverlay:0:NONE:
 key_key.hotbar.1:2:NONE:
 key_key.hotbar.2:3:NONE:
@@ -194,40 +195,40 @@ key_key.hotbar.8:9:NONE:
 key_key.hotbar.9:10:NONE:
 key_key.immersiveengineering.chemthrowerSwitch:0:NONE:
 key_key.immersiveengineering.magnetEquip:31:NONE:
-key_key.integrateddynamics.logic_programmer_focus_search:33:NONE:
+key_key.integrateddynamics.logic_programmer_focus_search:33:ALT:56
 key_key.integrateddynamics.logic_programmer_open_rename:0:NONE:
 key_key.integratedterminals.terminal.craftinggrid.balance:48:NONE:
 key_key.integratedterminals.terminal.craftinggrid.clearplayer:0:NONE:
-key_key.integratedterminals.terminal.craftinggrid.clearstorage:0:NONE:
+key_key.integratedterminals.terminal.craftinggrid.clearstorage:0:SHIFT:42
 key_key.integratedterminals.terminal.tab.next:15:NONE:
-key_key.integratedterminals.terminal.tab.previous:15:NONE:
+key_key.integratedterminals.terminal.tab.previous:15:SHIFT:42
 key_key.inventory:18:NONE:
 key_key.jei.bookmark:30:NONE:
-key_key.jei.focusSearch:33:NONE:
+key_key.jei.focusSearch:33:CONTROL:29
 key_key.jei.nextPage:209:NONE:
 key_key.jei.previousPage:201:NONE:
 key_key.jei.recipeBack:14:NONE:
 key_key.jei.showRecipe:19:NONE:
 key_key.jei.showUses:22:NONE:
-key_key.jei.toggleBookmarkOverlay:0
+key_key.jei.toggleBookmarkOverlay:0:NONE:
 key_key.jei.toggleCheatMode:0:NONE:
 key_key.jei.toggleEditMode:0:NONE:
-key_key.jei.toggleOverlay:24:NONE:
-key_key.jeiutilities.displayRecipe:29
+key_key.jei.toggleOverlay:24:CONTROL:29
+key_key.jeiutilities.displayRecipe:29:NONE:
 key_key.jeiutilities.pickBookmark:-98
-key_key.jeiutilities.transferRecipe:17:CONTROL
-key_key.jeiutilities.transferRecipeMax:20:CONTROL
+key_key.jeiutilities.transferRecipe:17:CONTROL:29
+key_key.jeiutilities.transferRecipeMax:20:CONTROL:29
 key_key.jump:57:NONE:
 key_key.keyExtraCraftin:0:NONE:
-key_key.keyExtraInvo:18:CONTROL:29
+key_key.keyExtraInvo:18:ALT:56
 key_key.keyWheel:0:NONE:
 key_key.left:30:NONE:
-key_key.little.config:46:NONE:
+key_key.little.config:46:CONTROL:29
 key_key.little.config.item:46:NONE:
-key_key.little.flip:35:NONE:
+key_key.little.flip:35:CONTROL:29
 key_key.little.mark:50:NONE:
-key_key.little.redo:21:NONE:
-key_key.little.undo:44:NONE:
+key_key.little.redo:21:CONTROL:29
+key_key.little.undo:44:CONTROL:29
 key_key.loadToolbarActivator:0:NONE:
 key_key.material_list:50:NONE:
 key_key.moreoverlays.chunkbounds.desc:67:NONE:
@@ -241,27 +242,27 @@ key_key.nutrition:49:NONE:
 key_key.open_advanced_extended_wireless_crafting_terminal:0:NONE:
 key_key.open_danknull.desc:0:NONE:
 key_key.open_menu:19:NONE:
-key_key.open_wireless_crafting_terminal.desc:18:NONE:
-key_key.open_wireless_fluid_terminal.desc:33:NONE:
-key_key.open_wireless_interface_terminal.desc:23:NONE:
-key_key.open_wireless_pattern_terminal.desc:19:NONE:
-key_key.open_wireless_terminal.desc:20:NONE:
+key_key.open_wireless_crafting_terminal.desc:18:CONTROL:29
+key_key.open_wireless_fluid_terminal.desc:33:SHIFT:42
+key_key.open_wireless_interface_terminal.desc:23:SHIFT:42
+key_key.open_wireless_pattern_terminal.desc:19:SHIFT:42
+key_key.open_wireless_terminal.desc:20:SHIFT:42
 key_key.otghud.desc:24:NONE:
 key_key.pickItem:-98:NONE:
 key_key.ping:62:NONE:
 key_key.playerlist:15:NONE:
 key_key.plustic_brown_magic.desc:24:NONE:
-key_key.plustic_fruit_salad.desc:12:NONE:
-key_key.plustic_mots.desc:13:NONE:
+key_key.plustic_fruit_salad.desc:12:ALT:56
+key_key.plustic_mots.desc:13:ALT:56
 key_key.plustic_release_entity.desc:11:NONE:
 key_key.plustic_set_portal.desc:49:NONE:
 key_key.plustic_toggle_gui.desc:23:NONE:
-key_key.plustic_toggle_tool.desc:51:NONE:
+key_key.plustic_toggle_tool.desc:51:ALT:56
 key_key.porterNextDestination:27:NONE:
 key_key.porterPrevDestination:26:NONE:
 key_key.previous_item.desc:0:NONE:
-key_key.range:18:NONE:
-key_key.reloadSoundSystem:66:NONE:
+key_key.range:18:ALT:56
+key_key.reloadSoundSystem:66:SHIFT:42
 key_key.right:32:NONE:
 key_key.rotate_mirror:0:NONE:
 key_key.rotatedown:208:NONE:
@@ -276,33 +277,33 @@ key_key.showhide:0:NONE:
 key_key.smoothCamera:0:NONE:
 key_key.sneak:42:NONE:
 key_key.sort:-98
-key_key.sort_config:37:CONTROL
+key_key.sort_config:37:CONTROL:29
 key_key.spectatorOutlines:0:NONE:
 key_key.sprint:29:NONE:
 key_key.swapHands:33:NONE:
 key_key.toggle_focus.desc:15:NONE:
 key_key.toggle_shaders:40:NONE:
-key_key.toggleFoVChanges:51:NONE:
+key_key.toggleFoVChanges:51:SHIFT:42
 key_key.togglehud.desc:0:NONE:
 key_key.toggleLiquids:38:NONE:
 key_key.togglePerspective:63:NONE:
-key_key.togglePotionParticles:66:NONE:
+key_key.togglePotionParticles:66:CONTROL:29
 key_key.toggleTimeOfDayOverlay:0:NONE:
 key_key.travelersbackpack.cycle_tool:44:NONE:
 key_key.travelersbackpack.inventory:48:NONE:
-key_key.travelersbackpack.toggle_tank:45:NONE:
+key_key.travelersbackpack.toggle_tank:45:CONTROL:29
 key_key.undo:22:NONE:
 key_key.use:-99:NONE:
-key_key.vaultopic.vice:18:NONE:
-key_key.vaultopic.view:33:NONE:
-key_key.xtones.scroll:42
+key_key.vaultopic.vice:18:SHIFT:42
+key_key.vaultopic.view:33:CONTROL:29
+key_key.xtones.scroll:42:NONE:
 key_key.xu2.searchforitems:0:NONE:
 key_keybind.baublesinventory:0:NONE:
 key_keybind.hammercorerenderstack:77:NONE:
-key_keybind.universaltweaks.clear_toasts:11:NONE:
+key_keybind.universaltweaks.clear_toasts:11:CONTROL:29
 key_keys.servertabinfo.show:29:NONE:
 key_keys.servertabinfo.show2:157:NONE:
-key_keywizard.keybind.openKeyboardWizard:65:CONTROL
+key_keywizard.keybind.openKeyboardWizard:65:CONTROL:29
 key_mekanism.key.armorMode:0:NONE:
 key_mekanism.key.feetMode:35:NONE:
 key_mekanism.key.mode:47:NONE:
@@ -311,10 +312,10 @@ key_Misc Caster Toggle:35:NONE:
 key_Mode Switch Key:47:NONE:
 key_Move Vehicle Down:45:NONE:
 key_Move Vehicle Up:44:NONE:
-key_neat.keybind.toggle:0
+key_neat.keybind.toggle:0:NONE:
 key_nei.options.keys.gui.botania_corporea_request:0:NONE:
-key_nimble.keybind.frontView:63:NONE:
-key_Open Config:41
+key_nimble.keybind.frontView:63:CONTROL:29
+key_Open Config:41:NONE:
 key_Open Rocket GUI:46:NONE:
 key_openblocks.keybind.vario_switch:0:NONE:
 key_openblocks.keybind.vario_vol_down:0:NONE:
@@ -322,7 +323,7 @@ key_openblocks.keybind.vario_vol_up:0:NONE:
 key_oreexcavation.key.excavate:-96:NONE:
 key_oreexcavation.key.shape:0:NONE:
 key_pi.key.et_gui:23:NONE:
-key_pi.key.et_world:23:NONE:
+key_pi.key.et_world:23:CONTROL:29
 key_pi.key.open_pi:0:NONE:
 key_ping.key.alert:75:NONE:
 key_ping.key.goto:0:NONE:
@@ -355,23 +356,23 @@ key_quark.keybind.chestMerge:0:NONE:
 key_quark.keybind.chestRestock:0:NONE:
 key_quark.keybind.chestSort:0:NONE:
 key_quark.keybind.dropoff:0:NONE:
-key_quark.keybind.lockBuilding:33:NONE:
+key_quark.keybind.lockBuilding:33:SHIFT:42
 key_quark.keybind.toggleAutojump:0:NONE:
 key_Rotate Vehicle Left:30:NONE:
 key_Rotate Vehicle Right:32:NONE:
-key_rpsideas.kb.offhandcast:0
-key_rpsideas.kb.switchslot01:0
-key_rpsideas.kb.switchslot02:0
-key_rpsideas.kb.switchslot03:0
-key_rpsideas.kb.switchslot04:0
-key_rpsideas.kb.switchslot05:0
-key_rpsideas.kb.switchslot06:0
-key_rpsideas.kb.switchslot07:0
-key_rpsideas.kb.switchslot08:0
-key_rpsideas.kb.switchslot09:0
-key_rpsideas.kb.switchslot10:0
-key_rpsideas.kb.switchslot11:0
-key_rpsideas.kb.switchslot12:0
+key_rpsideas.kb.offhandcast:0:NONE:
+key_rpsideas.kb.switchslot01:0:NONE:
+key_rpsideas.kb.switchslot02:0:NONE:
+key_rpsideas.kb.switchslot03:0:NONE:
+key_rpsideas.kb.switchslot04:0:NONE:
+key_rpsideas.kb.switchslot05:0:NONE:
+key_rpsideas.kb.switchslot06:0:NONE:
+key_rpsideas.kb.switchslot07:0:NONE:
+key_rpsideas.kb.switchslot08:0:NONE:
+key_rpsideas.kb.switchslot09:0:NONE:
+key_rpsideas.kb.switchslot10:0:NONE:
+key_rpsideas.kb.switchslot11:0:NONE:
+key_rpsideas.kb.switchslot12:0:NONE:
 key_schematica.key.control:72:NONE:
 key_schematica.key.layerDec:0:NONE:
 key_schematica.key.layerInc:0:NONE:
@@ -382,22 +383,22 @@ key_schematica.key.pickBlock:71:NONE:
 key_schematica.key.printerToggle:0:NONE:
 key_schematica.key.renderToggle:0:NONE:
 key_schematica.key.save:55:NONE:
-key_Show Biome Borders:48:NONE:
+key_Show Biome Borders:48:ALT:56
 key_Side Inventory Key:77:NONE:
 key_smoothfont.key.guiOpen:199:NONE:
 key_Toggle Jetpack:45:NONE:
-key_Toggle Mining Speed Control:43
+key_Toggle Mining Speed Control:43:NONE:
 key_Toggle RCS:0:NONE:
 key_visualores.button.aura_flux:0:NONE:
 key_visualores.button.excavator:0:NONE:
 key_visualores.button.neromantic:0:NONE:
 key_visualores.button.starlight:0:NONE:
 key_visualores.key.action:211:NONE:
-key_waila.keybind.liquid:0
-key_waila.keybind.recipe:0
-key_waila.keybind.usage:0
-key_waila.keybind.wailaconfig:82
-key_waila.keybind.wailadisplay:79
+key_waila.keybind.liquid:0:NONE:
+key_waila.keybind.recipe:0:NONE:
+key_waila.keybind.usage:0:NONE:
+key_waila.keybind.wailaconfig:82:NONE:
+key_waila.keybind.wailadisplay:79:NONE:
 key_Zoom:-97
 soundCategory_master:0.10927153
 soundCategory_music:0.0
@@ -416,7 +417,8 @@ modelPart_right_sleeve:true
 modelPart_left_pants_leg:true
 modelPart_right_pants_leg:true
 modelPart_hat:true
-key_bogosort.key.move_all:-100:NONE:57
+key_gui.xaero_toggle_tracked_players_on_map:0:NONE:
+
 key_bogosort.key.move_all_same:-100:ALT:56
 key_bogosort.key.move_single:-100:CONTROL:29
 key_bogosort.key.move_single_empty:-99:CONTROL:29
@@ -424,20 +426,19 @@ key_bogosort.key.sort:-98:NONE:
 key_bogosort.key.sort_config:37:NONE:
 key_bogosort.key.throw_all:16:NONE:57
 key_bogosort.key.throw_all_same:16:ALT:56
-key_gui.xaero_toggle_tracked_players_on_map:0:NONE:
-
 key_flare.key.start_client_sampling:0:NONE:
 key_flare.key.start_sampling:0:NONE:
 key_flare.key.stop_client_sampling:0:NONE:
 key_flare.key.stop_sampling:0:NONE:
+key_gnetum.config.keyMapping:207:NONE:
 key_key.hitindication.toggle_block_indicators:80:NONE:
 key_key.hitindication.toggle_edge_of_screen_mode:71:NONE:
 key_key.hitindication.toggle_hit_indication:72:NONE:
 key_key.open_basic_extended_wireless_crafting_terminal:0:NONE:
 key_key.open_elite_extended_wireless_crafting_terminal:0:NONE:
 key_key.open_ultimate_extended_wireless_crafting_terminal:0:NONE:
-key_key.retrieve_item.desc:-98:NONE:
-key_key.start_craft.desc:-98:NONE:
+key_key.retrieve_item.desc:-98:CONTROL:29
+key_key.start_craft.desc:-98:ALT:56
 key_key.toggleVisible:0:NONE:
 key_keybind.endermodpacktweaks.toggle:0:NONE:
 key_of.key.zoom:-97

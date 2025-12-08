@@ -64,6 +64,7 @@
     "harvestcraft:taroseeditem": "1*minecraft:emerald",
     "harvestcraft:juniperberryseeditem": "1*minecraft:emerald",
     "harvestcraft:tomatilloseeditem": "1*minecraft:emerald",
+    "immersiveengineering:seed": "1*minecraft:emerald",
     "minecraft:spawn_egg@{EntityTag: {id: \"minecraft:mooshroom\"}}": "10*minecraft:emerald",
     "minecraft:spawn_egg@{EntityTag: {id: \"quark:frog\"}}": "10*minecraft:emerald",
     "minecraft:spawn_egg@{EntityTag: {id: \"rats:rat\"}}": "30*minecraft:emerald",

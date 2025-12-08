@@ -328,3 +328,14 @@ scripts.do.build.entity.add(<entity:endreborn:endguard>, [
   a: <minecraft:purpur_block>,
   x: <contenttweaker:conglomerate_of_life>
 }).shift(0, 1, 0);
+
+scripts.do.build.entity.add(<entity:plustic:supremeleader>, [
+  [
+    ' x '
+  ], [
+    ' a '
+  ]
+], {
+  a: <additionalcompression:dustgunpowder_compressed>,
+  x: <contenttweaker:conglomerate_of_life>
+}).shift(0, 0.5, 0);

@@ -105,13 +105,13 @@ recipes.addShaped(<randomthings:spectreanchor>, [
 
 // Spectre Ingot
 recipes.remove(<randomthings:ingredient:3>);
-recipes.addShapeless('Spectre Ingot Harder', <randomthings:ingredient:3>, [
+recipes.addShapeless('Spectre Ingot Harder', <randomthings:ingredient:3> * 4, [
   <ore:ingotUnstable>,
   <randomthings:ingredient:2>,
   <thermalfoundation:material:134>,
   <forestry:phosphor>,
 ]);
-recipes.addShapeless('Spectre Ingot Harder alt', <randomthings:ingredient:3>, [
+recipes.addShapeless('Spectre Ingot Harder alt', <randomthings:ingredient:3> * 4, [
   <ore:ingotUnstable>,
   <randomthings:ingredient:2>,
   <thermalfoundation:material:134>,
@@ -176,11 +176,10 @@ craft.remake(<randomthings:imbuingstation>, ['pretty',
   E: <rats:raw_plastic>,
 });
 
-// [Blackout_Powder*4] from [Bio_Coal][+2]
-craft.reshapeless(<randomthings:ingredient:13>, 'F☺▲', {
-  '▲': <ore:dustAsh>,                   // Ash
-  'F': <fluxnetworks:flux>,             // Flux
-  '☺': <actuallyadditions:item_misc:22>, // Bio Coal
+craft.reshapeless(<randomthings:ingredient:13> * 3, 'F☺▲', {
+  '▲': <ore:dustAsh>,
+  'F': <fluxnetworks:flux>,
+  '☺': <actuallyadditions:item_misc:22>,
 });
 
 // [Slime Cube] from [Mending Moss][+2]
@@ -417,7 +416,7 @@ craft.remake(<randomthings:pitcherplant>, [
 });
 
 // [Stable Ender Pearl] from [Ender Pearl][+2]
-craft.remake(<randomthings:stableenderpearl> * 16, ['pretty',
+craft.remake(<randomthings:stableenderpearl> * 32, ['pretty',
   'F F F',
   'F e F',
   'o o o'], {
@@ -515,14 +514,12 @@ craft.remake(<randomthings:blockofsticks> * 8, ['pretty',
 });
 
 // Cheaper but use more specific ingredients (basalt)
-// [Inventory Rerouter] from [Wooden Hopper][+2]
 craft.remake(<randomthings:inventoryrerouter>, ['pretty',
-  'B s B',
-  's W s',
-  'B s B'], {
-  'B': <ore:stoneBasalt>, // Basalt
-  's': <ore:stone>, // Stone
-  'W': <tconstruct:wooden_hopper>, // Wooden Hopper
+  '  B  ',
+  'B W B',
+  '  B  '], {
+  'B': <ore:slabBasalt>,
+  'W': <bithop:pullhop>,
 });
 
 // Magic Bean alt

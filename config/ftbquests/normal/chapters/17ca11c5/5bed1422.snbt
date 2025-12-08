@@ -31,17 +31,13 @@
 	},
 	{
 		uid: "25737947",
-		type: "custom",
-		title: "{e2ee.quest.mythic}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			Count: 4,
 			tag: {
 				type: "mythic"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

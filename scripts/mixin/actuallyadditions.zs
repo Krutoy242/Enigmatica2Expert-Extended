@@ -45,8 +45,8 @@ zenClass MixinItemFillWand {
 #mixin {targets: "de.ellpeck.actuallyadditions.mod.items.ItemPotionRing"}
 zenClass MixinItemPotionRing {
     #mixin ModifyConstant {method: "func_77663_a", constant: {longValue: 10}}
-    function lessFrequency(value as long) as long {
-        return 1000L;
+    function buffDuration(value as long) as long {
+        return 10000L;
     }
 }
 

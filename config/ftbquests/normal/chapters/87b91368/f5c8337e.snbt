@@ -1,0 +1,17 @@
+{
+	x: 6.1d,
+	y: -0.8d,
+	text: [
+		"{q.animals.fire_dragon_blood.desc}"
+	],
+	dependencies: [
+		"9fd7c53e"
+	],
+	tasks: [{
+		uid: "df0250e4",
+		type: "item",
+		items: [{
+			item: "iceandfire:fire_dragon_blood"
+		}]
+	}]
+}

@@ -218,7 +218,7 @@
       <item name="enderio:item_dark_steel_pickaxe:0" show="true" />
       <item name="enderio:item_dark_steel_axe:0" show="true" />
       <item name="enderio:item_dark_steel_bow:0" show="true" />
-      <item name="enderio:item_dark_steel_shears:0" show="true" />
+      <item name="enderio:item_dark_steel_shears:0" show="false" />
       <item name="enderio:item_dark_steel_crook:0" show="true" />
       <item name="enderio:item_dark_steel_hand:0" show="true" />
 

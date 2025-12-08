@@ -4,7 +4,9 @@
 #priority -100
 
 import crafttweaker.block.IBlockState;
+import crafttweaker.data.IData;
 import crafttweaker.entity.IEntity;
+import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
@@ -17,7 +19,6 @@ import mods.contenttweaker.MutableItemStack;
 import mods.contenttweaker.VanillaFactory;
 import mods.contenttweaker.World;
 import native.net.minecraft.util.EnumParticleTypes;
-import crafttweaker.data.IData;
 
 function abs(n as double) as double { return n < 0 ? -n : n; }
 
@@ -53,10 +54,26 @@ function createParticles(world as IWorld, p as IBlockPos, type as EnumParticleTy
     .spawnParticle(type, 0.5 + p.x, 0.5 + p.y, 0.5 + p.z, amount, 0.25, 0.25, 0.25, 0.02, 0);
 }
 
-val lifeRecipes = {
-  'betteranimalsplus:goose': { <betteranimalsplus:golden_goose_egg>: 100 },
-  'minecraft:ocelot'       : { <actuallyadditions:item_hairy_ball>: 4 },
-} as int[IItemStack][string];
+static lifeRecipes as double[IItemStack][IEntityDefinition] = {
+  <entity:betteranimalsplus:goose>      : { <betteranimalsplus:golden_goose_egg>: 0.01, <minecraft:feather>: 4.0, <betteranimalsplus:goose_egg>: 0.25 },
+  <entity:betteranimalsplus:lammergeier>: { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:betteranimalsplus:pheasant>   : { <minecraft:feather>: 4.0, <betteranimalsplus:pheasant_egg>: 0.25 },
+  <entity:betteranimalsplus:songbird>   : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:betteranimalsplus:turkey>     : { <minecraft:feather>: 4.0, <betteranimalsplus:turkey_egg>: 0.25 },
+  <entity:emberroot:owl>                : { <minecraft:feather>: 4.0, <emberroot:owl_egg>: 0.25 },
+  <entity:excompressum:angry_chicken>   : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:iceandfire:amphithere>        : { <iceandfire:amphithere_feather>: 1.0 },
+  <entity:iceandfire:hippogryph>        : { <minecraft:feather>: 4.0 },
+  <entity:iceandfire:if_cockatrice>     : { <minecraft:feather>: 4.0 },
+  <entity:iceandfire:stymphalianbird>   : { <iceandfire:stymphalian_bird_feather>: 1.0 },
+  <entity:minecraft:chicken>            : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:minecraft:ocelot>             : { <actuallyadditions:item_hairy_ball>: 0.25 },
+  <entity:minecraft:parrot>             : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:randomthings:goldenchicken>   : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:twilightforest:penguin>       : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+  <entity:twilightforest:raven>         : { <twilightforest:raven_feather>: 1.0, <minecraft:egg>: 0.25 },
+  <entity:twilightforest:tiny_bird>     : { <minecraft:feather>: 4.0, <minecraft:egg>: 0.25 },
+} as double[IItemStack][IEntityDefinition];
 
 <cotBlock:conglomerate_of_life>.onBlockPlace = function (world, p, blockState) {
   if (!world.remote) scripts.do.build.entity.build(world, p, blockState);
@@ -65,16 +82,19 @@ val lifeRecipes = {
 <cotBlock:conglomerate_of_life>.onBlockBreak = function (world, p, blockState) { createParticles(world, p, EnumParticleTypes.HEART); };
 <cotBlock:conglomerate_of_life>.onRandomTick = function (world, p, blockState) {
   if (world.remote) return;
-  for entity in world.getEntities() {
+
+  val aabb = crafttweaker.util.IAxisAlignedBB.create(p.add(-8, -8, -8), p.add(8, 8, 8));
+  for entity in world.getEntitiesWithinAABB(aabb) {
     if (isNull(entity.definition)) continue;
-    val output = lifeRecipes[entity.definition.id];
+    val output = lifeRecipes[entity.definition];
     if (isNull(output)) continue;
-    if (abs(entity.x - p.x) > 8 || abs(entity.y - p.y) > 8 || abs(entity.z - p.z) > 8) continue;
 
     for outItem, outChance in output {
-      if (world.getRandom().nextInt(outChance) != 1) continue;
+      val rnd = world.getRandom();
+      if (outChance < 1.0 && rnd.nextInt(1.0 / outChance) != 0) continue;
       val w as IWorld = world;
-      val itemEntity = (outItem * 1).createEntityItem(w, entity.x as float, entity.y as float, entity.z as float);
+      val amount = outChance < 1.0 ? 1 : rnd.nextInt(outChance) + 1;
+      val itemEntity = (outItem * amount).createEntityItem(w, entity.x as float, entity.y as float, entity.z as float);
       itemEntity.motionY = 0.4;
       world.spawnEntity(itemEntity);
       createParticles(world, p, EnumParticleTypes.HEART, 3);

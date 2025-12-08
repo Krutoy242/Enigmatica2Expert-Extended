@@ -1,83 +1,145 @@
 [main/WARN] [Foundation]: Tweak name org.spongepowered.asm.mixin.EnvironmentStateTweaker has already been visited -- skipping
 [main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
+[main/WARN] [mixin]: Error loading class: Config (java.lang.ClassNotFoundException: The specified class 'Config' was not found)
 [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
 [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
 [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
 [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
+[Client thread/WARN] [mixin]: @ModifyConstant conflict. Skipping mixins.thaumictweaker.json:client.models.ProxyEntitiesMixin from mod unknown-owner->@ModifyConstant::modifyGiantTaintacleSegments(I)I with priority 1000, already redirected by mixin/render.json:ProxyEntitiesMixin from mod ThaumcraftFix-1.12.2-1.1.9.jar->@ModifyConstant::modifyGiantTaintacleSegments(I)I with priority 1000
+[Client thread/WARN] [mixin]: @ModifyConstant conflict. Skipping mixins.thaumictweaker.json:client.events.KeyHandlerMixin from mod unknown-owner->@ModifyConstant::modifyChangeCasterFocusKeyMixin(I)I with priority 1000, already redirected by mixin/client.json:KeyHandlerMixin from mod ThaumcraftFix-1.12.2-1.1.9.jar->@ModifyConstant::modifyChangeCasterFocusKeyMixin(I)I with priority 1000
+[Client thread/WARN] [mixin]: @ModifyConstant conflict. Skipping mixins.thaumictweaker.json:client.events.KeyHandlerMixin from mod unknown-owner->@ModifyConstant::modifyCasterToggleKeyMixin(I)I with priority 1000, already redirected by mixin/client.json:KeyHandlerMixin from mod ThaumcraftFix-1.12.2-1.1.9.jar->@ModifyConstant::modifyCasterToggleKeyMixin(I)I with priority 1000
+[Client thread/WARN] [mixin]: Method overwrite conflict for func_189652_ae in mixins.thaumictweaker.json:entities.EntitySpecialItemMixin from mod unknown-owner, previously written by thecodex6824.thaumcraftfix.mixin.entities.EntitySpecialItemMixin. Skipping method.
+[Client thread/WARN] [mixin]: Method overwrite conflict for shouldRenderInPass in mixins.thaumictweaker.json:entities.EntitySpecialItemMixin from mod unknown-owner, previously written by thecodex6824.thaumcraftfix.mixin.entities.EntitySpecialItemMixin. Skipping method.
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java22\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
+[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
 [Client thread/WARN] [mixin]: Mixin apply for mod UniversalTweaks-1.12.2-1.17.0.jar failed mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.17.0.jar -> openblocks.enchantments.LastStandEnchantmentsHandler: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow method onHurt in mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.17.0.jar was not located in the target class openblocks.enchantments.LastStandEnchantmentsHandler. Using refmap universaltweaks.refmap.json
 org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow method onHurt in mixins.mods.openblocks.json:UTLastStandEnchantmentsHandlerMixin from mod UniversalTweaks-1.12.2-1.17.0.jar was not located in the target class openblocks.enchantments.LastStandEnchantmentsHandler. Using refmap universaltweaks.refmap.json
 	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachSpecialMethod(MixinPreProcessorStandard.java:436)
 	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachShadowMethod(MixinPreProcessorStandard.java:412)
 	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachMethods(MixinPreProcessorStandard.java:340)
   [...]
+[Client thread/WARN] [mixin]: @Redirect conflict. Skipping mixins.thaumictweaker.json:blocks.BlockBannerTCMixin from mod unknown-owner->@Redirect::consumeEssentiaContainerMixin(Lnet/minecraft/item/ItemStack;I)V with priority 1000, already redirected by mixin/block.json:BlockBannerTCMixin from mod ThaumcraftFix-1.12.2-1.1.9.jar->@Redirect::consumeEssentiaContainerMixin(Lnet/minecraft/item/ItemStack;I)V with priority 1000
 [Client thread/WARN] [mixin]: @Inject(@At("INVOKE")) Shift.BY=2 on mixins.thaumictweaker.json:tiles.TileVoidSiphonMixin from mod unknown-owner::handler$xxx000$unknown_owner$wussModeSeedCreation exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[Client thread/WARN] [mixin]: @Redirect conflict. Skipping mixins.thaumictweaker.json:client.events.HudHandlerMixin from mod unknown-owner->@Redirect::modifyDialLocation(FFF)V with priority 1000, already redirected by mixin/client.json:HudHandlerMixin from mod ThaumcraftFix-1.12.2-1.1.9.jar->@Redirect::modifyDialLocation(FFF)V with priority 1000
+[Client thread/WARN] [mixin]: @Redirect conflict. Skipping mixins.thaumictweaker.json:client.events.HudHandlerMixin from mod unknown-owner->@Redirect::getPickedBlockMixin(Lthaumcraft/api/casters/ICaster;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack; with priority 1000, already redirected by mixin/client.json:HudHandlerMixin from mod ThaumcraftFix-1.12.2-1.1.9.jar->@Redirect::getPickedBlockMixin(Lthaumcraft/api/casters/ICaster;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack; with priority 1000
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture thaumicenergistics:textures/block/arcane_assembler_active.png with size 26x26 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock.2.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock.3.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock.4.png with size 1x1 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture aeadditions:textures/blocks/walrus2.png with size 925x925 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/black.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture bundles:textures/slots/slot_not_full.png with size 18x18 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture astralsorcery:textures/models/star_bg.png with size 1125x1125 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture bundles:textures/slots/slot.png with size 18x18 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture opencomputers:textures/model/hologram_effect.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock_ctm.4.png with size 2x2 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock_ctm.3.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/white.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/flash.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture twilightforest:textures/items/yeti_helm.png with size 18x18 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock_ctm.3.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock_ctm.4.png with size 2x2 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock.4.png with size 1x1 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock.3.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock.2.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture immersiveengineering:textures/models/blueprint_frame.png with size 56x56 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/fireball.png with size 1025x1025 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
+[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
+[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/layered_cube_all_2' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/layered_cube_all_2
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
+  [...]
+[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/layered_cube_all_2' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/layered_cube_all_2
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
+  [...]
+[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/layered_cube_all_2' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/layered_cube_all_2
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
+  [...]
+[VintageFix item baking thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:block/layered_cube_all_2' for 'net.minecraft.client.renderer.block.model.ModelBlock@xxxxxxxx'
+java.lang.RuntimeException: net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Model loading failure for minecraft:block/layered_cube_all_2
+	at org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.getObject(DynamicModelProvider.java:68)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:1021)
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211)
+  [...]
 [Client thread/ERROR] [FML]: Error registering event handler: minecraft class ivorius.reccomplex.events.StructureGenerationEventLite$Post public void com.charles445.rltweaker.handler.RecurrentHandler$RCCleanup.onStructureGenerationLitePost(java.lang.Object)
 java.lang.RuntimeException: java.lang.invoke.LambdaConversionException: Type mismatch for dynamic parameter 0: class java.lang.Object is not a subtype of class net.minecraftforge.fml.common.eventhandler.Event
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createListenerFactory(EventListenerFactory.java:58)
 	at net.minecraftforge.fml.common.eventhandler.EventListenerFactory.createRawListener(EventListenerFactory.java:21)
 	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.<init>(ASMEventHandler.java:52)
   [...]
-[Client thread/WARN] [THAUMCRAFT]: Research [INFUSION_CLAW] not added as it overlaps with existing research [SPAWNER] at 2,6
 [Client thread/ERROR] [loottweaker.sanity_checks]: Unexpected duplicate pool name 'marbled_cheese_golem' in table 'rats:marbled_cheese_golem'. Duplicate added as 'marbled_cheese_golem0'.
 Report this to the loot adder.
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
 java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
 java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
 java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
 java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
 java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
-[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
-{amount:0L,uid:"fluid:sodium"}
-[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
-BO:{amount:0L,uid:"fluid:sodium"}
-[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
-{amount:0L,uid:"fluid:potassium"}
-[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
-BO:{amount:0L,uid:"fluid:potassium"}
-[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
-{amount:0L,uid:"fluid:nak"}
-[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
-BO:{amount:0L,uid:"fluid:nak"}
-[Client thread/WARN] [Had Enough Items]: Failed to load bookmarked unknown ingredient, the ingredient no longer exists:
-{amount:0L,uid:"fluid:potassium_fluoride_solution"}
-[Client thread/ERROR] [Had Enough Items]: Failed to load unknown bookmarked ingredient:
-BO:{amount:0L,uid:"fluid:potassium_fluoride_solution"}
 [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0
-[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: ao:2
+[Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: fov:0.0

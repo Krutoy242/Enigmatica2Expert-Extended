@@ -109,7 +109,14 @@
       "fileMatch": [
         "config/vtt/trade_tables/*.json"
       ],
-      "url": "./dev/tools/vtt.trade_tables.schema.json"
+      "url": "./.vscode/vtt.trade_tables.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/config/tconmodmod.json",
+        "/config/tconmodmod_conarm.json"
+      ],
+      "url": "./.vscode/tconmodmod.schema.json"
     }
   ],
 

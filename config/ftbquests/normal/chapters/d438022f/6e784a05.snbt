@@ -20,16 +20,12 @@
 	}],
 	rewards: [{
 		uid: "b272dfe3",
-		type: "custom",
-		title: "{e2ee.quest.decor}",
-		icon: {
+		type: "item",
+		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
 				type: "decor"
 			}
-		},
-		tags: [
-			"loot"
-		]
+		}
 	}]
 }

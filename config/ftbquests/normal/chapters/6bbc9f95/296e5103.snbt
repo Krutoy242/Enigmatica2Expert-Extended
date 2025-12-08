@@ -14,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "thaumadditions:jar_mithminite"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "6fea7b36",

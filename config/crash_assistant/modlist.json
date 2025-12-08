@@ -1,8 +1,8 @@
 {
-  "!!!CrashAssistant-forge-1.12.2-1.10.19.jar": {
-    "jarName": "!!!CrashAssistant-forge-1.12.2-1.10.19.jar",
+  "!!!CrashAssistant-forge-1.12.2-1.10.23.jar": {
+    "jarName": "!!!CrashAssistant-forge-1.12.2-1.10.23.jar",
     "modId": "crash_assistant",
-    "version": "1.10.19"
+    "version": "1.10.23"
   },
   "!configanytime-3.0.jar": {
     "jarName": "!configanytime-3.0.jar",
@@ -22,10 +22,10 @@
     "modId": "redcore",
     "version": "0.6"
   },
-  "+Fugue-0.21.0.jar": {
-    "jarName": "+Fugue-0.21.0.jar",
+  "+Fugue-0.22.2.jar": {
+    "jarName": "+Fugue-0.22.2.jar",
     "modId": "fugue",
-    "version": "0.21.0"
+    "version": "0.22.2"
   },
   "[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar": {
     "jarName": "[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar",
@@ -127,6 +127,11 @@
     "jarName": "Animus-1.12-2.1.8.jar",
     "modId": "animus",
     "version": "2.1.8"
+  },
+  "AntiqueArmory-1.12.2-1.2.6.jar": {
+    "jarName": "AntiqueArmory-1.12.2-1.2.6.jar",
+    "modId": "conarm",
+    "version": "1.2.6"
   },
   "AppleCore-mc1.12.2-3.4.0.jar": {
     "jarName": "AppleCore-mc1.12.2-3.4.0.jar"
@@ -410,20 +415,15 @@
     "modId": "chisel",
     "version": "MC1.12.2-1.0.2.45"
   },
-  "ChunkAnimator-1.12.2-1.2.1.jar": {
-    "jarName": "ChunkAnimator-1.12.2-1.2.1.jar",
-    "modId": "chunkanimator",
-    "version": "1.12.2-1.2.1"
-  },
   "ClayBucket-1.12-1.1.jar": {
     "jarName": "ClayBucket-1.12-1.1.jar",
     "modId": "claybucket",
     "version": "1.1"
   },
-  "cleanroom-0.3.20-alpha+build.3.run.1283-universal.jar (modloader)": {
-    "jarName": "cleanroom-0.3.20-alpha+build.3.run.1283-universal.jar (modloader)",
+  "cleanroom-0.3.27-alpha.jar (modloader)": {
+    "jarName": "cleanroom-0.3.27-alpha.jar (modloader)",
     "modId": "forge",
-    "version": "cleanroom-0.3.20-alpha+build.3.run.1283-universal.jar"
+    "version": "cleanroom-0.3.27-alpha.jar"
   },
   "cloche-profit-peripheral-1.12.2-1.0.3.jar": {
     "jarName": "cloche-profit-peripheral-1.12.2-1.0.3.jar",
@@ -465,20 +465,15 @@
     "modId": "compactsolars",
     "version": "1.12.2-5.0.18.341"
   },
-  "conarm-1.12.2-1.2.5.10.jar": {
-    "jarName": "conarm-1.12.2-1.2.5.10.jar",
-    "modId": "conarm",
-    "version": "1.12.2-1.2.5.10"
-  },
   "conditionoverload-1.2.0.jar": {
     "jarName": "conditionoverload-1.2.0.jar",
     "modId": "conditionoverload",
     "version": "1.2.0"
   },
-  "CongregaMystica-1.12.2-1.0.6.jar": {
-    "jarName": "CongregaMystica-1.12.2-1.0.6.jar",
+  "CongregaMystica-1.12.2-1.0.8.jar": {
+    "jarName": "CongregaMystica-1.12.2-1.0.8.jar",
     "modId": "congregamystica",
-    "version": "1.0.6"
+    "version": "1.0.8"
   },
   "ConsoleFilter-1.12.2-1.1.1.jar": {
     "jarName": "ConsoleFilter-1.12.2-1.1.1.jar",
@@ -818,6 +813,11 @@
     "modId": "advgenerators",
     "version": "0.9.20.12"
   },
+  "gnetum-1.3.2.jar": {
+    "jarName": "gnetum-1.3.2.jar",
+    "modId": "gnetum",
+    "version": "1.3.2"
+  },
   "grid-1.12-forge14.21.1.2387-1.4.jar": {
     "jarName": "grid-1.12-forge14.21.1.2387-1.4.jar",
     "modId": "grid",
@@ -833,10 +833,10 @@
     "modId": "gunpowderlib",
     "version": "1.12.2-1.1"
   },
-  "HadEnoughItems_1.12.2-4.29.9.jar": {
-    "jarName": "HadEnoughItems_1.12.2-4.29.9.jar",
+  "HadEnoughItems_1.12.2-4.29.12.jar": {
+    "jarName": "HadEnoughItems_1.12.2-4.29.12.jar",
     "modId": "jei",
-    "version": "4.29.9"
+    "version": "4.29.12"
   },
   "HammerLib-1.12.2-12.2.58.jar": {
     "jarName": "HammerLib-1.12.2-12.2.58.jar",
@@ -996,10 +996,10 @@
     "modId": "jeiutilities",
     "version": "0.2.13"
   },
-  "jei_area_fixer-2.2.1.jar": {
-    "jarName": "jei_area_fixer-2.2.1.jar",
+  "jei_area_fixer-2.3.0.jar": {
+    "jarName": "jei_area_fixer-2.3.0.jar",
     "modId": "jei_area_fixer",
-    "version": "2.2.1"
+    "version": "2.3.0"
   },
   "jeibees-0.9.0.5-mc1.12.2.jar": {
     "jarName": "jeibees-0.9.0.5-mc1.12.2.jar",
@@ -1103,10 +1103,10 @@
     "modId": "llibrary",
     "version": "1.7.20-1.12.2"
   },
-  "loliasm-5.29.jar": {
-    "jarName": "loliasm-5.29.jar",
+  "loliasm-5.30.jar": {
+    "jarName": "loliasm-5.30.jar",
     "modId": "loliasm",
-    "version": "5.29"
+    "version": "5.30"
   },
   "lootcapacitortooltips-1.3.jar": {
     "jarName": "lootcapacitortooltips-1.3.jar",
@@ -1236,6 +1236,11 @@
     "modId": "moreoverlays",
     "version": "1.15.1"
   },
+  "morphoverlay-1.0.1.jar": {
+    "jarName": "morphoverlay-1.0.1.jar",
+    "modId": "morphoverlay",
+    "version": "1.0.1"
+  },
   "mousetweaks-1.12.2-3.1.5.jar": {
     "jarName": "mousetweaks-1.12.2-3.1.5.jar",
     "modId": "mousetweaks",
@@ -1341,20 +1346,15 @@
     "modId": "omniwand",
     "version": "1.12.2-1.0.1"
   },
-  "OpenBlocksReopened-1.12.2-1.8.2.jar": {
-    "jarName": "OpenBlocksReopened-1.12.2-1.8.2.jar",
+  "OpenBlocksReopened-1.12.2-1.8.3.jar": {
+    "jarName": "OpenBlocksReopened-1.12.2-1.8.3.jar",
     "modId": "openblocks",
-    "version": "1.8.2"
+    "version": "1.8.3"
   },
   "OpenComputers-MC1.12.2-1.8.9a+8ca336f.jar": {
     "jarName": "OpenComputers-MC1.12.2-1.8.9a+8ca336f.jar",
     "modId": "opencomputers",
     "version": "1.8.9a"
-  },
-  "OpenModsLib-1.12.2-0.12.2.jar": {
-    "jarName": "OpenModsLib-1.12.2-0.12.2.jar",
-    "modId": "openmods",
-    "version": "0.12.2"
   },
   "openscreens-1.12.2-1.0.1.jar": {
     "jarName": "openscreens-1.12.2-1.0.1.jar",
@@ -1386,10 +1386,10 @@
     "modId": "packagedastral",
     "version": "1.0.4.23"
   },
-  "PackagedAuto-1.12.2-1.0.23.71.jar": {
-    "jarName": "PackagedAuto-1.12.2-1.0.23.71.jar",
+  "PackagedAuto-1.12.2-1.0.23.72.jar": {
+    "jarName": "PackagedAuto-1.12.2-1.0.23.72.jar",
     "modId": "packagedauto",
-    "version": "1.0.23.71"
+    "version": "1.0.23.72"
   },
   "PackagedDraconic-1.12.2-1.0.4.24.jar": {
     "jarName": "PackagedDraconic-1.12.2-1.0.4.24.jar",
@@ -1512,8 +1512,8 @@
   "QuarkOddities-1.12.2.jar": {
     "jarName": "QuarkOddities-1.12.2.jar"
   },
-  "QuarkRotN-r1.6-190.jar": {
-    "jarName": "QuarkRotN-r1.6-190.jar",
+  "QuarkRotN-r1.6-191.jar": {
+    "jarName": "QuarkRotN-r1.6-191.jar",
     "modId": "quark",
     "version": "r1.6-189"
   },
@@ -1755,10 +1755,10 @@
     "modId": "thaumcraftaspectcreator",
     "version": "1.12.2-1.1"
   },
-  "ThaumcraftFix-1.12.2-1.1.8.jar": {
-    "jarName": "ThaumcraftFix-1.12.2-1.1.8.jar",
+  "ThaumcraftFix-1.12.2-1.1.9.jar": {
+    "jarName": "ThaumcraftFix-1.12.2-1.1.9.jar",
     "modId": "thaumcraftfix",
-    "version": "1.12.2-1.1.8"
+    "version": "1.12.2-1.1.9"
   },
   "ThaumcraftResearchPatcher-1.12.2-1.1.3.jar": {
     "jarName": "ThaumcraftResearchPatcher-1.12.2-1.1.3.jar",
@@ -1810,10 +1810,10 @@
     "modId": "thaumictweaker",
     "version": "1.2.1"
   },
-  "thaumicwonders-2.2.0.jar": {
-    "jarName": "thaumicwonders-2.2.0.jar",
+  "thaumicwonders-2.2.2.jar": {
+    "jarName": "thaumicwonders-2.2.2.jar",
     "modId": "thaumicwonders",
-    "version": "2.2.0"
+    "version": "2.2.2"
   },
   "TheOneSmeagle-1.12-1.1.5.jar": {
     "jarName": "TheOneSmeagle-1.12-1.1.5.jar",
@@ -1853,10 +1853,10 @@
     "modId": "TinkersAddons",
     "version": "1.0.10"
   },
-  "TinkersAntique-1.12.2-2.13.0.203.jar": {
-    "jarName": "TinkersAntique-1.12.2-2.13.0.203.jar",
+  "TinkersAntique-1.12.2-2.13.0.204.jar": {
+    "jarName": "TinkersAntique-1.12.2-2.13.0.204.jar",
     "modId": "tconstruct",
-    "version": "1.12.2-2.13.0.203"
+    "version": "1.12.2-2.13.0.204"
   },
   "TinkersComplement-1.12.2-0.4.3.jar": {
     "jarName": "TinkersComplement-1.12.2-0.4.3.jar",
@@ -2003,6 +2003,11 @@
     "modId": "vaultopic",
     "version": "2.2"
   },
+  "VillageNames-1.12.2-4.4.13.jar": {
+    "jarName": "VillageNames-1.12.2-4.4.13.jar",
+    "modId": "VillageNames",
+    "version": ""
+  },
   "villager-market-nbt-fix-1.12.2-1.0.4.jar": {
     "jarName": "villager-market-nbt-fix-1.12.2-1.0.4.jar",
     "modId": "villagermarket",
@@ -2081,9 +2086,9 @@
     "modId": "zentoolforge",
     "version": "1.1"
   },
-  "zenutils-1.26.2.jar": {
-    "jarName": "zenutils-1.26.2.jar",
+  "zenutils-1.26.7.jar": {
+    "jarName": "zenutils-1.26.7.jar",
     "modId": "zenutils",
-    "version": "1.26.2"
+    "version": "1.26.7"
   }
 }

@@ -195,19 +195,14 @@ return cfg
     `addSyngas(${it}, ${val ?? (OD ? `getOreDictBurnTime('${item}')` : it+'.burnTime')});`
 })
 } */
-addSyngas(<contenttweaker:saturated_phosphor>, 450000);
-addSyngas(<contenttweaker:empowered_phosphor>, 180000);
-addSyngas(<contenttweaker:blasted_coal>, 120000);
 addSyngas(<ore:compressedCharcoal3x>, 102400);
 addSyngas(<ore:compressedCoal3x>, 102400);
-addSyngas(<contenttweaker:conglomerate_of_coal>, 60000);
 // addSyngas(<railcraft:cube:0>, 32000);
 addSyngas(<ore:blockFuelCoke>, 32000);
-addSyngas(<ore:crystalCrudeOil>, 32000);
+addSyngas(<ore:bitumen>, 32000);
 addSyngas(<ore:compressedCharcoal2x>, 25600);
 addSyngas(<ore:compressedCoal2x>, 25600);
 addSyngas(<ore:blockGraphite>, 14400);
-addSyngas(<rats:little_black_squash_balls>, 8000);
 addSyngas(<ore:blockCharcoal>, 6400);
 addSyngas(<ore:fuelCoke>, 3200);
 addSyngas(<mekanism:compressedcarbon>, 3200);
@@ -222,6 +217,11 @@ addSyngas(<ore:plankWood>, 400);
 addSyngas(<ore:blockCoal>, getOreDictBurnTime('blockCoal'));
 addSyngas(<minecraft:coal:0>, <minecraft:coal:0>.burnTime);
 addSyngas(<minecraft:coal:1>, <minecraft:coal:1>.burnTime);
+addSyngas(<rats:little_black_squash_balls>, <rats:little_black_squash_balls>.burnTime);
+addSyngas(<contenttweaker:blasted_coal>, <contenttweaker:blasted_coal>.burnTime);
+addSyngas(<contenttweaker:empowered_phosphor>, <contenttweaker:empowered_phosphor>.burnTime);
+addSyngas(<contenttweaker:saturated_phosphor>, <contenttweaker:saturated_phosphor>.burnTime);
+addSyngas(<contenttweaker:conglomerate_of_coal>, <contenttweaker:conglomerate_of_coal>.burnTime);
 // addSyngas(<ore:itemCharcoalSugar>, getOreDictBurnTime('itemCharcoalSugar'));
 // addSyngas(<minefactoryreloaded:brick:15>, <minefactoryreloaded:brick:15>.burnTime);
 addSyngas(<ore:woodRubber>, getOreDictBurnTime('woodRubber'));
