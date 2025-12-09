@@ -20,9 +20,9 @@ import mods.thermalexpansion.Imbuer;
 //╚═════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝   ╚══════╝   ╚═╝        ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ 
                                                                                                                                                                                   
 //Grade 1 (astral)
-//Base recipe
-scripts.process.alloy([<astralsorcery:itemusabledust:1> * 2, <astralsorcery:itemcraftingcomponent:2> * 1], 
-<contenttweaker:naquadah_resevoir_grade_1>.withDamage(9001), 'strict: ArcFurnace, AdvRockArc');
+//Base recipe (created at 10% durabilty: max 10000)
+scripts.process.alloy([<astralsorcery:itemusabledust:1> * 2, <astralsorcery:itemcraftingcomponent:2> ], 
+<contenttweaker:naquadah_resevoir_grade_1>.withDamage(9000), 'only: ArcFurnace AdvRockArc')
 
 //full durability recipe (add celestial crystal to cost)
 mods.astralsorcery.Altar.addConstellationAltarRecipe('resevoir grade 1 full',
@@ -42,7 +42,7 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_1>, [
 ]);
 
 //Grade 2 (botania)
-//Base recipe
+//Base recipe (created at 10% durabilty: max 15000)
 mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>.withDamage(13500), 
 [<botania:corporeaspark>, <botania:manaresource:23>, <botania:manaresource:23>], 20000);
 //full durability recipe (add rune to cost)
@@ -55,7 +55,7 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_2>, [
 ]);
 
 //Grade 3 (alchemic)
-//Base recipe
+//Base recipe (created at 10% durabilty: max 20000)
 // mods.bloodmagic.AlchemyTable.addRecipe(IItemStack output, IItemStack[] inputs, int syphon, int ticks, int minTier);
 mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3>.withDamage(18000) * 1, [
   <bloodmagic:component:14>,
@@ -77,9 +77,9 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_3>, [
 ]);
 
 //Grade 4 (alchemic)
-//Base recipe
+//Base recipe (created at 10% durabilty: max 32767)
 mods.thaumcraft.Infusion.registerRecipe('naquadah_resevoir_grade_4_Damaged', 'INFUSION',
-  <contenttweaker:naquadah_resevoir_grade_4>.withDamage(64800), //output
+  <contenttweaker:naquadah_resevoir_grade_4>.withDamage(29567), //output
   12, //instability
   Aspects('200💪 30🧠 20🔮'),
   <thaumicaugmentation:material:5>,//cental item
@@ -109,9 +109,9 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_4>, [
 //Grade5 (ultimate)
 
 mods.astralsorcery.Altar.addTraitAltarRecipe("reservoir_grade_5", <contenttweaker:naquadah_resevoir_grade_5>, 4500, 4000, [
-  <contenttweaker:naquadah_resevoir_grade_1>, <qmd:cell:9>, <contenttweaker:naquadah_resevoir_grade_2>,
+  <contenttweaker:naquadah_resevoir_grade_1>, <qmd:cell:9>.anyDamage(), <contenttweaker:naquadah_resevoir_grade_2>,
   <thaumictinkerer:proto_clay>, <rats:idol_of_ratlantis>, <thaumictinkerer:proto_clay>, 
-  <contenttweaker:naquadah_resevoir_grade_3>, <qmd:cell:9>, <contenttweaker:naquadah_resevoir_grade_4>,
+  <contenttweaker:naquadah_resevoir_grade_3>, <qmd:cell:9>.anyDamage(), <contenttweaker:naquadah_resevoir_grade_4>,
   <animus:component:2>, <animus:component:2>, <animus:component:2>, <animus:component:2>, //outer corners
   <astralsorcery:itemusabledust:1>, <astralsorcery:itemcraftingcomponent:4>, //outer ring top to bottom
   <astralsorcery:itemcraftingcomponent:4>, <astralsorcery:itemusabledust:1>,
@@ -156,13 +156,13 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_5>, [
 function SteamMixers(grade as int) as void {
 
     var gradeUp = grade + 1;
-    var steamLiquid as ILiquidStack = game.getLiquid('magic_steam_grade_' ~ grade);
-    var steamLiquidUp as ILiquidStack = game.getLiquid('magic_steam_grade_' ~ gradeUp);
-    var cataIn as IIngredient = getIngredientFromString('contenttweaker:naquadah_catalyst_grade_' ~ grade);
-    var cataUp as IIngredient = getIngredientFromString('contenttweaker:naquadah_catalyst_grade_' ~ gradeUp);
-    var steamOutNuc as int = 1000/(grade*grade);
-    var steamOutIC2 as int = 500/(grade*grade);
-    var steamOutForge as int = 125/(grade*grade);
+    var steamLiquid  = <fluid:magic_steam_grade_${grade}>;
+    var steamLiquidUp  = <fluid:magic_steam_grade_${gradeUp}>;
+    var cataIn = <item:contenttweaker:naquadah_catalyst_grade_${grade}>;
+    var cataUp  = <item:contenttweaker:naquadah_catalyst_grade_${gradeUp}>;
+    var steamOutNuc  = 1000/(grade*grade);
+    var steamOutIC2  = 500/(grade*grade);
+    var steamOutForge  = 125/(grade*grade);
 
     //====================
     //Conflux 1
@@ -198,22 +198,15 @@ function SteamMixers(grade as int) as void {
     //Conflux 3 (4x steam per operation)
     //====================
 
-    steamOutNuc *= 2;
-    steamOutIC2 *= 2;
-    steamOutForge *= 2;
-
-    //EIO vat recipes
-    //vat efficiency mult is brain-hurty.
-    //var vatEff = 1;
-    //maybe later.
+    //N/A
 
     //====================
     //Conflux 4 (32x steam per operation)
     //====================
 
-    steamOutNuc *= 4;
-    steamOutIC2 *= 4;
-    steamOutForge *= 4;
+    steamOutNuc *= 8;
+    steamOutIC2 *= 8;
+    steamOutForge *= 8;
 
   //Adv rocketry chem reactor recipes
   val chemReactor = mods.advancedrocketry.RecipeTweaker.forMachine('ChemicalReactor');
@@ -236,10 +229,9 @@ function SteamMixers(grade as int) as void {
 
 }
 
-var iter = 1;
-while iter <= 4 {
-    SteamMixers(iter);
-    iter += 1;
+for i in 1 .. 4{
+    SteamMixers(i);
+    //i+=1;
 }
 
 //███████╗████████╗███████╗ █████╗ ███╗   ███╗    ██╗   ██╗███████╗███████╗███████╗
@@ -260,3 +252,4 @@ mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_5>, <liquid:exhaus
 
 //todo: crafting uses for steam
 //convert stone into corresponding mod material?
+
