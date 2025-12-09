@@ -31,6 +31,26 @@ fluid.mithrillium=Растворимый Митриллиум
 fluid.adaminite=Расплавленный Адаминит
 fluid.mithminite=Растворенный Митминит
 
+#Enchanted Steam
+itemGroup.Nucleothurgy=Enchanted Steam
+item.contenttweaker.naquadah_resevoir_grade_1.name=Астральный катализатор Резервуар 
+item.contenttweaker.naquadah_resevoir_grade_2.name=ботанический катализатор Резервуар 
+item.contenttweaker.naquadah_resevoir_grade_3.name=алхимический  катализатор Резервуар 
+item.contenttweaker.naquadah_resevoir_grade_4.name=таумический  катализатор Резервуар 
+item.contenttweaker.naquadah_resevoir_grade_5.name=окончательный  катализатор Резервуар 
+
+item.contenttweaker.naquadah_catalyst_grade_1.name=астральный  паровой катализатор 
+item.contenttweaker.naquadah_catalyst_grade_2.name=ботанический паровой катализатор 
+item.contenttweaker.naquadah_catalyst_grade_3.name=алхимический  паровой катализатор 
+item.contenttweaker.naquadah_catalyst_grade_4.name=таумический паровой катализатор 
+item.contenttweaker.naquadah_catalyst_grade_5.name=окончательный  паровой катализатор 
+
+fluid.magic_steam_grade_1=астральный  плотный пар 
+fluid.magic_steam_grade_2=ботанический плотный пар 
+fluid.magic_steam_grade_3=алхимический  плотный пар 
+fluid.magic_steam_grade_4=таумический  плотный пар 
+fluid.magic_steam_grade_5=окончательный  плотный пар 
+
 base.material.heavy_metal=Тяжёлый Метал
 base.material.cheese=Сыр
 
