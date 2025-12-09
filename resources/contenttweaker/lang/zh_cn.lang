@@ -31,6 +31,26 @@ fluid.mithrillium=熔融秘银
 fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
 
+#Enchanted Steam
+itemGroup.Nucleothurgy=Enchanted Steam
+item.contenttweaker.naquadah_resevoir_grade_1.name=星體催化劑庫
+item.contenttweaker.naquadah_resevoir_grade_2.name=植物催化劑庫
+item.contenttweaker.naquadah_resevoir_grade_3.name=煉金催化劑儲層
+item.contenttweaker.naquadah_resevoir_grade_4.name=奇異族催化劑儲庫
+item.contenttweaker.naquadah_resevoir_grade_5.name=最終催化劑儲庫
+
+item.contenttweaker.naquadah_catalyst_grade_1.name=星體蒸汽催化劑
+item.contenttweaker.naquadah_catalyst_grade_2.name=植物蒸氣催化劑
+item.contenttweaker.naquadah_catalyst_grade_3.name=煉金蒸汽催化劑
+item.contenttweaker.naquadah_catalyst_grade_4.name=奇美蒸氣催化劑
+item.contenttweaker.naquadah_catalyst_grade_5.name=終極蒸汽催化劑
+
+fluid.magic_steam_grade_1=星體濃蒸汽
+fluid.magic_steam_grade_2=植物濃蒸汽
+fluid.magic_steam_grade_3=煉金術濃蒸汽
+fluid.magic_steam_grade_4=奇美濃蒸汽
+fluid.magic_steam_grade_5=終極濃蒸汽
+
 base.material.heavy_metal=沉重金属
 base.material.cheese=奶酪
 
