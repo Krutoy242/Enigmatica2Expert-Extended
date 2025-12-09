@@ -51,9 +51,6 @@ fluid.magic_steam_grade_3=Alchemic Dense Steam
 fluid.magic_steam_grade_4=Thaumic Dense Steam
 fluid.magic_steam_grade_5=Ultimate Dense Steam
 
-
-
-
 base.material.heavy_metal=Heavy Metal
 base.material.cheese=Cheese
 
@@ -790,3 +787,4 @@ enchantment.openblocks.explosive.desc=Creates explosions when attacked.
 enchantment.openblocks.flim_flam.desc=Randomly causes negative effects nearby.
 enchantment.openblocks.last_stand.desc=Uses XP to prevent death.
 #enchantment.randomthings.magnetic.desc=The drops from blocks you mine with a tool that has the magnetic enchantment go directly into your inventory instead of dropping on the ground.
+
