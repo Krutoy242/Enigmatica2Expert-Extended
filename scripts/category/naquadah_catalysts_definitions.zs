@@ -49,7 +49,7 @@ NCG3.register();
 //Grade 4 (thaumic)
 var NRG4 = VanillaFactory.createItem("naquadah_resevoir_grade_4");
 NRG4.maxStackSize = 1;
-NRG4.maxDamage = 72000;
+NRG4.maxDamage = 32767;
 NRG4.rarity = "rare";
 NRG4.creativeTab = Nucleothurgy;
 NRG4.register();
@@ -109,3 +109,4 @@ DS5.viscosity = 20;
 DS5.temperature = 1000;
 DS5.density = -200;
 DS5.register();
+
