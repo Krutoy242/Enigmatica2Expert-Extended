@@ -121,7 +121,7 @@ mods.astralsorcery.Altar.addTraitAltarRecipe("reservoir_grade_5", <contenttweake
   //Outer Items, indices 25+
   <botania:rune:11>, <botania:rune:12>, 
   <botania:rune:11>, <botania:rune:12>
-], "astralsorcery.constellation.gelu");
+], "astralsorcery.constellation.octans");
 
 //extract catalyst from resevoir
 recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_5>, [
@@ -252,11 +252,12 @@ for i in 1 .. 5{
 
 //powergen!
 // mods.nuclearcraft.Turbine.addRecipe(ILiquidStack fluidInput, ILiquidStack fluidOutput, double turbine_power_per_mb, double turbine_expansion_level, double turbine_spin_up_multiplier, @Optional String particleEffect, @Optional double particleSpeedMultiplier);
-mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_1>, <liquid:exhaust_steam> * 8, 374.0, 1.8, 1.0, 'enchantmenttable', 1.0);
-mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_2>, <liquid:exhaust_steam> * 16, 816.0, 1.8, 1.0, 'enchantmenttable', 1.0);
-mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_3>, <liquid:exhaust_steam> * 32, 1768.0, 1.8, 1.0, 'enchantmenttable', 1.0);
-mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_4>, <liquid:exhaust_steam> * 64, 3810, 1.8, 1.0, 'enchantmenttable', 1.0);
-mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_5>, <liquid:exhaust_steam> * 128, 8160.0, 1.8, 1.0, 'enchantmenttable', 1.0);
+mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_1>, <liquid:exhaust_steam> * 4, 374.0, 1.8, 1.0, 'enchantmenttable', 1.0);
+mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_2>, <liquid:exhaust_steam> * 6, 816.0, 1.8, 1.0, 'enchantmenttable', 1.0);
+mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_3>, <liquid:exhaust_steam> * 10, 1768.0, 1.8, 1.0, 'enchantmenttable', 1.0);
+mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_4>, <liquid:exhaust_steam> * 16, 3810, 1.8, 1.0, 'enchantmenttable', 1.0);
+mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_5>, <liquid:exhaust_steam> * 24, 8160.0, 1.8, 1.0, 'enchantmenttable', 1.0);
 
 //todo: crafting uses for steam
 //convert stone into corresponding mod material?
+
