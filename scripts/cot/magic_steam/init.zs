@@ -14,54 +14,38 @@ Author: 825_Jaded_Vector
 
 #loader contenttweaker
 
-import mods.contenttweaker.Color;
 import mods.contenttweaker.VanillaFactory;
+
+import scripts.cot.init.buildItem;
+
+function buildReservoir(id as string, maxDamage as int) as void {
+  val item = VanillaFactory.createItem(id);
+  if (maxDamage > 0) item.maxDamage = maxDamage;
+  item.maxStackSize = 1;
+  item.rarity = 'rare';
+  item.register();
+}
 
 // catlyst definitions
 // Grade 1 (astral)
-val NRG1 = VanillaFactory.createItem('naquadah_resevoir_grade_1');
-NRG1.maxStackSize = 1;
-NRG1.maxDamage = 10000;
-NRG1.rarity = 'rare';
-NRG1.register();
-val NCG1 = VanillaFactory.createItem('naquadah_catalyst_grade_1');
-NCG1.register();
+buildReservoir('naquadah_resevoir_grade_1', 10000);
+buildItem('naquadah_catalyst_grade_1');
 
 // Grade 2 (botanic)
-val NRG2 = VanillaFactory.createItem('naquadah_resevoir_grade_2');
-NRG2.maxStackSize = 1;
-NRG2.maxDamage = 15000;
-NRG2.rarity = 'rare';
-NRG2.register();
-val NCG2 = VanillaFactory.createItem('naquadah_catalyst_grade_2');
-NCG2.register();
+buildReservoir('naquadah_resevoir_grade_2', 15000);
+buildItem('naquadah_catalyst_grade_2');
 
 // Grade 3 (alchemic)
-val NRG3 = VanillaFactory.createItem('naquadah_resevoir_grade_3');
-NRG3.maxStackSize = 1;
-NRG3.maxDamage = 20000;
-NRG3.rarity = 'rare';
-NRG3.register();
-val NCG3 = VanillaFactory.createItem('naquadah_catalyst_grade_3');
-NCG3.register();
+buildReservoir('naquadah_resevoir_grade_3', 20000);
+buildItem('naquadah_catalyst_grade_3');
 
 // Grade 4 (thaumic)
-val NRG4 = VanillaFactory.createItem('naquadah_resevoir_grade_4');
-NRG4.maxStackSize = 1;
-NRG4.maxDamage = 32767;
-NRG4.rarity = 'rare';
-NRG4.register();
-val NCG4 = VanillaFactory.createItem('naquadah_catalyst_grade_4');
-NCG4.register();
+buildReservoir('naquadah_resevoir_grade_4', 32767);
+buildItem('naquadah_catalyst_grade_4');
 
 // Grade5 (ultimate)
-val NRG5 = VanillaFactory.createItem('naquadah_resevoir_grade_5');
-// NRG5.maxStackSize = 1;
-// NRG5.maxDamage = 10000;
-NRG5.rarity = 'rare';
-NRG5.register();
-val NCG5 = VanillaFactory.createItem('naquadah_catalyst_grade_5');
-NCG5.register();
+buildReservoir('naquadah_resevoir_grade_5', -1);
+buildItem('naquadah_catalyst_grade_5');
 
 // Dense steam definintions
 
