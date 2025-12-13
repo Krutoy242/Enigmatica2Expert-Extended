@@ -66,7 +66,7 @@ mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3
 ], 10000, 60, 4);
 
 // full durability recipe (add weird mob bits to cost)
-mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3> * 1, [
+mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3>, [
   <bloodmagic:component:14>,
   <bloodmagic:blood_shard>,
   <twilightforest:carminite>,
@@ -219,19 +219,19 @@ function SteamMixers(grade as int) as void {
   val chemReactor = mods.advancedrocketry.RecipeTweaker.forMachine('ChemicalReactor');
 
   chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(<fluid:high_pressure_steam> * 32000, cataIn * 1)
+  .inputs(<fluid:high_pressure_steam> * 32000, cataIn)
   .outputs(steamLiquid * steamOutNuc).build();
 
   chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(<fluid:ic2superheated_steam> * 32000, cataIn * 1)
+  .inputs(<fluid:ic2superheated_steam> * 32000, cataIn)
   .outputs(steamLiquid * steamOutIC2).build();
 
   chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(<fluid:steam> * 32000, cataIn * 1)
+  .inputs(<fluid:steam> * 32000, cataIn)
   .outputs(steamLiquid * steamOutForge).build();
 
   chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(steamLiquid * 32000, cataUp * 1)
+  .inputs(steamLiquid * 32000, cataUp)
   .outputs(steamLiquidUp * 16000).build();
 }
 
