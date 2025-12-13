@@ -58,7 +58,7 @@ DS1.density = -200;
 DS1.register();
 
 // Grade 2 (botanic)
-val DS2 = VanillaFactory.createFluid('magic_steam_grade_2', 0xFFADFCAD); // 7fb3e48a
+val DS2 = VanillaFactory.createFluid('magic_steam_grade_2', 0xFFADFCAD); 
 DS2.material = <blockmaterial:water>;
 DS2.viscosity = 20;
 DS2.temperature = 1000;
@@ -82,7 +82,7 @@ DS4.density = -200;
 DS4.register();
 
 // Grade5 (ultimate)
-val DS5 = VanillaFactory.createFluid('magic_steam_grade_5', 0xFFC1C76A); // adfcad8c
+val DS5 = VanillaFactory.createFluid('magic_steam_grade_5', 0xFFC1C76A); 
 DS5.material = <blockmaterial:water>;
 DS5.viscosity = 20;
 DS5.temperature = 1000;
