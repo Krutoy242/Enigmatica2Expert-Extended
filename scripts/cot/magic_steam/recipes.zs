@@ -22,9 +22,10 @@ Author: 825_Jaded_Vector
 //  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝   ╚══════╝   ╚═╝        ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
 
 // Grade 1 (astral)
-// Base recipe (created at 10% durabilty: max 10000)
 scripts.process.alloy([<astralsorcery:itemusabledust:1> * 2, <astralsorcery:itemcraftingcomponent:2>],
-  <contenttweaker:naquadah_resevoir_grade_1>.withDamage(9000), 'only: ArcFurnace AdvRockArc');
+  <contenttweaker:naquadah_resevoir_grade_1>.withDamage(
+    0.9 * <contenttweaker:naquadah_resevoir_grade_1>.maxDamage
+  ), 'only: ArcFurnace AdvRockArc');
 
 // full durability recipe (add celestial crystal to cost)
 mods.astralsorcery.Altar.addConstellationAltarRecipe('resevoir grade 1 full',
@@ -44,8 +45,8 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_1>, [
 ]);
 
 // Grade 2 (botania)
-// Base recipe (created at 10% durabilty: max 15000)
-mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>.withDamage(13500),
+mods.botania.RuneAltar.addRecipe(
+  <contenttweaker:naquadah_resevoir_grade_2>.withDamage(0.9 * <contenttweaker:naquadah_resevoir_grade_2>.maxDamage),
   [<botania:corporeaspark>, <botania:manaresource:23>, <botania:manaresource:23>], 20000);
 // full durability recipe (add rune to cost)
 mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>,
@@ -57,9 +58,9 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_2>, [
 ]);
 
 // Grade 3 (alchemic)
-// Base recipe (created at 10% durabilty: max 20000)
 // mods.bloodmagic.AlchemyTable.addRecipe(IItemStack output, IItemStack[] inputs, int syphon, int ticks, int minTier);
-mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3>.withDamage(18000) * 1, [
+mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3>.withDamage(
+  0.9 * <contenttweaker:naquadah_resevoir_grade_3>.maxDamage), [
   <bloodmagic:component:14>,
   <bloodmagic:blood_shard>,
   <minecraft:rabbit_hide>,
@@ -79,9 +80,10 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_3>, [
 ]);
 
 // Grade 4 (alchemic)
-// Base recipe (created at 10% durabilty: max 32000)
 mods.thaumcraft.Infusion.registerRecipe('naquadah_resevoir_grade_4_Damaged', 'INFUSION',
-  <contenttweaker:naquadah_resevoir_grade_4>.withDamage(28800), // output
+  <contenttweaker:naquadah_resevoir_grade_4>.withDamage( // output
+    0.9 * <contenttweaker:naquadah_resevoir_grade_4>.maxDamage
+  ),
   12, // instability
   Aspects('200💪 30🧠 20🔮'),
   <thaumicaugmentation:material:5>, // cental item
