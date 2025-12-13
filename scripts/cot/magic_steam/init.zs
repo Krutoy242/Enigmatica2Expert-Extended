@@ -40,7 +40,7 @@ buildReservoir('naquadah_resevoir_grade_3', 20000);
 buildItem('naquadah_catalyst_grade_3');
 
 // Grade 4 (thaumic)
-buildReservoir('naquadah_resevoir_grade_4', 32767);
+buildReservoir('naquadah_resevoir_grade_4', 32000);
 buildItem('naquadah_catalyst_grade_4');
 
 // Grade5 (ultimate)
