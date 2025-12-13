@@ -17,20 +17,14 @@ Author: 825_Jaded_Vector
 import mods.contenttweaker.Color;
 import mods.contenttweaker.VanillaFactory;
 
-val Nucleothurgy = mods.contenttweaker.VanillaFactory.createCreativeTab('Nucleothurgy', <item:contenttweaker.naquadah_catalyst_grade_1>);
-Nucleothurgy.unlocalizedName = 'Nucleothurgy';
-Nucleothurgy.register();
-
 // catlyst definitions
 // Grade 1 (astral)
 val NRG1 = VanillaFactory.createItem('naquadah_resevoir_grade_1');
 NRG1.maxStackSize = 1;
 NRG1.maxDamage = 10000;
 NRG1.rarity = 'rare';
-NRG1.creativeTab = Nucleothurgy;
 NRG1.register();
 val NCG1 = VanillaFactory.createItem('naquadah_catalyst_grade_1');
-NCG1.creativeTab = Nucleothurgy;
 NCG1.register();
 
 // Grade 2 (botanic)
@@ -38,10 +32,8 @@ val NRG2 = VanillaFactory.createItem('naquadah_resevoir_grade_2');
 NRG2.maxStackSize = 1;
 NRG2.maxDamage = 15000;
 NRG2.rarity = 'rare';
-NRG2.creativeTab = Nucleothurgy;
 NRG2.register();
 val NCG2 = VanillaFactory.createItem('naquadah_catalyst_grade_2');
-NCG2.creativeTab = Nucleothurgy;
 NCG2.register();
 
 // Grade 3 (alchemic)
@@ -49,10 +41,8 @@ val NRG3 = VanillaFactory.createItem('naquadah_resevoir_grade_3');
 NRG3.maxStackSize = 1;
 NRG3.maxDamage = 20000;
 NRG3.rarity = 'rare';
-NRG3.creativeTab = Nucleothurgy;
 NRG3.register();
 val NCG3 = VanillaFactory.createItem('naquadah_catalyst_grade_3');
-NCG3.creativeTab = Nucleothurgy;
 NCG3.register();
 
 // Grade 4 (thaumic)
@@ -60,10 +50,8 @@ val NRG4 = VanillaFactory.createItem('naquadah_resevoir_grade_4');
 NRG4.maxStackSize = 1;
 NRG4.maxDamage = 32767;
 NRG4.rarity = 'rare';
-NRG4.creativeTab = Nucleothurgy;
 NRG4.register();
 val NCG4 = VanillaFactory.createItem('naquadah_catalyst_grade_4');
-NCG4.creativeTab = Nucleothurgy;
 NCG4.register();
 
 // Grade5 (ultimate)
@@ -71,10 +59,8 @@ val NRG5 = VanillaFactory.createItem('naquadah_resevoir_grade_5');
 // NRG5.maxStackSize = 1;
 // NRG5.maxDamage = 10000;
 NRG5.rarity = 'rare';
-NRG5.creativeTab = Nucleothurgy;
 NRG5.register();
 val NCG5 = VanillaFactory.createItem('naquadah_catalyst_grade_5');
-NCG5.creativeTab = Nucleothurgy;
 NCG5.register();
 
 // Dense steam definintions
