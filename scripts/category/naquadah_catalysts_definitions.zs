@@ -1,6 +1,19 @@
+/*
+
+Magical steam processing
+
+Increase density of the steam by "enriching" it
+with magical components.
+
+This reduce size of the required turbine and
+increase power output.
+
+Author: 825_Jaded_Vector
+
+*/
+
 #loader contenttweaker
 
-// 825_Jaded_Vector
 import mods.contenttweaker.Color;
 import mods.contenttweaker.VanillaFactory;
 
