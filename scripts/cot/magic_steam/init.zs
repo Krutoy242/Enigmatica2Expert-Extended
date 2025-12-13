@@ -13,6 +13,7 @@ Author: 825_Jaded_Vector
 */
 
 #loader contenttweaker
+#modloaded astralsorcery botania thaumcraft immersiveengineering nuclearcraft
 
 import mods.contenttweaker.VanillaFactory;
 
