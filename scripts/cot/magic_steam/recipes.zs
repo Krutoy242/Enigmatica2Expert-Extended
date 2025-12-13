@@ -154,7 +154,7 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_5>, [
 // Nuclearcraft steam = 2:1 compression, IC2 steam = 6:1 compression, Forge steam = 24:1 compression
 // conversion ratio worsens by n^2 for each tier skipped
 // crafting speed/costs buffed to support potential of extreme throughput demands of endgame seteps
-function SteamMixers(grade as int) as void {
+function steamMixers(grade as int) as void {
   val gradeUp = grade + 1;
   val steamLiquid  = <fluid:magic_steam_grade_${grade}>;
   val steamLiquidUp  = <fluid:magic_steam_grade_${gradeUp}>;
@@ -236,7 +236,7 @@ function SteamMixers(grade as int) as void {
 }
 
 for i in 1 .. 5 {
-  SteamMixers(i);
+  steamMixers(i);
 }
 
 // ███████╗████████╗███████╗ █████╗ ███╗   ███╗    ██╗   ██╗███████╗███████╗███████╗
