@@ -1,30 +1,19 @@
 #modloaded astralsorcery botania thaumcraft immersiveengineering nuclearcraft
-//825_Jaded_Vector
+// 825_Jaded_Vector
 
-import crafttweaker.util.Math;
-import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
-import crafttweaker.liquid.ILiquidStack;
-import thaumcraft.aspect.CTAspectStack;
+//  ██████╗ █████╗ ████████╗██╗  ██╗   ██╗███████╗████████╗     ██████╗██████╗ ███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+// ██╔════╝██╔══██╗╚══██╔══╝██║  ╚██╗ ██╔╝██╔════╝╚══██╔══╝    ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+// ██║     ███████║   ██║   ██║   ╚████╔╝ ███████╗   ██║       ██║     ██████╔╝█████╗  ███████║   ██║   ██║██║   ██║██╔██╗ ██║
+// ██║     ██╔══██║   ██║   ██║    ╚██╔╝  ╚════██║   ██║       ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+// ╚██████╗██║  ██║   ██║   ███████╗██║   ███████║   ██║       ╚██████╗██║  ██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+//  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝   ╚══════╝   ╚═╝        ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
 
-import mods.ic2.Canner;
-import mods.enderio.Vat;
-import mods.thermalexpansion.Imbuer;
+// Grade 1 (astral)
+// Base recipe (created at 10% durabilty: max 10000)
+scripts.process.alloy([<astralsorcery:itemusabledust:1> * 2, <astralsorcery:itemcraftingcomponent:2>],
+  <contenttweaker:naquadah_resevoir_grade_1>.withDamage(9000), 'only: ArcFurnace AdvRockArc');
 
-
-// ██████╗ █████╗ ████████╗██╗  ██╗   ██╗███████╗████████╗     ██████╗██████╗ ███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-//██╔════╝██╔══██╗╚══██╔══╝██║  ╚██╗ ██╔╝██╔════╝╚══██╔══╝    ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-//██║     ███████║   ██║   ██║   ╚████╔╝ ███████╗   ██║       ██║     ██████╔╝█████╗  ███████║   ██║   ██║██║   ██║██╔██╗ ██║
-//██║     ██╔══██║   ██║   ██║    ╚██╔╝  ╚════██║   ██║       ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
-//╚██████╗██║  ██║   ██║   ███████╗██║   ███████║   ██║       ╚██████╗██║  ██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
-//╚═════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝   ╚══════╝   ╚═╝        ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ 
-                                                                                                                                                                                  
-//Grade 1 (astral)
-//Base recipe (created at 10% durabilty: max 10000)
-scripts.process.alloy([<astralsorcery:itemusabledust:1> * 2, <astralsorcery:itemcraftingcomponent:2>], 
-<contenttweaker:naquadah_resevoir_grade_1>.withDamage(9000), 'only: ArcFurnace AdvRockArc');
-
-//full durability recipe (add celestial crystal to cost)
+// full durability recipe (add celestial crystal to cost)
 mods.astralsorcery.Altar.addConstellationAltarRecipe('resevoir grade 1 full',
   <contenttweaker:naquadah_resevoir_grade_1>, 600, 300, [
     null, null, null,
@@ -36,26 +25,26 @@ mods.astralsorcery.Altar.addConstellationAltarRecipe('resevoir grade 1 full',
     <astralsorcery:itemusabledust:1>, null,
     null, <astralsorcery:itemusabledust:1>]);
 
-//extract catalyst from resevoir
+// extract catalyst from resevoir
 recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_1>, [
-  <contenttweaker:naquadah_resevoir_grade_1>.anyDamage().transformDamage(1)
+  <contenttweaker:naquadah_resevoir_grade_1>.anyDamage().transformDamage(1),
 ]);
 
-//Grade 2 (botania)
-//Base recipe (created at 10% durabilty: max 15000)
-mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>.withDamage(13500), 
-[<botania:corporeaspark>, <botania:manaresource:23>, <botania:manaresource:23>], 20000);
-//full durability recipe (add rune to cost)
-mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>, 
-[<botania:corporeaspark>, <botania:manaresource:23>, <botania:rune:11>, <botania:manaresource:23>], 25000);
+// Grade 2 (botania)
+// Base recipe (created at 10% durabilty: max 15000)
+mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>.withDamage(13500),
+  [<botania:corporeaspark>, <botania:manaresource:23>, <botania:manaresource:23>], 20000);
+// full durability recipe (add rune to cost)
+mods.botania.RuneAltar.addRecipe(<contenttweaker:naquadah_resevoir_grade_2>,
+  [<botania:corporeaspark>, <botania:manaresource:23>, <botania:rune:11>, <botania:manaresource:23>], 25000);
 
-//extract catalyst from resevoir
+// extract catalyst from resevoir
 recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_2>, [
-  <contenttweaker:naquadah_resevoir_grade_2>.anyDamage().transformDamage(1)
+  <contenttweaker:naquadah_resevoir_grade_2>.anyDamage().transformDamage(1),
 ]);
 
-//Grade 3 (alchemic)
-//Base recipe (created at 10% durabilty: max 20000)
+// Grade 3 (alchemic)
+// Base recipe (created at 10% durabilty: max 20000)
 // mods.bloodmagic.AlchemyTable.addRecipe(IItemStack output, IItemStack[] inputs, int syphon, int ticks, int minTier);
 mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3>.withDamage(18000) * 1, [
   <bloodmagic:component:14>,
@@ -63,7 +52,7 @@ mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3
   <minecraft:rabbit_hide>,
 ], 10000, 60, 4);
 
-//full durability recipe (add weird mob bits to cost)
+// full durability recipe (add weird mob bits to cost)
 mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3> * 1, [
   <bloodmagic:component:14>,
   <bloodmagic:blood_shard>,
@@ -71,186 +60,180 @@ mods.bloodmagic.AlchemyTable.addRecipe(<contenttweaker:naquadah_resevoir_grade_3
   <iceandfire:amphithere_feather>,
 ], 20000, 60, 4);
 
-  //extract catalyst from resevoir
+// extract catalyst from resevoir
 recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_3>, [
-  <contenttweaker:naquadah_resevoir_grade_3>.anyDamage().transformDamage(1)
+  <contenttweaker:naquadah_resevoir_grade_3>.anyDamage().transformDamage(1),
 ]);
 
-//Grade 4 (alchemic)
-//Base recipe (created at 10% durabilty: max 32000)
+// Grade 4 (alchemic)
+// Base recipe (created at 10% durabilty: max 32000)
 mods.thaumcraft.Infusion.registerRecipe('naquadah_resevoir_grade_4_Damaged', 'INFUSION',
-  <contenttweaker:naquadah_resevoir_grade_4>.withDamage(28800), //output
-  12, //instability
+  <contenttweaker:naquadah_resevoir_grade_4>.withDamage(28800), // output
+  12, // instability
   Aspects('200💪 30🧠 20🔮'),
-  <thaumicaugmentation:material:5>,//cental item
+  <thaumicaugmentation:material:5>, // cental item
   Grid(['MS'], {
-    'M':<thaumcraft:mind:1>,
-    'S':<thaumcraft:sanity_soap>,
+    'M': <thaumcraft:mind:1>,
+    'S': <thaumcraft:sanity_soap>,
   }).spiral(1));
 
-  //full durability recipe (add ichor to cost)
-  mods.thaumcraft.Infusion.registerRecipe('naquadah_resevoir_grade_4', 'INFUSION',
-  <contenttweaker:naquadah_resevoir_grade_4>, //output
-  15, //instability
+// full durability recipe (add ichor to cost)
+mods.thaumcraft.Infusion.registerRecipe('naquadah_resevoir_grade_4', 'INFUSION',
+  <contenttweaker:naquadah_resevoir_grade_4>, // output
+  15, // instability
   Aspects('200💪 30🧠 20👻'),
-  <thaumicaugmentation:material:5>,//cental item
+  <thaumicaugmentation:material:5>, // cental item
   Grid(['MSI'], {
-    'M':<thaumcraft:mind:1>,
-    'S':<thaumcraft:sanity_soap>,
-    'I':<thaumictinkerer:kamiresource:2>,
+    'M': <thaumcraft:mind:1>,
+    'S': <thaumcraft:sanity_soap>,
+    'I': <thaumictinkerer:kamiresource:2>,
   }).spiral(1));
 
-
-//extract catalyst from resevoir
+// extract catalyst from resevoir
 recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_4>, [
-  <contenttweaker:naquadah_resevoir_grade_4>.anyDamage().transformDamage(1)
+  <contenttweaker:naquadah_resevoir_grade_4>.anyDamage().transformDamage(1),
 ]);
 
-//Grade5 (ultimate)
+// Grade5 (ultimate)
 
-mods.astralsorcery.Altar.addTraitAltarRecipe("reservoir_grade_5", <contenttweaker:naquadah_resevoir_grade_5>, 4500, 4000, [
+mods.astralsorcery.Altar.addTraitAltarRecipe('reservoir_grade_5', <contenttweaker:naquadah_resevoir_grade_5>, 4500, 4000, [
   <contenttweaker:naquadah_resevoir_grade_1>, <thaumictinkerer:proto_clay>, <contenttweaker:naquadah_resevoir_grade_2>,
-  <thaumictinkerer:proto_clay>, <rats:idol_of_ratlantis>, <thaumictinkerer:proto_clay>, 
+  <thaumictinkerer:proto_clay>, <rats:idol_of_ratlantis>, <thaumictinkerer:proto_clay>,
   <contenttweaker:naquadah_resevoir_grade_3>, <thaumictinkerer:proto_clay>, <contenttweaker:naquadah_resevoir_grade_4>,
-  <animus:component:2>, <animus:component:2>, <animus:component:2>, <animus:component:2>, //outer corners
-  <astralsorcery:itemusabledust:1>, <astralsorcery:itemcraftingcomponent:4>, //outer ring top to bottom
+  <animus:component:2>, <animus:component:2>, <animus:component:2>, <animus:component:2>, // outer corners
+  <astralsorcery:itemusabledust:1>, <astralsorcery:itemcraftingcomponent:4>, // outer ring top to bottom
   <astralsorcery:itemcraftingcomponent:4>, <astralsorcery:itemusabledust:1>,
   <astralsorcery:itemusabledust:1>, <astralsorcery:itemcraftingcomponent:4>,
   <astralsorcery:itemcraftingcomponent:4>, <astralsorcery:itemusabledust:1>,
-  null, null, null, null, //outer ring centers
-  //Outer Items, indices 25+
-  <botania:rune:11>, <botania:rune:12>, 
-  <botania:rune:11>, <botania:rune:12>
-], "astralsorcery.constellation.octans");
+  null, null, null, null, // outer ring centers
+  // Outer Items, indices 25+
+  <botania:rune:11>, <botania:rune:12>,
+  <botania:rune:11>, <botania:rune:12>,
+], 'astralsorcery.constellation.octans');
 
-//extract catalyst from resevoir
+// extract catalyst from resevoir
 recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_5>, [
-  <contenttweaker:naquadah_resevoir_grade_5>.reuse()
+  <contenttweaker:naquadah_resevoir_grade_5>.reuse(),
 ]);
 
-// ██████╗ █████╗ ████████╗ █████╗ ██╗  ██╗   ██╗███████╗████████╗    ██████╗ ███████╗ ██████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ███████╗  
-//██╔════╝██╔══██╗╚══██╔══╝██╔══██╗██║  ╚██╗ ██╔╝██╔════╝╚══██╔══╝    ██╔══██╗██╔════╝██╔════╝██║  ██║██╔══██╗██╔══██╗██╔════╝ ██╔════╝ 
-//██║     ███████║   ██║   ███████║██║   ╚████╔╝ ███████╗   ██║       ██████╔╝█████╗  ██║     ███████║███████║██████╔╝██║  ███╗█████╗   
-//██║     ██╔══██║   ██║   ██╔══██║██║    ╚██╔╝  ╚════██║   ██║       ██╔══██╗██╔══╝  ██║     ██╔══██║██╔══██║██╔══██╗██║   ██║██╔══╝
-//╚██████╗██║  ██║   ██║   ██║  ██║███████╗██║   ███████║   ██║       ██║  ██║███████╗╚██████╗██║  ██║██║  ██║██║  ██║╚██████╔╝███████╗
-// ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝   ╚══════╝   ╚═╝       ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+//  ██████╗ █████╗ ████████╗ █████╗ ██╗  ██╗   ██╗███████╗████████╗    ██████╗ ███████╗ ██████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ███████╗
+// ██╔════╝██╔══██╗╚══██╔══╝██╔══██╗██║  ╚██╗ ██╔╝██╔════╝╚══██╔══╝    ██╔══██╗██╔════╝██╔════╝██║  ██║██╔══██╗██╔══██╗██╔════╝ ██╔════╝
+// ██║     ███████║   ██║   ███████║██║   ╚████╔╝ ███████╗   ██║       ██████╔╝█████╗  ██║     ███████║███████║██████╔╝██║  ███╗█████╗
+// ██║     ██╔══██║   ██║   ██╔══██║██║    ╚██╔╝  ╚════██║   ██║       ██╔══██╗██╔══╝  ██║     ██╔══██║██╔══██║██╔══██╗██║   ██║██╔══╝
+// ╚██████╗██║  ██║   ██║   ██║  ██║███████╗██║   ███████║   ██║       ██║  ██║███████╗╚██████╗██║  ██║██║  ██║██║  ██║╚██████╔╝███████╗
+//  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝   ╚══════╝   ╚═╝       ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
 
-/*function addDura (input as IItemStack, amount as int) as IItemStack {
+/* function addDura (input as IItemStack, amount as int) as IItemStack {
       var output = input.transformDamage(Math.clamp(input.getMaxDamage() - (input.getDamage() - amount), 0, input.getMaxDamage()));
       return output;
-}*/
+} */
 
-//recipes for catalysts repair
-//toDo
+// recipes for catalysts repair
+// toDo
 
-//███████╗████████╗███████╗ █████╗ ███╗   ███╗     ██████╗██████╗ ███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-//██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗ ████║    ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-//███████╗   ██║   █████╗  ███████║██╔████╔██║    ██║     ██████╔╝█████╗  ███████║   ██║   ██║██║   ██║██╔██╗ ██║
-//╚════██║   ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║    ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
-//███████║   ██║   ███████╗██║  ██║██║ ╚═╝ ██║    ╚██████╗██║  ██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
-//╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-                                                                                                                                                                      
-//Nuclearcraft steam = 2:1 compression, IC2 steam = 6:1 compression, Forge steam = 24:1 compression
-//conversion ratio worsens by n^2 for each tier skipped
-//crafting speed/costs buffed to support potential of extreme throughput demands of endgame seteps
+// ███████╗████████╗███████╗ █████╗ ███╗   ███╗     ██████╗██████╗ ███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+// ██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗ ████║    ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+// ███████╗   ██║   █████╗  ███████║██╔████╔██║    ██║     ██████╔╝█████╗  ███████║   ██║   ██║██║   ██║██╔██╗ ██║
+// ╚════██║   ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║    ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+// ███████║   ██║   ███████╗██║  ██║██║ ╚═╝ ██║    ╚██████╗██║  ██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+// ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+
+// Nuclearcraft steam = 2:1 compression, IC2 steam = 6:1 compression, Forge steam = 24:1 compression
+// conversion ratio worsens by n^2 for each tier skipped
+// crafting speed/costs buffed to support potential of extreme throughput demands of endgame seteps
 function SteamMixers(grade as int) as void {
+  val gradeUp = grade + 1;
+  val steamLiquid  = <fluid:magic_steam_grade_${grade}>;
+  val steamLiquidUp  = <fluid:magic_steam_grade_${gradeUp}>;
+  val cataIn = <item:contenttweaker:naquadah_catalyst_grade_${grade}>;
+  val cataUp  = <item:contenttweaker:naquadah_catalyst_grade_${gradeUp}>;
+  var steamOutNuc  = 1000 / (grade * grade);
+  var steamOutIC2  = 500 / (grade * grade);
+  var steamOutForge  = 125 / (grade * grade);
 
-    var gradeUp = grade + 1;
-    var steamLiquid  = <fluid:magic_steam_grade_${grade}>;
-    var steamLiquidUp  = <fluid:magic_steam_grade_${gradeUp}>;
-    var cataIn = <item:contenttweaker:naquadah_catalyst_grade_${grade}>;
-    var cataUp  = <item:contenttweaker:naquadah_catalyst_grade_${gradeUp}>;
-    var steamOutNuc  = 1000/(grade*grade);
-    var steamOutIC2  = 500/(grade*grade);
-    var steamOutForge  = 125/(grade*grade);
+  // ====================
+  // Conflux 1
+  // ====================
 
-    //====================
-    //Conflux 1
-    //====================
+  // IE mixer recipes
+  mods.immersiveengineering.Mixer.addRecipe(steamLiquid * steamOutNuc, /* output */ <fluid:high_pressure_steam> * 2000, /* input */ [cataIn], 128);
+  mods.immersiveengineering.Mixer.addRecipe(steamLiquid * steamOutIC2, <fluid:ic2superheated_steam> * 2000, [cataIn], 128);
+  mods.immersiveengineering.Mixer.addRecipe(steamLiquid * steamOutForge, <fluid:steam> * 2000, [cataIn], 128);
+  mods.immersiveengineering.Mixer.addRecipe(steamLiquidUp * 1000, steamLiquid * 2000, [cataUp], 128);
 
-    //IE mixer recipes
-    mods.immersiveengineering.Mixer.addRecipe(steamLiquid * steamOutNuc, /*output*/ <fluid:high_pressure_steam> * 2000, /*input*/ [cataIn], 128);
-    mods.immersiveengineering.Mixer.addRecipe(steamLiquid * steamOutIC2, <fluid:ic2superheated_steam> * 2000, [cataIn], 128);
-    mods.immersiveengineering.Mixer.addRecipe(steamLiquid * steamOutForge, <fluid:steam> * 2000, [cataIn], 128);
-    mods.immersiveengineering.Mixer.addRecipe(steamLiquidUp * 1000, steamLiquid * 2000, [cataUp], 128);
+  // IC2 canner recipes
+  mods.ic2.Canner.addEnrichRecipe(steamLiquid * steamOutNuc, /* output */ <fluid:high_pressure_steam> * 2000, /* input */cataIn);
+  mods.ic2.Canner.addEnrichRecipe(steamLiquid * steamOutIC2, <fluid:ic2superheated_steam> * 2000, cataIn);
+  mods.ic2.Canner.addEnrichRecipe(steamLiquid * steamOutForge, <fluid:steam> * 2000, cataIn);
+  mods.ic2.Canner.addEnrichRecipe(steamLiquidUp * 1000, steamLiquid * 2000, cataUp);
 
-    //IC2 canner recipes
-    mods.ic2.Canner.addEnrichRecipe(steamLiquid * steamOutNuc, /*output*/ <fluid:high_pressure_steam> * 2000, /*input*/cataIn);
-    mods.ic2.Canner.addEnrichRecipe(steamLiquid * steamOutIC2, <fluid:ic2superheated_steam> * 2000, cataIn);
-    mods.ic2.Canner.addEnrichRecipe(steamLiquid * steamOutForge, <fluid:steam> * 2000, cataIn);
-    mods.ic2.Canner.addEnrichRecipe(steamLiquidUp * 1000, steamLiquid * 2000, cataUp);
+  // ====================
+  // Conflux 2 (2x steam per operation)
+  // ====================
 
-    //====================
-    //Conflux 2 (2x steam per operation)
-    //====================
+  steamOutNuc *= 2;
+  steamOutIC2 *= 2;
+  steamOutForge *= 2;
 
-    steamOutNuc *= 2;
-    steamOutIC2 *= 2;
-    steamOutForge *= 2;
+  // nuclearcraft enricher recipes
+  mods.nuclearcraft.Enricher.addRecipe(cataIn, <fluid:high_pressure_steam> * 4000, /* input */ steamLiquid * steamOutNuc, /* output */ 0.5, 0.1, 0.0);
+  mods.nuclearcraft.Enricher.addRecipe(cataIn, <fluid:ic2superheated_steam> * 4000, steamLiquid * steamOutIC2, 0.5, 0.1, 0.0);
+  mods.nuclearcraft.Enricher.addRecipe(cataIn, <fluid:steam> * 4000, steamLiquid * steamOutForge, 0.5, 0.1, 0.0);
+  mods.nuclearcraft.Enricher.addRecipe(cataUp, steamLiquid * 4000, steamLiquidUp * 2000, 0.5, 0.1, 0.0);
 
-    //nuclearcraft enricher recipes
-    mods.nuclearcraft.Enricher.addRecipe(cataIn, <fluid:high_pressure_steam> * 4000, /*input*/ steamLiquid * steamOutNuc, /*output*/ 0.5, 0.1, 0.0);
-    mods.nuclearcraft.Enricher.addRecipe(cataIn, <fluid:ic2superheated_steam> * 4000, steamLiquid * steamOutIC2, 0.5, 0.1, 0.0);
-    mods.nuclearcraft.Enricher.addRecipe(cataIn, <fluid:steam> * 4000, steamLiquid * steamOutForge, 0.5, 0.1, 0.0);
-    mods.nuclearcraft.Enricher.addRecipe(cataUp, steamLiquid * 4000, steamLiquidUp * 2000, 0.5, 0.1, 0.0);
+  // ====================
+  // Conflux 3 (4x steam per operation)
+  // ====================
 
-    //====================
-    //Conflux 3 (4x steam per operation)
-    //====================
+  steamOutNuc *= 2;
+  steamOutIC2 *= 2;
+  steamOutForge *= 2;
 
-    steamOutNuc *= 2;
-    steamOutIC2 *= 2;
-    steamOutForge *= 2;
+  // EIO vat recipes
+  // vat efficiency mult is brain-hurty.
+  // var vatEff = 1;
+  // maybe later.
 
-    //EIO vat recipes
-    //vat efficiency mult is brain-hurty.
-    //var vatEff = 1;
-    //maybe later.
+  // ====================
+  // Conflux 4 (32x steam per operation)
+  // ====================
 
-    //====================
-    //Conflux 4 (32x steam per operation)
-    //====================
+  steamOutNuc *= 4;
+  steamOutIC2 *= 4;
+  steamOutForge *= 4;
 
-    steamOutNuc *= 4;
-    steamOutIC2 *= 4;
-    steamOutForge *= 4;
-
-  //Adv rocketry chem reactor recipes
+  // Adv rocketry chem reactor recipes
   val chemReactor = mods.advancedrocketry.RecipeTweaker.forMachine('ChemicalReactor');
 
   chemReactor.builder().power(30000).timeRequired(2)
-    .inputs(<fluid:high_pressure_steam> * 32000, cataIn * 1)
-    .outputs(steamLiquid * steamOutNuc).build();
+  .inputs(<fluid:high_pressure_steam> * 32000, cataIn * 1)
+  .outputs(steamLiquid * steamOutNuc).build();
 
   chemReactor.builder().power(30000).timeRequired(2)
-    .inputs(<fluid:ic2superheated_steam> * 32000, cataIn * 1)
-    .outputs(steamLiquid * steamOutIC2).build();
+  .inputs(<fluid:ic2superheated_steam> * 32000, cataIn * 1)
+  .outputs(steamLiquid * steamOutIC2).build();
 
   chemReactor.builder().power(30000).timeRequired(2)
-    .inputs(<fluid:steam> * 32000, cataIn * 1)
-    .outputs(steamLiquid * steamOutForge).build();
+  .inputs(<fluid:steam> * 32000, cataIn * 1)
+  .outputs(steamLiquid * steamOutForge).build();
 
   chemReactor.builder().power(30000).timeRequired(2)
-    .inputs(steamLiquid * 32000, cataUp * 1)
-    .outputs(steamLiquidUp * 16000).build();
-
+  .inputs(steamLiquid * 32000, cataUp * 1)
+  .outputs(steamLiquidUp * 16000).build();
 }
 
-
-for i in 1 .. 5{
-    SteamMixers(i);
-    //i+=1;
+for i in 1 .. 5 {
+  SteamMixers(i);
 }
 
-//███████╗████████╗███████╗ █████╗ ███╗   ███╗    ██╗   ██╗███████╗███████╗███████╗
-//██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗ ████║    ██║   ██║██╔════╝██╔════╝██╔════╝
-//███████╗   ██║   █████╗  ███████║██╔████╔██║    ██║   ██║███████╗█████╗  ███████╗
-//╚════██║   ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║    ██║   ██║╚════██║██╔══╝  ╚════██║
-//███████║   ██║   ███████╗██║  ██║██║ ╚═╝ ██║    ╚██████╔╝███████║███████╗███████║
-//╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚══════╝╚══════╝╚══════╝
+// ███████╗████████╗███████╗ █████╗ ███╗   ███╗    ██╗   ██╗███████╗███████╗███████╗
+// ██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗ ████║    ██║   ██║██╔════╝██╔════╝██╔════╝
+// ███████╗   ██║   █████╗  ███████║██╔████╔██║    ██║   ██║███████╗█████╗  ███████╗
+// ╚════██║   ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║    ██║   ██║╚════██║██╔══╝  ╚════██║
+// ███████║   ██║   ███████╗██║  ██║██║ ╚═╝ ██║    ╚██████╔╝███████║███████╗███████║
+// ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚══════╝╚══════╝╚══════╝
 
-
-//powergen!
+// powergen!
 // mods.nuclearcraft.Turbine.addRecipe(ILiquidStack fluidInput, ILiquidStack fluidOutput, double turbine_power_per_mb, double turbine_expansion_level, double turbine_spin_up_multiplier, @Optional String particleEffect, @Optional double particleSpeedMultiplier);
 mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_1>, <liquid:exhaust_steam> * 4, 374.0, 1.8, 1.0, 'enchantmenttable', 1.0);
 mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_2>, <liquid:exhaust_steam> * 6, 816.0, 1.8, 1.0, 'enchantmenttable', 1.0);
@@ -258,6 +241,5 @@ mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_3>, <liquid:exhaus
 mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_4>, <liquid:exhaust_steam> * 16, 3810, 1.8, 1.0, 'enchantmenttable', 1.0);
 mods.nuclearcraft.Turbine.addRecipe(<liquid:magic_steam_grade_5>, <liquid:exhaust_steam> * 24, 8160.0, 1.8, 1.0, 'enchantmenttable', 1.0);
 
-//todo: crafting uses for steam
-//convert stone into corresponding mod material?
-
+// todo: crafting uses for steam
+// convert stone into corresponding mod material?
