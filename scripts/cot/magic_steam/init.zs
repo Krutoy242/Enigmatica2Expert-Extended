@@ -26,7 +26,7 @@ function buildReservoir(id as string, maxDamage as int) as void {
   item.register();
 }
 
-// catlyst definitions
+// catalyst definitions
 // Grade 1 (astral)
 buildReservoir('naquadah_resevoir_grade_1', 10000);
 buildItem('naquadah_catalyst_grade_1');
