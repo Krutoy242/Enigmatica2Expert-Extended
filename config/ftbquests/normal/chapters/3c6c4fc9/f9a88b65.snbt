@@ -1,0 +1,37 @@
+{
+	title: "{q.nuclearcraft.naq_cata.name}",
+	x: 16.38d,
+	y: 9.94d,
+	text: [
+		"{q.nuclearcraft.naq_cata.desc}"
+	],
+	dependencies: [
+		"516c6590"
+	],
+	size: 0.7d,
+	optional: 1b,
+	tasks: [{
+		uid: "6ba6baa2",
+		type: "item",
+		items: [{
+			item: "contenttweaker:naquadah_resevoir_grade_1"
+		},
+		{
+			item: "contenttweaker:naquadah_resevoir_grade_2"
+		},
+		{
+			item: "contenttweaker:naquadah_resevoir_grade_3"
+		},
+		{
+			item: "contenttweaker:naquadah_resevoir_grade_4"
+		},
+		{
+			item: "contenttweaker:naquadah_resevoir_grade_5"
+		}],
+		consume_items: 0b,
+		ignore_damage: 1b,
+		ignore_nbt: 1b,
+		only_from_crafting: 0b
+	}]
+}
+
