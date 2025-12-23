@@ -1,5 +1,6 @@
 #modloaded bedrockores
 #loader mixin
+#sideonly server
 
 import mixin.Operation;
 import native.net.minecraft.util.BlockRenderLayer;
@@ -7,6 +8,12 @@ import native.net.minecraftforge.fml.common.FMLCommonHandler;
 
 #mixin {targets: "li.cil.bedrockores.common.block.BlockBedrockOre"}
 zenClass MixinBlockBedrockOre {
+
+    /*
+    When the block accessor isn't a world Bedrock Ores will try to get the BlockRenderLayer,
+    even if not on the client. Prevent crashing by returning null instead of invoking non-existent method.
+    https://github.com/jbredwards/Fluidlogged-API/issues/276
+    */
     #mixin WrapOperation
     #{
     #    method: "func_176221_a",
@@ -18,9 +25,6 @@ zenClass MixinBlockBedrockOre {
     function noRenderLayerOnServer(
         operation as mixin.Operation
     ) as BlockRenderLayer {
-        if (FMLCommonHandler.instance().getEffectiveSide().isServer())
-            return null;
-
-        return operation.call() as BlockRenderLayer;
+        return null;
     }
 }
