@@ -1,11 +1,11 @@
 {
 	title: "{q.industrialcraft.reaching_max_diffi.name}",
 	icon: {
-		Damage: 6s,
+		id: "bibliocraft:mapframe",
 		tag: {
 			renderTexture: "thaumadditions:aspects/caeles"
 		},
-		id: "bibliocraft:mapframe"
+		Damage: 6s
 	},
 	x: 10.575d,
 	y: 6.449999999999999d,

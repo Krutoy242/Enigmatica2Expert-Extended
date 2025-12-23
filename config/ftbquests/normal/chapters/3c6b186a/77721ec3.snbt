@@ -1,9 +1,9 @@
 {
 	icon: {
+		id: "ic2:mining_laser",
 		tag: {
 			charge: 2.0E7d
-		},
-		id: "ic2:mining_laser"
+		}
 	},
 	x: 8.5d,
 	y: 2.1d,
@@ -17,9 +17,9 @@
 		uid: "86c50a57",
 		type: "item",
 		items: [{
-			Damage: 26s,
+			id: "ic2:mining_laser",
 			tag: {},
-			id: "ic2:mining_laser"
+			Damage: 26s
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -29,10 +29,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
+			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			},
-			id: "ftbquests:lootcrate"
+			}
 		},
 		tags: [
 			"loot"

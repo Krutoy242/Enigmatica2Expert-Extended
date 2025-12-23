@@ -1,10 +1,10 @@
 {
 	title: "{q.industrialcraft.nano_armor.name}",
 	icon: {
+		id: "ic2:nano_chestplate",
 		tag: {
 			charge: 1000000.0d
-		},
-		id: "ic2:nano_chestplate"
+		}
 	},
 	x: 10.5d,
 	y: -0.5d,
@@ -18,10 +18,10 @@
 		uid: "3055fbb0",
 		type: "item",
 		items: [{
+			id: "ic2:nano_helmet",
 			tag: {
 				charge: 1000000.0d
-			},
-			id: "ic2:nano_helmet"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -30,10 +30,10 @@
 		uid: "72e331b1",
 		type: "item",
 		items: [{
+			id: "ic2:nano_chestplate",
 			tag: {
 				charge: 1000000.0d
-			},
-			id: "ic2:nano_chestplate"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -42,10 +42,10 @@
 		uid: "aa8cfea1",
 		type: "item",
 		items: [{
+			id: "ic2:nano_leggings",
 			tag: {
 				charge: 1000000.0d
-			},
-			id: "ic2:nano_leggings"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -54,10 +54,10 @@
 		uid: "cb1b2993",
 		type: "item",
 		items: [{
+			id: "ic2:nano_boots",
 			tag: {
 				charge: 1000000.0d
-			},
-			id: "ic2:nano_boots"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b

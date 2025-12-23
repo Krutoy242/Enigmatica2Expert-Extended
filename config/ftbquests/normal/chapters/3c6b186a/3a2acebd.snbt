@@ -1,10 +1,10 @@
 {
 	title: "{q.industrialcraft.quantum_armor.name}",
 	icon: {
+		id: "ic2:quantum_chestplate",
 		tag: {
 			charge: 1.0E7d
-		},
-		id: "ic2:quantum_chestplate"
+		}
 	},
 	x: 11.3d,
 	y: 7.9d,
@@ -18,10 +18,10 @@
 		uid: "b611100f",
 		type: "item",
 		items: [{
+			id: "ic2:quantum_helmet",
 			tag: {
 				charge: 1.0E7d
-			},
-			id: "ic2:quantum_helmet"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -30,10 +30,10 @@
 		uid: "bcf0b6e4",
 		type: "item",
 		items: [{
+			id: "ic2:quantum_chestplate",
 			tag: {
 				charge: 1.0E7d
-			},
-			id: "ic2:quantum_chestplate"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -42,10 +42,10 @@
 		uid: "02344195",
 		type: "item",
 		items: [{
+			id: "ic2:quantum_leggings",
 			tag: {
 				charge: 1.0E7d
-			},
-			id: "ic2:quantum_leggings"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -54,10 +54,10 @@
 		uid: "cf1bf857",
 		type: "item",
 		items: [{
+			id: "ic2:quantum_boots",
 			tag: {
 				charge: 1.0E7d
-			},
-			id: "ic2:quantum_boots"
+			}
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b

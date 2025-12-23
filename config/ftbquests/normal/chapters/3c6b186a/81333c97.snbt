@@ -1,10 +1,10 @@
 {
 	title: "{q.industrialcraft.addon_industrial_.name}",
 	icon: {
+		id: "industrialwires:ic2_wire_coil",
 		tag: {
 			wireLength: 1024
-		},
-		id: "industrialwires:ic2_wire_coil"
+		}
 	},
 	x: 3.8d,
 	y: -0.5d,
@@ -38,38 +38,38 @@
 		uid: "0ce336f9",
 		type: "item",
 		items: [{
+			id: "industrialwires:ic2_wire_coil",
+			tag: {
+				wireLength: 1024
+			}
+		},
+		{
+			id: "industrialwires:ic2_wire_coil",
 			tag: {
 				wireLength: 1024
 			},
-			id: "industrialwires:ic2_wire_coil"
+			Damage: 1s
 		},
 		{
-			Damage: 1s,
+			id: "industrialwires:ic2_wire_coil",
 			tag: {
 				wireLength: 1024
 			},
-			id: "industrialwires:ic2_wire_coil"
+			Damage: 2s
 		},
 		{
-			Damage: 2s,
-			tag: {
-				wireLength: 1024
-			},
-			id: "industrialwires:ic2_wire_coil"
-		},
-		{
-			Damage: 3s,
+			id: "industrialwires:ic2_wire_coil",
 			tag: {
 				wireLength: 2048
 			},
-			id: "industrialwires:ic2_wire_coil"
+			Damage: 3s
 		},
 		{
-			Damage: 4s,
+			id: "industrialwires:ic2_wire_coil",
 			tag: {
 				wireLength: 2048
 			},
-			id: "industrialwires:ic2_wire_coil"
+			Damage: 4s
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b

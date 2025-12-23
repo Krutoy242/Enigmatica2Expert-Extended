@@ -1,9 +1,8 @@
 {
 	title: "{q.industrialcraft.the_chapter_is_com.name}",
 	icon: {
+		id: "simple_trophies:trophy",
 		tag: {
-			TrophyColorRed: 175,
-			TrophyColorBlue: 107,
 			TrophyVariant: "gold",
 			TrophyColorGreen: 110,
 			TrophyShowsTooltip: 1b,
@@ -12,9 +11,10 @@
 				id: "ic2:te",
 				Damage: 2s
 			},
+			TrophyColorBlue: 107,
+			TrophyColorRed: 175,
 			TrophyName: "§fIC2 Master Trophy§r"
-		},
-		id: "simple_trophies:trophy"
+		}
 	},
 	x: 7.6499999999999995d,
 	y: 6.1499999999999995d,
@@ -75,9 +75,8 @@
 		team_reward: 1b,
 		auto: "enabled",
 		item: {
+			id: "simple_trophies:trophy",
 			tag: {
-				TrophyColorRed: 175,
-				TrophyColorBlue: 107,
 				TrophyVariant: "gold",
 				TrophyColorGreen: 110,
 				TrophyShowsTooltip: 1b,
@@ -86,9 +85,10 @@
 					id: "ic2:te",
 					Damage: 2s
 				},
+				TrophyColorBlue: 107,
+				TrophyColorRed: 175,
 				TrophyName: "§fIC2 Master Trophy§r"
-			},
-			id: "simple_trophies:trophy"
+			}
 		}
 	},
 	{
