@@ -1,11 +1,11 @@
 {
-	x: 4.166666666666666d,
-	y: 3.5d,
+	x: 6.5d,
+	y: 0.8d,
 	text: [
 		"{q.industrialcraft.compressor.desc}"
 	],
 	dependencies: [
-		"96a7cd4a"
+		"80c99c37"
 	],
 	tasks: [{
 		uid: "d7332c46",
@@ -19,10 +19,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

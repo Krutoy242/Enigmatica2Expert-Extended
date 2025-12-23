@@ -17,11 +17,11 @@
 	{
 		uid: "75f47672",
 		type: "custom",
-		team_reward: 1b,
 		title: "Notify everyone",
 		tags: [
 			"chapstart"
 		],
+		team_reward: 1b,
 		auto: "invisible"
 	}]
 }

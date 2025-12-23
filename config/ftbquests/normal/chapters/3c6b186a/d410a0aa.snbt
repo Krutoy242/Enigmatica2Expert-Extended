@@ -7,7 +7,6 @@
 		"{q.industrialcraft.pahoehoe_lava.desc}"
 	],
 	dependencies: [
-		"83c7fb15",
 		"a6052a32"
 	],
 	tasks: [{

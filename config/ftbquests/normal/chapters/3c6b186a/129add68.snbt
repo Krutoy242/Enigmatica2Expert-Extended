@@ -1,0 +1,18 @@
+{
+	x: 8.5d,
+	y: -0.5d,
+	text: [
+		"{q.industrialcraft.carbon_plate.desc}"
+	],
+	dependencies: [
+		"059b39c7",
+		"d1c08d01"
+	],
+	tasks: [{
+		uid: "dd3892c1",
+		type: "item",
+		items: [{
+			item: "ic2:crafting 1 15"
+		}]
+	}]
+}

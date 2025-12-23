@@ -1,0 +1,71 @@
+{
+	title: "{q.industrialcraft.fluid_reactor.name}",
+	icon: "ic2:resource 1 14",
+	x: 2.1d,
+	y: 6.3d,
+	text: [
+		"{q.industrialcraft.fluid_reactor.desc}"
+	],
+	dependencies: [
+		"533c2a59",
+		"3a710203"
+	],
+	tasks: [{
+		uid: "b5c01b20",
+		type: "item",
+		items: [{
+			item: "ic2:resource 1 14"
+		}],
+		count: 94L
+	},
+	{
+		uid: "632c81ef",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 25"
+		}],
+		count: 2L
+	},
+	{
+		uid: "d107c0c6",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 26"
+		}]
+	},
+	{
+		uid: "d6e368cc",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 23"
+		}]
+	},
+	{
+		uid: "5c12ad75",
+		type: "item",
+		items: [{
+			tag: {
+				Fluid: {
+					Amount: 1000,
+					FluidName: "ic2coolant"
+				}
+			},
+			id: "ic2:fluid_cell"
+		}],
+		count: 20L
+	}],
+	rewards: [{
+		uid: "a4f9cbae",
+		type: "custom",
+		title: "{e2ee.quest.rare}",
+		icon: {
+			tag: {
+				type: "rare"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

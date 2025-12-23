@@ -31,12 +31,12 @@
 			item: "ic2:te 1 58"
 		},
 		{
-			id: "minecraft:spawn_egg",
 			tag: {
 				EntityTag: {
 					id: "rats:rat"
 				}
-			}
+			},
+			id: "minecraft:spawn_egg"
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b
@@ -46,11 +46,11 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			Count: 2,
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

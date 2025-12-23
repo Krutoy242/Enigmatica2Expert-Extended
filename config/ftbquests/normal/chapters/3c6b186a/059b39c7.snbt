@@ -1,11 +1,11 @@
 {
-	x: 4.166666666666666d,
-	y: 0.8333333333333333d,
+	x: 6.5d,
+	y: -0.5d,
 	text: [
 		"{q.industrialcraft.macerator.desc}"
 	],
 	dependencies: [
-		"20506ca0"
+		"80c99c37"
 	],
 	tasks: [{
 		uid: "9e55bc8d",
@@ -19,10 +19,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

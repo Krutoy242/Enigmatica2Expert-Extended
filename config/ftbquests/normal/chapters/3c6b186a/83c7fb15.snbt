@@ -1,17 +1,17 @@
 {
-	title: "{q.industrialcraft.batbox_tin_cables.name}",
+	title: "{q.industrialcraft.cables_and_voltages.name}",
 	icon: {
-		id: "ic2:cable",
+		Damage: 4s,
 		tag: {
 			type: 4b,
 			insulation: 1b
 		},
-		Damage: 4s
+		id: "ic2:cable"
 	},
-	x: 0.8333333333333333d,
-	y: 2.166666666666667d,
+	x: 0.8d,
+	y: -0.4d,
 	text: [
-		"{q.industrialcraft.batbox_tin_cables.desc}"
+		"{q.industrialcraft.cables_and_voltages.desc}"
 	],
 	dependencies: [
 		"b522c8b8"
@@ -20,9 +20,24 @@
 		uid: "9a4853e4",
 		type: "item",
 		items: [{
-			id: "ic2:te",
+			Damage: 72s,
 			tag: {},
-			Damage: 72s
+			id: "ic2:te"
+		},
+		{
+			Damage: 73s,
+			tag: {},
+			id: "ic2:te"
+		},
+		{
+			Damage: 74s,
+			tag: {},
+			id: "ic2:te"
+		},
+		{
+			Damage: 75s,
+			tag: {},
+			id: "ic2:te"
 		}],
 		ignore_nbt: 1b
 	},
@@ -30,13 +45,43 @@
 		uid: "4263b1c7",
 		type: "item",
 		items: [{
-			id: "ic2:cable",
-			Count: 6,
+			Damage: 4s,
 			tag: {
 				type: 4b,
 				insulation: 1b
 			},
-			Damage: 4s
+			id: "ic2:cable"
+		},
+		{
+			tag: {
+				type: 0b,
+				insulation: 1b
+			},
+			id: "ic2:cable"
+		},
+		{
+			Damage: 2s,
+			tag: {
+				type: 2b,
+				insulation: 2b
+			},
+			id: "ic2:cable"
+		},
+		{
+			Damage: 3s,
+			tag: {
+				type: 3b,
+				insulation: 3b
+			},
+			id: "ic2:cable"
+		},
+		{
+			Damage: 1s,
+			tag: {
+				type: 1b,
+				insulation: 0b
+			},
+			id: "ic2:cable"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -45,10 +90,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

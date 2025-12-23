@@ -1,0 +1,87 @@
+{
+	title: "{q.industrialcraft.wind_turbine.name}",
+	icon: "ic2:te 1 21",
+	x: 3.4d,
+	y: 4.9d,
+	text: [
+		"{q.industrialcraft.wind_turbine.desc}"
+	],
+	dependencies: [
+		"3c0659d8"
+	],
+	tasks: [{
+		uid: "029c7eaf",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 21"
+		}]
+	},
+	{
+		uid: "65775949",
+		type: "item",
+		items: [{
+			tag: {
+				advDmg: 0
+			},
+			id: "ic2:rotor_wood"
+		},
+		{
+			tag: {
+				advDmg: 0
+			},
+			id: "ic2:rotor_bronze"
+		},
+		{
+			tag: {
+				advDmg: 0
+			},
+			id: "ic2:rotor_iron"
+		},
+		{
+			tag: {
+				advDmg: 0
+			},
+			id: "ic2:rotor_steel"
+		},
+		{
+			tag: {
+				advDmg: 0
+			},
+			id: "ic2:rotor_carbon"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "6b3eea43",
+		type: "item",
+		item: "ic2:te 1 79",
+		count: 2
+	},
+	{
+		uid: "17043e59",
+		type: "item",
+		item: {
+			Damage: 3s,
+			tag: {
+				type: 3b,
+				insulation: 3b
+			},
+			id: "ic2:cable"
+		},
+		count: 64
+	},
+	{
+		uid: "d0358092",
+		type: "item",
+		item: {
+			Damage: 3s,
+			tag: {
+				type: 3b,
+				insulation: 3b
+			},
+			id: "ic2:cable"
+		},
+		count: 64
+	}]
+}

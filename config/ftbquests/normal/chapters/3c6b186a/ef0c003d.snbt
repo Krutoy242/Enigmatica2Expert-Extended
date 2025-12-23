@@ -1,6 +1,7 @@
 {
-	x: 11.166666666666666d,
-	y: 0.8333333333333333d,
+	icon: "ic2:te 1 57",
+	x: 12.1d,
+	y: 0.8d,
 	text: [
 		"{q.industrialcraft.advanced_miner.desc}"
 	],
@@ -14,16 +15,42 @@
 			item: "ic2:te 1 57"
 		}],
 		ignore_nbt: 1b
+	},
+	{
+		uid: "0a54927d",
+		type: "item",
+		items: [{
+			tag: {},
+			id: "ic2:scanner"
+		},
+		{
+			tag: {},
+			id: "ic2:advanced_scanner"
+		},
+		{
+			tag: {
+				charge: 100000.0d
+			},
+			id: "ic2:scanner"
+		},
+		{
+			tag: {
+				charge: 1000000.0d
+			},
+			id: "ic2:advanced_scanner"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "9b8e2281",
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

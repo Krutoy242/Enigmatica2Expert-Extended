@@ -1,31 +1,31 @@
 {
 	icon: {
-		id: "ic2:jetpack_electric",
 		tag: {
 			charge: 30000.0d
-		}
+		},
+		id: "ic2:jetpack_electric"
 	},
-	x: -0.5d,
-	y: 3.5d,
+	x: 5.1d,
+	y: -0.5d,
 	text: [
 		"{q.industrialcraft.electric_jetpack.desc}"
 	],
 	dependencies: [
-		"83c7fb15"
+		"80c99c37"
 	],
 	tasks: [{
 		uid: "ce4da5da",
 		type: "item",
 		items: [{
-			id: "ic2:jetpack_electric",
+			Damage: 26s,
 			tag: {},
-			Damage: 26s
+			id: "ic2:jetpack_electric"
 		},
 		{
-			id: "ic2:jetpack_electric",
 			tag: {
 				charge: 30000.0d
-			}
+			},
+			id: "ic2:jetpack_electric"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -34,10 +34,10 @@
 		type: "custom",
 		title: "{e2ee.quest.common}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "common"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

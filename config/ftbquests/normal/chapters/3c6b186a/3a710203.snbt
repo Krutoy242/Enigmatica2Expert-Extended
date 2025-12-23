@@ -1,0 +1,36 @@
+{
+	title: "{q.industrialcraft.steam_turbine.name}",
+	icon: "ic2:te 1 18",
+	x: 2.1d,
+	y: 4.9d,
+	text: [
+		"{q.industrialcraft.steam_turbine.desc}"
+	],
+	dependencies: [
+		"3c0659d8"
+	],
+	tasks: [{
+		uid: "0de26ddf",
+		type: "item",
+		items: [{
+			item: "ic2:te 1 18"
+		}]
+	},
+	{
+		uid: "4bac9279",
+		type: "item",
+		items: [{
+			item: "ic2:crafting 1 36"
+		}]
+	}],
+	rewards: [{
+		uid: "a276115a",
+		type: "item",
+		item: "ic2:te 1 18"
+	},
+	{
+		uid: "027965fd",
+		type: "item",
+		item: "ic2:crafting 1 36"
+	}]
+}

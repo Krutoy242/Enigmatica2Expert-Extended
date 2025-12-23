@@ -1,7 +1,7 @@
 {
 	title: "{q.industrialcraft.plutonium.name}",
-	x: 4.166666666666666d,
-	y: 8.833333333333334d,
+	x: 0.8d,
+	y: 6.3d,
 	text: [
 		"{q.industrialcraft.plutonium.desc}"
 	],
@@ -18,12 +18,12 @@
 	rewards: [{
 		uid: "8d561d42",
 		type: "custom",
-		title: "{e2ee.quest.common}",
+		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
-				type: "common"
-			}
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"
