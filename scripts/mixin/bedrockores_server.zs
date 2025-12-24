@@ -4,7 +4,6 @@
 
 import mixin.Operation;
 import native.net.minecraft.util.BlockRenderLayer;
-import native.net.minecraftforge.fml.common.FMLCommonHandler;
 
 #mixin {targets: "li.cil.bedrockores.common.block.BlockBedrockOre"}
 zenClass MixinBlockBedrockOre {
@@ -28,3 +27,4 @@ zenClass MixinBlockBedrockOre {
         return null;
     }
 }
+
