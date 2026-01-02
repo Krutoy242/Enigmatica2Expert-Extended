@@ -36,6 +36,9 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <thaumcraft:curio:6>                                                                                             : [5, 0, 1, 1],
   <thaumcraft:vis_battery>                                                                                         : [10, 0, 1, 1],
   <thaumicaugmentation:vis_regenerator>                                                                            : [10, 0, 1, 1],
+
+  <botania:brewvial>.withTag({brewKey: "strength"}) : [5, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "soulCross"}): [5, 0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.sigils);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.ancientTomes);

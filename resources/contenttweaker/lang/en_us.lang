@@ -706,9 +706,21 @@ item.contenttweaker.alloy_mould.name=Ultra Light Edle Elektronlegierung Mould
 item.contenttweaker.sic_mould.name=Ultra Light Matrix-Legierung Mould
 
 # --------------------------------------
+# Potion Names
+# --------------------------------------
+effect.contenttweaker.chronos=Chronos
+effect.contenttweaker.darkness_resistance=Darkness Resistance
+effect.contenttweaker.easyculty=Easyculty
+effect.contenttweaker.self_sacrifice=Self Sacrifice
+
+# --------------------------------------
 # Potion Descriptions
 # --------------------------------------
 description.potion.saturation=Restores hunger and nutrients
+description.effect.contenttweaker.chronos=Doubles gain of time in a bottle
+description.effect.contenttweaker.darkness_resistance=Protects from darkness damage in deep dark
+description.effect.contenttweaker.easyculty=Temporary lowers your difficulty
+description.effect.contenttweaker.self_sacrifice=Increase efficiency of Sacrificial Dagger
 
 # --------------------------------------
 # Enchantment Descriptions

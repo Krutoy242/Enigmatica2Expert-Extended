@@ -9,6 +9,7 @@ It does 3 things
 
 #modloaded botania
 import mods.botania.Lexicon;
+import native.vazkii.botania.common.lib.LibBrewNames;
 
 //////////////////////
 // Generating flowers//
@@ -112,6 +113,59 @@ Lexicon.addPetalPage('botania.page.amuileria_kaerunea1', 'botania.entry.amuileri
   <quark:rune>,
 ]]);
 Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'amuileria_kaerunea'}), 'botania.entry.amuileria_kaerunea', 0);
+
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+Lexicon.removePage('botania.entry.brewery', 5);
+
+mods.botania.Lexicon.addBrewPage('botania.page.brewery5a','botania.entry.brewery',5,LibBrewNames.SPEED,[<minecraft:nether_wart>,<minecraft:sugar>,<actuallyadditions:item_dust:7>],'botania.page.brewery5b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery6a','botania.entry.brewery',6,LibBrewNames.STRENGTH,[<minecraft:nether_wart>,<minecraft:blaze_powder>,<astralsorcery:itemusabledust>],'botania.page.brewery6b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery7a','botania.entry.brewery',7,LibBrewNames.HASTE,[<minecraft:nether_wart>,<minecraft:prismarine_crystals>,<actuallyadditions:item_dust:7>],'botania.page.brewery7b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery8a','botania.entry.brewery',8,LibBrewNames.HEALING,[<minecraft:nether_wart>,<minecraft:speckled_melon>,<thaumcraft:quicksilver>],'botania.page.brewery8b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery9a','botania.entry.brewery',9,LibBrewNames.JUMP_BOOST,[<minecraft:nether_wart>,<minecraft:rabbit_foot>,<actuallyadditions:item_dust:7>],'botania.page.brewery9b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery10a','botania.entry.brewery',10,LibBrewNames.REGEN,[<minecraft:nether_wart>,<minecraft:ghast_tear>,<astralsorcery:itemusabledust>],'botania.page.brewery10b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery11a','botania.entry.brewery',11,LibBrewNames.RESISTANCE,[<minecraft:nether_wart>,<minecraft:quartz>,<actuallyadditions:item_dust:7>],'botania.page.brewery11b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery12a','botania.entry.brewery',12,LibBrewNames.FIRE_RESISTANCE,[<minecraft:nether_wart>,<minecraft:magma_cream>,<actuallyadditions:item_dust:7>],'botania.page.brewery12b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery13a','botania.entry.brewery',13,LibBrewNames.WATER_BREATHING,[<minecraft:nether_wart>,<minecraft:fish:3>,<actuallyadditions:item_dust:7>],'botania.page.brewery13b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery14a','botania.entry.brewery',14,LibBrewNames.INVISIBILITY,[<minecraft:nether_wart>,<minecraft:golden_carrot>,<minecraft:fermented_spider_eye>,<actuallyadditions:item_dust:7>],'botania.page.brewery14b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery15a','botania.entry.brewery',15,LibBrewNames.NIGHT_VISION,[<minecraft:nether_wart>,<minecraft:golden_carrot>,<actuallyadditions:item_dust:7>],'botania.page.brewery15b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery16a','botania.entry.brewery',16,LibBrewNames.ABSORPTION,[<minecraft:nether_wart>,<minecraft:golden_apple>,<astralsorcery:itemusabledust>],'botania.page.brewery16b');
+mods.botania.Lexicon.addBrewPage('botania.page.brewery17a','botania.entry.brewery',17,LibBrewNames.REGEN_WEAK,[<minecraft:nether_wart>,<minecraft:ghast_tear>,<actuallyadditions:item_dust:7>],'botania.page.brewery17b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews2a','botania.entry.brewery',18,LibBrewNames.SOUL_CROSS,[<minecraft:nether_wart>,<ore:boneWither>,<randomthings:ingredient:7>],'botania.page.complexBrews2b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews3a','botania.entry.brewery',19,LibBrewNames.FEATHER_FEET,[<minecraft:nether_wart>,<minecraft:feather>,<actuallyadditions:item_dust:7>],'botania.page.complexBrews3b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews4a','botania.entry.brewery',20,LibBrewNames.EMPTINESS,[<minecraft:nether_wart>,<thaumcraft:shimmerleaf>,<actuallyadditions:item_dust:7>,<darkutils:material>],'botania.page.complexBrews4b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews5a','botania.entry.brewery',21,LibBrewNames.BLOODTHIRST,[<minecraft:nether_wart>,<thaumcraft:vishroom>,<actuallyadditions:item_dust:7>,<darkutils:material>],'botania.page.complexBrews5b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews6a','botania.entry.brewery',22,LibBrewNames.ALLURE,[<minecraft:nether_wart>,<harvestcraft:fishtrapbaititem>,<actuallyadditions:item_dust:7>],'botania.page.complexBrews6b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews7a','botania.entry.brewery',23,LibBrewNames.CLEAR,[<minecraft:nether_wart>,<ore:listAllmilk>,<thaumcraft:quicksilver>],'botania.page.complexBrews7b');
+mods.botania.Lexicon.addBrewPage('botania.page.chronos_a','botania.entry.brewery',24,'chronos',[<minecraft:nether_wart>, <twilightforest:magic_leaves>, <contenttweaker:compressed_white_sand>, <astralsorcery:itemusabledust>],'botania.page.chronos_b');
+mods.botania.Lexicon.addBrewPage('botania.page.darkness_resistance_a','botania.entry.brewery',25,'darkness_resistance',[<minecraft:nether_wart>, <twilightforest:torchberries>, <actuallyadditions:item_dust:7>],'botania.page.darkness_resistance_b');
+mods.botania.Lexicon.addBrewPage('botania.page.easyculty_a','botania.entry.brewery',26,'easyculty',[<minecraft:nether_wart>, <biomesoplenty:shroompowder>, <cyclicmagic:heart_toxic>, <thaumcraft:void_seed>],'botania.page.easyculty_b');
+
+Lexicon.removePage('botania.entry.complexBrews', 1);
+Lexicon.removePage('botania.entry.complexBrews', 1);
+Lexicon.removePage('botania.entry.complexBrews', 1);
+Lexicon.removePage('botania.entry.complexBrews', 1);
+Lexicon.removePage('botania.entry.complexBrews', 1);
+Lexicon.removePage('botania.entry.complexBrews', 1);
+Lexicon.removePage('botania.entry.complexBrews', 1);
+
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrews1a','botania.entry.complexBrews',1,LibBrewNames.OVERLOAD,[<minecraft:nether_wart>,<rustic:ginseng>,<rustic:wind_thistle>,<biomesoplenty:double_plant:2>,<botania:manaresource:23>],'botania.page.complexBrews1b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom2a','botania.entry.complexBrews',2,"scarlet_veil",[<minecraft:nether_wart>,<rustic:blood_orchid>,<rustic:ironberries>,<extrautils2:redorchid>,<botania:manaresource:23>],'botania.page.complexBrewsCustom2b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom3a','botania.entry.complexBrews',3,"calamity",[<minecraft:nether_wart>,<rustic:horsetail>,<rustic:marsh_mallow>,<endreborn:item_lormyte_crystal>,<botania:manaresource:23>],'botania.page.complexBrewsCustom3b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom4a','botania.entry.complexBrews',4,"warbound",[<minecraft:nether_wart>,<rustic:tomato>,<rustic:aloe_vera>,<rustic:honeycomb>,<botania:manaresource:23>],'botania.page.complexBrewsCustom4b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom5a','botania.entry.complexBrews',5,"depthbound",[<minecraft:nether_wart>,<rustic:mooncap_mushroom>,<rustic:core_root>,<biomesoplenty:coral:1>,<botania:manaresource:23>],'botania.page.complexBrewsCustom5b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom6a','botania.entry.complexBrews',6,"sanguine_oath",[<minecraft:nether_wart>,<rustic:chamomile>,<rustic:cohosh>,<scalinghealth:crystalshard>,<botania:manaresource:23>],'botania.page.complexBrewsCustom6b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom7a','botania.entry.complexBrews',7,"aerial_delirium",[<minecraft:nether_wart>,<rustic:olives>,<rustic:deathstalk_mushroom>,<iceandfire:pixie_dust>,<botania:manaresource:23>],'botania.page.complexBrewsCustom7b');
 
 /////////////////
 // Lexicon fixes//

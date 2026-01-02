@@ -60,3 +60,12 @@ zenClass MixinEntityDoppleganger {
         ci.cancel();
     }
 }
+
+#mixin {targets: "vazkii.botania.common.brew.ModBrews"}
+zenClass MixinModBrews {
+    #mixin Static
+    #mixin ModifyConstant {method: "initTC", constant: {intValue: 12000}}
+    function increaseDuration(value as int) as int {
+        return 1728000;
+    } 
+}

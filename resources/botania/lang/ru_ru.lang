@@ -50,3 +50,33 @@ botania.entry.amuileria_kaerunea=Амуилерия Каерунея
 botania.tagline.botania.entry.amuileria_kaerunea=Заряжает предметы молниями
 botania.page.amuileria_kaerunea0=Активная во время гроз, §1Амуилерия Каерунея§r направляет удары молний для зарядки предметов поблизости. Она призовет молнию, когда это необходимо, используя §cману§r для наполнения предметов энергией шторма.
 botania.page.amuileria_kaerunea1=&oТор в цветке&r
+
+# CUSTOM BREW NAMES (RU)
+botania.brew.scarlet_veil=Алый Покров
+botania.brew.calamity=Катаклизм
+botania.brew.warbound=Скованный Войной
+botania.brew.depthbound=Связанный Глубиной
+botania.brew.sanguine_oath=Кровавая Клятва
+botania.brew.aerial_delirium=Воздушный Делирий
+
+botania.page.complexBrewsCustom2a=Зелье, которое окутывает пьющего &1Алой Вуалью&0. Оно дает огромную &1Добавку к Здоровью&0 и &1Стойкость&0, но затуманивает зрение.
+botania.page.complexBrewsCustom2b=Где я оставил очки?
+botania.page.complexBrewsCustom3a=Это нестабильное зелье хаотично по своей природе. Пить &1Каламити&0 непредсказуемо.
+botania.page.complexBrewsCustom3b=Любимое зелье RNGsus
+botania.page.complexBrewsCustom4a=Боевое зелье, которое укрепляет тело. Оно дает &1Поглощение&0 и &1Сопротивление&0, но снижает ловкость с &1Замедлением&0 и небольшой &1Глухотой&0.
+botania.page.complexBrewsCustom4b=В стоянии мы находим покой
+botania.page.complexBrewsCustom5a=Водное зелье, которое усиливает пловцов. Оно дает &1Водное Дыхание&0 и &1Скорость Плавания&0, но заставляет оставаться в воде.
+botania.page.complexBrewsCustom5b=Я рыба!
+botania.page.complexBrewsCustom6a=Ритуальное зелье, которое помогает при самопожертвовании. Пить &1Кровавую Клятву&0 быстро восстанавливает &1Регенерацию&0 и повышает эффективность жертвоприношений, но вызывает &1Тошноту&0 и небольшой эффект &1Таумахрии&0.
+botania.page.complexBrewsCustom6b=Вкусно-вкусно на моем кинжале
+botania.page.complexBrewsCustom7a=Причудливое зелье, которое дает &1Полёт&0. Однако оно временно сбивает с толку.
+botania.page.complexBrewsCustom7b=Видел когда-нибудь пьяную фею?
+botania.brew.chronos=Пропуск времени
+botania.page.chronos_a=Зелье, которое помогает &1Времени в Бутылке&0 хранить время вдвое быстрее.
+botania.page.chronos_b=Я моргнул, и уже вторник
+botania.brew.darkness_resistance=Защита от тьмы
+botania.page.darkness_resistance_a=Защитный настой, оберегающий выпившего от вредоносных эффектов глубокой, неестественной тьмы.
+botania.page.darkness_resistance_b=Здравствуй, тьма, мой старый друг
+botania.brew.easyculty=Изумрудная милость
+botania.page.easyculty_a=Нежный настой, облегчающий бремя мира. Его употребление временно снижает &1Сложность&0, даруя милость в тяжёлые времена.
+botania.page.easyculty_b=ЧТО? ЛЁГКИЙ РЕЖИМ?

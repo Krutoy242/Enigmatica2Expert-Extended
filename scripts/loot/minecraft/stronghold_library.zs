@@ -16,6 +16,9 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <cyclicmagic:book_ender>                                        : [1, 0, 1, 1],
   <thermalfoundation:tome_experience>.withTag({Experience: 10000}): [10, 0, 1, 1],
   <rats:plague_doctorate>                                         : [3, 0, 1, 1],
+
+  <botania:brewvial>.withTag({brewKey: "absorption"}): [5, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "healing"})   : [5, 0, 1, 1],
 });
 loottweaker.LootTweaker.getTable(location).getPool('main').addItemEntry(<minecraft:book>, 50, 0, [Functions.enchantWithLevels(5, 50, true)], []);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.sigils);

@@ -30,6 +30,9 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <eyeofdragons:eye_of_icedragon>                                        : [5,   0, 1, 1],
   <eyeofdragons:eye_of_firedragon>                                       : [5,   0, 1, 1],
   <botania:overgrowthseed>                                               : [10,  0, 1, 2],
+
+  <botania:brewvial>.withTag({brewKey: "jumpBoost"}): [1,   0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "regen"})    : [1,   0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.baubles);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.ancientTomes);

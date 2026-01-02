@@ -707,9 +707,21 @@ item.contenttweaker.alloy_mould.name=Сверхлегкая пресс-форм�
 item.contenttweaker.sic_mould.name=Сверхлегкая пресс-форма из матричного сплава
 
 # --------------------------------------
+# Potion Names
+# --------------------------------------
+effect.contenttweaker.chronos=Хронос
+effect.contenttweaker.darkness_resistance=Сопротивление тьме
+effect.contenttweaker.easyculty=Изикути
+effect.contenttweaker.self_sacrifice=Самопожертвование
+
+# --------------------------------------
 # Potion Descriptions
 # --------------------------------------
 description.potion.saturation=Восстанавливает голод и питательные вещества
+description.effect.contenttweaker.chronos=Удваивает накопление времени в бутылке
+description.effect.contenttweaker.darkness_resistance=Защищает от урона тьмы в Глубокой Тьме
+description.effect.contenttweaker.easyculty=Временно снижает уровень сложности
+description.effect.contenttweaker.self_sacrifice=Повышает эффективность Жертвенного кинжала
 
 # --------------------------------------
 # Enchantment Descriptions

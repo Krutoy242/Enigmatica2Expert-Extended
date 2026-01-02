@@ -86,6 +86,9 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <rustic:candle_gold>            : [20, 0, 2, 10],
   <tconstruct:spaghetti>          : [5, 0, 3, 7],
   <thaumcraft:fabric>             : [30, 0, 3, 7],
+
+  <botania:brewvial>.withTag({brewKey: "clear"})      : [5, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "featherFeet"}): [5, 0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magicConsumables);

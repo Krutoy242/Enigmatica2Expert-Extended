@@ -51,6 +51,9 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <tconstruct:hammer_head>.withTag({Material: 'boron'})       : [3, 0, 1, 1],
   <tconstruct:large_plate>.withTag({Material: 'obsidian'})    : [3, 0, 1, 1],
   <tconstruct:materials:16>                                   : [1, 0, 1, 1],
+
+  <botania:brewvial>.withTag({brewKey: "nightVision"}): [3, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "haste"})      : [3, 0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.tinkersModifiers);
 loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);

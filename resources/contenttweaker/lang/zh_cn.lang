@@ -706,9 +706,21 @@ item.contenttweaker.alloy_mould.name=超轻高超不锈钢粗模
 item.contenttweaker.sic_mould.name=超轻矩阵合金粗模
 
 # --------------------------------------
+# Potion Names
+# --------------------------------------
+effect.contenttweaker.chronos=克罗诺斯
+effect.contenttweaker.darkness_resistance=黑暗抗性
+effect.contenttweaker.easyculty=简易度
+effect.contenttweaker.self_sacrifice=自我献祭
+
+# --------------------------------------
 # Potion Descriptions
 # --------------------------------------
 description.potion.saturation=恢复饥饿值和营养状态
+description.effect.contenttweaker.chronos=瓶中时间获得加倍
+description.effect.contenttweaker.darkness_resistance=保护玩家免受深暗之地的黑暗伤害
+description.effect.contenttweaker.easyculty=暂时降低游戏难度
+description.effect.contenttweaker.self_sacrifice=提高献祭匕首的效率
 
 # --------------------------------------
 # Enchantment Descriptions

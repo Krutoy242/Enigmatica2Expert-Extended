@@ -36,6 +36,9 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <thaumcraft:causality_collapser>       : [10,  0, 1, 1],
   <nuclearcraft:californium:5>           : [1,  0, 1, 1],
   <advgenerators:turbine_kit_manyullyn>  : [10,  0, 1, 2],
+
+  <botania:brewvial>.withTag({brewKey: "fireResistance"}): [5,  0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "bloodthirst"})   : [5,  0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magicConsumables);

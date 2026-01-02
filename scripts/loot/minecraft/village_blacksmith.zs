@@ -40,6 +40,9 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <tconstruct:tool_rod>.withTag({Material: 'apatite'})       : [10, 0, 1, 1],
   <tconstruct:tool_rod>.withTag({Material: 'bronze'})        : [5, 0, 1, 1],
   <tconstruct:tool_rod>.withTag({Material: 'certus_quartz'}) : [10, 0, 1, 1],
+
+  <botania:brewvial>.withTag({brewKey: "invisibility"}): [5, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "emptiness"})   : [5, 0, 1, 1],
 });
 loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
 

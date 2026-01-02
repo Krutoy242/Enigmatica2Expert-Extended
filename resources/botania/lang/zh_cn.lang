@@ -50,3 +50,33 @@ botania.entry.amuileria_kaerunea=天雷耧斗菜
 botania.tagline.botania.entry.amuileria_kaerunea=通过闪电为物品充能
 botania.page.amuileria_kaerunea0=§1天雷耧斗菜§r在雷暴期间会活跃起来，引导雷电为附近的掉落物充能。它会在有需要时召唤一道闪电，消耗§c魔力§r来为物品注入风暴之中产生的能量。
 botania.page.amuileria_kaerunea1=&o雷神住在花里&r
+
+# CUSTOM BREW NAMES (ZH_CN)
+botania.brew.scarlet_veil=猩红帷幕
+botania.brew.calamity=灾厄
+botania.brew.warbound=战誓
+botania.brew.depthbound=深渊之缚
+botania.brew.sanguine_oath=血誓
+botania.brew.aerial_delirium=空灵迷狂
+
+botania.page.complexBrewsCustom2a=一种将饮用者笼罩在&1猩红面纱&0下的药水。它提供巨大的&1生命增强&0和&1韧性&0，但会模糊视线。
+botania.page.complexBrewsCustom2b=我把眼镜放哪了？
+botania.page.complexBrewsCustom3a=这种不稳定的药水本质上是混乱的。饮用&1灾难&0无法预测。
+botania.page.complexBrewsCustom3b=RNGsus最爱的药水
+botania.page.complexBrewsCustom4a=一种强化身体的战斗药水。它提供&1生命吸收&0和&1抗性&0，但降低敏捷，并附带&1缓慢&0和轻微&1聋&0效果。
+botania.page.complexBrewsCustom4b=站立中我们找到平静
+botania.page.complexBrewsCustom5a=一种增强游泳能力的水性药水。它提供&1水下呼吸&0和&1游泳速度&0，但必须保持在水中。
+botania.page.complexBrewsCustom5b=我是一条鱼！
+botania.page.complexBrewsCustom6a=一种仪式药水，有助于自我献祭。饮用&1血誓&0能迅速恢复&1再生&0，并提高献祭效率，但会产生&1恶心&0和轻微&1神秘病&0效果。
+botania.page.complexBrewsCustom6b=在我的匕首上美味又美味
+botania.page.complexBrewsCustom7a=一种异想天开的药水，赋予&1飞行&0能力。然而它会短暂地让人困惑。
+botania.page.complexBrewsCustom7b=见过醉酒的小精灵吗？
+botania.brew.chronos=时间跳跃
+botania.page.chronos_a=一种能帮助 &1瓶中时间&0 以双倍速度储存时间的药水。
+botania.page.chronos_b=我眨眼，已经星期二了
+botania.brew.darkness_resistance=黑暗防护
+botania.page.darkness_resistance_a=一种防护型酿造物，可保护饮用者免受深暗之地不自然黑暗的伤害。
+botania.page.darkness_resistance_b=你好啊，黑暗，我的老朋友
+botania.brew.easyculty=翠绿仁慈
+botania.page.easyculty_a=一种温和的药酿，减轻世界的重负。饮用后会暂时降低饮用者的 &1难度&0，在艰难时刻给予仁慈。
+botania.page.easyculty_b=诶？简单模式？

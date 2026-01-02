@@ -19,6 +19,9 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <cyclicmagic:sack_ender>         : [20, 0, 1, 1],
   <cyclicmagic:soulstone>          : [5, 0, 1, 1],
   <thaumicwonders:primordial_grain>: [10, 0, 1, 3],
+
+  <botania:brewvial>.withTag({brewKey: "resistance"}): [5, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "speed"})     : [5, 0, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.sigils);
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.ancientTomes);

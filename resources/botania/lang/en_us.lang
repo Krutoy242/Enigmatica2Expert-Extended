@@ -50,3 +50,33 @@ botania.entry.amuileria_kaerunea=Amuileria kaerunea
 botania.tagline.botania.entry.amuileria_kaerunea=Charges items with lightning
 botania.page.amuileria_kaerunea0=Active during thunderstorms, §1Amuileria Kaerunea§r channels lightning strikes to charge nearby items. It will call down a bolt when needed, consuming §cmana§r to infuse the items with storm-born energy.
 botania.page.amuileria_kaerunea1=&oThor in a flower&r
+
+#CUSTOM BREW NAMES
+botania.brew.scarlet_veil=Scarlet Veil
+botania.brew.calamity=Calamity
+botania.brew.warbound=Warbound
+botania.brew.depthbound=Depthbound
+botania.brew.sanguine_oath=Sanguine Oath
+botania.brew.aerial_delirium=Aerial Delirium
+
+botania.page.complexBrewsCustom2a=A brew that cloaks the drinker in &1Scarlet Veil&0. It grants immense &1Health Boost&0 and &1Resilience&0, but shrouds the vision.
+botania.page.complexBrewsCustom2b=Where did I leave my glasses?
+botania.page.complexBrewsCustom3a=This volatile brew is chaotic in nature. Drinking &1Calamity&0 is unpredictable.
+botania.page.complexBrewsCustom3b=RNGsus favorite brew
+botania.page.complexBrewsCustom4a=A martial brew that fortifies the body. It grants &1Absorption&0 and &1Resistance&0, but dulls agility with &1Slowness&0 and minor &1Deafness&0.
+botania.page.complexBrewsCustom4b=In standing we find peace
+botania.page.complexBrewsCustom5a=A watery brew that empowers swimmers. It grants &1Water Breathing&0 and &1Swim Speed&0, but enforces staying in water.
+botania.page.complexBrewsCustom5b=I'm a fish!
+botania.page.complexBrewsCustom6a=A ritualistic brew that helps stabbing yourself. Drinking &1Sanguine Oath&0 regenerates &1Regeneration&0 rapidly and enhances sacrifice efficiency, but induces &1Nausea&0 and minor &1Thaumarhia&0 effects.
+botania.page.complexBrewsCustom6b=Yummy yummy on my dagger
+botania.page.complexBrewsCustom7a=A whimsical brew that grants &1Flight&0 power. However it confuses temporarily.
+botania.page.complexBrewsCustom7b=Ever seen a drunk pixie?
+botania.brew.chronos=Time skip
+botania.page.chronos_a=A brew that helps &1Time in a Bottle&0 to stores time at double speed.
+botania.page.chronos_b=I blinked and it was Tuesday
+botania.brew.darkness_resistance=Darkness Protection
+botania.page.darkness_resistance_a=A protective brew that shields the drinker from the harmful effects of deep dark, unnatural darkness.
+botania.page.darkness_resistance_b=Hello darkness my old friend
+botania.brew.easyculty=Verdant Mercy
+botania.page.easyculty_a=A gentle brew that eases the weight of the world. Drinking it temporarily lowers the drinker's &1Difficulty&0, offering mercy in times of hardship.
+botania.page.easyculty_b=EEEH? EASY MODE?
