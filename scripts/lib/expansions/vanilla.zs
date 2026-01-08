@@ -11,14 +11,6 @@ import native.net.minecraft.nbt.NBTBase;
 import native.net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
 $expand IEntityDefinition$asSoul() as IItemStack {
-  // Rendering Emberoot Fairies causing crashes on AMD cards
-  // Do not render fairies at all then
-  // Related:
-  //  https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a5ef59c8c5d1e16c6598732e7fff14d33927ed90
-  //  https://github.com/EnigmaticaModpacks/Enigmatica2Expert/issues/2079
-  //  https://github.com/Lothrazar/ERZ/pull/41
-  if (this.id == 'emberroot:fairies') return null;
-
   return <draconicevolution:mob_soul>.withTag({EntityName: this.id});
 }
 

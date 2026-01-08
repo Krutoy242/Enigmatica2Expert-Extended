@@ -114,6 +114,7 @@ return list.map(({ groups: { id, display, items } }) => {
 # add(<entity:emberroot:deers>                        , [<betteranimalsplus:antler> * 50]); // Wild Deer
   add(<entity:emberroot:dire_wolf>                    , [<minecraft:bone> * 47, <minecraft:rotten_flesh> * 48]); // Dire Wolf
   add(<entity:emberroot:enderminy>                    , [<minecraft:ender_eye> * 21, <minecraft:ender_pearl> * 19]); // Mini Enderman
+  add(<entity:emberroot:fairies>                      , [<astralsorcery:itemusabledust> * 344, <minecraft:dye:12> * 93, <minecraft:dye:10> * 93, <minecraft:dye:14> * 93, <minecraft:dye:9> * 93, <minecraft:dye:5> * 93, <minecraft:dye:1> * 93, <minecraft:dye:11> * 93, <minecraft:glowstone_dust> * 86]); // Rainbow Fairy
   add(<entity:emberroot:fallenmount>                  , [<minecraft:bone> * 46, <minecraft:rotten_flesh> * 52, <minecraft:saddle> * 4]); // Fallen Mount
   add(<entity:emberroot:hero>                         , [<actuallyadditions:item_void_bag> * 12, <cyclicmagic:charm_void> * 8, <cyclicmagic:sack_ender> * 11, <cyclicmagic:storage_bag> * 10, <minecraft:dye> * 25, <minecraft:golden_axe> * 4, <minecraft:golden_sword> * 6, <minecraft:shield> * 2, <minecraft:stone_sword> * 6, <thermalexpansion:satchel:100> * 9]); // Fallen Hero
   add(<entity:emberroot:knight_fallen>                , [<minecraft:arrow> * 121, <minecraft:bone> * 136, <minecraft:iron_sword> * 6, <minecraft:rotten_flesh> * 141, <minecraft:skull:2> * 1, <minecraft:skull> * 3, <minecraft:stone_sword> * 2]); // Fallen Knight
