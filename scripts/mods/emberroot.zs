@@ -1,8 +1,12 @@
 #modloaded emberroot
 
-// Since Fairies cause crashes on AMD cards, remove them and their drops
-<entity:emberroot:fairies>.clearDrops();
-
+scripts.lib.loot.tweak('emberroot:entity/fairy_blue'     , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
+scripts.lib.loot.tweak('emberroot:entity/fairy_green'    , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
+scripts.lib.loot.tweak('emberroot:entity/fairy_orange'   , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
+scripts.lib.loot.tweak('emberroot:entity/fairy_pink'     , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
+scripts.lib.loot.tweak('emberroot:entity/fairy_purple'   , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
+scripts.lib.loot.tweak('emberroot:entity/fairy_red'      , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
+scripts.lib.loot.tweak('emberroot:entity/fairy_yellow'   , 'main', null                    , null, [<astralsorcery:itemusabledust>]        , [1, 6], true);
 scripts.lib.loot.tweak('emberroot:entity/golem_blue'     , 'main', 'minecraft:iron_nugget' , null, [<extrautils2:unstableingots:1>]        , [2, 4]);
 scripts.lib.loot.tweak('emberroot:entity/golem_green'    , 'main', 'minecraft:gunpowder'   , null, [<tconstruct:nuggets:5>]     , [2, 8]);
 scripts.lib.loot.tweak('emberroot:entity/golem_orange'   , 'main', 'minecraft:coal'        , null, [<mekanism:nugget:3>]                   , [3, 14]);
