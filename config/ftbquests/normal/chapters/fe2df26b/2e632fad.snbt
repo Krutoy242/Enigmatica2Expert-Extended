@@ -2,8 +2,8 @@
 	title: "{q.applied_energetics.ae2.name}",
 	icon: "appliedenergistics2:inscriber",
 	disable_toast: 1b,
-	x: 1.0d,
-	y: 1.0d,
+	x: -15.125d,
+	y: 0.375d,
 	text: [
 		"{q.applied_energetics.inscriber.desc}"
 	],
@@ -15,21 +15,21 @@
 		uid: "96486a31",
 		type: "item",
 		item: {
-			id: "appliedenergistics2:entropy_manipulator",
 			tag: {
-				internalMaxPower: 200000.0d,
-				internalCurrentPower: 200000.0d
-			}
+				internalCurrentPower: 200000.0d,
+				internalMaxPower: 200000.0d
+			},
+			id: "appliedenergistics2:entropy_manipulator"
 		}
 	},
 	{
 		uid: "db0c9aab",
 		type: "custom",
-		team_reward: 1b,
 		title: "Notify everyone",
 		tags: [
 			"chapstart"
 		],
+		team_reward: 1b,
 		auto: "invisible"
 	}]
 }

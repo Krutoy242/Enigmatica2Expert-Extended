@@ -1,29 +1,29 @@
 {
-	x: 1.0d,
-	y: -3.5d,
+	x: -17.2d,
+	y: 3.9d,
 	text: [
-		"{q.applied_energetics.me_drive.desc}"
+		"{q.applied_energetics.cell_workbench.desc}"
 	],
 	dependencies: [
-		"bd8b6cc0"
+		"0074e8af"
 	],
 	tasks: [{
-		uid: "2a8d1a37",
+		uid: "75d0f9f9",
 		type: "item",
 		items: [{
-			item: "appliedenergistics2:drive"
+			item: "appliedenergistics2:cell_workbench"
 		}],
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "b89ae1b3",
+		uid: "c912ce57",
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

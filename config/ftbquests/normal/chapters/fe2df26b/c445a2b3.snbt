@@ -1,0 +1,38 @@
+{
+	title: "{q.applied_energetics.packaged_auto.name}",
+	x: -6.0d,
+	y: 2.2d,
+	text: [
+		"{q.applied_energetics.packaged_auto.desc}"
+	],
+	dependencies: [
+		"4bfcd69f"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "d0b5c73b",
+		type: "item",
+		items: [{
+			tag: {
+				"patchouli:book": "packagedauto:guide"
+			},
+			id: "patchouli:guide_book"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "442dacbc",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

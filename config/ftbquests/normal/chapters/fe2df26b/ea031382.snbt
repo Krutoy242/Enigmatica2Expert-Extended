@@ -1,0 +1,43 @@
+{
+	icon: "appliedenergistics2:material 1 47",
+	x: -6.0d,
+	y: -2.5d,
+	text: [
+		"{q.applied_energetics.singularity.desc}"
+	],
+	dependencies: [
+		"7c59adad"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "ad86294f",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 47"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "4e2d8cff",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 48"
+		}],
+		count: 2L,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "18435665",
+		type: "custom",
+		title: "{e2ee.quest.rare}",
+		icon: {
+			tag: {
+				type: "rare"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

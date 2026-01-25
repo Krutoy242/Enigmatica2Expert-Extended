@@ -1,0 +1,31 @@
+{
+	x: -18.8d,
+	y: 3.9d,
+	text: [
+		"{q.applied_energetics.me_io_port.desc}"
+	],
+	dependencies: [
+		"19e301a1"
+	],
+	tasks: [{
+		uid: "685d2378",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:io_port"
+		}]
+	}],
+	rewards: [{
+		uid: "c2817452",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

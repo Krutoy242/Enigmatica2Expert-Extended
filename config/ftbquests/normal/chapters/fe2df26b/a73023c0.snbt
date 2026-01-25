@@ -1,6 +1,6 @@
 {
-	x: -2.0d,
-	y: 2.5d,
+	x: 0.5d,
+	y: 3.9d,
 	text: [
 		"{q.applied_energetics.me_fluid_auto_filler.desc}"
 	],
@@ -20,10 +20,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"
