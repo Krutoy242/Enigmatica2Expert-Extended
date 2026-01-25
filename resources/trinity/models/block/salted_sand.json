@@ -1,7 +1,0 @@
-{
-	"parent": "block/layered_cube_all_2",
-	"textures": {
-		"top_all": "trinity:blocks/sand_glow",
-		"bot_all": "minecraft:blocks/sand"
-	}
-}

@@ -1,12 +1,13 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "contenttweaker:blocks/ore_anglesite",
-		"particle": "contenttweaker:blocks/ore_anglesite"
+		"0": "contenttweaker:blocks/ore_benitoite_glow",
+		"1": "contenttweaker:blocks/ore_benitoite",
+		"particle": "contenttweaker:blocks/ore_benitoite"
 	},
 	"elements": [
 		{
-			"name": "body",
+			"name": "body-ores",
 			"from": [0, 0, 0],
 			"to": [16, 16, 16],
 			"faces": {
@@ -16,6 +17,19 @@
 				"west": {"uv": [16, 16, 0, 0], "texture": "#0"},
 				"up": {"uv": [16, 16, 0, 0], "texture": "#0"},
 				"down": {"uv": [16, 16, 0, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "body",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"east": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"south": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"west": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"up": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"down": {"uv": [16, 16, 0, 0], "texture": "#1"}
 			}
 		},
 		{
