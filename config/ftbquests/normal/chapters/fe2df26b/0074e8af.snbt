@@ -1,0 +1,51 @@
+{
+	title: "{q.applied_energetics.me_storage_cell.name}",
+	icon: {
+		tag: {},
+		id: "appliedenergistics2:storage_cell_1k"
+	},
+	x: -15.1d,
+	y: 3.9d,
+	text: [
+		"{q.applied_energetics.me_storage_cell.desc}"
+	],
+	dependencies: [
+		"b140dcf4"
+	],
+	tasks: [{
+		uid: "dd0cfa33",
+		type: "item",
+		items: [{
+			tag: {},
+			id: "appliedenergistics2:storage_cell_1k"
+		},
+		{
+			tag: {},
+			id: "appliedenergistics2:storage_cell_4k"
+		},
+		{
+			tag: {},
+			id: "appliedenergistics2:storage_cell_16k"
+		},
+		{
+			tag: {},
+			id: "appliedenergistics2:storage_cell_64k"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "5f1ce02b",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

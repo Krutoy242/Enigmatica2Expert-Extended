@@ -1,0 +1,21 @@
+{
+	title: "{q.applied_energetics.fluid_crafting.name}",
+	icon: "minecraft:water_bucket",
+	x: -4.0d,
+	y: 2.2d,
+	text: [
+		"{q.applied_energetics.fluid_crafting.desc}"
+	],
+	dependencies: [
+		"4bfcd69f"
+	],
+	tasks: [{
+		uid: "6a9e8aec",
+		type: "checkmark"
+	}],
+	rewards: [{
+		uid: "c0771321",
+		type: "xp_levels",
+		xp_levels: 1
+	}]
+}
