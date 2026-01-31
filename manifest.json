@@ -441,6 +441,6 @@
     {"projectID":1341797,"fileID":7288903,"___name":"ThaumicTweaker"                          ,"downloadUrl":"https://edge.forgecdn.net/files/7288/903/thaumictweaker-1.2.2.jar","required":true},
     {"projectID":1342654,"fileID":7294306,"___name":"OpenBlocks Reopened"                     ,"downloadUrl":"https://edge.forgecdn.net/files/7294/306/OpenBlocksReopened-1.12.2-1.8.3.1.jar","required":true},
     {"projectID":1394222,"fileID":7339320,"___name":"Antique Armory"                          ,"downloadUrl":"https://edge.forgecdn.net/files/7339/320/AntiqueArmory-1.12.2-1.2.7.jar","required":true},
-    {"projectID":1395213,"fileID":7448056,"___name":"BloomTech"                               ,"downloadUrl":"https://edge.forgecdn.net/files/7448/56/BloomTech-1.1.0.zip","required":true}
+    {"projectID":1395213,"fileID":7501474,"___name":"BloomTech"                               ,"downloadUrl":"https://edge.forgecdn.net/files/7501/474/BloomTech-1.2.0.zip","required":true}
   ]
 }
