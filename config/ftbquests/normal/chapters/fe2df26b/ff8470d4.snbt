@@ -1,13 +1,14 @@
 {
 	icon: "appliedenergistics2:part 1 460",
-	x: -0.5d,
-	y: -1.9d,
+	x: -7.2d,
+	y: 1.5000000000000002d,
 	text: [
-		"{q.applied_energetics.p2p_tunnel_me.desc}"
+		"{q.applied_energetics.p2p_tunnel.desc}"
 	],
 	dependencies: [
-		"bd8b6cc0"
+		"4bfcd69f"
 	],
+	min_width: 300,
 	tasks: [{
 		uid: "a9680e2a",
 		type: "item",
@@ -20,8 +21,8 @@
 		uid: "5ae2ecd9",
 		type: "item",
 		items: [{
-			id: "appliedenergistics2:memory_card",
-			tag: {}
+			tag: {},
+			id: "appliedenergistics2:memory_card"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -30,10 +31,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

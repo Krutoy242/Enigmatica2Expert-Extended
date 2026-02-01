@@ -1,0 +1,33 @@
+{
+	x: -2.3d,
+	y: 3.9d,
+	text: [
+		"{q.applied_energetics.fluid_discretizer.desc}"
+	],
+	dependencies: [
+		"96f510f9"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "eac66b12",
+		type: "item",
+		items: [{
+			item: "ae2fc:fluid_discretizer"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "8f4c0b9f",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

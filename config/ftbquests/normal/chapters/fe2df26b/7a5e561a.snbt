@@ -1,0 +1,47 @@
+{
+	title: "{q.applied_energetics.packaged_ex_crafting.name}",
+	icon: "packagedexcrafting:advanced_crafter",
+	x: -7.4d,
+	y: 5.3d,
+	shape: "hexagon",
+	text: [
+		"{q.applied_energetics.packaged_ex_crafting.desc}"
+	],
+	dependencies: [
+		"de3cd6bc",
+		"244956ff",
+		"dd0e328d"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "56da681e",
+		type: "item",
+		items: [{
+			item: "packagedexcrafting:basic_crafter"
+		},
+		{
+			item: "packagedexcrafting:advanced_crafter"
+		},
+		{
+			item: "packagedexcrafting:elite_crafter"
+		},
+		{
+			item: "packagedexcrafting:ultimate_crafter"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "8e0ea5d5",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}
