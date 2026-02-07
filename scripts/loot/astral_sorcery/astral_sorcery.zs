@@ -6,8 +6,7 @@ import loottweaker.LootContext;
 import loottweaker.vanilla.loot.Functions;
 
 // Add garanteed grapple wand in some shrines
-loottweaker.LootTweaker.getTable('astralsorcery:chest_shrine').addPool('astralsorcery:itemgrapplewand', 1.0f, 1.0f, 0.0f, 0.0f);
-scripts.lib.loot.addLootToPool('astralsorcery:chest_shrine', 'astralsorcery:itemgrapplewand', {
+scripts.lib.loot.addLootToPool('astralsorcery:chest_shrine', 'astralsorcery:chest_shrine', {
   <astralsorcery:itemgrapplewand>: [1, 0, 1, 1],
 });
 
@@ -32,7 +31,8 @@ loottweaker.LootTweaker.getTable('astralsorcery:shooting_star').getPool('astrals
 
 loottweaker.LootTweaker.getTable('astralsorcery:shooting_star').addPool('extraItem', 1.0f, 1.0f, 0.0f, 0.0f);
 scripts.lib.loot.addLootToPool('astralsorcery:shooting_star', 'extraItem', {
-  <warptheory:item_cleanser> : [1, 0, 1, 1],
-  <quark:diamond_heart>      : [1, 0, 1, 1],
+  <warptheory:item_cleanser>        : [2, 0, 1, 1],
+  <quark:diamond_heart>             : [2, 0, 1, 1],
+  <thaumcraft:causality_collapser>  : [2, 0, 1, 3],
   <thaumicwonders:primal_destroyer>.withTag({infench: [{lvl: 3 as short, id: 6 as short}, {lvl: 2 as short, id: 14 as short}], hunger: 69}): [1, 0, 1, 1],
 });

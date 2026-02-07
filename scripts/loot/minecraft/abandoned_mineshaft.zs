@@ -33,27 +33,26 @@ scripts.lib.loot.removeEtriesFromPool('enderio:chests/abandoned_mineshaft', 'End
 scripts.lib.loot.clearPool(location, 'main');
 scripts.lib.loot.addLootToPool(location, 'main', {
   <minecraft:tnt>                                             : [100, 0, 1, 12],
-  <cyclicmagic:ender_tnt_6>                                   : [80, 0, 1, 36],
-  <cyclicmagic:ender_tnt_3>                                   : [80, 0, 1, 11],
-  <tconstruct:materials:14>                                   : [20, 0, 1, 2],
-  <tconstruct:pick_head>.withTag({Material: 'invar'})         : [10, 0, 1, 1],
-  <tconstruct:pick_head>.withTag({Material: 'iron'})          : [10, 0, 1, 1],
-  <tconstruct:pick_head>.withTag({Material: 'black_quartz'})  : [10, 0, 1, 1],
-  <tconstruct:binding>.withTag({Material: 'pink_slime'})      : [10, 0, 1, 1],
-  <tconstruct:tool_rod>.withTag({Material: 'bone'})           : [10, 0, 1, 1],
-  <tconstruct:tough_tool_rod>.withTag({Material: 'bone'})     : [10, 0, 1, 1],
-  <tconstruct:hammer_head>.withTag({Material: 'lead'})        : [10, 0, 1, 1],
-  <tconstruct:large_plate>.withTag({Material: 'black_quartz'}): [10, 0, 1, 1],
-  <tconstruct:large_plate>.withTag({Material: 'fluix'})       : [10, 0, 1, 1],
-  <tconstruct:pick_head>.withTag({Material: 'ruby'})          : [3, 0, 1, 1],
-  <tconstruct:binding>.withTag({Material: 'cobalt'})          : [3, 0, 1, 1],
-  <tconstruct:tool_rod>.withTag({Material: 'pigiron'})        : [3, 0, 1, 1],
-  <tconstruct:hammer_head>.withTag({Material: 'boron'})       : [3, 0, 1, 1],
-  <tconstruct:large_plate>.withTag({Material: 'obsidian'})    : [3, 0, 1, 1],
-  <tconstruct:materials:16>                                   : [1, 0, 1, 1],
+  <cyclicmagic:ender_tnt_6>                                   : [80,  0, 1, 36],
+  <cyclicmagic:ender_tnt_3>                                   : [80,  0, 1, 11],
+  <tconstruct:materials:14>                                   : [20,  0, 1, 2],
+  <tconstruct:pick_head>.withTag({Material: 'invar'})         : [10,  0, 1, 1],
+  <tconstruct:pick_head>.withTag({Material: 'iron'})          : [10,  0, 1, 1],
+  <tconstruct:pick_head>.withTag({Material: 'black_quartz'})  : [10,  0, 1, 1],
+  <tconstruct:binding>.withTag({Material: 'pink_slime'})      : [10,  0, 1, 1],
+  <tconstruct:tool_rod>.withTag({Material: 'bone'})           : [10,  0, 1, 1],
+  <tconstruct:tough_tool_rod>.withTag({Material: 'bone'})     : [10,  0, 1, 1],
+  <tconstruct:hammer_head>.withTag({Material: 'lead'})        : [10,  0, 1, 1],
+  <tconstruct:large_plate>.withTag({Material: 'black_quartz'}): [10,  0, 1, 1],
+  <tconstruct:large_plate>.withTag({Material: 'fluix'})       : [10,  0, 1, 1],
+  <tconstruct:pick_head>.withTag({Material: 'ruby'})          : [3,   0, 1, 1],
+  <tconstruct:binding>.withTag({Material: 'cobalt'})          : [3,   0, 1, 1],
+  <tconstruct:tool_rod>.withTag({Material: 'pigiron'})        : [3,   0, 1, 1],
+  <tconstruct:hammer_head>.withTag({Material: 'boron'})       : [3,   0, 1, 1],
+  <tconstruct:large_plate>.withTag({Material: 'obsidian'})    : [3,   0, 1, 1],
 
-  <botania:brewvial>.withTag({brewKey: "nightVision"}): [3, 0, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "haste"})      : [3, 0, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "nightVision"}): [3, 2, 1, 1],
+  <botania:brewvial>.withTag({brewKey: "haste"})      : [3, 2, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.tinkersModifiers);
 loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);
@@ -94,10 +93,10 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <harvestcraft:tunafishsandwichitem>          : [10, 0, 3, 7],
   <harvestcraft:watermelonjellysandwichitem>   : [10, 0, 3, 7],
 
-  <advgenerators:turbine_kit_bronze>: [2,0,1,3],
-  <cookingforblockheads:cow_jar>    : [10, 0, 1, 1],
-  <tconstruct:moms_spaghetti>       : [5, 0, 1, 2],
-  <harvestcraft:minerstewitem>      : [3, 0, 1, 1],
+  <advgenerators:turbine_kit_bronze>: [2,  20, 1, 3],
+  <cookingforblockheads:cow_jar>    : [10, 5,  1, 1],
+  <tconstruct:moms_spaghetti>       : [5,  0,  1, 2],
+  <harvestcraft:minerstewitem>      : [3,  3,  1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.goodFood);
