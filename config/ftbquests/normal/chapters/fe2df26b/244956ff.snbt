@@ -1,0 +1,33 @@
+{
+	x: -6.0d,
+	y: 6.7d,
+	text: [
+		"{q.applied_energetics.unpackager.desc}"
+	],
+	dependencies: [
+		"de3cd6bc"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "83fc01f5",
+		type: "item",
+		items: [{
+			item: "packagedauto:unpackager"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "4bbab81f",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

@@ -1,30 +1,31 @@
 {
-	x: -4.2749999999999995d,
-	y: 1.05d,
+	x: -17.296000000000006d,
+	y: 8.084000000000001d,
 	text: [
 		"{q.applied_energetics.crafting_station.desc}"
 	],
 	dependencies: [
 		"766a14ec"
 	],
-	size: 0.75d,
+	size: 0.66d,
 	tasks: [{
 		uid: "f767b8fe",
 		type: "item",
 		items: [{
 			item: "tconstruct:tooltables"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "9fcc900c",
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			Count: 2,
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

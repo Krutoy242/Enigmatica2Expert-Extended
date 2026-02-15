@@ -1,12 +1,13 @@
 {
-	x: 4.0d,
-	y: -0.5d,
+	x: -10.296000000000001d,
+	y: 3.366d,
 	text: [
 		"{q.applied_energetics.wireless_booster.desc}"
 	],
 	dependencies: [
 		"6690bc40"
 	],
+	size: 0.66d,
 	tasks: [{
 		uid: "eb7ce218",
 		type: "item",
@@ -20,10 +21,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

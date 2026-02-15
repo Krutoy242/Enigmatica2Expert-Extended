@@ -1,29 +1,29 @@
 {
-	x: 1.0d,
-	y: 2.5d,
+	x: -18.8d,
+	y: 3.9d,
 	text: [
-		"{q.applied_energetics.charger.desc}"
+		"{q.applied_energetics.me_io_port.desc}"
 	],
 	dependencies: [
-		"2e632fad"
+		"19e301a1"
 	],
 	tasks: [{
-		uid: "af8acd38",
+		uid: "685d2378",
 		type: "item",
 		items: [{
-			item: "appliedenergistics2:charger"
+			item: "appliedenergistics2:io_port"
 		}],
 		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "42dc8bb9",
+		uid: "c2817452",
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

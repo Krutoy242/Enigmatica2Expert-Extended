@@ -1,0 +1,22 @@
+{
+	x: -7.524000000000001d,
+	y: 2.178d,
+	custom_click: "https://lasm.dev/BetterP2P-Manual/",
+	dependencies: [
+		"ff8470d4"
+	],
+	size: 0.66d,
+	optional: 1b,
+	tasks: [{
+		uid: "90e886c2",
+		type: "item",
+		items: [{
+			tag: {
+				selectedIndex: -1
+			},
+			id: "betterp2p:advanced_memory_card"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}]
+}

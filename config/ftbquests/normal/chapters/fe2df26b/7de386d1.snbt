@@ -1,0 +1,43 @@
+{
+	icon: "ae2fc:ingredient_buffer",
+	x: -2.3d,
+	y: 2.6d,
+	text: [
+		"{q.applied_energetics.ingredient_buffer.desc}"
+	],
+	dependencies: [
+		"0b642757"
+	],
+	min_width: 300,
+	or_tasks: 1b,
+	tasks: [{
+		uid: "28825be0",
+		type: "item",
+		items: [{
+			item: "ae2fc:ingredient_buffer"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "70ded9ec",
+		type: "item",
+		items: [{
+			item: "ae2fc:large_ingredient_buffer"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "515f0362",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

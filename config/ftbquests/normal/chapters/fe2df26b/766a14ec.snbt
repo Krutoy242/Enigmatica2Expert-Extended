@@ -1,6 +1,7 @@
 {
-	x: -3.5d,
-	y: 1.0d,
+	icon: "appliedenergistics2:molecular_assembler",
+	x: -16.700000000000006d,
+	y: 7.6000000000000005d,
 	text: [
 		"{q.applied_energetics.molecular_assembler.desc}"
 	],
@@ -14,16 +15,24 @@
 			item: "appliedenergistics2:molecular_assembler"
 		}],
 		ignore_nbt: 1b
+	},
+	{
+		uid: "5666abd5",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 30"
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "0dd62819",
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

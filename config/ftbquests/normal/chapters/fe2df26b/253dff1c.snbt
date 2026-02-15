@@ -1,0 +1,35 @@
+{
+	x: -18.8d,
+	y: 5.3d,
+	text: [
+		"{q.applied_energetics.sticky_card.desc}"
+	],
+	dependencies: [
+		"4ac1c9d1",
+		"bd8b6cc0"
+	],
+	dependency_requirement: "one_completed",
+	min_width: 300,
+	tasks: [{
+		uid: "292abce2",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 61"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "17c48446",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

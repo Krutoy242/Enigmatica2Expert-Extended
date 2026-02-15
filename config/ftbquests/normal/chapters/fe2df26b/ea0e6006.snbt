@@ -1,0 +1,48 @@
+{
+	title: "{q.applied_energetics.import_and_export_buses.name}",
+	icon: "appliedenergistics2:part 1 240",
+	x: -15.9d,
+	y: 8.2d,
+	text: [
+		"{q.applied_energetics.import_and_export_buses.desc}"
+	],
+	dependencies: [
+		"c3751d75"
+	],
+	tasks: [{
+		uid: "6384297b",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 240"
+		},
+		{
+			item: "appliedenergistics2:part 1 241"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "ec19f02b",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 260"
+		},
+		{
+			item: "appliedenergistics2:part 1 261"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "ba2f5b46",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

@@ -1,0 +1,35 @@
+{
+	x: -1.76d,
+	y: 1.35d,
+	shape: "hexagon",
+	text: [
+		"{q.applied_energetics.pulse_centrifuge.desc}"
+	],
+	dependencies: [
+		"b6524265"
+	],
+	dependency_requirement: "all_started",
+	size: 0.8d,
+	tasks: [{
+		uid: "06c15868",
+		type: "item",
+		items: [{
+			item: "threng:machine 1 1"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "ed494f0a",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

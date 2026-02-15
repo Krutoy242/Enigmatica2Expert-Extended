@@ -1,24 +1,17 @@
 {
-	title: "{q.applied_energetics.crafting_unit.name}",
+	title: "{q.applied_energetics.crafting_cpu.name}",
 	icon: "appliedenergistics2:crafting_unit",
-	x: -3.5d,
-	y: -0.5d,
+	x: -15.1d,
+	y: 5.3d,
 	text: [
-		"{q.applied_energetics.crafting_unit.desc}"
+		"{q.applied_energetics.crafting_cpu.desc}"
 	],
 	dependencies: [
-		"766a14ec"
+		"0074e8af"
 	],
+	min_width: 300,
 	tasks: [{
-		uid: "74a371df",
-		type: "item",
-		items: [{
-			item: "appliedenergistics2:crafting_accelerator"
-		}],
-		ignore_nbt: 1b
-	},
-	{
-		uid: "05db2643",
+		uid: "78a4d556",
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:crafting_storage_1k"
@@ -33,16 +26,24 @@
 			item: "appliedenergistics2:crafting_storage_64k"
 		}],
 		ignore_nbt: 1b
+	},
+	{
+		uid: "b6eb5237",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:crafting_accelerator"
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
-		uid: "ecd47eca",
+		uid: "95880bca",
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

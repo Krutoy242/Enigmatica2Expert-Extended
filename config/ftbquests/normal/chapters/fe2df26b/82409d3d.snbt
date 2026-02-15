@@ -1,0 +1,34 @@
+{
+	x: -0.9d,
+	y: 5.3d,
+	shape: "hexagon",
+	text: [
+		"{q.applied_energetics.dual_interface.desc}"
+	],
+	dependencies: [
+		"0b642757"
+	],
+	tasks: [{
+		uid: "f1f57216",
+		type: "item",
+		items: [{
+			item: "ae2fc:dual_interface"
+		}],
+		consume_items: 0b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "33a3d1e8",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

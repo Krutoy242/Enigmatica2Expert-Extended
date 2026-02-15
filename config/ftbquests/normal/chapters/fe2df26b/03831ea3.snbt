@@ -1,0 +1,27 @@
+{
+	title: "{q.applied_energetics.subnetworks.name}",
+	x: -17.2d,
+	y: 6.7d,
+	shape: "octagon",
+	text: [
+		"{q.applied_energetics.subnetworks.desc}"
+	],
+	dependencies: [
+		"c3751d75",
+		"bd8b6cc0"
+	],
+	min_width: 400,
+	tasks: [{
+		uid: "1f936324",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 140"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "dba8acd9",
+		type: "xp_levels",
+		xp_levels: 10
+	}]
+}

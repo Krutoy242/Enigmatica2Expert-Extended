@@ -1,0 +1,36 @@
+{
+	x: -15.642000000000001d,
+	y: 3.366d,
+	text: [
+		"{q.applied_energetics.big_storage_cells.desc}"
+	],
+	dependencies: [
+		"0074e8af"
+	],
+	size: 0.66d,
+	tasks: [{
+		uid: "b6de51c7",
+		type: "item",
+		items: [{
+			tag: {},
+			id: "nae2:storage_cell_256k"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "6648727d",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			Count: 2,
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

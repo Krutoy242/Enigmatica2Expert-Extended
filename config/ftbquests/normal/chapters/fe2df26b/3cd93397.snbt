@@ -1,0 +1,42 @@
+{
+	icon: "appliedenergistics2:part 1 80",
+	x: -14.3d,
+	y: 8.2d,
+	text: [
+		"{q.applied_energetics.me_toggle_bus.desc}"
+	],
+	dependencies: [
+		"c3751d75"
+	],
+	or_tasks: 1b,
+	tasks: [{
+		uid: "4cf8b23d",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 80"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "cabe6695",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 100"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "300de093",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

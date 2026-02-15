@@ -1,12 +1,14 @@
 {
-	x: 1.0d,
-	y: 5.5d,
+	x: -1.76d,
+	y: -0.55d,
+	shape: "hexagon",
 	text: [
 		"{q.applied_energetics.me_circuit_etcher.desc}"
 	],
 	dependencies: [
 		"b6524265"
 	],
+	size: 0.8d,
 	tasks: [{
 		uid: "8c2a2f39",
 		type: "item",
@@ -20,10 +22,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

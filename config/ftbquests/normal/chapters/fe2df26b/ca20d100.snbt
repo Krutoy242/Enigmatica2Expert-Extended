@@ -1,0 +1,42 @@
+{
+	icon: "appliedenergistics2:part 1 340",
+	x: -13.0d,
+	y: 5.3d,
+	text: [
+		"{q.applied_energetics.pattern_terminal.desc}"
+	],
+	dependencies: [
+		"1756df36"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "6da2ac16",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 340"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "b7641e7f",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 52"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "a8a48c93",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

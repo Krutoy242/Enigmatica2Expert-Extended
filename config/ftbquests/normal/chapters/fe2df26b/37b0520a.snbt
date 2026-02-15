@@ -1,0 +1,32 @@
+{
+	x: -17.2d,
+	y: 2.2d,
+	text: [
+		"{q.applied_energetics.crystal_growth_chamber.desc}"
+	],
+	dependencies: [
+		"bcdff2fa"
+	],
+	tasks: [{
+		uid: "f719e2f6",
+		type: "item",
+		items: [{
+			item: "ae2stuff:grower"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "40361314",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

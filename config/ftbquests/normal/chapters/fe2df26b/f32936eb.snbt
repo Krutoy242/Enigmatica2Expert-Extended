@@ -1,0 +1,37 @@
+{
+	title: "{q.applied_energetics.me_dense_cable.name}",
+	icon: "appliedenergistics2:part 1 516",
+	x: -12.7d,
+	y: -1.3d,
+	text: [
+		"{q.applied_energetics.me_dense_cable.desc}"
+	],
+	dependencies: [
+		"036c438c"
+	],
+	tasks: [{
+		uid: "20bc09e6",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 516"
+		},
+		{
+			item: "appliedenergistics2:part 1 76"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "b70d901a",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

@@ -1,0 +1,43 @@
+{
+	title: "{q.applied_energetics.redstone_and_capacity_card.name}",
+	icon: "appliedenergistics2:material 1 27",
+	x: -16.272000000000006d,
+	y: 8.878d,
+	text: [
+		"{q.applied_energetics.redstone_and_capacity_card.desc}"
+	],
+	dependencies: [
+		"ea0e6006"
+	],
+	size: 0.66d,
+	tasks: [{
+		uid: "ed391eaf",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 26"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "3c0a6484",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:material 1 27"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "bc6ce221",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

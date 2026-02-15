@@ -1,0 +1,43 @@
+{
+	icon: "packagedauto:encoder",
+	x: -6.0d,
+	y: 3.9d,
+	text: [
+		"{q.applied_energetics.package_recipe_encoder.desc}"
+	],
+	dependencies: [
+		"c445a2b3"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "6d0f43bb",
+		type: "item",
+		items: [{
+			item: "packagedauto:encoder"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "e6b6f5a0",
+		type: "item",
+		items: [{
+			item: "packagedauto:recipe_holder"
+		}],
+		count: 2L,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "b5ec0f3a",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

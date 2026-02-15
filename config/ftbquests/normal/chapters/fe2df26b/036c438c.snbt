@@ -1,0 +1,37 @@
+{
+	title: "{q.applied_energetics.me_covered_cable.name}",
+	icon: "appliedenergistics2:part 1 36",
+	x: -13.9d,
+	y: -1.3d,
+	text: [
+		"{q.applied_energetics.me_covered_cable.desc}"
+	],
+	dependencies: [
+		"27336329"
+	],
+	tasks: [{
+		uid: "a36339c8",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 36"
+		},
+		{
+			item: "appliedenergistics2:part 1 56"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "58e2bf13",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

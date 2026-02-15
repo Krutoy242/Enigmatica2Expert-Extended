@@ -1,6 +1,6 @@
 {
-	x: 2.466666666666667d,
-	y: 0.5333333333333333d,
+	x: -15.733333333333333d,
+	y: -0.2d,
 	text: [
 		"{q.applied_energetics.matter_cannon.desc}"
 	],
@@ -12,8 +12,8 @@
 		uid: "931e5fe5",
 		type: "item",
 		items: [{
-			id: "appliedenergistics2:matter_cannon",
-			tag: {}
+			tag: {},
+			id: "appliedenergistics2:matter_cannon"
 		}],
 		ignore_nbt: 1b
 	}],
@@ -22,10 +22,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

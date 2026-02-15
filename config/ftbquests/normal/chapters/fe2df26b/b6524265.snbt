@@ -1,12 +1,11 @@
 {
-	title: "{q.applied_energetics.fluix_steel.name}",
-	x: 1.0d,
-	y: 4.0d,
+	x: -3.2d,
+	y: 0.4d,
 	text: [
 		"{q.applied_energetics.fluix_steel.desc}"
 	],
 	dependencies: [
-		"882dc2b8"
+		"4bfcd69f"
 	],
 	tasks: [{
 		uid: "0af150d9",
@@ -21,10 +20,10 @@
 		type: "custom",
 		title: "{e2ee.quest.uncommon}",
 		icon: {
-			id: "ftbquests:lootcrate",
 			tag: {
 				type: "uncommon"
-			}
+			},
+			id: "ftbquests:lootcrate"
 		},
 		tags: [
 			"loot"

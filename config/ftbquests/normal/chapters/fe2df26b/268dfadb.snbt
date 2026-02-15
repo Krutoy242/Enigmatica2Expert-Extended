@@ -1,0 +1,49 @@
+{
+	title: "{q.applied_energetics.me_formation_plane.name}",
+	icon: "appliedenergistics2:part 1 320",
+	x: -15.1d,
+	y: 8.8d,
+	text: [
+		"{q.applied_energetics.me_formation_plane.desc}"
+	],
+	dependencies: [
+		"c3751d75"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "ab2998cb",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 320"
+		},
+		{
+			item: "appliedenergistics2:part 1 321"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "e24bc08b",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 300"
+		},
+		{
+			item: "appliedenergistics2:part 1 302"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "96f18ff3",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

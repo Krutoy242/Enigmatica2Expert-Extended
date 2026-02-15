@@ -1,0 +1,40 @@
+{
+	title: "{q.applied_energetics.color_applicator.name}",
+	x: -14.55d,
+	y: -1.8d,
+	shape: "hexagon",
+	text: [
+		"{q.applied_energetics.color_applicator.desc}"
+	],
+	dependencies: [
+		"27336329"
+	],
+	size: 0.66d,
+	tasks: [{
+		uid: "e3bb39c0",
+		type: "item",
+		items: [{
+			tag: {
+				internalCurrentPower: 20000.0d,
+				internalMaxPower: 20000.0d
+			},
+			id: "appliedenergistics2:color_applicator"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "f3bf9675",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

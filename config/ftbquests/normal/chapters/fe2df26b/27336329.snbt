@@ -1,0 +1,43 @@
+{
+	title: "{q.applied_energetics.me_glass_cable.name}",
+	icon: "appliedenergistics2:part 1 16",
+	x: -15.1d,
+	y: -1.3d,
+	text: [
+		"{q.applied_energetics.me_glass_cable.desc}"
+	],
+	dependencies: [
+		"2e632fad"
+	],
+	min_width: 300,
+	tasks: [{
+		uid: "0e0f66f0",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 16"
+		}],
+		ignore_nbt: 1b
+	},
+	{
+		uid: "f53073ef",
+		type: "item",
+		items: [{
+			item: "appliedenergistics2:part 1 120"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "8b3a2240",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}

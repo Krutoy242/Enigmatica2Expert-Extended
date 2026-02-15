@@ -1,0 +1,44 @@
+{
+	title: "{q.applied_energetics.energy_cell.name}",
+	icon: {
+		tag: {},
+		id: "appliedenergistics2:energy_cell"
+	},
+	x: -6.6000000000000005d,
+	y: -0.264d,
+	shape: "hexagon",
+	text: [
+		"{q.applied_energetics.energy_cell.desc}"
+	],
+	dependencies: [
+		"4bfcd69f"
+	],
+	size: 0.66d,
+	tasks: [{
+		uid: "2dad0ae1",
+		type: "item",
+		items: [{
+			tag: {},
+			id: "appliedenergistics2:energy_cell"
+		},
+		{
+			tag: {},
+			id: "appliedenergistics2:dense_energy_cell"
+		}],
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "07cbd3e6",
+		type: "custom",
+		title: "{e2ee.quest.uncommon}",
+		icon: {
+			tag: {
+				type: "uncommon"
+			},
+			id: "ftbquests:lootcrate"
+		},
+		tags: [
+			"loot"
+		]
+	}]
+}
