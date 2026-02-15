@@ -100,8 +100,10 @@ function addLootToPool(tableName as string, poolName as string, lootTable as int
   val pool = loottweaker.LootTweaker.getTable(tableName).getPool(poolName);
   for key, value in lootTable {
     if (isNull(key)) continue;
+    val weight = value[0];
+    val luckQuality = value[1];
     pool.addItemEntry(
-      key, value[0], value[1],
+      key, weight, luckQuality,
       [Functions.setCount(value[2], value[3])],
       []
     );
@@ -123,6 +125,10 @@ function addRandomCapacitor(tableName as string, chance as float) as void {
   val pool = loottweaker.LootTweaker.getTable(tableName).addPool('enderIOCapacitor', 1.0f, 1.0f, 0.0f, 0.0f);
   pool.addItemEntry(<enderio:item_basic_capacitor:4>, 1, 0, [{"function":"enderio:set_capacitor"}], []);
   pool.addConditions([Conditions.randomChance(chance)]);
+}
+
+function addAncientTomes(tableName as string, poolName as string, weight as int) as void{
+  loottweaker.LootTweaker.getTable(tableName).getPool(poolName).addItemEntry(<quark:ancient_tome>, weight, 0, [{"function":"quark:enchant_tome"}], []);
 }
 
 /*

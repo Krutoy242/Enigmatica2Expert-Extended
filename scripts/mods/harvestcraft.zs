@@ -195,6 +195,28 @@ recipes.remove(<harvestcraft:royaljellyitem>);
 mods.integrateddynamics.Squeezer.addRecipe(<harvestcraft:queenbeeitem>, <harvestcraft:royaljellyitem>, 1.0f, <harvestcraft:royaljellyitem>, 1.0f, null, 0, null);
 scripts.process.squeeze([<harvestcraft:queenbeeitem>], null, 'only: TECentrifuge', <harvestcraft:royaljellyitem> * 4);
 
+// Fix recipe require seed instead of crop result
+recipes.removeByRecipeName('harvestcraft:gourmetvenisonpattyitem_itemsalt');
+recipes.addShapeless('gourmetvenisonpattyitem_itemsalt', <harvestcraft:gourmetvenisonpattyitem>, [
+  <ore:toolMixingbowl>, <ore:foodGroundvenison>, <ore:foodBlackpepper>, <ore:cropSpiceleaf>, <harvestcraft:mustardseedsitem>, <ore:itemSalt>,
+]);
+
+recipes.removeByRecipeName('harvestcraft:gourmetporkpattyitem_itemsalt');
+recipes.addShapeless('gourmetporkpattyitem_itemsalt', <harvestcraft:gourmetporkpattyitem>, [
+  <ore:toolMixingbowl>, <ore:foodGroundpork>, <ore:foodBlackpepper>, <ore:cropSpiceleaf>, <harvestcraft:mustardseedsitem>, <ore:itemSalt>,
+]);
+
+recipes.removeByRecipeName('harvestcraft:gourmetmuttonpattyitem_itemsalt');
+recipes.addShapeless('gourmetmuttonpattyitem_itemsalt', <harvestcraft:gourmetmuttonpattyitem>, [
+  <ore:toolMixingbowl>, <ore:foodGroundmutton>, <ore:foodBlackpepper>, <ore:cropSpiceleaf>, <harvestcraft:mustardseedsitem>, <ore:itemSalt>,
+]);
+
+recipes.removeByRecipeName('harvestcraft:gourmetbeefpattyitem_itemsalt');
+recipes.addShapeless('gourmetbeefpattyitem_itemsalt', <harvestcraft:gourmetbeefpattyitem>, [
+  <ore:toolMixingbowl>, <ore:foodGroundbeef>, <ore:foodBlackpepper>, <ore:cropSpiceleaf>, <harvestcraft:mustardseedsitem>, <ore:itemSalt>,
+]);
+
+
 // Simple seed rework
 for item in [
   // <harvestcraft:chilipepperseeditem>,

@@ -32,6 +32,6 @@
 	{
 		uid: "ea74cfd5",
 		type: "command",
-		command: "/thaumcraft research @p IMPETUS"
+		command: "/thaumcraft research @p add IMPETUS"
 	}]
 }

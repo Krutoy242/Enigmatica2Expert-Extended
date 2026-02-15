@@ -1,3 +1,9 @@
+/*
+
+Allowing insert Dank/Null/ into dock only by using special catalyst item
+
+*/
+
 #reloadable
 #modloaded danknull extendedcrafting
 #priority -1
@@ -9,6 +15,9 @@ import crafttweaker.player.IPlayer;
 
 import scripts.lib.tellraw.itemObj;
 
+// The start tier of DankNull which require to use catalyst item
+static BASE_TIER as int = 1;
+
 static catalystRequirments as IIngredient[] = [
   <extendedcrafting:material:8>,
   <extendedcrafting:material:9>,
@@ -18,7 +27,15 @@ static catalystRequirments as IIngredient[] = [
   <extendedcrafting:material:13>,
 ] as IIngredient[];
 
-for i, catalyst in catalystRequirments {
+for i in 0 .. 6 {
+  val catalystIndex = i - BASE_TIER;
+  val catalyst = catalystIndex < 0 ? null : catalystRequirments[catalystIndex];
+
+  val baseIngredients = [
+    <danknull:danknull_dock>,
+    itemUtils.getItem('danknull:dank_null_' ~ i).marked('m'),
+  ] as IIngredient[];
+
   recipes.addShapeless('danknull_catalyst_' ~ i,
     <danknull:danknull_dock>.withTag({
       BlockEntityTag: {
@@ -30,7 +47,7 @@ for i, catalyst in catalystRequirments {
         },
       },
     }),
-    [<danknull:danknull_dock>, itemUtils.getItem('danknull:dank_null_' ~ i).marked('m'), catalyst]
+    isNull(catalyst) ? baseIngredients : baseIngredients + catalyst
     , function (out, ins, cInfo) {
       return out.withTag(out.tag.deepUpdate(
         { BlockEntityTag: { DankNullStack: { tag: ins.m.tag } } },
@@ -61,6 +78,7 @@ function attemptToPutIn(e as PlayerInteractBlockEvent) as void {
   val item = e.player.currentItem;
   if (
     isNull(item)
+    || isNull(item.definition)
     || !item.definition.id.startsWith('danknull:dank_null_')
   ) return;
 
@@ -84,13 +102,12 @@ function attemptToPutIn(e as PlayerInteractBlockEvent) as void {
 }
 
 function attemptToTakeOff(e as PlayerInteractBlockEvent) as void {
-  if (!isNull(e.player.mainHandHeldItem) || !isNull(e.player.offHandHeldItem)) return;
+  if (!isNull(e.player.mainHandHeldItem) || !isNull(e.player.offHandHeldItem) || isNull(e.block.data)) return;
 
-  val d = D(e.block.data);
-  val id = d.getString('DankNullStack.id');
-  if (isNull(id)) return;
+  val id = e.block.data.DankNullStack?.id.asString();
+  if (isNull(id) || id == 'minecraft:air') return;
 
-  val dankInside = itemUtils.getItem(id, d.getShort('DankNullStack.Damage', 0));
+  val dankInside = itemUtils.getItem(id, e.block.data.DankNullStack?.Damage ?? 0);
   if (isNull(dankInside)) return;
 
   val requiredItem = getRequiredItem(dankInside);
@@ -102,8 +119,10 @@ function attemptToTakeOff(e as PlayerInteractBlockEvent) as void {
 
 function getRequiredItem(dankNullItem as IItemStack) as IIngredient {
   val dankTier = dankNullItem.definition.id.substring('danknull:dank_null_'.length) as int;
-  if (dankTier < 0 || dankTier > 5) return null;
-  return catalystRequirments[dankTier];
+  if (dankTier < BASE_TIER || dankTier > 5) return null;
+
+  val catalystIndex = dankTier - BASE_TIER;  
+  return catalystRequirments[catalystIndex];
 }
 
 function getItemInInventory(player as IPlayer, ingr as IIngredient) as IItemStack {

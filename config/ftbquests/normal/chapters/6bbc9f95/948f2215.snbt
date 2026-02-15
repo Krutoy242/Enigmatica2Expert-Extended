@@ -12,6 +12,12 @@
 		type: "item",
 		items: [{
 			item: "thaumcraft:primordial_pearl"
+		},
+		{
+			item: "thaumcraft:primordial_pearl 1 3"
+		},
+		{
+			item: "thaumcraft:primordial_pearl 1 6"
 		}],
 		ignore_damage: 1b,
 		ignore_nbt: 1b

@@ -1,4 +1,5 @@
 #modloaded chisel modtweaker
+#ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
 import mods.chisel.Carving.addVariation;
@@ -225,3 +226,40 @@ for door in allDoors {
   ) continue;
   mods.thermalexpansion.Sawmill.removeRecipe(door);
 }
+
+// Unify brownstone between mods
+recipes.remove(<chisel:brownstone>);
+mods.chisel.Carving.removeGroup('brownstone_tconstruct');
+addVariation('brownstone', <tconstruct:brownstone>);
+addVariation('brownstone', <tconstruct:brownstone:2>);
+addVariation('brownstone', <tconstruct:brownstone:3>);
+addVariation('brownstone', <tconstruct:brownstone:4>);
+addVariation('brownstone', <tconstruct:brownstone:5>);
+addVariation('brownstone', <tconstruct:brownstone:6>);
+addVariation('brownstone', <tconstruct:brownstone:7>);
+addVariation('brownstone', <tconstruct:brownstone:8>);
+addVariation('brownstone', <tconstruct:brownstone:9>);
+addVariation('brownstone', <tconstruct:brownstone:10>);
+addVariation('brownstone', <tconstruct:brownstone:11>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab:2>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab:3>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab:4>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab:5>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab:6>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab:7>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab2>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab2:1>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab2:2>);
+addVariation('brownstone_slab', <tconstruct:brownstone_slab2:3>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_smooth>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_paver>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_brick>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_brick_cracked>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_brick_fancy>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_brick_square>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_brick_triangle>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_brick_small>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_road>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_tile>);
+addVariation('brownstone_stairs', <tconstruct:brownstone_stairs_creeper>);

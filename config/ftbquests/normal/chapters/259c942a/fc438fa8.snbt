@@ -1,4 +1,5 @@
 {
+	icon: "immersiveengineering:stone_device 1 3",
 	x: 4.4d,
 	y: 3.5d,
 	text: [
@@ -12,6 +13,106 @@
 		type: "item",
 		items: [{
 			item: "immersiveengineering:stone_device 1 3"
+		}]
+	},
+	{
+		uid: "52150e18",
+		type: "item",
+		items: [{
+			item: "immersiveengineering:stone_decoration 1 5"
+		},
+		{
+			item: "immersiveengineering:stone_decoration 1 6"
+		},
+		{
+			item: "immersiveengineering:stone_decoration 1 7"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_slab 1 5"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_slab 1 6"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_slab 1 7"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_stairs_concrete"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_stairs_concrete_tile"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_stairs_concrete_leaded"
+		},
+		{
+			item: "immersiveengineering:stone_device 1 3"
+		},
+		{
+			item: "immersiveengineering:stone_device 1 4"
+		},
+		{
+			item: "immersiveengineering:stone_device 1 5"
+		},
+		{
+			item: "engineersdecor:gas_concrete"
+		},
+		{
+			item: "engineersdecor:rebar_concrete"
+		},
+		{
+			item: "engineersdecor:rebar_concrete_tile"
+		},
+		{
+			item: "engineersdecor:gas_concrete_slab"
+		},
+		{
+			item: "engineersdecor:halfslab_concrete"
+		},
+		{
+			item: "engineersdecor:halfslab_gas_concrete"
+		},
+		{
+			item: "engineersdecor:halfslab_rebar_concrete"
+		},
+		{
+			item: "engineersdecor:rebar_concrete_slab"
+		},
+		{
+			item: "engineersdecor:rebar_concrete_tile_slab"
+		},
+		{
+			item: "engineersdecor:gas_concrete_stairs"
+		},
+		{
+			item: "engineersdecor:rebar_concrete_stairs"
+		},
+		{
+			item: "engineersdecor:rebar_concrete_tile_stairs"
+		},
+		{
+			item: "engineersdecor:concrete_wall"
+		},
+		{
+			item: "engineersdecor:gas_concrete_wall"
+		},
+		{
+			item: "engineersdecor:rebar_concrete_wall"
+		},
+		{
+			item: "engineersdoors:trapdoor_concrete"
+		},
+		{
+			item: "immersiveengineering:stone_decoration 1 4"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_slab 1 4"
+		},
+		{
+			item: "immersiveengineering:stone_decoration_stairs_hempcrete"
+		},
+		{
+			item: "immersivepetroleum:stone_decoration"
 		}]
 	}],
 	rewards: [{

@@ -146,3 +146,23 @@ craft.make(<astralsorcery:blockmachine:1>, ['pretty',
   '≢': <ore:plankTreatedWood>, // Treated Wood Planks
   '#': <ore:stickTreatedWood>, // Treated Stick
 });
+
+// Cheaper for ease building
+craft.remake(<astralsorcery:itemarchitectwand>, ['pretty',
+  '  ▬ I',
+  '  M ▬',
+  'M    '], {
+  '▬': <ore:ingotKnightslime>,
+  'I': <astralsorcery:itemusabledust>,
+  'M': <astralsorcery:blockmarble:6>,
+});
+
+// Cheaper for ease building
+craft.remake(<astralsorcery:itemexchangewand>, ['pretty',
+  '  B I',
+  '  M B',
+  'M    '], {
+  'B': <biomesoplenty:jar_filled:1>,
+  'I': <astralsorcery:itemusabledust>,
+  'M': <astralsorcery:blockmarble:6>,
+});

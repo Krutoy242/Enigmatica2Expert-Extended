@@ -133,7 +133,19 @@ for ore_entry in oreDict {
     if (isNull(output) || output.empty) continue;
 
     mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
-      .inputOre(ore_entry).outputItem(output.firstItem * 3).build();
+      .inputOre(ore_entry).outputItem(output.firstItem).build();
+
+    continue;
+  }
+  
+  ore_name = getOreName(name, 'stick');
+  if (!isNull(ore_name)) {
+    if (ore_name == 'Aluminum') continue;
+
+    val block = oreDict.get('block' ~ ore_name);
+    if (isNull(block) || block.empty) continue;
+    mods.advancedrocketry.RecipeTweaker.forMachine('Lathe').builder()
+      .inputOre(block).outputItem(ore_entry.firstItem * 64).power(100000).timeRequired(10).build();
 
     continue;
   }

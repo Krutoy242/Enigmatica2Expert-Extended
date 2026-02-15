@@ -449,13 +449,13 @@ mods.tconstruct.Alloy.addRecipe(<liquid:red_matter> * 144, [<liquid:supremium> *
 scripts.process.melt(<ore:blockFlesh>, <liquid:blood> * 360, 'No Exceptions');
 
 // Way cheaper to keep easy roads
-// [Rough Brownstone]*64 from [Redstone][+1]
 craft.remake(<tconstruct:brownstone:1> * 64, ['pretty',
+  's ‚ s',
   's s s',
-  's ♥ s',
-  's s s'], {
-  's': <ore:sandstone>, // Sandstone
-  '♥': <ore:dustRedstone>, // Redstone
+  's D s'], {
+  's': <ore:sandstone>,
+  '‚': <ore:nuggetFakeIron>,
+  'D': <tconstruct:materials:2>,
 });
 
 // Simple Seared bricks

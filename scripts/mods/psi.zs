@@ -82,3 +82,19 @@ scripts.process.crush(
   <psi:material:2>, <psi:material> * 16,
   'only: SagMill AEGrinder Pulverizer',
   [<psi:material> * 8], [0.5]);
+
+// Cheaper decorative blocks for building
+craft.remake(<psi:psi_decorative:3> * 64, ['pretty',
+  '  ⌃  ',
+  '⌃ ▬ ⌃',
+  '  ⌃  '], {
+  '⌃': <ore:gemQuartzBlack>,
+  '▬': <ore:ingotPsi>,
+});
+craft.remake(<psi:psi_decorative:5> * 64, ['pretty',
+  '  ⌃  ',
+  '⌃ ▬ ⌃',
+  '  ⌃  '], {
+  '⌃': <ore:crystalPureNetherQuartz>,
+  '▬': <ore:ingotPsi>,
+});

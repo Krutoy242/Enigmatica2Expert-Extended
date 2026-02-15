@@ -14,6 +14,7 @@ import crafttweaker.command.ICommandSender;
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.recipes.IRecipeFunction;
 import crafttweaker.util.Math;
@@ -344,6 +345,15 @@ zenClass Utils {
     return isNull(nbt)
       ? (amount > 1 ? item * amount : item)
       : (amount > 1 ? item * amount : item).withTag(nbt);
+  }
+
+  // Clear Fluid tag on item preserving other tags
+  function oreNameToFluid(oreName as string) as ILiquidStack {
+    val spellingVariations = {
+      Aluminium: 'Aluminum',
+      AstralStarmetal: 'starmetal',
+    } as string[string];
+    return game.getLiquid((spellingVariations[oreName] ?? oreName).toLowerCase());
   }
 
   // Clear Fluid tag on item preserving other tags

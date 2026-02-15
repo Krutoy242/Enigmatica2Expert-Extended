@@ -702,6 +702,28 @@ craft.remake(<enderio:block_tele_pad>, ["pretty",
   "*": <ore:itemPulsatingCrystal>, # Pulsating Crystal
 });
 
+// Cheaper decorative blocks for building
+recipes.removeByRecipeName("enderio:deco_block_1_1_a");
+recipes.removeByRecipeName("enderio:deco_block_1_1_b");
+recipes.removeByRecipeName("enderio:deco_block_1_1_c");
+craft.make(<enderio:block_decoration1:1> * 64, ['pretty',
+  '  S  ',
+  'S ▲ S',
+  '  S  '], {
+  'S': <ore:itemSimpleChassiParts>,
+  '▲': <ore:dustTungsten>,
+});
+recipes.removeByRecipeName("enderio:deco_block_1_7_a");
+recipes.removeByRecipeName("enderio:deco_block_1_7_b");
+recipes.removeByRecipeName("enderio:deco_block_1_7_c");
+craft.make(<enderio:block_decoration1:7> * 64, ['pretty',
+  '  S  ',
+  'S ▲ S',
+  '  S  '], {
+  'S': <ore:itemSimpleChassiParts>,
+  '▲': <mysticalagriculture:crafting:28>,
+});
+
 // Low-level machines (original in Alloy Smelter)
 scripts.process.compress(<ore:itemPowderPhotovoltaic> * 4, <enderio:item_material:3>, 'Except: Compressor');
 mods.mekanism.compressor.addRecipe(<ore:itemPowderPhotovoltaic> * 4, <enderio:item_material:3>);

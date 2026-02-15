@@ -48,6 +48,42 @@ craft.remake(<quark:obsidian_speleothem> * 12, ['pretty',
   'B': <ore:obsidian>,
 });
 
+// Cheaper decorative blocks for building
+craft.remake(<quark:charred_nether_bricks> * 32, ['pretty',
+  'N N N',
+  'N F N',
+  'N N N'], {
+  'N': <minecraft:nether_brick>,
+  'F': <minecraft:fire_charge>,
+});
+
+recipes.removeByRecipeName("quark:iron_plate");
+craft.make(<quark:iron_plate> * 48, ['pretty',
+  '▬ ▬ ▬',
+  '▬   ▬',
+  '▬ ▬ ▬'], {
+  '▬': <ore:ingotFakeIron>,
+});
+
+craft.remake(<quark:iron_plate:1> * 48, ['pretty',
+  '▬ ▬ ▬',
+  '▬ A ▬',
+  '▬ ▬ ▬'], {
+  '▬': <ore:ingotFakeIron>,
+  'A': <ore:listAllwater>,
+});
+
+craft.make(<quark:iron_plate:1> * 8, ['pretty',
+  '□ □ □',
+  '□ A □',
+  '□ □ □'], {
+  '□': <quark:iron_plate>,
+  'A': <ore:listAllwater>,
+});
+
+// Prevent duping with cheaper recipe
+mods.tconstruct.Melting.removeRecipe(<fluid:iron>, <quark:iron_plate:1>);
+
 // Too easy recipe
 recipes.removeByRecipeName('quark:basalt');
 

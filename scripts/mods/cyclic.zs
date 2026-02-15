@@ -216,7 +216,8 @@ recipes.addShapeless('cheaper super ice', <randomthings:superlubricentice> * 4, 
 
 // Decor blocks
 Hydrator.removeShapedRecipe(<minecraft:cobblestone>);
-Hydrator.addRecipe(<quark:iron_plate:1> * 3, [<minecraft:iron_ingot>], 125);
+Hydrator.addRecipe(<quark:iron_plate:1> * 6, [<minecraft:iron_ingot>], 125);
+Hydrator.addRecipe(<quark:iron_plate:1> * 6, [<enderio:item_alloy_ingot:9>], 125);
 Hydrator.addRecipe(<quark:iron_plate:1>, [<quark:iron_plate>], 125);
 Hydrator.addRecipe(<chisel:waterstone>, [<minecraft:stone>], 125);
 
@@ -422,7 +423,7 @@ craft.remake(<cyclicmagic:block_hydrator>, ['pretty',
 });
 
 // [Tempered Glass]
-craft.remake(<cyclicmagic:glass_strong> * 6, ['pretty',
+craft.remake(<cyclicmagic:glass_strong> * 12, ['pretty',
   'r F r',
   'r M r',
   'r r r'], {

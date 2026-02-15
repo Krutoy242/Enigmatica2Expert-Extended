@@ -1,8 +1,6 @@
 #modloaded openblocks
 
 scripts.lib.tooltip.desc.tooltip(<openblocks:tank>);
-scripts.lib.tooltip.desc.tooltip(<openblocks:builder_guide>, 'redstone.need');
-scripts.lib.tooltip.desc.tooltip(<openblocks:guide>, 'redstone.need');
 
 val o = <ore:ingotAlubrass>;
 
@@ -98,4 +96,24 @@ craft.remake(<openblocks:crane_backpack>, [
   '▄': <chisel:factory:6>,                // Factory Block
   'H': <immersiveengineering:wirecoil:3>, // Hemp Rope Coil
   '■': <ore:blockFakeIron>, // Iron Alloy Block
+});
+
+// Cheaper because it is quite difficult to manage with it
+craft.remake(<openblocks:builder_guide>, ['pretty',
+  'G F G',
+  'F   F',
+  'G F G'], {
+  'G': <ore:shardGlass>,
+  'F': <randomthings:ingredient:7>,
+});
+
+// More expensive because it instantly breaks blocks
+craft.remake(<openblocks:block_breaker>, ['pretty',
+  '▬ ╱ ▬',
+  '╱ ¤ ╱',
+  '░ ░ ░'], {
+  '▬': <ore:ingotAlubrass>,
+  '╱': <ore:stickAluminum> | <ore:stickAluminium>,
+  '¤': <ore:gearBronze>,
+  '░': <ore:compressed3xCobblestone>,
 });

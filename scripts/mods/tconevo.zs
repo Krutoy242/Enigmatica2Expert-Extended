@@ -45,3 +45,12 @@ recast(<psi:psi_decorative:1>, <liquid:psimetal>);
 recast(<botania:storage:0>, <liquid:manasteel>);
 recast(<botania:storage:1>, <liquid:terrasteel>);
 recast(<botania:storage:2>, <liquid:elementium>);
+
+// Harder recipe to match tier
+recipes.removeByRecipeName('tconevo:pink_slimy_mud');
+recipes.addShapeless('pink_slimy_mud', <tconevo:earth_material_block>, [
+  <ore:slimeballPink>, <ore:slimeballPink>, <ore:slimeballPink>, <ore:slimeballPink>, <rftoolsdim:fake_gravel>, <tconstruct:soil:5>,
+]);
+
+// "Vegan" run alt
+scripts.process.melt(<tconevo:material:1>, <fluid:if.pink_slime> * 1000);

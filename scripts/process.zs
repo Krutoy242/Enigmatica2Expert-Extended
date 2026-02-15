@@ -313,9 +313,7 @@ function beneficiate(
   }
 
   // Melt
-  val molten as ILiquidStack = !isNull(JA) ? JA.getLiquidStack('molten') : null;
-  val altLiquid as ILiquidStack = game.getLiquid((oreName == 'Aluminium' ? 'Aluminum' : oreName).toLowerCase());
-  val liquid = isNull(molten) ? altLiquid : molten;
+  val liquid = JA?.getLiquidStack('molten') ?? utils.oreNameToFluid(oreName);
   if (!isNull(liquid) && !isNull(JA)) {
     val meltingExceptions = D(opts).get('meltingExceptions', { d: [] }).asList();
     var meltAllowed = true;

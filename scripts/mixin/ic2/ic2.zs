@@ -485,3 +485,11 @@ zenClass MixinScrapboxRecipeManager {
         manager.addDrop(item, chance);
     }
 }
+
+#mixin {targets: "ic2.core.item.tool.ItemSprayer"}
+zenClass MixinItemSprayer {
+    #mixin ModifyConstant {method: "getMaxFoamBlocks", constant: {intValue: 10}}
+    function increaseMaxFoamBlocks(value as int) as int {
+        return 32;
+    }
+}

@@ -1,5 +1,9 @@
 #modloaded betterbuilderswands
 
+<betterbuilderswands:wandstone>.maxDamage = 3000;
+<betterbuilderswands:wandiron>.maxDamage = 3000;
+<betterbuilderswands:wanddiamond>.maxDamage = 3000;
+
 recipes.remove(<betterbuilderswands:wanddiamond>);
 recipes.remove(<betterbuilderswands:wandiron>);
 

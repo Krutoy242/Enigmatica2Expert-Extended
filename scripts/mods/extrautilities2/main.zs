@@ -253,6 +253,14 @@ craft.remake(<extrautils2:chickenring>, ['pretty',
   '♥': <ore:gemRedstone>, // Resonating Redstone Crystal
 });
 
+craft.remake(<extrautils2:screen>, ['pretty',
+  '  S  ',
+  'E ♥ E'], {
+  'S': <extrautils2:decorativesolid:3>,
+  'E': <extrautils2:endershard>,
+  '♥': <ore:gemRedstone>,
+});
+
 // *======= Ring Of The Flying Squid =======*
 remake('Ring Of The Flying Squid',
   <extrautils2:chickenring:1>,

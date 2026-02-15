@@ -1,5 +1,22 @@
 #modloaded cathedral
 
+// Cheaper - from nuggets instead of ingots
+recipes.removeByRecipeName('cathedral:dwemer_stone');
+craft.make(<cathedral:dwemer_block_carved> * 16, ['pretty',
+  'b b b',
+  'b n b',
+  'b b b'], {
+  'b': <ore:blockBasalt>,
+  'n': <ore:nuggetBrass>,
+});
+craft.make(<cathedral:dwemer_block_carved> * 16, ['pretty',
+  'b b b',
+  'b n b',
+  'b b b'], {
+  'b': <ore:blockBasalt>,
+  'n': <ore:nuggetAlubrass>,
+});
+
 // [Stone Pillar]*4 from [Stone]
 craft.remake(<cathedral:cathedral_pillar_various> * 4, ['pretty',
   '    s',

@@ -176,6 +176,16 @@ recipes.addShapeless('LV - MV Relay', <immersiveengineering:connector:3>, [<imme
 recipes.addShapeless('MV - HV Connector', <immersiveengineering:connector:4>, [<immersiveengineering:connector:2>, <ore:ingotAluminium>]);
 recipes.addShapeless('MV - HV Relay', <immersiveengineering:connector:5>, [<immersiveengineering:connector:3>, <ore:ingotAluminium>]);
 
+// Cheaper decorative blocks for building
+recipes.removeByRecipeName("immersiveengineering:stone_decoration/hempcrete");
+craft.make(<immersiveengineering:stone_decoration:4> * 32, ['pretty',
+  'H H H',
+  'H D H',
+  'H H H'], {
+  'H': <ore:fiberHemp>,
+  'D': <tconstruct:materials:2>,
+});
+
 // [Coke Brick]*3 from [Sandstone][+2]
 craft.remake(<immersiveengineering:stone_decoration> * 3, ['pretty',
   'P ▬ P',
@@ -493,3 +503,29 @@ craft.make(<immersiveengineering:wirecoil:7> * 4, ['pretty',
   'M': <immersiveengineering:wirecoil:1>, // MV Wire Coil
   '~': LiquidIngr("ic2creosote"), // ic2.creosote Bucket
 });
+
+// Refactored Sheetmetal Recipes
+val sheetmetalRecipes = {
+  Copper: <immersiveengineering:sheetmetal:0>,
+  Aluminum: <immersiveengineering:sheetmetal:1>,
+  Lead: <immersiveengineering:sheetmetal:2>,
+  Silver: <immersiveengineering:sheetmetal:3>,
+  Nickel: <immersiveengineering:sheetmetal:4>,
+  Uranium: <immersiveengineering:sheetmetal:5>,
+  Constantan: <immersiveengineering:sheetmetal:6>,
+  Electrum: <immersiveengineering:sheetmetal:7>,
+  Steel: <immersiveengineering:sheetmetal:8>,
+  Iron: <immersiveengineering:sheetmetal:9>,
+  Gold: <immersiveengineering:sheetmetal:10>,
+} as IItemStack[string];
+
+// Iterate and remove old recipes, then add new ones with x64 output
+for typeName, output in sheetmetalRecipes {
+  recipes.removeByRecipeName(`immersiveengineering:sheetmetal/${typeName.toLowerCase()}_sheetmetal`);
+  val plate = oreDict[`plate${typeName}`];
+  recipes.addShaped(`sheets${typeName}`, output * 32, [
+    [null, plate, null],
+    [plate, null, plate],
+    [null, plate, null],
+  ]);
+}

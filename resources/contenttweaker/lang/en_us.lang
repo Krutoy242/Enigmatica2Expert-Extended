@@ -429,6 +429,7 @@ e2ee.written_book.Zombie=Zombie
 
 # Misc
 stat.replications=Spent UU Matter buckets
+stat.cracked_blocks=Cracked Blocks
 e2ee.recipe.over_void=The player must be positioned over the void
 e2ee.quest.common=§fCommon§r Loot Crate
 e2ee.quest.uncommon=§bUncommon§r Loot Crate
@@ -549,7 +550,6 @@ tooltips.lang.requires.redstone160=Requires 160 Redstone Units.
 tooltips.lang.reinforced_cell_frame=The Reinforced Cell Frame (Full) can only be made in a Fluid Transposer with an internal buffer of 250,000 RF or more.
 tooltips.lang.obtained.fabricator_or_excavator=Obtainable through the Electric Arc Furnace OR from IE Excavator.
 tooltips.lang.obtained.mithril=Only obtainable through §9Primal Mana§r world interaction or in §1other dimensions§r
-tooltips.lang.redstone.need=§4Need redstone to function
 tooltips.lang.removed.crash=§4Removed because it crashes the server
 
 tooltips.lang.requires.rf=Requires %s RF to make.

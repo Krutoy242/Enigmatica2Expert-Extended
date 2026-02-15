@@ -141,23 +141,35 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
     else {
       // Team with 2+ players
       val team = forgePlayer.team;
-      val allMembers = team.members;
 
       var totalPlayTimeTicks = 1;
-      for member in allMembers {
+      for member in team.members {
         totalPlayTimeTicks += getPlayOneMinute(member);
       }
 
-      playerList = [] as IData;
-      var first = true;
-      for member in allMembers {
+      // Time + Player name (colored) for sorting
+      var playerTimes = [] as [string[]];
+      for member in team.members {
         val playerData = FTBUtilitiesPlayerData.get(member);
         val name = playerData.nickname.isEmpty() ? member.name : playerData.nickname;
+        playerTimes += [
+          getPlayOneMinute(member),
+          (member.isOnline() ? '§f' : '§7') ~ name,
+        ] as string[];
+      }
+      playerTimes.sort(function(a as string[], b as string[]) as int {
+        return b[0] as int - a[0] as int;
+      });
+
+      playerList = [] as IData;
+      var first = true;
+      for tuple in playerTimes {
+        val playTimeMin = tuple[0] as int;
+        val name = tuple[1];
         playerList += [{
           text : '', color: 'dark_gray', extra: [
-            first ? '`' : ', `',
-            {text: name, color: member.isOnline() ? 'white' : 'gray'},
-            '` ', {text: formatPlayTime(member), color: 'gray'},
+            first ? '`' : ', `', name, '` ',
+            {text: formatPlayTimeFromTicks(playTimeMin), color: 'gray'},
           ],
         }] as IData;
         first = false;

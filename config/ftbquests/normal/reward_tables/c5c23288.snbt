@@ -125,6 +125,9 @@
 					Slot1: {
 						id: "ic2:foam_sprayer",
 						Count: 1,
+						tag: {
+							mode: 1
+						},
 						Damage: 0s
 					},
 					Slot6: {

@@ -1,16 +1,29 @@
 # TODO
 
-## Recent tasks 🚧✅❌⚠️♻️🕊️
+## Recent tasks 🚧✅❌⚠️♻️🕊️➜
 
 ### 🐛 Bugfixes
 
-- [ ] ✏️ `TF Magic Tree Core` prevent to be movable with Cardboard
+- [ ] 🐛 FluidloggedAPI breaking IE wire damage
 - [ ] 🔨 `Refining` doesnt work on Redstone Ore
 - [ ] ✏️ Disable `Vanta Oil` recipes to remove cluttering
-- [ ] ✏️ Fix `Replicator` add difficulty based on dimension
+- [ ] ✏️ Disable `NC Infiltrator` since its crashing game https://discord.com/channels/425461908712325130/528692982757588992/1439702472125055087
+- [ ] 📖 `Conglomerate of Life` fix pick reward
+- [ ] ✏️ `Archeologiest` rat not working with speed? Test it.
+- [ ] 📖 Creative mana pool+Scroll of massive knowledge doesnt give additional loot box with 0 diff
+- [ ] ✏️ Add Big=>Small dust recipes for: `Bronze Lithium Sulfur Emerald Lapis`
+- [ ] ✏️ Remove melting of psidust in NC
+- [ ] 🚀 Improve AR integration of GasMissions - now they allow to pump lot of gasses
 
 ### ✨ New features
 
+- [ ] 🟢 Add https://www.curseforge.com/minecraft/mc-mods/ae2fluidcraft-rework-unofficial
+- [ ] 🔨 `TiC Bauble ring` for getting traits power without armor
+- [ ] ✏️ `Mud ball` make stack 64
+- [ ] ✏️ `Time in a Bottle` do not add time when AFK
+- [ ] ✏️ `Structural Arms` and other `Steel` stuff from IE make cheaper
+- [ ] 📀 Rustic's barrel make as x4 chests but allow accept only "dust" items
+- [ ] ✏️ `Charcoal Pile` rebalance wall blocks and fix JEI amounts
 - [ ] ✏️ `Sonic Glasses` add new recipe mechanic where you need to locate sound
 - [ ] ✏️ `Player Interface` cheaper
 - [ ] ✏️ `chorus glass` reduce usage since require a lot of crafting repeats
@@ -56,7 +69,6 @@ Planned non-urgent changes, or just good ideas:
 
 ### "Performance ⚡"
 
-- [x] ⚡ Forbid to place `Core Samples` on the ground since they lower FPS. Map should be used instead
 - [ ] ⚡ Rework Conflux levels chunk loading. Required to fix some half-loading chunk bug which disconnect cables and causing item spam
 - [ ] ⚡ Add watcher to detect 5000 items in one block distance and remove them
 - [ ] ⚡ never use a fluid storage interface for IE's multiblock tanks (cause lag)
@@ -74,7 +86,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ⚡ Remove `Chunk Loading Ward` since its make harder to find all chunk loaders on server
 - [ ] ⚡ Get rid of `Simple Trophies` since they strain FPS, replace them with LittleTiles or 3dPrint structures
 - [ ] ⚡ Remove `Cyclic`'s machines completely because they are laggy: https://i.imgur.com/cbCJJBq.png (replace with FluidInteractionTweaker)
-- [x] ⚡ Add Tips note about IE multiblocks causing strong FPS strain. Also make them all work so fast only 1 machine needed
 
 ### Quests and Docs expansion
 - [ ] 📖 When player enters world for the first time, pin first quest to the screen. This enforce people to know how to disable pins.
@@ -113,7 +124,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ `Compressed` mobs should be bigger
 
 ### "Flora & Fauna" expansion
-- [ ] 📖 `Cocoon of Caprice` add JEI entry
 - [ ] ✨ Idea: Flower that regenerate ore in `bedrockore`
 - [ ] 💡 Feature idea: animal totem that work when you place mobs on each other in right sequence (cow-sheep-chicken for example)
 - [ ] 🌱 Add NC and QMD radioactive items mutating IC2 crops to increase / descrease their stats
@@ -168,19 +178,13 @@ Planned non-urgent changes, or just good ideas:
   * Ideas for benefits: Infinite decorative blocks, 
   * Table with more ideas: https://www.reddit.com/r/feedthememes/comments/jk9rag/the_political_compass_but_its_types_of_ftb_players/
 
-### "Building" expansion
-- [ ] ➡️ Ctrt+Shift => Take 20 stacks from a drawer
-- [ ] 🎁 Schematica allow to use `/Dank/Null`
-- [ ] 🎁 Schematica allow to use `/dev/null`
-
 ### Skyblock expansion
 
 - [ ] 🧱 Skyblock: Make `Porouse Stone` and `AA Ore Laser` mandatory in skyblock
 
 ### Mods
-- [ ] 🔵 Remove AR `tick` mixin when migrating to new versions
+- [ ] 🔵 Remove AR `tick` mixin when migrating to new versions `scripts/mixin/advancedrocketry.zs`
 - [ ] 🟠 Migrate `vtt` => `Roidstweaker` when fixed https://github.com/roidrole/Roids-Tweaker/issues/11
-- [ ] 🟢 Enable `Gnetum` when fixed: https://github.com/decce6/Gnetum/issues/55
 - [ ] 🟠 Do not update **Advanced Rocketry - Reworked** until fixed https://github.com/dercodeKoenig/AdvancedRocketry/issues/50
 - [ ] 🟠 Do not update **JAOPCA** - uncompatible with `JAOPCACustom`
 - [ ] 🟠 Do not update **籁/Sound Physics Remixin** `1.1.17` or above - uncompatible with `Java 8`
@@ -188,19 +192,20 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🟠 Do not update **Deep Mob Evolution** `1.2.3` - power usage changes makes Dragon model unable to work
 - [ ] 🟠 Do not update **RLTweaker** `0.6.1` or above - later versions only compatible with `I&F ROTN`
 - [ ] 🟠 Do not update **RLMixins** `1.4.0` or above - mod specially rewritten for `RLCraft`
+- [ ] 🟢 Add **EffortlessBuilding**. Problem: default ALT key interfere with other keybinding, spamming messages in chat
 - [ ] 🟢 Add **everlastingabilities** when someone integrate it
 - [ ] 🟢 Add **Heat And Climate** when someone integrate it
 - [ ] 🟢 Add **quality-tools** when someone integrate it
 - [ ] 🟢 Add **Steve Carts** when someone integrate it
 - [ ] 🟢 Add **OpenGlasses2** - could help to find turnable blocks from coal
 - [ ] 🟢 Add **Nothirium** when fixed https://github.com/Meldexun/Nothirium/issues/9
-- [ ] 🟢 Return **Village Names** when fixed https://legacy.curseforge.com/minecraft/mc-mods/village-names/issues/18 Possible manual fix: https://discord.com/channels/911676461050642432/959878900278784030/1439667407726579933
 
 ### Other
 
+- [ ] 🎁 Schematica allow to use `/Dank/Null` and `/dev/null`. Problem: very hard to implement
+- [ ] ➡️ Ctrt+Shift => Take 20 stacks from a drawer. Complicated: server cant know is CTRL pressed on client side
 - [ ] ✏️ `Mining Tree` doesnt have core https://github.com/CaliforniaDemise/twilightforest/issues/30
 - [ ] ✏️ `Industrial Squeezer` remove excess popped chorus recipe
-- [ ] 🔨 Right-clicking brick with a pickaxe turn it into Cracked Brick (work with chiseled too)
 - [ ] 🐛 Fix Harvest Levels not working for non-"stone" material. For some reason, `setHarvestLevel` wont affect non-pickaxe blocks
 - [ ] ✏️ Remove `Advanced Bee Analyzer` and just speed up Forestry Analyzer with mixin instead
 - [ ] 👑 Upgrading Draconic tools give Omnopotence (cannot reproduce single player)
@@ -276,14 +281,12 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Dank Null go out of ExtendedCrafting (keep EC recipes for end-tier)
 - [ ] 📖 Fix achievments: end reborn hammer, Rats cauldron, Quark decor
 - [ ] ✏️ Completely move AdvRocketry to tweaker mod instead of XML
-- [ ] 🧩 Make Platforms from Random Things with metal texture instead of wood
 - [ ] ✏️ disable Excavate Ench For Pickarang
 - [ ] ✏️ invent Tool For Robot With Low Durability (robot may not spend durab)
 - [ ] ✏️ Printing and assembling Chaos Guardian spawns Chaos Guardian
 - [ ] 💥 going Between Dims Causing Client Freezez / memory leak
 - [ ] ✏️ `Burnt in fluid` fix accept any meta
 - [ ] 📖 Describe Skyblock quests
-- [ ] 📀 Rustic's barrel make as x4 chests but without GUI or change somehow else to make more fun.
 - [ ] ✏️ Lootr still turn Dispensers into Lootr Chests https://github.com/noobanidus/Lootr/issues/189
 - [ ] ✏️ Nature chests still turn into Lootr
 - [ ] 💅 twlight forest advancement not showing up in advancement tab v1.2.1. Need conformation
@@ -306,7 +309,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🔄 Inspect crash when placing Replicator near energy and break it
 - [ ] 📖 Add quest book chapter about built-in excavators
 - [ ] 📖 Add message about mining Ores in Nether that aggro Pigman. Use whitelist, ignore if Peaceful.
-- [ ] 📖 Give player `Tier1 box` instead of putting Decor into Common boxes
 - [ ] ✏️ Re-integrate molten `Amber`. But why?
 - [ ] ✏️ Add Matter Balls craftable without compressor (they still obtainable through scrap boxes)
 - [ ] ✏️ Re-integrate NCO `Melter`. All things meltable in Melter should be meltable in Smeltery
@@ -329,6 +331,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Add multiblock structure that speed up blocks like Time In Bottle, but based on numbers of mobs around https://is.gd/tPPqt2
 - [ ] 🔄 Fix after getting 30 hearts, player need to relog to enter nether
 - [ ] 🔄 Check why mobs are not spawned enough (less then 70 for whole server)
+- [ ] 🧩 Make Platforms from Random Things with metal texture instead of wood
 - [ ] ✏️ Rethink HedgeAlchemy, add recipes for essential tech-alike ingredients
 - [ ] ✏️ Fix main Vis Crystals doubled in JEI (happens because of Rustic add into JEI everything in output of Alchemical)
 - [ ] 📀 Colossal Chests make bigger interface
@@ -354,6 +357,8 @@ Planned non-urgent changes, or just good ideas:
 **Fixes**:
 - 🐛 Duplicates of the same inventory view
 - 🐛 Viewing inventories that you cant actually take from (TCon tables)
+- 🐛 Imersive Ingenering Guns lags
+- 🐛 Gnetum lags
 
 **New Feats**:
 - ✨ Bauble compat

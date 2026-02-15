@@ -13,7 +13,7 @@ fboEnable:true
 fancyGraphics:true
 ao:2
 renderClouds:true
-resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.6.zip","BloomTech-1.1.0.zip"]
+resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.6.zip","BloomTech-1.2.0.zip","BloomTech - E2EE Addon"]
 incompatibleResourcePacks:[]
 lang:en_us
 chatVisibility:0
@@ -64,12 +64,12 @@ key_cos.key.opencosarmorinventory:0:NONE:
 key_Difficulty Meter - Show:49:NONE:
 key_Difficulty Meter - Show Always:49:SHIFT:42
 key_enderio.keybind.dsu:19:CONTROL:29
-key_enderio.keybind.fovminus:0:NONE:
+key_enderio.keybind.fovminus:80:NONE:
 key_enderio.keybind.fovminusfast:0:NONE:
-key_enderio.keybind.fovplus:0:NONE:
+key_enderio.keybind.fovplus:79:NONE:
 key_enderio.keybind.fovplusfast:0:NONE:
 key_enderio.keybind.fovrecall:0:NONE:
-key_enderio.keybind.fovreset:0:NONE:
+key_enderio.keybind.fovreset:82:NONE:
 key_enderio.keybind.fovstore:0:NONE:
 key_enderio.keybind.fovunreset:0:NONE:
 key_enderio.keybind.glidertoggle:37:NONE:

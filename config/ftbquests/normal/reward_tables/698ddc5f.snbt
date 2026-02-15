@@ -767,7 +767,15 @@
 		item: "openblocks:builder_guide"
 	},
 	{
-		item: "betterbuilderswands:wanddiamond"
+		item: {
+			id: "betterbuilderswands:wanddiamond",
+			tag: {
+				ench: [{
+					lvl: 4s,
+					id: 34
+				}]
+			}
+		}
 	}],
 	loot_crate: {
 		string_id: "decor",

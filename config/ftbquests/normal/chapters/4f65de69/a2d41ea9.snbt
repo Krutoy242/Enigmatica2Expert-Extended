@@ -1,0 +1,23 @@
+{
+	x: 3.625d,
+	y: 7.041666666666667d,
+	text: [
+		"{q.getting_started.cracked_stone_bricks.desc}"
+	],
+	dependencies: [
+		"dabc815c"
+	],
+	tasks: [{
+		uid: "af0a3dc7",
+		type: "stat",
+		icon: "minecraft:stonebrick 1 2",
+		stat: "stat.cracked_blocks",
+		value: 1
+	}],
+	rewards: [{
+		uid: "8be03797",
+		type: "item",
+		item: "harvestcraft:crackersitem",
+		count: 5
+	}]
+}

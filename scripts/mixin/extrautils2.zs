@@ -116,3 +116,14 @@ zenClass MixinMachineInit {
         return min(2000000000 / 64, value * 300);
     }
 }
+
+/*
+Make Screen not consume power
+*/
+#mixin {targets: "com.rwtema.extrautils2.tile.TileScreen"}
+zenClass MixinTileScreen {
+    #mixin ModifyConstant {method: "getPower", constant: {floatValue: 1.0}}
+    function setPowerToZero(value as float) as float {
+        return 0.0f;
+    }
+}

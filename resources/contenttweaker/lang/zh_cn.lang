@@ -429,6 +429,7 @@ e2ee.written_book.Zombie=僵尸
 
 # Misc 杂项
 stat.replications=消耗的UU物质桶
+stat.cracked_blocks=已敲裂方块
 e2ee.recipe.over_void=玩家必须位于虚空之上
 e2ee.quest.common=§f普通§r 战利品箱
 e2ee.quest.uncommon=§b不常见§r 战利品箱
@@ -549,7 +550,6 @@ tooltips.lang.requires.redstone160=需要 160 单位的红石。
 tooltips.lang.reinforced_cell_frame=制作强化能量单元框架（满）需要流体转置机的内部能量储量多于 250,000 RF。
 tooltips.lang.obtained.fabricator_or_excavator=可以通过电弧高炉或者斗轮式挖掘机获得。
 tooltips.lang.obtained.mithril=可以通过§9元始魔力§r的世界内交互获得，也会生成在§1其他维度§r。
-tooltips.lang.redstone.need=§4需要通过红石信号启用
 tooltips.lang.removed.crash=§4已被禁用，因为其会导致服务端崩溃
 
 tooltips.lang.requires.rf=需要消耗 %s RF 制作。

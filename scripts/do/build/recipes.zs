@@ -340,11 +340,8 @@ scripts.do.build.entity.add(<entity:endreborn:endguard>, [
 }).shift(0, 1, 0);
 
 scripts.do.build.entity.add(<entity:plustic:supremeleader>, [
-  [
-    ' x '
-  ], [
-    ' a '
-  ]
+  ['x'],
+  ['a'],
 ], {
   a: <additionalcompression:dustgunpowder_compressed>,
   x: <contenttweaker:conglomerate_of_life>

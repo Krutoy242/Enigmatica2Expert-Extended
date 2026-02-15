@@ -2,7 +2,7 @@
 
 import crafttweaker.item.IIngredient;
 
-val gCell = <thermalexpansion:cell>.withTag({ Level: 4 as byte }); // Energy Cell (Resonant)
+val gCell = <thermalexpansion:frame:64>;
 
 for tablet in [
   <opencomputers:misc>,
