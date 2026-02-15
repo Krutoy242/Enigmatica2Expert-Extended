@@ -14,14 +14,16 @@
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:chest"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "69d9a97c",
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:drive"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "6bc6c310",

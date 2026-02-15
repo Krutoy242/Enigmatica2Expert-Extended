@@ -12,7 +12,8 @@
 		type: "item",
 		items: [{
 			item: "ae2stuff:grower"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "40361314",

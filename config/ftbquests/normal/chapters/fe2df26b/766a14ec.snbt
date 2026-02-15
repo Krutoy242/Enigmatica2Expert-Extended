@@ -1,6 +1,6 @@
 {
 	icon: "appliedenergistics2:molecular_assembler",
-	x: -16.600000000000005d,
+	x: -16.700000000000006d,
 	y: 7.6000000000000005d,
 	text: [
 		"{q.applied_energetics.molecular_assembler.desc}"
@@ -21,7 +21,8 @@
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:material 1 30"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "0dd62819",

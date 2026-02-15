@@ -10,7 +10,6 @@
 	text: [
 		"{q.applied_energetics.energy_cell.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"4bfcd69f"
 	],

@@ -4,7 +4,6 @@
 	text: [
 		"{q.applied_energetics.pattern_expansion_card.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"c3751d75"
 	],

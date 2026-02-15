@@ -23,7 +23,8 @@
 		type: "item",
 		items: [{
 			item: "ae2fc:large_ingredient_buffer"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "515f0362",

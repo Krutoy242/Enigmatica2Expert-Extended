@@ -4,7 +4,6 @@
 	text: [
 		"{q.applied_energetics.matter_cannon.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"2e632fad"
 	],

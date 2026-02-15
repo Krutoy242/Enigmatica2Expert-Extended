@@ -4,7 +4,6 @@
 	text: [
 		"{q.applied_energetics.packager_extension.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"de3cd6bc"
 	],
@@ -15,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "packagedauto:packager_extension"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "312c8305",

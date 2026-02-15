@@ -4,7 +4,6 @@
 	text: [
 		"{q.applied_energetics.wireless_booster.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"6690bc40"
 	],

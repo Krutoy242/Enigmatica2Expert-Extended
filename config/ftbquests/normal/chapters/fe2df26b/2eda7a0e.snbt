@@ -4,7 +4,6 @@
 	text: [
 		"{q.applied_energetics.big_storage_cells.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"0074e8af"
 	],

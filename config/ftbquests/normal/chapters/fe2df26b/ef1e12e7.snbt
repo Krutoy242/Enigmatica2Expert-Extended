@@ -5,7 +5,6 @@
 	text: [
 		"{q.applied_energetics.mass_assembler_io_port.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"3e9738a4"
 	],

@@ -1,6 +1,6 @@
 {
 	icon: "appliedenergistics2:part 1 280",
-	x: -13.6d,
+	x: -13.5d,
 	y: 7.6d,
 	text: [
 		"{q.applied_energetics.level_emitter.desc}"
@@ -13,14 +13,16 @@
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:part 1 280"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "aa807522",
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:part 1 281"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "ac2d4c8a",

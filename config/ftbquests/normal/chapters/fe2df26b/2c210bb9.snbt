@@ -1,10 +1,9 @@
 {
-	x: -17.196000000000005d,
+	x: -17.296000000000006d,
 	y: 8.084000000000001d,
 	text: [
 		"{q.applied_energetics.crafting_station.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"766a14ec"
 	],
@@ -14,7 +13,8 @@
 		type: "item",
 		items: [{
 			item: "tconstruct:tooltables"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "9fcc900c",

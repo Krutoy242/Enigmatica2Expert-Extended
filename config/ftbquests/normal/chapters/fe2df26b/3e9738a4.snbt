@@ -3,7 +3,7 @@
 	icon: "threng:big_assembler 1 2",
 	x: -3.2d,
 	y: -1.3d,
-	shape: "gear",
+	shape: "octagon",
 	text: [
 		"{q.applied_energetics.mass_assembly_chamber.desc}"
 	],

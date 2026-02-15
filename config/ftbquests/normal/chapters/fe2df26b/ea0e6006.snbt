@@ -1,8 +1,8 @@
 {
 	title: "{q.applied_energetics.import_and_export_buses.name}",
 	icon: "appliedenergistics2:part 1 240",
-	x: -15.6d,
-	y: 8.1d,
+	x: -15.9d,
+	y: 8.2d,
 	text: [
 		"{q.applied_energetics.import_and_export_buses.desc}"
 	],
@@ -17,7 +17,8 @@
 		},
 		{
 			item: "appliedenergistics2:part 1 241"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "ec19f02b",
@@ -27,7 +28,8 @@
 		},
 		{
 			item: "appliedenergistics2:part 1 261"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "ba2f5b46",

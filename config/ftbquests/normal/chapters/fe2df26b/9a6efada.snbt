@@ -14,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "ae2stuff:wireless"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "0ee2deeb",

@@ -15,14 +15,16 @@
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:part 1 16"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "f53073ef",
 		type: "item",
 		items: [{
 			item: "appliedenergistics2:part 1 120"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "8b3a2240",

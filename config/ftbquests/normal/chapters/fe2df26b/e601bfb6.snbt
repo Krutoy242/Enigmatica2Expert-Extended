@@ -4,7 +4,6 @@
 	text: [
 		"{q.applied_energetics.me_networking_tool.desc}"
 	],
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"4bfcd69f"
 	],
@@ -19,9 +18,6 @@
 				render_p2p_no_depth: 1b,
 				bound_dim: 0,
 				uuid: "41010b68-445c-4dae-9686-364e093b56f1",
-				enable_cable_connections: 1b,
-				cable_node_colour_32: 65535,
-				machine_node_colour_32: 8388352,
 				p2p_colours: [I;
 					12500735,
 					4210752,
@@ -31,7 +27,10 @@
 					22527,
 					16777100
 				],
+				cable_node_colour_32: 65535,
+				machine_node_colour_32: 8388352,
 				cable_node_colour_8: 255,
+				enable_cable_connections: 1b,
 				rand_p2p_colour_offset: 0b,
 				bound_pos: 274810798080L,
 				small_channel_labels: 0b,

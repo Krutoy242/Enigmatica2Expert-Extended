@@ -14,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "packagedauto:encoder"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "e6b6f5a0",
@@ -22,7 +23,8 @@
 		items: [{
 			item: "packagedauto:recipe_holder"
 		}],
-		count: 2L
+		count: 2L,
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "b5ec0f3a",

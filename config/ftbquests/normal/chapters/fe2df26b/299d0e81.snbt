@@ -1,7 +1,7 @@
 {
 	x: -9.8d,
 	y: 5.3d,
-	shape: "gear",
+	shape: "octagon",
 	text: [
 		"{q.applied_energetics.wireless_crafting_terminal.desc}"
 	],

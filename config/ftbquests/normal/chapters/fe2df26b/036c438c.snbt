@@ -17,7 +17,8 @@
 		},
 		{
 			item: "appliedenergistics2:part 1 56"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "58e2bf13",

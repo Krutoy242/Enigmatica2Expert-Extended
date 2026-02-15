@@ -2,7 +2,6 @@
 	x: -7.524000000000001d,
 	y: 2.178d,
 	custom_click: "https://lasm.dev/BetterP2P-Manual/",
-	hide_dependency_lines: 1b,
 	dependencies: [
 		"ff8470d4"
 	],
