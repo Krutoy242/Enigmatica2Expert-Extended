@@ -20,7 +20,7 @@ entity.Villager.stock_trader=股票经纪人
 entity.Villager.necromancer=死灵法师
 infuse.ender=末影
 infuse.glowstone=荧石
-infuse.dimensional=维度的
+infuse.dimensional=维度
 # itemGroup.other=ContentTweaker
 # fluid.seed=Seed
 fluid.spectre=液态通灵
@@ -32,23 +32,25 @@ fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
 
 #Enchanted Steam
-item.contenttweaker.naquadah_resevoir_grade_1.name=星體催化劑庫
-item.contenttweaker.naquadah_resevoir_grade_2.name=植物催化劑庫
-item.contenttweaker.naquadah_resevoir_grade_3.name=煉金催化劑儲層
-item.contenttweaker.naquadah_resevoir_grade_4.name=奇異族催化劑儲庫
-item.contenttweaker.naquadah_resevoir_grade_5.name=最終催化劑儲庫
+#为什么这些好多都翻成了繁体...
+item.contenttweaker.naquadah_resevoir_grade_1.name=星辉催化剂
+item.contenttweaker.naquadah_resevoir_grade_2.name=植物催化剂
+item.contenttweaker.naquadah_resevoir_grade_3.name=炼金催化剂
+item.contenttweaker.naquadah_resevoir_grade_4.name=神秘催化剂
+item.contenttweaker.naquadah_resevoir_grade_5.name=终极催化剂
 
-item.contenttweaker.naquadah_catalyst_grade_1.name=星體蒸汽催化劑
-item.contenttweaker.naquadah_catalyst_grade_2.name=植物蒸氣催化劑
-item.contenttweaker.naquadah_catalyst_grade_3.name=煉金蒸汽催化劑
-item.contenttweaker.naquadah_catalyst_grade_4.name=奇美蒸氣催化劑
-item.contenttweaker.naquadah_catalyst_grade_5.name=終極蒸汽催化劑
+#还有不同种类的蒸汽...
+item.contenttweaker.naquadah_catalyst_grade_1.name=星辉蒸汽催化剂
+item.contenttweaker.naquadah_catalyst_grade_2.name=植物蒸汽催化劑
+item.contenttweaker.naquadah_catalyst_grade_3.name=炼金蒸汽催化劑
+item.contenttweaker.naquadah_catalyst_grade_4.name=神秘蒸汽催化劑
+item.contenttweaker.naquadah_catalyst_grade_5.name=终极蒸汽催化劑
 
-fluid.magic_steam_grade_1=星體濃蒸汽
-fluid.magic_steam_grade_2=植物濃蒸汽
-fluid.magic_steam_grade_3=煉金術濃蒸汽
-fluid.magic_steam_grade_4=奇美濃蒸汽
-fluid.magic_steam_grade_5=終極濃蒸汽
+fluid.magic_steam_grade_1=星辉浓蒸汽
+fluid.magic_steam_grade_2=植物浓蒸汽
+fluid.magic_steam_grade_3=炼金浓蒸汽
+fluid.magic_steam_grade_4=神秘浓蒸汽
+fluid.magic_steam_grade_5=终极浓蒸汽
 
 base.material.heavy_metal=沉重金属
 base.material.cheese=奶酪
