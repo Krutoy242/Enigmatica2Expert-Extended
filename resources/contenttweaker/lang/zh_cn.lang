@@ -32,14 +32,12 @@ fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
 
 #Enchanted Steam
-#为什么这些好多都翻成了繁体...
 item.contenttweaker.naquadah_resevoir_grade_1.name=星辉催化剂
 item.contenttweaker.naquadah_resevoir_grade_2.name=植物催化剂
 item.contenttweaker.naquadah_resevoir_grade_3.name=炼金催化剂
 item.contenttweaker.naquadah_resevoir_grade_4.name=神秘催化剂
 item.contenttweaker.naquadah_resevoir_grade_5.name=终极催化剂
 
-#还有不同种类的蒸汽...
 item.contenttweaker.naquadah_catalyst_grade_1.name=星辉蒸汽催化剂
 item.contenttweaker.naquadah_catalyst_grade_2.name=植物蒸汽催化劑
 item.contenttweaker.naquadah_catalyst_grade_3.name=炼金蒸汽催化劑
