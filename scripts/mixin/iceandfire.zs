@@ -147,30 +147,30 @@ zenClass MixinIafVillagerRegistry {
         addTrade(1, 'forestry:fruits:1'              , 32, 64 , 'iceandfire:myrmex_desert_resin'         , 32, 64);
         addTrade(1, 'forestry:fruits:2'              , 32, 64 , 'iceandfire:myrmex_desert_resin'         , 32, 64);
         addTrade(1, 'forestry:fruits:4'              ,  2,  4 , 'iceandfire:myrmex_desert_resin'         , 32, 64);
-        addTrade(1, 'forestry:fruits:6'              ,  2,  4 , 'iceandfire:myrmex_desert_resin'         , 32, 64);
+        addTrade(1, 'forestry:fruits:6'              ,  1,  2 , 'iceandfire:myrmex_desert_resin'         , 32, 64);
         addTrade(2, 'forestry:butterfly_ge'          , 1, 1   , 'iceandfire:myrmex_desert_resin_glass'   , 2, 3);
         addTrade(3, 'thermalfoundation:material:832' , 1, 3   , 'iceandfire:myrmex_desert_resin'         , 32, 64);
         addTrade(4, 'forestry:propolis'              , 1, 3   , 'iceandfire:myrmex_desert_resin'         , 32, 64);
         addTrade(5, 'forestry:propolis:2'            , 1, 3   , 'iceandfire:myrmex_desert_resin'         , 32, 64);
         addTrade(6, 'forestry:crafting_material:5'   , 1, 4   , 'iceandfire:myrmex_desert_resin_glass'   , 1, 1);
-        addTrade(7, 'tconstruct:edible:31'           , 8, 16  , 'iceandfire:myrmex_desert_resin_glass'   , 1, 2);
-        addTrade(7, 'tconstruct:edible:32'           , 8, 16  , 'iceandfire:myrmex_desert_resin_glass'   , 1, 2);
-        addTrade(7, 'tconstruct:edible:33'           , 8, 16  , 'iceandfire:myrmex_desert_resin_glass'   , 1, 2);
+        addTrade(7, 'tconstruct:edible:31'           , 1, 5   , 'iceandfire:myrmex_desert_resin_glass'   , 1, 2);
+        addTrade(7, 'tconstruct:edible:32'           , 1, 5   , 'iceandfire:myrmex_desert_resin_glass'   , 1, 2);
+        addTrade(7, 'tconstruct:edible:33'           , 1, 5   , 'iceandfire:myrmex_desert_resin_glass'   , 1, 2);
 
         jungleMyrmexSentinel = VillagerProfession("iceandfire:jungleMyrmexSentinel", defTexture, defTexture);
         career = VillagerCareer(jungleMyrmexSentinel, "jungle_myrmex_sentinel");
         addTrade(1, 'forestry:fruits'                , 32, 64 , 'iceandfire:myrmex_jungle_resin'         , 8, 32);
         addTrade(1, 'forestry:fruits:3'              , 32, 64 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(1, 'forestry:fruits:5'              ,  2,  4 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
-        addTrade(1, 'forestry:fruits:6'              ,  2,  4 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
+        addTrade(1, 'forestry:fruits:6'              ,  1,  2 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(2, 'forestry:butterfly_ge'          , 1, 1   , 'iceandfire:myrmex_jungle_resin_glass'   , 2, 3);
         addTrade(3, 'thermalfoundation:material:833' , 10, 40 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(4, 'forestry:propolis:1'            , 1, 3   , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(5, 'forestry:propolis:3'            , 1, 3   , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(6, 'forestry:crafting_material:5'   , 1, 4   , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 1);
-        addTrade(7, 'tconstruct:edible:30'           , 8, 16  , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 2);
-        addTrade(7, 'tconstruct:edible:34'           , 8, 16  , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 2);
-        addTrade(7, 'tconstruct:edible:33'           , 8, 16  , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 2);
+        addTrade(7, 'tconstruct:edible:30'           , 1, 5   , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 2);
+        addTrade(7, 'tconstruct:edible:34'           , 1, 5   , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 2);
+        addTrade(7, 'tconstruct:edible:33'           , 1, 5   , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 2);
 
         desertMyrmexRoyal = VillagerProfession("iceandfire:desertMyrmexRoyal", defTexture, defTexture);
         career = VillagerCareer(desertMyrmexRoyal, "desert_myrmex_royal");
