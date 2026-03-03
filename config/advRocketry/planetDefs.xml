@@ -20,6 +20,7 @@
 				<atmosphereDensity>0</atmosphereDensity>
 				<generateCaves>true</generateCaves>
 				<generateCraters>true</generateCraters>
+				<generateGeodes>false</generateGeodes>
 			</planet>
 		</planet>
 		<planet name="Mercury" DIMID="101" customIcon="lava">
