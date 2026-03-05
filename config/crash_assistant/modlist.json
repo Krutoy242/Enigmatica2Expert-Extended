@@ -32,12 +32,12 @@
     "modrinthHash": "d272efd0c807908138edbac8e6cb2d90127ac01a",
     "version": "0.7.1"
   },
-  "+Fugue-0.23.0.jar": {
-    "curseForgeHash": 3767317961,
-    "jarName": "+Fugue-0.23.0.jar",
+  "+Fugue-0.23.1.jar": {
+    "curseForgeHash": 1490778930,
+    "jarName": "+Fugue-0.23.1.jar",
     "modId": "fugue",
-    "modrinthHash": "7f364944b1fbacad048b02196ab2b36f74859cc0",
-    "version": "0.23.0"
+    "modrinthHash": "71262bf3c3f0f3979cce787d3bb6435b8242cc58",
+    "version": "0.23.1"
   },
   "[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar": {
     "curseForgeHash": 1044045050,
@@ -81,12 +81,12 @@
     "modrinthHash": "b6a7348001eb65d2c145b9121709632d7ce15675",
     "version": "1.2.0"
   },
-  "AdvancedRocketry-1.12.2-2.2.2.jar": {
-    "curseForgeHash": 2392063122,
-    "jarName": "AdvancedRocketry-1.12.2-2.2.2.jar",
+  "advancedrocketry-2.2.3.jar": {
+    "curseForgeHash": 3971946976,
+    "jarName": "advancedrocketry-2.2.3.jar",
     "modId": "advancedrocketry",
-    "modrinthHash": "a3943f8de74ee0b17587703668605f450cc0617f",
-    "version": "2.2.2"
+    "modrinthHash": "47ddbc49b159ca164b354e39d2a6081d590b85fc",
+    "version": "2.2.3"
   },
   "AdvancedTweakery-1.2.jar": {
     "curseForgeHash": 3270717551,
@@ -231,12 +231,12 @@
     "modrinthHash": "646b49f2db0eb2d9f4e17ec65b6aa6d7a16b72e4",
     "version": "1.12.2-1.1.8"
   },
-  "ArmoredArms-v1.4.6-1.12.2-release.jar": {
-    "curseForgeHash": 268887711,
-    "jarName": "ArmoredArms-v1.4.6-1.12.2-release.jar",
+  "ArmoredArms-v1.4.7-1.12.2-release.jar": {
+    "curseForgeHash": 2107570292,
+    "jarName": "ArmoredArms-v1.4.7-1.12.2-release.jar",
     "modId": "armoredarms",
-    "modrinthHash": "a7b19016f3537861cb87390a63e53d1471a97fbe",
-    "version": "v1.4.6-1.12.2-release"
+    "modrinthHash": "76f812b373e506b0c0aba89096e046ad6c7cdc3b",
+    "version": "v1.4.7-1.12.2-release"
   },
   "armoryexpansion-2.0.0-alpha.jar": {
     "curseForgeHash": 3077282103,
@@ -713,12 +713,12 @@
     "modrinthHash": "0185dcfe6dcf35723ef7b5e177838870d26349d4",
     "version": "9.0.1"
   },
-  "CraftPresence-2.7.0+1.12.2-forge.jar": {
-    "curseForgeHash": 1723520183,
-    "jarName": "CraftPresence-2.7.0+1.12.2-forge.jar",
+  "CraftPresence-2.7.1+1.12.2-forge.jar": {
+    "curseForgeHash": 4008639502,
+    "jarName": "CraftPresence-2.7.1+1.12.2-forge.jar",
     "modId": "craftpresence",
-    "modrinthHash": "b038ea06eef589216967f0c0ccd0d7e8023e9aeb",
-    "version": "2.7.0"
+    "modrinthHash": "1c0955ade87d7f340a0b00eb5570ed42dd93019c",
+    "version": "2.7.1"
   },
   "CraftTweaker2-1.12-4.1.20.711.jar": {
     "curseForgeHash": 3542576462,
@@ -1221,12 +1221,12 @@
     "modrinthHash": "6ac289e44ae54f30b116c30a60dee82721c7d690",
     "version": "1.3.3.jenkins148"
   },
-  "IC2-Patcher-2.0.12.jar": {
-    "curseForgeHash": 4288080945,
-    "jarName": "IC2-Patcher-2.0.12.jar",
+  "IC2-Patcher-2.0.13.jar": {
+    "curseForgeHash": 158698180,
+    "jarName": "IC2-Patcher-2.0.13.jar",
     "modId": "ic2patcher",
-    "modrinthHash": "6ef799042033355f7cd461804b62a671214df4ad",
-    "version": "2.0.12"
+    "modrinthHash": "30aad4e7bf077af2aa8d9d636044e63a9d84136b",
+    "version": "2.0.13"
   },
   "ic2-tweaker-0.2.1+build.4.jar": {
     "curseForgeHash": 1697944818,
@@ -1548,12 +1548,12 @@
     "modrinthHash": "fba97f9dbe750f17904c00db8ff58291595106b8",
     "version": "1.7.20-1.12.2"
   },
-  "loliasm-5.30.jar": {
-    "curseForgeHash": 1359930530,
-    "jarName": "loliasm-5.30.jar",
+  "loliasm-5.31.jar": {
+    "curseForgeHash": 3720160267,
+    "jarName": "loliasm-5.31.jar",
     "modId": "loliasm",
-    "modrinthHash": "9f1fa93f44e10c095f826dd25c537b42afd3f4aa",
-    "version": "5.30"
+    "modrinthHash": "77d556456ffe96271d02b3bb7e74d88f930297c5",
+    "version": "5.31"
   },
   "lootcapacitortooltips-1.3.jar": {
     "curseForgeHash": 60008387,
@@ -1714,12 +1714,12 @@
     "modrinthHash": "f0bdbf6f4257e392e59023289998aaa8c295df47",
     "version": "4.0.20.11"
   },
-  "modularui-3.1.3.jar": {
-    "curseForgeHash": 3889519565,
-    "jarName": "modularui-3.1.3.jar",
+  "modularui-3.1.4.jar": {
+    "curseForgeHash": 3760010337,
+    "jarName": "modularui-3.1.4.jar",
     "modId": "modularui",
-    "modrinthHash": "6ff63e72b6e574160f7f984037d26a23767066d6",
-    "version": "3.1.3"
+    "modrinthHash": "ee9fb13355ae0927f42bc268cd69de7f073dbbfd",
+    "version": "3.1.4"
   },
   "moredefaultoptions-1.12-0.0.2.jar": {
     "curseForgeHash": 2119973449,
@@ -2770,12 +2770,12 @@
     "modrinthHash": "2b72e49682aca50fa55522c5080f2ba20173c565",
     "version": "1.12.2-3.0.10"
   },
-  "UniLib-1.2.0+1.12.2-forge.jar": {
-    "curseForgeHash": 281356992,
-    "jarName": "UniLib-1.2.0+1.12.2-forge.jar",
+  "UniLib-1.2.1+1.12.2-forge.jar": {
+    "curseForgeHash": 4274096354,
+    "jarName": "UniLib-1.2.1+1.12.2-forge.jar",
     "modId": "unilib",
-    "modrinthHash": "7cb336e5fedf6ed4cea500410c5a13f81146116d",
-    "version": "1.2.0"
+    "modrinthHash": "c09a8f8b0e191cddbe629d2e5b19bf571a3ccd18",
+    "version": "1.2.1"
   },
   "UniversalTweaks-1.12.2-1.18.0.jar": {
     "curseForgeHash": 2052152645,
