@@ -4,29 +4,23 @@
 
 ### 🐛 Bugfixes
 
-- [ ] ✏️ `Archeologiest` rat not working with speed? Test it.
 - [ ] 📀 Disable `Vanta Oil` recipes to remove cluttering
 - [ ] 🔨 `Refining` doesnt work on Redstone Ore
-- [ ] 🚀 Improve AR integration of GasMissions - now they allow to pump lot of gasses
 
 ### ✨ New features
 
-- [ ] ✏️ `Redstone Activator` add to Omniwand
+- [ ] 🚀 Improve AR integration of GasMissions - now they allow to pump lot of gasses
 - [ ] 💡 Idea: new TCon Armory `Bauble ring` with different parts for getting traits power without armor
-- [ ] ✏️ `Mud ball` make stack 64
-- [ ] ✏️ `Time in a Bottle` do not add time when AFK
-- [ ] ✏️ `Structural Arms` and other `Steel` stuff from IE make cheaper
+- [ ] 📀 `Time in a Bottle` do not add time when AFK
 - [ ] 📀 Rustic's barrel make as x4 chests but allow accept only "dust" items
 - [ ] ✏️ `Charcoal Pile` rebalance wall blocks and fix JEI amounts
 - [ ] ✏️ `Sonic Glasses` add new recipe mechanic where you need to locate sound
 - [ ] ✏️ `Player Interface` cheaper
-- [ ] ✏️ `chorus glass` reduce usage since require a lot of crafting repeats
 - [ ] ✏️ Use `Roids Tweaker` to turn items into baubles
 - [ ] ✨ LMB furnaces to take out items
-- [ ] 👃 Migrate villagers/merchants to RoidsTweaker from VTT
+- [ ] 👃 Migrate vtt to RoidsTweaker and add `tinkerer, brewer, redstoner`
 - [ ] 🔨 `Vaporizer` should clear fluids by using FluidloggedAPI
 - [ ] 🔨 `Vaporizer` reduce durability
-- [ ] 🐛 Migrate vtt and add `tinkerer, brewer, redstoner`
 - [ ] ✨ Idea: Difficulty cant grow if you didnt died
 - [ ] 🔵 Add `mc2discord` mod to server pack and add configuration description
 - [ ] 🐢 `/restart_server` do not account AFK players
@@ -38,7 +32,6 @@
 - [ ] 🛡️ Make `Quantum Armor` Tinker's alternative or add Airtight Seal book add to it
 - [ ] ✏️ Remove any kind of shears from game so players use Kama
 - [ ] ✏️ Remap `thermalexpansion.Enchanter` recipes since no one using them
-- [ ] ✏️ for `Invar` recipe to replace ingot to dust in ArcFurnace
 - [ ] ✏️ `Redstone Cable` harder recipe
 - [ ] 🤖 Nanomachines give next levels of potions
 - [ ] ✏️ Add `Upgrade, Chest, Backpack, Tank, Generator, Miner` Singularities
@@ -71,10 +64,8 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ⚡ Fix `OpenComputers` JEI plugin is still loaded (see benchmark)
 - [ ] ⚡ Cleanup JER data (and ores on other planets for clear JER tab)
 - [ ] ⚡ Fix projectiles accumulated on chunk borders, such as Scythe or Beam Laser. Use `ForceUpdateEntityClasses` StellarCore's config
-- [ ] ⚡ Remove Openblock's `Vacuum Hoppers` since they cause lags
 - [ ] ⚡ Improve performance of Replicator tick with crystal and other requirments
 - [ ] ⚡ Disallow to connect `Storage Bus` to ISS - can cause 10% TPS strain
-- [ ] ⚡ `OTG` should probably be optional mod when game starting since it laggy
 - [ ] ⚡ Wand of the forest change recipe to Recipe Function
 - [ ] ⚡ Remove automatic IE armor recycling to speed up game load
 - [ ] ⚡ Remove `Chunk Loading Ward` since its make harder to find all chunk loaders on server
@@ -177,9 +168,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🧱 Skyblock: Make `Porouse Stone` and `AA Ore Laser` mandatory in skyblock
 
 ### Mods
-- [ ] 🔵 Remove AR `tick` mixin when migrating to new versions `scripts/mixin/advancedrocketry.zs`
 - [ ] 🟠 Migrate `vtt` => `Roidstweaker` when fixed https://github.com/roidrole/Roids-Tweaker/issues/11
-- [ ] 🟠 Do not update **Advanced Rocketry - Reworked** until fixed https://github.com/dercodeKoenig/AdvancedRocketry/issues/50
 - [ ] 🟠 Do not update **JAOPCA** - uncompatible with `JAOPCACustom`
 - [ ] 🟠 Do not update **籁/Sound Physics Remixin** `1.1.17` or above - uncompatible with `Java 8`
 - [ ] 🟠 Do not update **LootTweaker** `0.3.3` or above - its removing deprecated functions used since E2E
@@ -367,7 +356,7 @@ Planned non-urgent changes, or just good ideas:
 List of features and changes for `E2EE v2.0`, that breaking worlds and require fresh start
 
 - 🌍 Remove OTG `Origin` biome since unnatural
-- 🌍 Remove OTG completely?
+- 🌍 `OTG` should probably be optional mod when game starting since it laggy
 - ⚡ Remove `Libnine` and `Fluid Drawers` because lag https://github.com/phantamanta44/fluid-drawers/issues/19
 
 ---
