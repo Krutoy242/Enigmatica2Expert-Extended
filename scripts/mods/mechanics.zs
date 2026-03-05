@@ -26,8 +26,8 @@ recipes.addShaped(<mechanics:crushing_block>, [
 
 // Amplyfying tube
 recipes.addShaped(<mechanics:amplifying_tube>, [
-  [<integratedterminals:chorus_glass>, <extrautils2:suncrystal>, <integratedterminals:chorus_glass>],
-  [<ore:ingotHeavy>, null, <ore:ingotHeavy>],
+  [null, <extrautils2:suncrystal>, null],
+  [<ore:ingotHeavy>, <integratedterminals:chorus_glass>, <ore:ingotHeavy>],
   [<ore:ingotHeavy>, <extrautils2:decorativeglass:4>, <ore:ingotHeavy>]]);
 
 // Remove excess recipes
