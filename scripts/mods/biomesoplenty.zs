@@ -4,6 +4,8 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
 
+<biomesoplenty:mudball>.maxStackSize = 64;
+
 // Amber Conversion
 recipes.addShapeless('BoP Amber', <biomesoplenty:gem:7> * 2, [<thaumcraft:amber>, <thaumcraft:amber>]);
 recipes.addShapeless('Thaumcraft Amber', <thaumcraft:amber> * 2, [<biomesoplenty:gem:7>, <biomesoplenty:gem:7>]);
