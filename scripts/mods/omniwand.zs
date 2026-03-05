@@ -56,6 +56,7 @@ static superwand as IItemStack = <omniwand:wand>.withTag({
     nuclearcraft        : {id: "nuclearcraft:multitool"                         , Count: 1, tag: { "omniwand:definedMod": "nuclearcraft"         }, tag: { multitoolUsed: 0 as byte }},
     opencomputers       : {id: "opencomputers:tool"                             , Count: 1, tag: { "omniwand:definedMod": "opencomputers"        }},
     opencomputers1      : {id: "opencomputers:wrench"                           , Count: 1, tag: { "omniwand:definedMod": "opencomputers1"       }},
+    randomthings        : {id: "randomthings:redstoneactivator"                 , Count: 1, tag: { "omniwand:definedMod": "randomthings"         }},
     rats                : {id: "rats:cheese_stick"                              , Count: 1, tag: { "omniwand:definedMod": "rats"                 }},
     rats1               : {id: "rats:radius_stick"                              , Count: 1, tag: { "omniwand:definedMod": "rats1"                }},
     rftools             : {id: "rftools:smartwrench"                            , Count: 1, tag: { "omniwand:definedMod": "rftools"              }},
