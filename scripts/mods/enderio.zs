@@ -468,6 +468,7 @@ craft.remake(<enderio:block_omni_reservoir> * 4, ['pretty',
   '⌃': <ore:gemQuartzBlack>,
   'S': <tconstruct:materials>,
 });
+recipes.addShapeless('omnivoir_clearing', <enderio:block_omni_reservoir>, [<enderio:block_omni_reservoir>]);
 
 // Omnivoir fast alt
 scripts.process.alloy([<ore:gemQuartzBlack>], <enderio:block_omni_reservoir> * 4, 'only: alloySmelter');
