@@ -28,7 +28,7 @@ mods.immersiveengineering.ArcFurnace.removeRecipe(<immersiveengineering:metal:29
 mods.immersiveengineering.ArcFurnace.removeRecipe(<ore:ingotSilicon>.firstItem);
 
 // Fix second ingredient not consuming
-scripts.process.alloy([<ore:ingotNickel>, <ore:ingotFakeIron> * 2], <thermalfoundation:material:162> * 3, 'strict: ArcFurnace');
+scripts.process.alloy([<ore:dustNickel>, <ore:ingotFakeIron> * 2], <thermalfoundation:material:162> * 3, 'strict: ArcFurnace');
 
 // Sheetmetal Chute Smeltery compat
 mods.tconstruct.Melting.addRecipe(<liquid:iron> * 72, <immersiveengineering:conveyor>.withTag({ conveyorType: 'immersiveengineering:chute_iron' }));
