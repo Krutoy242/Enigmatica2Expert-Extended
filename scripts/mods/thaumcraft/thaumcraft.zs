@@ -764,11 +764,11 @@ mods.thaumcraft.Infusion.registerRecipe('spawn_lesser_crimson_portal', 'INFUSION
   }).shapeless());
 
 // [Control Seal_ Block Breaker] from [Blank Seal][+3]
-mods.thaumcraft.Infusion.removeRecipe(<thaumcraft:seal:12>);
+mods.thaumcraft.Infusion.removeRecipe(<thaumcraft:seal:15>);
 mods.thaumcraft.Infusion.registerRecipe(
   'SealBreak', // Name
   'SEALBREAK', // Research
-  <thaumcraft:seal:12>, // Output
+  <thaumcraft:seal:15>, // Output
   1, // Instability
   Aspects('10⚡'),
   <thaumcraft:seal>, // Central Item
