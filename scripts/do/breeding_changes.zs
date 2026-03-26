@@ -49,6 +49,13 @@ events.register(function(event as native.net.minecraftforge.event.entity.living.
     if (isNull(parentARaw) || isNull(parentBRaw) || isNull(childRaw)) return;
     if (!(parentARaw instanceof EntityAgeable) || !(parentBRaw instanceof EntityAgeable) || !(childRaw instanceof EntityAgeable)) return;
 
+    if (parentARaw instanceof EntityAmphithere && parentBRaw instanceof EntityAmphithere 
+    && (parentARaw as EntityTameable).isTamed() && (parentBRaw as EntityTameable).isTamed()) {
+        (childRaw as EntityAgeable).getEntityData().setInteger("ScalingHealth.IsBlight", 1);
+        print('should be blight');
+        return;
+    }
+
     val parentA as EntityAgeable = parentARaw as EntityAgeable;
     val parentB as EntityAgeable = parentBRaw as EntityAgeable;
 
