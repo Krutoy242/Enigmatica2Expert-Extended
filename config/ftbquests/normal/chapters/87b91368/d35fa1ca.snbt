@@ -1,0 +1,24 @@
+{
+	x: 9.2d,
+	y: -3.2d,
+	shape: "gear",
+	text: [
+		"{q.animals.amphithere.desc}"
+	],
+	dependencies: [
+		"e875aec9"
+	],
+	tasks: [{
+		uid: "4983cea9",
+		type: "advancement",
+		title: "{q.animals.amphithere.name}",
+		icon: "iceandfire:amphithere_feather",
+		advancement: "iceandfire:iceandfire/tame_amphithere",
+		criterion: ""
+	}],
+	rewards: [{
+		uid: "ebbbc53a",
+		type: "xp_levels",
+		xp_levels: 5
+	}]
+}

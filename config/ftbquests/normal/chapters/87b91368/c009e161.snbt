@@ -1,0 +1,29 @@
+{
+	icon: {
+		id: "draconicevolution:mob_soul",
+		tag: {
+			EntityName: "minecraft:rabbit"
+		}
+	},
+	x: 2.85d,
+	y: -1.8d,
+	shape: "gear",
+	text: [
+		"{q.animals.breeding_changes.desc}"
+	],
+	dependencies: [
+		"dcb947b4"
+	],
+	tasks: [{
+		uid: "52964147",
+		type: "checkmark",
+		title: "{q.animals.breeding_changes.name}",
+		icon: "draconicevolution:mob_soul"
+	}],
+	rewards: [{
+		uid: "91541b10",
+		type: "item",
+		item: "minecraft:carrot",
+		count: 2
+	}]
+}
