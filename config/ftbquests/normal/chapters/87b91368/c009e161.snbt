@@ -21,9 +21,8 @@
 		icon: "draconicevolution:mob_soul"
 	}],
 	rewards: [{
-		uid: "91541b10",
-		type: "item",
-		item: "minecraft:carrot",
-		count: 2
+		uid: "bbb44fcd",
+		type: "choice",
+		table: 157
 	}]
 }

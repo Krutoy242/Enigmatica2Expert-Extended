@@ -17,8 +17,8 @@
 		criterion: ""
 	}],
 	rewards: [{
-		uid: "ebbbc53a",
-		type: "xp_levels",
-		xp_levels: 5
+		uid: "b690d747",
+		type: "item",
+		item: "botania:supercloudpendant"
 	}]
 }

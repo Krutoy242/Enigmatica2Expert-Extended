@@ -1,0 +1,13 @@
+{
+	title: "Feeders",
+	loot_size: 1,
+	rewards: [{
+		item: "farmingforblockheads:feeding_trough"
+	},
+	{
+		item: "actuallyadditions:block_feeder"
+	},
+	{
+		item: "rats:rat_upgrade_breeder"
+	}]
+}
