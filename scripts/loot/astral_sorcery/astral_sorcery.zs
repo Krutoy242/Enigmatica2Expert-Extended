@@ -2,7 +2,7 @@
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.util.IRandom;
-import loottweaker.LootContext;
+import mods.daomephsta_loot_shared.LootContext;
 import loottweaker.vanilla.loot.Functions;
 
 // Add garanteed grapple wand in some shrines

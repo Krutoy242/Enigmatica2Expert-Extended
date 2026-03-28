@@ -7,7 +7,8 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
 import crafttweaker.util.IRandom;
 import crafttweaker.util.Math;
-import loottweaker.LootContext;
+import loottweaker.LootTweaker;
+import mods.daomephsta_loot_shared.LootContext;
 import loottweaker.vanilla.loot.Conditions;
 import loottweaker.vanilla.loot.Functions;
 import mods.zentoolforge.Toolforge;
@@ -46,7 +47,7 @@ function tweak(
       if (!isNull(smelted)) {
         // Add with smelting function (if smelted item exist)
         pool.addItemEntry(itemToAdd.stack, poolWeight, 0, [
-          Functions.parse({
+          {
             'function': 'minecraft:furnace_smelt',
             conditions: [
               {
@@ -55,7 +56,7 @@ function tweak(
                 condition: 'minecraft:entity_properties',
               },
             ],
-          }),
+          },
           Functions.setCount(minMax[0], minMax[1]),
           Functions.lootingEnchantBonus(0, 1, 0),
         ], conditions);

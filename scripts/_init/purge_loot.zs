@@ -1,5 +1,5 @@
 #priority 3000
-#modloaded lttweaker
+#modloaded loottweaker
 
 import loottweaker.LootTweaker as ltt;
 
@@ -137,20 +137,16 @@ ltt.getTable('enderio:chests/abandoned_mineshaft').getPool('Ender IO').removeEnt
 // end_city_treasure removal
 
 // cyclic building scepter
-ltt.getTable('minecraft:chests/end_city_treasure').getPool('main').removeEntry('cyclicmagic:item.cyclic_wand_build');
 
 // igloo_chest removal
 
 // vanilla stone axe
-ltt.getTable('minecraft:chests/igloo_chest').getPool('main').removeEntry('minecraft:stone_axe');
 
 // nether_bridge removal
 
 // cyclic building scepter
-ltt.getTable('minecraft:chests/nether_bridge').getPool('main').removeEntry('cyclicmagic:item.cyclic_wand_build');
 
 // cyclic building scepter
-ltt.getTable('minecraft:chests/stronghold_library').getPool('main').removeEntry('cyclicmagic:item.cyclic_wand_build');
 
 // immersive engineering village metal removal
 
