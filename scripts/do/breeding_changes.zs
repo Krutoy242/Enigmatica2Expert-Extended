@@ -17,7 +17,15 @@ import native.net.minecraft.entity.passive.EntityRabbit;
 import native.net.minecraft.entity.passive.EntitySheep;
 import native.net.minecraft.entity.passive.EntityTameable;
 import native.net.minecraft.entity.passive.EntityWolf;
-import native.net.minecraft.nbt.NBTTagCompound;
+
+/* 
+First idea to implement this feature was to use mixins, however it's not supported directly on vanilla minecraft.
+
+Second idea was to use BabyEntitySpawnEvent with have a problem that is called before animals AI spawnChild() method - this method overrides
+growth timer i wanted for animals (even when event is canceled). So the code right now replace child(s) to apply correct timers, while catenation
+set correct growth timers for both parents - since spawnChild() overrides both parents timers it needs to be casted after that. I decided to
+better make catenation instead of calling .onTick() method to check if parents timers should be corrected.
+*/
 
 // [growthTimeTicks, breedingCooldownTicks, children, bonusChildren]
 static breedingStats as int[][Class] = {
@@ -52,7 +60,6 @@ events.register(function(event as native.net.minecraftforge.event.entity.living.
     if (parentARaw instanceof EntityAmphithere && parentBRaw instanceof EntityAmphithere 
     && (parentARaw as EntityTameable).isTamed() && (parentBRaw as EntityTameable).isTamed()) {
         (childRaw as EntityAgeable).getEntityData().setInteger("ScalingHealth.IsBlight", 1);
-        print('should be blight');
         return;
     }
 
