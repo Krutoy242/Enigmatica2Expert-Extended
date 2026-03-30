@@ -823,7 +823,7 @@ recipes.remove(<enderio:item_material:2>);
 recipes.remove(<enderio:item_material:68>);
 for block, result in {
   <ic2:resource:12>: { <enderio:item_material:69>: 8 },
-  <ic2:resource:13>: { <enderio:item_material:69>: 16 },
+  <ic2:resource:13>: { <enderio:item_material:69>: 32 },
 
   <actuallyadditions:block_misc:9>: { <enderio:item_material:2>: 10 },
   <mekanism:basicblock:8>         : { <enderio:item_material:2>: 16 },

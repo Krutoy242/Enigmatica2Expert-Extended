@@ -1,7 +1,7 @@
 {
 	title: "{q.extra_utilities.flat_transfer_node.name}",
-	x: 2.2916666666666665d,
-	y: 0.125d,
+	x: 2.4166666666666665d,
+	y: 0.3333333333333333d,
 	text: [
 		"{q.extra_utilities.flat_transfer_node.desc}"
 	],

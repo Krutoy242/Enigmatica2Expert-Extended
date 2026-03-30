@@ -51,6 +51,56 @@
 	},
 	{
 		item: {
+			tag: {
+				blockName: "chisel:concrete_lightgray",
+				blockCount: 20000,
+				blockMeta: 1
+			},
+			id: "botania:blackholetalisman"
+		}
+	},
+	{
+		item: {
+			tag: {
+				blockName: "chisel:concrete_gray",
+				blockCount: 20000,
+				blockMeta: 1
+			},
+			id: "botania:blackholetalisman"
+		}
+	},
+	{
+		item: {
+			tag: {
+				blockName: "chisel:concrete_brown",
+				blockCount: 20000,
+				blockMeta: 1
+			},
+			id: "botania:blackholetalisman"
+		}
+	},
+	{
+		item: {
+			tag: {
+				blockName: "immersivepetroleum:stone_decoration",
+				blockCount: 20000,
+				blockMeta: 0
+			},
+			id: "botania:blackholetalisman"
+		}
+	},
+	{
+		item: {
+			tag: {
+				blockName: "actuallyadditions:block_colored_lamp_on",
+				blockCount: 20000,
+				blockMeta: 12
+			},
+			id: "botania:blackholetalisman"
+		}
+	},
+	{
+		item: {
 			id: "openblocks:dev_null",
 			tag: {
 				enchantmentColor: 4408131,

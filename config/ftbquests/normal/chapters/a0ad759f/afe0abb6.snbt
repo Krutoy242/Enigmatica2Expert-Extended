@@ -1,9 +1,10 @@
 {
+	title: "{q.computers.robots.name}",
 	icon: "opencomputers:robot",
 	x: 11.0d,
 	y: 3.4d,
 	text: [
-		"{q.computers.central_processing.desc}"
+		"{q.computers.robots.desc}"
 	],
 	dependencies: [
 		"9dceffbe"

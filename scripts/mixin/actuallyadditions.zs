@@ -46,7 +46,7 @@ zenClass MixinItemFillWand {
 zenClass MixinItemPotionRing {
     #mixin ModifyConstant {method: "func_77663_a", constant: {longValue: 10}}
     function buffDuration(value as long) as long {
-        return 10000L;
+        return 100000L;
     }
 }
 
@@ -151,7 +151,7 @@ zenClass MixinLensMining {
 zenClass MixinTileEntityBioReactor {
     #mixin ModifyConstant {method: "updateEntity", constant: {intValue: 2}}
     function buffPowerGeneration(value as int) as int {
-        return 4; // producePerTick = (amount * 4)²
+        return 20; // producePerTick = (amount * 20)²
     }
 }
 
@@ -164,6 +164,17 @@ zenClass MixinTileEntityDisplayStand {
 
     #mixin ModifyConstant {method: "<init>", constant: {intValue: 1000}}
     function buffTransferRate(value as int) as int {
+        return 2000;
+    }
+}
+
+/*
+Increase max energy output rate to match working speed
+*/
+#mixin {targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityLeafGenerator"}
+zenClass MixinTileEntityLeafGenerator {
+    #mixin ModifyConstant {method: "<init>", constant: {intValue: 450}}
+    function increaseMaxExtract(value as int) as int {
         return 2000;
     }
 }

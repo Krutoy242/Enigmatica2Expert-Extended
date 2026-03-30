@@ -436,6 +436,45 @@
 				}]
 			}
 		}
+	},
+	{
+		item: {
+			id: "ic2:crop_seed_bag",
+			tag: {
+				owner: "ic2",
+				scan: 4b,
+				growth: 15b,
+				id: "stickreed",
+				resistance: 1b,
+				gain: 15b
+			}
+		}
+	},
+	{
+		item: {
+			id: "ic2:crop_seed_bag",
+			tag: {
+				owner: "ic2",
+				scan: 4b,
+				growth: 15b,
+				id: "shining",
+				resistance: 1b,
+				gain: 15b
+			}
+		}
+	},
+	{
+		item: {
+			id: "ic2:crop_seed_bag",
+			tag: {
+				owner: "ic2",
+				scan: 4b,
+				growth: 15b,
+				id: "milk_wart",
+				resistance: 1b,
+				gain: 15b
+			}
+		}
 	}],
 	loot_crate: {
 		string_id: "generators",

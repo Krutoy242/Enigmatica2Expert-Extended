@@ -138,6 +138,10 @@ ignore:
   # Additional properties for mixins
   - 'ERROR. \[mixin\]: Mixin config .+ does not specify "minVersion" property'
 
+  # Technical warnings from the Mixin system about best practices, not critical failures.
+  - 'WARN. .mixin.. @Inject.+Shift\.BY.+exceeds the maximum allowed value'
+  - 'WARN. .mixin.. @Final field .+ should be final'
+
   # IC2 blocks and fluids that skipped
   - '\[ic2.(Item|Block)\]: The .* is not initialized.'
 
@@ -156,7 +160,6 @@ ignore:
   # Some JEI errors, no harm
   - 'ERROR. \[jei|Had.?Enough.?Items\]: A Recipe Handler has already been registered for '
   - 'ERROR. \[jei|Had.?Enough.?Items\]: An interpreter is already registered for this item'
-  - 'ERROR. \[jei|Had.?Enough.?Items\]: Failed to register mod plugin'
   - 'ERROR. \[jei|Had.?Enough.?Items\]: Recipe has no output. Extra Utilities 2 extrautils2:shortcut_hopper'
 
   # Player error, not modpack one
@@ -189,8 +192,8 @@ ignore:
   - WARN. .mixin.. Error loading class. net.optifine.CustomColors \(java\.lang\.ClassNotFoundException. The specified class 'net\.optifine\.CustomColors' was not found\)
   - WARN. .mixin.. @Mixin target net\.optifine\.CustomColors was not found mixins\.betterbiomeblend\.json:MixinCustomColors from mod unknown-owner
 
-  # Developers usually lazy to add refmaps
-  - WARN. .mixin.. Reference map '.*' for .+ could not be read. If this is a development environment you can ignore this message
+  # Optifine class "Config" missing => no optifine installed
+  - WARN. .mixin.. Error loading class. Config .java.lang.ClassNotFoundException. The specified class 'Config' was not found
 
   # Advanced Vector Extensions 512-bit, a specialized instruction set used for high-performance computing
   - WARN. .curvy_pipes.. AVX-512 not available
@@ -200,6 +203,17 @@ ignore:
 
   # Non-harmful options.txt lines
   - WARN. .net.minecraft.client.settings.GameSettings.. Skipping bad option
+  
+  # Texture is not a power-of-two size, causes minor visual shimmer at a distance.
+  - 'WARN. .net.minecraft.client.renderer.texture.TextureMap.. Texture .+ will have visual artifacts'
+
+  # Probably harmless warn, missingno is purple-black checker texture
+  - .Client thread/WARN. .CustomLoadingScreen.. .debug.   - Failed to open stream as class java.io.FileNotFoundException:.*missingno
+
+  # Reference maps is common mistake of mod developers and does not cause harm
+  - WARN. .mixin.. Reference map '' for mixins.vintagefix.init.json could not be read. If this is a development environment you can ignore this message
+  - WARN. .mixin.. Reference map 'mixins.randomtweaker.refmap.json' for mixins.randomtweaker.mods.json could not be read. If this is a development environment you can ignore this message
+  - WARN. .mixin.. Reference map 'mixins.thaumicenergistics.refmap.json' for mixins.thaumicenergistics.late.json could not be read. If this is a development environment you can ignore this message
 
   # Safe WARNings, just for information
   - '\[LLibrary Core\]: Unable to call Core API! It has not been initialized yet!'
@@ -235,7 +249,6 @@ ignore:
   - WARN. .LoliASM.. Stage .+ profiler has stopped
   - WARN. .LoliASM.. Profiler results for Stage
   - WARN. .ModDirector.CORE... Successfully replaced CA certificates with updated ones!
-  - WARN. .ModDirector.ForgeLateLoader.Launchwrapper... Failed to find deobf tweaker, injecting after deobf tweaker at first place
   - WARN. .tconstruct-API.. Replacing material ".+?" with material from .*
   - WARN. .net.minecraft.network.datasync.EntityDataManager.. defineId called for. class .+ from class .+
   - WARN. .net.minecraft.client.multiplayer.ClientAdvancementManager.. Server informed client about progress for unknown advancement
@@ -244,6 +257,7 @@ ignore:
   - WARN. .enderio.. This is valid, but do NOT report recipe errors to the Ender IO team!
   - WARN. .CrashAssistantJarInJarHelper.. Failed to parse version from mcmod.info of .+
   - WARN. .CrashAssistantJarInJarHelper.. Closed old CrashAssistantApp process to prevent confusing the player with window containing information from old crash.
+  - WARN. .modularui.. Custom cursors are currently not compatible with lwjgl 3. They will be disabled.
 
   # ##################
   # Reported issues #
@@ -303,7 +317,6 @@ ignore:
   - WARN. .jetif.. Couldn't load config field for Flux Networks, report this issue on JETIF's GitHub
   - '\[FML\]: Overriding existing radiation moderator data for '
   - 'ERROR\] \[reborncore\]: Invalid fingerprint detected for RebornCore'
-  - 'WARN\] \[mixin\]: Reference map .mixins\.forkedproxy\.refmap\.json. for mixins\.forkedproxyearlymixins\.json could not be read'
 
   # Its ok, since we using Bansoukou
   - 'WARN\] \[thaumicaugmentation\]: A file failed to match with the signing key.'
@@ -343,7 +356,6 @@ ignore:
   - .main.ERROR. .Aqua Acrobatics Transformer.. Disabling soul sand and magma mixins as requested in config
   - UniversalTweaks-.+.jar - probably a corrupt zip
   - Zip file UniversalTweaks-.+.jar failed to read properly, it will be ignored
-  - WARN. .mixin.. @Final .+UTCompactMessageMixin from mod UniversalTweaks.+ should be final
 
   # CraftPresence error - dont know how to configure this
   - ERROR. .craftpresence.. Asset name "enigmatica2expert-extended" does not exist, attempting to use an alternative icon "curse"...
@@ -362,18 +374,13 @@ ignore:
   # https://github.com/embeddedt/VintageFix/issues/41
   - .Client thread.WARN. .mixin.. .Mixin target .+ was not found .+ from mod vintagefix_.+
   - .VintageFix.. Cannot list resources from pack .+ (.+)
-  - .Client thread.ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.. Failed to load model .+
+  - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.. Failed to load model .+
   - .VintageFix.. Path .+ is not a valid model location
   - .Client thread.ERROR. .VintageFix.. Early load error for .+
   - .Client thread.ERROR. .net.minecraft.client.renderer.texture.TextureMap.. Unable to parse metadata from .+
   - ERROR. .base.. org.embeddedt.vintagefix.util.FastFileNotFoundException. .+
   - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider.. Error occured while loading model .+
-  - ERROR. .VintageFix.. Suppressing further model loading errors for namespace '.+'
-  - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.. Failed to load model .+
-  - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider.. Error occured while loading model .+
   - WARN. .org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider.. Texture .+ was not discovered during texture pass
-  - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.. Failed to load model .+
-  - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicBakedModelProvider.. Error occured while loading model .+
   - ERROR. .VintageFix.. Suppressing further model loading errors for namespace .+
   - WARN. .mixin.. @Mixin target mod.chiselsandbits.chiseledblock.data.VoxelBlob was not found mixins.vintagefix.late.json:dynamic_resources.VoxelBlobMixin from mod unknown-owner
   - WARN. .mixin.. @Mixin target com.raoulvdberge.refinedstorage.proxy.ProxyClient was not found mixins.vintagefix.late.json:dynamic_resources.RSProxyClientMixin from mod unknown-owner
@@ -382,9 +389,6 @@ ignore:
 
   # Some DynamicResources cant be features in some mods, including OpenComputers, since mod name content non-default character like "space" or "+". Happens on Cleanroom.
   - ERROR. .VintageFix.. Error accessing resource pack on classpath \(with URI jar:file:.+\)
-
-  # Other VintageFix warns
-  - WARN. .mixin.. @Final field field_73244_f:Lit/unimi/dsi/fastutil/longs/Long2ObjectMap; in mixins.vintagefix.+ from mod unknown-owner should be final
 
   # Error caused Vintagefix `mixin.dynamic_resources=true` option. Can be ignored since player cant do nothing about it.
   - WARN. .VintageFix.. Mod '.+' is attempting to iterate the model registry, but is not whitelisted in VintageFix. This may cause glitches if it wraps its own models.
@@ -397,7 +401,6 @@ ignore:
 
   # Universal Tweaks Warns:
   - WARN. .mixin.. Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod \w+, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
-  - WARN. .probezs.. Do not know zenscript type for
   - WARN. .VintageFix Mixin Loader.. Not applying mixin '.+' as '.+' is disabled in config
   - WARN. .VintageFix.. Can't preload sprite class
 
@@ -408,7 +411,6 @@ ignore:
 
   # ProbeZS but its only for Dev environment
   - probezs
-  - ProbeZS
 
   # Malek's Infinity Gauntlet make this error happens, but we dont care about this IC2 loot chest additions
   - ERROR. .net.minecraft.world.storage.loot.LootTableManager.. Couldn't load loot table (ic2:chests|endreborn:inject)
@@ -433,18 +435,11 @@ ignore:
   - WARN. .net.minecraft.world.storage.loot.LootTableManager.. Couldn't find resource table betteranimalsplus:turkey
   - WARN. .net.minecraft.world.storage.loot.functions.Smelt.. Couldn't smelt 1xitem.frog_leg@0 because there is no smelting recipe
 
-  # Harmless, "interpreter" is a function that handles items with different NBT
-  - ERROR. .Had Enough Items.. An interpreter is already registered for this item. exnihilocreatio.modules.tconstruct.tools.SledgeHammer.+
-  - ERROR. .Had Enough Items.. An interpreter is already registered for this item. exnihilocreatio.modules.tconstruct.tools.TiCrook.+
-
   # zenutils warn, reported https://github.com/friendlyhj/ZenUtils/issues/42
   - WARN. .+ mixins.zenutils.vanilla.json:MixinForgeHooks .+ exceeds the maximum allowed value. 0. Increase the value of maxShiftBy to suppress this warning.
 
   # RandomTweaker warning caused by not installed mod, reported https://github.com/Project-RT/RandomTweaker/issues/78
   - WARN. .mixin.. @Mixin target .+FTBUltimineClient was not found mixins.randomtweaker.mods.json:ftbultimine.MixinFTBUltimineClient from mod unknown-owner
-
-  # MIA ERRORS when its modules partially disabled
-  - ERROR. .Had Enough Items.. A Recipe Handler has already been registered for 'jeresources.+'. jeresources.entry.+
 
   # Shader warnings = normal behaviour since working fine
   - WARN. .Config.. .OptiFine.  - in world
@@ -466,6 +461,11 @@ ignore:
   - .CraftPresence.ERROR. .craftpresence.. Failed to check for updates, enable verbose mode to see errors...
   - ERROR. .Foundation.. Thread.#\d+,Thread-\d+,\d+,main.[\s\S]+lumien.custommainmenu.handler.LoadStringURL.run
 
+  # Failed to check for updates or download contributor/documentation files.
+  - 'brandonscore.: ThreadFileDownloader: DL Failed'
+  - 'brandonscore.: .Pi Reported Error.: Failed to download'
+  - ERROR. .brandonscore.. .Pi Reported Error.. An error occurred while reading download list for mod .+ See console for stacktrace.
+
   # Started to log after updating ThaumicAdditions to version 12.7.9. Have no ingame effect
   - Could not add invalid research entry !?TAR
 
@@ -479,13 +479,16 @@ ignore:
   # Those are tweaks that will be removed from Universal Tweaks in the next update as they are a better fit in ThaumicTweaker.
   - WARN. .mixin.. Method overwrite conflict for onCast in mixins.(thaumictweaker.json:focus.FocusEffect|mods.thaumcraft.foci.focuseffects.json:UT)
 
+  # loottweaker could sometimes add new pools with the same name as already existing pools and automatically just create new name
+  - ERROR. .loottweaker.sanity_checks.. Unexpected duplicate pool name '.+' in table '.+'. Duplicate added as '.+'.
+
   # ##################
   # Cleanroom Loader errors
   # ##################
 
   # geeky_kappa (cleanroom maintainer) explanation:
   # "Many mods bundle a copy of Mixin and add MixinTweaker to its manifest. Launchwrapper/Bouncepad don't like to call same tweaker twice. If you have lots of mod doing this that's what you got."
-  - WARN. .(Bouncepad|Foundation).. Tweak( class)? name org.spongepowered.asm.launch.MixinTweaker has already been visited -- skipping
+  - WARN. .(Bouncepad|Foundation).. Tweak( class)? name .+Tweaker has already been visited -- skipping
 
   # geeky_kappa says this is harmless
   - has a security seal for path LZMA, but that path is defined and not secure
@@ -508,6 +511,9 @@ ignore:
 
   # "Sledge is a hacky mod. It's entire point is to hack mixins early. So that error is not as much of an error. As it is a warning."
   - .Client thread/ERROR. .mixin.. Critical problem. mixins.sledgehammer.quark.json:base.module.ModuleLoaderMixin from mod unknown-owner target vazkii.quark.base.module.ModuleLoader was loaded too early.
+
+  # Hacky stellar core mixins
+  - ERROR. .mixin.. Critical problem. mixins\.stellar_core_forge_asmmodparser\.json:MixinASMModParser from mod unknown-owner target net\.minecraftforge\.fml\.common\.discovery\.asm\.ASMModParser was loaded too early\.
 
   # Errors even Cleanroom devs doesnt know what means
   - WARN\] \[mixin\]. Mixin apply for mod UniversalTweaks.+ from mod UniversalTweaks.+::utOverrideOpposingSideCheck with priority 1000 cannot inject into .+RenderGlobal

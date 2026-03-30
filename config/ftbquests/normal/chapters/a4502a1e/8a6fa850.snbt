@@ -1,6 +1,6 @@
 {
-	x: 0.25d,
-	y: 1.7916666666666667d,
+	x: 0.4166666666666667d,
+	y: 1.8333333333333333d,
 	text: [
 		"{q.extra_utilities.builders_wand.desc}"
 	],

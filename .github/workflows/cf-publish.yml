@@ -15,7 +15,7 @@ jobs:
         uses: gregziegan/fetch-latest-release@v2.0.0
 
       - name: 📃 Save changelog content to file
-        uses: DamianReeves/write-file-action@master
+        uses: DamianReeves/write-file-action@v1.3
         with:
           path: latest_release.md
           contents: ${{ steps.release.outputs.body }}
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       - run: pnpm install --prod
 
@@ -106,7 +106,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       - run: pnpm install --prod
 

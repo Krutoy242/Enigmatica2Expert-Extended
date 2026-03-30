@@ -21,9 +21,21 @@
 		type: "custom",
 		title: "Give next Conflux tier role",
 		tags: [
-			"conflux_i"
+			"conflux_i",
+			"personal"
 		],
 		auto: "enabled"
+	},
+	{
+		uid: "6b7841b6",
+		type: "custom",
+		title: "Broadcast message for everyone",
+		tags: [
+			"conflux_i",
+			"team"
+		],
+		team_reward: 1b,
+		auto: "invisible"
 	},
 	{
 		uid: "f9ec55d7",

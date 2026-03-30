@@ -433,6 +433,15 @@ craft.make(<botania:blackholetalisman>, ['pretty',
   'E': <ore:bEnderAirBottle>,             // Ender Air Bottle
 });
 
+// Cheaper since usage is too weak in modded environment
+craft.remake(<botania:grasshorn>, ['pretty',
+  '  B  ',
+  'B T B',
+  'B B  '], {
+  'B': <botania:petal:12>,
+  'T': <ore:grassTall>,
+});
+
 // Alt recipe for magic-only space exploration
 // [Dilithium Crystal] from [Dilithium Dust]
 mods.botania.ManaInfusion.addInfusion(<libvulpes:productgem>, <ore:dustDilithium>, 10000);

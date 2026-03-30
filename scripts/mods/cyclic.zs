@@ -794,3 +794,13 @@ craft.remake(<cyclicmagic:block_fragile_auto> * 16, ['pretty',
   '#': <ore:stickWood>,        // Stick
   '♥': <ore:dustTinyRedstone>, // Tiny Pile of Redstone Dust
 });
+
+// Add unbreakable recipes for easy usage
+craft.reshapeless(<cyclicmagic:tool_harvest_leaves>.withTag({enchantmentColor: 2437522, ench: [{}], Unbreakable: 1 as byte}), 'TH', {
+  'T': <cyclicmagic:tool_harvest_leaves>,
+  'H': <botania:grasshorn:1>,
+});
+craft.reshapeless(<cyclicmagic:tool_harvest_weeds>.withTag({enchantmentColor: 2437522, ench: [{}], Unbreakable: 1 as byte}), 'BH', {
+  'B': <cyclicmagic:tool_harvest_weeds>,
+  'H': <botania:grasshorn>,
+});

@@ -1,6 +1,6 @@
 {
-	x: 0.08333333333333337d,
-	y: 0.125d,
+	x: -0.08333333333333333d,
+	y: 0.5d,
 	text: [
 		"{q.extra_utilities.dark_glass.desc}"
 	],

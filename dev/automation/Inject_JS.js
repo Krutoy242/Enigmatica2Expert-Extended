@@ -53,7 +53,6 @@ import {
   config,
   defaultHelper,
   getCSV,
-  getPDF,
   injectInFile,
   loadJson,
   loadText,

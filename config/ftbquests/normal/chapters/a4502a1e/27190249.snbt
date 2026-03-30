@@ -1,6 +1,6 @@
 {
-	x: 1.75d,
-	y: -0.37499999999999994d,
+	x: 1.9166666666666667d,
+	y: -0.25d,
 	text: [
 		"{q.extra_utilities.angel_block.desc}"
 	],

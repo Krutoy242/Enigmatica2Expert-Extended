@@ -26,6 +26,7 @@ for entityDef, drops in scripts.cot.functions.lifeRecipes {
   if (isNull(entityDef)) continue;
 
   for item, outChance in drops {
+    if (isNull(item)) continue;
     val recipe = JEI.createJeiRecipe('conglomerate_of_life');
     recipe.addInput(entityDef.asIngr());
 

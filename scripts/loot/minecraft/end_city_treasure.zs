@@ -5,7 +5,7 @@ val location = 'minecraft:chests/end_city_treasure';
 
 scripts.lib.loot.removePools(location,
   ['floralchemy_inject_pool',
-    'spectrecoil_number',
+    'randomthings:spectrecoil_number',
     'Ender IO',
     'forestry_arboriculture_items']
 );

@@ -164,7 +164,7 @@ zenClass MixinIafVillagerRegistry {
         addTrade(1, 'forestry:fruits:5'              ,  2,  4 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(1, 'forestry:fruits:6'              ,  1,  2 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(2, 'forestry:butterfly_ge'          , 1, 1   , 'iceandfire:myrmex_jungle_resin_glass'   , 2, 3);
-        addTrade(3, 'thermalfoundation:material:833' , 10, 40 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
+        addTrade(3, 'thermalfoundation:material:833' , 5,  20 , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(4, 'forestry:propolis:1'            , 1, 3   , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(5, 'forestry:propolis:3'            , 1, 3   , 'iceandfire:myrmex_jungle_resin'         , 32, 64);
         addTrade(6, 'forestry:crafting_material:5'   , 1, 4   , 'iceandfire:myrmex_jungle_resin_glass'   , 1, 1);

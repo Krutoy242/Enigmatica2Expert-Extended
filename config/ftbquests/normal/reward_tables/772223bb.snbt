@@ -11,6 +11,8 @@
 		count: 4
 	},
 	{
-		item: "mysticalagriculture:osmium_essence"
+		icon: "cyclicmagic:magnet_anti_block 2",
+		item: "cyclicmagic:magnet_anti_block",
+		count: 2
 	}]
 }

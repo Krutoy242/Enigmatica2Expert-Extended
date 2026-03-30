@@ -3,15 +3,6 @@
 	loot_size: 1,
 	use_title: 1b,
 	rewards: [{
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "generators"
-			}
-		},
-		weight: 25
-	},
-	{
 		item: "actuallyadditions:item_spawner_changer"
 	},
 	{
@@ -34,19 +25,24 @@
 		count: 16
 	},
 	{
+		icon: "libvulpes:elitemotor 4",
+		item: "libvulpes:elitemotor",
+		count: 4
+	},
+	{
 		icon: "extrautils2:ingredients 4 6",
 		item: "extrautils2:ingredients 1 6",
 		count: 4
 	},
 	{
-		icon: "extrautils2:ingredients 4 15",
+		icon: "extrautils2:ingredients 8 15",
 		item: "extrautils2:ingredients 1 15",
-		count: 4
+		count: 8
 	},
 	{
-		icon: "extrautils2:ingredients 4 16",
+		icon: "extrautils2:ingredients 16 16",
 		item: "extrautils2:ingredients 1 16",
-		count: 4
+		count: 16
 	},
 	{
 		icon: {
@@ -56,7 +52,7 @@
 				T: 3s,
 				CA.I1: "forestry.machine.speed.boost.2",
 				CA.I2: "forestry.machine.speed.boost.2",
-				CA.I3: "forestry.machine.speed.boost.2",
+				CA.I3: "forestry.machine.efficiency.1",
 				CA.I0: "forestry.machine.speed.boost.2",
 				LY: "forestry.machine.upgrade"
 			},
@@ -68,7 +64,7 @@
 				T: 3s,
 				CA.I1: "forestry.machine.speed.boost.2",
 				CA.I2: "forestry.machine.speed.boost.2",
-				CA.I3: "forestry.machine.speed.boost.2",
+				CA.I3: "forestry.machine.efficiency.1",
 				CA.I0: "forestry.machine.speed.boost.2",
 				LY: "forestry.machine.upgrade"
 			},
@@ -219,13 +215,14 @@
 		count: 2
 	},
 	{
-		item: {
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "materials"
-			}
-		},
-		weight: 25
+		icon: "teslacorelib:energy_tier2 64",
+		item: "teslacorelib:energy_tier2",
+		count: 64
+	},
+	{
+		icon: "teslacorelib:speed_tier2 64",
+		item: "teslacorelib:speed_tier2",
+		count: 64
 	},
 	{
 		item: {
@@ -253,6 +250,16 @@
 	},
 	{
 		item: "tconevo:material 1 2"
+	},
+	{
+		item: {
+			id: "thaumicwonders:alienist_stone",
+			tag: {
+				enchantmentColor: 14602026,
+				ench: [{}],
+				Unbreakable: 1b
+			}
+		}
 	}],
 	loot_crate: {
 		string_id: "rare",

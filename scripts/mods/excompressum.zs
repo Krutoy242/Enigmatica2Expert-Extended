@@ -1,5 +1,7 @@
 #modloaded excompressum
 
+<excompressum:bat_zapper>.maxDamage = 6000;
+
 // Cow Bait
 recipes.remove(<excompressum:bait:2>);
 recipes.addShapeless('Cow Bait',

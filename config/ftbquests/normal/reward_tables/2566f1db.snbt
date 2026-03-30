@@ -467,6 +467,14 @@
 	},
 	{
 		item: {
+			id: "tconstruct:shard",
+			tag: {
+				Material: "fireproof"
+			}
+		}
+	},
+	{
+		item: {
 			id: "tconevo:part_arcane_focus",
 			tag: {
 				Material: "enderium"

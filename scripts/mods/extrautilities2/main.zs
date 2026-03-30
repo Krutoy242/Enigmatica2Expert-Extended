@@ -10,19 +10,39 @@ mods.jei.JEI.hideCategory('xu2_machine_extrautils2:generator');
 
 static machineBlock as IIngredient = <extrautils2:machine>.only(function(item){return !item.hasTag;});
 
+craft.remake(<extrautils2:spike_iron>, ['pretty',
+  '  S  ',
+  '□ M □',
+  '□ E □'], {
+  'S': <extrautils2:spike_stone>,
+  '□': <ore:plateIron>,
+  'M': <extrautils2:decorativesolidwood>,
+  'E': <extrautils2:ineffableglass>,
+});
+craft.remake(<extrautils2:spike_gold>, ['pretty',
+  '  I  ',
+  '□ S □',
+  '□ E □'], {
+  'I': <extrautils2:spike_iron>,
+  '□': <ore:plateGold>,
+  'S': <extrautils2:decorativesolid:3>,
+  'E': <extrautils2:ineffableglass>,
+});
+craft.remake(<extrautils2:spike_diamond>, ['pretty',
+  '  G  ',
+  'C Q C',
+  'C E C'], {
+  'G': <extrautils2:spike_gold>,
+  'C': <ore:itemCompressedDiamond>,
+  'Q': <extrautils2:decorativesolid:7>,
+  'E': <extrautils2:ineffableglass>,
+});
+
 // Recycle spikes
 scripts.process.melt(<extrautils2:spike_gold>, <fluid:gold> * (144 * 4));
 
 // Bag of Holding
 recipes.remove(<extrautils2:bagofholding>);
-
-// Diamond Spike
-recipes.remove(<extrautils2:spike_diamond>);
-recipes.addShapedMirrored('Diamond Spike',
-  <extrautils2:spike_diamond>,
-  [[null, <redstonearsenal:tool.sword_flux>.anyDamage(), null],
-    [<immersiveengineering:metal_decoration1_slab:5>, <ore:itemCompressedDiamond>, <immersiveengineering:metal_decoration1_slab:5>],
-    [<ore:itemCompressedDiamond>, <ore:itemCompressedDiamond>, <ore:itemCompressedDiamond>]]);
 
 // Redstone Clock
 recipes.remove(<extrautils2:redstoneclock>);
@@ -196,7 +216,7 @@ mods.extrautils2.Resonator.add(<extrautils2:decorativesolid:6> * 64, <extrautils
 
 // Make quartzburnt harder (was 8 GP)
 mods.extrautils2.Resonator.remove(<extrautils2:decorativesolid:7>);
-mods.extrautils2.Resonator.add(<extrautils2:decorativesolid:7>, <minecraft:quartz_block>, 80 * 100);
+mods.extrautils2.Resonator.add(<extrautils2:decorativesolid:7>, <actuallyadditions:block_misc:2>, 80 * 100);
 
 // Upgrade base from demonic ingot
 mods.extrautils2.Resonator.remove(<extrautils2:ingredients:9>);
@@ -262,11 +282,15 @@ craft.remake(<extrautils2:screen>, ['pretty',
 });
 
 // *======= Ring Of The Flying Squid =======*
-remake('Ring Of The Flying Squid',
-  <extrautils2:chickenring:1>,
-  [[<extrautils2:ineffableglass>, <actuallyadditions:item_misc:19>, <extrautils2:ineffableglass>],
-    [<ore:plateDenseGold>, <extrautils2:chickenring>, <ore:plateDenseGold>],
-    [<minecraft:golden_apple>, <extrautils2:goldenlasso>.withTag({ Animal: { id: 'minecraft:squid' } }), <minecraft:golden_apple>]]);
+craft.remake(<extrautils2:chickenring:1>, ['pretty',
+  '  o  ',
+  'E C E',
+  '  G  '], {
+  'o': <minecraft:web>,
+  'E': <extrautils2:ineffableglass>,
+  'C': <extrautils2:chickenring>,
+  'G': <extrautils2:goldenlasso>.withTag({Animal: {id: "minecraft:squid"}}),
+});
 
 // *======= Angel Ring =======*
 for i in 0 .. 6 {
@@ -497,6 +521,24 @@ craft.make(<extrautils2:miner>, ['pretty',
   '▲': <ore:dustCoke>,                // Coke Dust
   '░': <ore:cobblestone>,             // Cobblestone
   '♥': <ore:gearRedstone>,            // Redstone Gear
+});
+
+// Cheaper upgrades since they dont give this much benefits considering GP usage
+craft.remake(<extrautils2:ingredients:15> * 4, ['pretty',
+  'M ▬ M',
+  '▬ U ▬',
+  'M ▬ M'], {
+  'M': <extrautils2:magicapple>,
+  '▬': <ore:ingotEnchantedMetal>,
+  'U': <ore:xuUpgradeSpeed>,
+});
+craft.remake(<extrautils2:ingredients:16> * 4, ['pretty',
+  'd ▬ d',
+  '▬ U ▬',
+  'd ▬ d'], {
+  'd': <ore:dropofevil>,
+  '▬': <ore:ingotEvilMetal>,
+  'U': <ore:xuUpgradeSpeedEnchanted>,
 });
 
 // [Sandy Glass] from [Sand][+1]

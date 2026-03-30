@@ -19,12 +19,12 @@ import scripts.lib.tellraw.itemObj;
 static BASE_TIER as int = 1;
 
 static catalystRequirments as IIngredient[] = [
-  <extendedcrafting:material:8>,
-  <extendedcrafting:material:9>,
-  <extendedcrafting:material:10>,
-  <extendedcrafting:material:11>,
-  <extendedcrafting:material:12>,
-  <extendedcrafting:material:13>,
+  <extendedcrafting:material:14>,
+  <extendedcrafting:material:15>,
+  <extendedcrafting:material:16>,
+  <extendedcrafting:material:17>,
+  <extendedcrafting:material:18>,
+  <extendedcrafting:material:19>,
 ] as IIngredient[];
 
 for i in 0 .. 6 {

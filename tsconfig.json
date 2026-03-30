@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2022",
     "experimentalDecorators": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "strictNullChecks": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true
   },
   "include": ["**/*.js", "**/*.mjs", "**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]

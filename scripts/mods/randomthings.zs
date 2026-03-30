@@ -33,9 +33,6 @@ recipes.removeShapeless(<minecraft:brown_mushroom>, [<nuclearcraft:glowing_mushr
 recipes.addShapeless('Random Things Glowing Mushroom',
   <randomthings:glowingmushroom>, [<nuclearcraft:glowing_mushroom>]);
 
-// Nerf from 300
-furnace.setFuel(<randomthings:blockofsticks>, 80);
-
 recipes.remove(<randomthings:idcard>);
 recipes.addShapeless('idcard',
   <randomthings:idcard>,
@@ -324,14 +321,24 @@ craft.remake(<randomthings:naturecore>, ['pretty',
   'E': <darkutils:monolith>,
 });
 
+// Very cheap to compete with other scaffold variants
+craft.remake(<randomthings:blockofsticks> * 64, ['pretty',
+  '# # #',
+  '#   #',
+  '# # #'], {
+  '#': <ore:stickWood>,
+});
+
+// Nerf since very cheap
+furnace.setFuel(<randomthings:blockofsticks>, 0);
+
 // Cheaper (used ender pearl)
-// [Returning_Block_of_Sticks*8] from [Floo_Powder][+1]
-craft.remake(<randomthings:blockofsticks:1> * 8, ['pretty',
-  '□ □ □',
-  '□ F □',
-  '□ □ □'], {
-  '□': <randomthings:blockofsticks>, // Block of Sticks
-  'F': <randomthings:ingredient:7>,   // Floo Powder
+craft.remake(<randomthings:blockofsticks:1> * 64, ['pretty',
+  '# # #',
+  '# F #',
+  '# # #'], {
+  '#': <ore:stickWood>,
+  'F': <randomthings:ingredient:7>,
 });
 
 // [Eclipsed_Clock] from [Spectre_Illuminator][+2]
@@ -503,15 +510,6 @@ craft.remake(<randomthings:enderanchor>, ['pretty',
   'S': <randomthings:stableenderpearl>,     // Stable Ender Pearl
   'E': <randomthings:ingredient:2>,         // Ectoplasm
   'R': <enderio:block_reinforced_obsidian>, // Reinforced Obsidian
-});
-
-// Conflict with Compressed Sticks
-// [Block of Sticks] from [Stick]
-craft.remake(<randomthings:blockofsticks> * 8, ['pretty',
-  '# # #',
-  '#   #',
-  '# # #'], {
-  '#': <ore:stickWood>, // Stick
 });
 
 // Cheaper but use more specific ingredients (basalt)

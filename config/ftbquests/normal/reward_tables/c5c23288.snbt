@@ -65,9 +65,9 @@
 						Damage: 0s
 					},
 					Slot8: {
-						id: "endreborn:item_advanced_ender_pearl",
-						Count: 1b,
-						Damage: 0s
+						id: "randomthings:blockofsticks",
+						Damage: 1s,
+						Count: 64b
 					}
 				},
 				Accessible: 1b

@@ -41,11 +41,11 @@
 	rewards: [{
 		uid: "0123edc0",
 		type: "custom",
-		title: "{e2ee.quest.uncommon}",
+		title: "{e2ee.quest.generators}",
 		icon: {
 			id: "ftbquests:lootcrate",
 			tag: {
-				type: "uncommon"
+				type: "generators"
 			}
 		},
 		tags: [

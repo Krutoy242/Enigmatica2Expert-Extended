@@ -4,11 +4,26 @@
 
 ### 🐛 Bugfixes
 
+- [ ] 📀 `Automated User` from Cyclic - fix delay is 1 tick on placement
+- [ ] ✏️ `Bat Zapper` add to Omniwand
+- [ ] 📀 `Leaf Eating Generator` increase storage and output rate to match working speed
+- [ ] 🔴 Remove `betterfps` since its doubdful that it working
+- [ ] 🔴 Remove `aireducer` since not working
+- [ ] ✏️ `Death Generator` - replace ingredients to Heads and skulls
+- [ ] ✏️ XU2 speed upgrades cheaper x4 since lot of them required
+- [ ] ✏️ Make `Dank/Null/` require `Component` instead of Catalyst since dock cant void excesses
+- [ ] ✏️ `Diamond Spikes` require only `Conflux II` ingredients (Flux Sword now is Conflux III)
+- [ ] ✏️ `Quartzburnt` should be made from `Black Quartz` instead of vanilla
+- [ ] ✏️ `Ring Of Flying squid` should not require Nether Star. Jetpack ingredients instead
 - [ ] 📀 Disable `Vanta Oil` recipes to remove cluttering
 - [ ] 🔨 `Refining` doesnt work on Redstone Ore
 
 ### ✨ New features
 
+- [ ] 🟢 Add `fancy-outlines` mod
+- [ ] 🔨 add `3D print` TCon material. Probably by printing exact tool parts that converted into TCon items. Abilities: Mods +3?, Charge nanomachines?
+- [ ] 🔵 Migrate to `Quantum-Things`
+- [ ] 🚀 Add skyblock icon in planet selector
 - [ ] 🚀 Improve AR integration of GasMissions - now they allow to pump lot of gasses
 - [ ] 💡 Idea: new TCon Armory `Bauble ring` with different parts for getting traits power without armor
 - [ ] 📀 `Time in a Bottle` do not add time when AFK
@@ -73,6 +88,10 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ⚡ Remove `Cyclic`'s machines completely because they are laggy: https://i.imgur.com/cbCJJBq.png (replace with FluidInteractionTweaker)
 
 ### Quests and Docs expansion
+- [ ] 📖 `Lucerna Ritual crystal` with augment - add to Legendary or higher
+- [ ] 📖 `Lens of the miner` set reward to Rare
+- [ ] 📖 `Materials` chest move to Uncommon
+- [ ] 📖 `Mechanical User` change task to checkmark (since too hard to craft) and add descriptions about items that can replace user
 - [ ] 📖 When player enters world for the first time, pin first quest to the screen. This enforce people to know how to disable pins.
 - [ ] 📖 Add hint that `Robot` can automate Singularities
 - [ ] 📖 `Amazing Glasses` - disable GUIs when wear
@@ -101,6 +120,12 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📖 Note that `Singularities` consume items in inventory
 - [ ] 📖 Add bonus information on modpack finished, like time played, some stats and so on
 - [ ] 📖 Add note that EU2 Mining Node can automate fluid interactions
+- [ ] 📖 Describe Skyblock quests
+- [ ] 📖 Better document Butterfly => Wasp transform in Nether Portal
+- [ ] 📖 Add quest book chapter about built-in excavators
+- [ ] 📖 Add message about mining Ores in Nether that aggro Pigman. Use whitelist, ignore if Peaceful.
+- [ ] 📖 Add AS ritual to quest book
+- [ ] 📖 List of items that may be add into loot boxes in future: Fireproof Shards, Copernicium-291, IC2 seeds, https://i.imgur.com/G0A2KF1.png https://i.imgur.com/99itSSA.png
 
 ### "Battle" expansion
 - [ ] ✏️ Buff EU saber - give it more damage? But better split entities in two.
@@ -121,7 +146,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Use `Eye of Cyclops` as ingredient
 - [ ] ✏️ Use `Huge Stalk` as ingredient
 - [ ] ✏️ `Harbinger Cube` must spawn with strong Iron/Diamond skin effects and as Blight
-- [ ] ✏️ Add mobs that always blights (probably breedable mobs)
+- [ ] ✏️ Add mobs that always blights (probably breedable mobs, `amphitere`)
 - [ ] ✏️ Moon stone could be used in Animals chapter
 - [ ] ✏️ Add more seeds compat for Graden Cloche https://github.com/michelegargiulo/ZenCloche/wiki
 - [ ] ✏️ Add `Block Shrooms` + `salis mundus` => `something` recipe
@@ -168,7 +193,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 🧱 Skyblock: Make `Porouse Stone` and `AA Ore Laser` mandatory in skyblock
 
 ### Mods
-- [ ] 🟠 Migrate `vtt` => `Roidstweaker` when fixed https://github.com/roidrole/Roids-Tweaker/issues/11
 - [ ] 🟠 Do not update **JAOPCA** - uncompatible with `JAOPCACustom`
 - [ ] 🟠 Do not update **籁/Sound Physics Remixin** `1.1.17` or above - uncompatible with `Java 8`
 - [ ] 🟠 Do not update **LootTweaker** `0.3.3` or above - its removing deprecated functions used since E2E
@@ -269,15 +293,12 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Printing and assembling Chaos Guardian spawns Chaos Guardian
 - [ ] 💥 going Between Dims Causing Client Freezez / memory leak
 - [ ] ✏️ `Burnt in fluid` fix accept any meta
-- [ ] 📖 Describe Skyblock quests
 - [ ] ✏️ Lootr still turn Dispensers into Lootr Chests https://github.com/noobanidus/Lootr/issues/189
 - [ ] ✏️ Nature chests still turn into Lootr
 - [ ] 💅 twlight forest advancement not showing up in advancement tab v1.2.1. Need conformation
 - [ ] ✏️ Make use of IC2 brewing
 - [ ] 🔄 Implement https://github.com/Divine-Journey-2/Divine-Journey-2/pull/829
 - [ ] 🚂 Buff mek steam a little
-- [ ] 📖 Better document Butterfly => Wasp transform in Nether Portal
-- [ ] 📖 Fix completion of quest chapters
 - [ ] ✏️ Chemical thrower turns stone into ore if spreading on exact block (calculated based on world seed). Can be determined with Computer
 - [ ] ✏️ `Conglomerate of Life` spawns Foxes and Pigmen near portal
 - [ ] ✏️ Rebalance Sage and Druids trades
@@ -290,8 +311,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📀 Make ic2 crops scanned by default
 - [ ] ✏️ Remove Fiery fruit from Target Chamber recipe
 - [ ] 🔄 Inspect crash when placing Replicator near energy and break it
-- [ ] 📖 Add quest book chapter about built-in excavators
-- [ ] 📖 Add message about mining Ores in Nether that aggro Pigman. Use whitelist, ignore if Peaceful.
 - [ ] ✏️ Re-integrate molten `Amber`. But why?
 - [ ] ✏️ Add Matter Balls craftable without compressor (they still obtainable through scrap boxes)
 - [ ] ✏️ Re-integrate NCO `Melter`. All things meltable in Melter should be meltable in Smeltery
@@ -300,7 +319,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 📖 `AnyMeatraw` should cycle in JEI. This usually possible with ore.firstItem, but not working for some reason.
 - [ ] 🔨 Add trait that auto-consume Sharpening Kits to repair TCon Tools
 - [ ] ✏️ Add AS Grindstone recipe that rely on doubling chance mechanic
-- [ ] 📖 Add AS ritual to quest book
 - [ ] 💻 Add info about OC changes like https://www.reddit.com/r/feedthebeast/comments/98phxv/filtering_by_nbt_tag/
 - [ ] 🔄 Make `scripts/jei` files not loaded on server
 - [ ] 🐛 Items textures not animated too when **Animated Terrain** disabled
@@ -308,7 +326,6 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Petrotheum `Conflux I` craft, probably Quicksand => Tube => Petrotheum
 - [ ] ✏️ Add craft mechanic - Mud Ball hit something (called "humilate")
 - [ ] ✏️ Add mobs in Mek's gear
-- [ ] 📖 List of items that may be add into loot boxes in future: Fireproof Shards, Copernicium-291, IC2 seeds, https://i.imgur.com/G0A2KF1.png https://i.imgur.com/99itSSA.png
 - [ ] 🔄 Add custom progression for Twilight Forest based on Quest Book, since achievments can be disabled
 - [ ] 📀 Fix NPE https://is.gd/wZprY2
 - [ ] ✏️ Add multiblock structure that speed up blocks like Time In Bottle, but based on numbers of mobs around https://is.gd/tPPqt2
@@ -342,10 +359,12 @@ Planned non-urgent changes, or just good ideas:
 - 🐛 Viewing inventories that you cant actually take from (TCon tables)
 - 🐛 Imersive Ingenering Guns lags
 - 🐛 Gnetum lags
+- 🐛 Fix ignoring NBT for ingredients (EU2 Machine Block for example)
 
 **New Feats**:
 - ✨ Bauble compat
 - ✨ Shift+Click support
+- ✨ TAB to repeat last craft
 
 ---
 

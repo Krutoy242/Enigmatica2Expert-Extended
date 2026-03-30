@@ -6,5 +6,16 @@
 	],
 	always_invisible: 0b,
 	group: 0,
-	default_quest_shape: ""
+	default_quest_shape: "",
+	images: [{
+		x: -1.2d,
+		y: 6.4d,
+		width: 3.15625d,
+		height: 2.0d,
+		rotation: 0.0d,
+		image: "ftbquests:textures/gui/reactor-lzh.png",
+		hover: [],
+		click: "",
+		dev: 0b
+	}]
 }

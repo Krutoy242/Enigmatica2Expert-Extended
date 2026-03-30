@@ -30,6 +30,9 @@ zenClass Config {
   // Could be enabled with command /portal_spread debug
   static debug as bool = false;
 
+  // Stylazed icon of portal '§8[§5░§8] ';
+  static prefix as string = '\u00A78[\u00A75\u2591\u00A78] ';
+
   // -----------------------------------------------
   // Technical private fields
   // -----------------------------------------------
@@ -56,8 +59,20 @@ zenClass Config {
  */
 function setModifier(
   items as IIngredient,
-  keys as string[]
+  keys as string[],
+  addTooltip as bool = false
 ) as void {
+  // Add tooltips
+  if (addTooltip) {
+    var tooltip_text = game.localize('portal_spread.modifier.header');
+    for key in keys {
+      tooltip_text += '\n' + game.localize('portal_spread.modifier.' + key);
+    }
+    for i, line in tooltip_text.split('\n|<br>') {
+      items.addTooltip((i == 0 ? Config.prefix : '') ~ line);
+    }
+  }
+
   // Fill all items to array
   for item in items.itemArray {
     val block = item.asBlock();

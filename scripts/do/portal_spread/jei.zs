@@ -14,6 +14,7 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import mods.jei.JEI;
 import mods.randomtweaker.jei.IJeiUtils;
+import mods.randomtweaker.jei.IJeiRecipe;
 
 import scripts.do.portal_spread.utils.stateToItem;
 
@@ -101,11 +102,13 @@ for dimFrom, dimFromData in scripts.do.portal_spread.recipes.spread.stateRecipes
 for input, outputs in recipeMap {
   if (isNull(outputs)) continue;
 
-  val recipe = JEI.createJeiRecipe(categoryId).addInput(input);
+  var recipe as IJeiRecipe = null;
 
   for output in outputs {
+    if (isNull(output)) continue;
+    if (isNull(recipe)) recipe = JEI.createJeiRecipe(categoryId).addInput(input);
     recipe.addOutput(output);
   }
 
-  recipe.build();
+  recipe?.build();
 }

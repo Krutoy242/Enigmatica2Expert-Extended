@@ -1,0 +1,10 @@
+var allMods = ModListUtils.getCurrentModList(true);
+var mods = allMods.stream().toMap(m -> m.modId, m -> m);
+
+var m_essential_container = mods.get("essential-container");
+if (m_essential_container != null) {
+    var warn = Startup.addCrashWarning("Essential is incompatible for reasons that are listed here. Consider using <a href=\"https://www.curseforge.com/minecraft/mc-mods/e4mc-retro\">E4MC Retro</a> instead.");
+    warn.withModActions(m_essential_container);
+    Startup.markForCrash();
+}
+

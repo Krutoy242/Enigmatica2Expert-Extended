@@ -190,7 +190,7 @@ function init() as void {
 }
 
 events.register(function (e as PlayerInteractBlockEvent) {
-  if (e.hand != 'MAIN_HAND' || e.player.isSneaking) return;
+  if (e.hand != 'MAIN_HAND' || !e.player.isSneaking) return;
 
   val item = e.item;
   if (isNull(item) || !(item.toolClasses has 'pickaxe')) return;

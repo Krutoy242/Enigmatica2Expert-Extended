@@ -20,13 +20,26 @@
 	}],
 	rewards: [{
 		uid: "821225aa",
-		type: "command",
-		auto: "invisible",
-		command: "/tellraw @a [{\"text\":\"\\n# `\",\"color\":\"dark_gray\",\"extra\":[{\"text\":\"@p\",\"bold\":true,\"color\":\"aqua\"},\"`\",{\"text\":\" has completed \",\"color\":\"white\"},\"**\",{\"translate\":\"Enigmatica 2: Expert - Extended\",\"color\":\"gold\",\"bold\":true},\"**\",{\"text\":\", congratulations!\\n🎉🎉🎉\",\"color\":\"white\"}]}]"
+		type: "custom",
+		title: "Notify everyone",
+		tags: [
+			"packcomplete"
+		],
+		team_reward: 1b,
+		auto: "no_toast"
 	},
 	{
 		uid: "ea9c1dad",
 		type: "item",
 		item: "storagedrawers:upgrade_creative 1 1"
+	},
+	{
+		uid: "1654ec90",
+		type: "custom",
+		title: "Show stats to everyone",
+		tags: [
+			"show_stats"
+		],
+		auto: "invisible"
 	}]
 }

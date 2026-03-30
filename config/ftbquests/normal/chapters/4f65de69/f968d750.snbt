@@ -37,5 +37,14 @@
 		uid: "623693b7",
 		type: "item",
 		item: "additionalcompression:logwood_compressed 1 2"
+	},
+	{
+		uid: "b20d2027",
+		type: "custom",
+		title: "Pin quest \"What is this and how do i get rid of it?\"",
+		tags: [
+			"pin_another_quest"
+		],
+		auto: "invisible"
 	}]
 }

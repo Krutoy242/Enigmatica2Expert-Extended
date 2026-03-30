@@ -11,8 +11,10 @@ import mixin.Operation;
 
 import native.java.lang.Boolean;
 
+import native.net.minecraft.inventory.InventoryCrafting;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.nbt.NBTTagCompound;
+import native.net.minecraft.world.World;
 import native.rustic.common.tileentity.ContainerVase;
 import native.rustic.common.util.ItemStackHandlerRustic;
 
@@ -215,4 +217,16 @@ zenClass MixinTileEntityVase {
         return original && stack.getCount() + itemStackHandler.getStackInSlot(index).getCount() <= itemStackHandler.getSlotLimit(index);
     }
 
+}
+
+/*
+Disable Vanta Oiling, since in large modpacks
+it clutters JEI with hundreds of useless recipes.
+*/
+#mixin {targets: "rustic.common.crafting.RecipeVantaOil"}
+zenClass MixinRecipeVantaOil {
+    #mixin Overwrite
+    function func_77569_a(inv as InventoryCrafting, worldIn as World) as bool {
+        return false;
+    }
 }

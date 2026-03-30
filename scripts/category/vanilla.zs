@@ -1,12 +1,9 @@
-#modloaded loottweaker
 #priority -1
 #ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
-import loottweaker.vanilla.loot.Conditions;
-import loottweaker.vanilla.loot.Functions;
 
 // -------------------------------------------------------------------------------
 // Tools
@@ -16,31 +13,6 @@ import loottweaker.vanilla.loot.Functions;
 <minecraft:elytra>.maxDamage = 1200;
 
 <minecraft:cake>.maxStackSize = 64;
-
-// -------------------------------------------------------------------------------
-// Loot
-// -------------------------------------------------------------------------------
-
-// Add 100% Guardian Diode to Guardian
-val guardTbl = loottweaker.LootTweaker.getTable('minecraft:entities/elder_guardian');
-guardTbl.getPool('pool3').removeEntry('minecraft:gameplay/fishing/fish');
-guardTbl.addPool('diode', 1, 1, 1, 1).addItemEntryHelper(<enderio:item_material:56>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
-
-// Add drops to vanilla entities
-scripts.lib.loot.tweak('minecraft:entities/endermite', 'main', null, null, [<appliedenergistics2:material:46>], [1, 3]);
-scripts.lib.loot.tweak('minecraft:entities/endermite', 'main', null, null, [<contenttweaker:item_ore_tungsten> % 25], [1, 1], true);
-
-val endermanPool = loottweaker.LootTweaker.getTable('minecraft:entities/enderman').getPool('main'); // Enderman (make enderpearls drop 100% of the time)
-endermanPool.removeEntry('minecraft:ender_pearl'); // Remove main enderpearl entry
-endermanPool.addItemEntryHelper(<minecraft:ender_pearl>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
-
-// More Zombie Pigman gold drop
-loottweaker.LootTweaker.getTable('minecraft:entities/zombie_pigman').getPool('main')
-  .addItemEntryHelper(<minecraft:gold_ingot>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
-
-// Vex
-loottweaker.LootTweaker.getTable('minecraft:entities/vex').getPool('main')
-  .addItemEntryHelper(<deepmoblearning:living_matter_overworldian>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0), Functions.setCount(0, 1)], [Conditions.killedByPlayer()]);
 
 // -------------------------------------------------------------------------------
 

@@ -19,3 +19,12 @@ portal_spread.0_max=§7Портал полностью остановил рас
 portal_spread.1_add=§7Вы чувствуете, что энергия портала становится §6сильнее§7.
 portal_spread.1_red=§7Вы чувствуете, что энергия портала становится §3слабее§7.
 portal_spread.1_max=§7Портал достиг максимальной скорости распространения.
+
+# Модификаторы портала
+portal_spread.modifier.header=§3Будучи в углу портала, этот блок даёт следующие модификаторы:
+portal_spread.modifier.slow=§c- Замедляет распространение
+portal_spread.modifier.fast=§a- Ускоряет распространение
+portal_spread.modifier.weak=§c- Уменьшает кол-во блоков, сканируемых за волну
+portal_spread.modifier.potent=§a- Увеличивает кол-во блоков, сканируемых за волну
+portal_spread.modifier.small=§c- Уменьшает радиус распространения
+portal_spread.modifier.large=§a- Увеличивает радиус распространения

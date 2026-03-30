@@ -1,73 +1,8 @@
-[main/WARN] [Foundation]: Tweak name org.spongepowered.asm.mixin.EnvironmentStateTweaker has already been visited -- skipping
-[main/ERROR] [mixin]: Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser from mod unknown-owner target net.minecraftforge.fml.common.discovery.asm.ASMModParser was loaded too early.
-[main/WARN] [mixin]: Error loading class: Config (java.lang.ClassNotFoundException: The specified class 'Config' was not found)
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:missingno
-[Client thread/WARN] [CustomLoadingScreen]: [debug]   - Failed to open stream as class java.io.FileNotFoundException:E:\mc\packs\E2EE-Java25\.minecraft\resources\minecraft\missingno (Не удается найти указанный файл)
-[Client thread/WARN] [mixin]: Method overwrite conflict for getStackInSlot in mixins/mods/mixins.bibliocraft.handler.json:UTBiblioTileEntityMixin from mod UniversalTweaks-1.12.2-1.18.0.jar, previously written by io.github.lxgaming.sledgehammer.mixin.bibliocraft.tileentities.BiblioTileEntityMixin. Skipping method.
-[Client thread/WARN] [modularui]: Custom cursors are currently not compatible with lwjgl 3. They will be disabled.
-[Client thread/WARN] [mixin]: @Inject(@At("INVOKE")) Shift.BY=2 on mixins.thaumictweaker.json:tiles.TileVoidSiphonMixin from mod unknown-owner::handler$xxx000$unknown_owner$wussModeSeedCreation exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
-[PI-Update-Manager:worker-0/WARN] [brandonscore]: ThreadFileDownloader: DL Failed Read timed out
-[PI-Update-Manager:worker-1/WARN] [brandonscore]: ThreadFileDownloader: DL Failed Read timed out
-[PI-Update-Manager/ERROR] [brandonscore]: [Pi Reported Error]: Failed to download one or more mod download manifests
-[PI-Update-Manager/ERROR] [brandonscore]: [Pi Reported Error]: An error occurred while reading download list for mod draconicevolution See console for stacktrace.
-[PI-Update-Manager/ERROR] [brandonscore]: [Pi Reported Error]: An error occurred while reading download list for mod enderio See console for stacktrace.
-[PI-Update-Manager/ERROR] [brandonscore]: [Pi Reported Error]: Failed to download one or more mod page files!
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture thaumicenergistics:textures/block/arcane_assembler_active.png with size 26x26 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock.2.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock.3.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock.4.png with size 1x1 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture aeadditions:textures/blocks/walrus2.png with size 925x925 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/black.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture bundles:textures/slots/slot_not_full.png with size 18x18 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture astralsorcery:textures/models/star_bg.png with size 1125x1125 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture bundles:textures/slots/slot.png with size 18x18 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture opencomputers:textures/model/hologram_effect.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock_ctm.4.png with size 2x2 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/antiblock/antiblock_ctm.3.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/white.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/pressurizedtubeverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/flash.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture twilightforest:textures/items/yeti_helm.png with size 18x18 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock_ctm.3.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock_ctm.4.png with size 2x2 will have visual artifacts at mip level 4, it can only support level 1. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/universalcableverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticalbasic.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticaladvanced.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/pressurizedtubeverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock.4.png with size 1x1 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock.3.png with size 4x4 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture chisel:textures/blocks/mipmaps/blocks/antiblock/antiblock.2.png with size 8x8 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture immersiveengineering:textures/models/blueprint_frame.png with size 56x56 will have visual artifacts at mip level 4, it can only support level 3. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/thermodynamicconductorverticalelite.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/universalcableverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture trinity:textures/models/fireball.png with size 1025x1025 will have visual artifacts at mip level 4, it can only support level 0. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/WARN] [net.minecraft.client.renderer.texture.TextureMap]: Texture mekanism:textures/blocks/models/multipart/opaque/thermodynamicconductorverticalultimate.png with size 12x12 will have visual artifacts at mip level 4, it can only support level 2. Please report to the mod author that the texture should be some multiple of 16x16.
-[Client thread/ERROR] [loottweaker.sanity_checks]: Unexpected duplicate pool name 'marbled_cheese_golem' in table 'rats:marbled_cheese_golem'. Duplicate added as 'marbled_cheese_golem0'.
-Report this to the loot adder.
+[CrashAssistantApp process logger/ERROR] [ChildProcessLogger]: WARNING: A restricted method in java.lang.System has been called
+[CrashAssistantApp process logger/ERROR] [ChildProcessLogger]: WARNING: java.lang.System::load has been called by com.formdev.flatlaf.util.NativeLibrary in an unnamed module (file:/D:/mc/E2E-E/local/crash_assistant/28740_1774688820437_app.jar)
+[CrashAssistantApp process logger/ERROR] [ChildProcessLogger]: WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+[CrashAssistantApp process logger/ERROR] [ChildProcessLogger]: WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+[CrashAssistantApp process logger/ERROR] [ChildProcessLogger]: 
 [Client thread/ERROR] [Had Enough Items]: Recipe has no output. Minecraft minecraft:air_0 class net.minecraftforge.oredict.ShapedOreRecipe
 Outputs:
 net.minecraft.item.ItemStack: [[]]
@@ -103,45 +38,3 @@ Failed to get ingredients from recipe wrapper
 java.lang.NullPointerException
 	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]
-[Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
-Failed to get ingredients from recipe wrapper
-
-java.lang.NullPointerException
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
-  [...]

@@ -12,4 +12,4 @@ setModifier(<minecraft:coal_block> | <ore:blockCoal>, ['slow', 'weak', 'small'])
 
 var empowerBlock = itemUtils.getItem('contenttweaker:conglomerate_of_coal');
 if (isNull(empowerBlock)) empowerBlock = <minecraft:glowstone>;
-setModifier(empowerBlock, ['fast', 'potent', 'large']);
+setModifier(empowerBlock, ['fast', 'potent', 'large'], true);

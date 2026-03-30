@@ -4,15 +4,6 @@
 	rewards: [{
 		item: {
 			tag: {
-				type: "storage"
-			},
-			id: "ftbquests:lootcrate"
-		},
-		weight: 25
-	},
-	{
-		item: {
-			tag: {
 				flooCount: 128
 			},
 			id: "randomthings:floopouch"

@@ -51,6 +51,16 @@ x.addJEIRecipe(AssemblyRecipe.create(function (c) {
   .requireFluid('fluid_in', <fluid:ic2construction_foam> * 1000)
   .requireItem('input5', <ic2:scaffold:2> * 10)
   .requireItem('input0', <ic2:foam_sprayer>));
+
+x.addJEIRecipe(AssemblyRecipe.create(function (c) {
+  c.addFluidOutput('fluid_out', <fluid:ic2distilled_water>);})
+  .requireFluid('fluid_in', <fluid:water>)
+  .requireItem('input0', <ic2:te:33>));
+
+x.addJEIRecipe(AssemblyRecipe.create(function (c) {
+  c.addFluidOutput('fluid_out', <fluid:ic2distilled_water> * 100);})
+  .requireFluid('fluid_in', <fluid:water> * 100)
+  .requireItem('input0', <ic2:te:27>));
 //////////////////////////////////////////////////////////////////////
 
 // Hydrated Coal Dust recipe consumes containers that can store 1000mB + liquid, this fixes that

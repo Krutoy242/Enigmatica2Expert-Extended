@@ -9,7 +9,7 @@ val caveloot as int[][IItemStack] = {
   <minecraft:gold_block>                      : [3, 0, 1, 1],
   <thermalfoundation:material:70>             : [3, 0, 1, 1],
   <extendedcrafting:storage>                  : [3, 2, 1, 1],
-  <nuclearcraft:uranium:8>                    : [3, 2, 1, 1],
+  <qmd:copernicium:3>                    : [3, 2, 1, 1],
   <nuclearcraft:neptunium>                    : [3, 2, 1, 1],
   <nuclearcraft:plutonium>                    : [3, 2, 1, 1],
   <nuclearcraft:californium:2> * 3            : [3, 2, 1, 1],

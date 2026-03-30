@@ -65,7 +65,9 @@ function getTranslationKey(item as IItemStack) as string {
 function tellrawItem(item as IItemStack, color as string = null, showName as bool = true) as IData {
   val data = [
     {
-      text: item.amount > 1 ? item.amount ~'x' : '',
+      text: item.amount > 1
+        ? mods.zenutils.StaticString.format('%,d', [item.amount]) ~'x'
+        : '',
       hoverEvent: {
         action: 'show_item',
         value: item.toSNBT(),

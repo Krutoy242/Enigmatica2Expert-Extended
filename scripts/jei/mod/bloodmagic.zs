@@ -84,6 +84,10 @@ p.setModid('bloodmagic');
 p.register();
 
 function addModifier(i as int, result as IItemStack) as void {
+  if (isNull(result)) {
+    logger.logWarning('BloodMagic JEI error: le_vulcanos_frigius ritual cant found modifier №' ~ i);
+    return;
+  }
   mods.jei.JEI.createJeiRecipe('le_vulcanos_frigius')
     .addInput(<bloodmagic:component>.definition.makeStack(i))
     .addOutput(result)
@@ -92,6 +96,7 @@ function addModifier(i as int, result as IItemStack) as void {
 
 if (isNull(Op.catalystToBlock)) Op.catalystToBlock = Op.init();
 for i, block in Op.catalystToBlock {
+  if (isNull(block)) continue;
   addModifier(i, scripts.do.portal_spread.utils.stateToItem(block));
 }
 

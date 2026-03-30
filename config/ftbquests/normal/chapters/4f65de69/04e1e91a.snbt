@@ -1,0 +1,23 @@
+{
+	title: "{q.getting_started.what_is_this.name}",
+	x: -5.475d,
+	y: 2.1d,
+	text: [
+		"{q.getting_started.what_is_this.desc}"
+	],
+	dependencies: [
+		"f968d750"
+	],
+	size: 0.75d,
+	tasks: [{
+		uid: "a4491d56",
+		type: "checkmark",
+		title: "and how do i get rid of it",
+		disable_toast: 1b
+	}],
+	rewards: [{
+		uid: "f505913d",
+		type: "item",
+		item: "openblocks:technicolor_glasses"
+	}]
+}

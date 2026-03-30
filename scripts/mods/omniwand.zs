@@ -29,6 +29,7 @@ static superwand as IItemStack = <omniwand:wand>.withTag({
     draconicevolution   : {id: "draconicevolution:crystal_binder"               , Count: 1, tag: { "omniwand:definedMod": "draconicevolution"    }},
     enderio             : {id: "enderio:item_yeta_wrench"                       , Count: 1, tag: { "omniwand:definedMod": "enderio"              }},
     environmentaltech   : {id: "environmentaltech:tool_multiblock_assembler"    , Count: 1, tag: { "omniwand:definedMod": "environmentaltech"    }},
+    excompressum        : {id: "excompressum:bat_zapper"                        , Count: 1, tag: { "omniwand:definedMod": "excompressum"         }},
     extrautils2         : {id: "extrautils2:wrench"                             , Count: 1, tag: { "omniwand:definedMod": "extrautils2"          }},
     extrautils20        : {id: "minecraft:compass"                              , Count: 1, tag: { "omniwand:definedMod": "extrautils20"         }},
     extrautils21        : {id: "minecraft:redstone_torch"                       , Count: 1, tag: { "omniwand:definedMod": "extrautils21"         }},

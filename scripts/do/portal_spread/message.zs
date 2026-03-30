@@ -18,10 +18,6 @@ import crafttweaker.world.IWorld;
 import scripts.do.portal_spread.config.Config;
 import scripts.do.portal_spread.utils.abs;
 
-// Stylazed icon of portal
-// static prefix as string = '§8[§5░§8] ';
-static prefix as string = '\u00A78[\u00A75\u2591\u00A78] ';
-
 // Cube radius for messages send
 static payerNotifyDistance as int = 40;
 
@@ -78,12 +74,12 @@ function playerMessage(player as IPlayer, messageType as string) as void {
 }
 
 function sendPortalMessage(player as IPlayer, rawData as IData) as void {
-  player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([prefix, rawData]));
+  player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([Config.prefix, rawData]));
 }
 
 function log(s as string, world as IWorld = null) as void {
   if (!Config.debug) return;
-  val msg = prefix ~ (isNull(s) ? '' : s);
+  val msg = Config.prefix ~ (isNull(s) ? '' : s);
   print(msg);
 
   if (isNull(world)) return;

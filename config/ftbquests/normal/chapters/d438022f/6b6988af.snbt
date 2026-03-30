@@ -18,11 +18,11 @@
 	rewards: [{
 		uid: "e9ebc0a7",
 		type: "custom",
-		title: "{e2ee.quest.common}",
+		title: "{e2ee.quest.storage}",
 		icon: {
 			id: "ftbquests:lootcrate",
 			tag: {
-				type: "common"
+				type: "storage"
 			}
 		},
 		tags: [

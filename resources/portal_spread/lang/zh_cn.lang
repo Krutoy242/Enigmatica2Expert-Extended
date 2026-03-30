@@ -19,3 +19,12 @@ portal_spread.0_max=§7传送门完全停止了扩散。
 portal_spread.1_add=§7你感到地狱传送门扩散的速度正在加快。
 portal_spread.1_red=§7你感到地狱传送门扩散的速度正在减缓。
 portal_spread.1_max=§7传送门达到了最大扩散速度。
+
+# 传送门修饰语
+portal_spread.modifier.header=§3作为传送门的边角方块，此方块提供以下修饰：
+portal_spread.modifier.slow=§c- 减缓扩散速度
+portal_spread.modifier.fast=§a- 加快扩散速度
+portal_spread.modifier.weak=§c- 减少每次扩散转化的方块数
+portal_spread.modifier.potent=§a- 增加每次扩散转化的方块数
+portal_spread.modifier.small=§c- 减小扩散半径
+portal_spread.modifier.large=§a- 增大扩散半径

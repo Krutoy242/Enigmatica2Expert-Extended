@@ -244,7 +244,7 @@ process.exit(0)
 
 async function cleanupModlist() {
   const modlistPath = 'config/crash_assistant/modlist.json'
-  const modlist: { [key: string]: unknown } = JSON.parse(readFileSync(modlistPath, 'utf8'))
+  const modlist = JSON.parse(readFileSync(modlistPath, 'utf8')) as { [key: string]: unknown }
 
   // Filter out ignored fields
   const filteredModlist = Object.fromEntries(

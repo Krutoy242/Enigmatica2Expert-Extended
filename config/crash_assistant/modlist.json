@@ -1,10 +1,10 @@
 {
-  "!!!CrashAssistant-forge-1.12.2-1.10.30.jar": {
-    "curseForgeHash": 3581089756,
-    "jarName": "!!!CrashAssistant-forge-1.12.2-1.10.30.jar",
+  "!!!CrashAssistant-forge-1.12.2-1.11.3.jar": {
+    "curseForgeHash": 3055315995,
+    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.3.jar",
     "modId": "crash_assistant",
-    "modrinthHash": "cc73299793b9f2f2418cb2b9a2912da4ce0b326a",
-    "version": "1.10.30"
+    "modrinthHash": "de1d18575feb221a4950b392eaa334dc35e39fe3",
+    "version": "1.11.3"
   },
   "!configanytime-3.0.jar": {
     "curseForgeHash": 3732531395,
@@ -32,12 +32,12 @@
     "modrinthHash": "d272efd0c807908138edbac8e6cb2d90127ac01a",
     "version": "0.7.1"
   },
-  "+Fugue-0.23.1.jar": {
-    "curseForgeHash": 1490778930,
-    "jarName": "+Fugue-0.23.1.jar",
+  "+Fugue-0.23.3.jar": {
+    "curseForgeHash": 2455151293,
+    "jarName": "+Fugue-0.23.3.jar",
     "modId": "fugue",
-    "modrinthHash": "71262bf3c3f0f3979cce787d3bb6435b8242cc58",
-    "version": "0.23.1"
+    "modrinthHash": "988a18c12c24fe501b9d2bf3291d7242a0ce6530",
+    "version": "0.23.3"
   },
   "[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar": {
     "curseForgeHash": 1044045050,
@@ -81,12 +81,12 @@
     "modrinthHash": "b6a7348001eb65d2c145b9121709632d7ce15675",
     "version": "1.2.0"
   },
-  "advancedrocketry-2.2.3.jar": {
-    "curseForgeHash": 3971946976,
-    "jarName": "advancedrocketry-2.2.3.jar",
+  "advancedrocketry-2.2.4.jar": {
+    "curseForgeHash": 1152209755,
+    "jarName": "advancedrocketry-2.2.4.jar",
     "modId": "advancedrocketry",
-    "modrinthHash": "47ddbc49b159ca164b354e39d2a6081d590b85fc",
-    "version": "2.2.3"
+    "modrinthHash": "65e77eb861efc77d99d11b03373be3f571e2079e",
+    "version": "2.2.4"
   },
   "AdvancedTweakery-1.2.jar": {
     "curseForgeHash": 3270717551,
@@ -121,12 +121,12 @@
     "modrinthHash": "3299b6f59bec851c8d5d04fd11add38ace736096",
     "version": "1.0.2"
   },
-  "ae2fc-2.7.9-unofficial.jar": {
-    "curseForgeHash": 1791135850,
-    "jarName": "ae2fc-2.7.9-unofficial.jar",
+  "ae2fc-2.7.10-unofficial.jar": {
+    "curseForgeHash": 2158002271,
+    "jarName": "ae2fc-2.7.10-unofficial.jar",
     "modId": "ae2fc",
-    "modrinthHash": "2aa98250ebd9a8ffe7f13ffcfaf85ec546263640",
-    "version": "2.7.9-unofficial"
+    "modrinthHash": "ff7ca3f2ff3fb16aa80963020b7daab1e4509329",
+    "version": "2.7.10-unofficial"
   },
   "ae2stuff-0.7.0.4-mc1.12.2.jar": {
     "curseForgeHash": 1154015310,
@@ -141,13 +141,6 @@
     "modId": "aeadditions",
     "modrinthHash": "9528ce5cca0c901fc25643fda1574e3d0f406344",
     "version": "1.3.8"
-  },
-  "AIReducer-1.12.2-0.3.0.jar": {
-    "curseForgeHash": 568671043,
-    "jarName": "AIReducer-1.12.2-0.3.0.jar",
-    "modId": "aireducer",
-    "modrinthHash": "a68d2b0996e8146f4c4fa270d7100c496120bfd3",
-    "version": "1.12.2-0.3.0"
   },
   "AkashicTome-1.2-12.jar": {
     "curseForgeHash": 3030749418,
@@ -231,12 +224,12 @@
     "modrinthHash": "646b49f2db0eb2d9f4e17ec65b6aa6d7a16b72e4",
     "version": "1.12.2-1.1.8"
   },
-  "ArmoredArms-v1.4.7-1.12.2-release.jar": {
-    "curseForgeHash": 2107570292,
-    "jarName": "ArmoredArms-v1.4.7-1.12.2-release.jar",
+  "ArmoredArms-v1.5.0-1.12.2-betta.jar": {
+    "curseForgeHash": 3456594673,
+    "jarName": "ArmoredArms-v1.5.0-1.12.2-betta.jar",
     "modId": "armoredarms",
-    "modrinthHash": "76f812b373e506b0c0aba89096e046ad6c7cdc3b",
-    "version": "v1.4.7-1.12.2-release"
+    "modrinthHash": "b9e04f937f10cd2f20caf3f2e36eb72d6407066c",
+    "version": "v1.5.0-1.12.2-betta"
   },
   "armoryexpansion-2.0.0-alpha.jar": {
     "curseForgeHash": 3077282103,
@@ -375,11 +368,6 @@
     "modId": "bettercaves",
     "modrinthHash": "1924c9881c84373c4f887ad87b1089466b291d3f",
     "version": "1.12.2-2.0.4"
-  },
-  "BetterFps-1.4.8.jar": {
-    "curseForgeHash": 3051920250,
-    "jarName": "BetterFps-1.4.8.jar",
-    "modrinthHash": "245235d5c67daff00ee658ee1f88ae8c3e4584b8"
   },
   "BetterMineshaftsForge-1.12.2-2.2.1.jar": {
     "curseForgeHash": 2996491303,
@@ -596,10 +584,10 @@
     "modrinthHash": "78df6ee723970b54505d218a87efc927912884ef",
     "version": "1.1"
   },
-  "cleanroom-0.3.35-alpha.jar (modloader)": {
-    "jarName": "cleanroom-0.3.35-alpha.jar (modloader)",
+  "cleanroom-0.5.4-alpha.jar (modloader)": {
+    "jarName": "cleanroom-0.5.4-alpha.jar (modloader)",
     "modId": "forge",
-    "version": "cleanroom-0.3.35-alpha.jar"
+    "version": "cleanroom-0.5.4-alpha.jar"
   },
   "cloche-profit-peripheral-1.12.2-1.0.3.jar": {
     "curseForgeHash": 150773679,
@@ -971,6 +959,13 @@
     "modId": "eyeofdragons",
     "modrinthHash": "3ba14c9f4b92c50881605afa9d6a1fd16d0e104c",
     "version": "0.0.2"
+  },
+  "fancyoutlines-1.12.2-1.0.3.jar": {
+    "curseForgeHash": 1575858085,
+    "jarName": "fancyoutlines-1.12.2-1.0.3.jar",
+    "modId": "fancyoutlines",
+    "modrinthHash": "34994f626213fa21141e3159ddf38cf073fb1f90",
+    "version": "1.12.2-1.0.3"
   },
   "FarmingForBlockheads_1.12.2-3.1.28.jar": {
     "curseForgeHash": 2412335274,
@@ -1714,12 +1709,12 @@
     "modrinthHash": "f0bdbf6f4257e392e59023289998aaa8c295df47",
     "version": "4.0.20.11"
   },
-  "modularui-3.1.4.jar": {
-    "curseForgeHash": 3760010337,
-    "jarName": "modularui-3.1.4.jar",
+  "modularui-3.1.5.jar": {
+    "curseForgeHash": 3897925040,
+    "jarName": "modularui-3.1.5.jar",
     "modId": "modularui",
-    "modrinthHash": "ee9fb13355ae0927f42bc268cd69de7f073dbbfd",
-    "version": "3.1.4"
+    "modrinthHash": "f03ffc6b97a6bcf4e3de920894db2142d48c63a9",
+    "version": "3.1.5"
   },
   "moredefaultoptions-1.12-0.0.2.jar": {
     "curseForgeHash": 2119973449,
@@ -1938,12 +1933,12 @@
     "modrinthHash": "be56bc229b7f418675bf46277e37a8272def5327",
     "version": "1.12.2-2.3.161"
   },
-  "PackagedAstral-1.12.2-1.0.4.23.jar": {
-    "curseForgeHash": 305000938,
-    "jarName": "PackagedAstral-1.12.2-1.0.4.23.jar",
+  "PackagedAstral-1.12.2-1.0.5.24.jar": {
+    "curseForgeHash": 724929853,
+    "jarName": "PackagedAstral-1.12.2-1.0.5.24.jar",
     "modId": "packagedastral",
-    "modrinthHash": "4d75fbcfcd9d21e47144006d043451562e7cd789",
-    "version": "1.0.4.23"
+    "modrinthHash": "5be41c56e7aa65df7ce8a0e1a15663ee7c4dc335",
+    "version": "1.0.5.24"
   },
   "PackagedAuto-1.12.2-1.0.24.73.jar": {
     "curseForgeHash": 2596751255,
@@ -2118,6 +2113,13 @@
     "modrinthHash": "8f8945cdd5d161ebe337c9a3689ad263c07d70ee",
     "version": "1.5 beta 2"
   },
+  "QuantumThings-MC-1.12.2-1.0.9.jar": {
+    "curseForgeHash": 2268687113,
+    "jarName": "QuantumThings-MC-1.12.2-1.0.9.jar",
+    "modId": "randomthings",
+    "modrinthHash": "9ca31ff110dcb37e01501e9b422e83eba7ea4868",
+    "version": "1.0.9"
+  },
   "QuarkOddities-1.12.2.jar": {
     "curseForgeHash": 4267477614,
     "jarName": "QuarkOddities-1.12.2.jar",
@@ -2130,19 +2132,12 @@
     "modrinthHash": "ca442c6ac9689fedba3e57594a893413e275367a",
     "version": "r1.6-189"
   },
-  "random_complement-1.8.9.jar": {
-    "curseForgeHash": 3398478029,
-    "jarName": "random_complement-1.8.9.jar",
+  "random_complement-1.9.0.jar": {
+    "curseForgeHash": 4025736884,
+    "jarName": "random_complement-1.9.0.jar",
     "modId": "random_complement",
-    "modrinthHash": "a238376515e3d79b1a0cc5bf355cf38d96f9b1ba",
-    "version": "1.8.9"
-  },
-  "RandomThings-MC1.12.2-4.2.7.4.jar": {
-    "curseForgeHash": 3215073064,
-    "jarName": "RandomThings-MC1.12.2-4.2.7.4.jar",
-    "modId": "randomthings",
-    "modrinthHash": "4422c297678e8f07a476ca5d4972568cfc7576bb",
-    "version": "4.2.7.4"
+    "modrinthHash": "8e6f16a566ad5f6aace3bc7aa184f3e0b32f9aab",
+    "version": "1.9.0"
   },
   "RandomTweaker-1.4.10.jar": {
     "curseForgeHash": 1926495611,
@@ -2270,12 +2265,12 @@
     "modrinthHash": "e81c507f2ea43ff2642e48d65c8d4c1b18f44bcb",
     "version": "1.2.2"
   },
-  "RoughlyEnoughIDs-2.2.4.jar": {
-    "curseForgeHash": 1065391211,
-    "jarName": "RoughlyEnoughIDs-2.2.4.jar",
+  "RoughlyEnoughIDs-2.3.0.jar": {
+    "curseForgeHash": 1314483655,
+    "jarName": "RoughlyEnoughIDs-2.3.0.jar",
     "modId": "jeid",
-    "modrinthHash": "53b09b6c9a054cf3523204353212b72e77d7d155",
-    "version": "2.2.4"
+    "modrinthHash": "cb72db84dd8c814b4cc8c827e5335e9859e24862",
+    "version": "2.3.0"
   },
   "rustic-1.2.0.jar": {
     "curseForgeHash": 1130977186,
@@ -2415,12 +2410,12 @@
     "modrinthHash": "dbd647ab54a365b6f1a67d569fca20ee33fb958a",
     "version": "1.0.2.10"
   },
-  "tconevo-1.12.2-1.1.2.jar": {
-    "curseForgeHash": 3320081645,
-    "jarName": "tconevo-1.12.2-1.1.2.jar",
+  "tconevo-1.12.2-1.1.4.jar": {
+    "curseForgeHash": 2387526739,
+    "jarName": "tconevo-1.12.2-1.1.4.jar",
     "modId": "tconevo",
-    "modrinthHash": "b4225a251f0e1060efe43dcd5ae0ef2280709932",
-    "version": "1.1.2"
+    "modrinthHash": "ec5a033e2bb7f72c80e3db061b11be74936452bc",
+    "version": "1.1.4"
   },
   "tconmodmod-1.12.2-1.0.5.jar": {
     "curseForgeHash": 2639564833,
@@ -2742,12 +2737,19 @@
     "modrinthHash": "df4e52aa07486b23780102b4ff34df67ce76a2f8",
     "version": "1.12.2-1.6.1"
   },
-  "twilightforest-1.12.2-3.14.jar": {
-    "curseForgeHash": 3380861111,
-    "jarName": "twilightforest-1.12.2-3.14.jar",
+  "twilightforest-1.12.2-3.11.1021-universal.jar": {
+    "curseForgeHash": 3811129807,
+    "jarName": "twilightforest-1.12.2-3.11.1021-universal.jar",
     "modId": "twilightforest",
-    "modrinthHash": "95c66465a64113dc3ce7b86359cc81843f77da24",
-    "version": "3.14"
+    "modrinthHash": "a4c2d01f98350fe41374666db8e1419f770a1609",
+    "version": "3.11.1021"
+  },
+  "TwilightForestFixes-1.0.jar": {
+    "curseForgeHash": 1327968213,
+    "jarName": "TwilightForestFixes-1.0.jar",
+    "modId": "twilightforestfixes",
+    "modrinthHash": "f2d9461cbc171f80e58b9ec7431dc30a25ffdf23",
+    "version": "1.0"
   },
   "u_team_core-forge-1.12.2-2.2.5.375.jar": {
     "curseForgeHash": 4063781546,
@@ -2777,12 +2779,12 @@
     "modrinthHash": "c09a8f8b0e191cddbe629d2e5b19bf571a3ccd18",
     "version": "1.2.1"
   },
-  "UniversalTweaks-1.12.2-1.18.0.jar": {
-    "curseForgeHash": 2052152645,
-    "jarName": "UniversalTweaks-1.12.2-1.18.0.jar",
+  "UniversalTweaks-1.12.2-1.19.0.jar": {
+    "curseForgeHash": 2319097403,
+    "jarName": "UniversalTweaks-1.12.2-1.19.0.jar",
     "modId": "universaltweaks",
-    "modrinthHash": "bb54c9dc58dac10549552e3cf84912ac5c95800f",
-    "version": "1.18.0"
+    "modrinthHash": "ff0a3632352e4dd5cd681c7317ca0760a3c9b861",
+    "version": "1.19.0"
   },
   "useful_railroads-1.12.2-1.1.3.24.jar": {
     "curseForgeHash": 6958948,
@@ -2922,12 +2924,12 @@
     "modrinthHash": "538e306575d826b220638969a67cf17dfe8a18a7",
     "version": "1.1"
   },
-  "zenutils-1.26.15.jar": {
-    "curseForgeHash": 2429515693,
-    "jarName": "zenutils-1.26.15.jar",
+  "zenutils-1.26.19.jar": {
+    "curseForgeHash": 4090587236,
+    "jarName": "zenutils-1.26.19.jar",
     "modId": "zenutils",
-    "modrinthHash": "9eabc802a169caa3c0c3a60854bf833b7c2c5682",
-    "version": "1.26.15"
+    "modrinthHash": "3619884c516d310ee447118fa09214228bb10cd1",
+    "version": "1.26.19"
   },
   "zume-1.2.1.jar": {
     "curseForgeHash": 3006123426,

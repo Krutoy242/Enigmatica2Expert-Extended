@@ -34,7 +34,6 @@ ftbutilities.chunkloader.max_chunks: 50
 power: 40
 parent: conflux_iii
 ftbutilities.chat.name_format: <&a&l{name}&r>
-ftbutilities.chunkloader.load_offline: true
 ftbutilities.claims.max_chunks: 400
 ftbutilities.chunkloader.max_chunks: 60
 
@@ -49,4 +48,3 @@ ftbutilities.chunkloader.max_chunks: 300
 power: 100
 parent: vip
 default_op_rank: true
-ftbutilities.chat.name_format: <&2{name}&r>

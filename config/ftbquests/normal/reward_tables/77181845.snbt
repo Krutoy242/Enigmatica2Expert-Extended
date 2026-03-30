@@ -62,9 +62,7 @@
 		item: {
 			id: "thermalexpansion:strongbox",
 			tag: {
-				enchantmentColor: 10590976,
-				ench: [{}],
-				Level: 3b
+				Level: 4b
 			}
 		}
 	},
@@ -461,11 +459,6 @@
 	{
 		icon: "storagedrawers:upgrade_void 16",
 		item: "storagedrawers:upgrade_void",
-		count: 16
-	},
-	{
-		icon: "storagedrawers:upgrade_one_stack 16",
-		item: "storagedrawers:upgrade_one_stack",
 		count: 16
 	},
 	{

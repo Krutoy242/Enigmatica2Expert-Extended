@@ -1,0 +1,96 @@
+// This is an example script for Crash Assistant.
+// It designed to demonstrate abilities of startup scripts and by default warn about over allocation of ram (more than system can provide).
+// With startup scripts you can do including but not limited:
+//     - Analyse ram alloction.
+//     - Analyse jvm / minecraft args.
+//     - Analyse modlist for incompatible / removed neccery mods.
+// Full documentation and more examples: https://github.com/KostromDan/Crash-Assistant/blob/pages/guides/Scripting%20Support/Getting%20Started.md
+
+
+// --- Configuration Area ---
+var MIN_CRITICAL_GB = 4.0;
+var MIN_RECOMMENDED_GB = 8.0;
+var MAX_RECOMMENDED_GB = 12.0;
+// --------------------------
+
+// Most options are commented out. Please uncomment them to enable them.
+
+var xmxBytes = MemoryUtils.getJvmMaxHeapBytes();
+var xmxGB = MemoryUtils.bytesToGigabytes(xmxBytes);
+var formattedXmx = MemoryUtils.formatMemorySize(xmxBytes);
+
+// 1. Critical Minimum Check
+//if (xmxGB < MIN_CRITICAL_GB) {
+//    var msg = LanguageProvider.get("custom.critical_min");
+//    msg = msg.replace("$XMX$", formattedXmx);
+//    msg = msg.replace("$MIN_RECOMMENDED$", MIN_RECOMMENDED_GB.toString());
+//    var warn = Startup.addBootWarning(msg);
+//    warn.withMemoryAllocationGuide();
+//}
+
+// 2. Minimum Recommended Check
+//else if (xmxGB < MIN_RECOMMENDED_GB) {
+//    var msg = LanguageProvider.get("custom.min_recommended");
+//    msg = msg.replace("$XMX$", formattedXmx);
+//    msg = msg.replace("$MIN_RECOMMENDED$", MIN_RECOMMENDED_GB.toString());
+//    var lowMemWarn = Startup.addBootWarning(msg);
+//    lowMemWarn.withDontShowAgain("low_memory_check");
+//    lowMemWarn.withMemoryAllocationGuide();
+//}
+
+// 3. Excessive Allocation Check
+// Warning starts exactly when Xmx exceeds MAX_RECOMMENDED_GB.
+//if (xmxGB > MAX_RECOMMENDED_GB) {
+//    var msg = LanguageProvider.get("custom.excessive_allocation");
+//    msg = msg.replace("$XMX$", formattedXmx);
+//    msg = msg.replace("$MIN_RECOMMENDED$", MIN_RECOMMENDED_GB.toString());
+//    msg = msg.replace("$MAX_RECOMMENDED$", MAX_RECOMMENDED_GB.toString());
+//    var excessiveMemWarn = Startup.addBootWarning(msg);
+//    excessiveMemWarn.withDontShowAgain("excessive_memory_check");
+//    excessiveMemWarn.withMemoryAllocationGuide();
+//}
+
+// 4. Over-Allocation vs Total Capacity Check (Hardware Limit)
+var totalSystemCapacity = MemoryUtils.getSystemTotalMemoryBytes() + MemoryUtils.getSystemTotalSwapBytes();
+var exceedsTotalSystemCapacity = xmxBytes > totalSystemCapacity;
+if (exceedsTotalSystemCapacity) {
+    var msg = LanguageProvider.get("custom.over_allocation");
+    msg = msg.replace("$XMX$", formattedXmx);
+    msg = msg.replace("$TOTAL_CAPACITY$", MemoryUtils.formatMemorySize(totalSystemCapacity));
+    var warn = Startup.addBootWarning(msg);
+    warn.withMemoryAllocationGuide();
+}
+
+// 5. High System Load Check (Current Capacity)
+var systemAvailable = MemoryUtils.getSystemFreeMemoryBytes() + MemoryUtils.getSystemFreeSwapBytes();
+var jvmAllocated = MemoryUtils.getJvmAllocatedMemoryBytes();
+var stillNeeded = xmxBytes - jvmAllocated;
+
+if (!exceedsTotalSystemCapacity && xmxBytes > 0 && stillNeeded > 0 && systemAvailable < stillNeeded) {
+    var msg = LanguageProvider.get("custom.high_system_load");
+    msg = msg.replace("$XMX$", formattedXmx);
+    msg = msg.replace("$AVAILABLE$", MemoryUtils.formatMemorySize(systemAvailable));
+    var highLoadWarn = Startup.addBootWarning(msg);
+    highLoadWarn.withDontShowAgain("high_system_load_check");
+    highLoadWarn.withMemoryAllocationGuide();
+}
+
+// 6. Windows Swap/Pagefile Check
+//if (PlatformHelp.isWindows() && MemoryUtils.getSystemTotalSwapBytes() == 0) {
+//    var msg = LanguageProvider.get("custom.windows_no_swap");
+//    msg = msg.replace("$XMX$", formattedXmx);
+//    var noSwapWarn = Startup.addBootWarning(msg);
+//    noSwapWarn.withDontShowAgain("windows_no_swap_check");
+//    noSwapWarn.withMemoryAllocationGuide();
+//}
+
+// 7. Large Heap / ZGC Advice
+//var jvmArgs = ArgUtils.getSafeJvmArgs();
+//var launchArgs = ArgUtils.getSafeLaunchArgs();
+//if (xmxGB > 12.0 && !jvmArgs.contains("-XX:+UseZGC")) {
+//    var msg = LanguageProvider.get("custom.large_heap_zgc");
+//    msg = msg.replace("$XMX$", formattedXmx);
+//    var zgcWarn = Startup.addBootWarning(msg);
+//    zgcWarn.withDontShowAgain("zgc_recommendation_check");
+//    zgcWarn.withJvmArgsGuide();
+//}

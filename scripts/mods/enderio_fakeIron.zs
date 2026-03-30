@@ -28,7 +28,6 @@ remakeShaped('environmentaltech:m_multiblocks/m_lightning/lightning_cont_6', <en
 remakeShaped('excompressum:auto_compressor', <excompressum:auto_compressor>, [[<ore:workbench>, I, <ore:workbench>], [I, B, I], [<ore:workbench>, I, <ore:workbench>]]);
 remakeShaped('extrautils2:opinium_0', <extrautils2:opinium>, [[null, <extrautils2:ingredients:4>, null], [<extrautils2:ingredients:4>, B, <extrautils2:ingredients:4>], [null, <extrautils2:ingredients:4>, null]]);
 remakeShaped('extrautils2:opinium_1', <extrautils2:opinium:1>, [[null, <extrautils2:opinium>, null], [B, <minecraft:gold_block>, B], [null, <extrautils2:opinium>, null]]);
-remakeShaped('extrautils2:spike_iron', <extrautils2:spike_iron> * 4, [[null, <minecraft:iron_sword:*>, null], [<minecraft:iron_sword:*>, I, <minecraft:iron_sword:*>], [I, B, I]]);
 remakeShaped('immersiveengineering:tool/drillhead_iron', <immersiveengineering:drillhead:1>, [[I, I, null], [B, B, I], [I, I, null]]);
 remakeShaped('integrateddynamics:squeezer', <integrateddynamics:squeezer>, [[<ore:stickWood>, B, <ore:stickWood>], [<ore:stickWood>, null, <ore:stickWood>], [<ore:plankWood>, I, <ore:plankWood>]]);
 remakeShaped('rustic:condenser_advanced', <rustic:condenser_advanced>, [[null, <minecraft:netherbrick>, null], [<minecraft:netherbrick>, <minecraft:bucket>, <minecraft:netherbrick>], [<minecraft:netherbrick>, B, <minecraft:netherbrick>]]);

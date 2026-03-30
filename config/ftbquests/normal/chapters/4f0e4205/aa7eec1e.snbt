@@ -2,7 +2,7 @@
 	icon: {
 		id: "ftbquests:lootcrate",
 		tag: {
-			type: "common"
+			type: "storage"
 		}
 	},
 	disable_toast: 1b,
@@ -36,10 +36,9 @@
 		item: {
 			id: "ftbquests:lootcrate",
 			tag: {
-				type: "common"
+				type: "storage"
 			}
 		},
-		count: 2,
 		random_bonus: 1
 	}]
 }

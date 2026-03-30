@@ -404,7 +404,7 @@ tooltips.lang.singularity.burn=Combine with §lany burnable§r material to add a
 item.contenttweaker.any_burnable.name=§6Any burnable
 
 # Singularities
-tooltips.lang.singularity=Combine with any §6$%1$s§r to gain charge.\nMore unique item types \u003D exponentially more charge.\nNeeds §6%2$s§r total charge.\n\n§2●§r With §a1§r item type: need §6%2$s§r items.\n§2●§r With §a%3$s§r types: need §6%3$s§r of each.\n§2●§r With §a%4$s§r types: need §61§r of each only.
+tooltips.lang.singularity=Combine with any §6$%1$s§r to gain charge.\nMore unique item types \u003D exponentially more charge.\nNeeds §6%2$s§r total charge.\n§7When in inventory, automatically pulls in matching items.\n\n§2●§r With §a1§r item type: need §6%2$s§r items.\n§2●§r With §a%3$s§r types: need §6%3$s§r of each.\n§2●§r With §a%4$s§r types: need §61§r of each only.
 ##################################
 
 # Custom renames

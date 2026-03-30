@@ -19,3 +19,12 @@ portal_spread.0_max=§7Portal completely stopped spreading.
 portal_spread.1_add=§7You feel the portal energy becoming §6stronger§7.
 portal_spread.1_red=§7You feel the portal energy becoming §3weaker§7.
 portal_spread.1_max=§7Portal reached maximum spreading speed.
+
+# Portal modifiers
+portal_spread.modifier.header=§3As a portal corner, this block provides the following modifiers:
+portal_spread.modifier.slow=§c- Slows down the spread
+portal_spread.modifier.fast=§a- Speeds up the spread
+portal_spread.modifier.weak=§c- Reduces blocks scanned per wave
+portal_spread.modifier.potent=§a- Increases blocks scanned per wave
+portal_spread.modifier.small=§c- Reduces the spread radius
+portal_spread.modifier.large=§a- Increases the spread radius

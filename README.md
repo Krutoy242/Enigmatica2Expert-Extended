@@ -404,9 +404,9 @@ Some screenshots of new worldgen:
 
   This happens when the OTG world rapidly generates new chunks. To fix this, pre-generate your world by pressing the "O" hotkey.
 
-- **There are too few hostile mobs at night.**
+- **I pregenerated world and now Lootr chests broken.**
 
-  This is a known bug, and we are still looking for a solution.
+  This is [known bug](https://github.com/LootrMinecraft/Lootr/issues/195).
 
 - **I updated the modpack version, and now it's reporting about mod duplicates.** <img alt="Forge Mod Loader mod duplicates screen" src="https://i.imgur.com/Sc18dli.png" align=right width=200>
 
@@ -417,10 +417,6 @@ Some screenshots of new worldgen:
   - `config/xaero*` for Xaero maps configs.
   - `schematics/` for custom schematics.
   - `saves/` folders for worlds.
-
-- **It's still reporting about duplicates.**
-
-  Remove `.jar` files without the `-patched` postfix.
 
 ### Considerations Before Updating
 

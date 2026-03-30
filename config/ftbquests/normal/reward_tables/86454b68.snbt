@@ -9,22 +9,6 @@
 		count: 64
 	},
 	{
-		icon: {
-			id: "thermalexpansion:florb",
-			Count: 64,
-			tag: {
-				Fluid: "blockfluidantimatter"
-			}
-		},
-		item: {
-			id: "thermalexpansion:florb",
-			tag: {
-				Fluid: "blockfluidantimatter"
-			}
-		},
-		count: 64
-	},
-	{
 		item: {
 			id: "aeadditions:certustank",
 			tag: {
@@ -36,12 +20,12 @@
 		}
 	},
 	{
-		icon: "actuallyadditions:block_greenhouse_glass 10",
+		icon: "actuallyadditions:block_greenhouse_glass 64",
 		item: "actuallyadditions:block_greenhouse_glass",
 		count: 64
 	},
 	{
-		icon: "scalinghealth:heartcontainer 10",
+		icon: "scalinghealth:heartcontainer 64",
 		item: "scalinghealth:heartcontainer",
 		count: 64
 	},
@@ -49,11 +33,6 @@
 		icon: "draconicevolution:wyvern_energy_core 3",
 		item: "draconicevolution:wyvern_energy_core",
 		count: 3
-	},
-	{
-		icon: "draconicevolution:particle_generator 4",
-		item: "draconicevolution:particle_generator",
-		count: 4
 	},
 	{
 		icon: "mysticalagradditions:insanium 6",
@@ -661,6 +640,24 @@
 					MatT:{id:"immersiveengineering:storage",Count:1,Damage:2s}
 				}
 			}
+		}
+	},
+	{
+		item: {
+			tag: {
+				astralsorcery: {
+					crystalProperties: {
+						size: 900,
+						sizeOverride: -1,
+						purity: 100,
+						collectiveCapability: 100,
+						fract: 0
+					},
+					trait: "astralsorcery.constellation.gelu",
+					constellationName: "astralsorcery.constellation.lucerna"
+				}
+			},
+			id: "astralsorcery:itemtunedcelestialcrystal"
 		}
 	}],
 	loot_crate: {

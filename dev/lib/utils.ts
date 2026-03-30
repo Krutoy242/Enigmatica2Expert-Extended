@@ -18,7 +18,6 @@ import { fileURLToPath, URL } from 'node:url'
 import chalk from 'chalk'
 import { parse as csvParseSync } from 'csv-parse/sync'
 import fast_glob from 'fast-glob'
-import pdf from 'pdf-parse/lib/pdf-parse.js'
 
 function relative(relPath = './'): string {
   return fileURLToPath(new URL(relPath, import.meta.url))
@@ -89,15 +88,7 @@ export const loadJson = createHashedFunction((filename: string): any =>
  */
 export const getCSV = createHashedFunction(
   (filename: string) =>
-    csvParseSync(readFileSync(filename, 'utf8'), { columns: true }) as Record<string, string>[]
-)
-
-/**
- * Load PDF file from disk or from hash
- */
-export const getPDF = createHashedFunction(
-  async (filename: string): Promise<string> =>
-    (await pdf(readFileSync(filename))).text
+    csvParseSync(readFileSync(filename, 'utf8'), { columns: true })
 )
 
 export const config = createHashedFunction((filename: string): Record<string, any> | undefined => {
@@ -339,14 +330,14 @@ export function isPathHasChanged(pPath: string): boolean {
 }
 
 interface Helper {
-  begin : (s: string, steps?: number) => Promise<void> | void
-  done : (s?: unknown) => Promise<void> | void
-  error : (...data: any[]) => Promise<void> | void
+  begin            : (s: string, steps?: number) => Promise<void> | void
+  done             : (s?: unknown) => Promise<void> | void
+  error            : (...data: any[]) => Promise<void> | void
   isUnfinishedTask?: boolean
-  result : (s?: unknown) => Promise<void> | void
-  step : (s?: unknown) => Promise<void> | void
-  taskResult? : string
-  warn : (...data: any[]) => Promise<void> | void
+  result           : (s?: unknown) => Promise<void> | void
+  step             : (s?: unknown) => Promise<void> | void
+  taskResult?      : string
+  warn             : (...data: any[]) => Promise<void> | void
 }
 
 export const defaultHelper: Helper = {

@@ -1,0 +1,28 @@
+{
+	x: 0.4166666666666667d,
+	y: -0.16666666666666666d,
+	text: [
+		"{q.extra_utilities.upgrade_mining.desc}"
+	],
+	dependencies: [
+		"a1b2fa88"
+	],
+	size: 0.8333333333333334d,
+	tasks: [{
+		uid: "3e3b83c3",
+		type: "item",
+		items: [{
+			item: "extrautils2:ingredients 1 8"
+		}]
+	}],
+	rewards: [{
+		uid: "5f1d5ea2",
+		type: "item",
+		item: {
+			tag: {
+				type: "common"
+			},
+			id: "ftbquests:lootcrate"
+		}
+	}]
+}

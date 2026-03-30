@@ -155,3 +155,38 @@ Gen('ice')
 .add( 5000,          30 * 60 * 20, <thermalfoundation:material:1025>)
 .add( 8000,      1 * 60 * 60 * 20, <iceandfire:ice_dragon_blood>)
 ;
+
+Gen('death')
+.removeInputs([
+  <minecraft:bone>,
+  <minecraft:bone_block>,
+  <minecraft:rotten_flesh>,
+  <minecraft:skull:1>,
+])
+//    rf/t, d    h    m    s    t
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:wolfhead_1>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:wolfhead_2>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:wolfhead_3>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:wolfhead_4>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:wolfhead_5>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:wolfhead_6>)
+.add( 1500,      7 * 60 * 60 * 20, <betteranimalsplus:coyotehead_1>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:foxhead_1>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:foxhead_2>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:foxhead_3>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:foxhead_4>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:boarhead_1>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:boarhead_2>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:boarhead_3>)
+.add( 1500,      4 * 60 * 60 * 20, <betteranimalsplus:boarhead_4>)
+.add( 1500,          60 * 60 * 20, <iceandfire:dragon_skull>)
+.add( 1500,          60 * 60 * 20, <iceandfire:dragon_skull:1>)
+.add( 1500,      2 * 60 * 60 * 20, <iceandfire:hippogryph_skull>)
+.add( 1500,      5 * 60 * 60 * 20, <iceandfire:cyclops_skull>)
+.add( 1000,          30 * 60 * 20, <iceandfire:cockatrice_skull>)
+.add(  500,      3 * 60 * 60 * 20, <iceandfire:stymphalian_skull>)
+.add( 1000,          60 * 60 * 20, <iceandfire:troll_skull>)
+.add( 2250,      6 * 60 * 60 * 20, <iceandfire:amphithere_skull>)
+.add( 2000,      7 * 60 * 60 * 20, <iceandfire:seaserpent_skull>)
+.add( 2000,      7 * 60 * 60 * 20, <iceandfire:hydra_skull>)
+;

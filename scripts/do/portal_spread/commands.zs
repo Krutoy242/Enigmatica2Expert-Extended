@@ -22,11 +22,8 @@ import scripts.do.portal_spread.modifiers.getModifiers;
 val cmd = mods.zenutils.command.ZenCommand.create('portal_spread');
 cmd.requiredPermissionLevel = 1;
 
-// Stylazed icon of portal
-static prefix as string = scripts.do.portal_spread.message.prefix;
-
 cmd.getCommandUsage = function (sender) {
-  return prefix ~ '§7/portal_spread §8<§7status§8|§7debug§8|§7faster§8|§7slower§8>'
+  return Config.prefix ~ '§7/portal_spread §8<§7status§8|§7debug§8|§7faster§8|§7slower§8>'
   ~ '\n§7status§8: show all registered portals'
   ~ '\n§7debug§8: enable debug mode'
   ~ '\n§7faster§8: spread speed * 2'
@@ -78,14 +75,14 @@ function getStatus(world as IWorld) as string {
   val portalsStr = serializePortals(world);
   val maxRadius = scripts.do.portal_spread.sphere.maxRadius;
 
-  return prefix ~ '§7Maximum radius§8: §f'
+  return Config.prefix ~ '§7Maximum radius§8: §f'
     ~ maxRadius ~ '\n'
 
-  ~ prefix ~ '§7#Portals in this dim§8: §f'
+  ~ Config.prefix ~ '§7#Portals in this dim§8: §f'
     ~ scripts.do.portal_spread.data.getPortalCount(world) ~ '\n'
 
   ~ (portalsStr == '' ? ''
-    : prefix ~ '§7Portals§8:\n' ~ portalsStr ~ '\n')
+    : Config.prefix ~ '§7Portals§8:\n' ~ portalsStr ~ '\n')
   ;
 }
 
@@ -124,17 +121,17 @@ function serializePortals(world as IWorld) as string {
 function enableDebug() as string {
   if (!Config.debug) {
     Config.debug = true;
-    return prefix ~ '§7Debug mode §2enabled§7.'
+    return Config.prefix ~ '§7Debug mode §2enabled§7.'
       ~ '\n§8Portals now spread §7without resetting§8 their lookup radius.'
       ~ '\n§8You must be in §7Creative Mode§8 to see debug messages in chat.'
       ~ '\n§8Messages also repeated in file §7crafttweaker.log';
   }
   Config.debug = false;
-  return prefix ~ '§7Debug mode §3disabled§7.';
+  return Config.prefix ~ '§7Debug mode §3disabled§7.';
 }
 
 function getConfigMsg() as string {
-  return prefix ~ '§7New global configuration:'
+  return Config.prefix ~ '§7New global configuration:'
     ~ '\n§7Ticks between spread attempts§8: §f' ~ Config.spreadDelay
   ~ '\n§7Blocks scanned each attempt§8: §f' ~ Config.lookup
   ;

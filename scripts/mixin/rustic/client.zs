@@ -13,10 +13,13 @@ import scripts.mixin.rustic.shared as Constants;
 import mixin.Operation;
 
 import native.java.lang.Integer;
+import native.java.util.ArrayList;
+import native.java.util.List;
 
 import native.net.minecraft.client.gui.FontRenderer;
 import native.net.minecraft.client.gui.inventory.GuiContainer;
 import native.rustic.client.gui.GuiVase;
+import native.rustic.compat.jei.VantaOilRecipeWrapper;
 
 #mixin {targets: "rustic.client.gui.GuiVase"}
 zenClass MixinGuiVase extends GuiContainer {
@@ -129,5 +132,18 @@ zenClass MixinGuiVase extends GuiContainer {
             return 0;
         
         return original.call(instance, text, x + Constants.PLAYER_INVENTORY_OFFSET_X, y + (Constants.INVENTORY_SEPARATOR_SIZE / 2), color) as Integer as int;
+    }
+}
+
+/*
+Disable Vanta Oiling, since in large modpacks
+it clutters JEI with hundreds of useless recipes.
+*/
+#mixin {targets: "rustic.compat.jei.VantaOilRecipeWrapper"}
+zenClass MixinVantaOilRecipeWrapper {
+    #mixin Static
+    #mixin Overwrite
+    function getVantaOilRecipes() as [VantaOilRecipeWrapper] {
+        return [] as [VantaOilRecipeWrapper];
     }
 }

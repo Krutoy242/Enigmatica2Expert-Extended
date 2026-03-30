@@ -34,21 +34,21 @@ let qnt = max / Math.min(...t.map(l=>l[1])) + 1
 return t
   .sort((a,b)=>b[1]-a[1])
   .map(([id,value])=>`  <${id}> * ${
-    Math.min(64, Math.max(1, qnt * max / value | 0))
+    Math.max(1, qnt * max / value | 0)
   },`)
   .join('\n')
 })()
 ) */
-  <thermalfoundation:fertilizer:2> * 7,
-  <mysticalagriculture:mystical_fertilizer> * 8,
-  <mysticalagriculture:fertilized_essence> * 13,
-  <thermalfoundation:fertilizer:1> * 14,
-  <industrialforegoing:fertilizer> * 15,
-  <botania:fertilizer> * 17,
-  <forestry:fertilizer_compound> * 21,
-  <actuallyadditions:item_fertilizer> * 42,
-  <ic2:crop_res:2> * 42,
-  <thermalfoundation:fertilizer> * 42,
+  <thermalfoundation:fertilizer:2> * 37,
+  <mysticalagriculture:mystical_fertilizer> * 55,
+  <mysticalagriculture:fertilized_essence> * 83,
+  <thermalfoundation:fertilizer:1> * 166,
+  <industrialforegoing:fertilizer> * 277,
+  <botania:fertilizer> * 370,
+  <forestry:fertilizer_compound> * 666,
+  <actuallyadditions:item_fertilizer> * 1332,
+  <ic2:crop_res:2> * 1332,
+  <thermalfoundation:fertilizer> * 1332,
 /**/
 ];
 
