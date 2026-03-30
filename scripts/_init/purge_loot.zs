@@ -109,7 +109,6 @@ for source in lootsource {
 }
 
 // Village Blacksmith removal
-
 val ic2smith = ltt.getTable('ic2:chests/village_blacksmith').getPool('ic2');
 val EIOsmith = ltt.getTable('enderio:chests/village_blacksmith').getPool('Ender IO');
 
@@ -122,34 +121,13 @@ EIOsmith.removeEntry('enderio:item_material:9');
 // EIO stone gear
 EIOsmith.removeEntry('enderio:item_material:10');
 
-// simple_dungeon removal
-
 // EIO wooden gear
 ltt.getTable('enderio:chests/simple_dungeon').getPool('Ender IO').removeEntry('enderio:item_material:9');
-
-// desert_pyramid removal
-
-// abandoned_mineshaft removal
 
 // EIO wooden gear
 ltt.getTable('enderio:chests/abandoned_mineshaft').getPool('Ender IO').removeEntry('enderio:item_material:9');
 
-// end_city_treasure removal
-
-// cyclic building scepter
-
-// igloo_chest removal
-
-// vanilla stone axe
-
-// nether_bridge removal
-
-// cyclic building scepter
-
-// cyclic building scepter
-
 // immersive engineering village metal removal
-
 val MetalToRemove = [
   'copper_ingot',
   'aluminium_ingot',
@@ -171,13 +149,10 @@ myrmexchest.removeEntry('iceandfire:silver_ingot');
 // silver nugget
 myrmexchest.removeEntry('iceandfire:silver_nugget');
 
-// ice dragon cave male removal
-
 // sapphire
 ltt.getTable('iceandfire:ice_dragon_male_cave').getPool('ice_dragon_cave').removeEntry('iceandfire:sapphire_gem');
 
 // ice_dragon_female_cave
-
 val dragoncave = ltt.getTable('iceandfire:ice_dragon_female_cave').getPool('ice_dragon_cave');
 
 // silver
@@ -186,8 +161,6 @@ dragoncave.removeEntry('iceandfire:silver_nugget');
 
 // sapphire
 dragoncave.removeEntry('iceandfire:sapphire_gem');
-
-// iceandfire mausoleum removal
 
 // sapphire
 ltt.getTable('iceandfire:mausoleum_chest').getPool('mausoleum_chest').removeEntry('iceandfire:sapphire_gem');
