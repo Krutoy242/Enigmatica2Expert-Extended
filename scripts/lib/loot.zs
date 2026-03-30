@@ -28,7 +28,7 @@ function tweak(
   poolWeight as int = 1
 ) {
   // Current pool
-  var pool = loottweaker.LootTweaker.getTable(table).getPool(poolStr);
+  var pool = LootTweaker.getTable(table).getPool(poolStr);
 
   // Remove old drops if specified
   if (!isNull(entryToRemove))
@@ -80,25 +80,25 @@ function tweak(
 }
 
 function removePools(tableName as string, stringList as string[]) as void {
-  val table = loottweaker.LootTweaker.getTable(tableName);
+  val table = LootTweaker.getTable(tableName);
   for str in stringList {
     table.removePool(str);
   }
 }
 
 function removeEtriesFromPool(tableName as string, poolName as string, stringList as string[]) as void {
-  val pool = loottweaker.LootTweaker.getTable(tableName).getPool(poolName);
+  val pool = LootTweaker.getTable(tableName).getPool(poolName);
   for str in stringList {
     pool.removeEntry(str);
   }
 }
 
 function clearPool(tableName as string, poolName as string) as void {
-  loottweaker.LootTweaker.getTable(tableName).getPool(poolName).clearEntries();
+  LootTweaker.getTable(tableName).getPool(poolName).clearEntries();
 }
 
 function addLootToPool(tableName as string, poolName as string, lootTable as int[][IItemStack]) as void {
-  val pool = loottweaker.LootTweaker.getTable(tableName).getPool(poolName);
+  val pool = LootTweaker.getTable(tableName).getPool(poolName);
   for key, value in lootTable {
     if (isNull(key)) continue;
     val weight = value[0];
@@ -112,7 +112,7 @@ function addLootToPool(tableName as string, poolName as string, lootTable as int
 }
 
 function addSpecialTool(tableName as string, tool as IItemStack, materials as string[], displayName as string) as void {
-  val pool = loottweaker.LootTweaker.getTable(tableName).addPool('specialTool', 1.0f, 1.0f, 0.0f, 0.0f);
+  val pool = LootTweaker.getTable(tableName).addPool('specialTool', 1.0f, 1.0f, 0.0f, 0.0f);
   pool.addConditions([Conditions.randomChance(0.05)]);
   pool.addItemEntry(tool, 1, 0,
     [Functions.zenscript(function (input as IItemStack, rng as IRandom, context as LootContext) as IItemStack {
@@ -123,13 +123,13 @@ function addSpecialTool(tableName as string, tool as IItemStack, materials as st
 }
 
 function addRandomCapacitor(tableName as string, chance as float) as void {
-  val pool = loottweaker.LootTweaker.getTable(tableName).addPool('enderIOCapacitor', 1.0f, 1.0f, 0.0f, 0.0f);
+  val pool = LootTweaker.getTable(tableName).addPool('enderIOCapacitor', 1.0f, 1.0f, 0.0f, 0.0f);
   pool.addItemEntry(<enderio:item_basic_capacitor:4>, 1, 0, [{"function":"enderio:set_capacitor"}], []);
   pool.addConditions([Conditions.randomChance(chance)]);
 }
 
 function addAncientTomes(tableName as string, poolName as string, weight as int) as void{
-  loottweaker.LootTweaker.getTable(tableName).getPool(poolName).addItemEntry(<quark:ancient_tome>, weight, 0, [{"function":"quark:enchant_tome"}], []);
+  LootTweaker.getTable(tableName).getPool(poolName).addItemEntry(<quark:ancient_tome>, weight, 0, [{"function":"quark:enchant_tome"}], []);
 }
 
 /*
@@ -142,15 +142,15 @@ function addAncientTomes(tableName as string, poolName as string, weight as int)
 */
 
 function addBackpackPool(tableName as string) as void {
-  loottweaker.LootTweaker.getTable(tableName).addPool('lootBackpack', 1.0f, 1.0f, 0.0f, 0.0f);
+  LootTweaker.getTable(tableName).addPool('lootBackpack', 1.0f, 1.0f, 0.0f, 0.0f);
 }
 
 function addBackpackEmpty(tableName as string, weight as int = 1) as void {
-  loottweaker.LootTweaker.getTable(tableName).getPool('lootBackpack').addEmptyEntry(weight, 0, [], 'empty');
+  LootTweaker.getTable(tableName).getPool('lootBackpack').addEmptyEntry(weight, 0, [], 'empty');
 }
 
 function addBackpackWithLoot(tableName as string, lootCommon as IData[], lootUncommon as IData[], lootRare as IData[], weight as int = 1) as void {
-  loottweaker.LootTweaker.getTable(tableName).getPool('lootBackpack').addItemEntry(
+  LootTweaker.getTable(tableName).getPool('lootBackpack').addItemEntry(
     <travelersbackpack:travelers_backpack>,
     weight, 0,
     [Functions.zenscript(function (input as IItemStack, rng as IRandom, context as LootContext) as IItemStack {
@@ -184,7 +184,7 @@ function addBackpackWithLoot(tableName as string, lootCommon as IData[], lootUnc
 }
 
 function addBackpackForestryWithLoot(bagType as IItemStack, tableName as string, lootCommon as IData[], lootUncommon as IData[], lootRare as IData[], weight as int = 1) as void {
-  loottweaker.LootTweaker.getTable(tableName).getPool('lootBackpack').addItemEntry(
+  LootTweaker.getTable(tableName).getPool('lootBackpack').addItemEntry(
     bagType,
     weight, 0,
     [Functions.zenscript(function (input as IItemStack, rng as IRandom, context as LootContext) as IItemStack {
@@ -222,7 +222,7 @@ function addBackpackForestryWithLoot(bagType as IItemStack, tableName as string,
 }
 
 function addBackpackCyclicWithLoot(tableName as string, lootCommon as IData[], lootUncommon as IData[], lootRare as IData[], weight as int = 1) as void {
-  loottweaker.LootTweaker.getTable(tableName).getPool('lootBackpack').addItemEntry(
+  LootTweaker.getTable(tableName).getPool('lootBackpack').addItemEntry(
     <cyclicmagic:storage_bag>,
     weight, 0,
     [Functions.zenscript(function (input as IItemStack, rng as IRandom, context as LootContext) as IItemStack {
