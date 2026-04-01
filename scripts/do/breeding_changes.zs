@@ -74,7 +74,7 @@ events.register(function(event as native.net.minecraftforge.event.entity.living.
     val stats = breedingStats[clazz];
     val rand = parentA.getRNG();
 
-    val childCount = stats[2] + (stats[3] != 0 ? rand.nextInt(stats[3]) : 0);
+    val childCount = stats[2] + (stats[3] != 0 ? rand.nextInt(stats[3] + 1) : 0);
     for i in 0 .. childCount {
         val child = parentA.createChild(parentB) as EntityAgeable;
         if (isNull(child)) continue;
