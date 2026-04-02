@@ -138,7 +138,7 @@ Planned non-urgent changes, or just good ideas:
 - [ ] 💡 Feature idea: animal totem that work when you place mobs on each other in right sequence (cow-sheep-chicken for example)
 - [ ] 🌱 Add NC and QMD radioactive items mutating IC2 crops to increase / descrease their stats
 - [ ] 🍐 Fix Papaya manual tree harvesting with custom interract event https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/426
-- [ ] ✏️ Make necessary to tame and breed animals: `Hippocampus, Hyppogryph, Boars, `
+- [ ] ✏️ Make necessary to tame and breed animals: `Amphitere, Cocatrice, Hippocampus, Hyppogryph, Boars, `
 - [ ] ✏️ Rework size changing potions on mobs
 - [ ] ✏️ Rework Entity melting in Smeltery, migrate from Barrel Milking, add JEI category
 - [ ] ✏️ Use `Mulch` as ingredient
@@ -146,9 +146,11 @@ Planned non-urgent changes, or just good ideas:
 - [ ] ✏️ Use `Eye of Cyclops` as ingredient
 - [ ] ✏️ Use `Huge Stalk` as ingredient
 - [ ] ✏️ `Harbinger Cube` must spawn with strong Iron/Diamond skin effects and as Blight
+- [ ] ✏️ Add mobs that always blights (probably breedable mobs, `amphitere`)
 - [ ] ✏️ Moon stone could be used in Animals chapter
 - [ ] ✏️ Add more seeds compat for Graden Cloche https://github.com/michelegargiulo/ZenCloche/wiki
 - [ ] ✏️ Add `Block Shrooms` + `salis mundus` => `something` recipe
+- [ ] ✏️ blight Tamed Always Drop Something. Problem: dont know how to determine if entity is tamed
 - [ ] 🐀 Fix rats not spawn on garbage piles (they actually spawn in singleplayer)
 - [ ] 🐀 Add Ratlantis Portal spread
 - [ ] 🌳 Flora rework: Add immersive usage of trees. Padauk Tree could be used to get Gold. Fireproof obtainable only by breeding
@@ -193,6 +195,7 @@ Planned non-urgent changes, or just good ideas:
 ### Mods
 - [ ] 🟠 Do not update **JAOPCA** - uncompatible with `JAOPCACustom`
 - [ ] 🟠 Do not update **籁/Sound Physics Remixin** `1.1.17` or above - uncompatible with `Java 8`
+- [ ] 🟠 Do not update **LootTweaker** `0.3.3` or above - its removing deprecated functions used since E2E
 - [ ] 🟠 Do not update **Deep Mob Evolution** `1.2.3` - power usage changes makes Dragon model unable to work
 - [ ] 🟠 Do not update **RLTweaker** `0.6.1` or above - later versions only compatible with `I&F ROTN`
 - [ ] 🟠 Do not update **RLMixins** `1.4.0` or above - mod specially rewritten for `RLCraft`
