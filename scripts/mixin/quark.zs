@@ -85,7 +85,6 @@ zenClass MixinEntityArchaeologist {
 #mixin {targets: "vazkii.quark.world.entity.EntityFrog"}
 zenClass MixinEntityFrogDrop {
     #mixin Overwrite
-    #mixin Overwrite
     function func_70099_a(stack as ItemStack, offsetY as float) as EntityItem {
         if (stack.isEmpty()) return null;
 
