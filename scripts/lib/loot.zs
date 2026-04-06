@@ -9,6 +9,7 @@ import crafttweaker.util.IRandom;
 import crafttweaker.util.Math;
 import loottweaker.LootTweaker;
 import mods.daomephsta_loot_shared.LootContext;
+import mods.daomephsta_loot_shared.LootFunction;
 import loottweaker.vanilla.loot.Conditions;
 import loottweaker.vanilla.loot.Functions;
 import mods.zentoolforge.Toolforge;
@@ -25,11 +26,11 @@ function tweak(
   itemsToAdd as WeightedItemStack[],
   minMax as int[],
   isByPlayer as bool = false,
-  poolWeight as int = 1
+  poolWeight as int = 1,
+  furnaceSmelt as bool = false
 ) {
   // Current pool
   var pool = LootTweaker.getTable(table).getPool(poolStr);
-
   // Remove old drops if specified
   if (!isNull(entryToRemove))
     pool.removeEntry(entryToRemove);
@@ -43,31 +44,23 @@ function tweak(
         conditions += Conditions.randomChance(itemToAdd.chance);
       }
 
-      val smelted = utils.smelt(itemToAdd.stack);
-      if (!isNull(smelted)) {
-        // Add with smelting function (if smelted item exist)
-        pool.addItemEntry(itemToAdd.stack, poolWeight, 0, [
+      var functions = [
+        Functions.setCount(minMax[0], minMax[1]),
+        Functions.lootingEnchantBonus(0, 1, 0)
+      ] as LootFunction[];
+
+      if(furnaceSmelt) functions += {
+        'function': 'minecraft:furnace_smelt',
+        'conditions': [
           {
-            'function': 'minecraft:furnace_smelt',
-            conditions: [
-              {
-                properties: { 'minecraft:on_fire': true },
-                entity: 'this',
-                condition: 'minecraft:entity_properties',
-              },
-            ],
-          },
-          Functions.setCount(minMax[0], minMax[1]),
-          Functions.lootingEnchantBonus(0, 1, 0),
-        ], conditions);
-      }
-      else {
-        // Add non-smelt function
-        pool.addItemEntry(itemToAdd.stack, poolWeight, 0, [
-          Functions.setCount(minMax[0], minMax[1]),
-          Functions.lootingEnchantBonus(0, 1, 0),
-        ], conditions);
-      }
+            'properties': { 'minecraft:on_fire': true },
+            'entity': 'this',
+            'condition': 'minecraft:entity_properties'
+          }
+        ]
+      } as LootFunction;
+
+      pool.addItemEntry(itemToAdd.stack, poolWeight, 0, functions, conditions);
     }
   }
 
