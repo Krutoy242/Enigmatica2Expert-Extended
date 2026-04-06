@@ -72,8 +72,7 @@ zenClass MixinVICEPlayerHasItem {
         }
 
         val baubles = BaublesApi.getBaubles(player);
-        val max = baubles.getSizeInventory() - 1;
-        for i in 0 .. max {
+        for i in 0 .. baubles.getSizeInventory() {
             val stack = baubles.getStackInSlot(i);
             if (!isNull(stack) && stack.getItem() == item) return true;
         }
