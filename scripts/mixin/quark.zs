@@ -7,6 +7,7 @@ import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.util.ResourceLocation;
 import native.net.minecraft.village.MerchantRecipe;
 import native.net.minecraft.village.MerchantRecipeList;
+import native.net.minecraft.entity.item.EntityItem;
 
 #mixin {targets: "vazkii.quark.world.entity.EntityArchaeologist"}
 zenClass MixinEntityArchaeologist {
@@ -78,5 +79,21 @@ zenClass MixinEntityArchaeologist {
             ItemStack(outItem, outCount, outL.length < 3 ? 0 : outL[2])
         ));
         print('Added Archaeologist trade: ' ~ inpId ~ ' ' ~ inpMin ~ '-' ~ inpMax ~ ' => ' ~ outId ~ ' ' ~ outMin ~ '-' ~ outMax);
+    }
+}
+
+#mixin {targets: "vazkii.quark.world.entity.EntityFrog"}
+zenClass MixinEntityFrogDrop {
+    #mixin Overwrite
+    #mixin Overwrite
+    function func_70099_a(stack as ItemStack, offsetY as float) as EntityItem {
+        if (stack.isEmpty()) return null;
+
+        val entityitem = EntityItem(this0.world, this0.posX, this0.posY + offsetY, this0.posZ, stack);
+
+        entityitem.setDefaultPickupDelay();
+        this0.world.spawnEntity(entityitem);
+
+        return entityitem;
     }
 }
