@@ -82,6 +82,7 @@ zenClass MixinEntityArchaeologist {
     }
 }
 
+//Restore default minecraft logic (quark hardcoded some logic with created always cooked frog leg) 
 #mixin {targets: "vazkii.quark.world.entity.EntityFrog"}
 zenClass MixinEntityFrogDrop {
     #mixin Overwrite
