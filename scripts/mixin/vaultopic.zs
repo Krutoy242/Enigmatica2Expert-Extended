@@ -63,11 +63,11 @@ zenClass MixinVICEPlayerHasItem {
     #mixin Overwrite
     function playerHasItem(player as native.net.minecraft.entity.player.EntityPlayer, item as native.net.minecraft.item.Item) as bool {
 
-        for stack in player.field_71071_by.field_184439_c {
+        for stack in player.inventory.offHandInventory {
             if (!isNull(stack) && stack.getItem() == item) return true;
         }
 
-        for stack in player.field_71071_by.field_70462_a {
+        for stack in player.inventory.mainInventory {
             if (!isNull(stack) && stack.getItem() == item) return true;
         }
 
