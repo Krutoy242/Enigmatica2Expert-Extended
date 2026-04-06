@@ -18,8 +18,9 @@ zenClass MixinItemVICEAsBauble extends IBauble {
 
 }
 
+//Client side logic searching player inventory for VICE item
 #mixin {targets: "wolforce.vaultopic.client.Keybinds"}
-zenClass MixinVICEInventorySearch {
+zenClass MixinVICEInventorySearchForClient {
     #mixin Inject {method: "canVice", at: {value: "HEAD"}, cancellable: true}
     function canViceWithBaubles(player as native.net.minecraft.client.entity.EntityPlayerSP, info as mixin.CallbackInfoReturnable) as void {
         val baubles = BaublesApi.getBaubles(player);
@@ -42,8 +43,9 @@ zenClass MixinItemVIEWAsBauble extends IBauble {
 
 }
 
+//Client side logic searching player inventory for VIEW item
 #mixin {targets: "wolforce.vaultopic.client.Keybinds"}
-zenClass MixinVIEWInventorySearch {
+zenClass MixinVIEWInventorySearchForClient {
     #mixin Inject {method: "canView", at: {value: "HEAD"}, cancellable: true}
     function canViceWithBaubles(player as native.net.minecraft.client.entity.EntityPlayerSP, info as mixin.CallbackInfoReturnable) as void {
         val baubles = BaublesApi.getBaubles(player);
@@ -57,6 +59,7 @@ zenClass MixinVIEWInventorySearch {
     }
 }
 
+//Server side logic
 #mixin {targets: "wolforce.vaultopic.VU"}
 zenClass MixinVICEPlayerHasItem {
     #mixin Static
