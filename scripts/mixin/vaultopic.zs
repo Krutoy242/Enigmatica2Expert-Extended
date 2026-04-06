@@ -6,6 +6,7 @@ import native.baubles.api.BaublesApi;
 import native.baubles.api.IBauble;
 import native.net.minecraft.item.ItemStack;
 import native.wolforce.vaultopic.ItemVICE;
+import native.wolforce.vaultopic.ItemVIEW;
 import native.wolforce.vaultopic.client.Keybinds;
 
 #mixin {targets: "wolforce.vaultopic.ItemVICE"}
@@ -25,6 +26,30 @@ zenClass MixinVICEInventorySearch {
         for i in 0 .. baubles.getSizeInventory() {
             val stack = baubles.getStackInSlot(i);
             if (!isNull(stack) && stack.getItem() instanceof ItemVICE) {
+                info.setReturnValue(true);
+                return;
+            }
+        }
+    }
+}
+
+#mixin {targets: "wolforce.vaultopic.ItemVIEW"}
+zenClass MixinItemVIEWAsBauble extends IBauble {
+
+    function getBaubleType(stack as ItemStack) as BaubleType {
+        return BaubleType.TRINKET;
+    }
+
+}
+
+#mixin {targets: "wolforce.vaultopic.client.Keybinds"}
+zenClass MixinVIEWInventorySearch {
+    #mixin Inject {method: "canView", at: {value: "HEAD"}, cancellable: true}
+    function canViceWithBaubles(player as native.net.minecraft.client.entity.EntityPlayerSP, info as mixin.CallbackInfoReturnable) as void {
+        val baubles = BaublesApi.getBaubles(player);
+        for i in 0 .. baubles.getSizeInventory() {
+            val stack = baubles.getStackInSlot(i);
+            if (!isNull(stack) && stack.getItem() instanceof ItemVIEW) {
                 info.setReturnValue(true);
                 return;
             }
