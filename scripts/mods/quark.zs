@@ -2,8 +2,6 @@
 
 import crafttweaker.item.IItemStack;
 
-scripts.lib.loot.tweak('quark:entities/crab', 'legs', 'quark:crab_leg', null, [<harvestcraft:crabrawitem>], [1,3]);
-
 // Quark Polished Marble
 val marble = <ore:stoneMarble>;
 recipes.removeShaped(<quark:marble:1>);
