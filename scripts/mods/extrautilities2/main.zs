@@ -1,8 +1,165 @@
+#modloaded extrautils2
+#loader mixin
+
+import native.net.minecraft.util.EnumActionResult;
+import native.com.rwtema.extrautils2.api.machine.Machine;
+import native.com.rwtema.extrautils2.api.machine.MachineRegistry;
+import native.com.rwtema.extrautils2.api.machine.XUMachineCrusher;
+import native.com.rwtema.extrautils2.network.XUPacketBuffer;
+
+#mixin {targets: "com.rwtema.extrautils2.tile.TileTerraformer$ContainerTerraformer$3"}
+zenClass MixinTileTerraformerContainerTextArea {
+    #mixin ModifyConstant {method: "constructText", constant: {stringValue: "/"}}
+    function modifyTFTooltipMiddle(value as string) as string {
+      return '';
+    }
+
+    #mixin Redirect {method: "constructText", at: {value: "INVOKE", target: "com/rwtema/extrautils2/network/XUPacketBuffer.readInt()I", ordinal: 4}}
+    function processTFSuccess(packet as XUPacketBuffer) as int {
+      val cur = packet.readInt();
+      val max = packet.readInt();
+      if (cur < max){
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+
+    #mixin Redirect {method: "constructText", at: {value: "INVOKE", target: "com/rwtema/extrautils2/network/XUPacketBuffer.readInt()I", ordinal: 5}}
+    function negateSecondTFCall(packet as XUPacketBuffer) as int {
+      return 0;
+    }
+
+    #mixin Redirect {method: "constructText", at: {value: "INVOKE", target: "com/rwtema/extrautils2/utils/helpers/StringHelper.format(I)Ljava/lang/String;", ordinal: 0}}
+    function outputSuccessTxt(value as int) as string {
+      if (value == 0){
+        return 'ᚷ';
+      } else {
+        return '✔';
+      }
+    }
+
+    #mixin Redirect {method: "constructText", at: {value: "INVOKE", target: "com/rwtema/extrautils2/utils/helpers/StringHelper.format(I)Ljava/lang/String;", ordinal: 1}}
+    function negateSecondStringFormatAppend(value as int) as string {
+      return '';
+    }
+}
+
+/*
+Remove Crusher since its whole functionality copied with other crusher
+*/
+#mixin {targets: "com.rwtema.extrautils2.machine.MachineInit"}
+zenClass MixinMachineInit {
+    #mixin Static
+    #mixin Redirect
+    #{
+    #    method: "init",
+    #    at: {
+    #        value: "INVOKE",
+    #        target: "Lcom/rwtema/extrautils2/api/machine/MachineRegistry;register(Lcom/rwtema/extrautils2/api/machine/Machine;)Lcom/rwtema/extrautils2/api/machine/Machine;"
+    #    }
+    #}
+    function disableCrusher(machine as Machine) as Machine {
+        if (machine != XUMachineCrusher.INSTANCE) {
+            MachineRegistry.register(machine);
+        }
+        return machine;
+    }
+
+    /*
+
+    Slice positions:
+
+    0 Enchanter
+    1 FURNACE
+    2 SURVIVALIST
+    3 CULINARY
+    4 POTION
+    5 TNT
+    6 LAVA
+    7 PINK
+    8 NETHERSTAR
+    9 ENDER
+    10 REDSTONE
+    11 OVERCLOCK
+    12 DRAGON
+    13 ICE
+    14 DEATH
+    15 ENCHANT
+    16 SLIME
+
+    */
+
+    #mixin Static
+    #mixin ModifyConstant
+    #{
+    #    method: "init",
+    #    constant: [
+    #       {intValue: 100},
+    #       {intValue: 1000},
+    #       {intValue: 1600},
+    #       {intValue: 4000},
+    #       {intValue: 8000},
+    #       {intValue: 100000},
+    #       {intValue: 400000},
+    #       {intValue: 1000000}
+    #    ],
+    #    slice: {
+    #        from: {
+    #            value: "NEW",
+    #            target: "com/rwtema/extrautils2/api/machine/Machine",
+    #            ordinal: 2,
+    #            shift: "BEFORE"
+    #        }
+    #    }
+    #}
+    function buffMachineCapacityAndTransfer(value as int) as int {
+        return min(2000000000 / 64, value * 300);
+    }
+}
+
+/*
+Make Screen not consume power
+*/
+#mixin {targets: "com.rwtema.extrautils2.tile.TileScreen"}
+zenClass MixinTileScreen {
+    #mixin ModifyConstant {method: "getPower", constant: {floatValue: 1.0}}
+    function setPowerToZero(value as float) as float {
+        return 0.0f;
+    }
+}
+
+/*
+Remove enchantment effect from Creative Harvest to prevent client crash
+*/
+#mixin {targets: "com.rwtema.extrautils2.blocks.BlockCreativeHarvest"}
+zenClass MixinBlockCreativeHarvest {
+    #mixin Overwrite
+    function hasEffect(stack as native.net.minecraft.item.ItemStack) as EnumActionResult {
+        return EnumActionResult.PASS;
+    }
+}
+
+#mixin {targets: "com.rwtema.extrautils2.tile.TileCreativeHarvest"}
+zenClass MixinTileCreativeHarvest {
+    #mixin Overwrite
+    function shouldShowEnchantment() as bool {
+        return false;
+    }
+}
+❯ cat mods/extrautilities2/main.zs
 #modloaded extrautils2 ic2
 #priority 1
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
+
+function getCreativeHarvest(item as IItemStack) as IItemStack {
+  return <extrautils2:creativeharvest>.withTag({
+    creative_block: { meta: item.damage, block: item.definition.id },
+    display_stack: { id: item.definition.id, Count: 1 as byte, Damage: item.damage as short }
+  });
+}
 
 mods.jei.JEI.hideCategory('xu2_machine_extrautils2:furnace');
 mods.jei.JEI.hideCategory('xu2_machine_extrautils2:generator_survival');
@@ -211,9 +368,6 @@ scripts.process.mash(<minecraft:ender_pearl> , <extrautils2:endershard> * 16, nu
 // mods.extrautils2.Resonator.add(IItemStack output, IItemStack input, int energy, @Optional boolean addOwnerTag);
 mods.extrautils2.Resonator.add(<extrautils2:decorativesolid:6>, <botania:quartztypemana>, 600 * 100);
 
-// Cheap Blue Quartz replica
-mods.extrautils2.Resonator.add(<extrautils2:decorativesolid:6> * 64, <extrautils2:poweroverload>, 1400 * 100);
-
 // Make quartzburnt harder (was 8 GP)
 mods.extrautils2.Resonator.remove(<extrautils2:decorativesolid:7>);
 mods.extrautils2.Resonator.add(<extrautils2:decorativesolid:7>, <actuallyadditions:block_misc:2>, 80 * 100);
@@ -303,7 +457,7 @@ craft.make(<extrautils2:angelring>, ['pretty',
   '▬ R ▬',
   '▬ ▬ ▬'], {
   '▬': <ore:ingotGold198>,          // Gold-198
-  'C': <extrautils2:poweroverload>,
+  'C': getCreativeHarvest(<extrautils2:decorativesolid:6>), // Creative Harvest
   'R': <extrautils2:chickenring:1>, // Ring of the Flying Squid
 });
 
@@ -413,8 +567,24 @@ craft.make(<extrautils2:drum:3>, ['pretty',
   '~': <extrautils2:klein>,
 });
 
-// High-GP usage ingredient
-mods.extrautils2.Resonator.add(<extrautils2:poweroverload>, <extrautils2:decorativesolid:6>, 1300 * 100);
+// Infinity item sources
+val BQ = <extrautils2:decorativesolid:6>; // Blue Quartz
+mods.extrautils2.Resonator.add(getCreativeHarvest(BQ), BQ, 1300 * 100);
+
+for item in [
+  <minecraft:dirt>,
+  <minecraft:concrete:7>,
+] as IItemStack[] {
+  mods.extendedcrafting.TableCrafting.addShaped(0,
+    getCreativeHarvest(item),
+    Grid(['pretty',
+      'd d d',
+      'd * d',
+      'd d d'], {
+      'd': item,
+      '*': <actuallyadditions:block_crystal_empowered:4>, // Empowered Emeradic Crystal Block
+    }).shaped());
+}
 
 // Make Ferrous Trees better integrated
 furnace.remove(<minecraft:iron_nugget>, <extrautils2:ironwood_planks:*>);
@@ -580,3 +750,4 @@ scripts.process.crush(<minecraft:gold_ore>, <thermalfoundation:material:1> * 2, 
 scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'only: IECrusher', [<minecraft:flint>], [0.5f]);
 scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: IECrusher');
 scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: IECrusher');
+

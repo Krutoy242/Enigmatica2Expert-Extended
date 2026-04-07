@@ -1,6 +1,7 @@
 #modloaded extrautils2
 #loader mixin
 
+import native.net.minecraft.util.EnumActionResult;
 import native.com.rwtema.extrautils2.api.machine.Machine;
 import native.com.rwtema.extrautils2.api.machine.MachineRegistry;
 import native.com.rwtema.extrautils2.api.machine.XUMachineCrusher;
@@ -127,3 +128,16 @@ zenClass MixinTileScreen {
         return 0.0f;
     }
 }
+
+/*
+Remove enchantment effect from placed Creative Harvest to prevent client crash with shaders
+*/
+#mixin {targets: "com.rwtema.extrautils2.tile.TileCreativeHarvest"}
+zenClass MixinTileCreativeHarvest {
+    #mixin Overwrite
+    function shouldShowEnchantment() as bool {
+        return false;
+    }
+}
+
+
