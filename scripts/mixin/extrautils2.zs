@@ -129,15 +129,4 @@ zenClass MixinTileScreen {
     }
 }
 
-/*
-Remove enchantment effect from placed Creative Harvest to prevent client crash with shaders
-*/
-#mixin {targets: "com.rwtema.extrautils2.tile.TileCreativeHarvest"}
-zenClass MixinTileCreativeHarvest {
-    #mixin Overwrite
-    function shouldShowEnchantment() as bool {
-        return false;
-    }
-}
-
 
