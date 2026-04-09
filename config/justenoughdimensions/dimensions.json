@@ -17,7 +17,8 @@
       },
       "jed": {
         "GenerateFallbackSpawnBlock": false
-      }
+      },
+      "load_on_start": true
     }
   ]
 }
