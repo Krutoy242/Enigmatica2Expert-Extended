@@ -1,0 +1,31 @@
+{
+	title: "{q.extra_utilities.transfer_node.name}",
+	icon: "extrautils2:grocket",
+	x: 0.415d,
+	y: 1.8259999999999998d,
+	text: [
+		"{q.extra_utilities.transfer_node.desc}"
+	],
+	dependencies: [
+		"a1b2fa88"
+	],
+	size: 0.83d,
+	optional: 1b,
+	tasks: [{
+		uid: "32c55e0e",
+		type: "item",
+		items: [{
+			item: "extrautils2:grocket"
+		}]
+	}],
+	rewards: [{
+		uid: "34448d39",
+		type: "item",
+		item: {
+			tag: {
+				type: "common"
+			},
+			id: "ftbquests:lootcrate"
+		}
+	}]
+}

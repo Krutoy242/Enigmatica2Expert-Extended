@@ -3,6 +3,7 @@
 
 import mixin.CallbackInfoReturnable;
 import mixin.Operation;
+import mixin.CallbackInfo;
 import native.com.rwtema.extrautils2.api.machine.IMachineRecipe;
 import native.com.rwtema.extrautils2.api.machine.Machine;
 import native.com.rwtema.extrautils2.api.machine.MachineRecipeRegistry;
@@ -11,6 +12,12 @@ import native.com.rwtema.extrautils2.api.machine.XUMachineCrusher;
 import native.com.rwtema.extrautils2.api.machine.XUMachineGenerators;
 import native.com.rwtema.extrautils2.machine.EnergyBaseRecipe;
 import native.com.rwtema.extrautils2.network.XUPacketBuffer;
+import native.com.rwtema.extrautils2.tile.TileCreativeHarvest;
+import native.com.rwtema.extrautils2.blocks.BlockCreativeHarvest;
+import native.com.rwtema.extrautils2.transfernodes.Upgrade;
+import native.com.rwtema.extrautils2.itemhandler.SingleStackHandler;
+import native.net.minecraftforge.items.IItemHandler;
+import native.net.minecraftforge.items.ItemHandlerHelper;
 import native.java.lang.Integer;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.util.EnumActionResult;
@@ -153,6 +160,45 @@ zenClass MixinTileScreen {
     #mixin ModifyConstant {method: "getPower", constant: {floatValue: 1.0}}
     function setPowerToZero(value as float) as float {
         return 0.0f;
+    }
+}
+
+/*
+Allow Transfer Node to generate Creative Harvest drop with Upgrade Mining
+*/
+#mixin {targets: "com.rwtema.extrautils2.transfernodes.TransferNodeItem"}
+zenClass MixinTransferNodeItem {
+    #mixin Shadow
+    var stack as SingleStackHandler;
+
+    #mixin Inject {method: "processBuffer", at: {value: "HEAD"}}
+    function creativeHarvestMining(attached as IItemHandler, ci as CallbackInfo) as void {
+        if (!isNull(attached)) return;
+        val upgradeLevel = this0.getUpgradeLevel(Upgrade.MINING);
+        if (upgradeLevel <= 0) return;
+        if (stack.isFull()) return;
+
+        val world = this0.holder.getWorld();
+        val offset = this0.holder.getPos().offset(this0.side);
+        val state = world.getBlockState(offset);
+        if (!(state.getBlock() instanceof BlockCreativeHarvest)) return;
+
+        val te = world.getTileEntity(offset);
+        if (!(te instanceof TileCreativeHarvest)) return;
+        val harvest = te as TileCreativeHarvest;
+        if (isNull(harvest.mimicState.value)) return;
+
+        val mimicState = harvest.mimicState.value;
+        val drops = mimicState.getBlock().getDrops(world, offset, mimicState, 0);
+        if (drops.isEmpty()) return;
+
+        for drop in drops {
+            val b = drop.copy();
+            b.setCount(upgradeLevel);
+            if (!stack.isEmpty() && !ItemHandlerHelper.canItemStacksStack(stack.getStack(), b)) continue;
+            stack.insertItem(0, b, false);
+            break;
+        }
     }
 }
 

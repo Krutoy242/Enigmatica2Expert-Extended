@@ -1,8 +1,8 @@
 {
 	title: "{q.extra_utilities.cursed_earth.name}",
 	icon: "extrautils2:cursedearth",
-	x: 1.1666666666666667d,
-	y: -0.4166666666666667d,
+	x: 2.4166666666666665d,
+	y: 0.3333333333333333d,
 	text: [
 		"{q.extra_utilities.cursed_earth.desc}"
 	],
