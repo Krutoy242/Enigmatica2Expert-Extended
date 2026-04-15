@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "block-entity-acceleration": false,
+  "block-breaking-acceleration": true,
+  "potion-effect-acceleration": true,
+  "fluid-acceleration": true,
+  "pickup-acceleration": true,
+  "eating-acceleration": true,
+  "portal-acceleration": true,
+  "sleeping-acceleration": true,
+  "server-watchdog": true,
+  "singleplayer-warning": true,
+  "time-acceleration": true,
+  "random-tickspeed-acceleration": true,
+  "automatic-updater": true
+}

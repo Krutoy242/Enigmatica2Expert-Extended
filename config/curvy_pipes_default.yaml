@@ -41,20 +41,18 @@ pipe_types:
   - { key: curvy.energy.large, meta: 13, name: Large Energy Pipe, texture: curvy_pipes:blocks/energy_pipe, diameter: 0.8, variant: { Energy: { rate: 1E6 } } }
   - { key: curvy.energy.huge, meta: 14, name: Huge Energy Pipe, texture: curvy_pipes:blocks/huge_energy_pipe, diameter: 1.6, variant: { Energy: { rate: 10E6 } } }
 
-# Applied Energistics 2 integration (ignored if AE2 is not installed)
+# Applied Energistics 2 integration
 ae2:
-  # Automatically generate curvy variants of ME glass/covered/smart/dense covered/dense smart cables
-  # and quartz fiber. No new items will be added. Instead, the curvy variants can be placed using the
-  # corresponding AE2 items.
+  # Whether to enable curvy variants of ME glass/covered/smart/dense covered/dense smart cables and quartz fiber.
   # Allowed values:
   #   OffHand: using AE2 cables in off-hand will place the curvy variants.
   #   AnyHand: always place the curvy variants. The original AE2 variant can no longer be placed.
   #   Disable: do not generate the curvy variants.
   cables: OffHand
 
-# GregTech CEu integration (ignored if GTCEu is not installed)
+# GregTech CEu integration
 gtceu:
-  # Automatically generate curvy EU cables, item pipes and fluid pipes for every GTCEu material.
+  # Whether to add curvy EU cables, item pipes and fluid pipes for every GTCEu material.
   # No new items will be added. Instead, the curvy variants can be placed using the corresponding GTCEu items.
   # Note that the curvy item & fluid pipes use Curvy Pipes' logistics system and can't accept GTCEu covers.
   # The curvy fluid pipes follow the same temperature & material restrictions specified by the GTCEu pipes.
@@ -63,6 +61,12 @@ gtceu:
   eu_cables: OffHand
   item_pipes: OffHand
   fluid_pipes: OffHand
+
+# ComputerCraft (CC: Tweaked) integration
+cc:
+  # Whether to enable curvy CC networking cables that can be placed by using regular CC cables in off-hand.
+  # Currently curvy CC cables can only connect to regular CC cables: they can't directly connect to modems or peripherals.
+  cables: true
 
 # You can customize recipes here. The format is similar to that of vanilla recipe data JSONs.
 # You can also remove this section entirely if you want to use other mods to manage recipes.

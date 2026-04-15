@@ -3,7 +3,7 @@
 // Format: modId -> [message, maxVersionExclusive (null = always flag)]
 var problematicMods = {
     "aiimprovements":    ["AI Improvements has been rewritten and merged into Universal Tweaks.", null],
-    // "appleskin":         ["Outdated. BareBones replaces it with LemonSkin.", null],
+    "appleskin":         ["Outdated. BareBones replaces it with LemonSkin.", null],
     "astatine":          ["Astatine has no performance gain and may even reduce performance for some users.", null],
     "attributefix":      ["Attribute Fix has been rewritten and merged into Universal Tweaks.", null],
     "bannerpatch":       ["Banner Patch has been merged into Universal Tweaks.", null],

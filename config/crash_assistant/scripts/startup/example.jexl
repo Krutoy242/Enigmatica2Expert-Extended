@@ -66,7 +66,7 @@ var systemAvailable = MemoryUtils.getSystemFreeMemoryBytes() + MemoryUtils.getSy
 var jvmAllocated = MemoryUtils.getJvmAllocatedMemoryBytes();
 var stillNeeded = xmxBytes - jvmAllocated;
 
-if (!exceedsTotalSystemCapacity && xmxBytes > 0 && stillNeeded > 0 && systemAvailable < stillNeeded) {
+if (PlatformHelp.isWindows() && !exceedsTotalSystemCapacity && xmxBytes > 0 && stillNeeded > 0 && systemAvailable < stillNeeded) {
     var msg = LanguageProvider.get("custom.high_system_load");
     msg = msg.replace("$XMX$", formattedXmx);
     msg = msg.replace("$AVAILABLE$", MemoryUtils.formatMemorySize(systemAvailable));

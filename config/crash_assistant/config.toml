@@ -36,7 +36,7 @@
 	#Before uploading the first log, requires the user to accept the privacy policy.
 	#Disabling this option may be illegal in some countries if you are modpack creator. Disable at your own risk.
 	enable_privacy_policy_acceptance = true
-	#If true, if we can find win_event file after minecraft closed, pop ups.
+	#If true, Crash Assistant will pop up even if the presence of win_event log is the only sign of a crash.
 	#Can be false positive for some users, since they can have some unrelated spam in the windows event error log.
 	win_event_is_crash = false
 	#If options.txt doesn't exist, the default language will be used.

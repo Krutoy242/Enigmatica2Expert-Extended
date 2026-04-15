@@ -1,0 +1,6 @@
+{
+  "type": "whitelist",
+  "blocks": [
+    "*:*"
+  ]
+}
