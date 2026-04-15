@@ -47,11 +47,11 @@ zenClass MixinItemVIEWAsBauble extends IBauble {
 #mixin {targets: "wolforce.vaultopic.client.Keybinds"}
 zenClass MixinVIEWInventorySearchForClient {
     #mixin Inject {method: "canView", at: {value: "HEAD"}, cancellable: true}
-    function canViceWithBaubles(player as native.net.minecraft.client.entity.EntityPlayerSP, info as mixin.CallbackInfoReturnable) as void {
+    function canViewWithBaubles(player as native.net.minecraft.client.entity.EntityPlayerSP, info as mixin.CallbackInfoReturnable) as void {
         val baubles = BaublesApi.getBaubles(player);
         for i in 0 .. baubles.getSizeInventory() {
             val stack = baubles.getStackInSlot(i);
-            if (!isNull(stack) && stack.getItem() instanceof ItemVIEW) {
+            if (!isNull(stack) && (stack.getItem() instanceof ItemVIEW || stack.getItem() instanceof ItemVICE)) {
                 info.setReturnValue(true);
                 return;
             }
