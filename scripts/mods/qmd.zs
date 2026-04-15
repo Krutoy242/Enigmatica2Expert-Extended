@@ -281,6 +281,7 @@ mods.nuclearcraft.Turbine.addRecipe(<fluid:high_pressure_mercury> * 2, <liquid:m
 mods.qmd.nucleosynthesis_chamber_heater.removeRecipeWithInput(<fluid:mercury>);
 mods.qmd.nucleosynthesis_chamber_heater.removeRecipeWithInput(<fluid:hot_mercury>);
 mods.qmd.nucleosynthesis_chamber_heater.addRecipe(<fluid:mercury>, <fluid:high_pressure_mercury> * 2, 512000);
+// mods.nuclearcraft.Turbine.addRecipe(<fluid:high_pressure_mercury>, <liquid:exhaust_mercury> * 3, 3840, 3.0, 1.0);
 
 // Below, taken from Multiblock-Madness
 // https://github.com/Filostorm/Multiblock-Madness/blob/19659008c64234f96d5607df3f9ca6df7adee778/scripts/Non%20Mod%20Scripts/unification.zs#L150-L301
