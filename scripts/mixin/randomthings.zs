@@ -34,29 +34,3 @@ zenClass MixinEntityGoldenChicken {
         return 100;
     }
 }
-
-#mixin {targets: "lumien.randomthings.block.spectretree.BlockSpectreLeaf"}
-zenClass MixinBlockSpectreLeaf {
-    #mixin ModifyConstant {method: "dropApple", constant: {intValue: 55}}
-    function increaseEctoplasmDrop(value as int) as int {
-        return 2;
-    }
-}
-
-/*
-Add light emission
-Dont know why its not by default in RT
-*/
-#mixin {targets: "lumien.randomthings.block.BlockBlockLuminous"}
-zenClass MixinBlockBlockLuminous {
-    function getLightValue(state as IBlockState, world as IBlockAccess, pos as BlockPos) as int {
-        return 15;
-    }
-}
-
-#mixin {targets: "lumien.randomthings.block.BlockBlockLuminousTranslucent"}
-zenClass MixinBlockBlockLuminousTranslucent {
-    function getLightValue(state as IBlockState, world as IBlockAccess, pos as BlockPos) as int {
-        return 15;
-    }
-}

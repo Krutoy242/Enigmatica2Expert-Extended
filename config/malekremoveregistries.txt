@@ -120,10 +120,6 @@ mctsmelteryio:powdered_fuel
 mekanism:walkietalkie
 nuclearcraft:fission_computer_port
 nuclearcraft:turbine_computer_port
-randomthings:spectreaxe
-randomthings:spectrepickaxe
-randomthings:spectreshovel
-randomthings:spectresword
 rats:auto_curdler
 rats:cauldron_cheese
 rats:cauldron_milk
