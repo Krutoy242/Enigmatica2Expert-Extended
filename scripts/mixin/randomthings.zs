@@ -35,19 +35,6 @@ zenClass MixinEntityGoldenChicken {
     }
 }
 
-#mixin {targets: "lumien.randomthings.handler.DiviningRodHandler"}
-zenClass MixinDiviningRodHandler {
-    #mixin ModifyConstant {method: "tick", constant: {intValue: 60}}
-    function buffScanSpeed(value as int) as int {
-        return 400;
-    }
-
-    #mixin ModifyConstant {method: "tick", constant: {intValue: 6}}
-    function buffRadius(value as int) as int {
-        return 20;
-    }
-}
-
 #mixin {targets: "lumien.randomthings.block.spectretree.BlockSpectreLeaf"}
 zenClass MixinBlockSpectreLeaf {
     #mixin ModifyConstant {method: "dropApple", constant: {intValue: 55}}
