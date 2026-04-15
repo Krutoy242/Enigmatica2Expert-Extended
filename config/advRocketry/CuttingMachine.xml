@@ -20,29 +20,4 @@
 	
 	The "useDefault" attribute will prevent loading of recipes if set to "false"
 <!-->
-<Recipes useDefault="false">
-	<Recipe timeRequired="40" power="100000">
-		<input>
-			<itemStack>advancedrocketry:itemcircuitplate</itemStack>
-		</input>
-		<output>
-			<itemStack>advancedrocketry:ic 4</itemStack>
-		</output>
-	</Recipe>
-	<Recipe timeRequired="50" power="100000">
-		<input>
-			<itemStack>advancedrocketry:itemcircuitplate 1 1</itemStack>
-		</input>
-		<output>
-			<itemStack>advancedrocketry:ic 4 2</itemStack>
-		</output>
-	</Recipe>
-	<Recipe timeRequired="50" power="100000">
-		<input>
-			<oreDict>bouleSilicon</oreDict>
-		</input>
-		<output>
-			<itemStack>advancedrocketry:wafer 4</itemStack>
-		</output>
-	</Recipe>
-</Recipes>
+<Recipes useDefault="false"/>
