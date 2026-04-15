@@ -67,7 +67,7 @@ mods.immersiveengineering.Crusher.addRecipe(<minecraft:sand> * 2, <ore:sandstone
 mods.immersiveengineering.Crusher.removeRecipe(<libvulpes:productdust:3>);
 
 // Concrete Conversion recipes
-recipes.addShapedMirrored('Concrete Panel', <immersiveengineering:stone_device:4>, [[<ore:plateConcrete>, null, null],[<ore:plateConcrete>, null, null], [null, null, null]]);
+recipes.addShapedMirrored('Concrete Panel', <immersiveengineering:stone_device:4>, [[<ore:plateConcrete>],[<ore:plateConcrete>]]);
 recipes.addShapedMirrored('Concrete Slab', <immersiveengineering:stone_decoration_slab:5>, [[<immersiveengineering:stone_device:4>, null, null],[<immersiveengineering:stone_device:4>, null, null], [null, null, null]]);
 
 recipes.removeByRecipeName('immersiveengineering:stone_decoration/concrete_slab');
