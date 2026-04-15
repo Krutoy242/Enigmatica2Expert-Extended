@@ -8,6 +8,8 @@ import mods.zenutils.DataUpdateOperation.MERGE;
 import mods.zenutils.DataUpdateOperation.REMOVE;
 import mods.zenutils.DataUpdateOperation.OVERWRITE;
 
+import scripts.mods.thaumcraft.aspect;
+
 mods.thaumcraft.Infusion.removeRecipe(<minecraft:golden_apple:1>);
 
 scripts.process.sawWood(<thaumcraft:taint_log>, <thaumadditions:taintwood_planks>, 'only: TESawmill'); 
@@ -77,20 +79,18 @@ ___ _  _ ____ _  _ _  _ ____ ___  ___  _ ___ _ ____ _  _ ____
                                                               
 */
 
-<minecraft:spawn_egg>.withTag({EntityTag: {id: "thaumadditions:blue_wolf"}})
-                                                .setAspects(<aspect:bestia>*20        ,<aspect:auram>*20      ,<aspect:mana>*10); 
-<entity:thaumadditions:blue_wolf>               .setAspects(<aspect:bestia>*20        ,<aspect:auram>*20      ,<aspect:mana>*10);
+aspect.tweak.setEntity('20🐺 20✨ 10🔷', <entity:thaumadditions:blue_wolf>);
 
-<thaumadditions:mithrillium_ingot>              .setAspects(<aspect:metallum>*15  ,<aspect:mana>*10           ,<aspect:praecantatio>*10 ,<aspect:ordo>*2      ,<aspect:vitreus>*3);
-<thaumadditions:mithrillium_block>              .setAspects(<aspect:metallum>*150 ,<aspect:mana>*100          ,<aspect:praecantatio>*100,<aspect:ordo>*20     ,<aspect:vitreus>*30);
-<thaumadditions:mithrillium_plate>              .setAspects(<aspect:metallum>*15  ,<aspect:mana>*10           ,<aspect:praecantatio>*10 ,<aspect:ordo>*2      ,<aspect:vitreus>*3, <aspect:instrumentum>*2);
-<thaumadditions:adaminite_ingot>                .setAspects(<aspect:metallum>*15  ,<aspect:infernum>*66       ,<aspect:sanguis>*10      ,<aspect:spiritus>*10 ,<aspect:vitium>*3);
-<thaumadditions:adaminite_block>                .setAspects(<aspect:metallum>*150 ,<aspect:infernum>*666      ,<aspect:sanguis>*100     ,<aspect:spiritus>*100,<aspect:vitium>*30);
-<thaumadditions:adaminite_plate>                .setAspects(<aspect:metallum>*15  ,<aspect:infernum>*66       ,<aspect:sanguis>*10      ,<aspect:spiritus>*10 ,<aspect:vitium>*3, <aspect:instrumentum>*2);
-<thaumadditions:mithminite_ingot>               .setAspects(<aspect:metallum>*15  ,<aspect:draco>*10          ,<aspect:mythus>*10       ,<aspect:caeles>*10   ,<aspect:auram>*20);
-<thaumadditions:mithminite_block>               .setAspects(<aspect:metallum>*150 ,<aspect:draco>*100         ,<aspect:mythus>*100      ,<aspect:caeles>*100  ,<aspect:auram>*200);
-<thaumadditions:mithminite_plate>               .setAspects(<aspect:metallum>*15  ,<aspect:draco>*10          ,<aspect:mythus>*10       ,<aspect:caeles>*10   ,<aspect:auram>*20, <aspect:instrumentum>*2);
-<thaumadditions:puriflower>                     .setAspects(<aspect:auram>*10     ,<aspect:herba>*20          ,<aspect:praecantatio>*10 ,<aspect:sensus>*20);
+aspect.tweak.set(' 15🔩  10🔷  10🔮   2⟁   3💎', <thaumadditions:mithrillium_ingot>);
+aspect.tweak.set('150🔩 100🔷 100🔮  20⟁  30💎', <thaumadditions:mithrillium_block>);
+aspect.tweak.set(' 15🔩  10🔷  10🔮   2⟁   3💎 2🛠️', <thaumadditions:mithrillium_plate>);
+aspect.tweak.set(' 15🔩  66🧨  10🩸  10👻   3🍇', <thaumadditions:adaminite_ingot>);
+aspect.tweak.set('150🔩 666🧨 100🩸 100👻  30🍇', <thaumadditions:adaminite_block>);
+aspect.tweak.set(' 15🔩  66🧨  10🩸  10👻   3🍇 2🛠️', <thaumadditions:adaminite_plate>);
+aspect.tweak.set(' 15🔩  10🐲  10🦄  10☀️  20✨', <thaumadditions:mithminite_ingot>);
+aspect.tweak.set('150🔩 100🐲 100🦄 100☀️ 200✨', <thaumadditions:mithminite_block>);
+aspect.tweak.set(' 15🔩  10🐲  10🦄  10☀️  20✨ 2🛠️', <thaumadditions:mithminite_plate>);
+aspect.tweak.set('10✨ 20🌱 10🔮 20🦉', <thaumadditions:puriflower>);
 
 /*
 ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗██████╗ ███████╗███╗   ██╗ ██████╗██╗  ██╗

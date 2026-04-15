@@ -1,5 +1,7 @@
 #modloaded netherendingores
 
+import scripts.mods.thaumcraft.aspect;
+
 scripts.lib.loot.tweak('netherendingores:entities/netherfish', 'main', null, null, [<forestry:ash>], [3, 12], true);
 
 // Add missed gold ore crushing (probably missed by MIA)
@@ -16,9 +18,7 @@ _  _ ____ ___ _  _ ____ ____ ____ _  _ ___  _ _  _ ____ ____ ____ ____ ____
 
 */
 
-<minecraft:spawn_egg>.withTag({EntityTag: {id: "netherendingores:netherfish"}})
-                                                .setAspects(<aspect:bestia>*10, <aspect:ignis>*10, Aspect.infernum*5);
-<entity:netherendingores:netherfish>            .setAspects(<aspect:bestia>*10, <aspect:ignis>*10, Aspect.infernum*5);
+aspect.tweak.setEntity('10🐺 10🔥 5🧨', <entity:netherendingores:netherfish>);
 
 /*
 

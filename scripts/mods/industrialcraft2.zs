@@ -8,6 +8,7 @@ import mods.ic2.ScrapBox;
 import mods.requious.AssemblyRecipe;
 
 import scripts.jei.mod.ic2.addCrop;
+import scripts.mods.thaumcraft.aspect;
 
 <ic2:treetap>.maxDamage = 400; // Buff from 16
 <ic2:wrench>.maxDamage = 5000; // Buff from 100
@@ -608,14 +609,14 @@ mods.mekanism.enrichment.removeRecipe(<ic2:dust:16>);
 // -----------------------------------------
 // Other new recipes for crop res
 
-<ic2:crop_res:5>.setAspects(<aspect:herba> * 20); // Weed
-<ic2:crop_res:4>.setAspects(<aspect:herba> * 40, <aspect:victus> * 30); // Hops
-<ic2:terra_wart>.setAspects(<aspect:gelum> * 35); // Terra Wart
-<ic2:crop_res:6>.setAspects(<aspect:aqua> * 20,<aspect:alkimia> * 40); // Milk Wart
-<ic2:crop_res>.setAspects(<aspect:cognitio> * 60); // Coffee Beans
-<ic2:crop_res:7>.setAspects(<aspect:motus> * 100); // Oil Berry
-<ic2:crop_res:8>.setAspects(Aspect.visum * 20); // Bobs-Yer-Uncle-Ranks Berry
-<ic2:crop_res:1>.setAspects(<aspect:cognitio> * 50); // Coffee Powder
+aspect.tweak.set('20🌱', <ic2:crop_res:5>);
+aspect.tweak.set('40🌱 30❤️', <ic2:crop_res:4>);
+aspect.tweak.set('35🧊', <ic2:terra_wart>);
+aspect.tweak.set('20💧 40⚗️', <ic2:crop_res:6>);
+aspect.tweak.set('60🧠', <ic2:crop_res>);
+aspect.tweak.set('100🏃', <ic2:crop_res:7>);
+aspect.tweak.set('20👁️', <ic2:crop_res:8>);
+aspect.tweak.set('50🧠', <ic2:crop_res:1>);
 
 // [Biogas Bucket] from [Hops]
 scripts.process.squeeze([<ic2:crop_res:4>], <fluid:ic2biogas> * 200, 'only: IndustrialSqueezer');
