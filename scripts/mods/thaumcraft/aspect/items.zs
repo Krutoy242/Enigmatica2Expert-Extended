@@ -1117,7 +1117,7 @@ Just a list of aspect - metal
 <aspect:amogus>,        - null
 <aspect:ignis>,         - fiery ingot
 <aspect:herba>,         - ironwood
-Aspect.ventus  ,        - lithium
+<aspect:ventus>,        - lithium
 <aspect:exanimis>,      - essence infused
 <aspect:praemunio>,     - knight metal
 <aspect:tenebrae>,      - thorium
@@ -1131,23 +1131,23 @@ Aspect.ventus  ,        - lithium
 <aspect:ordo>,          - lead
 <aspect:metallum>,      - iron
 <aspect:sanguis>,       - bounded
-Aspect.imperium,        - nickel
+<aspect:imperium>,      - nickel
 <aspect:sensus>,        - platinum
 <aspect:alienis>,       - enderium
 <aspect:victus>,        - raw meat
 <aspect:mythus>,        - silver
 <aspect:praecantatio>,  - thaumium?
-Aspect.fluctus,         - iridium
-Aspect.visum,           - osgloglas
+<aspect:fluctus>,       - iridium
+<aspect:visum>,         - osgloglas
 <aspect:vinculum>,      - bronze
 <aspect:fabrico>,       - invar
 <aspect:alkimia>,       - alchemical brass
 <aspect:volatus>,       - cobalt
 <aspect:draco>,         - draconic metal
-Aspect.sonus,           - constantant
+<aspect:sonus>,         - constantant
 <aspect:vitium>,        - void metal
 <aspect:vacuos>,        - tungsten
-Aspect.caeles,          - wyvern metal
+<aspect:caeles>,        - wyvern metal
 <aspect:lux>,           - lumium
 <aspect:permutatio>,    - copper
 <aspect:humanus>,       - UU metal, boron
@@ -1155,10 +1155,10 @@ Aspect.caeles,          - wyvern metal
 <aspect:desiderium>,    - gold
 <aspect:vitreus>,       - tin
 <aspect:motus>,         - electrum
-Aspect.exitium,         - ardite
+<aspect:exitium>,       - ardite
 <aspect:cognitio>,      - enchanted metal
 <aspect:mana>,          - manasteel
-Aspect.infernum,        - demon metal
+<aspect:infernum>,      - demon metal
 <aspect:mortuus>,       - uranium
 <aspect:aversio>,       - manyullyn
 <aspect:potentia>,      - energium

@@ -8,26 +8,13 @@ for better readability and more colorful source files ^_^
 #modloaded thaumcraft
 #priority 4000
 #reloadable
+#ignoreBracketErrors
 
 import thaumcraft.aspect.CTAspectStack;
 import native.java.util.regex.Pattern;
 
-zenClass CAspect {
-  zenConstructor() {}
-
-  // Modded aspects that will be defaulted to vanilla TC's ones if mod is absent
-  var caeles as CTAspectStack = <aspect:humanus>;
-  var exitium as CTAspectStack = <aspect:perditio>;
-  var fluctus as CTAspectStack = <aspect:motus>;
-  var imperium as CTAspectStack = <aspect:machina>;
-  var infernum as CTAspectStack = <aspect:ignis>;
-  var sonus as CTAspectStack = <aspect:alkimia>;
-  var ventus as CTAspectStack = <aspect:permutatio>;
-  var visum as CTAspectStack = <aspect:auram>;
-}
-
-global Aspect as CAspect = CAspect();
-
+// Only vanilla TC aspects should be registered here
+// Modded aspects should be handled in their own files with respective #modloaded
 static emojiMap as CTAspectStack[string] = {
   '💨': <aspect:aer>,
   '👽': <aspect:alienis>,
@@ -37,20 +24,20 @@ static emojiMap as CTAspectStack[string] = {
   '✨': <aspect:auram>,
   '🗡️': <aspect:aversio>,
   '🐺': <aspect:bestia>,
-  '☀️': Aspect.caeles,
+  '☀️': <aspect:caeles>,
   '🧠': <aspect:cognitio>,
   '✊': <aspect:desiderium>,
   '🐲': <aspect:draco>,
   '💀': <aspect:exanimis>,
-  '💣': Aspect.exitium,
+  '💣': <aspect:exitium>,
   '🔨': <aspect:fabrico>,
-  '♒': Aspect.fluctus,
+  '♒': <aspect:fluctus>,
   '🧊': <aspect:gelum>,
   '🌱': <aspect:herba>,
   '👨': <aspect:humanus>,
   '🔥': <aspect:ignis>,
-  '🙌': Aspect.imperium,
-  '🧨': Aspect.infernum,
+  '🙌': <aspect:imperium>,
+  '🧨': <aspect:infernum>,
   '🛠️': <aspect:instrumentum>,
   '🕯️': <aspect:lux>,
   '⚙️': <aspect:machina>,
@@ -68,15 +55,15 @@ static emojiMap as CTAspectStack[string] = {
   '🐀': <aspect:rattus>,
   '🩸': <aspect:sanguis>,
   '🦉': <aspect:sensus>,
-  '🛎️': Aspect.sonus,
+  '🛎️': <aspect:sonus>,
   '👻': <aspect:spiritus>,
   '🌑': <aspect:tenebrae>,
   '⛰️': <aspect:terra>,
   '〇': <aspect:vacuos>,
-  '🍃': Aspect.ventus,
+  '🍃': <aspect:ventus>,
   '❤️': <aspect:victus>,
   '🔗': <aspect:vinculum>,
-  '👁️': Aspect.visum,
+  '👁️': <aspect:visum>,
   '🍇': <aspect:vitium>,
   '💎': <aspect:vitreus>,
   '🕊️': <aspect:volatus>,
