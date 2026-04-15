@@ -1,4 +1,5 @@
 #modloaded thaumicwonders tconstruct
+#ignoreBracketErrors
 
 // For oredict iteration
 #priority -1

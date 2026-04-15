@@ -1,5 +1,6 @@
 #reloadable
 #modloaded rftools
+#ignoreBracketErrors
 
 import crafttweaker.item.IItemStack;
 import native.mcjty.rftools.blocks.spawner.SpawnerConfiguration;
@@ -9,6 +10,7 @@ import native.net.minecraft.item.ItemStack;
 static mobSpawnAmounts as [MobSpawnAmount][string] = SpawnerConfiguration.mobSpawnAmounts;
 
 function addSpawn(entityId as string, representationItem as IItemStack, homeBlock as IItemStack, value as float) as void {
+    if (isNull(representationItem) || isNull(homeBlock)) return;
     var list = [] as [MobSpawnAmount];
     list += MobSpawnAmount(representationItem, value / 10000.0);
     list += MobSpawnAmount(homeBlock, value / 2000.0);

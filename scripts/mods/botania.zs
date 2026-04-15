@@ -1,4 +1,5 @@
 #modloaded botania
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
@@ -608,7 +609,7 @@ mods.botania.Brew.removeRecipe(LibBrewNames.ABSORPTION);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:golden_apple>, <astralsorcery:itemusabledust>], LibBrewNames.ABSORPTION);
 BrewMod(LibBrewNames.WARP_WARD,       0xFBBDFF, 25000,[<potion:thaumcraft:warpward>.makePotionEffect(1728000, 0)]).setNotBloodPendantInfusable();
 mods.botania.Brew.removeRecipe(LibBrewNames.WARP_WARD);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <thaumadditions:odour_powder>, <actuallyadditions:item_dust:7>,<thaumcraft:amber>], LibBrewNames.WARP_WARD);
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <thaumadditions:odour_powder> ?? <minecraft:gunpowder>,  <actuallyadditions:item_dust:7>,<thaumcraft:amber>], LibBrewNames.WARP_WARD);
 
 BrewMod(LibBrewNames.SOUL_CROSS,       10000,[PotionEffect(ModPotions.soulCross, 72000, 0)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.SOUL_CROSS);

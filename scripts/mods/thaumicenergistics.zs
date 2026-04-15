@@ -1,4 +1,5 @@
 #modloaded thaumicenergistics
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 
@@ -98,7 +99,7 @@ val cellIngrs = {
   '⌃': <thaumicaugmentation:fortified_glass>, // Quartz Glass
   '♥': <ore:plateConcrete>,
   '□': <thaumcraft:plate>, // Iron Plate
-  'I': <thaumadditions:jar_eldritch>, // Iron Chest
+  'I': <thaumadditions:jar_eldritch> ?? <minecraft:chest>, // Iron Chest
   '1': <thaumicenergistics:essentia_component_1k>, // 1k ME Essentia Storage Component
   '4': <thaumicenergistics:essentia_component_4k>, // 4k ME Essentia Storage Component
   '6': <thaumicenergistics:essentia_component_16k>, // 16k ME Essentia Storage Component

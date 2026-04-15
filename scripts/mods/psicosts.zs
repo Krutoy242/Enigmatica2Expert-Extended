@@ -1,4 +1,5 @@
 #modloaded psicosts
+#ignoreBracketErrors
 
 import crafttweaker.item.IIngredient;
 

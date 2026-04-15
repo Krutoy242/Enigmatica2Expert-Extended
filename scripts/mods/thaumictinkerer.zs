@@ -1,4 +1,5 @@
 #modloaded thaumictinkerer
+#ignoreBracketErrors
 
 // Fix conflict
 // [Black Quartz Block] from [Smokey Quartz]
@@ -245,7 +246,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   <thaumictinkerer:kami_boots>, // Output
   10, // Instability
   Aspects('250🕯️ 150⛰️ 125🛠️ 125🛡️ 60🌱 60🏃'),
-  <thaumictinkerer:ichor_boots>, // CentralItem
+  <thaumictinkerer:ichor_boots> ?? <thaumcraft:cloth_boots>, // CentralItem
   [<botania:quartz:5>, <thaumadditions:traveller_belt>, <rats:plague_essence>, <thaumcraft:lamp_growth>]
 );
 
