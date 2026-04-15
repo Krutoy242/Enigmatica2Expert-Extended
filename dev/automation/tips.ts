@@ -1,7 +1,7 @@
 /**
  * @file Add tips only into `resources/enigmatica/lang/en_us.lang`
  * And they would be automatically copied to localized files
- * and to `config/tips.cfg`
+ * and to `config/anothertips.cfg`
  *
  * @author Krutoy242
  * @link https://github.com/Krutoy242
@@ -52,8 +52,8 @@ export async function init(h = defaultHelper) {
 
   // cfg
   injectInFile(
-    'config/tips.cfg',
-    '    S:customTips <\n',
+    'config/anothertips.cfg',
+    '    S:"Tip Lang Keys" <\n',
     '\n     >',
     en_us_Tips.map(tip => `        e2ee.tips.${tip.id}`).join('\n')
   )
