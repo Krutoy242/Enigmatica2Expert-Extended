@@ -1,11 +1,11 @@
 {
-  "!!!CrashAssistant-forge-1.12.2-1.11.6.jar": {
-    "curseForgeHash": 851394990,
-    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.6.jar",
+  "!!!CrashAssistant-forge-1.12.2-1.11.8.jar": {
+    "curseForgeHash": 2305784281,
+    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.8.jar",
     "modId": "crash_assistant",
-    "modrinthHash": "b851657ccc881542013a6f94d83826cdb68f2bd3",
+    "modrinthHash": "6a90ca55bff45580a2d5455899e6fc21f9f3a2a4",
     "name": "Crash Assistant",
-    "version": "1.11.6"
+    "version": "1.11.8"
   },
   "!configanytime-3.0.jar": {
     "curseForgeHash": 3732531395,
@@ -201,6 +201,14 @@
     "name": "Animus",
     "version": "2.1.8"
   },
+  "anothertips-1.0.5.jar": {
+    "curseForgeHash": 1188970059,
+    "jarName": "anothertips-1.0.5.jar",
+    "modId": "anothertips",
+    "modrinthHash": "a2f18d5f0fe5eb16ddd9708d75a0816961e07330",
+    "name": "Another Tips",
+    "version": "1.0.5"
+  },
   "AntiqueArmory-1.12.2-1.2.7.jar": {
     "curseForgeHash": 3487802124,
     "jarName": "AntiqueArmory-1.12.2-1.2.7.jar",
@@ -299,13 +307,13 @@
     "name": "AutoRegLib",
     "version": "1.3-32"
   },
-  "Avaritia-1.12.2-3.3.0.37-universal.jar": {
-    "curseForgeHash": 3186705234,
-    "jarName": "Avaritia-1.12.2-3.3.0.37-universal.jar",
-    "modId": "Avaritia",
-    "modrinthHash": "7b60729ab6e144803160c955fcb1e6d695a1aba6",
+  "avaritia-1.12.2-3.3.0.48-hotfix6.jar": {
+    "curseForgeHash": 910950249,
+    "jarName": "avaritia-1.12.2-3.3.0.48-hotfix6.jar",
+    "modId": "avaritia",
+    "modrinthHash": "52ed85fd8b4b8b83966c5764d891e9c5093b6295",
     "name": "Avaritia",
-    "version": "3.3.0.37"
+    "version": "3.3.0.48"
   },
   "avaritiaio-1.4.jar": {
     "curseForgeHash": 824425252,
@@ -640,11 +648,11 @@
     "name": "Clay Bucket",
     "version": "1.1"
   },
-  "cleanroom-0.5.7-alpha.jar (modloader)": {
-    "jarName": "cleanroom-0.5.7-alpha.jar (modloader)",
+  "cleanroom-0.5.8-alpha.jar (modloader)": {
+    "jarName": "cleanroom-0.5.8-alpha.jar (modloader)",
     "modId": "forge",
     "name": "forge",
-    "version": "cleanroom-0.5.7-alpha.jar"
+    "version": "cleanroom-0.5.8-alpha.jar"
   },
   "cloche-profit-peripheral-1.12.2-1.0.3.jar": {
     "curseForgeHash": 150773679,
@@ -822,13 +830,13 @@
     "name": "Cucumber Library",
     "version": "1.1.3"
   },
-  "curvy_pipes-1.12.2-1.14.2.jar": {
-    "curseForgeHash": 263839923,
-    "jarName": "curvy_pipes-1.12.2-1.14.2.jar",
+  "curvy_pipes-1.12.2-1.15.1.jar": {
+    "curseForgeHash": 35572155,
+    "jarName": "curvy_pipes-1.12.2-1.15.1.jar",
     "modId": "curvy_pipes",
-    "modrinthHash": "82a05978170da77e4c73d8512d8c9e8d92e01e75",
+    "modrinthHash": "18d84b352a1e6ebab76890b1f5ae9c5c49867ec8",
     "name": "Curvy Pipes",
-    "version": "1.14.2"
+    "version": "1.15.1"
   },
   "CustomBackgrounds-MC1.12-1.1.1.jar": {
     "curseForgeHash": 609781450,
@@ -997,14 +1005,6 @@
     "modrinthHash": "7a872baf72b1da038704056a0cf7bbcc40bfa4d6",
     "name": "EnderStorage",
     "version": "2.4.6.137"
-  },
-  "EnderTweaker-1.12.2-1.2.3.jar": {
-    "curseForgeHash": 4093035393,
-    "jarName": "EnderTweaker-1.12.2-1.2.3.jar",
-    "modId": "endertweaker",
-    "modrinthHash": "d1ea1d8810a1ed2b864b54bb08f937f8f93af4b1",
-    "name": "EnderTweaker",
-    "version": "1.12.2-1.2.3"
   },
   "EndReborn [0.3.9].jar": {
     "curseForgeHash": 513150339,
@@ -1187,6 +1187,14 @@
     "name": "Forgelin-Continuous",
     "version": "2.3.10.0"
   },
+  "ForkedEnderTweaker-2.0.3.jar": {
+    "curseForgeHash": 3543997244,
+    "jarName": "ForkedEnderTweaker-2.0.3.jar",
+    "modId": "endertweaker",
+    "modrinthHash": "8425bb0fd352e7e1aa2e73575fda00bfd3d49e32",
+    "name": "ForkedEnderTweaker",
+    "version": "2.0.3"
+  },
   "forkedproxy-2.0.0.jar": {
     "curseForgeHash": 1144212882,
     "jarName": "forkedproxy-2.0.0.jar",
@@ -1283,13 +1291,13 @@
     "name": "Advanced Generators",
     "version": "0.9.20.12"
   },
-  "gnetum-1.3.5.jar": {
-    "curseForgeHash": 4077869639,
-    "jarName": "gnetum-1.3.5.jar",
+  "gnetum-1.4.0.jar": {
+    "curseForgeHash": 826476396,
+    "jarName": "gnetum-1.4.0.jar",
     "modId": "gnetum",
-    "modrinthHash": "7587f73ed7066f09333acf2d349f3adfb11db87f",
+    "modrinthHash": "30c8bf0c7f175256c4251486a7542ab38fc12068",
     "name": "Gnetum",
-    "version": "1.3.5"
+    "version": "1.4.0"
   },
   "grid-1.12-forge14.21.1.2387-1.4.jar": {
     "curseForgeHash": 2380082864,
@@ -1398,6 +1406,14 @@
     "modrinthHash": "4bf427fe3dcf8b7c30ce64ca1b61550037ff60ec",
     "name": "Ice and Fire",
     "version": "1.9.1"
+  },
+  "IFPatcher-2.4.0.jar": {
+    "curseForgeHash": 2123697299,
+    "jarName": "IFPatcher-2.4.0.jar",
+    "modId": "ifpatcher",
+    "modrinthHash": "6cdcedd22eddfcb3313d16cf83e99ab903b59456",
+    "name": "IFPatcher",
+    "version": "2.4.0"
   },
   "ImmersiveCables-1.12.2-1.3.2.jar": {
     "curseForgeHash": 991598649,
@@ -2274,11 +2290,6 @@
     "name": "Patchouli Books",
     "version": "0.3.0"
   },
-  "persistency-1.2.0.jar": {
-    "curseForgeHash": 2868681591,
-    "jarName": "persistency-1.2.0.jar",
-    "modrinthHash": "8d3f8c0b8edaaac1f78bcaafb0d416bbeb042e1f"
-  },
   "Ping-1.12.2-1.4.5.jar": {
     "curseForgeHash": 2810428641,
     "jarName": "Ping-1.12.2-1.4.5.jar",
@@ -2415,6 +2426,14 @@
     "name": "Quantum Minecraft Dynamics",
     "version": "1.5 beta 3"
   },
+  "QuantumThings-MC-1.12.2-1.1.0.jar": {
+    "curseForgeHash": 3714642269,
+    "jarName": "QuantumThings-MC-1.12.2-1.1.0.jar",
+    "modId": "randomthings",
+    "modrinthHash": "39a1d50650db9b02144dc3a7a627e88607c3889c",
+    "name": "Quantum Things",
+    "version": "1.1.0"
+  },
   "QuarkOddities-1.12.2.jar": {
     "curseForgeHash": 4267477614,
     "jarName": "QuarkOddities-1.12.2.jar",
@@ -2428,21 +2447,13 @@
     "name": "Quark: RotN Edition",
     "version": "r1.6-189"
   },
-  "random_complement-1.9.0.jar": {
-    "curseForgeHash": 4025736884,
-    "jarName": "random_complement-1.9.0.jar",
+  "random_complement-1.9.1.jar": {
+    "curseForgeHash": 2069184727,
+    "jarName": "random_complement-1.9.1.jar",
     "modId": "random_complement",
-    "modrinthHash": "8e6f16a566ad5f6aace3bc7aa184f3e0b32f9aab",
+    "modrinthHash": "52affed78ea263c0591a776097651e6f61c49b71",
     "name": "RandomComplement",
-    "version": "1.9.0"
-  },
-  "RandomThings-MC1.12.2-4.2.7.4.jar": {
-    "curseForgeHash": 3215073064,
-    "jarName": "RandomThings-MC1.12.2-4.2.7.4.jar",
-    "modId": "randomthings",
-    "modrinthHash": "4422c297678e8f07a476ca5d4972568cfc7576bb",
-    "name": "Random Things",
-    "version": "4.2.7.4"
+    "version": "1.9.1"
   },
   "RandomTweaker-1.4.10.jar": {
     "curseForgeHash": 1926495611,
@@ -2451,14 +2462,6 @@
     "modrinthHash": "55e0e3dd859cfed958c4cbc88c2eeac78adc2190",
     "name": "RandomTweaker",
     "version": "1.4.10"
-  },
-  "randomtweaks-1.12.2-2.8.3.1.jar": {
-    "curseForgeHash": 3076552374,
-    "jarName": "randomtweaks-1.12.2-2.8.3.1.jar",
-    "modId": "randomtweaks",
-    "modrinthHash": "e5d2502bf33a670b17908e9f6b650fd0daa07cb5",
-    "name": "RandomTweaks",
-    "version": "1.12.2-2.8.3.1"
   },
   "rats-3.2.21-1.12.2.jar": {
     "curseForgeHash": 2883564534,
@@ -2761,13 +2764,13 @@
     "name": "Super Sound Muffler: Revived",
     "version": "1.0.2.10"
   },
-  "tconevo-1.12.2-1.1.4.jar": {
-    "curseForgeHash": 2387526739,
-    "jarName": "tconevo-1.12.2-1.1.4.jar",
+  "tconevo-1.12.2-1.1.5.jar": {
+    "curseForgeHash": 3786743265,
+    "jarName": "tconevo-1.12.2-1.1.5.jar",
     "modId": "tconevo",
-    "modrinthHash": "ec5a033e2bb7f72c80e3db061b11be74936452bc",
+    "modrinthHash": "fadcbf079f536adb6f7fe5083984ee3b0e24c297",
     "name": "Tinkers' Evolution",
-    "version": "1.1.4"
+    "version": "1.1.5"
   },
   "tconmodmod-1.12.2-1.0.5.jar": {
     "curseForgeHash": 2639564833,
@@ -3005,14 +3008,6 @@
     "modrinthHash": "69705dd5de7c9cd54f6fdb8198b959f93b7d1400",
     "name": "Tinkers Tool Leveling",
     "version": "1.12.2-1.1.0"
-  },
-  "Tips-1.12.2-1.0.9.jar": {
-    "curseForgeHash": 2103900296,
-    "jarName": "Tips-1.12.2-1.0.9.jar",
-    "modId": "tips",
-    "modrinthHash": "9790e6083bbeab78e045c027c964495133507efa",
-    "name": "Tips",
-    "version": "1.0.9"
   },
   "tmel-1.12.2-1.4.0.0.jar": {
     "curseForgeHash": 3695744742,
