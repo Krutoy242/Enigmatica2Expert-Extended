@@ -343,7 +343,7 @@ craft.remake(<immersiveengineering:tool>, ['pretty',
 });
 
 // Liquid Concrete alts
-scripts.process.solution([<tconstruct:soil>], [<liquid:water> * 250], [<liquid:concrete> * 250], null, 'except: Vat Highoven Mixer');
+scripts.process.solution([<tconstruct:soil>], [<liquid:water> * 250], [<liquid:concrete> * 250], null, 'except: Highoven Mixer');
 
 // Cheaper recipe since Concrete is just building material
 mods.immersiveengineering.Mixer.removeRecipe(<fluid:concrete>);

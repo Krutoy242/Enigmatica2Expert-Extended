@@ -168,7 +168,7 @@ function squeeze(input as IIngredient[], fluidOutput as ILiquidStack, exceptions
 //         [💧+]
 // [💧+]  ⤴
 function solution(inputItems as IIngredient[], inputLiquids as ILiquidStack[], outputLiquids as ILiquidStack[], inputChance as float[] = null, exceptions as string = null, options as IData = null) {
-  work(['vat', 'canner', 'fluidenricher', 'highoven', 'ChemicalReactor', 'Mixer'],
+  work(['canner', 'fluidenricher', 'highoven', 'ChemicalReactor', 'Mixer'],
     exceptions, inputItems, inputLiquids, null, outputLiquids, null, inputChance, options);
 }
 

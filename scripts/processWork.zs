@@ -17,7 +17,6 @@ import scripts.processUtils.arrN_liq;
 import scripts.processUtils.defaultChance0;
 import scripts.processUtils.defaultChance0_int;
 import scripts.processUtils.defaultItem0;
-import scripts.processUtils.enderioXmlRecipe;
 import scripts.processUtils.info;
 import scripts.processUtils.isException;
 import scripts.processUtils.isStrict;
@@ -452,7 +451,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
 
     if (machineName == 'alloysmelter') {
       if (strict) { mods.enderio.AlloySmelter.removeRecipe(outputItem0); }
-      enderioXmlRecipe('alloying', inputItems, inputLiquids, outputItems, outputLiquids, extraChance);
+      mods.enderio.AlloySmelter.addRecipe(outputItem0, inputItems, getOptionEnergy(options, 5000));
       return machineName;
     }
 
@@ -764,16 +763,6 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       }
       else {
         return info(machineNameAnyCase, inputLiquid0.name, 'received work, but amount of inputs > 3');
-      }
-    }
-
-    if (machineName == 'vat') {
-      if (inputItems.length <= 2) {
-        enderioXmlRecipe('fermenting', inputItems, inputLiquids, outputItems, outputLiquids, null);
-        return machineName;
-      }
-      else {
-        return info(machineNameAnyCase, inputLiquid0.name, 'received work, but amount of inputs > 2');
       }
     }
 

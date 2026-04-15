@@ -758,7 +758,7 @@ craft.remake(<enderio:block_solar_panel>, ['pretty',
 // Remove [Ender Pearl Powder] grinding recipes
 mods.appliedenergistics2.Grinder.removeRecipe(<minecraft:ender_pearl>);
 mods.appliedenergistics2.Grinder.removeRecipe(<thermalfoundation:material:895>);
-scripts.process.crush(<ore:enderpearl>, <appliedenergistics2:material:46>, 'Except: Pulverizer PulseCentrifuge', null, null);
+scripts.process.crush(<ore:enderpearl>, <appliedenergistics2:material:46>, 'Except: Pulverizer PulseCentrifuge SagMill', null, null);
 
 // [block_fused_quartz] from [Block_of_Quartz][+2]
 craft.shapeless(<enderio:block_fused_quartz> * 8, 'ABBBBBBBB', {
