@@ -234,7 +234,7 @@ ${filtered.join('\n')}`
 
 } */
 
-// Total Furnace recipes registered: 948
+// Total Furnace recipes registered: 947
 // Blacklisted by JEI or manually: 79
 // Filtered by oredict: 157
 infinFurnace(<actuallyadditions:block_misc:3>, <actuallyadditions:item_misc:5>);
@@ -1016,7 +1016,6 @@ blacklist(<quark:crab_leg:*>);
 infinFurnace(<quark:frog_leg:*>, <quark:cooked_frog_leg>);
 infinFurnace(<quark:trowel>, <minecraft:iron_nugget>);
 infinFurnace(<randomthings:beanpod>, <thaumicaugmentation:urn:2>);
-infinFurnace(<randomthings:beans:2>, <twilightforest:magic_beans>);
 infinFurnace(<randomthings:biomestone>, <randomthings:biomestone:1>);
 blacklist(<rats:marbled_cheese_brick:*>);
 infinFurnace(<rats:marbled_cheese_raw:*>, <rats:marbled_cheese>);
