@@ -23,7 +23,7 @@ export async function pruneWorld(
     return `${(size / 1048576) | 0}mb`
   }
 
-  async function pruneTask(taskName:string, predicate: (f:Client.FileInfo)=>boolean) {
+  async function pruneTask(taskName:string, predicate: (f:Client.FileInfo) => boolean) {
     const pruneData = filterForPrunning(regions, predicate)
 
     updateBox = getBoxForLabel(taskName)
@@ -36,7 +36,7 @@ export async function pruneWorld(
       `${chalk.green(fileSizeText(pruneData.size))}`
     )
 
-    if (await p.confirm({message: 'Press ENTER to remove filtered regions. Press ESC to skip.'})) {
+    if (await p.confirm({ message: 'Press ENTER to remove filtered regions. Press ESC to skip.' })) {
       updateBox = getBoxForLabel(`Task: ${chalk.yellow`Remove Overworld regions`}`)
       await removeFilesOnServer(
         sftp,
@@ -67,7 +67,7 @@ export async function pruneWorld(
   })
 }
 
-export function filterForPrunning(list: Client.FileInfo[], predicate: (f:Client.FileInfo)=>boolean) {
+export function filterForPrunning(list: Client.FileInfo[], predicate: (f:Client.FileInfo) => boolean) {
   let pruneTotalSize = 0
   const filtered = list
     .filter((f) => {
@@ -86,7 +86,7 @@ export function filterForPrunning(list: Client.FileInfo[], predicate: (f:Client.
 export async function removeFilesOnServer(
   sftp:Client,
   list: string[],
-  onRemove: (fileCounter: number)=>void,
+  onRemove: (fileCounter: number) => void,
   log:(...args: any[]) => void
 ) {
   log('Removing files: ', '0', '/', list.length)

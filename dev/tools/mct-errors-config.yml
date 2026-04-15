@@ -203,7 +203,7 @@ ignore:
 
   # Non-harmful options.txt lines
   - WARN. .net.minecraft.client.settings.GameSettings.. Skipping bad option
-  
+
   # Texture is not a power-of-two size, causes minor visual shimmer at a distance.
   - 'WARN. .net.minecraft.client.renderer.texture.TextureMap.. Texture .+ will have visual artifacts'
 

@@ -95,7 +95,7 @@ export async function init(h = defaultHelper, options = argv) {
       if (
         !g
         || !whitelist.includes(g.output)
-        || !g.grid.match(new RegExp(`.*${regex.source}.*`))
+        || !new RegExp(`.*${regex.source}.*`).test(g.grid)
       ) {
         continue
       }
@@ -280,7 +280,7 @@ export async function init(h = defaultHelper, options = argv) {
   const saveMap = {}
   for (const match of loadText('crafttweaker.log').matchAll(/Save this into file "(?<file>[^"]+)"\r?\n(?<content>[\s\S]+?)(?=\r?\n(?:\[\w+\]){3} )/g)) {
     // @ts-ignore
-    const {file, content} = match.groups
+    const { file, content } = match.groups
     saveMap[file] = content
   }
   Object.keys(saveMap).forEach(f => saveText(saveMap[f], f))

@@ -1,3 +1,8 @@
+/*
+  Search for aspect lists in all .zs files
+  and replace them with Emoji lists as defined in globals.zs
+*/
+
 /* eslint-disable no-cond-assign */
 /* eslint-disable regexp/no-super-linear-backtracking */
 import * as fs from 'node:fs'
@@ -13,10 +18,10 @@ const ASPECT_BRACKET_REGEX = /\[((?:\s*<?(?:aspect:|Aspect\.)\w+>?\s*(?:\*\s*\d+
 const aspectToEmojiMap = new Map<string, string>()
 
 function parseAspectEmojiMap() {
-  const content = fs.readFileSync('scripts/mods/thaumcraft/globals.zs', 'utf-8')
+  const content = fs.readFileSync('scripts/mods/thaumcraft/aspect/emoji.zs', 'utf-8')
   const emojiMapContent = content.match(ASPECT_EMOJI_MAP_REGEX)
   if (!emojiMapContent) {
-    throw new Error('Could not find emojiMap in thaumcraft/globals.zs')
+    throw new Error('Could not find emojiMap in thaumcraft/aspect/emoji.zs')
   }
 
   let match: null | RegExpExecArray

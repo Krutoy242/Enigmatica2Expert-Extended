@@ -8,9 +8,9 @@ import { replaceInFileSync } from 'replace-in-file'
 import Client from 'ssh2-sftp-client'
 import { $, fs, glob } from 'zx'
 
-import { confirm, getBoxForLabel } from './build_utils'
+import { confirm, getBoxForLabel } from './build_utils.js'
 
-const { readFileSync, writeFileSync, unlinkSync, existsSync} = fs
+const { readFileSync, writeFileSync, unlinkSync, existsSync } = fs
 
 export async function manageSFTP(serverSetupConfig: string = 'server/server-setup-config.yaml') {
   const sftpList = await glob('~secrets/sftp_servers/*/sftp.json')
@@ -30,10 +30,10 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
   const serverConfigTmp = '~tmp-server-setup-config.yaml'
   const confText = readFileSync(serverSetupConfig, 'utf8')
     .replace(
-      /(additionalFiles:\s*)\n {4}\S.*\n {4}\S.*$/m,
+      /(^ {2}additionalFiles:\s*?)\n/m,
       `$1
     - url: https://mediafilez.forgecdn.net/files/5370/660/mc2discord-forge-1.12.2-3.3.2.jar
-      destination: mods/mc2discord-forge-1.12.2-3.3.2.jar`
+      destination: mods/mc2discord-forge-1.12.2-3.3.2.jar\n`
     )
     .replace(
       /(localFiles:\s*)\n +\S.*\n +\S.*$/m,

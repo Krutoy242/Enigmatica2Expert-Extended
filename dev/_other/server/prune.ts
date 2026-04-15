@@ -81,7 +81,7 @@ updateBox(
   advRocketryDims.list.map(f => chalk.green(f.substring(3))).join(chalk.gray(', '))
 )
 
-if (await p.confirm({message: 'Press ENTER to remove ALL AdvRock dimensions except Space Stations. Press ESC to skip.'})) {
+if (await p.confirm({ message: 'Press ENTER to remove ALL AdvRock dimensions except Space Stations. Press ESC to skip.' })) {
   updateBox = getBoxForLabel(`Task: ${chalk.yellow`Remove Adv. Rocketry worlds`}`)
   await removeFilesOnServer(
     sftp,

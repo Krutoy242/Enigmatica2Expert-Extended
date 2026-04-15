@@ -52,7 +52,7 @@ mods/zenrecipereloading-*
 mods/ProbeZS-*
 mods/Caliper-*
 mods/infinityeditor-*
-mods/!packcompanion-*
+mods/*packcompanion-*
 /shaderpacks
 ComplementaryUnbound_*
 BSL_*

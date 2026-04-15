@@ -1,16 +1,54 @@
-[Client thread/ERROR] [Pack Companion]: Error while fetching modlist guide
-java.io.FileNotFoundException: D:/mc\E2E-E\config\packcompanion\cache\masterlist_mods_classes.json (Не удается найти указанный файл)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(FileInputStream.java:185)
-	at java.io.FileInputStream.<init>(FileInputStream.java:139)
-  [...]
-[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-10-04-2026_21-21-00.md
-[Client thread/ERROR] [Pack Companion]: Error while trying to read modlist guide
-java.io.FileNotFoundException: modList JSON could not be fetched at D:/mc\E2E-E\config\packcompanion\cache\masterlist_mods_classes.json
-	at com.barebonium.packcompanion.processors.OutputProcessor.verifyCachedFile(OutputProcessor.java:145)
-	at com.barebonium.packcompanion.processors.ModlistProcessor.checkModList(ModlistProcessor.java:33)
-	at com.barebonium.packcompanion.processors.OutputProcessor.runPreInitPackCompanionChecks(OutputProcessor.java:59)
-  [...]
+[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-15-04-2026_07-58-51.md
+[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-15-04-2026_07-58-51.html
+[Client thread/ERROR] [Pack Companion]: Failed to load class baubles.api.util.WrongSideException: baubles.api.util.WrongSideException
+[Client thread/WARN] [Pack Companion]: Classloaded status for class baubles.api.util.WrongSideException: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class baubles.api.util.WrongSideException: Found baubles.api.util.WrongSideException in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class guichaguri.betterfps.BetterFps: guichaguri.betterfps.BetterFps
+[Client thread/WARN] [Pack Companion]: Classloaded status for class guichaguri.betterfps.BetterFps: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class guichaguri.betterfps.BetterFps: Found guichaguri.betterfps.BetterFps in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class com.chocohead.biab.BornInABarn: com.chocohead.biab.BornInABarn
+[Client thread/WARN] [Pack Companion]: Classloaded status for class com.chocohead.biab.BornInABarn: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class com.chocohead.biab.BornInABarn: Found com.chocohead.biab.BornInABarn in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class T145.elementalcreepers.ElementalCreepers: T145.elementalcreepers.ElementalCreepers
+[Client thread/WARN] [Pack Companion]: Classloaded status for class T145.elementalcreepers.ElementalCreepers: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class T145.elementalcreepers.ElementalCreepers: Found T145.elementalcreepers.ElementalCreepers in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class gg.essential.Essential: gg.essential.Essential
+[Client thread/WARN] [Pack Companion]: Classloaded status for class gg.essential.Essential: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class gg.essential.Essential: Found gg.essential.Essential in invalid classes.
+[Client thread/WARN] [Pack Companion]: Classloaded status for class ic2.core.ContainerBase: true
+[Client thread/WARN] [Pack Companion]: Classloaded status for class net.minecraftforge.common.MinecraftForge: true
+[Client thread/ERROR] [Pack Companion]: Failed to load class io.github.lxgaming.classloader.ClassLoaderUtils: io.github.lxgaming.classloader.ClassLoaderUtils
+[Client thread/WARN] [Pack Companion]: Classloaded status for class io.github.lxgaming.classloader.ClassLoaderUtils: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class io.github.lxgaming.classloader.ClassLoaderUtils: Found io.github.lxgaming.classloader.ClassLoaderUtils in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class io.github.notstirred.mixincompat.MixinCompat: io.github.notstirred.mixincompat.MixinCompat
+[Client thread/WARN] [Pack Companion]: Classloaded status for class io.github.notstirred.mixincompat.MixinCompat: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class io.github.notstirred.mixincompat.MixinCompat: Found io.github.notstirred.mixincompat.MixinCompat in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class de.ellpeck.nyx.lunarevents.LunarEvent: de.ellpeck.nyx.lunarevents.LunarEvent
+[Client thread/WARN] [Pack Companion]: Classloaded status for class de.ellpeck.nyx.lunarevents.LunarEvent: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class de.ellpeck.nyx.lunarevents.LunarEvent: Found de.ellpeck.nyx.lunarevents.LunarEvent in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/WARN] [Pack Companion]: Classloaded status for class optifine.OptiFineForgeTweaker: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/WARN] [Pack Companion]: Classloaded status for class io.dogboy.serializationisbad.core.SerializationIsBad: true
+[Client thread/ERROR] [Pack Companion]: Failed to load class net.darkhax.surge.Surge: net.darkhax.surge.Surge
+[Client thread/WARN] [Pack Companion]: Classloaded status for class net.darkhax.surge.Surge: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class net.darkhax.surge.Surge: Found net.darkhax.surge.Surge in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class com.sheenus.tc6enhancedpatcher.TC6EnhancedPatcher: com.sheenus.tc6enhancedpatcher.TC6EnhancedPatcher
+[Client thread/WARN] [Pack Companion]: Classloaded status for class com.sheenus.tc6enhancedpatcher.TC6EnhancedPatcher: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class com.sheenus.tc6enhancedpatcher.TC6EnhancedPatcher: Found com.sheenus.tc6enhancedpatcher.TC6EnhancedPatcher in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class nukeminecart.thaumictweaker.ThaumicTweaker: nukeminecart.thaumictweaker.ThaumicTweaker
+[Client thread/WARN] [Pack Companion]: Classloaded status for class nukeminecart.thaumictweaker.ThaumicTweaker: false
+[Client thread/ERROR] [Pack Companion]: Failed to load class nukeminecart.thaumictweaker.ThaumicTweaker: Found nukeminecart.thaumictweaker.ThaumicTweaker in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
+[Client thread/WARN] [Pack Companion]: Checking config match for Mod Id: com.tmtravlr.potioncore.ConfigLoader#controllableJumpBoost
+[Client thread/WARN] [Pack Companion]: Checking config match for Mod Id: com.tmtravlr.potioncore.ConfigLoader#fixReach
+[Client thread/WARN] [enderio]: Splitting alloying recipe for 1xitem.qmd.part@3 into sub-recipes yielded nothing. Something may be wrong with this recipe.
+[Client thread/WARN] [enderio]: Splitting alloying recipe for 1xitem.qmd.part@8 into sub-recipes yielded nothing. Something may be wrong with this recipe.
 [Client thread/ERROR] [daomephsta_loot_shared.sanity_checks]: Duplicate pool name 'shader' in table 'twilightforest:entities/questing_ram_rewards'. Duplicate added as 'shader0'.
 Report this to the loot adder.
 [Client thread/ERROR] [daomephsta_loot_shared.sanity_checks]: Duplicate pool name 'marbled_cheese_golem' in table 'rats:marbled_cheese_golem'. Duplicate added as 'marbled_cheese_golem0'.

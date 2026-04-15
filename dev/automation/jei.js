@@ -21,12 +21,12 @@ import {
   getCSV,
 } from '../lib/utils.js'
 
-const { readFileSync, writeFileSync} = fse
+const { readFileSync, writeFileSync } = fse
 
 export async function init(h = defaultHelper) {
   await h.begin('Get files')
   const jeiConfigPath = 'config/jei/itemBlacklist.cfg'
-  const purged = new Set([...getPurged()].map((s) => {
+  const purged = new Set(Array.from(getPurged(), (s) => {
     let [, source, meta] = s?.match(/<([^:]+:[^:]+)(:(\d+|\*))?>/) ?? []
     if (meta === ':*') meta = ''
     return source + (meta ?? ':0')
@@ -84,7 +84,8 @@ export async function init(h = defaultHelper) {
   configLines.splice(headerHeight, configLines.length - headerHeight - 3, ...table)
   try {
     writeFileSync(jeiConfigPath, configLines.join('\n'))
-  } catch (error) {
+  }
+  catch (error) {
     h.error(error)
   }
 
