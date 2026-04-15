@@ -82,6 +82,12 @@ static emojiMap as CTAspectStack[string] = {
   '🕊️': <aspect:volatus>,
 };
 
+static aspectToEmoji as string[string] = {};
+
+for char, aspect in emojiMap {
+  aspectToEmoji[aspect.internal.name.toLowerCase()] = char;
+}
+
 static numberPattern as Pattern = Pattern.compile('^\\d+');
 
 global Aspects as function(string)CTAspectStack[] = function(aspects as string) as CTAspectStack[] {

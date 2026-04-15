@@ -5,7 +5,7 @@
 import crafttweaker.item.IItemStack;
 import thaumcraft.aspect.CTAspectStack;
 
-import scripts.mods.thaumcraft.aspect.set;
+import scripts.mods.thaumcraft.aspect.tweak.set;
 
 /*
  █████╗ ███████╗██████╗ ███████╗ ██████╗████████╗███████╗

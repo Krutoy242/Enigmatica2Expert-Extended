@@ -3,8 +3,8 @@
 
 import crafttweaker.item.IItemStack;
 
-import scripts.mods.thaumcraft.aspect.set;
-import scripts.mods.thaumcraft.aspect.setEntity;
+import scripts.mods.thaumcraft.aspect.tweak.set;
+import scripts.mods.thaumcraft.aspect.tweak.setEntity;
 
 /*
 ___  ____ ___ ___ ____ ____    ____ _  _ _ _  _ ____ _    ____

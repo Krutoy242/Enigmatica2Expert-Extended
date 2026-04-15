@@ -9,12 +9,6 @@ import crafttweaker.item.IItemStack;
 import scripts.craft.grid.Grid;
 import native.java.util.regex.Pattern;
 
-static aspectToEmoji as string[string] = {};
-
-for char, aspect in scripts.mods.thaumcraft.globals.emojiMap {
-  aspectToEmoji[aspect.internal.name.toLowerCase()] = char;
-}
-
 static ASPECT_BRACKET_PATTERN as Pattern = Pattern.compile('\\[((?:\\s*<?(?:aspect:|Aspect\\.)\\w+>?\\s*(?:\\*\\s*\\d+\\s*)?,?)+)\\]');
 static ASPECT_REF_PATTERN as Pattern = Pattern.compile('(?:<aspect:(\\w+)>|Aspect\\.(\\w+))(?:\\s*\\*\\s*(\\d+))?');
 
@@ -29,7 +23,7 @@ function parseAspects(aspectsString as string) as string {
       val amountStr = matcher.group(3);
       val amount = isNull(amountStr) ? 1 : amountStr as int;
 
-      val emoji = aspectToEmoji[aspectName.toLowerCase()];
+      val emoji = scripts.mods.thaumcraft.aspect.emoji.aspectToEmoji[aspectName.toLowerCase()];
 
       if (isNull(emoji)) {
         logger.logWarning('Aspect Emoji Replacer: Emoji not found for aspect: ' ~ aspectName);
