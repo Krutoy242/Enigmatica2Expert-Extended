@@ -51,7 +51,7 @@ zenClass MixinToolEvents {
 
 /*
  * Based on MatrixMixin from ThaumTweaks by GrigLog:
- * https://github.com/GrigLog/ThaumTweaks/blob/master/src/main/java/griglog/thaumtweaks/mixins/blocks/MatrixMixin.java
+ * https://github.com/GrigLog/ThaumTweaks/blob/ab2af465fb93bd13ec47f8b12ad18674b8a1ea0e/src/main/java/griglog/thaumtweaks/mixins/blocks/MatrixMixin.java
  * Rewritten in Zenscript for this modpack.
  * Licensed under MIT (see LICENSE).
 */
@@ -80,7 +80,7 @@ zenClass MatrixMixin {
         //}
     }
  
-    function findAffectors(stuff as [BlockPos]) {
+    function findAffectors(stuff as [BlockPos]) as void {
         for xx in -8 .. 9 {
             for zz in -8 .. 9 {
                 for yy in -3 .. 8 {
@@ -161,7 +161,7 @@ zenClass MatrixMixin {
 
     function checkBoostStones() as void {
         var dCycleTime as double = 0.0;
-        val m as int[][] = [[-1,-1], [1,-1], [-1,1], [1,1]] as int[][];
+        val m = [[-1,-1], [1,-1], [-1,1], [1,1]];
         for a in m {
             val b as Block = this0.world.getBlockState(this0.pos.add(a[0], -3, a[1])).getBlock();
             if (b == BlocksTC.matrixSpeed) {
