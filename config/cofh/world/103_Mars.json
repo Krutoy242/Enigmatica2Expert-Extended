@@ -18,24 +18,6 @@
       "dimension": { "restriction": "whitelist", "value": [103] }
     },
 
-    "mars_hollow_spaces_on_walls": {
-      "enabled": false,
-      "distribution": "uniform",
-      "generator": {
-        "type": "boulder",
-        "block": "air",
-        "diameter": 3,
-        "size-variance": 5,
-        "count-variance": 0,
-        "count": 1,
-        "material": "advancedrocketry:hotturf"
-      },
-      "cluster-count": 32,
-      "min-height": 10,
-      "max-height": 200,
-      "dimension": { "restriction": "whitelist", "value": [103] }
-    },
-
     "mars_crushed_endstone_gravel": {
       "distribution": "uniform",
       "generator": {

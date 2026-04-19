@@ -26,8 +26,7 @@
     "kepler_0118_resourse_5": { "cluster-count": 6, "min-height": 40, "max-height": 120, "distribution": "uniform", "generator": { "block": { "name": "contenttweaker:compressed_crushed_skystone" },          "material": "quark:basalt", "cluster-size": 12 }, "dimension": { "restriction": "whitelist", "value": [122] } },
     "kepler_0118_resourse_6": { "cluster-count": 6,  "min-height": 3,  "max-height": 5,   "distribution": "uniform", "generator": { "block": { "name": "darkutils:wither_block" },                              "material": "quark:basalt", "cluster-size": 2 }, "dimension": { "restriction": "whitelist", "value": [122] } },
     "kepler_0118_resourse_7": { "cluster-count": 34, "min-height": 3,  "max-height": 250, "distribution": "uniform", "generator": { "block": { "name": "additionalcompression:flint_compressed", "metadata": 1 }, "material": "quark:basalt", "cluster-size": 120 }, "dimension": { "restriction": "whitelist", "value": [122] } },
-
-    "kepler_0118_resourse_9": { "cluster-count": 6, "min-height": 80, "max-height": 100, "distribution": "uniform", "generator": { "block": { "name": "immersiveengineering:stone_decoration", "metadata": 3 }, "material": "quark:basalt", "cluster-size": 7 }, "dimension": { "restriction": "whitelist", "value": [122] } },
+    "kepler_0118_resourse_8": { "cluster-count": 6, "min-height": 80, "max-height": 100, "distribution": "uniform", "generator": { "block": { "name": "immersiveengineering:stone_decoration", "metadata": 3 }, "material": "quark:basalt", "cluster-size": 7 }, "dimension": { "restriction": "whitelist", "value": [122] } },
 
     "kepler_0118_crystal_stalactite": {
       "distribution": "cave",

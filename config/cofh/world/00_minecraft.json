@@ -180,40 +180,6 @@
         "value": [-1, 1, 110, 111, 112, 119, 123]
       }
     },
-    "mesa_gold": {
-      "enabled": false,
-      "distribution": "uniform",
-      "generator": {
-        "block": {
-          "name": "gold_ore"
-        },
-        "material": "minecraft:stone",
-        "cluster-size": 15
-      },
-      "cluster-count": 25,
-      "min-height": 15,
-      "max-height": 80,
-      "biome": {
-        "restriction": "whitelist",
-        "value": [
-          {
-            "type": "id",
-            "entry": [
-              "mesa",
-              "mesa_rock",
-              "mesa_clear_rock",
-              "mutated_mesa",
-              "mutated_mesa_rock",
-              "mutated_mesa_clear_rock"
-            ]
-          }
-        ]
-      },
-      "dimension": {
-        "restriction": "blacklist",
-        "value": [-1, 1, 102, 111, 112, 119, 123]
-      }
-    },
     "emerald": {
       "distribution": "uniform",
       "generator": {
