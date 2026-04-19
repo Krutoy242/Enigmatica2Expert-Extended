@@ -12,7 +12,6 @@
         "cluster-count": 9,
         "min-height": 20,
         "max-height": 40,
-        "retrogen": "false",
         "dimension": {
           "restriction": "whitelist",
           "value": [

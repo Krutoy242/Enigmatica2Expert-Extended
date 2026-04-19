@@ -3,7 +3,7 @@
   "populate": {
     "petrotheum_vein": {
       "distribution": "surface",
-      "follow-terrain": "true",
+      "follow-terrain": true,
       "generator": {
         "type": "large-vein",
         "block": "thermalfoundation:fluid_petrotheum",
@@ -33,8 +33,7 @@
             "entry": "SANDY"
           }
         ]
-      },
-      "dimension": "all"
+      }
     },
 
     "pyrotheum_lake": {

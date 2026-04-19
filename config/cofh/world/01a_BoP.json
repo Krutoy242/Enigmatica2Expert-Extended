@@ -15,7 +15,6 @@
       "chunk-chance": 20,
       "min-height": 4,
       "max-height": 32,
-      "retrogen": "false",
       "biome": {
         "restriction": "whitelist",
         "value": [

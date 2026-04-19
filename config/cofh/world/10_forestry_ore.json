@@ -13,7 +13,6 @@
         "cluster-chance": 15,
         "min-height": 40,
         "max-height": 128,
-        "retrogen": "false",
         "dimension": {
           "restriction": "blacklist",
           "value": [-1, 1, 103, 111, 112, 123]

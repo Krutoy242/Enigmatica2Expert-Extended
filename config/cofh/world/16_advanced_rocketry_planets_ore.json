@@ -14,7 +14,6 @@
       "cluster-count": 7,
       "min-height": 1,
       "max-height": 12,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -37,7 +36,6 @@
       "cluster-count": 13,
       "min-height": 35,
       "max-height": 55,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -60,7 +58,6 @@
       "cluster-count": 9,
       "min-height": 17,
       "max-height": 32,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -83,7 +80,6 @@
       "cluster-count": 9,
       "min-height": 10,
       "max-height": 30,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -106,7 +102,6 @@
       "cluster-count": 2,
       "min-height": 18,
       "max-height": 45,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -129,7 +124,6 @@
       "cluster-count": 7,
       "min-height": 1,
       "max-height": 16,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -153,7 +147,6 @@
       "cluster-count": 7,
       "min-height": 1,
       "max-height": 16,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -175,7 +168,6 @@
       "cluster-count": 2,
       "min-height": 25,
       "max-height": 55,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -197,7 +189,6 @@
       "cluster-count": 22,
       "min-height": 0,
       "max-height": 120,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -219,7 +210,6 @@
       "cluster-count": 2,
       "min-height": 17,
       "max-height": 32,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -244,7 +234,6 @@
       "cluster-count": 10,
       "min-height": 15,
       "max-height": 35,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -269,7 +258,6 @@
       "cluster-count": 15,
       "min-height": 15,
       "max-height": 35,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -294,7 +282,6 @@
       "cluster-count": 8,
       "min-height": 25,
       "max-height": 40,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -317,7 +304,6 @@
       "cluster-count": 16,
       "min-height": 10,
       "max-height": 40,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [
@@ -385,7 +371,6 @@
       "cluster-count": 16,
       "min-height": 20,
       "max-height": 50,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [101]
@@ -404,7 +389,6 @@
       "cluster-count": 40,
       "min-height": 20,
       "max-height": 65,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [101]
@@ -441,7 +425,6 @@
       "cluster-count": 8,
       "min-height": 15,
       "max-height": 36,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [109]
@@ -457,7 +440,6 @@
       "cluster-count": 20,
       "min-height": 30,
       "max-height": 55,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [106]
@@ -476,7 +458,6 @@
       "cluster-count": 18,
       "min-height": 2,
       "max-height": 64,
-      "retrogen": "false",
       "dimension": {
         "restriction": "whitelist",
         "value": [108]

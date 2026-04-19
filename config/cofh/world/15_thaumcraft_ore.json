@@ -11,7 +11,6 @@
       "cluster-count": 7,
       "min-height": 35,
       "max-height": 50,
-      "retrogen": "false",
       "dimension": {
         "restriction": "blacklist",
         "value": [-1, 1, 103, 111, 112, 123]
@@ -27,7 +26,6 @@
       "cluster-count": 5,
       "min-height": 15,
       "max-height": 35,
-      "retrogen": "false",
       "dimension": {
         "restriction": "blacklist",
         "value": [-1, 1, 103, 111, 112, 123]
