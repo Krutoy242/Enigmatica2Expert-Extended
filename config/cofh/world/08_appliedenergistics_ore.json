@@ -1,35 +1,35 @@
 {
-	"dependencies": "appliedenergistics2",
-	"populate": {
-		"certus": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "appliedenergistics2:quartz_ore",
-				"material": "minecraft:stone",
-				"cluster-size": 7
-			},
-			"cluster-count": 8,
-			"min-height": 32,
-			"max-height": 52,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "blacklist",
-				"value": [-1,1,103,111,112,123]
-			}
-		},
-		"charged_certus_caves": {
-			"distribution": "cave",
-			"generator": {
-				"block":"appliedenergistics2:charged_quartz_ore",	
-				"material": "minecraft:stone",
-				"cluster-size": 2
-			},
-			"cluster-count": 2,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "blacklist",
-				"value": [-1,1,103,111,112,123]
-			}
-		}
-	}
+  "dependencies": "appliedenergistics2",
+  "populate": {
+    "certus": {
+      "distribution": "uniform",
+      "generator": {
+        "block": "appliedenergistics2:quartz_ore",
+        "material": "minecraft:stone",
+        "cluster-size": 7
+      },
+      "cluster-count": 8,
+      "min-height": 32,
+      "max-height": 52,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "blacklist",
+        "value": [-1, 1, 103, 111, 112, 123]
+      }
+    },
+    "charged_certus_caves": {
+      "distribution": "cave",
+      "generator": {
+        "block": "appliedenergistics2:charged_quartz_ore",
+        "material": "minecraft:stone",
+        "cluster-size": 2
+      },
+      "cluster-count": 2,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "blacklist",
+        "value": [-1, 1, 103, 111, 112, 123]
+      }
+    }
+  }
 }

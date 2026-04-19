@@ -107,18 +107,18 @@
       "dimension": { "restriction": "whitelist", "value": [124] }
     },
     "asteroid_belt_singularities": {
-			"distribution": "uniform",
+      "distribution": "uniform",
       "generator": {
         "type": "stalagmite",
         "block": [
-          {"name": "draconicevolution:placed_item", "data-tag": "{InventoryStacks:[{id:\"appliedenergistics2:material\",Count:1b,Damage:47s}],Facing:0b,IsBlock0:1b}"}
-          ,{"name":"draconicevolution:placed_item", "data-tag": "{InventoryStacks:[{id:\"appliedenergistics2:material\",Count:1b,Damage:47s},{id:\"appliedenergistics2:material\",Count:1b,Damage:47s},{id:\"appliedenergistics2:material\",Count:1b,Damage:47s}],Facing:0b,BCManagedData:{displayCount:3b},IsBlock0:1b,IsBlock1:1b,IsBlock2:1b}"}
+          { "name": "draconicevolution:placed_item", "data-tag": "{InventoryStacks:[{id:\"appliedenergistics2:material\",Count:1b,Damage:47s}],Facing:0b,IsBlock0:1b}" },
+          { "name": "draconicevolution:placed_item", "data-tag": "{InventoryStacks:[{id:\"appliedenergistics2:material\",Count:1b,Damage:47s},{id:\"appliedenergistics2:material\",Count:1b,Damage:47s},{id:\"appliedenergistics2:material\",Count:1b,Damage:47s}],Facing:0b,BCManagedData:{displayCount:3b},IsBlock0:1b,IsBlock1:1b,IsBlock2:1b}" }
         ],
-				"min-height": 1,
-				"height-variance": 0,
-				"size-variance": 0,
-				"gen-size": 0,
-				"height-mod": 50,        
+        "min-height": 1,
+        "height-variance": 0,
+        "size-variance": 0,
+        "gen-size": 0,
+        "height-mod": 50,
         "material": "advancedrocketry:vitrifiedsand"
       },
       "cluster-count": 10,

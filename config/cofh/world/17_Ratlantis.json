@@ -4,7 +4,7 @@
     "contenttweaker"
   ],
   "populate": {
-    
+
     "milk_lake": {
       "distribution": "uniform",
       "generator": {
@@ -12,7 +12,7 @@
         "block": "contenttweaker:cheese_molten",
         "outline-block": "rats:block_of_cheese",
         "use-material": true,
-				"material": [
+        "material": [
           "grass",
           "stone",
           "sand",
@@ -27,63 +27,63 @@
       "min-height": 20,
       "max-height": 100,
       "follow-terrain": true,
-      "dimension": {"restriction": "whitelist","value": [-8]}
+      "dimension": { "restriction": "whitelist", "value": [-8] }
     },
 
-		"ratlantis_ratglowes": {
-			"distribution": "surface",
-			"generator": {
-				"type": "decoration",
-				"block": "rats:ratglove_flower",
-				"cluster-size": 3
-			},
-			"cluster-count": 50,
-      "dimension": {"restriction": "whitelist","value": [-8]}
-		},
+    "ratlantis_ratglowes": {
+      "distribution": "surface",
+      "generator": {
+        "type": "decoration",
+        "block": "rats:ratglove_flower",
+        "cluster-size": 3
+      },
+      "cluster-count": 50,
+      "dimension": { "restriction": "whitelist", "value": [-8] }
+    },
 
-		"ratlantis_blue_quartz": {
-			"distribution": "uniform",
-			"generator": {
+    "ratlantis_blue_quartz": {
+      "distribution": "uniform",
+      "generator": {
         "material": ["rats:marbled_cheese", "rats:marbled_cheese_brick", "rats:marbled_cheese_brick_chiseled", "rats:marbled_cheese_brick_cracked", "rats:marbled_cheese_brick_mossy", "rats:marbled_cheese_chiseled", "rats:marbled_cheese_pillar", "rats:marbled_cheese_raw", "rats:marbled_cheese_tile"],
-				"block": {
+        "block": {
           "name": "extrautils2:decorativesolid",
           "properties": {
             "decorstates": "blue_quartz"
           }
         },
-				"cluster-size": 1
-			},
-			"cluster-count": 40,
-			"chunk-chance": 1,
-			"min-height": 45,
-			"max-height": 100,
-			"dimension": {"restriction": "whitelist","value": [-8]}
-		},
+        "cluster-size": 1
+      },
+      "cluster-count": 40,
+      "chunk-chance": 1,
+      "min-height": 45,
+      "max-height": 100,
+      "dimension": { "restriction": "whitelist", "value": [-8] }
+    },
 
-		"ratlantis_uu_metal_ore": {
-			"distribution": "cave",
-			"generator": {
+    "ratlantis_uu_metal_ore": {
+      "distribution": "cave",
+      "generator": {
         "type": "structure",
         "structure": "uu_metal_ore.nbt",
         "rotation": "NONE"
-			},
-			"cluster-count": 4,
-			"chunk-chance": 1,
+      },
+      "cluster-count": 4,
+      "chunk-chance": 1,
       "ceiling": true,
-			"ground-level": 20,
-			"dimension": {"restriction": "whitelist","value": [-8]}
-		},
+      "ground-level": 20,
+      "dimension": { "restriction": "whitelist", "value": [-8] }
+    },
 
-		"ratlantis_rat_statue": {
-			"distribution": "surface",
-			"generator": {
+    "ratlantis_rat_statue": {
+      "distribution": "surface",
+      "generator": {
         "type": "structure",
         "structure": "rat_statue.nbt",
         "material": "grass"
-			},
-			"cluster-count": 1,
-			"chunk-chance": 20,
-			"dimension": {"restriction": "whitelist","value": [-8]}
-		}
+      },
+      "cluster-count": 1,
+      "chunk-chance": 20,
+      "dimension": { "restriction": "whitelist", "value": [-8] }
+    }
   }
 }

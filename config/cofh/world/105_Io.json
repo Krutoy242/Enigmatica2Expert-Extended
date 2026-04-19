@@ -1,66 +1,66 @@
 {
   "dependencies": "advancedrocketry",
-	"priority": 10,
+  "priority": 10,
   "populate": {
-		"io_low_level_metals_spires": {
-			"distribution": "uniform",
-			"cluster-count": 2,
-			"min-height": 1,
-			"max-height": 3,
-			"dimension": {"restriction": "whitelist","value": [105]},
-			"chunk-chance": 30,
-			"generator": {
-				"type": "sequential",
-				"generators": [
-					 {"min-height": 40, "height-variance": 10, "size-variance": 1, "type": "stalagmite", "block": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock", "height-mod": 15, "smooth":true }
-					,{"min-height": 30, "height-variance": 40, "size-variance": 2, "type": "stalagmite", "block": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock" }
+    "io_low_level_metals_spires": {
+      "distribution": "uniform",
+      "cluster-count": 2,
+      "min-height": 1,
+      "max-height": 3,
+      "dimension": { "restriction": "whitelist", "value": [105] },
+      "chunk-chance": 30,
+      "generator": {
+        "type": "sequential",
+        "generators": [
+          { "min-height": 40, "height-variance": 10, "size-variance": 1, "type": "stalagmite", "block": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock", "height-mod": 15, "smooth": true },
+          { "min-height": 30, "height-variance": 40, "size-variance": 2, "type": "stalagmite", "block": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock" },
 
-					,{"min-height":  8, "height-mod": 8, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=energetic_alloy\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth":true }
-					,{"min-height": 10, "height-mod": 8, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=redstone_alloy\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth":true }
-					,{"min-height": 12, "height-mod": 8, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=conductive_iron\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth":true }
-					,{"min-height": 14, "height-mod": 8, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=soularium\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth":true }
-					,{"min-height": 20, "height-mod": 8, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=dark_steel\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth":true }
-					,{"min-height": 26, "height-mod": 8, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=electrical_steel\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth":true }
-				]
-			}
-		},
-		"io_mid_level_metals_spires": {
-			"distribution": "uniform",
-			"cluster-count": 2,
-			"min-height": 1,
-			"max-height": 3,
-			"dimension": {"restriction": "whitelist","value": [105]},
-			"chunk-chance": 50,
-			"generator": {
-				"type": "sequential",
-				"generators": [
-					 {"min-height": 30, "height-variance": 10, "size-variance": 2, "type": "stalagmite", "block": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock", "height-mod": 15, "smooth":true }
-					,{"min-height": 20, "height-variance": 20, "size-variance": 4, "type": "stalagmite", "block": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock" }
+          { "min-height": 8, "height-mod": 8, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=energetic_alloy\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth": true },
+          { "min-height": 10, "height-mod": 8, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=redstone_alloy\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth": true },
+          { "min-height": 12, "height-mod": 8, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=conductive_iron\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth": true },
+          { "min-height": 14, "height-mod": 8, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=soularium\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth": true },
+          { "min-height": 20, "height-mod": 8, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=dark_steel\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth": true },
+          { "min-height": 26, "height-mod": 8, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=electrical_steel\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 5, "size-variance": 0, "smooth": true }
+        ]
+      }
+    },
+    "io_mid_level_metals_spires": {
+      "distribution": "uniform",
+      "cluster-count": 2,
+      "min-height": 1,
+      "max-height": 3,
+      "dimension": { "restriction": "whitelist", "value": [105] },
+      "chunk-chance": 50,
+      "generator": {
+        "type": "sequential",
+        "generators": [
+          { "min-height": 30, "height-variance": 10, "size-variance": 2, "type": "stalagmite", "block": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock", "height-mod": 15, "smooth": true },
+          { "min-height": 20, "height-variance": 20, "size-variance": 4, "type": "stalagmite", "block": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock" },
 
-					,{"min-height":  8, "height-mod":11, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=vibrant_alloy\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 3, "size-variance": 0, "smooth":true }
-					,{"min-height": 11, "height-mod":10, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=end_steel\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 3, "size-variance": 0, "smooth":true }
-					,{"min-height": 14, "height-mod": 9, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=pulsating_iron\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 3, "size-variance": 0, "smooth":true }
-				]
-			}
-		},
-		"io_high_level_metals_spires": {
-			"distribution": "uniform",
-			"cluster-count": 2,
-			"min-height": 1,
-			"max-height": 3,
-			"dimension": {"restriction": "whitelist","value": [105]},
-			"chunk-chance": 80,
-			"generator": {
-				"type": "sequential",
-				"generators": [
-					 {"min-height": 10, "height-variance": 5, "size-variance": 1, "type": "stalagmite", "block": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock", "height-mod": 3, "smooth":true }
-					,{"min-height": 15, "height-variance": 5, "size-variance": 3, "type": "stalagmite", "block": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock" }
+          { "min-height": 8, "height-mod": 11, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=vibrant_alloy\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 3, "size-variance": 0, "smooth": true },
+          { "min-height": 11, "height-mod": 10, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=end_steel\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 3, "size-variance": 0, "smooth": true },
+          { "min-height": 14, "height-mod": 9, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy\", prop: \"variant=pulsating_iron\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 3, "size-variance": 0, "smooth": true }
+        ]
+      }
+    },
+    "io_high_level_metals_spires": {
+      "distribution": "uniform",
+      "cluster-count": 2,
+      "min-height": 1,
+      "max-height": 3,
+      "dimension": { "restriction": "whitelist", "value": [105] },
+      "chunk-chance": 80,
+      "generator": {
+        "type": "sequential",
+        "generators": [
+          { "min-height": 10, "height-variance": 5, "size-variance": 1, "type": "stalagmite", "block": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock", "height-mod": 3, "smooth": true },
+          { "min-height": 15, "height-variance": 5, "size-variance": 3, "type": "stalagmite", "block": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "gen-body": ["air", "stone", "dirt", "water", "gravel", "lava", "advancedrocketry:basalt", "chisel:basalt2"], "material": "bedrock" },
 
-					,{"min-height": 4, "height-mod": 3, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy_endergy\", prop: \"variant=melodic_alloy\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 2, "size-variance": 0, "smooth":true }
-					,{"min-height": 5, "height-mod": 3, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy_endergy\", prop: \"variant=crystalline_pink_slime\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 2, "size-variance": 0, "smooth":true }
-					,{"min-height": 6, "height-mod": 3, "type": "stalagmite", "block": [{"name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy_endergy\", prop: \"variant=crystalline_alloy\" } }" }], "gen-body": [{"name": "extrautils2:decorativebedrock", "metadata": 2}, "bedrock"], "material": "bedrock", "height-variance": 2, "size-variance": 0, "smooth":true }
-				]
-			}
-		}
+          { "min-height": 4, "height-mod": 3, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy_endergy\", prop: \"variant=melodic_alloy\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 2, "size-variance": 0, "smooth": true },
+          { "min-height": 5, "height-mod": 3, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy_endergy\", prop: \"variant=crystalline_pink_slime\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 2, "size-variance": 0, "smooth": true },
+          { "min-height": 6, "height-mod": 3, "type": "stalagmite", "block": [{ "name": "contenttweaker:bedrockore", "data-tag": "{ TileID: 1, CustomData: { name: \"enderio:block_alloy_endergy\", prop: \"variant=crystalline_alloy\" } }" }], "gen-body": [{ "name": "extrautils2:decorativebedrock", "metadata": 2 }, "bedrock"], "material": "bedrock", "height-variance": 2, "size-variance": 0, "smooth": true }
+        ]
+      }
+    }
   }
 }

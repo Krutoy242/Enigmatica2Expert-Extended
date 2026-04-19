@@ -1,23 +1,23 @@
 {
-	"dependencies": "forestry",
-	"populate": 
-		{
-		"apatite": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "forestry:resources",
-				"material": "minecraft:stone",
-				"cluster-size": 12
-			},
-			"cluster-count": 1,
-			"cluster-chance": 15,
-			"min-height": 40,
-			"max-height": 128,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "blacklist",
-				"value": [-1,1,103,111,112,123]
-			}
-		}
-	}
+  "dependencies": "forestry",
+  "populate":
+    {
+      "apatite": {
+        "distribution": "uniform",
+        "generator": {
+          "block": "forestry:resources",
+          "material": "minecraft:stone",
+          "cluster-size": 12
+        },
+        "cluster-count": 1,
+        "cluster-chance": 15,
+        "min-height": 40,
+        "max-height": 128,
+        "retrogen": "false",
+        "dimension": {
+          "restriction": "blacklist",
+          "value": [-1, 1, 103, 111, 112, 123]
+        }
+      }
+    }
 }

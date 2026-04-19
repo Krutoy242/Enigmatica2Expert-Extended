@@ -1,501 +1,501 @@
 {
-"dependencies": "advancedrocketry",
-	"populate": {
-		"rock_crystal": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					
-					"name": "astralsorcery:blockcustomore", 					
-					"metadata": 0			
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 14
-			},
-			"cluster-count": 7,
-			"min-height": 1,
-			"max-height": 12,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					109,
-					110,
-					120
-				]
-			}
-		},
-		"starmetal": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "astralsorcery:blockcustomore", 					 					
-					"metadata": 1				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 7
-			},
-			"cluster-count": 13,
-			"min-height": 35,
-			"max-height": 55,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					109,
-					110,
-					120
-				]
-			}
-		},
-		"dimensional_shard": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "rftools:dimensional_shard_ore", 					 					
-					"metadata": 0				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 5
-			},
-			"cluster-count": 9,
-			"min-height": 17,
-			"max-height": 32,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					109,
-					110,
-					120
-				]
-			}
-		},
-		"mana_infused": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "thermalfoundation:ore", 					 					
-					"metadata": 8 				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 9
-			},
-			"cluster-count": 9,
-			"min-height": 10,
-			"max-height": 30,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					109,
-					110,
-					120
-				]
-			}
-		},
-		"clathrate_glowstone": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "thermalfoundation:ore_fluid", 					 					
-					"metadata": 3			 				
-				},
-				"material": ["minecraft:stone", "quark:basalt"],
-				"cluster-size": 5
-			},
-			"cluster-count": 2,
-			"min-height": 18,
-			"max-height": 45,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					101,
-					102,
-					122
-				]
-			}
-		},
-		"draconium_nether": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "draconicevolution:draconium_ore", 					 					
-					"metadata": 1 				 				
-				},
-				"material": ["minecraft:stone", "quark:basalt"],
-				"cluster-size": 13
-			},
-			"cluster-count": 7,
-			"min-height": 1,
-			"max-height": 16,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					101,
-					102,
-					106,
-					122
-				]
-			}
-		},
-		"draconium_end": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "draconicevolution:draconium_ore", 					 					
-					"metadata": 2 				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 24
-			},
-			"cluster-count": 7,
-			"min-height": 1,
-			"max-height": 16,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					103,
-					121
-				]
-			}
-		},
-		"clathrate_resonant": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "thermalfoundation:ore_fluid", 					 					
-					"metadata": 4 				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 4
-			},
-			"cluster-count": 2,
-			"min-height": 25,
-			"max-height": 55,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					103,
-					121
-				]
-			}
-		},
-		"endstone": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "minecraft:end_stone", 					 					
-					"metadata": 0 				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 96
-			},
-			"cluster-count": 22,
-			"min-height": 0,
-			"max-height": 120,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					103,
-					121
-				]
-			}
-		},
-		"clathrate_redstone": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "thermalfoundation:ore_fluid", 					 					
-					"metadata": 2 				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 5
-			},
-			"cluster-count": 2,
-			"min-height": 17,
-			"max-height": 32,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					106,
-					111,
-					112,
-					114,
-					121
-				]
-			}
-		},
-		"iridium": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "thermalfoundation:ore", 					 					
-					"metadata": 7 				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 7
-			},
-			"cluster-count": 10,
-			"min-height": 15,
-			"max-height": 35,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					106,
-					111,
-					112,
-					114,
-					121
-				]
-			}
-		},
-		"rutile": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "libvulpes:ore0", 					 					
-					"metadata": 8				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 8
-			},
-			"cluster-count": 15,
-			"min-height": 15,
-			"max-height": 35,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					106,
-					111,
-					112,
-					114,
-					121
-				]
-			}
-		},
-		"dilithium": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "libvulpes:ore0", 					 					
-					"metadata": 0				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 3
-			},
-			"cluster-count": 8,
-			"min-height": 25,
-			"max-height": 40,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					100,
-					105,
-					108
-				]
-			}
-		},
-		"rutile_moon": {
-			"distribution": "uniform",
-			"generator": {
-				"block": { 					 					
-					"name": "libvulpes:ore0", 					 					
-					"metadata": 8				 				
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 5
-			},
-			"cluster-count": 16,
-			"min-height": 10,
-			"max-height": 40,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [
-					100,
-					105,
-					108
-				]
-			}
-		},
-		"diamond_venus": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "diamond_ore",
-				"material": "minecraft:stone",
-				"cluster-size": 5
-			},
-			"cluster-count": 18,
-			"min-height": 3,
-			"max-height": 16,
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [102]
-			}
-		},
-		"coal_venus": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "coal_ore",
-				"material": "minecraft:stone",
-				"cluster-size": 30
-			},
-			"cluster-count": 30,
-			"min-height": 18,
-			"max-height": 128,
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [102]
-			}
-		},
-		"iron_mars": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "iron_ore",
-				"material": "minecraft:stone",
-				"cluster-size": 20
-			},
-			"cluster-count": 35,
-			"min-height": 5,
-			"max-height": 64,
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [103]
-			}
-		},
-		"tin_mercury": {
-			"distribution": "uniform",
-			"generator": {
-				"block": {
-					"name": "thermalfoundation:ore",
-					"metadata": 1
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 16
-			},
-			"cluster-count": 16,
-			"min-height": 20,
-			"max-height": 50,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [101]
-			}
-		},
-		"aluminum_mercury": {
-			"distribution": "uniform",
-			"generator": {
-				"block": {
-					"name": "thermalfoundation:ore",
-					"metadata": 4
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 13
-			},
-			"cluster-count": 40,
-			"min-height": 20,
-			"max-height": 65,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [101]
-			}
-		},
-		"lead_titan": {
-			"distribution": "uniform",
-			"generator": {
-				"block": {
-					"name": "thermalfoundation:ore",
-					"metadata": 3
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 18
-			},
-			"cluster-count": 15,
-			"min-height": 15,
-			"max-height": 35,
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [108]
-			}
-		},
-		"nickel_uranus": {
-			"distribution": "uniform",
-			"generator": {
-				"block":{
-						"name": "thermalfoundation:ore",
-						"metadata": 5
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 20
-			},
-			"cluster-count": 8,
-			"min-height": 15,
-			"max-height": 36,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [109]
-			}
-		},
-		"copper_europa": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "thermalfoundation:ore",
-				"material": "minecraft:stone",
-				"cluster-size": 20
-			},
-			"cluster-count": 20,
-			"min-height": 30,
-			"max-height": 55,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [106]
-			}
-		},
-		"uranium_titan": {
-			"distribution": "uniform",
-			"generator": {
-				"block": {
-					"name": "immersiveengineering:ore",
-					"metadata": 5
-				},
-				"material": "minecraft:stone",
-				"cluster-size": 25
-			},
-			"cluster-count": 18,
-			"min-height": 2,
-			"max-height": 64,
-			"retrogen": "false",
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [108]
-			}
-		},
-		"redstone_philucka": {
-			"distribution": "uniform",
-			"generator": {
-				"block": "redstone_ore",
-				"material": "minecraft:stone",
-				"cluster-size": 24
-			},
-			"cluster-count": 22,
-			"min-height": 4,
-			"max-height": 32,
-			"dimension": {
-				"restriction": "whitelist",
-				"value": [121]
-			}
-		}
-	}
+  "dependencies": "advancedrocketry",
+  "populate": {
+    "rock_crystal": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "astralsorcery:blockcustomore",
+          "metadata": 0
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 14
+      },
+      "cluster-count": 7,
+      "min-height": 1,
+      "max-height": 12,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          109,
+          110,
+          120
+        ]
+      }
+    },
+    "starmetal": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "astralsorcery:blockcustomore",
+          "metadata": 1
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 7
+      },
+      "cluster-count": 13,
+      "min-height": 35,
+      "max-height": 55,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          109,
+          110,
+          120
+        ]
+      }
+    },
+    "dimensional_shard": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "rftools:dimensional_shard_ore",
+          "metadata": 0
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 5
+      },
+      "cluster-count": 9,
+      "min-height": 17,
+      "max-height": 32,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          109,
+          110,
+          120
+        ]
+      }
+    },
+    "mana_infused": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore",
+          "metadata": 8
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 9
+      },
+      "cluster-count": 9,
+      "min-height": 10,
+      "max-height": 30,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          109,
+          110,
+          120
+        ]
+      }
+    },
+    "clathrate_glowstone": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore_fluid",
+          "metadata": 3
+        },
+        "material": ["minecraft:stone", "quark:basalt"],
+        "cluster-size": 5
+      },
+      "cluster-count": 2,
+      "min-height": 18,
+      "max-height": 45,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          101,
+          102,
+          122
+        ]
+      }
+    },
+    "draconium_nether": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "draconicevolution:draconium_ore",
+          "metadata": 1
+        },
+        "material": ["minecraft:stone", "quark:basalt"],
+        "cluster-size": 13
+      },
+      "cluster-count": 7,
+      "min-height": 1,
+      "max-height": 16,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          101,
+          102,
+          106,
+          122
+        ]
+      }
+    },
+    "draconium_end": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "draconicevolution:draconium_ore",
+          "metadata": 2
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 24
+      },
+      "cluster-count": 7,
+      "min-height": 1,
+      "max-height": 16,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          103,
+          121
+        ]
+      }
+    },
+    "clathrate_resonant": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore_fluid",
+          "metadata": 4
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 4
+      },
+      "cluster-count": 2,
+      "min-height": 25,
+      "max-height": 55,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          103,
+          121
+        ]
+      }
+    },
+    "endstone": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "minecraft:end_stone",
+          "metadata": 0
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 96
+      },
+      "cluster-count": 22,
+      "min-height": 0,
+      "max-height": 120,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          103,
+          121
+        ]
+      }
+    },
+    "clathrate_redstone": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore_fluid",
+          "metadata": 2
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 5
+      },
+      "cluster-count": 2,
+      "min-height": 17,
+      "max-height": 32,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          106,
+          111,
+          112,
+          114,
+          121
+        ]
+      }
+    },
+    "iridium": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore",
+          "metadata": 7
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 7
+      },
+      "cluster-count": 10,
+      "min-height": 15,
+      "max-height": 35,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          106,
+          111,
+          112,
+          114,
+          121
+        ]
+      }
+    },
+    "rutile": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "libvulpes:ore0",
+          "metadata": 8
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 8
+      },
+      "cluster-count": 15,
+      "min-height": 15,
+      "max-height": 35,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          106,
+          111,
+          112,
+          114,
+          121
+        ]
+      }
+    },
+    "dilithium": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "libvulpes:ore0",
+          "metadata": 0
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 3
+      },
+      "cluster-count": 8,
+      "min-height": 25,
+      "max-height": 40,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          100,
+          105,
+          108
+        ]
+      }
+    },
+    "rutile_moon": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "libvulpes:ore0",
+          "metadata": 8
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 5
+      },
+      "cluster-count": 16,
+      "min-height": 10,
+      "max-height": 40,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [
+          100,
+          105,
+          108
+        ]
+      }
+    },
+    "diamond_venus": {
+      "distribution": "uniform",
+      "generator": {
+        "block": "diamond_ore",
+        "material": "minecraft:stone",
+        "cluster-size": 5
+      },
+      "cluster-count": 18,
+      "min-height": 3,
+      "max-height": 16,
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [102]
+      }
+    },
+    "coal_venus": {
+      "distribution": "uniform",
+      "generator": {
+        "block": "coal_ore",
+        "material": "minecraft:stone",
+        "cluster-size": 30
+      },
+      "cluster-count": 30,
+      "min-height": 18,
+      "max-height": 128,
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [102]
+      }
+    },
+    "iron_mars": {
+      "distribution": "uniform",
+      "generator": {
+        "block": "iron_ore",
+        "material": "minecraft:stone",
+        "cluster-size": 20
+      },
+      "cluster-count": 35,
+      "min-height": 5,
+      "max-height": 64,
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [103]
+      }
+    },
+    "tin_mercury": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore",
+          "metadata": 1
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 16
+      },
+      "cluster-count": 16,
+      "min-height": 20,
+      "max-height": 50,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [101]
+      }
+    },
+    "aluminum_mercury": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore",
+          "metadata": 4
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 13
+      },
+      "cluster-count": 40,
+      "min-height": 20,
+      "max-height": 65,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [101]
+      }
+    },
+    "lead_titan": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore",
+          "metadata": 3
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 18
+      },
+      "cluster-count": 15,
+      "min-height": 15,
+      "max-height": 35,
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [108]
+      }
+    },
+    "nickel_uranus": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "thermalfoundation:ore",
+          "metadata": 5
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 20
+      },
+      "cluster-count": 8,
+      "min-height": 15,
+      "max-height": 36,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [109]
+      }
+    },
+    "copper_europa": {
+      "distribution": "uniform",
+      "generator": {
+        "block": "thermalfoundation:ore",
+        "material": "minecraft:stone",
+        "cluster-size": 20
+      },
+      "cluster-count": 20,
+      "min-height": 30,
+      "max-height": 55,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [106]
+      }
+    },
+    "uranium_titan": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "immersiveengineering:ore",
+          "metadata": 5
+        },
+        "material": "minecraft:stone",
+        "cluster-size": 25
+      },
+      "cluster-count": 18,
+      "min-height": 2,
+      "max-height": 64,
+      "retrogen": "false",
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [108]
+      }
+    },
+    "redstone_philucka": {
+      "distribution": "uniform",
+      "generator": {
+        "block": "redstone_ore",
+        "material": "minecraft:stone",
+        "cluster-size": 24
+      },
+      "cluster-count": 22,
+      "min-height": 4,
+      "max-height": 32,
+      "dimension": {
+        "restriction": "whitelist",
+        "value": [121]
+      }
+    }
+  }
 }

@@ -33,7 +33,7 @@
       }
     },
     "bop_ruby_disabled": {
-			"enabled": false,
+      "enabled": false,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -65,7 +65,7 @@
       }
     },
     "bop_peridot_disabled": {
-			"enabled": false,
+      "enabled": false,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -97,7 +97,7 @@
       }
     },
     "bop_topaz_disabled": {
-			"enabled": false,
+      "enabled": false,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -129,7 +129,7 @@
       }
     },
     "bop_tanzanite_disabled": {
-			"enabled": false,
+      "enabled": false,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -161,7 +161,7 @@
       }
     },
     "bop_malachite_disabled": {
-			"enabled": false,
+      "enabled": false,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -193,7 +193,7 @@
       }
     },
     "bop_sapphire_disabled": {
-			"enabled": false,
+      "enabled": false,
       "distribution": "uniform",
       "generator": {
         "block": {
