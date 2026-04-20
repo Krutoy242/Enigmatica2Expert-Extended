@@ -14,7 +14,7 @@ zenClass MixinWorldGenRegistry {
 
     #mixin Inject {method: "getWorldGen", at: {value: "RETURN"}}
     function sortInfo(cir as mixin.CallbackInfoReturnable) as void {
-        LogHelper.info("E2EE: Sorting JER worldgen entries by absolute value of dim id", []);
+        LogHelper.info("E2EE: Sorting JER worldgen entries by absolute value of dim id and distribution", []);
 
         val dimIdPattern as Pattern = Pattern.compile("\\((-?\\d+)\\)");
 
@@ -38,6 +38,10 @@ zenClass MixinWorldGenRegistry {
             if (rawDiff != 0) {
                 return rawDiff;
             }
+            val distA = a.getAverageBlockCountPerChunk();
+            val distB = b.getAverageBlockCountPerChunk();
+            if (distA > distB) return -1;
+            if (distA < distB) return 1;
             return a.toString().compareTo(b.toString());
         });
     }
