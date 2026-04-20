@@ -1,5 +1,11 @@
-[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-15-04-2026_07-58-51.md
-[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-15-04-2026_07-58-51.html
+[main/WARN] [mixin]: Error loading class: net/malisis/core/renderer/AnimatedRenderer (java.lang.ClassNotFoundException: The specified class 'net.malisis.core.renderer.AnimatedRenderer' was not found)
+[main/WARN] [mixin]: Error loading class: net/optifine/DynamicLight (net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerException: Exception in class transformer com.creativemd.littletiles.LittleTilesTransformer@xxxxxxxx from coremod LittlePatchingLoader)
+[Client thread/WARN] [mixin]: Method overwrite conflict for func_185484_c in mixins.alfheim.json:BlockMixin from mod unknown-owner, previously written by meldexun.nothirium.mc.mixin.MixinBlock. Skipping method.
+[Client thread/WARN] [mixin]: Method overwrite conflict for func_185484_c in mixins.alfheim.json:BlockMixin from mod unknown-owner, previously written by meldexun.nothirium.mc.mixin.MixinBlock. Skipping method.
+[Client thread/WARN] [mixin]: Method overwrite conflict for func_187315_a in mixins.ondemand_sprites.json:BufferBuilderMixin from mod unknown-owner, previously written by meldexun.nothirium.mc.mixin.vertex.MixinBufferBuilder. Skipping method.
+[Client thread/WARN] [mixin]: Method overwrite conflict for func_187315_a in mixins.ondemand_sprites.json:BufferBuilderMixin from mod unknown-owner, previously written by meldexun.nothirium.mc.mixin.vertex.MixinBufferBuilder. Skipping method.
+[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-21-04-2026_12-20-24.md
+[Client thread/WARN] [Pack Companion]: Report deleted from output folder: D:\mc\E2E-E\config\packcompanion\output\companionOutput-21-04-2026_09-39-38.html
 [Client thread/ERROR] [Pack Companion]: Failed to load class baubles.api.util.WrongSideException: baubles.api.util.WrongSideException
 [Client thread/WARN] [Pack Companion]: Classloaded status for class baubles.api.util.WrongSideException: false
 [Client thread/ERROR] [Pack Companion]: Failed to load class baubles.api.util.WrongSideException: Found baubles.api.util.WrongSideException in invalid classes.
@@ -39,6 +45,22 @@
 [Client thread/ERROR] [Pack Companion]: Failed to load class nukeminecart.thaumictweaker.ThaumicTweaker: nukeminecart.thaumictweaker.ThaumicTweaker
 [Client thread/WARN] [Pack Companion]: Classloaded status for class nukeminecart.thaumictweaker.ThaumicTweaker: false
 [Client thread/ERROR] [Pack Companion]: Failed to load class nukeminecart.thaumictweaker.ThaumicTweaker: Found nukeminecart.thaumictweaker.ThaumicTweaker in invalid classes.
+[Client thread/WARN] [VintageFix]: Posting dynamic ModelBakeEvent to mods took 6.121 s, breakdown below:
+[Client thread/WARN] [VintageFix]:     FMLMod:enderio{5.3.72}: 2.196 s
+[Client thread/WARN] [VintageFix]:     FMLMod:forestry{5.8.2.427}: 1.210 s
+[Client thread/WARN] [VintageFix]:     FMLMod:appliedenergistics2{v0.56.7}: 960.7 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:thaumicaugmentation{1.12.2-2.1.14}: 395.5 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:opencomputers{1.8.9a}: 289.6 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:chameleon{1.12-4.1.3}: 122.7 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:rustic{1.2.0}: 101.4 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:extrautils2{1.0}: 101.0 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:nae2{1.6.4}: 89.36 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:industrialforegoing{1.12.2-1.12.2}: 86.08 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:tconstruct{1.12.2-2.13.0.205}: 82.04 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:cookingforblockheads{6.5.0}: 71.52 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:codechickenlib{3.2.3.358}: 60.43 ms
+[Client thread/WARN] [VintageFix]:     FMLMod:immersiveengineering{0.12-98}: 57.76 ms
+[Client thread/WARN] [mixin]: Method overwrite conflict for func_185484_c in mixins.alfheim.json:BlockMixin from mod unknown-owner, previously written by meldexun.nothirium.mc.mixin.MixinBlock. Skipping method.
 [Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
 [Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
 [Client thread/ERROR] [Pack Companion]: Failed to load class optifine.OptiFineForgeTweaker: Found optifine.OptiFineForgeTweaker in invalid classes.
@@ -60,6 +82,8 @@ Outputs:
 net.minecraft.item.ItemStack: [[]]
 Inputs:
 net.minecraft.item.ItemStack: [[1xitem.ingotIron@0 minecraft:iron_ingot], [1xitem.slimeball@0 minecraft:slime_ball], [1xitem.ingotIron@0 minecraft:iron_ingot], [1xitem.ingotIron@0 minecraft:iron_ingot], [1xtile.oak_chest@0 minecraft:chest], [1xitem.ingotIron@0 minecraft:iron_ingot], [1xitem.slimeball@0 minecraft:slime_ball], [1xitem.ingotIron@0 minecraft:iron_ingot], [1xitem.slimeball@0 minecraft:slime_ball]]
+[Client thread/WARN] [Had Enough Items]: No recipe category has been registered for recipeCategoryUid oc.manual
+[Client thread/WARN] [Had Enough Items]: No recipe category has been registered for recipeCategoryUid oc.api
 [Client thread/ERROR] [Had Enough Items]: Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper@xxxxxxxx
 Failed to get ingredients from recipe wrapper
 
@@ -90,5 +114,6 @@ Failed to get ingredients from recipe wrapper
 java.lang.NullPointerException
 	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
   [...]
+[Client thread/WARN] [mixin]: Method overwrite conflict for search in mixins.renderlib.json:MixinGuiOverlayDebug from mod unknown-owner, previously written by meldexun.nothirium.mc.mixin.MixinGuiOverlayDebug. Skipping method.
 [Client thread/WARN] [mixin]: @ModifyConstant conflict. Skipping packetfixer.mixins.json:SPacketCustomPayloadMixin from mod PacketFixer-forge-2.1.0-1.12.2.jar->@ModifyConstant::newSize$init(I)I with priority 1000, already redirected by mixins/bugfixes/mixins.misc.packetsize.json:UTSPacketCustomPayloadMixin from mod unknown-owner->@ModifyConstant::utPacketSizeCustomPayloadInit(I)I with priority 1000
 [Client thread/WARN] [mixin]: @ModifyConstant conflict. Skipping packetfixer.mixins.json:SPacketCustomPayloadMixin from mod PacketFixer-forge-2.1.0-1.12.2.jar->@ModifyConstant::newSize$readPacketData(I)I with priority 1000, already redirected by mixins/bugfixes/mixins.misc.packetsize.json:UTSPacketCustomPayloadMixin from mod unknown-owner->@ModifyConstant::utPacketSizeCustomPayloadRead(I)I with priority 1000

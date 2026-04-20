@@ -185,6 +185,7 @@ key_key.gridspawns:0:NONE:
 key_key.groovyscript.reload:19:CONTROL:29
 key_key.hei.bookmarkToTop:30:SHIFT:42
 key_key.hei.crafting:46:SHIFT:42
+key_key.hei.nextCategory:209:SHIFT:42
 key_key.hei.toggleBookmarkOverlay:0:NONE:
 key_key.hotbar.1:2:NONE:
 key_key.hotbar.2:3:NONE:
@@ -441,6 +442,7 @@ key_key.effortlessbuilding.mode.desc:56:NONE:
 key_key.effortlessbuilding.redo.desc:21:CONTROL:29
 key_key.effortlessbuilding.replace.desc:74:NONE:
 key_key.effortlessbuilding.undo.desc:44:CONTROL:29
+key_key.hei.previousCategory:201:SHIFT:42
 key_key.hei.recipeBookmark:30:CONTROL:29
 key_key.hitindication.toggle_block_indicators:80:NONE:
 key_key.hitindication.toggle_edge_of_screen_mode:71:NONE:
