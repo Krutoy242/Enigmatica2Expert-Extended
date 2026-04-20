@@ -8,7 +8,7 @@
           "name": "chisel:marble2",
           "metadata": 7
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 24
       },
       "cluster-count": 3,
@@ -26,7 +26,7 @@
           "name": "chisel:basalt2",
           "metadata": 7
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 24
       },
       "cluster-count": 3,
@@ -44,7 +44,7 @@
           "name": "chisel:limestone2",
           "metadata": 7
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 24
       },
       "cluster-count": 2,

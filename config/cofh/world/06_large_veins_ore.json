@@ -6,7 +6,7 @@
         "generator": {
           "block": [
             {
-              "name": "minecraft:iron_ore",
+              "name": "iron_ore",
               "metadata": 0,
               "weight": 85
             },
@@ -16,7 +16,7 @@
               "weight": 15
             }
           ],
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 150,
           "sparse": true
         },
@@ -37,17 +37,17 @@
         "generator": {
           "block": [
             {
-              "name": "minecraft:coal_ore",
+              "name": "coal_ore",
               "metadata": 0,
               "weight": 97
             },
             {
-              "name": "minecraft:diamond_ore",
+              "name": "diamond_ore",
               "metadata": 0,
               "weight": 3
             }
           ],
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 130,
           "sparse": true
         },
@@ -68,17 +68,17 @@
         "generator": {
           "block": [
             {
-              "name": "minecraft:redstone_ore",
+              "name": "redstone_ore",
               "metadata": 0,
               "weight": 90
             },
             {
-              "name": "minecraft:lapis_ore",
+              "name": "lapis_ore",
               "metadata": 0,
               "weight": 10
             }
           ],
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 150,
           "sparse": true
         },
@@ -105,12 +105,12 @@
               "weight": 85
             },
             {
-              "name": "minecraft:gold_ore",
+              "name": "gold_ore",
               "metadata": 0,
               "weight": 15
             }
           ],
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 200,
           "sparse": true
         },
@@ -141,7 +141,7 @@
               "weight": 30
             }
           ],
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 200,
           "sparse": true
         },

@@ -8,7 +8,7 @@
           "name": "immersiveengineering:ore",
           "metadata": 5
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 7
       },
       "cluster-count": 6,

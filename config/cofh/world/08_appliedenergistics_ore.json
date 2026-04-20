@@ -5,7 +5,7 @@
       "distribution": "uniform",
       "generator": {
         "block": "appliedenergistics2:quartz_ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 7
       },
       "cluster-count": 8,
@@ -20,7 +20,7 @@
       "distribution": "cave",
       "generator": {
         "block": "appliedenergistics2:charged_quartz_ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 2
       },
       "cluster-count": 2,

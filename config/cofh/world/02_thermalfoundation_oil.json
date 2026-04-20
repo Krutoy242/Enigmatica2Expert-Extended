@@ -6,9 +6,9 @@
       "generator": {
         "block": "thermalfoundation:ore_fluid",
         "material": [
-          "minecraft:sand",
-          "minecraft:sandstone",
-          "minecraft:stone"
+          "sand",
+          "sandstone",
+          "stone"
         ],
         "cluster-size": 16
       },
@@ -36,14 +36,14 @@
             "weight": 80
           },
           {
-            "name": "minecraft:coal_ore",
+            "name": "coal_ore",
             "weight": 20
           }
         ],
         "material": [
-          "minecraft:dirt",
-          "minecraft:gravel",
-          "minecraft:stone"
+          "dirt",
+          "gravel",
+          "stone"
         ],
         "cluster-size": 16
       },
@@ -84,18 +84,18 @@
             "weight": 80
           },
           {
-            "name": "minecraft:sand",
+            "name": "sand",
             "weight": 20
           }
         ],
         "material": [
-          "minecraft:sand",
-          "minecraft:sandstone",
-          "minecraft:stone"
+          "sand",
+          "sandstone",
+          "stone"
         ],
         "hollow": true,
         "filler": "thermalfoundation:fluid_crude_oil",
-        "crust": "minecraft:sandstone"
+        "crust": "sandstone"
       },
       "cluster-count": 3,
       "chunk-chance": 40,
@@ -126,18 +126,18 @@
             "weight": 80
           },
           {
-            "name": "minecraft:gravel",
+            "name": "gravel",
             "weight": 20
           }
         ],
         "material": [
-          "minecraft:dirt",
-          "minecraft:gravel",
-          "minecraft:stone"
+          "dirt",
+          "gravel",
+          "stone"
         ],
         "hollow": true,
         "filler": "thermalfoundation:fluid_crude_oil",
-        "crust": "minecraft:stone"
+        "crust": "stone"
       },
       "cluster-count": 2,
       "chunk-chance": 50,

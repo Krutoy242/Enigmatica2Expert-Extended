@@ -5,7 +5,7 @@
       "distribution": "uniform",
       "generator": {
         "block": "thermalfoundation:ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 9
       },
       "cluster-count": 7,
@@ -23,7 +23,7 @@
           "name": "thermalfoundation:ore",
           "metadata": 1
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 8
       },
       "cluster-count": 7,
@@ -41,7 +41,7 @@
           "name": "thermalfoundation:ore",
           "metadata": 4
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 5
       },
       "cluster-count": 20,
@@ -59,7 +59,7 @@
           "name": "thermalfoundation:ore",
           "metadata": 3
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 8
       },
       "cluster-count": 4,
@@ -81,11 +81,11 @@
             "weight": 65
           },
           {
-            "name": "minecraft:iron_ore",
+            "name": "iron_ore",
             "weight": 35
           }
         ],
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 9
       },
       "cluster-count": 3,
@@ -103,7 +103,7 @@
           "name": "thermalfoundation:ore",
           "metadata": 6
         },
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 1
       },
       "cluster-count": 1,
@@ -118,7 +118,7 @@
       "distribution": "uniform",
       "generator": {
         "block": "thermalfoundation:ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 15
       },
       "cluster-count": 15,
@@ -142,7 +142,7 @@
       "distribution": "uniform",
       "generator": {
         "block": "thermalfoundation:ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 10
       },
       "cluster-count": 4,

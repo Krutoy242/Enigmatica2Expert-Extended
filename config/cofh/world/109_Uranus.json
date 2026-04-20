@@ -7,7 +7,7 @@
       "generator": {
         "type": "geode",
         "block": "mysticalagradditions:molten_superium",
-        "crust": { "name": "minecraft:concrete_powder", "properties": { "color": "cyan" } },
+        "crust": { "name": "concrete_powder", "properties": { "color": "cyan" } },
         "material": ["ice", "packed_ice"]
       },
       "cluster-count": 1,

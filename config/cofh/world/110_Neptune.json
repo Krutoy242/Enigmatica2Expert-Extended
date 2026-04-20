@@ -21,7 +21,7 @@
       "distribution": "gaussian",
       "generator": {
         "block": "lapis_ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 20
       },
       "cluster-count": 10,

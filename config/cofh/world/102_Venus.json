@@ -18,7 +18,7 @@
       "distribution": "uniform",
       "generator": {
         "block": "gold_ore",
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 20
       },
       "cluster-count": 16,

@@ -8,15 +8,15 @@
         "type": "large-vein",
         "block": "thermalfoundation:fluid_petrotheum",
         "material": [
-          "minecraft:sand",
-          "minecraft:sandstone"
+          "sand",
+          "sandstone"
         ],
         "sparse": false,
         "cluster-size": 15
       },
       "material": [
-        "minecraft:sand",
-        "minecraft:sandstone"
+        "sand",
+        "sandstone"
       ],
       "chunk-chance": 6,
       "cluster-count": 1,
@@ -41,11 +41,11 @@
       "generator": {
         "type": "lake",
         "block": "thermalfoundation:fluid_pyrotheum",
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "use-material": true,
         "outline-block": [
-          "minecraft:nether_wart_block",
-          "minecraft:magma"
+          "nether_wart_block",
+          "magma"
         ]
       },
       "cluster-count": 1,
@@ -91,10 +91,10 @@
       "generator": {
         "type": "lake",
         "block": "thermalfoundation:fluid_cryotheum",
-        "material": "minecraft:snow",
+        "material": "snow",
         "use-material": true,
         "outline-block": [
-          "minecraft:packed_ice",
+          "packed_ice",
           "nuclearcraft:supercold_ice"
         ]
       },

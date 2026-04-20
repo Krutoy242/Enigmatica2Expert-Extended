@@ -6,7 +6,7 @@
         "distribution": "uniform",
         "generator": {
           "block": "forestry:resources",
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 12
         },
         "cluster-count": 1,

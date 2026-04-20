@@ -5,7 +5,7 @@
       "distribution": "uniform",
       "generator": {
         "block": "netherendingores:ore_nether_vanilla",
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 12
       },
       "cluster-count": 9,
@@ -25,7 +25,7 @@
           "name": "netherendingores:ore_nether_vanilla",
           "metadata": 1
         },
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 5
       },
       "cluster-count": 5,
@@ -45,7 +45,7 @@
           "name": "netherendingores:ore_nether_vanilla",
           "metadata": 2
         },
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 3
       },
       "cluster-count": 3,
@@ -65,7 +65,7 @@
           "name": "netherendingores:ore_nether_vanilla",
           "metadata": 3
         },
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 7
       },
       "cluster-count": 9,
@@ -85,7 +85,7 @@
           "name": "netherendingores:ore_nether_vanilla",
           "metadata": 4
         },
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 8
       },
       "cluster-count": 9,
@@ -105,7 +105,7 @@
           "name": "netherendingores:ore_nether_vanilla",
           "metadata": 5
         },
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 8
       },
       "cluster-count": 5,
@@ -125,7 +125,7 @@
           "name": "netherendingores:ore_nether_vanilla",
           "metadata": 6
         },
-        "material": "minecraft:netherrack",
+        "material": "netherrack",
         "cluster-size": 8
       },
       "cluster-count": 11,

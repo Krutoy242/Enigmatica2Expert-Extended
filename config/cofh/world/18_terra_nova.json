@@ -84,7 +84,7 @@
       "terra_nova_lapis": {
         "distribution": "gaussian",
         "generator": {
-          "block": "minecraft:lapis_ore",
+          "block": "lapis_ore",
           "cluster-size": 9
         },
         "cluster-count": 20,

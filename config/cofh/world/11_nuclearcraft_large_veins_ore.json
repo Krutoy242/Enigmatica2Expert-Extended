@@ -31,7 +31,7 @@
             "weight": 15
           }
         ],
-        "material": "minecraft:stone",
+        "material": "stone",
         "cluster-size": 350,
         "sparse": true
       },

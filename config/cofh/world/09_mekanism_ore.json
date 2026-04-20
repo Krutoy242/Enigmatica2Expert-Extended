@@ -6,7 +6,7 @@
         "distribution": "uniform",
         "generator": {
           "block": "mekanism:oreblock",
-          "material": "minecraft:stone",
+          "material": "stone",
           "cluster-size": 7
         },
         "cluster-count": 9,

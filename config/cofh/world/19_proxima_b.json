@@ -62,15 +62,15 @@
         "generators": [
           {
             "type": "sequential",
-            "generators": [{ "block": "minecraft:stone", "material": "iceandfire:frozen_stone", "cluster-size": 80 }, { "block": "appliedenergistics2:quartz_ore", "cluster-size": 40, "type": "large-vein" }, { "block": "appliedenergistics2:charged_quartz_ore", "cluster-size": 40, "type": "large-vein" },              { "block": "rftools:dimensional_shard_ore", "cluster-size": 10, "type": "large-vein" }]
+            "generators": [{ "block": "stone", "material": "iceandfire:frozen_stone", "cluster-size": 80 }, { "block": "appliedenergistics2:quartz_ore", "cluster-size": 40, "type": "large-vein" }, { "block": "appliedenergistics2:charged_quartz_ore", "cluster-size": 40, "type": "large-vein" },              { "block": "rftools:dimensional_shard_ore", "cluster-size": 10, "type": "large-vein" }]
           },
           {
             "type": "sequential",
-            "generators": [{ "block": "minecraft:stone", "material": "iceandfire:frozen_stone", "cluster-size": 30 }, { "block": { "name": "biomesoplenty:gem_ore", "metadata": 6 }, "cluster-size": 10, "type": "large-vein" }, { "block": "libvulpes:ore0", "cluster-size": 20, "type": "large-vein" },              { "block": "minecraft:emerald_ore", "cluster-size": 10, "type": "large-vein" }]
+            "generators": [{ "block": "stone", "material": "iceandfire:frozen_stone", "cluster-size": 30 }, { "block": { "name": "biomesoplenty:gem_ore", "metadata": 6 }, "cluster-size": 10, "type": "large-vein" }, { "block": "libvulpes:ore0", "cluster-size": 20, "type": "large-vein" },              { "block": "emerald_ore", "cluster-size": 10, "type": "large-vein" }]
           },
           {
             "type": "sequential",
-            "generators": [{ "block": "minecraft:stone", "material": "iceandfire:frozen_stone", "cluster-size": 30 }, { "block": "astralsorcery:blockcustomore", "cluster-size": 2, "type": "large-vein" }, { "block": "minecraft:diamond_ore", "cluster-size": 20, "type": "large-vein" }]
+            "generators": [{ "block": "stone", "material": "iceandfire:frozen_stone", "cluster-size": 30 }, { "block": "astralsorcery:blockcustomore", "cluster-size": 2, "type": "large-vein" }, { "block": "diamond_ore", "cluster-size": 20, "type": "large-vein" }]
           }
         ]
       }

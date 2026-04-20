@@ -28,7 +28,7 @@
         "generators": [
           { "type": "stalactite", "material": "advancedrocketry:vitrifiedsand", "min-height": 2, "height-variance": 2, "gen-size": 1, "block": { "name": "quark:endstone_speleothem", "properties": { "size": "big" } } },
           { "type": "stalactite", "material": "quark:endstone_speleothem", "min-height": 1, "height-variance": 2, "gen-size": 1, "block": { "name": "quark:endstone_speleothem", "properties": { "size": "medium" } } },
-          { "type": "stalactite", "material": "quark:endstone_speleothem", "min-height": 1, "height-variance": 1, "gen-size": 1, "block": { "name": "minecraft:end_rod", "properties": { "facing": "down" } } }
+          { "type": "stalactite", "material": "quark:endstone_speleothem", "min-height": 1, "height-variance": 1, "gen-size": 1, "block": { "name": "end_rod", "properties": { "facing": "down" } } }
         ]
       }
     },
