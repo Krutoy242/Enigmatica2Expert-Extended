@@ -21,16 +21,22 @@ zenClass MixinWorldGenRegistry {
         val extractDimId as function(WorldGenEntry)int = function(entry as WorldGenEntry) as int {
             val matcher as Matcher = dimIdPattern.matcher(entry.getRestriction().getDimensionRestriction());
             if (matcher.find()) {
-                return Math.abs(matcher.group(1) as int);
+                return matcher.group(1) as int;
             }
             return 10000;
         };
 
         val result as [WorldGenEntry] = cir.getReturnValue();
         result.sort(function(a as WorldGenEntry, b as WorldGenEntry) as int {
-            val dimIdDiff as int = extractDimId(a) - extractDimId(b);
-            if (dimIdDiff != 0) {
-                return dimIdDiff;
+            val idA = extractDimId(a);
+            val idB = extractDimId(b);
+            val absDiff = Math.abs(idA) - Math.abs(idB);
+            if (absDiff != 0) {
+                return absDiff;
+            }
+            val rawDiff = idA - idB;
+            if (rawDiff != 0) {
+                return rawDiff;
             }
             return a.toString().compareTo(b.toString());
         });
