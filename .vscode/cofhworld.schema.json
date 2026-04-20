@@ -1,0 +1,747 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CoFH World Configuration",
+  "type": "object",
+  "properties": {
+    "populate": {
+      "type": "object",
+      "description": "Features to generate in the world.",
+      "additionalProperties": {
+        "$ref": "#/definitions/feature"
+      }
+    },
+    "includes": {
+      "type": "array",
+      "description": "Other configuration files to include.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "description": "Mod dependencies required for this configuration to load.",
+      "anyOf": [
+        { "$ref": "#/definitions/forge_mod_entry" },
+        {
+          "type": "array",
+          "items": { "$ref": "#/definitions/forge_mod_entry" }
+        }
+      ]
+    },
+    "enabled": {
+      "description": "Whether the file should be read at all.",
+      "type": "boolean",
+      "default": true
+    },
+    "priority": {
+      "description": "The loading priority of the file. Files with a higher priority are read first.",
+      "type": "number",
+      "default": 0
+    },
+    "namespace": {
+      "description": "When specified, this string is prepended to the names of the features described in populate.",
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "forge_mod_entry": {
+      "description": "A Forge mod entry describes a mod, optionally with a specific version or range of versions.",
+      "anyOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "The internal mod ID that the mod registers itself with."
+            },
+            "version": {
+              "type": "string",
+              "description": "The version of the mod. May be a specific version, or a Maven-compatible version range."
+            },
+            "exclude": {
+              "type": "boolean",
+              "default": false,
+              "description": "If true, the file will only be read if the specified mod is NOT installed."
+            }
+          },
+          "required": ["id"]
+        }
+      ]
+    },
+    "feature": {
+      "type": "object",
+      "description": "Describes a feature to generate in the world.",
+      "properties": {
+        "generator": {
+          "description": "The type of feature to generate. When specified as an array, a feature type configuration is chosen randomly.",
+          "anyOf": [
+            { "$ref": "#/definitions/feature_type_configuration" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/feature_type_configuration" }
+            }
+          ]
+        },
+        "distribution": {
+          "description": "The distribution type used to distribute the feature in the world.",
+          "type": "string",
+          "enum": [
+            "uniform",
+            "gaussian",
+            "surface",
+            "fractal",
+            "underwater",
+            "underfluid",
+            "cave",
+            "sequential",
+            "custom"
+          ]
+        },
+        "cluster-count": {
+          "description": "How many attempts to generate the feature are done in a chunk.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "chunk-chance": {
+          "description": "The chance of a chunk containing the feature at all. One in [chance] chunks.",
+          "type": "number",
+          "default": 1
+        },
+        "in-village": {
+          "description": "Whether the feature may be generated in the same area as a village.",
+          "type": "boolean",
+          "default": true
+        },
+        "biome": {
+          "description": "The biomes in which the feature may be generated.",
+          "$ref": "#/definitions/biome_restriction"
+        },
+        "dimension": {
+          "description": "The dimensions in which the feature may be generated.",
+          "$ref": "#/definitions/dimension_restriction"
+        },
+        "retrogen": {
+          "description": "Whether to generate the feature in previously generated chunks.",
+          "type": "boolean",
+          "default": false
+        },
+        "enabled": {
+          "description": "Whether to generate the feature at all.",
+          "type": "boolean",
+          "default": true
+        },
+        "ceiling": {
+          "description": "(cave) If true, distributed in ceilings.",
+          "type": "boolean",
+          "default": false
+        },
+        "ground-level": {
+          "description": "(cave) The altitude below which to look for caves.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "x-offset": {
+          "description": "(custom) The X coordinate at which to place features, relative to the center of each chunk.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "y-offset": {
+          "description": "(custom) The Y coordinate at which to place features.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "z-offset": {
+          "description": "(custom) The Z coordinate at which to place features, relative to the center of each chunk.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "min-height": {
+          "description": "(fractal, uniform) The minimum altitude to place features at.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "max-height": {
+          "description": "(uniform) The maximum altitude to place features at.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "vein-height": {
+          "description": "(fractal) The height of the area to distribute a chunk's features in.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "vein-diameter": {
+          "description": "(fractal) The width of the area to distribute a chunk's features in.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "vertical-density": {
+          "description": "(fractal) Determines how close together features should be vertically. (0-100)",
+          "$ref": "#/definitions/number_provider"
+        },
+        "horizontal-density": {
+          "description": "(fractal) Determines how close together features should be horizontally. (0-100)",
+          "$ref": "#/definitions/number_provider"
+        },
+        "center-height": {
+          "description": "(gaussian) The altitude to place features around.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "spread": {
+          "description": "(gaussian) The maximum distance from the center altitude at which features may be placed.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "smoothness": {
+          "description": "(gaussian) Determines how smoothly the amount of features declines when further from the center altitude.",
+          "$ref": "#/definitions/number_provider",
+          "default": 2
+        },
+        "features": {
+          "description": "(sequential) The distributions to distribute features with in sequence.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/feature"
+          }
+        },
+        "material": {
+          "description": "(surface, underfluid, underwater) The type(s) of block that features may be placed on top of or replaced.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "follow-terrain": {
+          "description": "(surface) Whether to consider any block as the highest block.",
+          "type": "boolean",
+          "default": false
+        },
+        "fluid": {
+          "description": "(underfluid) The type(s) of fluid below which features may be placed.",
+          "anyOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ]
+        }
+      },
+      "required": ["distribution"]
+    },
+    "feature_type_configuration": {
+      "type": "object",
+      "description": "Specifies and configures the type of feature to generate.",
+      "properties": {
+        "type": {
+          "description": "The feature type to generate.",
+          "type": "string",
+          "enum": [
+            "boulder",
+            "cluster",
+            "consecutive",
+            "decoration",
+            "sparse-cluster",
+            "large-vein",
+            "lake",
+            "plate",
+            "geode",
+            "spike",
+            "stalagmite",
+            "stalactite",
+            "small-tree",
+            "spout",
+            "structure",
+            "sequential"
+          ]
+        },
+        "material": {
+          "description": "The type(s) of block that may be replaced to generate the feature.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "weight": {
+          "description": "How likely the feature type configuration is to be selected.",
+          "type": "number",
+          "default": 100
+        },
+        "block": {
+          "description": "The type(s) of block that the feature consists of.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "diameter": {
+          "description": "(boulder) The minimum radius of a boulder, in blocks.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "size-variance": {
+          "description": "(boulder, spike, stalagmite, stalactite) The maximum amount of blocks randomly added to the size/radius.",
+          "$ref": "#/definitions/number_provider",
+          "default": 2
+        },
+        "count": {
+          "description": "(boulder) The amount of boulders that a group of boulders may consist of.",
+          "$ref": "#/definitions/number_provider",
+          "default": 3
+        },
+        "count-variance": {
+          "description": "(boulder) The maximum amount randomly added to the number of boulders.",
+          "$ref": "#/definitions/number_provider",
+          "default": 0
+        },
+        "hollow": {
+          "description": "(boulder, geode) If true, boulders are hollowed out / geodes can have filler.",
+          "type": "boolean",
+          "default": false
+        },
+        "hollow-size": {
+          "description": "(boulder) The size of the hollow part of a hollow boulder.",
+          "$ref": "#/definitions/number_provider",
+          "default": 0.1665
+        },
+        "hollow-variance": {
+          "description": "(boulder) How much the size of the hollow part may differ per boulder.",
+          "$ref": "#/definitions/number_provider",
+          "default": 0
+        },
+        "cluster-size": {
+          "description": "(cluster, decoration, sparse-cluster, large-vein) How large the deposits are or max branches.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "sparse": {
+          "description": "(large-vein) If true, the total amount of main branches in deposits is reduced.",
+          "type": "boolean",
+          "default": true
+        },
+        "spindly": {
+          "description": "(large-vein) If true, the amount of main branches in deposits is reduced by 1 for each block generated.",
+          "type": "boolean",
+          "default": false
+        },
+        "use-material": {
+          "description": "(lake) When false, any block may be replaced to generate lakes.",
+          "type": "boolean",
+          "default": false
+        },
+        "outline-block": {
+          "description": "(lake) The block(s) to surround lakes with.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "solid-outline": {
+          "description": "(lake) If true, every block in the outline of a lake is generated.",
+          "type": "boolean",
+          "default": false
+        },
+        "total-outline": {
+          "description": "(lake) If true, the outline of a lake completely surrounds it.",
+          "type": "boolean",
+          "default": false
+        },
+        "gap-block": {
+          "description": "(lake) The block(s) to place above lakes to carve out space.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "radius": {
+          "description": "(plate, spout) The radius of a plate or spout, in blocks.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "height": {
+          "description": "(plate, spout) The amount of vertical layers / height in blocks.",
+          "$ref": "#/definitions/number_provider"
+        },
+        "slim": {
+          "description": "(plate) If true, the top layer of plates is not generated.",
+          "type": "boolean",
+          "default": false
+        },
+        "shape": {
+          "description": "(plate, spout) The shape as seen from above.",
+          "type": "string",
+          "enum": ["CIRCLE", "SQUARE"]
+        },
+        "crust": {
+          "description": "(geode) The block(s) used to generate the outermost layer of geodes.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "filler": {
+          "description": "(geode) The blocks(s) used to generate a core.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "min-height": {
+          "description": "(spike, stalagmite, stalactite, small-tree) The minimum height.",
+          "type": "number"
+        },
+        "height-variance": {
+          "description": "(spike, stalagmite, stalactite, small-tree) Max blocks added to min-height.",
+          "type": "number"
+        },
+        "position-variance": {
+          "description": "(spike) Random offset along Y axis.",
+          "type": "number",
+          "default": 3
+        },
+        "large-spikes": {
+          "description": "(spike) Whether some spikes may be generated as 'large' spikes.",
+          "type": "boolean",
+          "default": true
+        },
+        "large-spike-chance": {
+          "description": "(spike) Chance of large spike.",
+          "type": "number",
+          "default": 60
+        },
+        "min-large-spike-height-gain": {
+          "description": "(spike) Minimum amount of additional layers.",
+          "type": "number",
+          "default": 10
+        },
+        "large-spike-height-variance": {
+          "description": "(spike) Max blocks added to min height gain of a large spike.",
+          "type": "number",
+          "default": 30
+        },
+        "large-spike-filler-size": {
+          "description": "(spike) Radius of additional layers of a large spike.",
+          "type": "number",
+          "default": 1
+        },
+        "gen-body": {
+          "description": "(stalagmite, stalactite) Block(s) that may be replaced.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "height-mod": {
+          "description": "(stalagmite, stalactite) Calculates min radius dynamically.",
+          "type": "number",
+          "default": 5
+        },
+        "gen-size": {
+          "description": "(stalagmite, stalactite) Minimum radius of the base.",
+          "type": "number",
+          "default": 0
+        },
+        "smooth": {
+          "description": "(stalagmite, stalactite) Smoother shape.",
+          "type": "boolean",
+          "default": false
+        },
+        "fat": {
+          "description": "(stalagmite, stalactite) Wider.",
+          "type": "boolean",
+          "default": true
+        },
+        "alt-sinc": {
+          "description": "(stalagmite, stalactite) Unevenly shaped sides.",
+          "type": "boolean",
+          "default": false
+        },
+        "leaves": {
+          "description": "(small-tree) The block(s) used to generate leaves.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "leaf-variance": {
+          "description": "(small-tree) Blocks randomly removed from corners of leaves.",
+          "type": "boolean",
+          "default": true
+        },
+        "tree-checks": {
+          "description": "(small-tree) Verify trees can properly grow before generation.",
+          "type": "boolean",
+          "default": true
+        },
+        "relaxed-growth": {
+          "description": "(small-tree) Generated with blocks adjacent to bottom.",
+          "type": "boolean",
+          "default": false
+        },
+        "water-loving": {
+          "description": "(small-tree) Generated in water up to leaves.",
+          "type": "boolean",
+          "default": false
+        },
+        "structure": {
+          "description": "(structure) The path to the NBT file of the structure.",
+          "anyOf": [
+            { "$ref": "#/definitions/weighted_string" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/weighted_string" }
+            }
+          ]
+        },
+        "ignored-block": {
+          "description": "(structure) A type of block in the structure that should not be generated.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "ignore-entities": {
+          "description": "(structure) If true, entities included in the structure file are not generated.",
+          "type": "boolean",
+          "default": false
+        },
+        "integrity": {
+          "description": "(structure) The integrity of the structure (0-1).",
+          "$ref": "#/definitions/number_provider",
+          "default": 1
+        },
+        "rotation": {
+          "description": "(structure) The possible rotations of the generated structure.",
+          "anyOf": [
+            { "$ref": "#/definitions/weighted_string" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/weighted_string" }
+            }
+          ]
+        },
+        "mirror": {
+          "description": "(structure) The possible ways in which the generated structure may be mirrored.",
+          "anyOf": [
+            { "$ref": "#/definitions/weighted_string" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/weighted_string" }
+            }
+          ]
+        },
+        "generators": {
+          "description": "(consecutive, sequential) The features to generate consecutively/in sequence.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "#/definitions/feature_type_configuration" },
+              {
+                "type": "array",
+                "items": { "$ref": "#/definitions/feature_type_configuration" }
+              }
+            ]
+          }
+        },
+        "surface": {
+          "description": "(decoration, small-tree) The type(s) of block that it may generate on top of.",
+          "anyOf": [
+            { "$ref": "#/definitions/block_id" },
+            {
+              "type": "array",
+              "items": { "$ref": "#/definitions/block_id" }
+            }
+          ]
+        },
+        "see-sky": {
+          "description": "(decoration) Whether to only generate blocks in places with a direct line of sight to the sky.",
+          "type": "boolean",
+          "default": true
+        },
+        "check-stay": {
+          "description": "(decoration) Whether to only generate blocks when they can be sustained.",
+          "type": "boolean",
+          "default": true
+        },
+        "stack-height": {
+          "description": "(decoration) How many times to vertically stack each block in a group.",
+          "$ref": "#/definitions/number_provider",
+          "default": 1
+        },
+        "x-variance": {
+          "description": "(decoration) The max amount of blocks added to the X coordinate.",
+          "$ref": "#/definitions/number_provider",
+          "default": 8
+        },
+        "y-variance": {
+          "description": "(decoration) The max amount of blocks added to the Y coordinate.",
+          "$ref": "#/definitions/number_provider",
+          "default": 4
+        },
+        "z-variance": {
+          "description": "(decoration) The max amount of blocks added to the Z coordinate.",
+          "$ref": "#/definitions/number_provider",
+          "default": 8
+        }
+      }
+    },
+    "block_id": {
+      "description": "Specifies a type of block in the world.",
+      "anyOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "properties": { "type": "object" },
+            "data-tag": {
+              "description": "NBT data",
+              "anyOf": [
+                { "type": "object" },
+                { "type": "string" }
+              ]
+            },
+            "weight": { "type": "number", "default": 100 }
+          },
+          "required": ["name"]
+        }
+      ]
+    },
+    "number_provider": {
+      "description": "A source of numbers. Can be a constant, random, world value, operation, or bounded.",
+      "anyOf": [
+        { "type": "number" },
+        {
+          "type": "object",
+          "properties": {
+            "value": { "$ref": "#/definitions/number_provider" },
+            "min": { "$ref": "#/definitions/number_provider" },
+            "max": { "$ref": "#/definitions/number_provider" },
+            "variance": { "$ref": "#/definitions/number_provider" },
+            "world-data": {
+              "type": "string",
+              "enum": [
+                "WORLD_HEIGHT",
+                "SEA_LEVEL",
+                "GROUND_LEVEL",
+                "RAIN_HEIGHT",
+                "HIGHEST_BLOCK",
+                "SURFACE_BLOCK",
+                "HEIGHT_MAP",
+                "LOWEST_CHUNK_HORIZON",
+                "SPAWN_X",
+                "SPAWN_Y",
+                "SPAWN_Z",
+                "CURRENT_X",
+                "CURRENT_Y",
+                "CURRENT_Z"
+              ]
+            },
+            "value-a": { "$ref": "#/definitions/number_provider" },
+            "value-b": { "$ref": "#/definitions/number_provider" },
+            "operation": {
+              "type": "string",
+              "enum": [
+                "ADD",
+                "SUBTRACT",
+                "MULTIPLY",
+                "DIVIDE",
+                "MODULO",
+                "MINIMUM",
+                "MAXIMUM"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "weighted_string": {
+      "description": "A string along with its chance of being randomly selected.",
+      "anyOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "weight": { "type": "number", "default": 100 }
+          },
+          "required": ["name"]
+        }
+      ]
+    },
+    "biome_restriction": {
+      "description": "Specifies the biomes in which a feature may or may not be generated.",
+      "type": "object",
+      "properties": {
+        "restriction": {
+          "type": "string",
+          "enum": ["blacklist", "whitelist"]
+        },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/biome_entry" }
+        }
+      },
+      "required": ["restriction", "value"]
+    },
+    "biome_entry": {
+      "description": "A method to match one or more biomes.",
+      "anyOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["id", "temperature", "dictionary"]
+            },
+            "entry": {
+              "anyOf": [
+                { "type": "string" },
+                {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              ]
+            },
+            "whitelist": { "type": "boolean", "default": true },
+            "rarity": { "type": "integer", "default": -1 }
+          },
+          "required": ["type", "entry"]
+        }
+      ]
+    },
+    "dimension_restriction": {
+      "description": "Specifies the dimensions in which a feature may or may not be generated.",
+      "type": "object",
+      "properties": {
+        "restriction": {
+          "type": "string",
+          "enum": ["blacklist", "whitelist"]
+        },
+        "value": {
+          "type": "array",
+          "items": { "type": "number" }
+        }
+      },
+      "required": ["restriction", "value"]
+    }
+  }
+}

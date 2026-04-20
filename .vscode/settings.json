@@ -107,6 +107,12 @@
   "json.schemas": [
     {
       "fileMatch": [
+        "config/cofh/world/**/*.json"
+      ],
+      "url": "./.vscode/cofhworld.schema.json"
+    },
+    {
+      "fileMatch": [
         "config/vtt/trade_tables/*.json"
       ],
       "url": "./.vscode/vtt.trade_tables.schema.json"
@@ -436,6 +442,7 @@
     "scripts/wrap/*": true
   },
   "files.associations": {
-    "*.png.mcmeta": "json"
+    "*.png.mcmeta": "json",
+    "config/cofh/world/**/*.json": "properties"
   }
 }
