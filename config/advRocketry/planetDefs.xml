@@ -38,6 +38,7 @@
 			<orbitalDistance>40</orbitalDistance>
 			<rotationalPeriod>1400000</rotationalPeriod>
 			<generateCaves>true</generateCaves>
+			<rainMarker>-1</rainMarker>
 		</planet>
 		<planet name="Venus" DIMID="102" customIcon="lava">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
@@ -48,6 +49,8 @@
 			<orbitalDistance>72</orbitalDistance>
 			<rotationalPeriod>2784000</rotationalPeriod>
 			<skyColor>0,0,0</skyColor>
+			<rainMarker>-1</rainMarker>
+			<retrograde>true</retrograde>
 		</planet>
 		<planet name="Mars" DIMID="103" customIcon="marslike">
 			<biomeIds>advancedrocketry:hotdryrock</biomeIds>
@@ -57,6 +60,7 @@
 			<fogColor>0.9,0.6,0.1</fogColor>
 			<generateCaves>true</generateCaves>
 			<generateCraters>true</generateCraters>
+			<craterFrequencyMultiplier>3.0</craterFrequencyMultiplier>
 			<gravitationalMultiplier>38</gravitationalMultiplier>
 			<orbitalDistance>105</orbitalDistance>
 			<rotationalPeriod>20000</rotationalPeriod>
@@ -85,6 +89,16 @@
 				<orbitalDistance>90</orbitalDistance>
 				<orbitalPhi>90</orbitalPhi>
 				<rotationalPeriod>10000</rotationalPeriod>
+				<spawnable weight="10" groupMin="1">betteranimalsplus:shark</spawnable>
+				<spawnable weight="10" groupMin="1">betteranimalsplus:crab</spawnable>
+				<spawnable weight="10" groupMin="1">betteranimalsplus:eel_saltwater</spawnable>
+				<spawnable weight="10" groupMin="3">betteranimalsplus:horseshoecrab</spawnable>
+				<spawnable weight="17" groupMin="2">betteranimalsplus:jellyfish</spawnable>
+				<spawnable weight="17" groupMin="6">betteranimalsplus:nautilus</spawnable>
+				<spawnable weight="10" groupMin="1">betteranimalsplus:walrus</spawnable>
+				<spawnable weight="10" groupMin="1">betteranimalsplus:whale</spawnable>
+				<spawnable weight="10" groupMin="1">iceandfire:seaserpent</spawnable>
+				<spawnable weight="17" groupMin="2">iceandfire:hippocampus</spawnable>
 			</planet>
 		</planet>
 		<planet name="Saturn" DIMID="107" customIcon="gasgiantblue">
@@ -155,6 +169,7 @@
 			<gravitationalMultiplier>95</gravitationalMultiplier>
 			<orbitalDistance>60</orbitalDistance>
 			<rotationalPeriod>12000</rotationalPeriod>
+			<rainMarker>1</rainMarker>
 		</planet>
 		<planet name="Terra Nova" DIMID="112" customIcon="earthlike">
 			<biomeIds>biomesoplenty:crag,biomesoplenty:quagmire</biomeIds>
@@ -189,14 +204,15 @@
 			<gas>low_pressure_steam</gas>
 			<gas>low_quality_steam</gas>
 			<hasRings>true</hasRings>
+			<ringAngle>20</ringAngle>
 			<ringColor>0.8,0.8,0.7</ringColor>
 			<orbitalDistance>130</orbitalDistance>
 			<rotationalPeriod>12000</rotationalPeriod>
 		</planet>
 	</star>
-	<star blackHole="true" diskAngle="45" name="Magnis Vulpes" temp="87" x="6" y="-142" numPlanets="0" numGasGiants="0">
-		<star temp="220" separation="10.0"/>
-		<star temp="80" separation="6.0"/>
+	<star blackHole="true" diskAngle="45" name="Magnis Vulpes" temp="87" x="6" y="-142" numPlanets="0" numGasGiants="0" size="2.5">
+		<star name="Vulpes Minor" temp="220" separation="10.0" size="0.8"/>
+		<star name="Vulpes Tertiary" temp="80" separation="6.0" size="0.4"/>
 		<planet name="Kepler 0118" DIMID="122" customIcon="lava">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
 			<atmosphereDensity>0</atmosphereDensity>
@@ -205,7 +221,9 @@
 			<generateCaves>true</generateCaves>
 			<generateCraters>true</generateCraters>
 			<generateVolcanos>true</generateVolcanos>
+			<volcanoFrequencyMultiplier>4.0</volcanoFrequencyMultiplier>
 			<generateGeodes>true</generateGeodes>
+			<geodefrequencyMultiplier>2.5</geodefrequencyMultiplier>
 			<geodeOres>oreRutile,oreCinnabar,oreRuby,oreMagnesium,oreRedstone,oreCopper</geodeOres>
 			<gravitationalMultiplier>60</gravitationalMultiplier>
 			<hasRings>true</hasRings>
@@ -213,6 +231,8 @@
 			<orbitalDistance>10</orbitalDistance>
 			<rotationalPeriod>18000</rotationalPeriod>
 			<skyColor>0,0.1,0.4</skyColor>
+			<rainMarker>-1</rainMarker>
+			<laserDrillOres>oreIridium;3,oreTitanium;5,orePlatinum;2,oreTungsten;1</laserDrillOres>
 		</planet>
 		<planet name="Kepler 0119" DIMID="123" customIcon="marslike">
 			<biomeIds>advancedrocketry:hotdryrock</biomeIds>
@@ -227,6 +247,8 @@
 			<generateGeodes>true</generateGeodes>
 			<geodeOres>oreEndRedstone,oreEndRuby,oreEndArdite,oreEndCobalt,oreEndCopper,oreAmethyst,oreEnderBiomeEssence</geodeOres>
 			<fillerBlock>minecraft:stone:5</fillerBlock>
+			<retrograde>true</retrograde>
+			<laserDrillOres>oreDraconium;1,oreEndIridium;2,oreDilithium;5,oreEndPlatinum;3</laserDrillOres>
 		</planet>
 		<planet name="KELT-1b" DIMID="117" customIcon="gasgiantred">
 			<skyColor>0,1,0.5</skyColor>
@@ -238,8 +260,11 @@
 			<gas>carbon_dioxide</gas>
 			<gas>carbon_monoxide</gas>
 			<hasRings>true</hasRings>
+			<ringAngle>110</ringAngle>
 			<orbitalDistance>35</orbitalDistance>
 			<rotationalPeriod>4000</rotationalPeriod>
+			<generateCraters>true</generateCraters>
+			<craterFrequencyMultiplier>0.2</craterFrequencyMultiplier>
 		</planet>
 		<planet name="KELT-4ab" DIMID="120" customIcon="iceworld">
 			<biomeIds>biomesoplenty:alps,iceandfire:glacier,biomesoplenty:alps_foothills,biomesoplenty:glacier</biomeIds>
