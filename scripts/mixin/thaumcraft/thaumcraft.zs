@@ -9,6 +9,7 @@ import native.java.util.Set;
 import native.net.minecraft.block.Block;
 import native.net.minecraft.init.Blocks;
 import native.net.minecraft.util.math.BlockPos;
+import native.net.minecraft.world.World;
 import native.net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import native.thaumcraft.api.blocks.BlocksTC;
 import native.thaumcraft.api.crafting.IInfusionStabiliser;
@@ -192,4 +193,27 @@ zenClass MatrixMixin {
         }
     }
 
+}
+
+#mixin {targets: "thaumcraft.common.world.ThaumcraftWorldGenerator"}
+zenClass MixinThaumcraftWorldGenerator {
+    #mixin ModifyExpressionValue
+    #{
+    #    method: "generateOres",
+    #    at: {
+    #        value: "FIELD",
+    #        target: "Lthaumcraft/common/config/ModConfig$CONFIG_WORLD;generateCrystals:Z",
+    #        opcode: 178
+    #    }
+    #}
+    #mixin Local { parameter: 1, type: "Lnet/minecraft/world/World;", argsOnly: true }
+    function doNotGenerateCrystalsInNonMagicDimensions(original as bool, world as World) as bool {
+        if (!original) return false;
+
+        val dim = world.provider.dimension as int;
+        for d in scripts.lib.dim.Op.tagsMap['MAGIC'] {
+            if (d == dim) return true;
+        }
+        return false;
+    }
 }
