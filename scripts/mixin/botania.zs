@@ -3,6 +3,7 @@
 
 import mixin.CallbackInfo;
 import mixin.CallbackInfoReturnable;
+import native.net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate;
 
 #mixin {targets: "vazkii.botania.client.integration.jei.manapool.ManaPoolRecipeWrapper"}
 zenClass MixinManaPoolRecipeWrapper {
@@ -67,5 +68,29 @@ zenClass MixinModBrews {
     #mixin ModifyConstant {method: "initTC", constant: {intValue: 12000}}
     function increaseDuration(value as int) as int {
         return 1728000;
-    } 
+    }
+}
+
+#mixin {targets: "vazkii.botania.common.core.handler.BiomeDecorationHandler"}
+zenClass MixinBiomeDecorationHandler {
+    #mixin Static
+    #mixin Inject
+    #{
+    #    method: "onWorldDecoration",
+    #    at: {
+    #        value: "FIELD",
+    #        target: "Lvazkii/botania/common/core/handler/ConfigHandler;mushroomQuantity:I",
+    #        opcode: 178
+    #    },
+    #    cancellable: true
+    #}
+    function doNotSpawnMushroomsInNoOrganicDimensions(event as Decorate, ci as CallbackInfo) as void {
+        val dim = event.world.provider.dimension as int;
+        for d in scripts.lib.dim.Op.tagsMap['NO_ORGANIC'] {
+            if (d == dim) {
+                ci.cancel();
+                return;
+            }
+        }
+    }
 }
