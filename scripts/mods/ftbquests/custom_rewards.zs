@@ -397,6 +397,7 @@ function getMaxItemStat(player as IPlayer, getStat as function(IItemDefinition)P
   var maxValueItem as IItemDefinition = null;
   var maxValue = 0;
   for item in game.items {
+    if (isNull(item) || item.id == 'minecraft:air') continue;
     val stat = getStat(item);
     if (isNull(stat)) continue;
     val value = player.readStat(stat);
