@@ -1,25 +1,24 @@
-
 # Comit groups renamings
 renames:
-  feat  : ✨ New Features
-  fix   : 🐛 Fixes
-  perf  : ⚡ Performance Improvements
+  feat: ✨ New Features
+  fix: 🐛 Fixes
+  perf: ⚡ Performance Improvements
   revert: ↩️ Reverts
 
 # Comit groups that would not be listed in changelogs
 discardable:
-  docs    : Documentation
-  style   : Styles
+  docs: Documentation
+  style: Styles
   refactor: Code Refactoring
-  test    : Tests
-  build   : Build System
-  ci      : Continuous Integration
-  chore   : Misc Changes
+  test: Tests
+  build: Build System
+  ci: Continuous Integration
+  chore: Misc Changes
 
 # Optional scope renamings
 scopes:
-  jei      : JEI
-  config   : Configs
+  jei: JEI
+  config: Configs
 
 # If any commit would be autored with other person,
 # it would be listed as contribution

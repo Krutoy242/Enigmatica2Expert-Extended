@@ -1,232 +1,232 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Just Enough Dimensions Configuration",
-    "description": "Schema for dimensions.json file for the Just Enough Dimensions Minecraft mod.",
-    "type": "object",
-    "properties": {
-        "config_version": {
-            "type": "object",
-            "description": "Related to per-world-save config handling."
-        },
-        "dimensions": {
-            "type": "array",
-            "description": "An array of dimension definitions.",
-            "items": {
-                "$ref": "#/definitions/dimension"
-            }
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Just Enough Dimensions Configuration",
+  "description": "Schema for dimensions.json file for the Just Enough Dimensions Minecraft mod.",
+  "type": "object",
+  "properties": {
+    "config_version": {
+      "type": "object",
+      "description": "Related to per-world-save config handling."
     },
-    "definitions": {
-        "hexColor": {
-            "type": "string",
-            "pattern": "^#[0-9a-fA-F]{6}$",
-            "description": "A hex color string, e.g., '#FF0000'."
-        },
-        "worldinfo": {
-            "type": "object",
-            "description": "Configuration values typically stored in level.dat. Can be used in 'worldinfo' or 'worldinfo_onetime'.",
-            "properties": {
-                "generatorName": {
-                    "type": "string",
-                    "description": "The WorldType for the dimension.",
-                    "enum": ["default", "default_1_1", "flat", "amplified", "largeBiomes", "debug_all_block_states", "BIOMESOP", "voidworld"]
-                },
-                "generatorOptions": {
-                    "type": "string",
-                    "description": "Generator settings, like for superflat or customized worlds."
-                },
-                "generatorVersion": {
-                    "type": "integer",
-                    "description": "Version for certain WorldTypes."
-                },
-                "GameType": {
-                    "type": "integer",
-                    "description": "Default game mode. 0: survival, 1: creative, 2: adventure, 3: spectator.",
-                    "enum": [0, 1, 2, 3]
-                },
-                "GameRules": {
-                    "type": "object",
-                    "description": "Key-value pairs for game rules.",
-                    "additionalProperties": { "type": "string" }
-                },
-                "MapFeatures": {
-                    "type": "integer",
-                    "description": "Use 0 to disable most structure generation."
-                },
-                "RandomSeed": {
-                    "oneOf": [
-                        { "type": "integer" },
-                        { "type": "string", "description": "Numeric seed or a string. Empty string generates a new random seed." }
-                    ],
-                    "description": "The world seed."
-                },
-                "SpawnX": { "type": "integer" },
-                "SpawnY": { "type": "integer" },
-                "SpawnZ": { "type": "integer" },
-                "Time": { "type": "integer", "description": "Total world time. Should not be changed after creation." },
-                "DayTime": { "type": "integer", "description": "Current time of day." },
-                "LastPlayed": { "type": "integer" },
-                "LevelName": { "type": "string" },
-                "clearWeatherTime": { "type": "integer" },
-                "rainTime": { "type": "integer" },
-                "raining": { "type": "integer", "enum": [0, 1] },
-                "thunderTime": { "type": "integer" },
-                "thundering": { "type": "integer", "enum": [0, 1] },
-                "hardcore": { "type": "integer", "enum": [0, 1] },
-                "allowCommands": { "type": "integer", "enum": [0, 1] },
-                "Difficulty": { "type": "integer" },
-                "DifficultyLocked": { "type": "integer", "enum": [0, 1] },
-                "BorderCenterX": { "type": "number" },
-                "BorderCenterZ": { "type": "number" },
-                "BorderSize": { "type": "number" },
-                "BorderSizeLerpTime": { "type": "integer" },
-                "BorderSizeLerpTarget": { "type": "number" },
-                "BorderSafeZone": { "type": "number" },
-                "BorderDamagePerBlock": { "type": "number" },
-                "BorderWarningBlocks": { "type": "integer" },
-                "BorderWarningTime": { "type": "integer" }
-            }
-        },
-        "spawnStructure": {
-            "type": "object",
-            "description": "Places a structure when the dimension is first loaded.",
-            "properties": {
-                "name": { "type": "string", "description": "Name of the structure file in config/justenoughdimensions/structures/." },
-                "rotation": { "type": "string", "enum": ["none", "cw_90", "cw_180", "ccw_90"], "default": "none" },
-                "mirror": { "type": "string", "enum": ["none", "left_right", "front_back"], "default": "none" },
-                "centered": { "type": "boolean", "default": false, "description": "Center the structure horizontally on the spawn point." },
-                "offset": { "type": "array", "items": { "type": "integer" }, "minItems": 3, "maxItems": 3, "description": "[x, y, z] offset." },
-                "load_around": { "type": "integer", "description": "Chunks to preload around the structure." }
-            },
-            "required": ["name"]
-        },
-        "teleport": {
-            "type": "object",
-            "properties": {
-                "dimension": { "type": "integer", "description": "Target dimension ID." },
-                "trigger_y": { "type": "integer", "description": "Y-level that triggers teleportation." },
-                "find_surface": { "type": "boolean", "description": "If true, find a safe surface at the destination." },
-                "remove_fall_damage": { "type": "boolean" },
-                "fall_distance": { "type": "number" },
-                "min_health_left": { "type": "integer" },
-                "teleport_type": {
-                    "type": "string",
-                    "enum": ["same_location", "fixed_location", "spawn", "scaled_location", "relative_location", "scaled_relative_location"]
-                },
-                "scale": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
-                "fixed_location": { "type": "array", "items": { "type": "integer" }, "minItems": 3, "maxItems": 3 },
-                "relative_location": { "type": "string", "description": "Vanilla command style relative position (~ ~ ~)." }
-            },
-            "required": ["dimension", "trigger_y"]
-        },
-        "spawnPointSearchType": {
-            "type": "object",
-            "properties": {
-                "type": { "type": "string", "enum": ["overworld", "cavern", "none"] },
-                "min_y": { "type": "integer" },
-                "max_y": { "type": "integer" }
-            }
-        },
-        "jed": {
-            "type": "object",
-            "description": "JED-specific options.",
-            "properties": {
-                "AverageGroundLevel": { "type": "integer" },
-                "CanDoLightning": { "type": "boolean" },
-                "CanDoRainSnowIce": { "type": "boolean" },
-                "CanRespawnHere": { "type": "boolean" },
-                "CanSleepHere": { "type": "string", "enum": ["allow", "deny", "bed_explodes"] },
-                "CanSpawnHostiles": { "type": "boolean" },
-                "CanSpawnPeacefulMobs": { "type": "boolean" },
-                "CelestialAngleMin": { "type": "number", "minimum": 0, "maximum": 1 },
-                "CelestialAngleMax": { "type": "number", "minimum": 0, "maximum": 1 },
-                "ChunkGenFactoryWorldProvider": { "type": "string" },
-                "CloudColor": { "$ref": "#/definitions/hexColor" },
-                "CloudHeight": { "type": "integer" },
-                "CloudRenderer": { "type": "string" },
-                "CustomDayCycle": { "type": "boolean" },
-                "DayCycleIncrement": { "type": "integer", "default": 24000 },
-                "DayLength": { "type": "integer" },
-                "DayTimeMin": { "type": "integer", "minimum": 0, "maximum": 23999 },
-                "DayTimeMax": { "type": "integer", "minimum": 0, "maximum": 23999 },
-                "DisableDawnDuskColors": { "type": "boolean" },
-                "DisableEnderDragon": { "type": "boolean" },
-                "DisableEndSpikes": { "type": "boolean" },
-                "DontAdvanceWeatherWhenSleeping": { "type": "boolean" },
-                "FogColor": { "$ref": "#/definitions/hexColor" },
-                "FoggyBiomes": { "type": "object" },
-                "ForceGameMode": { "type": "boolean" },
-                "GenerateFallbackSpawnBlock": { "type": "boolean" },
-                "HasSkyLight": { "type": "boolean" },
-                "HasXZFog": { "type": "boolean" },
-                "Horizon": { "type": "number" },
-                "IgnoreSpawnSuitability": { "type": "boolean" },
-                "IsSurfaceWorld": { "type": "boolean" },
-                "LightBrightness": { "type": "array", "items": { "type": "number" }, "minItems": 16, "maxItems": 16 },
-                "MoonColor": { "$ref": "#/definitions/hexColor" },
-                "MoonScale": { "type": "number" },
-                "MovementFactor": { "type": "number" },
-                "MusicType": { "type": "string" },
-                "NightLength": { "type": "integer" },
-                "PlayerInventoryGroup": { "type": "string" },
-                "RespawnDimension": { "type": "integer" },
-                "ShouldClientCheckLight": { "type": "boolean" },
-                "SkyBlend": { "type": "number" },
-                "SkyColor": { "$ref": "#/definitions/hexColor" },
-                "SkyDisableFlags": { "type": "integer" },
-                "SkyLightBlend": { "type": "number", "minimum": 0, "maximum": 1 },
-                "SkyRenderer": { "type": "string" },
-                "SkyRenderType": { "type": "integer" },
-                "SpawnPointSearchType": { "$ref": "#/definitions/spawnPointSearchType" },
-                "SunBrightness": { "type": "number" },
-                "SunBrightnessFactor": { "type": "number" },
-                "SunColor": { "$ref": "#/definitions/hexColor" },
-                "SunScale": { "type": "number" },
-                "VoidTeleportInterval": { "type": "integer", "default": 40 },
-                "WaterVaporizes": { "type": "boolean" },
-                "WeatherRenderer": { "type": "string" },
-                "WorldBorderCenteredOnSpawn": { "type": "boolean" },
-                "WorldProviderOverride": { "type": "string" },
-                "sky_teleport": { "$ref": "#/definitions/teleport" },
-                "void_teleport": { "$ref": "#/definitions/teleport" }
-            }
-        },
-        "dimensionType": {
-            "type": "object",
-            "description": "Defines what type of dimension to register.",
-            "properties": {
-                "id": { "type": "integer", "description": "The Dimension Type ID." },
-                "name": { "type": "string" },
-                "keeploaded": { "type": "boolean", "description": "Whether the dimension's spawn chunks are allowed to unload." },
-                "worldprovider": { "type": "string", "description": "The class name of the WorldProvider to use." },
-                "require_exact_match": { "type": "boolean" }
-            },
-            "required": ["worldprovider"]
-        },
-        "dimension": {
-            "type": "object",
-            "description": "A single dimension's configuration.",
-            "properties": {
-                "dim": { "type": "integer", "description": "The dimension ID." },
-                "dimensiontype": { "$ref": "#/definitions/dimensionType" },
-                "override": { "type": "boolean", "default": false, "description": "If true, override an existing dimension with this ID." },
-                "worldinfo": { "$ref": "#/definitions/worldinfo" },
-                "worldinfo_onetime": { "$ref": "#/definitions/worldinfo" },
-                "jed": { "$ref": "#/definitions/jed" },
-                "biome": { "type": "string", "description": "Forces a single biome for the dimension." },
-                "biomeprovider": { "type": "string", "description": "Forces a specific BiomeProvider class." },
-                "chunkgenerator": { "type": "string", "description": "Overrides the ChunkGenerator with a given class." },
-                "disable_teleporting_from": { "type": "boolean", "default": false },
-                "disable_teleporting_to": { "type": "boolean", "default": false },
-                "load_on_start": { "type": "boolean", "default": false },
-                "normal_biomes": { "type": "boolean", "default": false },
-                "post_deletion_command": { "type": "string" },
-                "spawn_structure": { "$ref": "#/definitions/spawnStructure" },
-                "temporary_dimension": { "type": "boolean", "default": false },
-                "unregister": { "type": "boolean", "default": false },
-                "world_template": { "type": "string" }
-            },
-            "required": ["dim"]
-        }
+    "dimensions": {
+      "type": "array",
+      "description": "An array of dimension definitions.",
+      "items": {
+        "$ref": "#/definitions/dimension"
+      }
     }
+  },
+  "definitions": {
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$",
+      "description": "A hex color string, e.g., '#FF0000'."
+    },
+    "worldinfo": {
+      "type": "object",
+      "description": "Configuration values typically stored in level.dat. Can be used in 'worldinfo' or 'worldinfo_onetime'.",
+      "properties": {
+        "generatorName": {
+          "type": "string",
+          "description": "The WorldType for the dimension.",
+          "enum": ["default", "default_1_1", "flat", "amplified", "largeBiomes", "debug_all_block_states", "BIOMESOP", "voidworld"]
+        },
+        "generatorOptions": {
+          "type": "string",
+          "description": "Generator settings, like for superflat or customized worlds."
+        },
+        "generatorVersion": {
+          "type": "integer",
+          "description": "Version for certain WorldTypes."
+        },
+        "GameType": {
+          "type": "integer",
+          "description": "Default game mode. 0: survival, 1: creative, 2: adventure, 3: spectator.",
+          "enum": [0, 1, 2, 3]
+        },
+        "GameRules": {
+          "type": "object",
+          "description": "Key-value pairs for game rules.",
+          "additionalProperties": { "type": "string" }
+        },
+        "MapFeatures": {
+          "type": "integer",
+          "description": "Use 0 to disable most structure generation."
+        },
+        "RandomSeed": {
+          "oneOf": [
+            { "type": "integer" },
+            { "type": "string", "description": "Numeric seed or a string. Empty string generates a new random seed." }
+          ],
+          "description": "The world seed."
+        },
+        "SpawnX": { "type": "integer" },
+        "SpawnY": { "type": "integer" },
+        "SpawnZ": { "type": "integer" },
+        "Time": { "type": "integer", "description": "Total world time. Should not be changed after creation." },
+        "DayTime": { "type": "integer", "description": "Current time of day." },
+        "LastPlayed": { "type": "integer" },
+        "LevelName": { "type": "string" },
+        "clearWeatherTime": { "type": "integer" },
+        "rainTime": { "type": "integer" },
+        "raining": { "type": "integer", "enum": [0, 1] },
+        "thunderTime": { "type": "integer" },
+        "thundering": { "type": "integer", "enum": [0, 1] },
+        "hardcore": { "type": "integer", "enum": [0, 1] },
+        "allowCommands": { "type": "integer", "enum": [0, 1] },
+        "Difficulty": { "type": "integer" },
+        "DifficultyLocked": { "type": "integer", "enum": [0, 1] },
+        "BorderCenterX": { "type": "number" },
+        "BorderCenterZ": { "type": "number" },
+        "BorderSize": { "type": "number" },
+        "BorderSizeLerpTime": { "type": "integer" },
+        "BorderSizeLerpTarget": { "type": "number" },
+        "BorderSafeZone": { "type": "number" },
+        "BorderDamagePerBlock": { "type": "number" },
+        "BorderWarningBlocks": { "type": "integer" },
+        "BorderWarningTime": { "type": "integer" }
+      }
+    },
+    "spawnStructure": {
+      "type": "object",
+      "description": "Places a structure when the dimension is first loaded.",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the structure file in config/justenoughdimensions/structures/." },
+        "rotation": { "type": "string", "enum": ["none", "cw_90", "cw_180", "ccw_90"], "default": "none" },
+        "mirror": { "type": "string", "enum": ["none", "left_right", "front_back"], "default": "none" },
+        "centered": { "type": "boolean", "default": false, "description": "Center the structure horizontally on the spawn point." },
+        "offset": { "type": "array", "items": { "type": "integer" }, "minItems": 3, "maxItems": 3, "description": "[x, y, z] offset." },
+        "load_around": { "type": "integer", "description": "Chunks to preload around the structure." }
+      },
+      "required": ["name"]
+    },
+    "teleport": {
+      "type": "object",
+      "properties": {
+        "dimension": { "type": "integer", "description": "Target dimension ID." },
+        "trigger_y": { "type": "integer", "description": "Y-level that triggers teleportation." },
+        "find_surface": { "type": "boolean", "description": "If true, find a safe surface at the destination." },
+        "remove_fall_damage": { "type": "boolean" },
+        "fall_distance": { "type": "number" },
+        "min_health_left": { "type": "integer" },
+        "teleport_type": {
+          "type": "string",
+          "enum": ["same_location", "fixed_location", "spawn", "scaled_location", "relative_location", "scaled_relative_location"]
+        },
+        "scale": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+        "fixed_location": { "type": "array", "items": { "type": "integer" }, "minItems": 3, "maxItems": 3 },
+        "relative_location": { "type": "string", "description": "Vanilla command style relative position (~ ~ ~)." }
+      },
+      "required": ["dimension", "trigger_y"]
+    },
+    "spawnPointSearchType": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["overworld", "cavern", "none"] },
+        "min_y": { "type": "integer" },
+        "max_y": { "type": "integer" }
+      }
+    },
+    "jed": {
+      "type": "object",
+      "description": "JED-specific options.",
+      "properties": {
+        "AverageGroundLevel": { "type": "integer" },
+        "CanDoLightning": { "type": "boolean" },
+        "CanDoRainSnowIce": { "type": "boolean" },
+        "CanRespawnHere": { "type": "boolean" },
+        "CanSleepHere": { "type": "string", "enum": ["allow", "deny", "bed_explodes"] },
+        "CanSpawnHostiles": { "type": "boolean" },
+        "CanSpawnPeacefulMobs": { "type": "boolean" },
+        "CelestialAngleMin": { "type": "number", "minimum": 0, "maximum": 1 },
+        "CelestialAngleMax": { "type": "number", "minimum": 0, "maximum": 1 },
+        "ChunkGenFactoryWorldProvider": { "type": "string" },
+        "CloudColor": { "$ref": "#/definitions/hexColor" },
+        "CloudHeight": { "type": "integer" },
+        "CloudRenderer": { "type": "string" },
+        "CustomDayCycle": { "type": "boolean" },
+        "DayCycleIncrement": { "type": "integer", "default": 24000 },
+        "DayLength": { "type": "integer" },
+        "DayTimeMin": { "type": "integer", "minimum": 0, "maximum": 23999 },
+        "DayTimeMax": { "type": "integer", "minimum": 0, "maximum": 23999 },
+        "DisableDawnDuskColors": { "type": "boolean" },
+        "DisableEnderDragon": { "type": "boolean" },
+        "DisableEndSpikes": { "type": "boolean" },
+        "DontAdvanceWeatherWhenSleeping": { "type": "boolean" },
+        "FogColor": { "$ref": "#/definitions/hexColor" },
+        "FoggyBiomes": { "type": "object" },
+        "ForceGameMode": { "type": "boolean" },
+        "GenerateFallbackSpawnBlock": { "type": "boolean" },
+        "HasSkyLight": { "type": "boolean" },
+        "HasXZFog": { "type": "boolean" },
+        "Horizon": { "type": "number" },
+        "IgnoreSpawnSuitability": { "type": "boolean" },
+        "IsSurfaceWorld": { "type": "boolean" },
+        "LightBrightness": { "type": "array", "items": { "type": "number" }, "minItems": 16, "maxItems": 16 },
+        "MoonColor": { "$ref": "#/definitions/hexColor" },
+        "MoonScale": { "type": "number" },
+        "MovementFactor": { "type": "number" },
+        "MusicType": { "type": "string" },
+        "NightLength": { "type": "integer" },
+        "PlayerInventoryGroup": { "type": "string" },
+        "RespawnDimension": { "type": "integer" },
+        "ShouldClientCheckLight": { "type": "boolean" },
+        "SkyBlend": { "type": "number" },
+        "SkyColor": { "$ref": "#/definitions/hexColor" },
+        "SkyDisableFlags": { "type": "integer" },
+        "SkyLightBlend": { "type": "number", "minimum": 0, "maximum": 1 },
+        "SkyRenderer": { "type": "string" },
+        "SkyRenderType": { "type": "integer" },
+        "SpawnPointSearchType": { "$ref": "#/definitions/spawnPointSearchType" },
+        "SunBrightness": { "type": "number" },
+        "SunBrightnessFactor": { "type": "number" },
+        "SunColor": { "$ref": "#/definitions/hexColor" },
+        "SunScale": { "type": "number" },
+        "VoidTeleportInterval": { "type": "integer", "default": 40 },
+        "WaterVaporizes": { "type": "boolean" },
+        "WeatherRenderer": { "type": "string" },
+        "WorldBorderCenteredOnSpawn": { "type": "boolean" },
+        "WorldProviderOverride": { "type": "string" },
+        "sky_teleport": { "$ref": "#/definitions/teleport" },
+        "void_teleport": { "$ref": "#/definitions/teleport" }
+      }
+    },
+    "dimensionType": {
+      "type": "object",
+      "description": "Defines what type of dimension to register.",
+      "properties": {
+        "id": { "type": "integer", "description": "The Dimension Type ID." },
+        "name": { "type": "string" },
+        "keeploaded": { "type": "boolean", "description": "Whether the dimension's spawn chunks are allowed to unload." },
+        "worldprovider": { "type": "string", "description": "The class name of the WorldProvider to use." },
+        "require_exact_match": { "type": "boolean" }
+      },
+      "required": ["worldprovider"]
+    },
+    "dimension": {
+      "type": "object",
+      "description": "A single dimension's configuration.",
+      "properties": {
+        "dim": { "type": "integer", "description": "The dimension ID." },
+        "dimensiontype": { "$ref": "#/definitions/dimensionType" },
+        "override": { "type": "boolean", "default": false, "description": "If true, override an existing dimension with this ID." },
+        "worldinfo": { "$ref": "#/definitions/worldinfo" },
+        "worldinfo_onetime": { "$ref": "#/definitions/worldinfo" },
+        "jed": { "$ref": "#/definitions/jed" },
+        "biome": { "type": "string", "description": "Forces a single biome for the dimension." },
+        "biomeprovider": { "type": "string", "description": "Forces a specific BiomeProvider class." },
+        "chunkgenerator": { "type": "string", "description": "Overrides the ChunkGenerator with a given class." },
+        "disable_teleporting_from": { "type": "boolean", "default": false },
+        "disable_teleporting_to": { "type": "boolean", "default": false },
+        "load_on_start": { "type": "boolean", "default": false },
+        "normal_biomes": { "type": "boolean", "default": false },
+        "post_deletion_command": { "type": "string" },
+        "spawn_structure": { "$ref": "#/definitions/spawnStructure" },
+        "temporary_dimension": { "type": "boolean", "default": false },
+        "unregister": { "type": "boolean", "default": false },
+        "world_template": { "type": "string" }
+      },
+      "required": ["dim"]
+    }
+  }
 }

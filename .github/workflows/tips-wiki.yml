@@ -1,0 +1,52 @@
+name: Update Wiki Tips
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'resources/tips/lang/**'
+  workflow_dispatch:
+
+concurrency:
+  group: tips-wiki
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-tips:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: 📦 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 📥 Clone wiki
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.wiki.git" Enigmatica2Expert-Extended.wiki
+
+      - name: 📝 Generate wiki tips
+        run: npx tsx .github/scripts/tips_md.ts
+
+      - name: 📤 Commit and push to wiki
+        run: |
+          cd Enigmatica2Expert-Extended.wiki
+          git add Tips/
+          git diff --cached --quiet && echo "No changes to wiki" && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update tips from lang files"
+          git push

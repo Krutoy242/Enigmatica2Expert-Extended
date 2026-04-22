@@ -15,7 +15,6 @@ import { basename, dirname } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath, URL } from 'node:url'
 
-import chalk from 'chalk'
 import { parse as csvParseSync } from 'csv-parse/sync'
 import fast_glob from 'fast-glob'
 
@@ -327,63 +326,6 @@ export function isPathHasChanged(pPath: string): boolean {
   catch (error) {
     return true
   }
-}
-
-interface Helper {
-  begin            : (s: string, steps?: number) => Promise<void> | void
-  done             : (s?: unknown) => Promise<void> | void
-  error            : (...data: any[]) => Promise<void> | void
-  isUnfinishedTask?: boolean
-  result           : (s?: unknown) => Promise<void> | void
-  step             : (s?: unknown) => Promise<void> | void
-  taskResult?      : string
-  warn             : (...data: any[]) => Promise<void> | void
-}
-
-export const defaultHelper: Helper = {
-  begin(s, steps) {
-    this.done()
-
-    if (steps) {
-      this.steps = steps
-      this.stepSize = steps / 30
-    }
-
-    process.stdout.write(`◽ ${s.trim()}${steps ? ` [${steps}] ` : ''}`)
-    this.isUnfinishedTask = true
-  },
-
-  done(s = '') {
-    if (!this.isUnfinishedTask) {
-      return
-    }
-
-    process.stdout.write(` ${chalk.gray(`${s} ✔`)}\n`)
-    this.isUnfinishedTask = false
-  },
-
-  step(s = '.') {
-    const helper = this
-    if (helper.steps <= 30 || helper.steps-- % helper.stepSize === 0) {
-      process.stdout.write(s)
-    }
-  },
-
-  result(s = '') {
-    this.done()
-    process.stdout.write(`${chalk.green('✓')} ${chalk.dim.green(`${s}`)}\n`)
-  },
-
-  warn(...s) {
-    process.stderr.write(`⚠️ ${chalk.dim.yellow(`${s.join('\t')}`)}`)
-  },
-
-  error(...s) {
-    process.stderr.write(`🛑 ${chalk.dim.red(`${s.join('\t')}`)}`)
-  },
-
-  isUnfinishedTask: false,
-  taskResult      : '',
 }
 
 /**

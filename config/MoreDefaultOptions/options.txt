@@ -12,7 +12,6 @@ maxFps:120
 fboEnable:true
 fancyGraphics:true
 ao:2
-renderClouds:true
 resourcePacks:["Better Gendustry v1.0.zip","Sonomagy TC6 v1.7.zip","BloomTech-1.2.0.zip","BloomTech - E2EE Addon"]
 incompatibleResourcePacks:[]
 lang:en_us
@@ -387,7 +386,7 @@ key_schematica.key.pickBlock:71:NONE:
 key_schematica.key.printerToggle:72:CONTROL:29
 key_schematica.key.renderToggle:73:CONTROL:29
 key_schematica.key.save:55:NONE:
-key_Show Biome Borders:48:ALT:56
+key_Show Biome Borders:48:CONTROL:29
 key_Side Inventory Key:77:NONE:
 key_smoothfont.key.guiOpen:199:NONE:
 key_Toggle Jetpack:45:NONE:

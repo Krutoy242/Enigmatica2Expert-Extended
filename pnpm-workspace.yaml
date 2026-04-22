@@ -1,3 +1,13 @@
+linkWorkspacePackages: true
+preferWorkspacePackages: true
+
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
+packages:
+  - 'mc-tools/packages/*'
+
 onlyBuiltDependencies:
   - cpu-features
   - es5-ext

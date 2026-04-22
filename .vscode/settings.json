@@ -86,16 +86,6 @@
     "WailaErrorOutput.txt": true
   },
 
-  // Automatically sort JSON files of mc-tools
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": "packages\\\\.+\\\\package\\.json$",
-        "cmd": "node mc-tools/merge_jsons.js \"${file}\""
-      }
-    ]
-  },
-
   // Exclude automatically fetching tasks
   "npm.exclude": [
     "**/packages",

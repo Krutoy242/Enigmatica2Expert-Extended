@@ -1,0 +1,71 @@
+name: Discord Notification
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to announce (leave empty for latest)
+        required: false
+  release:
+    types: [released]
+
+concurrency:
+  group: discord-notify-${{ github.event.release.tag_name || inputs.tag || 'latest' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  discord-notify:
+    runs-on: ubuntu-22.04 # ubuntu-22.04 required: newer runners break mdimg markdown-to-PNG rendering
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 📃 Prepare release
+        id: prepare
+        uses: ./.github/actions/prepare-release
+        with:
+          tag: ${{ inputs.tag || github.event.release.tag_name }}
+
+      - name: 🖼️ Generate images from changelog sections
+        run: |
+          csplit -s -z -f part- latest_release.md '/^## /' '{*}' || cp latest_release.md part-00
+
+          I=0
+          for f in part-*; do
+            [ -f "$f" ] && [ -s "$f" ] || continue
+            npx mdimg -i "$f" -o "changelog_part_$I.png" -w 800 --css githubDark
+            I=$((I+1))
+          done
+
+      - name: 📤 Upload changelog images artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: discord-images-${{ steps.prepare.outputs.tag_name }}
+          path: changelog_part_*.png
+
+      - name: 🖼️ ➡️ Send Discord message
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          RELEASE_NAME: ${{ steps.prepare.outputs.name }}
+          RELEASE_URL: ${{ steps.prepare.outputs.html_url }}
+        run: |
+          PAYLOAD=$(jq -cn \
+            --arg u "🚀 New release" \
+            --arg a "https://media.forgecdn.net/avatars/820/88/638200951256555174.png" \
+            --arg t "__**$RELEASE_NAME**__" \
+            --arg l "$RELEASE_URL" \
+            '{username:$u,avatar_url:$a,embeds:[{title:$t,url:$l}]}')
+
+          CURL_ARGS=()
+          n=0
+          for i in changelog_part_*.png; do
+            [ -f "$i" ] || continue
+            CURL_ARGS+=(-F "files[$((n++))]=@$i")
+          done
+
+          curl -sS -X POST -H "Content-Type: multipart/form-data" \
+            -F "payload_json=$PAYLOAD" \
+            "${CURL_ARGS[@]}" \
+            "$WEBHOOK_URL"

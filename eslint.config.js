@@ -3,12 +3,39 @@ import antfu from '@antfu/eslint-config'
 export default antfu({
   typescript: { tsconfigPath: 'tsconfig.json' },
   gitignore : false,
-  rules     : {
+  ignores   : [
+    '.git/**',
+    '.mixin.out/**',
+    '**/*.log',
+    'asm/**',
+    'backups/**',
+    'cache/**',
+    'caches/**',
+    'config/**',
+    'crash-reports/**',
+    'dumps/**',
+    'local/**',
+    'logs/**',
+    'manifest.json',
+    'minecraftinstance.json',
+    'MODS.md',
+    'mods/**',
+    'node_modules/**',
+    'patchouli_books/**',
+    'resourcepacks/**',
+    'resources/**',
+    'schematics/**',
+    'shaderpacks/**',
+    'structures/**',
+    'texturepacks/**',
+  ],
+  rules: {
     // 'no-console'                   : 'off',
     // 'node/prefer-global/process'   : 'off',
-    'ts/strict-boolean-expressions': 'off',
     // 'ts/no-unsafe-assignment'      : 'off',
     // 'ts/no-unsafe-member-access'   : 'off',
+    'ts/strict-boolean-expressions'    : 'off',
+    'markdown/no-reversed-media-syntax': 'off',
 
     // // Override @antfu rules to my personal prefferences
     'style/key-spacing'            : ['error', { align: 'colon' }],
@@ -39,8 +66,9 @@ export default antfu({
     // 'unused-imports/no-unused-vars'   : 'error',
   },
 }, {
-  files: ['**/*.ts', '**/*.tsx'],
-  rules: { 'ts/no-floating-promises': 'error' },
+  files  : ['**/*.ts', '**/*.tsx'],
+  ignores: ['**/*.md/**'],
+  rules  : { 'ts/no-floating-promises': 'error' },
 }, {
   files: ['**/*.md'],
   rules: {

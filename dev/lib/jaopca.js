@@ -3,7 +3,7 @@
 import _ from 'lodash'
 
 import { getByOreBase, getByOredict_first, prefferedModSort } from './tellme.js'
-import { config, defaultHelper, naturalSort } from './utils.js'
+import { config, naturalSort } from './utils.js'
 
 let list
 
@@ -26,7 +26,7 @@ function getList() {
     .sort(
       (a, b) =>
         prefferedModSort(a[0], b[0])
-        || naturalSort(a[0].commandString, b[0].commandString)
+        || naturalSort(a[0]?.commandString ?? '', b[0]?.commandString ?? '')
     )
     .value())
 }
@@ -66,7 +66,7 @@ export function getExtraTMStack(oreBase, extraIndex = 0) {
   return getByOreBase(getExtra(oreBase, extraIndex))
 }
 
-export async function init(h = defaultHelper) {
+export async function init() {
   console.log(
     [
       'Main | Extra 1-2-3',
@@ -91,8 +91,4 @@ export async function init(h = defaultHelper) {
   console.log('map :>> ', sorted)
 }
 
-// @ts-expect-error
-if (
-  import.meta.url === (await import('url')).pathToFileURL(process.argv[1]).href
-)
-  init()
+if (import.meta.main) void init()

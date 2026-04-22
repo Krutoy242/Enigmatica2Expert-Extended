@@ -1,7 +1,20 @@
 /**
- * @file Add tips only into `resources/enigmatica/lang/en_us.lang`
- * And they would be automatically copied to localized files
- * and to `config/anothertips.cfg`
+ * @file Sync tips files from `resources/tips/lang/en_us.lang` (source of truth).
+ *
+ * Triggered automatically by the `pre-commit` hook (see `.husky/pre-commit`)
+ * whenever `resources/tips/lang/en_us.lang` is staged. Can also be run
+ * manually via `pnpm tips:sync`.
+ *
+ * Behaviour:
+ *  - `config/anothertips.cfg` "Tip Lang Keys" list is rebuilt from en_us
+ *  - Other `*_*.lang` files are reordered to match en_us
+ *  - Keys removed from en_us are removed from other locales
+ *  - Keys added to en_us are inserted into other locales using the english
+ *    text verbatim (translators must replace it later)
+ *
+ * Exits with non-zero code on unrecoverable errors (e.g. en_us.lang missing,
+ * malformed line). Untranslated additions are *not* an error — they are
+ * reported as warnings.
  *
  * @author Krutoy242
  * @link https://github.com/Krutoy242
@@ -9,25 +22,20 @@
 
 import { writeFileSync } from 'node:fs'
 import { parse } from 'node:path'
-import { getLangNameFromCode } from 'language-name-map'
+import process from 'node:process'
+import { consola } from 'consola'
 import { globSync } from 'tinyglobby'
 
 import {
-  defaultHelper,
   injectInFile,
   loadText,
-  saveText,
 } from '../lib/utils.js'
 
-const filePathes = globSync('resources/tips/lang/*_*.lang')
+const LANG_GLOB = 'resources/tips/lang/*_*.lang'
+const SOURCE_LANG = 'en_us'
+const CFG_PATH = 'config/anothertips.cfg'
+
 const getTipsRegex = /^(?<match>e2ee\.tips\.(?<id>[^=]+)=(?<text>.*))$/gm
-const getLinesRegex = /^e2ee.tips.[^=]+=(.*)$/gm
-const langCodeRegex = /_.*/
-const obfuscatedRegex = /§[km](.*?)(?:§r|$)/im
-const coloredRegex = /§[0-9a-f](.*?)(?:§r|$)/im
-const boldUnderlinedRegex = /§[ln](.*?)(?:§r|$)/im
-const italicRegex = /§o(.*?)(?:§r|$)/im
-const removeRRegex = /§r/g
 
 interface LangGroups {
   match: string
@@ -35,40 +43,95 @@ interface LangGroups {
   text : string
 }
 
-function getTips(lang: string): LangGroups[] {
-  return Array.from(
+function getTips(lang: string, filePath: string): LangGroups[] {
+  const tips = Array.from(
     lang.matchAll(getTipsRegex),
     m => m.groups as unknown as LangGroups
   )
+
+  // Detect lines that look like tips but didn't match (malformed / typo)
+  const suspicious = lang
+    .split('\n')
+    .map((line, i) => ({ line, n: i + 1 }))
+    .filter(({ line }) => /^e2ee\.tips\./.test(line) && !/^e2ee\.tips\.[^=]+=.*/.test(line))
+
+  if (suspicious.length) {
+    for (const s of suspicious)
+      consola.error(`${filePath}:${s.n}  malformed tip line: ${JSON.stringify(s.line)}`)
+    throw new Error(`Malformed tip lines in ${filePath}`)
+  }
+
+  // Detect duplicate ids
+  const seen = new Set<string>()
+  for (const t of tips) {
+    if (seen.has(t.id))
+      throw new Error(`${filePath}: duplicate key "e2ee.tips.${t.id}"`)
+    seen.add(t.id)
+  }
+
+  return tips
 }
 
-export async function init(h = defaultHelper) {
-  await h.begin('Loading files')
-  const rawFiles = filePathes.map(loadText)
-  const rawTips = rawFiles.map(getTips)
+export async function init() {
+  const filePathes = globSync(LANG_GLOB)
+  if (!filePathes.length)
+    throw new Error(`No lang files found by glob ${LANG_GLOB}`)
+
   const rawLandCodes = filePathes.map(f => parse(f).name)
-  const en_us_index = rawLandCodes.indexOf('en_us')
+  const en_us_index = rawLandCodes.indexOf(SOURCE_LANG)
+  if (en_us_index < 0)
+    throw new Error(`Source of truth "${SOURCE_LANG}.lang" not found among ${filePathes.join(', ')}`)
+
+  consola.start(`Syncing tips from ${filePathes[en_us_index]}`)
+
+  const rawFiles = filePathes.map(loadText)
+  const rawTips = rawFiles.map((text, i) => getTips(text, filePathes[i]))
   const en_us_Tips = rawTips[en_us_index]
 
-  // cfg
+  // ---- config/anothertips.cfg ----
   injectInFile(
-    'config/anothertips.cfg',
+    CFG_PATH,
     '    S:"Tip Lang Keys" <\n',
     '\n     >',
     en_us_Tips.map(tip => `        e2ee.tips.${tip.id}`).join('\n')
   )
 
-  // English
+  // ---- en_us itself (rewrite to normalize formatting / line endings) ----
   replaceTips(en_us_index, en_us_Tips)
 
-  // Other languages
+  // ---- other languages ----
+  let totalAdded = 0
+  let totalRemoved = 0
+
   rawTips.forEach((tips, i) => {
     if (i === en_us_index) return
-    const filtered_other: LangGroups[] = []
-    en_us_Tips.forEach(en =>
-      filtered_other.push(tips.find(other => en.id === other.id) ?? en)
-    )
-    replaceTips(i, filtered_other)
+    const lang = rawLandCodes[i]
+    const existing = new Map(tips.map(t => [t.id, t]))
+    const filtered: LangGroups[] = []
+    const added: string[] = []
+
+    for (const en of en_us_Tips) {
+      const found = existing.get(en.id)
+      if (found) {
+        filtered.push(found)
+      }
+      else {
+        filtered.push(en)
+        added.push(en.id)
+      }
+    }
+
+    const removed = tips.filter(t => !en_us_Tips.some(en => en.id === t.id)).map(t => t.id)
+
+    totalAdded += added.length
+    totalRemoved += removed.length
+
+    if (added.length)
+      consola.warn(`[${lang}] +${added.length} new key(s) need translation: ${added.join(', ')}`)
+    if (removed.length)
+      consola.info(`[${lang}] -${removed.length} removed: ${removed.join(', ')}`)
+
+    replaceTips(i, filtered)
   })
 
   function replaceTips(fileIndex: number, newGroups: LangGroups[]) {
@@ -78,36 +141,20 @@ export async function init(h = defaultHelper) {
     )
   }
 
-  // Minecraft To GH Markdown
-  rawFiles.forEach((langFileText, i) => {
-    const lines = Array.from(
-      langFileText.matchAll(getLinesRegex),
-      s => `- ${mcToMd(s[1])}`
-    )
-
-    const langCode = parse(filePathes[i]).name
-    const langName = getLangNameFromCode(langCode.replace(langCodeRegex, ''))?.name ?? ''
-    saveText(
-      `${lines.join('\n')}\n`,
-      `Enigmatica2Expert-Extended.wiki/Tips/${langName}.md`
-    )
-  })
-
-  await h.result(`Total tips: ${en_us_Tips.length}`)
+  consola.success(
+    `Tips synced: ${en_us_Tips.length} total${
+      totalAdded ? `, +${totalAdded} added` : ''
+    }${totalRemoved ? `, -${totalRemoved} removed` : ''}`
+  )
 }
 
-function mcToMd(text: string): string {
-  let result = text
-  let fresh = ''
-  while (true) {
-    fresh = result
-      .replace(obfuscatedRegex, '~~$1~~§r') // Obfuscated
-      .replace(coloredRegex, '**$1**§r') // Colored -> bold
-      .replace(boldUnderlinedRegex, '`$1`§r') // Bold, underlined -> code
-      .replace(italicRegex, '_$1_§r') // Italic
-    if (fresh === result) return result.replace(removeRRegex, '')
-    result = fresh
+if (import.meta.main) {
+  try {
+    // eslint-disable-next-line antfu/no-top-level-await
+    await init()
+  }
+  catch (err) {
+    consola.error(err instanceof Error ? err.message : err)
+    process.exit(1)
   }
 }
-
-if (import.meta.main) void init()

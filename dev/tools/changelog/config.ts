@@ -2,20 +2,20 @@
 /* eslint-disable antfu/no-import-node-modules-by-path */
 /* eslint-disable antfu/no-import-dist */
 
-import type { GetCommitsParams } from '@conventional-changelog/git-client/dist/types'
+import type { GetCommitsParams } from '@conventional-changelog/git-client/dist/types.js'
 
+import type { Minecraftinstance } from '../../../mc-tools/packages/curseforge/src/minecraftinstance.js'
+import type { CommitGroup, CommitKnownProps, FinalContext, Options as WriterOptions } from '../../../node_modules/conventional-changelog-writer/dist/types.js'
+import type { Preset } from '../../../node_modules/conventional-changelog/dist/types.js'
+
+import type { ParserStreamOptions } from '../../../node_modules/conventional-commits-parser/dist/types.js'
 // @ts-check
 import { existsSync, readFileSync } from 'node:fs'
+
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-
 import { parse } from 'yaml'
 import { $, fs } from 'zx'
-
-import type { Minecraftinstance } from '../../../mc-tools/packages/curseforge/src/minecraftinstance'
-import type { CommitGroup, CommitKnownProps, FinalContext, Options as WriterOptions } from '../../../node_modules/conventional-changelog-writer/dist/types'
-import type { Preset } from '../../../node_modules/conventional-changelog/dist/types'
-import type { ParserStreamOptions } from '../../../node_modules/conventional-commits-parser/dist/types'
 
 import { generateModsList } from '../../../mc-tools/packages/modlist/src'
 
@@ -167,7 +167,7 @@ const writer: WriterOptions = {
     context.modschanges = await getModChanges()
 
     // Group commits by scope inside each group
-    context.commitGroups?.forEach((group: CommitGroup<Commit> & {scopes: object}) => {
+    context.commitGroups?.forEach((group: CommitGroup<Commit> & { scopes: object }) => {
       if (!group.title) group.title = 'Misc'
       const groupedBy: Record<string, Commit[]> = {}
       group.commits.forEach((c) => {

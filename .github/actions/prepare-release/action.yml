@@ -1,0 +1,50 @@
+name: Prepare Release
+description: Fetch release info via gh CLI, save changelog, and install pnpm dependencies
+
+inputs:
+  tag:
+    description: Release tag to fetch (empty falls back to latest)
+    required: false
+    default: ''
+
+outputs:
+  tag_name:
+    description: Release tag name
+    value: ${{ steps.release.outputs.tag_name }}
+  name:
+    description: Release display name
+    value: ${{ steps.release.outputs.name }}
+  html_url:
+    description: Release URL on GitHub
+    value: ${{ steps.release.outputs.html_url }}
+
+runs:
+  using: composite
+  steps:
+    - name: 📃 Fetch release info and save changelog
+      id: release
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        INPUT_TAG: ${{ inputs.tag }}
+      run: |
+        if [ -n "$INPUT_TAG" ]; then
+          JSON=$(gh release view "$INPUT_TAG" --json tagName,name,body,url)
+        else
+          JSON=$(gh release view --latest --json tagName,name,body,url)
+        fi
+        echo "tag_name=$(echo "$JSON" | jq -r .tagName)" >> "$GITHUB_OUTPUT"
+        echo "name=$(echo "$JSON"     | jq -r .name)"    >> "$GITHUB_OUTPUT"
+        echo "html_url=$(echo "$JSON" | jq -r .url)"     >> "$GITHUB_OUTPUT"
+        echo "$JSON" | jq -r .body > latest_release.md
+
+    - uses: pnpm/action-setup@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: pnpm
+
+    - name: 📦 Install dependencies
+      shell: bash
+      run: pnpm install --prod --frozen-lockfile

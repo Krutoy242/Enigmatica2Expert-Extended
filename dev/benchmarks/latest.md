@@ -4,10 +4,10 @@
 
 <p align="center" style="font-size:160%;">
 MC total load time:<br>
-269 sec
+260 sec
 <br>
 <sup><sub>(
-4:29 min
+4:20 min
 )</sub></sup>
 </p>
 
@@ -18,14 +18,14 @@ Note for image scripts:
   - This characters cant be used: +<"%#
 -->
 <p align="center">
-<img src="https://quickchart.io/chart.png?w=400&h=60&c={
+<img alt="Loading Timeline" src="https://quickchart.io/chart.png?w=400&h=60&c={
   type: 'horizontalBar',
   data: {
     datasets: [
         {label: 'Mixins\n', data: [28.00]},
-        {label: 'Construction\n', data: [57.00]},
-        {label: 'PreInit\n', data: [130.00]},
-        {label: 'Init\n', data: [52.00]},
+        {label: 'Construction\n', data: [54.00]},
+        {label: 'PreInit\n', data: [128.00]},
+        {label: 'Init\n', data: [47.00]},
     ]
   },
   options: {
@@ -70,7 +70,7 @@ Note for image scripts:
 # Mods Loading Time
 
 <p align="center">
-<img src="https://quickchart.io/chart.png?w=400&h=300&c={
+<img alt="Mods Loading Time" src="https://quickchart.io/chart.png?w=400&h=300&c={
   type: 'outlabeledPie',
   options: {
     rotation: Math.PI,
@@ -89,28 +89,29 @@ Note for image scripts:
   },
   data: {...
 `
-436e17  8.61s Had Enough Items;
-395E14  1.29s [JEI Ingredient Filter];
-395E14  5.81s [JEI Plugins];
-5161a8  7.54s CraftTweaker2;
-516fa8  6.27s Ender IO;
-8f304e  6.21s Astral Sorcery;
-a651a8  5.09s IndustrialCraft 2;
-6e5e17  4.37s Tinkers' Antique;
-5E5014  3.00s [TCon Textures];
-cd922c  3.72s NuclearCraft;
-813e81  3.62s OpenComputers;
-6e175e  3.06s Recurrent Complex;
-213664  3.01s Forestry;
-436e17  2.15s Integrated Dynamics;
-216364  2.14s Thermal Expansion;
-ba3eb8  2.14s Cyclic;
-308f7e  2.13s Quark: RotN Edition;
-306e8f  2.10s Custom Loading Screen;
-a86e51  1.97s Extra Utilities 2;
-444444 30.84s 21 Other mods;
-333333 47.54s 153 'Fast' mods (1.0s - 0.1s);
-222222  7.96s 306 'Instant' mods (%3C 0.1s)
+516fa8  9.73s Ender IO;
+455E8F  3.91s [VF ModelBake];
+436e17  8.57s Had Enough Items;
+395E14  5.64s [JEI Plugins];
+5161a8  6.34s CraftTweaker2;
+8f304e  6.14s Astral Sorcery;
+a651a8  4.80s IndustrialCraft 2;
+213664  3.66s Forestry;
+1C2E55  1.01s [VF ModelBake];
+813e81  3.89s OpenComputers;
+cd922c  3.33s NuclearCraft;
+6e175e  3.08s Recurrent Complex;
+3e68ba  2.46s AE2 Unofficial Extended Life;
+35589E  0.64s [VF ModelBake];
+ba3eb8  2.16s Cyclic;
+436e17  2.06s Integrated Dynamics;
+308f7e  2.02s Quark: RotN Edition;
+3e8160  1.97s The Twilight Forest;
+306e8f  1.95s Custom Loading Screen;
+a86e51  2.02s Extra Utilities 2;
+444444 25.85s 18 Other mods;
+333333 47.63s 149 'Fast' mods (1.0s - 0.1s);
+222222  8.24s 313 'Instant' mods (%3C 0.1s)
 `
     .split(';').reduce((a, l) => {
       l.match(/(\w{6}) *(\d*\.\d*) ?s (.*)/s)
@@ -143,7 +144,7 @@ Show how much time each mod takes on each game load phase.
 JEI/HEI not included, since its load time based on other mods and overal item count.
 
 <p align="center">
-<img src="https://quickchart.io/chart.png?w=400&h=450&c={
+<img alt="Loader Steps" src="https://quickchart.io/chart.png?w=400&h=450&c={
   options: {
     scales: {
       xAxes: [{stacked: true}],
@@ -187,17 +188,17 @@ JEI/HEI not included, since its load time based on other mods and overal item co
       .forEach(([name]) => a.datasets.push({ label: name, data: [] }));
 `
                                   0      1      2      3      4      5      6      7;
-CraftTweaker2                 | 0.10| 0.00| 2.89| 4.50| 0.00| 0.05| 0.00| 0.00;
-Ender IO                      | 1.60| 0.01| 2.72| 0.28| 1.64| 0.00| 0.02| 0.00;
-Astral Sorcery                | 0.17| 0.00| 4.96| 1.09| 0.00| 0.00| 0.00| 0.00;
-IndustrialCraft 2             | 1.01| 0.01| 3.31| 0.77| 0.00| 0.00| 0.00| 0.00;
-Tinkers' Antique              | 0.74| 0.01| 0.11| 0.52| 0.00| 0.00| 0.00| 3.00;
-NuclearCraft                  | 0.06| 0.01| 2.88| 0.75| 0.00| 0.00| 0.03| 0.00;
-OpenComputers                 | 0.16| 0.01| 1.40| 1.99| 0.06| 0.00| 0.00| 0.00;
-Recurrent Complex             | 0.16| 0.00| 0.30| 2.60| 0.00| 0.00| 0.00| 0.00;
-Forestry                      | 0.31| 0.01| 2.04| 0.66| 0.00| 0.00| 0.00| 0.00;
-Integrated Dynamics           | 0.15| 0.00| 1.96| 0.03| 0.00| 0.00| 0.00| 0.00;
-[Mod Average]                 | 0.06| 0.00| 0.15| 0.07| 0.00| 0.00| 0.00| 0.01
+Ender IO                      | 1.60| 0.01| 2.58| 0.27| 1.36| 0.00| 0.02| 3.91;
+CraftTweaker2                 | 0.21| 0.00| 2.37| 3.72| 0.00| 0.04| 0.00| 0.00;
+Astral Sorcery                | 0.16| 0.00| 5.07| 0.91| 0.00| 0.00| 0.00| 0.00;
+IndustrialCraft 2             | 0.86| 0.01| 3.25| 0.68| 0.00| 0.00| 0.00| 0.00;
+Forestry                      | 0.26| 0.01| 1.77| 0.61| 0.00| 0.00| 0.00| 1.01;
+OpenComputers                 | 0.16| 0.01| 1.34| 1.80| 0.05| 0.00| 0.00| 0.26;
+NuclearCraft                  | 0.05| 0.01| 2.46| 0.78| 0.00| 0.00| 0.03| 0.00;
+Recurrent Complex             | 0.17| 0.00| 0.27| 2.64| 0.00| 0.00| 0.00| 0.00;
+AE2 Unofficial Extended Life  | 0.06| 0.01| 1.26| 0.48| 0.01| 0.00| 0.00| 0.64;
+Cyclic                        | 0.04| 0.01| 1.73| 0.38| 0.00| 0.00| 0.00| 0.00;
+[Mod Average]                 | 0.06| 0.00| 0.14| 0.07| 0.00| 0.00| 0.00| 0.02
 `
     .split(';').slice(1)
       .map(l => l.split('|').map(s => s.trim()))
@@ -214,7 +215,7 @@ Integrated Dynamics           | 0.15| 0.00| 1.96| 0.03| 0.00| 0.00| 0.00| 0.00;
 # TOP JEI Registered Plugis
 
 <p align="center">
-<img src="https://quickchart.io/chart.png?w=500&h=200&c={
+<img alt="TOP JEI Registered Plugis" src="https://quickchart.io/chart.png?w=500&h=200&c={
   options: {
     elements: { rectangle: { borderWidth: 1 } },
     legend: false,
@@ -232,19 +233,19 @@ Integrated Dynamics           | 0.15| 0.00| 1.96| 0.03| 0.00| 0.00| 0.00| 0.00;
         }]
       };
 `
- 0.91: jeresources.jei.JEIConfig;
- 0.60: com.buuz135.industrial.jei.JEICustomPlugin;
- 0.49: crazypants.enderio.machines.integration.jei.MachinesPlugin;
- 0.44: com.rwtema.extrautils2.crafting.jei.XUJEIPlugin;
- 0.43: mezz.jei.plugins.vanilla.VanillaPlugin;
- 0.39: ic2.jeiIntegration.SubModule;
- 0.24: knightminer.tcomplement.plugin.jei.JEIPlugin;
- 0.18: crazypants.enderio.base.integration.jei.JeiPlugin;
- 0.18: cofh.thermalexpansion.plugins.jei.JEIPluginTE;
- 0.15: com.buuz135.thaumicjei.ThaumcraftJEIPlugin;
- 0.10: astavie.thermallogistics.compat.jei.CompatJEI;
- 0.10: net.bdew.jeibees.BeesJEIPlugin;
- 1.61: Other
+ 0.82: jeresources.jei.JEIConfig;
+ 0.60: crazypants.enderio.machines.integration.jei.MachinesPlugin;
+ 0.57: com.rwtema.extrautils2.crafting.jei.XUJEIPlugin;
+ 0.52: com.buuz135.industrial.jei.JEICustomPlugin;
+ 0.41: mezz.jei.plugins.vanilla.VanillaPlugin;
+ 0.36: ic2.jeiIntegration.SubModule;
+ 0.29: knightminer.tcomplement.plugin.jei.JEIPlugin;
+ 0.16: cofh.thermalexpansion.plugins.jei.JEIPluginTE;
+ 0.16: crazypants.enderio.base.integration.jei.JeiPlugin;
+ 0.14: com.buuz135.thaumicjei.ThaumcraftJEIPlugin;
+ 0.09: ninjabrain.gendustryjei.GendustryJEIPlugin;
+ 0.08: net.bdew.jeibees.BeesJEIPlugin;
+ 1.43: Other
 `
         .split(';')
         .map(l => l.split(':'))
@@ -267,7 +268,7 @@ Loading bars that usually not related to specific mods.
 ⚠️ Shows only steps that took 1.0 sec or more.
 
 <p align="center">
-<img src="https://quickchart.io/chart.png?w=500&h=400&c={
+<img alt="FML Stuff" src="https://quickchart.io/chart.png?w=500&h=400&c={
   options: {
     rotation: Math.PI*1.125,
     cutoutPercentage: 55,
@@ -286,7 +287,7 @@ Loading bars that usually not related to specific mods.
             font: {size: 18}
           },
           {
-            text: '109.29s',
+            text: '103.06s',
             color: 'rgba(128, 128, 128, 1)',
             font: {size: 22}
           }
@@ -306,18 +307,19 @@ Loading bars that usually not related to specific mods.
       }]
     };
 `
-994400  1.45s Reloading;
-001799  3.17s Loading Resource - AssetLibrary;
-179900  3.92s Preloading 53291 textures;
-0D9900  1.84s Texture loading;
-009926  6.13s Posting bake events;
-009930 30.34s Setting up dynamic models;
-00993A 30.40s Loading Resource - ModelManager;
-009299 31.12s Rendering Setup;
-590099  1.58s XML Recipes;
-630099  2.12s InterModComms;
-99007D 10.80s [VintageFix]: Texture search 69863 sprites;
-990073  4.02s Preloaded 33701 sprites
+994400  1.46s Reloading;
+002299  3.26s Loading Resource - AssetLibrary;
+2C9900  3.28s Preloading 53295 textures;
+229900  1.65s Texture loading;
+039900  1.46s Texture mipmap and upload;
+009911  7.30s Posting bake events;
+00991C 32.30s Setting up dynamic models;
+009926 32.38s Loading Resource - ModelManager;
+00998C 33.08s Rendering Setup;
+440099  1.30s XML Recipes;
+4F0099  1.77s InterModComms;
+990092 10.54s [VintageFix]: Texture search 69872 sprites;
+990088  3.36s Preloaded 33705 sprites
 `
     .split(';')
       .map(l => l.match(/(\w{6}) *(\d*\.\d*) ?s (.*)/s))

@@ -10,20 +10,35 @@
 # ##############################
 
 # We can cut only partial of log if we dont want to list all the errors
-boundries:
+boundaries:
   from:
-  to: '[Server thread' # Server thread started when player joining world
+  to: '\[Server thread|\[Server Pinger' # Server thread started when player joining world
 
-# RegEx to match log.
-# Default confir matches all Warnings and Errors in debug.log
-#       ╔══════════ Start of any error ═══════════╗ ╔══════════ Multiline FML ingredient errors ══════════════╗ ╔═ Normal errors ╗╔═════════════════════════════════════════════ ASM errors that takes several lines ══════════════════════════════════════════════════════════════════╗
-match: '^(\[\d+:\d+:\d+\] \[[^\]]+(?:WARN|ERROR)\])(?:( \[FML\]: )\*{40}\r?\n(\1\2\*\s+.*\r?\n)+\1\2\*{40}\r?\n|([\s\S\n](?!^\[))+(\r?\n\[\d+:\d+:\d+\] \[Client thread\/ERROR\] \[FML\]: Index: \d+ Listeners:\r?\n(\[\d+:\d+:\d+\] \[Client thread\/ERROR\] \[FML\]: \d+: .+\r?\n?)+)?)'
+# RegEx to match log. Matches all Warnings and Errors in debug.log.
+# Fragments are concatenated with no separator (joined source must be a valid JS RegExp).
+match:
+  # VintageFix multi-line "Posting dynamic ModelBakeEvent" timing block
+  - '(?:^\[\d+:\d+:\d+\] \[[^\]]+WARN\] \[VintageFix\]: Posting dynamic ModelBakeEvent[^\n]*\r?\n(?:\[\d+:\d+:\d+\] \[[^\]]+WARN\] \[VintageFix\]: [^\n]*\r?\n)*)'
+  # Optional mixin TRACE Catching block that precedes a WARN/ERROR
+  - '|(?:^\[\d+:\d+:\d+\] \[[^\]]+TRACE\] \[mixin\]: Catching\r?\n(?:(?!\[).*\r?\n)*)?'
+  # Start of any WARN/ERROR line — captures group \1 (prefix) and group \2 (FML tag, set inside the alternation below)
+  - '^(\[\d+:\d+:\d+\] \[[^\]]+(?:WARN|ERROR)\])'
+  # Multi-line FML ingredient errors framed by lines of forty asterisks
+  - '(?:( \[FML\]: )\*{40}\r?\n(\1\2\*\s+.*\r?\n)+\1\2\*{40}\r?\n'
+  # Or normal single/multi-line errors (continuation lines that don''t start with `[`)
+  - '|([\s\S\n](?!^\[))+'
+  # Optional trailing ASM "Index: N Listeners:" block that follows some errors
+  - '(\r?\n\[\d+:\d+:\d+\] \[Client thread\/ERROR\] \[FML\]: Index: \d+ Listeners:\r?\n(\[\d+:\d+:\d+\] \[Client thread\/ERROR\] \[FML\]: \d+: .+\r?\n?)+)?)'
 
 # Before output errors, all this replaces would be applied to resulted element
 replace:
   # Remove timestamps
   - from: '^\[\d+:\d+:\d+\] '
     to: ''
+
+  # Remove thread/level/module prefix from continuation lines in multi-line blocks
+  - from: '\r?\n\[[^\]/]+/\w+\] \[[^\]]+\]: ?'
+    to: "\n"
 
   # Remove hash codes
   - from: '@[0-9a-f]{4,8}'
@@ -38,8 +53,8 @@ replace:
     to: $xxx000$
 
   # Cut long stack traces
-  - from: '(?<cap>(^[^\n]*$\n){5})([^\n]*\n.*)+'
-    to: $<cap>  [...]
+  - from: '(?<head>(^[^\n]*$\n){5})[\s\S]*\n(?<tail>.+)'
+    to: "$<head>  [...]\n$<tail>"
 
   # Plugin too slow report
   - from: Recipe registry plugin is slow, took .+ ms
@@ -158,9 +173,14 @@ ignore:
   - 'WARN. \[.+AbstractResourcePack\]: ResourcePack: ignored non-lowercase namespace: META-INF in'
 
   # Some JEI errors, no harm
-  - 'ERROR. \[jei|Had.?Enough.?Items\]: A Recipe Handler has already been registered for '
-  - 'ERROR. \[jei|Had.?Enough.?Items\]: An interpreter is already registered for this item'
-  - 'ERROR. \[jei|Had.?Enough.?Items\]: Recipe has no output. Extra Utilities 2 extrautils2:shortcut_hopper'
+  - 'ERROR. \[(jei|Had.?Enough.?Items)\]: A Recipe Handler has already been registered for '
+  - 'ERROR. \[(jei|Had.?Enough.?Items)\]: An interpreter is already registered for this item'
+  - 'ERROR. \[(jei|Had.?Enough.?Items)\]: Recipe has no output. Extra Utilities 2 extrautils2:shortcut_hopper'
+  # Reported https://github.com/CleanroomMC/QBitHop/issues/1
+  - 'ERROR. \[(jei|Had.?Enough.?Items)\]: Recipe has no output\. Minecraft minecraft:air_0[\s\S]+minecraft:iron_ingot[\s\S]+minecraft:slime_ball[\s\S]+minecraft:chest'
+
+  # Reported https://github.com/Project-RT/RandomTweaker/issues/92
+  - 'ERROR. \[(jei|Had.?Enough.?Items)\]: Found a broken recipe: ink\.ikx\.rt\.impl\.mods\.jei\.recipe\.DynamicRecipesWrapper'
 
   # Player error, not modpack one
   - Failed to load bookmarked ItemStack from json string, the item no longer exists
@@ -176,9 +196,6 @@ ignore:
 
   # Sledgehammer mod normal behaviour
   - '\[Sledgehammer\]: Skipping reloadSearchTrees'
-
-  # SledgeHammer and RenderLib fix same issue with banner, can be ignored
-  - WARN. .mixin.. Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod unknown-owner, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
 
   # Nutrition cant attach capabilities to Computercraft and Plethora. Doesnt matter since turtles cant eat anyway
   - 'Exception caught during firing event \S+AttachCapabilitiesEvent[\s\S]+nutrition.events.EventPlayerJoinWorld[\s\S]+'
@@ -215,7 +232,7 @@ ignore:
   - WARN. .mixin.. Reference map 'mixins.randomtweaker.refmap.json' for mixins.randomtweaker.mods.json could not be read. If this is a development environment you can ignore this message
   - WARN. .mixin.. Reference map 'mixins.thaumicenergistics.refmap.json' for mixins.thaumicenergistics.late.json could not be read. If this is a development environment you can ignore this message
 
-  # Safe WARNings, just for information
+  # Safe WARNings, just for information, normal behavior
   - '\[LLibrary Core\]: Unable to call Core API! It has not been initialized yet!'
   - '\[brandonscore\]: No features were detected for mod: brandonscore.'
   - '\[EnderCore ASM\]: Ersatz patch applied. things may break!'
@@ -258,11 +275,16 @@ ignore:
   - WARN. .CrashAssistantJarInJarHelper.. Failed to parse version from mcmod.info of .+
   - WARN. .CrashAssistantJarInJarHelper.. Closed old CrashAssistantApp process to prevent confusing the player with window containing information from old crash.
   - WARN. .modularui.. Custom cursors are currently not compatible with lwjgl 3. They will be disabled.
+  - '\[Pack Companion\]: Report deleted from output folder: .+'
+  - '\[Pack Companion\]: Checking config match for Mod Id: .+'
 
   # ##################
   # Reported issues #
   # ##################
   - '\[net.minecraft.entity.passive.EntityVillager\]: PriceRange.* smaller than'
+
+  # Reported: https://github.com/AnasDevO/PackTemplateCompanion/issues/21
+  - '\[Pack Companion\]: (Failed to load class|Classloaded status for class)'
 
   # Mechanics error https://github.com/wolforcept/mechanics/issues/13
   - '\[Mechanics\]: Failed to copy .+ property from block '
@@ -361,7 +383,7 @@ ignore:
   - ERROR. .craftpresence.. Asset name "enigmatica2expert-extended" does not exist, attempting to use an alternative icon "curse"...
 
   # When modifying loot tables with same name, loottweaker explicitely rename this tables and write this in log
-  - ERROR. .loottweaker.sanity_checks.. Unexpected duplicate pool name 'shader' in table 'twilightforest:entities/questing_ram_rewards'. Duplicate added as 'shader0'.
+  - ERROR. .(loottweaker|daomephsta_loot_shared).sanity_checks.. Duplicate pool name '.+' in table '.+'. Duplicate added as '.+'
 
   # Dynamic Surroundings errors that actually wont matter
   - ERROR. .soundphysicsinjector.. What the hell, DS's version is not properly formatted .
@@ -372,6 +394,7 @@ ignore:
 
   # VintageFix provide lot of errors. Most of them are harmless. VintageFix dev not very enthusiastic to explain what they do.
   # https://github.com/embeddedt/VintageFix/issues/41
+  - .Client thread.WARN. .VintageFix.. Posting dynamic ModelBakeEvent to mods took
   - .Client thread.WARN. .mixin.. .Mixin target .+ was not found .+ from mod vintagefix_.+
   - .VintageFix.. Cannot list resources from pack .+ (.+)
   - ERROR. .org.embeddedt.vintagefix.dynamicresources.model.DynamicModelProvider.. Failed to load model .+
@@ -387,8 +410,8 @@ ignore:
   - WARN. .mixin.. @Mixin target pl.asie.ucw.util.ModelLoaderEarlyView was not found mixins.vintagefix.late.json:dynamic_resources.MixinModelLoaderEarlyView from mod unknown-owner
   - WARN. .mixin.. @Mixin target thebetweenlands.client.render.model.loader.CustomModelLoader was not found mixins.vintagefix.late.json:dynamic_resources.MixinCustomBetweenlandsModels from mod unknown-owner
 
-  # Some DynamicResources cant be features in some mods, including OpenComputers, since mod name content non-default character like "space" or "+". Happens on Cleanroom.
-  - ERROR. .VintageFix.. Error accessing resource pack on classpath \(with URI jar:file:.+\)
+  # Intended 644747a6640761c25c76eeef7c2b68203e6773e8
+  - WARN. .Had Enough Items.. No recipe category has been registered for recipeCategoryUid (oc.manual|oc.api)
 
   # Error caused Vintagefix `mixin.dynamic_resources=true` option. Can be ignored since player cant do nothing about it.
   - WARN. .VintageFix.. Mod '.+' is attempting to iterate the model registry, but is not whitelisted in VintageFix. This may cause glitches if it wraps its own models.
@@ -401,6 +424,7 @@ ignore:
 
   # Universal Tweaks Warns:
   - WARN. .mixin.. Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod \w+, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method.
+  - WARN. .mixin.. @ModifyConstant conflict\. Skipping packetfixer\.mixins\.json:SPacketCustomPayloadMixin[\s\S]+already redirected by mixins/bugfixes/mixins\.misc\.packetsize\.json:UTSPacketCustomPayloadMixin
   - WARN. .VintageFix Mixin Loader.. Not applying mixin '.+' as '.+' is disabled in config
   - WARN. .VintageFix.. Can't preload sprite class
 
@@ -459,6 +483,7 @@ ignore:
   - .Thread-\d+.WARN. .Cyclops Core.. Could not get version important users. java.net.SocketException
   - .Actually Additions Special Fetcher.ERROR. .Actually Additions.. Fetching Special People Stuff failed! .You can ignore this error technically..
   - .CraftPresence.ERROR. .craftpresence.. Failed to check for updates, enable verbose mode to see errors...
+  - .CraftPresence.ERROR. .craftpresence.. Unable to connect to Discord...
   - ERROR. .Foundation.. Thread.#\d+,Thread-\d+,\d+,main.[\s\S]+lumien.custommainmenu.handler.LoadStringURL.run
 
   # Failed to check for updates or download contributor/documentation files.
@@ -479,8 +504,8 @@ ignore:
   # Those are tweaks that will be removed from Universal Tweaks in the next update as they are a better fit in ThaumicTweaker.
   - WARN. .mixin.. Method overwrite conflict for onCast in mixins.(thaumictweaker.json:focus.FocusEffect|mods.thaumcraft.foci.focuseffects.json:UT)
 
-  # loottweaker could sometimes add new pools with the same name as already existing pools and automatically just create new name
-  - ERROR. .loottweaker.sanity_checks.. Unexpected duplicate pool name '.+' in table '.+'. Duplicate added as '.+'.
+  # Some DynamicResources cant be features in some mods, including OpenComputers, since mod name content non-default character like "space" or "+". Happens on Cleanroom.
+  - ERROR. .VintageFix.. Error accessing resource pack on classpath \(with URI jar:file:.+\)
 
   # ##################
   # Cleanroom Loader errors
@@ -524,6 +549,13 @@ ignore:
 
   # Mods that included into CR itself
   - WARN. .FML.. The mod with loading plugin .+ is in blacklist and won't be loaded
+
+  # Nothirium conflicts
+  - WARN. .mixin.. Error loading class. net/malisis/core/renderer/AnimatedRenderer
+  - WARN. .mixin.. Error loading class. net/optifine/DynamicLight
+  - WARN. .mixin.. Method overwrite conflict .+ in mixins\.alfheim\.json.+ previously written by meldexun\.nothirium.+
+  - WARN. .mixin.. Method overwrite conflict .+ in mixins\.ondemand_sprites\.json.+ previously written by meldexun\.nothirium.+
+  - WARN. .mixin.. Method overwrite conflict .+ in mixins\.renderlib\.json.+ previously written by meldexun\.nothirium.+
 
   # Fixed by Fugue, but erroring code kept
   - ERROR. .FML.. Error adding mixin configuration for mixins.integrated_proxy.mod.json

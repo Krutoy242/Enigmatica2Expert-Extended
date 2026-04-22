@@ -7,60 +7,64 @@
  * @link https://github.com/Krutoy242
  */
 
-// @ts-check
-
-import process from 'node:process'
-
+import { consola } from 'consola'
 import fse from 'fs-extra'
 import { globSync } from 'tinyglobby'
 
 import { getPurged, getSubMetas } from '../lib/tellme.js'
 import {
   config,
-  defaultHelper,
   getCSV,
 } from '../lib/utils.js'
 
 const { readFileSync, writeFileSync } = fse
 
-export async function init(h = defaultHelper) {
-  await h.begin('Get files')
+const ITEM_REGEX = /<([^:]+:[^:]+)(:(\d+|\*))?>/
+const WILDCARD_REGEX = /([^:;]+:[^:;]+)[:;].+/
+
+interface ModListItem {
+  ModID: string
+}
+
+interface ItemCsvItem {
+  'Registry name': string
+}
+
+export async function init() {
+  consola.start('Get files')
   const jeiConfigPath = 'config/jei/itemBlacklist.cfg'
   const purged = new Set(Array.from(getPurged(), (s) => {
-    let [, source, meta] = s?.match(/<([^:]+:[^:]+)(:(\d+|\*))?>/) ?? []
+    let [, source, meta] = s?.match(ITEM_REGEX) ?? []
     if (meta === ':*') meta = ''
     return source + (meta ?? ':0')
   }))
 
-  /** @type {string[]} */
-  const pure = []
+  const pure: string[] = []
 
-  const modList = getCSV(globSync('config/tellme/mod-list-csv*.csv')[0])
-  const itemsCsv = getCSV(globSync('config/tellme/items-csv*.csv')[0])
-  const definitions = Object.fromEntries(itemsCsv.map(o => [o['Registry name'], true]))
+  const modList = getCSV(globSync('config/tellme/mod-list-csv*.csv')[0]) as ModListItem[]
+  const itemsCsv = getCSV(globSync('config/tellme/items-csv*.csv')[0]) as ItemCsvItem[]
+  const definitions: Record<string, boolean> = Object.fromEntries(itemsCsv.map(o => [o['Registry name'], true]))
 
-  /** @type {string[]} */
-  const merged = [...config(jeiConfigPath).advanced.itemBlacklist, ...purged]
+  const cfg = config(jeiConfigPath)
+  const merged = [...(cfg?.advanced?.itemBlacklist ?? []), ...purged]
 
-  await h.begin('Looking for wildcarable')
+  consola.start('Looking for wildcarable')
   merged.forEach((s, i) => {
     const [source, name, meta, ...rest] = s.split(':')
     if (!meta || rest.length || meta !== '0') return
     const id = `${source}:${name}`
-    if (getSubMetas(id).length > 1) return
+    if (((getSubMetas as any)(id) as unknown[]).length > 1) return
     merged[i] = id
   })
 
-  await h.begin(`Fixing blacklist with ${merged.length} entries`)
+  consola.start(`Fixing blacklist with ${merged.length} entries`)
   merged.forEach((s, i) => {
     // If duplicate
     const next = merged.slice(i + 1)
     if (next.includes(s)) return
 
     // If wildcarded
-    /** @type {string} */
-    // @ts-expect-error undef
-    const defMetaed = s.match(/([^:]+:[^:]+)[:;].+/)?.[1]
+    const defMetaed = s.match(WILDCARD_REGEX)?.[1]
     if (defMetaed && merged.includes(defMetaed)) return
 
     // If definition doesnt exist
@@ -86,17 +90,14 @@ export async function init(h = defaultHelper) {
     writeFileSync(jeiConfigPath, configLines.join('\n'))
   }
   catch (error) {
-    h.error(error)
+    consola.error(error instanceof Error ? error : new Error(String(error)))
   }
 
-  h.result(
+  consola.success(
     `Purged / Manually Blacklisted: ${purged.size} / ${
       pure.length - purged.size
     }`
   )
 }
 
-if (
-  import.meta.url === (await import('node:url')).pathToFileURL(process.argv[1]).href
-)
-  init()
+if (import.meta.main) void init()

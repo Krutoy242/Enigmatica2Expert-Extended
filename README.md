@@ -431,6 +431,12 @@ Some of the changes from the `Extended` version [[1]](https://github.com/Enigmat
 
 - [**TODO list**](https://gist.github.com/Krutoy242/b4a22715ac048ee42a33cb3e643bf76f#file-todo-md)
 
+### Contributing
+
+If you want to run developer scripts (`pnpm dev:*`) that rely on `mc-tools`:
+- To work with the local version of `mc-tools` (e.g., to edit its code), run `git submodule update --init --recursive` before `pnpm install`. The scripts will use your local TypeScript files directly.
+- Otherwise, `pnpm install` will automatically download the compiled `@mctools/*` packages from npm, so you don't need the submodule to contribute to the modpack.
+
 ## Links
 
 - [CurseForge](https://www.curseforge.com/minecraft/modpacks/enigmatica-2-expert-extended)

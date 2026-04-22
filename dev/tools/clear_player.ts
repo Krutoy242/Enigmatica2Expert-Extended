@@ -4,7 +4,6 @@
  * Backup and clear player data from a Minecraft server.
  */
 
-/* eslint-disable style/no-multi-spaces */
 /* eslint-disable ts/no-unsafe-argument */
 
 import type { Compound, NBT } from 'prismarine-nbt'

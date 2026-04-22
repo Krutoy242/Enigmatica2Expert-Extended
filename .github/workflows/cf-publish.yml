@@ -1,151 +1,86 @@
 name: Publishing on CurseForge
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to (re)publish (leave empty for latest)
+        required: false
   release:
     types: [released]
 
+concurrency:
+  group: cf-publish-${{ github.event.release.tag_name || inputs.tag || 'latest' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
 jobs:
   cf-publish:
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - id: release
-        uses: gregziegan/fetch-latest-release@v2.0.0
-
-      - name: 📃 Save changelog content to file
-        uses: DamianReeves/write-file-action@v1.3
+      - name: 📃 Prepare release
+        id: prepare
+        uses: ./.github/actions/prepare-release
         with:
-          path: latest_release.md
-          contents: ${{ steps.release.outputs.body }}
-          write-mode: overwrite
+          tag: ${{ inputs.tag || github.event.release.tag_name }}
 
-      - uses: pnpm/action-setup@v4
+      - name: 📋 Generate HTML changelog
+        run: npx tsx .github/scripts/curseforge-md-to-html.ts latest_release.md
 
-      - uses: actions/setup-node@v4
+      - name: 📤 Upload changelog artifact
+        uses: actions/upload-artifact@v4
         with:
-          node-version: 20
-          cache: pnpm
+          name: changelog-html-${{ steps.prepare.outputs.tag_name }}
+          path: latest_release.html
 
-      - run: pnpm install --prod
-
-      - name: 📋 Generate html instead of markdown
-        run: node dev/lib/curseforge-md-to-html.js latest_release.md
-
-      - name: ⤵️ Prepend Header to HTML
+      - name: 🅱 Determine release type
+        id: meta
+        env:
+          TAG: ${{ steps.prepare.outputs.tag_name }}
         run: |
-          HEADER='<p><a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/releases">Changelog</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Abug">Known Bugs</a> ● <a href="https://github.com/Krutoy242/Enigmatica2Expert-Extended#considerations-before-updating">Update Caution</a></p>'
-          sed -i "1s;^;$HEADER\n;" latest_release.html
+          if   [[ "$TAG" == *"-beta"*  ]]; then echo "release_type=beta"    >> "$GITHUB_OUTPUT"
+          elif [[ "$TAG" == *"-alpha"* ]]; then echo "release_type=alpha"   >> "$GITHUB_OUTPUT"
+          else                                   echo "release_type=release" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: 📋 Get content of changelog html
-        id: latest_html
+      - name: 💽 Download .zip files from release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.prepare.outputs.tag_name }}
+        run: gh release download "$TAG" --pattern "*.zip"
+
+      - name: 📋 Read HTML changelog
+        id: html
         uses: andstor/file-reader-action@v1
         with:
           path: latest_release.html
-
-      - name: 💽 Download .zip files from latest release
-        uses: robinraju/release-downloader@v1.12
-        with:
-          latest: true
-          fileName: '*.zip'
-
-      - name: 🅱 Determine release type
-        id: release_type
-        run: |
-          if [[ "${{ steps.release.outputs.tag_name }}" == *"-beta"* ]]; then
-            echo "release_type=beta" >> $GITHUB_ENV
-          elif [[ "${{ steps.release.outputs.tag_name }}" == *"-alpha"* ]]; then
-            echo "release_type=alpha" >> $GITHUB_ENV
-          else
-            echo "release_type=release" >> $GITHUB_ENV
-          fi
 
       - name: 💻 Upload Client
         uses: itsmeow/curseforge-upload@v3
         id: client
         with:
-          release_type: ${{ env.release_type }}
-          display_name: 'E2E-Extended-${{ steps.release.outputs.tag_name }}'
-          file_path: 'E2E-Extended-${{ steps.release.outputs.tag_name }}.zip'
+          release_type: ${{ steps.meta.outputs.release_type }}
+          display_name: E2E-Extended-${{ steps.prepare.outputs.tag_name }}
+          file_path: E2E-Extended-${{ steps.prepare.outputs.tag_name }}.zip
           game_endpoint: minecraft
           game_versions: 'Minecraft 1.12:1.12.2'
           project_id: '561105'
-          token: '${{ secrets.CURSEFORGE_API_TOKEN }}'
+          token: ${{ secrets.CURSEFORGE_API_TOKEN }}
           changelog_type: html
-          changelog: '${{ steps.latest_html.outputs.contents }}'
+          changelog: ${{ steps.html.outputs.contents }}
 
       - name: 🖥️ Upload Server
         uses: itsmeow/curseforge-upload@v3
         with:
-          release_type: ${{ env.release_type }}
-          display_name: 'E2E-Extended-${{ steps.release.outputs.tag_name }}-server'
-          file_path: 'E2E-Extended-${{ steps.release.outputs.tag_name }}-server.zip'
+          release_type: ${{ steps.meta.outputs.release_type }}
+          display_name: E2E-Extended-${{ steps.prepare.outputs.tag_name }}-server
+          file_path: E2E-Extended-${{ steps.prepare.outputs.tag_name }}-server.zip
           game_endpoint: minecraft
           project_id: '561105'
           parent_file_id: ${{ steps.client.outputs.id }}
-          token: '${{ secrets.CURSEFORGE_API_TOKEN }}'
-
-  discord-notify:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - id: release
-        uses: gregziegan/fetch-latest-release@v2.0.0
-
-      - name: 📃 Save changelog content to file
-        uses: DamianReeves/write-file-action@master
-        with:
-          path: latest_release.md
-          contents: ${{ steps.release.outputs.body }}
-          write-mode: overwrite
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - run: pnpm install --prod
-
-      - name: 🖼️ Generate images from md sections
-        id: generate_images
-        run: |
-          # Split the markdown file by H2 headers.
-          # If csplit fails (e.g., no '##' headers found), it returns non-zero.
-          # In that case, we fall back to using the whole file as a single part.
-          csplit -s -z -f part- latest_release.md '/^## /' '{*}' || cp latest_release.md part-0
-
-          ATTACHMENT_STRING=""
-          I=0
-          # Loop through the generated parts
-          for f in part-*; do
-            # Check if the file exists and is not empty to avoid errors
-            if [ ! -f "$f" ] || [ ! -s "$f" ]; then continue; fi
-            npx mdimg -i "$f" -o "changelog_part_$I.png" -w 800 --css githubDark
-            ATTACHMENT_STRING="${ATTACHMENT_STRING}file: changelog_part_$I.png\n"
-            I=$((I+1))
-          done
-
-          {
-            echo "DISCORD_ATTACHMENTS<<EOF"
-            echo -e "$ATTACHMENT_STRING"
-            echo "EOF"
-          } >> "$GITHUB_ENV"
-
-      - name: 🖼️ ➡️ Send discord message
-        run: |
-          WEBHOOK_URL="${{ secrets.WEBHOOK_URL }}"
-          PAYLOAD=$(jq -cn \
-            --arg u "🚀 New release" \
-            --arg a "https://media.forgecdn.net/avatars/820/88/638200951256555174.png" \
-            --arg t "__**${{ steps.release.outputs.name }}**__" \
-            --arg l "${{ steps.release.outputs.html_url }}" \
-            '{username:$u,avatar_url:$a,embeds:[{title:$t,url:$l}]}')
-
-          curl -sS -X POST -H "Content-Type: multipart/form-data" \
-            -F "payload_json=$PAYLOAD" \
-            $(for i in changelog_part_*.png; do echo -F "files[$((n++))]=@$i"; done) \
-            "$WEBHOOK_URL"
+          token: ${{ secrets.CURSEFORGE_API_TOKEN }}
