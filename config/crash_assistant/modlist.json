@@ -92,13 +92,13 @@
     "name": "Advanced Essentia Smelter",
     "version": "1.2.0"
   },
-  "advancedrocketry-2.2.5hotfix.jar": {
-    "curseForgeHash": 349343919,
-    "jarName": "advancedrocketry-2.2.5hotfix.jar",
+  "advancedrocketry-2.2.6.jar": {
+    "curseForgeHash": 236388594,
+    "jarName": "advancedrocketry-2.2.6.jar",
     "modId": "advancedrocketry",
-    "modrinthHash": "9a880b638ca4d6eddbdc99a165a2f5b00f9ca9ab",
+    "modrinthHash": "56a7bca21220c9a8c2726944fdc24be1cfdc2662",
     "name": "Advanced Rocketry",
-    "version": "2.2.5hotfix"
+    "version": "2.2.6"
   },
   "AdvancedTweakery-1.2.jar": {
     "curseForgeHash": 3270717551,
@@ -307,11 +307,11 @@
     "name": "AutoRegLib",
     "version": "1.3-32"
   },
-  "avaritia-1.12.2-3.3.0.48-hotfix6.jar": {
-    "curseForgeHash": 910950249,
-    "jarName": "avaritia-1.12.2-3.3.0.48-hotfix6.jar",
+  "avaritia-1.12.2-3.3.0.48-hotfix7.jar": {
+    "curseForgeHash": 1150966288,
+    "jarName": "avaritia-1.12.2-3.3.0.48-hotfix7.jar",
     "modId": "avaritia",
-    "modrinthHash": "52ed85fd8b4b8b83966c5764d891e9c5093b6295",
+    "modrinthHash": "78bfa7b330deda4b18cedc13de8bb4ba031d73fb",
     "name": "Avaritia",
     "version": "3.3.0.48"
   },
@@ -1291,13 +1291,13 @@
     "name": "Advanced Generators",
     "version": "0.9.20.12"
   },
-  "gnetum-1.4.0.jar": {
-    "curseForgeHash": 826476396,
-    "jarName": "gnetum-1.4.0.jar",
+  "gnetum-1.4.1.jar": {
+    "curseForgeHash": 1182997539,
+    "jarName": "gnetum-1.4.1.jar",
     "modId": "gnetum",
-    "modrinthHash": "30c8bf0c7f175256c4251486a7542ab38fc12068",
+    "modrinthHash": "35de412757467f508b5bafa90eff3a2bd736aea5",
     "name": "Gnetum",
-    "version": "1.4.0"
+    "version": "1.4.1"
   },
   "grid-1.12-forge14.21.1.2387-1.4.jar": {
     "curseForgeHash": 2380082864,
@@ -1323,13 +1323,13 @@
     "name": "GunpowderLib",
     "version": "1.12.2-1.1"
   },
-  "HadEnoughItems_1.12.2-4.30.2.jar": {
-    "curseForgeHash": 2029641242,
-    "jarName": "HadEnoughItems_1.12.2-4.30.2.jar",
+  "HadEnoughItems_1.12.2-4.30.3.jar": {
+    "curseForgeHash": 2935036237,
+    "jarName": "HadEnoughItems_1.12.2-4.30.3.jar",
     "modId": "jei",
-    "modrinthHash": "1e7beceae089e074eb073e9a72e39e408d982a6b",
+    "modrinthHash": "4e92162129aa85280ef0c9a05cb1b1c11e2c02ab",
     "name": "Had Enough Items",
-    "version": "4.30.2"
+    "version": "4.30.3"
   },
   "HammerLib-1.12.2-12.2.58.jar": {
     "curseForgeHash": 1631106799,
@@ -1962,13 +1962,13 @@
     "name": "Mod Tweaker",
     "version": "4.0.20.11"
   },
-  "modularui-3.1.5.jar": {
-    "curseForgeHash": 3897925040,
-    "jarName": "modularui-3.1.5.jar",
+  "modularui-3.1.6.jar": {
+    "curseForgeHash": 2061132058,
+    "jarName": "modularui-3.1.6.jar",
     "modId": "modularui",
-    "modrinthHash": "f03ffc6b97a6bcf4e3de920894db2142d48c63a9",
+    "modrinthHash": "be2d067fe4e8815c5c025416019f9a8037d26be0",
     "name": "ModularUI",
-    "version": "3.1.5"
+    "version": "3.1.6"
   },
   "moredefaultoptions-1.12-0.0.2.jar": {
     "curseForgeHash": 2119973449,
@@ -2426,13 +2426,13 @@
     "name": "Quantum Minecraft Dynamics",
     "version": "1.5 beta 3"
   },
-  "QuantumThings-MC-1.12.2-1.1.0.jar": {
-    "curseForgeHash": 3714642269,
-    "jarName": "QuantumThings-MC-1.12.2-1.1.0.jar",
+  "QuantumThings-MC-1.12.2-1.2.0.jar": {
+    "curseForgeHash": 3094620908,
+    "jarName": "QuantumThings-MC-1.12.2-1.2.0.jar",
     "modId": "randomthings",
-    "modrinthHash": "39a1d50650db9b02144dc3a7a627e88607c3889c",
+    "modrinthHash": "0937013ab8e10fd89ec10b9531c9b99bc3737cab",
     "name": "Quantum Things",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "QuarkOddities-1.12.2.jar": {
     "curseForgeHash": 4267477614,
@@ -2462,6 +2462,14 @@
     "modrinthHash": "55e0e3dd859cfed958c4cbc88c2eeac78adc2190",
     "name": "RandomTweaker",
     "version": "1.4.10"
+  },
+  "randomtweaks-1.12.2-2.8.3.1.jar": {
+    "curseForgeHash": 3076552374,
+    "jarName": "randomtweaks-1.12.2-2.8.3.1.jar",
+    "modId": "randomtweaks",
+    "modrinthHash": "e5d2502bf33a670b17908e9f6b650fd0daa07cb5",
+    "name": "RandomTweaks",
+    "version": "1.12.2-2.8.3.1"
   },
   "rats-3.2.21-1.12.2.jar": {
     "curseForgeHash": 2883564534,
@@ -3241,13 +3249,13 @@
     "name": "Villager Trade Tables",
     "version": "${version}"
   },
-  "vintagefix-0.6.2.jar": {
-    "curseForgeHash": 1319026169,
-    "jarName": "vintagefix-0.6.2.jar",
+  "vintagefix-0.7.0.jar": {
+    "curseForgeHash": 1803611387,
+    "jarName": "vintagefix-0.7.0.jar",
     "modId": "vintagefix",
-    "modrinthHash": "eb820c6e58a4d091b80311a28650c7a1b99a1b14",
+    "modrinthHash": "a753529902a23e17da091f15b6dee6690f75b217",
     "name": "VintageFix",
-    "version": "0.6.2"
+    "version": "0.7.0"
   },
   "visualores-0.2.7.jar": {
     "curseForgeHash": 3649550098,
@@ -3342,13 +3350,13 @@
     "name": "Zen Toolforge",
     "version": "1.1"
   },
-  "zenutils-1.26.19.jar": {
-    "curseForgeHash": 4090587236,
-    "jarName": "zenutils-1.26.19.jar",
+  "zenutils-1.27.0.jar": {
+    "curseForgeHash": 4271923885,
+    "jarName": "zenutils-1.27.0.jar",
     "modId": "zenutils",
-    "modrinthHash": "3619884c516d310ee447118fa09214228bb10cd1",
+    "modrinthHash": "f0fbb242a2e1b00ae98fedf062c723ba1027b7ca",
     "name": "ZenUtils",
-    "version": "1.26.19"
+    "version": "1.27.0"
   },
   "zume-1.2.1.jar": {
     "curseForgeHash": 3006123426,
