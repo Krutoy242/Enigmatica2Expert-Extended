@@ -120,7 +120,7 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
   var confluxLevel = 0;
   for i, k in 'i ii iii iv v'.split(' ') {
     if (e.reward.tags has 'conflux_' ~ k) {
-      confluxLevel = i;
+      confluxLevel = i + 1;
       confluxKey = k;
     }
   }
