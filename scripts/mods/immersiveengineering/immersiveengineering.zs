@@ -30,12 +30,6 @@ mods.immersiveengineering.ArcFurnace.removeRecipe(<ore:ingotSilicon>.firstItem);
 // Fix second ingredient not consuming
 scripts.process.alloy([<ore:dustNickel>, <ore:ingotFakeIron> * 2], <thermalfoundation:material:162> * 3, 'strict: ArcFurnace');
 
-// Sheetmetal Chute Smeltery compat
-mods.tconstruct.Melting.addRecipe(<liquid:iron> * 72, <immersiveengineering:conveyor>.withTag({ conveyorType: 'immersiveengineering:chute_iron' }));
-mods.tconstruct.Melting.addRecipe(<liquid:steel> * 72, <immersiveengineering:conveyor>.withTag({ conveyorType: 'immersiveengineering:chute_steel' }));
-mods.tconstruct.Melting.addRecipe(<liquid:aluminum> * 72, <immersiveengineering:conveyor>.withTag({ conveyorType: 'immersiveengineering:chute_aluminum' }));
-mods.tconstruct.Melting.addRecipe(<liquid:copper> * 72, <immersiveengineering:conveyor>.withTag({ conveyorType: 'immersiveengineering:chute_copper' }));
-
 // Crude Oil Unification
 mods.immersivepetroleum.Distillation.addRecipe(
   [<liquid:lubricant> * 9, <liquid:diesel> * 27,  <liquid:gasoline> * 39],
