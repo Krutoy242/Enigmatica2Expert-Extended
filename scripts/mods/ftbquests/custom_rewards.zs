@@ -38,7 +38,7 @@ function getChapterCount(player as IPlayer) as int[] {
   }
 
   // Reduce 1 chapter for Skyblock that always completed
-  return [completedChapters - 1, totalChapters - 1];
+  return [max(0, completedChapters - 1), max(0, totalChapters - 1)];
 }
 
 function getPlayOneMinute(player as ForgePlayer) as int {
@@ -201,7 +201,7 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
         ] as string[];
       }
       playerTimes.sort(function (a as string[], b as string[]) as int {
-        return b[0] as int - a[0];
+        return (b[0] as int) - (a[0] as int);
       });
 
       playerList = [] as IData;
