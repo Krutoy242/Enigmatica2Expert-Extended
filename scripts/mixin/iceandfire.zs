@@ -31,31 +31,31 @@ zenClass MixinEntityDreadThrall {
 #mixin {targets: "com.github.alexthe666.iceandfire.entity.IafVillagerRegistry"}
 zenClass MixinIafVillagerRegistry {
 
-    #mixn Shadow
+    #mixin Shadow
     var fisherman as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var craftsman as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var shaman as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var desertMyrmexWorker as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var jungleMyrmexWorker as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var desertMyrmexSoldier as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var jungleMyrmexSoldier as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var desertMyrmexSentinel as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var jungleMyrmexSentinel as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var desertMyrmexRoyal as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var jungleMyrmexRoyal as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var desertMyrmexQueen as VillagerProfession;
-    #mixn Shadow    
+    #mixin Shadow
     var jungleMyrmexQueen as VillagerProfession;
 
     var career as VillagerCareer = null;
