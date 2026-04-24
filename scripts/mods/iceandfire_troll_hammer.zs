@@ -42,7 +42,7 @@ function squash(world as IWorld, pos as Position3f) as void {
   worldServer.spawnParticle(
     native.net.minecraft.util.EnumParticleTypes.ITEM_CRACK,
     pos.x as double, pos.y as double + 0.5, pos.z as double,
-    20, 0.3, 0.3, 0.3, 0.04, 214
+    20, 0.3, 0.3, 0.3, 0.04, [214, 0]
   );
 }
 
