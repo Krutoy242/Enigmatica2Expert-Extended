@@ -44,6 +44,11 @@ ftbutilities.chat.name_format: <&d&l{name}&r>
 ftbutilities.claims.max_chunks: 2000
 ftbutilities.chunkloader.max_chunks: 300
 
+[clown]
+power: 90
+parent: player
+ftbutilities.chat.name_format: <☺{name}🤡>
+
 [admin]
 power: 100
 parent: vip
