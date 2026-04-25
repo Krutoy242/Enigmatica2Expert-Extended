@@ -288,7 +288,7 @@ In order to create a new Skyblock world, you need:
 
 <table><tr><td>
 
-- Loading time ~8 minutes
+- Loading time ~8 minutes (~4 with Cleanroom)
 - First load could take 10+ minutes to create cache
 - Recommended RAM: `6Gb`
 
@@ -372,7 +372,7 @@ Some screenshots of new worldgen:
 
   You can find the server pack on the GitHub release page under the "Assets" tab or on the CurseForge file page under "Additional Files." Note that CurseForge may delay this file for download for approximately five days after release.
 
-- **I launched E2E-E and got a crash with `Exit Code 1`.** <img alt="Prism Launcher E2E-E Window" src="https://i.imgur.com/iiKXQYv.png" align=right width=200>
+- **I launched E2E-E and got a crash with `Exit Code 1`.** <img alt="CurseForge launcher showing Exit Code 1" src="https://i.imgur.com/iiKXQYv.png" align=right width=200>
 
   Try loading the modpack a second time.
 
@@ -395,10 +395,6 @@ Some screenshots of new worldgen:
 - **What Java arguments should I use?**
 
   I recommend using *no arguments at all*.
-
-- **I installed the `Essential Mod`, and now I can't load the modpack.**
-
-  Use [e4mc Retro](https://www.curseforge.com/minecraft/mc-mods/e4mc-retro) instead of `Essential`.
 
 - **My world has 2 TPS, and it lags extremely hard.**
 
@@ -428,7 +424,7 @@ Updates can bring exciting new features, but they also carry the risk of instabi
 
 This is unofficial addon and not supported by **Enigmatica** dev team.
 
-Some of the changes from the `Extended` version [[1]](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/pull/1926)[[2]](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/pull/1773)[[3]](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/pull/1577) were added to the main modpack as well, so I became a [contributor](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/graphs/contributors).
+Some of the changes from the `Extended` version [[1]](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/pull/1926) [[2]](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/pull/1773) [[3]](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/pull/1577) were added to the main modpack as well, so I became a [contributor](https://github.com/EnigmaticaModpacks/Enigmatica2Expert/graphs/contributors).
 
 [Permission to develop and publish from **Enigmatica** owner.
 ](https://github.com/NillerMedDild/Enigmatica2Expert/blob/d80cc094a7fa1dc750071f8848a96e154c2d40f2/LICENSE.md "E2E License")
