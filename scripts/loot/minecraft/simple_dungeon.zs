@@ -23,7 +23,7 @@ scripts.lib.loot.clearPool(location, 'main');
 scripts.lib.loot.addLootToPool(location, 'main', {
   <botania:avatar>                                                                                                 : [10, 0, 1, 1],
   <botania:manabomb>                                                                                               : [5,  1, 1, 1],
-  <botania:teruterubozu>                                                                                           : [20, 0, 1, 1],
+  <botania:teruterubozu>                                                                                           : [ 3, 0, 1, 1],
   <cyclicmagic:soulstone>                                                                                          : [20, 0, 1, 1],
   <ic2:crystal_memory>.withTag({Pattern: {id: 'astralsorcery:itemcelestialcrystal', Count: 1, Damage: 0 as short}}): [2,  1, 1, 1],
   <ic2:crystal_memory>.withTag({Pattern: {id: 'extendedcrafting:material', Count: 1, Damage: 140 as short}})       : [2,  1, 1, 1],
