@@ -13,7 +13,9 @@ import crafttweaker.liquid.ILiquidStack;
 // ////####################################################################
 
 // Shortcut for itemUtils.getItem (IItemStack only)
-function I(id as string, n as int) as IItemStack { return itemUtils.getItem(id, n); }
+function I(id as string, n as int) as IItemStack {
+  return itemUtils.getItem(id, n);
+}
 
 // Check if exception string contains lookup string, case NOT sensetive
 function isException(exceptions as string, machineName as string) as bool {
@@ -27,7 +29,7 @@ function isException(exceptions as string, machineName as string) as bool {
     exc = exc.substring(indexOfOnly + 5);
   }
 
-  val isHaveName = exc.matches('.*\b'~machineName~'\b.*');
+  val isHaveName = exc.matches('.*\b' ~ machineName ~ '\b.*');
 
   if (haveOnly) {
     val result = !isHaveName;
@@ -39,7 +41,7 @@ function isException(exceptions as string, machineName as string) as bool {
   val indexOfStrict = exc.indexOf('strict:');
   if (indexOfStrict != -1) {
     haveStrict = true;
-    isAfterStrict = exc.substring(indexOfStrict + 7).matches('.*\b'~machineName~'\b.*');
+    isAfterStrict = exc.substring(indexOfStrict + 7).matches('.*\b' ~ machineName ~ '\b.*');
   }
 
   if (haveStrict) {
@@ -106,7 +108,7 @@ function defaultChance0_int(extraChance as float[], default as int) as int {
 function wholesCalc(inputAmount as int, outputAmount as double) as double[string] {
   val whole = outputAmount as int as double;
   val residue = outputAmount - whole;
-  val out1 = outputAmount / inputAmount as double;
+  val out1 = outputAmount / inputAmount;
   if (residue == 0) return { ins: 1.0, outs: whole, out1: out1 };
   val ins = 1.0 / residue;
   val outs = outputAmount * ins;
@@ -117,8 +119,12 @@ function wholesCalc(inputAmount as int, outputAmount as double) as double[string
 function normalizeChances(combinedChances as float[]) as float[] {
   var chancesSumm = 0.0f;
   var normalizedChances = [] as float[];
-  for ch in combinedChances { chancesSumm += ch; }
-  for ch in combinedChances { normalizedChances += ch / chancesSumm; }
+  for ch in combinedChances {
+    chancesSumm += ch;
+  }
+  for ch in combinedChances {
+    normalizedChances += ch / chancesSumm;
+  }
   return normalizedChances;
 }
 
@@ -162,11 +168,13 @@ function avdRockXmlRecipeFlatten(
   var maxStackSize = altMaxMult;
 
   // Clamp max fluid size to 16 buckets
-  if (!isNull(fluidInput)) maxStackSize = min(
-    (!isNull(fluidMaxInput[filename]) ? fluidMaxInput[filename] as int : 16000)
-    / fluidInput.amount,
-    maxStackSize
-  );
+  if (!isNull(fluidInput)) {
+    maxStackSize = min(
+      (!isNull(fluidMaxInput[filename]) ? fluidMaxInput[filename] as int : 16000)
+      / fluidInput.amount,
+      maxStackSize
+    );
+  }
 
   // Iterate the grid
   for y, row in ingredients {
@@ -190,7 +198,9 @@ function avdRockXmlRecipeFlatten(
 
         // Calculate max stack size for ingredient
         var maxSize = 0;
-        for item in ingr.items { maxSize = max(maxSize, item.maxStackSize); }
+        for item in ingr.items {
+          maxSize = max(maxSize, item.maxStackSize);
+        }
         // If ingredient have no items in it, its probably late-registered oredict
         if (maxSize != 0) maxStackSize = min(maxStackSize, maxSize);
       }
@@ -217,20 +227,24 @@ function avdRockXmlRecipeFlatten(
 
   // Get multiplier - how many times we can make recipe
   // with even input and output
-  val multiplier = min(maxStackSize, max(1, (64.0 / maxAmount as double) as int));
+  val multiplier = min(maxStackSize, max(1, (64.0 / maxAmount)));
 
   // Reassemble ingredients with another amount
   var trueIngrs = [] as IIngredient[];
   for i, ingr in ingrs {
     var maxSize = 0;
-    for item in ingr.itemArray { maxSize = max(maxSize, item.maxStackSize); }
+    for item in ingr.itemArray {
+      maxSize = max(maxSize, item.maxStackSize);
+    }
     // Set amount. Note that item amount could not be more than max item stack size
     // This is useful for boxes
     trueIngrs += ingr * min(maxSize == 0 ? 64 : maxSize, count[i] * multiplier);
   }
 
   val builder = mods.advancedrocketry.RecipeTweaker.forMachine(filename).builder();
-  for ingr in trueIngrs { builder.input(ingr); }
+  for ingr in trueIngrs {
+    builder.input(ingr);
+  }
   if (!isNull(fluidInput)) builder.input(fluidInput * (fluidInput.amount * multiplier));
   builder.outputs(output * (output.amount * multiplier));
   builder
