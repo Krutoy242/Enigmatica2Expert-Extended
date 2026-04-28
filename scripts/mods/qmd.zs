@@ -44,7 +44,7 @@ craft.shapeless(<qmd:chemical_dust:1> * 32, '∆♠∆▲♠▲♣♠♣', {
 });
 
 // [Plastic Scintillator] from [Blue Dye][+1]
-scripts.process.alloy([<ore:dyeBlue>, <ore:bioplastic>, <ore:bioplastic>], <qmd:part:3>);
+scripts.process.alloy([<ore:dyeBlue>, <ore:bioplastic>, <ore:bioplastic>], <qmd:part:3>, 'except: AlloySmelter');
 
 // [Basic Processor] from [N-Type Doped Silicon][+3]
 craft.make(<qmd:semiconductor:4> * 4, ['NF','⌂F','□F'], {
@@ -177,7 +177,7 @@ scripts.process.alloy([<endreborn:item_ingot_wolframium>, <ore:dustTungsten>],
 );
 
 val alloyMachines = 'except: alloyFurnace kiln';
-scripts.process.alloy([<ore:ingotNeodymium>, <ore:ingotFerroboron>, <ore:ingotFerroboron>], <qmd:part:8>); // [Neodymium Magnet] from [Neodymium Ingot][+1]
+scripts.process.alloy([<ore:ingotNeodymium>, <ore:ingotFerroboron>, <ore:ingotFerroboron>], <qmd:part:8>, 'except: AlloySmelter'); // [Neodymium Magnet] from [Neodymium Ingot][+1]
 scripts.process.alloy([<ore:dustTungsten>     , <ore:ingotGraphite>]       , <qmd:ingot_alloy>   * 2, alloyMachines); // [Tungsten Carbide Ingot]*2 from [Graphite Ingot][+1]
 scripts.process.alloy([<ore:ingotNiobium> * 3 , <ore:ingotTin>]            , <qmd:ingot_alloy:1> * 4, alloyMachines); // [Niobium-Tin Ingot]*4 from [Tin Ingot][+1]
 scripts.process.alloy([<ore:ingotSteel> * 5   , <ore:ingotChromium>]       , <qmd:ingot_alloy:2> * 6, alloyMachines); // [Stainless Steel Ingot]*6 from [Chromium Ingot][+1]
