@@ -31,7 +31,7 @@ runs:
         if [ -n "$INPUT_TAG" ]; then
           JSON=$(gh release view "$INPUT_TAG" --json tagName,name,body,url)
         else
-          JSON=$(gh release view --latest --json tagName,name,body,url)
+          JSON=$(gh release view --json tagName,name,body,url)
         fi
         echo "tag_name=$(echo "$JSON" | jq -r .tagName)" >> "$GITHUB_OUTPUT"
         echo "name=$(echo "$JSON"     | jq -r .name)"    >> "$GITHUB_OUTPUT"
@@ -47,4 +47,4 @@ runs:
 
     - name: 📦 Install dependencies
       shell: bash
-      run: pnpm install --prod --frozen-lockfile
+      run: pnpm install --prod --frozen-lockfile --ignore-scripts
