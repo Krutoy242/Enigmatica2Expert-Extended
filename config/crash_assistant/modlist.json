@@ -1323,13 +1323,13 @@
     "name": "GunpowderLib",
     "version": "1.12.2-1.1"
   },
-  "HadEnoughItems_1.12.2-4.30.3.jar": {
-    "curseForgeHash": 2935036237,
-    "jarName": "HadEnoughItems_1.12.2-4.30.3.jar",
+  "HadEnoughItems_1.12.2-4.31.1.jar": {
+    "curseForgeHash": 2988369726,
+    "jarName": "HadEnoughItems_1.12.2-4.31.1.jar",
     "modId": "jei",
-    "modrinthHash": "4e92162129aa85280ef0c9a05cb1b1c11e2c02ab",
+    "modrinthHash": "a26bba13e0558478e2e6816b38bcfd3fdf81cde4",
     "name": "Had Enough Items",
-    "version": "4.30.3"
+    "version": "4.31.1"
   },
   "HammerLib-1.12.2-12.2.58.jar": {
     "curseForgeHash": 1631106799,
@@ -1654,13 +1654,13 @@
     "name": "Just Enough Drags",
     "version": "1.4-beta.1"
   },
-  "justenoughmagiculture-1.12.2-1.2.1.jar": {
-    "curseForgeHash": 4015918797,
-    "jarName": "justenoughmagiculture-1.12.2-1.2.1.jar",
+  "justenoughmagiculture-1.12.2-1.2.2.jar": {
+    "curseForgeHash": 3110199036,
+    "jarName": "justenoughmagiculture-1.12.2-1.2.2.jar",
     "modId": "justenoughmagiculture",
-    "modrinthHash": "0bc62afe62df03faabe03b7837edfcd3f6c317c5",
+    "modrinthHash": "f723a3e0a26881fadfab81aab6a71746f2cbea53",
     "name": "Just Enough Magiculture",
-    "version": "1.12.2-1.2.1"
+    "version": "1.12.2-1.3.0"
   },
   "JustEnoughPetroleum-0.1.jar": {
     "curseForgeHash": 4082129566,
@@ -1750,11 +1750,11 @@
     "name": "libnine",
     "version": "1.2.2"
   },
-  "libvulpes-0.5.1.jar": {
-    "curseForgeHash": 3068764503,
-    "jarName": "libvulpes-0.5.1.jar",
+  "libvulpes-0.5.2.jar": {
+    "curseForgeHash": 3369789236,
+    "jarName": "libvulpes-0.5.2.jar",
     "modId": "libVulpes",
-    "modrinthHash": "e72a623f57c310845ab5dc68b6828a437877597e",
+    "modrinthHash": "6411389d16f16df4433d1427c47f1515d0a84c16",
     "name": "libVulpes",
     "version": "0.4.3"
   },
@@ -1826,13 +1826,13 @@
     "name": "LunatriusCore",
     "version": "1.2.0.42"
   },
-  "magicultureintegrations-1.12.2-2.2.7.jar": {
-    "curseForgeHash": 2835245472,
-    "jarName": "magicultureintegrations-1.12.2-2.2.7.jar",
+  "magicultureintegrations-1.12.2-2.3.0.jar": {
+    "curseForgeHash": 1517830865,
+    "jarName": "magicultureintegrations-1.12.2-2.3.0.jar",
     "modId": "magicultureintegrations",
-    "modrinthHash": "0e970de3105548c2c0597e7e71c2443d59ebb8dc",
+    "modrinthHash": "4109ce117df5429b4a436255697599973947c092",
     "name": "Magiculture Integrations",
-    "version": "1.12.2-2.2.3"
+    "version": "1.12.2-2.2.8"
   },
   "maleksinfinitygauntlet.jar": {
     "curseForgeHash": 244471256,
@@ -1962,13 +1962,13 @@
     "name": "Mod Tweaker",
     "version": "4.0.20.11"
   },
-  "modularui-3.1.6.jar": {
-    "curseForgeHash": 2061132058,
-    "jarName": "modularui-3.1.6.jar",
+  "modularui-3.1.5.jar": {
+    "curseForgeHash": 3897925040,
+    "jarName": "modularui-3.1.5.jar",
     "modId": "modularui",
-    "modrinthHash": "be2d067fe4e8815c5c025416019f9a8037d26be0",
+    "modrinthHash": "f03ffc6b97a6bcf4e3de920894db2142d48c63a9",
     "name": "ModularUI",
-    "version": "3.1.6"
+    "version": "3.1.5"
   },
   "moredefaultoptions-1.12-0.0.2.jar": {
     "curseForgeHash": 2119973449,
@@ -2418,13 +2418,13 @@
     "name": "Psio",
     "version": "1.0.3"
   },
-  "QMD-1.5 beta 3-1.12.2.jar": {
-    "curseForgeHash": 484897402,
-    "jarName": "QMD-1.5 beta 3-1.12.2.jar",
+  "QMD-1.5-1.12.2.jar": {
+    "curseForgeHash": 3784132782,
+    "jarName": "QMD-1.5-1.12.2.jar",
     "modId": "qmd",
-    "modrinthHash": "91f5db2c8cc4ed58bf0e5334720c34adf5b317e9",
+    "modrinthHash": "406042e672e780907a432c6667fd502e42d80457",
     "name": "Quantum Minecraft Dynamics",
-    "version": "1.5 beta 3"
+    "version": "1.5"
   },
   "QuantumThings-MC-1.12.2-1.2.0.jar": {
     "curseForgeHash": 3094620908,
@@ -2447,13 +2447,13 @@
     "name": "Quark: RotN Edition",
     "version": "r1.6-189"
   },
-  "random_complement-1.9.1.jar": {
-    "curseForgeHash": 2069184727,
-    "jarName": "random_complement-1.9.1.jar",
+  "random_complement-1.9.3.jar": {
+    "curseForgeHash": 1410892079,
+    "jarName": "random_complement-1.9.3.jar",
     "modId": "random_complement",
-    "modrinthHash": "52affed78ea263c0591a776097651e6f61c49b71",
+    "modrinthHash": "57c56a3a7f6ac0c184af91000485f09877d1ce2d",
     "name": "RandomComplement",
-    "version": "1.9.1"
+    "version": "1.9.3"
   },
   "RandomTweaker-1.4.10.jar": {
     "curseForgeHash": 1926495611,
@@ -2607,13 +2607,13 @@
     "name": "Roid's Tweaker",
     "version": "1.2.2"
   },
-  "RoughlyEnoughIDs-2.3.0.jar": {
-    "curseForgeHash": 1314483655,
-    "jarName": "RoughlyEnoughIDs-2.3.0.jar",
+  "RoughlyEnoughIDs-2.3.1.jar": {
+    "curseForgeHash": 538660559,
+    "jarName": "RoughlyEnoughIDs-2.3.1.jar",
     "modId": "jeid",
-    "modrinthHash": "cb72db84dd8c814b4cc8c827e5335e9859e24862",
+    "modrinthHash": "5ad7bedb45eb77ecaa4699c2abf6453f6fa7792c",
     "name": "RoughlyEnoughIDs",
-    "version": "2.3.0"
+    "version": "2.3.1"
   },
   "rustic-1.2.0.jar": {
     "curseForgeHash": 1130977186,
@@ -2820,13 +2820,13 @@
     "name": "Thaumcraft Aspect Creator",
     "version": "1.12.2-1.1"
   },
-  "ThaumcraftFix-1.12.2-1.1.9.jar": {
-    "curseForgeHash": 2661214910,
-    "jarName": "ThaumcraftFix-1.12.2-1.1.9.jar",
+  "ThaumcraftFix-1.12.2-1.1.10.jar": {
+    "curseForgeHash": 1895725088,
+    "jarName": "ThaumcraftFix-1.12.2-1.1.10.jar",
     "modId": "thaumcraftfix",
-    "modrinthHash": "178ea6a2e2667d0d880eefe8a55cd273c16a57c8",
+    "modrinthHash": "cf8cee294059de68b63423ee0d9e476369ed5f0a",
     "name": "Thaumcraft Fix",
-    "version": "1.12.2-1.1.9"
+    "version": "1.12.2-1.1.10"
   },
   "ThaumcraftResearchPatcher-1.12.2-1.1.3.jar": {
     "curseForgeHash": 759114736,
@@ -2843,14 +2843,6 @@
     "modrinthHash": "0440d038e7a0f68281ffb5ce51689fbda773fc84",
     "name": "Thaumic Energistics",
     "version": "2.3.5"
-  },
-  "thaumic-one-probe-1.12.2-1.0.0.jar": {
-    "curseForgeHash": 3402082759,
-    "jarName": "thaumic-one-probe-1.12.2-1.0.0.jar",
-    "modId": "thaumiconeprobe",
-    "modrinthHash": "9999dde62ad282b0deeb480156356c1f6854fe97",
-    "name": "Thaumic One Probe",
-    "version": "1.0.0"
   },
   "ThaumicAdditions-1.12.2-12.7.9.jar": {
     "curseForgeHash": 1139449304,
@@ -2916,13 +2908,13 @@
     "name": "Thaumic Wonders Unofficial",
     "version": "2.2.4"
   },
-  "TheOneSmeagle-1.12-1.1.5.jar": {
-    "curseForgeHash": 1256373557,
-    "jarName": "TheOneSmeagle-1.12-1.1.5.jar",
+  "TheOneProbe-CE-1.12-1.3.7-fix1.jar": {
+    "curseForgeHash": 2235912560,
+    "jarName": "TheOneProbe-CE-1.12-1.3.7-fix1.jar",
     "modId": "theoneprobe",
-    "modrinthHash": "4dffa3a8dd9e3bb9d4a97b56e3f4f8ef04c46862",
-    "name": "The One Smeagle",
-    "version": "1.12-1.1.5"
+    "modrinthHash": "0eef129a6e071fac4b625fda61dadf67b5daeefe",
+    "name": "The One Probe Community Edition",
+    "version": "1.12-1.3.7-fix1"
   },
   "ThermalDynamics-1.12.2-2.5.6.1-universal.jar": {
     "curseForgeHash": 2554678431,
@@ -2977,13 +2969,13 @@
     "name": "Tinkers' Addons",
     "version": "1.0.10"
   },
-  "TinkersAntique-1.12.2-2.13.0.205.jar": {
-    "curseForgeHash": 2391296484,
-    "jarName": "TinkersAntique-1.12.2-2.13.0.205.jar",
+  "TinkersAntique-1.12.2-2.13.0.206.jar": {
+    "curseForgeHash": 2677120016,
+    "jarName": "TinkersAntique-1.12.2-2.13.0.206.jar",
     "modId": "tconstruct",
-    "modrinthHash": "84f3dc7d5e141e9647596a826113524d5eecb48d",
+    "modrinthHash": "75700a3cbe20500d42b631a63fb94a900660fde1",
     "name": "Tinkers' Antique",
-    "version": "1.12.2-2.13.0.205"
+    "version": "1.12.2-2.13.0.206"
   },
   "TinkersComplement-1.12.2-0.4.3.jar": {
     "curseForgeHash": 606935708,
@@ -3033,13 +3025,13 @@
     "name": "Tomb Many Graves",
     "version": "1.12-4.2.0"
   },
-  "topaddons-1.12.2-1.13.0.jar": {
-    "curseForgeHash": 594617711,
-    "jarName": "topaddons-1.12.2-1.13.0.jar",
-    "modId": "topaddons",
-    "modrinthHash": "81fd91d9b4579a3f07a8d3b860f7db5426e77c72",
-    "name": "TOP Addons",
-    "version": "1.12.2-1.13.0"
+  "TopAllDependents-1.4.jar": {
+    "curseForgeHash": 2744803562,
+    "jarName": "TopAllDependents-1.4.jar",
+    "modId": "topalldependents",
+    "modrinthHash": "6d8267ed2b79d59e3334999172873b4adbe82059",
+    "name": "TopAllDependents",
+    "version": "1.4"
   },
   "torohealth-1.12.2-11.jar": {
     "curseForgeHash": 378881515,
@@ -3310,13 +3302,21 @@
     "name": "Xaero's World Map",
     "version": "1.39.12"
   },
-  "xnet-1.12-1.8.2.jar": {
-    "curseForgeHash": 1881973158,
-    "jarName": "xnet-1.12-1.8.2.jar",
+  "XNet-1.8.18.jar": {
+    "curseForgeHash": 1883577094,
+    "jarName": "XNet-1.8.18.jar",
     "modId": "xnet",
-    "modrinthHash": "085f5aef1d407f815028e5ecc87265cc5d8142e6",
+    "modrinthHash": "b744d4d07ee5845af2e0dd9a786dc48ba9b31ef9",
     "name": "XNet",
-    "version": "1.12-1.8.2"
+    "version": "1.8.18"
+  },
+  "XNetAdditions-0.1.4.jar": {
+    "curseForgeHash": 2722182956,
+    "jarName": "XNetAdditions-0.1.4.jar",
+    "modId": "xnetadditions",
+    "modrinthHash": "4450b27d00f3f2ada9d09bda46683a94bff48dd0",
+    "name": "XNet: Additions",
+    "version": "0.1.4"
   },
   "XU2-Patcher-1.0.2.jar": {
     "curseForgeHash": 3734370537,
@@ -3358,12 +3358,12 @@
     "name": "ZenUtils",
     "version": "1.27.0"
   },
-  "zume-1.2.1.jar": {
-    "curseForgeHash": 3006123426,
-    "jarName": "zume-1.2.1.jar",
+  "zume-1.2.2.jar": {
+    "curseForgeHash": 520005726,
+    "jarName": "zume-1.2.2.jar",
     "modId": "zume",
-    "modrinthHash": "433406987269d89cf4fc0170a1f1d1c9b8ddd504",
+    "modrinthHash": "cbd353ee0e2a35d122a758b9cbb26b2f54145f3f",
     "name": "Zume",
-    "version": "1.2.1"
+    "version": "1.2.2"
   }
 }

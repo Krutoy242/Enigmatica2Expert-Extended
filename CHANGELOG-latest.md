@@ -1,104 +1,79 @@
 ## ⚡ Performance Improvements
 
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/2d1f6ee)⚡Disable Vis crystal generation in non-magic dimensions
-    > Removed 73 entries.  
-    > This will clean up JER tab for JEI and unflood JEI entries overall.
-    > 
-    > List of dimensions without Vis crystals:
-    > 
-    > - Alien Jungle (200)  
-    > - Europa (106)  
-    > - Io (105)  
-    > - KELT-4ab (120)  
-    > - Kepler 0118 (122)  
-    > - Kepler 0119 (123)  
-    > - Luna (100)  
-    > - Mars (103)  
-    > - Mercury (101)  
-    > - Neptune (110)  
-    > - Titan (108)  
-    > - Uranus (109)  
-    > - Venus (102)
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/3534b1f)⚡Do not spawn Botania mushrooms in space+
-    > Removed 180+ entries.
-    > 
-    > This will clean up JER tab for JEI and unflood JEI entries overall.
-    > 
-    > List of dimensions without Botania's mushroioms:  
-    > - Alien Jungle (200)  
-    > - Io (105)  
-    > - KELT-4ab (120)  
-    > - Kepler 0118 (122)  
-    > - Kepler 0119 (123)  
-    > - Luna (100)  
-    > - Mars (103)  
-    > - Mercury (101)  
-    > - Neptune (110)  
-    > - Proxima B (111)  
-    > - Titan (108)  
-    > - Uranus (109)  
-    > - Venus (102)  
-    > - Wasteland (4598)
-  * <img src="https://i.imgur.com/us0jyQl.png" align=right width="50%"> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/644747a)⚡Fix `OpenComputers` JEI plugin is still loaded
-    > Should descrease loading time to ~2 second.
-    > 
-    > related 08dae5cf3bb7a6ec6e5d5e9e04c91cdf477015c1
+  * <img src="https://i.imgur.com/ms29ZmG.png" align=right> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/b69904a)⚡Disable RLTweaker carryon features
+    > For some reason, "Quark Chest Fix" or "Tile Entity Drop Safety Check" took about 3% TPS. Disabling this feature should increase performance.
 
 ## ✨ New Features
 
-  * <img src="https://i.imgur.com/QXFy3Do.png" align=right> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/e6d66ff)📖JER now sort entries by their rarities
-    > More frequent - earlier on the pages
-  * <img src="https://i.imgur.com/dGuw15i.png" align=right> [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/0451002)🪐Rich advanced rocketry planet configs
-    > - Disable rain on `Mercury`, `Venus`, `Kepler 0118`  
-    > - Add retrograde orbit to `Venus` and `Kepler 0119`  
-    > - Add high-tier laser drill ores to `Kepler 0118` and `Kepler 0119`  
-    > - Add aquatic mob spawns to `Europa`  
-    > - Adjust crater, geode, and volcano frequencies on `Mars`, `Luna`, `Kepler 0118`, `KELT-1b`  
-    > - Scale stars and add names in `Magnis Vulpes` system  
-    > - Vary ring angles on `Hubble` and `KELT-1b`  
-    > - Enable constant rain on `Alien Jungle`
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/9d7074a)🤡Add `clown` rank for clowns
+    > Later, this rank will be automatically assigned to players who dupe Mythic loot chests and boast, "Look how fast I'm progressing in this modpack."
 
 ## 🐛 Fixes
 
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/40d26d3)⌛Restore ![](https://github.com/Krutoy242/mc-icons/raw/master/i/randomthings/timeinabottle__0__f62.png "Time in a bottle") legacy
-    > Revert Tiab mechanic back as it was in `v1.76.0-beta`  and earlier. Now ![](https://github.com/Krutoy242/mc-icons/raw/master/i/contenttweaker/bee_diversity__0.png "Bee Diversity Store") working again.
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/5e881d8)✏️Fix AR multiblock recipes missed
+    > - Return batch-crafting ![](https://github.com/Krutoy242/mc-icons/raw/master/i/forestry/fabricator__0.png "Thermionic Fabricator") and ![](https://github.com/Krutoy242/mc-icons/raw/master/i/forestry/carpenter__0.png "Carpenter")  
+    > - Return some alloys in ![](https://github.com/Krutoy242/mc-icons/raw/master/i/advancedrocketry/arcfurnace__0.png "Electric Arc Furnace")
     > 
-    > Thanks `MagicJinn` for implementing this revert https://github.com/MagicJinn/Quantum-Things/issues/36
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/8f306dc)✏️Fix dupe with [(every) Chute] (IE)
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/3f8dc43)📖Fix JER shuffled `Nether` and `End` entries
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/5060393)🧩 ![](https://github.com/Krutoy242/mc-icons/raw/master/i/minecraft/piston__0__c44316ae.png "Piston") allow all `Quantum Things` blocks
-    > Thanks `MagicJinn` for implementing piston handling!
+    > Accidentally remowed here 245392e681b2a31591f3d7324f3a25856752625c
     > 
-    > Fix https://github.com/MagicJinn/Quantum-Things/issues/42
-    > 
-    > Related: 6c8b972db7faeae9204d8e32c8da68410d1172a6
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/0eb681b)🧩 ![](https://github.com/Krutoy242/mc-icons/raw/master/i/openblocks/tank__0.png "Tank") forbid to pistoning
-    > .. since causing crash
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/0d1a821)🧩`Packetfixer` increase packet sizes
-    > Should not have changes in game.
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/088d7cc)🪄![](https://github.com/Krutoy242/mc-icons/raw/master/i/thaumcraft/infusion_matrix__0.png "Runic Matrix") fix modifiers
-    > > Contributed by [TabakaSIM](https://github.com/tabakasim)
-    >
-    > Fix missing infusion matrix changed form `thaumtweaks` mod. Now speed and cost moddifier are applied correctly.
+    > Fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/610  
+    > Fix https://github.com/Krutoy242/Enigmatica2Expert-Extended/issues/609
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a8f0fb8)✏️Remove two 'no-ingredient' recipes from ![](https://github.com/Krutoy242/mc-icons/raw/master/i/enderio/block_alloy_smelter__0.png "Alloy Smelter")
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/fe75a82)🏛️`Building Gadgets` increase *Max Build Distance* to 48
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/9bd2863)💰Tweak some dungeon loot
+    > - ![](https://github.com/Krutoy242/mc-icons/raw/master/i/botania/teruterubozu__0.png "Teru Teru Bozu") less frequent since cant be recycled
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/d40f5fa)🔨Fix Troll's veapons kicking from server on hit sheeps
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/e33f246)🧩`Exnetadditions` disable mana and essention transfer
+    > Botania and Thaumcraft already have lot of options to transfer their resources.
 
-  #### Quest
+  #### Info
 
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/1159234)📖Fix finishing game message erroring if you crafted air
-    > I dont know how you cafted air 🤷‍♂️
-  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/01d8ce6)📖Fix players can't achieve `Conflux I` and `V`
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/a09dd8e)📝Prune useless tips
+
+  #### JEI
+
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/c4b4f84)🌍Remove ![](https://github.com/Krutoy242/mc-icons/raw/master/i/biomesoplenty/gem_ore__5.png "Malachite Ore") from `KELT-6a` JER tab
+    > Since Malachite doesnt spawn here
+
+  #### Server
+
+  * [🖇](https://github.com/Krutoy242/Enigmatica2Expert-Extended/commit/df48556)💻Equalize min and max RAM for servers
 
 ## Mods changes
+### 🟢 Added Mods
+
+Icon | Summary | Reason
+----:|:--------|:-------
+<img src="https://media.forgecdn.net/avatars/thumbnails/845/501/30/30/638243430763826986.png"            > |        [**The One Probe Community Edition**](https://www.curseforge.com/minecraft/mc-mods/the-one-probe-community-edition)<sup><sub>TheOneProbe-CE-1.12-1.3.7-fix1.jar               </sub></sup><br>Displays the entity or block you are viewing | Lets try this version of TOP to test if its better than TheOneSmeagle.
+<img src="https://media.forgecdn.net/avatars/thumbnails/1097/871/30/30/638644057459524955.png"           > |                       [**TopAllDependents**](https://www.curseforge.com/minecraft/mc-mods/topalldependents)             <sup><sub>TopAllDependents-1.4.jar                         </sub></sup><br>Adds mod support to The One Probe by McJty | TOP dependency
+<img src="https://media.forgecdn.net/avatars/thumbnails/1418/269/30/30/638918884845889202.png"           > |                                   [**ZNet**](https://www.curseforge.com/minecraft/mc-mods/znet)                         <sup><sub>XNet-1.8.18.jar                                  </sub></sup><br>Fork of XNet 1.12.2 that aims to fix and improve it | Fork with bugfixes
+<img src="https://media.forgecdn.net/avatars/thumbnails/1743/241/30/30/639109201838070228.png"           > |                        [**XNet: Additions**](https://www.curseforge.com/minecraft/mc-mods/xnet-additions)               <sup><sub>XNetAdditions-0.1.4.jar                          </sub></sup><br>An XNet addon focused on adding support for new channel types and resource systems. | Add mek gas compat
+-----------
+
+
+### 🔴 Removed Mods
+
+Icon | Summary | Reason
+----:|:--------|:-------
+<img src="https://media.forgecdn.net/avatars/thumbnails/951/894/30/30/638441639917328756.png"            > |                          [**TheOneSmeagle**](https://www.curseforge.com/minecraft/mc-mods/theonesmeagle)                <sup><sub>TheOneSmeagle-1.12-1.1.5.jar                     </sub></sup><br>A fork of The One Probe, meant to be a more immersive version of WAILA/HWYLA | Replaced by TOP-CE
+<img src="https://media.forgecdn.net/avatars/thumbnails/44/562/30/30/636033342690526889.jpeg"            > |                             [**TOP Addons**](https://www.curseforge.com/minecraft/mc-mods/top-addons)                   <sup><sub>topaddons-1.12.2-1.13.0.jar                      </sub></sup><br>Adds mod support to The One Probe by McJty | Replaced by TopAllDependents
+<img src="https://media.forgecdn.net/avatars/thumbnails/428/742/30/30/637662550518620713.png"            > |                      [**Thaumic One Probe**](https://www.curseforge.com/minecraft/mc-mods/thaumic-one-probe)            <sup><sub>thaumic-one-probe-1.12.2-1.0.0.jar               </sub></sup><br>adds TOP displays for various thaumcraft apparatus | Replaced by TopAllDependents
+<img src="https://media.forgecdn.net/avatars/thumbnails/89/38/30/30/636229039734109684.png"              > |                                   [**XNet**](https://www.curseforge.com/minecraft/mc-mods/xnet)                         <sup><sub>xnet-1.12-1.8.2.jar                              </sub></sup><br>XNet is a highly optimized networking cable system for items, energy, fluids, information, ... | Replaced by ZNet
+-----------
 
 ### 🟡 Updated Mods
 
 Icon | Summary | Old / New
 ----:|:--------|:---------
-<img src="https://media.forgecdn.net/avatars/thumbnails/292/428/30/30/637325593905195388.png"            > |                              [**Zen Utils**](https://www.curseforge.com/minecraft/mc-mods/zenutil)                     | <nobr>zenutils-1.26.19</nobr><br><nobr>zenutils-1.27.0</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/468/506/30/30/637752171904887013.jpeg"           > |                       [**Had Enough Items**](https://www.curseforge.com/minecraft/mc-mods/had-enough-items)            | <nobr>HadEnoughItems_1.12.2-4.30.2</nobr><br><nobr>HadEnoughItems_1.12.2-4.30.3</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/551/59/30/30/637888242565991470.png"             > |                              [**ModularUI**](https://www.curseforge.com/minecraft/mc-mods/modularui)                   | <nobr>modularui-3.1.5</nobr><br><nobr>modularui-3.1.6</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/828/846/30/30/638216794274587308.png"            > |                             [**VintageFix**](https://www.curseforge.com/minecraft/mc-mods/vintagefix)                  | <nobr>vintagefix-0.6.2</nobr><br><nobr>vintagefix-0.7.0</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1001/840/30/30/638521728187451529.jpg"           > |           [**Advanced Rocketry - Reworked**](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry-2)         | <nobr>advancedrocketry-2.2.5hotfix</nobr><br><nobr>advancedrocketry-2.2.6</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1142/718/30/30/638707398997158910_animated.gif"  > | [**Avaritia 1.1x Unofficial Extended Life**](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-1x-unofficial)    | <nobr>avaritia-1.12.2-3.3.0.48-hotfix6</nobr><br><nobr>avaritia-1.12.2-3.3.0.48-hotfix7</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1679/685/30/30/639067599608097833.png"           > |                                 [**Gnetum**](https://www.curseforge.com/minecraft/mc-mods/gnetum)                      | <nobr>gnetum-1.4.0</nobr><br><nobr>gnetum-1.4.1</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1525/899/30/30/638990864881641740.png"           > |                         [**Quantum Things**](https://www.curseforge.com/minecraft/mc-mods/quantum-things)              | <nobr>QuantumThings-MC-1.12.2-1.1.0</nobr><br><nobr>QuantumThings-MC-1.12.2-1.2.0</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/248/435/30/30/637168261428598002.png"            > |                                    [**QMD**](https://www.curseforge.com/minecraft/mc-mods/qmd)                         | <nobr>QMD-1.5 beta 3-1.12.2</nobr><br><nobr>QMD-1.5-1.12.2</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/468/506/30/30/637752171904887013.jpeg"           > |                       [**Had Enough Items**](https://www.curseforge.com/minecraft/mc-mods/had-enough-items)            | <nobr>HadEnoughItems_1.12.2-4.30.3</nobr><br><nobr>HadEnoughItems_1.12.2-4.31.1</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/551/59/30/30/637888242565991470.png"             > |                              [**ModularUI**](https://www.curseforge.com/minecraft/mc-mods/modularui)                   | <nobr>modularui-3.1.6</nobr><br><nobr>modularui-3.1.5</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1197/189/30/30/638773173284175448.png"           > |                     [**Roughly Enough IDs**](https://www.curseforge.com/minecraft/mc-mods/reid)                        | <nobr>RoughlyEnoughIDs-2.3.0</nobr><br><nobr>RoughlyEnoughIDs-2.3.1</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/894/711/30/30/638338657652175030.png"            > |                                   [**Zume**](https://www.curseforge.com/minecraft/mc-mods/zume)                        | <nobr>zume-1.2.1</nobr><br><nobr>zume-1.2.2</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/908/439/30/30/638360340448042423.png"            > |                [**Just Enough Magiculture**](https://www.curseforge.com/minecraft/mc-mods/just-enough-magiculture)     | <nobr>justenoughmagiculture-1.12.2-1.2.1</nobr><br><nobr>justenoughmagiculture-1.12.2-1.2.2</nobr>
+<img src="null"                                                                                          > |                                  [**ARLib**](https://www.curseforge.com/minecraft/mc-mods/arlib)                       | <nobr>libvulpes-0.5.1</nobr><br><nobr>libvulpes-0.5.2</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1040/744/30/30/638566774921391570.png"           > |               [**Magiculture Integrations**](https://www.curseforge.com/minecraft/mc-mods/magiculture-integrations)    | <nobr>magicultureintegrations-1.12.2-2.2.7</nobr><br><nobr>magicultureintegrations-1.12.2-2.3.0</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1045/277/30/30/638572993870832594.png"           > |                         [**Thaumcraft Fix**](https://www.curseforge.com/minecraft/mc-mods/thaumcraftfix)               | <nobr>ThaumcraftFix-1.12.2-1.1.9</nobr><br><nobr>ThaumcraftFix-1.12.2-1.1.10</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1176/204/30/30/638748608591942674.png"           > |                       [**RandomComplement**](https://www.curseforge.com/minecraft/mc-mods/random-complement)           | <nobr>random_complement-1.9.1</nobr><br><nobr>random_complement-1.9.3</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1223/434/30/30/638801642158504721.png"           > |                       [**Tinkers' Antique**](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique)             | <nobr>TinkersAntique-1.12.2-2.13.0.205</nobr><br><nobr>TinkersAntique-1.12.2-2.13.0.206</nobr>
 -----------
