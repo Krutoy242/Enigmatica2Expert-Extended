@@ -202,7 +202,6 @@ craft.remake(<libvulpes:coalgenerator>, [
 // [Advanced Machine Structure*4] from [Silicon Boule][+2]
 recipes.remove(<libvulpes:advstructuremachine>);
 
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').removeAll();
 val precisionAssemblerBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder();
 
 // Re-add existing recipe from script
@@ -231,7 +230,6 @@ paBuilder100k.copy().timeRequired(10).input(<minecraft:glass> * 3).inputOre(<ore
 paBuilder100k.copy().timeRequired(10).input(<advancedrocketry:ic:1>).input(<advancedrocketry:spacestationchip>).outputItem(<advancedrocketry:elevatorchip>).build();
 paBuilder100k.copy().timeRequired(40).input(<thaumcraft:mechanism_complex> * 4).input(<enderio:item_material:19>).input(<rftoolsdim:dimlet_energy_module:2> * 2).outputItem(<rats:arcane_technology>).build();
 
-mods.advancedrocketry.RecipeTweaker.forMachine('RollingMachine').removeAll();
 val rollingMachineBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('RollingMachine').builder()
   .power(50000).timeRequired(15).inputLiquid(<liquid:lubricant> * 100);
 
@@ -282,13 +280,11 @@ latheBuilder.copy().inputOre(<ore:ingotSteel>).outputItem(<immersiveengineering:
 latheBuilder.copy().input(<integrateddynamics:crystalized_menril_chunk>).outputItem(<integrateddynamics:cable> * 2).build();
 latheBuilder.copy().inputOre(<ore:crystalPureFluix>).outputItem(<appliedenergistics2:part:16> * 4).build();
 
-mods.advancedrocketry.RecipeTweaker.forMachine('CuttingMachine').removeAll();
 val cuttingMachineBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('CuttingMachine').builder().power(100000);
 cuttingMachineBuilder.copy().input(<advancedrocketry:itemcircuitplate>).outputItem(<advancedrocketry:ic> * 4).timeRequired(40).build();
 cuttingMachineBuilder.copy().input(<advancedrocketry:itemcircuitplate:1>).outputItem(<advancedrocketry:ic:2> * 4).timeRequired(50).build();
 cuttingMachineBuilder.copy().inputOre(<ore:bouleSilicon>).outputItem(<advancedrocketry:wafer> * 4).timeRequired(50).build();
 
-mods.advancedrocketry.RecipeTweaker.forMachine('ElectricArcFurnace').removeAll();
 val arcFurnaceBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('ElectricArcFurnace').builder();
 arcFurnaceBuilder.copy().input(<minecraft:sand>).outputItem(<libvulpes:productingot:3> * 4).power(100000).timeRequired(5).build();
 arcFurnaceBuilder.copy().inputOre(<ore:ingotIron>).input(<minecraft:coal:1>).outputItem(<ore:ingotSteel>.firstItem * 2).power(100000).timeRequired(8).build();
@@ -297,7 +293,6 @@ arcFurnaceBuilder.copy().inputOre(<ore:blockTitanium>).inputOre(<ore:blockIridiu
 arcFurnaceBuilder.copy().inputOre(<ore:oreRutile>).outputItem(<libvulpes:productingot:7> * 4).power(100000).timeRequired(4).build();
 arcFurnaceBuilder.copy().inputOre(<ore:ingotBrick>).outputItem(<tcomplement:materials:1>).power(10000).timeRequired(4).build();
 
-mods.advancedrocketry.RecipeTweaker.forMachine('Electrolyser').removeAll();
 mods.advancedrocketry.RecipeTweaker.forMachine('Electrolyser').builder()
   .inputLiquid(<liquid:water> * 10)
   .outputs(<liquid:oxygen> * 500, <liquid:hydrogen> * 500)
@@ -637,7 +632,6 @@ scripts.process.solution([<thermalfoundation:material:771> * 30], [<fluid:liquid
 // Remove carbon (defined in ExNihilio configs)
 recipes.remove(<advancedrocketry:misc:1>);
 
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').removeAll();
 val crystallizerBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder();
 
 crystallizerBuilder.copy().inputOre(<ore:dustFluorite>, 6).inputLiquid(<fluid:sulfuric_acid> * 6000).outputItem(<nuclearcraft:compound> * 6).power(30000).timeRequired(10).build();
