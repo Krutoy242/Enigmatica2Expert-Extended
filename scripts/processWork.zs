@@ -90,9 +90,9 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   val haveLiquidOutput = !isNull(outputLiquid0);
   val outputLiquidIsSingle = haveLiquidOutput && outputLiquids.length == 1;
 
-  val haveGasOutput = D(options).check('gasOutput');
-  val outputGasAmount = D(options).getInt('gasOutputAmount', 600);
-  val outputGas = haveGasOutput ? getGas(options.gasOutput.asString()) * outputGasAmount : null;
+  val haveGasOutput = !isNull(options?.gasOutput);
+  val outputGasAmount = options?.gasOutputAmount?.asInt() ?? 600;
+  val outputGas = haveGasOutput ? getGas(options?.gasOutput?.asString()) * outputGasAmount : null;
 
   // ------------
   // Extra

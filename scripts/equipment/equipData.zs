@@ -520,7 +520,7 @@ static armDefinitions as string[][] = [
 static matsRequired as int[string] = {} as int[string];
 function addMatRequirment(item as IItemStack) as void {
   if (!item.hasTag) return;
-  val len = D(item.tag).get('TinkerData.Materials', { d: [] }).asList().length;
+  val len = (item.tag?.TinkerData?.Materials ?? ([] as IData)).length;
   if (len <= 0) return;
   matsRequired[item.definition.id] = len;
 }

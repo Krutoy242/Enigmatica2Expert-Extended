@@ -185,8 +185,8 @@ function createArmorSet(setData as IData, setId as string) as void {
     return;
   }
 
-  val prev = armorStaged[D(setData).get('prev', { d: 'undefined' })];
-  val extra = isNull(setData.recipe) || isNull(setData.recipe.extra)
+  val prev = armorStaged[setData?.prev ?? 'undefined'];
+  val extra = isNull(setData?.recipe) || isNull(setData?.recipe?.extra)
     ? null
     : getIngredientFromString(setData.recipe.extra.asString());
 

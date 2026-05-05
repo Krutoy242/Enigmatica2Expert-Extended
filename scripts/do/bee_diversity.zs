@@ -36,16 +36,16 @@ function toTime(t as int) as string {
 }
 
 <contenttweaker:bee_diversity>.addAdvancedTooltip(function (item) {
-  return 'Total stored genes: §6' ~ D(item.tag).getInt('total');
+  return 'Total stored genes: §6' ~ (item.tag?.total?.asInt() ?? 0);
 });
 <contenttweaker:bee_diversity>.addAdvancedTooltip(function (item) {
-  return 'Penalty: §4' ~ D(item.tag).getInt('penalty');
+  return 'Penalty: §4' ~ (item.tag?.penalty?.asInt() ?? 0);
 });
 <contenttweaker:bee_diversity>.addAdvancedTooltip(function (item) {
-  return 'Total reward: §3' ~ toTime(D(item.tag).getInt('reward'));
+  return 'Total reward: §3' ~ toTime(item.tag?.reward?.asInt() ?? 0);
 });
 <contenttweaker:bee_diversity>.addAdvancedTooltip(function (item) {
-  return '§8Last reward: §7' ~ toTime(D(item.tag).getInt('last'));
+  return '§8Last reward: §7' ~ toTime(item.tag?.last?.asInt() ?? 0);
 });
 
 // -------------------------------------------------------------------------------
@@ -88,12 +88,10 @@ val diversityStoreOutput = <contenttweaker:bee_diversity>.withTag({
 } as IData + utils.shiningTag(storeColor(0, 13)));
 
 val storeFunction as IRecipeFunction = function (out, ins, cInfo) {
-  val dbee = D(ins.bee.tag);
-  val chromosomes = dbee.get('Genome.Chromosomes');
+  val chromosomes = ins.bee.tag?.Genome?.Chromosomes;
   if (isNull(chromosomes)) return ins.store;
 
-  val dStore = D(ins.store.tag);
-  var hashes = dStore.get('hashes', { d: {} });
+  var hashes = ins.store.tag?.hashes ?? {} as IData;
   var points = 0;
   for i, gene in chromosomes.asList() {
     val hash = gene.asString().hashCode() ~ '';
@@ -105,10 +103,10 @@ val storeFunction as IRecipeFunction = function (out, ins, cInfo) {
   }
 
   val multiplier = multipliers[ins.bee.definition.id] as int;
-  val total = dStore.getInt('total') + points;
-  val penalty = max(0, dStore.getInt('penalty') + (points == 0 ? 1 : -1));
+  val total = (ins.store.tag?.total?.asInt() ?? 0) + points;
+  val penalty = max(0, (ins.store.tag?.penalty?.asInt() ?? 0) + (points == 0 ? 1 : -1));
   val newReward = rewardCalculator(total, points, penalty, multiplier);
-  val reward = dStore.getInt('reward') + newReward;
+  val reward = (ins.store.tag?.reward?.asInt() ?? 0) + newReward;
   val newTag = {
     reward : reward,
     last   : newReward,
@@ -148,14 +146,14 @@ for name, ingr in beeIngredients {
 recipes.addShapeless('Reward get', <randomthings:timeinabottle>.withTag({
 }), [
   <contenttweaker:bee_diversity>.marked('store').transformNew(function (item) {
-    return item.updateTag({ reward: 0, enchantmentColor: storeColor(D(item.tag).getInt('penalty'), 0) });
+    return item.updateTag({ reward: 0, enchantmentColor: storeColor(item.tag?.penalty?.asInt() ?? 0, 0) });
   }),
   <randomthings:timeinabottle>.marked('bottle'),
 ],
 function (out, ins, cInfo) {
   return ins.bottle.updateTag({
     timeData: {
-      storedTime: D(ins.bottle.tag).getInt('timeData.storedTime', 0) + D(ins.store.tag).getInt('reward', 0),
+      storedTime: (ins.bottle.tag?.timeData?.storedTime?.asInt() ?? 0) + (ins.store.tag?.reward?.asInt() ?? 0),
     },
   });
 }, null);

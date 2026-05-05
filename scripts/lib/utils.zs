@@ -209,13 +209,12 @@ zenClass Utils {
     }
 
     // Compute min-max for each dimension
-    val dopt = D(options);
-    val minX = dopt.getDouble('x.min', 0.0);
-    val maxX = dopt.getDouble('x.max', 1.0);
-    val minY = dopt.getDouble('y.min', 0.0);
-    val maxY = dopt.getDouble('y.max', 1.0);
-    val stepX = dopt.get('x.step');
-    val stepY = dopt.get('y.step');
+    val minX = options?.x?.min?.asDouble() ?? 0.0;
+    val maxX = options?.x?.max?.asDouble() ?? 1.0;
+    val minY = options?.y?.min?.asDouble() ?? 0.0;
+    val maxY = options?.y?.max?.asDouble() ?? 1.0;
+    val stepX = options?.x?.step;
+    val stepY = options?.y?.step;
 
     // Determine doulbe steps
     val intervalX = (maxX - minX) / (max(1, width - 1) as double);

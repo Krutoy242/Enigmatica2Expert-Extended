@@ -407,7 +407,7 @@ for i in 130 .. 133 {
 
 val tieredUpgradeFnc as IRecipeFunction = function (out, ins, cInfo) {
   if (ins has 'marked' && !isNull(ins.marked) && !isNull(ins.marked.tag)) {
-    return ins.marked.updateTag({ Level: D(ins.marked.tag).getByte('Level', 0) + 1 as byte });
+    return ins.marked.updateTag({ Level: (ins.marked.tag?.Level?.asByte() ?? 0) + 1 as byte });
   }
   return out;
 };

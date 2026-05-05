@@ -244,7 +244,7 @@ function beneficiate(
 
   val oreName = (_oreName == 'Aluminum') ? 'Aluminium' : _oreName;
 
-  val exceptions = D(opts).getString('exceptions', '');
+  val exceptions = (opts?.exceptions as string) ?? '';
 
   // Determine extra output based on JAOPCA
   val JA = mods.jaopca.JAOPCA.getOre(oreName);
@@ -315,7 +315,7 @@ function beneficiate(
   // Melt
   val liquid = JA?.getLiquidStack('molten') ?? utils.oreNameToFluid(oreName);
   if (!isNull(liquid) && !isNull(JA)) {
-    val meltingExceptions = D(opts).get('meltingExceptions', { d: [] }).asList();
+    val meltingExceptions = (opts?.meltingExceptions?.asList() ?? ([] as IData));
     var meltAllowed = true;
     for meltExc in meltingExceptions { if (meltExc.asString() == oreName) meltAllowed = false; }
     if (meltAllowed) {

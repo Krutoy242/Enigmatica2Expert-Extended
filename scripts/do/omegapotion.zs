@@ -357,7 +357,7 @@ static potNameTag as IData[string] = {
 // Convert Rustic's ElixirEffect entry into CustomPotionEffects entry (for Vanilla or BloodMagic potions)
 //  by replacing "Effect" tag to "Id"
 static convertElixir as function(IData)IData = function (elixirEffect as IData) as IData {
-  val effect = D(elixirEffect).getString('Effect');
+  val effect = elixirEffect?.Effect as string;
   if (isNull(effect)) return elixirEffect;
 
   val potion = game.getPotion(effect);
@@ -391,9 +391,9 @@ static potionFunction as IRecipeFunction = function (out, ins, cInfo) {
   var compoundTags = [] as IData;
 
   // What kind of recipe is this
-  val isLong = !isNull(D(out.tag).get('PotionLong'));
-  val isStrong = !isNull(D(out.tag).get('PotionStrong'));
-  val isOMega = !isNull(D(out.tag).get('PotionOMEGA'));
+  val isLong = !isNull(out.tag?.PotionLong);
+  val isStrong = !isNull(out.tag?.PotionStrong);
+  val isOMega = !isNull(out.tag?.PotionOMEGA);
 
   // Maximums. Used only for OMega potion
   var maxDuration as int = 1;
@@ -402,15 +402,14 @@ static potionFunction as IRecipeFunction = function (out, ins, cInfo) {
   // Iterate over all marked items to extract potion Effects
   for m, marked in ins {
     // Try to get elixir data
-    val mTag = D(marked.tag);
-    var eData = mTag.get('ElixirEffects');
+    var eData = marked.tag?.ElixirEffects;
 
     // Try to get Flask or Vanilla combined data
-    if (isNull(eData)) eData = mTag.get('CustomPotionEffects');
+    if (isNull(eData)) eData = marked.tag?.CustomPotionEffects;
 
     // Try to get vanilla-like potion name
     if (isNull(eData)) {
-      eData = mTag.get('Potion');
+      eData = marked.tag?.Potion;
 
       // Still No data -> continue next marked item
       if (isNull(eData)) break;
@@ -429,8 +428,8 @@ static potionFunction as IRecipeFunction = function (out, ins, cInfo) {
     // Also calculate maximums for OMega potion
     for i in 0 .. eData.length {
       val effect = eData[i];
-      val oldDuration = D(effect).getInt('Duration', 1);
-      val oldAmplifier = D(effect).getInt('Amplifier', 0);
+      val oldDuration = (effect?.Duration as int) ?? 1;
+      val oldAmplifier = (effect?.Amplifier as int) ?? 0;
       val newDuration = isLong ? durationFnc(oldDuration) : oldDuration;
       val newAmplifier = isStrong ? amplifierFnc(oldAmplifier) : oldAmplifier;
       maxDuration = max(maxDuration, newDuration);
@@ -560,7 +559,7 @@ val anyLong = <rustic:elixir:*> | potLong;
 var anyBrew as IIngredient = <rustic:fluid_bottle>.withTag({ Fluid: { FluidName: 'wine', Amount: 1000, Tag: { Quality: 1.0f } } });
 
 for item in itemUtils.getItemsByRegexRegistryName('rustic:fluid_bottle') {
-  if (D(item.tag).check('Fluid.Tag.Quality')) { anyBrew |= item.withTag(item.tag + { Fluid: { Tag: { Quality: 1.0f } } }); }
+  if (!isNull(item.tag?.Fluid?.Tag?.Quality)) { anyBrew |= item.withTag(item.tag + { Fluid: { Tag: { Quality: 1.0f } } } ); }
 }
 
 // [Long Elixir] from [Elixir of Instant Health][+5]

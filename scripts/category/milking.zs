@@ -98,11 +98,10 @@ function milk(e as crafttweaker.event.PlayerInteractEntityEvent) as bool {
   ) milkAmount *= 10.0;
 
   // Return if container accept only with bug portions
-  val dholdData = D(holdData);
-  if (milkAmount < dholdData.getFloat('portion', 1.0f)) return false;
+  if (milkAmount < (holdData?.portion?.asFloat() ?? 1.0f)) return false;
 
   // Determine maximum tank size
-  val maxTankSize = dholdData.getInt('tag.Fluid.Amount', dholdData.getInt('tag.Amount', 1000));
+  val maxTankSize = (holdData?.tag?.Fluid?.Amount?.asInt() ?? (holdData?.tag?.Amount?.asInt() ?? 1000));
 
   // Spawn liquid on ground if overwhelming amount
   val spilled = max(0.0, milkAmount - maxTankSize as double) as int;

@@ -139,12 +139,11 @@ function sealed(name as string, amount as int = 0) as string {
 // Fluid Drawers
 if (!isNull(loadedMods['fluiddrawers'])) {
   val fluidDrawerTooltip as ITooltipFunction = function (item) {
-    val dTag = D(item.tag);
-    val fluidName = dTag.getString('Tile.Drawer.Fluid.FluidName');
+    val fluidName = item.tag?.Tile?.Drawer?.Fluid?.FluidName as string;
     if (isNull(fluidName)) return null;
     val fluid = game.getLiquid(fluidName);
     if (isNull(fluid)) return null;
-    val fluidAmount = dTag.getInt('Tile.Drawer.Fluid.Amount');
+    val fluidAmount = item.tag?.Tile?.Drawer?.Fluid?.Amount?.asInt() ?? 0;
     return sealed(fluid.displayName, fluidAmount);
   };
   <fluiddrawers:tank_custom>.addAdvancedTooltip(fluidDrawerTooltip);

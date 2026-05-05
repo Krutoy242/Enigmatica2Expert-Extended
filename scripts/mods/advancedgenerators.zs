@@ -111,7 +111,7 @@ for name, ingrs in turbineTypes {
   });
 
   // Fluid recycle
-  val fluidName = D(ingrs['/'].items[0].tag).getString('Material');
+  val fluidName = ingrs['/'].items[0].tag?.Material as string;
   val fluid = !isNull(fluidName) ? game.getLiquid(fluidName) : null;
   if (!isNull(fluid)) {
     mods.tconstruct.Melting.addRecipe(name == 'iron' ? fluid * (648) : fluid * (2592), rotor);

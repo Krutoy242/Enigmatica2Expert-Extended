@@ -66,7 +66,7 @@ function getShard(
   durabValue as double
 ) as IItemStack {
   // Check if input have tags
-  val mats_data = D(input.tag).get('TinkerData.Materials');
+  val mats_data = input.tag?.TinkerData?.Materials;
   if (isNull(mats_data)) return shard('paper');
   val mats = mats_data.asList();
 
@@ -116,11 +116,10 @@ function getShard(
 // Functions
 // -----------------------------------------------------------------------
 function getToolsStats(tool as IItemStack) as double[string] {
-  val toolDTagStats = D(tool.tag.Stats);
   return {
-    HarvestLevel: toolDTagStats.getInt('HarvestLevel', 0),
-    Attack      : toolDTagStats.getFloat('Attack', 0.0f),
-    MiningSpeed : toolDTagStats.getFloat('MiningSpeed', 0.0f),
+    HarvestLevel: tool.tag?.Stats?.HarvestLevel.asInt() ?? 0,
+    Attack      : tool.tag?.Stats?.Attack.asFloat() ?? 0.0f,
+    MiningSpeed : tool.tag?.Stats?.MiningSpeed.asFloat() ?? 0.0f,
   } as double[string];
 }
 

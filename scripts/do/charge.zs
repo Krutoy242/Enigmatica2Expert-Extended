@@ -113,7 +113,7 @@ function chargeRecipeFunction(
   val bonus = getBonus(total);
 
   // Calculate result
-  val charge = D(ins['0'].tag).getDouble('charge', 0.0) + total + bonus;
+  val charge = (ins['0'].tag?.charge?.asDouble() ?? 0.0) + total + bonus;
 
   return charge >= needCharge ? R :F.updateTag({ charge: charge, bonus: bonus / total });
 }
