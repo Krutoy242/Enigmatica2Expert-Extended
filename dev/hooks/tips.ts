@@ -37,10 +37,31 @@ const CFG_PATH = 'config/anothertips.cfg'
 
 const getTipsRegex = /^(?<match>e2ee\.tips\.(?<id>[^=]+)=(?<text>.*))$/gm
 
+// Patchouli tips generation constants (migrated from scripts/debug/patchouli/tips.zs)
+const PATCHOULI_WIDTH = 28
+const PATCHOULI_HEIGHT = 15
+const PATCHOULI_DOT = 3
+const PATCHOULI_ENTRY_PATH = 'patchouli_books/e2e_e/en_us/entries/world/tips.json'
+
 interface LangGroups {
   match: string
   id   : string
   text : string
+}
+
+// Patchouli JSON type definitions
+interface PatchouliPage {
+  item: string
+  type: string
+  title: string
+  text: string
+}
+
+interface PatchouliEntry {
+  name: string
+  icon: string
+  category: string
+  pages: PatchouliPage[]
 }
 
 function getTips(lang: string, filePath: string): LangGroups[] {
@@ -70,6 +91,83 @@ function getTips(lang: string, filePath: string): LangGroups[] {
   }
 
   return tips
+}
+
+/**
+ * Process tip text converting Minecraft formatting codes to Patchouli format,
+ * replicating the original ZenScript logic from tips.zs
+ */
+function processTipText(text: string): string {
+  return text
+    .replace(/§e/g, '§6') // Yellow too bright for Patchouli background
+    .replace(/§r/g, '$()') // Reset code → Patchouli reset
+    .replace(/§(.)/g, '$$($1)') // Any §X → Patchouli $(X) ($$ is literal $ in replace)
+    .replace(/\n/g, '') // Remove newlines
+}
+
+/**
+ * Generate Patchouli tips entry from en_us tips, replicating the original
+ * ZenScript page packing logic with textual lang keys
+ */
+function generatePatchouliTips(enUsTips: LangGroups[]) {
+  const pages: PatchouliEntry['pages'] = []
+  let currentPageText = ''
+  let currentHeight = 0
+  let tipCounter = 0
+
+  const WIDTH = PATCHOULI_WIDTH
+  const HEIGHT = PATCHOULI_HEIGHT
+  const DOT = PATCHOULI_DOT
+
+  for (const tip of enUsTips) {
+    const processedText = processTipText(tip.text)
+    const tipStr = `$(li)${processedText}`
+    const tipTextLength = processedText.length
+
+    // Replicate original tip height calculation from ZenScript
+    const addedLength = currentHeight === 0 ? DOT : 0
+    const tipHeight = Math.floor((tipTextLength + addedLength) / WIDTH) + 1 + (tipCounter === 0 ? 1 : 0)
+
+    // Check if we need to start a new page (same logic as original)
+    if (currentHeight !== 0 && currentHeight + tipHeight > HEIGHT) {
+      // Finalize current page
+      pages.push({
+        item: 'thaumicaugmentation:research_notes',
+        type: 'text',
+        title: 'Tips',
+        text: currentPageText
+      })
+      // Reset for new page
+      currentPageText = ''
+      currentHeight = 0
+    }
+
+    // Add tip to current page
+    currentPageText += tipStr
+    currentHeight += tipHeight
+    tipCounter++
+  }
+
+  // Finalize last page
+  if (currentPageText || pages.length === 0) {
+    pages.push({
+      item: 'thaumicaugmentation:research_notes',
+      type: 'text',
+      title: 'Tips',
+      text: currentPageText
+    })
+  }
+
+  // Build and write Patchouli entry
+  const entry: PatchouliEntry = {
+    name: 'Tips',
+    icon: 'thaumicaugmentation:research_notes',
+    category: 'World',
+    pages
+  }
+
+  writeFileSync(PATCHOULI_ENTRY_PATH, JSON.stringify(entry, null, 2) + '\n')
+  consola.info(`Generated Patchouli tips entry: ${PATCHOULI_ENTRY_PATH}`)
 }
 
 export async function init() {
@@ -140,6 +238,9 @@ export async function init() {
       `${newGroups.map(({ id, text }) => `e2ee.tips.${id}=${text}`).join('\n')}\n`
     )
   }
+
+  // Generate Patchouli tips entry from synced en_us tips
+  generatePatchouliTips(en_us_Tips)
 
   consola.success(
     `Tips synced: ${en_us_Tips.length} total${

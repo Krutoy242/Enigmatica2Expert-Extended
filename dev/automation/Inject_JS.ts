@@ -97,6 +97,7 @@ function flatTable(arr: any[][]) {
 }
 
 function formatOutput(injectValue: any): string | undefined {
+  if (injectValue === undefined) return undefined
   return !Array.isArray(injectValue)
     ? String(injectValue)
     : injectValue.every(Array.isArray)
@@ -172,8 +173,7 @@ export async function init() {
 
     const injectString = formatOutput(injectValue)
 
-    // eslint-disable-next-line eqeqeq
-    if (injectString == undefined) {
+    if (injectString === undefined) {
       consola.warn(`${cmd.filePath}:${cmd.line} Returned empty result!`)
     }
     else {

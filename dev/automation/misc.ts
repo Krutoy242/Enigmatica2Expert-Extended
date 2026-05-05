@@ -5,6 +5,7 @@
  * @link https://github.com/Krutoy242
  */
 
+import { existsSync, readFileSync } from 'node:fs'
 import { join, parse } from 'node:path'
 import { consola } from 'consola'
 
@@ -14,11 +15,20 @@ import {
   loadJson,
   loadText,
   naturalSort,
-  saveObjAsJson,
-  saveText,
+  saveText as rawSaveText,
 } from '../lib/utils.js'
 
-const rgxAnimatedTerrain = /\nofAnimatedTerrain:false/g
+// Shadow saveText/saveObjAsJson so every write keeps the destination's existing EOL — avoids flooding git diffs.
+function saveText(content: string, filename: string): void {
+  const eol = existsSync(filename) && readFileSync(filename, 'utf8').includes('\r\n') ? '\r\n' : '\n'
+  rawSaveText(content.replace(/\r?\n/g, eol), filename)
+}
+
+function saveObjAsJson(obj: Record<string, any>, filename: string): void {
+  saveText(JSON.stringify(obj, null, 2), filename)
+}
+
+const rgxOfQuality = /\r?\nof(?:AnimatedWater|AnimatedLava|AnimatedFire|AnimatedPortal|AnimatedRedstone|AnimatedExplosion|AnimatedFlame|AnimatedSmoke|VoidParticles|WaterParticles|PortalParticles|PotionParticles|FireworkParticles|DrippingWaterLava|AnimatedTerrain|AnimatedTextures|RainSplash):\w+/g
 const rgxPlayerRanks = /\n\/\/ .*\n\[\w+\]\n(?:[\w.]+: .*\n)*/g
 const rgxSplitColon = /:(.*)/s
 const rgxCrafttweakerLog = /Save this into file "(?<file>[^"]+)"\r?\n(?<content>[\s\S]+?)(?=\r?\n(?:\[\w+\]){3} )/g
@@ -54,7 +64,7 @@ export async function init() {
       // Remove config lines
       'optionsof.txt': () => {
         saveText(fileContent
-          .replace(rgxAnimatedTerrain, '\nofAnimatedTerrain:true'), dest)
+          .replace(rgxOfQuality, ''), dest)
       },
 
       // Remove current player ranks
@@ -64,11 +74,12 @@ export async function init() {
       },
 
       'options.txt': () => {
-        // Merge keys
-        const entriesArray = fileContent.split('\n').map(l => l.split(rgxSplitColon) as [string, string])
+        // Merge keys — normalize CRLF so values don't carry stray '\r'
+        const normalize = (t: string) => t.replace(/\r\n/g, '\n')
+        const entriesArray = normalize(fileContent).split('\n').map(l => l.split(rgxSplitColon) as [string, string])
         let entries: Record<string, string> = Object.fromEntries(entriesArray)
 
-        const oldDestEntries: Record<string, string> = Object.fromEntries(loadText(dest).split('\n').map(l => l.split(rgxSplitColon) as [string, string]))
+        const oldDestEntries: Record<string, string> = Object.fromEntries(normalize(loadText(dest)).split('\n').map(l => l.split(rgxSplitColon) as [string, string]))
 
         // Filter out dark mode resource pack
         if (entries.resourcePacks) {
@@ -148,7 +159,7 @@ export async function init() {
     const found = entries[index] as HeavySieveEntry | undefined
 
     const entry: HeavySieveEntry = {
-      ...(found ?? { name: shortand, metadata: meta, type: 'list', rewards: [] }),
+      ...found ?? { name: shortand, metadata: meta, type: 'list', rewards: [] },
       ...{
         name    : shortand,
         metadata: meta,

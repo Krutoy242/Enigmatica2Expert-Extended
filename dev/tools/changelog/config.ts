@@ -13,6 +13,7 @@ import type { ParserStreamOptions } from '../../../node_modules/conventional-com
 import { existsSync, readFileSync } from 'node:fs'
 
 import { dirname, resolve } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { parse } from 'yaml'
 import { $, fs } from 'zx'
@@ -50,13 +51,17 @@ const config: Config = parse(readFileSync(configPath, 'utf8'))
 async function getModChanges() {
   const oldVersion = await $`git describe --tags --abbrev=0`
 
-  const [fresh, old, key, template] = await Promise.all([
+  const [fresh, old, template] = await Promise.all([
     fs.readJson('minecraftinstance.json'),
     $`git show tags/${oldVersion}:minecraftinstance.json`
       .then(res => JSON.parse(String(res)) as Minecraftinstance),
-    fs.readFile('~secrets/cf_api_key.txt', 'utf8'),
     fs.readFile('dev/tools/changelog/modlist.md', 'utf8'),
   ])
+
+  const key = process.env.CF_API_KEY
+  if (!key) {
+    throw new Error('CF_API_KEY environment variable is required for changelog generation')
+  }
 
   return generateModsList(
     fresh,

@@ -19,9 +19,9 @@
     {
       "label": "format.zs",
       "type": "shell",
-      "command": "tsx",
+      "command": "pnpm",
       "args": [
-        "mc-tools/packages/format/src/cli.ts",
+        "tsx mc-tools/packages/format/src/cli.ts",
         "\"${relativeFile}\""
       ],
       "problemMatcher": []

@@ -209,6 +209,7 @@ furnaceRemove(<thermalfoundation:material:129>      , <forestry:resources:2>);
 furnaceRemove(<minecraft:gold_ingot>                , <ic2:dust:7>);
 furnaceRemove(<minecraft:iron_ingot>                , <ic2:dust:8>);
 furnaceRemove(<immersiveengineering:metal:5>        , <ic2:resource:4>);
+furnaceRemove(<iceandfire:sapphire_gem>             , <iceandfire:sapphire_ore:*>);
 furnaceRemove(<iceandfire:silver_ingot>             , <iceandfire:silver_ore:*>);
 furnaceRemove(<immersiveengineering:metal>          , <immersiveengineering:metal:9>);
 furnaceRemove(<immersiveengineering:metal:1>        , <immersiveengineering:metal:10>);

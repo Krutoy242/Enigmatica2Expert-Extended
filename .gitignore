@@ -1,6 +1,7 @@
 # Command to show all the useless entries of this file:
 #> comm -23 <(grep -vE '^(#|$)' .gitignore | sort) <(git ls-files --others --ignored --exclude-standard | git check-ignore -v --stdin | cut -f1 | sed 's/^[^:]*:[0-9]*://' | sort -u)
 ~*
+/.claude
 /.curseclient
 /.mixin.out
 /.ReAuth.cfg
@@ -54,11 +55,13 @@
 /rt.properties
 /saves
 /screenshots
+/script_load_times.md
 /scripts/nc_script_addons/DONT_PUT_YOUR_SCRIPTS_IN_HERE
 /servers.dat
 /shaderpacks
 /structures/inactive
 /time.history
+/tinkersplannerantique
 /TombManyGraves
 /usercache.json
 /usernamecache.json

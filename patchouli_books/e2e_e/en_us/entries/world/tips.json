@@ -13,37 +13,31 @@
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)$(3)Mekanism Cables$() tend to cause lag, be careful not to overuse them.$(li)Press $(l)Backspace$() to go to the previous recipe in JEI.$(li)Instead of using filled $(n)buckets$() in recipes, you can use filled $(n)Portable Tanks$() for batch crafting.$(li)Beware the effects of poor $(2)nutrition$() (Hotkey N). Seemingly random debuffs can stem from a bad diet."
+      "text": "$(li)Press $(l)Backspace$() to go to the previous recipe in JEI.$(li)Instead of using filled $(n)buckets$() in recipes, you can use filled unstackable $(n)Tanks$().$(li)Beware the effects of poor $(2)nutrition$() (Hotkey N). Seemingly random debuffs can stem from a bad diet.$(li)To loot a dragon, $(l)right-click$() it with an empty hand."
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)To loot a dragon, $(l)right-click$() it with an empty hand.$(li)Keep your $(n)item cables$() short. Not only does it speed up the overall transfer, it is also easier on the server.$(li)Use $(l)F7$() to see the light levels, $(l)F9$() to see the chunk borders, and $(l)Ctrl+B$() to see the biome borders."
+      "text": "$(li)Keep your $(n)item cables$() short. Not only does it speed up the overall transfer, it is also easier on the server.$(li)Use $(l)F7$() to see the light levels, $(l)F9$() to see the chunk borders, and $(l)Ctrl+B$() to see the biome borders.$(li)Press $(l)Shift/Sneak$() over your grave to retrieve your items."
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)Press $(l)Shift/Sneak$() over your grave to retrieve your items.$(li)Holding the $(o)Drawer Key$() in your off-hand will automatically lock a newly placed Storage Drawer.$(li)The Immersive Petroleum $(n)Pumpjack$() needs an Immersive Engineering $(n)Fluid Pipe$() to bedrock to function."
+      "text": "$(li)Holding the $(o)Drawer Key$() in your off-hand will automatically lock a newly placed Storage Drawer.$(li)The Immersive Petroleum $(n)Pumpjack$() needs an Immersive Engineering $(n)Fluid Pipe$() to bedrock to function.$(li)$(n)Mob Spawners$() can be moved by using a $(n)Drop Of Evil$() on them, or by carrying them. ($(l)Shift + Right-Click$() by default)"
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)$(n)Mob Spawners$() can be moved by using a $(n)Drop Of Evil$() on them, or by carrying them. ($(l)Shift + Right-Click$() by default)$(li)$(l)Starlight Transmutation$() gives you access to $(n)End Stone$() without ever going to The End.$(li)You can put the Astral Sorcery $(n)Linking Wand$() in your offhand, and it won't stop linking."
+      "text": "$(li)You can put the Astral Sorcery $(n)Linking Wand$() in your offhand, and it won't stop linking.$(li)$(6)/xu_powersharing$() allows you to share Extra Utilities $(4)Grid Power$() with anyone on your server.$(li)$(6)/foodlist size$() shows you how many different foods you already ate.$(li)$(6)/undo_excavation$() can undo $(6)Ore Excavator$()"
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)$(6)/xu_powersharing$() allows you to share Extra Utilities $(4)Grid Power$() with anyone on your server.$(li)$(6)/foodlist size$() shows you how many different foods you already ate.$(li)$(6)/undo_excavation$() can undo $(6)Ore Excavator$()$(li)$(6)/wandOops$() can undo the $(6)Better Builder's Wand$()"
-    },
-    {
-      "item": "thaumicaugmentation:research_notes",
-      "type": "text",
-      "title": "Tips",
-      "text": "$(li)$(l)Astral Sorcery Rituals$() (and linked Ritual Anchors) act as $(l)Chunkloaders$().$(li)$(l)Horologium$() only appears every 36 days, the night after a $(l)Solar Eclipse$().$(li)$(5)Mystical Agriculture$() plants have a 5%% chance of dropping $(5)2 seeds$() when harvested with left click."
+      "text": "$(li)$(6)/wandOops$() can undo the $(6)Better Builder's Wand$()$(li)$(l)Astral Sorcery Rituals$() (and linked Ritual Anchors) act as $(l)Chunkloaders$().$(li)$(l)Horologium$() only appears every 36 days, the night after a $(l)Solar Eclipse$().$(li)$(5)Mystical Agriculture$() plants have a 5%% chance of dropping $(5)2 seeds$() when harvested with left click."
     },
     {
       "item": "thaumicaugmentation:research_notes",
@@ -73,37 +67,31 @@
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)A $(n)Skeleton$() that falls in Witch Water becomes a $(n)Wither Skeleton$(). $(n)Squid$() -> $(n)Ghast$().$(li)$(n)Cursed Earth$() spawns $(n)Wither Skeletons$() in $(l)Nether Fortress$()es.$(li)$(n)Ender Lily$() grows faster on End Stone. Get it in $(n)Stone Barrel$()s.$(li)Hover over an item and press $(l)Y$() to show it in nearby $(n)Chest$()s."
+      "text": "$(li)A $(n)Skeleton$() that falls in Witch Water becomes a $(n)Wither Skeleton$(). $(n)Squid$() -> $(n)Ghast$().$(li)$(n)Ender Lily$() grows faster on End Stone. Get it in $(n)Stone Barrel$()s.$(li)Hover over an item and press $(l)Y$() to show it in nearby $(n)Chest$()s.$(li)A stack of $(n)Steeleaves$() in your hotbar will dramatically fast repair with the $(a)Synergy$() trait"
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)A stack of $(n)Steeleaves$() in your hotbar will dramatically fast repair with the $(a)Synergy$() trait$(li)$(n)Building Gadgets$() can take items from ME network. Just $(l)shift-right-click$() on a $(n)Security Terminal$() with the gadget.$(li)The $(n)Maim Trap$() from Dark Utilities is the best way to kill mobs on high $(5)difficulty$()."
+      "text": "$(li)$(n)Building Gadgets$() can take items from ME network. Just $(l)shift-right-click$() on a $(n)Security Terminal$() with the gadget.$(li)The $(n)Maim Trap$() from Dark Utilities is the best way to kill mobs on high $(5)difficulty$().$(li)The Ice Bomb from Twilight Forest turns even flowing $(n)Lava$() into $(n)Obsidian$().$(li)Press $(l)Shift+F$() to lock stairs rotation."
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)The Ice Bomb from Twilight Forest turns even flowing $(n)Lava$() into $(n)Obsidian$().$(li)Press $(l)Shift+F$() to lock stairs rotation.$(li)You can $(l)shear$() Creepers.$(li)6+ mods support $(2)JEI dragging$() for item filters, just like $(l)EnderIO$().$(li)[MP] Hover over an item in a GUI and press $(l)Shift+T$() to show it in chat."
+      "text": "$(li)6+ mods support $(2)JEI dragging$() for item filters, just like $(l)EnderIO$().$(li)[MP] Hover over an item in a GUI and press $(l)Shift+T$() to show it in chat.$(li)[MP] $(l)Crouch + right-click$() another player to give them an item.$(li)[MP] Hold $(l)F4$() to ping a block.$(li)$(b)PSI Energy$() restores when you gather $(a)XP$().$(li)Calm down the fastest tool by press \"$(l)\\$()\"."
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)[MP] $(l)Crouch + right-click$() another player to give them an item.$(li)[MP] Hold $(l)F4$() to ping a block.$(li)$(b)PSI Energy$() restores when you gather $(a)XP$().$(li)Calm down the fastest tool by press \"$(l)\\$()\".$(li)Press \"$(l)Shift+F8$()\" to refresh your sound device."
+      "text": "$(li)Press \"$(l)Shift+F8$()\" to refresh your sound device.$(li)$(n)Fluid Tank$() from Ender IO - When trashing items in $(6)lava$(), a tiny amount of more $(6)lava$() will be produced.$(li)$(n)Carry on$() mob spawner trigger more mobs to spawn.$(li)Full $(n)Backpacks$() in AE2 system cause lags, or even $(5)cant be taken out$().$(li)$(n)Industrial Wires$() - cheapest way to convert between RF and EU."
     },
     {
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)$(n)Fluid Tank$() from Ender IO - When trashing items in $(6)lava$(), a tiny amount of more $(6)lava$() will be produced.$(li)$(n)Carry on$() mob spawner trigger more mobs to spawn.$(li)Game stages don't actually prohibit anything.$(li)Full $(n)Backpacks$() in AE2 system cause lags, or even $(5)cant be taken out$().$(li)$(n)Industrial Wires$() - cheapest way to convert between RF and EU."
-    },
-    {
-      "item": "thaumicaugmentation:research_notes",
-      "type": "text",
-      "title": "Tips",
-      "text": "$(li)$(n)Ctrl+Delete$() trashes item from inventory.$(li)$(n)Inventory System Storage$() can't be accessed directly, but work with hoppers and VAULTOPIC$(li)Right-Click $(n)Openblock's Tank$() with Liquid XP to receive experience.$(li)Want $(8)/home$() command? Craft $(n)Stable Ender Pearl$() + $(n)Chat Detector$()!$(li)Putting a Fluid Bus on an IE Fluid Tank $(4)causes lag$()"
+      "text": "$(li)$(n)Ctrl+Delete$() trashes item from inventory.$(li)$(n)Inventory System Storage$() can't be accessed directly, but work with hoppers and VAULTOPIC.$(li)Right-Click $(n)Openblock's Tank$() with Liquid XP to receive experience.$(li)Want $(8)/home$() command? Craft $(n)Stable Ender Pearl$() + $(n)Chat Detector$()!$(li)Putting a Fluid Bus on an IE Fluid Tank $(4)causes lag$()"
     },
     {
       "item": "thaumicaugmentation:research_notes",
@@ -128,6 +116,12 @@
       "type": "text",
       "title": "Tips",
       "text": "$(li)You can $(6)deconstruct TCon tools$() by placing them into output slot.$(li)$(n)Crook$() with $(n)Fortune$() yields up to 2x Redstone from $(4)Red Orchid$(). $(7)This also works with Tinkers' Construct Crooks!$(li)$(n)Immersive Engineering$() multiblocks cause notable FPS lag.  $(7)$(n)Entity Culling$(7) could be handy here!"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "Tips",
+      "text": "$(li)Any player can change their nickname with the $(6)/nick$() command.$(li)You can restock $(d)Lunch Bag/Box$() by right-clicking inventory with food."
     }
   ]
 }

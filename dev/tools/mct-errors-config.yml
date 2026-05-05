@@ -150,6 +150,9 @@ ignore:
   # Actually Additions warning, no harm
   - 'WARN. \[FML\]: \* Registry Item: The object .+ has been registered twice for the same name'
 
+  # TileVoidSiphon mixin conflict between thaumictweaker (priority 1000) and thaumicapi (priority 1001) — higher priority wins, harmless skip.
+  - 'WARN. .mixin.. @ModifyConstant conflict\. Skipping mixins\.thaumictweaker\.json:.+TileVoidSiphonMixin from mod \S+->@ModifyConstant::.+, already redirected by mixins\.thaumicapi\.json:.+TileVoidSiphonMixin from mod \S+->@ModifyConstant::.+'
+
   # Additional properties for mixins
   - 'ERROR. \[mixin\]: Mixin config .+ does not specify "minVersion" property'
 
@@ -380,7 +383,7 @@ ignore:
   - Zip file UniversalTweaks-.+.jar failed to read properly, it will be ignored
 
   # CraftPresence error - dont know how to configure this
-  - ERROR. .craftpresence.. Asset name "enigmatica2expert-extended" does not exist, attempting to use an alternative icon "curse"...
+  - ERROR. .craftpresence.. Asset name ".+" does not exist, attempting to use an alternative icon "curse"...
 
   # When modifying loot tables with same name, loottweaker explicitely rename this tables and write this in log
   - ERROR. .(loottweaker|daomephsta_loot_shared).sanity_checks.. Duplicate pool name '.+' in table '.+'. Duplicate added as '.+'
@@ -478,18 +481,21 @@ ignore:
   # Contributors loading errors
   - .Thread-\d+.ERROR. .draconicevolution.. Download Timed Out. https.//raw.githubusercontent.com/brandon3055/Project-Intelligence-Docs/master/ModDocs/manifest.json
   - .Client thread.ERROR. .draconicevolution.. Failed to download mod manifest.
-  - .Client thread.WARN. .biomesoplenty.. There was an issue retrieving trail info from remote!
+  - WARN. .biomesoplenty.. There was an issue retrieving trail info from remote!
   - .Thread-\d+.ERROR. .randomtweaks.. Failed to download conbtributor list
   - .Thread-\d+.WARN. .Cyclops Core.. Could not get version important users. java.net.SocketException
+  - '\[LLibrary\]: Failed to receive data from URL: https://gist\.githubusercontent\.com/Gegy/7a6d39cf7a2c1f794ffb9037e8146adc/raw/llibrary_patrons\.json'
   - .Actually Additions Special Fetcher.ERROR. .Actually Additions.. Fetching Special People Stuff failed! .You can ignore this error technically..
   - .CraftPresence.ERROR. .craftpresence.. Failed to check for updates, enable verbose mode to see errors...
   - .CraftPresence.ERROR. .craftpresence.. Unable to connect to Discord...
+  - '\[UniLib/ERROR\] \[unilib\]: Failed to check for updates, enable debug mode to see errors\.\.\.'
   - ERROR. .Foundation.. Thread.#\d+,Thread-\d+,\d+,main.[\s\S]+lumien.custommainmenu.handler.LoadStringURL.run
 
   # Failed to check for updates or download contributor/documentation files.
   - 'brandonscore.: ThreadFileDownloader: DL Failed'
   - 'brandonscore.: .Pi Reported Error.: Failed to download'
   - ERROR. .brandonscore.. .Pi Reported Error.. An error occurred while reading download list for mod .+ See console for stacktrace.
+  - '\[UniLib/ERROR\] \[unilib\]: Failed to check for updates, enable debug mode to see errors\.\.\.'
 
   # Started to log after updating ThaumicAdditions to version 12.7.9. Have no ingame effect
   - Could not add invalid research entry !?TAR
