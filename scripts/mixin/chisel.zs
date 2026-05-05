@@ -7,7 +7,7 @@ import native.net.minecraft.world.World;
 import native.team.chisel.api.IChiselItem;
 
 #mixin {targets: "team.chisel.common.block.TileAutoChisel"}
-zenClass MixinChisel {
+zenClass MixinTileAutoChisel {
 
     #mixin Inject
     #{
