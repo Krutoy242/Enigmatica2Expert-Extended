@@ -76,7 +76,7 @@ function getShard(
   for i, dec in deconstructed {
     if (isNull(dec.tag.Material)) continue;
     val partCost = scripts.mods.tconstruct.vars.partCosts[dec.definition.id];
-    val cost = !isNull(partCost) ? partCost : 1.0;
+    val cost = partCost ?? 1.0;
     listCost[i] = max(1.0, cost * durabValue * 2.0 + 0.5);
   }
 

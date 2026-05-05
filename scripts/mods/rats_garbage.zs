@@ -15,7 +15,7 @@ recipes.addShapeless('Garbage_placeholder', <rats:garbage_pile> * 6, [<rats:cont
 // Maze Stone - 100 = 0.9
 function getValue_hardness(a as IItemStack) as double { return max(0.0, (pow(1.0 + a.hardness, 0.25) - 1.0) / 10.0); }
 
-function getValue_harvestLevel(a as IItemStack) as double { return !isNull(a.asBlock()) && !isNull(a.asBlock().definition) ? a.asBlock().definition.harvestLevel as double / 10.0 : 0.0; }
+function getValue_harvestLevel(a as IItemStack) as double { return (isNull(a.asBlock()?.definition) ? 0.0 : a.asBlock().definition.harvestLevel) / 10.0; }
 
 // Wood Log     - 300    = 0.05
 // Coal Block   - 16000  = 0.25

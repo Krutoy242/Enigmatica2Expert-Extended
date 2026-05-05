@@ -111,7 +111,7 @@ function getChapterName(e as mods.zenutils.ftbq.CustomRewardEvent) as string {
 
 events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
   val universe = ServerQuestFile.INSTANCE.universe;
-  val forgePlayer = !isNull(universe) ? universe.getPlayer(e.player.getUUID()) : null;
+  val forgePlayer = universe?.getPlayer(e.player.getUUID());
 
   /**
   * Determine conflux level tag

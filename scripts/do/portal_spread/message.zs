@@ -38,7 +38,7 @@ function getModifierBlock(modifKey as string = null, amount as int = 1) as IItem
       for key in keys {
         if (!isNull(modifKey) && key != modifKey) continue;
         val item = itemUtils.getItem(blockDef.id, meta);
-        return isNull(item) ? null : item * amount;
+        return item?.withAmount(amount);
       }
     }
   }
@@ -79,7 +79,7 @@ function sendPortalMessage(player as IPlayer, rawData as IData) as void {
 
 function log(s as string, world as IWorld = null) as void {
   if (!Config.debug) return;
-  val msg = Config.prefix ~ (isNull(s) ? '' : s);
+  val msg = Config.prefix ~ (s ?? '');
   print(msg);
 
   if (isNull(world)) return;

@@ -244,7 +244,7 @@ function beneficiate(
 
   val oreName = (_oreName == 'Aluminum') ? 'Aluminium' : _oreName;
 
-  val exceptions = (opts?.exceptions as string) ?? '';
+  val exceptions = opts?.exceptions?.asString() ?? '';
 
   // Determine extra output based on JAOPCA
   val JA = mods.jaopca.JAOPCA.getOre(oreName);

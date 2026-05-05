@@ -42,11 +42,11 @@ function getOption(options as IData, field as string) as IData {
 }
 
 function getOptionEnergy(options as IData, default as int) as int {
-  return (!isNull(options) && !isNull(options.energy)) ? options.energy as int : default;
+  return (options?.energy?.asInt() ?? default) as int;
 }
 
 function getOptionTime(options as IData, default as int) as int {
-  return (!isNull(options) && !isNull(options.time)) ? options.time as int : default;
+  return (options?.time?.asInt() ?? default) as int;
 }
 
 // Picks one machine to inject recipe in it
@@ -59,7 +59,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   extra as IItemStack[] = null, extraChance as float[] = null, options as IData = null) as string {
   // Prepare machine name
   val machineName = machineNameAnyCase.toLowerCase();
-  val exceptions = isNull(exceptionsAnyCase) ? '' : exceptionsAnyCase.toLowerCase();
+  val exceptions = exceptionsAnyCase?.toLowerCase() ?? '';
 
   // Machine is exception -> exit function
   if (isException(exceptions, machineName)) { return ''; }
@@ -267,8 +267,8 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
         unpack: <immersiveengineering:mold:7>,
       } as IItemStack[string];
 
-      val mold = !isNull(options.mold) ? molds[options.mold.asString()] : null;
-      mods.immersiveengineering.MetalPress.addRecipe(outputItem0, inputIngr0, !isNull(mold) ? mold : molds.plate, 2000, inputIngr0.amount);
+      val mold = molds[options.mold?.asString()];
+      mods.immersiveengineering.MetalPress.addRecipe(outputItem0, inputIngr0, mold ?? molds.plate, 2000, inputIngr0.amount);
       return machineName;
     }
   }
@@ -741,7 +741,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
         // Last chance should determine temperature
         //   if no chance provided, its 100%
         var v = (arrN_float(extraChance, 0) * 100) as int;
-        val exChLen = !isNull(extraChance) ? extraChance.length : 0;
+        val exChLen = extraChance?.length ?? 0;
         val ch0 as int = (exChLen > 1 && v > 0) ? v : 100;
 
         v = (arrN_float(extraChance, 1) * 100) as int;

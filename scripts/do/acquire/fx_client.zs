@@ -35,7 +35,7 @@ function playAcquireSound(world as IWorld, vectorData as IData, volume as float,
 
 NetworkHandler.registerServer2ClientMessage('acquire', function(player, byteBuf) {
   val data = byteBuf.readData();
-  val value = isNull(data.value) ? 1.0 : data.value;
+  val value = data.value?.asDouble() ?? 1.0;
 
   val sqrtValue = Math.sqrt(value);
   val particleAmount = sqrtValue + 4;
@@ -51,7 +51,7 @@ NetworkHandler.registerServer2ClientMessage('acquire', function(player, byteBuf)
 
 NetworkHandler.registerServer2ClientMessage('acquire_star_and_flare', function(player, byteBuf) {
   val data = byteBuf.readData();
-  val value = isNull(data.value) ? 1.0 : data.value;
+  val value = data.value?.asDouble() ?? 1.0;
   val sqrtValue = Math.sqrt(value);
   
   showStarAndFlare(data.x, data.y, data.z, sqrtValue);

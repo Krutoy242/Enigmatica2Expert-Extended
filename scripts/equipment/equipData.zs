@@ -476,15 +476,15 @@ for entry in armorEntitys.asList() {
   val list = entry.groups.asList();
   var summ = 0.0;
   for group in list {
-    summ += isNull(group.weight) ? 1.0 : group.weight;
+    summ += group.weight?.asFloat() ?? 1.0;
   }
 
   var result = [] as double[];
   var a = 0.0;
   for group in list {
-    a += (isNull(group.weight) ? 1.0 : group.weight) / summ;
+    a += (group.weight?.asFloat() ?? 1.0) / summ;
     result += a;
-    utils.log('Normalized equip group [' ~ (isNull(group.name) ? 'Default' : group.name.asString()) ~ '] with prob. threshold: ' ~ a);
+    utils.log('Normalized equip group [' ~ (group.name?.asString() ?? 'Default') ~ '] with prob. threshold: ' ~ a);
   }
   normalizedWeights[entry] = result;
 }

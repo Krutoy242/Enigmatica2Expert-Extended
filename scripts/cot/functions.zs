@@ -379,7 +379,7 @@ VanillaFactory.putTileEntityTickFunction(1, function(tileEntity, world, pos) {
   if (!isNull(data) && data has 'time') {
     val time = data.time.asInt();
     if (time <= 0) {
-      createBedrockOre(world, data.name, data.prop, isNull(data.amount) ? 1 : data.amount, pos);
+      createBedrockOre(world, data.name, data.prop, data.amount?.asInt() ?? 1, pos);
       return;
     }
     tileEntity.updateCustomData({time: time - 1});

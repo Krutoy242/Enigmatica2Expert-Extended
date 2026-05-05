@@ -61,7 +61,7 @@ function getRecipeFunction(result as IItemStack, charge as int) as function(IIte
     if (ratio >= 1.0) return result.updateTag({ completed: 1 as byte });
 
     // Create new singularity data
-    var singularity = !isNull(ins0.tag.singularity) ? ins0.tag.singularity : {};
+    var singularity = ins0.tag?.singularity ?? {};
     for i, v in newMap { singularity += { [i]: v as int } as IData; }
 
     val ratioTurned = 1.0 - ratio;

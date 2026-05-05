@@ -9,7 +9,7 @@ zenClass Dim {
   zenConstructor(_id as int, _name as string, _tags as string[]) {
     id = _id;
     name = _name;
-    tags = isNull(_tags) ? [] as string[] : _tags;
+    tags = _tags ?? [] as string[];
   }
 
   function hasTag(tag as string) as bool {

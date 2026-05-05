@@ -78,7 +78,7 @@ function addRecipe(
   F.addAdvancedTooltip(function (item) { return chargeTooltip(item); });
 
   F.addAdvancedTooltip(function (item) {
-    val value = isNull(item.tag.bonus) ? 0.0 : item.tag.bonus.asDouble();
+    val value = item.tag?.bonus?.asDouble() ?? 0.0;
     val s = (value as string).split('\\.');
     return mods.zenutils.I18n.format(
       'e2ee.do.charge.bonus',

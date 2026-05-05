@@ -62,7 +62,7 @@ static slots as IEntityEquipmentSlot[] = [
 ] as IEntityEquipmentSlot[];
 
 function rnd_qubic(w as IWorld) as double { val a as double = w.random.nextDouble(); return a * a * a; }
-function dataOrData(a as IData, b as IData) as IData { return isNull(a) ? b : a; }
+function dataOrData(a as IData, b as IData) as IData { return a ?? b; }
 function pick_qubic(list as IData, w as IWorld) as string { return list[(rnd_qubic(w) * list.length) as int].asString(); }
 function pick_qubic_adv(list as IData, difficulty as double, w as IWorld) as string {
    // Coefficient of rarity.

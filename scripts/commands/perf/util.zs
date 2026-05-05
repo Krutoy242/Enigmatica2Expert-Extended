@@ -56,7 +56,7 @@ function tpMessage(
   extra as IData = null, extraTooltip as string = null
 ) as IData {
   val posText = tpText(dim, x, y, z);
-  val buttonText = isNull(text) ? posText : text;
+  val buttonText = text ?? posText;
   val command = `/tpx @p ${x} ${y} ${z} ${dim}`;
 
   val tpToText = `§8TP to ${posText}`;

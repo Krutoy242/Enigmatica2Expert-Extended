@@ -85,7 +85,7 @@ function arrN_float(arr as float[], n as int = 0) as float {
 // Get 0 element of Item Array. If null - return default
 function defaultItem0(items as IItemStack[], default as IItemStack) as IItemStack {
   val it = arrN_item(items, 0);
-  return !isNull(it) ? it : default;
+  return it ?? default;
 }
 
 // Get Nth element of float Array. If null or zero - return default

@@ -1654,7 +1654,7 @@ recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scyth
   [<thaumadditions:mithminite_scythe>.marked('scythe'), <thaumadditions:seal_symbol>.marked('seal')],
   function (out, ins, cInfo) {
   val scythe = ins.scythe;
-    val lorem as IData = (isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)) ? [] : scythe.tag.display.Lore;
+    val lorem as IData = scythe.tag?.display?.Lore ?? [];
     if(haveLoremError(lorem)) return <thaumadditions:mithminite_scythe>;
     if (lorem.length > 7 || lorem has loreColor[ins.seal.tag.Aspect]) return null;
 

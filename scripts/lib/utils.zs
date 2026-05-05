@@ -309,7 +309,7 @@ zenClass Utils {
     if (isNull(originItem) || isNull(originItem.tag) || originItem.tag == {} as IData) return out;
 
     // Copy whitelisted tags
-    var newTag = isNull(out.tag) ? {} as IData : out.tag;
+    var newTag = out.tag ?? {} as IData;
     val oldMod = originItem.definition.id.split(':')[0];
     val newMod = out.definition.id.split(':')[0];
     val sameMod = oldMod == newMod;

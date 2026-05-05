@@ -15,7 +15,7 @@ import native.net.minecraft.item.ItemStack;
 scripts.mixin.common.shared.Op.casesGotItemMsg
 = function (player as GameProfile, item as ItemStack) as void {
   val playerMP = server.getPlayerByUsername(player.name);
-  val name = isNull(playerMP) ? player.name : playerMP.nickname();
+  val name = playerMP?.nickname() ?? player.name;
   val data as IData = [{
       text : '### `',
       extra: [

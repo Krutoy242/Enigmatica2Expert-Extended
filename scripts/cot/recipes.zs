@@ -240,7 +240,7 @@ static absorber_crafts_count as long[crafttweaker.world.IWorld] = {} as long[cra
 
 val transformedAbsorber = <contenttweaker:knowledge_absorber>.anyDamage().transform(function(item, player) {
   absorber_crafts_count[player.world] =
-    !isNull(absorber_crafts_count[player.world]) ? absorber_crafts_count[player.world] as long + 1 : 1;
+    (absorber_crafts_count[player.world]?.asLong() ?? 0) + 1;
 
   val damaged = (item.damage) < item.maxDamage
     ? item.withDamage(item.damage + 1)

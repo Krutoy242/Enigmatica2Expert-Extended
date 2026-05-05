@@ -199,7 +199,7 @@ function grant(player as IPlayer) as void {
         val item = stcItems[i];
         
         val itemWithLore = item.withLore([STC_LORE]);
-        val existingTag = isNull(itemWithLore.tag) ? {} as IData : itemWithLore.tag;
+        val existingTag = itemWithLore.tag ?? {};
         val finalTag = existingTag + utils.shiningTag(6); // default color
 
         var itemNbt = itemWithLore.toData();

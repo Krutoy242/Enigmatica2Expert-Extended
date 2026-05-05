@@ -21,7 +21,7 @@ function parseAspects(aspectsString as string) as string {
 
     if (!isNull(aspectName)) {
       val amountStr = matcher.group(3);
-      val amount = isNull(amountStr) ? 1 : amountStr as int;
+      val amount = amountStr ?? 1;
 
       val emoji = scripts.mods.thaumcraft.aspect.emoji.aspectToEmoji[aspectName.toLowerCase()];
 

@@ -73,7 +73,7 @@ for ore_entry in oreDict {
   if (!isNull(ore_name)) {
     if (ore_name == 'Aluminum') continue;
     val exception = ore_liquid_exceptions[ore_name];
-    val liquid = game.getLiquid(isNull(exception) ? ore_name.toLowerCase() : exception);
+    val liquid = game.getLiquid(exception ?? ore_name.toLowerCase());
     if (isNull(liquid)) continue;
 
     mods.tconstruct.Melting.addRecipe(liquid * 144, ore_entry);
