@@ -9,12 +9,7 @@ import native.team.chisel.api.IChiselItem;
 #mixin {targets: "team.chisel.common.block.TileAutoChisel"}
 zenClass MixinTileAutoChisel {
 
-    #mixin Inject
-    #{
-    #    method: "func_73660_a()V",
-    #    at: {value: "HEAD"},
-    #    cancellable: true
-    #}
+    #mixin Inject { method: "func_73660_a()V", at: {value: "HEAD"}, cancellable: true }
     function checkChiselIsInstance(ci as CallbackInfo) as void {
         val world as World = this0.getWorld();
 
