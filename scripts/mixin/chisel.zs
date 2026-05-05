@@ -2,8 +2,6 @@
 #loader mixin
 
 import mixin.CallbackInfo;
-import native.net.minecraft.item.ItemStack;
-import native.net.minecraft.world.World;
 import native.team.chisel.api.IChiselItem;
 
 #mixin {targets: "team.chisel.common.block.TileAutoChisel"}
