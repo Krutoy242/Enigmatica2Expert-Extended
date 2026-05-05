@@ -127,7 +127,6 @@ Gen('pink')
 .add( 1600,           5 * 60 * 20, <industrialforegoing:laser_lens:6>)
 .add( 1000,           5 * 60 * 20, <twilightforest:castle_rune_brick>)
 .add( 1000,           5 * 60 * 20, <twilightforest:castle_door:2>)
-.add( 3000,           1 * 60 * 20, <appliedenergistics2:paint_ball:6>)
 .add( 6000,      1 * 60 * 60 * 20, <enderio:item_alloy_endergy_ingot:4>)
 .add( 2000,     10 * 60 * 60 * 20, <qmd:discharge_lamp:6>)
 ;
