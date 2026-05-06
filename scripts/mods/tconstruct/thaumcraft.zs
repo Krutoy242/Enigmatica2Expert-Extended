@@ -15,7 +15,7 @@ for aspect, id in ({
         item.marked('m'),
       ],
       function (out, ins, cInfo) {
-        if (isNull(ins) || isNull(ins.m) || isNull(ins.m.tag)) return null;
+        if (isNull(ins?.m?.tag)) return null;
         if (!isNull(ins.m.tag.infench)) {
           for enchTag in ins.m.tag.infench.asList() {
             if (enchTag.id.asShort() == id) return null;

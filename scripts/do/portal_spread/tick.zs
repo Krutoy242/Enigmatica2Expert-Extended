@@ -54,7 +54,7 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
   if (spreadDelayInt > 1 && e.world.worldInfo.worldTotalTime % spreadDelayInt != 0) return;
 
   for targetDimIdStr, dimData in getDimsMap(e.world).asMap() {
-    if (isNull(dimData) || isNull(dimData.asMap())) continue;
+    if (isNull(dimData?.asMap())) continue;
     tickPortalsToWorld(e.world, targetDimIdStr, dimData, recipeDimId);
   }
 });

@@ -1718,7 +1718,7 @@ recipes.addShapeless('REMOVEaugmentMithminiteScythe', <thaumadditions:seal_symbo
   ]
   , function (out, ins, cInfo) {
   val scythe = ins.scythe;
-    if (isNull(scythe) || isNull(scythe.tag) || isNull(scythe.tag.display) || isNull(scythe.tag.display.Lore)) {
+    if (isNull(scythe?.tag?.display) || isNull(scythe.tag.display.Lore)) {
       return null;
     }
     val lore = scythe.tag.display.Lore;

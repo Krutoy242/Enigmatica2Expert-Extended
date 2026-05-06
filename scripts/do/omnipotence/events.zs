@@ -21,14 +21,14 @@ events.register(function (e as PlayerTickEvent) {
 
 events.register(function (e as PlayerCloneEvent) {
   val player = e.player;
-  if (isNull(player) || isNull(player.world) || !op.isPlayerOmnipotent(player)) return;
+  if (isNull(player?.world) || !op.isPlayerOmnipotent(player)) return;
   op.applyAttributes(player);
 });
 
 // ⚡⏱ Speedup block mining
 events.register(function (e as PlayerBreakSpeedEvent) {
   val player = e.player;
-  if (isNull(player) || isNull(player.world) || isNull(e.block) || isNull(e.block.definition)) return;
+  if (isNull(player?.world) || isNull(e.block) || isNull(e.block.definition)) return;
   if (!op.isPlayerOmnipotent(player)) return;
   val hardness = e.blockState.getBlockHardness(player.world, e.position);
   e.newSpeed = crafttweaker.util.Math.max(e.originalSpeed, 12.0f * hardness + 1.0);

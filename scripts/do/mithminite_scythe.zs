@@ -336,7 +336,7 @@ function fabricoPill(scythe as IEntity) as void {
       && scythe.getDistanceSqToEntity(entityItem) < 4.0
     ) {
       val item = entityItem.item;
-      if (isNull(item) || isNull(item.ores)) return;
+      if (isNull(item?.ores)) return;
 
       for ore in item.ores {
         if (Pills has ore.name) {

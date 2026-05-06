@@ -286,7 +286,7 @@ zenClass Utils {
 
   // Turn one item into another but keep all tags
   val upgradeFnc as IRecipeFunction = function (out, ins, cInfo) {
-    if (ins has 'marked' && !isNull(ins.marked) && !isNull(ins.marked.tag)) {
+    if (!isNull(ins?.marked?.tag)) {
       val tag = ins.marked.tag;
       return out.withTag(tag);
     }
@@ -301,12 +301,12 @@ zenClass Utils {
     var originItem as IItemStack = ins.marked;
     if (isNull(originItem)) {
       for key, ingr in ins {
-        if (isNull(ingr) || isNull(ingr.tag)) continue;
+        if (isNull(ingr?.tag)) continue;
         originItem = ingr;
         break;
       }
     }
-    if (isNull(originItem) || isNull(originItem.tag) || originItem.tag == {} as IData) return out;
+    if (isNull(originItem?.tag) || originItem.tag == {} as IData) return out;
 
     // Copy whitelisted tags
     var newTag = out.tag ?? {} as IData;

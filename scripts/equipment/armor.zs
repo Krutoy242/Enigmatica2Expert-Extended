@@ -175,7 +175,7 @@ function armGridNormal(n as int, mat as IIngredient, prev as IData) as IIngredie
 }
 
 function createArmorSet(setData as IData, setId as string) as void {
-  if (!isNull(setData.recipe) && !isNull(setData.recipe.manual)) return; // Recipe shuld be manual only
+  if (!isNull(setData.recipe?.manual)) return; // Recipe shuld be manual only
   if (isNull(setData.material)) return; // No ingredient data
 
   val matStr = setData.material.asString();

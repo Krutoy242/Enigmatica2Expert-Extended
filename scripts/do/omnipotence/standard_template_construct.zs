@@ -184,7 +184,7 @@ function grant(player as IPlayer) as void {
   // Remove existing STC items
   for i in 0 .. player.inventorySize {
     val item = player.getInventoryStack(i);
-    if (!isNull(item) && !isNull(item.tag) && !isNull(item.tag.STC_Core)) {
+    if (!isNull(item?.tag?.STC_Core)) {
       item.mutable().shrink(item.amount);
     }
   }

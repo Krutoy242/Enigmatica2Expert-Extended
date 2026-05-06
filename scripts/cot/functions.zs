@@ -344,7 +344,7 @@ for i, id in singularIDs {
 // ------------------------------------------
 function createBedrockOre(world as World, contentId as string, contentProp as string, amount as int, pos as BlockPos) as void {
   val state = IBlockState.getBlockState(contentId, contentProp);
-  if (isNull(state) || isNull(state.block) || isNull(state.block.definition)) {
+  if (isNull(state?.block?.definition)) {
     logger.logWarning('[Cot TE]: trying to create Bedrock Ore with wrong content: id: "'~contentId~'" prop: "'~toString(contentProp)~'"');
   }
   world.setBlockState(IBlockState.getBlockState('bedrockores:bedrock_ore', []), {

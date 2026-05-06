@@ -48,7 +48,7 @@ function removePortal(world as IWorld, dimIdNum as int, portalId as string) as v
   log('removing portal: §7' ~ world.dimension ~ ' §8dimIdNum: §7' ~ dimIdNum ~ ' §8portalId: §7' ~ portalId, world);
   val dimId = dimIdNum as string;
   val data = world.getCustomWorldData();
-  if (isNull(data) || isNull(data.portalSpread) || isNull(data.portalSpread[dimId])) return;
+  if (isNull(data?.portalSpread) || isNull(data.portalSpread[dimId])) return;
   world.updateCustomWorldData({ portalSpread: (
     data.portalSpread - dimId + { [dimId]: data.portalSpread[dimId] - portalId } as IData
   ) });
@@ -67,7 +67,7 @@ function getDimsMap(world as IWorld) as IData {
 }
 
 function getPortalDataMap(dimData as IData) as IData {
-  if (isNull(dimData) || isNull(dimData.asMap())) return {};
+  if (isNull(dimData?.asMap())) return {};
   return dimData;
 }
 

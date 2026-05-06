@@ -23,7 +23,7 @@ events.onPlayerBreakSpeed(function (e as crafttweaker.event.PlayerBreakSpeedEven
   if (e.player.currentItem.definition.id != 'minecraft:stick') return;
 
   val blockItem = itemUtils.getItem(e.block.definition.id);
-  if (isNull(blockItem) || isNull(blockItem.ores) || blockItem.ores.length <= 0 || !(blockItem.ores has <ore:slabWood>)) return;
+  if (isNull(blockItem?.ores) || blockItem.ores.length <= 0 || !(blockItem.ores has <ore:slabWood>)) return;
 
   (e.player.world.native as native.net.minecraft.world.WorldServer).spawnParticle(
     EnumParticleTypes.SMOKE_NORMAL,

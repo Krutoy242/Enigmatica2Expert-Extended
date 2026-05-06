@@ -156,7 +156,7 @@ function nbtListToInvItems(listData as IData) as IItemStack[] {
 
   var count = 0;
   for it in items {
-    if (!isNull(it) && !isNull(it.id)) {
+    if (!isNull(it?.id)) {
       count += 1;
     }
   }
@@ -166,7 +166,7 @@ function nbtListToInvItems(listData as IData) as IItemStack[] {
   val result = arrayOf(count, null as IItemStack);
   var i = 0;
   for it in items {
-    if (!isNull(it) && !isNull(it.id)) {
+    if (!isNull(it?.id)) {
       result[i] = it.toItemStack();
       i += 1;
     }
@@ -219,7 +219,7 @@ addBackDisplay(<randomthings:enderletter>, function(item) {
   var length = 0;
   for i in 0 .. 9 {
     val it = item.tag.EnderLetterContent.memberGet('slot'~i);
-    if (isNull(it) || isNull(it.id)) continue;
+    if (isNull(it?.id)) continue;
     length += 1;
   }
 
@@ -227,7 +227,7 @@ addBackDisplay(<randomthings:enderletter>, function(item) {
   val result = arrayOf(length, null as IItemStack) as IItemStack[];
   for i in 0 .. 9 {
     val it = item.tag.EnderLetterContent.memberGet('slot'~i);
-    if (isNull(it) || isNull(it.id)) continue;
+    if (isNull(it?.id)) continue;
     result[k] = it.toItemStack();
     k += 1;
   }

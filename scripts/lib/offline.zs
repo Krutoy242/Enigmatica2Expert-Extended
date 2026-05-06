@@ -95,7 +95,7 @@ zenClass Op {
 
     val overworld = IWorld.getFromID(0);
     val data = overworld.getCustomWorldData();
-    if (isNull(data) || isNull(data.offline)) return default;
+    if (isNull(data?.offline)) return default;
     val values = data.offline.memberGet(uuid);
     if (isNull(values)) return default;
     val value = values.memberGet(key);

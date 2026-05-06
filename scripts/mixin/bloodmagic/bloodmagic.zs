@@ -170,7 +170,7 @@ zenClass MixinRitualLava {
     #}
     function replaceLavaBlockWithPyrotheum(lavaBlock as BlockDynamicLiquid) as IBlockState {
         val pyrotheum = FluidRegistry.getFluid("pyrotheum");
-        if (isNull(pyrotheum) || isNull(pyrotheum.getBlock())) {
+        if (isNull(pyrotheum?.getBlock())) {
             return lavaBlock.defaultState;
         }
         return pyrotheum.getBlock().defaultState;
@@ -198,7 +198,7 @@ zenClass MixinRitualLava {
 zenClass MixinRitualMagnetic {
     #mixin Inject {method: "getRadius", at: {value: "HEAD"}, cancellable: true}
     function getBiggerRadius(block as Block, cir as CallbackInfoReturnable) as void {
-        if (isNull(block) || isNull(block.registryName)) return;
+        if (isNull(block?.registryName)) return;
 
         val blockName = block.registryName.toString();
         if (blockName == "twilightforest:aurora_block") {

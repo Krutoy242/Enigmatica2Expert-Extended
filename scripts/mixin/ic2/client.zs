@@ -81,7 +81,7 @@ zenClass ItemCropSeedMixin {
 
         item.addPropertyOverride(ResourceLocation("crop_id"), function (stack as ItemStack, world as World, entity as EntityLivingBase) as float {
             val crop = item.getCropFromStack(stack);
-            if (isNull(crop) || isNull(crop.id)) return 0.0f;
+            if (isNull(crop?.id)) return 0.0f;
             if (cropIdMap has crop.id) return cropIdMap[crop.id as string] as float;
             return 0.0f;
         });

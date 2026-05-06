@@ -57,7 +57,7 @@ mods.tconstruct.Melting.removeRecipe(<liquid:energetic_silver>);
 function getBlockOrNine(ore as IOreDictEntry) as IIngredient {
   val itemName = ore.name.replaceAll('^(item|ingot)', 'block');
   val blockOre = oreDict.get(itemName);
-  if(isNull(blockOre) || isNull(blockOre.firstItem)) return (ore as IIngredient) * 9;
+  if(isNull(blockOre?.firstItem)) return (ore as IIngredient) * 9;
   return blockOre.firstItem as IIngredient;
 }
 

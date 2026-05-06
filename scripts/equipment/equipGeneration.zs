@@ -256,7 +256,7 @@ function onSpawnEvent(e as crafttweaker.event.EntityJoinWorldEvent) as void {
   if (isNull(e.entity.definition) || isNull(e.entity.definition.id)) return;
   val iGroup = getGroup(entity.definition.id);
 
-  if (isNull(iGroup) || isNull(iGroup.groups)) return;
+  if (isNull(iGroup?.groups)) return;
   equipEntity(iGroup, entity, e.world);
 }
 

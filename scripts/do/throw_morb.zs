@@ -96,7 +96,7 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
 
   var capturable = true;
   for ii in uncapturables {
-    if (isNull(ii) || isNull(ii.id)) continue;
+    if (isNull(ii?.id)) continue;
     if (pokemon.definition.id == ii.id) {
       capturable = false;
       break;

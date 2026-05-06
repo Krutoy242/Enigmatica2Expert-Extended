@@ -39,7 +39,7 @@ events.register(function (e as PlayerTickEvent) {
 
   // Get the block state directly under the player's feet
   val blockState = player.world.getBlockState(IBlockPos.create(floor(player.x), player.y - 0.06, floor(player.z)));
-  if (isNull(blockState) || isNull(blockState.block) || isNull(blockState.block.definition)) return;
+  if (isNull(blockState?.block?.definition)) return;
 
   val blockDef = blockState.block.definition;
 

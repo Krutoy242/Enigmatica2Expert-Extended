@@ -37,7 +37,7 @@ function setDrops(e as BlockHarvestDropsEvent, value as int) as void {
 
   // Try to convert Plank => Sticks
   if (isNull(output)) {
-    if (isNull(log) || isNull(log.ores) || log.ores.length == 0) return;
+    if (isNull(log?.ores) || log.ores.length == 0) return;
     for ore in log.ores {
       output = oreStick[ore.name];
       if (!isNull(output)) break;

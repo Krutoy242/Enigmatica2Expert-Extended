@@ -9,7 +9,7 @@ events.onPlayerLoggedIn(function (e as crafttweaker.event.PlayerLoggedInEvent) {
   if (e.player.world.remote) return;
 
   val data as IData = e.player.data.enigmatica;
-  val logCount = (!isNull(data) && !isNull(data.logCount)) ? data.logCount.asInt() + 1 : 1;
+  val logCount = 1 + (data?.logCount?.asInt() ?? 0);
 
   // First login ever
   if (logCount == 1) onFirstLogin(e);

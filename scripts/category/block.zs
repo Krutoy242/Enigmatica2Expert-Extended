@@ -30,7 +30,7 @@ function set(level as int, tool as string, ingr as IIngredient, hardness as int 
 
     val state = utils.getStateFromItem(item);
 
-    if (isNull(state) || isNull(state.block)) {
+    if (isNull(state?.block)) {
       warnItem(item, 'Trying to change block properties, but this item cant be converted to block');
       continue;
     }

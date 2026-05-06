@@ -34,7 +34,7 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
   for entityItem in world.getEntityItems() {
     // Must be aquamarine essence
     if (
-      isNull(entityItem) || isNull(entityItem.item)
+      isNull(entityItem?.item)
       || entityItem.item.definition.id != 'mysticalagriculture:aquamarine_essence'
     ) continue;
 

@@ -37,7 +37,7 @@ function checkAcquireBlock(
   state as IBlockState,
   position as IBlockPos
 ) as void {
-  if (player.world.remote || isNull(player) || isNull(state) || isNull(state.block)) return;
+  if (player.world.remote || isNull(player) || isNull(state?.block)) return;
   val blockDef = state.block.definition;
   if (isNull(blockDef) || isNull(blockDefRegistry[evtName]) || isNull(blockDefRegistry[evtName][blockDef])) return;
 

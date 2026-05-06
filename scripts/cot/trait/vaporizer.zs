@@ -67,7 +67,7 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as void {
     val currentPos = pos.add(pointData[1], pointData[2], pointData[3]);
     val state = world.getBlockState(currentPos);
 
-    if (!isNull(state) && !isNull(state.block) && !isNull(state.block.fluid)) {
+    if (!isNull(state?.block?.fluid)) {
       liquidBlocksFound += 1;
 
       world.setBlockState(<blockstate:minecraft:air>, currentPos);

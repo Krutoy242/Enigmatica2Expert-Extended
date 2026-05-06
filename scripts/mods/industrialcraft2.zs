@@ -708,7 +708,7 @@ recipes.remove(<ic2:crafting:5>);
 
 static copperCoil as IIngredient = <industrialwires:ic2_wire_coil:1>
   .withTag({ wireLength: 9, display: { Lore: ['Length must be 9+'] } }, false)
-  .only(function (item) { return item.hasTag && !isNull(item.tag) && !isNull(item.tag.wireLength) && item.tag.wireLength.asInt() >= 9; })
+  .only(function (item) { return !isNull(item?.tag?.wireLength) && item.tag.wireLength.asInt() >= 9; })
   .transformNew(function (item) {
     if (isNull(item.tag) || isNull(item.tag.wireLength)) return null;
     val len = item.tag.wireLength.asInt();

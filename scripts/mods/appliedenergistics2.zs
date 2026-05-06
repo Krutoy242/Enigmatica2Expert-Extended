@@ -357,7 +357,7 @@ craft.reshapeless(<appliedenergistics2:part:222>, "Mb", {
 // 	[null, A, null],
 // ],
 // function(out, ins, cInfo) {
-// 	if(isNull(ins) || isNull(ins.block)) return null;
+// 	if(isNull(ins?.block)) return null;
 //   return <appliedenergistics2:facade>.withTag({damage: ins.block.damage, item: ins.block.definition.id});
 // });
 // recipes.addShaped("Universal Facade Example", <appliedenergistics2:facade>.withTag({damage: 0, item: "minecraft:cobblestone"}), [

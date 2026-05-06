@@ -175,7 +175,7 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
       style_showChapters = true;
     }
 
-    if (isNull(forgePlayer) || isNull(forgePlayer.team) || forgePlayer.team.members.length <= 1) {
+    if (isNull(forgePlayer?.team) || forgePlayer.team.members.length <= 1) {
       // Solo player or team of 1
       style_name = e.player.nickname();
       style_time = formatPlayTime(forgePlayer);

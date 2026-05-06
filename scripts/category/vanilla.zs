@@ -191,7 +191,7 @@ recipes.addShaped('Crafting Station textured', <tconstruct:tooltables>, [
 recipes.addShapeless('Crafting Table conversion', <minecraft:crafting_table>, [
   <tconstruct:tooltables>.marked('station'),
 ], function (out, ins, cInfo) {
-  if (isNull(ins) || isNull(ins.station)) return null;
+  if (isNull(ins?.station)) return null;
 
   if (isNull(ins.station.tag)
     || isNull(ins.station.tag.textureBlock)

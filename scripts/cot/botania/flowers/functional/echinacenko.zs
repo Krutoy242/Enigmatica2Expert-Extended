@@ -46,7 +46,7 @@ function findPlayerAndNutrish(world as IWorld, pos as IBlockPos, subtile as SubT
 }
 
 function isPlayerMissingNutrient(data as IData, player as IPlayer) as bool {
-  if (isNull(data) || isNull(data.fruit)) return false;
+  if (isNull(data?.fruit)) return false;
   return (99.9f > data.fruit || 99.9f > data.protein || 99.9f > data.grain || 99.9f > data.vegetable || 99.9f > data.dairy);
 }
 

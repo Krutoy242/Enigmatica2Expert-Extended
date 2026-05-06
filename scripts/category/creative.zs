@@ -39,10 +39,7 @@ for i in 0 .. 9 {
 
 // Get gas name from IItemStack
 function getGas(item as IItemStack) as string {
-  if (!isNull(item) && !isNull(item.tag) && !isNull(item.tag.mekData) && !isNull(item.tag.mekData.stored) && !isNull(item.tag.mekData.stored.gasName)) {
-    return item.tag.mekData.stored.gasName.asString();
-  }
-  return '';
+  return item?.tag?.mekData?.stored?.gasName?.asString() ?? '';
 }
 
 // Add Shapeless Gas Tank recipe
