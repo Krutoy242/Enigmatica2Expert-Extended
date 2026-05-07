@@ -19,7 +19,7 @@ zenClass MixinOldJavaWarning {
         if (currentSplit.length > 1 && minSplit.length > 1 && currentSplit[1].matches("[0-9]+") && minSplit[1].matches("[0-9]+")) {
             val currentVersion as int = currentSplit[1] as int;
             val minVersion as int = minSplit[1] as int;
-            return minVersion > currentVersion;
+            return minVersion > currentVersion ? 1 : 0;
         }
         return 0;
     }
