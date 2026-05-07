@@ -13,7 +13,6 @@ import crafttweaker.block.IBlockState;
 import crafttweaker.data.IData;
 import crafttweaker.util.Position3f;
 import crafttweaker.world.IBlockPos;
-import crafttweaker.world.IFacing;
 import crafttweaker.world.IWorld;
 
 import scripts.do.portal_spread.config.Config;
@@ -118,7 +117,7 @@ function getTrueDelay(modifiers as int[]) as double {
 }
 
 function getTrueLookup(modifiers as int[]) as double {
-  val value = (Config.lookup as double)
+  val value = Config.lookup as double
   * pow(2, extractModif(modifiers, 'potent'))
   / pow(2, extractModif(modifiers, 'weak'));
   return value;

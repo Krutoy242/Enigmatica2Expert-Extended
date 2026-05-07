@@ -36,9 +36,9 @@ static IMPLOSIONTYPES as int[string] = {
 // randomtweaker or draconicevolution not installed in modpack
 scripts.do.portal_spread.fx.FX.particles = function (world as IWorld, x as double, y as double, z as double, vel as IVector3d, amount as int) as void {
   mods.randomtweaker.draconicevolution.IDraconicEvolutionFXHelper.spawnFX(
-    DE_PARTICLE_TYPES.soulExtraction as int
-    , crafttweaker.world.IVector3d.create(x, y, z)
-    , vel
-    , amount, 204, 100, 204
+    DE_PARTICLE_TYPES.soulExtraction as int,
+    crafttweaker.world.IVector3d.create(x, y, z),
+    vel,
+    amount, 204, 100, 204
   );
 };

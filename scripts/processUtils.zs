@@ -227,7 +227,7 @@ function avdRockXmlRecipeFlatten(
 
   // Get multiplier - how many times we can make recipe
   // with even input and output
-  val multiplier = min(maxStackSize, max(1, (64.0 / maxAmount)));
+  val multiplier = min(maxStackSize, max(1, 64.0 / maxAmount));
 
   // Reassemble ingredients with another amount
   var trueIngrs = [] as IIngredient[];

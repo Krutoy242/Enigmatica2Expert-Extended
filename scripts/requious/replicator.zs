@@ -3,7 +3,6 @@
 #reloadable
 
 import crafttweaker.item.IItemStack;
-import crafttweaker.util.Math;
 import crafttweaker.world.IFacing;
 import crafttweaker.world.IVector3d.create as V;
 import mods.requious.AssemblyRecipe;
@@ -36,11 +35,11 @@ craft.make(<requious:replicator>, ['pretty',
 
 // Replication statistics
 static statReplications as mods.zenutils.PlayerStat = mods.zenutils.PlayerStat.getBasicStat('stat.replications');
-scripts.lib.offline.op.getRegistry.set('stat_replications', function(player as IPlayer, value as string) as string {
+scripts.lib.offline.op.getRegistry.set('stat_replications', function (player as IPlayer, value as string) as string {
   val result = player.readStat(statReplications);
   return result as string;
 });
-scripts.lib.offline.op.setRegistry.set('stat_replications', function(player as IPlayer, value as string) as string {
+scripts.lib.offline.op.setRegistry.set('stat_replications', function (player as IPlayer, value as string) as string {
   val oldValue = player.readStat(statReplications);
   if (oldValue != value as int)
     player.addStat(statReplications, value as int - oldValue);
@@ -49,10 +48,10 @@ scripts.lib.offline.op.setRegistry.set('stat_replications', function(player as I
 
 // Define offline difficulty get/set
 // Required for scripts.lib.offline.get() and set() calls
-scripts.lib.offline.op.getRegistry.set('difficulty', function(player as IPlayer, value as string) as string {
+scripts.lib.offline.op.getRegistry.set('difficulty', function (player as IPlayer, value as string) as string {
   return player.difficulty as string;
 });
-scripts.lib.offline.op.setRegistry.set('difficulty', function(player as IPlayer, value as string) as string {
+scripts.lib.offline.op.setRegistry.set('difficulty', function (player as IPlayer, value as string) as string {
   player.difficulty = value; return null;
 });
 
@@ -197,7 +196,7 @@ function increaseDifficulty(m as MachineContainer, bufferConsumed as int, dfclty
   scripts.lib.offline.op.set(ownerUUID, 'difficulty', newDifficulty);
 
   // ⭐ FX effect
-  if (m.getInteger('tick') % 20 == 0)
+  if (m.getInteger('tick') % 20 == 0) {
     NetworkHandler.sendToAllAround('acquire_star_and_flare',
       m.pos.x, m.pos.y, m.pos.z, 30, m.world.getDimension(), function (b) {
         b.writeData({
@@ -206,6 +205,7 @@ function increaseDifficulty(m as MachineContainer, bufferConsumed as int, dfclty
           z    : m.world.random.nextDouble(0, 1.0) + m.pos.z,
           value: increase });
       });
+  }
 }
 
 // ========================================================
@@ -213,7 +213,7 @@ function increaseDifficulty(m as MachineContainer, bufferConsumed as int, dfclty
 // ========================================================
 function calcConsumption(upgrAmount as int, tick as double) as int {
   val s = pow(1.3, upgrAmount);
-  val resid = s - (s as int) as double;
+  val resid = s - s as int as double;
   if (resid == 0) return s as int;
   val bonus = (tick % (1.0 / resid) + 0.5) as int == 0 ? 1 : 0;
   return s as int + bonus;
@@ -231,11 +231,9 @@ function calcPowerConsumption(upgrAmount as int) as int {
 // ========================================================
 function getUpgrAmount(m as MachineContainer) as double {
   val upgr = m.getItem(upgrX, upgrY);
-  return (
-    isNull(upgr)
+  return isNull(upgr)
     || upgr.definition.id != 'ic2:upgrade'
     || upgr.damage != 0
-  )
     ? 0.0
     : upgr.amount as double;
 }
@@ -247,7 +245,9 @@ function getReplicateItem(m as MachineContainer, disk as IItemStack) as IItemSta
     || isNull(disk.tag.Pattern)
     || isNull(disk.tag.Pattern.id)
     || isNull(disk.tag.Pattern.Damage)
-  ) return null;
+  ) {
+    return null;
+  }
 
   return itemUtils.getItem(disk.tag.Pattern.id, disk.tag.Pattern.Damage);
 }
@@ -296,7 +296,9 @@ function pushOutput(m as MachineContainer, powr as int, dfclty as double) as voi
     item.definition.id == out.definition.id
     && item.damage == out.damage
     && out.amount < out.maxStackSize
-  ) return succes(m, powr, out * (out.amount + item.amount), dfclty);
+  ) {
+    return succes(m, powr, out * (out.amount + item.amount), dfclty);
+  }
 
   // Unable to output
   m.setInteger('goal', -1);

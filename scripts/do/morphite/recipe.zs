@@ -66,13 +66,13 @@ for morphCount in 1 .. (gridVolume + 1) {
       }
     }
 
-    recipes.addHiddenShaped('morphite_' ~ recipeIndex ~ '_' ~
-        ((isNull(grid[0]) ? '.' : 'o') ~ (isNull(grid[1]) ? '.' : 'o') ~ '/'
-        ~ (isNull(grid[2]) ? '.' : 'o') ~ (isNull(grid[3]) ? '.' : 'o')),
-      <minecraft:stone>.withDamage(recipeIndex),
-      [[grid[0], grid[1]], [grid[2], grid[3]]],
-      recipeFunction,
-      null
+    recipes.addHiddenShaped('morphite_' ~ recipeIndex ~ '_'
+    ~ ((isNull(grid[0]) ? '.' : 'o') ~ (isNull(grid[1]) ? '.' : 'o') ~ '/'
+    ~ (isNull(grid[2]) ? '.' : 'o') ~ (isNull(grid[3]) ? '.' : 'o')),
+    <minecraft:stone>.withDamage(recipeIndex),
+    [[grid[0], grid[1]], [grid[2], grid[3]]],
+    recipeFunction,
+    null
     );
     recipeIndex += 1;
   }

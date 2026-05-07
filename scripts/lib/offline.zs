@@ -11,8 +11,6 @@
 #reloadable
 #modloaded zenutils roidtweaker
 
-import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
 import crafttweaker.player.IPlayer;
 
@@ -44,7 +42,7 @@ zenClass Op {
       if (e.player.world.remote) return;
       for key, fnc in setRegistry.map {
         val value = this.get(e.player.uuid, key);
-        if(!isNull(value)) fnc.fnc(e.player, value);
+        if (!isNull(value)) fnc.fnc(e.player, value);
       }
     });
 
@@ -67,9 +65,9 @@ zenClass Op {
     overworld.setCustomWorldData(overworld.getCustomWorldData().deepUpdate({
       offline: {
         [uuid]: {
-          [key]: value
+          [key]: value,
         },
-      }
+      },
     }, mods.zenutils.DataUpdateOperation.MERGE));
   }
 

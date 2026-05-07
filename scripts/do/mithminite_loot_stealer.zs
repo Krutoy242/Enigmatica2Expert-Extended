@@ -17,7 +17,7 @@ function hasResearcherTrait(tool as IItemStack) as bool {
       && (tool.tag.Traits.asList() has 'researcher');
 }
 
-events.register(function(e as crafttweaker.event.EntityLivingDeathDropsEvent) {
+events.register(function (e as crafttweaker.event.EntityLivingDeathDropsEvent) {
   if (e.entity.world.remote) return;
   if (!(e.entity instanceof IEntityLivingBase)) return;
 

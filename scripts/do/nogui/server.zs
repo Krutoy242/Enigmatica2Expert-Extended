@@ -14,13 +14,13 @@ static whitelist as string[] = [
 events.register(function (e as PlayerContainerEvent.Open) {
   val player = e.getEntityPlayer().wrapper;
   if (!player.hasGameStage('nogui')) return;
-  
+
   // Ensure we are on the server
   if (isNull(player.world) || player.world.remote) return;
 
   val container = e.getContainer();
   if (isNull(container)) return;
-  
+
   val containerClass = typeof(container);
 
   // 1. Whitelist Check: If the container class matches any pattern, allow it.
@@ -32,7 +32,7 @@ events.register(function (e as PlayerContainerEvent.Open) {
 
   // 2. Close: If it's not on the whitelist, close the container.
   utils.log('NoGUI (Server): Closing container ' ~ containerClass);
-  
+
   // Cast to EntityPlayerMP to access server-side methods
   val playerMP = player.native as EntityPlayerMP;
   playerMP.closeContainer();

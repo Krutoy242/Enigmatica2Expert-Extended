@@ -14,7 +14,9 @@ function loadBowl(e as crafttweaker.event.PlayerInteractBlockEvent) as void {
     || data.FluidName != 'water'
     || isNull(data.Amount)
     || data.Amount != 1000
-  ) return;
+  ) {
+    return;
+  }
 
   val newData = data
   - 'FluidName'
@@ -36,7 +38,9 @@ function unloadBowl(e as crafttweaker.event.PlayerInteractBlockEvent) as void {
     || !isNull(data.FluidName)
     || !isNull(data.Amount)
     || isNull(data.Empty)
-  ) return;
+  ) {
+    return;
+  }
 
   val newData = data
   - 'Empty'

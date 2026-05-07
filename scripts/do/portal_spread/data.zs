@@ -36,8 +36,8 @@ function updatePortal(world as IWorld, dimTo as int, pos as IBlockPos, newData a
   val oldData = world.getCustomWorldData();
   log('updating protal in dim: §7' ~ world.dimension ~ ' §8dimTo: §7' ~ dimTo ~ ' §8portalId: §7' ~ portalId
   ~ '\n§8oldData: §7' ~ (isNull(oldData.portalSpread) ? '' : oldData.portalSpread.asString())
-  ~ '\n§8newData: §3' ~ newData.asString()
-  , world);
+  ~ '\n§8newData: §3' ~ newData.asString(),
+  world);
   world.setCustomWorldData(oldData.deepUpdate({ portalSpread: {
     [dimToStr]: { [portalId]: newData },
   } }, mods.zenutils.DataUpdateOperation.MERGE));
@@ -49,9 +49,9 @@ function removePortal(world as IWorld, dimIdNum as int, portalId as string) as v
   val dimId = dimIdNum as string;
   val data = world.getCustomWorldData();
   if (isNull(data?.portalSpread) || isNull(data.portalSpread[dimId])) return;
-  world.updateCustomWorldData({ portalSpread: (
-    data.portalSpread - dimId + { [dimId]: data.portalSpread[dimId] - portalId } as IData
-  ) });
+  world.updateCustomWorldData({ portalSpread:
+    data.portalSpread - dimId + { [dimId]: data.portalSpread[dimId] - portalId } as IData,
+  });
   log('  portal removed.', world);
 }
 
@@ -62,7 +62,9 @@ function getDimsMap(world as IWorld) as IData {
     isNull(data)
     || isNull(data.portalSpread)
     || isNull(data.portalSpread.asMap())
-  ) return {};
+  ) {
+    return {};
+  }
   return data.portalSpread;
 }
 

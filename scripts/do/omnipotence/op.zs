@@ -102,9 +102,9 @@ zenClass Op {
       val vel = IVector3d.create(0.1, 0.1, 0.1);
       for i in 0 .. 60 {
         val a = 0.1 * i;
-        cat.then(function(w, c) {
+        cat.then(function (w, c) {
           particles(player.world, player.x + cos(a) * a, player.y + a / 2, player.z + sin(a) * a, vel, 10);
-          particles(player.world, player.x + cos(a+pi) * a, player.y + a / 2, player.z + sin(a+pi) * a, vel, 10);
+          particles(player.world, player.x + cos(a + pi) * a, player.y + a / 2, player.z + sin(a + pi) * a, vel, 10);
         });
       }
       cat.start();

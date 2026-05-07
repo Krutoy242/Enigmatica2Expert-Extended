@@ -33,7 +33,7 @@ function playAcquireSound(world as IWorld, vectorData as IData, volume as float,
     volume, pitch, true);
 }
 
-NetworkHandler.registerServer2ClientMessage('acquire', function(player, byteBuf) {
+NetworkHandler.registerServer2ClientMessage('acquire', function (player, byteBuf) {
   val data = byteBuf.readData();
   val value = data.value?.asDouble() ?? 1.0;
 
@@ -49,11 +49,11 @@ NetworkHandler.registerServer2ClientMessage('acquire', function(player, byteBuf)
   playAcquireSound(player.world, data, sqrtValue / 64 + 0.1, 0.8 / (sqrtValue / 10 + 1));
 });
 
-NetworkHandler.registerServer2ClientMessage('acquire_star_and_flare', function(player, byteBuf) {
+NetworkHandler.registerServer2ClientMessage('acquire_star_and_flare', function (player, byteBuf) {
   val data = byteBuf.readData();
   val value = data.value?.asDouble() ?? 1.0;
   val sqrtValue = Math.sqrt(value);
-  
+
   showStarAndFlare(data.x, data.y, data.z, sqrtValue);
   if (sqrtValue > 0.1) playAcquireSound(player.world, data, sqrtValue / 64 + 0.1, 0.5);
 });

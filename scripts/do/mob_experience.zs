@@ -7,14 +7,14 @@ import crafttweaker.potions.IPotion;
 import native.net.minecraft.util.EnumParticleTypes;
 
 static experience_potions as int[][IPotion][] = [
-//{<potion:minecraft:strength>      : [ 4, 1]},
-  {<potion:minecraft:speed>         : [ 4, 1]},
-  {<potion:minecraft:glowing>       : [ 0, 1]},
-  {<potion:minecraft:health_boost>  : [ 4, 4]},
-  {<potion:potioncore:iron_skin>    : [ 4, 1]},
-  {<potion:potioncore:diamond_skin> : [ 4, 1]},
-  //{<potion:minecraft:regeneration>  : [ 4, 1]}, // Not working for some reason
-  {<potion:potioncore:revival>      : [ 0, 1]},
+// {<potion:minecraft:strength>      : [ 4, 1]},
+  { <potion:minecraft:speed>         : [4, 1] },
+  { <potion:minecraft:glowing>       : [0, 1] },
+  { <potion:minecraft:health_boost>  : [4, 4] },
+  { <potion:potioncore:iron_skin>    : [4, 1] },
+  { <potion:potioncore:diamond_skin> : [4, 1] },
+  // {<potion:minecraft:regeneration>  : [ 4, 1]}, // Not working for some reason
+  { <potion:potioncore:revival>      : [0, 1] },
 ] as int[][IPotion][];
 
 static potionTime as int = 20 * 60;

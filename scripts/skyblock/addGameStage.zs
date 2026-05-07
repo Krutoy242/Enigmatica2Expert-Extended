@@ -24,7 +24,8 @@ function onFirstLogin(e as crafttweaker.event.PlayerLoggedInEvent) as void {
 
   if (e.player.world.worldType == 'voidworld' && e.player.world.dimension == 3) {
     grant(e.player);
-  } else {
+  }
+  else {
     if (e.player.world.dimensionType == 'planet') {
       scripts.do.omnipotence.op.op.grant(e.player);
       scripts.do.omnipotence.standard_template_construct.grant(e.player);

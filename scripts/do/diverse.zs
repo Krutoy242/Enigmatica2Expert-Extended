@@ -11,7 +11,6 @@ and if you provide more diversity in those items you need less of them
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import crafttweaker.recipes.ICraftingInfo;
 import crafttweaker.util.Math;
 
 function getRecipeFunction(result as IItemStack, charge as int) as function(IItemStack[string],bool)IItemStack {
@@ -78,7 +77,6 @@ function addRecipe(
   all as IIngredient, // All items that may be used as fuel
   charge as int // Charge required
 ) as function(IItemStack[string],bool)IItemStack {
-
   result.anyDamage().addAdvancedTooltip(function (item) {
     if (isNull(item)) return null;
     return game.localize((item.tag?.completed?.asShort() ?? 0 as short) == 1 as short
@@ -90,7 +88,7 @@ function addRecipe(
   val recipeFunction = getRecipeFunction(result, charge);
 
   // Actual recipe
-  recipes.addShaped(recipeName, result.withTag({completed: 1 as byte}), [
+  recipes.addShaped(recipeName, result.withTag({ completed: 1 as byte }), [
     [(empty | result.anyDamage()).marked('0'), all.marked('1'), all.marked('2')],
     [all.marked('3'), all.marked('4'), all.marked('5')],
     [all.marked('6'), all.marked('7'), all.marked('8')],
@@ -123,7 +121,7 @@ function getItemFromString(itemStr as string) as IItemStack {
   return itemUtils.getItem(split[0] ~ ':' ~ split[1], split[2] as int);
 }
 
-/* 
+/*
 if (utils.DEBUG) {
   print('### scripts.do.diverse power depending on input:');
   for i in 1 .. 40 {

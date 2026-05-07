@@ -76,10 +76,10 @@ function getStatus(world as IWorld) as string {
   val maxRadius = scripts.do.portal_spread.sphere.maxRadius;
 
   return Config.prefix ~ '§7Maximum radius§8: §f'
-    ~ maxRadius ~ '\n'
+  ~ maxRadius ~ '\n'
 
   ~ Config.prefix ~ '§7#Portals in this dim§8: §f'
-    ~ scripts.do.portal_spread.data.getPortalCount(world) ~ '\n'
+  ~ scripts.do.portal_spread.data.getPortalCount(world) ~ '\n'
 
   ~ (portalsStr == '' ? ''
     : Config.prefix ~ '§7Portals§8:\n' ~ portalsStr ~ '\n')
@@ -122,9 +122,9 @@ function enableDebug() as string {
   if (!Config.debug) {
     Config.debug = true;
     return Config.prefix ~ '§7Debug mode §2enabled§7.'
-      ~ '\n§8Portals now spread §7without resetting§8 their lookup radius.'
-      ~ '\n§8You must be in §7Creative Mode§8 to see debug messages in chat.'
-      ~ '\n§8Messages also repeated in file §7crafttweaker.log';
+    ~ '\n§8Portals now spread §7without resetting§8 their lookup radius.'
+    ~ '\n§8You must be in §7Creative Mode§8 to see debug messages in chat.'
+    ~ '\n§8Messages also repeated in file §7crafttweaker.log';
   }
   Config.debug = false;
   return Config.prefix ~ '§7Debug mode §3disabled§7.';
@@ -132,7 +132,7 @@ function enableDebug() as string {
 
 function getConfigMsg() as string {
   return Config.prefix ~ '§7New global configuration:'
-    ~ '\n§7Ticks between spread attempts§8: §f' ~ Config.spreadDelay
+  ~ '\n§7Ticks between spread attempts§8: §f' ~ Config.spreadDelay
   ~ '\n§7Blocks scanned each attempt§8: §f' ~ Config.lookup
   ;
 }

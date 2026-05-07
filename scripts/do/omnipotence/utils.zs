@@ -7,7 +7,7 @@ import crafttweaker.entity.AttributeModifier;
 
 function setAttribute(player as IPlayer, id as string, uuid as string, value as double, operation as int = 0/* ADD */) as void {
   val attribute = player.getAttribute(id);
-  var modifier = attribute.getModifier(uuid);
+  val modifier = attribute.getModifier(uuid);
   if (isNull(modifier))
     attribute.applyModifier(AttributeModifier.createModifier('Omnipotence', value, operation, uuid));
 }

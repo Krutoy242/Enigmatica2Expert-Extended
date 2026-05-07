@@ -33,9 +33,7 @@
  */
 
 import crafttweaker.data.IData;
-import crafttweaker.entity.IEntityEquipmentSlot;
 import crafttweaker.event.PlayerInteractBlockEvent;
-import crafttweaker.item.IItemStack;
 
 import native.blusunrize.immersiveengineering.api.tool.ExcavatorHandler;
 import native.blusunrize.immersiveengineering.common.blocks.metal.TileEntitySampleDrill;
@@ -46,28 +44,28 @@ import scripts.jei.crafting_hints;
 val ENERGY_COST = 8000 * 10; // base cost is 8000RF, we make it 10 times bigger as the cost of saving time
 
 // Recipe hint
-val ENERGY_FULL_EXAMPLE = 100000; //must be no smaller than `ENERGY_COST` to prevent display error
+val ENERGY_FULL_EXAMPLE = 100000; // must be no smaller than `ENERGY_COST` to prevent display error
 crafting_hints.addInsOutsCatl(
   [
     <tconstruct:hammer>.withTag({
-      FluxedEnergyMax: ENERGY_FULL_EXAMPLE, 
-      Traits: ["tconevo.fluxed"], 
-      Modifiers: [
-        {identifier: "tconevo.fluxed", color: 11091771, level: 1, modifierUsed: 1 as byte}
-      ], 
-      FluxedEnergy: ENERGY_FULL_EXAMPLE
-    })
+      FluxedEnergyMax: ENERGY_FULL_EXAMPLE,
+      Traits         : ['tconevo.fluxed'],
+      Modifiers      : [
+        { identifier: 'tconevo.fluxed', color: 11091771, level: 1, modifierUsed: 1 as byte },
+      ],
+      FluxedEnergy: ENERGY_FULL_EXAMPLE,
+    }),
   ],
   [
     <tconstruct:hammer>.withTag({
-      FluxedEnergyMax: ENERGY_FULL_EXAMPLE, 
-      Traits: ["tconevo.fluxed"], 
-      Modifiers: [
-        {identifier: "tconevo.fluxed", color: 11091771, level: 1, modifierUsed: 1 as byte}
-      ], 
-      FluxedEnergy: ENERGY_FULL_EXAMPLE - ENERGY_COST
+      FluxedEnergyMax: ENERGY_FULL_EXAMPLE,
+      Traits         : ['tconevo.fluxed'],
+      Modifiers      : [
+        { identifier: 'tconevo.fluxed', color: 11091771, level: 1, modifierUsed: 1 as byte },
+      ],
+      FluxedEnergy: ENERGY_FULL_EXAMPLE - ENERGY_COST,
     }),
-    <immersiveengineering:coresample>
+    <immersiveengineering:coresample>,
   ],
   <immersiveengineering:metal_device1:7>
 );
@@ -84,7 +82,7 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
     || player.fake
     || !player.isSneaking
     || event.hand != 'MAIN_HAND'
-    || !(<item:tconstruct:hammer>.matches(item))
+    || !<item:tconstruct:hammer>.matches(item)
     || block.definition.id != 'immersiveengineering:metal_device1'
   ) {
     return;
@@ -97,7 +95,7 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
   }
   player.setItemToSlot(
     mainHand,
-    item.updateTag({ 'FluxedEnergy': (energy - ENERGY_COST) } as IData)
+    item.updateTag({ FluxedEnergy: energy - ENERGY_COST } as IData)
   );
 
   // get mineral sample
@@ -107,7 +105,7 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
   /**
     @see blusunrize.immersiveengineering.common.blocks.metal.TileEntitySampleDrill
     @see blusunrize.immersiveengineering.api.tool.ExcavatorHandler
-     */
+   */
   val worldInfo = ExcavatorHandler.getMineralWorldInfo(
     nativeWorld,
     nativePlayer.chunkCoordX,
@@ -119,7 +117,7 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
     nativePlayer.chunkCoordZ,
     worldInfo
   ).wrapper;
-  //attach oil info
+  // attach oil info
   val oilInfo = PumpjackHandler.getOilWorldInfo(
     nativeWorld,
     nativePlayer.chunkCoordX,
@@ -127,8 +125,8 @@ events.onPlayerInteractBlock(function (event as PlayerInteractBlockEvent) {
   );
   if (!isNull(oilInfo) && !isNull(oilInfo.getType())) {
     sample = sample.withTag(sample.tag + {
-      "resType": oilInfo.getType().name,
-      "oil": oilInfo.current
+      resType: oilInfo.getType().name,
+      oil    : oilInfo.current,
     });
   }
 

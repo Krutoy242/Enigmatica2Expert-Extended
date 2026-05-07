@@ -1,7 +1,6 @@
 #modloaded mysticalagriculture
 #reloadable
 
-import crafttweaker.world.IFacing;
 import crafttweaker.util.Math.abs;
 import native.net.minecraft.util.EnumParticleTypes;
 
@@ -29,14 +28,18 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
     world.dayTime
     || world.raining
     || world.worldInfo.worldTotalTime % 20 != 0
-  ) return;
+  ) {
+    return;
+  }
 
   for entityItem in world.getEntityItems() {
     // Must be aquamarine essence
     if (
       isNull(entityItem?.item)
       || entityItem.item.definition.id != 'mysticalagriculture:aquamarine_essence'
-    ) continue;
+    ) {
+      continue;
+    }
 
     // Must have appropriate amount
     val p = entityItem.position;

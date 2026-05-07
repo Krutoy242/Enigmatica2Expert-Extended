@@ -47,7 +47,7 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
   if (e.world.remote || e.phase != 'END') return;
   if (isNull(spread.dimHasRecipes[e.world.dimension])) return;
   val fallback = spread.dimFallbacks[e.world.dimension];
-  val recipeDimId = !isNull(fallback) ? (fallback as int) : e.world.dimension;
+  val recipeDimId = !isNull(fallback) ? fallback as int : e.world.dimension;
 
   // Skip ticks for every portal
   val spreadDelayInt = Config.spreadDelay as int;
@@ -116,7 +116,7 @@ function tickPortalsToWorld(world as IWorld, targetDimIdStr as string, dimData a
     if (trueDelay <= 0) continue;
 
     // Skip generation on slow modifier
-    if (trueDelay >= 1.0 && (world.worldInfo.worldTotalTime % (trueDelay as int)) != 0) continue;
+    if (trueDelay >= 1.0 && (world.worldInfo.worldTotalTime % trueDelay as int) != 0) continue;
 
     // Determine how many blocks could be transformed in one run
     val repeats = (1.0 / trueDelay) as int;
@@ -154,7 +154,7 @@ static portalIndexes as int[string] = {} as int[string];
 
 function getNexPortalPos(fullPortalId as string, offset as Position3f, maxSpreadIndex as int) as Position3f {
   val _i = portalIndexes[fullPortalId];
-  val i = (isNull(_i) || _i >= maxSpreadIndex) ? 1 : _i as int;
+  val i = isNull(_i) || _i >= maxSpreadIndex ? 1 : _i as int;
   val tuple = getNextPoint(i);
   portalIndexes[fullPortalId] = tuple[0];
   return Position3f.create(tuple[1] + offset.x, tuple[2] + offset.y, tuple[3] + offset.z);
@@ -184,7 +184,7 @@ function spreadBlock(
 
   if (numId == 0) return false; // Air
 
-  if(isNull(currentDirection.spreadWhitelist[inworldDefinition]) || !isNull(currentDirection.spreadBlacklist[inworldDefinition]))
+  if (isNull(currentDirection.spreadWhitelist[inworldDefinition]) || !isNull(currentDirection.spreadBlacklist[inworldDefinition]))
     return false;
 
   // If block is wildcarded, lookup for its default state
@@ -211,7 +211,9 @@ function spreadBlock(
   if (
     numId == blockToNumId
     && inworldState == blockTo
-  ) return false; // Already transformed
+  ) {
+    return false;
+  } // Already transformed
 
   // Copy parameters if wildcarded
   if (isWildcarded) {
@@ -250,7 +252,9 @@ function isShowParticles(world as IWorld, portalPos as Position3f) as bool {
     if (
       !isNull(item)
       && item.definition.id == 'minecraft:flint_and_steel'
-    ) return true;
+    ) {
+      return true;
+    }
   }
   return false;
 }

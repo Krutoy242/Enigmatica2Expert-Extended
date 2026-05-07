@@ -27,7 +27,9 @@ function notifyPlayers(world as IWorld, p as Position3f, messageType as string) 
       abs(pl.x - p.x) > payerNotifyDistance
       || abs(pl.y - p.y) > payerNotifyDistance
       || abs(pl.z - p.z) > payerNotifyDistance
-    ) continue;
+    ) {
+      continue;
+    }
     playerMessage(pl, messageType);
   }
 }
@@ -92,7 +94,7 @@ function log(s as string, world as IWorld = null) as void {
 function tellrawItem(item as IItemStack, color as string = null, showName as bool = true) as IData {
   val data = [
     {
-      text: item.amount > 1 ? item.amount ~'x' : '',
+      text: item.amount > 1 ? item.amount ~ 'x' : '',
       hoverEvent: {
         action: 'show_item',
         value: '{id:"' ~ item.definition.id ~ '",Count:1,Damage:' ~ item.damage ~ 's}', // item.toSNBT(),
@@ -101,17 +103,17 @@ function tellrawItem(item as IItemStack, color as string = null, showName as boo
         {
           // The major part of `iconQuark` is actually 3 spaces, which are reserved for Quark item rendering
           // So you needs Quark to get the icon
-          text: '§f   '
-        } + (!showName ? {} :
-          {extra: [(item.hasDisplayName ? item.tag.display.Name : {translate: item.name ~'.name'})]}
-        )
-      ]
+          text: '§f   ',
+        } + (!showName ? {}
+          : { extra: [item.hasDisplayName ? item.tag.display.Name : { translate: item.name ~ '.name' }] }
+        ),
+      ],
     }
-    + (color ? {color: color} : {}),
+    + (color ? { color: color } : {}),
   ] as IData;
   return data;
 }
 
 function tellrawItemObj(item as IItemStack, color as string = null, showName as bool = true) as IData {
-  return {text: '', extra: tellrawItem(item, color, showName)};
+  return { text: '', extra: tellrawItem(item, color, showName) };
 }

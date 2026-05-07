@@ -21,6 +21,7 @@ zenClass Op {
   function addSpeedupBlock(item as IItemStack, multiplier as double) as void {
     return addSpeedupBlock(item, function (state as IBlockState) as double { return multiplier; });
   }
+
   function addSpeedupBlock(item as IItemStack, checkFn as function(IBlockState)double) as void {
     val blockDef = item.asBlock().definition;
     speedupDefinitions[blockDef] = speedupConditions.length;

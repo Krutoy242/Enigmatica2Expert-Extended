@@ -14,15 +14,21 @@ events.onPlayerTick(function (e as crafttweaker.event.PlayerTickEvent) {
   if (
     player.world.remote
     || player.world.worldInfo.worldTotalTime % 2 != 0
-  ) return;
-  
+  ) {
+    return;
+  }
+
   if (player.dimension == 0
     && player.posY >= SKY_TP_HEIGHT
-  ) return tpToSky(player);
+  ) {
+    return tpToSky(player);
+  }
 
   if (player.dimension == 3
     && player.posY <= -100
-  ) return tpFromSky(player);
+  ) {
+    return tpFromSky(player);
+  }
 });
 
 function tpToSky(player as IPlayer) as void {
@@ -47,7 +53,7 @@ function tpToSky(player as IPlayer) as void {
 
   // Show message about staying in skyblock forever
   player.world.catenation().sleep(60).run(function (world, context) {
-    if(isNull(player)) return;
+    if (isNull(player)) return;
     player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation('e2ee.skyblock.stay_forever'));
   }).start();
 }
@@ -60,11 +66,11 @@ function tpFromSky(player as IPlayer) as void {
   );
 }
 
-events.onCommand(function(e as crafttweaker.event.CommandEvent) {
-  if(isNull(e.command)
-    || (e.command.name != "island")
+events.onCommand(function (e as crafttweaker.event.CommandEvent) {
+  if (isNull(e.command)
+    || (e.command.name != 'island')
     || (e.parameters.length == 0)
-    || (e.parameters[0] != "create")
+    || (e.parameters[0] != 'create')
     || !(e.commandSender instanceof IPlayer)) {
     return;
   }

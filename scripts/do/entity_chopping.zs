@@ -6,7 +6,7 @@ import crafttweaker.player.IPlayer;
 import crafttweaker.item.IItemStack;
 
 val chopRecipes = {
-  'emberroot:rootsonespriteboss': <mysticalagriculture:crafting:3>,
+  'emberroot:rootsonespriteboss'  : <mysticalagriculture:crafting:3>,
   'twilightforest:castle_guardian': <mekanism:saltblock>,
 } as IItemStack[string];
 
@@ -20,7 +20,9 @@ events.onEntityLivingDamage(function (e as crafttweaker.event.EntityLivingDamage
     || isNull(e.damageSource)
     || isNull(e.damageSource.trueSource)
     || isNull(mob.definition)
-  ) return;
+  ) {
+    return;
+  }
 
   // Convert player
   val _player = e.damageSource.trueSource;

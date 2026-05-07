@@ -12,7 +12,7 @@ static canSeeAbyssFnc as IRecipeFunction = function (out, ins, cInfo) {
   if (player.y <= 1.0) return out;
 
   val pos = IVector3d.create(player.x, player.y, player.z);
-  val rayTraceResult = player.world.rayTraceBlocks(pos, IVector3d.create(pos.x, pos.y - (pos.y as int), pos.z),
+  val rayTraceResult = player.world.rayTraceBlocks(pos, IVector3d.create(pos.x, pos.y - pos.y as int, pos.z),
     false, // stopOnLiquid,
     true,  // ignoreBlockWithoutBoundingBox,
     false  // returnLastUncollidableBlock

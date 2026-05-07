@@ -222,7 +222,8 @@ events.register(function (e as PlayerInteractBlockEvent) {
 
     if (e.world.remote) {
       e.player.native.swingArm(EnumHand.MAIN_HAND);
-    } else {
+    }
+    else {
       // Replace the block and create particles.
       e.world.destroyBlock(e.position, false);
       e.world.setBlockState(crackedState, e.position);

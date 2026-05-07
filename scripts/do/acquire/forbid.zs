@@ -2,7 +2,6 @@
 #priority -1400
 #modloaded zenutils scalinghealth roidtweaker gamestages
 
-import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.item.IItemStack;
 import crafttweaker.block.IBlock;
@@ -49,7 +48,7 @@ zenClass Forbidder {
       scripts.do.acquire.data.groups[stack] = groupName;
       some = true;
     }
-    if(!some) {
+    if (!some) {
       logger.logWarning('Acquire error: trying to add completely empty list of stacks "' ~ groupName ~ '". Size: ' ~ stacksRepresent.length);
       futile = true;
     }
@@ -57,7 +56,7 @@ zenClass Forbidder {
   }
 
   function value(amount as double) as Forbidder {
-    if (!futile)
+    if (!futile) {
       for stack in stacks {
         scripts.do.acquire.data.values[stack] = amount;
         val isResidual = amount - amount as int > 0.0;
@@ -65,6 +64,7 @@ zenClass Forbidder {
         stack.addTooltip(`§6+${amountStr}§e✪`);
         utils.log(`Acquire +${amount}: ${stack.commandString}`);
       }
+    }
     return this;
   }
 
@@ -75,8 +75,8 @@ zenClass Forbidder {
 
     // Check for existing events
     for event in evts {
-     if (!(['pickup', 'open', 'look', 'craft', 'place', 'use', 'hold', 'replicate', 'interact'] as string[] has event))
-      logger.logWarning('Acquire error: trying to add absent acquiring event: "'~event~'"');
+      if (!(['pickup', 'open', 'look', 'craft', 'place', 'use', 'hold', 'replicate', 'interact'] as string[] has event))
+        logger.logWarning('Acquire error: trying to add absent acquiring event: "' ~ event ~ '"');
     }
 
     for stack in stacks {
@@ -96,7 +96,7 @@ zenClass Forbidder {
       // Find if its block event
       var hasBlockEvt = false;
       for evtName in blockEvents {
-        if(evts has evtName) {
+        if (evts has evtName) {
           hasBlockEvt = true;
           break;
         }
@@ -107,9 +107,9 @@ zenClass Forbidder {
       if (isNull(block) && !hasExplicitStates) {
         // Its a block event, has no block representation
         // and no fallback blockstates
-        logger.logWarning('Acquire error: registering acquiring for item '~stack.commandString
-          ~', and its a block event, but no block representation found'
-          ~', and no fallback blockstates found too.');
+        logger.logWarning('Acquire error: registering acquiring for item ' ~ stack.commandString
+        ~ ', and its a block event, but no block representation found'
+        ~ ', and no fallback blockstates found too.');
         continue;
       }
 
@@ -120,10 +120,11 @@ zenClass Forbidder {
   }
 
   function onOpen(classPath as string) as Forbidder {
-    if (!futile)
+    if (!futile) {
       for stack in stacks {
         stringRegistry[classPath] = stack;
       }
+    }
     return this;
   }
 
@@ -135,7 +136,7 @@ zenClass Forbidder {
     if (!isNull(blockDef)) {
       for evtName in blockEvents {
         if (evts has evtName) {
-          if(isNull(blockDefRegistry[evtName])) blockDefRegistry[evtName] = {};
+          if (isNull(blockDefRegistry[evtName])) blockDefRegistry[evtName] = {};
           blockDefRegistry[evtName][blockDef] = true;
         }
       }

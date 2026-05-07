@@ -2,7 +2,6 @@
 #priority -150
 #ignoreBracketErrors
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IVector3d.create as V;
@@ -96,7 +95,9 @@ function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
     || outStack.damage != output.damage
     || outStack.tag != output.tag
     || outStack.capNBT != output.capNBT
-  ) return false;
+  ) {
+    return false;
+  }
 
   // Not anough space
   if (outStack.maxStackSize - outStack.amount < output.amount) return false;
@@ -113,8 +114,9 @@ function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
     val input = inputStack.anyAmount();
 
     if (!isNull(blacklistedWildcard[input.definition.id])
-      || !isNull(blacklistedInput[input]))
+      || !isNull(blacklistedInput[input])) {
       return;
+    }
 
     var smelted = cachedOutput[input];
 
@@ -133,7 +135,9 @@ function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
     else if (
       input.definition.id == smelted.definition.id
       && input.damage == smelted.damage
-    ) return; // Item is unsmeltable
+    ) {
+      return; // Item is unsmeltable
+    }
 
     if (pushToOutput(smelted * min(64, smelted.amount * 4), c))
       c.machine.setItem(inpX, inpY, inputStack.amount > 1 ? inputStack.withAmount(inputStack.amount - 1) : null);
@@ -145,8 +149,9 @@ function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
 
       // Skip if blacklisted
       if (!isNull(blacklistedWildcard[input.definition.id])
-        || !isNull(blacklistedInput[input]))
+        || !isNull(blacklistedInput[input])) {
         return false;
+      }
       return true;
     }, 1)
     .setActive(5)

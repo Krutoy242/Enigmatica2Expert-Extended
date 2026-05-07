@@ -5,7 +5,6 @@
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import crafttweaker.data.IData;
-import mods.zenutils.NetworkHandler;
 
 import scripts.do.hand_over_your_items.tellrawItemObj;
 
@@ -16,7 +15,7 @@ function getStageName(groupName as string, stack as IItemStack) as string {
   return '✪' ~ (
     isNull(groupName)
       ? stack.commandString
-      : ('group_' ~ groupName)
+      : 'group_' ~ groupName
   );
 }
 

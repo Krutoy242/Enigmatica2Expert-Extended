@@ -64,12 +64,12 @@ function lF(output as ILiquidStack, mult as double) as ILiquidStack {
   val dmult = damount * mult;
   for step in fluidSteps {
     if (dresult == 0.0 && damount % step == 0) {
-      dresult = max(step, step * ((dmult / step) as int));
+      dresult = max(step, step * (dmult / step) as int);
     }
   }
   if (dresult == 0) { dresult = dmult; }
 
-  return output * (dresult as int);
+  return output * dresult as int;
 }
 
 // ######################################################################
@@ -93,10 +93,10 @@ function sawWood(input as IIngredient, output as IItemStack, exceptions as strin
   val pulp = <ore:dustWood>.firstItem;
   val amount = output.amount;
 
-  work(['shapeless']    , exceptions, [input], null, [output * (amount * 2)] , null, [pulp], null);
-  work(['BlockCutter']  , exceptions, [input], null, [output * (amount * 4)] , null, [pulp], null);
-  work(['mekSawmill']   , exceptions, [input], null, [output * (amount * 4)] , null, [pulp], null);
-  work(['TESawmill']    , exceptions, [input], null, [output * (amount * 6)] , null, [pulp], null);
+  work(['shapeless'], exceptions, [input], null, [output * (amount * 2)], null, [pulp], null);
+  work(['BlockCutter'], exceptions, [input], null, [output * (amount * 4)], null, [pulp], null);
+  work(['mekSawmill'], exceptions, [input], null, [output * (amount * 4)], null, [pulp], null);
+  work(['TESawmill'], exceptions, [input], null, [output * (amount * 6)], null, [pulp], null);
   work(['AdvRockCutter'], exceptions, [input], null, [output * (amount * 10)], null, [pulp], null);
 }
 
@@ -156,11 +156,11 @@ function crushRock(input as IIngredient, output as IItemStack[], chances as floa
 // Takes soft or moist item, squeeze it to get liquid or another item
 // 📦 → 💧? + 📦?
 function squeeze(input as IIngredient[], fluidOutput as ILiquidStack, exceptions as string = null, itemOutput as IItemStack = null) {
-  work(['CrushingTub']       , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.5)]     , null  , null);
-  work(['Squeezer']          , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.666667)], null  , null);
-  work(['ForestrySqueezer']  , exceptions, input, null, [iF(itemOutput, 0.5)]        , [lF(fluidOutput, 0.9)]     , null  , null);
-  work(['TECentrifuge']      , exceptions, input, null, [iF(itemOutput, 0.75)]       , [fluidOutput]              , null  , null);
-  work(['IndustrialSqueezer'], exceptions, input, null, [itemOutput]                 , [fluidOutput]              , null  , null);
+  work(['CrushingTub'], exceptions, input, null, [iF(itemOutput, 0.5)], [lF(fluidOutput, 0.5)], null, null);
+  work(['Squeezer'], exceptions, input, null, [iF(itemOutput, 0.5)], [lF(fluidOutput, 0.666667)], null, null);
+  work(['ForestrySqueezer'], exceptions, input, null, [iF(itemOutput, 0.5)], [lF(fluidOutput, 0.9)], null, null);
+  work(['TECentrifuge'], exceptions, input, null, [iF(itemOutput, 0.75)], [fluidOutput], null, null);
+  work(['IndustrialSqueezer'], exceptions, input, null, [itemOutput], [fluidOutput], null, null);
 }
 
 // Solute (mix, dissolve) 1+ items in 1+ liquids to get new 1+ liquids
@@ -195,7 +195,7 @@ function evaporate(inputLiquid as ILiquidStack, output as IItemStack, exceptions
 // 📦 → 📦|💧
 function recycleMetal(input as IIngredient, output as IItemStack, liquid as ILiquidStack = null, exceptions as string = null) {
   work(['ArcFurnace'], exceptions, [input], null, [output], null, null, null);
-  work(['induction']  , exceptions, [input, <minecraft:sand>], null, [output], null, [itemUtils.getItem('thermalfoundation:material', 864)], [0.1f]);
+  work(['induction'], exceptions, [input, <minecraft:sand>], null, [output], null, [itemUtils.getItem('thermalfoundation:material', 864)], [0.1f]);
 
   if (!isNull(liquid)) {
     work(['smeltery'], exceptions, [input], null, [output], [lF(liquid, 0.75)], null, null);
@@ -215,11 +215,11 @@ function melt(input as IIngredient, output as ILiquidStack, exceptions as string
 function fill(itemInput as IIngredient, fluidInput as ILiquidStack, output as IItemStack, exceptions as string = null, skip as bool = false) {
   val newAmount1 = min(1000, lF(fluidInput, 1.6).amount);
   val newAmount2 = min(1000, lF(fluidInput, 1.4).amount);
-  work(['Casting']              , exceptions, [itemInput], [skip ? fluidInput : lF(fluidInput, 1.8)]    , [output], null, null, null);
-  work(['DryingBasin']          , exceptions, [itemInput], [skip ? fluidInput : fluidInput * newAmount1], [output], null, null, null);
+  work(['Casting'], exceptions, [itemInput], [skip ? fluidInput : lF(fluidInput, 1.8)], [output], null, null, null);
+  work(['DryingBasin'], exceptions, [itemInput], [skip ? fluidInput : fluidInput * newAmount1], [output], null, null, null);
   work(['MechanicalDryingBasin'], exceptions, [itemInput], [skip ? fluidInput : fluidInput * newAmount2], [output], null, null, null);
-  work(['NCInfuser']            , exceptions, [itemInput], [skip ? fluidInput : lF(fluidInput, 1.2)]    , [output], null, null, null);
-  work(['Transposer']           , exceptions, [itemInput], [skip ? fluidInput : fluidInput]             , [output], null, null, null);
+  work(['NCInfuser'], exceptions, [itemInput], [skip ? fluidInput : lF(fluidInput, 1.2)], [output], null, null, null);
+  work(['Transposer'], exceptions, [itemInput], [skip ? fluidInput : fluidInput], [output], null, null, null);
 }
 
 // Perfor some magic over item(s) to create new item(s)
@@ -240,9 +240,9 @@ function beneficiate(
   val calc = wholesCalc(_input.amount, _amount);
   val amount = calc.outs as int;
   val newOutAmount = _input.amount * calc.ins as int;
-  val input = (newOutAmount == 1 && _input.amount == 1) ? _input : _input * newOutAmount;
+  val input = newOutAmount == 1 && _input.amount == 1 ? _input : _input * newOutAmount;
 
-  val oreName = (_oreName == 'Aluminum') ? 'Aluminium' : _oreName;
+  val oreName = _oreName == 'Aluminum' ? 'Aluminium' : _oreName;
 
   val exceptions = opts?.exceptions?.asString() ?? '';
 
@@ -315,7 +315,7 @@ function beneficiate(
   // Melt
   val liquid = JA?.getLiquidStack('molten') ?? utils.oreNameToFluid(oreName);
   if (!isNull(liquid) && !isNull(JA)) {
-    val meltingExceptions = (opts?.meltingExceptions?.asList() ?? ([] as IData));
+    val meltingExceptions = opts?.meltingExceptions?.asList() ?? [] as IData;
     var meltAllowed = true;
     for meltExc in meltingExceptions { if (meltExc.asString() == oreName) meltAllowed = false; }
     if (meltAllowed) {
@@ -345,7 +345,7 @@ function beneficiate(
       slurryName = oreName.toLowerCase();
       slurry = getGas(slurryName);
     }
-    
+
     if (!isNull(slurry)) {
       val gasAmount = (amount + step * 4) * 200;
       workEx('mekdissolution', exceptions, [input], null, null, null, null, null, { gasOutput: slurryName, gasOutputAmount: gasAmount });

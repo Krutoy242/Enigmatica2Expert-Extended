@@ -4,7 +4,6 @@
 
 import crafttweaker.block.IBlock;
 import crafttweaker.data.IData;
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import mods.zenutils.StaticString.format;
@@ -25,10 +24,12 @@ function show(player as IPlayer, item as IItemStack, block as IBlock) as bool {
     || isNull(block)
     || isNull(block.definition)
     || block.definition.id != 'requious:replicator'
-  ) return false;
+  ) {
+    return false;
+  }
 
   val encodedItem = scripts.lib.mod.ic2.getCrystalMemoryContent(item);
-  if(isNull(encodedItem)) return false;
+  if (isNull(encodedItem)) return false;
 
   val ownerUUID as string = isNull(block.data)
     || isNull(block.data.variables)
@@ -45,9 +46,9 @@ function show(player as IPlayer, item as IItemStack, block as IBlock) as bool {
 
   // collect all items that cost more than required one
   val requiredCost = scripts.category.uu.getCost(encodedItem, dfclty);
-  var strList = StringList.empty();
+  val strList = StringList.empty();
   val it = native.ic2.core.uu.UuGraph.iterator();
-  while (it.hasNext()) {
+  while it.hasNext() {
     val entry = it.next() as native.java.util.Map.Entry;
     val itemNative = entry.key as native.net.minecraft.item.ItemStack;
     val cost = toString(entry.value) as double as int;
@@ -70,30 +71,32 @@ function show(player as IPlayer, item as IItemStack, block as IBlock) as bool {
 
   val prefix = [{ translate: 'e2ee.acquire.prefix' }] as IData;
   sendAcquireMessage(player, [
-    !sameOwner ? [ { translate: 'e2ee.acquire.owned', with: [
-      isNull(block.data)
-      || isNull(block.data.variables)
-      || isNull(block.data.variables.owner)
-      ? { translate: 'e2ee.acquire.owned.someone' }
-      : block.data.variables.owner
-    ] }, prefix ] : '',
+    !sameOwner
+      ? [{ translate: 'e2ee.acquire.owned', with: [
+          isNull(block.data)
+          || isNull(block.data.variables)
+          || isNull(block.data.variables.owner)
+            ? { translate: 'e2ee.acquire.owned.someone' }
+            : block.data.variables.owner,
+        ] }, prefix]
+      : '',
     itemsDisplayCount <= 0
       ? { translate: 'e2ee.acquire.cannot', with: [
-          tellrawItemObj(encodedItem, 'white')
+          tellrawItemObj(encodedItem, 'white'),
         ] }
       : [
-        { translate: 'e2ee.acquire.to_replicate', with: [
-          tellrawItemObj(encodedItem, 'aqua'),
-          formatDfclty(dfclty),
-          scripts.category.uu.formatUUCost(requiredCost),
-        ]},
-        prefix,
-        { translate: 'e2ee.acquire.list', with: [
-          itemsDisplayCount,
-        ] },
-        prefix,
-        textData,
-      ]
+          { translate: 'e2ee.acquire.to_replicate', with: [
+            tellrawItemObj(encodedItem, 'aqua'),
+            formatDfclty(dfclty),
+            scripts.category.uu.formatUUCost(requiredCost),
+          ] },
+          prefix,
+          { translate: 'e2ee.acquire.list', with: [
+            itemsDisplayCount,
+          ] },
+          prefix,
+          textData,
+        ],
   ]);
 
   playersCompleted[player.uuid] = true;
@@ -101,11 +104,11 @@ function show(player as IPlayer, item as IItemStack, block as IBlock) as bool {
 }
 
 events.register(function (e as crafttweaker.event.PlayerRightClickItemEvent) {
-  if(show(e.player, e.item, e.block)) e.cancel();
+  if (show(e.player, e.item, e.block)) e.cancel();
 }, mods.zenutils.EventPriority.low());
 
 events.register(function (e as crafttweaker.event.PlayerLeftClickBlockEvent) {
-  if(show(e.player, e.item, e.block)) e.cancel();
+  if (show(e.player, e.item, e.block)) e.cancel();
 }, mods.zenutils.EventPriority.low());
 
 function formatDfclty(dfclty as double) as string {

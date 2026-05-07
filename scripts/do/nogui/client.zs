@@ -16,7 +16,7 @@ static whitelist as string[] = [
   'net.minecraft.client.gui.Gui(?!Repair).+',
   'net.minecraft.client.gui.Screen.+',
   'net.minecraftforge.fml.client.Gui.+',
-  
+
   '.*scalingguis.*',
   '.*nutrition.*',
   // 'com.feed_the_beast.ftblib.lib.gui.GuiWrapper', // FTB Quests, etc.
@@ -115,49 +115,49 @@ All known guis:
 "zone.rong.loliasm.common.crashes.GuiCrashScreen",
 */
 
-events.register(function(event as native.net.minecraftforge.client.event.GuiOpenEvent) {
+events.register(function (event as native.net.minecraftforge.client.event.GuiOpenEvent) {
   if (!client.player.hasGameStage('nogui')) return;
 
   val gui = event.getGui();
-  if(isNull(gui)) return;
+  if (isNull(gui)) return;
   val guiClass = typeof(gui);
 
   ////////////////////////////////////////////////////////////////////
-  utils.log('~~~ gui: '~guiClass);
+  utils.log('~~~ gui: ' ~ guiClass);
   utils.log('  toString: ' ~ gui.toString());
   utils.log('  width: ' ~ gui.width);
   utils.log('  height: ' ~ gui.height);
   utils.log('  allowUserInput: ' ~ gui.allowUserInput);
   utils.log('  doesGuiPauseGame: ' ~ gui.doesGuiPauseGame());
   utils.log('  zLevel: ' ~ gui.zLevel);
-  
-  if(!isNull(gui.buttonList)) {
+
+  if (!isNull(gui.buttonList)) {
     val list as [GuiButton] = gui.buttonList;
     utils.log('  buttonList (' ~ list.length ~ '):');
     for button in list {
-      if(isNull(button)) continue;
+      if (isNull(button)) continue;
       utils.log('    id: ' ~ button.id ~ ', text: "' ~ button.displayString ~ '", enabled: ' ~ button.enabled ~ ', visible: ' ~ button.visible ~ ', x: ' ~ button.x ~ ', y: ' ~ button.y ~ ', width: ' ~ button.width ~ ', height: ' ~ button.height);
     }
   }
 
-  if(!isNull(gui.labelList)) {
+  if (!isNull(gui.labelList)) {
     val list as [GuiLabel] = gui.labelList;
     utils.log('  labelList (' ~ list.length ~ '):');
     for label in list {
-      if(isNull(label)) continue;
+      if (isNull(label)) continue;
       utils.log('    visible: ' ~ label.visible ~ ', x: ' ~ label.x ~ ', y: ' ~ label.y ~ ', centered: ' ~ label.centered);
     }
   }
 
-  if(!isNull(gui.selectedButton)) {
+  if (!isNull(gui.selectedButton)) {
     utils.log('  selectedButton: ' ~ gui.selectedButton.displayString);
   }
-  
+
   var containerGuiLog as GuiContainer = null;
   if (gui instanceof GuiContainer) {
     containerGuiLog = gui;
   }
-  
+
   if (!isNull(containerGuiLog)) {
     val container = containerGuiLog.inventorySlots;
     if (!isNull(container)) {

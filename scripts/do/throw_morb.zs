@@ -77,7 +77,9 @@ events.onProjectileImpactThrowable(function (e as crafttweaker.event.ProjectileI
     || isNull(e.rayTrace.entity)
     || !(e.rayTrace.entity instanceof IEntityLivingBase)
     || e.rayTrace.entity instanceof crafttweaker.entity.IEntityAnimal
-  ) return;
+  ) {
+    return;
+  }
 
   val player as IPlayer = e.thrower;
   if (player.creative) return;

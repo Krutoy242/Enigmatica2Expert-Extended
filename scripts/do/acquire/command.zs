@@ -2,9 +2,7 @@
 #modloaded zenutils scalinghealth roidtweaker gamestages
 #priority -1800
 
-import crafttweaker.world.IWorld;
 import crafttweaker.item.IItemStack;
-import crafttweaker.player.IPlayer;
 import crafttweaker.data.IData;
 import scripts.do.hand_over_your_items.tellrawItemObj;
 import scripts.do.acquire.data.formatDouble;
@@ -33,7 +31,7 @@ cmd.execute = function (command, server, sender, args) {
     if (args[0] == 'info') {
       val groupItems = {} as IItemStack[][string];
       for stack, groupName in scripts.do.acquire.data.groups {
-        if(isNull(groupItems[groupName])) groupItems[groupName] = [stack] as IItemStack[];
+        if (isNull(groupItems[groupName])) groupItems[groupName] = [stack] as IItemStack[];
         else groupItems[groupName] = groupItems[groupName] + stack;
       }
 
@@ -46,10 +44,11 @@ cmd.execute = function (command, server, sender, args) {
         if (!isNull(scripts.do.acquire.data.groups[stack])) continue;
         if (player.hasGameStage(scripts.do.acquire.data.getStageName(null, stack))) {
           alreadyAcquiredValue += value;
-        } else {
+        }
+        else {
           textData += [
             (textData.length == 0 ? '' : '§7, ') ~ '§6+' ~ formatDouble(value) ~ '§7:',
-            tellrawItemObj(stack, null, false)
+            tellrawItemObj(stack, null, false),
           ];
           if (textData.length / 2 % 10 == 0) textData += prefix;
         }
@@ -61,7 +60,8 @@ cmd.execute = function (command, server, sender, args) {
         val value = scripts.do.acquire.data.values[stack] as double;
         if (player.hasGameStage(scripts.do.acquire.data.getStageName(groupName, stack))) {
           alreadyAcquiredValue += value;
-        } else {
+        }
+        else {
           if (textData.length > 0) textData += prefix;
           textData += ['§6+' ~ formatDouble(value) ~ '§7:'] as IData
             + scripts.do.acquire.data.getGroupAsMessageData(groupName, 2);
@@ -73,8 +73,8 @@ cmd.execute = function (command, server, sender, args) {
           alreadyAcquiredValue,
           textData.length > 0
             ? { translate: 'e2ee.acquire.info.other', with: [textData] }
-            : { translate: 'e2ee.acquire.info.complete' }
-      ]}]);
+            : { translate: 'e2ee.acquire.info.complete' },
+        ] }]);
       return;
     }
   }

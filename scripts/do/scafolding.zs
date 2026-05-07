@@ -67,7 +67,9 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
         ctx.data.asInt() >= 24
         || !world.getBlockState(blockPos).isReplaceable(world, blockPos)
         || isNull(e.player) || e.player.xp < xp_consumption
-      ) return;
+      ) {
+        return;
+      }
       world.setBlockState(<blockstate:cyclicmagic:block_fragile_weak>, blockPos);
       (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
         EnumParticleTypes.FIREWORKS_SPARK,

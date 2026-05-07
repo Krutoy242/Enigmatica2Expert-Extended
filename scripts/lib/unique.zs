@@ -1,14 +1,13 @@
 #priority 3000
 
 import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
 
 zenClass Unique {
   // Public fields
   var index as int = 0;
 
   // Static Fields
-  var inputs as IIngredient[] = [];
+  var inputs    as IIngredient[] = [];
   var positions as int[] = [];
 
   // Private fields
@@ -21,13 +20,12 @@ zenClass Unique {
 
   // Public Function
   function next() as IIngredient[][] {
-
     index += 1;
 
     val map = [
       [null, null, null],
       [null, null, null],
-      [null, null, null]
+      [null, null, null],
     ] as IIngredient[][];
 
     for i, pos in positions {
@@ -44,9 +42,9 @@ zenClass Unique {
   // Private Function
   function shiftGroup(a as int[], n as int) as void {
     a[n] = a[n] + 1;
-    if(a[n] <= (9 - inputs.length) + n) return;
+    if (a[n] <= (9 - inputs.length) + n) return;
 
-    if(n == 0) {
+    if (n == 0) {
       a[n] = 0;
       rotate += 1;
       return;

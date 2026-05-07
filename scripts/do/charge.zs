@@ -11,7 +11,6 @@ with other items again and again untill treshold reached
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import crafttweaker.recipes.IRecipeFunction;
 
 static CHARGE_EXP as double = 1.5; // Exponent of charge
 static CHARGE_RED as double = 20.0; // Reduction of charge
@@ -74,7 +73,6 @@ function addRecipe(
   a as IIngredient, // Fake ingredient
   getValue as function(IItemStack)double
 ) as void {
-
   F.addAdvancedTooltip(function (item) { return chargeTooltip(item); });
 
   F.addAdvancedTooltip(function (item) {
@@ -87,7 +85,7 @@ function addRecipe(
   });
 
   // Fake recipe
-  recipes.addShaped('fake ' ~ recipeName, R, [[(E | F), a, a], [a, a, a], [a, a, a]]);
+  recipes.addShaped('fake ' ~ recipeName, R, [[E | F, a, a], [a, a, a], [a, a, a]]);
 
   // Actual recipe
   recipes.addHiddenShaped('hidden ' ~ recipeName, R, [
@@ -115,5 +113,5 @@ function chargeRecipeFunction(
   // Calculate result
   val charge = (ins['0'].tag?.charge?.asDouble() ?? 0.0) + total + bonus;
 
-  return charge >= needCharge ? R :F.updateTag({ charge: charge, bonus: bonus / total });
+  return charge >= needCharge ? R : F.updateTag({ charge: charge, bonus: bonus / total });
 }

@@ -2,14 +2,11 @@
 #priority -1300
 #modloaded zenutils scalinghealth roidtweaker gamestages
 
-import crafttweaker.block.IBlock;
 import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IBlockPos;
-import crafttweaker.world.IVector3d;
-import crafttweaker.world.IWorld;
 
 import scripts.do.acquire.consequences.onAcquire;
 
@@ -94,7 +91,7 @@ events.register(function (e as crafttweaker.event.PlayerOpenContainerEvent) {
 function checkContainer(player as IPlayer, containerSerialized as string) as void {
   val class = containerSerialized.split('@')[0];
   val stack = stringRegistry[class];
-  if(isNull(stack)) return;
+  if (isNull(stack)) return;
   checkAcquire('open', player, stack);
 }
 

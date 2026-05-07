@@ -52,7 +52,7 @@ static entityMap as int[IEntityDefinition] = {
 } as int[IEntityDefinition]$orderly;
 
 // Run only on initializing game
-if(scriptStatus() == 0) {
+if (scriptStatus() == 0) {
   for entityDef, num in entityMap {
     scripts.jei.crafting_hints.addInsOutCatl(
       [entityDef.asIngr(), null, null, <minecraft:anvil>, <advancedrocketry:basalt>],
@@ -72,7 +72,9 @@ events.register(function (e as EntityLivingDamageEvent) {
     || isNull(e.damageSource.damageType)
     || e.damageSource.damageType != 'anvil'
     || !mob.definition.id.startsWith('minecraft:')
-  ) return;
+  ) {
+    return;
+  }
 
   val blockUnderPos = mob.position.getOffset(down, 1);
   val blockState = mob.world.getBlockState(blockUnderPos);

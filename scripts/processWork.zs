@@ -33,9 +33,9 @@ static staticOpts as IData = {} as IData;
 static cantNbtError as string = 'received work, but this machine can not work with input contain NBT tags';
 
 function getOption(options as IData, field as string) as IData {
-  return (!isNull(options) && !isNull(options.memberGet(field)))
+  return !isNull(options) && !isNull(options.memberGet(field))
     ? options.memberGet(field)
-    : ((!isNull(staticOpts) && !isNull(staticOpts.memberGet(field)))
+    : (!isNull(staticOpts) && !isNull(staticOpts.memberGet(field))
         ? staticOpts.memberGet(field)
         : null
       );
@@ -117,7 +117,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   // ------------
   // Combined
   // ------------
-  var combinedOutput = [] as [IItemStack];
+  val combinedOutput = [] as [IItemStack];
   var combinedChances = [] as float[];
   if (haveItemOutput) {
     for i in 0 .. outputItems.length {
@@ -128,7 +128,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   if (haveExtra) {
     for i in 0 .. extra.length {
       combinedOutput.add(extra[i]);
-      combinedChances = combinedChances.add((!isNull(extraChance) && extraChance.length > i) ? extraChance[i] : 1.0f);
+      combinedChances = combinedChances.add(!isNull(extraChance) && extraChance.length > i ? extraChance[i] : 1.0f);
     }
   }
   val havecombinedOutput = !isNull(combinedOutput) && combinedOutput.length > 0;
@@ -346,7 +346,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       // Calculate chanced output from combined
       var chancedCombined = [] as [WeightedItemStack];
       for i, out in combinedOutput {
-        chancedCombined += out % ((combinedChances[i] * 100) as int);
+        chancedCombined += out % (combinedChances[i] * 100) as int;
       }
 
       for ii in inputIngr0.itemArray {
@@ -363,7 +363,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       // Calculate chanced output from combined
       var chancedCombined = [] as [WeightedItemStack];
       for i, out in combinedOutput {
-        chancedCombined += out % ((combinedChances[i] * 100) as int);
+        chancedCombined += out % (combinedChances[i] * 100) as int;
       }
 
       for ii in inputIngr0.itemArray {
@@ -733,7 +733,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
 
         // Uses extra chance array last element as temperature
         // Default temperature is 500
-        val lastIndex as int = isNull(extraChance) ? 999999 : (extraChance.length - 1);
+        val lastIndex as int = isNull(extraChance) ? 999999 : extraChance.length - 1;
         var temp as int = arrN_float(extraChance, lastIndex) as int;
         if (temp <= 0) { temp = 500; }
 
@@ -742,13 +742,13 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
         //   if no chance provided, its 100%
         var v = (arrN_float(extraChance, 0) * 100) as int;
         val exChLen = extraChance?.length ?? 0;
-        val ch0 as int = (exChLen > 1 && v > 0) ? v : 100;
+        val ch0 as int = exChLen > 1 && v > 0 ? v : 100;
 
         v = (arrN_float(extraChance, 1) * 100) as int;
-        val ch1 as int = (exChLen > 2 && v > 0) ? v : 100;
+        val ch1 as int = exChLen > 2 && v > 0 ? v : 100;
 
         v = (arrN_float(extraChance, 2) * 100) as int;
-        val ch2 as int = (exChLen > 3 && v > 0) ? v : 100;
+        val ch2 as int = exChLen > 3 && v > 0 ? v : 100;
 
         // Create recipe
         val builder = mods.tcomplement.highoven.HighOven.newMixRecipe(outputLiquid0, inputLiquid0, temp);
@@ -813,10 +813,18 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
       if (lenInItem > 4 || lenInLiqs > 2 || lenOutItem > 4 & lenOutLiqs > 1)
         return info(machineNameAnyCase, inputLiquid0.name, "received work, but input and output amounts can't fit in machine");
       val b = mods.advancedrocketry.RecipeTweaker.forMachine('ChemicalReactor').builder();
-      if (!isNull(inputItems)) for o in inputItems { b.input(o); }
-      if (!isNull(inputLiquids)) for o in inputLiquids { b.input(o); }
-      if (!isNull(outputItems)) for o in outputItems { b.outputs(o); }
-      if (!isNull(outputLiquids)) for o in outputLiquids { b.outputs(o); }
+      if (!isNull(inputItems)) {
+        for o in inputItems { b.input(o); }
+      }
+      if (!isNull(inputLiquids)) {
+        for o in inputLiquids { b.input(o); }
+      }
+      if (!isNull(outputItems)) {
+        for o in outputItems { b.outputs(o); }
+      }
+      if (!isNull(outputLiquids)) {
+        for o in outputLiquids { b.outputs(o); }
+      }
       b.power(getOptionEnergy(options, 100000));
       b.timeRequired(getOptionTime(options, 5));
       b.build();
@@ -838,10 +846,18 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
 
     if (machineName == 'arcrystallizer') {
       val b = mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder();
-      if (!isNull(inputItems)) for o in inputItems { b.input(o); }
-      if (!isNull(inputLiquids)) for o in inputLiquids { b.input(o); }
-      if (!isNull(outputItems)) for o in outputItems { b.outputs(o); }
-      if (!isNull(outputLiquids)) for o in outputLiquids { b.outputs(o); }
+      if (!isNull(inputItems)) {
+        for o in inputItems { b.input(o); }
+      }
+      if (!isNull(inputLiquids)) {
+        for o in inputLiquids { b.input(o); }
+      }
+      if (!isNull(outputItems)) {
+        for o in outputItems { b.outputs(o); }
+      }
+      if (!isNull(outputLiquids)) {
+        for o in outputLiquids { b.outputs(o); }
+      }
       b.power(getOptionEnergy(options, 40000));
       b.timeRequired(getOptionTime(options, 10));
       b.build();
@@ -862,7 +878,7 @@ function workEx(machineNameAnyCase as string, exceptionsAnyCase as string,
   return warning(machineNameAnyCase,
     !isNull(inputIngr0)
       ? getItemName(inputIngr0.itemArray[0])
-      : (!isNull(inputLiquid0) ? ('💧' ~ inputLiquid0.name) : '[unknown input]'),
+      : (!isNull(inputLiquid0) ? '💧' ~ inputLiquid0.name : '[unknown input]'),
     "received work, but machine with this name can't be found");
 }
 

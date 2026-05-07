@@ -3,7 +3,6 @@
 
 import crafttweaker.event.PlayerTickEvent;
 import crafttweaker.event.PlayerBreakSpeedEvent;
-import crafttweaker.event.BlockHarvestDropsEvent;
 import crafttweaker.event.PlayerCloneEvent;
 
 val op as scripts.do.omnipotence.op.Op = scripts.do.omnipotence.op.op;

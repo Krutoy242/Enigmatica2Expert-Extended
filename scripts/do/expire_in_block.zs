@@ -34,7 +34,9 @@ events.onItemExpire(function (e as crafttweaker.event.ItemExpireEvent) {
         || isNull(block.definition)
         || isNull(block.definition.id)
         || block.definition.id == 'minecraft:air'
-      ) return;
+      ) {
+        return;
+      }
       val blockID = block.definition.id;
       val output = tuple[blockID];
       if (!isNull(output)) {

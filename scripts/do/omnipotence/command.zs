@@ -1,11 +1,6 @@
 #reloadable
 #modloaded zenutils
 
-import crafttweaker.world.IWorld;
-import crafttweaker.item.IItemStack;
-import crafttweaker.player.IPlayer;
-import crafttweaker.data.IData;
-
 val cmd = mods.zenutils.command.ZenCommand.create('omnipotence');
 cmd.requiredPermissionLevel = 1;
 // §e✪ Omnipotence ✪§r

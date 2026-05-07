@@ -17,10 +17,8 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.oredict.IOreDictEntry;
 import crafttweaker.recipes.IRecipeFunction;
-import crafttweaker.util.Math;
 import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
-import mods.zenutils.StaticString;
 import native.net.minecraft.util.SoundCategory;
 import native.net.minecraft.util.SoundEvent;
 import native.net.minecraft.util.EnumParticleTypes;
@@ -166,10 +164,12 @@ zenClass Utils {
   function log(a as string) as void { log(a, null, null); }
   function log(a as string, b as string) as void { log(a, b, null); }
   function log(a as string, b as string, c as string) as void {
-    if (DEBUG) print(
-      (!isNull(a) ? a : '')
-      ~ (!isNull(b) ? ' ' ~ b : '')
-      ~ (!isNull(c) ? ' ' ~ c : ''));
+    if (DEBUG) {
+      print(
+        (!isNull(a) ? a : '')
+        ~ (!isNull(b) ? ' ' ~ b : '')
+        ~ (!isNull(c) ? ' ' ~ c : ''));
+    }
   }
 
   function log(arr as string[]) as void {
@@ -217,8 +217,8 @@ zenClass Utils {
     val stepY = options?.y?.step;
 
     // Determine doulbe steps
-    val intervalX = (maxX - minX) / (max(1, width - 1) as double);
-    val intervalY = (maxY - minY) / (max(1, height - 1) as double);
+    val intervalX = (maxX - minX) / max(1, width - 1) as double;
+    val intervalY = (maxY - minY) / max(1, height - 1) as double;
 
     // Write result
     val result as string[][double[string]] = {};
@@ -229,8 +229,8 @@ zenClass Utils {
         if (c != ' ' && !isNull(keys[c])) {
           var X = intervalX * x + minX;
           var Y = maxY - intervalY * y;
-          if (!isNull(stepX)) X = ((X / stepX.asDouble()) as int) as double * stepX.asDouble();
-          if (!isNull(stepY)) Y = ((Y / stepY.asDouble()) as int) as double * stepY.asDouble();
+          if (!isNull(stepX)) X = (X / stepX.asDouble()) as int as double * stepX.asDouble();
+          if (!isNull(stepY)) Y = (Y / stepY.asDouble()) as int as double * stepY.asDouble();
           result[{ x: X, y: Y } as double[string]] = keys[c];
           resultLen += 1;
         }
@@ -273,7 +273,7 @@ zenClass Utils {
 
     val d = def as double;
     if (d != 0.0) {
-      return item * min(64, (((item.amount as double - 1.0) * (d * 0.75) + d) as int));
+      return item * min(64, ((item.amount as double - 1.0) * (d * 0.75) + d) as int);
     }
     return amountClamp(item);
   }
@@ -315,9 +315,9 @@ zenClass Utils {
     val sameMod = oldMod == newMod;
     for key, value in originItem.tag.asMap() {
       if (
-        (sameMod && (
-          key.startsWith('enderio.')
-        ))
+        (sameMod
+          && key.startsWith('enderio.')
+        )
         || key == 'ench'
         || key == 'infench'
         || key == 'ncRadiationResistance'
@@ -325,8 +325,9 @@ zenClass Utils {
         || key == 'hasIC2Jetpack'
         || key == 'spectreAnchor'
         || key == 'display'
-      )
+      ) {
         newTag += { [key]: value } as IData;
+      }
     }
 
     return out.withTag(newTag);
@@ -349,7 +350,7 @@ zenClass Utils {
   // Clear Fluid tag on item preserving other tags
   function oreNameToFluid(oreName as string) as ILiquidStack {
     val spellingVariations = {
-      Aluminium: 'Aluminum',
+      Aluminium      : 'Aluminum',
       AstralStarmetal: 'starmetal',
     } as string[string];
     return game.getLiquid((spellingVariations[oreName] ?? oreName).toLowerCase());
@@ -411,36 +412,36 @@ zenClass Utils {
     = function (sender as ICommandSender, command as string) as void {};
 
   val geyser as function(IWorld,IItemStack,float,float,float,int,double,double,double,int)void
-  = function (
-    world as IWorld, // World where everything happen
-    output as IItemStack, // Item that would be spawned
-    x as float, y as float, z as float, // Position where new items spawned
-    desiredAmount as int, // Number of new items spawned
-    mx as double, my as double, mz as double, // Motion of spawned items
-    delay as int // Delay between spawning
-  ) as void {
-  val rnd = world.getRandom();
-    val f = desiredAmount as float / 8.0f;
-    var total = 0;
-    var i = 0;
-    val pos = crafttweaker.util.Position3f.create(x, y, z);
-    while (total < desiredAmount) {
-    val count = max(1, (f * (i + 1) + 0.5f) as int - total);
-      total += count;
+    = function (
+      world as IWorld, // World where everything happen
+      output as IItemStack, // Item that would be spawned
+      x as float, y as float, z as float, // Position where new items spawned
+      desiredAmount as int, // Number of new items spawned
+      mx as double, my as double, mz as double, // Motion of spawned items
+      delay as int // Delay between spawning
+    ) as void {
+      val rnd = world.getRandom();
+      val f = desiredAmount as float / 8.0f;
+      var total = 0;
+      var i = 0;
+      val pos = crafttweaker.util.Position3f.create(x, y, z);
+      while total < desiredAmount {
+        val count = max(1, (f * (i + 1) + 0.5f) as int - total);
+        total += count;
 
-      val itemEntity = (output * count).createEntityItem(world, x, y, z);
-      itemEntity.motionY = my + 0.4;
-      itemEntity.motionX = mx + rnd.nextDouble(-0.1, 0.1);
-      itemEntity.motionZ = mz + rnd.nextDouble(-0.1, 0.1);
-      world.spawnEntity(itemEntity);
+        val itemEntity = (output * count).createEntityItem(world, x, y, z);
+        itemEntity.motionY = my + 0.4;
+        itemEntity.motionX = mx + rnd.nextDouble(-0.1, 0.1);
+        itemEntity.motionZ = mz + rnd.nextDouble(-0.1, 0.1);
+        world.spawnEntity(itemEntity);
 
-      (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
-        EnumParticleTypes.FIREWORKS_SPARK,
-        x as double, y as double, z as double, 5, 0.0, 0.1, 0.0, 0.1, 0);
+        (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
+          EnumParticleTypes.FIREWORKS_SPARK,
+          x as double, y as double, z as double, 5, 0.0, 0.1, 0.0, 0.1, 0);
 
-      i += 1;
-    }
-  };
+        i += 1;
+      }
+    };
 
   // Get Shimmer enchant + Random Things colored shining
   val shimmerTag as IData = { ench: [{}] };
@@ -451,16 +452,16 @@ zenClass Utils {
   function shine(item as IItemStack, colorID as int = 6) as IItemStack {
     if (isNull(item)) return null;
     return item.withTag(item.tag.deepUpdate(shimmerTag + {
-        'Quark:RuneColor'   : colorID,
-        'Quark:RuneAttached': 1 as byte,
-      }, mods.zenutils.DataUpdateOperation.MERGE));
+      'Quark:RuneColor'   : colorID,
+      'Quark:RuneAttached': 1 as byte,
+    }, mods.zenutils.DataUpdateOperation.MERGE));
   }
 
   function locName(item as IItemStack, local as string) as IItemStack {
     if (isNull(item)) return null;
     return item.withTag(item.tag.deepUpdate(shimmerTag + {
-        display: { LocName: local },
-      }, mods.zenutils.DataUpdateOperation.MERGE));
+      display: { LocName: local },
+    }, mods.zenutils.DataUpdateOperation.MERGE));
   }
 
   function addEnchRecipe(output as IItemStack, ench as crafttweaker.enchantments.IEnchantmentDefinition, inputs as IIngredient[][]) as void {
@@ -499,7 +500,7 @@ zenClass Utils {
     if (entity instanceof EntityMob) return true;
 
     // Excetptions
-    if (entityID == "iceandfire:seaserpent") {
+    if (entityID == 'iceandfire:seaserpent') {
       return true;
     }
 
@@ -531,17 +532,21 @@ zenClass Utils {
 
   // Taken from modpack IsolatedCrystal3
   function toUpperCamelCase(arg as string) as string {
-    if (arg.contains("_")) {
-      var splitResult = arg.split("_");
-      var temp = "";
+    if (arg.contains('_')) {
+      val splitResult = arg.split('_');
+      var temp = '';
       for i, j in splitResult {
         if (j.length <= 0) continue;
         temp ~= (temp == '' ? '' : ' ') ~ j[0].toUpperCase() ~ j.substring(1);
       }
       return temp;
-    } else if (arg[0].toUpperCase() != arg[0]) {
+    }
+    else if (arg[0].toUpperCase() != arg[0]) {
       return arg[0].toUpperCase() ~ arg.substring(1);
-    } else return arg;
+    }
+    else {
+      return arg;
+    }
   }
 
   // Convert tags in form of sNBT such as {ench:[{id:26s,lvl:1s}]}

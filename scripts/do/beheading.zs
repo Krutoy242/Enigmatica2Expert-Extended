@@ -61,7 +61,7 @@ function getSkullByName(skinName as string) as IItemStack {
 function getSkullByTag(skinTags as string[]) as IItemStack {
   if (skinTags.length < 3) return null;
   return <minecraft:skull:3>.withTag({
-    display   : { Name: (skinTags[0] + ' Head') },
+    display   : { Name: skinTags[0] + ' Head' },
     SkullOwner: {
       Id        : skinTags[1],
       Properties: { textures: [{ Value: skinTags[2] }] },
@@ -85,7 +85,9 @@ events.onEntityLivingDeathDrops(function (e as crafttweaker.event.EntityLivingDe
     isNull(e.damageSource.trueSource)
     || isNull(e.damageSource.trueSource.heldEquipment)
     || e.damageSource.trueSource.heldEquipment.length <= 0
-  ) return;
+  ) {
+    return;
+  }
   val equipmentList = e.damageSource.trueSource.heldEquipment;
 
   // Check if dead entity is in list
@@ -102,7 +104,9 @@ events.onEntityLivingDeathDrops(function (e as crafttweaker.event.EntityLivingDe
       tool.definition.owner != 'tconstruct'
       || isNull(tool.tag)
       || isNull(tool.tag.Modifiers)
-    ) continue;
+    ) {
+      continue;
+    }
 
     for i, modifier in tool.tag.Modifiers.asList() {
       if (
@@ -110,7 +114,9 @@ events.onEntityLivingDeathDrops(function (e as crafttweaker.event.EntityLivingDe
         || isNull(modifier.level)
         || (modifier.identifier.asString() != 'beheading'
         && modifier.identifier.asString() != 'beheading_cleaver')
-      ) continue;
+      ) {
+        continue;
+      }
       beheadingLevel += modifier.level.asInt();
     }
   }

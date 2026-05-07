@@ -16,7 +16,6 @@ import crafttweaker.block.IBlockState;
 import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.item.IItemStack;
 import crafttweaker.util.Position3f;
-import crafttweaker.block.IBlock;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 import native.net.minecraft.util.EnumParticleTypes;
@@ -29,7 +28,7 @@ zenClass MobBuild {
   var volume  as string[][];
   var map     as IItemStack[string];
   var shiftX  as float = 0.0f;
-  var shiftY  as float =-0.5f;
+  var shiftY  as float = -0.5f;
   var shiftZ  as float = 0.0f;
   var spawnFnc as function(IWorld,Position3f)void;
   var isMirrored as bool = false;
@@ -129,7 +128,9 @@ zenClass MobBuild {
 
         val haveItem = state.block.getItem(world, p, state);
         return need has haveItem;
-      })) continue;
+      })) {
+        continue;
+      }
 
       // Break blocks and spawn entity
       iterVolume(pos, face, function (need as IItemStack, p as IBlockPos) as bool {
@@ -142,18 +143,19 @@ zenClass MobBuild {
       val r = rotate(face, offset.x, offset.z);
       val truePos = Position3f.create(r[0] + pos.x + shiftX, offset.y + pos.y + shiftY, r[1] + pos.z + shiftZ);
 
-      if ((world.getWorldInfo().difficulty == "PEACEFUL") && (utils.isHostile(world, entity.id))) {
+      if ((world.getWorldInfo().difficulty == 'PEACEFUL') && utils.isHostile(world, entity.id)) {
         // Peaceful handling of hostile mobs
         for item in getEntityDropTable(entity) {
           val remainder = item.amount % 100;
           var spawnAmount = item.amount;
           if (remainder != 0) { spawnAmount -= remainder >= world.random.nextInt(100) ? remainder - 100 : remainder; }
           spawnAmount /= 100;
-          if spawnAmount == 0 continue;
+          if (spawnAmount == 0) continue;
           val entItem = (item * spawnAmount).createEntityItem(world, truePos.x, truePos.y, truePos.z);
           world.spawnEntity(entItem);
         }
-      } else {
+      }
+      else {
         // Peaceful non-hostile and non-peaceful handling
         utils.spawnGenericCreature(world, entity.id, truePos.x, truePos.y, truePos.z - 0.1, face);
       }
@@ -166,11 +168,13 @@ zenClass MobBuild {
   }
 
   function getCenter() as Position3f {
-    if (isNull(center)) center = Position3f.create(
-      0.5f * volume[0].length - coreX,
-      0.5f * volume.length - 1 - coreY,
-      0.5f * volume[0][0].length() - coreZ
-    );
+    if (isNull(center)) {
+      center = Position3f.create(
+        0.5f * volume[0].length - coreX,
+        0.5f * volume.length - 1 - coreY,
+        0.5f * volume[0][0].length() - coreZ
+      );
+    }
 
     return center;
   }
@@ -185,7 +189,7 @@ zenClass MobBuild {
 
 static builds as MobBuild[] = [] as MobBuild[];
 
-function add(entity as IEntityDefinition, volume as string[][], map as IItemStack[string], spawnFnc as function(IWorld,Position3f)void = function(w as IWorld, p as Position3f) as void {}) as MobBuild {
+function add(entity as IEntityDefinition, volume as string[][], map as IItemStack[string], spawnFnc as function(IWorld,Position3f)void = function (w as IWorld, p as Position3f) as void {}) as MobBuild {
   val m =  MobBuild();
 
   if (isNull(entity)) return m;
@@ -204,8 +208,8 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
       if (isNull(item)) continue;
       val block = item.asBlock();
       s ~= (k == 0 ? '' : ',\n') ~ '  "' ~ c
-        ~ '": { "id": "' ~ block.definition.id ~ '", '
-        ~ (block.meta == 0 ? '"ignore-meta": true' : '"meta": ' ~ block.meta) ~ ' }';
+      ~ '": { "id": "' ~ block.definition.id ~ '", '
+      ~ (block.meta == 0 ? '"ignore-meta": true' : '"meta": ' ~ block.meta) ~ ' }';
       k += 1;
     }
     s ~= '\n},\n"shape": [';
@@ -218,7 +222,7 @@ function add(entity as IEntityDefinition, volume as string[][], map as IItemStac
     }
     s ~= '\n  ]\n]';
 
-    var fileName = getFreeFileName(entity.id.replaceAll(':', '_'));
+    val fileName = getFreeFileName(entity.id.replaceAll(':', '_'));
     utils.log('Save this into file "config/compactmachines3/recipes/' ~ fileName ~ '.json"'
     ~ '\n{'
     ~ '\n  "name": "compactmachines3:' ~ fileName ~ '",'

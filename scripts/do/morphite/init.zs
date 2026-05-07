@@ -25,14 +25,16 @@ for item in loadedMods['appliedenergistics2'].items {
     morphiteAEBlacklist has item.definition
     || item.hasTag
     || id.contains('creative')
-  ) continue;
+  ) {
+    continue;
+  }
   val count = id.contains(':paint_ball') ? 64
     : id.contains(':part') ? (
       item.damage < 20 ? 32 // Cable
-      : (item.damage >= 20 && item.damage < 60) ? 16 // Cables
-      : (item.damage >= 60 && item.damage < 160) ? 8 // Smart dense & fibers
-      : (item.damage >= 500 && item.damage < 520) ? 8 // Dense
-      : 1
+        : item.damage >= 20 && item.damage < 60 ? 16 // Cables
+          : item.damage >= 60 && item.damage < 160 ? 8 // Smart dense & fibers
+            : item.damage >= 500 && item.damage < 520 ? 8 // Dense
+              : 1
     ) : 1;
   scripts.do.morphite.recipe.result.add(count > 1 ? item * count : item);
 }

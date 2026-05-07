@@ -32,37 +32,37 @@ function onAcquire(acquireType as string, player as IPlayer, stack as IItemStack
   val newLine = { translate: 'e2ee.acquire.prefix' } as IData;
 
   sendAcquireMessage(player, [{
-      translate: isNull(groupName) ? 'e2ee.acquire.single' : 'e2ee.acquire.group',
-      with     : [
-        isNull(groupName) ? tellrawItemObj(stack, 'aqua') : getGroupAsMessageData(groupName),
-      ],
-    },
-    newLine,
-    { translate: 'e2ee.acquire.on.' ~ acquireType },
-    newLine,
-    actualValue <= 0
-      ? { translate: 'e2ee.acquire.max_already' } as IData
-      : { translate: 'e2ee.acquire.difficulty', with: [
+    translate: isNull(groupName) ? 'e2ee.acquire.single' : 'e2ee.acquire.group',
+    with     : [
+      isNull(groupName) ? tellrawItemObj(stack, 'aqua') : getGroupAsMessageData(groupName),
+    ],
+  },
+  newLine,
+  { translate: 'e2ee.acquire.on.' ~ acquireType },
+  newLine,
+  actualValue <= 0
+    ? { translate: 'e2ee.acquire.max_already' } as IData
+    : { translate: 'e2ee.acquire.difficulty', with: [
         { text: formatDouble(actualValue) },
         { text: formatDouble(player.difficulty) },
       ] },
-    newLine,
-    {
-      translate: 'e2ee.acquire.more',
-      hoverEvent:{
-        action: 'show_text',
-        value: 'execute "/acquire info"'
-      },
-      clickEvent: {
-        action: 'run_command',
-        value: '/acquire info',
-      },
+  newLine,
+  {
+    translate: 'e2ee.acquire.more',
+    hoverEvent:{
+      action: 'show_text',
+      value: 'execute "/acquire info"',
+    },
+    clickEvent: {
+      action: 'run_command',
+      value: '/acquire info',
+    },
   }]);
 
-  NetworkHandler.sendToAllAround('acquire', player.x, player.y, player.z, 30, player.world.getDimension(), function(b){
+  NetworkHandler.sendToAllAround('acquire', player.x, player.y, player.z, 30, player.world.getDimension(), function (b) {
     b.writeData({
       x: player.x, y: player.y + player.eyeHeight / 2, z:player.z,
-      value: actualValue
+      value: actualValue,
     });
   });
 }

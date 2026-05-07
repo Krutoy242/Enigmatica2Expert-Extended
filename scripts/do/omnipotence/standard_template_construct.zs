@@ -11,10 +11,8 @@ which contains infinite "blueprints" (resources) for building.
 #reloadable
 #modloaded zenutils danknull gamestages
 
-import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.data.IData;
-import crafttweaker.event.PlayerTickEvent;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import scripts.do.portal_spread.utils.stateToItem;
@@ -22,7 +20,7 @@ import scripts.do.portal_spread.utils.stateToItem;
 // --- CONFIG ---
 static INITIAL_STACK_SIZE as int = 4;
 static STC_LORE as string = '§5STC Blueprint';
-static STC_CORE_TAG as IData = {STC_Core: 1 as byte};
+static STC_CORE_TAG as IData = { STC_Core: 1 as byte };
 static STC_CORE_NAME as string = '§6STC Core';
 
 // --- ITEM LIST ---
@@ -128,22 +126,22 @@ function getPortableCell() as IItemStack {
     it: cellItems.length as short,
     SORT_BY: 'NAME',
     SORT_DIRECTION: 'ASCENDING',
-    VIEW_MODE: 'ALL'
+    VIEW_MODE: 'ALL',
   } as IData + STC_CORE_TAG;
 
   for i, item in cellItems {
-    val key1 = '#'~i;
-    val key2 = '@'~i;
-    cellNbt += {[key1]: {id: item.definition.id, Damage: item.damage as short, Count: 1, Cnt: 200L, Craft: 0 as byte, Req: 0L}} as IData;
-    cellNbt += {[key2]: 200L} as IData;
+    val key1 = '#' ~ i;
+    val key2 = '@' ~ i;
+    cellNbt += { [key1]: { id: item.definition.id, Damage: item.damage as short, Count: 1, Cnt: 200l, Craft: 0 as byte, Req: 0l } } as IData;
+    cellNbt += { [key2]: 200l } as IData;
   }
-  
+
   return <appliedenergistics2:portable_cell>.withTag(cellNbt);
 }
 
 function giveDankNull(player as IPlayer, inventoryData as IData) as void {
   val dankNullTag = STC_CORE_TAG + {
-    display    : {Name: STC_CORE_NAME},
+    display    : { Name: STC_CORE_NAME },
     DankNullCap: {
       selectedIndex       : 0,
       'danknull-inventory': inventoryData,
@@ -156,7 +154,7 @@ function giveDankNull(player as IPlayer, inventoryData as IData) as void {
 
 function getSatchel() as IItemStack {
   val thermalItems = [] as [IItemStack];
-  
+
   modItems('thermalexpansion', thermalItems, { include: { id: '.*:(machine|cell|tank|device)' } });
   modItems('thermalexpansion', thermalItems, { include: { id: '.*:augment' } });
   thermalItems.add(<thermalfoundation:upgrade:35>);
@@ -164,15 +162,15 @@ function getSatchel() as IItemStack {
   var inventoryTag = {} as IData;
   for i, item in thermalItems {
     var itemData = item.toData();
-    itemData += {Count: item.maxStackSize};
-    val key = "Slot"~i;
-    inventoryTag += {[key]: itemData};
+    itemData += { Count: item.maxStackSize };
+    val key = 'Slot' ~ i;
+    inventoryTag += { [key]: itemData };
   }
 
   val satchelTag = {
     Accessible: 1 as byte,
     Inventory: inventoryTag,
-    ench: [{lvl: 10 as short, id: <enchantment:cofhcore:holding>.id as short}]
+    ench: [{ lvl: 10 as short, id: <enchantment:cofhcore:holding>.id as short }],
   } as IData;
 
   return <thermalexpansion:satchel:4>.withTag(satchelTag);
@@ -191,26 +189,26 @@ function grant(player as IPlayer) as void {
 
   val stcItems = getSTCItems();
   var i = 0;
-  while(i < stcItems.length) {
+  while i < stcItems.length {
     var inventoryData = [] as IData;
     var slot = 0;
     for j in 0 .. 54 {
-        if(i >= stcItems.length) break;
-        val item = stcItems[i];
-        
-        val itemWithLore = item.withLore([STC_LORE]);
-        val existingTag = itemWithLore.tag ?? {};
-        val finalTag = existingTag + utils.shiningTag(6); // default color
+      if (i >= stcItems.length) break;
+      val item = stcItems[i];
 
-        var itemNbt = itemWithLore.toData();
-        // Remove extra data to keep NBT clean
-        itemNbt = {id: itemNbt.id, Damage: itemNbt.Damage, Count: INITIAL_STACK_SIZE, Slot: slot, tag: finalTag};
-        inventoryData += [itemNbt];
-        slot += 1;
-        i += 1;
+      val itemWithLore = item.withLore([STC_LORE]);
+      val existingTag = itemWithLore.tag ?? {};
+      val finalTag = existingTag + utils.shiningTag(6); // default color
+
+      var itemNbt = itemWithLore.toData();
+      // Remove extra data to keep NBT clean
+      itemNbt = { id: itemNbt.id, Damage: itemNbt.Damage, Count: INITIAL_STACK_SIZE, Slot: slot, tag: finalTag };
+      inventoryData += [itemNbt];
+      slot += 1;
+      i += 1;
     }
-    if(inventoryData.length > 0) {
-        giveDankNull(player, inventoryData);
+    if (inventoryData.length > 0) {
+      giveDankNull(player, inventoryData);
     }
   }
 
@@ -238,14 +236,14 @@ function handleBlockEvent(player as IPlayer, blockState as IBlockState) as void 
   // Found STC Core
   val dankNBT = invItem.tag;
   val oldInventory as [IData] = dankNBT.DankNullCap.memberGet('danknull-inventory').asList();
-  var newInventory = [] as [IData];
+  val newInventory = [] as [IData];
   var inventoryUpdated = false;
 
   for j, slotItemData in oldInventory {
     if (!inventoryUpdated && slotItemData.id == blockItem.definition.id && slotItemData.Damage == blockItem.damage) {
       val currentCount = slotItemData.Count as int;
       if (currentCount < INITIAL_STACK_SIZE) {
-        newInventory.add(slotItemData + {Count: currentCount + 1} as IData);
+        newInventory.add(slotItemData + { Count: currentCount + 1 } as IData);
         inventoryUpdated = true;
       }
     }
@@ -253,11 +251,11 @@ function handleBlockEvent(player as IPlayer, blockState as IBlockState) as void 
   }
 
   if (inventoryUpdated) {
-    val updatedNBT = dankNBT.deepUpdate({DankNullCap: {'danknull-inventory': IData.createDataList(newInventory)}}, mods.zenutils.DataUpdateOperation.MERGE);
+    val updatedNBT = dankNBT.deepUpdate({ DankNullCap: { 'danknull-inventory': IData.createDataList(newInventory) } }, mods.zenutils.DataUpdateOperation.MERGE);
     player.setItemToSlot(mainHand, invItem.withTag(updatedNBT));
     if (player.world.remote)
       player.sendPlaySoundPacket('openblocks:bottler.signal', 'ambient', player.position, 0.2f, 1.5f + player.world.random.nextFloat() * 0.5);
-    return; // Finish after processing one STC
+    // Finish after processing one STC
   }
 }
 

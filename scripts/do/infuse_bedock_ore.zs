@@ -47,7 +47,9 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
     || isNull(e.block.data.amount)
     || resultId != e.block.data.oreId.asInt()
     || resultBlock.damage != e.block.data.oreMeta.asInt()
-  )) return;
+  )) {
+    return;
+  }
 
   if (world.remote) {
     world.playSound('thaumcraft:poof', 'ambient', e.position.getOffset(up, 1), 0.5f, 0.2f);
@@ -67,7 +69,7 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   } as IData;
   world.setBlockState(<blockstate:bedrockores:bedrock_ore>, isNull(oldData) ? newData : oldData + newData, e.position);
   item.mutable().shrink(item.amount);
-  
+
   (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
     EnumParticleTypes.FIREWORKS_SPARK,
     0.5 + e.x, 1.05 + e.y, 0.5 + e.z, 10, 0.2, 0, 0.2, 0.01, 0);

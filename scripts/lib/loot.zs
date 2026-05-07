@@ -30,7 +30,7 @@ function tweak(
   furnaceSmelt as bool = false
 ) {
   // Current pool
-  var pool = LootTweaker.getTable(table).getPool(poolStr);
+  val pool = LootTweaker.getTable(table).getPool(poolStr);
   // Remove old drops if specified
   if (!isNull(entryToRemove))
     pool.removeEntry(entryToRemove);
@@ -46,19 +46,21 @@ function tweak(
 
       var functions = [
         Functions.setCount(minMax[0], minMax[1]),
-        Functions.lootingEnchantBonus(0, 1, 0)
+        Functions.lootingEnchantBonus(0, 1, 0),
       ] as LootFunction[];
 
-      if(furnaceSmelt) functions += {
-        'function': 'minecraft:furnace_smelt',
-        'conditions': [
-          {
-            'properties': { 'minecraft:on_fire': true },
-            'entity': 'this',
-            'condition': 'minecraft:entity_properties'
-          }
-        ]
-      } as LootFunction;
+      if (furnaceSmelt) {
+        functions += {
+          'function': 'minecraft:furnace_smelt',
+          conditions    : [
+            {
+              properties: { 'minecraft:on_fire': true },
+              entity    : 'this',
+              condition : 'minecraft:entity_properties',
+            },
+          ],
+        } as LootFunction;
+      }
 
       pool.addItemEntry(itemToAdd.stack, poolWeight, 0, functions, conditions);
     }
@@ -117,12 +119,12 @@ function addSpecialTool(tableName as string, tool as IItemStack, materials as st
 
 function addRandomCapacitor(tableName as string, chance as float) as void {
   val pool = LootTweaker.getTable(tableName).addPool('enderIOCapacitor', 1.0f, 1.0f, 0.0f, 0.0f);
-  pool.addItemEntry(<enderio:item_basic_capacitor:4>, 1, 0, [{"function":"enderio:set_capacitor"}], []);
+  pool.addItemEntry(<enderio:item_basic_capacitor:4>, 1, 0, [{ 'function': 'enderio:set_capacitor' }], []);
   pool.addConditions([Conditions.randomChance(chance)]);
 }
 
-function addAncientTomes(tableName as string, poolName as string, weight as int) as void{
-  LootTweaker.getTable(tableName).getPool(poolName).addItemEntry(<quark:ancient_tome>, weight, 0, [{"function":"quark:enchant_tome"}], []);
+function addAncientTomes(tableName as string, poolName as string, weight as int) as void {
+  LootTweaker.getTable(tableName).getPool(poolName).addItemEntry(<quark:ancient_tome>, weight, 0, [{ 'function': 'quark:enchant_tome' }], []);
 }
 
 /*
@@ -163,13 +165,13 @@ function addBackpackWithLoot(tableName as string, lootCommon as IData[], lootUnc
         slots = slots.deepUpdate([x], REMOVE);
         val item = table[rng.nextInt(table.length)];
         if (isNull(item)) continue;
-        var dataToAdd as IData = {Slot: x, Count: rng.nextInt(item.tab[0], item.tab[1]), id: item.item.id};
-        if (!isNull(item.item.tag)) dataToAdd = dataToAdd + {tag: item.item.tag};
-        if (!isNull(item.item.Damage)) dataToAdd = dataToAdd + {Damage: item.item.Damage};
+        var dataToAdd as IData = { Slot: x, Count: rng.nextInt(item.tab[0], item.tab[1]), id: item.item.id };
+        if (!isNull(item.item.tag)) dataToAdd = dataToAdd + { tag: item.item.tag };
+        if (!isNull(item.item.Damage)) dataToAdd = dataToAdd + { Damage: item.item.Damage };
 
         dataTag = dataTag.deepUpdate([dataToAdd], APPEND);
       }
-      return input.withTag({Items: dataTag});
+      return input.withTag({ Items: dataTag });
     })],
     [],
     'lootBackpack'
@@ -202,12 +204,12 @@ function addBackpackForestryWithLoot(bagType as IItemStack, tableName as string,
         slots = slots.deepUpdate([x], REMOVE);
         val item = table[rng.nextInt(table.length)];
         if (isNull(item)) continue;
-        var dataToAdd as IData = {Count: rng.nextInt(item.tab[0], item.tab[1]), id: item.item.id};
-        if (!isNull(item.item.tag)) dataToAdd = dataToAdd + {tag: item.item.tag};
-        if (!isNull(item.item.Damage)) dataToAdd = dataToAdd + {Damage: item.item.Damage};
-        dataTag = dataTag.deepUpdate({[x]: dataToAdd}, APPEND);
+        var dataToAdd as IData = { Count: rng.nextInt(item.tab[0], item.tab[1]), id: item.item.id };
+        if (!isNull(item.item.tag)) dataToAdd = dataToAdd + { tag: item.item.tag };
+        if (!isNull(item.item.Damage)) dataToAdd = dataToAdd + { Damage: item.item.Damage };
+        dataTag = dataTag.deepUpdate({ [x]: dataToAdd }, APPEND);
       }
-      return input.withTag({Slots: dataTag});
+      return input.withTag({ Slots: dataTag });
     })],
     [],
     `lootBackpackForestry${bagType.definition.id}`
@@ -235,13 +237,13 @@ function addBackpackCyclicWithLoot(tableName as string, lootCommon as IData[], l
         slots = slots.deepUpdate([x], REMOVE);
         val item = table[rng.nextInt(table.length)];
         if (isNull(item)) continue;
-        var dataToAdd as IData = {Slot: x, Count: rng.nextInt(item.tab[0], item.tab[1]), id: item.item.id};
-        if (!isNull(item.item.tag)) dataToAdd = dataToAdd + {tag: item.item.tag};
-        if (!isNull(item.item.Damage)) dataToAdd = dataToAdd + {Damage: item.item.Damage};
+        var dataToAdd as IData = { Slot: x, Count: rng.nextInt(item.tab[0], item.tab[1]), id: item.item.id };
+        if (!isNull(item.item.tag)) dataToAdd = dataToAdd + { tag: item.item.tag };
+        if (!isNull(item.item.Damage)) dataToAdd = dataToAdd + { Damage: item.item.Damage };
 
         dataTag = dataTag.deepUpdate([dataToAdd], APPEND);
       }
-      return input.withTag({ItemInventory: dataTag});
+      return input.withTag({ ItemInventory: dataTag });
     })],
     [],
     'lootBackpackCyclic'

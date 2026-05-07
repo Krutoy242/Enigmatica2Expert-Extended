@@ -37,7 +37,9 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
   if (
     currentItem.definition.id != 'minecraft:stick'
     || !currentItem.hasTag
-  ) return;
+  ) {
+    return;
+  }
 
   val state = e.world.getBlockState(e.position);
   if (isNull(state)) return;
@@ -63,7 +65,9 @@ events.onBlockBreak(function (e as crafttweaker.event.BlockBreakEvent) {
     || isNull(e.player.currentItem)
     || e.player.currentItem.definition.id != 'minecraft:stick'
     || !e.player.currentItem.hasTag
-  ) return;
+  ) {
+    return;
+  }
 
   if (currentRecipe.input.length < 1) return;
 
