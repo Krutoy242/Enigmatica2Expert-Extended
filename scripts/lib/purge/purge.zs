@@ -76,7 +76,7 @@ zenClass CPurge {
   ///////////// Private field /////////////
   function actualItem(item as IItemStack) as IItemStack {
     return (item.damage == 0 && item.isDamageable)
-      ? item.anyDamage()
+      ? item.withDamage(32767)
       : item;
   }
 
