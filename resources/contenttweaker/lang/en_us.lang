@@ -801,3 +801,9 @@ enchantment.openblocks.explosive.desc=Creates explosions when attacked.
 enchantment.openblocks.flim_flam.desc=Randomly causes negative effects nearby.
 enchantment.openblocks.last_stand.desc=Uses XP to prevent death.
 #enchantment.randomthings.magnetic.desc=The drops from blocks you mine with a tool that has the magnetic enchantment go directly into your inventory instead of dropping on the ground.
+
+# --------------------------------------
+# Hand Framing Tool
+# --------------------------------------
+item.contenttweaker.hand_framing_tool.name=Hand Framing Tool
+tooltips.lang.hand_framing_tool=Frame drawers in-world without crafting tables.\nPlace template materials in this tool via crafting (Side / Front / Trim), then right-click any drawer or trim to apply the frame.\nAlready-framed drawers and Compact Drawers can be re-framed instantly. Vanilla drawers are converted to their framed variant on first use.\nTemplates are NOT consumed when crafting — only the recipe slot's first item is recorded into the tool.

@@ -801,3 +801,9 @@ enchantment.openblocks.explosive.desc=遭受攻击时会产生爆炸。
 enchantment.openblocks.flim_flam.desc=在附近随机引发负面效果。
 enchantment.openblocks.last_stand.desc=使用经验防止死亡。
 enchantment.randomthings.magnetic.desc=具有磁性附魔的工具，会吸收周围的掉落物进行物品栏中。
+
+# --------------------------------------
+# Hand Framing Tool
+# --------------------------------------
+item.contenttweaker.hand_framing_tool.name=手持装饰工具
+tooltips.lang.hand_framing_tool=无需工作台即可在世界中装饰抽屉。\n通过合成将模板方块（侧面 / 正面 / 边框）放入此工具，然后右键点击任意抽屉或边框即可应用装饰。\n已装饰的抽屉和紧凑抽屉可以立即重新装饰。普通抽屉首次使用时会转换为可装饰的变体。\n模板方块在合成时不会被消耗——只会记录对应槽位中的第一个物品到工具中。
