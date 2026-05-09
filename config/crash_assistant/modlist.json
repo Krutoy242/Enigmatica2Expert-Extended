@@ -1,11 +1,11 @@
 {
-  "!!!CrashAssistant-forge-1.12.2-1.11.8.jar": {
-    "curseForgeHash": 2305784281,
-    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.8.jar",
+  "!!!CrashAssistant-forge-1.12.2-1.11.9.jar": {
+    "curseForgeHash": 2809995661,
+    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.9.jar",
     "modId": "crash_assistant",
-    "modrinthHash": "6a90ca55bff45580a2d5455899e6fc21f9f3a2a4",
+    "modrinthHash": "453e2c12f8726d1af243988a1a571e44574e93fb",
     "name": "Crash Assistant",
-    "version": "1.11.8"
+    "version": "1.11.9"
   },
   "!configanytime-3.0.jar": {
     "curseForgeHash": 3732531395,
@@ -92,13 +92,13 @@
     "name": "Advanced Essentia Smelter",
     "version": "1.2.0"
   },
-  "advancedrocketry-2.2.6.jar": {
-    "curseForgeHash": 236388594,
-    "jarName": "advancedrocketry-2.2.6.jar",
+  "advancedrocketry-2.2.8.jar": {
+    "curseForgeHash": 1436590212,
+    "jarName": "advancedrocketry-2.2.8.jar",
     "modId": "advancedrocketry",
-    "modrinthHash": "56a7bca21220c9a8c2726944fdc24be1cfdc2662",
+    "modrinthHash": "4c89faa523a5eeac511fd5e3da659dc0dea94188",
     "name": "Advanced Rocketry",
-    "version": "2.2.6"
+    "version": "2.2.8"
   },
   "AdvancedTweakery-1.2.jar": {
     "curseForgeHash": 3270717551,
@@ -726,13 +726,13 @@
     "name": "Condition: Overload",
     "version": "1.2.0"
   },
-  "CongregaMystica-1.12.2-1.0.9.jar": {
-    "curseForgeHash": 619517314,
-    "jarName": "CongregaMystica-1.12.2-1.0.9.jar",
+  "CongregaMystica-1.1.0.jar": {
+    "curseForgeHash": 3013788521,
+    "jarName": "CongregaMystica-1.1.0.jar",
     "modId": "congregamystica",
-    "modrinthHash": "a9304f02913df235042e4e79e2ac70419d4ef505",
+    "modrinthHash": "5328712fc04c75e04110f26ad5be23b4e32196c0",
     "name": "Congrega Mystica",
-    "version": "1.0.9"
+    "version": "1.1.0"
   },
   "ConsoleFilter-1.12.2-1.1.1.jar": {
     "curseForgeHash": 1901329739,
@@ -790,13 +790,13 @@
     "name": "CraftPresence",
     "version": "2.7.1"
   },
-  "CraftTweaker2-1.12-4.1.20.711.jar": {
-    "curseForgeHash": 3542576462,
-    "jarName": "CraftTweaker2-1.12-4.1.20.711.jar",
+  "CraftTweaker2-1.12-4.1.20.715.jar": {
+    "curseForgeHash": 2155788166,
+    "jarName": "CraftTweaker2-1.12-4.1.20.715.jar",
     "modId": "crafttweaker",
-    "modrinthHash": "4b4d1c646dc7612974412b668dc2d506ae9a6621",
+    "modrinthHash": "cdfbe5389ce16dc6e6bf9d95367d80a7d7305ac9",
     "name": "CraftTweaker2",
-    "version": "1.12-4.1.20.711"
+    "version": "1.12-4.1.20.715"
   },
   "CreativeCore_v1.10.71_mc1.12.2.jar": {
     "curseForgeHash": 1624693386,
@@ -1750,11 +1750,11 @@
     "name": "libnine",
     "version": "1.2.2"
   },
-  "libvulpes-0.5.2.jar": {
-    "curseForgeHash": 3369789236,
-    "jarName": "libvulpes-0.5.2.jar",
+  "libvulpes-0.5.3.jar": {
+    "curseForgeHash": 316802587,
+    "jarName": "libvulpes-0.5.3.jar",
     "modId": "libVulpes",
-    "modrinthHash": "6411389d16f16df4433d1427c47f1515d0a84c16",
+    "modrinthHash": "c4d8ef24f45f03ba62cb6987e47b82d73bf56f6b",
     "name": "libVulpes",
     "version": "0.4.3"
   },
@@ -1773,13 +1773,13 @@
     "name": "LLibrary",
     "version": "1.7.20-1.12.2"
   },
-  "loliasm-5.31.jar": {
-    "curseForgeHash": 3720160267,
-    "jarName": "loliasm-5.31.jar",
+  "loliasm-5.32.jar": {
+    "curseForgeHash": 1093273491,
+    "jarName": "loliasm-5.32.jar",
     "modId": "loliasm",
-    "modrinthHash": "77d556456ffe96271d02b3bb7e74d88f930297c5",
+    "modrinthHash": "2402aa4be7740722f34f04cd8574f3eeb749d508",
     "name": "LoliASM",
-    "version": "5.31"
+    "version": "5.32"
   },
   "lootcapacitortooltips-1.3.jar": {
     "curseForgeHash": 60008387,
@@ -2098,13 +2098,13 @@
     "name": "Nimble",
     "version": "0.0.2"
   },
-  "NoiseThreader-1.0.0.jar": {
-    "curseForgeHash": 144493319,
-    "jarName": "NoiseThreader-1.0.0.jar",
+  "NoiseThreader-1.1.3.jar": {
+    "curseForgeHash": 3165891654,
+    "jarName": "NoiseThreader-1.1.3.jar",
     "modId": "noisethreader",
-    "modrinthHash": "b448f1e86d4c686e2490aeeab38c2a7b6fc2d6f4",
+    "modrinthHash": "c0353113de45ebb3d6d934e09770258e57d02f94",
     "name": "NoiseThreader",
-    "version": "1.0.0"
+    "version": "1.1.3"
   },
   "nuclearcraft-1.12.2-2o.9.2.jar": {
     "curseForgeHash": 4285067408,
@@ -2852,6 +2852,14 @@
     "name": "Thaumic Additions",
     "version": "12.7.9"
   },
+  "thaumicapi-1.0.0.jar": {
+    "curseForgeHash": 3326162448,
+    "jarName": "thaumicapi-1.0.0.jar",
+    "modId": "thaumicapi",
+    "modrinthHash": "81cc8278c20d1c42943c4e432a4477bada74e4da",
+    "name": "ThaumicAPI",
+    "version": "1.0.0"
+  },
   "ThaumicAugmentation-1.12.2-2.1.14.jar": {
     "curseForgeHash": 965509518,
     "jarName": "ThaumicAugmentation-1.12.2-2.1.14.jar",
@@ -2867,14 +2875,6 @@
     "modrinthHash": "9b94fe37d4b61736a9c5e103b210ca57b92400d3",
     "name": "Thaumic Computers",
     "version": "0.5.1"
-  },
-  "ThaumicInventoryScanning_1.12.2-2.0.10.jar": {
-    "curseForgeHash": 1964344708,
-    "jarName": "ThaumicInventoryScanning_1.12.2-2.0.10.jar",
-    "modId": "tcinventoryscan",
-    "modrinthHash": "639253ac9c8aa30efaadeb9893ebb77d1b96a64c",
-    "name": "Thaumcrafft Inventory Scanning",
-    "version": "2.0.10"
   },
   "ThaumicJEI-1.12.2-1.7.0.jar": {
     "curseForgeHash": 4243220107,
@@ -2892,13 +2892,13 @@
     "name": "Thaumic Tinkerer Unofficial",
     "version": "1.12.2-5.9.15-Unofficial"
   },
-  "thaumictweaker-1.2.4.jar": {
-    "curseForgeHash": 4052654224,
-    "jarName": "thaumictweaker-1.2.4.jar",
+  "thaumictweaker-1.3.0.jar": {
+    "curseForgeHash": 2438907322,
+    "jarName": "thaumictweaker-1.3.0.jar",
     "modId": "thaumictweaker",
-    "modrinthHash": "fe9c80355ea3db885a909900975683ab191e8eca",
+    "modrinthHash": "b1536e59875a5d819f62a1f5822fa7d9d03a17b6",
     "name": "ThaumicTweaker",
-    "version": "1.2.4"
+    "version": "1.3.0"
   },
   "thaumicwonders-2.2.4.jar": {
     "curseForgeHash": 2509867258,
@@ -3000,6 +3000,14 @@
     "modrinthHash": "f58a26c9002cc8ac181c877bd4a5fd28707d2a04",
     "name": "Tinkers Construct OpenComputers Driver",
     "version": "0.4"
+  },
+  "TinkersPlannerAntique-1.12.2-1.0.2.jar": {
+    "curseForgeHash": 996469437,
+    "jarName": "TinkersPlannerAntique-1.12.2-1.0.2.jar",
+    "modId": "tinkersplannerantique",
+    "modrinthHash": "dd5e4e92ebf6029e5d27dbc17c27e88aa124d616",
+    "name": "Tinkers Planner Antique",
+    "version": "1.0.2"
   },
   "TinkerToolLeveling-1.12.2-1.1.0.jar": {
     "curseForgeHash": 1563429384,
@@ -3273,6 +3281,14 @@
     "name": "WanionLib",
     "version": "1.12.2-2.91"
   },
+  "warpomania-1.0.0.jar": {
+    "curseForgeHash": 836016001,
+    "jarName": "warpomania-1.0.0.jar",
+    "modId": "warpomania",
+    "modrinthHash": "29779de5c43fad31d4973a309f33e425632fb499",
+    "name": "Warp-O-Mania",
+    "version": "1.0.0"
+  },
   "WarpTheory1.12.2-0.0.3.9.jar": {
     "curseForgeHash": 858493048,
     "jarName": "WarpTheory1.12.2-0.0.3.9.jar",
@@ -3302,13 +3318,13 @@
     "name": "Xaero's World Map",
     "version": "1.39.12"
   },
-  "XNet-1.8.18.jar": {
-    "curseForgeHash": 1883577094,
-    "jarName": "XNet-1.8.18.jar",
+  "XNet-1.8.19.jar": {
+    "curseForgeHash": 3200446509,
+    "jarName": "XNet-1.8.19.jar",
     "modId": "xnet",
-    "modrinthHash": "b744d4d07ee5845af2e0dd9a786dc48ba9b31ef9",
+    "modrinthHash": "4549265335ae5a198f95bf4cbc8ab13c23565f2c",
     "name": "XNet",
-    "version": "1.8.18"
+    "version": "1.8.19"
   },
   "XNetAdditions-0.1.4.jar": {
     "curseForgeHash": 2722182956,
