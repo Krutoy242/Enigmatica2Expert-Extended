@@ -6,8 +6,9 @@
     {
       "label": "mc-icons",
       "type": "shell",
-      "command": "tsx",
+      "command": "pnpm",
       "args": [
+        "tsx",
         "E:/dev/mc-icons/src/cli.ts",
         "\"${relativeFile}\"",
         "--modpack=e2ee",
@@ -21,7 +22,8 @@
       "type": "shell",
       "command": "pnpm",
       "args": [
-        "tsx mc-tools/packages/format/src/cli.ts",
+        "tsx",
+        "mc-tools/packages/format/src/cli.ts",
         "\"${relativeFile}\""
       ],
       "problemMatcher": []
