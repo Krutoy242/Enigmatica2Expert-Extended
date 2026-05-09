@@ -48,3 +48,7 @@ runs:
     - name: 📦 Install dependencies
       shell: bash
       run: pnpm install --prod --frozen-lockfile --ignore-scripts
+
+    - name: 🌐 Install Chrome for Puppeteer
+      shell: bash
+      run: npx puppeteer browsers install chrome
