@@ -445,6 +445,7 @@
     {"projectID":1504502,"fileID":8001924,"___name":"XNet: Additions"                         ,"downloadUrl":"https://edge.forgecdn.net/files/8001/924/XNetAdditions-0.1.4.jar","required":true},
     {"projectID":1533287,"fileID":8035777,"___name":"ThaumicAPI"                              ,"downloadUrl":"https://edge.forgecdn.net/files/8035/777/thaumicapi-1.0.0.jar","required":true},
     {"projectID":1533544,"fileID":8037355,"___name":"Warp-O-Mania"                            ,"downloadUrl":"https://edge.forgecdn.net/files/8037/355/warpomania-1.0.0.jar","required":true},
-    {"projectID":1535236,"fileID":8053452,"___name":"Tinker's Planner Antique"                ,"downloadUrl":"https://edge.forgecdn.net/files/8053/452/TinkersPlannerAntique-1.12.2-1.0.2.jar","required":true}
+    {"projectID":1535236,"fileID":8053452,"___name":"Tinker's Planner Antique"                ,"downloadUrl":"https://edge.forgecdn.net/files/8053/452/TinkersPlannerAntique-1.12.2-1.0.2.jar","required":true},
+    {"projectID":1214490,"fileID":8073312,"___name":"Cleanroom Relauncher"                    ,"downloadUrl":"https://edge.forgecdn.net/files/8073/312/!cleanroom-relauncher-0.5.0.jar","required":true}
   ]
 }

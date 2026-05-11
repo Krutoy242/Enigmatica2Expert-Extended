@@ -1,0 +1,10 @@
+{
+  "selectedVersion": "0.5.12-alpha",
+  "latestVersion": "0.5.12-alpha",
+  "targetJavaVersion": "J25",
+  "targetVendor": "AZUL_ZULU",
+  "javaPath": "",
+  "args": "-XX:+UseCompactObjectHeaders ",
+  "autoSetup": true,
+  "enableRelauncher": true
+}
