@@ -220,7 +220,7 @@ launch:
   # For Forge 1.12-: "forge-{{@mcversion@}}-{{@loaderversion@}}-universal.jar"
   # For Forge 1.13+: "forge-{{@mcversion@}}-{{@loaderversion@}}.jar"
   # For Fabric: "fabric-server-launch.jar"
-  startFile: 'forge-{{@mcversion@}}-{{@loaderversion@}}.jar'
+  startFile: 'cleanroom-0.5.12-alpha.jar'
 
   # This is the command how the server is supposed to be started
   # For <1.16 it should be
