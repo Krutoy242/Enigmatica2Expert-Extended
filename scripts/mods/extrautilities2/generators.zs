@@ -137,10 +137,11 @@ Gen('netherstar')
 ])
 .setDefaultRFTandTime(4000, 2400)
 .addRecipes({
-  <mysticalagradditions:nether_star_essence>: 0.06,
-  <extendedcrafting:material:40>: 1.2,
-  <mysticalagradditions:special>: 3.0,
-  <mysticalagradditions:nether_star_seeds>: 100.0,
+  <mysticalagradditions:nether_star_essence>: 0.6,
+  <extendedcrafting:material:40>: 12.0, 
+  <cyclicmagic:soulstone>: 12.0, 
+  <mysticalagradditions:special>: 30.0,
+  <mysticalagradditions:nether_star_seeds>: 200.0,
 } as double[IIngredient]$orderly);
 
 Gen('ender')
