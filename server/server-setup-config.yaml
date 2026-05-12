@@ -124,11 +124,11 @@ install:
       - 1132293 # Backpack Display
       - 1147522 # Backpack Opener
       - 1154099 # Crash Assistant
+      - 1214490 # Cleanroom Relauncher
       - 1220460 # Gnetum
       - 1234162 # Lumenized
       - 1329068 # MorphOverlay
       - 1331377 # Armored Arms
-      - 1214490 # Cleanroom Relauncher
 
     # The base path where the server should be installed to, ~ for current path
   baseInstallPath: ~
