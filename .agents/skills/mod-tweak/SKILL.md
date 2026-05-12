@@ -13,13 +13,13 @@ Provide the standard skeleton for `scripts/mods/<mod>.zs` files (≈200 of them)
 ## When to use me
 
 - Adding or editing any file in `scripts/mods/`.
-- Deciding whether your tweak belongs in `scripts/mods/<mod>.zs` (general per-mod tweaks) or `scripts/mixin/<mod>.zs` (targeted recipe surgery — see `mixin-recipes`).
+- Deciding whether your tweak belongs in `scripts/mods/<mod>.zs` (general per-mod tweaks) or `scripts/mixin/<mod>.zs` (runtime bytecode patches — see `zenscript-mixins`).
 
 ## File location rules
 
 - One file per mod, named after the mod id: `scripts/mods/actuallyadditions.zs`.
 - Tweaks that touch multiple mods that conceptually belong to one mod family go into a folder: `scripts/mods/bloodmagic/`, `scripts/mods/extrautilities2/`.
-- If you need surgical removal of one specific mod recipe but no broad tweaking, prefer `scripts/mixin/<mod>.zs`.
+- If you need to patch Java code at runtime (change constants, redirect methods, overwrite behavior), use `scripts/mixin/<mod>.zs`.
 
 ## Skeleton
 
@@ -68,7 +68,7 @@ craft.remake(<actuallyadditions:item_canola_seed> * 2, ["pretty",
 
 - For the recipe DSL itself → skill `craft-recipes`.
 - For broad multi-machine recipes → skill `process-system`.
-- For surgical recipe deletion / patching only → skill `mixin-recipes`.
+- For runtime bytecode patches → skill `zenscript-mixins`.
 - For new items/blocks → skill `cot-content`.
 - For loot drops → skill `loot-tables`.
 
