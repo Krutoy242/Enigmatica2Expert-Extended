@@ -57,7 +57,7 @@ scripts.mods.extendedcrafting_engineering.remakeAlted(
   '☼': <ore:gearCopper>,
   '▬': <ore:ingotBronze>,
   '¤': <ore:gearBronze>,
-}, 4, {
+}, 6, {
   '☼': <ore:gearConstantan>,
   '▬': <ore:ingotBrass>,
 });
