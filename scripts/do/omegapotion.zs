@@ -357,7 +357,7 @@ static potNameTag as IData[string] = {
 // Convert Rustic's ElixirEffect entry into CustomPotionEffects entry (for Vanilla or BloodMagic potions)
 //  by replacing "Effect" tag to "Id"
 static convertElixir as function(IData)IData = function (elixirEffect as IData) as IData {
-  val effect = elixirEffect?.Effect as string;
+  val effect = elixirEffect?.Effect?.asString();
   if (isNull(effect)) return elixirEffect;
 
   val potion = game.getPotion(effect);

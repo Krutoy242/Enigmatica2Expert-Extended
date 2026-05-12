@@ -139,7 +139,7 @@ function sealed(name as string, amount as int = 0) as string {
 // Fluid Drawers
 if (!isNull(loadedMods['fluiddrawers'])) {
   val fluidDrawerTooltip as ITooltipFunction = function (item) {
-    val fluidName = item.tag?.Tile?.Drawer?.Fluid?.FluidName as string;
+    val fluidName = item.tag?.Tile?.Drawer?.Fluid?.FluidName?.asString();
     if (isNull(fluidName)) return null;
     val fluid = game.getLiquid(fluidName);
     if (isNull(fluid)) return null;
