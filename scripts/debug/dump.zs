@@ -17,6 +17,7 @@ function logAdditionalDebugData(player as IPlayer) {
     '/ct oredict',
     '/ct recipes furnace',
     '/ct recipes',
+    '/ticpa list remake',
   ] as string[];
 
   for cmd in commandsToRun {
