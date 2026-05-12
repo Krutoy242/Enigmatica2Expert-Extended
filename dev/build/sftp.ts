@@ -56,7 +56,7 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
     }
     catch (error) {
       logUpdate.done()
-      consola.error(`Cant connect to SFTP: ${error}`)
+      consola.error(`Cant connect to SFTP: ${error instanceof Error ? error.message : String(error)}`)
       continue
     }
 

@@ -51,17 +51,17 @@ interface LangGroups {
 
 // Patchouli JSON type definitions
 interface PatchouliPage {
-  item: string
-  type: string
+  item : string
+  type : string
   title: string
-  text: string
+  text : string
 }
 
 interface PatchouliEntry {
-  name: string
-  icon: string
+  name    : string
+  icon    : string
   category: string
-  pages: PatchouliPage[]
+  pages   : PatchouliPage[]
 }
 
 function getTips(lang: string, filePath: string): LangGroups[] {
@@ -132,10 +132,10 @@ function generatePatchouliTips(enUsTips: LangGroups[]) {
     if (currentHeight !== 0 && currentHeight + tipHeight > HEIGHT) {
       // Finalize current page
       pages.push({
-        item: 'thaumicaugmentation:research_notes',
-        type: 'text',
+        item : 'thaumicaugmentation:research_notes',
+        type : 'text',
         title: 'Tips',
-        text: currentPageText
+        text : currentPageText,
       })
       // Reset for new page
       currentPageText = ''
@@ -151,22 +151,22 @@ function generatePatchouliTips(enUsTips: LangGroups[]) {
   // Finalize last page
   if (currentPageText || pages.length === 0) {
     pages.push({
-      item: 'thaumicaugmentation:research_notes',
-      type: 'text',
+      item : 'thaumicaugmentation:research_notes',
+      type : 'text',
       title: 'Tips',
-      text: currentPageText
+      text : currentPageText,
     })
   }
 
   // Build and write Patchouli entry
   const entry: PatchouliEntry = {
-    name: 'Tips',
-    icon: 'thaumicaugmentation:research_notes',
+    name    : 'Tips',
+    icon    : 'thaumicaugmentation:research_notes',
     category: 'World',
-    pages
+    pages,
   }
 
-  writeFileSync(PATCHOULI_ENTRY_PATH, JSON.stringify(entry, null, 2) + '\n')
+  writeFileSync(PATCHOULI_ENTRY_PATH, `${JSON.stringify(entry, null, 2)}\n`)
   consola.info(`Generated Patchouli tips entry: ${PATCHOULI_ENTRY_PATH}`)
 }
 

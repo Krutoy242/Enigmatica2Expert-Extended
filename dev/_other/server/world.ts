@@ -3,7 +3,7 @@ import type Client from 'ssh2-sftp-client'
 import * as p from '@clack/prompts'
 import chalk from 'chalk'
 
-import { getBoxForLabel } from '../../build/build_utils'
+import { getBoxForLabel } from '../../build/build_utils.js'
 
 export async function pruneWorld(
   sftp: Client,
@@ -94,7 +94,7 @@ export async function removeFilesOnServer(
   let fileCounter = 0
   await Promise.all(list.map(async (f) => {
     const p = sftp.delete(f)
-    p.then(() => onRemove(++fileCounter))
+    void p.then(() => onRemove(++fileCounter))
     return p
   }))
 

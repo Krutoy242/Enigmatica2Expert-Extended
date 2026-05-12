@@ -124,174 +124,243 @@
   ],
 
   "highlight.regexes": {
-    "(§0)(.+?)(§[^lmno0]|\r?\n|\\\\n|$)": {
+    "(§0)(.+?)(§[1-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#000000" }, {}]
     },
-    "(§1)(.+?)(§[^lmno1]|\r?\n|\\\\n|$)": {
+    "(§1)(.+?)(§[02-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#0000AA" }, {}]
     },
-    "(§2)(.+?)(§[^lmno2]|\r?\n|\\\\n|$)": {
+    "(§2)(.+?)(§[013-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#00AA00" }, {}]
     },
-    "(§3)(.+?)(§[^lmno3]|\r?\n|\\\\n|$)": {
+    "(§3)(.+?)(§[0-24-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#00AAAA" }, {}]
     },
-    "(§4)(.+?)(§[^lmno4]|\r?\n|\\\\n|$)": {
+    "(§4)(.+?)(§[0-35-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#AA0000" }, {}]
     },
-    "(§5)(.+?)(§[^lmno5]|\r?\n|\\\\n|$)": {
+    "(§5)(.+?)(§[0-46-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#AA00AA" }, {}]
     },
-    "(§6)(.+?)(§[^lmno6]|\r?\n|\\\\n|$)": {
+    "(§6)(.+?)(§[0-57-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#FFAA00" }, {}]
     },
-    "(§7)(.+?)(§[^lmno7]|\r?\n|\\\\n|$)": {
+    "(§7)(.+?)(§[0-68-9a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#AAAAAA" }, {}]
     },
-    "(§8)(.+?)(§[^lmno8]|\r?\n|\\\\n|$)": {
+    "(§8)(.+?)(§[0-79a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#555555" }, {}]
     },
-    "(§9)(.+?)(§[^lmno9]|\r?\n|\\\\n|$)": {
+    "(§9)(.+?)(§[0-8a-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#5555FF" }, {}]
     },
-    "(§a)(.+?)(§[^lmnoa]|\r?\n|\\\\n|$)": {
+    "(§a)(.+?)(§[0-9b-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#55FF55" }, {}]
     },
-    "(§b)(.+?)(§[^lmnob]|\r?\n|\\\\n|$)": {
+    "(§b)(.+?)(§[0-9ac-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#55FFFF" }, {}]
     },
-    "(§c)(.+?)(§[^lmnoc]|\r?\n|\\\\n|$)": {
+    "(§c)(.+?)(§[0-9abd-fgr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#FF5555" }, {}]
     },
-    "(§d)(.+?)(§[^lmnod]|\r?\n|\\\\n|$)": {
+    "(§d)(.+?)(§[0-9abce-gr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#FF55FF" }, {}]
     },
-    "(§e)(.+?)(§[^lmnoe]|\r?\n|\\\\n|$)": {
+    "(§e)(.+?)(§[0-9a-dgr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#FFFF55" }, {}]
     },
-    "(§f)(.+?)(§[^lmnof]|\r?\n|\\\\n|$)": {
+    "(§f)(.+?)(§[0-9a-egr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#FFFFFF" }, {}]
     },
-    "(§g)(.+?)(§[^lmnog]|\r?\n|\\\\n|$)": {
+    "(§g)(.+?)(§[0-9a-fr]|\\r?\\n|$)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "color": "#DDD605" }, {}]
     },
-    "(§l)([^§\n]+)": {
+    "(§l)([^§\\n\"]+)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "fontWeight": "bold" }]
     },
-    "(§m)([^§\n]+)": {
+    "(§m)([^§\\n\"]+)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "textDecoration": "line-through" }]
     },
-    "(§n)([^§\n]+)": {
+    "(§n)([^§\\n\"]+)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "textDecoration": "underline" }]
     },
-    "(§o)([^§\n]+)": {
+    "(§o)([^§\\n\"]+)": {
       "filterFileRegex": ".*\\.lang",
       "decorations": [{}, { "fontStyle": "italic" }]
     },
 
-    "(§0)(.+?)(§[^lmno0]|\r?\n|\\\\n|$|\"|')": {
+    "(§0)(.+?)(§[1-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#000000" }, {}]
     },
-    "(§1)(.+?)(§[^lmno1]|\r?\n|\\\\n|$|\"|')": {
+    "(§1)(.+?)(§[02-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#0000AA" }, {}]
     },
-    "(§2)(.+?)(§[^lmno2]|\r?\n|\\\\n|$|\"|')": {
+    "(§2)(.+?)(§[013-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#00AA00" }, {}]
     },
-    "(§3)(.+?)(§[^lmno3]|\r?\n|\\\\n|$|\"|')": {
+    "(§3)(.+?)(§[0-24-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#00AAAA" }, {}]
     },
-    "(§4)(.+?)(§[^lmno4]|\r?\n|\\\\n|$|\"|')": {
+    "(§4)(.+?)(§[0-35-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#AA0000" }, {}]
     },
-    "(§5)(.+?)(§[^lmno5]|\r?\n|\\\\n|$|\"|')": {
+    "(§5)(.+?)(§[0-46-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#AA00AA" }, {}]
     },
-    "(§6)(.+?)(§[^lmno6]|\r?\n|\\\\n|$|\"|')": {
+    "(§6)(.+?)(§[0-57-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#FFAA00" }, {}]
     },
-    "(§7)(.+?)(§[^lmno7]|\r?\n|\\\\n|$|\"|')": {
+    "(§7)(.+?)(§[0-68-9a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#AAAAAA" }, {}]
     },
-    "(§8)(.+?)(§[^lmno8]|\r?\n|\\\\n|$|\"|')": {
+    "(§8)(.+?)(§[0-79a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#555555" }, {}]
     },
-    "(§9)(.+?)(§[^lmno9]|\r?\n|\\\\n|$|\"|')": {
+    "(§9)(.+?)(§[0-8a-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#5555FF" }, {}]
     },
-    "(§a)(.+?)(§[^lmnoa]|\r?\n|\\\\n|$|\"|')": {
+    "(§a)(.+?)(§[0-9b-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#55FF55" }, {}]
     },
-    "(§b)(.+?)(§[^lmnob]|\r?\n|\\\\n|$|\"|')": {
+    "(§b)(.+?)(§[0-9ac-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#55FFFF" }, {}]
     },
-    "(§c)(.+?)(§[^lmnoc]|\r?\n|\\\\n|$|\"|')": {
+    "(§c)(.+?)(§[0-9abd-fgr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#FF5555" }, {}]
     },
-    "(§d)(.+?)(§[^lmnod]|\r?\n|\\\\n|$|\"|')": {
+    "(§d)(.+?)(§[0-9abce-gr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#FF55FF" }, {}]
     },
-    "(§e)(.+?)(§[^lmnoe]|\r?\n|\\\\n|$|\"|')": {
+    "(§e)(.+?)(§[0-9a-dgr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#FFFF55" }, {}]
     },
-    "(§f)(.+?)(§[^lmnof]|\r?\n|\\\\n|$|\"|')": {
+    "(§f)(.+?)(§[0-9a-egr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#FFFFFF" }, {}]
     },
-    "(§g)(.+?)(§[^lmnog]|\r?\n|\\\\n|$|\"|')": {
+    "(§g)(.+?)(§[0-9a-fr]|\\r?\\n|$|[\\\"'])": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "color": "#DDD605" }, {}]
     },
-    "(§l)([^§\n\"']+)": {
+    "(§l)([^§\\n\"']+)": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "fontWeight": "bold" }]
     },
-    "(§m)([^§\n\"']+)": {
+    "(§m)([^§\\n\"']+)": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "textDecoration": "line-through" }]
     },
-    "(§n)([^§\n\"']+)": {
+    "(§n)([^§\\n\"']+)": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "textDecoration": "underline" }]
     },
-    "(§o)([^§\n\"']+)": {
+    "(§o)([^§\\n\"']+)": {
       "filterFileRegex": ".*\\.zs",
       "decorations": [{}, { "fontStyle": "italic" }]
+    },
+
+    "(§0)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#000000" }, {}, { "color": "#000000" }]
+    },
+    "(§1)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#0000AA" }, {}, { "color": "#0000AA" }]
+    },
+    "(§2)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#00AA00" }, {}, { "color": "#00AA00" }]
+    },
+    "(§3)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#00AAAA" }, {}, { "color": "#00AAAA" }]
+    },
+    "(§4)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#AA0000" }, {}, { "color": "#AA0000" }]
+    },
+    "(§5)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#AA00AA" }, {}, { "color": "#AA00AA" }]
+    },
+    "(§6)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#FFAA00" }, {}, { "color": "#FFAA00" }]
+    },
+    "(§7)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#AAAAAA" }, {}, { "color": "#AAAAAA" }]
+    },
+    "(§8)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#555555" }, {}, { "color": "#555555" }]
+    },
+    "(§9)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#5555FF" }, {}, { "color": "#5555FF" }]
+    },
+    "(§a)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#55FF55" }, {}, { "color": "#55FF55" }]
+    },
+    "(§b)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#55FFFF" }, {}, { "color": "#55FFFF" }]
+    },
+    "(§c)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#FF5555" }, {}, { "color": "#FF5555" }]
+    },
+    "(§d)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#FF55FF" }, {}, { "color": "#FF55FF" }]
+    },
+    "(§e)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#FFFF55" }, {}, { "color": "#FFFF55" }]
+    },
+    "(§f)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#FFFFFF" }, {}, { "color": "#FFFFFF" }]
+    },
+    "(§g)([\\\"'])\\s*~\\s*([a-zA-Z_][\\w.]*)": {
+      "filterFileRegex": ".*\\.zs",
+      "decorations": [{ "color": "#DDD605" }, {}, { "color": "#DDD605" }]
     }
   },
 
@@ -434,5 +503,19 @@
   "files.associations": {
     "*.png.mcmeta": "json",
     "config/cofh/world/**/*.json": "properties"
-  }
+  },
+
+  "mc-tools.modlist.baselinePath": "../E2E-unchanged/minecraftinstance.json",
+  "mc-tools.modlist.ignorePath": "dev/.devonly.ignore",
+  "mc-tools.modlist.templatePath": "dev/tools/modlist_template.md",
+  "mc-tools.modlist.outputPath": "MODS.md",
+  "mc-tools.modlist.sortBy": "addonID",
+  "mc-tools.manifest.ignorePath": "dev/.devonly.ignore",
+  "mc-tools.manifest.inputPath": "minecraftinstance.json",
+  "mc-tools.modTracker.inputPath": "minecraftinstance.json",
+  "mc-tools.modTracker.configWatchPattern": "config/**/*",
+  "mc-tools.modTracker.globalFiles": ["MODS.md", ".gitignore", ".gitattributes"],
+  "mc-tools.modTracker.ignoredMappingPatterns": ["mods/*", "minecraftinstance.json", "manifest*.json", "MODS.md", ".gitignore", ".gitattributes"],
+  "mc-tools.debugLog.defaultMatchRegex": ".*(?:WARN|ERROR|FATAL).*",
+  "mc-tools.crafttweakerLog.fileExtensions": [".zs"]
 }

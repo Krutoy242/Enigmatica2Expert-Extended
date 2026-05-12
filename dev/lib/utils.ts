@@ -44,7 +44,7 @@ function createHashedFunction<T>(fn: (filePath: string) => T): (filePath: string
     const mtime = statSync(filename).mtime.getTime()
 
     if (oldResult && oldResult.mtime === mtime) {
-      return oldResult.result
+      return oldResult.result as T
     }
 
     const result = fn(filename)
@@ -91,6 +91,7 @@ export const getCSV = createHashedFunction(
 )
 
 export const config = createHashedFunction((filename: string): Record<string, any> | undefined => {
+  /* eslint-disable regexp/no-super-linear-backtracking */
   const cfg = loadText(filename)
     .replace(/^ *#.*$/gm, '') // Remove comments
     .replace(/^~.*$/gm, '') // config version
@@ -100,9 +101,9 @@ export const config = createHashedFunction((filename: string): Record<string, an
     .replace(
       /^ *\w:(?:([\w.]+)|"([^"]+)") *= *(.*)$/gm,
       (match, key1, key2, val) => {
-        return (isNaN(val) && !(val === 'true' || val === 'false')) || val === ''
-          ? `"${key1 || key2}":"${val.replace(/"/g, '\\"')}",`
-          : `"${key1 || key2}":${val.replace(/"/g, '\\"')},`
+        return (Number.isNaN(Number(val)) && !(val === 'true' || val === 'false')) || val === ''
+          ? `"${key1 || key2}":"${(val as string).replace(/"/g, '\\"')}",`
+          : `"${key1 || key2}":${(val as string).replace(/"/g, '\\"')},`
       }
     )
     // Replace lists
@@ -125,11 +126,11 @@ export const config = createHashedFunction((filename: string): Record<string, an
     return eval(`({${cfg}})`) as Record<string, any>
   }
   catch (error) {
-    console.log('Parsing config error. File: ', filename)
+    console.error('Parsing config error. File: ', filename)
     console.error(error)
     const errorFileName = relative(`_error_${subFileName(filename)}.js`)
     writeFileSync(errorFileName, `return{${cfg}}`)
-    console.log('See ', errorFileName)
+    console.error('See ', errorFileName)
   }
 })
 
@@ -278,34 +279,36 @@ function renameKeys<T>(
 /**
  * Rename all object keys in object
  */
-export function renameDeep<T extends Record<string, unknown>>(
-  obj: T,
+export function renameDeep(
+  obj: Record<string, unknown> | unknown[],
   cb: RenameKeysCallback
-): T {
+): Record<string, unknown> | unknown[] {
   const type = typeof obj
 
   if (type !== 'object' && !Array.isArray(obj)) {
     throw new Error('expected an object')
   }
 
-  if (type === 'object') {
-    obj = renameKeys(obj, cb)
+  let target: Record<string, unknown> | unknown[] = obj
+  if (type === 'object' && !Array.isArray(obj)) {
+    target = renameKeys(obj, cb)
   }
 
-  const res: any[] | Record<string, any> = Array.isArray(obj) ? [] : {}
+  const res: any[] | Record<string, any> = Array.isArray(target) ? [] : {}
 
-  for (const key in obj) {
+  const keys = Object.keys(target)
+  for (const key of keys) {
     if (key === '__') {
       continue
     }
 
-    const val = obj[key]
+    const val = (target as Record<string, unknown>)[key]
 
     if (typeof val === 'object' || Array.isArray(val)) {
-      res[key] = renameDeep(val, cb)
+      (res as Record<string, any>)[key] = renameDeep(val as Record<string, unknown> | unknown[], cb)
     }
     else {
-      res[key] = val
+      (res as Record<string, any>)[key] = val
     }
   }
 
@@ -323,7 +326,7 @@ export function isPathHasChanged(pPath: string): boolean {
   try {
     return !!execSync(`git diff HEAD ${pPath}`).toString().trim()
   }
-  catch (error) {
+  catch {
     return true
   }
 }

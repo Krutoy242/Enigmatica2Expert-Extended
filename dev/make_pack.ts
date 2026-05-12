@@ -198,7 +198,7 @@ async function buildZips(nextVersion: string, zipBaseName: string) {
     await fs.rm(PATHS.tmpDir, { recursive: true, force: true })
   }
   catch (err) {
-    p.cancel(`Cannot remove TMP folder ${PATHS.tmpDir} ${err}`)
+    p.cancel(`Cannot remove TMP folder ${PATHS.tmpDir} ${String(err)}`)
     process.exit(1)
   }
 
@@ -220,7 +220,7 @@ async function buildZips(nextVersion: string, zipBaseName: string) {
     const tmpManifestPath = resolve(tmpOverrides, 'manifest.json')
 
     const [removedFiles] = await Promise.all([
-      removeFiles(devonlyList),
+      (async () => removeFiles(devonlyList))(),
       replaceInFile({
         files: tmpManifestPath,
         from : /"___name"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,?/g,

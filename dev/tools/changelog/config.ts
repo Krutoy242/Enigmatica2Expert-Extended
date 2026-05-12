@@ -1,14 +1,12 @@
 /* eslint-disable regexp/no-super-linear-backtracking */
-/* eslint-disable antfu/no-import-node-modules-by-path */
-/* eslint-disable antfu/no-import-dist */
 
-import type { GetCommitsParams } from '@conventional-changelog/git-client/dist/types.js'
+import type { GetCommitsParams } from '@conventional-changelog/git-client'
+
+import type { Preset } from 'conventional-changelog'
+import type { CommitGroup, CommitKnownProps, FinalContext, Options as WriterOptions } from 'conventional-changelog-writer'
+import type { ParserStreamOptions } from 'conventional-commits-parser'
 
 import type { Minecraftinstance } from '../../../mc-tools/packages/curseforge/src/minecraftinstance.js'
-import type { CommitGroup, CommitKnownProps, FinalContext, Options as WriterOptions } from '../../../node_modules/conventional-changelog-writer/dist/types.js'
-import type { Preset } from '../../../node_modules/conventional-changelog/dist/types.js'
-
-import type { ParserStreamOptions } from '../../../node_modules/conventional-commits-parser/dist/types.js'
 // @ts-check
 import { existsSync, readFileSync } from 'node:fs'
 
@@ -18,7 +16,7 @@ import { fileURLToPath } from 'node:url'
 import { parse } from 'yaml'
 import { $, fs } from 'zx'
 
-import { generateModsList } from '../../../mc-tools/packages/modlist/src'
+import { generateModsList } from '../../../mc-tools/packages/modlist/src/index.js'
 
 // ESM-safe __dirname
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -45,16 +43,18 @@ if (!existsSync(configPath)) {
   throw new Error(`Missing changelog config file: ${configPath}`)
 }
 
-const config: Config = parse(readFileSync(configPath, 'utf8'))
+const config: Config = parse(readFileSync(configPath, 'utf8')) as Config
 
 // Extract mod changes between tags
 async function getModChanges() {
-  const oldVersion = await $`git describe --tags --abbrev=0`
+  const oldVersion = String(await $`git describe --tags --abbrev=0`)
 
   const [fresh, old, template] = await Promise.all([
-    fs.readJson('minecraftinstance.json'),
-    $`git show tags/${oldVersion}:minecraftinstance.json`
-      .then(res => JSON.parse(String(res)) as Minecraftinstance),
+    fs.readJson('minecraftinstance.json') as Promise<Minecraftinstance>,
+    (async () => {
+      const res = await $`git show tags/${oldVersion}:minecraftinstance.json`
+      return JSON.parse(String(res)) as Minecraftinstance
+    })(),
     fs.readFile('dev/tools/changelog/modlist.md', 'utf8'),
   ])
 
@@ -63,11 +63,12 @@ async function getModChanges() {
     throw new Error('CF_API_KEY environment variable is required for changelog generation')
   }
 
-  return generateModsList(
+  return generateModsList({
     fresh,
     old,
-    { key: String(key), template: String(template) }
-  )
+    key     : String(key),
+    template: String(template),
+  })
 }
 
 const commits: GetCommitsParams = {
@@ -101,7 +102,7 @@ const writer: WriterOptions = {
   commitGroupsSort: 'title',
   commitsSort     : (a: Commit, b: Commit) => (a.subject || '').localeCompare(b.subject || ''),
 
-  transform(_commit, _context) {
+  transform(_commit: Commit, _context: FinalContext<Commit>) {
     const commit: Commit = {
       ..._commit,
     }
@@ -172,17 +173,18 @@ const writer: WriterOptions = {
     context.modschanges = await getModChanges()
 
     // Group commits by scope inside each group
-    context.commitGroups?.forEach((group: CommitGroup<Commit> & { scopes: object }) => {
+    context.commitGroups?.forEach((group) => {
       if (!group.title) group.title = 'Misc'
       const groupedBy: Record<string, Commit[]> = {}
-      group.commits.forEach((c) => {
+      group.commits.forEach((c: Commit) => {
         (groupedBy[c.scope || ''] ??= []).push(c)
       })
 
-      // @ts-expect-error nonoptional
+      // @ts-expect-error dynamically mutate group type
       delete group.commits
 
-      group.scopes = Object.entries(groupedBy).map(([scope, commits]) => ({
+      const groupAny = group as CommitGroup<Commit> & { scopes: object }
+      groupAny.scopes = Object.entries(groupedBy).map(([scope, commits]) => ({
         scope,
         commits,
       })).sort((a, b) => a.scope.localeCompare(b.scope))

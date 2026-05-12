@@ -492,6 +492,9 @@ ignore:
   - ERROR. .Foundation.. Thread.#\d+,Thread-\d+,\d+,main.[\s\S]+lumien.custommainmenu.handler.LoadStringURL.run
   - ERROR. .Foundation.. Thread.#\d+,AstralSorcery Patreon Effect Loader,\d+,main.[\s\S]+com\.google\.gson\.JsonSyntaxException
 
+  # Xaero's mods — checking patreon status
+  - 'io exception while checking patreon:'
+
   # Failed to check for updates or download contributor/documentation files.
   - 'brandonscore.: ThreadFileDownloader: DL Failed'
   - 'brandonscore.: .Pi Reported Error.: Failed to download'

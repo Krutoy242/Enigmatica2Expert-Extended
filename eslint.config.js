@@ -1,5 +1,5 @@
 import antfu from '@antfu/eslint-config'
-import zs from '@mctools/eslint-plugin-zs'
+import zs, { ruleFactories } from '@mctools/eslint-plugin-zs'
 
 const tsConfig = await antfu({
   typescript: { tsconfigPath: 'tsconfig.json' },
@@ -41,6 +41,7 @@ const tsConfig = await antfu({
     'style/jsx-wrap-multilines'         : 'off',
     'style/jsx-closing-tag-location'    : 'off',
     'style/jsx-closing-bracket-location': 'off',
+    'style/indent-binary-ops'           : 'off', // ['error', 2],
 
     // // Override @antfu rules to my personal prefferences
     'style/key-spacing'            : ['error', { align: 'colon' }],
@@ -172,8 +173,24 @@ const zsTsConfig = [
   { files: ['**/*.ts', '**/*.tsx'], ...zsOverrides },
 ]
 
-export default [
+const tsConfigWithZs = [
   ...tsConfig,
+  {
+    files  : ['**/*.ts', '**/*.tsx'],
+    plugins: {
+      '@mctools/zs': {
+        meta : { name: '@mctools/eslint-plugin-zs', version: '0.0.0' },
+        rules: {
+          'no-redundant-return-cast': ruleFactories['no-redundant-return-cast']({}),
+        },
+      },
+    },
+    rules: { '@mctools/zs/no-redundant-return-cast': 'warn' },
+  },
+]
+
+export default [
+  ...tsConfigWithZs,
   ...zs.defineConfig({ tsConfig: zsTsConfig }),
   // Real *.zs.ts files emitted by the mctools-format CLI.
   { files: ['**/*.zs.ts'], ...zsOverrides },

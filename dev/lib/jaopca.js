@@ -12,7 +12,7 @@ let list
  * @returns {import('./tellme.js').TMStack[][]}
  */
 function getList() {
-  return (list ??= _(config('config/JAOPCA.cfg'))
+  return list ??= _(config('config/JAOPCA.cfg'))
     .map((o, main) =>
       [main, o.extra, o.extra2, o.extra3].map(mat =>
         _(['ingot', 'gem', 'dust', 'ore'])
@@ -28,7 +28,7 @@ function getList() {
         prefferedModSort(a[0], b[0])
         || naturalSort(a[0]?.commandString ?? '', b[0]?.commandString ?? '')
     )
-    .value())
+    .value()
 }
 
 // const sublist = _(list.map(arr =>

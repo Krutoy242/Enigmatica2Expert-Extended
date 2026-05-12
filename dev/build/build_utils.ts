@@ -73,7 +73,7 @@ export function removeFiles(fileArg: readonly string[] | string) {
       removed.push(file)
     }
     catch (error) {
-      process.stdout.write(`\n${chalk.red(`Cannot remove: ${chalk.blue(file)}`)}\n\n${error}\n`)
+      process.stdout.write(`\n${chalk.red(`Cannot remove: ${chalk.blue(file)}`)}\n\n${error instanceof Error ? error : String(error)}\n`)
     }
   })
   return `removed: ${removed.length}\n${removed.map(s => chalk.gray(relative(process.cwd(), s))).join('\n')

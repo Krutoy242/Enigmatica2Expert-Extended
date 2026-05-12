@@ -1,3 +1,4 @@
+/* eslint-disable antfu/no-top-level-await */
 /**
  * @file Runs every `dev:*` npm script in parallel through listr2.
  *
@@ -9,9 +10,11 @@
  */
 
 import type { ListrTask } from 'listr2'
+import type { Buffer } from 'node:buffer'
 import { spawn } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import process from 'node:process'
 import { Listr } from 'listr2'
 
 interface Failure {

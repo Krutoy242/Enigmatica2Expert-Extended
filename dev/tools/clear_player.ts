@@ -4,15 +4,16 @@
  * Backup and clear player data from a Minecraft server.
  */
 
-/* eslint-disable ts/no-unsafe-argument */
-
+import type { Buffer } from 'node:buffer'
 import type { Compound, NBT } from 'prismarine-nbt'
+
 import type { ConnectOptions } from 'ssh2-sftp-client'
+import process from 'node:process'
 
 import * as p from '@clack/prompts'
 import chalk from 'chalk'
 import { dirname, join as pathJoin } from 'pathe'
-import nbt from 'prismarine-nbt'
+import * as nbt from 'prismarine-nbt'
 import Client from 'ssh2-sftp-client'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
@@ -49,22 +50,22 @@ async function handleTeamData(sftp: Client, mcRoot: string, worldName: string, p
   let playerNbt: NBT | undefined
   try {
     // Try reading from original location
-    const playerDataBuffer = await sftp.get(pathJoin(mcRoot, worldName, playerDataPath))
+    const playerDataBuffer = await sftp.get(pathJoin(mcRoot, worldName, playerDataPath)) as Buffer
     const parsed = await nbt.parse(playerDataBuffer)
     playerNbt = parsed.parsed
   }
-  catch (e) {
+  catch {
     try {
       // If not found, try reading from backup location
       const backupPath = pathJoin(mcRoot, 'backups', playerName, playerDataPath)
       if (await sftp.exists(backupPath)) {
         s.message('Player .dat not in original location, reading from backup...')
-        const backupDataBuffer = await sftp.get(backupPath)
+        const backupDataBuffer = await sftp.get(backupPath) as Buffer
         const parsed = await nbt.parse(backupDataBuffer)
         playerNbt = parsed.parsed
       }
     }
-    catch (backupError) {
+    catch {
       s.stop(`Could not read player data at ${playerDataPath} or its backup. Skipping team removal.`)
       return initialResult
     }
@@ -75,7 +76,7 @@ async function handleTeamData(sftp: Client, mcRoot: string, worldName: string, p
     return initialResult
   }
 
-  const simplifiedPlayer = nbt.simplify(playerNbt)
+  const simplifiedPlayer = nbt.simplify(playerNbt) as Record<string, string | undefined>
   const teamId = simplifiedPlayer.TeamID
   if (!teamId) {
     s.stop('Player does not belong to a team.')
@@ -91,9 +92,9 @@ async function handleTeamData(sftp: Client, mcRoot: string, worldName: string, p
     return initialResult
   }
 
-  const teamDataBuffer = await sftp.get(teamFileFullPath)
+  const teamDataBuffer = await sftp.get(teamFileFullPath) as Buffer
   const { parsed: teamNbt } = await nbt.parse(teamDataBuffer)
-  const simplifiedTeam = nbt.simplify(teamNbt)
+  const simplifiedTeam = nbt.simplify(teamNbt) as Record<string, string | undefined>
 
   if (simplifiedTeam.Owner === playerName) {
     s.message(`Player is the ${chalk.yellow('owner')} of team ${chalk.cyan(teamId)}.`)
@@ -139,8 +140,8 @@ async function main() {
 
   const sftp = new Client()
   let isConnected = false
-  const config = loadJson('~secrets/sftp_servers/3. Saqult/sftp.json')
-  const { mc_root: mcRoot, ...sftpConfig } = config as ConnectOptions & { mc_root: string }
+  const config = loadJson('~secrets/sftp_servers/3. Saqult/sftp.json') as Record<string, unknown>
+  const { mc_root: mcRoot, ...sftpConfig } = config as unknown as ConnectOptions & { mc_root: string }
 
   try {
     const s = p.spinner()
@@ -234,7 +235,7 @@ async function main() {
 
         await sftp.mkdir(pathJoin(mcRoot, dirname(backupPath)), true)
 
-        const fileContent = await sftp.get(sourceFile)
+        const fileContent = await sftp.get(sourceFile) as Buffer
         await sftp.put(fileContent, pathJoin(mcRoot, backupPath))
         s.message(`Backing up... ${chalk.green(relativePath)}`)
       }
@@ -265,7 +266,7 @@ async function main() {
     p.outro(chalk.green('All player data has been backed up and cleared successfully.'))
   }
   catch (err) {
-    p.log.error(err.message)
+    p.log.error((err as Error).message)
     process.exit(1)
   }
   finally {
@@ -277,6 +278,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  p.log.error(err.message)
+  p.log.error((err as Error).message)
   process.exit(1)
 })

@@ -215,8 +215,8 @@ const modWeights: Record<string, number> = `
 export function prefferedModSort(a: TMStack | string | undefined, b: TMStack | string | undefined): number {
   const ownerA = typeof a === 'string' ? a : a?.owner
   const ownerB = typeof b === 'string' ? b : b?.owner
-  const va = ownerB ? (modWeights[ownerB] ?? 0) : 0
-  const vb = ownerA ? (modWeights[ownerA] ?? 0) : 0
+  const va = ownerB ? modWeights[ownerB] ?? 0 : 0
+  const vb = ownerA ? modWeights[ownerA] ?? 0 : 0
   return va > vb ? 1 : va < vb ? -1 : 0
 }
 

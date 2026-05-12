@@ -46,13 +46,15 @@ export async function init() {
   const definitions: Record<string, boolean> = Object.fromEntries(itemsCsv.map(o => [o['Registry name'], true]))
 
   const cfg = config(jeiConfigPath)
-  const merged = [...(cfg?.advanced?.itemBlacklist ?? []), ...purged]
+  // eslint-disable-next-line ts/no-unsafe-assignment, ts/no-unsafe-member-access
+  const merged: string[] = [...cfg?.advanced?.itemBlacklist ?? [], ...purged]
 
   consola.start('Looking for wildcarable')
   merged.forEach((s, i) => {
     const [source, name, meta, ...rest] = s.split(':')
     if (!meta || rest.length || meta !== '0') return
     const id = `${source}:${name}`
+    // eslint-disable-next-line ts/no-unsafe-call
     if (((getSubMetas as any)(id) as unknown[]).length > 1) return
     merged[i] = id
   })
