@@ -490,6 +490,7 @@ ignore:
   - .CraftPresence.ERROR. .craftpresence.. Unable to connect to Discord...
   - '\[UniLib/ERROR\] \[unilib\]: Failed to check for updates, enable debug mode to see errors\.\.\.'
   - ERROR. .Foundation.. Thread.#\d+,Thread-\d+,\d+,main.[\s\S]+lumien.custommainmenu.handler.LoadStringURL.run
+  - ERROR. .Foundation.. Thread.#\d+,AstralSorcery Patreon Effect Loader,\d+,main.[\s\S]+com\.google\.gson\.JsonSyntaxException
 
   # Failed to check for updates or download contributor/documentation files.
   - 'brandonscore.: ThreadFileDownloader: DL Failed'

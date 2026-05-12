@@ -1,6 +1,7 @@
 # Command to show all the useless entries of this file:
 #> comm -23 <(grep -vE '^(#|$)' .gitignore | sort) <(git ls-files --others --ignored --exclude-standard | git check-ignore -v --stdin | cut -f1 | sed 's/^[^:]*:[0-9]*://' | sort -u)
 ~*
+**/node_modules
 /.claude
 /.curseclient
 /.mixin.out
@@ -40,7 +41,6 @@
 /mods/memory_repo
 /mods/OptiFine*.jar.disabled-by-mod-director
 /natives
-/node_modules
 /OpenComputersMod-1.8.9a-53-libjnlua53-windows-x86_64.dll
 /options.txt
 /optionsof.txt
