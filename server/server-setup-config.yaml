@@ -22,7 +22,7 @@ install:
   # supports variables: {{@loaderversion@}} and {{@mcversion@}}
   # For forge: "http://files.minecraftforge.net/maven/net/minecraftforge/forge/{{@mcversion@}}-{{@loaderversion@}}/forge-{{@mcversion@}}-{{@loaderversion@}}-installer.jar"
   # For Fabric: "https://maven.fabricmc.net/net/fabricmc/fabric-installer/{{@loaderversion@}}/fabric-installer-{{@loaderversion@}}.jar"
-  installerUrl: 'https://files.minecraftforge.net/maven/net/minecraftforge/forge/{{@mcversion@}}-{{@loaderversion@}}/forge-{{@mcversion@}}-{{@loaderversion@}}-installer.jar'
+  installerUrl: 'https://github.com/CleanroomMC/Cleanroom/releases/download/0.5.12-alpha/cleanroom-0.5.12-alpha-installer.jar'
 
   # Installer Arguments
   # These Arguments have to be passed to the installer
@@ -124,6 +124,7 @@ install:
       - 1132293 # Backpack Display
       - 1147522 # Backpack Opener
       - 1154099 # Crash Assistant
+      - 1214490 # Cleanroom Relauncher
       - 1220460 # Gnetum
       - 1234162 # Lumenized
       - 1329068 # MorphOverlay
@@ -219,7 +220,7 @@ launch:
   # For Forge 1.12-: "forge-{{@mcversion@}}-{{@loaderversion@}}-universal.jar"
   # For Forge 1.13+: "forge-{{@mcversion@}}-{{@loaderversion@}}.jar"
   # For Fabric: "fabric-server-launch.jar"
-  startFile: 'forge-{{@mcversion@}}-{{@loaderversion@}}.jar'
+  startFile: cleanroom-0.5.12-alpha.jar
 
   # This is the command how the server is supposed to be started
   # For <1.16 it should be
