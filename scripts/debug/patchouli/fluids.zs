@@ -57,7 +57,7 @@ for i, fuels in sorted {
   val name = split[3];
   lines += '      "item' ~ (i % 7) ~ '": "forge:bucketfilled{FluidName:\\"' ~ name ~ '\\",Amount:1000}",';
   lines += '      "text' ~ (i % 7) ~ '": "' ~ temp ~ '°К, ' ~ time ~ ' ticks"'
-    ~ (i % 7 == 6 || i == sorted.length - 1 ? '' : ',');
+  ~ (i % 7 == 6 || i == sorted.length - 1 ? '' : ',');
 }
 lines += '    }';
 lines += '  ]';

@@ -10,7 +10,6 @@ mods.actuallyadditions.Crusher.addRecipe(<thermalfoundation:material:1>, <ore:or
 mods.immersiveengineering.Crusher.addRecipe(<thermalfoundation:material:65> * 4, <netherendingores:ore_nether_modded_1:8>, 6000, <minecraft:netherrack>, 0.15);
 mods.immersiveengineering.Crusher.addRecipe(<thermalfoundation:material:0> * 4, <netherendingores:ore_nether_vanilla:4>, 6000, <minecraft:netherrack>, 0.15);
 
-
 /*
 _  _ ____ ___ _  _ ____ ____ ____ _  _ ___  _ _  _ ____ ____ ____ ____ ____
 |\ | |___  |  |__| |___ |__/ |___ |\ | |  \ | |\ | | __ |  | |__/ |___ [__

@@ -234,18 +234,18 @@ addInfFur(<thaumcraft:cluster>                     , [<minecraft:iron_nugget> % 
 
 for items in [
   [<thaumcraft:crystal_aer>,
-  <thaumcraft:crystal_aqua>,
-  <thaumcraft:crystal_ignis>],
- [<thaumcraft:crystal_ordo>,
-  <thaumcraft:crystal_perditio>,
-  <thaumcraft:crystal_terra>],
- [<thaumcraft:crystal_vitium>],
+    <thaumcraft:crystal_aqua>,
+    <thaumcraft:crystal_ignis>],
+  [<thaumcraft:crystal_ordo>,
+    <thaumcraft:crystal_perditio>,
+    <thaumcraft:crystal_terra>],
+  [<thaumcraft:crystal_vitium>],
 ] as IItemStack[][] {
   scripts.jei.crafting_hints.addInsOutsCatl([
-      <forge:bucketfilled>.withTag({FluidName: "menrilresin", Amount: 1000}), null,
-      null, <exnihilocreatio:block_barrel1>,
-      <randomthings:spectreblock>
-    ],
-    items
+    <forge:bucketfilled>.withTag({ FluidName: 'menrilresin', Amount: 1000 }), null,
+    null, <exnihilocreatio:block_barrel1>,
+    <randomthings:spectreblock>,
+  ],
+  items
   );
 }

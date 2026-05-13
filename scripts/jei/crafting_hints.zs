@@ -57,8 +57,8 @@ function add1to1(input as IIngredient, output as IItemStack, catalyst as IIngred
 
 function fill(input as IIngredient, fluid as ILiquidStack, output as IItemStack, catalyst as IIngredient = null, duration as int = 0) as void {
   var rec = AssemblyRecipe.create(function (c) { c.addItemOutput('output1', output); });
-  if(!isNull(fluid)) rec.requireFluid('fluid_in', fluid);
-  if(!isNull(input)) rec.requireItem('input5', input);
+  if (!isNull(fluid)) rec.requireFluid('fluid_in', fluid);
+  if (!isNull(input)) rec.requireItem('input5', input);
   if (!isNull(catalyst)) rec = rec.requireItem('input0', catalyst);
   <assembly:crafting_hints>.addJEIRecipe(rec.requireDuration('duration', duration));
 }

@@ -6,24 +6,24 @@ import native.net.minecraft.village.MerchantRecipeList;
 import native.java.util.Random;
 import mixin.CallbackInfo;
 
-#mixin {targets: "blusunrize.immersiveengineering.common.blocks.metal.TileEntitySilo"}
+#mixin { targets: 'blusunrize.immersiveengineering.common.blocks.metal.TileEntitySilo' }
 zenClass MixinTileEntitySilo {
-    #mixin Static
-    #mixin ModifyConstant {method: "<clinit>", constant: {intValue: 41472}}
-    function buffStorage(value as int) as int {
-        return 2000000000;
-    }
+  #mixin Static
+  #mixin ModifyConstant { method: '<clinit>', constant: { intValue: 41472 } }
+  function buffStorage(value as int) as int {
+    return 2000000000;
+  }
 }
 
 /*
 Adding core sample trades consume 1-3 seconds load time.
 */
-#mixin {targets: "blusunrize.immersiveengineering.common.util.IEVillagerHandler$OreveinMapForEmeralds"}
+#mixin { targets: 'blusunrize.immersiveengineering.common.util.IEVillagerHandler$OreveinMapForEmeralds' }
 zenClass MixinIEVillagerHandler {
-    #mixin Inject {method: "func_190888_a", at: {value: "HEAD"}, cancellable: true}
-    function skipCoreSampleTrades(merchant as IMerchant, recipeList as MerchantRecipeList, random as Random, ci as CallbackInfo) as void {
-        ci.cancel();
-    }
+  #mixin Inject { method: 'func_190888_a', at: { value: 'HEAD' }, cancellable: true }
+  function skipCoreSampleTrades(merchant as IMerchant, recipeList as MerchantRecipeList, random as Random, ci as CallbackInfo) as void {
+    ci.cancel();
+  }
 }
 
 /*
@@ -41,3 +41,22 @@ Not working for some reason.
 //         return value * 2;
 //     }
 // }
+
+/*
+Disable Arc Furnace recycling recipe generation.
+In large modpacks IE iterates every tool/armor recipe at init to compute reclaimable
+ingots, which takes several seconds and scales with mod count.
+By no-op'ing the thread's run() and finishUp() we skip the profiling entirely.
+*/
+#mixin { targets: 'blusunrize.immersiveengineering.common.crafting.ArcRecyclingThreadHandler' }
+zenClass MixinArcRecyclingThreadHandler {
+  #mixin Overwrite
+  function run() as void {
+    // NO-OP: skip expensive recipe profiling
+  }
+
+  #mixin Overwrite
+  function finishUp() as void {
+    // NO-OP: do not inject recycling recipes
+  }
+}

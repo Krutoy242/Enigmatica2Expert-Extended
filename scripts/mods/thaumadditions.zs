@@ -4,7 +4,6 @@ import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 import mods.zenutils.DataUpdateOperation.APPEND;
-import mods.zenutils.DataUpdateOperation.MERGE;
 import mods.zenutils.DataUpdateOperation.REMOVE;
 import mods.zenutils.DataUpdateOperation.OVERWRITE;
 
@@ -12,7 +11,7 @@ import scripts.mods.thaumcraft.aspect;
 
 mods.thaumcraft.Infusion.removeRecipe(<minecraft:golden_apple:1>);
 
-scripts.process.sawWood(<thaumcraft:taint_log>, <thaumadditions:taintwood_planks>, 'only: TESawmill'); 
+scripts.process.sawWood(<thaumcraft:taint_log>, <thaumadditions:taintwood_planks>, 'only: TESawmill');
 
 val toHide = [
   'aer',
@@ -69,14 +68,14 @@ val toHide = [
 ] as string[];
 
 for item in toHide {
-  mods.thaumcraft.Crucible.removeRecipe('thaumadditions:'~item~'_vis_seed');
+  mods.thaumcraft.Crucible.removeRecipe('thaumadditions:' ~ item ~ '_vis_seed');
 }
 
 /*
-___ _  _ ____ _  _ _  _ ____ ___  ___  _ ___ _ ____ _  _ ____ 
- |  |__| |__| |  | |\/| |__| |  \ |  \ |  |  | |  | |\ | [__  
- |  |  | |  | |__| |  | |  | |__/ |__/ |  |  | |__| | \| ___] 
-                                                              
+___ _  _ ____ _  _ _  _ ____ ___  ___  _ ___ _ ____ _  _ ____
+ |  |__| |__| |  | |\/| |__| |  \ |  \ |  |  | |  | |\ | [__
+ |  |  | |  | |__| |  | |  | |__/ |__/ |  |  | |__| | \| ___]
+
 */
 
 aspect.tweak.setEntity('20🐺 20✨ 10🔷', <entity:thaumadditions:blue_wolf>);
@@ -1442,7 +1441,9 @@ events.onPlayerInteract(function (e as crafttweaker.event.PlayerInteractEvent) {
     || !e.item.hasTag
     || isNull(e.item.tag.KnowledgeOwner)
     || e.item.tag.KnowledgeOwner.asString() != 'Thaumaturge Cow'
-  ) return;
+  ) {
+    return;
+  }
 
   mods.contenttweaker.Commands.call('/thaumcraft research @p all', e.player, e.player.world, false, true);
 });
@@ -1463,7 +1464,7 @@ mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<thaumadditions:d
 mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<ore:stone>, <thaumcraft:taint_rock>);
 mods.randomtweaker.thaumadditions.IFluxConcentrator.addRecipes(<ore:dirt>, <thaumcraft:taint_soil>);
 
-# Mithrillium, Adamanite, Mithminite melting and casting
+// Mithrillium, Adamanite, Mithminite melting and casting
 scripts.process.melt(<thaumadditions:mithrillium_nugget>	,<liquid:mithrillium> * 16);
 scripts.process.melt(<thaumadditions:mithrillium_ingot>		,<liquid:mithrillium> * 144);
 scripts.process.melt(<thaumadditions:mithrillium_plate>		,<liquid:mithrillium> * 144);
@@ -1642,9 +1643,9 @@ function calcColor(lore as IData) as int {
   return r / l * 65536 + g / l * 256 + b / l;
 }
 
-function haveLoremError(lorem as IData) as bool{  
+function haveLoremError(lorem as IData) as bool {
   for i in 0 .. lorem.length {
-    if(!(loreUnColor has lorem[i])) return true;
+    if (!(loreUnColor has lorem[i])) return true;
   }
 
   return false;
@@ -1655,36 +1656,35 @@ recipes.addShapeless('augmentMithminiteScythe', <thaumadditions:mithminite_scyth
   function (out, ins, cInfo) {
   val scythe = ins.scythe;
     val lorem as IData = scythe.tag?.display?.Lore ?? [];
-    if(haveLoremError(lorem)) return <thaumadditions:mithminite_scythe>;
+    if (haveLoremError(lorem)) return <thaumadditions:mithminite_scythe>;
     if (lorem.length > 7 || lorem has loreColor[ins.seal.tag.Aspect]) return null;
 
     var newTag = scythe.tag;
 
     newTag = newTag.deepUpdate({ display: { Lore: [loreColor[ins.seal.tag.Aspect]] } }, APPEND)                             //Add aspect lore
-    .deepUpdate({ enchantmentColor: calcColor(lorem + [loreColor[ins.seal.tag.Aspect]]) }, {enchantmentColor: OVERWRITE});  //Update enchantment color
-    
-    if(lorem.length == 0) newTag += { ench: [{ lvl: 1 as short, id: 30 as short }] };                                       //Add Shimmer
+      .deepUpdate({ enchantmentColor: calcColor(lorem + [loreColor[ins.seal.tag.Aspect]]) }, { enchantmentColor: OVERWRITE });  //Update enchantment color
+
+    if (lorem.length == 0) newTag += { ench: [{ lvl: 1 as short, id: 30 as short }] };                                       //Add Shimmer
 
     return scythe.withTag(newTag);
-
   },
-  function(out, cInfo, player){
-    if(isNull(player)) return;
+  function (out, cInfo, player) {
+    if (isNull(player)) return;
 
     val researchName = loreUnColor[out.tag.display.Lore[out.tag.display.Lore.length - 1]];
 
-    if(!player.thaumcraftKnowledge.isResearchComplete('!' ~ researchName ~ '_seal')){
+    if (!player.thaumcraftKnowledge.isResearchComplete('!' ~ researchName ~ '_seal')) {
       player.thaumcraftKnowledge.addResearch('!' ~ researchName ~ '_seal');
-      player.sendPlaySoundPacket("thaumcraft:whispers", 'ambient', player.position, 1.0f, player.world.random.nextFloat(0.8f, 1.0f));
+      player.sendPlaySoundPacket('thaumcraft:whispers', 'ambient', player.position, 1.0f, player.world.random.nextFloat(0.8f, 1.0f));
     }
   });
 
 //#################################################################################
 
-function removeOnlyShimmer(data as IData) as IData{
+function removeOnlyShimmer(data as IData) as IData {
   var result as IData = [];
-    for i in 0 .. data.length{
-    if(data[i].id!=30){
+  for i in 0 .. data.length {
+    if (data[i].id != 30) {
       result = result + [data[i]] as IData;
     }
   }
@@ -1696,27 +1696,25 @@ recipes.addShapeless('REMOVEaugmentMithminiteScythe', <thaumadditions:seal_symbo
     .transformNew(
       function (item) {
         val lore = item.tag.display.Lore;
-        if(haveLoremError(lore)) return <thaumadditions:mithminite_scythe>;
+        if (haveLoremError(lore)) return <thaumadditions:mithminite_scythe>;
         var newTag = item.tag;
 
-        if(lore.length == 1){
+        if (lore.length == 1) {
           newTag = newTag.deepUpdate({ display: { Lore: [lore[lore.length - 1]] } }, { display: { Lore: REMOVE } })
-          .deepUpdate({ enchantmentColor: 0 }, REMOVE);
-          if(newTag.ench.length==1)
-          {newTag -= {ench: []};}
-          else
-          {newTag = newTag.deepUpdate({ench: removeOnlyShimmer(newTag.ench)},{ench: OVERWRITE});}
-        } else {
+            .deepUpdate({ enchantmentColor: 0 }, REMOVE);
+          if (newTag.ench.length == 1) { newTag -= { ench: [] }; }
+          else { newTag = newTag.deepUpdate({ ench: removeOnlyShimmer(newTag.ench) },{ ench: OVERWRITE }); }
+        }
+        else {
           newTag = newTag.deepUpdate({ display: { Lore: lore.deepUpdate([lore[lore.length - 1]], REMOVE) } }, { display: { Lore: OVERWRITE } })
-          .deepUpdate({ enchantmentColor: calcColor(lore.deepUpdate([lore[lore.length - 1]], REMOVE)) },{enchantmentColor: OVERWRITE});
+            .deepUpdate({ enchantmentColor: calcColor(lore.deepUpdate([lore[lore.length - 1]], REMOVE)) },{ enchantmentColor: OVERWRITE });
         }
 
         return item.withTag(newTag);
-
       })
     .marked('scythe'),
-  ]
-  , function (out, ins, cInfo) {
+  ],
+  function (out, ins, cInfo) {
   val scythe = ins.scythe;
     if (isNull(scythe?.tag?.display) || isNull(scythe.tag.display.Lore)) {
       return null;
@@ -1729,8 +1727,8 @@ recipes.addShapeless('REMOVEaugmentMithminiteScythe', <thaumadditions:seal_symbo
     val aspect = loreUnColor[aspectWithColor];
 
     return out.withTag({ Aspect: aspect });
-  }
-  , null);
+  },
+  null);
 
 // Mithminite scythe hints
 scripts.jei.crafting_hints.add1to1(<ore:listAllmeatraw>, <contenttweaker:protein_pill>, <thaumadditions:mithminite_scythe>.withLore(['§2fabrico§r']));
@@ -1746,7 +1744,6 @@ scripts.jei.crafting_hints.add1to1(<entity:minecraft:zombie_villager>.asIngr(), 
 scripts.jei.crafting_hints.addInsOutCatl([<minecraft:arrow>, <minecraft:fire_charge>], null, <thaumadditions:mithminite_scythe>.withLore(['§2permutatio§r']));
 
 scripts.jei.crafting_hints.add1to1(<entity:minecraft:cow>.asIngr() | <entity:minecraft:chicken>.asIngr() | <entity:minecraft:sheep>.asIngr() | <entity:minecraft:pig>.asIngr(), null, <thaumadditions:mithminite_scythe>.withLore(['§cvictus§r']));
-
 
 // [Adaminite armor set]
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_hood>);

@@ -261,7 +261,9 @@ mods.iceandfire.recipes.addIceDragonForgeRecipe(
   <scalinghealth:heartcontainer>);
 
 // Alt for non-dragon players
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .input(<cyclicmagic:heart_toxic>)
   .inputLiquid(<fluid:lifeessence> * 1000)
   .outputItem(<scalinghealth:heartcontainer>)
@@ -408,9 +410,9 @@ mods.roidtweaker.randomthings.Imbuing.addRecipe(
   <iceandfire:hydra_fang>,
   <iceandfire:dragonbone>,
   [<biomesoplenty:plant_0:4>,
-  <minecraft:poisonous_potato>,
-  <biomesoplenty:bramble_plant>,
-]);
+    <minecraft:poisonous_potato>,
+    <biomesoplenty:bramble_plant>,
+  ]);
 
 // ######################################################################
 //

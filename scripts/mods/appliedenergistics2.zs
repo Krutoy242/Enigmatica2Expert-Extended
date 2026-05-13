@@ -26,21 +26,21 @@ recipes.addShapeless('4 Smart Cables to Dense',
 
 scripts.mods.extendedcrafting_engineering.add(
   <appliedenergistics2:part:76> * 8, ['pretty',
-  '■ ■ ■',
-  '▬ ▬ ▬',
-  '■ ■ ■'], {
-  '■': <ore:blockGlassHardened>,
-  '▬': <ore:ingotFluixSteel>,
-});
+    '■ ■ ■',
+    '▬ ▬ ▬',
+    '■ ■ ■'], {
+    '■': <ore:blockGlassHardened>,
+    '▬': <ore:ingotFluixSteel>,
+  });
 
 scripts.mods.extendedcrafting_engineering.add(
   <appliedenergistics2:part:56> * 16, ['pretty',
-  '■ ▬ ■',
-  '■ ▬ ■',
-  '■ ▬ ■'], {
-  '■': <ore:blockGlassHardened>,
-  '▬': <ore:ingotFluixSteel>,
-});
+    '■ ▬ ■',
+    '■ ▬ ■',
+    '■ ▬ ■'], {
+    '■': <ore:blockGlassHardened>,
+    '▬': <ore:ingotFluixSteel>,
+  });
 
 // [Portable Cell] from [Energy Cell][+3]
 craft.remake(<appliedenergistics2:portable_cell>, ['pretty',
@@ -314,32 +314,32 @@ craft.make(<appliedenergistics2:interface>, ['pretty',
   '▬': <ore:ingotTungsten>, // Tungsten Ingot
 });
 
-# [ME Storage Bus] from [Mono-Directional Connector][+3]
-craft.remake(<appliedenergistics2:part:220>, ["pretty",
-  "□ п",
-  "E M",
-  "□ п"], {
-  "□": <ore:plateEnderium>,             # Enderium Plate
-  "п": <ore:plateSilver>,               # Silver Plate
-  "E": <appliedenergistics2:interface>, # ME Interface
-  "M": <integrateddynamics:part_connector_mono_directional_item>, # Mono-Directional Connector
+// [ME Storage Bus] from [Mono-Directional Connector][+3]
+craft.remake(<appliedenergistics2:part:220>, ['pretty',
+  '□ п',
+  'E M',
+  '□ п'], {
+  '□': <ore:plateEnderium>,             // Enderium Plate
+  'п': <ore:plateSilver>,               // Silver Plate
+  'E': <appliedenergistics2:interface>, // ME Interface
+  'M': <integrateddynamics:part_connector_mono_directional_item>, // Mono-Directional Connector
 });
 
-# [ME Fluid Storage Bus] from [Mono-Directional Connector][+3]
-craft.remake(<appliedenergistics2:part:221>, ["pretty",
-  "□ п",
-  "E M",
-  "□ п"], {
-  "□": <ore:plateEnderium>,                   # Enderium Plate
-  "п": <ore:plateSilver>,                     # Silver Plate
-  "E": <appliedenergistics2:fluid_interface>, # ME Fluid Interface
-  "M": <integrateddynamics:part_connector_mono_directional_item>, # Mono-Directional Connector
+// [ME Fluid Storage Bus] from [Mono-Directional Connector][+3]
+craft.remake(<appliedenergistics2:part:221>, ['pretty',
+  '□ п',
+  'E M',
+  '□ п'], {
+  '□': <ore:plateEnderium>,                   // Enderium Plate
+  'п': <ore:plateSilver>,                     // Silver Plate
+  'E': <appliedenergistics2:fluid_interface>, // ME Fluid Interface
+  'M': <integrateddynamics:part_connector_mono_directional_item>, // Mono-Directional Connector
 });
 
-# [ME OreDict Storage Bus] from [Oak Bookshelf][+1]
-craft.reshapeless(<appliedenergistics2:part:222>, "Mb", {
-  "M": <appliedenergistics2:part:220>,       # ME Storage Bus
-  "b": <ore:bookshelf>, # Oak Bookshelf
+// [ME OreDict Storage Bus] from [Oak Bookshelf][+1]
+craft.reshapeless(<appliedenergistics2:part:222>, 'Mb', {
+  'M': <appliedenergistics2:part:220>,       // ME Storage Bus
+  'b': <ore:bookshelf>, // Oak Bookshelf
 });
 
 // ---------------------------------------------------------
@@ -551,16 +551,16 @@ craft.make(<appliedenergistics2:material:58>, ['pretty',
   'M': <appliedenergistics2:part:440>, // ME Interface
 });
 
-# [Quantum Link Card] from [1024k ME Storage Component][+3]
+// [Quantum Link Card] from [1024k ME Storage Component][+3]
 mods.appliedenergistics2.Inscriber.removeRecipe(<appliedenergistics2:material:59>);
-craft.remake(<appliedenergistics2:material:59>, ["pretty",
-  "M S M",
-  "◊ § ◊",
-  "M S M"], {
-  "M": <appliedenergistics2:quantum_link>, # ME Quantum Link Chamber
-  "S": <appliedenergistics2:material:47>,  # Singularity
-  "◊": <ore:gemAnglesite>,                 # Anglesite
-  "§": <nae2:material:2>,                  # 1024k ME Storage Component
+craft.remake(<appliedenergistics2:material:59>, ['pretty',
+  'M S M',
+  '◊ § ◊',
+  'M S M'], {
+  'M': <appliedenergistics2:quantum_link>, // ME Quantum Link Chamber
+  'S': <appliedenergistics2:material:47>,  // Singularity
+  '◊': <ore:gemAnglesite>,                 // Anglesite
+  '§': <nae2:material:2>,                  // 1024k ME Storage Component
 });
 
 val terminalIngrs = {
@@ -645,8 +645,8 @@ recipes.addShapeless(
   'dummy_singularity_tag_clearing',
   <appliedenergistics2:material:48> * 2,
   [
-    <appliedenergistics2:material:48>.withTag({freq: 1234567890 as long}),
-    <appliedenergistics2:material:48>.withTag({freq: 9876543210 as long})
+    <appliedenergistics2:material:48>.withTag({ freq: 1234567890 as long }),
+    <appliedenergistics2:material:48>.withTag({ freq: 9876543210 as long }),
   ]
 );
 

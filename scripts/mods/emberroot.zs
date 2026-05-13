@@ -24,5 +24,5 @@ scripts.lib.loot.tweak('emberroot:entity/hero', 'main', null, null, [
   <cyclicmagic:charm_void> % 10,
   <cyclicmagic:sack_ender> % 10,
   <cyclicmagic:storage_bag> % 10,
-  <thermalexpansion:satchel:100> % 10
+  <thermalexpansion:satchel:100> % 10,
 ], [1, 1], true);

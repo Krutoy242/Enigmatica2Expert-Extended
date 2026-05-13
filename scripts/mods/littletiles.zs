@@ -88,7 +88,7 @@ function addPieceCrush(source as IItemStack, amount as int) as void {
   val piece = <littletiles:blocklittletiles>.withTag({
     bBox: [3, 3, 3, 5, 5, 5] as int[],
     grid: 8,
-    tile: { block: itemStr }, block: itemStr});
+    tile: { block: itemStr }, block: itemStr });
 
   val pieceAmount = min(64, amount);
   scripts.process.crush(
@@ -100,7 +100,7 @@ function addPieceCrush(source as IItemStack, amount as int) as void {
 
   val piece64 = <littletiles:blocklittletiles>.withTag({
     bBox: [7, 7, 7, 8, 8, 8] as int[],
-    tile: { block: itemStr }, block: itemStr});
+    tile: { block: itemStr }, block: itemStr });
 
   if (amount > 64) {
     val piece64Amount = amount / 64;

@@ -53,7 +53,7 @@ static allArmorModifiers as IData = [
 // -------------------------------
 
 function D_indexof(dataList as IData, field as string, value as string) as int {
-  if (isNull(dataList) || dataList.length <= 0) return -1 as int;
+  if (isNull(dataList) || dataList.length <= 0) return -1;
 
   for i, d in dataList.asList() {
     val sub = isNull(field) ? d : d.memberGet(field);
@@ -61,7 +61,7 @@ function D_indexof(dataList as IData, field as string, value as string) as int {
       return i;
     }
   }
-  return -1 as int;
+  return -1;
 }
 
 function D_find(dataList as IData, field as string, value as string) as IData {
@@ -74,7 +74,7 @@ function pushUnique(dataList as IData, value as string) as IData {
   if (!isNull(D_find(dataList, null, value)))
     return null;
   else
-    return [value] as IData;
+    return [value];
 }
 
 function pushTrait(tag as IData, traitName as string) as IData {
@@ -115,8 +115,8 @@ function pushModifier(tag as IData, name as string, data as IData) as IData {
   val index = D_indexof(tag.Modifiers, 'identifier', name);
   if (index != -1) {
     var found = tag.Modifiers[index];
-    if (!isNull(found.current)) found = found + { current: (found.current + data.current) } as IData;
-    if (!isNull(found.level)) found = found + { level: (found.level + data.level) } as IData;
+    if (!isNull(found.current)) found = found + { current: found.current + data.current } as IData;
+    if (!isNull(found.level)) found = found + { level: found.level + data.level } as IData;
 
     if (!isNull(found?.extraInfo))
       found = found + { extraInfo: ((found.current.asInt() - 1) ~ ' / ' ~ found.max.asString()) as IData };

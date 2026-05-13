@@ -42,7 +42,7 @@ events.register(function (e as crafttweaker.event.WorldTickEvent) {
     // We made a loop and can output the results
     message(op.reportPlayer, [
       '§7(Click §6⚑§7 to teleport)',
-      '\n§8Total ticked TileEntities: §7'~ op.total,
+      '\n§8Total ticked TileEntities: §7' ~ op.total,
     ]);
     op.reportPlayer = null;
     op.firstDimReported = null;
@@ -75,15 +75,18 @@ function isChunkLoader(te as TileEntity) as bool {
     || (
       te instanceof native.mekanism.common.tile.TileEntityQuantumEntangloporter
       && (te as native.mekanism.common.tile.TileEntityQuantumEntangloporter)
-        .upgradeComponent.getUpgrades(native.mekanism.common.Upgrade.ANCHOR) > 0)
+        .upgradeComponent
+        .getUpgrades(native.mekanism.common.Upgrade.ANCHOR) > 0)
     || (
       te instanceof native.mekanism.common.tile.TileEntityDigitalMiner
       && (te as native.mekanism.common.tile.TileEntityDigitalMiner)
-        .upgradeComponent.getUpgrades(native.mekanism.common.Upgrade.ANCHOR) > 0)
+        .upgradeComponent
+        .getUpgrades(native.mekanism.common.Upgrade.ANCHOR) > 0)
     || (
       te instanceof native.mekanism.common.tile.TileEntityTeleporter
       && (te as native.mekanism.common.tile.TileEntityTeleporter)
-        .upgradeComponent.getUpgrades(native.mekanism.common.Upgrade.ANCHOR) > 0)
+        .upgradeComponent
+        .getUpgrades(native.mekanism.common.Upgrade.ANCHOR) > 0)
     || (
       te instanceof native.hellfirepvp.astralsorcery.common.tile.TileRitualLink
       && !isNull((te as native.hellfirepvp.astralsorcery.common.tile.TileRitualLink)
@@ -108,4 +111,3 @@ function report(player as IPlayer, world as IWorld, pos as BlockPos) as void {
     [' ', tellrawItemObj(item)]
   ));
 }
-

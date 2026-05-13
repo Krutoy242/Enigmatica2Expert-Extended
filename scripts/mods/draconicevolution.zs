@@ -4,12 +4,14 @@
 <draconicevolution:draconium_ore>.asBlock().definition.resistance = 720;
 
 // Debug chest for recipes
-if (utils.DEBUG) mods.jei.JEI.addItem(<draconicevolution:draconium_chest>.withTag({
-  ench            : [{ lvl: 1, id: 0 }], // Add enchant glow
-  enchantmentColor: 16711680, // Random Things can change color with this tag
-  display         : { Name: 'Draconic Chest with Markings' },
+if (utils.DEBUG) {
+  mods.jei.JEI.addItem(<draconicevolution:draconium_chest>.withTag({
+    ench            : [{ lvl: 1, id: 0 }], // Add enchant glow
+    enchantmentColor: 16711680, // Random Things can change color with this tag
+    display         : { Name: 'Draconic Chest with Markings' },
 
-  BCTileData: { BCManagedData: { autoSmeltMode: 0 as byte, smeltEnergyPerTick: 256, colour: -16777216, furnaceOutputBlocked: 0 as byte, burnRate: 0.0, smeltProgress: 0.0, smeltTime: 100 as byte, isSmelting: 0 as byte }, ChestColour: -16777216, RegionData: { SR_6_nsweIO: -1 as byte, SR_4_xSize: 4 as byte, SR_5_nsweIO: -1 as byte, SR_0_ySize: 10 as byte, SR_2_xPos: 16 as byte, SR_1_xSize: 4 as byte, SR_3_xPos: 24 as byte, SR_3_dufIO: -1 as byte, SR_4_ySize: 3 as byte, SR_1_yPos: 0 as byte, SR_6_dufIO: -1 as byte, SR_3_Enabled: 1 as byte, SR_1_Invalid: 0 as byte, SR_4_xPos: 4 as byte, SR_3_xSize: 2 as byte, SR_5_Enabled: 1 as byte, SR_0_yPos: 0 as byte, SR_5_Invalid: 0 as byte, SR_1_Enabled: 1 as byte, SR_2_dufIO: -1 as byte, SR_5_dufIO: -1 as byte, SR_1_xPos: 8 as byte, SR_1_nsweIO: -1 as byte, SR_3_ySize: 10 as byte, SR_3_nsweIO: -1 as byte, SR_3_yPos: 0 as byte, SR_0_xSize: 4 as byte, SR_3_Invalid: 0 as byte, SR_2_ySize: 10 as byte, SR_5_xPos: 12 as byte, SR_4_yPos: 3 as byte, SR_2_xSize: 4 as byte, SR_0_xPos: 0 as byte, SR_5_ySize: 3 as byte, SR_4_dufIO: -1 as byte, SR_1_dufIO: -1 as byte, SR_5_yPos: 3 as byte, SR_2_Enabled: 1 as byte, SR_1_ySize: 10 as byte, SR_0_dufIO: -1 as byte, SR_2_yPos: 0 as byte, SR_0_Invalid: 0 as byte, SR_4_Enabled: 1 as byte, SR_0_nsweIO: -1 as byte, SR_0_Enabled: 1 as byte, SR_4_Invalid: 0 as byte, SR_2_Invalid: 0 as byte, SR_2_nsweIO: -1 as byte, SR_4_nsweIO: -1 as byte, SR_5_xSize: 4 as byte } } }));
+    BCTileData: { BCManagedData: { autoSmeltMode: 0 as byte, smeltEnergyPerTick: 256, colour: -16777216, furnaceOutputBlocked: 0 as byte, burnRate: 0.0, smeltProgress: 0.0, smeltTime: 100 as byte, isSmelting: 0 as byte }, ChestColour: -16777216, RegionData: { SR_6_nsweIO: -1 as byte, SR_4_xSize: 4 as byte, SR_5_nsweIO: -1 as byte, SR_0_ySize: 10 as byte, SR_2_xPos: 16 as byte, SR_1_xSize: 4 as byte, SR_3_xPos: 24 as byte, SR_3_dufIO: -1 as byte, SR_4_ySize: 3 as byte, SR_1_yPos: 0 as byte, SR_6_dufIO: -1 as byte, SR_3_Enabled: 1 as byte, SR_1_Invalid: 0 as byte, SR_4_xPos: 4 as byte, SR_3_xSize: 2 as byte, SR_5_Enabled: 1 as byte, SR_0_yPos: 0 as byte, SR_5_Invalid: 0 as byte, SR_1_Enabled: 1 as byte, SR_2_dufIO: -1 as byte, SR_5_dufIO: -1 as byte, SR_1_xPos: 8 as byte, SR_1_nsweIO: -1 as byte, SR_3_ySize: 10 as byte, SR_3_nsweIO: -1 as byte, SR_3_yPos: 0 as byte, SR_0_xSize: 4 as byte, SR_3_Invalid: 0 as byte, SR_2_ySize: 10 as byte, SR_5_xPos: 12 as byte, SR_4_yPos: 3 as byte, SR_2_xSize: 4 as byte, SR_0_xPos: 0 as byte, SR_5_ySize: 3 as byte, SR_4_dufIO: -1 as byte, SR_1_dufIO: -1 as byte, SR_5_yPos: 3 as byte, SR_2_Enabled: 1 as byte, SR_1_ySize: 10 as byte, SR_0_dufIO: -1 as byte, SR_2_yPos: 0 as byte, SR_0_Invalid: 0 as byte, SR_4_Enabled: 1 as byte, SR_0_nsweIO: -1 as byte, SR_0_Enabled: 1 as byte, SR_4_Invalid: 0 as byte, SR_2_Invalid: 0 as byte, SR_2_nsweIO: -1 as byte, SR_4_nsweIO: -1 as byte, SR_5_xSize: 4 as byte } } }));
+}
 
 // ---------------------------------------------------
 // Align ores with all other Nether / End ore variants
@@ -97,13 +99,17 @@ craft.remake(<draconicevolution:wyvern_core>, ['pretty',
   'S': <minecraft:shulker_shell>, // Shulker Shell
   'p': <minecraft:sponge>, // Sponge
 });
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .outputs(<draconicevolution:wyvern_core>)
   .input(<draconicevolution:draconic_core> * 2)
   .input(<minecraft:shulker_shell> * 2)
   .input(<minecraft:sponge>)
   .input(<fluid:redstone> * 4000)
-  .power(60000).timeRequired(5).build();
+  .power(60000)
+  .timeRequired(5)
+  .build();
 
 // [Awakened Core] from [Vibrant Bimetal Gear][+2]
 craft.remake(<draconicevolution:awakened_core>, ['pretty',
@@ -114,13 +120,17 @@ craft.remake(<draconicevolution:awakened_core>, ['pretty',
   '◊': <ore:gemTopaz>, // Topaz
   '¤': <ore:gearVibrant>, // Vibrant Bimetal Gear
 });
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .outputs(<draconicevolution:awakened_core>)
   .input(<draconicevolution:wyvern_core> * 2)
   .inputOre(<ore:gemTopaz>, 2)
   .inputOre(<ore:gearVibrant>)
   .input(<fluid:glowstone> * 8000)
-  .power(120000).timeRequired(10).build();
+  .power(120000)
+  .timeRequired(10)
+  .build();
 
 // [Chaotic Core] from [Chaos Shard][+4]
 craft.remake(<draconicevolution:chaotic_core>, ['pretty',
@@ -133,14 +143,18 @@ craft.remake(<draconicevolution:chaotic_core>, ['pretty',
   'C': <draconicevolution:chaos_shard>, // Chaos Shard
   '▄': <contenttweaker:terrestrial_artifact_block>, // Terrestrial Artifact Block
 });
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .outputs(<draconicevolution:chaotic_core>)
   .input(<draconicevolution:awakened_core> * 2)
   .input(<draconicevolution:chaos_shard>)
   .inputOre(<ore:blockEvilMetal>, 2)
   .input(<contenttweaker:terrestrial_artifact_block>)
   .input(<fluid:silicon> * 16000)
-  .power(500000).timeRequired(20).build();
+  .power(500000)
+  .timeRequired(20)
+  .build();
 
 // [Wyvern Energy Core] from [Wyvern Core][+3]
 recipes.remove(<draconicevolution:wyvern_energy_core>);
@@ -167,19 +181,19 @@ scripts.mods.forestry.Carpenter.addRecipe(<draconicevolution:draconic_energy_cor
 // [Basic Fusion Crafting Injector] from [Genetics Processor][+5]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <draconicevolution:crafting_injector>, ['pretty',
-  'D ▬ D',
-  '* G *',
-  '□ Ϟ □'], {
-  'D': <draconicevolution:draconic_core>,
-  '▬': <contenttweaker:elektron60_ingot>,
-  '*': <ore:crystalLitherite>,
-  'G': <gendustry:genetics_processor>,
-  '□': <ore:plateElite>,
-  'Ϟ': <draconicevolution:energy_crystal>,
-}, 3, {
-  '▬': <ore:ingotYttrium>,
-  '□': <ore:processorAdvanced>,
-});
+    'D ▬ D',
+    '* G *',
+    '□ Ϟ □'], {
+    'D': <draconicevolution:draconic_core>,
+    '▬': <contenttweaker:elektron60_ingot>,
+    '*': <ore:crystalLitherite>,
+    'G': <gendustry:genetics_processor>,
+    '□': <ore:plateElite>,
+    'Ϟ': <draconicevolution:energy_crystal>,
+  }, 3, {
+    '▬': <ore:ingotYttrium>,
+    '□': <ore:processorAdvanced>,
+  });
 
 // Potentiometer
 recipes.remove(<draconicevolution:potentiometer>);
@@ -193,7 +207,9 @@ recipes.removeShaped(<draconicevolution:energy_crystal>);
 mods.bloodmagic.AlchemyTable.addRecipe(<draconicevolution:energy_crystal> * 4, [
   <astralsorcery:blocklens>, <thermalfoundation:material:136>, <ore:ingotPlutonium242All>, <threng:material> ?? <nuclearcraft:alloy:15>,
 ], 2000, 200, 2);
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
   .input(<advancedrocketry:vacuumlaser>)
   .inputOre(<ore:ingotMithril>)
   .inputOre(<ore:ingotPlutonium242All>)

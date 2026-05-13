@@ -11,9 +11,9 @@ scripts.jei.crafting_hints.addInsOutCatl([<forestry:caterpillar_ge:*>], <forestr
 scripts.jei.crafting_hints.addInsOutCatl([<forestry:cocoon_ge:*>], <forestry:serum_ge>, <forestry:escritoire>);
 
 scripts.jei.crafting_hints.addInsOutCatl([
-  <gendustry:gene_sample>.withTag({species: "rootTrees", allele: "forestry.fireproofTrue", chromosome: 9}),
+  <gendustry:gene_sample>.withTag({ species: 'rootTrees', allele: 'forestry.fireproofTrue', chromosome: 9 }),
   <ore:logNonfireproof>,
-  ], <ore:logFireproof>.firstItem);
+], <ore:logFireproof>.firstItem);
 
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------

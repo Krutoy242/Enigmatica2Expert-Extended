@@ -139,7 +139,7 @@ val blacklist = [
 ] as IItemStack[];
 
 for item in blacklist {
-  if(isNull(item)) continue;
+  if (isNull(item)) continue;
   mods.twilighttweaks.uncrafting.banUncraft(item);
 }
 

@@ -4,10 +4,10 @@
 
 import native.mezz.jei.api.recipe.IRecipeCategory;
 
-#mixin {targets: "mezz.jei.recipes.RecipeRegistry"}
+#mixin { targets: 'mezz.jei.recipes.RecipeRegistry' }
 zenClass MixinRecipeCategoryComparator {
   #mixin Static
-  #mixin ModifyVariable {method: "<init>", at: {value: "HEAD"}, ordinal: 0, argsOnly: true}
+  #mixin ModifyVariable { method: '<init>', at: { value: 'HEAD' }, ordinal: 0, argsOnly: true }
   function reorder(categories as [IRecipeCategory]) as [IRecipeCategory] {
     val order as string[] = [
       'Minecraft',

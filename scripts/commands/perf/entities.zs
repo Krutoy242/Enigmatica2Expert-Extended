@@ -2,22 +2,12 @@
 #priority 1500
 #reloadable
 
-import native.net.minecraft.entity.Entity;
 import crafttweaker.data.IData;
 import crafttweaker.player.IPlayer;
 import crafttweaker.util.Math.floor;
-import crafttweaker.world.IWorld;
-import mods.zenutils.NetworkHandler;
-import mods.zenutils.StringList;
-import native.com.feed_the_beast.ftblib.lib.math.ChunkDimPos;
-import native.com.feed_the_beast.ftbutilities.data.ClaimedChunks;
-import native.net.minecraft.tileentity.TileEntity;
 import native.net.minecraft.entity.item.EntityItem;
 import native.net.minecraft.world.World;
-import native.net.minecraft.world.chunk.Chunk;
-import native.net.minecraft.world.gen.ChunkProviderServer;
 
-import scripts.commands.perf.loaders.forEachChunkLoader;
 import scripts.commands.perf.util.tpMessage;
 
 function show(player as IPlayer) as IData {
@@ -31,7 +21,7 @@ function show(player as IPlayer) as IData {
       entitiesInThisWorld += 1;
       val chunkX = floor(entity.posX / 16);
       val chunkZ = floor(entity.posZ / 16);
-      val chunkId = chunkX~':'~chunkZ;
+      val chunkId = chunkX ~ ':' ~ chunkZ;
       if (isNull(chunkMap[chunkId])) chunkMap[chunkId] = 0;
       chunkMap[chunkId] = chunkMap[chunkId] + 1;
       if (entity instanceof EntityItem) entityItems += 1;

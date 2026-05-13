@@ -88,37 +88,37 @@ recipes.addShaped(<twilightforest:peacock_fan>, [
 //   wildcarded items (like <twilightforest:maze_stone:*>) will be
 //   visible in JEI, but cant be actually pushed into machine
 val rockRecycleTable as IItemStack[][IIngredient] = {
-<twilightforest:castle_brick:3>      |
-<twilightforest:castle_pillar>       |
-<twilightforest:castle_pillar:1>     : [<mekanism:salt>, <appliedenergistics2:material:3>, <astralsorcery:itemusabledust:1>],
-<twilightforest:deadrock>            |
-<twilightforest:deadrock:1>          |
-<twilightforest:deadrock:2>          : [<ic2:dust:1>, <nuclearcraft:dust:8>, <jaopca:item_dustdimensionalshard>],
-<twilightforest:castle_brick>        |
-<twilightforest:castle_brick:1>      |
-<twilightforest:castle_brick:2>      |
-<twilightforest:castle_brick:4>      |
-<twilightforest:castle_brick:5>      |
-<twilightforest:castle_pillar:3>     |
-<twilightforest:castle_pillar:2>     : [<mekanism:salt>, <appliedenergistics2:material:3>, <thermalfoundation:material:69>],
-<twilightforest:maze_stone>          |
-<twilightforest:maze_stone:1>        |
-<twilightforest:maze_stone:2>        |
-<twilightforest:maze_stone:3>        |
-<twilightforest:maze_stone:4>        |
-<twilightforest:maze_stone:5>        |
-<twilightforest:maze_stone:6>        |
-<twilightforest:maze_stone:7>        : [<mekanism:dust:2>, <nuclearcraft:dust:14>, <mekanism:otherdust:5>],
-<twilightforest:underbrick>          |
-<twilightforest:underbrick:1>        |
-<twilightforest:underbrick:2>        |
-<twilightforest:underbrick:3>        : [<ic2:dust:1>, <thermalfoundation:material:772>, <nuclearcraft:dust:3>],
-<twilightforest:castle_rune_brick>   : [<randomthings:runedust:6>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
-<twilightforest:castle_rune_brick:3> : [<randomthings:runedust:10>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
-<twilightforest:castle_rune_brick:1> : [<randomthings:runedust:11>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
-<twilightforest:castle_rune_brick:2> : [<randomthings:runedust:4>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
-<twilightforest:aurora_block>        : [<nuclearcraft:compound:7>, <botania:manaresource:23>, <nuclearcraft:compound:11>],
-<twilightforest:aurora_pillar>       : [<nuclearcraft:compound:7>, <ic2:dust:5>, <nuclearcraft:compound:11>],
+<twilightforest:castle_brick:3>
+|      <twilightforest:castle_pillar>
+|       <twilightforest:castle_pillar:1>     : [<mekanism:salt>, <appliedenergistics2:material:3>, <astralsorcery:itemusabledust:1>],
+  <twilightforest:deadrock>
+|            <twilightforest:deadrock:1>
+|          <twilightforest:deadrock:2>          : [<ic2:dust:1>, <nuclearcraft:dust:8>, <jaopca:item_dustdimensionalshard>],
+  <twilightforest:castle_brick>
+|        <twilightforest:castle_brick:1>
+|      <twilightforest:castle_brick:2>
+|      <twilightforest:castle_brick:4>
+|      <twilightforest:castle_brick:5>
+|      <twilightforest:castle_pillar:3>
+|     <twilightforest:castle_pillar:2>     : [<mekanism:salt>, <appliedenergistics2:material:3>, <thermalfoundation:material:69>],
+  <twilightforest:maze_stone>
+|          <twilightforest:maze_stone:1>
+|        <twilightforest:maze_stone:2>
+|        <twilightforest:maze_stone:3>
+|        <twilightforest:maze_stone:4>
+|        <twilightforest:maze_stone:5>
+|        <twilightforest:maze_stone:6>
+|        <twilightforest:maze_stone:7>        : [<mekanism:dust:2>, <nuclearcraft:dust:14>, <mekanism:otherdust:5>],
+  <twilightforest:underbrick>
+|          <twilightforest:underbrick:1>
+|        <twilightforest:underbrick:2>
+|        <twilightforest:underbrick:3>        : [<ic2:dust:1>, <thermalfoundation:material:772>, <nuclearcraft:dust:3>],
+  <twilightforest:castle_rune_brick>   : [<randomthings:runedust:6>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
+  <twilightforest:castle_rune_brick:3> : [<randomthings:runedust:10>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
+  <twilightforest:castle_rune_brick:1> : [<randomthings:runedust:11>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
+  <twilightforest:castle_rune_brick:2> : [<randomthings:runedust:4>, <thermalfoundation:material:72>, <nuclearcraft:compound>],
+  <twilightforest:aurora_block>        : [<nuclearcraft:compound:7>, <botania:manaresource:23>, <nuclearcraft:compound:11>],
+  <twilightforest:aurora_pillar>       : [<nuclearcraft:compound:7>, <ic2:dust:5>, <nuclearcraft:compound:11>],
 };
 
 for input, output in rockRecycleTable {

@@ -520,7 +520,7 @@ static armDefinitions as string[][] = [
 static matsRequired as int[string] = {} as int[string];
 function addMatRequirment(item as IItemStack) as void {
   if (!item.hasTag) return;
-  val len = (item.tag?.TinkerData?.Materials ?? ([] as IData)).length;
+  val len = (item.tag?.TinkerData?.Materials ?? [] as IData).length;
   if (len <= 0) return;
   matsRequired[item.definition.id] = len;
 }
@@ -528,7 +528,7 @@ function getMatsRequired(matName as string) as int {
   if (isNull(matsRequired.__initialized)) {
     for modName in ['tconstruct', 'conarm', 'tconevo'] as string[] {
       val mod = loadedMods[modName];
-      if(isNull(mod)) continue;
+      if (isNull(mod)) continue;
       for item in mod.items { addMatRequirment(item); }
     }
     matsRequired['__initialized'] = 1;

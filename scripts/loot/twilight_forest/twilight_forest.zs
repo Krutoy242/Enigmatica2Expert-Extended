@@ -30,5 +30,5 @@ scripts.lib.loot.tweak('twilightforest:entities/squirrel', 'main', null, null, [
   <harvestcraft:hazelnutitem> % 30,
   <harvestcraft:nutmegitem> % 30,
   <harvestcraft:peanutitem> % 30,
-  <harvestcraft:waterchestnutitem> % 30
+  <harvestcraft:waterchestnutitem> % 30,
 ], [1, 1]);

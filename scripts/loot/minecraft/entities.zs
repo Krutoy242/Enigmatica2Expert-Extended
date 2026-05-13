@@ -17,11 +17,15 @@ endermanPool.removeEntry('minecraft:ender_pearl'); // Remove main enderpearl ent
 endermanPool.addItemEntry(<minecraft:ender_pearl>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
 
 // More Zombie Pigman gold drop
-loottweaker.LootTweaker.getTable('minecraft:entities/zombie_pigman').getPool('main')
+loottweaker.LootTweaker
+  .getTable('minecraft:entities/zombie_pigman')
+  .getPool('main')
   .addItemEntry(<minecraft:gold_ingot>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0)], [Conditions.killedByPlayer()]);
 
 // Vex
-loottweaker.LootTweaker.getTable('minecraft:entities/vex').getPool('main')
+loottweaker.LootTweaker
+  .getTable('minecraft:entities/vex')
+  .getPool('main')
   .addItemEntry(<deepmoblearning:living_matter_overworldian>, 1, 0, [Functions.lootingEnchantBonus(0, 1, 0), Functions.setCount(0, 1)], [Conditions.killedByPlayer()]);
 
 // Animal drop changes

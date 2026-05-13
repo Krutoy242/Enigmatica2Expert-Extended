@@ -60,10 +60,10 @@ function generate(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInG
   if (subtile.data.FuelData.duration > 0) {
     val manaGenerated = (subtile.data.FuelData.production / 20) as int;
     val heatGenerated = Math.max(manaGenerated + subtile.getMana() - subtile.getMaxMana(), 0);
-    subtile.setCustomData(subtile.data.deepUpdate({Overheat: (Math.max((subtile.data.Overheat + heatGenerated - 10) as int , 0)), FuelData: {duration: subtile.data.FuelData.duration - 2}},{FuelData: {duration: OVERWRITE}, Overheat: OVERWRITE}));
+    subtile.setCustomData(subtile.data.deepUpdate({ Overheat: Math.max((subtile.data.Overheat + heatGenerated - 10) as int , 0), FuelData: { duration: subtile.data.FuelData.duration - 2 } },{ FuelData: { duration: OVERWRITE }, Overheat: OVERWRITE }));
     subtile.addMana(manaGenerated);
     if (world.random.nextInt(5) > 2) scripts.lib.sound.play('minecraft:block.lava.pop', pos, world);
-    makeParticleRing(world ,0.5f + pos.x, 1.2 + pos.y, 0.5f + pos.z, pow((subtile.data.FuelData.duration as double), 0.5) / 10.0, pow((subtile.data.FuelData.maxDuration as double), 0.5) / 10.0, ((subtile.data.Overheat as float) / 10000) - 1, (((10000 - subtile.data.Overheat) as float) / 10000));
+    makeParticleRing(world ,0.5f + pos.x, 1.2 + pos.y, 0.5f + pos.z, pow(subtile.data.FuelData.duration as double, 0.5) / 10.0, pow(subtile.data.FuelData.maxDuration as double, 0.5) / 10.0, (subtile.data.Overheat as float / 10000) - 1, (10000 - subtile.data.Overheat) as float / 10000);
     if (subtile.data.Overheat > overHeatLimit) world.performExplosion(null, pos.x, pos.y, pos.z, 6.0f, true, true);
   }
   else {
@@ -71,21 +71,21 @@ function generate(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInG
   }
 }
 
-function makeParticleRing(world as IWorld, x as double, y as double, z as double, circleLength as double, max as double, r as float, g as float) as void{
+function makeParticleRing(world as IWorld, x as double, y as double, z as double, circleLength as double, max as double, r as float, g as float) as void {
   for i in 0 .. circleLength {
-    (world.native as WorldServer).spawnParticle(EnumParticleTypes.REDSTONE, x + 0.5*Math.cos(6.28 * (i as double / max)), y, z + 0.5*Math.sin(6.28 * (i as double / max)), 0, r, g, 0, 1, 0);
+    (world.native as WorldServer).spawnParticle(EnumParticleTypes.REDSTONE, x + 0.5 * Math.cos(6.28 * (i as double / max)), y, z + 0.5 * Math.sin(6.28 * (i as double / max)), 0, r, g, 0, 1, 0);
   }
 }
 
 function pickUpFuel(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
-  if(world.worldInfo.worldTotalTime % 20 != 3) return;
+  if (world.worldInfo.worldTotalTime % 20 != 3) return;
   val fuel = findFuel(world, pos);
   if (isNull(fuel)) return;
   val fuelData = getFuelData(fuel.item);
   if (isNull(fuelData)) return;
   val newData = {
     Status   : 'work',
-    FuelData : {duration: (fuelDurationMultiplier * fuelData[0]) as int , production: (fuelManaGenerationMultiplier * fuelData[1] * fuelData[2] / 100) as int, maxDuration: (fuelDurationMultiplier * fuelData[0]) as int},
+    FuelData : { duration: (fuelDurationMultiplier * fuelData[0]) as int , production: (fuelManaGenerationMultiplier * fuelData[1] * fuelData[2] / 100) as int, maxDuration: (fuelDurationMultiplier * fuelData[0]) as int },
     Overheat : getSubtileHeat(subtile),
     WasteName: getFuelWasteOreDictName(fuel.item),
   } as IData;
@@ -113,7 +113,7 @@ function getSubtileHeat(subtile as SubTileEntityInGame) as int {
     || isNull(subtile.data.Overheat)) {
     return 0;
   }
-  return subtile.data.Overheat as int;
+  return subtile.data.Overheat;
 }
 
 function getFuelWasteOreDictName(item as IItemStack) as string {
@@ -142,5 +142,5 @@ function findFuel(world as IWorld, pos as IBlockPos) as IEntityItem {
 
 function dropFuelWaste(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
   world.spawnEntity(oreDict.get(subtile.data.WasteName).firstItem.createEntityItem(world, pos.x, pos.y + 0.3f, pos.z));
-  subtile.setCustomData({Status: 'pickUp'} as IData);
+  subtile.setCustomData({ Status: 'pickUp' } as IData);
 }

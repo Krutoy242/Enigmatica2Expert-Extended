@@ -47,20 +47,20 @@ function findPlayerAndNutrish(world as IWorld, pos as IBlockPos, subtile as SubT
 
 function isPlayerMissingNutrient(data as IData, player as IPlayer) as bool {
   if (isNull(data?.fruit)) return false;
-  return (99.9f > data.fruit || 99.9f > data.protein || 99.9f > data.grain || 99.9f > data.vegetable || 99.9f > data.dairy);
+  return 99.9f > data.fruit || 99.9f > data.protein || 99.9f > data.grain || 99.9f > data.vegetable || 99.9f > data.dairy;
 }
 
 function addNutritientToPlayer(data as IData, player as IPlayer, subtile as SubTileEntityInGame) as void {
   subtile.consumeMana(manaCost);
   player.updateNBT({ 'ForgeCaps':
-        {'nutrition:nutrition': {
+        { 'nutrition:nutrition': {
           'fruit'    : Math.min(100.0f, nutritionGain + data.fruit) ,
           'protein'  : Math.min(100.0f, nutritionGain + data.protein),
           'grain'    : Math.min(100.0f, nutritionGain + data.grain),
           'vegetable': Math.min(100.0f, nutritionGain + data.vegetable),
           'dairy'    : Math.min(100.0f, nutritionGain + data.dairy),
         },
-        }});
+        } });
   player.sendPlaySoundPacket('botania:goldenlaurel', 'ambient', player.position, 0.05f, 1.0f);
   (player.world.native as WorldServer).spawnParticle(EnumParticleTypes.VILLAGER_HAPPY , player.x, 1.2f + player.y, 0.5f + player.z, 5, 0.5, 0.5, 0.5, 0, 0);
 }

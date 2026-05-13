@@ -407,9 +407,9 @@ porous_Trait.localizedDescription = game.localize('e2ee.tconstruct.material.poro
 
 function porous(player as IPlayer) as void {
   val world as IWorld = player.world;
-  val x = player.getX() > 0 ? ((player.getX() as int) - 0.5f) : ((player.getX() as int) - 1.5f);
+  val x = player.getX() > 0 ? player.getX() as int - 0.5f : player.getX() as int - 1.5f;
   val y = player.getY() as float;
-  val z = player.getZ() > 0 ? ((player.getZ() as int) - 0.5f) : ((player.getZ() as int) - 1.5f);
+  val z = player.getZ() > 0 ? player.getZ() as int - 0.5f : player.getZ() as int - 1.5f;
   val porousStone = <item:thaumcraft:taint_rock>.asBlock();
   if ((y - 2) > 255 || (y - 2) < 3) return;
   val pos = crafttweaker.util.Position3f.create(x, y - 1, z) as IBlockPos;
@@ -443,7 +443,7 @@ voidShell_trait.localizedDescription = game.localize('e2ee.tconstruct.material.v
 
 voidShell_trait.getModifications = function (trait, player, mods, armor, damageSource, damage, index) {
   val warp = player.warpNormal + player.warpTemporary + player.warpPermanent;
-  mods.effectiveness += max(3.0f, (warp as float) * 0.0025f);
+  mods.effectiveness += max(3.0f, warp as float * 0.0025f);
   return mods;
 };
 voidShell_trait.register();
@@ -612,7 +612,7 @@ researcherTrait.calcDamage = function (trait, tool, attacker, target, originalDa
 
   if (player.thaumcraftKnowledge.isResearchComplete('PURE_SMITE') && target.isUndead) dmg += 20.0f;
   if (player.thaumcraftKnowledge.isResearchComplete('FLUX_STRIKE') && tool.tag.flux >= 30) {
-    tool.mutable().updateTag({ flux: (tool.tag.flux - 30), fluxStrike: 1 });
+    tool.mutable().updateTag({ flux: tool.tag.flux - 30, fluxStrike: 1 });
     player.world.addFlux(player.position, 10.0f);
     dmg = dmg * 5;
   }
@@ -648,14 +648,14 @@ function makeWitchPatricles(data as IData, entity as IEntity, i as int) as void 
 }
 
 function fluxStikeMechanic(target as IEntityLivingBase, damage as float) as void {
-  (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH, target.x, (target.y + target.eyeHeight), target.z, 100, 0.6, 0.6, 0.6, 2.0, 0);
+  (target.world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH, target.x, target.y + target.eyeHeight, target.z, 100, 0.6, 0.6, 0.6, 2.0, 0);
   playSound('thaumcraft:wandfail', target);
   val world = target.world;
   val entitiesList = world.getEntities();
   val particleCount = 20;
   var count = 0;
   val length = entitiesList.length - 1;
-  for i in 0 .. (entitiesList.length) {
+  for i in 0 .. entitiesList.length {
     val entity = entitiesList[length - i];
     if (isNull(entity)
       || !entity instanceof IEntityLiving
@@ -668,7 +668,7 @@ function fluxStikeMechanic(target as IEntityLivingBase, damage as float) as void
     }
 
     world.catenation().run(function (world, context) {
-      context.data = { x: target.x ,y: (target.y + target.eyeHeight) ,z: target.z };
+      context.data = { x: target.x ,y: target.y + target.eyeHeight ,z: target.z };
       val k = particleCount / 5;
       for i in k .. k { makeWitchPatricles(context.data, entity, i); }
     }).sleep(5).run(function (world, context) {
@@ -693,12 +693,11 @@ function fluxStikeMechanic(target as IEntityLivingBase, damage as float) as void
       }
     }).sleep(5).run(function (world, context) {
       if (!isNull(entity)) {
-        (world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH, entity.x, (entity.y + entity.eyeHeight), entity.z, 20, 0, 0, 0, 3, 0);
+        (world.native as WorldServer).spawnParticle(EnumParticleTypes.SPELL_WITCH, entity.x, entity.y + entity.eyeHeight, entity.z, 20, 0, 0, 0, 3, 0);
       }
     }).sleep(1).run(function (world, context) {
       if (!isNull(entity))entity.attackEntityFrom(MAGIC, damage);
-    })
-      .start();
+    }).start();
     count += 1;
     if (count == 4) return;
   }
@@ -790,7 +789,7 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
   }
 
   var nonRefinableDrops = [] as [WeightedItemStack];
-  var clustersFound = {} as WeightedItemStack[string];
+  val clustersFound = {} as WeightedItemStack[string];
   var hasRefinedSomething = false;
 
   for originalDrop in event.drops {
@@ -823,7 +822,8 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
       if (isNull(clustersFound[clusterKey])) {
         clustersFound[clusterKey] = cluster;
       }
-    } else {
+    }
+    else {
       nonRefinableDrops += originalDrop;
     }
   }
@@ -840,7 +840,7 @@ researcherTrait.onBlockHarvestDrops = function (trait, tool, event) {
   for is in newDrops {
     event.addItem((is.stack * finalAmount).weight(1.0));
   }
-  if(event.isPlayer) event.player.sendPlaySoundPacket('minecraft:entity.experience_orb.pickup', 'player', event.position.asPosition3f(), 0.2f, 0.7f + event.world.random.nextFloat() * 0.2f);
+  if (event.isPlayer) event.player.sendPlaySoundPacket('minecraft:entity.experience_orb.pickup', 'player', event.position.asPosition3f(), 0.2f, 0.7f + event.world.random.nextFloat() * 0.2f);
 };
 
 researcherTrait.extraInfo = function (thisTrait, item, tag) {
@@ -895,20 +895,20 @@ firstStand_trait.localizedDescription = game.localize('e2ee.tconstruct.material.
 
 function calcLevel(exp as int) as int {
   if (exp >= 1508) {
-    return (81.0 / 10.0 + sqrt(2.0 / 5.0 * (exp - 7839.0 / 40.0))) as int;
+    return 81.0 / 10.0 + sqrt(2.0 / 5.0 * (exp - 7839.0 / 40.0));
   }
   if (exp >= 353) {
-    return (325.0 / 18.0 + sqrt(2.0 / 9.0 * (exp - 54215.0 / 72.0))) as int;
+    return 325.0 / 18.0 + sqrt(2.0 / 9.0 * (exp - 54215.0 / 72.0));
   }
-  return (sqrt(exp + 9.0) - 3.0) as int;
+  return sqrt(exp + 9.0) - 3.0;
 }
 
 function calcExpTotalForLevel(level as int) as int {
   if (level >= 32) {
-    return ((9 * level * level + 325 * level + 4440) / 2) as int;
+    return (9 * level * level + 325 * level + 4440) / 2;
   }
   if (level >= 17) {
-    return ((5 * level * level + 81 * level + 720) / 2);
+    return (5 * level * level + 81 * level + 720) / 2;
   }
   else {
     return level * (level + 6);

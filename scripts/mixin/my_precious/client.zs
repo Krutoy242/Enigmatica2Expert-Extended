@@ -18,7 +18,7 @@ Done for modpack 🌳 Enigmatica: 2 Expert - Extended
 #loader preinit
 #priority -1
 
-events.register(function(event as native.net.minecraftforge.client.event.ModelRegistryEvent) {
+events.register(function (event as native.net.minecraftforge.client.event.ModelRegistryEvent) {
   val rubble = native.com.existingeevee.my_precious.MyPrecious.RUBBLE;
   native.net.minecraftforge.client.model.ModelLoader.setCustomModelResourceLocation(
     rubble,

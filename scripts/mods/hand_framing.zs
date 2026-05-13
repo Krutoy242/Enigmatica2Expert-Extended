@@ -59,7 +59,7 @@ function asData(stack as IItemStack) as IData {
     id: stack.definition.id,
     Count: 1 as byte,
     Damage: stack.metadata,
-  } as IData;
+  };
 }
 
 static matKeys as string[] = ['MatS', 'MatF', 'MatT'] as string[];
@@ -146,7 +146,7 @@ function makeTagFunc(name as string) as ITooltipFunction {
         : itemUtils.getItem(getNested(stack.tag, [matTag, 'id'], '-'),
             getNested(stack.tag, [matTag, 'Damage'], 0));
     return '§e' ~ name ~ ': §r' ~ (isNull(item) ? '§c-§r' : item.displayName);
-  } as ITooltipFunction;
+  };
 }
 
 HFT.addAdvancedTooltip(makeTagFunc('Side'));

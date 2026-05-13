@@ -42,7 +42,7 @@ val platesData = {
 } as IItemStack[string];
 
 for oreName, plate in platesData {
-  if(isNull(plate)) continue;
+  if (isNull(plate)) continue;
   recipes.remove(plate);
   val ingot = oreDict['ingot' ~ oreName];
   recipes.addShapeless('plate EngHammer ' ~ oreName, plate, [ingot, ingot, anyHammer]);
@@ -81,7 +81,9 @@ for input, output in {
 } as IItemStack[IOreDictEntry] {
   MetalPress.addRecipe(output * 2, input, <immersiveengineering:mold>, 125, 1);
 
-  mods.advancedrocketry.RecipeTweaker.forMachine('RollingMachine').builder()
+  mods.advancedrocketry.RecipeTweaker
+    .forMachine('RollingMachine')
+    .builder()
     .inputOre(input, 16)
     .outputItem(output * 64)
     .power(10000)

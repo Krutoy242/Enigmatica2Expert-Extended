@@ -3,7 +3,6 @@
 #reloadable
 
 import crafttweaker.item.IItemStack;
-import thaumcraft.aspect.CTAspectStack;
 
 import scripts.mods.thaumcraft.aspect.tweak.set;
 
@@ -163,12 +162,12 @@ set('10🔮 20✊ 20🩸', <bloodmagic:activation_crystal>); // weak activation 
 set('40🔮 30✊ 50🩸', <bloodmagic:activation_crystal:1>); // awekaned activation crystal
 
 set('40👻', <bloodmagic:blood_orb:*>); // soulbinded orbs
-set('10🔮 10✊ 10🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:weak'})); // orb tier 1
-set('20🔮 10❤️ 25🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:apprentice'})); // orb tier 2
-set('30🔮 50🔩 50🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:magician'})); // orb tier 3
-set('40🔮 20⚰️ 80🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:master'})); // orb tier 4
-set('50🔮 100⟁ 100🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:archmage'})); // orb tier 5
-set('100🔮 100☀️ 300🩸', <bloodmagic:blood_orb>.withTag({orb: 'bloodmagic:transcendent'})); // orb tier 6
+set('10🔮 10✊ 10🩸', <bloodmagic:blood_orb>.withTag({ orb: 'bloodmagic:weak' })); // orb tier 1
+set('20🔮 10❤️ 25🩸', <bloodmagic:blood_orb>.withTag({ orb: 'bloodmagic:apprentice' })); // orb tier 2
+set('30🔮 50🔩 50🩸', <bloodmagic:blood_orb>.withTag({ orb: 'bloodmagic:magician' })); // orb tier 3
+set('40🔮 20⚰️ 80🩸', <bloodmagic:blood_orb>.withTag({ orb: 'bloodmagic:master' })); // orb tier 4
+set('50🔮 100⟁ 100🩸', <bloodmagic:blood_orb>.withTag({ orb: 'bloodmagic:archmage' })); // orb tier 5
+set('100🔮 100☀️ 300🩸', <bloodmagic:blood_orb>.withTag({ orb: 'bloodmagic:transcendent' })); // orb tier 6
 
 set('3🔗 3🙌 🍃', <bloodmagic:soul_snare>); // rudimentary snare
 set('10💪 10🔥 5💣', <bloodmagic:arcane_ashes:*>); // arcane ashes
@@ -405,53 +404,53 @@ set('10🔷 10🛠️ 30⛰️ 5⚡', <botania:cobblerod>);
 set('10🔷 20🛠️ 30🔄 30🙌', <botania:exchangerod>);
 
 // Generating flora
-set('20🌱 10🔥 10💨', <botania:specialflower>.withTag({type: 'endoflame'}));
-set('20🌱 10〇 10🔨', <botania:specialflower>.withTag({type: 'kekimurus'}));
-set('20🌱 10❤️ 10💧', <botania:specialflower>.withTag({type: 'narslimmus'}));
-set('20🌱 10⚗️ 10💣', <botania:specialflower>.withTag({type: 'entropinnyum'}));
-set('20🌱 10🔨 10⟁', <botania:specialflower>.withTag({type: 'spectrolus'}));
-set('100🌱 100🧠 25☀️', <botania:specialflower>.withTag({type: 'dandelifeon'}));
-set('20🌱 10💀 10⚡', <botania:specialflower>.withTag({type: 'rafflowsia'}));
-set('20🌱 10🧠 10👨', <botania:specialflower>.withTag({type: 'arcanerose'}));
-set('20🌱 10〇 10⛰️', <botania:specialflower>.withTag({type: 'munchdew'}));
-set('20🌱 10💧 10🦉', <botania:specialflower>.withTag({type: 'hydroangeas'}));
-set('20🌱 10〇 10🐺', <botania:specialflower>.withTag({type: 'gourmaryllis'}));
-set('20🌱 10👽 10⚰️', <botania:specialflower>.withTag({type: 'shulk_me_not'}));
-set('20🌱 10🔥 10⛰️', <botania:specialflower>.withTag({type: 'thermalily'}));
+set('20🌱 10🔥 10💨', <botania:specialflower>.withTag({ type: 'endoflame' }));
+set('20🌱 10〇 10🔨', <botania:specialflower>.withTag({ type: 'kekimurus' }));
+set('20🌱 10❤️ 10💧', <botania:specialflower>.withTag({ type: 'narslimmus' }));
+set('20🌱 10⚗️ 10💣', <botania:specialflower>.withTag({ type: 'entropinnyum' }));
+set('20🌱 10🔨 10⟁', <botania:specialflower>.withTag({ type: 'spectrolus' }));
+set('100🌱 100🧠 25☀️', <botania:specialflower>.withTag({ type: 'dandelifeon' }));
+set('20🌱 10💀 10⚡', <botania:specialflower>.withTag({ type: 'rafflowsia' }));
+set('20🌱 10🧠 10👨', <botania:specialflower>.withTag({ type: 'arcanerose' }));
+set('20🌱 10〇 10⛰️', <botania:specialflower>.withTag({ type: 'munchdew' }));
+set('20🌱 10💧 10🦉', <botania:specialflower>.withTag({ type: 'hydroangeas' }));
+set('20🌱 10〇 10🐺', <botania:specialflower>.withTag({ type: 'gourmaryllis' }));
+set('20🌱 10👽 10⚰️', <botania:specialflower>.withTag({ type: 'shulk_me_not' }));
+set('20🌱 10🔥 10⛰️', <botania:specialflower>.withTag({ type: 'thermalily' }));
 
 // Functional flora
-set('50🌱 50✊ 30⛰️', <botania:specialflower>.withTag({type: 'orechid'}));
-set('50🌱 50✊ 30🧨', <botania:specialflower>.withTag({type: 'orechidIgnem'}));
-set('50🌱 50✊ 30👽', <botania:specialflower>.withTag({type: 'orechidVacuam'}));
-set('50🌱 50✊ 30⛰️', <botania:specialflower>.withTag({type: 'excompressum.orechidEvolved'}));
-set('20🌱 10⟁ 10🔄', <botania:specialflower>.withTag({type: 'puredaisy'}));
-set('20🌱 10🦉 10🔮', <botania:specialflower>.withTag({type: 'manastar'}));
-set('20🌱 10⚗️ 10💧', <botania:specialflower>.withTag({type: 'petro_petunia'}));
+set('50🌱 50✊ 30⛰️', <botania:specialflower>.withTag({ type: 'orechid' }));
+set('50🌱 50✊ 30🧨', <botania:specialflower>.withTag({ type: 'orechidIgnem' }));
+set('50🌱 50✊ 30👽', <botania:specialflower>.withTag({ type: 'orechidVacuam' }));
+set('50🌱 50✊ 30⛰️', <botania:specialflower>.withTag({ type: 'excompressum.orechidEvolved' }));
+set('20🌱 10⟁ 10🔄', <botania:specialflower>.withTag({ type: 'puredaisy' }));
+set('20🌱 10🦉 10🔮', <botania:specialflower>.withTag({ type: 'manastar' }));
+set('20🌱 10⚗️ 10💧', <botania:specialflower>.withTag({ type: 'petro_petunia' }));
 
-set('20🌱 10🔥 10🔨', <botania:specialflower>.withTag({type: 'exoflame'}));
-set('20🌱 10⚰️ 10👁️', <botania:specialflower>.withTag({type: 'dreadthorn'}));
-set('20🌱 10〇 10✊', <botania:specialflower>.withTag({type: 'hopperhock'}));
-set('20🌱 10❤️ 10🔮', <botania:specialflower>.withTag({type: 'jadedAmaranthus'}));
-set('20🌱 10🛡️ 10💪', <botania:specialflower>.withTag({type: 'jiyuulia'}));
-set('20🌱 10🗡️ 10⚰️', <botania:specialflower>.withTag({type: 'bellethorn'}));
-set('20🌱 10⟁ 10❤️', <botania:specialflower>.withTag({type: 'agricarnation'}));
-set('20🌱 10🔄 10💧', <botania:specialflower>.withTag({type: 'clayconia'}));
-set('20🌱 10🏃 10🍃', <botania:specialflower>.withTag({type: 'daffomill'}));
-set('20🌱 10⚰️ 10💧', <botania:specialflower>.withTag({type: 'hyacidus'}));
-set('20🌱 10🧊 10♒', <botania:specialflower>.withTag({type: 'medumone'}));
-set('20🌱 10🐺 10❤️', <botania:specialflower>.withTag({type: 'pollidisiac'}));
-set('20🌱 10👽 10🔗', <botania:specialflower>.withTag({type: 'vinculotus'}));
-set('20🌱 10✨ 10❤️', <botania:specialflower>.withTag({type: 'fallenKanade'}));
-set('20🌱 10〇 10🛎️', <botania:specialflower>.withTag({type: 'bergamute'}));
-set('20🌱 10✨ 10💧', <botania:specialflower>.withTag({type: 'bubbell'}));
-set('20🌱 10🗡️ 10🙌', <botania:specialflower>.withTag({type: 'heiseiDream'}));
-set('20🌱 10🔄 10💎', <botania:specialflower>.withTag({type: 'marimorphosis'}));
-set('20🌱 10✊ 10⟁', <botania:specialflower>.withTag({type: 'rannuncarpus'}));
-set('20🌱 10👽 10🏃', <botania:specialflower>.withTag({type: 'spectranthemum'}));
-set('20🌱 10✊ 10🔗', <botania:specialflower>.withTag({type: 'tangleberrie'}));
-set('20🌱 10💣 10🐺', <botania:specialflower>.withTag({type: 'tigerseye'}));
-set('20🌱 10✊ 10⚡', <botania:specialflower>.withTag({type: 'solegnolia'}));
-set('20🌱 10✊ 10🦄', <botania:specialflower>.withTag({type: 'loonium'}));
+set('20🌱 10🔥 10🔨', <botania:specialflower>.withTag({ type: 'exoflame' }));
+set('20🌱 10⚰️ 10👁️', <botania:specialflower>.withTag({ type: 'dreadthorn' }));
+set('20🌱 10〇 10✊', <botania:specialflower>.withTag({ type: 'hopperhock' }));
+set('20🌱 10❤️ 10🔮', <botania:specialflower>.withTag({ type: 'jadedAmaranthus' }));
+set('20🌱 10🛡️ 10💪', <botania:specialflower>.withTag({ type: 'jiyuulia' }));
+set('20🌱 10🗡️ 10⚰️', <botania:specialflower>.withTag({ type: 'bellethorn' }));
+set('20🌱 10⟁ 10❤️', <botania:specialflower>.withTag({ type: 'agricarnation' }));
+set('20🌱 10🔄 10💧', <botania:specialflower>.withTag({ type: 'clayconia' }));
+set('20🌱 10🏃 10🍃', <botania:specialflower>.withTag({ type: 'daffomill' }));
+set('20🌱 10⚰️ 10💧', <botania:specialflower>.withTag({ type: 'hyacidus' }));
+set('20🌱 10🧊 10♒', <botania:specialflower>.withTag({ type: 'medumone' }));
+set('20🌱 10🐺 10❤️', <botania:specialflower>.withTag({ type: 'pollidisiac' }));
+set('20🌱 10👽 10🔗', <botania:specialflower>.withTag({ type: 'vinculotus' }));
+set('20🌱 10✨ 10❤️', <botania:specialflower>.withTag({ type: 'fallenKanade' }));
+set('20🌱 10〇 10🛎️', <botania:specialflower>.withTag({ type: 'bergamute' }));
+set('20🌱 10✨ 10💧', <botania:specialflower>.withTag({ type: 'bubbell' }));
+set('20🌱 10🗡️ 10🙌', <botania:specialflower>.withTag({ type: 'heiseiDream' }));
+set('20🌱 10🔄 10💎', <botania:specialflower>.withTag({ type: 'marimorphosis' }));
+set('20🌱 10✊ 10⟁', <botania:specialflower>.withTag({ type: 'rannuncarpus' }));
+set('20🌱 10👽 10🏃', <botania:specialflower>.withTag({ type: 'spectranthemum' }));
+set('20🌱 10✊ 10🔗', <botania:specialflower>.withTag({ type: 'tangleberrie' }));
+set('20🌱 10💣 10🐺', <botania:specialflower>.withTag({ type: 'tigerseye' }));
+set('20🌱 10✊ 10⚡', <botania:specialflower>.withTag({ type: 'solegnolia' }));
+set('20🌱 10✊ 10🦄', <botania:specialflower>.withTag({ type: 'loonium' }));
 
 /*
 #######################################################
@@ -1217,7 +1216,7 @@ function addMetallurgicAspects(oreBase as string, mul as double, mulAs as double
   x += setOreAspect('seed'           , 10.0  * mul, 5.0   * mulAs, oreBase, aspects, (5 * tier) ~ '🌱');
   x += setOreAspect('essence'        , 10.0  * mul, 5.0   * mulAs, oreBase, aspects, (5 * tier) ~ '🔮');
   if (x <= 0) {
-    logger.logWarning('Cannot find anything for oreBase "'~oreBase~'"');
+    logger.logWarning('Cannot find anything for oreBase "' ~ oreBase ~ '"');
   }
 }
 
@@ -1287,7 +1286,7 @@ addMetallurgicAspects('Trinitite'          , 1.0, 2.0, 0, '💎 💣 ✊');
 
 // [Sanguis aspect] source
 mods.bloodmagic.BloodAltar.addRecipe(
-  <thaumcraft:phial:1>.withTag({Aspects: [{amount: 10, key: 'sanguis'}]}), // output
+  <thaumcraft:phial:1>.withTag({ Aspects: [{ amount: 10, key: 'sanguis' }] }), // output
   <thaumcraft:phial>, // input
   1, // tier
   1000, // blood_essence_drain (how much essence crafting recipe require)
@@ -1295,4 +1294,4 @@ mods.bloodmagic.BloodAltar.addRecipe(
   0); // drain_rate (how fast crafting process will decay if there is no blood in altar, 0 means no loss)
 
 // [Mana aspect] source
-mods.botania.ManaInfusion.addAlchemy(<thaumcraft:phial:1>.withTag({Aspects: [{amount: 10, key: 'mana'}]}), <thaumcraft:phial>, 5000);
+mods.botania.ManaInfusion.addAlchemy(<thaumcraft:phial:1>.withTag({ Aspects: [{ amount: 10, key: 'mana' }] }), <thaumcraft:phial>, 5000);

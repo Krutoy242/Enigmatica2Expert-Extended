@@ -47,8 +47,8 @@ for i in 0 .. 6 {
         },
       },
     }),
-    isNull(catalyst) ? baseIngredients : baseIngredients + catalyst
-    , function (out, ins, cInfo) {
+    isNull(catalyst) ? baseIngredients : baseIngredients + catalyst,
+    function (out, ins, cInfo) {
       return out.withTag(out.tag.deepUpdate(
         { BlockEntityTag: { DankNullStack: { tag: ins.m.tag } } },
         mods.zenutils.DataUpdateOperation.MERGE
@@ -80,7 +80,9 @@ function attemptToPutIn(e as PlayerInteractBlockEvent) as void {
     isNull(item)
     || isNull(item.definition)
     || !item.definition.id.startsWith('danknull:dank_null_')
-  ) return;
+  ) {
+    return;
+  }
 
   val requiredItem = getRequiredItem(item);
   if (isNull(requiredItem)) return;
@@ -121,7 +123,7 @@ function getRequiredItem(dankNullItem as IItemStack) as IIngredient {
   val dankTier = dankNullItem.definition.id.substring('danknull:dank_null_'.length) as int;
   if (dankTier < BASE_TIER || dankTier > 5) return null;
 
-  val catalystIndex = dankTier - BASE_TIER;  
+  val catalystIndex = dankTier - BASE_TIER;
   return catalystRequirments[catalystIndex];
 }
 

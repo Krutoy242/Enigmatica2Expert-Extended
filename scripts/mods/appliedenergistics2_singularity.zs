@@ -59,12 +59,12 @@ function emojifiedFrequency(frequency as long) as string {
     parts.add('-');
   }
   var hasNext = true;
-  while (hasNext) {
+  while hasNext {
     val cut = freq % cutDownLen;
     freq = freq / cutDownLen;
     parts.add(COLORS[cut % splitLen]);
     parts.add(EMOJIS[cut / splitLen]);
-    hasNext = (freq != 0);
+    hasNext = freq != 0;
   }
   return StaticString.join(parts.toArray(), '');
 }

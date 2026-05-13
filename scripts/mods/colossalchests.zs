@@ -37,7 +37,7 @@ for i, arr in chestIngrs {
   val currWall = <colossalchests:chest_wall>.definition.makeStack(i);
   val primary = arr[0];
   val secondary = arr[1];
-  val prevWall = (i == 0) ? <colossalchests:uncolossal_chest> : <colossalchests:chest_wall>.definition.makeStack(i - 1);
+  val prevWall = i == 0 ? <colossalchests:uncolossal_chest> : <colossalchests:chest_wall>.definition.makeStack(i - 1);
 
   // [Colossal Chest Core] from [Blasted Coal][+1]
   val core = <colossalchests:colossal_chest>.definition.makeStack(i);

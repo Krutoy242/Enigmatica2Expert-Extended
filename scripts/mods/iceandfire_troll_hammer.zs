@@ -96,8 +96,10 @@ events.register(function (e as crafttweaker.event.EntityLivingDeathDropsEvent) {
   if (matched) {
     squash(world, position);
     world.catenation()
-      .sleep(1).then(function (world, ctx) { squash(world, position); })
-      .sleep(1).then(function (world, ctx) { squash(world, position); })
+      .sleep(1)
+      .then(function (world, ctx) { squash(world, position); })
+      .sleep(1)
+      .then(function (world, ctx) { squash(world, position); })
       .start();
   }
 });

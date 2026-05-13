@@ -7,7 +7,9 @@ events.onEntityTravelToDimension(function (e as crafttweaker.event.EntityTravelT
     e.entity.world.remote
     || isNull(e.entity.definition)
     || e.entity.definition.id != 'thaumadditions:chester'
-  ) return;
+  ) {
+    return;
+  }
 
   e.cancel();
 });

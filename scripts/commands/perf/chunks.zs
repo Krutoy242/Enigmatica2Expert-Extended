@@ -58,7 +58,7 @@ function show(player as IPlayer) as IData {
 
       val title = claimedChunk.team.commandTitle.unformattedText;
       var index = titlesList.indexOf(title);
-      if (0 > index) {
+      if (index < 0) {
         index = titlesList.size;
         titlesList.add(title);
       }

@@ -10,12 +10,12 @@ import native.net.minecraft.item.ItemStack;
 static mobSpawnAmounts as [MobSpawnAmount][string] = SpawnerConfiguration.mobSpawnAmounts;
 
 function addSpawn(entityId as string, representationItem as IItemStack, homeBlock as IItemStack, value as float) as void {
-    if (isNull(representationItem) || isNull(homeBlock)) return;
-    var list = [] as [MobSpawnAmount];
-    list += MobSpawnAmount(representationItem, value / 10000.0);
-    list += MobSpawnAmount(homeBlock, value / 2000.0);
-    list += MobSpawnAmount(ItemStack.EMPTY, crafttweaker.util.Math.sqrt(value));
-    mobSpawnAmounts[entityId] = list;
+  if (isNull(representationItem) || isNull(homeBlock)) return;
+  var list = [] as [MobSpawnAmount];
+  list += MobSpawnAmount(representationItem, value / 10000.0);
+  list += MobSpawnAmount(homeBlock, value / 2000.0);
+  list += MobSpawnAmount(ItemStack.EMPTY, crafttweaker.util.Math.sqrt(value));
+  mobSpawnAmounts[entityId] = list;
 }
 
 addSpawn('astralsorcery:entityflare', <astralsorcery:itemusabledust> , <minecraft:dirt> , 15000);

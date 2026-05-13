@@ -355,7 +355,7 @@ val merchData = {
   //     ],
   //   },
   // },
-  "immersiveengineering:engineer": {
+  'immersiveengineering:engineer': {
     //   "immersiveengineering.engineer": {
     //     4: [
     //       [],
@@ -366,7 +366,7 @@ val merchData = {
     //       [],
     //     ],
     //   },
-    "immersiveengineering.electrician": {
+    'immersiveengineering.electrician': {
       5: [
         [E * 18, <industrialforegoing:range_addon:8>],
       ],
@@ -444,14 +444,15 @@ for profession, pList in merchData {
           career,
           '[' ~ items[0].displayName ~ ']',
           '[' ~ items[1].displayName ~ ']',
-          '[' ~ ((items.length > 2 && !isNull(items[2])) ? items[2].displayName : '') ~ ']',
+          '[' ~ (items.length > 2 && !isNull(items[2]) ? items[2].displayName : '') ~ ']',
           level,
         ] as string[]);
 
         val careerObj = Villager.getCareer(profession, career);
         if (isNull(careerObj)) {
           logger.logWarning('Cant find merchant for profession: ' ~ profession ~ ', career: ' ~ career);
-        } else {
+        }
+        else {
           if (items.length > 2 && !isNull(items[2]))
             careerObj.addTrade(level, items[2], items[0], items[1]);
           else if (items.length > 1)

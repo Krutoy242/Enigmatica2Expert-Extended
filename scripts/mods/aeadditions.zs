@@ -38,7 +38,7 @@ Purge(<aeadditions:storage.casing:1>);
 newGasCellRecipe(null, <aeadditions:storage.casing:2>);
 
 // ---=== Advanced Cells ===---
-for i in 0 .. 4{
+for i in 0 .. 4 {
   Purge(<aeadditions:storage.component>.definition.makeStack(i));
   Purge(<aeadditions:storage.physical>.definition.makeStack(i));
 }

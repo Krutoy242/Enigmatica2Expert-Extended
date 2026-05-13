@@ -19,7 +19,7 @@ zenClass Compressor {
     if (isNull(item) || maxLevel == 0) return null;
 
     val hashedIndex = hashed[item];
-    if (!isNull(hashedIndex) && (hashedIndex as int) >= maxLevel)
+    if (!isNull(hashedIndex) && hashedIndex as int >= maxLevel)
       return getStatic(item, maxLevel);
 
     val startIndex = isNull(hashedIndex)

@@ -242,8 +242,8 @@ remakeTarget(<qmd:ingot>, (<particle:photon> * 4000000) ^ 11000      , TG, <qmd:
 remakeTarget(<qmd:ingot>, (<particle:proton> * 5000000) ^ 600000     , TG, <qmd:waste_spallation2:1>, <particle:pion_plus>    , null                      , <particle:pion_minus>    , 5000000 , 0.2 , -279000);
 remakeTarget(<qmd:ingot>, (<particle:proton> * 5000000) ^ 5630000    , TG, <qmd:waste_spallation2:1>, <particle:proton>       , null                      , <particle:antiproton>    , 20000000, 0.2 , -1880000);
 remakeTarget(<qmd:ingot>, (<particle:deuteron> * 10000000) ^ 11300000, TG, <qmd:waste_spallation2:1>, <particle:deuteron>     , null                      , <particle:antideuteron>  , 20000000, 0.1 , -3750000);
-remakeTarget(<qmd:ingot>, (<particle:antiproton> * 1000000)        , TG, <qmd:waste_spallation2:1>, <particle:pion_plus>    , <particle:pion_naught>    , <particle:pion_minus>    , 10000000, 1   , 1460000);
-remakeTarget(<qmd:ingot>, (<particle:antideuteron> * 10000000)     , TG, <qmd:waste_spallation2:1>, <particle:pion_plus> * 4, <particle:pion_naught> * 4, <particle:pion_minus> * 4, 10000000, 1   , 2090000);
+remakeTarget(<qmd:ingot>, <particle:antiproton> * 1000000        , TG, <qmd:waste_spallation2:1>, <particle:pion_plus>    , <particle:pion_naught>    , <particle:pion_minus>    , 10000000, 1   , 1460000);
+remakeTarget(<qmd:ingot>, <particle:antideuteron> * 10000000     , TG, <qmd:waste_spallation2:1>, <particle:pion_plus> * 4, <particle:pion_naught> * 4, <particle:pion_minus> * 4, 10000000, 1   , 2090000);
 
 // Melt tungsten misssed recipe
 scripts.process.melt(<endreborn:item_ingot_wolframium>, <fluid:tungsten> * 144);
@@ -269,8 +269,8 @@ mods.nuclearcraft.Crystallizer.addRecipe(<fluid:sodium_nitrate_solution> * 666, 
 // Replacing Mercury with Quicksilver //
 ////////////////////////////////////////
 
-mods.industrialforegoing.FluidDictionary.add("fluid_quicksilver", "mercury", 1);
-mods.industrialforegoing.FluidDictionary.add("mercury", "fluid_quicksilver", 1);
+mods.industrialforegoing.FluidDictionary.add('fluid_quicksilver', 'mercury', 1);
+mods.industrialforegoing.FluidDictionary.add('mercury', 'fluid_quicksilver', 1);
 
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<fluid:mercury> * 144);
 

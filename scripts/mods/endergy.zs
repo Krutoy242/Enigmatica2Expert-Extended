@@ -57,8 +57,8 @@ mods.tconstruct.Melting.removeRecipe(<liquid:energetic_silver>);
 function getBlockOrNine(ore as IOreDictEntry) as IIngredient {
   val itemName = ore.name.replaceAll('^(item|ingot)', 'block');
   val blockOre = oreDict.get(itemName);
-  if(isNull(blockOre?.firstItem)) return (ore as IIngredient) * 9;
-  return blockOre.firstItem as IIngredient;
+  if (isNull(blockOre?.firstItem)) return ore as IIngredient * 9;
+  return blockOre.firstItem;
 }
 
 val alloyTiers = [
@@ -78,7 +78,7 @@ for i, list in alloyTiers {
   scripts.process.alloy([
     list[1],
     alloyTiers[i - 1][0],
-    list[2]
+    list[2],
   ], list[0].firstItem * ALLOY_RESULT_AMOUNT, 'AdvRockArc');
 
   val outBlock = getBlockOrNine(list[0]);
@@ -134,7 +134,9 @@ mods.tconstruct.Alloy.addRecipe(<liquid:vivid_alloy> * 144, [
 ]);
 
 // Multiblock Machine recipe
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .inputOre(<ore:blockEnderium>) // Block of Enderium
   .input(<ore:blockAlumite>) // Alumite Block
   .input(<draconicevolution:infused_obsidian>) // Draconium Infused Obsidian

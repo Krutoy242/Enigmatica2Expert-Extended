@@ -42,10 +42,10 @@ function add(id as int, name as string, tags as string[] = null) as void {
 function get(name as string) as int {
   val lowerName = name.toLowerCase();
   for id, dim in Op.allDims {
-    if (dim.name.toLowerCase() == lowerName) return id as int;
+    if (dim.name.toLowerCase() == lowerName) return id;
   }
   for id, dim in Op.allDims {
-    if (dim.name.toLowerCase().contains(lowerName)) return id as int;
+    if (dim.name.toLowerCase().contains(lowerName)) return id;
   }
   return 0;
 }

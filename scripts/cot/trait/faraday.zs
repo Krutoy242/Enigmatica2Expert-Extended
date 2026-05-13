@@ -11,7 +11,9 @@ faraday.onHurt = function (trait, armor, player, source, damage, newDamage, evt)
   if (
     source.damageType == 'ieWireShock' // Immersive Engineering
     || source.damageType == 'electricity' // IC2
-  ) evt.cancel();
+  ) {
+    evt.cancel();
+  }
   return newDamage;
 };
 faraday.register();

@@ -117,7 +117,7 @@ function getCruciblesPos(world as IWorld, posFlower as IBlockPos) as IBlockPos[]
 }
 
 function toBlockPos(x as int, y  as int, z  as int) as IBlockPos {
-  return crafttweaker.util.Position3f.create(x, y, z) as IBlockPos;
+  return crafttweaker.util.Position3f.create(x, y, z);
 }
 
 function getCrucibles(world as IWorld, cruciblesPosList as IBlockPos[]) as IBlock[] {
@@ -143,9 +143,9 @@ function drinkEssentia(world as IWorld, cruciblesPosList as IBlockPos[]) as void
     var overwriteData = [] as IData;
     val crucible = world.getBlock(cruciblePos);
     for i in 0 .. crucible.data.Aspects.length {
-      if (crucible.data.Aspects[i].amount > 1) overwriteData = overwriteData.deepUpdate([{amount: (crucible.data.Aspects[i].amount - 1), key: crucible.data.Aspects[i].key}], MERGE);
+      if (crucible.data.Aspects[i].amount > 1) overwriteData = overwriteData.deepUpdate([{ amount: crucible.data.Aspects[i].amount - 1, key: crucible.data.Aspects[i].key }], MERGE);
     }
-    val newData = crucible.data.deepUpdate({Aspects: overwriteData, Amount: (crucible.data.Amount - 100)}, {Aspects: OVERWRITE, Amount: OVERWRITE});
+    val newData = crucible.data.deepUpdate({ Aspects: overwriteData, Amount: crucible.data.Amount - 100 }, { Aspects: OVERWRITE, Amount: OVERWRITE });
     world.setBlockState(world.getBlockState(cruciblePos), newData, cruciblePos);
   }
 }

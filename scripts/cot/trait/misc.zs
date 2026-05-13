@@ -1,12 +1,8 @@
 #loader contenttweaker
 #modloaded thaumcraft
 
-import crafttweaker.block.IBlock;
 import crafttweaker.entity.IEntityLivingBase;
-import crafttweaker.item.IItemStack;
-import crafttweaker.item.WeightedItemStack;
 import crafttweaker.player.IPlayer;
-import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 import mods.contenttweaker.conarm.ArmorTraitBuilder;
 import mods.contenttweaker.conarm.ExtendedMaterialBuilder;

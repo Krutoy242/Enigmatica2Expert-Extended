@@ -626,14 +626,14 @@ craft.remake(<cyclicmagic:builder_block>, ['pretty',
 });
 
 // [Controlled Miner] from [Structure Builder][+3]
-craft.remake(<cyclicmagic:block_miner_smart>, ["pretty",
-  "L □ L",
-  "□ S □",
-  "# # #"], {
-  "L": <ore:compressedLapis2x>,     # Double Compressed Lapis Lazuli
-  "□": <tconstruct:large_plate>.withTag({Material: "sky_stone"}), # Sky Stone Large Plate
-  "S": <cyclicmagic:builder_block>, # Structure Builder
-  "#": <randomthings:spectrelog>,   # Spectre Wood
+craft.remake(<cyclicmagic:block_miner_smart>, ['pretty',
+  'L □ L',
+  '□ S □',
+  '# # #'], {
+  'L': <ore:compressedLapis2x>,     // Double Compressed Lapis Lazuli
+  '□': <tconstruct:large_plate>.withTag({ Material: 'sky_stone' }), // Sky Stone Large Plate
+  'S': <cyclicmagic:builder_block>, // Structure Builder
+  '#': <randomthings:spectrelog>,   // Spectre Wood
 });
 
 // [Harvester] from [Battery][+4]
@@ -796,11 +796,11 @@ craft.remake(<cyclicmagic:block_fragile_auto> * 16, ['pretty',
 });
 
 // Add unbreakable recipes for easy usage
-craft.reshapeless(<cyclicmagic:tool_harvest_leaves>.withTag({enchantmentColor: 2437522, ench: [{}], Unbreakable: 1 as byte}), 'TH', {
+craft.reshapeless(<cyclicmagic:tool_harvest_leaves>.withTag({ enchantmentColor: 2437522, ench: [{}], Unbreakable: 1 as byte }), 'TH', {
   'T': <cyclicmagic:tool_harvest_leaves>,
   'H': <botania:grasshorn:1>,
 });
-craft.reshapeless(<cyclicmagic:tool_harvest_weeds>.withTag({enchantmentColor: 2437522, ench: [{}], Unbreakable: 1 as byte}), 'BH', {
+craft.reshapeless(<cyclicmagic:tool_harvest_weeds>.withTag({ enchantmentColor: 2437522, ench: [{}], Unbreakable: 1 as byte }), 'BH', {
   'B': <cyclicmagic:tool_harvest_weeds>,
   'H': <botania:grasshorn>,
 });

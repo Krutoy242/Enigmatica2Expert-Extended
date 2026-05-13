@@ -16,11 +16,13 @@ function grant(player as IPlayer, byHealth as bool = false) as void {
   if (player.hasGameStage('skyblock') || player.hasGameStage('healthy')) return;
 
   player.addGameStage('healthy');
-  if (byHealth) player.sendRichTextMessage(fromTranslation(
-    'tooltips.dim_stages.healthy_grant',
-    health_require as int,
-    (health_require / 2.0f + 0.5f) as int
-  ));
+  if (byHealth) {
+    player.sendRichTextMessage(fromTranslation(
+      'tooltips.dim_stages.healthy_grant',
+      health_require as int,
+      (health_require / 2.0f + 0.5f) as int
+    ));
+  }
   player.sendRichTextMessage(fromTranslation('tooltips.dim_stages.healthy_can'));
 }
 
@@ -76,7 +78,7 @@ static allowedDims as int[] = [
 function isAllowedDim(dimId as int) as bool {
   if (allowedDims has dimId) return true;
   val providerType = native.net.minecraftforge.common.DimensionManager.getProviderType(dimId);
-  if(isNull(providerType)) return false;
+  if (isNull(providerType)) return false;
   return toString(providerType.getName()) == 'rftools_dimension';
 }
 

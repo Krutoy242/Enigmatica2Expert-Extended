@@ -44,7 +44,6 @@ for i, toolId in validToolsList {
   validTools |= tool.anyDamage();
 }
 
-
 // -----------------------------------------------------------------------
 // ███╗   ███╗ █████╗ ████████╗██╗  ██╗
 // ████╗ ████║██╔══██╗╚══██╔══╝██║  ██║
@@ -120,7 +119,7 @@ function getToolsStats(tool as IItemStack) as double[string] {
     HarvestLevel: tool.tag?.Stats?.HarvestLevel.asInt() ?? 0,
     Attack      : tool.tag?.Stats?.Attack.asFloat() ?? 0.0f,
     MiningSpeed : tool.tag?.Stats?.MiningSpeed.asFloat() ?? 0.0f,
-  } as double[string];
+  };
 }
 
 function getPerfectOrder(input as IItemStack) as int[] {

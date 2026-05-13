@@ -2,14 +2,12 @@
 #modloaded thaumadditions
 #priority 1000
 
-import crafttweaker.data.IData;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.player.IPlayer;
 import crafttweaker.util.Math;
 import mods.contenttweaker.VanillaFactory;
 import mods.randomtweaker.cote.IPotion;
 import mods.zenutils.DataUpdateOperation.MERGE;
-import mods.zenutils.ItemHandler;
 
 val potionExorcism as IPotion = VanillaFactory.createPotion('exorcism', 0xF7D575);
 
@@ -80,7 +78,7 @@ static timeColdown as int = 20;
 static timeGain as int = 20;
 
 potionChronos.isReady = function (duration, amplifier) {
-  return (duration % timeColdown == 0);
+  return duration % timeColdown == 0;
 };
 
 potionChronos.performEffect = function (living, amplifier) {
@@ -92,20 +90,20 @@ potionChronos.performEffect = function (living, amplifier) {
 
     for slotIndex in 0 .. inventory.size {
       val item = inventory.getStackInSlot(slotIndex);
-      if(!isNull(item) && item.definition.id == 'randomthings:timeinabottle'){
+      if (!isNull(item) && item.definition.id == 'randomthings:timeinabottle') {
         val tiab = inventory.getStackInSlot(slotIndex);
-        if(isNull(item.tag.timeData)) continue;
+        if (isNull(item.tag.timeData)) continue;
         val timeTiab = tiab.tag.timeData.storedTime;
-        if(time < timeTiab) {
+        if (time < timeTiab) {
           slot = slotIndex;
           time = timeTiab;
         }
       }
     }
 
-    if(slot > -1) {
+    if (slot > -1) {
       var item = inventory.getStackInSlot(slot);
-      item = item.withTag(item.tag.deepUpdate({timeData: {storedTime: (timeGain * amplifier + time)}}, MERGE));
+      item = item.withTag(item.tag.deepUpdate({ timeData: { storedTime: timeGain * amplifier + time } }, MERGE));
       inventory.setStackInSlot(slot, item);
     }
   }
@@ -119,13 +117,13 @@ potionDarknessResistance.shouldRenderHUD = true;
 potionDarknessResistance.badEffectIn = false;
 
 potionDarknessResistance.isReady = function (duration, amplifier) {
-  return (duration % 20 == 0);
+  return duration % 20 == 0;
 };
 
 potionDarknessResistance.performEffect = function (living, amplifier) {
   if (!living.world.remote && living instanceof IPlayer) {
     val data = living.native.getEntityData();
-    if(data.hasKey('XU2|DarkTimer')) data.removeTag('XU2|DarkTimer');
+    if (data.hasKey('XU2|DarkTimer')) data.removeTag('XU2|DarkTimer');
   }
 };
 
@@ -139,30 +137,30 @@ potionEasyculty.badEffectIn = false;
 static difficultyDiscount as double = 200.0;
 
 potionEasyculty.isReady = function (duration, amplifier) {
-  return (duration % 20 == 0);
+  return duration % 20 == 0;
 };
 
 potionEasyculty.performEffect = function (living, amplifier) {
   if (!living.world.remote && living instanceof IPlayer) {
     val player as IPlayer = living;
 
-    if(isNull(player.nbt.ForgeData.PlayerPersisted.vialTempDifficultyPenalty)) {
+    if (isNull(player.nbt.ForgeData.PlayerPersisted.vialTempDifficultyPenalty)) {
       val playerDiff = player.getDifficulty();
       val diffPenalty = playerDiff * (1.0 - 1.0 / (amplifier + 2));
-      
-      player.setNBT({'PlayerPersisted': {'vialTempDifficultyPenalty' : diffPenalty}});
+
+      player.setNBT({ 'PlayerPersisted': { 'vialTempDifficultyPenalty' : diffPenalty } });
       player.setDifficulty(playerDiff - diffPenalty);
-    } 
+    }
   }
 };
 
-events.onPlayerTick(function(event as crafttweaker.event.PlayerTickEvent) {
-  if(isNull(event.player) || event.player.world.remote || event.player.world.provider.worldTime % 20 != 0) return;
+events.onPlayerTick(function (event as crafttweaker.event.PlayerTickEvent) {
+  if (isNull(event.player) || event.player.world.remote || event.player.world.provider.worldTime % 20 != 0) return;
   val player = event.player;
-  if(player.isPotionActive(<potion:contenttweaker:easyculty>) || isNull(player.nbt.ForgeData.PlayerPersisted.vialTempDifficultyPenalty)) return;
+  if (player.isPotionActive(<potion:contenttweaker:easyculty>) || isNull(player.nbt.ForgeData.PlayerPersisted.vialTempDifficultyPenalty)) return;
 
   player.setDifficulty(Math.min(1000.0, player.getDifficulty() + player.nbt.ForgeData.PlayerPersisted.vialTempDifficultyPenalty));
-  player.native.getEntityData().getCompoundTag('PlayerPersisted').removeTag('vialTempDifficultyPenalty');    
+  player.native.getEntityData().getCompoundTag('PlayerPersisted').removeTag('vialTempDifficultyPenalty');
 });
 
 potionEasyculty.register();
@@ -172,9 +170,9 @@ potionSelfSacifice.shouldRender = true;
 potionSelfSacifice.shouldRenderHUD = true;
 potionSelfSacifice.badEffectIn = false;
 
-events.register(function(event as native.WayofTime.bloodmagic.event.SacrificeKnifeUsedEvent) {
+events.register(function (event as native.WayofTime.bloodmagic.event.SacrificeKnifeUsedEvent) {
   val player = event.player;
-  if(isNull(player) || player.world.isRemote || !player.isPotionActive(<potion:contenttweaker:self_sacrifice>.native)) return;
+  if (isNull(player) || player.world.isRemote || !player.isPotionActive(<potion:contenttweaker:self_sacrifice>.native)) return;
   event.lpAdded += player.world.rand.nextDouble() * (1.0 + player.getActivePotionEffect(<potion:contenttweaker:self_sacrifice>.native).getAmplifier()) * event.lpAdded;
 });
 

@@ -10,7 +10,7 @@ function getPlayerDimDifficulty(playerUUID as string, dim as int) as double {
 }
 
 function getPlayerDifficulty(playerUUID as string) as double {
-  return scripts.lib.offline.op.get(playerUUID, 'difficulty', 0, 1000) as double;
+  return scripts.lib.offline.op.get(playerUUID, 'difficulty', 0, 1000);
 }
 
 function getDimDifficulty(dfclty as double, dim as int) as double {

@@ -921,19 +921,19 @@ function getSetBonus(player as IPlayer) as int[] {
     || isNull(player.mainHandHeldItem)
     || isNull(player.mainHandHeldItem.definition)
     || player.mainHandHeldItem.definition.id != 'thaumadditions:mithminite_scythe') {
-    return [0,0,0,0,0,0,0] as int[];
+    return [0,0,0,0,0,0,0];
   }
   val scythe = player.mainHandHeldItem;
 
   if (isNull(scythe.tag)
     || isNull(scythe.tag.display)
     || isNull(scythe.tag.display.Lore)) {
-    return [0,0,0,0,0,0,0] as int[];
+    return [0,0,0,0,0,0,0];
   }
 
   val lore = scythe.tag.display.Lore;
   // Black, White, Blue, Red, Yellow, Green, Pink
-  if (lore.length == 0) return [0,0,0,0,0,0,0] as int[];
+  if (lore.length == 0) return [0,0,0,0,0,0,0];
 
   var a = 0;
   var b = 0;
@@ -954,7 +954,7 @@ function getSetBonus(player as IPlayer) as int[] {
     if (k == '5' || k == 'd') { g += 1; continue; }
   }
 
-  return [a,b,c,d,e,f,g] as int[];
+  return [a,b,c,d,e,f,g];
 }
 
 events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent) {

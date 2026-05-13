@@ -37,7 +37,7 @@ function add(input as IIngredient, output as IItemStack) as void {
   for item in input.items { lookupMap[item.definition] = true; }
 
   if (scriptStatus() == 0) { // Run only on initializing game
-    scripts.jei.crafting_hints.addInsOutCatl([input], output, <botania:specialflower>.withTag({type: 'amuileria_kaerunea'}));
+    scripts.jei.crafting_hints.addInsOutCatl([input], output, <botania:specialflower>.withTag({ type: 'amuileria_kaerunea' }));
   }
 }
 
@@ -86,9 +86,9 @@ events.onEntityItemDeath(function (e as mods.zenutils.event.EntityItemDeathEvent
 });
 
 function charge(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
-  if (isNull(subtile.data.charge)) subtile.setCustomData({charge: 0});
+  if (isNull(subtile.data.charge)) subtile.setCustomData({ charge: 0 });
   if (subtile.data.charge < 4) {
-    subtile.setCustomData({charge: 1 + subtile.data.charge});
+    subtile.setCustomData({ charge: 1 + subtile.data.charge });
     (world.native as WorldServer).spawnParticle(EnumParticleTypes.END_ROD, 0.5 + pos.x, 0.5 + pos.y, 0.5 + pos.z, 20, 0.25, 0.25, 0.25, 0, 0);
     return;
   }
@@ -121,7 +121,7 @@ function charge(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGam
   if (makeThunder) {
     val lightning = EntityLightningBolt(world, pos.x, pos.y, pos.z, false);
     world.native.addWeatherEffect(lightning);
-    subtile.setCustomData({charge: 0});
+    subtile.setCustomData({ charge: 0 });
   }
   else {
     (world.native as WorldServer).spawnParticle(EnumParticleTypes.CRIT_MAGIC, 0.5f + pos.x, 1.2 + pos.y, 0.5f + pos.z, 5, 0.4, 0.4, 0.4, 0, 0);

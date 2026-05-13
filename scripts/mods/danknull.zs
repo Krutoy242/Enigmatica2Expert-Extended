@@ -1,7 +1,5 @@
 #modloaded danknull
 
-import crafttweaker.item.IIngredient;
-
 recipes.remove(<danknull:danknull_dock>);
 
 // Removing non-chained recipes

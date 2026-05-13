@@ -18,21 +18,21 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <randomthings:weatheregg>                            : [10, 0, 1, 1],
   <mysticalagradditions:stuff:3>                       : [20, 0, 2, 5],
 
-  <enderio:item_soul_vial:1>.withTag({entityId: 'minecraft:shulker'})          : [16, 5, 1, 1],
-  <enderio:item_soul_vial:1>.withTag({entityId: 'quark:stoneling'})            : [1,  1, 1, 1],
-  <enderio:item_soul_vial:1>.withTag({entityId: 'betteranimalsplus:tarantula'}): [1,  1, 1, 1],
-  <enderio:item_soul_vial:1>.withTag({entityId: 'quark:archaeologist'})        : [1,  1, 1, 1],
-  <enderio:item_soul_vial:1>.withTag({entityId: 'thaumcraft:eldritchcrab'})    : [1,  1, 1, 1],
+  <enderio:item_soul_vial:1>.withTag({ entityId: 'minecraft:shulker' })          : [16, 5, 1, 1],
+  <enderio:item_soul_vial:1>.withTag({ entityId: 'quark:stoneling' })            : [1,  1, 1, 1],
+  <enderio:item_soul_vial:1>.withTag({ entityId: 'betteranimalsplus:tarantula' }): [1,  1, 1, 1],
+  <enderio:item_soul_vial:1>.withTag({ entityId: 'quark:archaeologist' })        : [1,  1, 1, 1],
+  <enderio:item_soul_vial:1>.withTag({ entityId: 'thaumcraft:eldritchcrab' })    : [1,  1, 1, 1],
 
-  <mekanism:energycube>.withTag({tier: 0, mekData: {energyStored: 3.0e7}}): [1, 0, 1, 1],
+  <mekanism:energycube>.withTag({ tier: 0, mekData: { energyStored: 3.0e7 } }): [1, 0, 1, 1],
 
-  <botania:brewvial>.withTag({brewKey: "calamity"})       : [2, 2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "depthbound"})     : [2, 2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "sanguine_oath"})  : [2, 2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "scarlet_veil"})   : [2, 2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "warbound"})       : [2, 2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "aerial_delirium"}): [2, 2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "overload"})       : [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'calamity' })       : [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'depthbound' })     : [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'sanguine_oath' })  : [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'scarlet_veil' })   : [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'warbound' })       : [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'aerial_delirium' }): [2, 2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'overload' })       : [2, 2, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.thaumcraftSpells);
 loottweaker.LootTweaker.getTable(location).getPool('main').setRolls(1, 2);

@@ -84,13 +84,13 @@ function overrideData(data as IData) as IData {
     val built as IData[string] = {};
     val dataString = data as string;
     if (dataMap has dataString && dataMap[dataString] as string == dataString) {
-      return 0 as IData;
+      return 0;
     }
     for k, v in dataMap {
       built[k] = overrideData(v);
     }
     val ret as any[any] = built;
-    return ret as IData;
+    return ret;
   }
 
   if (!isNull(data as [IData])) {
@@ -101,7 +101,7 @@ function overrideData(data as IData) as IData {
     return built;
   }
 
-  return '' as IData;
+  return '';
 }
 
 val hft = createItem('hand_framing_tool');

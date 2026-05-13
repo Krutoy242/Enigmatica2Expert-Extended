@@ -45,7 +45,7 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <extrautils2:itembuilderswand>                : [30,  0, 1, 1],
   <minecraft:totem_of_undying>                  : [5,  10, 1, 1],
   <quark:archaeologist_hat>                     : [30,  0, 1, 1],
-  <randomthings:lavacharm>.withTag({charge: 68}): [20,  0, 1, 1],
+  <randomthings:lavacharm>.withTag({ charge: 68 }): [20,  0, 1, 1],
   <randomthings:waterwalkingboots>              : [20,  0, 1, 1],
   <randomthings:weatheregg:1>                   : [5,   0, 1, 1],
   <randomthings:weatheregg:2>                   : [5,   0, 1, 1],
@@ -54,12 +54,12 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <rats:piper_hat>                              : [20,  0, 1, 1],
   <scalinghealth:heartcontainer>                : [30,  0, 1, 1],
 
-  <thaumcraft:elemental_axe>.withTag({infench: [{lvl: 1 as short, id: 2 as short}, {lvl: 1 as short, id: 0 as short}]}) : [5,  5, 1, 1],
+  <thaumcraft:elemental_axe>.withTag({ infench: [{ lvl: 1 as short, id: 2 as short }, { lvl: 1 as short, id: 0 as short }] }) : [5,  5, 1, 1],
   <thaumcraft:elemental_hoe>                                                                                            : [5,  5, 1, 1],
-  <thaumcraft:elemental_pick>.withTag({infench: [{lvl: 1 as short, id: 4 as short}, {lvl: 2 as short, id: 3 as short}]}): [5,  5, 1, 1],
-  <thaumcraft:elemental_shovel>.withTag({infench: [{lvl: 1 as short, id: 1 as short}]})                                 : [5,  5, 1, 1],
-  <thaumcraft:elemental_sword>.withTag({infench: [{lvl: 2 as short, id: 5 as short}]})                                  : [5,  5, 1, 1],
-  <thermalfoundation:tome_experience>.withTag({Experience: 10000})                                                      : [10, 5, 1, 1],
+  <thaumcraft:elemental_pick>.withTag({ infench: [{ lvl: 1 as short, id: 4 as short }, { lvl: 2 as short, id: 3 as short }] }): [5,  5, 1, 1],
+  <thaumcraft:elemental_shovel>.withTag({ infench: [{ lvl: 1 as short, id: 1 as short }] })                                 : [5,  5, 1, 1],
+  <thaumcraft:elemental_sword>.withTag({ infench: [{ lvl: 2 as short, id: 5 as short }] })                                  : [5,  5, 1, 1],
+  <thermalfoundation:tome_experience>.withTag({ Experience: 10000 })                                                      : [10, 5, 1, 1],
   <twilightforest:charm_of_keeping_1>                                                                                   : [30, 0, 1, 1],
   <twilightforest:charm_of_life_1>                                                                                      : [30, 0, 1, 1],
 });
@@ -87,8 +87,8 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <tconstruct:spaghetti>          : [5,   0, 3, 7],
   <thaumcraft:fabric>             : [30,  0, 3, 7],
 
-  <botania:brewvial>.withTag({brewKey: "clear"})      : [5, 5, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "featherFeet"}): [5, 5, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'clear' })      : [5, 5, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'featherFeet' }): [5, 5, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magicConsumables);

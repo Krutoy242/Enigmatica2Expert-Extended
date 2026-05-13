@@ -40,7 +40,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_1k',
     'C': <appliedenergistics2:material:1>, // Certus quartz
     'L': <appliedenergistics2:material:22>, // Logic processor
     'Q': <thaumcraft:nugget:5>, // Quicksilver nugget
-}).shaped());
+  }).shaped());
 
 // [4k ME Essentia Storage Component]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_4k>);
@@ -57,7 +57,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_4k',
     'C': <thaumicenergistics:essentia_component_1k>, // 1k ME Essentia Storage Component
     'L': <appliedenergistics2:material:22>, // Logic processor
     'Q': <thaumcraft:nugget:5>, // Quicksilver nugget
-}).shaped());
+  }).shaped());
 
 // [16k ME Essentia Storage Component]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_16k>);
@@ -74,7 +74,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_16k',
     'C': <thaumicenergistics:essentia_component_4k>, // 4k ME Essentia Storage Component
     'L': <appliedenergistics2:material:23>, // Calculation processor
     'Q': <thaumcraft:nugget:5>, // Quicksilver nugget
-}).shaped());
+  }).shaped());
 
 // [64k ME Essentia Storage Component]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_64k>);
@@ -91,9 +91,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_64k',
     'C': <thaumicenergistics:essentia_component_16k>, // 16k ME Essentia Storage Component
     'L': <appliedenergistics2:material:23>, // Calculation processor
     'Q': <thaumcraft:nugget:5>, // Quicksilver nugget
-}).shaped());
-
-
+  }).shaped());
 
 val cellIngrs = {
   '⌃': <thaumicaugmentation:fortified_glass>, // Quartz Glass
@@ -176,17 +174,17 @@ craft.remake(<thaumicenergistics:essentia_cell_creative>, ['pretty',
 // [Arcane Crafting Terminal] from [ME Terminal][+3]
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumicenergistics:arcane_terminal>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
-  "arcane_terminal", # Name
-  "ARCANETERMINAL", # Research
-  50, # Vis cost
+  'arcane_terminal', // Name
+  'ARCANETERMINAL', // Research
+  50, // Vis cost
   [],
-  <thaumicenergistics:arcane_terminal>, # Output
+  <thaumicenergistics:arcane_terminal>, // Output
   Grid(['pretty',
-  '  N  ',
-  '¤ M ¤',
-  '  A  '], {
-  'N': <thermallogistics:manager>,     // Network Manager
-  '¤': <ore:gearVibrant>,              // Vibrant Bimetal Gear
-  'M': <appliedenergistics2:part:380>, // ME Terminal
-  'A': <thaumcraft:arcane_workbench>,  // Arcane Workbench
-}).shaped());
+    '  N  ',
+    '¤ M ¤',
+    '  A  '], {
+    'N': <thermallogistics:manager>,     // Network Manager
+    '¤': <ore:gearVibrant>,              // Vibrant Bimetal Gear
+    'M': <appliedenergistics2:part:380>, // ME Terminal
+    'A': <thaumcraft:arcane_workbench>,  // Arcane Workbench
+  }).shaped());

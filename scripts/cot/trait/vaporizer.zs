@@ -6,7 +6,6 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.tconstruct.TraitBuilder;
 import native.com.rwtema.extrautils2.network.NetworkHandler;
 import native.com.rwtema.extrautils2.particles.PacketParticleSplineCurve;
-import native.com.rwtema.extrautils2.utils.helpers.VecHelper;
 import native.net.minecraft.util.SoundCategory;
 import native.net.minecraft.util.math.Vec3d;
 
@@ -78,7 +77,7 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as void {
 
         val startVel = Vec3d(0, 0.1, 0);
         val endVel = startVel;
-        val color = 0xac3100; // #ac3100ff
+        val color = 0xAC3100; // #ac3100ff
 
         val packet = PacketParticleSplineCurve(startPosVec, endPosVec, startVel, endVel, color);
         NetworkHandler.sendToAllAround(packet, world.dimension, pos.x, pos.y, pos.z, 64.0);
@@ -101,7 +100,7 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as void {
 //
 
 val vaporizer = TraitBuilder.create('vaporizer');
-vaporizer.color = 0x42A5F5; #42A5F5
+vaporizer.color = 0x42A5F5; //42A5F5
 vaporizer.localizedName = game.localize('e2ee.tconstruct.trait.vaporizer.name');
 vaporizer.localizedDescription = game.localize('e2ee.tconstruct.trait.vaporizer.description');
 

@@ -125,7 +125,7 @@ for i in 0 .. 17 {
   recipes.addShapeless(
     'bloc to comb ' ~ i,
     <forestry:bee_combs>.definition.makeStack(i) * 9,
-    [(i<16 ? <forestry:bee_combs_0> : <forestry:bee_combs_1>).definition.makeStack(i%16)]
+    [(i < 16 ? <forestry:bee_combs_0> : <forestry:bee_combs_1>).definition.makeStack(i % 16)]
   );
 }
 
@@ -383,8 +383,8 @@ zenClass BeeHelper {
 	.matchAll(/^\s*cfg\s+.*?\{\s*ID\s*=\s*(\d+).*$/mg)
 	].map(([,m])=>m+',').join(' ')
 ) */
-1, 3, 4, 5, 7, 10, 11, 12, 15, 16,
-/**/
+      1, 3, 4, 5, 7, 10, 11, 12, 15, 16,
+      /**/
     ] as int[] {
       val drop = <gendustry:honey_drop>.definition.makeStack(i);
       val comb = <gendustry:honey_comb>.definition.makeStack(i);

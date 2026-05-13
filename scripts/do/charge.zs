@@ -30,7 +30,7 @@ console.log('Summ and bonus:', origSumm.map((v,i)=>[String(origSumm[i]).padStart
 */
 
 function getBonus(v as double) as double {
-  return max(0.0, pow(v, CHARGE_EXP) / CHARGE_RED - v) as double;
+  return max(0.0, pow(v, CHARGE_EXP) / CHARGE_RED - v);
 }
 
 function getCharge(ins as IItemStack[string], getValue as function(IItemStack)double) as double {

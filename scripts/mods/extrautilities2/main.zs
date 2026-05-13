@@ -7,7 +7,7 @@ import crafttweaker.item.IItemStack;
 function getCreativeHarvest(item as IItemStack) as IItemStack {
   return <extrautils2:creativeharvest>.withTag({
     creative_block: { meta: item.damage, block: item.definition.id },
-    display_stack: { id: item.definition.id, Count: 1 as byte, Damage: item.damage as short }
+    display_stack: { id: item.definition.id, Count: 1 as byte, Damage: item.damage as short },
   });
 }
 
@@ -15,7 +15,7 @@ mods.jei.JEI.hideCategory('xu2_machine_extrautils2:furnace');
 mods.jei.JEI.hideCategory('xu2_machine_extrautils2:generator_survival');
 mods.jei.JEI.hideCategory('xu2_machine_extrautils2:generator');
 
-static machineBlock as IIngredient = <extrautils2:machine>.only(function(item){return !item.hasTag;});
+static machineBlock as IIngredient = <extrautils2:machine>.only(function (item) { return !item.hasTag; });
 
 craft.remake(<extrautils2:spike_iron>, ['pretty',
   '  S  ',
@@ -145,18 +145,18 @@ craft.make(<extrautils2:machine>, ['pretty',
 // [Machine Block]*2 from [Vacuum Tube][+2]
 scripts.mods.extendedcrafting_engineering.makeAlted(
   <extrautils2:machine> * 2, ['pretty',
-  'P I P',
-  'T B T',
-  'P I P'], {
-  'P': <extrautils2:decorativesolid:2>,
-  'I': <ore:plateConstantan>,
-  'T': <ore:plateConstantan>,
-  'B': <immersiveengineering:material:26>,
-}, 5, {
-  'I': <forestry:thermionic_tubes:3>,
-  'T': <immersiveengineering:material:26>,
-  'B': <extendedcrafting:material:8>,
-});
+    'P I P',
+    'T B T',
+    'P I P'], {
+    'P': <extrautils2:decorativesolid:2>,
+    'I': <ore:plateConstantan>,
+    'T': <ore:plateConstantan>,
+    'B': <immersiveengineering:material:26>,
+  }, 5, {
+    'I': <forestry:thermionic_tubes:3>,
+    'T': <immersiveengineering:material:26>,
+    'B': <extendedcrafting:material:8>,
+  });
 
 // [Machine Block]*3 from [Sturdy Casing][+2]
 craft.make(<extrautils2:machine> * 3, ['pretty',
@@ -275,7 +275,7 @@ craft.remake(<extrautils2:chickenring:1>, ['pretty',
   'o': <minecraft:web>,
   'E': <extrautils2:ineffableglass>,
   'C': <extrautils2:chickenring>,
-  'G': <extrautils2:goldenlasso>.withTag({Animal: {id: "minecraft:squid"}}),
+  'G': <extrautils2:goldenlasso>.withTag({ Animal: { id: 'minecraft:squid' } }),
 });
 
 // *======= Angel Ring =======*
@@ -582,4 +582,3 @@ scripts.process.crush(<minecraft:gold_ore>, <thermalfoundation:material:1> * 2, 
 scripts.process.crush(<minecraft:gravel>, <minecraft:sand>, 'only: IECrusher', [<minecraft:flint>], [0.5f]);
 scripts.process.crush(<immersiveengineering:material:19>, <immersiveengineering:material:18>, 'only: IECrusher');
 scripts.process.crush(<minecraft:prismarine_shard>, <minecraft:prismarine_crystals>, 'only: IECrusher');
-

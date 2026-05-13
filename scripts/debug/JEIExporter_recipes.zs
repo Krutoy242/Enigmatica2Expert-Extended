@@ -330,7 +330,9 @@ events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickB
     isNull(e.player.currentItem)
     || !(<minecraft:stick> has e.player.currentItem)
     || e.block.definition.id != 'minecraft:glowstone'
-  ) return;
+  ) {
+    return;
+  }
 
   print('============ Dumping Entity Living ============');
   for entityDef in game.entities {

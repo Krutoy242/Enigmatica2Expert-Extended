@@ -56,7 +56,9 @@ for name, ingr in energyDimletIngrs {
 }
 
 // [Dimlet Control Circuit Rarity 7] from [Machine Circuitry][+1]
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .input(<advancedrocketry:ic:2>)
   .inputOre(<ore:processorBasic>)
   .outputItem(<rftdimtweak:dimlet_control_circuit_seven>)
@@ -65,7 +67,9 @@ mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
   .build();
 
 // [Dimlet Energy Type Controller] from [Particle Generator][+1]
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .input(<advancedrocketry:ic:2>)
   .input(<draconicevolution:particle_generator>)
   .outputItem(<rftdimtweak:dimlet_type_controller_energy>)

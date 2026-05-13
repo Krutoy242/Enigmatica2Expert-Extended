@@ -3,7 +3,6 @@
 
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
-import crafttweaker.potions.IPotion;
 import native.net.minecraft.potion.PotionEffect;
 import native.vazkii.botania.common.lib.LibBrewNames;
 import native.vazkii.botania.common.brew.BrewMod;
@@ -423,7 +422,7 @@ craft.remake(<botania:hourglass>, ['pretty',
 });
 
 // [Black Hole Talisman] from [/dev/null][+3]
-recipes.removeByRecipeName("botania:blackholetalisman_0");
+recipes.removeByRecipeName('botania:blackholetalisman_0');
 craft.make(<botania:blackholetalisman>, ['pretty',
   'M L M',
   '  /  ',
@@ -474,7 +473,7 @@ recipes.removeByRecipeName('botania:missilerod');   recipes.addShaped(<botania:m
 recipes.removeByRecipeName('botania:smeltrod');     recipes.addShaped(<botania:smeltrod>, [[null, <minecraft:blaze_rod>, null], [null, <ore:livingwoodTwig>, <minecraft:blaze_rod>], [<ore:livingwoodTwig>, null, null]]);
 recipes.removeByRecipeName('botania:terraformrod'); recipes.addShaped(<botania:terraformrod>, [[null, null, <ore:ingotTerrasteel>], [null, <botania:dirtrod>, null], [<botania:grassseeds>, null, null]]);
 recipes.removeByRecipeName('botania:tornadorod');   recipes.addShaped(<botania:tornadorod>, [[null, <ore:feather>], [<ore:livingwoodTwig>, null]]);
-recipes.removeByRecipeName('botania:waterrod');     recipes.addShaped(<botania:waterrod>, [[null, <minecraft:potion>.withTag({Potion: 'minecraft:water'})], [<ore:livingwoodTwig>, null]]);
+recipes.removeByRecipeName('botania:waterrod');     recipes.addShaped(<botania:waterrod>, [[null, <minecraft:potion>.withTag({ Potion: 'minecraft:water' })], [<ore:livingwoodTwig>, null]]);
 recipes.removeByRecipeName('botania:skydirtrod');   recipes.addShapeless(<botania:skydirtrod>, [<botania:dirtrod>, <ore:elvenPixieDust>]);
 // ////////////////////////////////////////////////////////////////
 // To avoid flooding inventory with tens of variants,
@@ -488,108 +487,108 @@ for i in 0 .. 16 {
 // ////////////////////////////////////////////////////////////////
 
 // New flowers crafting recipes
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "campanimia"}), [
-<botania:rune:1>,
-<botania:rune:2>,
-<botania:rune:3>,
-<botania:rune>,
-<botania:petal:14>,
-<botania:petal:2>,
-<botania:petal:4>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'campanimia' }), [
+  <botania:rune:1>,
+  <botania:rune:2>,
+  <botania:rune:3>,
+  <botania:rune>,
+  <botania:petal:14>,
+  <botania:petal:2>,
+  <botania:petal:4>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "campanimia"}), [<botania:specialflower>.withTag({type: "campanimia"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'campanimia' }), [<botania:specialflower>.withTag({ type: 'campanimia' }), <botania:floatingspecialflower:*>]);
 
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "nuclianthus"}), [
-<botania:petal:13>,
-<botania:petal:4>,
-<botania:petal:4>,
-<botania:petal:1>,
-<botania:manaresource:8>,
-<botania:rune:6>,
-<botania:rune:6>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'nuclianthus' }), [
+  <botania:petal:13>,
+  <botania:petal:4>,
+  <botania:petal:4>,
+  <botania:petal:1>,
+  <botania:manaresource:8>,
+  <botania:rune:6>,
+  <botania:rune:6>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "nuclianthus"}), [<botania:specialflower>.withTag({type: "nuclianthus"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'nuclianthus' }), [<botania:specialflower>.withTag({ type: 'nuclianthus' }), <botania:floatingspecialflower:*>]);
 
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "rokku_eryngium"}), [
-<botania:manaresource:6>,
-<botania:manaresource:5>,
-<botania:manaresource:9>,
-<botania:rune:11>,
-<botania:rune:12>,
-<botania:petal:11>,
-<botania:petal>,
-<botania:petal>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'rokku_eryngium' }), [
+  <botania:manaresource:6>,
+  <botania:manaresource:5>,
+  <botania:manaresource:9>,
+  <botania:rune:11>,
+  <botania:rune:12>,
+  <botania:petal:11>,
+  <botania:petal>,
+  <botania:petal>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "rokku_eryngium"}), [<botania:specialflower>.withTag({type: "rokku_eryngium"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'rokku_eryngium' }), [<botania:specialflower>.withTag({ type: 'rokku_eryngium' }), <botania:floatingspecialflower:*>]);
 
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "jikanacea"}), [
-<botania:manaresource:6>,
-<astralsorcery:itemcraftingcomponent:4>,
-<botania:rune:14>,
-<botania:rune:9>,
-<botania:petal:2>,
-<botania:petal:4>,
-<botania:petal:4>,
-<thaumicaugmentation:material:5>,
-<botania:manaresource:9>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'jikanacea' }), [
+  <botania:manaresource:6>,
+  <astralsorcery:itemcraftingcomponent:4>,
+  <botania:rune:14>,
+  <botania:rune:9>,
+  <botania:petal:2>,
+  <botania:petal:4>,
+  <botania:petal:4>,
+  <thaumicaugmentation:material:5>,
+  <botania:manaresource:9>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "jikanacea"}), [<botania:specialflower>.withTag({type: "jikanacea"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'jikanacea' }), [<botania:specialflower>.withTag({ type: 'jikanacea' }), <botania:floatingspecialflower:*>]);
 
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "echinacenko"}), [
-<botania:petal:2>,
-<botania:petal:2>,
-<botania:petal:5>,
-<botania:rune:10>,
-<botania:rune:12>,
-<botania:manaresource:1>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'echinacenko' }), [
+  <botania:petal:2>,
+  <botania:petal:2>,
+  <botania:petal:5>,
+  <botania:rune:10>,
+  <botania:rune:12>,
+  <botania:manaresource:1>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "echinacenko"}), [<botania:specialflower>.withTag({type: "echinacenko"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'echinacenko' }), [<botania:specialflower>.withTag({ type: 'echinacenko' }), <botania:floatingspecialflower:*>]);
 
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "antirrhift"}), [
-<botania:manaresource:8>,
-<botania:rune:15>,
-<botania:petal:2>,
-<botania:petal>,
-<botania:petal>,
-<thaumicaugmentation:material:5>,
-<thaumicaugmentation:material:5>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'antirrhift' }), [
+  <botania:manaresource:8>,
+  <botania:rune:15>,
+  <botania:petal:2>,
+  <botania:petal>,
+  <botania:petal>,
+  <thaumicaugmentation:material:5>,
+  <thaumicaugmentation:material:5>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "antirrhift"}), [<botania:specialflower>.withTag({type: "antirrhift"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'antirrhift' }), [<botania:specialflower>.withTag({ type: 'antirrhift' }), <botania:floatingspecialflower:*>]);
 
-mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({type: "amuileria_kaerunea"}), [
-<botania:manaresource:6>,
-<botania:manaresource:9>,
-<botania:rune:8>,
-<minecraft:end_rod>,
-<botania:petal:3>,
-<botania:petal:3>,
-<botania:petal:4>,
-<botania:petal>,
+mods.botania.Apothecary.addRecipe(<botania:specialflower>.withTag({ type: 'amuileria_kaerunea' }), [
+  <botania:manaresource:6>,
+  <botania:manaresource:9>,
+  <botania:rune:8>,
+  <minecraft:end_rod>,
+  <botania:petal:3>,
+  <botania:petal:3>,
+  <botania:petal:4>,
+  <botania:petal>,
 ]);
-recipes.addShapeless(<botania:floatingspecialflower>.withTag({type: "amuileria_kaerunea"}), [<botania:specialflower>.withTag({type: "amuileria_kaerunea"}), <botania:floatingspecialflower:*>]);
+recipes.addShapeless(<botania:floatingspecialflower>.withTag({ type: 'amuileria_kaerunea' }), [<botania:specialflower>.withTag({ type: 'amuileria_kaerunea' }), <botania:floatingspecialflower:*>]);
 
-BrewMod(LibBrewNames.SPEED,           0x59B7FF, 4000, [<potion:minecraft:speed>          .makePotionEffect(864000, 3)]);
+BrewMod(LibBrewNames.SPEED,           0x59B7FF, 4000, [<potion:minecraft:speed>.makePotionEffect(864000, 3)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.SPEED);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:sugar>, <actuallyadditions:item_dust:7>], LibBrewNames.SPEED);
-BrewMod(LibBrewNames.STRENGTH,        0xEE3F3F, 4000, [<potion:minecraft:strength>       .makePotionEffect(72000, 3)]);
+BrewMod(LibBrewNames.STRENGTH,        0xEE3F3F, 4000, [<potion:minecraft:strength>.makePotionEffect(72000, 3)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.STRENGTH);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:blaze_powder>, <astralsorcery:itemusabledust>], LibBrewNames.STRENGTH);
-BrewMod(LibBrewNames.HASTE,           0xF4A432, 4000, [<potion:minecraft:haste>          .makePotionEffect(864000, 3)]);
+BrewMod(LibBrewNames.HASTE,           0xF4A432, 4000, [<potion:minecraft:haste>.makePotionEffect(864000, 3)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.HASTE);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:prismarine_crystals>, <actuallyadditions:item_dust:7>], LibBrewNames.HASTE);
-BrewMod(LibBrewNames.HEALING,         0xFF5ECC, 6000, [<potion:minecraft:instant_health> .makePotionEffect(1, 19)]);
+BrewMod(LibBrewNames.HEALING,         0xFF5ECC, 6000, [<potion:minecraft:instant_health>.makePotionEffect(1, 19)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.HEALING);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:speckled_melon>, <thaumcraft:quicksilver>], LibBrewNames.HEALING);
-BrewMod(LibBrewNames.JUMP_BOOST,      0x32F46D, 4000, [<potion:minecraft:jump_boost>     .makePotionEffect(864000, 3)]);
+BrewMod(LibBrewNames.JUMP_BOOST,      0x32F46D, 4000, [<potion:minecraft:jump_boost>.makePotionEffect(864000, 3)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.JUMP_BOOST);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:rabbit_foot>, <actuallyadditions:item_dust:7>], LibBrewNames.JUMP_BOOST);
-BrewMod(LibBrewNames.REGEN,           0xFD6488, 7000, [<potion:minecraft:regeneration>   .makePotionEffect(72000, 3)]);
+BrewMod(LibBrewNames.REGEN,           0xFD6488, 7000, [<potion:minecraft:regeneration>.makePotionEffect(72000, 3)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.REGEN);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:ghast_tear>, <astralsorcery:itemusabledust>], LibBrewNames.REGEN);
-BrewMod(LibBrewNames.REGEN_WEAK,      0xFD6488, 9000, [<potion:minecraft:regeneration>   .makePotionEffect(864000, 0)]);
+BrewMod(LibBrewNames.REGEN_WEAK,      0xFD6488, 9000, [<potion:minecraft:regeneration>.makePotionEffect(864000, 0)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.REGEN_WEAK);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:ghast_tear>, <actuallyadditions:item_dust:7>], LibBrewNames.REGEN_WEAK);
-BrewMod(LibBrewNames.RESISTANCE,      0xB44E17, 4000, [<potion:minecraft:resistance>     .makePotionEffect(864000, 1)]);
+BrewMod(LibBrewNames.RESISTANCE,      0xB44E17, 4000, [<potion:minecraft:resistance>.makePotionEffect(864000, 1)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.RESISTANCE);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:quartz>, <actuallyadditions:item_dust:7>], LibBrewNames.RESISTANCE);
 BrewMod(LibBrewNames.FIRE_RESISTANCE, 0xF86900, 4000, [<potion:minecraft:fire_resistance>.makePotionEffect(864000, 0)]);
@@ -598,13 +597,13 @@ mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:magma_cream>, <
 BrewMod(LibBrewNames.WATER_BREATHING, 0x84A7CF, 4000, [<potion:minecraft:water_breathing>.makePotionEffect(864000, 0)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.WATER_BREATHING);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:fish:3>, <actuallyadditions:item_dust:7>], LibBrewNames.WATER_BREATHING);
-BrewMod(LibBrewNames.INVISIBILITY,    0xAEAEAE, 8000, [<potion:minecraft:invisibility>   .makePotionEffect(864000, 0)]).setNotBloodPendantInfusable();
+BrewMod(LibBrewNames.INVISIBILITY,    0xAEAEAE, 8000, [<potion:minecraft:invisibility>.makePotionEffect(864000, 0)]).setNotBloodPendantInfusable();
 mods.botania.Brew.removeRecipe(LibBrewNames.INVISIBILITY);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>,<minecraft:golden_carrot>, <minecraft:fermented_spider_eye>, <actuallyadditions:item_dust:7>], LibBrewNames.INVISIBILITY);
-BrewMod(LibBrewNames.NIGHT_VISION,    0x7C4BEB, 4000, [<potion:minecraft:night_vision>   .makePotionEffect(864000, 0)]);
+BrewMod(LibBrewNames.NIGHT_VISION,    0x7C4BEB, 4000, [<potion:minecraft:night_vision>.makePotionEffect(864000, 0)]);
 mods.botania.Brew.removeRecipe(LibBrewNames.NIGHT_VISION);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:golden_carrot>, <actuallyadditions:item_dust:7>], LibBrewNames.NIGHT_VISION);
-BrewMod(LibBrewNames.ABSORPTION,      0xF2EB23, 7000, [<potion:minecraft:absorption>     .makePotionEffect(72000, 9)]).setNotBloodPendantInfusable().setNotIncenseInfusable();
+BrewMod(LibBrewNames.ABSORPTION,      0xF2EB23, 7000, [<potion:minecraft:absorption>.makePotionEffect(72000, 9)]).setNotBloodPendantInfusable().setNotIncenseInfusable();
 mods.botania.Brew.removeRecipe(LibBrewNames.ABSORPTION);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <minecraft:golden_apple>, <astralsorcery:itemusabledust>], LibBrewNames.ABSORPTION);
 BrewMod(LibBrewNames.WARP_WARD,       0xFBBDFF, 25000,[<potion:thaumcraft:warpward>.makePotionEffect(1728000, 0)]).setNotBloodPendantInfusable();
@@ -639,57 +638,57 @@ mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <astralsorcery:itemusabled
 
 BrewMod(LibBrewNames.OVERLOAD, 0x232323, 12000, [
   <potion:minecraft:strength>.makePotionEffect(12000, 9),
-  <potion:minecraft:speed>   .makePotionEffect(12000, 4),
+  <potion:minecraft:speed>.makePotionEffect(12000, 4),
   <potion:minecraft:weakness>.makePotionEffect(24000, 1),
-  <potion:minecraft:hunger>  .makePotionEffect(6000,  1)
+  <potion:minecraft:hunger>.makePotionEffect(6000,  1),
 ]);
 mods.botania.Brew.removeRecipe(LibBrewNames.OVERLOAD);
 mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:ginseng>, <rustic:wind_thistle>, <biomesoplenty:double_plant:2>, <botania:manaresource:23>], LibBrewNames.OVERLOAD);
 
-BrewMod("scarlet_veil", 0xFF0000, 12000, [
-    <potion:minecraft:health_boost>  .makePotionEffect(24000, 19),
-    <potion:quark:resilience>        .makePotionEffect(24000, 3),
-    <potion:minecraft:blindness>     .makePotionEffect(24000, 0),
-    <potion:thaumcraft:blurredvision>.makePotionEffect(24000, 0)
+BrewMod('scarlet_veil', 0xFF0000, 12000, [
+  <potion:minecraft:health_boost>.makePotionEffect(24000, 19),
+  <potion:quark:resilience>.makePotionEffect(24000, 3),
+  <potion:minecraft:blindness>.makePotionEffect(24000, 0),
+  <potion:thaumcraft:blurredvision>.makePotionEffect(24000, 0),
 ]);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:blood_orchid>, <rustic:ironberries>, <extrautils2:redorchid>, <botania:manaresource:23>], "scarlet_veil");
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:blood_orchid>, <rustic:ironberries>, <extrautils2:redorchid>, <botania:manaresource:23>], 'scarlet_veil');
 
-BrewMod("calamity", 0x8B00FF, 15000, [
-    <potion:potioncore:chance>  .makePotionEffect(10, 3),
-    <potion:tconevo:immortality>.makePotionEffect(600, 0),
-    <potion:potioncore:curse>   .makePotionEffect(10, 3),
-    <potion:minecraft:unluck>   .makePotionEffect(1200, 0)
+BrewMod('calamity', 0x8B00FF, 15000, [
+  <potion:potioncore:chance>.makePotionEffect(10, 3),
+  <potion:tconevo:immortality>.makePotionEffect(600, 0),
+  <potion:potioncore:curse>.makePotionEffect(10, 3),
+  <potion:minecraft:unluck>.makePotionEffect(1200, 0),
 ]);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:horsetail>, <rustic:marsh_mallow>, <endreborn:item_lormyte_crystal>, <botania:manaresource:23>], "calamity");
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:horsetail>, <rustic:marsh_mallow>, <endreborn:item_lormyte_crystal>, <botania:manaresource:23>], 'calamity');
 
-BrewMod("warbound", 0xFFD700, 10000, [
-    <potion:minecraft:absorption>.makePotionEffect(24000, 19),
-    <potion:minecraft:resistance>.makePotionEffect(24000, 3),
-    <potion:bloodmagic:deafness> .makePotionEffect(24000, 0),
-    <potion:minecraft:slowness>  .makePotionEffect(24000, 1)
+BrewMod('warbound', 0xFFD700, 10000, [
+  <potion:minecraft:absorption>.makePotionEffect(24000, 19),
+  <potion:minecraft:resistance>.makePotionEffect(24000, 3),
+  <potion:bloodmagic:deafness>.makePotionEffect(24000, 0),
+  <potion:minecraft:slowness>.makePotionEffect(24000, 1),
 ]);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:tomato>, <rustic:aloe_vera>, <rustic:honeycomb>, <botania:manaresource:23>], "warbound");
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:tomato>, <rustic:aloe_vera>, <rustic:honeycomb>, <botania:manaresource:23>], 'warbound');
 
-BrewMod("depthbound", 0x1F8EFF, 12000, [
-    <potion:minecraft:water_breathing>   .makePotionEffect(24000, 0),
-    <potion:cyclicmagic:potion.swimspeed>.makePotionEffect(24000, 3),
-    <potion:potioncore:drown>            .makePotionEffect(24000, 0),
-    <potion:bloodmagic:grounded>         .makePotionEffect(24000, 0)
+BrewMod('depthbound', 0x1F8EFF, 12000, [
+  <potion:minecraft:water_breathing>.makePotionEffect(24000, 0),
+  <potion:cyclicmagic:potion.swimspeed>.makePotionEffect(24000, 3),
+  <potion:potioncore:drown>.makePotionEffect(24000, 0),
+  <potion:bloodmagic:grounded>.makePotionEffect(24000, 0),
 ]);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:mooncap_mushroom>, <rustic:core_root>, <biomesoplenty:coral:1>, <botania:manaresource:23>], "depthbound");
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:mooncap_mushroom>, <rustic:core_root>, <biomesoplenty:coral:1>, <botania:manaresource:23>], 'depthbound');
 
-BrewMod("sanguine_oath", 0x8B0000, 12000, [
-    <potion:contenttweaker:self_sacrifice>.makePotionEffect(12000, 2),
-    <potion:minecraft:regeneration>       .makePotionEffect(12000, 9),
-    <potion:minecraft:nausea>             .makePotionEffect(600, 0),
-    <potion:thaumcraft:thaumarhia>        .makePotionEffect(600, 0)
+BrewMod('sanguine_oath', 0x8B0000, 12000, [
+  <potion:contenttweaker:self_sacrifice>.makePotionEffect(12000, 2),
+  <potion:minecraft:regeneration>.makePotionEffect(12000, 9),
+  <potion:minecraft:nausea>.makePotionEffect(600, 0),
+  <potion:thaumcraft:thaumarhia>.makePotionEffect(600, 0),
 ]);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:chamomile>, <rustic:cohosh>, <scalinghealth:crystalshard>, <botania:manaresource:23>], "sanguine_oath");
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:chamomile>, <rustic:cohosh>, <scalinghealth:crystalshard>, <botania:manaresource:23>], 'sanguine_oath');
 
-BrewMod("aerial_delirium", 0xFF69B4, 12000, [
-    <potion:potioncore:flight>       .makePotionEffect(24000, 0),
-    <potion:potioncore:slow_fall>    .makePotionEffect(24000, 0),
-    <potion:potioncore:perplexity>   .makePotionEffect(24000, 0),
-    <potion:minecraft:mining_fatigue>.makePotionEffect(24000, 3)
+BrewMod('aerial_delirium', 0xFF69B4, 12000, [
+  <potion:potioncore:flight>.makePotionEffect(24000, 0),
+  <potion:potioncore:slow_fall>.makePotionEffect(24000, 0),
+  <potion:potioncore:perplexity>.makePotionEffect(24000, 0),
+  <potion:minecraft:mining_fatigue>.makePotionEffect(24000, 3),
 ]);
-mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:olives>, <rustic:deathstalk_mushroom>, <iceandfire:pixie_dust>, <botania:manaresource:23>], "aerial_delirium");
+mods.botania.Brew.addRecipe([<minecraft:nether_wart>, <rustic:olives>, <rustic:deathstalk_mushroom>, <iceandfire:pixie_dust>, <botania:manaresource:23>], 'aerial_delirium');

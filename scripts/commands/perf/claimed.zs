@@ -52,11 +52,11 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
     val chunks = teamChunks[teamName];
     val chunksByDim as [ClaimedChunk][int] = {};
     for chunk in chunks {
-        val dim = chunk.getPos().dim;
-        if (isNull(chunksByDim[dim])) {
-            chunksByDim[dim] = [];
-        }
-        chunksByDim[dim].add(chunk);
+      val dim = chunk.getPos().dim;
+      if (isNull(chunksByDim[dim])) {
+        chunksByDim[dim] = [];
+      }
+      chunksByDim[dim].add(chunk);
     }
 
     for dim, dimChunks in chunksByDim {
@@ -116,7 +116,7 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
           dim: dim as int,
           size: group.length,
           centerX: totalX / group.length,
-          centerZ: totalZ / group.length
+          centerZ: totalZ / group.length,
         } as IData);
       }
     }
@@ -139,8 +139,8 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
   val pageGroupsByTeam as [IData][string] = {};
   for groupInfo in pageGroupsData {
     val teamName = groupInfo.teamName as string;
-    if(isNull(pageGroupsByTeam[teamName])) {
-        pageGroupsByTeam[teamName] = [];
+    if (isNull(pageGroupsByTeam[teamName])) {
+      pageGroupsByTeam[teamName] = [];
     }
     pageGroupsByTeam[teamName] = pageGroupsByTeam[teamName] + groupInfo;
   }
@@ -157,20 +157,20 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
 
     var membersTooltip = '§7Members:';
     for member in team.members {
-        val playerData = FTBUtilitiesPlayerData.get(member);
-        val name = !isNull(playerData) && !playerData.nickname.isEmpty()
-          ? playerData.nickname
-          : member.name;
-        membersTooltip += '\n §f- ' ~ name;
+      val playerData = FTBUtilitiesPlayerData.get(member);
+      val name = !isNull(playerData) && !playerData.nickname.isEmpty()
+        ? playerData.nickname
+        : member.name;
+      membersTooltip += '\n §f- ' ~ name;
     }
 
     result += [{
       text: '\nTeam: ', color: 'gray', extra: [{
-          text: teamName,
-          underlined: true,
-          hoverEvent: {action: 'show_text', value: membersTooltip}
-        }, ' (', {text: totalTeamChunks, color: 'white'}, ' chunks):',
-    ]}];
+        text: teamName,
+        underlined: true,
+        hoverEvent: { action: 'show_text', value: membersTooltip },
+      }, ' (', { text: totalTeamChunks, color: 'white' }, ' chunks):',
+      ] }];
 
     for groupInfo in teamGroupsOnPage {
       val dim = groupInfo.dim as int;

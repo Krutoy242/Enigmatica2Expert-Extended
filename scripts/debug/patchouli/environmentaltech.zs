@@ -35,14 +35,16 @@ var lines = [
 val panel = scripts.mods.environmentaltech.evt.panel;
 
 for j in 0 .. 6 {
-  if (j != 0) lines += '    },\n    {\n      "type": "item_list",'
+  if (j != 0) {
+    lines += '    },\n    {\n      "type": "item_list",'
     ~ '\n      "title": "Solar Array Tier ' ~ (j + 1) ~ '",';
+  }
   val cellCount = pow((j + 1) * 2 + 1, 2) as int;
   for i, ingr in panel {
     val item = ingr.itemArray[0];
     lines += '      "item' ~ i ~ '": "'
-      ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage)
-      ~ '#' ~ cellCount ~ '",';
+    ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage)
+    ~ '#' ~ cellCount ~ '",';
   }
   for i, ingr in panel {
     val rft = cellCount as double
@@ -50,9 +52,9 @@ for j in 0 .. 6 {
       * pow(native.com.valkyrieofnight.et.m_multiblocks.m_solar.tile.TileContSolarBase.PRODUCTION_POWER, j)
       * crafttweaker.util.Math.min(controllerEfficiency[j], cellEfficiency[i]);
     lines += '      "text' ~ i ~ '": "'
-      ~ mods.zenutils.StaticString.format('%11s', 
-        mods.zenutils.StaticString.format('%,d', rft as int))
-      ~ ' RF/t"' ~ (i == 5 ? '' : ',');
+    ~ mods.zenutils.StaticString.format('%11s',
+      mods.zenutils.StaticString.format('%,d', rft as int))
+    ~ ' RF/t"' ~ (i == 5 ? '' : ',');
   }
 }
 lines += '    }\n  ]\n}\n';

@@ -95,13 +95,15 @@ function milk(e as crafttweaker.event.PlayerInteractEntityEvent) as bool {
     entityAnimal.isInLove
     || entityLivingBase.isPotionActive(<potion:potioncore:love>)
     || entityLivingBase.isPotionActive(<potion:extrautils2:effect.xu2.love>)
-  ) milkAmount *= 10.0;
+  ) {
+    milkAmount *= 10.0;
+  }
 
   // Return if container accept only with bug portions
   if (milkAmount < (holdData?.portion?.asFloat() ?? 1.0f)) return false;
 
   // Determine maximum tank size
-  val maxTankSize = (holdData?.tag?.Fluid?.Amount?.asInt() ?? (holdData?.tag?.Amount?.asInt() ?? 1000));
+  val maxTankSize = holdData?.tag?.Fluid?.Amount?.asInt() ?? (holdData?.tag?.Amount?.asInt() ?? 1000);
 
   // Spawn liquid on ground if overwhelming amount
   val spilled = max(0.0, milkAmount - maxTankSize as double) as int;
@@ -109,7 +111,7 @@ function milk(e as crafttweaker.event.PlayerInteractEntityEvent) as bool {
     val maxSpilled = pow(spilled as double / 1000.0, 0.5) as int;
     var totalSpilled = 0;
     var i = 0;
-    while (totalSpilled < maxSpilled && i < spillOffsets.length) {
+    while totalSpilled < maxSpilled && i < spillOffsets.length {
       val tx = (animal.x + spillOffsets[i][0]) as float;
       val ty = (animal.y + spillOffsets[i][1] + 1.0) as float;
       val tz = (animal.z + spillOffsets[i][2]) as float;

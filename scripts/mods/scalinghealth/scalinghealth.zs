@@ -1,7 +1,5 @@
 #modloaded scalinghealth rats
 
-import crafttweaker.item.IIngredient;
-
 Purge(<scalinghealth:difficultychanger>);
 Purge(<scalinghealth:difficultychanger:1>);
 

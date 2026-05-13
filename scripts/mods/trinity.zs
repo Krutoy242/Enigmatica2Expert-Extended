@@ -25,27 +25,27 @@ craft.make(<rats:contaminated_food> * 64, [
 });
 
 // Non-tech alt
-# [Vitrified Sand] from [Oxidized Ferric Sand][+6]
+// [Vitrified Sand] from [Oxidized Ferric Sand][+6]
 mods.thaumcraft.Infusion.registerRecipe(
-  "vitrifiedsand", # Name
-  "INFUSION", # Research
-  <advancedrocketry:vitrifiedsand>, # Output
-  1, # Instability
+  'vitrifiedsand', // Name
+  'INFUSION', // Research
+  <advancedrocketry:vitrifiedsand>, // Output
+  1, // Instability
   Aspects('40⚡ 40💣'),
-  <advancedrocketry:hotturf>, # Central Item
-  Grid(["pretty",
-  "s Q s",
-  "P   P",
-  "s Q s"], {
-  "s": <ore:compressed2xSand>, # Sand
-  "Q": <immersiveengineering:stone_decoration:9>, # Quickdry Concrete
-  "P": <thaumcraft:stone_porous>, # Porous Stone
-}).spiral(1));
+  <advancedrocketry:hotturf>, // Central Item
+  Grid(['pretty',
+    's Q s',
+    'P   P',
+    's Q s'], {
+    's': <ore:compressed2xSand>, // Sand
+    'Q': <immersiveengineering:stone_decoration:9>, // Quickdry Concrete
+    'P': <thaumcraft:stone_porous>, // Porous Stone
+  }).spiral(1));
 
-# [Trinitite-covered Sand] from [Vitrified Sand][+1]
-craft.shapeless(<trinity:trinitite>, "VO", {
-  "V": <advancedrocketry:vitrifiedsand>, # Vitrified Sand
-  "O": <botania:overgrowthseed>,         # Overgrowth Seed
+// [Trinitite-covered Sand] from [Vitrified Sand][+1]
+craft.shapeless(<trinity:trinitite>, 'VO', {
+  'V': <advancedrocketry:vitrifiedsand>, // Vitrified Sand
+  'O': <botania:overgrowthseed>,         // Overgrowth Seed
 });
 
 // Replace Trinitite drop with Luck one
@@ -95,5 +95,5 @@ val pickaxeHarvestLevelItems = [
 ] as IItemStack[];
 
 for item in pickaxeHarvestLevelItems {
-  item.asBlock().definition.setHarvestLevel("pickaxe", 1);
+  item.asBlock().definition.setHarvestLevel('pickaxe', 1);
 }

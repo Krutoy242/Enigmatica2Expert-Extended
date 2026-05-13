@@ -164,16 +164,16 @@ recipes.addShaped(<mekanism:basicblock2:7> * 8,
 // [Steel Casing]*2 from [Blast Brick][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <mekanism:basicblock:8> * 2, ['pretty',
-  '▬ B ▬',
-  'S l S',
-  '▬ B ▬'], {
-  '▬': <ore:ingotOsmium>,
-  'B': <ore:ingotAlubrass>,
-  'S': <immersiveengineering:material:9>,
-  'l': <immersiveengineering:stone_decoration:1>,
-}, 3, {
-  'B': <extendedcrafting:material:14>
-});
+    '▬ B ▬',
+    'S l S',
+    '▬ B ▬'], {
+    '▬': <ore:ingotOsmium>,
+    'B': <ore:ingotAlubrass>,
+    'S': <immersiveengineering:material:9>,
+    'l': <immersiveengineering:stone_decoration:1>,
+  }, 3, {
+    'B': <extendedcrafting:material:14>,
+  });
 
 // Metallurgic Infuser
 recipes.remove(<mekanism:machineblock:8>);
@@ -231,28 +231,28 @@ mods.mekanism.compressor.addRecipe(<opencomputers:material:4>, <mekanism:control
 // Advanced Circuit
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <mekanism:controlcircuit:1>, ['pretty',
-  '* A *',
-  'A B A',
-  '* A *'], {
-  '*': <ore:dustRedstone>,
-  'A': <ore:alloyAdvanced>,
-  'B': <ore:circuitBasic>,
-}, 6, {
-  '*': <actuallyadditions:item_crystal_empowered>,
-});
+    '* A *',
+    'A B A',
+    '* A *'], {
+    '*': <ore:dustRedstone>,
+    'A': <ore:alloyAdvanced>,
+    'B': <ore:circuitBasic>,
+  }, 6, {
+    '*': <actuallyadditions:item_crystal_empowered>,
+  });
 
 // Elite Circuit
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <mekanism:controlcircuit:2>, ['pretty',
-  '* E *',
-  'E A E',
-  '* E *'], {
-  '*': <ore:gemLapis>,
-  'E': <ore:alloyElite>,
-  'A': <ore:circuitAdvanced>,
-}, 6, {
-  '*': <actuallyadditions:item_crystal_empowered:1>,
-});
+    '* E *',
+    'E A E',
+    '* E *'], {
+    '*': <ore:gemLapis>,
+    'E': <ore:alloyElite>,
+    'A': <ore:circuitAdvanced>,
+  }, 6, {
+    '*': <actuallyadditions:item_crystal_empowered:1>,
+  });
 
 // Ultimate Circuit
 recipes.remove(<mekanism:controlcircuit:3>);
@@ -263,7 +263,7 @@ Purge(<mekanism:oreblock:1>);
 Purge(<mekanism:oreblock:2>);
 
 // Tier applying
-recipes.addShapeless(<mekanism:machineblock:5>.withTag({mekData: {}}), [<mekanism:machineblock:10>, <mekanism:tierinstaller>]);
+recipes.addShapeless(<mekanism:machineblock:5>.withTag({ mekData: {} }), [<mekanism:machineblock:10>, <mekanism:tierinstaller>]);
 recipes.addShapeless(<mekanism:machineblock:5>.withTag({ recipeType: 3, mekData: {} }), [<mekanism:machineblock:1>, <mekanism:tierinstaller>]);
 recipes.addShapeless(<mekanism:machineblock:6>.withTag({ recipeType: 3, mekData: {} }), [<mekanism:machineblock:5>.withTag({ recipeType: 3, mekData: {} }), <mekanism:tierinstaller:1>]);
 recipes.addShapeless(<mekanism:machineblock:7>.withTag({ recipeType: 3, mekData: {} }), [<mekanism:machineblock:6>.withTag({ recipeType: 3, mekData: {} }), <mekanism:tierinstaller:2>]);
@@ -287,11 +287,13 @@ function mekStorage(i as int, item as IItemStack, storageIngrs as IIngredient[st
   if (item.definition.id == 'mekanism:basicblock' && item.damage == 6) gridStr += 'R';
 
   // Tier Installer upgrade
-  if (i > 0) craft.shapeless(output, gridStr, {
-    'C': item.withTag({ tier: i - 1 }),
-    'T': <mekanism:tierinstaller>.definition.makeStack(i),
-    'R': <ore:dustRedstone>,
-  });
+  if (i > 0) {
+    craft.shapeless(output, gridStr, {
+      'C': item.withTag({ tier: i - 1 }),
+      'T': <mekanism:tierinstaller>.definition.makeStack(i),
+      'R': <ore:dustRedstone>,
+    });
+  }
 }
 
 for i,list in mekTiers {
@@ -569,7 +571,9 @@ Purge(<mekanism:nugget:5>).ores([<ore:nuggetCopper>]);
     || tag.mekData.blockData.tileTag.id != 'minecraft:mob_spawner'
     || isNull(tag.mekData.blockData.tileTag.SpawnData)
     || isNull(tag.mekData.blockData.tileTag.SpawnData.id)
-  ) return null;
+  ) {
+    return null;
+  }
   return '§2Spawner with §a' ~ tag.mekData.blockData.tileTag.SpawnData.id.asString() ~ '§r';
 });
 

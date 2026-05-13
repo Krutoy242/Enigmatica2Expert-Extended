@@ -65,9 +65,9 @@ function rnd_qubic(w as IWorld) as double { val a as double = w.random.nextDoubl
 function dataOrData(a as IData, b as IData) as IData { return a ?? b; }
 function pick_qubic(list as IData, w as IWorld) as string { return list[(rnd_qubic(w) * list.length) as int].asString(); }
 function pick_qubic_adv(list as IData, difficulty as double, w as IWorld) as string {
-   // Coefficient of rarity.
-   // Lower values < 1.1 - Big distribution on lower difficulty
-   // Higher values > 1.1 - on lower difficulty always weaker armor material
+  // Coefficient of rarity.
+  // Lower values < 1.1 - Big distribution on lower difficulty
+  // Higher values > 1.1 - on lower difficulty always weaker armor material
   val coef = 1.05;
   val chance = w.random.nextDouble();
   val b = abs(pow(chance, 4.0 * pow(coef - difficulty, 2)));
@@ -104,7 +104,7 @@ function getFourRandomTicMats(listTicmats as IData, difficulty as double, forWea
     rndToolPart(listTicmats, difficulty, forWeapon, w),
     rndToolPart(listTicmats, difficulty, forWeapon, w),
     rndToolPart(listTicmats, difficulty, forWeapon, w),
-  ] as ITICMaterial[];
+  ];
 }
 
 // Create random equipment
@@ -151,7 +151,7 @@ function getEquipCount(isOverworld as bool, difficulty as double, w as IWorld) a
 function addRandomModifiers(item as IItemStack, isArmor as bool, w as IWorld) as IItemStack {
   var picked = [] as string[];
   var equip = item;
-  for i in 0 .. ((rnd_qubic(w) * 5.0 + 1.0) as int) {
+  for i in 0 .. (rnd_qubic(w) * 5.0 + 1.0) as int {
     var mod as string = null;
     var antiloop = 0;
     while picked has mod && antiloop < 100 {

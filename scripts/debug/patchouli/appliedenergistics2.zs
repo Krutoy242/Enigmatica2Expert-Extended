@@ -27,8 +27,8 @@ for a, b in itemMass { length += 1; }
 var i = 0;
 for item, mass in itemMass {
   lines += '      "item' ~ i ~ '": "'
-    ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage)
-    ~ '#' ~ mass as int ~ '"' ~ (i == length - 1 ? '' : ',');
+  ~ item.definition.id ~ (item.damage == 0 ? '' : ':' ~ item.damage)
+  ~ '#' ~ mass as int ~ '"' ~ (i == length - 1 ? '' : ',');
   i += 1;
 }
 lines += '    }\n  ]\n}\n';

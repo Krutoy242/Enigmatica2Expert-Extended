@@ -74,7 +74,7 @@ craft.remake(<thermalexpansion:device:4>, ['pretty',
 });
 
 // Igneous Extruder
-recipes.removeByRecipeName("thermalexpansion:machine_15");
+recipes.removeByRecipeName('thermalexpansion:machine_15');
 recipes.addShaped('Igneous Extruder',
   <thermalexpansion:machine:15>,
   [[null, <ore:blockGlass>, null],
@@ -137,7 +137,7 @@ craft.remake(<thermalfoundation:material:1028> * 2, ['pretty',
 });
 
 // Centrifugal Seperator
-recipes.removeByRecipeName("thermalexpansion:machine_10");
+recipes.removeByRecipeName('thermalexpansion:machine_10');
 recipes.addShaped('Centrifugal Seperator',
   <thermalexpansion:machine:10>,
   [[null, <forestry:centrifuge>, null],
@@ -145,7 +145,7 @@ recipes.addShaped('Centrifugal Seperator',
     [<ore:gearCopper>, <thermalfoundation:material:513>, <ore:gearCopper>]]);
 
 // Sawmill
-recipes.removeByRecipeName("thermalexpansion:machine_2");
+recipes.removeByRecipeName('thermalexpansion:machine_2');
 recipes.addShaped('Sawmill',
   <thermalexpansion:machine:2>,
   [[null, <mekanism:machineblock2:5>, null],
@@ -471,7 +471,7 @@ for i, mat in materials {
       ', ▬ ,',
       '▬ ♥ ▬',
       ', ▬ ,'], {
-      '♥': ((i == 1)
+      '♥': (i == 1
         ? <thermalexpansion:cache>.withTag(lvl_im, false).only(function (item) { return isNull(item.tag) || isNull(item.tag.Level) || item.tag.Level.asByte() < 1; })
         : <thermalexpansion:cache>.withTag(lvl_im)).marked('marked'),
       '▬': oreDict['ingot' ~ materials[i - 1]],
@@ -494,15 +494,15 @@ for i, mat in materials {
     '□ c □',
     'g Ϟ g',
     '□ c □'], {
-    'Ϟ': ((i == 0)
+    'Ϟ': (i == 0
       ? <thermalexpansion:frame:128> // Energy Cell Frame
       : <thermalexpansion:cell>.withTag(lvl_im)).marked('marked'),
-    '□': ((i == 0)
+    '□': i == 0
       ? <ore:plateLead>
-      : oreDict['plate' ~ materials[i - 1]]),
+      : oreDict['plate' ~ materials[i - 1]],
     'g': oreDict['gear' ~ mat],
     'c': <thermalfoundation:material:515>, // Redstone Conductance Coil
-  }, (i == 0) ? null : tieredUpgradeFnc);
+  }, i == 0 ? null : tieredUpgradeFnc);
 }
 
 // Cache
@@ -675,7 +675,7 @@ mods.thermalexpansion.Enchanter.addRecipe(
 );
 
 // [Pulverizer (Basic)] from [Machine Frame][+5]
-recipes.removeByRecipeName("thermalexpansion:machine_1");
+recipes.removeByRecipeName('thermalexpansion:machine_1');
 craft.make(<thermalexpansion:machine:1>, ['pretty',
   's C s',
   '□ ◙ □',
@@ -689,7 +689,7 @@ craft.make(<thermalexpansion:machine:1>, ['pretty',
 });
 
 // [Phytogenic Insolator (Basic)] from [Machine Frame][+5]
-recipes.removeByRecipeName("thermalexpansion:machine_4");
+recipes.removeByRecipeName('thermalexpansion:machine_4');
 craft.make(<thermalexpansion:machine:4>, ['pretty',
   'B A B',
   '□ ◙ □',
@@ -703,7 +703,7 @@ craft.make(<thermalexpansion:machine:4>, ['pretty',
 });
 
 // [Induction Smelter (Basic)] from [Machine Frame][+5]
-recipes.removeByRecipeName("thermalexpansion:machine_3");
+recipes.removeByRecipeName('thermalexpansion:machine_3');
 craft.make(<thermalexpansion:machine:3>, ['pretty',
   'R I R',
   '□ ◙ □',
@@ -717,7 +717,7 @@ craft.make(<thermalexpansion:machine:3>, ['pretty',
 });
 
 // [Fluid Transposer (Basic)] from [Machine Frame][+5]
-recipes.removeByRecipeName("thermalexpansion:machine_8");
+recipes.removeByRecipeName('thermalexpansion:machine_8');
 craft.make(<thermalexpansion:machine:8>, ['pretty',
   'B C B',
   '⌃ ◙ ⌃',
@@ -731,7 +731,7 @@ craft.make(<thermalexpansion:machine:8>, ['pretty',
 });
 
 // [Magma Crucible (Basic)] from [Machine Frame][+5]
-recipes.removeByRecipeName("thermalexpansion:machine_6");
+recipes.removeByRecipeName('thermalexpansion:machine_6');
 craft.make(<thermalexpansion:machine:6>, ['pretty',
   '▬ S ▬',
   '□ ◙ □',

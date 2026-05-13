@@ -20,7 +20,7 @@ function addAltRecipe(
   box as IItemStack = null,
   altMaxMult as int = 64
 ) as void {
-  scripts.processUtils.avdRockXmlRecipeFlatten("PrecisionAssembler", output, ingredients, fluidInput, box, altMaxMult);
+  scripts.processUtils.avdRockXmlRecipeFlatten('PrecisionAssembler', output, ingredients, fluidInput, box, altMaxMult);
 }
 
 function addRecipe(
@@ -70,9 +70,9 @@ addAltRecipe(<forestry:bog_earth> * 8                , [[<ore:dirt>, <ore:sand>,
 addAltRecipe(<forestry:candle> * 6                   , [[<forestry:beeswax>, <forestry:crafting_material:2>, <forestry:beeswax>], [null, null, null], [null, null, null]], 100, <fluid:water> * 200);
 addAltRecipe(<forestry:candle> * 24                  , [[null, <minecraft:string>, null], [<forestry:beeswax>, <forestry:beeswax>, <forestry:beeswax>], [<forestry:beeswax>, <forestry:beeswax>, <forestry:beeswax>]], 100, <fluid:water> * 600);
 addAltRecipe(<forestry:carton> * 2                   , [[null, <thermalfoundation:material:800>, null], [<thermalfoundation:material:800>, null, <thermalfoundation:material:800>], [null, <thermalfoundation:material:800>, null]], 100, <fluid:water> * 1000);
-addAltRecipe(<forestry:chipsets:0>.withTag({T:0 as short}, false), [[<minecraft:redstone>, null, <minecraft:redstone>], [<minecraft:redstone>, <ore:ingotTin>, <minecraft:redstone>], [<minecraft:redstone>, null, <minecraft:redstone>]], 100, <fluid:water> * 1000);
-addAltRecipe(<forestry:chipsets:1>.withTag({T:1 as short}, false), [[<minecraft:redstone>, <ore:ingotBronze>, <minecraft:redstone>], [<minecraft:redstone>, <ore:ingotBronze>, <minecraft:redstone>], [<minecraft:redstone>, <ore:ingotBronze>, <minecraft:redstone>]], 100, <fluid:water> * 1000);
-addAltRecipe(<forestry:chipsets:2>.withTag({T:2 as short}, false), [[<minecraft:redstone>, <minecraft:iron_ingot>, <minecraft:redstone>], [<minecraft:redstone>, <minecraft:iron_ingot>, <minecraft:redstone>], [<minecraft:redstone>, <minecraft:iron_ingot>, <minecraft:redstone>]], 100, <fluid:water> * 1000);
+addAltRecipe(<forestry:chipsets:0>.withTag({ T:0 as short }, false), [[<minecraft:redstone>, null, <minecraft:redstone>], [<minecraft:redstone>, <ore:ingotTin>, <minecraft:redstone>], [<minecraft:redstone>, null, <minecraft:redstone>]], 100, <fluid:water> * 1000);
+addAltRecipe(<forestry:chipsets:1>.withTag({ T:1 as short }, false), [[<minecraft:redstone>, <ore:ingotBronze>, <minecraft:redstone>], [<minecraft:redstone>, <ore:ingotBronze>, <minecraft:redstone>], [<minecraft:redstone>, <ore:ingotBronze>, <minecraft:redstone>]], 100, <fluid:water> * 1000);
+addAltRecipe(<forestry:chipsets:2>.withTag({ T:2 as short }, false), [[<minecraft:redstone>, <minecraft:iron_ingot>, <minecraft:redstone>], [<minecraft:redstone>, <minecraft:iron_ingot>, <minecraft:redstone>], [<minecraft:redstone>, <minecraft:iron_ingot>, <minecraft:redstone>]], 100, <fluid:water> * 1000);
 addAltRecipe(<forestry:crafting_material:3>          , [[<forestry:crafting_material:2>, <forestry:crafting_material:2>, <forestry:crafting_material:2>], [<forestry:crafting_material:2>, <forestry:crafting_material:2>, <forestry:crafting_material:2>], [<forestry:crafting_material:2>, <forestry:crafting_material:2>, <forestry:crafting_material:2>]], 100, <fluid:water> * 500);
 // addAltRecipe(<forestry:crafting_material:4>          , [[<forestry:honeydew>, <forestry:royal_jelly>, <forestry:honeydew>], [<forestry:royal_jelly>, <forestry:can>, <forestry:royal_jelly>], [<minecraft:gunpowder>, <forestry:royal_jelly>, <minecraft:gunpowder>]], 100, <fluid:water> * 1000);
 addAltRecipe(<forestry:crafting_material:6>          , [[null, <forestry:honeydew>, null], [<ore:plankWood>, <ore:plankWood>, <ore:plankWood>], [<forestry:beeswax>, null, <forestry:beeswax>]], 100, <fluid:for.honey> * 500);

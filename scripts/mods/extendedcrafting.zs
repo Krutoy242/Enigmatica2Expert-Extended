@@ -1,5 +1,4 @@
 #modloaded extendedcrafting thermalfoundation
-import mods.extendedcrafting.TableCrafting.addShaped;
 
 val piston = <minecraft:piston>;
 val blackIron = <ore:ingotBlackIron>;
@@ -155,8 +154,8 @@ recipes.addShaped(<extendedcrafting:interface>, [
 
 // Remake ender ingot recipe
 recipes.removeByRecipeName('extendedcrafting:ender_ingot');
-scripts.process.alloy([<ore:ingotPlatinum>, <ore:dustEnder> * 2], <extendedcrafting:material:36>, "only: kiln ArcFurnace");
-scripts.process.alloy([<ore:blockPlatinum>, <ore:dustEnder> * 9], <extendedcrafting:storage:5>, "only: AdvRockArc");
+scripts.process.alloy([<ore:ingotPlatinum>, <ore:dustEnder> * 2], <extendedcrafting:material:36>, 'only: kiln ArcFurnace');
+scripts.process.alloy([<ore:blockPlatinum>, <ore:dustEnder> * 9], <extendedcrafting:storage:5>, 'only: AdvRockArc');
 mods.mekanism.infuser.addRecipe('ENDER', 20, <ore:ingotPlatinum>, <extendedcrafting:material:36> * 2);
 
 // See the Draconic Evolution configs for DE compat
@@ -246,33 +245,33 @@ craft.remake(<extendedcrafting:material:10>, ['pretty',
   '  ¤  ',
   'E l E'], {
   'E': <extendedcrafting:material:16>, // Elite Component
-  '◘': <ic2:fluid_cell>.withTag({Fluid: {FluidName: "syngas", Amount: 1000}}), // Universal Fluid Cell
+  '◘': <ic2:fluid_cell>.withTag({ Fluid: { FluidName: 'syngas', Amount: 1000 } }), // Universal Fluid Cell
   '¤': <ore:gearEmerald>,              // Emerald Gear
   'l': <rftoolsdim:fake_gravel>,       // levarG
 });
 
-# [Ultimate Component] from [Titanium Iridium Alloy Sheet][+5]
-craft.remake(<extendedcrafting:material:17>, ["pretty",
-  "O L O",
-  "B T B",
-  "§ m §"], {
-  "O": <enderio:item_material:48>,               # Organic Green Dye
-  "L": <extendedcrafting:material:7>,            # Luminessence
-  "B": <bloodmagic:slate>,                       # Blank Slate
-  "T": <ore:sheetTitaniumIridium>,               # Titanium Iridium Alloy Sheet
-  "§": <mysticalagriculture:fertilized_essence>, # Fertilized Essence
-  "m": <ore:mica>,                               # Mica
+// [Ultimate Component] from [Titanium Iridium Alloy Sheet][+5]
+craft.remake(<extendedcrafting:material:17>, ['pretty',
+  'O L O',
+  'B T B',
+  '§ m §'], {
+  'O': <enderio:item_material:48>,               // Organic Green Dye
+  'L': <extendedcrafting:material:7>,            // Luminessence
+  'B': <bloodmagic:slate>,                       // Blank Slate
+  'T': <ore:sheetTitaniumIridium>,               // Titanium Iridium Alloy Sheet
+  '§': <mysticalagriculture:fertilized_essence>, // Fertilized Essence
+  'm': <ore:mica>,                               // Mica
 });
 
-# [Ultimate Catalyst] from [Draconium Infused Obsidian][+3]
-craft.remake(<extendedcrafting:material:11>, ["pretty",
-  "U ◊ U",
-  "◊ D ◊",
-  "U § U"], {
-  "U": <extendedcrafting:material:17>,         # Ultimate Component
-  "◊": <ore:gemDimensionalShard>,              # Dimensional Shard
-  "D": <draconicevolution:infused_obsidian>,   # Draconium Infused Obsidian
-  "§": <deepmoblearning:glitch_infused_ingot>, # Glitch Infused Ingot
+// [Ultimate Catalyst] from [Draconium Infused Obsidian][+3]
+craft.remake(<extendedcrafting:material:11>, ['pretty',
+  'U ◊ U',
+  '◊ D ◊',
+  'U § U'], {
+  'U': <extendedcrafting:material:17>,         // Ultimate Component
+  '◊': <ore:gemDimensionalShard>,              // Dimensional Shard
+  'D': <draconicevolution:infused_obsidian>,   // Draconium Infused Obsidian
+  '§': <deepmoblearning:glitch_infused_ingot>, // Glitch Infused Ingot
 });
 
 // [Black Iron Frame]*8 from [Quartz Glass][+1]
@@ -285,7 +284,7 @@ craft.remake(<extendedcrafting:frame> * 8, ['pretty',
 });
 
 // [Engineering Package Crafter] from [Engineering Table][+4]
-recipes.removeByRecipeName("packagedexcrafting:basic_crafter");
+recipes.removeByRecipeName('packagedexcrafting:basic_crafter');
 craft.make(<packagedexcrafting:basic_crafter>, ['pretty',
   'A M A',
   'B n B',

@@ -33,7 +33,9 @@ function exportAllBlocks() as void {
       // Blacklist because crashing otherwise
       item.id.startsWith('avaritiafurnace:')
       || item.id.startsWith('bithop:screwhop')
-    ) continue;
+    ) {
+      continue;
+    }
 
     var lastMeta = -1 as int; // Remember, -1 is not integer by default
     for sub in item.subItems { // Remember - .subItems return different values on server
@@ -89,70 +91,62 @@ function runAutomation(player as IPlayer) as void {
   player.world.catenation().sleep(20).then(function (world, ctx) {
     player.sendMessage('Developing: §c/logAdditionalDebugData()');
     logAdditionalDebugData(player);
-  })
-
-    .sleep(100).then(function (world, ctx) {
-      player.sendMessage('Developing: Starting §c/ct conflict');
-      server.commandManager.executeCommandSilent(server, '/ct conflict');
-    })
-
-    .sleep(100).then(function (world, ctx) {
-      player.sendMessage('Developing: Starting §c/tellme dump-csv');
-      val csvList = [
-        // 'players',                          # 132
-        'musictypes', // 487
-        'worldtypes', // 721
-        'villagerprofessions', // 993
-        'dimensions', // 3043
-        'biomes-id-to-name', // 3500
-        'enchantments', // 6068
-        'mod-list', // 15616
-        'creativetabs', // 18904
-        'potions', // 19782
-        'villagertrades', // 19866
-        'biomes', // 22654
-        'biomes-with-colors', // 36765
-        'items-plantable', // 39931
-        'spawneggs', // 40757
-        'soundevents', // 45314
-        'commands', // 48369
-        'entities', // 51703
-        'potiontypes', // 55441
-        'fluids', // 57399
-        'player-nbt', // 79889
-        'entities-with-class', // 82107
-        'food-items', // 140805
-        // 'advancements-simple',              # 176687
-        'tileentities', // 203766
-        // 'blocks-id-to-registryname',        # 231595
-        'biomes-with-mob-spawns', // 370535
-        'block-props', // 374464
-        'oredictionary-by-item', // 586969
-        'oredictionary-by-key-individual', // 703570
-        // 'oredictionary-by-key',             # 753746
-        // 'blockstates-by-block',             # 1198074
-        'blocks', // 1336943
-        // 'blocks-with-nbt',                  # 1429923
-        // 'items-craftable',                  # 2138773
-        'items', // 3569125
-        // 'items-with-tool-classes',          # 3811572
-        // 'items-with-nbt',                   # 5024895
-        // 'blockstates-by-state',             # 32959606
-      ] as string[];
-      for csvcode in csvList {
-        server.commandManager.executeCommandSilent(server, '/tellme dump-csv ' ~ csvcode);
-      }
-    })
-
-    .sleep(100).then(function (world, ctx) {
-      player.sendMessage('Developing: Starting §cexport to crafttweaker.log');
-      exportAllBlocks();
+  }).sleep(100).then(function (world, ctx) {
+    player.sendMessage('Developing: Starting §c/ct conflict');
+    server.commandManager.executeCommandSilent(server, '/ct conflict');
+  }).sleep(100).then(function (world, ctx) {
+    player.sendMessage('Developing: Starting §c/tellme dump-csv');
+    val csvList = [
+      // 'players',                          # 132
+      'musictypes', // 487
+      'worldtypes', // 721
+      'villagerprofessions', // 993
+      'dimensions', // 3043
+      'biomes-id-to-name', // 3500
+      'enchantments', // 6068
+      'mod-list', // 15616
+      'creativetabs', // 18904
+      'potions', // 19782
+      'villagertrades', // 19866
+      'biomes', // 22654
+      'biomes-with-colors', // 36765
+      'items-plantable', // 39931
+      'spawneggs', // 40757
+      'soundevents', // 45314
+      'commands', // 48369
+      'entities', // 51703
+      'potiontypes', // 55441
+      'fluids', // 57399
+      'player-nbt', // 79889
+      'entities-with-class', // 82107
+      'food-items', // 140805
+      // 'advancements-simple',              # 176687
+      'tileentities', // 203766
+      // 'blocks-id-to-registryname',        # 231595
+      'biomes-with-mob-spawns', // 370535
+      'block-props', // 374464
+      'oredictionary-by-item', // 586969
+      'oredictionary-by-key-individual', // 703570
+      // 'oredictionary-by-key',             # 753746
+      // 'blockstates-by-block',             # 1198074
+      'blocks', // 1336943
+      // 'blocks-with-nbt',                  # 1429923
+      // 'items-craftable',                  # 2138773
+      'items', // 3569125
+      // 'items-with-tool-classes',          # 3811572
+      // 'items-with-nbt',                   # 5024895
+      // 'blockstates-by-state',             # 32959606
+    ] as string[];
+    for csvcode in csvList {
+      server.commandManager.executeCommandSilent(server, '/tellme dump-csv ' ~ csvcode);
+    }
+  }).sleep(100).then(function (world, ctx) {
+    player.sendMessage('Developing: Starting §cexport to crafttweaker.log');
+    exportAllBlocks();
     // exportAllTools();
-    })
-
-    .sleep(100).then(function (world, ctx) {
-      player.sendMessage('Developing: §aFinished!');
-    }).start();
+  }).sleep(100).then(function (world, ctx) {
+    player.sendMessage('Developing: §aFinished!');
+  }).start();
 }
 
 events.onPlayerLoggedIn(function (e as crafttweaker.event.PlayerLoggedInEvent) {
@@ -163,8 +157,7 @@ events.onPlayerLoggedIn(function (e as crafttweaker.event.PlayerLoggedInEvent) {
     e.player.sendMessage('§4Modpack running in debug mode');
     e.player.sendMessage('§8If you want to disable DEBUG mode, remove §7scripts/debug§8 directory');
     e.player.sendMessage('§8Execute §7/run_automation§8 to run various logging dump');
-  })
-    .start();
+  }).start();
 });
 
 if (currentLoader() == 'crafttweaker') {

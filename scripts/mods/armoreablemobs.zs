@@ -68,7 +68,7 @@ function addArmorToGroup(group as ArmorGroup, stage as IData, isSkeleton as bool
     else {
       // Damage item to 0.78
       val loweredDmg = min(it.maxDamage, max(1, (it.maxDamage as float * 0.78f) as int));
-      item = it.isDamageable ? (it.withDamage(loweredDmg)) : it;
+      item = it.isDamageable ? it.withDamage(loweredDmg) : it;
     }
 
     if (isNull(armSlots[item])) {
@@ -84,7 +84,7 @@ function makeGroup(id as string, stage as IData, isSkeleton as bool) {
   val chanceToGetUsed = /* tier * 0.005f + */ 0.01f;
   val group as ArmorGroup = ArmorHandler.createArmorGroup(id, chanceToGetUsed);
   group.addGameStage(id); // Add stage
-  for ent in (isSkeleton ? armorSkeletons : armorEntitys) {
+  for ent in isSkeleton ? armorSkeletons : armorEntitys {
     group.addEntity(ent); // Add entitys
   }
   addArmorToGroup(group, stage, isSkeleton);

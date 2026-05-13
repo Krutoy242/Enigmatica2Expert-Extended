@@ -40,129 +40,129 @@ furnace.addRecipe(<nuclearcraft:ingot:14>, <nuclearcraft:dust:14>, 0.5);
 // [Machine Chassis] from [Tough Alloy Ingot][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:10>, ['pretty',
-  'C ⌂ C',
-  '⌂ ▬ ⌂',
-  'C ⌂ C'], {
-  'C': <ore:plateConcrete>,
-  '⌂': <ic2:casing:5>,
-  '▬': <ore:ingotTough>,
-}, 2, {
-  '▬': <ore:ingotBlackIron>,
-});
+    'C ⌂ C',
+    '⌂ ▬ ⌂',
+    'C ⌂ C'], {
+    'C': <ore:plateConcrete>,
+    '⌂': <ic2:casing:5>,
+    '▬': <ore:ingotTough>,
+  }, 2, {
+    '▬': <ore:ingotBlackIron>,
+  });
 
 // [Steel Chassis] from [Bronze Item Casing][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:12>, ['pretty',
-  '▬ - ▬',
-  '- ■ -',
-  '▬ - ▬'], {
-  '▬': <ic2:casing:5>,
-  '-': <ore:ingotTough>,
-  '■': <ic2:casing>,
-}, 12, {
-  '▬': <ore:ingotStainlessSteel>,
-  '-': <ore:ingotEndSteel>,
-  '■': <ore:blockDarkSteel>,
-});
+    '▬ - ▬',
+    '- ■ -',
+    '▬ - ▬'], {
+    '▬': <ic2:casing:5>,
+    '-': <ore:ingotTough>,
+    '■': <ic2:casing>,
+  }, 12, {
+    '▬': <ore:ingotStainlessSteel>,
+    '-': <ore:ingotEndSteel>,
+    '■': <ore:blockDarkSteel>,
+  });
 
 // [Basic Plating]*4 from [Graphite Block][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part> * 4, ['pretty',
-  '□ ⌂ □',
-  '⌂ ■ ⌂',
-  '□ ⌂ □'], {
-  '□': <ore:plateLead>,
-  '⌂': <ic2:casing:4>,
-  '■': <ore:blockGraphite>,
-}, 6, {
-  '⌂': <ic2:casing:5>,
-});
+    '□ ⌂ □',
+    '⌂ ■ ⌂',
+    '□ ⌂ □'], {
+    '□': <ore:plateLead>,
+    '⌂': <ic2:casing:4>,
+    '■': <ore:blockGraphite>,
+  }, 6, {
+    '⌂': <ic2:casing:5>,
+  });
 
 // [Advanced Plating] from [Basic Plating][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:1>, ['pretty',
-  '  ▲  ',
-  '▬ □ ▬',
-  '  ▲  '], {
-  '▲': <ore:dustRedstone>,
-  '▬': <ore:ingotTough>,
-  '□': <ore:plateBasic>,
-}, 2, {
-  '▲': <ore:dustEnergetic>,
-});
+    '  ▲  ',
+    '▬ □ ▬',
+    '  ▲  '], {
+    '▲': <ore:dustRedstone>,
+    '▬': <ore:ingotTough>,
+    '□': <ore:plateBasic>,
+  }, 2, {
+    '▲': <ore:dustEnergetic>,
+  });
 
 // [DU Plating] from [Advanced Plating][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:2>, ['pretty',
-  '▲ ▬ ▲',
-  '▬ □ ▬',
-  '▲ ▬ ▲'], {
-  '▲': <ore:dustSulfur>,
-  '▬': <nuclearcraft:uranium:10>,
-  '□': <ore:plateAdvanced>,
-}, 4, {
-  '▬': <ore:ingotPlutonium242All>,
-});
+    '▲ ▬ ▲',
+    '▬ □ ▬',
+    '▲ ▬ ▲'], {
+    '▲': <ore:dustSulfur>,
+    '▬': <nuclearcraft:uranium:10>,
+    '□': <ore:plateAdvanced>,
+  }, 4, {
+    '▬': <ore:ingotPlutonium242All>,
+  });
 
 // [Elite Plating] from [DU Plating][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:3>, ['pretty',
-  '* ▬ *',
-  '▬ □ ▬',
-  '* ▬ *'], {
-  '*': <ore:dustCrystalBinder>,
-  '▬': <ore:ingotBoron>,
-  '□': <ore:plateDU>,
-}, 2, {
-  '▬': <ore:ingotBoron10>,
-});
+    '* ▬ *',
+    '▬ □ ▬',
+    '* ▬ *'], {
+    '*': <ore:dustCrystalBinder>,
+    '▬': <ore:ingotBoron>,
+    '□': <ore:plateDU>,
+  }, 2, {
+    '▬': <ore:ingotBoron10>,
+  });
 
 // [Copper Solenoid]*4 from [Advanced Alloy][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:4> * 4, ['pretty',
-  '□ ⌂ □',
-  '╱ п ╱',
-  '□ ⌂ □'], {
-  '□': <ore:plateCopper>,
-  '⌂': <ic2:casing:1>,
-  '╱': <ore:stickAluminum>,
-  'п': <ore:plateAdvancedAlloy>,
-}, 8, {
-  '□': <ore:nuggetAluminum>,
-  '⌂': <ore:nuggetAluminum>,
-  '╱': <immersiveengineering:metal_decoration0>,
-  'п': <ore:plateAdvancedAlloy>,
-});
+    '□ ⌂ □',
+    '╱ п ╱',
+    '□ ⌂ □'], {
+    '□': <ore:plateCopper>,
+    '⌂': <ic2:casing:1>,
+    '╱': <ore:stickAluminum>,
+    'п': <ore:plateAdvancedAlloy>,
+  }, 8, {
+    '□': <ore:nuggetAluminum>,
+    '⌂': <ore:nuggetAluminum>,
+    '╱': <immersiveengineering:metal_decoration0>,
+    'п': <ore:plateAdvancedAlloy>,
+  });
 
 // [Servomechanism]*2 from [Copper Ingot][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:7>, ['pretty',
-  '-   -',
-  '* ▬ *',
-  '▬ _ ▬'], {
-  '-': <ore:ingotFerroboron>,
-  '*': <ore:dustRedstone>,
-  '▬': <ore:ingotSteel>,
-  '_': <ore:ingotCopper>,
-}, 2, {
-  '*': <ore:crystalRestonia>,
-  '▬': <ore:ingotDarkSteel>,
-});
+    '-   -',
+    '* ▬ *',
+    '▬ _ ▬'], {
+    '-': <ore:ingotFerroboron>,
+    '*': <ore:dustRedstone>,
+    '▬': <ore:ingotSteel>,
+    '_': <ore:ingotCopper>,
+  }, 2, {
+    '*': <ore:crystalRestonia>,
+    '▬': <ore:ingotDarkSteel>,
+  });
 
 // [Electric Motor]*2 from [Electrum Nugget][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:8>, ['pretty',
-  '▬ ▬ G',
-  'C C ‚',
-  '▬ ▬ G'], {
-  '▬': <ore:ingotSteel>,
-  'C': <ore:solenoidCopper>,
-  '‚': <ore:ingotIron>,
-}, 2, {
-  '▬': <ore:ingotElectricalSteel>,
-  'G': null,
-  '‚': <ore:nuggetElectrum>,
-});
+    '▬ ▬ G',
+    'C C ‚',
+    '▬ ▬ G'], {
+    '▬': <ore:ingotSteel>,
+    'C': <ore:solenoidCopper>,
+    '‚': <ore:ingotIron>,
+  }, 2, {
+    '▬': <ore:ingotElectricalSteel>,
+    'G': null,
+    '‚': <ore:nuggetElectrum>,
+  });
 
 // [Alloy Furnace] from [Electric Furnace][+4]
 craft.remake(<nuclearcraft:alloy_furnace>, ['pretty',
@@ -210,16 +210,16 @@ craft.remake(<nuclearcraft:rtg_uranium>, ['pretty',
 // [Empty Frame] from [Tin Gear][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <nuclearcraft:part:11>, ['pretty',
-  '□ ¤ □',
-  'I   I',
-  '□ ¤ □'], {
-  '□': <ore:plateBasic>,
-  '¤': <ore:gearTin>,
-  'I': <enderio:block_reservoir>,
-}, 12, {
-  '□': <ore:plateAdvanced>,
-  '¤': <ore:gearSilver>,
-});
+    '□ ¤ □',
+    'I   I',
+    '□ ¤ □'], {
+    '□': <ore:plateBasic>,
+    '¤': <ore:gearTin>,
+    'I': <enderio:block_reservoir>,
+  }, 12, {
+    '□': <ore:plateAdvanced>,
+    '¤': <ore:gearSilver>,
+  });
 
 // [Ingot Former] from [Machine Chassis][+3]
 craft.remake(<nuclearcraft:ingot_former>, ['pretty',
@@ -515,25 +515,56 @@ mods.actuallyadditions.AtomicReconstructor.addRecipe(<nuclearcraft:gem:3>, <biom
 
 // Boron Nitride shortcut with AdvRock machines
 scripts.process.solution(null, [<fluid:nitrogen> * 800, <fluid:hydrogen> * 2400], [<fluid:ammonia> * 16000], null, 'only: ChemicalReactor', { energy: 120000, time: 80 });
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .inputOre(<ore:dustBoron>, 5)
   .inputLiquid(<fluid:ammonia> * 5000)
   .outputItem(<nuclearcraft:gem:1> * 10)
-  .power(30000).timeRequired(10).build();
+  .power(30000)
+  .timeRequired(10)
+  .build();
 
 // Platings Laser Alternatives
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
-  .inputOre(<ore:plateLead>, 12).inputOre(<ore:dustCrystalBinder>, 32).inputOre(<ore:ingotUranium238>, 32).inputOre(<ore:ingotTough>, 16)
-  .outputItem(<nuclearcraft:part:3> * 8).power(160000).timeRequired(20).build();
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
-  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotUranium238>, 32).inputOre(<ore:ingotTough>, 16)
-  .outputItem(<nuclearcraft:part:2> * 8).power(130000).timeRequired(40).build();
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
-  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotTough>, 16)
-  .outputItem(<nuclearcraft:part:1> * 8).power(100000).timeRequired(60).build();
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
-  .inputOre(<ore:plateLead>, 12).inputOre(<ore:ingotGraphite>, 16)
-  .outputItem(<nuclearcraft:part> * 8).power(70000).timeRequired(80).build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
+  .inputOre(<ore:plateLead>, 12)
+  .inputOre(<ore:dustCrystalBinder>, 32)
+  .inputOre(<ore:ingotUranium238>, 32)
+  .inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:3> * 8)
+  .power(160000)
+  .timeRequired(20)
+  .build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
+  .inputOre(<ore:plateLead>, 12)
+  .inputOre(<ore:ingotUranium238>, 32)
+  .inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:2> * 8)
+  .power(130000)
+  .timeRequired(40)
+  .build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
+  .inputOre(<ore:plateLead>, 12)
+  .inputOre(<ore:ingotTough>, 16)
+  .outputItem(<nuclearcraft:part:1> * 8)
+  .power(100000)
+  .timeRequired(60)
+  .build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
+  .inputOre(<ore:plateLead>, 12)
+  .inputOre(<ore:ingotGraphite>, 16)
+  .outputItem(<nuclearcraft:part> * 8)
+  .power(70000)
+  .timeRequired(80)
+  .build();
 
 // ----------------------------------------
 // Ingot Former missing ingot recipes
@@ -659,17 +690,25 @@ Purge(<nuclearcraft:infiltrator_pressure_chamber>);
 Purge(<nuclearcraft:infiltrator_heating_unit>);
 mods.nuclearcraft.InfiltratorPressureFluid.removeAll();
 mods.nuclearcraft.MultiblockInfiltrator.removeAllRecipes();
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .inputItem(<nuclearcraft:part:13> * 2)
   .inputLiquid(<fluid:polymethylsilylene_methylene> * 144)
   .outputItem(<nuclearcraft:alloy:14>)
-  .power(30000).timeRequired(10).build();
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+  .power(30000)
+  .timeRequired(10)
+  .build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .inputItem(<nuclearcraft:part:17>)
   .inputItem(<nuclearcraft:dust2>)
   .inputLiquid(<fluid:polyphenylene_sulfide> * 144)
   .outputItem(<nuclearcraft:part:19>)
-  .power(30000).timeRequired(10).build();
+  .power(30000)
+  .timeRequired(10)
+  .build();
 
 // Unimplemented multiblocks
 Purge(<nuclearcraft:heat_exchanger_controller>);
@@ -758,8 +797,9 @@ for mod, types in nuclearData {
         !isNull(isotope_zirc)
         && !(key == 'curium' && (i == 4 || i == 5))
         && !(key == 'uranium' && i == 3)
-      )
+      ) {
         furnace.addRecipe(isotope, isotope_zirc);
+      }
 
       // Pebbles
       Purge(fuel).furn();
@@ -1066,21 +1106,21 @@ val pileIngrs = {
   const list = config('config/nuclearcraft.Cfg').energy_storage.battery_block_capacity
   let i = 0
   return cmd.block.replace(/\s*capacity\s*:\s*\d+/g, (m,p) =>
-    `capacity:${(''+list[i++]).padStart(10)}`
+    ` capacity:${(''+list[i++]).padStart(10)}`
   )
 } */
 val piles = [
-  <nuclearcraft:voltaic_pile_basic>.withTag({ energyStorage: {capacity:   1600000 as long, energy: 0 as long } }),
-  <nuclearcraft:voltaic_pile_advanced>.withTag({ energyStorage: {capacity:   6400000 as long, energy: 0 as long } }),
-  <nuclearcraft:voltaic_pile_du>.withTag({ energyStorage: {capacity:  25600000 as long, energy: 0 as long } }),
-  <nuclearcraft:voltaic_pile_elite>.withTag({ energyStorage: {capacity: 102400000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_basic>.withTag({ energyStorage: { capacity:   1600000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_advanced>.withTag({ energyStorage: { capacity:   6400000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_du>.withTag({ energyStorage: { capacity:  25600000 as long, energy: 0 as long } }),
+  <nuclearcraft:voltaic_pile_elite>.withTag({ energyStorage: { capacity: 102400000 as long, energy: 0 as long } }),
 ] as IItemStack[];
 
 val batteries = [
-  <nuclearcraft:lithium_ion_battery_basic>.withTag({ energyStorage: {capacity:  32000000 as long, energy: 0 as long } }),
-  <nuclearcraft:lithium_ion_battery_advanced>.withTag({ energyStorage: {capacity: 128000000 as long, energy: 0 as long } }),
-  <nuclearcraft:lithium_ion_battery_du>.withTag({ energyStorage: {capacity: 512000000 as long, energy: 0 as long } }),
-  <nuclearcraft:lithium_ion_battery_elite>.withTag({ energyStorage: {capacity:2048000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_basic>.withTag({ energyStorage: { capacity:  32000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_advanced>.withTag({ energyStorage: { capacity: 128000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_du>.withTag({ energyStorage: { capacity: 512000000 as long, energy: 0 as long } }),
+  <nuclearcraft:lithium_ion_battery_elite>.withTag({ energyStorage: { capacity:2048000000 as long, energy: 0 as long } }),
 ] as IItemStack[];
 /**/
 
@@ -1095,14 +1135,16 @@ for i, item in piles {
 
 for i, item in batteries {
   recipes.remove(item.withTag(null));
-  if (i == 0)
+  if (i == 0) {
     craft.make(item, ['I','1','S'], pileIngrs);
-  else
+  }
+  else {
     craft.make(item, [' p ','^^^',' S '], {
       '^': batteries[i - 1].withTag({}, false),
       'p': pileIngrs['' ~ (i + 1)],
       'S': pileIngrs['S'],
     });
+  }
 }
 
 // Additional alloying recipes
@@ -1119,17 +1161,17 @@ for inputs, output in {
 // Wasteland portals spawn in BoP worlds
 // but not in OTG ones, so there is the recipe
 mods.thaumcraft.Infusion.registerRecipe(
-  "wasteland_portal", # Name
-  "INFUSION", # Research
-  <nuclearcraft:wasteland_portal>, # Output
-  1, # Instability
+  'wasteland_portal', // Name
+  'INFUSION', // Research
+  <nuclearcraft:wasteland_portal>, // Output
+  1, // Instability
   Aspects('40⚡ 40💣'),
-  <trinity:solid_trinitite>, # Central Item
-  Grid(["pretty",
-  "s Q s",
-  "P   P",
-  "s Q s"], {
-  "s": <ore:compressed2xSand>,
-  "Q": <nuclearcraft:wasteland_earth>,
-  "P": <thaumcraft:stone_porous>,
-}).spiral(1));
+  <trinity:solid_trinitite>, // Central Item
+  Grid(['pretty',
+    's Q s',
+    'P   P',
+    's Q s'], {
+    's': <ore:compressed2xSand>,
+    'Q': <nuclearcraft:wasteland_earth>,
+    'P': <thaumcraft:stone_porous>,
+  }).spiral(1));

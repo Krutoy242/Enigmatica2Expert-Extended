@@ -16,10 +16,10 @@ Done for modpack 🌳 Enigmatica: 2 Expert - Extended
 #modloaded my_precious
 #loader mixin
 
-#mixin {targets: "com.existingeevee.my_precious.MyPrecious"}
+#mixin { targets: 'com.existingeevee.my_precious.MyPrecious' }
 zenClass MixinMyPrecious {
-    #mixin Overwrite
-    function onRegisterItem(event as native.net.minecraftforge.event.RegistryEvent.Register) as void {
-        // NO-OP
-    }
+  #mixin Overwrite
+  function onRegisterItem(event as native.net.minecraftforge.event.RegistryEvent.Register) as void {
+    // NO-OP
+  }
 }

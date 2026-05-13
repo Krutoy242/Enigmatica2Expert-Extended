@@ -5,7 +5,6 @@ Amuileria kaerunea (Aquilegia caerulea + Kaminari[thunder]) - crafting with ligh
 #modloaded botania
 #loader contenttweaker
 
-import crafttweaker.item.IItemStack;
 import mods.contenttweaker.VanillaFactory;
 
 val amuileria_kaerunea = VanillaFactory.createSubTileFunctional('amuileria_kaerunea', 0xFFFF);

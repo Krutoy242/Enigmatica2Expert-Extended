@@ -31,5 +31,5 @@ function setEntity(aspectString as string, entity as IEntityDefinition) as void 
     return;
   }
   entity.setAspects(aspects);
-  <minecraft:spawn_egg>.withTag({EntityTag: {id: entity.id}}).setAspects(aspects);
+  <minecraft:spawn_egg>.withTag({ EntityTag: { id: entity.id } }).setAspects(aspects);
 }

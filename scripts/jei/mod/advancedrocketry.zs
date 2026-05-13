@@ -20,7 +20,7 @@ function addAsteroid(name as string, values as double[], output as int[IItemStac
   val newOutput = arrayOf(output.length, null as IItemStack);
   for i, tuple in output {
     for item, chance in tuple {
-      if(isNull(item)) continue;
+      if (isNull(item)) continue;
       newOutput[i] = item.withLore(['§8Chance: §b' ~ chance]);
     }
   }
@@ -64,19 +64,19 @@ addAsteroid('Moon Turf'            , [64, 50, 0.9, 8, 1, 0.1] , [{ <advancedrock
 /**/
 
 // -----------------------------------------------------------------------
-val p = mods.jei.JEI.createJei('orbital_laser_drill', "Orbital Laser Drill")
-.setBackground(IJeiUtils.createBackground(7*18, 3*18))
-.addRecipeCatalyst(<advancedrocketry:spacelaser>)
-.setIcon(<advancedrocketry:spacelaser>)
-.setModid('advancedrocketry');
+val p = mods.jei.JEI.createJei('orbital_laser_drill', 'Orbital Laser Drill')
+  .setBackground(IJeiUtils.createBackground(7 * 18, 3 * 18))
+  .addRecipeCatalyst(<advancedrocketry:spacelaser>)
+  .setIcon(<advancedrocketry:spacelaser>)
+  .setModid('advancedrocketry');
 for y in 0 .. 3 {
   for x in 0 .. 7 {
-    p.addSlot(IJeiUtils.createItemSlot('output', x*18, y*18, false, false));
+    p.addSlot(IJeiUtils.createItemSlot('output', x * 18, y * 18, false, false));
   }
 }
 p.register();
 
-mods.jei.JEI.createJeiRecipe("orbital_laser_drill").setOutputs([
+mods.jei.JEI.createJeiRecipe('orbital_laser_drill').setOutputs([
 /* Inject_js(
 config('config/advRocketry/advancedRocketry.cfg')
 ['world and ore generation'].laserDrillOres

@@ -7,7 +7,6 @@ Add recipes and mechanic of dev/null/ that never ends
 #modloaded openblocks
 
 import crafttweaker.data.IData;
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
 events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlockEvent) {
@@ -25,7 +24,9 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
     || isNull(e.item.tag.inventory.Items[0].Count)
     || e.item.tag.inventory.Items[0].Count.asInt() >= 65
     || isNull(e.item.tag.infinite)
-  ) return;
+  ) {
+    return;
+  }
 
   // Check if this dev/null/ provide infinite exact this block to prevent replacing
   val infinite = e.item.tag.infinite.toItemStack();

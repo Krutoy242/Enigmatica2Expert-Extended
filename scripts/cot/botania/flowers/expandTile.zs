@@ -11,7 +11,7 @@ import native.net.minecraft.world.World;
 
 $expand SubTileEntityInGame$isRedstonePowered(world as IWorld, pos as IBlockPos) as bool {
   for dir in EnumFacing.VALUES {
-    if((world as World).getRedstonePower((pos as BlockPos).offset(dir), dir) != 0) return true;
+    if ((world as World).getRedstonePower((pos as BlockPos).offset(dir), dir) != 0) return true;
   }
   return false;
 }

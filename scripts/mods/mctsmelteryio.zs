@@ -15,7 +15,7 @@ scripts.process.mash(<biomesoplenty:hard_ice>, (<mctsmelteryio:iceball> ?? <icea
 
 for input, amount in {
   <minecraft:glass_bottle>: 1,
-  <minecraft:potion>.withTag({Potion: "minecraft:water"}): 2,
+  <minecraft:potion>.withTag({ Potion: 'minecraft:water' }): 2,
   <minecraft:potion:*>: 3,
   <rustic:elixir>.withTag({ display: { Name: 'ANY Elixir' } }, false): 10, // Elixir
 } as int[IIngredient]$orderly {

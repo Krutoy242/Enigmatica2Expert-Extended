@@ -47,5 +47,5 @@ function findAndExtendEntitiesForMana(world as IWorld, pos as IBlockPos, subtile
 
 function updateTimeAndTakeMana(subtile as SubTileEntityInGame, entity as IEntity, cost as int) as void {
   subtile.consumeMana(cost);
-  entity.updateNBT({remainingTime: 500});
+  entity.updateNBT({ remainingTime: 500 });
 }

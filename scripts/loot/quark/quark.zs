@@ -1,8 +1,6 @@
 #modloaded loottweaker quark
 #ignoreBracketErrors
 
-import loottweaker.LootTweaker;
-
 scripts.lib.loot.addLootToPool('quark:chests/pirate_chest', 'quark:pirate_ship', {
   <cyclicmagic:dynamite_safe>  : [30, 0, 5, 64],
   <cyclicmagic:dynamite_mining>: [10, 0, 5, 64],

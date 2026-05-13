@@ -7,9 +7,7 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import mods.randomtweaker.jei.IJeiUtils;
 import mods.requious.AssemblyRecipe;
-import mods.zenutils.StringList;
 
-import scripts.commands.perf.util.naturalInt;
 import scripts.mixin.bloodmagic.shared.Op;
 
 // -----------------------------------------------------------------------
@@ -74,9 +72,9 @@ function addMeteor(catalyst as IItemStack, cost as int, oreList as IIngredient[]
 
 var p = mods.jei.JEI.createJei('le_vulcanos_frigius', 'Le Vulcanos Frigius');
 p.setBackground(IJeiUtils.createBackground(4 * 18, 1 * 18));
-p.addRecipeCatalyst(<bloodmagic:ritual_diviner>.withTag({current_ritual: 'cobblestone'}));
+p.addRecipeCatalyst(<bloodmagic:ritual_diviner>.withTag({ current_ritual: 'cobblestone' }));
 p.addRecipeCatalyst(<bloodmagic:arcane_ashes>);
-p.setIcon(<bloodmagic:ritual_diviner>.withTag({current_ritual: 'cobblestone'}));
+p.setIcon(<bloodmagic:ritual_diviner>.withTag({ current_ritual: 'cobblestone' }));
 p.addSlot(IJeiUtils.createItemSlot('input', 0, 0, true, false));
 p.addElement(IJeiUtils.createArrowElement(24, 1, 0));
 p.addSlot(IJeiUtils.createItemSlot('output', 3 * 18, 0, false, false));
@@ -103,7 +101,7 @@ for i, block in Op.catalystToBlock {
 p = mods.jei.JEI.createJei('sacrificial_values', 'Sacrificial Values');
 p.setBackground(IJeiUtils.createBackground(4 * 18, 1 * 18));
 p.addRecipeCatalyst(<bloodmagic:dagger_of_sacrifice>);
-p.addRecipeCatalyst(<bloodmagic:ritual_diviner:1>.withTag({current_ritual: 'well_of_suffering'}));
+p.addRecipeCatalyst(<bloodmagic:ritual_diviner:1>.withTag({ current_ritual: 'well_of_suffering' }));
 p.setIcon(<bloodmagic:dagger_of_sacrifice>);
 p.addSlot(IJeiUtils.createItemSlot('input', 0, 0, true, false));
 p.addElement(IJeiUtils.createArrowElement(24, 1, 0));

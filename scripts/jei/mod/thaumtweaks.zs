@@ -2,7 +2,6 @@
 #modloaded thaumictweaker requious
 #sideonly client
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import mods.requious.AssemblyRecipe;
 

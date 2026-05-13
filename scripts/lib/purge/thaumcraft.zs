@@ -4,6 +4,6 @@
 
 import crafttweaker.item.IItemStack;
 
-scripts.lib.purge.purge.CPurge.purgeAspects = function(item as IItemStack) as void {
+scripts.lib.purge.purge.CPurge.purgeAspects = function (item as IItemStack) as void {
   native.thaumcraft.api.ThaumcraftApi.registerObjectTag(item, null);
 };

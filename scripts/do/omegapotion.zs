@@ -374,7 +374,7 @@ static convertElixir as function(IData)IData = function (elixirEffect as IData) 
 
 static durationFnc as function(int)int = function (x as int) as int {
   val d = x as double;
-  return min(2147483646.0, d * 10.0) as int;
+  return min(2147483646.0, d * 10.0);
 };
 static amplifierFnc as function(int)int = function (x as int) as int {
   val d = x as double;

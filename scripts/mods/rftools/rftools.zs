@@ -65,19 +65,19 @@ recipes.addShaped('RFTools Matter Receiver',
 // Machine Frame
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <rftools:machine_frame> * 2, ['pretty',
-  'H ¤ H',
-  '■ M ■',
-  's A s'], {
-  'H': <ic2:heat_vent>,
-  '¤': <ore:gearGold>,
-  '■': <industrialforegoing:dryrubber>,
-  'M': <teslacorelib:machine_case>,
-  's': <industrialforegoing:pink_slime>,
-  'A': <tconevo:edible:1>
-}, 4, {
-  '¤': <thermalfoundation:material:294>,
-  '■': <mekanism:plasticblock:15>,
-});
+    'H ¤ H',
+    '■ M ■',
+    's A s'], {
+    'H': <ic2:heat_vent>,
+    '¤': <ore:gearGold>,
+    '■': <industrialforegoing:dryrubber>,
+    'M': <teslacorelib:machine_case>,
+    's': <industrialforegoing:pink_slime>,
+    'A': <tconevo:edible:1>,
+  }, 4, {
+    '¤': <thermalfoundation:material:294>,
+    '■': <mekanism:plasticblock:15>,
+  });
 
 // Machine Base
 recipes.remove(<rftools:machine_base>);
@@ -348,7 +348,7 @@ recipes.remove(<rftoolscontrol:cpu_core_1000>);
 mods.mekanism.infuser.addRecipe('DIAMOND', 160, <rftoolscontrol:cpu_core_500>, <rftoolscontrol:cpu_core_1000>);
 
 // Remake all absorbers with harder recipes
-recipes.removeByRecipeName("rftoolsdim:material_absorber");
+recipes.removeByRecipeName('rftoolsdim:material_absorber');
 craft.make(<rftoolsdim:material_absorber>, ['pretty',
   'd ▬ d',
   'S C S',
@@ -358,7 +358,7 @@ craft.make(<rftoolsdim:material_absorber>, ['pretty',
   'S': <minecraft:sponge>,
   'C': <rftools:machine_frame>,
 });
-recipes.removeByRecipeName("rftoolsdim:liquid_absorber");
+recipes.removeByRecipeName('rftoolsdim:liquid_absorber');
 craft.make(<rftoolsdim:liquid_absorber>, ['pretty',
   'A ▬ A',
   'S C S',
@@ -368,7 +368,7 @@ craft.make(<rftoolsdim:liquid_absorber>, ['pretty',
   'S': <minecraft:sponge>,
   'C': <rftools:machine_frame>,
 });
-recipes.removeByRecipeName("rftoolsdim:biome_absorber");
+recipes.removeByRecipeName('rftoolsdim:biome_absorber');
 craft.make(<rftoolsdim:biome_absorber>, ['pretty',
   'B ▬ B',
   'S C S',
@@ -378,7 +378,7 @@ craft.make(<rftoolsdim:biome_absorber>, ['pretty',
   'S': <minecraft:sponge>,
   'C': <rftools:machine_frame>,
 });
-recipes.removeByRecipeName("rftoolsdim:terrain_absorber");
+recipes.removeByRecipeName('rftoolsdim:terrain_absorber');
 craft.make(<rftoolsdim:terrain_absorber>, ['pretty',
   'B ▬ B',
   'S C S',
@@ -388,7 +388,7 @@ craft.make(<rftoolsdim:terrain_absorber>, ['pretty',
   'S': <minecraft:sponge>,
   'C': <rftools:machine_frame>,
 });
-recipes.removeByRecipeName("rftoolsdim:feature_absorber");
+recipes.removeByRecipeName('rftoolsdim:feature_absorber');
 craft.make(<rftoolsdim:feature_absorber>, ['pretty',
   'C ▬ C',
   'S a S',
@@ -398,7 +398,7 @@ craft.make(<rftoolsdim:feature_absorber>, ['pretty',
   'S': <minecraft:sponge>,
   'a': <rftools:machine_frame>,
 });
-recipes.removeByRecipeName("rftoolsdim:time_absorber");
+recipes.removeByRecipeName('rftoolsdim:time_absorber');
 craft.make(<rftoolsdim:time_absorber>, ['pretty',
   '# ▬ #',
   'S C S',
@@ -410,14 +410,14 @@ craft.make(<rftoolsdim:time_absorber>, ['pretty',
 });
 
 // Non-dimensional source of "levarG"
-val MA = <rftoolsdim:material_absorber>.withTag({meta: 0, absorbing: 0, block: "minecraft:stone"});
+val MA = <rftoolsdim:material_absorber>.withTag({ meta: 0, absorbing: 0, block: 'minecraft:stone' });
 val FG = <rftoolsdim:fake_gravel>;
 scripts.process.crush(MA, FG * 64, 'only: Macerator');
 mods.ic2.ThermalCentrifuge.addRecipe([FG * 64, FG * 32], MA);
 mods.astralsorcery.Grindstone.addRecipe(MA, FG * 64, 0.5);
 
 // [Shape Card (Silk Quarry)] from [Shape Card (Quarry)][+3]
-recipes.removeByRecipeName("rftools:shape_card_quarry_silk");
+recipes.removeByRecipeName('rftools:shape_card_quarry_silk');
 craft.make(<rftools:shape_card:3>, ['pretty',
   '◊ S ◊',
   '¤ h ¤',
@@ -429,7 +429,7 @@ craft.make(<rftools:shape_card:3>, ['pretty',
 });
 
 // [Shape Card (Fortune Quarry)] from [Shape Card (Quarry)][+3]
-recipes.removeByRecipeName("rftools:shape_card_quarry_fortune");
+recipes.removeByRecipeName('rftools:shape_card_quarry_fortune');
 craft.make(<rftools:shape_card:4>, ['pretty',
   '◊ * ◊',
   '¤ S ¤',
@@ -467,7 +467,7 @@ craft.remake(<rftools:spawner>, ['pretty',
   'D C D',
   'f D f'], {
   'f': <industrialforegoing:fertilizer>,
-  '~': LiquidIngr("if.protein"),
+  '~': LiquidIngr('if.protein'),
   'D': <iceandfire:dragon_ice_spikes>,
   'C': <rftools:machine_frame>,
 });

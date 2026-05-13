@@ -86,7 +86,7 @@ addChemthrowerEffect(<fluid:xu_demonic_metal>, false, false,
   // IChemBlockEffect
   function (world as IWorld, pos as IBlockPos, side as IFacing, shooter as IPlayer, throwerstack as IItemStack, fluid as ILiquidStack) as void {
     if (world.remote) return;
-    
+
     if (scripts.do.portal_spread.tick.currentDirection.update(0, -1)) {
       scripts.do.portal_spread.tick.spreadBlock(world, pos, true);
     }

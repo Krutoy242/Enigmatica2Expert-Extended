@@ -12,12 +12,12 @@ import crafttweaker.player.IPlayer;
 import scripts.do.hand_over_your_items.tellrawItemObj;
 import crafttweaker.data.IData;
 
-events.register(function(e as crafttweaker.event.CommandEvent) {
-  if(isNull(e.command)
-    || (e.command.name != "cofh")
+events.register(function (e as crafttweaker.event.CommandEvent) {
+  if (isNull(e.command)
+    || (e.command.name != 'cofh')
     || (e.parameters.length < 6)
-    || (e.parameters[0] != "clearblocks")
-    || (e.parameters[5] != "inventory")
+    || (e.parameters[0] != 'clearblocks')
+    || (e.parameters[5] != 'inventory')
     || !(e.commandSender instanceof IPlayer)) {
     return;
   }
@@ -36,7 +36,7 @@ events.register(function(e as crafttweaker.event.CommandEvent) {
   e.cancel();
 
   player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([
-    "Clearing blocks: ", itemList
+    'Clearing blocks: ', itemList,
   ]));
 
   player.executeCommand(

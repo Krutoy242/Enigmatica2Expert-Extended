@@ -23,7 +23,7 @@ The localisations is set correctly, but
 • Its on server side only, since `ServerReloadEvent` is server-side event
 • Other ZS localizations for some reason doesnt working in FTBQuests, only resourceloader ones works
 */
-events.register(function(e as ServerReloadEvent) {
+events.register(function (e as ServerReloadEvent) {
   if (!Ranks.isActive()) return;
 
   for rankKey, rank in Ranks.INSTANCE.ranks {

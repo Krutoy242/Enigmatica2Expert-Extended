@@ -7,8 +7,6 @@ Make impossible to plant Vis Seeds in any dimension except for Planets or Emptin
 #norun
 #reloadable
 
-import crafttweaker.world.IFacing;
-
 static farmland as string[] = [
   'minecraft:farmland',
   'rustic:fertile_soil',
@@ -26,7 +24,9 @@ static farmland as string[] = [
 events.onBlockPlace(function (e as crafttweaker.event.BlockPlaceEvent) {
   if (e.world.remote || isNull(e.current)) return;
   if (!e.current.block.definition.id.startsWith('thaumadditions:vis_crop')
-    || !(farmland has e.placedAgainst.block.definition.id)) return;
+    || !(farmland has e.placedAgainst.block.definition.id)) {
+    return;
+  }
 
   val dimType = e.world.getDimensionType();
   if (dimType == 'planet' || dimType == 'emptiness') return;

@@ -38,4 +38,3 @@ function getFTBUPlayerData(player as IPlayer) as FTBUtilitiesPlayerData {
 
   return FTBUtilitiesPlayerData.get(forgePlayer);
 }
-

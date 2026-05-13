@@ -155,15 +155,15 @@ craft.remake(<actuallyadditions:block_fishing_net>, ['pretty',
 // Wood Casing
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <actuallyadditions:block_misc:4> * 2, ['pretty',
-  '# ╱ #',
-  '╱ ≢ ╱',
-  '# ╱ #'], {
-  '#': <ore:plankTreatedWood>,
-  '╱': <forestry:oak_stick>,
-  '≢': <ore:logWood>,
-}, 4, {
-  '≢': <forestry:wood_pile>,
-});
+    '# ╱ #',
+    '╱ ≢ ╱',
+    '# ╱ #'], {
+    '#': <ore:plankTreatedWood>,
+    '╱': <forestry:oak_stick>,
+    '≢': <ore:logWood>,
+  }, 4, {
+    '≢': <forestry:wood_pile>,
+  });
 
 // Emerald Dust
 recipes.remove(<actuallyadditions:item_dust:3>);
@@ -177,45 +177,45 @@ mods.actuallyadditions.Crusher.removeRecipe(<actuallyadditions:item_dust:6>);
 // Iron Casing
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <actuallyadditions:block_misc:9> * 2, ['pretty',
-  '□ G □',
-  'G ⌂ G',
-  '□ G □'], {
-  '□': <ore:blockSheetmetalIron>,
-  'G': <forestry:thermionic_tubes:1>,
-  '⌂': <forestry:hardened_machine>,
-}, 4, {
-  '□': <ore:plateInvar>,
-  'G': <forestry:thermionic_tubes:4>
-});
+    '□ G □',
+    'G ⌂ G',
+    '□ G □'], {
+    '□': <ore:blockSheetmetalIron>,
+    'G': <forestry:thermionic_tubes:1>,
+    '⌂': <forestry:hardened_machine>,
+  }, 4, {
+    '□': <ore:plateInvar>,
+    'G': <forestry:thermionic_tubes:4>,
+  });
 
 // Basic Coil
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <actuallyadditions:item_misc:7>, ['pretty',
-  '- ▬ ╱',
-  '▬ ╱ ▬',
-  '╱ ▬ -'], {
-  '-': <actuallyadditions:item_crystal:5>,
-  '▬': <ore:wireAluminum>,
-  '╱': <forestry:oak_stick>,
-}, 4, {
-  '-': <actuallyadditions:item_crystal_empowered:5>,
-  '▬': <ore:ingotAluminum>
-});
+    '- ▬ ╱',
+    '▬ ╱ ▬',
+    '╱ ▬ -'], {
+    '-': <actuallyadditions:item_crystal:5>,
+    '▬': <ore:wireAluminum>,
+    '╱': <forestry:oak_stick>,
+  }, 4, {
+    '-': <actuallyadditions:item_crystal_empowered:5>,
+    '▬': <ore:ingotAluminum>,
+  });
 
 // Advanced Coil
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <actuallyadditions:item_misc:8> , ['pretty',
-  '  ▬ I',
-  '▬ B ▬',
-  'I ▬  '], {
-  '▬': <ic2:cable:2>.withTag({ type: 2 as byte, insulation: 0 as byte }),
-  'B': <actuallyadditions:item_misc:7>,
-  'I': <forestry:oak_stick>,
-}, 8, {
-  '▬': <ore:ingotLumium>,
-  'B': <actuallyadditions:item_misc:7>,
-  'I': <actuallyadditions:item_misc:7>,
-});
+    '  ▬ I',
+    '▬ B ▬',
+    'I ▬  '], {
+    '▬': <ic2:cable:2>.withTag({ type: 2 as byte, insulation: 0 as byte }),
+    'B': <actuallyadditions:item_misc:7>,
+    'I': <forestry:oak_stick>,
+  }, 8, {
+    '▬': <ore:ingotLumium>,
+    'B': <actuallyadditions:item_misc:7>,
+    'I': <actuallyadditions:item_misc:7>,
+  });
 
 // Atomic Reconstructor
 recipes.remove(<actuallyadditions:block_atomic_reconstructor>);
@@ -363,7 +363,7 @@ for i in 0 .. listCatFur.length {
     val item = itemUtils.getItem(listCatFur[i], listCatFur[i + 1]);
     if (!isNull(item)) {
       mods.actuallyadditions.BallOfFur.addReturn(item, listCatFur[i + 2]);
-      val chance = (crafttweaker.util.Math.floor((listCatFur[i + 2] as float) / weight * 10000) as double) / 100;
+      val chance = crafttweaker.util.Math.floor(listCatFur[i + 2] as float / weight * 10000) as double / 100;
       item.addTooltip(format.darkGray('Drops from ') ~ format.bold('Ball Of Fur')
       ~ format.darkGray(' with chance ') ~ format.gray(chance ~ '%'));
     }
@@ -536,17 +536,17 @@ for i in 0 .. 10 {
 // [Energy Laser Relay]*4 from [Advanced Coil][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <actuallyadditions:block_laser_relay> * 4, ['pretty',
-  '▬ * ▬',
-  '╳ A ╳',
-  '▬ * ▬'], {
-  '▬': <ore:obsidian>,
-  '*': <ore:blockRedstone>,
-  '╳': <ore:crystalRestonia>,
-  'A': <actuallyadditions:item_misc:8>,
-}, 10, {
-  '▬': <ore:ingotRefinedObsidian>,
-  '*': <actuallyadditions:block_crystal>,
-});
+    '▬ * ▬',
+    '╳ A ╳',
+    '▬ * ▬'], {
+    '▬': <ore:obsidian>,
+    '*': <ore:blockRedstone>,
+    '╳': <ore:crystalRestonia>,
+    'A': <actuallyadditions:item_misc:8>,
+  }, 10, {
+    '▬': <ore:ingotRefinedObsidian>,
+    '*': <actuallyadditions:block_crystal>,
+  });
 
 // Simplify because it produce only max 256 RF/T
 // [Bio_Reactor] from [Iron_Casing][+2]
@@ -629,14 +629,29 @@ craft.remake(<actuallyadditions:block_misc:8>, ['pretty',
 });
 
 // [Basic Coil] from [Aluminum Ingot*2][+2]
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
-  .inputOre(<ore:stickWood>, 36).inputOre(<ore:ingotAluminium>, 24).inputOre(<ore:ingotFakeIron>, 24)
-  .outputItem(<actuallyadditions:item_misc:7> * 12).power(70000).timeRequired(20).build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
+  .inputOre(<ore:stickWood>, 36)
+  .inputOre(<ore:ingotAluminium>, 24)
+  .inputOre(<ore:ingotFakeIron>, 24)
+  .outputItem(<actuallyadditions:item_misc:7> * 12)
+  .power(70000)
+  .timeRequired(20)
+  .build();
 
 // [Advanced Coil] from [Aluminum Ingot*2][+3]
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
-  .input(<forestry:oak_stick> * 60).inputOre(<ore:ingotGold>, 12).inputOre(<ore:ingotAluminium>, 24).inputOre(<ore:ingotFakeIron>, 24)
-  .outputItem(<actuallyadditions:item_misc:8> * 12).power(140000).timeRequired(40).build();
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
+  .input(<forestry:oak_stick> * 60)
+  .inputOre(<ore:ingotGold>, 12)
+  .inputOre(<ore:ingotAluminium>, 24)
+  .inputOre(<ore:ingotFakeIron>, 24)
+  .outputItem(<actuallyadditions:item_misc:8> * 12)
+  .power(140000)
+  .timeRequired(40)
+  .build();
 
 // New dough mechanic
 recipes.remove(<actuallyadditions:item_misc:4>);
@@ -860,8 +875,12 @@ craft.remake(<actuallyadditions:item_filling_wand>, ['pretty',
 mods.tconstruct.Casting.addTableRecipe(<actuallyadditions:item_water_bowl>, <minecraft:bowl>, <liquid:water>, 1000, true, 1);
 
 // Fast high-end alt
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .input(<actuallyadditions:item_canola_seed> * 64)
   .inputLiquid(<fluid:ic2biomass> * 100)
   .outputItem(<actuallyadditions:item_misc:21> * 64)
-  .power(30000).timeRequired(10).build();
+  .power(30000)
+  .timeRequired(10)
+  .build();

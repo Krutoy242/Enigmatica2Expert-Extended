@@ -216,7 +216,6 @@ recipes.addShapeless('gourmetbeefpattyitem_itemsalt', <harvestcraft:gourmetbeefp
   <ore:toolMixingbowl>, <ore:foodGroundbeef>, <ore:foodBlackpepper>, <ore:cropSpiceleaf>, <harvestcraft:mustardseedsitem>, <ore:itemSalt>,
 ]);
 
-
 // Simple seed rework
 for item in [
   // <harvestcraft:chilipepperseeditem>,

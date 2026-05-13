@@ -20,7 +20,9 @@ events.onEntityLivingUseItemFinish(function (e as crafttweaker.event.EntityLivin
     || e.player.world.remote
     || isNull(e.item)
     || e.item.definition.id != 'rustic:ironberries'
-  ) return;
+  ) {
+    return;
+  }
   e.player.removePotionEffect(<potion:minecraft:jump_boost>);
 });
 

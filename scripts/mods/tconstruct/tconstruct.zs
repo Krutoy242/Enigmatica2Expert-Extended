@@ -24,12 +24,12 @@ scripts.process.melt(<minecraft:anvil:2>, <fluid:iron> * (144 * 15));
 mods.tconstruct.Melting.removeRecipe(<fluid:dragonsteel_fire>);
 mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_fire> * 144, <iceandfire:dragonsteel_fire_ingot>);
 mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_fire> * 1296, <iceandfire:dragonsteel_fire_block>);
-mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_fire> * 72, <tconstruct:shard>.withTag({Material: "dragonsteel_fire"}));
+mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_fire> * 72, <tconstruct:shard>.withTag({ Material: 'dragonsteel_fire' }));
 
 mods.tconstruct.Melting.removeRecipe(<fluid:dragonsteel_ice>);
 mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_ice> * 144, <iceandfire:dragonsteel_ice_ingot>);
 mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_ice> * 1296, <iceandfire:dragonsteel_ice_block>);
-mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_ice> * 72, <tconstruct:shard>.withTag({Material: "dragonsteel_ice"}));
+mods.tconstruct.Melting.addRecipe(<fluid:dragonsteel_ice> * 72, <tconstruct:shard>.withTag({ Material: 'dragonsteel_ice' }));
 
 // Slime Dirt -> Slime
 val slimeDirts as IItemStack[][IItemStack] = {
@@ -537,7 +537,7 @@ for castFluid in [
   // Special add cases
   // ------------
   mods.tconstruct.Casting.addTableRecipe(<tconstruct:cast_custom:1>, <minecraft:gold_nugget>, castFluid, castFluid.amount, true);
-  
+
   for plate in [
     <thermalfoundation:material:32>,
     <thermalfoundation:material:33>,

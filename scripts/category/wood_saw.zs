@@ -8,7 +8,7 @@ import crafttweaker.item.IItemStack;
 
 // Helper Function
 function saw(input as IIngredient, output as IItemStack, exceptions as string) as void {
-  if(isNull(input) || isNull(output)) return;
+  if (isNull(input) || isNull(output)) return;
 
   // BlockCutter should add all recipes.
   // All table recipes should be replaced

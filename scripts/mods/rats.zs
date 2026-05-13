@@ -11,7 +11,9 @@ events.onAllowDespawn(function (e as crafttweaker.event.EntityLivingSpawnEvent) 
     e.world.remote
     || !(e.entity instanceof crafttweaker.entity.IEntityAnimal)
     || e.entityLivingBase.definition.id != 'rats:rat'
-  ) return;
+  ) {
+    return;
+  }
 
   if (
     !isNull(e.entity.customName)
@@ -295,7 +297,7 @@ mods.rats.recipes.addArcheologistRatRecipe(<rats:raw_plastic>, <industrialforego
 //#################
 
 // Casting sawblade
-mods.tconstruct.Casting.addTableRecipe(<rats:ancient_sawblade>, <ic2:block_cutting_blade:2>, <fluid:knightmetal>, (144 * 12), true, (30 * 20));
+mods.tconstruct.Casting.addTableRecipe(<rats:ancient_sawblade>, <ic2:block_cutting_blade:2>, <fluid:knightmetal>, 144 * 12, true, 30 * 20);
 
 // Ratlanean spirit flame
 recipes.addShaped('Ratlanean Flame', <rats:ratlantean_flame>, [
@@ -316,7 +318,7 @@ mods.thermalexpansion.Infuser.addRecipe(<rats:charged_creeper_chunk>, <harvestcr
 mods.thaumcraft.Infusion.registerRecipe('psionic_rat_brain', 'INFUSION', <rats:psionic_rat_brain>, 15,
   Aspects('150🧠 40👽 80🐀'), <thaumcraft:brain>,
   [<rats:charged_creeper_chunk>, <rats:chunky_cheese_token>, <rats:charged_creeper_chunk>, <ore:dustDimensional>,
-	 <rats:charged_creeper_chunk>, <ore:dustDimensional>, <draconicevolution:draconium_block:1>, <rats:charged_creeper_chunk>]
+    <rats:charged_creeper_chunk>, <ore:dustDimensional>, <draconicevolution:draconium_block:1>, <rats:charged_creeper_chunk>]
 );
 
 // Oredict pirate hat recipe
@@ -472,11 +474,11 @@ scripts.lib.loot.tweak('rats:marbled_cheese_golem', 'main', null, null, [<ic2:cr
 mods.nuclearcraft.FissionIrradiator.addRecipe(<ore:foodNutrients5>, <rats:contaminated_food>, 5000000, 0, 0, 0);
 
 // Peaceful alt
-# [Black Death Scythe] from [Mithminite Scythe][+1]
-craft.make(<rats:plague_scythe>, ["pretty",
-  "P P P",
-  "P M P",
-  "P P P"], {
-  "P": <rats:plague_essence>,              # Plague Essence
-  "M": <thaumadditions:mithminite_scythe> ?? <draconicevolution:wyvern_sword>, # Mithminite Scythe
+// [Black Death Scythe] from [Mithminite Scythe][+1]
+craft.make(<rats:plague_scythe>, ['pretty',
+  'P P P',
+  'P M P',
+  'P P P'], {
+  'P': <rats:plague_essence>,              // Plague Essence
+  'M': <thaumadditions:mithminite_scythe> ?? <draconicevolution:wyvern_sword>, // Mithminite Scythe
 });

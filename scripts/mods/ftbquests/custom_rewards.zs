@@ -47,7 +47,7 @@ function getPlayOneMinute(player as ForgePlayer) as int {
 }
 
 function formatPlayTimeFromTicks(t as int) as string {
-  val hours = (t as double) / (20.0 * 60.0 * 60.0);
+  val hours = t as double / (20.0 * 60.0 * 60.0);
   val mins = hours * 60.0 - (hours as int * 60);
   val secs = mins * 60.0 - (mins as int * 60);
   return (
@@ -201,7 +201,7 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
         ] as string[];
       }
       playerTimes.sort(function (a as string[], b as string[]) as int {
-        return (b[0] as int) - (a[0] as int);
+        return b[0] as int - a[0] as int;
       });
 
       playerList = [] as IData;
@@ -225,9 +225,9 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
 
     val base_extra = [
       { text: style_name, color: 'aqua' }, '` ',
-      { text: style_event, color: 'gray' }
-      ] as IData + chapterName + [
-      { text: style_tail, color: 'gray' }
+      { text: style_event, color: 'gray' },
+    ] as IData + chapterName + [
+      { text: style_tail, color: 'gray' },
     ] as IData;
 
     var details_extra = [] as IData;
@@ -306,35 +306,41 @@ function showPackCompleteStatDelayed(player as IPlayer) as void {
     // ---------------------------------------
     // Most crafted item
     // ---------------------------------------
-    val maxCraft = getMaxItemStat(player, function(item as IItemDefinition) as PlayerStat {
+    val maxCraft = getMaxItemStat(player, function (item as IItemDefinition) as PlayerStat {
       return PlayerStat.getCraftStats(item);
     });
 
-    if (!isNull(maxCraft)) statList = addStatListRow(statList,
-      'gold', 'Most crafted item: ', tellrawItemObj(maxCraft.item.defaultInstance * maxCraft.count, 'white')
-    );
+    if (!isNull(maxCraft)) {
+      statList = addStatListRow(statList,
+        'gold', 'Most crafted item: ', tellrawItemObj(maxCraft.item.defaultInstance * maxCraft.count, 'white')
+      );
+    }
 
     // ---------------------------------------
     // Most used item
     // ---------------------------------------
-    val maxUsed = getMaxItemStat(player, function(item as IItemDefinition) as PlayerStat {
+    val maxUsed = getMaxItemStat(player, function (item as IItemDefinition) as PlayerStat {
       return PlayerStat.getObjectUseStats(item);
     });
 
-    if (!isNull(maxUsed)) statList = addStatListRow(statList,
-      'dark_aqua', 'Most used item: ', tellrawItemObj(maxUsed.item.defaultInstance * maxUsed.count, 'white')
-    );
+    if (!isNull(maxUsed)) {
+      statList = addStatListRow(statList,
+        'dark_aqua', 'Most used item: ', tellrawItemObj(maxUsed.item.defaultInstance * maxUsed.count, 'white')
+      );
+    }
 
     // ---------------------------------------
     // Most picked up item
     // ---------------------------------------
-    val maxPickedUp = getMaxItemStat(player, function(item as IItemDefinition) as PlayerStat {
+    val maxPickedUp = getMaxItemStat(player, function (item as IItemDefinition) as PlayerStat {
       return PlayerStat.getObjectsPickedUpStats(item);
     });
 
-    if (!isNull(maxPickedUp)) statList = addStatListRow(statList,
-      'dark_green', 'Most picked up item: ', tellrawItemObj(maxPickedUp.item.defaultInstance * maxPickedUp.count, 'white')
-    );
+    if (!isNull(maxPickedUp)) {
+      statList = addStatListRow(statList,
+        'dark_green', 'Most picked up item: ', tellrawItemObj(maxPickedUp.item.defaultInstance * maxPickedUp.count, 'white')
+      );
+    }
 
     // // ---------------------------------------
     // // Most killed by entity
@@ -355,14 +361,14 @@ function showPackCompleteStatDelayed(player as IPlayer) as void {
 
     tellraw([{
       text : '> Some `', color: 'gray', extra: [
-        { text: player.nickname(), color: 'aqua' }, '` stats:\n'
+        { text: player.nickname(), color: 'aqua' }, '` stats:\n',
       ] + statList }]);
   }).start();
 }
 
 function addStatListRow(statList as IData, bulletColor as string, tip as string, object as IData) as IData {
   return statList + [
-    (statList.asList().length > 0 ? '\n> ' : '> '), { text: '• ', color: bulletColor }, tip, object,
+    statList.asList().length > 0 ? '\n> ' : '> ', { text: '• ', color: bulletColor }, tip, object,
   ] as IData;
 }
 
@@ -371,7 +377,7 @@ function addBasicStat(player as IPlayer, statID as string, statList as IData, bu
   val value = player.readStat(stat);
   if (value <= 0) return statList;
   return addStatListRow(statList, bulletColor, stat.name.unformattedText ~ ': ', {
-    text: mods.zenutils.StaticString.format('%,d', [value]), color: 'white'
+    text: mods.zenutils.StaticString.format('%,d', [value]), color: 'white',
   });
 }
 

@@ -24,8 +24,8 @@ function addWrittenBook(
       display: { Name: I18n.format('e2ee.written_book.by', game.localize('e2ee.written_book.' ~ name)) },
       author : name,
       pages  : [lookupText[0] ~ '?', lookupText[1] ~ '?'],
-    }
-    , false);
+    },
+    false);
 
   bookWrittenBy_ingr[name] = bookWrittenBy[name].only(function (book) {
     if (!book.hasTag) return false;
@@ -38,7 +38,9 @@ function addWrittenBook(
       if (isNull(any_str)) return false;
       val str = any_str.toLowerCase();
       if (str.split(lookupText[0].toLowerCase()).length
-        + str.split(lookupText[1].toLowerCase()).length < 5) return false;
+        + str.split(lookupText[1].toLowerCase()).length < 5) {
+        return false;
+      }
     }
     return true;
   });

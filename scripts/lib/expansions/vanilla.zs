@@ -11,11 +11,11 @@ import native.net.minecraft.nbt.NBTBase;
 import native.net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
 $expand IEntityDefinition$asSoul() as IItemStack {
-  return <draconicevolution:mob_soul>.withTag({EntityName: this.id});
+  return <draconicevolution:mob_soul>.withTag({ EntityName: this.id });
 }
 
 $expand IEntityDefinition$asEgg() as IItemStack {
-  return <minecraft:spawn_egg>.withTag({EntityTag: {id: this.id}});
+  return <minecraft:spawn_egg>.withTag({ EntityTag: { id: this.id } });
 }
 
 $expand IEntityDefinition$asStack() as IItemStack {

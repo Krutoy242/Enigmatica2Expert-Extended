@@ -18,7 +18,7 @@ for output, input in {
   <thermalfoundation:material:193>: <thermalfoundation:horse_armor_tin>,
   <thermalfoundation:material:196>: <thermalfoundation:horse_armor_aluminum>,
 } as IItemStack[IItemStack] {
-  if(isNull(output) || isNull(input)) continue;
+  if (isNull(output) || isNull(input)) continue;
   furnace.remove(output, input);
 }
 

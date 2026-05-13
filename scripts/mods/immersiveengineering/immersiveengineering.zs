@@ -73,11 +73,11 @@ scripts.jei.crafting_hints.addInsOutsCatl([], [
   <immersiveengineering:stone_device:3>,
   <immersiveengineering:stone_device:4>,
   <immersiveengineering:stone_decoration_slab:5>,
-], <forge:bucketfilled>.withTag({FluidName: "concrete", Amount: 1000}));
+], <forge:bucketfilled>.withTag({ FluidName: 'concrete', Amount: 1000 }));
 scripts.jei.crafting_hints.addInsOutsCatl([], [
   <immersiveengineering:stone_device:5>,
   <immersiveengineering:stone_decoration:5>,
-], <forge:bucketfilled>.withTag({FluidName: "concrete", Amount: 1000}));
+], <forge:bucketfilled>.withTag({ FluidName: 'concrete', Amount: 1000 }));
 
 // Concrete cutting in half
 scripts.process.saw(<immersiveengineering:stone_decoration:5>, <immersiveengineering:stone_decoration_slab:5> * 2, 'only: BlockCutter', null, 0, { hardness: 9 });
@@ -97,7 +97,7 @@ for input in [
   mods.bloodmagic.AlchemyTable.addRecipe(<immersiveengineering:stone_device:3> * (5 * input.amount), [
     <bloodmagic:cutting_fluid>,
     o, o, o, o, o,
-    ], 100, 8, 1);
+  ], 100, 8, 1);
 }
 
 // Coke Dust Compatibility
@@ -155,7 +155,7 @@ recipes.addShapeless('MV - HV Connector', <immersiveengineering:connector:4>, [<
 recipes.addShapeless('MV - HV Relay', <immersiveengineering:connector:5>, [<immersiveengineering:connector:3>, <ore:ingotAluminium>]);
 
 // Cheaper decorative blocks for building
-recipes.removeByRecipeName("immersiveengineering:stone_decoration/hempcrete");
+recipes.removeByRecipeName('immersiveengineering:stone_decoration/hempcrete');
 craft.make(<immersiveengineering:stone_decoration:4> * 32, ['pretty',
   'H H H',
   'H D H',
@@ -187,44 +187,44 @@ craft.remake(<immersiveengineering:stone_decoration> * 3, ['pretty',
 // Redstone Engineering Block
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <immersiveengineering:metal_decoration0:3> * 2, ['pretty',
-  '□ ▬ □',
-  '▬ e ▬',
-  '□ ▬ □'], {
-  '□': <ore:plateCopper>,
-  '▬': <ore:ingotConstantan>,
-  'e': <ore:gemRedstone>
-}, 4, {
-  'e': <ore:ingotSignalum>
-});
+    '□ ▬ □',
+    '▬ e ▬',
+    '□ ▬ □'], {
+    '□': <ore:plateCopper>,
+    '▬': <ore:ingotConstantan>,
+    'e': <ore:gemRedstone>,
+  }, 4, {
+    'e': <ore:ingotSignalum>,
+  });
 
 // Light Engineering Block
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <immersiveengineering:metal_decoration0:4> * 4, ['pretty',
-  '□ A □',
-  'A l A',
-  '□ A □'], {
-  '□': <ore:plateBronze>,
-  'A': <ore:alloyAdvanced>,
-  'l': <ore:scaffoldingAluminum>,
-}, 6, {
-  '□': <ore:plateConstantan>,
-  'A': <ore:ingotRedstoneAlloy>,
-});
+    '□ A □',
+    'A l A',
+    '□ A □'], {
+    '□': <ore:plateBronze>,
+    'A': <ore:alloyAdvanced>,
+    'l': <ore:scaffoldingAluminum>,
+  }, 6, {
+    '□': <ore:plateConstantan>,
+    'A': <ore:ingotRedstoneAlloy>,
+  });
 
 // Heavy Engineering Block
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <immersiveengineering:metal_decoration0:5> * 4, ['pretty',
-  '□ E □',
-  'S t S',
-  '□ E □'], {
-  '□': <ore:plateUranium>,
-  'E': <ore:alloyElite>,
-  'S': <immersiveengineering:material:8>,
-  't': <ore:scaffoldingSteel>,
-}, 10, {
-  '□': <ore:plateDU>,
-  'S': <immersiveengineering:material:9>,
-});
+    '□ E □',
+    'S t S',
+    '□ E □'], {
+    '□': <ore:plateUranium>,
+    'E': <ore:alloyElite>,
+    'S': <immersiveengineering:material:8>,
+    't': <ore:scaffoldingSteel>,
+  }, 10, {
+    '□': <ore:plateDU>,
+    'S': <immersiveengineering:material:9>,
+  });
 
 // Garden Cloche
 recipes.remove(<immersiveengineering:metal_device1:13>);
@@ -268,7 +268,7 @@ mods.immersiveengineering.Crusher.addRecipe(<exnihilocreatio:block_dust> * 9, <o
 val electrodeTag = { Unbreakable: 1, display: { Lore: ['Reinforced with Titanium Iridium Alloy'], Name: 'Unbreakable Graphite Electrode' } } as crafttweaker.data.IData;
 val electrodeItem = <immersiveengineering:graphite_electrode>.withTag(electrodeTag);
 mods.thermalexpansion.InductionSmelter.addRecipe(electrodeItem, <immersiveengineering:graphite_electrode>, <advancedrocketry:productingot:1> * 4, 25000);
-mods.thermalexpansion.InductionSmelter.addRecipe(electrodeItem, <immersiveengineering:graphite_electrode>.withTag({graphDmg: 0}), <advancedrocketry:productingot:1> * 4, 25000);
+mods.thermalexpansion.InductionSmelter.addRecipe(electrodeItem, <immersiveengineering:graphite_electrode>.withTag({ graphDmg: 0 }), <advancedrocketry:productingot:1> * 4, 25000);
 mods.jei.JEI.addItem(electrodeItem);
 mods.jei.JEI.addDescription(electrodeItem, 'Reinforced Graphite Eletrode. Repaired Graphite Electrodes are insufficient for this process');
 
@@ -479,7 +479,7 @@ craft.make(<immersiveengineering:wirecoil:7> * 4, ['pretty',
   'H M H'], {
   'H': <ore:fabricHemp>,                  // Tough Fabric
   'M': <immersiveengineering:wirecoil:1>, // MV Wire Coil
-  '~': LiquidIngr("ic2creosote"), // ic2.creosote Bucket
+  '~': LiquidIngr('ic2creosote'), // ic2.creosote Bucket
 });
 
 // Refactored Sheetmetal Recipes
@@ -511,7 +511,7 @@ for typeName, output in sheetmetalRecipes {
 // ////////////////////////////////////////////////////////////////
 // Cheaper building blocks
 // ////////////////////////////////////////////////////////////////
-recipes.removeByRecipeName("immersiveengineering:metal_decoration/steel_scaffolding");
+recipes.removeByRecipeName('immersiveengineering:metal_decoration/steel_scaffolding');
 craft.make(<immersiveengineering:metal_decoration1:1> * 24, ['pretty',
   '▬ ▬ ▬',
   '  ╱  ',
@@ -532,7 +532,7 @@ craft.remake(<immersiveengineering:metal_decoration2:7> * 16, ['pretty',
   '╱': <ore:stickSteel>,
   'S': <ore:scaffoldingSteel>,
 });
-recipes.removeByRecipeName("immersiveengineering:metal_decoration/aluminum_scaffolding");
+recipes.removeByRecipeName('immersiveengineering:metal_decoration/aluminum_scaffolding');
 craft.make(<immersiveengineering:metal_decoration1:5> * 24, ['pretty',
   '▬ ▬ ▬',
   '  ╱  ',

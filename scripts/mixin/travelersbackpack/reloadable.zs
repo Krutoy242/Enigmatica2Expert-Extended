@@ -11,14 +11,14 @@ import native.net.minecraft.world.World;
 static commonEvents as CommonEvents = CommonEvents();
 
 scripts.mixin.travelersbackpack.shared.Op.fn
-= function (world as World, player as EntityPlayer, itemstack as ItemStack) as bool {
+  = function (world as World, player as EntityPlayer, itemstack as ItemStack) as bool {
   var pos = BlockPos(0, -1, 0);
-  if (native.com.m4thg33k.tombmanygraves.ModConfigs.ASCEND_LIQUID) {
-    pos = commonEvents.publicFindValidGraveLocation(player.world, commonEvents.publicAscendFromFluid(player.world, player.position));
-  }
-  if (pos.y == -1) {
-    pos = commonEvents.publicFindValidGraveLocation(player.world, player.position);
-  }
-  if (pos.y == -1) return false;
-  return BackpackUtils.placeBackpack(itemstack, player, world, pos.x, pos.y, pos.z, native.net.minecraft.util.EnumFacing.UP);
-};
+    if (native.com.m4thg33k.tombmanygraves.ModConfigs.ASCEND_LIQUID) {
+      pos = commonEvents.publicFindValidGraveLocation(player.world, commonEvents.publicAscendFromFluid(player.world, player.position));
+    }
+    if (pos.y == -1) {
+      pos = commonEvents.publicFindValidGraveLocation(player.world, player.position);
+    }
+    if (pos.y == -1) return false;
+    return BackpackUtils.placeBackpack(itemstack, player, world, pos.x, pos.y, pos.z, native.net.minecraft.util.EnumFacing.UP);
+  };

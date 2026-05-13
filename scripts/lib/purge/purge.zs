@@ -11,9 +11,9 @@ zenClass CPurge {
 
   val ingr as IIngredient;
 
-	zenConstructor() { }
+  zenConstructor() { }
 
-	function purge(_ingr as IIngredient) as CPurge {
+  function purge(_ingr as IIngredient) as CPurge {
     ingr = _ingr;
     if (isNull(ingr)) return this;
 
@@ -26,7 +26,7 @@ zenClass CPurge {
     }
     return this;
   }
-  
+
   function furn() as CPurge {
     if (isNull(ingr)) return this;
     for item in ingr.items {
@@ -34,7 +34,7 @@ zenClass CPurge {
     }
     return this;
   }
-  
+
   function fuel() as CPurge {
     if (isNull(ingr)) return this;
     for item in ingr.items {
@@ -46,7 +46,7 @@ zenClass CPurge {
   function ores() as CPurge {
     if (isNull(ingr)) return this;
     for item in ingr.items {
-      if (utils.DEBUG) logger.logWarning('Low performance getter: '~item.commandString~'.ores');
+      if (utils.DEBUG) logger.logWarning('Low performance getter: ' ~ item.commandString ~ '.ores');
       for ore in item.ores {
         ore.remove(item);
         utils.log('Purged ore: ' ~ ore.name ~ ' from: ' ~ item.commandString);
@@ -75,7 +75,7 @@ zenClass CPurge {
 
   ///////////// Private field /////////////
   function actualItem(item as IItemStack) as IItemStack {
-    return (item.damage == 0 && item.isDamageable)
+    return item.damage == 0 && item.isDamageable
       ? item.withDamage(32767)
       : item;
   }
@@ -89,11 +89,11 @@ zenClass CPurge {
   }
 
   static purgeAspects as function(IItemStack)void
-    = function(item as IItemStack) as void {};
+    = function (item as IItemStack) as void {};
 }
 
 static purge as CPurge = CPurge();
 
-global Purge as function(IIngredient)CPurge = function(ingr as IIngredient) as CPurge {
+global Purge as function(IIngredient)CPurge = function (ingr as IIngredient) as CPurge {
   return purge.purge(ingr);
 };

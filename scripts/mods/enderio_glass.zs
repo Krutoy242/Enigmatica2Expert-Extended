@@ -28,7 +28,7 @@ val items = [
   <enderio:block_not_unholy_dark_fused_glass>,
   <enderio:block_not_unholy_enlightened_fused_glass>,
   <enderio:block_not_unholy_fused_glass>,
-  
+
   <enderio:block_unholy_dark_fused_glass>,
   <enderio:block_unholy_enlightened_fused_glass>,
   <enderio:block_unholy_fused_glass>,
@@ -64,7 +64,7 @@ val items = [
 ] as IItemStack[];
 
 for i in 0 .. items.length {
-  val name = 'eio_glass_'~((i/3) as int);
+  val name = 'eio_glass_' ~ (i / 3) as int;
   val def = items[i].definition;
   for meta in 0 .. 16 {
     addVariation(name, def.makeStack(meta));

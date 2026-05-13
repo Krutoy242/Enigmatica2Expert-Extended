@@ -101,7 +101,7 @@ function defaultChance0(extraChance as float[], default as float) as float {
 
 // Get 0 element of float Array. If null or zero - return default. Return x100 as int
 function defaultChance0_int(extraChance as float[], default as int) as int {
-  return (defaultChance0(extraChance, default as float / 100.0f) * 100.0) as int;
+  return defaultChance0(extraChance, default as float / 100.0f) * 100.0;
 }
 
 // Get input/output amount if we have non-whole output amount

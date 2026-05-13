@@ -6,8 +6,6 @@
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.recipes.IRecipeFunction;
-import mods.thaumicwonders.MeatyOrb;
-import mods.thaumicwonders.CatalyzationChamber;
 
 // Cast quicksilver back to gem
 recipes.removeByRecipeName('thaumicwonders:quicksilver_bucket');
@@ -67,7 +65,7 @@ static getBonused as function(int,int)int = function (durA as int, durB as int) 
 };
 
 static getOutDurab as function(IItemStack,IItemStack)int = function (a as IItemStack, b as IItemStack) as int {
-  if (a.damage == 0 && b.damage == 0) return -1 as int;
+  if (a.damage == 0 && b.damage == 0) return -1;
   val durA = a.maxDamage - a.damage;
   val durB = b.maxDamage - b.damage;
   return max(0, a.maxDamage - getBonused(durA, durB));
@@ -145,7 +143,9 @@ events.onPlayerPickupItem(function (e as crafttweaker.event.PlayerPickupItemEven
     id != 'thaumicwonders:alienist_stone'
     && id != 'thaumicwonders:alchemist_stone'
     && id != 'thaumicwonders:transmuter_stone'
-  ) return;
+  ) {
+    return;
+  }
 
   // e.player.sendMessage('Picked up');
   for i in 0 .. e.player.inventorySize {
@@ -253,7 +253,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   Grid(['rM'], {
     'r': <thaumcraft:nugget:10>, // Rare earth
     'M': <botania:manaresource:2>, // Mana diamond
-}).spiral(1));
+  }).spiral(1));
 
 // [Vis capacitor]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:alienist_stone>);
@@ -271,14 +271,14 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
     'G': <thaumicwonders:primordial_grain>, // Primordial grain
     'R': <thaumcraft:vis_resonator>, // Vis resonator
     'T': <thaumcraft:plate:2>, // Thaumium plate
-}).shaped());
+  }).shaped());
 
 // [Primal destroyer]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:primal_destroyer>);
 mods.thaumcraft.Infusion.registerRecipe(
   'primal_destroyer', // Name
   'TWOND_PRIMAL_DESTROYER@1', // Research
-  <thaumicwonders:primal_destroyer>.withTag({infench: [{lvl: 3 as short, id: 6 as short}, {lvl: 2 as short, id: 14 as short}]}), // Output
+  <thaumicwonders:primal_destroyer>.withTag({ infench: [{ lvl: 3 as short, id: 6 as short }, { lvl: 2 as short, id: 14 as short }] }), // Output
   5, // Instability
   Aspects('75⚡ 75💨 75⟁ 75⛰️ 75💧 75🔥 50🔷'),
   <iceandfire:dragonbone>, // Central Item
@@ -289,7 +289,7 @@ mods.thaumcraft.Infusion.registerRecipe(
     'E': <thaumictinkerer:kamiresource>, // Ender shard
     'R': <rats:ratlantean_flame>, // Ratlantean Spirit Flame
     'V': <thaumcraft:plate:3>, // Void metal plate
-}).spiral(1));
+  }).spiral(1));
 
 // [Void beacon]
 mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:void_beacon>);
@@ -303,7 +303,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   Grid(['IPIPIPIP'], {
     'I': <thaumicaugmentation:material:5>, // Impetus jewel
     'P': <tconevo:metal:20>, // Primal metal
-}).spiral(1));
+  }).spiral(1));
 
 // Remove unnecessary recipes
 
@@ -333,7 +333,7 @@ mods.thaumcraft.Crucible.removeRecipe('thaumicwonders:hedge_dragons_breath');
 
 mods.thaumicwonders.MeatyOrb.removeAll();
 for item in <ore:listAllmeatraw>.items {
-  if(!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);
+  if (!isNull(item)) mods.thaumicwonders.MeatyOrb.add(item, 1);
 }
 
 mods.thaumicwonders.CatalyzationChamber.removeAll();
@@ -386,17 +386,16 @@ val clusterList = [
   <thaumcraft:cluster:5>,
   <thaumcraft:cluster:6>,
   <thaumcraft:cluster:7>,
-  <thaumcraft:cluster>
+  <thaumcraft:cluster>,
 ] as IItemStack[];
 
 for itemCluster in clusterList {
   for oreEntry in itemCluster.ores {
-    if (oreEntry.name.matches("^cluster.*")) {
-
-      val oreOre = oreDict.get(oreEntry.name.replaceFirst("cluster", "ore"));
+    if (oreEntry.name.matches('^cluster.*')) {
+      val oreOre = oreDict.get(oreEntry.name.replaceFirst('cluster', 'ore'));
       if (!oreOre.empty) mods.thaumicwonders.CatalyzationChamber.addAlchemistRecipe(oreOre.firstItem, itemCluster);
 
-      val oreShard = oreDict.get(oreEntry.name.replaceFirst("cluster", "crystalShard"));
+      val oreShard = oreDict.get(oreEntry.name.replaceFirst('cluster', 'crystalShard'));
       if (!oreShard.empty) mods.thaumicwonders.CatalyzationChamber.addAlienistRecipe(itemCluster, oreShard.firstItem);
 
       break;
@@ -432,16 +431,16 @@ val oreSufixList = {
 } as string[string];
 
 for item1, item2 in oreSufixList {
-  for orePrefix in orePrefixList{
+  for orePrefix in orePrefixList {
     val ore1 = oreDict.get(orePrefix ~ item1);
     val ore2 = oreDict.get(orePrefix ~ item2);
     val item1 = utils.oreToItem(ore1);
     val item2 = utils.oreToItem(ore2);
-    if(!ore1.empty && !isNull(item2)){
+    if (!ore1.empty && !isNull(item2)) {
       mods.thaumicwonders.CatalyzationChamber.addTransmuterRecipe(ore1, item2);
     }
-    if(!ore2.empty && !isNull(item1)){
+    if (!ore2.empty && !isNull(item1)) {
       mods.thaumicwonders.CatalyzationChamber.addTransmuterRecipe(ore2, item1);
     }
   }
-} 
+}

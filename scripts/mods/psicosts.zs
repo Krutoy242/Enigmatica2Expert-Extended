@@ -28,19 +28,19 @@ craft.remake(<psicosts:mana_resonator>, ['pretty',
 // [Potentia Inverter] from [Phial of Potentia Essentia][+5]
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<psicosts:essentia_resonator>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe(
-  "essentia_resonator", # Name
-  "FIRSTSTEPS", # Research
-  100, # Vis cost
+  'essentia_resonator', // Name
+  'FIRSTSTEPS', // Research
+  100, // Vis cost
   Aspects('🔥 ⟁'),
-  <psicosts:essentia_resonator>, # Output
+  <psicosts:essentia_resonator>, // Output
   Grid(['pretty',
-  'i ▲ i',
-  '□   □',
-  'i ▲ i'], {
-  'i': <ic2:casing:3>,   // ic2.casing.iron
-  '▲': <ore:dustPsi>,    // Psidust
-  '□': <ore:plateBrass>, // Brass Plate
-}).shaped());
+    'i ▲ i',
+    '□   □',
+    'i ▲ i'], {
+    'i': <ic2:casing:3>,   // ic2.casing.iron
+    '▲': <ore:dustPsi>,    // Psidust
+    '□': <ore:plateBrass>, // Brass Plate
+  }).shaped());
 
 val ingrs = {
   'P': <psicosts:material_glassy>,  // Psi Glass

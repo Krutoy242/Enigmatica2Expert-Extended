@@ -58,7 +58,7 @@ function broadcastMsg(langCode as string, sender as IPlayer, receiver as IPlayer
 }
 
 function getTranslationKey(item as IItemStack) as string {
-  if (item.definition.owner == 'ic2') return item.native.translationKey as string;
+  if (item.definition.owner == 'ic2') return item.native.translationKey;
   return item.name ~ '.name';
 }
 

@@ -164,7 +164,7 @@ function getCorners(world as IWorld, pos as IBlockPos, axisX as bool) as IData {
     pos.x + (axisX ? u2 : 0), pos.y + y1, pos.z + (!axisX ? u2 : 0),
     pos.x + (axisX ? u1 : 0), pos.y + y2, pos.z + (!axisX ? u1 : 0),
     pos.x + (axisX ? u2 : 0), pos.y + y2, pos.z + (!axisX ? u2 : 0),
-  ] as IData;
+  ];
 }
 
 // Check if block on specific position is portal block

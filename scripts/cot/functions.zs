@@ -186,7 +186,7 @@ static slotSurroundings as int[] = [
 // Return slot index based on x:y coordinates
 // Assume that first hotbar slot is 0:0
 function coordToSlot(x as int, y as int) as int {
-  return y == 0 ? x : (x + (4 - y) * 9);
+  return y == 0 ? x : x + (4 - y) * 9;
 }
 
 function slotToCoord(slot as int) as int[] {
@@ -204,7 +204,7 @@ function getSingularityUpdateFunc(
     // Singularity already charged
     if (stack.damage <= 0) return;
 
-    if !(owner instanceof IPlayer) return;
+    if (!(owner instanceof IPlayer)) return;
     val player as IPlayer = owner;
 
     val result = player.fake
@@ -255,7 +255,7 @@ function consumeFromPlayer(
   for i in 0 .. slotSurroundings.length / 2 {
     val u = x + slotSurroundings[i * 2];
     val v = y + slotSurroundings[i * 2 + 1];
-    if (0 > u || u > 8 || 0 > v || v > 3) continue;
+    if (u < 0 || u > 8 || v < 0 || v > 3) continue;
 
     val nextSlot = coordToSlot(u, v);
 
@@ -345,7 +345,7 @@ for i, id in singularIDs {
 function createBedrockOre(world as World, contentId as string, contentProp as string, amount as int, pos as BlockPos) as void {
   val state = IBlockState.getBlockState(contentId, contentProp);
   if (isNull(state?.block?.definition)) {
-    logger.logWarning('[Cot TE]: trying to create Bedrock Ore with wrong content: id: "'~contentId~'" prop: "'~toString(contentProp)~'"');
+    logger.logWarning('[Cot TE]: trying to create Bedrock Ore with wrong content: id: "' ~ contentId ~ '" prop: "' ~ toString(contentProp) ~ '"');
   }
   world.setBlockState(IBlockState.getBlockState('bedrockores:bedrock_ore', []), {
     oreId: state.block.definition.numericalId,
@@ -354,7 +354,7 @@ function createBedrockOre(world as World, contentId as string, contentProp as st
   }, pos);
 }
 
-VanillaFactory.putTileEntityTickFunction(1, function(tileEntity, world, pos) {
+VanillaFactory.putTileEntityTickFunction(1, function (tileEntity, world, pos) {
   if (world.remote) return;
   val data as IData = tileEntity.data;
 
@@ -382,8 +382,9 @@ VanillaFactory.putTileEntityTickFunction(1, function(tileEntity, world, pos) {
       createBedrockOre(world, data.name, data.prop, data.amount?.asInt() ?? 1, pos);
       return;
     }
-    tileEntity.updateCustomData({time: time - 1});
-  } else {
-    tileEntity.updateCustomData({time: world.random.nextInt(5) + 5});
+    tileEntity.updateCustomData({ time: time - 1 });
+  }
+  else {
+    tileEntity.updateCustomData({ time: world.random.nextInt(5) + 5 });
   }
 });

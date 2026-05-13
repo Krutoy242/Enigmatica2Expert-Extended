@@ -13,8 +13,8 @@ craft.remake(<oeintegration:excavatemodifier>, ['pretty',
 
 // [Enchanted Book] from [Excavate Modifier]
 recipes.addShapeless('Excavator to book', Book(<enchantment:oeintegration:oreexcavation>),
-  [<oeintegration:excavatemodifier>] as IIngredient[]
-  , function (out, ins, cInfo) {
+  [<oeintegration:excavatemodifier>] as IIngredient[],
+  function (out, ins, cInfo) {
     return Book(<enchantment:oeintegration:oreexcavation>);
   }, null);
 

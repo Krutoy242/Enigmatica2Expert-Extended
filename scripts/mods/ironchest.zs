@@ -78,7 +78,7 @@ for i, meta in [3, 4] as int[] {
     Purge(<item:ironchest:iron_shulker_box_${color}:${meta}>);
 
     // Remove unused silver/copper chests recipes
-    if (i==0) {
+    if (i == 0) {
       recipes.removeByRecipeName(`ironchest:shulker/${color}/iron/copper_iron_shulker_box`);
       recipes.removeByRecipeName(`ironchest:shulker/${color}/gold/silver_gold_shulker_box`);
       recipes.removeByRecipeName(`ironchest:shulker/${color}/diamond/silver_diamond_shulker_box`);

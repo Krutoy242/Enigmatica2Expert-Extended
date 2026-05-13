@@ -4,12 +4,12 @@
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
 
-val anyAvaritiaMatterTools = <avaritia:infinity_hoe> |
-  <avaritia:infinity_axe> |
-  <avaritia:infinity_pickaxe>.withTag({hammer: 1 as byte}) |
-  <avaritia:infinity_shovel>.withTag({destroyer: 1 as byte});
+val anyAvaritiaMatterTools = <avaritia:infinity_hoe>
+  | <avaritia:infinity_axe>
+  | <avaritia:infinity_pickaxe>.withTag({ hammer: 1 as byte })
+  | <avaritia:infinity_shovel>.withTag({ destroyer: 1 as byte });
 scripts.jei.crafting_hints.addInsOutCatl([], <avaritia:matter_cluster>, anyAvaritiaMatterTools);
-scripts.jei.crafting_hints.addInsOutCatl([], <avaritia:matter_cluster>.withTag({clusteritems: {total: 4096}}), anyAvaritiaMatterTools);
+scripts.jei.crafting_hints.addInsOutCatl([], <avaritia:matter_cluster>.withTag({ clusteritems: { total: 4096 } }), anyAvaritiaMatterTools);
 
 // *======= Recipes =======*
 
@@ -173,7 +173,7 @@ mods.extendedcrafting.TableCrafting.addShapeless(
     <rats:raw_rat> ?? <minecraft:beef>,
     <tconevo:edible> ?? <minecraft:beef>,
     <twilightforest:raw_meef> ?? <minecraft:beef>,
-/**/
+    /**/
   ]);
 
 val gearIngrs = {
@@ -257,7 +257,7 @@ craft.remake(<avaritia:infinity_bow>, ['pretty',
   '    -   ■',
   '      R R'], gearIngrs
 );
-craft.remake(<avaritia:infinity_pickaxe>.withTag({ench: [{lvl: 10 as short, id: 35 as short}]}), ['pretty',
+craft.remake(<avaritia:infinity_pickaxe>.withTag({ ench: [{ lvl: 10 as short, id: 35 as short }] }), ['pretty',
   '  - - - - - - -  ',
   '- - R R * R R - -',
   '- -     ♀     - -',
@@ -351,7 +351,7 @@ scripts.lib.tooltip.desc.jei(burnSingularity,
 );
 
 static getCharge as function(IItemStack)double
-  = function (item as IItemStack) as double { return item.burnTime as double; };
+  = function (item as IItemStack) as double { return item.burnTime; };
 
 scripts.do.charge.addRecipe(
   'Burn Singularity',

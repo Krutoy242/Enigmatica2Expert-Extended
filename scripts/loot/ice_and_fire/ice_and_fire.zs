@@ -29,7 +29,7 @@ val caveloot as int[][IItemStack] = {
   <actuallyadditions:item_crystal_empowered:5>: [3, 2, 1, 1],
   <botania:manaring>.withTag({ mana: 5000 })  : [2, 0, 1, 1],
   <botania:auraring>                          : [2, 0, 1, 1],
-  <enderio:item_magnet>.withTag({"enderio:energy": 100000, "enderio:magnetactive": 1 as byte}): [3, 0, 1, 1],
+  <enderio:item_magnet>.withTag({ 'enderio:energy': 100000, 'enderio:magnetactive': 1 as byte }): [3, 0, 1, 1],
   <mysticalagriculture:prudentium_apple>      : [3, 0, 1, 1],
   <mysticalagriculture:intermedium_apple>     : [3, 0, 1, 1],
   <mysticalagriculture:superium_apple>        : [3, 0, 1, 1],

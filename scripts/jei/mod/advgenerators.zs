@@ -86,7 +86,7 @@ x.setJEIItemSlot(4, 0, 'item_out1');
 x.setJEIItemSlot(5, 0, 'item_out2');
 
 function showHeat(heat as int) as IItemStack {
-  return <ic2:heat_exchanger>.withTag({ advDmg: (2500 - heat), display: { Name: '§e' ~ heat ~ ' Heat' } });
+  return <ic2:heat_exchanger>.withTag({ advDmg: 2500 - heat, display: { Name: '§e' ~ heat ~ ' Heat' } });
 }
 
 function addHeatExch(fluid_in as ILiquidStack, heat_in as int, fluid_out as ILiquidStack, item_out1 as IItemStack, heat_out as int) {

@@ -16,8 +16,8 @@ Done for modpack 🌳 Enigmatica: 2 Expert - Extended
 #modloaded my_precious
 #loader preinit
 
-events.register(function(event as native.net.minecraftforge.event.RegistryEvent.Register) {
-    if (event.name.toString() == 'minecraft:items') {
-        event.registry.register(native.com.existingeevee.my_precious.MyPrecious.RUBBLE);
-    }
+events.register(function (event as native.net.minecraftforge.event.RegistryEvent.Register) {
+  if (event.name.toString() == 'minecraft:items') {
+    event.registry.register(native.com.existingeevee.my_precious.MyPrecious.RUBBLE);
+  }
 });

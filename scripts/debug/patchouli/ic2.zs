@@ -14,9 +14,9 @@ var lines = [
   '    {',
 ] as [string];
 
-var list = [] as [string];
+val list = [] as [string];
 val it = native.ic2.core.uu.UuGraph.iterator();
-while (it.hasNext()) {
+while it.hasNext() {
   val entry = it.next() as native.java.util.Map.Entry;
   val item = (entry.key as native.net.minecraft.item.ItemStack).wrapper;
   val cost = toString(entry.value) as double as int;
@@ -35,7 +35,7 @@ for i, uuTuple in list.sort() {
 
   val id = uuTuple.split(' ')[1];
   lines += '      "item' ~ (i % 42) ~ '": "' ~ id ~ '"'
-    ~ (i % 42 == 41 || i == list.length - 1 ? '' : ',');
+  ~ (i % 42 == 41 || i == list.length - 1 ? '' : ',');
 }
 lines += '    }';
 lines += '  ]';

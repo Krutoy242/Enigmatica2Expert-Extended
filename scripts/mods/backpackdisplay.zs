@@ -5,7 +5,6 @@
 import crafttweaker.block.IBlockDefinition;
 import crafttweaker.block.IBlockState;
 import crafttweaker.data.IData;
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
 import mods.backpackdisplay.BackpackDisplay.addBackDisplay;
@@ -13,7 +12,7 @@ import native.net.minecraft.util.math.BlockPos;
 
 function addSingularity(item as IItemStack) as void {
   if (isNull(item)) return;
-  addBackDisplay(item, function(item) {
+  addBackDisplay(item, function (item) {
     if (isNull(item.tag) || isNull(item.tag.singularity)) return [] as IItemStack[];
     val length = scripts.do.diverse.getMapLength(item.tag.singularity);
     val result = arrayOf(length, null as IItemStack);
@@ -45,14 +44,16 @@ function itemFromBlockNumId(numericalID as int, meta as int) as IItemStack {
 /*
 Show contained block and entity of mob spawner inside
 */
-addBackDisplay(<mekanism:cardboardbox>, function(item) {
+addBackDisplay(<mekanism:cardboardbox>, function (item) {
   val tag = item.tag;
   if (
     isNull(tag.mekData)
     || isNull(tag.mekData.blockData)
     || isNull(tag.mekData.blockData.id)
     || isNull(tag.mekData.blockData.meta)
-  ) return null;
+  ) {
+    return null;
+  }
 
   val block = itemFromBlockNumId(tag.mekData.blockData.id, tag.mekData.blockData.meta);
   if (isNull(block)) return null;
@@ -75,17 +76,17 @@ addBackDisplay(<mekanism:cardboardbox>, function(item) {
 /*
 Show contained entity as soul
 */
-addBackDisplay(<thermalexpansion:morb>, function(item) {
+addBackDisplay(<thermalexpansion:morb>, function (item) {
   if (isNull(item.tag) || isNull(item.tag.id)) return null;
   return [<entity:${item.tag.id}>.asSoul()] as IItemStack[];
 });
 
-addBackDisplay(<industrialforegoing:mob_imprisonment_tool>, function(item) {
+addBackDisplay(<industrialforegoing:mob_imprisonment_tool>, function (item) {
   if (isNull(item.tag) || isNull(item.tag.entity)) return null;
   return [<entity:${item.tag.entity}>.asSoul()] as IItemStack[];
 });
 
-addBackDisplay(<enderio:item_soul_vial>, function(item) {
+addBackDisplay(<enderio:item_soul_vial>, function (item) {
   if (isNull(item.tag) || isNull(item.tag.entityId)) return null;
   return [<entity:${item.tag.entityId}>.asSoul()] as IItemStack[];
 });
@@ -93,13 +94,15 @@ addBackDisplay(<enderio:item_soul_vial>, function(item) {
 /*
 Point to a block
 */
-addBackDisplay(<pointer:pointer>, function(item) {
+addBackDisplay(<pointer:pointer>, function (item) {
   if (
     isNull(item.tag)
     || isNull(item.tag.Pointer)
     || isNull(item.tag.Pointer.Dimension)
     || isNull(item.tag.Pointer.Position)
-  ) return null;
+  ) {
+    return null;
+  }
 
   val world = IWorld.getFromID(item.tag.Pointer.Dimension);
   if (isNull(world)) return null;
@@ -116,13 +119,15 @@ addBackDisplay(<pointer:pointer>, function(item) {
 /*
 Obsorbed items
 */
-addBackDisplay(<rftoolsdim:material_absorber>, function(item) {
+addBackDisplay(<rftoolsdim:material_absorber>, function (item) {
   if (
     isNull(item.tag)
     || isNull(item.tag.block)
     || isNull(item.tag.meta)
     || isNull(item.tag.absorbing)
-  ) return null;
+  ) {
+    return null;
+  }
   return [<item:${item.tag.block}:${item.tag.meta}> * (1028 - item.tag.absorbing.asInt())] as IItemStack[];
 });
 
@@ -130,20 +135,22 @@ addBackDisplay(<rftoolsdim:material_absorber>, function(item) {
 Scannable
 */
 static blockHolderTag as function(IData)IItemStack
-= function(itemTag as IData) as IItemStack {
-  if (
-    isNull(itemTag)
-    || isNull(itemTag.block)
-    || isNull(itemTag.meta)
-  ) return null;
+  = function (itemTag as IData) as IItemStack {
+    if (
+      isNull(itemTag)
+      || isNull(itemTag.block)
+      || isNull(itemTag.meta)
+    ) {
+      return null;
+    }
 
-  val defaultState = IBlockState.getBlockState(itemTag.block.asString(), []);
-  if (isNull(defaultState)) return null;
-  val state = defaultState.block.definition.getStateFromMeta(itemTag.meta);
-  return scripts.do.portal_spread.utils.stateToItem(state);
-};
+    val defaultState = IBlockState.getBlockState(itemTag.block.asString(), []);
+    if (isNull(defaultState)) return null;
+    val state = defaultState.block.definition.getStateFromMeta(itemTag.meta);
+    return scripts.do.portal_spread.utils.stateToItem(state);
+  };
 
-addBackDisplay(<scannable:module_block>, function(item) {
+addBackDisplay(<scannable:module_block>, function (item) {
   val result = blockHolderTag(item.tag);
   if (isNull(result)) return null;
   return [result] as IItemStack[];
@@ -174,12 +181,14 @@ function nbtListToInvItems(listData as IData) as IItemStack[] {
   return result;
 }
 
-addBackDisplay(<scannable:scanner>, function(item) {
+addBackDisplay(<scannable:scanner>, function (item) {
   if (
     isNull(item.tag)
     || isNull(item.tag.items)
     || isNull(item.tag.items.Items)
-  ) return null;
+  ) {
+    return null;
+  }
 
   // Count items
   var length = 0;
@@ -209,16 +218,18 @@ addBackDisplay(<scannable:scanner>, function(item) {
 /*
 Ender Letter
 */
-addBackDisplay(<randomthings:enderletter>, function(item) {
+addBackDisplay(<randomthings:enderletter>, function (item) {
   if (
     isNull(item.tag)
     || isNull(item.tag.EnderLetterContent)
-  ) return null;
+  ) {
+    return null;
+  }
 
   // Count items
   var length = 0;
   for i in 0 .. 9 {
-    val it = item.tag.EnderLetterContent.memberGet('slot'~i);
+    val it = item.tag.EnderLetterContent.memberGet('slot' ~ i);
     if (isNull(it?.id)) continue;
     length += 1;
   }
@@ -226,7 +237,7 @@ addBackDisplay(<randomthings:enderletter>, function(item) {
   var k = 0;
   val result = arrayOf(length, null as IItemStack) as IItemStack[];
   for i in 0 .. 9 {
-    val it = item.tag.EnderLetterContent.memberGet('slot'~i);
+    val it = item.tag.EnderLetterContent.memberGet('slot' ~ i);
     if (isNull(it?.id)) continue;
     result[k] = it.toItemStack();
     k += 1;
@@ -238,7 +249,7 @@ addBackDisplay(<randomthings:enderletter>, function(item) {
 /*
 Rubble
 */
-addBackDisplay(<my_precious:rubble>, function(item) {
+addBackDisplay(<my_precious:rubble>, function (item) {
   if (isNull(item.tag) || isNull(item.tag.StoredItem)) return null;
   return [item.tag.StoredItem.toItemStack()] as IItemStack[];
 });
@@ -248,7 +259,7 @@ Trinity Containers
 */
 addBackDisplay(
   <trinity:heavy_container:*> | <trinity:light_container:*> | <trinity:medium_container:*>,
-  function(item) {
+  function (item) {
     return nbtListToInvItems(item.tag?.Items);
   }
 );

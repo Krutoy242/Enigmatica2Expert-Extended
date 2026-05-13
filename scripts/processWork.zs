@@ -42,11 +42,11 @@ function getOption(options as IData, field as string) as IData {
 }
 
 function getOptionEnergy(options as IData, default as int) as int {
-  return (options?.energy?.asInt() ?? default) as int;
+  return options?.energy?.asInt() ?? default;
 }
 
 function getOptionTime(options as IData, default as int) as int {
-  return (options?.time?.asInt() ?? default) as int;
+  return options?.time?.asInt() ?? default;
 }
 
 // Picks one machine to inject recipe in it

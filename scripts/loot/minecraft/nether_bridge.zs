@@ -12,7 +12,7 @@ scripts.lib.loot.removePools(location,
 
 scripts.lib.loot.clearPool(location, 'main');
 scripts.lib.loot.addLootToPool(location, 'main', {
-  <mekanism:machineblock2:11>.withTag({tier: 0, mekData: {fluidTank: {FluidName: 'pyrotheum', Amount: 40000}}}): [20, 0, 1, 1],
+  <mekanism:machineblock2:11>.withTag({ tier: 0, mekData: { fluidTank: { FluidName: 'pyrotheum', Amount: 40000 } } }): [20, 0, 1, 1],
   <randomthings:lavacharm>             : [10, 0, 1, 1],
   <randomthings:obsidianskullring>     : [10, 0, 1, 1],
   <cyclicmagic:book_ender>             : [5,  3, 1, 1],
@@ -38,8 +38,8 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <nuclearcraft:californium:5>           : [1,  1, 1, 1],
   <advgenerators:turbine_kit_manyullyn>  : [10, 0, 1, 2],
 
-  <botania:brewvial>.withTag({brewKey: "fireResistance"}): [5,  2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "bloodthirst"})   : [5,  2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'fireResistance' }): [5,  2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'bloodthirst' })   : [5,  2, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.magicConsumables);

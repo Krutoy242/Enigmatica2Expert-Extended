@@ -41,8 +41,8 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <minecraft:deadbush>                        : [30,  0, 1, 3],
   <minecraft:rabbit_stew>                     : [25,  0, 1, 1],
 
-  <botania:brewvial>.withTag({brewKey: "warpWard"}): [5,  2, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "allure"})  : [5,  2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'warpWard' }): [5,  2, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'allure' })  : [5,  2, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.badFood);
 scripts.lib.loot.addLootToPool(location, 'pool1', scripts.loot.preMadeLoot.goodFood);

@@ -3,18 +3,14 @@
 #priority -6000
 #reloadable
 
-import crafttweaker.block.IBlock;
 import crafttweaker.block.IBlockState;
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
-import crafttweaker.entity.IEntity;
 import crafttweaker.world.IBlockPos;
-import native.net.minecraft.item.ItemStack;
 import mods.zenutils.StringList;
 import scripts.lib.purge.purge.purge;
-import scripts.do.portal_spread.utils.stateToItem;
 
 function giveChest(player as IPlayer, items as IItemStack[]) as void {
   var tag = {
@@ -34,7 +30,9 @@ function forEachBlockState(callback as function(IItemStack,IBlockState)void) as 
       // Blacklist because crashing otherwise
       item.id.startsWith('avaritiafurnace:')
       || item.id.startsWith('bithop:screwhop')
-    ) continue;
+    ) {
+      continue;
+    }
 
     var lastMeta = -1 as int; // Remember, -1 is not integer by default
     for sub in item.subItems { // Remember - .subItems return different values on server
@@ -82,12 +80,12 @@ function dumpOreBlocks() {
 }
 
 function dumpMiningLevelChart(world as IWorld, player as IPlayer, pos as IBlockPos) as void {
-  var totalStates as int[] = [0];
+  val totalStates as int[] = [0];
   player.sendMessage('§8Counting states...');
   forEachBlockState(function (item as IItemStack, state as IBlockState) as void {
     totalStates[0] = totalStates[0] + 1;
   });
-  player.sendMessage('§8Total: §6'~totalStates[0]~' §8looking...');
+  player.sendMessage('§8Total: §6' ~ totalStates[0] ~ ' §8looking...');
 
   val states as IBlockState[] = arrayOf(totalStates[0], null as IBlockState);
   val sorter = StringList.empty();
@@ -102,14 +100,14 @@ function dumpMiningLevelChart(world as IWorld, player as IPlayer, pos as IBlockP
     if (purge.isPurged(item)) return; // Purged
 
     states[sorter.size] = state;
-    sorter.add(state.commandString~':::'~sorter.size);
-    print('~~ found block: '~harvLevel~' '~state.commandString);
+    sorter.add(state.commandString ~ ':::' ~ sorter.size);
+    print('~~ found block: ' ~ harvLevel ~ ' ' ~ state.commandString);
   });
 
   val sorted = sorter.toArray();
   sorted.sort();
 
-  player.sendMessage('§8Building §6'~sorted.length~' §8entries...');
+  player.sendMessage('§8Building §6' ~ sorted.length ~ ' §8entries...');
   val stack = intArrayOf(100, 0);
   for str in sorted {
     val separator = str.indexOf(':::');
@@ -191,10 +189,10 @@ events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickB
     && !isNull(data.variables)
   ) {
     e.world.setBlockState(e.world.getBlockState(e.position),
-    data.deepUpdate(
-      { variables: { owner: "TrashboxBobylev", ownerUUID: "00c79cbd-42b7-4397-92ac-e269113e2d37" } },
-      mods.zenutils.DataUpdateOperation.MERGE)
-    , e.position);
+      data.deepUpdate(
+        { variables: { owner: 'TrashboxBobylev', ownerUUID: '00c79cbd-42b7-4397-92ac-e269113e2d37' } },
+        mods.zenutils.DataUpdateOperation.MERGE),
+      e.position);
     e.cancel();
     return;
   }

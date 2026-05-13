@@ -77,9 +77,9 @@ for char, aspect in emojiMap {
 
 static numberPattern as Pattern = Pattern.compile('^\\d+');
 
-global Aspects as function(string)CTAspectStack[] = function(aspects as string) as CTAspectStack[] {
+global Aspects as function(string)CTAspectStack[] = function (aspects as string) as CTAspectStack[] {
   val aStacks as string[] = aspects.trim().split('\\s+');
-  if (aStacks.length <= 0) return [] as CTAspectStack[];
+  if (aStacks.length <= 0) return [];
   val result = arrayOf(aStacks.length, null as CTAspectStack) as CTAspectStack[];
   for i, aStack in aStacks {
     if (aStack.length() < 1) {

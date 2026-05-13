@@ -1,6 +1,5 @@
 #modloaded advancedrocketry
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 
 scripts.lib.dropt.addDrop(<advancedrocketry:geode>, [<thermalfoundation:geode>]);
@@ -137,12 +136,12 @@ mods.thermalexpansion.EnervationDynamo.addFuel(<advancedrocketry:electricmushroo
 
 // Crystalls recycling
 val alienCrystals = [
-  {Violet: [<advancedrocketry:crystal:0>, <actuallyadditions:item_crystal_empowered:5>, <environmentaltech:kyronite_crystal>]},
-  {Green : [<advancedrocketry:crystal:2>, <actuallyadditions:item_crystal_empowered:4>, <environmentaltech:litherite_crystal>]},
-  {Orange: [<advancedrocketry:crystal:5>, <actuallyadditions:item_crystal_empowered:2>, <environmentaltech:erodium_crystal>]},
-  {Blue  : [<advancedrocketry:crystal:1>, <actuallyadditions:item_crystal_empowered:1>, <environmentaltech:pladium_crystal>]},
-  {Red   : [<advancedrocketry:crystal:3>, <actuallyadditions:item_crystal_empowered:0>, <environmentaltech:ionite_crystal>]},
-  {Yellow: [<advancedrocketry:crystal:4>, <actuallyadditions:item_crystal_empowered:3>, <environmentaltech:aethium_crystal>]},
+  { Violet: [<advancedrocketry:crystal:0>, <actuallyadditions:item_crystal_empowered:5>, <environmentaltech:kyronite_crystal>] },
+  { Green : [<advancedrocketry:crystal:2>, <actuallyadditions:item_crystal_empowered:4>, <environmentaltech:litherite_crystal>] },
+  { Orange: [<advancedrocketry:crystal:5>, <actuallyadditions:item_crystal_empowered:2>, <environmentaltech:erodium_crystal>] },
+  { Blue  : [<advancedrocketry:crystal:1>, <actuallyadditions:item_crystal_empowered:1>, <environmentaltech:pladium_crystal>] },
+  { Red   : [<advancedrocketry:crystal:3>, <actuallyadditions:item_crystal_empowered:0>, <environmentaltech:ionite_crystal>] },
+  { Yellow: [<advancedrocketry:crystal:4>, <actuallyadditions:item_crystal_empowered:3>, <environmentaltech:aethium_crystal>] },
 ] as IItemStack[][string][];
 
 for tier, alienCrystal in alienCrystals {
@@ -230,8 +229,12 @@ paBuilder100k.copy().timeRequired(10).input(<minecraft:glass> * 3).inputOre(<ore
 paBuilder100k.copy().timeRequired(10).input(<advancedrocketry:ic:1>).input(<advancedrocketry:spacestationchip>).outputItem(<advancedrocketry:elevatorchip>).build();
 paBuilder100k.copy().timeRequired(40).input(<thaumcraft:mechanism_complex> * 4).input(<enderio:item_material:19>).input(<rftoolsdim:dimlet_energy_module:2> * 2).outputItem(<rats:arcane_technology>).build();
 
-val rollingMachineBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('RollingMachine').builder()
-  .power(50000).timeRequired(15).inputLiquid(<liquid:lubricant> * 100);
+val rollingMachineBuilder = mods.advancedrocketry.RecipeTweaker
+  .forMachine('RollingMachine')
+  .builder()
+  .power(50000)
+  .timeRequired(15)
+  .inputLiquid(<liquid:lubricant> * 100);
 
 rollingMachineBuilder.copy().inputOre(<ore:blockIron>).outputItem(<libvulpes:productsheet:1> * 4).build();
 rollingMachineBuilder.copy().inputOre(<ore:ingotSilicon>).outputItem(<libvulpes:productplate:3> * 4).build();
@@ -254,8 +257,11 @@ scripts.process.alloy([<ore:blockDiamond>, <ore:blockRedstone> * 5], <ore:blockC
 scripts.process.alloy([<ore:ingotMagnesium> * 3, <ore:ingotBoron> * 6], <ore:ingotMagnesiumDiboride>.firstItem * 9, 'only: AdvRockArc');
 scripts.process.alloy([<ore:dustBorax>, <ore:itemSalt> * 4, <ore:plateCarbon>], <ore:ingotTitanium>.firstItem, 'only: AdvRockArc');
 
-val centrifugeBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('Centrifuge')
-  .builder().power(100000).timeRequired(20);
+val centrifugeBuilder = mods.advancedrocketry.RecipeTweaker
+  .forMachine('Centrifuge')
+  .builder()
+  .power(100000)
+  .timeRequired(20);
 
 centrifugeBuilder.copy()
   .inputLiquid(<fluid:enrichedlava> * 100)
@@ -270,8 +276,11 @@ centrifugeBuilder.copy()
   .outputs(<thaumcraft:curio> * 4, <thaumcraft:curio:2> * 4, <thaumcraft:curio:4> * 4, <thaumcraft:curio:5> * 2)
   .build();
 
-val latheBuilder = mods.advancedrocketry.RecipeTweaker.forMachine('Lathe')
-  .builder().power(100000).timeRequired(10);
+val latheBuilder = mods.advancedrocketry.RecipeTweaker
+  .forMachine('Lathe')
+  .builder()
+  .power(100000)
+  .timeRequired(10);
 
 latheBuilder.copy().inputOre(<ore:ingotCopper>).outputItem(<immersiveengineering:material:20> * 5).build();
 latheBuilder.copy().inputOre(<ore:ingotElectrum>).outputItem(<immersiveengineering:material:21> * 5).build();
@@ -293,10 +302,14 @@ arcFurnaceBuilder.copy().inputOre(<ore:blockTitanium>).inputOre(<ore:blockIridiu
 arcFurnaceBuilder.copy().inputOre(<ore:oreRutile>).outputItem(<libvulpes:productingot:7> * 4).power(100000).timeRequired(4).build();
 arcFurnaceBuilder.copy().inputOre(<ore:ingotBrick>).outputItem(<tcomplement:materials:1>).power(10000).timeRequired(4).build();
 
-mods.advancedrocketry.RecipeTweaker.forMachine('Electrolyser').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Electrolyser')
+  .builder()
   .inputLiquid(<liquid:water> * 10)
   .outputs(<liquid:oxygen> * 500, <liquid:hydrogen> * 500)
-  .power(100000).timeRequired(20).build();
+  .power(100000)
+  .timeRequired(20)
+  .build();
 
 craft.remake(<libvulpes:motor>, ['pretty',
   '  ■',
@@ -646,7 +659,9 @@ crystallizerBuilder_100k_200t.copy().input(<astralsorcery:itemrockcrystalsimple>
 crystallizerBuilder_100k_200t.copy().input(<astralsorcery:itemrockcrystalsimple>).input(<appliedenergistics2:material:3>).outputItem(<astralsorcery:blockgemcrystals:4>).build();
 
 // [Basic Circuit Plate] from [Graphite Ingot][+2]
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
   .inputOre(<ore:plateGold>)
   .inputOre(<ore:ingotGraphite>)
   .inputOre(<ore:waferSilicon>)
@@ -656,7 +671,9 @@ mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
   .build();
 
 // [Advanced Circuit Plate] from [Energetic Alloy Ingot][+2]
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionLaserEtcher').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionLaserEtcher')
+  .builder()
   .inputOre(<ore:circuitUltimate>)
   .inputOre(<ore:ingotEnergeticAlloy>)
   .inputOre(<ore:waferSilicon>)

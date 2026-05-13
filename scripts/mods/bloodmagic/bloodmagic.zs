@@ -14,28 +14,28 @@ import crafttweaker.item.IIngredient;
 <bloodmagic:sentient_armour_boots>.maxDamage = 1200;
 
 // Add JEI hint for custom Imperfect zombie feature
-var previevRitual as IItemStack = <littletiles:multitiles>.withTag({tiles: [{
-    bBox: [0, 0, 0, 1, 1, 1] as int[], tile: {block: "bloodmagic:ritual_stone"}
-  }, {
-    bBox: [0, 1, 0, 1, 2, 1] as int[], tile: {block: "minecraft:coal_block"}
-  }], min: [0, 0, 0] as int[], size: [1, 2, 1] as int[], grid: 1, count: 2});
+var previevRitual as IItemStack = <littletiles:multitiles>.withTag({ tiles: [{
+  bBox: [0, 0, 0, 1, 1, 1] as int[], tile: { block: 'bloodmagic:ritual_stone' },
+}, {
+  bBox: [0, 1, 0, 1, 2, 1] as int[], tile: { block: 'minecraft:coal_block' },
+}], min: [0, 0, 0] as int[], size: [1, 2, 1] as int[], grid: 1, count: 2 });
 scripts.jei.crafting_hints.fill(
   null,
   <liquid:lifeessence>,
   <scalinghealth:crystalshard> * 3,
-  isNull(previevRitual) ? <bloodmagic:ritual_stone>: previevRitual
+  isNull(previevRitual) ? <bloodmagic:ritual_stone> : previevRitual
 );
 
-previevRitual = <littletiles:multitiles>.withTag({tiles: [{
-    boxes: [[0, 0, 1, 1, 1, 2] as int[], [1, 0, 0, 2, 1, 1] as int[], [1, 0, 2, 2, 1, 3] as int[], [2, 0, 1, 3, 1, 2] as int[]], tile: {block: "bloodmagic:ritual_stone:2"}
-  }, {
-    bBox: [1, 0, 1, 2, 1, 2] as int[], tile: {block: "bloodmagic:ritual_stone"}
-  }], min: [0, 0, 0] as int[], size: [3, 1, 3] as int[], grid: 1, count: 5});
+previevRitual = <littletiles:multitiles>.withTag({ tiles: [{
+  boxes: [[0, 0, 1, 1, 1, 2] as int[], [1, 0, 0, 2, 1, 1] as int[], [1, 0, 2, 2, 1, 3] as int[], [2, 0, 1, 3, 1, 2] as int[]], tile: { block: 'bloodmagic:ritual_stone:2' },
+}, {
+  bBox: [1, 0, 1, 2, 1, 2] as int[], tile: { block: 'bloodmagic:ritual_stone' },
+}], min: [0, 0, 0] as int[], size: [3, 1, 3] as int[], grid: 1, count: 5 });
 <assembly:crafting_hints>.addJEIRecipe(mods.requious.AssemblyRecipe.create(function (c) {
   c.addFluidOutput('fluid_out', <fluid:pyrotheum> * 1000);
 })
   .requireFluid('fluid_in', <liquid:lifeessence> * 500)
-  .requireItem('input0', isNull(previevRitual) ? <bloodmagic:ritual_stone>: previevRitual)
+  .requireItem('input0', isNull(previevRitual) ? <bloodmagic:ritual_stone> : previevRitual)
 );
 
 // Blood Orb Oredicts
@@ -351,28 +351,28 @@ mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:component:26> * 4, [
   <thaumcraft:bath_salts>,
   <botania:manaresource:23>,
   <psi:material>,
-  ], 1000, 80, 2);
+], 1000, 80, 2);
 mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:component:26> * 16, [
   <thaumcraft:bath_salts>,
   <botania:manaresource:23>,
   <psi:material>,
   <thaumcraft:bath_salts>,
   <botania:manaresource:23>,
-  <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "oliveoil", Amount: 1000}})
-  ], 1000, 80, 2);
+  <rustic:fluid_bottle>.withTag({ Fluid: { FluidName: 'oliveoil', Amount: 1000 } }),
+], 1000, 80, 2);
 
-mods.bloodmagic.AlchemyTable.removeRecipe([<thermalfoundation:material:768>, <minecraft:gunpowder>, <minecraft:redstone>, <minecraft:sugar>, <bloodmagic:component:22>, <minecraft:potion>.withTag({Potion: "minecraft:water"})]);
+mods.bloodmagic.AlchemyTable.removeRecipe([<thermalfoundation:material:768>, <minecraft:gunpowder>, <minecraft:redstone>, <minecraft:sugar>, <bloodmagic:component:22>, <minecraft:potion>.withTag({ Potion: 'minecraft:water' })]);
 mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:cutting_fluid>, [
   <randomthings:ingredient:13>,
   <contenttweaker:nugget_phosphor>,
   <mechanics:fuel_dust_tiny>,
-  ], 1000, 80, 1);
+], 1000, 80, 1);
 
 // Neuro Toxin to require less Pufferfish
 mods.bloodmagic.AlchemyTable.removeRecipe([<minecraft:fish:3>]);
 mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:component:25> * 32, [
   <minecraft:fish:3>,
-  ], 1000, 100, 2);
+], 1000, 100, 2);
 
 // ///////////////////////////////////////////////////////////////////
 // Add cutting of any compressed block
@@ -383,7 +383,7 @@ mods.bloodmagic.AlchemyTable.addRecipe(<bloodmagic:cutting_fluid:1>, [
   <minecraft:gunpowder>,
   <minecraft:gunpowder>,
   <appliedenergistics2:material:45>,
-  ], 500, 60, 1);
+], 500, 60, 1);
 
 val compressions = [
   [
@@ -400,7 +400,7 @@ val compressions = [
   [
     [<minecraft:end_stone>, <excompressum:compressed_block:10>, <additionalcompression:endstone_compressed:1>, <additionalcompression:endstone_compressed:2>, <additionalcompression:endstone_compressed:3>, <additionalcompression:endstone_compressed:4>, <additionalcompression:endstone_compressed:5>, <additionalcompression:endstone_compressed:6>, <additionalcompression:endstone_compressed:7>, <additionalcompression:endstone_compressed:8>, <additionalcompression:endstone_compressed:9>],
     [<exnihilocreatio:block_endstone_crushed>, <excompressum:compressed_block:7>, <additionalcompression:gravelend_compressed:1>, <additionalcompression:gravelend_compressed:2>, <additionalcompression:gravelend_compressed:3>, <additionalcompression:gravelend_compressed:4>, <additionalcompression:gravelend_compressed:5>, <additionalcompression:gravelend_compressed:6>, <additionalcompression:gravelend_compressed:7>, <additionalcompression:gravelend_compressed:8>, <additionalcompression:gravelend_compressed:9>],
-  ]
+  ],
 ] as IItemStack[][][];
 
 for group in compressions {
@@ -423,7 +423,7 @@ for group in compressions {
 
 function magicAlloy(output as IItemStack, map as string, ingrs as IIngredient[string]) as void {
   ingrs['F'] = <bloodmagic:component:25>;
-  mods.bloodmagic.AlchemyTable.addRecipe(output, Grid([map+'F'], ingrs).shapeless(), 2000, 10, 3);
+  mods.bloodmagic.AlchemyTable.addRecipe(output, Grid([map + 'F'], ingrs).shapeless(), 2000, 10, 3);
 }
 
 /* Inject_js(
@@ -489,7 +489,7 @@ _.uniqBy([
     })
 
     return [
-      mapChars.length > 6 ? '//' : '  ',
+      mapChars.length > 6 ? '//' : '',
       `magicAlloy(`,
       outputDust.commandString,
       ...(r.output.items[0].amount == 1
@@ -497,7 +497,7 @@ _.uniqBy([
         : [` * `, r.output.items[0].amount]),
       `, '`,
       `${mapChars}',`,
-      `{${inputSerialized.join(', ')}});`,
+      `{ ${inputSerialized.join(', ')} });`,
     ]
   })
   .filter(Boolean)
@@ -518,7 +518,7 @@ _.uniqBy([
 /**/
 
 // Specially manually setted alloys
-magicAlloy(<advancedrocketry:productdust>   * 3, 'AAABB    ',{A: <thermalfoundation:material:68>, B: <libvulpes:productdust:7>});
+magicAlloy(<advancedrocketry:productdust>   * 3, 'AAABB    ',{ A: <thermalfoundation:material:68>, B: <libvulpes:productdust:7> });
 // ///////////////////////////////////////////////////////////////////
 // Sheets magic-only alt
 for oreBase in [
@@ -533,11 +533,11 @@ for oreBase in [
   mods.bloodmagic.AlchemyTable.addRecipe(oreDict.get('sheet' ~ oreBase).firstItem * 4, [
     <bloodmagic:cutting_fluid>,
     oreDict.get('block' ~ oreBase),
-    ], 1000, 80, 3);
+  ], 1000, 80, 3);
 }
 // ///////////////////////////////////////////////////////////////////
 // Allow Dispenser be used to activate rituals
-<bloodmagic:activation_crystal>.definition.addDispenserBehavior(function(source, item) {
+<bloodmagic:activation_crystal>.definition.addDispenserBehavior(function (source, item) {
   if (
     item.hasTag
     && !isNull(item.tag.binding)

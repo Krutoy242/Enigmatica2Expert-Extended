@@ -73,7 +73,9 @@ events.onEntityLivingAttacked(function (e as crafttweaker.event.EntityLivingAtta
     isNull(e.entity.definition)
     || isNull(e.entity.definition.id)
     || e.entity.definition.id != 'minecraft:giant'
-  ) return;
+  ) {
+    return;
+  }
 
   dumpMobDrops(player, e.damageSource);
 });
@@ -107,9 +109,13 @@ function dumpMobDrops(player as IPlayer, damageSource as IDamageSource) as void 
     });
 
     for i in 0 .. repeat {
-      cat.run(function (world, context) { spawnMobs(entity, x, y, z, size); }).sleep(sleep)
-        .run(function (world, context) { grindMobs(player, damageSource, x, y, z, size); }).sleep(sleep)
-        .run(function (world, context) { collectDrops(world, accumulator, x, y, z, size); }).sleep(sleep);
+      cat
+        .run(function (world, context) { spawnMobs(entity, x, y, z, size); })
+        .sleep(sleep)
+        .run(function (world, context) { grindMobs(player, damageSource, x, y, z, size); })
+        .sleep(sleep)
+        .run(function (world, context) { collectDrops(world, accumulator, x, y, z, size); })
+        .sleep(sleep);
     }
 
     // Output
@@ -166,9 +172,9 @@ function spawnMobs(origEntity as IEntity, x as int, y as int, z as int, size as 
     for xx in 0 .. cube {
       for zz in 0 .. cube {
         val pos
-            = ' ' ~ (x as double - size + bound + sideStep * xx) as float
-            ~ ' ' ~ (y as double - size + bound + sideStep * yy) as float
-            ~ ' ' ~ (z as double - size + bound + sideStep * zz) as float;
+          = ' ' ~ (x as double - size + bound + sideStep * xx) as float
+          ~ ' ' ~ (y as double - size + bound + sideStep * yy) as float
+          ~ ' ' ~ (z as double - size + bound + sideStep * zz) as float;
         server.commandManager.executeCommandSilent(origEntity, '/summon ' ~ origEntity.definition.id ~ pos);
 
         i += 1;
@@ -197,7 +203,8 @@ function collectDrops(world as IWorld, accumulator as int[string], x as float, y
     if (!isInside(item, x, y, z, size)) continue;
 
     val key = (item.item.isDamageable ? item.item.withDamage(0) : item.item)
-      .anyAmount().commandString;
+      .anyAmount()
+      .commandString;
 
     if (isNull(accumulator[key])) accumulator[key] = 0;
     accumulator[key] = accumulator[key] + item.item.amount;

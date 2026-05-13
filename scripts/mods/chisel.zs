@@ -223,7 +223,9 @@ for door in allDoors {
   if (
     door.definition.owner == 'forestry'
     || door.definition.owner == 'integrateddynamics'
-  ) continue;
+  ) {
+    continue;
+  }
   mods.thermalexpansion.Sawmill.removeRecipe(door);
 }
 

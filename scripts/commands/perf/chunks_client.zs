@@ -78,7 +78,7 @@ function getGroups(chunks as int[]) as int[][] {
   }
 
   // Gather score and indexes together to sort them
-  val sortedIndexes = sortArrayBy(neighbours, function(count as int, i as int) as string {
+  val sortedIndexes = sortArrayBy(neighbours, function (count as int, i as int) as string {
     return `${naturalInt(count)} ${naturalInt(1073741823 - chunks[i * 2])}:${naturalInt(1073741823 - chunks[i * 2 + 1])} ${i}`;
   });
 
@@ -119,7 +119,7 @@ function getGroupSize(
   val minMax = [x1, z1, x1, z1] as int[];
 
   var j = startIndex;
-  while (true) {
+  while true {
     if (j + 1 >= sortedChunks.length) return j;
 
     val nextIndex = sortedChunks[j + 1].split(' ')[2] as int;
@@ -169,13 +169,18 @@ zenClass Messenger {
     val isAnchored = isInclude(worldData.anchors, x, z);
     val isForced = isClaimed && claimedIndex % 2 == 0;
 
-    val color =
-      isForced && isLoadedByPlayer ? '§e'
-      : isForced ? '§6'
-      : isClaimed && isLoadedByPlayer ? '§b'
-      : isClaimed ? '§3'
-      : isLoadedByPlayer ? '§f'
-      : '§7';
+    val color
+      = isForced && isLoadedByPlayer
+        ? '§e'
+        : isForced
+          ? '§6'
+          : isClaimed && isLoadedByPlayer
+            ? '§b'
+            : isClaimed
+              ? '§3'
+              : isLoadedByPlayer
+                ? '§f'
+                : '§7';
 
     val symbol = isAnchored ? '▓' : '█';
 
@@ -203,7 +208,9 @@ zenClass Messenger {
         chunkPosArr[k * 2],
         chunkPosArr[k * 2 + 1],
         dist
-      )) return true;
+      )) {
+        return true;
+      }
     }
     return false;
   }
@@ -226,9 +233,9 @@ zenClass Messenger {
           ? '▐'
           : y == 0
             ? '╔'
-            : (y == height - 1)
-                ? '╚'
-                : '╟';
+            : y == height - 1
+              ? '╚'
+              : '╟';
       push(`${prefix}`, x1, v);
       for x in 0 .. width {
         val u = x + x1;

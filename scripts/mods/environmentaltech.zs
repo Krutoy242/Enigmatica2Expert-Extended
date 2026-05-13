@@ -53,7 +53,7 @@ craft.remake(<environmentaltech:lonsdaleite_crystal> * 10, ['pretty',
   '□    '], {
   'B': <randomthings:ingredient:13>,
   'a': <thermalfoundation:material:833>,
-  '*': <tconstruct:large_plate>.withTag({Material: "void_crystal"}),
+  '*': <tconstruct:large_plate>.withTag({ Material: 'void_crystal' }),
   '□': <ore:plateCarbon>,
 });
 
@@ -123,7 +123,7 @@ craft.remake(<environmentaltech:interconnect> * 2, ['pretty',
   '* C *',
   'C □ C',
   '* C *'], {
-  '*': <tconstruct:large_plate>.withTag({Material: "void_crystal"}),
+  '*': <tconstruct:large_plate>.withTag({ Material: 'void_crystal' }),
   'C': <environmentaltech:connector>,
   '□': <ore:plateMithril>,
 });
@@ -287,7 +287,7 @@ for i in 0 .. 6 {
   // -------------------------------------------
   evtIngrs['B'] = evt.crystal[i];
   evtIngrs['C'] = evtCores[i];
-  evtIngrs['P'] = (i == 0) ? evtIngrs.D : itemUtils.getItem(`environmentaltech:void_ore_miner_cont_${i}`);
+  evtIngrs['P'] = i == 0 ? evtIngrs.D : itemUtils.getItem(`environmentaltech:void_ore_miner_cont_${i}`);
   val void_miner = itemUtils.getItem(`environmentaltech:void_ore_miner_cont_${i + 1}`);
 
   if (i <= 2) {
@@ -356,7 +356,7 @@ for i in 0 .. 6 {
   // -------------------------------------------
   val solController = itemUtils.getItem(`environmentaltech:solar_cont_${i + 1}`);
   evtIngrs['_'] = <actuallyadditions:block_quartz_slab>;
-  evtIngrs['c'] = (i == 0) ? <actuallyadditions:block_crystal:1> : itemUtils.getItem(`environmentaltech:solar_cont_${i}`);
+  evtIngrs['c'] = i == 0 ? <actuallyadditions:block_crystal:1> : itemUtils.getItem(`environmentaltech:solar_cont_${i}`);
   evtIngrs['▄'] = <ore:blockQuartzBlack>;
   evtIngrs['▆'] = <extendedcrafting:storage>;
   evtIngrs['█'] = <actuallyadditions:block_crystal_empowered:3>;

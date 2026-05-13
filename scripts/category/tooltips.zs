@@ -68,20 +68,20 @@ for item in [
   <immersivetech:stone_decoration>,
   <oeintegration:excavatemodifier>,
   <openblocks:tank>,
-  <openblocks:trophy>.withTag({entity_id:'minecraft:blaze'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:cave_spider'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:cow'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:creeper'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:elder_guardian'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:enderman'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:evocation_illager'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:llama'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:mooshroom'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:shulker'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:skeleton'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:snowman'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:squid'}),
-  <openblocks:trophy>.withTag({entity_id:'minecraft:witch'}),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:blaze' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:cave_spider' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:cow' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:creeper' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:elder_guardian' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:enderman' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:evocation_illager' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:llama' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:mooshroom' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:shulker' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:skeleton' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:snowman' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:squid' }),
+  <openblocks:trophy>.withTag({ entity_id:'minecraft:witch' }),
   <opencomputers:print>,
   <quark:archaeologist_hat>,
   <quark:chain>,
@@ -192,8 +192,8 @@ desc.both(<mekanism:tierinstaller:3>, 'mekanism_t_ultimate');
 scripts.lib.tooltip.desc.both(<tombmanygraves:death_list>, 'dropper_into_world');
 
 desc.tooltip(<industrialforegoing:mob_relocator>, 'industrialforegoing:mob_relocator',
-/* Inject_js(config('config/industrialforegoing.cfg').machines.mob_relocator.damage) */
-100
+/* Inject_js('  ' + config('config/industrialforegoing.cfg').machines.mob_relocator.damage) */
+  100
 /**/
 );
 

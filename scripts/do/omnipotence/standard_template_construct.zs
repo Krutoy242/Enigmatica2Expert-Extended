@@ -115,7 +115,7 @@ function getPortableCellItems() as [IItemStack] {
     <appliedenergistics2:part:516>,
     <nae2:storage_cell_16384k>,
     <nae2:storage_cell_fluid_16384k>,
-  ] as [IItemStack];
+  ];
 }
 
 function getPortableCell() as IItemStack {

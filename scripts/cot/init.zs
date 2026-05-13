@@ -9,10 +9,6 @@ import mods.contenttweaker.ItemFood;
 import mods.contenttweaker.MaterialSystem;
 import mods.contenttweaker.SoundType;
 import mods.contenttweaker.VanillaFactory;
-import crafttweaker.block.IBlockState;
-import crafttweaker.world.IBlockPos;
-import mods.contenttweaker.BlockPos;
-import mods.contenttweaker.World;
 
 mods.contenttweaker.VanillaFactory.createCreativeTab('other', <item:minecraft:coal:1>).register();
 
@@ -352,13 +348,12 @@ mm.register();
 // Tile Entities
 // -------------------------------
 
-
 // Tile Entity that replace itselt with Bedrock Ore
 // to create Bedrock Ores using block string ID instead of numericalID
-var te = VanillaFactory.createActualTileEntity(1);
+val te = VanillaFactory.createActualTileEntity(1);
 te.register();
 
-var exBlock = VanillaFactory.createExpandBlock('bedrockore', <blockmaterial:rock>);
+val exBlock = VanillaFactory.createExpandBlock('bedrockore', <blockmaterial:rock>);
 exBlock.tileEntity = te;
 exBlock.blockHardness = -1.00;
 exBlock.blockResistance = 18000000.00;

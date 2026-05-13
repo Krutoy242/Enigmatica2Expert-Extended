@@ -25,7 +25,7 @@ scripts.lib.loot.tweak('randomthings:beanpod', 'Diamond', 'minecraft:diamond', n
   <biomesoplenty:gem:3>,
   <biomesoplenty:gem:4>,
   <biomesoplenty:gem:5>,
-  <biomesoplenty:gem:6>
+  <biomesoplenty:gem:6>,
 ], [0,1]);
 
 // NuclearCraft -> Random Things Glowing Mushroom
@@ -359,30 +359,30 @@ mods.roidtweaker.randomthings.Imbuing.addRecipe(
   <randomthings:imbue>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
   [<actuallyadditions:item_misc:11>,
-  <tconstruct:edible:4>,
-  <actuallyadditions:item_misc:10>,
-]);
+    <tconstruct:edible:4>,
+    <actuallyadditions:item_misc:10>,
+  ]);
 mods.roidtweaker.randomthings.Imbuing.addRecipe(
   <randomthings:imbue:1>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
   [<minecraft:red_mushroom>,
-  <minecraft:potato>,
-  <minecraft:brown_mushroom>,
-]);
+    <minecraft:potato>,
+    <minecraft:brown_mushroom>,
+  ]);
 mods.roidtweaker.randomthings.Imbuing.addRecipe(
   <randomthings:imbue:2>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
   [<randomthings:beans>,
-  <minecraft:dye:4>,
-  <minecraft:glowstone_dust>,
-]);
+    <minecraft:dye:4>,
+    <minecraft:glowstone_dust>,
+  ]);
 mods.roidtweaker.randomthings.Imbuing.addRecipe(
   <randomthings:imbue:3>,
   <minecraft:potion>.withTag({ Potion: 'minecraft:water' }),
   [<minecraft:netherbrick>,
-  <iceandfire:wither_shard>,
-  <minecraft:soul_sand>,
-]);
+    <iceandfire:wither_shard>,
+    <minecraft:soul_sand>,
+  ]);
 
 // [Sound Box] from [Citrus Wood Planks]*6[+1]
 craft.remake(<randomthings:soundbox>, ['pretty',
@@ -541,7 +541,7 @@ scripts.mods.forestry.ThermionicFabricator.addCast(<randomthings:biomeglass> * 8
 for i in 0 .. 5 {
   val stone = <randomthings:biomestone>.definition.makeStack(i);
   recipes.remove(stone);
-  if (i==0) continue;
+  if (i == 0) continue;
   mods.chisel.Carving.addVariation('biome_stone', stone);
 }
 furnace.addRecipe(<randomthings:biomestone:1>, <randomthings:biomestone>, 0.5);

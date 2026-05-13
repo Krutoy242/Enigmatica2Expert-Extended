@@ -111,16 +111,16 @@ recipes.addShapedMirrored('Black Hole Controller', <industrialforegoing:black_ho
 // Machine Case
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <teslacorelib:machine_case>, ['pretty',
-  'Q ■ Q',
-  '■ ▄ ■',
-  'Q ■ Q'], {
-  'Q': <ic2:resource:11>,
-  '■': <ore:itemRubber>,
-  '▄': <ore:machineBlockAdvanced>,
-}, 3, {
-  'Q': <extrautils2:decorativesolid:7>,
-  '■': <mekanism:plasticblock:15>,
-});
+    'Q ■ Q',
+    '■ ▄ ■',
+    'Q ■ Q'], {
+    'Q': <ic2:resource:11>,
+    '■': <ore:itemRubber>,
+    '▄': <ore:machineBlockAdvanced>,
+  }, 3, {
+    'Q': <extrautils2:decorativesolid:7>,
+    '■': <mekanism:plasticblock:15>,
+  });
 
 // Harder since doesnt require complicated setup and easy to supply
 craft.remake(<industrialforegoing:mob_duplicator>, ['pretty',
@@ -138,8 +138,8 @@ craft.remake(<industrialforegoing:mob_duplicator>, ['pretty',
   'f': <industrialforegoing:fertilizer>,
   '▬': <ore:ingotGold198>,
   'R': <industrialforegoing:laser_lens:*>,
-  's': <contenttweaker:ball_singularity>.withTag({completed: 1 as byte}),
-  'i': <contenttweaker:machine_case_singularity>.withTag({completed: 1 as byte}),
+  's': <contenttweaker:ball_singularity>.withTag({ completed: 1 as byte }),
+  'i': <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte }),
 });
 
 // [Laser Drill] from [Machine Frame][+4]
@@ -233,17 +233,17 @@ remake('Mob Crusher 2',   <industrialforegoing:mob_relocator>, [
 // Harder Essence-Infused Ingot
 mods.industrialforegoing.FluidSievingMachine.remove(<tconevo:metal:15>);
 mods.tconstruct.Alloy.addRecipe(<liquid:essence_metal> * 144, [
-  <liquid:if.ore_fluid_fermented>.withTag({Ore: "oreTitanium"}) * 300,
+  <liquid:if.ore_fluid_fermented>.withTag({ Ore: 'oreTitanium' }) * 300,
   <liquid:empoweredoil> * 250,
   <liquid:essence> * 160,
 ]);
 mods.tconstruct.Alloy.addRecipe(<liquid:essence_metal> * 144, [
-  <liquid:if.ore_fluid_fermented>.withTag({Ore: "oreTitanium"}) * 300,
+  <liquid:if.ore_fluid_fermented>.withTag({ Ore: 'oreTitanium' }) * 300,
   <liquid:empoweredoil> * 250,
   <liquid:experience> * 160,
 ]);
 mods.tconstruct.Alloy.addRecipe(<liquid:essence_metal> * 144, [
-  <liquid:if.ore_fluid_fermented>.withTag({Ore: "oreTitanium"}) * 300,
+  <liquid:if.ore_fluid_fermented>.withTag({ Ore: 'oreTitanium' }) * 300,
   <liquid:empoweredoil> * 250,
   <liquid:xpjuice> * 160,
 ]);
@@ -435,10 +435,14 @@ cleanupBenification(<libvulpes:ore0:8>, <libvulpes:productingot:7>, <libvulpes:p
 
 // Peaceful alt
 mods.rustic.EvaporatingBasin.addRecipe(<industrialforegoing:pink_slime>, <liquid:if.pink_slime> * 1000, 30 * 20);
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .outputs(<industrialforegoing:pink_slime> * 16)
   .input(<fluid:if.pink_slime> * 16000)
-  .power(30000).timeRequired(10).build();
+  .power(30000)
+  .timeRequired(10)
+  .build();
 
 // [White Laser Lens] from [Purple Dye][+3]
 for i, dye in scripts.vars.oreDye {
@@ -463,7 +467,7 @@ craft.remake(<industrialforegoing:wither_builder>, ['pretty',
   'D C D',
   'f f f'], {
   'R': <industrialforegoing:plastic>,
-  '~': LiquidIngr("if.protein"),
+  '~': LiquidIngr('if.protein'),
   'D': <iceandfire:dragon_ice_spikes>,
   'C': <teslacorelib:machine_case>,
   'f': <industrialforegoing:fertilizer>,
@@ -473,7 +477,7 @@ craft.remake(<industrialforegoing:villager_trade_exchanger>, ['pretty',
   '* C *',
   'R ¤ R'], {
   'R': <industrialforegoing:plastic>,
-  '~': LiquidIngr("if.protein"),
+  '~': LiquidIngr('if.protein'),
   '*': <ore:crystalEmeraldic>,
   'C': <teslacorelib:machine_case>,
   '¤': <ore:gearGold>,

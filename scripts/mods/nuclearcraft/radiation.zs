@@ -9,21 +9,22 @@ if (!native.nc.config.NCConfig.radiation_enabled_public) {
   Purge(<nuclearcraft:chest_hazmat>);
   Purge(<nuclearcraft:legs_hazmat>);
   Purge(<nuclearcraft:boots_hazmat>);
-} else {
-  # Way cheaper since radiation choking
-  # [Radiation Scrubber] from [Graphite Block][+2]
-  craft.remake(<nuclearcraft:radiation_scrubber>, ["pretty",
-    "□ ▲ □",
-    "▲ ■ ▲",
-    "□ ▲ □"], {
-    "□": <ore:plateBasic>,
-    "▲": <ore:dustVilliaumite>,
-    "■": <ore:blockGraphite>,
+}
+else {
+  // Way cheaper since radiation choking
+  // [Radiation Scrubber] from [Graphite Block][+2]
+  craft.remake(<nuclearcraft:radiation_scrubber>, ['pretty',
+    '□ ▲ □',
+    '▲ ■ ▲',
+    '□ ▲ □'], {
+    '□': <ore:plateBasic>,
+    '▲': <ore:dustVilliaumite>,
+    '■': <ore:blockGraphite>,
   });
 
-  # --------------------------------------------------------------
-  # Radiation Shielding recipes
-  # --------------------------------------------------------------
+  // --------------------------------------------------------------
+  // Radiation Shielding recipes
+  // --------------------------------------------------------------
   if (!isNull(loadedMods['conarm'])) {
     val armorPieces = [
       <conarm:helmet:*>,
@@ -40,18 +41,18 @@ if (!native.nc.config.NCConfig.radiation_enabled_public) {
       val resistance = 0.03 * pow(10.0, i as double);
       val updFn = getUpdateFn(resistance);
       for armor in armorPieces {
-        recipes.addShapeless('RadResist '~i~' '~armor.name,
-          armor.withDamage(0).updateTag({ncRadiationResistance: resistance}),
+        recipes.addShapeless('RadResist ' ~ i ~ ' ' ~ armor.name,
+          armor.withDamage(0).updateTag({ ncRadiationResistance: resistance }),
           [armor.marked(''), plate], updFn, null
         );
       }
     }
   }
-  # --------------------------------------------------------------
+  // --------------------------------------------------------------
 
-  # Radiation mutations
-  # Sadly, radiation mutations works really laggy and cant
-  #   be implemented in heavy modpacks...
+  // Radiation mutations
+  // Sadly, radiation mutations works really laggy and cant
+  //   be implemented in heavy modpacks...
   // for threshold, pair in {
   //   0.05d: {
   //     <ore:dirt> | <ore:grass> | <ore:gravel>: <nuclearcraft:wasteland_earth>,
@@ -69,55 +70,55 @@ if (!native.nc.config.NCConfig.radiation_enabled_public) {
   //   }
   // }
 
-  # --------------------------------------------------------------
-  # [Hazmat Suit Headwear] from [Leather Cap][+2]
-  recipes.removeByRecipeName("nuclearcraft:helm_hazmat");
-  craft.make(<nuclearcraft:helm_hazmat>, ["pretty",
-    "d d d",
-    "M L M"], {
-    "d": <ore:dyeYellow>,    # Floral Yellow Powder
-    "M": <nuclearcraft:rad_shielding:1>, # Medium Radiation Shielding
-    "L": <minecraft:leather_helmet>.anyDamage(), # Leather Cap
+  // --------------------------------------------------------------
+  // [Hazmat Suit Headwear] from [Leather Cap][+2]
+  recipes.removeByRecipeName('nuclearcraft:helm_hazmat');
+  craft.make(<nuclearcraft:helm_hazmat>, ['pretty',
+    'd d d',
+    'M L M'], {
+    'd': <ore:dyeYellow>,    // Floral Yellow Powder
+    'M': <nuclearcraft:rad_shielding:1>, // Medium Radiation Shielding
+    'L': <minecraft:leather_helmet>.anyDamage(), // Leather Cap
   });
 
-  # [Hazmat Suit Chestpiece] from [Leather Tunic][+2]
-  recipes.removeByRecipeName("nuclearcraft:chest_hazmat");
-  craft.make(<nuclearcraft:chest_hazmat>, ["pretty",
-    "d d d",
-    "M L M"], {
-    "d": <ore:dyeYellow>,    # Floral Yellow Powder
-    "M": <nuclearcraft:rad_shielding:1>, # Medium Radiation Shielding
-    "L": <minecraft:leather_chestplate>.anyDamage(), # Leather Tunic
+  // [Hazmat Suit Chestpiece] from [Leather Tunic][+2]
+  recipes.removeByRecipeName('nuclearcraft:chest_hazmat');
+  craft.make(<nuclearcraft:chest_hazmat>, ['pretty',
+    'd d d',
+    'M L M'], {
+    'd': <ore:dyeYellow>,    // Floral Yellow Powder
+    'M': <nuclearcraft:rad_shielding:1>, // Medium Radiation Shielding
+    'L': <minecraft:leather_chestplate>.anyDamage(), // Leather Tunic
   });
 
-  # [Hazmat Suit Leggings] from [Leather Pants][+2]
-  recipes.removeByRecipeName("nuclearcraft:legs_hazmat");
-  craft.make(<nuclearcraft:legs_hazmat>, ["pretty",
-    "d d d",
-    "M L M"], {
-    "d": <ore:dyeYellow>,    # Floral Yellow Powder
-    "M": <nuclearcraft:rad_shielding:1>, # Medium Radiation Shielding
-    "L": <minecraft:leather_leggings>.anyDamage(), # Leather Pants
+  // [Hazmat Suit Leggings] from [Leather Pants][+2]
+  recipes.removeByRecipeName('nuclearcraft:legs_hazmat');
+  craft.make(<nuclearcraft:legs_hazmat>, ['pretty',
+    'd d d',
+    'M L M'], {
+    'd': <ore:dyeYellow>,    // Floral Yellow Powder
+    'M': <nuclearcraft:rad_shielding:1>, // Medium Radiation Shielding
+    'L': <minecraft:leather_leggings>.anyDamage(), // Leather Pants
   });
 
-  # [Hazmat Suit Boots] from [Leather Boots][+2]
-  recipes.removeByRecipeName("nuclearcraft:boots_hazmat");
-  craft.make(<nuclearcraft:boots_hazmat>, ["pretty",
-    "d d d",
-    "M L M"], {
-    "d": <ore:dyeYellow>,    # Floral Yellow Powder
-    "M": <nuclearcraft:rad_shielding:1>, # Medium Radiation Shielding
-    "L": <minecraft:leather_boots>.anyDamage(), # Leather Boots
+  // [Hazmat Suit Boots] from [Leather Boots][+2]
+  recipes.removeByRecipeName('nuclearcraft:boots_hazmat');
+  craft.make(<nuclearcraft:boots_hazmat>, ['pretty',
+    'd d d',
+    'M L M'], {
+    'd': <ore:dyeYellow>,    // Floral Yellow Powder
+    'M': <nuclearcraft:rad_shielding:1>, // Medium Radiation Shielding
+    'L': <minecraft:leather_boots>.anyDamage(), // Leather Boots
   });
 }
 
 function getUpdateFn(resistance as double) as crafttweaker.recipes.IRecipeFunction {
-  return function(out, ins, cInfo) {
+  return function (out, ins, cInfo) {
     if (isNull(ins)) return out;
     for mark, item in ins {
       if (isNull(item)) continue;
-      return item.updateTag({ncRadiationResistance: resistance});
+      return item.updateTag({ ncRadiationResistance: resistance });
     }
     return out;
-  } as crafttweaker.recipes.IRecipeFunction;
+  };
 }

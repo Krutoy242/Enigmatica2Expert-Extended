@@ -41,8 +41,8 @@ events.register(function (e as native.com.feed_the_beast.ftblib.events.universe.
 
     CASES.put(tierName, Case(
       tierName,
-      {en_us: tierName} as string[string],
-      {en_us: tierName} as string[string],
+      { en_us: tierName } as string[string],
+      { en_us: tierName } as string[string],
       16711761,
       slots
     ));

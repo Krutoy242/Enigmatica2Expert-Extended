@@ -21,7 +21,8 @@ function hashedAspect(tier as int, hash as int) as CTAspectStack {
 }
 
 static agglMultiblock as AgglomerationMultiblock = AgglomerationMultiblock
-  .create().checker(<twilightforest:aurora_block>, <minecraft:diamond_block>)
+  .create()
+  .checker(<twilightforest:aurora_block>, <minecraft:diamond_block>)
   .edgeReplace(<tconstruct:metal>);
 
 // Helper Transmutation for Cobalt -> Diamond

@@ -9,9 +9,9 @@ val fishing = {
     <mysticalagriculture:chunk:17>: 0.5,
     <ic2:dust:16>: 0.5,
     <mysticalagriculture:fire_essence>: 0.5,
-    <thaumcraft:crystal_essence>.withTag({Aspects: [{amount: 1, key: "ignis"}]}): 0.5,
+    <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'ignis' }] }): 0.5,
     <quark:soul_bead>: 0.5,
-    <tconstruct:shard>.withTag({Material: "fierymetal"}): 0.2,
+    <tconstruct:shard>.withTag({ Material: 'fierymetal' }): 0.2,
   },
   <fluid:cheese>: {
     <rats:token_piece>: 0.2,

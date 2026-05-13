@@ -7,7 +7,6 @@ Configure harvest level and hardness/resistance progression of blocks
 #priority -1000
 
 import crafttweaker.item.IIngredient;
-import crafttweaker.block.IBlockDefinition;
 import crafttweaker.item.IItemStack;
 
 function isWildcarded(item as IItemStack) as bool {
@@ -16,7 +15,7 @@ function isWildcarded(item as IItemStack) as bool {
 
 function warnItem(item as IItemStack, text as string) as void {
   if (!utils.DEBUG) return;
-  logger.logWarning('§3┌ §8'~text~':\n§3└ §6'~item.commandString~' §8"§7'~item.displayName~'§8"');
+  logger.logWarning('§3┌ §8' ~ text ~ ':\n§3└ §6' ~ item.commandString ~ ' §8"§7' ~ item.displayName ~ '§8"');
 }
 
 function set(level as int, tool as string, ingr as IIngredient, hardness as int = -1, supressHardnessWarn as bool = false) as bool {
@@ -36,16 +35,17 @@ function set(level as int, tool as string, ingr as IIngredient, hardness as int 
     }
 
     val def = state.block.definition;
-    print('Setting harvest level for <'~def.id~':'~item.damage~'> "'~tool~'" '~level~' ['~hardness~']');
+    print('Setting harvest level for <' ~ def.id ~ ':' ~ item.damage ~ '> "' ~ tool ~ '" ' ~ level ~ ' [' ~ hardness ~ ']');
 
     if (isWildcarded(item)) {
       def.setHarvestLevel(tool, level);
-    } else {
+    }
+    else {
       def.setHarvestLevel(tool, level, state);
       if (hardness >= 0 && !supressHardnessWarn) {
         val statesCount = def.native.blockState.validStates.length;
         if (statesCount > 1)
-          warnItem(item, 'Trying to rewrite hardness §3'~def.hardness~'→'~hardness~' §8for block with §5'~statesCount~' §8states');
+          warnItem(item, 'Trying to rewrite hardness §3' ~ def.hardness ~ '→' ~ hardness ~ ' §8for block with §5' ~ statesCount ~ ' §8states');
       }
     }
     if (hardness >= 0) {

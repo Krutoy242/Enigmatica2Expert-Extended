@@ -15,7 +15,6 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.entity.IEntityItem;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
-import crafttweaker.event.PlayerLoggedInEvent;
 import native.net.minecraft.world.gen.ChunkProviderServer;
 import native.net.minecraft.world.chunk.Chunk;
 
@@ -33,13 +32,15 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
     || e.phase != 'END'
     || (e.world.dimension != 122 && e.world.dimension != 123)
     || e.world.worldInfo.worldTotalTime % 40 != 0
-  ) return;
+  ) {
+    return;
+  }
 
   val chunkProvider = e.world.native.getChunkProvider() as ChunkProviderServer;
   val loadedChunks as [Chunk] = chunkProvider.getLoadedChunks();
   val rnd = e.world.random;
   for chunk in loadedChunks {
-    if(rnd.nextDouble() > METEOR_CHANCE) continue;
+    if (rnd.nextDouble() > METEOR_CHANCE) continue;
     trySpawnMeteor(e.world, chunk.x * 16, chunk.z * 16);
   }
 });
@@ -47,7 +48,7 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
 function trySpawnMeteor(world as IWorld, x as int, z as int) as void {
   val meteorCatalyst = meteorCatalystForDimension[world.dimension];
   if (isNull(meteorCatalyst)) return;
-  
+
   val spread = 16;
   val rndPos = IBlockPos.create(
     x + world.random.nextInt(-spread, spread),
@@ -62,7 +63,9 @@ function trySpawnMeteor(world as IWorld, x as int, z as int) as void {
     || !world.isBlockLoaded(rndPos.west(16))
     || !world.isBlockLoaded(rndPos.north(16))
     || !world.isBlockLoaded(rndPos.south(16))
-  ) return;
+  ) {
+    return;
+  }
 
   spawnMeteor(world, rndPos, meteorCatalyst);
 }
@@ -106,7 +109,7 @@ static autoRemoveItems as IItemDefinition[][int] = {
 } as IItemDefinition[][int];
 
 // Remove items spawned by meteor hitting the ground
-events.onEntityJoinWorld(function(e as crafttweaker.event.EntityJoinWorldEvent) {
+events.onEntityJoinWorld(function (e as crafttweaker.event.EntityJoinWorldEvent) {
   if (e.world.remote) return;
   val blacklist = autoRemoveItems[e.world.dimension];
   if (isNull(blacklist)) return;

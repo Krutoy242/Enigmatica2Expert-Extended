@@ -32,12 +32,12 @@ recipes.addShapeless(<biomesoplenty:hive:1>, [<biomesoplenty:hive:2>, <biomesopl
 
 // "Meat"
 val rawMeat = [
-  (<harvestcraft:turkeyrawitem>) % 5,
-  (<minecraft:mutton> % 10),
-  (<minecraft:rabbit> % 5),
-  (<minecraft:chicken> % 10),
-  (<minecraft:porkchop> % 10),
-  (<minecraft:beef> % 10),
+  <harvestcraft:turkeyrawitem> % 5,
+  <minecraft:mutton> % 10,
+  <minecraft:rabbit> % 5,
+  <minecraft:chicken> % 10,
+  <minecraft:porkchop> % 10,
+  <minecraft:beef> % 10,
   <harvestcraft:venisonrawitem> % 5,
   <harvestcraft:duckrawitem> % 5,
   <rats:raw_rat> % 5,
@@ -50,8 +50,8 @@ mods.thermalexpansion.Centrifuge.addRecipe([rawMeat[0], rawMeat[1], rawMeat[2], 
 scripts.process.melt(<biomesoplenty:fleshchunk>, <liquid:blood> * 20);
 
 // Honey Block -> Honey Drop
-mods.forestry.Centrifuge.addRecipe([(<forestry:honey_drop> * 5) % 80, (<thermalfoundation:material:99> % 25), (<thermalfoundation:material:100> % 25)], <biomesoplenty:honey_block>, 100);
-mods.thermalexpansion.Centrifuge.addRecipe([(<forestry:honey_drop>) * 5 % 80, <thermalfoundation:material:99> % 25, <thermalfoundation:material:100> % 25], <biomesoplenty:honey_block>, null, 2000);
+mods.forestry.Centrifuge.addRecipe([(<forestry:honey_drop> * 5) % 80, <thermalfoundation:material:99> % 25, <thermalfoundation:material:100> % 25], <biomesoplenty:honey_block>, 100);
+mods.thermalexpansion.Centrifuge.addRecipe([<forestry:honey_drop> * 5 % 80, <thermalfoundation:material:99> % 25, <thermalfoundation:material:100> % 25], <biomesoplenty:honey_block>, null, 2000);
 
 // Ender Amethyst
 recipes.addShaped('Ender Amethyst',

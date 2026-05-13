@@ -23,7 +23,7 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <rats:rat_flute>                                                       : [5,   0, 1, 1],
   <quark:archaeologist_hat>                                              : [5,   0, 1, 1],
   <botania:thirdeye>                                                     : [1,   1, 1, 1],
-  <forge:bucketfilled>.withTag({FluidName: 'liquid_death', Amount: 1000}): [5,   0, 1, 1],
+  <forge:bucketfilled>.withTag({ FluidName: 'liquid_death', Amount: 1000 }): [5,   0, 1, 1],
   <animus:kama_bound>                                                    : [1,   1, 1, 1],
   <thaumadditions:cake>                                                  : [5,   0, 1, 1],
   <rats:purifying_liquid>                                                : [5,   0, 1, 1],
@@ -31,8 +31,8 @@ scripts.lib.loot.addLootToPool(location, 'main', {
   <eyeofdragons:eye_of_firedragon>                                       : [5,   0, 1, 1],
   <botania:overgrowthseed>                                               : [10,  0, 1, 2],
 
-  <botania:brewvial>.withTag({brewKey: "jumpBoost"}): [1,   1, 1, 1],
-  <botania:brewvial>.withTag({brewKey: "regen"})    : [1,   1, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'jumpBoost' }): [1,   1, 1, 1],
+  <botania:brewvial>.withTag({ brewKey: 'regen' })    : [1,   1, 1, 1],
 });
 scripts.lib.loot.addLootToPool(location, 'main', scripts.loot.preMadeLoot.baubles);
 scripts.lib.loot.addAncientTomes(location, 'main', 52);

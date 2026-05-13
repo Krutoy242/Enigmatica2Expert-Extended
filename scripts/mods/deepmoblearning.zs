@@ -26,7 +26,7 @@ remakeEx(<deepmoblearning:simulation_chamber>, [
   [<ore:gearEmerald>, <mekanism:glowpanel:6>, <ore:gearEmerald>],
   [<extrautils2:decorativesolid:7>, <deepmoblearning:machine_casing>, <extrautils2:decorativesolid:7>]]);
 
-craft.reshapeless(<patchouli:guide_book>.withTag({"patchouli:book": "deepmoblearning:book"}), 'AB', {
+craft.reshapeless(<patchouli:guide_book>.withTag({ 'patchouli:book': 'deepmoblearning:book' }), 'AB', {
   A: <minecraft:book>,
   B: <psi:material:3>,
 });
@@ -41,15 +41,15 @@ craft.remake(<deepmoblearning:deep_learner>, ['pretty',
   'S': <psi:material:3>,
 });
 
-# [Soot-covered Machine Casing]*2 from [3D Print][+3]
-craft.remake(<deepmoblearning:machine_casing> * 2, ["pretty",
-  "□ п □",
-  "□ 3 □",
-  "□ ■ □"], {
-  "□": <deepmoblearning:soot_covered_plate>, # Soot-covered Plate
-  "п": <tconstruct:large_plate>.withTag({Material: "manyullyn"}), # Manyullyn Large Plate
-  "3": <enderio:item_basic_capacitor:1>,
-  "■": <ore:blockBlackIron>,                 # Block of Black Iron
+// [Soot-covered Machine Casing]*2 from [3D Print][+3]
+craft.remake(<deepmoblearning:machine_casing> * 2, ['pretty',
+  '□ п □',
+  '□ 3 □',
+  '□ ■ □'], {
+  '□': <deepmoblearning:soot_covered_plate>, // Soot-covered Plate
+  'п': <tconstruct:large_plate>.withTag({ Material: 'manyullyn' }), // Manyullyn Large Plate
+  '3': <enderio:item_basic_capacitor:1>,
+  '■': <ore:blockBlackIron>,                 // Block of Black Iron
 });
 
 recipes.remove(<deepmoblearning:polymer_clay> * 16);

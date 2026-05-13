@@ -12,7 +12,9 @@ function getItemMatAmount(item as IItemStack, lookup as string, durabLeft as int
     || isNull(item.tag.TinkerData)
     || isNull(item.tag.TinkerData.Materials)
     || isNull(item.tag.TinkerData.Materials.asList())
-  ) return 0;
+  ) {
+    return 0;
+  }
   if (item.maxDamage - item.damage <= durabLeft) return 0;
 
   var level = 0;

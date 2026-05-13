@@ -163,7 +163,7 @@ function createRecipe(setData as IData, setId as string, pieceN as int, ingrs as
 function armGridExtra(n as int, mat as IIngredient, extra as IIngredient, prev as IData) as IIngredient[][] {
   val prevReal = getSetPiece(prev, n);
   val prevAny = !isNull(prevReal) ? prevReal.anyDamage().marked('marked') : null;
-  /* */if (n == 0) return [[mat , extra  ,  mat], [mat, prevAny, mat], [null, null   , null]] as IIngredient[][];
+  /* */if (n == 0) return [[mat , extra  ,  mat], [mat, prevAny, mat], [null, null   , null]];
   else if (n == 1) return [[mat , prevAny,  mat], [mat, extra  , mat], [mat , mat    ,  mat]] as IIngredient [][];
   else if (n == 2) return [[mat , extra  ,  mat], [mat, prevAny, mat], [mat , null   ,  mat]] as IIngredient [][];
   else if (n == 3) return [[null, null   , null], [mat, extra  , mat], [mat , prevAny,  mat]] as IIngredient [][];

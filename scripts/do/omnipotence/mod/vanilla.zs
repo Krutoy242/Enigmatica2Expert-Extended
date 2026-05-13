@@ -13,7 +13,7 @@ op.regAttribute('generic.attackDamage', '8acc3dda-1db0-466b-9acc-8c7453683fe0', 
 op.regAttribute('generic.maxHealth', '41347cf8-4f1f-4694-a20f-c65769d9148b', 200);
 // TODO: Add step assist
 
-op.onGrant(function(player as IPlayer) as void {
+op.onGrant(function (player as IPlayer) as void {
   if (player.world.remote) return;
 
   player.native.capabilities.allowFlying = true;
@@ -21,11 +21,11 @@ op.onGrant(function(player as IPlayer) as void {
   player.native.sendPlayerAbilities();
 
   server.commandManager.executeCommandSilent(server, '/tellraw @a ["# `' ~ player.nickname()
-    ~ '` just reached the §e**§lOmnipotence§e**§r ```Congrats!```'
-    ~ '"]');
+  ~ '` just reached the §e**§lOmnipotence§e**§r ```Congrats!```'
+  ~ '"]');
 });
 
-op.onRevoke(function(player as IPlayer) as void {
+op.onRevoke(function (player as IPlayer) as void {
   if (player.world.remote) return;
 
   player.native.capabilities.allowFlying = false;
@@ -33,11 +33,11 @@ op.onRevoke(function(player as IPlayer) as void {
   player.native.sendPlayerAbilities();
 
   server.commandManager.executeCommandSilent(server, '/tellraw @a ["`' ~ player.nickname()
-    ~ '` just lost the §e*§lOmnipotence§e*§r'
-    ~ '"]');
+  ~ '` just lost the §e*§lOmnipotence§e*§r'
+  ~ '"]');
 });
 
-op.onTick(function(player as IPlayer) as void {
+op.onTick(function (player as IPlayer) as void {
   if (player.world.remote) return;
   if (player.foodStats.foodLevel < 19) player.foodStats.addStats(1, 0.1);
   player.heal(10.0f);

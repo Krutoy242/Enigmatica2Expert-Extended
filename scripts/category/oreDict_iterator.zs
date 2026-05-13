@@ -1,11 +1,9 @@
 #modloaded jaopca
 #priority -10
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 
 import scripts.category.magicProcessing.magicProcessing;
-import scripts.process.beneficiate;
 
 function getOreName(name as string, part as string) as string {
   if (name.matches(part ~ '[A-Z]\\w+')) return name.substring(part.length);
@@ -46,7 +44,7 @@ for ore_entry in oreDict {
   ore_name = getOreName(name, 'cluster');
   if (!isNull(ore_name)) {
     if (ore_name == 'Aluminum') continue;
-    
+
     val dirtyGem = oreDict['dirtyGem' ~ ore_name].firstItem;
     if (isNull(dirtyGem)) continue;
 
@@ -80,7 +78,7 @@ for ore_entry in oreDict {
 
     val unpurified = oreDict.get('crushed' ~ ore_name);
     if (isNull(unpurified) || unpurified.empty) continue;
-    
+
     mods.tconstruct.Melting.addRecipe(liquid * 144, unpurified);
     continue;
   }
@@ -89,7 +87,7 @@ for ore_entry in oreDict {
   ore_name = getOreName(name, 'plateDense');
   if (!isNull(ore_name)) {
     if (ore_name == 'Aluminum') continue;
-    val inpOre = (ore_name == 'Obsidian')
+    val inpOre = ore_name == 'Obsidian'
       ? (<minecraft:obsidian> * 3) as IIngredient
       : oreDict['block' ~ ore_name];
     if (inpOre.items.length <= 0) continue;
@@ -119,12 +117,16 @@ for ore_entry in oreDict {
     val second = oreDict.get('block' ~ ore_name);
     if (isNull(second) || second.empty) continue;
 
-    mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
-      .inputOre(second).outputItem(utils.oreToItem(ore_entry) * 6).build();
+    mods.advancedrocketry.RecipeTweaker
+      .forMachine('SmallPlatePresser')
+      .builder()
+      .inputOre(second)
+      .outputItem(utils.oreToItem(ore_entry) * 6)
+      .build();
 
     continue;
   }
-  
+
   ore_name = getOreName(name, 'blockSheetmetal');
   if (!isNull(ore_name)) {
     if (ore_name == 'Aluminum') continue;
@@ -132,31 +134,40 @@ for ore_entry in oreDict {
     val output = oreDict.get('stick' ~ ore_name);
     if (isNull(output) || output.empty) continue;
 
-    mods.advancedrocketry.RecipeTweaker.forMachine('SmallPlatePresser').builder()
-      .inputOre(ore_entry).outputItem(output.firstItem).build();
+    mods.advancedrocketry.RecipeTweaker
+      .forMachine('SmallPlatePresser')
+      .builder()
+      .inputOre(ore_entry)
+      .outputItem(output.firstItem)
+      .build();
 
     continue;
   }
-  
+
   ore_name = getOreName(name, 'stick');
   if (!isNull(ore_name)) {
     if (ore_name == 'Aluminum') continue;
 
     val block = oreDict.get('block' ~ ore_name);
     if (isNull(block) || block.empty) continue;
-    mods.advancedrocketry.RecipeTweaker.forMachine('Lathe').builder()
-      .inputOre(block).outputItem(ore_entry.firstItem * 64).power(100000).timeRequired(10).build();
+    mods.advancedrocketry.RecipeTweaker
+      .forMachine('Lathe')
+      .builder()
+      .inputOre(block)
+      .outputItem(ore_entry.firstItem * 64)
+      .power(100000)
+      .timeRequired(10)
+      .build();
 
     continue;
   }
 }
 
-
 // static benOpts as IData = {
 //   exceptions       : 'Pulverizer StarlightInfuser',
 //   meltingExceptions: scripts.vars.meltingExceptions,
 // } as IData;
-// 
+//
 // for ore_name, outputs in {
 // /*Inject_js!!!!!!!{
 // val clusters = Object.entries(getByOreKind('cluster')).filter(([base])=>!['Yellorium','Aluminum'].includes(base))

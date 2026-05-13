@@ -67,7 +67,7 @@ craft.remake(<rustic:liquid_barrel>, ['pretty',
 });
 
 // Crushed ice pricy alt
-mods.rustic.CrushingTub.addRecipe(<liquid:ice> * 100, null, (<mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>));
+mods.rustic.CrushingTub.addRecipe(<liquid:ice> * 100, null, <mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>);
 
 // [Wooden Lantern] from [Charcoal]*3[+1]
 craft.remake(<rustic:lantern_wood>, [

@@ -29,7 +29,9 @@ events.onPlayerInteractEntity(function (e as crafttweaker.event.PlayerInteractEn
     || isNull(e.target)
     || isNull(e.target.definition)
     || isNull(lassoBlacklist[e.target.definition.id])
-  ) return;
+  ) {
+    return;
+  }
 
   e.cancel();
 });

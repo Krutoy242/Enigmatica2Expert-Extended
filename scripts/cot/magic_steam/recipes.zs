@@ -220,21 +220,33 @@ function steamMixers(grade as int) as void {
   // Adv rocketry chem reactor recipes
   val chemReactor = mods.advancedrocketry.RecipeTweaker.forMachine('ChemicalReactor');
 
-  chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(<fluid:high_pressure_steam> * 32000, cataIn)
-  .outputs(steamLiquid * steamOutNuc).build();
+  chemReactor.builder()
+    .power(30000)
+    .timeRequired(2)
+    .inputs(<fluid:high_pressure_steam> * 32000, cataIn)
+    .outputs(steamLiquid * steamOutNuc)
+    .build();
 
-  chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(<fluid:ic2superheated_steam> * 32000, cataIn)
-  .outputs(steamLiquid * steamOutIC2).build();
+  chemReactor.builder()
+    .power(30000)
+    .timeRequired(2)
+    .inputs(<fluid:ic2superheated_steam> * 32000, cataIn)
+    .outputs(steamLiquid * steamOutIC2)
+    .build();
 
-  chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(<fluid:steam> * 32000, cataIn)
-  .outputs(steamLiquid * steamOutForge).build();
+  chemReactor.builder()
+    .power(30000)
+    .timeRequired(2)
+    .inputs(<fluid:steam> * 32000, cataIn)
+    .outputs(steamLiquid * steamOutForge)
+    .build();
 
-  chemReactor.builder().power(30000).timeRequired(2)
-  .inputs(steamLiquid * 32000, cataUp)
-  .outputs(steamLiquidUp * 16000).build();
+  chemReactor.builder()
+    .power(30000)
+    .timeRequired(2)
+    .inputs(steamLiquid * 32000, cataUp)
+    .outputs(steamLiquidUp * 16000)
+    .build();
 }
 
 for i in 1 .. 5 {

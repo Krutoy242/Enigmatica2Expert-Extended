@@ -14,8 +14,10 @@ events.onCustomTask(function (e as mods.zenutils.ftbq.CustomTaskEvent) {
         if (
           isNull(playersTasks[tag])
           || isNull(playersTasks[tag][player.name])
-          || !(playersTasks[tag][player.name] as bool)
-        ) return 0;
+          || !playersTasks[tag][player.name] as bool
+        ) {
+          return 0;
+        }
 
         playersTasks[tag][player.name] = false;
         for name, exist in playersTasks[tag] { if (exist as bool) return 1; }

@@ -150,17 +150,17 @@ recipes.addShapedMirrored('Machine Chassis',
 // [Simple Machine Chassis] from [Hardened Cell Frame][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <enderio:item_material>, ['pretty',
-  '□ ¤ □',
-  'D ◘ D',
-  '□ ¤ □'], {
-  '□': <ore:plateTitaniumAluminide>,
-  '¤': <ore:gearIronInfinity>,
-  'D': <endreborn:block_decorative_lormyte>,
-  '◘': <thermalexpansion:frame:129>,
-}, 2, {
-  '□': <ore:plateTitaniumIridium>,
-  '¤': <ore:gearEnderium>,
-});
+    '□ ¤ □',
+    'D ◘ D',
+    '□ ¤ □'], {
+    '□': <ore:plateTitaniumAluminide>,
+    '¤': <ore:gearIronInfinity>,
+    'D': <endreborn:block_decorative_lormyte>,
+    '◘': <thermalexpansion:frame:129>,
+  }, 2, {
+    '□': <ore:plateTitaniumIridium>,
+    '¤': <ore:gearEnderium>,
+  });
 
 craft.remake(<enderio:item_material:66> * 2, ['pretty',
   '▬ ◊ ▬',
@@ -181,13 +181,17 @@ craft.remake(<enderio:item_basic_capacitor>, ['pretty',
   '♥': <thermalfoundation:material:515>, // Redstone Conductance Coil
   '▬': <threng:material>, // Fluix Steel Ingot
 });
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .outputs(<enderio:item_basic_capacitor> * 64)
   .inputOre(<ore:stickTitaniumIridium>, 32)
   .inputOre(<ore:dustBedrock>, 32)
   .input(<thermalfoundation:material:515> * 32)
   .input(<threng:material> * 32)
-  .power(320000).timeRequired(20).build();
+  .power(320000)
+  .timeRequired(20)
+  .build();
 
 // [Fluid Tank] from [Clear Glass][+1]
 recipes.remove(<enderio:block_tank>);
@@ -242,7 +246,7 @@ recipes.addShapedMirrored('The Vat',
   <enderio:block_vat>,
   [[<ore:ingotElectricalSteel>, <minecraft:cauldron>, <ore:ingotElectricalSteel>],
     [<enderio:block_tank>, <thermalexpansion:machine:7>, <enderio:block_tank>],
-   [<ore:ingotElectricalSteel>, <minecraft:cauldron>, <ore:ingotElectricalSteel>]]);
+    [<ore:ingotElectricalSteel>, <minecraft:cauldron>, <ore:ingotElectricalSteel>]]);
 
 // Crafter simplify
 recipes.remove(<enderio:block_simple_crafter>);
@@ -339,16 +343,16 @@ mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(<enderio:item_alloy_ingot:
 mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(<enderio:item_alloy_ingot:8>);
 mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(<enderio:item_alloy_ingot:9> * 3);
 
-val fake_iron_variations =
-<thermalfoundation:material:1>   | <thermalfoundation:material:64>         | <thermalfoundation:material:65>  |
-<thermalfoundation:material:66>  | <thermalfoundation:material:67>         | <thermalfoundation:material:68>  |
-<thermalfoundation:material:69>  | <thermalfoundation:material:70>         | <thermalfoundation:material:71>  |
-<thermalfoundation:material:72>  | <astralsorcery:itemcraftingcomponent:2> | <mekanism:dust:2>                |
-<nuclearcraft:dust:3>            | <nuclearcraft:dust:5>                   | <nuclearcraft:dust:7>            |
-<nuclearcraft:compound:2>        | <psi:material>                          | <thermalfoundation:material:96>  |
-<thermalfoundation:material:97>  | <thermalfoundation:material:98>         | <thermalfoundation:material:99>  |
-<thermalfoundation:material:100> | <thermalfoundation:material:101>        | <thermalfoundation:material:102> |
-<thermalfoundation:material:103>;
+val fake_iron_variations
+  = <thermalfoundation:material:1>   | <thermalfoundation:material:64>         | <thermalfoundation:material:65>
+    |  <thermalfoundation:material:66>  | <thermalfoundation:material:67>         | <thermalfoundation:material:68>
+    |  <thermalfoundation:material:69>  | <thermalfoundation:material:70>         | <thermalfoundation:material:71>
+    |  <thermalfoundation:material:72>  | <astralsorcery:itemcraftingcomponent:2> | <mekanism:dust:2>
+    |                <nuclearcraft:dust:3>            | <nuclearcraft:dust:5>                   | <nuclearcraft:dust:7>
+    |            <nuclearcraft:compound:2>        | <psi:material>                          | <thermalfoundation:material:96>
+    |  <thermalfoundation:material:97>  | <thermalfoundation:material:98>         | <thermalfoundation:material:99>
+    |  <thermalfoundation:material:100> | <thermalfoundation:material:101>        | <thermalfoundation:material:102>
+    | <thermalfoundation:material:103>;
 
 // EnderIO simple alloys
 solution([<ore:dustBedrock>, fake_iron_variations], [<liquid:iron> * 72], [<liquid:construction_alloy> * 216], [0.5, 1, 2700], 'only: highoven');
@@ -398,41 +402,41 @@ scripts.process.alloy([<ore:blockDarkSteel>, <endreborn:item_ingot_wolframium>, 
 // Excess ender dust recipe
 recipes.removeByRecipeName('enderio:ender_dust');
 
-# [Stirling Generator] from [Industrial Machine Chassis][+5]
-craft.remake(<enderio:block_stirling_generator>, ["pretty",
-  "¤ G ¤",
-  "E M E",
-  "☼ 3 ☼"], {
-  "¤": <ore:gearEnergized>,                # Energized Bimetal Gear
-  "G": <advgenerators:turbine_controller>, # Gas Turbine controller
-  "E": <mekanism:electrolyticcore>,        # Electrolytic Core
-  "M": <ore:itemMachineChassi>,            # Industrial Machine Chassis
-  "☼": <ore:gearDark>,                     # Dark Bimetal Gear
-  "3": <enderio:item_basic_capacitor:1>,
+// [Stirling Generator] from [Industrial Machine Chassis][+5]
+craft.remake(<enderio:block_stirling_generator>, ['pretty',
+  '¤ G ¤',
+  'E M E',
+  '☼ 3 ☼'], {
+  '¤': <ore:gearEnergized>,                // Energized Bimetal Gear
+  'G': <advgenerators:turbine_controller>, // Gas Turbine controller
+  'E': <mekanism:electrolyticcore>,        // Electrolytic Core
+  'M': <ore:itemMachineChassi>,            // Industrial Machine Chassis
+  '☼': <ore:gearDark>,                     // Dark Bimetal Gear
+  '3': <enderio:item_basic_capacitor:1>,
 });
 
-# [SAG Mill] from [Industrial Machine Chassis][+4]
-craft.remake(<enderio:block_sag_mill>, ["pretty",
-  "¤ □ ¤",
-  "□ M □",
-  "☼ 3 ☼"], {
-  "¤": <ore:gearEnergized>,     # Energized Bimetal Gear
-  "□": <tconstruct:large_plate>.withTag({Material: "flint"}), # Flint Large Plate
-  "M": <ore:itemMachineChassi>, # Industrial Machine Chassis
-  "☼": <ore:gearDark>,          # Dark Bimetal Gear
-  "3": <enderio:item_basic_capacitor:1>,
+// [SAG Mill] from [Industrial Machine Chassis][+4]
+craft.remake(<enderio:block_sag_mill>, ['pretty',
+  '¤ □ ¤',
+  '□ M □',
+  '☼ 3 ☼'], {
+  '¤': <ore:gearEnergized>,     // Energized Bimetal Gear
+  '□': <tconstruct:large_plate>.withTag({ Material: 'flint' }), // Flint Large Plate
+  'M': <ore:itemMachineChassi>, // Industrial Machine Chassis
+  '☼': <ore:gearDark>,          // Dark Bimetal Gear
+  '3': <enderio:item_basic_capacitor:1>,
 });
 
-# [Alloy Smelter] from [Industrial Machine Chassis][+4]
-craft.remake(<enderio:block_alloy_smelter>, ["pretty",
-  "¤ H ¤",
-  "H M H",
-  "☼ 3 ☼"], {
-  "¤": <ore:gearEnergized>,                # Energized Bimetal Gear
-  "H": <tcomplement:high_oven_controller>, # High Oven Controller
-  "M": <ore:itemMachineChassi>,            # Industrial Machine Chassis
-  "☼": <ore:gearDark>,                     # Dark Bimetal Gear
-  "3": <enderio:item_basic_capacitor:1>,
+// [Alloy Smelter] from [Industrial Machine Chassis][+4]
+craft.remake(<enderio:block_alloy_smelter>, ['pretty',
+  '¤ H ¤',
+  'H M H',
+  '☼ 3 ☼'], {
+  '¤': <ore:gearEnergized>,                // Energized Bimetal Gear
+  'H': <tcomplement:high_oven_controller>, // High Oven Controller
+  'M': <ore:itemMachineChassi>,            // Industrial Machine Chassis
+  '☼': <ore:gearDark>,                     // Dark Bimetal Gear
+  '3': <enderio:item_basic_capacitor:1>,
 });
 
 // [Simple_Inventory_Charger] from [LV_Capacitor][+2]
@@ -529,25 +533,25 @@ craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({ 'enderio:dsu': '
     '*': <ore:itemPulsatingCrystal>, // Pulsating Crystal
   });
 
-craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:inv"}), 'ABC', {
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({ 'enderio:dsu': 'enderio:inv' }), 'ABC', {
   A: <enderio:item_dark_steel_upgrade>,
   B: <quark:custom_chest:4>,
   C: <ore:gearStone>,
 });
 
-craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:jumpboost1"}), 'ABC', {
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({ 'enderio:dsu': 'enderio:jumpboost1' }), 'ABC', {
   A: <enderio:item_dark_steel_upgrade>,
   B: <minecraft:piston>,
   C: <ore:gearStone>,
 });
 
-craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:speedboost1"}), 'ABC', {
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({ 'enderio:dsu': 'enderio:speedboost1' }), 'ABC', {
   A: <enderio:item_dark_steel_upgrade>,
   B: <minecraft:sugar>,
   C: <ore:gearStone>,
 });
 
-craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({"enderio:dsu": "enderio:tnt"}), 'ABC', {
+craft.reshapeless(<enderio:item_dark_steel_upgrade:1>.withTag({ 'enderio:dsu': 'enderio:tnt' }), 'ABC', {
   A: <enderio:item_dark_steel_upgrade>,
   B: <ic2:dynamite>,
   C: <ore:gearStone>,
@@ -575,13 +579,13 @@ for ingr, amount in {
     <enderio:item_material:46>,
     <enderio:item_material:46>,
     ingr,
-    ], 300, 40, 2);
+  ], 300, 40, 2);
   mods.bloodmagic.AlchemyTable.addRecipe(<enderio:item_material:50> * amount, [
     <thermalfoundation:material:768>,
     <thermalfoundation:material:768>,
     <thermalfoundation:material:768>,
     ingr,
-    ], 300, 40, 2);
+  ], 300, 40, 2);
 }
 mods.bloodmagic.AlchemyTable.addRecipe(<enderio:item_material:49>, [
   <enderio:item_material:47>,
@@ -705,20 +709,20 @@ craft.reshapeless(<enderio:item_material:38>, '▲▲▲©S©▲▲▲', {
 });
 
 // Cheaper to make teleport stations easier
-# [Telepad Block] from [Pulsating Crystal][+2]
-craft.remake(<enderio:block_tele_pad>, ["pretty",
-  "■ C ■",
-  "C * C",
-  "■ C ■"], {
-  "■": <ore:fusedQuartz>, # Fused Quartz
-  "C": <ore:itemConduitBinder>, # Conduit Binder
-  "*": <ore:itemPulsatingCrystal>, # Pulsating Crystal
+// [Telepad Block] from [Pulsating Crystal][+2]
+craft.remake(<enderio:block_tele_pad>, ['pretty',
+  '■ C ■',
+  'C * C',
+  '■ C ■'], {
+  '■': <ore:fusedQuartz>, // Fused Quartz
+  'C': <ore:itemConduitBinder>, // Conduit Binder
+  '*': <ore:itemPulsatingCrystal>, // Pulsating Crystal
 });
 
 // Cheaper decorative blocks for building
-recipes.removeByRecipeName("enderio:deco_block_1_1_a");
-recipes.removeByRecipeName("enderio:deco_block_1_1_b");
-recipes.removeByRecipeName("enderio:deco_block_1_1_c");
+recipes.removeByRecipeName('enderio:deco_block_1_1_a');
+recipes.removeByRecipeName('enderio:deco_block_1_1_b');
+recipes.removeByRecipeName('enderio:deco_block_1_1_c');
 craft.make(<enderio:block_decoration1:1> * 64, ['pretty',
   '  S  ',
   'S ▲ S',
@@ -726,9 +730,9 @@ craft.make(<enderio:block_decoration1:1> * 64, ['pretty',
   'S': <ore:itemSimpleChassiParts>,
   '▲': <ore:dustTungsten>,
 });
-recipes.removeByRecipeName("enderio:deco_block_1_7_a");
-recipes.removeByRecipeName("enderio:deco_block_1_7_b");
-recipes.removeByRecipeName("enderio:deco_block_1_7_c");
+recipes.removeByRecipeName('enderio:deco_block_1_7_a');
+recipes.removeByRecipeName('enderio:deco_block_1_7_b');
+recipes.removeByRecipeName('enderio:deco_block_1_7_c');
 craft.make(<enderio:block_decoration1:7> * 64, ['pretty',
   '  S  ',
   'S ▲ S',
@@ -800,7 +804,7 @@ craft.remake(<enderio:block_inventory_panel_sensor>, ['pretty',
 
 // [Tiny Inventory System Storage] from [Oak Chest][+2]
 recipes.remove(<enderio:block_inventory_chest_tiny>);
-craft.make(<enderio:block_inventory_chest_tiny>.withTag( {"enderio:energy": 1000000000} ), ['pretty',
+craft.make(<enderio:block_inventory_chest_tiny>.withTag({ 'enderio:energy': 1000000000 }), ['pretty',
   '  R  ',
   'S c S'], {
   'R': <ore:ingotSilicon>,
@@ -853,14 +857,18 @@ recipes.remove(<enderio:item_material:67>);
 scripts.do.expire_in_block.set(<ore:itemPulsatingPowder>, { 'cyclicmagic:fire_dark': <enderio:item_material:67> });
 
 // [Conduit Binder]*24 from [Crushed End Stone]*2[+3]
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .inputOre(<ore:dust>, 20)
   .input(<ic2:dust:1> * 5)
   .input(<nuclearcraft:gem_dust:11> * 5)
   .inputLiquid(<fluid:sand> * 5000)
   .outputItem(<enderio:item_material:4> * 64)
   .outputItem(<enderio:item_material:4> * 56)
-  .power(30000).timeRequired(10).build();
+  .power(30000)
+  .timeRequired(10)
+  .build();
 
 // Cheaper to let players use it earlier
 // [Totemic Capacitor] from [MV Capacitor][+2]
@@ -1035,76 +1043,58 @@ recipes.addShapeless(<enderio:item_material>, [<enderio:block_simple_furnace:*> 
 // Chemical Reactor alt recipes
 val chemReactor = mods.advancedrocketry.RecipeTweaker.forMachine('ChemicalReactor');
 
-chemReactor.builder().power(30000).timeRequired(25)
-  .inputs(
-    <fluid:short.mead> * 32000,
-    <ore:itemPrecientPowder> * 2,
-    <ore:itemEnderCrystalPowder> * 2,
-    <ore:itemPulsatingPowder> * 4,
-    <ore:itemSkull> * 16
-  )
-  .outputs(<fluid:vapor_of_levity> * 2000).build();
+chemReactor.builder().power(30000).timeRequired(25).inputs(
+  <fluid:short.mead> * 32000,
+  <ore:itemPrecientPowder> * 2,
+  <ore:itemEnderCrystalPowder> * 2,
+  <ore:itemPulsatingPowder> * 4,
+  <ore:itemSkull> * 16
+).outputs(<fluid:vapor_of_levity> * 2000).build();
 
-chemReactor.builder().power(30000).timeRequired(10)
-  .inputs(
-    <fluid:short.mead> * 32000,
-    <ore:itemEnderCrystalPowder> * 2,
-    <ore:itemPulsatingPowder> * 2,
-    <minecraft:skull> * 1
-  )
-  .outputs(<fluid:ender_distillation> * 2000).build();
+chemReactor.builder().power(30000).timeRequired(10).inputs(
+  <fluid:short.mead> * 32000,
+  <ore:itemEnderCrystalPowder> * 2,
+  <ore:itemPulsatingPowder> * 2,
+  <minecraft:skull> * 1
+).outputs(<fluid:ender_distillation> * 2000).build();
 
-chemReactor.builder().power(30000).timeRequired(5)
-  .inputs(
-    <fluid:short.mead> * 2000,
-    <minecraft:skull:2> * 2
-  )
-  .outputs(<fluid:nutrient_distillation> * 1000).build();
+chemReactor.builder().power(30000).timeRequired(5).inputs(
+  <fluid:short.mead> * 2000,
+  <minecraft:skull:2> * 2
+).outputs(<fluid:nutrient_distillation> * 1000).build();
 
 // EnderIO Liquids (Hootch line)
-chemReactor.builder().power(30000).timeRequired(15)
-  .inputs(
-    <fluid:milk> * 32000,
-    <minecraft:poisonous_potato> * 2,
-    <minecraft:double_plant> * 2
-  )
-  .outputs(<fluid:liquid_sunshine> * 4000).build();
+chemReactor.builder().power(30000).timeRequired(15).inputs(
+  <fluid:milk> * 32000,
+  <minecraft:poisonous_potato> * 2,
+  <minecraft:double_plant> * 2
+).outputs(<fluid:liquid_sunshine> * 4000).build();
 
-chemReactor.builder().power(30000).timeRequired(10)
-  .inputs(
-    <fluid:milk> * 32000,
-    <minecraft:poisonous_potato> * 2,
-    <ore:dustBlaze> * 2
-  )
-  .outputs(<fluid:fire_water> * 4000).build();
+chemReactor.builder().power(30000).timeRequired(10).inputs(
+  <fluid:milk> * 32000,
+  <minecraft:poisonous_potato> * 2,
+  <ore:dustBlaze> * 2
+).outputs(<fluid:fire_water> * 4000).build();
 
-chemReactor.builder().power(30000).timeRequired(15)
-  .inputs(
-    <fluid:milk> * 32000,
-    <minecraft:poisonous_potato> * 2,
-    <ore:gunpowder> * 2
-  )
-  .outputs(<fluid:rocket_fuel> * 4000).build();
+chemReactor.builder().power(30000).timeRequired(15).inputs(
+  <fluid:milk> * 32000,
+  <minecraft:poisonous_potato> * 2,
+  <ore:gunpowder> * 2
+).outputs(<fluid:rocket_fuel> * 4000).build();
 
-chemReactor.builder().power(30000).timeRequired(5)
-  .inputs(
-    <fluid:milk> * 32000,
-    <minecraft:poisonous_potato> * 2,
-    <ore:cropPotato> * 2
-  )
-  .outputs(<fluid:hootch> * 4000).build();
+chemReactor.builder().power(30000).timeRequired(5).inputs(
+  <fluid:milk> * 32000,
+  <minecraft:poisonous_potato> * 2,
+  <ore:cropPotato> * 2
+).outputs(<fluid:hootch> * 4000).build();
 
 // EnderIO liquids (Cloud Seed line)
-chemReactor.builder().power(30000).timeRequired(10)
-  .inputs(
-    <fluid:ice> * 800,
-    <ore:dustSilver> * 6,
-    <ore:ice> * 4
-  )
-  .outputs(<fluid:cloud_seed_concentrated> * 2500).build();
+chemReactor.builder().power(30000).timeRequired(10).inputs(
+  <fluid:ice> * 800,
+  <ore:dustSilver> * 6,
+  <ore:ice> * 4
+).outputs(<fluid:cloud_seed_concentrated> * 2500).build();
 
-chemReactor.builder().power(30000).timeRequired(5)
-  .inputs(
-    <fluid:hot_spring_water> * 400
-  )
-  .outputs(<fluid:cloud_seed> * 2000).build();
+chemReactor.builder().power(30000).timeRequired(5).inputs(
+  <fluid:hot_spring_water> * 400
+).outputs(<fluid:cloud_seed> * 2000).build();

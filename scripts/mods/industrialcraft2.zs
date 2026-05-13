@@ -33,33 +33,39 @@ x.addJEIRecipe(AssemblyRecipe.create(function (c) {
 );
 
 x.addJEIRecipe(AssemblyRecipe.create(function (c) {
-  c.addFluidOutput('fluid_out', <fluid:ic2steam> * 1000);})
+  c.addFluidOutput('fluid_out', <fluid:ic2steam> * 1000);
+})
   .requireFluid('fluid_in', <fluid:water> * 10)
   .requireItem('input0', <ic2:te:34>));
 
 x.addJEIRecipe(AssemblyRecipe.create(function (c) {
-  c.addFluidOutput('fluid_out', <fluid:ic2superheated_steam> * 1000);})
+  c.addFluidOutput('fluid_out', <fluid:ic2superheated_steam> * 1000);
+})
   .requireFluid('fluid_in', <fluid:water> * 10)
   .requireItem('input0', <ic2:te:34>));
 
 x.addJEIRecipe(AssemblyRecipe.create(function (c) {
-  c.addItemOutput('output1', <ic2:foam> * 10);})
+  c.addItemOutput('output1', <ic2:foam> * 10);
+})
   .requireFluid('fluid_in', <fluid:ic2construction_foam> * 1000)
   .requireItem('input0', <ic2:foam_sprayer>));
 
 x.addJEIRecipe(AssemblyRecipe.create(function (c) {
-  c.addItemOutput('output1', <ic2:foam:1> * 10);})
+  c.addItemOutput('output1', <ic2:foam:1> * 10);
+})
   .requireFluid('fluid_in', <fluid:ic2construction_foam> * 1000)
   .requireItem('input5', <ic2:scaffold:2> * 10)
   .requireItem('input0', <ic2:foam_sprayer>));
 
 x.addJEIRecipe(AssemblyRecipe.create(function (c) {
-  c.addFluidOutput('fluid_out', <fluid:ic2distilled_water>);})
+  c.addFluidOutput('fluid_out', <fluid:ic2distilled_water>);
+})
   .requireFluid('fluid_in', <fluid:water>)
   .requireItem('input0', <ic2:te:33>));
 
 x.addJEIRecipe(AssemblyRecipe.create(function (c) {
-  c.addFluidOutput('fluid_out', <fluid:ic2distilled_water> * 100);})
+  c.addFluidOutput('fluid_out', <fluid:ic2distilled_water> * 100);
+})
   .requireFluid('fluid_in', <fluid:water> * 100)
   .requireItem('input0', <ic2:te:27>));
 //////////////////////////////////////////////////////////////////////
@@ -120,9 +126,9 @@ recipes.addShaped('Hazmat Chest', <ic2:hazmat_chestplate>,
     [<ore:itemRubber>, <ore:dyeOrange>, <ore:itemRubber>]]);
 
 recipes.addShaped('Hazmat Leggings', <ic2:hazmat_leggings>,
-	 [[<ore:itemRubber>, <ore:dyeOrange>, <ore:itemRubber>],
-	 [<ore:itemRubber>, null, <ore:itemRubber>],
-	  [<ore:itemRubber>, null, <ore:itemRubber>]]);
+  [[<ore:itemRubber>, <ore:dyeOrange>, <ore:itemRubber>],
+    [<ore:itemRubber>, null, <ore:itemRubber>],
+    [<ore:itemRubber>, null, <ore:itemRubber>]]);
 
 recipes.addShaped('Hazmat Boots', <ic2:rubber_boots>,
   [[<ore:itemRubber>, null, <ore:itemRubber>],
@@ -184,42 +190,42 @@ recipes.addShaped('IC2 Reactor Chamber',
 // [Electronic Circuit] from [Iron Plate][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <ic2:crafting:1>, ['pretty',
-  'C C C',
-  '♥ : ♥',
-  'C C C'], {
-  'C': <ore:itemInsulatedCopperCable>,
-  '♥': <ore:dustRedstone>,
-  ':': <ore:plateIron>,
-}, 2, {
-  ':': <ore:oc:materialCircuitBoardPrinted>,
-});
+    'C C C',
+    '♥ : ♥',
+    'C C C'], {
+    'C': <ore:itemInsulatedCopperCable>,
+    '♥': <ore:dustRedstone>,
+    ':': <ore:plateIron>,
+  }, 2, {
+    ':': <ore:oc:materialCircuitBoardPrinted>,
+  });
 
 // [Advanced Circuit] from [Electronic Circuit][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <ic2:crafting:2>, ['pretty',
-  '♥ G ♥',
-  '◊ B ◊',
-  '♥ G ♥'], {
-  '♥': <ore:dustRedstone>,
-  'G': <ore:dustGlowstone>,
-  '◊': <ore:gemLapis>,
-  'B': <ore:circuitBasic>,
-}, 2, {
-  'G': <enderio:block_holier_fog>,
-});
+    '♥ G ♥',
+    '◊ B ◊',
+    '♥ G ♥'], {
+    '♥': <ore:dustRedstone>,
+    'G': <ore:dustGlowstone>,
+    '◊': <ore:gemLapis>,
+    'B': <ore:circuitBasic>,
+  }, 2, {
+    'G': <enderio:block_holier_fog>,
+  });
 
 // Basic Machine Casing
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <ic2:resource:12> * 4, ['pretty',
-  '□ ■ □',
-  '■   ■',
-  '□ ■ □'], {
-  '□': <ore:plateAluminum>,
-  '■': <tconstruct:large_plate>.withTag({ Material: 'iron' }),
-}, 6, {
-  '□': <ore:plateTitanium>,
-  '■': <ore:blockFakeIron>,
-});
+    '□ ■ □',
+    '■   ■',
+    '□ ■ □'], {
+    '□': <ore:plateAluminum>,
+    '■': <tconstruct:large_plate>.withTag({ Material: 'iron' }),
+  }, 6, {
+    '□': <ore:plateTitanium>,
+    '■': <ore:blockFakeIron>,
+  });
 
 recipes.addShapedMirrored('Basic Machine Casing2',
   <ic2:resource:12> * 4,
@@ -236,17 +242,17 @@ recipes.addShapedMirrored('Basic Machine Casing3',
 // [Advanced Machine Casing] from [Basic Machine Casing][+3]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <ic2:resource:13>, ['pretty',
-  '▬ - ▬',
-  '□ ■ □',
-  '▬ - ▬'], {
-  '▬': <ore:plateSteel>,
-  '-': <ore:plateCarbon>,
-  '□': <ore:plateAdvancedAlloy>,
-  '■': <ore:machineBlock>,
-}, 2, {
-  '▬': <ore:ingotElectricalSteel>,
-  '-': <ore:ingotHardCarbon>,
-});
+    '▬ - ▬',
+    '□ ■ □',
+    '▬ - ▬'], {
+    '▬': <ore:plateSteel>,
+    '-': <ore:plateCarbon>,
+    '□': <ore:plateAdvancedAlloy>,
+    '■': <ore:machineBlock>,
+  }, 2, {
+    '▬': <ore:ingotElectricalSteel>,
+    '-': <ore:ingotHardCarbon>,
+  });
 
 // Reinforced Stone
 recipes.addShapedMirrored('Reinforced Stone',
@@ -258,17 +264,17 @@ recipes.addShapedMirrored('Reinforced Stone',
 // [Mixed Metal Ingot]*2 from [Bronze Plate][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <ic2:ingot> * 2, ['pretty',
-  '□ □ □',
-  'п п п',
-  'A A A'], {
-  '□': <ore:plateIron>,
-  'п': <ore:plateBronze>,
-  'A': <ore:plateTin>,
-}, 3, {
-  '□': <ore:plateSteel>,
-  'п': <ore:plateConstantan>,
-  'A': <ore:plateAluminum>,
-});
+    '□ □ □',
+    'п п п',
+    'A A A'], {
+    '□': <ore:plateIron>,
+    'п': <ore:plateBronze>,
+    'A': <ore:plateTin>,
+  }, 3, {
+    '□': <ore:plateSteel>,
+    'п': <ore:plateConstantan>,
+    'A': <ore:plateAluminum>,
+  });
 
 // Iridium TiC Compat
 mods.tconstruct.Melting.addRecipe(<liquid:iridium> * 144, <ic2:misc_resource:1>, 500);
@@ -352,7 +358,9 @@ craft.remake(<ic2:te:8>, ['pretty',
 });
 
 // [Solar Panel] batch crafting
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
   .inputOre(<ore:plateIron>, 64)
   .inputOre(<ore:gemLapis>, 48)
   .inputOre(<ore:circuitBasic>, 16)
@@ -457,11 +465,13 @@ mods.nuclearcraft.FuelReprocessor.addRecipe(<ore:depletedFuelIC2U>,
 );
 
 // Batch crafting recipe for reflector, skipping microcraftings
-mods.advancedrocketry.RecipeTweaker.forMachine('PrecisionAssembler').builder()
-  .inputOre(<ore:plateCopper>, 64) // Copper Plate
-  .input(<ore:dustTin> * 64)     // Pulverized Tin
-  .input(<ore:dustCoal> * 64)    // Pulverized Coal
-  .input(<ic2:crafting:4>)       // Iridium Reinforced Plate
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('PrecisionAssembler')
+  .builder()
+  .inputOre(<ore:plateCopper>, 64)
+  .input(<ore:dustTin> * 64)
+  .input(<ore:dustCoal> * 64)
+  .input(<ic2:crafting:4>)
   .outputItem(<ic2:iridium_reflector>)
   .power(160000)
   .timeRequired(80)
@@ -547,7 +557,7 @@ function morphDust(fruit as IItemStack, liquid as ILiquidStack, orePiece as IIte
     ore.remove(fruit);
   }
 
-  if(!isNull(liquid)) {
+  if (!isNull(liquid)) {
     // Squeezing fruits
     scripts.process.squeeze([fruit], liquid, 'only: CrushingTub ForestrySqueezer IndustrialSqueezer', extra);
 
@@ -557,7 +567,7 @@ function morphDust(fruit as IItemStack, liquid as ILiquidStack, orePiece as IIte
     mods.rats.recipes.addChefRatRecipe(fruit, amount > 1 ? capsule * amount : capsule);
   }
 
-  if(!isNull(orePiece)) {
+  if (!isNull(orePiece)) {
     val output = [orePiece % 100, extra % 20] as WeightedItemStack[];
     mods.forestry.Centrifuge.addRecipe(output, fruit, 10);
     mods.thermalexpansion.Centrifuge.addRecipe(output, fruit, <fluid:juice> * 200, 400);
@@ -674,11 +684,15 @@ recipes.addShapeless('firebox_ashes', <forestry:ash>, [<ic2:misc_resource>]);
 
 // Shortcut for AR
 // [Lapotron Crystal] from [Advanced Circuit][+1]
-mods.advancedrocketry.RecipeTweaker.forMachine('Crystallizer').builder()
+mods.advancedrocketry.RecipeTweaker
+  .forMachine('Crystallizer')
+  .builder()
   .inputOre(<ore:circuitAdvanced>, 4)
   .inputLiquid(<fluid:lapis> * 10000)
   .outputItem(<ic2:lapotron_crystal> * 4)
-  .power(30000).timeRequired(10).build();
+  .power(30000)
+  .timeRequired(10)
+  .build();
 
 // [Scaffold]*20 from [Stick][+1]
 craft.remake(<ic2:scaffold> * 20, ['pretty',
@@ -750,17 +764,17 @@ craft.remake(<ic2:te:55>, ['pretty',
 // [Electric Motor] from [Copper Wire Coil][+2]
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <ic2:crafting:6>, ['pretty',
-  '  ▬  ',
-  '⌂ C ⌂',
-  '  ▬  '], {
-  '▬': <ore:ingotFakeIron>,
-  '⌂': <ic2:casing:6>,
-  'C': copperCoil,
-}, 3, {
-  '▬': <ore:ingotFerroboron>,
-  '⌂': <ore:plateBasic>,
-  'C': <immersiveengineering:wirecoil:2>,
-});
+    '  ▬  ',
+    '⌂ C ⌂',
+    '  ▬  '], {
+    '▬': <ore:ingotFakeIron>,
+    '⌂': <ic2:casing:6>,
+    'C': copperCoil,
+  }, 3, {
+    '▬': <ore:ingotFerroboron>,
+    '⌂': <ore:plateBasic>,
+    'C': <immersiveengineering:wirecoil:2>,
+  });
 
 // [Variac®] from [HOP Graphite Ingot][+2]
 craft.remake(<industrialwires:panel_component:4>, [

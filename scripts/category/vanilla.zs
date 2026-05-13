@@ -4,7 +4,6 @@
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 
-
 // -------------------------------------------------------------------------------
 // Tools
 // -------------------------------------------------------------------------------
@@ -177,7 +176,9 @@ recipes.addShaped('Crafting Station textured', <tconstruct:tooltables>, [
     || isNull(ins.p2)
     || isNull(ins.p3)
     || isNull(ins.p4)
-  ) return null;
+  ) {
+    return null;
+  }
 
   // If every plank not same, return texturless
   for i in 2 .. 5 {
@@ -197,7 +198,9 @@ recipes.addShapeless('Crafting Table conversion', <minecraft:crafting_table>, [
     || isNull(ins.station.tag.textureBlock)
     || isNull(ins.station.tag.textureBlock.id)
     || isNull(ins.station.tag.textureBlock.Damage)
-  ) return out;
+  ) {
+    return out;
+  }
 
   return <randomthings:customworkbench>.withTag({
     woodName: ins.station.tag.textureBlock.id.asString(),

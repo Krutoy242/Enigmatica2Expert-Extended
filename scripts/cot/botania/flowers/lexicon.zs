@@ -15,9 +15,9 @@ import native.vazkii.botania.common.lib.LibBrewNames;
 // Generating flowers//
 //////////////////////
 
-Lexicon.addEntry('botania.entry.campanimia', 'botania.category.generationFlowers', <botania:specialflower>.withTag({type: 'campanimia'}));
+Lexicon.addEntry('botania.entry.campanimia', 'botania.category.generationFlowers', <botania:specialflower>.withTag({ type: 'campanimia' }));
 Lexicon.addTextPage('botania.page.campanimia0', 'botania.entry.campanimia', 0);
-Lexicon.addPetalPage('botania.page.campanimia1', 'botania.entry.campanimia', 1, [<botania:specialflower>.withTag({type: 'campanimia'})], [[
+Lexicon.addPetalPage('botania.page.campanimia1', 'botania.entry.campanimia', 1, [<botania:specialflower>.withTag({ type: 'campanimia' })], [[
   <botania:rune:1>,
   <botania:rune:2>,
   <botania:rune:3>,
@@ -26,12 +26,12 @@ Lexicon.addPetalPage('botania.page.campanimia1', 'botania.entry.campanimia', 1, 
   <botania:petal:2>,
   <botania:petal:4>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'campanimia'}), 'botania.entry.campanimia', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'campanimia' }), 'botania.entry.campanimia', 0);
 
-Lexicon.addEntry('botania.entry.nuclianthus', 'botania.category.generationFlowers', <botania:specialflower>.withTag({type: 'nuclianthus'}));
+Lexicon.addEntry('botania.entry.nuclianthus', 'botania.category.generationFlowers', <botania:specialflower>.withTag({ type: 'nuclianthus' }));
 Lexicon.setEntryKnowledgeType('botania.entry.nuclianthus', 'alfheim');
 Lexicon.addTextPage('botania.page.nuclianthus0', 'botania.entry.nuclianthus', 0);
-Lexicon.addPetalPage('botania.page.nuclianthus1', 'botania.entry.nuclianthus', 1, [<botania:specialflower>.withTag({type: 'nuclianthus'})], [[
+Lexicon.addPetalPage('botania.page.nuclianthus1', 'botania.entry.nuclianthus', 1, [<botania:specialflower>.withTag({ type: 'nuclianthus' })], [[
   <botania:petal:13>,
   <botania:petal:4>,
   <botania:petal:4>,
@@ -40,16 +40,16 @@ Lexicon.addPetalPage('botania.page.nuclianthus1', 'botania.entry.nuclianthus', 1
   <botania:rune:6>,
   <botania:rune:6>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'nuclianthus'}), 'botania.entry.nuclianthus', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'nuclianthus' }), 'botania.entry.nuclianthus', 0);
 
 //////////////////////
 // Functional flowers//
 //////////////////////
 
-Lexicon.addEntry('botania.entry.antirrhift', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({type: 'antirrhift'}));
+Lexicon.addEntry('botania.entry.antirrhift', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({ type: 'antirrhift' }));
 Lexicon.setEntryKnowledgeType('botania.entry.antirrhift', 'alfheim');
 Lexicon.addTextPage('botania.page.antirrhift0', 'botania.entry.antirrhift', 0);
-Lexicon.addPetalPage('botania.page.antirrhift1', 'botania.entry.antirrhift', 1, [<botania:specialflower>.withTag({type: 'antirrhift'})], [[
+Lexicon.addPetalPage('botania.page.antirrhift1', 'botania.entry.antirrhift', 1, [<botania:specialflower>.withTag({ type: 'antirrhift' })], [[
   <botania:manaresource:8>,
   <botania:rune:15>,
   <quark:rune:2>,
@@ -58,12 +58,12 @@ Lexicon.addPetalPage('botania.page.antirrhift1', 'botania.entry.antirrhift', 1, 
   <thaumicaugmentation:material:5>,
   <thaumicaugmentation:material:5>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'antirrhift'}), 'botania.entry.antirrhift', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'antirrhift' }), 'botania.entry.antirrhift', 0);
 
-Lexicon.addEntry('botania.entry.rokku_eryngium', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({type: 'rokku_eryngium'}));
+Lexicon.addEntry('botania.entry.rokku_eryngium', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({ type: 'rokku_eryngium' }));
 Lexicon.setEntryKnowledgeType('botania.entry.rokku_eryngium', 'alfheim');
 Lexicon.addTextPage('botania.page.rokku_eryngium0', 'botania.entry.rokku_eryngium', 0);
-Lexicon.addPetalPage('botania.page.rokku_eryngium1', 'botania.entry.rokku_eryngium', 1, [<botania:specialflower>.withTag({type: 'rokku_eryngium'})], [[
+Lexicon.addPetalPage('botania.page.rokku_eryngium1', 'botania.entry.rokku_eryngium', 1, [<botania:specialflower>.withTag({ type: 'rokku_eryngium' })], [[
   <botania:manaresource:6>,
   <botania:manaresource:5>,
   <botania:manaresource:9>,
@@ -73,12 +73,12 @@ Lexicon.addPetalPage('botania.page.rokku_eryngium1', 'botania.entry.rokku_eryngi
   <botania:petal:4>,
   <botania:petal:4>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'rokku_eryngium'}), 'botania.entry.rokku_eryngium', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'rokku_eryngium' }), 'botania.entry.rokku_eryngium', 0);
 
-Lexicon.addEntry('botania.entry.jikanacea', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({type: 'jikanacea'}));
+Lexicon.addEntry('botania.entry.jikanacea', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({ type: 'jikanacea' }));
 Lexicon.setEntryKnowledgeType('botania.entry.jikanacea', 'alfheim');
 Lexicon.addTextPage('botania.page.jikanacea0', 'botania.entry.jikanacea', 0);
-Lexicon.addPetalPage('botania.page.jikanacea1', 'botania.entry.jikanacea', 1, [<botania:specialflower>.withTag({type: 'jikanacea'})], [[
+Lexicon.addPetalPage('botania.page.jikanacea1', 'botania.entry.jikanacea', 1, [<botania:specialflower>.withTag({ type: 'jikanacea' })], [[
   <botania:manaresource:6>,
   <astralsorcery:itemcraftingcomponent:4>,
   <botania:rune:14>,
@@ -88,11 +88,11 @@ Lexicon.addPetalPage('botania.page.jikanacea1', 'botania.entry.jikanacea', 1, [<
   <botania:petal:5>,
   <thaumicaugmentation:material:5>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'jikanacea'}), 'botania.entry.jikanacea', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'jikanacea' }), 'botania.entry.jikanacea', 0);
 
-Lexicon.addEntry('botania.entry.echinacenko', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({type: 'echinacenko'}));
+Lexicon.addEntry('botania.entry.echinacenko', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({ type: 'echinacenko' }));
 Lexicon.addTextPage('botania.page.echinacenko0', 'botania.entry.echinacenko', 0);
-Lexicon.addPetalPage('botania.page.echinacenko1', 'botania.entry.echinacenko', 1, [<botania:specialflower>.withTag({type: 'echinacenko'})], [[
+Lexicon.addPetalPage('botania.page.echinacenko1', 'botania.entry.echinacenko', 1, [<botania:specialflower>.withTag({ type: 'echinacenko' })], [[
   <botania:rune:15>,
   <botania:petal:2>,
   <botania:petal>,
@@ -101,12 +101,12 @@ Lexicon.addPetalPage('botania.page.echinacenko1', 'botania.entry.echinacenko', 1
   <botania:rune:12>,
   <botania:manaresource:1>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'echinacenko'}), 'botania.entry.echinacenko', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'echinacenko' }), 'botania.entry.echinacenko', 0);
 
-Lexicon.addEntry('botania.entry.amuileria_kaerunea', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({type: 'amuileria_kaerunea'}));
+Lexicon.addEntry('botania.entry.amuileria_kaerunea', 'botania.category.functionalFlowers', <botania:specialflower>.withTag({ type: 'amuileria_kaerunea' }));
 Lexicon.setEntryKnowledgeType('botania.entry.amuileria_kaerunea', 'alfheim');
 Lexicon.addTextPage('botania.page.amuileria_kaerunea0', 'botania.entry.amuileria_kaerunea', 0);
-Lexicon.addPetalPage('botania.page.amuileria_kaerunea1', 'botania.entry.amuileria_kaerunea', 1, [<botania:specialflower>.withTag({type: 'amuileria_kaerunea'})], [[
+Lexicon.addPetalPage('botania.page.amuileria_kaerunea1', 'botania.entry.amuileria_kaerunea', 1, [<botania:specialflower>.withTag({ type: 'amuileria_kaerunea' })], [[
   <botania:manaresource:6>,
   <botania:manaresource:9>,
   <botania:rune:8>,
@@ -116,7 +116,7 @@ Lexicon.addPetalPage('botania.page.amuileria_kaerunea1', 'botania.entry.amuileri
   <botania:petal:4>,
   <botania:petal>,
 ]]);
-Lexicon.addRecipeMapping(<botania:specialflower>.withTag({type: 'amuileria_kaerunea'}), 'botania.entry.amuileria_kaerunea', 0);
+Lexicon.addRecipeMapping(<botania:specialflower>.withTag({ type: 'amuileria_kaerunea' }), 'botania.entry.amuileria_kaerunea', 0);
 
 Lexicon.removePage('botania.entry.brewery', 5);
 Lexicon.removePage('botania.entry.brewery', 5);
@@ -164,12 +164,12 @@ Lexicon.removePage('botania.entry.complexBrews', 1);
 Lexicon.removePage('botania.entry.complexBrews', 1);
 
 mods.botania.Lexicon.addBrewPage('botania.page.complexBrews1a','botania.entry.complexBrews',1,LibBrewNames.OVERLOAD,[<minecraft:nether_wart>,<rustic:ginseng>,<rustic:wind_thistle>,<biomesoplenty:double_plant:2>,<botania:manaresource:23>],'botania.page.complexBrews1b');
-mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom2a','botania.entry.complexBrews',2,"scarlet_veil",[<minecraft:nether_wart>,<rustic:blood_orchid>,<rustic:ironberries>,<extrautils2:redorchid>,<botania:manaresource:23>],'botania.page.complexBrewsCustom2b');
-mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom3a','botania.entry.complexBrews',3,"calamity",[<minecraft:nether_wart>,<rustic:horsetail>,<rustic:marsh_mallow>,<endreborn:item_lormyte_crystal>,<botania:manaresource:23>],'botania.page.complexBrewsCustom3b');
-mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom4a','botania.entry.complexBrews',4,"warbound",[<minecraft:nether_wart>,<rustic:tomato>,<rustic:aloe_vera>,<rustic:honeycomb>,<botania:manaresource:23>],'botania.page.complexBrewsCustom4b');
-mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom5a','botania.entry.complexBrews',5,"depthbound",[<minecraft:nether_wart>,<rustic:mooncap_mushroom>,<rustic:core_root>,<biomesoplenty:coral:1>,<botania:manaresource:23>],'botania.page.complexBrewsCustom5b');
-mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom6a','botania.entry.complexBrews',6,"sanguine_oath",[<minecraft:nether_wart>,<rustic:chamomile>,<rustic:cohosh>,<scalinghealth:crystalshard>,<botania:manaresource:23>],'botania.page.complexBrewsCustom6b');
-mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom7a','botania.entry.complexBrews',7,"aerial_delirium",[<minecraft:nether_wart>,<rustic:olives>,<rustic:deathstalk_mushroom>,<iceandfire:pixie_dust>,<botania:manaresource:23>],'botania.page.complexBrewsCustom7b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom2a','botania.entry.complexBrews',2,'scarlet_veil',[<minecraft:nether_wart>,<rustic:blood_orchid>,<rustic:ironberries>,<extrautils2:redorchid>,<botania:manaresource:23>],'botania.page.complexBrewsCustom2b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom3a','botania.entry.complexBrews',3,'calamity',[<minecraft:nether_wart>,<rustic:horsetail>,<rustic:marsh_mallow>,<endreborn:item_lormyte_crystal>,<botania:manaresource:23>],'botania.page.complexBrewsCustom3b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom4a','botania.entry.complexBrews',4,'warbound',[<minecraft:nether_wart>,<rustic:tomato>,<rustic:aloe_vera>,<rustic:honeycomb>,<botania:manaresource:23>],'botania.page.complexBrewsCustom4b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom5a','botania.entry.complexBrews',5,'depthbound',[<minecraft:nether_wart>,<rustic:mooncap_mushroom>,<rustic:core_root>,<biomesoplenty:coral:1>,<botania:manaresource:23>],'botania.page.complexBrewsCustom5b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom6a','botania.entry.complexBrews',6,'sanguine_oath',[<minecraft:nether_wart>,<rustic:chamomile>,<rustic:cohosh>,<scalinghealth:crystalshard>,<botania:manaresource:23>],'botania.page.complexBrewsCustom6b');
+mods.botania.Lexicon.addBrewPage('botania.page.complexBrewsCustom7a','botania.entry.complexBrews',7,'aerial_delirium',[<minecraft:nether_wart>,<rustic:olives>,<rustic:deathstalk_mushroom>,<iceandfire:pixie_dust>,<botania:manaresource:23>],'botania.page.complexBrewsCustom7b');
 
 /////////////////
 // Lexicon fixes//
@@ -246,7 +246,7 @@ Lexicon.removePage('botania.entry.pool', 2);
 Lexicon.removePage('botania.entry.pool', 2);
 
 Lexicon.removePage('botania.entry.excompressum.orechidEvolved', 1);
-Lexicon.addPetalPage('botania.page.excompressum.orechidEvolved1', 'botania.entry.excompressum.orechidEvolved', 1, [<botania:specialflower>.withTag({type: 'excompressum.orechidEvolved'})], [[
+Lexicon.addPetalPage('botania.page.excompressum.orechidEvolved1', 'botania.entry.excompressum.orechidEvolved', 1, [<botania:specialflower>.withTag({ type: 'excompressum.orechidEvolved' })], [[
   <ore:petalGray>,       // Mystical Gray Petal
   <ore:petalYellow>,     // Mystical Yellow Petal
   <ore:petalGreen>,      // Mystical Green Petal
@@ -258,7 +258,7 @@ Lexicon.addPetalPage('botania.page.excompressum.orechidEvolved1', 'botania.entry
 ]]);
 
 Lexicon.removePage('botania.entry.orechidIgnem', 1);
-Lexicon.addPetalPage('botania.page.orechidIgnem1', 'botania.entry.orechidIgnem', 1, [<botania:specialflower>.withTag({type: 'orechidIgnem'})], [[
+Lexicon.addPetalPage('botania.page.orechidIgnem1', 'botania.entry.orechidIgnem', 1, [<botania:specialflower>.withTag({ type: 'orechidIgnem' })], [[
   <ore:petalRed>,       // Mystical Red Petal
   <ore:petalWhite>,     // Mystical White Petal
   <ore:petalPink>,      // Mystical Pink Petal
@@ -270,7 +270,7 @@ Lexicon.addPetalPage('botania.page.orechidIgnem1', 'botania.entry.orechidIgnem',
 ]]);
 
 Lexicon.removePage('botania.entry.orechidVacuam', 1);
-Lexicon.addPetalPage('botania.page.orechidVacuam1', 'botania.entry.orechidVacuam', 1, [<botania:specialflower>.withTag({type: 'orechidVacuam'})], [[
+Lexicon.addPetalPage('botania.page.orechidVacuam1', 'botania.entry.orechidVacuam', 1, [<botania:specialflower>.withTag({ type: 'orechidVacuam' })], [[
   <ore:petalYellow>,      // Mystical Yellow Petal
   <ore:petalPurple>,      // Mystical Purple Petal
   <ore:petalBlack>,       // Mystical Black Petal

@@ -4,8 +4,6 @@
 #sideonly client
 
 import crafttweaker.item.IItemStack;
-import crafttweaker.item.IIngredient;
-import crafttweaker.oredict.IOreDictEntry;
 
 import mods.jei.JEI;
 import mods.randomtweaker.jei.IJeiUtils;
@@ -41,9 +39,9 @@ JEI.createJei(ID, game.localize(`e2ee.jei.${ID}.title`))
   .addRecipeCatalyst(<rats:rat_upgrade_ore_doubling>)
   .addRecipeCatalyst(<rats:rat_upgrade_jury_rigged>.withTag({
     Items: [
-      {Slot: 0 as byte, id: "rats:rat_upgrade_speed", Count: 1, Damage: 0 as short},
-      {Slot: 1 as byte, id: "rats:rat_upgrade_ore_doubling", Count: 1, Damage: 0 as short}
-    ]
+      { Slot: 0 as byte, id: 'rats:rat_upgrade_speed', Count: 1, Damage: 0 as short },
+      { Slot: 1 as byte, id: 'rats:rat_upgrade_ore_doubling', Count: 1, Damage: 0 as short },
+    ],
   })) //used for informing players that there's a faster variant
   .addRecipeCatalyst(<entity:rats:rat>.asEgg())
   .addRecipeCatalyst(<entity:rats:rat>.asSoul())

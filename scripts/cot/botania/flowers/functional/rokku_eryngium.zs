@@ -64,7 +64,7 @@ function pickCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntity
   val crystal = findCrystal(world, pos);
   if (isNull(crystal)) return;
   crystal.setDead();
-  subtile.setCustomData(crystal.item.tag.astralsorcery + {name: crystal.item.name, status: 'work'});
+  subtile.setCustomData(crystal.item.tag.astralsorcery + { name: crystal.item.name, status: 'work' });
   crystal.setDead();
   scripts.lib.sound.play('minecraft:entity.item.pickup', pos, world);
 }
@@ -99,13 +99,13 @@ function workOnCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEnti
 
 function dropCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
   world.spawnEntity(validCrystalNames[subtile.getCustomData().name]
-    .withTag({astralsorcery: {crystalProperties: subtile.data.crystalProperties}})
+    .withTag({ astralsorcery: { crystalProperties: subtile.data.crystalProperties } })
     .createEntityItem(world, pos.x, pos.y + 0.3f, pos.z));
-  subtile.setCustomData({crystalProperties: {collectiveCapability: -1}} as IData);
+  subtile.setCustomData({ crystalProperties: { collectiveCapability: -1 } } as IData);
 }
 
 function breakCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
-  subtile.setCustomData({crystalProperties: {collectiveCapability: -1}} as IData);
+  subtile.setCustomData({ crystalProperties: { collectiveCapability: -1 } } as IData);
   scripts.lib.sound.play('minecraft:entity.item.break', pos, world);
 }
 
@@ -116,5 +116,5 @@ function cutCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntityI
 }
 
 function cutData(data as IData, sizeChange as int, cuttingChange as int) as IData {
-  return data.deepUpdate({crystalProperties: {size: data.crystalProperties.size - sizeChange, collectiveCapability: Math.min((data.crystalProperties.collectiveCapability + cuttingChange) as int, 100)}}, {crystalProperties: {size: OVERWRITE, collectiveCapability: OVERWRITE}});
+  return data.deepUpdate({ crystalProperties: { size: data.crystalProperties.size - sizeChange, collectiveCapability: Math.min((data.crystalProperties.collectiveCapability + cuttingChange) as int, 100) } }, { crystalProperties: { size: OVERWRITE, collectiveCapability: OVERWRITE } });
 }

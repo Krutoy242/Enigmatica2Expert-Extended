@@ -22,7 +22,7 @@ val uuTooltip as ITooltipFunction = function (item) {
 };
 
 val it = native.ic2.core.uu.UuGraph.iterator();
-while (it.hasNext()) {
+while it.hasNext() {
   val entry = it.next() as native.java.util.Map.Entry;
   val itemNative = entry.key as native.net.minecraft.item.ItemStack;
   if (!isNull(itemNative)) {

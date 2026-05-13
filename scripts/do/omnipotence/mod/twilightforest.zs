@@ -4,7 +4,7 @@
 import crafttweaker.player.IPlayer;
 import scripts.do.omnipotence.utils.grantAdvancement;
 
-scripts.do.omnipotence.op.op.onGrant(function(player as IPlayer) as void {
+scripts.do.omnipotence.op.op.onGrant(function (player as IPlayer) as void {
   if (player.world.remote) return;
 
   grantAdvancement(player, 'twilightforest:magic_map');

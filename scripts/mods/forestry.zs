@@ -1,7 +1,6 @@
 #modloaded forestry thaumcraft
 
 import crafttweaker.item.IIngredient;
-import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
 
 // Remove Crafting Table recipes but keep carpenter's
@@ -51,16 +50,16 @@ scripts.mods.forestry.Carpenter.addRecipe(<forestry:chipsets:3>.withTag({ T: 3 a
 // Sturdy Casing
 scripts.mods.extendedcrafting_engineering.remakeAlted(
   <forestry:sturdy_machine> * 2, ['pretty',
-  '☼ ▬ ☼',
-  '▬   ▬',
-  '¤ ▬ ¤'], {
-  '☼': <ore:gearCopper>,
-  '▬': <ore:ingotBronze>,
-  '¤': <ore:gearBronze>,
-}, 6, {
-  '☼': <ore:gearConstantan>,
-  '▬': <ore:ingotBrass>,
-});
+    '☼ ▬ ☼',
+    '▬   ▬',
+    '¤ ▬ ¤'], {
+    '☼': <ore:gearCopper>,
+    '▬': <ore:ingotBronze>,
+    '¤': <ore:gearBronze>,
+  }, 6, {
+    '☼': <ore:gearConstantan>,
+    '▬': <ore:ingotBrass>,
+  });
 
 // [Hardened Casing] from [Sturdy Casing][+1]
 mods.forestry.Carpenter.removeRecipe(<forestry:hardened_machine>);
@@ -205,22 +204,22 @@ mods.forestry.Carpenter.removeRecipe(<forestry:iodine_capsule>);
 scripts.mods.forestry.Carpenter.addRecipe(<forestry:crafting_material:4>, [[<forestry:honeydew>, <ic2:fluid_cell>]], 100, <fluid:water> * 1000);
 scripts.mods.forestry.Carpenter.addRecipe(<forestry:iodine_capsule>, [[<forestry:honey_drop>, <ic2:fluid_cell>]], 100, <fluid:water> * 1000);
 
-# [Honey Pot] from [Honey Drop][+1]
+// [Honey Pot] from [Honey Drop][+1]
 craft.remake(<forestry:honey_pot>, [
-  "B",
-  "H",
-  "B"], {
-  "B": <ore:itemBeeswax>, # Beeswax
-  "H": <ore:dropHoney>,   # Honey Drop
+  'B',
+  'H',
+  'B'], {
+  'B': <ore:itemBeeswax>, // Beeswax
+  'H': <ore:dropHoney>,   // Honey Drop
 });
 
-# [Ambrosia] from [Royal Jelly][+1]
+// [Ambrosia] from [Royal Jelly][+1]
 craft.remake(<forestry:ambrosia>, [
-  "B",
-  "R",
-  "B"], {
-  "B": <ore:itemBeeswax>,    # Beeswax
-  "R": <ore:dropRoyalJelly>, # Royal Jelly
+  'B',
+  'R',
+  'B'], {
+  'B': <ore:itemBeeswax>,    // Beeswax
+  'R': <ore:dropRoyalJelly>, // Royal Jelly
 });
 
 // Proven Frames recycling
@@ -230,20 +229,20 @@ scripts.process.sawWood(<forestry:frame_proven>, <forestry:oak_stick> * 3);
 // Unbreakable recipe
 // [Proven Frame] from [Proven Frame][+7]
 mods.thaumcraft.Infusion.registerRecipe(
-  "frame_proven", # Name
-  "INFUSION", # Research
-  <forestry:frame_proven>.withTag({ench: [{}], enchantmentColor: 16579587, Unbreakable: 1 as byte}), # Output
-  3, # Instability
+  'frame_proven', // Name
+  'INFUSION', // Research
+  <forestry:frame_proven>.withTag({ ench: [{}], enchantmentColor: 16579587, Unbreakable: 1 as byte }), // Output
+  3, // Instability
   Aspects('40💨 40✊ 40🛎️'),
-  <forestry:frame_proven>, # Central Item
+  <forestry:frame_proven>, // Central Item
   Grid(['pretty',
-  '  ▲  ',
-  '‚   ‚',
-  '  ▬  '], {
-  '▲': <ore:dustMana>,          // Mana Dust
-  '‚': <ore:nuggetMithrillium>, // Mithrillium Nugget
-  '▬': <ore:ingotGlitch>,       // Glitch Infused Ingot
-}).spiral(1));
+    '  ▲  ',
+    '‚   ‚',
+    '  ▬  '], {
+    '▲': <ore:dustMana>,          // Mana Dust
+    '‚': <ore:nuggetMithrillium>, // Mithrillium Nugget
+    '▬': <ore:ingotGlitch>,       // Glitch Infused Ingot
+  }).spiral(1));
 
 <forestry:wax_cast>.maxDamage = 32;
 

@@ -5,8 +5,6 @@
 #priority 3500
 #reloadable
 
-import thaumcraft.aspect.CTAspectStack;
-
 val emojiMap = scripts.mods.thaumcraft.aspect.emoji.emojiMap;
 
 emojiMap['☀️'] = <aspect:humanus>;

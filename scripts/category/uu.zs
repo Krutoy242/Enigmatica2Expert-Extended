@@ -3,9 +3,7 @@
 #reloadable
 
 import crafttweaker.item.IItemStack;
-import crafttweaker.item.ITooltipFunction;
 import mods.zenutils.StaticString.format;
-import crafttweaker.player.IPlayer;
 import crafttweaker.util.Math;
 
 // How strong Difficulty effects on resulted cost
@@ -43,7 +41,7 @@ new Array(13).fill(0).map((_,i)=>10**(i+1)*0.001).map(v=>`${String(v).replace(/(
 function getCost(item as IItemStack, difficulty as double) as int {
   val cost as double = native.ic2.core.uu.UuGraph.get(item);
   if (cost > 2147483647.0) return 0;
-  if (difficulty < 0 || difficulty == 1.0 / DIFFUCULTY_FACTOR) return cost as int;
+  if (difficulty < 0 || difficulty == 1.0 / DIFFUCULTY_FACTOR) return cost;
   return difficultCost(cost, difficulty);
 }
 

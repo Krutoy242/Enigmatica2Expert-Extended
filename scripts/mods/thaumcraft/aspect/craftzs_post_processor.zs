@@ -15,7 +15,7 @@ static ASPECT_REF_PATTERN as Pattern = Pattern.compile('(?:<aspect:(\\w+)>|Aspec
 function parseAspects(aspectsString as string) as string {
   val emojiStrings = [] as [string];
   val matcher = ASPECT_REF_PATTERN.matcher(aspectsString);
-  while (matcher.find()) {
+  while matcher.find() {
     var aspectName = matcher.group(1);
     if (isNull(aspectName)) aspectName = matcher.group(2);
 
@@ -29,7 +29,7 @@ function parseAspects(aspectsString as string) as string {
         logger.logWarning('Aspect Emoji Replacer: Emoji not found for aspect: ' ~ aspectName);
       }
       else {
-        emojiStrings.add(amount == 1 ? emoji : (amount ~ emoji));
+        emojiStrings.add(amount == 1 ? emoji : amount ~ emoji);
       }
     }
   }
@@ -43,7 +43,7 @@ craft.pushPostProcessor(function (recipeString as string, output as IItemStack, 
 
   var lastEnd = 0;
   var result = '';
-  while (matcher.find()) {
+  while matcher.find() {
     result += recipeString.substring(lastEnd, matcher.start());
 
     val innerContent = matcher.group(1);

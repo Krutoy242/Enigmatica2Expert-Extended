@@ -55,7 +55,7 @@ craft.remake(<quark:charred_nether_bricks> * 32, ['pretty',
   'F': <minecraft:fire_charge>,
 });
 
-recipes.removeByRecipeName("quark:iron_plate");
+recipes.removeByRecipeName('quark:iron_plate');
 craft.make(<quark:iron_plate> * 48, ['pretty',
   '▬ ▬ ▬',
   '▬   ▬',
@@ -92,8 +92,8 @@ mods.chisel.Carving.addVariation('basaltslab', <quark:stone_basalt_bricks_slab>)
 
 // Fix recipes (each original quark recipe use basalt bricks for some reason)
 for i in [
-/* Inject_js(getSubMetas('quark:world_stone_carved').map(s=>s+',').join(' ')) */
-0, 1, 2, 3, 4, 5, 6, 7,
+/* Inject_js('  ' + getSubMetas('quark:world_stone_carved').map(s=>s+',').join(' ')) */
+  0, 1, 2, 3, 4, 5, 6, 7,
 /**/
 ] as int[] {
   if (i == 3) continue;

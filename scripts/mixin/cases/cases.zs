@@ -14,16 +14,16 @@ import native.ru.radviger.cases.Cases;
 Make it possible to use spin animation on other items
 not only cases from the mod
 */
-#mixin {targets: "ru.radviger.cases.proxy.CommonProxy"}
+#mixin { targets: 'ru.radviger.cases.proxy.CommonProxy' }
 zenClass MixinCommonProxy {
   var player as EntityPlayer = null;
 
-  #mixin Redirect 
+  #mixin Redirect
   #{
-  #  method: "handleSpinStart",
+  #  method: 'handleSpinStart',
   #  at    : {
-  #    value : "INVOKE",
-  #    target: "net/minecraft/entity/player/EntityPlayer.func_184586_b(Lnet/minecraft/util/EnumHand;)Lnet/minecraft/item/ItemStack;"
+  #    value : 'INVOKE',
+  #    target: 'net/minecraft/entity/player/EntityPlayer.func_184586_b(Lnet/minecraft/util/EnumHand;)Lnet/minecraft/item/ItemStack;'
   #  }
   #}
   function alwaysReturnCorrectCase(player as EntityPlayer, hand as EnumHand) as ItemStack {
@@ -35,12 +35,12 @@ zenClass MixinCommonProxy {
     return stack;
   }
 
-  #mixin Redirect 
+  #mixin Redirect
   #{
-  #  method: "handleSpinStart",
+  #  method: 'handleSpinStart',
   #  at    : {
-  #    value : "INVOKE",
-  #    target: "net/minecraft/item/ItemStack.func_190918_g(I)V"
+  #    value : 'INVOKE',
+  #    target: 'net/minecraft/item/ItemStack.func_190918_g(I)V'
   #  }
   #}
   function alwaysConsumeHeldItem(item as ItemStack, amount as int) as void {
@@ -51,12 +51,12 @@ zenClass MixinCommonProxy {
   /*
     Allows messages about opening crate being visible from Discord and improve formatting
   */
-  #mixin Redirect 
+  #mixin Redirect
   #{
-  #  method: "handleSpinDone",
+  #  method: 'handleSpinDone',
   #  at    : {
-  #    value : "INVOKE",
-  #    target: "net/minecraftforge/fml/common/network/simpleimpl/SimpleNetworkWrapper.sendToAll(Lnet/minecraftforge/fml/common/network/simpleimpl/IMessage;)V"
+  #    value : 'INVOKE',
+  #    target: 'net/minecraftforge/fml/common/network/simpleimpl/SimpleNetworkWrapper.sendToAll(Lnet/minecraftforge/fml/common/network/simpleimpl/IMessage;)V'
   #  }
   #}
   function sendGlobalMessage(NET as SimpleNetworkWrapper, msg as IMessage) as void {

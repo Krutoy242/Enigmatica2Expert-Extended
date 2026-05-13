@@ -6,7 +6,7 @@ import crafttweaker.item.IItemStack;
 import mods.thaumictweaker.PechTrades;
 
 static trades as IItemStack[][][string] = {
-MINER: [[
+  MINER: [[
     <extrautils2:compressedcobblestone:2>,
     <jaopca:item_clustertungsten>,
     <thaumcraft:cluster:4>,
@@ -42,7 +42,7 @@ MINER: [[
     <astralsorcery:blockgemcrystals:3>,
     <astralsorcery:blockgemcrystals:4>,
   ]],
-MAGE: [[
+  MAGE: [[
     <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "aer"}]}')),
     <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "terra"}]}')),
     <thaumcraft:phial:1>.withTag(utils.sNBT('{Aspects: [{amount: 10, key: "ignis"}]}')),
@@ -78,7 +78,7 @@ MAGE: [[
     <randomthings:beans:2>,
     <mysticalagriculture:growth_accelerator>,
   ]],
-ARCHER: [[
+  ARCHER: [[
     <forestry:hunter_bag>,
     <cyclicmagic:water_candle>,
     <rats:rat_arrow>,
@@ -114,7 +114,7 @@ ARCHER: [[
     <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 4s, id: 49}]}')),
     <minecraft:enchanted_book>.withTag(utils.sNBT('{StoredEnchantments: [{lvl: 6s, id: 65}]}')),
   ]],
-COMMON: [[
+  COMMON: [[
     <mysticalagriculture:inferium_apple> * 2,
     <extrautils2:magicapple> * 4,
     <thaumcraft:curio:1> * 4,
@@ -149,7 +149,7 @@ COMMON: [[
     <thaumadditions:zeith_fur> * 3,
     <minecraft:totem_of_undying> * 3,
     <thaumadditions:jar_eldritch>,
-]]
+  ]],
 } as IItemStack[][][string]$orderly;
 
 for type, levels in trades {

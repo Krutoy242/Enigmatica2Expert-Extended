@@ -4,11 +4,8 @@
 #reloadable
 #norun
 
-import crafttweaker.block.IBlock;
 import crafttweaker.block.IBlockState;
-import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
-import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
 
@@ -60,38 +57,39 @@ static map as IItemStack[string] = {
 } as IItemStack[string];
 
 function say(text as string) as void {
-  server.commandManager.executeCommandSilent(server, '/say §8'~text);
+  server.commandManager.executeCommandSilent(server, '/say §8' ~ text);
 }
 
 events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlockEvent) {
   if (isNull(e.world) || e.world.remote || isNull(e.player)/*  || e.player.isFake() */) return;
   if (isNull(e.item) || e.item.definition.id != 'bloodmagic:activation_crystal') return;
-  say('Crystal found. Dimension: '~e.world.dimension);
+  say('Crystal found. Dimension: ' ~ e.world.dimension);
 
   // Only works for Overworld and Skyblock dims
   if (e.world.dimension != 0 && e.world.dimension != 3) return;
 
   // Check clicked block to be ritual stone
   val masterState = e.world.getBlockState(e.position);
-  say('block found '~masterState.block.definition.id);
+  say('block found ' ~ masterState.block.definition.id);
   if (isNull(masterState) || masterState.block.definition.id != 'bloodmagic:ritual_controller') return;
 
   // Check if portal valid (simplified)
   val portalOrient = detectPortal(e.world, e.position);
-  if(portalOrient == 0) return;
+  if (portalOrient == 0) return;
   say('Portal valid');
 
   val catenationTimeout = e.world.worldInfo.worldTotalTime + 100;
   e.world.catenation()
-  .sleepUntil(function(world, context) {
-    return world.getBlock(e.position.up()).definition.id == 'bloodmagic:dimensional_portal';
-  })
-  .stopWhen(function(world, context) {
+    .sleepUntil(function (world, context) {
+      return world.getBlock(e.position.up()).definition.id == 'bloodmagic:dimensional_portal';
+    })
+    .stopWhen(function (world, context) {
       return world.worldInfo.worldTotalTime > catenationTimeout;
-  })
-  .then(function (world, ctx) {
-    prepareNewPortal(world, e.position, masterState);
-  }).start();
+    })
+    .then(function (world, ctx) {
+      prepareNewPortal(world, e.position, masterState);
+    })
+    .start();
 });
 
 function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, masterState as IBlockState) as void {
@@ -104,11 +102,13 @@ function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, mas
     || isNull(nbt.ownerMost)
     || isNull(nbt.currentRitual)
     || nbt.currentRitual != 'portal'
-  ) return;
+  ) {
+    return;
+  }
 
   // Check if actual portal was created
   val portalBlock = originalWorld.getBlock(originalPos.up());
-  say('master stone have tags. PortalID: '~portalBlock.definition.id);
+  say('master stone have tags. PortalID: ' ~ portalBlock.definition.id);
   if (isNull(portalBlock) || portalBlock.definition.id != 'bloodmagic:dimensional_portal') return;
 
   // Get point on other planet
@@ -122,18 +122,18 @@ function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, mas
 
   // Get median height we will build portal on
   val median = getMedianHeight(stella, width, deph, pos);
-  say('Median: '~median);
+  say('Median: ' ~ median);
 
   pos = IBlockPos.create(pos.x, median, pos.z);
-  
+
   // Fill with blocks
   server.commandManager.executeCommandSilent(server,
-    '/fill '~(pos.x - width / 2)~' '~(median)~' '~(pos.z - deph / 2)~' '
-    ~''~(pos.x + width / 2)~' '~(median+10)~' '~(pos.z + deph / 2)~' air'
+    '/fill ' ~ (pos.x - width / 2) ~ ' ' ~ median ~ ' ' ~ (pos.z - deph / 2) ~ ' '
+    ~ '' ~ (pos.x + width / 2) ~ ' ' ~ (median + 10) ~ ' ' ~ (pos.z + deph / 2) ~ ' air'
   );
   server.commandManager.executeCommandSilent(server,
-    '/fill '~(pos.x - width / 2)~' 2 '~(pos.z - deph / 2)~' '
-    ~''~(pos.x + width / 2)~' '~(median)~' '~(pos.z + deph / 2)~' thaumcraft:stone_arcane'
+    '/fill ' ~ (pos.x - width / 2) ~ ' 2 ' ~ (pos.z - deph / 2) ~ ' '
+    ~ '' ~ (pos.x + width / 2) ~ ' ' ~ median ~ ' ' ~ (pos.z + deph / 2) ~ ' thaumcraft:stone_arcane'
   );
 
   originalWorld.catenation().sleep(1).then(function (world, ctx) {
@@ -143,9 +143,9 @@ function prepareNewPortal(originalWorld as IWorld, originalPos as IBlockPos, mas
 
 function buildNewPortal(world as IWorld, pos as IBlockPos, masterState as IBlockState, originalWorld as IWorld, originalPos as IBlockPos) as void {
   val nbt = originalWorld.getBlock(originalPos).data;
-  say('buildNewPortal(). nbt: '~nbt.toSNBT());
+  say('buildNewPortal(). nbt: ' ~ nbt.toSNBT());
   world.setBlockState(masterState, nbt, pos);
-  
+
   say('all done!');
 }
 
