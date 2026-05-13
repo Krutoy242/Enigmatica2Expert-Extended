@@ -1,29 +1,59 @@
 ---
 name: zenscript
-description: General-purpose ZenScript (.zs) guide for edge cases, odd behavior, and unexpected issues. Load this when creating or editing any file under scripts/.
+description: General ZenScript, mod-tweak, loot-table, and ZenUtils reference for scripts/*.zs. ALWAYS LOAD THIS SKILL when creating or editing ANY .zs file — it is MANDATORY for every ZenScript task.
 metadata:
   audience: modpack-devs
   workflow: writing-zs
 ---
 
-## Known Culprits
+## Language edge cases
 
-### Map-accessed primitives are wrapped and nullable
-`map[key]` returns a wrapped primitive (not a raw primitive) that may be `null`.  
-- Null-check the result if the key might not exist  
-- Cast to the native primitive type (e.g., `int`, `bool`) before use  
+- **Map primitives are wrapped/nullable**: `map[key]` may return `null`. Cast to native primitive (`as int`, `as bool`) before use.
+- **Native types**: only `string`; no `char`/`CharSequence`. No varargs — use `T[]`. Replace Java collections with ZenScript list syntax `[type]`.
+- **Tooltips/JEI**: use `scripts.lib.tooltip.desc` helpers (`desc.jei`, `desc.tooltip`, `desc.both`) instead of raw JEI API. Lang keys auto-prefixed with `tooltips.lang.`.
+- **Loader directives**: `#loader contenttweaker` for `VanillaFactory`/`IItemUse`; default loader for recipes/JEI. `#modloaded a b c` skips file unless all mods present. `#ignoreBracketErrors` when brackets reference optional mods.
+- **Native collections**: annotate the **left-hand side** (`val recipes as [IRecipe] = ...`). Right-hand casts are ignored.
+- **Map iteration**: generics are erased; cast each entry explicitly:
+  ```zs
+  for _entry in map.entrySet() {
+      val entry = _entry as native.java.util.Map.Entry;
+      val key   = entry.key as ItemStack;
+      val value = entry.value as double;
+  }
+  ```
+- **Array inference**: contextual typing wins (`as T[]`). Empty `[]` → `any[]`. Homogeneous infers to element type. Primitives (`int`, `long`, `float`, `double`, `bool`) never mix without context. Objects may share a common super-interface (e.g., `[<item>, <liquid>]` → `IIngredient[]`).
+- **World time**: `world.time` is day time (0–24000) and freezes when day/night cycle is off. Use `world.worldInfo.worldTotalTime` for tick intervals.
 
-### Native Types
-- ZenScript only has `string`; replace `char`/`CharSequence` with `string`.
-- No varargs (`T...`); use `T[]` arrays for variable-length parameters.
-- Replace Java collections/lists (`List`, `Iterable`, `Iterator`, etc.) with ZenScript list syntax `[type]`.
+## Mod tweaks (`scripts/mods/`)
 
-### Tooltips & JEI descriptions
-Use the project helper `scripts.lib.tooltip.desc` instead of raw `mods.jei.JEI.addDescription` / `item.addTooltip`:
-- `desc.jei(item, 'key')` — JEI tab; `desc.tooltip(item, 'key')` — hover; `desc.both(item, 'key')` — both.
-- Lang key is auto-prefixed with `tooltips.lang.`. Multiline via `\n` or `<br>` in the lang value (one key per item, not `descN` splits).
+One file per mod (`scripts/mods/<modid>.zs`), starting with `#modloaded <mod-id>`. Typical flow: hide unwanted JEI entries/categories, remove original recipes (`removeByRecipeName` preferred), then add replacements via shared craft helpers. Use `#priority 100` and `#reloadable` when you only touch recipes.
 
-### Loader / guard directives
-- `#loader contenttweaker` — required for `VanillaFactory.createItem` / `IItemUse`. Recipes, tooltips, JEI stay on the default CrT loader (split into two files when both are needed).
-- `#modloaded a b c` — skip the script unless all listed mods are present.
-- `#ignoreBracketErrors` — needed when bracket handlers (`<modid:...>`) reference optional mods.
+## Loot tables
+
+Two parallel systems:
+1. **LootTweaker** (`scripts/loot/`): `LootTweaker.getTable("...")`, `addPool("e2ee_...", ...)`, `addItemEntry(...)`. Reuse shared pools from `scripts/loot/preMadeLoot.zs` by iterating its static maps. Use pool prefix `e2ee_` and `#priority 10` so additions run after `scripts/_init/purge_loot.zs`.
+2. **Dropt** (`config/dropt/` + `scripts/lib/dropt.zs`): for block/mob drops LootTweaker can't reach. Build rules in JSON or via ZS helpers.
+
+## Native method access
+
+Native method access: prefix imports with `native.` (e.g. `native.net.minecraft.world.World`). Use `.native` to unwrap CraftTweaker objects to MC classes and `.wrapper` to wrap them back; conversions apply automatically in arguments and casts. MCP method names are remapped to obfuscated names automatically, and JavaBean getters/setters (`getFoo`/`setFoo`) translate to ZenScript `foo` properties. `Iterable<T>` types can be iterated, expose `.length`, and cast to `[T]`; `==`/`!=` invoke `Objects.equals`. Downcasting native classes requires a checked right-hand cast (`val player = entity as Player`).
+
+Advanced: `zenClass` can `extends` one native class plus any number of native interfaces; overrides must use SRG names (MCP in comments). Most dangerous APIs are blacklisted: file I/O, network, multithreading, Mixin/ASM, other JVM languages, and core Java internals (`java.lang` except `Class`, `sun.*`, `jdk.*`). `java.lang.Class` objects are obtainable (via `.class` or `.getClass()`) but all reflection methods on them are blocked.
+
+## ZenUtils quick reference
+
+Read any wiki page without cloning:
+```bash
+curl -sL "https://raw.githubusercontent.com/wiki/friendlyhj/ZenUtils/<Folder>/<Page>.md"
+```
+
+Key areas (replace `<Folder>/<Page>`):
+- **Preprocessors / utilities**: `Others/ScriptReloading`, `Others/SuppressErrorPreprocessor`, `Others/HardFailPreprocessor`, `Others/OrderlyMap`, `Others/GlobalFunctions`, `Others/Catenation`, `Others/PersistedCatenation`
+- **ZenExpansions**: `ZenExpansion/TemplateString`, `ZenExpansion/NullishOperators`, `ZenExpansion/ArrayAndListOperations`, `ZenExpansion/NativeMethodAccess`, `ZenExpansion/Mixin`, `ZenExpansion/ZenUtilsPlayer`, `ZenExpansion/ZenUtilsWorld`
+- **Classes**: `Classes/CrTI18n`, `Classes/CrTUUID`, `Classes/CrTItemHandler`, `Classes/CrTLiquidHandler`, `Classes/PlayerStat`, `Classes/GameRuleHelper`
+- **Events**: `Events/EntityRemoveEvent`, `Events/WorldEvents`, `Events/GenericEventManager`
+- **Custom commands**: `CustomCommand/ZenCommand`, `CustomCommand/ZenCommandTree`
+- **CoT expansion**: `ContentTweakerExpansion/ExpandItem`, `ContentTweakerExpansion/EnergyItem`, `ContentTweakerExpansion/TileEntity`
+- **FTB Quests**: `FTBQuests/Quest`, `FTBQuests/Events/QuestCompletedEvent`
+
+Browse rendered wiki: `gh browse --wiki -R friendlyhj/ZenUtils`
