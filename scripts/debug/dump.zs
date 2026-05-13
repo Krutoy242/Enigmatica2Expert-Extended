@@ -145,6 +145,9 @@ function runAutomation(player as IPlayer) as void {
     exportAllBlocks();
     // exportAllTools();
   }).sleep(100).then(function (world, ctx) {
+    player.sendMessage('Developing: Starting §cdump arc recycling');
+    server.commandManager.executeCommandSilent(server, '/dump_arc_recycling');
+  }).sleep(100).then(function (world, ctx) {
     player.sendMessage('Developing: §aFinished!');
   }).start();
 }

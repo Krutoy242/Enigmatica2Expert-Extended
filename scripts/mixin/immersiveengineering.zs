@@ -2,7 +2,9 @@
 #loader mixin
 
 import native.net.minecraft.entity.IMerchant;
+import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.village.MerchantRecipeList;
+import native.java.util.Map;
 import native.java.util.Random;
 import mixin.CallbackInfo;
 
@@ -58,5 +60,20 @@ zenClass MixinArcRecyclingThreadHandler {
   #mixin Overwrite
   function finishUp() as void {
     // NO-OP: do not inject recycling recipes
+  }
+}
+
+/*
+Expose RecyclingCalculation fields so the debug dump script can read them
+without needing access transformers.
+*/
+#mixin { targets: 'blusunrize.immersiveengineering.common.crafting.ArcRecyclingThreadHandler$RecyclingCalculation' }
+zenClass MixinRecyclingCalculation {
+  function getOutputs() as Map {
+    return this0.outputs;
+  }
+
+  function getStack() as ItemStack {
+    return this0.stack;
   }
 }
