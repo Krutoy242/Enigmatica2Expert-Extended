@@ -167,8 +167,9 @@ x.addVisual(MachineVisual.smoke(
 // ========================================================
 // Variables
 // ========================================================
-function pushErr(m as MachineContainer, reason as string) as void {
-  if (isNull(reason)) return m.setString('error', '');
+function pushErr(m as MachineContainer, reason as string = '') as void {
+  val oldStr = m.getString('error');
+  if (!isNull(oldStr) && oldStr == reason) return;
   m.setString('error', reason);
 }
 
@@ -183,7 +184,6 @@ function defineVars(m as MachineContainer) as void {
   m.setString('error', ''); // Error line
   m.setInteger('goal', 0); // how much UU need. -1 if just trying to push output
   m.setInteger('buffer', 0); // stored UU in internal
-  m.setInteger('tick', 0);
   m.setString('penalty', 0);
 }
 
@@ -196,7 +196,7 @@ function increaseDifficulty(m as MachineContainer, bufferConsumed as int, dfclty
   scripts.lib.offline.op.set(ownerUUID, 'difficulty', newDifficulty);
 
   // ⭐ FX effect
-  if (m.getInteger('tick') % 20 == 0) {
+  if (m.world.worldInfo.worldTotalTime % 20 == 0) {
     NetworkHandler.sendToAllAround('acquire_star_and_flare',
       m.pos.x, m.pos.y, m.pos.z, 30, m.world.getDimension(), function (b) {
         b.writeData({
@@ -211,7 +211,7 @@ function increaseDifficulty(m as MachineContainer, bufferConsumed as int, dfclty
 // ========================================================
 // Consumptions
 // ========================================================
-function calcConsumption(upgrAmount as int, tick as double) as int {
+function calcConsumption(upgrAmount as int, tick as long) as int {
   val s = pow(1.3, upgrAmount);
   val resid = s - s as int as double;
   if (resid == 0) return s;
@@ -255,7 +255,7 @@ function getReplicateItem(m as MachineContainer, disk as IItemStack) as IItemSta
 function consumeEnergy(m as MachineContainer, amount as int) as void {
   val energy = m.getEnergy(powX, powY);
   m.setEnergy(powX, powY, energy - amount);
-  m.setInteger('active', 10);
+  if (m.getInteger('active') <= 0) m.setInteger('active', 10);
 }
 
 // Machine completed it task and could start new one
@@ -264,7 +264,7 @@ function succes(m as MachineContainer, powr as int, output as IItemStack, dfclty
   increaseDifficulty(m, uu.getCost(output, -1), dfclty);
   consumeEnergy(m, powr);
   m.setInteger('goal', 0);
-  pushErr(m, null);
+  pushErr(m);
 }
 
 function consumeMatter(m as MachineContainer, consumeAmount as int) as bool {
@@ -314,7 +314,7 @@ function spentBuffer(m as MachineContainer, powr as int, buffer as int, goal as 
 
 // Consume fluid and add it to buffer
 // Goal always bigger than 0 here
-function work(m as MachineContainer, tick as int, upgrAmount as int, powr as int, dfclty as double) as void {
+function work(m as MachineContainer, tick as long, upgrAmount as int, powr as int, dfclty as double) as void {
   var buffer = m.getInteger('buffer');
   val goal = m.getInteger('goal');
 
@@ -333,7 +333,7 @@ function work(m as MachineContainer, tick as int, upgrAmount as int, powr as int
   // Just add to buffer, skip
   m.setInteger('buffer', buffer);
   consumeEnergy(m, powr);
-  pushErr(m, null);
+  pushErr(m);
 }
 
 /*
@@ -344,10 +344,26 @@ function work(m as MachineContainer, tick as int, upgrAmount as int, powr as int
    ██║   ██║╚██████╗██║  ██╗
    ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝
 */
-function tick(m as MachineContainer) as void {
-  defineVars(m);
-  val tick = m.getInteger('tick');
-  m.setInteger('tick', tick + 1);
+function getOwnerDifficulty(m as MachineContainer) as double {
+  val ownerUUID = m.getString('ownerUUID');
+  return scripts.lib.mod.scalinghealth.getPlayerDifficulty(ownerUUID);
+}
+
+function setDisplayItem(m as MachineContainer, item as IItemStack) as void {
+  val current = m.getItem(displX, displY);
+  if (isNull(item)) {
+    if (!isNull(current)) m.setItem(displX, displY, null);
+  }
+  else {
+    if (isNull(current) || current.definition.id != item.definition.id || current.damage != item.damage) {
+      m.setItem(displX, displY, item);
+    }
+  }
+}
+
+function idleScan(m as MachineContainer, wTime as long) as void {
+  // Clear error during idle
+  pushErr(m);
 
   // 🧍 Check if player
   val ownerUUID = m.getString('ownerUUID');
@@ -357,10 +373,10 @@ function tick(m as MachineContainer) as void {
   val personalDfclty = scripts.lib.mod.scalinghealth.getPlayerDifficulty(ownerUUID);
   val localDfclty = scripts.lib.mod.scalinghealth.getDimDifficulty(personalDfclty, m.world.dimension);
 
-  // 🎯 Update penalty text each tick
+  // 🎯 Check fake and update penalty text each 20 ticks
   if (personalDfclty < 0 || scripts.lib.fake.isFake(ownerUUID, m.getString('owner')))
     return pushErr(m, '§0No fakes\n§0 allowed ☹');
-  updatePenaltyText(m, localDfclty);
+  if (wTime % 20 == 0) updatePenaltyText(m, localDfclty);
 
   // ⚡ Check energy
   val upgrAmount = getUpgrAmount(m);
@@ -368,25 +384,18 @@ function tick(m as MachineContainer) as void {
   val powr = calcPowerConsumption(upgrAmount);
   if (energy < powr) return pushErr(m, '§cNeed\n§c energy');
 
-  // 📦 Output is stuck
-  val goal = m.getInteger('goal');
-  if (goal < 0) return pushOutput(m, powr, personalDfclty);
-
-  // ⚙️ Check if we already working
-  if (goal > 0) return work(m, tick, upgrAmount, powr, personalDfclty);
-
   // ❔ Find what item we should replicate
   val disk = m.getItem(diskX, diskY);
   if (isNull(disk) || disk.definition.id != 'ic2:crystal_memory') {
-    m.setItem(displX, displY, null);
+    setDisplayItem(m, null);
     return pushErr(m, '§bInsrt Crstl\n§b Memory');
   }
   val item = getReplicateItem(m, disk);
   if (isNull(item)) {
-    m.setItem(displX, displY, null);
+    setDisplayItem(m, null);
     return pushErr(m, '§3Write data\n§3 to memory');
   }
-  m.setItem(displX, displY, item); // Set item is display slot
+  setDisplayItem(m, item);
 
   // Acquire item when player trying to replicate it
   scripts.do.acquire.events.checkAcquire('replicate', server.getPlayerByUUID(ownerUUID), item);
@@ -403,7 +412,34 @@ function tick(m as MachineContainer) as void {
   // ✔️ Consume catalyst and start operation
   m.setItem(catlX, catlY, catl.amount > 1 ? catl * (catl.amount - 1) : null);
   m.setInteger('goal', catlCost);
-  work(m, tick, upgrAmount, powr, personalDfclty);
+  work(m, wTime, upgrAmount, powr, personalDfclty);
+}
+
+function tick(m as MachineContainer) as void {
+  defineVars(m);
+  val goal = m.getInteger('goal');
+  val wTime = m.world.worldInfo.worldTotalTime;
+
+  // --- Fast path: fully idle ---
+  if (goal == 0) {
+    if (wTime % 10 != 0) return;
+    return idleScan(m, wTime);
+  }
+
+  // 📦 Output is stuck
+  if (goal < 0) {
+    if (wTime % 5 != 0) return;
+    val upgrAmount = getUpgrAmount(m);
+    val powr = calcPowerConsumption(upgrAmount);
+    val personalDfclty = getOwnerDifficulty(m);
+    return pushOutput(m, powr, personalDfclty);
+  }
+
+  // ⚙️ Active work
+  val upgrAmount = getUpgrAmount(m);
+  val powr = calcPowerConsumption(upgrAmount);
+  val personalDfclty = getOwnerDifficulty(m);
+  work(m, wTime, upgrAmount, powr, personalDfclty);
 }
 
 x.addRecipe(AssemblyRecipe.create(function (c) {})
