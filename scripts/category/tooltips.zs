@@ -58,6 +58,8 @@ for item in [
   <contenttweaker:conglomerate_of_life>,
   <contenttweaker:conglomerate_of_sun>,
   <cyclicmagic:inventory_food>,
+  <enderio:item_liquid_conduit:1>,
+  <enderio:item_liquid_conduit>,
   <exnihilocreatio:hammer_diamond>,
   <farmingforblockheads:feeding_trough>,
   <ic2:quantum_chestplate>,

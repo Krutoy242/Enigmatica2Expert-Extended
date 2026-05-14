@@ -80,3 +80,5 @@ tooltips.lang.botania:missilerod=§aCreates homing missiles.§8 Uses mana.
 tooltips.lang.botania:cobblerod=§aPlace Cobblestone.§8 Uses mana.
 tooltips.lang.botania:smeltrod=§aSmelt blocks.§8 Uses mana.
 tooltips.lang.botania:exchangerod=§aExchanging blocks.§8 Uses mana.
+tooltips.lang.enderio:item_liquid_conduit=§4Unavailable. §cNoticeably reduce FPS even in moderate use.
+tooltips.lang.enderio:item_liquid_conduit:1=§4Unavailable. §cNoticeably reduce FPS even in moderate use.

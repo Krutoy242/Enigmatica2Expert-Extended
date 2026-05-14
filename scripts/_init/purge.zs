@@ -302,6 +302,8 @@ Purge(<jaopca:block_blocktungsten>).ores([<ore:blockTungsten>]);
 Purge(<jaopca:item_nuggettungsten>).ores([<ore:nuggetTungsten>]);
 Purge(<enderio:item_owl_egg>);
 Purge(<enderio:item_material:9>);
+Purge(<enderio:item_liquid_conduit>);
+Purge(<enderio:item_liquid_conduit:1>);
 Purge(<thermalfoundation:material:22>).ores([<ore:gearWood>]).aspects();
 Purge(<thermalfoundation:material:656>);
 Purge(<ae2stuff:visualiser>);

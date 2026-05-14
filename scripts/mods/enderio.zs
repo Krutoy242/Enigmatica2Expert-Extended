@@ -6,6 +6,9 @@ import crafttweaker.liquid.ILiquidStack;
 
 import scripts.process.solution;
 
+// Remove upgrade recipe from disabled previous tier
+recipes.removeByRecipeName('enderio:conduit_liquid_ender_upgrade');
+
 // Cheaper decorations
 val casing = <teslacorelib:machine_case> | <actuallyadditions:block_misc:9> | <mekanism:basicblock:8> | <nuclearcraft:part:10>;
 
