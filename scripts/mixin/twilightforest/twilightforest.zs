@@ -10,14 +10,13 @@ import native.net.minecraft.init.Blocks;
 import native.net.minecraft.inventory.IInventory;
 import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.util.math.BlockPos;
+import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.world.World;
 import native.net.minecraft.world.WorldServer;
-import native.net.minecraftforge.oredict.OreDictionary;
 import native.twilightforest.block.BlockTFMagicLeaves;
 import native.twilightforest.block.BlockTFMagicLog;
 import native.twilightforest.block.BlockTFMagicLogSpecial;
 import native.twilightforest.enums.MagicWoodVariant;
-import native.twilightforest.inventory.ContainerTFUncrafting;
 import native.twilightforest.inventory.InventoryTFGoblinUncrafting;
 
 #mixin { targets: 'twilightforest.block.BlockTFMagicLogSpecial' }
@@ -108,8 +107,10 @@ zenClass MixinBlockTFMagicLogSpecial {
 
 /*
 Add antidupe for [Uncrafting Table]
-Now Uncrafting Table mechanic improved - you can't get same item in output as in input.
-For example, you cant get Mekanism Tanks of higher tier from lower ones.
+Now Uncrafting Table mechanic strictly validates that re-assembling ingredients
+gives back the same item (soft NBT check).
+For example, you can't get Mekanism Tanks of higher tier from lower ones
+via NBT-less recipe mismatch.
 */
 #mixin { targets: 'twilightforest.inventory.ContainerTFUncrafting' }
 zenClass MixinContainerTFUncrafting {
@@ -121,18 +122,20 @@ zenClass MixinContainerTFUncrafting {
 
   #mixin Inject { method: 'func_75130_a', at: { value: 'RETURN' } }
   function onCraftMatrixChanged(inventory as IInventory, ci as CallbackInfo) as void {
-    // Check if the recipe result is the same as one of the uncrafting ingredients
-    val outputStack = tinkerInput.getStackInSlot(0);
+    // Only validate when the uncrafting recipe was just calculated (tinkerInput changed).
+    // When the player takes items from the grid, inventory will be uncraftingMatrix
+    // or assemblyMatrix — we must NOT re-validate then, or recipes.craft() fails
+    // on a partial grid and blocks all remaining ingredients.
+    if (inventory != tinkerInput) return;
+
+    val inputStack = tinkerInput.getStackInSlot(0);
+    if (inputStack.isEmpty() || uncraftingMatrix.isEmpty()) return;
+
+    val ingredients = [null, null, null, null, null, null, null, null, null] as ItemStack[];
     for i in 0 .. 9 {
-      val ingredientStack = uncraftingMatrix.getStackInSlot(i);
-      if (
-        !ingredientStack.isEmpty() && !outputStack.isEmpty()
-        && ingredientStack.item == outputStack.item
-        && (ingredientStack.itemDamage == OreDictionary.WILDCARD_VALUE || ingredientStack.itemDamage == outputStack.itemDamage)
-      ) {
-        // Mark the stack to indicate it's banned
-        ContainerTFUncrafting.markStack(ingredientStack);
-      }
+      ingredients[i] = uncraftingMatrix.getStackInSlot(i);
     }
+
+    scripts.mixin.twilightforest.shared.Op.validateUncraft(inputStack, ingredients);
   }
 }
