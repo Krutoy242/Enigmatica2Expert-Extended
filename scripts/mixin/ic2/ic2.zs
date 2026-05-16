@@ -494,3 +494,33 @@ zenClass MixinItemSprayer {
     return 32;
   }
 }
+
+/*
+Fixes item duplication and illegal stack-size bugs in TileEntityCrop#performHarvest().
+Most CropCard implementations cache the ItemStack returned by getGains(). The original code
+passes that cached stack directly to StackUtil.incSize(), which mutates it in-place, so every
+subsequent harvest receives an already-inflated stack and grows it further (exponential duping).
+Once the size exceeds the item's max stack limit, inventories silently truncate the overflow,
+causing item loss. We intercept every incSize() call inside TileEntityCrop (method wildcard "*"
+is safe because this class only calls it in performHarvest() and its synthetic lambda helpers),
+operate on a detached copy, and clamp the result to getMaxStackSize().
+*/
+#mixin { targets: 'ic2.core.crop.TileEntityCrop' }
+zenClass MixinTileEntityCropPerformHarvest {
+  #mixin WrapOperation
+  #{
+  #  method: '*',
+  #  at: {
+  #    value: 'INVOKE',
+  #    target: 'Lic2/core/util/StackUtil;incSize(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;'
+  #  }
+  #}
+  function safeIncSize(drop as ItemStack, original as mixin.Operation) as ItemStack {
+    var copy = drop.copy();
+    var result = original.call(copy) as ItemStack;
+    if (result.count > result.maxStackSize) {
+      result.setCount(result.maxStackSize);
+    }
+    return result;
+  }
+}
