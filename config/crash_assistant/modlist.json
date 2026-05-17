@@ -3001,13 +3001,13 @@
     "name": "Tinkers Construct OpenComputers Driver",
     "version": "0.4"
   },
-  "TinkersPlannerAntique-1.12.2-1.1.0.jar": {
-    "curseForgeHash": 2859152217,
-    "jarName": "TinkersPlannerAntique-1.12.2-1.1.0.jar",
+  "TinkersPlannerAntique-1.12.2-1.0.3.jar": {
+    "curseForgeHash": 3847441518,
+    "jarName": "TinkersPlannerAntique-1.12.2-1.0.3.jar",
     "modId": "tinkersplannerantique",
-    "modrinthHash": "446ee16ef73a10fc00a287c66f25f8c649e72664",
+    "modrinthHash": "be22ccbd8cce141cab631fcad5c61ada0282c70c",
     "name": "Tinkers Planner Antique",
-    "version": "1.1.0"
+    "version": "1.0.3"
   },
   "TinkerToolLeveling-1.12.2-1.1.0.jar": {
     "curseForgeHash": 1563429384,
