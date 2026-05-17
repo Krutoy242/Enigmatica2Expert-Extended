@@ -1,0 +1,150 @@
+{
+  "excludeList": [],
+  "excludeMode": "ONLY",
+  "hardInclude": "anything",
+  "includeList": [],
+  "includeListInSuperCategory": true,
+  "name": "gui.xaero_entity_category_root",
+  "protection": true,
+  "settingOverrides": {},
+  "subCategories": [
+    {
+      "excludeList": [
+        "minecraft:armor_stand"
+      ],
+      "excludeMode": "ONLY",
+      "hardInclude": "living",
+      "includeList": [],
+      "includeListInSuperCategory": true,
+      "name": "gui.xaero_entity_category_living",
+      "protection": true,
+      "settingOverrides": {},
+      "subCategories": [
+        {
+          "excludeList": [],
+          "excludeMode": "ONLY",
+          "hardInclude": "players",
+          "includeList": [],
+          "includeListInSuperCategory": true,
+          "name": "gui.xaero_entity_category_players",
+          "protection": true,
+          "settingOverrides": {},
+          "subCategories": [
+            {
+              "excludeList": [],
+              "excludeMode": "ONLY",
+              "hardInclude": "nothing",
+              "includeList": [],
+              "includeListInSuperCategory": true,
+              "name": "gui.xaero_entity_category_friend",
+              "protection": true,
+              "settingOverrides": {},
+              "subCategories": []
+            },
+            {
+              "excludeList": [],
+              "excludeMode": "ONLY",
+              "hardInclude": "tracked",
+              "includeList": [],
+              "includeListInSuperCategory": true,
+              "name": "gui.xaero_entity_category_tracked",
+              "protection": true,
+              "settingOverrides": {},
+              "subCategories": []
+            },
+            {
+              "excludeList": [],
+              "excludeMode": "ONLY",
+              "hardInclude": "same-team",
+              "includeList": [],
+              "includeListInSuperCategory": true,
+              "name": "gui.xaero_entity_category_same_team",
+              "protection": true,
+              "settingOverrides": {},
+              "subCategories": []
+            },
+            {
+              "excludeList": [],
+              "excludeMode": "ONLY",
+              "hardInclude": "anything",
+              "includeList": [],
+              "includeListInSuperCategory": true,
+              "name": "gui.xaero_entity_category_other_teams",
+              "protection": true,
+              "settingOverrides": {},
+              "subCategories": []
+            }
+          ]
+        },
+        {
+          "excludeList": [],
+          "excludeMode": "ONLY",
+          "hardInclude": "hostile",
+          "includeList": [],
+          "includeListInSuperCategory": true,
+          "name": "gui.xaero_entity_category_hostile",
+          "protection": true,
+          "settingOverrides": {},
+          "subCategories": [
+            {
+              "excludeList": [],
+              "excludeMode": "ONLY",
+              "hardInclude": "tamed",
+              "includeList": [],
+              "includeListInSuperCategory": true,
+              "name": "gui.xaero_entity_category_hostile_tamed",
+              "protection": true,
+              "settingOverrides": {},
+              "subCategories": []
+            }
+          ]
+        },
+        {
+          "excludeList": [],
+          "excludeMode": "ONLY",
+          "hardInclude": "anything",
+          "includeList": [],
+          "includeListInSuperCategory": true,
+          "name": "gui.xaero_entity_category_friendly",
+          "protection": true,
+          "settingOverrides": {},
+          "subCategories": [
+            {
+              "excludeList": [],
+              "excludeMode": "ONLY",
+              "hardInclude": "tamed",
+              "includeList": [],
+              "includeListInSuperCategory": true,
+              "name": "gui.xaero_entity_category_friendly_tamed",
+              "protection": true,
+              "settingOverrides": {},
+              "subCategories": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "excludeList": [],
+      "excludeMode": "ONLY",
+      "hardInclude": "items",
+      "includeList": [],
+      "includeListInSuperCategory": true,
+      "name": "gui.xaero_entity_category_items",
+      "protection": true,
+      "settingOverrides": {},
+      "subCategories": []
+    },
+    {
+      "excludeList": [],
+      "excludeMode": "ONLY",
+      "hardInclude": "anything",
+      "includeList": [],
+      "includeListInSuperCategory": true,
+      "name": "gui.xaero_entity_category_other_entities",
+      "protection": true,
+      "settingOverrides": {},
+      "subCategories": []
+    }
+  ]
+}

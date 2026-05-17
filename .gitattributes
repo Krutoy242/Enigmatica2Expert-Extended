@@ -22,7 +22,7 @@ config/jei/itemBlacklist.cfg filter=itemBlacklist
 # ℹ️ Sort the JSON file, as it can be shuffled.
 # › git config filter.json-sorter.clean "jq 'walk(if type==\"object\" then to_entries|sort_by(.key|ascii_downcase)|from_entries else . end)'"
 # › git config filter.json-sorter.smudge "jq 'walk(if type==\"object\" then to_entries|sort_by(.key|ascii_downcase)|from_entries else . end)'"
-config/xaerominimap_entities.json filter=json-sorter
+config/xaero/**/*.json filter=json-sorter
 config/crash_assistant/**/*.json filter=json-sorter
 
 # ℹ️ Remove random values that change on every load.

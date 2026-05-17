@@ -1,0 +1,20 @@
+{
+  "tool": {
+    "handle": ["durability", "modifier"],
+    "head": ["attack", "durability", "harvestLevel", "miningspeed"],
+    "extra": ["extraDurability"],
+    "bow": ["bonusDamage", "drawspeed", "range"],
+    "bowstring": ["modifier"],
+    "shaft": ["bonusAmmo", "modifier"],
+    "projectile": [],
+    "fletching": ["accuracy", "modifier"],
+    "laser_medium": ["power", "range"],
+    "battery_cell": ["energy"],
+    "tconevo.magic": ["durability", "harvestLevel", "potency", "range"]
+  },
+  "armor": {
+    "core": ["defense", "durability"],
+    "plates": ["durability", "modifier", "toughness"],
+    "trim": ["extraDurability"]
+  }
+}
