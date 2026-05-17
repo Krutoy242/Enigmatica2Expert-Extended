@@ -1,4 +1,5 @@
 #modloaded immersiveengineering
+#priority -3000
 
 import crafttweaker.item.IItemStack;
 

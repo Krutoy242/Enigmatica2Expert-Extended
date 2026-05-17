@@ -43,6 +43,7 @@ function dumpArcRecycling() as void {
 
   var content = 'Save this into file "scripts/mods/immersiveengineering/recycling.zs"\n'
     ~ '#modloaded immersiveengineering\n'
+    ~ '#priority -3000\n'
     ~ '\n'
     ~ 'import crafttweaker.item.IItemStack;\n'
     ~ '\n'
