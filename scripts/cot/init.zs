@@ -102,6 +102,33 @@ createBlockStone('compressed_basalt_double', 5, <blockmaterial:rock>);
 createBlockStone('terrestrial_artifact_block', 9, <blockmaterial:rock>);
 createBlockStone('silicon_block', 4, <blockmaterial:rock>);
 
+// ------------------------------------------------------------------
+// Custom Gem Blocks & Ores (Anglesite, Benitoite, Bixbite)
+// ------------------------------------------------------------------
+// For EACH new gem added here, the following files/systems must be
+// updated (search the codebase for one of the existing gems to find
+// all occurrences):
+//
+// 1. Block registration            – this file (scripts/cot/init.zs)
+// 2. Drop handler                  – scripts/cot/functions.zs
+// 3. Ore dictionary                – scripts/category/oredict.zs
+// 4. Beneficiation & cleanup       – scripts/cot/recipes.zs
+// 5. Purge (JAOPCA extras)         – scripts/_init/purge.zs
+// 6. Infinity Furnace recipes      – scripts/requious/infinity_furnace.zs
+// 7. JAOPCA material config        – config/JAOPCA.cfg
+// 8. RFTools dimlets               – config/rftools/dimlets.json
+// 9. JER world-gen drops           – config/jeresources/world-gen.json
+//    (or dev/automation/jer.ts for rebuild)
+// 10. ThaumicTweaker Sounding col  – config/thaumictweaker/ThaumicTweaker - Tweaks.cfg
+// 11. JEI item blacklist           – config/jei/itemBlacklist.cfg
+// 12. Localisation                 – resources/contenttweaker/lang/*.lang
+// 13. Block models / blockstates   – resources/contenttweaker/models/block/*.json
+//                                    resources/contenttweaker/blockstates/*.json
+// 14. Item model                   – resources/contenttweaker/models/item/*.json
+// 15. Textures (base + glow RP)    – resources/contenttweaker/textures/blocks/*.png
+//                                    resourcepacks/.../textures/blocks/*.png
+// ------------------------------------------------------------------
+
 val gemABB = AxisAlignedBB.create(0.3, 0, 0.3, 0.7, 0.9, 0.7);
 var b = VanillaFactory.createBlock('anglesite', <blockmaterial:glass>);
 b.toolClass = 'pickaxe';
@@ -109,7 +136,7 @@ b.toolLevel = 10;
 b.blockHardness = 16;
 b.blockResistance = 14;
 b.blockSoundType = <soundtype:glass>;
-b.lightValue = 1;
+b.lightValue = 14.0 / 15.0 + 0.00001;
 b.axisAlignedBB = gemABB;
 b.entitySpawnable = false;
 b.fullBlock = false;
@@ -123,7 +150,21 @@ b.toolLevel = 10;
 b.blockHardness = 16;
 b.blockResistance = 14;
 b.blockSoundType = <soundtype:glass>;
-b.lightValue = 1;
+b.lightValue = 14.0 / 15.0 + 0.00001;
+b.axisAlignedBB = gemABB;
+b.entitySpawnable = false;
+b.fullBlock = false;
+b.lightOpacity = 27;
+b.translucent = true;
+b.register();
+
+b = VanillaFactory.createBlock('bixbite', <blockmaterial:glass>);
+b.toolClass = 'pickaxe';
+b.toolLevel = 10;
+b.blockHardness = 16;
+b.blockResistance = 14;
+b.blockSoundType = <soundtype:glass>;
+b.lightValue = 14.0 / 15.0 + 0.00001;
 b.axisAlignedBB = gemABB;
 b.entitySpawnable = false;
 b.fullBlock = false;
@@ -141,6 +182,15 @@ b.lightValue = 14.0 / 15.0 + 0.00001;
 b.register();
 
 b = VanillaFactory.createBlock('ore_benitoite', <blockmaterial:rock>);
+b.toolClass = 'pickaxe';
+b.toolLevel = 11;
+b.blockHardness = 20;
+b.blockResistance = 18;
+b.blockSoundType = <soundtype:stone>;
+b.lightValue = 14.0 / 15.0 + 0.00001;
+b.register();
+
+b = VanillaFactory.createBlock('ore_bixbite', <blockmaterial:rock>);
 b.toolClass = 'pickaxe';
 b.toolLevel = 11;
 b.blockHardness = 20;

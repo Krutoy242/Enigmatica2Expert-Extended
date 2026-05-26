@@ -136,8 +136,16 @@ Filter entries matching key=glob (multiple rules separated by &&)
     simple('endreborn:crop_ender_flower', 'minecraft:ender_pearl')
     simple('bloodmagic:demon_crystal', 'bloodmagic:item_demon_crystal')
     simple('exnihilocreatio:block_infested_leaves', 'minecraft:string', [2, 2, 2, 2])
+    // ------------------------------------------------------------------
+    // Custom gem ore drops for JER.
+    // When a new gem ore block is added in scripts/cot/init.zs, insert
+    // a matching `simple()` line here so that `npm run jer` regenerates
+    // config/jeresources/world-gen.json correctly.
+    // Block → gem item; fortune multipliers are identical for all gems.
+    // ------------------------------------------------------------------
     simple('contenttweaker:ore_anglesite', 'contenttweaker:anglesite', [1, 1.5, 2.0, 2.5])
     simple('contenttweaker:ore_benitoite', 'contenttweaker:benitoite', [1, 1.5, 2.0, 2.5])
+    simple('contenttweaker:ore_bixbite', 'contenttweaker:bixbite', [1, 1.5, 2.0, 2.5])
     simple('randomthings:spectreleaf', ['randomthings:spectresapling', 'randomthings:ingredient:2'])
     simple('randomthings:beanpod', [
       'biomesoplenty:gem:1',

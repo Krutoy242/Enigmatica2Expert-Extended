@@ -427,6 +427,20 @@ infinFurnace(<immersiveengineering:ore:5>, <immersiveengineering:metal:5>);
 infinFurnace(<industrialforegoing:dryrubber:*>, <industrialforegoing:plastic>);
 // SKIP: <integrateddynamics:menril_log_filled>
 // SKIP: <integrateddynamics:menril_log>
+// ------------------------------------------------------------------
+// JAOPCA ore-processing chain for custom gem ores.
+// Materials are defined in config/JAOPCA.cfg.
+// For every new gem added in scripts/cot/init.zs + config/JAOPCA.cfg
+// the following five recipe groups must be extended (search existing
+// gems to find the correct alphabetical insertion points):
+//   1. chunk → dirty gem        (≈ ×10)
+//   2. cluster → gem item       (≈ ×2)
+//   3. crystal abyss → dirty gem
+//   4. dirty gem → gem item     (≈ ×12)
+//   5. dust alch → dirty gem    (≈ ×48)
+//   6. rocky chunk → dirty gem  (≈ ×4)
+// Corresponding purge calls are in scripts/_init/purge.zs.
+// ------------------------------------------------------------------
 infinFurnace(<jaopca:item_chunkaluminium>, <jaopca:item_dirtygemaluminium> * 10);
 infinFurnace(<jaopca:item_chunkamber>, <jaopca:item_dirtygemamber> * 10);
 infinFurnace(<jaopca:item_chunkamethyst>, <jaopca:item_dirtygemamethyst> * 10);
@@ -436,6 +450,7 @@ infinFurnace(<jaopca:item_chunkaquamarine>, <jaopca:item_dirtygemaquamarine> * 1
 infinFurnace(<jaopca:item_chunkardite>, <jaopca:item_dirtygemardite> * 10);
 infinFurnace(<jaopca:item_chunkastralstarmetal>, <jaopca:item_dirtygemastralstarmetal> * 10);
 infinFurnace(<jaopca:item_chunkbenitoite>, <jaopca:item_dirtygembenitoite> * 10);
+infinFurnace(<jaopca:item_chunkbixbite>, <jaopca:item_dirtygembixbite> * 10);
 infinFurnace(<jaopca:item_chunkboron>, <jaopca:item_dirtygemboron> * 10);
 infinFurnace(<jaopca:item_chunkcertusquartz>, <jaopca:item_dirtygemcertusquartz> * 10);
 infinFurnace(<jaopca:item_chunkchargedcertusquartz>, <jaopca:item_dirtygemchargedcertusquartz> * 10);
@@ -483,6 +498,7 @@ infinFurnace(<jaopca:item_clusteraquamarine>, <astralsorcery:itemcraftingcompone
 infinFurnace(<jaopca:item_clusterardite>, <tconstruct:ingots:1> * 2);
 infinFurnace(<jaopca:item_clusterastralstarmetal>, <astralsorcery:itemcraftingcomponent:1> * 2);
 infinFurnace(<jaopca:item_clusterbenitoite>, <contenttweaker:benitoite> * 2);
+infinFurnace(<jaopca:item_clusterbixbite>, <contenttweaker:bixbite> * 2);
 infinFurnace(<jaopca:item_clusterboron>, <nuclearcraft:ingot:5> * 2);
 infinFurnace(<jaopca:item_clustercertusquartz>, <appliedenergistics2:material> * 5);
 infinFurnace(<jaopca:item_clusterchargedcertusquartz>, <appliedenergistics2:material:1> * 3);
@@ -553,6 +569,7 @@ infinFurnace(<jaopca:item_crystalabyssaquamarine>, <jaopca:item_dirtygemaquamari
 infinFurnace(<jaopca:item_crystalabyssardite>, <jaopca:item_dirtygemardite>);
 infinFurnace(<jaopca:item_crystalabyssastralstarmetal>, <jaopca:item_dirtygemastralstarmetal>);
 infinFurnace(<jaopca:item_crystalabyssbenitoite>, <jaopca:item_dirtygembenitoite>);
+infinFurnace(<jaopca:item_crystalabyssbixbite>, <jaopca:item_dirtygembixbite>);
 infinFurnace(<jaopca:item_crystalabyssboron>, <jaopca:item_dirtygemboron>);
 infinFurnace(<jaopca:item_crystalabysscertusquartz>, <jaopca:item_dirtygemcertusquartz>);
 infinFurnace(<jaopca:item_crystalabysschargedcertusquartz>, <jaopca:item_dirtygemchargedcertusquartz>);
@@ -600,6 +617,7 @@ infinFurnace(<jaopca:item_dirtygemaquamarine>, <astralsorcery:itemcraftingcompon
 infinFurnace(<jaopca:item_dirtygemardite>, <tconstruct:ingots:1> * 12);
 infinFurnace(<jaopca:item_dirtygemastralstarmetal>, <astralsorcery:itemcraftingcomponent:1> * 12);
 infinFurnace(<jaopca:item_dirtygembenitoite>, <contenttweaker:benitoite> * 12);
+infinFurnace(<jaopca:item_dirtygembixbite>, <contenttweaker:bixbite> * 12);
 infinFurnace(<jaopca:item_dirtygemboron>, <nuclearcraft:ingot:5> * 12);
 infinFurnace(<jaopca:item_dirtygemcertusquartz>, <appliedenergistics2:material> * 27);
 infinFurnace(<jaopca:item_dirtygemchargedcertusquartz>, <appliedenergistics2:material:1> * 18);
@@ -647,6 +665,7 @@ infinFurnace(<jaopca:item_dustalchaquamarine>, <jaopca:item_dirtygemaquamarine> 
 infinFurnace(<jaopca:item_dustalchardite>, <jaopca:item_dirtygemardite> * 48);
 infinFurnace(<jaopca:item_dustalchastralstarmetal>, <jaopca:item_dirtygemastralstarmetal> * 48);
 infinFurnace(<jaopca:item_dustalchbenitoite>, <jaopca:item_dirtygembenitoite> * 48);
+infinFurnace(<jaopca:item_dustalchbixbite>, <jaopca:item_dirtygembixbite> * 48);
 infinFurnace(<jaopca:item_dustalchboron>, <jaopca:item_dirtygemboron> * 48);
 infinFurnace(<jaopca:item_dustalchcertusquartz>, <jaopca:item_dirtygemcertusquartz> * 48);
 infinFurnace(<jaopca:item_dustalchchargedcertusquartz>, <jaopca:item_dirtygemchargedcertusquartz> * 48);
@@ -714,6 +733,7 @@ infinFurnace(<jaopca:item_rockychunkaquamarine>, <jaopca:item_dirtygemaquamarine
 infinFurnace(<jaopca:item_rockychunkardite>, <jaopca:item_dirtygemardite> * 4);
 infinFurnace(<jaopca:item_rockychunkastralstarmetal>, <jaopca:item_dirtygemastralstarmetal> * 4);
 infinFurnace(<jaopca:item_rockychunkbenitoite>, <jaopca:item_dirtygembenitoite> * 4);
+infinFurnace(<jaopca:item_rockychunkbixbite>, <jaopca:item_dirtygembixbite> * 4);
 infinFurnace(<jaopca:item_rockychunkboron>, <jaopca:item_dirtygemboron> * 4);
 infinFurnace(<jaopca:item_rockychunkcertusquartz>, <jaopca:item_dirtygemcertusquartz> * 4);
 infinFurnace(<jaopca:item_rockychunkchargedcertusquartz>, <jaopca:item_dirtygemchargedcertusquartz> * 4);

@@ -239,8 +239,10 @@ item.contenttweaker.grain_pill.name=谷物营养药丸
 tile.contenttweaker.terrestrial_artifact_block.name=天地宝晶块
 tile.contenttweaker.benitoite.name=§b蓝锥矿晶体
 tile.contenttweaker.anglesite.name=§6硫酸铅矿晶体
+tile.contenttweaker.bixbite.name=§c红绿柱石晶体
 tile.contenttweaker.ore_benitoite.name=§b蓝锥矿
 tile.contenttweaker.ore_anglesite.name=§6硫酸铅矿
+tile.contenttweaker.ore_bixbite.name=§c红绿柱石
 
 # contenttweaker.part.fluid=%s
 

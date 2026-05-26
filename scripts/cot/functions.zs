@@ -23,7 +23,10 @@ import native.net.minecraft.util.EnumParticleTypes;
 function abs(n as double) as double { return n < 0 ? -n : n; }
 
 // ------------------------------------------
-// Anglesite and Benitoite
+// Gem Block Drop Handlers
+// Registered by scripts/cot/init.zs (VanillaFactory.createBlock).
+// Every new ore added there needs a matching dropHandler here so
+// that the ore drops the corresponding gem item.
 // ------------------------------------------
 <cotBlock:ore_anglesite>.dropHandler = function (drops, world, position, state, fortune) {
   drops.clear();
@@ -35,6 +38,12 @@ function abs(n as double) as double { return n < 0 ? -n : n; }
   drops.clear();
   drops.add(<contenttweaker:benitoite>);
   for i in 0 .. fortune { drops.add(<contenttweaker:benitoite> % 50); }
+};
+
+<cotBlock:ore_bixbite>.dropHandler = function (drops, world, position, state, fortune) {
+  drops.clear();
+  drops.add(<contenttweaker:bixbite>);
+  for i in 0 .. fortune { drops.add(<contenttweaker:bixbite> % 50); }
 };
 
 // ------------------------------------------

@@ -906,11 +906,22 @@ addItems(<ore:itemXP>, [
   <mysticalagriculture:xp_droplet>,
 ]);
 
-// Add oredict for benefication
+// ------------------------------------------------------------------
+// Ore-Dictionary entries for custom gem ores / gems.
+// Blocks are created in scripts/cot/init.zs.
+// These entries are consumed by:
+//   • scripts/cot/recipes.zs       (beneficiation)
+//   • scripts/_init/purge.zs       (hiding JAOPCA extras)
+//   • scripts/requious/infinity_furnace.zs (JAOPCA ore-processing chains)
+//   • scripts/mods/exnihilocreatio/preinit.zs (ExNihilo ore registry)
+// Add matching entries for every new gem ore block.
+// ------------------------------------------------------------------
 add(<ore:oreBenitoite>, <contenttweaker:ore_benitoite>);
 add(<ore:oreAnglesite>, <contenttweaker:ore_anglesite>);
+add(<ore:oreBixbite>, <contenttweaker:ore_bixbite>);
 add(<ore:gemBenitoite>, <contenttweaker:benitoite>);
 add(<ore:gemAnglesite>, <contenttweaker:anglesite>);
+add(<ore:gemBixbite>, <contenttweaker:bixbite>);
 
 // Alien Crystals for benefication
 add(<ore:aliencrystalViolet>, <advancedrocketry:crystal>);

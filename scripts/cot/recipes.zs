@@ -182,10 +182,64 @@ mods.thaumcraft.Infusion.registerRecipe(
   benitoiteIngrs
 );
 
-// Benefication of Anglesite and Benitoite
-// Note: 'exceptions' field here could only accept normal whitelist, no 'only:' or 'strict:' modifiers
+// Dimlet
+val bixbiteDimlet = <rftoolsdim:known_dimlet:2>.withTag({
+  dkey: 'contenttweaker:ore_bixbite@0'
+});
+
+// Bixbite - Highest tier of Life/Blood themed crystals
+val bixbiteIngrs = [
+  <darkutils:monolith>,
+  <draconicevolution:ender_energy_manipulator>,
+  <biomesoplenty:sapling_1:7>,
+  <contenttweaker:saturated_phosphor>,
+  <iceandfire:gorgon_head>,
+  <randomthings:ingredient:1>,
+  <twilightforest:huge_stalk>,
+  <iceandfire:siren_tear>,
+  <nuclearcraft:wasteland_earth>,
+  <ore:dragonsteelIngot>,
+  <tconevo:material:2>,
+  <ore:blockDimensional>,
+  <ore:ingotFiery>,
+  <twilightforest:castle_rune_brick>,
+  <draconicevolution:infused_obsidian>,
+  <extrautils2:decorativesolid:6>,
+  <minecraft:dragon_breath>,
+  <biomesoplenty:terrarium:*>,
+  <ore:itemFiery>,
+  <ore:logSequoia>,
+] as IIngredient[];
+
+mods.extendedcrafting.CombinationCrafting.addRecipe(
+  bixbiteDimlet, 100000000, 1000000,
+  <additionalcompression:gravel_compressed:1>,
+  bixbiteIngrs
+);
+
+mods.thaumcraft.Infusion.registerRecipe(
+  'bixbite', // Name
+  'INFUSION', // Research
+  bixbiteDimlet, // Output
+  15, // Instability
+  Aspects('1000🩸 1000☀️ 1000💀'),
+  <additionalcompression:gravel_compressed:1>, // CentralItem
+  bixbiteIngrs
+);
+
+// ------------------------------------------------------------------
+// Benefication & cleanup for custom gem ores
+// Each new ore registered in scripts/cot/init.zs needs:
+//   1. A beneficiate() call below (adds ore-processing recipes via JAOPCA).
+//   2. A cleanupExnihilo() call to remove the extra ingot/dust variants
+//      that ExNihilo / JAOPCA auto-generate.
+//   3. A Blood-Magic AlchemyTable recipe removal to stop cutting-fluid
+//      duplication of the raw ore block.
+// Corresponding oredict entries are in scripts/category/oredict.zs.
+// ------------------------------------------------------------------
 scripts.process.beneficiate(<contenttweaker:ore_anglesite>, 'Anglesite', 1);
 scripts.process.beneficiate(<contenttweaker:ore_benitoite>, 'Benitoite', 1);
+scripts.process.beneficiate(<contenttweaker:ore_bixbite>, 'Bixbite', 1);
 
 // Remove excess items added by ExNihilo
 function cleanupExnihilo(base as IItemStack) as void {
@@ -200,9 +254,11 @@ function cleanupExnihilo(base as IItemStack) as void {
 
 cleanupExnihilo(<contenttweaker:item_ore_anglesite>);
 cleanupExnihilo(<contenttweaker:item_ore_benitoite>);
+cleanupExnihilo(<contenttweaker:item_ore_bixbite>);
 
 mods.bloodmagic.AlchemyTable.removeRecipe([<contenttweaker:ore_anglesite>, <bloodmagic:cutting_fluid>]);
 mods.bloodmagic.AlchemyTable.removeRecipe([<contenttweaker:ore_benitoite>, <bloodmagic:cutting_fluid>]);
+mods.bloodmagic.AlchemyTable.removeRecipe([<contenttweaker:ore_bixbite>, <bloodmagic:cutting_fluid>]);
 
 // Perfect Fuel is best fluid fuel in game
 mods.tconstruct.Alloy.addRecipe(<liquid:perfect_fuel>, [

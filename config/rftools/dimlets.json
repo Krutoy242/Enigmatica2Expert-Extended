@@ -731,6 +731,36 @@
   },
   {
     "filter": {
+      "mod": "contenttweaker",
+      "name": "ore_bixbite",
+      "type": "material"
+    },
+    "settings": {
+      "rarity": 5,
+      "create": 2000000,
+      "maintain": 500000,
+      "ticks": 1000,
+      "worldgen": false,
+      "dimlet": true
+    }
+  },
+  {
+    "filter": {
+      "mod": "contenttweaker",
+      "name": "bixbite",
+      "type": "material"
+    },
+    "settings": {
+      "rarity": 5,
+      "create": 8000000,
+      "maintain": 2000000,
+      "ticks": 1000,
+      "worldgen": false,
+      "dimlet": false
+    }
+  },
+  {
+    "filter": {
       "type": "material"
     },
     "settings": {

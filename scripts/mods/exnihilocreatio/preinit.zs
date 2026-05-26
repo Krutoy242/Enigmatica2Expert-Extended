@@ -5,6 +5,11 @@
 
 // This code can add lot of items https://i.imgur.com/TINWhLn.png
 // https://docs.blamejared.com/1.12/en/Mods/Ex_Nihilo_Creatio/Ores/
+//
+// NOTE: Every custom gem ore added in scripts/cot/init.zs should also
+// be registered here so ExNihilo can generate chunks/clusters for it.
+// The colour code should roughly match the gem's texture.
+// Corresponding oredict entries are in scripts/category/oredict.zs.
 
 mods.exnihilocreatio.Ore.addRecipe(
   "id_name", # Name would be used for ids. <crafttweaker:item_ore_id_name>
@@ -50,4 +55,15 @@ mods.exnihilocreatio.Ore.addRecipe(
     'ru_ru': '§bБенитоит',
   },
   'Benitoite'
+);
+
+mods.exnihilocreatio.Ore.addRecipe(
+  'bixbite',
+  'FF0099',
+  <ore:oreBixbite>.firstItem,
+  {
+    'en_us': '§cBixbite',
+    'ru_ru': '§cБиксбит',
+  },
+  'Bixbite'
 );

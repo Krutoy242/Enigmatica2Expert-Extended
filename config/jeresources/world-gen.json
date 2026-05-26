@@ -20163,6 +20163,17 @@
     "dim": "Block Drops"
   },
   {
+    "block": "contenttweaker:ore_bixbite",
+    "distrib": "0,1;255,1",
+    "dropsList": [
+      {
+        "itemStack": "contenttweaker:bixbite:0",
+        "fortunes": { "0": 1, "1": 1.5, "2": 2, "3": 2.5 }
+      }
+    ],
+    "dim": "Block Drops"
+  },
+  {
     "block": "randomthings:spectreleaf:0",
     "distrib": "0,1;255,1",
     "dropsList": [
