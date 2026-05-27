@@ -3,6 +3,7 @@
 
 import native.forestry.api.recipes.ISqueezerManager;
 import native.forestry.api.recipes.IFermenterRecipe;
+import native.forestry.core.config.Config;
 import native.net.minecraft.item.ItemStack;
 import mixin.CallbackInfoReturnable;
 
@@ -85,4 +86,16 @@ zenClass MixinModuleFactory {
 
   // #mixin ModifyConstant {method: "doInit", constant: {floatValue: 0.10}}
   // function increasePowerBlazeTube(value as float) as float { return 0.15f; }
+}
+
+/*
+Fix JEI wood pile recipe showing hardcoded 9 instead of Config.charcoalAmountBase.
+When charcoalAmountBase is increased, JEI still showed 9 + wall bonus.
+*/
+#mixin { targets: 'forestry.arboriculture.charcoal.jei.CharcoalPileWallWrapper' }
+zenClass MixinCharcoalPileWallWrapper {
+  #mixin ModifyConstant { method: 'getIngredients', constant: { intValue: 9 } }
+  function syncCharcoalAmountWithConfig(value as int) as int {
+    return Config.charcoalAmountBase;
+  }
 }
