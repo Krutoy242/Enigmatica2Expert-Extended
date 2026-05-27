@@ -5,7 +5,7 @@ val location = 'minecraft:chests/nether_bridge';
 
 scripts.lib.loot.removePools(location,
   ['endreborn_inject_pool',
-    'Ender IO',
+    'EnderIO Base',
     'xuLootDropOfEvil',
     'randomthings:lavacharm']
 );

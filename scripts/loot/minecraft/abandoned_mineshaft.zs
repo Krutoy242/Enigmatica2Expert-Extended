@@ -11,7 +11,7 @@ scripts.lib.loot.removePools(location,
     'forestry_factory_items',
     'forestry_storage_items',
     'manuscript',
-    'Ender IO',
+    'EnderIO Base',
     'randomthings:spectrecoil_number',
     'rats:contaminated_food',
     'token_fragment',
@@ -25,7 +25,7 @@ scripts.lib.loot.removePools(location,
 scripts.lib.loot.removeEtriesFromPool(location, 'main', [
   'actuallyadditions:drillCore',
 ]);
-scripts.lib.loot.removeEtriesFromPool('enderio:chests/abandoned_mineshaft', 'Ender IO', [
+scripts.lib.loot.removeEtriesFromPool('enderio:chests/abandoned_mineshaft', 'EnderIO Base', [
   'enderio:item_alloy_ingot:6',
   'enderio:block_exit_rail:0',
 ]);

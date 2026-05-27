@@ -110,7 +110,7 @@ for source in lootsource {
 
 // Village Blacksmith removal
 val ic2smith = ltt.getTable('ic2:chests/village_blacksmith').getPool('ic2');
-val EIOsmith = ltt.getTable('enderio:chests/village_blacksmith').getPool('Ender IO');
+val EIOsmith = ltt.getTable('enderio:chests/village_blacksmith').getPool('EnderIO Base');
 
 // IC2 bronze ingot
 ic2smith.removeEntry('bronze_ingot');
@@ -122,10 +122,10 @@ EIOsmith.removeEntry('enderio:item_material:9');
 EIOsmith.removeEntry('enderio:item_material:10');
 
 // EIO wooden gear
-ltt.getTable('enderio:chests/simple_dungeon').getPool('Ender IO').removeEntry('enderio:item_material:9');
+ltt.getTable('enderio:chests/simple_dungeon').getPool('EnderIO Base').removeEntry('enderio:item_material:9');
 
 // EIO wooden gear
-ltt.getTable('enderio:chests/abandoned_mineshaft').getPool('Ender IO').removeEntry('enderio:item_material:9');
+ltt.getTable('enderio:chests/abandoned_mineshaft').getPool('EnderIO Base').removeEntry('enderio:item_material:9');
 
 // immersive engineering village metal removal
 val MetalToRemove = [
@@ -169,4 +169,4 @@ ltt.getTable('iceandfire:mausoleum_chest').getPool('mausoleum_chest').removeEntr
 // woodland mansion removal
 
 // EIO stone gear
-ltt.getTable('enderio:chests/woodland_mansion').getPool('Ender IO').removeEntry('enderio:item_material:10');
+ltt.getTable('enderio:chests/woodland_mansion').getPool('EnderIO Base').removeEntry('enderio:item_material:10');

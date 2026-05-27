@@ -6,7 +6,7 @@ val location = 'minecraft:chests/village_blacksmith';
 scripts.lib.loot.removePools(location,
   ['endreborn_inject_pool',
     'rats:contaminated_food',
-    'Ender IO',
+    'EnderIO Base',
     'botania_inject_pool']
 );
 

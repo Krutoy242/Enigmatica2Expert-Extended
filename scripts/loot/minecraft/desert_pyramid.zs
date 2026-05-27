@@ -11,7 +11,7 @@ scripts.lib.loot.removePools(location,
     'rats:contaminated_food',
     'token_fragment',
     'rat_upgrade_basic',
-    'Ender IO',
+    'EnderIO Base',
     'botania_inject_pool']
 );
 

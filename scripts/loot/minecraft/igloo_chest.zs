@@ -4,7 +4,7 @@
 val location = 'minecraft:chests/igloo_chest';
 
 scripts.lib.loot.removePools(location,
-  ['Ender IO',
+  ['EnderIO Base',
     'rats:contaminated_food',
     'pool1']
 );

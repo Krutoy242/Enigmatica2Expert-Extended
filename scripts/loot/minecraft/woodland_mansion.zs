@@ -5,7 +5,7 @@ val location = 'minecraft:chests/woodland_mansion';
 
 scripts.lib.loot.removePools(location,
   ['rats:contaminated_food',
-    'Ender IO',
+    'EnderIO Base',
     'pool2']
 );
 

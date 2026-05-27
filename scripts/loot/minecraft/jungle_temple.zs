@@ -4,7 +4,7 @@
 val location = 'minecraft:chests/jungle_temple';
 
 scripts.lib.loot.removePools(location,
-  ['Ender IO',
+  ['EnderIO Base',
     'endreborn_inject_pool',
     'forestry_arboriculture_items',
     'forestry_apiculture_bees',

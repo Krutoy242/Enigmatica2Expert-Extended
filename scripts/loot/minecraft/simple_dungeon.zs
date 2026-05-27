@@ -13,7 +13,7 @@ scripts.lib.loot.removePools(location,
     'randomthings:spectrecoil_number',
     'rats:contaminated_food',
     'token_fragment',
-    'Ender IO',
+    'EnderIO Base',
     'rat_upgrade_basic',
     'botania_inject_pool',
     'pool2']
