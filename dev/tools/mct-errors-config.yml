@@ -284,6 +284,10 @@ ignore:
   # ##################
   # Reported issues #
   # ##################
+
+  # Reported: https://github.com/kumquat-ir/VisualOres/issues/25
+  - 'Mixin apply for mod visualores-.+ failed mixins\.visualores\.xaerominimap_core\.json:MinimapRendererMixin from mod visualores-.+-> xaero\.common\.minimap\.render\.MinimapRenderer:.+InvalidInjectionException.+visualores\$injectConstruct'
+
   - '\[net.minecraft.entity.passive.EntityVillager\]: PriceRange.* smaller than'
 
   # Reported: https://github.com/AnasDevO/PackTemplateCompanion/issues/21

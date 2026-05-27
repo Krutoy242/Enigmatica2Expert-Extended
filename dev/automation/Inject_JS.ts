@@ -116,6 +116,8 @@ export async function init() {
     capture : string
     command : string
     line    : number
+    matchIndex: number
+    indent  : string
     below   : string
     block   : string
   }> = []
@@ -130,6 +132,8 @@ export async function init() {
         .length
       const [, whole, p1, p2] = match
       const below = zsfileContent.substring((match.index ?? 0) + match[0].length + 1)
+      const lineStart = zsfileContent.lastIndexOf('\n', match.index ?? 0) + 1
+      const indent = zsfileContent.substring(lineStart, match.index ?? 0).match(/^([ \t]*)/)?.[1] || ''
       occurences.push({
         filePath,
         capture: whole,
@@ -138,6 +142,8 @@ export async function init() {
             ? `(()=>${whole.trim()})()`
             : whole.trim(),
         line : lineNumber,
+        matchIndex: match.index ?? 0,
+        indent,
         below,
         block: below.substring(0, below.indexOf('/**/') - 1),
       })
@@ -171,12 +177,20 @@ export async function init() {
       }
     }
 
-    const injectString = formatOutput(injectValue)
+    let injectString = formatOutput(injectValue)
 
     if (injectString === undefined) {
       consola.warn(`${cmd.filePath}:${cmd.line} Returned empty result!`)
     }
     else {
+      // Trim trailing whitespace to avoid blank lines before terminator
+      injectString = injectString.trimEnd()
+
+      // If generated content doesn't start with whitespace, apply block indentation
+      if (injectString.length > 0 && !/^[ \t]/.test(injectString)) {
+        injectString = injectString.split('\n').map(line => cmd.indent + line).join('\n')
+      }
+
       const replaceResults = injectInFile(
         cmd.filePath,
         cmd.capture,

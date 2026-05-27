@@ -138,7 +138,7 @@ async function runChangelog(nextVersion: string, zipBaseName: string) {
   p.note('Iconify changelog and prepare files to git add', '📝')
 
   await $$`tsx ${PATHS.mcIcons} ${PATHS.changelogLatest} --silent --no-short --modpack=e2ee --treshold=2`
-  await retry(2, '1s', async () => $$`git update-index --no-skip-worktree ${PATHS.skipWorktree}`)
+  await retry(2, '1s', async () => $`git update-index --no-skip-worktree ${PATHS.skipWorktree}`)
 
   const filesToCommit = [
     PATHS.mainMenu,
@@ -153,16 +153,16 @@ async function runChangelog(nextVersion: string, zipBaseName: string) {
   p.note('Now manually fix changelog and close file', '✍ ')
 
   await Promise.all([
-    retry(2, '1s', async () => $$`git add -f ${filesToCommit}`),
+    retry(2, '1s', async () => $`git add -f ${filesToCommit}`),
     $$`code --wait ${PATHS.changelogLatest}`,
   ])
 
-  await retry(2, '1s', async () => $$`git add ${PATHS.changelogLatest}`)
+  await retry(2, '1s', async () => $`git add ${PATHS.changelogLatest}`)
 
   if ((await $`git diff --staged --quiet`.nothrow()).exitCode !== 0)
     await commitAmend('chore: 🧱 CHANGELOG update, version bump')
 
-  await retry(2, '1s', async () => $$`git update-index --skip-worktree ${PATHS.skipWorktree}`)
+  await retry(2, '1s', async () => $`git update-index --skip-worktree ${PATHS.skipWorktree}`)
 }
 
 async function createTag(nextVersion: string) {

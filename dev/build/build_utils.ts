@@ -118,17 +118,17 @@ export async function commitOrFixup(fileName: string, commitMsg: string) {
   }
 
   // Add file to staging
-  await $$`git add ${fileName}`
+  await $`git add ${fileName}`
 
   // Check if a commit with the same message already exists
   const logProc = await $`git log --grep=${`^${commitMsg}$`} --format=%H -n 1`.nothrow()
   const similarCommitSha = logProc.stdout.trim()
 
   if (similarCommitSha) {
-    await $$`git commit --fixup=${similarCommitSha}`
+    await $`git commit --fixup=${similarCommitSha}`
   }
   else {
-    await $$`git commit -m ${commitMsg}`.nothrow()
+    await $`git commit -m ${commitMsg}`.nothrow()
   }
 }
 
@@ -138,10 +138,10 @@ export async function commitAmend(commitMsg: string) {
 
   if (lastCommitMsg === commitMsg) {
     // Amend the last commit
-    await $$`git commit --amend --no-edit`
+    await $`git commit --amend --no-edit`
   }
   else {
     // Create a new commit
-    await $$`git commit -m ${commitMsg}`
+    await $`git commit -m ${commitMsg}`
   }
 }

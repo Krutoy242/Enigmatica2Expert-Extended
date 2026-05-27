@@ -206,18 +206,25 @@ function injectInSingleFile(
     numReplacements: 0,
   }
 
-  const newText = oldText
-    .replace(/\r\n/g, '\n')
-    .replace(
-      new RegExp(`${escapeRegex(keyStart)}[\\s\\S\r\n]*?${escapeRegex(keyFinish)}`, 'm'),
-      () => {
-        result.numMatches++
-        result.numReplacements++
-        return keyStart + text + keyFinish
-      }
-    )
+  const startIdx = oldText.indexOf(keyStart)
+  if (startIdx === -1) throw new Error(`Can't find keyStart in file ${filename}`)
 
-  if (!result.numMatches) throw new Error(`Can't replace in file ${filename}`)
+  const finishIdx = oldText.indexOf(keyFinish, startIdx + keyStart.length)
+  if (finishIdx === -1) throw new Error(`Can't find keyFinish in file ${filename}`)
+
+  result.numMatches = 1
+  result.numReplacements = 1
+
+  // Extract whitespace before keyFinish to preserve indentation
+  const segment = oldText.substring(startIdx + keyStart.length, finishIdx)
+  const spacesMatch = segment.match(/([ \t]*)$/)
+  const spaces = spacesMatch ? spacesMatch[1] : ''
+
+  const newText = oldText.substring(0, startIdx + keyStart.length)
+    + text
+    + spaces
+    + keyFinish
+    + oldText.substring(finishIdx + keyFinish.length)
 
   saveText(newText, filename)
   return result

@@ -9,6 +9,7 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
+import native.net.minecraft.block.BlockFalling;
 import mods.zenutils.StringList;
 import scripts.lib.purge.purge.purge;
 
@@ -165,6 +166,29 @@ function dumpTraits() as void {
     }
 
     print(traitRef ~ '===' ~ name ~ '===' ~ game.localize('modifier.' ~ traitRef ~ '.desc'));
+  }
+}
+
+function dumpFallingBlocks(player as IPlayer) as void {
+  print('##################################################');
+  print('#                 Falling Blocks                 #');
+  var extras = [] as IData[];
+  for block in game.blocks {
+    if (block.native instanceof BlockFalling) {
+      print(block.id);
+      val item = itemUtils.getItem(block.id);
+      if (!isNull(item)) {
+        extras += scripts.do.hand_over_your_items.tellrawItemObj(item, null, false) as IData;
+      }
+    }
+  }
+  print('##################################################');
+
+  if (extras.length > 0) {
+    player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([{
+      text: '§eFalling Blocks: §r',
+      extra: extras,
+    }]));
   }
 }
 

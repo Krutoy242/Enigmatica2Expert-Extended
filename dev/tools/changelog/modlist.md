@@ -46,7 +46,7 @@ Icon | Summary | Old / New
 > | 
   {{~{padStart (sanitize now.cf2Addon.name) 42 pre='[**'}~}}
 **]({{padEnd now.cf2Addon.links.websiteUrl 74 post=')'~}}
- | <nobr>{{replace was.installedFile.fileName '.jar' ''}}</nobr><br><nobr>{{replace now.installedFile.fileName '.jar' ''}}</nobr>
+ | <nobr>{{replace was.installedFile.fileName '.jar' ''}}</nobr><br><nobr>{{replace now.installedFile.fileName '.jar' ''}}</nobr>{{#if now.changelog}}<br><details><summary>Changelog</summary>{{{stripNewlines now.changelog}}}</details>{{/if}}
 {{/each}}
 -----------
 

@@ -92,6 +92,7 @@ key_gui.xaero_enlarge_map:56:NONE:
 key_gui.xaero_instant_waypoint:40:CONTROL:29
 key_gui.xaero_map_zoom_in:0:NONE:
 key_gui.xaero_map_zoom_out:0:NONE:
+key_gui.xaero_minimap_server_profiles:0:NONE:
 key_gui.xaero_minimap_settings:50:SHIFT:42
 key_gui.xaero_new_waypoint:0:NONE:
 key_gui.xaero_open_map:50:NONE:
@@ -434,6 +435,7 @@ key_flare.key.start_sampling:0:NONE:
 key_flare.key.stop_client_sampling:0:NONE:
 key_flare.key.stop_sampling:0:NONE:
 key_gnetum.config.keyMapping:207:NONE:
+key_gui.xaero_world_map_server_settings:0:NONE:
 key_key.effortlessbuilding.altplacement.desc:29:NONE:
 key_key.effortlessbuilding.creative.desc:0:NONE:
 key_key.effortlessbuilding.hud.desc:78:NONE:
@@ -455,6 +457,8 @@ key_key.toggleVisible:0:NONE:
 key_keybind.endermodpacktweaks.toggle:0:NONE:
 key_of.key.zoom:-97:NONE:
 key_Open Key Wizard:0:NONE:
+key_visualores.button.chunk_claiming:0:NONE:
+key_visualores.button.chunk_viewing:0:NONE:
 key_zume.zoom:-97:NONE:
 key_zume.zoom_in:13:NONE:
 key_zume.zoom_out:12:NONE:
