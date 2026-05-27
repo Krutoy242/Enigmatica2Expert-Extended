@@ -372,7 +372,7 @@ for i in 0 .. 16 {
 }
 
 // [Ash Bricks] from [Mud Brick][+1]
-craft.make(<forestry:ash_brick>, ['pretty',
+craft.remake(<forestry:ash_brick>, ['pretty',
   '▲ M ▲',
   'M   M',
   '▲ M ▲'], {
