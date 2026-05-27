@@ -1,4 +1,5 @@
 #loader mixin
+#priority 1000
 
 import native.net.minecraft.item.ItemStack;
 
