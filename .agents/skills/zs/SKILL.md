@@ -1,10 +1,16 @@
 ---
-name: zenscript
+name: zs
 description: General ZenScript, mod-tweak, loot-table, and ZenUtils reference for scripts/*.zs. ALWAYS LOAD THIS SKILL when creating or editing ANY .zs file — it is MANDATORY for every ZenScript task.
 metadata:
   audience: modpack-devs
   workflow: writing-zs
 ---
+
+## Limitations
+
+- No `try-catch` blocks.
+- Instances are created without `new`: `val myClass = MyClass();`.
+- Statics initialized with `static name` instead of `static var name`. Static functions initialized as static variables: `static init as function()void = function() as void { ... };`.
 
 ## Language edge cases
 

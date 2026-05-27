@@ -25,18 +25,29 @@ The project uses **Conventional Commits** with emoji prefixes.
 
 ```
 <type>(<scope>): <emoji><description>
+
+<why>
+
+<related_commits>
 ```
 
-**Common types:**
-- `feat`, `fix`, `perf`, `refactor`, `build`, `chore`, `docs`, `style`, `test` / `ci`
-
-**Common scopes:** `recipes`, `quest`, `config`, `balance`, `worldgen`, `mods`, `gear`, `jei`, `hei`, `schematic`, `build_expansion`, `portal_spread`, `difficulty_rework`, etc.
-
-**Emojis** are mandatory in this repo (e.g. `✏️` recipes, `📖` quests, `🧱` build, `🔵` mod updates, `♻️` refactor, `⚡` perf, etc.).
+- **Common types:** `feat`, `fix`, `perf`, `refactor`, `build`, `chore`, `docs`, `style`, `test` / `ci`
+- **Common scopes:** `recipes`, `quest`, `config`, `balance`, `worldgen`, `mods`, `gear`, `jei`, `hei`, `schematic`, `build_expansion`, `portal_spread`, `difficulty_rework`, etc.
+- **Emojis:** mandatory in this repo (e.g. `✏️` recipes, `📖` quests, `🧱` build, `🔵` mod updates, `♻️` refactor, `⚡` perf, etc.).
+  Before commit check what emoji was used for the file
+  ```sh
+  git log -n 5 --pretty=format:%B -- path/to/file
+  ```
+- **Why:** should answer why change was made. Audience: modpack players. One sentence.
+- **Related commits:** if commit changes/fixes another commit consequences, it should be referenced as `Related: <commit_short_hash>`.
+- **Item names:** all actual item names must be encapsulated in `[]`. How to find item name `<ic2:dust:22>` example:
+  ```sh
+  grep -ohP 'ic2:dust",\d+,22,[^,]*,"\K[^"]+' config/tellme/items-csv_*.csv | tail -1 # Tiny Pile of Lapis Dust
+  ```
 
 ### Submodules
 
-Three submodules are active. **Always check their status before committing.**
+Three submodules are active.
 
 | Path                              | Repository                                  | Purpose                                                       |
 |-----------------------------------|---------------------------------------------|---------------------------------------------------------------|
@@ -47,11 +58,4 @@ Three submodules are active. **Always check their status before committing.**
 ### Git filters (`.gitattributes`)
 
 Several clean filters normalize config files to avoid noisy diffs. They are defined in the local git config (run `git config --local --list | grep filter` to inspect).
-
-### Git LFS
-
-Git LFS is enabled for this repository. If you clone fresh, ensure LFS files are pulled:
-```bash
-git lfs pull
-```
 

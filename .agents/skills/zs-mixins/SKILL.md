@@ -1,5 +1,5 @@
 ---
-name: zenscript-mixins
+name: zs-mixins
 description: ZenUtils runtime bytecode mixins in scripts/mixin/<mod>.zs — file conventions, annotation syntax, and common patterns. ALWAYS LOAD THIS SKILL when editing ANY file under scripts/mixin/ or ANY .zs that starts with #loader mixin — it is MANDATORY.
 metadata:
   audience: modpack-devs
@@ -175,20 +175,23 @@ scripts.mixin.thaumcraft.shared.Op.doRefining(event, heldItem);
 
 ZenUtils hard-codes Mixin remap to `false`; `method` / `at.target` must match bytecode names (SRG/obfuscated for MC/Forge, usually MCP for mod internals).
 
-Decompile with CFR (jar at workspace root):
+Decompile:
 ```bash
-# single class
-java -jar cfr-0.152.jar --outputdir ./~cfr_out mods/<Mod>.jar com/example/mod/TargetClass.class
-
 # whole jar
 java -jar cfr-0.152.jar --outputdir ./~cfr_out mods/<Mod>.jar
+
+# single class
+java -jar cfr-0.152.jar --outputdir ./~cfr_out mods/<Mod>.jar --jarfilter "com.example.package.YourClassName"
+
+# bytecode
+javap -c -cp path/to/yourfile.jar com.example.package.ClassName
 ```
 
 Inspect `./~cfr_out/...` for exact signatures and visibility.
 
-If a mixin crashes at runtime, inspect the generated class in `.mixin.out/class/`:
+**One-liner for `.mixin.out` — date, decompile, and show source** (relative path, written once):
 ```bash
-java -jar cfr-0.152.jar --outputdir ./~cfr_out .mixin.out/class/crafttweaker/api/data/DataMap.class
+f=".mixin.out/class/path/to/TargetClass.class"; ls -la "$f" && java -jar cfr-0.152.jar "$f" --outputdir "${f%/*}" --clobber true && cat "$(find "${f%/*}" -name "*.java" -newer "$f" | head -1)"
 ```
 
 ## Conventions
