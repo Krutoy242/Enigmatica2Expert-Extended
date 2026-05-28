@@ -584,6 +584,15 @@ craft.remake(<actuallyadditions:block_phantom_liquiface>, [
   'F': <flopper:flopper>, // Flopper
 });
 
+craft.remake(<actuallyadditions:block_player_interface>, ['pretty',
+  '⌂ * ⌂',
+  '* B *',
+  '⌂ * ⌂'], {
+  '⌂': <actuallyadditions:block_misc:7>,
+  '*': <ore:crystalDiamantine>,
+  'B': <actuallyadditions:item_misc:7>,
+});
+
 // Harder to require more exploration
 // [Spawner Changer] from [Terrestrial Artifact][+3]
 recipes.removeShaped(<actuallyadditions:item_spawner_changer>);
