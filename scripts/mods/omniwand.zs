@@ -25,6 +25,7 @@ static superwand as IItemStack = <omniwand:wand>.withTag({
     botania             : { id: 'botania:twigwand'                               , Count: 1, tag: { 'omniwand:definedMod': 'botania'              } },
     chisel              : { id: 'chisel:offsettool'                              , Count: 1, tag: { 'omniwand:definedMod': 'chisel'               } },
     compactmachines3    : { id: 'compactmachines3:psd'                           , Count: 1, tag: { 'omniwand:definedMod': 'compactmachines3'     } },
+    contenttweaker      : { id: 'contenttweaker:hand_framing_tool'               , Count: 1, tag: { 'omniwand:definedMod': 'contenttweaker'       } },
     deepmoblearningbm   : { id: 'deepmoblearningbm:altar_linker'                 , Count: 1, tag: { 'omniwand:definedMod': 'deepmoblearningbm'    } },
     draconicevolution   : { id: 'draconicevolution:crystal_binder'               , Count: 1, tag: { 'omniwand:definedMod': 'draconicevolution'    } },
     enderio             : { id: 'enderio:item_yeta_wrench'                       , Count: 1, tag: { 'omniwand:definedMod': 'enderio'              } },
