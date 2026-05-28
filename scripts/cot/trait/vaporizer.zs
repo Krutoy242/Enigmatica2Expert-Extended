@@ -6,8 +6,10 @@ import crafttweaker.world.IWorld;
 import mods.contenttweaker.tconstruct.TraitBuilder;
 import native.com.rwtema.extrautils2.network.NetworkHandler;
 import native.com.rwtema.extrautils2.particles.PacketParticleSplineCurve;
+import native.net.minecraft.util.EnumHand;
 import native.net.minecraft.util.SoundCategory;
 import native.net.minecraft.util.math.Vec3d;
+import native.slimeknights.tconstruct.library.utils.ToolHelper;
 
 import scripts.do.portal_spread.sphere.getNextPoint;
 import scripts.do.portal_spread.sphere.radiusToIndex;
@@ -28,8 +30,16 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
   }
 });
 
-function clearLiquids(world as IWorld, pos as IBlockPos) as void {
-  if (world.remote) return;
+// Bridge in case FluidloggedAPI not installed
+zenClass VaporizerHook {
+  static tryClearFluidlogged as function(IWorld, IBlockPos)bool
+    = function (world as IWorld, pos as IBlockPos) as bool {
+      return false;
+    };
+}
+
+function clearLiquids(world as IWorld, pos as IBlockPos) as int {
+  if (world.remote) return 0;
 
   val dim = world.dimension;
   val checkRadiusSq = VAPORIZER_RADIUS * VAPORIZER_RADIUS;
@@ -46,7 +56,7 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as void {
     val dy = pos.y - py;
     val dz = pos.z - pz;
 
-    if ((dx * dx + dy * dy + dz * dz) < checkRadiusSq && world.worldInfo.worldTotalTime - pTime < 5) return;
+    if ((dx * dx + dy * dy + dz * dz) < checkRadiusSq && world.worldInfo.worldTotalTime - pTime < 5) return 0;
   }
 
   recentClearPoints.add([world.worldInfo.worldTotalTime, dim as long, pos.x as long, pos.y as long, pos.z as long] as [long]);
@@ -65,11 +75,17 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as void {
 
     val currentPos = pos.add(pointData[1], pointData[2], pointData[3]);
     val state = world.getBlockState(currentPos);
+    var foundFluid = false;
 
     if (!isNull(state?.block?.fluid)) {
-      liquidBlocksFound += 1;
-
+      foundFluid = true;
       world.setBlockState(<blockstate:minecraft:air>, currentPos);
+    } else if (VaporizerHook.tryClearFluidlogged(world, currentPos)) {
+      foundFluid = true;
+    }
+
+    if (foundFluid) {
+      liquidBlocksFound += 1;
 
       if (world.random.nextInt(liquidBlocksFound) == 0) {
         val startPosVec = Vec3d(0.5 + pos.x, 0.5 + pos.y, 0.5 + pos.z);
@@ -90,6 +106,8 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as void {
       native.com.lothrazar.cyclicmagic.registry.SoundRegistry.liquid_evaporate,
       SoundCategory.AMBIENT, 1.0f, 1.0f);
   }
+
+  return liquidBlocksFound;
 }
 
 //
@@ -110,8 +128,15 @@ vaporizer.afterHit = function (trait, tool, attacker, target, damageDealt, wasCr
 };
 
 vaporizer.afterBlockBreak = function (trait, tool, world, blockstate, blockPos, miner, wasEffective) {
-  if (wasEffective)
-    clearLiquids(world, blockPos);
+  if (wasEffective) {
+    val evaporated = clearLiquids(world, blockPos);
+    if (evaporated > 0 && !isNull(miner)) {
+      val heldItem = miner.native.getHeldItem(EnumHand.MAIN_HAND);
+      if (!heldItem.isEmpty()) {
+        ToolHelper.damageTool(heldItem, evaporated, miner.native);
+      }
+    }
+  }
 };
 
 vaporizer.register();
