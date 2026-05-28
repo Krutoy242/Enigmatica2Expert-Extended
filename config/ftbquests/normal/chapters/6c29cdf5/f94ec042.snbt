@@ -19,11 +19,11 @@
 	rewards: [{
 		uid: "d7e99ee4",
 		type: "custom",
-		title: "{e2ee.quest.generators}",
+		title: "{e2ee.quest.rare}",
 		icon: {
 			id: "ftbquests:lootcrate",
 			tag: {
-				type: "generators"
+				type: "rare"
 			}
 		},
 		tags: [
