@@ -134,6 +134,12 @@ val TC = <astralsorcery:itemrockcrystalsimple>.withTag({
 });
 scripts.process.crush(<ore:oreRockCrystal>, TC, 'only: SagMill AEGrinder', [TC, TC, TC], [1.0f, 1.0f, 1.0f]);
 
+// Remove recipes for Rock Crystal Ore since it cannot be mined as block
+mods.appliedenergistics2.Grinder.removeRecipe(<ore:oreRockCrystal>);
+mods.enderio.SagMill.removeRecipe(<astralsorcery:blockcustomore>);
+// This recipe removal wont work since it seems like recipe added after CT script execution step
+// native.cofh.thermalexpansion.util.managers.machine.FurnaceManager.removeRecipe(<astralsorcery:blockcustomore>.native);
+
 // Add TE Sawmill log -> plank compat
 scripts.process.saw(<astralsorcery:blockinfusedwood>, <astralsorcery:blockinfusedwood:1> * 6, 'only: TESawmill');
 
