@@ -68,8 +68,8 @@ craft.shapeless(<openblocks:scaffolding> * 36, '##', {
   '#': <ore:compressedLogWood2x>, // Double Compressed Wood
 });
 
-// [Framed Trim]*36 from [Triple Compressed Wood]
-craft.shapeless(<storagedrawers:customtrim> * 36, '##', {
+// Alt recipe for easy compression
+craft.shapeless(<randomthings:blockofsticks> * 36, '##', {
   '#': <ore:compressedLogWood3x>, // Triple Compressed Wood
 });
 

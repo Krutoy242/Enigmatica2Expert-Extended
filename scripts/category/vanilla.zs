@@ -149,9 +149,8 @@ scripts.do.entity_kill_entity.add('minecraft:slime', 'minecraft:polar_bear', <th
 
 // Compressed Sticks
 recipes.remove(<openblocks:scaffolding>);
-recipes.remove(<storagedrawers:customtrim>);
 utils.compact(<ore:stickWood>, <openblocks:scaffolding>);
-utils.compact(<openblocks:scaffolding>, <storagedrawers:customtrim>);
+utils.compact(<openblocks:scaffolding>, <randomthings:blockofsticks>);
 
 // Compress Arrows
 recipes.remove(<extrautils2:spike_wood>);

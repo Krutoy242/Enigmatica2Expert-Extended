@@ -321,15 +321,10 @@ craft.remake(<randomthings:naturecore>, ['pretty',
   'E': <darkutils:monolith>,
 });
 
-// Very cheap to compete with other scaffold variants
-craft.remake(<randomthings:blockofsticks> * 64, ['pretty',
-  '# # #',
-  '#   #',
-  '# # #'], {
-  '#': <ore:stickWood>,
-});
+// Remove default cheap recipe
+recipes.removeByRecipeName('randomthings:blockofsticks_normal');
 
-// Nerf since very cheap
+// Nerf since its compressed sticks
 furnace.setFuel(<randomthings:blockofsticks>, 0);
 
 // Cheaper (used ender pearl)
