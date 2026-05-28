@@ -39,6 +39,11 @@ mods.thermalexpansion.InductionSmelter.addRecipe
 (<extendedcrafting:material> * 3,
   <thermalfoundation:storage_alloy:2>, <nuclearcraft:ingot_block:8>, 15000);
 
+// Black Iron Rod
+recipes.removeByRecipeName('extendedcrafting:black_iron_rod');
+scripts.processWork.workEx('MetalPress', null, [<ore:ingotBlackIron>], null, [<extendedcrafting:material:3>], null, null, null, { mold: 'rod' });
+scripts.processWork.workEx('AdvRockLathe', null, [<ore:ingotBlackIron>], null, [<extendedcrafting:material:3> * 5], null, null, null);
+
 // Crafting Core
 recipes.remove(<extendedcrafting:crafting_core>);
 scripts.mods.forestry.Carpenter.addRecipe(<extendedcrafting:crafting_core>,
