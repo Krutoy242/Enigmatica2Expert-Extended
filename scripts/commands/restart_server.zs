@@ -1,10 +1,14 @@
 #modloaded zenutils roidtweaker
+#reloadable
 
 import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 import mods.zenutils.StringList;
 import mods.zenutils.command.CommandUtils;
 import mods.zenutils.command.ZenCommand;
+
+import scripts.lib.expansions.ftblib.getFTBUPlayerData;
+import native.com.feed_the_beast.ftbutilities.FTBUtilitiesConfig;
 
 val voteTime = 600;
 
@@ -39,11 +43,27 @@ function stopWithDelay(world as IWorld) as void {
   }).start();
 }
 
+function isPlayerAFK(player as IPlayer) as bool {
+  val data = getFTBUPlayerData(player);
+  if (isNull(data)) return false;
+  return data.afkTime >= FTBUtilitiesConfig.afk.getNotificationTimer();
+}
+
+function getActivePlayerCount() as int {
+  var count = 0;
+  for p in server.players {
+    if (!isPlayerAFK(p)) count += 1;
+  }
+  return count;
+}
+
 function getPlayersList(isVoted as bool = false) as string {
   var list = '';
   for p in server.players {
-    if (playerPending.contains(p.uuid) == isVoted)
-      list ~= `${list != '' ? ', ' : ''}§5${p.nickname()}§r`;
+    if (playerPending.contains(p.uuid) == isVoted) {
+      val afkMark = isPlayerAFK(p) ? ' §7[AFK]§r' : '';
+      list ~= `${list != '' ? ', ' : ''}§5${p.nickname()}§r${afkMark}`;
+    }
   }
   return list;
 }
@@ -56,10 +76,23 @@ function cancelVoting() as void {
 }
 
 function checkComplete() as bool {
+  var hasActiveVoter = false;
   for p in server.players {
-    if (!playerPending.contains(p.uuid)) return false;
+    val isAFK = isPlayerAFK(p);
+    if (!isAFK) {
+      if (!playerPending.contains(p.uuid)) return false;
+      hasActiveVoter = true;
+    }
   }
-  return true;
+  return hasActiveVoter;
+}
+
+function notifyActivePlayersAboutQuery(initiator as IPlayer) as void {
+  for p in server.players {
+    if (!isPlayerAFK(p) && !playerPending.contains(p.uuid) && p.uuid != initiator.uuid) {
+      sendSingle(p, 'query', initiator.nickname());
+    }
+  }
 }
 
 cmd.requiredPermissionLevel = 0; // require no permission, everyone can execute the command.
@@ -69,14 +102,16 @@ cmd.execute = function (command, server, sender, args) {
   // Server already restarting
   if (!isNull(inProcess.restart)) return sendSingle(player, 'in_process');
 
-  // Only one player - stop right now
-  if (server.playerCount == 1) return stopWithDelay(player.world);
+  val activeCount = getActivePlayerCount();
+
+  // Only one active player (or none) - stop right now
+  if (activeCount <= 1) return stopWithDelay(player.world);
 
   if (playerPending.size() == 0) {
     // We are first player who activated
     playerPending.add(player.uuid);
     sendSingle(player, 'you_want', voteTime / 20);
-    send('query', 'unpending', player.nickname());
+    notifyActivePlayersAboutQuery(player);
 
     player.world.catenation().sleep(voteTime).then(function (world, ctx) { cancelVoting(); }).start();
   }
@@ -86,8 +121,12 @@ cmd.execute = function (command, server, sender, args) {
   }
   else {
     playerPending.add(player.uuid);
+
+    // Notify any players who returned from AFK and haven't voted yet
+    notifyActivePlayersAboutQuery(player);
+
     if (checkComplete()) {
-      // Everyone voted
+      // All active players voted
       stopWithDelay(player.world);
     }
     else {
