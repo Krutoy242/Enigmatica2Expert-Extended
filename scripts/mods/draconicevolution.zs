@@ -3,14 +3,84 @@
 // Increase blast resistant to omit mining cheasing with dynamite
 <draconicevolution:draconium_ore>.asBlock().definition.resistance = 720;
 
-// Debug chest for recipes
+// Debug chests for recipes
 if (utils.DEBUG) {
+  // Default 3x3 grid chest
   mods.jei.JEI.addItem(<draconicevolution:draconium_chest>.withTag({
-    ench            : [{ lvl: 1, id: 0 }], // Add enchant glow
+    ench            : [{ }], // Add enchant glow
     enchantmentColor: 16711680, // Random Things can change color with this tag
     display         : { Name: 'Draconic Chest with Markings' },
 
     BCTileData: { BCManagedData: { autoSmeltMode: 0 as byte, smeltEnergyPerTick: 256, colour: -16777216, furnaceOutputBlocked: 0 as byte, burnRate: 0.0, smeltProgress: 0.0, smeltTime: 100 as byte, isSmelting: 0 as byte }, ChestColour: -16777216, RegionData: { SR_6_nsweIO: -1 as byte, SR_4_xSize: 4 as byte, SR_5_nsweIO: -1 as byte, SR_0_ySize: 10 as byte, SR_2_xPos: 16 as byte, SR_1_xSize: 4 as byte, SR_3_xPos: 24 as byte, SR_3_dufIO: -1 as byte, SR_4_ySize: 3 as byte, SR_1_yPos: 0 as byte, SR_6_dufIO: -1 as byte, SR_3_Enabled: 1 as byte, SR_1_Invalid: 0 as byte, SR_4_xPos: 4 as byte, SR_3_xSize: 2 as byte, SR_5_Enabled: 1 as byte, SR_0_yPos: 0 as byte, SR_5_Invalid: 0 as byte, SR_1_Enabled: 1 as byte, SR_2_dufIO: -1 as byte, SR_5_dufIO: -1 as byte, SR_1_xPos: 8 as byte, SR_1_nsweIO: -1 as byte, SR_3_ySize: 10 as byte, SR_3_nsweIO: -1 as byte, SR_3_yPos: 0 as byte, SR_0_xSize: 4 as byte, SR_3_Invalid: 0 as byte, SR_2_ySize: 10 as byte, SR_5_xPos: 12 as byte, SR_4_yPos: 3 as byte, SR_2_xSize: 4 as byte, SR_0_xPos: 0 as byte, SR_5_ySize: 3 as byte, SR_4_dufIO: -1 as byte, SR_1_dufIO: -1 as byte, SR_5_yPos: 3 as byte, SR_2_Enabled: 1 as byte, SR_1_ySize: 10 as byte, SR_0_dufIO: -1 as byte, SR_2_yPos: 0 as byte, SR_0_Invalid: 0 as byte, SR_4_Enabled: 1 as byte, SR_0_nsweIO: -1 as byte, SR_0_Enabled: 1 as byte, SR_4_Invalid: 0 as byte, SR_2_Invalid: 0 as byte, SR_2_nsweIO: -1 as byte, SR_4_nsweIO: -1 as byte, SR_5_xSize: 4 as byte } } }));
+
+  // 5x5 grid chest (zones are 6x5: 5 grid + 1 output slot)
+  // 26x10 chest fits 4 columns x 2 rows = 8 grids, but only 7 SR regions available
+  mods.jei.JEI.addItem(<draconicevolution:draconium_chest>.withTag({
+    ench            : [{ }],
+    enchantmentColor: 65280,
+    display         : { Name: 'Draconic Chest 5x5' },
+
+    BCTileData: {
+      BCManagedData: { autoSmeltMode: 0 as byte, smeltEnergyPerTick: 256, colour: 65280, furnaceOutputBlocked: 0 as byte, burnRate: 0.0, smeltProgress: 0.0, smeltTime: 100 as byte, isSmelting: 0 as byte },
+      ChestColour: 65280,
+      Items: [{ Slot: 26 as short, id: 'minecraft:bone', Count: 1 as byte, Damage: 0 as short, tag: { style: '5x5' } }],
+      RegionData: {
+        SR_0_xSize: 6 as byte, SR_0_ySize: 5 as byte, SR_0_Enabled: 1 as byte, SR_0_Invalid: 0 as byte, SR_0_nsweIO: -1 as byte, SR_0_dufIO: -1 as byte,
+        SR_1_xPos: 6 as byte, SR_1_xSize: 6 as byte, SR_1_ySize: 5 as byte, SR_1_Enabled: 1 as byte, SR_1_Invalid: 0 as byte, SR_1_nsweIO: -1 as byte, SR_1_dufIO: -1 as byte,
+        SR_2_xPos: 12 as byte, SR_2_xSize: 6 as byte, SR_2_ySize: 5 as byte, SR_2_Enabled: 1 as byte, SR_2_Invalid: 0 as byte, SR_2_nsweIO: -1 as byte, SR_2_dufIO: -1 as byte,
+        SR_3_xPos: 18 as byte, SR_3_xSize: 6 as byte, SR_3_ySize: 5 as byte, SR_3_Enabled: 1 as byte, SR_3_Invalid: 0 as byte, SR_3_nsweIO: -1 as byte, SR_3_dufIO: -1 as byte,
+        SR_4_xPos: 0 as byte, SR_4_yPos: 5 as byte, SR_4_xSize: 6 as byte, SR_4_ySize: 5 as byte, SR_4_Enabled: 1 as byte, SR_4_Invalid: 0 as byte, SR_4_nsweIO: -1 as byte, SR_4_dufIO: -1 as byte,
+        SR_5_xPos: 6 as byte, SR_5_yPos: 5 as byte, SR_5_xSize: 6 as byte, SR_5_ySize: 5 as byte, SR_5_Enabled: 1 as byte, SR_5_Invalid: 0 as byte, SR_5_nsweIO: -1 as byte, SR_5_dufIO: -1 as byte,
+        SR_6_xPos: 12 as byte, SR_6_yPos: 5 as byte, SR_6_xSize: 6 as byte, SR_6_ySize: 5 as byte, SR_6_Enabled: 1 as byte, SR_6_Invalid: 0 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte
+      }
+    }
+  }));
+
+  // 7x7 grid chest (zones are 8x7: 7 grid + 1 output slot)
+  // 26x10 chest fits 3 columns x 1 row = 3 grids
+  mods.jei.JEI.addItem(<draconicevolution:draconium_chest>.withTag({
+    ench            : [{ }],
+    enchantmentColor: 255,
+    display         : { Name: 'Draconic Chest 7x7' },
+
+    BCTileData: {
+      BCManagedData: { autoSmeltMode: 0 as byte, smeltEnergyPerTick: 256, colour: 255, furnaceOutputBlocked: 0 as byte, burnRate: 0.0, smeltProgress: 0.0, smeltTime: 100 as byte, isSmelting: 0 as byte },
+      ChestColour: 255,
+      Items: [{ Slot: 26 as short, id: 'minecraft:bone', Count: 1 as byte, Damage: 0 as short, tag: { style: '7x7' } }],
+      RegionData: {
+        SR_0_xSize: 8 as byte, SR_0_ySize: 7 as byte, SR_0_Enabled: 1 as byte, SR_0_Invalid: 0 as byte, SR_0_nsweIO: -1 as byte, SR_0_dufIO: -1 as byte,
+        SR_1_xPos: 8 as byte, SR_1_xSize: 8 as byte, SR_1_ySize: 7 as byte, SR_1_Enabled: 1 as byte, SR_1_Invalid: 0 as byte, SR_1_nsweIO: -1 as byte, SR_1_dufIO: -1 as byte,
+        SR_2_xPos: 16 as byte, SR_2_xSize: 8 as byte, SR_2_ySize: 7 as byte, SR_2_Enabled: 1 as byte, SR_2_Invalid: 0 as byte, SR_2_nsweIO: -1 as byte, SR_2_dufIO: -1 as byte,
+        SR_3_xSize: 0 as byte, SR_3_ySize: 0 as byte, SR_3_Enabled: 0 as byte, SR_3_Invalid: 1 as byte, SR_3_nsweIO: -1 as byte, SR_3_dufIO: -1 as byte,
+        SR_4_xSize: 0 as byte, SR_4_ySize: 0 as byte, SR_4_Enabled: 0 as byte, SR_4_Invalid: 1 as byte, SR_4_nsweIO: -1 as byte, SR_4_dufIO: -1 as byte,
+        SR_5_xSize: 0 as byte, SR_5_ySize: 0 as byte, SR_5_Enabled: 0 as byte, SR_5_Invalid: 1 as byte, SR_5_nsweIO: -1 as byte, SR_5_dufIO: -1 as byte,
+        SR_6_xSize: 0 as byte, SR_6_ySize: 0 as byte, SR_6_Enabled: 0 as byte, SR_6_Invalid: 1 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte
+      }
+    }
+  }));
+
+  // 9x9 grid chest (zones are 10x9: 9 grid + 1 output slot)
+  // 26x10 chest fits 2 columns x 1 row = 2 grids
+  mods.jei.JEI.addItem(<draconicevolution:draconium_chest>.withTag({
+    ench            : [{ }],
+    enchantmentColor: 16776960,
+    display         : { Name: 'Draconic Chest 9x9' },
+
+    BCTileData: {
+      BCManagedData: { autoSmeltMode: 0 as byte, smeltEnergyPerTick: 256, colour: 16776960, furnaceOutputBlocked: 0 as byte, burnRate: 0.0, smeltProgress: 0.0, smeltTime: 100 as byte, isSmelting: 0 as byte },
+      ChestColour: 16776960,
+      Items: [{ Slot: 26 as short, id: 'minecraft:bone', Count: 1 as byte, Damage: 0 as short, tag: { style: '9x9' } }],
+      RegionData: {
+        SR_0_xSize: 10 as byte, SR_0_ySize: 9 as byte, SR_0_Enabled: 1 as byte, SR_0_Invalid: 0 as byte, SR_0_nsweIO: -1 as byte, SR_0_dufIO: -1 as byte,
+        SR_1_xPos: 10 as byte, SR_1_xSize: 10 as byte, SR_1_ySize: 9 as byte, SR_1_Enabled: 1 as byte, SR_1_Invalid: 0 as byte, SR_1_nsweIO: -1 as byte, SR_1_dufIO: -1 as byte,
+        SR_2_xSize: 0 as byte, SR_2_ySize: 0 as byte, SR_2_Enabled: 0 as byte, SR_2_Invalid: 1 as byte, SR_2_nsweIO: -1 as byte, SR_2_dufIO: -1 as byte,
+        SR_3_xSize: 0 as byte, SR_3_ySize: 0 as byte, SR_3_Enabled: 0 as byte, SR_3_Invalid: 1 as byte, SR_3_nsweIO: -1 as byte, SR_3_dufIO: -1 as byte,
+        SR_4_xSize: 0 as byte, SR_4_ySize: 0 as byte, SR_4_Enabled: 0 as byte, SR_4_Invalid: 1 as byte, SR_4_nsweIO: -1 as byte, SR_4_dufIO: -1 as byte,
+        SR_5_xSize: 0 as byte, SR_5_ySize: 0 as byte, SR_5_Enabled: 0 as byte, SR_5_Invalid: 1 as byte, SR_5_nsweIO: -1 as byte, SR_5_dufIO: -1 as byte,
+        SR_6_xSize: 0 as byte, SR_6_ySize: 0 as byte, SR_6_Enabled: 0 as byte, SR_6_Invalid: 1 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte
+      }
+    }
+  }));
 }
 
 // ---------------------------------------------------
