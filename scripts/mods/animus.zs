@@ -31,3 +31,11 @@ remake('animus_kama_diamond', <animus:kama_diamond>, [
 recipes.removeByRecipeName('animus:dirtbucket');
 recipes.addShapeless('animus_dirtbucket', Bucket('blockfluiddirt'), [
   <minecraft:redstone_torch>, utils.reuse(<animus:sigil_consumption>), <minecraft:bucket>]);
+
+// Allow Animus sigils to be melted into rune fluid in Crucible
+scripts.process.melt(<animus:sigil_builder>, <liquid:rune> * 250, 'only: smeltery crucible');
+scripts.process.melt(<animus:sigil_chains>, <liquid:rune> * 250, 'only: smeltery crucible');
+scripts.process.melt(<animus:sigil_consumption>, <liquid:rune> * 250, 'only: smeltery crucible');
+scripts.process.melt(<animus:sigil_leech>, <liquid:rune> * 250, 'only: smeltery crucible');
+scripts.process.melt(<animus:sigil_storm>, <liquid:rune> * 250, 'only: smeltery crucible');
+scripts.process.melt(<animus:sigil_transposition>, <liquid:rune> * 250, 'only: smeltery crucible');
