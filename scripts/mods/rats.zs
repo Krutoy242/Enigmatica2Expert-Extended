@@ -197,6 +197,16 @@ craft.remake(<rats:rat_upgrade_armor>, ['pretty',
   'R': <rats:rat_upgrade_basic>, // Rat Upgrade: Basic
 });
 
+craft.remake(<rats:rat_upgrade_shears>, ['pretty',
+  'w N w',
+  'W R W',
+  'w W w'], {
+  'w': <ore:wool>,
+  'N': <tconstruct:kama_head:*>,
+  'W': <minecraft:wheat>,
+  'R': <rats:rat_upgrade_basic>,
+});
+
 // [Rat Upgrade_ Warrior] from [Rat Upgrade_ Strength][+4]
 craft.remake(<rats:rat_upgrade_warrior>, ['pretty',
   '◊ □ ◊',

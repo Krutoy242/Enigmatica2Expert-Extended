@@ -407,6 +407,26 @@ craft.remake(<industrialforegoing:water_resources_collector>, ['pretty',
   '◘': <thermalexpansion:frame:147>,
 });
 
+craft.remake(<industrialforegoing:animal_resource_harvester>, ['pretty',
+  'R R R',
+  '~ C ~',
+  '¤ N ¤'], {
+  'R': <industrialforegoing:plastic>,
+  '~': <minecraft:bucket>,
+  'C': <ore:machineCase>,
+  '¤': <ore:gearGold>,
+  'N': <tconstruct:kama_head:*>,
+});
+
+craft.remake(<industrialforegoing:leaf_shearing>, ['pretty',
+  '‚ R ‚',
+  '‚ N ‚',
+  '‚ R ‚'], {
+  '‚': <ore:nuggetOsmium>,
+  'R': <industrialforegoing:plastic>,
+  'N': <tconstruct:kama_head:*>,
+});
+
 // Remove barely all Ore benification to leave only meat washing
 function cleanupBenification(item as IItemStack, ingot as IItemStack, dust as IItemStack, fluid as ILiquidStack) as void {
   recipes.removeShapeless(<*>, [item, <immersiveengineering:tool>]);
