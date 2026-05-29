@@ -18,7 +18,7 @@ for item in [
 .map(([, id]) => {
   const [reg, ...nbt] = id.split(':{')
   const tag = nbt.join(':{')
-  return `  <${reg}>${!tag ? '' : '.withTag({'+tag+')'},`
+  return `  <${reg}>${!tag ? '' : '.withTag({ '+tag.slice(0,-1)+' })'},`
 })
 .sort(naturalSort)
 ) */

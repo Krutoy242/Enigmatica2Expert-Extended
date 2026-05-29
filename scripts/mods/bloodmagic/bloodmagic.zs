@@ -497,7 +497,7 @@ _.uniqBy([
         : [` * `, r.output.items[0].amount]),
       `, '`,
       `${mapChars}',`,
-      `{ ${inputSerialized.join(', ')} });`,
+      `{${inputSerialized.join(', ')}});`,
     ]
   })
   .filter(Boolean)

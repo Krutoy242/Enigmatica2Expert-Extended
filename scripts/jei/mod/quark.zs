@@ -38,7 +38,7 @@ config('config/quark.cfg')
 .map(
   ([id, meta, level, pos, potion]) => {
     const item = id === 'immersiveengineering:conveyor'
-      ? `<immersiveengineering:conveyor>.withTag({conveyorType: "immersiveengineering:verticalcovered"})`
+      ? `<immersiveengineering:conveyor>.withTag({ conveyorType: 'immersiveengineering:verticalcovered' })`
       : `<${id}:${meta == -1 ? '*' : meta}>`
     return `add({ [${item.padStart(40)}, glyphs['${
       Number(level) + 1
