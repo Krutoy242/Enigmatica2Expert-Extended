@@ -13,6 +13,8 @@ import mods.requious.MachineVisual;
 import mods.requious.RecipeContainer;
 import mods.requious.SlotVisual;
 
+static MULTIPLIER as int = 3;
+
 // [Infinity_Furnace] from [Infinity_Fuel][+4]
 craft.remake(<requious:infinity_furnace>, ['pretty',
   'T R E R T',
@@ -56,7 +58,7 @@ function infinFurnace(inp as IIngredient, out as IItemStack) as void {
   if (isNull(inp) || isNull(out) || scripts.do.inworld_smelting.unobtainableAsItem has inp) return;
 
   val assRecipe = AssemblyRecipe.create(function (c) {
-    c.addItemOutput('output', out * min(64, out.amount * 4));
+    c.addItemOutput('output', out * min(64, out.amount * MULTIPLIER));
   })
     .requireItem('input', inp)
     .requireDuration('duration', 1);
@@ -139,7 +141,7 @@ function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
       return; // Item is unsmeltable
     }
 
-    if (pushToOutput(smelted * min(64, smelted.amount * 4), c))
+    if (pushToOutput(smelted * min(64, smelted.amount * MULTIPLIER), c))
       c.machine.setItem(inpX, inpY, inputStack.amount > 1 ? inputStack.withAmount(inputStack.amount - 1) : null);
   })
     .requireWorldCondition('has_input', function (m) {
