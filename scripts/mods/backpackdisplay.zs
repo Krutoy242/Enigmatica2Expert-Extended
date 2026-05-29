@@ -74,6 +74,29 @@ addBackDisplay(<mekanism:cardboardbox>, function (item) {
 });
 
 /*
+Mekanism Bin
+*/
+addBackDisplay(<mekanism:basicblock:6>, function (item) {
+  if (
+    isNull(item.tag)
+    || isNull(item.tag.mekData)
+    || isNull(item.tag.mekData.storedItem)
+    || isNull(item.tag.mekData.storedItem.id)
+    || isNull(item.tag.mekData.itemCount)
+  ) {
+    return null;
+  }
+
+  val storedItem = item.tag.mekData.storedItem;
+  val meta = isNull(storedItem.Damage) ? 0 : storedItem.Damage.asInt();
+  val count = item.tag.mekData.itemCount.asInt();
+
+  if (count <= 0) return null;
+
+  return [<item:${storedItem.id}:${meta}> * count] as IItemStack[];
+});
+
+/*
 Show contained entity as soul
 */
 addBackDisplay(<thermalexpansion:morb>, function (item) {
