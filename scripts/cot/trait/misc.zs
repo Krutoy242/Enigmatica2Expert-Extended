@@ -118,7 +118,7 @@ mentor.calcDamage = function (trait, tool, attacker, target, originalDamage, new
   if (level <= 0) return newDamage;
   player.xp = max(0, player.xp - level);
   // player.removeExperience((player.getTotalXP() as float * (0.03f * level as float) + 1.0f) as int);
-  return newDamage + sqrt(player.xp * level);
+  return newDamage + sqrt(player.xp * level) * 1.5;
 };
 mentor.register();
 
@@ -131,9 +131,9 @@ trait_armor.onHurt = function (trait, armor, victim, source, damage, newDamage, 
   if (victim instanceof IPlayer) {
     val player as IPlayer = victim;
     level = getArmorMatsAmount(player, 'essence_metal');
-    player.addExperience((ceil(newDamage as double / 10.0) * level as double) as int);
+    player.addExperience((ceil(newDamage as double / 5.0) * level as double) as int);
   }
-  return newDamage + (newDamage as double * (0.1 * level as double)) as int;
+  return newDamage - (newDamage as double * (0.075 * level as double)) as int;
 };
 trait_armor.register();
 
