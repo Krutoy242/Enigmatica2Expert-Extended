@@ -276,8 +276,7 @@ events.onCustomReward(function (e as mods.zenutils.ftbq.CustomRewardEvent) {
     val diff = e.player.difficulty;
     e.player.give(e.reward.icon * (
       diff < 1.0 ? amount + 1 // Mostly zero difficulty +1 chest
-        : diff > 1000 ? max(1, amount - 1) // max difficulty -1 chest
-          : amount
+        : amount
     ));
     if (diff < 1.0) {
       e.player.sendRichTextStatusMessage(
