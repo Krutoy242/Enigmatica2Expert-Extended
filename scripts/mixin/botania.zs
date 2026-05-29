@@ -3,7 +3,9 @@
 
 import mixin.CallbackInfo;
 import mixin.CallbackInfoReturnable;
+import mixin.Operation;
 import native.net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate;
+import native.vazkii.botania.api.item.IExoflameHeatable;
 
 #mixin { targets: 'vazkii.botania.client.integration.jei.manapool.ManaPoolRecipeWrapper' }
 zenClass MixinManaPoolRecipeWrapper {
@@ -90,5 +92,36 @@ zenClass MixinBiomeDecorationHandler {
         return;
       }
     }
+  }
+}
+
+// Boost Exoflame to 10x speed (5x cookTime increment every 2 ticks)
+// priority 1 so this applies AFTER MagicultureIntegrations' mixin
+#mixin { targets: 'vazkii.botania.common.block.subtile.functional.SubTileExoflame', priority: 1 }
+zenClass MixinSubTileExoflame {
+  #mixin WrapOperation
+  #{
+  #  method: 'onUpdate',
+  #  at: {
+  #    value: 'INVOKE',
+  #    target: 'Lvazkii/botania/api/item/IExoflameHeatable;boostCookTime()V'
+  #  }
+  #}
+  function buffHeatable(heatable as IExoflameHeatable, op as Operation) as void {
+    for i in 0 .. 5 {
+      op.call(heatable);
+    }
+  }
+
+  // Replace all int constant 1 with 5 across every method in this class.
+  // This safely covers:
+  //   - vanilla furnace cookTime +1 -> +5
+  //   - MI IHeatableTile.boostCookTimeHeatable(1) -> (5)
+  //   - MI IBoostableTile.boostCookTimeBoostable(1) -> (5)
+  //   - boolean true assignments (5 is still true in JVM)
+  //   - canFurnaceSmelt() boolean returns (5 is still true)
+  #mixin ModifyConstant { method: '*', constant: { intValue: 1 } }
+  function buffCookTime(value as int) as int {
+    return 5;
   }
 }
