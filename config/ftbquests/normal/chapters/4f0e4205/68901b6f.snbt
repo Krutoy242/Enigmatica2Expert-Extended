@@ -1,0 +1,26 @@
+{
+	x: 2.3d,
+	y: -1.3d,
+	shape: "gear",
+	text: [
+		"{q.twilight_forest.crumble_horn.desc}"
+	],
+	dependencies: [
+		"14296664"
+	],
+	size: 0.75d,
+	tasks: [{
+		uid: "a3650669",
+		type: "item",
+		items: [{
+			item: "twilightforest:crumble_horn"
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
+	}],
+	rewards: [{
+		uid: "c42f003f",
+		type: "item",
+		item: "twilightforest:crumble_horn"
+	}]
+}

@@ -364,6 +364,7 @@ q.twilight_forest.twilight_forest_an.name=Twilight Forest Animals
 q.twilight_forest.twilight_forest_an.desc=§2Twilight Forest§r dimension has many different species. Some of them are used to craft eggs of other animals.
 q.twilight_forest.ironwood_helm.name=Ironwood Armor
 q.twilight_forest.ironwood_helm.desc=After completing this quest, mobs will spawn with this armor set sometimes.
+q.twilight_forest.crumble_horn.desc=§3Crumble Horn§r shatters blocks around you, reducing them to softer forms.\n§7Blocks that can be broken by hand will drop as items.\n\n§2● §rHammer recipes from §nExNihiloCreatio§r are now supported\n§2● §rThe list of affected blocks has been greatly expanded\n§2● §r§720% chance§r to trigger per use
 q.twilight_forest.ironwood_axe.desc=Each axe from Twilight Forest cut planks from logs and sticks from planks.\nBetter axes output more.\nFortune is taken into account.\nSame for Axe TCon trait.
 q.twilight_forest.the_twilight_lich.name=The Twilight Lich
 q.twilight_forest.the_twilight_lich.desc=The Twilight Lich can be found inside his Lich Tower, a large compound with multiple branching towers found in the forest.

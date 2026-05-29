@@ -364,6 +364,7 @@ q.twilight_forest.twilight_forest_an.name=暮色森林的动物
 q.twilight_forest.twilight_forest_an.desc=§2暮色森林§r维度有许多新品种生物。一些用来制作其他生物的蛋。
 q.twilight_forest.ironwood_helm.name=铁木护甲
 q.twilight_forest.ironwood_helm.desc=在完成该任务后，怪物生成时偶尔会穿着该套装。
+q.twilight_forest.crumble_horn.desc=§3粉碎号角§r可以粉碎周围的方块，将其转化为更柔软的形式。\n§7可徒手破坏的方块会掉落为物品。\n\n§2● §r支持§nExNihiloCreatio§r锤子配方\n§2● §r受影响的方块列表已大幅扩展\n§2● §r§7每次使用有20%几率触发§r
 q.twilight_forest.ironwood_axe.desc=暮色森林的每把斧头都能从原木上砍下木板，从木板上砍下树枝。\n更好的斧子会有更高的产出。\n同时适用于时运附魔。\n匠魂斧头的对应属性也是如此。
 q.twilight_forest.the_twilight_lich.name=巫妖
 q.twilight_forest.the_twilight_lich.desc=巫妖能够在巫妖塔中发现，森林中一座高耸而复杂的分叉高塔。
