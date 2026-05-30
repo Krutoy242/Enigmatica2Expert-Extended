@@ -19,9 +19,9 @@
 		uid: "d336a7fe",
 		type: "item",
 		items: [{
-			item: "minecraft:stone_slab 5"
+			item: "minecraft:stone_slab"
 		}],
-		count: 5L
+		count: 7L
 	},
 	{
 		uid: "be029395",

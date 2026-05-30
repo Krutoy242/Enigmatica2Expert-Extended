@@ -19,19 +19,15 @@
 		uid: "99a88dbc",
 		type: "item",
 		items: [{
-			item: "minecraft:iron_block"
-		},
-		{
-			item: "thermalfoundation:storage_alloy"
-		},
-		{
-			item: "enderio:block_alloy 1 6"
-		},
-		{
-			item: "enderio:block_alloy 1 8"
-		},
-		{
-			item: "twilightforest:block_storage 1 1"
+			item: "libvulpes:advstructuremachine"
+		}],
+		count: 5L
+	},
+	{
+		uid: "ab32fb46",
+		type: "item",
+		items: [{
+			item: "libvulpes:hatch"
 		}]
 	}],
 	rewards: [{

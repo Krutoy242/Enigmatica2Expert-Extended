@@ -19,8 +19,9 @@
 		uid: "f2634a63",
 		type: "item",
 		items: [{
-			item: "advancedrocketry:blastbrick 81"
-		}]
+			item: "advancedrocketry:blastbrick"
+		}],
+		count: 72L
 	},
 	{
 		uid: "ca0e0fc6",
@@ -39,7 +40,8 @@
 		},
 		{
 			item: "libvulpes:coil0 1 10"
-		}]
+		}],
+		count: 3L
 	},
 	{
 		uid: "71ccf6ea",

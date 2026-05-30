@@ -19,8 +19,9 @@
 		uid: "5c1c908a",
 		type: "item",
 		items: [{
-			item: "libvulpes:structuremachine 6"
-		}]
+			item: "libvulpes:structuremachine"
+		}],
+		count: 13L
 	},
 	{
 		uid: "d2ce94c0",
@@ -36,7 +37,8 @@
 		},
 		{
 			item: "libvulpes:elitemotor"
-		}]
+		}],
+		count: 2L
 	},
 	{
 		uid: "68d1eacf",
@@ -49,22 +51,41 @@
 		uid: "8bc16533",
 		type: "item",
 		items: [{
-			item: "libvulpes:hatch 1 2"
+			item: "libvulpes:hatch"
 		}]
 	},
 	{
 		uid: "1bda7e1d",
 		type: "item",
 		items: [{
-			item: "libvulpes:hatch 2"
+			item: "libvulpes:hatch 1 1"
 		}]
 	},
 	{
 		uid: "ab32fb46",
 		type: "item",
 		items: [{
-			item: "libvulpes:hatch 2 1"
+			item: "libvulpes:hatch 1 2"
 		}]
+	},
+	{
+		uid: "f2634a64",
+		type: "item",
+		items: [{
+			ForgeCaps: {
+				Parent: {
+					data: "blockSteel",
+					id: "ore"
+				}
+			},
+			id: "itemfilters:filter",
+			tag: {
+				display: {
+					Name: "Any blockSteel"
+				}
+			}
+		}],
+		count: 3L
 	}],
 	rewards: [{
 		uid: "c02e62bd",

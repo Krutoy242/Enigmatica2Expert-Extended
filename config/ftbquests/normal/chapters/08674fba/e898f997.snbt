@@ -19,8 +19,9 @@
 		uid: "342ecb2d",
 		type: "item",
 		items: [{
-			item: "libvulpes:structuremachine 24"
-		}]
+			item: "libvulpes:structuremachine"
+		}],
+		count: 23L
 	},
 	{
 		uid: "dbcd2b0a",
@@ -44,7 +45,28 @@
 		},
 		{
 			item: "libvulpes:elitemotor"
-		}]
+		}],
+		count: 2L
+	},
+	{
+		uid: "ca0e0fc7",
+		type: "item",
+		items: [{
+			item: "libvulpes:coil0 1 4"
+		},
+		{
+			item: "libvulpes:coil0 1 2"
+		},
+		{
+			item: "libvulpes:coil0 1 7"
+		},
+		{
+			item: "libvulpes:coil0 1 9"
+		},
+		{
+			item: "libvulpes:coil0 1 10"
+		}],
+		count: 2L
 	},
 	{
 		uid: "17b73a8a",
