@@ -744,18 +744,6 @@
     "dim": "Overworld (0)"
   },
   {
-    "block": "biomesoplenty:leaves_3:11",
-    "distrib": "0,0;72,0;79,5.4e-4;80,5.8e-4;81,5.7e-4;83,0.0006;85,6.8e-4;88,6.1e-4;89,6.3e-4;92,5.8e-4;94,0.0006;95,5.9e-4;96,0",
-    "silktouch": true,
-    "dropsList": [
-      {
-        "itemStack": "biomesoplenty:sapling_1:7",
-        "fortunes": { "0": 0.051, "1": 0.058, "2": 0.079, "3": 0.097 }
-      }
-    ],
-    "dim": "Overworld (0)"
-  },
-  {
     "block": "biomesoplenty:leaves_3:9",
     "distrib": "0,0;62,0;63,5.9e-6;65,2.7e-6;68,2.1e-5;70,2.7e-5;71,2.4e-5;73,3.6e-5;75,3.8e-5;77,3.7e-5;78,3.4e-5;80,0;83,0;85,2.3e-6;86,1.2e-6;88,1.6e-6;91,6.6e-6;92,6.6e-6;93,2.3e-6;95,0",
     "silktouch": true,
