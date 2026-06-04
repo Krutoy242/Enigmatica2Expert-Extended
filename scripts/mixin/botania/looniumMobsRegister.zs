@@ -1,0 +1,45 @@
+#modloaded betteranimalsplus botania nuclearcraft thaumcraft iceandfire twilightforest rats thaumicaugmentation quark
+
+import native.com.github.alexthe666.iceandfire.entity.EntityDreadBeast;
+import native.com.github.alexthe666.iceandfire.entity.EntityDreadGhoul;
+import native.com.github.alexthe666.iceandfire.entity.EntityDreadKnight;
+import native.com.github.alexthe666.iceandfire.entity.EntityDreadLich;
+import native.com.github.alexthe666.iceandfire.entity.EntityDreadScuttler;
+import native.com.github.alexthe666.rats.server.entity.EntityFeralRatlantean;
+import native.its_meow.betteranimalsplus.common.entity.EntityTarantula;
+import native.its_meow.betteranimalsplus.common.entity.EntityZotzpyre;
+import native.nc.entity.EntityFeralGhoul;
+import native.net.minecraft.entity.monster.EntityMob;
+import native.net.minecraft.world.World;
+import native.thaumcraft.common.entities.monster.EntityInhabitedZombie;
+import native.thaumcraft.common.entities.monster.cult.EntityCultistCleric;
+import native.thaumcraft.common.entities.monster.cult.EntityCultistKnight;
+import native.thaumcraft.common.entities.monster.tainted.EntityTaintacle;
+import native.thecodex6824.thaumicaugmentation.common.entity.EntityTAEldritchGuardian;
+import native.twilightforest.entity.EntityTFAdherent;
+import native.twilightforest.entity.EntityTFSnowGuardian;
+import native.twilightforest.entity.EntityTFTroll;
+import native.vazkii.quark.world.entity.EntityAshen;
+import native.vazkii.quark.world.entity.EntityDweller;
+import scripts.mixin.botania.looniumMobs;
+
+val mobList = looniumMobs.mobList;
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityCultistKnight(w);      }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityDreadBeast(w);         }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityDreadGhoul(w);         }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityDreadLich(w);          }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityDreadScuttler(w);      }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityDreadKnight(w);        }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityTarantula(w);          }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityZotzpyre(w);           }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityFeralGhoul(w);         }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityAshen(w);              }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityDweller(w);            }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityFeralRatlantean(w);    }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityCultistCleric(w);      }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityInhabitedZombie(w);    }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityTaintacle(w);          }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityTAEldritchGuardian(w); }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityTFAdherent(w);         }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityTFSnowGuardian(w);     }));
+mobList.add(looniumMobs.LooniumMobEntry(function(w as World) as EntityMob { return EntityTFTroll(w);            }));
