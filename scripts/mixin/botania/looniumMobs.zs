@@ -39,4 +39,3 @@ static mobList as [LooniumMobEntry] = [
     LooniumMobEntry(function(w as World) as EntityMob { return EntityEvoker(w);     }),
     LooniumMobEntry(function(w as World) as EntityMob { return EntityVindicator(w); }),
 ] as [LooniumMobEntry];
-
