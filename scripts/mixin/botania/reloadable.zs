@@ -104,6 +104,7 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
 
     entityLiving.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("Loonium Modifier Health", 2, 1));
     entityLiving.getAttribute("generic.attackDamage").applyModifier(AttributeModifier.createModifier("Loonium Modifier Damage", 1.5, 1));
+    entityLiving.health = entityLiving.maxHealth;
 
     val isCreeper = entityDef.id == "minecraft:creeper";
     val effectDuration = isCreeper ? 100 : 2000000;
