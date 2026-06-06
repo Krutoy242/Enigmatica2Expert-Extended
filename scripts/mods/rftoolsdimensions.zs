@@ -39,6 +39,11 @@ scripts.jei.crafting_hints.addInsOutsCatl(
   [<rftoolsdim:fake_gravel> * 999,  <rftoolsdim:fake_sand> * 999],
   <rftoolsdim:dimension_builder>
 );
+scripts.jei.crafting_hints.addInsOutCatl(
+  [],
+  <contenttweaker:ore_bixbite>,
+  <rftoolsdim:known_dimlet:2>.withTag({ dkey: 'contenttweaker:ore_bixbite@0' })
+);
 
 // *======= Recipes =======*
 
