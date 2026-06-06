@@ -39,7 +39,7 @@ static mobList as [IEntityDefinition] = [
   <entity:iceandfire:dread_knight>,
   <entity:iceandfire:dread_lich>,
   <entity:iceandfire:dread_scuttler>,
-  <entity:nuclearcraft:feral_ghoul>,
+  //<entity:nuclearcraft:feral_ghoul>, //entityDefinition is null
   <entity:quark:ashen>,
   <entity:quark:dweller>,
   <entity:rats:feral_ratlantean>,
@@ -49,6 +49,10 @@ static mobList as [IEntityDefinition] = [
   <entity:thaumcraft:taintacle>,
   <entity:thaumicaugmentation:eldritch_guardian>,
   <entity:twilightforest:adherent>,
+  <entity:twilightforest:blockchain_goblin>,
+  <entity:twilightforest:ice_crystal>,
+  <entity:twilightforest:minotaur>,
+  <entity:twilightforest:pinch_beetle>,
   <entity:twilightforest:snow_guardian>,
   <entity:twilightforest:troll>,
 ];
