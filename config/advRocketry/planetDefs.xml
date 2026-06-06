@@ -21,6 +21,7 @@
 				<generateCaves>true</generateCaves>
 				<generateCraters>true</generateCraters>
 				<generateGeodes>false</generateGeodes>
+				<hasOxygen>false</hasOxygen>
 			</planet>
 			<planet name="Skyblock" DIMID="3" dimMapping="" customIcon="moon">
 				<isKnown>false</isKnown>
@@ -39,6 +40,7 @@
 			<rotationalPeriod>1400000</rotationalPeriod>
 			<generateCaves>true</generateCaves>
 			<rainMarker>-1</rainMarker>
+			<hasOxygen>false</hasOxygen>
 		</planet>
 		<planet name="Venus" DIMID="102" customIcon="lava">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
@@ -51,6 +53,7 @@
 			<skyColor>0,0,0</skyColor>
 			<rainMarker>-1</rainMarker>
 			<retrograde>true</retrograde>
+			<hasOxygen>false</hasOxygen>
 		</planet>
 		<planet name="Mars" DIMID="103" customIcon="marslike">
 			<biomeIds>advancedrocketry:hotdryrock</biomeIds>
@@ -65,6 +68,7 @@
 			<orbitalDistance>105</orbitalDistance>
 			<rotationalPeriod>20000</rotationalPeriod>
 			<skyColor>1,0.2,0</skyColor>
+			<hasOxygen>false</hasOxygen>
 		</planet>
 		<planet name="Jupiter" DIMID="104" customIcon="gasgiantred">
 			<GasGiant>true</GasGiant>
@@ -73,6 +77,7 @@
 			<gas>fluoromethane</gas>
 			<orbitalDistance>120</orbitalDistance>
 			<rotationalPeriod>9900</rotationalPeriod>
+			<hasOxygen>false</hasOxygen>
 			<planet name="Io" DIMID="105" customIcon="moon">
 				<biomeIds>advancedrocketry:volcanic</biomeIds>
 				<atmosphereDensity>0</atmosphereDensity>
@@ -80,6 +85,7 @@
 				<orbitalDistance>70</orbitalDistance>
 				<rotationalPeriod>10000</rotationalPeriod>
 				<generateCaves>true</generateCaves>
+				<hasOxygen>false</hasOxygen>
 			</planet>
 			<planet name="Europa" DIMID="106" customIcon="waterworld">
 				<biomeIds>minecraft:frozen_ocean</biomeIds>
@@ -99,6 +105,7 @@
 				<spawnable weight="10" groupMin="1">betteranimalsplus:whale</spawnable>
 				<spawnable weight="10" groupMin="1">iceandfire:seaserpent</spawnable>
 				<spawnable weight="17" groupMin="2">iceandfire:hippocampus</spawnable>
+				<hasOxygen>false</hasOxygen>
 			</planet>
 		</planet>
 		<planet name="Saturn" DIMID="107" customIcon="gasgiantblue">
@@ -109,6 +116,7 @@
 			<hasRings>true</hasRings>
 			<orbitalDistance>130</orbitalDistance>
 			<rotationalPeriod>10600</rotationalPeriod>
+			<hasOxygen>false</hasOxygen>
 			<planet name="Titan" DIMID="108" customIcon="moon">
 				<biomeIds>nuclearcraft:nuclear_wasteland,biomesoplenty:wasteland</biomeIds>
 				<atmosphereDensity>0</atmosphereDensity>
@@ -117,6 +125,7 @@
 				<orbitalPhi>120</orbitalPhi>
 				<rotationalPeriod>12000</rotationalPeriod>
 				<generateCaves>true</generateCaves>
+				<hasOxygen>false</hasOxygen>
 			</planet>
 		</planet>
 		<planet name="Uranus" DIMID="109" customIcon="iceworld">
@@ -128,6 +137,7 @@
 			<gravitationalMultiplier>89</gravitationalMultiplier>
 			<rotationalPeriod>17250</rotationalPeriod>
 			<generateCaves>true</generateCaves>
+			<hasOxygen>false</hasOxygen>
 		</planet>
 		<planet name="Neptune" DIMID="110" customIcon="iceworld">
 			<biomeIds>biomesoplenty:alps_foothills,biomesoplenty:glacier</biomeIds>
@@ -138,6 +148,7 @@
 			<rotationalPeriod>21100</rotationalPeriod>
 			<generateCaves>true</generateCaves>
 			<fillerBlock>biomesoplenty:hard_ice</fillerBlock>
+			<hasOxygen>false</hasOxygen>
 		</planet>
 	</star>
 	<star name="Proxima Centauri" temp="45" x="28" y="8" numPlanets="0" numGasGiants="0">
