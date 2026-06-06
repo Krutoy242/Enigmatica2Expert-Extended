@@ -24,7 +24,7 @@
 			tag: {
 				"oc:data": {
 					FluidName: "stone",
-					Amount: 20000000
+					Amount: 2000000000
 				}
 			},
 			Damage: 23s

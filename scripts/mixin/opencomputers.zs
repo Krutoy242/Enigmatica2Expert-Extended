@@ -8,7 +8,7 @@ import native.mezz.jei.api.IModRegistry;
 zenClass MixinDriverUpgradeTank {
   #mixin ModifyConstant { method: 'createEnvironment', constant: { intValue: 16000 } }
   function modifyCapacity(value as int) as int {
-    return 20000000;
+    return 2000000000;
   }
 }
 
