@@ -1,4 +1,4 @@
-#modloaded immersiveengineering alfinivia biomesoplenty
+#modloaded immersiveengineering roidtweaker biomesoplenty
 #priority -100
 
 import crafttweaker.block.IBlockState;
@@ -9,7 +9,7 @@ import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IFacing;
 import crafttweaker.world.IWorld;
 
-import mods.alfinivia.ImmersiveEngineering.addChemthrowerEffect;
+import mods.roidtweaker.immersiveengineering.IEGuns.addChemthrowerEffect;
 
 // -----------------------------------------------------
 // Basalt remake for Basalt Sediment Alt

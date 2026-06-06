@@ -1,7 +1,7 @@
-#modloaded immersiveengineering alfinivia redstonearsenal
+#modloaded immersiveengineering roidtweaker redstonearsenal
 
-import mods.alfinivia.ImmersiveEngineering.addChemthrowerEffect;
-import mods.alfinivia.ImmersiveEngineering.addRailgunBullet as _addRailgunBullet;
+import mods.roidtweaker.immersiveengineering.IEGuns.addChemthrowerEffect;
+import mods.roidtweaker.immersiveengineering.IEGuns.addRailgunBullet as _addRailgunBullet;
 import crafttweaker.liquid.ILiquidStack;
 import crafttweaker.potions.IPotionEffect;
 import crafttweaker.item.IIngredient;
@@ -10,7 +10,7 @@ import crafttweaker.item.IIngredient;
 
 function addRailgunBullet(item as IIngredient, damage as float, gravity as float, colorMap as int[][]) {
   _addRailgunBullet(item, damage, gravity, colorMap);
-  scripts.jei.mod.alfinivia.addRailgunBulletJEI(item, damage, gravity);
+  scripts.jei.mod.roidtweaker.addRailgunBulletJEI(item, damage, gravity);
 }
 
 val colorMap = [[0x777777, 0xA4A4A4]] as int[][];
@@ -28,7 +28,7 @@ addRailgunBullet(<extendedcrafting:material:3>, 104, 1.0, colorMap);
 // *======= Fertilizers =======*
 
 function addLiquidFertilizer(fluid as ILiquidStack, mult as float) {
-  if (fluid.name != 'water') mods.alfinivia.ImmersiveEngineering.addLiquidFertilizer(fluid, mult);
+  if (fluid.name != 'water') mods.roidtweaker.immersiveengineering.GardenCloche.addFertilizer(fluid, mult);
   scripts.jei.mod.immersiveengineering.addGardenClocheFluid(fluid, mult);
 }
 
@@ -45,7 +45,7 @@ addLiquidFertilizer(<liquid:vapor_of_levity>      , 2.00);
 
 function addRadiationEffect(liquid as ILiquidStack, damage as float, effects as IPotionEffect[]) {
   addChemthrowerEffect(liquid, false, false, 'chemicals', damage, effects);
-  scripts.jei.mod.alfinivia.addChemthrowerRadiationJEI(liquid, damage, effects);
+  scripts.jei.mod.roidtweaker.addChemthrowerRadiationJEI(liquid, damage, effects);
 }
 
 addRadiationEffect(<liquid:californium_250>, 2, [<potion:ic2:radiation>.makePotionEffect(130, 2, false, true)] as IPotionEffect[]);
@@ -64,7 +64,7 @@ addRadiationEffect(<liquid:curium_246>     , 2, [<potion:ic2:radiation>.makePoti
 
 function addDamageEffect(liquid as ILiquidStack, isGas as bool, damage as float, source as string = 'chemicals') {
   addChemthrowerEffect(liquid, isGas, false, source, damage);
-  scripts.jei.mod.alfinivia.addChemthrowerDamageJEI(liquid, damage);
+  scripts.jei.mod.roidtweaker.addChemthrowerDamageJEI(liquid, damage);
 }
 
 addDamageEffect(<liquid:ic2superheated_steam> ,true , 14);
@@ -80,7 +80,7 @@ addDamageEffect(<liquid:neutronium>           ,false, 360);
 
 function addFlammableEffect(liquid as ILiquidStack, damage as float) {
   addChemthrowerEffect(liquid, false, true, 'chemicals', damage);
-  scripts.jei.mod.alfinivia.addChemthrowerFlammableJEI(liquid, damage);
+  scripts.jei.mod.roidtweaker.addChemthrowerFlammableJEI(liquid, damage);
 }
 
 addFlammableEffect(<liquid:oil>          , 2);
@@ -98,7 +98,7 @@ addFlammableEffect(<liquid:perfect_fuel> , 350);
 
 function addPotionEffect(liquid as ILiquidStack, damage as float, effects as IPotionEffect[]) {
   addChemthrowerEffect(liquid, false, false, 'chemicals', damage, effects);
-  scripts.jei.mod.alfinivia.addChemthrowerPotionJEI(liquid, damage, effects);
+  scripts.jei.mod.roidtweaker.addChemthrowerPotionJEI(liquid, damage, effects);
 }
 
 addPotionEffect(<liquid:cloud_seed_concentrated>,  2, [<potion:minecraft:levitation>.makePotionEffect(20, 1, false, true)]);
