@@ -187,7 +187,7 @@ zenClass MixinIafVillagerRegistry {
     addTrade(1,    'iceandfire:manuscript'                   , 1, 1   , 'iceandfire:myrmex_desert_resin'        , 4, 6);
     addTrade(1,    'iceandfire:myrmex_desert_resin'          , 1, 3   , 'ic2:crafting:23'                       , 50, 64);
     addTrade(1,    'iceandfire:myrmex_desert_resin'          , 50, 64 , 'ic2:crafting:24'                       , 50, 64);
-    addTrade(5,    'iceandfire:myrmex_desert_resin_glass'    , 1, 3   , 'tconevo:edible'                        , 24, 48);
+    addTrade(5,    'iceandfire:myrmex_desert_resin'          , 6, 15  , 'tconevo:edible'                        , 1, 9);
     addTrade(5,    'iceandfire:myrmex_desert_resin_glass'    , 1, 3   , 'thermalfoundation:fertilizer:2'        , 8, 16);
     addTrade(5,    'iceandfire:myrmex_desert_resin_glass'    , 1, 3   , 'iceandfire:shiny_scales'               , 32, 64);
     addTrade(5,    'iceandfire:myrmex_desert_resin_glass'    , 1, 3   , 'minecraft:sponge'                      , 12, 48);
@@ -204,7 +204,7 @@ zenClass MixinIafVillagerRegistry {
     addTrade(1,    'iceandfire:manuscript'                   , 1, 1   , 'iceandfire:myrmex_jungle_resin'        , 4, 6);
     addTrade(1,    'iceandfire:myrmex_jungle_resin'          , 1, 3   , 'ic2:crafting:23'                       , 50, 64);
     addTrade(5,    'iceandfire:myrmex_jungle_resin'          , 50, 64 , 'ic2:crafting:24'                       , 50, 64);
-    addTrade(5,    'iceandfire:myrmex_jungle_resin_glass'    , 1, 3   , 'tconevo:edible'                        , 24, 48);
+    addTrade(5,    'iceandfire:myrmex_jungle_resin'          , 6, 15  , 'tconevo:edible'                        , 1, 9);
     addTrade(5,    'iceandfire:myrmex_jungle_resin_glass'    , 1, 3   , 'thermalfoundation:fertilizer:2'        , 8, 16);
     addTrade(5,    'iceandfire:myrmex_jungle_resin_glass'    , 1, 3   , 'iceandfire:shiny_scales'               , 32, 64);
     addTrade(5,    'iceandfire:myrmex_jungle_resin_glass'    , 1, 3   , 'minecraft:sponge'                      , 12, 48);
