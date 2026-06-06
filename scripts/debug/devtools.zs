@@ -192,6 +192,23 @@ function dumpFallingBlocks(player as IPlayer) as void {
   }
 }
 
+function dumpAllItemsI18n() as void {
+  val output = StringList.empty();
+  output.add('##################################################');
+  output.add('#           All Items and i18n Keys                #');
+  for itemDef in game.items {
+    for item in itemDef.subItems {
+      var translationKey = item.name;
+      if (!translationKey.endsWith('.name')) {
+        translationKey = translationKey ~ '.name';
+      }
+      var localized = game.localize(translationKey);
+      output.add('"' ~ item.commandString.replaceAll('"', '""') ~ '",' ~ translationKey ~ ',"' ~ localized.replaceAll('"', '""') ~ '"');
+    }
+  }
+  print(mods.zenutils.StaticString.join(output.toArray(), '\n'));
+}
+
 events.onPlayerLeftClickBlock(function (e as crafttweaker.event.PlayerLeftClickBlockEvent) {
   if (e.player.world.remote) return;
   if (isNull(e.player.currentItem)) return;

@@ -74,8 +74,10 @@ async function main() {
   await createTag(nextVersion)
   await buildZips(nextVersion, zipBaseName)
   await manageSFTP(PATHS.serverSetupConfig)
-  if (await confirm('Push tag?'))
+  if (await confirm('Push tag?')) {
     await $$`git push --follow-tags`
+    process.stdout.write('\n')
+  }
   await publishRelease(nextVersion, zipBaseName)
 }
 
@@ -137,7 +139,7 @@ async function runChangelog(nextVersion: string, zipBaseName: string) {
 
   p.note('Iconify changelog and prepare files to git add', '📝')
 
-  await $$`tsx ${PATHS.mcIcons} ${PATHS.changelogLatest} --silent --no-short --modpack=e2ee --treshold=2`
+  await $$`tsx ${PATHS.mcIcons} ${PATHS.changelogLatest} --no-short --modpack=e2ee --treshold=2`
   await retry(2, '1s', async () => $`git update-index --no-skip-worktree ${PATHS.skipWorktree}`)
 
   const filesToCommit = [
@@ -206,11 +208,11 @@ async function buildZips(nextVersion: string, zipBaseName: string) {
   await fs.mkdir(tmpOverrides, { recursive: true })
 
   p.note('Cloning latest tag to tmpOverrides...', '👬 ')
-  const $tmp = $$({ cwd: tmpOverrides, sync: true })
-  $tmp`git clone --depth 1 ${`file://${resolve(process.cwd())}`} .`
-  $tmp`git submodule init`
-  $tmp`git config submodule.mc-tools.update none`
-  $tmp`git submodule update -j8`
+  const $tmp = $$({ cwd: tmpOverrides })
+  await $tmp`git clone --depth 1 ${`file://${resolve(process.cwd())}`} .`
+  await $tmp`git submodule init`
+  await $tmp`git config submodule.mc-tools.update none`
+  await $tmp`git submodule update -j8`
 
   const s = p.spinner()
   s.start('⬅️ Cleanse and move manifest.json...')

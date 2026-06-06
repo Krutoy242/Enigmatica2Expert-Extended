@@ -241,9 +241,9 @@ ${filtered.join('\n')}`
 
 } */
 
-// Total Furnace recipes registered: 947
+// Total Furnace recipes registered: 960
 // Blacklisted by JEI or manually: 79
-// Filtered by oredict: 157
+// Filtered by oredict: 159
 infinFurnace(<actuallyadditions:block_misc:3>, <actuallyadditions:item_misc:5>);
 blacklist(<actuallyadditions:item_dust:3>);
 blacklist(<actuallyadditions:item_dust:7>);
@@ -427,20 +427,6 @@ infinFurnace(<immersiveengineering:ore:5>, <immersiveengineering:metal:5>);
 infinFurnace(<industrialforegoing:dryrubber:*>, <industrialforegoing:plastic>);
 // SKIP: <integrateddynamics:menril_log_filled>
 // SKIP: <integrateddynamics:menril_log>
-// ------------------------------------------------------------------
-// JAOPCA ore-processing chain for custom gem ores.
-// Materials are defined in config/JAOPCA.cfg.
-// For every new gem added in scripts/cot/init.zs + config/JAOPCA.cfg
-// the following five recipe groups must be extended (search existing
-// gems to find the correct alphabetical insertion points):
-//   1. chunk → dirty gem        (≈ ×10)
-//   2. cluster → gem item       (≈ ×2)
-//   3. crystal abyss → dirty gem
-//   4. dirty gem → gem item     (≈ ×12)
-//   5. dust alch → dirty gem    (≈ ×48)
-//   6. rocky chunk → dirty gem  (≈ ×4)
-// Corresponding purge calls are in scripts/_init/purge.zs.
-// ------------------------------------------------------------------
 infinFurnace(<jaopca:item_chunkaluminium>, <jaopca:item_dirtygemaluminium> * 10);
 infinFurnace(<jaopca:item_chunkamber>, <jaopca:item_dirtygemamber> * 10);
 infinFurnace(<jaopca:item_chunkamethyst>, <jaopca:item_dirtygemamethyst> * 10);
@@ -780,6 +766,8 @@ blacklist(<mekanism:dust:1>);
 blacklist(<mekanism:dust:2>);
 blacklist(<mekanism:dust:3>);
 blacklist(<mekanism:dust:4>);
+blacklist(<mekanism:dust:5>);
+blacklist(<mekanism:dust:6>);
 blacklist(<mekanism:dust>);
 infinFurnace(<mekanism:oreblock>, <mekanism:ingot:1>);
 blacklist(<mekanism:otherdust:1>);
@@ -952,6 +940,7 @@ blacklist(<nuclearcraft:californium:17>);
 blacklist(<nuclearcraft:californium:18>);
 blacklist(<nuclearcraft:californium:19>);
 infinFurnace(<nuclearcraft:compound:12>, <nuclearcraft:compound:13>);
+infinFurnace(<nuclearcraft:compound:19>, <appliedenergistics2:material:5>);
 blacklist(<nuclearcraft:curium:2>);
 blacklist(<nuclearcraft:curium:3>);
 blacklist(<nuclearcraft:curium:4>);
@@ -976,9 +965,13 @@ blacklist(<nuclearcraft:dust:12>);
 blacklist(<nuclearcraft:dust:13>);
 blacklist(<nuclearcraft:dust:14>);
 blacklist(<nuclearcraft:dust2:1>);
+infinFurnace(<nuclearcraft:dust2:7>, <nuclearcraft:ingot2:7>);
+infinFurnace(<nuclearcraft:dust2:8>, <nuclearcraft:ingot2:8>);
+infinFurnace(<nuclearcraft:dust2:9>, <nuclearcraft:ingot2:9>);
 blacklist(<nuclearcraft:dust2>);
 infinFurnace(<nuclearcraft:flour>, <minecraft:bread>);
 infinFurnace(<nuclearcraft:gem_dust:1>, <nuclearcraft:dust:14>);
+infinFurnace(<nuclearcraft:gem_dust:12>, <nuclearcraft:compound:18>);
 blacklist(<nuclearcraft:ingot:14>);
 blacklist(<nuclearcraft:ingot:15>);
 blacklist(<nuclearcraft:ingot2:2>);
