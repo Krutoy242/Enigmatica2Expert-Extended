@@ -16,26 +16,26 @@ import native.net.minecraft.entity.monster.EntityZombie;
 import native.net.minecraft.world.World;
 
 zenClass LooniumMobEntry {
-    val mob as function(World)EntityMob;
+  val mob as function(World)EntityMob;
 
-    zenConstructor(mob as function(World)EntityMob) {
-      this.mob = mob;
-    }
+  zenConstructor(mob as function(World)EntityMob) {
+    this.mob = mob;
+  }
 
-    function getMob(world as World) as EntityMob {
-        return this.mob(world);
-    } 
+  function getMob(world as World) as EntityMob {
+    return this.mob(world);
+  }
 }
 
 static mobList as [LooniumMobEntry] = [
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityZombie(w);     }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntitySkeleton(w);   }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityCreeper(w);    }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntitySpider(w);     }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityCaveSpider(w); }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityEnderman(w);   }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityHusk(w);       }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityStray(w);      }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityEvoker(w);     }),
-    LooniumMobEntry(function(w as World) as EntityMob { return EntityVindicator(w); }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityZombie(w);     }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntitySkeleton(w);   }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityCreeper(w);    }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntitySpider(w);     }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityCaveSpider(w); }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityEnderman(w);   }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityHusk(w);       }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityStray(w);      }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityEvoker(w);     }),
+  LooniumMobEntry(function (w as World) as EntityMob { return EntityVindicator(w); }),
 ] as [LooniumMobEntry];

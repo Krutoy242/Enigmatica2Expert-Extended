@@ -143,67 +143,64 @@ zenClass MixinSubTileExoflame {
   }
 }
 
-#mixin {targets: "vazkii.botania.common.block.subtile.functional.SubTileLoonuim"}
+#mixin { targets: 'vazkii.botania.common.block.subtile.functional.SubTileLoonuim' }
 zenClass MixinSubTileLoonuim {
+  #mixin Inject { method: 'onUpdate', at: { value: 'INVOKE', target: 'Lnet/minecraft/tileentity/TileEntity;func_145831_w()Lnet/minecraft/world/World;', shift: 'BEFORE' }, cancellable: true }
+  function afterSuperUpdate(ci as CallbackInfo) as void {
+    val world as World = this0.supertile.getWorld();
+    val rand as Random = world.rand;
+    if (!world.isRemote && this0.redstoneSignal == 0 && this0.ticksExisted % 100 == 0 && this0.mana >= 35000) {
+      var stack as ItemStack = ItemStack.EMPTY;
+      while stack.isEmpty() || BotaniaAPI.looniumBlacklist.contains(stack.getItem()) {
+        val stacks as [ItemStack] = world.getLootTableManager().getLootTableFromLocation(this0.lootTable).generateLootForPools(rand, LootContext.Builder(world as WorldServer).build());
+        if (stacks.isEmpty()) {
+          return;
+        }
+        else {
+          stack = stacks[rand.nextInt(stacks.length)];
+        }
+      }
 
-	#mixin Inject {method: "onUpdate", at: {value: "INVOKE", target: "Lnet/minecraft/tileentity/TileEntity;func_145831_w()Lnet/minecraft/world/World;", shift: "BEFORE"}, cancellable: true}
-	function afterSuperUpdate(ci as CallbackInfo) as void {
-		val world as World = this0.supertile.getWorld();
-		val rand as Random = world.rand;
-		if(!world.isRemote && this0.redstoneSignal == 0 && this0.ticksExisted % 100 == 0 && this0.mana >= 35000) {
-			
-            
-			var stack as ItemStack = ItemStack.EMPTY;
-			while(stack.isEmpty() || BotaniaAPI.looniumBlacklist.contains(stack.getItem())){
-				var stacks as [ItemStack] = world.getLootTableManager().getLootTableFromLocation(this0.lootTable).generateLootForPools(rand, LootContext.Builder(world as WorldServer).build());
-				if (stacks.isEmpty()){
-					return;
-				} else {
-					stack = stacks[rand.nextInt(stacks.length)];
-				}
-			}
-            
-			val bound as int = 5 * 2 + 1;
-			val xp as int = this0.supertile.getPos().getX() - 5 + rand.nextInt(bound);
-			val yp as int = this0.supertile.getPos().getY();
-			val zp as int = this0.supertile.getPos().getZ() - 5 + rand.nextInt(bound);
-			
-			var pos as BlockPos = BlockPos(xp, yp - 1, zp);
-			while(world.getBlockState(pos).causesSuffocation()) {
-				pos = pos.up();
-				if(pos.getY() >= 254) return;
-			}
-			pos = pos.up();
+      val bound as int = 5 * 2 + 1;
+      val xp as int = this0.supertile.getPos().getX() - 5 + rand.nextInt(bound);
+      val yp as int = this0.supertile.getPos().getY();
+      val zp as int = this0.supertile.getPos().getZ() - 5 + rand.nextInt(bound);
 
-			val x as double = rand.nextDouble() + pos.getX();
-			val y as double = rand.nextDouble() + pos.getY();
-			val z as double = rand.nextDouble() + pos.getZ();
-			val entity as EntityMob = looniumMobs.mobList[rand.nextInt(looniumMobs.mobList.length)].getMob(world);
-            
-			entity.setPositionAndRotation(x, y, z, world.rand.nextFloat() * 360.0f, 0);
-			entity.motionX = 0.0;
-            entity.motionY = 0.0;
-            entity.motionZ = 0.0;
-			
-			val map as Multimap = HashMultimap.create();
-			map.put(SharedMonsterAttributes.MAX_HEALTH.getName(), AttributeModifier("Loonium Modififer Health", 2, 1));
-			map.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), AttributeModifier("Loonium Modififer Damage", 1.5, 1));
-			entity.getAttributeMap().applyAttributeModifiers(map);
+      var pos as BlockPos = BlockPos(xp, yp - 1, zp);
+      while world.getBlockState(pos).causesSuffocation() {
+        pos = pos.up();
+        if (pos.getY() >= 254) return;
+      }
+      pos = pos.up();
 
-			entity.addPotionEffect(PotionEffect(MobEffects.FIRE_RESISTANCE, entity instanceof EntityCreeper ? 100 : 2000000, 0));
-			entity.addPotionEffect(PotionEffect(MobEffects.REGENERATION, entity instanceof EntityCreeper ? 100 : 2000000, 0));
+      val x as double = rand.nextDouble() + pos.getX();
+      val y as double = rand.nextDouble() + pos.getY();
+      val z as double = rand.nextDouble() + pos.getZ();
+      val entity as EntityMob = looniumMobs.mobList[rand.nextInt(looniumMobs.mobList.length)].getMob(world);
 
-			val cmp as NBTTagCompound = stack.writeToNBT(NBTTagCompound());
-			entity.getEntityData().setTag("botania:looniumItemStackToDrop", cmp);
+      entity.setPositionAndRotation(x, y, z, world.rand.nextFloat() * 360.0f, 0);
+      entity.motionX = 0.0;
+      entity.motionY = 0.0;
+      entity.motionZ = 0.0;
 
-			entity.onInitialSpawn(world.getDifficultyForLocation(pos), null);
-			world.spawnEntity(entity);
-			entity.spawnExplosionParticle();
-			
-			this0.mana = this0.mana - 35000;
-			this0.sync();
-            
-		}
-  ci.cancel();
-	}
+      val map as Multimap = HashMultimap.create();
+      map.put(SharedMonsterAttributes.MAX_HEALTH.getName(), AttributeModifier('Loonium Modififer Health', 2, 1));
+      map.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), AttributeModifier('Loonium Modififer Damage', 1.5, 1));
+      entity.getAttributeMap().applyAttributeModifiers(map);
+
+      entity.addPotionEffect(PotionEffect(MobEffects.FIRE_RESISTANCE, entity instanceof EntityCreeper ? 100 : 2000000, 0));
+      entity.addPotionEffect(PotionEffect(MobEffects.REGENERATION, entity instanceof EntityCreeper ? 100 : 2000000, 0));
+
+      val cmp as NBTTagCompound = stack.writeToNBT(NBTTagCompound());
+      entity.getEntityData().setTag('botania:looniumItemStackToDrop', cmp);
+
+      entity.onInitialSpawn(world.getDifficultyForLocation(pos), null);
+      world.spawnEntity(entity);
+      entity.spawnExplosionParticle();
+
+      this0.mana = this0.mana - 35000;
+      this0.sync();
+    }
+    ci.cancel();
+  }
 }
