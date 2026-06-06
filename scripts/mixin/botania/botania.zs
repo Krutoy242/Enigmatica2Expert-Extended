@@ -6,8 +6,6 @@ import mixin.CallbackInfoReturnable;
 import mixin.Operation;
 import native.com.google.common.collect.HashMultimap;
 import native.com.google.common.collect.Multimap;
-import native.java.awt.Color;
-import native.java.util.Collections;
 import native.java.util.Random;
 import native.net.minecraft.entity.SharedMonsterAttributes;
 import native.net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -17,16 +15,13 @@ import native.net.minecraft.init.MobEffects;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.nbt.NBTTagCompound;
 import native.net.minecraft.potion.PotionEffect;
-import native.net.minecraft.util.EnumFacing;
 import native.net.minecraft.util.math.BlockPos;
 import native.net.minecraft.world.World;
 import native.net.minecraft.world.WorldServer;
 import native.net.minecraft.world.storage.loot.LootContext;
 import native.net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate;
-import native.thaumcraft.common.entities.monster.cult.EntityCultistKnight;
 import native.vazkii.botania.api.BotaniaAPI;
 import native.vazkii.botania.api.item.IExoflameHeatable;
-import native.vazkii.botania.api.mana.IManaPool;
 import scripts.mixin.botania.looniumMobs;
 
 #mixin { targets: 'vazkii.botania.client.integration.jei.manapool.ManaPoolRecipeWrapper' }
