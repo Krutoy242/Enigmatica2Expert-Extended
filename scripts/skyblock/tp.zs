@@ -7,7 +7,7 @@ import crafttweaker.player.IPlayer;
 
 static SKY_TP_HEIGHT as double = 257.0;
 static requiredItem as IItemStack = <patchouli:guide_book>.withTag({ 'patchouli:book': 'patchouli:e2e_e' });
-static playersNoted as bool[IPlayer] = {};
+static playersNoted as bool[string] = {};
 
 events.onPlayerTick(function (e as crafttweaker.event.PlayerTickEvent) {
   val player = e.player;
@@ -21,21 +21,23 @@ events.onPlayerTick(function (e as crafttweaker.event.PlayerTickEvent) {
   if (player.dimension == 0
     && player.posY >= SKY_TP_HEIGHT
   ) {
-    return tpToSky(player);
+    tpToSky(player);
+    return;
   }
 
   if (player.dimension == 3
     && player.posY <= -100
   ) {
-    return tpFromSky(player);
+    tpFromSky(player);
+    return;
   }
 });
 
 function tpToSky(player as IPlayer) as void {
   // Show warning message if player doesnt hold book but only once per server restart
   if (isNull(player.currentItem) || !(requiredItem has player.currentItem)) {
-    if (isNull(playersNoted[player])) {
-      playersNoted[player] = true;
+    if (isNull(playersNoted[player.uuid])) {
+      playersNoted[player.uuid] = true;
       player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([{
         translate: 'e2ee.skyblock.need_item',
         with     : [
@@ -52,9 +54,13 @@ function tpToSky(player as IPlayer) as void {
   );
 
   // Show message about staying in skyblock forever
+  val playerUuid = player.uuid;
   player.world.catenation().sleep(60).run(function (world, context) {
-    if (isNull(player)) return;
-    player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation('e2ee.skyblock.stay_forever'));
+    for p in world.getPlayers() {
+      if (p.uuid != playerUuid) continue;
+      p.sendRichTextMessage(crafttweaker.text.ITextComponent.fromTranslation('e2ee.skyblock.stay_forever'));
+      return;
+    }
   }).start();
 }
 
