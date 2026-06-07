@@ -99,3 +99,34 @@ zenClass MixinCharcoalPileWallWrapper {
     return Config.charcoalAmountBase;
   }
 }
+
+/*
+Loonium butterfly loot override (scoop interaction replacement)
+*/
+#mixin {targets: "forestry.lepidopterology.entities.EntityButterfly"}
+zenClass MixinEntityButterfly {
+  #mixin Inject {method: "func_184645_a", at: { value: "HEAD" }, cancellable: true}
+  function butterflyLooniumDrop(
+    player as native.net.minecraft.entity.player.EntityPlayer,
+    hand as native.net.minecraft.util.EnumHand,
+    ci as mixin.CallbackInfoReturnable
+  ) as void {
+    val stack = player.getHeldItem(hand);
+
+    if (!(stack.getItem() instanceof native.forestry.api.core.IToolScoop)) return;
+
+    val entity = this0 as native.net.minecraft.entity.Entity;
+
+    if (entity.getEntityData().hasKey("botania:looniumItemStackToDrop")) {
+      val cmp = entity.getEntityData().getCompoundTag("botania:looniumItemStackToDrop");
+      val item = ItemStack(cmp);
+
+      entity.world.spawnEntity(native.net.minecraft.entity.item.EntityItem(entity.world, entity.posX, entity.posY, entity.posZ, item));
+
+      entity.setDead();
+
+      ci.setReturnValue(true);
+      ci.cancel();
+    }
+  }
+}

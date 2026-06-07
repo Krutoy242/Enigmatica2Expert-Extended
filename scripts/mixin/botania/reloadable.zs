@@ -9,10 +9,12 @@ import crafttweaker.entity.AttributeModifier;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 
+import native.forestry.api.lepidopterology.ButterflyManager;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.tileentity.TileEntity;
 import native.net.minecraft.util.ResourceLocation;
 import native.net.minecraft.util.math.BlockPos;
+import native.net.minecraft.world.EnumDifficulty;
 import native.net.minecraft.world.WorldServer;
 import native.net.minecraft.world.storage.loot.LootContext;
 import native.vazkii.botania.api.BotaniaAPI;
@@ -92,36 +94,49 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
     val x = rand.nextDouble() + nativePos.getX();
     val y = rand.nextDouble() + nativePos.getY();
     val z = rand.nextDouble() + nativePos.getZ();
-
-    val entityDef = mobList[rand.nextInt(mobList.length)];
-    val entity = entityDef.createEntity(world);
-    val entityLiving as IEntityLiving = entity;
-
-    entity.posX = x;
-    entity.posY = y;
-    entity.posZ = z;
-    entity.rotationYaw = rand.nextFloat() * 360.0f;
-    entity.rotationPitch = 0;
-    entity.motionX = 0.0;
-    entity.motionY = 0.0;
-    entity.motionZ = 0.0;
-
-    entityLiving.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("Loonium Modifier Health", 2, 1));
-    entityLiving.getAttribute("generic.attackDamage").applyModifier(AttributeModifier.createModifier("Loonium Modifier Damage", 1.5, 1));
-    entityLiving.health = entityLiving.maxHealth;
-
-    val isCreeper = entityDef.id == "minecraft:creeper";
-    val effectDuration = isCreeper ? 100 : 2000000;
-    entityLiving.addPotionEffect(<potion:minecraft:fire_resistance>.makePotionEffect(effectDuration, 0));
-    entityLiving.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(effectDuration, 0));
-
     val cmp = stack.writeToNBT(native.net.minecraft.nbt.NBTTagCompound());
-    entity.native.getEntityData().setTag("botania:looniumItemStackToDrop", cmp);
+    
+    if(nativeWorld.getDifficulty() == EnumDifficulty.PEACEFUL){
+      val root = ButterflyManager.butterflyRoot;
+      val templates = root.getIndividualTemplates();
 
-    (entity.native as native.net.minecraft.entity.EntityLiving).onInitialSpawn(
-      nativeWorld.getDifficultyForLocation(nativePos), null);
-    world.spawnEntity(entity);
-    entityLiving.spawnExplosionParticle();
+      val butterflyData = templates[rand.nextInt(templates.length)];
+
+      val nativeEntity = root.spawnButterflyInWorld(nativeWorld, butterflyData.copy(), x, y, z);
+
+      if(!isNull(nativeEntity)) nativeEntity.getEntityData().setTag("botania:looniumItemStackToDrop", cmp);
+
+    } else {
+      val entityDef = mobList[rand.nextInt(mobList.length)];
+      val entity = entityDef.createEntity(world);
+      val entityLiving as IEntityLiving = entity;
+
+      entity.posX = x;
+      entity.posY = y;
+      entity.posZ = z;
+      entity.rotationYaw = rand.nextFloat() * 360.0f;
+      entity.rotationPitch = 0;
+      entity.motionX = 0.0;
+      entity.motionY = 0.0;
+      entity.motionZ = 0.0;
+
+      entityLiving.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("Loonium Modifier Health", 2, 1));
+      entityLiving.getAttribute("generic.attackDamage").applyModifier(AttributeModifier.createModifier("Loonium Modifier Damage", 1.5, 1));
+      entityLiving.health = entityLiving.maxHealth;
+
+      val isCreeper = entityDef.id == "minecraft:creeper";
+      val effectDuration = isCreeper ? 100 : 2000000;
+      entityLiving.addPotionEffect(<potion:minecraft:fire_resistance>.makePotionEffect(effectDuration, 0));
+      entityLiving.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(effectDuration, 0));
+
+      
+      entity.native.getEntityData().setTag("botania:looniumItemStackToDrop", cmp);
+
+      (entity.native as native.net.minecraft.entity.EntityLiving).onInitialSpawn(
+        nativeWorld.getDifficultyForLocation(nativePos), null);
+      world.spawnEntity(entity);
+      entityLiving.spawnExplosionParticle();
+    }
 
     flower.mana -= 35000;
     flower.sync();

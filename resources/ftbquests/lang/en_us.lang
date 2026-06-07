@@ -1308,7 +1308,8 @@ q.botania.munchdew.desc=The Munchdew eats nearby Leaves and converts them into m
 q.botania.kekimurus.name=Kekimurus
 q.botania.kekimurus.desc=The Kekimurus consumes nearby Cakes and converts them into significant amounts of mana.\n\n§2✔§r It can eat almost any cake, including §oExperiment 115§r, which doesn’t get destroyed.
 q.botania.loonium.name=Loonium
-q.botania.loonium.desc=The Loonium spawns hostile mobs which drop dungeon loot when killed at the cost of mana.\n\nIt can also summon hostile creatures from other mods.\n\nConsult the Lexica Botania for additional information.q.botania.orechid_vacuam.name=Orechid Vacuam
+q.botania.loonium.desc=The Loonium spawns hostile mobs which drop dungeon loot when killed at the cost of mana.\n\nIt can also summon hostile creatures from other mods.\n\nIn Peaceful mode, it spawns butterflies instead, which must be caught to obtain loot.\n\nConsult the Lexica Botania for additional information.
+q.botania.orechid_vacuam.name=Orechid Vacuam
 q.botania.orechid_vacuam.desc=The Orechid Vacuam generates End ores in nearby End Stone, at the cost of mana. §8Has been tweaked to work in any dimension.
 q.botania.orechid_ignem.name=Orechid Ignem
 q.botania.orechid_ignem.desc=The Orechid Ignem generates Nether ores in nearby Netherrack, at the cost of mana. §8Has been tweaked to work in any dimension.§r\n\nConsult the Lexica Botania for additional information.
