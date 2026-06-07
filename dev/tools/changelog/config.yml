@@ -20,11 +20,6 @@ scopes:
   jei: JEI
   config: Configs
 
-# Map old mod project IDs to new ones when a mod was replaced by a fork/remake
-# This ensures changelogs are generated for the replacement mod
-modMappings:
-  316704: 1307741  # Thaumic Wonders -> Thaumic Wonders Unofficial
-
 # If any commit would be autored with other person,
 # it would be listed as contribution
 defaultAuthor: Krutoy242@gmail.com

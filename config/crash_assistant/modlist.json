@@ -185,14 +185,6 @@
     "name": "Alfheim",
     "version": "1.6"
   },
-  "Alfinivia-0.4hotfix.jar": {
-    "curseForgeHash": 331016815,
-    "jarName": "Alfinivia-0.4hotfix.jar",
-    "modId": "alfinivia",
-    "modrinthHash": "11d6ad71af6bb7938fe636fc432a553d1fa96932",
-    "name": "Alfinivia",
-    "version": "0.4hotfix"
-  },
   "angermanagement-1.12.2-1.0.2.jar": {
     "curseForgeHash": 3324576647,
     "jarName": "angermanagement-1.12.2-1.0.2.jar",
@@ -217,13 +209,13 @@
     "name": "Another Tips",
     "version": "1.0.5"
   },
-  "AntiqueArmory-1.12.2-1.2.8.jar": {
-    "curseForgeHash": 2761931649,
-    "jarName": "AntiqueArmory-1.12.2-1.2.8.jar",
+  "AntiqueArmory-1.12.2-1.2.9.jar": {
+    "curseForgeHash": 570162532,
+    "jarName": "AntiqueArmory-1.12.2-1.2.9.jar",
     "modId": "conarm",
-    "modrinthHash": "f14cd76131bb72d404a451bcb0225a44f79a474e",
+    "modrinthHash": "2217abb7ef4fe820b382c4008a51b0cd34c08e69",
     "name": "Antique Armory",
-    "version": "1.2.8"
+    "version": "1.2.9"
   },
   "AppleCore-mc1.12.2-3.4.0.jar": {
     "curseForgeHash": 3756462991,
@@ -299,13 +291,13 @@
     "name": "Athenaeum",
     "version": "1.12.2-1.19.6"
   },
-  "Atlas-Lib-1.12.2-1.1.10.jar": {
-    "curseForgeHash": 886952720,
-    "jarName": "Atlas-Lib-1.12.2-1.1.10.jar",
+  "Atlas-Lib-1.12.2-1.1.11.jar": {
+    "curseForgeHash": 1095919544,
+    "jarName": "Atlas-Lib-1.12.2-1.1.11.jar",
     "modId": "atlaslib",
-    "modrinthHash": "21de74818e763f939bff0568405b83be5cc7c96d",
+    "modrinthHash": "6d707db466168435050414a2ea65ccd700ec9c3e",
     "name": "Atlas Lib",
-    "version": "1.1.10"
+    "version": "1.1.11"
   },
   "AutoRegLib-1.3-32.jar": {
     "curseForgeHash": 69589181,
@@ -355,13 +347,13 @@
     "name": "Baubles",
     "version": "1.12-1.5.2"
   },
-  "Baubley-Elytra-v1.3.3-mc1.12.2.jar": {
-    "curseForgeHash": 2696543096,
-    "jarName": "Baubley-Elytra-v1.3.3-mc1.12.2.jar",
+  "Baubley-Elytra-v1.3.5-mc1.12.2.jar": {
+    "curseForgeHash": 1902740465,
+    "jarName": "Baubley-Elytra-v1.3.5-mc1.12.2.jar",
     "modId": "baubleye",
-    "modrinthHash": "e604328e3ac289710971713be25825db1ecf8b63",
+    "modrinthHash": "b2c263ef7f315314bff98c0f833f0fe0b0712757",
     "name": "Baubley Elytra",
-    "version": "v1.3.3-mc1.12.2"
+    "version": "v1.3.5-mc1.12.2"
   },
   "bdlib-1.14.4.1-mc1.12.2.jar": {
     "curseForgeHash": 3999087316,
@@ -966,21 +958,21 @@
     "name": "Enchantment Descriptions",
     "version": "1.1.20"
   },
-  "endercore-1.12.2-0.5.80.jar": {
-    "curseForgeHash": 2964739344,
-    "jarName": "endercore-1.12.2-0.5.80.jar",
+  "endercore-1.12.2-0.5.81.jar": {
+    "curseForgeHash": 2219887258,
+    "jarName": "endercore-1.12.2-0.5.81.jar",
     "modId": "endercore",
-    "modrinthHash": "755bfc380d3e75c36a351ce4eb785bd2a4a032fe",
+    "modrinthHash": "b241f07f8e150b33137c8c14e919b692d483b540",
     "name": "Ender Core",
-    "version": "1.12.2-0.5.80"
+    "version": "1.12.2-0.5.81"
   },
-  "EnderIO-CEu-5.4.1.jar": {
-    "curseForgeHash": 933478565,
-    "jarName": "EnderIO-CEu-5.4.1.jar",
+  "EnderIO-CEu-5.4.2.jar": {
+    "curseForgeHash": 657723,
+    "jarName": "EnderIO-CEu-5.4.2.jar",
     "modId": "enderio",
-    "modrinthHash": "934c4e865d91c2574ec1eeca02562aa45d52f5dd",
+    "modrinthHash": "3cf9c6ef953bcb9c4b283a51091ec2bdc70a6091",
     "name": "Ender IO CEu",
-    "version": "5.4.1"
+    "version": "5.4.2"
   },
   "EnderIO-endergy-1.12.2-5.3.72.jar": {
     "curseForgeHash": 3919766608,
@@ -1187,13 +1179,13 @@
     "name": "Forgelin-Continuous",
     "version": "2.3.10.0"
   },
-  "ForkedEnderTweaker-2.0.3.jar": {
-    "curseForgeHash": 3543997244,
-    "jarName": "ForkedEnderTweaker-2.0.3.jar",
+  "ForkedEnderTweaker-2.1.3.jar": {
+    "curseForgeHash": 1910381063,
+    "jarName": "ForkedEnderTweaker-2.1.3.jar",
     "modId": "endertweaker",
-    "modrinthHash": "8425bb0fd352e7e1aa2e73575fda00bfd3d49e32",
+    "modrinthHash": "94a9f3f1315fd2966ee05eef4a4aded691d7b4d9",
     "name": "ForkedEnderTweaker",
-    "version": "2.0.3"
+    "version": "2.1.3"
   },
   "forkedproxy-2.0.0.jar": {
     "curseForgeHash": 1144212882,
@@ -2090,13 +2082,13 @@
     "name": "NoiseThreader",
     "version": "1.1.3"
   },
-  "nuclearcraft-1.12.2-2o.9.6.jar": {
-    "curseForgeHash": 98619572,
-    "jarName": "nuclearcraft-1.12.2-2o.9.6.jar",
+  "nuclearcraft-1.12.2-2o.9.7.jar": {
+    "curseForgeHash": 1377472926,
+    "jarName": "nuclearcraft-1.12.2-2o.9.7.jar",
     "modId": "nuclearcraft",
-    "modrinthHash": "be21a0d21f4096d4f07e870b0d078451c5d26780",
+    "modrinthHash": "b0f9d31ba566626f284ec987b80bb2b76104dd9c",
     "name": "NuclearCraft",
-    "version": "2o.9.6"
+    "version": "2o.9.7"
   },
   "Nutrition-1.12.2-4.9.0.jar": {
     "curseForgeHash": 682013470,
@@ -2410,13 +2402,13 @@
     "name": "Quantum Minecraft Dynamics",
     "version": "1.5.1"
   },
-  "QuantumThings-MC-1.12.2-1.2.0.jar": {
-    "curseForgeHash": 3094620908,
-    "jarName": "QuantumThings-MC-1.12.2-1.2.0.jar",
+  "QuantumThings-MC-1.12.2-1.2.1.jar": {
+    "curseForgeHash": 2975942928,
+    "jarName": "QuantumThings-MC-1.12.2-1.2.1.jar",
     "modId": "randomthings",
-    "modrinthHash": "0937013ab8e10fd89ec10b9531c9b99bc3737cab",
+    "modrinthHash": "1944595784efc9b4befc629028a3f4eb73bb4f2a",
     "name": "Quantum Things",
-    "version": "1.2.0"
+    "version": "1.2.1"
   },
   "QuarkOddities-1.12.2.jar": {
     "curseForgeHash": 4267477614,
@@ -2583,13 +2575,13 @@
     "name": "RLTweaker",
     "version": "0.5.12"
   },
-  "roidtweaker-1.2.2.jar": {
-    "curseForgeHash": 1375653001,
-    "jarName": "roidtweaker-1.2.2.jar",
+  "roidtweaker-1.3.1.jar": {
+    "curseForgeHash": 246791350,
+    "jarName": "roidtweaker-1.3.1.jar",
     "modId": "roidtweaker",
-    "modrinthHash": "e81c507f2ea43ff2642e48d65c8d4c1b18f44bcb",
+    "modrinthHash": "6ffeb4351496570aab2028de3185a54b0a902839",
     "name": "Roid's Tweaker",
-    "version": "1.2.2"
+    "version": "1.3.1"
   },
   "RoughlyEnoughIDs-2.3.1.jar": {
     "curseForgeHash": 538660559,
@@ -2831,13 +2823,13 @@
     "name": "Thaumic Additions",
     "version": "12.7.9"
   },
-  "thaumicapi-1.0.1.jar": {
-    "curseForgeHash": 3157174153,
-    "jarName": "thaumicapi-1.0.1.jar",
+  "thaumicapi-1.0.2.jar": {
+    "curseForgeHash": 3971942461,
+    "jarName": "thaumicapi-1.0.2.jar",
     "modId": "thaumicapi",
-    "modrinthHash": "7c4cee149ab7e2b4773a473bbe582fa8b3d41881",
+    "modrinthHash": "6d1f7ca13a3c2f072cabec29c9a707537b67fc24",
     "name": "ThaumicAPI",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "ThaumicAugmentation-1.12.2-2.1.14.jar": {
     "curseForgeHash": 965509518,
@@ -3164,13 +3156,13 @@
     "name": "UniLib",
     "version": "1.2.1"
   },
-  "UniversalTweaks-1.12.2-1.20.0.jar": {
-    "curseForgeHash": 1576929921,
-    "jarName": "UniversalTweaks-1.12.2-1.20.0.jar",
+  "UniversalTweaks-1.12.2-1.20.1.jar": {
+    "curseForgeHash": 1630183384,
+    "jarName": "UniversalTweaks-1.12.2-1.20.1.jar",
     "modId": "universaltweaks",
-    "modrinthHash": "85bdffcafb2888cc235580f62fa5c110b5f7b19c",
+    "modrinthHash": "61ecdb9c053afcd6b032f5fb471b54d534f74489",
     "name": "Universal Tweaks",
-    "version": "1.20.0"
+    "version": "1.20.1"
   },
   "useful_railroads-1.12.2-1.1.3.24.jar": {
     "curseForgeHash": 6958948,
@@ -3336,14 +3328,6 @@
     "modrinthHash": "ea2b00643c7758713a103b028eaf2d51cf5cf6e2",
     "name": "XU2 Patcher",
     "version": "1.0.3-pr_6"
-  },
-  "YNot-0.2.4.jar": {
-    "curseForgeHash": 447109612,
-    "jarName": "YNot-0.2.4.jar",
-    "modId": "ynot",
-    "modrinthHash": "7192f98116899b6755fbd631bff2721c40f65bea",
-    "name": "YNot",
-    "version": "0.2.4"
   },
   "YouDroppedThis-1.1.0.jar": {
     "curseForgeHash": 1448539117,

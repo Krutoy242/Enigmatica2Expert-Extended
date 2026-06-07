@@ -96,6 +96,7 @@ addInfFur(<jaopca:item_clusteraquamarine>          , [RE % 2, <jaopca:item_nugge
 addInfFur(<jaopca:item_clusterardite>              , [RE % 2, <tconstruct:nuggets:1> % 33]);
 addInfFur(<jaopca:item_clusterastralstarmetal>     , [RE % 2, <jaopca:item_nuggetastralstarmetal> % 33]);
 addInfFur(<jaopca:item_clusterbenitoite>           , [RE % 2]);
+addInfFur(<jaopca:item_clusterbixbite>             , [RE % 2]);
 addInfFur(<jaopca:item_clusterboron>               , [RE % 2, <jaopca:item_nuggetboron> % 33]);
 addInfFur(<jaopca:item_clustercertusquartz>        , [RE % 2, <jaopca:item_nuggetcertusquartz> % 33]);
 addInfFur(<jaopca:item_clusterchargedcertusquartz> , [RE % 2, <jaopca:item_nuggetchargedcertusquartz> % 33]);
@@ -136,6 +137,7 @@ addInfFur(<jaopca:item_dirtygemaquamarine>         , [<thermalfoundation:materia
 addInfFur(<jaopca:item_dirtygemardite>             , [<minecraft:gold_nugget> * 24 % 100]);
 addInfFur(<jaopca:item_dirtygemastralstarmetal>    , [<endreborn:wolframium_nugget> % 32, <jaopca:item_nuggettungsten> * 24 % 100]);
 addInfFur(<jaopca:item_dirtygembenitoite>          , [<jaopca:item_nuggetdimensionalshard> * 24 % 100]);
+addInfFur(<jaopca:item_dirtygembixbite>            , [<jaopca:item_nuggetdimensionalshard> * 24 % 100]);
 addInfFur(<jaopca:item_dirtygemboron>              , [<jaopca:item_nuggetlithium> * 24 % 100]);
 addInfFur(<jaopca:item_dirtygemcertusquartz>       , [<thermalfoundation:material:16> * 24 % 100]);
 addInfFur(<jaopca:item_dirtygemchargedcertusquartz>, [<jaopca:item_nuggettopaz> * 24 % 100]);

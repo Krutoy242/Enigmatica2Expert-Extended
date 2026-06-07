@@ -6,6 +6,6 @@
 zenClass MixinUpgradeTank {
   #mixin ModifyConstant { method: 'tooltipLines', constant: { stringValue: '/16000' } }
   function modifyTooltip(value as string) as string {
-    return '/20000000';
+    return '/2000000000';
   }
 }

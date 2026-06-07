@@ -1,4 +1,4 @@
-#modloaded immersiveengineering alfinivia jei
+#modloaded immersiveengineering roidtweaker jei
 #priority 950
 
 import crafttweaker.item.IIngredient;
@@ -12,7 +12,7 @@ val ARROW_WIDTH = 18 + 4;
 val p = JEI.createJei('railgun_bullets', 'Railgun Bullets')
   .setBackground(IJeiUtils.createBackground(18 * 4, 18 * 1))
   .setIcon(<immersiveengineering:railgun>)
-  .setModid('alfinivia')
+  .setModid('roidtweaker')
   .addRecipeCatalyst(<immersiveengineering:railgun>);
 
 p.addSlot(IJeiUtils.createItemSlot('input', 0, 0, true, false));
@@ -33,7 +33,7 @@ static CHEM_ID as string = 'chemthrower_effects';
 val chem_p = JEI.createJei(CHEM_ID, 'Chemthrower Effects')
   .setBackground(IJeiUtils.createBackground(18 * 5, 18 * 1))
   .setIcon(<immersiveengineering:chemthrower>)
-  .setModid('alfinivia')
+  .setModid('roidtweaker')
   .addRecipeCatalyst(<immersiveengineering:chemthrower>);
 
 chem_p.addSlot(IJeiUtils.createLiquidSlot('input', 0, 0, 16, 16, 1, false, true, false));

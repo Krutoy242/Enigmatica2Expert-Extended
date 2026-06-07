@@ -21,21 +21,29 @@ function dumpArcRecycling() as void {
     val outputsMap = calc.getOutputs();
     if (outputsMap.isEmpty()) continue;
 
-    var mapStr = '{ ';
-    var first = true;
+    val entriesList = [] as [string];
     for _entry in outputsMap.entrySet() {
       val entry = _entry as native.java.util.Map.Entry;
       val key = entry.key as ItemStack;
       val value = toString(entry.value) as double;
+      entriesList.add(key.wrapper.commandString ~ ': ' ~ value);
+    }
+
+    val entriesArr = entriesList as string[];
+    mods.ctintegration.util.ArrayUtil.sort(entriesArr);
+
+    var mapStr = '{ ';
+    var first = true;
+    for entryStr in entriesArr {
       if (!first) mapStr ~= ', ';
       first = false;
-      mapStr ~= key.wrapper.commandString ~ ': ' ~ value;
+      mapStr ~= entryStr;
     }
     mapStr ~= ' }';
 
     val inputStr = inputStack.wrapper.commandString;
 
-    linesList.add('add(' ~ mapStr ~ ', ' ~ inputStr ~ ');');
+    linesList.add('add(' ~ inputStr ~ ', ' ~ mapStr ~ ');');
   }
 
   val linesArr = linesList as string[];
@@ -51,7 +59,7 @@ function dumpArcRecycling() as void {
     ~ 'import native.blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe;\n'
     ~ 'import native.java.util.HashMap;\n'
     ~ '\n'
-    ~ 'function add(outputs as double[IItemStack], input as IItemStack, time as int = 100, energy as int = 512) as void {\n'
+    ~ 'function add(input as IItemStack, outputs as double[IItemStack], time as int = 100, energy as int = 512) as void {\n'
     ~ '  val map as HashMap = HashMap();\n'
     ~ '  for stack, chance in outputs {\n'
     ~ '    map.put(stack.native, chance);\n'

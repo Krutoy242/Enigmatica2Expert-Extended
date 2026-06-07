@@ -6,7 +6,7 @@ import type { Preset } from 'conventional-changelog'
 import type { CommitGroup, CommitKnownProps, FinalContext, Options as WriterOptions } from 'conventional-changelog-writer'
 import type { ParserStreamOptions } from 'conventional-commits-parser'
 
-import type { AddonID, Minecraftinstance } from '../../../mc-tools/packages/curseforge/src/minecraftinstance.js'
+import type { Minecraftinstance } from '../../../mc-tools/packages/curseforge/src/minecraftinstance.js'
 // @ts-check
 import { existsSync, readFileSync } from 'node:fs'
 
@@ -36,7 +36,6 @@ interface Config {
   discardable  : Record<string, string>
   renames      : Record<string, string>
   scopes       : Record<string, string>
-  modMappings? : Record<number, number>
 }
 
 const configPath = resolve(__dirname, 'config.yml')
@@ -46,20 +45,11 @@ if (!existsSync(configPath)) {
 
 const config: Config = parse(readFileSync(configPath, 'utf8')) as Config
 
-// YAML parses object keys as strings; normalize modMappings keys to numbers
-if (config.modMappings) {
-  const mappings: Record<number, number> = {}
-  for (const [key, value] of Object.entries(config.modMappings)) {
-    mappings[Number(key)] = Number(value)
-  }
-  config.modMappings = mappings
-}
-
 // Extract mod changes between tags
 async function getModChanges() {
   const oldVersion = String(await $`git describe --tags --abbrev=0`)
 
-  const [fresh, oldRaw, template] = await Promise.all([
+  const [fresh, old, template] = await Promise.all([
     fs.readJson('minecraftinstance.json') as Promise<Minecraftinstance>,
     (async () => {
       const res = await $`git show tags/${oldVersion}:minecraftinstance.json`
@@ -67,15 +57,6 @@ async function getModChanges() {
     })(),
     fs.readFile('dev/tools/changelog/modlist.md', 'utf8'),
   ])
-
-  // Apply mod mappings so replaced mods are treated as updates instead of add/remove
-  const old = JSON.parse(JSON.stringify(oldRaw)) as Minecraftinstance
-  if (config.modMappings) {
-    for (const addon of old.installedAddons) {
-      const newId = config.modMappings[addon.addonID]
-      if (newId) addon.addonID = newId as AddonID
-    }
-  }
 
   const key = process.env.CF_API_KEY
   if (!key) {

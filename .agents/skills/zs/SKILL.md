@@ -19,6 +19,10 @@ metadata:
 - **Tooltips/JEI**: use `scripts.lib.tooltip.desc` helpers (`desc.jei`, `desc.tooltip`, `desc.both`) instead of raw JEI API. Lang keys auto-prefixed with `tooltips.lang.`.
 - **Loader directives**: `#loader contenttweaker` for `VanillaFactory`/`IItemUse`; default loader for recipes/JEI. `#modloaded a b c` skips file unless all mods present. `#ignoreBracketErrors` when brackets reference optional mods.
 - **Native collections**: annotate the **left-hand side** (`val recipes as [IRecipe] = ...`). Right-hand casts are ignored.
+- **Upcasting**: must use an unsafe left-hand cast; right-hand cast is ignored:
+  ```zs
+  val entityLiving as IEntityLiving = entity; // Left-hand upcast
+  ```
 - **Map iteration**: generics are erased; cast each entry explicitly:
   ```zs
   for _entry in map.entrySet() {

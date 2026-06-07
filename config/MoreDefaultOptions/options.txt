@@ -427,7 +427,7 @@ key_bogosort.key.move_all_same:-100:ALT:56
 key_bogosort.key.move_single:-100:CONTROL:29
 key_bogosort.key.move_single_empty:-99:CONTROL:29
 key_bogosort.key.sort:-98:NONE:
-key_bogosort.key.sort_config:37:NONE:
+key_bogosort.key.sort_config:0:NONE:
 key_bogosort.key.throw_all:16:NONE:57
 key_bogosort.key.throw_all_same:16:ALT:56
 key_flare.key.start_client_sampling:0:NONE:
