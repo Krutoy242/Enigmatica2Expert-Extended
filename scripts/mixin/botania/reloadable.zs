@@ -61,7 +61,7 @@ static mobList as [IEntityDefinition] = [
 
 scripts.mixin.botania.shared.Op.looniumOnUpdate =
   function (flower as SubTileLoonuim, supertile as TileEntity, lootTableStr as string) as void {
-    val world as IWorld = supertile.getWorld() as IWorld;
+    val world as IWorld = supertile.world as IWorld;
     val rand = world.random;
 
     if (world.remote || flower.redstoneSignal != 0 || flower.ticksExisted % 100 != 0 || flower.mana < 35000) return;
@@ -70,8 +70,8 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
     val nativeRand = nativeWorld.rand;
     var stack as ItemStack = ItemStack.EMPTY;
 
-    while stack.isEmpty() || BotaniaAPI.looniumBlacklist.contains(stack.getItem()) {
-      val lootTable = nativeWorld.getLootTableManager().getLootTableFromLocation(ResourceLocation(lootTableStr));
+    while stack.isEmpty() || BotaniaAPI.looniumBlacklist.contains(stack.item) {
+      val lootTable = nativeWorld.lootTableManager.getLootTableFromLocation(ResourceLocation(lootTableStr));
       val stacks = lootTable.generateLootForPools(nativeRand, LootContext.Builder(nativeWorld as WorldServer).build());
       if (stacks.isEmpty()) return;
       val stacksArr = stacks as [ItemStack];
@@ -79,7 +79,7 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
     }
 
     val bound = 5 * 2 + 1;
-    val flowerPos = IBlockPos.create(supertile.getPos().getX(), supertile.getPos().getY(), supertile.getPos().getZ());
+    val flowerPos = IBlockPos.create(supertile.pos.x, supertile.pos.y, supertile.pos.z);
     val xp = flowerPos.x - 5 + rand.nextInt(bound);
     val yp = flowerPos.y;
     val zp = flowerPos.z - 5 + rand.nextInt(bound);
@@ -87,24 +87,24 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
     var nativePos = BlockPos(xp, yp - 1, zp);
     while nativeWorld.getBlockState(nativePos).causesSuffocation() {
       nativePos = nativePos.up();
-      if (nativePos.getY() >= 254) return;
+      if (nativePos.y >= 254) return;
     }
     nativePos = nativePos.up();
 
-    val x = rand.nextDouble() + nativePos.getX();
-    val y = rand.nextDouble() + nativePos.getY();
-    val z = rand.nextDouble() + nativePos.getZ();
+    val x = rand.nextDouble() + nativePos.x;
+    val y = rand.nextDouble() + nativePos.y;
+    val z = rand.nextDouble() + nativePos.z;
     val cmp = stack.writeToNBT(native.net.minecraft.nbt.NBTTagCompound());
     
-    if(nativeWorld.getDifficulty() == EnumDifficulty.PEACEFUL){
+    if(nativeWorld.difficulty == EnumDifficulty.PEACEFUL){
       val root = ButterflyManager.butterflyRoot;
-      val templates = root.getIndividualTemplates();
+      val templates = root.individualTemplates;
 
       val butterflyData = templates[rand.nextInt(templates.length)];
 
       val nativeEntity = root.spawnButterflyInWorld(nativeWorld, butterflyData.copy(), x, y, z);
 
-      if(!isNull(nativeEntity)) nativeEntity.getEntityData().setTag("botania:looniumItemStackToDrop", cmp);
+      if(!isNull(nativeEntity)) nativeEntity.entityData.setTag("botania:looniumItemStackToDrop", cmp);
 
     } else {
       val entityDef = mobList[rand.nextInt(mobList.length)];
@@ -130,7 +130,7 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
       entityLiving.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(effectDuration, 0));
 
       
-      entity.native.getEntityData().setTag("botania:looniumItemStackToDrop", cmp);
+      entity.native.entityData.setTag("botania:looniumItemStackToDrop", cmp);
 
       (entity.native as native.net.minecraft.entity.EntityLiving).onInitialSpawn(
         nativeWorld.getDifficultyForLocation(nativePos), null);
