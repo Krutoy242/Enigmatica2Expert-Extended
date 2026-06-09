@@ -770,7 +770,7 @@ scripts.mods.extendedcrafting_engineering.remakeAlted(
     '▬': <ore:ingotFakeIron>,
     '⌂': <ic2:casing:6>,
     'C': copperCoil,
-  }, 3, {
+  }, 6, {
     '▬': <ore:ingotFerroboron>,
     '⌂': <ore:plateBasic>,
     'C': <immersiveengineering:wirecoil:2>,
