@@ -270,7 +270,7 @@ scripts.mods.extendedcrafting_engineering.remakeAlted(
     '□': <ore:plateIron>,
     'п': <ore:plateBronze>,
     'A': <ore:plateTin>,
-  }, 3, {
+  }, 6, {
     '□': <ore:plateSteel>,
     'п': <ore:plateConstantan>,
     'A': <ore:plateAluminum>,
