@@ -2,7 +2,6 @@
 #loader mixin
 
 import mixin.CallbackInfo;
-import native.net.minecraft.tileentity.TileEntity;
 import native.net.minecraft.util.math.BlockPos;
 import native.net.minecraft.world.World;
 import native.com.invadermonky.magicultureintegrations.api.tile.IHeatableTile;

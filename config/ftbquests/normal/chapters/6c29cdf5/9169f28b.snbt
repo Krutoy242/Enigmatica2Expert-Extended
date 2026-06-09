@@ -2,6 +2,7 @@
 	title: "{q.botania.loonium.name}",
 	x: 11.563663d,
 	y: 11.24698d,
+	shape: "gear",
 	text: [
 		"{q.botania.loonium.desc}"
 	],

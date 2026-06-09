@@ -125,3 +125,15 @@ zenClass MixinSubTileExoflame {
     return 5;
   }
 }
+
+/*
+Allow Customization of Loonium mob spawning mechanic
+*/
+#mixin { targets: 'vazkii.botania.common.block.subtile.functional.SubTileLoonuim' }
+zenClass MixinSubTileLoonuim {
+  #mixin Inject { method: 'onUpdate', at: { value: 'INVOKE', target: 'Lnet/minecraft/tileentity/TileEntity;func_145831_w()Lnet/minecraft/world/World;', shift: 'BEFORE' }, cancellable: true }
+  function afterSuperUpdate(ci as CallbackInfo) as void {
+    scripts.mixin.botania.shared.Op.looniumOnUpdate(this0, this0.supertile, this0.lootTable.toString());
+    ci.cancel();
+  }
+}
