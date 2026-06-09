@@ -413,7 +413,7 @@ craft.remake(<industrialforegoing:animal_resource_harvester>, ['pretty',
   '¤ N ¤'], {
   'R': <industrialforegoing:plastic>,
   '~': <minecraft:bucket>,
-  'C': <ore:machineCase>,
+  'C': <teslacorelib:machine_case>,
   '¤': <ore:gearGold>,
   'N': <tconstruct:kama_head:*>,
 });
