@@ -2,7 +2,6 @@
 #modloaded botania
 #reloadable
 
-import crafttweaker.entity.IEntity;
 import crafttweaker.entity.IEntityDefinition;
 import crafttweaker.entity.IEntityLiving;
 import crafttweaker.entity.AttributeModifier;
@@ -59,8 +58,8 @@ static mobList as [IEntityDefinition] = [
   <entity:twilightforest:troll>,
 ];
 
-scripts.mixin.botania.shared.Op.looniumOnUpdate =
-  function (flower as SubTileLoonuim, supertile as TileEntity, lootTableStr as string) as void {
+scripts.mixin.botania.shared.Op.looniumOnUpdate
+  = function (flower as SubTileLoonuim, supertile as TileEntity, lootTableStr as string) as void {
     val world as IWorld = supertile.world as IWorld;
     val rand = world.random;
 
@@ -95,8 +94,8 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
     val y = rand.nextDouble() + nativePos.y;
     val z = rand.nextDouble() + nativePos.z;
     val cmp = stack.writeToNBT(native.net.minecraft.nbt.NBTTagCompound());
-    
-    if(nativeWorld.difficulty == EnumDifficulty.PEACEFUL){
+
+    if (nativeWorld.difficulty == EnumDifficulty.PEACEFUL) {
       val root = ButterflyManager.butterflyRoot;
       val templates = root.individualTemplates;
 
@@ -104,9 +103,9 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
 
       val nativeEntity = root.spawnButterflyInWorld(nativeWorld, butterflyData.copy(), x, y, z);
 
-      if(!isNull(nativeEntity)) nativeEntity.entityData.setTag("botania:looniumItemStackToDrop", cmp);
-
-    } else {
+      if (!isNull(nativeEntity)) nativeEntity.entityData.setTag('botania:looniumItemStackToDrop', cmp);
+    }
+    else {
       val entityDef = mobList[rand.nextInt(mobList.length)];
       val entity = entityDef.createEntity(world);
       val entityLiving as IEntityLiving = entity;
@@ -120,17 +119,16 @@ scripts.mixin.botania.shared.Op.looniumOnUpdate =
       entity.motionY = 0.0;
       entity.motionZ = 0.0;
 
-      entityLiving.getAttribute("generic.maxHealth").applyModifier(AttributeModifier.createModifier("Loonium Modifier Health", 2, 1));
-      entityLiving.getAttribute("generic.attackDamage").applyModifier(AttributeModifier.createModifier("Loonium Modifier Damage", 1.5, 1));
+      entityLiving.getAttribute('generic.maxHealth').applyModifier(AttributeModifier.createModifier('Loonium Modifier Health', 2, 1));
+      entityLiving.getAttribute('generic.attackDamage').applyModifier(AttributeModifier.createModifier('Loonium Modifier Damage', 1.5, 1));
       entityLiving.health = entityLiving.maxHealth;
 
-      val isCreeper = entityDef.id == "minecraft:creeper";
+      val isCreeper = entityDef.id == 'minecraft:creeper';
       val effectDuration = isCreeper ? 100 : 2000000;
       entityLiving.addPotionEffect(<potion:minecraft:fire_resistance>.makePotionEffect(effectDuration, 0));
       entityLiving.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(effectDuration, 0));
 
-      
-      entity.native.entityData.setTag("botania:looniumItemStackToDrop", cmp);
+      entity.native.entityData.setTag('botania:looniumItemStackToDrop', cmp);
 
       (entity.native as native.net.minecraft.entity.EntityLiving).onInitialSpawn(
         nativeWorld.getDifficultyForLocation(nativePos), null);
