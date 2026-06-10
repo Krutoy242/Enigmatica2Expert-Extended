@@ -30,6 +30,7 @@ fluid.terrestrial=熔融天地宝晶
 fluid.mithrillium=熔融秘银
 fluid.adaminite=熔融精金
 fluid.mithminite=熔融秘金
+fluid.glitch=熔融故障灌注
 
 #Enchanted Steam
 item.contenttweaker.naquadah_resevoir_grade_1.name=星辉催化剂
@@ -307,6 +308,13 @@ e2ee.tconstruct.material.robust.name=健壮
 e2ee.tconstruct.material.robust.description=增加生命
 e2ee.tconstruct.material.challenger.name=挑战者
 e2ee.tconstruct.material.challenger.description=§o挑战者\n§r难度越高，挖掘速度、伤害和防御/韧性越高。
+e2ee.tconstruct.material.glitch.name=故障灌注
+e2ee.tconstruct.trait.glitch_flight.name=故障飞行
+e2ee.tconstruct.trait.glitch_flight.description=赋予创造飞行能力。\n§o需要全套。
+e2ee.tconstruct.trait.glitch_drop.name=故障合成器
+e2ee.tconstruct.trait.glitch_drop.description=击杀有时会掉落原始物质。\n§o需要全套。
+e2ee.tconstruct.trait.glitch_power.name=故障之力
+e2ee.tconstruct.trait.glitch_power.description=击杀时永久增加攻击伤害。\n§o+2伤害 (6%概率), 最高+18。
 e2ee.tconstruct.trait.faraday.name=法拉第
 e2ee.tconstruct.trait.faraday.description=防止因沉浸工程线缆造成的电击伤害。
 e2ee.tconstruct.trait.vaporizer.name=汽化器

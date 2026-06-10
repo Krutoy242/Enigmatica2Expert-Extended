@@ -395,6 +395,19 @@ mm.flowingLocation = 'astralsorcery:blocks/fluid/starlight_flow';
 mm.register();
 
 // -------------------------------
+// glitch
+// -------------------------------
+val gl = VanillaFactory.createFluid('glitch', Color.fromHex('16b77b'));
+gl.material = <blockmaterial:lava>;
+gl.viscosity = 2000;
+gl.temperature = 6000;
+gl.colorize = true;
+gl.luminosity = 7;
+gl.stillLocation = 'astralsorcery:blocks/fluid/starlight_still';
+gl.flowingLocation = 'astralsorcery:blocks/fluid/starlight_flow';
+gl.register();
+
+// -------------------------------
 // Tile Entities
 // -------------------------------
 

@@ -1,7 +1,7 @@
 {
 	loot_size: 1,
 	rewards: [{
-		item: "deepmoblearning:glitch_infused_sword"
+		item: "deepmoblearning:glitch_infused_ingot"
 	},
 	{
 		item: "deepmoblearning:infused_ingot_block"

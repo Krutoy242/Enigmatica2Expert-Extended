@@ -402,5 +402,12 @@ for item in gearsToRemove {
   recipesRemove(item);
 }
 
+// Glitch Infused armor (replaced with ConArm glitch material)
+Purge(<deepmoblearning:glitch_infused_helmet>).aspects();
+Purge(<deepmoblearning:glitch_infused_chestplate>).aspects();
+Purge(<deepmoblearning:glitch_infused_leggings>).aspects();
+Purge(<deepmoblearning:glitch_infused_boots>).aspects();
+Purge(<deepmoblearning:glitch_infused_sword>).aspects();
+
 // Connector Upgrade Kit causing dupes and dissapearing of main hand when used from offhand
 Purge(<xnet:connector_upgrade>);

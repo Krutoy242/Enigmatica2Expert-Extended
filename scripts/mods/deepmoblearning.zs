@@ -2,16 +2,6 @@
 
 val ing = <deepmoblearning:glitch_infused_ingot>;
 
-recipes.remove(<deepmoblearning:glitch_infused_sword>);
-utils.addEnchRecipe(<deepmoblearning:glitch_infused_sword>,
-  <enchantment:cyclicmagic:enchantment.beheading>, Grid(['pretty',
-    '    -',
-    '  -  ',
-    'T    '], {
-    '-': <deepmoblearning:glitch_infused_ingot>,
-    'T': <endreborn:sword_shard>,
-  }).shaped());
-
 recipes.remove(<deepmoblearning:soot_covered_plate> * 8);
 recipes.addShaped(<deepmoblearning:soot_covered_plate> * 4, [
   [null, <psi:material:3>, null],
@@ -221,4 +211,12 @@ craft.shapeless(<twilightforest:steeleaf_ingot>, 'T§', {
   'T': <ore:cropTea>, // Tea Leaf
   '§': <deepmoblearning:living_matter_twilight>, // Twilight Matter
 });
+
+// -------------------------------
+// Glitch Smeltery
+// -------------------------------
+scripts.process.melt(<ore:ingotGlitch>, <liquid:glitch> * 144);
+scripts.process.melt(<ore:blockGlitch>, <liquid:glitch> * 1296);
+mods.tconstruct.Casting.addTableRecipe(<deepmoblearning:glitch_infused_ingot>, <tconstruct:cast_custom>, <liquid:glitch>, 144, false, 200);
+mods.tconstruct.Casting.addBasinRecipe(<deepmoblearning:infused_ingot_block>, null, <liquid:glitch>, 1296);
 ////////////////////////////////////

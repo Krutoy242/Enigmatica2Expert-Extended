@@ -30,6 +30,7 @@ fluid.terrestrial=Molten Terrestrial Artifact
 fluid.mithrillium=Molten Mithrillium
 fluid.adaminite=Molten Adaminite
 fluid.mithminite=Molten Mithminite
+fluid.glitch=Molten Glitch Infused
 
 #Enchanted Steam
 item.contenttweaker.naquadah_resevoir_grade_1.name=Astral Catalyst Resevoir
@@ -307,6 +308,13 @@ e2ee.tconstruct.material.robust.name=Robust
 e2ee.tconstruct.material.robust.description=Increase health
 e2ee.tconstruct.material.challenger.name=Challenger
 e2ee.tconstruct.material.challenger.description=§oChallenger\n§rHigher difficulty increases mining speed, damage, and defense/toughness.
+e2ee.tconstruct.material.glitch.name=Glitch Infused
+e2ee.tconstruct.trait.glitch_flight.name=Glitch Flight
+e2ee.tconstruct.trait.glitch_flight.description=Grants creative flight.\n§oRequires full set.
+e2ee.tconstruct.trait.glitch_drop.name=Glitch Synthesizer
+e2ee.tconstruct.trait.glitch_drop.description=Kills sometimes drop pristine matter.\n§oRequires full set.
+e2ee.tconstruct.trait.glitch_power.name=Glitch Power
+e2ee.tconstruct.trait.glitch_power.description=Permanently increases attack damage on kill.\n§o+2 damage (6% chance), max +18.
 e2ee.tconstruct.trait.faraday.name=Faraday
 e2ee.tconstruct.trait.faraday.description=Prevents damage from wire shock.
 e2ee.tconstruct.trait.vaporizer.name=Vaporizer

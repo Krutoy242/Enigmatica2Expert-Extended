@@ -344,21 +344,8 @@ static armorStaged as IData[string]
         { id:'enderio:item_stellar_alloy_sword' },
         { id:'enderio:item_stellar_alloy_axe' },
       ] },
-    armor_glitch_infused:{
-      prev: 'armor_end_steel',
-      tier: 9,
-      material: 'deepmoblearning:glitch_infused_ingot',
-      recycle:  'deepmoblearning:glitch_infused_ingot',
-      list: [
-        { id:'deepmoblearning:glitch_infused_helmet' },
-        { id:'deepmoblearning:glitch_infused_chestplate' },
-        { id:'deepmoblearning:glitch_infused_leggings' },
-        { id:'deepmoblearning:glitch_infused_boots' },
-        { id:'deepmoblearning:glitch_infused_sword' },
-        { id:'deepmoblearning:pristine_matter_dragon' },
-      ] },
     armor_wyvern:{
-      prev: ['armor_terrasteel', 'armor_living_armour', 'armor_void_robe', 'armor_quantum', 'armor_arctic', 'armor_yeti', 'armor_glitch_infused'],
+      prev: ['armor_terrasteel', 'armor_living_armour', 'armor_void_robe', 'armor_quantum', 'armor_arctic', 'armor_yeti'],
       tier: 11,
       material: 'draconicevolution:wyvern_core',
       recycle:  'draconicevolution:wyvern_core',

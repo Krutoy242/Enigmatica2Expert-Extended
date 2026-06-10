@@ -47,4 +47,4 @@ if (!isNull(<ore:gemAmethyst>.firstItem)) {
 }
 
 // No-water alt
-mods.threng.Aggregator.addRecipe(<deepmoblearning:glitch_infused_ingot>, <deepmoblearning:glitch_fragment>, <ore:gemLapis>, <ore:ingotGold>);
+mods.threng.Aggregator.addRecipe(<deepmoblearning:glitch_infused_ingot>, <deepmoblearning:glitch_fragment>, <biomesoplenty:terrestrial_artifact>, <enderio:item_alloy_endergy_ingot:3>);

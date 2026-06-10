@@ -30,6 +30,7 @@ fluid.terrestrial=Расплавленный Земленный Артефакт
 fluid.mithrillium=Растворимый Митриллиум
 fluid.adaminite=Расплавленный Адаминит
 fluid.mithminite=Растворенный Митминит
+fluid.glitch=Расплавленная Глюк-инфузия
 
 #Enchanted Steam
 item.contenttweaker.naquadah_resevoir_grade_1.name=Астральный катализатор Резервуар 
@@ -307,6 +308,13 @@ e2ee.tconstruct.material.robust.name=Прочный
 e2ee.tconstruct.material.robust.description=Укрепление здоровья
 e2ee.tconstruct.material.challenger.name=Испытатель
 e2ee.tconstruct.material.challenger.description=§oИспытатель\n§rЧем выше сложность, тем выше скорость добычи, урон и защита/стойкость.
+e2ee.tconstruct.material.glitch.name=Глюк-инфузия
+e2ee.tconstruct.trait.glitch_flight.name=Глюк-полёт
+e2ee.tconstruct.trait.glitch_flight.description=Дарит творческий полёт.\n§oТребуется полный сет.
+e2ee.tconstruct.trait.glitch_drop.name=Глюк-синтезатор
+e2ee.tconstruct.trait.glitch_drop.description=Убийства иногда выбивают первозданную материю.\n§oТребуется полный сет.
+e2ee.tconstruct.trait.glitch_power.name=Глюк-сила
+e2ee.tconstruct.trait.glitch_power.description=Увеличивает урон при убийствах.\n§o+2 урона (6% шанс), макс. +18.
 e2ee.tconstruct.trait.faraday.name=Фарадей
 e2ee.tconstruct.trait.faraday.description=Предотвращает урон от удара током от проводов.
 e2ee.tconstruct.trait.vaporizer.name=Испаритель

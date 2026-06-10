@@ -245,7 +245,7 @@ mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_he
     <draconicevolution:wyvern_core>,
     <botania:terrasteelhelm>.anyDamage(),
     <twilightforest:arctic_helmet>.anyDamage(),
-    <deepmoblearning:glitch_infused_helmet>.anyDamage(),
+    <conarm:helmet_core>.withTag({ Material: 'glitch' }),
     <draconicevolution:draconium_block:1>,
   ]);
 mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_chest>,
@@ -260,7 +260,7 @@ mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_ch
     <draconicevolution:wyvern_core>,
     <botania:terrasteelchest>.anyDamage(),
     <twilightforest:arctic_chestplate>.anyDamage(),
-    <deepmoblearning:glitch_infused_chestplate>.anyDamage(),
+    <conarm:chest_core>.withTag({ Material: 'glitch' }),
     <draconicevolution:draconium_block:1>,
   ]);
 mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_legs>,
@@ -275,7 +275,7 @@ mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_le
     <draconicevolution:wyvern_core>,
     <botania:terrasteellegs>.anyDamage(),
     <twilightforest:arctic_leggings>.anyDamage(),
-    <deepmoblearning:glitch_infused_leggings>.anyDamage(),
+    <conarm:leggings_core>.withTag({ Material: 'glitch' }),
     <draconicevolution:draconium_block:1>,
   ]);
 mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_boots>,
@@ -290,7 +290,7 @@ mods.extendedcrafting.CombinationCrafting.addRecipe(<draconicevolution:wyvern_bo
     <draconicevolution:wyvern_core>,
     <botania:terrasteelboots>.anyDamage(),
     <twilightforest:arctic_boots>.anyDamage(),
-    <deepmoblearning:glitch_infused_boots>.anyDamage(),
+    <conarm:boots_core>.withTag({ Material: 'glitch' }),
     <draconicevolution:draconium_block:1>,
   ]);
 
