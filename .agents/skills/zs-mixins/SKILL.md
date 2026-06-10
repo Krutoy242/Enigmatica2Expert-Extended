@@ -1,14 +1,11 @@
 ---
 name: zs-mixins
-description: ZenUtils runtime bytecode mixins in scripts/mixin/<mod>.zs — file conventions, annotation syntax, and common patterns. ALWAYS LOAD THIS SKILL when editing ANY file under scripts/mixin/ or ANY .zs that starts with #loader mixin — it is MANDATORY.
-metadata:
-  audience: modpack-devs
-  workflow: writing-zs
+description: Write/edit ZenUtils bytecode mixins in scripts/mixin/. Load when editing "#loader mixin" scripts or patching Java classes. Do NOT load for recipe tweaks — use "zs" skill instead.
 ---
 
 ## What & when
 
-`#loader mixin` scripts in `scripts/mixin/` compile to Mixin classes and patch target Java classes at runtime. Use them to change hardcoded constants, redirect method calls, or inject behavior. **Not reloadable.** For recipe surgery use `scripts/mods/<mod>.zs` instead.
+`#loader mixin` scripts in `scripts/mixin/` compile to Mixin classes and patch target Java classes at runtime. Use them to change hardcoded constants, redirect method calls, or inject behavior. Not reloadable.
 
 ## File structure
 
@@ -16,41 +13,47 @@ metadata:
 - `scripts/mixin/cases/`, `scripts/mixin/common/` — shared bridge helpers.
 - `scripts/mixin/<mod>/shared.zs` — per-mod `zenClass Op` bridge for cross-loader data sharing.
 
-### Headers
+### Gotchas
 
-```zs
-#modloaded actuallyadditions
-#loader mixin
-```
-- `#sideonly client` — place **before** `zenClass` for client-only targets.
-- `mods.zenutils.*` helpers are unavailable in mixin scripts (compile to `null`). Use builtins (`~`, `toString()`).
+- `#sideonly client` — for client-only targets.
+- helpers are Unavailable in `#loader mixin` scripts:
+  * Helpers from zenutils, eg `mods.zenutils.*`
+  * Crafttweaker types, eg `crafttweaker.item.IItemStack`
 
 ## Target syntax
 
 ```zs
-#mixin {targets: "de.ellpeck.actuallyadditions.mod.tile.TileEntityBioReactor"}
-zenClass MixinTileEntityBioReactor { ... }
+/*
+  Why this mixin required.
+*/
+#mixin {targets: 'com.example.package.TargetClass'}
+zenClass MixinTargetClass { ... }
 ```
 
-- Multiple targets: `targets: ["pkg.A", "pkg.B"]`
-- Name the class `Mixin<TargetClassName>`.
+- Multiple targets: `targets: ['pkg.A', 'pkg.B']`
+- Class name convention: `Mixin<TargetClassName>`.
 - Inside methods, `this0` is the target instance (cast to target type). For static targets, shadow static fields instead.
+- Keep related mixins for one mod in one file.
+- Always use `#modloaded` so files are skipped silently if the mod is absent.
+- Comment the **why** above each mixin class.
+- Use `// NO-OP` for empty `Overwrite` bodies.
+- Primitive collections only ZS-styled: `[int]` for a List (mutable), `int[]` for array (immutable)
 
 ## Annotation syntax
 
 Annotations are preprocessors. The `#mixin` line, optional JSON block, and the function/field must be adjacent — **no blank lines** between them.
 
-**Single-line** (ZenUtils ≥ v1.21.2):
+**Single-line**
 ```zs
-#mixin ModifyConstant {method: "getMaxEnergy", constant: {intValue: 10000}}
+#mixin ModifyConstant {method: 'getMaxEnergy', constant: {intValue: 10000}}
 function buff(value as int) as int { return 20000000; }
 ```
 
-**Multi-line** (all versions): every continuation line starts with `#`.
+**Multi-line**
 ```zs
 #mixin ModifyConstant
 #{
-#    method: "getMaxEnergy",
+#    method: 'getMaxEnergy',
 #    constant: {intValue: 10000}
 #}
 function buff(value as int) as int { return 20000000; }
@@ -59,7 +62,7 @@ function buff(value as int) as int { return 20000000; }
 **Static method:**
 ```zs
 #mixin Static
-#mixin ModifyConstant {method: "<clinit>", constant: {intValue: 41472}}
+#mixin ModifyConstant {method: '<clinit>', constant: {intValue: 41472}}
 function buffStorage(value as int) as int { return 2000000000; }
 ```
 
@@ -69,45 +72,11 @@ Parsed by Gson lenient mode. Supports unquoted keys, single-quoted strings, `//`
 
 ## Common annotations
 
-### Base Mixin
-
-| Annotation | Purpose |
-|---|---|
-| `Inject` | Hook at `HEAD`, `RETURN`, `INVOKE`, etc. Add `cancellable: true` to allow `ci.cancel()`. |
-| `ModifyConstant` | Replace a literal. |
-| `ModifyVariable` | Change a local at `STORE` / `LOAD` / `JUMP`. |
-| `ModifyArg` / `ModifyArgs` | Change one or many method-call arguments. |
-| `Redirect` | Replace a call/field access entirely. Prefer `WrapOperation`. |
-| `Overwrite` | Replace entire method body. Use sparingly. |
-| `Shadow` | Access private fields/methods. Declare a field with the same name to auto-shadow. |
-| `Accessor` / `Invoker` | Generate getters/setters/callers for private members. |
-| `Static` | Target a `static` method. |
-| `Final` | Mark shadowed field as final (combine with `val`). |
-| `Slice` | Restrict search range with `from`/`to` anchors. |
-
-### MixinExtras (preferred over Redirect/Overwrite)
-
-| Annotation | Purpose |
-|---|---|
-| `WrapOperation` | Wrap a call/field/constructor. Accepts `Operation` to call original. |
-| `ModifyExpressionValue` | Modify result of any expression. |
-| `ModifyReturnValue` | Modify return after method executes. |
-| `WrapWithCondition` | Execute original only if handler returns `true`. |
-| `WrapMethod` | Wrap entire method body. Accepts `Operation`. |
-
-### Targeting sugar
-
-| Annotation | Purpose |
-|---|---|
-| `Definition` / `Expression` | Target via Java-like expression string (`at: {value: "MIXINEXTRAS:EXPRESSION"}`). |
-| `Local` | Capture local variable into a parameter (`parameter: 0`, `-1` = last). |
-| `Share` | Share an object between injectors in the same method. |
-| `Cancellable` | Allow cancelling without `CallbackInfo`. |
-| `SugarBridge` | Enable calling other injectors from a handler. |
+- **Base Mixin**: `Inject`, `ModifyConstant`, `ModifyVariable`, `ModifyArg`, `Redirect`, `Overwrite`, `Shadow`, `Accessor`, `Static`, `Final`, `Slice`.
+- **MixinExtras**: `WrapOperation`, `ModifyExpressionValue`, `ModifyReturnValue`, `WrapWithCondition`, `WrapMethod`.
+- **Targeting sugar**: `Definition`, `Expression`, `Local`, `Share`, `Cancellable`, `SugarBridge`.
 
 ## Types & callbacks
-
-Only **native types** are allowed: `import native.pkg.Class;`, primitive arrays `[int]`, and callback types.
 
 | Type | Use |
 |---|---|
@@ -125,79 +94,56 @@ function myHook(manager as ISqueezerManager, op as mixin.Operation, localVar as 
 }
 ```
 
-## Patterns
-
-### Buff constants
-```zs
-#mixin ModifyConstant {method: "<init>", constant: {intValue: 80000}}
-function buffCapacity(value as int) as int { return 320000; }
-```
-
-### Disable behavior
-```zs
-// NO-OP Overwrite
-#mixin Overwrite
-function hasCustomArmorHead() as bool { /* NO-OP */ }
-
-// Cancel method entry
-#mixin Inject {method: "registerRecipes", at: {value: "HEAD"}, cancellable: true}
-function removeRecipes(event as RegistryEvent.Register, ci as CallbackInfo) as void {
-    ci.cancel();
-}
-```
-
 ### Cross-loader bridge
-`shared.zs` (mixin loader):
+
+**Purpose**:
+1. Inject mixin code on early game load stage.
+2. Reference mixin to a static function.
+3. Replace function inside `#reloadable` script (allow reload code without restarting game).
+
+`mixin.zs`:
+```zs
+    // inside mixin class method body
+    scripts.mixin.modname.shared.Op.action(1);
+    // ...
+```
+
+`shared.zs`:
 ```zs
 #loader mixin
+
 zenClass Op {
-    static doRefining as function(HarvestDropsEvent, ItemStack)void;
+  static action as function(int)void;
 }
 ```
 
-Normal loader script:
+`reloadable.zs`:
 ```zs
-scripts.mixin.thaumcraft.shared.Op.doRefining = function(event, heldItem) as void { ... };
-```
+#reloadable
 
-Mixin loader script:
-```zs
-scripts.mixin.thaumcraft.shared.Op.doRefining(event, heldItem);
-```
-
-### Method wildcard
-`method: "*"` matches every method (useful for `ModifyConstant`):
-```zs
-#mixin ModifyConstant {method: "*", constant: {intValue: 4}}
+scripts.mixin.modname.shared.Op.action
+  = function(val as int) as void {
+    ...
+  };
 ```
 
 ## Discovering targets
 
-ZenUtils hard-codes Mixin remap to `false`; `method` / `at.target` must match bytecode names (SRG/obfuscated for MC/Forge, usually MCP for mod internals).
+ZenUtils hard-codes Mixin remap to `false`; `method` / `at.target` must match bytecode names (obfuscated).
 
 Decompile:
 ```bash
 # whole jar
-java -jar cfr-0.152.jar --outputdir ./~cfr_out mods/<Mod>.jar
+java -jar cfr-0.152.jar --outputdir ./~cfr_out 'mods/mod-name.jar'
 
 # single class
-java -jar cfr-0.152.jar --outputdir ./~cfr_out mods/<Mod>.jar --jarfilter "com.example.package.YourClassName"
+java -jar cfr-0.152.jar 'mods/mod-name.jar' --jarfilter 'com.example.package.YourClassName'
 
 # bytecode
-javap -c -cp path/to/yourfile.jar com.example.package.ClassName
+javap -c -cp 'mods/mod-name.jar' com.example.package.ClassName
 ```
 
-Inspect `./~cfr_out/...` for exact signatures and visibility.
-
-**One-liner for `.mixin.out` — date, decompile, and show source** (relative path, written once):
+**Decompile `.mixin.out` class — run from project root**:
 ```bash
-f=".mixin.out/class/path/to/TargetClass.class"; ls -la "$f" && java -jar cfr-0.152.jar "$f" --outputdir "${f%/*}" --clobber true && cat "$(find "${f%/*}" -name "*.java" -newer "$f" | head -1)"
+./.agents/skills/zs-mixins/decomp-mixin.sh .mixin.out/class/path/to/TargetClass.class
 ```
-
-## Conventions
-
-- `zenClass Mixin<TargetClassName>`
-- Keep related mixins for one mod in one file.
-- Always use `#modloaded` so files are skipped silently if the mod is absent.
-- Comment the **why** above each mixin class.
-- Use `// NO-OP` for empty `Overwrite` bodies.

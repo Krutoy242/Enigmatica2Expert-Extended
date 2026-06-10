@@ -3,15 +3,14 @@
 ## Project type
 
 Modpack for **Minecraft 1.12.2; Forge/Cleanroom**.
-Active development = **ZenScript** (CraftTweaker + ContentTweaker + LootTweaker)
-plus mod **config files** plus a **TypeScript dev toolchain**.
+Active development = **ZenScript**, mod **config files**, **TypeScript dev toolchain**.
 
 ## Working directories
 
 | Path               | What it is                                                                   |
 |--------------------|------------------------------------------------------------------------------|
 | `scripts/`         | All ZenScript (`.zs`)                                                        |
-| `config/`          | ~444 mod config files/folders.                                               |
+| `config/`          | 400+ mod configs.                                                            |
 | `dev/`             | TypeScript automation (`make_pack.ts`, JEI/JER dumps, manifest, modlist, …). |
 | `mc-tools/`        | Git submodule of CLI tools (`errors`, `manifest`, `modlist`, `tcon`, …).     |
 | `resources/`       | Resource pack overrides shipped with the pack.                               |
@@ -31,9 +30,8 @@ The project uses **Conventional Commits** with emoji prefixes.
 <related_commits>
 ```
 
-- **Common types:** `feat`, `fix`, `perf`, `refactor`, `build`, `chore`, `docs`, `style`, `test` / `ci`
-- **Common scopes:** `recipes`, `quest`, `config`, `balance`, `worldgen`, `mods`, `gear`, `jei`, `hei`, `schematic`, `build_expansion`, `portal_spread`, `difficulty_rework`, etc.
-- **Emojis:** mandatory in this repo (e.g. `✏️` recipes, `📖` quests, `🧱` build, `🔵` mod updates, `♻️` refactor, `⚡` perf, etc.).
+- **Common scopes:** `recipes`, `quest`, `config`, `balance`, `worldgen`, `mods`, `gear`, `jei`, etc.
+- **Emojis:** mandatory (e.g. `✏️` recipes, `📖` quests, `🧱` build, `🔵` mod updates, `♻️` refactor, `⚡` perf, etc.).
   Before commit check what emoji was used for the file
   ```sh
   git log -n 5 --pretty=format:%B -- path/to/file
@@ -59,3 +57,15 @@ Three submodules are active.
 
 Several clean filters normalize config files to avoid noisy diffs. They are defined in the local git config (run `git config --local --list | grep filter` to inspect).
 
+## Dev toolchain how-to
+
+Hard-won notes; check here before fighting these again.
+
+- **Typecheck a single `.ts` against the project config.** `tsc <file>` errors `TS5112` ("tsconfig present but will not be loaded"), and passing `--module`/`--strict` flags standalone mis-resolves some dep types (e.g. `find-process` becomes `any`, giving phantom `TS7006` implicit-any errors that don't exist in-project). Instead make a temp config in the repo root and point `--project` at it:
+  ```sh
+  echo '{ "extends": "./tsconfig.json", "include": ["path/to/file.ts"] }' > tsconfig.check.tmp.json
+  npx tsc --noEmit --project tsconfig.check.tmp.json; rm -f tsconfig.check.tmp.json
+  ```
+  Side note: a `find-process` result iterated with `.filter(p => …)` triggers implicit-any under `strict`; use `for (const p of list)` instead.
+- **Linting under `.agents/`.** These files are ESLint-ignored; `eslint --no-ignore` fails with "not found by the project service / `allowDefaultProject`". Don't chase it — rely on the temp-tsconfig typecheck above.
+- **PowerShell from the Bash tool mangles `$vars`.** Bash expands `$p` before `powershell.exe` sees it. For anything with `$variable`/`Get-Process`/`Get-CimInstance`, use the PowerShell tool directly.

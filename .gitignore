@@ -69,6 +69,9 @@
 /visualores
 /xaero*
 
+# Specific AI cli tools
+GEMINI.md
+
 # 3d party mods
 !mods/Sound-Physics-*.jar
 !mods/Nutrition-*.jar
