@@ -7,6 +7,7 @@ import crafttweaker.item.IItemStack;
 import crafttweaker.item.WeightedItemStack;
 import thaumcraft.aspect.CTAspectStack;
 import mods.requious.AssemblyRecipe;
+import native.thaumcraft.api.internal.CommonInternals;
 
 // Taint to Flux Goo
 <assembly:crafting_hints>.addJEIRecipe(AssemblyRecipe.create(function (c) {
@@ -699,6 +700,12 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('VoidSiphon',
 ██║██║ ╚████║██║     ███████╗██║  ██║██║ ╚████║██║  ██║███████╗
 ╚═╝╚═╝  ╚═══╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
 */
+
+// Clear all default Thaumcraft SmeltBonus entries via native access
+// .removeSmeltingBonus() from ModTweaker can fail because equals() comparison
+// fails when object types don't match (String vs ItemStack)
+val smeltingBonus = CommonInternals.smeltingBonus as native.java.util.ArrayList;
+smeltingBonus.clear();
 
 // Unification for the Smelting Bonus
 // IIngredient input, IItemStack stack
