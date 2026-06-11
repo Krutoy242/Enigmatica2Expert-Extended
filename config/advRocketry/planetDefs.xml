@@ -34,7 +34,8 @@
 		<planet name="Mercury" DIMID="101" customIcon="lava">
 			<biomeIds>biometweaker:mercury_beach</biomeIds>
 			<skyColor>0,0,0</skyColor>
-			<atmosphereDensity>120</atmosphereDensity>
+			<atmosphereDensity>0</atmosphereDensity>
+			<avgTemperature>440</avgTemperature>
 			<gravitationalMultiplier>38</gravitationalMultiplier>
 			<orbitalDistance>40</orbitalDistance>
 			<rotationalPeriod>1400000</rotationalPeriod>
@@ -44,7 +45,8 @@
 		</planet>
 		<planet name="Venus" DIMID="102" customIcon="lava">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
-			<atmosphereDensity>120</atmosphereDensity>
+			<atmosphereDensity>1600</atmosphereDensity>
+			<avgTemperature>740</avgTemperature>
 			<fogColor>0.9,0.9,0.9</fogColor>
 			<generateCaves>true</generateCaves>
 			<gravitationalMultiplier>90</gravitationalMultiplier>
@@ -57,7 +59,8 @@
 		</planet>
 		<planet name="Mars" DIMID="103" customIcon="marslike">
 			<biomeIds>advancedrocketry:hotdryrock</biomeIds>
-			<atmosphereDensity>0</atmosphereDensity>
+			<atmosphereDensity>8</atmosphereDensity>
+			<avgTemperature>210</avgTemperature>
 			<craterOres>stoneBaratol,blockStrontium90,blockBerkelium247</craterOres>
 			<fillerBlock>minecraft:stone:1</fillerBlock>
 			<fogColor>0.9,0.6,0.1</fogColor>
@@ -81,6 +84,7 @@
 			<planet name="Io" DIMID="105" customIcon="moon">
 				<biomeIds>advancedrocketry:volcanic</biomeIds>
 				<atmosphereDensity>0</atmosphereDensity>
+				<avgTemperature>400</avgTemperature>
 				<gravitationalMultiplier>30</gravitationalMultiplier>
 				<orbitalDistance>70</orbitalDistance>
 				<rotationalPeriod>10000</rotationalPeriod>
@@ -90,6 +94,7 @@
 			<planet name="Europa" DIMID="106" customIcon="waterworld">
 				<biomeIds>minecraft:frozen_ocean</biomeIds>
 				<atmosphereDensity>0</atmosphereDensity>
+				<avgTemperature>100</avgTemperature>
 				<generateCaves>true</generateCaves>
 				<gravitationalMultiplier>30</gravitationalMultiplier>
 				<orbitalDistance>90</orbitalDistance>
@@ -119,7 +124,8 @@
 			<hasOxygen>false</hasOxygen>
 			<planet name="Titan" DIMID="108" customIcon="moon">
 				<biomeIds>nuclearcraft:nuclear_wasteland,biomesoplenty:wasteland</biomeIds>
-				<atmosphereDensity>0</atmosphereDensity>
+				<atmosphereDensity>150</atmosphereDensity>
+				<avgTemperature>93</avgTemperature>
 				<gravitationalMultiplier>30</gravitationalMultiplier>
 				<orbitalDistance>100</orbitalDistance>
 				<orbitalPhi>120</orbitalPhi>
@@ -132,7 +138,8 @@
 			<biomeIds>biomesoplenty:alps,iceandfire:glacier</biomeIds>
 			<skyColor>0,0.9,1</skyColor>
 			<fogColor>0.9,0.9,0.9</fogColor>
-			<atmosphereDensity>0</atmosphereDensity>
+			<atmosphereDensity>500</atmosphereDensity>
+			<avgTemperature>55</avgTemperature>
 			<orbitalDistance>150</orbitalDistance>
 			<gravitationalMultiplier>89</gravitationalMultiplier>
 			<rotationalPeriod>17250</rotationalPeriod>
@@ -142,7 +149,8 @@
 		<planet name="Neptune" DIMID="110" customIcon="iceworld">
 			<biomeIds>biomesoplenty:alps_foothills,biomesoplenty:glacier</biomeIds>
 			<skyColor>0,0.5,1</skyColor>
-			<atmosphereDensity>0</atmosphereDensity>
+			<atmosphereDensity>600</atmosphereDensity>
+			<avgTemperature>50</avgTemperature>
 			<orbitalDistance>180</orbitalDistance>
 			<gravitationalMultiplier>110</gravitationalMultiplier>
 			<rotationalPeriod>21100</rotationalPeriod>
@@ -168,30 +176,36 @@
 		<planet name="Twilight" DIMID="7" dimMapping="" customIcon="earthlike">
 			<skyColor>1,0,1</skyColor>
 			<fogColor>1,0,0.5</fogColor>
-			<atmosphereDensity>100</atmosphereDensity>
+			<atmosphereDensity>130</atmosphereDensity>
+			<avgTemperature>295</avgTemperature>
 			<gravitationalMultiplier>95</gravitationalMultiplier>
 			<orbitalDistance>60</orbitalDistance>
 			<rotationalPeriod>12000</rotationalPeriod>
+			<hasOxygen>true</hasOxygen>
 		</planet>
 		<planet name="Alien Jungle" DIMID="200" dimMapping="" customIcon="earthlike">
 			<skyColor>1,0,1</skyColor>
 			<fogColor>1,0,0.5</fogColor>
-			<atmosphereDensity>100</atmosphereDensity>
+			<atmosphereDensity>110</atmosphereDensity>
+			<avgTemperature>300</avgTemperature>
 			<gravitationalMultiplier>95</gravitationalMultiplier>
 			<orbitalDistance>60</orbitalDistance>
 			<rotationalPeriod>12000</rotationalPeriod>
 			<rainMarker>1</rainMarker>
+			<hasOxygen>true</hasOxygen>
 		</planet>
 		<planet name="Terra Nova" DIMID="112" customIcon="earthlike">
 			<biomeIds>biomesoplenty:crag,biomesoplenty:quagmire</biomeIds>
 			<skyColor>1,0,1</skyColor>
 			<fogColor>1,0,0.5</fogColor>
-			<atmosphereDensity>100</atmosphereDensity>
+			<atmosphereDensity>85</atmosphereDensity>
+			<avgTemperature>280</avgTemperature>
 			<gravitationalMultiplier>70</gravitationalMultiplier>
 			<orbitalDistance>200</orbitalDistance>
 			<rotationalPeriod>24000</rotationalPeriod>
 			<generateCaves>true</generateCaves>
 			<forceRiverGeneration>true</forceRiverGeneration>
+			<hasOxygen>true</hasOxygen>
 		</planet>
 		<planet name="Stella" DIMID="114" customIcon="earthlike">
 			<biomeIds>biomesoplenty:sacred_springs,biomesoplenty:mystic_grove</biomeIds>
@@ -226,9 +240,11 @@
 		<star name="Vulpes Tertiary" temp="80" separation="6.0" size="0.4"/>
 		<planet name="Kepler 0118" DIMID="122" customIcon="lava">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
-			<atmosphereDensity>0</atmosphereDensity>
+			<atmosphereDensity>1200</atmosphereDensity>
+			<avgTemperature>950</avgTemperature>
+			<hasOxygen>false</hasOxygen>
 			<fillerBlock>quark:basalt</fillerBlock>
-			<fogColor>0,0,0.2</fogColor>
+			<fogColor>0.4,0.1,0.0</fogColor>
 			<generateCaves>true</generateCaves>
 			<generateCraters>true</generateCraters>
 			<generateVolcanos>true</generateVolcanos>
@@ -250,7 +266,9 @@
 			<skyColor>0,1,0</skyColor>
 			<fogColor>0,0,1</fogColor>
 			<generateCraters>true</generateCraters>
-			<atmosphereDensity>0</atmosphereDensity>
+			<atmosphereDensity>15</atmosphereDensity>
+			<avgTemperature>700</avgTemperature>
+			<hasOxygen>false</hasOxygen>
 			<gravitationalMultiplier>60</gravitationalMultiplier>
 			<orbitalDistance>20</orbitalDistance>
 			<rotationalPeriod>100000</rotationalPeriod>
@@ -282,7 +300,9 @@
 			<skyColor>0,1,0</skyColor>
 			<fogColor>0,0,1</fogColor>
 			<hasRings>true</hasRings>
-			<atmosphereDensity>0</atmosphereDensity>
+			<atmosphereDensity>40</atmosphereDensity>
+			<avgTemperature>30</avgTemperature>
+			<hasOxygen>false</hasOxygen>
 			<gravitationalMultiplier>60</gravitationalMultiplier>
 			<orbitalDistance>100</orbitalDistance>
 			<rotationalPeriod>10000</rotationalPeriod>
@@ -295,6 +315,7 @@
 			<skyColor>1,0,1</skyColor>
 			<fogColor>1,0,0.5</fogColor>
 			<atmosphereDensity>80</atmosphereDensity>
+			<avgTemperature>310</avgTemperature>
 			<gravitationalMultiplier>70</gravitationalMultiplier>
 			<orbitalDistance>110</orbitalDistance>
 			<rotationalPeriod>180000</rotationalPeriod>
@@ -316,8 +337,9 @@
 			<generateCaves>true</generateCaves>
 			<skyColor>0,0,0</skyColor>
 			<fogColor>0,0,0</fogColor>
-			<atmosphereDensity>20</atmosphereDensity>
-			<hasOxygen>false</hasOxygen>
+			<atmosphereDensity>25</atmosphereDensity>
+			<avgTemperature>290</avgTemperature>
+			<hasOxygen>true</hasOxygen>
 		</planet>
 	</star>
 </galaxy>
