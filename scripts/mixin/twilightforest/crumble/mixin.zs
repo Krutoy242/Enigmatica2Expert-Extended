@@ -17,6 +17,7 @@ import native.net.minecraft.world.World;
 // Architecture:
 //   shared.zs    — bridge: list of handlers [function(World, BlockPos, IBlockState, EntityLivingBase, ItemStack)bool]
 //   exnihilo.zs  — registers an ExNihiloCreatio hammer recipe handler
+//   fallback.zs  — breaks hand-minable blocks if no other handler matched
 //   mixin.zs     — entry point: calls handlers in order, then fallback
 #mixin {targets: "twilightforest.item.ItemTFCrumbleHorn"}
 zenClass MixinItemTFCrumbleHorn {

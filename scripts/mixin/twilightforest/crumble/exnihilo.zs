@@ -3,19 +3,25 @@
 
 import native.exnihilocreatio.registries.manager.ExNihiloRegistryManager;
 import native.exnihilocreatio.registries.types.HammerReward;
+import native.net.minecraft.world.World;
+import native.net.minecraft.util.math.BlockPos;
+import native.net.minecraft.block.state.IBlockState;
+import native.net.minecraft.entity.EntityLivingBase;
+import native.net.minecraft.item.ItemStack;
 import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
-import crafttweaker.block.IBlockState;
-import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.item.IItemStack;
 
-scripts.mixin.twilightforest.crumble.shared.CrumbleOp.handlers += function(
-  world as IWorld,
-  pos as IBlockPos,
+scripts.mixin.twilightforest.crumble.shared.CrumbleOp.handlers += function (
+  world as World,
+  pos as BlockPos,
   state as IBlockState,
-  living as IEntityLivingBase,
-  stack as IItemStack
+  living as EntityLivingBase,
+  stack as ItemStack
 ) as bool {
+  val ctWorld = world as IWorld;
+  val ctPos = pos as IBlockPos;
+
   val registry = ExNihiloRegistryManager.HAMMER_REGISTRY;
   if (!registry.isRegistered(state)) return false;
 
@@ -24,7 +30,6 @@ scripts.mixin.twilightforest.crumble.shared.CrumbleOp.handlers += function(
 
   var first = true;
   var hasDrop = false;
-  var dropBlockState as IBlockState = null;
   for reward in rewards {
     val hammerReward = reward as HammerReward;
     val dropStack = hammerReward.stack as IItemStack;
@@ -34,16 +39,14 @@ scripts.mixin.twilightforest.crumble.shared.CrumbleOp.handlers += function(
     if (first) {
       first = false;
       if (dropStack.isItemBlock) {
-        dropBlockState = dropStack.asBlock().definition.getStateFromMeta(dropStack.metadata);
-      }
-      if (!isNull(dropBlockState)) {
-        world.setBlockState(dropBlockState, pos);
+        ctWorld.setBlockState(dropStack.asBlock().definition.getStateFromMeta(dropStack.metadata), ctPos);
         return true;
       }
-      world.setBlockState(<blockstate:minecraft:air>, pos);
-      world.spawnEntity(dropStack.createEntityItem(world, pos));
-    } else {
-      world.spawnEntity(dropStack.createEntityItem(world, pos));
+      ctWorld.setBlockState(<blockstate:minecraft:air>, ctPos);
+      ctWorld.spawnEntity(dropStack.createEntityItem(ctWorld, ctPos));
+    }
+    else {
+      ctWorld.spawnEntity(dropStack.createEntityItem(ctWorld, ctPos));
     }
   }
 
