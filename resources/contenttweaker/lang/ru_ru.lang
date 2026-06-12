@@ -311,6 +311,8 @@ e2ee.tconstruct.trait.faraday.name=Фарадей
 e2ee.tconstruct.trait.faraday.description=Предотвращает урон от удара током от проводов.
 e2ee.tconstruct.trait.vaporizer.name=Испаритель
 e2ee.tconstruct.trait.vaporizer.description=Мгновенно испаряет жидкости в большом радиусе вокруг точки удара.
+e2ee.tconstruct.trait.self_fix.name=Самопочинка
+e2ee.tconstruct.trait.self_fix.description=§oДержите инструменты острыми!\n§rАвтоматически потребляет подходящий набор для заточки из инвентаря для починки при потере прочности.
 
 warp.sword.warning=§o§5 Вы слишком разумны, чтобы использовать эту силу!
 

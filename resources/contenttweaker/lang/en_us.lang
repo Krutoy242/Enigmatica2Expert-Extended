@@ -311,6 +311,8 @@ e2ee.tconstruct.trait.faraday.name=Faraday
 e2ee.tconstruct.trait.faraday.description=Prevents damage from wire shock.
 e2ee.tconstruct.trait.vaporizer.name=Vaporizer
 e2ee.tconstruct.trait.vaporizer.description=Instantly evaporates liquids in a large radius around the point of impact.
+e2ee.tconstruct.trait.self_fix.name=Self-fix
+e2ee.tconstruct.trait.self_fix.description=§oKeep your tools sharp!\n§rAutomatically consumes a matching sharpening kit from your inventory to repair the tool when durability is low.
 
 warp.sword.warning=§o§5 You are too sane to use that power!
 

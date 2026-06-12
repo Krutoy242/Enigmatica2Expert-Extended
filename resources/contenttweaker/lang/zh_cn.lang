@@ -311,6 +311,8 @@ e2ee.tconstruct.trait.faraday.name=法拉第
 e2ee.tconstruct.trait.faraday.description=防止因沉浸工程线缆造成的电击伤害。
 e2ee.tconstruct.trait.vaporizer.name=汽化器
 e2ee.tconstruct.trait.vaporizer.description=瞬间蒸发掉冲击点周围大范围内的液体。
+e2ee.tconstruct.trait.self_fix.name=自修复
+e2ee.tconstruct.trait.self_fix.description=§o保持工具锋利！\n§r耐久度低时自动消耗背包中匹配的磨刀石修复工具。
 
 warp.sword.warning=§o§5 你太过理智，根本无法驾驭那股力量！
 
