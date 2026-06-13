@@ -71,6 +71,7 @@
 
 # Specific AI cli tools
 GEMINI.md
+CLAUDE.md
 
 # 3d party mods
 !mods/Sound-Physics-*.jar
@@ -111,6 +112,7 @@ config/opencomputers/gregtech.recipes
 config/opencomputers/hardmode.recipes
 config/packcompanion
 config/precisionmining
+config/rc_cache
 config/smoothfont/smoothfont.cfg
 config/tellme
 config/triumph/documentation

@@ -361,7 +361,7 @@ export interface TableRecipe {
   input     : string
 }
 
-const tableRecipeRgx = /^recipes\.(?<shape>addShape(?:d|less))\("(?<name>[^"]+)", (?<output><(?<out_id>[^>]+?)(?::(?<out_meta>\*|\d+))?>(?<out_tail>(?:\.withTag\((?<out_tag>\{.*?\})\))?(?: \* (?<out_amount>\d+))?)), (?<input>\[.*\])\);$/gm
+const tableRecipeRgx = /^recipes\.(?<shape>addShape(?:d|less))\((?<q>['"])(?<name>[^'"]+)\k<q>, (?<output><(?<out_id>[^>]+?)(?::(?<out_meta>\*|\d+))?>(?<out_tail>(?:\.withTag\((?<out_tag>\{.*?\})\))?(?: \* (?<out_amount>\d+))?)), (?<input>\[.*\])\r?\);$/gm
 
 function matchTableRecipes(text: string): TableRecipe[] | undefined {
   if (!text) return undefined

@@ -18,6 +18,9 @@ jobs:
   update-tips:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
+    # Override `.npmrc` reporter=silent so pnpm output stays verbose for CI debugging
+    env:
+      npm_config_reporter: default
     steps:
       - uses: actions/checkout@v4
 

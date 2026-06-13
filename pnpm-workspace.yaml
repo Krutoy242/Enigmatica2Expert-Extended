@@ -1,17 +1,18 @@
 linkWorkspacePackages: true
+
 preferWorkspacePackages: true
 
 shellEmulator: true
 
 trustPolicy: no-downgrade
-
 packages:
-  - 'mc-tools/packages/*'
-
+  - mc-tools/packages/*
 onlyBuiltDependencies:
+  - '@vscode/vsce-sign'
   - cpu-features
   - es5-ext
   - esbuild
+  - keytar
   - node-pty
   - puppeteer
   - ssh2
