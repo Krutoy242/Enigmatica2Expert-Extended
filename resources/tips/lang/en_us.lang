@@ -73,3 +73,4 @@ e2ee.tips.crook_fortune_redstone=§nCrook§r with §nFortune§r yields up to 2x 
 e2ee.tips.ie_multiblock_lag=§nImmersive Engineering§r multiblocks cause notable FPS lag.  §7§nEntity Culling§7 could be handy here!
 e2ee.tips.nick_command=Any player can change their nickname with the §e/nick§r command.
 e2ee.tips.restock_lunch_bag=You can restock §dLunch Bag/Box§r by right-clicking inventory with food.
+e2ee.tips.mudball_dirty=Throw §6Mud Balls§r to turn blocks brown!

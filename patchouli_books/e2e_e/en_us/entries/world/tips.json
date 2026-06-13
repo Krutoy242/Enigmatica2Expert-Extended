@@ -121,7 +121,7 @@
       "item": "thaumicaugmentation:research_notes",
       "type": "text",
       "title": "Tips",
-      "text": "$(li)Any player can change their nickname with the $(6)/nick$() command.$(li)You can restock $(d)Lunch Bag/Box$() by right-clicking inventory with food."
+      "text": "$(li)Any player can change their nickname with the $(6)/nick$() command.$(li)You can restock $(d)Lunch Bag/Box$() by right-clicking inventory with food.$(li)Throw $(6)Mud Balls$() to turn blocks brown!"
     }
   ]
 }
