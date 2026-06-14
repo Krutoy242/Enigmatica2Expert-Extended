@@ -45,64 +45,62 @@ zenClass Config {
   static blockGroupMap as int[string] = {}; // Map of block "id:meta" and its respected number
   static modifierGroupCount as int = 0; // Number of modifier groups
   // -----------------------------------------------
-}
 
-///////////////////////////////////////////////////////////
+  /**
+  * Add or rewrite modifier block
+  *
+  * @param items - list of blocks in item forms that could be used for configuring portal
+  *
+  * @param keys - list of modifier keys for this blocks
+  *
+  */
+  static setModifier as function(IIngredient, string[], bool)void = function (
+    items as IIngredient,
+    keys as string[],
+    addTooltip as bool
+  ) as void {
+    // Add tooltips
+    if (addTooltip) {
+      var tooltip_text = game.localize('portal_spread.modifier.header');
+      for key in keys {
+        tooltip_text += '\n' + game.localize('portal_spread.modifier.' + key);
+      }
+      for i, line in tooltip_text.split('\n|<br>') {
+        items.addTooltip((i == 0 ? prefix : '') ~ line);
+      }
+    }
 
-/**
- * Add or rewrite modifier block
- *
- * @param items - list of blocks in item forms that could be used for configuring portal
- *
- * @param keys - list of modifier keys for this blocks
- *
- */
-function setModifier(
-  items as IIngredient,
-  keys as string[],
-  addTooltip as bool = false
-) as void {
-  // Add tooltips
-  if (addTooltip) {
-    var tooltip_text = game.localize('portal_spread.modifier.header');
+    // Fill all items to array
+    for item in items.itemArray {
+      val block = item.asBlock();
+      if (isNull(block)) {
+        logger.logWarning('[Portal Spread]: cannot transform item to block: ' ~ item.commandString);
+        continue;
+      }
+      if (isNull(modifBlocksKey[block.definition])) modifBlocksKey[block.definition] = {};
+
+      // This block already defined
+      if (!isNull(modifBlocksKey[block.definition][block.meta])) continue;
+
+      modifBlocksKey[block.definition][block.meta] = [];
+      var newKeys = modifBlocksKey[block.definition][block.meta];
+      for key in keys {
+        newKeys += key;
+      }
+      modifBlocksKey[block.definition][block.meta] = newKeys;
+
+      // Add this block to group
+      blockGroupMap[block.definition.id ~ ':' ~ block.meta] = modifierGroupCount;
+    }
+
+    // Add key if new
     for key in keys {
-      tooltip_text += '\n' + game.localize('portal_spread.modifier.' + key);
+      if (!(modifiersList has key)) {
+        modifiersList = modifiersList + key;
+        MODIF[key] = modifiersList.length - 1;
+      }
     }
-    for i, line in tooltip_text.split('\n|<br>') {
-      items.addTooltip((i == 0 ? Config.prefix : '') ~ line);
-    }
-  }
 
-  // Fill all items to array
-  for item in items.itemArray {
-    val block = item.asBlock();
-    if (isNull(block)) {
-      logger.logWarning('[Portal Spread]: cannot transform item to block: ' ~ item.commandString);
-      continue;
-    }
-    if (isNull(Config.modifBlocksKey[block.definition])) Config.modifBlocksKey[block.definition] = {};
-
-    // This block already defined
-    if (!isNull(Config.modifBlocksKey[block.definition][block.meta])) continue;
-
-    Config.modifBlocksKey[block.definition][block.meta] = [];
-    var newKeys = Config.modifBlocksKey[block.definition][block.meta];
-    for key in keys {
-      newKeys += key;
-    }
-    Config.modifBlocksKey[block.definition][block.meta] = newKeys;
-
-    // Add this block to group
-    Config.blockGroupMap[block.definition.id ~ ':' ~ block.meta] = Config.modifierGroupCount;
-  }
-
-  // Add key if new
-  for key in keys {
-    if (!(Config.modifiersList has key)) {
-      Config.modifiersList = Config.modifiersList + key;
-      Config.MODIF[key] = Config.modifiersList.length - 1;
-    }
-  }
-
-  Config.modifierGroupCount += 1;
+    modifierGroupCount += 1;
+  };
 }
