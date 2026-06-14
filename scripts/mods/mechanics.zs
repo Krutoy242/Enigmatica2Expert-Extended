@@ -80,12 +80,12 @@ mods.nuclearcraft.Melter.removeRecipeWithOutput(<liquid:refinedobsidian> * 1296)
 mods.nuclearcraft.Melter.removeRecipeWithOutput(<liquid:refinedglowstone> * 1296);
 
 // Add IE Melting Crucible recipes
-mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_obsidian>  *   16, <ore:nuggetRefinedObsidian>,  1600, 4);
-mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_glowstone> *   16, <ore:nuggetRefinedGlowstone>, 1600, 4);
-mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_obsidian>  *  144, <ore:ingotRefinedObsidian>,   14400, 40);
-mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_glowstone> *  144, <ore:ingotRefinedGlowstone>,  14400, 40);
-mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_obsidian>  * 1296, <ore:blockRefinedObsidian>,   129600, 400);
-mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_glowstone> * 1296, <ore:blockRefinedGlowstone>,  129600, 400);
+mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_obsidian>  *   16, <ore:nuggetRefinedObsidian>,  4);
+mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_glowstone> *   16, <ore:nuggetRefinedGlowstone>, 4);
+mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_obsidian>  *  144, <ore:ingotRefinedObsidian>,   40);
+mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_glowstone> *  144, <ore:ingotRefinedGlowstone>,  40);
+mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_obsidian>  * 1296, <ore:blockRefinedObsidian>,   400);
+mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:refined_glowstone> * 1296, <ore:blockRefinedGlowstone>,  400);
 
 // Add recipes for high-end machines
 scripts.process.melt(<ore:nuggetRefinedObsidian>, <liquid:refined_obsidian>  *   16, 'only: Crucible');
