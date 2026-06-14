@@ -127,7 +127,7 @@ return list.map(({ groups: { id, display, items } }) => {
   add(<entity:emberroot:rootsonesprite>               , [<minecraft:glowstone_dust> * 101, <mysticalagriculture:dye_essence> * 456]); // Sprite
   add(<entity:emberroot:rootsonespritegreater>        , [<minecraft:emerald> * 61, <minecraft:glowstone> * 71, <mysticalagriculture:platinum_essence> * 135]); // Greater Sprite
   add(<entity:emberroot:rootsonespriteling>           , [<minecraft:glowstone_dust> * 55, <mysticalagriculture:nature_essence> * 196]); // Spriteling
-  add(<entity:emberroot:skeleton_frozen>              , [<mctsmelteryio:iceball> * 112, <minecraft:arrow> * 175, <minecraft:bone> * 163, <minecraft:iron_sword> * 5, <minecraft:shield> * 7, <minecraft:skull:2> * 1, <minecraft:skull> * 4, <minecraft:stone_sword> * 3, <minecraft:wooden_sword> * 2]); // Frozen Skeleton
+  add(<entity:emberroot:skeleton_frozen>              , [<smelteryio:iceball> * 112, <minecraft:arrow> * 175, <minecraft:bone> * 163, <minecraft:iron_sword> * 5, <minecraft:shield> * 7, <minecraft:skull:2> * 1, <minecraft:skull> * 4, <minecraft:stone_sword> * 3, <minecraft:wooden_sword> * 2]); // Frozen Skeleton
   add(<entity:emberroot:slime>                        , [<minecraft:clay_ball> * 209, <minecraft:dirt> * 62, <thermalfoundation:material:771> * 6]); // Block Slime
   add(<entity:emberroot:sprouts>                      , [<minecraft:beetroot> * 58, <minecraft:dye:1> * 90]); // Rainbow Sprout
   add(<entity:emberroot:timberwolf>                   , [<minecraft:bone> * 42, <minecraft:rotten_flesh> * 44]); // Timberwolf

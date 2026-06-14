@@ -1,4 +1,4 @@
-#modloaded mctsmelteryio
+#modloaded smelteryio
 #loader mixin
 
 import native.mezz.jei.api.recipe.IRecipeCategoryRegistration;

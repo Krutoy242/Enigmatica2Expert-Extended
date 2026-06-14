@@ -37,7 +37,7 @@ scripts.lib.loot.addLootToPool(location, 'pool1', {
   <harvestcraft:spumoniicecreamitem>          : [25,  0, 1, 2],
   <harvestcraft:strawberryicecreamitem>       : [25,  0, 1, 2],
   <harvestcraft:vanillaicecreamitem>          : [25,  0, 1, 2],
-  <mctsmelteryio:iceball>                     : [30,  0, 1, 2],
+  <smelteryio:iceball>                     : [30,  0, 1, 2],
   <minecraft:deadbush>                        : [30,  0, 1, 3],
   <minecraft:rabbit_stew>                     : [25,  0, 1, 1],
 

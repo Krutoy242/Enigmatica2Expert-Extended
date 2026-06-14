@@ -13,7 +13,7 @@ scripts.lib.loot.tweak('emberroot:entity/golem_orange'   , 'main', 'minecraft:co
 scripts.lib.loot.tweak('emberroot:entity/golem_purple'   , 'main', 'minecraft:spider_eye'  , null, [<mechanics:heavy_nugget>]              , [5, 24]);
 scripts.lib.loot.tweak('emberroot:entity/golem_red'      , 'main', 'minecraft:redstone'    , null, [<enderio:item_alloy_nugget:4>]         , [1, 4]);
 scripts.lib.loot.tweak('emberroot:entity/golem_yellow'   , 'main', 'minecraft:gold_nugget' , null, [<thermalfoundation:material:228>]      , [8, 18]);
-scripts.lib.loot.tweak('emberroot:entity/skeleton_frozen', 'main', 'minecraft:ice'         , null, [<mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>]               , [1, 6]);
+scripts.lib.loot.tweak('emberroot:entity/skeleton_frozen', 'main', 'minecraft:ice'         , null, [<smelteryio:iceball> ?? <iceandfire:dragon_ice>]               , [1, 6]);
 scripts.lib.loot.tweak('emberroot:entity/sprite_mini'    , 'main', 'minecraft:rotten_flesh', null, [<mysticalagriculture:nature_essence>]  , [1, 3]);
 scripts.lib.loot.tweak('emberroot:entity/sprite_normal'  , 'main', 'minecraft:rotten_flesh', null, [<mysticalagriculture:dye_essence>]     , [2, 7]);
 scripts.lib.loot.tweak('emberroot:entity/sprite_greater' , 'main', null                    , null, [<mysticalagriculture:platinum_essence>], [1, 3]);

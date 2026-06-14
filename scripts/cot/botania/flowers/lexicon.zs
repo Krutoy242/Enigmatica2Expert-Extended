@@ -220,7 +220,7 @@ Lexicon.addRunePage('botania.page.runeAltar9', 'botania.entry.runeAltar', 11, [<
 Lexicon.addRunePage('botania.page.runeAltar10', 'botania.entry.runeAltar', 12, [<botania:rune:6>],
   [[<ore:runeFireB>, <ore:runeAirB>, <ore:quicksilver>, <minecraft:deadbush>, <ore:stoneMetamorphic>]], [10000]);
 Lexicon.addRunePage('botania.page.runeAltar11', 'botania.entry.runeAltar', 13, [<botania:rune:7>],
-  [[<ore:runeWaterB>, <ore:runeEarthB>, <mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>, <astralsorcery:itemusabledust>, <ore:blockSalt>]], [10000]);
+  [[<ore:runeWaterB>, <ore:runeEarthB>, <smelteryio:iceball> ?? <iceandfire:dragon_ice>, <astralsorcery:itemusabledust>, <ore:blockSalt>]], [10000]);
 Lexicon.addRunePage('botania.page.runeAltar12', 'botania.entry.runeAltar', 14, [<botania:rune:8>],
   [[<ore:manaPearl>, <ore:powderMana>, <ore:quartzMana>, <ore:manaDiamond>, <ore:clothManaweave>]], [20000]);
 Lexicon.addRunePage('botania.page.runeAltar13', 'botania.entry.runeAltar', 15, [<botania:rune:9>],

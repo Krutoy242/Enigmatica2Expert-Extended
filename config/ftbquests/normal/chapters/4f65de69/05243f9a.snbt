@@ -1,5 +1,5 @@
 {
-	icon: "mctsmelteryio:machine 1 1",
+	icon: "smelteryio:machine 1 1",
 	x: -0.875d,
 	y: 0.6d,
 	text: [
@@ -12,7 +12,7 @@
 		uid: "dce89b2c",
 		type: "item",
 		items: [{
-			item: "mctsmelteryio:machine 1 1"
+			item: "smelteryio:machine 1 1"
 		}],
 		ignore_nbt: 1b
 	},
@@ -20,14 +20,14 @@
 		uid: "b71d724e",
 		type: "item",
 		items: [{
-			item: "mctsmelteryio:iceball"
+			item: "smelteryio:iceball"
 		}]
 	},
 	{
 		uid: "0165fa37",
 		type: "item",
 		items: [{
-			item: "mctsmelteryio:upgrade 1 4"
+			item: "smelteryio:upgrade 1 4"
 		}]
 	}],
 	rewards: [{

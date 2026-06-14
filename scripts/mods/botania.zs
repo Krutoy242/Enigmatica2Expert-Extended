@@ -322,7 +322,7 @@ function remakeRune(rune as IItemStack, ingrList as IIngredient[], mana as int) 
 /* Spring */  remakeRune(<botania:rune:4>,     [<ore:runeWaterB>, <ore:runeFireB>, <astralsorcery:blockinfusedwood>, <ore:flower>, <ore:nitor>], 10000);
 /* Summer */  remakeRune(<botania:rune:5>,     [<ore:runeEarthB>, <ore:runeAirB>, <ore:treeSapling>, <ore:nuggetBrass>, <ore:livingwood>], 10000);
 /* Autumn */  remakeRune(<botania:rune:6>,     [<ore:runeFireB>, <ore:runeAirB>, <ore:quicksilver>, <minecraft:deadbush>, <ore:stoneMetamorphic>], 10000);
-/* Winter */  remakeRune(<botania:rune:7>,     [<ore:runeWaterB>, <ore:runeEarthB>, <mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>, <astralsorcery:itemusabledust>, <ore:blockSalt>], 10000);
+/* Winter */  remakeRune(<botania:rune:7>,     [<ore:runeWaterB>, <ore:runeEarthB>, <smelteryio:iceball> ?? <iceandfire:dragon_ice>, <astralsorcery:itemusabledust>, <ore:blockSalt>], 10000);
 /* Mana */    remakeRune(<botania:rune:8>,     [<ore:manaPearl>, <ore:powderMana>, <ore:quartzMana>, <ore:manaDiamond>, <ore:clothManaweave>], 20000);
 /* Lust */    remakeRune(<botania:rune:9>,     [<ore:manaDiamond>, <ore:manaDiamond>, <botania:rune:5>, <botania:rune:5>, <botania:rune:3>, <botania:rune:3>], 25000);
 /* Gluttony */remakeRune(<botania:rune:10>,    [<ore:manaDiamond>, <ore:manaDiamond>, <botania:rune:7>, <botania:rune:7>, <botania:rune:1>, <botania:rune:1>], 25000);

@@ -204,7 +204,7 @@ val weatherIngrs = {
   'a': <ore:feather>,               // Feather
   'B': <ore:itemBeeswax>,           // Beeswax
   'C': <forestry:pollen:1>,         // Crystalline Pollen Cluster
-  'c': <mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>,
+  'c': <smelteryio:iceball> ?? <iceandfire:dragon_ice>,
   'f': <minecraft:double_plant>,    // Poppy
   'l': <randomthings:ingredient:13>,// Blackout Powder
   'e': <ore:egg>,

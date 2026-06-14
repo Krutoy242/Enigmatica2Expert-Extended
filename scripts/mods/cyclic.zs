@@ -144,7 +144,7 @@ val packagerList = [
   [<minecraft:concrete_powder:14> * 8], [sa, gr, <ore:dyeRed>.firstItem],
   [<minecraft:concrete_powder:15> * 8], [sa, gr, <ore:dyeBlack>.firstItem],
 
-  [<mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>], [<minecraft:snow> * 2],
+  [<smelteryio:iceball> ?? <iceandfire:dragon_ice>], [<minecraft:snow> * 2],
 
   [<nuclearcraft:part:1>], [<ore:plateLead>.firstItem, <ic2:casing:4>, <ore:ingotTough>.firstItem * 4, <minecraft:redstone> * 4],
   [<nuclearcraft:part>], [<ore:plateLead>.firstItem, <ic2:casing:4>, <ore:ingotGraphite>.firstItem * 2],

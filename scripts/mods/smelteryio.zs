@@ -1,17 +1,17 @@
-#modloaded mctsmelteryio
+#modloaded smelteryio
 
 import crafttweaker.item.IIngredient;
 
 // Remove unused upgrades
-Purge(<mctsmelteryio:upgrade:1>);
-Purge(<mctsmelteryio:upgrade:2>);
-Purge(<mctsmelteryio:upgrade:3>);
+Purge(<smelteryio:upgrade:1>);
+Purge(<smelteryio:upgrade:2>);
+Purge(<smelteryio:upgrade:3>);
 
-<mctsmelteryio:upgrade:4>.maxStackSize = 16;
-<mctsmelteryio:upgrade:6>.maxStackSize = 64;
+<smelteryio:upgrade:4>.maxStackSize = 16;
+<smelteryio:upgrade:6>.maxStackSize = 64;
 
 // Ice balls
-scripts.process.mash(<biomesoplenty:hard_ice>, (<mctsmelteryio:iceball> ?? <iceandfire:dragon_ice>) * 8, 'No Exceptions');
+scripts.process.mash(<biomesoplenty:hard_ice>, (<smelteryio:iceball> ?? <iceandfire:dragon_ice>) * 8, 'No Exceptions');
 
 for input, amount in {
   <minecraft:glass_bottle>: 1,
@@ -20,7 +20,7 @@ for input, amount in {
   <rustic:elixir>.withTag({ display: { Name: 'ANY Elixir' } }, false): 10, // Elixir
 } as int[IIngredient]$orderly {
   // [Base Upgrade]
-  craft.remake(<mctsmelteryio:upgrade> * amount, ['pretty',
+  craft.remake(<smelteryio:upgrade> * amount, ['pretty',
     '□ □ □',
     'п E п',
     '□ □ □'], {
@@ -31,23 +31,23 @@ for input, amount in {
 }
 
 // [Speed Upgrade] from [Base Upgrade][+1]
-craft.reshapeless(<mctsmelteryio:upgrade:6>, 'BAA', {
-  'B': <mctsmelteryio:upgrade>, // Base Upgrade
+craft.reshapeless(<smelteryio:upgrade:6>, 'BAA', {
+  'B': <smelteryio:upgrade>, // Base Upgrade
   'A': <ore:listAllsugar>,      // Sugar
 });
 
 // [Slot Size Upgrade 4] from [Base Upgrade][+2]
-craft.remake(<mctsmelteryio:upgrade:4>, ['pretty',
+craft.remake(<smelteryio:upgrade:4>, ['pretty',
   '  c  ',
   '‚ B ‚',
   '  ‚  '], {
   'c': <ore:chest>, // Oak Chest
   '‚': <ore:nuggetKnightslime>, // Knightslime Nugget
-  'B': <mctsmelteryio:upgrade>, // Base Upgrade
+  'B': <smelteryio:upgrade>, // Base Upgrade
 });
 
 // [Casting_Machine] from [Casting_Table][+3]
-craft.remake(<mctsmelteryio:machine:1>, ['pretty',
+craft.remake(<smelteryio:machine:1>, ['pretty',
   '□ S □',
   'i C i',
   '□ i □'], {

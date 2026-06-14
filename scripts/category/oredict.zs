@@ -725,7 +725,7 @@ addItems(<ore:itemBall>, [
   <ic2:crafting:20>,
   <iceandfire:cockatrice_eye>,
   <industrialforegoing:mob_imprisonment_tool>,
-  <mctsmelteryio:iceball>,
+  <smelteryio:iceball>,
   <mekanism:substrate>,
   <minecraft:clay_ball>,
   <minecraft:ender_eye>,

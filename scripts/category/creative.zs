@@ -409,7 +409,7 @@ recipes.addShapeless('creative Fluid Tank Frame', creativeFluidTankFrame, [
 list['⍤'] = <mekanism:gastank>.withTag({ tier: 4 });
 list['✝'] = <draconicevolution:crafting_injector:3>;
 list['♥'] = creativeFluidTankFrame;
-list['♀'] = <mctsmelteryio:upgrade:4> ?? <advancedrocketry:productsheet>;
+list['♀'] = <smelteryio:upgrade:4> ?? <advancedrocketry:productsheet>;
 list['θ'] = <ic2:te:134>;
 list['◆'] = <enderio:item_capacitor_stellar>;
 list['∞'] = <contenttweaker:machine_case_singularity>.withTag({ completed: 1 as byte });

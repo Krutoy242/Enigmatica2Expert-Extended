@@ -16,6 +16,6 @@
 	rewards: [{
 		uid: "ca2ee428",
 		type: "item",
-		item: "mctsmelteryio:upgrade 1 5"
+		item: "smelteryio:upgrade 1 5"
 	}]
 }
