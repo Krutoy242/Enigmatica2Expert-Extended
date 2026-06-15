@@ -137,6 +137,27 @@
         "cluster-count": 100,
         "biome": "biomesoplenty:crag",
         "dimension": { "restriction": "whitelist", "value": [112] }
+      },
+
+      "terra_nova_bog_earth": {
+        "distribution": "surface",
+        "follow-terrain": true,
+        "generator": {
+          "type": "large-vein",
+          "block": { "name": "forestry:bog_earth", "metadata": 3 },
+          "material": ["dirt", "biomesoplenty:dirt", "biomesoplenty:mud", "stone"],
+          "sparse": false,
+          "cluster-size": 60
+        },
+        "material": ["biomesoplenty:grass", "biomesoplenty:dirt"],
+        "chunk-chance": 1,
+        "cluster-count": 3,
+        "vein-height": 3,
+        "vein-diameter": 14,
+        "vertical-density": 4,
+        "horizontal-density": 10,
+        "biome": "biomesoplenty:quagmire",
+        "dimension": { "restriction": "whitelist", "value": [112] }
       }
     }
 }
