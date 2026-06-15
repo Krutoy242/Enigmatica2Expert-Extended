@@ -17,20 +17,28 @@ events.register(function (e as crafttweaker.event.CommandEvent) {
     || (e.command.name != 'cofh')
     || (e.parameters.length < 6)
     || (e.parameters[0] != 'clearblocks')
-    || (e.parameters[5] != 'inventory')
     || !(e.commandSender instanceof IPlayer)) {
     return;
   }
 
+  var inventoryIndex = -1;
+  for i in 0 .. e.parameters.length {
+    if (e.parameters[i] == 'inventory') {
+      inventoryIndex = i;
+      break;
+    }
+  }
+  if (inventoryIndex == -1) return;
+
   val player as IPlayer = e.commandSender;
-  var s = '';
+  var blockList = '';
   var itemList = [] as IData;
   for i in 0 .. player.inventorySize {
     val it = player.getInventoryStack(i);
     if (isNull(it)) continue;
     val block = it.asBlock();
     if (isNull(block) || block.definition.id == 'minecraft:air') continue;
-    s += ' ' ~ block.definition.id;
+    blockList += ' ' ~ block.definition.id;
     itemList += [tellrawItemObj(it.withAmount(1), null, false)];
   }
   e.cancel();
@@ -39,12 +47,15 @@ events.register(function (e as crafttweaker.event.CommandEvent) {
     'Clearing blocks: ', itemList,
   ]));
 
-  player.executeCommand(
-    e.command.name ~ ' '
-    ~ e.parameters[0] ~ ' '
-    ~ e.parameters[1] ~ ' '
-    ~ e.parameters[2] ~ ' '
-    ~ e.parameters[3] ~ ' '
-    ~ e.parameters[4] ~ s
-  );
+  var cmd = e.command.name;
+  for i in 0 .. e.parameters.length {
+    if (i == inventoryIndex) {
+      cmd += blockList;
+    }
+    else {
+      cmd += ' ' ~ e.parameters[i];
+    }
+  }
+
+  player.executeCommand(cmd);
 });
