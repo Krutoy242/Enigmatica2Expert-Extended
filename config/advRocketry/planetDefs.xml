@@ -23,7 +23,7 @@
 				<generateGeodes>false</generateGeodes>
 				<hasOxygen>false</hasOxygen>
 			</planet>
-			<planet name="Skyblock" DIMID="3" dimMapping="" customIcon="moon">
+			<planet name="Skyblock" DIMID="3" dimMapping="" customIcon="void">
 				<isKnown>false</isKnown>
 				<orbitalDistance>80</orbitalDistance>
 				<orbitalPhi>44</orbitalPhi>
