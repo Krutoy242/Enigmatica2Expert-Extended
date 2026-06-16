@@ -243,7 +243,7 @@ ${filtered.join('\n')}`
 
 // Total Furnace recipes registered: 960
 // Blacklisted by JEI or manually: 79
-// Filtered by oredict: 159
+// Filtered by oredict: 162
 infinFurnace(<actuallyadditions:block_misc:3>, <actuallyadditions:item_misc:5>);
 blacklist(<actuallyadditions:item_dust:3>);
 blacklist(<actuallyadditions:item_dust:7>);
@@ -965,9 +965,9 @@ blacklist(<nuclearcraft:dust:12>);
 blacklist(<nuclearcraft:dust:13>);
 blacklist(<nuclearcraft:dust:14>);
 blacklist(<nuclearcraft:dust2:1>);
-infinFurnace(<nuclearcraft:dust2:7>, <nuclearcraft:ingot2:7>);
-infinFurnace(<nuclearcraft:dust2:8>, <nuclearcraft:ingot2:8>);
-infinFurnace(<nuclearcraft:dust2:9>, <nuclearcraft:ingot2:9>);
+blacklist(<nuclearcraft:dust2:7>);
+blacklist(<nuclearcraft:dust2:8>);
+blacklist(<nuclearcraft:dust2:9>);
 blacklist(<nuclearcraft:dust2>);
 infinFurnace(<nuclearcraft:flour>, <minecraft:bread>);
 infinFurnace(<nuclearcraft:gem_dust:1>, <nuclearcraft:dust:14>);
