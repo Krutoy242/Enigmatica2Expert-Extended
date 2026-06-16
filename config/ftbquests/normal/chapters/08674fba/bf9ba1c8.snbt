@@ -20,7 +20,7 @@
 		uid: "2b136082",
 		type: "item",
 		items: [{
-			item: "libvulpes:metal0 1 1"
+			item: "libvulpes:metal0 1 7"
 		}],
 		count: 16L
 	},
