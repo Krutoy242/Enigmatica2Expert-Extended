@@ -13,7 +13,14 @@ import native.net.minecraft.world.World;
 // Original horn worked from a hardcoded table: specific blocks -> specific results.
 // Now any mod can register its own crumble handler,
 // and if none match, the block breaks as if mined by hand (when possible).
-//
+
+// --- IMPORTANT: Mixins can ONLY takes native types, the function type MUST be native
+// Mixin scripts can ONLY use native types (they are loaded before
+// CraftTweaker registers its wrappers).
+// The handlers  MUST expose a native signature too, and
+// convert native to CraftTweaker *inside* their own body.
+// ---
+
 // Architecture:
 //   shared.zs    — bridge: list of handlers [function(World, BlockPos, IBlockState, EntityLivingBase, ItemStack)bool]
 //   exnihilo.zs  — registers an ExNihiloCreatio hammer recipe handler
@@ -33,6 +40,8 @@ zenClass MixinItemTFCrumbleHorn {
     if (state.block.isAir(state, world, pos)) return;
 
     for handler in handlers {
+      // native args, in the exact order declared in shared.zs:
+      // (World, BlockPos, IBlockState, EntityLivingBase, ItemStack)
       if (handler(world, pos, state, living, stack)) {
         this0.postTrigger(living, stack, world, pos);
         cir.setReturnValue(true);
