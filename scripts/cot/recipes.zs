@@ -184,7 +184,7 @@ mods.thaumcraft.Infusion.registerRecipe(
 
 // Dimlet
 val bixbiteDimlet = <rftoolsdim:known_dimlet:2>.withTag({
-  dkey: 'contenttweaker:ore_bixbite@0'
+  dkey: 'contenttweaker:ore_bixbite@0',
 });
 
 // Bixbite - Highest tier of Life/Blood themed crystals
