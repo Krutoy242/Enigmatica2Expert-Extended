@@ -54,8 +54,42 @@ scripts.mixin.twilightforest.shared.Op.validateUncraft = function (
       !stack.isEmpty()
       && stack.item == input.item
             && (stack.itemDamage == OreDictionary.WILDCARD_VALUE || stack.itemDamage == input.itemDamage)
-        ) {
+    ) {
       ContainerTFUncrafting.markStack(stack);
+    }
+  }
+
+  // Anti-dupe: if an ingredient slot shares any ore dictionary with the input item,
+  // the player could pick a different variant from the same oredict and create
+  // a dupe cycle (e.g. uncraft T2 motor, pick T4 from blockMotor slot, repeat).
+  for i in 0 .. 9 {
+    val stack = ingredients[i];
+    if (stack.isEmpty()) continue;
+
+    // Already caught by the previous check
+    if (stack.item == input.item
+      && (stack.itemDamage == OreDictionary.WILDCARD_VALUE || stack.itemDamage == input.itemDamage)
+    ) {
+      continue;
+    }
+
+    val oreIDs = OreDictionary.getOreIDs(stack);
+    for oreID in oreIDs {
+      val oreName = OreDictionary.getOreName(oreID);
+      if (isNull(oreName)) continue;
+
+      val ores = OreDictionary.getOres(oreName);
+      for oreItem in ores {
+        if (
+          !oreItem.isEmpty()
+          && oreItem.item == input.item
+          && (oreItem.itemDamage == OreDictionary.WILDCARD_VALUE || oreItem.itemDamage == input.itemDamage)
+        ) {
+          ContainerTFUncrafting.markStack(stack);
+          break;
+        }
+      }
+      if (ContainerTFUncrafting.isMarked(stack)) break;
     }
   }
 };
