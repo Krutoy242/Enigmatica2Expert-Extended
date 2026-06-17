@@ -5,6 +5,8 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.ITooltipFunction;
 
+import native.net.minecraftforge.event.entity.player.PlayerEvent;
+
 // *======= Recipes =======*
 
 // Drawer Controller
@@ -149,3 +151,12 @@ if (!isNull(loadedMods['fluiddrawers'])) {
   <fluiddrawers:tank>.addAdvancedTooltip(fluidDrawerTooltip);
 }
 // ---------------------------------------------------------------------------
+
+// Prevent compacting drawers from disappearing when broken by hand
+events.register(function(event as PlayerEvent.HarvestCheck) {
+  if (event.canHarvest()) return;
+  val state = event.getTargetBlock().wrapper;
+  if (state.block.definition.id == 'storagedrawers:compdrawers') {
+    event.setCanHarvest(true);
+  }
+});
