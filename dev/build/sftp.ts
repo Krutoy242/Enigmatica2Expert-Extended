@@ -30,12 +30,6 @@ export async function manageSFTP(serverSetupConfig: string = 'server/server-setu
   const serverConfigTmp = '~tmp-server-setup-config.yaml'
   const confText = readFileSync(serverSetupConfig, 'utf8')
     .replace(
-      /(^ {2}additionalFiles:\s*?)\n/m,
-      `$1
-    - url: https://mediafilez.forgecdn.net/files/5370/660/mc2discord-forge-1.12.2-3.3.2.jar
-      destination: mods/mc2discord-forge-1.12.2-3.3.2.jar\n`
-    )
-    .replace(
       /(localFiles:\s*)\n +\S.*\n +\S.*$/m,
       `$1
     - from: overrides/

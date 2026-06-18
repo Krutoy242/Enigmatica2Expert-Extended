@@ -147,6 +147,8 @@ install:
     # This is a list of files, each ' - ' is a new file:
     # url is the directlink to the file, destination is the path to where the file should be copied to
   additionalFiles:
+    - url: https://mediafilez.forgecdn.net/files/5370/660/mc2discord-forge-1.12.2-3.3.2.jar
+      destination: mods/mc2discord-forge-1.12.2-3.3.2.jar
     - url: https://edge.forgecdn.net/files/7811/408/tt20-G122-0.7.2.jar
       destination: mods/tt20-G122-0.7.2.jar
     # - url: https://media.forgecdn.net/files/2844/278/restrictedportals-1.15-1.0.jar

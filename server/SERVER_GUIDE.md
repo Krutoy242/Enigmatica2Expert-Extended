@@ -42,3 +42,13 @@ For hosting services with control panels like `Pterodactyl`:
 
 5) **Restore** your custom configurations.
     > Keep a separate archive of your changes to simplify reapplication after updates.
+
+## Mc2Discord (Discord-Chat Bridge)
+
+This pack includes [Mc2Discord](https://github.com/DenisD3D/Mc2Discord) — links Minecraft chat with a Discord channel.
+
+1. **Create a Discord bot** at https://discord.com/developers/applications and copy its token.
+2. Open `config/mc2discord.toml`, set `token` under `[General]` and the channel `id` under `[[Channels.Channel]]`.
+3. Run `/mc2discord restart` in-game, then `/mc2discord invite` to add the bot to your server.
+
+> Full guide: https://github.com/DenisD3D/Mc2Discord/wiki
