@@ -536,3 +536,160 @@ function getMatsRequired(matName as string) as int {
   val len = matsRequired[matName];
   return isNull(len) ? 0 : len as int;
 }
+
+// ######################################################################
+//
+// Modifier power "points" (Warhammer-style army budget, see modifierGen.zs)
+//
+// ######################################################################
+// Cost of a single modifier in abstract power points. The random generator
+// spends a difficulty-scaled budget on these, so expensive modifiers are
+// reachable only at high difficulty and the single most expensive one only at
+// difficulty 1.0. Any modifier NOT listed here defaults to DEFAULT_MOD_POINTS
+// (100) — that includes brand-new modifiers from freshly added mods.
+//
+// Keys are the *registered* identifiers (armor traits keep their `_armor`
+// suffix). Run `/grant_random_armor dump` to log every live modifier together
+// with its effective point value, then curate the values here.
+static DEFAULT_MOD_POINTS as int = 100;
+
+static modifierPoints as int[string] = {
+  'sticky_armor'                          : 40,
+  'shulkerweight_armor'                   : 45,
+  'amphibious_armor'                      : 60,
+  'apprentice_armor'                      : 60,
+  'haste'                                 : 60,
+  'blast_resistant_armor'                 : 70,
+  'emerald'                               : 70,
+  'global_traveler'                       : 70,
+  'projectile_resistant_armor'            : 70,
+  'diamond'                               : 75,
+  'antimagic_armor'                       : 80,
+  'night_vision_armor'                    : 90,
+  'glowing_armor'                         : 100,
+  'reinforced_armor'                      : 120,
+  'reinforced'                            : 120,
+  'diamond_armor'                         : 150,
+  'frostwalker_armor'                     : 150,
+  'tconevo.chain_lightning'               : 150,
+  'emerald_armor'                         : 160,
+  'highstride_armor'                      : 160,
+  'soulbound_armor'                       : 180,
+  'soulbound'                             : 180,
+  'dexterous_armor'                       : 200,
+  'incognito'                             : 200,
+  'sturdy'                                : 200,
+  'sharp'                                 : 220,
+  'sharpness'                             : 220,
+  'lacerating'                            : 240,
+  'self_fix_armor'                        : 240,
+  'darkside_armor'                        : 260,
+  'mending_armor'                         : 260,
+  'travel_goggles_armor'                  : 260,
+  'parasitic_armor'                       : 280,
+  'telekinetic_armor'                     : 280,
+  'potion_belt_armor'                     : 300,
+  'powerful'                              : 300,
+  'powerful_armor'                        : 320,
+  'travel_belt_armor'                     : 320,
+  'travel_sack_armor'                     : 350,
+  'concealed_armor'                       : 400,
+  'tconevo.photovoltaic_armor'            : 520,
+  'tconevo.photovoltaic'                  : 520,
+  'tconevo.fluxed_armor'                  : 600,
+  'tconevo.fluxed'                        : 600,
+  'tconevo.draconic_jump_boost_armor'     : 700,
+  'tconevo.energized'                     : 700,
+  'tconevo.megaflip_armor'                : 700,
+  'tconevo.stifling_armor'                : 850,
+  'tconevo.chilling_touch_armor'          : 900,
+  'tconevo.draconic_move_speed_armor'     : 900,
+  'tconevo.reactive_armor'                : 900,
+  'tconevo.gale_force_armor'              : 950,
+  'tconevo.hearth_embrace_armor'          : 1000,
+  'tconevo.radiant_armor'                 : 1100,
+  'tconevo.bulwark_armor'                 : 1200,
+  'tconevo.will_strength_armor'           : 1200,
+  'tconevo.shadowstep_armor'              : 1300,
+  'tconevo.second_wind_armor'             : 1400,
+  'tconevo.spectral_armor'                : 1500,
+  'tconevo.true_strike'                   : 1500,
+  'tconevo.vampiric'                      : 1600,
+  'tconevo.bloodbound'                    : 1800,
+  'tconevo.draconic_energy_armor'         : 1800,
+  'tconevo.phoenix_aspect_armor'          : 1800,
+  'tconevo.mortal_wounds'                 : 2000,
+  'tconevo.sentient'                      : 2000,
+  'tconevo.celestial_armor'               : 2200,
+  'tconevo.crystalys'                     : 2200,
+  'tconevo.draconic_shield_capacity_armor': 2200,
+  'tconevo.relentless'                    : 2200,
+  'tconevo.overwhelm'                     : 2400,
+  'tconevo.thundergod_favour_armor'       : 2400,
+  'tconevo.divine_grace_armor'            : 2600,
+  'tconevo.executor'                      : 2600,
+  'tconevo.chaos_resistance_armor'        : 3000,
+  'tconevo.ruination'                     : 3200,
+  'tconevo.culling'                       : 3600,
+  'tconevo.weightless_armor'              : 4000,
+  'tconevo.final_guard_armor'             : 4200,
+  'tconevo.condensing'                    : 8000,
+  'tconevo.eternity_armor'                : 16000,
+  'tconevo.eternity'                      : 16000,
+  'tconevo.omnipotence'                   : 20000,
+  'tconevo.infinitum_armor'               : 50000,
+  'tconevo.infinitum'                     : 50000,
+  'tconevo.null_almighty_armor'           : 50000,
+  'tconevo.null_almighty'                 : 50000,
+} as int[string];
+
+function getModifierPoints(id as string) as int {
+  val p = modifierPoints[id];
+  return isNull(p) ? DEFAULT_MOD_POINTS : p as int;
+}
+
+// ######################################################################
+//
+// Inventory loot — items rolled into backpack/belt accessories (modifierGen.zs)
+//
+// ######################################################################
+// Ordered common -> rare. A difficulty-weighted index picks from the front of
+// the list at low difficulty and reaches the rare tail near difficulty 1.0.
+static inventoryLoot as IItemStack[] = [
+  <minecraft:rotten_flesh>,
+  <minecraft:bone>,
+  <minecraft:arrow>,
+  <minecraft:string>,
+  <minecraft:coal>,
+  <minecraft:bread>,
+  <minecraft:iron_ingot>,
+  <minecraft:cooked_beef>,
+  <minecraft:redstone>,
+  <minecraft:gunpowder>,
+  <minecraft:ender_pearl>,
+  <minecraft:gold_ingot>,
+  <minecraft:glowstone_dust>,
+  <minecraft:blaze_powder>,
+  <minecraft:emerald>,
+  <minecraft:diamond>,
+  <minecraft:golden_carrot>,
+  <minecraft:experience_bottle>,
+  <minecraft:golden_apple>,
+  <minecraft:ghast_tear>,
+  <minecraft:golden_apple:1>,
+  <minecraft:nether_star>,
+] as IItemStack[];
+
+// Potions rolled into the "potion belt" accessory (key "potions"). Ordered
+// common -> strong, picked by the same difficulty-weighted index.
+static potionLoot as IItemStack[] = [
+  <minecraft:potion>.withTag({Potion: "minecraft:swiftness"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:healing"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:fire_resistance"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:strength"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:leaping"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:regeneration"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:strong_healing"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:strong_strength"}),
+  <minecraft:potion>.withTag({Potion: "minecraft:strong_regeneration"}),
+] as IItemStack[];

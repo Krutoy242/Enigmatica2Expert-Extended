@@ -4,309 +4,203 @@
 
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
+import crafttweaker.util.Math.max;
 
-static allToolModifiers as IData = [
-  // "creative", // Creative is avaliable but added parralel with other modifiers
-  'diamond',
-  'sharpness',
-  'haste',
-  'emerald',
-  'mending_moss',
-  'reinforced',
-  'smite',
-  'knockback',
-  'luck',
-  'frost',
-  'flame',
-  'silktouch',
-
-  'beheading',
-  'necrotic',
-  'webbed',
-  'magicmushroom',
-  'shulking',
-  'glowing',
-  'harvestheight',
-  'harvestwidth',
-  'soulbound',
-] as IData;
-
-static allArmorModifiers as IData = [
-  // "creative",
-  'diamond_armor',
-  'speedy_armor',
-  'emerald_armor',
-  'fire_resistant_armor',
-  'projectile_resistant_armor',
-  'blast_resistant_armor',
-  'reinforced_armor',
-  'shulkerweight_armor',
-  'mending_armor',
-  'parasitic_armor',
-  'resistant_armor',
-  'sticky_armor',
-  'soulbound_armor',
-] as IData;
+import native.net.minecraft.item.ItemStack;
+import native.net.minecraft.nbt.NBTTagList;
+import native.net.minecraft.nbt.NBTTagCompound;
+import native.slimeknights.tconstruct.library.TinkerRegistry;
+import native.slimeknights.tconstruct.library.modifiers.IModifier;
+import native.slimeknights.tconstruct.library.utils.ToolBuilder;
+import native.slimeknights.tconstruct.library.utils.TagUtil;
+import native.slimeknights.tconstruct.library.utils.TinkerUtil;
+import native.slimeknights.tconstruct.library.tinkering.TinkersItem;
+import native.c4.conarm.lib.ArmoryRegistry;
+import native.c4.conarm.lib.tinkering.TinkersArmor;
+import native.c4.conarm.lib.tinkering.ArmorBuilder;
+import native.xyz.phanta.tconevo.trait.draconicevolution.DraconicTieredModifier;
 
 // -------------------------------
-// Utilities
+// Dynamic modifier pools
 // -------------------------------
+// Instead of hardcoding identifiers, pull every registered modifier straight
+// from Tinkers' (tools) and Construct's Armory (armor) registries, exactly the
+// way TinkersPlannerAntique does for its planner UI (filter by visibility +
+// "has items to apply with"). This way new modifiers from any mod show up
+// automatically and identifiers always match what the registry actually uses
+// (e.g. armor traits get a "_armor" suffix).
 
-function D_indexof(dataList as IData, field as string, value as string) as int {
-  if (isNull(dataList) || dataList.length <= 0) return -1;
+// Single blacklist of identifiers that must never roll randomly on mob gear.
+static modifierBlacklist as string[] = [
+  // Leveling system — managed separately via applyLevelingBonus()
+  'toolleveling',
+  'leveling',
+  'leveling_armor',
+  // Sealing modifier — added explicitly to every generated piece
+  'tconevo.artifact',
+  // Creative / debug only
+  'creative',
+  'extramodifier',
+  // Construct's Armory display-only placeholders
+  'polished',
+  'extra_trait',
+  // Cosmetic / situational, out of place on a mob
+  'incognito',
+] as string[];
 
-  for i, d in dataList.asList() {
-    val sub = isNull(field) ? d : d.memberGet(field);
-    if (!isNull(sub) && sub.asString() == value) {
-      return i;
-    }
+// Identifier prefixes to drop wholesale. These cover the per-material
+// reinforcement ("fortify<mat>"), extra-trait ("extratrait<mat...>") and armor
+// polish ("polished_armor<mat>") modifiers, of which there are hundreds — pure
+// noise for random mob gear.
+static modifierPrefixBlacklist as string[] = [
+  'fortify',
+  'extratrait',
+  'polished',
+] as string[];
+
+function isModifierBlacklisted(id as string) as bool {
+  if (modifierBlacklist has id) return true;
+  for p in modifierPrefixBlacklist {
+    if (id.startsWith(p)) return true;
   }
-  return -1;
+  return false;
 }
 
-function D_find(dataList as IData, field as string, value as string) as IData {
-  val index = D_indexof(dataList, field, value);
-  if (index == -1) return null;
-  return dataList[index];
+// requireItems mirrors how TinkersPlannerAntique builds its pools: tool
+// modifiers must report craftable application items (this also filters out the
+// item-less armor traits that leak into the shared TinkerRegistry), while armor
+// modifiers register their items externally so the check is skipped for them.
+// The actual per-piece applicability (slot, category, compatibility) is decided
+// natively at generation time by modifierGen.zs via IModifier.canApply().
+function collectModifiers(mods as [IModifier], requireItems as bool) as IModifier[] {
+  var out = [] as IModifier[];
+  for mod in mods {
+    if (isNull(mod)) continue;
+    if (mod.isHidden()) continue;
+    if (requireItems && !mod.hasItemsToApplyWith()) continue;
+    // Draconic-Evolution upgrades are gated to DE materials (handled separately
+    // via the `evolved` trait) — never roll them onto ordinary gear.
+    if (mod instanceof DraconicTieredModifier) continue;
+    val id = mod.getIdentifier();
+    if (isNull(id) || id == '') continue;
+    if (isModifierBlacklisted(id)) continue;
+    if (out has mod) continue; // dedup
+    out += mod;
+  }
+  return out;
 }
 
-function pushUnique(dataList as IData, value as string) as IData {
-  if (!isNull(D_find(dataList, null, value)))
-    return null;
-  else
-    return [value];
+// Random-roll pools, as live IModifier instances (so canApply / instanceof work).
+static allToolMods  as IModifier[] = [] as IModifier[];
+static allArmorMods as IModifier[] = [] as IModifier[];
+allToolMods  = collectModifiers(TinkerRegistry.getAllModifiers() as [IModifier], true);
+allArmorMods = collectModifiers(ArmoryRegistry.getAllArmorModifiers() as [IModifier], false);
+
+// Draconic-Evolution upgrade modifiers (both tool & armor variants implement the
+// DraconicTieredModifier marker). They are auto-granted at tier 0 by a DE
+// material's `evolved` trait; modifierGen.zs levels them up by difficulty.
+static allDraconicMods as IModifier[] = [] as IModifier[];
+for mod in TinkerRegistry.getAllModifiers() as [IModifier] {
+  if (!isNull(mod) && (mod instanceof DraconicTieredModifier) && !(allDraconicMods has mod)) allDraconicMods += mod;
 }
-
-function pushTrait(tag as IData, traitName as string) as IData {
-  val unique = pushUnique(tag.Traits, traitName);
-  if (!isNull(unique)) {
-    return tag + { Traits: unique } as IData;
-  }
-  else {
-    return tag;
-  }
-}
-
-function D_replace(dataList as IData, replaceIndex as int, value as IData) as IData {
-  var newList = [] as IData;
-  for k, v in dataList.asList() {
-    if (replaceIndex != k)
-      newList = newList + [v] as IData;
-    else
-      newList = newList + [value] as IData;
-  }
-  return newList;
-}
-
-function pushEnch(tag as IData, newEnch as IData) as IData {
-  val index = D_indexof(tag.ench, 'id', newEnch.id);
-  if (index != -1) {
-    var found = tag.ench[index];
-    found = found + { lvl: found.lvl + newEnch.lvl } as IData;
-
-    return (tag - 'ench') + { ench: D_replace(tag.ench, index, found) } as IData;
-  }
-
-  return tag + { ench: [newEnch] as IData };
-}
-
-function pushModifier(tag as IData, name as string, data as IData) as IData {
-  val newData = data;
-  val index = D_indexof(tag.Modifiers, 'identifier', name);
-  if (index != -1) {
-    var found = tag.Modifiers[index];
-    if (!isNull(found.current)) found = found + { current: found.current + data.current } as IData;
-    if (!isNull(found.level)) found = found + { level: found.level + data.level } as IData;
-
-    if (!isNull(found?.extraInfo))
-      found = found + { extraInfo: ((found.current.asInt() - 1) ~ ' / ' ~ found.max.asString()) as IData };
-
-    return (tag - 'Modifiers') + { Modifiers: D_replace(tag.Modifiers, index, found) } as IData;
-  }
-
-  // Add new tag
-  return tag + { Modifiers: [newData + { identifier: name } as IData] as IData };
+for mod in ArmoryRegistry.getAllArmorModifiers() as [IModifier] {
+  if (!isNull(mod) && (mod instanceof DraconicTieredModifier) && !(allDraconicMods has mod)) allDraconicMods += mod;
 }
 
 // -------------------------------
-// Apply modifier
+// Apply modifier (native)
 // -------------------------------
-function addSingleModifier(_tag as IData, name as string) as IData {
-  var tag = _tag;
+function addSingleModifier(item as IItemStack, name as string) as IItemStack {
+  if (isNull(name) || name == '') return item;
+  val mcStack = item as ItemStack;
+  val itemClass = mcStack.item;
+  val isArmorItem = itemClass instanceof TinkersArmor;
+  val mod1 = isArmorItem ? ArmoryRegistry.getArmorModifier(name) : TinkerRegistry.getModifier(name);
+  val mod = isNull(mod1)
+    ? (isArmorItem ? TinkerRegistry.getModifier(name) : ArmoryRegistry.getArmorModifier(name))
+    : mod1;
+  if (isNull(mod)) return item;
 
-  // Add modifier name in modifier list
-  if (isNull(D_find(tag.TinkerData.Modifiers, null, name)))
-    tag = tag + { TinkerData: { Modifiers: [name] as IData } } as IData;
+  mod.apply(mcStack);
 
-  // Special cases for creative
-  if (name == 'creative') {
-    tag = tag + { Stats: { FreeModifiers: ((tag?.Stats?.FreeModifiers?.asInt() ?? 0) + 1) as IData } } as IData;
-    tag = pushModifier(tag, name, { color: 0, level: 1 });
-  }
-  else if (name != 'soulbound' && name != 'tconevo.artifact') {
-    // Other except creative and soulbound
-    tag = tag + { Stats: { FreeModifiers: max(0.0, (tag?.Stats?.FreeModifiers?.asInt() ?? 0) - 1) as IData } } as IData;
-    tag = tag + { TinkerData: { UsedModifiers: ((tag?.TinkerData?.UsedModifiers?.asInt() ?? 0) + 1) as IData } } as IData;
-  }
-
-  if (name == 'tconevo.artifact') {
-    tag = pushModifier(tag, name, { color: 14333039, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'soulbound') {
-    tag = pushModifier(tag, name, { color: 16120748 });
-  }
-  if (name == 'diamond') {
-    tag = pushModifier(tag, name, { color: 9237730 });
-    tag = tag + { Stats: { MiningSpeed: (tag.Stats.MiningSpeed.asFloat() + 0.5f) as IData } } as IData;
-    tag = tag + { Stats: { Durability: (tag.Stats.Durability.asInt() + 500) as IData } } as IData;
-    tag = tag + { Stats: { Attack: (tag.Stats.Attack.asFloat() + 1.0f) as IData } } as IData;
-  }
-  if (name == 'emerald') {
-    tag = pushModifier(tag, name, { color: 4322180 });
-    tag = tag + { Stats: { Durability: (tag.Stats.Durability.asInt() + tag.StatsOriginal.Durability.asInt() / 2) as IData } } as IData;
-  }
-  if (name == 'silktouch') {
-    tag = pushModifier(tag, name, { color: 16507531 });
-    tag = pushEnch(tag, { lvl: 1, id: 33 });
-    tag = tag + { Stats: { MiningSpeed: (tag.Stats.MiningSpeed.asFloat() / 2) as IData } } as IData;
-    tag = tag + { Stats: { Attack: (tag.Stats.Attack.asFloat() / 2) as IData } } as IData;
-  }
-  if (name == 'reinforced') {
-    tag = pushModifier(tag, name, { color: 5254787, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'beheading') {
-    tag = pushModifier(tag, name, { color: 1070923, level: 1 });
-  }
-  if (name == 'haste') {
-    tag = pushModifier(tag, name, { current: 50, color: 9502720, level: 1, max: 50, extraInfo: '49 / 50' });
-    tag = tag + { Stats: { AttackSpeedMultiplier: (tag.Stats.AttackSpeedMultiplier.asFloat() + 0.2f) as IData } } as IData;
-    tag = tag + { Stats: { MiningSpeed: (tag.Stats.MiningSpeed.asFloat() + 7.0f) as IData } } as IData;
-  }
-  if (name == 'smite') {
-    tag = pushModifier(tag, name, { current: 24, color: 15258880, level: 1, max: 24, extraInfo: '23 / 24' });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'necrotic') {
-    tag = pushModifier(tag, name, { color: 6160384, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'knockback') {
-    tag = pushModifier(tag, name, { current: 10, color: 10461087, level: 1, max: 10, extraInfo: '9 / 10' });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'sharpness') {
-    tag = pushModifier(tag, name, { current: 72, color: 16774902, level: 1, max: 72, extraInfo: '71 / 72' });
-    tag = tag + { Stats: { Attack: (tag.Stats.Attack.asFloat() + 3.0f) as IData } } as IData;
-  }
-  if (name == 'webbed') {
-    tag = pushModifier(tag, name, { color: 16777215, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'magicmushroom') {
-    tag = pushModifier(tag, name, { color: 5614830 });
-    tag = tag + { Stats: { HarvestLevel: ((tag?.Stats?.HarvestLevel?.asInt() ?? 0) + 1) as IData } } as IData;
-  }
-  if (name == 'mending_moss') {
-    tag = pushModifier(tag, name, { color: 4434738, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'shulking') {
-    tag = pushModifier(tag, name, { current: 50, color: 11193599, level: 1, max: 50, extraInfo: '49 / 50' });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'glowing') {
-    tag = pushModifier(tag, name, { color: 16777130, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'harvestheight') {
-    tag = pushModifier(tag, name, { color: 13301410 });
-  }
-  if (name == 'harvestwidth') {
-    tag = pushModifier(tag, name, { color: 13301410 });
-  }
-  if (name == 'flame') {
-    tag = pushModifier(tag, name, { current: 1, color: 11874311, level: 1, max: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'frost') {
-    tag = pushModifier(tag, name, { current: 1, color: 10743016, level: 1, max: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'luck') {
-    tag = pushModifier(tag, name, { current: 60, color: 2970082, level: 1, max: 60, modifierUsed: 1, extraInfo: '59 / 60' });
-    tag = pushEnch(tag, { lvl: 1, id: 21 });
-    tag = pushEnch(tag, { lvl: 1, id: 35 });
-    tag = pushTrait(tag, name);
+  if (!isArmorItem) {
+    val root = mcStack.tagCompound;
+    ToolBuilder.rebuildTool(root, itemClass as TinkersItem);
   }
 
-  if (name == 'diamond_armor') {
-    tag = tag + { Stats: { Toughness: tag.StatsOriginal.Toughness.asInt() + 2 } } as IData;
-    tag = tag + { Stats: { Durability: (tag.StatsOriginal.Durability.asInt() + 150) as IData } } as IData;
-    tag = tag + { Stats: { Defense: (tag.StatsOriginal.Defense.asFloat() + 4.0f) as IData } } as IData;
-    tag = pushModifier(tag, name, { color: 9237730 });
-  }
-  if (name == 'emerald_armor') {
-    tag = tag + { Stats: { Toughness: tag.StatsOriginal.Toughness.asInt() + 2 } } as IData;
-    tag = tag + { Stats: { Durability: (tag.StatsOriginal.Durability.asInt() + 32) as IData } } as IData;
-    tag = pushModifier(tag, name, { color: 4322180 });
-  }
-  if (name == 'reinforced_armor') {
-    tag = pushModifier(tag, name, { color: 5254787, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'parasitic_armor') {
-    tag = pushModifier(tag, name, { color: 6160384, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'mending_armor') {
-    tag = pushModifier(tag, name, { color: 4434738, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'sticky_armor') {
-    tag = pushModifier(tag, name, { color: 16777215, level: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'shulkerweight_armor') {
-    tag = pushModifier(tag, name, { current: 20, color: 11193599, level: 1, max: 20, extraInfo: '19 / 20' });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'soulbound_armor') {
-    tag = pushModifier(tag, name, { color: 16120748 });
-  }
-  if (name == 'resistant_armor') {
-    tag = pushModifier(tag, name, { color: 16774902, level: 1, modifierUsed: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'fire_resistant_armor') {
-    tag = pushModifier(tag, name, { color: 15375922, level: 1, modifierUsed: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'projectile_resistant_armor') {
-    tag = pushModifier(tag, name, { color: 1070923, level: 1, modifierUsed: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'blast_resistant_armor') {
-    tag = pushModifier(tag, name, { color: 8793389, level: 1, modifierUsed: 1 });
-    tag = pushTrait(tag, name);
-  }
-  if (name == 'speedy_armor') {
-    tag = pushModifier(tag, name, { current: 50, color: 9502720, level: 1, max: 50, extraInfo: '49 / 50' });
-    tag = pushTrait(tag, name);
-  }
-
-  return tag;
+  return mcStack as IItemStack;
 }
 
-function addModifier(_item as IItemStack, name as string) as IItemStack {
-  if (isNull(name) || name == '') return _item;
+// -------------------------------
+// Leveling-backed modifier budget (native)
+// -------------------------------
+// Random modifiers spend free-modifier slots. To avoid generating gear that
+// used more modifiers than it could afford, we pretend the piece was leveled
+// up (via Tinkers'/Construct's Armory tool-leveling) so each random modifier is
+// paid for by a bonus slot. Rebuild then recomputes the budget as
+//   free = baseFree + bonusModifiers - used
+// keeping the piece a perfectly valid, "already experienced" item.
+function applyLevelingBonus(item as IItemStack, isArmor as bool, bonus as int) as IItemStack {
+  if (bonus <= 0) return item;
+  val mcStack = item as ItemStack;
+  val itemClass = mcStack.item;
+  val root = mcStack.tagCompound;
+  if (isNull(root)) return item;
 
-  // Automatically add creative modifier if this modifier required slot
-  var item = _item;
-  if (name != 'creative' && name != 'soulbound') item = addModifier(item, 'creative');
+  val modId = isArmor ? 'leveling_armor' : 'toolleveling';
+  val tagList = TagUtil.getModifiersTagList(root);
+  val index = TinkerUtil.getIndexInCompoundList(tagList, modId);
+  if (index < 0) return item; // no leveling modifier present, nothing to grant
 
-  return item.withTag(addSingleModifier(item.tag, name));
+  val modTag = tagList.getCompoundTagAt(index);
+  modTag.setInteger('level', modTag.getInteger('level') + bonus);
+  modTag.setInteger('bonus_modifiers', modTag.getInteger('bonus_modifiers') + bonus);
+  modTag.setInteger('xp', 0);
+  tagList.set(index, modTag);
+  TagUtil.setModifiersTagList(root, tagList);
+  mcStack.setTagCompound(root);
+
+  if (isArmor) {
+    ArmorBuilder.rebuildArmor(root, itemClass as TinkersArmor);
+  } else {
+    ToolBuilder.rebuildTool(root, itemClass as TinkersItem);
+  }
+  mcStack.setTagCompound(root);
+
+  return mcStack as IItemStack;
+}
+
+// Like applyLevelingBonus but SETS the leveling level / bonus-modifiers to exact
+// values instead of adding. Used to first grant generous headroom (so per-apply
+// tool rebuilds never run the budget negative) and then trim it back down so the
+// finished piece exposes only `baseFree` spare modifier slots.
+function setLevelingBonus(item as IItemStack, isArmor as bool, level as int, bonus as int) as IItemStack {
+  val mcStack = item as ItemStack;
+  val itemClass = mcStack.item;
+  val root = mcStack.tagCompound;
+  if (isNull(root)) return item;
+
+  val modId = isArmor ? 'leveling_armor' : 'toolleveling';
+  val tagList = TagUtil.getModifiersTagList(root);
+  val index = TinkerUtil.getIndexInCompoundList(tagList, modId);
+  if (index < 0) return item;
+
+  val modTag = tagList.getCompoundTagAt(index);
+  modTag.setInteger('level', max(1, level));
+  modTag.setInteger('bonus_modifiers', max(0, bonus));
+  modTag.setInteger('xp', 0);
+  tagList.set(index, modTag);
+  TagUtil.setModifiersTagList(root, tagList);
+  mcStack.setTagCompound(root);
+
+  if (isArmor) {
+    ArmorBuilder.rebuildArmor(root, itemClass as TinkersArmor);
+  } else {
+    ToolBuilder.rebuildTool(root, itemClass as TinkersItem);
+  }
+  mcStack.setTagCompound(root);
+
+  return mcStack as IItemStack;
 }
 
 function constructTool(
@@ -325,7 +219,7 @@ function constructTool(
   ]);
   if (!isNull(modifiers)) {
     for modif in modifiers {
-      tool = addModifier(tool, modif);
+      tool = addSingleModifier(tool, modif);
     }
   }
   return tool;

@@ -148,25 +148,6 @@ function getEquipCount(isOverworld as bool, difficulty as double, w as IWorld) a
   return maxEquips;
 }
 
-function addRandomModifiers(item as IItemStack, isArmor as bool, w as IWorld) as IItemStack {
-  var picked = [] as string[];
-  var equip = item;
-  for i in 0 .. (rnd_qubic(w) * 5.0 + 1.0) as int {
-    var mod as string = null;
-    var antiloop = 0;
-    while picked has mod && antiloop < 100 {
-      mod = pick_qubic(isArmor
-        ? scripts.equipment.utils_tcon.allArmorModifiers
-        : scripts.equipment.utils_tcon.allToolModifiers,
-      w);
-      antiloop += 1;
-    }
-    picked += mod;
-    equip = scripts.equipment.utils_tcon.addModifier(equip, mod);
-  }
-  return equip;
-}
-
 function getDifficulty(entity as IEntity) as double {
   val area = Difficulty.AREA_DIFFICULTY_MODE.getAreaDifficulty(entity.world, entity.position);
   return area / Difficulty.maxValue;
@@ -216,11 +197,8 @@ function equipEntity(iGroup as IData, entity as IEntityLivingBase, world as IWor
     // Equip is invalid, skip
     if (isNull(equip)) continue;
 
-    // Add TconEvo "Artifact" modifier (ask for Unsealing to modify)
-    equip = equip.withTag(scripts.equipment.utils_tcon.addSingleModifier(equip.tag, 'tconevo.artifact'));
-
-    // Other random mods
-    if (world.random.nextDouble() < difficulty + 0.25) equip = addRandomModifiers(equip, isArmor, world);
+    // Native-filtered, difficulty-scaled modifiers + Artifact seal + energy
+    equip = scripts.equipment.modifierGen.generateModifiers(equip, isArmor, difficulty, world);
 
     // Damage item
     if (equip.isDamageable) {

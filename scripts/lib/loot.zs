@@ -113,7 +113,7 @@ function addSpecialTool(tableName as string, tool as IItemStack, materials as st
     [Functions.zenscript(function (input as IItemStack, rng as IRandom, context as LootContext) as IItemStack {
       var materialList = [] as ITICMaterial[];
       for material in materials { materialList += Toolforge.getMaterialFromID(material); }
-      return scripts.equipment.utils_tcon.addModifier(Toolforge.buildTool(tool.definition, materialList).withDisplayName(displayName), 'tconevo.artifact');
+      return scripts.equipment.utils_tcon.addSingleModifier(Toolforge.buildTool(tool.definition, materialList).withDisplayName(displayName), 'tconevo.artifact');
     })], []);
 }
 
