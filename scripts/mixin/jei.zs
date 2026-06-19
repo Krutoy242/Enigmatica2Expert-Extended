@@ -77,17 +77,17 @@ zenClass MixinRecipeCategoryComparator {
       'Blood Magic: Alchemical Wizardry',
       'extrautils2',
       'Just Enough Pattern Banner',
-      'ThaumicJEI',
       'Rats',
       'Plethora',
       'FTB Quests',
-      'Environmental Tech',
-      'Quantum Minecraft Dynamics',
-      'End: Reborn',
-      'Advanced Rocketry',
-      'Gendustry JEI Addon',
       'nuclearcraft',
+      'Quantum Minecraft Dynamics',
+      'Environmental Tech',
+      'Advanced Rocketry',
+      'End: Reborn',
+      'Gendustry JEI Addon',
       'Requious Frakto',
+      'ThaumicJEI',
     ];
     return categories.sort(function (a as IRecipeCategory, b as IRecipeCategory) as int {
       val aN = order.indexOf(a.modName);
