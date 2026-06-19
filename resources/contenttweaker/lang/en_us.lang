@@ -501,6 +501,7 @@ e2ee.skyblock.need_item=§bTo access the §3Skyblock§b dimension, hold %s§b in
 e2ee.skyblock.stay_forever=§bTo exit the §3Skyblock§b world, leap into the void.\n§bTo make the §3Skyblock§b world your permanent home, use the command §n/island create§r§b.
 e2ee.skyblock.now_skyblocker=§bYou are now bound to the §3Skyblock§b world!\n§8If this was done accidentally, you can reverse the skyblock binding by executing the command §n/gamestage remove @p skyblock§r§8.
 e2ee.stc.granted=§6Standard Template Construct Core granted!
+e2ee.nogui.blocked=§cYou can't open GUIs while wearing §4%s§r
 tooltips.lang.morb_resist=§rEffective against monsters at §4\u003C%s%%§r hearts, or with fewer than §c%s§r hearts total.
 tooltips.lang.not_compact_recipe=§eNot a real recipe! Build anywhere, Conglomerate last
 
