@@ -47,7 +47,7 @@ o.setDurationSlot(4,2).setVisual(SlotVisual.createGauge('requious:textures/gui/a
 
 o.setJEIItemSlot(inpX,inpY, 'input');
 o.setJEIItemSlot(outX,outY, 'output');
-o.setJEIDurationSlot(4,2,'duration', SlotVisual.create(1,1).addPart('requious:textures/gui/assembly_gauges.png',3,1));
+o.setJEIDurationSlot(8, 4,'duration', SlotVisual.create(1,1).addPart('requious:textures/gui/assembly_gauges.png',3,1));
 
 o.addVisual(MachineVisual.flame('active'.asVariable(), V(-0.1, -0.1, -0.1), V(1.1, 1.1, 1.1), V(0, 0, 0), 30, 1, 3, Color.normal([96, 56, 134])));
 

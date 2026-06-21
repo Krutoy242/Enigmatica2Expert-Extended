@@ -19,7 +19,7 @@ scripts.jei.crafting_hints.addInsOutCatl([
 // -----------------------------------------------------------------------
 val x = <assembly:forestry_farm>;
 x.setJEIItemSlot(0, 0, 'item_in');
-x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisSlots(11, 1));
+x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisSlots(11, 1));
 for i in 0 .. 11 {
   x.addJEICatalyst(<forestry:ffarm:3>.withTag({ FarmBlock: i }));
 }

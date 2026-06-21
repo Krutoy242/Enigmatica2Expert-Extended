@@ -12,8 +12,8 @@ import scripts.jei.requious.add as addRecipe;
 val x = <assembly:lens_of_the_miner>;
 x.addJEICatalyst(<actuallyadditions:item_mining_lens>);
 x.addJEICatalyst(<actuallyadditions:block_atomic_reconstructor>);
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[2, 0]]);
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+scripts.jei.requious.addInsOuts(x, [[0, 0]], [[4, 0]]);
 
 // Default list:
 // https://github.com/Ellpeck/ActuallyAdditions/blob/main/src/main/java/de/ellpeck/actuallyadditions/common/items/lens/LensMining.java

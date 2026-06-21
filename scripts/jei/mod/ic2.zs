@@ -13,9 +13,9 @@ import scripts.jei.requious.add as addRecipe;
 var x = <assembly:liquid_heat_exchanger>;
 x.addJEICatalyst(<ic2:te:31>);
 x.setJEIFluidSlot(0, 0, 'liquid_input');
-x.setJEIItemSlot(1, 0, 'item_in');
-x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(5, 1));
-x.setJEIFluidSlot(3, 0, 'liquid_output');
+x.setJEIItemSlot(2, 0, 'item_in');
+x.setJEIDurationSlot(4, 0, 'duration', scripts.jei.requious.getVisGauge(5, 1));
+x.setJEIFluidSlot(6, 0, 'liquid_output');
 
 for l_in, l_out in {
   lava          : 'ic2pahoehoe_lava',
@@ -35,9 +35,9 @@ x = <assembly:ic2_crops>;
 x.addJEICatalyst(<ic2:crop_stick>);
 x.addJEICatalyst(<ic2:te:58>);
 x.addJEICatalyst(<ic2:crop_seed_bag>);
-x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisSlots(11, 1));
-x.setJEIItemSlot(1, 0, 'input1', scripts.jei.requious.getVisSlots(0, 2));
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[3, 0], [4, 0], [5, 0], [6, 0]]);
+x.setJEIDurationSlot(4, 0, 'duration', scripts.jei.requious.getVisSlots(11, 1));
+x.setJEIItemSlot(2, 0, 'input1', scripts.jei.requious.getVisSlots(0, 2));
+scripts.jei.requious.addInsOuts(x, [[0, 0]], [[6, 0], [8, 0], [10, 0], [12, 0]]);
 
 static glyphs as IItemStack[] = [
   <openblocks:glyph:48>, <openblocks:glyph:49>, <openblocks:glyph:50>,
@@ -61,8 +61,8 @@ function addCrop(id as string, drops as IItemStack[], tier as int, attributes as
 x = <assembly:ic2_semifluid>;
 x.addJEICatalyst(<ic2:te:7>);
 x.setJEIFluidSlot(0, 0, 'fluid_in');
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIEnergySlot(2, 0, 'energy_out', 'rf');
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIEnergySlot(4, 0, 'energy_out', 'rf');
 
 function semifluid(input as ILiquidStack, eu_t as double) as void {
   <assembly:ic2_semifluid>.addJEIRecipe(AssemblyRecipe.create(function (c) {

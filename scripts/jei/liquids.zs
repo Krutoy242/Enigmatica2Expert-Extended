@@ -11,10 +11,10 @@ import mods.requious.AssemblyRecipe;
 // -----------------------------------------------------------------------
 val x = <assembly:liquid_interaction>;
 x.addJEICatalyst(<minecraft:lava_bucket>);
-x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisGauge(0, 6));
-scripts.jei.requious.addInsOuts(x, [[3, 0]], [[1, 1]]);
+x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(0, 6));
+scripts.jei.requious.addInsOuts(x, [[6, 0]], [[2, 2]]);
 x.setJEIFluidSlot(0, 0, 'input');
-x.setJEIFluidSlot(2, 0, 'input');
+x.setJEIFluidSlot(4, 0, 'input');
 
 function interact(liquid0 as ILiquidStack, liquid1 as ILiquidStack, input0 as IIngredient, out as IItemStack) as void {
   if (isNull(out)) return;

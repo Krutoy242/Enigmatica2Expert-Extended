@@ -12,8 +12,8 @@ import mods.requious.SlotVisual;
 var x = <assembly:garden_cloche>;
 x.addJEICatalyst(<immersiveengineering:metal_device1:13>);
 x.setJEIFluidSlot(0, 0, 'fluid_in');
-x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
-scripts.jei.requious.addInsOuts(x, [[1, 0]], [[3, 0]]);
+x.setJEIDurationSlot(4, 0, 'duration', SlotVisual.arrowRight());
+scripts.jei.requious.addInsOuts(x, [[2, 0]], [[6, 0]]);
 
 function addGardenClocheFluid(fluid as ILiquidStack, mult as float) as void {
   <assembly:garden_cloche>.addJEIRecipe(AssemblyRecipe.create(function (c) {
@@ -31,8 +31,8 @@ x = <assembly:chemthrower>;
 x.addJEICatalyst(<immersiveengineering:chemthrower>);
 x.addJEICatalyst(<immersiveengineering:metal_device1:10>);
 x.setJEIFluidSlot(0, 0, 'fluid_in');
-x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
-scripts.jei.requious.addInsOuts(x, [[1, 0]], [[3, 0]]);
+x.setJEIDurationSlot(4, 0, 'duration', SlotVisual.arrowRight());
+scripts.jei.requious.addInsOuts(x, [[2, 0]], [[6, 0]]);
 
 function addChemthrower(fluid as ILiquidStack, blockInput as IIngredient, output as IItemStack) as void {
   val rec = AssemblyRecipe.create(function (c) {

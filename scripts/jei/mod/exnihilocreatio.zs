@@ -11,8 +11,8 @@ import scripts.jei.requious.add as addRecipe;
 
 var x = <assembly:scented_hive>;
 x.addJEICatalyst(<exnihilocreatio:hive:1>);
-x.setJEIDurationSlot(3, 0, 'duration', scripts.jei.requious.getVisSlots(5, 1));
-scripts.jei.requious.addInsOuts(x, [[1, 0], [2, 0], [0, 0]], [[4, 0]]);
+x.setJEIDurationSlot(6, 0, 'duration', scripts.jei.requious.getVisSlots(5, 1));
+scripts.jei.requious.addInsOuts(x, [[2, 0], [4, 0], [0, 0]], [[8, 0]]);
 
 /* Inject_js(
 JSON.parse(loadText('config/exnihilocreatio/ScentedHiveRegistry.json'))
@@ -35,8 +35,8 @@ addRecipe(x, { [<exnihilocreatio:hive:1>, <ore:dirt>]: [<forestry:beehives:6>] }
 x = <assembly:witch_water>;
 x.addJEICatalyst(Bucket('witchwater'));
 x.addJEICatalyst(<exnihilocreatio:witchwater>);
-x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisGauge(1, 8));
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[2, 0]]);
+x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(1, 8));
+scripts.jei.requious.addInsOuts(x, [[0, 0]], [[4, 0]]);
 addRecipe(x, { [<entity:minecraft:skeleton>.asIngr()]: [<entity:minecraft:wither_skeleton>.asStack()] });
 addRecipe(x, { [<entity:minecraft:creeper>.asIngr()]: [<entity:minecraft:creeper>.asStack()] });
 addRecipe(x, { [<entity:minecraft:slime>.asIngr()]: [<entity:minecraft:magma_cube>.asStack()] });
@@ -56,10 +56,10 @@ x = <assembly:barrel_milking>;
 x.addJEICatalyst(<exnihilocreatio:block_barrel0>);
 x.addJEICatalyst(<exnihilocreatio:block_barrel1>);
 x.setJEIItemSlot(0, 0, 'input0');
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIItemSlot(2, 0, 'input1');
-x.setJEIDurationSlot(3, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIFluidSlot(4, 0, 'fluid_out');
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIItemSlot(4, 0, 'input1');
+x.setJEIDurationSlot(6, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIFluidSlot(8, 0, 'fluid_out');
 
 function add_barrel_milking(input as IIngredient, barrel as IItemStack, output as ILiquidStack, duration as int) as void {
   <assembly:barrel_milking>.addJEIRecipe(AssemblyRecipe.create(function (c) {

@@ -14,8 +14,8 @@ import scripts.jei.requious.add as addRecipe;
 // -----------------------------------------------------------------------
 val x = <assembly:beacon_effects>;
 x.addJEICatalyst(<minecraft:beacon>);
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-scripts.jei.requious.addInsOuts(x, [[0, 0], [0, 1]], [[2, 0], [3, 0]]);
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+scripts.jei.requious.addInsOuts(x, [[0, 0], [0, 2]], [[4, 0], [6, 0]]);
 
 val glyphs = {
   '1': <openblocks:glyph:49>,

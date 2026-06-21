@@ -12,10 +12,10 @@ import scripts.jei.requious.add as addRecipe;
 // -----------------------------------------------------------------------
 var x = <assembly:everflow_chalice>;
 x.addJEICatalyst(<astralsorcery:blockchalice>);
-x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisGauge(0, 6));
+x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(0, 6));
 x.setJEIFluidSlot(0, 0, 'input');
-x.setJEIFluidSlot(2, 0, 'input');
-scripts.jei.requious.addInsOuts(x, [], [[1, 1], [0, 2], [2, 2]]);
+x.setJEIFluidSlot(4, 0, 'input');
+scripts.jei.requious.addInsOuts(x, [], [[2, 2], [0, 4], [4, 4]]);
 
 function add_everflow_chalice(input0 as ILiquidStack, input1 as ILiquidStack, out as IItemStack[]) {
   <assembly:everflow_chalice>.addJEIRecipe(AssemblyRecipe.create(function (c) {
@@ -105,7 +105,7 @@ val mineralisList = [
 var k = 0;
 for _y in 0 .. mineralisList.length / 9 + 1 {
   for _x in 0 .. 9 {
-    x.setJEIItemSlot(_x, _y, 'output' ~ k);
+    x.setJEIItemSlot(_x * 2, _y * 2, 'output' ~ k);
     k += 1;
   }
 }
@@ -123,9 +123,9 @@ addRecipe(x, { []: mineralisList });
 // refraction_table.addJEICatalyst(<astralsorcery:blockmapdrawingtable>);
 // refraction_table.addJEICatalyst(<astralsorcery:iteminfusedglass>);
 // refraction_table.setJEIItemSlot(0, 0, "constellation");
-// refraction_table.setJEIDurationSlot(1, 0, "duration", getVisSlots(1,7));
-// refraction_table.setJEIItemSlot(2, 0, "enchantment");
-// refraction_table.setJEIItemSlot(3, 0, "potion");
+// refraction_table.setJEIDurationSlot(2, 0, "duration", getVisSlots(1,7));
+// refraction_table.setJEIItemSlot(4, 0, "enchantment");
+// refraction_table.setJEIItemSlot(6, 0, "potion");
 
 // // Doesn't work because CT can't cast IData[] to IData
 // // function enchantedBook(enchantments as int[][]) as IItemStack {

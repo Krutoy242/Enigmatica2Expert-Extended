@@ -14,14 +14,14 @@ import scripts.mixin.bloodmagic.shared.Op;
 // -----------------------------------------------------------------------
 val x = <assembly:meteor>;
 x.addJEICatalyst(<bloodmagic:ritual_diviner:1>.withTag({ current_ritual: 'meteor' }));
-x.setJEIDurationSlot(1, 1, 'duration', scripts.jei.requious.getVisGauge(1, 8));
-x.setJEIItemSlot (0, 1, 'f0');
+x.setJEIDurationSlot(2, 2, 'duration', scripts.jei.requious.getVisGauge(1, 8));
+x.setJEIItemSlot(0, 2, 'f0');
 x.setJEIFluidSlot(0, 0, 'f1');
 
 var k = 0;
 for _y in 0 .. 3 {
   for _x in 2 .. 9 {
-    x.setJEIItemSlot(_x, _y, 'output');
+    x.setJEIItemSlot(_x * 2, _y * 2, 'output');
     k += 1;
   }
 }

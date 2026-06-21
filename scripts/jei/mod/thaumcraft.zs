@@ -8,9 +8,9 @@ import mods.requious.SlotVisual;
 
 val x = <assembly:infernal_furnace>;
 x.addJEICatalyst(<thaumcraft:infernal_furnace>);
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(1, 13));
-scripts.jei.requious.addInsOuts(x, [[0, 0]], [[3, 0], [4, 0], [5, 0], [6, 0]]);
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIDurationSlot(4, 0, 'duration', scripts.jei.requious.getVisGauge(1, 13));
+scripts.jei.requious.addInsOuts(x, [[0, 0]], [[6, 0], [8, 0], [10, 0], [12, 0]]);
 
 val RE = <thaumcraft:nugget:10>;
 

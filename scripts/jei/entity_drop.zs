@@ -19,11 +19,11 @@ static entityDropTableMap as IItemStack[][IEntityDefinition] = {} as IItemStack[
 // -----------------------------------------------------------------------
 val x = <assembly:entity_drop>;
 x.addJEICatalyst(<minecraft:wooden_sword>);
-scripts.jei.requious.addInsOuts(x, [[0,0]], [
-  [2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],
-  [2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[8,1],
+scripts.jei.requious.addInsOuts(x, [[0, 0]], [
+  [4, 0],[6, 0],[8, 0],[10, 0],[12, 0],[14, 0],[16, 0],
+  [4, 2],[6, 2],[8, 2],[10, 2],[12, 2],[14, 2],[16, 2],
 ]);
-x.setJEIDurationSlot(1,0,'duration', SlotVisual.arrowRight());
+x.setJEIDurationSlot(2, 0,'duration', SlotVisual.arrowRight());
 
 function add(entity as IEntityDefinition, dropList as IItemStack[], percent as bool = true) as void {
   // utils.log(['Trying to add drop for:', entity]);

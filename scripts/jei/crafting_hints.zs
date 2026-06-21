@@ -14,18 +14,18 @@ import mods.requious.AssemblyRecipe;
 // -----------------------------------------------------------------------
 val x = <assembly:crafting_hints>;
 x.addJEICatalyst(<minecraft:item_frame>);
-scripts.jei.requious.arrow(x, 4, 1);
+scripts.jei.requious.arrow(x, 8, 2);
 scripts.jei.requious.addInsOuts(x, [
-  [4, 0],
-  [0, 0], [1, 0], [2, 0],
-  [0, 1], [1, 1], [2, 1],
-  [0, 2], [1, 2], [2, 2],
+  [8, 0],
+  [0, 0], [2, 0], [4, 0],
+  [0, 2], [2, 2], [4, 2],
+  [0, 4], [2, 4], [4, 4],
 ], [
-  [6, 1], [7, 1], [8, 1],
+  [12, 2], [14, 2], [16, 2],
 ]);
-x.setJEIItemSlot(4, 0, 'input0', scripts.jei.requious.getVisSlots(0, 2));
-x.setJEIFluidSlot(1, 3, 'fluid_in');
-x.setJEIFluidSlot(7, 2, 'fluid_out');
+x.setJEIItemSlot(8, 0, 'input0', scripts.jei.requious.getVisSlots(0, 2));
+x.setJEIFluidSlot(2, 6, 'fluid_in');
+x.setJEIFluidSlot(14, 4, 'fluid_out');
 
 function addInsOutsCatl(input as IIngredient[], outputs as IItemStack[], catalyst as IIngredient = null) as void {
   scripts.jei.requious.add(<assembly:crafting_hints>, {

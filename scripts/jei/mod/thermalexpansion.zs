@@ -11,9 +11,9 @@ import mods.requious.SlotVisual;
 val x = <assembly:arboreal_extractor>;
 x.addJEICatalyst(<thermalexpansion:device:3>.withTag({ RSControl: 0 as byte, Facing: 3 as byte, Energy: 0, SideCache: [1, 1, 2, 2, 2, 2] as byte[] as byte[] }));
 x.setJEIItemSlot(0, 0, 'input0');
-x.setJEIItemSlot(1, 0, 'input1');
-x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIFluidSlot(3, 0, 'fluid_out');
+x.setJEIItemSlot(2, 0, 'input1');
+x.setJEIDurationSlot(4, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIFluidSlot(6, 0, 'fluid_out');
 function addExtraction(input1 as IIngredient, input2 as IIngredient, output as ILiquidStack) as void {
   <assembly:arboreal_extractor>.addJEIRecipe(AssemblyRecipe.create(function (container) {
     container.addFluidOutput('fluid_out', output);

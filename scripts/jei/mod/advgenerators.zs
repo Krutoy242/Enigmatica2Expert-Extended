@@ -59,9 +59,9 @@ val rfProduced = 1000000;
 
 var x = <assembly:turbine>;
 x.addJEICatalyst(<advgenerators:turbine_controller>);
-x.setJEIDurationSlot(1, 0, 'duration', scripts.jei.requious.getVisGauge(0, 5));
+x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(0, 5));
 x.setJEIFluidSlot(0, 0, 'liquid_input');
-x.setJEIEnergySlot(2, 0, 'energy_out', 'rf');
+x.setJEIEnergySlot(4, 0, 'energy_out', 'rf');
 
 for name, amount in turbineFuel {
   val liq = game.getLiquid(name);
@@ -79,11 +79,11 @@ for name, amount in turbineFuel {
 x = <assembly:heat_exchanger>;
 x.addJEICatalyst(<advgenerators:exchanger_controller>);
 x.setJEIFluidSlot(0, 0, 'fluid_in');
-x.setJEIItemSlot(1, 0, 'item_in');
-x.setJEIDurationSlot(2, 0, 'duration', scripts.jei.requious.getVisGauge(9, 1));
-x.setJEIFluidSlot(3, 0, 'fluid_out');
-x.setJEIItemSlot(4, 0, 'item_out1');
-x.setJEIItemSlot(5, 0, 'item_out2');
+x.setJEIItemSlot(2, 0, 'item_in');
+x.setJEIDurationSlot(4, 0, 'duration', scripts.jei.requious.getVisGauge(9, 1));
+x.setJEIFluidSlot(6, 0, 'fluid_out');
+x.setJEIItemSlot(8, 0, 'item_out1');
+x.setJEIItemSlot(10, 0, 'item_out2');
 
 function showHeat(heat as int) as IItemStack {
   return <ic2:heat_exchanger>.withTag({ advDmg: 2500 - heat, display: { Name: '§e' ~ heat ~ ' Heat' } });
@@ -154,8 +154,8 @@ addHeatExch(<fluid:ic2distilled_water>, 16, <fluid:steam> * 400, null, 0);
 x = <assembly:syngas_producer>;
 x.addJEICatalyst(<advgenerators:syngas_controller>);
 x.setJEIItemSlot(0, 0, 'input0');
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIFluidSlot(2, 0, 'fluid_out');
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIFluidSlot(4, 0, 'fluid_out');
 
 function getOreDictBurnTime(oreName as string) as int {
   for item in oreDict[oreName].items {

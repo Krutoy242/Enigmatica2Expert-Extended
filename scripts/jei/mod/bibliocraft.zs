@@ -10,8 +10,8 @@ import scripts.jei.requious.add as addRecipe;
 val x = <assembly:typewriter>;
 x.addJEICatalyst(<bibliocraft:typewriter>);
 x.addJEICatalyst(<bibliocraft:desk>);
-x.setJEIDurationSlot(4, 1, 'duration', SlotVisual.arrowRight());
-scripts.jei.requious.addInsOuts(x, [[2, 0], [0, 1], [1, 1], [2, 1], [1, 2], [2, 2]], [[6, 1]]);
+x.setJEIDurationSlot(8, 2, 'duration', SlotVisual.arrowRight());
+scripts.jei.requious.addInsOuts(x, [[4, 0], [0, 2], [2, 2], [4, 2], [2, 4], [4, 4]], [[12, 2]]);
 
 for name, book in scripts.mods.bibliocraft_books.bookWrittenBy {
   addRecipe(x, { [

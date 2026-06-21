@@ -12,8 +12,8 @@ val x = <assembly:petro_petunia>;
 x.addJEICatalyst(<botania:specialflower>.withTag({ type: 'petro_petunia' }));
 x.addJEICatalyst(<botania:floatingspecialflower>.withTag({ type: 'petro_petunia' }));
 x.setJEIFluidSlot(0, 0, 'liquid_input');
-x.setJEIDurationSlot(1, 0, 'duration', SlotVisual.arrowRight());
-x.setJEIItemSlot(2, 0, 'output0');
+x.setJEIDurationSlot(2, 0, 'duration', SlotVisual.arrowRight());
+x.setJEIItemSlot(4, 0, 'output0');
 
 for fluid, arr in {
 /* Inject_js(

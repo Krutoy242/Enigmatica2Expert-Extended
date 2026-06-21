@@ -9,18 +9,18 @@ import mods.requious.AssemblyRecipe;
 // -----------------------------------------------------------------------
 val x = <assembly:pech_trades>;
 x.addJEICatalyst(<entity:thaumcraft:pech>.asStack());
-x.setJEIItemSlot(3, 0, 'input0');
+x.setJEIItemSlot(6, 0, 'input0');
 
 // Diamonds
 for _y in 0 .. 5 {
-  x.setJEIItemSlot(0, _y + 1, 'input1' ~ _y, scripts.jei.requious.getVisSlots(0, 1));
+  x.setJEIItemSlot(0, _y * 2 + 2, 'input1' ~ _y, scripts.jei.requious.getVisSlots(0, 1));
 }
 
 // Main outputs
 var k = 0;
 for _y in 0 .. 5 {
   for _x in 0 .. 6 {
-    x.setJEIItemSlot(_x + 1, _y + 1, 'output' ~ _x ~ _y);
+    x.setJEIItemSlot(_x * 2 + 2, _y * 2 + 2, 'output' ~ _x ~ _y);
     k += 1;
   }
 }
