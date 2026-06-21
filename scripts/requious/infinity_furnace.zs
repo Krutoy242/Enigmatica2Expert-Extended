@@ -56,6 +56,7 @@ o.addVisual(MachineVisual.flame('active'.asVariable(), V(-0.1, -0.1, -0.1), V(1.
 
 function infinFurnace(inp as IIngredient, out as IItemStack) as void {
   if (isNull(inp) || isNull(out) || scripts.do.inworld_smelting.unobtainableAsItem has inp) return;
+  if (out.maxStackSize < MULTIPLIER) return;
 
   val assRecipe = AssemblyRecipe.create(function (c) {
     c.addItemOutput('output', out * min(64, out.amount * MULTIPLIER));
@@ -131,6 +132,9 @@ function pushToOutput(output as IItemStack, c as RecipeContainer) as bool {
         cachedOutput[input] = input;
         return;
       }
+
+      // Non-stackable items can't be output
+      if (smelted.maxStackSize < MULTIPLIER) return;
 
       cachedOutput[input] = smelted;
     }
