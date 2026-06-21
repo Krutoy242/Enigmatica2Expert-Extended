@@ -42,7 +42,7 @@ events.onPlayerInteractBlock(function (e as crafttweaker.event.PlayerInteractBlo
     (world.native as native.net.minecraft.world.WorldServer).spawnParticle(
       EnumParticleTypes.FIREWORKS_SPARK,
       x, y + 0.5, z, 2, 0.1, 0.1, 0.1, 0.1, 0);
-    world.playSound('thaumcraft:poof', 'ambient', e.position, 0.2f, 3.0f);
+    e.player.sendPlaySoundPacket('thaumcraft:poof', 'ambient', e.position, 0.2f, 3.0f);
     return;
   }
 
