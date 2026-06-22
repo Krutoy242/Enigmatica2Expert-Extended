@@ -6,6 +6,7 @@ import native.net.minecraft.block.Block;
 import native.net.minecraft.block.BlockDynamicLiquid;
 import native.net.minecraft.block.state.IBlockState;
 import native.net.minecraft.entity.monster.EntityZombie;
+import native.net.minecraft.entity.item.EntityItem;
 import native.net.minecraft.entity.player.EntityPlayer;
 import native.net.minecraft.init.Blocks;
 import native.net.minecraft.item.ItemStack;
@@ -222,6 +223,48 @@ zenClass MixinRitualMeteor {
   #}
   function fixIntegerDivisionInGetRadiusModifier(b as double) as double {
     return 1.0 / 3.0;
+  }
+
+  #mixin Inject { method: 'performRitual', at: { value: 'HEAD' }, cancellable: true }
+  function meteorCooldownCheck(mrs as IMasterRitualStone, ci as mixin.CallbackInfo) as void {
+    val world = mrs.worldObj;
+    val pos = mrs.blockPos;
+    val currentTime = world.worldInfo.worldTotalTime;
+    val lastTime = Op.lastMeteorTime[pos.hashCode()];
+    if (!isNull(lastTime)) {
+      if (currentTime - lastTime < 20) {
+        ci.cancel();
+      }
+    }
+  }
+
+  #mixin Redirect
+  #{
+  #  method: 'performRitual',
+  #  at: {
+  #    value: 'INVOKE',
+  #    target: 'LWayofTime/bloodmagic/ritual/IMasterRitualStone;setActive(Z)V'
+  #  }
+  #}
+  function preventDeactivation(mrs as IMasterRitualStone, active as bool) as void {
+    val world = mrs.worldObj;
+    Op.lastMeteorTime[mrs.blockPos.hashCode()] = world.worldInfo.worldTotalTime;
+  }
+
+  #mixin Redirect
+  #{
+  #  method: 'performRitual',
+  #  at: {
+  #    value: 'INVOKE',
+  #    target: 'Lnet/minecraft/entity/item/EntityItem;func_70106_y()V'
+  #  }
+  #}
+  function consumeOneFromStack(entity as EntityItem) as void {
+    val stack = entity.item;
+    stack.shrink(1);
+    if (stack.isEmpty()) {
+      entity.setDead();
+    }
   }
 }
 

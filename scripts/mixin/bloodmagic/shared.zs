@@ -12,6 +12,7 @@ import native.net.minecraftforge.registries.IForgeRegistryEntry;
 zenClass Op {
   static catalystToBlock as IBlockState[];
   static selectedBlock as IBlockState;
+  static lastMeteorTime as long[int] = {} as long[int];
 
   static init as function()IBlockState[] = function () as IBlockState[] {
     return [
