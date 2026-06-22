@@ -349,8 +349,6 @@ desc.tooltip(<minecraft:sponge>, 'sponge.can_remove');
 desc.both(<netherendingores:ore_nether_modded_1:7>, 'worldgen.disabled_use_sub');
 desc.both(<netherendingores:ore_end_modded_1:7>, 'worldgen.disabled_use_sub');
 desc.both(<thermalfoundation:ore:2>, 'worldgen.disabled_use_sub');
-desc.both(<rftools:syringe>, 'syringe_craftable');
-desc.both(<rftools:spawner>, 'syringe_craftable');
 desc.both(<tconstruct:shard>.withTag({ Material: 'fusewood' }), 'tcon.fusewood');
 desc.both(<tconstruct:shard>.withTag({ Material: 'darkwood' }), 'tcon.darkwood');
 desc.both(<tconstruct:shard>.withTag({ Material: 'bloodwood' }), 'tcon.bloodwood');

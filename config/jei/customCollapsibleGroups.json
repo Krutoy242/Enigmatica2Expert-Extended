@@ -653,5 +653,12 @@
     "itemUids": [
       "conarm:helmet_core:*"
     ]
+  },
+  {
+    "id": "custom:e5f6a7b8",
+    "displayName": "Syringe",
+    "itemUids": [
+      "rftools:syringe:*"
+    ]
   }
 ]

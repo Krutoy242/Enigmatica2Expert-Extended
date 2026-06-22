@@ -627,7 +627,6 @@ tooltips.lang.backpack.Wolf=§aChecks around for any wolves that may lurk around
 tooltips.lang.sponge.removed_with=§6Can be removed from armor with a Sponge.§r
 tooltips.lang.sponge.can_remove=§6Can remove jetpacks from armor.§r
 tooltips.lang.worldgen.disabled_use_sub=§6World generation §cdisabled§r.
-tooltips.lang.syringe_craftable=§nSyringe§r is craftable but hidden in JEI
 tooltips.lang.tcon.fusewood=§nFusewood§r crafts from §nShimmerwood§r
 tooltips.lang.tcon.darkwood=§nDarkwood§r crafts from §nLightwood§r
 tooltips.lang.tcon.bloodwood=§nBloodwood§r crafts from §nBlood Wood§r
