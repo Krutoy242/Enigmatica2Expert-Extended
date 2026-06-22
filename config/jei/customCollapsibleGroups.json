@@ -660,5 +660,12 @@
     "itemUids": [
       "rftools:syringe:*"
     ]
+  },
+  {
+    "id": "custom:a9b8c7d6",
+    "displayName": "Crafting Table",
+    "itemUids": [
+      "randomthings:customworkbench:*"
+    ]
   }
 ]
