@@ -22,6 +22,7 @@ static superwand as IItemStack = <omniwand:wand>.withTag({
     architecturecraft1  : { id: 'architecturecraft:hammer'                       , Count: 1, tag: { 'omniwand:definedMod': 'architecturecraft1'   } },
     bloodmagic          : { id: 'bloodmagic:ritual_reader'                       , Count: 1, tag: { 'omniwand:definedMod': 'bloodmagic'           } },
     bloodmagic0         : { id: 'bloodmagic:node_router'                         , Count: 1, tag: { 'omniwand:definedMod': 'bloodmagic0'          } },
+    bloodmagic1         : { id: 'bloodmagic:demon_will_gauge'                    , Count: 1, tag: { 'omniwand:definedMod': 'bloodmagic1'          } },
     botania             : { id: 'botania:twigwand'                               , Count: 1, tag: { 'omniwand:definedMod': 'botania'              } },
     chisel              : { id: 'chisel:offsettool'                              , Count: 1, tag: { 'omniwand:definedMod': 'chisel'               } },
     compactmachines3    : { id: 'compactmachines3:psd'                           , Count: 1, tag: { 'omniwand:definedMod': 'compactmachines3'     } },
