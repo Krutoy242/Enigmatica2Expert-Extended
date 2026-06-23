@@ -1,0 +1,17 @@
+{
+  "modifier": "excompressum:compressing",
+  "text": [
+    {
+      "text": "採掘したブロックを自動的に圧縮形態に戻します。シルクタッチとは互換性がありません。"
+    }
+  ],
+  "effects": [
+    "ドロップを自動圧縮",
+    "単一レベル",
+    "シルクタッチと非互換"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "modifier": "excompressum:smashingii",
+  "text": [
+    {
+      "text": "允许工具粉碎压缩方块，应用锤击奖励。增加伤害但略微降低挖掘速度。"
+    }
+  ],
+  "effects": [
+    "对压缩方块有粉碎效果",
+    "+3 伤害",
+    "-0.5 挖掘速度",
+    "与精准采集不兼容"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

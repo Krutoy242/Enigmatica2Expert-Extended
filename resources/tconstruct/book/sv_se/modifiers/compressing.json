@@ -1,0 +1,17 @@
+{
+  "modifier": "excompressum:compressing",
+  "text": [
+    {
+      "text": "Komprimerar automatiskt brutna block tillbaka till deras komprimerade form. Inkompatibel med Silk Touch."
+    }
+  ],
+  "effects": [
+    "Auto-komprimerar drops",
+    "Engångsanvändning",
+    "Inkompatibel med Silk Touch"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

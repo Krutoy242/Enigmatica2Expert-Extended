@@ -1,0 +1,17 @@
+{
+  "modifier": "excompressum:compressing",
+  "text": [
+    {
+      "text": "채굴한 블록을 자동으로 압축된 형태로 되돌립니다. 섬세한 손길과 호환되지 않습니다."
+    }
+  ],
+  "effects": [
+    "드롭 자동 압축",
+    "단일 사용",
+    "섬세한 손길과 비호환"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

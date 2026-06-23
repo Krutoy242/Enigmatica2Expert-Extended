@@ -1,0 +1,17 @@
+{
+  "modifier": "excompressum:compressing",
+  "text": [
+    {
+      "text": "自動將挖掘的方塊重新壓縮回壓縮型態。與絲綢之觸不相容。"
+    }
+  ],
+  "effects": [
+    "自動壓縮掉落物",
+    "只能強化一次",
+    "與絲綢之觸不相容"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

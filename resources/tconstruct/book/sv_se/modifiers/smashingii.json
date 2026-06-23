@@ -1,0 +1,18 @@
+{
+  "modifier": "excompressum:smashingii",
+  "text": [
+    {
+      "text": "Låter verktyget krossa komprimerade block och tillämpa hammarbelöningar. Ökar skadan men minskar gruvhastigheten något."
+    }
+  ],
+  "effects": [
+    "Krossningseffekt på komprimerade block",
+    "+3 skada",
+    "-0.5 gruvhastighet",
+    "Inkompatibel med Silk Touch"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

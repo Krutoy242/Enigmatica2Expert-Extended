@@ -1,0 +1,17 @@
+{
+  "modifier": "excompressum:compressing",
+  "text": [
+    {
+      "text": "Automatically compresses mined blocks back into their compressed form. Incompatible with Silk Touch."
+    }
+  ],
+  "effects": [
+    "Auto-compresses drops",
+    "Single use",
+    "Incompatible with Silk Touch"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

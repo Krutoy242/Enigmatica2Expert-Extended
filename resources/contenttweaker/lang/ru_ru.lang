@@ -1,7 +1,10 @@
 #PARSE_ESCAPES
 
 # Various fixes
+modifier.excompressum:smashingii.name=Дробление II
 modifier.excompressum:smashingii.desc=Забивание сжатых блоков молотком
+modifier.excompressum:compressing.name=Сжатие
+modifier.excompressum:compressing.desc=Автоматически сжимает выпавшие блоки
 tile.spectreCoil_number.info=Генерирует 32 RF/t и выдает их в блок, к которому прикреплен. Их можно найти в сундуках в подземельях.
 entity.twilightforest.harbinger_cube.name=Куб Предвестника
 entity.twilightforest.castle_guardian.name=Хранитель замка

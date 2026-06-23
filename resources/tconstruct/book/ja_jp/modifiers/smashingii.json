@@ -1,0 +1,18 @@
+{
+  "modifier": "excompressum:smashingii",
+  "text": [
+    {
+      "text": "道具で圧縮ブロックを粉砕できるようになり、ハンマーの報酬が適用されます。ダメージが増加しますが、採掘速度がわずかに低下します。"
+    }
+  ],
+  "effects": [
+    "圧縮ブロックへの粉砕効果",
+    "+3 ダメージ",
+    "-0.5 採掘速度",
+    "シルクタッチと非互換"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

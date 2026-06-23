@@ -1,7 +1,10 @@
 #PARSE_ESCAPES
 
 # Various fixes 表述修复
+modifier.excompressum:smashingii.name=粉碎 II
 modifier.excompressum:smashingii.desc=锤击压缩方块
+modifier.excompressum:compressing.name=压缩
+modifier.excompressum:compressing.desc=自动压缩方块掉落物
 tile.spectreCoil_number.info=产生 32 RF/t 并输出到所贴的方块中。它们可以在地牢箱子中找到。
 entity.twilightforest.harbinger_cube.name=先驱者立方体
 entity.twilightforest.castle_guardian.name=城堡守护者

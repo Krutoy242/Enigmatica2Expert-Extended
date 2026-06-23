@@ -1,0 +1,17 @@
+{
+  "modifier": "excompressum:compressing",
+  "text": [
+    {
+      "text": "自动将挖掘的方块重新压缩回压缩形态。与精准采集不兼容。"
+    }
+  ],
+  "effects": [
+    "自动压缩掉落物",
+    "只能强化一次",
+    "与精准采集不兼容"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "modifier": "excompressum:smashingii",
+  "text": [
+    {
+      "text": "도구가 압축 블록을 분쇄하여 망치 보상을 적용할 수 있게 합니다. 피해량이 증가하지만 채굴 속도가 약간 감소합니다."
+    }
+  ],
+  "effects": [
+    "압축 블록 분쇄 효과",
+    "+3 피해",
+    "-0.5 채굴 속도",
+    "섬세한 손길과 비호환"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}

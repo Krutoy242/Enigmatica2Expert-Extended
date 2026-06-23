@@ -1,0 +1,18 @@
+{
+  "modifier": "excompressum:smashingii",
+  "text": [
+    {
+      "text": "Allows the tool to smash compressed blocks, applying hammer rewards. Increases damage but slightly reduces mining speed."
+    }
+  ],
+  "effects": [
+    "Smashing effect on compressed blocks",
+    "+3 damage",
+    "-0.5 mining speed",
+    "Incompatible with Silk Touch"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:hammer"
+  ]
+}
