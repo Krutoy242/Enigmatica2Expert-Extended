@@ -38,8 +38,9 @@
         ]
       }
     },
-    "nether-emerald": {
+    "nether-emerald-disabled": {
       "distribution": "uniform",
+      "enabled": false,
       "generator": {
         "block": {
           "name": "netherendingores:ore_nether_vanilla",
