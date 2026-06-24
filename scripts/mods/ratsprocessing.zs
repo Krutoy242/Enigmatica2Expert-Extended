@@ -6,8 +6,8 @@ static listRatPoop as IItemStack[] = [
 /* Inject_js(
 getFurnaceRecipes()
 ?.filter(g=>g.in_id==='rats:rat_nugget_ore')
-.map(g=>'  '+g.input.replace(/"/gm, "'"))
-.join(',\n')
+.map(g=>'  '+g.input.replace(/"/gm, "'")+',')
+.join('\n')
 ) */
   <rats:rat_nugget_ore:1>.withTag({ OreItem: { id: 'thaumcraft:ore_amber', Count: 1, Damage: 0 as short }, IngotItem: { id: 'thaumcraft:amber', Count: 1, Damage: 0 as short } }),
   <rats:rat_nugget_ore:2>.withTag({ OreItem: { id: 'forestry:resources', Count: 1, Damage: 0 as short }, IngotItem: { id: 'forestry:apatite', Count: 1, Damage: 0 as short } }),
