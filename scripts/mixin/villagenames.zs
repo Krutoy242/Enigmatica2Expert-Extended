@@ -1,6 +1,7 @@
 #modloaded villagenames
 #loader mixin
 
+import native.net.minecraft.entity.EntityLiving;
 import native.net.minecraft.entity.passive.EntityVillager;
 import native.net.minecraft.nbt.NBTTagCompound;
 
@@ -34,5 +35,17 @@ zenClass EntityMonitorHandlerMixin {
   #mixin Local { parameter: -1, ref: false }
   function getCareerLevel(instance as NBTTagCompound, key as string, villager as EntityVillager) as int {
     return villager.careerLevel;
+  }
+}
+
+#mixin Mixin { targets: 'astrotibs.villagenames.handler.EntityInteractHandler' }
+zenClass EntityInteractHandlerMixin {
+
+  // Fix tagged entities not always stay persistent
+
+  #mixin Redirect { method: 'onEntityInteract', at: { value: 'INVOKE', target: 'Lnet/minecraft/entity/EntityLiving;func_96094_a(Ljava/lang/String;)V' } }
+  function nameAndPersist(entity as EntityLiving, name as string) as void {
+    entity.setCustomNameTag(name);
+    entity.enablePersistence();
   }
 }
