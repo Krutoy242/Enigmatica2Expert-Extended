@@ -1,11 +1,11 @@
 {
-  "!!!CrashAssistant-forge-1.12.2-1.11.9.jar": {
-    "curseForgeHash": 2809995661,
-    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.9.jar",
+  "!!!CrashAssistant-forge-1.12.2-1.11.10.jar": {
+    "curseForgeHash": 2154765126,
+    "jarName": "!!!CrashAssistant-forge-1.12.2-1.11.10.jar",
     "modId": "crash_assistant",
-    "modrinthHash": "453e2c12f8726d1af243988a1a571e44574e93fb",
+    "modrinthHash": "a3cd8336929d1e88f48ae2450b85a54dff571e62",
     "name": "Crash Assistant",
-    "version": "1.11.9"
+    "version": "1.11.10"
   },
   "!cleanroom-relauncher-0.5.0.jar": {
     "curseForgeHash": 2029300353,
@@ -44,13 +44,13 @@
     "name": "Red Core",
     "version": "0.7.1"
   },
-  "+Fugue-0.23.4.jar": {
-    "curseForgeHash": 3396816010,
-    "jarName": "+Fugue-0.23.4.jar",
+  "+Fugue-0.23.6.jar": {
+    "curseForgeHash": 2777073641,
+    "jarName": "+Fugue-0.23.6.jar",
     "modId": "fugue",
-    "modrinthHash": "7ed08cd84a22e2f3fbf81d6bf263cd409c88a674",
+    "modrinthHash": "4838adc13a1bd5e47361fc65c2e1f97e4ca83fe5",
     "name": "Fugue",
-    "version": "0.23.4"
+    "version": "0.23.6"
   },
   "[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar": {
     "curseForgeHash": 1044045050,
@@ -68,13 +68,13 @@
     "name": "FermiumBooter",
     "version": "1.2.0"
   },
-  "ActuallyAdditions-1.12.2-r152.jar": {
-    "curseForgeHash": 1923394747,
-    "jarName": "ActuallyAdditions-1.12.2-r152.jar",
+  "ActuallyAdditions-1.12.2-r155.jar": {
+    "curseForgeHash": 4016612014,
+    "jarName": "ActuallyAdditions-1.12.2-r155.jar",
     "modId": "actuallyadditions",
-    "modrinthHash": "6e5f7deda0d3cf196b38f57eb60ef18a85b0ca2d",
-    "name": "Actually Additions",
-    "version": "1.12.2-r152"
+    "modrinthHash": "8fdef8c4dc87da80f2e3e0cd6080d264593ad890",
+    "name": "Actually Additions V2 Coffee Edition",
+    "version": "1.12.2-r155"
   },
   "ActuallyBaubles-1.12-1.1.jar": {
     "curseForgeHash": 4219803846,
@@ -100,13 +100,13 @@
     "name": "Advanced Essentia Smelter",
     "version": "1.2.0"
   },
-  "advancedrocketry-2.2.9.jar": {
-    "curseForgeHash": 2337284796,
-    "jarName": "advancedrocketry-2.2.9.jar",
+  "advancedrocketry-2.2.11.jar": {
+    "curseForgeHash": 3676488746,
+    "jarName": "advancedrocketry-2.2.11.jar",
     "modId": "advancedrocketry",
-    "modrinthHash": "b50e77f641bfc2f3339dcd32a27c3da2f3b80c69",
+    "modrinthHash": "0081cd83b3bdc22b9abdbdf621b10128ccff8f45",
     "name": "Advanced Rocketry",
-    "version": "2.2.9"
+    "version": "2.2.11"
   },
   "AdvancedTweakery-1.2.jar": {
     "curseForgeHash": 3270717551,
@@ -347,13 +347,13 @@
     "name": "Baubles",
     "version": "1.12-1.5.2"
   },
-  "Baubley-Elytra-v1.3.5-mc1.12.2.jar": {
-    "curseForgeHash": 1902740465,
-    "jarName": "Baubley-Elytra-v1.3.5-mc1.12.2.jar",
+  "Baubley-Elytra-v1.3.6-mc1.12.2.jar": {
+    "curseForgeHash": 311413783,
+    "jarName": "Baubley-Elytra-v1.3.6-mc1.12.2.jar",
     "modId": "baubleye",
-    "modrinthHash": "b2c263ef7f315314bff98c0f833f0fe0b0712757",
+    "modrinthHash": "bc5ef8f694d588a650709b9e226782601cc5eaa9",
     "name": "Baubley Elytra",
-    "version": "v1.3.5-mc1.12.2"
+    "version": "v1.3.6-mc1.12.2"
   },
   "bdlib-1.14.4.1-mc1.12.2.jar": {
     "curseForgeHash": 3999087316,
@@ -379,13 +379,13 @@
     "name": "Better Animals Plus",
     "version": "1.0"
   },
-  "betterbiomeblend-1.12.2-1.1.7-forge.jar": {
-    "curseForgeHash": 3162109178,
-    "jarName": "betterbiomeblend-1.12.2-1.1.7-forge.jar",
+  "betterbiomeblend-1.12.2-1.2.1-forge.jar": {
+    "curseForgeHash": 3926713113,
+    "jarName": "betterbiomeblend-1.12.2-1.2.1-forge.jar",
     "modId": "betterbiomeblend",
-    "modrinthHash": "a9463fed7357f39515707b5bbb4cac780916abf5",
+    "modrinthHash": "008ab6154d6230deec2ec68b0b2e997f75a6e7c6",
     "name": "Better Biome Blend",
-    "version": "1.12.2-1.1.7-forge"
+    "version": "1.12.2-1.2.1-forge"
   },
   "BetterBuildersWands-1.12.2-0.13.2.271+5997513.jar": {
     "curseForgeHash": 2031588189,
@@ -504,13 +504,13 @@
     "name": "BNBGamingLib",
     "version": "2.17.6"
   },
-  "bogosorter-1.6.3.jar": {
-    "curseForgeHash": 3733870074,
-    "jarName": "bogosorter-1.6.3.jar",
+  "bogosorter-1.6.4.jar": {
+    "curseForgeHash": 138436343,
+    "jarName": "bogosorter-1.6.4.jar",
     "modId": "bogosorter",
-    "modrinthHash": "ddfb8d47c33164473752cbf2f83a436defd030e4",
+    "modrinthHash": "f8f1c7da398a48f7d9169381f1d984844056dc64",
     "name": "Inventory Bogo Sorter",
-    "version": "1.6.3"
+    "version": "1.6.4"
   },
   "Bookshelf-1.12.2-2.3.590.jar": {
     "curseForgeHash": 2546524333,
@@ -648,11 +648,11 @@
     "name": "Clay Bucket",
     "version": "1.1"
   },
-  "cleanroom-0.5.8-alpha.jar (modloader)": {
-    "jarName": "cleanroom-0.5.8-alpha.jar (modloader)",
+  "cleanroom-0.5.14-alpha.jar (modloader)": {
+    "jarName": "cleanroom-0.5.14-alpha.jar (modloader)",
     "modId": "forge",
     "name": "forge",
-    "version": "cleanroom-0.5.8-alpha.jar"
+    "version": "cleanroom-0.5.14-alpha.jar"
   },
   "cloche-profit-peripheral-1.12.2-1.0.3.jar": {
     "curseForgeHash": 150773679,
@@ -1147,13 +1147,13 @@
     "name": "Fluid Interaction Tweaker",
     "version": "1.5.4"
   },
-  "Fluidlogged-API-v3.3.1-mc1.12.2.jar": {
-    "curseForgeHash": 2088582399,
-    "jarName": "Fluidlogged-API-v3.3.1-mc1.12.2.jar",
+  "Fluidlogged-API-v3.3.2-mc1.12.2.jar": {
+    "curseForgeHash": 1769109095,
+    "jarName": "Fluidlogged-API-v3.3.2-mc1.12.2.jar",
     "modId": "fluidlogged_api",
-    "modrinthHash": "e9db91f5ee01c439e78c1ec30346a4aee22139e6",
+    "modrinthHash": "48257524699d9e272bf488d2698e9cf0c72cfbaf",
     "name": "Fluidlogged API",
-    "version": "3.3.1"
+    "version": "3.3.2"
   },
   "FluxNetworks-1.12.2-4.1.1.34.jar": {
     "curseForgeHash": 449558524,
@@ -1171,11 +1171,11 @@
     "name": "Forestry",
     "version": "5.8.2.427"
   },
-  "Forgelin-Continuous-2.3.20.0.jar": {
-    "curseForgeHash": 1069092308,
-    "jarName": "Forgelin-Continuous-2.3.20.0.jar",
+  "Forgelin-Continuous-2.4.0.0.jar": {
+    "curseForgeHash": 3601500613,
+    "jarName": "Forgelin-Continuous-2.4.0.0.jar",
     "modId": "forgelin_continuous",
-    "modrinthHash": "60a0086110cc0854917d359a9ea7153e6a866437",
+    "modrinthHash": "fdb427826212464a7ccb0e924936dec09ee97c7f",
     "name": "Forgelin-Continuous",
     "version": "2.3.10.0"
   },
@@ -1422,6 +1422,14 @@
     "modrinthHash": "dd0ec378fef19acc7cf649be13ced76aa72e42ac",
     "name": "Immersive Petroleum",
     "version": "1.1.10"
+  },
+  "ImmersivePosts-0.2.1.jar": {
+    "curseForgeHash": 3121263219,
+    "jarName": "ImmersivePosts-0.2.1.jar",
+    "modId": "immersiveposts",
+    "modrinthHash": "7f8b97e25ed8072715f558cc6efe7f7997f492b7",
+    "name": "Immersive Posts",
+    "version": "0.2.1"
   },
   "incontrol-1.12-3.9.18.jar": {
     "curseForgeHash": 622213382,
@@ -1726,11 +1734,11 @@
     "name": "libnine",
     "version": "1.2.2"
   },
-  "libvulpes-0.5.3.jar": {
-    "curseForgeHash": 316802587,
-    "jarName": "libvulpes-0.5.3.jar",
+  "libvulpes-0.5.4.jar": {
+    "curseForgeHash": 2026897180,
+    "jarName": "libvulpes-0.5.4.jar",
     "modId": "libVulpes",
-    "modrinthHash": "c4d8ef24f45f03ba62cb6987e47b82d73bf56f6b",
+    "modrinthHash": "3056423a51ed8e316ce992ddf3d824494afec254",
     "name": "libVulpes",
     "version": "0.4.3"
   },
@@ -1749,13 +1757,13 @@
     "name": "LLibrary",
     "version": "1.7.20-1.12.2"
   },
-  "loliasm-5.32.jar": {
-    "curseForgeHash": 1093273491,
-    "jarName": "loliasm-5.32.jar",
+  "loliasm-5.33.jar": {
+    "curseForgeHash": 850524745,
+    "jarName": "loliasm-5.33.jar",
     "modId": "loliasm",
-    "modrinthHash": "2402aa4be7740722f34f04cd8574f3eeb749d508",
+    "modrinthHash": "71eea31ddedc783b02bee6490d4c1f3aae10cc9c",
     "name": "LoliASM",
-    "version": "5.32"
+    "version": "5.33"
   },
   "lootcapacitortooltips-1.3.jar": {
     "curseForgeHash": 60008387,
@@ -1842,21 +1850,21 @@
     "name": "McJtyLib",
     "version": "1.12-3.5.4"
   },
-  "MCTImmersiveTechnology-1.12.2-1.9.102.jar": {
-    "curseForgeHash": 2720808452,
-    "jarName": "MCTImmersiveTechnology-1.12.2-1.9.102.jar",
+  "MCT-ImmersiveTechnology-1.12.2-1.10.197-release.jar": {
+    "curseForgeHash": 3915068922,
+    "jarName": "MCT-ImmersiveTechnology-1.12.2-1.10.197-release.jar",
     "modId": "immersivetech",
-    "modrinthHash": "7dd15d79b2b1584340d16f4e38efcc23078a0c7b",
+    "modrinthHash": "20ee3b43b5e9e903f2568830c4497141cbcc1978",
     "name": "Immersive Technology",
-    "version": "1.9.102"
+    "version": "1.10.197"
   },
-  "MCTSmelteryIO-1.12.2-1.2.63.jar": {
-    "curseForgeHash": 2099660089,
-    "jarName": "MCTSmelteryIO-1.12.2-1.2.63.jar",
-    "modId": "mctsmelteryio",
-    "modrinthHash": "bfed48e7503a1c6b283dc67b7958db3313984afd",
+  "MCT-SmelteryIO-1.12.2-1.3.70.jar": {
+    "curseForgeHash": 2098354709,
+    "jarName": "MCT-SmelteryIO-1.12.2-1.3.70.jar",
+    "modId": "smelteryio",
+    "modrinthHash": "06e641d1cc92c59f9fd439adf24c66685d3e7322",
     "name": "Smeltery IO",
-    "version": "1.2.63"
+    "version": "1.3.70"
   },
   "mechanics-1.1.jar": {
     "curseForgeHash": 145804568,
@@ -2402,24 +2410,24 @@
     "name": "Quantum Minecraft Dynamics",
     "version": "1.5.1"
   },
-  "QuantumThings-MC-1.12.2-1.2.1.jar": {
-    "curseForgeHash": 2975942928,
-    "jarName": "QuantumThings-MC-1.12.2-1.2.1.jar",
+  "QuantumThings-MC-1.12.2-1.2.2.jar": {
+    "curseForgeHash": 1290521293,
+    "jarName": "QuantumThings-MC-1.12.2-1.2.2.jar",
     "modId": "randomthings",
-    "modrinthHash": "1944595784efc9b4befc629028a3f4eb73bb4f2a",
+    "modrinthHash": "77a32145a524169c447c04e3e1e8023091b41456",
     "name": "Quantum Things",
-    "version": "1.2.1"
+    "version": "1.2.2"
   },
   "QuarkOddities-1.12.2.jar": {
     "curseForgeHash": 4267477614,
     "jarName": "QuarkOddities-1.12.2.jar",
     "modrinthHash": "f2ba40e084e31a00e1a93c44dd01d07384bd1fcd"
   },
-  "QuarkRotN-r1.6-191.jar": {
-    "curseForgeHash": 324349683,
-    "jarName": "QuarkRotN-r1.6-191.jar",
+  "QuarkRotN-r1.6-192.jar": {
+    "curseForgeHash": 739736479,
+    "jarName": "QuarkRotN-r1.6-192.jar",
     "modId": "quark",
-    "modrinthHash": "ca442c6ac9689fedba3e57594a893413e275367a",
+    "modrinthHash": "6a7f4bb505a0791817d6a67d4e62713abffe5155",
     "name": "Quark: RotN Edition",
     "version": "r1.6-189"
   },
@@ -2471,13 +2479,13 @@
     "name": "ReAuth",
     "version": "4.0.7"
   },
-  "RecurrentComplex-1.4.8.6.jar": {
-    "curseForgeHash": 4103085058,
-    "jarName": "RecurrentComplex-1.4.8.6.jar",
+  "RecurrentComplexVolts-1.12.2-2.0.0.6.jar": {
+    "curseForgeHash": 3308031527,
+    "jarName": "RecurrentComplexVolts-1.12.2-2.0.0.6.jar",
     "modId": "reccomplex",
-    "modrinthHash": "31059d070bee48368050cf774ea3e8f9caea0356",
-    "name": "Recurrent Complex",
-    "version": "${version}"
+    "modrinthHash": "e7dc7a9be74c1441c43540e8aaefa6a8d09f041d",
+    "name": "Recurrent Complex Volts",
+    "version": "2.0.0.6"
   },
   "RedstoneArsenal-1.12.2-2.6.6.1-universal.jar": {
     "curseForgeHash": 1856421527,
@@ -2503,21 +2511,21 @@
     "name": "Redstone Repository",
     "version": "1.12.2-2.0.0"
   },
-  "reim-0.2.jar": {
-    "curseForgeHash": 2613176706,
-    "jarName": "reim-0.2.jar",
+  "reim-0.3.jar": {
+    "curseForgeHash": 2063838964,
+    "jarName": "reim-0.3.jar",
     "modId": "examplemod",
-    "modrinthHash": "b966d11844eaa25b38c7effe2a694e057df0514e",
+    "modrinthHash": "e0c35a06abe86b0923850e59aa1a4aa150c6e714",
     "name": "Example Mod",
     "version": "${version}"
   },
-  "Requious Frakto-0.12.jar": {
-    "curseForgeHash": 2092184093,
-    "jarName": "Requious Frakto-0.12.jar",
-    "modId": "Requious",
-    "modrinthHash": "c853ee5e45613f37f787ba54333996b89bc1ece0",
-    "name": "Requious Frakto",
-    "version": "0.12"
+  "requious-0.13.jar": {
+    "curseForgeHash": 3742776026,
+    "jarName": "requious-0.13.jar",
+    "modId": "requious",
+    "modrinthHash": "8a4778040af0ee911a78505a0fdef26839f770d4",
+    "name": "Requious Frakto Unofficial",
+    "version": "0.13"
   },
   "ResourceLoader-MC1.12.1-1.5.3.jar": {
     "curseForgeHash": 699442863,
@@ -2695,13 +2703,13 @@
     "name": "SonarCore",
     "version": "1.12.2-5.0.19-20"
   },
-  "soundphysics-1.1.15.jar": {
-    "curseForgeHash": 2259711888,
-    "jarName": "soundphysics-1.1.15.jar",
+  "soundphysics-1.2.0.jar": {
+    "curseForgeHash": 3036171607,
+    "jarName": "soundphysics-1.2.0.jar",
     "modId": "soundphysics",
-    "modrinthHash": "7472d11becf277a176511e2caf1a11e90a92157c",
+    "modrinthHash": "2d00e1e76f90b404a835b4aae197ad5a207fc270",
     "name": "Sound Physics",
-    "version": "1.1.13"
+    "version": "1.2.0"
   },
   "SpiceOfLife-mc1.12-1.3.12.jar": {
     "curseForgeHash": 1006591478,
@@ -2823,13 +2831,13 @@
     "name": "Thaumic Additions",
     "version": "12.7.9"
   },
-  "thaumicapi-1.0.2.jar": {
-    "curseForgeHash": 3971942461,
-    "jarName": "thaumicapi-1.0.2.jar",
+  "thaumicapi-1.1.1.jar": {
+    "curseForgeHash": 886444453,
+    "jarName": "thaumicapi-1.1.1.jar",
     "modId": "thaumicapi",
-    "modrinthHash": "6d1f7ca13a3c2f072cabec29c9a707537b67fc24",
+    "modrinthHash": "3cdad98377c98f00dc8d0b992b709a98fdf7f430",
     "name": "ThaumicAPI",
-    "version": "1.0.2"
+    "version": "1.1.1"
   },
   "ThaumicAugmentation-1.12.2-2.1.14.jar": {
     "curseForgeHash": 965509518,
@@ -2863,21 +2871,21 @@
     "name": "Thaumic Tinkerer Unofficial",
     "version": "1.12.2-5.9.15-Unofficial"
   },
-  "thaumictweaker-1.3.1.jar": {
-    "curseForgeHash": 760156386,
-    "jarName": "thaumictweaker-1.3.1.jar",
+  "thaumictweaker-1.3.2.jar": {
+    "curseForgeHash": 1325599421,
+    "jarName": "thaumictweaker-1.3.2.jar",
     "modId": "thaumictweaker",
-    "modrinthHash": "6d3c3f4bed3b0cfc2fbeb44e98ea33e885a9f22a",
+    "modrinthHash": "88e8bd2db3746466c2da8ce4f49460be5f28a182",
     "name": "ThaumicTweaker",
-    "version": "1.3.1"
+    "version": "1.3.2"
   },
-  "thaumicwonders-2.3.1.jar": {
-    "curseForgeHash": 955604053,
-    "jarName": "thaumicwonders-2.3.1.jar",
+  "thaumicwonders-2.3.2.jar": {
+    "curseForgeHash": 3220410144,
+    "jarName": "thaumicwonders-2.3.2.jar",
     "modId": "thaumicwonders",
-    "modrinthHash": "4e9379d12e6bf77acb582abb20435871d2f7c2b0",
+    "modrinthHash": "71747e9cf02aa9702868060769f4bbf8825f2cf2",
     "name": "Thaumic Wonders Unofficial",
-    "version": "2.3.1"
+    "version": "2.3.2"
   },
   "TheOneProbe-CE-1.12-1.3.7-fix1.jar": {
     "curseForgeHash": 2235912560,
@@ -3345,13 +3353,13 @@
     "name": "Zen Toolforge",
     "version": "1.1"
   },
-  "zenutils-1.27.2.jar": {
-    "curseForgeHash": 643850926,
-    "jarName": "zenutils-1.27.2.jar",
+  "zenutils-1.27.4.jar": {
+    "curseForgeHash": 777982235,
+    "jarName": "zenutils-1.27.4.jar",
     "modId": "zenutils",
-    "modrinthHash": "dc78b15324f852fc4a633e2f938b765c355a5ea7",
+    "modrinthHash": "129b82add4e53870c1b714143c362ede8fcb940a",
     "name": "ZenUtils",
-    "version": "1.27.2"
+    "version": "1.27.4"
   },
   "zume-1.2.2.jar": {
     "curseForgeHash": 520005726,
