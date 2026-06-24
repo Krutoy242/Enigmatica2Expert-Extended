@@ -7,10 +7,10 @@ import mods.zenutils.StaticString.format;
 import crafttweaker.util.Math;
 
 // How strong Difficulty effects on resulted cost
-static DIFFUCULTY_FACTOR as double = 0.01;
+static DIFFUCULTY_FACTOR as double = 0.001;
 
 // Minimum item cost multiplier when changed by difficulty
-static MIN_COST as double = 0.01;
+static MIN_COST as double = 0.001;
 
 // Fraction of UU-Matter cost (in mb) that will be added to difficulty
 function diffIncrease(uuMbConsumed as double) as double {
