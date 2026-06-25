@@ -10,12 +10,9 @@ import native.slimeknights.tconstruct.library.traits.ITrait;
 import native.slimeknights.tconstruct.library.materials.Material;
 import native.c4.conarm.lib.ArmoryRegistry;
 
-val cmd = mods.zenutils.command.ZenCommand.create('dump_tcon');
-cmd.requiredPermissionLevel = 0;
-cmd.execute = function (command, server, sender, args) {
+scripts.debug.dump.main.registerSubcommand('traits', function (sender as ICommandSender) as void {
   dumpTConInfo(sender);
-};
-cmd.register();
+});
 
 function dumpTConInfo(sender as ICommandSender) as void {
   sender.sendMessage('\u00A76========== TCon Registry Dump ==========');
@@ -27,7 +24,7 @@ function dumpTConInfo(sender as ICommandSender) as void {
   var matCount = 0 as int;
   var hiddenMatCount = 0 as int;
   var matTraitEntries = 0 as int;
-  var uniqueTraitIds = {} as bool[string];
+  val uniqueTraitIds = {} as bool[string];
 
   for mat in mats {
     matCount = matCount + 1 as int;
@@ -56,7 +53,7 @@ function dumpTConInfo(sender as ICommandSender) as void {
   var traitModCount = 0 as int;
   var modRawKeyCount = 0 as int;
   var modHiddenCount = 0 as int;
-  var tconTraitSet = {} as bool[string];
+  val tconTraitSet = {} as bool[string];
 
   for mod in mods {
     modCount = modCount + 1 as int;
@@ -76,7 +73,7 @@ function dumpTConInfo(sender as ICommandSender) as void {
     if (!hasLocalized) modRawKeyCount = modRawKeyCount + 1 as int;
 
     val tTag = isTrait ? '\u00A7a[T] ' : '\u00A7d[M] ';
-    val lName = hasLocalized ? localized : ('\u00A78' ~ (isNull(localized) || localized == '' ? '<raw key>' : localized));
+    val lName = hasLocalized ? localized : '\u00A78' ~ (isNull(localized) || localized == '' ? '<raw key>' : localized);
     sender.sendMessage('  ' ~ tTag ~ '\u00A7e' ~ modId ~ '\u00A77 \u2192 ' ~ lName);
   }
 
@@ -97,7 +94,7 @@ function dumpTConInfo(sender as ICommandSender) as void {
     val hasLocalized = !isNull(localized) && localized != '' && !localized.startsWith('modifier.') && !localized.startsWith('trait.');
     if (!hasLocalized) armorRawKeyCount = armorRawKeyCount + 1 as int;
 
-    val lName = hasLocalized ? localized : ('\u00A78' ~ (isNull(localized) || localized == '' ? '<raw key>' : localized));
+    val lName = hasLocalized ? localized : '\u00A78' ~ (isNull(localized) || localized == '' ? '<raw key>' : localized);
     sender.sendMessage('  \u00A7b[A] \u00A7e' ~ aId ~ '\u00A77 \u2192 ' ~ lName);
   }
 
@@ -129,7 +126,7 @@ function dumpTConInfo(sender as ICommandSender) as void {
     val localized = mod.localizedName;
     val hasLocalized = !isNull(localized) && localized != '' && !localized.startsWith('modifier.') && !localized.startsWith('trait.');
     val tag = isTrait ? 'TRAIT' : 'MOD';
-    val name = hasLocalized ? localized : ('<raw: ' ~ (isNull(localized) || localized == '' ? '???' : localized) ~ '>');
+    val name = hasLocalized ? localized : '<raw: ' ~ (isNull(localized) || localized == '' ? '???' : localized) ~ '>';
     print('  [' ~ tag ~ '] ' ~ modId ~ ' -> ' ~ name ~ (mod.hidden ? ' (HIDDEN)' : ''));
   }
   print('--- ArmoryRegistry (ConArm) ---');
@@ -138,7 +135,7 @@ function dumpTConInfo(sender as ICommandSender) as void {
     if (isNull(aId) || aId == '') continue;
     val localized = aMod.localizedName;
     val hasLocalized = !isNull(localized) && localized != '' && !localized.startsWith('modifier.') && !localized.startsWith('trait.');
-    val name = hasLocalized ? localized : ('<raw: ' ~ (isNull(localized) || localized == '' ? '???' : localized) ~ '>');
+    val name = hasLocalized ? localized : '<raw: ' ~ (isNull(localized) || localized == '' ? '???' : localized) ~ '>';
     print('  [ARMOR] ' ~ aId ~ ' -> ' ~ name);
   }
   print('--- Summary ---');

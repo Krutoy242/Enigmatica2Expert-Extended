@@ -267,11 +267,8 @@ function dumpArcRecycling(sender as ICommandSender) as void {
   sender.sendMessage('\u00A7e[Recycle] \u00A7aDone! \u00A7f' ~ getCacheSize() ~ '\u00A77 items cached, \u00A7f' ~ linesArr.length ~ '\u00A77 armor/tools written. \u00A78Check server log.');
 }
 
-// ── Command registration ──
-val cmd = mods.zenutils.command.ZenCommand.create('dump_arc_recycling');
-cmd.requiredPermissionLevel = 0;
-cmd.execute = function (command, server, sender, args) {
+// ── Register as /dump subcommand ──
+scripts.debug.dump.main.registerSubcommand('arc_recycle', function (sender as ICommandSender) as void {
   sender.sendMessage('\u00A7e[Recycle] \u00A77Starting Arc Furnace recycling dump...');
   dumpArcRecycling(sender);
-};
-cmd.register();
+});
