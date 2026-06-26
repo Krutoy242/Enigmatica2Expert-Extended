@@ -496,10 +496,6 @@ craft.remake(<actuallyadditions:item_water_removal_ring>, ['pretty',
   '☼': <ore:crystalPalis>, // Palis Crystal
 });
 
-for i in 0 .. 10 {
-  recipes.removeByRecipeName('actuallybaubles:bauble_to_potion_ring_' ~ i);
-}
-
 val ringsIngredients = [
   <ore:listAllsugar>,
   <minecraft:repeater>,
@@ -516,7 +512,6 @@ val ringsIngredients = [
 for i in 0 .. 10 {
   val ring = <actuallyadditions:item_potion_ring>.definition.makeStack(i);
   val ringAdvanced = <actuallyadditions:item_potion_ring_advanced>.definition.makeStack(i);
-  val ringBauble = <actuallyadditions:potion_ring_advanced_bauble>.definition.makeStack(i);
 
   craft.reshapeless(ring, 'ABC', {
     A: <actuallyadditions:item_misc:6>,
@@ -525,12 +520,10 @@ for i in 0 .. 10 {
   });
 
   recipes.remove(ringAdvanced);
-  craft.reshapeless(ringBauble, 'AB', {
+  craft.reshapeless(ringAdvanced, 'AB', {
     A: ring,
     B: <actuallyadditions:item_crystal_empowered:2>,
   });
-
-  recipes.addShapeless(ringAdvanced, [ringBauble]);
 }
 
 // [Energy Laser Relay]*4 from [Advanced Coil][+3]
