@@ -26,6 +26,7 @@
  */
 
 #modloaded rftools zenutils ftbquests
+#sideonly client
 #priority -1000
 #reloadable
 
