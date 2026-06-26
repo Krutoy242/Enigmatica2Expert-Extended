@@ -12,7 +12,7 @@ Note: Non-CF mods not listed here.
 
 Mods that exists both in `E2E` __and__ `E2E-Extended`
 
-154 mods in this section.
+153 mods in this section.
 
 Icon | Summary
 ----:|:-------
@@ -124,7 +124,6 @@ Icon | Summary
 <img src="https://media.forgecdn.net/avatars/thumbnails/930/446/30/30/638403276038916842.png"            > |                       [**Cucumber Library**](https://www.curseforge.com/minecraft/mc-mods/cucumber)                     <sup><sub>Cucumber-1.12.2-1.1.3.jar                        </sub></sup><br>A library of shared code and functionality used by my mods.
 <img src="https://media.forgecdn.net/avatars/thumbnails/106/653/30/30/636360848574686541.png"            > |                             [**/dank/null**](https://www.curseforge.com/minecraft/mc-mods/dank-null)                    <sup><sub>DankNull-1.12.2-1.7.101.jar                      </sub></sup><br>An item inspired by the OpenBlocks /dev/null
 <img src="https://media.forgecdn.net/avatars/thumbnails/106/900/30/30/636362501486312568.png"            > |                    [**Tinkers' Complement**](https://www.curseforge.com/minecraft/mc-mods/tinkers-complement)           <sup><sub>TinkersComplement-1.12.2-0.4.3.jar               </sub></sup><br>Addon for Tinkers Construct to bring compatibility and features that don&#x27;t fit in the base mod.
-<img src="https://media.forgecdn.net/avatars/thumbnails/147/192/30/30/636575169522401760.png"            > |                       [**Actually Baubles**](https://www.curseforge.com/minecraft/mc-mods/actually-baubles)             <sup><sub>ActuallyBaubles-1.12-1.1.jar                     </sub></sup><br>Baubles capability for some Actually Additions gadgets!
 <img src="https://media.forgecdn.net/avatars/thumbnails/108/641/30/30/636373962527245927.png"            > |                          [**EmberRoot Zoo**](https://www.curseforge.com/minecraft/mc-mods/emberroot-zoo)                <sup><sub>EmberRootZoo-1.12.2-1.3.10.jar                   </sub></sup><br>A few interesting mobs, some from Embers and Roots
 <img src="https://media.forgecdn.net/avatars/thumbnails/109/514/30/30/636380307126307812.png"            > |                               [**Carry On**](https://www.curseforge.com/minecraft/mc-mods/carry-on)                     <sup><sub>carryon-1.12.2-1.12.7.23.jar                     </sub></sup><br>Carry On allows you to pick up Tile Entities and Mobs and carry them around!
 <img src="https://media.forgecdn.net/avatars/thumbnails/109/847/30/30/636382960527590433.png"            > |                     [**Ex Nihilo: Creatio**](https://www.curseforge.com/minecraft/mc-mods/ex-nihilo-creatio)            <sup><sub>exnihilocreatio-1.12.2-0.4.7.2.jar               </sub></sup><br>In Creatio Ex Nihilo.
@@ -176,7 +175,7 @@ Icon | Summary
 
 Mods that present only in `Extended` version:
 
-272 mods in this section.
+273 mods in this section.
 
 Icon | Summary
 ----:|:-------
@@ -451,6 +450,7 @@ Icon | Summary
 <img src="https://media.forgecdn.net/avatars/thumbnails/1790/428/30/30/639134569119590165.png"           > |                             [**ThaumicAPI**](https://www.curseforge.com/minecraft/mc-mods/thaumicapi)                   <sup><sub>thaumicapi-1.1.1.jar                             </sub></sup><br>A library mod used to standardize and expand a large number of previously hardcoded features in Thaumcraft 6.
 <img src="https://media.forgecdn.net/avatars/thumbnails/1790/911/30/30/639134884985769610.png"           > |                           [**Warp-O-Mania**](https://www.curseforge.com/minecraft/mc-mods/warp-o-mania)                 <sup><sub>warpomania-1.0.0.jar                             </sub></sup><br>Adds more warp events for TC6!
 <img src="https://media.forgecdn.net/avatars/thumbnails/1793/908/30/30/639136459836649885.png"           > |               [**Tinker's Planner Antique**](https://www.curseforge.com/minecraft/mc-mods/tinkers-planner-antique)      <sup><sub>TinkersPlannerAntique-1.12.2-1.0.3.jar           </sub></sup><br>A Minecraft 1.12.2 port of Tinker&#x27;s Planner for planning Tinkers&#x27; Construct tools and armor before crafting.
+<img src="https://media.forgecdn.net/avatars/thumbnails/1863/769/30/30/639169880065855019.png"           > |                       [**Possibly Baubles**](https://www.curseforge.com/minecraft/mc-mods/possibly-baubles)             <sup><sub>possiblybaubles-1.0.1.jar                        </sub></sup><br>Adds Baubles support for Actually Additions items.
 <img src="https://media.forgecdn.net/avatars/thumbnails/1864/439/30/30/639170258672343017.png"           > |             [**Requious Frakto Unofficial**](https://www.curseforge.com/minecraft/mc-mods/requious-frakto-unofficial)   <sup><sub>requious-0.13.jar                                </sub></sup><br>Fork mod for creating custom single-block machines
 -----------
 
@@ -460,7 +460,7 @@ Mods that exists in `E2E` but __was removed__ in `E2E-Extended`
 
 Note: most of those mods was replaced by their fork versions
 
-95 mods in this section.
+96 mods in this section.
 
 Icon | Summary
 ----:|:-------
@@ -530,6 +530,7 @@ Icon | Summary
 <img src="https://media.forgecdn.net/avatars/thumbnails/105/330/30/30/636352185216944005.png"            > |                          [**Toast Control**](https://www.curseforge.com/minecraft/mc-mods/toast-control)                <sup><sub>Toast Control-1.12.2-1.8.1.jar                   </sub></sup><br>Control toasts, those popups in the corner!
 <img src="https://media.forgecdn.net/avatars/thumbnails/416/890/30/30/637640074891493203.png"            > |                    [**Thermal Cultivation**](https://www.curseforge.com/minecraft/mc-mods/thermal-cultivation)          <sup><sub>ThermalCultivation-1.12.2-0.3.6.1-universal.jar  </sub></sup><br>Thermal gets Agrarian - provides options for farming and related activities!
 <img src="https://media.forgecdn.net/avatars/thumbnails/106/654/30/30/636360849723336023.png"            > |                    [**Better Advancements**](https://www.curseforge.com/minecraft/mc-mods/better-advancements)          <sup><sub>BetterAdvancements-1.12.2-0.1.0.77.jar           </sub></sup><br>Successor to BetterAchievements for the new advancements system in minecraft 1.12+
+<img src="https://media.forgecdn.net/avatars/thumbnails/147/192/30/30/636575169522401760.png"            > |                       [**Actually Baubles**](https://www.curseforge.com/minecraft/mc-mods/actually-baubles)             <sup><sub>ActuallyBaubles-1.12-1.1.jar                     </sub></sup><br>Baubles capability for some Actually Additions gadgets!
 <img src="https://media.forgecdn.net/avatars/thumbnails/112/514/30/30/636391997555358332.png"            > |                            [**JustTheTips**](https://www.curseforge.com/minecraft/mc-mods/justthetips)                  <sup><sub>justthetips-1.12-1.0.1.1.jar                     </sub></sup><br>Adds some tips to loading screens.
 <img src="https://media.forgecdn.net/avatars/thumbnails/218/467/30/30/637011607758026932.png"            > |                            [**MysticalLib**](https://www.curseforge.com/minecraft/mc-mods/mysticallib)                  <sup><sub>mysticallib-1.12.2-1.13.0.jar                    </sub></sup><br>Structure spawning utilities, code-based block and item models, and other nice utilities!
 <img src="https://media.forgecdn.net/avatars/thumbnails/123/87/30/30/636414183009669862.png"             > |                           [**Diet Hoppers**](https://www.curseforge.com/minecraft/mc-mods/diet-hoppers)                 <sup><sub>diethopper-1.1.jar                               </sub></sup><br>Tightens the selection box of the hopper to allow you to access visible blocks behind them.
@@ -581,7 +582,7 @@ Icon | Summary | Old / New
 <img src="https://media.forgecdn.net/avatars/thumbnails/138/833/30/30/636524375193820008.png"            > |                            [**Thaumic JEI**](https://www.curseforge.com/minecraft/mc-mods/thaumic-jei)                 | <nobr>ThaumicJEI-1.12.2-1.6.0-27</nobr><br><nobr>ThaumicJEI-1.12.2-1.7.0</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/173/547/30/30/636744592426092398.png"            > |                       [**Ender IO Endergy**](https://www.curseforge.com/minecraft/mc-mods/ender-io-endergy)            | <nobr>EnderIO-endergy-1.12.2-5.3.70</nobr><br><nobr>EnderIO-endergy-1.12.2-5.3.72</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/1362/814/30/30/638885115958149175.png"           > |                           [**PackagedAuto**](https://www.curseforge.com/minecraft/mc-mods/packagedauto)                | <nobr>PackagedAuto-1.12.2-1.0.8.31</nobr><br><nobr>PackagedAuto-1.12.2-1.0.24.73</nobr>
-<img src="https://media.forgecdn.net/avatars/thumbnails/1379/566/30/30/638894913493014322.png"           > |                   [**Immersive Technology**](https://www.curseforge.com/minecraft/mc-mods/mct-immersive-technology)    | <nobr>MCTImmersiveTechnology-1.12.2-1.9.100</nobr><br><nobr>MCT-ImmersiveTechnology-1.12.2-1.10.197-release</nobr>
+<img src="https://media.forgecdn.net/avatars/thumbnails/1379/566/30/30/638894913493014322.png"           > |                   [**Immersive Technology**](https://www.curseforge.com/minecraft/mc-mods/mct-immersive-technology)    | <nobr>MCTImmersiveTechnology-1.12.2-1.9.100</nobr><br><nobr>MCTImmersiveTechnology-1.12.2-1.9.102</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/265/6/30/30/637228246468007633.png"              > |[**xXx_MoreToolMats_xXx (a PlusTiC fork without the evil, and apparently some new bugs idk)**](https://www.curseforge.com/minecraft/mc-mods/plusticminusbad)             | <nobr>plustic-8.0.5</nobr><br><nobr>plustic-8.0.6</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/354/923/30/30/637513280920379670.png"            > |                            [**IC2 Patcher**](https://www.curseforge.com/minecraft/mc-mods/ic2-patcher)                 | <nobr>ic2patcher-2.0.3</nobr><br><nobr>IC2-Patcher-2.0.13</nobr>
 <img src="https://media.forgecdn.net/avatars/thumbnails/868/154/30/30/638282265875005308.png"            > |                 [**Patchouli ROFL Edition**](https://www.curseforge.com/minecraft/mc-mods/patchouli-rofl-edition)      | <nobr>Patchouli-1.0-23.6</nobr><br><nobr>Patchouli-1.0-28</nobr>

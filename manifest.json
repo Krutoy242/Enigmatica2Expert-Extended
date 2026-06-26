@@ -159,7 +159,6 @@
     {"projectID":272335,"fileID":2645867,"___name":"Cucumber Library"                        ,"downloadUrl":"https://edge.forgecdn.net/files/2645/867/Cucumber-1.12.2-1.1.3.jar","required":true},
     {"projectID":272514,"fileID":2962052,"___name":"/dank/null"                              ,"downloadUrl":"https://edge.forgecdn.net/files/2962/52/DankNull-1.12.2-1.7.101.jar","required":true},
     {"projectID":272671,"fileID":2843439,"___name":"Tinkers' Complement"                     ,"downloadUrl":"https://edge.forgecdn.net/files/2843/439/TinkersComplement-1.12.2-0.4.3.jar","required":true},
-    {"projectID":273430,"fileID":2459131,"___name":"Actually Baubles"                        ,"downloadUrl":"https://edge.forgecdn.net/files/2459/131/ActuallyBaubles-1.12-1.1.jar","required":true},
     {"projectID":273711,"fileID":2632466,"___name":"EmberRoot Zoo"                           ,"downloadUrl":"https://edge.forgecdn.net/files/2632/466/EmberRootZoo-1.12.2-1.3.10.jar","required":true},
     {"projectID":273744,"fileID":6548186,"___name":"U Team Core"                             ,"downloadUrl":"https://edge.forgecdn.net/files/6548/186/u_team_core-forge-1.12.2-2.2.5.375.jar","required":true},
     {"projectID":274259,"fileID":4507139,"___name":"Carry On"                                ,"downloadUrl":"https://edge.forgecdn.net/files/4507/139/carryon-1.12.2-1.12.7.23.jar","required":true},
@@ -444,6 +443,7 @@
     {"projectID":1533544,"fileID":8037355,"___name":"Warp-O-Mania"                            ,"downloadUrl":"https://edge.forgecdn.net/files/8037/355/warpomania-1.0.0.jar","required":true},
     {"projectID":1535236,"fileID":8064354,"___name":"Tinker's Planner Antique"                ,"downloadUrl":"https://edge.forgecdn.net/files/8064/354/TinkersPlannerAntique-1.12.2-1.0.3.jar","required":true},
     {"projectID":1547732,"fileID":8182153,"___name":"Actually Additions V2 Coffee Edition"    ,"downloadUrl":"https://edge.forgecdn.net/files/8182/153/ActuallyAdditions-1.12.2-r155.jar","required":true},
+    {"projectID":1574706,"fileID":8253367,"___name":"Possibly Baubles"                        ,"downloadUrl":"https://edge.forgecdn.net/files/8253/367/possiblybaubles-1.0.1.jar","required":true},
     {"projectID":1575091,"fileID":8246364,"___name":"Requious Frakto Unofficial"              ,"downloadUrl":"https://edge.forgecdn.net/files/8246/364/requious-0.13.jar","required":true}
   ]
 }
