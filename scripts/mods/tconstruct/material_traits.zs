@@ -1,3 +1,4 @@
+#norun // WIP. Current issue: result of replacing traits cant be seen in Materials and You nor Tool Forge
 #modloaded tconstruct conarm
 #loader tconstruct_traits reloadable
 #priority -10
