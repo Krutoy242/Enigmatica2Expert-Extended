@@ -76,14 +76,6 @@
     "name": "Actually Additions V2 Coffee Edition",
     "version": "1.12.2-r155"
   },
-  "ActuallyBaubles-1.12-1.1.jar": {
-    "curseForgeHash": 4219803846,
-    "jarName": "ActuallyBaubles-1.12-1.1.jar",
-    "modId": "actuallybaubles",
-    "modrinthHash": "f9ff7eff30f5de77a67ddf3ff965e51b1d9e0616",
-    "name": "Actually Baubles",
-    "version": "1.1"
-  },
   "Additional-Compression-1.12.2-3.4.jar": {
     "curseForgeHash": 2932837981,
     "jarName": "Additional-Compression-1.12.2-3.4.jar",
@@ -1850,14 +1842,6 @@
     "name": "McJtyLib",
     "version": "1.12-3.5.4"
   },
-  "MCT-ImmersiveTechnology-1.12.2-1.10.197-release.jar": {
-    "curseForgeHash": 3915068922,
-    "jarName": "MCT-ImmersiveTechnology-1.12.2-1.10.197-release.jar",
-    "modId": "immersivetech",
-    "modrinthHash": "20ee3b43b5e9e903f2568830c4497141cbcc1978",
-    "name": "Immersive Technology",
-    "version": "1.10.197"
-  },
   "MCT-SmelteryIO-1.12.2-1.3.70.jar": {
     "curseForgeHash": 2098354709,
     "jarName": "MCT-SmelteryIO-1.12.2-1.3.70.jar",
@@ -1865,6 +1849,14 @@
     "modrinthHash": "06e641d1cc92c59f9fd439adf24c66685d3e7322",
     "name": "Smeltery IO",
     "version": "1.3.70"
+  },
+  "MCTImmersiveTechnology-1.12.2-1.9.102.jar": {
+    "curseForgeHash": 2720808452,
+    "jarName": "MCTImmersiveTechnology-1.12.2-1.9.102.jar",
+    "modId": "immersivetech",
+    "modrinthHash": "7dd15d79b2b1584340d16f4e38efcc23078a0c7b",
+    "name": "Immersive Technology",
+    "version": "1.9.102"
   },
   "mechanics-1.1.jar": {
     "curseForgeHash": 145804568,
@@ -2329,6 +2321,14 @@
     "modrinthHash": "2f30e91f43e58c99ea4adb1592b109bf535c0f03",
     "name": "Portable Drill",
     "version": "1.2.1"
+  },
+  "possiblybaubles-1.0.1.jar": {
+    "curseForgeHash": 2639518364,
+    "jarName": "possiblybaubles-1.0.1.jar",
+    "modId": "possiblybaubles",
+    "modrinthHash": "38264c4e5404044eddf22f01228a24e47a573efc",
+    "name": "Possibly Baubles",
+    "version": "1.0.1"
   },
   "PotionCore-1.9_for_1.12.2.jar": {
     "curseForgeHash": 603915148,
