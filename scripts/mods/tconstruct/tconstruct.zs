@@ -4,6 +4,10 @@ import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.liquid.ILiquidStack;
+import native.java.util.ArrayList;
+import native.net.minecraft.item.Item;
+import native.slimeknights.tconstruct.library.TinkerRegistry;
+import native.slimeknights.tconstruct.library.tools.IToolPart;
 
 <tconstruct:throwball>.maxStackSize = 64;
 
@@ -526,7 +530,9 @@ for castFluid in [
   <fluid:gold> * 288,
 ] as ILiquidStack[] {
   // Create casts from basic materials only such as stone
-  for id, cost in scripts.mods.tconstruct.vars.partCosts {
+  val _allParts = ArrayList(TinkerRegistry.getToolParts());
+  for part in _allParts as [IToolPart] {
+    val id = (part as Item).registryName.namespace + ':' + (part as Item).registryName.path;
     mods.tconstruct.Casting.addTableRecipe(
       <tconstruct:cast>.withTag({ PartType: id }),
       scripts.mods.tconstruct.vars.getSampleToolPart(id),
