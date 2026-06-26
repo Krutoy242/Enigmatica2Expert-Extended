@@ -7,6 +7,16 @@ import crafttweaker.util.Math.abs;
 import crafttweaker.util.Math.max;
 import crafttweaker.util.Math.sqrt;
 import mods.zentoolforge.Toolforge;
+import native.slimeknights.tconstruct.library.tools.IToolPart;
+
+function getPartCost(partId as string) as double {
+  val stack = itemUtils.getItem(partId);
+  if (isNull(stack)) return 1.0;
+  val item = stack.native.item;
+  val toolPart = item as IToolPart;
+  if (isNull(toolPart)) return 1.0;
+  return toolPart.cost / 144.0;
+}
 
 // -----------------------------------------------------------------------
 // ██╗   ██╗ █████╗ ██████╗ ██╗ █████╗ ██████╗ ██╗     ███████╗███████╗
@@ -74,8 +84,7 @@ function getShard(
   val listCost = [1.0, 1.0, 1.0, 1.0] as double[];
   for i, dec in deconstructed {
     if (isNull(dec.tag.Material)) continue;
-    val partCost = scripts.mods.tconstruct.vars.partCosts[dec.definition.id];
-    val cost = partCost ?? 1.0;
+    val cost = getPartCost(dec.definition.id);
     listCost[i] = max(1.0, cost * durabValue * 2.0 + 0.5);
   }
 
