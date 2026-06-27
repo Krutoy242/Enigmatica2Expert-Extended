@@ -273,7 +273,7 @@
     {"projectID":357179,"fileID":3021138,"___name":"Cloche Profit Peripheral"                ,"downloadUrl":"https://edge.forgecdn.net/files/3021/138/cloche-profit-peripheral-1.12.2-1.0.3.jar","required":true},
     {"projectID":358711,"fileID":3221155,"___name":"Mystical Creations"                      ,"downloadUrl":"https://edge.forgecdn.net/files/3221/155/MysticalCreations-1.12.2-1.6.1.jar","required":true},
     {"projectID":358821,"fileID":3798288,"___name":"Minor Integrations and Additions (MIA)"  ,"downloadUrl":"https://edge.forgecdn.net/files/3798/288/mia-1.12.2-0.2.2a.jar","required":true},
-    {"projectID":359407,"fileID":8083688,"___name":"Immersive Technology"                    ,"downloadUrl":"https://edge.forgecdn.net/files/8083/688/MCT-ImmersiveTechnology-1.12.2-1.10.197-release.jar","required":true},
+    {"projectID":359407,"fileID":5108047,"___name":"Immersive Technology"                    ,"downloadUrl":"https://edge.forgecdn.net/files/5108/47/MCTImmersiveTechnology-1.12.2-1.9.102.jar","required":true},
     {"projectID":361276,"fileID":4756301,"___name":"Lootr (Forge & NeoForge)"                ,"downloadUrl":"https://edge.forgecdn.net/files/4756/301/lootr-1.12.2-0.6.2.jar","required":true},
     {"projectID":361427,"fileID":5630006,"___name":"Harder Branch Mining"                    ,"downloadUrl":"https://edge.forgecdn.net/files/5630/6/HarderBranchMining-1.12.2-2.0.0.17.jar","required":true},
     {"projectID":362056,"fileID":8097146,"___name":"QMD"                                     ,"downloadUrl":"https://edge.forgecdn.net/files/8097/146/QMD-1.5.1-1.12.2.jar","required":true},
