@@ -82,8 +82,11 @@ async function main() {
 }
 
 async function runAutomation() {
-  if (await confirm('🪓 Perform automation?'))
-    await $$`pnpm dev`
+  if (await confirm('🪓 Perform automation?')) {
+    const { exitCode } = await $$`pnpm dev`.nothrow()
+    if (exitCode !== 0)
+      p.log.warn('Some dev automation tasks reported errors (see above) — continuing anyway.')
+  }
 }
 
 async function resolveVersion(): Promise<{ nextVersion: string, zipBaseName: string }> {
