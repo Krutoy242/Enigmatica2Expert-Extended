@@ -348,6 +348,8 @@ Purge(<harvestcraft:coffeebeanitem>).ores([<ore:cropCoffee>]);
 Purge(<harvestcraft:coffeeseeditem>).ores([<ore:seedCoffee>, <ore:listAllseed>]);
 Purge(<harvestcraft:grapeitem>).ores([<ore:listAllfruit>, <ore:cropGrape>]);
 Purge(<harvestcraft:grapeseeditem>).ores([<ore:listAllseed>, <ore:seedGrape>]);
+Purge(<harvestcraft:greengrapeitem>).ores([<ore:listAllfruit>, <ore:cropGrape>, <ore:cropGreengrape>]);
+Purge(<harvestcraft:greengrapeseeditem>).ores([<ore:listAllseed>, <ore:seedGreengrape>]);
 Purge(<harvestcraft:olive_sapling>).ores([<ore:treeSapling>]);
 Purge(<harvestcraft:oliveitem>).ores([<ore:cropOlive>]);
 Purge(<harvestcraft:pamolive>);

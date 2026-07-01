@@ -36,7 +36,8 @@
     "harvestcraft:olive_sapling",
     "harvestcraft:tomatoseeditem",
     "harvestcraft:riceseeditem",
-    "harvestcraft:beanseeditem"
+    "harvestcraft:beanseeditem",
+    "harvestcraft:greengrapeseeditem"
   ],
   "custom entries": {
     "__comment": "You can define additional items to be sold by the Market here. Defaults can be overridden. Prefix with ! to blacklist instead.",
@@ -52,7 +53,6 @@
     "harvestcraft:chickpeaseeditem": "1*minecraft:emerald",
     "harvestcraft:elderberryseeditem": "1*minecraft:emerald",
     "harvestcraft:flaxseeditem": "1*minecraft:emerald",
-    "harvestcraft:greengrapeseeditem": "1*minecraft:emerald",
     "harvestcraft:huckleberryseeditem": "1*minecraft:emerald",
     "harvestcraft:jicamaseeditem": "1*minecraft:emerald",
     "harvestcraft:juteseeditem": "1*minecraft:emerald",

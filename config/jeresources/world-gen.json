@@ -2173,10 +2173,6 @@
     "distrib": "0,0;52,0;53,3.9e-7;54,0;60,0;61,3.9e-7;62,0;63,5.5e-6;65,0;66,1.6e-6;68,3.9e-7;69,7.8e-7;71,7.8e-7;74,1.6e-6;75,0;96,0;97,3.9e-7;98,0",
     "dropsList": [
       {
-        "itemStack": "harvestcraft:greengrapeitem:0",
-        "fortunes": { "0": 0.2, "1": 0.2, "2": 0.2, "3": 0.21 }
-      },
-      {
         "itemStack": "harvestcraft:cottonitem:0",
         "fortunes": { "0": 0.2, "1": 0.2, "2": 0.21, "3": 0.19 }
       },
@@ -6030,10 +6026,6 @@
     "block": "harvestcraft:soggygarden:0",
     "distrib": "0,0;28,0;29,3.9e-7;30,0;31,2.5e-5;34,2.0e-6;35,3.5e-6;39,3.9e-7;40,1.2e-6;42,0;46,3.9e-7;47,0;58,0;59,3.9e-7;60,0;63,3.9e-7;64,0",
     "dropsList": [
-      {
-        "itemStack": "harvestcraft:greengrapeitem:0",
-        "fortunes": { "0": 0.2, "1": 0.2, "2": 0.21, "3": 0.21 }
-      },
       {
         "itemStack": "harvestcraft:cottonitem:0",
         "fortunes": { "0": 0.2 }
