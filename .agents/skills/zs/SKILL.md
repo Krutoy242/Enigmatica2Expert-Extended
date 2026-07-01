@@ -164,7 +164,7 @@ npx tsx .agents/skills/zs/run-cmd.ts 'say Hello' 'say World!' # allow chaining
 ## Troubleshooting
 
 ### Full syntax/parse error breakdown
-Use after changing any .zs script, except for #reloadable scripts:
+Use after changing any .zs script, except for #reloadable scripts. DO NOT use if you planning to use `ct-reload` next.
 ```bash
 pnpm ct-syntax
 ```
@@ -175,7 +175,7 @@ Runs syntax check first, aborts if errors found, otherwise reloads and reports e
 ```bash
 pnpm ct-reload
 ```
-Note: `/ct reload` has a known bug that shows some unrelated errors. Track file source of errors. It also does NOT reset live runtime state (windowIds, cached maps). If a handler still misbehaves after reload, do a full MC restart.
+Note: `/ct reload` has a known bug that shows some unrelated errors. Track file source of errors. It also does NOT reset live runtime state (windowIds, cached maps). If a handler still misbehaves after reload, do a full MC restart with `pnpm reducer restart` (see the `reducer` skill — it also reports `crafttweaker.log` errors and can disable mods or auto-bisect a load bug).
 
 ## Event patterns
 

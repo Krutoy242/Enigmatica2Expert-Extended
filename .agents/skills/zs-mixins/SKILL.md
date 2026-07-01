@@ -16,6 +16,7 @@ description: Write/edit ZenUtils bytecode mixins in scripts/mixin/. Load when ed
 ### Gotchas
 
 - `#sideonly client` — for client-only targets.
+- `pnpm ct-syntax` false error `unsupported mixin annotation: Static` — always ignore.
 - helpers are Unavailable in `#loader mixin` scripts:
   * Helpers from zenutils, eg `mods.zenutils.*`
   * Crafttweaker types, eg `crafttweaker.item.IItemStack`
