@@ -134,3 +134,22 @@ scripts.jei.requious.add(<assembly:crafting_hints>, { [
   <exnihilocreatio:block_barrel0> | <exnihilocreatio:block_barrel1>, null, null, null, null,
   Bucket('milk'), <minecraft:brown_mushroom> | <minecraft:red_mushroom>,
 ]: [<entity:minecraft:slime>.asStack(), <minecraft:slime>] });
+
+// Crystallized aspect from resins
+for items in [
+  [<thaumcraft:crystal_aer>,
+    <thaumcraft:crystal_aqua>,
+    <thaumcraft:crystal_ignis>],
+  [<thaumcraft:crystal_ordo>,
+    <thaumcraft:crystal_perditio>,
+    <thaumcraft:crystal_terra>],
+  [<thaumcraft:crystal_vitium>],
+] as IItemStack[][] {
+  scripts.jei.crafting_hints.addInsOutsCatl([
+    <forge:bucketfilled>.withTag({ FluidName: 'menrilresin', Amount: 1000 }), null,
+    null, <exnihilocreatio:block_barrel1>,
+    <randomthings:spectreblock>,
+  ],
+  items
+  );
+}
