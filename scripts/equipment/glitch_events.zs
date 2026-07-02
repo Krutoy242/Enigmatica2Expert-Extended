@@ -14,6 +14,7 @@ import native.mustapelto.deepmoblearning.common.DMLConfig;
 import native.mustapelto.deepmoblearning.common.metadata.MetadataDataModel;
 import native.mustapelto.deepmoblearning.common.metadata.MetadataManager;
 import native.mustapelto.deepmoblearning.common.util.DataModelHelper;
+import native.mustapelto.deepmoblearning.common.util.DMLRHelper;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.nbt.NBTTagCompound;
 import native.net.minecraft.nbt.NBTTagList;
@@ -80,6 +81,7 @@ events.onEntityLivingDeathDrops(function (e as crafttweaker.event.EntityLivingDe
         continue;
       }
       val metadata = opt.get() as MetadataDataModel;
+      if (!DMLRHelper.isModLoaded(metadata.getModID())) continue;
       val isAssociated = metadata.isAssociatedMob(killedEntity);
       if (!isAssociated) continue;
 
@@ -153,6 +155,7 @@ events.onEntityLivingDeathDrops(function (e as crafttweaker.event.EntityLivingDe
 
     var pristineItem as IItemStack = null;
     for model in list {
+      if (!DMLRHelper.isModLoaded(model.getModID())) continue;
       if (model.isAssociatedMob(e.entity.native as EntityLivingBase)) {
         val nativeStack = model.getPristineMatter(pristineCount);
         if (!isNull(nativeStack) && !nativeStack.isEmpty()) {
