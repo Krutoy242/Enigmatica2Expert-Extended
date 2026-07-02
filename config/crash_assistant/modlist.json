@@ -7,13 +7,13 @@
     "name": "Crash Assistant",
     "version": "1.11.10"
   },
-  "!cleanroom-relauncher-0.5.0.jar": {
-    "curseForgeHash": 2029300353,
-    "jarName": "!cleanroom-relauncher-0.5.0.jar",
+  "!cleanroom-relauncher-0.6.1.jar": {
+    "curseForgeHash": 1160971111,
+    "jarName": "!cleanroom-relauncher-0.6.1.jar",
     "modId": "cleanroom-relauncher",
-    "modrinthHash": "0d26adc98350d3caea8bddfcf46764737e3e747d",
+    "modrinthHash": "e6b9c8411c652734bbf2ec20b046e9365ba35b30",
     "name": "Cleanroom Relauncher",
-    "version": "0.5.0"
+    "version": "0.6.1"
   },
   "!configanytime-3.0.jar": {
     "curseForgeHash": 3732531395,
@@ -23,13 +23,13 @@
     "name": "ConfigAnytime",
     "version": "3.0"
   },
-  "!mixinbooter-10.7.jar": {
-    "curseForgeHash": 2621803774,
-    "jarName": "!mixinbooter-10.7.jar",
+  "!mixinbooter-11.1.jar": {
+    "curseForgeHash": 1990176154,
+    "jarName": "!mixinbooter-11.1.jar",
     "modId": "mixinbooter",
-    "modrinthHash": "3fdfffe4fd446461ea9c3cb044484588997b9dbc",
+    "modrinthHash": "4cb3590e81e1062b80cd509977f403ec9d79695e",
     "name": "MixinBooter",
-    "version": "10.7"
+    "version": "11.1"
   },
   "!mod-director-launchwrapper-1.9.1.jar": {
     "curseForgeHash": 2239322327,
@@ -68,13 +68,13 @@
     "name": "FermiumBooter",
     "version": "1.2.0"
   },
-  "ActuallyAdditions-1.12.2-r155.jar": {
-    "curseForgeHash": 4016612014,
-    "jarName": "ActuallyAdditions-1.12.2-r155.jar",
+  "ActuallyAdditions-1.12.2-r156.jar": {
+    "curseForgeHash": 3555803989,
+    "jarName": "ActuallyAdditions-1.12.2-r156.jar",
     "modId": "actuallyadditions",
-    "modrinthHash": "8fdef8c4dc87da80f2e3e0cd6080d264593ad890",
+    "modrinthHash": "278978762bee51ce097ba91394030932f9456fb0",
     "name": "Actually Additions V2 Coffee Edition",
-    "version": "1.12.2-r155"
+    "version": "1.12.2-r156"
   },
   "Additional-Compression-1.12.2-3.4.jar": {
     "curseForgeHash": 2932837981,
@@ -1694,14 +1694,6 @@
     "name": "Lazy AE2",
     "version": "1.1.26"
   },
-  "LegendaryTooltips-1.12.2-1.1.11.jar": {
-    "curseForgeHash": 2390902534,
-    "jarName": "LegendaryTooltips-1.12.2-1.1.11.jar",
-    "modId": "legendarytooltips",
-    "modrinthHash": "f174a9ccf33df0bc1594713ef40dc8c0fce32205",
-    "name": "Legendary Tooltips",
-    "version": "1.1.11"
-  },
   "lemonskin-4.0.0.jar": {
     "curseForgeHash": 3242005743,
     "jarName": "lemonskin-4.0.0.jar",
@@ -1726,11 +1718,11 @@
     "name": "libnine",
     "version": "1.2.2"
   },
-  "libvulpes-0.5.4.jar": {
-    "curseForgeHash": 2026897180,
-    "jarName": "libvulpes-0.5.4.jar",
+  "libvulpes-0.5.5.jar": {
+    "curseForgeHash": 2754068436,
+    "jarName": "libvulpes-0.5.5.jar",
     "modId": "libVulpes",
-    "modrinthHash": "3056423a51ed8e316ce992ddf3d824494afec254",
+    "modrinthHash": "4a3d2f280f2e20e98d7e4efdf3c469f3e1459ce8",
     "name": "libVulpes",
     "version": "0.4.3"
   },
@@ -2098,6 +2090,14 @@
     "name": "Nutrition",
     "version": "1.12.2-4.9.0"
   },
+  "obscure_tooltips-forge-1.12.2-3.10.1.jar": {
+    "curseForgeHash": 3135730670,
+    "jarName": "obscure_tooltips-forge-1.12.2-3.10.1.jar",
+    "modId": "obscure_tooltips",
+    "modrinthHash": "ecc9c1b473f5ca8674361dda92f437a780da2619",
+    "name": "Obscure Tooltips",
+    "version": "3.10.1"
+  },
   "ocsensors-1.0.4-b23.jar": {
     "curseForgeHash": 993017787,
     "jarName": "ocsensors-1.0.4-b23.jar",
@@ -2410,13 +2410,13 @@
     "name": "Quantum Minecraft Dynamics",
     "version": "1.5.1"
   },
-  "QuantumThings-MC-1.12.2-1.2.2.jar": {
-    "curseForgeHash": 1290521293,
-    "jarName": "QuantumThings-MC-1.12.2-1.2.2.jar",
+  "QuantumThings-MC-1.12.2-1.3.0.jar": {
+    "curseForgeHash": 996360515,
+    "jarName": "QuantumThings-MC-1.12.2-1.3.0.jar",
     "modId": "randomthings",
-    "modrinthHash": "77a32145a524169c447c04e3e1e8023091b41456",
+    "modrinthHash": "a8556c39fa122323f5248f9602e4457d05e75614",
     "name": "Quantum Things",
-    "version": "1.2.2"
+    "version": "1.3.0"
   },
   "QuarkOddities-1.12.2.jar": {
     "curseForgeHash": 4267477614,
@@ -2519,13 +2519,13 @@
     "name": "Example Mod",
     "version": "${version}"
   },
-  "requious-0.13.jar": {
-    "curseForgeHash": 3742776026,
-    "jarName": "requious-0.13.jar",
+  "requious-0.14.jar": {
+    "curseForgeHash": 2377872346,
+    "jarName": "requious-0.14.jar",
     "modId": "requious",
-    "modrinthHash": "8a4778040af0ee911a78505a0fdef26839f770d4",
+    "modrinthHash": "4c768c99203eb5feda9f2a910c9ce7eb06ab951b",
     "name": "Requious Frakto Unofficial",
-    "version": "0.13"
+    "version": "0.14"
   },
   "ResourceLoader-MC1.12.1-1.5.3.jar": {
     "curseForgeHash": 699442863,
@@ -2703,13 +2703,13 @@
     "name": "SonarCore",
     "version": "1.12.2-5.0.19-20"
   },
-  "soundphysics-1.2.0.jar": {
-    "curseForgeHash": 3036171607,
-    "jarName": "soundphysics-1.2.0.jar",
+  "soundphysics-1.2.1.jar": {
+    "curseForgeHash": 1776409269,
+    "jarName": "soundphysics-1.2.1.jar",
     "modId": "soundphysics",
-    "modrinthHash": "2d00e1e76f90b404a835b4aae197ad5a207fc270",
+    "modrinthHash": "9a54abee593790851eedc45091b7d3ec98fd7613",
     "name": "Sound Physics",
-    "version": "1.2.0"
+    "version": "1.2.1"
   },
   "SpiceOfLife-mc1.12-1.3.12.jar": {
     "curseForgeHash": 1006591478,
@@ -2751,13 +2751,13 @@
     "name": "Super Sound Muffler: Revived",
     "version": "1.0.2.10"
   },
-  "tconevo-1.12.2-1.1.6.jar": {
-    "curseForgeHash": 4037445265,
-    "jarName": "tconevo-1.12.2-1.1.6.jar",
+  "tconevo-1.12.2-1.1.7.jar": {
+    "curseForgeHash": 3131968824,
+    "jarName": "tconevo-1.12.2-1.1.7.jar",
     "modId": "tconevo",
-    "modrinthHash": "12a0ec9cfccb29771db78563aefb40a974077aa3",
+    "modrinthHash": "b891039fa676f6d2838b31dfd0f936bcca313f69",
     "name": "Tinkers' Evolution",
-    "version": "1.1.6"
+    "version": "1.1.7"
   },
   "tconmodmod-1.12.2-1.0.5.jar": {
     "curseForgeHash": 2639564833,
@@ -2855,13 +2855,13 @@
     "name": "Thaumic Computers",
     "version": "0.5.1"
   },
-  "ThaumicJEI-1.12.2-1.7.0.jar": {
-    "curseForgeHash": 4243220107,
-    "jarName": "ThaumicJEI-1.12.2-1.7.0.jar",
-    "modId": "thaumicjei",
-    "modrinthHash": "859b30c956a1cc6e5985b22cfdd7af138c747562",
-    "name": "ThaumicJEI",
-    "version": "1.12.2-1.7.0"
+  "thaumicinfo-1.1.2.jar": {
+    "curseForgeHash": 2858965124,
+    "jarName": "thaumicinfo-1.1.2.jar",
+    "modId": "thaumicinfo",
+    "modrinthHash": "483d8b3d4b30a645feb7e39bee59a2036bbf38b9",
+    "name": "Thaumic Information",
+    "version": "1.1.2"
   },
   "thaumictinkerer-1.12.2-5.9.15-Unofficial.jar": {
     "curseForgeHash": 3663405330,
