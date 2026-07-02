@@ -52,11 +52,11 @@ addBackDisplay(<mekanism:cardboardbox>, function (item) {
     || isNull(tag.mekData.blockData.id)
     || isNull(tag.mekData.blockData.meta)
   ) {
-    return null;
+    return [] as IItemStack[];
   }
 
   val block = itemFromBlockNumId(tag.mekData.blockData.id, tag.mekData.blockData.meta);
-  if (isNull(block)) return null;
+  if (isNull(block)) return [] as IItemStack[];
 
   var mob = null as IItemStack;
 
@@ -84,14 +84,14 @@ addBackDisplay(<mekanism:basicblock:6>, function (item) {
     || isNull(item.tag.mekData.storedItem.id)
     || isNull(item.tag.mekData.itemCount)
   ) {
-    return null;
+    return [] as IItemStack[];
   }
 
   val storedItem = item.tag.mekData.storedItem;
   val meta = isNull(storedItem.Damage) ? 0 : storedItem.Damage.asInt();
   val count = item.tag.mekData.itemCount.asInt();
 
-  if (count <= 0) return null;
+  if (count <= 0) return [] as IItemStack[];
 
   return [<item:${storedItem.id}:${meta}> * count] as IItemStack[];
 });
@@ -100,17 +100,17 @@ addBackDisplay(<mekanism:basicblock:6>, function (item) {
 Show contained entity as soul
 */
 addBackDisplay(<thermalexpansion:morb>, function (item) {
-  if (isNull(item.tag) || isNull(item.tag.id)) return null;
+  if (isNull(item.tag) || isNull(item.tag.id)) return [] as IItemStack[];
   return [<entity:${item.tag.id}>.asSoul()] as IItemStack[];
 });
 
 addBackDisplay(<industrialforegoing:mob_imprisonment_tool>, function (item) {
-  if (isNull(item.tag) || isNull(item.tag.entity)) return null;
+  if (isNull(item.tag) || isNull(item.tag.entity)) return [] as IItemStack[];
   return [<entity:${item.tag.entity}>.asSoul()] as IItemStack[];
 });
 
 addBackDisplay(<enderio:item_soul_vial>, function (item) {
-  if (isNull(item.tag) || isNull(item.tag.entityId)) return null;
+  if (isNull(item.tag) || isNull(item.tag.entityId)) return [] as IItemStack[];
   return [<entity:${item.tag.entityId}>.asSoul()] as IItemStack[];
 });
 
@@ -124,18 +124,18 @@ addBackDisplay(<pointer:pointer>, function (item) {
     || isNull(item.tag.Pointer.Dimension)
     || isNull(item.tag.Pointer.Position)
   ) {
-    return null;
+    return [] as IItemStack[];
   }
 
   val world = IWorld.getFromID(item.tag.Pointer.Dimension);
-  if (isNull(world)) return null;
+  if (isNull(world)) return [] as IItemStack[];
 
   val pos = BlockPos.fromLong(item.tag.Pointer.Position);
-  if (isNull(pos)) return null;
-  if (!world.isBlockLoaded(pos)) return null;
+  if (isNull(pos)) return [] as IItemStack[];
+  if (!world.isBlockLoaded(pos)) return [] as IItemStack[];
 
   val result = scripts.do.portal_spread.utils.blockPosToItem(world, pos);
-  if (isNull(result)) return null;
+  if (isNull(result)) return [] as IItemStack[];
   return [result] as IItemStack[];
 });
 
@@ -149,7 +149,7 @@ addBackDisplay(<rftoolsdim:material_absorber>, function (item) {
     || isNull(item.tag.meta)
     || isNull(item.tag.absorbing)
   ) {
-    return null;
+    return [] as IItemStack[];
   }
   return [<item:${item.tag.block}:${item.tag.meta}> * (1028 - item.tag.absorbing.asInt())] as IItemStack[];
 });
@@ -175,14 +175,14 @@ static blockHolderTag as function(IData)IItemStack
 
 addBackDisplay(<scannable:module_block>, function (item) {
   val result = blockHolderTag(item.tag);
-  if (isNull(result)) return null;
+  if (isNull(result)) return [] as IItemStack[];
   return [result] as IItemStack[];
 });
 
 function nbtListToInvItems(listData as IData) as IItemStack[] {
-  if (isNull(listData)) return null;
+  if (isNull(listData)) return [];
   val items = listData.asList();
-  if (isNull(items) || items.isEmpty()) return null;
+  if (isNull(items) || items.isEmpty()) return [];
 
   var count = 0;
   for it in items {
@@ -191,7 +191,7 @@ function nbtListToInvItems(listData as IData) as IItemStack[] {
     }
   }
 
-  if (count == 0) return null;
+  if (count == 0) return [];
 
   val result = arrayOf(count, null as IItemStack);
   var i = 0;
@@ -210,7 +210,7 @@ addBackDisplay(<scannable:scanner>, function (item) {
     || isNull(item.tag.items)
     || isNull(item.tag.items.Items)
   ) {
-    return null;
+    return [] as IItemStack[];
   }
 
   // Count items
@@ -220,7 +220,7 @@ addBackDisplay(<scannable:scanner>, function (item) {
     if (!isNull(blockHolderTag(it.tag))) length += 1;
   }
 
-  if (length < 1) return null;
+  if (length < 1) return [] as IItemStack[];
 
   // Build result
   var k = 0;
@@ -246,7 +246,7 @@ addBackDisplay(<randomthings:enderletter>, function (item) {
     isNull(item.tag)
     || isNull(item.tag.EnderLetterContent)
   ) {
-    return null;
+    return [] as IItemStack[];
   }
 
   // Count items
@@ -273,7 +273,7 @@ addBackDisplay(<randomthings:enderletter>, function (item) {
 Rubble
 */
 addBackDisplay(<my_precious:rubble>, function (item) {
-  if (isNull(item.tag) || isNull(item.tag.StoredItem)) return null;
+  if (isNull(item.tag) || isNull(item.tag.StoredItem)) return [] as IItemStack[];
   return [item.tag.StoredItem.toItemStack()] as IItemStack[];
 });
 
