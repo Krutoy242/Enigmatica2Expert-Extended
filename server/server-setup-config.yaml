@@ -111,6 +111,7 @@ install:
       - 616190 # JEI Utilities
       - 624967 # RenderLib
       - 650242 # File Director (only for optifine)
+      - 715660 # Obscure Tooltips
       - 782070 # Startup Timer
       - 848933 # Hit Indication
       - 874067 # Valkyrie
