@@ -13,4 +13,12 @@
   <capacitor key="enderio:block_ender_generator/buffer"          base="4000000" scaler="POWER" />
   <capacitor key="enderio:block_ender_generator/gen"             base="2880"    scaler="CHEMICAL" />
 
+  <!-- Increase Alloy Smelter use x2 to speed it up -->
+  <capacitor key="enderio:block_simple_alloy_smelter/intake"   base="2000000" scaler="FIXED" />
+  <capacitor key="enderio:block_simple_alloy_smelter/use"      base="400"     scaler="FIXED" />
+  <capacitor key="enderio:block_alloy_smelter/intake"          base="2000000" scaler="POWER" />
+  <capacitor key="enderio:block_alloy_smelter/use"             base="10000"   scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_alloy_smelter/intake" base="3000000" scaler="POWER" />
+  <capacitor key="enderio:block_enhanced_alloy_smelter/use"    base="30000"   scaler="POWER" />
+
 </enderio:recipes>
