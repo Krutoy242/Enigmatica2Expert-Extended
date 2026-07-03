@@ -112,3 +112,8 @@ research_stage.first_stand.1=It hurts sometimes when i ecounter some mobs. Somet
 research_stage.first_stand.2=That wasn't much helpful, however I found the source of the problem. It just can't tank all of the damage... If I find solution for that problem, then I'll make more progress.
 research_stage.first_stand.3=That's it! It prevents from destructing things. Yet how does it affect myself? Puting myself in pure ward would be a tragic idea. However there was magic similar to my final wish how it should work. I need to get it to my hands.
 research_stage.first_stand.4=Yes! It worked exacly like the last stand enchant... Well, almost like it, beacause it's more like upgraded version. <BR>Instead of taking my experience while on the verge of death it takes all my experience before any of my life force!
+
+item.focus_4.name=Blank Supreme Focus
+research_name.supreme_focus=Supreme Focus
+research_stage.supreme_focus.1=I have managed to acquire a fragment of primal grain. Its capabilities seem to resonate deeply with raw vis itself, suggesting that my previous studies in auromancy may warrant a thorough reexamination.
+research_stage.supreme_focus.2=Pushing these principles even further, I have once again succeeded in doubling the complexity of a focus. Infusing it with primal grain and several auxiliary components proved sufficient to stabilize the process.

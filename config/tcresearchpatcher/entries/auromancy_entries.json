@@ -37,6 +37,26 @@
           "recipes": ["thaumcraft:crystal_bag"]
         }
       ]
+    },
+    {
+      "key": "FOCUSSUPREME",
+      "name": "research_name.supreme_focus",
+      "icons": ["thaumcraft:focus_4"],
+      "category": "AUROMANCY",
+      "location": [0,-4],
+      "parents": ["FOCUSGREATER", "FOCUSANCIENT"],
+      "meta": ["REVERSE"],
+      "stages": [
+        {
+          "text": "research_stage.supreme_focus.1",
+          "required_knowledge": ["THEORY;AUROMANCY;2"],
+          "required_craft": ["thaumcraft:focus_3"]
+        },
+        {
+          "text": "research_stage.supreme_focus.2",
+          "recipes": ["thaumcraft:focus_4"]
+        }
+      ]
     }
   ]
 }
