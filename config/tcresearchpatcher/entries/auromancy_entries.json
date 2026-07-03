@@ -170,6 +170,25 @@
           "text": "research_stage.efreet_flame.2"
         }
       ]
+    },
+    {
+      "key": "ENDER_RIFT",
+      "name": "research_name.ender_rift",
+      "icons": ["focus:thaumcraft.ENDER_RIFT"],
+      "category": "AUROMANCY",
+      "location": [-2, 8],
+      "parents": ["FOCUSCURSE"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.ender_rift.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!rattus"]
+        },
+        {
+          "text": "research_stage.ender_rift.2"
+        }
+      ]
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",
