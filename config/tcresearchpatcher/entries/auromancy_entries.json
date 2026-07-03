@@ -132,6 +132,25 @@
           "text": "research_stage.buttercatch.2"
         }
       ]
+    },
+    {
+      "key": "CRYSTALIZE",
+      "name": "research_name.crystalize",
+      "icons": ["focus:thaumcraft.CRYSTALIZE"],
+      "category": "AUROMANCY",
+      "location": [7, -2],
+      "parents": ["FOCUSBOLT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.crystalize.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!vitreus"]
+        },
+        {
+          "text": "research_stage.crystalize.2"
+        }
+      ]
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",

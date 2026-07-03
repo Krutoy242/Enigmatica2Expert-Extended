@@ -8,6 +8,7 @@ import scripts.mods.thaumcraft.spellCreation.spellBlackout.SpellBlackout;
 import scripts.mods.thaumcraft.spellCreation.spellBloomia.SpellBloomia;
 import scripts.mods.thaumcraft.spellCreation.spellButtercatch.SpellButtercatch;
 import scripts.mods.thaumcraft.spellCreation.spellCrossbreed.SpellCrossbreed;
+import scripts.mods.thaumcraft.spellCreation.spellCrystalize.SpellCrystalize;
 
 //Do not make fully black color - it fails to render it!
 FocusEngine.registerElement(SpellApiaryAcceleration.class,      ResourceLocation("thaumcraft", "textures/foci/apiaryacceleration.png"), 0xFFFFFF10);
@@ -15,4 +16,5 @@ FocusEngine.registerElement(SpellBlackout.class,                ResourceLocation
 FocusEngine.registerElement(SpellBloomia.class,                 ResourceLocation("thaumcraft", "textures/foci/bloomia.png"),            0xFF8BC763);
 FocusEngine.registerElement(SpellButtercatch.class,             ResourceLocation("thaumcraft", "textures/foci/buttercatch.png"),        0xFFC8C8C8);
 FocusEngine.registerElement(SpellCrossbreed.class,              ResourceLocation("thaumcraft", "textures/foci/crossbreed.png"),         0xFFDCB250);
+FocusEngine.registerElement(SpellCrystalize.class,              ResourceLocation("thaumcraft", "textures/foci/crystalize.png"),         0xFFADD8E6);
 
