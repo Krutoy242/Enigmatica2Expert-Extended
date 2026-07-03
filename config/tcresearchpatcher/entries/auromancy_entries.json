@@ -38,6 +38,25 @@
         }
       ]
     },
+    },
+    {
+      "key": "APIARYACCELERATION",
+      "name": "research_name.apiaryacceleration",
+      "icons": ["focus:thaumcraft.APIARYACCELERATION"],
+      "category": "AUROMANCY",
+      "location": [-4, 7],
+      "parents": ["FOCUSHEAL"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.apiaryacceleration.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!sensus"]
+        },
+        {
+          "text": "research_stage.apiaryacceleration.2"
+        }
+      ]
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",

@@ -117,3 +117,9 @@ item.focus_4.name=Blank Supreme Focus
 research_name.supreme_focus=Supreme Focus
 research_stage.supreme_focus.1=I have managed to acquire a fragment of primal grain. Its capabilities seem to resonate deeply with raw vis itself, suggesting that my previous studies in auromancy may warrant a thorough reexamination.
 research_stage.supreme_focus.2=Pushing these principles even further, I have once again succeeded in doubling the complexity of a focus. Infusing it with primal grain and several auxiliary components proved sufficient to stabilize the process.
+
+research_name.apiaryacceleration=Focus Effect: Apiary Acceleration
+research_stage.apiaryacceleration.1=I have grown tired of waiting for my bees to finish their work. There must be a way to hasten their natural cycle without harming their delicate lineage.
+research_stage.apiaryacceleration.2=Through careful study, I have devised a spell I call "Accelerated Lineage." It enhances the productivity of my apiaries, greatly increasing breeding speed and production rate. It functions well with Forestry and Pam's bees, though Rustic apiaries appear unaffected — perhaps their inhabitants follow a different magical lineage.
+thaumcraft.APIARYACCELERATION.name=Apiary Acceleration
+thaumcraft.APIARYACCELERATION.text=Speeds up bee breeding and production progress.
