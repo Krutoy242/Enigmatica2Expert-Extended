@@ -38,6 +38,24 @@
         }
       ]
     },
+    {
+      "key": "VAMPIRYSM",
+      "name": "research_name.vampirysm",
+      "icons": ["focus:thaumcraft.VAMPIRYSM"],
+      "category": "AUROMANCY",
+      "location": [7, 6],
+      "parents": ["FOCUSSPELLBAT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.vampirysm.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!sanguis"]
+        },
+        {
+          "text": "research_stage.vampirysm.2"
+        }
+      ]
     },
     {
       "key": "BLACKOUT",
