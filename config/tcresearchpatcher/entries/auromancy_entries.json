@@ -76,6 +76,25 @@
           "text": "research_stage.apiaryacceleration.2"
         }
       ]
+    },
+    {
+      "key": "BLOOMIA",
+      "name": "research_name.bloomia",
+      "icons": ["focus:thaumcraft.BLOOMIA"],
+      "category": "AUROMANCY",
+      "location": [-4, 5],
+      "parents": ["FOCUSHEAL"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.bloomia.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!herba"]
+        },
+        {
+          "text": "research_stage.bloomia.2"
+        }
+      ]
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",
