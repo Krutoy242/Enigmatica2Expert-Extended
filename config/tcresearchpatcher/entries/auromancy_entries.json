@@ -191,6 +191,25 @@
       ]
     },
     {
+      "key": "EXPLOSION",
+      "name": "research_name.explosion",
+      "icons": ["focus:thaumcraft.EXPLOSION"],
+      "category": "AUROMANCY",
+      "location": [4, 8],
+      "parents": ["FOCUSBREAK"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.explosion.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!exitium"]
+        },
+        {
+          "text": "research_stage.explosion.2"
+        }
+      ]
+    },
+    {
       "key": "EFREET_FLAME",
       "name": "research_name.efreet_flame",
       "icons": ["focus:thaumcraft.EFREET_FLAME"],
@@ -227,6 +246,7 @@
           "text": "research_stage.ender_rift.2"
         }
       ]
+    },
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",
