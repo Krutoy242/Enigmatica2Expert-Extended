@@ -12,6 +12,7 @@ import scripts.mods.thaumcraft.spellCreation.spellCrystalize.SpellCrystalize;
 import scripts.mods.thaumcraft.spellCreation.spellEfreetFalme.SpellEfreetFlame;
 import scripts.mods.thaumcraft.spellCreation.spellEnderRift.SpellEnderRift;
 import scripts.mods.thaumcraft.spellCreation.spellExplosion.SpellExplosion;
+import scripts.mods.thaumcraft.spellCreation.spellFeralis.SpellFeralis;
 
 //Do not make fully black color - it fails to render it!
 FocusEngine.registerElement(SpellApiaryAcceleration.class,      ResourceLocation("thaumcraft", "textures/foci/apiaryacceleration.png"), 0xFFFFFF10);
@@ -23,4 +24,5 @@ FocusEngine.registerElement(SpellCrystalize.class,              ResourceLocation
 FocusEngine.registerElement(SpellEfreetFlame.class,             ResourceLocation("thaumcraft", "textures/foci/efreetflame.png"),        0xFF780000);
 FocusEngine.registerElement(SpellEnderRift.class,               ResourceLocation("thaumcraft", "textures/foci/enderrift.png"),          0xFF2B3D3F);
 FocusEngine.registerElement(SpellExplosion.class,               ResourceLocation("thaumadditions", "textures/aspects/exitium.png"),     0xFF787878);
+FocusEngine.registerElement(SpellFeralis.class,                 ResourceLocation("thaumcraft", "textures/foci/feralis.png"),            0xFFCC8408);
 
