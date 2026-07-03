@@ -95,6 +95,25 @@
           "text": "research_stage.bloomia.2"
         }
       ]
+    },
+    {
+      "key": "BUTTERCATCH",
+      "name": "research_name.buttercatch",
+      "icons": ["focus:thaumcraft.BUTTERCATCH"],
+      "category": "AUROMANCY",
+      "location": [4, 3],
+      "parents": ["FOCUSRIFT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.buttercatch.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!fluctus"]
+        },
+        {
+          "text": "research_stage.buttercatch.2"
+        }
+      ]
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",
