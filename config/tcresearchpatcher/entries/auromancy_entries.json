@@ -97,6 +97,24 @@
       ]
     },
     {
+      "key": "CROSSBREED",
+      "name": "research_name.crossbreed",
+      "icons": ["focus:thaumcraft.CROSSBREED"],
+      "category": "AUROMANCY",
+      "location": [-6, 6],
+      "parents": ["APIARYACCELERATION", "BLOOMIA"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.crossbreed.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!sonus"]
+        },
+        {
+          "text": "research_stage.crossbreed.2"
+        }
+      ]
+    {
       "key": "BUTTERCATCH",
       "name": "research_name.buttercatch",
       "icons": ["focus:thaumcraft.BUTTERCATCH"],
