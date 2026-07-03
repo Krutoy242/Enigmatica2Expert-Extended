@@ -40,6 +40,25 @@
     },
     },
     {
+      "key": "BLACKOUT",
+      "name": "research_name.blackout",
+      "icons": ["focus:thaumcraft.BLACKOUT"],
+      "category": "AUROMANCY",
+      "location": [5, 7],
+      "parents": ["FOCUSRIFT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.blackout.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!tenebrae"]
+        },
+        {
+          "text": "research_stage.blackout.2"
+        }
+      ]
+    },
+    {
       "key": "APIARYACCELERATION",
       "name": "research_name.apiaryacceleration",
       "icons": ["focus:thaumcraft.APIARYACCELERATION"],
