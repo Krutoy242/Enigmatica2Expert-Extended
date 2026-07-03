@@ -151,6 +151,25 @@
           "text": "research_stage.crystalize.2"
         }
       ]
+    },
+    {
+      "key": "EFREET_FLAME",
+      "name": "research_name.efreet_flame",
+      "icons": ["focus:thaumcraft.EFREET_FLAME"],
+      "category": "AUROMANCY",
+      "location": [-2, 4],
+      "parents": ["FOCUSELEMENTAL"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.efreet_flame.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!infernum"]
+        },
+        {
+          "text": "research_stage.efreet_flame.2"
+        }
+      ]
     {
       "key": "FOCUSSUPREME",
       "name": "research_name.supreme_focus",
