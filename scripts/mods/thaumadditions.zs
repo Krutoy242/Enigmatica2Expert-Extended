@@ -65,6 +65,8 @@ val toHide = [
   'volatus',
   'vitium',
   'vitreus',
+  'terminus',
+  'ascension',
 ] as string[];
 
 for item in toHide {

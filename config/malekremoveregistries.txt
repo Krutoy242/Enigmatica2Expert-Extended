@@ -148,6 +148,7 @@ thaumadditions:vis_seeds/alienis
 thaumadditions:vis_seeds/alkimia
 thaumadditions:vis_seeds/amogus
 thaumadditions:vis_seeds/aqua
+thaumadditions:vis_seeds/ascension
 thaumadditions:vis_seeds/auram
 thaumadditions:vis_seeds/aversio
 thaumadditions:vis_seeds/bestia
@@ -185,6 +186,7 @@ thaumadditions:vis_seeds/sensus
 thaumadditions:vis_seeds/sonus
 thaumadditions:vis_seeds/spiritus
 thaumadditions:vis_seeds/tenebrae
+thaumadditions:vis_seeds/terminus
 thaumadditions:vis_seeds/terra
 thaumadditions:vis_seeds/vacuos
 thaumadditions:vis_seeds/ventus
