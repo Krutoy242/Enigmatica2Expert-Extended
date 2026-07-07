@@ -1557,6 +1557,8 @@
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
+  {"op": "remove",
+  "path": "meta"},
   {"op":"replace",
   "path":"location",
   "value": [13,2]}
