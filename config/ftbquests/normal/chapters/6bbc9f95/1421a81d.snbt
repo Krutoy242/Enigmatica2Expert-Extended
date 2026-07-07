@@ -1,0 +1,29 @@
+{
+	title: "{q.thaumcraft.ichorium.name}",
+	x: 15.0d,
+	y: 5.0d,
+	text: [
+		"{q.thaumcraft.ichorium.desc}"
+	],
+	dependencies: [
+		"47e42531"
+	],
+	tasks: [{
+		uid: "5dd0518e",
+		type: "item",
+		items: [{
+			item: "kami:ichorium_ingot"
+		}]
+	}],
+	rewards: [{
+		uid: "8479a185",
+		type: "item",
+		title: "{e2ee.quest.rare}",
+		item: {
+			id: "ftbquests:lootcrate",
+			tag: {
+				type: "rare"
+			}
+		}
+	}]
+}
