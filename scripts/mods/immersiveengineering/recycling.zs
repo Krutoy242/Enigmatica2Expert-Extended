@@ -243,10 +243,6 @@ add(<redstonerepository:tool.pickaxe_gelid>.withTag({ Energy: 0 }), { <redstonea
 add(<redstonerepository:tool.shovel_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 0.5, <redstonerepository:material:1>: 1.0 });
 add(<redstonerepository:tool.sickle_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 1.5, <redstonerepository:material:1>: 3.0 });
 add(<redstonerepository:tool.sword_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 1.0, <redstonerepository:material:1>: 1.0 });
-add(<thaumadditions:adaminite_belt>, { <minecraft:gold_ingot>: 0.25, <thaumcraft:ingot:1>: 4.25, <thaumcraft:ingot:2>: 0.125, <thaumcraft:ingot>: 2.125 });
-add(<thaumadditions:adaminite_boots>, { <thaumcraft:ingot:1>: 3.5, <thaumcraft:quicksilver>: 0.5 });
-add(<thaumadditions:adaminite_hood>, { <minecraft:gold_ingot>: 0.5, <thaumcraft:ingot:1>: 2.75, <thaumcraft:ingot>: 1.375 });
-add(<thaumadditions:adaminite_robe>, { <thaumcraft:ingot:1>: 2.0, <thaumcraft:ingot>: 0.5 });
 add(<thaumadditions:adaminite_sword>, { <thaumadditions:adaminite_ingot>: 3.0, <thaumcraft:ingot:1>: 1.0 });
 add(<thaumadditions:mithminite_belt>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <minecraft:iron_ingot>: 1.25, <thaumcraft:ingot:1>: 1.25, <thaumcraft:ingot>: 0.875, <thermalfoundation:material:132>: 0.22222222222222227 });
 add(<thaumadditions:mithminite_boots>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <thaumcraft:ingot:1>: 2.75, <thaumcraft:quicksilver>: 0.25 });
@@ -325,4 +321,4 @@ add(<twilightforest:steeleaf_hoe:*>, { <twilightforest:steeleaf_ingot>: 2.0 });
 add(<twilightforest:steeleaf_shovel:*>.withTag({ ench: [{ lvl: 2 as short, id: 32 as short }] }), { <twilightforest:steeleaf_ingot>: 1.0 });
 add(<twilightforest:steeleaf_sword:*>.withTag({ ench: [{ lvl: 2 as short, id: 21 as short }] }), { <twilightforest:steeleaf_ingot>: 2.0 });
 
-// Total recipes: 313
+// Total recipes: 307

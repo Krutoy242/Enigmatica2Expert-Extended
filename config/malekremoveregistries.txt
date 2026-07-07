@@ -140,6 +140,10 @@ tcomplement:steel_helmet
 tcomplement:steel_leggings
 tconstruct:slime_boots
 tconstruct:stone_stick
+thaumadditions:adaminite_belt
+thaumadditions:adaminite_boots
+thaumadditions:adaminite_hood
+thaumadditions:adaminite_robe
 thaumadditions:levitation_device
 thaumadditions:phantom_ink_phial
 thaumadditions:vis_pod
