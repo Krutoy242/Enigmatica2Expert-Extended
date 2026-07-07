@@ -820,7 +820,7 @@
 ,{"key":"COSMIC_CASTER","ops":[
   {"op":"replace",
   "path":"location",
-  "value": [18,4]},
+  "value": [13,0]},
   {"op":"replace",
   "path":"parents",
   "value": ["KAMI_ICHORIUM_CASTER"]},
@@ -1424,11 +1424,12 @@
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [15,9]},
+  "value": [7,2]},
   {"op":"replace",
   "path":"stages/1/recipes",
   "value":["thaumcraft:awakened_ichorium_axe"]}
@@ -1438,11 +1439,12 @@
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [13,9]},
+  "value": [7,0]},
   {"op":"replace",
   "path":"stages/1/recipes",
   "value":["thaumcraft:awakened_ichorium_pickaxe"]}
@@ -1452,11 +1454,12 @@
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [11,9]},
+  "value": [7,-2]},
   {"op":"replace",
   "path":"stages/1/recipes",
   "value":["thaumcraft:awakened_ichorium_shovel"]}
@@ -1466,11 +1469,12 @@
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [9,9]},
+  "value": [7,-4]},
   {"op":"replace",
   "path":"stages/1/recipes",
   "value":["thaumcraft:awakened_ichorium_sword"]}
@@ -1480,44 +1484,48 @@
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [15,-1]}
+  "value": [7,12]}
 ]}
 
 ,{"key":"KAMI_AWAKENED_ICHORWEAVE_HOOD","ops":[
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [9,-1]}
+  "value": [7,6]}
 ]}
 
 ,{"key":"KAMI_AWAKENED_ICHORWEAVE_LEGGINGS","ops":[
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [13,-1]}
+  "value": [7,10]}
 ]}
 
 ,{"key":"KAMI_AWAKENED_ICHORWEAVE_ROBE","ops":[
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [11,-1]}
+  "value": [7,8]}
 ]}
 
 ,{"key":"KAMI_BOTTOMLESS_POUCH","ops":[
@@ -1528,7 +1536,7 @@
   "path": "meta"},
   {"op":"replace",
   "path":"location",
-  "value": [14,4]},
+  "value": [13,4]},
   {"op":"replace",
   "path":"stages/1/recipes",
   "value":["thaumcraft:kami_focus_pouch"]}
@@ -1542,7 +1550,7 @@
   "path": "meta"},
   {"op":"replace",
   "path":"location",
-  "value": [10,4]}
+  "value": [9,4]}
 ]}
 
 ,{"key":"KAMI_ICHORIUM_CASTER","ops":[
@@ -1551,16 +1559,19 @@
   "value": "ELDRITCH"},
   {"op":"replace",
   "path":"location",
-  "value": [16,4]}
+  "value": [13,2]}
 ]}
 
 ,{"key":"KAMI_ICHORIUM_TOOLS","ops":[
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
+  {"op": "add",
+  "path": "meta",
+  "value": ["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [12,7]},
+  "value": [9,-1]},
   {"op":"replace",
   "path":"stages/1/recipes/4",
   "value": "thaumcraft:blessed_silverwood_rod"}
@@ -1575,18 +1586,19 @@
   "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [12,5]}
+  "value": [11,3]}
 ]}
 
 ,{"key":"KAMI_ICHORWEAVE_ARMOR","ops":[
   {"op":"replace",
   "path":"category",
   "value": "ELDRITCH"},
-  {"op":"remove",
-  "path": "meta"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [12,1]},
+  "value": [9,9]},
   {"op":"replace",
   "path":"stages/1/recipes",
   "value": ["thaumcraft:ichorweave_hood", "thaumcraft:ichorweave_robe", "thaumcraft:ichorweave_leggings", "thaumcraft:ichorweave_boots"]}
@@ -1604,7 +1616,7 @@
   "value":["REVERSE"]},
   {"op":"replace",
   "path":"location",
-  "value": [12,3]}
+  "value": [11,5]}
 ]}
 
 ,{"key":"ZENITH_BASE","ops":[
