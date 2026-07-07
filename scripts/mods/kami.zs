@@ -60,7 +60,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   <kami:awakened_ichorium_sword>.withTag({ Unbreakable: 1 as byte, infench: [{ lvl: 4 as short, id: 5 as short }] }), // Output
   10, // Instability
   Aspects('500🗡️ 200❤️ 200💀 200🐲 200🗯️ 200♾️'),
-  <kami:ichorweave_hood:*>, // CentralItem
+  <kami:ichorium_sword:*>, // CentralItem
   [<thaumadditions:mithminite_ingot>, <iceandfire:witherbone>, <ore:eyeOfDragon>, <twilightforest:raw_meef>]
 );
 
@@ -71,7 +71,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   <kami:awakened_ichorium_shovel>.withTag({ mode: 0, Unbreakable: 1 as byte }), // Output
   10, // Instability
   Aspects('500⚰️ 200⛰️ 200🔗 200🛠️ 200🗯️ 200♾️'),
-  <kami:ichorium_sword:*>, // CentralItem
+  <kami:ichorium_shovel:*>, // CentralItem
   [<thaumadditions:mithminite_ingot>, <quark:soul_powder>, <thaumcraft:stone_porous>, <tconstruct:soil:4>]
 );
 
