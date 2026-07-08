@@ -172,6 +172,25 @@
       ]
     },
     {
+      "key": "CHRONOSTASIS",
+      "name": "research_name.chronostasis",
+      "icons": ["focus:thaumcraft.CHRONOSTASIS"],
+      "category": "AUROMANCY",
+      "location": [7, 8],
+      "parents": ["BLACKOUT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.chronostasis.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!ascension"]
+        },
+        {
+          "text": "research_stage.chronostasis.2"
+        }
+      ]
+    },
+    {
       "key": "CRYSTALIZE",
       "name": "research_name.crystalize",
       "icons": ["focus:thaumcraft.CRYSTALIZE"],
