@@ -24,7 +24,7 @@
       "name": "research_name.thaumadditions:crystal_bag",
       "icons": ["thaumadditions:crystal_bag"],
       "category": "AUROMANCY",
-      "location": [-2, -3],
+      "location": [-3, -3],
       "parents": ["FOCUSPOUCH"],
       "stages": [
         {
