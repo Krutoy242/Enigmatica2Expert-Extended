@@ -68,12 +68,12 @@ zenClass SpellBlackout extends FocusEffect {
     PacketHandler.INSTANCE.sendToAllAround(PacketFXFocusPartImpact(target.hitVec.x, target.hitVec.y, target.hitVec.z, [getKey()]), NetworkRegistry.TargetPoint(this.getPackage().world.provider.getDimension(), target.hitVec.x, target.hitVec.y, target.hitVec.z, 64.0));
     if(target.typeOfHit == RayTraceResult.Type.BLOCK && this.getPackage().getCaster() instanceof EntityPlayer){
       val player = this.getPackage().getCaster();
-      if(player.getEntityData().hasKey("BlackoutEffect")) {
-        return false;
-      }
+      if (player.cooldownTracker.hasCooldown(<thaumcraft:caster_basic>.native.getItem())) return false;
+      
       val world = this.getPackage().world;
       val range = 10 * pow(2, this.getSettingValue('range'));
       player.getEntityData().setInteger("BlackoutEffect", range);
+      player.cooldownTracker.setCooldown(<thaumcraft:caster_basic>.native.getItem(), range);
       mods.zenutils.CatenationPersistence.startPersistedCatenation("blackoutMechanic", world)
         .withPosition(BlockPos(target.hitVec).wrapper)
         .withPlayer((player as EntityPlayer).wrapper)
