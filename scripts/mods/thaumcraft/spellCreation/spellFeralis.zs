@@ -76,7 +76,7 @@ zenClass SpellFeralis extends FocusEffect {
         if(entity instanceof EntityTameable){
             val entityTame = entity as EntityTameable;
 
-            val wasOwned = isNull(entityTame.getOwner());
+            val wasOwned = !isNull(entityTame.getOwner());
             (world as WorldServer).spawnParticle(EnumParticleTypes.HEART, entityTame.posX, entityTame.posY + entityTame.eyeHeight, entityTame.posZ, 7, 0.5, 0.5, 0.5, 0.01, 0);
             entityTame.setTamedBy(player);
             if(wasOwned) return true;

@@ -66,7 +66,7 @@ zenClass SpellEfreetFlame extends FocusEffect {
   function execute(target as RayTraceResult, trajectory as Trajectory, finalPower as float, num as int) as bool {
     PacketHandler.INSTANCE.sendToAllAround(PacketFXFocusPartImpact(target.hitVec.x, target.hitVec.y, target.hitVec.z, [getKey()]), NetworkRegistry.TargetPoint(this.getPackage().world.provider.getDimension(), target.hitVec.x, target.hitVec.y, target.hitVec.z, 64.0));
     val world = this.getPackage().world;
-    if(target.typeOfHit != RayTraceResult.Type.BLOCK){
+    if(target.typeOfHit == RayTraceResult.Type.BLOCK){
     val pos = target.getBlockPos();
     val state = world.getBlockState(pos);
     val blockStack = ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state));
