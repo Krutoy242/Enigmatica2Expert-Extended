@@ -9,7 +9,7 @@ import scripts.mods.thaumcraft.spellCreation.spellBloomia.SpellBloomia;
 import scripts.mods.thaumcraft.spellCreation.spellButtercatch.SpellButtercatch;
 import scripts.mods.thaumcraft.spellCreation.spellCrossbreed.SpellCrossbreed;
 import scripts.mods.thaumcraft.spellCreation.spellCrystalize.SpellCrystalize;
-import scripts.mods.thaumcraft.spellCreation.spellEfreetFalme.SpellEfreetFlame;
+import scripts.mods.thaumcraft.spellCreation.spellEfreetFlame.SpellEfreetFlame;
 import scripts.mods.thaumcraft.spellCreation.spellEnderRift.SpellEnderRift;
 import scripts.mods.thaumcraft.spellCreation.spellExplosion.SpellExplosion;
 import scripts.mods.thaumcraft.spellCreation.spellFeralis.SpellFeralis;
