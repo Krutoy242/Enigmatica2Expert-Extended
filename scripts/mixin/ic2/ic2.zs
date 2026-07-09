@@ -97,7 +97,7 @@ zenClass MixinTileEntityCrop {
   function attemptCrossingPublic() as bool {
     return this0.attemptCrossing();
   }
-   
+
   /*
     Fixes item duplication and illegal stack-size bugs in TileEntityCrop#performHarvest().
     Most CropCard implementations cache the ItemStack returned by getGains(). The original code
