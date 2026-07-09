@@ -79,7 +79,11 @@ zenClass SpellVampirysm extends FocusEffect {
         if(isNull(caster)) return false;
         caster.heal(damage * lifesteal / 10);
         if(this.getSettingValue('bloodOrb') == 1){
-            val player as IPlayer = caster.native instanceof IEntityOwnable ? (caster.native as IEntityOwnable).getOwner().wrapper : caster;
+            var player as IPlayer = caster instanceof IPlayer ? caster : null;
+            if(caster.native instanceof IEntityOwnable){
+                val owner = (caster.native as IEntityOwnable).getOwner();
+                if(!isNull(owner) && owner.wrapper instanceof IPlayer) player = owner as IPlayer;
+            }
             if(!isNull(player) && !isNull(player.soulNetwork)) player.soulNetwork.add(10 * lifesteal * damage, 50000000);
         }
         return true;

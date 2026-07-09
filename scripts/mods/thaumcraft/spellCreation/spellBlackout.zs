@@ -126,6 +126,8 @@ mods.zenutils.CatenationPersistence.registerPersistedCatenation("blackoutMechani
         val startY = context.getPosition().y;
         val startZ = context.getPosition().z;
         val player = context.getPlayer().native;
+
+        if(isNull(player)) return true;
         
         val range = player.getEntityData().getInteger("BlackoutEffect");
         val rangeStep = 1;
@@ -155,7 +157,8 @@ mods.zenutils.CatenationPersistence.registerPersistedCatenation("blackoutMechani
         player.getEntityData().setInteger("BlackoutEffect", range - rangeStep);
         return false;
     }).onStop(function(world, context){
-        context.getPlayer().native.getEntityData().removeTag("BlackoutEffect");
+        val player = context.getPlayer();
+        if(!isNull(player)) player.native.getEntityData().removeTag("BlackoutEffect");
     }).start();
     })
   .addPositionHolder()
