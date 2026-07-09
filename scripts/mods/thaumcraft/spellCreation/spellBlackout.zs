@@ -67,7 +67,7 @@ zenClass SpellBlackout extends FocusEffect {
   function execute(target as RayTraceResult, trajectory as Trajectory, finalPower as float, num as int) as bool {
     PacketHandler.INSTANCE.sendToAllAround(PacketFXFocusPartImpact(target.hitVec.x, target.hitVec.y, target.hitVec.z, [getKey()]), NetworkRegistry.TargetPoint(this.getPackage().world.provider.getDimension(), target.hitVec.x, target.hitVec.y, target.hitVec.z, 64.0));
     if(target.typeOfHit == RayTraceResult.Type.BLOCK && this.getPackage().getCaster() instanceof EntityPlayer){
-      val player = this.getPackage().getCaster();
+      val player = this.getPackage().getCaster() as EntityPlayer;
       if (player.cooldownTracker.hasCooldown(<thaumcraft:caster_basic>.native.getItem())) return false;
       
       val world = this.getPackage().world;
@@ -76,7 +76,7 @@ zenClass SpellBlackout extends FocusEffect {
       player.cooldownTracker.setCooldown(<thaumcraft:caster_basic>.native.getItem(), range);
       mods.zenutils.CatenationPersistence.startPersistedCatenation("blackoutMechanic", world)
         .withPosition(BlockPos(target.hitVec).wrapper)
-        .withPlayer((player as EntityPlayer).wrapper)
+        .withPlayer(player.wrapper)
         .start();
       return true;
     }
