@@ -94,6 +94,7 @@ zenClass MixinTileEntityCrop {
     return crop.getGrowthDuration(tile) / 10;
   }
 
+  //Expose private method for thaumcraft spell scripts/mods/thaumcraft/spellCreation/spellCrossbreed.zs
   function attemptCrossingPublic() as bool {
     return this0.attemptCrossing();
   }

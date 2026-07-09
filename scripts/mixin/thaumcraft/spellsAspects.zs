@@ -4,6 +4,11 @@
 import native.thaumcraft.api.aspects.Aspect;
 import mixin.CallbackInfoReturnable;
 
+/*
+  These mixins replace the aspects of vis crystals used by the Focus Manipulator.
+  This allows (almost) every spell type to have its own unique aspect for spell creation.
+*/
+
 #mixin {targets: "thecodex6824.thaumicaugmentation.common.item.foci.FocusEffectVoidShield"}
 zenClass MixinFocusEffectVoidShield {
     #mixin Inject {method: "getAspect", at: {value: "HEAD"}, cancellable: true}
