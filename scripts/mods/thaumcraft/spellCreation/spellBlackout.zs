@@ -14,7 +14,6 @@ import native.net.minecraft.world.World;
 import native.net.minecraftforge.fml.common.network.NetworkRegistry;
 import native.thaumcraft.api.aspects.Aspect;
 import native.thaumcraft.api.casters.FocusEffect;
-import native.thaumcraft.api.casters.FocusEngine;
 import native.thaumcraft.api.casters.NodeSetting;
 import native.thaumcraft.api.casters.Trajectory;
 import native.thaumcraft.client.fx.ParticleEngine;
@@ -75,7 +74,7 @@ zenClass SpellBlackout extends FocusEffect {
       val world = this.getPackage().world;
       val range = 10 * pow(2, this.getSettingValue('range'));
       player.getEntityData().setInteger("BlackoutEffect", range);
-      mods.zenutils.CatenationPersistence.startPersistedCatenation("blackout_test", world)
+      mods.zenutils.CatenationPersistence.startPersistedCatenation("blackoutMechanic", world)
         .withPosition(BlockPos(target.hitVec).wrapper)
         .withPlayer((player as EntityPlayer).wrapper)
         .start();
@@ -108,7 +107,7 @@ zenClass SpellBlackout extends FocusEffect {
     fb.setRBGColorF(0.05f + world.rand.nextFloat() * 0.01, 0.05f + world.rand.nextFloat() * 0.01, 0.05f + world.rand.nextFloat() * 0.01);
     fb.setGridSize(16);
     fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-    fb.setScale(20.0f + world.rand.nextFloat() * 4.0); //Particle size
+    fb.setScale(20.0f + world.rand.nextFloat() * 4.0);
     fb.setLoop(false);
     fb.setSlowDown(0.8);
     fb.setGravity(0.0f);
@@ -118,7 +117,7 @@ zenClass SpellBlackout extends FocusEffect {
   }
 }
 
-mods.zenutils.CatenationPersistence.registerPersistedCatenation("blackout_test")
+mods.zenutils.CatenationPersistence.registerPersistedCatenation("blackoutMechanic")
   .setCatenationFactory(function(world) {
     return world.catenation().sleepUntil( 
       function(world, context){

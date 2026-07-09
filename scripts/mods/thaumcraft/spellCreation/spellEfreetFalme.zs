@@ -3,7 +3,6 @@
 
 import native.com.blamejared.compat.thaumcraft.handlers.ThaumCraft;
 import native.net.minecraft.block.Block;
-import native.net.minecraft.block.state.IBlockState;
 import native.net.minecraft.entity.Entity;
 import native.net.minecraft.entity.player.EntityPlayer;
 import native.net.minecraft.util.ResourceLocation;
@@ -15,16 +14,12 @@ import native.net.minecraft.world.World;
 import native.net.minecraftforge.fml.common.network.NetworkRegistry;
 import native.thaumcraft.api.aspects.Aspect;
 import native.thaumcraft.api.casters.FocusEffect;
-import native.thaumcraft.api.casters.FocusEngine;
 import native.thaumcraft.api.casters.NodeSetting;
 import native.thaumcraft.api.casters.Trajectory;
 import native.thaumcraft.client.fx.ParticleEngine;
 import native.thaumcraft.client.fx.particles.FXGeneric;
-import native.thaumcraft.common.lib.SoundsTC;
 import native.thaumcraft.common.lib.network.PacketHandler;
-import native.thaumcraft.common.lib.network.fx.PacketFXEssentiaSource;
 import native.thaumcraft.common.lib.network.fx.PacketFXFocusPartImpact;
-import thaumcraft.aspect.CTAspectStack;
 import native.net.minecraft.item.ItemBlock;
 import native.net.minecraft.item.ItemStack;
 import native.net.minecraft.item.crafting.FurnaceRecipes;
@@ -95,12 +90,11 @@ zenClass SpellEfreetFlame extends FocusEffect {
   function renderParticleFX(world as World, posX as double, posY as double, posZ as double, motionX as double, motionY as double, motionZ as double) as void {
     val fb as FXGeneric = FXGeneric(world, posX, posY, posZ, motionX, motionY, motionZ);
     
-    fb.setMaxAge(8); //Particle lifetime (in ticks)
+    fb.setMaxAge(8); 
     fb.setRBGColorF(0.4706f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.4706f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.4706f + (world.rand.nextFloat() - 0.5f) * 0.05f);
-    //fb.setAlphaF(0.0f);
-    fb.setGridSize(16); //Particle texture size
+    fb.setGridSize(16); 
     fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-    fb.setScale(2.0 + world.rand.nextFloat() * 4.0); //Particle size
+    fb.setScale(2.0 + world.rand.nextFloat() * 4.0); 
     fb.setLoop(false);
     fb.setSlowDown(0.9);
     fb.setGravity(0.0);

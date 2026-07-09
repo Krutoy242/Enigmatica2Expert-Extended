@@ -6,14 +6,11 @@ import crafttweaker.util.Math;
 import crafttweaker.world.IBlockPos;
 import crafttweaker.world.IWorld;
 import native.com.blamejared.compat.thaumcraft.handlers.ThaumCraft;
-//import native.net.minecraft.block.Block;
 import native.net.minecraft.block.state.IBlockState;
 import native.net.minecraft.entity.Entity;
-import native.net.minecraft.util.EnumParticleTypes;
 import native.net.minecraft.util.math.BlockPos;
 import native.net.minecraft.util.math.RayTraceResult;
 import native.net.minecraft.world.World;
-import native.net.minecraft.world.WorldServer;
 import native.net.minecraftforge.fml.common.network.NetworkRegistry;
 import native.thaumcraft.api.aspects.Aspect;
 import native.thaumcraft.api.casters.FocusEffect;
@@ -258,12 +255,11 @@ zenClass SpellCrystalize extends FocusEffect {
     function renderParticleFX(world as World, posX as double, posY as double, posZ as double, motionX as double, motionY as double, motionZ as double) as void {
         val fb as FXGeneric = FXGeneric(world, posX, posY, posZ, motionX, motionY, motionZ);
     
-        fb.setMaxAge(8); //Particle lifetime (in ticks)
+        fb.setMaxAge(8); 
         fb.setRBGColorF(0.863f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.698f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.314f + (world.rand.nextFloat() - 0.5f) * 0.05f);
-        //fb.setAlphaF(0.0f); //Transparency
-        fb.setGridSize(16); //Particle texture size
+        fb.setGridSize(16); 
         fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-        fb.setScale(2.0 + world.rand.nextFloat() * 4.0); //Particle size
+        fb.setScale(2.0 + world.rand.nextFloat() * 4.0); 
         fb.setLoop(false);
         fb.setSlowDown(0.9);
         fb.setGravity(0.0);

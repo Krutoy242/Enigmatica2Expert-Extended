@@ -53,8 +53,8 @@ zenClass SpellBloomia extends FocusEffect {
 
     function createSettings() as NodeSetting[] {
         return [
-            NodeSetting('tendency',  'focus.common.tendency',      NodeSetting.NodeSettingIntList( [-1, 1], ['focus.common.negative', 'focus.common.positive'])),
-            NodeSetting('stat', 'focus.common.stat', NodeSetting.NodeSettingIntList([1, 2, 3], ['focus.common.growth', 'focus.common.resistance', 'focus.common.gain']))
+            NodeSetting('tendency', 'focus.common.tendency', NodeSetting.NodeSettingIntList([-1, 1], ['focus.common.negative', 'focus.common.positive'])),
+            NodeSetting('stat',     'focus.common.stat',     NodeSetting.NodeSettingIntList([1, 2, 3], ['focus.common.growth', 'focus.common.resistance', 'focus.common.gain']))
         ];
     }
 
@@ -81,7 +81,6 @@ zenClass SpellBloomia extends FocusEffect {
         val inventory = player.getPlayerInventoryItemHandler();
         val fertilizer = <ic2:crop_res:2>.native;
 
-        // Consume fertilizer
         var found = false;
 
         for i in 0 .. inventory.size {
@@ -125,7 +124,7 @@ zenClass SpellBloomia extends FocusEffect {
         return Math.min(Math.max(i , 0), 31);
     }
 
-    function onCast(caster as Entity) { //optional
+    function onCast(caster as Entity) {
         
     }
 
@@ -136,12 +135,11 @@ zenClass SpellBloomia extends FocusEffect {
     function renderParticleFX(world as World, posX as double, posY as double, posZ as double, motionX as double, motionY as double, motionZ as double) as void {
         val fb as FXGeneric = FXGeneric(world, posX, posY, posZ, motionX, motionY, motionZ);
     
-        fb.setMaxAge(8); //Particle lifetime (in ticks)
+        fb.setMaxAge(8); 
         fb.setRBGColorF(0.545f + (world.rand.nextFloat() - 0.5f) * 0.1f, 0.78f + (world.rand.nextFloat() - 0.5f) * 0.1f, 0.388f + (world.rand.nextFloat() - 0.5f) * 0.1f);
-        //fb.setAlphaF(0.0f); //Transparency
-        fb.setGridSize(16); //Particle texture size
+        fb.setGridSize(16); 
         fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-        fb.setScale(2.0 + world.rand.nextFloat() * 4.0); //Particle size
+        fb.setScale(2.0 + world.rand.nextFloat() * 4.0); 
         fb.setLoop(false);
         fb.setSlowDown(0.9);
         fb.setGravity(0.0);

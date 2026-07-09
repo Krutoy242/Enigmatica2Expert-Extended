@@ -96,7 +96,7 @@ zenClass SpellChronostasis extends FocusEffect {
     fb.setRBGColorF(0.095f + world.rand.nextFloat() * 0.01f, 0.095f + world.rand.nextFloat() * 0.01f, 0.435f + world.rand.nextFloat() * 0.01f);
     fb.setGridSize(16);
     fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-    fb.setScale(20.0f + world.rand.nextFloat() * 4.0); //Particle size
+    fb.setScale(20.0f + world.rand.nextFloat() * 4.0); 
     fb.setLoop(false);
     fb.setSlowDown(0.8);
     fb.setGravity(0.0f);

@@ -82,12 +82,11 @@ zenClass SpellEnderRift extends FocusEffect {
   function renderParticleFX(world as World, posX as double, posY as double, posZ as double, motionX as double, motionY as double, motionZ as double) as void {
     val fb as FXGeneric = FXGeneric(world, posX, posY, posZ, motionX, motionY, motionZ);
     
-    fb.setMaxAge(8); //Particle lifetime (in ticks)
+    fb.setMaxAge(8); 
     fb.setRBGColorF(0.4706f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.4706f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.4706f + (world.rand.nextFloat() - 0.5f) * 0.05f);
-    //fb.setAlphaF(0.0f);
-    fb.setGridSize(16); //Particle texture size
+    fb.setGridSize(16); 
     fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-    fb.setScale(2.0 + world.rand.nextFloat() * 4.0); //Particle size
+    fb.setScale(2.0 + world.rand.nextFloat() * 4.0); 
     fb.setLoop(false);
     fb.setSlowDown(0.9);
     fb.setGravity(0.0);
