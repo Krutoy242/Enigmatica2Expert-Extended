@@ -16,8 +16,3 @@ Format: `<type>(<scope>): <emoji><desc>` → blank → why (1 sentence, audience
 
 ## Git filters
 Clean filters normalize configs to avoid noisy diffs: `git config --local --list | grep filter`.
-
-## Dev toolchain (hard-won)
-- Typecheck one `.ts`: not `tsc file` (TS5112 + phantom TS7006). Make repo-root temp `{ "extends":"./tsconfig.json", "include":["file.ts"] }`, run `tsc --noEmit --project` it. Iterate `find-process` with `for…of`, not `.filter` (implicit-any).
-- `.agents/` is ESLint-ignored — don't chase `--no-ignore`.
-- PowerShell with `$vars` (`Get-Process`, `Get-CimInstance`): use the PowerShell tool, not Bash (Bash expands `$` first).

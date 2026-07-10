@@ -45,7 +45,7 @@ Failed lookups print fuzzy "did you mean" suggestions. Ambiguous short names (e.
 
 ## Limitations
 
-- No `try-catch` blocks.
+- ZenScript doesn't have `try-catch` blocks.
 - Instances are created without `new`: `val myClass = MyClass();`.
 - Statics initialized with `static name` instead of `static var name`. Static functions initialized as static variables: `static init as function()void = function() as void { ... };`.
 - **`#priority` is inverted**: higher number = EARLIER load. Examples: `#priority 100` loads before `#priority 0` loads before `#priority -10`. Most negative = last.
@@ -54,6 +54,7 @@ Failed lookups print fuzzy "did you mean" suggestions. Ambiguous short names (e.
 ## Language edge cases
 
 - **Map primitives are wrapped/nullable**: `map[key]` may return `null`. Cast to native primitive (`as int`, `as bool`) before use.
+- **Null checks**: `isNull(x)` / `!isNull(x)` — never `x == null` / `x != null` on objects (errors `operator not supported`).
 - **Object → primitive**: ZS cannot cast `Object` directly to `int`/`double`/`bool`. Double-cast via wrapper: `obj as Integer as int`, `obj as Double as double`.
 - **Native types**: only `string`; no `char`/`CharSequence`. No varargs — use `T[]`. Replace Java collections with ZenScript list syntax `[type]`.
 - **Tooltips/JEI**: use `scripts.lib.tooltip.desc` helpers (`desc.jei`, `desc.tooltip`, `desc.both`) instead of raw JEI API. Lang keys auto-prefixed with `tooltips.lang.`.
@@ -160,8 +161,13 @@ There is running MC instance with current modpack. You can execute commands and 
 npx tsx .agents/skills/zs/run-cmd.ts 'say Hello!' # Execute `/say Hello!` from the server
 npx tsx .agents/skills/zs/run-cmd.ts 'say Hello' 'say World!' # allow chaining
 ```
+- Pass commands **without** a leading `/`
+- A chain stops at the first failing command.
 
 ## Troubleshooting
+
+### Runtime command errors
+A command failing in-game with `An unknown error occurred while attempting to perform this command` (or any unclear runtime error) throws a Java exception logged to the **tail of `./logs/debug.log`**, not `crafttweaker.log`.
 
 ### Full syntax/parse error breakdown
 Use after changing any .zs script, except for #reloadable scripts. DO NOT use if you planning to use `ct-reload` next.
@@ -175,9 +181,3 @@ Runs syntax check first, aborts if errors found, otherwise reloads and reports e
 ```bash
 pnpm ct-reload
 ```
-Note: `/ct reload` has a known bug that shows some unrelated errors. Track file source of errors. It also does NOT reset live runtime state (windowIds, cached maps). If a handler still misbehaves after reload, do a full MC restart with `pnpm reducer restart` (see the `reducer` skill — it also reports `crafttweaker.log` errors and can disable mods or auto-bisect a load bug).
-
-## Event patterns
-
-### Avoiding throws inside event handlers
-ZenScript has no `try-catch`, so a native method that throws (e.g. `IModifier.canApply` throws `TinkerGuiException`) aborts the whole script. Use boolean alternatives (`canApplyTogether`) or sanitize inputs so the throwing path is never reached.
