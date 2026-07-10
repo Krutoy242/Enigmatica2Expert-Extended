@@ -8,9 +8,10 @@ It should not exist in release version.
 #priority 3999
 #reloadable
 
-import crafttweaker.player.IPlayer;
+import native.net.minecraft.world.World;
+import crafttweaker.command.ICommandSender;
 
-function logAdditionalDebugData(player as IPlayer) {
+function logAdditionalDebugData() {
   val commandsToRun = [
     '/ct thaumcraftDump',
     '/ct loottables all',
@@ -87,15 +88,15 @@ zenClass DebugUtils {
 }
 static debugUtils as DebugUtils = DebugUtils();
 
-function runAutomation(player as IPlayer) as void {
-  player.world.catenation().sleep(20).then(function (world, ctx) {
-    player.sendMessage('Developing: §c/logAdditionalDebugData()');
-    logAdditionalDebugData(player);
+function runAutomation(sender as ICommandSender) as void {
+  (server.native.worlds[0] as World).wrapper.catenation().sleep(20).then(function (world, ctx) {
+    sender.sendMessage('Developing: §c/logAdditionalDebugData()');
+    logAdditionalDebugData();
   }).sleep(100).then(function (world, ctx) {
-    player.sendMessage('Developing: Starting §c/ct conflict');
+    sender.sendMessage('Developing: Starting §c/ct conflict');
     server.commandManager.executeCommandSilent(server, '/ct conflict');
   }).sleep(100).then(function (world, ctx) {
-    player.sendMessage('Developing: Starting §c/tellme dump-csv');
+    sender.sendMessage('Developing: Starting §c/tellme dump-csv');
     val csvList = [
       // 'players',                          # 132
       'musictypes', // 487
@@ -141,14 +142,14 @@ function runAutomation(player as IPlayer) as void {
       server.commandManager.executeCommandSilent(server, '/tellme dump-csv ' ~ csvcode);
     }
   }).sleep(100).then(function (world, ctx) {
-    player.sendMessage('Developing: Starting §cexport to crafttweaker.log');
+    sender.sendMessage('Developing: Starting §cexport to crafttweaker.log');
     exportAllBlocks();
     // exportAllTools();
   }).sleep(100).then(function (world, ctx) {
-    player.sendMessage('Developing: Starting §cdump arc recycling');
+    sender.sendMessage('Developing: Starting §cdump arc recycling');
     server.commandManager.executeCommandSilent(server, '/dump arc_recycle');
   }).sleep(100).then(function (world, ctx) {
-    player.sendMessage('Developing: §aFinished!');
+    sender.sendMessage('Developing: §aFinished!');
   }).start();
 }
 
@@ -184,6 +185,6 @@ if (currentLoader() == 'crafttweaker') {
 val cmd = mods.zenutils.command.ZenCommand.create('run_automation');
 cmd.requiredPermissionLevel = 0;
 cmd.execute = function (command, server, sender, args) {
-  runAutomation(mods.zenutils.command.CommandUtils.getCommandSenderAsPlayer(sender));
+  runAutomation(sender);
 };
 cmd.register();

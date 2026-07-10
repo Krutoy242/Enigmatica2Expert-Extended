@@ -97,6 +97,20 @@ function notifyActivePlayersAboutQuery(initiator as IPlayer) as void {
 
 cmd.requiredPermissionLevel = 0; // require no permission, everyone can execute the command.
 cmd.execute = function (command, server, sender, args) {
+  if (!(sender instanceof IPlayer)) {
+    if (!isNull(inProcess.restart)) {
+      sender.sendMessage(game.localize('commands.restart_server.in_process'));
+      return;
+    }
+    val activeCount = getActivePlayerCount();
+    if (activeCount <= 1) {
+      stopWithDelay(IWorld.getFromID(0));
+      return;
+    }
+    sender.sendMessage(game.localize('commands.restart_server.usage'));
+    return;
+  }
+
   val player = CommandUtils.getCommandSenderAsPlayer(sender);
 
   // Server already restarting

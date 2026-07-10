@@ -4,9 +4,10 @@
 
 import crafttweaker.data.IData;
 import crafttweaker.server.IServer;
-import mods.zenutils.command.CommandUtils.getCommandSenderAsPlayer;
 import mods.zenutils.command.ZenCommand;
 import mods.zenutils.command.ZenUtilsCommandSender;
+
+import scripts.lib.command.senderAsPlayerOrNull;
 
 val x = scripts.commands.build.Command('perf');
 x.prefix = '§6[§e⚡§6] ';
@@ -16,7 +17,7 @@ x.addSubCommand(
   'loaders',
   'information about §lchunk loaders',
   function (command as ZenCommand, server as IServer, sender as ZenUtilsCommandSender, args as string[]) as IData {
-    return scripts.commands.perf.loaders.show(getCommandSenderAsPlayer(sender));
+    return scripts.commands.perf.loaders.show(sender);
   }
 );
 
@@ -24,7 +25,12 @@ x.addSubCommand(
   'chunks',
   'information about §lloaded chunks',
   function (command as ZenCommand, server as IServer, sender as ZenUtilsCommandSender, args as string[]) as IData {
-    return scripts.commands.perf.chunks.show(getCommandSenderAsPlayer(sender));
+    val player = senderAsPlayerOrNull(sender);
+    if (isNull(player)) {
+      sender.sendMessage('§c/perf chunks requires a player sender (sends a render packet to your client).');
+      return null;
+    }
+    return scripts.commands.perf.chunks.show(player);
   }
 );
 
@@ -32,7 +38,7 @@ x.addSubCommand(
   'entities',
   'information about §lloaded entities',
   function (command as ZenCommand, server as IServer, sender as ZenUtilsCommandSender, args as string[]) as IData {
-    return scripts.commands.perf.entities.show(getCommandSenderAsPlayer(sender));
+    return scripts.commands.perf.entities.show(sender);
   }
 );
 
@@ -47,7 +53,7 @@ x.addSubCommand(
         page = pageNum;
       }
     }
-    return scripts.commands.perf.claimed.show(getCommandSenderAsPlayer(sender), page);
+    return scripts.commands.perf.claimed.show(sender, page);
   }
 );
 

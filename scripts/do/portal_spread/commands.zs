@@ -11,6 +11,7 @@
 #modloaded zenutils
 #priority -1
 
+import crafttweaker.player.IPlayer;
 import crafttweaker.world.IWorld;
 
 import scripts.do.portal_spread.config.Config;
@@ -39,27 +40,30 @@ val tabCompletion as mods.zenutils.command.IGetTabCompletion = function (server,
 cmd.tabCompletionGetters = [tabCompletion];
 
 cmd.execute = function (command, server, sender, args) {
-  val player = mods.zenutils.command.CommandUtils.getCommandSenderAsPlayer(sender);
-
   if (args.length == 1) {
     if (args[0] == 'status') {
-      player.sendMessage(getStatus(player.world));
+      val world = sender instanceof IPlayer
+        ? mods.zenutils.command.CommandUtils.getCommandSenderAsPlayer(sender).world
+        : server.players.length > 0
+          ? server.players[0].world
+          : IWorld.getFromID(0);
+      sender.sendMessage(getStatus(world));
       return;
     }
     else if (args[0] == 'debug') {
-      player.sendMessage(enableDebug());
+      sender.sendMessage(enableDebug());
       return;
     }
     else if (args[0] == 'faster') {
       Config.spreadDelay = Config.spreadDelay / 10;
       Config.lookup = Config.lookup * 2;
-      player.sendMessage(getConfigMsg());
+      sender.sendMessage(getConfigMsg());
       return;
     }
     else if (args[0] == 'slower') {
       Config.spreadDelay = Config.spreadDelay * 10;
       Config.lookup = Config.lookup / 2;
-      player.sendMessage(getConfigMsg());
+      sender.sendMessage(getConfigMsg());
       return;
     }
   }

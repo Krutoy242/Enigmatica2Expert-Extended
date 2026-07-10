@@ -3,18 +3,23 @@
 #reloadable
 
 import crafttweaker.data.IData;
-import crafttweaker.player.IPlayer;
 import crafttweaker.util.Math.ceil;
 import crafttweaker.util.Math.floor;
 import crafttweaker.util.Math.min;
+import mods.zenutils.command.ZenUtilsCommandSender;
 import native.com.feed_the_beast.ftblib.lib.data.ForgeTeam;
 import native.com.feed_the_beast.ftbutilities.data.ClaimedChunk;
 import native.com.feed_the_beast.ftbutilities.data.ClaimedChunks;
 import native.com.feed_the_beast.ftbutilities.data.FTBUtilitiesPlayerData;
 import scripts.commands.perf.util.tpMessage;
 import scripts.commands.perf.util.button;
+import scripts.lib.command.senderAsPlayerOrNull;
+import scripts.lib.command.richToPlain;
 
-function show(player as IPlayer, pageArg as int = 1) as IData {
+function show(sender as ZenUtilsCommandSender, pageArg as int = 1) as IData {
+  val player = senderAsPlayerOrNull(sender);
+  val isConsole = isNull(player);
+  val playerY = isNull(player) ? 0 : floor(player.y);
   if (isNull(ClaimedChunks.instance)) {
     return ['§cFTBUtilities chunk claiming is not active.'];
   }
@@ -86,8 +91,8 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
 
           val currentPos = currentChunk.getPos();
 
-          for dx in -2 .. 3 {
-            for dz in -2 .. 3 {
+          for dx in (-2) .. 3 {
+            for dz in (-2) .. 3 {
               if (dx == 0 && dz == 0) continue;
               val neighborX = currentPos.posX + dx;
               val neighborZ = currentPos.posZ + dz;
@@ -181,7 +186,7 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
       val groupText = `§f${groupSize} §7chunks at Dim §f${dim} §7~[§4${blockX} §2${blockZ}§7]`;
 
       result += ['\n    '];
-      result += tpMessage(dim, blockX, floor(player.y), blockZ, groupText);
+      result += tpMessage(dim, blockX, playerY, blockZ, groupText);
     }
   }
 
@@ -199,5 +204,9 @@ function show(player as IPlayer, pageArg as int = 1) as IData {
 
   result += footer;
 
+  if (isConsole) {
+    sender.sendMessage(richToPlain(result));
+    return null;
+  }
   return result;
 }

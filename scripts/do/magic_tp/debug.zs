@@ -3,11 +3,12 @@
 #reloadable
 #priority 500
 
-import mods.zenutils.command.CommandUtils;
 import mods.zenutils.command.ZenCommand;
 import crafttweaker.data.IData;
 import native.WayofTime.bloodmagic.ritual.portal.LocationsHandler;
 import native.WayofTime.bloodmagic.teleport.PortalLocation;
+
+import scripts.lib.command.sendRichOrPlain;
 
 function getDimName(dim as int) as string {
   if (dim == 0) return 'Overworld';
@@ -31,17 +32,16 @@ cmd.getCommandUsage = function (sender) {
   return '/bmportals - lists all registered Blood Magic dimensional portals';
 };
 cmd.execute = function (command, server, sender, args) {
-  val player = CommandUtils.getCommandSenderAsPlayer(sender);
   val cache = scripts.do.magic_tp.mixin.shared.Op.portalKeysCache;
 
   if (isNull(cache) || cache.length == 0) {
-    player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData([{
+    sendRichOrPlain(sender, [{
       text: '§e[BM] ',
       extra: [
         { text: '§7No portals in cache. Link a portal first to populate.', color: 'gray' },
         { text: '\n§7Tip: build a BM portal and activate the §fRitual Portal§7 ritual.', color: 'gray' },
       ],
-    }]));
+    }] as IData, '§e[BM] §7No portals in cache. Link a portal first to populate.\nTip: build a BM portal and activate the Ritual Portal ritual.');
     return;
   }
 
@@ -54,6 +54,7 @@ cmd.execute = function (command, server, sender, args) {
       { text: `§fRegistered portals (§7${cache.length}§f):`, bold: true },
     ],
   }] as IData;
+  var plainLines = `§e[BM] §fRegistered portals (§7${cache.length}§f):`;
 
   for name, _ in cache {
     val linked = handler.getLinkedLocations(name) as [PortalLocation];
@@ -67,6 +68,7 @@ cmd.execute = function (command, server, sender, args) {
       text: `\n§8  §7${name}`,
       hoverEvent: { action: 'show_text', value: locCount == 0 ? '§cNot linked' : `§a${locCount} location(s)` },
     } as IData;
+    plainLines ~= `\n§8  §7${name} §8- §7${locCount} loc(s)`;
 
     if (locCount > 0) {
       var locExtra = [
@@ -79,6 +81,7 @@ cmd.execute = function (command, server, sender, args) {
             `§7${getDimName(loc0.getDimension())} [${loc0.getX()}, ${loc0.getY()}, ${loc0.getZ()}]`,
             `§8Click to teleport`),
         ] as IData;
+        plainLines ~= `\n§8    [1] §7${getDimName(loc0.getDimension())} [${loc0.getX()}, ${loc0.getY()}, ${loc0.getZ()}]`;
       }
       if (!isNull(loc1)) {
         locExtra += [
@@ -87,6 +90,7 @@ cmd.execute = function (command, server, sender, args) {
             `§7${getDimName(loc1.getDimension())} [${loc1.getX()}, ${loc1.getY()}, ${loc1.getZ()}]`,
             `§8Click to teleport`),
         ] as IData;
+        plainLines ~= `\n§8    [2] §7${getDimName(loc1.getDimension())} [${loc1.getX()}, ${loc1.getY()}, ${loc1.getZ()}]`;
       }
       portalLine += { extra: locExtra };
     }
@@ -94,6 +98,6 @@ cmd.execute = function (command, server, sender, args) {
     lines += [portalLine];
   }
 
-  player.sendRichTextMessage(crafttweaker.text.ITextComponent.fromData(lines));
+  sendRichOrPlain(sender, lines, plainLines);
 };
 cmd.register();

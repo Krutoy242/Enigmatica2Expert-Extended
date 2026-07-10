@@ -4,8 +4,12 @@
 
 import crafttweaker.data.IData;
 import crafttweaker.server.IServer;
+import crafttweaker.text.ITextComponent;
 import mods.zenutils.command.ZenCommand;
 import mods.zenutils.command.ZenUtilsCommandSender;
+
+import scripts.lib.command.senderAsPlayerOrNull;
+import scripts.lib.command.richToPlain;
 
 zenClass Command {
   var cmd            as ZenCommand;
@@ -40,19 +44,23 @@ zenClass Command {
     cmd.tabCompletionGetters = [mods.zenutils.command.IGetTabCompletion.fixedValues(subCommandNames)];
 
     cmd.execute = function (command, server, sender, args) {
-      val player = mods.zenutils.command.CommandUtils.getCommandSenderAsPlayer(sender);
-
       if (args.length >= 1) {
         for i, name in subCommandNames {
           if (name != args[0]) continue;
           val exec = subCommandExecs[i];
           val result = exec(command, server, sender, args);
           if (!isNull(result)) {
-            player.sendRichTextMessage(
-              crafttweaker.text.ITextComponent.fromData(
-                isNull(prefix) ? result : [prefix] as IData + result
-              )
-            );
+            val player = senderAsPlayerOrNull(sender);
+            if (!isNull(player)) {
+              player.sendRichTextMessage(
+                ITextComponent.fromData(
+                  isNull(prefix) ? result : [prefix] as IData + result
+                )
+              );
+            }
+            else {
+              sender.sendMessage(richToPlain(result));
+            }
           }
           return;
         }
