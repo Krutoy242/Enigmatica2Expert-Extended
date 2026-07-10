@@ -10,10 +10,9 @@ import native.net.minecraft.world.World;
 import native.net.minecraftforge.fml.common.network.NetworkRegistry;
 import native.thaumcraft.api.aspects.Aspect;
 import native.thaumcraft.api.casters.FocusEffect;
+import scripts.mods.thaumcraft.spellCreation.spellFX.SpellFX;
 import native.thaumcraft.api.casters.NodeSetting;
 import native.thaumcraft.api.casters.Trajectory;
-import native.thaumcraft.client.fx.ParticleEngine;
-import native.thaumcraft.client.fx.particles.FXGeneric;
 import native.thaumcraft.common.lib.SoundsTC;
 import native.thaumcraft.common.lib.network.PacketHandler;
 import native.thaumcraft.common.lib.network.fx.PacketFXFocusPartImpact;
@@ -88,19 +87,7 @@ zenClass SpellCrossbreed extends FocusEffect {
     //==================
 
     function renderParticleFX(world as World, posX as double, posY as double, posZ as double, motionX as double, motionY as double, motionZ as double) as void {
-        val fb as FXGeneric = FXGeneric(world, posX, posY, posZ, motionX, motionY, motionZ);
-    
-        fb.setMaxAge(8); 
-        fb.setRBGColorF(0.863f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.698f + (world.rand.nextFloat() - 0.5f) * 0.05f, 0.314f + (world.rand.nextFloat() - 0.5f) * 0.05f);
-        fb.setGridSize(16); 
-        fb.setParticles(72 + world.rand.nextInt(4), 1, 1);
-        fb.setScale(2.0 + world.rand.nextFloat() * 4.0); 
-        fb.setLoop(false);
-        fb.setSlowDown(0.9);
-        fb.setGravity(0.0);
-        fb.setRotationSpeed(world.rand.nextFloat(), 0.0);
-    
-        ParticleEngine.addEffectWithDelay(world, fb, world.rand.nextInt(4));
+        if (!isNull(SpellFX.crossbreed)) SpellFX.crossbreed(this, world, posX, posY, posZ, motionX, motionY, motionZ);
     }
 
 }
