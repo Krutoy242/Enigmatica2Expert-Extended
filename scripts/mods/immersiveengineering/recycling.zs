@@ -24,12 +24,12 @@ add(<astralsorcery:itemcape:*>, { <minecraft:iron_ingot>: 0.003907203674316406 }
 add(<avaritia:infinity_axe:*>, { <avaritia:resource:4>: 6.0, <avaritia:resource:6>: 6.0 });
 add(<avaritia:infinity_boots:*>, { <avaritia:resource:4>: 32.0, <avaritia:resource:6>: 8.0 });
 add(<avaritia:infinity_chestplate:*>, { <avaritia:resource:4>: 31.0, <avaritia:resource:6>: 21.0 });
-add(<avaritia:infinity_helmet:*>, { <astralsorcery:itemcraftingcomponent:1>: 9.0, <avaritia:resource:1>: 9.0, <avaritia:resource:4>: 24.0, <avaritia:resource:6>: 15.0, <plustic:osgloglasingot>: 9.0, <thermalfoundation:material:167>: 9.0 });
+add(<avaritia:infinity_helmet:*>, { <avaritia:resource:4>: 15.0, <avaritia:resource:6>: 15.0, <deepmoblearning:glitch_infused_ingot>: 9.0, <extrautils2:ingredients:17>: 9.0, <tconevo:metal:25>: 9.0, <thermalfoundation:material:167>: 9.0 });
 add(<avaritia:infinity_hoe:*>, { <avaritia:resource:4>: 6.0, <avaritia:resource:6>: 11.0 });
-add(<avaritia:infinity_pants:*>, { <astralsorcery:itemcraftingcomponent:1>: 9.0, <avaritia:resource:1>: 9.0, <avaritia:resource:4>: 51.0, <avaritia:resource:6>: 14.0, <plustic:osgloglasingot>: 9.0, <thermalfoundation:material:167>: 9.0 });
+add(<avaritia:infinity_pants:*>, { <avaritia:resource:4>: 42.0, <avaritia:resource:6>: 14.0, <deepmoblearning:glitch_infused_ingot>: 9.0, <extrautils2:ingredients:17>: 9.0, <tconevo:metal:25>: 9.0, <thermalfoundation:material:167>: 9.0 });
 add(<avaritia:infinity_pickaxe:*>.withTag({ ench: [{ lvl: 10 as short, id: 35 as short }] }), { <avaritia:resource:1>: 9.0, <avaritia:resource:4>: 6.0, <avaritia:resource:6>: 15.0 });
 add(<avaritia:infinity_shovel:*>, { <avaritia:resource:4>: 6.0, <avaritia:resource:6>: 14.0 });
-add(<avaritia:infinity_sword:*>, { <avaritia:resource:1>: 40.5, <avaritia:resource:4>: 6.5, <avaritia:resource:6>: 11.0 });
+add(<avaritia:infinity_sword:*>, { <avaritia:resource:1>: 36.0, <avaritia:resource:6>: 11.0, <tconevo:metal:25>: 4.5, <thermalfoundation:material:167>: 4.5 });
 add(<avaritia:skullfire_sword:*>, { <minecraft:netherbrick>: 2.0 });
 add(<bibliocraft:biblioglasses:1>, { <minecraft:iron_ingot>: 0.5 });
 add(<bibliocraft:biblioglasses:2>, { <minecraft:gold_ingot>: 0.4444444444444444 });
@@ -60,9 +60,9 @@ add(<botania:thundersword:*>, { <botania:manaresource:4>: 1.0, <botania:manareso
 add(<compactsolars:solar_hat_high_voltage>, { <minecraft:iron_ingot>: 0.125 });
 add(<compactsolars:solar_hat_low_voltage>, { <minecraft:iron_ingot>: 9.0 });
 add(<compactsolars:solar_hat_medium_voltage>, { <minecraft:iron_ingot>: 36.0 });
-add(<cyclicmagic:sword_ender:*>.withTag({ ench: [{ lvl: 1 as short, id: 80 as short }] }), { <minecraft:iron_ingot>: 1.0 });
-add(<cyclicmagic:sword_slowness:*>.withTag({ ench: [{ lvl: 1 as short, id: 80 as short }] }), { <minecraft:iron_ingot>: 1.0 });
-add(<cyclicmagic:sword_weakness:*>.withTag({ ench: [{ lvl: 1 as short, id: 80 as short }] }), { <minecraft:iron_ingot>: 1.0 });
+add(<cyclicmagic:sword_ender:*>.withTag({ ench: [{ lvl: 1 as short, id: 64 as short }] }), { <minecraft:iron_ingot>: 1.0 });
+add(<cyclicmagic:sword_slowness:*>.withTag({ ench: [{ lvl: 1 as short, id: 64 as short }] }), { <minecraft:iron_ingot>: 1.0 });
+add(<cyclicmagic:sword_weakness:*>.withTag({ ench: [{ lvl: 1 as short, id: 64 as short }] }), { <minecraft:iron_ingot>: 1.0 });
 add(<enderio:item_dark_steel_axe:*>, { <enderio:item_alloy_ingot:6>: 3.0 });
 add(<enderio:item_dark_steel_boots:*>, { <enderio:item_alloy_ingot:5>: 0.44444444444444453, <enderio:item_alloy_ingot:6>: 4.0 });
 add(<enderio:item_dark_steel_chestplate:*>, { <enderio:item_alloy_ingot:5>: 0.44444444444444453, <enderio:item_alloy_ingot:6>: 7.0 });
@@ -89,7 +89,7 @@ add(<endreborn:armour_boots_dragon:*>, { <endreborn:item_ingot_endorium>: 1.0, <
 add(<endreborn:armour_chestplate_dragon:*>, { <endreborn:item_ingot_endorium>: 1.0, <mysticalagriculture:crafting:32>: 0.027777777777777776 });
 add(<endreborn:armour_helmet_dragon:*>, { <endreborn:item_ingot_endorium>: 1.0, <mysticalagriculture:crafting:32>: 0.027777777777777776 });
 add(<endreborn:armour_leggings_dragon:*>, { <endreborn:item_ingot_endorium>: 1.0, <mysticalagriculture:crafting:32>: 0.027777777777777776 });
-add(<endreborn:ender_sword:*>.withTag({ ench: [{ lvl: 1 as short, id: 80 as short }] }), { <endreborn:item_ingot_endorium>: 6.0, <mysticalagriculture:crafting:32>: 0.027777777777777776 });
+add(<endreborn:ender_sword:*>.withTag({ ench: [{ lvl: 1 as short, id: 64 as short }] }), { <endreborn:item_ingot_endorium>: 6.0, <mysticalagriculture:crafting:32>: 0.027777777777777776 });
 add(<endreborn:tool_magnifier:*>, { <endreborn:item_ingot_endorium>: 1.0, <qmd:ingot>: 1.0 });
 add(<extrautils2:fireaxe>, { <minecraft:gold_ingot>: 27.0, <minecraft:iron_ingot>: 28.0 });
 add(<extrautils2:lawsword>, { <minecraft:gold_ingot>: 18.0, <minecraft:iron_ingot>: 1.0 });
@@ -126,6 +126,10 @@ add(<ic2:nano_helmet:*>, { <advancedrocketry:misc:1>: 4.0, <minecraft:iron_ingot
 add(<ic2:nano_leggings:*>, { <advancedrocketry:misc:1>: 6.0 });
 add(<ic2:nano_saber:*>, { <advancedrocketry:misc:1>: 2.0 });
 add(<ic2:nightvision_goggles:*>, { <minecraft:iron_ingot>: 1.25, <thermalfoundation:material:128>: 1.0 });
+add(<ic2:quantum_boots:*>, { <minecraft:iron_ingot>: 0.25, <thermalfoundation:material:135>: 4.0 });
+add(<ic2:quantum_chestplate:*>, { <minecraft:iron_ingot>: 0.5, <thermalfoundation:material:135>: 4.0 });
+add(<ic2:quantum_helmet:*>, { <minecraft:iron_ingot>: 0.25, <thermalfoundation:material:135>: 4.0 });
+add(<ic2:quantum_leggings:*>, { <minecraft:iron_ingot>: 0.5, <thermalfoundation:material:135>: 4.0 });
 add(<ic2:solar_helmet>, { <minecraft:iron_ingot>: 2.25 });
 add(<ic2:wind_meter:*>, { <minecraft:iron_ingot>: 0.75 });
 add(<ic2:wrench_new:*>, { <thermalfoundation:material:163>: 6.0 });
@@ -185,6 +189,22 @@ add(<immersiveengineering:wirecoil:4> * 4, { <thermalfoundation:material:160>: 0
 add(<immersiveengineering:wirecoil:5> * 4, { <thermalfoundation:material:132>: 0.25 });
 add(<immersiveengineering:wirecoil:7> * 4, { <minecraft:iron_ingot>: 0.1875 });
 add(<immersiveengineering:wirecoil> * 4, { <thermalfoundation:material:128>: 0.5 });
+add(<kami:awakened_ichorium_axe>.withTag({ mode: 0, Unbreakable: 1 as byte }), { <botania:manaresource>: 1.0, <extrautils2:ingredients:11>: 1.0, <kami:ichorium_ingot>: 1.5, <minecraft:iron_ingot>: 0.5, <thaumadditions:mithminite_ingot>: 1.0 });
+add(<kami:awakened_ichorium_pickaxe>.withTag({ mode: 0, Unbreakable: 1 as byte, infench: [{ lvl: 4 as short, id: 4 as short }] }), { <kami:ichorium_ingot>: 2.0, <thaumadditions:mithminite_ingot>: 1.0 });
+add(<kami:awakened_ichorium_shovel>.withTag({ mode: 0, Unbreakable: 1 as byte }), { <kami:ichorium_ingot>: 1.0, <thaumadditions:mithminite_ingot>: 1.0 });
+add(<kami:awakened_ichorium_sword>.withTag({ Unbreakable: 1 as byte, infench: [{ lvl: 4 as short, id: 5 as short }] }), { <thaumadditions:mithminite_ingot>: 1.0 });
+add(<kami:awakened_ichorweave_boots>, { <minecraft:gold_ingot>: 1.0, <thaumcraft:ingot:1>: 0.5, <thaumcraft:quicksilver>: 0.25 });
+add(<kami:awakened_ichorweave_hood>, { <thaumcraft:ingot:1>: 0.75 });
+add(<kami:awakened_ichorweave_leggings>, { <thaumcraft:ingot:1>: 1.25, <thaumcraft:ingot>: 0.25 });
+add(<kami:awakened_ichorweave_robe>, { <minecraft:iron_ingot>: 1.0, <thaumcraft:ingot:1>: 1.0, <thaumcraft:ingot:2>: 0.9861111111111112, <thaumcraft:ingot>: 0.25 });
+add(<kami:ichorium_axe>.withTag({ Unbreakable: 1 as byte }), { <kami:ichorium_ingot>: 3.0, <thaumcraft:quicksilver>: 1.0 });
+add(<kami:ichorium_pickaxe>.withTag({ Unbreakable: 1 as byte, infench: [{ lvl: 4 as short, id: 4 as short }] }), { <kami:ichorium_ingot>: 4.0 });
+add(<kami:ichorium_shovel>.withTag({ Unbreakable: 1 as byte }), { <kami:ichorium_ingot>: 2.0 });
+add(<kami:ichorium_sword>.withTag({ Unbreakable: 1 as byte }), { <kami:ichorium_ingot>: 2.0, <thaumcraft:quicksilver>: 0.5 });
+add(<kami:ichorweave_boots>, { <thaumcraft:ingot:1>: 1.0, <thaumcraft:quicksilver>: 0.5 });
+add(<kami:ichorweave_hood>, { <thaumcraft:ingot:1>: 1.5, <thaumcraft:ingot>: 0.25 });
+add(<kami:ichorweave_leggings>, { <thaumcraft:ingot:1>: 2.5, <thaumcraft:ingot:2>: 0.125, <thaumcraft:ingot>: 0.5 });
+add(<kami:ichorweave_robe>, { <thaumcraft:ingot:1>: 2.0, <thaumcraft:ingot>: 0.5 });
 add(<mekanism:armoredjetpack>.withTag({  }), { <thermalfoundation:material:160>: 9.0, <thermalfoundation:material:163>: 2.0 });
 add(<mekanism:freerunners>, { <minecraft:gold_ingot>: 3.0, <minecraft:iron_ingot>: 1.0 });
 add(<mekanism:gasmask>, { <minecraft:iron_ingot>: 0.5, <thermalfoundation:material:160>: 3.0 });
@@ -244,10 +264,9 @@ add(<redstonerepository:tool.shovel_gelid>.withTag({ Energy: 0 }), { <redstonear
 add(<redstonerepository:tool.sickle_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 1.5, <redstonerepository:material:1>: 3.0 });
 add(<redstonerepository:tool.sword_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 1.0, <redstonerepository:material:1>: 1.0 });
 add(<thaumadditions:adaminite_sword>, { <thaumadditions:adaminite_ingot>: 3.0, <thaumcraft:ingot:1>: 1.0 });
-add(<thaumadditions:mithminite_belt>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <minecraft:iron_ingot>: 1.25, <thaumcraft:ingot:1>: 1.25, <thaumcraft:ingot>: 0.875, <thermalfoundation:material:132>: 0.22222222222222227 });
-add(<thaumadditions:mithminite_boots>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <thaumcraft:ingot:1>: 2.75, <thaumcraft:quicksilver>: 0.25 });
-add(<thaumadditions:mithminite_hood>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <minecraft:gold_ingot>: 0.5, <thaumcraft:ingot:1>: 0.75, <thaumcraft:ingot>: 0.25, <thaumcraft:quicksilver>: 0.25, <thermalfoundation:material:128>: 2.0, <thermalfoundation:material:132>: 0.22222222222222227 });
-add(<thaumadditions:mithminite_robe>.withTag({ ench: [{ lvl: 1 as short, id: 28 }], air: 36000 }), { <minecraft:iron_ingot>: 0.5, <thaumcraft:ingot:1>: 1.0, <thaumcraft:ingot:2>: 0.9861111111111112, <thaumcraft:ingot>: 0.5 });
+add(<thaumadditions:mithminite_belt>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <minecraft:gold_ingot>: 0.25, <minecraft:iron_ingot>: 1.25, <thaumcraft:ingot:2>: 0.11111111111111113, <thaumcraft:ingot>: 1.0, <thermalfoundation:material:132>: 0.22222222222222227 });
+add(<thaumadditions:mithminite_boots>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <thaumcraft:ingot:1>: 3.5 });
+add(<thaumadditions:mithminite_hood>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <minecraft:gold_ingot>: 0.75, <thaumcraft:ingot:1>: 1.25, <thaumcraft:ingot>: 1.125, <thermalfoundation:material:128>: 2.0 });
 add(<thaumadditions:void_elemental_axe:*>.withTag({ infench: [{ lvl: 1 as short, id: 2 as short }, { lvl: 1 as short, id: 0 as short }] }), { <thaumcraft:ingot:1>: 2.0 });
 add(<thaumadditions:void_elemental_hoe:*>, { <thaumcraft:ingot:1>: 2.0, <thaumcraft:ingot>: 0.5 });
 add(<thaumadditions:void_elemental_pickaxe:*>.withTag({ infench: [{ lvl: 1 as short, id: 4 as short }, { lvl: 2 as short, id: 3 as short }] }), { <thaumcraft:ingot:1>: 2.0, <thaumcraft:ingot>: 0.75 });
@@ -289,14 +308,6 @@ add(<thaumicaugmentation:thaumium_robes_chestplate:*>, { <thaumcraft:ingot>: 2.0
 add(<thaumicaugmentation:thaumium_robes_hood:*>, { <thaumcraft:ingot:2>: 1.0, <thaumcraft:ingot>: 1.0, <thermalfoundation:material:128>: 2.0 });
 add(<thaumicaugmentation:thaumium_robes_leggings:*>, { <thaumcraft:ingot:2>: 0.5, <thaumcraft:ingot>: 2.0 });
 add(<thaumicaugmentation:void_boots:*>, { <thaumcraft:ingot:1>: 2.0, <thaumcraft:quicksilver>: 1.0 });
-add(<kami:ichorium_axe>, { <kami:ichorium_ingot>: 3.0 });
-add(<kami:awakened_ichorium_axe>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 2.5, <thermalfoundation:material:133>: 1.0 });
-add(<kami:ichorium_pickaxe>, { <kami:ichorium_ingot>: 3.0 });
-add(<kami:awakened_ichorium_pickaxe>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 2.5, <thermalfoundation:material:133>: 1.0 });
-add(<kami:ichorium_shovel>, { <kami:ichorium_ingot>: 1.0 });
-add(<kami:awakened_ichorium_shovel>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 1.5, <thermalfoundation:material:133>: 1.0 });
-add(<kami:ichorium_sword>, { <kami:ichorium_ingot>: 2.0 });
-add(<kami:awakened_ichorium_sword>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 2.0, <thermalfoundation:material:133>: 1.0 });
 add(<thaumicwonders:night_vision_goggles:*>, { <minecraft:gold_ingot>: 0.44444444444444453, <thaumcraft:ingot:2>: 1.0, <thermalfoundation:material:128>: 2.0 });
 add(<thaumicwonders:primal_destroyer:*>.withTag({ infench: [{ lvl: 3 as short, id: 6 as short }, { lvl: 2 as short, id: 14 as short }] }), { <thaumcraft:ingot:1>: 2.0 });
 add(<thaumicwonders:void_fortress_chest:*>, { <minecraft:gold_ingot>: 0.5, <thaumcraft:ingot:1>: 4.0, <thaumcraft:ingot>: 2.0 });
@@ -321,4 +332,4 @@ add(<twilightforest:steeleaf_hoe:*>, { <twilightforest:steeleaf_ingot>: 2.0 });
 add(<twilightforest:steeleaf_shovel:*>.withTag({ ench: [{ lvl: 2 as short, id: 32 as short }] }), { <twilightforest:steeleaf_ingot>: 1.0 });
 add(<twilightforest:steeleaf_sword:*>.withTag({ ench: [{ lvl: 2 as short, id: 21 as short }] }), { <twilightforest:steeleaf_ingot>: 2.0 });
 
-// Total recipes: 307
+// Total recipes: 316
