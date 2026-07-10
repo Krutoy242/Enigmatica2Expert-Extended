@@ -40,7 +40,6 @@ zenClass EntityMonitorHandlerMixin {
 
 #mixin Mixin { targets: 'astrotibs.villagenames.handler.EntityInteractHandler' }
 zenClass EntityInteractHandlerMixin {
-
   // Fix tagged entities not always stay persistent
 
   #mixin Redirect { method: 'onEntityInteract', at: { value: 'INVOKE', target: 'Lnet/minecraft/entity/EntityLiving;func_96094_a(Ljava/lang/String;)V' } }

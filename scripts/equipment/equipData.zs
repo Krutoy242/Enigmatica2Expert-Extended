@@ -683,13 +683,13 @@ static inventoryLoot as IItemStack[] = [
 // Potions rolled into the "potion belt" accessory (key "potions"). Ordered
 // common -> strong, picked by the same difficulty-weighted index.
 static potionLoot as IItemStack[] = [
-  <minecraft:potion>.withTag({Potion: "minecraft:swiftness"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:healing"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:fire_resistance"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:strength"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:leaping"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:regeneration"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:strong_healing"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:strong_strength"}),
-  <minecraft:potion>.withTag({Potion: "minecraft:strong_regeneration"}),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:swiftness' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:healing' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:fire_resistance' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:strength' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:leaping' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:regeneration' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:strong_healing' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:strong_strength' }),
+  <minecraft:potion>.withTag({ Potion: 'minecraft:strong_regeneration' }),
 ] as IItemStack[];

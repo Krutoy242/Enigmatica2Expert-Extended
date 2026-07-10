@@ -54,7 +54,7 @@ zenClass Config {
   * @param keys - list of modifier keys for this blocks
   *
   */
-  static setModifier as function(IIngredient, string[], bool)void = function (
+  static setModifier as function(IIngredient,string[],bool)void = function (
     items as IIngredient,
     keys as string[],
     addTooltip as bool

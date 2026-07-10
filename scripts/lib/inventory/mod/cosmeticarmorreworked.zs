@@ -7,7 +7,7 @@ import native.net.minecraft.item.ItemStack;
 import native.lain.mods.cos.api.CosArmorAPI;
 
 // CAR's isSkinArmor hides the slot entirely — both vanilla armor and cosmetic
-val visChecker as function(EntityPlayer,EntityEquipmentSlot)bool = function(player as EntityPlayer, slot as EntityEquipmentSlot) as bool {
+val visChecker as function(EntityPlayer,EntityEquipmentSlot)bool = function (player as EntityPlayer, slot as EntityEquipmentSlot) as bool {
   val uuid = player.getUniqueID();
   if (isNull(uuid)) return true;
 
@@ -18,7 +18,7 @@ val visChecker as function(EntityPlayer,EntityEquipmentSlot)bool = function(play
 };
 scripts.lib.inventory.armorVisibilityCheckers.add(visChecker);
 
-val carChecker as function(EntityPlayer,ItemStack)bool = function(player as EntityPlayer, item as ItemStack) as bool {
+val carChecker as function(EntityPlayer,ItemStack)bool = function (player as EntityPlayer, item as ItemStack) as bool {
   val uuid = player.getUniqueID();
   if (isNull(uuid)) return false;
 

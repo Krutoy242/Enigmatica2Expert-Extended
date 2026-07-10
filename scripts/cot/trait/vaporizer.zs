@@ -32,7 +32,7 @@ events.onWorldTick(function (e as crafttweaker.event.WorldTickEvent) {
 
 // Bridge in case FluidloggedAPI not installed
 zenClass VaporizerHook {
-  static tryClearFluidlogged as function(IWorld, IBlockPos)bool
+  static tryClearFluidlogged as function(IWorld,IBlockPos)bool
     = function (world as IWorld, pos as IBlockPos) as bool {
       return false;
     };
@@ -80,7 +80,8 @@ function clearLiquids(world as IWorld, pos as IBlockPos) as int {
     if (!isNull(state?.block?.fluid)) {
       foundFluid = true;
       world.setBlockState(<blockstate:minecraft:air>, currentPos);
-    } else if (VaporizerHook.tryClearFluidlogged(world, currentPos)) {
+    }
+    else if (VaporizerHook.tryClearFluidlogged(world, currentPos)) {
       foundFluid = true;
     }
 

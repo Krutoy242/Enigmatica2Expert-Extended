@@ -27,9 +27,9 @@ zenClass MixinSubTileExoflameMI {
     val world = this0.supertile.func_145831_w() as World;
     val center = this0.getPos() as BlockPos;
 
-    for x in -5 .. 6 {
-      for y in -2 .. 3 {
-        for z in -5 .. 6 {
+    for x in (-5) .. 6 {
+      for y in (-2) .. 3 {
+        for z in (-5) .. 6 {
           val tile = world.func_175625_s(center.func_177982_a(x, y, z));
           if (isNull(tile)) continue;
 

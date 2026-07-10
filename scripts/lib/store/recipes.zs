@@ -21,7 +21,7 @@ static _ready as bool = false;
 function iterate(cb as function(IIngredient[],IIngredient[])int) as void {
   if (!_ready) {
     for i, fnc in enuerators {
-      fnc(function(outputs as IIngredient[], inputs as IIngredient[]) as int {
+      fnc(function (outputs as IIngredient[], inputs as IIngredient[]) as int {
         _cacheOut.add(outputs);
         _cacheIn.add(inputs);
         return CB_RESULT.CONTINUE;

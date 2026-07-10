@@ -8,7 +8,7 @@ import native.forestry.api.recipes.IDescriptiveRecipe;
 import native.net.minecraft.item.ItemStack;
 import crafttweaker.item.IIngredient;
 
-val forestryEnum as function(function(IIngredient[],IIngredient[])int)bool = function(cb as function(IIngredient[],IIngredient[])int) as bool {
+val forestryEnum as function(function(IIngredient[],IIngredient[])int)bool = function (cb as function(IIngredient[],IIngredient[])int) as bool {
   // ── Carpenter ──
   val carpCol = RecipeManagers.carpenterManager.recipes();
   val carpRecipes as [ICarpenterRecipe] = carpCol;

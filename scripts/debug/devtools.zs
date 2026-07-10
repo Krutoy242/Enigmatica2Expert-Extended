@@ -202,7 +202,7 @@ function dumpAllItemsI18n() as void {
       if (!translationKey.endsWith('.name')) {
         translationKey = translationKey ~ '.name';
       }
-      var localized = game.localize(translationKey);
+      val localized = game.localize(translationKey);
       output.add('"' ~ item.commandString.replaceAll('"', '""') ~ '",' ~ translationKey ~ ',"' ~ localized.replaceAll('"', '""') ~ '"');
     }
   }

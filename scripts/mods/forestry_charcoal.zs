@@ -16,18 +16,18 @@ import native.net.minecraft.block.Block;
 TreeManager.pileWalls.clear();
 
 function addWall(bonus as int, item as IItemStack) as void {
-    val mcItem = item?.native?.item;
-    if (isNull(mcItem)) return;
-    val block = Block.getBlockFromItem(mcItem);
-    if (isNull(block)) return;
-    TreeManager.charcoalManager.registerWall(block, bonus);
+  val mcItem = item?.native?.item;
+  if (isNull(mcItem)) return;
+  val block = Block.getBlockFromItem(mcItem);
+  if (isNull(block)) return;
+  TreeManager.charcoalManager.registerWall(block, bonus);
 }
 
 // Add all items from an oredict entry as walls with the same bonus
 function addOreWall(oreName as string, bonus as int) as void {
-    for item in oreDict[oreName]?.items ?? [] {
-        addWall(bonus, item);
-    }
+  for item in oreDict[oreName]?.items ?? [] {
+    addWall(bonus, item);
+  }
 }
 
 // === Default Forestry walls ===

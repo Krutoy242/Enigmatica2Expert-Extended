@@ -12,7 +12,7 @@ import native.java.util.Map;
 import native.java.util.Map.Entry;
 import crafttweaker.item.IIngredient;
 
-val tcEnum as function(function(IIngredient[],IIngredient[])int)bool = function(cb as function(IIngredient[],IIngredient[])int) as bool {
+val tcEnum as function(function(IIngredient[],IIngredient[])int)bool = function (cb as function(IIngredient[],IIngredient[])int) as bool {
   val tcCatalog as Map = CommonInternals.craftingRecipeCatalog;
 
   for _entry in tcCatalog.entrySet() {
@@ -28,11 +28,14 @@ val tcEnum as function(function(IIngredient[],IIngredient[])int)bool = function(
       var output as ItemStack = null;
       if (outputObj instanceof ItemStack) {
         output = outputObj as ItemStack;
-      } else if (outputObj instanceof Item) {
+      }
+      else if (outputObj instanceof Item) {
         output = ItemStack(outputObj as Item);
-      } else if (outputObj instanceof Block) {
+      }
+      else if (outputObj instanceof Block) {
         output = ItemStack(outputObj as Block);
-      } else {
+      }
+      else {
         continue;
       }
       if (isNull(output) || output.isEmpty()) continue;

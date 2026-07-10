@@ -39,14 +39,16 @@ grantCmd.execute = function (command, server, sender, args) {
   if (args.length >= 1 && args[0] == 'mat') {
     forcedMat = args[1];
     difficulty = args.length >= 3 ? min(1.0, max(0.0, args[2] as double)) : 1.0;
-  } else if (args.length >= 2) {
+  }
+  else if (args.length >= 2) {
     val playerArg = args[0];
     if (!playerArg.startsWith('@')) {
       val named = server.getPlayerByUsername(playerArg);
       if (!isNull(named)) targetPlayer = named;
     }
     difficulty = min(1.0, max(0.0, args[1] as double));
-  } else if (args.length == 1) {
+  }
+  else if (args.length == 1) {
     difficulty = min(1.0, max(0.0, args[0] as double));
   }
 

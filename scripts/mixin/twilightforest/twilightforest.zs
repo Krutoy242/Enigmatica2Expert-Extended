@@ -31,9 +31,9 @@ zenClass MixinBlockTFMagicLogSpecial {
     var logsOtherCount = 0;
 
     // Loop all blocks around
-    for z in -8 .. 9 {
-      for y in -8 .. 9 {
-        for x in -8 .. 9 {
+    for z in (-8) .. 9 {
+      for y in (-8) .. 9 {
+        for x in (-8) .. 9 {
           if (x == 0 && y == 0 && z == 0) continue; // Itself
 
           val dPos = pos.add(x, y, z);

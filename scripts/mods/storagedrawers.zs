@@ -153,7 +153,7 @@ if (!isNull(loadedMods['fluiddrawers'])) {
 // ---------------------------------------------------------------------------
 
 // Prevent compacting drawers from disappearing when broken by hand
-events.register(function(event as PlayerEvent.HarvestCheck) {
+events.register(function (event as PlayerEvent.HarvestCheck) {
   if (event.canHarvest()) return;
   val state = event.getTargetBlock().wrapper;
   if (state.block.definition.id == 'storagedrawers:compdrawers') {

@@ -7,7 +7,7 @@ import native.net.minecraft.item.crafting.Ingredient;
 import native.net.minecraft.item.ItemStack;
 import crafttweaker.item.IIngredient;
 
-val forgeEnum as function(function(IIngredient[],IIngredient[])int)bool = function(cb as function(IIngredient[],IIngredient[])int) as bool {
+val forgeEnum as function(function(IIngredient[],IIngredient[])int)bool = function (cb as function(IIngredient[],IIngredient[])int) as bool {
   val recipes as [IRecipe] = ForgeRegistries.RECIPES.getValuesCollection();
   for recipe in recipes {
     val output = recipe.getRecipeOutput();

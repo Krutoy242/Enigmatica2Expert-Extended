@@ -100,9 +100,9 @@ events.onEntityItemDeath(function (e as mods.zenutils.event.EntityItemDeathEvent
 
   // Next - try to convert all the blocks around item
   // since burning piece can jump all over the blocks in rand directions
-  for y in -1 .. 2 {
-    for z in -1 .. 2 {
-      for x in -1 .. 2 {
+  for y in (-1) .. 2 {
+    for z in (-1) .. 2 {
+      for x in (-1) .. 2 {
         // already tested
         if (z == 0 && y == 0 && x == 0 || z == 0 && y == -1 && x == 0) continue;
 

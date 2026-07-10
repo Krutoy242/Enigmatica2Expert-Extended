@@ -75,9 +75,9 @@ zenClass MatrixMixin {
   }
 
   function findAffectors(stuff as [BlockPos]) as void {
-    for xx in -8 .. 9 {
-      for zz in -8 .. 9 {
-        for yy in -3 .. 8 {
+    for xx in (-8) .. 9 {
+      for zz in (-8) .. 9 {
+        for yy in (-3) .. 8 {
           if (xx != 0 || zz != 0) {
             val pos as BlockPos = BlockPos(this0.pos.getX() + xx, this0.pos.getY() - yy, this0.pos.getZ() + zz);
             val block as Block = this0.world.getBlockState(pos).getBlock();

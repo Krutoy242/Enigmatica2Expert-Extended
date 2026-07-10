@@ -29,7 +29,6 @@ events.onPlayerTick(function (e as crafttweaker.event.PlayerTickEvent) {
     && player.posY <= -100
   ) {
     tpFromSky(player);
-    return;
   }
 });
 

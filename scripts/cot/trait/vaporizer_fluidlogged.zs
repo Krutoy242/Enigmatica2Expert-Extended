@@ -4,7 +4,6 @@
 import crafttweaker.world.IWorld;
 import crafttweaker.world.IBlockPos;
 import native.git.jbredwards.fluidlogged_api.api.util.FluidloggedUtils;
-import native.git.jbredwards.fluidlogged_api.api.util.FluidState;
 
 // Override the default no-op hook to also clear fluidlogged fluids.
 scripts.cot.trait.vaporizer.VaporizerHook.tryClearFluidlogged = function (world as IWorld, pos as IBlockPos) as bool {

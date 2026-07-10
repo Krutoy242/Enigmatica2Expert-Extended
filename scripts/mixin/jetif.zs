@@ -16,7 +16,6 @@ import native.net.minecraft.util.ResourceLocation;
 */
 #mixin { targets: 'lykrast.jetif.compat.CompatDeepMobLearning' }
 zenClass MixinCompatDeepMobLearning {
-
   #mixin Redirect
   #{
   #  method: 'addRecipes',

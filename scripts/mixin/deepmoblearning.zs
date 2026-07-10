@@ -19,7 +19,6 @@ import native.net.minecraft.util.ResourceLocation;
 */
 #mixin { targets: 'mustapelto.deepmoblearning.common.entities.EntityItemGlitchFragment' }
 zenClass MixinEntityItemGlitchFragment {
-
   #mixin ModifyArg
   #{
   #  method: 'func_70071_h_',

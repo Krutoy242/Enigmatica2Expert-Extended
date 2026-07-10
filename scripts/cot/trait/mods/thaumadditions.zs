@@ -82,8 +82,8 @@ visVacuum_Trait.onUpdate = function (trait, tool, world, owner, itemSlot, isSele
   if (world.remote) return; // world is remote
   if (!owner instanceof IPlayer) return; // no player
   if (tool.damage == 0) return; // tool max durability
-  for i in -1 .. 2 {
-    for j in -1 .. 2 {
+  for i in (-1) .. 2 {
+    for j in (-1) .. 2 {
       if (tool.damage == 0) return; // tool max durability
       val pos = owner.position3f;
       pos.x += 16 * i;

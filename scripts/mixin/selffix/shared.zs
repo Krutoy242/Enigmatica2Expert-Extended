@@ -15,6 +15,6 @@ import native.net.minecraft.entity.EntityLivingBase;
 import native.net.minecraft.entity.player.EntityPlayer;
 
 zenClass Op {
-  static onToolDamage as function(ItemStack, int, EntityLivingBase)void;
-  static onArmorDamage as function(ItemStack, int, EntityPlayer, int)void;
+  static onToolDamage as function(ItemStack,int,EntityLivingBase)void;
+  static onArmorDamage as function(ItemStack,int,EntityPlayer,int)void;
 }

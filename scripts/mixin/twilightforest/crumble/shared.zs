@@ -8,6 +8,6 @@ import native.net.minecraft.util.math.BlockPos;
 import native.net.minecraft.world.World;
 
 zenClass CrumbleOp {
-  static handlers as [function(World, BlockPos, IBlockState, EntityLivingBase, ItemStack)bool]
-    = [] as [function(World, BlockPos, IBlockState, EntityLivingBase, ItemStack)bool];
+  static handlers as [function(World,BlockPos,IBlockState,EntityLivingBase,ItemStack)bool]
+    = [] as [function(World,BlockPos,IBlockState,EntityLivingBase,ItemStack)bool];
 }

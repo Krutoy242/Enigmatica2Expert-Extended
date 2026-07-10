@@ -19,9 +19,9 @@ import native.net.minecraft.world.World;
 //   exnihilo.zs  — registers an ExNihiloCreatio hammer recipe handler
 //   fallback.zs  — breaks hand-minable blocks if no other handler matched
 //   mixin.zs     — entry point: calls handlers in order, then fallback
-#mixin {targets: "twilightforest.item.ItemTFCrumbleHorn"}
+#mixin { targets: 'twilightforest.item.ItemTFCrumbleHorn' }
 zenClass MixinItemTFCrumbleHorn {
-  #mixin Inject {method: "crumbleBlock", at: {value: "HEAD"}, cancellable: true}
+  #mixin Inject { method: 'crumbleBlock', at: { value: 'HEAD' }, cancellable: true }
   function injectCrumble(stack as ItemStack, world as World, living as EntityLivingBase, pos as BlockPos, cir as CallbackInfoReturnable) as void {
     // Preserve original chance: 1/5 (20%) to attempt a crumble.
     // Original: private static final int CHANCE_CRUMBLE = 5

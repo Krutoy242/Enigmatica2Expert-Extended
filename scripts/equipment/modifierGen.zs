@@ -20,7 +20,6 @@
 //
 // ######################################################################
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.world.IWorld;
 import crafttweaker.util.Math.max;
@@ -62,7 +61,7 @@ function weightedIndex(len as int, difficulty as double, w as IWorld) as int {
   if (len <= 1) return 0;
   val chance = w.random.nextDouble();
   val b = pow(chance, 4.0 * pow(1.05 - difficulty, 2.0));
-  return (min(0.9999, max(0.0, b)) * len) as int;
+  return min(0.9999, max(0.0, b)) * len;
 }
 
 // -------------------------------
@@ -83,7 +82,7 @@ function cost(mod as IModifier) as int { return scripts.equipment.equipData.getM
 
 // Lowest difficulty at which a modifier of the given cost may appear.
 function unlockDifficulty(c as int) as double {
-  val ratio = (c as double) / (getTopCost() as double);
+  val ratio = c as double / getTopCost() as double;
   return pow(min(1.0, max(0.0, ratio)), 1.0 / UNLOCK_POW);
 }
 
@@ -162,15 +161,15 @@ function selectModifiers(candidates as IModifier[], difficulty as double, w as I
   }
   if (eligible.length == 0) return chosen;
 
-  var budget = pow(difficulty, BUDGET_POW) * (getTopCost() as double);
+  var budget = pow(difficulty, BUDGET_POW) * getTopCost() as double;
 
   // spend the budget on affordable, not-yet-chosen modifiers
   var guard = 0;
-  while (chosen.length < MAX_MODS && guard < 400) {
+  while chosen.length < MAX_MODS && guard < 400 {
     guard += 1;
     var affordable = [] as IModifier[];
     for m in eligible {
-      if (!(chosen has m) && (cost(m) as double) <= budget) affordable += m;
+      if (!(chosen has m) && cost(m) as double <= budget) affordable += m;
     }
     if (affordable.length == 0) break;
     val pick = affordable[(w.random.nextDouble() * affordable.length) as int];
@@ -179,9 +178,9 @@ function selectModifiers(candidates as IModifier[], difficulty as double, w as I
   }
 
   // floor: guarantee a minimum headcount at high difficulty (cheapest first)
-  val minMods = ((difficulty * (MIN_AT_FULL as double)) + 0.5) as int;
+  val minMods = ((difficulty * MIN_AT_FULL as double) + 0.5) as int;
   guard = 0;
-  while (chosen.length < minMods && guard < 400) {
+  while chosen.length < minMods && guard < 400 {
     guard += 1;
     var best as IModifier = null;
     var bestCost = 0;
@@ -213,7 +212,7 @@ function applyLeveled(item as IItemStack, mod as IModifier, extra as int) as IIt
   if (extra <= 0) return st;
   var prev = modTagSig(st, id);
   var k = 0;
-  while (k < extra) {
+  while k < extra {
     val next = scripts.equipment.utils_tcon.addSingleModifier(st, id);
     val sig = modTagSig(next, id);
     if (sig == prev) break;
@@ -225,7 +224,7 @@ function applyLeveled(item as IItemStack, mod as IModifier, extra as int) as IIt
 }
 
 function rollExtraLevels(difficulty as double, w as IWorld) as int {
-  return (rndCube(w) * difficulty * (MAX_EXTRA_LEVELS as double) + 0.0) as int;
+  return rndCube(w) * difficulty * MAX_EXTRA_LEVELS as double + 0.0;
 }
 
 // -------------------------------
@@ -246,7 +245,7 @@ function fillHandler(modTag as NBTTagCompound, key as string, size as int, loot 
     if (!isNull(existing) && existing.hasKey('Size')) handler.deserializeNBT(existing);
   }
   // fill a difficulty-scaled fraction of distinct slots (~25-85% at full difficulty)
-  val fillCount = min(size, 1 + ((0.25 + 0.6 * w.random.nextDouble()) * difficulty * (size as double)) as int);
+  val fillCount = min(size, 1 + ((0.25 + 0.6 * w.random.nextDouble()) * difficulty * size as double) as int);
   for slot in 0 .. fillCount {
     val drop = randomFrom(loot, difficulty, w);
     if (!isNull(drop)) handler.setStackInSlot(slot, drop as ItemStack);
@@ -276,7 +275,7 @@ function fillInventories(item as IItemStack, difficulty as double, w as IWorld) 
   if (!changed) return item;
   TagUtil.setModifiersTagList(root, list);
   native.setTagCompound(root);
-  return native as IItemStack;
+  return native;
 }
 
 // -------------------------------
@@ -298,7 +297,7 @@ function applyDraconicTiers(item as IItemStack, isArmor as bool, difficulty as d
   for mod in scripts.equipment.utils_tcon.allDraconicMods {
     val id = mod.getIdentifier();
     if (!ToolUtils.hasModifier(st as ItemStack, id)) continue; // only the ones the material granted (already tier 0)
-    var bonus = (rndCube(w) * difficulty * ((evolvedTier + 1) as double)) as int;
+    var bonus = (rndCube(w) * difficulty * (evolvedTier + 1) as double) as int;
     if (difficulty >= 0.999) bonus = evolvedTier; // full material tier at max difficulty
     bonus = min(evolvedTier, bonus);
     // each extra application raises the upgrade one tier (it is already at tier 0)
@@ -325,8 +324,8 @@ function chargeEnergy(item as IItemStack, difficulty as double) as IItemStack {
   val maxE = pw.getEnergyMax();
   if (maxE <= 0) return item;
   val frac = max(MIN_ENERGY_FRAC, min(1.0, difficulty));
-  pw.inject(((maxE as double) * frac) as int, true, true);
-  return fresh as IItemStack;
+  pw.inject((maxE as double * frac) as int, true, true);
+  return fresh;
 }
 
 // Headroom of leveling "bonus modifiers" granted before applying anything, so
@@ -387,13 +386,13 @@ function dumpModifierPoints() as void {
   print('[modifierGen] ===== MODIFIER POINTS DUMP (default=' ~ scripts.equipment.equipData.DEFAULT_MOD_POINTS ~ ', top=' ~ getTopCost() ~ ') =====');
   for mod in scripts.equipment.utils_tcon.allToolMods {
     val id = mod.getIdentifier();
-    val inc = (mod instanceof IncrementalModifier) ? (' maxLvl=' ~ (mod as IncrementalModifier).getLevelMaximum()) : '';
-    val dra = (mod instanceof DraconicTieredModifier) ? ' DRACONIC' : '';
+    val inc = mod instanceof IncrementalModifier ? ' maxLvl=' ~ (mod as IncrementalModifier).getLevelMaximum() : '';
+    val dra = mod instanceof DraconicTieredModifier ? ' DRACONIC' : '';
     print('[modifierGen] TOOL  ' ~ cost(mod) ~ '  ' ~ id ~ ' (unlock>=' ~ unlockDifficulty(cost(mod)) ~ ')' ~ inc ~ dra);
   }
   for mod in scripts.equipment.utils_tcon.allArmorMods {
     val id = mod.getIdentifier();
-    val dra = (mod instanceof DraconicTieredModifier) ? ' DRACONIC' : '';
+    val dra = mod instanceof DraconicTieredModifier ? ' DRACONIC' : '';
     print('[modifierGen] ARMOR ' ~ cost(mod) ~ '  ' ~ id ~ ' (unlock>=' ~ unlockDifficulty(cost(mod)) ~ ')' ~ dra);
   }
   print('[modifierGen] ===== END DUMP =====');

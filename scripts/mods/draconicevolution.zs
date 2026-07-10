@@ -31,9 +31,9 @@ if (utils.DEBUG) {
         SR_3_xPos: 18 as byte, SR_3_xSize: 6 as byte, SR_3_ySize: 5 as byte, SR_3_Enabled: 1 as byte, SR_3_Invalid: 0 as byte, SR_3_nsweIO: -1 as byte, SR_3_dufIO: -1 as byte,
         SR_4_xPos: 0 as byte, SR_4_yPos: 5 as byte, SR_4_xSize: 6 as byte, SR_4_ySize: 5 as byte, SR_4_Enabled: 1 as byte, SR_4_Invalid: 0 as byte, SR_4_nsweIO: -1 as byte, SR_4_dufIO: -1 as byte,
         SR_5_xPos: 6 as byte, SR_5_yPos: 5 as byte, SR_5_xSize: 6 as byte, SR_5_ySize: 5 as byte, SR_5_Enabled: 1 as byte, SR_5_Invalid: 0 as byte, SR_5_nsweIO: -1 as byte, SR_5_dufIO: -1 as byte,
-        SR_6_xPos: 12 as byte, SR_6_yPos: 5 as byte, SR_6_xSize: 6 as byte, SR_6_ySize: 5 as byte, SR_6_Enabled: 1 as byte, SR_6_Invalid: 0 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte
-      }
-    }
+        SR_6_xPos: 12 as byte, SR_6_yPos: 5 as byte, SR_6_xSize: 6 as byte, SR_6_ySize: 5 as byte, SR_6_Enabled: 1 as byte, SR_6_Invalid: 0 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte,
+      },
+    },
   }));
 
   // 7x7 grid chest (zones are 8x7: 7 grid + 1 output slot)
@@ -54,9 +54,9 @@ if (utils.DEBUG) {
         SR_3_xSize: 0 as byte, SR_3_ySize: 0 as byte, SR_3_Enabled: 0 as byte, SR_3_Invalid: 1 as byte, SR_3_nsweIO: -1 as byte, SR_3_dufIO: -1 as byte,
         SR_4_xSize: 0 as byte, SR_4_ySize: 0 as byte, SR_4_Enabled: 0 as byte, SR_4_Invalid: 1 as byte, SR_4_nsweIO: -1 as byte, SR_4_dufIO: -1 as byte,
         SR_5_xSize: 0 as byte, SR_5_ySize: 0 as byte, SR_5_Enabled: 0 as byte, SR_5_Invalid: 1 as byte, SR_5_nsweIO: -1 as byte, SR_5_dufIO: -1 as byte,
-        SR_6_xSize: 0 as byte, SR_6_ySize: 0 as byte, SR_6_Enabled: 0 as byte, SR_6_Invalid: 1 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte
-      }
-    }
+        SR_6_xSize: 0 as byte, SR_6_ySize: 0 as byte, SR_6_Enabled: 0 as byte, SR_6_Invalid: 1 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte,
+      },
+    },
   }));
 
   // 9x9 grid chest (zones are 10x9: 9 grid + 1 output slot)
@@ -77,9 +77,9 @@ if (utils.DEBUG) {
         SR_3_xSize: 0 as byte, SR_3_ySize: 0 as byte, SR_3_Enabled: 0 as byte, SR_3_Invalid: 1 as byte, SR_3_nsweIO: -1 as byte, SR_3_dufIO: -1 as byte,
         SR_4_xSize: 0 as byte, SR_4_ySize: 0 as byte, SR_4_Enabled: 0 as byte, SR_4_Invalid: 1 as byte, SR_4_nsweIO: -1 as byte, SR_4_dufIO: -1 as byte,
         SR_5_xSize: 0 as byte, SR_5_ySize: 0 as byte, SR_5_Enabled: 0 as byte, SR_5_Invalid: 1 as byte, SR_5_nsweIO: -1 as byte, SR_5_dufIO: -1 as byte,
-        SR_6_xSize: 0 as byte, SR_6_ySize: 0 as byte, SR_6_Enabled: 0 as byte, SR_6_Invalid: 1 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte
-      }
-    }
+        SR_6_xSize: 0 as byte, SR_6_ySize: 0 as byte, SR_6_Enabled: 0 as byte, SR_6_Invalid: 1 as byte, SR_6_nsweIO: -1 as byte, SR_6_dufIO: -1 as byte,
+      },
+    },
   }));
 }
 

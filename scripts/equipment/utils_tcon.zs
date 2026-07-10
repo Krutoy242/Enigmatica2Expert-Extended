@@ -2,13 +2,10 @@
 #priority 100
 #reloadable
 
-import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.util.Math.max;
 
 import native.net.minecraft.item.ItemStack;
-import native.net.minecraft.nbt.NBTTagList;
-import native.net.minecraft.nbt.NBTTagCompound;
 import native.slimeknights.tconstruct.library.TinkerRegistry;
 import native.slimeknights.tconstruct.library.modifiers.IModifier;
 import native.slimeknights.tconstruct.library.utils.ToolBuilder;
@@ -128,7 +125,7 @@ function addSingleModifier(item as IItemStack, name as string) as IItemStack {
     ToolBuilder.rebuildTool(root, itemClass as TinkersItem);
   }
 
-  return mcStack as IItemStack;
+  return mcStack;
 }
 
 // -------------------------------
@@ -162,12 +159,13 @@ function applyLevelingBonus(item as IItemStack, isArmor as bool, bonus as int) a
 
   if (isArmor) {
     ArmorBuilder.rebuildArmor(root, itemClass as TinkersArmor);
-  } else {
+  }
+  else {
     ToolBuilder.rebuildTool(root, itemClass as TinkersItem);
   }
   mcStack.setTagCompound(root);
 
-  return mcStack as IItemStack;
+  return mcStack;
 }
 
 // Like applyLevelingBonus but SETS the leveling level / bonus-modifiers to exact
@@ -195,12 +193,13 @@ function setLevelingBonus(item as IItemStack, isArmor as bool, level as int, bon
 
   if (isArmor) {
     ArmorBuilder.rebuildArmor(root, itemClass as TinkersArmor);
-  } else {
+  }
+  else {
     ToolBuilder.rebuildTool(root, itemClass as TinkersItem);
   }
   mcStack.setTagCompound(root);
 
-  return mcStack as IItemStack;
+  return mcStack;
 }
 
 function constructTool(

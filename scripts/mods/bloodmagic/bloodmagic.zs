@@ -503,16 +503,16 @@ _.uniqBy([
   .filter(Boolean)
   .sort((a, b) => naturalSort(String(a?.slice(1)), String(b?.slice(1)))), r => String(r))
 )*/
-  magicAlloy(<advancedrocketry:productdust:1> * 2, 'AB',            {A: <libvulpes:productdust:7>, B: <thermalfoundation:material:71>});
+magicAlloy(<advancedrocketry:productdust:1> * 2, 'AB',            { A: <libvulpes:productdust:7>, B: <thermalfoundation:material:71> });
 //magicAlloy(<advancedrocketry:productdust>   * 3, 'AAAAAAABBB',    {A: <thermalfoundation:material:68>, B: <libvulpes:productdust:7>});
-  magicAlloy(<qmd:chemical_dust:7>               , 'AB',            {A: <qmd:dust:7>, B: <thermalfoundation:material:771>});
-  magicAlloy(<thermalfoundation:material:96>     , 'ABBBB',         {A: <thermalfoundation:material>, B: <nuclearcraft:dust:8>});
-  magicAlloy(<thermalfoundation:material:96>     , 'ABBBB',         {A: <thermalfoundation:material>, B: <thermalfoundation:material:768>});
-  magicAlloy(<thermalfoundation:material:97>  * 2, 'AB',            {A: <thermalfoundation:material:1>, B: <thermalfoundation:material:66>});
-  magicAlloy(<thermalfoundation:material:98>  * 3, 'AAB',           {A: <thermalfoundation:material>, B: <thermalfoundation:material:69>});
-  magicAlloy(<thermalfoundation:material:98>  * 3, 'ABB',           {A: <thermalfoundation:material:69>, B: <thermalfoundation:material>});
-  magicAlloy(<thermalfoundation:material:99>  * 4, 'AAAB',          {A: <thermalfoundation:material:64>, B: <thermalfoundation:material:65>});
-  magicAlloy(<thermalfoundation:material:100> * 2, 'AB',            {A: <thermalfoundation:material:64>, B: <thermalfoundation:material:69>});
+magicAlloy(<qmd:chemical_dust:7>               , 'AB',            { A: <qmd:dust:7>, B: <thermalfoundation:material:771> });
+magicAlloy(<thermalfoundation:material:96>     , 'ABBBB',         { A: <thermalfoundation:material>, B: <nuclearcraft:dust:8> });
+magicAlloy(<thermalfoundation:material:96>     , 'ABBBB',         { A: <thermalfoundation:material>, B: <thermalfoundation:material:768> });
+magicAlloy(<thermalfoundation:material:97>  * 2, 'AB',            { A: <thermalfoundation:material:1>, B: <thermalfoundation:material:66> });
+magicAlloy(<thermalfoundation:material:98>  * 3, 'AAB',           { A: <thermalfoundation:material>, B: <thermalfoundation:material:69> });
+magicAlloy(<thermalfoundation:material:98>  * 3, 'ABB',           { A: <thermalfoundation:material:69>, B: <thermalfoundation:material> });
+magicAlloy(<thermalfoundation:material:99>  * 4, 'AAAB',          { A: <thermalfoundation:material:64>, B: <thermalfoundation:material:65> });
+magicAlloy(<thermalfoundation:material:100> * 2, 'AB',            { A: <thermalfoundation:material:64>, B: <thermalfoundation:material:69> });
 //magicAlloy(<thermalfoundation:material:101> * 4, 'ABBBCCCCCCCCCC',{A: <thermalfoundation:material:64>, B: <thermalfoundation:material:66>, C: <minecraft:redstone>});
 //magicAlloy(<thermalfoundation:material:102> * 4, 'AAABCCCC',      {A: <thermalfoundation:material:65>, B: <thermalfoundation:material:66>, C: <minecraft:glowstone_dust>});
 /**/
