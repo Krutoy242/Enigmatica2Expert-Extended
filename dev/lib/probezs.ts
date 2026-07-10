@@ -27,12 +27,32 @@ const DEBUG_LOG = join(CWD, 'logs', 'debug.log')
 const CACHE_DIR = join(CWD, '~cache', 'probezs')
 const RMI_HOST = 'localhost'
 const RMI_PORT = 6489
-const JAVA_EXEC_TIMEOUT_MS = 60_000
+
+/** Read a positive-integer env override, else the fallback. */
+function envInt(name: string, fallback: number): number {
+  const v = Number(process.env[name])
+  return Number.isFinite(v) && v > 0 ? v : fallback
+}
+
+// The RMI java client blocks until the game returns from getLocalizedName, which
+// for a synchronous command (e.g. `ct reload`) can be the whole command runtime.
+// Keep this comfortably above the log-poll wait so the RMI call never dies first.
+// Override with E2EE_RMI_TIMEOUT_MS.
+const JAVA_EXEC_TIMEOUT_MS = envInt('E2EE_RMI_TIMEOUT_MS', 300_000)
+
+// How long to wait for the reply to appear in crafttweaker.log. This is the
+// binding timeout for slow commands like `ct reload` (well over the old 30s on
+// this pack). Override per-run with E2EE_CMD_TIMEOUT_MS.
+const DEFAULT_CMD_WAIT_MS = envInt('E2EE_CMD_TIMEOUT_MS', 180_000)
+
+// Max time to wait for a headless auto-join to reach "joined the game".
+// Override with E2EE_JOIN_TIMEOUT_MS.
+const JOIN_WAIT_MS = envInt('E2EE_JOIN_TIMEOUT_MS', 120_000)
 
 // ── Public types ────────────────────────────────────────────
 
 export interface ExecOptions {
-  /** Max time to wait for the reply via log polling, in ms (default 30000). */
+  /** Max time to wait for the reply via log polling, in ms (default 180000, or $E2EE_CMD_TIMEOUT_MS). */
   waitMs?        : number
   /** Log poll interval in ms (default 100). */
   pollIntervalMs?: number
@@ -161,49 +181,66 @@ function logBoundaryTimestamps(): { first: string | null; duration: string | nul
   }
   return { first: null, duration: null }
 }
-function timestampOfLastMatch(filePath: string, pattern: RegExp): string | null {
-  const CHUNK = 64 * 1024
-  const MAX_READ = 10 * 1024 * 1024
-  const size = fileSize(filePath)
-  if (!size) return null
-  let pos = size
-  while (pos > 0) {
-    const start = Math.max(0, pos - CHUNK)
-    const slice = readSlice(filePath, start, pos)
-    const lines = slice.split('\n')
-    for (let i = lines.length - 1; i >= 0; i--) {
-      if (pattern.test(lines[i])) return extractTimestamp(lines[i])
-    }
-    pos = Math.max(0, start - 512)
-    if (size - start >= MAX_READ) break
+
+const LOGS = () => [join(CWD, 'logs', 'latest.log'), join(CWD, 'logs', 'debug.log')]
+
+/** True once a player has joined a world (integrated server ready for commands). */
+function isWorldLoaded(): boolean {
+  for (const lp of LOGS()) {
+    if (existsSync(lp) && searchFromEnd(lp, /joined the game/)) return true
   }
-  return null
+  return false
+}
+
+/** True once FML finished loading mods (game at least at the main menu). */
+function isFmlLoaded(): boolean {
+  for (const lp of LOGS()) {
+    if (existsSync(lp) && searchFromEnd(lp, /Forge Mod Loader has successfully loaded/)) return true
+  }
+  return false
 }
 
 /**
- * Throw unless a world is loaded and the server is ready for commands.
- * Checks latest.log first (smaller / INFO level), then debug.log.
+ * Ensure a world is loaded and the server is ready for commands. If the game is
+ * at the main menu (FML loaded, no world), trigger a headless auto-join over the
+ * RMI bridge and block until the world is up — see scripts/mixin/probezs's
+ * `__cmd__:join:` handler / Op.requestAutoJoin. Throws if still loading, or if
+ * the auto-join does not complete in time.
  */
-function ensureWorldLoaded(): void {
-  const logs = [join(CWD, 'logs', 'latest.log'), join(CWD, 'logs', 'debug.log')]
+async function ensureWorldLoaded(options: ExecOptions = {}): Promise<void> {
+  if (isWorldLoaded()) return
 
-  for (const lp of logs) {
-    if (!existsSync(lp)) continue
-    if (searchFromEnd(lp, /joined the game/)) return
+  if (!isFmlLoaded()) {
+    const { first, duration } = logBoundaryTimestamps()
+    throw new Error(
+      `Minecraft is still loading — with ${first ? `${first}` : '??'} and already ${duration ? `${duration}` : '??'}`
+    )
   }
 
-  for (const lp of logs) {
-    if (!existsSync(lp)) continue
-    if (searchFromEnd(lp, /Forge Mod Loader has successfully loaded/)) {
-      const ts = timestampOfLastMatch(lp, /Forge Mod Loader has successfully loaded/)
-      throw new Error(`Minecraft loaded with ${ts ? `${ts}` : '??'}, enter the world and try again`)
-    }
+  // At the main menu with no world — auto-join the launch-time marker world.
+  await ensureAutoJoined(options)
+}
+
+/** Fire a headless auto-join and wait for "joined the game". */
+async function ensureAutoJoined(options: ExecOptions = {}): Promise<void> {
+  const { debug = false } = options
+  const uuid = shortUuid()
+  const expr = encode(`__cmd__:join:${uuid}`)
+  try {
+    const reply = rmiLookup(expr)
+    if (debug) console.error(`[probezs] join -> ${reply || '(empty)'}`)
+  }
+  catch (e) {
+    // Bridge not reachable yet — surface as a normal "still loading" style error.
+    throw new Error(`Auto-join request failed (RMI not ready?): ${(e as Error).message}`)
   }
 
-  const { first, duration } = logBoundaryTimestamps()
-  throw new Error(
-    `Minecraft is still loading — with ${first ? `${first}` : '??'} and already ${duration ? `${duration}` : '??'}`
-  )
+  const deadline = Date.now() + JOIN_WAIT_MS
+  while (Date.now() < deadline) {
+    if (isWorldLoaded()) return
+    await sleep(500)
+  }
+  throw new Error(`Auto-join did not reach a loaded world within ${JOIN_WAIT_MS}ms (check logs/debug.log for a missing-registry confirmation screen)`)
 }
 
 // ── Process check ───────────────────────────────────────────
@@ -401,6 +438,46 @@ async function waitForLogResult(
   throw new Error(`Command timed out after ${timeoutMs}ms (uuid=${uuid})`)
 }
 
+// ── RMI availability ─────────────────────────────────────────
+// World auto-join now happens at boot via a launch-time marker file read by
+// a GUI-init mixin (see mc-tools/packages/reducer/src/launcher/prism.ts's
+// writeAutoJoinMarker and scripts/mixin/probezs/shared.zs's
+// Op.tryAutoJoinWorld) — no RMI round-trip needed for that anymore.
+// waitForRmi remains a generic "is the bridge up yet" helper.
+
+export interface WaitForRmiOptions {
+  /** Max time to wait for RMI to become reachable, in ms (default 120_000). */
+  rmiWaitMs?     : number
+  /** Poll interval in ms (default 250). */
+  pollIntervalMs?: number
+  /** Emit diagnostics to stderr. */
+  debug?         : boolean
+}
+
+/**
+ * Wait until the ProbeZS RMI bridge is reachable (Minecraft loaded, at main
+ * menu — NOT waiting for a world to be loaded). Throws on timeout.
+ */
+export async function waitForRmi(options: WaitForRmiOptions = {}): Promise<void> {
+  if (!isMinecraftRunning()) {
+    throw new Error(`Minecraft instance is not running. Start the game first.\nDiagnosis: ${diagnoseRmiFailure()}`)
+  }
+  const { rmiWaitMs = 120_000, pollIntervalMs = 250, debug = false } = options
+  const deadline = Date.now() + rmiWaitMs
+  while (Date.now() < deadline) {
+    try {
+      // Any bracket expression that doesn't NPE will do — we just test connectivity.
+      rmiLookup('<__probe__:ping>')
+      if (debug) console.error('[probezs] RMI reachable')
+      return
+    } catch {
+      if (debug) console.error('[probezs] waiting for RMI...')
+      await sleep(pollIntervalMs)
+    }
+  }
+  throw new Error(`RMI bridge did not become reachable within ${rmiWaitMs}ms`)
+}
+
 // ── Public API ──────────────────────────────────────────────
 
 /** Run a single Minecraft command and resolve with its result. */
@@ -409,14 +486,14 @@ export async function execCmd(cmd: string, options: ExecOptions = {}): Promise<C
     throw new Error(`Minecraft instance is not running. Start the game first.\nDiagnosis: ${diagnoseRmiFailure()}`)
   }
 
-  ensureWorldLoaded()
+  await ensureWorldLoaded(options)
 
   const command = cmd.startsWith('/') ? cmd : `/${cmd}`
   if (command.trim() === '/') throw new Error('Empty command')
 
   const uuid = shortUuid()
   const expr = encode(`__cmd__:exec:${uuid}:${command}`)
-  const { waitMs = 30_000, pollIntervalMs = 100, debug = false } = options
+  const { waitMs = DEFAULT_CMD_WAIT_MS, pollIntervalMs = 100, debug = false } = options
 
   const since = fileSize(CRAFTTWEAKER_LOG)
   const t0 = performance.now()

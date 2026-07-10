@@ -69,6 +69,17 @@ scripts.mixin.probezs.shared.Op.onKeyword
     val end = expr.endsWith('>') ? expr.length() - 1 : expr.length();
     val inner = expr.substring(start, end);
 
+    if (inner.startsWith('__cmd__:join:')) {
+      // Headless world auto-join request (main menu, no world yet). Schedule the
+      // join on the client thread and reply immediately — the Node side polls the
+      // log for "joined the game". See dev/lib/probezs.ts's ensureAutoJoined.
+      val uuid = inner.substring('__cmd__:join:'.length());
+      val status = scripts.mixin.probezs.shared.Op.requestAutoJoin();
+      val reply = 'OK:exec:' ~ uuid ~ ':' ~ encode(status);
+      print(reply);
+      return reply;
+    }
+
     if (inner.startsWith('__cmd__:exec:')) {
       val raw = inner.substring('__cmd__:exec:'.length());
       val colonPos = raw.indexOf(':');
@@ -91,6 +102,11 @@ scripts.mixin.probezs.shared.Op.onKeyword
       print(reply);
       return reply;
     }
+
+    // World auto-join at boot is handled by a launch-time marker file +
+    // GUI-init mixin now — see scripts/mixin/probezs/shared.zs's
+    // Op.tryAutoJoinWorld and gui.zs / gui_custommainmenu.zs. No RMI
+    // round-trip needed for that anymore.
 
     val err = 'ERR:unknown:' ~ expr;
     print(err);

@@ -2,19 +2,19 @@
 #reloadable
 #priority 2000
 
-# ── Capturing command sender ───────────────────────────────
-# A custom ICommandSender that BUFFERS every feedback message instead of
-# broadcasting it. Running a command through this sender lets us read back
-# exactly what the command printed, and return it to the RMI caller directly
-# (replacing the old debug.log scraping).
-#
-# Notes:
-# - ZenUtils class inheriting does NOT inherit Java interface `default` methods —
-#   they stay abstract and throw AbstractMethodError when a command calls them.
-#   Therefore EVERY ICommandSender method is overridden here.
-# - Overrides must use SRG names (MCP name kept in a comment for readability).
-# - Lives in its own (non-#reloadable) file so the generated class is created
-#   once; reloadable.zs only references it.
+// ── Capturing command sender ───────────────────────────────
+// A custom ICommandSender that BUFFERS every feedback message instead of
+// broadcasting it. Running a command through this sender lets us read back
+// exactly what the command printed, and return it to the RMI caller directly
+// (replacing the old debug.log scraping).
+//
+// Notes:
+// - ZenUtils class inheriting does NOT inherit Java interface `default` methods —
+//   they stay abstract and throw AbstractMethodError when a command calls them.
+//   Therefore EVERY ICommandSender method is overridden here.
+// - Overrides must use SRG names (MCP name kept in a comment for readability).
+// - Lives in its own (non-#reloadable) file so the generated class is created
+//   once; reloadable.zs only references it.
 
 import native.net.minecraft.command.ICommandSender;
 import native.net.minecraft.util.text.ITextComponent;
@@ -27,7 +27,7 @@ import native.net.minecraft.entity.Entity;
 import native.net.minecraft.command.CommandResultStats.Type as ResultStatsType;
 
 zenClass CmdCapture extends ICommandSender {
-  var buffer as string = "";
+  var buffer as string = '';
   var srv as MinecraftServer = null;
 
   zenConstructor(server as MinecraftServer) {
@@ -35,17 +35,17 @@ zenClass CmdCapture extends ICommandSender {
   }
 
   // getName
-  function func_70005_c_() as string { return "ProbeRMI"; }
+  function func_70005_c_() as string { return 'ProbeRMI'; }
 
   // getDisplayName
   function func_145748_c_() as ITextComponent {
-    val c as ITextComponent = TextComponentString("ProbeRMI");
+    val c as ITextComponent = TextComponentString('ProbeRMI');
     return c;
   }
 
   // sendMessage — capture instead of broadcast
   function func_145747_a(component as ITextComponent) as void {
-    this.buffer = this.buffer ~ component.getUnformattedText() ~ "\n";
+    this.buffer = this.buffer ~ component.getUnformattedText() ~ '\n';
   }
 
   // canUseCommand — allow everything (run as the server does)
