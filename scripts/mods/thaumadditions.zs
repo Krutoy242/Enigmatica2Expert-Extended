@@ -65,6 +65,8 @@ val toHide = [
   'volatus',
   'vitium',
   'vitreus',
+  'terminus',
+  'ascension',
 ] as string[];
 
 for item in toHide {
@@ -593,21 +595,6 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('jar_mithminite_alt',
     'G': <ore:paneGlass>,
   }).shaped());
 
-// [Adaminite fabric]
-mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_fabric>);
-mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('adaminite_fabric',
-  'ADAMINITEFABRIC',
-  66,
-  [],
-  <thaumadditions:adaminite_fabric> * 4,
-  Grid(['pretty',
-    '  F  ',
-    'F I F',
-    '  F  '], {
-    'I': <thaumadditions:adaminite_ingot>,
-    'F': <thaumcraft:fabric>,
-  }).shaped());
-
 // [Mithminite fabric]
 mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:mithminite_fabric>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('mithminite_fabric',
@@ -620,7 +607,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('mithminite_fabric',
     'F I F',
     '  F  '], {
     'I': <thaumadditions:mithminite_ingot>,
-    'F': <thaumadditions:adaminite_fabric>,
+    'F': <thaumcraft:fabric>,
   }).shaped());
 
 // [Entity cell]
@@ -977,7 +964,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   'COMBINER', // Research
   <thaumadditions:aspect_combiner>, // Output
   2, // Instability
-  Aspects('50🔮 200⚗️ 100⚙️ 50👁️ 100🙌'),
+  Aspects('50🔮 200⚗️ 100⚙️ 50👁️ 100🙌 50🗯️'), 
   <thaumcraft:centrifuge>, // CentralItem
   [<thaumadditions:mithrillium_resonator>, <thaumcraft:mechanism_complex>, <thaumcraft:filter>, <thaumcraft:alumentum>, <thaumictinkerer:energetic_nitor>, <thaumcraft:filter>]
 );
@@ -1745,48 +1732,6 @@ scripts.jei.crafting_hints.addInsOutCatl([<minecraft:arrow>, <minecraft:fire_cha
 
 scripts.jei.crafting_hints.add1to1(<entity:minecraft:cow>.asIngr() | <entity:minecraft:chicken>.asIngr() | <entity:minecraft:sheep>.asIngr() | <entity:minecraft:pig>.asIngr(), null, <thaumadditions:mithminite_scythe>.withLore(['§cvictus§r']));
 
-// [Adaminite armor set]
-mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_hood>);
-mods.thaumcraft.Infusion.registerRecipe(
-  'adaminite_hood', // Name
-  'ADAMINITEFABRIC', // Research
-  <thaumadditions:adaminite_hood>, // Output
-  6, // Instability
-  Aspects('100🧨 100🩸 50👻'),
-  <thaumcraft:void_robe_helm:*>, // CentralItem
-  [<thaumicwonders:void_fortress_helm:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
-);
-mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_robe>);
-mods.thaumcraft.Infusion.registerRecipe(
-  'adaminite_robe', // Name
-  'ADAMINITEFABRIC', // Research
-  <thaumadditions:adaminite_robe>, // Output
-  6, // Instability
-  Aspects('100🧨 100🩸 50⚰️'),
-  <thaumcraft:void_robe_chest:*>, // CentralItem
-  [<thaumicwonders:void_fortress_chest:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
-);
-mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_belt>);
-mods.thaumcraft.Infusion.registerRecipe(
-  'adaminite_belt', // Name
-  'ADAMINITEFABRIC', // Research
-  <thaumadditions:adaminite_belt>, // Output
-  6, // Instability
-  Aspects('100🧨 100🩸 50⟁'),
-  <thaumcraft:void_robe_legs:*>, // CentralItem
-  [<thaumicwonders:void_fortress_legs:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
-);
-mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumadditions:adaminite_boots>);
-mods.thaumcraft.Infusion.registerRecipe(
-  'adaminite_boots', // Name
-  'ADAMINITEFABRIC', // Research
-  <thaumadditions:adaminite_boots>, // Output
-  6, // Instability
-  Aspects('100🧨 100🩸 50🏃'),
-  <thaumicaugmentation:void_boots:*>, // CentralItem
-  [<thaumcraft:void_boots:*>, <bloodmagic:item_demon_crystal>, <bloodmagic:slate:3>, <thaumadditions:adaminite_fabric>, <thaumadditions:adaminite_fabric>]
-);
-
 function makeArmor(
   name as string,
   research as string,
@@ -1812,12 +1757,12 @@ makeArmor(
     <aspect:sensus> * 200,
     <aspect:amogus> * 42,
   ],
-  <thaumadditions:adaminite_hood:*>, // CentralItem
+  <kami:awakened_ichorweave_hood:*>, // CentralItem
   [
     <thaumcraft:sanity_checker>,
     <thaumadditions:zeith_fur>,
     <thaumadditions:mithminite_fabric>,
-    <thaumadditions:mithminite_fabric>,
+    <thaumicwonders:void_fortress_helm>,
     <thaumadditions:mithminite_fabric>,
     <thaumadditions:zeith_fur>,
     <thaumadditions:fragnant_pendant>,
@@ -1836,12 +1781,12 @@ makeArmor(
     <aspect:draco> * 200,
     <aspect:amogus> * 42,
   ],
-  <thaumadditions:adaminite_robe:*>, // CentralItem
+  <kami:awakened_ichorweave_robe:*>, // CentralItem
   [
     <thaumadditions:mithminite_fabric>,
     <thaumadditions:zeith_fur>,
     <thaumadditions:mithminite_fabric>,
-    <thaumicaugmentation:thaumostatic_harness:*>,
+    <thaumicwonders:void_fortress_chest>,
     <thaumadditions:mithminite_fabric>,
     <thaumadditions:zeith_fur>,
     <thaumadditions:mithminite_fabric>,
@@ -1860,14 +1805,14 @@ makeArmor(
     <aspect:ventus> * 200,
     <aspect:amogus> * 42,
   ],
-  <thaumadditions:adaminite_belt:*>, // CentralItem
+  <kami:awakened_ichorweave_leggings:*>, // CentralItem
   [
     <thaumadditions:mithminite_fabric>,
     <thaumadditions:zeith_fur>,
+    <thaumicwonders:void_fortress_legs>,
+    <thaumadditions:zeith_fur>,
     <thaumadditions:mithminite_fabric>,
     <thaumicwonders:flying_carpet:*>,
-    <thaumadditions:mithminite_fabric>,
-    <thaumadditions:zeith_fur>,
   ]);
 
 mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:mithminite_boots>);
@@ -1882,10 +1827,11 @@ makeArmor(
     <aspect:exitium> * 200,
     <aspect:amogus> * 42,
   ],
-  <thaumadditions:adaminite_boots:*>, // CentralItem
+  <kami:awakened_ichorweave_boots:*>, // CentralItem
   [
     <thaumadditions:mithminite_fabric>,
     <thaumadditions:zeith_fur>,
+    <thaumcraft:void_boots>,
     <thaumadditions:zeith_fur>,
     <thaumadditions:mithminite_fabric>,
     <thaumicaugmentation:research_notes>,

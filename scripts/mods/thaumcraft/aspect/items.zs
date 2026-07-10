@@ -139,6 +139,7 @@ set('10🦉 5⟁ 10✊', <astralsorcery:itemskyresonator>); // fosic resonator
 set('10🔮 10🌑 20💪', <astralsorcery:itemperkseal>); // sealing sigil
 
 set('30🔮 10🌑 10💎', <astralsorcery:itemenchantmentamulet>); // resplendent prism
+set('50🗯️ 25☀️ 100🧠 50✊', <astralsorcery:itemfragmentcapsule>);
 
 /*
 #######################################################
@@ -155,7 +156,7 @@ set('5⛰️ 30🩸', <bloodmagic:slate:2>); // slate imbued
 set('5⛰️ 66🩸', <bloodmagic:slate:3>); // slate demonic
 set('5⛰️ 100🩸', <bloodmagic:slate:4>); // slate ethernal
 
-set('10⚰️ 10💀 10🩸', <bloodmagic:blood_shard>); // weak blood shard
+set('10⚰️ 10💀 10🩸 5🗯️', <bloodmagic:blood_shard>); // weak blood shard
 set('30☀️ 50🧨 20🩸', <bloodmagic:blood_shard:1>); // demon blood shard
 
 set('10🔮 20✊ 20🩸', <bloodmagic:activation_crystal>); // weak activation crystal
@@ -290,7 +291,7 @@ set('5💎 2🔷', <botania:managlass>); // mana glass
 set('10🦉 20👁️ 6🔷', <botania:monocle>); // monocle
 set('10👽 10⟁ 15🔷', <botania:blacklotus>); // monocle
 set('20👽 20⟁ 50🔷', <botania:blacklotus:1>); // monocle
-set('25☀️ 50⟁ 50👽', <botania:manaresource:5>); // gaia spirit
+set('25☀️ 50⟁ 50👽 50♾️', <botania:manaresource:5>); // gaia spirit
 set('75☀️ 150⟁ 20🔷 10🔩', <botania:manaresource:14>); // gaia ingot
 set('20💪 20🔄 15👽 15⚙️ 10🔷', <botania:manaresource:12>); // red string
 set('67🔩 33🔷', <botania:storage>); // manasteel block
@@ -633,6 +634,7 @@ set('100🐲 10🔮 10♒ 10🧊', <iceandfire:dragonegg_silver>); // egg silver
 set('25🐲 20🔩 40✊ 50🧊', <iceandfire:dragonsteel_ice_ingot>); // dragonsteel ingot
 set('5🐲 2🔮 5🌱 5🧊', <iceandfire:frost_lily>); // lily
 set('5🐲 5🔮 20🧊', <iceandfire:frost_stew>); // lily mixture
+set('20🙌 20🗯️ 10⚙️ 5🛠️', <iceandfire:dread_key>);
 
 // Ocean creatures
 set('5🐲 10🗡️ 10💧 5🦄', <iceandfire:sea_serpent_fang>); // fang
@@ -1002,6 +1004,7 @@ set('10🔩 5🍇 20🔮', <mysticalagriculture:void_metal_essence>);
 set('10🌑 15🔮 15⚗️', <thaumicwonders:alienist_stone>);
 set('10🏃 15🔄 15⚗️', <thaumicwonders:transmuter_stone>);
 set('10🔩 15⟁ 15⚗️', <thaumicwonders:alchemist_stone>);
+set('10👽 10〇 5🗯️ 5🌱', <thaumadditions:void_fruit>);
 
 val nitor = [
   <thaumcraft:nitor_white>,
@@ -1045,6 +1048,10 @@ set('5🔩 10🛡️', <twilightforest:armor_shard_cluster>);
 set('10🔩 5🛡️ 20🌱', <mysticalagriculture:knightmetal_seeds>);
 set('10🔩 5🛡️ 20🔮', <mysticalagriculture:knightmetal_essence>);
 set('5💎 10👽', <twilightforest:auroralized_glass>);
+
+set('80🔥 45⚰️ 30🐺 20♾️', <twilightforest:trophy:2>);
+set('80🍇 45👻 30⚗️ 20♾️', <twilightforest:trophy:3>);
+set('80🧊 45⚰️ 30👨 20♾️', <twilightforest:trophy:5>);
 
 /*
 #######################################################
@@ -1101,6 +1108,9 @@ set('500⛰️ 500⚡', <extrautils2:compressedcobblestone:2>);
 set('21🧊', <biomesoplenty:hard_ice>);
 set('2👽 7🌑', <appliedenergistics2:sky_stone_block>);
 set('✊ 💧', <minecraft:sugar>);
+set('50♾️ 25🛡️ 50🐺 50👻', <betteranimalsplus:hirschgeistskullwearable>);
+set('50♾️ 25🛡️ 50🐺 50👻', <betteranimalsplus:hirschgeistskull_1>);
+set('10🔩 5🗯️ 5♾️', <kami:ichorium_ingot>);
 
 /*
 ███╗░░░███╗███████╗████████╗░█████╗░██╗░░░░░██╗░░░░░██╗░░░██╗██████╗░░██████╗░██╗░░░██╗
@@ -1169,6 +1179,7 @@ Just a list of aspect - metal
 // Do not change aspects for this ore entries
 static oreAspectBlacklist as string[] = [
   'nuggetQuartz',
+  'gemQuartz',
 ];
 
 function setOreAspect(kind as string, main as double, secondary as double, base as string, aspects as string, additional as string = null) as int {
@@ -1193,6 +1204,7 @@ function setOreAspect(kind as string, main as double, secondary as double, base 
 function addMetallurgicAspects(oreBase as string, mul as double, mulAs as double, tier as int, aspects as string) as void {
   var x = 0;
   x += setOreAspect('ingot'          , 10.0  * mul, 5.0   * mulAs, oreBase, aspects);
+  x += setOreAspect('gem'            , 10.0  * mul, 5.0   * mulAs, oreBase, aspects);
   x += setOreAspect('nugget'         , 1.0   * mul, 0.5   * mulAs, oreBase, aspects);
   x += setOreAspect('block'          , 67.0  * mul, 33.5  * mulAs, oreBase, aspects);
   x += setOreAspect('dust'           , 10.0  * mul, 5.0   * mulAs, oreBase, aspects, '5⚡');
@@ -1263,7 +1275,7 @@ addMetallurgicAspects('Magnesium'          , 1.0, 1.0, 4, '🔩 ✨');
 addMetallurgicAspects('Thorium'            , 1.0, 1.0, 4, '🔩 🌑');
 addMetallurgicAspects('Draconium'          , 2.0, 2.0, 5, '🔩 🐲');
 addMetallurgicAspects('Amber'              , 1.0, 2.0, 4, '💎 🔗');
-addMetallurgicAspects('Amethyst'           , 2.0, 4.0, 4, '💎 👽 ✊');
+addMetallurgicAspects('Amethyst'           , 2.0, 4.0, 4, '💎 🗯️ ✊');
 addMetallurgicAspects('Dilithium'          , 2.0, 4.0, 0, '💎 ♒');
 addMetallurgicAspects('DimensionalShard'   , 2.0, 4.0, 0, '💎 🏃');
 addMetallurgicAspects('Malachite'          , 1.0, 2.0, 4, '💎 🔨 ✊');

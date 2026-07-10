@@ -75,7 +75,10 @@ research.mithminite_scythe.addenda.visum=§l§a视线§r <DIV><IMG>thaumaddition
 research.mithminite_scythe.addenda.vitium=§l§5腐化§r <DIV><IMG>thaumcraft:textures/aspects/vitium.png:0:0:255:255:0.125</IMG> 从气场吸取扭曲能量并焚烧为燃料。伤害大幅提升。</DIV>
 research.mithminite_scythe.addenda.vitreus=§l§b晶化§r <DIV><IMG>thaumcraft:textures/aspects/vitreus.png:0:0:255:255:0.125</IMG> 致命一击时，敌人粉碎并释放结晶属性。完美斩杀以获取最大收益。</DIV>
 research.mithminite_scythe.addenda.volatus=§l§f飞翔§r <DIV><IMG>thaumcraft:textures/aspects/volatus.png:0:0:255:255:0.125</IMG> 敌人被升空，失去重量与行动能力。飞行成为囚笼。</DIV>
-research.mithminitresearch.mithminite_scythe.addenda.aer=§l§e气§r <DIV><IMG>thaumcraft:textures/aspects/aer.png:0:0:255:255:0.125</IMG> 通过引导空气元素，镰刀召唤出一个龙卷风，将敌人拉向中心。风暴虽短暂，却势不可挡。
+
+research.ichorium.stage.2=我成功将固化的终焉（Terminus）与飞升（Ascension）晶体，与封存在琥珀中的太初之粒融合，创造出了一种拥有独特性质的全新材料。<BR>它完全不受腐蚀或损坏的影响，却几乎像黏土一样易于塑形。<BR>我暂时还没有找到它的用途，但我相信很快就会有所发现。
+research.ancient_focus.1=我想知道那些远古生物用什么施法……我必须调查一下……
+research.ancient_focus.2=这东西来源于虚空，但具有高级焦点甚至更好的特性！然而，从这个焦点深处散发出一些邪恶的光芒……
 research.recharge_charm.1=有那么多有用的护身符，而我却只能用这个Vis护身符作为自动充能我的物品的唯一方法。一定有办法摆脱它！
 research.recharge_charm.2=果然如此！翠绿护身符也能从灵气中吸取vis来为我的物品充能，只需要进行一些调整。
 research_name.CREATION_HOSTILE_ELEMENTALS=元素生物

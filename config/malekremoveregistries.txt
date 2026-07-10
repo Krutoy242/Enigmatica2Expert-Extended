@@ -140,6 +140,10 @@ tcomplement:steel_helmet
 tcomplement:steel_leggings
 tconstruct:slime_boots
 tconstruct:stone_stick
+thaumadditions:adaminite_belt
+thaumadditions:adaminite_boots
+thaumadditions:adaminite_hood
+thaumadditions:adaminite_robe
 thaumadditions:levitation_device
 thaumadditions:phantom_ink_phial
 thaumadditions:vis_pod
@@ -148,6 +152,7 @@ thaumadditions:vis_seeds/alienis
 thaumadditions:vis_seeds/alkimia
 thaumadditions:vis_seeds/amogus
 thaumadditions:vis_seeds/aqua
+thaumadditions:vis_seeds/ascension
 thaumadditions:vis_seeds/auram
 thaumadditions:vis_seeds/aversio
 thaumadditions:vis_seeds/bestia
@@ -185,6 +190,7 @@ thaumadditions:vis_seeds/sensus
 thaumadditions:vis_seeds/sonus
 thaumadditions:vis_seeds/spiritus
 thaumadditions:vis_seeds/tenebrae
+thaumadditions:vis_seeds/terminus
 thaumadditions:vis_seeds/terra
 thaumadditions:vis_seeds/vacuos
 thaumadditions:vis_seeds/ventus
@@ -194,11 +200,6 @@ thaumadditions:vis_seeds/visum
 thaumadditions:vis_seeds/vitium
 thaumadditions:vis_seeds/vitreus
 thaumadditions:vis_seeds/volatus
-thaumictinkerer:infused_aer_fruit
-thaumictinkerer:infused_aqua_fruit
-thaumictinkerer:infused_ignis_fruit
-thaumictinkerer:infused_terra_fruit
-thaumictinkerer:share_book
 twilightforest:fiery_boots
 twilightforest:fiery_chestplate
 twilightforest:fiery_helmet

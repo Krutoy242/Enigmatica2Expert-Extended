@@ -76,6 +76,10 @@ research.mithminite_scythe.addenda.visum=§l§aVisum§r <DIV><IMG>thaumadditions
 research.mithminite_scythe.addenda.vitium=§l§5Vitium§r <DIV><IMG>thaumcraft:textures/aspects/vitium.png:0:0:255:255:0.125</IMG> Flux is drawn from the aura and burned as fuel. Damage multiplies drastically.
 research.mithminite_scythe.addenda.vitreus=§l§bVitreus§r <DIV><IMG>thaumcraft:textures/aspects/vitreus.png:0:0:255:255:0.125</IMG> When the strike is fatal, the enemy shatters and releases crystallized aspects. A clean kill for maximum yield.
 research.mithminite_scythe.addenda.volatus=§l§fVolatus§r <DIV><IMG>thaumcraft:textures/aspects/volatus.png:0:0:255:255:0.125</IMG> The foe is lifted into the air, helpless and weightless. Flight becomes imprisonment.
+
+research.ichorium.stage.2=I have managed to blend solidified Terminus and Ascension crystals with a Primordial Grain encased in Amber to create an entirely new material with completely unique properties.<BR>It is completely impervious to corrosion or damage, yet it is almost as malleable as clay.<BR>I haven't found any uses for it yet, but I know it shouldn't take me too long.
+research.ancient_focus.1=I wonder what those Eldritch beings use to cast spells... I must investigate that...
+research.ancient_focus.2=That's something navite to the void, but have a properties of advanced focus or even better! However something evil glare from the deeps of this focus...
 research.recharge_charm.1=There are so many usefull amulets and i'm stuck using this Vis Amulet as an only way to automaticaly recharge my stuff. There must be some way to get rid of it!
 research.recharge_charm.2=As i thought! Verdant charms can also drawn vis from aura to my stuff, it just needed some adjustments.
 research_name.CREATION_HOSTILE_ELEMENTALS=Elementals

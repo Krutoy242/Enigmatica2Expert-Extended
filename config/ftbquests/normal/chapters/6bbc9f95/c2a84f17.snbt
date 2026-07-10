@@ -1,6 +1,6 @@
 {
 	x: 16.0d,
-	y: 5.0d,
+	y: 1.0d,
 	text: [
 		"{q.thaumcraft.alkahest_vat.desc}"
 	],

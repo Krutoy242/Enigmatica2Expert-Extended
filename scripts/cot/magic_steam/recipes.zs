@@ -101,7 +101,7 @@ mods.thaumcraft.Infusion.registerRecipe('naquadah_resevoir_grade_4', 'INFUSION',
   Grid(['MSI'], {
     'M': <thaumcraft:mind:1>,
     'S': <thaumcraft:sanity_soap>,
-    'I': <thaumictinkerer:kamiresource:2>,
+    'I': <kami:ichor>,
   }).spiral(1));
 
 // extract catalyst from resevoir
@@ -112,9 +112,9 @@ recipes.addShapeless(<contenttweaker:naquadah_catalyst_grade_4>, [
 // Grade5 (ultimate)
 
 mods.astralsorcery.Altar.addTraitAltarRecipe('reservoir_grade_5', <contenttweaker:naquadah_resevoir_grade_5>, 4500, 4000, [
-  <contenttweaker:naquadah_resevoir_grade_1>, <thaumictinkerer:proto_clay>, <contenttweaker:naquadah_resevoir_grade_2>,
-  <thaumictinkerer:proto_clay>, <rats:idol_of_ratlantis>, <thaumictinkerer:proto_clay>,
-  <contenttweaker:naquadah_resevoir_grade_3>, <thaumictinkerer:proto_clay>, <contenttweaker:naquadah_resevoir_grade_4>,
+  <contenttweaker:naquadah_resevoir_grade_1>, <thaumicwonders:primordial_grain>, <contenttweaker:naquadah_resevoir_grade_2>,
+  <thaumicwonders:primordial_grain>, <rats:idol_of_ratlantis>, <thaumicwonders:primordial_grain>,
+  <contenttweaker:naquadah_resevoir_grade_3>, <thaumicwonders:primordial_grain>, <contenttweaker:naquadah_resevoir_grade_4>,
   <animus:component:2>, <animus:component:2>, <animus:component:2>, <animus:component:2>, // outer corners
   <astralsorcery:itemusabledust:1>, <astralsorcery:itemcraftingcomponent:4>, // outer ring top to bottom
   <astralsorcery:itemcraftingcomponent:4>, <astralsorcery:itemusabledust:1>,

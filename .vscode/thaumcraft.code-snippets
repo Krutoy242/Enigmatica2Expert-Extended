@@ -29,6 +29,12 @@
     "body": ["💧"],
     "description": "Inserts aqua aspect emoji"
   },
+  "Aspect ascension": {
+    "scope": "zenscript",
+    "prefix": "aspect:ascension",
+    "body": ["♾️"],
+    "description": "Inserts ascension aspect emoji"
+  },
   "Aspect auram": {
     "scope": "zenscript",
     "prefix": "aspect:auram",
@@ -250,6 +256,12 @@
     "prefix": "aspect:tenebrae",
     "body": ["🌑"],
     "description": "Inserts tenebrae aspect emoji"
+  },
+  "Aspect terminus": {
+    "scope": "zenscript",
+    "prefix": "aspect:terminus",
+    "body": ["🗯️"],
+    "description": "Inserts terminus aspect emoji"
   },
   "Aspect terra": {
     "scope": "zenscript",
