@@ -7,13 +7,13 @@
     "name": "Crash Assistant",
     "version": "1.11.10"
   },
-  "!cleanroom-relauncher-0.6.1.jar": {
-    "curseForgeHash": 1160971111,
-    "jarName": "!cleanroom-relauncher-0.6.1.jar",
+  "!cleanroom-relauncher-0.6.2.jar": {
+    "curseForgeHash": 1099421218,
+    "jarName": "!cleanroom-relauncher-0.6.2.jar",
     "modId": "cleanroom-relauncher",
-    "modrinthHash": "e6b9c8411c652734bbf2ec20b046e9365ba35b30",
+    "modrinthHash": "291547d917cd0acd165486aee6b316837aff6ab8",
     "name": "Cleanroom Relauncher",
-    "version": "0.6.1"
+    "version": "0.6.2"
   },
   "!configanytime-3.0.jar": {
     "curseForgeHash": 3732531395,
@@ -23,13 +23,13 @@
     "name": "ConfigAnytime",
     "version": "3.0"
   },
-  "!mixinbooter-11.1.jar": {
-    "curseForgeHash": 1990176154,
-    "jarName": "!mixinbooter-11.1.jar",
+  "!mixinbooter-11.5.jar": {
+    "curseForgeHash": 49745504,
+    "jarName": "!mixinbooter-11.5.jar",
     "modId": "mixinbooter",
-    "modrinthHash": "4cb3590e81e1062b80cd509977f403ec9d79695e",
+    "modrinthHash": "a6b8904ca478f106497391d4617b342a5969b7f1",
     "name": "MixinBooter",
-    "version": "11.1"
+    "version": "11.5"
   },
   "!mod-director-launchwrapper-1.9.1.jar": {
     "curseForgeHash": 2239322327,
@@ -201,13 +201,13 @@
     "name": "Another Tips",
     "version": "1.0.5"
   },
-  "AntiqueArmory-1.12.2-1.2.9.jar": {
-    "curseForgeHash": 570162532,
-    "jarName": "AntiqueArmory-1.12.2-1.2.9.jar",
+  "AntiqueArmory-1.12.2-1.3.0.jar": {
+    "curseForgeHash": 1952684257,
+    "jarName": "AntiqueArmory-1.12.2-1.3.0.jar",
     "modId": "conarm",
-    "modrinthHash": "2217abb7ef4fe820b382c4008a51b0cd34c08e69",
+    "modrinthHash": "96e8b8adb8a29cc35632050e6ed6321bf676092b",
     "name": "Antique Armory",
-    "version": "1.2.9"
+    "version": "1.3.0"
   },
   "AppleCore-mc1.12.2-3.4.0.jar": {
     "curseForgeHash": 3756462991,
@@ -238,13 +238,13 @@
     "name": "ArmoreableMobs",
     "version": "1.12.2-1.1.8"
   },
-  "ArmoredArms-v1.5.1-1.12.2-release.jar": {
-    "curseForgeHash": 1656319952,
-    "jarName": "ArmoredArms-v1.5.1-1.12.2-release.jar",
+  "ArmoredArms-v1.5.3-1.12.2-release.jar": {
+    "curseForgeHash": 221985261,
+    "jarName": "ArmoredArms-v1.5.3-1.12.2-release.jar",
     "modId": "armoredarms",
-    "modrinthHash": "2173959c3962de1075d0ada23e074b606462cf2c",
+    "modrinthHash": "7e6b16e73ed970ca55fc52a03a7b567f96ac70eb",
     "name": "Armored Arms",
-    "version": "v1.5.1-1.12.2-release"
+    "version": "v1.5.3-1.12.2-release"
   },
   "armoryexpansion-2.0.0-alpha.jar": {
     "curseForgeHash": 3077282103,
@@ -371,13 +371,13 @@
     "name": "Better Animals Plus",
     "version": "1.0"
   },
-  "betterbiomeblend-1.12.2-1.2.1-forge.jar": {
-    "curseForgeHash": 3926713113,
-    "jarName": "betterbiomeblend-1.12.2-1.2.1-forge.jar",
+  "betterbiomeblend-1.12.2-1.1.7-forge.jar": {
+    "curseForgeHash": 3162109178,
+    "jarName": "betterbiomeblend-1.12.2-1.1.7-forge.jar",
     "modId": "betterbiomeblend",
-    "modrinthHash": "008ab6154d6230deec2ec68b0b2e997f75a6e7c6",
+    "modrinthHash": "a9463fed7357f39515707b5bbb4cac780916abf5",
     "name": "Better Biome Blend",
-    "version": "1.12.2-1.2.1-forge"
+    "version": "1.12.2-1.1.7-forge"
   },
   "BetterBuildersWands-1.12.2-0.13.2.271+5997513.jar": {
     "curseForgeHash": 2031588189,
@@ -1038,6 +1038,14 @@
     "name": "Ex Nihilo Creatio",
     "version": "1.12.2-0.4.7.2"
   },
+  "expandedevents-1.2.2.jar": {
+    "curseForgeHash": 1569551335,
+    "jarName": "expandedevents-1.2.2.jar",
+    "modId": "expandedevents",
+    "modrinthHash": "976d73d7272d886afa813c26e4a654cf05b5515b",
+    "name": "Expanded Events",
+    "version": "1.2.2"
+  },
   "extendedcrafting-nomifactory-edition-1.7.0.7.jar": {
     "curseForgeHash": 1327993331,
     "jarName": "extendedcrafting-nomifactory-edition-1.7.0.7.jar",
@@ -1653,6 +1661,14 @@
     "modrinthHash": "3d4c9b8bb4ad948c7e26b7becd1c836f8cb34d07",
     "name": "Just Enough Resources",
     "version": "0.9.2"
+  },
+  "kami-1.0.4.jar": {
+    "curseForgeHash": 3023984312,
+    "jarName": "kami-1.0.4.jar",
+    "modId": "kami",
+    "modrinthHash": "cd51e28d6462854eb3bc576b2ff048553d2769ca",
+    "name": "KAMI: Reborn",
+    "version": "1.0.4"
   },
   "keybindunconflict-1.0.2.jar": {
     "curseForgeHash": 3084357996,
@@ -2863,21 +2879,21 @@
     "name": "Thaumic Information",
     "version": "1.1.2"
   },
-  "thaumictinkerer-1.12.2-5.9.15-Unofficial.jar": {
-    "curseForgeHash": 3663405330,
-    "jarName": "thaumictinkerer-1.12.2-5.9.15-Unofficial.jar",
+  "thaumictinkerer-1.0.6.jar": {
+    "curseForgeHash": 1672421800,
+    "jarName": "thaumictinkerer-1.0.6.jar",
     "modId": "thaumictinkerer",
-    "modrinthHash": "8485f24db07bfdc7d4a0249e54ad0dc8760fea3f",
-    "name": "Thaumic Tinkerer Unofficial",
-    "version": "1.12.2-5.9.15-Unofficial"
+    "modrinthHash": "b12554b0c7c1a2500e9619e13a2e62c267c4a0bf",
+    "name": "Thaumic Tinkerer: Reborn",
+    "version": "1.0.6"
   },
-  "thaumictweaker-1.3.2.jar": {
-    "curseForgeHash": 1325599421,
-    "jarName": "thaumictweaker-1.3.2.jar",
+  "thaumictweaker-1.3.3.jar": {
+    "curseForgeHash": 391342106,
+    "jarName": "thaumictweaker-1.3.3.jar",
     "modId": "thaumictweaker",
-    "modrinthHash": "88e8bd2db3746466c2da8ce4f49460be5f28a182",
+    "modrinthHash": "566521e6208f847c7a6fd5538335fa91e882dadd",
     "name": "ThaumicTweaker",
-    "version": "1.3.2"
+    "version": "1.3.3"
   },
   "thaumicwonders-2.3.2.jar": {
     "curseForgeHash": 3220410144,
@@ -3353,13 +3369,13 @@
     "name": "Zen Toolforge",
     "version": "1.1"
   },
-  "zenutils-1.27.4.jar": {
-    "curseForgeHash": 777982235,
-    "jarName": "zenutils-1.27.4.jar",
+  "zenutils-1.27.5.jar": {
+    "curseForgeHash": 1872348175,
+    "jarName": "zenutils-1.27.5.jar",
     "modId": "zenutils",
-    "modrinthHash": "129b82add4e53870c1b714143c362ede8fcb940a",
+    "modrinthHash": "28d1104be0ef24cfc908a4c7bb75cc47e61c2b0f",
     "name": "ZenUtils",
-    "version": "1.27.4"
+    "version": "1.27.5"
   },
   "zume-1.2.2.jar": {
     "curseForgeHash": 520005726,
