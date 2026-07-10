@@ -902,6 +902,18 @@
   "path":"meta"}
 ]}
 
+,{"key":"TT_FELINE_CHARM","ops":[
+  {"op":"replace",
+  "path":"stages/0/recipes",
+  "value":["thaumcraft:feline_charm"]}
+]}
+
+,{"key":"TT_XP_TALISMAN","ops":[
+  {"op":"replace",
+  "path":"stages/0/recipes",
+  "value":["thaumcraft:xp_talisman"]}
+]}
+
 ,{"key":"TT_THAUMIC_RESTORER","ops":[
   {"op":"remove",
   "path":"meta"}

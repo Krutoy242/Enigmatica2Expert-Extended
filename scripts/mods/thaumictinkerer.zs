@@ -6,7 +6,7 @@ import mods.thaumictinkerer.NecromancyTablet;
 // [Feline Amulet]
 mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:feline_charm>);
 mods.thaumcraft.Infusion.registerRecipe(
-  'cat_amulet', // Name
+  'feline_charm', // Name
   'TT_FELINE_CHARM', // Research
   <thaumictinkerer:feline_charm>, // Output
   1, // Instability
@@ -17,7 +17,7 @@ mods.thaumcraft.Infusion.registerRecipe(
 
 mods.thaumcraft.Infusion.removeRecipe(<thaumictinkerer:xp_talisman>);
 mods.thaumcraft.Infusion.registerRecipe(
-  'experience_charm', // Name
+  'xp_talisman', // Name
   'TT_XP_TALISMAN', // Research
   <thaumictinkerer:xp_talisman>, // Output
   2, // Instability
