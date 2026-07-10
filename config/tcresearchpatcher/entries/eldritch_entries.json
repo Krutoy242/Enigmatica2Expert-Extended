@@ -6,7 +6,7 @@
       "icons": ["thaumadditions:void_elemental_pickaxe"],
       "category": "ELDRITCH",
       "location": [-2, -4],
-      "parents": ["PRIMALCRUSHER"],
+      "parents": ["VOIDROBEARMOR"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_pickaxe.1",
@@ -24,7 +24,7 @@
       "icons": ["thaumadditions:void_elemental_axe"],
       "category": "ELDRITCH",
       "location": [-1, -5],
-      "parents": ["PRIMALCRUSHER"],
+      "parents": ["VOIDROBEARMOR"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_axe.1",
@@ -42,7 +42,7 @@
       "icons": ["thaumadditions:void_elemental_shovel"],
       "category": "ELDRITCH",
       "location": [1, -5],
-      "parents": ["PRIMALCRUSHER"],
+      "parents": ["VOIDROBEARMOR"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_shovel.1",
@@ -60,7 +60,7 @@
       "icons": ["thaumadditions:void_elemental_hoe"],
       "category": "ELDRITCH",
       "location": [2, -4],
-      "parents": ["PRIMALCRUSHER"],
+      "parents": ["VOIDROBEARMOR"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_elemental_hoe.1",
@@ -77,7 +77,8 @@
       "name": "research_name.thaumadditions:void_thaumometer",
       "icons": ["thaumadditions:void_thaumometer"],
       "category": "ELDRITCH",
-      "location": [2, 2],
+      "location": [-2, -2],
+      "meta": ["REVERSE"],
       "parents": ["BASEELDRITCH"],
       "stages": [
         {
@@ -95,7 +96,7 @@
       "name": "research_name.thaumadditions:void_crop",
       "icons": ["thaumadditions:void_seed"],
       "category": "ELDRITCH",
-      "location": [6, 0],
+      "location": [4, 0],
       "parents": ["VOIDSIPHON"],
       "stages": [
         {
@@ -115,8 +116,9 @@
       "name": "research_name.thaumadditions:void_anvil",
       "icons": ["thaumadditions:void_anvil"],
       "category": "ELDRITCH",
-      "location": [-3, 1],
+      "location": [2, 0],
       "parents": ["BASEELDRITCH"],
+      "meta": ["REVERSE"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:void_anvil.1",
@@ -135,7 +137,7 @@
       "name": "research_name.thaumadditions:wormhole_mirror",
       "icons": ["thaumadditions:wormhole_mirror"],
       "category": "ELDRITCH",
-      "location": [4, 2],
+      "location": [-4, 0],
       "parents": ["VOIDTHAUMOMETER", "MIRROR"],
       "stages": [
         {
@@ -155,8 +157,9 @@
       "name": "research_name.thaumadditions:mithrillium",
       "icons": ["thaumadditions:mithrillium_ingot"],
       "category": "ELDRITCH",
-      "location": [0, 3],
+      "location": [-4, 4],
       "parents": ["BASEELDRITCH", "IMPETUS"],
+      "meta": ["REVERSE"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:mithrillium.1",
@@ -173,8 +176,9 @@
       "name": "research_name.thaumadditions:adaminite",
       "icons": ["thaumadditions:adaminite_ingot"],
       "category": "ELDRITCH",
-      "location": [0, 6],
-      "parents": ["MITHRILLIUM"],
+      "location": [4, 4],
+      "parents": ["MITHRILLIUM", "BASEELDRITCH"],
+      "meta": ["REVERSE"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:adaminite.1",
@@ -192,8 +196,8 @@
       "name": "research_name.thaumadditions:mithminite",
       "icons": ["thaumadditions:mithminite_ingot"],
       "category": "ELDRITCH",
-      "location": [0, 9],
-      "parents": ["ADAMINITE"],
+      "location": [0, 8],
+      "parents": ["ADAMINITE", "MITHRILLIUM"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:mithminite.1",
@@ -211,7 +215,7 @@
       "name": "research_name.thaumadditions:shadow_enchanter",
       "icons": ["thaumadditions:shadow_enchanter"],
       "category": "ELDRITCH",
-      "location": [-2, 4],
+      "location": [-3, 3],
       "parents": ["MITHRILLIUM"],
       "stages": [
         {
@@ -229,7 +233,7 @@
       "name": "research_name.thaumadditions:shadow_beam_staff",
       "icons": ["thaumadditions:shadow_beam_staff"],
       "category": "ELDRITCH",
-      "location": [4, 4],
+      "location": [-5, 5],
       "parents": ["MITHRILLIUM"],
       "stages": [
         {
@@ -247,7 +251,7 @@
       "name": "research_name.thaumadditions:the_beheader",
       "icons": ["thaumadditions:the_beheader"],
       "category": "ELDRITCH",
-      "location": [2, 4],
+      "location": [-5, 3],
       "parents": ["MITHRILLIUM"],
       "stages": [
         {
@@ -265,7 +269,7 @@
       "name": "research_name.thaumadditions:adaminite_sword",
       "icons": ["thaumadditions:adaminite_sword"],
       "category": "ELDRITCH",
-      "location": [2, 7],
+      "location": [3, 5],
       "parents": ["ADAMINITE"],
       "stages": [
         {
@@ -279,30 +283,13 @@
       ]
     },
     {
-      "key": "ADAMINITEFABRIC",
-      "name": "research_name.thaumadditions:adaminite_fabric",
-      "icons": ["thaumadditions:adaminite_fabric"],
-      "category": "ELDRITCH",
-      "location": [-2, 7],
-      "parents": ["ADAMINITE"],
-      "stages": [
-        {
-          "text": "research_stage.thaumadditions:adaminite_fabric.1",
-          "required_item": ["thaumcraft:fabric;8"]
-        },
-        {
-          "text": "research_stage.thaumadditions:adaminite_fabric.2",
-          "recipes": ["thaumcraft:adaminite_fabric", "thaumcraft:adaminite_hood", "thaumcraft:adaminite_robe", "thaumcraft:adaminite_belt", "thaumcraft:adaminite_boots"]
-        }
-      ]
-    },
-    {
       "key": "MITHMINITESCYTHE",
       "name": "research_name.thaumadditions:mithminite_scythe",
       "icons": ["thaumadditions:mithminite_scythe"],
       "category": "ELDRITCH",
-      "location": [-1, 11],
+      "location": [1, 10],
       "parents": ["MITHMINITE"],
+      "meta": ["REVERSE"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:mithminite_scythe.1",
@@ -373,8 +360,9 @@
       "name": "research_name.thaumadditions:mithminite_fabric",
       "icons": ["thaumadditions:mithminite_fabric"],
       "category": "ELDRITCH",
-      "location": [-2, 10],
-      "parents": ["MITHMINITE", "ADAMINITEFABRIC"],
+      "location": [3, 9],
+      "meta": ["REVERSE"],
+      "parents": ["MITHMINITE"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:mithminite_fabric.1",
@@ -391,7 +379,8 @@
       "name": "research_name.thaumadditions:mithminite_hood",
       "icons": ["thaumadditions:mithminite_hood"],
       "category": "ELDRITCH",
-      "location": [-6, 8],
+      "location": [5, 6],
+      "meta": ["REVERSE"],
       "parents": ["MITHMINITEFABRIC"],
       "stages": [
         {
@@ -409,7 +398,8 @@
       "name": "research_name.thaumadditions:mithminite_robe",
       "icons": ["thaumadditions:mithminite_robe"],
       "category": "ELDRITCH",
-      "location": [-4, 8],
+      "location": [5, 8],
+      "meta": ["REVERSE"],
       "parents": ["MITHMINITEFABRIC"],
       "stages": [
         {
@@ -427,7 +417,8 @@
       "name": "research_name.thaumadditions:mithminite_belt",
       "icons": ["thaumadditions:mithminite_belt"],
       "category": "ELDRITCH",
-      "location": [-4, 12],
+      "location": [5, 10],
+      "meta": ["REVERSE"],
       "parents": ["MITHMINITEFABRIC"],
       "stages": [
         {
@@ -445,7 +436,8 @@
       "name": "research_name.thaumadditions:mithminite_boots",
       "icons": ["thaumadditions:mithminite_boots"],
       "category": "ELDRITCH",
-      "location": [-6, 12],
+      "location": [5, 12],
+      "meta": ["REVERSE"],
       "parents": ["MITHMINITEFABRIC"],
       "stages": [
         {
@@ -463,7 +455,7 @@
       "name": "research_name.thaumadditions:aspect_combiner",
       "icons": ["thaumadditions:aspect_combiner"],
       "category": "ELDRITCH",
-      "location": [-2, 2],
+      "location": [-3, 5],
       "parents": ["MITHRILLIUM"],
       "stages": [
         {
@@ -481,7 +473,7 @@
       "name": "research_name.thaumadditions:aura_charger",
       "icons": ["thaumadditions:aura_charger"],
       "category": "ELDRITCH",
-      "location": [-2, 5],
+      "location": [3, 3],
       "parents": ["ADAMINITE"],
       "stages": [
         {
@@ -499,7 +491,8 @@
       "name": "research_name.thaumadditions:mithminite_tinkerer",
       "icons": ["thaumadditions:textures/enchantments/smite.png"],
       "category": "ELDRITCH",
-      "location": [3, 9],
+      "location": [-3, 9],
+      "meta": ["REVERSE", "SPIKY"],
       "parents": ["MITHMINITE"],
       "stages": [
         {
@@ -512,7 +505,7 @@
       "name": "research_name.god_wraith",
       "icons": ["thaumcraft:textures/god_wraith.png"],
       "category": "ELDRITCH",
-      "location": [4, 7],
+      "location": [-4, 8],
       "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
@@ -546,7 +539,7 @@
       "name": "research_name.flux_strike",
       "icons": ["thaumcraft:textures/flux_strike.png"],
       "category": "ELDRITCH",
-      "location": [5, 7],
+      "location": [-3, 7],
       "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
@@ -577,7 +570,7 @@
       "name": "research_name.pure_smite",
       "icons": ["thaumcraft:textures/pure_smite.png"],
       "category": "ELDRITCH",
-      "location": [6, 8],
+      "location": [-2, 7],
       "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
@@ -603,7 +596,7 @@
       "name": "research_name.loot_stealer",
       "icons": ["thaumcraft:textures/loot_stealer.png"],
       "category": "ELDRITCH",
-      "location": [6, 10],
+      "location": [-4, 10],
       "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
@@ -629,7 +622,7 @@
       "name": "research_name.ore_purifier",
       "icons": ["thaumcraft:textures/ore_purifier.png"],
       "category": "ELDRITCH",
-      "location": [5, 11],
+      "location": [-3, 11],
       "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {
@@ -655,7 +648,7 @@
       "name": "research_name.first_stand",
       "icons": ["thaumcraft:textures/first_stand.png"],
       "category": "ELDRITCH",
-      "location": [4, 11],
+      "location": [-2, 11],
       "parents": ["MITHMINITE_TINKERER"],
       "stages": [
         {

@@ -41,6 +41,18 @@
     "value": "thaumcraft:osmotic_enchanter"}
   ]}
 
+  ,{"key": "THAUMOSTATIC_HARNESS","ops": [
+    {"op": "replace",
+    "path": "stages/1/recipes/0",
+    "value": "thaumcraft:thaumostatic_harness"}
+  ]}
+
+  ,{"key": "TT_NECROMANCY","ops": [
+    {"op": "replace",
+    "path": "stages/1/recipes/0",
+    "value": "thaumcraft:necromancy_tablet"}
+  ]}
+
   ,{"key": "TWOND_FLUX_CAPACITOR","ops": [
     {"op": "replace",
     "path": "stages/1/recipes/0",
@@ -130,13 +142,22 @@
  ,{"key":"VOIDROBEARMOR", "ops":[
   {"op":"replace",
    "path":"location",
-   "value": [2,-2]} 
+   "value": [0,-3]} 
+ ]}
+
+  ,{"key":"PRIMALCRUSHER", "ops":[
+  {"op":"replace",
+   "path":"location",
+   "value": [0,-5]},
+   {"op":"replace",
+   "path":"parents",
+   "value": ["VOIDROBEARMOR"]} 
  ]}
 
  ,{"key":"VOIDSEERPEARL", "ops":[
    {"op":"replace",
     "path":"location",
-    "value": [-3,-1]} 
+    "value": [-2,0]} 
  ]}
  
  ,{"key":"TT_SHARE_TOME", "ops":[
@@ -186,6 +207,21 @@
    "path": "key"}
  ]}
 
+ ,{"key": "ADVANCED_SMELTER","ops": [
+   {"op": "remove",
+   "path": "meta"}
+ ]}
+
+ ,{"key": "ALCHEMY_GRATE","ops": [
+   {"op": "remove",
+   "path": "meta"}
+ ]}
+
+ ,{"key": "MIA.VOID_CREATOR","ops": [
+   {"op": "remove",
+   "path": "meta"}
+ ]}
+
  ,{"key":"ESSENTIASMELTERTHAUMIUM", "ops":[
    {"op":"replace",
     "path":"location",
@@ -199,6 +235,15 @@
    {"op":"replace",
     "path":"location",
     "value": [8,2]} 
+ ]}
+
+ ,{"key":"VOIDSIPHON", "ops":[
+   {"op":"replace",
+    "path":"location",
+    "value": [2,2]},
+   {"op":"add",
+    "path":"meta",
+    "value": ["REVERSE"]}
  ]}
  
  ,{"key":"THAUMATORIUM", "ops":[
@@ -337,7 +382,31 @@
 ,{"key":"BASEALCHEMY","ops":[
   {"op":"replace",
   "path":"meta",
-  "value": ["ROUND"]}
+  "value": ["SPIKY"]}
+]}
+
+,{"key":"BASEARTIFICE","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["SPIKY"]}
+]}
+
+,{"key":"BASEAUROMANCY","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["SPIKY"]}
+]}
+
+,{"key":"BASEELDRITCH","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["SPIKY"]}
+]}
+
+,{"key":"BASEGOLEMANCY","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["SPIKY"]}
 ]}
 
 ,{"key":"BATHSALTS","ops":[
@@ -400,12 +469,6 @@
 ]}
 
 ,{"key":"CrimsonRites","ops":[
-  {"op":"replace",
-  "path":"meta",
-  "value": ["ROUND"]}
-]}
-
-,{"key":"TCONEVO_BASE","ops":[
   {"op":"replace",
   "path":"meta",
   "value": ["ROUND"]}
@@ -507,7 +570,7 @@
 ,{"key":"THAUMIC_AUGMENTATION_BASE","ops":[
   {"op":"replace",
   "path":"meta",
-  "value": ["ROUND"]}
+  "value": ["SPIKY"]}
 ]}
 
 ,{"key":"IMPETUS","ops":[
@@ -556,7 +619,43 @@
   "value": ["REVERSE"]},
   {"op":"replace",
   "path":"stages/1/warp",
-  "value": 1}
+  "value": 1},
+  {"op":"replace",
+  "path":"location",
+  "value": [0,7]}
+]}
+
+,{"key":"FOCUSHEAL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [-2,6]}
+]}
+
+,{"key":"VISAMULET","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-3,1]}
+]}
+
+,{"key":"WORKBENCHCHARGER","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-5,1]}
+]}
+
+,{"key":"VISBATTERY","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-5,-1]}
+]}
+
+,{"key":"RECHARGEPEDESTAL","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-4,0]}
 ]}
 
 ,{"key":"FOCUSRIFT","ops":[
@@ -685,6 +784,209 @@
   "value": [-2,0]}
 ]}
 
+,{"key":"DARKHOLD","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-8,4]},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["CrimsonRites"]},
+  {"op":"replace",
+  "path":"category",
+  "value": "BASICS"},
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]}
+
+,{"key":"BIG_PEARL","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-2,9]},
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]}
+
+,{"key":"AKASHIC_RECORD","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-6,9]},
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]}
+
+,{"key":"COSMIC_CASTER","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [13,0]},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["KAMI_ICHORIUM_CASTER"]},
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"remove",
+  "path":"meta"},
+  {"op":"replace",
+  "path":"icons",
+  "value": ["avaritia:cosmic_caster"]}
+]}
+
+,{"key":"CM_ARCANE_CRAFTER","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"CM_FLUX_SCRIBING_TOOLS","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"ARCANEASSEMBLER","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]}
+
+,{"key":"ARCANEINSCRIBER","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]}
+]}
+
+,{"key":"KNOWLEDGECORE","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND", "SPIKY"]}
+]}
+
+,{"key":"TWOND_ESSENTIA_ENCHANTER","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TWOND_OBLIVION_ESSENTIA_JAR","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_DISSIMULATION_BLOCK","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_TRANSVECTOR_DISLOCATOR","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_CONSUMING_SIGIL","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_CONDOR_SWORD","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_ESSENTIA_FUNNEL","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_RECALL_STOPWATCH","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_THAUMIC_RESTORER","ops":[
+  {"op":"remove",
+  "path":"meta"}
+]}
+
+,{"key":"TT_NECROMANCY","ops":[
+  {"op":"remove",
+  "path":"meta"},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_peaceful"}
+]}
+
+,{"key":"TT_ALIEN_SOUL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE", "ROUND"]},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_alien"}
+]}
+
+,{"key":"TT_HOSTILE_SOUL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE", "ROUND"]},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_hostile"}
+]}
+
+,{"key":"TT_ARCANE_SOUL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE", "ROUND"]},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_arcane"}
+]}
+
+,{"key":"TT_TAINTED_SOUL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_tainted"}
+]}
+
+,{"key":"TT_DEMONIC_SOUL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_demonic"}
+]}
+
+,{"key":"TT_ELDRITCH_SOUL","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["ROUND"]},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value":"thaumcraft:entity_soul_eldritch"}
+]}
+
+,{"key":"TT_ARCANE_INFUSION_ENCHANTMENT","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE"]}
+]}
+
+,{"key":"TT_AQUATIC_ALCHEMY","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE"]}
+]}
+
+,{"key":"TT_ENDER_MIRROR","ops":[
+  {"op":"replace",
+  "path":"meta",
+  "value": ["REVERSE"]}
+]}
+
 ,{"key":"TT_PRISMARINE","ops":[
   {"op":"add",
   "path":"stages/-",
@@ -704,70 +1006,6 @@
   }
 ]}
 
-,{"key":"TT_ICHOR_POUCH","ops":[
-  {"op":"remove",
-  "path":"stages/0/required_item"
-  },
-  {"op":"add",
-  "path":"stages/0/required_craft",
-  "value": ["thaumcraft:focus_pouch"]
-  }
-]}
-
-,{"key":"TT_GAS","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:gas_light_item", "thaumcraft:gas_shadow_item"]}
-]}
-
-,{"key":"TT_ICHOR","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:ichor"]}
-  ,{"op":"replace",
-  "path":"stages/2/recipes",
-  "value":["thaumcraft:ichor"]}
-]}
-
-,{"key":"TT_ICHORARMOR","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:ichor_cloth","thaumictinkerer:ichor_helm","thaumictinkerer:ichor_chest","thaumictinkerer:ichor_legs","thaumictinkerer:ichor_boots"]}
-]}
-
-,{"key":"TT_CAT_AMULET","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:cat_amulet"]}
-]}
-
-,{"key":"TT_CLEANING_TALISMAN","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:cleanser"]}
-]}
-
-,{"key":"TT_EXPERIENCE_CHARM","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:experience_charm"]}
-]}
-
-,{"key":"TT_WARP_SERIES","ops":[
-  {"op":"replace",
-  "path":"stages/0/recipes",
-  "value":["thaumcraft:sky_pearl"]}
-  ,{"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:sky_pearl", "thaumcraft:warp_gate"]}
-]}
-
-,{"key":"TT_SUMMONING","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value":["thaumcraft:blood_sword", "thaumcraft:summoner"]}
-]}
-
 ,{"key":"ARCANETERMINAL","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",
@@ -779,28 +1017,58 @@
   "path":"stages/0/required_research"}
 ]}
 
-,{"key":"TT_KAMIHELM","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value": ["thaumcraft:TT_kami_helm"]}
+,{"key":"TWOND_FOCUS_BLINK","ops":[
+  {"op":"remove",
+  "path":"meta"}
 ]}
 
-,{"key":"TT_KAMICHEST","ops":[
-  {"op":"replace",
-  "path":"stages/1/recipes",
-  "value": ["thaumcraft:TT_kami_chest"]}
+,{"key":"TWOND_FOCUS_TELEPORT_HOME","ops":[
+  {"op":"remove",
+  "path":"meta"}
 ]}
 
-,{"key":"TT_KAMILEGS","ops":[
+,{"key":"KAMI_ICHOR","ops":[
   {"op":"replace",
-  "path":"stages/1/recipes",
-  "value": ["thaumcraft:TT_kami_legs"]}
+  "path":"stages/1/text",
+  "value": "research.ichorium.stage.2"},
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value": "thaumcraft:ichor"}
 ]}
 
-,{"key":"TT_KAMIBOOTS","ops":[
+,{"key":"KAMI_ICHORIUM","ops":[
+  {"op":"remove",
+  "path":"stages/1/recipes/0"}
+]}
+
+,{"key":"KAMI_ICHORIUM_CASTER","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes/0",
+  "value": ["thaumcraft:kami_ichorium_caster"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_HOOD","ops":[
   {"op":"replace",
   "path":"stages/1/recipes",
-  "value": ["thaumcraft:TT_kami_boots"]}
+  "value": ["thaumcraft:kami_helm"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_ROBE","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:kami_chest"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_LEGGINGS","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:kami_legs"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_BOOTS","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:kami_boots"]}
 ]}
 
 ,{"key":"LIQUIDDEATH","ops":[
@@ -991,7 +1259,7 @@
 {"key":"CONGREGA_MYSTICA_BASE","ops":[
   {"op":"replace",
   "path":"meta",
-  "value": ["ROUND"]}
+  "value": ["SPIKY"]}
 ]},
 
 {"key":"CM_BLOOD_SCRIBING_TOOLS","ops":[
@@ -1147,6 +1415,225 @@
   {"op":"replace",
   "path":"location",
   "value": [5,4]}
+]}
+
+,{"key":"FOCUSGREATER","ops":[
+  {"op":"replace",
+  "path":"location",
+  "value": [-1,-3]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORIUM_AXE","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,2]},
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:awakened_ichorium_axe"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORIUM_PICKAXE","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,0]},
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:awakened_ichorium_pickaxe"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORIUM_SHOVEL","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,-2]},
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:awakened_ichorium_shovel"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORIUM_SWORD","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,-4]},
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:awakened_ichorium_sword"]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_BOOTS","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,12]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_HOOD","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,6]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_LEGGINGS","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,10]}
+]}
+
+,{"key":"KAMI_AWAKENED_ICHORWEAVE_ROBE","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,8]}
+]}
+
+,{"key":"KAMI_BOTTOMLESS_POUCH","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"remove",
+  "path": "meta"},
+  {"op":"replace",
+  "path":"location",
+  "value": [13,4]},
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value":["thaumcraft:kami_focus_pouch"]}
+]}
+
+,{"key":"KAMI_ICHOR","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"remove",
+  "path": "meta"},
+  {"op":"replace",
+  "path":"location",
+  "value": [9,4]}
+]}
+
+,{"key":"KAMI_ICHORIUM_CASTER","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op": "remove",
+  "path": "meta"},
+  {"op":"replace",
+  "path":"location",
+  "value": [13,2]}
+]}
+
+,{"key":"KAMI_ICHORIUM_TOOLS","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op": "add",
+  "path": "meta",
+  "value": ["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [9,-1]},
+  {"op":"replace",
+  "path":"stages/1/recipes/4",
+  "value": "thaumcraft:blessed_silverwood_rod"}
+]}
+
+,{"key":"KAMI_ICHORIUM","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [11,3]}
+]}
+
+,{"key":"KAMI_ICHORWEAVE_ARMOR","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [9,9]},
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:ichorweave_hood", "thaumcraft:ichorweave_robe", "thaumcraft:ichorweave_leggings", "thaumcraft:ichorweave_boots"]}
+]}
+
+,{"key":"KAMI_ICHORWEAVE_FABRIC","ops":[
+  {"op":"replace",
+  "path":"stages/1/recipes",
+  "value": ["thaumcraft:ichor_cloth"]},
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path": "meta",
+  "value":["REVERSE"]},
+  {"op":"replace",
+  "path":"location",
+  "value": [11,5]}
+]}
+
+,{"key":"ZENITH_BASE","ops":[
+  {"op":"replace",
+  "path":"category",
+  "value": "ELDRITCH"},
+  {"op":"replace",
+  "path":"location",
+  "value": [7,4]},
+  {"op":"replace",
+  "path":"parents",
+  "value": ["ADAMINITE"]}
 ]}
 
 ]

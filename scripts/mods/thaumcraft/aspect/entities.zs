@@ -198,6 +198,7 @@ setEntity('20🍇 20👽 10🛡️', <entity:thaumcraft:eldritchcrab>);
 setEntity('30👽 20⚰️ 10〇', <entity:thaumcraft:eldritchguardian>);
 setEntity('20🐺 20🔥 10🧨 10🕊️', <entity:thaumcraft:firebat>);
 setEntity('10💀 10⚰️ 20👨 30🙌', <entity:thaumcraft:inhabitedzombie>);
+setEntity('10💀 10⚰️ 20👨 30🙌 20🦄', <entity:thaumcraft:giantbrainyzombie>); 
 setEntity('10🧠 5🐺 5👽', <entity:thaumcraft:mindspider>);
 setEntity('20👨 20✊ 10🔄', <entity:thaumcraft:pech>);
 setEntity('20🍇 5👽 20❤️', <entity:thaumcraft:taintacle>);
@@ -416,7 +417,6 @@ val susEggs = [
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'nuclearcraft:feral_ghoul' } }),
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'cyclicmagic:robot' } }),
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'mekanism:babyskeleton' } }),
-  <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'thaumcraft:giantbrainyzombie' } }),
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'plustic:supremeleader' } }),
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'thaumcraft:spellbat' } }),
   <minecraft:spawn_egg>.withTag({ EntityTag: { id: 'plustic:blindbandit' } }),

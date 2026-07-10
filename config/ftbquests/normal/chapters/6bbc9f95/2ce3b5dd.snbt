@@ -10,8 +10,9 @@
 		"{q.thaumcraft.mithminite_armor_set.desc}"
 	],
 	dependencies: [
+		"bfc3c4bb",
 		"64c42db9",
-		"dff7ed3c"
+		"b1ebded8"
 	],
 	tasks: [{
 		uid: "43635366",

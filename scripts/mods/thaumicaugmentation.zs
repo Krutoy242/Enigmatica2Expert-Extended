@@ -78,6 +78,19 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('celestial_observer_placer'
     'S': <thaumcraft:thaumometer>, // Thaumometer
   }).shaped());
 
+// [Thaumostatic harness]
+mods.thaumcraft.Infusion.removeRecipe(<thaumicaugmentation:thaumostatic_harness>);
+mods.thaumcraft.Infusion.registerRecipe(
+  'thaumostatic_harness', // Name
+  'THAUMOSTATIC_HARNESS', // Research
+  <thaumicaugmentation:thaumostatic_harness>, // Output
+  4, // Instability
+  Aspects('50☀️ 75⚙️ 50🏃 150🕊️ 50💪'),
+  <thaumicaugmentation:material:4>, // CentralItem
+  [<thaumcraft:levitator>, <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'volatus' }] }), <thaumcraft:crystal_essence>.withTag({ Aspects: [{ amount: 1, key: 'volatus' }] }), 
+  <actuallyadditions:item_misc:19>, <rats:dragon_wing>, <rats:dragon_wing>, <thaumcraft:morphic_resonator>]
+);
+
 mods.bloodmagic.AlchemyTable.addRecipe(<thaumcraft:stone_ancient> * 64, [<thaumcraft:stone_arcane>, <bloodmagic:slate:4>, <botania:manaresource:5>], 100000, 300, 5);
 mods.bloodmagic.AlchemyTable.addRecipe(<thaumicaugmentation:stone>, [<thaumcraft:taint_rock>, <bloodmagic:slate:4>, <botania:manaresource:5>], 100000, 300, 5);
 mods.bloodmagic.AlchemyTable.addRecipe(<thaumicaugmentation:stone:1>, [<thaumcraft:taint_crust>, <bloodmagic:slate:4>, <botania:manaresource:5>], 100000, 300, 5);

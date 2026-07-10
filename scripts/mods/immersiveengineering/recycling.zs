@@ -243,10 +243,6 @@ add(<redstonerepository:tool.pickaxe_gelid>.withTag({ Energy: 0 }), { <redstonea
 add(<redstonerepository:tool.shovel_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 0.5, <redstonerepository:material:1>: 1.0 });
 add(<redstonerepository:tool.sickle_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 1.5, <redstonerepository:material:1>: 3.0 });
 add(<redstonerepository:tool.sword_gelid>.withTag({ Energy: 0 }), { <redstonearsenal:material:32>: 1.0, <redstonerepository:material:1>: 1.0 });
-add(<thaumadditions:adaminite_belt>, { <minecraft:gold_ingot>: 0.25, <thaumcraft:ingot:1>: 4.25, <thaumcraft:ingot:2>: 0.125, <thaumcraft:ingot>: 2.125 });
-add(<thaumadditions:adaminite_boots>, { <thaumcraft:ingot:1>: 3.5, <thaumcraft:quicksilver>: 0.5 });
-add(<thaumadditions:adaminite_hood>, { <minecraft:gold_ingot>: 0.5, <thaumcraft:ingot:1>: 2.75, <thaumcraft:ingot>: 1.375 });
-add(<thaumadditions:adaminite_robe>, { <thaumcraft:ingot:1>: 2.0, <thaumcraft:ingot>: 0.5 });
 add(<thaumadditions:adaminite_sword>, { <thaumadditions:adaminite_ingot>: 3.0, <thaumcraft:ingot:1>: 1.0 });
 add(<thaumadditions:mithminite_belt>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <minecraft:iron_ingot>: 1.25, <thaumcraft:ingot:1>: 1.25, <thaumcraft:ingot>: 0.875, <thermalfoundation:material:132>: 0.22222222222222227 });
 add(<thaumadditions:mithminite_boots>.withTag({ ench: [{ lvl: 1 as short, id: 28 }] }), { <thaumcraft:ingot:1>: 2.75, <thaumcraft:quicksilver>: 0.25 });
@@ -293,18 +289,14 @@ add(<thaumicaugmentation:thaumium_robes_chestplate:*>, { <thaumcraft:ingot>: 2.0
 add(<thaumicaugmentation:thaumium_robes_hood:*>, { <thaumcraft:ingot:2>: 1.0, <thaumcraft:ingot>: 1.0, <thermalfoundation:material:128>: 2.0 });
 add(<thaumicaugmentation:thaumium_robes_leggings:*>, { <thaumcraft:ingot:2>: 0.5, <thaumcraft:ingot>: 2.0 });
 add(<thaumicaugmentation:void_boots:*>, { <thaumcraft:ingot:1>: 2.0, <thaumcraft:quicksilver>: 1.0 });
-add(<thaumictinkerer:blood_sword:*>, { <thaumcraft:ingot>: 1.0 });
-add(<thaumictinkerer:ichorium_axe>, { <thaumictinkerer:kamiresource:3>: 3.0 });
-add(<thaumictinkerer:ichorium_axe_adv>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <thaumictinkerer:kamiresource:3>: 2.5, <thermalfoundation:material:133>: 1.0 });
-add(<thaumictinkerer:ichorium_pick>, { <thaumictinkerer:kamiresource:3>: 3.0 });
-add(<thaumictinkerer:ichorium_pick_adv>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <thaumictinkerer:kamiresource:3>: 2.5, <thermalfoundation:material:133>: 1.0 });
-add(<thaumictinkerer:ichorium_shovel>, { <thaumictinkerer:kamiresource:3>: 1.0 });
-add(<thaumictinkerer:ichorium_shovel_adv>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <thaumictinkerer:kamiresource:3>: 1.5, <thermalfoundation:material:133>: 1.0 });
-add(<thaumictinkerer:ichorium_sword>, { <thaumictinkerer:kamiresource:3>: 2.0 });
-add(<thaumictinkerer:ichorium_sword_adv>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <thaumictinkerer:kamiresource:3>: 2.0, <thermalfoundation:material:133>: 1.0 });
-add(<thaumictinkerer:kami_boots>, { <minecraft:gold_ingot>: 1.0, <thaumcraft:ingot:2>: 0.25 });
-add(<thaumictinkerer:kami_chest>, { <minecraft:iron_ingot>: 1.0, <thaumcraft:ingot:2>: 0.9861111111111112, <thaumcraft:ingot>: 0.25 });
-add(<thaumictinkerer:revealing_helm:*>, { <thaumcraft:ingot:2>: 1.0, <thaumcraft:ingot>: 2.5, <thermalfoundation:material:128>: 2.0 });
+add(<kami:ichorium_axe>, { <kami:ichorium_ingot>: 3.0 });
+add(<kami:awakened_ichorium_axe>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 2.5, <thermalfoundation:material:133>: 1.0 });
+add(<kami:ichorium_pickaxe>, { <kami:ichorium_ingot>: 3.0 });
+add(<kami:awakened_ichorium_pickaxe>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 2.5, <thermalfoundation:material:133>: 1.0 });
+add(<kami:ichorium_shovel>, { <kami:ichorium_ingot>: 1.0 });
+add(<kami:awakened_ichorium_shovel>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 1.5, <thermalfoundation:material:133>: 1.0 });
+add(<kami:ichorium_sword>, { <kami:ichorium_ingot>: 2.0 });
+add(<kami:awakened_ichorium_sword>, { <thaumcraft:ingot:2>: 0.8888888888888891, <thaumcraft:ingot>: 0.2222222222222222, <kami:ichorium_ingot>: 2.0, <thermalfoundation:material:133>: 1.0 });
 add(<thaumicwonders:night_vision_goggles:*>, { <minecraft:gold_ingot>: 0.44444444444444453, <thaumcraft:ingot:2>: 1.0, <thermalfoundation:material:128>: 2.0 });
 add(<thaumicwonders:primal_destroyer:*>.withTag({ infench: [{ lvl: 3 as short, id: 6 as short }, { lvl: 2 as short, id: 14 as short }] }), { <thaumcraft:ingot:1>: 2.0 });
 add(<thaumicwonders:void_fortress_chest:*>, { <minecraft:gold_ingot>: 0.5, <thaumcraft:ingot:1>: 4.0, <thaumcraft:ingot>: 2.0 });
@@ -329,4 +321,4 @@ add(<twilightforest:steeleaf_hoe:*>, { <twilightforest:steeleaf_ingot>: 2.0 });
 add(<twilightforest:steeleaf_shovel:*>.withTag({ ench: [{ lvl: 2 as short, id: 32 as short }] }), { <twilightforest:steeleaf_ingot>: 1.0 });
 add(<twilightforest:steeleaf_sword:*>.withTag({ ench: [{ lvl: 2 as short, id: 21 as short }] }), { <twilightforest:steeleaf_ingot>: 2.0 });
 
-// Total recipes: 313
+// Total recipes: 307

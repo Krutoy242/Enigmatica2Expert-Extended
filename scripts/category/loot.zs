@@ -40,7 +40,7 @@ val eventDrops as int[string][WeightedItemStack][IEntityDefinition] = {
   <entity:rats:plague_cloud>               : { <quark:soul_bead>: { min: 1, max: 3 } },
   <entity:thaumcraft:firebat>              : { <randomthings:flootoken>: { min: 1, max: 3 } },
   <entity:thaumcraft:thaumslime>           : { <thermalexpansion:florb>.withTag({ Fluid: 'liquiddna' }) % 30: { min: 1, max: 1, playerOnly: 1 } },
-  <entity:thaumicwonders:corruption_avatar>: { <thaumictinkerer:kamiresource:2>: { min: 13, max: 25 } },
+  <entity:thaumicwonders:corruption_avatar>: { <kami:ichor>: { min: 13, max: 25 } },
   <entity:twilightforest:stable_ice_core>  : { <mysticalagriculture:ice_essence>: { min: 4, max: 12 } },
   <entity:twilightforest:unstable_ice_core>: { <forestry:crafting_material:5>: { min: 3, max: 9 } },
 };

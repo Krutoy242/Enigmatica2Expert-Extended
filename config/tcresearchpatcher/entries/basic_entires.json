@@ -25,7 +25,7 @@
       "category": "BASICS",
       "location": [-4, 2],
       "parents": ["CRYSTALFARMER"],
-      "meta": ["ROUND"],
+      "meta": ["ROUND", "REVERSE"],
       "stages": [
         {
           "text": "research_stage.thaumadditions:crystal_block.1",

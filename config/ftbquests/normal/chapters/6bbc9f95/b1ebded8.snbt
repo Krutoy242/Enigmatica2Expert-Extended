@@ -1,5 +1,6 @@
 {
 	title: "{q.thaumcraft.void_frotress_armo.name}",
+	icon: "thaumicwonders:void_fortress_chest",
 	x: 12.0d,
 	y: 6.0d,
 	text: [
