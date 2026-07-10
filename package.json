@@ -21,12 +21,13 @@
     "dev": "tsx dev/build/run-dev.ts",
     "mod-source": "tsx mc-tools/packages/source/src/cli.ts",
     "zsfind": "tsx mc-tools/packages/zsfind/src/cli.ts",
+    "prettify": "mctools-format 'scripts/**/*.zs'",
     "prepare": "husky",
     "reducer": "mctools-reducer",
     "tellme-prune": "tsx dev/tellme-prune.ts",
     "tips:sync": "tsx dev/hooks/tips.ts",
     "ct-syntax": "npx tsx .agents/skills/zs/run-cmd.ts 'ct clean' 'ct syntax' && rg \"\\[(ERROR|FATAL|WARNING)\\]\" crafttweaker.log",
-    "ct-reload": "bash -c \"npx tsx .agents/skills/zs/run-cmd.ts 'ct clean' 'ct syntax' && ! rg '\\\\[(ERROR|FATAL)\\\\]' crafttweaker.log && npx tsx .agents/skills/zs/run-cmd.ts 'ct reload' && rg '\\\\[(ERROR|FATAL)\\\\]' crafttweaker.log -A 40\""
+    "ct-reload": "bash -c \"if npx tsx .agents/skills/zs/run-cmd.ts 'ct clean' 'ct syntax' && ! rg '\\\\[(ERROR|FATAL|WARNING)\\\\]' crafttweaker.log; then npx tsx .agents/skills/zs/run-cmd.ts 'ct reload' && rg '\\\\[(ERROR|FATAL|WARNING)\\\\]' crafttweaker.log -A 40; else echo ':: /ct reload blocked - fix syntax errors first'; fi\""
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -41,6 +42,7 @@
     "@conventional-changelog/git-client": "^2.7.0",
     "@mctools/errors": "^1.0.0",
     "@mctools/eslint-plugin-zs": "workspace:*",
+    "@mctools/format": "workspace:*",
     "@mctools/manifest": "^0.0.0",
     "@mctools/modlist": "^0.1.2",
     "@mctools/reducer": "^0.0.0",

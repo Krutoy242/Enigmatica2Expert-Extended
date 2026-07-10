@@ -503,19 +503,5 @@
   "files.associations": {
     "*.png.mcmeta": "json",
     "config/cofh/world/**/*.json": "properties"
-  },
-
-  "mc-tools.modlist.baselinePath": "../E2E-unchanged/minecraftinstance.json",
-  "mc-tools.modlist.ignorePath": "dev/.devonly.ignore",
-  "mc-tools.modlist.templatePath": "dev/tools/modlist_template.md",
-  "mc-tools.modlist.outputPath": "MODS.md",
-  "mc-tools.modlist.sortBy": "addonID",
-  "mc-tools.manifest.ignorePath": "dev/.devonly.ignore",
-  "mc-tools.manifest.inputPath": "minecraftinstance.json",
-  "mc-tools.modTracker.inputPath": "minecraftinstance.json",
-  "mc-tools.modTracker.configWatchPattern": "config/**/*",
-  "mc-tools.modTracker.globalFiles": ["MODS.md", ".gitignore", ".gitattributes"],
-  "mc-tools.modTracker.ignoredMappingPatterns": ["mods/*", "minecraftinstance.json", "manifest*.json", "MODS.md", ".gitignore", ".gitattributes"],
-  "mc-tools.debugLog.defaultMatchRegex": ".*(?:WARN|ERROR|FATAL).*",
-  "mc-tools.crafttweakerLog.fileExtensions": [".zs"]
+  }
 }

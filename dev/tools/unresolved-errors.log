@@ -1,0 +1,73 @@
+[main/ERROR] [CrashAssistantJarInJarHelper]: Error while getting processor name:
+java.lang.ClassNotFoundException: oshi.SystemInfo
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at top.outlands.foundation.boot.ActualClassLoader.findClass(ActualClassLoader.java:161)
+  [...]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70)
+[main/WARN] [mixin]: The requested compatibility level JAVA_25 is higher than the level supported by the active subsystem 'LaunchWrapper' which supports JAVA_21. This is not a supported configuration and instability may occur.
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.goggles.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.battery.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.growthring.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.magnetring.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.potionring.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.wingsofthebat.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.liquidbanningring.json could not be read. If this is a development environment you can ignore this message
+[Client thread/WARN] [mixin]: Reference map 'mixins.franklybaubles.refmap.json' for mixins/mixins.possiblybaubles.sacks.json could not be read. If this is a development environment you can ignore this message
+[CraftPresence/ERROR] [craftpresence]: Unable to get Discord assets, things may not work well...
+[Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Missing sound for event: kami:item.ichor.fly
+[Client thread/WARN] [tcresearchpatcher]: Key meta did not exist for replace
+[Client thread/WARN] [tcresearchpatcher]: Key meta was supposed to be removed, but already did not exist
+[Client thread/WARN] [tcresearchpatcher]: Key meta did not exist for replace
+[Client thread/WARN] [tcresearchpatcher]: Key meta did not exist for replace
+[Client thread/WARN] [tcresearchpatcher]: Key meta did not exist for replace
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id RecordPlayer
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id doorTileEntity
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id Cauldron
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id FlowerPot
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id FlowerPot
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id FlowerPot
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id Trap
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id FlowerPot
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id Trap
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id MobSpawner
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id torchmaster:feral_flare_lantern
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id torchmaster:feral_flare_lantern
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id RecordPlayer
+[Client thread/ERROR] [net.minecraft.tileentity.TileEntity]: Failed to create block entity minecraft:littletilestileentity
+java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:72)
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+  [...]
+	... 61 more
+[Client thread/ERROR] [FML]: A TileEntity minecraft:littletilestileentity(com.creativemd.littletiles.common.tileentity.TileEntityLittleTiles) has thrown an exception during loading, its state cannot be restored. Report this to the mod author
+java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:72)
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+  [...]
+	... 61 more
+[Client thread/WARN] [net.minecraft.tileentity.TileEntity]: Skipping BlockEntity with id minecraft:littletilestileentity
+[Client thread/ERROR] [Had Enough Items]: Failed to register mod plugin: class BananaFructa.reim.JEIPlugin
+java.lang.NoClassDefFoundError: mctmods/immersivetechnology/common/multiblocks/metal/tileentitiesmultiblockpart/TileEntityITMultiblockPartDistiller
+	at BananaFructa.reim.JEIPlugin$2.<init>(JEIPlugin.java:120)
+	at BananaFructa.reim.JEIPlugin.register(JEIPlugin.java:85)
+	at mezz.jei.startup.JeiStarter.registerPlugins(JeiStarter.java:276)
+  [...]
+	... 44 more
