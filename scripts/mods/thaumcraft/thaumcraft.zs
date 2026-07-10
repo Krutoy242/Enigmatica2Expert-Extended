@@ -879,6 +879,17 @@ mods.thaumcraft.Infusion.registerRecipe(
   [<thaumcraft:quicksilver>, <ore:nuggetVoid>, <thaumcraft:quicksilver>, <ore:nuggetVoid>]
 );
 
+// [Focus supreme]
+mods.thaumcraft.Infusion.registerRecipe(
+  'focus_4', // Name
+  'FOCUSSUPREME', // Research
+  <thaumcraft:focus_4>, // Output
+  8, // Instability
+  Aspects('50♾️ 100〇 50🗯️ 100🔮'),
+  <thaumcraft:focus_3>, // CentralItem
+  [<thaumcraft:quicksilver>, <thaumicaugmentation:material:5>, <thaumcraft:quicksilver>, <kami:ichorium_nugget>, <thaumcraft:quicksilver>, <thaumicaugmentation:material:5>, <thaumcraft:quicksilver>, <kami:ichorium_nugget>]
+);
+
 // [Primal metal]
 mods.thaumcraft.Infusion.removeRecipe(<tconevo:metal:20>);
 mods.thaumcraft.Infusion.registerRecipe(

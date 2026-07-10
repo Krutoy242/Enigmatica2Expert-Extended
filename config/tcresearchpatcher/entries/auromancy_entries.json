@@ -24,7 +24,7 @@
       "name": "research_name.thaumadditions:crystal_bag",
       "icons": ["thaumadditions:crystal_bag"],
       "category": "AUROMANCY",
-      "location": [-2, -3],
+      "location": [-3, -3],
       "parents": ["FOCUSPOUCH"],
       "stages": [
         {
@@ -35,6 +35,254 @@
         {
           "text": "research_stage.thaumadditions:crystal_bag.2",
           "recipes": ["thaumcraft:crystal_bag"]
+        }
+      ]
+    },
+    {
+      "key": "VAMPIRYSM",
+      "name": "research_name.vampirysm",
+      "icons": ["focus:thaumcraft.VAMPIRYSM"],
+      "category": "AUROMANCY",
+      "location": [7, 6],
+      "parents": ["FOCUSSPELLBAT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.vampirysm.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!sanguis"]
+        },
+        {
+          "text": "research_stage.vampirysm.2"
+        }
+      ]
+    },
+    {
+      "key": "BLACKOUT",
+      "name": "research_name.blackout",
+      "icons": ["focus:thaumcraft.BLACKOUT"],
+      "category": "AUROMANCY",
+      "location": [5, 7],
+      "parents": ["FOCUSRIFT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.blackout.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!tenebrae"]
+        },
+        {
+          "text": "research_stage.blackout.2"
+        }
+      ]
+    },
+    {
+      "key": "APIARYACCELERATION",
+      "name": "research_name.apiaryacceleration",
+      "icons": ["focus:thaumcraft.APIARYACCELERATION"],
+      "category": "AUROMANCY",
+      "location": [-4, 7],
+      "parents": ["FOCUSHEAL"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.apiaryacceleration.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!sensus"]
+        },
+        {
+          "text": "research_stage.apiaryacceleration.2"
+        }
+      ]
+    },
+    {
+      "key": "BLOOMIA",
+      "name": "research_name.bloomia",
+      "icons": ["focus:thaumcraft.BLOOMIA"],
+      "category": "AUROMANCY",
+      "location": [-4, 5],
+      "parents": ["FOCUSHEAL"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.bloomia.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!herba"]
+        },
+        {
+          "text": "research_stage.bloomia.2"
+        }
+      ]
+    },
+    {
+      "key": "CROSSBREED",
+      "name": "research_name.crossbreed",
+      "icons": ["focus:thaumcraft.CROSSBREED"],
+      "category": "AUROMANCY",
+      "location": [-6, 6],
+      "parents": ["APIARYACCELERATION", "BLOOMIA"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.crossbreed.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!sonus"]
+        },
+        {
+          "text": "research_stage.crossbreed.2"
+        }
+      ]
+    },
+    {
+      "key": "FERALIS",
+      "name": "research_name.feralis",
+      "icons": ["focus:thaumcraft.FERALIS"],
+      "category": "AUROMANCY",
+      "location": [2, 8],
+      "parents": ["FOCUSCURSE"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.feralis.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!imperium"]
+        },
+        {
+          "text": "research_stage.feralis.2"
+        }
+      ]
+    },
+    {
+      "key": "BUTTERCATCH",
+      "name": "research_name.buttercatch",
+      "icons": ["focus:thaumcraft.BUTTERCATCH"],
+      "category": "AUROMANCY",
+      "location": [4, 3],
+      "parents": ["FOCUSRIFT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.buttercatch.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!fluctus"]
+        },
+        {
+          "text": "research_stage.buttercatch.2"
+        }
+      ]
+    },
+    {
+      "key": "CHRONOSTASIS",
+      "name": "research_name.chronostasis",
+      "icons": ["focus:thaumcraft.CHRONOSTASIS"],
+      "category": "AUROMANCY",
+      "location": [7, 8],
+      "parents": ["BLACKOUT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.chronostasis.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!ascension"]
+        },
+        {
+          "text": "research_stage.chronostasis.2"
+        }
+      ]
+    },
+    {
+      "key": "CRYSTALIZE",
+      "name": "research_name.crystalize",
+      "icons": ["focus:thaumcraft.CRYSTALIZE"],
+      "category": "AUROMANCY",
+      "location": [7, -2],
+      "parents": ["FOCUSBOLT"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.crystalize.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!vitreus"]
+        },
+        {
+          "text": "research_stage.crystalize.2"
+        }
+      ]
+    },
+    {
+      "key": "EXPLOSION",
+      "name": "research_name.explosion",
+      "icons": ["focus:thaumcraft.EXPLOSION"],
+      "category": "AUROMANCY",
+      "location": [4, 8],
+      "parents": ["FOCUSBREAK"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.explosion.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!exitium"]
+        },
+        {
+          "text": "research_stage.explosion.2"
+        }
+      ]
+    },
+    {
+      "key": "EFREET_FLAME",
+      "name": "research_name.efreet_flame",
+      "icons": ["focus:thaumcraft.EFREET_FLAME"],
+      "category": "AUROMANCY",
+      "location": [-2, 4],
+      "parents": ["FOCUSELEMENTAL"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.efreet_flame.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!infernum"]
+        },
+        {
+          "text": "research_stage.efreet_flame.2"
+        }
+      ]
+    },
+    {
+      "key": "ENDER_RIFT",
+      "name": "research_name.ender_rift",
+      "icons": ["focus:thaumcraft.ENDER_RIFT"],
+      "category": "AUROMANCY",
+      "location": [-2, 8],
+      "parents": ["FOCUSCURSE"],
+      "meta": [],
+      "stages": [
+        {
+          "text": "research_stage.ender_rift.1",
+          "required_knowledge": ["THEORY;AUROMANCY;1"],
+          "required_research": ["!rattus"]
+        },
+        {
+          "text": "research_stage.ender_rift.2"
+        }
+      ]
+    },
+    {
+      "key": "FOCUSSUPREME",
+      "name": "research_name.supreme_focus",
+      "icons": ["thaumcraft:focus_4"],
+      "category": "AUROMANCY",
+      "location": [0,-4],
+      "parents": ["FOCUSGREATER", "FOCUSANCIENT"],
+      "meta": ["REVERSE"],
+      "stages": [
+        {
+          "text": "research_stage.supreme_focus.1",
+          "required_knowledge": ["THEORY;AUROMANCY;2"],
+          "required_craft": ["thaumcraft:focus_3"]
+        },
+        {
+          "text": "research_stage.supreme_focus.2",
+          "recipes": ["thaumcraft:focus_4"]
         }
       ]
     }

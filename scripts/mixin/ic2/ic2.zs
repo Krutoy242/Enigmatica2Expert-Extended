@@ -94,6 +94,11 @@ zenClass MixinTileEntityCrop {
     return crop.getGrowthDuration(tile) / 10;
   }
 
+  //Expose private method for thaumcraft spell scripts/mods/thaumcraft/spellCreation/spellCrossbreed.zs
+  function attemptCrossingPublic() as bool {
+    return this0.attemptCrossing();
+  }
+
   /*
     Fixes item duplication and illegal stack-size bugs in TileEntityCrop#performHarvest().
     Most CropCard implementations cache the ItemStack returned by getGains(). The original code
