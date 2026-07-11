@@ -158,10 +158,10 @@ mods.thaumcraft.Infusion.removeRecipe(<kami:focus_pouch>);
 mods.thaumcraft.Infusion.registerRecipe(
   'kami_focus_pouch', // Name
   'KAMI_BOTTOMLESS_POUCH', // Research
-  <thaumcraft:focus_pouch>, // Output
+  <kami:focus_pouch>, // Output
   10, // Instability
   Aspects('100♾️ 150👨 250🔮 250〇 100🔨'),
-  <kami:focus_pouch>, // CentralItem
+  <thaumcraft:focus_pouch>, // CentralItem
   [<kami:ichorweave_fabric>, <thaumcraft:hungry_chest>, <kami:ichorweave_fabric>, <thaumictinkerer:arcane_quartz>, <kami:ichorweave_fabric>, <botania:manaresource:15>, <kami:ichorweave_fabric>, <thaumictinkerer:arcane_quartz>]
 );
 

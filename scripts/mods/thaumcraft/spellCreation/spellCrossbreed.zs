@@ -68,6 +68,8 @@ zenClass SpellCrossbreed extends FocusEffect {
 
         val tileCrop = block as TileEntityCrop;
 
+        if(!tileCrop.isCrossingBase()) return false;
+
         for i in 0 .. 5 {
           if (tileCrop.attemptCrossingPublic()) {
             world.playSound(null, pos, SoundsTC.wand, SoundCategory.AMBIENT, 1.0f, world.rand.nextFloat() * 0.4f + 0.8f);
