@@ -272,7 +272,7 @@ function consumeMatter(m as MachineContainer, consumeAmount as int) as bool {
   if (isNull(fluid) || fluid.amount <= 0) return false;
   m.setFluid(mattX, mattY, fluid.amount > consumeAmount
     ? fluid * (fluid.amount - consumeAmount)
-    : null
+    : fluid * 0
   );
   val uuid = m.getString('ownerUUID');
   val oldValue = scripts.lib.offline.op.get(uuid, 'stat_replications', 0) as int;
