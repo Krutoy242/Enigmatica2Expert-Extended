@@ -562,7 +562,7 @@ q.industrialcraft.advanced_miner.desc=早期的自动采矿工具。
 q.industrialcraft.scanner.desc=将物品放入扫描仪中扫描。§c§l这将会摧毁物品。§r\n通过按“保存”将物品数据写入§6模式存储水晶§r。
 q.industrialcraft.crystal_memory.name=模式存储水晶
 q.industrialcraft.crystal_memory.desc=模式存储水晶显示已保存物品的§d基础成本§r。\n可以复制的物品在提示框中以紫色数字显示其§d基础成本§r，例如“§d100 mB UU§r”。\n\n实际复制成本随你的§6难度§e✪§r等级变化。\n\n手持带有记录物品的模式存储水晶并§n左键复制机§r。\n\n§8你将看到最多 20 种可以用作催化剂的物品，具体数量取决于所有者的复制成本。这是完成任务所必需的。
-q.industrialcraft.crystal_memory.task.0=用记录好的模式存储水晶击打物品
+q.industrialcraft.crystal_memory.task.0=用记录好的模式存储水晶击打复制机
 q.industrialcraft._replicator_.name=复制机
 q.industrialcraft._replicator_.desc=注意：对于使用 CFPA 汉化资源包（Minecraft-Mod-Language-Package）的用户，名称会错误的显示为§n物质重组机§r\n\n这台机器可以复制物品。要使其运行，你需要：\n\n§4⚡ §8[§4能量§8]§r\n需要 20,000 RF/t 才能运行。\n\n§3❂ §8[§3模式存储水晶§8]§r\n记忆中必须有有效的扫描物品数据。\n\n§6⭑ §8[§6催化剂§8]§r\n催化剂是具有更高 UU 成本的物品，将会被消耗。\n§6催化剂§r的§d基础成本§r必须高于物品的§5当前成本§r。\n§7在下一个任务中查看更多关于 UU 成本的计算方法。§r\n\n§d⬬ §8[§dUU 物质§8]§r\n消耗§6催化剂§r的 UU 成本。\n复制会轻微提升§6难度§e✪§r。\n\n§2☾☽§r §8[§2维度§8]§r\n复制成本会根据所在维度的难度修正值发生变化。\n\n§8复制机界面：\n§8- §n两个数字§8：所需和当前的 UU 分数（1 mB=100），仅为显示用。\n§8- §n✪成本§8：基于拥有者的当前倍率。
 q.industrialcraft._catalysts_.name=§6⭑§r 催化剂 §6⭑§r
