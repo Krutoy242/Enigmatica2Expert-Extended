@@ -267,17 +267,19 @@ function succes(m as MachineContainer, powr as int, output as IItemStack, dfclty
   pushErr(m);
 }
 
-function consumeMatter(m as MachineContainer, consumeAmount as int) as bool {
+// Drain up to consumeAmount, return how much was actually drained
+function consumeMatter(m as MachineContainer, consumeAmount as int) as int {
   val fluid = m.getFluid(mattX, mattY);
-  if (isNull(fluid) || fluid.amount <= 0) return false;
-  m.setFluid(mattX, mattY, fluid.amount > consumeAmount
-    ? fluid * (fluid.amount - consumeAmount)
-    : null
-  );
+  if (isNull(fluid) || fluid.amount <= 0) return 0;
+  val consumed = min(fluid.amount, consumeAmount);
+
+  // Note: `setFluid` cant take null, empty tank is a zero-sized stack
+  m.setFluid(mattX, mattY, fluid * (fluid.amount - consumed));
+
   val uuid = m.getString('ownerUUID');
   val oldValue = scripts.lib.offline.op.get(uuid, 'stat_replications', 0) as int;
-  scripts.lib.offline.op.set(uuid, 'stat_replications', max(0, oldValue) + consumeAmount);
-  return true;
+  scripts.lib.offline.op.set(uuid, 'stat_replications', max(0, oldValue) + consumed);
+  return consumed;
 }
 
 // Try to add target item to output
@@ -323,9 +325,10 @@ function work(m as MachineContainer, tick as long, upgrAmount as int, powr as in
 
   // Consume to increase buffer
   val toConsume = calcConsumption(upgrAmount, tick);
-  if (!consumeMatter(m, toConsume))
+  val consumed = consumeMatter(m, toConsume);
+  if (consumed <= 0)
     return pushErr(m, '§dNeed UU\n§d matter');
-  buffer += 100 * toConsume;
+  buffer += 100 * consumed;
 
   // Instantly drop result if cost below 1mb
   if (spentBuffer(m, powr, buffer, goal, dfclty)) return;
