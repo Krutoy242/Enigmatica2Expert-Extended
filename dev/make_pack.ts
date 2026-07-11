@@ -73,7 +73,14 @@ async function main() {
   await runChangelog(nextVersion, zipBaseName)
   await createTag(nextVersion)
   await buildZips(nextVersion, zipBaseName)
-  await manageSFTP(PATHS.serverSetupConfig)
+  try {
+    await manageSFTP(PATHS.serverSetupConfig)
+  }
+  catch (error) {
+    p.log.error(`SFTP step crashed: ${error instanceof Error ? error.message : String(error)}`)
+    if (!await confirm('Continue release despite SFTP failure?'))
+      process.exit(1)
+  }
   if (await confirm('Push tag?')) {
     await $$`git push --follow-tags`
     process.stdout.write('\n')
