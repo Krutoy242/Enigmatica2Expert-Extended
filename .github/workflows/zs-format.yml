@@ -1,0 +1,154 @@
+name: ZenScript format suggestions
+
+# Two pull-request triggers, and the `if` below makes sure exactly one of them
+# ever acts:
+#
+#   * a branch inside this repository is already trusted, so it takes the plain
+#     `pull_request` path — an ordinary token, no elevated privileges at all;
+#   * a fork gets a read-only token on `pull_request` and simply cannot post a
+#     review, so it needs `pull_request_target` instead.
+#
+# `pull_request_target` runs with write access next to contributed code, so the
+# "pin trusted tooling" step puts every executable path back to the base branch
+# version. Only `*.zs` survives from the contributor, and `.zs` is never
+# executed here — the formatter merely parses it.
+#
+# Note that GitHub always reads a `pull_request_target` workflow from the
+# repository's **default branch**, so changes to this file only take effect for
+# forks once they are on `master`.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '**/*.zs'
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '**/*.zs'
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number to analyse without posting anything
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: zs-format-${{ github.event.pull_request.number || inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  suggest:
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || (
+        !contains(github.event.pull_request.labels.*.name, 'skip-format')
+        && (
+          (github.event_name == 'pull_request'
+            && github.event.pull_request.head.repo.full_name == github.repository)
+          || (github.event_name == 'pull_request_target'
+            && github.event.pull_request.head.repo.full_name != github.repository)
+        )
+      )
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    # Override `.npmrc` reporter=silent so pnpm output stays verbose for CI debugging
+    env:
+      npm_config_reporter: default
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+      HUSKY: '0'
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      - name: 🔎 Resolve pull request
+        id: pr
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/pulls/${{ github.event.pull_request.number || inputs.pr }}" \
+            --jq '"number=\(.number)\nhead_sha=\(.head.sha)\nbase_sha=\(.base.sha)"' >> "$GITHUB_OUTPUT"
+
+      - name: 📥 Checkout the contributed code
+        uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ steps.pr.outputs.number }}/head
+          fetch-depth: 1
+          submodules: false
+          persist-credentials: false
+
+      - name: 🔒 Pin every executable path to the base branch
+        env:
+          BASE_SHA: ${{ steps.pr.outputs.base_sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          rm -rf .github mc-tools dev
+          TRUSTED=""
+          # `.gitmodules` matters as much as the rest: it decides which
+          # repository `mc-tools` — the formatter we are about to run — is
+          # cloned from.
+          for path in .github mc-tools .gitmodules dev package.json pnpm-lock.yaml \
+                      pnpm-workspace.yaml .npmrc eslint.config.js tsconfig.json; do
+            # `ls-tree` reads the tree entry itself, so it also sees the
+            # `mc-tools` submodule gitlink, whose commit object is not fetched.
+            if [ -n "$(git ls-tree --name-only "$BASE_SHA" -- "$path")" ]; then
+              TRUSTED="$TRUSTED $path"
+            fi
+          done
+          echo "Restoring from base:$TRUSTED"
+          git checkout "$BASE_SHA" -- $TRUSTED
+          # Commit so the later `git diff` shows the formatter's work and nothing else.
+          git -c user.name=ci -c user.email=ci@local commit -qam 'ci: pin trusted tooling' || true
+          git status --short
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: 📦 Install dependencies
+        run: |
+          git submodule update --init --depth 1 mc-tools
+          pnpm install --frozen-lockfile
+          pnpm --dir mc-tools install --frozen-lockfile
+          pnpm --dir mc-tools --filter @mctools/format --filter @mctools/eslint-plugin-zs run build
+
+      - name: 🧹 Format and collect suggestions
+        id: prep
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: pnpm tsx .github/scripts/zs-format-review.ts prepare
+
+      - uses: reviewdog/action-setup@v1
+        if: env.DRY_RUN != 'true'
+        with:
+          reviewdog_version: v0.21.0
+
+      # Runs even when there is nothing to say: fed an empty diff, reviewdog
+      # takes down the suggestions it left on earlier pushes that no longer
+      # apply. Skipping the step would leave them stranded.
+      - name: 💬 Offer the changes as review suggestions
+        if: env.DRY_RUN != 'true'
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
+        run: |
+          reviewdog \
+            -name='auto-format' \
+            -f=diff \
+            -f.diff.strip=1 \
+            -reporter=github-pr-review \
+            -filter-mode=added \
+            -level=info \
+            -fail-level=none < zs-format.diff
+
+      - name: 📝 Explain what just happened
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: pnpm tsx .github/scripts/zs-format-review.ts summary
+
+      - name: 🔍 Leave the decision trail in the job log
+        if: always()
+        run: cat zs-format-report.json || true
