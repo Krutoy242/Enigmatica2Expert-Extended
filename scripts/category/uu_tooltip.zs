@@ -14,10 +14,10 @@ val uuTooltip as ITooltipFunction = function (item) {
   val cost = scripts.category.uu.getCost(item, -1);
   val text = scripts.category.uu.formatUUCost(cost);
   val actualCost = scripts.category.uu.difficultCost(cost, client.player.difficulty);
-  if (actualCost == cost) return text; // default cost
+  if(actualCost==cost)return text; // default cost
 
-  val actualCostText = format('%,.2f', 0.01 * actualCost)
-    .replace('.00', '');
+  val actualCostText = format("%,.2f",0.01*actualCost)
+		.replace(".00","");
   return `§8(${actualCostText}) ${text}`;
 };
 
@@ -25,9 +25,9 @@ val it = native.ic2.core.uu.UuGraph.iterator();
 while it.hasNext() {
   val entry = it.next() as native.java.util.Map.Entry;
   val itemNative = entry.key as native.net.minecraft.item.ItemStack;
-  if (!isNull(itemNative)) {
-    itemNative.wrapper.only(function (item) { return !item.hasTag; })
-      .addAdvancedTooltip(uuTooltip);
+  if(!isNull(itemNative)){
+		itemNative.wrapper.only(function(item){return !item.hasTag;})
+			.addAdvancedTooltip(uuTooltip);
   }
 }
 
