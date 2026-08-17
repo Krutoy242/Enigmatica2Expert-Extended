@@ -1,26 +1,21 @@
 name: ZenScript format suggestions
 
-# Two pull-request triggers, and the `if` below makes sure exactly one of them
-# ever acts:
-#
-#   * a branch inside this repository is already trusted, so it takes the plain
-#     `pull_request` path — an ordinary token, no elevated privileges at all;
-#   * a fork gets a read-only token on `pull_request` and simply cannot post a
-#     review, so it needs `pull_request_target` instead.
+# One pull-request trigger on purpose. A fork gets a read-only token on
+# `pull_request` and simply cannot post a review, so `pull_request_target` is
+# the only path that works for everyone. Pairing the two triggers and letting an
+# `if` pick between them — what this workflow used to do — bought nothing and
+# cost a second, permanently no-op check run on every pull request.
 #
 # `pull_request_target` runs with write access next to contributed code, so the
 # "pin trusted tooling" step puts every executable path back to the base branch
 # version. Only `*.zs` survives from the contributor, and `.zs` is never
-# executed here — the formatter merely parses it.
+# executed here — the formatter merely parses it. That same pinning is what
+# makes `allow-unsafe-pr-checkout` on the checkout step defensible.
 #
 # Note that GitHub always reads a `pull_request_target` workflow from the
-# repository's **default branch**, so changes to this file only take effect for
-# forks once they are on `master`.
+# repository's **default branch**, so changes to this file only take effect
+# once they are on `master`.
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - '**/*.zs'
   pull_request_target:
     types: [opened, synchronize, reopened]
     paths:
@@ -36,28 +31,20 @@ permissions:
   contents: read
   pull-requests: write
 
+# Keyed by event as well, so a `workflow_dispatch` dry-run and the real run for
+# the same pull request never cancel one another.
 concurrency:
-  group: zs-format-${{ github.event.pull_request.number || inputs.pr }}
+  group: zs-format-${{ github.event_name }}-${{ github.event.pull_request.number || inputs.pr }}
   cancel-in-progress: true
 
 jobs:
   suggest:
     if: >-
       github.event_name == 'workflow_dispatch'
-      || (
-        !contains(github.event.pull_request.labels.*.name, 'skip-format')
-        && (
-          (github.event_name == 'pull_request'
-            && github.event.pull_request.head.repo.full_name == github.repository)
-          || (github.event_name == 'pull_request_target'
-            && github.event.pull_request.head.repo.full_name != github.repository)
-        )
-      )
+      || !contains(github.event.pull_request.labels.*.name, 'skip-format')
     runs-on: ubuntu-22.04
     timeout-minutes: 20
-    # Override `.npmrc` reporter=silent so pnpm output stays verbose for CI debugging
     env:
-      npm_config_reporter: default
       PUPPETEER_SKIP_DOWNLOAD: 'true'
       HUSKY: '0'
       GH_TOKEN: ${{ github.token }}
@@ -77,6 +64,10 @@ jobs:
           fetch-depth: 1
           submodules: false
           persist-credentials: false
+          # Checking out a fork's code under `pull_request_target` is exactly the
+          # "pwn request" shape, so `actions/checkout` refuses it by default. The
+          # next step is the mitigation: everything executable goes back to base.
+          allow-unsafe-pr-checkout: true
 
       - name: 🔒 Pin every executable path to the base branch
         env:
@@ -109,11 +100,20 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      # `pnpm-workspace.yaml` sets `reporter: silent`, which hides pnpm's own
+      # error messages as well — a failed install reaches the log as a bare exit
+      # code and nothing else. Neither `npm_config_reporter` nor
+      # `PNPM_CONFIG_REPORTER` overrides it; only the flag does.
       - name: 📦 Install dependencies
         run: |
           git submodule update --init --depth 1 mc-tools
-          pnpm install --frozen-lockfile
-          pnpm --dir mc-tools install --frozen-lockfile
+          # Not frozen on purpose: the root workspace reaches into
+          # `mc-tools/packages/*`, which is a submodule, so every bump of the
+          # `mc-tools` pointer leaves the root lockfile a step behind until
+          # someone refreshes it. `mc-tools`' own lockfile has no such split and
+          # stays frozen.
+          pnpm install --no-frozen-lockfile --reporter=default
+          pnpm --dir mc-tools install --frozen-lockfile --reporter=default
           pnpm --dir mc-tools --filter @mctools/format --filter @mctools/eslint-plugin-zs run build
 
       - name: 🧹 Format and collect suggestions
