@@ -142,6 +142,7 @@ tconstruct:slime_boots
 tconstruct:stone_stick
 thaumadditions:adaminite_belt
 thaumadditions:adaminite_boots
+thaumadditions:adaminite_fabric
 thaumadditions:adaminite_hood
 thaumadditions:adaminite_robe
 thaumadditions:levitation_device

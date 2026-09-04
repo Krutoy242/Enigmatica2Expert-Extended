@@ -100,7 +100,7 @@ function workOnCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEnti
 function dropCrystal(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
   world.spawnEntity(validCrystalNames[subtile.getCustomData().name]
     .withTag({ astralsorcery: { crystalProperties: subtile.data.crystalProperties } })
-    .createEntityItem(world, pos.x, pos.y + 0.3f, pos.z));
+    .createEntityItem(world, 0.5f + pos.x, 0.3f + pos.y, 0.5f + pos.z));
   subtile.setCustomData({ crystalProperties: { collectiveCapability: -1 } } as IData);
 }
 

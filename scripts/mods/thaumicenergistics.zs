@@ -27,7 +27,7 @@ events.onEntityLivingUseItem(function(e as crafttweaker.event.EntityLivingUseIte
 */
 
 // [1k ME Essentia Storage Component]
-mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_1k>);
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumicenergistics:essentia_component_1k>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_1k',
   'ESSENTIASTORAGE1k',
   10,
@@ -43,7 +43,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_1k',
   }).shaped());
 
 // [4k ME Essentia Storage Component]
-mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_4k>);
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumicenergistics:essentia_component_4k>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_4k',
   'ESSENTIASTORAGE4k',
   10,
@@ -60,7 +60,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_4k',
   }).shaped());
 
 // [16k ME Essentia Storage Component]
-mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_16k>);
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumicenergistics:essentia_component_16k>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_16k',
   'ESSENTIASTORAGE16k',
   10,
@@ -77,7 +77,7 @@ mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_16k',
   }).shaped());
 
 // [64k ME Essentia Storage Component]
-mods.thaumcraft.Infusion.removeRecipe(<thaumicenergistics:essentia_component_64k>);
+mods.thaumcraft.ArcaneWorkbench.removeRecipe(<thaumicenergistics:essentia_component_64k>);
 mods.thaumcraft.ArcaneWorkbench.registerShapedRecipe('essentia_component_64k',
   'ESSENTIASTORAGE64k',
   10,

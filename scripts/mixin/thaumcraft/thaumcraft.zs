@@ -177,12 +177,13 @@ zenClass MatrixMixin {
       val x = this0.pos.getX() - pedPos.getX();
       val z = this0.pos.getZ() - pedPos.getZ();
       val block as Block = this0.world.getBlockState(pedPos).getBlock();
-      if (block == BlocksTC.pedestalEldritch) {
+      if (block == BlocksTC.pedestalAncient) {
         this0.costMult -= 0.003;
       }
 
-      if (block == BlocksTC.pedestalAncient) {
+      if (block == BlocksTC.pedestalEldritch) {
         this0.costMult += 0.002;
+        this0.stabilityReplenish += 0.01;
       }
     }
   }

@@ -141,6 +141,6 @@ function findFuel(world as IWorld, pos as IBlockPos) as IEntityItem {
 }
 
 function dropFuelWaste(world as IWorld, pos as IBlockPos, subtile as SubTileEntityInGame) as void {
-  world.spawnEntity(oreDict.get(subtile.data.WasteName).firstItem.createEntityItem(world, pos.x, pos.y + 0.3f, pos.z));
+  world.spawnEntity(oreDict.get(subtile.data.WasteName).firstItem.createEntityItem(world, 0.5f + pos.x, 0.3f + pos.y, 0.5f + pos.z));
   subtile.setCustomData({ Status: 'pickUp' } as IData);
 }
