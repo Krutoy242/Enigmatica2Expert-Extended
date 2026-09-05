@@ -1,0 +1,80 @@
+# Pack-level reducer settings. Merged over the defaults @mctools/reducer ships
+# (mod dependencies, forks, readiness signals) — see mc-tools/packages/reducer.
+
+# ── Dedicated test server, out of this very instance ──────────────────────────
+# `pnpm server` (= `reducer restart --server --detach`) boots it in `~server/`:
+# junctions back to config/scripts, hardlinks to every server-safe jar, its own
+# mod set. Nothing here is a mod list of its own — every entry points at a file
+# this pack already maintains, so nothing can drift out of sync.
+server:
+  dir: ~server
+
+  # Loader: exactly the Cleanroom build the client launches.
+  jar: cleanroom-{version}.jar
+  install:
+    version: config/relauncher.json#selectedVersion
+    installer: https://github.com/CleanroomMC/Cleanroom/releases/download/{version}/cleanroom-{version}-installer.jar
+    args: [--installServer]
+
+  # Same JDK the relauncher provisioned for the client (javaw → java).
+  java: config/relauncher.json#javaPath
+  # Not the released server's Aikar flags: those are tuned for 20 players on a
+  # dedicated box. This one boots, takes one local tester, and gets killed — so
+  # it trades pause latency for footprint. Measured on 4 cores, full 375-mod
+  # pack, same world: RSS 3713 -> 2717 MB and 29.6 -> 5.3 s of stop-the-world
+  # per boot, at the same 190 s boot time. On the dev world at -Xmx2G: 2572 MB.
+  jvmArgs:
+    # G1 spends 105 of its 228 boot collections on mixed/concurrent cycles it
+    # never gets to reuse; ParallelGC just copies and moves on.
+    - '-XX:+UseParallelGC'
+    # Adaptive sizing grows eden to 800 MB and leaves it 2 % used.
+    - '-XX:MaxNewSize=256M'
+    # Hand the heap back to Windows after a full GC — the client wants it.
+    - '-XX:MinHeapFreeRatio=10'
+    - '-XX:MaxHeapFreeRatio=20'
+    # The pack settles at ~370 MB of metaspace; the 21 MB default makes the JVM
+    # trip a collection six times on the way there.
+    - '-XX:MetaspaceSize=384M'
+    - '-XX:SoftRefLRUPolicyMSPerMB=1'
+    # No -XX:+PerfDisableSharedMem here: jps/jcmd/VisualVM can attach.
+    - -Dfml.readTimeout=180
+    - -Dfml.queryResult=confirm
+    - --add-opens=java.base/sun.security.util=ALL-UNNAMED
+    - --add-opens=java.base/java.util.jar=ALL-UNNAMED
+    - '-XX:+IgnoreUnrecognizedVMOptions'
+  # The released server asks for 5G/5G; this one shares 16G with a running
+  # client. The live set after a full GC is 1.1 GB, and -Xmx is the only lever
+  # that actually caps RSS — ParallelGC's adaptive sizing grows into whatever
+  # ceiling it is given and never gives it back (-XX:-UseAdaptiveSizePolicy
+  # does not change that; measured 3332 MB). 2G boots in the same 190 s.
+  minRam: 512M
+  maxRam: 2G
+
+  # Read by the server, written by the pack — junctions, so an edited script or
+  # config is what the next boot loads.
+  link: [config, scripts, structures, patchouli_books, asm]
+  # Written by the server — copied once, then left alone.
+  seed: [local/ftbutilities, local/ftbquests]
+
+  # Jars that must never reach a dedicated server: the projects the released
+  # server pack refuses to install, plus the dev-only mods kept out of releases.
+  exclude:
+    - server/server-setup-config.yaml#install.formatSpecific.ignoreProject
+    - dev/.devonly.ignore
+
+  propertiesFrom: server/server.properties
+  # Applied only when ~server/server.properties is first written.
+  properties:
+    motd: E2E-E dev server
+    # A local test server has no business asking Mojang: works offline, works
+    # with an expired session, and still lets the normal client connect.
+    online-mode: 'false'
+    snooper-enabled: 'false'
+    # One tester, flat world, 81 loaded chunks instead of 625.
+    max-players: '1'
+    view-distance: '4'
+    level-type: FLAT
+    # Never let the watchdog kill a server that is paused in a debugger or in a
+    # full GC, and don't spend CPU compressing packets that go to localhost.
+    max-tick-time: '-1'
+    network-compression-threshold: '-1'

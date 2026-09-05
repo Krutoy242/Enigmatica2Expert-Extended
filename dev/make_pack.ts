@@ -30,6 +30,7 @@ import { resolve } from 'pathe'
 import { replaceInFile } from 'replace-in-file'
 import { $, fs, glob, retry } from 'zx'
 
+import { cleanroomPatches, patchServerSetupConfig, SERVER_SETUP_CONFIG } from './automation/server_config.js'
 import { commitAmend, confirm, formatError, formatRemoveResult, getIgnoredFiles, removeFiles, runAllLabeled, showStacks } from './build/build_utils.js'
 import { manageSFTP } from './build/sftp.js'
 import { generateChangelog } from './tools/changelog/changelog.js'
@@ -57,8 +58,7 @@ const PATHS = {
   devonlyIgnore    : 'dev/.devonly.ignore',
   versionTxt       : 'dev/version.txt',
   changelogLatest  : 'CHANGELOG-latest.md',
-  serverSetupConfig: 'server/server-setup-config.yaml',
-  relauncher       : 'config/relauncher.json',
+  serverSetupConfig: SERVER_SETUP_CONFIG,
   mainMenu         : 'config/CustomMainMenu/mainmenu.json',
   manifest         : 'manifest.json',
   enderModpackCfg  : 'config/endermodpacktweaks/modpack.cfg',
@@ -81,9 +81,6 @@ const SEMVER_RE = /^(v?)(\d+)\.(\d+)\.(\d+)(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?$/
 /** Canonical repo slug — also the fallback when `git remote` cannot be read. */
 const REPO = 'Krutoy242/Enigmatica2Expert-Extended'
 const CURSEFORGE_FILES_URL = 'https://legacy.curseforge.com/minecraft/modpacks/enigmatica-2-expert-extended/files'
-
-/** Cleanroom tags its releases `<ver>` and names the assets `cleanroom-<ver>[-installer].jar`. */
-const CLEANROOM_RELEASES = 'https://github.com/CleanroomMC/Cleanroom/releases/download'
 
 type BumpType = 'major' | 'minor' | 'patch'
 
@@ -517,81 +514,17 @@ async function getGitHubRepo(): Promise<string> {
   return REPO
 }
 
-/** Matches one `key: value` line of a YAML mapping. Groups: the `key:` prefix, the value, an optional CR. */
-function yamlScalar(key: string): RegExp {
-  return new RegExp(String.raw`^([ \t]*${key}[ \t]*:[ \t]*)([^\r\n]*)(\r?)$`, 'm')
-}
-
-/**
- * Rewrite everything version-dependent in the dedicated-server setup config.
- *
- * One read-modify-write for the whole file: two `replaceInFile` calls on the same
- * path run concurrently here and would lose one of the two edits.
- */
+/** Rewrite everything version-dependent in the dedicated-server setup config. */
 async function updateServerSetupConfig(release: Release) {
-  const cleanroom = readCleanroomVersion()
-  const source    = await fs.readFile(PATHS.serverSetupConfig, 'utf8')
-
-  /** `expect`: leave the value alone unless it already is the kind of value we are about to write. */
-  const patches: { key: string, value: string, expect?: string }[] = [
+  const { warnings } = await patchServerSetupConfig([
     {
       key  : 'modpackUrl',
       value: `https://github.com/${REPO}/releases/download/${release.version}/${release.baseName}.zip`,
     },
-    {
-      key   : 'installerUrl',
-      value : `'${CLEANROOM_RELEASES}/${cleanroom}/cleanroom-${cleanroom}-installer.jar'`,
-      expect: 'cleanroom',
-    },
-    {
-      // The jar the installer above produces — a stale name here starts nothing.
-      key   : 'startFile',
-      value : `cleanroom-${cleanroom}.jar`,
-      expect: 'cleanroom',
-    },
-  ]
+    ...cleanroomPatches(),
+  ])
 
-  let patched = source
-  for (const { key, value, expect } of patches) {
-    const re    = yamlScalar(key)
-    const match = re.exec(patched)
-
-    if (!match) {
-      p.log.warn(`"${key}:" not found in ${PATHS.serverSetupConfig} — left untouched.`)
-      continue
-    }
-    if (expect && !match[2].toLowerCase().includes(expect)) {
-      p.log.warn(`"${key}: ${match[2].trim()}" in ${PATHS.serverSetupConfig} is not a ${expect} value — left untouched.`)
-      continue
-    }
-
-    patched = patched.replace(re, (_full, prefix: string, _old: string, cr: string) => `${prefix}${value}${cr}`)
-  }
-
-  if (patched !== source) await fs.writeFile(PATHS.serverSetupConfig, patched)
-}
-
-/**
- * Cleanroom build the client launches with.
- *
- * `config/relauncher.json` is the single source of truth: if the server installs
- * a different build, everyone joins a server running another loader version.
- */
-function readCleanroomVersion(): string {
-  let relauncher: { selectedVersion?: unknown }
-  try {
-    relauncher = JSON.parse(readFileSync(PATHS.relauncher, 'utf8')) as { selectedVersion?: unknown }
-  }
-  catch (error) {
-    throw new Error(`Cannot read the Cleanroom version from "${PATHS.relauncher}": ${errMessage(error)}`)
-  }
-
-  const version = relauncher.selectedVersion
-  if (typeof version !== 'string' || !version.trim()) {
-    throw new Error(`"selectedVersion" is missing or not a string in ${PATHS.relauncher}.\n`
-      + '  The server setup config takes its Cleanroom version from there.')
-  }
-  return version.trim()
+  for (const warning of warnings) p.log.warn(warning)
 }
 
 function readDevonlyIgnore(): string {
@@ -605,7 +538,9 @@ function readDevonlyIgnore(): string {
 
 /** Drop dev-only mods from the crash-assistant modlist so it matches the shipped `mods/`. */
 async function cleanupModlist() {
-  const modlist  = JSON.parse(await fs.readFile(PATHS.modlist, 'utf8')) as Record<string, unknown>
+  // Crash Assistant writes this file with a UTF-8 BOM, which `JSON.parse` rejects.
+  const raw      = (await fs.readFile(PATHS.modlist, 'utf8')).replace(/^\uFEFF/, '')
+  const modlist  = JSON.parse(raw) as Record<string, unknown>
   const filtered = Object.fromEntries(
     Object.entries(modlist).filter(([key]) => !devonlyIgnore.ignores(`mods/${key}`))
   )

@@ -17,7 +17,7 @@ description: Review a GitHub PR against the pack. Load when asked to review a pu
 - Good form: use formatting, links to documentation or to the GitHub source related to the problem.
 - Findings are inline review comments on the diff: the problem spot + one sentence what is wrong. No how-to-fix.
 - Item names must become icons. Write the whole review text (body + every comment) into one temp `.md`, wrap each item name in `[Brackets]`, then run:
-  `node E:/dev/mc-icons/build/cli.js <temp.md> --modpack=e2ee --treshold=2 --no-short --silent`
+  `node E:/dev/mc/icons/build/cli.js <temp.md> --modpack=e2ee --treshold=2 --no-short --silent`
   It rewrites the file in place and never prompts. Everything left in `[Brackets]` is listed under `❌ left as text` with the exact snippets that would resolve it — take one of those (`[Scanner] (EU2)`) and run again, or reword. Then post the file's contents.
 
 ## Finishing

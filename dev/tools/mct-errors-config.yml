@@ -176,6 +176,21 @@ ignore:
           - Mixin config * does not specify "minVersion" property
           # Reference maps is common mistake of mod developers and does not cause harm
           - 'Invalid REFMAP JSON in :'
+          # "loaded too early" - the target class was already loaded when the mixin config
+          # was registered, so the mixin silently never applies. Checked, all three are no-ops here:
+          # loliasm's is a dev-environment only hack (voidForgeRequirements),
+          # Sledgehammer's accessor is called behind an `instanceof` guard,
+          # and its Quark one force-disables Improved Sleeping, which sledgehammer.conf
+          # (quark.improved-sleeping=false) does not ask for anyway.
+          - 'Critical problem: mixins.devenv.json:FMLModContainerMixin from mod loliasm*was loaded too early.'
+          - 'Critical problem: mixins.sledgehammer.forge.json:fml.common.FMLModContainerAccessor*was loaded too early.'
+          - 'Critical problem: mixins.sledgehammer.quark.json:base.module.ModuleLoaderMixin*was loaded too early.'
+          # Same thing, and unfixable anywhere: Cleanroom's own mod discovery loads ASMModParser
+          # (CoreModManager.handleLaunch) long before mixin configs are registered
+          # (CoreModManager.injectCoreModTweaks). Declined upstream:
+          # https://github.com/CleanroomMC/Cleanroom/issues/597
+          # Only the ~1-5s startup gain is lost; stellar_core.cfg:ASMModParserImprovements does nothing here.
+          - 'Critical problem: mixins.stellar_core_forge_asmmodparser.json:MixinASMModParser*was loaded too early.'
       # Some JEI errors, no harm
       - /(jei|Had.?Enough.?Items)/:
           - 'A Recipe Handler has already been registered for '
@@ -185,6 +200,10 @@ ignore:
           - /Recipe has no output\. Minecraft minecraft:air_0[\s\S]+minecraft:iron_ingot[\s\S]+minecraft:slime_ball[\s\S]+minecraft:chest/
           # Reported https://github.com/Project-RT/RandomTweaker/issues/92
           - 'Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper'
+          # REIM built against an older Immersive Technology; the whole JEI plugin dies,
+          # so all REIM multiblock structure pages are missing.
+          # Reported https://github.com/BananaFructa/RatherEnoughImmersiveMultiblocks/issues/6
+          - 'Failed to register mod plugin: class BananaFructa.reim.JEIPlugin'
       - base:
           - '/java\.io\.FileNotFoundException: biomesoplenty:textures.items.gem\.png/'
 
@@ -200,6 +219,11 @@ ignore:
           - Unable to find recipe for minecraft:baked_potato
       - Astral Sorcery:
           - Skipped * patreon effects during loading due to malformed data!
+      # VintageFix ships a shaded MixinExtras 0.3.6 that registers into Cleanroom's already
+      # initialized 0.5.5. Its own mixins apply after that bootstrap, so this is log noise only.
+      # Reported https://github.com/embeddedt/VintageFix/issues/183
+      - /MixinExtras/:
+          - 'Accepting * org.embeddedt.vintagefix.mixinextras* offered to *after initialization*'
       # Mixins for absent mods. Happen when mod doesn't care to check if mod present first
       - /(mixin|CleanMix)/:
           - 'Error loading class: '
@@ -220,6 +244,10 @@ ignore:
           - 'Static binding violation: PRIVATE @Overwrite method func_76615_h in * cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded'
           # Universal Tweaks Warns:
           - /Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod \w+, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method./
+          # Tweaked Petroleum @Overwrites update(Z)V, so the equal-priority redirect is refused.
+          # Only the pumpjack pipe-check tweak is lost, nothing crashes.
+          # Reported https://github.com/tgstyle/Immersive-Convergence/issues/5
+          - 'Mixin apply for mod immersiveconvergence failed mixins.immersiveconvergence.ip.json:ip.common.MixinIPPumpjackPipes*'
           # Developers usually lazy to add refmaps
           - Reference map '*' for * could not be read. If this is a development environment you can ignore this message
       # REAuth complaining about JAVA version

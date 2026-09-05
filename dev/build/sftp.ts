@@ -411,7 +411,9 @@ async function uploadOverrides(
     disableGlobs: true,
   })
 
-  if (!replaceResult.length || !replaceResult[0].hasChanged) {
+  // `numMatches`, not `hasChanged`: re-releasing the same version writes the banner
+  // it already holds, and an unchanged file is success, not a broken regex.
+  if (!replaceResult.length || !replaceResult[0].numMatches) {
     throw new Error(`Nothing replaced in ${mc2discordPath} — the "start = ..." line was not found. `
       + 'The override template may have changed; fix the regex before re-uploading.')
   }

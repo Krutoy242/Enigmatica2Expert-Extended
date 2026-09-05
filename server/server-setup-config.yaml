@@ -267,6 +267,9 @@ launch:
     - '-XX:SurvivorRatio=32'
     - '-XX:+PerfDisableSharedMem'
     - '-XX:MaxTenuringThreshold=1'
+    # The pack settles at ~370 MB of metaspace; the 21 MB default trips a
+    # metadata-threshold collection six times on the way there.
+    - '-XX:MetaspaceSize=384M'
     - '-Dusing.aikars.flags=https://mcflags.emc.gs'
     - -Daikars.new.flags=true
     - -Dfml.readTimeout=180 # servertimeout

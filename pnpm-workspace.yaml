@@ -7,14 +7,18 @@ shellEmulator: true
 trustPolicy: no-downgrade
 
 reporter: silent
+overrides:
+  # parse-semver pins semver ^5, whose last release (5.7.2) predates provenance
+  # attestations and so trips trustPolicy. It only calls semver.validRange(),
+  # which is unchanged in 7.x.
+  parse-semver>semver: ^7
 packages:
   - mc-tools/packages/*
-onlyBuiltDependencies:
-  - '@vscode/vsce-sign'
-  - cpu-features
-  - es5-ext
-  - esbuild
-  - keytar
-  - node-pty
-  - puppeteer
-  - ssh2
+# pnpm 11 replaced `onlyBuiltDependencies` with this map
+allowBuilds:
+  '@vscode/vsce-sign': true
+  cpu-features: true
+  esbuild: true
+  keytar: true
+  puppeteer: true
+  ssh2: true

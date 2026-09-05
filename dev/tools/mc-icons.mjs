@@ -15,7 +15,7 @@ import process from 'node:process'
 import { pathToFileURL } from 'node:url'
 
 /** The checkout the whole repo iconifies with. */
-export const MC_ICONS = process.env.MC_ICONS || 'E:/dev/mc-icons'
+export const MC_ICONS = process.env.MC_ICONS || 'E:/dev/mc/icons'
 
 /**
  * Shared by the commit hook and the release run, so a name that passes at commit

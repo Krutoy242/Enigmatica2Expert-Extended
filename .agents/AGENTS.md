@@ -15,7 +15,7 @@ Format: `<type>(<scope>): <emoji><desc>` → blank → why (1 sentence, audience
 - After committing an issue fix: `gh issue edit <N> --add-label fixed-pending-release`.
 
 ## Local test server
-`pnpm server` — dedicated server on this instance's mods/configs, own game dir `~server/`, runs alongside the client.
+`pnpm server` — dedicated server on this instance's mods/configs, own game dir `~server/`, runs alongside the client. It is reducer's `--server` target (`reducer restart --server --only "ZenUtils"`, `reducer.config.yml`) — see the `reducer` skill.
 
 ## Submodules
 `mc-tools` · `scripts/craft` (Craft.zs) · `Enigmatica2Expert-Extended.wiki` — see `.gitmodules`.
