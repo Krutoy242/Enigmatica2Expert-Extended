@@ -502,3 +502,17 @@ craft.remake(<industrialforegoing:villager_trade_exchanger>, ['pretty',
   'C': <teslacorelib:machine_case>,
   '¤': <ore:gearGold>,
 });
+craft.remake(<industrialforegoing:material_stonework_factory>, ['pretty',
+  'R w R',
+  'b M F',
+  'L S ~'], {
+  'R': <industrialforegoing:plastic>,
+  'w': <ore:workbench>,
+  'b': <randomthings:blockbreaker>,
+  'M': <teslacorelib:machine_case>,
+  'F': <minecraft:furnace>,
+  'L': LiquidIngr('lava'),
+  'S': <industrialforegoing:pink_slime>,
+  '~': <ore:listAllwater>,
+});
+
