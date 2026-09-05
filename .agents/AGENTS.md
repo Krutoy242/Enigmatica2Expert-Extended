@@ -12,6 +12,10 @@ Format: `<type>(<scope>): <emoji><desc>` → blank → why (1 sentence, audience
 - Scopes: recipes quest config balance worldgen mods gear jei …
 - Pick the emoji used before for that file: `git log -n20 --pretty=%B -- <path>`.
 - Wrap item names in `[]`; resolve an ID with `.agents/find-item.sh mod:item:meta`.
+- After committing an issue fix: `gh issue edit <N> --add-label fixed-pending-release`.
+
+## Local test server
+`pnpm server` — dedicated server on this instance's mods/configs, own game dir `~server/`, runs alongside the client.
 
 ## Submodules
 `mc-tools` · `scripts/craft` (Craft.zs) · `Enigmatica2Expert-Extended.wiki` — see `.gitmodules`.

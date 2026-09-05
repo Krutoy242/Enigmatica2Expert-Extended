@@ -173,7 +173,6 @@ Use after changing any .zs script, except for #reloadable scripts. DO NOT use if
 ```bash
 pnpm ct-syntax
 ```
-Note: ZenUtils have a bug that throwing false error `unsupported mixin annotation: Static`. Always ignore this error.
 
 ### Safe complete reload with syntax pre-checking
 Runs syntax check first, aborts if errors found, otherwise reloads and reports errors. Use after changing #reloadable scripts:

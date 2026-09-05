@@ -105,8 +105,8 @@ scripts.mixin.probezs.shared.Op.onKeyword
 
     // World auto-join at boot is handled by a launch-time marker file +
     // GUI-init mixin now — see scripts/mixin/probezs/shared.zs's
-    // Op.tryAutoJoinWorld and gui.zs / gui_custommainmenu.zs. No RMI
-    // round-trip needed for that anymore.
+    // Op.tryAutoJoinWorld and gui.zs. No RMI round-trip needed for that
+    // anymore.
 
     val err = 'ERR:unknown:' ~ expr;
     print(err);

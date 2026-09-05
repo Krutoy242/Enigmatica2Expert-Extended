@@ -28,11 +28,21 @@ declares its own extra signals in `reducer.config.yml` (`ready.logPattern`,
 detected via the universal "FML loaded + log quiet" fallback. Cascade: pack
 `logPattern` → pack `tcpPort` open → universal FML+quiet → crash/exit/ceiling.
 
-World auto-join (and thus `logPattern: joined the game` readiness) requires
-**both** `probezs` + `custommainmenu` mods loaded. Without Custom Main Menu,
-the GUI init mixin (`gui_custommainmenu.zs`) is skipped and the world is never
-entered — the pack still reaches readiness via `tcpPort` (ProbeZS RMI) or the
-FML+quiet fallback, but stays at the main menu, unable to execute commands.
+World auto-join (and thus `logPattern: joined the game` readiness) needs the
+`probezs` mod loaded — `gui.zs` hooks vanilla `GuiScreen`, so it fires under any
+main menu, Custom Main Menu included. Without ProbeZS the pack still reaches
+readiness via the FML+quiet fallback, but stays at the main menu, unable to
+execute commands. `restart`/`status` say so out loud: every mod under
+`capabilities:` in `reducer.config.yml` that ends up disabled prints a
+`… is disabled — … unavailable.` warning (never fatal).
+
+Auto-join loads the newest save unless `E2EE_FORCE_WORLD` names one. A reduced
+mod set + a save written by the full pack stalls FML at a *missing registry
+entries* confirmation screen — the game never enters the world. Point
+`E2EE_FORCE_WORLD` at a save created with that reduced set instead, or add
+`-Dfml.queryResult=confirm` to `config/relauncher.json` → `args` to auto-answer
+it — that answer **deletes** the missing entries from the save, so only aim it at
+a throwaway copy.
 
 ## Restart (blocking form)
 ```sh
@@ -45,6 +55,12 @@ A blocking `restart` prints two separate results — **read them independently**
 - `LOAD ✔ …` / `LOAD ✗ …` — did the game come up? The **exit code follows this**.
 - `SCRIPTS ✔ …` / `SCRIPTS ⚠ …` — ERROR/FATAL in the configured `scan:` logs
   (default `crafttweaker.log`, skipped if absent). **Warning only** unless `--strict`.
+
+A boot that stops writing `debug.log` for 45s+ says `no log output for <time>`
+instead of repeating the same heartbeat, and names the stage when it knows it —
+the relauncher provisioning Cleanroom is a download that can take many minutes,
+and stalls forever if only a proxy reaches the internet (the JVM ignores
+`HTTPS_PROXY`).
 
 **Ceiling**: gives up after 15 min if no ready signal appears (`LOAD ✗ ceiling`).
 Tune via `reducer.config.yml` (`ready.maxMs`, `ready.quietMs`) or env
@@ -61,6 +77,10 @@ pnpm reducer restart --except  "Mod A"           # disable Mod A (+dependents), 
 pnpm reducer restart --disable A --enable B      # combined; refuses self-excluding requests
 ```
 No-reboot toggling lives in the **TUI** (bare `pnpm reducer`), not the CLI.
+
+`--only`/`--except` disable everything unnamed, `!cleanroom-relauncher` included —
+the pack then runs on plain Java 8 Forge and dies right after the coremod phase.
+Always name it too: `--only "CraftTweaker2" "ZenUtils" "cleanroom-relauncher"`.
 
 ## Find / inspect
 ```sh
