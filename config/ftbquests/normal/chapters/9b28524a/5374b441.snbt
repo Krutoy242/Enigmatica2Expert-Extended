@@ -267,7 +267,7 @@
 			],
 			grid: 1,
 			display: {
-				Name: "Requiem of the Satiated Stomach"
+				LocName: "ritual.bloodmagic.fullStomachRitual"
 			},
 			count: 28,
 			structure: {

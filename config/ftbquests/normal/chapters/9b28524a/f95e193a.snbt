@@ -66,6 +66,9 @@
 				3
 			],
 			grid: 1,
+			display: {
+				LocName: "ritual.bloodmagic.lavaRitual"
+			},
 			count: 5
 		}
 	},

@@ -176,6 +176,9 @@
 				5
 			],
 			grid: 1,
+			display: {
+				LocName: "ritual.bloodmagic.magneticRitual"
+			},
 			count: 17
 		}
 	},
