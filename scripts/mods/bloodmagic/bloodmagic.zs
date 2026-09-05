@@ -15,22 +15,24 @@ import crafttweaker.item.IIngredient;
 
 // Add JEI hint for custom Imperfect zombie feature
 var previevRitual as IItemStack = <littletiles:multitiles>.withTag({ tiles: [{
-  bBox: [0, 0, 0, 1, 1, 1] as int[], tile: { block: 'bloodmagic:ritual_stone' },
+  bBox: [0, 0, 0, 1, 1, 1] as int[], tile: { block: 'bloodmagic:ritual_controller:1' },
 }, {
   bBox: [0, 1, 0, 1, 2, 1] as int[], tile: { block: 'minecraft:coal_block' },
-}], min: [0, 0, 0] as int[], size: [1, 2, 1] as int[], grid: 1, count: 2 });
+}], min: [0, 0, 0] as int[], size: [1, 2, 1] as int[], grid: 1, count: 2,
+  display: { LocName: 'ritual.bloodmagic.imperfect.zombie' } });
 scripts.jei.crafting_hints.fill(
   null,
   <liquid:lifeessence>,
   <scalinghealth:crystalshard> * 3,
-  isNull(previevRitual) ? <bloodmagic:ritual_stone> : previevRitual
+  isNull(previevRitual) ? <bloodmagic:ritual_controller:1> : previevRitual
 );
 
 previevRitual = <littletiles:multitiles>.withTag({ tiles: [{
   boxes: [[0, 0, 1, 1, 1, 2] as int[], [1, 0, 0, 2, 1, 1] as int[], [1, 0, 2, 2, 1, 3] as int[], [2, 0, 1, 3, 1, 2] as int[]], tile: { block: 'bloodmagic:ritual_stone:2' },
 }, {
   bBox: [1, 0, 1, 2, 1, 2] as int[], tile: { block: 'bloodmagic:ritual_stone' },
-}], min: [0, 0, 0] as int[], size: [3, 1, 3] as int[], grid: 1, count: 5 });
+}], min: [0, 0, 0] as int[], size: [3, 1, 3] as int[], grid: 1, count: 5,
+  display: { LocName: 'ritual.bloodmagic.lavaRitual' } });
 <assembly:crafting_hints>.addJEIRecipe(mods.requious.AssemblyRecipe.create(function (c) {
   c.addFluidOutput('fluid_out', <fluid:pyrotheum> * 1000);
 })

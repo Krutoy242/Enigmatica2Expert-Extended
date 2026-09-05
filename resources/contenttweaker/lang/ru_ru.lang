@@ -8,6 +8,7 @@ modifier.excompressum:compressing.desc=Автоматически сжимает
 tile.spectreCoil_number.info=Генерирует 32 RF/t и выдает их в блок, к которому прикреплен. Их можно найти в сундуках в подземельях.
 entity.twilightforest.harbinger_cube.name=Куб Предвестника
 entity.twilightforest.castle_guardian.name=Хранитель замка
+ritual.bloodmagic.imperfect.zombie=Неполноценный ритуал: Зомби
 # --------------------------------------
 # Custom mechanics
 # --------------------------------------

@@ -8,6 +8,7 @@ modifier.excompressum:compressing.desc=Automatically compresses block drops
 tile.spectreCoil_number.info=Generates 32 RF/t and outputs it into the block it's attached to. They can be found in dungeon chests.
 entity.twilightforest.harbinger_cube.name=Harbinger Cube
 entity.twilightforest.castle_guardian.name=Castle Guardian
+ritual.bloodmagic.imperfect.zombie=Imperfect Ritual: Zombie
 # --------------------------------------
 # Custom mechanics
 # --------------------------------------
