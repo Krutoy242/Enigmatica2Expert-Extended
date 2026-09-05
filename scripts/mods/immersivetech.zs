@@ -27,6 +27,7 @@ mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:moltensalt> * 400, <m
 // Harder Electolyze
 mods.mekanism.separator.removeRecipe(<liquid:water>);
 mods.mekanism.separator.addRecipe(<liquid:water> * 10, 800, <gas:hydrogen> * 2, <gas:oxygen>);
+mods.immersivetechnology.ElectrolyticCrucibleBattery.removeRecipe(<fluid:water> * 500);
 mods.immersivetechnology.ElectrolyticCrucibleBattery.addRecipe(
   <liquid:hydrogen> * 1000, <liquid:oxygen> * 500, <liquid:deuterium> * 50,
   null, <fluid:water> * 500, 50000, 2
