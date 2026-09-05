@@ -213,7 +213,7 @@ val bixbiteIngrs = [
 
 mods.extendedcrafting.CombinationCrafting.addRecipe(
   bixbiteDimlet, 100000000, 1000000,
-  <additionalcompression:gravel_compressed:1>,
+  <extrautils2:compressedgravel:1>,
   bixbiteIngrs
 );
 
@@ -223,7 +223,7 @@ mods.thaumcraft.Infusion.registerRecipe(
   bixbiteDimlet, // Output
   15, // Instability
   Aspects('1000🩸 1000☀️ 1000💀'),
-  <additionalcompression:gravel_compressed:1>, // CentralItem
+  <extrautils2:compressedgravel:1>, // CentralItem
   bixbiteIngrs
 );
 
