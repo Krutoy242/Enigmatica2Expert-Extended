@@ -83,7 +83,10 @@ events.onEntityItemDeath(function (e as mods.zenutils.event.EntityItemDeathEvent
   val world = e.item.world;
   if (world.remote) return;
 
-  if (e.damageSource.damageType != 'onFire' && e.damageSource.damageType != 'lava') return;
+  // `inFire` is dealt by Fluidlogged API: it treats any Material.LAVA block
+  // as flammable, so a submerged item dies from fire damage, not from lava
+  val damageType = e.damageSource.damageType;
+  if (damageType != 'onFire' && damageType != 'lava' && damageType != 'inFire') return;
 
   val entityItem = e.item;
   if (isNull(entityItem.item)) return;
