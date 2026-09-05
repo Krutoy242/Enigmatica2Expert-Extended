@@ -24,7 +24,7 @@
 		count: 5L
 	},
 	{
-		uid: "ab32fb46",
+		uid: "0142c8ca",
 		type: "item",
 		items: [{
 			item: "libvulpes:hatch"

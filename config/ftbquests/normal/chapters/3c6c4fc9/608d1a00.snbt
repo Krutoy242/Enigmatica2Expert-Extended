@@ -15,21 +15,25 @@
 		type: "item",
 		items: [{
 			item: "nuclearcraft:solid_fission_controller"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "0e4d23de",
 		type: "item",
 		items: [{
 			item: "nuclearcraft:solid_fission_cell"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "3794a7c1",
 		type: "item",
 		items: [{
 			item: "nuclearcraft:fission_source"
-		}]
+		}],
+		ignore_damage: 1b,
+		ignore_nbt: 1b
 	},
 	{
 		uid: "31cf04a4",
@@ -37,7 +41,8 @@
 		items: [{
 			item: "nuclearcraft:fission_cell_port"
 		}],
-		count: 2L
+		count: 2L,
+		ignore_nbt: 1b
 	},
 	{
 		uid: "4863e22f",
@@ -45,7 +50,8 @@
 		items: [{
 			item: "nuclearcraft:fission_vent"
 		}],
-		count: 2L
+		count: 2L,
+		ignore_nbt: 1b
 	},
 	{
 		uid: "2cd5177b",

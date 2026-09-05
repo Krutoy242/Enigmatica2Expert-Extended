@@ -49,14 +49,14 @@
 		}]
 	},
 	{
-		uid: "60e56931",
+		uid: "407584f8",
 		type: "item",
 		items: [{
 			item: "libvulpes:hatch 1 2"
 		}]
 	},
 	{
-		uid: "30d545f2",
+		uid: "43298967",
 		type: "item",
 		items: [{
 			item: "libvulpes:hatch 2 3"

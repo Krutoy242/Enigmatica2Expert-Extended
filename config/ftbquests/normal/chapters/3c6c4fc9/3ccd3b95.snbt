@@ -14,7 +14,8 @@
 		type: "item",
 		items: [{
 			item: "nuclearcraft:solid_fission_cell"
-		}]
+		}],
+		ignore_nbt: 1b
 	},
 	{
 		uid: "ddad318e",
