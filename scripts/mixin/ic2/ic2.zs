@@ -7,6 +7,7 @@ import native.ic2.core.item.tool.EntityMiningLaser;
 import native.ic2.core.crop.cropcard.CropWeed;
 import native.ic2.core.crop.cropcard.GenericCropCard;
 import native.ic2.core.recipe.ScrapboxRecipeManager;
+import native.ic2.core.util.StackUtil;
 import native.java.util.Random;
 import native.net.minecraft.item.ItemStack;
 
@@ -576,6 +577,29 @@ zenClass MixinUuIndex {
   #mixin Overwrite
   function init() as void {
     // NO-OP
+  }
+}
+
+/*
+When an item has no UU-value of its own, `UuGraph.find()` falls back to
+"same Item, nearest metadata" and happily returns a *different* variant.
+Scanning [Matter Fabricator] (ic2:te:61) recorded [Miner] (ic2:te:60) instead.
+Since MixinUuIndex above drops automatic UU calculation, such gaps are common.
+Keep the fuzzy fallback only for damageable items, where metadata is durability
+and resolving to the pristine variant is the intended behaviour.
+*/
+#mixin { targets: 'ic2.core.uu.UuGraph' }
+zenClass MixinUuGraph {
+  #mixin Static
+  #mixin ModifyReturnValue
+  #{
+  #  method: 'find(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;',
+  #  at: { value: 'RETURN' }
+  #}
+  function rejectOtherVariant(found as ItemStack, request as ItemStack) as ItemStack {
+    if (found.isEmpty() || request.getItem().isDamageable()) return found;
+    if (found.getItemDamage() == request.getItemDamage()) return found;
+    return StackUtil.emptyStack;
   }
 }
 
