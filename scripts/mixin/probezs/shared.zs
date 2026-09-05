@@ -4,6 +4,8 @@
 
 import native.net.minecraft.client.Minecraft;
 import native.java.lang.Runnable;
+import native.net.minecraftforge.fml.common.Loader;
+import native.net.minecraftforge.fml.common.LoaderState;
 
 // Runnable that performs the actual world load. Dispatched onto the client
 // (main) thread via Minecraft.addScheduledTask — launchIntegratedServer MUST
@@ -42,6 +44,14 @@ zenClass Op {
 
   static tryAutoJoinWorld as function()void = function () as void {
     if (!isNull(Op.autoJoinFired['done'])) return;
+
+    // FML's mod-loading *error* screen (duplicate mod, missing dependency) is
+    // an ordinary GuiScreen too, and it is shown while no mod has been
+    // constructed yet. Joining a world from there dies inside the first mod
+    // hooking loadWorld (Gnetum NPEs on its still-null config) and buries the
+    // readable FML error under a bogus crash report. AVAILABLE is reached at
+    // the end of FML's init, just before the real main menu appears.
+    if (!Loader.instance().hasReachedState(LoaderState.AVAILABLE)) return;
 
     val folderName = scripts.mixin.probezs.autojoin_marker.AutoJoinMarker.world.trim();
     if (folderName.length() == 0) return;
