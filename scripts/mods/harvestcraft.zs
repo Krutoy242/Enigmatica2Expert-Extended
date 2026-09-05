@@ -195,6 +195,35 @@ recipes.remove(<harvestcraft:royaljellyitem>);
 mods.integrateddynamics.Squeezer.addRecipe(<harvestcraft:queenbeeitem>, <harvestcraft:royaljellyitem>, 1.0f, <harvestcraft:royaljellyitem>, 1.0f, null, 0, null);
 scripts.process.squeeze([<harvestcraft:queenbeeitem>], null, 'only: TECentrifuge', <harvestcraft:royaljellyitem> * 4);
 
+// [Grape Juice] from [Grapes] (rustic)
+// Pam's grapes are purged, but [Presser] and [Centrifugal Separator] still asked for them
+mods.thermalexpansion.Centrifuge.removeRecipe(<harvestcraft:grapeitem>);
+mods.thermalexpansion.Centrifuge.removeRecipe(<rustic:grapes>);
+mods.thermalexpansion.Centrifuge.addRecipe(
+  [<harvestcraft:grapejuiceitem> % 100, <harvestcraft:fruitbaititem> % 100],
+  <rustic:grapes>, <liquid:grapejuice> * 250, 4000);
+
+mods.mia.harvestcraft.removePressingRecipe(<harvestcraft:grapeitem>);
+mods.mia.harvestcraft.addPressingRecipe(<rustic:grapes>, <harvestcraft:grapejuiceitem>, <harvestcraft:fruitbaititem>);
+
+// [Olive Oil] from [Olives] (rustic)
+// Same story as grapes - Pam's olives are purged
+mods.thermalexpansion.Centrifuge.removeRecipe(<harvestcraft:oliveitem>);
+mods.thermalexpansion.Centrifuge.removeRecipe(<rustic:olives>);
+mods.thermalexpansion.Centrifuge.addRecipe(
+  [<harvestcraft:oliveoilitem> % 100, <harvestcraft:fruitbaititem> % 100],
+  <rustic:olives>, <liquid:oliveoil> * 250, 4000);
+
+mods.mia.harvestcraft.removePressingRecipe(<harvestcraft:oliveitem>);
+mods.mia.harvestcraft.addPressingRecipe(<rustic:olives>, <harvestcraft:oliveoilitem>, <harvestcraft:fruitbaititem>);
+
+// [Flour] in [Grinder] from crops that replaced purged Pam's ones
+mods.mia.harvestcraft.removeGrindingRecipe(<harvestcraft:beanitem>);
+mods.mia.harvestcraft.addGrindingRecipe(<randomthings:beans>, <harvestcraft:flouritem>, <harvestcraft:flouritem>);
+
+mods.mia.harvestcraft.removeGrindingRecipe(<harvestcraft:riceitem>);
+mods.mia.harvestcraft.addGrindingRecipe(<actuallyadditions:item_food:16>, <harvestcraft:flouritem>, <harvestcraft:flouritem>);
+
 // Fix recipe require seed instead of crop result
 recipes.removeByRecipeName('harvestcraft:gourmetvenisonpattyitem_itemsalt');
 recipes.addShapeless('gourmetvenisonpattyitem_itemsalt', <harvestcraft:gourmetvenisonpattyitem>, [
