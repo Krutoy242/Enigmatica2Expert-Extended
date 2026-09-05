@@ -10,7 +10,7 @@ import { replaceInFileSync } from 'replace-in-file'
 import Client from 'ssh2-sftp-client'
 import { $, fs, glob } from 'zx'
 
-import { confirm, formatError, getBoxForLabel } from './build_utils.js'
+import { confirm, DIST_DIR, formatError, getBoxForLabel } from './build_utils.js'
 
 const { readFileSync, writeFileSync, unlinkSync, existsSync, statSync } = fs
 
@@ -264,7 +264,7 @@ async function uploadOffline(
     return false
   }
 
-  const zipPath = join('dist', zipName)
+  const zipPath = join(DIST_DIR, zipName)
   if (!existsSync(zipPath)) {
     logUpdate.done()
     consola.warn(`Offline upload for "${conf.label}" skipped: modpack zip not built at "${zipPath}".\n  `
@@ -411,7 +411,9 @@ async function uploadOverrides(
     disableGlobs: true,
   })
 
-  if (!replaceResult.length || !replaceResult[0].hasChanged) {
+  // `numMatches`, not `hasChanged`: re-releasing the same version writes the banner
+  // it already holds, and an unchanged file is success, not a broken regex.
+  if (!replaceResult.length || !replaceResult[0].numMatches) {
     throw new Error(`Nothing replaced in ${mc2discordPath} — the "start = ..." line was not found. `
       + 'The override template may have changed; fix the regex before re-uploading.')
   }

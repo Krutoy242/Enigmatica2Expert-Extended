@@ -1,6 +1,6 @@
 ---
 name: reducer
-description: Toggle mods and restart/monitor Minecraft from the CLI. Use to enable/disable mods, reboot the instance after script/config/mod changes, locate a mod's jar, or auto-bisect which mod causes a load bug. Backed by `@mctools/reducer`.
+description: Toggle mods and restart/monitor Minecraft — client or the pack's dedicated server (`--server`) — from the CLI. Use to enable/disable mods, reboot the instance after script/config/mod changes, start/reduce the local test server, locate a mod's jar, or auto-bisect which mod causes a load bug. Backed by `@mctools/reducer`.
 ---
 
 Run via `pnpm reducer <command>` (alias for `mctools-reducer`). The CLI is the
@@ -109,6 +109,35 @@ checks both functions for **reachability** (replays the current full `debug.log`
 and **performance** (errors if a call averages > 2 s) — fix the config or pass
 `--force`. Sanity ceilings (per-test 5 min, total 10 min, crash/exit) end the
 search even if the config never fires.
+
+## Dedicated server — `--server`
+Every verb takes `--server`: the same commands, pointed at the server this pack
+builds in `~server/` (configured under `server:` in `reducer.config.yml`) instead
+of the client. It has its own hardlinked `mods/`, logs, crash reports and session
+lock, so a reduced server runs next to a full client and neither touches the
+other's files.
+```sh
+pnpm server                                        # = restart --server --detach
+pnpm reducer restart --server --only "ZenUtils"    # server with one mod (+deps)
+pnpm reducer status  --server                      # build/refresh ~server/, launch nothing
+pnpm reducer ready   --server                      # accepting players yet?
+pnpm reducer kill    --server                      # stop it; the client keeps running
+pnpm reducer ./conditions.ts --server              # bisect a server-side crash
+```
+- The mod set is **independent**: `--only`/`--disable`/`--full` rename links inside
+  `~server/mods` only, and a re-sync never re-enables what you disabled there.
+- Client-only jars are never linked in — the list is read from the pack's own
+  `server/server-setup-config.yaml` (`ignoreProject`) and `dev/.devonly.ignore`.
+- Readiness is the universal `Done (…)! For help` line plus the port from
+  `server.properties`. ProbeZS is client-side: no `pnpm mc-cmd` against a server.
+- Loader, JVM flags, RAM and Java come from `config/relauncher.json` and the
+  ServerStarter config; `--reinstall` re-runs the installer after a loader bump.
+- The JVM gets its own console window (`~server/run.ps1` re-runs it by hand);
+  `stop` typed there is the graceful shutdown — `kill --server` is a hard kill.
+- **Reduced set + the existing world**: the pack's server javaArgs carry
+  `-Dfml.queryResult=confirm`, so FML answers the missing-registry-entries prompt
+  itself — and that answer **deletes** those entries from `~server/<level-name>`.
+  Point `level-name` at a throwaway world before bisecting anything.
 
 ## Crash-safe sessions
 Only mod-set changes (renaming jars) are checkpointed to a lock file — a plain

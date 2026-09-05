@@ -8,7 +8,7 @@
       "type": "shell",
       "command": "node",
       "args": [
-        "E:/dev/mc-icons/build/cli.js",
+        "E:/dev/mc/icons/build/cli.js",
         "\"${relativeFile}\"",
         "--modpack=e2ee",
         "--treshold=1",

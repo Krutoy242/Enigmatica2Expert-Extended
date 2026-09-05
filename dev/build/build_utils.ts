@@ -1,6 +1,7 @@
 import type { Options } from 'fast-glob'
 import type ignore from 'ignore'
 
+import { tmpdir } from 'node:os'
 import { relative } from 'node:path'
 import process from 'node:process'
 
@@ -10,9 +11,26 @@ import chalk from 'chalk'
 import fast_glob from 'fast-glob'
 import fse from 'fs-extra'
 import logUpdate from 'log-update'
+import { resolve } from 'pathe'
 import { $ } from 'zx'
 
 const { rmSync } = fse
+
+/**
+ * Scratch space for the release build. Lives in the OS temp folder — `%TEMP%`
+ * on Windows, which Storage Sense empties on its own — so an aborted release
+ * leaves nothing behind on a real drive and no path here can rot the way a
+ * hardcoded `D:/mc_tmp` or a symlink to a moved cloud folder does.
+ * Fixed names, not `mkdtemp`: the release is resumable and a second run has to
+ * find the zips the first one already built.
+ */
+const TMP_ROOT = resolve(tmpdir(), 'e2e-e')
+
+/** Shallow clone of the tag being packed. Wiped at the start of every build. */
+export const BUILD_TMP = `${TMP_ROOT}/build/`
+
+/** Where the finished `.zip` files land. Never inside {@link BUILD_TMP}, which gets wiped. */
+export const DIST_DIR = `${TMP_ROOT}/dist`
 
 /** Shape of the extra fields errors carry in practice — axios responses, Node syscalls, `AggregateError`. */
 interface ErrorLike {
