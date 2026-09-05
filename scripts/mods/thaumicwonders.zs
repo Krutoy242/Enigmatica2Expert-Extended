@@ -85,12 +85,12 @@ for i, stone in transStones {
     stone.withDamage(
       maxDmg - getBonused(maxDmg / 4, maxDmg / 4)
     ),
-    [quartStone, quartStone]
+    [quartStone.noReturn(), quartStone.noReturn()]
   );
 
   // Actual combining recipe
   recipes.addHiddenShapeless('stone combining ' ~ i,
-    stone, [stone.anyDamage().marked('a'), stone.anyDamage().marked('b')],
+    stone, [stone.anyDamage().noReturn().marked('a'), stone.anyDamage().noReturn().marked('b')],
     stoneCombiningRecipeFunc, null
   );
 }
@@ -171,7 +171,7 @@ craft.make(<thaumicwonders:alchemist_stone>.withTag({ Unbreakable: 1 as byte } a
   '▬ e ▬',
   '□ o □',
   '▬ ▲ ▬'], {
-  'o': <thaumicwonders:alchemist_stone>, // Central Item
+  'o': <thaumicwonders:alchemist_stone>.noReturn(), // Central Item
   '▬': <ore:ingotGlitch>, // Glitch Infused Ingot
   'e': <thaumcraft:pech_wand>, // Pech Wand
   '□': <ore:plateMithrillium>, // Mithrillium Plate
@@ -183,7 +183,7 @@ craft.make(<thaumicwonders:transmuter_stone>.withTag({ Unbreakable: 1 as byte } 
   '▬ e ▬',
   '□ o □',
   '▬ ▲ ▬'], {
-  'o': <thaumicwonders:transmuter_stone>, // Central Item
+  'o': <thaumicwonders:transmuter_stone>.noReturn(), // Central Item
   '▬': <ore:ingotGlitch>, // Glitch Infused Ingot
   'e': <thaumcraft:pech_wand>, // Pech Wand
   '□': <ore:plateMithrillium>, // Mithrillium Plate
@@ -195,7 +195,7 @@ craft.make(<thaumicwonders:alienist_stone>.withTag({ Unbreakable: 1 as byte } as
   '▬ e ▬',
   '□ o □',
   '▬ ▲ ▬'], {
-  'o': <thaumicwonders:alienist_stone>, // Central Item
+  'o': <thaumicwonders:alienist_stone>.noReturn(), // Central Item
   '▬': <ore:ingotGlitch>, // Glitch Infused Ingot
   'e': <thaumcraft:pech_wand>, // Pech Wand
   '□': <ore:plateMithrillium>, // Mithrillium Plate
