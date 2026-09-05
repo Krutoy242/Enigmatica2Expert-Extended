@@ -507,5 +507,13 @@
   "files.associations": {
     "*.png.mcmeta": "json",
     "config/cofh/world/**/*.json": "properties"
-  }
+  },
+
+  // Commit with the Source Control box left empty and VS Code opens
+  // COMMIT_EDITMSG instead — where `dev/hooks/prepare-commit-msg.mjs` has
+  // already spelled out the shape the message needs to take.
+  // Nothing can pre-fill the small box itself; only an extension can write there.
+  "git.useEditorAsCommitInput": true,
+  "git.inputValidationLength": 80,
+  "git.inputValidationSubjectLength": 80
 }

@@ -1,0 +1,59 @@
+name: Commit message suggestions
+
+# Advisory only. The job never fails and never requests changes — it leaves one
+# comment explaining that these subject lines end up in the changelog players
+# read, and takes the comment back down once they do.
+#
+# `pull_request_target` because a fork PR gets a read-only token on
+# `pull_request` and could not comment at all. That trigger is normally risky,
+# but the contributed code never reaches the runner at all: the checkout is two
+# files of the base branch, and the pull request is read through the API.
+#
+# GitHub reads this file from the default branch, so edits only take effect for
+# forks once they land on `master`.
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number to analyse without commenting
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  # Keyed by event too, so a manual dry run cannot cancel the real run that is
+  # busy updating the comment on the very same pull request.
+  group: commit-lint-${{ github.event_name }}-${{ github.event.pull_request.number || inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  suggest:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr }}
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      # Only the two files the check itself is made of. Cloning this pack's
+      # history to read a handful of subject lines would cost minutes.
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          persist-credentials: false
+          sparse-checkout: |
+            .github/scripts
+            dev/hooks
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # No install step: dev/hooks/commit-lint.mjs has no dependencies.
+      - name: 💬 Say what would read better
+        run: node .github/scripts/commit-lint-pr.mjs
