@@ -469,6 +469,7 @@ for biome, input in {
   'minecraft:swampland'      : <twilightforest:twilight_log:2> | <biomesoplenty:log_1:6>,
   'minecraft:ice_flats'      : <biomesoplenty:hard_ice>,
   'minecraft:desert'         : Bucket('sand'),
+  'minecraft:forest'         : <minecraft:sapling>,
   'minecraft:jungle'         : <minecraft:vine>,
   'thaumcraft:magical_forest': <thaumcraft:vishroom>,
 } as IIngredient[string] {
