@@ -15,6 +15,7 @@ tooltips.lang.botania:lokiring=§aBuilding tool
 tooltips.lang.botania:odinring=§aExtra hearts, protects from drowning, suffocation, fire or starvation damage
 tooltips.lang.botania:thorring=§aIncreases area of Terra Shatterer
 tooltips.lang.computercraft:printout=§21)§r Craft §eComputerCraft§r's §ePrinter§r and place on top of §eComputer§r<br>§22)§r In computer enter §eLUA Interpreter§r (type lua)<br>§23)§r Execute §np=peripheral.wrap"top"§r<br>§24)§r Start new page with command §np.newPage()§r<br>§25)§r Print page with §np.endPage()§r
+tooltips.lang.congregamystica:blood_scribing_tools=§4Unavailable. §cEndless LP drain, crashes the server.
 tooltips.lang.farmingforblockheads:feeding_trough=§eDoesn't work if there are more than 8 animals
 tooltips.lang.ic2:quantum_chestplate=§bSpace+V§r to hover<br>§bShift+V§r to disable
 tooltips.lang.ic2:te:48=Disabled. Use the Advanced Scrap Factory

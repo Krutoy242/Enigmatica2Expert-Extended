@@ -4,12 +4,6 @@
   "path":"meta"}
 ]}
 
-,{"key":"CM_BLOOD_SCRIBING_TOOLS","ops":[
-  {"op":"replace",
-  "path":"meta",
-  "value": ["ROUND"]}
-]}
-
 ,{"key":"CM_CASTER_BOUND","ops":[
   {"op":"remove",
   "path":"meta"}

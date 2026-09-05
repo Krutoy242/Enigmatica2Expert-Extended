@@ -413,3 +413,8 @@ Purge(<deepmoblearning:glitch_infused_sword>).aspects();
 
 // Connector Upgrade Kit causing dupes and dissapearing of main hand when used from offhand
 Purge(<xnet:connector_upgrade>);
+
+// Bloody Scrivener's Tools, removed 2026-08-18
+// Visible: LP drain without repair, never breaks, damages player instead of failing
+// Hidden: LP cost scales with durability, server NPE when owner offline
+Purge(<congregamystica:blood_scribing_tools>).aspects();

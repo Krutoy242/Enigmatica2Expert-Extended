@@ -83,6 +83,7 @@ for item in [
   <botania:tornadorod>,
   <botania:waterrod>,
   <computercraft:printout>,
+  <congregamystica:blood_scribing_tools>,
   <contenttweaker:compressed_coral>,
   <contenttweaker:conglomerate_of_life>,
   <contenttweaker:conglomerate_of_sun>,

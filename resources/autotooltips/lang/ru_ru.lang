@@ -15,6 +15,7 @@ tooltips.lang.botania:lokiring=§aСтроительный инструмент
 tooltips.lang.botania:odinring=§aДополнительные сердца, защиты от утопления, удушья, пожара или ущерба для голода
 tooltips.lang.botania:thorring=§aУвеличивает область разрушителя Terra Shatter
 tooltips.lang.computercraft:printout=§51)§r Создайте §bPrinter §eComputer Craft§r и поместите его на верхнюю часть §eComputer§r<br>§52)§r В компьютере введите §eLUA Interpreter§r (введите lua)<br>§53)§r Выполните §np=peripheral.wrap"top"§r<br>§54)§r Для печати пустой страницы выполните §np.newPage();p.endPage()§r
+tooltips.lang.congregamystica:blood_scribing_tools=§4Недоступно. §cБесконечно тянет LP, крашит сервер.
 tooltips.lang.farmingforblockheads:feeding_trough=§eНе работает если больше 8 животных
 tooltips.lang.ic2:quantum_chestplate=§bПробел+V§r чтобы зависнуть<br>§bShift+V§r чтобы отключить
 tooltips.lang.ic2:te:48=Отключено. Используйте Advanced Scrap Factory

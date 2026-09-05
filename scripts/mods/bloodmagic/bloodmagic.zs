@@ -211,6 +211,9 @@ mods.bloodmagic.BloodAltar.removeRecipe(<minecraft:iron_sword>);
 mods.bloodmagic.BloodAltar.addRecipe(<bloodmagic:dagger_of_sacrifice>,
   <thaumcraft:thaumium_sword>, 1, 3000, 12, 12);
 
+// Bloody Scrivener's Tools, removed 2026-08-18 (see scripts/_init/purge.zs)
+mods.bloodmagic.BloodAltar.removeRecipe(<thaumcraft:scribing_tools>);
+
 // Remake recipe of blood tanks
 
 // [Blood Tank Tier 1] from [Glass][+2]

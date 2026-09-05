@@ -13,4 +13,9 @@
   {"op":"remove",
   "path":"key"}
 ]}
+
+,{"key":"CM_BLOOD_SCRIBING_TOOLS","ops":[
+  {"op":"remove",
+  "path":"key"}
+]}
 ]

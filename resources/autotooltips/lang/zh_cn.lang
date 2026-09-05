@@ -15,6 +15,7 @@ tooltips.lang.botania:lokiring=§a建筑帮手
 tooltips.lang.botania:odinring=§a提供生命上限加成，并阻止溺水、窒息、饥饿、火焰、摔落所带来的伤害
 tooltips.lang.botania:thorring=§a提升泰拉粉碎者的开采范围
 tooltips.lang.computercraft:printout=§21)§r 合成一个 §eComputerCraft§r 的 §e打印机§r 并放置在 §e电脑§r 的上方<br>§22)§r 打开电脑，打开 §eLUA 解释器§r (输入 lua)<br>§23)§r 执行 §np=peripheral.wrap"top"§r<br>§24)§r 使用 §np.newPage()§r 命令开辟新页<br>§25)§r 使用命令 §np.endPage()§r 打印这一页
+tooltips.lang.congregamystica:blood_scribing_tools=§4已被禁用。§c会无限抽取 LP 并导致服务端崩溃。
 tooltips.lang.farmingforblockheads:feeding_trough=§e在附近动物数量多于 8 时不生效
 tooltips.lang.ic2:quantum_chestplate=§b空格+V§r 悬停<br>§bShift+V§r 关闭
 tooltips.lang.ic2:te:48=已被禁用。请改用高级废料工厂(Advanced Scrap Factory)
