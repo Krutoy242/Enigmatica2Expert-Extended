@@ -653,6 +653,7 @@ scripts.process.compress(<ore:dustStrontium90> * 9, <qmd:strontium_90_block>); /
 scripts.process.compress(<ore:dustWitherite>    , <trinity:gem_witherite>); // [Witherite]
 scripts.process.compress(<ore:dustSteel>, <ore:sinteredSteel>.firstItem);
 scripts.process.compress(<ore:dustZirconia>, <ore:sinteredZirconia>.firstItem);
+scripts.process.compress(<ore:ingotGraphite>, <nuclearcraft:part:15>); // [Pyrolytic Carbon] from [Graphite Ingot]
 
 // ------------------------------------------------------------
 // Fluid Extractor replacement
@@ -661,6 +662,9 @@ scripts.process.compress(<ore:dustZirconia>, <ore:sinteredZirconia>.firstItem);
 scripts.process.squeeze([<ore:turfMoon>], <fluid:helium_3> * 250, 'only: TECentrifuge');
 mods.industrialforegoing.Extractor.add(<advancedrocketry:moonturf_dark>, <fluid:helium_3> * 5);
 mods.industrialforegoing.Extractor.add(<advancedrocketry:moonturf>, <fluid:helium_3> * 5);
+
+// [Soul]*100 + [Soulless Sand] from [Soul Sand] (was Fluid Extractor)
+scripts.process.squeeze([<minecraft:soul_sand>], <fluid:soul> * 100, 'except: FluidExtractor', <nuclearcraft:material_block:5>);
 
 // ------------------------------------------------------------
 // Electrolyzer replacement
@@ -674,6 +678,8 @@ scripts.process.electrolyze(<fluid:koh> * 333, [<fluid:potassium> * 72, <fluid:w
 scripts.process.electrolyze(<fluid:alumina> * 72, [<fluid:aluminum> * 144, <fluid:oxygen> * 750], null, elOpts);
 scripts.process.electrolyze(<fluid:sodium_chloride_solution> * 1332, [<fluid:hydrogen> * 1000, <fluid:chlorine> * 1000, <fluid:sodium_hydroxide_solution> * 1332], null, elOpts);
 scripts.process.electrolyze(<fluid:nitric_oxide> * 100, [<fluid:nitrogen> * 500, <fluid:oxygen> * 500], null, elOpts);
+// [Molten Holmium]*36 + [Molten Dysprosium]*36 + [Molten Beryllium]*72 from [Hodybef Vapor]
+scripts.process.electrolyze(<fluid:hodybef_vapor> * 250, [<fluid:holmium> * 36, <fluid:dysprosium> * 36, <fluid:beryllium> * 72], null, elOpts);
 
 // ------------------------------------------------------------
 // Remove worthless recipes
@@ -747,7 +753,6 @@ for alloy in [
 }
 
 // Pebble ingredients
-Purge(<nuclearcraft:part:15>).ores([<ore:ingotPyrolyticCarbon>]);
 Purge(<nuclearcraft:alloy:13>).ores([<ore:ingotSiliconCarbide>]);
 
 // [mod][data_type][name][count]

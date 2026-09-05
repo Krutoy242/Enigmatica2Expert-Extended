@@ -23,6 +23,14 @@ recipes.addShapeless('dustSSFAF', <ore:dustSSFAF>.firstItem * 6, [
 recipes.addShapeless('dustYBCO', <ore:dustYBCO>.firstItem * 3, [
   <ore:dustYttrium> * 1, <ore:dustBarium> * 2, <ore:dustCopperOxide> * 3]);
 
+// QMD replaces the Coal drop with Nichromite on Soulless Sandstone — restore [Crushed Nichromite]
+mods.nuclearcraft.RockCrusher.removeRecipeWithInput(<nuclearcraft:material_block:6>);
+mods.nuclearcraft.RockCrusher.addRecipe(<nuclearcraft:material_block:6>,
+  mods.nuclearcraft.ChanceItemIngredient.create(<nuclearcraft:gem_dust:12>, 80),
+  mods.nuclearcraft.ChanceItemIngredient.create(<nuclearcraft:gem_dust:13>, 60),
+  mods.nuclearcraft.ChanceItemIngredient.create(<nuclearcraft:gem_dust:14>, 40),
+  1.0, 1.0);
+
 // [BSCCO Wire]*6 from [Silver Plate][+1]
 mods.immersiveengineering.Blueprint.addRecipe('components', <qmd:part:4> * 6, Grid(['▲□□'], {
   '▲': <qmd:chemical_dust:1>, // BSCCO Dust
