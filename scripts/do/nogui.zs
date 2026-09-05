@@ -30,7 +30,9 @@
  *   blocked GUI is up, close it through the normal Esc path. "Blocked" =
  *     - a real server container is open (openContainer.windowId != 0 — this catches
  *       backpacks, machines, entity / item GUIs, not just blocks), AND
- *     - the current screen, if any, is not whitelisted.
+ *     - the current screen, if any, is not whitelisted, AND
+ *     - the container class itself is not whitelisted (`containerWhitelist`, for GUIs that
+ *       need a server container, e.g. the cosmetic armor inventory).
  *   The whitelisted client menus (pause, JEI, configs, own inventory) have windowId 0,
  *   so they are never touched.
  *
@@ -68,9 +70,17 @@ static whitelist as string[] = [
   'net.minecraft.client.gui.inventory.GuiInventory',   // the player's OWN inventory (needed to manage punched items)
 ];
 
-function isWhitelisted(guiClass as string) as bool {
-  for pattern in whitelist {
-    if (guiClass.matches(pattern)) return true;
+// Container class names (java regex, full-match) that stay openable.
+// Needed for GUIs that DO have a server container: `currentScreen` is null on the tick
+// such a GUI appears (FML's IGuiHandler path), so the screen whitelist above never sees
+// them — we match the live `openContainer` instead.
+static containerWhitelist as string[] = [
+  'lain.mods.cos.inventory.ContainerCosArmor', // CosmeticArmorReworked — else glasses worn in a cosmetic slot could never be taken off
+];
+
+function isListed(className as string, patterns as string[]) as bool {
+  for pattern in patterns {
+    if (className.matches(pattern)) return true;
   }
   return false;
 }
@@ -91,7 +101,16 @@ events.register(function (e as PlayerTickEvent) {
   if (e.phase != 'END') return;
 
   val player = client.player;
-  if (!isGlassesPlayer(player)) { blocking['v'] = false; return; }
+  if (!isGlassesPlayer(player)) {
+    blocking['v'] = false;
+    if (utils.DEBUG) {
+      var why = 'no glasses';
+      if (!isNull(player) && player.creative) why = 'creative';
+      val msgOff = '[nogui] OFF (' ~ why ~ ')';
+      if (isNull(lastLog['v']) || lastLog['v'] != msgOff) { lastLog['v'] = msgOff; print(msgOff); }
+    }
+    return;
+  }
 
   // Read the open container fresh each tick (no stale flag, no rapid-click race).
   val openContainer as Container = player.native.openContainer;
@@ -100,7 +119,7 @@ events.register(function (e as PlayerTickEvent) {
   // Current screen lets the class whitelist allow a screen even over an open container.
   // If currentScreen is unavailable it just stays null and we fall back to windowId.
   val screen = currentScreen;
-  if (!isNull(screen) && isWhitelisted(typeof(screen))) {
+  if (!isNull(screen) && isListed(typeof(screen), whitelist)) {
     blocking['v'] = false;
     if (utils.DEBUG) {
       val msgAllowed = '[nogui] ALLOWED ' ~ typeof(screen);
@@ -116,6 +135,16 @@ events.register(function (e as PlayerTickEvent) {
     if (utils.DEBUG) {
       val msgNoCont = '[nogui] ALLOWED (no server container, windowId=0)';
       if (isNull(lastLog['v']) || lastLog['v'] != msgNoCont) { lastLog['v'] = msgNoCont; print(msgNoCont); }
+    }
+    return;
+  }
+
+  // Whitelisted container (cosmetic armor, …) — allowed even though windowId != 0.
+  if (isListed(typeof(openContainer), containerWhitelist)) {
+    blocking['v'] = false;
+    if (utils.DEBUG) {
+      val msgCont = '[nogui] ALLOWED container ' ~ typeof(openContainer);
+      if (isNull(lastLog['v']) || lastLog['v'] != msgCont) { lastLog['v'] = msgCont; print(msgCont); }
     }
     return;
   }
