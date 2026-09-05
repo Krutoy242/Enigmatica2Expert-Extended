@@ -188,8 +188,6 @@ zenClass MixinTileEntityCrop {
     quality = (statGrowth + statGain + statResistance) / 93 * currentSize / maxSize, i.e. 0..1
     chance  = 1000 ^ (quality - 1): 0.1% at the very bottom, ~3% for an average full grown
     crop, 100% for a perfect 31/31/31 one at full size. 1000.0 is the steepness knob.
-    Global pow(), not Math.pow(): the formatter round trip rewrites the latter into the `**`
-    operator, which ZenScript has no rule for.
   */
   #mixin Redirect
   #{
