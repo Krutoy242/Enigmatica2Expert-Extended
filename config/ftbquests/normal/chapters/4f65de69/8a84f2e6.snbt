@@ -12,7 +12,8 @@
 		type: "item",
 		items: [{
 			item: "enderio:block_painter"
-		}]
+		}],
+		ignore_nbt: 1b
 	}],
 	rewards: [{
 		uid: "71ce7184",
