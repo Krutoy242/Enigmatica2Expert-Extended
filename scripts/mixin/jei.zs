@@ -2,7 +2,11 @@
 #modloaded jei
 #sideonly client
 
+import native.java.lang.Object;
+import native.mezz.jei.api.ingredients.IIngredientHelper;
 import native.mezz.jei.api.recipe.IRecipeCategory;
+
+import mixin.CallbackInfoReturnable;
 
 #mixin { targets: 'mezz.jei.recipes.RecipeRegistry' }
 zenClass MixinRecipeCategoryComparator {
@@ -94,5 +98,50 @@ zenClass MixinRecipeCategoryComparator {
       val bN = order.indexOf(b.modName);
       return (aN == -1 ? 99999 : aN) - (bN == -1 ? 99999 : bN);
     });
+  }
+}
+
+/*
+  Hide all filled containers from the item list.
+  Otherwise `config/jei/itemBlacklist.cfg` has to spell out every
+  container × fluid/mob/gas pair (~3200 lines), while empty containers stay visible.
+
+  Uid format is `<registry name>:<subtype>`: fluid containers report the
+  `empty;` subtype when empty, florbs/morbs/vials report no subtype at all.
+*/
+#mixin { targets: 'mezz.jei.config.Config' }
+zenClass MixinConfigFilledContainers {
+  #mixin Static
+  #mixin Inject
+  #{
+  #  method: 'isIngredientOnConfigBlacklist(Ljava/lang/Object;Lmezz/jei/api/ingredients/IIngredientHelper;)Z',
+  #  at: { value: 'HEAD' },
+  #  cancellable: true
+  #}
+  function hideFilledContainers(ingredient as Object, helper as IIngredientHelper, cir as CallbackInfoReturnable) as void {
+    val uid = helper.getUniqueId(ingredient) as string;
+    if (isNull(uid)) return;
+
+    // Weed-Ex and Compressed Air cells are usable items, not fluid storage
+    if (uid.startsWith('ic2:fluid_cell:')) {
+      if (
+        !uid.startsWith('ic2:fluid_cell:empty;')
+        && !uid.startsWith('ic2:fluid_cell:ic2air;')
+        && !uid.startsWith('ic2:fluid_cell:ic2weed_ex;')
+      ) cir.setReturnValue(true);
+      return;
+    }
+
+    if (uid.startsWith('openblocks:tank:')) {
+      if (!uid.startsWith('openblocks:tank:empty;')) cir.setReturnValue(true);
+      return;
+    }
+
+    if (
+      uid.startsWith('thermalexpansion:florb:')
+      || uid.startsWith('thermalexpansion:morb:')
+      || uid.startsWith('enderio:item_soul_vial:')
+      || uid.startsWith('mekanism:gastank:0:creative:')
+    ) cir.setReturnValue(true);
   }
 }
