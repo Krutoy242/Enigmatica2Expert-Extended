@@ -188,6 +188,7 @@ mods.tconstruct.Melting.removeRecipe(<liquid:signalum>, <thermalfoundation:mater
 mods.tconstruct.Melting.removeRecipe(<liquid:lumium>, <thermalfoundation:material:102>);
 mods.tconstruct.Melting.removeRecipe(<liquid:enderium>, <thermalfoundation:material:103>);
 mods.tconstruct.Melting.removeRecipe(<liquid:refinedobsidian>, <mekanism:otherdust:5>);
+mods.tconstruct.Melting.removeRecipe(<liquid:refined_obsidian>, <mekanism:otherdust:5>);
 // Removing the ability to smelt redstone/glowstone to make EnderIO alloys
 for item in <ore:dustRedstone>.items { mods.tconstruct.Melting.removeRecipe(<liquid:redstone>, item); }
 for item in <ore:blockRedstone>.items { mods.tconstruct.Melting.removeRecipe(<liquid:redstone>, item); }
