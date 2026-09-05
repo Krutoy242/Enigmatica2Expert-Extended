@@ -33,6 +33,7 @@ import { $, fs, glob, retry } from 'zx'
 import { commitAmend, confirm, formatError, formatRemoveResult, getIgnoredFiles, removeFiles, runAllLabeled, showStacks } from './build/build_utils.js'
 import { manageSFTP } from './build/sftp.js'
 import { generateChangelog } from './tools/changelog/changelog.js'
+import { ICON_CLI, iconifyFile } from './tools/mc-icons.mjs'
 
 const { existsSync, readFileSync } = fs
 
@@ -40,8 +41,8 @@ const { existsSync, readFileSync } = fs
 // console input handle eats the keystrokes of the next prompt.
 const $$ = $({ stdio: ['ignore', 'inherit', 'inherit'], verbose: true })
 
-// For children that do need a real stdin — mc-icons renders with Ink, which
-// requires a raw-mode-capable input stream.
+// For children that do need a real stdin — the mc-icons picker renders with
+// Ink, which requires a raw-mode-capable input stream.
 const $tty = $({ stdio: 'inherit', verbose: true })
 
 // For children that must not touch the console at all. MSYS `git push` leaves
@@ -52,7 +53,6 @@ const $pipe = $({ stdio: ['ignore', 'pipe', 'pipe'], verbose: true })
 
 const PATHS = {
   tmpDir           : 'D:/mc_tmp/',
-  mcIcons          : 'E:/dev/mc-icons/src/cli.ts',
   dist             : 'dist',
   devonlyIgnore    : 'dev/.devonly.ignore',
   versionTxt       : 'dev/version.txt',
@@ -204,7 +204,14 @@ async function runChangelog(release: Release) {
   })
 
   p.note('Iconify changelog and prepare files to git add', '📝')
-  await $tty`tsx ${PATHS.mcIcons} ${PATHS.changelogLatest} --no-short --modpack=e2ee --treshold=2`
+  const { replaced, problems } = await iconifyFile(PATHS.changelogLatest)
+  p.log.step(`Item names turned into icons: ${replaced}`)
+
+  // Names that could mean several items are picked by hand, with image previews
+  // — and that picker is interactive, so it lives in the mc-icons CLI. The
+  // commit-msg hook nags about them as they are written, so this is rare.
+  if (problems.length)
+    await $tty`node ${ICON_CLI} ${PATHS.changelogLatest}`
 
   // These files are normally hidden from git; unhide them for exactly one commit
   // and always hide them again, even if the commit below fails.

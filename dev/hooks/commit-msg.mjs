@@ -25,35 +25,43 @@ const DIM = sgr(2)
 const BOLD = sgr(1)
 const OFF = sgr(0)
 
-const file = process.argv[2]
-if (!file) {
-  console.error('commit-msg: no message file given')
+// Wrapped in a function only because the icon check awaits mc-icons, and
+// top-level await is off-limits in this repo's lint config.
+main().catch((err) => {
+  console.error(`commit-msg: ${err?.message ?? err}`)
   process.exit(1)
-}
+})
 
-const raw = readFileSync(file, 'utf8')
-const { skipped, errors, warnings } = lintCommit(raw)
+async function main() {
+  const file = process.argv[2]
+  if (!file) {
+    console.error('commit-msg: no message file given')
+    process.exit(1)
+  }
 
-if (skipped) process.exit(0)
+  const raw = readFileSync(file, 'utf8')
+  const { skipped, errors, warnings } = lintCommit(raw)
 
-const message = stripComments(raw)
-for (const name of iconWarnings(message))
-  warnings.push(`mc-icons cannot resolve [${name}] on its own — it will stop the release run for a manual pick.`)
+  if (skipped) process.exit(0)
 
-for (const warning of warnings)
-  console.error(`${YELLOW}!${OFF} ${warning}`)
+  const message = stripComments(raw)
+  for (const problem of await iconProblems(message))
+    warnings.push(iconWarning(problem))
 
-if (!errors.length) {
-  if (warnings.length)
-    console.error(`${DIM}  Committed anyway — these are suggestions.${OFF}`)
-  process.exit(0)
-}
+  for (const warning of warnings)
+    console.error(`${YELLOW}!${OFF} ${warning}`)
 
-console.error('')
-for (const error of errors)
-  console.error(`${RED}✖${OFF} ${error}`)
+  if (!errors.length) {
+    if (warnings.length)
+      console.error(`${DIM}  Committed anyway — these are suggestions.${OFF}`)
+    process.exit(0)
+  }
 
-console.error(`
+  console.error('')
+  for (const error of errors)
+    console.error(`${RED}✖${OFF} ${error}`)
+
+  console.error(`
 ${BOLD}This line becomes a CHANGELOG bullet that players read.${OFF}
   ${DIM}<type>(<scope>): <emoji><what changed>${OFF}
 
@@ -65,15 +73,32 @@ ${BOLD}This line becomes a CHANGELOG bullet that players read.${OFF}
   Bypass once with:  git commit --no-verify${OFF}
 `)
 
-process.exit(1)
+  process.exit(1)
+}
 
-/** Costs a second, so it only runs when the message actually names something. */
-function iconWarnings(message) {
+/** Only runs when the message actually names something. */
+async function iconProblems(message) {
   if (!message.includes('[')) return []
   try {
-    return unresolvedIcons(message)
+    return await unresolvedIcons(message)
   }
   catch {
     return []
   }
+}
+
+/** An ambiguous name is worth more than a complaint: show what to write instead. */
+function iconWarning({ query, hints, total, guessed }) {
+  if (!hints.length)
+    return `mc-icons doesn't know ${query} — it will stay plain text in the changelog.`
+
+  const lines = hints.map(h => `    ${h}`)
+  if (total > hints.length) lines.push(`    …and ${total - hints.length} more`)
+
+  const head = guessed
+    ? `mc-icons doesn't know ${query} — did you mean:`
+    : `${query} means ${total} different items — it will stop the release run `
+      + `for a manual pick. Write one of:`
+
+  return `${head}\n${DIM}${lines.join('\n')}${OFF}`
 }

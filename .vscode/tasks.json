@@ -6,10 +6,9 @@
     {
       "label": "mc-icons",
       "type": "shell",
-      "command": "pnpm",
+      "command": "node",
       "args": [
-        "tsx",
-        "E:/dev/mc-icons/src/cli.ts",
+        "E:/dev/mc-icons/build/cli.js",
         "\"${relativeFile}\"",
         "--modpack=e2ee",
         "--treshold=1",
