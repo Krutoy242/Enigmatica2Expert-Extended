@@ -22,7 +22,7 @@ install:
   # supports variables: {{@loaderversion@}} and {{@mcversion@}}
   # For forge: "http://files.minecraftforge.net/maven/net/minecraftforge/forge/{{@mcversion@}}-{{@loaderversion@}}/forge-{{@mcversion@}}-{{@loaderversion@}}-installer.jar"
   # For Fabric: "https://maven.fabricmc.net/net/fabricmc/fabric-installer/{{@loaderversion@}}/fabric-installer-{{@loaderversion@}}.jar"
-  installerUrl: 'https://github.com/CleanroomMC/Cleanroom/releases/download/0.6.8-alpha/cleanroom-0.6.8-alpha-installer.jar'
+  installerUrl: 'https://github.com/CleanroomMC/Cleanroom/releases/download/0.6.11-alpha/cleanroom-0.6.11-alpha-installer.jar'
 
   # Installer Arguments
   # These Arguments have to be passed to the installer
@@ -108,6 +108,7 @@ install:
       - 521590 # Item Highlighter
       - 532127 # Legendary Tooltips
       - 616190 # JEI Utilities
+      - 624960 # Nothirium
       - 624967 # RenderLib
       - 650242 # File Director (only for optifine)
       - 782070 # Startup Timer
@@ -122,12 +123,14 @@ install:
       - 1121489 # AE2 Crafting Tree - Legacy
       - 1132293 # Backpack Display
       - 1147522 # Backpack Opener
+      - 1153019 # Naughthirium
       - 1154099 # Crash Assistant
       - 1214490 # Cleanroom Relauncher
       - 1220460 # Gnetum
       - 1234162 # Lumenized
       - 1329068 # MorphOverlay
       - 1331377 # Armored Arms
+      - 1501813 # Nothirium LittleTiles Patch
 
     # The base path where the server should be installed to, ~ for current path
   baseInstallPath: ~
@@ -221,7 +224,7 @@ launch:
   # For Forge 1.12-: "forge-{{@mcversion@}}-{{@loaderversion@}}-universal.jar"
   # For Forge 1.13+: "forge-{{@mcversion@}}-{{@loaderversion@}}.jar"
   # For Fabric: "fabric-server-launch.jar"
-  startFile: cleanroom-0.6.8-alpha.jar
+  startFile: cleanroom-0.6.11-alpha.jar
 
   # This is the command how the server is supposed to be started
   # For <1.16 it should be

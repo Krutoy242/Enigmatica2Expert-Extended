@@ -1,10 +1,6 @@
 
 #General settings of Crash Assistant mod.
 [general]
-	#Anyways log will be uploaded to mclo.gs, but with this option you can wrap link to gnomebot.dev for better formatting.
-	#If help_link equals 'CHANGE_ME', this value will be ignored and gnomebot.dev used.
-	#Supported values: mclo.gs / gnomebot.dev
-	upload_to = "gnomebot.dev"
 	#By changing this value you can disable creating "crash_assistant_localization_overrides" folder and placing "README.md" file there.
 	generate_localization_overrides_folder_with_readme = true
 	#By default, crash assistant will get the value for the current language from the overrides folder, then from the jar.
@@ -27,19 +23,31 @@
 	#Supported values: https://github.com/KostromDan/Crash-Assistant/blob/1.19-1.20.1/app/src/main/java/dev/kostromdan/mods/crash_assistant/app/logs_analyser/LogType.java
 	#Usage: ["CRASH_REPORT", "LOG"]
 	logs_priority_overrides = []
+	#If enabled, Crash Assistant sends metadata about uploaded logs to api.kostromdan.dev after upload.
+	#This does not upload log contents to our server: logs are still uploaded to mclo.gs.
+	#This metadata is needed so paste.kostromdan.dev can switch between logs uploaded from the same crash in the browser,
+	#and can check/show the Minecraft UUID (for piracy check purposes) for those logs even if a particular uploaded log does not contain it.
+	#This works independently from general.wrap_link.
+	send_uploaded_logs_data_to_kostromdan_dev = true
 	#Close old CrashAssistantApp if it's still running when starting a new instance of Minecraft, to avoid confusing player with window from old crash.
 	kill_old_app = true
+	#Logs are always uploaded to mclo.gs. This option only controls which link is copied after the upload.
+	#This is needed to make viewing logs more convenient, especially on mobile.
+	#Supported values:
+	#   - mclo.gs: copies the original mclo.gs link.
+	#   - gnomebot.dev: wraps the mclo.gs link through gnomebot.dev.
+	#   - kostromdan.dev (recommended): wraps the mclo.gs link through paste.kostromdan.dev and copies the short p.kdan.dev link.
+	wrap_link = "kostromdan.dev"
 	#By default our process is scanning for terminated processes(they can appear with delay) and after finish of scan enabling upload buttons.
 	#This option can prevent this and enable individual upload buttons immediately after crash.
 	#However can confuse users and make them clicking individual upload buttons instead of Upload All Button.
 	prevent_upload_buttons_delay = false
-	#Before uploading the first log, requires the user to accept the privacy policy.
-	#Disabling this option may be illegal in some countries if you are modpack creator. Disable at your own risk.
-	enable_privacy_policy_acceptance = true
 	#If true, Crash Assistant will pop up even if the presence of win_event log is the only sign of a crash.
 	#Can be false positive for some users, since they can have some unrelated spam in the windows event error log.
 	win_event_is_crash = false
-	#If options.txt doesn't exist, the default language will be used.
+	#Fallback interface language used when general.language_source cannot provide an available language.
+	#Use a language key such as en_us or ru_ru.
+	#If this language is also unavailable, Crash Assistant falls back to en_us.
 	default_lang = "en_us"
 	#Generates "logs/stderr_stream.log" with stderr stream.
 	#Since many launchers are not saving this info, which is extremely helpful for debugging some crashes.
@@ -56,6 +64,15 @@
 	#This will prevent this by replacing dot's in them to dot-like symbol.
 	#Anti censoring only versions, IP's are kept censored.
 	enable_mclogs_anti_ip_like_version_censorer = true
+	#Controls where the standalone Crash Assistant app gets the language for its interface.
+	#When this code runs inside the Minecraft process, the language is always read from Minecraft options.txt and this option is ignored.
+	#Supported values:
+	#   - SYSTEM (default): Uses the operating system language. Regional variants are matched to an available translation.
+	#     For example, en_US, en_GB, and other English locales use en_us when it is the available English translation.
+	#   - GAME: Uses the language from the lang entry in the Minecraft options.txt file.
+	#   - A language key such as en_us or ru_ru: Forces that language and ignores both the system and Minecraft languages.
+	#If the selected source cannot provide an available language, general.default_lang is used.
+	language_source = "SYSTEM"
 
 #A simplified GUI that hides the logs list until the user opts into Expert Mode.
 [simple_mode]
@@ -128,6 +145,7 @@
 	#$PROBLEMATIC_FRAME$ - hs_err frame
 	#$ANALYSIS_RESULT$ - Analysis results
 	#$MODLIST_DIFF$ - Modlist changes
+	#$CUSTOM/name$ - Entries added by scripts to the named custom slot
 	message_structure = "$HEADER$$TEXT_UNDER_CRASHED$$PREFIX$$LOGS$\n$PROBLEMATIC_FRAME$$ANALYSIS_RESULT$$MODLIST_DIFF$"
 	#Color modified mods count/analysis in msg with ANSI.
 	#Can be needed to be disabled if issues are reported to something not supporting ANSI codeblocks, like GitHub.
