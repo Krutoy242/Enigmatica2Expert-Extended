@@ -7,6 +7,8 @@ import native.net.minecraft.util.ResourceLocation;
 import native.net.minecraft.village.MerchantRecipe;
 import native.net.minecraft.village.MerchantRecipeList;
 import native.net.minecraft.entity.item.EntityItem;
+import native.net.minecraft.world.EnumDifficulty;
+import native.net.minecraft.world.World;
 
 #mixin { targets: 'vazkii.quark.world.entity.EntityArchaeologist' }
 zenClass MixinEntityArchaeologist {
@@ -94,5 +96,32 @@ zenClass MixinEntityFrogDrop {
     this0.world.spawnEntity(entityitem);
 
     return entityitem;
+  }
+}
+
+/*
+  Quark kills untamed Foxhounds and forbids their spawn on Peaceful difficulty.
+  Both checks read World.getDifficulty(), so lie to them and Foxhounds stay alive.
+*/
+#mixin { targets: 'vazkii.quark.world.entity.EntityFoxhound' }
+zenClass MixinEntityFoxhoundPeaceful {
+  // onLivingUpdate() -> setDead() when Peaceful and not tamed
+  #mixin Redirect
+  #{
+  #  method: 'func_70636_d',
+  #  at: { value: 'INVOKE', target: 'Lnet/minecraft/world/World;func_175659_aa()Lnet/minecraft/world/EnumDifficulty;' }
+  #}
+  function keepAliveOnPeaceful(world as World) as EnumDifficulty {
+    return EnumDifficulty.EASY;
+  }
+
+  // getCanSpawnHere() -> false when Peaceful
+  #mixin Redirect
+  #{
+  #  method: 'func_70601_bi',
+  #  at: { value: 'INVOKE', target: 'Lnet/minecraft/world/World;func_175659_aa()Lnet/minecraft/world/EnumDifficulty;' }
+  #}
+  function allowSpawnOnPeaceful(world as World) as EnumDifficulty {
+    return EnumDifficulty.EASY;
   }
 }

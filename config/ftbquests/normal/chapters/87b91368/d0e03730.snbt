@@ -13,7 +13,6 @@
 	dependencies: [
 		"dcb947b4"
 	],
-	or_tasks: 1b,
 	tasks: [{
 		uid: "002a7d1c",
 		type: "interaction",

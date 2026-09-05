@@ -175,6 +175,18 @@ scripts.do.build.entity.add(<entity:quark:crab>, [
   x: <contenttweaker:conglomerate_of_life>,
 }).shift(0, 1, 0);
 
+// Foxhound never spawns on Peaceful difficulty, give a way to build one
+scripts.do.build.entity.add(<entity:quark:foxhound>, [
+  [
+    'x',
+  ], [
+    'a',
+  ],
+], {
+  a: <additionalcompression:coal_compressed:1>,
+  x: <contenttweaker:conglomerate_of_life>,
+}).shift(0, 1, 0);
+
 for fakeIronBlock in <ore:blockFakeIron>.items {
   scripts.do.build.entity.add(<entity:emberroot:rainbow_golem>, [
     [
