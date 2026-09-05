@@ -278,6 +278,15 @@ addBackDisplay(<my_precious:rubble>, function (item) {
 });
 
 /*
+Recorded replication pattern
+*/
+addBackDisplay(<ic2:crystal_memory>, function (item) {
+  val recorded = scripts.lib.mod.ic2.getCrystalMemoryContent(item);
+  if (isNull(recorded)) return [] as IItemStack[];
+  return [recorded] as IItemStack[];
+});
+
+/*
 Trinity Containers
 */
 addBackDisplay(
