@@ -32,3 +32,10 @@ config/relauncher.json filter=relauncher_local
 # ℹ️ Remove random values that change on every load.
 # › git config filter.enderio_cleanup.clean "sed 's/S:optifineConfirmed=.*/S:optifineConfirmed=0/; s/default: [I@[a-f0-9]*$/default: [I@00000000/"
 config/enderio/enderio.cfg filter=enderio_cleanup
+
+# ℹ️ A dedicated server writes these files without the comments of client-only
+# ℹ️ options — drop exactly those comments (add new keys here as they show up).
+# › git config filter.serverside_cfg.clean "perl -0777 -pe 's/(?:^[ \t]*\r?\n)?(?:^[ \t]*#[^\n]*\r?\n)+(?=(?: {4}(?:S:hiveLightLevel|B:particleFX|S:blockSelectorModifierKeys|B:hideRedundantNegativeSpace)| {8}B:active(?:_knowledge_fragments)?| {12}(?:B:energy|B:hints|I:speed)| {16}(?:B:enabled|S:[xy]Position))=)//mg'"
+config/astralsorcery.cfg filter=serverside_cfg
+config/forestry/common.cfg filter=serverside_cfg
+config/reccomplex.cfg filter=serverside_cfg
