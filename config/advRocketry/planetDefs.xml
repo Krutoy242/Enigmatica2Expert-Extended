@@ -42,6 +42,7 @@
 			<generateCaves>true</generateCaves>
 			<rainMarker>-1</rainMarker>
 			<hasOxygen>false</hasOxygen>
+			<oceanBlock>minecraft:air</oceanBlock>
 		</planet>
 		<planet name="Venus" DIMID="102" customIcon="lava">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
