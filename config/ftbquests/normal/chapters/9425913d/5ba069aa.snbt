@@ -21,18 +21,6 @@
 			tag: {
 				type: "common"
 			}
-		},
-		{
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "food"
-			}
-		},
-		{
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "decor"
-			}
 		}],
 		count: 32L
 	}],

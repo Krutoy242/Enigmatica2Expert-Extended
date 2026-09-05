@@ -21,18 +21,6 @@
 			tag: {
 				type: "uncommon"
 			}
-		},
-		{
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "storage"
-			}
-		},
-		{
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "materials"
-			}
 		}],
 		count: 24L
 	}],

@@ -21,12 +21,6 @@
 			tag: {
 				type: "rare"
 			}
-		},
-		{
-			id: "ftbquests:lootcrate",
-			tag: {
-				type: "generators"
-			}
 		}],
 		count: 16L
 	}],
