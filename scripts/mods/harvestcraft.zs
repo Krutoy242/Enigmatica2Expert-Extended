@@ -50,7 +50,7 @@ injectInFile(cfgPath, 'S:"Custom Rarity" <', '         >',
 
 return `// Managed ${result.length} Harvestcraft items`
 } */
-// Managed 639 Harvestcraft items
+// Managed 637 Harvestcraft items
 /**/
 
 // Pam's Lemonade
