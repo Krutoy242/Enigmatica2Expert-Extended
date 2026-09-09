@@ -32,11 +32,12 @@ import { $, fs, glob, retry } from 'zx'
 
 import { cleanroomPatches, patchServerSetupConfig, SERVER_SETUP_CONFIG } from './automation/server_config.js'
 import { BUILD_TMP, commitAmend, confirm, DIST_DIR, formatError, formatRemoveResult, getIgnoredFiles, removeFiles, runAllLabeled, showStacks } from './build/build_utils.js'
+import { loadReleaseSnapshots, manifestMismatches, MCINSTANCE, readDevonlyIgnore, unignoredMods } from './build/devonly.js'
 import { manageSFTP } from './build/sftp.js'
 import { generateChangelog } from './tools/changelog/changelog.js'
 import { ICON_CLI, iconifyFile } from './tools/mc-icons.mjs'
 
-const { existsSync, readFileSync } = fs
+const { existsSync } = fs
 
 // stdin is `ignore`d: these commands never read from us, and a child holding the
 // console input handle eats the keystrokes of the next prompt.
@@ -62,7 +63,6 @@ const $q = $({ quiet: true })
 const PATHS = {
   tmpDir           : BUILD_TMP,
   dist             : DIST_DIR,
-  devonlyIgnore    : 'dev/.devonly.ignore',
   versionTxt       : 'dev/version.txt',
   changelogLatest  : 'CHANGELOG-latest.md',
   serverSetupConfig: SERVER_SETUP_CONFIG,
@@ -71,7 +71,7 @@ const PATHS = {
   enderModpackCfg  : 'config/endermodpacktweaks/modpack.cfg',
   modlist          : 'config/crash_assistant/modlist.json',
   skipWorktree     : [
-    'minecraftinstance.json',
+    MCINSTANCE,
     'config/crash_assistant/modlist.json',
   ],
 } as const
@@ -145,8 +145,7 @@ async function runAutomation() {
 }
 
 async function resolveVersion(): Promise<Release> {
-  const described  = await $q`git describe --tags --abbrev=0`.nothrow()
-  const oldVersion = described.exitCode === 0 ? described.stdout.trim() : ''
+  const oldVersion = await lastTag()
 
   if (!oldVersion)
     p.log.warn('No tags found — cannot suggest a version based on history.')
@@ -207,6 +206,8 @@ async function runChangelog(release: Release) {
     [PATHS.changelogLatest]  : () => generateChangelog(PATHS.changelogLatest),
   })
 
+  await noteUnignoredMods()
+
   p.note('Iconify changelog and prepare files to git add', '📝')
   const { replaced, problems } = await iconifyFile(PATHS.changelogLatest)
   p.log.step(`Item names turned into icons: ${replaced}`)
@@ -249,6 +250,30 @@ async function commitVersionBump() {
     await commitAmend('chore: 🧱CHANGELOG update, version bump')
   else
     p.log.warn('Nothing staged — version files already match. Skipping commit.')
+}
+
+/**
+ * Announce mods that join the release only because their `.devonly.ignore` entry
+ * was dropped.
+ *
+ * Nothing else in the run mentions them — the mod itself did not change, only
+ * the decision to ship it. They are in the changelog's mod list now, and this
+ * line is the cue to fill in their `Reason` column while the file is open.
+ */
+async function noteUnignoredMods() {
+  const tag = await lastTag()
+  if (!tag) return
+
+  try {
+    const mods = unignoredMods(await loadReleaseSnapshots(`tags/${tag}`, msg => p.log.warn(msg)))
+    if (mods.length)
+      p.log.info(`No longer dev-only since ${tag} — now shipping, and listed as added:\n${mods.join('\n')}`)
+  }
+  catch (error) {
+    // The changelog itself already survived without this; a failed extra check
+    // must not abort a release.
+    p.log.warn(`Could not compare the dev-only list against ${tag}: ${errMessage(error)}`)
+  }
 }
 
 async function createTag(release: Release) {
@@ -303,6 +328,8 @@ async function buildZips(release: Release) {
     if (!await confirm('Build the zip anyway?')) process.exit(1)
   }
 
+  await checkShippedModList(resolve(PATHS.tmpDir, 'manifest.json'))
+
   // 7z will not create the output directory for us.
   await fs.mkdir(resolve(PATHS.dist), { recursive: true })
 
@@ -311,6 +338,23 @@ async function buildZips(release: Release) {
 
   p.note('Create server zip', '📥 ')
   await $$({ cwd: 'server' })`7z a -bso0 ${release.serverZip} .`
+}
+
+/**
+ * Stop a zip whose `manifest.json` disagrees with the mod list the changelog was
+ * built from.
+ *
+ * The manifest is the only thing that tells the launcher what to download, and a
+ * different step writes it. Editing `.devonly.ignore` without re-running that
+ * step ships a pack that silently lacks the mods just announced as added.
+ */
+async function checkShippedModList(manifestPath: string) {
+  const problems = await manifestMismatches(manifestPath)
+  if (!problems.length) return
+
+  p.log.warn(`manifest.json does not match the release mod list:\n${problems.join('\n')}\n\n`
+    + 'Run `pnpm dev:manifest`, commit, and re-tag before building.')
+  if (!await confirm('Build the zip anyway?')) process.exit(1)
 }
 
 /** Strip dev-only files from the fresh clone and hoist `manifest.json` out of `overrides/`. */
@@ -450,6 +494,12 @@ async function revParse(ref: string): Promise<string> {
   return result.exitCode === 0 ? result.stdout.trim() : ''
 }
 
+/** Newest tag reachable from HEAD — the release this one is compared against. `''` when the repo has none. */
+async function lastTag(): Promise<string> {
+  const described = await $q`git describe --tags --abbrev=0`.nothrow()
+  return described.exitCode === 0 ? described.stdout.trim() : ''
+}
+
 /** Index writes race with editors and file watchers on Windows; one short retry clears it. */
 function gitRetry(run: () => ProcessPromise) {
   return retry(2, '1s', run)
@@ -532,15 +582,6 @@ async function updateServerSetupConfig(release: Release) {
   ])
 
   for (const warning of warnings) p.log.warn(warning)
-}
-
-function readDevonlyIgnore(): string {
-  try {
-    return readFileSync(PATHS.devonlyIgnore, 'utf8')
-  }
-  catch (error) {
-    throw new Error(`Cannot read the dev-only ignore list "${PATHS.devonlyIgnore}": ${errMessage(error)}`)
-  }
 }
 
 /** Drop dev-only mods from the crash-assistant modlist so it matches the shipped `mods/`. */

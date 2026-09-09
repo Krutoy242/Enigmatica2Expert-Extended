@@ -6,17 +6,16 @@ import type { Preset } from 'conventional-changelog'
 import type { CommitGroup, CommitKnownProps, FinalContext, Options as WriterOptions } from 'conventional-changelog-writer'
 import type { ParserStreamOptions } from 'conventional-commits-parser'
 
-import type { Minecraftinstance } from '../../../mc-tools/packages/curseforge/src/minecraftinstance.js'
-
 import { existsSync, readFileSync } from 'node:fs'
 
 import { dirname, resolve } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { parse } from 'yaml'
-import { $, fs } from 'zx'
+import { $ } from 'zx'
 
 import { generateModsList } from '../../../mc-tools/packages/modlist/src/index.js'
+import { loadReleaseSnapshots } from '../../build/devonly.js'
 
 // ESM-safe __dirname
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -52,7 +51,13 @@ function readAsset(...segments: string[]): string {
 
 const config: Config = parse(readAsset('config.yml')) as Config
 
-// Extract mod changes between tags
+/**
+ * The `## Mods changes` section.
+ *
+ * Both sides are filtered by their own `.devonly.ignore`, so the list answers
+ * "what changed for players" rather than "what changed in the dev instance" —
+ * see {@link loadReleaseSnapshots}.
+ */
 async function getModChanges() {
   const key = process.env.CF_API_KEY
   if (!key) {
@@ -66,19 +71,13 @@ async function getModChanges() {
   }
   const oldVersion = described.stdout.trim()
 
-  const [fresh, old] = await Promise.all([
-    fs.readJson('minecraftinstance.json') as Promise<Minecraftinstance>,
-    (async () => {
-      // `.stdout`, not `String(res)`: the latter appends stderr, which would
-      // make `JSON.parse` choke on any warning git decides to print.
-      const res = await $`git show tags/${oldVersion}:minecraftinstance.json`
-      return JSON.parse(res.stdout) as Minecraftinstance
-    })(),
-  ])
+  const { fresh, old, ignore, oldIgnore } = await loadReleaseSnapshots(`tags/${oldVersion}`)
 
   return generateModsList({
     fresh,
     old,
+    ignore,
+    oldIgnore,
     key,
     template: readAsset('modlist.md'),
   })
