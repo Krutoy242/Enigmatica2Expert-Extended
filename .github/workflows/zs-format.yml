@@ -27,9 +27,8 @@ on:
         required: true
         type: string
 
-permissions:
-  contents: read
-  pull-requests: write
+# Nothing outside the one job below needs a token at all.
+permissions: {}
 
 # Keyed by event as well, so a `workflow_dispatch` dry-run and the real run for
 # the same pull request never cancel one another.
@@ -42,8 +41,11 @@ jobs:
     if: >-
       github.event_name == 'workflow_dispatch'
       || !contains(github.event.pull_request.labels.*.name, 'skip-format')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
+    permissions:
+      contents: read # reads the pull request's head and its base tree
+      pull-requests: write # reviewdog posts the formatting suggestions
     env:
       PUPPETEER_SKIP_DOWNLOAD: 'true'
       HUSKY: '0'
@@ -53,12 +55,16 @@ jobs:
     steps:
       - name: 🔎 Resolve pull request
         id: pr
+        # Through the environment rather than inline: a `${{ }}` inside a `run`
+        # block is pasted in as shell source before the shell ever sees it.
+        env:
+          PR: ${{ github.event.pull_request.number || inputs.pr }}
         run: |
-          gh api "repos/$GITHUB_REPOSITORY/pulls/${{ github.event.pull_request.number || inputs.pr }}" \
+          gh api "repos/$GITHUB_REPOSITORY/pulls/$PR" \
             --jq '"number=\(.number)\nhead_sha=\(.head.sha)\nbase_sha=\(.base.sha)"' >> "$GITHUB_OUTPUT"
 
       - name: 📥 Checkout the contributed code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: refs/pull/${{ steps.pr.outputs.number }}/head
           fetch-depth: 1
@@ -93,9 +99,9 @@ jobs:
           git -c user.name=ci -c user.email=ci@local commit -qam 'ci: pin trusted tooling' || true
           git status --short
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
@@ -122,7 +128,7 @@ jobs:
           PR_NUMBER: ${{ steps.pr.outputs.number }}
         run: pnpm tsx .github/scripts/zs-format-review.ts prepare
 
-      - uses: reviewdog/action-setup@v1
+      - uses: reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f # v1.5.0
         if: env.DRY_RUN != 'true'
         with:
           reviewdog_version: v0.21.0

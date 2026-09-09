@@ -21,9 +21,8 @@ on:
         required: true
         type: string
 
-permissions:
-  contents: read
-  pull-requests: write
+# Nothing outside the one job below needs a token at all.
+permissions: {}
 
 concurrency:
   # Keyed by event too, so a manual dry run cannot cancel the real run that is
@@ -33,8 +32,11 @@ concurrency:
 
 jobs:
   suggest:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
+    permissions:
+      contents: read # sparse checkout of the two files below
+      pull-requests: write # leaves — and later removes — one advisory comment
     env:
       GITHUB_TOKEN: ${{ github.token }}
       PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr }}
@@ -42,7 +44,7 @@ jobs:
     steps:
       # Only the two files the check itself is made of. Cloning this pack's
       # history to read a handful of subject lines would cost minutes.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           submodules: false
           persist-credentials: false
@@ -50,7 +52,7 @@ jobs:
             .github/scripts
             dev/hooks
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 

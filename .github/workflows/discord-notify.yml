@@ -17,16 +17,28 @@ permissions:
 
 jobs:
   discord-notify:
-    runs-on: ubuntu-22.04 # ubuntu-22.04 required: newer runners break mdimg markdown-to-PNG rendering
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          # Nothing here pushes; `gh` carries its own token.
+          persist-credentials: false
+
+      # This is why the job used to be pinned to ubuntu-22.04. Chrome's sandbox
+      # needs unprivileged user namespaces, and 24.04's AppArmor profile denies
+      # them, so mdimg's renderer aborts with "No usable sandbox!" — and mdimg
+      # still exits 0, which would post the announcement with no images at all.
+      # One sysctl lifts the restriction for the rest of the job.
+      - name: 🧯 Unblock unprivileged user namespaces for Chrome
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
       - name: 📃 Prepare release
         id: prepare
-        uses: ./.github/actions/prepare-release
+        uses: $/.github/actions/prepare-release
         with:
           tag: ${{ inputs.tag || github.event.release.tag_name }}
+          chrome: 'true'
 
       - name: 🖼️ Generate images from changelog sections
         run: |
@@ -35,15 +47,21 @@ jobs:
           I=0
           for f in part-*; do
             [ -f "$f" ] && [ -s "$f" ] || continue
-            npx mdimg -i "$f" -o "changelog_part_$I.png" -w 800 --css githubDark
+            pnpm exec mdimg -i "$f" -o "changelog_part_$I.png" -w 800 --css githubDark
             I=$((I+1))
           done
 
+          # mdimg reports a dead renderer only in its own stdout, so check the
+          # files rather than the exit code.
+          ls changelog_part_*.png >/dev/null 2>&1 \
+            || { echo "::error::mdimg rendered nothing — see the log above"; exit 1; }
+
       - name: 📤 Upload changelog images artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: discord-images-${{ steps.prepare.outputs.tag_name }}
           path: changelog_part_*.png
+          retention-days: 30
 
       - name: 🖼️ ➡️ Send Discord message
         env:

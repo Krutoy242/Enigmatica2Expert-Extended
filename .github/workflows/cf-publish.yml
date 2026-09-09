@@ -17,26 +17,30 @@ permissions:
 
 jobs:
   cf-publish:
-    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          # Nothing here pushes; `gh` and the CurseForge upload carry their own
+          # tokens, so the checkout has no reason to leave one on disk.
+          persist-credentials: false
 
       - name: 📃 Prepare release
         id: prepare
-        uses: ./.github/actions/prepare-release
+        uses: $/.github/actions/prepare-release
         with:
           tag: ${{ inputs.tag || github.event.release.tag_name }}
 
       - name: 📋 Generate HTML changelog
-        run: npx tsx .github/scripts/curseforge-md-to-html.ts latest_release.md
+        run: pnpm exec tsx .github/scripts/curseforge-md-to-html.ts latest_release.md
 
       - name: 📤 Upload changelog artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: changelog-html-${{ steps.prepare.outputs.tag_name }}
           path: latest_release.html
+          retention-days: 30
 
       - name: 🅱 Determine release type
         id: meta
@@ -54,14 +58,21 @@ jobs:
           TAG: ${{ steps.prepare.outputs.tag_name }}
         run: gh release download "$TAG" --pattern "*.zip"
 
+      # The changelog is multi-line HTML, so it needs a heredoc with a delimiter
+      # the content cannot possibly contain — hence the random one.
       - name: 📋 Read HTML changelog
         id: html
-        uses: andstor/file-reader-action@v1
-        with:
-          path: latest_release.html
+        run: |
+          EOF="EOF_$(openssl rand -hex 16)"
+          {
+            echo "contents<<$EOF"
+            cat latest_release.html
+            echo # a file with no trailing newline would swallow the delimiter
+            echo "$EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: 💻 Upload Client
-        uses: itsmeow/curseforge-upload@v3
+        uses: itsmeow/curseforge-upload@1493c4408b462f2ad8beb600f09c505e0c158397 # v3.1.2
         id: client
         with:
           release_type: ${{ steps.meta.outputs.release_type }}
@@ -75,7 +86,7 @@ jobs:
           changelog: ${{ steps.html.outputs.contents }}
 
       - name: 🖥️ Upload Server
-        uses: itsmeow/curseforge-upload@v3
+        uses: itsmeow/curseforge-upload@1493c4408b462f2ad8beb600f09c505e0c158397 # v3.1.2
         with:
           release_type: ${{ steps.meta.outputs.release_type }}
           display_name: E2E-Extended-${{ steps.prepare.outputs.tag_name }}-server

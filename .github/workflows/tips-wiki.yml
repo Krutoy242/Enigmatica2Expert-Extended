@@ -11,22 +11,28 @@ concurrency:
   group: tips-wiki
   cancel-in-progress: true
 
-permissions:
-  contents: write
+# Nothing outside the one job below needs a token at all.
+permissions: {}
 
 jobs:
   update-tips:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
+    permissions:
+      contents: write # pushes to the wiki repository; the pack itself is only read
     # Override `.npmrc` reporter=silent so pnpm output stays verbose for CI debugging
     env:
       npm_config_reporter: default
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          # The wiki is cloned with its own tokenised URL below, so the pack
+          # checkout never needs a credential of its own.
+          persist-credentials: false
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
@@ -42,7 +48,7 @@ jobs:
           git clone "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.wiki.git" Enigmatica2Expert-Extended.wiki
 
       - name: 📝 Generate wiki tips
-        run: npx tsx .github/scripts/tips_md.ts
+        run: pnpm exec tsx .github/scripts/tips_md.ts
 
       - name: 📤 Commit and push to wiki
         run: |

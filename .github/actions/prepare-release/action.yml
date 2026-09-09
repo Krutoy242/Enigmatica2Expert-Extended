@@ -6,6 +6,12 @@ inputs:
     description: Release tag to fetch (empty falls back to latest)
     required: false
     default: ''
+  chrome:
+    description: |
+      Download Chrome for Puppeteer. Only the changelog-to-PNG path needs a
+      browser; leaving this off saves the release publisher a ~150 MB download.
+    required: false
+    default: 'false'
 
 outputs:
   tag_name:
@@ -38,9 +44,11 @@ runs:
         echo "html_url=$(echo "$JSON" | jq -r .url)"     >> "$GITHUB_OUTPUT"
         echo "$JSON" | jq -r .body > latest_release.md
 
-    - uses: pnpm/action-setup@v4
+    - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
 
-    - uses: actions/setup-node@v4
+    # `node-version` must stay ahead of the `packageManager` pin in
+    # `package.json`: pnpm 11 refuses to start on anything below Node 22.13.
+    - uses: actions/setup-node@v7
       with:
         node-version: 24
         cache: pnpm
@@ -49,6 +57,9 @@ runs:
       shell: bash
       run: pnpm install --prod --frozen-lockfile --ignore-scripts
 
+    # `--ignore-scripts` above skips Puppeteer's own postinstall download, so the
+    # browser has to be fetched by hand — and only when a step actually renders.
     - name: 🌐 Install Chrome for Puppeteer
+      if: inputs.chrome == 'true'
       shell: bash
-      run: npx puppeteer browsers install chrome
+      run: pnpm exec puppeteer browsers install chrome
