@@ -173,7 +173,7 @@ Icon | Summary
 
 Mods that present only in `Extended` version:
 
-278 mods in this section.
+279 mods in this section.
 
 Icon | Summary
 ----:|:-------
@@ -341,6 +341,7 @@ Icon | Summary
 <img src="https://media.forgecdn.net/avatars/thumbnails/538/146/30/30/637862893538783773.png"            > |                          [**JEI Utilities**](https://www.curseforge.com/minecraft/mc-mods/jei-utilities)                <sup><sub>JEI-Utilities-1.12.2-0.2.15.jar                  </sub></sup><br>Added more enhancements to JEI
 <img src="https://media.forgecdn.net/avatars/thumbnails/551/59/30/30/637888242565991470.png"             > |                              [**ModularUI**](https://www.curseforge.com/minecraft/mc-mods/modularui)                    <sup><sub>modularui-3.1.6.jar                              </sub></sup><br>A GUI library to ease the process of creating vanilla style GUIs
 <img src="https://media.forgecdn.net/avatars/thumbnails/549/381/30/30/637886534374395410.png"            > |                              [**Nothirium**](https://www.curseforge.com/minecraft/mc-mods/nothirium)                    <sup><sub>Nothirium-1.12.2-0.4.9-beta.jar                  </sub></sup><br>Improve chunk rendering performance
+<img src="https://media.forgecdn.net/avatars/thumbnails/549/461/30/30/637886733123040054.png"            > |                              [**RenderLib**](https://www.curseforge.com/minecraft/mc-mods/renderlib)                    <sup><sub>RenderLib-1.12.2-1.4.5.jar                       </sub></sup><br>Library for entity rendering
 <img src="https://media.forgecdn.net/avatars/thumbnails/1197/189/30/30/638773173284175448.png"           > |                     [**Roughly Enough IDs**](https://www.curseforge.com/minecraft/mc-mods/reid)                         <sup><sub>RoughlyEnoughIDs-2.3.1.jar                       </sub></sup><br>Removes the biome, item, &amp; block ID limits using the 1.13+ format
 <img src="https://media.forgecdn.net/avatars/thumbnails/557/657/30/30/637904734114975779.png"            > |                  [**Inventory Bogo Sorter**](https://www.curseforge.com/minecraft/mc-mods/inventory-bogosorter)         <sup><sub>bogosorter-1.6.4.jar                             </sub></sup><br>A highly configurable and advanced inventory sorter mod
 <img src="https://media.forgecdn.net/avatars/thumbnails/559/283/30/30/637908604129051982.png"            > |             [**Crafting Tweaks Unofficial**](https://www.curseforge.com/minecraft/mc-mods/crafting-tweaks-unofficial)   <sup><sub>CraftingTweaks_1.12.2-9.0.1.jar                  </sub></sup><br>A Continuation of Crafting Tweaks for 1.12.2

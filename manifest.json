@@ -331,6 +331,7 @@
     {"projectID":616190,"fileID":8528497,"___name":"JEI Utilities"                           ,"downloadUrl":"https://edge.forgecdn.net/files/8528/497/JEI-Utilities-1.12.2-0.2.15.jar","required":true},
     {"projectID":624243,"fileID":7929464,"___name":"ModularUI"                               ,"downloadUrl":"https://edge.forgecdn.net/files/7929/464/modularui-3.1.6.jar","required":true},
     {"projectID":624960,"fileID":7441674,"___name":"Nothirium"                               ,"downloadUrl":"https://edge.forgecdn.net/files/7441/674/Nothirium-1.12.2-0.4.9-beta.jar","required":true},
+    {"projectID":624967,"fileID":6461209,"___name":"RenderLib"                               ,"downloadUrl":"https://edge.forgecdn.net/files/6461/209/RenderLib-1.12.2-1.4.5.jar","required":true},
     {"projectID":629017,"fileID":8029704,"___name":"Roughly Enough IDs"                      ,"downloadUrl":"https://edge.forgecdn.net/files/8029/704/RoughlyEnoughIDs-2.3.1.jar","required":true},
     {"projectID":632327,"fileID":8231600,"___name":"Inventory Bogo Sorter"                   ,"downloadUrl":"https://edge.forgecdn.net/files/8231/600/bogosorter-1.6.4.jar","required":true},
     {"projectID":633720,"fileID":3852709,"___name":"Crafting Tweaks Unofficial"              ,"downloadUrl":"https://edge.forgecdn.net/files/3852/709/CraftingTweaks_1.12.2-9.0.1.jar","required":true},
