@@ -25,7 +25,7 @@ scripts.lib.loot.removePools(location,
 scripts.lib.loot.removeEtriesFromPool(location, 'main', [
   'actuallyadditions:drillCore',
 ]);
-scripts.lib.loot.removeEtriesFromPool('enderio:chests/abandoned_mineshaft', 'EnderIO Base', [
+scripts.lib.loot.removeEtriesFromPool('enderio:chests/abandoned_mineshaft', 'Ender IO', [
   'enderio:item_alloy_ingot:6',
   'enderio:block_exit_rail:0',
 ]);
