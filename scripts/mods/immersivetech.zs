@@ -77,34 +77,24 @@ mods.immersivetechnology.MeltingCrucible.addRecipe(<liquid:diamond> * 5994, <ore
 // Buff boiler output x50
 // --------------
 
-// mods.immersivetechnology.BoilerLiquid.removeFuel(ILiquidStack input);
-mods.immersivetechnology.BoilerLiquid.removeFuel(<liquid:biodiesel>); // 10 / 10t
-mods.immersivetechnology.BoilerLiquid.removeFuel(<liquid:diesel>);    // 14 / 10t
-mods.immersivetechnology.BoilerLiquid.removeFuel(<liquid:gasoline>);  // 50 / 10t
+// mods.immersivetechnology.Boiler.removeFuel(ILiquidStack input);
+mods.immersivetechnology.Boiler.removeFuel(<liquid:biodiesel>); // 10
+mods.immersivetechnology.Boiler.removeFuel(<liquid:diesel>);    // 50
+mods.immersivetechnology.Boiler.removeFuel(<liquid:gasoline>);  // 7
 
-// mods.immersivetechnology.BoilerLiquid.addFuel(ILiquidStack input, int time, double heatPerTick, double targetHeat);
-// Default heatPerTick is 0.1, targetHeat 600.0
-mods.immersivetechnology.BoilerLiquid.addFuel(<liquid:biodiesel> * 10, 1, 1.0, 600.0);
-mods.immersivetechnology.BoilerLiquid.addFuel(<liquid:diesel>    * 50, 1, 1.0, 600.0);
-mods.immersivetechnology.BoilerLiquid.addFuel(<liquid:gasoline>  *  7, 1, 1.0, 600.0);
+// mods.immersivetechnology.Boiler.addFuel(ILiquidStack input, int time, double heat);
+// Default heat is 0.25
+mods.immersivetechnology.Boiler.addFuel(<liquid:biodiesel> * 10, 1, 100);
+mods.immersivetechnology.Boiler.addFuel(<liquid:diesel>    * 50, 1, 100);
+mods.immersivetechnology.Boiler.addFuel(<liquid:gasoline>  *  7, 1, 100);
 
-// mods.immersivetechnology.BoilerTank.removeRecipe(ILiquidStack input);
-mods.immersivetechnology.BoilerTank.removeRecipe(<liquid:water>);
-mods.immersivetechnology.BoilerTank.removeRecipe(<liquid:distwater>);
+// mods.immersivetechnology.Boiler.removeRecipe(ILiquidStack input);
+mods.immersivetechnology.Boiler.removeRecipe(<liquid:water>);
+mods.immersivetechnology.Boiler.removeRecipe(<liquid:distwater>);
 
-// mods.immersivetechnology.BoilerTank.addRecipe(ILiquidStack output, ILiquidStack input, int time, double requiredHeat);
-mods.immersivetechnology.BoilerTank.addRecipe(<liquid:steam> * 2500, <liquid:water>     * 1000, 10, 600.0);
-mods.immersivetechnology.BoilerTank.addRecipe(<liquid:steam> * 4000, <liquid:distwater> * 1000, 10, 600.0);
-
-// Solid Boiler burns x16 faster (config `boilerSolid_burnTime_divider`), so its
-// fuels must heat as fast as the liquid ones or they never reach 600.
-// mods.immersivetechnology.BoilerSolid.removeFuel(IItemStack input);
-mods.immersivetechnology.BoilerSolid.removeFuel(<minecraft:coal:*>);
-mods.immersivetechnology.BoilerSolid.removeFuel(<immersiveengineering:material:6>); // Coal Coke
-
-// mods.immersivetechnology.BoilerSolid.addFuel(IIngredient input, double heatPerTick, double targetHeat);
-mods.immersivetechnology.BoilerSolid.addFuel(<minecraft:coal:*>, 1.0, 600.0);
-mods.immersivetechnology.BoilerSolid.addFuel(<ore:fuelCoke>, 1.0, 600.0);
+// mods.immersivetechnology.Boiler.addRecipe(ILiquidStack output, ILiquidStack input, int time);
+mods.immersivetechnology.Boiler.addRecipe(<liquid:steam> * 2500, <liquid:water>     * 1000, 10);
+mods.immersivetechnology.Boiler.addRecipe(<liquid:steam> * 4000, <liquid:distwater> * 1000, 10);
 
 // --------------
 // Buff solar x5

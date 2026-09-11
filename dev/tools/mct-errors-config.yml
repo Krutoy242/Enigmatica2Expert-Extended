@@ -200,10 +200,6 @@ ignore:
           - /Recipe has no output\. Minecraft minecraft:air_0[\s\S]+minecraft:iron_ingot[\s\S]+minecraft:slime_ball[\s\S]+minecraft:chest/
           # Reported https://github.com/Project-RT/RandomTweaker/issues/92
           - 'Found a broken recipe: ink.ikx.rt.impl.mods.jei.recipe.DynamicRecipesWrapper'
-          # REIM built against an older Immersive Technology; the whole JEI plugin dies,
-          # so all REIM multiblock structure pages are missing.
-          # Reported https://github.com/BananaFructa/RatherEnoughImmersiveMultiblocks/issues/6
-          - 'Failed to register mod plugin: class BananaFructa.reim.JEIPlugin'
       - base:
           - '/java\.io\.FileNotFoundException: biomesoplenty:textures.items.gem\.png/'
 
@@ -244,10 +240,6 @@ ignore:
           - 'Static binding violation: PRIVATE @Overwrite method func_76615_h in * cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded'
           # Universal Tweaks Warns:
           - /Method overwrite conflict for getRenderBoundingBox in mixins.bugfixes.blocks.banner.json:UTBannerBoundingBoxMixin from mod \w+, previously written by meldexun.renderlib.mixin.MixinTileEntityBanner. Skipping method./
-          # Tweaked Petroleum @Overwrites update(Z)V, so the equal-priority redirect is refused.
-          # Only the pumpjack pipe-check tweak is lost, nothing crashes.
-          # Reported https://github.com/tgstyle/Immersive-Convergence/issues/5
-          - 'Mixin apply for mod immersiveconvergence failed mixins.immersiveconvergence.ip.json:ip.common.MixinIPPumpjackPipes*'
           # Developers usually lazy to add refmaps
           - Reference map '*' for * could not be read. If this is a development environment you can ignore this message
       # REAuth complaining about JAVA version
