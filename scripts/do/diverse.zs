@@ -88,7 +88,7 @@ function addRecipe(
   val recipeFunction = getRecipeFunction(result, charge);
 
   // Actual recipe
-  recipes.addShaped(recipeName, result.withTag({ completed: 1 as byte }), [
+  recipes.addHiddenShaped(recipeName, result.withTag({ completed: 1 as byte }), [
     [(empty | result.anyDamage()).marked('0'), all.marked('1'), all.marked('2')],
     [all.marked('3'), all.marked('4'), all.marked('5')],
     [all.marked('6'), all.marked('7'), all.marked('8')],
