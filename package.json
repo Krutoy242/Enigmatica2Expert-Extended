@@ -28,6 +28,7 @@
     "prepare": "husky",
     "reducer": "mctools-reducer",
     "server": "mctools-reducer restart --server --detach",
+    "server:errors": "mctools-errors --config=dev/tools/mct-errors-config.yml --log=\"~server/logs/debug.log\"",
     "tellme-prune": "tsx dev/tellme-prune.ts",
     "tips:sync": "tsx dev/hooks/tips.ts",
     "ct-syntax": "bash -c \"tsx .agents/skills/test-mc/run-cmd.ts 'ct clean' 'ct syntax' && ! rg '\\\\[(ERROR|FATAL|WARNING)\\\\]' crafttweaker.log\"",

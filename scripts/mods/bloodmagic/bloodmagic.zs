@@ -432,7 +432,7 @@ function magicAlloy(output as IItemStack, map as string, ingrs as IIngredient[st
 }
 
 /* Inject_js(
-_.uniqBy([
+flatTable(_.uniqBy([
   ...loadJson('exports/recipes/nuclearcraft_alloy_furnace.json').recipes,
   ...loadJson('exports/recipes/AlloySmelter.json').recipes,
 ]
@@ -493,8 +493,9 @@ _.uniqBy([
       if (fresh) inputSerialized.push(`${char}: ${s.commandString}`)
     })
 
+    const isComment = mapChars.length > 6
     return [
-      mapChars.length > 6 ? '//' : '',
+      isComment ? '//' : '',
       `magicAlloy(`,
       outputDust.commandString,
       ...(r.output.items[0].amount == 1
@@ -502,11 +503,14 @@ _.uniqBy([
         : [` * `, r.output.items[0].amount]),
       `, '`,
       `${mapChars}',`,
-      `{${inputSerialized.join(', ')}});`,
+      isComment
+        ? `{${inputSerialized.join(', ')}});`
+        : `{ ${inputSerialized.join(', ')} });`,
     ]
   })
   .filter(Boolean)
   .sort((a, b) => naturalSort(String(a?.slice(1)), String(b?.slice(1)))), r => String(r))
+).replace(/^ {2}/gm, '')
 )*/
 magicAlloy(<advancedrocketry:productdust:1> * 2, 'AB',            { A: <libvulpes:productdust:7>, B: <thermalfoundation:material:71> });
 //magicAlloy(<advancedrocketry:productdust>   * 3, 'AAAAAAABBB',    {A: <thermalfoundation:material:68>, B: <libvulpes:productdust:7>});

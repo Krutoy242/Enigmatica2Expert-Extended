@@ -7,10 +7,15 @@
 
 # ##############################
 
-# We can cut only partial of log if we dont want to list all the errors
+# We can cut only partial of log if we dont want to list all the errors.
+# Cut everything from the moment the world starts loading — those errors belong to
+# the save, not to the pack. `FMLServerAboutToStartEvent` is the first line of that
+# phase and is logged identically by the client (integrated server) and the dedicated
+# server, so one boundary fits both logs. `Server Pinger` covers the client that never
+# loads a world and only pings the multiplayer list.
 boundaries:
   from:
-  to: '\[Server thread|\[Server Pinger' # Server thread started when player joining world
+  to: 'Sending event FMLServerAboutToStartEvent|\[Server Pinger'
 
 # RegEx to match log. Matches all Warnings and Errors in debug.log.
 # Fragments are concatenated with no separator (joined source must be a valid JS RegExp).
@@ -26,7 +31,8 @@ match:
   # Or normal single/multi-line errors (continuation lines that don''t start with `[`)
   - '|([\s\S\n](?!^\[))+'
   # Optional trailing ASM "Index: N Listeners:" block that follows some errors
-  - '(\r?\n\[\d+:\d+:\d+\] \[Client thread\/ERROR\] \[FML\]: Index: \d+ Listeners:\r?\n(\[\d+:\d+:\d+\] \[Client thread\/ERROR\] \[FML\]: \d+: .+\r?\n?)+)?)'
+  # (thread is `Client thread` on the client and `Server thread` on the dedicated server)
+  - '(\r?\n\[\d+:\d+:\d+\] \[[^\]]+\/ERROR\] \[FML\]: Index: \d+ Listeners:\r?\n(\[\d+:\d+:\d+\] \[[^\]]+\/ERROR\] \[FML\]: \d+: .+\r?\n?)+)?)'
 
 # Before output errors, all this replaces would be applied to resulted element
 replace:
@@ -631,3 +637,26 @@ ignore:
           - /Thread.#\d+,AstralSorcery Patreon Effect Loader,\d+,main.[\s\S]+com\.google\.gson\.JsonSyntaxException/
       - brandonscore:
           - /.Pi Reported Error.. An error occurred while reading download list for mod .+ See console for stacktrace./
+
+  # ##############################
+  # Dedicated server only (~server/logs/debug.log) — never seen on the client
+  # ##############################
+
+  - FML:
+      # A dedicated server loads no `assets/*/lang`, so every mod "misses" its English lang file
+      - Missing English translation for *
+      # EnderIO declares a version check handler it never implements. Cosmetic, client hides it
+      - The declared version check handler method checkModLists on network mod id *
+      # PlusTiC injects two capabilities into its own ClientProxy, absent on a server
+      - Unable to inject capability landmaster.plustic.*
+  - net.minecraft.server.dedicated.DedicatedServer:
+      # Local test server runs with online-mode=false on purpose
+      - /(OFFLINE\/INSECURE MODE|make no attempt to authenticate|without internet access|set "online-mode")/
+  - CleanMix:
+      # StellarCore patches a client-only class; the mixin is simply skipped on a server
+      - '@Mixin target net.minecraft.client.renderer.block.model.ModelResourceLocation was not found *'
+  - teslacorelib:
+      # Multipart event class is client-side, annotation scan cant find it on a server
+      - Annotated class 'net.ndrei.teslacorelib.blocks.multipart.MultiPartBlockEvents' not found!
+  - enderio:
+      - '@Devs: See github for dev env setup; set INDEV if needed.'
