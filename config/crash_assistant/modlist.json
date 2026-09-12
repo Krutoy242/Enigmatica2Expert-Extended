@@ -1386,14 +1386,6 @@
     "name": "Immersive Cables",
     "version": "1.3.2"
   },
-  "ImmersiveConvergence-1.12.2-1.0.107-release.jar": {
-    "curseForgeHash": 2107949812,
-    "jarName": "ImmersiveConvergence-1.12.2-1.0.107-release.jar",
-    "modId": "immersiveconvergence",
-    "modrinthHash": "0629442cba9dcb1644c79549d90a578b0bf6ac1b",
-    "name": "Immersive Convergence",
-    "version": "1.0.107"
-  },
   "ImmersiveEngineering-0.12-98.jar": {
     "curseForgeHash": 3177475693,
     "jarName": "ImmersiveEngineering-0.12-98.jar",
@@ -1845,13 +1837,13 @@
     "name": "McJtyLib",
     "version": "1.12-3.5.4"
   },
-  "MCT-ImmersiveTechnology-1.12.2-1.11.209-release.jar": {
-    "curseForgeHash": 1680359994,
-    "jarName": "MCT-ImmersiveTechnology-1.12.2-1.11.209-release.jar",
+  "MCT-ImmersiveTechnology-1.12.2-1.10.206-release.jar": {
+    "curseForgeHash": 4268503762,
+    "jarName": "MCT-ImmersiveTechnology-1.12.2-1.10.206-release.jar",
     "modId": "immersivetech",
-    "modrinthHash": "60804a69d17fd5b1fc0e7df65064137488b72426",
+    "modrinthHash": "c9d1cca975d3cc73847d8bd1e6d971ebde4b99ff",
     "name": "Immersive Technology",
-    "version": "1.11.209"
+    "version": "1.10.205"
   },
   "MCT-SmelteryIO-1.12.2-1.3.72-release.jar": {
     "curseForgeHash": 2277953014,
@@ -2534,6 +2526,14 @@
     "name": "Example Mod",
     "version": "${version}"
   },
+  "RenderLib-1.12.2-1.4.5.jar": {
+    "curseForgeHash": 97899486,
+    "jarName": "RenderLib-1.12.2-1.4.5.jar",
+    "modId": "renderlib",
+    "modrinthHash": "da121ecfd63ea615de9a26276614bb0ab9306d95",
+    "name": "RenderLib",
+    "version": "1.4.5"
+  },
   "requious-0.14.jar": {
     "curseForgeHash": 2377872346,
     "jarName": "requious-0.14.jar",
@@ -2742,13 +2742,13 @@
     "name": "Squeezer Patch",
     "version": "1.12.2-1.0.0"
   },
-  "StellarCore-1.6.0.jar": {
-    "curseForgeHash": 2011773440,
-    "jarName": "StellarCore-1.6.0.jar",
+  "StellarCore-1.6.1.jar": {
+    "curseForgeHash": 514128861,
+    "jarName": "StellarCore-1.6.1.jar",
     "modId": "stellar_core",
-    "modrinthHash": "e5de9e6543fcf4aa7bf8d864a0c6d335becb3cb6",
+    "modrinthHash": "61d9fb52800f6f541de99fa6e3d441e9f574d1f4",
     "name": "Stellar Core",
-    "version": "1.6.0"
+    "version": "1.6.1"
   },
   "StorageDrawers-1.12.2-5.5.3.jar": {
     "curseForgeHash": 535207350,
