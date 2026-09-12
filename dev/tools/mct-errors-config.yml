@@ -550,6 +550,10 @@ ignore:
       # Reported: https://github.com/Akiak7/RecurrentComplexVolts/issues/3
       - net.minecraft.tileentity.TileEntity:
           - 'Skipping BlockEntity with id '
+      # Local `hei_bookmarks.ini` recipe bookmark with an input no other bookmark crafts.
+      # RecipeChain.rebuildGraph() warns, then adds it as a leaf node anyway. Player-local, harmless.
+      - Had Enough Items:
+          - Failed to get connections for *
 
   - ERROR:
       - Mekanism:
