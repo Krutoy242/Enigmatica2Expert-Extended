@@ -152,46 +152,6 @@
       }
     },
     {
-      "weight": 1.0,
-      "min": 1,
-      "max": 12,
-      "item": {
-        "id": "animania:cooked_prime_beef",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 10,
-      "item": {
-        "id": "animania:cooked_prime_steak",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 13,
-      "item": {
-        "id": "animania:cooked_prime_pork",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 12,
-      "item": {
-        "id": "animania:cooked_prime_bacon",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
       "weight": 0.16315889358520508,
       "min": 1,
       "max": 1,
@@ -217,46 +177,6 @@
       "max": 1,
       "item": {
         "id": "darkutils:charm_sleep",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.5354365706443787,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "immersiveengineering:faraday_suit_feet",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.5354365706443787,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "immersiveengineering:faraday_suit_head",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.5354365706443787,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "immersiveengineering:faraday_suit_chest",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.5354365706443787,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "immersiveengineering:faraday_suit_legs",
         "damage": 0,
         "count": 1
       }

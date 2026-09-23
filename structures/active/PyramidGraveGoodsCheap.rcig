@@ -121,46 +121,6 @@
         "damage": 35,
         "count": 1
       }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 10,
-      "item": {
-        "id": "animania:cooked_prime_beef",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 8,
-      "item": {
-        "id": "animania:cooked_prime_steak",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 8,
-      "item": {
-        "id": "animania:cooked_prime_pork",
-        "damage": 0,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.0,
-      "min": 1,
-      "max": 8,
-      "item": {
-        "id": "animania:cooked_prime_bacon",
-        "damage": 0,
-        "count": 1
-      }
     }
   ],
   "dependencyExpression": ""

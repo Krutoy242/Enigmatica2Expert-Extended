@@ -103,16 +103,6 @@
       }
     },
     {
-      "weight": 22.68061065673828,
-      "min": 11,
-      "max": 23,
-      "item": {
-        "id": "thermalfoundation:material",
-        "damage": 22,
-        "count": 1
-      }
-    },
-    {
       "weight": 0.0,
       "min": 10,
       "max": 23,
