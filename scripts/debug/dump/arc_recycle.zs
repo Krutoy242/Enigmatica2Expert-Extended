@@ -22,10 +22,25 @@ function clearCache() as void {
   cacheData = {} as double[IIngredient][string];
 }
 
+function getTotalAmount(outputs as double[IIngredient]) as double {
+  var total = 0.0;
+  for k, v in outputs {
+    total = total + v as double;
+  }
+  return total;
+}
+
 function replaceInCache(key as IIngredient, outputs as double[IIngredient]) as void {
   if (isNull(key)) return;
   val cmd = key.commandString;
-  if (!(cacheData has cmd)) cacheKeys.add(key);
+  if (cacheData has cmd) {
+    val oldTotal = getTotalAmount(cacheData[cmd]);
+    val newTotal = getTotalAmount(outputs);
+    if (newTotal <= oldTotal + 0.00001) return;
+  }
+  else {
+    cacheKeys.add(key);
+  }
   cacheData[cmd] = outputs;
 }
 
@@ -89,23 +104,29 @@ function trimOutputs(outputs as double[IIngredient], maxSlots as int) as double[
   while totalSlots > maxSlots {
     var minKey as IIngredient = null;
     var minVal = 0.0;
+    var minCmd = '';
     var first = true;
     for k, v in pool {
       val vv = v as double;
+      val cmd = stackCmd(k);
       if (first) {
         minKey = k;
         minVal = vv;
+        minCmd = cmd;
         first = false;
       }
-      else if (vv < minVal) {
-        minKey = k;
-        minVal = vv;
+      else {
+        val diff = vv - minVal;
+        if (diff < -0.00001 || (diff <= 0.00001 && cmd > minCmd)) {
+          minKey = k;
+          minVal = vv;
+          minCmd = cmd;
+        }
       }
     }
     val newPool = {} as double[IIngredient];
-    val minCmd = minKey.commandString;
     for k, v in pool {
-      if (k.commandString != minCmd) newPool[k] = v;
+      if (stackCmd(k) != minCmd) newPool[k] = v;
     }
     pool = newPool;
     totalSlots = 0;
@@ -121,7 +142,7 @@ function calcJEISlots(amt as double, ingr as IIngredient) as int {
   if (amt >= 1.0) slots = 1;
   val intPart = amt as int;
   val frac = amt - intPart;
-  val nuggetCount = (frac * 9) as int;
+  val nuggetCount = (frac * 9.0 + 0.0001) as int;
   if (nuggetCount > 0 && hasNuggetVariant(ingr)) slots = slots + 1;
   return slots;
 }
@@ -150,7 +171,7 @@ function filterOutputs(outputs as double[IIngredient]) as double[IIngredient] {
   val result = {} as double[IIngredient];
   for k, v in outputs {
     val amt = v as double;
-    if (amt >= 1.0 || hasNuggetVariant(k)) {
+    if (calcJEISlots(amt, k) > 0) {
       result[k] = v;
     }
   }
@@ -181,7 +202,7 @@ function dumpArcRecycling(sender as ICommandSender) as void {
 
   // First iterate() call collects all recipe pairs from enumerators (once),
   // subsequent calls use the internal cached list — no re-enumeration.
-  for pass in 0 .. recCache_maxDepth {
+  for pass in 0 .. (recCache_maxDepth + 1) {
     val before = getCacheSize();
 
     scripts.lib.store.recipes.iterate(function (outputs as IIngredient[], inputs as IIngredient[]) as int {

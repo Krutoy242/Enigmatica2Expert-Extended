@@ -27,6 +27,26 @@ function iterate(cb as function(IIngredient[],IIngredient[])int) as void {
         return CB_RESULT.CONTINUE;
       });
     }
+    // Sort recipe pairs deterministically by output commandString
+    val sortKeys = [] as [string];
+    for i in 0 .. _cacheOut.length {
+      val out = _cacheOut[i];
+      val cmd = out.length > 0 && !isNull(out[0]) ? out[0].commandString : '';
+      sortKeys.add(cmd ~ '#' ~ mods.zenutils.StaticString.leftPad(toString(i), 6, '0'));
+    }
+    val keysArr = sortKeys as string[];
+    mods.ctintegration.util.ArrayUtil.sort(keysArr);
+
+    val sortedOut = [] as [IIngredient[]];
+    val sortedIn  = [] as [IIngredient[]];
+    for entry in keysArr {
+      val idx = mods.zenutils.StaticString.substringAfterLast(entry, '#') as int;
+      sortedOut.add(_cacheOut[idx]);
+      sortedIn.add(_cacheIn[idx]);
+    }
+    _cacheOut = sortedOut;
+    _cacheIn = sortedIn;
+
     _ready = true;
   }
 
