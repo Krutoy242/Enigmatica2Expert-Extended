@@ -245,8 +245,8 @@ ${filtered.join('\n')}`
 
 } */
 
-// Total Furnace recipes registered: 960
-// Blacklisted by JEI or manually: 79
+// Total Furnace recipes registered: 964
+// Blacklisted by JEI or manually: 83
 // Filtered by oredict: 162
 infinFurnace(<actuallyadditions:block_misc:3>, <actuallyadditions:item_misc:5>);
 blacklist(<actuallyadditions:item_dust:3>);
@@ -1172,6 +1172,10 @@ infinFurnace(<thaumcraft:ore_amber:*>, <thaumcraft:amber>);
 infinFurnace(<thaumcraft:ore_cinnabar:*>, <thaumcraft:quicksilver>);
 blacklist(<thaumcraft:ore_quartz:*>);
 infinFurnace(<thaumicaugmentation:stone:10>, <thaumcraft:stone_ancient_rock>);
+blacklist(<thaumicwonders:eldritch_cluster:2>);
+blacklist(<thaumicwonders:eldritch_cluster:3>);
+blacklist(<thaumicwonders:eldritch_cluster:4>);
+blacklist(<thaumicwonders:eldritch_cluster:5>);
 blacklist(<thermalfoundation:material:1>);
 blacklist(<thermalfoundation:material:64>);
 blacklist(<thermalfoundation:material:65>);
