@@ -746,7 +746,6 @@ for alloy in [
   <immersiveengineering:metal:5> * 10,
   <nuclearcraft:ingot:5> * 12,
   <nuclearcraft:ingot:6> * 10,
-  <nuclearcraft:ingot:7> * 9,
   <tconstruct:ingots:5> * 4,
 ] as IItemStack[] {
   mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(alloy);

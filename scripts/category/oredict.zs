@@ -1155,3 +1155,12 @@ addItems(<ore:wallVacuumChambers>, [
   <qmd:containment_casing>,
   <qmd:containment_glass>,
 ]);
+
+// Isotopes missed in QMD 1.6
+add(<ore:ingotMagnesium24>, <qmd:isotope:2>);
+add(<ore:ingotMagnesium26>, <qmd:isotope:3>);
+add(<ore:ingotUranium234>, <qmd:isotope:4>);
+add(<ore:dustProtactinium231>, <qmd:isotope:5>);
+
+// Dusts missed in QMD 1.6
+add(<ore:dustTerbium>, <qmd:dust2:4>);

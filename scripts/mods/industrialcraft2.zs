@@ -596,7 +596,6 @@ morphDust(<ic2:dust:36>, <liquid:cryotheum_nak> * 500, null, <enderio:item_mater
 // Coal
 mods.appliedenergistics2.Grinder.removeRecipe(<minecraft:coal>);
 mods.appliedenergistics2.Grinder.removeRecipe(<minecraft:coal_ore>);
-mods.mekanism.crusher.removeRecipe(<ic2:dust:2>);
 mods.mekanism.enrichment.removeRecipe(<ic2:dust:2>);
 mods.nuclearcraft.AlloyFurnace.removeRecipeWithOutput(<thermalfoundation:material:160>);
 mods.mekanism.reaction.removeRecipe(<ore:dustSulfur>, <gas:hydrogen>, <ic2:dust:2>);
