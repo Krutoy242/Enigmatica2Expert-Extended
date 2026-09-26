@@ -1,0 +1,19 @@
+{
+  "tool": "kama",
+  "text": [
+    {
+      "text": "The Kama is a versatile farming tool, mowing down plants and shearing animals."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "Right-clicking on crops or sugarcane will harvest and replant all fully grown plants in the area."
+    }
+  ],
+  "properties": [
+    "Harvests crops on right click",
+    "Shears blocks and animals",
+    "Effective on plants"
+  ]
+}
