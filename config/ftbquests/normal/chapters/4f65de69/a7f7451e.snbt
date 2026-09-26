@@ -40,31 +40,31 @@
 			item: "enderio:block_wireless_charger"
 		},
 		{
-			id: "actuallyadditions:battery_bauble",
+			id: "actuallyadditions:item_battery",
 			tag: {
 				Energy: 0
 			}
 		},
 		{
-			id: "actuallyadditions:battery_double_bauble",
+			id: "actuallyadditions:item_battery_double",
 			tag: {
 				Energy: 0
 			}
 		},
 		{
-			id: "actuallyadditions:battery_triple_bauble",
+			id: "actuallyadditions:item_battery_triple",
 			tag: {
 				Energy: 0
 			}
 		},
 		{
-			id: "actuallyadditions:battery_quadruple_bauble",
+			id: "actuallyadditions:item_battery_quadruple",
 			tag: {
 				Energy: 0
 			}
 		},
 		{
-			id: "actuallyadditions:battery_quintuple_bauble",
+			id: "actuallyadditions:item_battery_quintuple",
 			tag: {
 				Energy: 0
 			}

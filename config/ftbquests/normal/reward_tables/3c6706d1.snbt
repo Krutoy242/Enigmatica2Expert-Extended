@@ -7,7 +7,7 @@
 				Energy: 2000000,
 				IsEnabled: 1b
 			},
-			id: "actuallyadditions:battery_bauble"
+			id: "actuallyadditions:item_battery"
 		}
 	},
 	{
