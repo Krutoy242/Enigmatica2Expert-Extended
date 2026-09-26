@@ -23,13 +23,13 @@
     "name": "Red Core",
     "version": "0.7.1"
   },
-  "+Fugue-0.24.3.jar": {
-    "curseForgeHash": 2595838417,
-    "jarName": "+Fugue-0.24.3.jar",
+  "+Fugue-0.24.4.jar": {
+    "curseForgeHash": 2638429088,
+    "jarName": "+Fugue-0.24.4.jar",
     "modId": "fugue",
-    "modrinthHash": "2f0935e476bc218dd4e1b8d9877ad2ae16a66b58",
+    "modrinthHash": "2292c5074314b85904909a45bb3b93a88ed7378c",
     "name": "Fugue",
-    "version": "0.24.3"
+    "version": "0.24.4"
   },
   "[MC-1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1.jar": {
     "curseForgeHash": 1044045050,
@@ -71,13 +71,13 @@
     "name": "Advanced Essentia Smelter",
     "version": "1.2.0"
   },
-  "advancedrocketry-2.2.14.jar": {
-    "curseForgeHash": 644348135,
-    "jarName": "advancedrocketry-2.2.14.jar",
+  "advancedrocketry-2.2.16.jar": {
+    "curseForgeHash": 1651074348,
+    "jarName": "advancedrocketry-2.2.16.jar",
     "modId": "advancedrocketry",
-    "modrinthHash": "3bceed049c31cc46c4486296a25459677fe5e163",
+    "modrinthHash": "542c2c19570ea147240a7f649c0c6afdc2779f6a",
     "name": "Advanced Rocketry",
-    "version": "2.2.14"
+    "version": "2.2.16"
   },
   "AdvancedTweakery-1.2.jar": {
     "curseForgeHash": 3270717551,
@@ -1294,13 +1294,13 @@
     "name": "GunpowderLib",
     "version": "1.12.2-1.1"
   },
-  "HadEnoughItems_1.12.2-4.34.3.jar": {
-    "curseForgeHash": 537932435,
-    "jarName": "HadEnoughItems_1.12.2-4.34.3.jar",
+  "HadEnoughItems_1.12.2-4.35.0.jar": {
+    "curseForgeHash": 2454585602,
+    "jarName": "HadEnoughItems_1.12.2-4.35.0.jar",
     "modId": "jei",
-    "modrinthHash": "e3aaf84758004c37fa1bf49e55418acd3d790708",
+    "modrinthHash": "5fec099c2b1bd429b826fa011eb304a6c58dc878",
     "name": "Had Enough Items",
-    "version": "4.34.3"
+    "version": "4.35.0"
   },
   "HammerLib-1.12.2-12.2.58.jar": {
     "curseForgeHash": 1631106799,
@@ -1394,13 +1394,13 @@
     "name": "Immersive Engineering",
     "version": "0.12-98"
   },
-  "immersivefixes-1.1.1.jar": {
-    "curseForgeHash": 1985535569,
-    "jarName": "immersivefixes-1.1.1.jar",
+  "immersivefixes-1.2.0.jar": {
+    "curseForgeHash": 3257129590,
+    "jarName": "immersivefixes-1.2.0.jar",
     "modId": "immersivefixes",
-    "modrinthHash": "7f5c560a79a908b678b45a7bdce9c5e24727191f",
+    "modrinthHash": "5258088d24ec93242e427abca1362fcdb98ef876",
     "name": "Immersive Fixes 1.12.2",
-    "version": "1.1.1"
+    "version": "1.2.0"
   },
   "immersivepetroleum-1.12.2-1.1.10.jar": {
     "curseForgeHash": 4029569122,
@@ -1721,13 +1721,13 @@
     "name": "libnine",
     "version": "1.2.2"
   },
-  "libvulpes-0.5.7.jar": {
-    "curseForgeHash": 2725742194,
-    "jarName": "libvulpes-0.5.7.jar",
+  "libvulpes-0.5.9.jar": {
+    "curseForgeHash": 1348294793,
+    "jarName": "libvulpes-0.5.9.jar",
     "modId": "libvulpes",
-    "modrinthHash": "ab8524fe03f8c6c1bdcf0628ea5b4e2fd74ac202",
+    "modrinthHash": "b3f5ba9c314836cc1dfb17fd7eea8e329dd8f632",
     "name": "LibVulpes",
-    "version": "0.5.7"
+    "version": "0.5.9"
   },
   "LittleTiles_v1.5.87_mc1.12.2.jar": {
     "curseForgeHash": 2663334687,
@@ -1861,21 +1861,21 @@
     "name": "Mechanics",
     "version": "1.1"
   },
-  "Mekanism-Community-Edition-1.12.2-9.12.14-Core.jar": {
-    "curseForgeHash": 537955945,
-    "jarName": "Mekanism-Community-Edition-1.12.2-9.12.14-Core.jar",
+  "Mekanism-Community-Edition-1.12.2-9.12.15-Core.jar": {
+    "curseForgeHash": 1520085604,
+    "jarName": "Mekanism-Community-Edition-1.12.2-9.12.15-Core.jar",
     "modId": "mekanism",
-    "modrinthHash": "743eaa9c7ff65ee3b6feb0bc10a023d7cd6b3e9c",
+    "modrinthHash": "9491e41d16e60e0fd63d8186ee9d10a23a47a265",
     "name": "Mekanism Community Edition",
-    "version": "9.12.14"
+    "version": "9.12.15"
   },
-  "Mekanism-Community-Edition-1.12.2-9.12.14-Generators.jar": {
-    "curseForgeHash": 2597488606,
-    "jarName": "Mekanism-Community-Edition-1.12.2-9.12.14-Generators.jar",
+  "Mekanism-Community-Edition-1.12.2-9.12.15-Generators.jar": {
+    "curseForgeHash": 3682032629,
+    "jarName": "Mekanism-Community-Edition-1.12.2-9.12.15-Generators.jar",
     "modId": "mekanismgenerators",
-    "modrinthHash": "29f5076b554f1b71807cb22a62a77f448907efe6",
+    "modrinthHash": "d15141ccbe64a63f69ec1eb27de75eade918ab4a",
     "name": "Mekanism Community Edition: Generators",
-    "version": "9.12.14"
+    "version": "9.12.15"
   },
   "MemoryTester-0.4.2.jar": {
     "curseForgeHash": 3256763635,
@@ -2409,13 +2409,13 @@
     "name": "Psio",
     "version": "1.0.3"
   },
-  "QMD-1.5.1-1.12.2.jar": {
-    "curseForgeHash": 4181029024,
-    "jarName": "QMD-1.5.1-1.12.2.jar",
+  "QMD-1.12.2-1.6.jar": {
+    "curseForgeHash": 1699042508,
+    "jarName": "QMD-1.12.2-1.6.jar",
     "modId": "qmd",
-    "modrinthHash": "0b4a126bba38cea6fdc815af2877a88d58695cc3",
+    "modrinthHash": "fa9c6952dfe1628a3a38c404311cb5d2a50554d9",
     "name": "Quantum Minecraft Dynamics",
-    "version": "1.5.1"
+    "version": "1.6"
   },
   "QuantumThings-MC-1.12.2-1.3.0.jar": {
     "curseForgeHash": 996360515,
@@ -2438,13 +2438,13 @@
     "name": "Quark: RotN Edition",
     "version": "r1.6-189"
   },
-  "random_complement-1.9.7.jar": {
-    "curseForgeHash": 2671286146,
-    "jarName": "random_complement-1.9.7.jar",
+  "random_complement-1.9.8.jar": {
+    "curseForgeHash": 289678844,
+    "jarName": "random_complement-1.9.8.jar",
     "modId": "random_complement",
-    "modrinthHash": "f020811af8df9894bd1a09566dfdbd0ec0b9b1ed",
+    "modrinthHash": "fd8b9d7822797cdfd2edd9aa6553e4e5996c0edf",
     "name": "RandomComplement",
-    "version": "1.9.7"
+    "version": "1.9.8"
   },
   "RandomTweaker-1.4.11.jar": {
     "curseForgeHash": 2356691812,
@@ -2598,13 +2598,13 @@
     "name": "RLTweaker",
     "version": "0.5.12"
   },
-  "roidtweaker-1.3.1.jar": {
-    "curseForgeHash": 246791350,
-    "jarName": "roidtweaker-1.3.1.jar",
+  "roidtweaker-1.3.3.jar": {
+    "curseForgeHash": 1139246593,
+    "jarName": "roidtweaker-1.3.3.jar",
     "modId": "roidtweaker",
-    "modrinthHash": "6ffeb4351496570aab2028de3185a54b0a902839",
+    "modrinthHash": "c3df24cb2cae9409e220f71b16b33c805e920d25",
     "name": "Roid's Tweaker",
-    "version": "1.3.1"
+    "version": "1.3.3"
   },
   "RoughlyEnoughIDs-2.3.1.jar": {
     "curseForgeHash": 538660559,
@@ -2742,13 +2742,13 @@
     "name": "Squeezer Patch",
     "version": "1.12.2-1.0.0"
   },
-  "StellarCore-1.6.1.jar": {
-    "curseForgeHash": 514128861,
-    "jarName": "StellarCore-1.6.1.jar",
+  "StellarCore-1.5.22.jar": {
+    "curseForgeHash": 2216735623,
+    "jarName": "StellarCore-1.5.22.jar",
     "modId": "stellar_core",
-    "modrinthHash": "61d9fb52800f6f541de99fa6e3d441e9f574d1f4",
+    "modrinthHash": "7820ea638ae57736aa0edf991f22900637ad4469",
     "name": "Stellar Core",
-    "version": "1.6.1"
+    "version": "1.5.22"
   },
   "StorageDrawers-1.12.2-5.5.3.jar": {
     "curseForgeHash": 535207350,
@@ -2902,13 +2902,13 @@
     "name": "Thaumic Wonders Unofficial",
     "version": "2.3.4"
   },
-  "TheOneProbe-CE-1.12-1.3.9-fix1.jar": {
-    "curseForgeHash": 84329778,
-    "jarName": "TheOneProbe-CE-1.12-1.3.9-fix1.jar",
+  "TheOneProbe-CE-1.12-1.4.0.jar": {
+    "curseForgeHash": 1312955259,
+    "jarName": "TheOneProbe-CE-1.12-1.4.0.jar",
     "modId": "theoneprobe",
-    "modrinthHash": "95d2ef401d241c83e9b9174fe36bd5d3cdd49698",
+    "modrinthHash": "5fe4522665bae08e95ad1d275f31f2edd9b3cfaa",
     "name": "The One Probe Community Edition",
-    "version": "1.12-1.3.9-fix1"
+    "version": "1.12-1.4.0"
   },
   "ThermalDynamics-1.12.2-2.5.6.1-universal.jar": {
     "curseForgeHash": 2554678431,
@@ -3027,13 +3027,13 @@
     "name": "Tomb Many Graves",
     "version": "1.12-4.2.0"
   },
-  "TopAllDependents-1.5.jar": {
-    "curseForgeHash": 813048037,
-    "jarName": "TopAllDependents-1.5.jar",
+  "TopAllDependents-1.6.jar": {
+    "curseForgeHash": 2462443180,
+    "jarName": "TopAllDependents-1.6.jar",
     "modId": "topalldependents",
-    "modrinthHash": "909363d937bf40c04696559daa03a725faa8529a",
+    "modrinthHash": "c90fb95895f3d10fd562338f4b2a31b83977ae54",
     "name": "TopAllDependents",
-    "version": "1.5"
+    "version": "1.6"
   },
   "torohealth-1.12.2-11.jar": {
     "curseForgeHash": 378881515,
@@ -3179,13 +3179,13 @@
     "name": "UniLib",
     "version": "1.2.1"
   },
-  "UniversalTweaks-1.12.2-1.20.1.jar": {
-    "curseForgeHash": 1630183384,
-    "jarName": "UniversalTweaks-1.12.2-1.20.1.jar",
+  "UniversalTweaks-1.12.2-1.21.0.jar": {
+    "curseForgeHash": 2067075777,
+    "jarName": "UniversalTweaks-1.12.2-1.21.0.jar",
     "modId": "universaltweaks",
-    "modrinthHash": "61ecdb9c053afcd6b032f5fb471b54d534f74489",
+    "modrinthHash": "2bd0bbf962dcd796917ea9e1c7ac6344b9fe363c",
     "name": "Universal Tweaks",
-    "version": "1.20.1"
+    "version": "1.21.0"
   },
   "useful_railroads-1.12.2-1.1.3.24.jar": {
     "curseForgeHash": 6958948,
@@ -3243,13 +3243,13 @@
     "name": "Villager Trade Tables",
     "version": "${version}"
   },
-  "vintagefix-0.7.0.jar": {
-    "curseForgeHash": 1803611387,
-    "jarName": "vintagefix-0.7.0.jar",
+  "vintagefix-0.7.1.jar": {
+    "curseForgeHash": 935489600,
+    "jarName": "vintagefix-0.7.1.jar",
     "modId": "vintagefix",
-    "modrinthHash": "a753529902a23e17da091f15b6dee6690f75b217",
+    "modrinthHash": "bf8b820c70b64d433c7c31a3150a9eb14907388d",
     "name": "VintageFix",
-    "version": "0.7.0"
+    "version": "0.7.1"
   },
   "visualclaiming-0.1.2.jar": {
     "curseForgeHash": 76002474,
@@ -3336,13 +3336,13 @@
     "name": "XNet",
     "version": "1.8.23"
   },
-  "XNetAdditions-0.3.3.jar": {
-    "curseForgeHash": 173449024,
-    "jarName": "XNetAdditions-0.3.3.jar",
+  "XNetAdditions-0.3.4.jar": {
+    "curseForgeHash": 907038471,
+    "jarName": "XNetAdditions-0.3.4.jar",
     "modId": "xnetadditions",
-    "modrinthHash": "ea90d7704cb88e986685476de2bf5706e9b5625c",
+    "modrinthHash": "3914e2a2a0af1f20c111070aa794e239a14f1c89",
     "name": "XNet: Additions",
-    "version": "0.3.3"
+    "version": "0.3.4"
   },
   "XU2-Patcher-1.0.2.jar": {
     "curseForgeHash": 3734370537,
