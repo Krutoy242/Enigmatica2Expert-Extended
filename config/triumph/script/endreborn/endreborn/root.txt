@@ -1,0 +1,11 @@
+setIcon(<minecraft:ender_pearl>)
+setTranslatedTitle("advancements.endreborn.root.title")
+setTranslatedDescription("advancements.endreborn.root.description")
+setBackground("minecraft:textures/gui/advancements/backgrounds/endreborn.png")
+setShowToast(false)
+setAnnounceToChat(false)
+pageAlwaysVisible()
+alwaysVisible()
+
+criteria = addCriteria("crafting_table", "minecraft:inventory_changed")
+criteria.addItem(<minecraft:ender_pearl>)

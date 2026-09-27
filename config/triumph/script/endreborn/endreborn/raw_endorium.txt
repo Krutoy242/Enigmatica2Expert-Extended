@@ -1,0 +1,7 @@
+setIcon(<endreborn:item_raw_endorium>)
+setTranslatedTitle("advancements.endreborn.raw_endorium.title")
+setTranslatedDescription("advancements.endreborn.raw_endorium.description")
+addParent("endreborn:endreborn/root")
+
+criteria = addCriteria("raw_endorium", "minecraft:inventory_changed")
+criteria.addItem(<endreborn:item_raw_endorium>)
