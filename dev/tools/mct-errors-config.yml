@@ -99,6 +99,7 @@ ignore:
       - /FML appears to be missing any signature data. This is not a good thing/
       # Parsing recipe errors from FML. Probably items just removed but recipe reference is present
       - 'Parsing error loading recipe '
+      - 'Parsing error loading built-in advancement '
   - /(LaunchWrapper|Foundation)/:
       - Tweak class name * has already been visited
   # Warning about Forge Debug
