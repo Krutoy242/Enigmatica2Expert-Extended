@@ -1294,13 +1294,13 @@
     "name": "GunpowderLib",
     "version": "1.12.2-1.1"
   },
-  "HadEnoughItems_1.12.2-4.35.0.jar": {
-    "curseForgeHash": 2454585602,
-    "jarName": "HadEnoughItems_1.12.2-4.35.0.jar",
+  "HadEnoughItems_1.12.2-4.34.3.jar": {
+    "curseForgeHash": 537932435,
+    "jarName": "HadEnoughItems_1.12.2-4.34.3.jar",
     "modId": "jei",
-    "modrinthHash": "5fec099c2b1bd429b826fa011eb304a6c58dc878",
+    "modrinthHash": "e3aaf84758004c37fa1bf49e55418acd3d790708",
     "name": "Had Enough Items",
-    "version": "4.35.0"
+    "version": "4.34.3"
   },
   "HammerLib-1.12.2-12.2.58.jar": {
     "curseForgeHash": 1631106799,
