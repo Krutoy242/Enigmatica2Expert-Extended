@@ -1,0 +1,15 @@
+{
+  "name": "Заключённый огонёк",
+  "icon": "twilightforest:fire_jet:6",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/encased_fire_jet",
+  "sortnum": 5060,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Заключённый огонёк",
+      "item": "twilightforest:fire_jet:6",
+      "text": "Взяв огненный блок и проявив немного технической смекалки, я могу сделать самоподдерживающийся огнемёт, запускаемый кнопкой или сигналом красного камня. Правда, перед выбросом пламени ему нужно прогреться, поэтому сигналы придётся подавать вовремя."
+    }
+  ]
+}

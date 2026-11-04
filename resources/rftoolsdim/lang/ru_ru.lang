@@ -1,0 +1,18 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+item.known_dimlet_biome.name=Димлет биома
+item.known_dimlet_liquid.name=Димлет жидкости
+item.known_dimlet_material.name=Димлет материала
+item.known_dimlet_special.name=Особый димлет
+item.known_dimlet_patreon.name=Димлет Patreon
+item.dimlet_parcel.name=Посылка с димлетами
+tile.rftoolsdim.dimletFilterBlock.name=Фильтр димлетов
+tile.rftoolsdim.dimension_enscriber.name=Кодировщик измерений
+tile.rftoolsdim.creativeDimensionBuilderBlock.name=Творческий построитель измерений
+tile.rftoolsdim.dimensionEditorBlock.name=Редактор измерений
+tile.rftoolsdim.dimensionMonitorBlock.name=Монитор размеров
+tile.rftoolsdim.machineInfuserBlock.name=Зарядник механизмов
+tile.rftoolsdim.timeAbsorberBlock.name=Поглотитель времени
+tile.rftoolsdim.volcanicCoreBlock.name=Вулканическое ядро
+tile.rftoolsdim.volcanicBlock.name=Вулканический блок
+tile.rftoolsdim.essence_painter.name=Краситель эссенций
+tile.rftoolsdim.fake_gravel.name=levarG

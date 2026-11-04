@@ -1,0 +1,19 @@
+{
+  "armormodifier": "tconevo.absorption_armor",
+  "text": [
+    {
+      "text": "Напитайте броневую пластину силой книги поглощения, чтобы она давала дополнительную защиту."
+    }
+  ],
+  "effects": [
+    "Даёт сердца поглощения",
+    "Аналогично зачарованию поглощения",
+    "Несколько уровней"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

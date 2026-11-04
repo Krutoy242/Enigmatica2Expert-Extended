@@ -1,0 +1,22 @@
+{
+  "name": "硬化合成器",
+  "icon": "thermallogistics:crafter:1",
+  "category": "pamphlet",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "thermallogistics:crafter:1",
+      "text": "从硬化等级开始，合成器可容纳多个配方。这些配方独立运行，但不能相互请求材料。界面底部还会出现一个按钮，用于选择配方以“连续处理配方”还是“并行处理配方”的方式执行。两者的区别如下。"
+    },
+    {
+      "type": "text+",
+      "text": "以<l_te>热力膨胀</l>的感应炉和<l_rft>RFTools</l>的合成器为例。感应炉一次只能处理一个配方；同时向它发送多个配方的原料，可能导致堵塞。因此应选择“连续处理配方”：当前配方完成后，才会开始下一个配方。正在执行的配方会以绿色高亮。"
+    },
+    {
+      "type": "crafting+",
+      "text": "RFTools 的合成器则可以同时处理多个配方。如果希望热力物流学合成器同时发送各配方的原料，就将其设为“并行处理配方”。",
+      "title2": "合成",
+      "recipe2": "thermallogistics:crafter:1"
+    }
+  ]
+}

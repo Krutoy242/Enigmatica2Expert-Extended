@@ -1,0 +1,13 @@
+{
+  "name": "Логово гидры",
+  "icon": "twilightforest:miniature_structure:8",
+  "category": "major_landmarks",
+  "advancement": "twilightforest:alt/major_landmarks/hydra_lair",
+  "sortnum": 5100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "В глубине Огненного болота находится логово гидры: большой полый холм, ставший её домом. В нём по-прежнему полно редких руд — прекрасное место для поиска сокровищ, если не считать гигантскую мифическую рептилию посреди богатств."
+    }
+  ]
+}

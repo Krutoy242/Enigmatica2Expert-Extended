@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "type": "custom",
+      "class": "thelm.packagedastral.integration.patchouli.component.ComponentAltarRecipeGrid",
+      "x": -1,
+      "y": -1,
+      "recipe": "#recipe"
+    },
+    {
+      "type": "item",
+      "x": 50,
+      "y": 129,
+      "item": "#output",
+      "framed": true,
+      "link_recipe": true
+    },
+    {
+      "type": "header",
+      "x": -1,
+      "y": -1,
+      "text": "#title"
+    }
+  ],
+  "processor": "thelm.packagedastral.integration.patchouli.processor.ProcessorAltarRecipe"
+}

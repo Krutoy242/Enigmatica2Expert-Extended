@@ -1,0 +1,14 @@
+{
+  "name": "Лич",
+  "icon": "twilightforest:trophy:1",
+  "category": "bosses",
+  "advancement": "twilightforest:alt/entities/lich",
+  "sortnum": 4020,
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "twilightforest:lich{ForgeCaps:{\"twilightforest:cap_shield\":{permshields:5}},HandItems:[{id:\"twilightforest:twilight_scepter\",Count:1}]}",
+      "text": "Столько зла, что никакой костью не отмахнёшься."
+    }
+  ]
+}

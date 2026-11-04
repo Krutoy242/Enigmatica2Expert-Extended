@@ -1,0 +1,6 @@
+{
+  "name": "Системный сбой",
+  "description": "В этой главе описаны системные глитчи, появляющиеся во время $(l:2_trials/1_trials)испытаний$().",
+  "icon": "deepmoblearning:glitch_heart",
+  "sortnum": 3
+}

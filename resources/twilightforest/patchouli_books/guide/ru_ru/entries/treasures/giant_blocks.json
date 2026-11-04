@@ -1,0 +1,37 @@
+{
+  "name": "Гигантские блоки",
+  "icon": "twilightforest:giant_cobblestone",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/giant_blocks",
+  "sortnum": 8010,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Гигантские блоки!"
+    },
+    {
+      "type": "spotlight",
+      "title": "Гигантский булыжник",
+      "item": "twilightforest:giant_cobblestone",
+      "text": "Гигантский булыжник!"
+    },
+    {
+      "type": "spotlight",
+      "title": "Гигантское дерево",
+      "item": "twilightforest:giant_log",
+      "text": "Вот это ОГРОМНОЕ бревно! Хотелось бы такое в своём поместье ;) ;)"
+    },
+    {
+      "type": "spotlight",
+      "title": "Гигантские листья",
+      "item": "twilightforest:giant_leaves",
+      "text": "Гигантские листья!"
+    },
+    {
+      "type": "spotlight",
+      "title": "Гигантский обсидиан",
+      "item": "twilightforest:giant_obsidian",
+      "text": "Гигантский обсидиан"
+    }
+  ]
+}

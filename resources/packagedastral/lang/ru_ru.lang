@@ -1,0 +1,18 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+itemGroup.packagedastral=PackagedAstral
+tile.packagedastral.discovery_crafter.name=Светящийся изготовитель пакетов
+tile.packagedastral.attunement_crafter.name=Алтарь звёздного света для пакетов
+tile.packagedastral.constellation_crafter.name=Небесный алтарь для пакетов
+tile.packagedastral.trait_crafter.name=Переливчатый алтарь для пакетов
+tile.packagedastral.trait_crafter.relays.usable=Доступно помеченных реле настройки: %s
+tile.packagedastral.trait_crafter.relays.required=Минимально необходимо помеченных реле настройки: %s
+tile.packagedastral.marked_relay.name=Помеченное реле настройки
+item.packagedastral.constellation_focus.name=Фокус созвездия
+recipe.packagedastral.discovery=Светящийся верстак
+recipe.packagedastral.discovery.short=Светящийся
+recipe.packagedastral.attunement=Алтарь звёздного света
+recipe.packagedastral.attunement.short=Звёздный свет
+recipe.packagedastral.constellation=Небесный алтарь
+recipe.packagedastral.constellation.short=Небесный
+recipe.packagedastral.trait=Переливчатый алтарь
+recipe.packagedastral.trait.short=Переливчатый

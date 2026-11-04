@@ -1,0 +1,127 @@
+{
+  "name": "小技巧",
+  "icon": "thaumicaugmentation:research_notes",
+  "category": "World",
+  "pages": [
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)$(a)自动化才是关键！$()$(li)$(a)多做一些总没错。$()$(li)不需要抓恶魂也可以制作$(n)天使指环$()！$(li)找时间通览按键设置，许多模组的功能需要绑定按键才能使用。$(li)$(a)如果花 6 小时能实现自动化，就别花 6 分钟手搓它。$()"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)在 JEI 中按 $(l)Backspace$() 可以返回上一个配方页面。$(li)含流体的配方不一定要用$(n)桶$()，也可以用装有流体、不可堆叠的$(n)储罐$()。$(li)小心$(2)营养$()不良，默认按 N 查看。有些不明来源的负面效果其实是不良饮食造成的。$(li)空手$(l)右击$()龙尸即可取得战利品。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)尽量让$(n)物品管道$()短一些，既能加快传输，也能减轻服务器负担。$(li)按 $(l)F7$() 查看光照等级，$(l)F9$() 查看区块边界，$(l)Ctrl+B$() 查看群系边界。$(li)在坟墓上按 $(l)Shift／潜行$() 可以取回物品。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)副手拿着$(o)抽屉钥匙$()，就会自动锁定新放置的储物抽屉。$(li)沉浸原油的$(n)采油机$()需要一列直通基岩的沉浸工程$(n)输液管$()。$(li)对$(n)刷怪笼$()使用$(n)邪恶点滴$()，或用搬运功能将其抱起，都可以搬走它；后者默认按键为 $(l)Shift + 右击$()。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)将星辉魔法的$(n)连接工具$()切到副手，不会中断连接。$(li)$(6)/xu_powersharing$() 可以让你与服务器上的其他玩家共享更多实用设备 2的$(4)电网能量（GP）$()。$(li)$(6)/foodlist size$() 显示已经吃过多少种食物。$(li)$(6)/undo_excavation$() 可以撤销上一次$(6)连锁挖掘$()。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)$(6)/wandOops$() 可以撤销$(6)更好的建筑之杖$()的放置操作。$(li)$(l)星辉魔法仪式$()及连接的仪式锚可充当$(l)区块加载器$()。$(li)$(l)时钟座$()每 36 天才出现一次，出现在$(l)日食$()之后的夜晚。$(li)用左键收获$(5)神秘农业$()作物时，有 5%% 的概率掉落$(5)两颗种子$()。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)匠魂$(n)冶炼炉$()支持多种不同燃料，各有不同属性。$(li)下界的$(n)灰烬堆$()是前期很好的燃料。$(li)$(n)阿卡什宝典$()相当于便携书柜，能容纳各种工具书和指南。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)一个 13x13x13 的$(n)压缩空间$()足够容纳你的$(d)神秘时代$()设施，还能防止咒波污染基地。$(li)在$(o)沃土（Fertile Soil）$()或$(o)沃土（Fertilized Dirt）$()上种$(n)甘蔗$()，不需要相邻水源。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)将$(l)刷怪场$()分散到较大区域能减少卡顿，主要负担来自生物互相避让时的寻路。$(li)$(2)核电工艺$()机器能自动将通用机械的$(6)气体$()与对应流体互相转换。$(li)善用物品栏里的 $(l)夸克（Quark）的箱子按钮$()，它们对前期整理物品很有帮助！"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)AE2 的$(n)接口$()在$(n)接口终端$()中按名称分组，接口可用铁砧重命名。$(li)$(n)高级全能魔杖$()由全能魔杖和四个齿轮合成，是前期获取各种扳手的好办法，也能节省物品栏空间。$(li)懒人厨房可以通过$(n)厨房地板$()访问$(n)抽屉$()。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)$(n)骷髅$()进入巫水会变成$(n)凋灵骷髅$()，$(n)鱿鱼$()则会变成$(n)恶魂$()。$(li)$(n)末影百合$()在末地石上长得更快；末地石可用$(n)石桶$()获得。$(li)鼠标指向物品并按 $(l)Y$()，可以查找附近存放该物品的$(n)箱子$()。$(li)快捷栏里放一组$(n)钢叶$()，就能让带有$(a)同调$()特性的工具快速修复。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)$(n)建筑小帮手$()能从 ME 网络提取物品；手持小帮手对$(n)安全终端$()$(l)按住 Shift 右击$()即可绑定。$(li)Dark Utilities 的$(n)侵蚀陷阱$()是击杀高$(5)难度$()怪物的最佳选择。$(li)暮色森林的冰霜炸弹能将流动的$(n)熔岩$()也变为$(n)黑曜石$()。$(li)按 $(l)Shift+F$() 锁定楼梯放置朝向。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)至少六个模组支持像$(l)末影接口$()一样，将 $(2)JEI 中的物品拖入$()过滤器。$(li)[联机] 鼠标指向界面中的物品，按 $(l)Shift+T$() 将其分享到聊天。$(li)[联机] $(l)潜行并右击$()其他玩家，可以把物品递给对方。$(li)[联机] 按住 $(l)F4$() 标记方块。$(li)获取$(a)经验$()时会恢复 $(b)PSI 能量$()。$(li)按“$(l)\\$()”可以让挖掘过快的工具慢下来。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)按“$(l)Shift+F8$()”刷新声音设备。$(li)末影接口的$(n)流体储罐$()用$(6)熔岩$()销毁物品时，会额外产生少量$(6)熔岩$()。$(li)用$(n)搬运$()功能抱起刷怪笼会促使更多生物生成。$(li)装满物品的$(n)背包$()存入 AE2 系统可能导致卡顿，甚至$(5)无法取出$()。$(li)$(n)工业线缆$()是 RF 与 EU 互相转换的最廉价方案。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)$(n)Ctrl+Delete$() 可以销毁物品栏中的物品。$(li)$(n)存储系统仓库$()无法直接访问，但支持漏斗和 VAULTOPIC。$(li)右击装有液态经验的开放式方块$(n)蓄水槽$()可获取经验。$(li)想要 $(8)/home$()？试试$(n)稳态末影珍珠$()加$(n)聊天检测器$()！$(li)给沉浸工程储罐连接流体总线$(4)会造成卡顿$()。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)利用$(5)时钟座$()的停滞效果击杀$(8)混沌守卫$()。$(li)$(0)暗夜粉$()可以生成$(o)暴雪人$()等稀有生物。$(li)血魔法的$(n)传送器$()可以远距离搬运植物魔法$(b)魔力池$()和星辉魔法神殿$(b)聚能水晶$()，连火花也能搬！"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)$(n)/integrateddynamics networkdiagnostics$() 可以诊断集成动力网络中拖慢 $(4)TPS$() 的操作。$(li)$(l)魔力（Vis）不够？$()将$(n)奥术工作台$()放在$(2)暮色森林$()试试！$(li)$(o)环境科技$()多方块结构可以$(l)共享方块$()。$(li)ME 终端中带有 NBT 数据的$(n)头颅$()可能降低帧率。$(li)按“$(l)Shift+C$()”可以爬行。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)管理员命令 $(n)/bcore_util regenchunk$() 可重新生成整个区块。$(li)使用 $(n)/tmg_deathlist [TAB] [TAB]$() 命令辅助寻找坟墓。$(li)$(b)喷溅水瓶$()可以扑灭实体身上的火。$(li)在 $(2)Patchouli$() 手册中指向物品，按“$(l)R$()”或“$(l)U$()”即可查看配方或用途。"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)将匠魂工具放入输出槽，可以$(6)拆解工具$()。$(li)带有$(n)时运$()的$(n)钩子$()能从$(4)红兰花$()获得至多两倍红石，$(7)匠魂钩子同样适用！$(li)$(n)沉浸工程$()多方块结构会明显降低帧率，$(7)$(n)实体渲染机制优化（Entity Culling）$(7)可以帮忙！"
+    },
+    {
+      "item": "thaumicaugmentation:research_notes",
+      "type": "text",
+      "title": "小技巧",
+      "text": "$(li)任何玩家都能用 $(6)/nick$() 命令修改昵称。$(li)手持$(d)午餐袋／盒$()，右击装有食物的容器，即可补充食物。$(li)投掷$(6)泥巴球$()，可以把方块变成棕色！"
+    }
+  ]
+}

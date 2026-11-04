@@ -178,3 +178,6 @@ thaumicaugmentation.research.impetus_generatorfix.1=在进一步研究冲动力�
 thaumictinkerer.TELEKENESIS.text=将附近的物品拖到某个区域。
 thaumictinkerer.research.prismarine.0=我讨厌游泳！要是我能自己制造那些鳞片就好了……这应该和沙子有关，或许是玻璃？
 thaumictinkerer.research.prismarine.1=将玻璃板和一些原始方面扔进坩埚中，它会转化为海晶碎片。
+research.mithminite_scythe.addenda.aer=§l§eAer（风）§r <DIV><IMG>thaumcraft:textures/aspects/aer.png:0:0:255:255:0.125</IMG> 将风要素导入镰刀，可以召唤龙卷风，将敌人拉向中心。风暴虽然短暂，却势不可挡。
+research_stage.efreet_flame.2=原来，设计出完美的熔炼核心效果并没有想象中困难。我将它称为“炎魔之焰”：只要对能被熔炼的方块施放，就能当场完成熔炼。<BR>不过，我必须记住，它对掉落物无效。即便如此，用来处理矿石和原木也再合适不过了。
+research_stage.ender_rift.2=我的猜测果然没错。末影箱与裂隙核心效果的基本原理相同，只是在调整后表现形式略有差异。通过改进这些术式，我设计出了一种法术，无需放置实体箱子，就能直接访问我的个人末影箱储存空间。<BR>更有趣的是，我不仅可以访问自己的末影箱，还能访问其他人的个人末影箱。再也别想把钻石藏起来了！

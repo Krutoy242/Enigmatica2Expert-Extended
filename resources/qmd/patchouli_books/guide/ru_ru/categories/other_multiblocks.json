@@ -1,0 +1,7 @@
+{
+  "name": "Другие мультиблоки и сведения",
+  "description": "Другие виды мультиблоков и дополнительная информация о них.",
+  "icon": "qmd:liquefier_controller",
+  "parent": "qmd:multiblocks",
+  "sortnum": 3
+}

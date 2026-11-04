@@ -1,0 +1,18 @@
+{
+  "name": "Генетический репликатор",
+  "icon": "gendustry:replicator",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:replicator",
+      "link_recipe": true,
+      "text": "<li>создаёт новые организмы из <l>(misc/resources#dna)ДНК</l> и <l>(misc/resources#protein)протеина</l> по полному <l>(misc/crafting_material#gene_template)генетическому шаблону</l><li>созданные этой машиной пчёлы всегда считаются неблагородными"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:replicator",
+      "text": "Создаёт новые организмы из <l>(misc/resources#dna)ДНК</l> и <l>(misc/resources#protein)протеина</l>."
+    }
+  ]
+}

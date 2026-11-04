@@ -1,0 +1,17 @@
+Russian translation sources
+
+Selected Russian translations were adapted from McRussifier / Russifier Universal.
+Created by MrKoteo © 2026
+Project: https://github.com/MrKoteo/McRussifier
+Reference version: d7f667d77d6ec0a0d68c19d9a19aa22fe3298568
+License: https://www.curseforge.com/minecraft/texture-packs/mods-russifier/license
+
+Used for selected missing entries in Deep Mob Learning, FTB Quests, Congrega
+Mystica, Integrated-series guides, Thaumic Tweaker, and other guide/UI labels.
+Adaptations align terminology with the installed mods and correct wording
+against their English sources. The full McRussifier pack is not included.
+Its license permits reuse and modification while retaining attribution and
+prohibits claiming authorship of the original resource pack.
+
+Original manuals and existing translations belong to their respective authors.
+The additions preserve the pack's pre-existing Russian entries and pages.

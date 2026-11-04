@@ -1,0 +1,38 @@
+{
+  "name": "组合合成",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:combination_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)组合合成/$是一种合成配方类型，使用$(item)组合封包合成器/$执行原本在$(item)合成核心/$中进行的合成。"
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packagedexcrafting:combination_crafter",
+      "item2": "packagedexcrafting:marked_pedestal",
+      "title": "使用方法",
+      "text": "使用$(item)组合封包合成器/$时，为其接通能量，并在周围的 7×7 区域内放置$(item)标记基座/$。"
+    },
+    {
+      "type": "text",
+      "title": "使用方法（续）",
+      "text": "空手对空闲的合成器执行$(thing)$(k:sneak) + $(k:use)/$，可检查$(item)组合封包合成器/$当前可用和最低所需的$(item)标记基座/$数量。$(p)$(item)组合封包合成器/$会将合成产物输出到相邻容器中。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(item)组合封包合成器/$与$(item)标记基座/$都可以连接到$(thing)ME 网络/$。$(p)连接后，它们会将合成产物及剩余物品改为输出到网络中。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:marked_pedestal",
+      "recipe2": "packagedexcrafting:combination_crafter",
+      "title": "合成"
+    }
+  ],
+  "flag": "packagedexcrafting:combination",
+  "read_by_default": true,
+  "sortnum": 5007
+}

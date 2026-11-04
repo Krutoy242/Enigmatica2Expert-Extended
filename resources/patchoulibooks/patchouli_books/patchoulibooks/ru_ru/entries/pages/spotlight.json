@@ -1,0 +1,24 @@
+{
+  "name": "Страница 'spotlight+'",
+  "icon": "patchoulibooks:textures/gui/icons/book_page_written.png",
+  "category": "pages",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "minecraft:nether_star",
+      "text": "Страница 'spotlight+' работает похоже на 'spotlight', но использует то же оформление, что и остальные мои страницы. Это помогает выдержать единый вид книги. Также доступны расширенные отладочные сведения.",
+      "link_recipe": false
+    },
+    {
+      "type": "spotlight+",
+      "item": "patchoulibooks:textures/gui/icons/info.png",
+      "text": "Главное отличие от стандартной страницы 'spotlight' — возможность показывать собственные текстуры вместо предметов. Это даёт больше свободы в оформлении без создания отдельного шаблона, например для информационной страницы."
+    },
+    {
+      "type": "spotlight+",
+      "item": "ore:ingotIron",
+      "text": "Также можно отображать ингредиенты.",
+      "link_recipe": false
+    }
+  ]
+}

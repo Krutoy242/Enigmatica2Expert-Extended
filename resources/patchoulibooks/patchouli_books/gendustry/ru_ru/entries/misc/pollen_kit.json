@@ -1,0 +1,16 @@
+{
+  "name": "Набор для сбора пыльцы",
+  "icon": "gendustry:pollen_kit",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:pollen_kit",
+      "text": "<li>одноразовый предмет для сбора пыльцы с деревьев и из других источников<li>держа набор в руке, щёлкните правой кнопкой мыши по блоку листвы, чтобы собрать пыльцу"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:pollen_kit"
+    }
+  ]
+}

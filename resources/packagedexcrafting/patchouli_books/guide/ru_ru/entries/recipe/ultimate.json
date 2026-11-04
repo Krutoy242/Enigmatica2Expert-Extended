@@ -1,0 +1,27 @@
+{
+  "name": "Ультимат изготовление",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:ultimate_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Ультимат изготовление»/$ использует $(item)мастер окончательного пакета/$ для выполнения рецептов $(item)максимального верстака/$.$(p)Предметы, изготовленные $(item)мастером окончательного пакета/$, выводятся в соседние инвентари.$(p)$(item)Мастеру окончательного пакета/$ требуется энергия."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedexcrafting:ultimate_crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Мастер окончательного пакета/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из неё энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:ultimate_crafter",
+      "title": "Изготовление"
+    }
+  ],
+  "flag": "packagedexcrafting:ultimate",
+  "read_by_default": true,
+  "sortnum": 5004
+}

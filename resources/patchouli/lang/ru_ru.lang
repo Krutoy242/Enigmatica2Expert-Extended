@@ -1,0 +1,6 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+patchouli.gui.lexicon.objective=Цель
+patchouli.gui.lexicon.incomplete=Не завершено
+patchouli.gui.lexicon.complete=Завершено!
+patchouli.gui.lexicon.mark_complete=Отметить как завершённое
+patchouli.gui.lexicon.mark_incomplete=Отметить как незавершённое

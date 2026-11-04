@@ -1,0 +1,16 @@
+{
+  "name": "绿篱",
+  "icon": "floralchemy:hedge",
+  "category": "plants_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "绿篱是一种装饰性植物。对它的某一面使用骨粉，即可让绿篱朝该方向扩展。有些村民会用绿篱代替栅栏；目前，寻找这些绿篱是取得初始植株、开始培育绿篱的唯一途径。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "floralchemy:thorny_hedge",
+      "text": "将绿篱与$(item)仙人掌$()合成，即可得到荆棘绿篱。它的用法与普通绿篱相同，但会伤害接触它的实体。"
+    }
+  ]
+}

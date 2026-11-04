@@ -1,5 +1,5 @@
 {
-	title: "Thaumcraft Reward",
+	title: "{e2ee.reward.34646862}",
 	loot_size: 1,
 	rewards: [{
 		icon: "mia:packed_paper 10",

@@ -1,0 +1,15 @@
+{
+  "name": "漏水坩埚",
+  "icon": "floralchemy:leaky_cauldron",
+  "category": "blocks_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "一口破了洞的坩埚，谁会想要呢？不过，对于立志成为绿篱法师的人来说，它其实是个相当实用的流体处理装置，也很适合为$(l:blocks/flooded_soil_entry)浸水土壤$()供水。"
+    },
+    {
+      "type": "text",
+      "text": "漏水坩埚会尝试将内部的流体向下排出：直接流入世界，或流入下方的流体储罐或浸水土壤。制作时，让铁砧落到一口普通坩埚上即可。没错，就是这么做。"
+    }
+  ]
+}

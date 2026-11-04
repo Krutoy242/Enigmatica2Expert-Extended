@@ -1,0 +1,16 @@
+{
+  "name": "MX200涡轮捕蜂网",
+  "icon": "gendustry:industrial_scoop",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:industrial_scoop",
+      "text": "<li>具有林业捕虫网的功能<li>工作时需要能量，但不会损坏<li>速度很快，可破坏周围多个树叶方块<li>充满电后最多可使用<mark>500 次</><li>右击蜂巢可将其作为方块完整采集，能耗为通常的 20 倍"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:recipe2"
+    }
+  ]
+}

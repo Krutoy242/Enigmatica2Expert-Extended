@@ -1,0 +1,72 @@
+{
+  "name": "合成材料",
+  "icon": "gendustry:bee_receptacle",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "text+",
+      "text": "制作<mod>中的方块和物品时，需要一些中间材料。它们既用于多种合成配方，也可能作为机器的耗材。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:gene_sample_blank",
+      "anchor": "gene_sample_blank",
+      "text": "在<l>(genetics/sampler)基因采样机</l>中用于从生物提取基因样本，可容纳一条染色体的信息。"
+    },
+    {
+      "type": "spotlight+",
+      "title": "基因样本",
+      "item": "gendustry:gene_sample",
+      "anchor": "gene_sample",
+      "text": "<li>由<l>(genetics/sampler)基因采样机</l>制作<li>加热可清除基因信息<li>可通过普通合成加入基因模板"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:gene_template",
+      "anchor": "gene_template",
+      "text": "<li>保存同一类生物的多个基因样本<li>在<l>(genetics/imprinter)基因压印机</l>中用于改造生物<li>加热可清除基因信息"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:genetics_processor",
+      "text": "能够处理基因信息的高级处理器。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:env_processor",
+      "text": "能够调控环境的高级处理器。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:mutagen_tank",
+      "text": "用于安全储存<l>(misc/resources#mutagen)诱变剂</l>的特殊储罐。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:power_module",
+      "text": "使机器能够安全接收并储存大量能量。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:bee_receptacle",
+      "text": "安全容纳一只活蜜蜂，以便对其基因组进行操作。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:upgrade_frame",
+      "text": "制作<l>(bee_keeping/upgrades)蜂箱升级</l>所需的基础框架。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:labware",
+      "anchor": "labware",
+      "text": "基因处理机器使用的耗材。"
+    },
+    {
+      "type": "spotlight+",
+      "item": "gendustry:waste",
+      "anchor": "waste",
+      "text": "一只没能活着走出实验的不幸生物。<br><c_dark_green><i>你这个怪物！</>"
+    }
+  ]
+}

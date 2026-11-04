@@ -1,0 +1,24 @@
+{
+  "name": "合成组件",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:package_component",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)封包合成（PackagedAuto）/$使用的基础合成组件。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:package_component",
+      "title": "合成"
+    },
+    {
+      "type": "crafting",
+      "flag": "mod:appliedenergistics2",
+      "recipe": "packagedauto:me_package_component",
+      "title": "合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 1
+}

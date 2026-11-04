@@ -1,0 +1,6 @@
+{
+  "name": "Жидкости",
+  "description": "Устройства для работы с жидкостями.",
+  "icon": "engineersdecor:straight_pipe_valve_redstone",
+  "sortnum": 7000
+}

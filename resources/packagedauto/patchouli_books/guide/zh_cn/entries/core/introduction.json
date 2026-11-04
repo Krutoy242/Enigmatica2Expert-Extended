@@ -1,0 +1,19 @@
+{
+  "name": "入门介绍",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:package",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)封包合成（PackagedAuto）/$将物品装入$(thing)封包/$，以简化某些合成工作。$(p)首先使用$(l:core/recipe_holder)封包配方存储器/$，通过$(l:core/encoder)封包配方编码器/$写入配方。$(br)将编码后的存储器放入$(l:core/packager)封包机/$，机器便能制作对应的$(l:core/package)配方包/$；这些封包可以在$(l:core/unpackager)解包机/$中拆解。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(#822)封包合成/$的许多功能都是围绕 AE2 联动设计的。各机器连接到$(thing)ME 网络/$后会获得哪些功能，请查看对应条目。"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 0
+}

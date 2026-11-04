@@ -1,0 +1,31 @@
+{
+  "name": "Этап 3: экзотические материалы",
+  "icon": "qmd:neutral_containment_controller",
+  "category": "qmd:progression",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Теперь доступны $(l:multiblocks/vacuum_chambers/general)вакуумные камеры$(/l), инструменты, оружие и даже значительная выработка энергии средствами QMD. Два мультиблока этапа — $(l:multiblocks/vacuum_chambers/exotic_containment_chamber)Камера удержания экзотической материи$(/l) и $(l:multiblocks/vacuum_chambers/nucleosynthesis_chamber)Камера нуклеосинтеза$(/l)."
+    },
+    {
+      "type": "text",
+      "title": "Камера удержания",
+      "text": "$(l:multiblocks/vacuum_chambers/exotic_containment_chamber)Камера удержания экзотической материи$(/l) создаёт и хранит, например, антивещество. Такие материалы $(l)$(c)крайне опасны$(): будьте осторожны. Они применяются в инструментах и оружии, например $(l:items_and_devices/antimatter_launcher)Пусковой установке антивещества$(/l), $(l:items_and_devices/lepton_cannon)Лептонной пушке$(/l) и $(l:items_and_devices/gluon_gun)Глюонной пушке$(/l)."
+    },
+    {
+      "type": "text",
+      "title": "Камера нуклеосинтеза",
+      "text": "$(l:multiblocks/vacuum_chambers/nucleosynthesis_chamber)Камера нуклеосинтеза$(/l) создаёт тяжёлые элементы из лёгких мюонным катализом синтеза или r-процессом с нейтронами. По сути, она повторяет процессы звёзд, но в меньшем масштабе и гораздо быстрее. При желании любой элемент можно получить из одного водорода, хотя это требует огромной системы и много энергии."
+    },
+    {
+      "type": "text",
+      "text": "Некоторые более выгодные рецепты синтеза также дают большой чистый энергетический выход."
+    },
+    {
+      "type": "text",
+      "title": "К следующему этапу",
+      "text": "Вы достигли конца текущего содержимого QMD.$(br2)Отличная работа!"
+    }
+  ]
+}

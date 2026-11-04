@@ -1,0 +1,18 @@
+{
+  "name": "Костюм химзащиты",
+  "icon": "nuclearcraft:helm_hazmat",
+  "category": "nuclearcraft:items",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "hazmat",
+      "type": "items/4",
+      "header": "Костюм химзащиты",
+      "item1": "nuclearcraft:helm_hazmat",
+      "item2": "nuclearcraft:chest_hazmat",
+      "item3": "nuclearcraft:legs_hazmat",
+      "item4": "nuclearcraft:boots_hazmat",
+      "text": "$(item)Костюм химзащиты$() уменьшает воздействие радиации. Каждая часть комплекта имеет своё сопротивление радиации, определяющее степень защиты."
+    }
+  ]
+}

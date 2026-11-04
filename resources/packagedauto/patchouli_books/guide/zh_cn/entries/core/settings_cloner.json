@@ -1,0 +1,25 @@
+{
+  "name": "设定复制器",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:settings_cloner",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)封包设定复制器/$可以复制和粘贴部分封包机器的设定。"
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedauto:settings_cloner",
+      "link_recipe": true,
+      "title": "使用方法",
+      "text": "使用$(item)封包设定复制器/$时，对支持的机器执行$(thing)$(k:sneak) + $(k:use)/$即可复制设定。$(p)随后对同类型机器执行$(thing)$(k:use)/$即可粘贴设定。$(p)对空气或不支持的方块执行$(thing)$(k:sneak) + $(k:use)/$，即可清空复制器。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:settings_cloner",
+      "title": "合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Изготовление",
+  "category": "packagedauto:recipe",
+  "icon": "packagedauto:crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Изготовление»/$ использует $(item)изготовитель программы/$ для рецептов обычного верстака.$(p)Готовые предметы $(item)изготовитель программы/$ выводит в соседние инвентари.$(p)$(item)Изготовителю программы/$ требуется энергия."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedauto:crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Изготовитель программы/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из неё энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:crafter",
+      "title": "Изготовление"
+    }
+  ],
+  "flag": "packagedauto:crafter",
+  "read_by_default": true,
+  "sortnum": 104
+}

@@ -1,0 +1,13 @@
+{
+  "name": "§4PackagedDraconic",
+  "category": "packagedauto:recipe",
+  "icon": "packageddraconic:fusion_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)PackagedDraconic/$ добавляет в $(#822)PackagedAuto/$ типы рецептов для $(#822)Draconic Evolution/$."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4000
+}

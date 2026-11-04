@@ -1,0 +1,51 @@
+{
+  "name": "Мясо, блюда и прочая еда",
+  "icon": "twilightforest:experiment_115:2",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/foods/any",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Еда, чудесная еда!"
+    },
+    {
+      "type": "spotlight",
+      "title": "Мясо гидры",
+      "item": "twilightforest:hydra_chop",
+      "advancement": "twilightforest:alt/treasures/foods/hydra_chop",
+      "text": "Один кусок мяса гидры — уже сытный обед. Это мощное мясо отлично утоляет голод и ненадолго ускоряет исцеление. Достойная пища для победителя столь могучего зверя."
+    },
+    {
+      "type": "spotlight",
+      "title": "Вафли",
+      "item": "twilightforest:maze_wafer",
+      "advancement": "twilightforest:alt/treasures/foods/maze_wafer",
+      "text": "Небольшой перекус из лабиринтов. Насыщают они слабо, но прекрасно подходят для исследования запутанных сооружений, когда еда на исходе."
+    },
+    {
+      "type": "text",
+      "title": "Мясо минотавра",
+      "item": "twilightforest:cooked_meef",
+      "advancement": "twilightforest:alt/treasures/foods/meef",
+      "text": "Говядина минотавра. Сырым мясом особо не наешься, зато после приготовления оно становится ценным продуктом, сравнимым с жареной курицей."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/foods/vension",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "spotlight",
+      "title": "Суп из минотавра",
+      "item": "twilightforest:meef_stroganoff",
+      "advancement": "twilightforest:progress_labyrinth",
+      "text": "Питательно и сытно. Суп из минотавра не только подкрепляет путешественника, но и позволяет безопасно войти в Огненное болото, не страдая от жары. Как мило со стороны гриботавра после всех наших усилий!"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/foods/experiment_115",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

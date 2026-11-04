@@ -1,0 +1,37 @@
+{
+  "name": "Помеченное реле настройки",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:marked_relay",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Помеченное реле настройки/$ собирает звёздный свет для машин $(#822)PackagedAstral/$ и используется при изготовлении из пакетов на $(l:recipe/trait)переливчатом алтаре/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedastral:marked_relay",
+      "link_recipe": true,
+      "title": "Использование",
+      "text": "Чтобы $(item)помеченное реле настройки/$ собирало звёздный свет, постройте вокруг него структуру реле настройки, показанную на следующей странице.$(p)При изготовлении из пакетов реле выбрасывает оставшиеся предметы над собой."
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "packagedastral:pattern_marked_relay",
+      "name": "Структура"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Помеченное реле настройки/$ подключается к $(thing)МЭ-сети/$.$(p)В этом случае оставшиеся предметы возвращаются в сеть."
+    },
+    {
+      "type": "packagedastral:altar_recipe_1",
+      "recipe": "packagedastral/marked_relay",
+      "title": "Светящийся верстак"
+    }
+  ],
+  "flag": "packagedastral:discovery",
+  "read_by_default": true,
+  "sortnum": 1001
+}

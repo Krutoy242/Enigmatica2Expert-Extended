@@ -1,0 +1,22 @@
+{
+  "name": "故障灌注金属",
+  "icon": "deepmoblearning:infused_ingot_block",
+  "category": "3_system_malfunction",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "你发现，$(item)天地宝晶$()可以有效稳定$(item)不稳定故障碎片$()。$(br2)碎片$(item)稳定$()后，会急切地寻找材料依附。你认为$(item)恒星合金$()足够坚固，可以成为它们的$(item)载体$()。$(br2)这是个精细的过程，必须在$(item)水中$()进行，否则材料无法正常结合。"
+    },
+    {
+      "type": "fluid_infusion",
+      "title": "稳定化过程",
+      "input1": "biomesoplenty:terrestrial_artifact",
+      "input2": "deepmoblearning:glitch_fragment",
+      "input3": "enderio:item_alloy_endergy_ingot:3",
+      "output": "deepmoblearning:glitch_infused_ingot",
+      "fluid": "deepmoblearning:textures/gui/patchouli/water.png",
+      "fluidTooltip": "水"
+    }
+  ]
+}

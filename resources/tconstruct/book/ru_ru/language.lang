@@ -1,0 +1,56 @@
+// Sections
+intro=Вступление
+materials=Материалы
+bowmaterials=Части луков
+tools=Инструменты
+modifiers=Модификаторы
+seared_devices=Seared Devices
+
+repairing=Починка
+offhand=Сбор левой рукой
+smeltery_intro=Smeltery
+cast_crafting=Cast Crafting
+bolt_crafting=Создание болтов
+alloying=Alloying
+entity_melting=Entity Melting
+seared_furnace_intro=Seared Furnace
+tinker_tank_intro=Tinker Tank
+
+modifier.effect=Эффекты:
+tool.properties=Свойства:
+
+material.craft_partbuilder=Может быть создано в Конструкторе деталей
+material.craft_casting=Может быть отлито из %s
+
+wood.flavour=Сколько дров бросил бы сурок, если бы сурок мог бросать дрова?
+stone.flavour=Твёрд, как камень
+
+# Russian additions
+flint.flavour=Выбор современной семьи каменного века. Ябба-дабба-ду!
+cactus.flavour=Так ведь и глаз выколоть можно, малыш!
+bone.flavour=Хочешь перемыть мне косточки?
+obsidian.flavour=Крепок как сталь, но хрупок после обработки.
+prismarine.flavour=Сначала спроси у своего стража!
+endstone.flavour=Я так старался и так далеко зашёл.
+paper.flavour=Очень слабый, зато вмещает много модификаторов.
+sponge.flavour=Живёт в ананасе под водой!
+firewood.flavour=Популярен среди поджигателей.
+iron.flavour=Притягательный выбор.
+pigiron.flavour=Сначала виляй хвостом, затем шевели пятачком. Хрю-хрю-хрю!
+knightslime.flavour=Склизкий, металлический и при этом каменный? Удивительно!
+slime.flavour=Похоже, я — жуткая жижа!
+blueslime.flavour=Водонепроницаемый и упругий!
+magmaslime.flavour=Течёт по жилам Нижнего мира.
+alubrass.flavour=Я называю это «Смелость и латунь».
+alumite.flavour=Очень прочный и модный.
+netherrack.flavour=Это сделано из чего?!
+cobalt.flavour=Синий я, да-ба-ди, да-ба-дай, да-ба-ди, да-ба!
+ardite.flavour=К слову «оранжевый» нет рифмы. Или есть?
+manyullyn.flavour=Обычно произносится «ман-юл-ин». Также известен как металл, рассекающий звёзды.
+bloodbone.flavour=Кровь до самых костей!
+copper.flavour=Не дай этому омрачить твой день.
+bronze.flavour=Стал популярен ещё в бронзовом веке!
+lead.flavour=Старайся не вдыхать.
+silver.flavour=Склонен окисляться, зато очень эффективен против оборотней.
+electrum.flavour=Отлично проводит электричество.
+steel.flavour=Легендарный металл Общества мастеров.

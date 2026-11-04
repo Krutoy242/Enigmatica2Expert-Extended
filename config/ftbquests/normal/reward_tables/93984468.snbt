@@ -1,5 +1,5 @@
 {
-	title: "Mining Robot Reward",
+	title: "{e2ee.reward.93984468}",
 	loot_size: 1,
 	rewards: [{
 		icon: "ic2:plate 8 15",

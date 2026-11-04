@@ -1,0 +1,43 @@
+{
+  "name": "生物生成调整",
+  "icon": "draconicevolution:mob_soul{EntityName:\"minecraft:enderman\"}",
+  "category": "World",
+  "pages": [
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:enderman\"}",
+      "title": "末影人",
+      "text": "在$(n)主世界/$生成时，有 10% 的概率携带$(n)压缩末地石/$，也有较低概率携带$(n)末地矿石/$。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"emberroot:dire_wolf\"}",
+      "title": "恐怖之狼",
+      "text": "只在黑暗中生成。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"quark:stoneling\"}",
+      "title": "石精灵",
+      "text": "$(n)只在石头方块上/$生成，且数量不超过 3。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"rats:rat\"}",
+      "title": "老鼠",
+      "text": "只在$(n)垃圾堆/$上生成。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"endreborn:watcher\"}",
+      "title": "观察者",
+      "text": "在主世界生成，但只会出现在$(n)末地石类方块/$上。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"endreborn:endguard\"}",
+      "title": "末地守卫",
+      "text": "可在任何地方生成，但地面必须是$(n)紫珀块/$或$(n)诅咒之土/$。",
+      "type": "spotlight"
+    }
+  ]
+}

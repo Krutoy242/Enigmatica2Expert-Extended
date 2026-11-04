@@ -1,0 +1,12 @@
+{
+  "name": "Генерация мира",
+  "icon": "minecraft:grass",
+  "category": "qmd:basics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "На данный момент QMD не добавляет генерацию мира, например руды. Все основные материалы и руды предоставляет NuclearCraft."
+    }
+  ]
+}

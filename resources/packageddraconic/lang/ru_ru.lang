@@ -1,0 +1,15 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+itemGroup.packageddraconic=PackagedDraconic
+tile.packageddraconic.fusion_crafter.name=Изготовитель пакетов слияния
+tile.packageddraconic.fusion_crafter.injectors.usable=Доступные помеченные инжекторы слияния:
+tile.packageddraconic.fusion_crafter.injectors.required=Минимально необходимые помеченные инжекторы слияния:
+tile.packageddraconic.fusion_crafter.injectors.0=Базовые: %s
+tile.packageddraconic.fusion_crafter.injectors.1=Виверны: %s
+tile.packageddraconic.fusion_crafter.injectors.2=Драконьи: %s
+tile.packageddraconic.fusion_crafter.injectors.3=Хаотические: %s
+tile.packageddraconic.marked_basic_injector.name=Помеченный базовый инжектор слияния
+tile.packageddraconic.marked_wyvern_injector.name=Помеченный инжектор слияния виверны
+tile.packageddraconic.marked_draconic_injector.name=Помеченный драконий инжектор слияния
+tile.packageddraconic.marked_chaotic_injector.name=Помеченный хаотический инжектор слияния
+recipe.packageddraconic.fusion=Слияние
+recipe.packageddraconic.fusion.short=Слияние

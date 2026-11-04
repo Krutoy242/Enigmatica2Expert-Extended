@@ -1,0 +1,9 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+guide.silentlib.edition=Издание %s
+guide.silentlib.searchField=Нажмите для поиска
+guide.silentlib.shapelessRecipe=Бесформенный рецепт
+guide.silentlib.shapedRecipe=Форменный рецепт
+guide.silentlib.shapelessOreRecipe=Бесформенный рецепт со словарём руд
+guide.silentlib.shapedOreRecipe=Форменный рецепт со словарём руд
+guide.silentlib.furnaceRecipe=Рецепт переплавки
+guide.silentlib.clickToSeeRecipe=Нажмите, чтобы посмотреть рецепт

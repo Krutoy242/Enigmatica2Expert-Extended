@@ -1,0 +1,18 @@
+{
+  "name": "Атмосферный собиратель",
+  "icon": "qmd:atmosphere_collector",
+  "category": "qmd:blocks_and_machines",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "qmd:atmosphere_collector",
+      "text": "Атмосферные собиратели собирают окружающий газ. Они потребляют RF и лучше работают на открытом пространстве. Получаемый газ зависит от измерения и биома. Эти сведения можно посмотреть в применениях собирателя в JEI."
+    },
+    {
+      "type": "diagram_low",
+      "image": "qmd:textures/gui/book_images/atmosphere_collector_range.png",
+      "text": "Нажатие ПКМ по блоку показывает текущий газ и скорость сбора. Она зависит от количества блоков воздуха в области 5x5x5 над устройством, показанной ниже."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "五彩祭坛",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:trait_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)五彩祭坛/$是一种合成配方类型，使用$(item)五彩封包合成祭坛/$执行原本在五彩祭坛中进行的合成。"
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packagedastral:trait_crafter",
+      "item2": "packagedastral:marked_relay",
+      "title": "使用方法",
+      "text": "使用$(item)五彩封包合成祭坛/$前，需要在其周围搭建五彩祭坛结构，如下一页所示。$(p)还需要在合成器周围的 7×7 区域内放置足够多的$(item)标记星辉转继器/$。$(p)合成器需要能量和星能。"
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "packagedastral:pattern_trait_crafter",
+      "name": "结构"
+    },
+    {
+      "type": "text",
+      "title": "使用方法（续）",
+      "text": "空手对空闲的祭坛执行$(thing)$(k:sneak) + $(k:use)/$，可检查$(item)五彩封包合成祭坛/$当前可用和最低所需的$(item)标记星辉转继器/$数量。$(p)$(item)五彩封包合成祭坛/$会将合成产物输出到相邻容器中。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(item)五彩封包合成祭坛/$可以连接到$(thing)ME 网络/$。$(p)它会从网络获取能量，并将合成产物改为输出到网络中。"
+    },
+    {
+      "type": "packagedastral:altar_recipe_2",
+      "recipe": "packagedastral/constellation_focus",
+      "title": "五彩祭坛"
+    },
+    {
+      "type": "packagedastral:altar_recipe_2",
+      "recipe": "packagedastral/trait_crafter",
+      "title": "五彩祭坛"
+    }
+  ],
+  "flag": "packagedastral:trait",
+  "read_by_default": true,
+  "sortnum": 1005
+}

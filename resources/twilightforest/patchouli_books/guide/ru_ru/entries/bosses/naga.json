@@ -1,0 +1,14 @@
+{
+  "name": "Нага",
+  "icon": "twilightforest:trophy:0",
+  "category": "bosses",
+  "advancement": "twilightforest:alt/entities/naga",
+  "sortnum": 3010,
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "twilightforest:naga",
+      "text": "Огромное зелёное змееподобное существо с почти человеческим лицом. В его чешуе едва заметны оттенки других цветов."
+    }
+  ]
+}

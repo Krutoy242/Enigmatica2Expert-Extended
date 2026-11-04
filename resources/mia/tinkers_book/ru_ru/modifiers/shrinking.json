@@ -1,0 +1,18 @@
+{
+  "modifier": "shrinking",
+  "text": [
+    {
+      "text": "Удар оружием с этим модификатором уменьшает противника на несколько секунд."
+    }
+  ],
+  "effects": [
+    "Уменьшает врагов",
+    "Несовместим с кражей размера",
+    "Три уровня"
+  ],
+  "demoTool": [
+    "tconstruct:broadsword",
+    "tconstruct:cleaver",
+    "tconstruct:arrow"
+  ]
+}

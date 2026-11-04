@@ -1,0 +1,7 @@
+{
+  "name": "Поддержка OpenComputers",
+  "description": "OpenComputers позволяет получать информацию об ускорителях и управлять ими.",
+  "icon": "qmd:accelerator_computer_port",
+  "parent": "qmd:multiblocks",
+  "sortnum": 4
+}

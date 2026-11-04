@@ -1,0 +1,19 @@
+{
+  "name": "Продвинутый мутатрон",
+  "icon": "gendustry:mutatron_advanced",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "title": "Продвинутый мутатрон",
+      "item": "gendustry:mutatron_advanced",
+      "link_recipe": true,
+      "text": "<li>работает как обычный <l>(genetics/mutatron)мутатрон</l><li>позволяет выбрать мутацию, если доступны несколько вариантов<li>при достаточном питании может работать вдвое быстрее"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:mutatron_advanced",
+      "text": "Позволяет создавать новые виды пчёл."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Генетический транспозер",
+  "icon": "gendustry:transposer",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:transposer",
+      "link_recipe": true,
+      "text": "В среднем расходует комплект <l>(misc/crafting_material#labware)лабораторной посуды</l> на 5 операций."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:transposer",
+      "text": "Позволяет копировать генетическую информацию между образцами и шаблонами."
+    },
+    {
+      "type": "text+",
+      "title": "Копирование шаблонов",
+      "text": "Чтобы скопировать <l>(misc/crafting_material#gene_template)шаблон</l>:<li>поместите исходный шаблон в верхний левый слот<li>поместите целевой шаблон в левый слот<li>целевой шаблон должен быть пустым либо содержать другие образцы того же организма"
+    },
+    {
+      "type": "text+",
+      "title": "Копирование образцов",
+      "text": "Чтобы скопировать <l>(misc/crafting_material#gene_sample)образец гена</l>:<li>поместите заполненный образец в верхний левый слот<li>поместите пустой образец в левый слот"
+    }
+  ]
+}

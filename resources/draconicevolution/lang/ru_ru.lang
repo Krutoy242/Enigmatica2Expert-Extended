@@ -1,0 +1,13 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+info.de.manual.introTxt.txt=Всё, что нужно знать, в одном месте.
+info.de.manual.indexButton.txt=Содержание
+info.de.manual.indexButtonTip.txt=Перейти к содержанию
+info.de.manual.contributors.txt=Участники разработки Draconic Evolution
+info.de.manual.name.txt=Имя
+info.de.manual.contribution.txt=Вклад
+info.de.manual.clickToGoToSite.txt=(Нажмите на имя, чтобы открыть сайт)
+info.de.manual.contributorsButton.txt=Участники
+info.de.manual.contributorsButtonInfo.txt=Люди, внёсшие вклад в Draconic Evolution
+info.de.manual.nav1.txt=Подсказки по навигации
+info.de.manual.nav2.txt=Backspace — предыдущая страница.
+info.de.manual.nav3.txt=Удерживайте Shift для быстрой прокрутки.

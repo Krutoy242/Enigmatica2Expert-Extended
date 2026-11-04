@@ -1,7 +1,7 @@
 {
   "name": "Enigmatica2:Expert",
-  "subtitle": "EXTENDED",
-  "landing_text": "This book contain $(l)useful knowledges/$ about modpack.$(br)$(br)$(#0099aa)Hold this book in your hand and ascend to a height of 257 blocks to visit Void world./$",
+  "subtitle": "e2ee.book.subtitle",
+  "landing_text": "e2ee.book.landing",
   "version": 0,
   "creative_tab": "tools",
   "pause_game": true,

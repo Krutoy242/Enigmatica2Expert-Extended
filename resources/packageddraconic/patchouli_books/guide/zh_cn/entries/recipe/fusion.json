@@ -1,0 +1,48 @@
+{
+  "name": "聚合合成",
+  "category": "packagedauto:recipe",
+  "icon": "packageddraconic:fusion_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)聚合合成/$是一种合成配方类型，使用$(item)聚合封包合成器/$执行原本在$(item)聚合核心/$中进行的合成。"
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packageddraconic:fusion_crafter",
+      "item2": "packageddraconic:marked_basic_injector,packageddraconic:marked_wyvern_injector,packageddraconic:marked_draconic_injector,packageddraconic:marked_chaotic_injector",
+      "title": "使用方法",
+      "text": "使用$(item)聚合封包合成器/$时，需要在至少两格外放置数量充足、等级合适的$(item)标记聚合注入器/$。注入器应朝向合成器，中间无遮挡，并接通能量。$(p)$(item)聚合封包合成器/$本身也需要一些能量。"
+    },
+    {
+      "type": "text",
+      "title": "使用方法（续）",
+      "text": "空手对空闲的合成器执行$(thing)$(k:sneak) + $(k:use)/$，可检查$(item)聚合封包合成器/$当前可用和最低所需的$(item)标记聚合注入器/$数量与等级。$(p)$(item)聚合封包合成器/$会将合成产物输出到相邻容器中。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(item)聚合封包合成器/$与$(item)标记聚合注入器/$都可以连接到$(thing)ME 网络/$。$(p)合成器会从网络获取能量，合成器与注入器都会将合成产物及剩余物品改为输出到网络中。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packageddraconic:marked_basic_injector",
+      "recipe2": "packageddraconic:marked_wyvern_injector",
+      "title": "合成"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packageddraconic:marked_draconic_injector",
+      "recipe2": "packageddraconic:marked_chaotic_injector",
+      "title": "合成"
+    },
+    {
+      "type": "packageddraconic:fusion_recipe",
+      "output": "packageddraconic:fusion_crafter",
+      "title": "聚合合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4001
+}

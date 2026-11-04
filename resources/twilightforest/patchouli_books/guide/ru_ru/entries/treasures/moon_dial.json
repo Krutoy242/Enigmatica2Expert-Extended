@@ -1,0 +1,15 @@
+{
+  "name": "Лунный циферблат",
+  "icon": "twilightforest:moon_dial",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/moon_dial",
+  "sortnum": 2101,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Лунный циферблат",
+      "item": "twilightforest:moon_dial",
+      "text": "Показывает состояние луны."
+    }
+  ]
+}

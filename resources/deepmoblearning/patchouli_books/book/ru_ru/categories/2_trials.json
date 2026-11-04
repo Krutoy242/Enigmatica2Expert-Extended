@@ -1,0 +1,6 @@
+{
+  "name": "Испытания",
+  "description": "В этой главе описана механика испытаний$(br)в $(dml)",
+  "icon": "deepmoblearning:trial_keystone",
+  "sortnum": 2
+}

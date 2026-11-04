@@ -1,0 +1,27 @@
+{
+  "name": "Светящийся верстак",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:discovery_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Светящийся верстак»/$ использует $(item)светящийся изготовитель пакетов/$ для выполнения рецептов светящегося верстака.$(p)Предметы, изготовленные $(item)светящимся изготовителем пакетов/$, выводятся в соседние инвентари.$(p)$(item)Светящемуся изготовителю пакетов/$ требуются энергия и звёздный свет."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedastral:discovery_crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Светящийся изготовитель пакетов/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из сети энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "packagedastral:altar_recipe_1",
+      "recipe": "packagedastral/discovery_crafter",
+      "title": "Светящийся верстак"
+    }
+  ],
+  "flag": "packagedastral:discovery",
+  "read_by_default": true,
+  "sortnum": 1002
+}

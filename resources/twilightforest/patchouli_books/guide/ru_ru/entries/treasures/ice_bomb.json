@@ -1,0 +1,15 @@
+{
+  "name": "Ледяная бомба",
+  "icon": "twilightforest:ice_bomb",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/ice_bomb",
+  "sortnum": 7120,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Ледяная бомба",
+      "item": "twilightforest:ice_bomb",
+      "text": "Ледяная бомба — лучшая вещь на свете. Такая холодная и такая крутая! Буквально бомба."
+    }
+  ]
+}

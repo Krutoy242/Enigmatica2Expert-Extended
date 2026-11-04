@@ -1,0 +1,91 @@
+{
+  "name": "Команды",
+  "icon": "qmd:accelerator_computer_port",
+  "category": "qmd:open_computers",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Все команды OpenComputers в алфавитном порядке."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getAcceleratorType()$() : Возвращает String — идентификатор логики типа ускорителя.$(br2)$(l)getBeamInfo()$() : Возвращает Table с (beam_length, beam_radius) — сведения о линии пучка внутри ускорителя.$(br2)$(l)getBeamPortMode(int x, int y, int z)$() : Возвращает string — режим порта пучка в (x,y,z): invalid, если порт недопустим, иначе input, output или disabled."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getBeamPortSwitchMode(int x, int y, int z)$() : Возвращает string — режим переключения порта в (x,y,z): invalid, если порт недопустим, иначе input или output.$(br2)$(l)getCoolingInfo()$() : Возвращает Table с (cooling_fluid, cooling, max_coolant_in, max_coolant_out): имя хладагента, охлаждение в H/t и максимальные входной и выходной потоки хладагента."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getEnergyInfo()$() : Возвращает Table с (energy_required, energy_stored, energy_capacity, energy_efficiency): расход RF/t, текущий запас RF, максимальную вместимость RF и энергетическую эффективность ускорителя."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getEnergyPercentage()$() : Возвращает Integer — значение energyPercentage.$(br2)$(l)getHeatBufferInfo()$() : Возвращает Table с (stored_heat, heat_capacity): запас тепла и вместимость теплового буфера."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getHeatingInfo()$() : Возвращает Table с (internal_heating, external_heating, max_external_heating, ambient_temperature): нагрев от компонентов, текущий и максимальный нагрев от среды и температуру среды."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getInputParticleInfo()$() : Возвращает Table с (type, amount, energy, focus): имя типа частиц, поток в pu/t, энергию в keV и фокусировку. Это параметры пучка, поступающего в ускоритель."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getIonSourceInfo()$() : Возвращает Table с (source_item, source_fluid, particle_type, amount, energy, focus): имя предмета-источника, имя жидкости-источника, имя получаемой частицы, поток pu/t, начальную энергию и начальную фокусировку."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getMaxTemperature()$() : Возвращает Integer — максимальную рабочую температуру ускорителя.$(br2)$(l)getNumberOfDipole()$() : Возвращает Integer — число дипольных магнитов."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getNumberOfRfCavity()$() : Возвращает Integer — число RF-резонаторов.$(br2)$(l)getNumberOfQuadrupole()$() : Возвращает Integer — число квадрупольных магнитов."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getOutputParticleInfo()$() : Возвращает Table с (type, amount, energy, focus): имя типа частиц, поток pu/t, энергию в keV и фокусировку. Это выходной пучок ускорителя, показанный в его интерфейсе."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getParticleInfo()$() : Возвращает Table с (type, mass, energy, charge, spin, interacts_with_em, interacts_with_weak, interacts_with_strong): имя частицы, массу в MeV/c^2, энергию, заряд, спин и признаки участия в электромагнитном, слабом и сильном взаимодействиях."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getSizeInfo()$() : Возвращает Table с (x_length, y_length, z_length, volume, surface_area) — размеры, объём и площадь поверхности ускорителя."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getStats()$() : Возвращает Table с (accelerating_voltage, dipole_strength, quadrupole_strength, input_particle_min_energy): ускоряющее напряжение в kV, дипольное поле, квадрупольное поле и минимально допустимую входную энергию частицы в keV."
+    },
+    {
+      "type": "text",
+      "text": "$(l)getSynchrotronParticleInfo()$() : Возвращает Table с (type, amount, energy, focus): имя типа частиц, поток pu/t, энергию в keV и фокусировку пучка из синхротронного порта.$(br2)$(l)getTemperature()$() : Возвращает Integer — температуру ускорителя."
+    },
+    {
+      "type": "text",
+      "text": "$(l)hasIonSource()$() : Возвращает Boolean — есть ли источник ионов.$(br2)$(l)hasParticle()$() : Возвращает Boolean: true, если в ускорителе есть пучок частиц.$(br2)$(l)isAcceleratorOn()$() : Возвращает Boolean — включён ли ускоритель, иначе false.$(br2)$(l)isBeamPort(int x, int y, int z)$() : Возвращает Boolean — находится ли порт пучка в (x,y,z)."
+    },
+    {
+      "type": "text",
+      "text": "$(l)isComplete()$() : Возвращает Boolean — собран ли ускоритель, иначе false.$(br2)$(l)isComputerControlled()$() : Возвращает Boolean — включён ли режим компьютерного управления."
+    },
+    {
+      "anchor": "set_computer_controlled",
+      "type": "text",
+      "text": "$(l)setComputerControlled(boolean computerControlled)$() : Возвращает Boolean. Включает или отключает компьютерное управление. В этом режиме контроллер и входные редстоуновые порты игнорируют редстоун. Возвращает установленное значение."
+    },
+    {
+      "anchor": "set_energy_percentage",
+      "type": "text",
+      "text": "$(l)setEnergyPercentage(int energyPercentage)$() : Возвращает Integer. Задаёт выходную энергию в процентах от максимума. У децелераторов используется дополнение до полного значения: например, 15% -> 85% энергии. Допустимы значения от 5 до 100 включительно или 0 для полного отключения. У дивертеров, разделителей и масс-спектрометров команда только включает или выключает устройство. Возвращает установленное значение EnergyPercentage."
+    },
+    {
+      "anchor": "switch_beam_port",
+      "type": "text",
+      "text": "$(l)switchBeamPort(int x, int y, int z)$() : Возвращает Boolean. Делает активным порт пучка в (x,y,z). Возвращает признак существования порта в (x,y,z)."
+    }
+  ]
+}

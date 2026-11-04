@@ -1,0 +1,42 @@
+{
+  "name": "Небесный алтарь",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:constellation_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Небесный алтарь»/$ использует $(item)небесный алтарь для пакетов/$ для выполнения рецептов обычного небесного алтаря."
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedastral:constellation_crafter",
+      "link_recipe": true,
+      "title": "Использование",
+      "text": "Для работы $(item)небесного алтаря для пакетов/$ постройте вокруг него структуру обычного небесного алтаря, показанную на следующей странице.$(p)Машине требуются энергия и звёздный свет."
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "packagedastral:pattern_constellation_crafter",
+      "name": "Структура"
+    },
+    {
+      "type": "text",
+      "title": "Использование (продолжение)",
+      "text": "Предметы, изготовленные $(item)небесным алтарём для пакетов/$, выводятся в соседние инвентари."
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Небесный алтарь для пакетов/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из сети энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "packagedastral:altar_recipe_2",
+      "recipe": "packagedastral/constellation_crafter",
+      "title": "Небесный алтарь"
+    }
+  ],
+  "flag": "packagedastral:constellation",
+  "read_by_default": true,
+  "sortnum": 1004
+}

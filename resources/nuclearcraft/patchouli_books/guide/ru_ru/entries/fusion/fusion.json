@@ -1,0 +1,12 @@
+{
+  "name": "Реактор-токамак (в разработке)",
+  "icon": "nuclearcraft:tokamak_fusion_controller",
+  "category": "nuclearcraft:fusion",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Реакторы-токамаки ещё не реализованы."
+    }
+  ]
+}

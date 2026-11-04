@@ -1,0 +1,16 @@
+{
+  "name": "花粉收集装备",
+  "icon": "gendustry:pollen_kit",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:pollen_kit",
+      "text": "<li>一次性物品，用于从树木等来源收集花粉<li>手持装备右击树叶方块即可采集花粉"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:pollen_kit"
+    }
+  ]
+}

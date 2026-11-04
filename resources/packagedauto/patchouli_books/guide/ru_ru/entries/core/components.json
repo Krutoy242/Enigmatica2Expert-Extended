@@ -1,0 +1,24 @@
+{
+  "name": "Компоненты для изготовления",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:package_component",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Основные компоненты, используемые в $(#822)PackagedAuto/$."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:package_component",
+      "title": "Изготовление"
+    },
+    {
+      "type": "crafting",
+      "flag": "mod:appliedenergistics2",
+      "recipe": "packagedauto:me_package_component",
+      "title": "Изготовление"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 1
+}

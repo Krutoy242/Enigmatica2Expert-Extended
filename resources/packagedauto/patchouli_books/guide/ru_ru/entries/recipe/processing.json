@@ -1,0 +1,13 @@
+{
+  "name": "Обработка",
+  "category": "packagedauto:recipe",
+  "icon": "minecraft:furnace",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Обработка/$ — простейший тип рецепта обработки.$(p)При записи ингредиенты и результаты сортируются и объединяются в стопки."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 101
+}

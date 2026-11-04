@@ -1,0 +1,7 @@
+{
+  "name": "Ускорители",
+  "description": "Основа QMD",
+  "icon": "qmd:linear_accelerator_controller",
+  "parent": "qmd:multiblocks",
+  "sortnum": 0
+}

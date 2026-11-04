@@ -1,0 +1,23 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+botania.entry.botania_tweaks.lexicon.category.direCrate=Ужасающий сборочный ящик
+botania.tagline.botania_tweaks.lexicon.category.direCrate=Сборочный ящик для экстремального крафта Avaritia
+botania_tweaks.lexicon.direCrate.0=Именно то, что обещает название: &1Сборочный ящик&0 с 81 слотом, способный собирать ваши любимые &1экстремальные рецепты&0 из &1Avaritia&0. Работает как обычный &1Сборочный ящик&0, только... больше.<br>Все существующие &1Шаблоны крафта&0 слишком малы, а сверхплотное ядро &1Экстремального верстака&0, похоже, мешает &1Компараторам&0.
+botania_tweaks.lexicon.direCrate.subtitle=Кошмар аваритиста
+botania.entry.botania_tweaks.lexicon.category.extCrates=Расширенные сборочные ящики
+botania.tagline.botania_tweaks.lexicon.category.extCrates=Сборочные ящики для Extended Crafting
+botania_tweaks.lexicon.extCrates.0=Именно то, что обещает название: &1Сборочные ящики&0 для ваших любимых &1рецептов верстаков&0 из &1Extended Crafting&0. В остальном работают как обычный &1Сборочный ящик&0.<br>&1Шаблоны крафта&0 несовместимы, а сверхплотное ядро, похоже, мешает &1Компараторам&0.
+botania_tweaks.lexicon.extCrates.subtitle.0=Три на три
+botania_tweaks.lexicon.extCrates.subtitle.1=Пять на пять
+botania_tweaks.lexicon.extCrates.subtitle.2=Семь на семь
+botania_tweaks.lexicon.extCrates.subtitle.3=Ладно, Direwolf20, успокойся
+botania_tweaks.lexicon.advCrate.0=&1Сборочный ящик&0 не сможет изготовить предмет без &4маны&0. Расход зависит от количества предметов в &1ящике&0; слоты с &1Заполнителями сборщика&0 или &1Шаблонами крафта&0 не учитываются. Наведитесь на него с &1Посохом леса&0 для подробностей.
+botania_tweaks.lexicon.advCrate.1=Буфер &4маны&0 &1Сборочного ящика&0 удивительно велик, а &1ящик&0 расходует его целиком, теряя излишек. Лучше не заливать &4ману&0 бездумно, а использовать, например, &1Красный распространитель маны&0.<br>&oЭто возможность «Advanced Crate» мода Botania Tweaks.&0
+botania_tweaks.lexicon.advCrateHard=Если &1Сборочный ящик&0 полностью заполнен, но &4маны&0 недостаточно, предметы сразу выпадают снизу. Всегда заранее снабжайте &1Сборочный ящик&0 достаточным количеством &4маны&0.<br>&oЭто возможность «Advanced Crate Hard Mode» мода Botania Tweaks.&0
+botania_tweaks.lexicon.potato.1=Действительно верит в тебя
+botania_tweaks.lexicon.potato.2=Очень сильно верит в тебя
+botania_tweaks.lexicon.potato.3=Очень-очень сильно верит в тебя
+botania_tweaks.lexicon.potato.4=Очень-очень-очень *СИЛЬНО* верит в тебя
+botania_tweaks.lexicon.potato.5=Невероятное количество веры в тебя
+botania_tweaks.lexicon.potato.6=Непостижимое количество веры в тебя
+botania_tweaks.lexicon.potato.7=Невозможное количество веры в тебя
+botania_tweaks.lexicon.potato.8=Восьмикратно сжатая вера в тебя

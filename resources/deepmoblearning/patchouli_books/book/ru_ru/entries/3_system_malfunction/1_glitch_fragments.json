@@ -1,0 +1,15 @@
+{
+  "name": "Фрагменты глюка",
+  "icon": "deepmoblearning:glitch_fragment",
+  "category": "3_system_malfunction",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Фрагменты глюка",
+      "item": "deepmoblearning:glitch_fragment",
+      "link_recipe": true,
+      "text": "Чтобы получить $(item)фрагменты нестабильного глюка$(), раздробите $(l:3_system_malfunction/0_system_glitches#heart)осквернённое сердце сбоя$() об $(item)обсидиановый блок$().$(br2)Эти $(item)фрагменты$() нужны для создания $(item)слитков, наполненных глюками$()."
+    }
+  ]
+}

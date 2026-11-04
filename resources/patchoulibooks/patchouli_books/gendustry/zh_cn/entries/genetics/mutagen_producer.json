@@ -1,0 +1,18 @@
+{
+  "name": "诱变剂制造机",
+  "icon": "gendustry:mutagen_producer",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:mutagen_producer",
+      "link_recipe": true,
+      "text": "<li>将固体物品转化为<l>(misc/resources#mutagen)诱变剂</l><li>左侧能量条显示内部储能<li>右侧液槽显示内部储存的诱变剂<li>可以从任意侧面输入物品<li>诱变剂会自动输出到相邻管道或储罐"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:mutagen_producer",
+      "text": "可以加工红石、荧石，以及多种铀和放射性材料。"
+    }
+  ]
+}

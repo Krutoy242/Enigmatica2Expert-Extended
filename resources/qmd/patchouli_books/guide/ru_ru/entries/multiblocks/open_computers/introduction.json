@@ -1,0 +1,30 @@
+{
+  "name": "Введение",
+  "icon": "qmd:accelerator_computer_port",
+  "category": "qmd:open_computers",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Сейчас специальная интеграция с OpenComputers (OC) есть только у ускорителей. Она позволяет читать их параметры и управлять ими. Установите Компьютерный порт ускорителя в стенку и подключите компьютер. Все команды вызываются у компонента. Для проверки в консоли Lua используйте:$(br)component.qmd_accelerator."
+    },
+    {
+      "type": "text",
+      "text": ""
+    },
+    {
+      "anchor": "accelerator_control",
+      "title": "Управление ускорителем",
+      "type": "text",
+      "text": "Основные команды управления любым ускорителем:$(br)$(l:multiblocks/open_computers/oc_commands#set_computer_controlled)$(l)setComputerControlled(boolean computerControlled)$()$(/l)$(br2)$(l:multiblocks/open_computers/oc_commands#set_energy_percentage)$(l)setEnergyPercentage(int energyPercentage)$()$(/l)$(br2)$(l:multiblocks/open_computers/oc_commands#switch_beam_port)$(l)switchBeamPort(int x, int y, int z)$(/l)"
+    },
+    {
+      "type": "text",
+      "text": "Первая включает или отключает компьютерное управление. В этом режиме редстоун больше не управляет ускорителем.$(br2)Вторая включает и выключает ускоритель и задаёт энергию для некоторых его типов, подобно силе сигнала редстоуна, но точнее."
+    },
+    {
+      "type": "text",
+      "text": "Третья выполняет $(l:multiblocks/accelerators/beam_diverter#switching)переключение портов пучка$(/l), аналогично импульсам редстоуна на портах."
+    }
+  ]
+}

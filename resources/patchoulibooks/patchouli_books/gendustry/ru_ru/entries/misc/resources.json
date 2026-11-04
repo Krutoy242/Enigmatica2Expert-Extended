@@ -1,0 +1,25 @@
+{
+  "name": "Ресурсы",
+  "icon": "gendustry:mutagen_tank",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:mutagen",
+      "anchor": "mutagen",
+      "text": "<li>производится <l>(genetics/mutagen_producer)мутагенным производителем</l> из различных твёрдых предметов<li>необходим для работы <l>(genetics/mutatron)мутатрона</l> и <l>(genetics/mutatron_advanced)продвинутого мутатрона</l>"
+    },
+    {
+      "type": "spotlight+",
+      "item": "gendustry:protein",
+      "anchor": "protein",
+      "text": "<li>производится <l>(genetics/liquifier)протеиновым разжижителем</l><li>используется <l>(genetics/replicator)генетическим репликатором</l> для создания новых организмов"
+    },
+    {
+      "type": "spotlight+",
+      "item": "gendustry:liquiddna",
+      "anchor": "dna",
+      "text": "<li>производится <l>(genetics/extractor)экстрактором ДНК</l><li>используется <l>(genetics/replicator)генетическим репликатором</l> для создания новых организмов"
+    }
+  ]
+}

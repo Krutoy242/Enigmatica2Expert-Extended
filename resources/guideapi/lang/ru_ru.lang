@@ -1,0 +1,10 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+item.guideapi.book.name=Книга-руководство
+button.search.name=Поиск
+text.brewing.brew=Зельеварение
+text.brewing.error=&cОшибка в рецепте
+text.linked.open=Приседание + использование — открыть
+text.open.failed=Что-то помешало вам открыть эту книгу
+test.guide.format=Это тест\nформатирования\n	с отступом
+test.category.name=Тестовая категория
+test.entry.name=Тестовая запись

@@ -1,0 +1,27 @@
+{
+  "name": "Топоры минотавров",
+  "icon": "twilightforest:minotaur_axe",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/minotaur_axes",
+  "sortnum": 5030,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Искусно выкованное оружие минотавров и гриботавра. Кажется обычным топором, но конструкция странная: легко лежит в руке, а при беге словно становится тяжелее."
+    },
+    {
+      "type": "spotlight",
+      "title": "Золотой топор минотавра",
+      "item": "twilightforest:minotaur_axe_gold",
+      "advancement": "twilightforest:alt/treasures/minotaur_axe_gold",
+      "text": "Острый, мощный, но невероятно непрочный. Такое оружие есть лишь у самых достойных минотавров."
+    },
+    {
+      "type": "spotlight",
+      "title": "Алмазный топор минотавра",
+      "item": "twilightforest:minotaur_axe",
+      "advancement": "twilightforest:alt/treasures/minotaur_axe_diamond",
+      "text": "Искусно выкованное оружие, наделённое силой алмаза. Именно его выбирает гриботавр — достойный выбор могучего зверя."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+tile.xnet.antenna.name=Антенна
+message.xnet.shiftmessage=<Нажмите Shift>
+message.xnet.router=\
+message.xnet.wireless_router=\
+message.xnet.controller=\
+message.xnet.antenna=\
+message.xnet.antenna_base=\
+message.xnet.antenna_dish=\

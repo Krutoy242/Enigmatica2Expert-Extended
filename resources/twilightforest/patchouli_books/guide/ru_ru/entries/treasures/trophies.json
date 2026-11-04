@@ -1,0 +1,67 @@
+{
+  "name": "Трофеи",
+  "icon": "twilightforest:trophy_pedestal",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/trophies",
+  "sortnum": 2310,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Сведения о трофеях"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_trophy_pedestal",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:quest_ram",
+      "text": "Благодарный за угощение баран подарил мне… копию своей головы. Иногда лучше не задумываться о подобных вещах. Трофей можно поставить, показывая своё уважение к изысканным блюдам из шерсти, или даже носить как шлем. Воистину достойная награда за хорошую работу… Наверное."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_naga",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_lich",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "spotlight",
+      "title": "Трофей гриботавра",
+      "item": "twilightforest:trophy:6",
+      "advancement": "twilightforest:progress_labyrinth",
+      "text": "Трофей гриботавра достаётся тем, кто одолел зверя Лабиринта. Пусть он и покрыт железом, это достойная награда за тяжёлую схватку силы с силой — или ума с силой, смотря как был побеждён гриботавр."
+    },
+    {
+      "type": "spotlight",
+      "title": "Трофей гидры",
+      "item": "twilightforest:trophy:2",
+      "advancement": "twilightforest:progress_hydra",
+      "text": "Трофей в виде одной из многочисленных голов гидры. Хотя отсечённые головы только множатся, эта награда жаркой битвы доказывает, что чудовище с регенерирующими головами можно убить. Похоже, пасть открывается, если под трофеем нет твёрдой поверхности."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_knights",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_ur_ghast",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_yeti",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:progress_glacier",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+research_name.thaumadditions:crystal_lamp=Кристальная лампа
+research_stage.thaumadditions:crystal_lamp.1=Я задумался об источнике света на основе имеющихся кристаллов вис. Стоит попробовать преобразовать их энергию в фотоны. Возможно, для корпуса подойдёт великое дерево.
+research_stage.thaumadditions:crystal_lamp.2=Нитор в корпусе из великого дерева отлично справляется. Настоящее чудо происходит при помещении кристалла вис в лампу: она начинает светиться. Изобретение также реагирует на редстоун и выключается при подаче сигнала.

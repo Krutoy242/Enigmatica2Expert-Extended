@@ -1,0 +1,31 @@
+{
+  "name": "Генерация снаряжения",
+  "icon": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie\"}",
+  "category": "World",
+  "pages": [
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie\"}",
+      "title": "Генерация снаряжения",
+      "text": "Все мобы получают при появлении:$(br)$(li)случайные броню и оружие TCon$(br)$(li)случайные обычный комплект брони и оружие$(br2)Вероятность получить хотя бы 1 предмет снаряжения:$(br)$(li)базовая вероятность — 80%$(br)$(li)в $(l)обычном мире/$ — на 20% меньше$(br)$(li)для каждого следующего слота вероятность повторного броска увеличивается на 35%",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:skeleton\"}",
+      "title": "Генерация снаряжения",
+      "text": "Разные мобы получают разные виды брони и разные материалы TCon.$(br)У $(l)зомби/$ фиксированная вероятность получить любой доступный материал.$(br2)Для выбора используется $(l)кубическая/$ функция: $(l)бумага/$ выпадает примерно в $(l)~20%/$ случаев, а $(l)Gelid Metal/$ — в $(l)~0.3%/$ случаев.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie_pigman\"}",
+      "title": "Генерация снаряжения",
+      "text": "Мобы никогда не появляются со следующими материалами TCon:$(br)$(li)paper$(br)$(li)chocolate$(br)$(li)ma.superium$(br)$(li)ma.supremium$(br)$(li)spectre$(br)$(li)draconic_metal$(br)$(li)neutronium$(br)$(li)aethium$(br)$(li)chaotic_metal$(br)$(li)infinity_metal",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:wither_skeleton\"}",
+      "title": "Генерация снаряжения",
+      "text": "Броня и инструменты Tinkers' Construct могут получить случайный модификатор. В таком случае предмет со 100% вероятностью также получит дополнительный $(l)творческий/$ модификатор.$(br)Всё снаряжение появляется уже повреждённым, так что злоупотреблять $(l)фермой снятия снаряжения с мобов/$ не получится!",
+      "type": "spotlight"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Генераторы энергии",
+  "icon": "nuclearcraft:solar_panel_basic",
+  "category": "nuclearcraft:machines",
+  "sortnum": 1,
+  "pages": [
+    {
+      "anchor": "intro",
+      "type": "text",
+      "text": "Эти механизмы вырабатывают сравнительно немного энергии, зато просты в эксплуатации."
+    },
+    {
+      "anchor": "solar_panel",
+      "type": "blocks/4",
+      "header": "Солнечные панели",
+      "block1": "nuclearcraft:solar_panel_basic",
+      "block2": "nuclearcraft:solar_panel_advanced",
+      "block3": "nuclearcraft:solar_panel_du",
+      "block4": "nuclearcraft:solar_panel_elite",
+      "text": "$(item)Солнечные панели$() вырабатывают энергию с определённой скоростью в дневное время."
+    },
+    {
+      "anchor": "decay_generator",
+      "type": "blocks/1",
+      "header": "Генератор распада",
+      "block": "nuclearcraft:decay_generator",
+      "text": "$(item)Генератор распада$() вырабатывает энергию за счёт распада соседних радиоактивных блоков."
+    }
+  ]
+}

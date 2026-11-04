@@ -1,0 +1,38 @@
+{
+  "name": "Объединяющее изготовление",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:combination_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Объединяющее изготовление»/$ использует $(item)создатель комбинированного пакета/$ для выполнения рецептов $(item)ядра создания/$."
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packagedexcrafting:combination_crafter",
+      "item2": "packagedexcrafting:marked_pedestal",
+      "title": "Использование",
+      "text": "Подведите энергию к $(item)создателю комбинированного пакета/$ и разместите $(item)помеченные пьедесталы/$ в области 7x7 вокруг него."
+    },
+    {
+      "type": "text",
+      "title": "Использование (продолжение)",
+      "text": "Примените $(thing)$(k:sneak) + $(k:use)/$ пустой рукой к неработающему $(item)создателю комбинированного пакета/$, чтобы проверить доступное и необходимое число $(item)помеченных пьедесталов/$.$(p)Предметы, изготовленные $(item)создателем комбинированного пакета/$, выводятся в соседние инвентари."
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Создатель комбинированного пакета/$ и $(item)помеченный пьедестал/$ подключаются к $(thing)МЭ-сети/$.$(p)В этом случае готовые и оставшиеся предметы возвращаются в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:marked_pedestal",
+      "recipe2": "packagedexcrafting:combination_crafter",
+      "title": "Изготовление"
+    }
+  ],
+  "flag": "packagedexcrafting:combination",
+  "read_by_default": true,
+  "sortnum": 5007
+}

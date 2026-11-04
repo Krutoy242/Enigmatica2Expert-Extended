@@ -1,0 +1,6 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+gui.tpa.bookmarks=Закладки
+gui.tpa.bookmarked=В закладках
+gui.tpa.bookmark_added=Чертёж добавлен в закладки
+gui.tpa.bookmark_exists=Чертёж уже в закладках
+gui.tpa.chat.bookmark=[Закладка]

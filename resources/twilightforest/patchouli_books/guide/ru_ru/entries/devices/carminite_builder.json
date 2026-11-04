@@ -1,0 +1,15 @@
+{
+  "name": "Строитель башни",
+  "icon": "twilightforest:tower_device:6",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/carminite",
+  "sortnum": 6230,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Строитель башни",
+      "item": "twilightforest:tower_device:6",
+      "text": "Это странное устройство создаёт прозрачные красные блоки, получая сигнал красного камня. После активации строитель башни прокладывает путь в направлении моего взгляда. Путь временный, и для повторного запуска понадобится новый сигнал."
+    }
+  ]
+}

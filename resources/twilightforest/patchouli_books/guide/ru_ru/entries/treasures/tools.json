@@ -1,0 +1,48 @@
+{
+  "name": "Инструменты",
+  "icon": "twilightforest:ironwood_pickaxe",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/tools",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Этот мир волшебный. Полагаю, изготовление инструментов из его материалов может наделить их врождёнными магическими способностями, обычно доступными лишь через зачарование."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/ironwood_tool_set",
+      "text": "Инструменты из железного дерева"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/steeleaf_tool_set",
+      "text": "Инструменты из стальных листьев"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/fiery_tool_set",
+      "text": "Огненные инструменты"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/fiery_tool_set",
+      "text": "Огненные инструменты"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/knightmetal_tool_set",
+      "text": "Рыцарские инструменты"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/ice_sword",
+      "text": "Ледяной меч"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/giant_tool_set",
+      "text": "Гигантские инструменты"
+    }
+  ]
+}

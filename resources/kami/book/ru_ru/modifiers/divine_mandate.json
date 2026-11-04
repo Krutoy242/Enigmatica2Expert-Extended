@@ -1,0 +1,26 @@
+{
+  "modifier": "kami_divine_mandate",
+  "text": [
+    {
+      "text": "Чистая мощь ихориума теперь позволяет заставить добытые предметы телепортироваться к вам против их воли!"
+    }
+  ],
+  "effects": [
+    "Добытые предметы телепортируются к вам",
+    "Полезно при полёте и добыче над лавой",
+    "Не действует на оружие",
+    "Нет задержки подбора",
+    "Однократное применение"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe",
+    "tconstruct:shovel",
+    "tconstruct:hatchet",
+    "tconstruct:kama",
+    "tconstruct:mattock",
+    "tconstruct:hammer",
+    "tconstruct:lumberaxe",
+    "tconstruct:excavator",
+    "tconstruct:scythe"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "§4PackagedExCrafting",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:ultimate_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)PackagedExCrafting/$ добавляет в $(#822)PackagedAuto/$ типы рецептов для $(#822)Extended Crafting/$."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5000
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Антистроитель",
+  "icon": "twilightforest:tower_device:9",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/carminite",
+  "sortnum": 6240,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Антистроитель",
+      "item": "twilightforest:tower_device:9",
+      "text": "Этот блок излучает странную ауру, словно защищающую всё в её пределах. Любой поставленный в этой области блок ломается, а на месте разрушенного возникает странный красно-зелёный блок. Выключателя не видно, но должен же быть какой-то способ."
+    }
+  ]
+}

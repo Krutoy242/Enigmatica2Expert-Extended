@@ -1,0 +1,17 @@
+{
+  "modifier": "tconevo.accuracy",
+  "text": [
+    {
+      "text": "Точная оптика на оружии, похоже, повышает вероятность успешного попадания."
+    }
+  ],
+  "effects": [
+    "Даёт шанс преодолеть уклонение",
+    "Несколько уровней"
+  ],
+  "demoTool": [
+    "tconstruct:broadsword",
+    "tconstruct:cleaver",
+    "tconstruct:arrow"
+  ]
+}

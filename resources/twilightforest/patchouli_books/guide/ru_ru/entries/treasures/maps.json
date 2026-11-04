@@ -1,0 +1,34 @@
+{
+  "name": "Карты",
+  "icon": "twilightforest:magic_map",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/maps",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Сведения о картах"
+    },
+    {
+      "type": "spotlight",
+      "title": "Магическая карта",
+      "item": "twilightforest:magic_map",
+      "advancement": "twilightforest:alt/treasures/treasures/magic_map",
+      "text": "Магическая карта помогает находить биомы и сооружения."
+    },
+    {
+      "type": "spotlight",
+      "title": "Карта лабиринта",
+      "item": "twilightforest:maze_map",
+      "advancement": "twilightforest:alt/treasures/treasures/maze_map",
+      "text": "Карта лабиринта показывает его устройство."
+    },
+    {
+      "type": "spotlight",
+      "title": "Карта шахты",
+      "item": "twilightforest:ore_map",
+      "advancement": "twilightforest:alt/treasures/treasures/ore_map",
+      "text": "Карта шахты показывает подземные объекты, особенно руды."
+    }
+  ]
+}

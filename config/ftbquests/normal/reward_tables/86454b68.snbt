@@ -1,5 +1,5 @@
 {
-	title: "Legendary",
+	title: "{e2ee.reward.86454b68}",
 	loot_size: 1,
 	rewards: [{
 		item: "thermalexpansion:frame 1 148"

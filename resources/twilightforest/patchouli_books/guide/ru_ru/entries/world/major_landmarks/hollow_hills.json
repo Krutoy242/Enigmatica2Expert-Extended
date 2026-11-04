@@ -1,0 +1,24 @@
+{
+  "name": "Полые холмы",
+  "icon": "twilightforest:miniature_structure:2",
+  "category": "major_landmarks",
+  "advancement": "twilightforest:alt/major_landmarks/hollow_hills",
+  "sortnum": 2000,
+  "pages": [
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/major_landmarks/small_hollow_hill",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/major_landmarks/medium_hollow_hill",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/major_landmarks/large_hollow_hill",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

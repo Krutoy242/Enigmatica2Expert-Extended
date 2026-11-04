@@ -1,0 +1,15 @@
+{
+  "name": "Огненная кровь и слёзы",
+  "icon": "twilightforest:fiery_blood",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/fiery_blood_tears",
+  "sortnum": 5120,
+  "pages": [
+    {
+      "type": "twilightforest:gallery",
+      "title": "Огненная кровь и слёзы",
+      "item_list": "twilightforest:fiery_blood|twilightforest:fiery_tears",
+      "text": "Маленькие пузырьки с горячим веществом. Пылающая сущность внутри настолько горяча, что ею можно пропитать железо, превратив его в огненный металл для изготовления предметов. Её добывают у нескольких могущественных чудовищ."
+    }
+  ]
+}

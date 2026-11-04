@@ -1,0 +1,52 @@
+#PARSE_ESCAPES
+# Gendustry 1.6.5.8 matches config locale suffixes case-sensitively.
+# Lower-case client locales do not match bees.zh_CN.lang / bees.ru_RU.lang.
+# Keep resource translations for these clients; config files remain available.
+gendustry.bees.species.wacky=古怪
+gendustry.bees.species.chilled=寒冷
+gendustry.bees.species.oozy=黏稠
+gendustry.bees.species.elysian=极乐
+gendustry.bees.species.gallant=英勇
+gendustry.bees.species.dull=乏味
+gendustry.bees.species.scrappy=废料
+gendustry.bees.species.potter=陶工
+gendustry.bees.species.tinsmith=锡匠
+gendustry.bees.species.paughty=高傲
+gendustry.bees.species.egoistic=自负
+gendustry.bees.species.vain=虚荣
+gendustry.bees.species.tinker=修补匠
+gendustry.bees.species.artisan=工匠
+gendustry.bees.species.selfish=自私
+gendustry.bees.species.narcissistic=自恋
+gendustry.honeycomb.wacky.name=古怪蜂窝
+gendustry.honeycomb.chilled.name=寒冷蜂窝
+gendustry.honeycomb.oozy.name=黏稠蜂窝
+gendustry.honeycomb.elysian.name=极乐蜂窝
+gendustry.honeycomb.gallant.name=英勇蜂窝
+gendustry.honeycomb.dull.name=乏味蜂窝
+gendustry.honeycomb.scrappy.name=废料蜂窝
+gendustry.honeycomb.potter.name=陶工蜂窝
+gendustry.honeycomb.tinsmith.name=锡匠蜂窝
+gendustry.honeycomb.paughty.name=高傲蜂窝
+gendustry.honeycomb.egoistic.name=自负蜂窝
+gendustry.honeycomb.vain.name=虚荣蜂窝
+gendustry.honeycomb.tinker.name=修补匠蜂窝
+gendustry.honeycomb.artisan.name=工匠蜂窝
+gendustry.honeycomb.selfish.name=自私蜂窝
+gendustry.honeycomb.narcissistic.name=自恋蜂窝
+gendustry.honeydrop.wacky.name=古怪蜂蜜滴
+gendustry.honeydrop.chilled.name=寒冷蜂蜜滴
+gendustry.honeydrop.oozy.name=黏稠蜂蜜滴
+gendustry.honeydrop.elysian.name=极乐蜂蜜滴
+gendustry.honeydrop.gallant.name=英勇蜂蜜滴
+gendustry.honeydrop.dull.name=乏味蜂蜜滴
+gendustry.honeydrop.scrappy.name=废料蜂蜜滴
+gendustry.honeydrop.potter.name=Light Potter Honey Drop
+gendustry.honeydrop.tinsmith.name=锡匠蜂蜜滴
+gendustry.honeydrop.paughty.name=高傲蜂蜜滴
+gendustry.honeydrop.egoistic.name=自负蜂蜜滴
+gendustry.honeydrop.vain.name=虚荣蜂蜜滴
+gendustry.honeydrop.tinker.name=Light Tinker Honey Drop
+gendustry.honeydrop.artisan.name=工匠蜂蜜滴
+gendustry.honeydrop.selfish.name=自私蜂蜜滴
+gendustry.honeydrop.narcissistic.name=自恋蜂蜜滴

@@ -1,0 +1,19 @@
+{
+  "armor": "chestplate",
+  "text": [
+    {
+      "text": "Шлем, нагрудник, поножи и ботинки — основные части защитной брони."
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "Они уменьшают получаемый вами урон. Всё довольно просто."
+    }
+  ],
+  "properties": [
+    "Basic protective armor",
+    "There's one for each body part",
+    "Protects you from damage"
+  ]
+}

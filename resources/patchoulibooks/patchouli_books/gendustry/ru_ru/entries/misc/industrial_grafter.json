@@ -1,0 +1,16 @@
+{
+  "name": "Промышленный садовый нож",
+  "icon": "gendustry:industrial_grafter",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:industrial_grafter",
+      "text": "<li>работает как садовый нож Forestry, но также удаляет листву не из Forestry<li>требует энергию, зато никогда не ломается<li>очень быстро разрушает сразу несколько соседних блоков листвы<li>полного заряда хватает на <mark>200 применений</>"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:recipe1"
+    }
+  ]
+}

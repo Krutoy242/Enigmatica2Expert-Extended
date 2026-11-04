@@ -1,0 +1,19 @@
+{
+  "armormodifier": "emerald_armor",
+  "text": [
+    {
+      "text": "Изумрудное покрытие повышает прочность брони и зависть жителей."
+    }
+  ],
+  "effects": [
+    "Увеличивает базовую прочность на 100%",
+    "Однократное применение",
+    "Возмутительно!"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

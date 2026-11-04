@@ -1,0 +1,11 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+tile.floralchemy.thorny_hedge.name=Колючая изгородь
+tile.floralchemy.leaky_cauldron.desc=*Сливочное пиво не входит в комплект
+tile.botania:flower.petro_petunia.name=Петро-петуния
+tile.botania:flower.petro_petunia.reference=Помни о моём последнем, Петуния
+botania.entry.petro_petunia=Петро-петуния
+botania.tagline.petro_petunia=Мана из жидкого топлива
+botania.page.petro_petunia0=&1Петро-петуния&0 — генерирующий цветок среднего уровня. Она втягивает корнями горючие жидкости из области на один блок ниже и вокруг себя и сжигает их для получения маны.
+botania.page.petro_petunia1=Нефть, чёрное золото, техасский чай.
+item.guide.floralchemy=Справочник мага-садовода
+guide.floralchemy.landing=Ваш путеводитель по силе цветов

@@ -1,0 +1,8 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+openmodslib.locale.book.scale.pageNumber=0.5
+openmodslib.locale.book.scale.sectionTitle=2.0
+openmodslib.locale.book.scale.pageTitle=1.0
+openmodslib.locale.book.scale.pageContent=0.5
+openmodslib.locale.book.lineSpace.titledPage=2
+openmodslib.locale.book.lineSpace.recipePage=4
+openmodslib.book.page=Страница %d из %d

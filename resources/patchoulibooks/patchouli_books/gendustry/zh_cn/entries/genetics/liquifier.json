@@ -1,0 +1,18 @@
+{
+  "name": "蛋白质液化机",
+  "icon": "gendustry:liquifier",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:liquifier",
+      "link_recipe": true,
+      "text": "<li>液化肉类和鱼类，生产<l>(misc/resources#protein)蛋白质</l><li>左侧能量条显示内部储能<li>右侧液槽显示内部储存的蛋白质<li>可以从任意侧面输入物品<li>蛋白质会自动输出到相邻管道或储罐"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:liquifier",
+      "text": "提取蛋白质。"
+    }
+  ]
+}

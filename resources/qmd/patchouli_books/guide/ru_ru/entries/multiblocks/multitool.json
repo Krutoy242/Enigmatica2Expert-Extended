@@ -1,0 +1,21 @@
+{
+  "name": "Мультитул",
+  "icon": "nuclearcraft:multitool",
+  "category": "qmd:multiblocks",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "nuclearcraft:multitool",
+      "text": "Мультитул NuclearCraft широко используется для настройки мультиблоков NC и QMD."
+    },
+    {
+      "type": "text",
+      "text": "В QMD ПКМ мультитулом переключает режимы портов пучка и жидкостей. Некоторые порты пучка, например у ускорителей и камер частиц, также имеют дополнительные настройки, меняемые через Shift + ПКМ. Они описаны в разделах соответствующих мультиблоков."
+    },
+    {
+      "type": "text",
+      "text": "Мультитул поворачивает $(l:blocks_and_machines/beamlines)Трубы пучка частиц$(/l) и проверяет правильность размещения $(l:multiblocks/accelerators/general#coolers)кулеров$(/l), $(l:multiblocks/vacuum_chambers/nucleosynthesis_chamber#heaters)нагревателей$(/l) и $(l:multiblocks/particle_chambers/general#detectors)детекторов$(/l): нажмите Shift + ПКМ по контроллеру собранного мультиблока."
+    }
+  ]
+}

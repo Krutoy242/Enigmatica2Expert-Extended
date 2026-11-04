@@ -1,0 +1,40 @@
+{
+  "name": "Механизмы-сборщики",
+  "icon": "nuclearcraft:cobblestone_generator",
+  "category": "nuclearcraft:machines",
+  "sortnum": 2,
+  "pages": [
+    {
+      "anchor": "intro",
+      "type": "text",
+      "text": "Эти механизмы непрерывно производят материалы. По возможности они выталкивают предметы или жидкости в соседние хранилища."
+    },
+    {
+      "anchor": "cobblestone_generator",
+      "type": "blocks/3",
+      "header": "Генераторы булыжника",
+      "block1": "nuclearcraft:cobblestone_generator",
+      "block2": "nuclearcraft:cobblestone_generator_compact",
+      "block3": "nuclearcraft:cobblestone_generator_dense",
+      "text": "$(item)Генератор булыжника$() непрерывно производит булыжник с определённой скоростью, соединяя воду и лаву."
+    },
+    {
+      "anchor": "water_source",
+      "type": "blocks/3",
+      "header": "Бесконечные источники воды",
+      "block1": "nuclearcraft:water_source",
+      "block2": "nuclearcraft:water_source_compact",
+      "block3": "nuclearcraft:water_source_dense",
+      "text": "$(item)Бесконечный источник воды$() производит воду с определённой скоростью, используя неиссякаемый источник."
+    },
+    {
+      "anchor": "nitrogen_collector",
+      "type": "blocks/3",
+      "header": "Азотные сборщики",
+      "block1": "nuclearcraft:nitrogen_collector",
+      "block2": "nuclearcraft:nitrogen_collector_compact",
+      "block3": "nuclearcraft:nitrogen_collector_dense",
+      "text": "$(item)Азотный сборщик$() выделяет и собирает азот из воздуха с определённой скоростью."
+    }
+  ]
+}

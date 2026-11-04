@@ -1,0 +1,17 @@
+{
+  "name": "Ячейки",
+  "icon": "qmd:cell",
+  "category": "qmd:items_and_devices",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Ячейки хранят экзотические материалы, например антивещество. $(bold)$(c)Будьте осторожны с заполненными ячейками!$() Оставленные на земле, они могут $(bold)$(c)взорваться и вызвать смертельный всплеск радиации$().$(br)Они служат боеприпасами для $(l:items_and_devices/antimatter_launcher)Пусковой установки антивещества$(/l), $(l:items_and_devices/lepton_cannon)Лептонной пушки$(/l) и $(l:items_and_devices/gluon_gun)Глюонной пушки$(/l). Ячейки антивещества также используются в $(l:multiblocks/accelerators/linear_accelerator#ion_source)Источниках ионов ускорителя$(/l) как источник антиядер."
+    },
+    {
+      "type": "spotlight",
+      "item": "qmd:cell",
+      "text": "Чтобы заполнить или опорожнить ячейку, поместите её во входной слот интерфейса $(l:multiblocks/vacuum_chambers/exotic_containment_chamber)Камеры удержания экзотической материи$()."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "封包配方编码器",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:encoder",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)封包配方编码器/$将配方写入$(l:core/recipe_holder)封包配方存储器/$，再由存储器为机器提供配方数据。"
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedauto:encoder",
+      "link_recipe": true,
+      "title": "使用方法",
+      "text": "编码配方时，先选择$(thing)配方类型/$。$(p)根据所选类型，设置输入、输出及其数量。$(p)最后放入$(l:core/recipe_holder)封包配方存储器/$，按下$(thing)保存按钮/$写入配方。"
+    },
+    {
+      "type": "text",
+      "title": "使用方法（续）",
+      "text": "放入已编码的$(l:core/recipe_holder)封包配方存储器/$，按下$(thing)加载按钮/$即可读取其中的配方。$(p)通过界面顶部的配方槽位，可以在$(l:core/recipe_holder)封包配方存储器/$中编码最多 20 个配方。$(p)右侧可预览将要生成的$(l:core/package)配方包/$。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "title": "JEI 联动",
+      "text": "点击箭头可显示适用于当前配方类型的全部配方；点击$(thing)转移物品/$按钮即可快速编码配方。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:encoder",
+      "title": "合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 6
+}

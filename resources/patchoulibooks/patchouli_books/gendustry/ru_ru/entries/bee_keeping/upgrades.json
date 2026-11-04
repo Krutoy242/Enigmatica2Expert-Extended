@@ -1,0 +1,63 @@
+{
+  "name": "Общие улучшения",
+  "icon": "gendustry:upgrade_frame",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:11",
+      "text": "<li>включает внутреннее освещение<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:2",
+      "text": "<li>цветение и опыление +20%<li>потребление энергии +10%"
+    },
+    {
+      "type": "crafting+",
+      "anchor": "automation",
+      "recipe": "gendustry:apiary.upgrade:14",
+      "text": "<li>см. <l>(bee_keeping/industrial_apiary#automation)Автоматизация</l><li>потребление энергии +10%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:10",
+      "text": "<li>защита от дождя<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:1",
+      "text": "<li>продолжительность жизни -33%<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:12",
+      "text": "<li>имитация открытого неба<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:3",
+      "text": "<li>территория +50%<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:15",
+      "text": "<li>позволяет собирать пыльцу<li>потребление энергии +25%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade",
+      "text": "<li>производительность +20%<li>потребление энергии +20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:19",
+      "text": "<li>предотвращает генетическое вырождение неблагородных пчёл<li>потребление энергии +100%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:22",
+      "text": "<li>цветение и опыление -100%<li>потребление энергии +30%"
+    }
+  ]
+}

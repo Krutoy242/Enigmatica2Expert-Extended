@@ -1,0 +1,6 @@
+{
+  "name": "Цветы Botania",
+  "description": "Здесь должна быть остроумная фраза. Подробнее о растениях этого раздела читайте в соответствующих статьях Лексики Botania. Сведения повторены здесь лишь для полноты руководства.",
+  "icon": "floralchemy:textures/items/petro_petunia_icon.png",
+  "flag": "mod:botania"
+}

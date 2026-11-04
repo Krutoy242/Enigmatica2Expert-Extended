@@ -1,0 +1,13 @@
+{
+  "name": "处理",
+  "category": "packagedauto:recipe",
+  "icon": "minecraft:furnace",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)处理/$是最基本的处理配方类型。$(p)编码时，输入和输出物品都会被排序并合并堆叠。"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 101
+}

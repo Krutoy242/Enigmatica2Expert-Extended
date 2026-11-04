@@ -1,0 +1,27 @@
+{
+  "name": "Пакет рецептов",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:package",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Пакеты рецептов/$ создаются $(l:core/packager)упаковщиками/$ и распаковываются комплектами в $(l:core/unpackager)распаковщиках/$.$(p)Чтобы распаковать $(item)пакет рецептов/$ вручную, используйте $(thing)$(k:sneak) + $(k:use)/$."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:jei",
+      "item": "packagedauto:package",
+      "link_recipe": true,
+      "title": "Интеграция с JEI",
+      "text": "Нажмите $(thing)$(k:jei.showUses)/$ на $(item)пакете рецептов/$, чтобы увидеть его содержимое и результат, для которого предназначен комплект пакетов."
+    },
+    {
+      "type": "spotlight",
+      "flag": "!mod:jei",
+      "item": "packagedauto:package",
+      "link_recipe": true
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 2
+}

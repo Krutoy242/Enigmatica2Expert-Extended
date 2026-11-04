@@ -1,0 +1,27 @@
+{
+  "components": [
+    {
+      "type": "header",
+      "text": "#header",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "image",
+      "image": "#image",
+      "width": 512,
+      "height": 273,
+      "texture_width": 512,
+      "texture_height": 273,
+      "scale": 0.22,
+      "x": 0,
+      "y": 10
+    },
+    {
+      "type": "text",
+      "text": "#text",
+      "x": 0,
+      "y": 70
+    }
+  ]
+}

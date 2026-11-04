@@ -1,0 +1,18 @@
+{
+  "armormodifier": "sticky_armor",
+  "text": [
+    {
+      "text": "Паутина на броне выглядит некрасиво, зато запутает любого, кто вас коснётся."
+    }
+  ],
+  "effects": [
+    "Замедляет врагов, атакующих вас напрямую",
+    "Однократное применение"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

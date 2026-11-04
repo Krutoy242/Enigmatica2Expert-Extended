@@ -1,0 +1,26 @@
+{
+  "name": "封包配方存储器",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:recipe_holder",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)封包配方存储器/$保存机器所需的配方数据，需在$(l:core/encoder)封包配方编码器/$中编码。$(p)手持已编码的存储器执行$(thing)$(k:sneak) + $(k:use)/$，或将$(item)封包配方存储器/$放入合成栏，即可清空数据。$(p)在合成栏中将已编码的$(item)封包配方存储器/$与空白存储器合成，可复制其内容。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:jei",
+      "item": "packagedauto:recipe_holder",
+      "link_recipe": true,
+      "title": "JEI 联动",
+      "text": "将鼠标悬停在已编码的$(item)封包配方存储器/$上并按下$(thing)$(k:jei.showUses)/$，可以查看其中配方的详细信息。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:recipe_holder",
+      "title": "合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4
+}

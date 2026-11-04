@@ -1,0 +1,18 @@
+{
+  "name": "Экстрактор ДНК",
+  "icon": "gendustry:extractor",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:extractor",
+      "link_recipe": true,
+      "text": "<li>извлекает <l>(misc/resources#dna)ДНК</l> из организмов<li>в среднем расходует 1 комплект <l>(misc/crafting_material#labware)лабораторной посуды</l> на 10 операций<li>индикатор слева показывает внутренний запас энергии<li>индикатор справа показывает внутренний резервуар ДНК<li>предметы можно подавать с любой стороны<li>извлечённая ДНК выводится автоматически"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:extractor",
+      "text": "Извлекает ДНК из организмов."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Алтарь звёздного света",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:attunement_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Алтарь звёздного света»/$ использует $(item)алтарь звёздного света для пакетов/$ для выполнения рецептов обычного алтаря звёздного света."
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedastral:attunement_crafter",
+      "link_recipe": true,
+      "title": "Использование",
+      "text": "Для работы $(item)алтаря звёздного света для пакетов/$ постройте вокруг него структуру обычного алтаря звёздного света, показанную на следующей странице.$(p)Машине требуются энергия и звёздный свет."
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "packagedastral:pattern_attunement_crafter",
+      "name": "Структура"
+    },
+    {
+      "type": "text",
+      "title": "Использование (продолжение)",
+      "text": "Предметы, изготовленные $(item)алтарём звёздного света для пакетов/$, выводятся в соседние инвентари."
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Алтарь звёздного света для пакетов/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из сети энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "packagedastral:altar_recipe_1",
+      "recipe": "packagedastral/attunement_crafter",
+      "title": "Алтарь звёздного света"
+    }
+  ],
+  "flag": "packagedastral:attunement",
+  "read_by_default": true,
+  "sortnum": 1003
+}

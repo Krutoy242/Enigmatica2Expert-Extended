@@ -1,0 +1,37 @@
+{
+  "name": "Улучшения биома",
+  "icon": "gendustry:upgrade_frame",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:13",
+      "text": "<li>заменяет биом на Ад<li>влияет на климат и производство особой продукции<li>потребление энергии +50%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:17",
+      "text": "<li>заменяет биом на равнины<li>влияет на климат и производство особой продукции<li>потребление энергии +20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:18",
+      "text": "<li>заменяет биом на джунгли<li>влияет на климат и производство особой продукции<li>потребление энергии +20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:11",
+      "text": "<li>заменяет биом на пустыню<li>влияет на климат и производство особой продукции<li>потребление энергии +20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:20",
+      "text": "<li>заменяет биом на тайгу<li>влияет на климат и производство особой продукции<li>потребление энергии +20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:21",
+      "text": "<li>заменяет биом на океан<li>влияет на климат и производство особой продукции<li>потребление энергии +20%"
+    }
+  ]
+}

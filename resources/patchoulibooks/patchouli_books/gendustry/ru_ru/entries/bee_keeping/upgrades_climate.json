@@ -1,0 +1,27 @@
+{
+  "name": "Климатические улучшения",
+  "icon": "gendustry:upgrade_frame",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:5",
+      "text": "<li>влажность -25%<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:4",
+      "text": "<li>влажность +25%<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:6",
+      "text": "<li>температура +25%<li>потребление энергии +5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:7",
+      "text": "<li>температура -25%<li>потребление энергии +5%"
+    }
+  ]
+}

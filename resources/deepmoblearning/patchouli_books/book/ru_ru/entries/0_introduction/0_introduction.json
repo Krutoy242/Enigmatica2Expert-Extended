@@ -1,0 +1,25 @@
+{
+  "name": "Введение",
+  "icon": "deepmoblearning:soot_covered_redstone",
+  "category": "0_introduction",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Этот $(item)мод$() задуман как простая и$(br)не вызывающая задержек альтернатива обычным способам получения ресурсов с мобов.$(br2)Его механика поощряет исследование мира и сражения, позволяя извлекать из них пользу в дальнейшем.$(br2)Для начала понадобятся особые $(item)компоненты для изготовления$()."
+    },
+    {
+      "type": "spotlight",
+      "item": "deepmoblearning:soot_covered_redstone",
+      "title": "Редстоун в саже",
+      "anchor": "sooted_redstone",
+      "text": "$(item)Покрытый сажей Редстоун$() можно получить, растирая $(item)красную пыль$() о $(item)угольный блок$().$(br2)Это закопчённое чудо понадобится для изготовления большинства предметов $(item)мода$()."
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:soot_covered_plate",
+      "recipe2": "deepmoblearning:machine_casing",
+      "title2": "Кожух машины"
+    }
+  ]
+}

@@ -2,3 +2,6 @@ tile.ec.table_basic.name=Инженерный верстак
 container.ec.table_basic=Инженерный верстак
 
 jei.ec.table_crafting_3x3=Создание на инженерном верстаке
+
+# Additional Russian translations; pre-existing entries retained.
+guide.entry.quantum_compression.page.3=Входной буфер <red>Квантового компрессора<r> вмещает <red>миллиарды<r> предметов, но по умолчанию принимает только нужное для рецепта количество. Нажмите <red>кнопку замка<r> рядом со шкалой входного буфера, чтобы снять ограничение.

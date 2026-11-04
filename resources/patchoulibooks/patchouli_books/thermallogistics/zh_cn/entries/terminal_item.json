@@ -1,0 +1,28 @@
+{
+  "name": "终端",
+  "icon": "thermallogistics:terminal_item",
+  "category": "pamphlet",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "thermallogistics:terminal_item",
+      "link_recipe": true,
+      "text": "终端可以向网络请求物品。连接物品管道后，它能查看该管道网络中可用的全部物品。要发出请求，需要先在请求器槽位中装入一个<l>(requester)请求器</l>。请求的物品会沿管道进入终端的内部物品栏。"
+    },
+    {
+      "type": "text+",
+      "text": "如果网络中没有所需物品，终端会尝试通过<l>(crafter)合成器</l>制作。",
+      "title2": "请求列表",
+      "text2": "请求器槽位右侧列出了正在请求的物品。可以取消请求，同时也会取消所有正在进行的合成操作。"
+    },
+    {
+      "type": "text+",
+      "title": "合成选项卡",
+      "text": "终端的“合成”选项卡提供一个合成网格。拿着物品设置配方时，物品不会被消耗。请求该配方后，终端只会索取仍缺少的材料。例如，要合成箱子而你已有 2 块木板时，只会再请求 6 块。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "thermallogistics:terminal_item"
+    }
+  ]
+}

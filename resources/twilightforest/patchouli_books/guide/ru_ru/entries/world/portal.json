@@ -1,0 +1,110 @@
+{
+  "name": "Строительство портала",
+  "icon": "twilightforest:miniature_structure:0",
+  "category": "world",
+  "sortnum": -1010,
+  "pages": [
+    {
+      "type": "multiblock",
+      "name": "Сумеречный портал",
+      "text": "Выкопав углубление и высадив растения по схеме, заполните его водой!",
+      "multiblock": {
+        "pattern": [
+          [
+            " FF ",
+            "FAAF",
+            "FAAF",
+            " FF "
+          ],
+          [
+            " GG ",
+            "G0WG",
+            "GWWG",
+            " GG "
+          ],
+          [
+            "    ",
+            " DD ",
+            " DD ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          " ": "ANY",
+          "A": "AIR",
+          "0": "minecraft:water",
+          "W": "minecraft:water",
+          "F": "minecraft:red_flower",
+          "G": "minecraft:grass",
+          "D": "minecraft:dirt"
+        },
+        "symmetrical": true,
+        "offset": [
+          0,
+          1,
+          0
+        ],
+        "view_offset": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "type": "spotlight",
+      "title": "Предмет активации",
+      "item": "minecraft:diamond",
+      "text": "Бросьте алмаз в воду!"
+    },
+    {
+      "type": "multiblock",
+      "name": "Готовый сумеречный портал",
+      "text": "Увидели фиолетовые завитки — прыгайте внутрь!",
+      "enable_visualize": false,
+      "advancement": "twilightforest:root",
+      "multiblock": {
+        "pattern": [
+          [
+            " FF ",
+            "F0AF",
+            "FAAF",
+            " FF "
+          ],
+          [
+            " GG ",
+            "GWWG",
+            "GWWG",
+            " GG "
+          ],
+          [
+            "    ",
+            " DD ",
+            " DD ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          " ": "ANY",
+          "A": "AIR",
+          "0": "AIR",
+          "W": "twilightforest:twilight_portal",
+          "F": "minecraft:red_flower",
+          "G": "minecraft:grass",
+          "D": "minecraft:dirt"
+        },
+        "symmetrical": true,
+        "offset": [
+          0,
+          1,
+          0
+        ],
+        "view_offset": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Металл, наполненный глюками",
+  "icon": "deepmoblearning:infused_ingot_block",
+  "category": "3_system_malfunction",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Вы обнаружили, что $(item)земные артефакты$() хорошо стабилизируют $(item)фрагменты нестабильного глюка$().$(br2)После $(item)стабилизации$() фрагменты стремятся соединиться с каким-нибудь материалом. Вы полагаете, что $(item)звёздный сплав$() достаточно прочен, чтобы стать $(item)основой$().$(br2)Это тонкий процесс: его нужно проводить в $(item)воде$(), иначе материалы не соединятся должным образом."
+    },
+    {
+      "type": "fluid_infusion",
+      "title": "Процесс стабилизации",
+      "input1": "biomesoplenty:terrestrial_artifact",
+      "input2": "deepmoblearning:glitch_fragment",
+      "input3": "enderio:item_alloy_endergy_ingot:3",
+      "output": "deepmoblearning:glitch_infused_ingot",
+      "fluid": "deepmoblearning:textures/gui/patchouli/water.png",
+      "fluidTooltip": "Water"
+    }
+  ]
+}

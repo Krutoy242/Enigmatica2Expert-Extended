@@ -1,0 +1,153 @@
+{
+  "name": "Обрабатывающие машины",
+  "icon": "nuclearcraft:manufactory",
+  "category": "nuclearcraft:machines",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "intro",
+      "type": "text",
+      "text": "Эти машины преобразуют одни материалы в другие, обычно расходуя энергию."
+    },
+    {
+      "anchor": "nuclear_furnace",
+      "type": "blocks/1",
+      "header": "Ядерная печь",
+      "block": "nuclearcraft:nuclear_furnace",
+      "text": "$(item)Ядерная печь$() быстро переплавляет предметы, используя урановые слитки или пыль в качестве топлива."
+    },
+    {
+      "anchor": "manufactory",
+      "type": "blocks/1",
+      "header": "Мануфактура",
+      "block": "nuclearcraft:manufactory",
+      "text": "$(item)Мануфактура$() выполняет множество задач, главным образом связанных с обработкой материалов."
+    },
+    {
+      "anchor": "separator",
+      "type": "blocks/1",
+      "header": "Сепаратор",
+      "block": "nuclearcraft:separator",
+      "text": "$(item)Сепаратор$() разделяет материалы на составляющие."
+    },
+    {
+      "anchor": "decay_hastener",
+      "type": "blocks/1",
+      "header": "Ускоритель распада",
+      "block": "nuclearcraft:decay_hastener",
+      "text": "$(item)Ускоритель распада$() заставляет радиоактивные материалы распадаться, образуя другие изотопы или материалы. При распаде выделяется радиация."
+    },
+    {
+      "anchor": "fuel_reprocessor",
+      "type": "blocks/1",
+      "header": "Переработчик топлива",
+      "block": "nuclearcraft:fuel_reprocessor",
+      "text": "$(item)Переработчик топлива$() извлекает материалы из отработанного топлива, позволяя отделить полезные вещества."
+    },
+    {
+      "anchor": "alloy_furnace",
+      "type": "blocks/1",
+      "header": "Сплавная печь",
+      "block": "nuclearcraft:alloy_furnace",
+      "text": "$(item)Сплавная печь$() соединяет исходные металлы в сплавы."
+    },
+    {
+      "anchor": "fluid_infuser",
+      "type": "blocks/1",
+      "header": "Впрыскиватель",
+      "block": "nuclearcraft:infuser",
+      "text": "$(item)Впрыскиватель$() добавляет жидкости к материалам."
+    },
+    {
+      "anchor": "melter",
+      "type": "blocks/1",
+      "header": "Плавильня",
+      "block": "nuclearcraft:melter",
+      "text": "$(item)Плавильня$() переводит материалы в жидкое состояние."
+    },
+    {
+      "anchor": "supercooler",
+      "type": "blocks/1",
+      "header": "Суперохладитель",
+      "block": "nuclearcraft:supercooler",
+      "text": "$(item)Суперохладитель$() понижает температуру жидкостей."
+    },
+    {
+      "anchor": "electrolyzer",
+      "type": "blocks/1",
+      "header": "Электролизёр",
+      "block": "nuclearcraft:electrolyzer",
+      "text": "$(item)Электролизёр$() разделяет жидкости на составляющие."
+    },
+    {
+      "anchor": "assembler",
+      "type": "blocks/1",
+      "header": "Сборщик",
+      "block": "nuclearcraft:assembler",
+      "text": "$(item)Сборщик$() соединяет компоненты в сложное изделие."
+    },
+    {
+      "anchor": "ingot_former",
+      "type": "blocks/1",
+      "header": "Литейный тигель",
+      "block": "nuclearcraft:ingot_former",
+      "text": "$(item)Литейный тигель$() превращает расплавленные материалы в слитки или самоцветы."
+    },
+    {
+      "anchor": "pressurizer",
+      "type": "blocks/1",
+      "header": "Компрессор",
+      "block": "nuclearcraft:pressurizer",
+      "text": "$(item)Компрессор$() обрабатывает материалы под огромным давлением."
+    },
+    {
+      "anchor": "chemical_reactor",
+      "type": "blocks/1",
+      "header": "Химический реактор",
+      "block": "nuclearcraft:chemical_reactor",
+      "text": "В $(item)химическом реакторе$() происходят химические реакции между жидкостями."
+    },
+    {
+      "anchor": "salt_mixer",
+      "type": "blocks/1",
+      "header": "Смеситель",
+      "block": "nuclearcraft:salt_mixer",
+      "text": "$(item)Смеситель$() смешивает жидкости."
+    },
+    {
+      "anchor": "crystallizer",
+      "type": "blocks/1",
+      "header": "Кристаллизатор",
+      "block": "nuclearcraft:crystallizer",
+      "text": "$(item)Кристаллизатор$() выделяет твёрдые вещества из жидкости."
+    },
+    {
+      "anchor": "fluid_enricher",
+      "type": "blocks/1",
+      "header": "Обогатитель жидкостей",
+      "block": "nuclearcraft:enricher",
+      "text": "$(item)Обогатитель жидкостей$() добавляет материалы в жидкости."
+    },
+    {
+      "anchor": "fluid_extractor",
+      "type": "blocks/1",
+      "header": "Экстрактор жидкостей",
+      "block": "nuclearcraft:extractor",
+      "text": "$(item)Экстрактор жидкостей$() извлекает жидкости из материалов."
+    },
+    {
+      "anchor": "centrifuge",
+      "type": "blocks/1",
+      "header": "Центрифуга",
+      "block": "nuclearcraft:centrifuge",
+      "text": "$(item)Центрифуга$() отделяет изотопы из жидких материалов."
+    },
+    {
+      "anchor": "rock_crusher",
+      "type": "blocks/1",
+      "header": "Камнедробилка",
+      "block": "nuclearcraft:rock_crusher",
+      "text": "$(item)Камнедробилка$() дробит горные породы, получая минеральную пыль."
+    }
+  ]
+}

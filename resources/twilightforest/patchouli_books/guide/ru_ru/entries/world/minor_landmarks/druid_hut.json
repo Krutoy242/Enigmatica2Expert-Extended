@@ -1,0 +1,12 @@
+{
+  "name": "Хижина друида",
+  "icon": "minecraft:golden_hoe",
+  "category": "minor_landmark",
+  "sortnum": 2100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

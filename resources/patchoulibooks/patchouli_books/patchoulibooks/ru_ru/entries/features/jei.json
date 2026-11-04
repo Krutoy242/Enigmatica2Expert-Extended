@@ -1,0 +1,23 @@
+{
+  "name": "Интеграция с HEI",
+  "icon": "patchoulibooks:textures/gui/icons/hei.png",
+  "category": "features",
+  "pages": [
+    {
+      "type": "link+",
+      "title": "Had Enough Items",
+      "icon": "patchoulibooks:textures/gui/icons/hei.png",
+      "url": "https://curseforge.com/minecraft/mc-mods/had-enough-items",
+      "button_text": "> CurseForge",
+      "text": "У вас установлен <mark>Had Enough Items</>? Тогда можно просматривать рецепты любого показанного предмета в <b>любой</> книге, добавленной <mark><b>Patchouli</> или <pb>!"
+    },
+    {
+      "type": "link+",
+      "title": "Just Enough Items",
+      "icon": "patchoulibooks:textures/gui/icons/jei.png",
+      "url": "https://curseforge.com/minecraft/mc-mods/jei",
+      "link_text": "> CurseForge",
+      "text": "Это работает и с <mark>Just Enough Items</>! Однако я предпочитаю HEI — поддерживаемый форк JEI для 1.12.2."
+    }
+  ]
+}

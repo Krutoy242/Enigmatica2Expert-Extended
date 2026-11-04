@@ -1,0 +1,20 @@
+{
+  "name": "Лестницы",
+  "icon": "engineersdecor:treated_wood_ladder",
+  "category": "buildingblocks",
+  "sortnum": 1080,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Деревянные лестницы",
+      "item": "engineersdecor:treated_wood_ladder",
+      "text": "Прочные, стойкие к непогоде лестницы. Устанавливаются и используются как обычные.$(br2)Во время подъёма или спуска смотрите прямо вверх или вниз, чтобы двигаться быстрее."
+    },
+    {
+      "type": "spotlight",
+      "title": "Металлические лестницы",
+      "item": "engineersdecor:metal_rung_ladder",
+      "text": "Прочные металлические лестницы, иногда слегка ржавые.$(br2)Устанавливаются и используются так же, как деревянные."
+    }
+  ]
+}

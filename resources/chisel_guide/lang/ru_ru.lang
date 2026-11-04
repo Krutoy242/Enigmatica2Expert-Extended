@@ -1,0 +1,5 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+chisel_guide.guide=Chisel
+chisel_guide.guide.test_page_1=Тестовая страница #1
+chisel_guide.guide.test_page_2=Тестовая страница #2
+chisel_guide.guide.test_page_2.page_1=Тестовая страница #2.1

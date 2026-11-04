@@ -79,7 +79,7 @@
       }
     },
     "languages": {
-      "text": "Languages",
+      "text": "e2ee.menu.languages",
       "posX": 44,
       "posY": -10,
       "width": 100,
@@ -94,7 +94,7 @@
       }
     },
     "bug reports": {
-      "text": "Bug Reports",
+      "text": "e2ee.menu.bug_reports",
       "posX": 44,
       "posY": 20,
       "width": 100,

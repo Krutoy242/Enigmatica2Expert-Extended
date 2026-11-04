@@ -1,0 +1,27 @@
+{
+  "name": "Элитное изготовление",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:elite_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Элитное изготовление»/$ использует $(item)мастер элитного пакета/$ для выполнения рецептов $(item)элитного верстака/$.$(p)Предметы, изготовленные $(item)мастером элитного пакета/$, выводятся в соседние инвентари.$(p)$(item)Мастеру элитного пакета/$ требуется энергия."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedexcrafting:elite_crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Мастер элитного пакета/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из неё энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:elite_crafter",
+      "title": "Изготовление"
+    }
+  ],
+  "flag": "packagedexcrafting:elite",
+  "read_by_default": true,
+  "sortnum": 5003
+}

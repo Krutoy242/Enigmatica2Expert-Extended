@@ -1,0 +1,18 @@
+{
+  "name": "强化合成器",
+  "icon": "thermallogistics:crafter:2",
+  "category": "pamphlet",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "thermallogistics:crafter:2",
+      "text": "有时合成器会向机器发送过多的某种原料，导致其他原料没有位置可放。为解决这个问题，强化合成器提供了“最大堆叠数量”选项。"
+    },
+    {
+      "type": "crafting+",
+      "text": "这个选项与检索器和请求器中的同名选项相同，用于限制每种物品向机器发送的数量。基础和硬化合成器的该值固定为 64。",
+      "title2": "合成",
+      "recipe2": "thermallogistics:crafter:2"
+    }
+  ]
+}

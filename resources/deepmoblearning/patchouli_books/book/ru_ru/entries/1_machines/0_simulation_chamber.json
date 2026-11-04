@@ -1,0 +1,24 @@
+{
+  "name": "Имитационная камера",
+  "icon": "deepmoblearning:simulation_chamber",
+  "category": "1_machines",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Имитационная камера$() считывает информацию из $(l:0_introduction/2_data_models)моделей данных$() и создаёт из этих $(l:0_introduction/1_data)данных$() $(l:1_machines/1_matter)материю$().$(br2)В процессе используемая $(l:0_introduction/2_data_models)модель данных$() получает дополнительные $(l:0_introduction/1_data)данные$().$(br2)Для работы также нужны $(l:0_introduction/2_data_models)модель данных$()$(br)$(a)базового$() или более высокого уровня, $(l:1_machines/3_energy)энергия$() и$(br)$(item)полимерная глина$()."
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:simulation_chamber",
+      "anchor": "simulation_chamber",
+      "text": "Для изготовления $(item)имитационной камеры$() нужен $(l:0_introduction/0_introduction#plates_and_casings)покрытый сажей кожух машины$().$(br2)Расход $(item)энергии$() зависит от используемой $(l:0_introduction/2_data_models)модели данных$()."
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:polymer_clay",
+      "anchor": "simulation_chamber",
+      "text": "$(item)Полимерная глина$() — очень мягкая и податливая глина, способная принимать самые разные формы.$(br2)В $(item)имитационной камере$() она служит связующим для создания $(l:1_machines/1_matter)материи$()."
+    }
+  ]
+}

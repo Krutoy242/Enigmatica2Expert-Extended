@@ -1,5 +1,5 @@
 {
-	title: "Reinforcement",
+	title: "{e2ee.reward.032ae6af}",
 	loot_size: 1,
 	rewards: [{
 		item: "tinkersaddons:modifier_item 1 1"

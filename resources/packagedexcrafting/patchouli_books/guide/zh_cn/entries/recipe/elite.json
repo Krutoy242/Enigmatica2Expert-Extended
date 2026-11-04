@@ -1,0 +1,27 @@
+{
+  "name": "精英合成",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:elite_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)精英合成/$是一种合成配方类型，使用$(item)精英封包合成器/$执行原本在$(item)精英工作台/$中进行的合成。$(p)$(item)精英封包合成器/$会将合成产物输出到相邻容器中。$(p)$(item)精英封包合成器/$需要能量。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedexcrafting:elite_crafter",
+      "link_recipe": true,
+      "title": "AE2 联动",
+      "text": "$(item)精英封包合成器/$可以连接到$(thing)ME 网络/$。$(p)它会从网络获取能量，并将合成产物改为输出到网络中。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:elite_crafter",
+      "title": "合成"
+    }
+  ],
+  "flag": "packagedexcrafting:elite",
+  "read_by_default": true,
+  "sortnum": 5003
+}

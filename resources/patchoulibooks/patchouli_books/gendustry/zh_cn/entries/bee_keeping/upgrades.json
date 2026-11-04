@@ -1,0 +1,63 @@
+{
+  "name": "通用升级",
+  "icon": "gendustry:upgrade_frame",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:11",
+      "text": "<li>提供内部照明<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:2",
+      "text": "<li>花卉生长与授粉效率增加 20%<li>能耗增加 10%"
+    },
+    {
+      "type": "crafting+",
+      "anchor": "automation",
+      "recipe": "gendustry:apiary.upgrade:14",
+      "text": "<li>详见<l>(bee_keeping/industrial_apiary#automation)自动化</l><li>能耗增加 10%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:10",
+      "text": "<li>提供防雨保护<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:1",
+      "text": "<li>寿命缩短 33%<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:12",
+      "text": "<li>模拟露天环境<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:3",
+      "text": "<li>工作范围增加 50%<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:15",
+      "text": "<li>启用花粉收集<li>能耗增加 25%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade",
+      "text": "<li>产量增加 20%<li>能耗增加 20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:19",
+      "text": "<li>防止卑贱种发生基因退化<li>能耗增加 100%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:22",
+      "text": "<li>花卉生长与授粉效率降低 100%<li>能耗增加 30%"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Посредник изготовления",
+  "category": "packagedauto:recipe",
+  "icon": "packagedauto:crafting_proxy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Посредник машины изготовления из пакетов (Package Crafting Machine Proxy)/$ позволяет $(l:core/unpackager)распаковщикам/$ отправлять предметы специализированным машинам на расстоянии."
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packagedauto:proxy_marker",
+      "item2": "packagedauto:crafting_proxy",
+      "title": "Использование",
+      "text": "Привяжите $(item)маркер посредника (Proxy Marker)/$ к машине изготовления из пакетов и поместите маркер в посредник."
+    },
+    {
+      "type": "text",
+      "title": "Использование (продолжение)",
+      "text": "Чтобы снять привязку $(item)маркера посредника/$, используйте $(thing)$(k:sneak) + $(k:use)/$ или поместите его в сетку крафта.$(p)Чтобы увидеть текущую дальность и цель $(item)посредника машины изготовления из пакетов/$, примените к нему $(thing)$(k:sneak) + $(k:use)/$ пустой рукой.$(p)Объедините привязанный $(item)маркер посредника/$ с непривязанными в сетке крафта, чтобы скопировать его содержимое."
+    },
+    {
+      "type": "text",
+      "title": "Копирование настроек",
+      "text": "$(l:core/settings_cloner)Копировщик настроек упаковки (Packaging Settings Cloner)/$ копирует текущую цель $(item)посредника машины изготовления из пакетов/$.$(p)Для вставки цели в вашем инвентаре должен находиться пустой $(item)маркер посредника (Proxy Marker)/$."
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Посредник машины изготовления из пакетов/$ подключается к $(thing)МЭ-сети/$."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:proxy_marker",
+      "recipe2": "packagedauto:crafting_proxy",
+      "title": "Изготовление"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 100
+}

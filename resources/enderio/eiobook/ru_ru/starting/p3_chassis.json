@@ -1,0 +1,47 @@
+{
+  "title": "Изготовление первой вещи",
+  "grid_size": "large",
+  "grid": [
+    [
+      {
+        "id": "minecraft:iron_bars"
+      },
+      {
+        "id": "minecraft:iron_ingot"
+      },
+      {
+        "id": "minecraft:iron_bars"
+      }
+    ],
+    [
+      {
+        "id": "minecraft:iron_ingot"
+      },
+      {
+        "id": "minecraft:quartz"
+      },
+      {
+        "id": "minecraft:iron_ingot"
+      }
+    ],
+    [
+      {
+        "id": "minecraft:iron_bars"
+      },
+      {
+        "id": "minecraft:iron_ingot"
+      },
+      {
+        "id": "minecraft:iron_bars"
+      }
+    ]
+  ],
+  "result": {
+    "id": "minecraft:comparator"
+  },
+  "description": [
+    {
+      "text": "Теперь, когда у вас есть зёрна бесконечности, можно изготовить первый необходимый предмет: простой корпус механизма."
+    }
+  ]
+}

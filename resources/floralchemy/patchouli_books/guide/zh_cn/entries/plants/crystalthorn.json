@@ -1,0 +1,11 @@
+{
+  "name": "水晶荆棘",
+  "icon": "floralchemy:textures/blocks/crystalthorn_base.png",
+  "category": "plants_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "水晶荆棘偶尔可在$(thing)要塞$()和$(thing)末地城$()中找到。它们能长出各种晶体，从海晶石到绿宝石都有。采摘时，晶体锋利的边缘会使你受伤。"
+    }
+  ]
+}

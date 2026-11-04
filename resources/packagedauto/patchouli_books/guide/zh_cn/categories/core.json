@@ -1,0 +1,6 @@
+{
+  "name": "核心组件",
+  "description": "$(#822)封包合成（PackagedAuto）/$的核心物品与机器。",
+  "icon": "packagedauto:package_component",
+  "sortnum": 0
+}

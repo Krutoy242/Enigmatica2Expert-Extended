@@ -1,0 +1,41 @@
+{
+  "name": "Луки",
+  "icon": "twilightforest:seeker_bow",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/bows",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Сведения о луках"
+    },
+    {
+      "type": "spotlight",
+      "title": "Эндер-лук",
+      "item": "twilightforest:ender_bow",
+      "advancement": "twilightforest:alt/treasures/ender_bow",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "spotlight",
+      "title": "Ледяной лук",
+      "item": "twilightforest:ice_bow",
+      "advancement": "twilightforest:alt/treasures/ice_bow",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "spotlight",
+      "title": "Лук искателя",
+      "item": "twilightforest:seeker_bow",
+      "advancement": "twilightforest:alt/treasures/seeker_bow",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "spotlight",
+      "title": "Тройной лук",
+      "item": "twilightforest:triple_bow",
+      "advancement": "twilightforest:alt/treasures/triple_bow",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

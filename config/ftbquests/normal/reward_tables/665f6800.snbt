@@ -1,5 +1,5 @@
 {
-	title: "Adv. Rat Upgrade",
+	title: "{e2ee.reward.665f6800}",
 	loot_size: 1,
 	rewards: [{
 		item: "rats:rat_upgrade_milker"

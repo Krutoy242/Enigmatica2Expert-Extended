@@ -1,0 +1,4 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+infobook.cyclopscore.keybindings=Назначения клавиш
+infobook.cyclopscore.keybinding=Назначение клавиши
+infobook.cyclopscore.external=Веб-версия

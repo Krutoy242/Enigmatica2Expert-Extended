@@ -1,0 +1,48 @@
+{
+  "name": "Слияние",
+  "category": "packagedauto:recipe",
+  "icon": "packageddraconic:fusion_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Слияние»/$ использует $(item)изготовитель пакетов слияния/$ для выполнения рецептов $(item)ядра слияния/$."
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packageddraconic:fusion_crafter",
+      "item2": "packageddraconic:marked_basic_injector,packageddraconic:marked_wyvern_injector,packageddraconic:marked_draconic_injector,packageddraconic:marked_chaotic_injector",
+      "title": "Использование",
+      "text": "Для работы $(item)изготовителя пакетов слияния/$ разместите достаточное число $(item)помеченных инжекторов/$ нужного уровня на расстоянии не менее 2 блоков. Они должны быть направлены на изготовитель без препятствий между ними и подключены к питанию.$(p)Самому $(item)изготовителю пакетов слияния/$ тоже требуется некоторое количество энергии."
+    },
+    {
+      "type": "text",
+      "title": "Использование (продолжение)",
+      "text": "Примените $(thing)$(k:sneak) + $(k:use)/$ пустой рукой к неработающему $(item)изготовителю пакетов слияния/$, чтобы проверить доступные и необходимые число и уровень $(item)помеченных инжекторов/$.$(p)Предметы, изготовленные $(item)изготовителем пакетов слияния/$, выводятся в соседние инвентари."
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Изготовитель пакетов слияния/$ и $(item)помеченные инжекторы/$ подключаются к $(thing)МЭ-сети/$.$(p)Изготовитель получает из неё энергию. И он, и инжекторы выводят готовые и оставшиеся предметы непосредственно в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packageddraconic:marked_basic_injector",
+      "recipe2": "packageddraconic:marked_wyvern_injector",
+      "title": "Изготовление"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packageddraconic:marked_draconic_injector",
+      "recipe2": "packageddraconic:marked_chaotic_injector",
+      "title": "Изготовление"
+    },
+    {
+      "type": "packageddraconic:fusion_recipe",
+      "output": "packageddraconic:fusion_crafter",
+      "title": "Слияние"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4001
+}

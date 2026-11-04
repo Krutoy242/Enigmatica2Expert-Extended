@@ -1,0 +1,24 @@
+{
+  "name": "网络管理器",
+  "icon": "thermallogistics:manager",
+  "category": "pamphlet",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "thermallogistics:manager",
+      "text": "网络管理器有监控和链接两种模式，默认为监控模式。按<mark><k>(cofh.multimode)</>键可以切换模式。"
+    },
+    {
+      "type": "crafting+",
+      "title": "监控",
+      "text": "在监控模式下，用网络管理器右击物品管道的末端，可以查看正在运往该末端的物品。",
+      "title2": "合成",
+      "recipe2": "thermallogistics:manager"
+    },
+    {
+      "type": "text+",
+      "title": "链接",
+      "text": "在链接模式下，分别右击两个合成器即可将它们链接。这表示这些<l>(crafter)合成器</l>属于同一道工序：其中一个收到请求时，两个合成器都会为自己准备所需物品。"
+    }
+  ]
+}

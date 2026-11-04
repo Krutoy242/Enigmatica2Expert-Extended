@@ -1,0 +1,47 @@
+{
+  "name": "Страница 'crafting+'",
+  "icon": "patchoulibooks:textures/gui/icons/book_page_written.png",
+  "category": "pages",
+  "pages": [
+    {
+      "type": "crafting+",
+      "text": "Вероятно, это самый сложный тип страницы в моде. Он развивает стандартную страницу 'crafting', добавляя множество возможностей. Можно свободно размещать на странице рецепты и текст с заголовками или без них.",
+      "title2": "",
+      "recipe2": "minecraft:crafting_table",
+      "link_recipe": false
+    },
+    {
+      "type": "crafting+",
+      "recipe": "minecraft:chest",
+      "title2": "Подробнее",
+      "text2": "На одной странице можно сочетать рецепты и текстовые блоки. Это даёт большую свободу при представлении информации игроку.",
+      "link_recipe": false
+    },
+    {
+      "type": "crafting+",
+      "text": "Текстовые возможности те же, что у страницы 'text+', поэтому этот текст отображается вверху страницы. Я не задал заголовок этого блока, и начало текстовой области сместилось к верхнему краю.",
+      "title2": "Зачем тогда нужен тип 'text+'?",
+      "text2": "Решать вам. На странице 'crafting+' необязательно показывать рецепты: вполне подойдут и 2 текстовых блока. Кстати, эта страница как раз имеет тип 'crafting+'.",
+      "link_recipe": false
+    },
+    {
+      "type": "crafting+",
+      "title": "Два рецепта изготовления",
+      "recipe": "minecraft:bookshelf",
+      "recipe2": "minecraft:enchanting_table",
+      "link_recipe": false
+    },
+    {
+      "type": "crafting+",
+      "title": "Подробнее",
+      "text": "Всё настраивается динамически: если какой-то элемент страницы не нужен, просто не задавайте его, и он не появится.",
+      "recipe": "minecraft:jukebox",
+      "link_recipe": false
+    },
+    {
+      "type": "text+",
+      "title": "Ключи 'crafting+'",
+      "text": "<li>'title'<li>'recipe'<li>'text'<li>'title2'<li>'recipe2'<li>'text2'"
+    }
+  ]
+}

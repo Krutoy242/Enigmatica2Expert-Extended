@@ -1,0 +1,27 @@
+{
+  "name": "Продвинутое изготовление",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:advanced_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Продвинутое изготовление»/$ использует $(item)создатель расширенных пакетов/$ для выполнения рецептов $(item)продвинутого верстака/$.$(p)Предметы, изготовленные $(item)создателем расширенных пакетов/$, выводятся в соседние инвентари.$(p)$(item)Создателю расширенных пакетов/$ требуется энергия."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedexcrafting:advanced_crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Создатель расширенных пакетов/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из неё энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:advanced_crafter",
+      "title": "Изготовление"
+    }
+  ],
+  "flag": "packagedexcrafting:advanced",
+  "read_by_default": true,
+  "sortnum": 5002
+}

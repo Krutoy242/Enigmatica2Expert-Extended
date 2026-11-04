@@ -1,0 +1,33 @@
+{
+  "name": "Материя",
+  "icon": "deepmoblearning:living_matter_hellish",
+  "category": "1_machines",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Есть два вида $(item)материи$(): $(item)живая$() и $(item)нетронутая$().$(br2)Каждая $(l:1_machines/0_simulation_chamber)симуляция$() всегда даёт одну единицу$(br)$(item)живой материи$().$(br2)Также есть шанс получить $(item)нетронутую материю$(). Он зависит от $(item)уровня$() $(l:0_introduction/2_data_models#data_models)модели данных$(), установленной в $(l:1_machines/0_simulation_chamber)имитационной камере$()."
+    },
+    {
+      "type": "spotlight",
+      "title": "Живая материя",
+      "item": "deepmoblearning:living_matter_hellish",
+      "anchor": "living",
+      "text": "$(item)Живая материя$() — универсальное вещество, позволяющее $(item)превращать$() ингредиенты, характерные для соответствующей $(item)среды обитания$(). Доступные рецепты можно посмотреть в $(item)JEI$().$(br2)$(item)Живую материю$() также можно употреблять для получения $(item)опыта$()."
+    },
+    {
+      "type": "crafting",
+      "title": "Примеры превращений",
+      "recipe": "deepmoblearning:living_matter_exchange/transmutes1_hellish/recipe0_soul_sand",
+      "recipe2": "deepmoblearning:living_matter_exchange/transmutes2_extraterrestrial/recipe2_ender_pearl",
+      "anchor": "living_transmute"
+    },
+    {
+      "type": "spotlight",
+      "title": "Нетронутая материя",
+      "item": "deepmoblearning:pristine_matter_zombie",
+      "anchor": "pristine",
+      "text": "Дополнительный продукт $(l:1_machines/0_simulation_chamber)имитационной камеры$().$(br2)Вид получаемой $(item)нетронутой материи$() зависит от типа $(l:0_introduction/2_data_models#data_models)модели данных$().$(br2)Из $(item)нетронутой материи$() получают добычу с мобов в$(br)$(l:1_machines/2_loot_fabricator)изготовителе добычи$()."
+    }
+  ]
+}

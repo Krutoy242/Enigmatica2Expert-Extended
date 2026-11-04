@@ -1,0 +1,31 @@
+{
+  "name": "怪物装备生成",
+  "icon": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie\"}",
+  "category": "World",
+  "pages": [
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie\"}",
+      "title": "怪物装备生成",
+      "text": "生物生成时会获得：$(br)$(li)随机匠魂盔甲与武器。$(br)$(li)随机普通盔甲套装与武器。$(br2)生物至少装备一件物品的概率：$(br)$(li)基础概率为 80%。$(br)$(li)在$(l)主世界/$降低 20%。$(br)$(li)为后续每个槽位重新判定时，概率增加 35%。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:skeleton\"}",
+      "title": "怪物装备生成",
+      "text": "不同生物会使用不同的盔甲类型和匠魂材料。$(br)$(l)僵尸/$生成时，各种可用材料的概率分布固定。$(br2)材料抽取使用$(l)三次函数/$，因此$(l)纸/$的出现率约为 $(l)20%/$，而$(l)Gelid Metal/$约为 $(l)0.3%/$。",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:zombie_pigman\"}",
+      "title": "怪物装备生成",
+      "text": "生物不会生成以下匠魂材料的装备：$(br)$(li)纸（paper）$(br)$(li)巧克力（chocolate）$(br)$(li)高级精华（ma.superium）$(br)$(li)终极精华（ma.supremium）$(br)$(li)通灵（spectre）$(br)$(li)神龙（draconic_metal）$(br)$(li)中子素（neutronium）$(br)$(li)以太（aethium）$(br)$(li)混沌（chaotic_metal）$(br)$(li)无尽（infinity_metal）",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:wither_skeleton\"}",
+      "title": "怪物装备生成",
+      "text": "匠魂盔甲和工具有概率获得随机强化。若获得了强化，该装备必定还带有额外的$(l)创造/$强化。$(br)所有装备生成时都已受损，所以不能通过$(l)扒装备刷怪场/$钻空子！",
+      "type": "spotlight"
+    }
+  ]
+}

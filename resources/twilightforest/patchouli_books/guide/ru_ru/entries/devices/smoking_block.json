@@ -1,0 +1,15 @@
+{
+  "name": "Дымовой блок",
+  "icon": "twilightforest:fire_jet:0",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/smoking_block",
+  "sortnum": 5050,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Дымовой блок",
+      "item": "twilightforest:fire_jet:0",
+      "text": "Стоять на нём вроде бы безопасно: подошвы не покрываются волдырями, кожа не горит. Зато дышать неприятно. Он, похоже, поддерживает себя сам и не требует нагрева. Интересно, можно ли найти этому применение?"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Рог",
+  "icon": "twilightforest:crumble_horn",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/crumble_horn",
+  "sortnum": 2310,
+  "pages": [
+    {
+      "title": "Рог",
+      "type": "twilightforest:headed_spotlight",
+      "item": "twilightforest:crumble_horn",
+      "text": "Поиски цветной шерсти завершены: баран подарил мне рог. Он похож на музыкальный инструмент. Может, стоит попробовать в него подуть?"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/crumble_horn_used",
+      "text": "Похоже, рог годится не только для украшения каминной полки. Если трубить рядом с камнем и землёй, звук вызывает такой резонанс, что материал рассыпается, словно снег под солнцем. Возможно, это удастся как-нибудь полезно автоматизировать."
+    }
+  ]
+}

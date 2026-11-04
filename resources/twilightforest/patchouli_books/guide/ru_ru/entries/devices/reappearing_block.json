@@ -1,0 +1,15 @@
+{
+  "name": "Восстанавливающийся блок",
+  "icon": "twilightforest:tower_device:0",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/carminite",
+  "sortnum": 6200,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Восстанавливающийся блок",
+      "item": "twilightforest:tower_device:0",
+      "text": "В этом устройстве есть что-то притягательное и загадочное. При касании или подаче сигнала красного камня блок исчезает прямо на глазах. Через некоторое время он, похоже, возвращается, но почему — мне, наверное, не понять."
+    }
+  ]
+}

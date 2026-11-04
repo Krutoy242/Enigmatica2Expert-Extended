@@ -1,0 +1,37 @@
+{
+  "name": "生物群系升级",
+  "icon": "gendustry:upgrade_frame",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:13",
+      "text": "<li>模拟生物群系：下界<li>影响气候与特产生产<li>能耗增加 50%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:17",
+      "text": "<li>模拟生物群系：平原<li>影响气候与特产生产<li>能耗增加 20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:18",
+      "text": "<li>模拟生物群系：丛林<li>影响气候与特产生产<li>能耗增加 20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:11",
+      "text": "<li>模拟生物群系：沙漠<li>影响气候与特产生产<li>能耗增加 20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:20",
+      "text": "<li>模拟生物群系：针叶林<li>影响气候与特产生产<li>能耗增加 20%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:21",
+      "text": "<li>模拟生物群系：海洋<li>影响气候与特产生产<li>能耗增加 20%"
+    }
+  ]
+}

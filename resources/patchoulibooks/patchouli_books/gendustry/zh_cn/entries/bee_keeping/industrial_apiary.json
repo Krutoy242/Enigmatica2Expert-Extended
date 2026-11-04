@@ -1,0 +1,28 @@
+{
+  "name": "工业蜂箱",
+  "icon": "gendustry:industrial_apiary",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:industrial_apiary",
+      "link_recipe": true,
+      "text": "<li>需要能量才能运行<li>有 4 个槽位，可安装<l>(bee_keeping/upgrades)专用升级</l><li>不受普通蜂箱产量降低 90% 的限制<li>不支持框架"
+    },
+    {
+      "type": "text+",
+      "title": "操作界面",
+      "text": "<li>左侧能量条显示内部储能<li>左侧槽位用于放置蜂后／公主蜂和雄蜂<li>中间 4 个槽位用于安装<l>(bee_keeping/upgrades)升级</l><li>右侧 9 个槽位用于存放产物和后代<li>将鼠标悬停在状态图标上，可检查运行情况和基本数据；分析过蜜蜂后，会显示更多信息"
+    },
+    {
+      "type": "text+",
+      "title": "自动化",
+      "anchor": "automation",
+      "text": "<li>可以从任意侧面输入蜜蜂<li>可以从任意侧面抽取产物<li>安装<l>(bee_keeping/upgrades#automation)自动化升级</l>后，蜂箱会自动将后代放回蜜蜂槽位，使其交配并产生新的蜂后<li>升级无法通过自动化方式插入或取出"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:industrial_apiary"
+    }
+  ]
+}

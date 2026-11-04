@@ -1,0 +1,17 @@
+{
+  "name": "Генетический пробоотборник",
+  "icon": "gendustry:sampler",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:sampler",
+      "text": "<li>берёт <l>(misc/crafting_material#gene_sample)генетический образец</l> у пчёл, деревьев и бабочек<li>также превращает сыворотку <mark>Extra Bees</> в образцы <mod><li>в процессе расходует <l>(misc/crafting_material#labware)лабораторную посуду</l> и <l>(misc/crafting_material#gene_sample_blank)пустые образцы</l><li>случайным образом выбирает 1 генетический признак исходного организма<li>организм, из которого берётся образец, не переживёт процедуру"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:sampler",
+      "text": "Позволяет извлекать генетические признаки."
+    }
+  ]
+}

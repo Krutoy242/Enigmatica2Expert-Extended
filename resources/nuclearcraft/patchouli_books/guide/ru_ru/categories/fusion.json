@@ -1,0 +1,7 @@
+{
+  "name": "Ядерный синтез (в разработке)",
+  "description": "$(l)Сливаем атомы ради удовольствия и высшей славы.",
+  "icon": "nuclearcraft:part:4",
+  "parent": "nuclearcraft:multiblocks",
+  "sortnum": 1
+}

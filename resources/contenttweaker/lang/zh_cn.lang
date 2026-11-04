@@ -659,9 +659,9 @@ tooltips.dim_stages.remind_skyblock=§e你再次进入了一个§b空岛§e世�
 # - "e2ee.jei.{id}.{entry}" format recommended
 # --------------------------------------
 e2ee.jei.rats_consuming.title=老鼠食用
-e2ee.jei.alchemists_stone.title=Alchemists Stone
-e2ee.jei.alienist_stone.title=Alienists Stone
-e2ee.jei.transmuter_stone.title=Transmuters Stone
+e2ee.jei.alchemists_stone.title=炼金师之石
+e2ee.jei.alienist_stone.title=异学家之石
+e2ee.jei.transmuter_stone.title=嬗变师之石
 
 # --------------------------------------
 # Requious Fracto custom JEI categories
@@ -821,3 +821,11 @@ enchantment.randomthings.magnetic.desc=具有磁性附魔的工具，会吸收�
 # --------------------------------------
 item.contenttweaker.hand_framing_tool.name=手持装饰工具
 tooltips.lang.hand_framing_tool=无需工作台即可在世界中装饰抽屉。\n通过合成将模板方块（侧面 / 正面 / 边框）放入此工具，然后右键点击任意抽屉或边框即可应用装饰。\n已装饰的抽屉和紧凑抽屉可以立即重新装饰。普通抽屉首次使用时会转换为可装饰的变体。\n模板方块在合成时不会被消耗——只会记录对应槽位中的第一个物品到工具中。
+itemGroup.other=ContentTweaker
+fluid.seed=种子
+contenttweaker.part.fluid=%s
+enchantment.cyclicmagic.enchantment.beheading.desc=使生物有概率掉落头颅。
+enchantment.cyclicmagic.enchantment.launch.desc=增加额外跳跃次数，每级增加一次。
+enchantment.cyclicmagic.enchantment.lifeleech.desc=从目标身上吸取生命值。
+enchantment.cyclicmagic.enchantment.quickdraw.desc=使弓的蓄力速度提高至三倍。
+enchantment.cyclicmagic.enchantment.waterwalking.desc=允许在水面上行走；按住潜行键可入水游泳。

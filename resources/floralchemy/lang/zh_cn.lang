@@ -1,0 +1,9 @@
+#PARSE_ESCAPES
+tile.crystalthorn.name=水晶荆棘
+tile.floralchemy.hedge.name=绿篱
+tile.floralchemy.thorny_hedge.name=荆棘绿篱
+tile.floralchemy.flooded_soil.name=浸水土壤
+tile.floralchemy.leaky_cauldron.name=漏水坩埚
+tile.floralchemy.leaky_cauldron.desc=*不附赠黄油啤酒
+item.guide.floralchemy=绿篱法师手册
+guide.floralchemy.landing=花草之力指南

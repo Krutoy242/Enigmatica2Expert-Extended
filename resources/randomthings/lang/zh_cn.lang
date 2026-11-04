@@ -1,0 +1,8 @@
+#PARSE_ESCAPES
+tile.superLubricentIce.name=超级润滑冰
+tile.superLubricentPlatform.name=超级润滑平台
+tile.filteredSuperLubricentPlatform.name=过滤型超级润滑平台
+tile.superlubricentstone.name=超级润滑石
+item.superLubricentBoots.name=超级润滑靴
+item.ingredient.superLubricentTincture.name=超级润滑酊
+item.superLubricentBoots.info=穿上超级润滑靴后，你可以在方块上无摩擦滑行，就像走在超级润滑冰上一样。

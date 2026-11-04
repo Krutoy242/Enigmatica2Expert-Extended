@@ -1,0 +1,6 @@
+{
+  "name": "Предметы",
+  "description": "$(l)Орудия труда.",
+  "icon": "nuclearcraft:geiger_counter",
+  "sortnum": 1
+}

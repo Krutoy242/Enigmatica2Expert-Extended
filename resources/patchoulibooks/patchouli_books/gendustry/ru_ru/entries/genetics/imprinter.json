@@ -1,0 +1,18 @@
+{
+  "name": "Генетический импринтер",
+  "icon": "gendustry:imprinter",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:imprinter",
+      "link_recipe": true,
+      "text": "<li>расходует <l>(misc/crafting_material#labware)лабораторную посуду</l> из верхнего правого слота<li><l>(misc/crafting_material#gene_template)шаблон</l> в верхнем левом слоте не расходуется<li>переносит сразу все признаки, присутствующие в шаблоне<li>организмы искусственного происхождения, то есть неблагородные, могут не пережить процесс переноса генов"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:imprinter",
+      "text": "Позволяет прививать генетические признаки."
+    }
+  ]
+}

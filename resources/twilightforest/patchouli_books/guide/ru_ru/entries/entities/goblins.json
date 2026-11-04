@@ -1,0 +1,39 @@
+{
+  "name": "Гоблины",
+  "icon": "minecraft:spawn_egg:0{EntityTag:{id:\"twilightforest:blockchain_goblin\"}}",
+  "category": "entities",
+  "advancement": "twilightforest:alt/entities/goblins",
+  "sortnum": 2100,
+  "pages": [
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/redcap",
+      "entity": "twilightforest:redcap",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/redcap_sapper",
+      "entity": "twilightforest:redcap_sapper",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/goblin_knight",
+      "entity": "twilightforest:goblin_knight_lower{Passengers:[{id:\"twilightforest:goblin_knight_upper\",hasArmor:1b,hasShield:1b}],hasArmor:1b}",
+      "text": "Весь мир верхнего гоблина держится на плечах нижнего, поэтому тот никогда не пропускает день тренировки ног."
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/goblin_knight",
+      "entity": "twilightforest:goblin_knight_upper{hasArmor:1b}",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/blockchain_goblin",
+      "entity": "twilightforest:blockchain_goblin",
+      "text": "Гоблин-рыцарь с булавой готов поразить всех своим новейшим техническим освоением технологии «блок и цепь»."
+    }
+  ]
+}

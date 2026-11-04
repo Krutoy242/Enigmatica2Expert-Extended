@@ -1,0 +1,15 @@
+{
+  "name": "Исчезающий блок",
+  "icon": "twilightforest:tower_device:2",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/carminite",
+  "sortnum": 6210,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Исчезающий блок",
+      "item": "twilightforest:tower_device:2",
+      "text": "Всё ещё страннее, чем я думал. При касании или подаче сигнала красного камня блок исчезает. Сколько ни жди, он не возвращается. Какая же от него польза для защиты?"
+    }
+  ]
+}

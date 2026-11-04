@@ -1,0 +1,22 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+item.tcomplement.edibles.milk_chocolate_ingot.name=Слиток молочного шоколада
+item.tcomplement.edibles.milk_chocolate_nugget.name=Кусочек молочного шоколада
+item.tcomplement.edibles.dark_chocolate_ingot.name=Слиток тёмного шоколада
+item.tcomplement.edibles.dark_chocolate_nugget.name=Кусочек тёмного шоколада
+item.tcomplement.edibles.cocoa_butter.name=Масло какао
+fluid.tcomplement.chocolate_liquor=Какао тёртое
+fluid.tcomplement.milk_chocolate=Молочный шоколад
+fluid.tcomplement.dark_chocolate=Тёмный шоколад
+fluid.tcomplement.steam=Пар
+gui.jei.high_oven.mix.represenative=Принимает: плавится в %s
+gui.jei.high_oven.heat.title=Нагрев доменной печи
+gui.jei.high_oven.heat.rate=%s мВ/с
+item.tcomplement.materials.imodifier.name=iModifier
+item.tcomplement.materials.imodifier.tooltip=Улучшение зубила с футуристическим интерфейсом
+modifier.hitech.name=iModifier
+modifier.hitech.desc=§oФутуристично§r\nУлучшает интерфейс зубила. С расширителями также даёт дополнительные варианты обработки.
+gui.tcomplement.error.has_chisel_target=Перед добавлением iModifier уберите целевую стопку из зубила
+tcomplement.config.melter.heaterTemp=Температура нагревателя
+tcomplement.config.highOven.steamRate=Выработка пара
+tcomplement.config.highOven.steamFuel=Паровое топливо
+tcomplement.config.jei.showHighOvenFuel=Показать топливо доменной печи

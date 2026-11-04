@@ -1,0 +1,11 @@
+{
+  "name": "石油矮牵牛花",
+  "icon": "floralchemy:textures/items/petro_petunia_icon.png",
+  "category": "botania_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)石油矮牵牛花$()是一种中级产能花。它通过根系吸收可燃液体燃料，并燃烧燃料产生魔力。其根系延伸至花朵下方一格及周围。"
+    }
+  ]
+}

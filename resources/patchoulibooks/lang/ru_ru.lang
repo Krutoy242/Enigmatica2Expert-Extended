@@ -1,0 +1,27 @@
+GenDustry Guide=Руководство по GenDustry
+This Book documents the items and blocks in the <mod> mod. It is part of the <pb> mod that tries to document as many mods as possible.<br>All information about <mod> are taken from these sources:<li>$(l:https://www.curseforge.com/minecraft/mc-mods/gendustry)Curseforge$(/l)<li>$(l:https://github.com/bdew-minecraft/gendustry/tree/mc1.12)GitHub$(/l)<li>$(l:https://bdew.net/gendustry/)Wiki$(/l)=Эта книга описывает предметы и блоки мода <mod>. Она входит в состав мода <pb>, цель которого — документировать как можно больше модов.<br>Все сведения о <mod> взяты из следующих источников:<li>$(l:https://www.curseforge.com/minecraft/mc-mods/gendustry)Curseforge$(/l)<li>$(l:https://github.com/bdew-minecraft/gendustry/tree/mc1.12)GitHub$(/l)<li>$(l:https://bdew.net/gendustry/)Вики$(/l)
+Thermal Logistics Guide=Гид по Thermal Logistics
+This Book documents the items and blocks in the <mod> mod. It is part of the <pb> mod that tries to document as many mods as possible.<br>All information about <mod> are taken from these sources:<li>$(l:https://www.curseforge.com/minecraft/mc-mods/thermallogistics)Curseforge$(/l)<li>$(l:https://github.com/Astavie/ThermalLogistics)GitHub$(/l)<li>$(l:https://github.com/Astavie/ThermalLogistics/wiki)Wiki$(/l)=Эта книга описывает предметы и блоки мода <mod>. Она входит в состав мода <pb>, цель которого — документировать как можно больше модов.<br>Все сведения о <mod> взяты из следующих источников:<li>$(l:https://www.curseforge.com/minecraft/mc-mods/thermallogistics)Curseforge$(/l)<li>$(l:https://github.com/Astavie/ThermalLogistics)GitHub$(/l)<li>$(l:https://github.com/Astavie/ThermalLogistics/wiki)Вики$(/l)
+
+# Additional Russian translations; pre-existing entries retained.
+patchoulibooks.gui.lexicon.version_str=Patchouli Books v%s
+patchoulibooks.gui.lexicon.pamphlet=Записи
+patchoulibooks.gui.lexicon.page_type=§4Текущий тип страницы: §l%s§r
+patchoulibooks.gui.inventory_button.title=§lPatchouli Books§r
+patchoulibooks.gui.inventory_button.tooltip=Открыть §7%s§r
+patchoulibooks.gui.inventory_button.page=(%s/%s)
+patchoulibooks.item.book.tooltip=Автор: §5%s§r
+config.patchoulibooks=Patchouli Books
+config.patchoulibooks.tooltip=Настройки Patchouli Books
+config.patchoulibooks.debug=Режим отладки
+config.patchoulibooks.debug.tooltip=Включает режим отладки: все книги регистрируются, даже если требуемый мод отсутствует
+config.patchoulibooks.general=Общие
+config.patchoulibooks.general.tooltip=Общие настройки Patchouli Books
+config.patchoulibooks.jei=Интеграция с JEI/HEI
+config.patchoulibooks.jei.tooltip=Настройки интеграции с JEI/HEI
+patchoulibooks.patchoulibooks.jei_hei.blacklistbook=Чёрный список книг
+config.patchoulibooks.inventory_button=Кнопка инвентаря
+config.patchoulibooks.inventory_button.tooltip=Настройки кнопки инвентаря
+patchoulibooks.jei.openbook=Открыть %s
+patchoulibooks.toast.title=Непрочитанные записи!
+patchoulibooks.toast.sub=Проверьте книгу в инвентаре.

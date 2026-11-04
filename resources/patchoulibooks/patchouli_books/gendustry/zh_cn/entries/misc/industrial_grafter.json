@@ -1,0 +1,16 @@
+{
+  "name": "工业剪枝器",
+  "icon": "gendustry:industrial_grafter",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:industrial_grafter",
+      "text": "<li>具有林业剪枝器的功能，也能清除非林业树叶<li>工作时需要能量，但不会损坏<li>速度很快，可一次破坏周围多个树叶方块<li>充满电后最多可使用<mark>200 次</>"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:recipe1"
+    }
+  ]
+}

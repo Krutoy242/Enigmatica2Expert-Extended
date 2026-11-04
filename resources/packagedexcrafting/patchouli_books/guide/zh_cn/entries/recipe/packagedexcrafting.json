@@ -1,0 +1,13 @@
+{
+  "name": "§4封包合成拓展",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:ultimate_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)封包合成拓展（PackagedExCrafting）/$为$(#822)合成拓展/$的配方提供了对应的$(#822)封包合成/$配方类型。"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5000
+}

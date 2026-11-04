@@ -1,0 +1,41 @@
+{
+  "name": "封包拓展器",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:packager_extension",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)封包拓展器/$会复制附近一台$(l:core/packager)封包机/$的功能，从而在并行封包时减少$(l:core/recipe_holder)封包配方存储器/$的用量。$(p)这台机器需要能量。"
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedauto:packager_extension",
+      "link_recipe": true,
+      "title": "使用方法",
+      "text": "使用$(item)封包拓展器/$时，将其放在以$(l:core/packager)封包机/$为中心的 3×3×3 区域内，即可复制该机器的功能。$(p)如果范围内有多台$(l:core/packager)封包机/$，会选择位于最西北下方的一台。$(p)可从机器顶部抽出输入物品。"
+    },
+    {
+      "type": "text",
+      "title": "工作模式",
+      "text": "$(thing)完全匹配/$：制作第一个与机器内物品完全匹配的封包。$(p)$(thing)物品互斥/$：检查各封包所需物品是否互不重叠；若互不重叠，则制作当前物品能够满足的封包，否则按$(thing)完全匹配/$模式工作。$(p)$(thing)第一匹配/$：制作第一个能用机器内现有物品完成的封包。"
+    },
+    {
+      "type": "text",
+      "title": "复制设定",
+      "text": "使用$(l:core/settings_cloner)封包设定复制器/$，可以复制和粘贴工作模式。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(item)封包拓展器/$可以连接到$(thing)ME 网络/$。$(p)它会从网络获取能量，将封包过程作为自动合成配方提供给网络，并将制成的$(l:core/package)配方包/$改为输出到网络中。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:packager_extension",
+      "title": "合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 8
+}

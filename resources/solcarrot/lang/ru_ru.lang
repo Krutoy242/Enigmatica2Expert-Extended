@@ -1,0 +1,26 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+gui.solcarrot.food_book.stats=Обзор
+gui.solcarrot.food_book.eaten_foods=Уже попробовано: %s
+gui.solcarrot.food_book.uneaten_foods=Ещё не попробовано: %s
+gui.solcarrot.food_book.config=Настройки
+gui.solcarrot.food_book.fraction=%1$s/%2$s
+gui.solcarrot.food_book.stats.foods_tasted=Продуктов попробовано
+gui.solcarrot.food_book.stats.hearts_gained=Сердец получено
+gui.solcarrot.food_book.stats.tooltip.progress=До следующей вехи: %s
+gui.solcarrot.food_book.stats.tooltip.progress.max=Максимальная веха достигнута!
+gui.solcarrot.food_book.stats.tooltip.previous_milestone=Предыдущая веха: %s
+gui.solcarrot.food_book.stats.tooltip.next_milestone=Следующая веха: %s
+gui.solcarrot.food_book.stats.tooltip.total_foods=Всего продуктов: %s
+gui.solcarrot.food_book.stats.tooltip.foods_tasted=Продуктов попробовано: %s
+gui.solcarrot.food_book.stats.tooltip.hearts_per_milestone.singular=1 сердце за веху
+gui.solcarrot.food_book.stats.tooltip.hearts_per_milestone.plural=%s сердец за веху
+gui.solcarrot.food_book.config.minimum_food_value=Минимальная питательность
+gui.solcarrot.food_book.config.tooltip.minimum_food_value=Минимальное восстановление голода, необходимое для учёта еды в достижении вех.
+gui.solcarrot.food_book.config.hearty_fraction=Питательные продукты
+gui.solcarrot.food_book.config.tooltip.hearty_fraction=Из %1$s продуктов %2$s достаточно питательны, чтобы улучшить здоровье.
+gui.solcarrot.food_book.config.eaten_cheap_foods=Попробовано малопитательных продуктов
+gui.solcarrot.food_book.config.tooltip.eaten_cheap_foods=Из %1$s продуктов, недостаточно питательных для улучшения здоровья, вы попробовали %2$s.
+gui.solcarrot.food_book.config.blacklist=Продукты в чёрном списке
+gui.solcarrot.food_book.config.whitelist=Продукты в белом списке
+gui.solcarrot.food_book.config.tooltip.blacklist=Количество продуктов, отключённых чёрным списком.
+gui.solcarrot.food_book.config.tooltip.whitelist=Количество продуктов, разрешённых белым списком.

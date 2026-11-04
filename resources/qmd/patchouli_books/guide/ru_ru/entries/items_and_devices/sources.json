@@ -1,0 +1,29 @@
+{
+  "name": "Источники частиц",
+  "icon": "qmd:source:1",
+  "category": "qmd:items_and_devices",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Некоторые предметы испускают частицы для различных задач: например, снабжают $(l:multiblocks/accelerators/linear_accelerator#ion_source)Источник ионов ускорителя$(/l) или дают гамма-лучи $(l:blocks_and_machines/irradiator)Облучателю$(/l). Запас частиц в pu указан в подсказке предмета, а применения можно посмотреть в JEI.$(br2)На следующих страницах перечислены разные виды источников."
+    },
+    {
+      "type": "spotlight",
+      "item": "qmd:source:1",
+      "title": "Изотопные источники",
+      "text": "Изотопные источники испускают частицы содержащегося в них изотопа и имеют 2 применения. Радиоизотопы с сильным гамма-излучением, например Co-60 и Ir-192, используются в $(l:blocks_and_machines/irradiator)Облучателе$(/l) для стерилизации. Другие источники подают частицы в $(l:multiblocks/accelerators/linear_accelerator#ion_source)Источник ионов ускорителя$(/l)."
+    },
+    {
+      "type": "spotlight",
+      "item": "qmd:source",
+      "text": "Вольфрамовая нить — простой источник электронов для $(l:multiblocks/accelerators/linear_accelerator#ion_source)Источника ионов ускорителя$(/l). Со временем она изнашивается и требует замены."
+    },
+    {
+      "type": "spotlight",
+      "item": "qmd:cell:1",
+      "title": "Ячейки антивещества",
+      "text": "Ячейки антивещества используются в $(l:multiblocks/accelerators/linear_accelerator#ion_source)Источнике ионов ускорителя$(/l) как источник антиядер. Подробнее — в $(l:items_and_devices/cell)разделе о ячейках$(/l)."
+    }
+  ]
+}

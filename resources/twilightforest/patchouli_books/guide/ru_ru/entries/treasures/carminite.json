@@ -1,0 +1,15 @@
+{
+  "name": "Карминит",
+  "icon": "twilightforest:carminite",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/carminite",
+  "sortnum": 6110,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Карминит",
+      "item": "twilightforest:carminite",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

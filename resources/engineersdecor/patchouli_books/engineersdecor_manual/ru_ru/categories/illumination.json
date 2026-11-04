@@ -1,0 +1,6 @@
+{
+  "name": "Освещение",
+  "description": "Прольём немного света на происходящее.",
+  "icon": "engineersdecor:iron_inset_light",
+  "sortnum": 4000
+}

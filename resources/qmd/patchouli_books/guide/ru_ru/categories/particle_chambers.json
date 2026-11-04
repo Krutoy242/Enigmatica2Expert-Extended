@@ -1,0 +1,7 @@
+{
+  "name": "Камеры частиц",
+  "description": "Создавайте предметы с помощью частиц!",
+  "icon": "qmd:target_chamber_controller",
+  "parent": "qmd:multiblocks",
+  "sortnum": 1
+}

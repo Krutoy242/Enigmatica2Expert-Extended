@@ -1,0 +1,27 @@
+{
+  "name": "Базовое изготовление",
+  "category": "packagedauto:recipe",
+  "icon": "packagedexcrafting:basic_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Базовое изготовление»/$ использует $(item)инженерный изготовитель программ/$ для выполнения рецептов $(item)инженерного верстака/$.$(p)Предметы, изготовленные $(item)инженерным изготовителем программ/$, выводятся в соседние инвентари.$(p)$(item)Инженерному изготовителю программ/$ требуется энергия."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedexcrafting:basic_crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Инженерный изготовитель программ/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из неё энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedexcrafting:basic_crafter",
+      "title": "Изготовление"
+    }
+  ],
+  "flag": "packagedexcrafting:basic",
+  "read_by_default": true,
+  "sortnum": 5001
+}

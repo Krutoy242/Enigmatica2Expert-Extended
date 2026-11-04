@@ -1,0 +1,53 @@
+{
+  "name": "Обычные биомы",
+  "icon": "twilightforest:magic_map_empty",
+  "category": "biomes",
+  "advancement": "twilightforest:alt/biomes/general_biomes",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Общие сведения о биомах. Эти биомы ничем особо не выделяются."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/twilight_forest",
+      "text": "Сумеречный лес"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/firefly_forest",
+      "text": "Лес светлячков"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/twilight_clearing",
+      "text": "Сумеречная поляна"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/oak_savannah",
+      "text": "Дубовая саванна"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/dense_twilight_forest",
+      "text": "Густой сумеречный лес"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/mushroom_forest",
+      "text": "Грибной лес"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/deep_mushroom_forest",
+      "text": "Густой грибной лес"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/biomes/twilight_lake",
+      "text": "Что скрывают эти озёра — загадка. Кроме обилия воды, в них вроде бы нет ничего особенного. Ходят слухи, что однажды посреди озёр может появиться остров. Кто знает, что на нём будет?"
+    }
+  ]
+}

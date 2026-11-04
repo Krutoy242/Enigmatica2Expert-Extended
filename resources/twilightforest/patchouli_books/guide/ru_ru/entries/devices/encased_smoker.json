@@ -1,0 +1,15 @@
+{
+  "name": "Прирученный дымок",
+  "icon": "twilightforest:fire_jet:1",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/encased_smoker",
+  "sortnum": 5060,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Прирученный дымок",
+      "item": "twilightforest:fire_jet:1",
+      "text": "Дымовые блоки дымят постоянно, а это неудобно. Если подключить к такому блоку проводку, получится устройство, выпускающее дым лишь по моей команде. Теперь осталось придумать ему практическое применение."
+    }
+  ]
+}

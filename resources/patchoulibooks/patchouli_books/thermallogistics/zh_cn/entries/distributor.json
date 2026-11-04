@@ -1,0 +1,17 @@
+{
+  "name": "分配器",
+  "icon": "thermallogistics:distributor",
+  "category": "pamphlet",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "thermallogistics:distributor",
+      "text": "分配器是热动力学伺服器的智能版本，会从其连接的容器中抽取物品，并尝试送往其他位置。与伺服器不同，它不会向自身发送物品，而且会优先考虑过滤器：如果物品符合某个过滤器，就先尝试送到那里。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "thermallogistics:distributor",
+      "text": "将分配器与更高等级的金属锭放入合成栏，即可升级分配器。"
+    }
+  ]
+}

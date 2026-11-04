@@ -1,0 +1,21 @@
+{
+  "name": "Ледяные ядра",
+  "icon": "minecraft:spawn_egg:0{EntityTag:{id:\"twilightforest:stable_ice_core\"}}",
+  "category": "entities",
+  "advancement": "twilightforest:alt/entities/ice_cores",
+  "sortnum": 7120,
+  "pages": [
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/stable_ice_core",
+      "entity": "twilightforest:stable_ice_core",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/unstable_ice_core",
+      "entity": "twilightforest:unstable_ice_core",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

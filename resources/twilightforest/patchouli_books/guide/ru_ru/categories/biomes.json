@@ -1,0 +1,7 @@
+{
+  "parent": "twilightforest:world",
+  "name": "Биомы",
+  "description": "Повсюду далёкие земли!",
+  "icon": "twilightforest:magic_map",
+  "sortnum": 0
+}

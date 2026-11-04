@@ -1,0 +1,26 @@
+{
+  "name": "盖板",
+  "icon": "gendustry:error_sensor_cover",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "text+",
+      "text": "<li>手持盖板右击方块即可安装<li>空手潜行点击可拆下盖板<li>方块的每个面都可以分别安装盖板"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:import_cover",
+      "text": "<li>自动从相邻容器输入物品<li>可安装在所有机器和工业蜂箱上"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:eject_cover",
+      "text": "<li>自动向相邻容器或管道输出物品<li>可安装在所有机器和工业蜂箱上"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:error_sensor_cover",
+      "text": "<li>检测到符合设定的状态时，输出红石信号<li>可安装在工业蜂箱上<li>空手点击可进行配置"
+    }
+  ]
+}

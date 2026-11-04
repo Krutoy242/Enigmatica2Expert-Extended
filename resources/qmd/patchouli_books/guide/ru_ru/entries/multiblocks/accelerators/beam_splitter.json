@@ -1,0 +1,28 @@
+{
+  "name": "Разделитель луча",
+  "icon": "qmd:beam_splitter_controller",
+  "category": "qmd:accelerators",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Разделитель луча делит пучок частиц надвое. Каждый новый пучок получает половину исходного потока pu/t с округлением вниз до целого pu."
+    },
+    {
+      "header": "Сборка",
+      "type": "diagram",
+      "image": "qmd:textures/gui/book_images/beam_splitter.png",
+      "text": "Разделитель собирается так же, как $(l:multiblocks/accelerators/beam_diverter)дивертер луча$(/l), но должен иметь ровно два выходных порта пучка. Пример показан выше."
+    },
+    {
+      "title": "Работа",
+      "type": "text",
+      "text": "Для запуска подайте сигнал редстоуна на контроллер или входной $(l:multiblocks/accelerators/general#redstone)редстоуновый порт$(/l). Как и другие $(l:multiblocks/accelerators/general#operation)ускорители$(/l), разделитель требует энергию и хладагент.$(br2)$(l)Автоматическое переключение портов пучка у разделителей пока недоступно: меняйте их вручную.$()"
+    },
+    {
+      "title": "Энергия частиц",
+      "type": "text",
+      "text": "Действуют те же правила, что у $(l:multiblocks/accelerators/beam_diverter#energy)дивертеров луча$(/l). Прямой пучок не теряет энергию, отклонённый — теряет."
+    }
+  ]
+}

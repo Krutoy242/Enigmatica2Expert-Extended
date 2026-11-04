@@ -2,3 +2,7 @@ tile.packagedexcrafting.basic_crafter.name=Инженерный изготови
 
 recipe.packagedexcrafting.basic=Создание на инженерном станке
 recipe.packagedexcrafting.basic.short=Инженерия
+
+# Additional Russian translations; pre-existing entries retained.
+tile.packagedexcrafting.combination_crafter.pedestals.usable=Сейчас доступны помеченные пьедесталы: %s
+tile.packagedexcrafting.combination_crafter.pedestals.required=Минимум необходимых помеченных пьедесталов: %s

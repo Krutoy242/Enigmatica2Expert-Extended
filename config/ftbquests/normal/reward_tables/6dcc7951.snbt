@@ -1,5 +1,5 @@
 {
-	title: "Dragon forge reward",
+	title: "{e2ee.reward.6dcc7951}",
 	loot_size: 1,
 	rewards: [{
 		icon: "iceandfire:fire_dragon_blood 32",

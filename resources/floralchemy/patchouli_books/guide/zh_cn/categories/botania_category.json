@@ -1,0 +1,6 @@
+{
+  "name": "植物魔法花卉",
+  "description": "这里应该写点俏皮话。想进一步了解本节的植物，请查阅《植物魔法辞典》中的相关条目。为使本书内容完整，这里也收录了这些介绍。",
+  "icon": "floralchemy:textures/items/petro_petunia_icon.png",
+  "flag": "mod:botania"
+}

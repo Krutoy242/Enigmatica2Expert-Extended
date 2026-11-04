@@ -1,0 +1,6 @@
+{
+  "name": "Строительство",
+  "description": "Блоки для внешних стен и основных элементов интерьера фабрики или дома.",
+  "icon": "engineersdecor:clinker_brick_block",
+  "sortnum": 1000
+}

@@ -1,0 +1,25 @@
+{
+  "name": "资源",
+  "icon": "gendustry:mutagen_tank",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:mutagen",
+      "anchor": "mutagen",
+      "text": "<li>由<l>(genetics/mutagen_producer)诱变剂制造机</l>加工各种固体物品获得<li>运行<l>(genetics/mutatron)诱变机</l>与<l>(genetics/mutatron_advanced)高级诱变机</l>所必需的材料"
+    },
+    {
+      "type": "spotlight+",
+      "item": "gendustry:protein",
+      "anchor": "protein",
+      "text": "<li>由<l>(genetics/liquifier)蛋白质液化机</l>生产<li>供<l>(genetics/replicator)基因复制机</l>制造新的生物"
+    },
+    {
+      "type": "spotlight+",
+      "item": "gendustry:liquiddna",
+      "anchor": "dna",
+      "text": "<li>由<l>(genetics/extractor)基因提取机</l>生产<li>供<l>(genetics/replicator)基因复制机</l>制造新的生物"
+    }
+  ]
+}

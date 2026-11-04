@@ -1,0 +1,28 @@
+{
+  "name": "基因转换机",
+  "icon": "gendustry:transposer",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:transposer",
+      "link_recipe": true,
+      "text": "平均每操作 5 次消耗一套<l>(misc/crafting_material#labware)基因药皿</l>。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:transposer",
+      "text": "用于在样本和模板之间复制基因信息。"
+    },
+    {
+      "type": "text+",
+      "title": "复制模板",
+      "text": "复制<l>(misc/crafting_material#gene_template)基因模板</l>的方法：<li>将源模板放入左上方槽位<li>将目标模板放入左侧槽位<li>目标模板必须为空白，或仅包含同类生物的其他基因样本"
+    },
+    {
+      "type": "text+",
+      "title": "复制样本",
+      "text": "复制<l>(misc/crafting_material#gene_sample)基因样本</l>的方法：<li>将已有基因的样本放入左上方槽位<li>将空白样本放入左侧槽位"
+    }
+  ]
+}

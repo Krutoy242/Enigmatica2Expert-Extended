@@ -1,0 +1,12 @@
+{
+  "name": "Этап 4: за пределами",
+  "icon": "qmd:textures/particles/higgs_boson.png",
+  "category": "qmd:progression",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Что же дальше? $(br2) $(br2) $(br2) $(br2) $(br2) $(br2)...TBE?"
+    }
+  ]
+}

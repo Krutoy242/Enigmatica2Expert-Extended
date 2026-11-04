@@ -1,0 +1,72 @@
+{
+  "name": "Материалы для создания",
+  "icon": "gendustry:bee_receptacle",
+  "category": "misc",
+  "pages": [
+    {
+      "type": "text+",
+      "text": "Для создания блоков и предметов <mod> нужны промежуточные компоненты. Они используются в нескольких рецептах или расходуются некоторыми машинами."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:gene_sample_blank",
+      "anchor": "gene_sample_blank",
+      "text": "Используется в <l>(genetics/sampler)генетическом пробоотборнике</l> для взятия образцов у организмов. Содержит одну хромосому."
+    },
+    {
+      "type": "spotlight+",
+      "title": "Образец гена",
+      "item": "gendustry:gene_sample",
+      "anchor": "gene_sample",
+      "text": "<li>создаётся в <l>(genetics/sampler)генетическом пробоотборнике</l><li>нагрейте, чтобы стереть генетическую информацию<li>можно добавить в шаблон обычным крафтом"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:gene_template",
+      "anchor": "gene_template",
+      "text": "<li>содержит несколько образцов одного вида<li>используется в <l>(genetics/imprinter)генетических импринтерах</l> для изменения организмов<li>нагрейте, чтобы стереть генетическую информацию"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:genetics_processor",
+      "text": "Продвинутый процессор для работы с генетической информацией."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:env_processor",
+      "text": "Продвинутый процессор для изменения окружающей среды."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:mutagen_tank",
+      "text": "Специальный резервуар для безопасного хранения <l>(misc/resources#mutagen)мутагена</l>."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:power_module",
+      "text": "Позволяет машинам безопасно принимать и хранить большие объёмы энергии."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:bee_receptacle",
+      "text": "Безопасно удерживает живую пчелу и позволяет изменять её геном."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:upgrade_frame",
+      "text": "Основа для изготовления <l>(bee_keeping/upgrades)улучшений пасеки</l>."
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:labware",
+      "anchor": "labware",
+      "text": "Используется в машинах, работающих с генетическим материалом."
+    },
+    {
+      "type": "spotlight+",
+      "item": "gendustry:waste",
+      "anchor": "waste",
+      "text": "Несчастное существо, не пережившее ваших экспериментов.<br><c_dark_green><i>Ну вы и чудовище!</>"
+    }
+  ]
+}

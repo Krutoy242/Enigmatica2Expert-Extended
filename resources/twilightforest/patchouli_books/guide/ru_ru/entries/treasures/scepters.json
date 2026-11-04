@@ -1,0 +1,41 @@
+{
+  "name": "Посохи",
+  "icon": "twilightforest:twilight_scepter",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/scepters",
+  "sortnum": 4030,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Лич, с которым я сражался, использовал несколько разных посохов. После его гибели один из них выпал. Возможно, победив его несколько раз, я соберу все разновидности."
+    },
+    {
+      "type": "spotlight",
+      "title": "Сумеречный посох",
+      "item": "twilightforest:twilight_scepter",
+      "advancement": "twilightforest:alt/treasures/twilight_scepter",
+      "text": "Стреляет сферами."
+    },
+    {
+      "type": "spotlight",
+      "title": "Сумеречный посох",
+      "item": "twilightforest:lifedrain_scepter",
+      "advancement": "twilightforest:alt/treasures/lifedrain_scepter",
+      "text": "Поглощает здоровье."
+    },
+    {
+      "type": "spotlight",
+      "title": "Сумеречный посох",
+      "item": "twilightforest:zombie_scepter",
+      "advancement": "twilightforest:alt/treasures/zombie_scepter",
+      "text": "Призывает чудовищ из-за могилы на помощь в бою."
+    },
+    {
+      "type": "spotlight",
+      "title": "Сумеречный посох",
+      "item": "twilightforest:shield_scepter",
+      "advancement": "twilightforest:alt/treasures/shield_scepter",
+      "text": "Создаёт временную защитную ауру."
+    }
+  ]
+}

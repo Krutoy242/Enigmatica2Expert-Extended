@@ -1,0 +1,19 @@
+{
+  "name": "Энергия",
+  "icon": "minecraft:redstone",
+  "category": "1_machines",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Энергия",
+      "item": "minecraft:redstone",
+      "text": "Мод не добавляет способов выработки $(item)энергии$(), поэтому для питания $(item)механизмов$() понадобится $(item)генератор$() из другого мода."
+    },
+    {
+      "type": "text",
+      "title": "Единицы энергии",
+      "text": "Подходят как $(item)Forge Energy (FE)$(), так и $(item)Redstone Flux (RF)$().$(br2)Вот несколько модов, которыми можно воспользоваться для питания $(item)механизмов$().$(br2)$(l:https://minecraft.curseforge.com/projects/thermalexpansion)Thermal Expansion$() (динамо-машины)$(br)$(l:https://minecraft.curseforge.com/projects/nuclearcraft-mod)NuclearCraft$() (реакторы)$(br)$(l:https://minecraft.curseforge.com/projects/advanced-generators)Advanced Generators$()"
+    }
+  ]
+}

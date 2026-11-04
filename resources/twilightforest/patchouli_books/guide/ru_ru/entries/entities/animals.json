@@ -1,0 +1,57 @@
+{
+  "name": "Животные",
+  "icon": "minecraft:spawn_egg:0{EntityTag:{id:\"twilightforest:wild_boar\"}}",
+  "category": "entities",
+  "advancement": "twilightforest:alt/entities/animals",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/bighorn_sheep",
+      "entity": "twilightforest:bighorn_sheep",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/bunny",
+      "entity": "twilightforest:bunny",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/deer",
+      "entity": "twilightforest:deer",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/raven",
+      "entity": "twilightforest:raven",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/squirrel",
+      "entity": "twilightforest:squirrel",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/wild_boar",
+      "entity": "twilightforest:tiny_bird",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/wild_boar",
+      "entity": "twilightforest:tiny_bird",
+      "text": "Всякие штуки и прочее"
+    },
+    {
+      "type": "entity",
+      "advancement": "twilightforest:alt/entities/penguin",
+      "entity": "twilightforest:penguin",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

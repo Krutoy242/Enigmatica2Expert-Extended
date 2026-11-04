@@ -1,0 +1,17 @@
+{
+  "name": "Радиационная защита",
+  "icon": "nuclearcraft:rad_shielding:0",
+  "category": "nuclearcraft:items",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "hazmat",
+      "type": "items/3",
+      "header": "Радиационная защита",
+      "item1": "nuclearcraft:rad_shielding:0",
+      "item2": "nuclearcraft:rad_shielding:1",
+      "item3": "nuclearcraft:rad_shielding:2",
+      "text": "$(item)Радиационную защиту$() можно устанавливать на броню, придавая ей сопротивление радиации. Величина сопротивления зависит от типа защиты. При установке нескольких защитных элементов их сопротивление складывается."
+    }
+  ]
+}

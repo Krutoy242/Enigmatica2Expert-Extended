@@ -1,0 +1,6 @@
+{
+  "name": "Частицы",
+  "description": "Всё о частицах QMD и работе с ними",
+  "icon": "qmd:textures/particles/alpha.png",
+  "sortnum": 1
+}

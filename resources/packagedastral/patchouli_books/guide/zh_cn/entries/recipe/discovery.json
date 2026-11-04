@@ -1,0 +1,27 @@
+{
+  "name": "星辉合成台",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:discovery_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)星辉合成台/$是一种合成配方类型，使用$(item)星辉封包合成器/$执行原本在星辉合成台中进行的合成。$(p)$(item)星辉封包合成器/$会将合成产物输出到相邻容器中。$(p)$(item)星辉封包合成器/$需要能量和星能。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:appliedenergistics2",
+      "item": "packagedastral:discovery_crafter",
+      "link_recipe": true,
+      "title": "AE2 联动",
+      "text": "$(item)星辉封包合成器/$可以连接到$(thing)ME 网络/$。$(p)它会从网络获取能量，并将合成产物改为输出到网络中。"
+    },
+    {
+      "type": "packagedastral:altar_recipe_1",
+      "recipe": "packagedastral/discovery_crafter",
+      "title": "星辉合成台"
+    }
+  ],
+  "flag": "packagedastral:discovery",
+  "read_by_default": true,
+  "sortnum": 1002
+}

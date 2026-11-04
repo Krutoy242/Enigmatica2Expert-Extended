@@ -1,0 +1,7 @@
+{
+  "parent": "twilightforest:world",
+  "name": "Крупные сооружения",
+  "description": "Пора задать боссам трёпку!",
+  "icon": "twilightforest:magic_map",
+  "sortnum": 2000
+}

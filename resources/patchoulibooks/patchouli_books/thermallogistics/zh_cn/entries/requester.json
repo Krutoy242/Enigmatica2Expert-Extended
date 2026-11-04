@@ -1,0 +1,17 @@
+{
+  "name": "请求器",
+  "icon": "thermallogistics:requester",
+  "category": "pamphlet",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "thermallogistics:requester",
+      "text": "请求器是热动力学检索器的智能版本，会从网络抽取物品，并尝试送入相邻容器。与检索器不同，它不会从自身抽取物品。"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "thermallogistics:requester",
+      "text2": "请求器在网络中找不到所需物品时，会尝试借助<l>(crafter)合成器</l>制作。将请求器与更高等级的金属锭放入合成栏，即可升级请求器。"
+    }
+  ]
+}

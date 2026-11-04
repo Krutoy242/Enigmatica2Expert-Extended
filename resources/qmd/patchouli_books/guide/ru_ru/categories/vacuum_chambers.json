@@ -1,0 +1,7 @@
+{
+  "name": "Вакуумные камеры",
+  "description": "Продвинутые многоблочные машины",
+  "icon": "qmd:neutral_containment_controller",
+  "parent": "qmd:multiblocks",
+  "sortnum": 2
+}

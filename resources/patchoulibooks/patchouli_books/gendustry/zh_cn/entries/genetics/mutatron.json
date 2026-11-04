@@ -1,0 +1,28 @@
+{
+  "name": "诱变机",
+  "icon": "gendustry:mutatron",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:mutatron",
+      "link_recipe": true,
+      "text": "<li>消耗<l>(misc/resources#mutagen)诱变剂</l>强制触发变异<li>左侧的能量条和液槽分别显示内部储能与诱变剂储量<li>每次操作需要1 桶<l>(misc/resources#mutagen)诱变剂</l><li>操作过程中会消耗<l>(misc/crafting_material#labware)基因药皿</l><li>可以从任意侧面输入<l>(misc/crafting_material#labware)基因药皿</l>和待处理生物"
+    },
+    {
+      "type": "text+",
+      "title": "蜜蜂诱变",
+      "text": "诱变机能够使蜜蜂发生变异。<li>将公主蜂放入上方槽位<li>将雄蜂放入下方槽位<li>产出新物种的蜂后，该蜂后死亡时会留下纯种后代<li>人工来源的生物（即卑贱种）有概率无法存活于诱变过程"
+    },
+    {
+      "type": "text+",
+      "title": "树木诱变",
+      "text": "诱变机能够使树木发生变异。<li>将树苗放入上方槽位<li>将花粉放入下方槽位<li>产出新物种的树苗"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:mutatron",
+      "text": "可用于培育新的蜜蜂物种。"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "name": "Общие сведения",
+  "icon": "nuclearcraft:fission_casing",
+  "category": "nuclearcraft:fission",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "intro",
+      "type": "text",
+      "text": "$(thing)Ядерные реакторы$() выделяют тепло за счёт самоподдерживающейся реакции деления ядерного топлива. В конечном итоге это тепло преобразуется в электричество. Способ выработки электричества зависит от типа реактора."
+    },
+    {
+      "anchor": "casing",
+      "type": "blocks/2",
+      "header": "Корпус реактора",
+      "block1": "nuclearcraft:fission_casing",
+      "block2": "nuclearcraft:fission_glass",
+      "text": "Внутренние компоненты реактора заключены в прямоугольный параллелепипед. Его рёбра должны состоять из $(item)корпусов ядерного реактора$(), а стенки — из $(item)стекла ядерного реактора$(), корпусов или их сочетания."
+    },
+    {
+      "anchor": "controller",
+      "type": "blocks/2",
+      "header": "Контроллеры реактора",
+      "block1": "nuclearcraft:solid_fission_controller",
+      "block2": "nuclearcraft:salt_fission_controller",
+      "text": "Тип реактора определяется $(item)контроллером реактора$(), установленным в одной из стенок. Без контроллера многоблочная конструкция не соберётся. В его интерфейсе отображаются сведения о реакторе, в том числе средние характеристики соответствующих компонентов."
+    },
+    {
+      "anchor": "clusters",
+      "type": "text",
+      "title": "Кластеры реактора",
+      "text": "$(thing)Кластеры$() — связные группы теплопроводящих компонентов. Компоненты, которые могут быть активными или бездействовать, проводят тепло только в активном состоянии. Пассивные блоки, например $(l:fission/general#conductor)соединители$(), проводят тепло всегда. $(l:fission/general#moderator)Замедлители$() и $(l:fission/general#reflector)отражатели$() в состав кластеров не входят."
+    },
+    {
+      "type": "text",
+      "title": "Кластеры: продолжение",
+      "text": "Компоненты кластера имеют общий запас тепла и перегреваются вместе, если он становится слишком большим. Если хотя бы один кластер не соединён с корпусом реактора, многоблочная конструкция не соберётся."
+    },
+    {
+      "anchor": "conductor",
+      "type": "blocks/1",
+      "header": "Соединители",
+      "block": "nuclearcraft:fission_conductor",
+      "text": "$(item)Соединители$() позволяют соединять эти блоки со стенками реактора. Ими также можно соединять кластеры друг с другом."
+    },
+    {
+      "anchor": "monitor",
+      "type": "blocks/1",
+      "header": "Мониторы реактора",
+      "block": "nuclearcraft:fission_monitor",
+      "text": "$(item)Мониторы ядерного реактора$() позволяют получать более подробные сведения о характеристиках отдельных кластеров."
+    },
+    {
+      "anchor": "fuel_component",
+      "type": "blocks/2",
+      "header": "Топливные компоненты",
+      "block1": "nuclearcraft:solid_fission_cell",
+      "block2": "nuclearcraft:salt_fission_vessel",
+      "text": "У каждого типа реактора есть свой $(item)топливный компонент$(), содержащий ядерное топливо. При делении топливо выделяет определённое количество тепла. Щелчком правой кнопки мыши с топливом по компоненту можно задать для него фильтр, чтобы использовать в одном реакторе несколько видов топлива."
+    },
+    {
+      "anchor": "criticality",
+      "type": "text",
+      "title": "Порог критичности",
+      "text": "Чтобы началось деление, топливо должно получать определённый поток нейтронов, измеряемый в N/t. Когда поток в $(l:fission/general#fuel_component)топливном компоненте$() превышает порог критичности топлива, начинается деление. При этом выделяются не только тепло, но и дополнительные нейтроны."
+    },
+    {
+      "type": "text",
+      "text": "Если поток в топливной ячейке превышает удвоенный порог критичности, эффективность реактора снижается. Поток нейтронов также используется для обработки материалов в $(l:fission/general#irradiator)камере облучателя$()."
+    },
+    {
+      "anchor": "moderator",
+      "type": "blocks/3",
+      "header": "Замедлители",
+      "block1": "nuclearcraft:ingot_block:8",
+      "block2": "nuclearcraft:ingot_block:9",
+      "block3": "nuclearcraft:heavy_water_moderator",
+      "text": " $(item)Замедлители$() снижают энергию нейтронов, испускаемых $(l:fission/general#fuel_component)топливными компонентами$(), чтобы те вызывали больше делений в других топливных компонентах. Замедлители размещают по прямой, длиной не более 4 блоков. На одном конце линии должен находиться $(o)активный$() топливный компонент."
+    },
+    {
+      "type": "text",
+      "title": "Замедлители: продолжение",
+      "text": "Поток нейтронов на другом конце равен сумме коэффициентов потока всех замедлителей линии. Если активные топливные ячейки находятся на обоих концах, каждая получает поток, равный сумме коэффициентов всех замедлителей линии. В правилах размещения может встречаться понятие «активный замедлитель». Это замедлитель, непосредственно соседствующий с активной топливной ячейкой."
+    },
+    {
+      "anchor": "heatsink",
+      "type": "blocks/2",
+      "block1": "nuclearcraft:solid_fission_sink:0,nuclearcraft:solid_fission_sink:1,nuclearcraft:solid_fission_sink:2,nuclearcraft:solid_fission_sink:3,nuclearcraft:solid_fission_sink:4,nuclearcraft:solid_fission_sink:5,nuclearcraft:solid_fission_sink:6,nuclearcraft:solid_fission_sink:7,nuclearcraft:solid_fission_sink:8,nuclearcraft:solid_fission_sink:9,nuclearcraft:solid_fission_sink:10,nuclearcraft:solid_fission_sink:11,nuclearcraft:solid_fission_sink:12,nuclearcraft:solid_fission_sink:13,nuclearcraft:solid_fission_sink:14,nuclearcraft:solid_fission_sink:15",
+      "block2": "nuclearcraft:solid_fission_sink2:0,nuclearcraft:solid_fission_sink2:1,nuclearcraft:solid_fission_sink2:2,nuclearcraft:solid_fission_sink2:3,nuclearcraft:solid_fission_sink2:4,nuclearcraft:solid_fission_sink2:5,nuclearcraft:solid_fission_sink2:6,nuclearcraft:solid_fission_sink2:7,nuclearcraft:solid_fission_sink2:8,nuclearcraft:solid_fission_sink2:9,nuclearcraft:solid_fission_sink2:10,nuclearcraft:solid_fission_sink2:11,nuclearcraft:solid_fission_sink2:12,nuclearcraft:solid_fission_sink2:13,nuclearcraft:solid_fission_sink2:14,nuclearcraft:solid_fission_sink2:15",
+      "header": "Радиаторы",
+      "text": "$(item)Радиаторы$() и их активные аналоги для $(l:fission/molten_salt#intro)реакторов на расплавах солей$() — $(item)реакторные теплообменники$() — позволяют сбалансировать $(thing)чистый нагрев$() реактора. Для полностью стабильной работы следует стремиться к 0HU/t. У каждого радиатора есть свои правила размещения."
+    },
+    {
+      "type": "text",
+      "text": "Радиаторы отводят тепло из реактора. Активная топливная ячейка выделяет тепло в количестве, равном её базовому тепловыделению, умноженному на $(thing)множитель нагрева$(). Этот множитель определяется числом линий замедлителей: с одной линией ячейка имеет тепловую эффективность 100%, а с двумя — 200%."
+    },
+    {
+      "type": "text",
+      "title": "Радиаторы: продолжение",
+      "text": "Правильно установленный в кластере радиатор уменьшает суммарное тепловыделение кластера на свою мощность охлаждения. Радиаторы имеют разную мощность; сочетайте их так, чтобы получить чистый нагрев 0HU/t, +/-5 HU/t."
+    },
+    {
+      "anchor": "fission_source",
+      "type": "blocks/3",
+      "block1": "nuclearcraft:fission_source:0",
+      "block2": "nuclearcraft:fission_source:1",
+      "block3": "nuclearcraft:fission_source:2",
+      "header": "Излучатель нейтронов",
+      "text": "$(item)Излучатели нейтронов$() запускают деление в реакторе. Их устанавливают в стенках реактора. При подаче сигнала красного камня излучатель активирует топливный компонент, на который направлен. В нём начинается деление, испускающее нейтроны для активации других топливных ячеек."
+    },
+    {
+      "type": "text",
+      "title": "Излучатели: продолжение",
+      "text": "Между излучателем и активируемым топливным компонентом не должно быть препятствий. Множитель эффективности излучателя влияет на эффективность активируемой ячейки."
+    },
+    {
+      "anchor": "reflector",
+      "type": "blocks/2",
+      "header": "Отражатели нейтронов",
+      "block1": "nuclearcraft:fission_reflector:0",
+      "block2": "nuclearcraft:fission_reflector:1",
+      "text": " $(item)Отражатель$() возвращает поток нейтронов к источнику. Поэтому при отражательной способности 100% поток в топливной ячейке удваивается: нейтроны проходят через $(l:fission/general#moderator)замедлители$() обратно без потерь. Между отражателем и активным топливным компонентом должно быть не более двух замедлителей."
+    },
+    {
+      "anchor": "irradiator",
+      "type": "blocks/1",
+      "header": "Камеры облучателя",
+      "block": "nuclearcraft:fission_irradiator",
+      "text": "$(item)Камеры облучателя$(), установленные на конце линии $(l:fission/general#moderator)замедлителей$(), используют поток нейтронов для выполнения рецептов. Чем выше поток, тем быстрее обработка. Активные камеры выделяют тепло и испускают радиацию в окружающую среду."
+    },
+    {
+      "anchor": "shield",
+      "type": "blocks/1",
+      "header": "Нейтронные вентили",
+      "block": "nuclearcraft:fission_shield:0",
+      "text": "$(item)Нейтронный вентиль$() действует как переключаемый $(l:fission/general#moderator)замедлитель$(). В выключенном состоянии он блокирует поток нейтронов и выделяет тепло. Во включённом — пропускает поток, но, в отличие от замедлителя, не увеличивает его. Вентили позволяют отключать каналы замедлителей, не разбирая реактор."
+    },
+    {
+      "anchor": "planner",
+      "type": "text",
+      "title": "Проектирование",
+      "text": "Для проектирования реактора рекомендуется использовать $(l:https://github.com/ThizThizzyDizzy/nc-reactor-generator/releases)планировщик реакторов$(). Он помогает проверить правила размещения, тепловой баланс и ожидаемую выработку."
+    }
+  ]
+}

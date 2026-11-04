@@ -1,0 +1,17 @@
+{
+  "name": "基因采样机",
+  "icon": "gendustry:sampler",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:sampler",
+      "text": "<li>从蜜蜂、树木和蝴蝶中提取<l>(misc/crafting_material#gene_sample)基因样本</l><li>也能将<mark>更多蜜蜂（Extra Bees）</>的血清转化为<mod>的样本<li>过程中会消耗<l>(misc/crafting_material#labware)基因药皿</l>和<l>(misc/crafting_material#gene_sample_blank)空白基因样本</l><li>随机提取输入生物的1 种基因性状<li>被采样的生物无法在这个过程中存活"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:sampler",
+      "text": "用于提取基因性状。"
+    }
+  ]
+}

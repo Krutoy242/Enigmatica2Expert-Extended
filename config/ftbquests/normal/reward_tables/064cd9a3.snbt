@@ -1,5 +1,5 @@
 {
-	title: "Nether Reward",
+	title: "{e2ee.reward.064cd9a3}",
 	loot_size: 1,
 	rewards: [{
 		item: {

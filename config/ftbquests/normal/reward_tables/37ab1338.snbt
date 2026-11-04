@@ -1,5 +1,5 @@
 {
-	title: "Mythic",
+	title: "{e2ee.reward.37ab1338}",
 	loot_size: 1,
 	rewards: [{
 		icon: "rats:confit_byaldi 64",

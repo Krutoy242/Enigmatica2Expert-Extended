@@ -1,0 +1,18 @@
+{
+  "name": "基因提取机",
+  "icon": "gendustry:extractor",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "item": "gendustry:extractor",
+      "link_recipe": true,
+      "text": "<li>从生物中提取<l>(misc/resources#dna)液态基因</l><li>平均每运行 10 次消耗1 套<l>(misc/crafting_material#labware)基因药皿</l><li>左侧能量条显示内部储能<li>右侧液槽显示内部储存的液态基因<li>可以从任意侧面输入物品<li>提取的液态基因会自动输出"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:extractor",
+      "text": "从生物中提取液态基因。"
+    }
+  ]
+}

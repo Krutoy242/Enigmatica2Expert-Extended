@@ -1,0 +1,26 @@
+{
+  "name": "Держатель рецепта пакета",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:recipe_holder",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Держатель рецепта пакета/$ хранит данные для машин, записанные в $(l:core/encoder)кодировщике рецептов пакетов/$.$(p)Чтобы очистить записанный $(item)держатель/$, используйте $(thing)$(k:sneak) + $(k:use)/$ или поместите его в сетку крафта.$(p)Чтобы скопировать содержимое, объедините записанный $(item)держатель/$ с пустыми в сетке крафта."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:jei",
+      "item": "packagedauto:recipe_holder",
+      "link_recipe": true,
+      "title": "Интеграция с JEI",
+      "text": "Нажмите $(thing)$(k:jei.showUses)/$ на записанном $(item)держателе рецепта пакета/$, чтобы получить подробные сведения о записанных рецептах."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:recipe_holder",
+      "title": "Изготовление"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4
+}

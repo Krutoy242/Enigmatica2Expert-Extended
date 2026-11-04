@@ -1,0 +1,12 @@
+{
+  "name": "Конденсатор (в разработке)",
+  "icon": "nuclearcraft:condenser_controller",
+  "category": "nuclearcraft:heat_exchanger",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тепловые конденсаторы ещё не полностью реализованы."
+    }
+  ]
+}

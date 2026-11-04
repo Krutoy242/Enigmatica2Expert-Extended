@@ -1,0 +1,20 @@
+# Russian additions; existing Russian keys are deliberately excluded.
+bestiary.hold_shift=Удерживайте §e[SHIFT]§r§7 для просмотра содержимого
+bestiary.hydra=Гидра
+bestiary.dread_mobs=Нежить
+tile.iceandfire.dread_stone.name=Ужасный камень
+item.iceandfire.hydra_heart.desc_0=На панели быстрого доступа усиливает регенерацию
+item.iceandfire.hydra_heart.desc_1=по мере того, как владелец теряет здоровье
+item.iceandfire.hydra_arrow.desc=Отравляет цель и похищает её здоровье
+entity.dread_thrall.name=Ужасающий Тралл
+entity.dread_ghoul.name=Ужасающий вурдалак
+entity.dread_beast.name=Ужасающий зверь
+entity.dread_scuttler.name=Ужасающий ползун
+entity.dread_lich.name=Ужасающий лич
+entity.dread_lich_skull.name=Череп ужасающего лича
+entity.dread_knight.name=Ужасающий рыцарь
+entity.dread_horse.name=Конь ужасающего рыцаря
+entity.dread_queen.name=Ужасная королева
+entity.if_hydra.name=Гидра
+entity.hydra_breath.name=Дыхание гидры
+entity.hydra_arrow.name=Стрела Гидры

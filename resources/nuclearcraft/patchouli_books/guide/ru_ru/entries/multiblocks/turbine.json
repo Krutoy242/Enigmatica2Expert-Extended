@@ -1,0 +1,170 @@
+{
+  "name": "Турбина",
+  "icon": "nuclearcraft:turbine_controller",
+  "category": "nuclearcraft:multiblocks",
+  "sortnum": 2,
+  "pages": [
+    {
+      "anchor": "intro",
+      "type": "text",
+      "text": "Турбины извлекают энергию из пара под давлением, выделяя при этом отработанный теплоноситель."
+    },
+    {
+      "anchor": "casing",
+      "type": "blocks/2",
+      "header": "Кожух турбины",
+      "block1": "nuclearcraft:turbine_casing",
+      "block2": "nuclearcraft:turbine_glass",
+      "text": "Внутренние компоненты турбины заключены в прямоугольный параллелепипед. Его рёбра должны состоять из $(item)кожухов турбины$(), а стенки — из $(item)стекла турбины$(), кожухов или их сочетания. При использовании стекла внутренности турбины отображаются, что может снизить производительность игры."
+    },
+    {
+      "anchor": "controller",
+      "type": "blocks/1",
+      "header": "Контроллер турбины",
+      "block": "nuclearcraft:turbine_controller",
+      "text": "$(item)Контроллер турбины$() отображает сведения о ней и позволяет включать или выключать её. Он должен находиться в стенке турбины. Без него многоблочная конструкция не соберётся. Турбина работает только при подаче на контроллер сигнала красного камня."
+    },
+    {
+      "anchor": "rotor_shaft",
+      "type": "blocks/1",
+      "header": "Вал ротора турбины",
+      "block": "nuclearcraft:turbine_rotor_shaft",
+      "text": "$(item)Вал ротора турбины$() — её основа. Это вал произвольной толщины, расположенный по центру турбины и соединённый с $(item)подшипниками ротора турбины$() на обоих концах. Его предельная толщина на два блока меньше диаметра турбины."
+    },
+    {
+      "anchor": "rotor_bearing",
+      "type": "blocks/1",
+      "header": "Подшипник ротора турбины",
+      "block": "nuclearcraft:turbine_rotor_bearing",
+      "text": "$(item)Подшипники ротора турбины$() соединяют вал ротора с кожухом. Они должны полностью покрывать торец вала на обеих сторонах турбины."
+    },
+    {
+      "anchor": "rotor_blades",
+      "type": "blocks/3",
+      "header": "Лопатки ротора турбины",
+      "block1": "nuclearcraft:turbine_rotor_blade_steel",
+      "block2": "nuclearcraft:turbine_rotor_blade_extreme",
+      "block3": "nuclearcraft:turbine_rotor_blade_sic_sic_cmc",
+      "text": "$(item)Лопатки ротора турбины$() вращают вал энергией пара. В каждом поперечном слое вала допускается лишь один $(o)тип$() лопаток. Они должны покрывать каждую сторону вала и доходить до стенок турбины."
+    },
+    {
+      "type": "text",
+      "title": "Лопатки: продолжение",
+      "text": "Каждая лопатка может обрабатывать определённое количество пара. Если подать больше пара, чем способны обработать лопатки, турбина сломается. Проходя через каждый ряд лопаток, пар расширяется. Чем ближе $(thing)степень расширения$() в каждом слое вала к $(thing)идеальной степени расширения$(), тем эффективнее турбина."
+    },
+    {
+      "anchor": "stator",
+      "type": "blocks/1",
+      "header": "Статор ротора турбины",
+      "block": "nuclearcraft:turbine_rotor_stator",
+      "text": "$(item)Статоры ротора турбины$() похожи на лопатки, но при прохождении через них пар сжимается, а не расширяется. Статоры не обрабатывают пар и не увеличивают предельную пропускную способность турбины. Правила их размещения совпадают с правилами для лопаток."
+    },
+    {
+      "anchor": "dynamo_coil",
+      "type": "blocks/1",
+      "header": "Катушка динамо-машины",
+      "block": "nuclearcraft:turbine_dynamo_coil:0,nuclearcraft:turbine_dynamo_coil:1,nuclearcraft:turbine_dynamo_coil:2,nuclearcraft:turbine_dynamo_coil:3,nuclearcraft:turbine_dynamo_coil:4,nuclearcraft:turbine_dynamo_coil:5",
+      "text": "$(item)Катушки динамо-машины$() преобразуют вращение вала в энергию. Они устанавливаются в стенках на тех же сторонах, что и подшипники ротора."
+    },
+    {
+      "type": "text",
+      "title": "Катушки: продолжение",
+      "text": "Сочетайте катушки динамо-машины так, чтобы получить наибольшую эффективность, соблюдая правила размещения. Эффективность равна произведению средних $(thing)множителей проводимости$() катушек на двух противоположных сторонах."
+    },
+    {
+      "anchor": "inlet",
+      "type": "blocks/1",
+      "header": "Входной вентиль турбины",
+      "block": "nuclearcraft:turbine_inlet",
+      "text": "$(item)Входные вентили турбины$() подают в неё пар. Их нужно размещать на одной из сторон, где находится подшипник ротора."
+    },
+    {
+      "anchor": "outlet",
+      "type": "blocks/1",
+      "header": "Выхлопной вентиль турбины",
+      "block": "nuclearcraft:turbine_outlet",
+      "text": "$(item)Выхлопные вентили турбины$() выпускают отработанный пар. Их нужно размещать на стороне с подшипником ротора, противоположной входному вентилю."
+    },
+    {
+      "type": "text",
+      "title": "Проектирование",
+      "text": "Из-за сложности турбин рекомендуется использовать $(l:https://github.com/ThizThizzyDizzy/nc-reactor-generator/releases)планировщик реакторов с поддержкой турбин$() или отдельный планировщик турбин. Он помогает проверить правила размещения, расширение пара и ожидаемую эффективность."
+    },
+    {
+      "type": "text",
+      "text": "Ради краткости и ясности полное описание работы турбин здесь опущено. Дополнительные сведения можно найти в $(l:https://youtu.be/p555h2peays)этом видео$()."
+    },
+    {
+      "anchor": "examples",
+      "type": "text",
+      "title": "Примеры турбин",
+      "text": "Вот пример правильно собранной, работающей турбины. Она намеренно сделана неэффективной. Проектирование более крупных и эффективных турбин остаётся упражнением для читателя."
+    },
+    {
+      "type": "multiblock",
+      "name": "Пример малой турбины",
+      "multiblock": {
+        "mapping": {
+          "F": "nuclearcraft:turbine_casing",
+          "G": "nuclearcraft:turbine_glass",
+          "M": "nuclearcraft:turbine_dynamo_coil[type=magnesium]",
+          "B": "nuclearcraft:turbine_rotor_bearing",
+          "S": "nuclearcraft:turbine_rotor_shaft",
+          "I": "nuclearcraft:turbine_inlet",
+          "O": "nuclearcraft:turbine_outlet",
+          "C": "nuclearcraft:turbine_controller",
+          "b": "nuclearcraft:turbine_rotor_blade_steel",
+          "s": "nuclearcraft:turbine_rotor_stator",
+          "0": "nuclearcraft:turbine_casing"
+        },
+        "pattern": [
+          [
+            "FFFFF",
+            "FGGGF",
+            "FGGGF",
+            "FGGGF",
+            "FGGGF",
+            "FGGGF",
+            "FFFFF"
+          ],
+          [
+            "FFMFF",
+            "G b G",
+            "G b G",
+            "G s G",
+            "G b G",
+            "G b G",
+            "FFMFF"
+          ],
+          [
+            "FMBMF",
+            "GbSbG",
+            "GbSbG",
+            "GsSsG",
+            "GbSbG",
+            "GbSbG",
+            "FMBMF"
+          ],
+          [
+            "FIMFF",
+            "C b G",
+            "G b G",
+            "G s G",
+            "G b G",
+            "G b G",
+            "FFMOF"
+          ],
+          [
+            "FFFF0",
+            "FFFFF",
+            "FFFFF",
+            "FFFFF",
+            "FFFFF",
+            "FFFFF",
+            "FFFFF"
+          ]
+        ]
+      }
+    }
+  ]
+}

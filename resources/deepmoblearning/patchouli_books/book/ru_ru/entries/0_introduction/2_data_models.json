@@ -1,0 +1,106 @@
+{
+  "name": "Модели данных",
+  "icon": "deepmoblearning:data_model_guardian",
+  "category": "0_introduction",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_blank",
+      "text": "$(item)Пустая модель данных$() изготавливается из$(br)$(l:0_introduction/0_introduction#sooted_redstone)покрытого сажей Редстоуна$(), полученного ранее."
+    },
+    {
+      "type": "spotlight",
+      "item": "deepmoblearning:data_model_guardian",
+      "anchor": "data_models",
+      "text": "Все $(item)модели данных$() начинают с уровня «$(8)Неисправный$()». Он повышается по мере накопления $(item)данных$() в $(item)модели$().$(br2)Чем выше $(item)уровень$(), тем больше $(item)данных$() дают побеждённые мобы.$(br2)$(item)Модели данных$() можно помещать в $(l:1_machines/0_simulation_chamber)имитационную камеру$()."
+    },
+    {
+      "type": "text",
+      "text": "$(item)Модели данных$() делятся на $(item)типы$() в зависимости от $(item)среды обитания$() моба.$(br2)Основные $(item)среды$(): $(a)Верхний мир$(), $(c)Нижний мир$() и $(d)внеземная$().$(br2)Тип $(item)модели данных$() определяет, какую $(l:1_machines/1_matter#living)живую материю$() и $(l:1_machines/1_matter#pristine)нетронутую материю$() будет производить $(l:1_machines/0_simulation_chamber)имитационная камера$()."
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_zombie",
+      "recipe2": "deepmoblearning:data_model_skeleton",
+      "title": "Зомби",
+      "title2": "Скелет"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_creeper",
+      "recipe2": "deepmoblearning:data_model_spider",
+      "title": "Крипер",
+      "title2": "Паук"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_slime",
+      "recipe2": "deepmoblearning:data_model_witch",
+      "title": "Слизень",
+      "title2": "Ведьма"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_blaze",
+      "recipe2": "deepmoblearning:data_model_ghast",
+      "title": "Ифрит",
+      "title2": "Гаст"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_wither_skeleton",
+      "recipe2": "deepmoblearning:data_model_enderman",
+      "title": "Скелет-иссушитель",
+      "title2": "Эндермен"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_wither",
+      "recipe2": "deepmoblearning:data_model_dragon",
+      "title": "Иссушитель",
+      "title2": "Дракон"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_shulker",
+      "recipe2": "deepmoblearning:data_model_guardian",
+      "title": "Шалкер",
+      "title2": "Страж"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_thermal_elemental",
+      "title": "Элементаль Thermal",
+      "flag": "mod:thermalfoundation"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_twilight_forest",
+      "recipe2": "deepmoblearning:data_model_twilight_swamp",
+      "title": "Сумеречный лес",
+      "title2": "Сумеречное болото",
+      "flag": "mod:twilightforest"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_twilight_darkwood",
+      "recipe2": "deepmoblearning:data_model_twilight_glacier",
+      "title": "Сумеречный тёмный лес",
+      "title2": "Сумеречный ледник",
+      "flag": "mod:twilightforest"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_mo_android",
+      "title": "Андроид-изгой",
+      "flag": "mod:matteroverdrive"
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:data_model_tinker_slime",
+      "title": "Синий слизень",
+      "flag": "mod:tconstruct"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-	title: "Dispenser Reward",
+	title: "{e2ee.reward.8f77f75c}",
 	loot_size: 1,
 	rewards: [{
 		icon: "minecraft:vine 2",

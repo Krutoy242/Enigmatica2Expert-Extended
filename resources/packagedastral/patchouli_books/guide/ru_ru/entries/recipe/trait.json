@@ -1,0 +1,47 @@
+{
+  "name": "Переливчатый алтарь",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:trait_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Тип рецепта $(thing)«Переливчатый алтарь»/$ использует $(item)переливчатый алтарь для пакетов/$ для выполнения рецептов обычного переливчатого алтаря."
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packagedastral:trait_crafter",
+      "item2": "packagedastral:marked_relay",
+      "title": "Использование",
+      "text": "Для работы $(item)переливчатого алтаря для пакетов/$ постройте вокруг него структуру обычного переливчатого алтаря, показанную на следующей странице.$(p)Также разместите достаточное число $(item)помеченных реле настройки/$ в области 7x7 вокруг машины.$(p)Машине требуются энергия и звёздный свет."
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "packagedastral:pattern_trait_crafter",
+      "name": "Структура"
+    },
+    {
+      "type": "text",
+      "title": "Использование (продолжение)",
+      "text": "Примените $(thing)$(k:sneak) + $(k:use)/$ пустой рукой к неработающему $(item)переливчатому алтарю для пакетов/$, чтобы проверить доступное и необходимое число $(item)помеченных реле настройки/$.$(p)Предметы, изготовленные $(item)переливчатым алтарём для пакетов/$, выводятся в соседние инвентари."
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Переливчатый алтарь для пакетов/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает из сети энергию и выводит изготовленные предметы непосредственно в сеть."
+    },
+    {
+      "type": "packagedastral:altar_recipe_2",
+      "recipe": "packagedastral/constellation_focus",
+      "title": "Переливчатый алтарь"
+    },
+    {
+      "type": "packagedastral:altar_recipe_2",
+      "recipe": "packagedastral/trait_crafter",
+      "title": "Переливчатый алтарь"
+    }
+  ],
+  "flag": "packagedastral:trait",
+  "read_by_default": true,
+  "sortnum": 1005
+}

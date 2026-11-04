@@ -1,0 +1,19 @@
+{
+  "armormodifier": "tconevo.weightless_armor",
+  "text": [
+    {
+      "text": "Перья на броне немного облегчат её, давая большую подвижность в бою."
+    }
+  ],
+  "effects": [
+    "Добавляет зачарование лёгкости",
+    "Уменьшает вес, позволяя чаще уклоняться",
+    "Несколько уровней"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

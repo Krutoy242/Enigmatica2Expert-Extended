@@ -1,0 +1,17 @@
+{
+  "name": "Изготовитель добычи",
+  "icon": "deepmoblearning:extraction_chamber",
+  "category": "1_machines",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Изготовитель добычи$() — машина, которая… $(item)изготавливает добычу$() из различных видов $(item)нетронутой материи$().$(br2)Для получения $(item)добычи$() нужны $(l:1_machines/3_energy)энергия$() и выбранный $(item)предмет$()."
+    },
+    {
+      "type": "recipelookup",
+      "recipe": "deepmoblearning:extraction_chamber",
+      "text": "Для удобства автоматизации выбранный $(item)предмет$() запоминается и остаётся выбранным, пока вы не отмените выбор."
+    }
+  ]
+}

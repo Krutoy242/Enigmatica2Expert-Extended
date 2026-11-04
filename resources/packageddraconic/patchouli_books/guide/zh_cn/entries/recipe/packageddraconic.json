@@ -1,0 +1,13 @@
+{
+  "name": "§4封包龙之进化",
+  "category": "packagedauto:recipe",
+  "icon": "packageddraconic:fusion_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)封包龙之进化（PackagedDraconic）/$为$(#822)龙之进化/$的配方提供了对应的$(#822)封包合成/$配方类型。"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4000
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Изменения появления мобов",
+  "icon": "draconicevolution:mob_soul{EntityName:\"minecraft:enderman\"}",
+  "category": "World",
+  "pages": [
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"minecraft:enderman\"}",
+      "title": "Эндермен",
+      "text": "При появлении в $(n)обычном мире/$ в 10% случаев несёт $(n)сжатый торцевой камень/$; с меньшей вероятностью — $(n)эндер руду/$.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"emberroot:dire_wolf\"}",
+      "title": "Ужасный волк",
+      "text": "Появляется только в темноте.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"quark:stoneling\"}",
+      "title": "Стонлинг",
+      "text": "Появляется $(n)только на камне/$, не более 3 особей.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"rats:rat\"}",
+      "title": "Крыса",
+      "text": "Появляется только на $(n)грудах мусора/$.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"endreborn:watcher\"}",
+      "title": "Наблюдатель",
+      "text": "Появляется в обычном мире только на $(n)любом эндерняке/$.",
+      "type": "spotlight"
+    },
+    {
+      "item": "draconicevolution:mob_soul{EntityName:\"endreborn:endguard\"}",
+      "title": "Страж Края",
+      "text": "Появляется где угодно, но только на $(n)пурпурных блоках/$ или $(n)проклятой земле/$.",
+      "type": "spotlight"
+    }
+  ]
+}

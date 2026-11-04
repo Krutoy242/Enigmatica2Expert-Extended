@@ -1,0 +1,21 @@
+{
+  "name": "Волшебные бобы",
+  "icon": "twilightforest:magic_beans",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/magic_beans",
+  "sortnum": 8010,
+  "pages": [
+    {
+      "title": "Волшебные бобы",
+      "type": "twilightforest:headed_spotlight",
+      "item": "twilightforest:magic_beans",
+      "text": "Эти бобы огромны! Очевидно, обычная почва им не подойдёт. Если они встречаются здесь, их естественная среда наверняка тоже находится где-то на этих нагорьях."
+    },
+    {
+      "type": "spotlight",
+      "advancement": "twilightforest:alt/treasures/magic_beanstalk",
+      "item": "twilightforest:huge_stalk",
+      "text": "Бобы мгновенно отреагировали на невероятное плодородие почвы, и результат впечатляет. Стебель вырос наподобие грубой лестницы, словно нашёптывая мне двигаться дальше и выше. Пока я не делаю зла, мне нечего бояться, так что я продолжаю путь с весёлой песней."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-	title: "Any meat",
+	title: "{e2ee.reward.37598f8c}",
 	loot_size: 1,
 	rewards: [{
 		icon: "betteranimalsplus:pheasantraw 64",

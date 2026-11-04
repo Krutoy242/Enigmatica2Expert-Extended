@@ -1,0 +1,7 @@
+{
+  "name": "Ядерное деление",
+  "description": "$(l)Расщепляем атом ради удовольствия и выгоды.",
+  "icon": "nuclearcraft:solid_fission_controller",
+  "parent": "nuclearcraft:multiblocks",
+  "sortnum": 0
+}

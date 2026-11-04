@@ -1,0 +1,27 @@
+{
+  "name": "气候升级",
+  "icon": "gendustry:upgrade_frame",
+  "category": "bee_keeping",
+  "pages": [
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:5",
+      "text": "<li>湿度降低 25%<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:4",
+      "text": "<li>湿度增加 25%<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:6",
+      "text": "<li>温度增加 25%<li>能耗增加 5%"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:apiary.upgrade:7",
+      "text": "<li>温度降低 25%<li>能耗增加 5%"
+    }
+  ]
+}

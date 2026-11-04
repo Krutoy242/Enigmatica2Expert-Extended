@@ -1,0 +1,6 @@
+{
+  "name": "配方类型",
+  "description": "介绍$(l:core/encoder)封包配方编码器/$中可选的配方类型，以及各自对应的专用封包合成机器。",
+  "icon": "packagedauto:distributor",
+  "sortnum": 1
+}

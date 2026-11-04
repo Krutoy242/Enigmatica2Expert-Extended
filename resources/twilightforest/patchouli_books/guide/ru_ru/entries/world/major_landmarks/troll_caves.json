@@ -1,0 +1,13 @@
+{
+  "name": "Пещеры троллей",
+  "icon": "twilightforest:miniature_structure:13",
+  "category": "major_landmarks",
+  "advancement": "twilightforest:alt/major_landmarks/troll_lairs",
+  "sortnum": 8000,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Всякие штуки и прочее"
+    }
+  ]
+}

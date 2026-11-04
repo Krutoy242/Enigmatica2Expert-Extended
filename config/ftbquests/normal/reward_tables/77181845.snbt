@@ -1,5 +1,5 @@
 {
-	title: "Storage",
+	title: "{e2ee.reward.77181845}",
 	loot_size: 1,
 	rewards: [{
 		item: "storagedrawers:controller"

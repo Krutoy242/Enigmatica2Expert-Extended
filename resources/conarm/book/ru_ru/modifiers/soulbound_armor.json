@@ -1,0 +1,19 @@
+{
+  "armormodifier": "soulbound_armor",
+  "text": [
+    {
+      "text": "Идеальная пара. Вы любите свою броню. Даже смерть вас не разлучит."
+    }
+  ],
+  "effects": [
+    "Броня остаётся в инвентаре после смерти",
+    "Однократное применение",
+    "НЕ требует слота модификатора"
+  ],
+  "demoArmor": [
+    "conarm:helmet",
+    "conarm:chestplate",
+    "conarm:leggings",
+    "conarm:boots"
+  ]
+}

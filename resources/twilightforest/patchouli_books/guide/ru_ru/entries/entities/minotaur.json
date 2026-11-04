@@ -1,0 +1,23 @@
+{
+  "name": "Минотавр",
+  "icon": "minecraft:spawn_egg:0{EntityTag:{id:\"twilightforest:minotaur\"}}",
+  "category": "entities",
+  "advancement": "twilightforest:alt/entities/minotaur",
+  "sortnum": 5020,
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "twilightforest:minotaur",
+      "text": ""
+    },
+    {
+      "type": "text",
+      "text": "Человекоподобные звери, бродящие по Лабиринту. Эти полулюди-полукоровы вооружены золотыми топорами, сокрушающими защиту. Они стремительно бросаются вперёд, а группой одолеют даже осторожного искателя приключений."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/minotaur_axe_gold",
+      "text": "Остерегайтесь минотавров с золотым топором минотавра. Они редки, но их особое оружие смертоносно и наносит больше урона."
+    }
+  ]
+}

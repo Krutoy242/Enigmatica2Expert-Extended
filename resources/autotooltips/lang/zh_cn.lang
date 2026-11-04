@@ -110,3 +110,5 @@ tooltips.lang.bloodmagic:sigil_transposition=§a存储和放置方块。§8消�
 tooltips.lang.bloodmagic:sigil_void=§a销毁液体。§8消耗LP。
 tooltips.lang.bloodmagic:sigil_water=§a放置水源。§8消耗LP。
 tooltips.lang.bloodmagic:sigil_whirlwind=§a推开实体和弹射物。§8消耗LP。
+tooltips.lang.enderio:item_liquid_conduit=§4已禁用。§c即使只使用中等数量，也会明显降低帧率。
+tooltips.lang.enderio:item_liquid_conduit:1=§4已禁用。§c即使只使用中等数量，也会明显降低帧率。

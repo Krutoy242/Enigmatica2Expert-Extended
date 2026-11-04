@@ -1,0 +1,41 @@
+{
+  "name": "Амулеты",
+  "icon": "twilightforest:charm_of_keeping_3",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/charms",
+  "sortnum": 2100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "ЗАГЛУШКА: общие сведения об амулетах"
+    },
+    {
+      "flag": "!mod:baubles",
+      "type": "twilightforest:gallery",
+      "title": "Амулеты",
+      "item_list": "twilightforest:charm_of_keeping_1|twilightforest:charm_of_keeping_2|twilightforest:charm_of_keeping_3",
+      "text": "ЗАГЛУШКА: амулеты сохранения удерживают разные вещи даже после смерти. ЭТА ВЕРСИЯ ПОКАЗЫВАЕТСЯ БЕЗ BAUBLES"
+    },
+    {
+      "flag": "mod:baubles",
+      "type": "twilightforest:gallery",
+      "title": "Амулеты",
+      "item_list": "twilightforest:charm_of_keeping_1|twilightforest:charm_of_keeping_2|twilightforest:charm_of_keeping_3",
+      "text": "ЗАГЛУШКА: амулеты сохранения удерживают разные вещи даже после смерти. ЭТА ВЕРСИЯ ПОКАЗЫВАЕТСЯ ПРИ НАЛИЧИИ BAUBLES"
+    },
+    {
+      "flag": "!mod:baubles",
+      "type": "twilightforest:gallery",
+      "title": "Амулеты",
+      "item_list": "twilightforest:charm_of_life_1|twilightforest:charm_of_life_2",
+      "text": "На вид это непримечательная безделушка, но сзади выгравирована любопытная надпись: «Пока смерть не разлучит нас… а впрочем, не разлучит»."
+    },
+    {
+      "flag": "mod:baubles",
+      "type": "twilightforest:gallery",
+      "title": "Амулеты",
+      "item_list": "twilightforest:charm_of_life_1|twilightforest:charm_of_life_2",
+      "text": "На вид это непримечательная безделушка, но сзади выгравирована любопытная надпись: «Пока смерть не разлучит нас… а впрочем, не разлучит».$(br2)Он достаточно мал, чтобы убрать его туда, где обычно хранят прочие безделушки."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Существа",
+  "description": "Все добряки и злодеи!",
+  "icon": "minecraft:spawn_egg:0{EntityTag:{id:\"twilightforest:wild_boar\"}}",
+  "sortnum": 2000
+}

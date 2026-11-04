@@ -1,0 +1,7 @@
+{
+  "parent": "twilightforest:world",
+  "name": "Малые сооружения",
+  "description": "Хижины, колодцы, руины!",
+  "icon": "twilightforest:magic_map",
+  "sortnum": 1000
+}

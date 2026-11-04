@@ -1,0 +1,18 @@
+{
+  "name": "Гриботавр",
+  "icon": "twilightforest:trophy:6",
+  "category": "bosses",
+  "advancement": "twilightforest:alt/entities/minoshroom",
+  "sortnum": 5040,
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "twilightforest:minoshroom{HandItems:[{id:\"twilightforest:minotaur_axe\",Count:1}]}",
+      "text": "Он просто хотел задать вам вопрос. Топором."
+    },
+    {
+      "type": "text",
+      "text": "Этот страшный зверь Лабиринта быстро расправится с неосторожным искателем приключений. Его алмазный топор минотавра пробивает любую защиту, а стремительная атака с разбега способна застать врасплох кого угодно.$(br)Вступая в бой с гриботавром, будьте осторожны."
+    }
+  ]
+}

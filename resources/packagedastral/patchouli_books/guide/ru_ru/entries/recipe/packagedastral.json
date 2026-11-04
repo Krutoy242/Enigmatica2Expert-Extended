@@ -1,0 +1,13 @@
+{
+  "name": "§4PackagedAstral",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:trait_crafter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(#822)PackagedAstral/$ добавляет в $(#822)PackagedAuto/$ типы рецептов для $(#822)Astral Sorcery/$."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 1000
+}

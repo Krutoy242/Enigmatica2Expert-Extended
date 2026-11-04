@@ -1,0 +1,18 @@
+{
+  "name": "РИТЭГи",
+  "icon": "nuclearcraft:rtg_uranium",
+  "category": "nuclearcraft:multiblocks",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "rtg",
+      "type": "blocks/4",
+      "header": "РИТЭГи",
+      "block1": "nuclearcraft:rtg_uranium",
+      "block2": "nuclearcraft:rtg_plutonium",
+      "block3": "nuclearcraft:rtg_americium",
+      "block4": "nuclearcraft:rtg_californium",
+      "text": "$(item)РИТЭГи$() вырабатывают энергию за счёт распада радиоизотопов. Соседние РИТЭГи объединяются в многоблочную конструкцию с общим энергетическим буфером."
+    }
+  ]
+}

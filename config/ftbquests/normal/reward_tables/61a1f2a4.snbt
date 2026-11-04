@@ -1,5 +1,5 @@
 {
-	title: "Food",
+	title: "{e2ee.reward.61a1f2a4}",
 	loot_size: 1,
 	rewards: [{
 		icon: "harvestcraft:redvelvetcakeitem 8",

@@ -1,0 +1,24 @@
+{
+  "name": "Системный глитч",
+  "icon": "deepmoblearning:glitch_heart",
+  "category": "3_system_malfunction",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Системные глитчи$() появляются при $(item)системных сбоях$() в $(l:2_trials/1_trials)испытании$(). Чем выше $(item)уровень$() $(l:2_trials/1_trials)испытания$(), тем больше риск $(item)сбоя$().$(br2)Это $(c)крайне агрессивное$() существо выпускает в цель $(item)едкие снаряды$()."
+    },
+    {
+      "type": "entity",
+      "entity": "deepmoblearning:glitch",
+      "text": "$(item)Осторожно:$() $(c)чрезвычайно опасен!$()$(br)Приближайтесь с осторожностью.$(br)С него выпадают $(item)сердца сбоя$()."
+    },
+    {
+      "type": "spotlight",
+      "item": "deepmoblearning:glitch_heart",
+      "link_recipe": true,
+      "anchor": "heart",
+      "text": "Выпадает из убитых $(item)системных глитчей$() (влияет зачарование «Добыча»).$(br2)Этот редкий материал нужен для создания очень мощного $(l:3_system_malfunction/3_equipment)снаряжения$() поздней стадии игры."
+    }
+  ]
+}

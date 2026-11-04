@@ -1,0 +1,14 @@
+{
+  "name": "Альфа-йети",
+  "icon": "twilightforest:yeti_helmet",
+  "category": "bosses",
+  "advancement": "twilightforest:alt/entities/yeti_alpha",
+  "sortnum": 7030,
+  "pages": [
+    {
+      "type": "entity",
+      "entity": "twilightforest:yeti_alpha",
+      "text": "Злодей он грозный, но ещё не настолько: трофея йети пока нет."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Волшебные деревья",
+  "icon": "twilightforest:twilight_sapling:4",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/magic_trees",
+  "sortnum": 2100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Волшебные деревья можно найти в сундуках с добычей в подземельях на вершинах больших деревьев."
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/tree_of_time",
+      "text": "Дерево времени"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/tree_of_transformation",
+      "text": "Дерево преобразования"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/tree_of_mining",
+      "text": "Дерево шахтёра"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/tree_of_sorting",
+      "text": "Сортировочное дерево"
+    }
+  ]
+}

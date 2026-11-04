@@ -1,2 +1,8 @@
 chat.immersivepetroleum.info.coresample.oil=%s мВ %s
 chat.immersivepetroleum.info.coresample.noOil=Нет жидкостей
+
+# Additional Russian translations; pre-existing entries retained.
+ie.manual.entry.pumpjack1alt=Штанговый насос тратит <config;i;pumpjack_consumption> Flux/t и добывает нефть со скоростью <config;i;pumpjack_speed> mB/t. Нефть автоматически выводится через два боковых порта.<br><br>Среднее месторождение истощается за <config;i;pumpjack_days> дней; дополнительные насосы ускоряют добычу.<br><br>Сигнал редстоуна на панели управления останавливает машину. Молот инженера позволяет инвертировать это поведение. Для работы трубы должны доходить до бедрока.
+ie.manual.entry.napalm.name=Напалм
+ie.manual.entry.napalm.subtext=Остерегайтесь речного бога
+ie.manual.entry.napalm0=Напалм — чрезвычайно горючее вещество. Его получают в <link;mixer;§n§oСмесителе§r> из <link;distillationTower;§n§oБензина§r> и трёх порций алюминиевой крошки. Почти единственное применение — безудержное разрушение: при поджигании огонь почти мгновенно распространяется по поверхности, позволяя быстро уничтожать леса. Кроме того, это очень эффективное топливо для <link;chemthrower;§n§oХимического метателя§r>.

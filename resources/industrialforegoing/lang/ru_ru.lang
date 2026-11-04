@@ -1,1 +1,8 @@
 item.industrialforegoing_fertilizer.name=Навоз
+
+# Additional Russian translations; pre-existing entries retained.
+text.industrialforegoing.book.black_hole_controller_reworked=Вмещает 12 {Хранилищ чёрной дыры} и {резервуаров чёрной дыры} и предоставляет доступ к их содержимому.
+text.industrialforegoing.book.upgrades=У Industrial Foregoing нет собственных улучшений скорости, но машины можно ускорить {энергетическими улучшениями} и {улучшениями скорости} Tesla Core Lib. Перед следующим уровнем нужно установить предыдущий.
+text.industrialforegoing.book.fortune_addon=Добавляет {Удачу/Добычу} машинам, принимающим это улучшение. Зачаруйте его на {Удачу}: машина будет использовать уровень этих чар при работе.
+text.industrialforegoing.book.pitiful_fuel_generator=Работает как Генератор на твёрдом топливе, но принимает только {древесные} материалы.
+text.industrialforegoing.book.infinity_drill=Мощный бур, полностью потерявший заряд. Подзарядите его, чтобы разрушать миры быстрее. Чем больше энергии, тем больше область добычи. Для экономии заряда он может эффективнее использовать {биотопливо}. Shift + ПКМ меняет область добычи. @L@@L@{В нём скрыты секреты, легко доступные сторонникам на Patreon и некоторым редким мобам мира.}

@@ -1,0 +1,27 @@
+{
+  "name": "配方包",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:package",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)配方包/$由$(l:core/packager)封包机/$制作，可在$(l:core/unpackager)解包机/$中成套拆解。$(p)手持封包执行$(thing)$(k:sneak) + $(k:use)/$，也可手动拆开$(item)配方包/$。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:jei",
+      "item": "packagedauto:package",
+      "link_recipe": true,
+      "title": "JEI 联动",
+      "text": "将鼠标悬停在$(item)配方包/$上并按下$(thing)$(k:jei.showUses)/$，可以查看其内容及整套封包对应的产物。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "!mod:jei",
+      "item": "packagedauto:package",
+      "link_recipe": true
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 2
+}

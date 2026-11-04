@@ -1,0 +1,25 @@
+{
+  "name": "Копировщик настроек",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:settings_cloner",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Копировщик настроек упаковки (Packaging Settings Cloner)/$ копирует и вставляет настройки некоторых упаковочных машин."
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedauto:settings_cloner",
+      "link_recipe": true,
+      "title": "Использование",
+      "text": "Чтобы скопировать настройки, примените $(item)копировщик настроек упаковки/$ к поддерживаемой машине с помощью $(thing)$(k:sneak) + $(k:use)/$.$(p)Затем используйте $(thing)$(k:use)/$ на машине того же типа, чтобы вставить настройки.$(p)Для очистки примените $(thing)$(k:sneak) + $(k:use)/$ в воздухе или на неподдерживаемом блоке."
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:settings_cloner",
+      "title": "Изготовление"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Огненный блок",
+  "icon": "twilightforest:fire_jet:3",
+  "category": "devices",
+  "advancement": "twilightforest:alt/treasures/fire_jet",
+  "sortnum": 5050,
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Огненный блок",
+      "item": "twilightforest:fire_jet:3",
+      "text": "Неустойчивые источники огня, случайно выбрасывающие струи пламени. Надо быть осторожным: похоже, ничто не запускает их извне. Почему-то без лавы снизу они перестают извергаться. Может, в этом и секрет?"
+    }
+  ]
+}

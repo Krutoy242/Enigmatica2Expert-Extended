@@ -1,0 +1,16 @@
+{
+  "name": "Антирад",
+  "icon": "nuclearcraft:radaway",
+  "category": "nuclearcraft:items",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "radaway",
+      "type": "items/2",
+      "header": "Антирад",
+      "item1": "nuclearcraft:radaway",
+      "item2": "nuclearcraft:radaway_slow",
+      "text": "$(item)Антирад$() и его более медленный вариант, $(item)антирад замедленного действия$(), выводят радиацию из организма с определённой скоростью. Обычный антирад действует быстрее, но менее продолжительно."
+    }
+  ]
+}

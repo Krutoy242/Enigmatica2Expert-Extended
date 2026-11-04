@@ -1,0 +1,41 @@
+{
+  "name": "解包机",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:unpackager",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)解包机/$会按$(thing)配方类型/$，将整套$(l:core/package)配方包/$中的物品送入相邻容器或$(thing)封包合成机器/$。$(p)这台机器需要能量。"
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedauto:unpackager",
+      "link_recipe": true,
+      "title": "使用方法",
+      "text": "使用$(item)解包机/$时，将成套的$(l:core/package)配方包/$放入机器。封包会进入$(thing)追踪器/$；凑齐一套后，机器会按$(thing)配方类型/$，将其中物品送入相邻容器或$(thing)封包合成机器/$。可以调整追踪器的数量。"
+    },
+    {
+      "type": "text",
+      "title": "使用方法（续）",
+      "text": "处理配方时，可以启用$(thing)阻塞模式/$，避免将封包拆入已有物品的容器。$(p)可从机器顶部抽出输入物品。"
+    },
+    {
+      "type": "text",
+      "title": "复制设定",
+      "text": "使用$(l:core/settings_cloner)封包设定复制器/$，可以复制和粘贴阻塞模式、追踪器数量以及当前可用配方。$(p)要粘贴配方，目标$(item)解包机/$中不能已有配方，且你的物品栏中必须有一个空白$(l:core/recipe_holder)封包配方存储器/$。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(item)解包机/$可以连接到$(thing)ME 网络/$，并占用一个频道。$(p)它会从网络获取能量，并将解包过程作为自动合成配方提供给网络。$(p)放入已编码的$(l:core/recipe_holder)封包配方存储器/$后，即可向网络提供其中配方的自动解包功能。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "packagedauto:unpackager",
+      "title": "合成"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 9
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Броня",
+  "icon": "twilightforest:ironwood_chestplate",
+  "category": "treasures",
+  "advancement": "twilightforest:alt/treasures/armors",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Сведения о броне"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/ironwood_armor_set",
+      "text": "Броня из железного дерева"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/naga_armor_set",
+      "text": "Броня из чешуи наги"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/steeleaf_armor_set",
+      "text": "Броня из стальных листьев"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/fiery_armor_set",
+      "text": "Огненная броня"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/knightmetal_armor_set",
+      "text": "Рыцарская броня"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/arctic_armor_set",
+      "text": "Меховая броня"
+    },
+    {
+      "type": "text",
+      "advancement": "twilightforest:alt/treasures/yeti_armor_set",
+      "text": "Броня йети"
+    }
+  ]
+}

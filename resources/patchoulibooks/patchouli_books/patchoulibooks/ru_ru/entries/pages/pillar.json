@@ -1,0 +1,55 @@
+{
+  "name": "Страница 'pillar'",
+  "icon": "patchoulibooks:textures/gui/icons/book_page_written.png",
+  "category": "pages",
+  "pages": [
+    {
+      "type": "text+",
+      "text": "Страница 'pillar' — альтернатива странице 'crafting'. Она основана на <l>(https://www.curseforge.com/minecraft/customization/pedestal-recipe-template-for-patchouli)шаблоне, который я нашёл на CurseForge</l>, и предназначена для модов вроде <l_ec>Extended Crafting</l> и <l_pc>Pedestal Crafting</l>. Она динамически отображает все заданные предметы, равномерно располагая их вокруг центра."
+    },
+    {
+      "type": "pillar",
+      "output": "minecraft:hopper",
+      "center": "minecraft:observer",
+      "link_recipe": false,
+      "inputs": [
+        "minecraft:comparator",
+        "minecraft:noteblock",
+        "minecraft:slime",
+        "ore:blockGlass",
+        "ore:plankWood"
+      ]
+    },
+    {
+      "type": "text+",
+      "title": "Поля",
+      "text": "Тип страницы 'pillar' имеет следующие поля:<li>'time' — время изготовления в тактах, отображаемое в секундах.<li>'link_recipe' — помечает страницу как рецепт получения выходного предмета."
+    },
+    {
+      "type": "pillar",
+      "title": "Это собственный заголовок",
+      "output": "minecraft:dragon_egg",
+      "center": "minecraft:diamond_block",
+      "link_recipe": false,
+      "time": 100,
+      "inputs": [
+        "minecraft:wool:0",
+        "minecraft:wool:1",
+        "minecraft:wool:2",
+        "minecraft:wool:3",
+        "minecraft:wool:4",
+        "minecraft:wool:5",
+        "minecraft:wool:6",
+        "minecraft:wool:7",
+        "minecraft:wool:8",
+        "minecraft:wool:9",
+        "minecraft:wool:10",
+        "minecraft:wool:11",
+        "minecraft:wool:12",
+        "minecraft:wool:13",
+        "minecraft:wool:14",
+        "minecraft:wool:15"
+      ]
+    }
+  ]
+}

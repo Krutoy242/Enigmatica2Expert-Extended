@@ -1,0 +1,37 @@
+{
+  "name": "标记星辉转继器",
+  "category": "packagedauto:recipe",
+  "icon": "packagedastral:marked_relay",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)标记星辉转继器/$用于为$(#822)封包星辉魔法（PackagedAstral）/$的机器收集星能，也用于封包$(l:recipe/trait)五彩祭坛/$合成。"
+    },
+    {
+      "type": "spotlight",
+      "item": "packagedastral:marked_relay",
+      "link_recipe": true,
+      "title": "使用方法",
+      "text": "使用$(item)标记星辉转继器/$收集星能前，需要在其周围搭建光波增幅器结构，如下一页所示。$(p)用于封包合成时，转继器会将剩余物品弹出到自身上方。"
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "packagedastral:pattern_marked_relay",
+      "name": "结构"
+    },
+    {
+      "type": "text",
+      "flag": "mod:appliedenergistics2",
+      "title": "AE2 联动",
+      "text": "$(item)标记星辉转继器/$可以连接到$(thing)ME 网络/$。$(p)连接后，它会将剩余物品改为输出到网络中。"
+    },
+    {
+      "type": "packagedastral:altar_recipe_1",
+      "recipe": "packagedastral/marked_relay",
+      "title": "星辉合成台"
+    }
+  ],
+  "flag": "packagedastral:discovery",
+  "read_by_default": true,
+  "sortnum": 1001
+}

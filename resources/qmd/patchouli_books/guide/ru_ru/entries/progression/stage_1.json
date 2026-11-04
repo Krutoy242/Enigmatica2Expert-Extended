@@ -1,0 +1,27 @@
+{
+  "name": "Этап 1: ускорители",
+  "icon": "qmd:linear_accelerator_controller",
+  "category": "qmd:progression",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "На этом этапе строятся первые $(l:multiblocks/accelerators/linear_accelerator)Линейные ускорители$(/l) и $(l:multiblocks/particle_chambers/general)камеры частиц$(/l), главным образом $(l:multiblocks/particle_chambers/target_chamber)Целевые камеры$(/l).$(br2)Сначала разберитесь с частицами и их пакетами: об этом написано $(l:particles/introduction)здесь$(/l)."
+    },
+    {
+      "type": "text",
+      "title": "Первая система ускорения",
+      "text": "Первой задачей должно стать получение легированного кремния P-типа. Как и N-тип, он необходим для рецептов QMD.$(br2)Потребуется $(l:multiblocks/accelerators/linear_accelerator)Линейный ускоритель$(/l) с $(l:multiblocks/accelerators/linear_accelerator#ion_source)источником ионов$(/l) на диборане. Он должен разгонять $(l:particles/list#boron_ion)ионы бора$(/l) как минимум до 600 keV с фокусировкой не ниже 2."
+    },
+    {
+      "type": "diagram_low",
+      "image": "qmd:textures/gui/book_images/first_setup.png",
+      "text": "Также нужна $(l:multiblocks/particle_chambers/target_chamber)Целевая камера$(/l), соединённая с ускорителем Трубами пучка частиц: именно она изготовит кремний P-типа.$(br2)Пример ниже охлаждается жидким неоном и потребляет 22kRF/t во время работы."
+    },
+    {
+      "type": "text",
+      "title": "Другие возможности",
+      "text": "Уже доступны, хотя и необязательны для развития, $(l:multiblocks/particle_chambers/decay_chamber)Камеры распада$(/l), $(l:multiblocks/particle_chambers/beam_dump)Поглотители пучка$(/l) и некоторые $(l:multiblocks/particle_chambers/general#detectors)детекторы$(/l), повышающие эффективность камер ценой энергии."
+    }
+  ]
+}

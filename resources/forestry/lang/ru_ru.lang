@@ -7,3 +7,6 @@ for.circuit.machine.speed.boost.1.description.1=Повышает скорост�
 for.circuit.machine.speed.boost.1.description.2=Повышает потребление энергии на 5%
 for.circuit.machine.speed.boost.2.description.1=Повышает скорость на 500%
 for.circuit.machine.speed.boost.2.description.2=Повышает потребление энергии на 15%
+
+# Additional Russian translations; pre-existing entries retained.
+for.gui.book.category.habitat_former.title=Формировщик среды

@@ -1,0 +1,19 @@
+{
+  "name": "高级诱变机",
+  "icon": "gendustry:mutatron_advanced",
+  "category": "genetics",
+  "pages": [
+    {
+      "type": "spotlight+",
+      "title": "高级诱变机",
+      "item": "gendustry:mutatron_advanced",
+      "link_recipe": true,
+      "text": "<li>基本功能与<l>(genetics/mutatron)诱变机</l>相同<li>如果存在多种变异结果，可以选择目标物种<li>能量供应充足时，加工速度可达普通诱变机的两倍"
+    },
+    {
+      "type": "crafting+",
+      "recipe": "gendustry:mutatron_advanced",
+      "text": "可用于培育新的蜜蜂物种。"
+    }
+  ]
+}

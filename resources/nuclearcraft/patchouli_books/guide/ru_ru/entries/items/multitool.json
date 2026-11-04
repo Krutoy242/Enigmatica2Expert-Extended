@@ -1,0 +1,15 @@
+{
+  "name": "Мультитул",
+  "icon": "nuclearcraft:multitool",
+  "category": "nuclearcraft:items",
+  "sortnum": 0,
+  "pages": [
+    {
+      "anchor": "multitool",
+      "type": "items/1",
+      "header": "Мультитул",
+      "item": "nuclearcraft:multitool",
+      "text": "$(item)Мультитул$() позволяет взаимодействовать с многоблочными конструкциями и настраивать их. Настоятельно рекомендуется носить его с собой."
+    }
+  ]
+}

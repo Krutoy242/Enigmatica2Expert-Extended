@@ -1,0 +1,20 @@
+{
+  "name": "Страница 'link+'",
+  "icon": "patchoulibooks:textures/gui/icons/book_page_written.png",
+  "category": "pages",
+  "pages": [
+    {
+      "type": "link+",
+      "link": "https://github.com/Ender-Development/PatchouliBooks",
+      "link_text": "PB @ GitHub",
+      "text": "Страница 'link+' работает похоже на 'spotlight', но использует то же оформление, что и остальные мои страницы. Это помогает выдержать единый вид книги."
+    },
+    {
+      "type": "link+",
+      "icon": "minecraft:nether_star",
+      "link": "https://minecraft.wiki/w/Nether_Star",
+      "link_text": "@Minecraft Wiki",
+      "text": "Главное отличие от стандартной страницы 'link' — добавление значка. Остальное оформление настраивается динамически, как и у других страниц."
+    }
+  ]
+}
