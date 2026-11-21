@@ -1,0 +1,82 @@
+#Generating flowers
+
+tile.botania:flower.campanimia.name=Campanimia
+tile.botania:flower.campanimia.reference=Um verdadeiro conhecedor!
+botania.entry.campanimia=Campanimia
+botania.tagline.botania.entry.campanimia=Mana a partir de essentia
+botania.page.campanimia0=A §1Campanimia§r é uma flor que adora beber a essentia restante dos cadinhos de Taumaturgos. Quanto mais tipos de essentia sobrarem, mais §4mana§r ela gera. <br>Observe que o cadinho precisa estar funcional — deve ser abastecido com calor e água.
+botania.page.campanimia1=&oNão fique muito bêbado&r
+
+tile.botania:flower.nuclianthus.name=Nuclianthus
+tile.botania:flower.nuclianthus.reference=Come bombas, floresce brilhante.
+botania.entry.nuclianthus=Nuclianthus
+botania.tagline.botania.entry.nuclianthus=Mana a partir de combustível nuclear
+botania.page.nuclianthus0=Projetos de reatores costumam ser muito complexos, mas por que não optar pela botânica? A §1Nuclianthus§r é a solução perfeita. Ela consome combustíveis nucleares próximos e, dependendo da sua potência, gera §4mana§r. No entanto, se o buffer encher, a flor explodirá.
+botania.page.nuclianthus1=&oOnde está a radiação?&r
+
+#Functional flowers
+
+tile.botania:flower.antirrhift.name=Antirrhift
+tile.botania:flower.antirrhift.reference=Todos nós odiamos impostos
+botania.entry.antirrhift=Antirrhift
+botania.tagline.botania.entry.antirrhift=Acelera o spreader
+botania.page.antirrhift0=Mana spreaders são lentos, mas a §1Antirrhift§r acelera as coisas teletransportando a §cmana§r diretamente para a piscina. No entanto, ela cobra um pequeno pedágio, absorvendo cerca de um quinto da §cmana§r para si mesma no processo.
+botania.page.antirrhift1=&oEu venci... mas a que custo?&r
+
+tile.botania:flower.rokku_eryngium.name=Rokku Eryngium
+tile.botania:flower.rokku_eryngium.reference=Flor de Afiação das Estrelas
+botania.entry.rokku_eryngium=Rokku Eryngium
+botania.tagline.botania.entry.rokku_eryngium=Lapida rock crystals
+botania.page.rokku_eryngium0=A §1Rokku Eryngium§r é uma flor que, ao contrário do grindstone, permite automatizar o aprimoramento do corte de §frock crystals§r. <br>Ela coleta §frock crystals§r próximos e, a um custo razoável de §4mana§r, os lapida. Porém, tenha cuidado, pois ela ainda pode quebrar o cristal como um rebolo e não faz questão de devolvê-lo.
+botania.page.rokku_eryngium1=&oDe volta à idade da pedra&r
+
+tile.botania:flower.jikanacea.name=Jikanacea
+tile.botania:flower.jikanacea.reference=Uma forma de economizar tempo
+botania.entry.jikanacea=Jikanacea
+botania.tagline.botania.entry.jikanacea=Prolonga o efeito do time in a bottle
+botania.page.jikanacea0=A §1Jikanacea§r é uma flor única que estende os efeitos próximos do §cTime in a Bottle§r. <br>Quanto maior o nível de aceleração, mais mana ela consome para sustentar o fluxo temporal. <br>No nível máximo de aceleração, ela exige uma quantidade de mana equivalente a um Gaia Spreader trabalhando constantemente com uma Potency Mana Lens.
+botania.page.jikanacea1=&oO tempo flui onde a mana cresce&r
+
+tile.botania:flower.echinacenko.name=Echinacenko
+tile.botania:flower.echinacenko.reference=Suplementos alimentares orgânicos
+botania.entry.echinacenko=Echinacenko
+botania.tagline.botania.entry.echinacenko=Restaura a nutrição dos jogadores próximos
+botania.page.echinacenko0=Embora itens proibidos possam encher seu estômago por meio de aura mágica, eles carecem da nutrição de que seu corpo precisa. A §1Echinacenko§r resolve isso restaurando todos os tipos de nutrição dos jogadores próximos, usando §4mana§r para abastecer sua magia revitalizante.
+botania.page.echinacenko1=&oO sabor não importa&r
+
+tile.botania:flower.amuileria_kaerunea.name=Amuileria kaerunea
+tile.botania:flower.amuileria_kaerunea.reference=30.000 graus é mentira
+botania.entry.amuileria_kaerunea=Amuileria kaerunea
+botania.tagline.botania.entry.amuileria_kaerunea=Carrega itens com relâmpagos
+botania.page.amuileria_kaerunea0=Ativa durante tempestades, a §1Amuileria Kaerunea§r canaliza raios para carregar itens próximos. Ela invocará um raio quando necessário, consumindo §cmana§r para infundir os itens com energia da tempestade.
+botania.page.amuileria_kaerunea1=&oThor em uma flor&r
+
+#CUSTOM BREW NAMES
+botania.brew.scarlet_veil=Scarlet Veil
+botania.brew.calamity=Calamity
+botania.brew.warbound=Warbound
+botania.brew.depthbound=Depthbound
+botania.brew.sanguine_oath=Sanguine Oath
+botania.brew.aerial_delirium=Aerial Delirium
+
+botania.page.complexBrewsCustom2a=Uma poção que envolve quem a bebe em &1Scarlet Veil&0. Concede um imenso &1Health Boost&0 e &1Resilience&0, mas obscurece a visão.
+botania.page.complexBrewsCustom2b=Onde foi que deixei meus óculos?
+botania.page.complexBrewsCustom3a=Esta poção volátil é de natureza caótica. Beber &1Calamity&0 é imprevisível.
+botania.page.complexBrewsCustom3b=A poção favorita do deus do RNG
+botania.page.complexBrewsCustom4a=Uma poção marcial que fortalece o corpo. Concede &1Absorption&0 e &1Resistance&0, mas diminui a agilidade com &1Slowness&0 e um leve &1Deafness&0.
+botania.page.complexBrewsCustom4b=Permanecendo firmes encontramos a paz
+botania.page.complexBrewsCustom5a=Uma poção aquática que fortalece nadadores. Concede &1Water Breathing&0 e &1Swim Speed&0, mas exige permanecer na água.
+botania.page.complexBrewsCustom5b=Eu sou um peixe!
+botania.page.complexBrewsCustom6a=Uma poção ritualística que ajuda na autoflagelação. Beber &1Sanguine Oath&0 concede &1Regeneration&0 rápida e aumenta a eficiência dos sacrifícios, mas provoca &1Nausea&0 e efeitos leves de &1Thaumarhia&0.
+botania.page.complexBrewsCustom6b=Delicinha na minha adaga
+botania.page.complexBrewsCustom7a=Uma poção caprichosa que concede poder de &1Flight&0. No entanto, causa confusão temporária.
+botania.page.complexBrewsCustom7b=Já viu uma pixie bêbada?
+botania.brew.chronos=Time skip
+botania.page.chronos_a=Uma poção que ajuda o &1Time in a Bottle&0 a armazenar tempo no dobro da velocidade.
+botania.page.chronos_b=Pisquei e já era terça-feira
+botania.brew.darkness_resistance=Darkness Protection
+botania.page.darkness_resistance_a=Uma poção protetora que protege quem a bebe dos efeitos nocivos da escuridão profunda e não natural.
+botania.page.darkness_resistance_b=Olá escuridão, minha velha amiga
+botania.brew.easyculty=Verdant Mercy
+botania.page.easyculty_a=Uma poção suave que alivia o peso do mundo. Bebê-la reduz temporariamente a &1Difficulty&0 do jogador, oferecendo clemência em momentos difíceis.
+botania.page.easyculty_b=EEEH? MODO FÁCIL?
