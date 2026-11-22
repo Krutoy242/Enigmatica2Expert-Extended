@@ -4,7 +4,7 @@ tile.botania:flower.campanimia.name=Campanimia
 tile.botania:flower.campanimia.reference=Um verdadeiro conhecedor!
 botania.entry.campanimia=Campanimia
 botania.tagline.botania.entry.campanimia=Mana a partir de essentia
-botania.page.campanimia0=A §1Campanimia§r é uma flor que adora beber a essentia restante dos cadinhos de Taumaturgos. Quanto mais tipos de essentia sobrarem, mais §4mana§r ela gera. <br>Observe que o cadinho precisa estar funcional — deve ser abastecido com calor e água.
+botania.page.campanimia0=A §1Campanimia§r é uma flor que adora beber a essentia restante dos Crucibles de Taumaturgos. Quanto mais tipos de essentia sobrarem, mais §4mana§r ela gera. <br>Observe que o Crucible precisa estar funcional — deve ser abastecido com calor e água.
 botania.page.campanimia1=&oNão fique muito bêbado&r
 
 tile.botania:flower.nuclianthus.name=Nuclianthus
