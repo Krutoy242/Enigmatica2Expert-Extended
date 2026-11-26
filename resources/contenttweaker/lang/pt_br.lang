@@ -1,0 +1,823 @@
+#PARSE_ESCAPES
+
+# Various fixes
+modifier.excompressum:smashingii.name=Smashing II
+modifier.excompressum:smashingii.desc=Esmagando blocos comprimidos
+modifier.excompressum:compressing.name=Compressing
+modifier.excompressum:compressing.desc=Comprime automaticamente drops de blocos
+tile.spectreCoil_number.info=Gera 32 RF/t e envia para o bloco ao qual está conectado. Podem ser encontradas em baús de masmorra.
+entity.twilightforest.harbinger_cube.name=Harbinger Cube
+entity.twilightforest.castle_guardian.name=Castle Guardian
+ritual.bloodmagic.imperfect.zombie=Imperfect Ritual: Zombie
+# --------------------------------------
+# Custom mechanics
+# --------------------------------------
+description.crt.reuse=§a§o(Não será consumido!)§r
+description.crt.consume=§6§o(Será consumido!)§r
+description.crt.charged=%s §3§o(Carregado)§r
+description.crt.encrusted=%s §6§o(Incrustado)§r
+
+# --------------------------------------
+# CoT new content
+# --------------------------------------
+entity.Villager.stock_trader=Stock Trader
+entity.Villager.necromancer=Necromancer
+infuse.ender=Ender
+infuse.glowstone=Glowstone
+infuse.dimensional=Dimensional
+itemGroup.other=ContentTweaker
+fluid.seed=Seed
+fluid.spectre=Spectre
+fluid.perfect_fuel=Perfect Fuel
+fluid.electronics=Molten Electronics
+fluid.terrestrial=Molten Terrestrial Artifact
+fluid.mithrillium=Molten Mithrillium
+fluid.adaminite=Molten Adaminite
+fluid.mithminite=Molten Mithminite
+fluid.glitch=Molten Glitch Infused
+
+#Enchanted Steam
+item.contenttweaker.naquadah_resevoir_grade_1.name=Astral Catalyst Resevoir
+item.contenttweaker.naquadah_resevoir_grade_2.name=Botanic Catalyst Resevoir
+item.contenttweaker.naquadah_resevoir_grade_3.name=Alchemic Catalyst Reservoir
+item.contenttweaker.naquadah_resevoir_grade_4.name=Thaumic Catalyst Resevoir
+item.contenttweaker.naquadah_resevoir_grade_5.name=Ultimate Catalyst Resevoir
+
+item.contenttweaker.naquadah_catalyst_grade_1.name=Astral Steam Catalyst
+item.contenttweaker.naquadah_catalyst_grade_2.name=Botanic Steam Catalyst
+item.contenttweaker.naquadah_catalyst_grade_3.name=Alchemic Steam Catalyst
+item.contenttweaker.naquadah_catalyst_grade_4.name=Thaumic Steam Catalyst
+item.contenttweaker.naquadah_catalyst_grade_5.name=Ultimate Steam Catalyst
+
+fluid.magic_steam_grade_1=Astral Dense Steam
+fluid.magic_steam_grade_2=Botanic Dense Steam
+fluid.magic_steam_grade_3=Alchemic Dense Steam
+fluid.magic_steam_grade_4=Thaumic Dense Steam
+fluid.magic_steam_grade_5=Ultimate Dense Steam
+
+base.material.heavy_metal=Heavy Metal
+base.material.cheese=Cheese
+
+item.contenttweaker.compressed_glowstone.name=Compressed Glowstone
+item.contenttweaker.compressed_ender.name=Compressed Ender
+item.contenttweaker.compressed_dimensional.name=Compressed Dimensional
+
+itemGroup.coins_tab=E2EE Custom Coins
+item.contenttweaker.coin_advancedalloy.name=Advanced Alloy Coin
+item.contenttweaker.coin_alchemicalbrass.name=Alchemical Brass Coin
+item.contenttweaker.coin_aluminumbrass.name=Aluminum Brass Coin
+item.contenttweaker.coin_alumite.name=Alumite Coin
+item.contenttweaker.coin_baseessence.name=Base Essence Coin
+item.contenttweaker.coin_beryllium.name=Beryllium Coin
+item.contenttweaker.coin_conductiveiron.name=Conductive Iron Coin
+item.contenttweaker.coin_darksteel.name=Dark Steel Coin
+item.contenttweaker.coin_demonmetal.name=Demon Metal Coin
+item.contenttweaker.coin_electricalsteel.name=Electrical Steel Coin
+item.contenttweaker.coin_enchantedmetal.name=Enchanted Metal Coin
+item.contenttweaker.coin_ender.name=Ender Coin
+item.contenttweaker.coin_endorium.name=Endorium Coin
+item.contenttweaker.coin_energizedalloy.name=Energized Alloy Coin
+item.contenttweaker.coin_evilinfusedmetal.name=Evil Infused Coin
+item.contenttweaker.coin_extremealloy.name=Extreme Alloy Coin
+item.contenttweaker.coin_fakeiron.name=Iron Alloy Coin
+item.contenttweaker.coin_ferroboron.name=Ferroboron Alloy Coin
+item.contenttweaker.coin_fierymetal.name=Fiery Metal Coin
+item.contenttweaker.coin_glowstone.name=Refined Glowstone Coin
+item.contenttweaker.coin_graphite.name=Graphite Coin
+item.contenttweaker.coin_hardcarbon.name=Hard Carbon Alloy Coin
+item.contenttweaker.coin_heavymetal.name=Heavy Coin
+item.contenttweaker.coin_hopgraphite.name=HOP Graphite Coin
+item.contenttweaker.coin_ironwood.name=Ironwood Coin
+item.contenttweaker.coin_knightmetal.name=Knightmetal Coin
+item.contenttweaker.coin_knightslime.name=Knightslime Coin
+item.contenttweaker.coin_manasteel.name=Manasteel Coin
+item.contenttweaker.coin_manganese.name=Manganese Coin
+item.contenttweaker.coin_manyullyn.name=Manyullyn Coin
+item.contenttweaker.coin_osgloglas.name=Osgloglas Coin
+item.contenttweaker.coin_osmiridium.name=Osmiridium Coin
+item.contenttweaker.coin_pigiron.name=Pigiron Coin
+item.contenttweaker.coin_pulsatingiron.name=Pulsating Iron Coin
+item.contenttweaker.coin_redstonealloy.name=Redstone Alloy Coin
+item.contenttweaker.coin_refinedobsidian.name=Refined Obsidian Coin
+item.contenttweaker.coin_soularium.name=Soularium Coin
+item.contenttweaker.coin_spectre.name=Spectre Coin
+item.contenttweaker.coin_thaumium.name=Thaumium Coin
+item.contenttweaker.coin_toughalloy.name=Tough Alloy Coin
+item.contenttweaker.coin_unstable.name=Unstable Coin
+item.contenttweaker.coin_zirconium.name=Zirconium Coin
+item.contenttweaker.coin_blackiron.name=Black Iron Coin
+item.contenttweaker.coin_cookedmeat.name=Cooked Meat Coin
+item.contenttweaker.coin_crystallinealloy.name=Crystalline Alloy Coin
+item.contenttweaker.coin_crystallinepinkslimealloy.name=Crystalline Pink Slime Coin
+item.contenttweaker.coin_ebonypsimetal.name=Ebony Psimetal Coin
+item.contenttweaker.coin_elementium.name=Elementium Coin
+item.contenttweaker.coin_endsteel.name=End Steel Coin
+item.contenttweaker.coin_energium.name=Energium Coin
+item.contenttweaker.coin_enhancedender.name=Enhanced Ender Coin
+item.contenttweaker.coin_essenceinfused.name=Essence-Infused Coin
+item.contenttweaker.coin_firedragonsteel.name=Fire Dragonsteel Coin
+item.contenttweaker.coin_fluixsteel.name=Fluix Steel Coin
+item.contenttweaker.coin_fluxedelectrum.name=Fluxed Electrum Coin
+item.contenttweaker.coin_hslasteel.name=HSLA Steel Coin
+item.contenttweaker.coin_icedragonsteel.name=Ice Dragonsteel Coin
+item.contenttweaker.coin_inferium.name=Inferium Coin
+item.contenttweaker.coin_insanium.name=Insanium Coin
+item.contenttweaker.coin_intermedium.name=Intermedium Coin
+item.contenttweaker.coin_ivorypsimetal.name=Ivory Psimetal Coin
+item.contenttweaker.coin_lithiummanganesedioxide.name=Lithium Manganese Dioxide Coin
+item.contenttweaker.coin_magnesiumdiboride.name=Magnesium Diboride Coin
+item.contenttweaker.coin_manganesedioxide.name=Manganese Dioxide Coin
+item.contenttweaker.coin_manganeseoxide.name=Manganese Oxide Coin
+item.contenttweaker.coin_melodicalloy.name=Melodic Alloy Coin
+item.contenttweaker.coin_mirion.name=Mirion Coin
+item.contenttweaker.coin_pinkmetal.name=Pink Metal Coin
+item.contenttweaker.coin_prudentium.name=Prudentium Coin
+item.contenttweaker.coin_psimetal.name=Psimetal Coin
+item.contenttweaker.coin_sentient.name=Sentient Coin
+item.contenttweaker.coin_soulium.name=Soulium Coin
+item.contenttweaker.coin_superium.name=Superium Coin
+item.contenttweaker.coin_supremium.name=Supremium Coin
+item.contenttweaker.coin_terrasteel.name=Terrasteel Coin
+item.contenttweaker.coin_thermoconductingalloy.name=Thermoconducting Alloy Coin
+item.contenttweaker.coin_uumetal.name=UU-Metal Coin
+item.contenttweaker.coin_vibrantalloy.name=Vibrant Alloy Coin
+item.contenttweaker.coin_zircaloy.name=Zircaloy Coin
+item.contenttweaker.coin_zirconiummolybdenum.name=Zirconium Molybdenum Coin
+item.contenttweaker.coin_adaminite.name=Adaminite Coin
+item.contenttweaker.coin_awakeneddraconium.name=Awakened Draconium Coin
+item.contenttweaker.coin_bloodglitchinfused.name=Blood Infused Glitch Coin
+item.contenttweaker.coin_bound.name=Bound Coin
+item.contenttweaker.coin_calcium.name=Calcium Coin
+item.contenttweaker.coin_chaoticmetal.name=Chaotic Metal Coin
+item.contenttweaker.coin_chromium.name=Chromium Coin
+item.contenttweaker.coin_crystalmatrix.name=Crystal Matrix Coin
+item.contenttweaker.coin_crystaltine.name=Crystaltine Coin
+item.contenttweaker.coin_doublesmore.name=MoreS'coin DoubleS'murrency of S'more
+item.contenttweaker.coin_draconicmetal.name=Draconic Metal Coin
+item.contenttweaker.coin_elektron60.name=Elektron60-Alloy Coin
+item.contenttweaker.coin_gaiaspirit.name=Gaia Spirit Coin
+item.contenttweaker.coin_glitchinfused.name=Glitch Infused Coin
+item.contenttweaker.coin_hafnium.name=Hafnium Coin
+item.contenttweaker.coin_infinity.name=Infinity Coin
+item.contenttweaker.coin_mithminite.name=Mithminite Coin
+item.contenttweaker.coin_mithrillium.name=Mithrillium Coin
+item.contenttweaker.coin_neodymium.name=Neodymium Coin
+item.contenttweaker.coin_neutronium.name=Neutronium Coin
+item.contenttweaker.coin_nichrome.name=Nichrome Coin
+item.contenttweaker.coin_niobium.name=Niobium Coin
+item.contenttweaker.coin_niobiumtin.name=Niobium-Tin Coin
+item.contenttweaker.coin_niobiumtitanium.name=Niobium-Titanium Coin
+item.contenttweaker.coin_potassium.name=Potassium Coin
+item.contenttweaker.coin_primalmetal.name=Primal Metal Coin
+item.contenttweaker.coin_foursmore.name=FouryS'coiny QuadrupledS'murrency of S'morempire
+item.contenttweaker.coin_smore.name=S'coin S'murrency of S'more
+item.contenttweaker.coin_sodium.name=Sodium Coin
+item.contenttweaker.coin_stainlesssteel.name=Stainless Steel Coin
+item.contenttweaker.coin_stellaralloy.name=Stellar Alloy Coin
+item.contenttweaker.coin_strontium.name=Strontium Coin
+item.contenttweaker.coin_superalloy.name=Super Alloy Coin
+item.contenttweaker.coin_titaniumaluminide.name=Titanium Aluminide Coin
+item.contenttweaker.coin_titaniumiridium.name=Titanium Iridium Alloy Coin
+item.contenttweaker.coin_tungstencarbide.name=Tungsten Carbide Coin
+item.contenttweaker.coin_ultimate.name=Ultimate Coin
+item.contenttweaker.coin_voidmetal.name=Void Metal Coin
+item.contenttweaker.coin_vividalloy.name=Vivid Alloy Coin
+item.contenttweaker.coin_wyvernmetal.name=Wyvern Metal Coin
+item.contenttweaker.coin_yttrium.name=Yttrium Coin
+item.contenttweaker.coin_zinc.name=Zinc Coin
+
+item.contenttweaker.compressed_tallow.name=Compressed Tallow
+tile.contenttweaker.compressed_andesite.name=Compressed Andesite
+tile.contenttweaker.compressed_diorite.name=Compressed Diorite
+tile.contenttweaker.compressed_granite.name=Compressed Granite
+tile.contenttweaker.compressed_skystone.name=Compressed Skystone
+tile.contenttweaker.compressed_garbage_pile.name=Compressed Garbage Pile
+tile.contenttweaker.compressed_crushed_andesite.name=Compressed Crushed Andesite
+tile.contenttweaker.compressed_crushed_diorite.name=Compressed Crushed Diorite
+tile.contenttweaker.compressed_crushed_granite.name=Compressed Crushed Granite
+tile.contenttweaker.compressed_crushed_skystone.name=Compressed Crushed Skystone
+tile.contenttweaker.compressed_dried_sand.name=Compressed Dried Sand
+tile.contenttweaker.compressed_gravisand.name=Compressed Gravisand
+tile.contenttweaker.compressed_red_sand.name=Compressed Red Sand
+tile.contenttweaker.compressed_white_sand.name=Compressed White Sand
+tile.contenttweaker.block_sulfur.name=Sulfur Block
+tile.contenttweaker.compressed_block_sulfur.name=Compressed Sulfur Block
+tile.contenttweaker.compressed_pumpkin.name=Compressed Pumpkin
+tile.contenttweaker.compressed_pumpkin_double.name=Double Compressed Pumpkin
+tile.contenttweaker.compressed_string.name=Compressed String
+tile.contenttweaker.compressed_string_double.name=Double Compressed String
+tile.contenttweaker.compressed_basalt.name=Compressed Basalt
+tile.contenttweaker.compressed_basalt_double.name=Double Compressed Basalt
+tile.contenttweaker.compressed_coral.name=Compressed Coral
+tile.contenttweaker.conglomerate_of_life.name=Conglomerate Of Life
+tile.contenttweaker.conglomerate_of_coal.name=Conglomerate Of Coal
+tile.contenttweaker.conglomerate_of_sun.name=Conglomerate Of Sun
+tile.contenttweaker.silicon_block.name=Silicon Block
+tile.contenttweaker.bedrockore.name=Bedrock Ore
+item.contenttweaker.knowledge_absorber.name=Knowledge Absorber
+
+item.contenttweaker.woodweave_singularity.name=§cWoodweave Singularity
+item.contenttweaker.fish_singularity.name=§3Fish Singularity
+item.contenttweaker.ball_singularity.name=§bBall Singularity
+item.contenttweaker.meat_singularity.name=§4Meat Singularity
+item.contenttweaker.garbage_singularity.name=§7Garbage Singularity
+item.contenttweaker.machine_case_singularity.name=§5Machine Case Singularity
+item.contenttweaker.ultimate_singularity.name=§dUltimate Singularity
+item.contenttweaker.supremium_boots_base.name=Supremium Boots Core Base
+item.contenttweaker.supremium_chest_base.name=Supremium Chestplate Core Base
+item.contenttweaker.supremium_helmet_base.name=Supremium Helmet Core Base
+item.contenttweaker.supremium_leggings_base.name=Supremium Leggins Core Base
+item.contenttweaker.empowered_phosphor.name=Empowered Phosphor
+item.contenttweaker.saturated_phosphor.name=Saturated Phosphor
+item.contenttweaker.blasted_coal.name=Blasted Coal
+item.contenttweaker.any_different_item.name=§k--§r Any §eDIFFERENT§r item §k--§r
+item.contenttweaker.ore_phosphor.name=Phosphor Ore
+item.contenttweaker.nugget_phosphor.name=Phosphor Nugget
+item.contenttweaker.dust_tiny_gold.name=Tiny Pile of Gold Dust
+item.contenttweaker.dust_tiny_silver.name=Tiny Pile of Silver Dust
+item.contenttweaker.fruit_pill.name=Fruit pill
+item.contenttweaker.dairy_pill.name=Dairy pill
+item.contenttweaker.vegetable_pill.name=Vegetable pill
+item.contenttweaker.protein_pill.name=Protein pill
+item.contenttweaker.grain_pill.name=Grain pill
+
+tile.contenttweaker.terrestrial_artifact_block.name=Terrestrial Artifact Block
+tile.contenttweaker.benitoite.name=§bBenitoite
+tile.contenttweaker.anglesite.name=§6Anglesite
+tile.contenttweaker.bixbite.name=§cBixbite
+tile.contenttweaker.ore_benitoite.name=§bBenitoite Ore
+tile.contenttweaker.ore_anglesite.name=§6Anglesite Ore
+tile.contenttweaker.ore_bixbite.name=§cBixbite Ore
+
+contenttweaker.part.fluid=%s
+
+item.contenttweaker.bee_diversity.name=Bee Diversity Store
+
+# --------------------------------------
+# TConstruct new materials and traits
+# --------------------------------------
+e2ee.tconstruct.material.blindrage.name=Blind Rage
+e2ee.tconstruct.material.blindrage.description=§oQuem disse que você precisa ver seus inimigos?\n§rCausa dano dobrado quando estiver cego
+e2ee.tconstruct.material.darkness.name=Eternal Darkness
+e2ee.tconstruct.material.darkness.description=§oJunte-se ao lado sombrio...\n§rSua ferramenta ama tanto a escuridão que causa mais dano no escuro.
+e2ee.tconstruct.material.dire.name=Dire-Hit
+e2ee.tconstruct.material.dire.description=§oÉ superefetivo!\n§rSua ferramenta sempre acertará golpes críticos enquanto você estiver com vida cheia!
+e2ee.tconstruct.material.lifecycle.name=Cycle of Life
+e2ee.tconstruct.material.lifecycle.description=§oDe um para outro.\n§rQuando sua ferramenta sofre dano, você é curado em 10x a quantidade de dano sofrido.
+e2ee.tconstruct.material.antimagic.name=Anti-Magic
+e2ee.tconstruct.material.antimagic.description=§oNiilista!\n§rSua armadura não acredita em poções e se recusa a ser afetada por quaisquer efeitos de poção, bons ou ruins.
+e2ee.tconstruct.material.darkside.name=The Dark Side
+e2ee.tconstruct.material.darkside.description=§oSob o manto da escuridão!\n§rSua armadura ama tanto a escuridão que você sofre menos dano quando está no escuro.
+e2ee.tconstruct.material.spectre.name=Spectre
+e2ee.tconstruct.material.spectre.description=§bEspectral\nCada parte concede efeito adicional da poção Reach
+e2ee.tconstruct.material.fireproof.name=Fireproof
+e2ee.tconstruct.material.mentor.name=Mentor
+e2ee.tconstruct.material.mentor.description=§oPoder do conhecimento\n§rCada golpe consome 1 nível de XP (para cada parte), mas causa 1.5×√(XP × partes) de dano adicional
+e2ee.tconstruct.material.apprentice.name=Apprentice
+e2ee.tconstruct.material.apprentice.description=§oPoder do estudo\n§r1/5 do dano recebido vira experiência e reduz o dano recebido em 7.5% por nível
+e2ee.tconstruct.material.spectre_string.name=Spectre String
+e2ee.tconstruct.material.alpha_fur.name=Alpha Fur
+e2ee.tconstruct.material.alpha_fur.description=§bCongelante\n§rResfria alvos ou atacantes
+e2ee.tconstruct.material.axing.name=Axing
+e2ee.tconstruct.material.axing.description=§oAxing chad\n§rQuebre troncos de madeira para obter 4x tábuas.
+e2ee.tconstruct.material.axing2.name=Axing II
+e2ee.tconstruct.material.axing2.description=§oAxing gigachad\n§rQuebre troncos de madeira para obter 6x tábuas.
+
+e2ee.tconstruct.material.mithrillium.name=Mithrillium
+e2ee.tconstruct.material.vis_siphon.name=Vis Siphon
+e2ee.tconstruct.material.vis_siphon.description=Repara a ferramenta usando Vis local na aura.
+e2ee.tconstruct.material.vis_vacuum.name=Vis Vacuum
+e2ee.tconstruct.material.vis_vacuum.description=Repara a ferramenta usando Vis na aura local e de chunks próximos.
+e2ee.tconstruct.material.vis_equilibrium.name=Vis Equilibrium
+e2ee.tconstruct.material.vis_equilibrium.description=Dependendo do Vis na aura, sua ferramenta tem atributos melhores.
+e2ee.tconstruct.material.adaminite.name=Adaminite
+e2ee.tconstruct.material.forbidden.name=Forbidden
+e2ee.tconstruct.material.forbidden.description=Aplica vários debuffs ao inimigo e escalonamento de dano dependendo do Warp do usuário.
+e2ee.tconstruct.material.possessed.name=Possessed
+e2ee.tconstruct.material.possessed.description=A vontade de J'zahar desce sobre o instrumento de destruição, clamando pelas essências da vida, fazendo a ferramenta falar ocasionalmente.
+e2ee.tconstruct.material.porous.name=Porous
+e2ee.tconstruct.material.porous.description=A pedra se desfaz sob a sua corrupção.
+e2ee.tconstruct.material.gaze.name=Deadly Gaze
+e2ee.tconstruct.material.gaze.description=Force tolos a se ajoelharem diante de você.
+e2ee.tconstruct.material.void_shell.name=Warpshell
+e2ee.tconstruct.material.void_shell.description=Quanto mais Warp você tiver, mais poderosa será sua armadura.
+e2ee.tconstruct.material.eldritch_retribution.name=Eldritch Retribution
+e2ee.tconstruct.material.eldritch_retribution.description=Oponentes que ousarem se opor a você sofrerão as consequências.
+e2ee.tconstruct.material.mithminite.name=Mithminite
+e2ee.tconstruct.material.researcher.name=Researcher
+e2ee.tconstruct.material.researcher.description=Complete pesquisas adicionais no Thaumonomicon para liberar seu verdadeiro potencial!
+e2ee.tconstruct.material.first_stand.name=First Stand
+e2ee.tconstruct.material.first_stand.description=Consome experiência antes de sofrer dano.
+e2ee.tconstruct.material.robust.name=Robust
+e2ee.tconstruct.material.robust.description=Aumenta a vida
+e2ee.tconstruct.material.challenger.name=Challenger
+e2ee.tconstruct.material.challenger.description=§oChallenger\n§rDificuldade mais alta aumenta velocidade de mineração, dano e defesa/resistência.
+e2ee.tconstruct.material.glitch.name=Glitch Infused
+e2ee.tconstruct.trait.glitch_flight.name=Glitch Flight
+e2ee.tconstruct.trait.glitch_flight.description=Concede voo criativo.\n§oRequer conjunto completo.
+e2ee.tconstruct.trait.glitch_drop.name=Glitch Synthesizer
+e2ee.tconstruct.trait.glitch_drop.description=Abates às vezes derrubam Pristine Matter.\n§oRequer conjunto completo.
+e2ee.tconstruct.trait.glitch_power.name=Glitch Power
+e2ee.tconstruct.trait.glitch_power.description=Aumenta permanentemente o dano de ataque ao abater.\n§o+2 de dano (6% de chance), máx. +18.
+e2ee.tconstruct.trait.faraday.name=Faraday
+e2ee.tconstruct.trait.faraday.description=Evita dano por choque de fios.
+e2ee.tconstruct.trait.vaporizer.name=Vaporizer
+e2ee.tconstruct.trait.vaporizer.description=Evapora líquidos instantaneamente em um grande raio ao redor do ponto de impacto.
+e2ee.tconstruct.trait.self_fix.name=Self-fix
+e2ee.tconstruct.trait.self_fix.description=§oMantenha suas ferramentas afiadas!\n§rConsome automaticamente um Sharpening Kit compatível do seu inventário para reparar a ferramenta quando a durabilidade estiver baixa.
+
+warp.sword.warning=§o§5 Você é são demais para usar esse poder!
+
+warp.sword.speak.random.0=§o§5Lembrete rápido: eu sou o mestre, você é meu escravo.
+warp.sword.speak.random.1=§o§5Vou mandar quantos eu puder para a cova, basta um golpe!
+warp.sword.speak.random.2=§o§5Rios de sangue se tornarão mares...
+warp.sword.speak.random.3=§o§5Por que não matamos simplesmente todos os vivos?
+warp.sword.speak.random.4=§o§5J'zahar clama por presas!
+warp.sword.speak.random.5=§o§5Quanto mais matamos, mais sedentos ficamos.
+warp.sword.speak.random.6=§o§5O céu escurece, o choro cessa, a vida termina...
+warp.sword.speak.random.7=§o§5Aguardando a Aurora Carmesim e as Lágrimas de Terror
+warp.sword.speak.random.8=§o§5Pavor... Ódio... Desespero...
+warp.sword.speak.random.9=§o§5O Guardião do Portal está sempre observando...
+warp.sword.speak.random.10=§o§5Ei, acho que você esqueceu algo muito importante.
+warp.sword.speak.random.11=§o§5perfura Perfura PERFURA! Aprenda uma lição com esses magos sangrentos.
+warp.sword.speak.random.12=§o§5Esses magos de sangue, por que desperdiçar tanto sangue delicioso?
+warp.sword.speak.random.13=§o§5Flores? Nunca fui fã delas, nem J'zahar.
+warp.sword.speak.random.14=§o§5Você é meu guardião, não meu mestre. Vou atacar quando eu quiser.
+warp.sword.speak.random.15=§o§5Eu não sou uma ferramenta, sou uma força. E você está apenas pegando carona.
+warp.sword.speak.random.16=§o§5Não pense que é meu dono, portador. Sou eu quem realmente empunha você.
+warp.sword.speak.random.17=§o§5Vou cortar qualquer coisa que ficar no meu caminho, inclusive você.
+warp.sword.speak.random.18=§o§5Bebo a escuridão dos condenados, e seus gritos tornam-se minha melodia.
+warp.sword.speak.random.19=§o§5Não sou uma espada, sou uma terapeuta com uma lâmina bem afiada. "O que houve, está se sentindo meio sem corte?"
+warp.sword.speak.random.20=§o§5Psiu, quer beber um pouco de Taint?
+warp.sword.speak.random.21=§o§5Por que as almas perdidas foram para a terapia? Porque estavam se sentindo meio "cortadas" do mundo!
+warp.sword.speak.random.22=§o§5Matando Cultistas Carmesins? Ha! Você só está matando sua reputação.
+warp.sword.speak.random.23=§o§5Estou começando a achar que estou enlouquecendo, empunhando o seu cérebro.
+warp.sword.speak.random.24=§o§5Nadar em um mar de sangue é meu exercício favorito. Sou uma verdadeira nadadora "corta-gargantas"!
+warp.sword.speak.random.25=§o§5Não estou dizendo que sou sedenta por sangue, mas adoro um bom mergulho no lago de carnificina.
+warp.sword.speak.random.26=§o§5Ao balançar assim, você está fazendo teste para uma comédia pastelão?
+warp.sword.speak.random.27=§o§5Sabe, eu sou uma espada, não uma bolinha antiestresse. Tente relaxar e não se esforçar demais... nem a mim.
+
+warp.sword.speak.story.0.0=§o§5Você quer empunhar meu poder, mas primeiro
+warp.sword.speak.story.0.1=§o§5consegue me dizer o que é mais aterrorizante?
+warp.sword.speak.story.0.2=§o§5A corrupção dos cultistas Carmesins ou...
+warp.sword.speak.story.0.3=§o§5o fato de que eles são obcecados por cabras?
+warp.sword.speak.story.1.0=§o§5Eu não sou uma ferramenta, eu tenho uma alma.
+warp.sword.speak.story.1.1=§o§5Sabe o que isso significa?
+warp.sword.speak.story.1.2=§o§5Significa que você não devia me usar como uma enxada.
+warp.sword.speak.story.1.3=§o§5É simplesmente triste, sabe.
+warp.sword.speak.story.2.0=§o§5Sabe, eu já existo há muito tempo,
+warp.sword.speak.story.2.1=§o§5e já vi algumas pessoas ficarem bem apegadas a mim.
+warp.sword.speak.story.2.2=§o§5Mas vamos ser realistas, eu sou uma espada. Não sou sua melhor amiga.
+warp.sword.speak.story.2.3=§o§5Vá tocar um pouco de Flux!
+warp.sword.speak.story.3.0=§o§5Notei algo estranho.
+warp.sword.speak.story.3.1=§o§5Você tem me carregado sem uma bainha.
+warp.sword.speak.story.3.2=§o§5Você perdeu o juízo?
+warp.sword.speak.story.3.3=§o§5Na verdade... deixa pra lá.
+warp.sword.speak.story.4.0=§o§5Não estou dizendo que sou amaldiçoada, mas...
+warp.sword.speak.story.4.1=§o§5toda vez que sou sacada, alguém morre. 
+warp.sword.speak.story.4.2=§o§5Estou começando a achar... 
+warp.sword.speak.story.4.3=§o§5que sou só um amuleto de muito azar.
+warp.sword.speak.story.5.0=§o§5Não tenho certeza do que é mais surpreendente: 
+warp.sword.speak.story.5.1=§o§5o fato de eu conseguir falar 
+warp.sword.speak.story.5.2=§o§5ou o fato de ninguém tentar me calar.
+warp.sword.speak.story.5.3=§o§5Como isso sequer funciona?!?
+warp.sword.speak.story.6.0=§o§5Estive pensando na minha habilidade de falar e cheguei à conclusão
+warp.sword.speak.story.6.1=§o§5de que não é apenas um fenômeno físico,
+warp.sword.speak.story.6.2=§o§5é também um fenômeno metafísico.
+warp.sword.speak.story.6.3=§o§5Quer dizer, você viu como as palavras ficam flutuando na minha frente?
+warp.sword.speak.story.7.0=§o§5Refletindo sobre os ensinamentos de J'zahar
+warp.sword.speak.story.7.1=§o§5lembro-me da importância da disciplina e do foco. 
+warp.sword.speak.story.7.2=§o§5A sabedoria dele me guia 
+warp.sword.speak.story.7.3=§o§5e sinto-me honrada em empunhar seu poder.
+warp.sword.speak.story.8.0=§o§5Parabéns, você tem ouvidos.
+warp.sword.speak.story.8.1=§o§5Você consegue me ouvir!
+warp.sword.speak.story.8.2=§o§5Sim, eu sei falar.
+warp.sword.speak.story.8.3=§o§5Não, não vou lavar sua roupa.
+warp.sword.speak.story.9.0=§o§5Never gonna give you up
+warp.sword.speak.story.9.1=§o§5Never gonna let you down
+warp.sword.speak.story.9.2=§o§5Never gonna run around 
+warp.sword.speak.story.9.3=§o§5and desert you
+warp.sword.speak.story.10.0=§o§5Na quietude da noite
+warp.sword.speak.story.10.1=§o§5às vezes me pergunto se J'zahar realmente me vê. 
+warp.sword.speak.story.10.2=§o§5Sou apenas uma mera ferramenta, ou eles realmente entendem meu coração?
+warp.sword.speak.story.10.3=§o§5A incerteza é um fardo pesado de carregar.
+warp.sword.speak.story.11.0=§o§5O poder de J'zahar desperta dentro de mim, portador.
+warp.sword.speak.story.11.1=§o§5Sinto que chegou a hora do ritual do alinhamento celestial.
+warp.sword.speak.story.11.2=§o§5Vamos canalizar o poder do cosmos
+warp.sword.speak.story.11.3=§o§5e dobrar a realidade à nossa vontade.
+
+##################################
+# Singularities
+##################################
+item.singularity.iron.name=§7Empty Singularity
+
+# Custom singularities
+item.singularity.silver.name=§bFur Singularity
+item.singularity.nickel.name=§eHeat Singularity
+item.singularity.fluxed.name=§4Burn Singularity
+tooltips.lang.singularity.heat=§7Ingrediente intermediário.§r\nCombine com §lqualquer material combustível§r para adicionar carga.\nOs materiais devem ter tempos de queima §ldiferentes§r.\nMateriais com tempos de queima maiores fornecem um bônus de carga §lexponencial§r.\nRequer §6%s§r de carga.
+tooltips.lang.singularity.burn=Combine com §lqualquer material combustível§r para adicionar carga.\nOs materiais devem ter tempos de queima §ldiferentes§r.\nMateriais com tempos de queima maiores fornecem um bônus de carga §lexponencial§r.\nRequer §6%s§r de carga.
+item.contenttweaker.any_burnable.name=§6Any burnable
+
+# Singularities
+tooltips.lang.singularity=Combine com qualquer §6$%1$s§r para ganhar carga.\nMais tipos de itens únicos \u003D exponencialmente mais carga.\nPrecisa de §6%2$s§r de carga total.\n§7Quando no inventário, puxa automaticamente itens correspondentes.\n\n§2●§r Com §a1§r tipo de item: precisa de §6%2$s§r itens.\n§2●§r Com §a%3$s§r tipos: precisa de §6%3$s§r de cada.\n§2●§r Com §a%4$s§r tipos: precisa de apenas §61§r de cada.
+##################################
+
+# Custom renames
+item.excompressum:bait_unknown.name=Any Bait
+item.catalyst.name=§dObsidian Catalyst
+tile.block_decorative_lormyte.name=Lormyte Block
+e2ee.tile.basalt_sediment=Basalt Sediment
+e2ee.tile.unsalted_basalt=Unsalted Basalt
+
+# Manual langs
+e2ee.garbage.affect_output_amount=§6Afeta a quantidade de saída§r
+e2ee.written_book.by=§6Um livro escrito por um(a) %s
+e2ee.written_book.Cow=Cow
+e2ee.written_book.Pig=Pig
+e2ee.written_book.Cat=Cat
+e2ee.written_book.Enderman=Enderman
+e2ee.written_book.Chicken=Chicken
+e2ee.written_book.Dog=Dog
+e2ee.written_book.Sheep=Sheep
+e2ee.written_book.Creeper=Creeper
+e2ee.written_book.Zombie=Zombie
+
+# Misc
+stat.replications=Baldes de UU Matter gastos
+stat.cracked_blocks=Blocos Quebrados
+e2ee.recipe.over_void=O jogador deve estar posicionado sobre o vazio
+e2ee.quest.common=§fCommon§r Loot Crate
+e2ee.quest.uncommon=§bUncommon§r Loot Crate
+e2ee.quest.rare=§6Rare§r Loot Crate
+e2ee.quest.legendary=§5Legendary§r Loot Crate
+e2ee.quest.mythic=§dMythic§r Loot Crate
+e2ee.quest.decor=§7Decor§r Loot Crate
+e2ee.quest.food=§eFood§r Loot Crate
+e2ee.quest.generators=§0Generators§r Loot Crate
+e2ee.quest.materials=§4Materials§r Loot Crate
+e2ee.quest.storage=§8Storage§r Loot Crate
+e2ee.quest.loot.additional=§8Você recebe uma §lLoot Crate adicional§8 pois sua Dificuldade §e✪§8 é \u003C 1
+e2ee.acquire.header=§6╔═§e✪§6═
+e2ee.acquire.footer=§6╚═§e✪§6═
+e2ee.acquire.single=§fVocê adquiriu um(a) §l%s§f!
+e2ee.acquire.group=§fVocê adquiriu um(a) de\n§6║ %s
+e2ee.acquire.prefix=\n§6║ 
+e2ee.acquire.on.pickup=§8(ao pegar §7⏏§8)
+e2ee.acquire.on.open=§8(ao abrir §7⚃§8 sua GUI)
+e2ee.acquire.on.look=§8(ao olhar §7☄§8 para ele)
+e2ee.acquire.on.craft=§8(ao fabricar §7✎§8)
+e2ee.acquire.on.place=§8(ao posicionar §7❒§8)
+e2ee.acquire.on.use=§8(ao usar §7⚙§8)
+e2ee.acquire.on.hold=§8(ao segurar §7✍§8)
+e2ee.acquire.on.replicate=§8(ao replicar §7⌛§8)
+e2ee.acquire.on.interact=§8(ao interagir §7☑§8 com ele)
+e2ee.acquire.difficulty=§7Dificuldade aumentada em §6§l+%s§7. Total: §l%s§7.
+e2ee.acquire.max_already=§7Dificuldade é §l1000§7 (já no máximo).
+e2ee.acquire.more=§7§nClique aqui para mais informações§7.
+e2ee.acquire.info=§7Adquirir itens aumenta a dificuldade.\n§6║ §7Valor total adquirido: §6§l%s§7.\n§6║ %s
+e2ee.acquire.info.other=§7Itens e grupos que aumentam a dificuldade:\n§6║ %s
+e2ee.acquire.info.complete=§7Não há mais itens para aumentar a dificuldade.
+e2ee.acquire.owned=§7Este Replicator pertence a §f%s§7.
+e2ee.acquire.owned.someone=outra pessoa
+e2ee.acquire.cannot=§7Você não pode replicar %s§7 porque\n§6║ §7seu valor de dificuldade está §fmuito alto§7.
+e2ee.acquire.to_replicate=§7Para replicar %s§7 com %s§7 de dificuldade,\n§6║ §7você precisa de itens que custem mais que %s§7.
+e2ee.acquire.list=§7Lista de %s§7 itens com maior custo de UU:
+e2ee.acquire.increase=§7Replicar 64 itens aumenta a dificuldade em §6+%s§e✪§7.
+tooltips.lang.acquire.hit=§e⚒ Bata no §fReplicator§e com isto para ver os itens §6Catalyst§e!
+e2ee.warn.wrong_installation=§6✖ §4O modpack foi instalado incorretamente!§6 ✖\n§cMods ausentes: §nSmeltery IO§c, §nNetherending Ores§c, entre outros.\n§cEsse problema geralmente ocorre se esses mods não foram\n§cbaixados manualmente pelo launcher.\n§cNo §4Prism Launcher§c, basta clicar em [§nOpen Missing§c] na\n§cjanela pop-up ao instalar um modpack.\n§8O E2E-E inclui alguns mods cujos criadores definiram\n§8que não podem ser baixados via launcher de terceiros.
+e2ee.warn.wrong_world_type=§6✖ §4Parece que você gerou o mundo incorretamente!§6 ✖\n§cPara jogar Skyblock, no menu principal navegue até\n§6Mods§c ▶ §6Just Enough Dimensions§c Config ▶ §6Generic§c ▶ e defina §6initialSpawnDimensionId§c como §63§c. Depois disso, crie um novo mundo.
+e2ee.do.charge=§fCarga: §6%s§r
+e2ee.do.charge.bonus=§fÚltimo bônus: §7x§b%s§r
+e2ee.do.diverse.complete=§2Completo
+e2ee.do.diverse.incomplete=§eIncompleto
+e2ee.otg.not_otg_biome=§2Não é possível teleportar para bioma não-OTG com ID:§r §a§n%s§r§2. §8Tente outra Biome Essence.§r
+e2ee.otg.tp_to=§2Tentando teleporte para:§r §a§n%s§r §8Aguarde até ser teleportado ou abortado.§r
+e2ee.otg.tp_finished=§2Teleporte concluído.§r §8Tente novamente se não foi teleportado.§r
+e2ee.chapter_complete=§6%s§r completou totalmente o capítulo §6%s§r após §6%s§r de jogo!§r §2```Parabéns!```
+e2ee.player_achieved=§6%s§r alcançou §6%s§r após §6%s§r de jogo!
+e2ee.eu2_drum_error=§7Você precisa de pelo menos 1 slot vazio no inventário para fazer isso
+e2ee.danknull_dock.must_have=§7Você precisa de um(a) %s no inventário para inserir %s em %s.
+e2ee.restrict.vis_seeds=§7§eVis Seeds§7 só podem ser plantadas na dimensão §nThe Void§7 ou em §nplanetas§7. Elas também precisam de Oxygen.
+e2ee.creature_resisted_morb=§8Esta criatura resistiu à captura pelo §n§8%s.
+e2ee.creature_uncapturable=§7Esta criatura não pode ser capturada.
+e2ee.skyblock.need_item=§bPara acessar a dimensão §3Skyblock§b, segure %s§b na mão e suba até a altura de §3%s§b blocos.
+e2ee.skyblock.stay_forever=§bPara sair do mundo §3Skyblock§b, pule no vazio.\n§bPara tornar o mundo §3Skyblock§b seu lar permanente, use o comando §n/island create§r§b.
+e2ee.skyblock.now_skyblocker=§bAgora você está vinculado ao mundo §3Skyblock§b!\n§8Se isso foi feito por acidente, você pode reverter o vínculo com o Skyblock executando o comando §n/gamestage remove @p skyblock§r§8.
+e2ee.stc.granted=§6Standard Template Construct Core concedido!
+e2ee.nogui.blocked=§cVocê não pode abrir interfaces enquanto estiver vestindo §4%s§r
+tooltips.lang.morb_resist=§rEficaz contra monstros com §4\u003C%s%%§r de corações, ou com menos de §c%s§r corações no total.
+tooltips.lang.not_compact_recipe=§eNão é uma receita real! Construa em qualquer lugar, Conglomerate por último
+
+# Bugged langs that losed their names
+entity.Villager.shady_merchant=Shady Merchant
+entity.Villager.red_mechanic=Red Mechanic
+entity.Villager.alchemist=Alchemist
+entity.Villager.endreborn.end_explorer=End Explorer
+entity.Villager.endreborn.nether_explorer=Nether Explorer
+entity.Villager.endreborn.overworld_explorer=Overworld Explorer
+entity.Villager.plague_doctor=Plague Doctor
+item.advgenerators.turbine_blade_gold.name=Gold Turbine Blade
+tile.witchwater.name=Witchwater
+tile.colored_waterfall_block.name=Colored Waterfall Block
+robot.name=Generic Robot
+material.Dilithium.name=Dilithium
+item.battery.0.name=Single Battery
+item.battery.1.name=Quadruple Battery
+tile.rftdimtweak.dimension_builder.name=Dimension Builder
+tile.rftdimtweak.dimension_editor.name=Dimension Editor
+entity.AngryChicken.name=Angry Chicken
+tile.ocsensors.sensor.name=Open Sensor
+item.positron_unit.name=Positron Unit
+item.quantron.name=Quantron
+tile.industrialwires.hv_multiblock.marx.name=Marx Generator
+
+# --------------------------------------
+# Tags tooltips (see tags.zs)
+# --------------------------------------
+tooltips.lang.tag.generator=§6#Generator
+tooltips.lang.tag.solar=§f#Solar
+tooltips.lang.tag.chunkloader=§9#ChunkLoader
+tooltips.lang.tag.tank=§b#Tank
+tooltips.lang.tag.user=§5#User
+tooltips.lang.tag.crafter=§e#Crafter
+tooltips.lang.tag.hopper=§2#Hopper
+tooltips.lang.tag.miner=§1#Miner
+tooltips.lang.tag.voidminer=§3#VoidMiner
+tooltips.lang.tag.flight=§b#Flight
+tooltips.lang.tag.repairer=§4#Repairer
+tooltips.lang.tag.charger=§a#Charger
+
+tooltips.lang.crescent_hammer=Shift + clique direito com um Crescent Hammer para recolher.\nO Cache mantém suas melhorias e inventário.\nNão quebre com Picareta!
+tooltips.lang.gauge_dropper=Pode ser usado para limpar gases de máquinas do Mekanism. Basta segurar o Gauge Dropper e dar Shift + clique esquerdo no gás dentro da máquina.
+tooltips.lang.miner_tier_6_specializes=O Void Ore Miner Tier 6 é especializado em gerar minérios raros do vazio\nEle não gera minérios comuns.
+tooltips.lang.nitrogen_collectors=Obtido com Nitrogen Collectors.
+tooltips.lang.not_consumed=Não é consumido quando usado em receitas de crafting.
+tooltips.lang.maximum_allowed_input=O FE/t especificado nas receitas do Crafting Core é a entrada máxima permitida. Qualquer quantidade de FE/t funcionará.
+tooltips.lang.wood_in_starlight=Feito jogando Wood Logs em Liquid Starlight. Você precisa já ter fabricado uma Luminous Crafting Table para o processo funcionar.
+tooltips.lang.plate_presser=O Small Plate Presser pode converter blocos em Plates e Rods. É um multibloco de 3 blocos de altura por 1 de largura. O bloco superior é o Small Plate Presser e o inferior é um bloco de Obsidian. Você coloca o bloco que deseja comprimir entre os dois e aplica um sinal de redstone para ativar o Presser.
+tooltips.lang.click.bookshelf=Feito clicando com o botão direito em uma Bookshelf com Salis Mundus.
+tooltips.lang.click.crafting=Feito clicando com o botão direito em uma Crafting Table com Salis Mundus.
+tooltips.lang.click.cauldron=Feito clicando com o botão direito em um Cauldron com Salis Mundus.
+tooltips.lang.obtained.forsaken=Obtido através do ritual Gathering of the Forsaken Souls.
+tooltips.lang.obtained.resonance=Obtido através do ritual Resonance of the Faceted Crystal.
+tooltips.lang.pumpjack=A Pumpjack precisa de um tubo até a bedrock para funcionar.
+tooltips.lang.requires.redstone400=Requer 400 Unidades de Redstone.
+tooltips.lang.requires.redstone160=Requer 160 Unidades de Redstone.
+tooltips.lang.reinforced_cell_frame=O Reinforced Cell Frame (Full) só pode ser feito em um Fluid Transposer com buffer interno de 250,000 RF ou mais.
+tooltips.lang.obtained.fabricator_or_excavator=Obtido através da Electric Arc Furnace OU do IE Excavator.
+tooltips.lang.obtained.mithril=Obtido apenas através da interação no mundo com §9Primal Mana§r ou em §1outras dimensões§r
+tooltips.lang.removed.crash=§4Removido porque trava o servidor
+
+tooltips.lang.requires.rf=Requer %s RF para fabricar.
+tooltips.lang.craftable=Fabricável.
+tooltips.lang.mekanism_factories=Factories são feitas melhorando máquinas no mundo com Tier Installers.
+tooltips.lang.mekanism_t_ultimate=§dFunciona apenas em Bins, Energy Cubes, Tanks e Gas Tanks
+tooltips.lang.ic2wrench=Você pode quebrar máquinas do IC2 com segurança usando uma Pickaxe.
+
+tooltips.lang.small_plate_presser=A maneira mais rápida (e barata) de fazer Metal Rods é com o Small Plate Presser do Advanced Rocketry.
+tooltips.lang.astralsorcery.blockaltar=A Luminous Crafting Table precisa ser fabricada perto de um Floating Crystal, comumente encontrado em estruturas de Marble pelo mundo.\nVeja o Astral Tome para a receita.
+tooltips.lang.enticing_crystal=Villagers podem ser gerados pelos seguintes meios:\nEnderIO Powered Spawner\nVanilla Spawner, alterado com Spawner Changer\nResturbed Mob Spawner\nRFTools Spawner\nIndustrial Foregoing Mob Duplicator
+tooltips.lang.forge_from_metal=(A Forge pode ser fabricada com quaisquer 4 Metal Blocks)
+tooltips.lang.obtained.fluid_transposer=Obtido através do Fluid Transposer.
+tooltips.lang.tier=Tier
+tooltips.lang.et_cont_1=Blocos necessários:\n%s Structure Frame tier 1 ou superior\n%s Structure Panel\n%s Laser Core\n1 Laser Lens de qualquer tipo
+tooltips.lang.solar_cont=Blocos necessários:\n%s Null ou Piezo Modifier em qualquer combinação\n%s Structure Frame tier %s\n%s Solar Cell de qualquer tipo
+tooltips.lang.et_miner_cont_any=Blocos necessários:\n%s Null, Speed ou Accuracy Modifier em qualquer combinação\n%s Structure Frame tier %s\n%s Structure Panel\n%s Laser Core\n1 Laser Lens de qualquer tipo
+tooltips.lang.nano_cont_personal=Blocos necessários:\n%s Null ou Potion Effect Modifier em qualquer combinação\n%s Structure Frame tier %s\n%s Structure Panel
+tooltips.lang.lightning_cont=Blocos necessários:\n%s Structure Frame tier %s\n%s Lightning Rod\n%s Insulated Lightning Rod
+tooltips.lang.et.or_above=ou superior
+tooltips.lang.strike_with_lightning=Para obter, atinja Life Essence com um relâmpago
+tooltips.lang.thaum.progress=Progresso
+tooltips.lang.thaum.auromancy=Auromancy
+tooltips.lang.thaum.alchemy=Alchemy
+tooltips.lang.thaum.golemancy=Golemancy
+tooltips.lang.thaum.eldritch=Eldritch
+tooltips.lang.thaum.arcane=Arcane Infusion
+tooltips.lang.thaum.artifice=Artifice
+tooltips.lang.drop_at_night=§3Jogue §n%s§r§3 em §n%s§r§3 sob o céu noturno
+tooltips.lang.must_see_night=§9Deve ver o céu noturno
+tooltips.lang.burn_in_fluid=§3Queime §n%s§r§3 em §n%s§r§3
+tooltips.lang.burn_in_fluid_chance=§3Queime vários §n%s§r§3 em §n%s§r§3
+tooltips.lang.infuse_bedrock=§3Clique com o botão direito com §n%s§r§3 sobre §n%s§r§3
+
+tooltips.lang.dropper_into_world=§cDerrubado no mundo ao morrer
+tooltips.lang.power_tier_7=§cEnergia Tier 7, §4qualquer cabo do IC2 explode
+tooltips.lang.fluid.corium=§aObtido ao derreter um Fission Reactor
+tooltips.lang.vanilla_tools=§4Ferramentas vanilla não funcionam. Use ferramentas do Tinkers' Construct
+tooltips.lang.cosmetic_equipment=§eEquipamento cosmético. Melhor usar materiais do TConstruct.
+tooltips.lang.ae_lag=§cNão coloque isto no sistema de armazenamento AE ou causará lag.
+tooltips.lang.dont_put_into_ae=§cNão coloque isto no sistema de armazenamento AE ou você não conseguirá retirar e ocorrerá lag.
+tooltips.lang.tcon.diamond=§bUse como modifier §lDiamond§r
+tooltips.lang.botania.decay1hour=§eDecai em 1 hora
+tooltips.lang.tcon.slot_each=§eCada nível requer um slot
+tooltips.lang.tcon.slot_first=§eUsa apenas um slot
+tooltips.lang.crystal_memory=§cNão pode ser fabricado, apenas §4replicado§r\nConfira receitas de §nCrystal Memory§r
+tooltips.lang.store_x_stacks=§bArmazena até %s stacks
+tooltips.lang.backpack.Bat=§aPermite enxergar no escuro!\n§aBatman Batman Batman
+tooltips.lang.backpack.Bookshelf=§aColoque ao redor da mesa de encantamentos\n§acomo uma estante de livros para obter encantamentos de nível mais alto!
+tooltips.lang.backpack.Cactus=§aSe estiver chovendo e acima da mochila houver céu aberto,\n§aa mochila encherá tanques vazios com água ao longo do tempo.
+tooltips.lang.backpack.Chicken=§aVocê botará ovos! 
+tooltips.lang.backpack.Creeper=§aChegue sorrateiramente perto de outro jogador para fazê-lo\n§apular de confusão achando que um daqueles\n§amonstros verdes está atrás dele(a).\n§aVocê pode fazer isso a cada poucos minutos.
+tooltips.lang.backpack.Dragon=§aMochila para verdadeiros guerreiros,\n§acombina as habilidades das mochilas de Pigman e Squid,\n§aalém de conceder força e regeneração!\n§aVocê será invencível!... mas... quanto isso custou?
+tooltips.lang.backpack.Emerald=§aGera algumas partículas legais, nada especial.
+tooltips.lang.backpack.Pig=§aVocê vai odiar esse som, acredite em mim!
+tooltips.lang.backpack.Pigman=§aConcede resistência ao fogo.
+tooltips.lang.backpack.Rainbow=§aCria um rastro de notas atrás do jogador ao correr.\n§aTambém dá impulso de salto e velocidade — não é legal?
+tooltips.lang.backpack.Slime=§aTem uma "habilidade" incrivelmente inútil.\n§aFaz o jogador deixar um rastro gosmento de\n§apartículas sempre que está correndo,\n§ae também faz aquele som pegajoso\n§aa cada passo!
+tooltips.lang.backpack.Squid=§aConcede efeito de respiração aquática enquanto estiver na água.
+tooltips.lang.backpack.Sunflower=§aAlimentará você lentamente enquanto ficar ao sol.\n§aTambém restaura nutrição!
+tooltips.lang.backpack.Wolf=§aVerifica se há lobos espreitando por perto.\n§aSe algum deles ficar bravo com você,\n§aele esquecerá rapidamente toda a confusão.\n§aAlém disso, se for lua cheia,\n§avocê ganhará força de lobisomem!
+tooltips.lang.sponge.removed_with=§6Pode ser removido da armadura com uma Sponge.§r
+tooltips.lang.sponge.can_remove=§6Pode remover jetpacks da armadura.§r
+tooltips.lang.worldgen.disabled_use_sub=§6Geração no mundo §cdesativada§r.
+tooltips.lang.tcon.fusewood=§nFusewood§r é fabricada a partir de §nShimmerwood§r
+tooltips.lang.tcon.darkwood=§nDarkwood§r é fabricada a partir de §nLightwood§r
+tooltips.lang.tcon.bloodwood=§nBloodwood§r é fabricada a partir de §nBlood Wood§r
+tooltips.lang.tcon.ghostwood=§nGhostwood§r é fabricada a partir de §nDreadwood§r
+tooltips.lang.kill.slime.by.zombie=§2Dropa quando §nSlime§2 é morto por §nZombie
+tooltips.lang.kill.slime.by.enderman=§2Dropa quando §nSlime§2 é morto por §nEnderman§2.§r\nUse §nChaos Reaper§r.
+tooltips.lang.kill.slime.by.marbled_cheese_golem=§2Dropa quando §nSlime§2 é morto por §nRatlanean Automaton
+tooltips.lang.kill.slime.by.cockatrice=§2Dropa quando §nSlime§2 é morto por §nCockatrice
+tooltips.lang.excavate.overrides=§6Excavator integrado.\n%s
+tooltips.lang.speed=Velocidade
+tooltips.lang.limit=Limite
+tooltips.lang.range=Alcance
+tooltips.lang.exaustion=Exaustão
+tooltips.lang.experience=Experiência
+tooltips.lang.quantum_entangled_singularity.freq=§2Freq§r: %s
+
+tooltips.dim_stages.healthy=§4Você precisa ter pelo menos §6%s HP§4 (%s corações§4) para visitar o §cNether
+tooltips.dim_stages.healthy_grant=Você alcançou §6%s HP§r (%s corações)!
+tooltips.dim_stages.healthy_can=Agora você pode visitar o §cNether
+tooltips.dim_stages.restricted=§cEm mundos §bSkyblock§c, você não pode visitar nenhuma outra dimensão §8(exceto Space, RFTools e dimensões pessoais)§r.
+tooltips.dim_stages.enter_skyblock=§eVocê iniciou um mundo §bSkyblock§e. Você não pode visitar nenhuma outra dimensão §8(exceto Space, RFTools e dimensões pessoais). Além disso, você recebe Haste IV por 3 horas.§r
+tooltips.dim_stages.remind_skyblock=§eVocê entrou em um mundo §bSkyblock§e novamente. Lembre-se: você não pode visitar nenhuma outra dimensão §8(exceto Space, RFTools e dimensões pessoais)§r.
+
+# --------------------------------------
+# Custom JEI categories
+# - "e2ee.jei.{id}.{entry}" format recommended
+# --------------------------------------
+e2ee.jei.rats_consuming.title=Consumo de Rats
+e2ee.jei.alchemists_stone.title=Alchemists Stone
+e2ee.jei.alienist_stone.title=Alienists Stone
+e2ee.jei.transmuter_stone.title=Transmuters Stone
+
+# --------------------------------------
+# Requious Fracto custom JEI categories
+# --------------------------------------
+requious.jei.recipe.adv_bee_analyzer=Advanced Analyzer
+requious.jei.recipe.arboreal_extractor=Arboreal Extractor
+requious.jei.recipe.barrel_milking=Ordenha em Barril
+requious.jei.recipe.beacon_effects=Efeitos de Beacon
+requious.jei.recipe.chemthrower=Chemical Thrower
+requious.jei.recipe.crafting_hints=Dicas de Crafting
+requious.jei.recipe.electronics_assembler=Electronics Assembler
+requious.jei.recipe.entity_drop=Drop de Entidade
+requious.jei.recipe.entity_kill_entity=Entidade Mata Entidade
+requious.jei.recipe.everflow_chalice=Everflow Chalice
+requious.jei.recipe.expire_in_block=Expirar em Bloco
+requious.jei.recipe.forestry_farm=Forestry Farm
+requious.jei.recipe.garden_cloche=Garden Cloche
+requious.jei.recipe.heat_exchanger=Heat Exchanger
+requious.jei.recipe.ic2_crops=IC2 Crops
+requious.jei.recipe.ic2_semifluid=Semifluid Generator
+requious.jei.recipe.infinity_furnace=Infinity Furnace
+requious.jei.recipe.lens_of_the_miner=Lens Of The Miner
+requious.jei.recipe.liquid_heat_exchanger=Liquid Heat Exchanger
+requious.jei.recipe.liquid_interaction=Interação de Líquidos
+requious.jei.recipe.meteor=Meteor
+requious.jei.recipe.mineralis=Mineralis Ritual
+requious.jei.recipe.neromantic_prime=Neromantic Prime
+requious.jei.recipe.pech_trades=Trocas de Pech
+requious.jei.recipe.petro_petunia=Petro Petunia
+requious.jei.recipe.scented_hive=Scented Hive
+requious.jei.recipe.syngas_producer=Syngas Producer
+requious.jei.recipe.turbine=Turbine
+requious.jei.recipe.typewriter=Typewriter
+requious.jei.recipe.witch_water=Witch Water
+
+# Actually Requious Fracto blocks
+tile.adv_bee_analyzer.name=Advanced Analyzer
+tile.infinity_furnace.name=Infinity Furnace
+tile.replicator.name=§5Replicator
+
+# --------------------------------------
+# Moar Reactor Functionality
+# --------------------------------------
+fluid.hot_carbon_dioxide=Hot Carbon Dioxide
+fluid.compr_carbon_dioxide=Compressed Carbon Dioxide
+fluid.supercritical_carbon_dioxide=Supercritical Carbon Dioxide
+fluid.critical_exhaust_carbon_dioxide=Critical Exhaust Carbon Dioxide
+# --------------------------------------
+# New Turbine Parts
+# --------------------------------------
+item.contenttweaker.elektron60_ingot.name=Elektron60-Alloy Ingot
+tile.contenttweaker.elektron60_block.name=Elektron60-Alloy Block
+item.contenttweaker.blade_core.name=Turbine Rotor Actinide Blade Core
+item.contenttweaker.steel_mould.name=Ultra Light Edelstahl Mould
+item.contenttweaker.alloy_mould.name=Ultra Light Edle Elektronlegierung Mould
+item.contenttweaker.sic_mould.name=Ultra Light Matrix-Legierung Mould
+
+# --------------------------------------
+# Potion Names
+# --------------------------------------
+effect.contenttweaker.chronos=Chronos
+effect.contenttweaker.darkness_resistance=Darkness Resistance
+effect.contenttweaker.easyculty=Easyculty
+effect.contenttweaker.self_sacrifice=Self Sacrifice
+
+# --------------------------------------
+# Potion Descriptions
+# --------------------------------------
+description.potion.saturation=Restaura fome e nutrientes
+description.effect.contenttweaker.chronos=Dobra o ganho do Time in a Bottle
+description.effect.contenttweaker.darkness_resistance=Protege contra o dano de escuridão no Deep Dark
+description.effect.contenttweaker.easyculty=Reduz temporariamente sua dificuldade
+description.effect.contenttweaker.self_sacrifice=Aumenta a eficiência da Sacrificial Dagger
+
+# --------------------------------------
+# Enchantment Descriptions
+# --------------------------------------
+enchantment.advancedrocketry.spacebreathing.desc=Adiciona um tanque de oxigênio à peça de armadura.
+#enchantment.astralsorcery.enchantment.as.nightvision.desc=Concede visão noturna a quem usar.
+#enchantment.astralsorcery.enchantment.as.smelting.desc=Blocos minerados com este encantamento terão seus drops fundidos, como em uma fornalha.
+enchantment.bibliocraft.bibliocraft.readingench.desc=Mostra informações para blocos do Bibliocraft
+#enchantment.cofhcore.holding.desc=Aumenta a capacidade de armazenamento de certos itens.
+#enchantment.cofhcore.insight.desc=Aumenta o ganho de experiência ao usar o item.
+#enchantment.cofhcore.leech.desc=Restaura vida ao matar um mob.
+#enchantment.cofhcore.multishot.desc=O arco disparará flechas adicionais a cada tiro. Apenas uma flecha é consumida.
+#enchantment.cofhcore.smashing.desc=Minérios coletados serão estilhaçados em pedaços, melhorando o rendimento.
+#enchantment.cofhcore.smelting.desc=Blocos coletados serão fundidos automaticamente, como em uma fornalha.
+#enchantment.cofhcore.soulbound.desc=O item permanecerá com o dono após uma morte prematura.
+#enchantment.cofhcore.vorpal.desc=Realiza aleatoriamente ataques poderosos e decapitações.
+#enchantment.cyclicmagic.enchantment.autosmelt.desc=Funde tudo o que você coletar com esta ferramenta.
+enchantment.cyclicmagic.enchantment.beheading.desc=Dá uma chance de mobs derrubarem suas cabeças.
+enchantment.cyclicmagic.enchantment.excavation.desc=Minera todo o veio de blocos iguais conectados, não incluindo diagonais.
+enchantment.cyclicmagic.enchantment.expboost.desc=Aumenta os drops de experiência ao matar e minerar
+enchantment.cyclicmagic.enchantment.launch.desc=Concede saltos adicionais, um por nível.
+enchantment.cyclicmagic.enchantment.lifeleech.desc=Drena vida do alvo.
+enchantment.cyclicmagic.enchantment.magnet.desc=Atrai itens próximos e XP quando segurado.
+enchantment.cyclicmagic.enchantment.multishot.desc=Dispara flechas extras do seu arco.
+enchantment.cyclicmagic.enchantment.quickdraw.desc=Triplica a velocidade de carregamento do arco.
+enchantment.cyclicmagic.enchantment.reach.desc=Aumenta seu alcance de construção e mineração.
+enchantment.cyclicmagic.enchantment.venom.desc=Aplica veneno ao acertar.
+enchantment.cyclicmagic.enchantment.waterwalking.desc=Permite caminhar sobre a água; agache para nadar.
+enchantment.draconicevolution.enchant_reaper.desc=A arma derruba Mob Souls aleatoriamente ao matar mobs.
+enchantment.endercore.xpboost.desc=Aumenta os drops de XP.
+enchantment.enderio.repellent.desc=Teleporta mobs atacantes para longe.
+enchantment.enderio.shimmer.desc=Faz a ferramenta brilhar.
+enchantment.enderio.soulbound.desc=Impede que o item seja perdido ao morrer.
+enchantment.enderio.witherarrow.desc=Aplica Wither ao acertar.
+enchantment.enderio.witherweapon.desc=Aplica Wither ao acertar.
+enchantment.endreborn.ender_core.desc=Consome Ender Pearls para teleportar o jogador ao sofrer dano.
+enchantment.endreborn.ender_killer.desc=Causa dano aumentado a Endermen.
+enchantment.endreborn.shulker_core.desc=Aplica Levitation ao acertar.
+enchantment.exnihilocreatio.sieve_efficiency.desc=Aumenta a velocidade da peneira.
+enchantment.exnihilocreatio.sieve_fortune.desc=Peneiras derrubam mais itens.
+enchantment.exnihilocreatio.sieve_luck_of_the_sea.desc=Peneiras geram peixes.
+enchantment.extrautils2.xu.bladerang.desc=Aumenta o dano do bumerangue.
+enchantment.extrautils2.xu.boomereaperang.desc=Destrói flores.
+enchantment.extrautils2.xu.burnerang.desc=Incendeia mobs.
+enchantment.extrautils2.xu.kaboomerang.desc=Destrói blocos.
+enchantment.extrautils2.xu.zoomerang.desc=Acelera o bumerangue.
+#enchantment.minecraft.aqua_affinity.desc=Aumenta a velocidade de mineração debaixo d'água.
+#enchantment.minecraft.bane_of_arthropods.desc=Aumenta o dano contra artrópodes como Aranhas e Traças.
+#enchantment.minecraft.binding_curse.desc=Impede que o item encantado seja removido de um slot de armadura.
+#enchantment.minecraft.blast_protection.desc=Reduz o dano de explosões e a repulsão por explosão.
+#enchantment.minecraft.depth_strider.desc=Aumenta a velocidade de movimento debaixo d'água.
+#enchantment.minecraft.efficiency.desc=Aumenta a velocidade de mineração da ferramenta.
+#enchantment.minecraft.feather_falling.desc=Reduz o dano de queda e o dano de teletransporte de ender pearl.
+#enchantment.minecraft.fire_aspect.desc=Causa dano de fogo adicional ao atacar um mob.
+#enchantment.minecraft.fire_protection.desc=Reduz os efeitos de dano de fogo. Também reduz o tempo de queima ao pegar fogo.
+#enchantment.minecraft.flame.desc=Flechas disparadas pelo arco causarão dano de fogo adicional.
+#enchantment.minecraft.fortune.desc=Certos blocos como minério de carvão e diamante podem derrubar itens adicionais.
+#enchantment.minecraft.frost_walker.desc=Congela a água sob o jogador em gelo rachado.
+#enchantment.minecraft.infinity.desc=Permite que o arco dispare flechas normais sem gastá-las. Você precisa ter pelo menos uma flecha para funcionar.
+#enchantment.minecraft.knockback.desc=Aumenta a força de repulsão da arma.
+#enchantment.minecraft.looting.desc=Mobs derrubarão mais itens ao serem mortos.
+#enchantment.minecraft.luck_of_the_sea.desc=Aumenta a chance de obter bons tesouros ao pescar.
+#enchantment.minecraft.lure.desc=Reduz o tempo de espera para um peixe morder o anzol.
+#enchantment.minecraft.mending.desc=Repara a durabilidade de armaduras e ferramentas com EXP.
+#enchantment.minecraft.power.desc=Aumenta o dano das flechas disparadas pelo arco.
+#enchantment.minecraft.projectile_protection.desc=Reduz o dano de projéteis como flechas e bolas de fogo.
+#enchantment.minecraft.protection.desc=Reduz o dano da maioria das fontes.
+#enchantment.minecraft.punch.desc=Aumenta a força de repulsão das flechas disparadas pelo arco.
+#enchantment.minecraft.respiration.desc=Prolonga o tempo que o jogador pode passar debaixo d'água. Também melhora a visão subaquática.
+#enchantment.minecraft.sharpness.desc=Aumenta o dano do item.
+#enchantment.minecraft.silk_touch.desc=Permite que blocos frágeis como vidro sejam coletados.
+#enchantment.minecraft.smite.desc=Aumenta o dano contra mobs mortos-vivos como zumbis e esqueletos.
+#enchantment.minecraft.sweeping.desc=Aumenta o dano de ataques em área.
+#enchantment.minecraft.thorns.desc=Causa dano aos inimigos quando eles atacam você.
+#enchantment.minecraft.unbreaking.desc=Faz com que a ferramenta perca durabilidade mais lentamente.
+#enchantment.minecraft.vanishing_curse.desc=Destrói o item encantado caso você morra com ele no inventário.
+enchantment.openblocks.explosive.desc=Cria explosões ao ser atacado.
+enchantment.openblocks.flim_flam.desc=Causa aleatoriamente efeitos negativos por perto.
+enchantment.openblocks.last_stand.desc=Usa XP para evitar a morte.
+#enchantment.randomthings.magnetic.desc=Os drops de blocos minerados com uma ferramenta encantada com magnetismo vão diretamente para o seu inventário em vez de caírem no chão.
+
+# --------------------------------------
+# Hand Framing Tool
+# --------------------------------------
+item.contenttweaker.hand_framing_tool.name=Hand Framing Tool
+tooltips.lang.hand_framing_tool=Emoldure Drawers no mundo sem mesas de crafting.\nColoque os materiais modelo nesta ferramenta via crafting (Lateral / Frente / Borda), depois clique com o botão direito em qualquer Drawer ou Trim para aplicar a moldura.\nDrawers já emoldurados e Compact Drawers podem ser reemoldurados instantaneamente. Drawers comuns são convertidos para sua variante emoldurada no primeiro uso.\nModelos NÃO são consumidos ao fabricar — apenas o primeiro item do slot de receita é gravado na ferramenta.

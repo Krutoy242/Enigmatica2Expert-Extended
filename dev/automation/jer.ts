@@ -4,28 +4,213 @@
 // from: ("block": "([^"]+)",\n.+\n.+)\n.+\n.+\n\s+"itemStack": "\2",\n\s+"fortunes": \{\n(\s+"\d+": 1(\.0)?,?\n){4}\s+\}\n\s+\}\n\s+\],
 // to: $1
 
+import { existsSync } from 'node:fs'
+
+import { load } from 'cheerio'
 import { defineCommand, runMain } from 'citty'
 import { consola } from 'consola'
 import picomatch from 'picomatch'
 import simplify from 'simplify-js'
+import { globSync } from 'tinyglobby'
 
 import {
   config,
+  escapeRegex,
   loadJson,
   loadText,
   saveText,
 } from '../lib/utils.js'
 
-const ADD_META_RE = /(:[a-z]+)$/i
-const MODIFY_DROP_RE = /Modify drop; Block: (?<block>.+) Drop: \[(?<stack>.+)\] (?<luck>\[.*\])/g
+const HAS_NO_META_RE = /^[^:]+:[^:]+$/
+const MODIFY_DROP_RE = /Modify drop; Block: (?<block>.+) Drop: \[(?<stack>.+)\] (?<luck>\[.*\])/
 const PARSE_2D_ARRAY_RE_1 = /^\[|\]$/g
 const PARSE_2D_ARRAY_RE_2 = /\],\s*\[/g
 const PARSE_2D_ARRAY_RE_3 = /,\s*\]/g
 const PARSE_2D_ARRAY_RE_4 = /\[,/g
 const PARSE_2D_ARRAY_RE_5 = /\[(.*?)\]/
-const SHORTEN_VALUE_RE_1 = /\.0+$/
-const SHORTEN_VALUE_RE_2 = /([1-9])0+$/
 const DIM_MATCH_RE = /^Dim (-?\d+): (.+)$/
+const DIM_ID_RE = /\((-?\d{1,9})\)$/
+const CT_ERROR_RE = /^(?:\[[^\]]+\])*\[(?:ERROR|FATAL)\]/m
+const CT_INIT_RE = /^\[INITIALIZATION\]/m
+const CT_COMPLETE_RE = /^\[(?:AVAILABLE|SERVER_STARTING|SERVER_STARTED)\]/m
+const PROP_INT_RE = /^[^=]+=(\d+)$/
+const TAG_NAME_RE = /\bname:\s*"([^"]+)"/
+const TAG_PROP_RE = /\bprop:\s*"([^"]*)"/
+const BEDROCKORE_PROP_META: Record<string, Record<string, number>> = {
+  'actuallyadditions:block_misc': {
+    type_ore_black_quartz: 3,
+  },
+  'enderio:block_alloy': {
+    variant_electrical_steel  : 0,
+    variant_energetic_alloy   : 1,
+    variant_vibrant_alloy     : 2,
+    variant_redstone_alloy    : 3,
+    variant_conductive_iron   : 4,
+    variant_pulsating_iron    : 5,
+    variant_dark_steel        : 6,
+    variant_soularium         : 7,
+    variant_end_steel         : 8,
+    variant_construction_alloy: 9,
+  },
+  'enderio:block_alloy_endergy': {
+    variant_crude_steel           : 0,
+    variant_crystalline_alloy     : 1,
+    variant_melodic_alloy         : 2,
+    variant_stellar_alloy         : 3,
+    variant_crystalline_pink_slime: 4,
+  },
+  'netherendingores:ore_end_modded_1': {
+    blocks_aluminum_ore     : 0,
+    blocks_copper_ore       : 1,
+    blocks_lead_ore         : 3,
+    blocks_nickel_ore       : 5,
+    blocks_tin_ore          : 8,
+    blocks_certus_quartz_ore: 9,
+    blocks_osmium_ore       : 11,
+    blocks_uranium_ore      : 12,
+  },
+  'netherendingores:ore_end_vanilla': {
+    blocks_coal_ore    : 0,
+    blocks_iron_ore    : 4,
+    blocks_lapis_ore   : 5,
+    blocks_redstone_ore: 6,
+  },
+  'netherendingores:ore_other_1': {
+    blocks_end_quartz_ore: 1,
+  },
+  'thermalfoundation:ore_fluid': {
+    type_ender: 4,
+  },
+}
+
+interface BedrockOreTarget {
+  block : string
+  weight: number
+  yMax  : number
+  yMin  : number
+}
+
+function loadPlanetNames(): Map<string, string> {
+  const map = new Map<string, string>()
+  const defsPath = 'config/advRocketry/planetDefs.xml'
+  if (!existsSync(defsPath)) return map
+  const $ = load(loadText(defsPath), { xmlMode: true })
+  $('planet[DIMID][name]').each((_, el) => {
+    // External mapped dimensions (e.g. Earth=0, Twilight=7) carry dimMapping=""
+    if ($(el).attr('dimMapping') !== undefined) return
+    const id = $(el).attr('DIMID')?.trim()
+    const name = $(el).attr('name')?.trim()
+    if (id && name && !map.has(id)) map.set(id, name)
+  })
+  return map
+}
+
+function resolveBedrockOreBlock(name: string, prop: string): string {
+  const key = prop.trim().replace('=', '_')
+  const meta = BEDROCKORE_PROP_META[name]?.[key]
+  if (meta !== undefined) return `${name}:${meta}`
+  const numMatch = prop.trim().match(PROP_INT_RE)
+  if (numMatch) return `${name}:${numMatch[1]}`
+  throw new Error(`Unknown contenttweaker:bedrockore target state: ${name} [${prop}]`)
+}
+
+function loadBedrockOreTargets(): Map<number, BedrockOreTarget[]> {
+  const result = new Map<number, BedrockOreTarget[]>()
+
+  function collectFromGen(
+    gen: Record<string, unknown>,
+    dimIds: number[],
+    chunkChance: number,
+    clusterCount: number
+  ): void {
+    const type = typeof gen.type === 'string' ? gen.type : undefined
+    const nextChunkChance = typeof gen['chunk-chance'] === 'number' ? gen['chunk-chance'] : chunkChance
+    const nextClusterCount = typeof gen['cluster-count'] === 'number' ? gen['cluster-count'] : clusterCount
+    if (type === 'sequential' && Array.isArray(gen.generators)) {
+      for (const sub of gen.generators) {
+        if (sub && typeof sub === 'object') {
+          collectFromGen(sub as Record<string, unknown>, dimIds, nextChunkChance, nextClusterCount)
+        }
+      }
+      return
+    }
+    const blockField = gen.block
+    const blockList = Array.isArray(blockField) ? blockField : blockField ? [blockField] : []
+    const yMin = type === 'stalagmite'
+      ? 0
+      : Math.max(0, typeof gen['min-height'] === 'number' ? gen['min-height'] : 0)
+    const yMax = type === 'stalagmite'
+      ? Math.min(
+          256,
+          (typeof gen['min-height'] === 'number' ? gen['min-height'] : 0)
+        + (typeof gen['height-mod'] === 'number' ? gen['height-mod'] : 0)
+        + (typeof gen['height-variance'] === 'number' ? gen['height-variance'] : 0)
+        )
+      : Math.min(256, (typeof gen['max-height'] === 'number' ? gen['max-height'] : 255) + 1)
+    const freqWeight = nextClusterCount / Math.max(1, nextChunkChance)
+
+    for (const item of blockList) {
+      if (!item || typeof item !== 'object') continue
+      const entry = item as Record<string, unknown>
+      if (entry.name !== 'contenttweaker:bedrockore' || typeof entry['data-tag'] !== 'string') continue
+      const nameMatch = entry['data-tag'].match(TAG_NAME_RE)
+      const propMatch = entry['data-tag'].match(TAG_PROP_RE)
+      if (!nameMatch) continue
+      const targetBlock = resolveBedrockOreBlock(nameMatch[1], propMatch?.[1] ?? '')
+      const entryWeight = typeof entry.weight === 'number' ? entry.weight : 100
+      for (const dimId of dimIds) {
+        const list = result.get(dimId) ?? []
+        list.push({
+          block : targetBlock,
+          weight: entryWeight * freqWeight,
+          yMin,
+          yMax,
+        })
+        result.set(dimId, list)
+      }
+    }
+  }
+
+  for (const cfgPath of globSync('config/cofh/world/*.json')) {
+    const raw = loadText(cfgPath)
+    if (!raw.includes('contenttweaker:bedrockore')) continue
+    const parsed = JSON.parse(raw) as { populate?: Record<string, Record<string, unknown>> }
+    if (!parsed.populate) continue
+    for (const gen of Object.values(parsed.populate)) {
+      const dimCfg = gen.dimension as { restriction?: string, value?: number | number[] } | undefined
+      if (dimCfg?.restriction !== 'whitelist' || dimCfg.value === undefined) continue
+      const dimIds = Array.isArray(dimCfg.value) ? dimCfg.value : [dimCfg.value]
+      const chunkChance = typeof gen['chunk-chance'] === 'number' ? gen['chunk-chance'] : 1
+      const clusterCount = typeof gen['cluster-count'] === 'number' ? gen['cluster-count'] : 1
+      if (gen.generator && typeof gen.generator === 'object') {
+        collectFromGen(
+          { 'min-height': gen['min-height'], 'max-height': gen['max-height'], ...(gen.generator as Record<string, unknown>) },
+          dimIds,
+          chunkChance,
+          clusterCount
+        )
+      }
+    }
+  }
+  return result
+}
+const HARVESTCRAFT_GARDENS = [
+  'aridGarden',
+  'frostGarden',
+  'shadedGarden',
+  'soggyGarden',
+  'tropicalGarden',
+  'windyGarden',
+] as const
+
+function buildDroptSkippedRe(): RegExp | null {
+  const relScripts = globSync('scripts/**/*.zs')
+    .map(p => p.replace(/\\/g, '/'))
+    .filter(p => p === 'scripts/lib/dropt.zs' || loadText(p).includes('dropt.addDrop'))
+    .map(p => escapeRegex(p.replace(/^scripts\//, '')).replace(/\\\//g, '[/\\\\]'))
+  if (!relScripts.length) return null
+  return new RegExp(`Ignoring script \\{[^}]*:\\s*(?:${relScripts.join('|')})\\}`)
+}
 const DISTRIB_RE = /;$/
 const GET_ID_RE = /^[^:]+:[^:]+(?::\d+)?/
 const FORTUNES_RE = /"fortunes": \{(\n[^}]+)\}/g
@@ -73,172 +258,53 @@ Filter entries matching key=glob (multiple rules separated by &&)
     // Populate manual entries
     ///////////////////////////////////////////////////////////////////////
 
-    worldGen.splice(0, worldGen.length, ...worldGen.filter(o => o.dim !== 'Block Drops'))
-
     function addMeta(item: string) {
-      return item.replace(ADD_META_RE, '$1:0')
+      return HAS_NO_META_RE.test(item) ? `${item}:0` : item
     }
 
-    function simple(input: string, outputs: string | string[], chances?: (number | number[])[]) {
-      const chance = !chances
-        ? [[]] as number[][]
-        : (Array.isArray(chances[0]) ? chances : [chances]) as number[][]
+    function simple(input: string, outputs: string | string[], chances?: number[] | number[][]) {
+      const outputList = [outputs].flat()
+      let chanceRows: number[][]
+      if (!chances) {
+        chanceRows = [[]]
+      }
+      else if (Array.isArray(chances[0])) {
+        const matrix = chances as number[][]
+        if (matrix.length !== outputList.length) {
+          throw new Error(
+            `JER simple("${input}"): outputs (${outputList.length}) and chances (${matrix.length}) length mismatch`
+          )
+        }
+        chanceRows = matrix
+      }
+      else {
+        chanceRows = [chances as number[]]
+      }
+
       worldGen.push({
         block    : addMeta(input),
         distrib  : '0,1.0;255,1.0;',
         silktouch: false,
-        dropsList: [outputs].flat().map((output, i) => ({
-          itemStack: addMeta(output),
-          fortunes : {
-            0: chance[i % chance.length]?.[0] ?? 1,
-            1: chance[i % chance.length]?.[1] ?? 1,
-            2: chance[i % chance.length]?.[2] ?? 1,
-            3: chance[i % chance.length]?.[3] ?? 1,
-          },
-        })),
+        dropsList: outputList.map((output, i) => {
+          const row = chanceRows.length === 1 ? chanceRows[0] : chanceRows[i]
+          if (row.length > 0 && row.length !== 4) {
+            throw new Error(
+              `JER simple("${input}"): chance row for "${output}" has length ${row.length}, expected 4`
+            )
+          }
+          return {
+            itemStack: addMeta(output),
+            fortunes : {
+              0: row[0] ?? 1,
+              1: row[1] ?? 1,
+              2: row[2] ?? 1,
+              3: row[3] ?? 1,
+            },
+          }
+        }),
         dim: 'Block Drops',
       })
     }
-
-    simple('astralsorcery:blockgemcrystals:1', 'astralsorcery:itemperkgem:2')
-    simple('astralsorcery:blockgemcrystals:2', 'astralsorcery:itemperkgem:0')
-    simple('astralsorcery:blockgemcrystals:3', 'astralsorcery:itemperkgem:1')
-    simple('biomesoplenty:grass', 'minecraft:end_stone')
-    simple('botania:enchanter', 'minecraft:lapis_block')
-    simple('buildinggadgets:constructionblock_dense:0', 'buildinggadgets:constructionpaste:0', [9, 9, 9, 9])
-    simple('buildinggadgets:constructionblock:0', 'buildinggadgets:constructionpaste:0', [6, 6, 6, 6])
-    simple('extrautils2:ironwood_leaves:1', ['minecraft:blaze_powder', 'extrautils2:ironwood_sapling:1'], [0.2, 0.4, 0.8, 0.9])
-    simple('extrautils2:ironwood_leaves', 'extrautils2:ironwood_sapling')
-    simple('extrautils2:ironwood_log', 'extrautils2:ironwood_planks')
-    simple('forestry:bog_earth:3', 'forestry:peat')
-    simple('ic2:sheet', 'ic2:misc_resource:4')
-    simple('iceandfire:chared_grass_path', 'iceandfire:chared_dirt')
-    simple('iceandfire:frozen_grass_path', 'iceandfire:frozen_dirt')
-    simple('iceandfire:jar_pixie', 'iceandfire:jar_empty')
-    simple('lootr:lootr_trapped_chest', 'minecraft:trapped_chest')
-    simple('mekanism:saltblock', 'mekanism:salt', [4, 4, 4, 4])
-    simple('minecraft:vine', 'rustic:grape_stem')
-    simple('mysticalagriculture:end_inferium_ore', 'mysticalagriculture:crafting:0')
-    simple('mysticalagriculture:end_prosperity_ore', 'mysticalagriculture:crafting:5')
-    simple('mysticalagriculture:inferium_ore', 'mysticalagriculture:crafting:0')
-    simple('mysticalagriculture:nether_inferium_ore', 'mysticalagriculture:crafting:0')
-    simple('mysticalagriculture:nether_prosperity_ore', 'mysticalagriculture:crafting:5')
-    simple('mysticalagriculture:prosperity_ore', 'mysticalagriculture:crafting:5')
-    simple('mysticalagriculture:soulstone', 'mysticalagriculture:soulstone:1')
-    simple('rustic:leaves_apple', 'rustic:sapling_apple')
-    simple('scalinghealth:crystalore', 'scalinghealth:crystalshard')
-    simple('tconstruct:slime_leaves', 'tconstruct:slime_sapling')
-    simple('twilightforest:magic_log_core:0', 'twilightforest:magic_log:0')
-    simple('twilightforest:magic_log_core:1', 'twilightforest:magic_log:1')
-    simple('twilightforest:magic_log_core:2', 'twilightforest:magic_log:2')
-    simple('twilightforest:magic_log_core:3', 'twilightforest:magic_log:3')
-    simple('minecraft:mob_spawner', ['enderio:item_broken_spawner', 'actuallyadditions:item_misc:20'])
-    simple('endreborn:crop_ender_flower', 'minecraft:ender_pearl')
-    simple('bloodmagic:demon_crystal', 'bloodmagic:item_demon_crystal')
-    simple('exnihilocreatio:block_infested_leaves', 'minecraft:string', [2, 2, 2, 2])
-    // ------------------------------------------------------------------
-    // Custom gem ore drops for JER.
-    // When a new gem ore block is added in scripts/cot/init.zs, insert
-    // a matching `simple()` line here so that `npm run jer` regenerates
-    // config/jeresources/world-gen.json correctly.
-    // Block → gem item; fortune multipliers are identical for all gems.
-    // ------------------------------------------------------------------
-    simple('contenttweaker:ore_anglesite', 'contenttweaker:anglesite', [1, 1.5, 2.0, 2.5])
-    simple('contenttweaker:ore_benitoite', 'contenttweaker:benitoite', [1, 1.5, 2.0, 2.5])
-    simple('contenttweaker:ore_bixbite', 'contenttweaker:bixbite', [1, 1.5, 2.0, 2.5])
-    simple('randomthings:spectreleaf', ['randomthings:spectresapling', 'randomthings:ingredient:2'])
-    simple('randomthings:beanpod', [
-      'biomesoplenty:gem:1',
-      'biomesoplenty:gem:2',
-      'biomesoplenty:gem:3',
-      'biomesoplenty:gem:4',
-      'biomesoplenty:gem:5',
-      'biomesoplenty:gem:6',
-      'randomthings:ingredient:11',
-      'minecraft:iron_ingot',
-      'minecraft:gold_ingot',
-      'minecraft:emerald',
-      'randomthings:beans',
-    ], [
-      [0.5, 0.5, 0.5, 0.5],
-      [0.5, 0.5, 0.5, 0.5],
-      [0.5, 0.5, 0.5, 0.5],
-      [0.5, 0.5, 0.5, 0.5],
-      [0.5, 0.5, 0.5, 0.5],
-      [0.5, 0.5, 0.5, 0.5],
-      [8, 12, 16, 20],
-      [4, 7, 11, 15],
-      [0.5, 1, 1.5, 2],
-      [4, 5, 7, 8],
-    ])
-
-    simple('thaumcraft:stone_porous', [
-      'minecraft:gravel',
-      'thaumcraft:amber',
-      'thaumcraft:cluster',
-      'thaumcraft:cluster:2',
-      'thaumcraft:cluster:3',
-      'thaumcraft:cluster:5',
-      'thaumcraft:cluster:6',
-      'thaumcraft:cluster:4',
-    ], [
-      [0.80, 0.60, 0.40, 0.20],
-      [0.05, 0.10, 0.15, 0.20],
-      [0.05, 0.11, 0.16, 0.22],
-      [0.04, 0.08, 0.12, 0.16],
-      [0.04, 0.08, 0.12, 0.16],
-      [0.03, 0.06, 0.09, 0.12],
-      [0.03, 0.06, 0.09, 0.12],
-      [0.03, 0.05, 0.08, 0.11],
-    ])
-
-    simple('thaumcraft:stone_porous', [
-      'thaumcraft:cluster:1',
-      'minecraft:clay_ball',
-      'minecraft:quartz',
-      'minecraft:redstone',
-      'minecraft:emerald',
-      'minecraft:prismarine_shard',
-      'minecraft:prismarine_crystals',
-      'minecraft:diamond',
-    ], [
-      [0.022, 0.044, 0.066, 0.088],
-      [0.064, 0.128, 0.192, 0.256],
-      [0.037, 0.074, 0.111, 0.148],
-      [0.033, 0.066, 0.099, 0.132],
-      [0.009, 0.018, 0.027, 0.036],
-      [0.008, 0.016, 0.024, 0.032],
-      [0.007, 0.014, 0.021, 0.028],
-      [0.003, 0.006, 0.009, 0.012],
-    ])
-
-    for (let i = -1; i < 16; i++) {
-      simple(
-        `minecraft:${i === -1 ? '' : 'stained_'}glass:${Math.max(0, i)}`,
-        `quark:glass_shards:${i + 1}`,
-        [2, 3, 4, 4]
-      )
-    }
-
-    const harvestcraftData = config('config/harvestcraft.cfg')!.drops as Record<string, string>
-
-    for (const garden of [
-      'aridGarden',
-      'frostGarden',
-      'shadedGarden',
-      'soggyGarden',
-      'tropicalGarden',
-      'windyGarden',
-    ]) {
-      const list = harvestcraftData[garden]
-      simple(`harvestcraft:${garden.toLowerCase()}`, list, [1, 1, 1, 1].fill(2.0 / list.length))
-    }
-
-    ;[...loadText('crafttweaker.log').matchAll(MODIFY_DROP_RE)].forEach((m) => {
-      const { block, stack, luck } = m.groups ?? {}
-      if (block && stack && luck)
-        simple(block, stack.split(', '), parse2DArray(luck).slice(0, 4).map(([o]) => o))
-    })
 
     function parse2DArray(input: string): number[][] {
       // Normalize the input string
@@ -270,76 +336,290 @@ Filter entries matching key=glob (multiple rules separated by &&)
       return result
     }
 
+    function droptExpectedDrops(ranges: number[][], itemCount: number): number[] {
+      const count = Math.max(1, itemCount)
+      const expected: number[] = []
+      let weightedSum = 0
+      let totalWeight = 0
+      for (let fortune = 0; fortune < 4; fortune++) {
+        const [minDrop, maxDrop = minDrop] = ranges[fortune]
+        const weight = 10 ** fortune
+        weightedSum += weight * ((minDrop + maxDrop) / 2)
+        totalWeight += weight
+        expected.push(weightedSum / totalWeight / count)
+      }
+      return expected
+    }
+
+    function readHealthyDroptLog(logPath: string):
+      | { ok: true, entries: Map<string, { drops: string[], ranges: number[][] }> }
+      | { ok: false, reason: string } {
+      if (!existsSync(logPath))
+        return { ok: false, reason: `${logPath} does not exist` }
+
+      const logText = loadText(logPath)
+      if (!logText.trim())
+        return { ok: false, reason: `${logPath} is empty` }
+
+      if (CT_ERROR_RE.test(logText))
+        return { ok: false, reason: `${logPath} contains CraftTweaker [ERROR]/[FATAL] entries` }
+
+      if (!CT_INIT_RE.test(logText) || !CT_COMPLETE_RE.test(logText))
+        return { ok: false, reason: `${logPath} did not finish initialization` }
+
+      const skippedRe = buildDroptSkippedRe()
+      if (skippedRe?.test(logText))
+        return { ok: false, reason: `${logPath} skipped one or more dropt scripts (partial modpack boot)` }
+
+      const entries = new Map<string, { drops: string[], ranges: number[][] }>()
+      for (const line of logText.split(/\r?\n/)) {
+        if (!line.includes('Modify drop;')) continue
+        const m = MODIFY_DROP_RE.exec(line)
+        if (!m?.groups)
+          return { ok: false, reason: `Malformed Modify drop line: "${line.slice(0, 120)}"` }
+        const { block, stack, luck } = m.groups
+        if (!block.trim() || !stack.trim() || !luck.trim())
+          return { ok: false, reason: `Malformed Modify drop line: "${line.slice(0, 120)}"` }
+        const drops = stack.split(', ').map(s => s.trim()).filter(Boolean)
+        let ranges: number[][]
+        try {
+          ranges = parse2DArray(luck)
+        }
+        catch {
+          return { ok: false, reason: `Malformed Modify drop luck array for block "${block.trim()}"` }
+        }
+        if (!drops.length || ranges.length < 4 || ranges.some(r => r.length !== 2 || r.some(n => !Number.isFinite(n))))
+          return { ok: false, reason: `Malformed Modify drop line for block "${block.trim()}"` }
+        entries.set(addMeta(block.trim()), { drops, ranges })
+      }
+
+      if (entries.size === 0)
+        return { ok: false, reason: `${logPath} has no "Modify drop;" entries (utils.DEBUG may be false)` }
+
+      return { ok: true, entries }
+    }
+
+    const droptHealth = readHealthyDroptLog('crafttweaker.log')
+    const harvestcraftPath = 'config/harvestcraft.cfg'
+    const harvestcraftCfg = existsSync(harvestcraftPath) ? config(harvestcraftPath) : undefined
+    const harvestcraftData = harvestcraftCfg?.drops as Record<string, string[]> | undefined
+    const hasAllGardens = Boolean(
+      harvestcraftData
+      && HARVESTCRAFT_GARDENS.every(g => Array.isArray(harvestcraftData[g]) && harvestcraftData[g].length > 0)
+    )
+
+    if (!droptHealth.ok) {
+      consola.warn(`Skipping Block Drops rebuild: ${droptHealth.reason}. Keeping existing Block Drops entries.`)
+    }
+    else if (!hasAllGardens || !harvestcraftData) {
+      consola.warn('Skipping Block Drops rebuild: failed to parse config/harvestcraft.cfg garden drops. Keeping existing Block Drops entries.')
+    }
+    else {
+      worldGen.splice(0, worldGen.length, ...worldGen.filter(o => o.dim !== 'Block Drops'))
+
+      simple('astralsorcery:blockgemcrystals:1', 'astralsorcery:itemperkgem:2')
+      simple('astralsorcery:blockgemcrystals:2', 'astralsorcery:itemperkgem:0')
+      simple('astralsorcery:blockgemcrystals:3', 'astralsorcery:itemperkgem:1')
+      simple('biomesoplenty:grass', 'minecraft:end_stone')
+      simple('botania:enchanter', 'minecraft:lapis_block')
+      simple('buildinggadgets:constructionblock_dense:0', 'buildinggadgets:constructionpaste:0', [9, 9, 9, 9])
+      simple('buildinggadgets:constructionblock:0', 'buildinggadgets:constructionpaste:0', [6, 6, 6, 6])
+      simple('extrautils2:ironwood_leaves:1', ['minecraft:blaze_powder', 'extrautils2:ironwood_sapling:1'], [0.2, 0.4, 0.8, 0.9])
+      simple('extrautils2:ironwood_leaves', 'extrautils2:ironwood_sapling')
+      simple('extrautils2:ironwood_log', 'extrautils2:ironwood_planks')
+      simple('forestry:bog_earth:3', 'forestry:peat')
+      simple('ic2:sheet', 'ic2:misc_resource:4')
+      simple('iceandfire:chared_grass_path', 'iceandfire:chared_dirt')
+      simple('iceandfire:frozen_grass_path', 'iceandfire:frozen_dirt')
+      simple('iceandfire:jar_pixie', 'iceandfire:jar_empty')
+      simple('lootr:lootr_trapped_chest', 'minecraft:trapped_chest')
+      simple('mekanism:saltblock', 'mekanism:salt', [4, 4, 4, 4])
+      simple('minecraft:vine', 'rustic:grape_stem')
+      simple('mysticalagriculture:end_inferium_ore', 'mysticalagriculture:crafting:0')
+      simple('mysticalagriculture:end_prosperity_ore', 'mysticalagriculture:crafting:5')
+      simple('mysticalagriculture:inferium_ore', 'mysticalagriculture:crafting:0')
+      simple('mysticalagriculture:nether_inferium_ore', 'mysticalagriculture:crafting:0')
+      simple('mysticalagriculture:nether_prosperity_ore', 'mysticalagriculture:crafting:5')
+      simple('mysticalagriculture:prosperity_ore', 'mysticalagriculture:crafting:5')
+      simple('mysticalagriculture:soulstone', 'mysticalagriculture:soulstone:1')
+      simple('rustic:leaves_apple', 'rustic:sapling_apple')
+      simple('scalinghealth:crystalore', 'scalinghealth:crystalshard')
+      simple('tconstruct:slime_leaves', 'tconstruct:slime_sapling')
+      simple('twilightforest:magic_log_core:0', 'twilightforest:magic_log:0')
+      simple('twilightforest:magic_log_core:1', 'twilightforest:magic_log:1')
+      simple('twilightforest:magic_log_core:2', 'twilightforest:magic_log:2')
+      simple('twilightforest:magic_log_core:3', 'twilightforest:magic_log:3')
+      simple('minecraft:mob_spawner', ['enderio:item_broken_spawner', 'actuallyadditions:item_misc:20'])
+      simple('endreborn:crop_ender_flower', 'minecraft:ender_pearl')
+      simple('bloodmagic:demon_crystal', 'bloodmagic:item_demon_crystal')
+      simple('exnihilocreatio:block_infested_leaves', 'minecraft:string', [2, 2, 2, 2])
+      // ------------------------------------------------------------------
+      // Custom gem ore drops for JER.
+      // When a new gem ore block is added in scripts/cot/init.zs, insert
+      // a matching `simple()` line here so that `pnpm dev:jer` regenerates
+      // config/jeresources/world-gen.json correctly.
+      // Block → gem item; fortune multipliers are identical for all gems.
+      // ------------------------------------------------------------------
+      simple('contenttweaker:ore_anglesite', 'contenttweaker:anglesite', [1, 1.5, 2.0, 2.5])
+      simple('contenttweaker:ore_benitoite', 'contenttweaker:benitoite', [1, 1.5, 2.0, 2.5])
+      simple('contenttweaker:ore_bixbite', 'contenttweaker:bixbite', [1, 1.5, 2.0, 2.5])
+      simple('randomthings:spectreleaf', ['randomthings:spectresapling', 'randomthings:ingredient:2'])
+      simple('randomthings:beanpod', [
+        'biomesoplenty:gem:1',
+        'biomesoplenty:gem:2',
+        'biomesoplenty:gem:3',
+        'biomesoplenty:gem:4',
+        'biomesoplenty:gem:5',
+        'biomesoplenty:gem:6',
+        'randomthings:ingredient:11',
+        'minecraft:iron_ingot',
+        'minecraft:gold_ingot',
+        'minecraft:emerald',
+        'randomthings:beans',
+      ], [
+        [0.083, 0.083, 0.083, 0.083],
+        [0.083, 0.083, 0.083, 0.083],
+        [0.083, 0.083, 0.083, 0.083],
+        [0.083, 0.083, 0.083, 0.083],
+        [0.083, 0.083, 0.083, 0.083],
+        [0.083, 0.083, 0.083, 0.083],
+        [1, 1, 1, 1],
+        [14, 14, 14, 14],
+        [9.5, 9.5, 9.5, 9.5],
+        [1, 1, 1, 1],
+        [6, 6, 6, 6],
+      ])
+
+      simple('thaumcraft:stone_porous', [
+        'minecraft:gravel',
+        'thaumcraft:amber',
+        'thaumcraft:cluster',
+        'thaumcraft:cluster:2',
+        'thaumcraft:cluster:3',
+        'thaumcraft:cluster:5',
+        'thaumcraft:cluster:6',
+        'thaumcraft:cluster:4',
+        'thaumcraft:cluster:1',
+        'minecraft:clay_ball',
+        'minecraft:quartz',
+        'minecraft:redstone',
+        'minecraft:emerald',
+        'minecraft:prismarine_shard',
+        'minecraft:prismarine_crystals',
+        'minecraft:diamond',
+      ], [
+        [0.80, 0.60, 0.40, 0.20],
+        [0.05, 0.10, 0.15, 0.20],
+        [0.05, 0.11, 0.16, 0.22],
+        [0.04, 0.08, 0.12, 0.16],
+        [0.04, 0.08, 0.12, 0.16],
+        [0.03, 0.06, 0.09, 0.12],
+        [0.03, 0.06, 0.09, 0.12],
+        [0.03, 0.05, 0.08, 0.11],
+        [0.022, 0.044, 0.066, 0.088],
+        [0.064, 0.128, 0.192, 0.256],
+        [0.037, 0.074, 0.111, 0.148],
+        [0.033, 0.066, 0.099, 0.132],
+        [0.009, 0.018, 0.027, 0.036],
+        [0.008, 0.016, 0.024, 0.032],
+        [0.007, 0.014, 0.021, 0.028],
+        [0.003, 0.006, 0.009, 0.012],
+      ])
+
+      for (let i = -1; i < 16; i++) {
+        simple(
+          `minecraft:${i === -1 ? '' : 'stained_'}glass:${Math.max(0, i)}`,
+          `quark:glass_shards:${i + 1}`,
+          [2, 3, 4, 4]
+        )
+      }
+
+      const harvestcraftGardens = harvestcraftCfg?.gardens as Record<string, unknown> | undefined
+      const rawDropAmount = harvestcraftGardens?.gardendropAmount
+      const gardenDropAmount = typeof rawDropAmount === 'number' && Number.isFinite(rawDropAmount) && rawDropAmount >= 0 ? rawDropAmount : 3
+      for (const garden of HARVESTCRAFT_GARDENS) {
+        const list = harvestcraftData[garden]
+        const chance = Math.min(gardenDropAmount, list.length) / list.length
+        simple(`harvestcraft:${garden.toLowerCase()}`, list, [chance, chance, chance, chance])
+      }
+
+      for (const [block, { drops, ranges }] of droptHealth.entries) {
+        simple(block, drops, droptExpectedDrops(ranges, drops.length))
+      }
+    }
+
     ///////////////////////////////////////////////////////////////////////
     // Cleanup
     ///////////////////////////////////////////////////////////////////////
 
-    function shortenValue(v:number) {
-      if (!v) return String(v)
-      const list = [
-        v.toPrecision(2).replace(SHORTEN_VALUE_RE_1, '').replace(SHORTEN_VALUE_RE_2, '$1'),
-        v.toExponential(1),
-      ].sort((a, b) => a.length - b.length)
-      return list[0]
+    function shortenValue(v: number) {
+      if (!v) return '0'
+      const fixed = String(Number(v.toPrecision(2)))
+      const exp = v.toExponential(1)
+      return fixed.length <= exp.length ? fixed : exp
     }
+
+    const planetNames = loadPlanetNames()
+    const bedrockTargets = loadBedrockOreTargets()
+
+    worldGen = worldGen.filter(wg => addMeta(wg.block) !== 'minecraft:air:0')
 
     worldGen.forEach((wg) => {
       const dimMatch = wg.dim.match(DIM_MATCH_RE)
       if (dimMatch) {
         const [, dimNum, dimName] = dimMatch
-        wg.dim = `${dimName.trim()} (${dimNum})`
+        wg.dim = `${planetNames.get(dimNum) ?? dimName.trim()} (${dimNum})`
       }
+
+      wg.block = addMeta(wg.block)
 
       // Remove default silk touch value
       if (wg.silktouch === false) delete wg.silktouch
 
-      // Descrease the precision
+      // Decrease the precision
       const levels = wg.distrib
         .replace(DISTRIB_RE, '')
         .split(';')
         .map(s => s.split(',').map(Number) as [number, number])
-        // .map(([l, v]) => [l, shortenValue(v)])
 
       wg.distrib = clenDistrib(clenDistrib(clenDistrib(simplifyDistrib(levels))))
         .map(l => l.join(','))
         .join(';')
 
       wg.dropsList?.forEach((d) => {
-        // Descrease precision of fortunes
-        ([0, 1, 2, 3] as const).filter(n => d.fortunes[n]).forEach((n) => {
+        d.itemStack = addMeta(d.itemStack)
+        if (!d.fortunes) return
+        // Decrease precision of fortunes
+        for (const n of [0, 1, 2, 3] as const) {
           const v = d.fortunes[n]
           if (v !== undefined) d.fortunes[n] = Number(v.toPrecision(2))
-        })
-
-        if (Object.entries(d.fortunes).every((v, _, arr) => v[1] === arr[0][1])) {
-          d.fortunes = Object.fromEntries([Object.entries(d.fortunes)[0]])
         }
 
-        if (!Object.values(d.fortunes).length)
-          delete (d as Partial<Drop>).fortunes
+        const entries = Object.entries(d.fortunes)
+        if (entries.length > 1 && entries.every(([, val]) => val === entries[0][1])) {
+          d.fortunes = Object.fromEntries([entries[0]])
+        }
       })
 
       // Clean Remove Drop List
       if (wg.dropsList?.length) {
-        wg.dropsList = wg.dropsList.filter((d, _, arr) => !(
-          // Remove air
-          d.itemStack === 'minecraft:air:0'
+        wg.dropsList = wg.dropsList.filter((d) => {
+          if (d.itemStack === 'minecraft:air:0') return false
+          const fortuneKeys = d.fortunes ? Object.keys(d.fortunes) : []
+          return fortuneKeys.length > 0
+        })
 
-          // Remove same block
-          || (
-            d.itemStack === wg.block && (
-              fortuneSame(d.fortunes)
-              || (
-                arr.length === 1
-                && d.fortunes
-                && Object.keys(d.fortunes).length === 1
-                && d.fortunes['0'] === 1)
-            )
-          )
-        ))
+        if (
+          wg.dropsList.length === 1
+          && wg.dropsList[0].itemStack === wg.block
+          && Object.keys(wg.dropsList[0].fortunes).length === 1
+          && wg.dropsList[0].fortunes['0'] === 1
+        ) {
+          wg.dropsList = []
+        }
 
         // Remove same item with different NBT tags flooding drops
-        const groups:{ [id: string]: Drop[] } = {}
+        const groups: { [id: string]: Drop[] } = {}
         wg.dropsList.forEach(d => (groups[getID(d.itemStack)] ??= []).push(d))
         Object.entries(groups).forEach(([id, d]) => {
           if (d.length > 1 && wg.dropsList!.length > 8) {
@@ -348,20 +628,14 @@ Filter entries matching key=glob (multiple rules separated by &&)
         })
         wg.dropsList = Object.entries(groups).map(([_, d]) => d).flat()
 
-        // if (wg.dropsList.length > 8) console.log('Too big dropsList: ', wg.dropsList.length, wg.block)
-
         if (!wg.dropsList.length) delete wg.dropsList
       }
     })
 
-    function getID(itemStack:string) {
+    function getID(itemStack: string) {
       const m = itemStack.match(GET_ID_RE)
       if (!m) throw new Error(`No ID for item: ${itemStack}`)
       return m[0]
-    }
-
-    function fortuneSame(fortunes: Drop['fortunes']) {
-      return  ([0, 1, 2, 3] as const).map(n => fortunes[n]).every((v, _, arr) => v === arr[0])
     }
 
     function clenDistrib(arr: [number, string][]) {
@@ -380,7 +654,7 @@ Filter entries matching key=glob (multiple rules separated by &&)
         if (sameLevel && targetv === bv) continue
 
         // Skip if difference less than 2%
-        if (sameLevel && Math.abs((targetv - bv) / bv) <= 0.02) continue
+        if (sameLevel && bv !== 0 && Math.abs((targetv - bv) / bv) <= 0.02) continue
 
         result.push(arr[i])
       }
@@ -391,7 +665,10 @@ Filter entries matching key=glob (multiple rules separated by &&)
     }
 
     function simplifyDistrib(distrib: [number, number | string][]) {
-      const maxV = Math.max(...distrib.map(([,v]) => Number(v)))
+      const maxV = Math.max(...distrib.map(([, v]) => Number(v)))
+      if (!Number.isFinite(maxV) || maxV <= 0)
+        return distrib.map(([l, v]) => [l, shortenValue(Number(v))] as [number, string])
+
       const mult = 80 / maxV // Size of graph is 128:40
 
       const simplified = simplify(
@@ -401,6 +678,164 @@ Filter entries matching key=glob (multiple rules separated by &&)
       )
 
       return simplified.map(o => [o.x, shortenValue(o.y / mult)] as [number, string])
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Distribution sampling & sorting helpers
+    ///////////////////////////////////////////////////////////////////////
+    function getRampDistribution(minY: number, maxY: number, minChance: number, maxChance: number): number[] {
+      if (minY === maxY) return []
+      if (minY > maxY) return getRampDistribution(maxY, minY, minChance, maxChance).reverse()
+      const range = maxY - minY
+      const chanceDiff = maxChance - minChance
+      const result = Array.from<number>({ length: range + 1 }).fill(0)
+      for (let i = 0; i < range; i++)
+        result[i] = minChance + (chanceDiff * i) / range
+      return result
+    }
+
+    function addDistribution(base: number[], add: number[], offset = 0): void {
+      let addCount = 0
+      const limit = Math.min(base.length, add.length + offset)
+      for (let i = offset; i < limit; i++) {
+        if (i < 0) {
+          addCount++
+          continue
+        }
+        base[i] += add[addCount++]
+      }
+    }
+
+    function sampleDistrib(distrib: string): number[] {
+      const array = Array.from<number>({ length: 256 }).fill(0)
+      const pointMap = new Map<number, number>()
+      for (const part of distrib.split(';')) {
+        if (!part) continue
+        const split = part.split(',')
+        if (split.length !== 2) continue
+        const [lvlStr, chanceStr] = split
+        const level = Number.parseInt(lvlStr ?? '', 10)
+        const chance = Number.parseFloat(chanceStr ?? '')
+        if (Number.isFinite(level) && Number.isFinite(chance) && !pointMap.has(level))
+          pointMap.set(level, chance)
+      }
+      const points = [...pointMap.entries()]
+        .sort(([a], [b]) => a - b)
+        .map(([level, chance]) => ({ level, chance }))
+      if (!points.length) return array
+
+      addDistribution(array, getRampDistribution(0, points[0].level, 0, points[0].chance))
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1]
+        const curr = points[i]
+        const [min, max] = prev.chance <= curr.chance ? [prev, curr] : [curr, prev]
+        addDistribution(array, getRampDistribution(min.level, max.level, min.chance, max.chance), prev.level)
+        if (prev.level >= 0 && prev.level < 256) array[prev.level] = prev.chance
+        if (curr.level >= 0 && curr.level < 256) array[curr.level] = curr.chance
+      }
+      return array
+    }
+
+    function curveToDistrib(curve: number[]): string {
+      let lastNonZero = -1
+      for (let y = curve.length - 1; y >= 0; y--) {
+        if (curve[y] > 0) {
+          lastNonZero = y
+          break
+        }
+      }
+      if (lastNonZero < 0) return '0,0'
+      const endY = Math.min(255, lastNonZero + 1)
+      let current = ''
+      let levels: [number, number | string][] = []
+      for (let y = 0; y <= endY; y++) levels.push([y, curve[y]])
+      // Converge to the fixed point of worldGen.forEach cleanup so dev:jer is 1-pass idempotent
+      for (let pass = 0; pass < 5; pass++) {
+        const simplified = clenDistrib(clenDistrib(clenDistrib(simplifyDistrib(levels))))
+        const nextStr = simplified.map(l => l.join(',')).join(';')
+        if (nextStr === current) return nextStr
+        current = nextStr
+        levels = simplified.map(([l, v]) => [l, Number(v)])
+      }
+      return current
+    }
+
+    function extractDimId(dim: string): number | null {
+      const m = dim.match(DIM_ID_RE)
+      return m ? Number.parseInt(m[1], 10) : null
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Expand contenttweaker:bedrockore into its target ores
+    ///////////////////////////////////////////////////////////////////////
+    if (worldGen.some(wg => wg.block === 'contenttweaker:bedrockore:0')) {
+      const templateByBlock = new Map<string, WorldGenEntry>()
+      for (const wg of worldGen) {
+        if (wg.dim !== 'Block Drops' && !templateByBlock.has(wg.block)) {
+          templateByBlock.set(wg.block, wg)
+        }
+      }
+
+      const existingByKey = new Map<string, WorldGenEntry>()
+      for (const wg of worldGen) {
+        existingByKey.set(`${wg.dim}\0${wg.block}`, wg)
+      }
+
+      const nextWorldGen: WorldGenEntry[] = []
+      for (const wg of worldGen) {
+        if (wg.block !== 'contenttweaker:bedrockore:0') {
+          nextWorldGen.push(wg)
+          continue
+        }
+        const dimId = extractDimId(wg.dim)
+        const targets = dimId !== null ? bedrockTargets.get(dimId) : undefined
+        if (!targets?.length) {
+          consola.warn(`No CoFH target mapping found for contenttweaker:bedrockore:0 in ${wg.dim}`)
+          nextWorldGen.push(wg)
+          continue
+        }
+
+        const srcCurve = sampleDistrib(wg.distrib)
+        const addedByBlock = new Map<string, number[]>()
+        for (const t of targets) {
+          if (!addedByBlock.has(t.block)) {
+            addedByBlock.set(t.block, Array.from<number>({ length: 256 }).fill(0))
+          }
+        }
+
+        for (let y = 0; y < 256; y++) {
+          const val = srcCurve[y]
+          if (val <= 0) continue
+          const active = targets.filter(t => y >= t.yMin && y < t.yMax)
+          const pool = active.length ? active : targets
+          const totalWeight = pool.reduce((sum, t) => sum + t.weight, 0)
+          if (totalWeight <= 0) continue
+          for (const t of pool) {
+            addedByBlock.get(t.block)![y] += (val * t.weight) / totalWeight
+          }
+        }
+
+        for (const [block, addCurve] of addedByBlock) {
+          const existing = existingByKey.get(`${wg.dim}\0${block}`)
+          if (existing) {
+            const mergedCurve = sampleDistrib(existing.distrib).map((v, y) => v + addCurve[y])
+            existing.distrib = curveToDistrib(mergedCurve)
+          }
+          else {
+            const tpl = templateByBlock.get(block)
+            const entry: WorldGenEntry = {
+              block,
+              distrib: curveToDistrib(addCurve),
+              ...tpl?.silktouch ? { silktouch: tpl.silktouch } : {},
+              ...tpl?.dropsList ? { dropsList: structuredClone(tpl.dropsList) } : {},
+              dim    : wg.dim,
+            }
+            existingByKey.set(`${wg.dim}\0${block}`, entry)
+            nextWorldGen.push(entry)
+          }
+        }
+      }
+      worldGen = nextWorldGen
     }
 
     ///////////////////////////////////////////////////////////////////////
@@ -431,6 +866,48 @@ Filter entries matching key=glob (multiple rules separated by &&)
       else
         consola.warn('No entries matched the provided filters.')
     }
+
+    const seenKeys = new Set<string>()
+    for (const wg of worldGen) {
+      const key = `${wg.dim}\0${wg.block}`
+      if (seenKeys.has(key)) consola.warn(`Duplicate (dim, block) entry: ${wg.dim} | ${wg.block}`)
+      seenKeys.add(key)
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Sort by dimension (matching scripts/mixin/jer.zs) and rarity
+    ///////////////////////////////////////////////////////////////////////
+    function getAverageBlockCountPerChunk(distrib: string): number {
+      return Math.round(sampleDistrib(distrib).reduce((acc, v) => acc + v, 0) * 256 * 100) / 100
+    }
+
+    function cmpCodeUnit(a: string, b: string): number {
+      return a < b ? -1 : a > b ? 1 : 0
+    }
+
+    const avgCache = new Map<WorldGenEntry, number>(
+      worldGen.map(wg => [wg, getAverageBlockCountPerChunk(wg.distrib)])
+    )
+
+    worldGen.sort((a, b) => {
+      const idA = extractDimId(a.dim)
+      const idB = extractDimId(b.dim)
+      if ((idA !== null) !== (idB !== null)) return idA !== null ? -1 : 1
+      if (idA !== null && idB !== null) {
+        const absDiff = Math.abs(idA) - Math.abs(idB)
+        if (absDiff !== 0) return absDiff
+        const rawDiff = idA - idB
+        if (rawDiff !== 0) return rawDiff
+      }
+      if (a.dim !== b.dim) {
+        if (a.dim === 'Block Drops') return 1
+        if (b.dim === 'Block Drops') return -1
+        return cmpCodeUnit(a.dim, b.dim)
+      }
+      const distDiff = (avgCache.get(b) ?? 0) - (avgCache.get(a) ?? 0)
+      if (distDiff !== 0) return distDiff
+      return cmpCodeUnit(a.block, b.block)
+    })
 
     const stringified = `${JSON.stringify(worldGen, null, 2).trimEnd()}\n`
       .replace(FORTUNES_RE, (m, r: string) => `"fortunes": {${r.replace(SPACES_RE, ' ')}}`)

@@ -1,0 +1,30 @@
+#PARSE_ESCAPES
+# Language files for Portal Spread custom CraftTweaker script
+
+# JEI tab
+requious.jei.recipe.portal_spread=Portal Spread
+
+# Main mechanics
+portal_spread.created=§7A energia corrompida do portal se espalhará lentamente por §6%s§7 blocos ao redor, a menos que %s §7sejam colocados nos cantos.\n§8(Toque no portal para sentir seu poder.)
+portal_spread.broken=§7Com o portal do Nether quebrado, não há mais energia corrompida se espalhando.
+portal_spread.info=§7O portal emite §3ondas de energia§7, convertendo blocos próximos.\n§7■ Ondas são emitidas §6%s§7 vez(es) a cada §6%s§7 segundo(s).\n§7■ Cada onda busca até §6%s§7 blocos até a conversão.\n§7■ O portal tem alcance de até §6%s§7 blocos de raio.
+portal_spread.idle=§7Este portal parou e não consegue espalhar sua energia.
+
+# Modifier 0
+portal_spread.0_add=§7Você sente a energia do portal ficando §3mais fraca§7.
+portal_spread.0_red=§7Você sente a energia do portal ficando §6mais forte§7.
+portal_spread.0_max=§7O portal parou completamente de se espalhar.
+
+# Modifier 1
+portal_spread.1_add=§7Você sente a energia do portal ficando §6mais forte§7.
+portal_spread.1_red=§7Você sente a energia do portal ficando §3mais fraca§7.
+portal_spread.1_max=§7O portal atingiu a velocidade máxima de propagação.
+
+# Portal modifiers
+portal_spread.modifier.header=§3Como canto de portal, este bloco fornece os seguintes modificadores:
+portal_spread.modifier.slow=§c- Desacelera a propagação
+portal_spread.modifier.fast=§a- Acelera a propagação
+portal_spread.modifier.weak=§c- Reduz blocos escaneados por onda
+portal_spread.modifier.potent=§a- Aumenta blocos escaneados por onda
+portal_spread.modifier.small=§c- Reduz o raio de propagação
+portal_spread.modifier.large=§a- Aumenta o raio de propagação

@@ -1,0 +1,20 @@
+commands.lang.usage="/lang" ou "/lang hand" para despejar o inventário ou item segurado no arquivo crafttweaker.log
+commands.lang.output=Exportados %s itens para o arquivo crafttweaker.log
+commands.lang.empty=Seu inventário está vazio. Coloque um item não traduzido nele
+commands.lang.hand=%s\nItem segurado exportado para o arquivo crafttweaker.log
+
+commands.addtooltip.usage="§e/addtooltip §6[Descrição do Item]§r" para descrever um item no arquivo crafttweaker.log
+commands.addtooltip.needtext=O comando §e/addtooltip§r precisa de uma string de tooltip. Tente §e/addtooltip §6Olá mundo!
+commands.addtooltip.needitem=O comando §e/addtooltip§r precisa de um item na mão. Segure algo na mão.
+commands.addtooltip.succes=§7Tooltip exportada para §n§fcrafttweaker.log
+commands.addtooltip.notag=§8Esteja ciente de que §7/addtooltip§8 não considera tags NBT
+
+commands.restart_server.usage=§8[§6ø§8]§r Todos os jogadores no servidor devem executar este comando para reiniciar o servidor
+commands.restart_server.you_want=§8[§6ø§8]§r Você quer §nreiniciar o servidor§r. Outros jogadores têm %s segundos para digitar §a/restart_server§r.
+commands.restart_server.query=§8[§6ø§8]§r %s quer §nreiniciar o servidor§r. Digite §a/restart_server§r se você também quiser §nreiniciar o servidor§r.
+commands.restart_server.failed=§8[§6ø§8]§r Falha na votação para reiniciar. Estes jogadores recusaram digitar §a/restart_server§r: %s
+commands.restart_server.cancelled=§8[§6ø§8]§r A votação para §nreiniciar o servidor§r foi cancelada
+commands.restart_server.already_voted=§8[§6ø§8]§r Você já votou para §nreiniciar o servidor§r e está aguardando estes jogadores votarem: %s
+commands.restart_server.awaiting=§8[§6ø§8]§r Estes jogadores também devem digitar §a/restart_server§r: %s
+commands.restart_server.in_process=§8[§6ø§8]§r §c§nO servidor reiniciará§r em poucos segundos...
+commands.restart_server.delay=§8[§6ø§8]§r §cO servidor será parado em 3 segundos!
