@@ -6,6 +6,7 @@
 
 import { existsSync } from 'node:fs'
 
+import { load } from 'cheerio'
 import { defineCommand, runMain } from 'citty'
 import { consola } from 'consola'
 import picomatch from 'picomatch'
@@ -32,6 +33,167 @@ const DIM_ID_RE = /\((-?\d{1,9})\)$/
 const CT_ERROR_RE = /^(?:\[[^\]]+\])*\[(?:ERROR|FATAL)\]/m
 const CT_INIT_RE = /^\[INITIALIZATION\]/m
 const CT_COMPLETE_RE = /^\[(?:AVAILABLE|SERVER_STARTING|SERVER_STARTED)\]/m
+const PROP_INT_RE = /^[^=]+=(\d+)$/
+const TAG_NAME_RE = /\bname:\s*"([^"]+)"/
+const TAG_PROP_RE = /\bprop:\s*"([^"]*)"/
+const BEDROCKORE_PROP_META: Record<string, Record<string, number>> = {
+  'actuallyadditions:block_misc': {
+    type_ore_black_quartz: 3,
+  },
+  'enderio:block_alloy': {
+    variant_electrical_steel  : 0,
+    variant_energetic_alloy   : 1,
+    variant_vibrant_alloy     : 2,
+    variant_redstone_alloy    : 3,
+    variant_conductive_iron   : 4,
+    variant_pulsating_iron    : 5,
+    variant_dark_steel        : 6,
+    variant_soularium         : 7,
+    variant_end_steel         : 8,
+    variant_construction_alloy: 9,
+  },
+  'enderio:block_alloy_endergy': {
+    variant_crude_steel           : 0,
+    variant_crystalline_alloy     : 1,
+    variant_melodic_alloy         : 2,
+    variant_stellar_alloy         : 3,
+    variant_crystalline_pink_slime: 4,
+  },
+  'netherendingores:ore_end_modded_1': {
+    blocks_aluminum_ore     : 0,
+    blocks_copper_ore       : 1,
+    blocks_lead_ore         : 3,
+    blocks_nickel_ore       : 5,
+    blocks_tin_ore          : 8,
+    blocks_certus_quartz_ore: 9,
+    blocks_osmium_ore       : 11,
+    blocks_uranium_ore      : 12,
+  },
+  'netherendingores:ore_end_vanilla': {
+    blocks_coal_ore    : 0,
+    blocks_iron_ore    : 4,
+    blocks_lapis_ore   : 5,
+    blocks_redstone_ore: 6,
+  },
+  'netherendingores:ore_other_1': {
+    blocks_end_quartz_ore: 1,
+  },
+  'thermalfoundation:ore_fluid': {
+    type_ender: 4,
+  },
+}
+
+interface BedrockOreTarget {
+  block : string
+  weight: number
+  yMax  : number
+  yMin  : number
+}
+
+function loadPlanetNames(): Map<string, string> {
+  const map = new Map<string, string>()
+  const defsPath = 'config/advRocketry/planetDefs.xml'
+  if (!existsSync(defsPath)) return map
+  const $ = load(loadText(defsPath), { xmlMode: true })
+  $('planet[DIMID][name]').each((_, el) => {
+    // External mapped dimensions (e.g. Earth=0, Twilight=7) carry dimMapping=""
+    if ($(el).attr('dimMapping') !== undefined) return
+    const id = $(el).attr('DIMID')?.trim()
+    const name = $(el).attr('name')?.trim()
+    if (id && name && !map.has(id)) map.set(id, name)
+  })
+  return map
+}
+
+function resolveBedrockOreBlock(name: string, prop: string): string {
+  const key = prop.trim().replace('=', '_')
+  const meta = BEDROCKORE_PROP_META[name]?.[key]
+  if (meta !== undefined) return `${name}:${meta}`
+  const numMatch = prop.trim().match(PROP_INT_RE)
+  if (numMatch) return `${name}:${numMatch[1]}`
+  throw new Error(`Unknown contenttweaker:bedrockore target state: ${name} [${prop}]`)
+}
+
+function loadBedrockOreTargets(): Map<number, BedrockOreTarget[]> {
+  const result = new Map<number, BedrockOreTarget[]>()
+
+  function collectFromGen(
+    gen: Record<string, unknown>,
+    dimIds: number[],
+    chunkChance: number,
+    clusterCount: number
+  ): void {
+    const type = typeof gen.type === 'string' ? gen.type : undefined
+    const nextChunkChance = typeof gen['chunk-chance'] === 'number' ? gen['chunk-chance'] : chunkChance
+    const nextClusterCount = typeof gen['cluster-count'] === 'number' ? gen['cluster-count'] : clusterCount
+    if (type === 'sequential' && Array.isArray(gen.generators)) {
+      for (const sub of gen.generators) {
+        if (sub && typeof sub === 'object') {
+          collectFromGen(sub as Record<string, unknown>, dimIds, nextChunkChance, nextClusterCount)
+        }
+      }
+      return
+    }
+    const blockField = gen.block
+    const blockList = Array.isArray(blockField) ? blockField : blockField ? [blockField] : []
+    const yMin = type === 'stalagmite'
+      ? 0
+      : Math.max(0, typeof gen['min-height'] === 'number' ? gen['min-height'] : 0)
+    const yMax = type === 'stalagmite'
+      ? Math.min(
+          256,
+          (typeof gen['min-height'] === 'number' ? gen['min-height'] : 0)
+        + (typeof gen['height-mod'] === 'number' ? gen['height-mod'] : 0)
+        + (typeof gen['height-variance'] === 'number' ? gen['height-variance'] : 0)
+        )
+      : Math.min(256, (typeof gen['max-height'] === 'number' ? gen['max-height'] : 255) + 1)
+    const freqWeight = nextClusterCount / Math.max(1, nextChunkChance)
+
+    for (const item of blockList) {
+      if (!item || typeof item !== 'object') continue
+      const entry = item as Record<string, unknown>
+      if (entry.name !== 'contenttweaker:bedrockore' || typeof entry['data-tag'] !== 'string') continue
+      const nameMatch = entry['data-tag'].match(TAG_NAME_RE)
+      const propMatch = entry['data-tag'].match(TAG_PROP_RE)
+      if (!nameMatch) continue
+      const targetBlock = resolveBedrockOreBlock(nameMatch[1], propMatch?.[1] ?? '')
+      const entryWeight = typeof entry.weight === 'number' ? entry.weight : 100
+      for (const dimId of dimIds) {
+        const list = result.get(dimId) ?? []
+        list.push({
+          block : targetBlock,
+          weight: entryWeight * freqWeight,
+          yMin,
+          yMax,
+        })
+        result.set(dimId, list)
+      }
+    }
+  }
+
+  for (const cfgPath of globSync('config/cofh/world/*.json')) {
+    const raw = loadText(cfgPath)
+    if (!raw.includes('contenttweaker:bedrockore')) continue
+    const parsed = JSON.parse(raw) as { populate?: Record<string, Record<string, unknown>> }
+    if (!parsed.populate) continue
+    for (const gen of Object.values(parsed.populate)) {
+      const dimCfg = gen.dimension as { restriction?: string, value?: number | number[] } | undefined
+      if (dimCfg?.restriction !== 'whitelist' || dimCfg.value === undefined) continue
+      const dimIds = Array.isArray(dimCfg.value) ? dimCfg.value : [dimCfg.value]
+      const chunkChance = typeof gen['chunk-chance'] === 'number' ? gen['chunk-chance'] : 1
+      const clusterCount = typeof gen['cluster-count'] === 'number' ? gen['cluster-count'] : 1
+      if (gen.generator && typeof gen.generator === 'object') {
+        collectFromGen(
+          { 'min-height': gen['min-height'], 'max-height': gen['max-height'], ...(gen.generator as Record<string, unknown>) },
+          dimIds,
+          chunkChance,
+          clusterCount
+        )
+      }
+    }
+  }
+  return result
+}
 const HARVESTCRAFT_GARDENS = [
   'aridGarden',
   'frostGarden',
@@ -397,11 +559,16 @@ Filter entries matching key=glob (multiple rules separated by &&)
       return fixed.length <= exp.length ? fixed : exp
     }
 
+    const planetNames = loadPlanetNames()
+    const bedrockTargets = loadBedrockOreTargets()
+
+    worldGen = worldGen.filter(wg => addMeta(wg.block) !== 'minecraft:air:0')
+
     worldGen.forEach((wg) => {
       const dimMatch = wg.dim.match(DIM_MATCH_RE)
       if (dimMatch) {
         const [, dimNum, dimName] = dimMatch
-        wg.dim = `${dimName.trim()} (${dimNum})`
+        wg.dim = `${planetNames.get(dimNum) ?? dimName.trim()} (${dimNum})`
       }
 
       wg.block = addMeta(wg.block)
@@ -514,6 +681,164 @@ Filter entries matching key=glob (multiple rules separated by &&)
     }
 
     ///////////////////////////////////////////////////////////////////////
+    // Distribution sampling & sorting helpers
+    ///////////////////////////////////////////////////////////////////////
+    function getRampDistribution(minY: number, maxY: number, minChance: number, maxChance: number): number[] {
+      if (minY === maxY) return []
+      if (minY > maxY) return getRampDistribution(maxY, minY, minChance, maxChance).reverse()
+      const range = maxY - minY
+      const chanceDiff = maxChance - minChance
+      const result = Array.from<number>({ length: range + 1 }).fill(0)
+      for (let i = 0; i < range; i++)
+        result[i] = minChance + (chanceDiff * i) / range
+      return result
+    }
+
+    function addDistribution(base: number[], add: number[], offset = 0): void {
+      let addCount = 0
+      const limit = Math.min(base.length, add.length + offset)
+      for (let i = offset; i < limit; i++) {
+        if (i < 0) {
+          addCount++
+          continue
+        }
+        base[i] += add[addCount++]
+      }
+    }
+
+    function sampleDistrib(distrib: string): number[] {
+      const array = Array.from<number>({ length: 256 }).fill(0)
+      const pointMap = new Map<number, number>()
+      for (const part of distrib.split(';')) {
+        if (!part) continue
+        const split = part.split(',')
+        if (split.length !== 2) continue
+        const [lvlStr, chanceStr] = split
+        const level = Number.parseInt(lvlStr ?? '', 10)
+        const chance = Number.parseFloat(chanceStr ?? '')
+        if (Number.isFinite(level) && Number.isFinite(chance) && !pointMap.has(level))
+          pointMap.set(level, chance)
+      }
+      const points = [...pointMap.entries()]
+        .sort(([a], [b]) => a - b)
+        .map(([level, chance]) => ({ level, chance }))
+      if (!points.length) return array
+
+      addDistribution(array, getRampDistribution(0, points[0].level, 0, points[0].chance))
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1]
+        const curr = points[i]
+        const [min, max] = prev.chance <= curr.chance ? [prev, curr] : [curr, prev]
+        addDistribution(array, getRampDistribution(min.level, max.level, min.chance, max.chance), prev.level)
+        if (prev.level >= 0 && prev.level < 256) array[prev.level] = prev.chance
+        if (curr.level >= 0 && curr.level < 256) array[curr.level] = curr.chance
+      }
+      return array
+    }
+
+    function curveToDistrib(curve: number[]): string {
+      let lastNonZero = -1
+      for (let y = curve.length - 1; y >= 0; y--) {
+        if (curve[y] > 0) {
+          lastNonZero = y
+          break
+        }
+      }
+      if (lastNonZero < 0) return '0,0'
+      const endY = Math.min(255, lastNonZero + 1)
+      let current = ''
+      let levels: [number, number | string][] = []
+      for (let y = 0; y <= endY; y++) levels.push([y, curve[y]])
+      // Converge to the fixed point of worldGen.forEach cleanup so dev:jer is 1-pass idempotent
+      for (let pass = 0; pass < 5; pass++) {
+        const simplified = clenDistrib(clenDistrib(clenDistrib(simplifyDistrib(levels))))
+        const nextStr = simplified.map(l => l.join(',')).join(';')
+        if (nextStr === current) return nextStr
+        current = nextStr
+        levels = simplified.map(([l, v]) => [l, Number(v)])
+      }
+      return current
+    }
+
+    function extractDimId(dim: string): number | null {
+      const m = dim.match(DIM_ID_RE)
+      return m ? Number.parseInt(m[1], 10) : null
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Expand contenttweaker:bedrockore into its target ores
+    ///////////////////////////////////////////////////////////////////////
+    if (worldGen.some(wg => wg.block === 'contenttweaker:bedrockore:0')) {
+      const templateByBlock = new Map<string, WorldGenEntry>()
+      for (const wg of worldGen) {
+        if (wg.dim !== 'Block Drops' && !templateByBlock.has(wg.block)) {
+          templateByBlock.set(wg.block, wg)
+        }
+      }
+
+      const existingByKey = new Map<string, WorldGenEntry>()
+      for (const wg of worldGen) {
+        existingByKey.set(`${wg.dim}\0${wg.block}`, wg)
+      }
+
+      const nextWorldGen: WorldGenEntry[] = []
+      for (const wg of worldGen) {
+        if (wg.block !== 'contenttweaker:bedrockore:0') {
+          nextWorldGen.push(wg)
+          continue
+        }
+        const dimId = extractDimId(wg.dim)
+        const targets = dimId !== null ? bedrockTargets.get(dimId) : undefined
+        if (!targets?.length) {
+          consola.warn(`No CoFH target mapping found for contenttweaker:bedrockore:0 in ${wg.dim}`)
+          nextWorldGen.push(wg)
+          continue
+        }
+
+        const srcCurve = sampleDistrib(wg.distrib)
+        const addedByBlock = new Map<string, number[]>()
+        for (const t of targets) {
+          if (!addedByBlock.has(t.block)) {
+            addedByBlock.set(t.block, Array.from<number>({ length: 256 }).fill(0))
+          }
+        }
+
+        for (let y = 0; y < 256; y++) {
+          const val = srcCurve[y]
+          if (val <= 0) continue
+          const active = targets.filter(t => y >= t.yMin && y < t.yMax)
+          const pool = active.length ? active : targets
+          const totalWeight = pool.reduce((sum, t) => sum + t.weight, 0)
+          if (totalWeight <= 0) continue
+          for (const t of pool) {
+            addedByBlock.get(t.block)![y] += (val * t.weight) / totalWeight
+          }
+        }
+
+        for (const [block, addCurve] of addedByBlock) {
+          const existing = existingByKey.get(`${wg.dim}\0${block}`)
+          if (existing) {
+            const mergedCurve = sampleDistrib(existing.distrib).map((v, y) => v + addCurve[y])
+            existing.distrib = curveToDistrib(mergedCurve)
+          }
+          else {
+            const tpl = templateByBlock.get(block)
+            const entry: WorldGenEntry = {
+              block,
+              distrib: curveToDistrib(addCurve),
+              ...tpl?.silktouch ? { silktouch: tpl.silktouch } : {},
+              ...tpl?.dropsList ? { dropsList: structuredClone(tpl.dropsList) } : {},
+              dim    : wg.dim,
+            }
+            existingByKey.set(`${wg.dim}\0${block}`, entry)
+            nextWorldGen.push(entry)
+          }
+        }
+      }
+      worldGen = nextWorldGen
+    }
+
+    ///////////////////////////////////////////////////////////////////////
     // CLI Filtering
     ///////////////////////////////////////////////////////////////////////
     if (args.removeif) {
@@ -542,69 +867,22 @@ Filter entries matching key=glob (multiple rules separated by &&)
         consola.warn('No entries matched the provided filters.')
     }
 
+    const seenKeys = new Set<string>()
+    for (const wg of worldGen) {
+      const key = `${wg.dim}\0${wg.block}`
+      if (seenKeys.has(key)) consola.warn(`Duplicate (dim, block) entry: ${wg.dim} | ${wg.block}`)
+      seenKeys.add(key)
+    }
+
     ///////////////////////////////////////////////////////////////////////
     // Sort by dimension (matching scripts/mixin/jer.zs) and rarity
     ///////////////////////////////////////////////////////////////////////
-    function getRampDistribution(minY: number, maxY: number, minChance: number, maxChance: number): number[] {
-      if (minY === maxY) return []
-      if (minY > maxY) return getRampDistribution(maxY, minY, minChance, maxChance).reverse()
-      const range = maxY - minY
-      const chanceDiff = maxChance - minChance
-      const result = Array.from<number>({ length: range + 1 }).fill(0)
-      for (let i = 0; i < range; i++)
-        result[i] = minChance + (chanceDiff * i) / range
-      return result
-    }
-
-    function addDistribution(base: number[], add: number[], offset = 0): void {
-      let addCount = 0
-      const limit = Math.min(base.length, add.length + offset)
-      for (let i = offset; i < limit; i++) {
-        if (i < 0) {
-          addCount++
-          continue
-        }
-        base[i] += add[addCount++]
-      }
-    }
-
     function getAverageBlockCountPerChunk(distrib: string): number {
-      const pointMap = new Map<number, number>()
-      for (const part of distrib.split(';')) {
-        if (!part) continue
-        const split = part.split(',')
-        if (split.length !== 2) continue
-        const [lvlStr, chanceStr] = split
-        const level = Number.parseInt(lvlStr ?? '', 10)
-        const chance = Number.parseFloat(chanceStr ?? '')
-        if (Number.isFinite(level) && Number.isFinite(chance) && !pointMap.has(level))
-          pointMap.set(level, chance)
-      }
-      const points = [...pointMap.entries()]
-        .sort(([a], [b]) => a - b)
-        .map(([level, chance]) => ({ level, chance }))
-      if (!points.length) return 0
-
-      const array = Array.from<number>({ length: 256 }).fill(0)
-      addDistribution(array, getRampDistribution(0, points[0].level, 0, points[0].chance))
-      for (let i = 1; i < points.length; i++) {
-        const prev = points[i - 1]
-        const curr = points[i]
-        const [min, max] = prev.chance <= curr.chance ? [prev, curr] : [curr, prev]
-        addDistribution(array, getRampDistribution(min.level, max.level, min.chance, max.chance), prev.level)
-        if (prev.level >= 0 && prev.level < 256) array[prev.level] = prev.chance
-        if (curr.level >= 0 && curr.level < 256) array[curr.level] = curr.chance
-      }
-      return Math.round(array.reduce((acc, v) => acc + v, 0) * 256 * 100) / 100
+      return Math.round(sampleDistrib(distrib).reduce((acc, v) => acc + v, 0) * 256 * 100) / 100
     }
 
     function cmpCodeUnit(a: string, b: string): number {
       return a < b ? -1 : a > b ? 1 : 0
-    }
-
-    function extractDimId(dim: string): number | null {
-      const m = dim.match(DIM_ID_RE)
-      return m ? Number.parseInt(m[1], 10) : null
     }
 
     const avgCache = new Map<WorldGenEntry, number>(
