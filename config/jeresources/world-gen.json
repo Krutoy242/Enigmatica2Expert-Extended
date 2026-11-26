@@ -3041,12 +3041,12 @@
   },
   {
     "block": "biomesoplenty:log_1:4",
-    "distrib": "0,0;65,0;66,1.0e-7;128,6.0e-7;254,1.0e-7;255,0",
+    "distrib": "0,0;65,0;66,1e-7;128,6e-7;254,1e-7;255,0",
     "dim": "Overworld (0)"
   },
   {
     "block": "biomesoplenty:leaves_1:11",
-    "distrib": "0,0;65,0;66,1.0e-7;128,6.0e-7;254,1.0e-7;255,0",
+    "distrib": "0,0;65,0;66,1e-7;128,6e-7;254,1e-7;255,0",
     "silktouch": true,
     "dropsList": [
       {
@@ -3074,17 +3074,17 @@
   },
   {
     "block": "biomesoplenty:log_4:4",
-    "distrib": "0,0;65,0;66,1.0e-7;76,2.0e-7;81,1.0e-7;82,0",
+    "distrib": "0,0;65,0;66,1e-7;76,2e-7;81,1e-7;82,0",
     "dim": "Overworld (0)"
   },
   {
     "block": "biomesoplenty:leaves_6:8",
-    "distrib": "0,0;65,0;66,1.0e-7;76,2.0e-7;81,1.0e-7;82,0",
+    "distrib": "0,0;65,0;66,1e-7;76,2e-7;81,1e-7;82,0",
     "dim": "Overworld (0)"
   },
   {
     "block": "biomesoplenty:leaves_6:9",
-    "distrib": "0,0;65,0;66,1.0e-7;76,2.0e-7;81,1.0e-7;82,0",
+    "distrib": "0,0;65,0;66,1e-7;76,2e-7;81,1e-7;82,0",
     "dim": "Overworld (0)"
   },
   {
@@ -5210,12 +5210,12 @@
   },
   {
     "block": "minecraft:purpur_slab:0",
-    "distrib": "0,0;60,0;63,7.8e-7;64,5.9e-7;65,1.2e-6;66,9.8e-7;67,1.2e-6;68,7.8e-7;69,7.8e-7;73,2.0e-7;76,5.9e-7;79,2.0e-6;81,9.8e-7;82,9.8e-7;84,2.5e-6;86,1.6e-6;87,2.0e-6;91,3.9e-7;93,1.8e-6;94,1.8e-6;95,3.9e-7;97,1.8e-6;98,9.8e-7;99,2.1e-6;100,2.1e-6;102,7.8e-7;104,2.5e-6;106,1.2e-6;108,2.5e-6;110,9.8e-7;112,2.0e-6;114,3.9e-7;116,1.4e-6;117,1.4e-6;118,1.2e-6;120,2.0e-6;122,7.8e-7;124,2.7e-6;125,9.8e-7;126,7.8e-7;127,1.4e-6;129,2.0e-7;131,2.0e-7;132,3.9e-7;138,3.9e-7;139,7.8e-7;140,7.8e-7;141,3.9e-7;142,3.9e-7;143,1.6e-6;144,0",
+    "distrib": "0,0;60,0;63,7.8e-7;64,5.9e-7;65,1.2e-6;66,9.8e-7;67,1.2e-6;68,7.8e-7;69,7.8e-7;73,2e-7;76,5.9e-7;79,2.0e-6;81,9.8e-7;82,9.8e-7;84,2.5e-6;86,1.6e-6;87,2.0e-6;91,3.9e-7;93,1.8e-6;94,1.8e-6;95,3.9e-7;97,1.8e-6;98,9.8e-7;99,2.1e-6;100,2.1e-6;102,7.8e-7;104,2.5e-6;106,1.2e-6;108,2.5e-6;110,9.8e-7;112,2.0e-6;114,3.9e-7;116,1.4e-6;117,1.4e-6;118,1.2e-6;120,2.0e-6;122,7.8e-7;124,2.7e-6;125,9.8e-7;126,7.8e-7;127,1.4e-6;129,2e-7;131,2e-7;132,3.9e-7;138,3.9e-7;139,7.8e-7;140,7.8e-7;141,3.9e-7;142,3.9e-7;143,1.6e-6;144,0",
     "dim": "The End (1)"
   },
   {
     "block": "minecraft:ender_chest:0",
-    "distrib": "0,0;88,0;89,2.0e-7;90,0",
+    "distrib": "0,0;88,0;89,2e-7;90,0",
     "silktouch": true,
     "dropsList": [
       {
@@ -5227,12 +5227,12 @@
   },
   {
     "block": "minecraft:end_bricks:0",
-    "distrib": "0,0;53,0;54,3.9e-7;57,0;58,7.8e-7;60,0;63,8.6e-6;64,3.3e-6;65,1.4e-5;66,8.4e-6;67,1.4e-5;68,3.7e-6;69,1.8e-5;70,9.6e-6;71,1.6e-5;72,3.1e-6;73,1.1e-5;76,0;80,0;81,8.6e-6;82,6.3e-6;83,6.3e-6;84,0;85,1.3e-5;86,1.0e-5;87,1.0e-5;88,0;89,1.8e-5;90,1.2e-5;91,1.7e-5;92,2.0e-6;93,2.0e-6;94,0;95,5.9e-6;96,4.9e-6;97,5.3e-6;98,0;101,8.4e-6;104,0;105,1.3e-5;106,9.4e-6;107,9.8e-6;108,0;109,1.7e-5;110,1.3e-5;111,1.3e-5;112,0;113,3.5e-6;115,2.9e-6;116,0;118,0;119,2.0e-6;120,1.2e-6;121,5.5e-6;124,0;125,1.1e-5;126,8.0e-6;127,8.0e-6;128,0;129,4.7e-6;130,3.7e-6;131,3.7e-6;132,0;152,0;153,5.9e-7;154,2.0e-7;155,5.9e-7;156,0",
+    "distrib": "0,0;53,0;54,3.9e-7;57,0;58,7.8e-7;60,0;63,8.6e-6;64,3.3e-6;65,1.4e-5;66,8.4e-6;67,1.4e-5;68,3.7e-6;69,1.8e-5;70,9.6e-6;71,1.6e-5;72,3.1e-6;73,1.1e-5;76,0;80,0;81,8.6e-6;82,6.3e-6;83,6.3e-6;84,0;85,1.3e-5;86,1.0e-5;87,1.0e-5;88,0;89,1.8e-5;90,1.2e-5;91,1.7e-5;92,2.0e-6;93,2.0e-6;94,0;95,5.9e-6;96,4.9e-6;97,5.3e-6;98,0;101,8.4e-6;104,0;105,1.3e-5;106,9.4e-6;107,9.8e-6;108,0;109,1.7e-5;110,1.3e-5;111,1.3e-5;112,0;113,3.5e-6;115,2.9e-6;116,0;118,0;119,2.0e-6;120,1.2e-6;121,5.5e-6;124,0;125,1.1e-5;126,8.0e-6;127,8.0e-6;128,0;129,4.7e-6;130,3.7e-6;131,3.7e-6;132,0;152,0;153,5.9e-7;154,2e-7;155,5.9e-7;156,0",
     "dim": "The End (1)"
   },
   {
     "block": "minecraft:chest:0",
-    "distrib": "0,0;88,0;89,2.0e-7;90,0;108,0;109,3.9e-7;110,0",
+    "distrib": "0,0;88,0;89,2e-7;90,0;108,0;109,3.9e-7;110,0",
     "dim": "The End (1)"
   },
   {
@@ -5243,7 +5243,7 @@
   },
   {
     "block": "minecraft:chorus_flower:0",
-    "distrib": "0,0;47,0;51,5.9e-7;54,2.0e-7;57,1.2e-6;58,5.9e-7;60,2.0e-6;62,1.3e-5;63,3.3e-5;64,1.2e-6;67,5.5e-6;70,2.1e-5;71,1.9e-5;73,2.1e-5;74,2.0e-5;75,2.1e-5;77,2.8e-5;79,2.1e-5;80,0;82,0",
+    "distrib": "0,0;47,0;51,5.9e-7;54,2e-7;57,1.2e-6;58,5.9e-7;60,2.0e-6;62,1.3e-5;63,3.3e-5;64,1.2e-6;67,5.5e-6;70,2.1e-5;71,1.9e-5;73,2.1e-5;74,2.0e-5;75,2.1e-5;77,2.8e-5;79,2.1e-5;80,0;82,0",
     "dim": "The End (1)"
   },
   {
@@ -5259,13 +5259,13 @@
   },
   {
     "block": "minecraft:bedrock:0",
-    "distrib": "0,0;60,0;62,9.8e-7;63,0;66,0;67,2.0e-7;68,0;69,2.0e-7;70,0;75,0;76,2.0e-7;77,0;78,0;79,2.0e-7;80,0;84,0;85,2.0e-7;86,0;87,0;88,2.0e-7;89,0;90,0;91,2.0e-7;92,0;96,0;97,2.0e-7;98,0;99,0;100,2.0e-7;101,0;102,0;103,2.0e-7;104,0",
+    "distrib": "0,0;60,0;62,9.8e-7;63,0;66,0;67,2e-7;68,0;69,2e-7;70,0;75,0;76,2e-7;77,0;78,0;79,2e-7;80,0;84,0;85,2e-7;86,0;87,0;88,2e-7;89,0;90,0;91,2e-7;92,0;96,0;97,2e-7;98,0;99,0;100,2e-7;101,0;102,0;103,2e-7;104,0",
     "silktouch": true,
     "dim": "The End (1)"
   },
   {
     "block": "forestry:beehives:4",
-    "distrib": "0,0;32,0;33,3.9e-7;34,0;36,2.0e-7;38,2.0e-7;40,0;42,3.9e-7;45,0;46,3.9e-7;47,0;50,0;51,2.0e-7;53,0;55,0;57,9.8e-7;60,5.1e-6;61,5.1e-6;64,3.9e-7;65,0;67,0;68,2.0e-7;69,0",
+    "distrib": "0,0;32,0;33,3.9e-7;34,0;36,2e-7;38,2e-7;40,0;42,3.9e-7;45,0;46,3.9e-7;47,0;50,0;51,2e-7;53,0;55,0;57,9.8e-7;60,5.1e-6;61,5.1e-6;64,3.9e-7;65,0;67,0;68,2e-7;69,0",
     "dropsList": [
       {
         "itemStack": "forestry:bee_combs:8",
@@ -5295,17 +5295,17 @@
   },
   {
     "block": "minecraft:purpur_pillar:0",
-    "distrib": "0,0;53,0;55,7.8e-7;57,2.0e-7;59,1.4e-6;62,7.8e-7;63,2.3e-6;64,2.0e-7;65,2.1e-6;66,1.6e-6;67,2.0e-6;68,3.9e-7;69,2.3e-6;70,1.8e-6;71,2.3e-6;72,5.9e-7;73,3.9e-6;74,3.3e-6;75,1.1e-5;76,2.3e-6;77,5.9e-6;78,3.5e-6;79,6.3e-6;80,2.3e-6;81,1.2e-5;84,1.2e-6;85,7.8e-6;86,6.3e-6;87,8.6e-6;88,2.3e-6;89,1.1e-5;90,8.2e-6;91,1.1e-5;92,2.7e-6;93,1.3e-5;94,1.0e-5;95,1.5e-5;96,1.2e-6;97,9.6e-6;98,8.4e-6;99,1.0e-5;100,5.9e-7;101,1.1e-5;102,1.0e-5;103,1.4e-5;104,2.3e-6;105,1.3e-5;106,1.0e-5;107,1.2e-5;108,2.3e-6;109,1.3e-5;110,1.0e-5;111,1.2e-5;112,0;113,1.0e-5;114,1.0e-5;115,1.2e-5;116,0;117,1.1e-5;118,1.1e-5;119,1.2e-5;120,3.9e-7;121,1.1e-5;122,1.1e-5;123,1.3e-5;124,0;125,1.3e-5;127,1.3e-5;128,0;129,2.9e-6;131,2.9e-6;132,0;133,4.7e-6;135,4.3e-6;136,0;137,4.1e-6;138,4.1e-6;139,2.9e-6;140,0;141,2.9e-6;143,2.9e-6;144,0;146,0;147,2.5e-6;148,9.8e-7;149,3.1e-6;150,2.0e-7;152,2.0e-7;155,7.8e-7;156,3.9e-7;160,0",
+    "distrib": "0,0;53,0;55,7.8e-7;57,2e-7;59,1.4e-6;62,7.8e-7;63,2.3e-6;64,2e-7;65,2.1e-6;66,1.6e-6;67,2.0e-6;68,3.9e-7;69,2.3e-6;70,1.8e-6;71,2.3e-6;72,5.9e-7;73,3.9e-6;74,3.3e-6;75,1.1e-5;76,2.3e-6;77,5.9e-6;78,3.5e-6;79,6.3e-6;80,2.3e-6;81,1.2e-5;84,1.2e-6;85,7.8e-6;86,6.3e-6;87,8.6e-6;88,2.3e-6;89,1.1e-5;90,8.2e-6;91,1.1e-5;92,2.7e-6;93,1.3e-5;94,1.0e-5;95,1.5e-5;96,1.2e-6;97,9.6e-6;98,8.4e-6;99,1.0e-5;100,5.9e-7;101,1.1e-5;102,1.0e-5;103,1.4e-5;104,2.3e-6;105,1.3e-5;106,1.0e-5;107,1.2e-5;108,2.3e-6;109,1.3e-5;110,1.0e-5;111,1.2e-5;112,0;113,1.0e-5;114,1.0e-5;115,1.2e-5;116,0;117,1.1e-5;118,1.1e-5;119,1.2e-5;120,3.9e-7;121,1.1e-5;122,1.1e-5;123,1.3e-5;124,0;125,1.3e-5;127,1.3e-5;128,0;129,2.9e-6;131,2.9e-6;132,0;133,4.7e-6;135,4.3e-6;136,0;137,4.1e-6;138,4.1e-6;139,2.9e-6;140,0;141,2.9e-6;143,2.9e-6;144,0;146,0;147,2.5e-6;148,9.8e-7;149,3.1e-6;150,2e-7;152,2e-7;155,7.8e-7;156,3.9e-7;160,0",
     "dim": "The End (1)"
   },
   {
     "block": "minecraft:purpur_stairs:0",
-    "distrib": "0,0;63,0;64,8.8e-6;65,0;66,7.2e-6;67,0;68,1.9e-5;69,0;70,7.6e-6;71,0;72,2.2e-5;73,0;74,9.6e-6;75,2.7e-6;76,1.7e-5;79,2.1e-6;80,3.9e-6;81,2.3e-6;83,7.2e-6;84,1.7e-5;85,2.5e-6;86,4.1e-6;87,1.6e-6;88,2.7e-5;89,1.2e-6;90,2.5e-6;91,5.9e-7;92,3.1e-5;93,2.0e-7;94,1.5e-5;95,2.5e-6;97,6.6e-6;98,1.6e-5;99,2.9e-6;100,6.4e-6;101,4.9e-6;102,1.4e-5;103,2.9e-6;104,2.0e-5;105,1.8e-6;106,2.9e-6;107,1.4e-6;108,3.8e-5;109,5.9e-7;110,1.8e-6;111,2.0e-7;112,2.2e-5;113,2.5e-6;115,1.6e-6;116,6.1e-6;119,1.6e-6;122,7.8e-6;123,2.0e-6;124,1.0e-5;125,2.9e-6;126,3.5e-6;127,7.8e-7;128,1.6e-5;129,0;130,7.8e-7;131,0;132,6.6e-6;133,0;134,1.6e-6;135,0;136,5.9e-7;137,0;138,1.4e-6;139,0;140,1.8e-6;141,0;142,9.8e-7;143,0;147,0;148,1.2e-6;151,2.0e-7;152,1.6e-6;154,3.9e-7;155,2.1e-6;157,1.8e-6;158,0",
+    "distrib": "0,0;63,0;64,8.8e-6;65,0;66,7.2e-6;67,0;68,1.9e-5;69,0;70,7.6e-6;71,0;72,2.2e-5;73,0;74,9.6e-6;75,2.7e-6;76,1.7e-5;79,2.1e-6;80,3.9e-6;81,2.3e-6;83,7.2e-6;84,1.7e-5;85,2.5e-6;86,4.1e-6;87,1.6e-6;88,2.7e-5;89,1.2e-6;90,2.5e-6;91,5.9e-7;92,3.1e-5;93,2e-7;94,1.5e-5;95,2.5e-6;97,6.6e-6;98,1.6e-5;99,2.9e-6;100,6.4e-6;101,4.9e-6;102,1.4e-5;103,2.9e-6;104,2.0e-5;105,1.8e-6;106,2.9e-6;107,1.4e-6;108,3.8e-5;109,5.9e-7;110,1.8e-6;111,2e-7;112,2.2e-5;113,2.5e-6;115,1.6e-6;116,6.1e-6;119,1.6e-6;122,7.8e-6;123,2.0e-6;124,1.0e-5;125,2.9e-6;126,3.5e-6;127,7.8e-7;128,1.6e-5;129,0;130,7.8e-7;131,0;132,6.6e-6;133,0;134,1.6e-6;135,0;136,5.9e-7;137,0;138,1.4e-6;139,0;140,1.8e-6;141,0;142,9.8e-7;143,0;147,0;148,1.2e-6;151,2e-7;152,1.6e-6;154,3.9e-7;155,2.1e-6;157,1.8e-6;158,0",
     "dim": "The End (1)"
   },
   {
     "block": "minecraft:end_rod:0",
-    "distrib": "0,0;64,0;65,7.8e-7;66,0;67,5.9e-7;68,0;69,1.6e-6;70,0;71,3.9e-7;72,0;73,1.6e-6;74,0;75,2.0e-7;76,0;77,7.8e-7;78,7.8e-7;79,0;81,0;82,7.8e-7;83,0;85,1.6e-6;86,0;87,0;89,2.3e-6;90,3.9e-7;92,3.9e-7;93,1.6e-6;94,3.9e-7;95,1.8e-6;96,0;97,0;98,1.6e-6;100,0;102,1.2e-6;104,0;105,2.0e-6;108,0;109,2.3e-6;110,7.8e-7;112,0;113,7.8e-7;114,7.8e-7;116,0;118,7.8e-7;120,0;121,0;122,1.6e-6;124,0;125,7.8e-7;126,7.8e-7;128,0;129,1.2e-6;130,0;132,0;133,3.9e-7;134,0;137,0;138,3.9e-7;139,0;141,0;142,1.2e-6;143,0;155,0;156,2.0e-7;157,0",
+    "distrib": "0,0;64,0;65,7.8e-7;66,0;67,5.9e-7;68,0;69,1.6e-6;70,0;71,3.9e-7;72,0;73,1.6e-6;74,0;75,2e-7;76,0;77,7.8e-7;78,7.8e-7;79,0;81,0;82,7.8e-7;83,0;85,1.6e-6;86,0;87,0;89,2.3e-6;90,3.9e-7;92,3.9e-7;93,1.6e-6;94,3.9e-7;95,1.8e-6;96,0;97,0;98,1.6e-6;100,0;102,1.2e-6;104,0;105,2.0e-6;108,0;109,2.3e-6;110,7.8e-7;112,0;113,7.8e-7;114,7.8e-7;116,0;118,7.8e-7;120,0;121,0;122,1.6e-6;124,0;125,7.8e-7;126,7.8e-7;128,0;129,1.2e-6;130,0;132,0;133,3.9e-7;134,0;137,0;138,3.9e-7;139,0;141,0;142,1.2e-6;143,0;155,0;156,2e-7;157,0",
     "dim": "The End (1)"
   },
   {
@@ -5327,7 +5327,7 @@
   },
   {
     "block": "biomesoplenty:crystal:0",
-    "distrib": "0,2.0e-7;2,3.5e-6;4,4.0e-5;6,1.3e-4;11,8.7e-4;14,0.001;18,9.8e-4;24,5.6e-4;29,4.4e-4;31,4.3e-4;32,3.7e-4;34,3.6e-4;35,0.0003;39,4.2e-4;44,3.2e-4;45,3.8e-4;46,3.6e-4;47,3.7e-4;49,9.2e-5;51,1.3e-4;54,9.6e-5;55,1.1e-4;56,8.8e-5;57,0.0001;63,1.2e-5;66,0;149,0",
+    "distrib": "0,2e-7;2,3.5e-6;4,4.0e-5;6,1.3e-4;11,8.7e-4;14,0.001;18,9.8e-4;24,5.6e-4;29,4.4e-4;31,4.3e-4;32,3.7e-4;34,3.6e-4;35,0.0003;39,4.2e-4;44,3.2e-4;45,3.8e-4;46,3.6e-4;47,3.7e-4;49,9.2e-5;51,1.3e-4;54,9.6e-5;55,1.1e-4;56,8.8e-5;57,0.0001;63,1.2e-5;66,0;149,0",
     "silktouch": true,
     "dropsList": [
       {
@@ -5339,7 +5339,7 @@
   },
   {
     "block": "extrautils2:enderlilly:0",
-    "distrib": "0,0;32,2.0e-7;33,6.1e-6;35,2.7e-6;36,4.1e-6;39,1.8e-6;41,6.4e-6;43,4.3e-6;44,5.1e-6;45,2.5e-6;47,3.3e-6;48,0;49,1.6e-6;56,9.8e-7;60,8.7e-5;62,6.8e-5;64,5.7e-6;66,9.8e-7;68,0",
+    "distrib": "0,0;32,2e-7;33,6.1e-6;35,2.7e-6;36,4.1e-6;39,1.8e-6;41,6.4e-6;43,4.3e-6;44,5.1e-6;45,2.5e-6;47,3.3e-6;48,0;49,1.6e-6;56,9.8e-7;60,8.7e-5;62,6.8e-5;64,5.7e-6;66,9.8e-7;68,0",
     "dropsList": [
       {
         "itemStack": "minecraft:ender_pearl:0",
@@ -5370,7 +5370,7 @@
   },
   {
     "block": "minecraft:purpur_block:0",
-    "distrib": "0,0;59,2.0e-7;60,1.3e-5;61,2.0e-7;62,1.5e-5;63,7.8e-7;64,3.1e-5;65,5.9e-7;66,1.7e-5;67,5.9e-7;68,4.5e-5;69,3.9e-7;70,2.4e-5;71,2.0e-7;72,6.3e-5;73,0;74,3.2e-5;75,1.2e-6;76,6.6e-5;77,6.6e-6;79,4.1e-6;80,3.4e-5;81,4.5e-6;82,2.4e-5;83,5.5e-6;84,3.4e-5;85,3.7e-6;86,5.9e-6;87,2.7e-6;88,5.5e-5;89,4.5e-6;90,2.0e-5;91,3.3e-6;92,8.9e-5;93,5.9e-7;94,1.7e-5;95,2.9e-6;96,2.8e-5;97,5.9e-6;98,2.4e-5;99,6.3e-6;100,3.6e-5;101,5.3e-6;102,3.7e-5;103,2.3e-6;104,4.6e-5;105,4.1e-6;107,4.3e-6;108,0.0001;109,1.6e-6;110,3.3e-6;111,1.4e-6;112,8.1e-5;113,7.8e-7;115,9.8e-7;116,3.7e-5;117,3.9e-6;118,7.0e-6;119,4.7e-6;120,3.7e-5;121,4.3e-6;122,1.0e-5;123,2.3e-6;124,4.6e-5;125,2.1e-6;126,7.8e-7;127,2.5e-6;128,3.7e-5;129,0;131,0;132,2.4e-5;133,0;135,5.9e-7;136,5.5e-6;138,3.9e-7;140,6.6e-6;141,2.0e-6;144,0;147,0;148,7.2e-6;151,4.1e-6;152,8.8e-6;153,4.1e-6;154,1.5e-5;155,1.8e-6;156,7.2e-6;158,0",
+    "distrib": "0,0;59,2e-7;60,1.3e-5;61,2e-7;62,1.5e-5;63,7.8e-7;64,3.1e-5;65,5.9e-7;66,1.7e-5;67,5.9e-7;68,4.5e-5;69,3.9e-7;70,2.4e-5;71,2e-7;72,6.3e-5;73,0;74,3.2e-5;75,1.2e-6;76,6.6e-5;77,6.6e-6;79,4.1e-6;80,3.4e-5;81,4.5e-6;82,2.4e-5;83,5.5e-6;84,3.4e-5;85,3.7e-6;86,5.9e-6;87,2.7e-6;88,5.5e-5;89,4.5e-6;90,2.0e-5;91,3.3e-6;92,8.9e-5;93,5.9e-7;94,1.7e-5;95,2.9e-6;96,2.8e-5;97,5.9e-6;98,2.4e-5;99,6.3e-6;100,3.6e-5;101,5.3e-6;102,3.7e-5;103,2.3e-6;104,4.6e-5;105,4.1e-6;107,4.3e-6;108,0.0001;109,1.6e-6;110,3.3e-6;111,1.4e-6;112,8.1e-5;113,7.8e-7;115,9.8e-7;116,3.7e-5;117,3.9e-6;118,7.0e-6;119,4.7e-6;120,3.7e-5;121,4.3e-6;122,1.0e-5;123,2.3e-6;124,4.6e-5;125,2.1e-6;126,7.8e-7;127,2.5e-6;128,3.7e-5;129,0;131,0;132,2.4e-5;133,0;135,5.9e-7;136,5.5e-6;138,3.9e-7;140,6.6e-6;141,2.0e-6;144,0;147,0;148,7.2e-6;151,4.1e-6;152,8.8e-6;153,4.1e-6;154,1.5e-5;155,1.8e-6;156,7.2e-6;158,0",
     "dim": "The End (1)"
   },
   {
@@ -5386,7 +5386,7 @@
   },
   {
     "block": "thaumcraft:crystal_perditio:0",
-    "distrib": "0,2.0e-7;8,0;9,1.6e-6;12,4.0e-5;14,4.6e-5;16,3.4e-5;17,4.1e-5;20,2.9e-5;21,3.6e-5;23,2.2e-5;25,1.9e-5;26,2.6e-5;29,1.3e-5;31,1.5e-5;32,1.3e-5;34,1.8e-5;36,1.1e-5;37,1.1e-5;39,1.6e-5;40,1.6e-5;44,7.4e-6;46,7.4e-6;47,8.4e-6;49,2.0e-7;50,1.2e-6;51,2.0e-7;52,2.0e-6;54,0;58,7.8e-7;59,0;63,7.8e-7;64,0;75,0",
+    "distrib": "0,2e-7;8,0;9,1.6e-6;12,4.0e-5;14,4.6e-5;16,3.4e-5;17,4.1e-5;20,2.9e-5;21,3.6e-5;23,2.2e-5;25,1.9e-5;26,2.6e-5;29,1.3e-5;31,1.5e-5;32,1.3e-5;34,1.8e-5;36,1.1e-5;37,1.1e-5;39,1.6e-5;40,1.6e-5;44,7.4e-6;46,7.4e-6;47,8.4e-6;49,2e-7;50,1.2e-6;51,2e-7;52,2.0e-6;54,0;58,7.8e-7;59,0;63,7.8e-7;64,0;75,0",
     "dropsList": [
       {
         "itemStack": "thaumcraft:crystal_essence:0:{Aspects:[{key:\"perditio\",amount:1}]}",
@@ -5402,7 +5402,7 @@
   },
   {
     "block": "minecraft:ladder:0",
-    "distrib": "0,0;68,0;71,3.9e-7;72,2.0e-7;73,3.9e-7;76,0;88,0;89,2.0e-7;91,2.0e-7;92,0;98,0;99,2.0e-7;101,2.0e-7;102,0;104,0;105,2.0e-7;107,2.0e-7;108,0;109,2.0e-7;111,2.0e-7;112,0;113,2.0e-7;115,2.0e-7;116,0;124,0;125,2.0e-7;127,2.0e-7;128,0;129,2.0e-7;131,2.0e-7;132,0;154,0;155,2.0e-7;159,2.0e-7;160,0",
+    "distrib": "0,0;68,0;71,3.9e-7;72,2e-7;73,3.9e-7;76,0;88,0;89,2e-7;91,2e-7;92,0;98,0;99,2e-7;101,2e-7;102,0;104,0;105,2e-7;107,2e-7;108,0;109,2e-7;111,2e-7;112,0;113,2e-7;115,2e-7;116,0;124,0;125,2e-7;127,2e-7;128,0;129,2e-7;131,2e-7;132,0;154,0;155,2e-7;159,2e-7;160,0",
     "dim": "The End (1)"
   },
   {
@@ -5468,7 +5468,7 @@
   },
   {
     "block": "endreborn:block_essence_ore:0",
-    "distrib": "0,7.8e-7;1,1.8e-6;3,0;6,3.9e-7;7,2.0e-7;9,7.8e-7;10,2.0e-7;11,3.9e-7;12,2.0e-7;15,2.1e-6;16,9.8e-7;17,7.8e-7;19,9.8e-7;21,5.9e-7;22,2.7e-6;25,2.0e-7;27,1.2e-6;29,2.0e-7;31,2.0e-6;32,2.1e-6;34,5.9e-7;36,2.9e-6;37,2.9e-6;38,1.8e-6;40,3.1e-6;43,0;45,3.9e-7;47,2.3e-6;49,1.4e-6;50,1.8e-6;51,3.9e-7;54,5.3e-6;56,2.0e-7;58,3.9e-7;59,7.8e-7;61,0;66,1.8e-6;67,1.8e-6;68,9.8e-7;69,2.5e-6;71,5.9e-7;72,1.8e-6;73,3.9e-7;74,3.9e-7;76,9.8e-7;77,2.1e-6;79,3.9e-7;80,3.9e-7;81,0;83,7.8e-7;84,0;87,0;89,1.6e-6;91,2.0e-7;92,3.9e-7;94,2.0e-7;95,9.8e-7;96,2.0e-7;97,7.8e-7;98,7.8e-7;99,0;101,0;102,7.8e-7;103,0",
+    "distrib": "0,7.8e-7;1,1.8e-6;3,0;6,3.9e-7;7,2e-7;9,7.8e-7;10,2e-7;11,3.9e-7;12,2e-7;15,2.1e-6;16,9.8e-7;17,7.8e-7;19,9.8e-7;21,5.9e-7;22,2.7e-6;25,2e-7;27,1.2e-6;29,2e-7;31,2.0e-6;32,2.1e-6;34,5.9e-7;36,2.9e-6;37,2.9e-6;38,1.8e-6;40,3.1e-6;43,0;45,3.9e-7;47,2.3e-6;49,1.4e-6;50,1.8e-6;51,3.9e-7;54,5.3e-6;56,2e-7;58,3.9e-7;59,7.8e-7;61,0;66,1.8e-6;67,1.8e-6;68,9.8e-7;69,2.5e-6;71,5.9e-7;72,1.8e-6;73,3.9e-7;74,3.9e-7;76,9.8e-7;77,2.1e-6;79,3.9e-7;80,3.9e-7;81,0;83,7.8e-7;84,0;87,0;89,1.6e-6;91,2e-7;92,3.9e-7;94,2e-7;95,9.8e-7;96,2e-7;97,7.8e-7;98,7.8e-7;99,0;101,0;102,7.8e-7;103,0",
     "silktouch": true,
     "dropsList": [
       {
@@ -19761,7 +19761,7 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "minecraft:end_stone",
+        "itemStack": "minecraft:end_stone:0",
         "fortunes": { "0": 1 }
       }
     ],
@@ -19772,7 +19772,7 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "minecraft:lapis_block",
+        "itemStack": "minecraft:lapis_block:0",
         "fortunes": { "0": 1 }
       }
     ],
@@ -19805,7 +19805,7 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "minecraft:blaze_powder",
+        "itemStack": "minecraft:blaze_powder:0",
         "fortunes": { "0": 0.2, "1": 0.4, "2": 0.8, "3": 0.9 }
       },
       {
@@ -19816,22 +19816,22 @@
     "dim": "Block Drops"
   },
   {
-    "block": "extrautils2:ironwood_leaves",
+    "block": "extrautils2:ironwood_leaves:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "extrautils2:ironwood_sapling",
+        "itemStack": "extrautils2:ironwood_sapling:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "extrautils2:ironwood_log",
+    "block": "extrautils2:ironwood_log:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "extrautils2:ironwood_planks",
+        "itemStack": "extrautils2:ironwood_planks:0",
         "fortunes": { "0": 1 }
       }
     ],
@@ -19860,44 +19860,44 @@
     "dim": "Block Drops"
   },
   {
-    "block": "iceandfire:chared_grass_path",
+    "block": "iceandfire:chared_grass_path:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "iceandfire:chared_dirt",
+        "itemStack": "iceandfire:chared_dirt:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "iceandfire:frozen_grass_path",
+    "block": "iceandfire:frozen_grass_path:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "iceandfire:frozen_dirt",
+        "itemStack": "iceandfire:frozen_dirt:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "iceandfire:jar_pixie",
+    "block": "iceandfire:jar_pixie:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "iceandfire:jar_empty",
+        "itemStack": "iceandfire:jar_empty:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "lootr:lootr_trapped_chest",
+    "block": "lootr:lootr_trapped_chest:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "minecraft:trapped_chest",
+        "itemStack": "minecraft:trapped_chest:0",
         "fortunes": { "0": 1 }
       }
     ],
@@ -19919,14 +19919,14 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "rustic:grape_stem",
+        "itemStack": "rustic:grape_stem:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "mysticalagriculture:end_inferium_ore",
+    "block": "mysticalagriculture:end_inferium_ore:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -19937,7 +19937,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "mysticalagriculture:end_prosperity_ore",
+    "block": "mysticalagriculture:end_prosperity_ore:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -19948,7 +19948,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "mysticalagriculture:inferium_ore",
+    "block": "mysticalagriculture:inferium_ore:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -19959,7 +19959,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "mysticalagriculture:nether_inferium_ore",
+    "block": "mysticalagriculture:nether_inferium_ore:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -19970,7 +19970,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "mysticalagriculture:nether_prosperity_ore",
+    "block": "mysticalagriculture:nether_prosperity_ore:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -19981,7 +19981,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "mysticalagriculture:prosperity_ore",
+    "block": "mysticalagriculture:prosperity_ore:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -20003,11 +20003,11 @@
     "dim": "Block Drops"
   },
   {
-    "block": "rustic:leaves_apple",
+    "block": "rustic:leaves_apple:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "rustic:sapling_apple",
+        "itemStack": "rustic:sapling_apple:0",
         "fortunes": { "0": 1 }
       }
     ],
@@ -20025,11 +20025,11 @@
     "dim": "Block Drops"
   },
   {
-    "block": "tconstruct:slime_leaves",
+    "block": "tconstruct:slime_leaves:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "tconstruct:slime_sapling",
+        "itemStack": "tconstruct:slime_sapling:0",
         "fortunes": { "0": 1 }
       }
     ],
@@ -20080,11 +20080,11 @@
     "dim": "Block Drops"
   },
   {
-    "block": "minecraft:mob_spawner",
+    "block": "minecraft:mob_spawner:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "enderio:item_broken_spawner",
+        "itemStack": "enderio:item_broken_spawner:0",
         "fortunes": { "0": 1 }
       },
       {
@@ -20095,29 +20095,29 @@
     "dim": "Block Drops"
   },
   {
-    "block": "endreborn:crop_ender_flower",
+    "block": "endreborn:crop_ender_flower:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "minecraft:ender_pearl",
+        "itemStack": "minecraft:ender_pearl:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "bloodmagic:demon_crystal",
+    "block": "bloodmagic:demon_crystal:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "bloodmagic:item_demon_crystal",
+        "itemStack": "bloodmagic:item_demon_crystal:0",
         "fortunes": { "0": 1 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "exnihilocreatio:block_infested_leaves",
+    "block": "exnihilocreatio:block_infested_leaves:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -20128,7 +20128,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "contenttweaker:ore_anglesite",
+    "block": "contenttweaker:ore_anglesite:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -20139,7 +20139,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "contenttweaker:ore_benitoite",
+    "block": "contenttweaker:ore_benitoite:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -20150,7 +20150,7 @@
     "dim": "Block Drops"
   },
   {
-    "block": "contenttweaker:ore_bixbite",
+    "block": "contenttweaker:ore_bixbite:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -20181,53 +20181,53 @@
     "dropsList": [
       {
         "itemStack": "biomesoplenty:gem:1",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 0.083 }
       },
       {
         "itemStack": "biomesoplenty:gem:2",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 0.083 }
       },
       {
         "itemStack": "biomesoplenty:gem:3",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 0.083 }
       },
       {
         "itemStack": "biomesoplenty:gem:4",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 0.083 }
       },
       {
         "itemStack": "biomesoplenty:gem:5",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 0.083 }
       },
       {
         "itemStack": "biomesoplenty:gem:6",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 0.083 }
       },
       {
         "itemStack": "randomthings:ingredient:11",
-        "fortunes": { "0": 8, "1": 12, "2": 16, "3": 20 }
+        "fortunes": { "0": 1 }
       },
       {
-        "itemStack": "minecraft:iron_ingot",
-        "fortunes": { "0": 4, "1": 7, "2": 11, "3": 15 }
+        "itemStack": "minecraft:iron_ingot:0",
+        "fortunes": { "0": 14 }
       },
       {
-        "itemStack": "minecraft:gold_ingot",
-        "fortunes": { "0": 0.5, "1": 1, "2": 1.5, "3": 2 }
+        "itemStack": "minecraft:gold_ingot:0",
+        "fortunes": { "0": 9.5 }
       },
       {
         "itemStack": "minecraft:emerald:0",
-        "fortunes": { "0": 4, "1": 5, "2": 7, "3": 8 }
+        "fortunes": { "0": 1 }
       },
       {
         "itemStack": "randomthings:beans:0",
-        "fortunes": { "0": 0.5 }
+        "fortunes": { "0": 6 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "thaumcraft:stone_porous",
+    "block": "thaumcraft:stone_porous:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
@@ -20261,20 +20261,13 @@
       {
         "itemStack": "thaumcraft:cluster:4",
         "fortunes": { "0": 0.03, "1": 0.05, "2": 0.08, "3": 0.11 }
-      }
-    ],
-    "dim": "Block Drops"
-  },
-  {
-    "block": "thaumcraft:stone_porous",
-    "distrib": "0,1;255,1",
-    "dropsList": [
+      },
       {
         "itemStack": "thaumcraft:cluster:1",
         "fortunes": { "0": 0.022, "1": 0.044, "2": 0.066, "3": 0.088 }
       },
       {
-        "itemStack": "minecraft:clay_ball",
+        "itemStack": "minecraft:clay_ball:0",
         "fortunes": { "0": 0.064, "1": 0.13, "2": 0.19, "3": 0.26 }
       },
       {
@@ -20290,11 +20283,11 @@
         "fortunes": { "0": 0.009, "1": 0.018, "2": 0.027, "3": 0.036 }
       },
       {
-        "itemStack": "minecraft:prismarine_shard",
+        "itemStack": "minecraft:prismarine_shard:0",
         "fortunes": { "0": 0.008, "1": 0.016, "2": 0.024, "3": 0.032 }
       },
       {
-        "itemStack": "minecraft:prismarine_crystals",
+        "itemStack": "minecraft:prismarine_crystals:0",
         "fortunes": { "0": 0.007, "1": 0.014, "2": 0.021, "3": 0.028 }
       },
       {
@@ -20497,39 +20490,39 @@
     "dropsList": [
       {
         "itemStack": "harvestcraft:cactusfruititem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "harvestcraft:agaveitem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "harvestcraft:sisalitem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "harvestcraft:cassavaitem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "harvestcraft:chickpeaitem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "harvestcraft:lentilitem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "minecraft:cactus:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "harvestcraft:tomatilloitem:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       },
       {
         "itemStack": "immersiveengineering:seed:0",
-        "fortunes": { "0": 0.22 }
+        "fortunes": { "0": 0.33 }
       }
     ],
     "dim": "Block Drops"
@@ -20540,67 +20533,67 @@
     "dropsList": [
       {
         "itemStack": "harvestcraft:raspberryitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:oatsitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:ryeitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:celeryitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:peasitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:beetitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:rutabagaitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:broccoliitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:caulifloweritem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:cabbageitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:spinachitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:cottonitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:huckleberryitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:kohlrabiitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:quinoaitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       },
       {
         "itemStack": "harvestcraft:juniperberryitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.19 }
       }
     ],
     "dim": "Block Drops"
@@ -20611,63 +20604,63 @@
     "dropsList": [
       {
         "itemStack": "harvestcraft:whitemushroomitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:blackberryitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:zucchiniitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:radishitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:rhubarbitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:tealeafitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:garlicitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:sweetpotatoitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:turnipitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:spiceleafitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "randomthings:beans:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:leekitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:scallionitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "harvestcraft:juteitem:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       },
       {
         "itemStack": "rustic:tomato:0",
-        "fortunes": { "0": 0.13 }
+        "fortunes": { "0": 0.2 }
       }
     ],
     "dim": "Block Drops"
@@ -20678,59 +20671,59 @@
     "dropsList": [
       {
         "itemStack": "harvestcraft:brusselsproutitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:spiceleafitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:blueberryitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:asparagusitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:cranberryitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
-        "itemStack": "actuallyadditions:item_rice_seed",
-        "fortunes": { "0": 0.14 }
+        "itemStack": "actuallyadditions:item_rice_seed:0",
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:seaweeditem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:waterchestnutitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:okraitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:cottonitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:kaleitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:milletitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:jicamaitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       },
       {
         "itemStack": "harvestcraft:mulberryitem:0",
-        "fortunes": { "0": 0.14 }
+        "fortunes": { "0": 0.21 }
       }
     ],
     "dim": "Block Drops"
@@ -20741,51 +20734,51 @@
     "dropsList": [
       {
         "itemStack": "harvestcraft:pineappleitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:kiwiitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:sesameseedsitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:curryleafitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:bambooshootitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:cantaloupeitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:gingeritem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:soybeanitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:eggplantitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:kenafitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:arrowrootitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       },
       {
         "itemStack": "harvestcraft:taroitem:0",
-        "fortunes": { "0": 0.17 }
+        "fortunes": { "0": 0.25 }
       }
     ],
     "dim": "Block Drops"
@@ -20796,71 +20789,71 @@
     "dropsList": [
       {
         "itemStack": "harvestcraft:strawberryitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:barleyitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:cornitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:cucumberitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:wintersquashitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:mustardseedsitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:onionitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:parsnipitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:peanutitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:lettuceitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:artichokeitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:bellpepperitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:flaxitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:amaranthitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "harvestcraft:elderberryitem:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
         "itemStack": "immersiveengineering:seed:0",
-        "fortunes": { "0": 0.12 }
+        "fortunes": { "0": 0.18 }
       },
       {
-        "itemStack": "rustic:chili_pepper",
-        "fortunes": { "0": 0.12 }
+        "itemStack": "rustic:chili_pepper:0",
+        "fortunes": { "0": 0.18 }
       }
     ],
     "dim": "Block Drops"
@@ -20871,7 +20864,7 @@
     "dropsList": [
       {
         "itemStack": "thermalfoundation:geode:0",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 7.5, "3": 14 }
       }
     ],
     "dim": "Block Drops"
@@ -20882,30 +20875,30 @@
     "dropsList": [
       {
         "itemStack": "qmd:isotope:5",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "fortunes": { "0": 0.38, "1": 0.72, "2": 1.9, "3": 3.6 }
       },
       {
         "itemStack": "qmd:isotope:1",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "fortunes": { "0": 0.38, "1": 0.72, "2": 1.9, "3": 3.6 }
       },
       {
         "itemStack": "qmd:isotope:0",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "fortunes": { "0": 0.38, "1": 0.72, "2": 1.9, "3": 3.6 }
       },
       {
         "itemStack": "qmd:isotope:8",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "fortunes": { "0": 0.38, "1": 0.72, "2": 1.9, "3": 3.6 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "biomesoplenty:double_plant",
+    "block": "biomesoplenty:double_plant:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
         "itemStack": "minecraft:dye:12",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20915,19 +20908,19 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:brown_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:brown_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "biomesoplenty:flower_0",
+    "block": "biomesoplenty:flower_0:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
         "itemStack": "minecraft:dye:7",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20938,7 +20931,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:6",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20948,8 +20941,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:black_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:black_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20960,7 +20953,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:6",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20971,7 +20964,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:12",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20982,7 +20975,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:14",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -20993,7 +20986,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:9",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21004,7 +20997,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:13",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21015,7 +21008,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:5",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21025,8 +21018,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:white_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:white_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21036,8 +21029,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:black_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:black_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21048,7 +21041,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:1",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21059,7 +21052,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:8",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21070,7 +21063,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:9",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21080,8 +21073,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:white_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:white_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21092,18 +21085,18 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:14",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "biomesoplenty:flower_1",
+    "block": "biomesoplenty:flower_1:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
         "itemStack": "minecraft:dye:5",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21114,7 +21107,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:11",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21124,8 +21117,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:blue_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:blue_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21136,7 +21129,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:9",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21147,7 +21140,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:12",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21158,7 +21151,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:1",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21169,7 +21162,7 @@
     "dropsList": [
       {
         "itemStack": "biomesoplenty:shroompowder:0",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21179,8 +21172,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:blue_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:blue_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21191,7 +21184,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:10",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21201,8 +21194,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:brown_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:brown_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21213,7 +21206,7 @@
     "dropsList": [
       {
         "itemStack": "actuallyadditions:item_food:16",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21223,8 +21216,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "biomesoplenty:brown_dye",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "itemStack": "biomesoplenty:brown_dye:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21235,7 +21228,7 @@
     "dropsList": [
       {
         "itemStack": "minecraft:dye:1",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21246,7 +21239,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:0",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21257,7 +21250,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:1",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21268,7 +21261,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:2",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21279,7 +21272,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:3",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21290,7 +21283,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:4",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21301,7 +21294,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:5",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21312,7 +21305,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:6",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21323,7 +21316,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:7",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21334,7 +21327,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:8",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21345,7 +21338,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:9",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21356,7 +21349,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:10",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21367,7 +21360,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:11",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21378,7 +21371,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:12",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21389,7 +21382,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:13",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21400,7 +21393,7 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:14",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
@@ -21411,18 +21404,18 @@
     "dropsList": [
       {
         "itemStack": "botania:petal:15",
-        "fortunes": { "0": 1, "1": 2, "2": 4, "3": 7 }
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 6.1, "3": 11 }
       }
     ],
     "dim": "Block Drops"
   },
   {
-    "block": "endreborn:block_lormyte_crystal",
+    "block": "endreborn:block_lormyte_crystal:0",
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "endreborn:item_lormyte_crystal",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "itemStack": "endreborn:item_lormyte_crystal:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 7.5, "3": 14 }
       }
     ],
     "dim": "Block Drops"
@@ -21432,8 +21425,8 @@
     "distrib": "0,1;255,1",
     "dropsList": [
       {
-        "itemStack": "trinity:trinitite_shard",
-        "fortunes": { "0": 1, "1": 2, "2": 5, "3": 10 }
+        "itemStack": "trinity:trinitite_shard:0",
+        "fortunes": { "0": 1.5, "1": 2.9, "2": 7.5, "3": 14 }
       }
     ],
     "dim": "Block Drops"
