@@ -28,6 +28,7 @@ const PARSE_2D_ARRAY_RE_3 = /,\s*\]/g
 const PARSE_2D_ARRAY_RE_4 = /\[,/g
 const PARSE_2D_ARRAY_RE_5 = /\[(.*?)\]/
 const DIM_MATCH_RE = /^Dim (-?\d+): (.+)$/
+const DIM_ID_RE = /\((-?\d{1,9})\)$/
 const CT_ERROR_RE = /^(?:\[[^\]]+\])*\[(?:ERROR|FATAL)\]/m
 const CT_INIT_RE = /^\[INITIALIZATION\]/m
 const CT_COMPLETE_RE = /^\[(?:AVAILABLE|SERVER_STARTING|SERVER_STARTED)\]/m
@@ -540,6 +541,95 @@ Filter entries matching key=glob (multiple rules separated by &&)
       else
         consola.warn('No entries matched the provided filters.')
     }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Sort by dimension (matching scripts/mixin/jer.zs) and rarity
+    ///////////////////////////////////////////////////////////////////////
+    function getRampDistribution(minY: number, maxY: number, minChance: number, maxChance: number): number[] {
+      if (minY === maxY) return []
+      if (minY > maxY) return getRampDistribution(maxY, minY, minChance, maxChance).reverse()
+      const range = maxY - minY
+      const chanceDiff = maxChance - minChance
+      const result = Array.from<number>({ length: range + 1 }).fill(0)
+      for (let i = 0; i < range; i++)
+        result[i] = minChance + (chanceDiff * i) / range
+      return result
+    }
+
+    function addDistribution(base: number[], add: number[], offset = 0): void {
+      let addCount = 0
+      const limit = Math.min(base.length, add.length + offset)
+      for (let i = offset; i < limit; i++) {
+        if (i < 0) {
+          addCount++
+          continue
+        }
+        base[i] += add[addCount++]
+      }
+    }
+
+    function getAverageBlockCountPerChunk(distrib: string): number {
+      const pointMap = new Map<number, number>()
+      for (const part of distrib.split(';')) {
+        if (!part) continue
+        const split = part.split(',')
+        if (split.length !== 2) continue
+        const [lvlStr, chanceStr] = split
+        const level = Number.parseInt(lvlStr ?? '', 10)
+        const chance = Number.parseFloat(chanceStr ?? '')
+        if (Number.isFinite(level) && Number.isFinite(chance) && !pointMap.has(level))
+          pointMap.set(level, chance)
+      }
+      const points = [...pointMap.entries()]
+        .sort(([a], [b]) => a - b)
+        .map(([level, chance]) => ({ level, chance }))
+      if (!points.length) return 0
+
+      const array = Array.from<number>({ length: 256 }).fill(0)
+      addDistribution(array, getRampDistribution(0, points[0].level, 0, points[0].chance))
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1]
+        const curr = points[i]
+        const [min, max] = prev.chance <= curr.chance ? [prev, curr] : [curr, prev]
+        addDistribution(array, getRampDistribution(min.level, max.level, min.chance, max.chance), prev.level)
+        if (prev.level >= 0 && prev.level < 256) array[prev.level] = prev.chance
+        if (curr.level >= 0 && curr.level < 256) array[curr.level] = curr.chance
+      }
+      return Math.round(array.reduce((acc, v) => acc + v, 0) * 256 * 100) / 100
+    }
+
+    function cmpCodeUnit(a: string, b: string): number {
+      return a < b ? -1 : a > b ? 1 : 0
+    }
+
+    function extractDimId(dim: string): number | null {
+      const m = dim.match(DIM_ID_RE)
+      return m ? Number.parseInt(m[1], 10) : null
+    }
+
+    const avgCache = new Map<WorldGenEntry, number>(
+      worldGen.map(wg => [wg, getAverageBlockCountPerChunk(wg.distrib)])
+    )
+
+    worldGen.sort((a, b) => {
+      const idA = extractDimId(a.dim)
+      const idB = extractDimId(b.dim)
+      if ((idA !== null) !== (idB !== null)) return idA !== null ? -1 : 1
+      if (idA !== null && idB !== null) {
+        const absDiff = Math.abs(idA) - Math.abs(idB)
+        if (absDiff !== 0) return absDiff
+        const rawDiff = idA - idB
+        if (rawDiff !== 0) return rawDiff
+      }
+      if (a.dim !== b.dim) {
+        if (a.dim === 'Block Drops') return 1
+        if (b.dim === 'Block Drops') return -1
+        return cmpCodeUnit(a.dim, b.dim)
+      }
+      const distDiff = (avgCache.get(b) ?? 0) - (avgCache.get(a) ?? 0)
+      if (distDiff !== 0) return distDiff
+      return cmpCodeUnit(a.block, b.block)
+    })
 
     const stringified = `${JSON.stringify(worldGen, null, 2).trimEnd()}\n`
       .replace(FORTUNES_RE, (m, r: string) => `"fortunes": {${r.replace(SPACES_RE, ' ')}}`)
